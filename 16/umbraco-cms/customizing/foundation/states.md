@@ -1,18 +1,22 @@
 ---
 description: >-
-  Make reactivity with Umbraco States, enabling you to provide a value that
-  multiple others can observe and thereby be updated when the value changes.
+  Enable reactivity with Umbraco States, allowing you to provide a value that
+  others can observe and update when the value changes.
 ---
 
 # States
 
-An Umbraco State is a container for a value, it enables you to create [Observables](states.md#observables), which is the name of a hook into the States value — An Observable can then be Observed, such observation provides the current value and if the value of the State changes they will all be updated accordingly.
-
-A typical use case is when you need to implement reactivity across class instances. For example, a State is in a Context and the Observer is a Element. For a concrete example, see the [Extension Type Workspace Context](../extending-overview/extension-types/workspaces/workspace-context.md) article.
-
 {% hint style="info" %}
-Umbraco States are not relevant when dealing with the reactivity of a Web Component. For that, see the [Lit Element](lit-element.md) article.
+Umbraco States are not related to Web Components reactivity. For more information, see the [Lit Element](lit-element.md) article.
 {% endhint %}
+
+An Umbraco State is a container for a value. You create [Observables](states.md#observe), which are hooks into the State's value. An Observable can then be observed to access the current value. If the State changes, all Observables are updated accordingly.
+
+A typical use case is to bring reactivity across class instances. For example, a Context may provide a value that an Element needs to utilize.
+
+In this case, the Context would implement a State and an Observable of it. The Element would then observe the Observable of the Context.
+
+You can see an example of this pattern in the [Extension Type Workspace Context](../extending-overview/extension-types/workspaces/workspace-context.md) article.
 
 The example below demonstrates the basics of working with a State and observing its changes:
 
@@ -35,7 +39,7 @@ This example will result in the following logs:
 
 ## State Types
 
-Umbraco provides built-in State types for common data structures:
+Umbraco provides built-in state types for common data structures:
 
 * Array State
 * Boolean State
@@ -46,15 +50,15 @@ Umbraco provides built-in State types for common data structures:
 
 Use the one fitting for your value type.
 
-## Observe
+## Observation
 
-### Observe a state via Umbraco Element or Umbraco Controller
+Observations are the act of reading the value of a State and reacting to future changes in the value.
 
-The Umbraco Element or Controllers come with the ability to observe an Observable.
+### Observe
 
-Observing all changes will result in the callback being executed.
+The Umbraco Element or Controllers provides the ability to observe an Observable. This example shows how you can observe the value of a State with these.
 
-The example below creates a State and then turns the whole state into an Observable, which then can be observed.
+The example below creates a State and exposes the entire value via an Observable, which can then be observed.
 
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 
@@ -65,17 +69,23 @@ The example below creates a State and then turns the whole state into an Observa
 
 <strong>this.observe(
 </strong>	this.selection,
-	(selection) => {
-		// This call will be executed initially and on each change of the state
-	}
+    (selection) => {
+        // This call will be executed initially and on each state change.
+        console.log(selection)
+    }
 );
 </code></pre>
 
-### Change the value of a state
+This will result in the following log:
 
-The value of a state can be changed via the `setValue` method. This replaces the current data with new data.
+<pre><code><strong>> ['item1', 'item2']
+</strong></code></pre>
 
-The following example shows how to change the value of the state to hold `item2` and `item3`. As the example extends the example from above, it means that `item1` is no longer part of the value of this state.
+### Change the value of a State
+
+The value of a state can be changed via the `setValue` method. This replaces the current data with new data and notifies the relevant observers.
+
+The following example shows how to change the value of the state to hold `item2` and `item3`. As this builds on the previous example, it means that `item1` is no longer part of the value of this state:
 
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 
@@ -85,9 +95,33 @@ this.#selectionState.setValue(['item2', 'item3']);
 
 </code></pre>
 
-**Observe part of a state**
+This will result in the following log, in addition to the one above:
 
-With the `asObservablePart` method, you can set up an Observable that provides a transformed outcome, based on the State.
+<pre><code><strong>> ['item2', 'item3']
+</strong></code></pre>
+
+### Observe part of a State value
+
+The `asObservablePart` method creates an Observable that provides a scoped or transformed outcome based on the State.
+
+The following example provides an observable for the first selected item in the selection:&#x20;
+
+```typescript
+
+this.firstSelected = this.#selectionState.asObservablePart(data => data?.[0]);
+
+this.observe(
+    this.firstSelected, (firstSelected) => {
+        // This call will be executed initially and on each change of the specific value that this observer provides.
+        // This means that this will only be executed when the first selected item changes.
+         console.log("The first selected item is now ", firstSelected)
+    }
+);
+```
+
+In the above example, the `asObservablePart` mapping function will be executed whenever the State changes. If the method's result differs from before, it will trigger an update to its observers.
+
+The following example computes the length&#x20;
 
 ```typescript
 this.selectionLength = this.#selectionState.asObservablePart(data => data.length);
@@ -101,9 +135,11 @@ this.observe(
 );
 ```
 
-In the above example, the `asObservablePart` mapping function will be executed every time there is a change to the State. If the result of the method is different than before, it will trigger an update to its observers.
+As in the previous example, the mapper will be triggered whenever the State values change. But observers of this Observable will only be notified if the outcome value differs.
 
-Let's return to the example at the start of this article, to see how an observablePart is triggered in relation to the value of the state.
+### Summary example
+
+The example below revisits the earlier scenario to see how an Observable Part is triggered in relation to the value of the state.
 
 ```
 const myState = UmbStringState('four');
@@ -118,7 +154,7 @@ this.observe(myObservablePart, (value) => {
 });
 
 myState.setValue('five');
-myState.setValue('six');// notice only 3 letters
+myState.setValue('six');// note that it contains only three letters
 ```
 
 This example will result in the following logs:
@@ -130,4 +166,4 @@ This example will result in the following logs:
 > length: 3
 </code></pre>
 
-The `length` observation only got triggered when the length actually differed.
+The `length` observation was triggered when the length actually differed.

@@ -9,8 +9,8 @@ description: >-
 
 The following section describes a specific Context. It is recommended to learn the Context API first. [Read more about the Context API here.](../context-api/)
 
-### Common Contexts
+## Common Contexts
 
-## [Property Dataset Context](property-dataset-context.md)
+### [Property Dataset Context](property-dataset-context.md)
 
 A dataset Context is the connection point between a Property Editor and a Workspace and covers a set of properties.
