@@ -206,7 +206,7 @@ namespace MyFormsExtensions
 }
 ```
 
-And regsitered with:
+And registered with:
 
 ```csharp
 public class MyComposer : IComposer
