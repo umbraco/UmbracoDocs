@@ -2,7 +2,7 @@
 
 When using [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/) alongside Umbraco Forms, you can use a configured UI Builder repository as a prevalue source.
 
-To do this, you need to create a custom `FieldPreValueSourceType` source that uses UI Builder's `SectionConfiguration` property editor to select a repository and fetch the prevalues from there.
+To do this, you will need to create a custom `FieldPreValueSourceType` source that uses UI Builder's `SectionConfiguration` property editor. Once configured, users will be able to select a repository and fetch the prevalues from there.
 
 ## Example
 
