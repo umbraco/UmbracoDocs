@@ -89,7 +89,7 @@ The business logic for the segment parameter has been implemented, but the param
 
 This demo assumes you are creating multiple custom rules, which are then provided as a bundle in the backoffice.
 
-First, follow the [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) article to scaffold your extension. Use `MySegmentRules` as your package name
+First, follow the [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) article to scaffold your extension. Use `MySegmentRules` as your package name.
 
 1. Install `@umbraco-engage/backoffice` package, replacing `x.x.x` with your Engage version:
 
