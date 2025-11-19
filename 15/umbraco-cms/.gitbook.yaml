@@ -113,3 +113,5 @@ redirects:
     customizing/property-editors/build-a-block-editor: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/README.md
     tutorials/creating-and-distributing-a-package: extending/packages/creating-a-package.md
     fundamentals/design/templates/named-sections: fundamentals/design/templates/README.md
+    customizing/searchable-trees: customizing/overview.md
+    customizing/section-trees: customizing/overview.md
