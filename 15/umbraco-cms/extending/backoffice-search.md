@@ -97,7 +97,3 @@ public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbra
 {% hint style="warning" %}
 You cannot use this to search on integer types in the index, as an example `parentID` does not work.
 {% endhint %}
-
-## More advanced extensions
-
-For further extensibility of the Umbraco Backoffice search implementation check [ISearchableTree](../customizing/searchable-trees.md)
