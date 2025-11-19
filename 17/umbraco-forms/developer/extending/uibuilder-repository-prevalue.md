@@ -219,6 +219,10 @@ public class MyComposer : IComposer
 }
 ```
 
-This will then make the `UI Builder Repository` available when creating a new prevalue source:
+This will then make the "UI Builder Repository" available when creating a new prevalue source:
 
 !["UI Builder Repository available as a prevalue source"](./images/uibuilder-repository-prevalue-source.png)
+
+Once selected, a user can pick a section, collection, and data view from the configured UI Builder repositories:
+
+!["Selecting a UI Builder repository as a prevalue source"](./images/uibuilder-repository-prevalue-configuration.png)
