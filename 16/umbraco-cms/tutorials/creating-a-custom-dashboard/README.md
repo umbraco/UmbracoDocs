@@ -8,8 +8,8 @@ description: A guide to creating a custom dashboard in Umbraco
 
 This guide outlines the steps to set up a custom dashboard in Umbraco. Part one covers:
 
-1. [Setting up a Package](./README.md#setting-up-a-package)
-2. [Creating the Dashboard Web Component](./README.md#creating-the-dashboard-web-component)
+1. [Setting up a Package](./#setting-up-a-package)
+2. [Creating the Dashboard Web Component](./#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
@@ -162,7 +162,7 @@ export default defineConfig({
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
 
-<figure><img src="../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome (1).webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 

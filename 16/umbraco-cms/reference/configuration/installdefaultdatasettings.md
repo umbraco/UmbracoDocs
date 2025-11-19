@@ -56,7 +56,7 @@ Be cautious when changing a Data Type configuration, as there are some dependenc
 
 For example, if you check the info tab of the `Label (bigint)` Data Type, you can see that it is referenced by the `Media Types`:
 
-<figure><img src="../../.gitbook/assets/ReferencedDataTypes.PNG" alt=""><figcaption><p>Data Type referenced by Media Type</p></figcaption></figure>
+<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/ReferencedDataTypes (1).PNG" alt=""><figcaption><p>Data Type referenced by Media Type</p></figcaption></figure>
 
 ## Data Identifiers
 

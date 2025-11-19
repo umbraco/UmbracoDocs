@@ -108,8 +108,7 @@ declare global {
 ```
 {% endcode %}
 
-3.  Notice in above code the Element is exported as the `default`-export, in this way the system can pick up the Element.
-
+3. Notice in above code the Element is exported as the `default`-export, in this way the system can pick up the Element.
 4.  In the `vite.config.ts` file replace the `entry` to our newly created `.ts` file:
 
     ```typescript
@@ -133,7 +132,7 @@ We can now edit the assigned property's value with our new property editor.
 
 2. Check out the content where you will see the property editor that looks like this:
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditor (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/NewPropertyEditor (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Adding styling and setting up events in the Web Components
 
@@ -214,7 +213,7 @@ static override readonly styles = [
 
 It should now look something like this:
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditorButtons (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/NewPropertyEditorButtons (1).png" alt=""><figcaption></figcaption></figure>
 
 <details>
 
@@ -403,7 +402,7 @@ override render() {
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
+{% code title="suggestions-property-editor-ui.element.ts" overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
 import { css, customElement, html, LitElement, property, state } from '@umbraco-cms/backoffice/external/lit';
@@ -488,7 +487,7 @@ declare global {
 
 4. Clear your cache, reload the document, and see the Suggestions Data Type running.
 
-<figure><img src="../../.gitbook/assets/NewPropertyEditorSuggestions (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/NewPropertyEditorSuggestions (1).png" alt=""><figcaption></figcaption></figure>
 
 When we save or publish, the value of the Data Type is now automatically synced to the current content object and sent to the server.
 

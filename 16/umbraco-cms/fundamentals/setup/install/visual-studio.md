@@ -12,7 +12,7 @@ description: A guide to install Umbraco CMS using Visual Studio.
 
 ## Quick Start
 
-This is an abbreviated version of the installation steps. Jump to the [Create a new project](#create-a-new-umbraco-project) section for a more thorough guide.
+This is an abbreviated version of the installation steps. Jump to the [Create a new project](visual-studio.md#create-a-new-umbraco-project) section for a more thorough guide.
 
 * Open Visual Studio.
 * Go to `File` > `New` > `Project`, search for **Umbraco**.
@@ -46,7 +46,7 @@ Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by cl
 
 In this step, you will be able to give your project a name specific to the project you are creating.
 
-![The Configure your new project dialog in Visual Studio.](../../../.gitbook/assets/New_Project.jpg)
+![The Configure your new project dialog in Visual Studio.](<../../../../../15/umbraco-cms/.gitbook/assets/New_Project (1).jpg>)
 
 {% hint style="info" %}
 Refrain from changing the Solution name, as this will cause a namespace conflict with the CMS itself.
@@ -56,11 +56,11 @@ Refrain from changing the Solution name, as this will cause a namespace conflict
 
 In the next step, you are able to specify some additional parameters like the _Target framework_. The rest are optional.
 
-![The Additional information dialog in Visual Studio.](../../../.gitbook/assets/Additional_Info_V16.png)
+![The Additional information dialog in Visual Studio.](<../../../../../15/umbraco-cms/.gitbook/assets/Additional_Info_V15 (1).png>)
 
 You can then click the _Create_ button and your Umbraco Project will be ready for you.
 
-![Overview of files in the project solution](../../../.gitbook/assets/Solution_Explorer.png)
+![Overview of files in the project solution](<../../../../../15/umbraco-cms/.gitbook/assets/Solution_Explorer (1).png>)
 
 ### Running the site
 
