@@ -205,3 +205,20 @@ namespace MyFormsExtensions
     }
 }
 ```
+
+And regsitered with:
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+      builder.WithCollectionBuilder<FieldPreValueSourceCollectionBuilder>()
+            .Add<UIBuilderRepository>();
+    }
+}
+```
+
+This will then make the `UI Builder Repository` available when creating a new prevalue source:
+
+!["UI Builder Repository available as a prevalue source"](./images/uibuilder-repository-prevalue-source.png)
