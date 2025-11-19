@@ -22,6 +22,7 @@ The steps we will go through in second part are:
 * Add the following code to `en.js`
 
 {% code title="/App_Plugins/welcome-dashboard/Localization/en.js" lineNumbers="true" %}
+
 ```javascript
 export default {
   welcomeDashboard: {
@@ -32,11 +33,13 @@ export default {
   }
 };
 ```
+
 {% endcode %}
 
 * Add the following code to `da-dk.js`
 
 {% code title="/App_Plugins/welcome-dashboard/Localization/da-dk.js" lineNumbers="true" %}
+
 ```javascript
 export default {
   welcomeDashboard: {
@@ -47,6 +50,7 @@ export default {
   }
 };
 ```
+
 {% endcode %}
 
 ## Register Localization Files
@@ -54,6 +58,7 @@ export default {
 Now let's update the `umbraco-package.json` file from the `welcome-dashboard` folder to register our new localization files:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```typescript
 {
   ...
@@ -80,6 +85,7 @@ Now let's update the `umbraco-package.json` file from the `welcome-dashboard` fo
   ]
 }
 ```
+
 {% endcode %}
 
 Run `npm run build` in the `welcome-dashboard` folder and then run the project.
@@ -89,6 +95,7 @@ Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 <summary>See the entire file: umbraco-package.json</summary>
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
+
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -134,6 +141,7 @@ Run `npm run build` in the `welcome-dashboard` folder and then run the project.
   ]
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -183,6 +191,7 @@ Run `npm run build` in the `welcome-dashboard` folder and then run the project.
 <summary>See the entire file: welcome-dashboard.element.ts</summary>
 
 {% code title="welcome-dashboard.element.ts" lineNumbers="true" %}
+
 ```typescript
 import { LitElement, css, html, customElement} from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
@@ -230,6 +239,7 @@ declare global {
   }
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -246,10 +256,16 @@ The text between the open and close tags of `umb-localize` is the fallback value
 
 This is how our dashboard should now look like:
 
-<div><figure><img src="../../../../15/umbraco-cms/.gitbook/assets/welcome-eng (1).png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure> <figure><img src="../../../../15/umbraco-cms/.gitbook/assets/welcome-da (1).png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure></div>
+<div>
+
+<figure><img src="../../.gitbook/assets/welcome-eng (1).png" alt=""><figcaption><p>Dashboard if the user's language is English / Fallback</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/welcome-da (1).png" alt=""><figcaption><p>Dashboard if the user's language is Danish</p></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
-Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/language-files/) article.
+Tip: If you do not have many translations, you can also choose to include the localizations directly in the meta-object. Read more about translations in the [**Localization**](../../extending/language-files/README.md) article.
 {% endhint %}
 
 ## Going Further

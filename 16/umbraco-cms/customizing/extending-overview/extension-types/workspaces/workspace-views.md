@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to create workspace views that provide tab-based content areas for
-  organizing different aspects of entity editing.
+  Learn how to create workspace views that provide tab-based content areas for organizing different aspects of entity editing.
 ---
 
 # Workspace Views
@@ -15,16 +14,16 @@ Workspace Views were previously called Content Apps in earlier versions of Umbra
 ## Purpose
 
 Workspace Views provide:
+- **Tab-based organization** for different editing aspects
+- **Contextual interfaces** related to the current entity
+- **Workspace integration** with access to workspace contexts
+- **Custom functionality** specific to entity types
 
-* **Tab-based organization** for different editing aspects
-* **Contextual interfaces** related to the current entity
-* **Workspace integration** with access to workspace contexts
-* **Custom functionality** specific to entity types
-
-<figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/workspace-views (1).svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/workspace-views.svg" alt=""><figcaption><p>Workspace Views</p></figcaption></figure>
 
 ## Manifest
 
+{% code caption="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceView',
@@ -45,19 +44,20 @@ Workspace Views provide:
 	],
 }
 ```
+{% endcode %}
 
 ### Key Properties
-
-* **`weight`** - Tab ordering (higher weight appears first)
-* **`meta.label`** - Text displayed on the tab
-* **`meta.pathname`** - URL segment for the view
-* **`meta.icon`** - Icon displayed on the tab
-* **`conditions`** - Determines workspace availability
+- **`weight`** - Tab ordering (higher weight appears first)
+- **`meta.label`** - Text displayed on the tab
+- **`meta.pathname`** - URL segment for the view
+- **`meta.icon`** - Icon displayed on the tab
+- **`conditions`** - Determines workspace availability
 
 ## Implementation
 
 Implement your workspace view as a Lit element that extends `UmbElementMixin`. This creates a tab-based interface that users can navigate to within the workspace:
 
+{% code caption="counter-workspace-view.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
@@ -115,23 +115,21 @@ declare global {
 	}
 }
 ```
+{% endcode %}
 
 ## View Lifecycle
 
 ### Initialization
-
-* Views initialize when their tab becomes active
-* Context consumption happens during construction
-* Views have access to workspace-scoped contexts
+- Views initialize when their tab becomes active
+- Context consumption happens during construction
+- Views have access to workspace-scoped contexts
 
 ### Tab Navigation
-
-* Views are lazy-loaded when first accessed
-* Navigation updates the workspace URL with view pathname
-* Views remain in memory while the workspace is open
+- Views are lazy-loaded when first accessed
+- Navigation updates the workspace URL with view pathname
+- Views remain in memory while the workspace is open
 
 ### Context Integration
-
 Views can consume multiple workspace contexts:
 
 ```typescript
@@ -152,7 +150,6 @@ constructor() {
 ## Common Patterns
 
 ### Entity Information View
-
 ```typescript
 @customElement('entity-info-view')
 export class EntityInfoView extends UmbElementMixin(LitElement) {
@@ -183,7 +180,6 @@ export class EntityInfoView extends UmbElementMixin(LitElement) {
 ```
 
 ### Interactive Configuration View
-
 ```typescript
 @customElement('config-view')
 export class ConfigView extends UmbElementMixin(LitElement) {
@@ -208,7 +204,6 @@ export class ConfigView extends UmbElementMixin(LitElement) {
 ```
 
 ### Analytics Dashboard View
-
 ```typescript
 @customElement('analytics-view')
 export class AnalyticsView extends UmbElementMixin(LitElement) {
@@ -250,27 +245,22 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
 ## Best Practices
 
 ### View Organization
-
-* Use descriptive tab labels that indicate the view's purpose
-* Order views by importance using the `weight` property
-* Group related functionality into a single view rather than many small tabs
+- Use descriptive tab labels that indicate the view's purpose
+- Order views by importance using the `weight` property
+- Group related functionality into a single view rather than many small tabs
 
 ### Context Usage
-
-* Consume contexts in the constructor for immediate availability
-* Use `observe()` for reactive updates when context state changes
-* Check context availability before accessing properties
+- Consume contexts in the constructor for immediate availability
+- Use `observe()` for reactive updates when context state changes
+- Check context availability before accessing properties
 
 ### Performance
-
-* Keep views lightweight for fast tab switching
-* Load expensive data only when view becomes active
-* Use loading states for async operations
+- Keep views lightweight for fast tab switching
+- Load expensive data only when view becomes active
+- Use loading states for async operations
 
 ### Conditional Availability
-
 Only show views when relevant:
-
 ```typescript
 conditions: [
 	{

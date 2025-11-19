@@ -36,7 +36,7 @@ To enable custom sections for backoffice users, site administrators must first a
 
 To grant access to the custom section, open the Umbraco backoffice, navigate to the **Users** section, and select the **User groups** menu item. Site administrators can create a new user group or modify an existing one.
 
-Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the slide-out modal to enable access.
+Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the  slide-out modal to enable access.
 
 <figure><img src="../../../../.gitbook/assets/sections-assigning.png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
 
@@ -69,4 +69,5 @@ const section : UmbExtensionManifest = {
 ```
 {% endcode %}
 
-The element file must contain an `element`, a `default` export, or specify the element name in the `elementName` field.
+The element file must contain an `element`, a `default` export, or specify the element name in the
+`elementName` field.

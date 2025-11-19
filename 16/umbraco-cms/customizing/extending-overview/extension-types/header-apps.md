@@ -1,17 +1,14 @@
 ---
-description: >-
-  Place single-purpose extensions in the top-level navigation bar, next to the
-  user profile avatar.
+description: Place single-purpose extensions in the top-level navigation bar, next to the user profile avatar.
 ---
 
 # Header Apps
 
 Header App extensions appear next to the user profile and the global search icon in the top right of Umbraco’s Backoffice. Extension authors can create custom header apps to add globally accessible functionality to the Backoffice.
 
-<figure><img src="../../../../../15/umbraco-cms/.gitbook/assets/header-apps (1).svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/header-apps.svg" alt=""><figcaption><p>Header Apps</p></figcaption></figure>
 
 ## Button Header Apps as a link
-
 Extension authors can create header apps that link to resource both inside and outside the backoffice. Header apps can be created using a manifest or using TypeScript.
 
 To create a link-style header app, define a `headerApp` extension in the `umbraco-package.json` file. Be sure to include `meta.label` and `meta.icon` so that your header app appears when you reload the backoffice.
@@ -45,9 +42,10 @@ Header Apps can also be created using TypeScript. Examples of both approaches ar
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Using TypeScript" %}
 {% code title="my-element.ts" %}
+Create an object that implements the `UmbExtensionManifest` interface, then register the extension with the `umbExtensionsRegistry` service.
+
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
@@ -77,7 +75,7 @@ By creating a custom component, extension authors can control how the button ren
 
 For example, this is how the current user header app is able to present a modal when clicked.
 
-<figure><img src="../../../../../17/umbraco-cms/.gitbook/assets/header-apps-custom (1).png" alt=""><figcaption><p>The current user modal is presented from a header app</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/header-apps-custom.png" alt=""><figcaption><p>The current user modal is presented from a header app</p></figcaption></figure>
 
 In order for a header app to have some functionality, extension authors will need to define behavior by creating a JavaScript or TypeScript component. Once the component has been created, it will need to be registered in the header app's `element` property.
 
@@ -102,10 +100,8 @@ In order for a header app to have some functionality, extension authors will nee
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="TypeScript" %}
 This example assumes that the extension author has transpiled the above TypeScript code into a JavaScript file. The name and location of the transpiled file should match the `element` property in the package manifest.
-
 {% code title="src/server-services-header.ts" lineNumbers="true" %}
 ```typescript
 import { html, customElement } from "@umbraco-cms/backoffice/external/lit";

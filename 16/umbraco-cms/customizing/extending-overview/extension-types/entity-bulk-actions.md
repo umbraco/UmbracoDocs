@@ -6,7 +6,7 @@ description: Bulk Entity Actions perform an action on a selection of items.
 
 Extension authors can register an entity bulk action to appear in the collection selection toolbar.
 
-<figure><img src="../../../../../15/umbraco-cms/.gitbook/assets/entity-bulk-action-collection-menu (1).svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
 ## Registering an Entity Bulk Action <a href="#registering-an-entity-bulk-action" id="registering-an-entity-bulk-action"></a>
 

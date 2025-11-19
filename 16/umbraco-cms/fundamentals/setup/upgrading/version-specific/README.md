@@ -179,7 +179,8 @@ The `package.manifest` file is no longer supported and has been replaced with th
 
 It's recommended that you bundle up your Backoffice static assets for instance by a tool called Vite. You can read more about this on the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article. You can still use libraries like Smidge for frontend static assets by manually installing the package from NuGet.
 
-You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification. For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
+You can read the [Smidge documentation](https://github.com/Shazwazza/Smidge/wiki) on how to set up a similar setting to RuntimeMinification.
+For sites being upgraded from V13 or below, remove [these two lines](https://github.com/umbraco/Umbraco-CMS/blob/04ed514a21279ae82d95b34c55cb2ba96545eb39/src/Umbraco.Web.UI/Views/_ViewImports.cshtml#L7-L8) from the `_ViewImports.cshtml` file.
 
 * **Base classes for Backoffice controllers have been removed**
 
@@ -231,7 +232,7 @@ For example, it is hardly a server concern how many rows a text area should span
 
 To this end, property editors have been split into two, individually reusable parts; the server implementation and the client implementation.
 
-This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](migrate-custom-property-editors-to-umbraco-14.md) article for details.
+This change will likely impact custom Property Editors. See the [Migrate custom Property Editors to Umbraco version 14 and later](./migrate-custom-property-editors-to-umbraco-14.md) article for details.
 
 * **Property value converters for package.manifest based property editors**
 
@@ -1104,7 +1105,7 @@ Otherwise, it will cause an error on the front end.
 
 Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues when running the project
 
-<img src="../../../../../../15/umbraco-cms/.gitbook/assets/image (1).png" alt="" data-size="original">
+<img src="../../../../.gitbook/assets/image.png" alt="" data-size="original">
 
 **Update code using Angular JS**
 
