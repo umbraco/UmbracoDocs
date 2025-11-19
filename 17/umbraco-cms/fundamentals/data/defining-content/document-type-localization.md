@@ -20,7 +20,7 @@ Setting up localization for Document Types is a three-step process:
 * Apply the localizations to the Document Type.
 
 {% hint style="info" %}
-Everything in this article also applies to defining [Media Types](../../backoffice#media-types) and [Member Types](../../backoffice#member-types).
+Everything in this article also applies to defining [Media Types](../../backoffice/#media-types) and [Member Types](../../backoffice/#member-types).
 {% endhint %}
 
 ## Registering Document Type localization Files
@@ -90,16 +90,15 @@ Umbraco must be restarted to register the localization manifest. Any subsequent 
 The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 
 1. Create a **Document Type with Template** called `#contentTypes_article` with the **alias**: `articlePage`.
-2. Under the newly created Document Type follow these steps:
-
-* Set the **description** to `#contentTypes_article-desc`.
-* Create a new **tab** called `#tabs_content`.
-* Add a new **group** called `#groups_titles`.
-* Add a **property** called `#properties_title` with **alias** `title`.
-  * Set the description to `{#properties_title-desc}`.
-  * Use a `TextString` editor.
-  * Set the field validation to `mandatory`.
-  * Under validation add `#properties_title-message`.
+2. Under the newly created Document Type, follow these steps:
+   * Set the **description** to `#contentTypes_article-desc`.
+   * Create a new **tab** called `#tabs_content`.
+   * Add a new **group** called `#groups_titles`.
+   * Add a **property** called `#properties_title` with **alias** `title`.
+     * Set the description to `{#properties_title-desc}`.
+     * Use a `TextString` editor.
+     * Set the field validation to `mandatory`.
+     * Under validation add `#properties_title-message`.
 
 {% hint style="info" %}
 Property descriptions support [Umbraco Flavored Markdown](../../../reference/umbraco-flavored-markdown.md), which uses a different syntax (wrapped in brackets) to avoid conflicts with Markdown headers.
@@ -107,21 +106,21 @@ Property descriptions support [Umbraco Flavored Markdown](../../../reference/umb
 
 ![Applying localization to a property](../images/localization-document-type-editor-validation-v15.png)
 
-* Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
-  * Set the description to `{#properties_subTitle-desc}`.
-  * Use a `TextString` editor.
-* Enable `Allow at root` in the **Structure** tab.
+3. Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
+   * Set the description to `{#properties_subTitle-desc}`.
+   * Use a `TextString` editor.
+4. Enable `Allow at root` in the **Structure** tab.
 
 ![Applying localization to a Document Type](../images/localization-document-type-editor-v15.png)
 
-3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.
+When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
 ![Localized document creation dialog](../images/localization-document-editor-create.png)
 
-4. Create a new "Article" node:
+5. Create a new "Article" node:
 
 ![Localized document editing](../images/localization-document-editor-v15.png)
 
-5. When trying to save the node without adding the mandatory content, you will see a warning as expected:
+6. When trying to save the node without adding the mandatory content, you will see a warning as expected:
 
 ![Localized property validation](../images/localization-document-editor-validation.png)
