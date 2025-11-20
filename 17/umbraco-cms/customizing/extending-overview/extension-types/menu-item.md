@@ -12,7 +12,7 @@ Menu Item extensions are used together with [Menu](menu.md) extensions. Menu ite
 
 ## Creating Menu Items
 
-Menu Item extensions can be defined either with JSON in `umbraco-package.json` or with TypeScript.
+Menu Item extensions can be defined either with JSON in `umbraco-package.json` or with Javascript/TypeScript.
 
 ### Manifest
 
@@ -31,7 +31,7 @@ To add custom menu items, define a single `menuItem` manifest and link an elemen
             "type": "menuItem",
             "alias": "My.MenuItem",
             "name": "My Menu Item",
-            "element": "./menu-items.ts",
+            "element": "./my-menu-item.element.js",
             "meta": {
                 "label": "My Menu Item",
                 "menus": ["My.Menu"]
@@ -57,8 +57,10 @@ export const menuItemManifest: ManifestMenuItem = {
     type: 'menuItem',
     alias: 'My.MenuItem',
     name: 'My Menu Item',
+    element: './my-menu-item.element.ts',
     meta: {
         label: 'My Menu Item',
+        icon: 'icon-wand',
         menus: ["My.Menu"]
     },
 };
@@ -93,14 +95,13 @@ import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
 
 export const menuItemManifest: ManifestMenuItem = {
     type: 'menuItem',
-    alias: 'Umb.MenuItem.Users',
-    name: 'Users Menu Item',
-    weight: 200,
+    alias: 'My.MenuItem',
+    name: 'My Menu Item',
     meta: {
-        label: '#treeHeaders_users',
-        icon: 'icon-user',
-        entityType: UMB_USER_ROOT_ENTITY_TYPE,
-        menus: [UMB_USER_MANAGEMENT_MENU_ALIAS],
+        label: 'My Menu Item',
+        icon: 'icon-wand',
+        entityType: 'my-entity-type',
+        menus: ["My.Menu"]
     },
 };
 ```
@@ -121,14 +122,14 @@ import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
 export const menuItemManifest: ManifestMenuItem = {
     type: 'menuItem',
     kind: 'link',
-    alias: 'Umb.MenuItem.Help.LearningBase',
-    name: 'Learning Base Help Menu Item',
+    alias: 'My.MenuItem.ExternalLink',
+    name: 'My External Link Menu Item',
     weight: 200,
     meta: {
-        menus: [UMB_HELP_MENU_ALIAS],
-        label: 'Umbraco Learning Base',
-        icon: 'icon-movie-alt',
-        href: 'https://umbra.co/ulb',
+        label: 'My External Link',
+        icon: 'icon-link',
+        href: 'https://',
+        menus: ["My.Menu"],
     },
 };
 ```
@@ -145,13 +146,13 @@ import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
 export const menuItemManifest: ManifestMenuItem = {
     type: 'menuItem',
     kind: 'action',
-    alias: 'Umb.MenuItem.Tiptap.TableProperties',
-    name: 'Tiptap Table Menu Item: Table Properties',
-    api: () => import('./actions/table-properties.action.js'),
-    weight: 110,
+    alias: 'My.MenuItem.Action',
+    name: 'My Action Menu Item',
+    api: () => import('./my-action-menu-item.api.js'),
     meta: {
-        label: 'Table properties',
-        menus: [UMB_MENU_TIPTAP_TABLE_ALIAS],
+        label: 'My External Link',
+        icon: 'icon-hammer',
+        menus: ["My.Menu"],
     },
 };
 ```
@@ -168,14 +169,13 @@ import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
 export const menuItemManifest: ManifestMenuItem = {
     type: 'menuItem',
     kind: 'tree',
-    alias: UMB_MEDIA_MENU_ITEM_ALIAS,
-    name: 'Media Menu Item',
-    weight: 100,
+    alias: 'My.MenuItem.Tree',
+    name: 'My Tree Menu Item',
     meta: {
-        label: 'Media',
-        menus: [UMB_MEDIA_MENU_ALIAS],
-        treeAlias: UMB_MEDIA_TREE_ALIAS,
-        hideTreeRoot: true,
+        label: 'My Tree Menu Item',
+        icon: 'icon-hammer',
+        treeAlias: 'My.Repository.Tree',
+        menus: ["My.Menu"],
     },
 };
 ```
