@@ -98,7 +98,7 @@ Here is a list of all the new or updated articles in this version.
 * [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)
 * [Tree Repository](customizing/foundation/repositories/repository-types/tree-repository.md)
 * [Temporary File Storage](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md#temporary-file-storage)
-* [Backoffice token cookie settings](reference/configuration/securitysettings.md)
+* [Backoffice token cookie settings](reference/configuration/securitysettings.md#backoffice-token-cookie-settings)
 
 ### Removed articles
 
