@@ -12,7 +12,7 @@ If you have problems with Umbraco Engage setup or configuration, this checklist 
 
 After logging in to Umbraco, you can see the Engage section next to the other main sections in the Umbraco backoffice.
 
-If you cannot see this, please check if your Umbraco user or user group has access to the Engage section.
+If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
 ![Engage section in the Backoffice](../.gitbook/assets/engage-engage-section.png)
 

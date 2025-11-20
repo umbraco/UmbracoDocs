@@ -172,6 +172,18 @@ With Forms 14+, aspects of the presentation and functionality of the custom fiel
 
 To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://app.gitbook.com/s/G1Byxw7XfiZAj8zDMCTD/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
+The examples here are using the `@umbraco-forms/backoffice` package to get access to Forms-specific types and contexts. It is recommended to install this package as a development dependency in your project.
+
+{% hint style="warning" %}
+Ensure that you install the version of the Backoffice package that is compatible with your Umbraco Forms installation. You can find the appropriate version on the [`@umbraco-forms/backoffice` npm page](https://www.npmjs.com/package/@umbraco-forms/backoffice).
+{% endhint %}
+
+```bash
+npm install -D @umbraco-forms/backoffice@x.x.x
+```
+
+This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
+
 To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://app.gitbook.com/s/7MBVdnTbFiAgWuRsHpNS/customizing/extending-overview/extension-types/localization) article.
 
 ### Field Preview
@@ -181,28 +193,23 @@ The alias of the preview to use is defined on the field type via the `PreviewVie
 A preview for our slider, representing the selected setting values could look as follows:
 
 ```javascript
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import {
-  LitElement,
   css,
   customElement,
   html,
   property,
 } from "@umbraco-cms/backoffice/external/lit";
+import { FormsFieldPreviewBaseElement } from "@umbraco-forms/backoffice";
 
 const elementName = "my-field-preview-slider";
 
 @customElement(elementName)
-export class MyFieldPreviewSliderElement extends UmbElementMixin(LitElement) {
+export class MyFieldPreviewSliderElement extends FormsFieldPreviewBaseElement {
   @property()
   settings = {};
 
   @property({ type: Array })
   prevalues = [];
-
-  getSettingValue(key: string) {
-    return this.settings[key];
-  }
 
   render() {
     return html`<div
@@ -238,16 +245,16 @@ And it is registered via a manifest:
 
 ```javascript
 import MyFieldPreviewSliderElement from './slider-preview.element.js';
+import { ManifestFormsFieldPreview } from '@umbraco-forms/backoffice';
 
-const sliderPreviewManifest = {
-    type: "formsFieldPreview",
-    alias: "My.FieldPreview.Slider",
-    name: "Forms UUI Slider Field Preview",
-    api: MyFieldPreviewSliderElement,
-    element: () => import('./slider-preview.element.js')
-  };
+const sliderPreviewManifest: ManifestFormsFieldPreview = {
+  type: "formsFieldPreview",
+  alias: "My.FieldPreview.Slider",
+  name: "Forms UUI Slider Field Preview",
+  element: MyFieldPreviewSliderElement
+};
 
-  export const manifests = [sliderPreviewManifest];
+export const manifests = [sliderPreviewManifest];
 ```
 
 ### Field Editor
@@ -403,20 +410,23 @@ The following code shows the structure for these converter elements.
 
 ```javascript
 import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+import type { FormsSettingValueConverterApi, Setting } from "@umbraco-forms/backoffice";
 
-export class SliderSettingValueConverter {
-
-  async getSettingValueForEditor(setting, alias: string, value: string) {
+export class SliderSettingValueConverter
+  implements FormsSettingValueConverterApi {
+  async getSettingValueForEditor(setting: Setting, alias: string, value: string) {
     return Promise.resolve(value);
   }
 
-  async getSettingValueForPersistence(setting, valueData: UmbPropertyValueData) {
-    return Promise.resolve(valueData.value);
+  async getSettingValueForPersistence(setting: Setting, valueData: UmbPropertyValueData) {
+    return Promise.resolve(valueData.value?.toString() || "");
   }
 
-  async getSettingPropertyConfig(setting, alias: string, values: UmbPropertyValueData[]) {
+  async getSettingPropertyConfig(setting: Setting, alias: string, values: UmbPropertyValueData[]) {
     return Promise.resolve([]);
   }
+
+  destroy(): void { }
 }
 ```
 
@@ -424,8 +434,9 @@ It's registered as follows. The `propertyEditorUiAlias` matches with the propert
 
 ```javascript
 import { SliderSettingValueConverter } from "./slider-setting-value-converter.api";
+import { ManifestFormsSettingValueConverterPreview } from "@umbraco-forms/backoffice";
 
-const sliderValueConverterManifest = {
+const sliderValueConverterManifest: ManifestFormsSettingValueConverterPreview = {
   type: "formsSettingValueConverter",
   alias: "My.SettingValueConverter.Slider",
   name: "Slider Value Converter",

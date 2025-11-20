@@ -17,7 +17,7 @@ All extensions are registered in the extension registry. The registry can be man
 
 An Extension Manifest is a declaration of what you want to register in the Umbraco backoffice. This article handles the layout and requirements of an Extension Manifest.
 
-## [Register an Extension](extension-registry.md)
+## [Register an Extension](register-extensions.md)
 
 This article handles how to register an extension using an `umbraco-package.json` file.
 

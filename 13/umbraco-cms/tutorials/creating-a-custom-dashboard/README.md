@@ -37,7 +37,7 @@ At the end of this guide, we should have a friendly welcoming dashboard displayi
 ```html
 <div class="welcome-dashboard">
     <h1>Welcome to Umbraco</h1>
-    <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site please report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
+    <p>We hope you find the experience of editing your content with Umbraco enjoyable and delightful. If you discover any problems with the site, report them to the support team at <a href="mailto:">support@popularumbracopartner.com</a></p>
     <p>You can put anything here...</p>
 </div>
 ```

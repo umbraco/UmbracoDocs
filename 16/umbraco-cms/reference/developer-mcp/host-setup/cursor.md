@@ -19,7 +19,7 @@ description: "Host set up for Cursor"
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx", 
-      "args": ["@umbraco-cms/mcp-dev@beta"],
+      "args": ["@umbraco-cms/mcp-dev@16"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",

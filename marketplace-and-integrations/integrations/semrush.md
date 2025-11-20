@@ -28,7 +28,7 @@ A keyword search can be initiated using a content field as a starting point, or 
 
 Administrators are provided with additional features for managing the connectivity with their organization's account with Semrush.
 
-For more detail on the integration, its purpose, and how2 it was built, please see the [accompanying blog post](https://umbraco.com/blog/integrating-umbraco-cms-with-semrush/).
+For more detail on the integration, its purpose, and how2 it was built, see the [accompanying blog post](https://umbraco.com/blog/integrating-umbraco-cms-with-semrush/).
 
 ### Self Hosted OAuth Configuration
 
@@ -95,6 +95,6 @@ Authorization specific methods are exposed by the [`ISemrushAuthorizationService
 
 The used service is provided using the `AuthorizationImplementationFactory` method, depending on the type of authorization selected.
 
-If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/semrushauthorization/oauth`, from [`SemrushAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.Semrush/Controllers/SemrushAuthorizationController.cs). Please make sure to set to correct URL in the settings of the website and in the configuration of your _Semrush_ app.
+If you are selecting your own authorization flow that uses the `AuthorizationService`, the redirect URL will be this one: `/umbraco/api/semrushauthorization/oauth`, from [`SemrushAuthorizationController`](https://github.com/umbraco/Umbraco.Cms.Integrations/blob/main/src/Umbraco.Cms.Integrations.SEO.Semrush/Controllers/SemrushAuthorizationController.cs). Make sure to set to correct URL in the settings of the website and in the configuration of your _Semrush_ app.
 
 The authorization controller uses the `window.postMessage` interface for cross-window communications when redirecting from the semrush authorization server.

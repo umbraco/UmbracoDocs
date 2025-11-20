@@ -35,7 +35,7 @@ You may prefer to avoid writing to disk for logs when hosting in containers. If 
 
 You can also provide an alternative implementation of a common abstraction for the log viewer. In this way you can read logs from the location where you have configured them to be written.
 
-For more on this please read the article on Umbraco's [log viewer](../../backoffice/logviewer.md).
+For more details, read the article on Umbraco's [log viewer](../../backoffice/logviewer.md).
 
 ### Data
 

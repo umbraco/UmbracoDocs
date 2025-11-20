@@ -10,8 +10,8 @@ ignorecase: true
 swap:
   '\bmaster\b(?!\s(?:branch|template|templates|templating|view|views|layout))': "'primary'"  # Avoid false positives in valid Git and template contexts
   'slave': "'secondary'"
-  'black\s?list': "'deny list'"
-  'white\s?list': "'allow list'"
+  'black\s?list': "'denylist'"
+  'white\s?list': "'allowlist'"
   'etc\.': "'and so on'"
   '\b(?:eg|e\.g\.)(?=[\s,;])': "'for example'"
   '\b(?:ie|i\.e\.)(?=[\s,;])': "'that is'"

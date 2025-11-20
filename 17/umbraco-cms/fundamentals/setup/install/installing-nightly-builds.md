@@ -40,7 +40,7 @@ To add the nightly feed using Visual Studio:
 1. Open Visual Studio.
 2. Go to **Tools** > **NuGet Package Manager** > **Package Manager Settings**.
 
-![Package Manager Settings](<../../../.gitbook/assets/Package-Manager-Settings (1) (2).jpg>)
+![Package Manager Settings](../../../.gitbook/assets/Package-Manager-Settings.jpg)
 
 3. The **Options** window open.
 4. Select the **Package Sources** option in the **NuGet Package Manager** section.
@@ -50,7 +50,7 @@ To add the nightly feed using Visual Studio:
 8. Enter the link `https://www.myget.org/F/umbraconightly/api/v3/index.json` into the **Source** field.
 9. Click **OK**.
 
-![Register the nightly feed](../../../.gitbook/assets/Register\_Nightly\_Feed.jpg)
+![Register the nightly feed](../../../.gitbook/assets/Register_Nightly_Feed.jpg)
 
 Now the feed is added as a source named `Umbraco Nightly`.
 
@@ -64,7 +64,7 @@ To add the nightly feed using Rider:
 4. Choose the `C:\Users\Úmbraco\AppData\Roaming\NuGet\NuGet.Config` to add the feed globally.
 5. Click the green `+` button in the **New Feed** field.
 
-![Open the new feed menu](../../../.gitbook/assets/NuGet\_NewFeed.jpg)
+![Open the new feed menu](../../../.gitbook/assets/NuGet_NewFeed.jpg)
 
 6. The New feed dialog opens.
 7. Enter the desired name in the **Name** field.
@@ -74,7 +74,7 @@ To add the nightly feed using Rider:
 Leave the **User, Password** fields empty, and the **Enabled** checkbox ticked.
 {% endhint %}
 
-![Adding the feed](../../../.gitbook/assets/NewFeed\_Details.jpg)
+![Adding the feed](../../../.gitbook/assets/NewFeed_Details.jpg)
 
 9. Click **OK**.
 
@@ -102,11 +102,11 @@ You can use the package manager in Visual Studio to browse the available templat
 1. Open Visual Studio.
 2. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages For Solution...**
 
-![Opening the Nuget Package Manager](<../../../.gitbook/assets/Manage\_NuGet\_Pkgs (1).jpg>)
+![Opening the Nuget Package Manager](../../../.gitbook/assets/Manage_NuGet_Pkgs.jpg)
 
 3. Select **Umbraco Nightly** from the **Package source** dropdown in the **NuGet - Solution** window.
 
-![Select the nightly NuGet feed](../../../.gitbook/assets/Manage\_Packages.jpg)
+![Select the nightly NuGet feed](../../../.gitbook/assets/Manage_Packages.jpg)
 
 4. Check the **Include prerelease** checkbox.
 5. Search for **Umbraco.Templates** in the **Browse** field.
@@ -114,7 +114,7 @@ You can use the package manager in Visual Studio to browse the available templat
 7. Click on the **Version** dropdown and see the available nightly builds.
 8. Choose the applicable version and note down the version number.
 
-![Find the version](../../../.gitbook/assets/Latest\_nightly\_build\_version.jpg)
+![Find the version](../../../.gitbook/assets/Latest_nightly_build_version.jpg)
 
 ### Option 2: Using Rider
 
@@ -124,7 +124,7 @@ You can use the NuGet window in Rider to browse the available template versions.
 2. Go to the **Packages** tab in the **NuGet** window..
 3. Select **Umbraco Nightly** from the **All Feeds** dropdown.
 
-![Choose the feed](../../../.gitbook/assets/Rider\_Nightly\_Feed.jpg)
+![Choose the feed](../../../.gitbook/assets/Rider_Nightly_Feed.jpg)
 
 4. Check the **Prerelase** checkbox.
 5. Search for **Umbraco.Templates** in the **Search** field.
@@ -132,7 +132,7 @@ You can use the NuGet window in Rider to browse the available template versions.
 7. Click on the **Version** drop down and see the available nightly builds.
 8. Choose the applicable version and note down the version number
 
-![Find the version](../../../.gitbook/assets/Rider\_Nightly\_Feed\_version.jpg)
+![Find the version](../../../.gitbook/assets/Rider_Nightly_Feed_version.jpg)
 
 ## Installing the latest nightly version template
 
