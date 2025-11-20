@@ -158,6 +158,24 @@ export const menuItemManifest: ManifestMenuItem = {
 ```
 {% endcode %}
 
+{% code title="menu-item.api.ts" %}
+```typescript
+import { UmbMenuItemActionApiBase } from '@umbraco-cms/backoffice/menu';
+
+export class MyActionMenuItemApi extends UmbMenuItemActionApiBase<never> {
+	/**
+	 * This method is executed when the menu item is clicked
+	 */
+	override async execute() {
+		console.log('Hello world');
+	}
+}
+
+// Declare an `api` export so the Extension Registry can initialize this class
+export { MyActionMenuItemApi as api };
+```
+{% endcode %}
+
 ### Tree
 
 Use a tree menu item to show a submenu based on a tree structure. Any existing, registered Tree Repositories can be referenced by its extension alias (`treeAlias` property) in the Menu Item manifest. This will render a fully functional tree-based menu.
