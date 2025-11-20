@@ -126,7 +126,7 @@ export const menuItemManifest: ManifestMenuItem = {
     name: 'My External Link Menu Item',
     weight: 200,
     meta: {
-        label: 'My External Link',
+        label: 'My Link Menu Item',
         icon: 'icon-link',
         href: 'https://',
         menus: ["My.Menu"],
@@ -150,7 +150,7 @@ export const menuItemManifest: ManifestMenuItem = {
     name: 'My Action Menu Item',
     api: () => import('./my-action-menu-item.api.js'),
     meta: {
-        label: 'My External Link',
+        label: 'My Action Menu Item',
         icon: 'icon-hammer',
         menus: ["My.Menu"],
     },
