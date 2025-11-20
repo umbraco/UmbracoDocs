@@ -33,10 +33,6 @@ The following conditions are available out of the box, for all extension types t
 
 ## Make your own Conditions
 
-```html
-<a href="#make-your-own-conditions" id="make-your-own-conditions"></a>
-```
-
 You can make your own Conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
 ```typescript

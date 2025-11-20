@@ -48,7 +48,7 @@ or
 
 With the stylesheet referenced, you will be able to style the template file with the rules and classes defined in the stylesheet.
 
-Your stylesheets can be used in Rich Text Editors (datatype) as well - please see the [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/#rte-styles) documentation for more information.
+Your stylesheets can be used in Rich Text Editors (datatype) as well. See the [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/#rte-styles) documentation for more information.
 
 {% hint style="info" %}
 If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.

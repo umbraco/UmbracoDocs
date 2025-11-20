@@ -210,8 +210,6 @@
   * [Validation](customizing/foundation/validation/README.md)
     * [Form Control Mixin](customizing/foundation/validation/form-control-mixin.md)
     * [Understand the Validation system](customizing/foundation/validation/integrate-validation.md)
-* [Sections & Trees](customizing/section-trees.md)
-* [Searchable Trees (ISearchableTree)](customizing/searchable-trees.md)
 * [Property Editors](customizing/property-editors/README.md)
   * [Property Editor Validation](customizing/property-editors/property-editor-validation.md)
   * [Property Editors Composition](customizing/property-editors/composition/README.md)
