@@ -8,11 +8,9 @@ description: "Host set up for Claude Code"
 
 ## Getting started
 
-Install Claude Code globally
+Installing Claude Code is dependant on you environment, please folow these specific step at Anthropic's quick start quide
 
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+[Claude Code Quickstart guide](https://code.claude.com/docs/en/quickstart)
 
 ### Configuration using the CLI tool
 
