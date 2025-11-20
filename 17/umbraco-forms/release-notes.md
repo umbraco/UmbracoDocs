@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 
 * Update dependencies to 17.0.0-rc3
 * Fix issue where "Save and preview" modal would flash with no content
-* Fix bug that showed "Empty due to Umbraco Forms in trial mode" for entries even with a valid license.
+* Fix bug that showed "Empty due to Umbraco Forms in trial mode" for entries even with a valid license
 
 ### 17.0.0-rc2 (November 13th 2025)
 
