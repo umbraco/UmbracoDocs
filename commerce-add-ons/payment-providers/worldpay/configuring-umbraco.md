@@ -40,7 +40,7 @@ The following steps are handled within the payment method editor in the Umbraco 
 | Capture                                 | Toggle indicating whether to immediately capture the payment, or whether to authorize the payment for later (manual) capturing.                                                  |
 | Test Mode                               | Toggle indicating whether this provider should run in test mode                                                                                                                |
 
-In addition to these core settings, there are several optional advanced settings can be configured:
+In addition to these core settings, other optional advanced settings can be configured:
 
 | Name                   | Description                                                                                                                                  |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
