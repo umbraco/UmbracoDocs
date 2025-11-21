@@ -68,6 +68,11 @@ The following UFM filters are available to use.
 | Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
 | Word Limit | `word-limit` | `{umbValue: intro \| word-limit:15}`   |
 
+{% hint style="info" %}
+Starting from version 16.4, both the kebab-case (for example, `strip-html`, `title-case`,and `word-limit`) and the camelCase syntax (for example, `stripHtml`, `titleCase`, and `wordLimit`) are supported.
+
+The kebab-case syntax is scheduled for removal in version 18, so it’s recommended to begin using the camelCase syntax going forward.
+{% endhint %}
 
 ## UFM Expressions (JavaScript-like syntax)
 
