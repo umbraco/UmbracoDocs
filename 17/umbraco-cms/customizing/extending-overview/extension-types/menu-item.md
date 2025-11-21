@@ -12,7 +12,7 @@ Menu Item extensions are used together with [Menu](menu.md) extensions. Menu ite
 
 ## Creating Menu Items
 
-Menu Item extensions can be defined either with JSON in `umbraco-package.json` or with Javascript/TypeScript.
+Menu Item extensions can be defined either with JSON in `umbraco-package.json` or with JavaScript/TypeScript.
 
 ### Manifest
 
@@ -109,7 +109,7 @@ export const menuItemManifest: ManifestMenuItem = {
 
 ## Menu Item Kinds
 
-The Umbraco backoffice streamlines displaying menu items by providing three kinds that extension authors can reuse. These menu item kinds cover common tasks, including registering `links`, `actions` and `trees`.
+The Umbraco backoffice streamlines displaying menu items by providing three kinds that extension authors can reuse. These menu item kinds cover common tasks, including registering `links`, `actions`, and `trees`.
 
 ### Links
 
@@ -345,7 +345,7 @@ Examples of built-in menus include:
 * Media - `Umb.Menu.Media`
 * Settings - `Umb.Menu.StructureSettings`
 * Templating - `Umb.Menu.Templating`
-* ...
+* And so on.
 
 You can find all available Umbraco menus (nine in total) using the Extension Insights browser by selecting **Menu** from the dropdown.
 
