@@ -35,12 +35,12 @@ The following steps are handled within the payment method editor in the Umbraco 
 | Billing Address State Property Alias    | The alias of the property containing the state of the billing address. For example: addressLine1. Passed to Worldpay for Radar verification. See default aliases [in the Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/key-concepts/properties#order-property-map).                                                                              |
 | Billing Address Zip Code Property Alias | The alias of the property containing the zip code of the billing address. For example: addressLine1. Passed to Worldpay for Radar verification. See default aliases [in the Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/key-concepts/properties#order-property-map).                                                                              |
 | Install ID                              | The Worldpay installation ID                                                                                                                                                     |
-| MD5 Secret                              | The Worldpay MD5 secret to use when create MD5 hashes                                                                                                                            |
-| Response Password                       | The Worldpay payment response password to use to valida payment responses                                                                                                        |
+| MD5 Secret                              | The Worldpay MD5 secret to use when creating MD5 hashes                                                                                                                            |
+| Response Password                       | The Worldpay payment response password to use to validate payment responses                                                                                                        |
 | Capture                                 | Toggle indicating whether to immediately capture the payment, or whether to authorize the payment for later (manual) capturing.                                                  |
 | Test Mode                               | Toggle indicating whether this provider should run in test mode                                                                                                                |
 
-In addition to these core settings, there are a number of optional advanced settings you can configure:
+In addition to these core settings, there are several optional advanced settings can be configured:
 
 | Name                   | Description                                                                                                                                  |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |

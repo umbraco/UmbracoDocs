@@ -6,24 +6,21 @@ description: >-
 
 # Configure Worldpay
 
-To setup Worldpay you'll need to head over to [https://docs.worldpay.com/apis/bg350](https://docs.worldpay.com/apis/bg350) and follow the registration instructions
+## Step 1: Register with Worldpay
+1. To set up Worldpay, head over to [Worldpay API documentation](https://docs.worldpay.com/apis/bg350) and follow the registration instructions.
 
-![Worldpay Docs](../media/worldpay/wp_docs.png)
+2. Obtain your **Installation ID** following the documentation.
 
-Follow the documentation in order to optain your **Installation ID**.
+## Step 2: Enable Payment Responses
 
-## Enabling Payment Responses
-
-Follow the Worldpay docs at [https://docs.worldpay.com/apis/bg350/enablepaymentresponses](https://docs.worldpay.com/apis/bg350/enablepaymentresponses) in order to enable Payment Responses. Configure the response URL as follows:
+1. Follow the Worldpay documentation at [Enable Payment Responses](https://docs.worldpay.com/apis/bg350/enablepaymentresponses) to enable Payment Responses. 
+2. Configure the response URL as follows:
 
 ```bash
   https://{store_domain}/umbraco/commerce/payment/callback/worldpay-bs350/{payment_method_id}/
-```
 
-When setting up Payment Responses you will be asked to configure a **Response Password**. Remember this for later.
+## Step 3: Enable Enhanced Security
 
-## Enabling Enhanced Security
+1. Follow the Worldpay documentation at [Enhancing Security with MD5](https://docs.worldpay.com/apis/bg350/enhancing-security-with-md5) to configure advanced security. 
 
-Follow the Worldpay docs at [https://docs.worldpay.com/apis/bg350/enhancing-security-with-md5](https://docs.worldpay.com/apis/bg350/enhancing-security-with-md5) in order to configure advanced security. 
-
-When setting up Enhanced Security you will be asked to configure a **MD5 secret**. Remember this for later.
+2. When setting up Enhanced Security, you will be asked to configure an **MD5 secret**. Remember it for later.
