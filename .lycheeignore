@@ -3,9 +3,8 @@
 # The `.lycheeignore` file is only used for excluding URLs, not paths. Use the `exclude_path` key in the `lychee.toml` file. ref: https://lychee.cli.rs/recipes/excluding-paths/
 
 # GitHub blob/tree fragment links
-^https://github\.com/umbraco/Umbraco-CMS/blob/.*/.*#L.*
 ^https://github\.com/umbraco/Umbraco-CMS/tree/.*
-^https://github\.com/Shazwazza/Articulate/blob/.*/.*#L.*
+^https://github\.com/Shazwazza/Articulate/blob/.*
 ^https://github\.com/umbraco/Umbraco-CMS/blob/.*
 ^https://github\.com/.*/issues/[0-9]+#issuecomment-[0-9]+
 ^https://github\.com/umbraco/.*/discussions/.*
@@ -23,7 +22,7 @@
 ^https://azure\.microsoft\.com/en-gb/services/media-services/.*
 ^https://www\.tiny\.cloud/docs/.*
 ^https://api\.cloud\.umbraco\.com/?$
-^https://www\.npmjs\.com/package/.*$
+^https://www\.npmjs\.com/.*$
 
 # TinyMCE anchors
 ^https://github\.com/tinymce/tinymce/issues/.*#.*
@@ -38,6 +37,7 @@
 ^https://www\.dhl\.com/.*$
 ^https://help\.aprimo\.com/.*$
 ^https://www\.ipaddressguide\.com/.*$
+^https://openai\.com/.*$
 
 # Ignore specific troubleshooting anchor as Lychee is stripping special characters and replacing spaces with hyphens
 ^file:///home/runner/work/UmbracoDocs/UmbracoDocs/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-determine-environment-by-its-environment-id
