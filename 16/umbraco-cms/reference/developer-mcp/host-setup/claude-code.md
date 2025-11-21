@@ -16,17 +16,13 @@ npm install -g @anthropic-ai/claude-code
 
 ### Configuration using the CLI tool
 
-**Basic CLI installation**
-
-Add an MCP server using the Claude CLI:
+1. Add the Umbraco MCP server using the Claude CLI:
 
 ```bash
 claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@16
 ```
 
-**Define configuration values directly**
-
-To define configuration values directly, use this pattern:
+2. Define configuration values directly using this pattern:
 
 ```bash
 
@@ -34,18 +30,21 @@ To define configuration values directly, use this pattern:
 claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@16
 ```
 
-Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_UR` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
+Replace the following values with your local connection details:
 
-This command adds the MCP server as `umbraco-mcp` in your project’s `claude.json` configuration file.
+- `UMBRACO_CLIENT_ID`
+- `UMBRACO_CLIENT_SECRET`
+- `UMBRACO_BASE_URL`
+- `UMBRACO_INCLUDE_TOOL_COLLECTIONS`
 
-{% hint style="info" %}
-Use the command
+This command registers the MCP server as `umbraco-mcp` in your project’s `claude.json` configuration file.
 
-```
+3. Check which MCP servers are currently active in your Claude Code environment:
+
+```cs
 claude mcp list
 ```
 
-anytime to confirm which MCP servers are active in your Claude Code environment.
 {% endhint %}
 
 ### Project-specific configuration via `.mcp.json`
@@ -57,7 +56,7 @@ This is the referred project-level configuration for Claude Code. Creating a `.m
 - Override global Claude Code MCP settings.
 - Use an `.env` file to prevent secrets being added to source.
 
-Example `.env` file
+#### Example `.env` file
 
 ```bash
 UMBRACO_CLIENT_ID=umbraco-back-office-mcp
@@ -68,7 +67,7 @@ UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
 
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
 
-Example `.mcp.json` file
+#### Example `.mcp.json` file
 
 ```json
 {
