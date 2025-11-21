@@ -8,7 +8,7 @@ description: "Host set up for Claude Code"
 
 ## Getting started
 
-Installing Claude Code is dependant on you environment, please folow these specific step at Anthropic's quick start quide
+Installing Claude Code depends on your environment. For installation details, see the [Claude Code Quickstart Guide](https://code.claude.com/docs/en/quickstart).
 
 [Claude Code Quickstart guide](https://code.claude.com/docs/en/quickstart)
 
