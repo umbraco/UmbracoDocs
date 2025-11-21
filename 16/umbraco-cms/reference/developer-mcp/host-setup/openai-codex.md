@@ -25,7 +25,7 @@ brew install codex
 Add the Umbraco MCP server with the Codex CLI:
 
 ```bash
-codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@beta
+codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@16
 ```
 
 #### Define configuration values directly
@@ -39,7 +39,7 @@ codex mcp add umbraco-mcp \
   --env UMBRACO_BASE_URL="https://your-domain.com" \
   --env NODE_TLS_REJECT_UNAUTHORIZED="0" \
   --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" \
-  -- npx -y @umbraco-cms/mcp-dev@beta
+  -- npx -y @umbraco-cms/mcp-dev@16
 ```
 
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL`, and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
