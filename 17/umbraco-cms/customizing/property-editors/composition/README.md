@@ -3,12 +3,9 @@ description: This section describes how to work with and create Property Editors
 ---
 
 # Property Editors Composition
-
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 A property editor is an editor used to insert content into Umbraco. A Property Editor is composed of two extensions. To form a full Property Editor you will need a:
+
+![Defines how the entities in a Property Editor are related](images/property-editor-schema-full.jpg)
 
 * [Property Editor Schema](property-editor-schema.md)
 * [Property Editor UI](property-editor-ui.md)
