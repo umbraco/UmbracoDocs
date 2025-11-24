@@ -62,14 +62,14 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 
 Before proceeding, you must determine whether the .NET framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
 
-Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
+Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
 
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Configuration** -> **Advanced**.
 3. Scroll down to the **Runtime Settings** section.
 4. Select the appropriate .NET version from the **Change .NET framework runtime for your Umbraco install** dropdown for each environment in your Cloud project.
 
-<figure><img src="../../../../.gitbook/assets/runtime-settings.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/runtime-settings-v17.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
 ## Step 2: Clone down your environment
 
@@ -81,13 +81,13 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 ## Step 3: Upgrade the project locally using Visual Studio
 
 1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
-2. Determine if you need to update the .NET version based on the changes made in [Step 1](major-upgrades.md#step-1-enable-net):
+2. Determine if you need to update the .NET version based on the changes made in [Step 1](#step-1-enable-net):
    * **If the .NET version was updated:** Update the `<TargetFramework>` to match the version set in your Cloud environment.
    * **If the .NET version was not updated:** Skip this step.
 
 <details>
 
-<summary>Upgrading to Umbraco 15</summary>
+<summary>Upgrading to Umbraco 15 and above</summary>
 
 The following packages are no longer needed on the Cloud platform:
 
@@ -103,7 +103,7 @@ Delete the `<PackageReference>` entries for these packages.
 5. Select the version you are updated to and follow the instructions:
 
 {% tabs %}
-{% tab title="Umbraco 15" %}
+{% tab title="Umbraco 15 and above" %}
 Update the following packages:
 
 * `Umbraco.Forms.Deploy`
@@ -167,9 +167,30 @@ Update the following packages:
 Update all projects and packages in your solution to support the latest .NET.
 {% endhint %}
 
+6. [Optional] If using Deploy and Forms on Umbraco Cloud:
+
+<details>
+
+<summary>Upgrading to Umbraco 17</summary>
+
+Add the following section to your `appsettings.json` file (and any environment-specific variants):
+
+```json
+"Licenses": {
+  "Products": {
+    "Umbraco.Deploy": "UMBRACO-CLOUD",
+    "Umbraco.Forms": "UMBRACO-CLOUD"
+  }
+}
+```
+
+This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
+
+</details>
+
 ## Step 4: Finishing the Upgrade
 
-1. Ensure the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#run-an-unattended-upgrade) feature is **enabled**.
+1. Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-unattended) feature.
 2. Run the **project locally**.
 3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
    * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
@@ -274,7 +295,7 @@ Remove the same files from the left-most environment. This should be done from t
 5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
 6. Test that everything works with the upgrade on the Cloud environment.
 
-We highly recommend that you go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
+It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
 ## Step 5: Deploy the upgrade
 
