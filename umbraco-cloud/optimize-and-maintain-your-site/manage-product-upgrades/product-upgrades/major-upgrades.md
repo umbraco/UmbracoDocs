@@ -100,7 +100,7 @@ Delete the `<PackageReference>` entries for these packages.
 
 3. Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
 4. Navigate to the **Updates** tab.
-5. Select the version you are updated to and follow the instructions:
+5. Select the version you are updating to and follow the instructions:
 
 {% tabs %}
 {% tab title="Umbraco 15 and above" %}
