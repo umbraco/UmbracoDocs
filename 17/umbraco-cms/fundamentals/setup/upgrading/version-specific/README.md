@@ -192,10 +192,13 @@ As is usual for a major upgrade, Umbraco’s dependencies have been updated to t
 
 NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some change.
 
+Swashbuckle was updated to a new major version 10.0.1. If you are using this library to provide a Swagger document in your package or project, changes around namespaces, nullability, and types will be encountered.
+
 The other specific dependency updates made for Umbraco 17 for server and client-side libraries can be found in these PRs:
 
 - [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
 - [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
+- [#20925](https://github.com/umbraco/Umbraco-CMS/pull/20925)
 
 **Other breaking changes**
 
