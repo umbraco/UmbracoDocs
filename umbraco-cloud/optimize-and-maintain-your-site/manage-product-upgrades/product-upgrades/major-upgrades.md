@@ -103,7 +103,44 @@ Delete the `<PackageReference>` entries for these packages.
 5. Select the version you are updating to and follow the instructions:
 
 {% tabs %}
-{% tab title="Umbraco 15 and above" %}
+{% tab title="Umbraco 17" %}
+
+* Update the following packages:
+
+  * `Umbraco.Forms.Deploy`
+  * `Umbraco.Cms`
+  * `Umbraco.Deploy.Cloud`
+  * `Umbraco.Deploy.Contrib`
+  * `Umbraco.Forms`
+  * `Umbraco.Cloud.Cms`
+  * `Umbraco.Cloud.StorageProviders.AzureBlob`
+
+* Delete the `Licenses` folder and all `.lic` files within it.
+
+* _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
+  1. Locate and open the `appsettings.json` file (and any environment-specific variants).
+  2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
+
+  ```json
+  {
+    "Umbraco": {
+      "Licenses": {
+        "Products": {
+          "Umbraco.Deploy": "UMBRACO-CLOUD",
+          "Umbraco.Forms": "UMBRACO-CLOUD"
+        }
+      }
+    }
+  }
+  ```
+  
+  This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
+
+* _[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
+
+{% endtab %}
+
+{% tab title="Umbraco 15 and 16" %}
 Update the following packages:
 
 * `Umbraco.Forms.Deploy`
@@ -166,27 +203,6 @@ Update the following packages:
 {% hint style="info" %}
 Update all projects and packages in your solution to support the latest .NET.
 {% endhint %}
-
-6. [Optional] If using Deploy and Forms on Umbraco Cloud:
-
-<details>
-
-<summary>Upgrading to Umbraco 17</summary>
-
-Add the following section to your `appsettings.json` file (and any environment-specific variants):
-
-```json
-"Licenses": {
-  "Products": {
-    "Umbraco.Deploy": "UMBRACO-CLOUD",
-    "Umbraco.Forms": "UMBRACO-CLOUD"
-  }
-}
-```
-
-This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
-
-</details>
 
 ## Step 4: Finishing the Upgrade
 
