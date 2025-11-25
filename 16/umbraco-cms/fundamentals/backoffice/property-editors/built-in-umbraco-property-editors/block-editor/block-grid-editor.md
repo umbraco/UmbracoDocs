@@ -134,6 +134,10 @@ These properties refer to how the Block is presented in the Block catalogue, whe
 
 The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
 
+{% hint style="info" %}
+Configuring the catalogue appearance significantly improves the content editor experience. A well-designed block catalogue with custom colors and thumbnails makes it easier for editors to quickly identify and select the right blocks for their content.
+{% endhint %}
+
 ## Editing Blocks
 
 When viewing a **Block Grid** property editor in the **Content** section for the first time, you will be presented with the option to **Add content**.
