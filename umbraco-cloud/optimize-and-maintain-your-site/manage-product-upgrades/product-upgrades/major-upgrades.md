@@ -211,7 +211,7 @@ Update all projects and packages in your solution to support the latest .NET.
 3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
    * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Cloud-upgraded-version.png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
 {% hint style="warning" %}
 
