@@ -109,73 +109,64 @@ export class MyAsyncList extends UmbLitElement {
 }
 ```
 
-## Scenario 3: Using willUpdate()
+## Scenario 3: Using willUpdate() for Reactive Updates
 
-For reactive updates when dependent properties change:
+When you need to synchronize external changes to the sorter model:
 
 ```typescript
-@customElement('my-reactive-list')
-export class MyReactiveList extends UmbLitElement {
-    @property({ type: String })
-    public filter = '';
+interface UmbDomainPresentationModel {
+    unique: string;
+    domainName: string;
+    isoCode: string;
+}
 
-    @state()
-    private _allItems: ModelEntryType[] = [];
-
-    @state()
-    private _filteredItems: ModelEntryType[] = [];
-
+@customElement('my-async-list')
+export class MyAsyncList extends UmbLitElement {
     #sorter = new UmbSorterController<ModelEntryType, HTMLElement>(this, {
         getUniqueOfElement: (element) => element.getAttribute('data-id'),
         getUniqueOfModel: (model) => model.id,
         itemSelector: '.item',
         containerSelector: '.container',
         onChange: ({ model }) => {
-            // Update the filtered items
-            this._filteredItems = model;
-            // Also update the source if needed
-            this.#updateAllItems(model);
+            const oldValue = this._items;
+            this._items = model;
+            this.requestUpdate('_items', oldValue);
         },
     });
 
-    override willUpdate(changedProperties: PropertyValues) {
-        super.willUpdate(changedProperties);
+    @state()
+    private _items?: ModelEntryType[];
 
-        // Update filtered items when filter changes
-        if (changedProperties.has('filter') || changedProperties.has('_allItems')) {
-            this._filteredItems = this.#filterItems(this._allItems, this.filter);
-            // Update the sorter model
-            this.#sorter.setModel(this._filteredItems);
+    override willUpdate(changedProperties: PropertyValues) {
+        if (changedProperties.has('_items')) {
+            // Sync model whenever _items changes
+            this.#sorter.setModel(this._items);
         }
     }
 
-    #filterItems(items: ModelEntryType[], filter: string): ModelEntryType[] {
-        if (!filter) return [...items];
-        return items.filter(item => 
-            item.name.toLowerCase().includes(filter.toLowerCase())
-        );
+    #addItem() {
+        const newItem: ModelEntryType = {
+            id: crypto.randomUUID(),
+            name: `Item ${this._items.length + 1}`
+        };
+        this._items = [...this._items, newItem];
     }
 
-    #updateAllItems(sortedFiltered: ModelEntryType[]) {
-        // Merge sorted filtered items back into all items
-        // This is application-specific logic
+    #removeItem(item: ModelEntryType) {
+        this._items = this._items.filter(i => i.id !== item.id);
     }
 
     override render() {
         return html`
-            <input 
-                type="text" 
-                .value=${this.filter}
-                @input=${(e: Event) => this.filter = (e.target as HTMLInputElement).value}
-                placeholder="Filter items...">
-            
+            <button @click=${this.#addItem}>Add Item</button>
             <div class="container">
                 ${repeat(
-                    this._filteredItems,
+                    this._items,
                     (item) => item.id,
                     (item) => html`
                         <div class="item" data-id=${item.id}>
                             ${item.name}
+                            <button @click=${() => this.#removeItem(item)}>Remove</button>
                         </div>
                     `
                 )}
@@ -184,6 +175,12 @@ export class MyReactiveList extends UmbLitElement {
     }
 }
 ```
+
+**Why use `willUpdate()`?**
+- Centralizes model synchronization in one place
+- Automatically syncs whenever `_items` changes
+- Works for adds, removes, and external updates
+- Cleaner than calling `setModel()` in every method that modifies `_items`
 
 ## Scenario 4: Manual Item Management
 
