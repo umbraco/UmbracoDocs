@@ -176,15 +176,15 @@ If you _need_ to run Umbraco without HTTPS, make sure to update `appsettings.jso
 
 **Authentication for the backoffice client**
 
-Following [this draft RFC from IETF](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps), the backoffice client authentication has been changed to tighten security.
+Following this draft [Request for Comments (RFC) from the Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps), the backoffice client authentication has been changed to tighten security.
 
-This change _only_ affects the backoffice client authentication against the Management API. API user authentication against the Management API remains unaffected, as does the Delivery API.
+This change affects  _only_ the backoffice client authentication against the Management API. API user authentication against the Management API remains unaffected, as does the Delivery API.
 
 This change _might_ affect custom backoffice extensions that interact with the Management API. All fetch requests to the Management API must include credentials by declaring `credentials: 'include'`.
 
 By default, backoffice extensions built using the HQ package starter template are not affected.
 
-For more details on this update see the following PRs: [#20779](https://github.com/umbraco/Umbraco-CMS/pull/20779) and [#20820](https://github.com/umbraco/Umbraco-CMS/pull/20820).
+For more details on this update, see the following PRs: [#20779](https://github.com/umbraco/Umbraco-CMS/pull/20779) and [#20820](https://github.com/umbraco/Umbraco-CMS/pull/20820).
 
 **Updated dependencies**
 
