@@ -12,46 +12,37 @@ To use a Property Editor in your content, you create a Data Type. A Data Type co
 
 A Property Editor consists of two independent parts that work together: a backend schema definition and a frontend UI component.
 
-### Backend: Property Editor Schema
+### Property Editor Schema - the backend part
 
 The Property Editor Schema defines the data contract and server-side processing rules. It specifies the database storage type, provides server-side validation, and handles data conversion between the UI and database. Property Editor Schemas are implemented in C# on the server side.
 
 The schema has the final authority on data validation. Client-side validation provides immediate feedback, but server-side validation always runs regardless of which UI is used. The schema ensures data integrity and defines what constitutes valid data for storage.
 
-### Frontend: Property Editor UI
+### Property Editor UI - the frontend part
 
 The Property Editor UI is the visual interface content editors interact with in the backoffice. It renders the input controls, provides client-side validation, and displays user feedback. Property Editor UIs are built using web components.
 
 The UI component can be replaced without affecting stored data as long as the same schema is used. This allows different editing experiences while maintaining the same underlying data structure and validation rules.
+
+### Property Editor settings
+Property Editors can optionally have settings that influence the behaviour of the Property Editor. 
 
 ### Separation of Concerns
 This architectural separation provides flexibility. Multiple UIs can use the same schema with different visual presentations. The same schema can serve different purposes through different UI implementations.
 
 The schema ensures data integrity independent of the UI implementation. You can swap the UI component for a schema without migration or data loss. New UI technologies can be adopted while preserving existing schemas and stored data.
 
-![Property Editor architecture showing Schema and UI separation](images/property-editor-architecture.jpg)
+![Property Editor architecture showing Schema and UI separation](images/property-editor-simplified-flow.jpg)
 
-**NOTE: CREATE SCHEMA HERE: UI → Management API → Schema → Database**
+### Data Types: Configuring Property Editors
+A Data Type is a configured instance of a Property Editor that you create in the Umbraco backoffice. A Data Type is the entity that you add to your content pages for editors to work with. With Data Types you can create one or multiple instances of the same Property Editor with different settings. This means that when users are editing content, the Data Type knows what UI element to display and what settings to use. And when content gets saved, the Data Type knows how it needs to process this data. This is because the Data Type know the alias of the Property Editor UI, the alias of the Property Editor Schema and the settings as set on the Data Type instance.
 
----
-Data Types: Connecting UI and Schema
-A Data Type is where you configure and connect a Property Editor UI with a Property Editor Schema for actual use.
-When you create a Data Type, you:
-1.	Select a Property Editor Schema (defines what data can be stored)
-2.	Select a Property Editor UI (defines how editors interact with it)
-3.	Configure settings for both (validation rules, UI options, etc.)
-images/property-editor-datatype-connection.jpg
-Example:
-•	Schema: Umbraco.TextBox (stores strings with optional max length validation)
-•	UI Options:
-•	Umb.PropertyEditorUi.TextBox (single-line input)
-•	Umb.PropertyEditorUi.TextArea (multi-line input)
-•	Data Types You Could Create:
-•	"Page Title" (TextBox schema + single-line UI, max 60 chars)
-•	"Meta Description" (TextBox schema + multi-line UI, max 160 chars)
-•	"Article Summary" (TextBox schema + multi-line UI, max 500 chars)
-Same schema, different UIs and configurations, different purposes.
----
+Take the __Text Box__ Property Editor for example. It has a setting for 'Maximum allowed characters'. You can create muliple Data Types using the Text Box Property Editor with different settings, based on what is needed. 
+
+## When to build what
+
+
+
 Configuration & Settings
 Both Property Editor Schemas and Property Editor UIs can define configuration settings:
 Schema Settings
