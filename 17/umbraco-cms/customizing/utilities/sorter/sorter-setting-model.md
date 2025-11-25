@@ -114,12 +114,6 @@ export class MyAsyncList extends UmbLitElement {
 When you need to synchronize external changes to the sorter model:
 
 ```typescript
-interface UmbDomainPresentationModel {
-    unique: string;
-    domainName: string;
-    isoCode: string;
-}
-
 @customElement('my-async-list')
 export class MyAsyncList extends UmbLitElement {
     #sorter = new UmbSorterController<ModelEntryType, HTMLElement>(this, {
