@@ -69,7 +69,7 @@ export class MyAsyncList extends UmbLitElement {
         },
     });
 
-    async connectedCallback() {
+    override async connectedCallback() {
         super.connectedCallback();
         await this.#loadData();
     }
