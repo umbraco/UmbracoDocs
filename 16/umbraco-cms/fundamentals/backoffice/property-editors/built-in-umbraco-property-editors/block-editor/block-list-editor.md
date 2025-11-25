@@ -24,7 +24,7 @@ Then you will see the configuration options for a Block List as shown below.
 
 The Data Type editor allows you to configure the following properties:
 
-* **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
+* **Available Blocks** - Here you will define the Block Types to be available for use in the property. For more information, see [Setup Block Types](block-list-editor.md#setup-block-types).
 * **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the list.
 * **Single block mode** - When in Single block mode, the output will be `BlockListItem<>` instead of `BlockListModel`
 * **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
