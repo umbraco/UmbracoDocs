@@ -16,7 +16,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
-### [13.8.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.8.0) (November 27th 2025)
+### [13.8.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.8.0) (November 27th 2025)
 * Umbraco CMS dependency updated to 13.12.0
 * Razor email templates now format URLs as `UrlMode.Absolute` [#1414](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1414)
 * File Upload field now includes `class` attribute [#1495](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1495)
