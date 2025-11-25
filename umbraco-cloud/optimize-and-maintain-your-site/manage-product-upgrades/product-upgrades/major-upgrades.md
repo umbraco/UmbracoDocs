@@ -115,7 +115,9 @@ Delete the `<PackageReference>` entries for these packages.
   * `Umbraco.Cloud.Cms`
   * `Umbraco.Cloud.StorageProviders.AzureBlob`
 
-* If using Deploy and Forms on Umbraco Cloud:
+* Delete the `Licenses` folder and all `.lic` files within it.
+
+* _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
   1. Locate and open the `appsettings.json` file (and any environment-specific variants).
   2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
 
@@ -133,8 +135,6 @@ Delete the `<PackageReference>` entries for these packages.
   ```
   
   This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
-
-* Delete the `Licenses` folder and all `.lic` files within it.
 
 * _[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
 
