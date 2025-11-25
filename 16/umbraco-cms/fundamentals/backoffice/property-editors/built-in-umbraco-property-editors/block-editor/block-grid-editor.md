@@ -335,6 +335,29 @@ If you do not want to use Partial Views, you can access the block item data dire
 ```
 {% endcode %}
 
+## Using Block Grid with the Delivery API
+
+When using Block Grid in a headless scenario with the [Content Delivery API](../../../../../reference/content-delivery-api/README.md), the property outputs a structured JSON representation instead of rendered HTML.
+
+The JSON structure includes:
+
+* `gridColumns` - The number of columns configured for the grid (typically 12)
+* `items` - An array of block items, each containing:
+  * `content` - The block's content data
+  * `settings` - The block's settings data (if configured)
+  * `rowSpan` and `columnSpan` - Layout dimensions for the block
+  * `areaGridColumns` - Number of columns for nested areas
+  * `areas` - Array of nested areas within the block, each containing their own items
+
+Your frontend application is responsible for:
+
+* Parsing the grid layout structure
+* Implementing CSS Grid or an equivalent layout system
+* Rendering blocks recursively to handle nested areas
+* Handling responsive behavior
+
+For detailed information about the JSON structure and property expansion options, see [Property expansion and limiting](../../../../../reference/content-delivery-api/property-expansion-and-limiting.md#block-grid).
+
 ## Write a Custom Layout Stylesheet
 
 The default layout stylesheet is using CSS Grid. This can be modified to fit your implementation and your project.
