@@ -23,12 +23,13 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 **System dates are updated to UTC**
 
-In earlier versions of Umbraco, system dates have been primarily persisted as server time without timezone information, with some stored as UTC. With Umbraco 17, system dates are now always stored in UTC.
+In earlier versions of Umbraco, system dates have been primarily persisted as server time without time zone information, with some stored as UTC. With Umbraco 17, system dates are now always stored in UTC.
 
 To ensure that existing stored system dates align, a migration will run when upgrading to Umbraco 17.
 
 The migration consists of:
-- Determining the current timezone for the server.
+
+- Determining the current time zone for the server.
 - If a time zone is detected and it is not already UTC, database queries will update all system dates previously stored as server time to UTC.
 
 There is configuration available to customize this migration.
@@ -45,7 +46,7 @@ Adding the following configuration setting will disable the migration from runni
   }
 ```
 
-You can also explicitly define the timezone for your server. If this is provided as the standard English name of the timezone, it will be used over the detected one.
+You can also explicitly define the time zone for your server. If this is provided as the standard English name of the time zone, it will be used over the detected one.
 
 ```json
   "Umbraco": {
@@ -61,28 +62,47 @@ Progress of the migration is written to the Umbraco log file.
 
 For more details on this update see the following PRs: [#19705](https://github.com/umbraco/Umbraco-CMS/pull/19705), [#19798](https://github.com/umbraco/Umbraco-CMS/pull/19798), and [#20112](https://github.com/umbraco/Umbraco-CMS/pull/20112).
 
-**InMemoryAuto models builder and razor runtime compilation has moved into its own package**
+**InMemoryAuto models builder and Razor runtime compilation have moved into their own package**
 
-`InMemoryAuto` models builder has been moved into a new package `Umbraco.Cms.DevelopmentMode.Backoffice` along with the reference to `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` and associated code.
+The `InMemoryAuto` models builder and the Umbraco feature that uses Razor runtime compilation (`Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation`) have been moved to a separate package: `Umbraco.Cms.DevelopmentMode.Backoffice`.
 
-This change was made due to the [obsoletion of Razor run-time compilation in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete). `InMemoryAuto` depends on Razor run-time compilation, which is not compatible with Hot Reload. As long as `InMemoryAuto` exists in the codebase, Hot Reload cannot be enabled. To work towards making Hot Reload the default developer experience, `InMemoryAuto` has been moved into its own package..
+*Why was this change made?*
 
-If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package.
+[Razor runtime compilation is obsolete in .NET](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/razor-runtime-compilation-obsolete) and prevents Hot Reload from working. Since `InMemoryAuto` depends on Razor runtime compilation, keeping it in the core would prevent Hot Reload from working.
 
-If using models builder with one of the source code modes (that is, not `InMemoryAuto`), you do not need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. However, ensure the following settings are removed from your `.csproj` file:
+By moving `InMemoryAuto` to its own package, Umbraco can enable Hot Reload by default for a better development experience.
 
-```
+*When you need to reference `Umbraco.Cms.DevelopmentMode.Backoffice`*?
+
+Add the package if any of the following apply:
+
+1. You use `InMemoryAuto` models builder
+    * Explicitly selecting `InMemoryAuto`
+    * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
+  
+2. You rely on Razor runtime compilation to edit templates via the backoffice.
+3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
+
+*When you do not need the package*?
+
+You don’t need to reference it if you use Models Builder in a source-code mode, such as:
+
+* `AppData`
+* `SourceCodeAuto`
+* `SourceCodeManual`
+
+These modes do not rely on Razor runtime compilation. However, ensure the following settings are removed from your `.csproj` file:
+
+```xml
 <RazorCompileOnBuild>false</RazorCompileOnBuild>
 <RazorCompileOnPublish>false</RazorCompileOnPublish>
 ```
 
-If you use the RoslynCompiler class in Umbraco, you need to reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package and update your namespace usings.
+*Additional notes*
 
-If you use the `ModelsMode` enum or its extension methods, you instead need to use the strings in `Constants.ModelsBuilder.ModelsModes`.
+If you use the `ModelsMode` enum or its extension methods, use the string constants in `Constants.ModelsBuilder.ModelsModes` instead.
 
-For new projects, this reference is added automatically if the `--models-mode`, is set to the default of InMemoryAuto, otherwise it won't.
-
-For more details on this update see the following PR: [#20187](https://github.com/umbraco/Umbraco-CMS/pull/20187).
+For more details on this update, see [PR #20187](https://github.com/umbraco/Umbraco-CMS/pull/20187).
 
 **Date Picker Property Editor Kind**
 
@@ -92,13 +112,13 @@ For more details on this update see the following PR: [#19727](https://github.co
 
 **Color Picker Property Editor**
 
-The color picker property editor used for the built-in approved color Data Type will now always make available a `PickedColor` object. Previously this was only output when labels were configured on the Data Type. Without labels the previous behavior was to expose a `string`.
+The color picker property editor used for the built-in approved color Data Type will now always make available a `PickedColor` object. Previously, this was only output when labels were configured on the Data Type. Without labels the previous behavior was to expose a `string`.
 
 For more details on this update see the following PR: [#19430](https://github.com/umbraco/Umbraco-CMS/pull/19430).
 
 **Segmented Content Fallback**
 
-The template and delivery API output segmented properties will perform an explicit fallback to the default segment, if they do not have a value.
+The Template and Delivery API output for segmented properties will perform an explicit fallback to the default segment, if they do not have a value.
 
 In earlier versions, if you created a segmented version of a document, you had to complete every property. This made segments an editorial burden unless the behavior was customized. With the new behavior, segmented content now only needs to have the properties that require a segmented value completed.
 
@@ -160,7 +180,7 @@ For more details on this update see the following PR: [#20125](https://github.co
 
 URL providers are now responsible for generating content preview URLs. To achieve this, the `IUrlProvider` interface has been extended with the `GetPreviewUrlAsync()` method.
 
-The `IUrlProvider` interface must also provide a system-wide unique `Alias`.
+The `IUrlProvider` interface must also provide a unique system-wide `Alias`.
 
 Lastly, the `UrlInfo` class has been revamped to support this setup.
 
@@ -174,16 +194,31 @@ The default value of the `UseHttps` configuration in [Global Settings](../../../
 
 If you _need_ to run Umbraco without HTTPS, make sure to update `appsettings.json` accordingly.
 
+**Authentication for the backoffice client**
+
+Following the draft [Request for Comments (RFC) from the Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps), the backoffice client authentication has been changed to tighten security.
+
+This change affects  _only_ the backoffice client authentication against the Management API. API user authentication against the Management API remains unaffected, as does the Delivery API.
+
+This change _might_ affect custom backoffice extensions that interact with the Management API. All fetch requests to the Management API must include credentials by declaring `credentials: 'include'`.
+
+By default, backoffice extensions built using the HQ package starter template are not affected.
+
+For more details on this update, see the following PRs: [#20779](https://github.com/umbraco/Umbraco-CMS/pull/20779) and [#20820](https://github.com/umbraco/Umbraco-CMS/pull/20820).
+
 **Updated dependencies**
 
 As is usual for a major upgrade, Umbraco’s dependencies have been updated to their latest compatible versions.
 
-NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some change.
+NPoco was updated by a major version from 5.7.1 to 6.1.0. There were some changes to Umbraco code necessary after this update, so customer projects or packages that use NPoco directly may also require some changes.
+
+Swashbuckle was updated to a new major version 10.0.1. If you are using this library to provide a Swagger document in your package or project, changes around namespaces, nullability, and types will be encountered.
 
 The other specific dependency updates made for Umbraco 17 for server and client-side libraries can be found in these PRs:
 
 - [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
 - [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
+- [#20925](https://github.com/umbraco/Umbraco-CMS/pull/20925)
 
 **Other breaking changes**
 
