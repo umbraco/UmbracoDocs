@@ -383,7 +383,7 @@ A common use case is to configure `CleanSchema` on local/development environment
 
 When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
 
-For Umbraco 10, by default, a SQLite database is created.
+The default CMS database provider for new installs is SQLite (since version 10).
 
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 
