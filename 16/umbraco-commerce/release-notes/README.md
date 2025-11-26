@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 16 including all ch
 
 #### [16.5.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.5.0) (Nov 26th 2025)
 
-* Added links to top selling product analytics widget.
+* Added links to the top-selling product analytics widget.
 * Added discounts over time analytics widget.
 * Added popular discount codes analytics widget.
 * Added links from orders to/from gift cards where a gift card was purchased as part of an order.
