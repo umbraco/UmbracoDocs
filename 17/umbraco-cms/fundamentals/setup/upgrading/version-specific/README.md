@@ -77,8 +77,8 @@ By moving `InMemoryAuto` to its own package, Umbraco can enable Hot Reload by de
 Add the package if any of the following apply:
 
 1. You use `InMemoryAuto` models builder
-  * Explicitly selecting `InMemoryAuto`
-  * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
+    * Explicitly selecting `InMemoryAuto`
+    * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
   
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
