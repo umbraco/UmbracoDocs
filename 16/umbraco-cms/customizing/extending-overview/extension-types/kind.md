@@ -32,7 +32,7 @@ Properties:
 
 - `type` is 'kind', registering it as a Kind extension.
 - `matchType` is 'headerApp', targeting Header App extensions.
-- `matchKind` is 'button', serving as the Kind's alias. 
+- `matchKind` is 'button', serving as the Kind's alias.
 - The `manifest` holds default properties, like `elementName`, for inheritance.
 
 ```typescript
@@ -74,40 +74,149 @@ Here, the extension uses `kind: 'button'` to inherit `elementName`. It also adds
 
 ## Custom Kind Example
 
-The code below demonstrates how to create a custom kind and then use it to create a header button app.
+The code below demonstrates how to create a custom kind. This `Kind` extension will allow extension developers to display welcome messages in the header that will greet backoffice users.
+
+<figure><img src="../../../.gitbook/assets/kind-custom-header-app.png" alt="" width="401"><figcaption><p>Custom Header App Created Using a Kind</p></figcaption></figure>
+
+### Create the Kind Extension
+
+Start by defining and registering a new Kind extension. Select a unique name for the `matchKind` and `manifest.elementName` properties.
 
 {% code title="kinds/manifests.ts" %}
 ```typescript
-import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
-
-export const customHeaderAppButton: UmbExtensionManifestKind = {
-  type: 'kind',
-  alias: 'Umb.Kind.MyButtonKind', 
-  matchType: 'headerApp', 
-  matchKind: 'customHeaderAppButton', 
-  manifest: {
-    elementName: 'umb-header-app-button',
-  },
+export const welcomeHeaderAppMessage: UmbExtensionManifestKind = {
+    type: "kind",
+    alias: "Umb.Kind.HeaderAppMessage", // Unique alias for the Kind
+    matchType: "headerApp", // Applies to Header App extensions
+    matchKind: "welcomeHeaderAppMessage", // Defines the Kind alias
+    manifest: {
+        // Add default properties for the 'button' Kind
+        elementName: "welcome-header-app-message",
+    },
 };
 ```
 {% endcode %}
 
-This code registers the Button Kind. Other Header App extensions using `type: 'headerApp'` and `kind: 'customHeaderAppButton'` will inherit the preset `elementName: 'umb-header-app-button'`.
+### Create a Custom Component for `welcome-header-app-message`
 
-Another Header App extension can be created without defining `elementName`. It automatically inherits this property from the Kind.
+Create a custom component to render our welcome message out to the backoffice user. The `manifest.elementName` property in the kind manifest should match the value of `@customElement` and `declare global { ...` declarations.
 
-{% code title="header-button/manifests.ts" %}
+{% code title="kinds/welcome-header-app-message.ts" %}
 ```typescript
-const manifest = {
-	type: 'headerApp', 
-	kind: 'customHeaderAppButton', 
-	name: 'My Header App Example',
-	alias: 'My.HeaderApp.Example',
-	meta: {
-		label: 'My Example',
-		icon: 'icon-home',
-		href: '/some/path/to/open/when/clicked',
-	},
+import {
+  html,
+  customElement,
+  property,
+} from "@umbraco-cms/backoffice/external/lit";
+import { LitElement } from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import type { ManifestHeaderApp } from "@umbraco-cms/backoffice/extension-registry";
+
+// Define a TypeScript interface for your specific manifest structure
+// This ensures strict typing for 'meta.message'
+export interface ManifestHeaderAppMessage extends ManifestHeaderApp {
+  meta: {
+    message: string;
+  };
+}
+
+@customElement("welcome-header-app-message")
+export class UmbHeaderAppMessageElement extends UmbElementMixin(LitElement) {
+  // The Umbraco extension renderer will automatically set this property
+  @property({ attribute: false })
+  manifest?: ManifestHeaderAppMessage;
+
+  render() {
+    return html`
+      <div
+        style="color: white; font-weight: bold; padding: 0 16px; display: flex; align-items: center; font-weight: bold;"
+      >
+        ${this.manifest?.meta.message ?? "No message defined"}
+      </div>
+    `;
+  }
+}
+
+export default UmbHeaderAppMessageElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "welcome-header-app-message": UmbHeaderAppMessageElement;
+  }
+}
+```
+{% endcode %}
+
+### Derive Header Apps Using the Custom Kind Extension
+
+Use the previously defined `Kind` extension, `welcomeHeaderAppMessage` to create messages to display to the user for each day of the week. Properties such as `manifest.elementName` that are defined in the `welcomeHeaderAppMessage` kind extension will fall through to derived extensions. These properties do not need to be redefined in extensions that inherit from the `welcomeHeaderAppMessage` kind.
+
+* For each derived extension, the `kind` property must match the `matchKind` property on `welcomeHeaderAppMessage`.
+* The `type` property must also match the `matchType` property on `welcomeHeaderAppMessage`.
+* Use `element` to import the custom component.
+
+{% code title="kinds/manifests.ts" %}
+```typescript
+// ...
+
+export const wednesdayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Wednesday Message Header App",
+    alias: "My.HeaderApp.WednesdayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy wonderful Wednesday",
+    },
+};
+
+export const thursdayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Thursday Message Header App",
+    alias: "My.HeaderApp.ThursdayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy thunderous Thursday",
+    },
+};
+
+export const fridayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Friday Message Header App",
+    alias: "My.HeaderApp.FridayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy funky Friday",
+    },
+};
+```
+{% endcode %}
+
+### Register the Derived Extension
+
+Use any standard practice to register the derived extension, in this case `thursdayWelcomeMessageHeaderAppInstance` is registered dynamically in an entrypoint.
+
+{% code title="entrypoints/entrypoints.ts" %}
+```typescript
+import type {
+    UmbEntryPointOnInit,
+    UmbEntryPointOnUnload,
+} from "@umbraco-cms/backoffice/extension-api";
+import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
+import {
+    thursdayWelcomeMessageHeaderAppInstance,
+} from "../kinds/manifests";
+
+export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+    console.log("Hello from my extension 🎉");
+
+    umbExtensionsRegistry.register(thursdayWelcomeMessageHeaderAppInstance);
+};
+
+export const onUnload: UmbEntryPointOnUnload = (_host, _extensionRegistry) => {
+    console.log("Goodbye from my extension 👋");
 };
 ```
 {% endcode %}
