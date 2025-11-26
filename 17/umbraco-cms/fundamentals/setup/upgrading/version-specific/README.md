@@ -72,19 +72,18 @@ The `InMemoryAuto` models builder and the Umbraco feature that uses Razor runtim
 
 By moving `InMemoryAuto` to its own package, Umbraco can enable Hot Reload by default for a better development experience.
 
-*When you need to reference `Umbraco.Cms.DevelopmentMode.Backoffice`*
+*When you need to reference `Umbraco.Cms.DevelopmentMode.Backoffice`*?
 
 Add the package if any of the following apply:
 
 1. You use `InMemoryAuto` models builder
-
   * Explicitly selecting `InMemoryAuto`
   * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
   
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
 
-*When you do not need the package*
+*When you do not need the package*?
 
 You don’t need to reference it if you use Models Builder in a source-code mode, such as:
 
