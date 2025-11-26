@@ -69,10 +69,10 @@ The example below creates a State and exposes the entire value via an Observable
 
 <strong>this.observe(
 </strong>	this.selection,
-	(selection) => {
-		// This call will be executed initially and on each state change.
-		console.log(selection)
-	}
+    (selection) => {
+        // This call will be executed initially and on each state change.
+        console.log(selection)
+    }
 );
 </code></pre>
 
@@ -166,4 +166,4 @@ This example will result in the following logs:
 > length: 3
 </code></pre>
 
-The `length` observation was triggered when the length actually differed.
+The `length` observation was triggered when the length differed.

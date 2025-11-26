@@ -166,4 +166,4 @@ This example will result in the following logs:
 > length: 3
 </code></pre>
 
-The `length` observation was triggered when the length actually differed.
+The `length` observation was triggered when the length differed.

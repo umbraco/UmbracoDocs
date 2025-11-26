@@ -8,7 +8,7 @@ Umbraco extension authors can place their extension in the top-level navigation 
 
 Within the section, authors can add menus, section views, workspace views, or any other content or interface they desire.
 
-<figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/section (1).svg" alt=""><figcaption><p>Section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/section.svg" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Creating a section**
 
@@ -36,17 +36,13 @@ To enable custom sections for backoffice users, site administrators must first a
 
 To grant access to the custom section, open the Umbraco backoffice, navigate to the **Users** section, and select the **User groups** menu item. Site administrators can create a new user group or modify an existing one.
 
-Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the slide-out modal to enable access.
+Once the user group is open, click the **Choose** button under the Sections section. Select the custom section from the  slide-out modal to enable access.
 
-<figure><img src="../../../../../../17/umbraco-cms/.gitbook/assets/sections-assigning (1).png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/sections-assigning.png" alt=""><figcaption><p>Enabling new Sections</p></figcaption></figure>
 
 After assigning permission, users may need to reload the backoffice for the changes to take effect.
 
-<figure><img src="../../../../../../15/umbraco-cms/.gitbook/assets/section-empty (1).png" alt=""><figcaption><p>Section</p></figcaption></figure>
-
-### **Entry points**
-
-When creating a new section, create an [Entry Point](../backoffice-entry-point.md) extension in the [Umbraco Package Manifest](../../../umbraco-package.md) to complement it. Entry Point extensions add initialization and teardown lifecycle events that may be helpful in coordinating behavior inside the section.
+<figure><img src="../../../../.gitbook/assets/section-empty.png" alt=""><figcaption><p>Section</p></figcaption></figure>
 
 ## **Extend with Sidebar, Dashboards, and more**
 
@@ -56,9 +52,7 @@ Section authors can also skip Umbraco backoffice components and build a fully cu
 
 ### **Manifest with empty element**
 
-{% hint style="warning" %}
-This approach is not recommended because it restricts content to a single element. Instead, use a Dashboard or Section View.
-{% endhint %}
+Using a manifest with only an element is not recommended if you are shipping this as a package. This approach limits the Section to a single element. Instead, use a Dashboard or Section View for your main view, which allows additional Dashboards or Section Views to be added to the Section.
 
 {% code title="manifests.ts" %}
 ```typescript
@@ -75,4 +69,5 @@ const section : UmbExtensionManifest = {
 ```
 {% endcode %}
 
-The element file must contain an `element`, a `default` export, or specify the element name in the `elementName` field.
+The element file must contain an `element`, a `default` export, or specify the element name in the
+`elementName` field.

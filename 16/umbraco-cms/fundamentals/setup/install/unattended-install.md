@@ -141,4 +141,4 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 
 ### Visual Studio
 
-<figure><img src="../../../../../15/umbraco-cms/.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>

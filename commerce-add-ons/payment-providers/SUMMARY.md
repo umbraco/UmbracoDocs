@@ -76,6 +76,8 @@
 ## Worldpay
 
 * [Overview](worldpay/README.md)
+* [Configure Worldpay](worldpay/configuring-worldpay.md)
+* [Configure Umbraco](worldpay/configuring-umbraco.md)
 * [Release Notes](worldpay/release-notes.md)
 
 ## Buckaroo

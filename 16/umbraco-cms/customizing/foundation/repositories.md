@@ -24,7 +24,7 @@ Repositories can use different data sources depending on the state of the applic
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
-<figure><img src="../../../../15/umbraco-cms/.gitbook/assets/data-flow (1).svg" alt=""><figcaption><p>Data flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/data-flow.svg" alt=""><figcaption><p>Data flow</p></figcaption></figure>
 
 A repository must be instantiated in the context where it is used. It should take a host element as part of the constructor. This ensures that any contexts consumed in the repository, like notifications or modals, are rendered in the correct DOM context.
 
