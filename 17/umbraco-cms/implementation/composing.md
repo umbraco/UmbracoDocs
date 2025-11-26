@@ -170,7 +170,6 @@ Below is a list of collections with their corresponding 'collection type' and ho
 | PartialViewSnippets            | Lazy     | Explicit Registration. Reads .cshtml files from `Umbraco.Cms.Core.EmbeddedResources.Snippets` assembly |
 | PropertyValueConverters        | Ordered  | Type scanned for `IPropertyValueConverter`                     |
 | RuntimeModeValidators          | Set      | Explicit Registration                                          |
-| SearchableTrees                | Lazy     | Type scanned for `ISearchableTree`                             |
 | Sections                       | Ordered  | Package.manifest & Explicit Registration                       |
 | SelectorHandlers               | Lazy     | Type scanned for `ISelectorHandler`                            |
 | SortHandlers                   | Lazy     | Type scanned for `ISortHandler`                                |

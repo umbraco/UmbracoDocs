@@ -7,7 +7,6 @@ description: >-
 # Provide a Context
 
 ## Provide a Context API
-
 The recommended approach is to base your Context API on the `UmbContextBase` class, which provides automatic context registration. The following example shows how it's used:
 
 ```typescript

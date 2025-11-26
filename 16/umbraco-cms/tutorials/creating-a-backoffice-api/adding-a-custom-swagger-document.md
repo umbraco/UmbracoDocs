@@ -66,3 +66,7 @@ public class MyItemApiController : ManagementApiControllerBase
 Now when we visit the Swagger UI, "My item API" has its own Swagger document:
 
 ![My item API in Swagger UI](images/my-item-api-swagger-ui.png)
+
+{% hint style="info" %}
+Swagger UI sometimes has persistent caching, which can prevent the new definition from appearing immediately. If this happens, disable caching in the **Network** tab of your browser's developer tools.
+{% endhint %}

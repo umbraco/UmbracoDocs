@@ -16,6 +16,20 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.0.0-rc3 (November 20th 2025)
+
+* Update dependencies to 17.0.0-rc3
+* Fix issue where "Save and preview" modal would flash with no content
+* Fix bug that showed "Empty due to Umbraco Forms in trial mode" for entries even with a valid license
+
+### 17.0.0-rc2 (November 13th 2025)
+
+* Update dependencies to 17.0.0-rc2
+
+### 17.0.0-rc1 (October 30th 2025)
+
+* Update dependencies to 17.0.0-rc1
+
 ## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/12/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).

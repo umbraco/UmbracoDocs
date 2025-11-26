@@ -16,7 +16,7 @@ Your package needs to live up to the following requirements to be listed on the 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
 {% hint style="warning" %}
-Please only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
+Only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
 {% endhint %}
 
 ## Additional Package Information
@@ -113,7 +113,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 | **AuthorDetails.ImageUrl**                       | String value     | A URL to a headshot or avatar image for the package developer (`.png` or `.jpg`). To use an existing GitHub avatar, use `https://github.com/{username}.png`                                                                                                                                                                                                                                                                         |
 | **AuthorDetails.Contributors**                   | Array of objects | A collection of key contributors can also be provided, each having a required name and an optional URL.                                                                                                                                                                                                                                                                                                                             |
 | **AuthorDetails.SyncContributorsFromRepository** | Boolean value    | If contributors are not explicitly provided, a GitHub repository is available in the 'RepositoryUrl' of the NuGet package. This option is set to `true`; the contributors will be synchronized from the GitHub repo.                                                                                                                                                                                                                |
-| **Category**                                     | String value     | The name of a single category as defined on the marketplace website. The package will be displayed under this category on the website.                                                                                                                                                                                                                                                                                              |
+| **Categories**                                   | String value     | The name of a single category as defined on the marketplace website. The package will be displayed under this category on the website.                                                                                                                                                                                                                                                                                              |
 | **Description**                                  | String value     | The package description. If omitted, the Description defined in the NuGet package details will be used. A short paragraph of text is recommended.                                                                                                                                                                                                                                                                                   |
 | **DocumentationUrl**                             | String value     | A URL to a the documentation related to the package.                                                                                                                                                                                                                                                                                                                                                                                |
 | **DiscussionForumUrl**                           | String value     | A URL to a discussion forum related to the package.                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -254,7 +254,7 @@ This endpoint is throttled such that only one request a minute can be made per p
 
 ## Feedback
 
-If you run into any issues with listing your package, please file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
+If you run into any issues with listing your package, file an issue on the [Issue Tracker](https://github.com/umbraco/Umbraco.Marketplace.Issues/issues/).
 
 We will periodically send details of updates made to registered package developers.
 

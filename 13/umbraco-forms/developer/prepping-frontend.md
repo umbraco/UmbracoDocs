@@ -41,7 +41,7 @@ You can use this to apply `async` or `defer` attributes. For example:
 @Html.RenderUmbracoFormDependencies(Url, new { @async = "async" })
 ```
 
-If using `async`, please make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
+If using `async`, make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
 
 ## Validation Using jQuery
 

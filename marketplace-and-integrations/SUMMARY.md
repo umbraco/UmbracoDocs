@@ -5,12 +5,13 @@
 
 ## Commercial products
 
-* [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
-* [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
-* [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce)
-* [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/)
+* [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
 * [Umbraco Engage](https://docs.umbraco.com/umbraco-engage)
+* [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
+* [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/)
+* [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
+* [Configure Licenses](configure-licenses.md)
 * [Commercial Products, Relations and dependencies](commercial-product-dependencies.md)
 
 ## Marketplace

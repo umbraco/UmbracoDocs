@@ -1,17 +1,19 @@
+---
+description: Bulk Entity Actions perform an action on a selection of items.
+---
+
 # Entity Bulk Actions
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-**Entity Bulk Action:** Relates to an entity type: document, media, etc. Performs the action on a selection of items.
+Extension authors can register an entity bulk action to appear in the collection selection toolbar.
 
 <figure><img src="../../../.gitbook/assets/entity-bulk-action-collection-menu.svg" alt=""><figcaption><p>Entity Bulk Collection</p></figcaption></figure>
 
 ## Registering an Entity Bulk Action <a href="#registering-an-entity-bulk-action" id="registering-an-entity-bulk-action"></a>
 
+Entity Bulk Action extensions can be included by importing a subclass of `UmbEntityBulkActionBase` to the `api` property. Placement within the backoffice can be controlled using the conditions property.
+
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 import { MyEntityBulkAction } from './entity-bulk-action';
 
 const manifest = {
@@ -23,7 +25,6 @@ const manifest = {
  meta: {
   icon: 'icon-add',
   label: 'My Entity Bulk Action',
-  repositoryAlias: 'My.Repository',
  },
  conditions: [
   {
@@ -33,25 +34,49 @@ const manifest = {
  ],
 };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 
 ## The Entity Bulk Action Class <a href="#the-entity-bulk-action-class" id="the-entity-bulk-action-class"></a>
 
-As part of the Extension Manifest you can attach a class that will be instantiated as part of the action. It will have access to the host element, a repository with the given alias and the unique (key etc) of the entity. When the action is clicked the `execute` method on the api class will be run. When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+Entity Bulk Action extensions inherit from `UmbEntityBulkActionBase`, which expects the extension author to provide an implementation of `execute()`. The `UmbEntityBulkActionBase` class provides `this.selection` as a property, which contains a list of uniques from the content nodes that were selected by the user.
+
+When the action is completed, an event on the host element will be dispatched to notify any surrounding elements.
+
+{% hint style="info" %}
+This code sample demonstrates overriding the constructor, which could be helpful in certain circumstances, such as consuming contexts. Extension authors can safely omit the constructor if no such need exists.
+{% endhint %}
 
 ```typescript
-import { UmbEntityBulkActionBase } from '@umbraco-cms/entity-action';
-import { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
-import { MyRepository } from './my-repository';
+import {
+    UmbEntityBulkActionBase,
+    UmbEntityBulkActionArgs,
+} from "@umbraco-cms/backoffice/entity-bulk-action";
+import { UmbControllerHostElement } from "@umbraco-cms/backoffice/controller-api";
 
-export class MyEntityBulkAction extends UmbEntityBulkActionBase<MyRepository> {
- constructor(host: UmbControllerHostElement, repositoryAlias: string, selection: Array<string>) {
-  super(host, repositoryAlias, selection);
- }
+export class MyBulkEntityAction extends UmbEntityBulkActionBase<never> {
+    constructor(
+        host: UmbControllerHostElement,
+        args: UmbEntityBulkActionArgs<never>,
+    ) {
+        // this constructor is optional, override only if necessary
+        super(host, args);
+    }
 
- async execute() {
-  await this.repository?.myBulkAction(this.selection);
- }
+    async execute() {
+        // perform a network request
+        // await Promise.all(
+        //     this.selection.map(async (x) => {
+        //         const res = await fetch(`my-server-api-endpoint/${x}`);
+        //         return res.json() as never;
+        //     })
+        // );
+
+        // or fetch repository
+        // const repository = ...
+        // await repository.processItems(this.selection);
+        
+        console.log(this.selection);
+    }
 }
 ```

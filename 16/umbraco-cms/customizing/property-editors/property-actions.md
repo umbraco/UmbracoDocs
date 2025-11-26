@@ -23,8 +23,8 @@ Before creating a Property Action, make sure you are familiar with the [Extensio
 
 Here is how you can register a new Property Action:
 ```
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
-import { MyEntityAction } from './my-property-action.api';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
 const manifest =
   {
     type: 'propertyAction',
@@ -40,7 +40,7 @@ const manifest =
     }
   };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 ### Creating the Property Action Class
 

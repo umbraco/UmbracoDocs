@@ -12,7 +12,7 @@ If you have problems with Umbraco Engage setup or configuration, this checklist 
 
 After logging in to Umbraco, you can see the Engage section next to the other main sections in the Umbraco backoffice.
 
-If you cannot see this, please check if your Umbraco user or user group has access to the Engage section.
+If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
 ![Engage section in the Backoffice](../.gitbook/assets/engage-engage-section.png)
 
@@ -22,7 +22,7 @@ When editing a page within Umbraco, you should be able to see the following Cont
 
 ![Content Apps on content page](../.gitbook/assets/engage-content-apps.png)
 
-If you cannot see this, please check if your Umbraco user or user group has access to the Engage section.
+If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
 ### 3. Cockpit
 
@@ -83,7 +83,7 @@ To ensure that Umbraco Engage can interact with the visitor from the first page,
 
 ### Still missing analytical data?
 
-If you have performed all the steps and do not see Analytics data within Umbraco Engage there are a handful of additional steps to take. Please work with a developer to check the following technical steps.
+If you have performed all the steps and do not see Analytics data within Umbraco Engage there are a handful of additional steps to take. Work with a developer to check the following technical steps.
 
 * Open your website in a browser with the browser developer tools open.
 * Refresh the page while the developer tools are open.

@@ -65,7 +65,7 @@ The captured GA4 events will appear in Analytics -> Events in the **GA 4 - Bridg
 
 ### Using GA4 events in Goals
 
-If you want to trigger a goal based on a GA4 event please use the following information:
+If you want to trigger a goal based on a GA4 event, use the following information:
 
-Category: **GA 4 Bridging**\
+Category: **GA 4 Bridging**
 Action: **\<your action>**

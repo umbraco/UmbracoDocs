@@ -44,6 +44,12 @@ A full configuration with all default values can be seen here:
       "AllowConcurrentLogins": false,
       "UserDefaultFailedLoginDurationInMilliseconds": 1000,
       "UserMinimumFailedLoginDurationInMilliseconds": 250,
+      "PasswordResetEmailExpiry": "01:00:00",
+      "UserInviteEmailExpiry": "3.00:00:00",
+      "BackOfficeTokenCookie": {
+        "Enabled": false,
+        "SameSite": "Strict"
+      }
     }
   }
 }
@@ -111,6 +117,14 @@ Umbraco provides protection from user enumeration attacks looking to identify va
 
 The `UserDefaultFailedLoginDurationInMilliseconds` can be used to provide a more realistic expected time for a successful login if the default isn't appropriate. This will be used before actual successful logins are detected. `UserMinimumFailedLoginDurationInMilliseconds` provides a minimum duration for a failed login.
 
+### Password reset email expiry
+
+Defines the expiry for the password reset email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 1 hour.
+
+### User invite email expiry
+
+Defines the expiry for the user invite email. When the email is sent, an `Expiry` header will be added that uses the value configured here. The default value is 3 days.
+
 ## User password settings
 
 This section lets you define the password rules for users.
@@ -153,3 +167,22 @@ Options are:
 ## Member password settings
 
 This section allows you to define the password rules for members. This section is identical to the one for users.
+
+## Backoffice token cookie settings
+
+As an added security feature, user authentication tokens can be returned in secure cookies from the server's authentication requests. This section lets you change the default settings for the generated token cookies.
+
+For backwards compatibility reasons, the feature is disabled by default.
+
+Recommendations:
+
+1. Enable this feature (see below).
+2. Retain the default values for the rest of the configuration.
+
+### Enabled
+
+When set to `true`, user authentication tokens are redacted from the server authentication responses and put into secure cookies instead.
+
+### Same site
+
+Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).

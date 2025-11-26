@@ -8,7 +8,7 @@ Specificially for Hacktoberfest, we have a lot more things you can get involved 
 
 One of our main focus areas for 2024 is to deeply test out the major new features of Umbraco v15. The [release candidate for the upcoming Umbraco v15 is available now](https://umbraco.com/blog/umbraco-15-release-candidate/) and we encourage you to test the main new features, namely:
 
-- The new rich text editor (RTE)
+- The new Rich Text Editor (RTE)
   - Migrating existing RTEs to the new RTE datatype
   - Working with the new RTE
   - Extending the new RTE
@@ -18,24 +18,24 @@ One of our main focus areas for 2024 is to deeply test out the major new feature
   - Try out the new `ISeedKeyProvider`, `IDocumentServices` and `IDistributedCache`
 - Block-level variants
   - Making sure all of your existing blocks work after an upgrade
-  - If you have a very large block-based site, it is interesting to see if the upgrade doesn't take too long
+  - If you have a large block-based site, it is interesting to see if the upgrade doesn't take too long
   - Add variants to your existing or new blocks and start using them: edit, save, publish, etc
 
-Once you have done a round of thorough testing, please make sure to [report any issues on the tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type/bug&labels=affected/v14&template=01_bug_report.yml&title=v15RC1) as usual. 
+Once you have done a round of thorough testing, make sure to [report any issues on the tracker](https://github.com/umbraco/Umbraco-CMS/issues/new?assignees=&labels=type/bug&labels=affected/v14&template=01_bug_report.yml&title=v15RC1) as usual.
 
 ### Making it count for Hacktoberfest
 
-We really appreciate your help in testing this release. Please make sure to describe to us in a bit of detail what you've tried, let us know a bit about the scale of project you're testing on, etc. 
+We really appreciate your help in testing this release. Make sure to describe to us in a bit of detail what you've tried, let us know a bit about the scale of project you're testing on, etc.
 
 If everything "just" worked (🤞) then describe that as well! Let us know exactly what you focused on that worked well.
 
-You can do this by heading to the [HacktoberfestActivityLog](https://github.com/umbraco/HacktoberfestActivityLog) repository and adding your name to the list in the "Low code/no code" section. 
+You can do this by heading to the [HacktoberfestActivityLog](https://github.com/umbraco/HacktoberfestActivityLog) repository and adding your name to the list in the "Low code/no code" section.
 
 An example of a participation entry is:
 
 `- 2024-10-04 - Paula Philips - Umbraco 15 Release Candidate testing - Details in the PR description`
 
-In the description of the pull request to get your name added, please put your test results as described above and link to any issues you've created if things didn't work as expected.
+In the description of the pull request to get your name added, put your test results as described above and link to any issues you've created if things didn't work as expected.
 
 {% hint style="info" %}
 This would be a great use of [the `Draft` pull request feature on GitHub](https://github.blog/news-insights/product-news/introducing-draft-pull-requests/), so you can work on testing and keep updating the description with your test results until you're done and ready to submit your final PR. 
@@ -53,7 +53,7 @@ Here are some specific details on this:
 * Look for the "help wanted" label on the issue tracker associated with the package you want to help out with
 * Read much more about how this works, and guidelines on adding your own package repo to [the list on the Umbraco Packages Hacktoberfest homepage](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest). 
 
-Please note: Package contributions eligibility for swag  differ slightly from those used for all contributions. Read more on the **[Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible"**.
+Note: Package contributions eligibility for swag  differ slightly from those used for all contributions. Read more on the **[Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible"**.
 
 ### Creating a brand-new package
 
@@ -80,7 +80,7 @@ Eligible contributions according to [the Hacktoberfest guidelines](https://hackt
 
 We [have set up a special GitHub repository](https://github.com/umbraco/HacktoberfestActivityLog) for you to record your contributions that are not a pull request.
 
-In order to record your journey of verifying documentation (like related blog post(s) in October, events organized), please edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
+In order to record your journey of verifying documentation (like related blog post(s) in October, events organized), edit the README.md file and add your activity at the end in the recommended format and submit that as a pull request. We’ll take it from there!
 
 {% hint style="info" %}
 The teams at [Skrift](https://skrift.io/write/) and [24 days in Umbraco](https://24days.in/umbraco-cms/write-for-us/) are always looking for new articles. Finish your application October to make it count! We'll ask the Skrift/24 days teams to verify your application to write an article.
@@ -104,7 +104,7 @@ And the good news is: yes, you will be able to earn Umbraco swag, proportionate 
 
 We use [the Hacktoberfest participation rules](https://hacktoberfest.com/participation/) to qualify, so any contributions that do not follow these standards will also not count towards Umbraco swag. These rules are to ensure we get quality contributions and that the right efforts get rewarded 🙌
 
-If you’re contributing to one of the open-source Umbraco Packages, please check [the Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible".
+If you’re contributing to one of the open-source Umbraco Packages, check [the Packages Hacktoberfest guidelines](https://github.com/umbraco/Umbraco.Packages/tree/main/Hacktoberfest) to learn more about how a contribution is marked as "swag-eligible".
 
 ## Any questions?
 
