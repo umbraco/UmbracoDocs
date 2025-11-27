@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 ### 17.0.0 (November 27th 2025)
 * Update Forms dependencies to 17.0.0
 * All items detailed under release candidates for 17.0.0.
-* JavaScript now correctly finds form config element when it is not adjacent
+* JavaScript now correctly finds the form config element when it is not adjacent
 
 ### 17.0.0-rc4 (November 25th 2025)
 * Stop "Save and preview" modal from displaying an interstitial state

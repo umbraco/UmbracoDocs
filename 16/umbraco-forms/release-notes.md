@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 
 ### [16.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.3.0) (November 27th 2025)
 * Umbraco CMS dependency updated to 16.3.0
-* JavaScript now correctly finds form config element when it is not adjacent
+* JavaScript now correctly finds the form config element when it is not adjacent
 * Stop "Save and preview" modal from displaying an interstitial state
 * Adds additional exports to `@umbraco-forms/backoffice` NPM package
 * Razor email templates now format URLs as `UrlMode.Absolute` [#1414](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1414)
