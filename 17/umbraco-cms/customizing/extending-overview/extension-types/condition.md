@@ -1,7 +1,6 @@
 ---
 description: >-
-    Learn how to declare requirements for your extensions using the Extension
-    Conditions.
+    Learn how to declare requirements for your extensions using the Extension Conditions.
 ---
 
 # Extension Conditions
