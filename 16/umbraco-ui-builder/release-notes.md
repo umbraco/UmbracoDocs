@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**16.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.1) **(November 27th 2025)**
+
+* Handle entity update notifications on successful operation
+* Fix `UmbChangeEvent` dispatch if `workspaceContext` is not set [#209](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/209)
+
 #### [**16.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.0) **(October 11th 2025)**
 
 * Added [localization](collections/localization.md) support for collections, sections, trees, actions, context apps, and dashboards.
