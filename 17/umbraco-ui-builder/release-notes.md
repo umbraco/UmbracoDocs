@@ -18,6 +18,19 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### 17.0.0 (November 27th 2025)
+
+* Final release to support Umbraco 17
+
+### 17.0.0-rc2 (November 25th 2025)
+
+* Compatibility update for Umbraco 17.0.0-rc4 and Swashbuckle 10
+
+### 17.0.0-rc1 (November 3rd 2025)
+
+* Compatibility update for Umbraco 17.0.0-rc1
+
+
 ## Legacy Release Notes
 
 You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).
