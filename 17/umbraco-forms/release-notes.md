@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.0.1 (November 27th 2025)
+* Fix issues with 17.0.0 release where migrations would sometimes not complete successfully
+
 ### 17.0.0 (November 27th 2025)
 * Update Forms dependencies to 17.0.0
 * All items detailed under release candidates for 17.0.0.
