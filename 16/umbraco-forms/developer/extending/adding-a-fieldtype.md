@@ -193,7 +193,6 @@ The alias of the preview to use is defined on the field type via the `PreviewVie
 A preview for our slider, representing the selected setting values could look as follows:
 
 ```javascript
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import {
   LitElement,
   css,
@@ -201,20 +200,17 @@ import {
   html,
   property,
 } from "@umbraco-cms/backoffice/external/lit";
+import { FormsFieldPreviewBaseElement } from "@umbraco-forms/backoffice";
 
 const elementName = "my-field-preview-slider";
 
 @customElement(elementName)
-export class MyFieldPreviewSliderElement extends UmbElementMixin(LitElement) {
+export class MyFieldPreviewSliderElement extends FormsFieldPreviewBaseElement {
   @property()
   settings = {};
 
   @property({ type: Array })
   prevalues = [];
-
-  getSettingValue(key: string) {
-    return this.settings[key];
-  }
 
   render() {
     return html`<div
@@ -250,13 +246,13 @@ And it is registered via a manifest:
 
 ```javascript
 import MyFieldPreviewSliderElement from './slider-preview.element.js';
+import { ManifestFormsFieldPreview } from '@umbraco-forms/backoffice';
 
-const sliderPreviewManifest = {
+const sliderPreviewManifest: ManifestFormsFieldPreview = {
   type: "formsFieldPreview",
   alias: "My.FieldPreview.Slider",
   name: "Forms UUI Slider Field Preview",
-  api: MyFieldPreviewSliderElement,
-  element: () => import('./slider-preview.element.js')
+  element: MyFieldPreviewSliderElement
 };
 
 export const manifests = [sliderPreviewManifest];
@@ -439,8 +435,9 @@ It's registered as follows. The `propertyEditorUiAlias` matches with the propert
 
 ```javascript
 import { SliderSettingValueConverter } from "./slider-setting-value-converter.api";
+import { ManifestFormsSettingValueConverterPreview } from "@umbraco-forms/backoffice";
 
-const sliderValueConverterManifest = {
+const sliderValueConverterManifest: ManifestFormsSettingValueConverterPreview = {
   type: "formsSettingValueConverter",
   alias: "My.SettingValueConverter.Slider",
   name: "Slider Value Converter",
