@@ -10,6 +10,8 @@ This MCP Server acts as a secure gateway between your Umbraco installation and M
 
 Through this bridge, your AI assistant can interact directly with the Umbraco Management API. This enables a more natural, conversational way to develop and maintain your sites.
 
+Test change
+
 {% hint style="info" %}
 Think of it as giving your AI tools a secure, structured way to “speak to Umbraco.”
 {% endhint %}
