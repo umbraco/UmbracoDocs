@@ -8,13 +8,13 @@
 
 **Collection** displays a collection of categories when it is enabled on a Document Type with children.
 
-![Collection example](images/listview-v14.png)
+![Collection example](../../../../.gitbook/assets/listview-v14.png)
 
 ## Configure Collection
 
 Once Collections are configured, the parent content item displays its child items in a list view format within the content item itself. If Collections are not configured, the child items are displayed directly in the Content Tree, rather than being grouped within the parent content item.
 
-![Enable Collection example](images/enable-listview-v14.png)
+![Enable Collection example](../../../../.gitbook/assets/enable-listview-v14.png)
 
 ## Settings
 
@@ -24,7 +24,7 @@ Once Collections are configured, the parent content item displays its child item
 
 It is possible to add more columns to the collection, via adding the properties through the picker modal. These properties are based on the Data Types which are used by the Document Type. The properties will listed for selection.
 
-![Collection property picker example](images/collection-property-picker.png)
+![Collection property picker example](../../../../.gitbook/assets/collection-property-picker.png)
 
 Once you have selected a column you want to display, define what its heading label should be and what kind of value it should display. You can also move the headers around, re-ordering how they should look. This is done by the move icon on the left side of the alias.
 
@@ -66,7 +66,7 @@ Support for changing the Workspace View icon has not been implemented yet.
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
 
-![Collection icon example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
+![Collection icon example](<../../../../.gitbook/assets/list-icon (1).png>)
 
 ### Workspace View name
 
@@ -90,26 +90,26 @@ Enable this to show the Content Workspace View by default instead of the collect
 
 This example shows how to use a generic field from a child item and display its value in a collection.
 
-![Collection content email label template](images/collection-label-template.png)
+![Collection content email label template](../../../../.gitbook/assets/collection-label-template.png)
 
 You can use the [Umbraco Flavored Markdown](../../../../reference/umbraco-flavored-markdown.md) syntax to display the label value. Here, the `{=value}` placeholder retrieves the value of the _Email_ property and displays it in the collection, as shown in the image below:
 
-![Collection content email value displayed](images/collections-display-email.png)
+![Collection content email value displayed](../../../../.gitbook/assets/collections-display-email.png)
 
 ### Content name
 
 First, a Content Picker property needs to be present on the content item. In this example, the `child item` has gotten a Content Picker Data Type with the alias of `contentPicker`.
 
-![Collection content picker](images/content-picker-property.png)
+![Collection content picker](../../../../.gitbook/assets/content-picker-property.png)
 
 The child item has a document and the value that should be displayed is the name of the picked value. The next step is to reconfigure the template value in the collection setting.
 
-![Collection content picker](images/collection-column-content-picker.png)
+![Collection content picker](../../../../.gitbook/assets/collection-column-content-picker.png)
 
 This will take the value picked up by the content picker.
 
-![Collection content picker with picked value](images/content-picker-picked-value.png)
+![Collection content picker with picked value](../../../../.gitbook/assets/content-picker-picked-value.png)
 
 And display it in the collection. Shown in the example below:
 
-![Collection view cards with content picker value](images/collection-view-cards-content-picker.png)
+![Collection view cards with content picker value](../../../../.gitbook/assets/collection-view-cards-content-picker.png)

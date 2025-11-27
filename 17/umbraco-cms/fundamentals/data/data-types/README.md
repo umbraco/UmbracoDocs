@@ -29,7 +29,7 @@ Follow these steps to create a new Dropdown Data Type:
 9. Add **options**.
 10. **Save** the Data Type once you have added the required configuration.
 
-![Dropdown List](images/dropdown-data-type-sample.png)
+![Dropdown List](../../../.gitbook/assets/dropdown-data-type-sample.png)
 
 {% hint style="info" %}
 **Data Type configuration**
@@ -51,7 +51,7 @@ Besides the Data Types that are available out of the box there are some addition
 
 To view the Data Type reference, go to the **Settings** section and expand the **Data Types** folder. Select the **Data Type** you wish to view the reference for and click the **Info** tab.
 
-![Content Picker References](../../../../../16/umbraco-cms/fundamentals/data/data-types/images/viewing-data-type-reference.png)
+![Content Picker References](<../../../.gitbook/assets/viewing-data-type-reference (1).png>)
 
 This gives you an overview of the Types that currently use the Data Type.
 

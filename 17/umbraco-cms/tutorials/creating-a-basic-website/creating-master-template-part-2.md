@@ -27,18 +27,14 @@ To create a content-only contact page in Umbraco, follow these steps:
     | Content | Page Title | pageTitle | Textstring       |
     | Content | Body Text  | bodyText  | Rich Text Editor |
 
-    ![Simple Content Page Template with Data Fields](images/contact-us-template-with-data-fields.png)
+    ![Simple Content Page Template with Data Fields](../../.gitbook/assets/contact-us-template-with-data-fields.png)
 9. Click **Save**.
 10. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.
 
-    {% hint style="info" %}
-    If you do not see the template, try refreshing the page.
-    {% endhint %}
-
-11\. Open the \_Simple Content Page\_ template.\
-12\. Select \`Master Template: No Master\` and choose the \*\*Master\*\* template.\
-13\. Click \*\*Choose\*\*.\
-14\. Add the following HTML after the closing \`}\`.
+    \{% hint style="info" %\} If you do not see the template, try refreshing the page. \{% endhint %\}11. Open the \_Simple Content Page\_ template.\
+    12\. Select \`Master Template: No Master\` and choose the \*\*Master\*\* template.\
+    13\. Click \*\*Choose\*\*.\
+    14\. Add the following HTML after the closing \`}\`.
 
 ````
 ```html
@@ -76,7 +72,7 @@ To update the Document Type permissions:
 4. Click **Choose** in the **Allowed child node types**.
 5.  Select **Simple Content Page**.
 
-    ![Allow child nodes in HomePage](images/homepage-allowed-child.png)
+    ![Allow child nodes in HomePage](../../.gitbook/assets/homepage-allowed-child.png)
 6. Click **Choose**.
 7. Click **Save**.
 
@@ -89,7 +85,7 @@ To create a content node:
 3. Click **Create**.
 4.  Select **Simple Content Page**.
 
-    ![Adding Content Page as Child node](images/adding-child-node-Content.png)
+    ![Adding Content Page as Child node](../../.gitbook/assets/adding-child-node-Content.png)
 5. Enter a name for the Document Type. Let's call it _Contact Us_.
 6. Fill in details for the **Page Title** and **Body Text**.
 7. Click **Save and Publish**.
@@ -127,7 +123,7 @@ To view the **Contact Us** Page:
 3. Go to the **Info** tab.
 4.  Click the link to view the page.
 
-    ![Viewing Contact Us Page](images/viewing-contact-us.png)
+    ![Viewing Contact Us Page](../../.gitbook/assets/viewing-contact-us.png)
 
 ## Using Document Type Properties from the Homepage
 

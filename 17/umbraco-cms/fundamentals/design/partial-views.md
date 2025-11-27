@@ -10,7 +10,7 @@ A Partial View (`.cshtml` file) is a regular view that can be used multiple time
 
 You can create and edit partial views in the **Partial Views** folder from the **Settings** section of the Backoffice.
 
-![Creating a new partial view](templates/images/create-partial.png)
+![Creating a new partial view](../../.gitbook/assets/create-partial.png)
 
 In the **Create** menu, there are three options available:
 
@@ -33,7 +33,7 @@ To create a partial view:
 
 By default, the partial views are saved in the `Views/Partials` folder in the solution.
 
-![Partial View folder in the project directory](images/partial-views-in-directory.png)
+![Partial View folder in the project directory](../../.gitbook/assets/partial-views-in-directory.png)
 
 ## Creating a Partial View from Snippet
 

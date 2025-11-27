@@ -19,14 +19,14 @@ When a content node is saved it will save the entity references as relations.
 1. Go to the **Media** section.
 2. Select a media item and click the **Info** tab.
 
-![Viewing media references](images/media-references.png)
+![Viewing media references](../../.gitbook/assets/media-references.png)
 
 ### For Content Nodes
 
 1. Go to the **Settings** section.
 2. Under the **Relations** from the **Advanced** section, select **Related Document** relations.
 
-![Viewing document references](images/document-references.png)
+![Viewing document references](../../.gitbook/assets/document-references.png)
 
 ### For Data Types
 
@@ -35,7 +35,7 @@ When a content node is saved it will save the entity references as relations.
 3. Select the **Data Type** you wish to view the references.
 4. Navigate to the **Info** tab.
 
-![Viewing Data Type references](images/data-types-references.png)
+![Viewing Data Type references](../../.gitbook/assets/data-types-references.png)
 
 ## Example
 

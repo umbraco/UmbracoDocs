@@ -11,9 +11,9 @@ Tabs allow you to add horizontal organization in your Document Types, Media Type
 To add a tab, follow these steps:
 
 1. Go to **Settings**.
-2. Create or select a **Document Type/Media Type/Member Type** and click **Add tab**.
+2.  Create or select a **Document Type/Media Type/Member Type** and click **Add tab**.
 
-    ![Add tab](images/Add-tab.png.png)
+    ![Add tab](../../.gitbook/assets/Add-tab.png.png)
 
 {% hint style="info" %}
 When adding the first tab, all existing groups are automatically added to the tab.
@@ -30,7 +30,7 @@ To reorder tabs, follow these steps:
 
     This is important when using compositions, as you want to always display a tab/group at a certain position by setting a manual numeric value.
 
-    ![Reorder tabs](images/Reorder-tabs.gif)
+    ![Reorder tabs](../../.gitbook/assets/Reorder-tabs.gif)
 5. Select **I am done reordering**.
 6. Click **Save**.
 
@@ -53,7 +53,7 @@ Converting a tab back into a group is not possible, as tabs can contain groups, 
 
 Once you start adding tabs, you might see a “Generic” tab appear. This is done to hold groups and properties that are not assigned to a tab. For example, a group of properties coming from a composition that has no tab. In order to display the groups and properties correctly and have a solid data structure, they will be displayed under the “Generic” tab.
 
-![Generic-tab](images/Generic-tab.png)
+![Generic-tab](../../.gitbook/assets/Generic-tab.png)
 
 To manage the **Generic** tab on a **Document Type/Media Type**:
 
@@ -61,4 +61,4 @@ To manage the **Generic** tab on a **Document Type/Media Type**:
 2. Click **Add tab** and enter the **Name** for the tab. All existing groups and properties are added to the tab.
 3.  Go to the **Document Type/Media Type**, the **Generic** tab will now be replaced by the tab from the composition.
 
-    ![Composition Add Tab](images/Composition-add-tab.gif)
+    ![Composition Add Tab](../../.gitbook/assets/Composition-add-tab.gif)

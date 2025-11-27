@@ -7,6 +7,6 @@ If the tree does not refresh or if multiple editors are working on the site, and
 To reload a section of the content tree:
 
 1. Click **...** next to an item in the tree.
-2. Choose **Reload**. The parent and child nodes are now reloaded and will reflect any new changes.
+2.  Choose **Reload**. The parent and child nodes are now reloaded and will reflect any new changes.
 
-    ![Reload Tree](images/Reload-v14.png)
+    ![Reload Tree](../../../.gitbook/assets/Reload-v14.png)
