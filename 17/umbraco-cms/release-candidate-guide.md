@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Release Candidate Guide
