@@ -22,10 +22,29 @@ jobs:
       - name: Get changed Markdown files
         id: changed-files
         run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.md$' || true)
+          # Fetch the base branch to ensure we have the latest
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          
+          # Compare against the merge base (the point where your branch diverged)
+          BASE_SHA=$(git merge-base origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }})
+          
+          echo "Base SHA: $BASE_SHA"
+          echo "Head SHA: ${{ github.sha }}"
+          
+          # Get only files changed in THIS PR (comparing merge-base to HEAD)
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA ${{ github.sha }} | grep '\.md$' || true)
+          
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          
           CHANGED_FILES="${CHANGED_FILES//$'\n'/ }"
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
-          echo "Changed Markdown files: $CHANGED_FILES"
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No Markdown files changed"
+          else
+            echo "Changed Markdown files: $CHANGED_FILES"
+          fi
 
       # 3️⃣ Skip if no Markdown files changed
       - name: Skip if no Markdown files changed
