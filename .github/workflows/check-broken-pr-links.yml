@@ -37,6 +37,7 @@ jobs:
       # 4️⃣ Run Lychee on changed files
       - name: Run Lychee
         id: run-lychee
+        if: env.CHANGED_FILES != ''
         uses: lycheeverse/lychee-action@v2
         with:
           args: |
