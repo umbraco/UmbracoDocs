@@ -9,25 +9,25 @@
 The Time Only property editor provides an interface for selecting times. It excludes date and time zone information, and returns strongly-typed `TimeOnly` values.
 
 ## Configuration
+You can configure this property editor in the same way as any standard property editor, using the *Data Types* admin interface.
 
-You can configure this property editor in the same way as any standard property editor, using the _Data Types_ admin interface.
-
-To set up a property using this editor, create a new _Data Type_ and select **Time Only** from the list of available property editors.
+To set up a property using this editor, create a new *Data Type* and select **Time Only** from the list of available property editors.
 
 You will see the configuration options as shown below.
 
-![Time Only property editor configuration](../../../../../.gitbook/assets/time-only-property-editor-config.png)
+![Time Only property editor configuration](./images/time-only-property-editor-config.png)
 
-* **Time format** - Specifies the level of precision for time values shown and stored by the editor.
+- **Time format** - Specifies the level of precision for time values shown and stored by the editor.
 
 ### Time format
 
-* **HH:mm** - Displays hours and minutes (e.g., `14:30`).\
-  Suitable for most general use cases.\
-  ![Time Only property editor showing time format in HH:mm format (hours and minutes only)](../../../../../.gitbook/assets/time-only-time-format-hhmm.png)
-* **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).\
-  Use this when you need more precise timing.\
-  ![Time Only property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](../../../../../.gitbook/assets/time-only-time-format-hhmmss.png)
+- **HH:mm** - Displays hours and minutes (e.g., `14:30`).  
+Suitable for most general use cases.  
+![Time Only property editor showing time format in HH:mm format (hours and minutes only)](./images/time-only-time-format-hhmm.png)
+- **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).  
+Use this when you need more precise timing.  
+![Time Only property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](./images/time-only-time-format-hhmmss.png)
+
 
 ## Editing experience
 
@@ -35,7 +35,7 @@ You will see the configuration options as shown below.
 
 You will be presented with a time input. Unlike date-time editors, this editor focuses only on the time component.
 
-![Time Only property editor interface](../../../../../.gitbook/assets/time-only-editor.png)
+![Time Only property editor interface](./images/time-only-editor.png)
 
 ## Rendering
 
@@ -44,13 +44,11 @@ The value returned will have the type `TimeOnly?`.
 ### Display the value
 
 With Models Builder:
-
 ```csharp
 @Model.StartHours
 ```
 
 Without Models Builder:
-
 ```csharp
 @Model.Value<TimeOnly?>("startHours")
 ```
@@ -62,7 +60,6 @@ This property editor stores values as a JSON object. The object contains the tim
 ### Storage format
 
 The property editor stores values in this JSON format:
-
 ```json
 {
     "date": "0001-01-01T14:30:00+00:00"
@@ -71,7 +68,7 @@ The property editor stores values in this JSON format:
 
 The property editor handles time-only values. Date is set to a default value (0001-01-01) and offset to +00:00 for storage consistency. The date component is ignored in the Time Only context.
 
-1.  Create a C# model that matches the JSON schema.
+1. Create a C# model that matches the JSON schema.
 
     ```csharp
     using System.Text.Json.Serialization;
@@ -87,43 +84,42 @@ The property editor handles time-only values. Date is set to a default value (00
         public DateTimeOffset Date { get; init; }
     }
     ```
-2.  Convert your existing time value to `DateTimeOffset` for storage.
 
-    If you have a `TimeOnly`:
+2. Convert your existing time value to `DateTimeOffset` for storage.
 
-    ```csharp
-    TimeOnly timeOnly = TimeOnly.FromDateTime(DateTime.Now); // Your existing TimeOnly value
-    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
-    ```
+   If you have a `TimeOnly`:
+   ```csharp
+   TimeOnly timeOnly = TimeOnly.FromDateTime(DateTime.Now); // Your existing TimeOnly value
+   DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+   ```
 
-    If you have a `DateTime`:
+   If you have a `DateTime`:
+   ```csharp
+   DateTime dateTime = DateTime.Now; // Your existing DateTime value
+   TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
+   DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
+   ```
 
-    ```csharp
-    DateTime dateTime = DateTime.Now; // Your existing DateTime value
-    TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
-    DateTimeOffset dateTimeOffset = new DateTimeOffset(DateOnly.MinValue, timeOnly, TimeSpan.Zero);
-    ```
-3.  Create an instance of the class with the `DateTimeOffset` value.
-
+3. Create an instance of the class with the `DateTimeOffset` value.
     ```csharp
     TimeOnlyValue value = new TimeOnlyValue
     {
         Date = dateTimeOffset
     };
     ```
-4.  Inject the `IJsonSerializer` and use it to serialize the object.
 
-    ```csharp
-    string jsonValue = _jsonSerializer.Serialize(value);
-    ```
-5.  Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
+4. Inject the `IJsonSerializer` and use it to serialize the object.
+   ```csharp
+   string jsonValue = _jsonSerializer.Serialize(value);
+   ```
 
-    ```csharp
-    IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
+5. Inject the `IContentService` to retrieve and update the value of a property of the desired content item.
+   ```csharp
+   IContent content = _contentService.GetById(contentKey) ?? throw new Exception("Content not found");
 
-    // Set the value of the property with alias 'startHours'. 
-    content.SetValue("startHours", jsonValue);
+   // Set the value of the property with alias 'startHours'. 
+   content.SetValue("startHours", jsonValue);
 
-    // Save the change
-    _contentService.Save(content);
-    ```
+   // Save the change
+   _contentService.Save(content);
+   ```

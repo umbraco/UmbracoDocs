@@ -22,7 +22,7 @@ You can add, edit & delete crop presets the cropper UI can use.
 
 ## Data Type Definition Example
 
-![Image Cropper Data Type Definition](../../../../.gitbook/assets/imageCropper.png)
+![Image Cropper Data Type Definition](images/imageCropper.png)
 
 ## Content Example
 
@@ -40,7 +40,7 @@ The Image Cropper comes with 3 modes:
 
 The editor exposes a drop area for files. Select it to upload an image.
 
-![Image Cropper Upload](<../../../../.gitbook/assets/imageCropper-upload-v8 (1).png>)
+![Image Cropper Upload](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-upload-v8.png)
 
 ### Set focal point
 
@@ -48,13 +48,13 @@ By default, the Image Cropper allows the editor to set a focal point on the uplo
 
 All the preset crops are shown to give the editor a preview of what the image will look like on the frontend.
 
-![Image Cropper Focal Point](../../../../.gitbook/assets/imageCropper-focalpoint.png)
+![Image Cropper Focal Point](images/imageCropper-focalpoint.png)
 
 ### Crop and resize
 
 The editor can fit the crop to the image to ensure that the image is presented as intended.
 
-![Image Cropper crop](../../../../.gitbook/assets/imageCropper-crop.png)
+![Image Cropper crop](images/imageCropper-crop.png)
 
 ## Powered by ImageSharp.Web
 

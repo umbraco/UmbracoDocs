@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get started with developing a custom migration path for Macros to Blocks in
-  the Rich Text Editors (RTE).
+  Get started with developing a custom migration path for Macros to Blocks in the Rich Text Editors (RTE).
 ---
 
 # Migrating Macros
@@ -14,7 +13,7 @@ This tutorial serves primarily as inspiration for how to migrate the macros in y
 The code supplied should not be used in a production environment without proper testing. It can however be used to kickstart your custom solution.
 {% endhint %}
 
-At the end of the article a few [other ways of running a larger migration is explained](migrating-macros.md#alternative-approaches).
+At the end of the article a few [other ways of running a larger migration is explained](#alternative-approaches).
 
 Through the following tutorial, a macro will be converted one-to-one to a block. Each macro parameter will match the same named property on an Element Type. Text strings will be used as values.
 
@@ -36,9 +35,9 @@ You need to:
 
 1. Define a macro and its parameters.
 
-![Backoffice configuration of the macro](../.gitbook/assets/macro-settings.png)
+![Backoffice configuration of the macro](./images/macro-settings.png)
 
-![Backoffice configuration of the macro parameters](../.gitbook/assets/macro-parameters.png)
+![Backoffice configuration of the macro parameters](./images/macro-parameters.png)
 
 2. Have a macro partial view that is used to render the macro on the website. It is also used in the backoffice rendering if enabled in the macro settings.
 
@@ -49,11 +48,11 @@ You need to:
 </div>
 ```
 
-![Backoffice view of the sample macro](../.gitbook/assets/macro-backoffice.png)
+![Backoffice view of the sample macro](./images/macro-backoffice.png)
 
 3. Enable the Richtext Editor (TinyMce) to allow the insertion of macros.
 
-![Enable Macro in TinyMce Toolbar](../.gitbook/assets/macro-tinymce.png)
+![Enable Macro in TinyMce Toolbar](./images/macro-tinymce.png)
 
 Below you can find the relevant items used in our example:
 
@@ -63,17 +62,17 @@ The block setup is similar but with a few changes:
 
 1. Switch the property editor of the Richtext Data Type from TinyMce to Tiptap.
 
-![Richtext editor configuration](../.gitbook/assets/rte-tiptap.png)
+![Richtext editor configuration](./images/rte-tiptap.png)
 
 2. Set up an Element Type with the same properties as the macro parameters.
 
-![Block element doctype definition](../.gitbook/assets/block-definition.png)
+![Block element doctype definition](./images/block-definition.png)
 
-![Backoffice view of the sample block](../.gitbook/assets/block-backoffice.png)
+![Backoffice view of the sample block](./images/block-backoffice.png)
 
 3. Allow the Tiptap editor to insert blocks and configure the newly created block to be one of the options.
 
-![Tiptap block configuration](../.gitbook/assets/tiptap-blocks.png)
+![Tiptap block configuration](./images/tiptap-blocks.png)
 
 4. Transform the macro view into a web component for the backoffice custom view.
 
@@ -149,12 +148,12 @@ However you retrieve the relevant data you have with a raw string or a `RichText
 
 The value holds JSON with:
 
-* Empty block information.
-* The markup with the actual RTE value and the inline macro data.
-* The macro consists off:
-  * The tag used as a placeholder where to render its output.
-  * An alias to find the correct render/update logic.
-  * Two parameters with values entered by the user.
+- Empty block information.
+- The markup with the actual RTE value and the inline macro data.
+- The macro consists off:
+  - The tag used as a placeholder where to render its output.
+  - An alias to find the correct render/update logic.
+  - Two parameters with values entered by the user.
 
 The first step in transforming the data is taking the JSON value and deserializing it into a `RichTextEditorValue`. This way you have a class to work with to store the updated data in.
 
@@ -166,7 +165,7 @@ You can deserialize it yourself, or you can use the `RichTextPropertyEditorHelpe
 RichTextPropertyEditorHelper.TryParseRichTextEditorValue(originalValue, _jsonSerializer, _logger, out var richTextEditorValue);
 ```
 
-The next step is to get all (relevant) macro tags out of the markup. One way of doing this is through a regular expression.
+The next step is to get all (relevant) macro tags out of the markup. One way of doing this is through a regular expression. 
 
 The sample regex does not take into account that the order of parameters, which might be different from tag to tag. One way of dealing with this is to not take out the parameters in the first match. Instead move each parameter to a separate regex that runs on the first match.
 
@@ -225,16 +224,17 @@ Now that the relevant information has been extracted, it's time to decide what t
 
 Note that:
 
-* The markup still contains a tag placeholder but this time with only the `data-content-key`.
-* That key references an item inside the blocks `contentData` that holds the values of the properties and a reference to the Element Type set up earlier.
-* The same key is added to the `expose` collection and the Rich text `layout` collection.
-* This means that if you have multiple blocks in the same value, more `contentData` items will be added in the blocks collection. They will be referenced in the `expose and` Layout accordingly.
+- The markup still contains a tag placeholder but this time with only the `data-content-key`.
+- That key references an item inside the blocks `contentData` that holds the values of the properties and a reference to the Element Type set up earlier.
+- The same key is added to the `expose` collection and the Rich text `layout` collection.
+- This means that if you have multiple blocks in the same value, more `contentData` items will be added in the blocks collection. They will be referenced in the `expose and `Layout accordingly.
 
 The example below shows the full handling of an invariant macro to an invariant block.
 
 This migrator starts and ends with a raw (serialized) string. If you choose a different path, you might have to change the code to work with the supplied value types instead.
 
 {% code title="/MacroMigrator/CtaButtonMacroMigrator.cs" %}
+
 ```csharp
 using System.Text.RegularExpressions;
 using Umbraco.Cms.Core;
@@ -365,7 +365,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 
 ## Retrieving the data
 
-In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting get the data needed. This example does not take nested data into account. For an example on how to to do this, [check out one of the alternatives](migrating-macros.md#alternative-approaches) at the bottom of this article.
+In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting get the data needed. This example does not take nested data into account. For an example on how to to do this, [check out one of the alternatives](#alternative-approaches) at the bottom of this article.
 
 This example also only fetches the active (draft/current) version of the affected data to reduce processing time.
 
@@ -489,7 +489,7 @@ A full list of files including the full version of the `MacroMigrationService` a
 
 <summary>Full MacroMigrator System</summary>
 
-**CtaButtonMacroMigrator.cs**
+#### CtaButtonMacroMigrator.cs
 
 ```csharp
 using System.Text.RegularExpressions;
@@ -618,7 +618,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 }
 ```
 
-**IMacroMigrationService.cs**
+#### IMacroMigrationService.cs
 
 ```csharp
 namespace MacrosThirteenToFifteen.MacroMigrator;
@@ -642,7 +642,7 @@ public interface IMacroMigrationService
 }
 ```
 
-**IMacroMigrator.cs**
+#### IMacroMigrator.cs
 
 ```csharp
 namespace MacrosThirteenToFifteen.MacroMigrator;
@@ -665,7 +665,7 @@ public interface IMacroMigrator
 }
 ```
 
-**MacroController.cs**
+#### MacroController.cs
 
 ```csharp
 using Asp.Versioning;
@@ -727,7 +727,7 @@ public class MacroMigrationsConfigureSwaggerGenOptions : IConfigureOptions<Swagg
 }
 ```
 
-**MacroMigrationComposer.cs**
+#### MacroMigrationComposer.cs
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -747,7 +747,7 @@ public class MacroMigrationComposer : IComposer
 }
 ```
 
-**MacroMigrationService.cs**
+#### MacroMigrationService.cs
 
 ```csharp
 using System.Text.RegularExpressions;

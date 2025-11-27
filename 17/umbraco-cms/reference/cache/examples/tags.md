@@ -1,5 +1,5 @@
 ---
-description: Information on how to insert and delete from the runtime cache
+description: "Information on how to insert and delete from the runtime cache"
 ---
 
 # Working with caching
@@ -10,8 +10,9 @@ This article will show you how to insert and delete from the runtime cache.
 
 For this example we're working with tags. On my site I have two tag properties:
 
-1. One on every page using the tag group `default`
-2. One on my blog posts using the tag group `blog`
+1) One on every page using the tag group `default`
+
+2) One on my blog posts using the tag group `blog`
 
 We're going to expose an endpoint that allows us to get the tags from each group.
 
@@ -150,7 +151,11 @@ public class TagsController : Controller
 
 `/umbraco/api/tags/getblogtags`
 
+![Result](images/response.png)
+
 `/umbraco/api/tags/getdefaulttags`
+
+![Result](images/response-2.png)
 
 Everything should now work as expected when it comes to getting tags. However, if I go to my Backoffice and add a new tag to the `blog` group the changes aren't shown on the endpoint. Let's fix that.
 

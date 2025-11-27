@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to create, manage, and assign permissions to users in the Umbraco
-  backoffice.
+  Learn how to create, manage, and assign permissions to users in the Umbraco backoffice.
 ---
 
 # Users
@@ -18,7 +17,7 @@ To create or invite a User:
 2. Select **Create -> User**. Alternatively, click **Invite...**.
 3. Enter the **Name** and **Email** of the new user.
 4. Select which **User group** the new user should be added to.
-5. _\[Optional]_ Enter a **Message** for the invitation.
+5. *[Optional]* Enter a **Message** for the invitation.
 6. Click **Create user** or **Send invite**.
 
 Once you have created the user, the new user will receive a system-generated password for their initial login. This password needs to be used to access the account.
@@ -46,7 +45,7 @@ Use the **Status** filter to narrow down users based on their current state:
 * Active – Users who have logged in and are enabled.
 * Disabled – Users whose access has been explicitly turned off.
 * Locked out - User has been automatically blocked from logging in after too many failed login attempts.
-* Invited - User has been invited to access the Umbraco backoffice.
+* Invited -  User has been invited to access the Umbraco backoffice.
 * Inactive – Users who haven't logged in or have been disabled.
 
 The **Groups** filter lets you view users based on the user groups they belong to. For example, Administrators, Editors, Sensitive data, Translators, and Writers.
@@ -87,11 +86,11 @@ You can also create your own custom User Groups and add properties and tabs as y
 2. Select **User Groups**.
 3. Click **Create**.
 
-![User Groups Menu](../../../.gitbook/assets/user-groups-menu-v16.png)
+![User Groups Menu](../images/user-groups-menu-v16.png)
 
 ### User Group Parameters
 
-![Create User Group](../../../.gitbook/assets/user-groups-v16.png)
+![Create User Group](../images/user-groups-v16.png)
 
 Enter the information about the User Group and settings for custom properties:
 
@@ -107,13 +106,13 @@ Depending on which User Group a user is added to, each user has a set of permiss
 
 The available user Permissions are defined under **Default Permissions** in the User group.
 
-![Default permissions](../../../.gitbook/assets/default-permissions-v16.png)
+![Default permissions](../images/default-permissions-v16.png)
 
 ## Granular Permissions
 
 As an addition to the Default Permissions, it is also possible to add more granular permissions on a User Group level.
 
-![Granular permissions](../../../.gitbook/assets/granular-permissions.png)
+![Granular permissions](../images/granular-permissions.png)
 
 With the **Documents** permission, you can define granular permissions on specific documents. This is useful when a User Group should only have limited access to a certain page on the website. Clicking **Add** opens a dialog where you can choose between documents from the Content section.
 

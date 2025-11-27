@@ -18,11 +18,11 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Data Type Definition Example
 
-![File Upload Definition](../../../../.gitbook/assets/file-upload-definition.png)
+![File Upload Definition](images/file-upload-definition.png)
 
 ## Content Example
 
-![Content Example Empty](../../../../.gitbook/assets/fileupload-content-empty.png) ![Content Example](../../../../.gitbook/assets/fileupload-content.png)
+![Content Example Empty](images/fileupload-content-empty.png) ![Content Example](images/fileupload-content.png)
 
 In code, the property is a string, which references the location of the file.
 

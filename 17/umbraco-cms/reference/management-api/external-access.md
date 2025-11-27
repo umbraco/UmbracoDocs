@@ -2,7 +2,7 @@
 description: How external applications can consume the Management API.
 ---
 
-# External Access
+# External access to the Management API
 
 The Management API can be used directly for integrations between Umbraco and external systems.
 
@@ -25,7 +25,7 @@ As shown, the access token should be used as a Bearer token when consuming the M
 Also, notice that access tokens have a fixed expiry. While you can keep issuing new tokens for the Client Credentials, reuse tokens within their lifespan. This will be more performant and avoid flooding the Umbraco database with tokens.
 
 {% hint style="info" %}
-The Management API does not support OpenID Connect Discovery. This is reserved for Members accessing protected content via the [Delivery API](../content-delivery-api/protected-content-in-the-delivery-api/).
+The Management API does not support OpenID Connect Discovery. This is reserved for Members accessing protected content via the [Delivery API](../content-delivery-api/protected-content-in-the-delivery-api/README.md).
 {% endhint %}
 
 The following code sample demonstrates how to consume the Management API by
@@ -33,7 +33,7 @@ The following code sample demonstrates how to consume the Management API by
 1. Obtaining an access token from the token endpoint, and
 2. Fetching data from the "current user" endpoint.
 
-![The "current user" endpoint in Swagger UI](../../.gitbook/assets/current-user-endpoint.png)
+![The "current user" endpoint in Swagger UI](images/current-user-endpoint.png)
 
 {% hint style="info" %}
 This sample requires the [`IdentityModel`](https://www.nuget.org/packages/IdentityModel) NuGet package to run.

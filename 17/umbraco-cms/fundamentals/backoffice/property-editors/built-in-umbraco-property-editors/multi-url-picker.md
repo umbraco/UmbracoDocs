@@ -6,20 +6,23 @@
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to pick and sort multiple URLs. It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting. When that is set to 1, it returns a single item, otherwise a collection. Multi URL Picker allows editors to select and sort multiple URLs. The property returns either a single item or a collection, depending on the **Maximum number of items** setting in the Data Type configuration.
+Multi Url Picker allows an editor to pick and sort multiple URLs.
+It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting.
+When that is set to 1, it returns a single item, otherwise a collection.
+Multi URL Picker allows editors to select and sort multiple URLs. The property returns either a single item or a collection, depending on the **Maximum number of items** setting in the Data Type configuration.
 
-* When the maximum is set to 1, it returns a single item.
-* When the maximum is greater than 1, it returns a collection.
+- When the maximum is set to 1, it returns a single item.
+- When the maximum is greater than 1, it returns a collection.
 
 The URLs can point to **internal**, **external**, or **media** items.
 
 ## Data Type Definition Example
 
-![Multi Url Picker Data Type Definition](../../../../.gitbook/assets/Multi-Url-Picker-DataType.png)
+![Multi Url Picker Data Type Definition](images/Multi-Url-Picker-DataType.png)
 
 ## Content Example
 
-![Multi Url Picker Content](../../../../.gitbook/assets/Multi-Url-Picker-Content.png)
+![Multi Url Picker Content](images/Multi-Url-Picker-Content.png)
 
 ## MVC View Example
 
@@ -82,6 +85,8 @@ And here is the case of `Maximum number of items` set to `1`:
     }
 }
 ```
+
+
 
 ## Add values programmatically
 

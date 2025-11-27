@@ -57,7 +57,7 @@ It is possible to mark important content versions as "prevent cleanup" to ensure
 
 1.  Open rollback modal.
 
-    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-1 (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../16/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
 2.  Click **Prevent cleanup** button for each important version.
 
-    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-2 (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../16/umbraco-cms/fundamentals/data/images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>

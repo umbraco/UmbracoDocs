@@ -34,11 +34,11 @@ Customize the appearance of the Rich Text Editor with custom CSS properties.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../../../../.gitbook/assets/rte-tiptap-datatypedefinition.png)
+![Rich Text Editor - Data Type](images/rte-tiptap-datatypedefinition.png)
 
 ## Content Example
 
-![Rich Text Editor - Content Example](../../../../../.gitbook/assets/rte-tiptap-contentexample.png)
+![Rich Text Editor - Content Example](images/rte-tiptap-contentexample.png)
 
 ## MVC View Example
 

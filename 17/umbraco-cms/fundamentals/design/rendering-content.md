@@ -4,7 +4,7 @@ _The primary task of any template is to render the values of the current page or
 
 ## Display a value in your template view
 
-Each property in your [Document Type](../data/defining-content/#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
+Each property in your [Document Type](../data/defining-content/README.md#what-is-a-document-type) has an alias, this is used to specify where in the template view to display the value.
 
 ```html
 <h1>@Model.Value("pageTitle")</h1>
@@ -83,7 +83,7 @@ To use the `fallback` type, add the `@using Umbraco.Cms.Core.Models.PublishedCon
     * Each language can optionally be provided with a fall-back language, that will be used when content is not populated for the language requested and the appropriate overload parameters are provided.
     *   It is possible to chain these language fall-backs, so requesting content for Portuguese, could fall-back to Spanish and then on to English.
 
-        ![Configuring fall-back languages](../../.gitbook/assets/language-fallback.png)
+        ![Configuring fall-back languages](images/language-fallback.png)
 
 ## Query content
 
@@ -100,9 +100,9 @@ You can do this by querying content relative to your current page in template vi
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries. ![Query button](<../../.gitbook/assets/button-v8 (1).png>)
+You can use the Query Builder in the template editor to build more advanced queries. ![Query button](../../../../16/umbraco-cms/fundamentals/design/images/button-v8.png)
 
-![Query helper](<../../.gitbook/assets/query-v9 (1).png>)
+![Query helper](../../../../16/umbraco-cms/fundamentals/design/images/query-v9.png)
 
 ### More information
 

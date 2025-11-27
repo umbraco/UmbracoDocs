@@ -14,11 +14,11 @@ It is possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](../../../../.gitbook/assets/Color-Picker-DataType.png)
+![Color Picker Data Type Definition](images/Color-Picker-DataType.png)
 
 ## Content Example
 
-![Color Picker Content](<../../../../.gitbook/assets/Color-Picker-Content-v8 (1).png>)
+![Color Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Color-Picker-Content-v8.png)
 
 ## Example with Models Builder
 

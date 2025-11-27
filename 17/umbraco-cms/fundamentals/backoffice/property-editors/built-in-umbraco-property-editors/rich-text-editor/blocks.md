@@ -7,7 +7,7 @@ Blocks can be added to the Rich Text Editor when:
 * Available Blocks are specified as part of the Rich Text Editor Data Type configuration.
 * The **Insert Block** toolbar option is enabled in the Rich Text Editor.
 
-![RTE Insert Block Toolbar Button](../../../../../.gitbook/assets/rte-blocks-toolbar-insert-button.png)
+![RTE Insert Block Toolbar Button](images/rte-blocks-toolbar-insert-button.png)
 
 ## Configure Blocks
 
@@ -21,7 +21,7 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 4. Add the Element Types you want to make available as blocks.
 5. Configure each Block Type with the options described below.
 
-![RTE Blocks Data Type Configuration](../../../../../.gitbook/assets/rte-blocks-datatype-configuration.png)
+![RTE Blocks Data Type Configuration](images/rte-blocks-datatype-configuration.png)
 
 ### Editor Appearance
 
@@ -31,7 +31,7 @@ Configure how blocks appear and behave in the Content section:
 * **Display Inline** - When enabled, blocks remain inline with surrounding text. When disabled, blocks appear on separate lines.
 * **Overlay size** - Set the size of the editing overlay when editors work with the block content.
 
-![RTE Blocks Editor Appearance Settings](../../../../../.gitbook/assets/rte-blocks-editor-appearance-settings.png)
+![RTE Blocks Editor Appearance Settings](images/rte-blocks-editor-appearance-settings.png)
 
 ### Data Models
 
@@ -40,7 +40,7 @@ Configure the content structure for your blocks:
 * **Content model** - The Element Type that defines the main content properties for the block (required).
 * **Settings model** - Optional Element Type that defines additional settings or configuration options for the block.
 
-![RTE Blocks Data Models Settings](../../../../../.gitbook/assets/rte-blocks-data-models-settings.png)
+![RTE Blocks Data Models Settings](images/rte-blocks-data-models-settings.png)
 
 ### Catalogue Appearance
 
@@ -57,15 +57,18 @@ Control how blocks appear in the block picker:
 Editors can add blocks to rich text content using the **Insert Block** toolbar button:
 
 1. Position the cursor where you want to insert the block
-2.  Click the **Insert Block** button in the Rich Text Editor toolbar
 
-    ![Adding Blocks to Content - Step 1](../../../../../.gitbook/assets/rte-blocks-adding-to-content-1.png)
-3.  Select the desired Block from the available options
+2. Click the **Insert Block** button in the Rich Text Editor toolbar
 
-    ![Adding Blocks to Content - Step 2](../../../../../.gitbook/assets/rte-blocks-adding-to-content-2.png)
-4.  Configure the block content (and settings, if provided)
+   ![Adding Blocks to Content - Step 1](images/rte-blocks-adding-to-content-1.png)
 
-    ![Adding Blocks to Content - Step 3](../../../../../.gitbook/assets/rte-blocks-adding-to-content-3.png)
+3. Select the desired Block from the available options
+
+   ![Adding Blocks to Content - Step 2](images/rte-blocks-adding-to-content-2.png)
+
+4. Configure the block content (and settings, if provided)
+
+   ![Adding Blocks to Content - Step 3](images/rte-blocks-adding-to-content-3.png)
 
 The block appears in the editor as a structured element.
 

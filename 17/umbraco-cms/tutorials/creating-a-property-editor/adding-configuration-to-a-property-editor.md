@@ -167,7 +167,7 @@ You can use any Property Editor UI to define Configuration fields. The alias of 
 
 3. Save the files and reload the backoffice. We can now configure our Data Type:
 
-<figure><img src="../../.gitbook/assets/suggestion-editor-config_3.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
+<figure><img src="images/suggestion-editor-config_3.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
 
 ## Using the configuration
 
@@ -264,7 +264,7 @@ import { ifDefined } from '@umbraco-cms/backoffice/external/lit';
 
 <summary>See the entire file: suggestions-property-editor-ui.element.ts</summary>
 
-{% code title="suggestions-property-editor-ui.element.ts" overflow="wrap" lineNumbers="true" %}
+{% code title="suggestions-property-editor-ui.element.ts" lineNumbers="true" overflow="wrap" %}
 ```typescript
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
 import { css, customElement, html, ifDefined, LitElement, property, state } from '@umbraco-cms/backoffice/external/lit';
@@ -369,11 +369,11 @@ declare global {
 
 </details>
 
-6. Run the command `npm run build` in the `suggestions` folder.
-7. Run the project.
+6. Run the command `npm run build` in the `suggestions` folder.&#x20;
+7. Run the project.&#x20;
 8. Go to the **Content** section of the Backoffice to see the new changes in the property editor:
 
-<figure><img src="../../.gitbook/assets/suggestion-editor-backoffice_2.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
+<figure><img src="images/suggestion-editor-backoffice_2.png" alt=""><figcaption><p>Suggestions Property Editor with disabled suggestions option</p></figcaption></figure>
 
 ## Going further
 

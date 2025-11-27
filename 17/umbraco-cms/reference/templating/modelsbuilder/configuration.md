@@ -46,4 +46,4 @@ Models Builder ships with a dashboard in the _Settings_ section of Umbraco's bac
 * Provides a way to generate models (in SourceCodeManual mode only)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
-![Models Builder Dashboard](../../../.gitbook/assets/ModelsBuilderDashboard-v14.png)
+![Models Builder Dashboard](images/ModelsBuilderDashboard-v14.png)

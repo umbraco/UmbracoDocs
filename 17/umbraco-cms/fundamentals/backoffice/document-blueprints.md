@@ -1,5 +1,6 @@
 ---
-description: Learn how to create and use Document Blueprints in Umbraco.
+description: >-
+  Learn how to create and use Document Blueprints in Umbraco.
 ---
 
 # Document Blueprints
@@ -15,26 +16,26 @@ A Document Blueprint allows editors to preconfigure a content node. It serves as
 ### Method 1 – Create a Document Blueprint from the Content Section
 
 {% hint style="warning" %}
-Before using this method, make sure you have already [created some content](../data/defining-content/#3-creating-the-content).
+Before using this method, make sure you have already [created some content](../data/defining-content/README.md#3-creating-the-content).
 {% endhint %}
 
 1. Go to the **Content** section and select an existing content node.
 
-![Content-Menu](../../.gitbook/assets/content-menu-DB.png)
+![Content-Menu](images/content-menu-DB.png)
 
 2. Click the **...** menu next to the node and choose **Create Document Blueprint**.
 
-![Action Button](../../.gitbook/assets/action-menu-DB.png)
+![Action Button](images/action-menu-DB.png)
 
 3. Enter a **Name** for the new blueprint.
 
-![Document Blueprint Name Field](../../.gitbook/assets/Name-Content-Template-DB.png)
+![Document Blueprint Name Field](images/Name-Content-Template-DB.png)
 
 4. Click **Save**.
 
 The new blueprint will appear under the **Document Blueprints** folder in the **Settings** section.
 
-![New Document Blueprint](../../.gitbook/assets/Find-Content-Template-DB.png)
+![New Document Blueprint](images/Find-Content-Template-DB.png)
 
 {% hint style="info" %}
 If you don’t see the new blueprint, try refreshing your browser.
@@ -43,14 +44,16 @@ If you don’t see the new blueprint, try refreshing your browser.
 ### Method 2 – Create a Document Blueprint from the Settings Section
 
 1. Go to the **Settings** section.
+
 2. Click the **...** menu next to the **Document Blueprints** tree.
+
 3. Select **Create...**.
 
-![Create Document Blueprint](../../.gitbook/assets/Create-Content-Template-DB.png)
+![Create Document Blueprint](images/Create-Content-Template-DB.png)
 
 4. Choose the Document Type you want to base the blueprint on.
 
-![Select Content Type](../../.gitbook/assets/Content-Type-DB.png)
+![Select Content Type](images/Content-Type-DB.png)
 
 {% hint style="warning" %}
 You can only create Document Blueprints from **Document Types** or **Document Types with Templates**.
@@ -71,7 +74,7 @@ To edit an existing document blueprint, follow these steps:
 4. Make your changes.
 5. Click **Save**.
 
-![Edit Document Blueprint](../../.gitbook/assets/Edit-Content-Template-DB.png)
+![Edit Document Blueprint](images/Edit-Content-Template-DB.png)
 
 ### Use a Document Blueprint
 
@@ -82,14 +85,15 @@ To use a document blueprint, follow these steps:
 1. Go to the **Content** section.
 2. Click the **...** menu next to the root node and select **Create**.
 
-![Create From Template](../../.gitbook/assets/Create-From-Template-DB.png)
+![Create From Template](images/Create-From-Template-DB.png)
 
 3. Select the **Document Type** that has an associated blueprint.
 
-![Select the Document Type](../../.gitbook/assets/select-doc-type-DB.png)
+![Select the Document Type](images/select-doc-type-DB.png)
 
 4. Choose how to create the new content:
-   * Use the Document Blueprint
-   * Start with a blank node
 
-![Select Template](../../.gitbook/assets/Select-Template-DB.png)
+    * Use the Document Blueprint
+    * Start with a blank node
+
+![Select Template](images/Select-Template-DB.png)

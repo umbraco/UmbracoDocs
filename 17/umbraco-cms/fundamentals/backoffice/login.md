@@ -10,7 +10,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form similar to this:
 
-![Login screen](../../.gitbook/assets/login-backoffice-login-v14.png)
+![Login screen](images/login-backoffice-login-v14.png)
 
 The **login** screen contains a short greeting, a **login form** and an optional **Forgotten password** link.
 
@@ -214,7 +214,7 @@ The CSS custom properties may change in future versions of Umbraco. You can alwa
 
 ## The Time Out Screen
 
-![Time out screen](../../.gitbook/assets/timeout-screen.jpg)
+![Time out screen](images/timeout-screen.jpg)
 
 The time out screen is displayed when the user has been inactive for a certain amount of time. The screen resembles the login screen in many ways and the two are sometimes confused. The most notable difference is that the time out screen does not have a login form. It only has a message and a button to log in again with Umbraco.
 

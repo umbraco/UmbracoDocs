@@ -2,7 +2,6 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
-hidden: true
 ---
 
 # Release Candidate Guide
@@ -82,18 +81,18 @@ Here is a list of all the new or updated articles in this version.
 * [Backoffice Signs](customizing/back-office-signs.md)
 * [Flag Providers](extending/flag-providers.md)
 * [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md#creating-a-configureoptions-class)
-* [Displaying the MiniProfiler](fundamentals/code/debugging/#displaying-the-miniprofiler)
+* [Displaying the MiniProfiler](fundamentals/code/debugging/README.md#displaying-the-miniprofiler)
 * [Load Balancing the Backoffice](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md)
 * [SignalR in a Backoffice Load Balanced Environment](fundamentals/setup/server-setup/load-balancing/signalR-in-backoffice-load-balanced-environment.md)
 * [Distributed jobs settings](reference/configuration/distributedjobssettings.md)
 * [Background jobs when load balancing the backoffice](reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice)
 * [Property Editor Data Source](customizing/property-editors/composition/property-editor-data-source.md)
-* [Picker Data Source Type](customizing/property-editors/data-source-types/picker/)
+* [Picker Data Source Type](customizing/property-editors/data-source-types/picker/README.md)
 * [Collection Data Source](customizing/property-editors/data-source-types/picker/picker-collection-data-source.md)
 * [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
 * [Entity Data Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/entity-data-picker.md)
 * [Kinds](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md#kinds)
-* [Repositories](customizing/foundation/repositories/)
+* [Repositories](customizing/foundation/repositories/README.md)
 * [Collection Repository](customizing/foundation/repositories/repository-types/collection-repository.md)
 * [Detail Repository](customizing/foundation/repositories/repository-types/detail-repository.md)
 * [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)

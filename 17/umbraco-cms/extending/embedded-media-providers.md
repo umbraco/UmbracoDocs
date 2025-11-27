@@ -6,11 +6,11 @@ description: A guide to creating a custom embed providers in Umbraco
 
 The Rich Text Editor in Umbraco has an 'Embed' button, that when pressed, slides open a panel. This panel enables editors to paste the URL of a third-party media resource to embed in content.
 
-![The Rich Text Editor Embed Button](../.gitbook/assets/Embed-Button.png)
+![The Rich Text Editor Embed Button](images/Embed-Button.png)
 
 For example, a YouTube Video:
 
-![Embedding a music video from YouTube](../.gitbook/assets/Embed-YouTube.png)
+![Embedding a music video from YouTube](images/Embed-YouTube.png)
 
 The task of an `EmbedProvider` is to accept the pasted URL and write out the appropriate markup for the third-party provider associated with the URL.
 
@@ -111,7 +111,7 @@ public class RegisterEmbedProvidersComposer : IComposer
 
 The new provider should be available for editors to use:
 
-![Embedding a Media Item from DeviantArt website](../.gitbook/assets/deviantart-embedded-media.png)
+![Embedding a Media Item from DeviantArt website](images/deviantart-embedded-media.png)
 
 Notice there isn't any implementation written here. The regex maps the incoming URL to the provider. The base methods handle the complication of requesting from the third-party API and turning the response into HTML.
 

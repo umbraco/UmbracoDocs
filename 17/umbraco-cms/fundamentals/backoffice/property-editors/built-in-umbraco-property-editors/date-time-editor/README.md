@@ -8,9 +8,9 @@ These property editors replace the legacy `[Date Time](../date-time.md)` propert
 
 Umbraco CMS currently ships with four Date Time editors:
 
-| Editor                                                    | Purpose                                   | Use Cases                                                     | Return Type      | Preview                                                                                                |
-| --------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------ |
-| [Date Only](date-only.md)                                 | Date selection                            | Birthdays, deadlines, event dates                             | `DateOnly`       | ![Date Only editor](../../../../../.gitbook/assets/date-only-editor.png)                               |
-| [Time Only](time-only.md)                                 | Time selection                            | Business hours, schedules, time-based events                  | `TimeOnly`       | ![Time Only editor](../../../../../.gitbook/assets/time-only-time-format-hhmm.png)                     |
-| [Date Time (with Time Zone)](date-time-with-time-zone.md) | Full date, time, and time zone support    | International apps, timezone-aware scheduling                 | `DateTimeOffset` | ![Date Time with Time Zone editor](../../../../../.gitbook/assets/date-time-with-time-zone-editor.png) |
-| [Date Time (Unspecified)](date-time-unspecified.md)       | Date and time without a defined time zone | Local events, compatibility with [Date Time](../date-time.md) | `DateTime`       | ![Date Time Unspecified editor](../../../../../.gitbook/assets/date-time-time-format-hhmm.png)         |
+| Editor | Purpose | Use Cases | Return Type | Preview |
+|--------|---------|-----------|-------------|---------|
+| [Date Only](date-only.md) | Date selection | Birthdays, deadlines, event dates | `DateOnly` | ![Date Only editor](./images/date-only-editor.png) |
+| [Time Only](time-only.md) | Time selection | Business hours, schedules, time-based events | `TimeOnly` | ![Time Only editor](./images/time-only-time-format-hhmm.png) |
+| [Date Time (with Time Zone)](date-time-with-time-zone.md) | Full date, time, and time zone support | International apps, timezone-aware scheduling | `DateTimeOffset` | ![Date Time with Time Zone editor](./images/date-time-with-time-zone-editor.png) |
+| [Date Time (Unspecified)](date-time-unspecified.md) | Date and time without a defined time zone | Local events, compatibility with [Date Time](../date-time.md) | `DateTime` | ![Date Time Unspecified editor](./images/date-time-time-format-hhmm.png) |

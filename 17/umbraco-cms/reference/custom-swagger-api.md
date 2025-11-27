@@ -2,20 +2,25 @@
 description: Example of a Custom API with Authorization and Swagger
 ---
 
-# Custom Swagger API
+# Custom API with Authorization and Swagger
 
 This article covers how to create a Custom API controller protected by the backoffice authorization policies. It also shows how to enable the authorization UI in Swagger docs.
 
+
 {% hint style="info" %}
-Before proceeding, make sure to read the [Management API](management-api/) article. It provides information about the Swagger documentation and Authorization used in this article.
+
+Before  proceeding, make sure to read the [Management API](./management-api/README.md) article. It provides information about the Swagger documentation and Authorization used in this article.
+
 {% endhint %}
 
-This example can be a starting point for creating a secure custom API with automatic Swagger documentation. You can find other examples in the [API versioning and OpenAPI](api-versioning-and-openapi.md) article.
+This example can be a starting point for creating a secure custom API with automatic Swagger documentation. You can find other examples in the [API versioning and OpenAPI](./api-versioning-and-openapi.md) article.
 
 1. Create a new `.cs` file called `MyBackOfficeSecurityRequirementsOperationFilter` in your Umbraco project.
+
 2. Add the following code so that the new API shows in the Swagger documentation and Swagger UI:
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
 
 using Microsoft.Extensions.Options;
@@ -48,15 +53,17 @@ public class MyComposer : IComposer
 }
 
 ```
+
 {% endcode %}
 
-* Our filter inherits from `BackOfficeSecurityRequirementsOperationFilterBase`. This marks our API as supporting authorization via Swagger.
-* `MyConfigureSwaggerGenOptions` configures our API swagger docs with our filter applied.
-* `MyComposer` makes sure the swagger generator knows about our API docs configuration at runtime.
+- Our filter inherits from `BackOfficeSecurityRequirementsOperationFilterBase`. This marks our API as supporting authorization via Swagger.
+- `MyConfigureSwaggerGenOptions` configures our API swagger docs with our filter applied.
+- `MyComposer ` makes sure the swagger generator knows about our API docs configuration at runtime.
 
 3. Add the ApiController to setup the logic behind the endpoint:
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
 
 using Umbraco.Cms.Api.Common.Attributes;
@@ -96,6 +103,7 @@ public class MyApiController : Controller
 }
 
 ```
+
 {% endcode %}
 
 <details>
@@ -103,6 +111,7 @@ public class MyApiController : Controller
 <summary>See the entire file: MyBackOfficeSecurityRequirementsOperationFilter.cs</summary>
 
 {% code title="MyBackOfficeSecurityRequirementsOperationFilter.cs" lineNumbers="true" %}
+
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
@@ -167,6 +176,7 @@ public class MyApiController : Controller
     }
 }
 ```
+
 {% endcode %}
 
 </details>
@@ -174,7 +184,7 @@ public class MyApiController : Controller
 4. Run the project and navigate to `{yourdomain}/umbraco/swagger`.
 5. Choose the swagger documentation we created with the code above named **My API v1** from **Select a definition**.
 
-![Created Custom API in Swagger Documentation](../.gitbook/assets/custom-api-swagger-example.png)
+![Created Custom API in Swagger Documentation](./images/custom-api-swagger-example.png)
 
 Here, we can find the endpoint that we created:
 
@@ -183,9 +193,10 @@ GET /api/v1/my/say-hello
 ```
 
 6. Click on the **Authorize** button to authenticate.
+
 7. Try out the endpoint using the **Try it out** button.
 8. Click on **Execute**.
 
-![Trying out the endpoint](../.gitbook/assets/custom-api-swagger-example-response.png)
+![Trying out the endpoint](./images/custom-api-swagger-example-response.png)
 
 We now get the response we have setup using the code: `"Hello, {{userName}}"`.

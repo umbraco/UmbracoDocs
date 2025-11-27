@@ -8,7 +8,7 @@ description: >-
 
 A maintenance page will be shown when an Umbraco project is running an upgrade. This prevents visitors from landing on an upgrade page or seeing content meant for project maintainers.
 
-![The default maintenance page making site visitors aware of the state of the site.](<../.gitbook/assets/maintenancePage (1).png>)
+![The default maintenance page making site visitors aware of the state of the site.](../../../16/umbraco-cms/tutorials/images/maintenancePage.png)
 
 ## Customize the maintenance page
 

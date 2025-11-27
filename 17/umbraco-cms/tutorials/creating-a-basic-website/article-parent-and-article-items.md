@@ -20,7 +20,7 @@ To create **Articles Main** Document Type, follow these steps:
     | Intro | Articles Title     | articlesTitle    | Textstring       |
     | Intro | Articles Body Text | articlesBodyText | Rich Text Editor |
 
-    ![Articles Main Document Type Data Properties](../../.gitbook/assets/articles-main.png)
+    ![Articles Main Document Type Data Properties](images/articles-main.png)
 7. Click **Save**
 
 To create **Articles Item** Document Type, follow these steps:
@@ -37,7 +37,7 @@ To create **Articles Item** Document Type, follow these steps:
     | Content | Article Title   | articleTitle   | Textstring       |
     | Content | Article Content | articleContent | Rich Text Editor |
 
-    ![Article Item Document Type Data Properties](../../.gitbook/assets/articles-item.png)
+    ![Article Item Document Type Data Properties](images/articles-item.png)
 7. Click **Save**
 
 ### Updating the Document Type Permissions
@@ -57,14 +57,14 @@ To update **Articles Main** Document Type permissions:
 2. Go to the **Structure** tab.
 3. Select **Choose** in the **Allowed child node types**.
 4. Select **Articles Item**.
-5.  Click **Choose**.
+5. Click **Choose**.
 
-    ![Adding child Node](../../.gitbook/assets/adding-child-node.png)
+    ![Adding child Node](images/adding-child-node.png)
 6. Click **Configure as a collection**.
 7. Select **List View - Content**.
-8.  Click **Save**.
+8. Click **Save**.
 
-    ![Enabling Collection](../../.gitbook/assets/list-view-enabled.png)
+    ![Enabling Collection](images/list-view-enabled.png)
 
 ## Creating the Content Node
 
@@ -76,18 +76,21 @@ To add a content node:
 4. Select **Articles Main**.
 5. Enter the name for the article. We are going to call it _Articles_.
 6. Enter the content in the **Article Title** and **Article Body Text** fields.
-7.  Click **Save and Publish**. When you click on Save and Publish, you will notice an empty Collection is created.
+7. Click **Save and Publish**. When you click on Save and Publish, you will notice an empty Collection is created.
 
     We still need to add the child nodes which will be displayed in the Collection making it easier to view them. You can create new nodes from this section.
 
-    \{% hint style="info" %\} If you do not see the Collection, try refreshing the page. \{% endhint %\}
+    {% hint style="info" %}
+    If you do not see the Collection, try refreshing the page.
+    {% endhint %}
+
 8. Click **Create Articles Item**.
 9. Enter the name for the article. We are going to call it _Article 1_.
 10. Enter the content in the **Article Title** and **Article Content** fields.
 11. Repeat steps 8 to 10 to create _Article 2_.
 12. Click **Save and Publish**.
 
-    ![Content Tree with Articles](../../.gitbook/assets/figure-40-articles-created-v8.png)
+    ![Content Tree with Articles](images/figure-40-articles-created-v8.png)
 
 ## Updating the Template
 
@@ -107,13 +110,13 @@ To update the **Articles Main** template, follow these steps:
 12. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to _**articlesTitle**_.
 13. Replace the static text within the `<div>` tags (from line 23 to 29) with the Model.Value reference to _**articlesBodyText**_.
 
-    ![Articles Main Template](../../.gitbook/assets/articles-main-template.png)
+    ![Articles Main Template](images/articles-main-template.png)
 14. Define a query for all articles below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
 
-    ![Query Builder](../../.gitbook/assets/query-builder.png)
+    ![Query Builder](images/query-builder.png)
 15. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we are using the following parameters:
 
-    ![Query parameters](../../.gitbook/assets/query-parameters-v14.png)
+    ![Query parameters](images/query-parameters-v14.png)
 16. If you've set the correct parameters, you will get a preview of the items being selected with the query.
 17. Click **Submit**.
 18. You will see a similar code snippet added to your template:
@@ -131,6 +134,7 @@ To update the **Articles Main** template, follow these steps:
         }
     </ul>
     ```
+    
 19. The above code will output a list of all the _**Article Items**_ as links using the name.
 20. We will modify the template a little, to add more information about the articles.
 21. Replace the `HTML` in the _foreach_ loop with this snippet:
@@ -143,7 +147,7 @@ To update the **Articles Main** template, follow these steps:
     </article>
     ```
 22. Remove the `<ul>` tags surrounding the _foreach_ loop.
-23. Click **Save**.
+22. Click **Save**.
 
 <details>
 
@@ -263,7 +267,7 @@ To update the **Articles Item** template, follow these steps:
 12. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to _**articleTitle**_.
 13. Replace the static text within the `<div>` tags (from line 25 to 39) with the Model.Value reference to _**articleContent**_.
 
-    ![Articles Item Template](../../.gitbook/assets/articles-item-template-v9.png)
+    ![Articles Item Template](images/articles-item-template-v9.png)
 14. Click **Submit**.
 15. Click **Save**.
 
@@ -376,4 +380,4 @@ To update the **Articles Item** template, follow these steps:
 
 Check your browser, you should now see something similar to the screen below.
 
-![Finished Articles section](../../.gitbook/assets/article-main-frontend-v14.png)
+![Finished Articles section](images/article-main-frontend-v14.png)

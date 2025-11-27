@@ -10,15 +10,18 @@ With a fresh Umbraco CMS install, you can create frontend registration, login fu
 
 By the end of this tutorial, you will learn how to:
 
-* Implement a basic register/login functionality on your website,
-* Hide pages from non-logged-in members, and
-* Assign newly registered members to specific member groups.
+- Implement a basic register/login functionality on your website,
+- Hide pages from non-logged-in members, and 
+- Assign newly registered members to specific member groups.
 
 ## Prerequisites
 
 1. Install the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md): `dotnet new umbraco`.
+
 2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
+
 3. Run the project: `dotnet run`
+
 4. Complete the installer and login to the backoffice.
 
 ## Create partial views for Registration and Login
@@ -26,36 +29,37 @@ By the end of this tutorial, you will learn how to:
 1. Navigate to the Settings section in the backoffice.
 2. Locate the Partial Views entry under Templating in the left-hand section.
 3. Click the "+" to create a new partial view.
+
 4. Choose **New partial view from snippet...**.
 
-![Create a new partial view](../.gitbook/assets/v14-create-partial-view-from-snippet.png)
+![Create a new partial view](images/v14-create-partial-view-from-snippet.png)
 
 5. Pick the **Login** snippet from the list.
 
-![Create a new partial view from the Login snippet](../.gitbook/assets/v14-create-partial-view-from-login-snippet.png)
+![Create a new partial view from the Login snippet](images/v14-create-partial-view-from-login-snippet.png)
 
 6. Name the partial view **Login** and save it:
 
-![Edit and save the "Login" partial view](../.gitbook/assets/v14-create-login-partial-view.png)
+![Edit and save the "Login" partial view](images/v14-create-login-partial-view.png)
 
-7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets.
+7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets. 
 8. Save the partial views as "Register" and "LoginStatus" respectively.
 
 The Partial Views list should now look like this:
 
-![The list of partial views](../.gitbook/assets/v14-list-of-partial-views.png)
+![The list of partial views](images/v14-list-of-partial-views.png)
 
 ## Create a new Document Type for Registration and Login
 
-To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/)):
+To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/README.md)):
 
 1. Create a new **Document Type with a template** and name it "Login".
 2. Setup the "Login" Document Type to be composed by the "Content Base" and "Navigation Base" Document Types.
 
-![Composition View](../.gitbook/assets/composition-view.png)
+![Composition View](images/composition-view.png)
 
 {% hint style="info" %}
-The "Content Base" and "Navigation Base" Document Types are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](members-registration-and-login.md#prerequisites) section.
+The "Content Base" and "Navigation Base" Document Types are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](#prerequisites) section.
 {% endhint %}
 
 3. Allow the "Login" Document Type as a child under the "Home" Document Type.
@@ -105,24 +109,24 @@ Locate the newly created "Login" template, and overwrite its content with this:
 
 Halfway there!
 
-1. Navigate to the Content section.
-2. Create a new page based on the "Login" Document Type Under the _Home_ node:
+1. Navigate to the Content section. 
+2. Create a new page based on the "Login" Document Type Under the _Home_ node: 
 
-![Creating the Register/Login page](../.gitbook/assets/v14-create-register-login-page.png)
+![Creating the Register/Login page](images/v14-create-register-login-page.png)
 
-3. Save and publish the page.
+3. Save and publish the page. 
 
 The Register and Login functionality is rendered by the "Login" template:
 
-![The Register/Login functionality rendered](../.gitbook/assets/v14-register-login-page-rendered.png)
+![The Register/Login functionality rendered](images/v14-register-login-page-rendered.png)
 
 You can now use the page to register new Members. Every registered person will show up in the Members section in the backoffice:
 
-![Overview of created Members](../.gitbook/assets/v14-members-overview.png)
+![Overview of created Members](images/v14-members-overview.png)
 
 The "LoginStatus" partial view comes into play after registering as a new Member (or logging in as an existing Member). It will render a welcome message and a "log out" button:
 
-![Login status rendering](../.gitbook/assets/v14-login-status.png)
+![Login status rendering](images/v14-login-status.png)
 
 {% hint style="info" %}
 In a real-life scenario, you probably don't want all this functionality on a single page. However, you can still use the partial views as a basis for your own implementation.
@@ -151,37 +155,38 @@ Now that we have the options to:
 
 We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this:
 
-1. Go to the **Member** section in the Backoffice.
-2. Create a new **Member Group**.
+ 1. Go to the **Member** section in the Backoffice.
+ 2. Create a new **Member Group**.
 
-![Create a new member group](../.gitbook/assets/v14-create-member-group.png)
+![Create a new member group](images/v14-create-member-group.png)
 
 3. Give the group a name.
 4. Save the Member Group.
 
-![Naming the new member group](../.gitbook/assets/v14-create-member-group-step-2.png)
+![Naming the new member group](images/v14-create-member-group-step-2.png)
 
 5. Navigate back to the created Member.
 6. Assign the newly created Member Group.
 7. Save the member:
 
-![Assign the new Member group to the created Member](../.gitbook/assets/v14-assign-member-group.png)
+![Assign the new Member group to the created Member](images/v14-assign-member-group.png)
 
 Almost there!
 
 1. Navigate to the **Content** section.
 2. Create a new page that should only be visible to "Premium" members.
+
 3. Click the menu icon (•••) and select **Public Access**.
 
-![Restricting public access to content](../.gitbook/assets/v16-restrict-content-access.png)
+![Restricting public access to content](images/v16-restrict-content-access.png)
 
 You will now have the option to restrict access to a specific member or a specific group. Choose **Group based protection**. In the dialog that follows, provide the following details:
 
-* The group(s) that will have access to the page.
-* The page with the login form.
-* The page to display if the content page is inaccessible to the logged-in member.
+- The group(s) that will have access to the page.
+- The page with the login form.
+- The page to display if the content page is inaccessible to the logged-in member.
 
-![Configuring public access for content](../.gitbook/assets/v14-configure-public-access.png)
+![Configuring public access for content](images/v14-configure-public-access.png)
 
 {% hint style="info" %}
 It is recommended to have a dedicated page for the "No access" page - though you can use any page you have.
@@ -193,7 +198,7 @@ However, with the above approach, members will not be assigned to any group auto
 
 ## Assigning new members to groups automatically
 
-We can leverage the [built-in Notifications](../reference/notifications/) to handle the automatic Member Group assignment. Specifically the `MemberSavedNotification`, which is triggered whenever a Member is saved.
+We can leverage the [built-in Notifications](../reference/notifications/README.md) to handle the automatic Member Group assignment. Specifically the `MemberSavedNotification`, which is triggered whenever a Member is saved.
 
 {% hint style="info" %}
 This notification is triggered when _any_ Member is saved. Make sure test its usage carefully.

@@ -15,9 +15,9 @@ To add a new language, follow these steps:
    * Mandatory language for your site, toggle **Mandatory Language**.
 6. Select a **Fallback Language** from the drop-down list.
 7. Click **Submit**.
-8.  Click **Save**.
+8. Click **Save**.
 
-    ![Adding a language](../../.gitbook/assets/adding-a-language-v15.png)
+    ![Adding a language](images/adding-a-language-v15.png)
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -25,16 +25,17 @@ To enable language variants on Document Types, follow these steps:
 
 1. Go to the **Settings** section.
 2. Select **HomePage** from the **Document Types** folder.
-3.  Go to the **Settings** tab and toggle **Allow vary by culture**
+3. Go to the **Settings** tab and toggle **Allow vary by culture**
 
-    ![Enable Vary by Culture](../../.gitbook/assets/enable-vary-by-culture.png)
+    ![Enable Vary by Culture](images/enable-vary-by-culture.png)
 4. Click **Save**.
 5. Go to the **Design** tab.
 6. Click on the Data Type of the **Page Title** and disable **Shared accross cultures**.
 7. Click **Submit**.
-8.  Click **Save**.
+8. Click **Save**.
 
-    ![Allow property editor Language Variants](../../.gitbook/assets/enable-vary-by-culture-property-v16.png)
+    ![Allow property editor Language Variants](images/enable-vary-by-culture-property-v16.png)
+   
 
 ## Adding Culture and Hostnames to the root node of the website
 
@@ -44,36 +45,36 @@ To add culture and hostnames, follow these steps:
 2. Click on the **...** dots next to the **Home Page** content node.
 3. Select **Culture and Hostnames**.
 4. Add a domain for each hostname, like it's done here:
-5.  Click **Save**.
+5. Click **Save**.
 
-    ![Culture and Hostnames](<../../.gitbook/assets/culture-and-hostnames-v14 (1).png>)
+    ![Culture and Hostnames](images/culture-and-hostnames-v14.png)
 
 ## Adding Language Variants to the Content
 
 You will find a language dropdown above your content tree. If it's not there, you might need to refresh the page:
 
-![Language of Content Tree](../../.gitbook/assets/language-content-tree-v14.png)
+![Language of Content Tree](images/language-content-tree-v14.png)
 
 In the language dropdown, you will find all the languages that you have installed for your site. You can switch between them to update the content variations for each language.
 
 To add language variants to the content, follow these steps:
 
-1.  Go to the **Home Page** node. You will find a language dropdown next to the title at the top.
+1. Go to the **Home Page** node. You will find a language dropdown next to the title at the top.
 
-    ![Language Variant dropdown](../../.gitbook/assets/language-dropdown-v14.png)
-2.  Click on the dropdown. You will see a **Open in Split view** option next to the new language.
+    ![Language Variant dropdown](images/language-dropdown-v14.png)
+2. Click on the dropdown. You will see a **Open in Split view** option next to the new language.
 
-    ![Open Language in Splitview](../../.gitbook/assets/open-in-splitview-v15.png)
-3.  Click **Open in Split view**. We can now see the content node with each language side by side.
+    ![Open Language in Splitview](images/open-in-splitview-v15.png)
+3. Click **Open in Split view**. We can now see the content node with each language side by side.
 
-    You may notice that the Body Text property is marked as _Shared_. This indicates that the **Allow vary by culture** option is not enabled. The value is shared across all languages, so any changes made in one language will automatically apply to all variants.
+    You may notice that the Body Text property is marked as *Shared*. This indicates that the **Allow vary by culture** option is not enabled. The value is shared across all languages, so any changes made in one language will automatically apply to all variants.
 
-    ![Splitview editing](../../.gitbook/assets/splitview-editing-v15.png)
+    ![Splitview editing](images/splitview-editing-v15.png)
 4. Enter the **Name** for your content node and the **Page Title** in the new language.
 5. Click **Save and Publish**.
-6.  The **Ready to Publish** window opens providing the option to publish in one or more languages.
+6. The **Ready to Publish** window opens providing the option to publish in one or more languages.
 
-    ![Publishing Variant content](../../.gitbook/assets/publishing-variant-content-v14.png)
+    ![Publishing Variant content](images/publishing-variant-content-v14.png)
 7. You can select either one or multiple languages and click **Save and Publish**.
 
 ## Viewing the Language Variant on the Browser
@@ -83,9 +84,9 @@ To view the language variant on the browser, follow these steps:
 1. Go to the **Content** section.
 2. Select your new language from the language dropdown above your content tree.
 3. Select the **Home Page** node and go to the **Info** tab.
-4.  You will notice the links with the new language domain added to it. If it's not there, you might need to refresh the page.
+4. You will notice the links with the new language domain added to it. If it's not there, you might need to refresh the page.
 
-    ![Viewing the Language Variant Link](../../.gitbook/assets/viewing-langvariant-browser-v14.png)
+    ![Viewing the Language Variant Link](images/viewing-langvariant-browser-v14.png)
 5. Click on the link to view the new language node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: `http://localhost:xxxx/da/`.
 

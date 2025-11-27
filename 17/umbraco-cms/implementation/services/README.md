@@ -542,7 +542,7 @@ public class BlogPostController : RenderController
 
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
-<figure><img src="../../.gitbook/assets/vs-di-constructor-generation-tip (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../16/umbraco-cms/implementation/services/images/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
 
 #### Using the SiteService inside a View
 

@@ -16,7 +16,7 @@ To edit the template:
     * `@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage` - Sets the view to inherit from Umbraco's base view class for accessing Umbraco-specific features and helpers.
     * `Layout = "null";` - The view will not use a layout page unless explicitly specified. For more information on [Razor Pages Layout](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout), see the Microsoft Documentation.
 
-    ![Home Page Template](../../.gitbook/assets/empty-homepage-template.png)
+    ![Home Page Template](images/empty-homepage-template.png)
 
 We will use the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
 
@@ -40,7 +40,7 @@ To add a content node:
 
     * If you cannot see the content node, check that **Settings** > **Document Types** > **HomePage** > **Structure** > **Allow at root** is enabled.
 
-    ![Home Page Content Node](../../.gitbook/assets/create-a-homepage-content-node.png)
+    ![Home Page Content Node](images/create-a-homepage-content-node.png)
 5. Enter the **Name** for the content node. We are going to call this _Homepage_.
    * The name will show up in the node list and will be used to create a URL for the page. Try to keep it short but descriptive.
 6.  Enter the following details:
@@ -52,7 +52,7 @@ To add a content node:
     | Footer Text | Copyright Widgets Ltd 2024                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 7.  Click **Save and Publish**. The content tree will reload with the homepage node.
 
-    ![Home Page in Content Tree](../../.gitbook/assets/homepage-in-content-tree.png)
+    ![Home Page in Content Tree](images/homepage-in-content-tree.png)
 
 ## Accessing the Frontend
 
@@ -67,4 +67,4 @@ The default Umbraco page is gone and we can see a basic unstyled page. We are ge
 If you see a blank page, check if the template is entered and remember to save it.
 {% endhint %}
 
-![An Unstyled Homepage](<../../.gitbook/assets/figure-16-unstyled-homepage-v8 (1).png>)
+![An Unstyled Homepage](../../../../16/umbraco-cms/tutorials/creating-a-basic-website/images/figure-16-unstyled-homepage-v8.png)

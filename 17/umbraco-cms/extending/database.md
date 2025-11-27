@@ -8,7 +8,7 @@ Umbraco ships with [NPoco](https://github.com/schotime/NPoco), which enables map
 
 The end result looks like this:
 
-![Database result of a migration](<../.gitbook/assets/db-table (1).png>)
+![Database result of a migration](<../../../16/umbraco-cms/extending/images/db-table (1).png>)
 
 ## Using a Composer and Component
 

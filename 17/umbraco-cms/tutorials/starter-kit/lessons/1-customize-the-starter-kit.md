@@ -18,9 +18,9 @@ Learn how to:
 ## Steps
 
 1. Go to the _Home_ page in the Content section.
-2.  Navigate to the _Design_ group by scrolling down.
+2. Navigate to the _Design_ group by scrolling down.
 
-    ![Home page Design Group](../../../.gitbook/assets/design-group_v14.png)
+    ![Home page Design Group](images/design-group_v14.png)
 3. Choose a different font and color theme.
    * Try different combinations and see what fits your site.
    * Click **Save** to save a draft of your changes. **Save** will not publish the changes to the website.
@@ -36,7 +36,7 @@ Learn how to:
 
 To see the changes you've made go to the **Info** tab and click on the Link.
 
-![Link to page](../../../.gitbook/assets/link-to-page_v14.png)
+![Link to page](images/link-to-page_v14.png)
 
 ## Summary
 

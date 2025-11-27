@@ -8,4 +8,4 @@ A quicker way to search across all the content, files, or folders in Umbraco is 
 
 Using the search bar, you can enter a search term and Umbraco will search for pages and media containing the term.
 
-![search.jpg](../../../.gitbook/assets/search-bar-v14.png)
+![search.jpg](images/search-bar-v14.png)

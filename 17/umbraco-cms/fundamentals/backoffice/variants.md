@@ -30,7 +30,7 @@ How to use Language Variants in Umbraco
 
 To work with Language Variants you need to have more than one language enabled. This can be done from the `Settings` section:
 
-![Adding a language](../../.gitbook/assets/adding-a-language.png)
+![Adding a language](images/adding-a-language.png)
 
 {% hint style="info" %}
 You will always have one default language but each language can be set to mandatory.
@@ -44,11 +44,11 @@ Now that there are two languages to vary the content with, it needs to be enable
 2. Open the **settings** page.
 3.  Toggle **Allow vary by culture**.
 
-    <figure><img src="../../.gitbook/assets/allow-variance2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/allow-variance2.png" alt=""><figcaption></figcaption></figure>
 
 To allow a property on the Document Type to be varied it will have to be enabled for the property:
 
-![Allowing Variance on properties](../../.gitbook/assets/varying-properties.png)
+![Allowing Variance on properties](images/varying-properties.png)
 
 ## Working with Language Variants on content
 
@@ -57,7 +57,7 @@ When you return to your content node you will notice two things:
 1. At the top of the Content tree there will now be a dropdown so you can show the Content tree in the language of your choice.
 2.  To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
-    ![Allowing Variance on properties](../../.gitbook/assets/Allowing-Variance-on-properties.png)
+    ![Allowing Variance on properties](images/Allowing-Variance-on-properties.png)
 
 To read about how you render variant content in Templates, check out the [rendering content section](../design/rendering-content.md).
 
@@ -82,7 +82,7 @@ This can be controlled on a User Group level. All default User Groups, except th
 
 When "Allow access to all languages" is not checked, languages can be added and/or removed. This is to determine which variants the users in the user group have access to.
 
-![Assign access to all or individual languages on the User Group](../../.gitbook/assets/Assign-Access-Languages.png)
+![Assign access to all or individual languages on the User Group](images/Assign-Access-Languages.png)
 
 {% hint style="info" %}
 Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.

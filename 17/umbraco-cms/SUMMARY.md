@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Umbraco CMS Documentation](README.md)
+* [Umbraco CMS (RC) Documentation](README.md)
 * [Release Candidate Guide](release-candidate-guide.md)
 * [Legacy Documentation](legacy-documentation/README.md)
   * [Our Umbraco](https://our.umbraco.com/documentation/)
