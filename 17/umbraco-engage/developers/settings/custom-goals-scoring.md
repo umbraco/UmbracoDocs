@@ -45,7 +45,7 @@ The method automatically determines the current page view, linking the goal to a
 
 To trigger a goal outside of an HTTP request or a valid pageview, use the overload of `TriggerGoal` that takes the GUID of the pageview.
 
-Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManagerr.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
+Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManager.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 _goalService.TriggerGoal(pageviewGuid, goalId, value);
