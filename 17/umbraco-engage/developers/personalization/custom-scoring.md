@@ -18,7 +18,7 @@ Both services support two ways to identify entities:
 - **Numeric IDs** (e.g., `personaId`, `customerJourneyStepId`) - Legacy approach using database IDs
 - **GUID Keys** (e.g., `personaKey`, `stepKey`) - Preferred approach using Umbraco's GUID-based identifiers
 
-To implement our example above, we will be using the `ICustomerJourneyService`. To modify the customer journey step scoring, we need to know the ID or Key of the step we are trying to score. For your implementation you could hardcode the IDs/Keys (since they are unlikely to change), we can also fetch them by name through the `ICustomerJourneyGroupRepository`.
+To implement the example above, the `ICustomerJourneyService` will be used. To modify the customer journey step scoring, the ID or Key of the step being updated must be known. For an implementation, the IDs/Keys can be hardcoded (since they are unlikely to change), or they can be fetched by name through the `ICustomerJourneyGroupRepository`.
 
 To resolve the required services, we will use Dependency Injection:
 
@@ -50,7 +50,7 @@ var stepDo = customerJourneyGroup.Steps.FirstOrDefault(step => step.Title == "Do
 ```
 {% endcode %}
 
-We can now inspect the step **Do** variable and find its `Id` or `Key`. To score the step, we provide either the numeric ID or GUID Key and the score to the `CustomerJourneyService`:
+Inspect the step **Do** variable and find its `Id` or `Key`. To score the step, provide either the numeric ID or the GUID Key and the score to the `CustomerJourneyService`:
 
 ```csharp
 // Using numeric ID (legacy approach)
@@ -64,10 +64,11 @@ We have now added a **score of 100** to the Customer Journey step "**Do**". It i
 
 Since the user is no longer (shifting away) from that step of the Customer Journey the implementation strategy is the same for personas.
 
-Another, more advanced, example could be on how to reset the score of a persona for a given visitor. We can use the same approach as above to fetch the **persona** instead of the Customer Journey for the current visitor. We can get the visitor's current score based on the Persona ID or Key, and subtract that exact score from said visitor.
+Another, more advanced, example could be on how to reset the score of a persona for a given visitor. Use the same approach as above to fetch the **persona** instead of the Customer Journey for the current visitor. Get the visitor's current score based on the Persona ID or Key, and subtract that exact score from said visitor.
 
 {% hint style="info" %}
-When scoring outside of a regular HttpContext request (e.g., in background jobs or external integrations), you must use the overload that includes `PersonalizationScoreType`. The `PersonalizationScoreType` enum specifies whether the score is `Implicit` (behavior-based) or `Explicit` (direct assignment).
+
+When scoring outside of a regular HttpContext request (for example, in background jobs or external integrations), use the overload with `PersonalizationScoreType`. The `PersonalizationScoreType` enum specifies whether the score is `Implicit` (behavior-based) or `Explicit` (direct assignment).
 {% endhint %}
 
 ```csharp
@@ -113,7 +114,13 @@ public IActionResult ResetPersonaScoreToZero(Guid personaKey)
 ```
 
 {% hint style="info" %}
-The simpler overloads `ScorePersona(long personaId, int score)`, `ScorePersona(Guid personaKey, int score)`, `ScoreCustomerJourneyStep(long customerJourneyStepId, int score)`, and `ScoreCustomerJourneyStep(Guid stepKey, int score)` should only be used within the context of a regular HttpContext request, as they automatically resolve the current visitor.
+The following overloads should only be used within the context of a regular HttpContext request, as they automatically resolve the current visitor.
+
+-  `ScorePersona(long personaId, int score)`, 
+- `ScorePersona(Guid personaKey, int score)`, 
+- `ScoreCustomerJourneyStep(long customerJourneyStepId, int score)`, and 
+- `ScoreCustomerJourneyStep(Guid stepKey, int score)`
+
 {% endhint %}
 
 ## Available Method Overloads

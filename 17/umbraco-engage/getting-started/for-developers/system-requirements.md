@@ -42,7 +42,7 @@ See the [Troubleshooting](../../installation/troubleshooting-installs.md) sectio
 
 ## Umbraco Cloud Compatibility
 
-Umbraco Engage is compatible with Umbraco Cloud (Standard, Professional and Enterprise plan).
+Umbraco Engage is compatible with Umbraco Cloud (Standard, Professional, and Enterprise plans).
 
 {% hint style="info" %}
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.
@@ -54,7 +54,7 @@ Umbraco Deploy is currently not supported for the Umbraco Engage features.
 
 If you are developing custom extensions for Umbraco Engage (such as custom segment parameters or external profile data components), the following additional requirements apply:
 
-* **Node.js 22+**
-* **npm 10.9+**
+* `Node.js 22+`
+* `npm 10.9+`
 
 These are only required for developers building custom frontend components, not for standard Umbraco Engage usage.
