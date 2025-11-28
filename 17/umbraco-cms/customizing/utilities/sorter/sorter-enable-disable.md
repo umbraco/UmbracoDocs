@@ -26,28 +26,15 @@ export class UmbContentTypeDesignEditorElement extends UmbLitElement {
         },
     });
 
+
     @state()
     private _sortModeActive = false;
 
-    constructor() {
-        super();
-        
-        // Initially disable the sorter
-        this.#sorter.disable();
-        
-        // Watch for changes to sort mode
-        this.observe(
-            this.#designContext.isSorting,
-            (isSorting) => {
-                this._sortModeActive = isSorting;
-                if (isSorting) {
-                    this.#sorter.enable();
-                } else {
-                    this.#sorter.disable();
-                }
-            }
-        );
-    }
+    // Initially disable the sorter
+	constructor() {
+		super();
+		this.#sorter.disable();
+	}
 
     #toggleSortMode() {
         this._sortModeActive = !this._sortModeActive;
