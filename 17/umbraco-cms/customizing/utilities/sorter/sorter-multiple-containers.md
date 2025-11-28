@@ -2,6 +2,11 @@
 
 The Sorter supports dragging items between multiple containers by using a shared `identifier`. This allows you to create complex drag-and-drop interfaces.
 
+If you want to test it out and see it used, there are two examples available.
+One for a sorter with nested containers, and another for two sorter containers.
+It can be found in [Examples and Playground](https://docs.umbraco.com/umbraco-cms/customizing/examples-and-playground)
+
+
 ## Configuration
 
 To enable cross-container sorting, ensure all sorter instances use the same `identifier`:
