@@ -31,11 +31,13 @@ A segment rule is not much more than this:
 
 You will have to implement the following interfaces for a new custom parameter:
 
--   `Umbraco.Engage.Infrastructure.Personalization.Segments.ISegmentRule`
+-   `Umbraco.Engage.Infrastructure.Personalization.Segments.Rules.ISegmentRule`
     -   You can extend the existing `BaseSegmentRule` to simplify the implementation.
     -   The most important part to implement is the `bool IsSatisfied(IPersonalizationProfile context)` method.
--   `Umbraco.Engage.Infrastructure.Personalization.Segments.Rules.ISegmentRuleFactory` \* Register your implementation of the segment rule factory with `Lifetime.Transient` in a composer.
-    For the "Day of week" example, the code looks like this:
+-   `Umbraco.Engage.Infrastructure.Personalization.Segments.Rules.ISegmentRuleFactory`
+    -   Register your implementation of the segment rule factory with `Lifetime.Transient` in a composer.
+
+For the "Day of week" example, the code looks like this:
 
 ```c#
 public class DayOfWeekSegmentRule : BaseSegmentRule

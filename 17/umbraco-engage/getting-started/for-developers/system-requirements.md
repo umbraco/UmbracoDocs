@@ -49,3 +49,12 @@ If you want to run an Umbraco Cloud site locally, point the connection string to
 {% endhint %}
 
 Umbraco Deploy is currently not supported for the Umbraco Engage features.
+
+## Frontend Development Requirements
+
+If you are developing custom extensions for Umbraco Engage (such as custom segment parameters or external profile data components), the following additional requirements apply:
+
+* **Node.js 22+**
+* **npm 10.9+**
+
+These are only required for developers building custom frontend components, not for standard Umbraco Engage usage.
