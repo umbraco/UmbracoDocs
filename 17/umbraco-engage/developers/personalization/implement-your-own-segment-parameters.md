@@ -94,7 +94,7 @@ First, follow the [Vite Package Setup](/umbraco-cms/customizing/development-flow
 1. Install `@umbraco-engage/backoffice` package, replacing `x.x.x` with your Engage version:
 
 ```text
-npm install @umbaco-engage/backoffice@x.x.x
+npm install @umbraco-engage/backoffice@x.x.x
 ```
 
 2. Ensure your `vite.config.ts` looks like the example below:

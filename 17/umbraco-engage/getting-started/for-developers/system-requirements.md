@@ -6,12 +6,13 @@ description: Learn about the system requirements before installing Umbraco Engag
 
 Umbraco Engage has the following requirements:
 
-* Umbraco version 16
+* Umbraco version 17
+* .NET 10.0
 * SQL Server 2014+, LocalDB, or Azure SQL.
   * **SQL CE & SQLite are not supported.**
 
 {% hint style="info" %}
-It is recommended to upgrade your Umbraco installation to the latest version of Umbraco 16.
+It is recommended to upgrade your Umbraco installation to the latest version of Umbraco 17.
 {% endhint %}
 
 See the [Troubleshooting](../../installation/troubleshooting-installs.md) section if you need to upgrade from SQL CE to SQL Server.

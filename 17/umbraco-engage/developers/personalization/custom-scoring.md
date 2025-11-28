@@ -58,20 +58,31 @@ Since the user is no longer (shifting away) from that step of the Customer Journ
 
 Another, more advanced, example could be on how to reset the score of a persona for a given visitor. We can use the same approach as above to fetch the **persona** instead of the Customer Journey for the current visitor. We can get the visitor's current score based on the Persona ID, and subtract that exact score from said visitor.
 
-```csharp
-public IActionResult ResetPersonaScoreToZero(long personaId) {
-  var visitorId = _visitorContext.GetVisitorExternalId();
+{% hint style="info" %}
+When scoring outside of a regular HttpContext request (e.g., in background jobs or external integrations), you must use the overload that includes `PersonalizationScoreType`. The `PersonalizationScoreType` enum specifies whether the score is `Implicit` (behavior-based) or `Explicit` (direct assignment).
+{% endhint %}
 
-  if (visitorId.HasValue) {
-    var personaGroups = _personaGroupRepository.GetPersonaScoresByVisitor(visitorId.Value);
-    var personaGroup = personaGroups.FirstOrDefault(x => x.Personas.Any(y => y.Id == personaId));
-    var persona = personaGroup?.Personas.FirstOrDefault(x => x.Id == personaId);
-    if (persona != null) {
-      _personaService.ScorePersona(visitorId.Value, personaId, persona.Score * -1);
-      return Ok($"Subtracted {persona.Score} from visitor {visitorId}");
+```csharp
+public IActionResult ResetPersonaScoreToZero(long personaId)
+{
+    var visitorId = _visitorContext.GetVisitorExternalId();
+
+    if (visitorId.HasValue)
+    {
+        var personaGroups = _personaGroupRepository.GetPersonaScoresByVisitor(visitorId.Value);
+        var personaGroup = personaGroups.FirstOrDefault(x => x.Personas.Any(y => y.Id == personaId));
+        var persona = personaGroup?.Personas.FirstOrDefault(x => x.Id == personaId);
+        if (persona != null)
+        {
+            _personaService.ScorePersona(visitorId.Value, personaId, persona.Score * -1, PersonalizationScoreType.Explicit);
+            return Ok($"Subtracted {persona.Score} from visitor {visitorId}");
+        }
     }
-  }
-  
-  return Ok("OK");
+
+    return Ok("OK");
 }
 ```
+
+{% hint style="info" %}
+The simpler overloads `ScorePersona(long personaId, int score)` and `ScoreCustomerJourneyStep(long customerJourneyStepId, int score)` should only be used within the context of a regular HttpContext request, as they automatically resolve the current visitor.
+{% endhint %}
