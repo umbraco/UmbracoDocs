@@ -1,6 +1,6 @@
 # Setting the Sorter Model
 
-The sorter's model must be set using the [`setModel()`](sorter.controller.ts) method whenever the data changes from an external source. This guide covers different scenarios for managing the model.
+The sorter's model must be set using the `setModel()` method whenever the data changes from an external source. This guide covers different scenarios for managing the model.
 
 ## The setModel() Method
 
