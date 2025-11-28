@@ -14,17 +14,17 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ## Data Type Definition Example
 
-![Textbox Data Type Definition](images/Textbox-Setup.png)
+![Textbox Data Type Definition](../../../../.gitbook/assets/Textbox-Setup.png)
 
 ## Content Example
 
 ### Without a character limit
 
-![Textbox Content Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textbox-Content-v8.png)
+![Textbox Content Example](<../../../../.gitbook/assets/Textbox-Content-v8 (1).png>)
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textbox-Content-Limit-v8.png)
+![Textbox Content Example Without a Character Limit](<../../../../.gitbook/assets/Textbox-Content-Limit-v8 (1).png>)
 
 ## MVC View Example
 

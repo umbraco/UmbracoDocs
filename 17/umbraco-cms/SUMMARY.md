@@ -228,7 +228,7 @@
   * [Property Dataset Context](customizing/foundation/contexts/property-dataset-context.md)
 * [Property Level UI Permissions](customizing/property-level-ui-permissions.md)
 * [Icons](customizing/foundation/icons.md)
-* [BackOffice Signs](customizing/back-office-signs.md)
+* [Signs](customizing/signs.md)
 * [Property Editors](customizing/property-editors/README.md)
   * [Property Editor Validation](customizing/property-editors/property-editor-validation.md)
   * [Property Editors Composition](customizing/property-editors/composition/README.md)

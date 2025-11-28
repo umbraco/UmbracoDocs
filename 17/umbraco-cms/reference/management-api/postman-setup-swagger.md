@@ -27,14 +27,14 @@ This guide covers the following:
 2. Choose **Umbraco Management API** from **Select a definition**.
 3. Open the JSON file, which you can find right underneath the **Title**:
 
-![JSON file location](../images/postman-setup-swagger-json-file.png)
+![JSON file location](../../.gitbook/assets/postman-setup-swagger-json-file.png)
 
 4. Save the JSON file to disk. The name of the file will be saved by default with the name of `swagger.json`.
 5. Click to [create a new collection](https://learning.postman.com/docs/collections/using-collections/#creating-collections) in Postman.
 6. Import the `swagger.json` file.
 7. Choose **Postman Collection** when prompted.
 
-![Postman import JSON file as collection](../images/postman-setup-swagger-import.png)
+![Postman import JSON file as collection](../../.gitbook/assets/postman-setup-swagger-import.png)
 
 Once imported, you will see a new collection called **Umbraco Management API**.
 
@@ -119,7 +119,7 @@ To resolve this:
 
 1. Click on the **Settings** cog wheel in the top right corner next to the **Invite** button.
 
-![Postman Cog Wheel Location](../images/postman-setup-swagger-cog-wheel.png)
+![Postman Cog Wheel Location](../../.gitbook/assets/postman-setup-swagger-cog-wheel.png)
 
 2. Click on **Settings** and disable `SSL certificate verification`.
 

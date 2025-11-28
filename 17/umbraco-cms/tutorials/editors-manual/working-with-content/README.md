@@ -8,7 +8,7 @@ The functionality varies depending on how the editor is set up. Here, we describ
 
 By default, the following editor buttons are available. Your system administrator can determine which buttons are displayed in different templates. You therefore might have access to more or fewer buttons than those shown here.
 
-![Editor Bar](images/editor\_bar\_v14.png)
+![Editor Bar](../../../.gitbook/assets/editor_bar_v14.png)
 
 ## Paragraph Break/Line Break
 
@@ -21,24 +21,24 @@ The Rich Text Editor is like any other word-processing program. You write the te
 
 To make your work easier, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
-| Windows/Linux | MacOS | Action     |
-| -------- | -------- | ---------- |
-| <kbd>Ctrl</kbd> + <kbd>A</kbd> | <kbd>Cmd</kbd> + <kbd>A</kbd> | Select all |
-| <kbd>Ctrl</kbd> + <kbd>B</kbd> | <kbd>Cmd</kbd> + <kbd>B</kbd> | Bold       |
-| <kbd>Ctrl</kbd> + <kbd>I</kbd> | <kbd>Cmd</kbd> + <kbd>I</kbd> | Italic     |
-| <kbd>Ctrl</kbd> + <kbd>U</kbd> | <kbd>Cmd</kbd> + <kbd>U</kbd> | Underline  |
-| <kbd>Ctrl</kbd> + <kbd>C</kbd> | <kbd>Cmd</kbd> + <kbd>C</kbd> | Copy       |
-| <kbd>Ctrl</kbd> + <kbd>V</kbd> | <kbd>Cmd</kbd> + <kbd>V</kbd> | Paste      |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd>  + <kbd>V</kbd> | Paste without formatting      |
-| <kbd>Ctrl</kbd> + <kbd>X</kbd> | <kbd>Cmd</kbd> + <kbd>X</kbd> | Cut        |
-| <kbd>Ctrl</kbd> + <kbd>Z</kbd> | <kbd>Cmd</kbd> + <kbd>Z</kbd> | Undo       |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo       |
+| Windows/Linux                                     | MacOS                                            | Action                   |
+| ------------------------------------------------- | ------------------------------------------------ | ------------------------ |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd>                    | <kbd>Cmd</kbd> + <kbd>A</kbd>                    | Select all               |
+| <kbd>Ctrl</kbd> + <kbd>B</kbd>                    | <kbd>Cmd</kbd> + <kbd>B</kbd>                    | Bold                     |
+| <kbd>Ctrl</kbd> + <kbd>I</kbd>                    | <kbd>Cmd</kbd> + <kbd>I</kbd>                    | Italic                   |
+| <kbd>Ctrl</kbd> + <kbd>U</kbd>                    | <kbd>Cmd</kbd> + <kbd>U</kbd>                    | Underline                |
+| <kbd>Ctrl</kbd> + <kbd>C</kbd>                    | <kbd>Cmd</kbd> + <kbd>C</kbd>                    | Copy                     |
+| <kbd>Ctrl</kbd> + <kbd>V</kbd>                    | <kbd>Cmd</kbd> + <kbd>V</kbd>                    | Paste                    |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | Paste without formatting |
+| <kbd>Ctrl</kbd> + <kbd>X</kbd>                    | <kbd>Cmd</kbd> + <kbd>X</kbd>                    | Cut                      |
+| <kbd>Ctrl</kbd> + <kbd>Z</kbd>                    | <kbd>Cmd</kbd> + <kbd>Z</kbd>                    | Undo                     |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> | <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo                     |
 
 Only a few keyboard shortcuts are listed here. For a detailed list of available shortcuts, see the [Tiptap Documentation](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts).
 
 ## View Source Code
 
-![View Source Code](images/view-source-code-v11.png)
+![View Source Code](../../../.gitbook/assets/view-source-code-v11.png)
 
 If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want.
 
@@ -46,7 +46,7 @@ Certain elements such as scripts are not recognized by the HTML view of the Rich
 
 ## Formats
 
-![Format Dropdown](images/Formats-Button-v11.png)
+![Format Dropdown](../../../.gitbook/assets/Formats-Button-v11.png)
 
 You can apply formatting via the **Formats** drop-down list. The Formats drop-down list provides predefined styles that can be applied to text while maintaining a consistent look and feel throughout the site.
 
@@ -65,7 +65,7 @@ You do not normally need to spend much time formatting text because Umbraco take
 
 ### Formatting Buttons
 
-![Formatting Buttons](images/Formatting-Buttons-v11.png)
+![Formatting Buttons](../../../.gitbook/assets/Formatting-Buttons-v11.png)
 
 The most familiar way to control formatting is by using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
 
@@ -88,7 +88,7 @@ To prevent formatting issues, we recommended pasting the content first into a ma
 
 ### Remove Formatting
 
-![Remove Format Button](images/Remove-Format-v11.png)
+![Remove Format Button](../../../.gitbook/assets/Remove-Format-v11.png)
 
 If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule.
 
@@ -108,7 +108,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 ## Links
 
-![Link Button](images/Link-Button-v11.png)
+![Link Button](../../../.gitbook/assets/Link-Button-v11.png)
 
 The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
@@ -118,7 +118,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
-<img src="images/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
+<img src="../../../.gitbook/assets/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -134,7 +134,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page in Umbraco</summary>
 
-<img src="images/Link-to-a-Page-v11.png" alt="Link to a Page in Umbraco" data-size="original">
+<img src="../../../.gitbook/assets/Link-to-a-Page-v11.png" alt="Link to a Page in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -149,7 +149,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Media File in Umbraco</summary>
 
-<img src="images/Link-to-Media-File-v11.png" alt="Link to a Media File in Umbraco" data-size="original">
+<img src="../../../.gitbook/assets/Link-to-Media-File-v11.png" alt="Link to a Media File in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -166,7 +166,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to an Email Address in Umbraco</summary>
 
-<img src="images/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
+<img src="../../../.gitbook/assets/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -183,9 +183,9 @@ To insert different types of hyperlinks, follow these steps:
 
 An anchor allows you to create internal page links that enable users to navigate within a page. There are two parts to setting up an anchor: the anchor itself and the link to the anchor.
 
-#### Creating an Anchor
+**Creating an Anchor**
 
-<img src="images/Creating-an-anchor-v11.png" alt="Creating an Anchor" data-size="original">
+<img src="../../../.gitbook/assets/Creating-an-anchor-v11.png" alt="Creating an Anchor" data-size="original">
 
 1. Click the editor cursor where you wish to create the anchor.
 2. Click the **Anchor Button** which will launch the Anchor creation dialog.
@@ -199,11 +199,11 @@ To delete the anchor:
 1. Select the anchor icon.
 2. Press your **Delete** key.
 
-<img src="images/Delete-an-anchor-v11.png" alt="Deleting an Anchor" data-size="original">
+<img src="../../../.gitbook/assets/Delete-an-anchor-v11.png" alt="Deleting an Anchor" data-size="original">
 
-#### Linking to an Anchor
+**Linking to an Anchor**
 
-<img src="images/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
+<img src="../../../.gitbook/assets/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
@@ -219,7 +219,7 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
-<img src="images/Link-from-Image-v11.png" alt="Create a Link from an Image" data-size="original">
+<img src="../../../.gitbook/assets/Link-from-Image-v11.png" alt="Create a Link from an Image" data-size="original">
 
 1. Insert an image into the Rich Text Editor.
    * For more information, see the [Working with Images](./#working-with-images) section.
@@ -235,7 +235,7 @@ You can make images into clickable links in Umbraco:
 
 <summary>Removing a Link</summary>
 
-<img src="images/Remove-link-v11.png" alt="Remove link Button" data-size="original">
+<img src="../../../.gitbook/assets/Remove-link-v11.png" alt="Remove link Button" data-size="original">
 
 To remove a link:
 
@@ -256,7 +256,7 @@ Many administrators set up a media library containing images that editors can us
 
 <summary>Inserting an Image from the Media Library</summary>
 
-<img src="images/Inserting-Image-from-the-Media-Library-v11.png" alt="Inserting an Image from the Media Library" data-size="original">
+<img src="../../../.gitbook/assets/Inserting-Image-from-the-Media-Library-v11.png" alt="Inserting an Image from the Media Library" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
@@ -274,7 +274,7 @@ Many administrators set up a media library containing images that editors can us
 
 You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
-<img src="images/Inserting-an-Image-from-Computer-v11.png" alt="Inserting an Image from your Computer" data-size="original">
+<img src="../../../.gitbook/assets/Inserting-an-Image-from-Computer-v11.png" alt="Inserting an Image from your Computer" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
@@ -299,17 +299,17 @@ To delete an image from the page:
 
 ## Tables
 
-![Inserting a Table](images/Insert-a-table-v11.png)
+![Inserting a Table](../../../.gitbook/assets/Insert-a-table-v11.png)
 
 Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
 ### Editing an Existing Table
 
-![Editing an Existing Table](images/Editing-an-existing-table-v11.png)
+![Editing an Existing Table](../../../.gitbook/assets/Editing-an-existing-table-v11.png)
 
 To edit the table after creating it, click on the table. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the Rich Text Editor toolbar.
 
-![Table Properties](images/table-properties-v11.png)
+![Table Properties](../../../.gitbook/assets/table-properties-v11.png)
 
 Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 

@@ -14,7 +14,7 @@ To begin creating a package, start by setting up a package schema in the Umbraco
 2. Select `Created` in the top-right corner of the screen.
 3. Click the `Create package` button.
 
-![Creating a package schema in the Backoffice](images/create-package.png)
+![Creating a package schema in the Backoffice](../../.gitbook/assets/create-package.png)
 
 On the `Create package` page, there are different fields that allow you to define the contents of the package based on backoffice items.
 
@@ -45,7 +45,7 @@ These fields determine which backoffice items will be included in the package. F
 
 If the package includes backoffice-specific items, the downloaded ZIP will contain the `package.xml` along with a folder for any media items included. The contents of the ZIP package might look like this:
 
-![Contents of the ZIP package](images/zip-package-contents.png)
+![Contents of the ZIP package](../../.gitbook/assets/zip-package-contents.png)
 
 The `package.xml` file contains the metadata for the package, while additional files (if any) are referenced within the XML.
 
@@ -94,7 +94,7 @@ If the post-installation script fails due to PowerShell restrictions, manually r
 
 This command will generate the following files:
 
-![Content of an empty package](images/empty-package-from-template-v15.png)
+![Content of an empty package](../../.gitbook/assets/empty-package-from-template-v15.png)
 
 Apart from the project file, the generated structure includes key folders and files that are essential for building an Umbraco extension.
 
@@ -112,10 +112,10 @@ Additionally, the `.csproj` file is configured to support NuGet packaging, allow
 Since the `umbraco-extension` template does not generate an `App_Plugins` folder by default, you will need to manually create it.
 
 1. Create an `App_Plugins` folder in the downloaded package folder.
-2. Go to the `welcome-dashboard` folder created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/README.md#setting-up-a-package).
+2. Go to the `welcome-dashboard` folder created in the [Creating a Custom Dashboard Tutorial](../../tutorials/creating-a-custom-dashboard/#setting-up-a-package).
 3. Transfer or copy the `welcome-dashboard` folder in the `App_Plugins` folder.
 
-![App\_Plugins with dashboard files](images/app-plugins-content.png)
+![App\_Plugins with dashboard files](../../.gitbook/assets/app-plugins-content.png)
 
 ### Specify Package Properties
 
@@ -139,7 +139,7 @@ You can specify package metadata directly in the `csproj` file. Here, is an exam
 
 Alternatively, right-click the `csproj` file in Visual Studio > **Properties** > **Package** and add the required information:
 
-![Adding Package properties in Visual Studio](images/Package-properties-Visual-Studio.png)
+![Adding Package properties in Visual Studio](../../.gitbook/assets/Package-properties-Visual-Studio.png)
 
 The properties that can be specified include:
 
@@ -162,7 +162,7 @@ Run the command in the package directory to generate the package in the `bin` fo
 dotnet pack
 ```
 
-![Package output in bin folder](images/package-default-location.png)
+![Package output in bin folder](../../.gitbook/assets/package-default-location.png)
 
 #### Custom Output Location
 
@@ -172,7 +172,7 @@ To specify a different output location, use the following command:
 dotnet pack --output MyNugetPackages
 ```
 
-![Package output in MyNugetPackages folder](images/package-custom-folder.png)
+![Package output in MyNugetPackages folder](../../.gitbook/assets/package-custom-folder.png)
 
 It will pack the project in the current directory and place the resulting package into the `MyNugetPackages` folder.
 
@@ -230,7 +230,7 @@ public class PackageMigrationPlan : AutomaticPackageMigrationPlan
 }
 ```
 
-![Automatic package migration](../../../../16/umbraco-cms/.gitbook/assets/embeded-resource.png)
+![Automatic package migration](<../../.gitbook/assets/embeded-resource (1).png>)
 
 {% hint style="info" %}
 Whenever the embedded package.xml file changes, the automatic package migration plan is executed again. This is due to the fact that the migration state is based on the file hash. Existing schema or content will not be overwritten in this process.
@@ -352,13 +352,13 @@ public class CustomPackageAsyncMigration : AsyncPackageMigrationBase
 
 Here we also added the ZIP file as an embedded resource to the package project.
 
-![ZIP as an embedded resource](../../../../16/umbraco-cms/.gitbook/assets/embeded-resource-props.png)
+![ZIP as an embedded resource](<../../.gitbook/assets/embeded-resource-props (1).png>)
 
-![Automatic package migration](../../../../16/umbraco-cms/.gitbook/assets/embeded-zip-resource.png)
+![Automatic package migration](<../../.gitbook/assets/embeded-zip-resource (1).png>)
 
 Whichever migration plan you choose to create, you will be able to see that your package has been installed after the migration is completed.
 
-![Installed package](../../../../16/umbraco-cms/.gitbook/assets/installed-package.png)
+![Installed package](<../../.gitbook/assets/installed-package (1).png>)
 
 When using a custom package migration plan, the current state is ignored by default. This causes it to execute all migrations again whenever this isn't the same as the final state of the plan (e.g. if you added a new migration). This is due to the `IgnoreCurrentState` being set to `true` in the `PackageMigrationPlan` base class. You can override this property and set it to `false` again to make it behave like regular migration plans and only run the migrations that have not yet been executed on the current environment.
 
@@ -379,6 +379,6 @@ By default, all these package migrations are executed unattended during startup 
   }
 ```
 
-![Attended package install](../../../../16/umbraco-cms/extending/packages/images/package-install-attended.png)
+![Attended package install](<../../.gitbook/assets/package-install-attended (1).png>)
 
 The configuration of package migrations can be different for each environment and makes it possible to have the migration executed unattended on the development environment, but leave them out or manually execute them on other environments. This is useful when you use a tool like Umbraco Deploy or USync as these will migrate the content.

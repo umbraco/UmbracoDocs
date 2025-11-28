@@ -16,9 +16,9 @@ In Umbraco, in-code error page handling refers to managing and displaying custom
 
 This article contains guides on how to create custom error pages for the most common scenarios:
 
-* [404 Errors ("Page not found")](#404-errors)
-* [500 Errors ("Internal Server Error")](#500-errors)
-* [Boot Failed Errors](#boot-failed-errors)
+* [404 Errors ("Page not found")](custom-error-page.md#404-errors)
+* [500 Errors ("Internal Server Error")](custom-error-page.md#500-errors)
+* [Boot Failed Errors](custom-error-page.md#boot-failed-errors)
 
 {% hint style="info" %}
 **Are you looking for a guide to create a custom maintenance page?**
@@ -57,7 +57,7 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
    * Click **Choose**.
 4. Click **Save**.
 
-![Container Config](images/container.png)
+![Container Config](../.gitbook/assets/container.png)
 
 ### Add the Content
 
@@ -65,14 +65,14 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
 2. Create a new content node based on the _Error Pages Container_ Document Type. For example _Home Page_.
 3. Click **Save** or **Save and Publish**.
 
-![Parent Content Node](images/content-node.png)
+![Parent Content Node](../.gitbook/assets/content-node.png)
 
 4. Create a child node, using the _Page Not Found_ Document Type.
 5. Name it _Page Not Found_ or similar.
    * This will be the content shown when a 404 error occurs.
 6. Click **Save** or **Save and Publish**.
 
-![Child Node](images/page-not-found.png)
+![Child Node](../.gitbook/assets/page-not-found.png)
 
 ### Configure the Error Page in `appsettings.json` file
 
@@ -336,7 +336,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 You will be presented with a generic error page when there is an error during boot.
 
-![Boot Failed](../../../16/umbraco-cms/tutorials/images/BootFailedGeneric.png)
+![Boot Failed](<../.gitbook/assets/BootFailedGeneric (1).png>)
 
 You can replace the default BootFailed page with a custom static `BootFailed.html`. Follow the steps below to set it up:
 

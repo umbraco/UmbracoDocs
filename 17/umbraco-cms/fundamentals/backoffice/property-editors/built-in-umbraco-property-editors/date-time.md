@@ -9,12 +9,12 @@
 Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 {% hint style="info" %}
-New [Date Time property editors](date-time-editor/README.md) are available. They offer more focused functionality and time zone support. These editors will eventually replace the current Date Time property editor, so consider using them for new implementations.
+New [Date Time property editors](date-time-editor/) are available. They offer more focused functionality and time zone support. These editors will eventually replace the current Date Time property editor, so consider using them for new implementations.
 {% endhint %}
 
 ## Data Type Definition Example
 
-![Data Type Definiton](images/date-time.png)
+![Data Type Definiton](../../../../.gitbook/assets/date-time.png)
 
 There is one setting available for manipulating the DateTime property.
 
@@ -22,7 +22,7 @@ The setting involves defining the format. The default date format in the Umbraco
 
 ## Content Example
 
-![Content Example](../built-in-property-editors/images/date-picker-v8.png)
+![Content Example](../../../../.gitbook/assets/date-picker-v8.png)
 
 ## MVC View Example - displays a datetime
 

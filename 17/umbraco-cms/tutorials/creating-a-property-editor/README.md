@@ -123,7 +123,7 @@ Now our basic parts of the editor are done, namely:
 
 1. Add our newly added property editor "Suggestions" in the Document Type and save it.
 
-![Suggestions Property Editor](images/suggestions-property-editor.png)
+![Suggestions Property Editor](../../.gitbook/assets/suggestions-property-editor.png)
 
 We can now edit the assigned property's value with our new property editor.
 

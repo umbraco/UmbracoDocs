@@ -38,7 +38,7 @@ Next, create a new site in IIS for hosting Umbraco.
 5. Ensure the .NET Common Language Runtime (CLR) version is set to **No Managed Code**.
 6. Click **Ok**.
 
-![IIS Application Pool](images/iis-app-pool-core-v15.png)
+![IIS Application Pool](../../../.gitbook/assets/iis-app-pool-core-v15.png)
 
 ### Create a Site
 
@@ -48,7 +48,7 @@ Next, create a new site in IIS for hosting Umbraco.
 4. Fill in the **Site Name**, **Physical Path** (to your Umbraco installation), and the **Port**.
 5. Click **Ok**.
 
-![IIS Creating Site](images/create-site-in-iis.png)
+![IIS Creating Site](../../../.gitbook/assets/create-site-in-iis.png)
 
 ### Publish the Website
 
@@ -67,7 +67,7 @@ dotnet publish -o ../deployment-artefacts -f net9.0
 Make sure to replace net9.0 with the version of .NET you are using.
 {% endhint %}
 
-![Using dotnet CLI for Manual Deployment](images/dotnet-cli-command.png)
+![Using dotnet CLI for Manual Deployment](../../../.gitbook/assets/dotnet-cli-command.png)
 
 #### Option 2: Use Visual Studio to Deploy
 
@@ -75,7 +75,7 @@ Make sure to replace net9.0 with the version of .NET you are using.
 2. Right-click on the Umbraco project in Solution Explorer.
 3. Select **Publish...**.
 
-![Using Visual Studio to Deploy](images/visual-studio-deploy.png)
+![Using Visual Studio to Deploy](../../../.gitbook/assets/visual-studio-deploy.png)
 
 {% hint style="info" %}
 To deploy Umbraco to IIS via Azure DevOps, you can use the [IIS Release task in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-webdeploy-iis-deploygroups). This task is a wrapper for `MSDeploy.exe` and can be configured as preferred.
@@ -90,7 +90,7 @@ In IIS, you can configure environment variables for Umbraco to store sensitive d
 1. Open IIS Manager and select your Umbraco site.
 2. Double-click **Configuration Editor** in the **Management** section.
 
-![IIS Website Configuration](images/iis-core-website-config-v15.png)
+![IIS Website Configuration](../../../.gitbook/assets/iis-core-website-config-v15.png)
 
 3. Select `system.webServer/aspNetCore` in the **Section** dropdown.
 4. Select `ApplicationHost.config <location path='[YOUR-SITENAME]'>` in the **From** dropdown.
@@ -102,13 +102,13 @@ This ensures your settings will be stored in a machine specific file. The config
 
 {% hint style="info" %}
 * Variable names need to change the object structure form JSON by combining the segments with double underscore `__` For example: `ConnectionStrings__umbracoDbDSN`
-* Escaped backslashes `\\`  For example: `serverName\\databaseInstanceName` are replaced by single backslash `\` (`DATABASESERVER123\SQL2017`)
+* Escaped backslashes `\\` For example: `serverName\\databaseInstanceName` are replaced by single backslash `\` (`DATABASESERVER123\SQL2017`)
 {% endhint %}
 
 7. Click **Add**.
 8. Click **Apply**.
 
-![IIS Configuration Editor](images/iis-environment-variables-v15.png)
+![IIS Configuration Editor](../../../.gitbook/assets/iis-environment-variables-v15.png)
 
 9. Restart IIS to apply the changes after updating the environment variables.
 

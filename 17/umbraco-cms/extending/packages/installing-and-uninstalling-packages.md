@@ -12,11 +12,11 @@ This article will cover the process of installing as well as uninstalling packag
 
 In the Umbraco Backoffice, you will find a **Packages** section that displays the [Umbraco Marketplace](https://marketplace.umbraco.com/). From here you can browse all community-made as well as official Umbraco packages for the Umbraco CMS.
 
-![Backoffice - Packages section](images/backoffice-packages-section.png)
+![Backoffice - Packages section](../../.gitbook/assets/backoffice-packages-section.png)
 
 Navigating to a specific package in the section will present you with an overview of the package, as well as an install snippet for NuGet CLI.
 
-![Backoffice - Starter Kit package](images/backoffice-packages-section-package.png)
+![Backoffice - Starter Kit package](../../.gitbook/assets/backoffice-packages-section-package.png)
 
 The packages can be installed by using:
 
@@ -30,15 +30,15 @@ For example, to install the StarterKit package for the Umbraco CMS the command w
 
 Navigating to the NuGet Package Manager in Visual Studio is more visual, and gives you an overview of already installed packages.
 
-![Visual Studio - nuget packages manager](images/nuget-installing-options.png)
+![Visual Studio - nuget packages manager](../../.gitbook/assets/nuget-installing-options.png)
 
 The Package Manager has an integrated search function that allows you to find any public NuGet package and install it on the project.
 
-![Visual Studio - finding The Starter Kit](images/nuget-package-in-manager.png)
+![Visual Studio - finding The Starter Kit](../../.gitbook/assets/nuget-package-in-manager.png)
 
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
-![Backoffice - installed packages](../../../../16/umbraco-cms/extending/packages/images/backoffice-installed-packages.png)
+![Backoffice - installed packages](<../../.gitbook/assets/backoffice-installed-packages (1).png>)
 
 ## Uninstalling packages
 
@@ -58,11 +58,11 @@ To uninstall a package, either run a command or use the NuGet Package Manager in
 
 `dotnet remove package Umbraco.TheStarterKit`
 
-![Visual Studio - uninstalling via Package Manager](images/uninstalling-via-nuget-package-manager.png)
+![Visual Studio - uninstalling via Package Manager](../../.gitbook/assets/uninstalling-via-nuget-package-manager.png)
 
 It is recommended to clean the solution after removing any package. This can be done by right-clicking the project in Visual Studio and choosing the _Clean_ option, or using the `dotnet clean` command.
 
-![Visual Studio - clean solution](images/vs-cleaning-solution.png)
+![Visual Studio - clean solution](../../.gitbook/assets/vs-cleaning-solution.png)
 
 #### Removing package leftovers from the backoffice
 
@@ -74,7 +74,7 @@ With packages like the StarterKit, the process does not end there. While the pac
 
 There is no universal way to tell what content comes from a package, and what content is custom-made. In the Content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied).
 
-<img src="../../../../16/umbraco-cms/extending/packages/images/removing-content.png" alt="Backoffice - removing content" data-size="original">
+<img src="../../.gitbook/assets/removing-content (1).png" alt="Backoffice - removing content" data-size="original">
 
 </details>
 
@@ -84,7 +84,7 @@ There is no universal way to tell what content comes from a package, and what co
 
 Similar to content, media also might have to be removed.
 
-<img src="images/removing-media.png" alt="Backoffice - removing media" data-size="original">
+<img src="../../.gitbook/assets/removing-media.png" alt="Backoffice - removing media" data-size="original">
 
 </details>
 
@@ -94,7 +94,7 @@ Similar to content, media also might have to be removed.
 
 Document Types can be removed from the **Settings** section. If fully removing the package, all Document Types can be deleted, as there are no default Document Types in a clean-slate Umbraco installation.
 
-<img src="images/removing-document-types.png" alt="Backoffice - removing document types" data-size="original">
+<img src="../../.gitbook/assets/removing-document-types.png" alt="Backoffice - removing document types" data-size="original">
 
 </details>
 
@@ -104,7 +104,7 @@ Document Types can be removed from the **Settings** section. If fully removing t
 
 As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a Document Type prefix and includes multiple dashes. That is the default naming convention for new configurations of Data Types (Example: "Blog - How many posts should be shown - Slider")
 
-<img src="../../../../16/umbraco-cms/extending/packages/images/removing-datatypes.png" alt="Backoffice - removing data types" data-size="original">
+<img src="../../.gitbook/assets/removing-datatypes (1).png" alt="Backoffice - removing data types" data-size="original">
 
 </details>
 
@@ -114,7 +114,7 @@ As opposed to Document Types, there are some Data Types that are available out o
 
 No Templates are available out of the box in a new installation. If cleaning up after a package, it would be okay to delete all that are present
 
-<img src="../../../../16/umbraco-cms/extending/packages/images/removing-templates.png" alt="Backoffice - removing templates" data-size="original">
+<img src="../../.gitbook/assets/removing-templates (1).png" alt="Backoffice - removing templates" data-size="original">
 
 </details>
 
@@ -124,7 +124,7 @@ No Templates are available out of the box in a new installation. If cleaning up 
 
 Out of the box, there are a few views available in the `blocklist` and `grid` folders. Everything else can theoretically be removed.
 
-<img src="../../../../16/umbraco-cms/extending/packages/images/removing-partials.png" alt="Backoffice - removing partial views" data-size="original">
+<img src="../../.gitbook/assets/removing-partials (1).png" alt="Backoffice - removing partial views" data-size="original">
 
 </details>
 
@@ -134,11 +134,11 @@ Out of the box, there are a few views available in the `blocklist` and `grid` fo
 
 Some packages might reference other items. For example, installing the StarterKit also adds `Bergmania.OpenStreetMap` to your project. That component will show up as installed in the backoffice even after uninstalling the NuGet package.
 
-<img src="images/installed-package-leftovers-backoffice.png" alt="Backoffice - Packages section - leftover dependency" data-size="original">
+<img src="../../.gitbook/assets/installed-package-leftovers-backoffice.png" alt="Backoffice - Packages section - leftover dependency" data-size="original">
 
 In many cases, custom dashboards, editors, and scripts are left in the `App_Plugins` folder after a package has been uninstalled via NuGet. These files also have to be deleted manually.
 
-<img src="images/app-plugins-starterkit.png" alt="Visual Studio - App Plugins leftover files" data-size="original">
+<img src="../../.gitbook/assets/app-plugins-starterkit.png" alt="Visual Studio - App Plugins leftover files" data-size="original">
 
 </details>
 
@@ -154,7 +154,7 @@ In this example, we will be using the SEOChecker package. This package allows de
 
 An example use case of the SEOChecker property on a Document Type, as presented in the Content section:
 
-![SEOChecker in content](../../../../16/umbraco-cms/extending/packages/images/seochecker-content-section.png)
+![SEOChecker in content](<../../.gitbook/assets/seochecker-content-section (1).png>)
 
 To uninstall the SEOChecker from a website, the first step is to remove the package via a `dotnet` command or use the NuGet Package Manager.
 
@@ -164,7 +164,7 @@ The following command can be used for uninstalling the package:
 
 After that, cleaning the solution is recommended.
 
-![Visual Studio - clean solution](images/vs-cleaning-solution.png)
+![Visual Studio - clean solution](../../.gitbook/assets/vs-cleaning-solution.png)
 
 <details>
 
@@ -172,7 +172,7 @@ After that, cleaning the solution is recommended.
 
 While uninstalling the package would remove most of the custom code, the `App_Plugins` folder has to be cleaned manually.
 
-<img src="../../../../16/umbraco-cms/extending/packages/images/seochecker-app-plugins.png" alt="SEOChecker files in App Plugins" data-size="original">
+<img src="../../.gitbook/assets/seochecker-app-plugins (1).png" alt="SEOChecker files in App Plugins" data-size="original">
 
 Removing _seochecker_ folder from `App_Plugins` will clean up the leftover backoffice section and dashboards.
 
@@ -184,6 +184,6 @@ If content on the website relies on having a custom Property Editor or a data so
 
 In the case of the SEOChecker, the custom property added from the package would look like this after all the package files have been removed:
 
-![The SEOChecker in Content after removing the package](../../../../16/umbraco-cms/extending/packages/images/seochecker-after-removal.png)
+![The SEOChecker in Content after removing the package](<../../.gitbook/assets/seochecker-after-removal (1).png>)
 
 Depending on the packages and the implementation, rendering of content from custom editors, or any frontend functionality dependent on external code, might not work correctly. It is always recommended to inspect the frontend of the site after removing any packages.

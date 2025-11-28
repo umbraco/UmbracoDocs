@@ -18,9 +18,9 @@ As mentioned above, server-side validation is the most common use-case for imple
 
 Less common use-cases include:
 
-- Custom content indexing for search,
-- Server-side conversion of the data that is passed to - and received from - the Property Editor UI,
-- and more.
+* Custom content indexing for search,
+* Server-side conversion of the data that is passed to - and received from - the Property Editor UI,
+* and more.
 
 These will be discussed briefly at the end of this article.
 
@@ -135,7 +135,7 @@ With the Data Editor in place, update the Property Editor `propertyEditorSchemaA
 
 Reload the backoffice and open the "Suggestions" Data Type:
 
-![The Data Type with the new Data Editor registered](images/suggestion-editor-config_4.png)
+![The Data Type with the new Data Editor registered](../../.gitbook/assets/suggestion-editor-config_4.png)
 
 The Umbraco UI already lists the Data Type as using the Data Editor. However, the Data Type configuration is still stored in the database using `Umbraco.Plain.String`. To effectively apply the Data Editor, we must re-save the Data Type.
 
@@ -155,12 +155,12 @@ The [Tags Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/main/src/
 
 Sometimes it is necessary to perform outbound and/or inbound conversion of property data (to/from the Property Editor UI). Some known use-cases are:
 
-- Cleaning up property data - for example, removing previously selected options that no longer apply at server level.
-- Transforming property data to/from a format supported by the Property Editor UI.
+* Cleaning up property data - for example, removing previously selected options that no longer apply at server level.
+* Transforming property data to/from a format supported by the Property Editor UI.
 
 These operations can be performed in the `DataValueEditor` implementation:
 
-- Override `ToEditor()` to perform outbound conversion.
-- Override `FromEditor()` to perform inbound conversion.
+* Override `ToEditor()` to perform outbound conversion.
+* Override `FromEditor()` to perform inbound conversion.
 
 The [Markdown Property Editor](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/PropertyEditors/MarkDownPropertyValueEditor.cs) contains an example of data conversion. It sanitizes the property data before storing the data in the database.
