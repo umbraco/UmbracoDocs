@@ -239,31 +239,3 @@ export class MyManagedList extends UmbLitElement {
 3. **Use guards in setters** to prevent unnecessary updates during re-renders
 4. **Maintain immutability** - create new arrays instead of mutating existing ones
 5. **Use `willUpdate()`** for reactive updates based on property changes
-
-## Common Pitfalls
-
-❌ **Don't do this:**
-```typescript
-// Calling setModel in onChange creates a loop
-onChange: ({ model }) => {
-    this._items = model;
-    this.#sorter.setModel(model); // ❌ Wrong!
-}
-```
-
-❌ **Don't do this:**
-```typescript
-// Mutating without updating the sorter
-#addItem() {
-    this._items.push(newItem); // ❌ Mutation without setModel
-}
-```
-
-✅ **Do this:**
-```typescript
-// Create new array and update sorter
-#addItem() {
-    this._items = [...this._items, newItem];
-    this.#sorter.setModel(this._items); // ✅ Correct!
-}
-```
