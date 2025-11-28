@@ -72,7 +72,7 @@ export class UmbContentTypeDesignEditorElement extends UmbLitElement {
 ## Key Points
 
 - The sorter is **enabled by default** when instantiated
-- Call [`disable()`](sorter.controller.ts) to prevent sorting interactions
-- Call [`enable()`](sorter.controller.ts) to re-enable sorting
+- Call `disable()`to prevent sorting interactions
+- Call `enable()` to re-enable sorting
 - These methods are idempotent - calling them multiple times has no additional effect
 - Disabling the sorter removes all drag event listeners, improving performance when sorting is not needed
