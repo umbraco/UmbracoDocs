@@ -62,7 +62,7 @@ To track a page view, send a POST request to:
 * `/umbraco/engage/api/v1/analytics/pageview/trackpageview/client`
 
   * Required: `url` property of the page that a user has visited in the site
-  * Optional: `reffererUrl` can be set to inform Umbraco Engage where the user came from.
+  * Optional: `referrerUrl` can be set to inform Umbraco Engage where the user came from.
 
 * `/umbraco/engage/api/v1/analytics/pageview/trackpageview/server`
 
