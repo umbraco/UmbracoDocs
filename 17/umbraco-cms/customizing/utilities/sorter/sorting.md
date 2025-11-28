@@ -8,14 +8,13 @@ description: Enable sorting elements via drag and drop
 This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
 {% endhint %}
 
-The Umbraco Sorter enables you to make a list of elements sortable via drag-and-drop interaction. You have to set up the sorter once on the Element that renders the items to be sorted. As part of the configuration, you shall provide an `onChange` callback method, which will be executed every time the sorter makes a difference to the data.
+The Umbraco Sorter enables you to make a list of elements sortable via drag-and-drop interaction. You must set up the sorter once on the element that renders the items to be sorted. As part of the configuration, you provide an `onChange` callback method that is executed every time the sorter changes the data.
 
-### Configuration
+## Configuration
 
-The following example shows a basic setup of the Sorter.
+The following example shows a basic setup of the Sorter:
 
 ```typescript
-
 type ModelEntryType = {
     id: string;
     name: string;
@@ -38,59 +37,57 @@ this.#sorter = new UmbSorterController(this, {
 });
 ```
 
-The properties provided are the following:
+The configuration properties are:
 
-* `itemSelector`: A query selector that matches the items that should be draggable.
-* `containerSelector`: A query elector that matches the parent element of the items.
-* `getUniqueOfElement`: A method that returns the unique element
-* `getUniqueOfModel`: Provide a method that returns the unique of a given model entry
-* `onChange`: Provide a method to retrieve the changed model. This is called every time the model is changed, including when the user is dragging around.
+* `itemSelector`: A query selector that matches the items that can be dragged.
+* `containerSelector`: A query selector that matches the parent element of the items.
+* `getUniqueOfElement`: A method that returns the unique identifier of an element.
+* `getUniqueOfModel`: A method that returns the unique identifier of a model entry.
+* `onChange`: A method to retrieve the changed model. This is called every time the model changes, including when the user is dragging items.
 
-### Data Model
+## Data Model
 
-The model given to the Sorter must be an Array. The following example extends the example from above:
+The model provided to the Sorter must be an Array. The following example extends the previous example:
 
 ```typescript
+const model: Array<ModelEntryType> = [
+    {
+        id: '1',
+        name: 'First item'
+    },
+    {
+        id: '2',
+        name: 'Second item'
+    },
+    {
+        id: '3',
+        name: 'Third item'
+    }
+]
 
-    const model: Array = [
-        {
-            id: 1,
-            name: 'First item'
-        },
-        {
-            id: 2,
-            name: 'second item'
-        }
-        {
-            id: 3,
-            name: 'Third item'
-        }
-    ]
-
-    // Set the Model, if you have changes to the model not coming from the Sorter. Then set the model again:
-    this.#sorter.setModel(model);
+// Set the Model. If you have changes to the model not coming from the Sorter, set the model again:
+this.#sorter.setModel(model);
 ```
 
-### Rendering
+## Rendering
 
-The Sorter does not move elements, instead, it updates the model as the user drags an item around. This puts higher pressure on the rendering of the sortable Elements. This means we need to make sure that the rendering re-uses the same element despite sorting the data differently.
+The Sorter does not move elements. Instead, it updates the model as the user drags an item. This places higher demands on the rendering of the sortable elements. You must ensure that the rendering reuses the same element despite sorting the data differently.
 
-Lit does provide a render helper method called `repeat` that does this for us. The following example shows a render method that continues the work of the examples above:
+Lit provides a render helper method called `repeat` that handles this. The following example shows a render method that continues the previous examples:
 
 ```typescript
-
-
-    render() {
-		return html`
-			
-				${repeat(
-					this._items,
-					(item) => item.id,
-					(item) =>
-						html`${item.name}
-						`,
-				)}
-			
-		`;
-	}
+render() {
+    return html`
+        <div class="sorter-container">
+            ${repeat(
+                this._items,
+                (item) => item.id,
+                (item) =>
+                    html`<div class="sorter-item" data-sorter-id="${item.id}">
+                        ${item.name}
+                    </div>`,
+            )}
+        </div>
+    `;
+}
 ```

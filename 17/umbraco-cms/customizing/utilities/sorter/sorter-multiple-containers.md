@@ -2,17 +2,14 @@
 
 The Sorter supports dragging items between multiple containers by using a shared `identifier`. This allows you to create complex drag-and-drop interfaces.
 
-If you want to test it out and see it used, there are two examples available.
-One for a sorter with nested containers, and another for two sorter containers.
-It can be found in [Examples and Playground](https://docs.umbraco.com/umbraco-cms/customizing/examples-and-playground)
-
+You can test this functionality using the examples available in the [Examples and Playground](https://docs.umbraco.com/umbraco-cms/customizing/examples-and-playground). Two examples are available: one for a sorter with nested containers, and another for two sorter containers.
 
 ## Configuration
 
 To enable cross-container sorting, ensure all sorter instances use the same `identifier`:
 
 ```typescript
-const sharedIdentifier = 'my-shared-sorter-group';
+const sharedIdentifier = "my-shared-sorter-group";
 
 // Container 1
 #sorter1 = new UmbSorterController(this, {
@@ -36,7 +33,7 @@ export type ModelEntryType = {
     name: string;
 };
 
-@customElement('example-sorter-group')
+@customElement("example-sorter-group")
 export class ExampleSorterGroup extends UmbElementMixin(LitElement) {
     @property({ type: Array, attribute: false })
     public get items(): ModelEntryType[] {
@@ -54,13 +51,13 @@ export class ExampleSorterGroup extends UmbElementMixin(LitElement) {
         getUniqueOfElement: (element) => element.name,
         getUniqueOfModel: (modelEntry) => modelEntry.name,
         // This identifier connects all sorter instances
-        identifier: 'string-that-identifies-all-example-sorters',
-        itemSelector: 'example-sorter-item',
-        containerSelector: '.sorter-container',
+        identifier: "string-that-identifies-all-example-sorters",
+        itemSelector: "example-sorter-item",
+        containerSelector: ".sorter-container",
         onChange: ({ model }) => {
             const oldValue = this._items;
             this._items = model;
-            this.requestUpdate('items', oldValue);
+            this.requestUpdate("items", oldValue);
         },
     });
 
@@ -77,7 +74,10 @@ export class ExampleSorterGroup extends UmbElementMixin(LitElement) {
                     (item) => item.name,
                     (item) => html`
                         <example-sorter-item name=${item.name}>
-                            <button slot="action" @click=${() => this.removeItem(item)}>
+                            <button
+                                slot="action"
+                                @click=${() => this.removeItem(item)}
+                            >
                                 Delete
                             </button>
                         </example-sorter-item>
@@ -105,10 +105,10 @@ export class ExampleSorterGroup extends UmbElementMixin(LitElement) {
 
 ## Key Points
 
-- **Shared Identifier**: All containers must use the same `identifier` value
-- **Independent Models**: Each container maintains its own model via `setModel()`
-- **Automatic Updates**: The `onChange` callback handles model updates when items are moved between containers
-- **Item Removal**: When setting the model after removing an item, call `setModel()` to sync the state
+-   **Shared Identifier**: All containers must use the same `identifier` value.
+-   **Independent Models**: Each container maintains its own model via `setModel()`.
+-   **Automatic Updates**: The `onChange` callback handles model updates when items are moved between containers.
+-   **Item Removal**: When setting the model after removing an item, call `setModel()` to synchronize the state.
 
 ## Validation
 
@@ -119,7 +119,7 @@ Use `onRequestMove` to control which items can be dropped into specific containe
     // ... other config
     onRequestMove: ({ item }) => {
         // Only allow items of a specific type
-        return item.type === 'allowed-in-this-container';
+        return item.type === "allowed-in-this-container";
     },
 });
 ```
