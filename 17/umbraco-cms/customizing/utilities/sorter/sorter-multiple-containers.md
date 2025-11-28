@@ -1,6 +1,6 @@
 # Sorting Across Multiple Containers
 
-The Sorter supports dragging items between multiple containers by using a shared [`identifier`](sorter.controller.ts). This allows you to create complex drag-and-drop interfaces.
+The Sorter supports dragging items between multiple containers by using a shared `identifier`. This allows you to create complex drag-and-drop interfaces.
 
 ## Configuration
 
@@ -24,7 +24,7 @@ const sharedIdentifier = 'my-shared-sorter-group';
 
 ## Example: Two Connected Containers
 
-This example from [`sorter-group.ts`](examples/sorter-with-two-containers/sorter-group.ts) shows two independent containers that can exchange items:
+This example shows two independent containers that can exchange items:
 
 ```typescript
 export type ModelEntryType = {
@@ -101,13 +101,13 @@ export class ExampleSorterGroup extends UmbElementMixin(LitElement) {
 ## Key Points
 
 - **Shared Identifier**: All containers must use the same `identifier` value
-- **Independent Models**: Each container maintains its own model via [`setModel()`](sorter.controller.ts)
+- **Independent Models**: Each container maintains its own model via `setModel()`
 - **Automatic Updates**: The `onChange` callback handles model updates when items are moved between containers
-- **Item Removal**: When setting the model after removing an item, call [`setModel()`](sorter.controller.ts) to sync the state
+- **Item Removal**: When setting the model after removing an item, call `setModel()` to sync the state
 
 ## Validation
 
-Use [`onRequestMove`](sorter.controller.ts) to control which items can be dropped into specific containers:
+Use `onRequestMove` to control which items can be dropped into specific containers:
 
 ```typescript
 #sorter = new UmbSorterController(this, {
