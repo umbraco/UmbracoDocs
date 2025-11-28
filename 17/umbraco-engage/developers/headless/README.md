@@ -1,12 +1,12 @@
 ---
 description: >-
-  Discover how to integrate Umbraco.Engage.Headless package with Umbraco 17
+  Discover how to integrate `Umbraco.Engage.Headless` package with Umbraco.
   for a Content Delivery API.
 ---
 
 # Headless
 
-Umbraco Engage offers the **Umbraco.Engage.Headless** package for seamless integration with Umbraco 17. This package enables access to the Headless Content Delivery API, enabling personalized content, A/B tests, and segmentation.
+Umbraco Engage offers the **Umbraco.Engage.Headless** package for seamless integration with Umbraco. This package enables access to the Headless Content Delivery API, enabling personalized content, A/B tests, and segmentation.
 
 {% hint style="info" %}
 All Engage features are supported except:
@@ -28,7 +28,7 @@ All Engage features are supported except:
 
 To install Umbraco.Engage.Headless, ensure the following prerequisites:
 
-* Umbraco v17 is required to integrate with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
+* The latest version of Umbraco is required to integrate with the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
 * Enable the [Umbraco Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#enable-the-content-delivery-api) by adding the following configuration setting in the `appsettings.json` file:
 
 ```json
