@@ -8,7 +8,7 @@ description: >-
 
 You could choose to give visitors control over these settings through a cookie bar on your site.
 
-To do this you have to create an implementation of the `Umbraco.Engage.Business.Permissions.ModulePermissions.IModulePermissions` interface and override our default implementation.
+To do this you have to create an implementation of the `Umbraco.Engage.Infrastructure.Permissions.ModulePermissions.IModulePermissions` interface and override our default implementation.
 
 This interface defines 3 methods that you will have to implement:
 
@@ -21,7 +21,7 @@ This interface defines 3 methods that you will have to implement:
 /// </summary>
 /// <param name="context">Context of the request</param>
 /// <returns>True if A/B testing is allowed, otherwise false.</returns>
-bool AbTestingIsAllowed(HttpContextBase context);
+bool AbTestingIsAllowed(HttpContext context);
 
 /// <summary>
 /// Indicates if Analytics is allowed for the given request context.
@@ -33,7 +33,7 @@ bool AbTestingIsAllowed(HttpContextBase context);
 /// </summary>
 /// <param name="context">Context of the request</param>
 /// <returns>True if Analytics is allowed, otherwise false.</returns>
-bool AnalyticsIsAllowed(HttpContextBase context);
+bool AnalyticsIsAllowed(HttpContext context);
 
 /// <summary>
 /// Indicates if Personalization testing is allowed for the given request context.
@@ -41,29 +41,29 @@ bool AnalyticsIsAllowed(HttpContextBase context);
 /// </summary>
 /// <param name="context">Context of the request</param>
 /// <returns>True if Personalization is allowed, otherwise false.</returns>
-bool PersonalizationIsAllowed(HttpContextBase context);
+bool PersonalizationIsAllowed(HttpContext context);
 ```
 {% endcode %}
 
-Using these methods you can control per visitor whether or not the modules are active. Your implementation will need to be registered with Umbraco using the `RegisterUnique()` method, overriding the default implementation which enables all modules all the time. Make sure your composer runs after the Umbraco Engage composer by using the `[ComposeAfter]` attribute.
+Using these methods you can control per visitor whether or not the modules are active. Your implementation will need to be registered with Umbraco using the `AddUnique()` method, overriding the default implementation which enables all modules all the time. Make sure your composer runs after the Umbraco Engage composer by using the `[ComposeAfter]` attribute.
 
 It could look something like this:
 
 {% code overflow="wrap" %}
 ```csharp
-using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Engage.Common.Composing;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
+using Umbraco.Engage.Infrastructure.Permissions.ModulePermissions;
 
-namespace YourNamespace 
+namespace YourNamespace
 {
     [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]
     public class YourComposer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.RegisterUnique<IModulePermissions, YourCustomModulePermissions>();
+            builder.Services.AddUnique<IModulePermissions, YourCustomModulePermissions>();
         }
     }
 }

@@ -12,7 +12,7 @@ To access the Umbraco Backoffice:
 The address at which you access Umbraco may vary so check with your system administrator.
 {% endhint %}
 
-![Login Screen](images/login-screen.png)
+![Login Screen](../../../.gitbook/assets/login-screen.png)
 
 ## Logging Out
 
@@ -21,4 +21,4 @@ To log out of the Umbraco Backoffice:
 1. Select the profile picture in the top-right of the screen.
 2. Click **Logout**.
 
-![Logout Screen](images/log-out.png)
+![Logout Screen](../../../.gitbook/assets/log-out.png)

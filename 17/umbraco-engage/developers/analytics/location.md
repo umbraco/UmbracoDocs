@@ -16,7 +16,7 @@ Once you have a service that can provide localization information, you must inte
 
 Implement the following interface:
 
-`Umbraco.Engage.Business.Analytics.Processing.Extractors.IRawPageviewLocationExtractor`
+`Umbraco.Engage.Infrastructure.Analytics.Processing.Extractors.IRawPageviewLocationExtractor`
 
 This interface allows information about localization for a pageview, defined as a single visitor's visit to a specific point in time. The page view contains the `IpAddress` property that can be used for Geo IP lookup.
 
@@ -25,8 +25,10 @@ This interface allows information about localization for a pageview, defined as 
 
 {% code overflow="wrap" %}
 ```cs
-using Umbraco.Engage.Business.Analytics.Processed;
-public class GeoIpLocation : ILocation {
+using Umbraco.Engage.Infrastructure.Analytics.Processed;
+
+public class GeoIpLocation : ILocation
+{
     public string Country { get; set; }
     public string County { get; set; }
     public string Province { get; set; }
@@ -40,19 +42,21 @@ public class GeoIpLocation : ILocation {
 
 {% code overflow="wrap" %}
 ```cs
-using Umbraco.Engage.Business.Analytics.Processing.Extractors;
+using Umbraco.Engage.Infrastructure.Analytics.Processing.Extractors;
+
 public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
 {
-    public ILocation Extract(IRawPageview rawPageview)
+    public ILocation? Extract(IRawPageview rawPageview)
     {
-        if (!IPAddress.TryParse(rawPageview?.IpAddress, out var ipAddress) || IPAddress.IsLoopback(ipAddress)) return null;
-    
+        if (!IPAddress.TryParse(rawPageview?.IpAddress, out var ipAddress) || IPAddress.IsLoopback(ipAddress))
+            return null;
+
         string country, county, province, city;
-    
+
         //...
         // Perform your own GEO IP lookup here
         // ...
-    
+
         var location = new GeoIpLocation
         {
             Country = country,
@@ -60,7 +64,7 @@ public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
             Province = province,
             City = city
         };
-    
+
         return location;
     }
 }
@@ -69,23 +73,23 @@ public class MyCustomLocationExtractor : IRawPageviewLocationExtractor
 
 4. Let the IoC container know to use your implementation for the `IRawPageviewLocationExtractor`.
 
-Umbraco Engage has a default implementation of this service, which only returns null. This default service is registered using Umbraco's `RegisterUnique` method.
+Umbraco Engage has a default implementation of this service, which only returns null. This default service is registered using Umbraco's `AddUnique` method.
 
-5. Override this service by calling `RegisterUnique` **after** the `UmbracoEngageApplicationComposer`.
+5. Override this service by calling `AddUnique` **after** the `UmbracoEngageApplicationComposer`.
 
 {% code overflow="wrap" %}
 ```cs
-using Umbraco.Engage.Business.Analytics.Processing.Extractors;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Engage.Common.Composing;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-    
+using Umbraco.Engage.Infrastructure.Analytics.Processing.Extractors;
+
 [ComposeAfter(typeof(UmbracoEngageApplicationComposer))]
-public class UmbracoEngageComposer: IComposer
+public class UmbracoEngageComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.services.AddUnique<IRawPageviewLocationExtractor, MyCustomLocationExtractor>();
+        builder.Services.AddUnique<IRawPageviewLocationExtractor, MyCustomLocationExtractor>();
     }
 }
 ```

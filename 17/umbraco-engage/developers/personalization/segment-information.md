@@ -12,14 +12,21 @@ This service provides access to all analytics-related information for the curren
 To get started you need an instance of an`IAnalyticsStateProvider`, which can be resolved through Dependency Injection. For example consider the following case, where we use [route hijacking](https://docs.umbraco.com/umbraco-cms/v/13.latest-lts/reference/routing/custom-controllers) to execute custom code for our content type called "`Home`":
 
 ```csharp
-using System.Web.Mvc;
-using Umbraco.Engage.Business.Analytics.State;
-using Umbraco.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Engage.Infrastructure.Analytics.State;
 
-public class HomeController : SurfaceController, IRenderController
+public class HomeController : RenderController
 {
     private readonly IAnalyticsStateProvider _analyticsStateProvider;
-    public HomeController(IAnalyticsStateProvider analyticsStateProvider)
+
+    public HomeController(
+        ILogger<HomeController> logger,
+        ICompositeViewEngine compositeViewEngine,
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IAnalyticsStateProvider analyticsStateProvider)
+        : base(logger, compositeViewEngine, umbracoContextAccessor)
     {
         _analyticsStateProvider = analyticsStateProvider;
     }
@@ -35,7 +42,7 @@ Consider the following example (continued from above) where the content of conte
 
 {% code overflow="wrap" %}
 ```csharp
-public ActionResult HomeTemplate()
+public IActionResult HomeTemplate()
 {
     var analyticsState = _analyticsStateProvider.GetState();
     foreach (var pageviewSegment in analyticsState.Pageview.PageviewSegments)

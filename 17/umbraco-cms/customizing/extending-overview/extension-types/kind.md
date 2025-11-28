@@ -1,43 +1,48 @@
 ---
-description: A kind extension provides the preset for other extensions to use.
+description: Create reusable, standardized configurations for extensions, helping to streamline development, ensure consistency, and reduce duplication.
 ---
 
 # Kind
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
+A Kind is a preset configuration that extensions inherit for consistency. It reduces redundancy by defining default properties. This simplifies maintenance for extensions sharing similar functionality.
 
-A Kind is a preset configuration that can be inherited by extensions to ensure consistency and reduce redundancy. It defines a set of default properties or behaviors that extensions can adopt, making it easier to maintain and configure extensions that share similar functionality.
-
-A Kind is always linked to a specific extension type. Extensions using the same type and referencing a Kind automatically inherit its settings, ensuring uniformity across different extensions.
+Every Kind links to a specific extension type. Extensions of that type referencing a Kind automatically inherit its settings. This ensures uniformity across different extensions.
 
 ## Benefits of Using a Kind
 
-- Reduces redundancy – Common settings are defined once and reused across extensions.
-- Ensures consistency – Extensions using the same Kind follow a standardized structure and behavior.
-- Simplifies extension definitions – Extensions inherit predefined properties, reducing manual configuration.
+- **Reduces redundancy** – Defines common settings once for reuse across extensions.
+- **Ensures consistency** – Extensions using the same Kind follow a standardized structure.
+- **Simplifies definitions** – Extensions inherit predefined properties to reduce manual configuration.
 
 ## Kind Registration
 
-To register a Kind, use the same method as other extensions. The key properties that define a Kind registration are:
+Register a Kind using the standard extension method. The key properties defining a Kind registration are:
 
-- `type`: Always set to `kind`.
+- `type`: Always set this to `kind`.
 - `alias`: A unique identifier for the Kind.
-- `matchType`: Specifies the extension type that the Kind applies to.
-- `matchKind`: Defines the Kind alias, which extensions must reference.
-- `manifest`: Contains the preset values that extensions will inherit.
+- `matchType`: Specifies the applicable extension type.
+- `matchKind`: Defines the Kind alias referenced by extensions.
+- `manifest`: Contains preset values for inheritance.
 
 ### Example: Registering a Button Kind for Header Apps
 
-The following example shows how to register a Button Kind for [**Header Apps**](../extension-types/header-apps.md). This kind provides a preset configuration for a button element that can be reused by other Header App extensions.
+This example registers a Button Kind for [**Header Apps**](../extension-types/header-apps.md). It provides a preset button configuration for other extensions to reuse.
+
+Properties:
+
+- `type` is 'kind', registering it as a Kind extension.
+- `matchType` is 'headerApp', targeting Header App extensions.
+- `matchKind` is 'button', serving as the Kind's alias.
+- The `manifest` holds default properties, like `elementName`, for inheritance.
 
 ```typescript
-const manifest: ManifestKind = {
+import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
+
+export const customHeaderAppButton: UmbExtensionManifestKind = {
 	type: 'kind',
-	alias: 'Umb.Kind.MyButtonKind', // Unique alias for the Kind
-	matchType: 'headerApp', // Applies to Header App extensions
-	matchKind: 'button', // Defines the Kind alias
+	alias: 'Umb.Kind.MyButtonKind', 
+	matchType: 'headerApp', 
+	matchKind: 'button', 
 	manifest: {
 		// Add default properties for the 'button' Kind
     	elementName: 'umb-header-app-button',
@@ -45,16 +50,9 @@ const manifest: ManifestKind = {
 };
 ```
 
-In this example:
-
-- `type` is set to 'kind' to register it as a Kind extension.
-- `matchType` is 'headerApp', specifying that this Kind is for Header App extensions.
-- `matchKind` is 'button', which is the alias of the Kind.
-- The `manifest` contains default properties like elementName that extensions using this Kind will inherit.
-
 ## Using the Kind in Other Extensions
 
-To use the Kind in other extensions, the extension must reference it by setting the `type` and `kind` properties. The extension will automatically inherit the Kind's properties.
+Use a Kind by setting the `type` and `kind` properties. The extension then automatically inherits the Kind's properties.
 
 ### Example: Header App Extension Using the Button Kind
 
@@ -70,54 +68,157 @@ const manifest = {
 		href: '/some/path/to/open/when/clicked',
   },
 };
-
-extensionRegistry.register(manifest);
 ```
 
-In this example, the Header App extension uses the `kind: 'button'`, meaning it inherits the `elementName` defined in the Button Kind. The extension can still add custom properties (like metadata in this case) to further customize the behavior or appearance.
+Here, the extension uses `kind: 'button'` to inherit `elementName`. It also adds custom metadata to further customize behavior or appearance.
 
-## Kind Example
+## Custom Kind Example
 
-Here’s an example of how to register and use the Button Kind in a Header App extension:
+The code below demonstrates how to create a custom kind. This `Kind` extension will allow extension developers to display welcome messages in the header that will greet backoffice users.
 
+<figure><img src="../../../.gitbook/assets/kind-custom-header-app.png" alt="" width="401"><figcaption><p>Custom Header App Created Using a Kind</p></figcaption></figure>
+
+### Create the Kind Extension
+
+Start by defining and registering a new Kind extension. Select a unique name for the `matchKind` and `manifest.elementName` properties.
+
+{% code title="kinds/manifests.ts" %}
 ```typescript
-import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+export const welcomeHeaderAppMessage: UmbExtensionManifestKind = {
+    type: "kind",
+    alias: "Umb.Kind.HeaderAppMessage", // Unique alias for the Kind
+    matchType: "headerApp", // Applies to Header App extensions
+    matchKind: "welcomeHeaderAppMessage", // Defines the Kind alias
+    manifest: {
+        // Add default properties for the 'button' Kind
+        elementName: "welcome-header-app-message",
+    },
+};
+```
+{% endcode %}
 
-const manifest: UmbExtensionManifest = {
-  type: 'kind',
-  alias: 'Umb.Kind.MyButtonKind',  // Alias for the Kind
-  matchType: 'headerApp', // Extension type the Kind applies to
-  matchKind: 'button',  // Defines the Kind alias
-  manifest: {
-    elementName: 'umb-header-app-button',
-  },
+### Create a Custom Component for `welcome-header-app-message`
+
+Create a custom component to render our welcome message out to the backoffice user. The `manifest.elementName` property in the kind manifest should match the value of `@customElement` and `declare global { ...` declarations.
+
+{% code title="kinds/welcome-header-app-message.ts" %}
+```typescript
+import {
+  html,
+  customElement,
+  property,
+} from "@umbraco-cms/backoffice/external/lit";
+import { LitElement } from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import type { ManifestHeaderApp } from "@umbraco-cms/backoffice/extension-registry";
+
+// Define a TypeScript interface for your specific manifest structure
+// This ensures strict typing for 'meta.message'
+export interface ManifestHeaderAppMessage extends ManifestHeaderApp {
+  meta: {
+    message: string;
+  };
+}
+
+@customElement("welcome-header-app-message")
+export class UmbHeaderAppMessageElement extends UmbElementMixin(LitElement) {
+  // The Umbraco extension renderer will automatically set this property
+  @property({ attribute: false })
+  manifest?: ManifestHeaderAppMessage;
+
+  render() {
+    return html`
+      <div
+        style="color: white; font-weight: bold; padding: 0 16px; display: flex; align-items: center; font-weight: bold;"
+      >
+        ${this.manifest?.meta.message ?? "No message defined"}
+      </div>
+    `;
+  }
+}
+
+export default UmbHeaderAppMessageElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "welcome-header-app-message": UmbHeaderAppMessageElement;
+  }
+}
+```
+{% endcode %}
+
+### Derive Header Apps Using the Custom Kind Extension
+
+Use the previously defined `Kind` extension, `welcomeHeaderAppMessage` to create messages to display to the user for each day of the week. Properties such as `manifest.elementName` that are defined in the `welcomeHeaderAppMessage` kind extension will fall through to derived extensions. These properties do not need to be redefined in extensions that inherit from the `welcomeHeaderAppMessage` kind.
+
+* For each derived extension, the `kind` property must match the `matchKind` property on `welcomeHeaderAppMessage`.
+* The `type` property must also match the `matchType` property on `welcomeHeaderAppMessage`.
+* Use `element` to import the custom component. 
+
+{% code title="kinds/manifests.ts" %}
+```typescript
+// ...
+
+export const wednesdayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Wednesday Message Header App",
+    alias: "My.HeaderApp.WednesdayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy wonderful Wednesday",
+    },
 };
 
-umbExtensionsRegistry.register(manifest);
-```
-
-This code registers the Button Kind, so other Header App extensions using `type: 'headerApp'` and `kind: 'button'` will inherit the preset `elementName: 'umb-header-app-button'`.
-
-Now, another Header App extension can be created without defining `elementName`, as it will automatically inherit it from the Kind:
-
-```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
-
-const manifest = {
-	type: 'headerApp', // Extension type
-	kind: 'button',  // References the 'button' Kind
-	name: 'My Header App Example',
-	alias: 'My.HeaderApp.Example',
-	meta: {
-		label: 'My Example',
-		icon: 'icon-home',
-		href: '/some/path/to/open/when/clicked',
-	},
+export const thursdayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Thursday Message Header App",
+    alias: "My.HeaderApp.ThursdayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy thunderous Thursday",
+    },
 };
 
-extensionRegistry.register(manifest);
+export const fridayWelcomeMessageHeaderAppInstance = {
+    type: "headerApp",
+    kind: "welcomeHeaderAppMessage",
+    name: "Friday Message Header App",
+    alias: "My.HeaderApp.FridayMessage",
+    element: () => import("./header-app-message.ts"),
+    meta: {
+        message: "Happy funky Friday",
+    },
+};
 ```
+{% endcode %}
 
-By referencing the Kind, the extension inherits shared properties like `elementName`, ensuring consistency and reducing redundancy across extensions. This method also makes it easier to update configurations across multiple extensions.
+### Register the Derived Extension
 
-By using Kinds, you can create reusable, standardized configurations for extensions, helping to streamline development, ensure consistency, and reduce duplication. Understanding how to register and reference Kinds effectively will enhance the maintainability of your Umbraco extensions.
+Use any standard practice to register the derived extension, in this case `thursdayWelcomeMessageHeaderAppInstance` is registered dynamically in an entrypoint.
+
+{% code title="entrypoints/entrypoints.ts" %}
+```typescript
+import type {
+    UmbEntryPointOnInit,
+    UmbEntryPointOnUnload,
+} from "@umbraco-cms/backoffice/extension-api";
+import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
+import {
+    thursdayWelcomeMessageHeaderAppInstance,
+} from "../kinds/manifests";
+
+export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+    console.log("Hello from my extension 🎉");
+    
+    umbExtensionsRegistry.register(thursdayWelcomeMessageHeaderAppInstance);
+};
+
+export const onUnload: UmbEntryPointOnUnload = (_host, _extensionRegistry) => {
+    console.log("Goodbye from my extension 👋");
+};
+```
+{% endcode %}
+
+Referencing the Kind ensures consistency by inheriting shared properties. This also simplifies updating configurations across multiple extensions.

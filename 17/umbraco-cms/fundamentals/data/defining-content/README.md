@@ -28,7 +28,7 @@ A Document Type is created using the Document Type editor in the **Settings** se
 * On the **Document Types** node click the menu icon (•••) to bring up the context menu.
 * Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
 
-![CreateDoctype](../images/CreateDoctype.png)
+![CreateDoctype](../../../.gitbook/assets/CreateDoctype.png)
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
 
@@ -38,7 +38,7 @@ You can also choose to create a **Document Type** without a template and create 
 
 First, we're prompted to give the Document Type a **name**. This first Document Type will be the root node for our content, name it "`Home`".
 
-![Name the Document Type](../images/homePage.png)
+![Name the Document Type](../../../.gitbook/assets/homePage.png)
 
 {% hint style="info" %}
 The alias of the Document Type is automatically generated based on the property name. If you want to change the auto-generated alias, click the "**lock**" icon. The alias must be in camel case. For example: _`homePage`_.
@@ -52,7 +52,7 @@ Choosing appropriate icons for your content nodes is a good way to give editors 
 
 To set an icon for the Document Type click the document icon in the top left corner. This will open the icon select dialog. Search for "`Home"`and select the icon. This icon will be used in the content tree.
 
-![Home icon](../images/docTypeIcon.png)
+![Home icon](../../../.gitbook/assets/docTypeIcon.png)
 
 ### Setting Permissions
 
@@ -62,7 +62,7 @@ This will allow this Document Type to be created as the first content in the **C
 * Tick the **Allow as root** toggle
 * Save the Document Type by clicking **save** in the bottom right corner.
 
-![Allow as root](../images/docTypePermissions.png)
+![Allow as root](../../../.gitbook/assets/docTypePermissions.png)
 
 ## 3. Creating the content
 
@@ -73,7 +73,7 @@ Now that we have the Document Type in place, we can create the content.
 * Select the "`Home`" Document Type. We'll name it "`Home`"
 * Then click the **Save and Publish** button.
 
-![Create homepage](../images/createHomepage.png)
+![Create homepage](../../../.gitbook/assets/createHomepage.png)
 
 As we haven't created our properties, all we can see on the "`Home`" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
@@ -129,7 +129,7 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * **Choose** which Data Type/property editor to use, and add validation if needed.
 * Give the property a **name.** The name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "`Body Text`".
 
-![Adding a property](../images/addproperty.png)
+![Adding a property](../../../.gitbook/assets/addproperty.png)
 
 #### Property Editors
 
@@ -137,7 +137,7 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * To make it easier to find what you need use the **search field** to filter by typing "`Rich`". Filtering will display configured properties first (under **Available configurations**) and all available editors under that.
 * Select the **Rich Text editor** under **Create new**. This will let you configure the editor settings - the Rich Text editor for this property.
 
-![Choosing the Rich Text editor](../images/selectEditor.png)
+![Choosing the Rich Text editor](../../../.gitbook/assets/selectEditor.png)
 
 {% hint style="info" %}
 The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
@@ -242,7 +242,7 @@ This is *italic*
 ![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
 ```
 
-![Makrdown description example](../../../../../15/umbraco-cms/fundamentals/data/images/md-description.gif)
+![Makrdown description example](<../../../.gitbook/assets/md-description (1).gif>)
 
 ## 5. Defining child nodes
 
@@ -271,7 +271,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 * Click the menu icon (•••) next to the "`Home`" node
 * **Select** the "`Text page`" Document Type. We'll name the page "`About us`". We now have a basic content structure.
 
-<figure><img src="../images/v8Screenshots/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/createAboutUs.PNG" alt=""><figcaption></figcaption></figure>
 
 Document Types are flexible and can be used for defining pieces of reusable content or an entire page, to act as a container or repository.
 
@@ -283,7 +283,7 @@ You can also export document types from an already existing project/installation
 * Click **...** next to the **Document type**
 * Select **Export**. When you click on the **Export** button, the Document Type is saved as a \*.udt file.
 
-![Exporting a Document Type](../images/v8Screenshots/export-document-type.png)
+![Exporting a Document Type](../../../.gitbook/assets/export-document-type.png)
 
 To import a Document Type:
 
@@ -293,7 +293,7 @@ To import a Document Type:
 * Click on the **Import** button and browse to the Document Type you exported. The **Name** and **Alias** of the Document Type are displayed.
 * Click **Import** to complete the process.
 
-![Importing a Document Type](../images/import-document-type.png)
+![Importing a Document Type](../../../.gitbook/assets/import-document-type.png)
 
 {% hint style="info" %}
 1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.

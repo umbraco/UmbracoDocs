@@ -10,7 +10,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ## Data Type Definition Example
 
-![Textarea Data Type Definition](images/Textarea-Setup.png)
+![Textarea Data Type Definition](../../../../.gitbook/assets/Textarea-Setup.png)
 
 ## Settings
 
@@ -18,11 +18,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-v8.png)
+![Textarea Content Example](<../../../../.gitbook/assets/Textarea-Content-v8 (1).png>)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](<../../../../.gitbook/assets/Textarea-Content-Limit-v8 (1).png>)
 
 ## MVC View Example
 
