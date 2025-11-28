@@ -1,6 +1,6 @@
 # Sorter Configuration Options
 
-The [`UmbSorterController`](sorter.controller.ts) accepts a comprehensive configuration object. This guide covers all available options.
+The `UmbSorterController` accepts a comprehensive configuration object. This guide covers all available options.
 
 ## Required Configuration
 
