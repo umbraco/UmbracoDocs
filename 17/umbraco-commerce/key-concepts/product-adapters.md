@@ -71,6 +71,11 @@ public interface IProductSnapshot
 
 ```
 
+{% hint style="info" %}
+`IProductSnapshot` is the base model for what Umbraco Commerce needs. If you want to include images or measurements (if you for example need to do shipping based on weight), then there are other extended IProductSnapshot interfaces you can return.
+`IProductSnapshotWithImage`, `IProductSnapshotWithCategories` & `IProductSnapshotWithMeasurements` are all valid return types that allows you to enrich the product model.
+{% endhint %}
+
 ## Support editable carts
 
 To allow Umbraco Commerce to search for products/variants to add to a cart via the backoffice, Product Adapters can implement 3 additional methods. This can also be done to support editable carts.
