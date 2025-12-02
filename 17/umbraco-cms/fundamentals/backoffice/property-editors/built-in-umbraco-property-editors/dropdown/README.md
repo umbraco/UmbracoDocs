@@ -24,17 +24,17 @@ You can use dictionary items to translate the options in a Dropdown property edi
 
 ## Data Type Definition Example
 
-![Dropdown-data-type](../images/Dropdown-DataType.png)
+![Dropdown-data-type](../../../../../.gitbook/assets/Dropdown-DataType.png)
 
 ## Content Example
 
 ### Single Value
 
-![Single dropdown content example](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
+![Single dropdown content example](<../../../../../.gitbook/assets/DropdownSingle-Content (1).png>)
 
 ### Multiple Values
 
-![Multiple dropdown content example](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
+![Multiple dropdown content example](<../../../../../.gitbook/assets/DropdownMultiple-Content (1).png>)
 
 ## MVC View Example
 

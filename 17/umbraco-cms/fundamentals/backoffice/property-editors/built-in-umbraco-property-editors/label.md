@@ -10,7 +10,7 @@ Label is a non-editable control and can only be used to display a pre-set value.
 
 ## Data Type Definition Example
 
-![Label Data Type definition](images/Label-Setup.png)
+![Label Data Type definition](../../../../.gitbook/assets/Label-Setup.png)
 
 ### Value type
 
@@ -20,7 +20,7 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Content Example
 
-![Label Content Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Label-Content-v8.png)
+![Label Content Example](<../../../../.gitbook/assets/Label-Content-v8 (1).png>)
 
 ## MVC View Example
 

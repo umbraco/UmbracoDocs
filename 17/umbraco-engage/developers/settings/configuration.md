@@ -16,12 +16,14 @@ The default configuration will look like this:
   "Engage": {
     "Settings": {
       "DatabaseConnectionStringName": "umbracoDbDSN",
-      "Enabled": true
+      "Enabled": true,
+      "UseLegacySegmentNames": false
     },
     "Analytics": {
       "VisitorCookie": {
         "ExpirationInDays": 365,
         "CookieName": "umbracoEngageAnalyticsVisitorId",
+        "LegacyCookieName": "uMarketingSuiteAnalyticsVisitorId",
         "IncludeSubdomains": false
       },
       "DataCollection": {
@@ -31,7 +33,7 @@ The default configuration will look like this:
         "InternalSiteSearch": {
           "AutomaticSearchTracking": true,
           "SearchTermParameters": "q",
-          "SearchBoxParameters": "",
+          "SearchBoxParameters": "a,b,c",
           "CategoryParameters": ""
         }
       },
@@ -72,13 +74,18 @@ The default configuration will look like this:
       },
       "Identification": {
         "Name": "{{name}}",
-        "Abbreviation": "{{name[0]}}",
-        "ImagePropertyAlias": "avatar"
+        "Abbreviation": "{{name[0]}}"
       }
     },
     "Reporting": {
       "DataGenerationEnabled": true,
       "DataGenerationTime": "04:00:00"
+    },
+    "Cockpit": {
+      "EnableInjection": true
+    },
+    "Segmentation": {
+      "ExcludedPropertyAliases": []
     }
   }
 }

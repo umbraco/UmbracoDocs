@@ -16,6 +16,29 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.0.1 (November 27th 2025)
+* Fix issues with the 17.0.0 release where migrations would sometimes not complete successfully
+
+### 17.0.0 (November 27th 2025)
+* Update Forms dependencies to 17.0.0
+* All items detailed under release candidates for 17.0.0.
+* JavaScript now correctly finds the form config element when it is not adjacent
+
+### 17.0.0-rc4 (November 25th 2025)
+* Stop "Save and preview" modal from displaying an interstitial state
+* Adds additional exports to `@umbraco-forms/backoffice` NPM package
+* Razor email templates now format URLs as `UrlMode.Absolute` [#1414](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1414)
+* File Upload field now includes `class` attribute [#1495](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1495)
+* Fix `ScrollToFormScript` JavaScript not working correctly [#1486](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1486)
+* Fix endless submit loop when reinitializing forms with `umbracoFormsReinitialize` [#1491](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1491)
+* Resolve issues with missing translations in backoffice [#1492](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1492)
+
+### 17.0.0-rc3 (November 20th 2025)
+
+* Update dependencies to 17.0.0-rc3
+* Fix issue where "Save and preview" modal would flash with no content
+* Fix bug that showed "Empty due to Umbraco Forms in trial mode" for entries even with a valid license
+
 ### 17.0.0-rc2 (November 13th 2025)
 
 * Update dependencies to 17.0.0-rc2

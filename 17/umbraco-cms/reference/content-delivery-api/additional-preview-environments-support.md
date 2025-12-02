@@ -1,6 +1,7 @@
 ---
 description: >-
-  Configure custom preview URLs to provide editors with seamless access to external preview environments for the Content Delivery API data.
+  Configure custom preview URLs to provide editors with seamless access to
+  external preview environments for the Content Delivery API data.
 ---
 
 # Additional preview environments support
@@ -78,8 +79,8 @@ public class MyUrlProviderComposer : IComposer
 
 On the client side, you'll need an extension of:
 
-- Type: `workspaceActionMenuItem`.
-- Kind: `previewOption`.
+* Type: `workspaceActionMenuItem`.
+* Kind: `previewOption`.
 
 {% hint style="info" %}
 Learn more about the `previewOption` kind and workspace action menu items in the [Workspace Action Menu Items](../../customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md) article.
@@ -115,16 +116,15 @@ This extension works with the URL provider above because the `urlProviderAlias` 
 
 Save the extension as `umbraco-package.json` in a folder under `App_Plugins` and (re)start the site. The result is a new preview option in a pop-up over the "Save and preview" button:
 
-![External preview options in a pop-up over the "Save and preview" button](images/external-preview-option.png)
+![External preview options in a pop-up over the "Save and preview" button](../../.gitbook/assets/external-preview-option.png)
 
-{% hint style="info" %}
 The default "Save and preview" button is also an extension of this type.
 
 In other words, multiple preview options can co-exist. If you have multiple external environments, you can create preview options for all of them.
 
 The extension `weight` determines the order of appearance. A `weight` above 100 will swap the default preview option with the custom one.
 
-{% hint style="tip" %}
+{% hint style="info" %}
 **Alternative approach without server-side URL provider**
 
 If you want to create a preview option that opens a specific URL without server-side logic, you can use the `default` kind instead of `previewOption`. With the `default` kind, you provide an `api` class that implements a `getHref()` method to return the URL to open.

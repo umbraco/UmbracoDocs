@@ -15,43 +15,43 @@ In this case, you may need to provide a custom implementation of the `IHttpConte
 The default extractor looks like this:
 
 ```csharp
-using System.Web;
-using Umbraco.Engage.Business.Analytics.Collection.Extractors;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Engage.Infrastructure.Analytics.Collection.Extractors;
 
-public string ExtractIpAddress(HttpContextBase context)
+public string? ExtractIpAddress(HttpContext context)
 {
-    if (context?.Request?.ServerVariables["X-Forwarded-For"] is string ipAddresses)
+    if (context?.Request?.Headers["X-Forwarded-For"].FirstOrDefault() is string ipAddresses)
     {
         var ipAddress = ipAddresses.Split(',')[0].Trim();
         if (System.Net.IPAddress.TryParse(ipAddress, out _)) return ipAddress;
     }
-    return context?.Request?.UserHostAddress;
+    return context?.Connection?.RemoteIpAddress?.ToString();
 }
 ```
 
 To override this behavior, implement your own `IHttpContextIpAddressExtractor` and instruct Umbraco to use your extractor instead of the default extractor:
 
 ```cs
-using Umbraco.Engage.Business.Analytics.Collection.Extractors;
-using Umbraco.Core.Composing;
-using Umbraco.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Engage.Infrastructure.Analytics.Collection.Extractors;
 
-[ComposeAfter(typeof(Umbraco.Engage.Business.Analytics.Collection.Extractors.AnalyticsExtractorsComposer))]
-public class CustomIpExtractorUserComposer : IUserComposer
+[ComposeAfter(typeof(Umbraco.Engage.Infrastructure.Analytics.Collection.Extractors.AnalyticsExtractorsComposer))]
+public class CustomIpExtractorComposer : IComposer
 {
-    public void Compose(Composition composition)
+    public void Compose(IUmbracoBuilder builder)
     {
-        composition.RegisterUnique<IHttpContextIpAddressExtractor, MyIpAddressExtractor>();
+        builder.Services.AddUnique<IHttpContextIpAddressExtractor, MyIpAddressExtractor>();
     }
 }
 ```
 
 {% hint style="info" %}
-It is important that your `UserComposer` adjusts the service registration **after** Umbraco Engage has initialized.
+It is important that your `Composer` adjusts the service registration **after** Umbraco Engage has initialized.
 {% endhint %}
 
-This can be enforced using the `ComposeAfterAttribute`. Failing to add this attribute may result in Umbraco running your IUserComposer before the Umbraco Engage composer, causing your changes to be overwritten.
+This can be enforced using the `ComposeAfterAttribute`. Failing to add this attribute may result in Umbraco running your Composer before the Umbraco Engage composer, causing your changes to be overwritten.
 
-Additionally, ensure you use `RegisterUnique<...>()` instead of `Register<...>()`. While you can use Register when multiple implementations of a single service exist, in this case, you want your own extractor to be resolved exclusively. Therefore, RegisterUnique will overwrite the Umbraco Engage extractor.
+Additionally, ensure you use `AddUnique<...>()` instead of `AddSingleton<...>()`. While you can use AddSingleton when multiple implementations of a single service exist, in this case, you want your own extractor to be resolved exclusively. Therefore, AddUnique will overwrite the Umbraco Engage extractor.
 
 After implementing both classes and running your project, your extractor should be called to resolve IP addresses. You can verify the output of your extractor by inspecting the `umbracoEngageAnalyticsIpAddress` database table. The last portion of the IP address may be anonymized (set to 0) if this option is enabled in the Umbraco Engage configuration file.

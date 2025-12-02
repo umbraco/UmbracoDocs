@@ -24,9 +24,13 @@ Due to the wide variety of cloud providers, we recommend using the appropriate s
 
 ### **Microsoft Azure**
 
-For Azure SQL, use at least a S3 instance with 100 Data Transport Utility (DTU).
+For Azure SQL, use at least a **S3 tier (100 DTUs)** or higher.
 
-Umbraco Engage depends on features that aren’t available in the lower tiers and will fail to boot if they are used.
+{% hint style="warning" %}
+Umbraco Engage requires **columnstore index support** for optimal performance. Azure SQL tiers lower than S3 (such as S0, S1, S2) do not support **creating** columnstore indexes. The initial installation will fail on these lower tiers.
+
+**Workaround:** You can temporarily scale up to S3 for the initial installation, then scale back down. Lower tiers can still **query** columnstore indexes once created. However, this configuration is not recommended for production due to potential performance issues. See [Troubleshooting Installations](troubleshooting-installations.md) for details.
+{% endhint %}
 
 ## Non-cloud
 

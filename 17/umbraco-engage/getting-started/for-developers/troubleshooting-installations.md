@@ -15,8 +15,8 @@ After installing Umbraco Engage and booting for the first time, an SQL exception
 The most common reasons for this are:
 
 * Database connectivity issues.
-* Incompatible SQL Server version.
-* No columnstore index support on Azure SQL lower than S3.
+* Incompatible SQL Server version or edition (columnstore index support required).
+* No columnstore index support on Azure SQL tiers lower than S3 (S0, S1, S2).
 
 ### Exception
 
@@ -58,3 +58,9 @@ Azure SQL lower than S3 doesn't support creating columnstore indexes. To work ar
 3. Scale back to your initial Azure SQL tier.
 
 The columnstore indexes are created and can be used in a lower tier.
+
+#### When running on an incompatible SQL Server version or edition
+
+SQL Server 2014 or higher is required. Columnstore index support varies by SQL Server version and edition. If you encounter issues, consider upgrading to a newer SQL Server version or using Enterprise Edition.
+
+See [System Requirements](system-requirements.md) for the full list of supported database configurations.

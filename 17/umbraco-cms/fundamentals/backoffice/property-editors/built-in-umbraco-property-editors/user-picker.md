@@ -10,11 +10,11 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/User-Picker-DataType.png)
+![Media Picker Data Type Definition](../../../../.gitbook/assets/User-Picker-DataType.png)
 
 ## Content Example
 
-![Member Picker Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/User-Picker-Content-v8.png)
+![Member Picker Content](<../../../../.gitbook/assets/User-Picker-Content-v8 (1).png>)
 
 ## MVC View Example
 

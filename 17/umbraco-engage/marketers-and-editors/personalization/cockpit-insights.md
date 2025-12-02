@@ -19,11 +19,11 @@ Clicking the Open button provides detailed information:
 To add the cockpit to your website:
 
 1. Render the HTML partial provided by Umbraco Engage.
-2. The partial view is located at `/Views/Partials/uMarketings/Cockpit.cshtml`.
+2. The partial view is located at `/Views/Partials/Umbraco.Engage/Cockpit.cshtml`.
 3. Insert the following code before the closing `</body>` tag:
 
     ```cs
-    @Html.Partial("uMarketingSuite/Cockpit")
+    @Html.Partial("Umbraco.Engage/Cockpit")
     ```
 
 The cockpit will only be rendered if the user is logged into Umbraco.

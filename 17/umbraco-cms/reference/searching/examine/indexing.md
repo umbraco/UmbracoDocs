@@ -488,9 +488,9 @@ The order of these registrations matters. It is important to register your index
 
 #### Result
 
-![Custom product index](images/examine-management-product-index.png)
+![Custom product index](../../../.gitbook/assets/examine-management-product-index.png)
 
-![Product document](images/examine-management-product-document.png)
+![Product document](../../../.gitbook/assets/examine-management-product-document.png)
 
 ### A custom index for non-Umbraco data
 

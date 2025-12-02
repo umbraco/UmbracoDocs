@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.0.0 (27th Nov 2025)
+
+* Version 17 final release.
+
 #### 17.0.0-rc1 (04th Nov 2025)
 
 Initial release candidate for Umbraco v17. This release doesn't contain any new features; rather, it's a v17 compatibility release.

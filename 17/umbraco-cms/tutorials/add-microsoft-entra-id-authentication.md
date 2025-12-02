@@ -190,4 +190,4 @@ Learn more about this in the [Dependency Injection](../reference/using-ioc.md) a
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](<../../../16/umbraco-cms/tutorials/images/AD_Login_Members (1) (1).png>)
+![Entra ID Login Screen](<../.gitbook/assets/AD_Login_Members (1) (1) (1).png>)

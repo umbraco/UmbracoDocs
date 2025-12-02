@@ -16,7 +16,7 @@ This article is a work in progress and may undergo further revisions, updates, o
 
 When testing out the property editor, you can use a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
 
-<figure><img src="../../built-in-property-editors/block-editor/images/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
 
 * Create a new **Data Type**.
 * Select the **Block Grid** as the **Property editor**.
@@ -37,7 +37,7 @@ To set up the Block Grid property editor, follow these steps:
 
 You will see the configuration options for a Block Grid property editor as shown below:
 
-![Block Grid - Data Type Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor_Configuration.png)
+![Block Grid - Data Type Configuration](../../../../../.gitbook/assets/BlockGridEditor_Configuration.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -55,7 +55,7 @@ Block Types are based on [**Element Types**](../../../../data/defining-content/d
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
-![Block Grid - Data Type Block Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor_DataType_Blocks.png)
+![Block Grid - Data Type Block Configuration](../../../../../.gitbook/assets/BlockGridEditor_DataType_Blocks.png)
 
 ### Groups
 
@@ -126,11 +126,11 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
 * **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
-![Block Grid - Areas](../../built-in-property-editors/block-editor/images/BlockGridEditor_Areas.png)
+![Block Grid - Areas](../../../../../.gitbook/assets/BlockGridEditor_Areas.png)
 
 ### Area configuration
 
-![Block Grid - Area Configuration](../../built-in-property-editors/block-editor/images/BlockGridEditor_AreasConfiguration.png)
+![Block Grid - Area Configuration](../../../../../.gitbook/assets/BlockGridEditor_AreasConfiguration.png)
 
 * **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing an Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
@@ -157,25 +157,25 @@ Notice that any styling of a Block is scoped. This means that the default backof
 
 When viewing a **Block Grid** property editor in the **Content** section for the first time, you will be presented with the option to **Add content**.
 
-![Block Grid - Add Content](../../built-in-property-editors/block-editor/images/BlockGridEditor_AddContent.png)
+![Block Grid - Add Content](../../../../../.gitbook/assets/BlockGridEditor_AddContent.png)
 
 Clicking the **Add content** button opens up the **Block Catalogue**.
 
-![Block Grid - Setup](../../built-in-property-editors/block-editor/images/BlockGridEditor_BlockPicker.png)
+![Block Grid - Setup](../../../../../.gitbook/assets/BlockGridEditor_BlockPicker.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block Grid - example setup](../../built-in-property-editors/block-editor/images/BlockGridEditor_BlockPicker_exsetup.png)
+![Block Grid - example setup](../../../../../.gitbook/assets/BlockGridEditor_BlockPicker_exsetup.png)
 
 Click the Block Type you wish to create and a new Block will appear in the layout.
 
 More Blocks can be added to the layout by clicking the Add content button. Alternatively, use the Add content button that appears on hover to add new Blocks between, besides, or above the existing Blocks.
 
-![Block Grid - Add Content Inline](../../built-in-property-editors/block-editor/images/BlockGridEditor_AddContentInline.png)
+![Block Grid - Add Content Inline](../../../../../.gitbook/assets/BlockGridEditor_AddContentInline.png)
 
 To delete a Block, click the trash icon which appears on the mouse hover.
 
-![Block Grid - Delete Content](../../built-in-property-editors/block-editor/images/BlockGridEditor_DeleteContent.png)
+![Block Grid - Delete Content](../../../../../.gitbook/assets/BlockGridEditor_DeleteContent.png)
 
 ## Sorting Blocks
 
@@ -183,7 +183,7 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
-![Block Grid - Sorting Blocks](../../built-in-property-editors/block-editor/images/Sorting_BlockGrid_Blocks.gif)
+![Block Grid - Sorting Blocks](../../../../../.gitbook/assets/Sorting_BlockGrid_Blocks.gif)
 
 ## Scaling Blocks
 
@@ -191,14 +191,14 @@ If a Block has multiple size options it can be scaled via the UI. This appears i
 
 The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-<figure><img src="../../built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
 ## Rendering Block Grid Content
 
 Rendering the stored value of your **Block Grid** property editor can be done in two ways:
 
-1. [Default rendering](#1-default-rendering)
-2. [Build your own rendering](#2-build-custom-rendering)
+1. [Default rendering](block-grid-editor.md#1-default-rendering)
+2. [Build your own rendering](block-grid-editor.md#2-build-custom-rendering)
 
 ### 1. Default rendering
 
@@ -472,7 +472,7 @@ In this example, we will be creating content programmatically for a "spot" Block
 5. Click **Add** in the **Blocks** Settings and select **Spot Element**.
 6. Select **Spot Settings** in the **Settings model** field.
 
-![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
+![Block Grid - Block Configuration](../../../../../.gitbook/assets/BlockEditorConfigurationProgramatically.png)
 
 The raw input data for the spots looks like this:
 
@@ -730,7 +730,7 @@ public class BlockGridLayoutItem
 ```
 {% endcode %}
 
-8.  Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, the raw data can be transformed into Block Grid JSON. It can then be saved to the target content item.
+8. Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, the raw data can be transformed into Block Grid JSON. It can then be saved to the target content item.
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -838,4 +838,4 @@ For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba
 
 10. To test this implementation, run the project and send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved**, then check your content node, and you will see the 2 spotElement contents.
 
-![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
+![Block Grid - Result](../../../../../.gitbook/assets/BlockEditorContentCreated.png)
