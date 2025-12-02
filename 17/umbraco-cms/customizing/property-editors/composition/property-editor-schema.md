@@ -6,7 +6,12 @@ description: The Server side part of a Property Editor
 A Property Editor Schema is the data part of a Property Editor in Umbraco. It defines what type of data can be stored (string, number, date, JSON, etc.) and how that data should be validated. It can also perform conversions of the data going in or coming out of the database. 
 
 The schema's `settings` define what configuration options are available for the Property Editor (like maximum characters, allowed file types, etc.). When you create a Data Type, you provide values for these settings. Those configured values are then passed to both the server-side validation and the Property Editor UI.
-For details on the settings structure, see the [Property Editor Schema Extension Type](link) documentation.
+
+{% hint style="warning" %}
+You can define settings on both the Property Editor Schema and the Property Editor UI. It's good practice to define settings that have impact on the data (like validation rules) on the Property Editor Schema. Settings that only impact the UI should be set on the Property Editor UI.
+ {% endhint %}
+
+For details on the settings structure, see the [Property Editor Schema Extension Type](../../extending-overview/extension-types/property-editor-schema.md) documentation.
 
  In essence, the Property Editor Schema defines the data contact for a Property Editor.
 

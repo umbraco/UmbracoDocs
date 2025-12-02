@@ -34,6 +34,15 @@ A Data Type is a configured instance of a Property Editor that you create in the
 
 Take the __Text Box__ Property Editor for example. It has a setting for 'Maximum allowed characters'. You can create muliple Data Types using the Text Box Property Editor with different settings, based on what is needed. 
 
+### Settings
+Settings are what makes each instance of a Property Editor unique. When creating a Data Type, you give the settings a value specific for that Data Type.
+
+Settings can be defined on both the Property Editor Schema and the Property Editor UI's manifest. These settings are merged into one list. So when you create a Data Type based on the Property Editor, the settings from the Schema and UI are both displayed. All settings and their value for that specific Data Type are also available to both the Schema and UI in code.
+
+It's best practice to define settings that impact how data is processed and stored on the Property Editor Schema. For instance, settings for if a certain field on the Property Editor is required or has a max length. Settings that only impact the UI but not the data should be set on the Property Editor UI. 
+
+There is technically nothing stopping you from doing it differently. However, remember the seperation of concerns. The UI and Schema could be swapped out for another. When considering where to define the setting, always think about whether the Property Editor still works if the UI was swapped out.
+
 ## Creating custom Property Editors
 When creating a custom Property Editor, you need to consider what you need to implement. As discussed, the architecture of the Property Editor is flexible with seperation of concerns. This means that for a custom Property Editor you need to decide what you need to implement yourself and what to reuse of what is already there.
 
