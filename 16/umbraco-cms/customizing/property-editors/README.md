@@ -10,13 +10,17 @@ description: Guide on how to work with and create Property Editors in Umbraco
 
 This section describes how to work with and create Property Editors. A Property Editor is the editor used to insert content into Umbraco. [See the Property Editors overview for a detailed definition](../../fundamentals/backoffice/property-editors/).
 
+## [Umbraco Package](../umbraco-package.md)
+
+Custom Property Editors are registered in the [`umbraco-package.json`](../umbraco-package.md) file. This manifest file declares your Property Editor UI extension and links it to a Property Editor Schema. Learn more about the [package manifest format and registration](../umbraco-package.md).
+
+## [Property Editor Validation](property-editor-validation.md)
+
+Add validation rules to your custom Property Editors to ensure data integrity. Learn how to implement client-side validation using the Form Control Mixin and create custom validation logic for your Property Editor UI.
+
 ## [Property Editors Composition](composition/)
 
 A Property Editor is composed of two key extensions: [Property Editor Schema](composition/property-editor-schema.md) and [Property Editor UI](composition/property-editor-ui.md). These components work together to define the data structure and user interface for content entry in the Umbraco backoffice.
-
-## [Umbraco Package](../umbraco-package.md)
-
-Custom Property Editors are registered in the [`umbraco-package.json`](../umbraco-package.md) file located in your `App_Plugins` folder. This manifest file declares your Property Editor UI extension and links it to a Property Editor Schema. Learn more about the [package manifest format and registration](../umbraco-package.md).
 
 ## [Property Value Converters](property-value-converters.md)
 
@@ -26,21 +30,17 @@ Convert the stored property data value to a useful, strongly-typed object return
 
 Use Property Actions to add additional functionality to your custom Property Editors, such as custom buttons or actions that appear alongside the editor in the backoffice.
 
+## [Integrate Property Editors](integrate-property-editors.md)
+
+Learn how to integrate and use Property Editors anywhere in the Umbraco backoffice using the `umb-property` and `umb-property-dataset` components. This guide covers implementing Property Editors in custom interfaces and scenarios.
+
 ## [Tracking References](tracking.md)
 
 Learn how to extend Property Editors to track entity references within the Property Editor. This enables Umbraco to understand relationships between content and helps with features like dependency tracking and content deletion warnings.
 
-## [Property Editor Validation](property-editor-validation.md)
-
-Add validation rules to your custom Property Editors to ensure data integrity. Learn how to implement client-side validation using the Form Control Mixin and create custom validation logic for your Property Editor UI.
-
 ## [Property Dataset](property-dataset.md)
 
 Understand how to use the Property Dataset Context API to manage data for multiple properties. This is essential when integrating Property Editors into custom views, workspaces, or scenarios outside of standard content editing.
-
-## [Integrate Property Editors](integrate-property-editors.md)
-
-Learn how to integrate and use Property Editors anywhere in the Umbraco backoffice using the `umb-property` and `umb-property-dataset` components. This guide covers implementing Property Editors in custom interfaces and scenarios.
 
 ## More Information
 
