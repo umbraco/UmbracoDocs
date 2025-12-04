@@ -6,7 +6,7 @@ In this article you can learn about the different options you have for configuri
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](images/rte-tiptap-all-toolbar-items.png)
+![Toolbar: All options enabled](../../../../../.gitbook/assets/rte-tiptap-all-toolbar-items.png)
 
 In the example above, all 38 options have been enabled. These options include font styles like bold and italics, bullet lists, and options to embed videos and insert images.
 
@@ -15,13 +15,13 @@ You can customize the look of the toolbar:
 * Enhance the capabilities of the toolbar by enabling or disabling extensions.
 * Use the Toolbar designer to group together items and add additional rows if needed.
 
-![Enhance and customize the capabilities of the Rich Text Editor toolbar](images/rte-tiptap-capabilities-and-toolbar.png)
+![Enhance and customize the capabilities of the Rich Text Editor toolbar](../../../../../.gitbook/assets/rte-tiptap-capabilities-and-toolbar.png)
 
 ## Statusbar
 
 As well as the toolbar, you can configure extensions for the statusbar.
 
-![Statusbar with Word Count extension enabled](images/rte-tiptap-statusbar.png)
+![Statusbar with Word Count extension enabled](../../../../../.gitbook/assets/rte-tiptap-statusbar.png)
 
 ## Stylesheets
 

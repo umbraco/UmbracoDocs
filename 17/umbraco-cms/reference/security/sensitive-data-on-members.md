@@ -14,7 +14,7 @@ Every new Umbraco installation ships with a default set of User Groups. One of t
 
 Any users who are not part of the Sensitive Data User Group, will not be able to see the data in the properties that are marked as sensitive. Instead, they will see a generic message: "_This value is hidden. If you need access to view this value please contact your website administrator._"
 
-![Sensitive data hidden](../../../../16/umbraco-cms/reference/security/images/sensitive-data-hidden-v8.png)
+![Sensitive data hidden](<../../.gitbook/assets/sensitive-data-hidden-v8 (1).png>)
 
 While not part of the Sensitive Data User Group it is also not possible to export members or member data.
 
@@ -25,7 +25,7 @@ Follow these steps in order to grant a user access to sensitive data:
 3. Select the **Groups** menu in the top-right corner.
 4. Choose the **Sensitive data** group.
 
-![Sensitive data user group](../../../../16/umbraco-cms/reference/security/images/sensitive-data-user-group-v8.png)
+![Sensitive data user group](<../../.gitbook/assets/sensitive-data-user-group-v8 (1).png>)
 
 5. Click **Add** in the **Users** box on the right.
 6. Select the users you want to give access to the sensitive data.
@@ -55,4 +55,4 @@ Follow the steps below to mark data as sensitive.
 
 When the **Is sensitive data** option is enabled, the value and data in the property will only be visible to the users with access to sensitive data.
 
-![Update member type](../../../../16/umbraco-cms/reference/security/images/update-member-type-v8.png)
+![Update member type](<../../.gitbook/assets/update-member-type-v8 (1).png>)

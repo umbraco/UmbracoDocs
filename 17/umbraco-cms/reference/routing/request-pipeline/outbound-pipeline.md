@@ -6,13 +6,13 @@ description: How the Umbraco outbound request pipeline works
 
 The **outbound pipeline** consists out of the following steps:
 
-1. [Create segments](#1-create-segments)
-2. [Create paths](#2-create-paths)
-3. [Create urls](#3-creating-urls)
+1. [Create segments](outbound-pipeline.md#1-create-segments)
+2. [Create paths](outbound-pipeline.md#2-create-paths)
+3. [Create urls](outbound-pipeline.md#3-creating-urls)
 
 To explain things we will use the following content tree:
 
-![Content Tree](images/simple-content-tree-v14.png)
+![Content Tree](../../../.gitbook/assets/simple-content-tree-v14.png)
 
 ## 1. Create segments
 
@@ -115,7 +115,7 @@ If we look at our example, the "swibble" node will receive the path: "/our-produ
 
 But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node. Any content node with a hostname defines a “new root” for paths.
 
-![Path example](images/path-example-v14.png)
+![Path example](../../../.gitbook/assets/path-example-v14.png)
 
 | Node         | Segment        | Internal Path                |
 | ------------ | -------------- | ---------------------------- |
@@ -137,7 +137,7 @@ Paths can be cached, what comes next cannot (http vs https, current request…).
 
 ## 3. Creating Urls
 
-The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform\_Resource\_Identifier): the Schema, Domain name, (port) and the path.
+The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the Schema, Domain name, (port) and the path.
 
 In our example the "swibble" node could have the following URL: "[http://example.com/our-products/swibble](http://example.com/our-products/swibble)"
 
@@ -411,11 +411,11 @@ public class RegisterCustomSiteDomainMapperComposer : IComposer
 
 Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a separate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible URLs for each of their content items on each domain, which can be confusing. If the additional URLs aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' URL, will result in navigation links taking you to the registered domain!
 
-![Culture and Hostnames multiple domains](images/culture-and-hostnames-v8.png)
+![Culture and Hostnames multiple domains](../../../.gitbook/assets/culture-and-hostnames-v8.png)
 
 What the editor sees without any SiteDomainMapper, visiting the backoffice URL:
 
-![All domains listed](images/no-sitedomainhelp.png)
+![All domains listed](../../../.gitbook/assets/no-sitedomainhelp.png)
 
 Which is 'noise' and can lead to confusion: accidentally clicking the staging url, which is likely to be served from a different environment / different database etc may display the wrong content...
 
@@ -468,11 +468,11 @@ public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
 
 Now if an editor visits the backoffice via the staging url they will only see domains for the staging url:
 
-![Staging domain only](images/staging-only-staging.png)
+![Staging domain only](../../../.gitbook/assets/staging-only-staging.png)
 
 Now if an editor visits the backoffice via the backoffice url they will only see domains for the backoffice url and the production url:
 
-![Backoffice + production domains only](images/backoffice-see-prod.png)
+![Backoffice + production domains only](../../../.gitbook/assets/backoffice-see-prod.png)
 
 NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a group. Think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
 

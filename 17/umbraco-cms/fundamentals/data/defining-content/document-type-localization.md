@@ -104,23 +104,23 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 Property descriptions support [Umbraco Flavored Markdown](../../../reference/umbraco-flavored-markdown.md), which uses a different syntax (wrapped in brackets) to avoid conflicts with Markdown headers.
 {% endhint %}
 
-![Applying localization to a property](../images/localization-document-type-editor-validation-v15.png)
+![Applying localization to a property](../../../.gitbook/assets/localization-document-type-editor-validation-v15.png)
 
 3. Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
    * Set the description to `{#properties_subTitle-desc}`.
    * Use a `TextString` editor.
 4. Enable `Allow at root` in the **Structure** tab.
 
-![Applying localization to a Document Type](../images/localization-document-type-editor-v15.png)
+![Applying localization to a Document Type](../../../.gitbook/assets/localization-document-type-editor-v15.png)
 
 When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
-![Localized document creation dialog](../images/localization-document-editor-create.png)
+![Localized document creation dialog](../../../.gitbook/assets/localization-document-editor-create.png)
 
 5. Create a new "Article" node:
 
-![Localized document editing](../images/localization-document-editor-v15.png)
+![Localized document editing](../../../.gitbook/assets/localization-document-editor-v15.png)
 
 6. When trying to save the node without adding the mandatory content, you will see a warning as expected:
 
-![Localized property validation](../images/localization-document-editor-validation.png)
+![Localized property validation](../../../.gitbook/assets/localization-document-editor-validation.png)

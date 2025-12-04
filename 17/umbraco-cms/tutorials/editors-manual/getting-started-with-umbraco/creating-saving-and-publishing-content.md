@@ -12,13 +12,13 @@ If the parent page allows sub-pages underneath it, follow these steps:
 2. Select the page type you wish to create. The new page is loaded in the editor on the right-hand side.
 3.  Enter a **Name** for the page and click **Save**.
 
-    ![New Page](images/creating-new-page.png)
+    ![New Page](../../../.gitbook/assets/creating-new-page.png)
 
 ## Saving and Publishing Pages
 
 There are three different options for saving and publishing pages. The options vary depending on whether you’re still in the process of editing the page or have completed your edits and wish to publish your changes.
 
-![Save and Publish](images/Save-and-publish-v14.png)
+![Save and Publish](../../../.gitbook/assets/Save-and-publish-v14.png)
 
 ### Option 1: Save and Preview
 
@@ -34,7 +34,7 @@ The **Save and publish** button is used to publish a previously saved page to th
 
 The **Save and publish** button has three options:
 
-![Schedule](images/schedule.png)
+![Schedule](../../../.gitbook/assets/schedule.png)
 
 #### 1: Schedule
 
@@ -47,7 +47,7 @@ To set up scheduled publishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Publish at** field.
 
-    ![Scheduled publishing](images/scheduled-publishing.png)
+    ![Scheduled publishing](../../../.gitbook/assets/scheduled-publishing.png)
 5. Select **Schedule**.
 
 #### 2: Publish with descendants
@@ -60,7 +60,7 @@ To publish the node with descendants, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3.  Select **Publish with descendants**.
 
-    ![Publish with descendants](images/Publish-with-descendants-v14.png)
+    ![Publish with descendants](../../../.gitbook/assets/Publish-with-descendants-v14.png)
 4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
 
 #### 3: Unpublish
@@ -73,7 +73,7 @@ To unpublish a page, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Unpublish**.
 
-![Unpublish](images/unpublish.png)
+![Unpublish](../../../.gitbook/assets/unpublish.png)
 
 You can also unpublish your page by setting the date and time using the **Schedule** feature.
 
@@ -84,7 +84,7 @@ To set up scheduled unpublishing, follow these steps:
 3. Select **Schedule**.
 4.  In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
 
-    ![Scheduled unpublishing](images/scheduled-publishing.png)
+    ![Scheduled unpublishing](../../../.gitbook/assets/scheduled-publishing.png)
 5. Select **Schedule**.
 
 ## Comparing Content between environments
@@ -103,7 +103,7 @@ To compare content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can click the **Actions** drop-down.
 3.  Select **Compare** to open the **Compare** window.
 
-    ![Compare option](../../../../../16/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Compare_option.png)
+    ![Compare option](<../../../.gitbook/assets/Compare_option (1).png>)
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
 6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
@@ -111,7 +111,7 @@ To compare content between environments, follow these steps:
 8. Restore the content from the higher environment using the **Partial restore** option.
 9.  Click **Close** to continue editing the content node.
 
-    ![Comparing Content](../../../../../16/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Comparing_Content.png)
+    ![Comparing Content](<../../../.gitbook/assets/Comparing_Content (1).png>)
 
 ## Transferring content
 
@@ -127,8 +127,8 @@ To transfer content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button.
 3.  Select **Transfer now**.
 
-    ![Transfer Option](images/Transfernow_option_v14.png)
+    ![Transfer Option](../../../.gitbook/assets/Transfernow_option_v14.png)
 4.  In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
 
-    ![Transfer Content](images/Transfer_Content_v14.png)
+    ![Transfer Content](../../../.gitbook/assets/Transfer_Content_v14.png)
 5. Click **Transfer now**.

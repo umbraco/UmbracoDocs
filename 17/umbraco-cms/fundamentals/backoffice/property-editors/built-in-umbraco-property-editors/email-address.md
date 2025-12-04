@@ -16,11 +16,11 @@ Displays an email address.
 
 The Email Address Property Editor does not come with any further configuration. The property can be configured once it has been added to a Document Type.
 
-![Checkbox Example](images/emailaddress-datatype.png)
+![Checkbox Example](../../../../.gitbook/assets/emailaddress-datatype.png)
 
 ## Content Example
 
-![Single email address content example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/EmailAddress-Content-v10.png)
+![Single email address content example](<../../../../.gitbook/assets/EmailAddress-Content-v10 (1).png>)
 
 ## MVC View Example
 

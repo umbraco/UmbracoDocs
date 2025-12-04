@@ -8,7 +8,7 @@
 
 ## Data Type Definition Example
 
-![Decimal Content Example](images/content-example.png)
+![Decimal Content Example](../../../../.gitbook/assets/content-example.png)
 
 In the example above the possible values for the input field would be \[8, 8.5, 9, 9.5, 10]
 
@@ -18,7 +18,7 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## Content Example
 
-![Content Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/content-example.png)
+![Content Example](<../../../../.gitbook/assets/content-example (2).png>)
 
 ## MVC View Example
 

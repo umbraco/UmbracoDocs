@@ -28,19 +28,19 @@ Here is what you will need for this tutorial:
 
 The first step is to generate the webhook URL that your Umbraco Forms has to send data to. This is done by logging into your Zapier account and clicking “Make a Zap”
 
-![Zapier make a zap](../../../16/umbraco-cms/tutorials/images/zapierMakeZap.png)
+![Zapier make a zap](<../.gitbook/assets/zapierMakeZap (1).png>)
 
 The next thing to do is pick an app in the “When this happens…” box. This is your trigger and determines when your Zap will start. Select the “Webhooks by Zapier” app
 
-![Zapier find webhooks trigger](../../../16/umbraco-cms/tutorials/images/zapierFindWebhooksTrigger.png)
+![Zapier find webhooks trigger](<../.gitbook/assets/zapierFindWebhooksTrigger (1).png>)
 
 Now select the “Catch Hook” trigger event and click continue.
 
-![Zapier webhooks catch hook](../../../16/umbraco-cms/tutorials/images/zapierWebhooksCatchHook.png)
+![Zapier webhooks catch hook](<../.gitbook/assets/zapierWebhooksCatchHook (1).png>)
 
 Now you will get a “Custom Webhook URL” that you will need for your Umbraco Forms.
 
-![Zapier custom webhook URL](../../../16/umbraco-cms/tutorials/images/zapierCustomWebhookURL.png)
+![Zapier custom webhook URL](<../.gitbook/assets/zapierCustomWebhookURL (1).png>)
 
 Copy this URL and have it ready for later. You will need it when you set up your Umbraco Forms workflow. Now we have to go into the Umbraco backoffice, but keep the Zap you created open. We will get back to it later to finish setup.
 
@@ -58,15 +58,15 @@ Once you have set up your form, it is time to add the “Send form to URL” wor
 
 Go to your form in the backoffice and click on “configure workflow”. In the “On Submit” workflow you click “Add workflow”.
 
-![Umbraco Forms Add Workflow](../../../16/umbraco-cms/tutorials/images/umbracoFormsAddWorkflow.png)
+![Umbraco Forms Add Workflow](<../.gitbook/assets/umbracoFormsAddWorkflow (1).png>)
 
 Now choose the workflow “Send form to URL”.
 
-![Umbraco Forms Send form to URL workflow](../../../16/umbraco-cms/tutorials/images/umbracoFormsSendFormToURLWorkflow.png)
+![Umbraco Forms Send form to URL workflow](<../.gitbook/assets/umbracoFormsSendFormToURLWorkflow (1).png>)
 
 After giving the workflow a descriptive name, you paste in the webhook URL from Zapier in the “Url” field and choose POST in “Method”. Leave “Fields”, “User” and “Password” blank.
 
-![Umbraco Forms Send form to URL webhook](../../../16/umbraco-cms/tutorials/images/umbracoFormsSendFormToURLWebhook.png)
+![Umbraco Forms Send form to URL webhook](<../.gitbook/assets/umbracoFormsSendFormToURLWebhook (1).png>)
 
 Now your workflow is ready. Submit your changes and save your form.
 
@@ -78,7 +78,7 @@ To set up field mapping and actions in Zapier your form needs an entry. If this 
 
 Here is the form and the fields that were submitted for this tutorial.
 
-![Umbraco Forms Fields Submitted](../../../16/umbraco-cms/tutorials/images/umbracoFormsFieldsSubmitted.png)
+![Umbraco Forms Fields Submitted](<../.gitbook/assets/umbracoFormsFieldsSubmitted (1).png>)
 
 Once you have an entry in your form you are done in the Umbraco backoffice. Now it is time to go back to Zapier and finish setting up your automation.
 
@@ -86,11 +86,11 @@ Once you have an entry in your form you are done in the Umbraco backoffice. Now 
 
 In Zapier, open up the Zap you started setting up in the first step of this guide. In that Zap we are now ready to continue the setup of our webhook trigger. Start by clicking continue and get to the “Find Data” step.
 
-![Zapier Find Webhook Data](../../../16/umbraco-cms/tutorials/images/zapierFindWebhookData.png)
+![Zapier Find Webhook Data](<../.gitbook/assets/zapierFindWebhookData (1).png>)
 
 Now click on “Test trigger”. If there is an entry to the form it should look like this.
 
-![Zapier Webhook Data Found](../../../16/umbraco-cms/tutorials/images/zapierWebhookDataFound.png)
+![Zapier Webhook Data Found](<../.gitbook/assets/zapierWebhookDataFound (1).png>)
 
 Now you have data to further map in your Zap and can continue choosing the action for the Zap. If Zapier does not find any data, try to submit a new form entry.
 
@@ -110,38 +110,38 @@ Once you have done these steps it is time to finish the setup of the Zap.
 
 First thing to do is find the “Google Sheets” app in the “Do this…” action.
 
-![Zapier Google Sheets App](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsApp.png)
+![Zapier Google Sheets App](<../.gitbook/assets/zapierGoogleSheetsApp (1).png>)
 
 Now choose the Action event “Create a spreadsheet row” and continue.
 
-![Zapier Google Sheets Action Event](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsActionEvent.png)
+![Zapier Google Sheets Action Event](<../.gitbook/assets/zapierGoogleSheetsActionEvent (1).png>)
 
 Now you need to choose the Google Sheets account you want to connect to. If you have not set this up yet, you will be prompted to do so. Once connected you choose that account and click continue.
 
-![Zapier Google Sheets Account](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsAccount.png)
+![Zapier Google Sheets Account](<../.gitbook/assets/zapierGoogleSheetsAccount (1).png>)
 
 Now you can choose which Google Drive to use, find the spreadsheet and choose the worksheet that you want to send the data to. After doing so, you will get a list of possible fields that you can post your data to.
 
-![Zapier Google Sheets Possible Fields](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsPossibleFields.png)
+![Zapier Google Sheets Possible Fields](<../.gitbook/assets/zapierGoogleSheetsPossibleFields (1).png>)
 
 The fields showing are all columns in your spreadsheet that have a name in row 1. To map the input data to the different fields in the spreadsheet follow these steps:
 
 * Select the “Type or insert…” field.
 * Choose which data to put in the field.
 
-![Zapier Google Sheets Webhook Data](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsWebhookData.png)
+![Zapier Google Sheets Webhook Data](<../.gitbook/assets/zapierGoogleSheetsWebhookData (1).png>)
 
 The data that was caught by the webhook will all be dynamic and you will want to pick the fields here. That way, when a new entry comes in, the field will dynamically insert the data they submitted for that field.
 
-![Zapier Google Sheets Data Mapped](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsDataMapped.png)
+![Zapier Google Sheets Data Mapped](<../.gitbook/assets/zapierGoogleSheetsDataMapped (1).png>)
 
 Once you have mapped all of the fields it is time to click “continue” and test if the data is sent correctly to our spreadsheet.
 
-![Zapier Google Sheets Test](../../../16/umbraco-cms/tutorials/images/zapierGoogleSheetsTest.png)
+![Zapier Google Sheets Test](<../.gitbook/assets/zapierGoogleSheetsTest (1).png>)
 
 Click “Test & Continue” and wait for it to process. Once it is done, go to the spreadsheet you created and see if the data is there.
 
-![Google Sheets Data](../../../16/umbraco-cms/tutorials/images/googleSheetsData.png)
+![Google Sheets Data](<../.gitbook/assets/googleSheetsData (1).png>)
 
 Tada! Now your Zap is ready and can be activated to automatically add form entries to Google Sheets. To activate the Zap you go back to your Zap and change the toggle from “Off” to “On”. Now it will be waiting for new form entries and be ready to send them to Google Sheets.
 

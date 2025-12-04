@@ -10,7 +10,7 @@ Pretty much like the name indicates this Data type enables editors to choose fro
 
 ## Data Type Definition Example
 
-![Radiobutton List Data Type Definition](images/RadioButton-List-DataType.png)
+![Radiobutton List Data Type Definition](../../../../.gitbook/assets/RadioButton-List-DataType.png)
 
 {% hint style="info" %}
 You can use dictionary items to translate the values of a Radiobutton List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
@@ -18,7 +18,7 @@ You can use dictionary items to translate the values of a Radiobutton List prope
 
 ## Content Example
 
-![Radiobutton List Content](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-Content-v8.png)
+![Radiobutton List Content](<../../../../.gitbook/assets/RadioButton-List-Content-v8 (1).png>)
 
 ## MVC View Example
 

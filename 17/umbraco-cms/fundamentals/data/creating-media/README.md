@@ -19,15 +19,15 @@ Media in Umbraco CMS is handled the same way as content. You define **Media Type
 The default Media Types aim to cover most needs for media on a website. You do not need to define your Media Types to start using the Media section. The tools for organizing and uploading the media are already in place.
 
 {% hint style="info" %}
-If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
+If you have upgraded from an older version than 8.14 the Media Types listed above are not added automatically. You can add those types manually yourselves by following the steps below ['Creating a new Media Type'](./#creating-a-media-type). On the [default media types page](default-media-types.md), you will find a detailed overview of all Media Types.
 {% endhint %}
 
 ## Uploading Media
 
 You can upload media in two different ways:
 
-* [Through the Media section](#add-media-through-the-media-section) and
-* [Through the Content section](#add-media-through-the-content-section)
+* [Through the Media section](./#add-media-through-the-media-section) and
+* [Through the Content section](./#add-media-through-the-content-section)
 
 ### Add media through the Media section
 
@@ -53,11 +53,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](../../../../../16/umbraco-cms/fundamentals/data/creating-media/images/upload-images-from-content.gif)
+![Drag and drop images directly into the content](<../../../.gitbook/assets/upload-images-from-content (1).gif>)
 
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](../../../../../16/umbraco-cms/fundamentals/data/creating-media/images/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](<../../../.gitbook/assets/add-image-from-dialog (1).gif>)
 
 ## Creating a folder
 
@@ -89,9 +89,9 @@ By selecting multiple media items it is possible to perform bulk operations like
 
 To edit properties on a single media item, click the name of the item, which you will see once you hover over the item.
 
-![Edit media item](../../../../../16/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
+![Edit media item](<../../../.gitbook/assets/hover-over (1).png>)
 
-From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](images/switch-view-v14.png)
+From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](../../../.gitbook/assets/switch-view-v14.png)
 
 ## Using media items in the Content section
 
@@ -117,7 +117,7 @@ A Media Type is created in the **Settings** section using the Media Type editor.
 
 You will now see the Media Type editor. It is similar to the editor used for creating Document Types.
 
-![Creating a Media Type](images/create-new-media-type-v14.png)
+![Creating a Media Type](../../../.gitbook/assets/create-new-media-type-v14.png)
 
 {% hint style="info" %}
 Having different folders for different Media Types makes it possible to restrict where media items can be created and added. Only allowing PDF uploads in a certain folder and employee images in another make it easier to keep the Media section organized.
@@ -150,14 +150,14 @@ Follow the steps outlined below to add the properties to the Media Type:
 6. Rename the editor _Employee Image Cropper_.
 7. Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](images/new-data-type-v14.png)\
+![Defining crops](../../../.gitbook/assets/new-data-type-v14.png)\
 8\. Click **Save**.\
 9\. Click **Add**.\
 10\. Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
 
 As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](images/finished-new-media-type-v14.png)
+![Adding properties](../../../.gitbook/assets/finished-new-media-type-v14.png)
 
 ## Defining a Media Type folder
 
@@ -170,7 +170,7 @@ Next up, we will create a folder to hold the employee images. We could use the e
 5. Click **Configure as a Collection** under **Presentation.**
 6. Choose **List view - Media.**
 
-![Configure Collection](images/configure-collection-v14.png)\
+![Configure Collection](../../../.gitbook/assets/configure-collection-v14.png)\
 7\. Click **Save**.
 
 The new folder is created under the Media Types folder. We also need to only allow the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
@@ -181,13 +181,13 @@ The new folder is created under the Media Types folder. We also need to only all
 4. Select **Employee Image**.
 5. Click **Choose**.
 
-![Permissions](images/employee-images-permissions.png)
+![Permissions](../../../.gitbook/assets/employee-images-permissions.png)
 
 ### Creating the folder and media items
 
 1. Go to the **Media** section.
 2. Select **...** next to Media.
-3. Click **Create** > **Employee Images** folder.![Employee Images](images/employee-images-folder.png)
+3. Click **Create** > **Employee Images** folder.![Employee Images](../../../.gitbook/assets/employee-images-folder.png)
 4. Name it _Employee Images_.
 5. Click **Save**.
 
@@ -201,7 +201,7 @@ If you select an image that has been uploaded to the folder you will see the ful
 
 Moving the focal point circle on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjusting the slider to zoom.
 
-![Cropping images](images/crops-and-focal-point-geo.png)
+![Cropping images](../../../.gitbook/assets/crops-and-focal-point-geo.png)
 
 ## More information
 
