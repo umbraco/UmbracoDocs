@@ -33,9 +33,9 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand and add them to the block list after.
+Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done directly from the property editor setup process. You can also set them up beforehand and add them to the block list after.
 
-Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
+Once you have added an element type as a Block Type on your Data Type you will have the option to configure it further.
 
 ![Block List - Data Type Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
 
@@ -43,7 +43,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 ### Editor Appearance
 
-By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
+You can configure the properties in the group to customize the user experience for your content editors. This helps them to quickly identify and select the right blocks for their content.
 
 * **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
 * **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
@@ -66,7 +66,7 @@ These properties refer to how the Block is presented in the Block catalogue, whe
 The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
 
 {% hint style="info" %}
-Configuring the catalogue appearance significantly improves the content editor experience. A well-designed block catalogue with custom colors and thumbnails makes it easier for editors to quickly identify and select the right blocks for their content.
+Configuring the catalogue appearance improves the content editor experience. A well-designed block catalogue with colors and thumbnails makes it easier for editors to quickly identify and select the right blocks for their content.
 {% endhint %}
 
 ### Advanced
@@ -101,7 +101,7 @@ In inline editing mode the new Blocks will expand to show its inline editor:
 
 ![Block List - Inline editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_InlineEditing.png)
 
-More Blocks can be added to the list by clicking the "Create new" button or using the inline Add button that appears on hover between or above existing Blocks.
+More Blocks can be added to the list by clicking the "Create new" button. You can also use the inline Add button that appears on hover between or above existing Blocks.
 
 ![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
@@ -133,13 +133,13 @@ Example:
 @Html.GetBlockListHtml(Model.MyBlocks)
 ```
 
-To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
+To make this work you will need to create a Partial View for each block. The partial view should be named by the alias of the Element Type that is being used as Content Model.
 
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`. Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`.
 
 A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
 
-In the following example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model.
+In this example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent` and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model.
 
 Example:
 
@@ -204,7 +204,7 @@ Example:
 
 ## Extract Block List Content data
 
-In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page. An example could be a product page with variants stored in a Block List Editor.
+Sometimes, you might want to use the Block List Editor to hold some data and not necessarily render a view. This applies when the data should be presented in different areas on a page. An example could be a product page with variants stored in a Block List Editor.
 
 In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
 
@@ -241,7 +241,7 @@ Example:
 }
 ```
 
-If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+If your Block List Editor only uses a single block, you can cast the collection to a specific type. Supply a type `T` using `.OfType<T>()`, otherwise the return value will be `IEnumerable<IPublishedElement>`.
 
 ## Build a Custom Backoffice View
 
