@@ -58,7 +58,7 @@ Run the application in Visual Studio or Visual Studio Code by hitting `F5`.
 
 For the following section, a Umbraco Heartcore project with the following content structure will be used:
 
-![Content structure](images/content-structure.png)
+![Content structure](../../.gitbook/assets/content-structure.png)
 
 {% hint style="info" %}
 To connect to your project, you need to change the `ProjectAlias` value in the `application.json` file as demonstrated in [Run the sample on your local machine](mvc-samples.md#run-the-sample-on-your-local-machine).

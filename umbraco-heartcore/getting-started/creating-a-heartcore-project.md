@@ -1,5 +1,5 @@
 ---
-description: "A guide to building an Umbraco Heartcore project"
+description: A guide to building an Umbraco Heartcore project
 ---
 
 # Building a project from scratch
@@ -25,7 +25,7 @@ As we go through this tutorial and start building the content for our Umbraco He
 
 If you are new to Umbraco, we recommend that you take the **Backoffice Tour** we've created! You can find it by selecting the question mark in the top-right corner.
 
-<img src="images/backoffice-tour.png" alt="Take the Backoffice Tour" data-size="original">
+<img src="../.gitbook/assets/backoffice-tour.png" alt="Take the Backoffice Tour" data-size="original">
 {% endhint %}
 
 ## Overview of tutorial
@@ -42,7 +42,7 @@ In this tutorial we will cover the following topic:
 
 Document Types are managed from the **Settings** section in the Umbraco backoffice.
 
-![Settings: Document Types](images/Settings-Document-Types.png)
+![Settings: Document Types](../.gitbook/assets/Settings-Document-Types.png)
 
 In order to get started with our first Document Type, follow these steps:
 
@@ -52,7 +52,7 @@ In order to get started with our first Document Type, follow these steps:
 3. Give the new Document Type a name like _Home Page_.
 4. Save the Document Type by selecting the green **Save** button in the bottom-right corner.
 
-![Blank Home Page Document Type](images/Blank-Document-Type.png)
+![Blank Home Page Document Type](../.gitbook/assets/Blank-Document-Type.png)
 
 We have now created our first Document Type. It's currently a blank slate, and in the next section, we will start adding groups and properties. This way we are able to add different types of data to our content.
 
@@ -81,7 +81,7 @@ Now, let's add our first property to the Document Type.
 {% hint style="info" %}
 **Select Editor**
 
-<img src="images/DocType-Select-Editor.png" alt="Select an Editor" data-size="original">
+<img src="../.gitbook/assets/DocType-Select-Editor.png" alt="Select an Editor" data-size="original">
 
 In this dialog you choose which editor to add to the Property. The editor you choose defines the type of data that can be added to the property.
 
@@ -108,7 +108,7 @@ This editor lets you upload or select an existing media item from the Media sect
 
 With these properties added our Document Type now looks something like this:
 
-![More properties added to Document Type](images/DocType-More-Properties.png)
+![More properties added to Document Type](../.gitbook/assets/DocType-More-Properties.png)
 
 Remember to save the Document Type by selecting the green **Save** button in the bottom-right corner.
 
@@ -142,7 +142,7 @@ For our Umbraco Heartcore project, we will want it to be possible to create blog
 2. Name the Child Document Type _Blog Post_.
 3. Select **Create** to setup the two Document Types.
 
-![Document Type Collection](images/Create-DocType-Collection.png)
+![Document Type Collection](../.gitbook/assets/Create-DocType-Collection.png)
 
 Once the Document Types have been created you will be redirected to the Item Document Type - in our case the _Blog Post_.
 
@@ -163,7 +163,7 @@ Following the steps outlined earlier in this tutorial, add a _Content_ group and
 
 We should now have the three following Document Types in our Document Types tree:
 
-![Document Types in the tree](images/Document-Types.png)
+![Document Types in the tree](../.gitbook/assets/Document-Types.png)
 
 ## Setting permissions on Document Types
 
@@ -186,7 +186,7 @@ In this next step of the tutorial, we will start creating content. The content w
 2. Right-click on the Content tree and choose **+ Create...**.
    * Or select the three ellipses on the right, when hovering the Content tree.
 
-![Creating our first content node](images/Create-First-Content.png)
+![Creating our first content node](../.gitbook/assets/Create-First-Content.png)
 
 We now have the option to create a content item based on our Home Page Document Type.
 
@@ -211,7 +211,7 @@ Select the **Media** section in the top navigation bar, and you can browse all t
 
 So far, our Content section should look like this:
 
-![Welcome to Umbraco Heartcore Content node](images/Welcome-to-Heartcore-Content.png)
+![Welcome to Umbraco Heartcore Content node](../.gitbook/assets/Welcome-to-Heartcore-Content.png)
 
 1. Right-click the root node, _Welcome to Umbraco Heartcore_, and choose **Create...**
    * Or select the three ellipses next to the node when hovering.
@@ -227,7 +227,7 @@ So far, our Content section should look like this:
 
 The editor we chose for the _MainContent_ property is a **Rich Text Editor**.
 
-<img src="images/Rich-Text-Editor.png" alt="the Rich Text Editor" data-size="original">
+<img src="../.gitbook/assets/Rich-Text-Editor.png" alt="the Rich Text Editor" data-size="original">
 
 It gives us a lot of flexibility when writing text, as there are multiple formatting options.
 {% endhint %}
@@ -235,7 +235,7 @@ It gives us a lot of flexibility when writing text, as there are multiple format
 1. Once you're happy with how your blog post looks, select **Save and publish**.
 2. To go back to the Blog Area, select the **arrow** next to the title of the blog post
 
-![Blog area - Grid view](images/Blog-grid.png)
+![Blog area - Grid view](../.gitbook/assets/Blog-grid.png)
 
 You will now get an overview of the blog posts you've created. So far we've only created one, and creating more is done by selecting the **Create Blog Post** button in the top-left corner.
 
@@ -257,4 +257,4 @@ In order to test how the content you've created will be formatted, when fetched 
 
 You can learn more about the API Browser and how to use it in the[ API Browser article](api-browser.md).
 
-![API Browser - Content](images/API-Browser-Content.png)
+![API Browser - Content](../.gitbook/assets/API-Browser-Content.png)

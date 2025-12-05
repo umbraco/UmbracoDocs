@@ -1,5 +1,5 @@
 ---
-description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
+description: Learn how to create a Custom Grid Editor in Umbraco Heartcore.
 ---
 
 # Custom Grid Editors
@@ -8,7 +8,7 @@ description: "Learn how to create a Custom Grid Editor in Umbraco Heartcore."
 The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
 {% endhint %}
 
-In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
+In this tutorial, we will create a Custom Grid Editor using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and [Lit](https://lit.dev/). We will look at how we can define what the API response for our data should look like.
 
 ## Content
 
@@ -28,18 +28,18 @@ First, we will need to create a Document Type containing the Grid Layout propert
 * Select the **Grid layout** editor.
 * Accept the default configuration.
 
-![Adding a property with the Grid layout editor](images/gridpage-gridcontent-editor.png)
+![Adding a property with the Grid layout editor](../.gitbook/assets/gridpage-gridcontent-editor.png)
 
 The Document Type should now look like this:
 
-![The Grid Page Document Type with the Grid Content property](images/gridpage-document-type.png)
+![The Grid Page Document Type with the Grid Content property](../.gitbook/assets/gridpage-document-type.png)
 
 To allow the Document Type to be created in the tree we need to change the permissions:
 
 * Select the **Permissions** tab.
 * Ensure **Allow as root** is checked.
 
-![The Grid Page Document Type with the Grid Content property](images/gridpage-permissions.png)
+![The Grid Page Document Type with the Grid Content property](../.gitbook/assets/gridpage-permissions.png)
 
 To verify the configuration follow these steps:
 
@@ -48,11 +48,11 @@ To verify the configuration follow these steps:
 * Give it a name.
 * Save the page.
 
-![A content node based on the Grid Page Document Type](images/my-grid-page.png)
+![A content node based on the Grid Page Document Type](../.gitbook/assets/my-grid-page.png)
 
 Try choosing a layout, add a row and click **Add content**. Here we will see that we have a couple of editors to choose from.
 
-![List of available Grid Editors](images/choose-grid-editor.png)
+![List of available Grid Editors](../.gitbook/assets/choose-grid-editor.png)
 
 Try adding one of them to the page to see how they work.
 
@@ -60,7 +60,7 @@ Try adding one of them to the page to see how they work.
 
 Before we start writing our own Grid Editor, let's have a look at the **Headline** Grid Editor.
 
-![The grid editor developer view for the Headline editor](images/headline-grid-editor.png)
+![The grid editor developer view for the Headline editor](../.gitbook/assets/headline-grid-editor.png)
 
 As we can see the page is divided into two sections; one with a Text Editor with the code for the editor and one with a preview of the editor.
 
@@ -72,7 +72,7 @@ A custom editor inherits from `HTMLElement` and must be the default export.
 export default class extends HTMLElement {
 ```
 
-A couple of [private fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private\_class\_fields) are defined. One for storing a reference to the `textarea` field and one for the HTML template.
+A couple of [private fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields) are defined. One for storing a reference to the `textarea` field and one for the HTML template.
 
 ```javascript
   #textarea
@@ -118,7 +118,7 @@ In this example the value property is setting and returning the value of the tex
 
 For this tutorial we will create an image gallery editor using [Lit](https://lit.dev). Lit builds on top of the Web Components standards and helps us avoid a lot of boilerplate code.
 
-![The final image gallery grid editor](images/image-gallery-grid-editor.png)
+![The final image gallery grid editor](../.gitbook/assets/image-gallery-grid-editor.png)
 
 * Go to the **Settings** section.
 * Create a new **Grid Editor**.
@@ -130,7 +130,7 @@ For this tutorial we will create an image gallery editor using [Lit](https://lit
 The alias is used as the custom element tag name and must be unique. By choosing a prefix that is less likely to used by any other HTML element, in this case `my-`, there is less chance for running into conflicts.
 {% endhint %}
 
-![A custom grid editor for creating an image gallery](images/create-new-grid-editor.png)
+![A custom grid editor for creating an image gallery](../.gitbook/assets/create-new-grid-editor.png)
 
 In the `JS` view we can see there is already some boilerplate code. Let's replace it with the following:
 
@@ -195,7 +195,7 @@ export default class extends LitElement {
 
 The preview should now look like this:
 
-![The developer view showing the above code and a preview](images/image-gallery-grid-editor-step-one.png)
+![The developer view showing the above code and a preview](../.gitbook/assets/image-gallery-grid-editor-step-one.png)
 
 Let's break down the code.
 
@@ -278,7 +278,7 @@ The render method returns the HTML we want to show. It needs to be tagged with `
 
 Let's save the editor and see how it looks when adding it to the a content item.
 
-![The first version of the Image Gallery grid editor](images/image-gallery-content-item-first-draft.png)
+![The first version of the Image Gallery grid editor](../.gitbook/assets/image-gallery-content-item-first-draft.png)
 
 We now have the **Add image** button rendering, but clicking it does nothing. Let's do something about that.
 
@@ -335,7 +335,7 @@ Clicking the button in preview mode does nothing. This is because of a limitatio
 
 We should now see the image overlay.
 
-![Select media overlay shown when clicking the Add image button](images/select-media-overlay.png)
+![Select media overlay shown when clicking the Add image button](../.gitbook/assets/select-media-overlay.png)
 
 Selecting an image does not currently render anything. Let's do something about that. Go back to the grid editor code in the **Settings** section.
 
@@ -378,7 +378,7 @@ In either case we will end up with a broken editor experience. This is where mod
 
 Module aliases allows us to define a common name for a module that we can use in our editors instead of the full URL. A module alias can be defined by going to the **Headless -> Custom Editor Configuration** page in the **Settings** section.
 
-![Defining custom module aliases](images/module-aliases.png)
+![Defining custom module aliases](../.gitbook/assets/module-aliases.png)
 
 Here we have defined an alias `@headless-backoffice-bridge` pointing to a Content Delivery Network (CDN) URL of the [backoffice bridge library](https://github.com/umbraco/Umbraco.Headless.Backoffice.Bridge).
 
@@ -406,7 +406,7 @@ Note down the **Id** from the **Info** tab. We will need that in a bit.
 
 In the output we can see the JSON we have stored in the editor.
 
-![Response from the API with the grid content property encoded as a string](images/api-browser-raw-output.png)
+![Response from the API with the grid content property encoded as a string](../.gitbook/assets/api-browser-raw-output.png)
 
 Notice our value stored is returned as a `string`. This makes it hard to consume, since we will need to parse it as JSON everywhere we use that value. This is where [JSON schemas](https://json-schema.org/) comes in handy.
 
@@ -433,7 +433,7 @@ Let's go back to the API Browser, type the same URL as before and click **Go!**.
 
 Inspecting the output, we can already see an improvement. The value is now returned as an array which is already much better.
 
-![Response from the API with the grid content property returned as an array](images/api-browser-array-output.png)
+![Response from the API with the grid content property returned as an array](../.gitbook/assets/api-browser-array-output.png)
 
 Remember the `url` property stored earlier? Let's make it return a URL instead of a UDI.
 
@@ -455,7 +455,7 @@ Remember the `url` property stored earlier? Let's make it return a URL instead o
 
 With the JSON above we are adding a `properties` object containing a `url` property. This property has its `type` set to `string`, and most importantly, `format` set to `uri-reference`. By specifying the `format` as `uri-reference` Heartcore will try to parse the value as a UDI and if the UDI is for either a document or media, the URL of that item will be returned instead. We can see that if we go back to the API Browser.
 
-![Final response from the API](images/api-browser-final-output.png)
+![Final response from the API](../.gitbook/assets/api-browser-final-output.png)
 
 We now have an array where each item has the URL to the picked media item.
 

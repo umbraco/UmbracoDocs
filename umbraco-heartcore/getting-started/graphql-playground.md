@@ -1,5 +1,5 @@
 ---
-description: "Documentation for Umbraco Heartcore GraphQL Playground."
+description: Documentation for Umbraco Heartcore GraphQL Playground.
 ---
 
 # GraphQL Playground
@@ -19,7 +19,7 @@ The Playground comes with basic features such as real-time error highlighting, s
 3. Find the Headless tree near the bottom of the navigation list
 4. Click on GraphQL
 
-![Where to find GraphQL](images/where-to-find-graphql-playground.png)
+![Where to find GraphQL](../.gitbook/assets/where-to-find-graphql-playground.png)
 
 From there, you can start querying as soon as your content is published.
 
@@ -37,8 +37,7 @@ At the same time, it also explains relationships between specific objects and pr
 
 This will be updated automatically as you change the project's schema meaning Document Types, Data Types, Document Type Compositions, and Document Type Elements.
 
-
-![Documentation and schema pane in the Playground](images/schema-helper.png)
+![Documentation and schema pane in the Playground](../.gitbook/assets/schema-helper.png)
 
 ## Running GraphQL queries
 
@@ -62,7 +61,7 @@ The Heartcore GraphQL endpoint only supports queries - other operation types, th
 
 After that, press the "Play" button sitting in the center of the Playground. If the query is constructed correctly, the results will be loaded into the right section.
 
-![Sample query in the Playground](images/sample-query.png)
+![Sample query in the Playground](../.gitbook/assets/sample-query.png)
 
 When you are satisfied with the result, you can copy the client URL (CURL) by clicking the `COPY CURL` button located in the top part of the Playground, next to the address bar.
 
@@ -74,7 +73,7 @@ GraphQL Playground supports requests with HTTP headers if an authorization token
 
 It is also possible to define variables for queries - such variables's values can be changed in the bottom-left corner of the Playground window, next to the `HTTP HEADERS` section.
 
-![Sample query with variables in the Playground ](images/query-variables.png)
+![Sample query with variables in the Playground](../.gitbook/assets/query-variables.png)
 
 ## History
 
@@ -82,20 +81,19 @@ If you happen to make an amazing query and afterward erase it by accident, you c
 
 The History pane can be opened by clicking the history button in the toolbar to the left.
 
-![Shows where the history button is](images/query-history.png)
+![Shows where the history button is](../.gitbook/assets/query-history.png)
 
 ## Prettify
 
 The Playground gives you an option to "prettify" your query with a click of a button, which makes it easier for humans to read.
 
-![Schema Tab in the Playground](images/prettify.png)
+![Schema Tab in the Playground](../.gitbook/assets/prettify.png)
 
 ## Persisted Queries
 
-The Graphql playground supports [persisted Graphql queries](../api-documentation/graphql/persisted-queries.md).
-To access Persisted queries you have to go to the [GraphQL Playground](#accessing-graphql-playground) and click the persisted queries tab
+The Graphql playground supports [persisted Graphql queries](../api-documentation/graphql/persisted-queries.md). To access Persisted queries you have to go to the [GraphQL Playground](graphql-playground.md#accessing-graphql-playground) and click the persisted queries tab
 
-![Persisted queries tab](images/persisted-queries-tab.png)
+![Persisted queries tab](../.gitbook/assets/persisted-queries-tab.png)
 
 ### Create a new persisted query
 
@@ -104,7 +102,7 @@ To access Persisted queries you have to go to the [GraphQL Playground](#accessin
 3. Write your query in the editor
 4. Click the `Save` button
 
-![Create persisted query](images/create-persisted-query.png)
+![Create persisted query](../.gitbook/assets/create-persisted-query.png)
 
 ### Update a persisted query
 
@@ -113,7 +111,7 @@ To access Persisted queries you have to go to the [GraphQL Playground](#accessin
 3. Make your changes in the editor that appears with the query
 4. Click the `Save` button
 
-![Update persisted query](images/update-persisted-query.png)
+![Update persisted query](../.gitbook/assets/update-persisted-query.png)
 
 ### Delete a persisted query
 
@@ -123,5 +121,4 @@ To access Persisted queries you have to go to the [GraphQL Playground](#accessin
 4. Click the `Delete` button
 5. Confirm the deletion
 
-![Delete persisted query](images/delete-persisted-query.png)
-
+![Delete persisted query](../.gitbook/assets/delete-persisted-query.png)

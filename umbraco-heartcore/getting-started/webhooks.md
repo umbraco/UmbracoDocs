@@ -14,25 +14,22 @@ Webhooks are managed from a dashboard in the settings section of the backoffice.
 
 1. Go to the **Settings** section.
 2. Expand the **Headless** folder in the **Settings** tree.
-3. Select **Webhooks**.
-  ![Webhooks dashboard](images/webhooks-dashboard.png)
+3. Select **Webhooks**. ![Webhooks dashboard](../.gitbook/assets/webhooks-dashboard.png)
 4. Click **Create Webhook**.
 5. The **Add webhook** menu opens on the right side.
-
 6. Enter the **URL** that the webhook should call.
 7. Select the **Event** for which the webhook should be triggered.
-8. Choose a **Content Type** you wish the webhook to be triggered on.
-  ![Create webhook screen](images/webhooks-add.png)
+8. Choose a **Content Type** you wish the webhook to be triggered on. ![Create webhook screen](../.gitbook/assets/webhooks-add.png)
 
-  {% hint style="info" %}
-  Selecting the Content Type is the initial step. This field is not mandatory.
-  {% endhint %}
+{% hint style="info" %}
+Selecting the Content Type is the initial step. This field is not mandatory.
+{% endhint %}
 
 9. Click **Create**.
 
-Once the webhook has been created you can manage it from the dashboard. 
+Once the webhook has been created you can manage it from the dashboard.
 
-![Manage your created webhooks](images/webhooks-manage.png)
+![Manage your created webhooks](../.gitbook/assets/webhooks-manage.png)
 
 To temporarily pause/disable the webhook, click on Edit and toggle the Enabled field.
 
@@ -40,32 +37,27 @@ To temporarily pause/disable the webhook, click on Edit and toggle the Enabled f
 
 Below is an overview of the webhook configuration options.
 
-* **Url**
+*   **Url**
 
-  The URL that Heartcore will send a POST request to when conditions are met.
+    The URL that Heartcore will send a POST request to when conditions are met.
+*   **Events**
 
-* **Events**
+    Backoffice or Management API action(s) that will cause the webhook request to be sent.
+*   **Content Type** _(optional)_
 
-  Backoffice or Management API action(s) that will cause the webhook request to be sent.
+    Restrict the webhook to firing only if one of these content or media types were affected by one of the selected events.
+*   **Enabled**
 
-* **Content Type** _(optional)_
+    Toggle the webhook on or off. While disabled, no requests will be sent.
+*   **Headers**
 
-  Restrict the webhook to firing only if one of these content or media types were affected by one of the selected events.
-
-* **Enabled**
-
-  Toggle the webhook on or off. While disabled, no requests will be sent.
-
-* **Headers**
-
-  Configure custom HTTP headers to be sent with the request. May be useful for e.g. identifying the source of a request or for authorization.
-
+    Configure custom HTTP headers to be sent with the request. May be useful for e.g. identifying the source of a request or for authorization.
 
 ## Webhook behaviour specifics
 
 ### Retries
 
-When a webhook is triggered, if it fails to be processed by the endpoint Heartcore attempts to re-deliver it up to 9 more times. 
+When a webhook is triggered, if it fails to be processed by the endpoint Heartcore attempts to re-deliver it up to 9 more times.
 
 * The endpoint returned a non HTTP-compliant response
 * The endpoint returned an HTTP response with any status code other than a successful one (HTTP 200 - 299)
