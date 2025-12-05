@@ -4,10 +4,6 @@ description: Get started with Routing in the backoffice.
 
 # Routes
 
-{% hint style="warning" %}
-This page is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 ## Routing
 
 The routing in the backoffice is flexible and customizable. In this article, you can find a couple of starting points for routing.
@@ -23,7 +19,11 @@ Depending on which section you are working on, there are different options:
 
 ### Building routing
 
-Almost any component can host routable sub-components by defining a list of routes and render a `umb-router-slot` element. Let's assume we have a **custom section** with pathname `custom-section` and a **section view** with pathname `organization`. In this context we can create an element with routes, like this:
+Almost any component can host routable sub-components by defining a list of routes and rendering a `umb-router-slot` element. Let's assume we have a **custom section** with pathname `custom-section` and a **section view** with pathname `organization`. In this context, we can create an element with routes, like shown below.
+
+{% hint style="info" %}
+The order in which the routes are defined is important as the first match will be used. So make sure to add more specific routes in the beginning.
+{% endhint %}
 
 ```typescript
 @state()
@@ -52,10 +52,6 @@ _routes: UmbRoute[] = [
   },
 ];
 ```
-
-{% hint style="info" %}
-The order in which the routes are defined is important as the first match will be used. So make sure to add more specific routes in the beginning.
-{% endhint %}
 
 In the render method of the element, render the `umb-router-slot`:
 
