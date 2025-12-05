@@ -148,3 +148,5 @@ redirects:
     customizing/extending-overview/extension-types/workspaces/workspace-action-menu-item: customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md
     customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
     customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md
+    customizing/searchable-trees: customizing/overview.md
+    customizing/section-trees: customizing/overview.md

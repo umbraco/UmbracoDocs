@@ -1,5 +1,5 @@
 ---
-description: "Tour of Umbraco Heartcore backoffice"
+description: Tour of Umbraco Heartcore backoffice
 ---
 
 # Tour of the Backoffice
@@ -10,7 +10,7 @@ In this article you will get an introduction to the different sections in the Um
 
 When you go to the backoffice of your Umbraco Heartcore project you will be asked to log in.
 
-![Login Screen](images/login.png)
+![Login Screen](../.gitbook/assets/login.png)
 
 From here you are able to log in with the credentials used when the project was created.
 
@@ -18,7 +18,7 @@ From here you are able to log in with the credentials used when the project was 
 
 The backoffice is divided into specific sections for example Content, Media and Settings. This will allow you to do work related to a specific section of your project.
 
-![Sections of the backoffice](images/sections.png)
+![Sections of the backoffice](../.gitbook/assets/sections.png)
 
 The sections menu is located in the top-left corner of the screen.
 
@@ -26,7 +26,7 @@ The sections menu is located in the top-left corner of the screen.
 
 Every section has a section tree that gives you an overview of the content you have in each section.
 
-![Section tree](images/section-tree.png)
+![Section tree](../.gitbook/assets/section-tree.png)
 
 Folders and nested content can be expanded by clicking the arrow next to the node. This can also be done by double-clicking on the node.
 
@@ -38,7 +38,7 @@ Every item you have is considered a node. It could be a media item or content in
 
 Every section in the Umbraco backoffice has one or more dashboard associated with them. The first thing you will see when accessing the backoffice on your Umbraco Heartcore project is the "Getting Started" dashboard. Here you can find links to news and resources useful to your project.
 
-![Getting Started](images/dashboard.png)
+![Getting Started](../.gitbook/assets/dashboard.png)
 
 ## Content
 
@@ -46,13 +46,13 @@ In this section you will find all the content you have on your page. Each item i
 
 The content tree holds all the content nodes you have created.
 
-![Overview of the content](images/content.png)
+![Overview of the content](../.gitbook/assets/content.png)
 
 The left holds the content tree that will automatically nest your content if you have created nodes with parent-child relationships.
 
 On the left you can see what properties the highlighted Content Node has. In the above example there is a group called Main which holds a few properties. By clicking on the Info tap you will be able to see some useful information for the specific Content Node.
 
-![Overview of the Content info](images/content-info.png)
+![Overview of the Content info](../.gitbook/assets/content-info.png)
 
 At the top you can see the automatically generated URL to the specific Content Node. Below you also get a handy history overview that shows who has done what at what time. Lastly you can see some general information such as Status, Creation Date and a direct link to the Document Type. You can edit it without leaving the current view.
 
@@ -62,7 +62,7 @@ Lastly you can either Save, Save and publish, Schedule a publication or unpublis
 
 Media items are used to store images and videos in the Media section. These items can be referenced from your content. You are also able to create folders in the Media section to keep all your Media Items sorted.
 
-![Overview of the Media section](images/media.png)
+![Overview of the Media section](../.gitbook/assets/media.png)
 
 A handy feature is that if you have a Media Picker in your Content Node and you upload an image. This image will automatically be added in the Media Section.
 
@@ -108,7 +108,7 @@ The dashboard shows you:
 * How many available languages you have
 * How many user groups you have
 
-![Headless Dashboard](images/headless-dashboard.png)
+![Headless Dashboard](../.gitbook/assets/headless-dashboard.png)
 
 In addition you are able to set the Content Delivery API to either Public or Private. If the API is private, you must have an [assigned API key](backoffice-users-and-api-keys.md) to fetch content from it.
 

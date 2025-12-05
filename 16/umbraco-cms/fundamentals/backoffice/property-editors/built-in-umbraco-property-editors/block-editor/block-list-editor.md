@@ -103,7 +103,7 @@ In inline editing mode the new Blocks will expand to show its inline editor:
 
 More Blocks can be added to the list by clicking the "Create new" button or using the inline Add button that appears on hover between or above existing Blocks.
 
-![Block List - Create new](../../../../../../../10/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 

@@ -56,7 +56,7 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 4. Add a TextString property called **Excluded Document Types** (alias: `excludedDocumentType`).
 5.  Save the XmlSiteMap Document Type.
 
-    ![View of the properties defined on the finished XmlSiteMap Document Type](images/create-sitemap-doctype.png)
+    ![View of the properties defined on the finished XmlSiteMap Document Type](../.gitbook/assets/create-sitemap-doctype.png)
 6. Open the Document Type used at the root of your website (Example: **HomePage**).
 7. Go to the **Structure** tab.
 8. Add the new XmlSiteMap under **Allowed child node types**.
@@ -65,7 +65,7 @@ In this first step of the tutorial, we will be creating a new Document Type for 
 11. Create a new XmlSiteMap page as a subpage to the root/home page in your Content tree.
 12. Use the alias to add the XmlSiteMap Document Type to the "Excluded Document Type" list: `xmlSiteMap`.
 
-    ![View of the Content Tree after a Sitemap page has been added](images/v8/create-sitemap-page.png)
+    ![View of the Content Tree after a Sitemap page has been added](../.gitbook/assets/create-sitemap-page.png)
 
 ## 2. Create an XmlSiteMapSettings Composition
 
@@ -83,13 +83,13 @@ Create and configure the Document Type Composition by following these steps:
 3. Name the new Document Type **XmlSiteMapSettings**.
 4. Add the following properties: a. Slider named **Search Engine Relative Priority** (searchEngineRelativePriority): MinValue: 0.1, MaxValue: 1, Step Increments 0.1, InitialValue 0.5. b. Dropdown named **Search Engine Change Frequency** (searchEngineChangeFrequency): Always, hourly, daily, weekly, monthly, yearly, and never. c. Toggle named **Hide From Xml Sitemap** (hideFromXmlSitemap).
 
-![Create XMLSitempaSettings Configuration](images/create-sitemap-settings-composition-v14.png)
+![Create XMLSitempaSettings Configuration](../.gitbook/assets/create-sitemap-settings-composition-v14.png)
 
 ## 3. Add composition to all relevant Document Types
 
 Add the XmlSiteMapSettings composition to all Document Types used to create content pages in the Content section.
 
-![Add Compositions](images/xml-sitemap-add-composition-v14.png)
+![Add Compositions](../.gitbook/assets/xml-sitemap-add-composition-v14.png)
 
 This will give editors the ability to set a priority and a change frequency for each page on the site. We will use the values from the parent or parent's parent page in case the values are not specified on a particular page. This enables the values to be set in one place for a particular section.
 
@@ -177,7 +177,7 @@ We are using `IPublishedContent` in this example. Using **ModelsBuilder** instea
 
 Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a single sitemap entry for the homepage.
 
-![Example of Sitemap](../../../16/umbraco-cms/tutorials/images/sitemap.png)
+![Example of Sitemap](<../.gitbook/assets/sitemap (1).png>)
 
 ### Looping through the rest of the site
 
@@ -215,7 +215,7 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 
 You will now see the XML sitemap rendered for the entire site.
 
-![Example of Sitemap with children](../../../16/umbraco-cms/tutorials/images/sitemapWithChildren.png)
+![Example of Sitemap with children](<../.gitbook/assets/sitemapWithChildren (1).png>)
 
 ## 5. Filter the sitemap content
 

@@ -18,6 +18,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.5.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.5.0) (Nov 26th 2025)
+
+* Added links to the top-selling product analytics widget.
+* Added discounts over time analytics widget.
+* Added popular discount codes analytics widget.
+* Added links from orders to/from gift cards where a gift card was purchased as part of an order.
+
 #### [16.4.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.4.1) (Nov 13th 2025)
 
 * Fixes SQL error in node leases table due to unescaped `@ROWCOUNT` [#788](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/788).

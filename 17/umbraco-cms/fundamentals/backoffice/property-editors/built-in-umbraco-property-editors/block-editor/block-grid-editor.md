@@ -19,13 +19,13 @@ To set up the Block Grid property editor, follow these steps:
 3. Select **Create** -> **New Data Type**.
 4. Select **Block Grid** from the list of available property editors.
 
-You will see the configuration options for adding Block Types to the Grid as shown below. 
+You will see the configuration options for adding Block Types to the Grid as shown below.
 
 ![Block Grid - Blocks Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_Configuration.png)
 
 You will also see the following additional configuration options.
 
-![Block Grid - Additional Data Type Configuration Options](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_Configuration-2.png)
+![Block Grid - Additional Data Type Configuration Options](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockGridEditor_Configuration-2.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -112,7 +112,7 @@ When allowing a Group of Blocks, you might want to require a specific amount for
 
 Advanced properties are also available for each Block, as shown below.
 
-![Block Grid - Advanced Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_AreasConfigurationAdvanced.png)
+![Block Grid - Advanced Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockGridEditor_AreasConfigurationAdvanced.png)
 
 ### Advanced
 

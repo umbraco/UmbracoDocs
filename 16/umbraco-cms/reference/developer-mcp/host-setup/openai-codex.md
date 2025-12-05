@@ -8,13 +8,13 @@ description: "Host setup for OpenAI Codex"
 
 ## Getting started
 
-Install the Codex CLI with npm:
+Option A: Install via npm:
 
 ```bash
 npm install -g @openai/codex
 ```
 
-Or install the Codex CLI with brew:
+Option B: Install via Homebrew:
 
 ```bash
 brew install codex
@@ -22,15 +22,13 @@ brew install codex
 
 ### Configure using the Codex CLI
 
-Add the Umbraco MCP server with the Codex CLI:
+1. Add the Umbraco MCP server with the Codex CLI:
 
 ```bash
-codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@beta
+codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@16
 ```
 
-#### Define configuration values directly
-
-If you prefer to keep secrets in your shell session, pass them as environment variables during registration:
+2. Define configuration values directly. If you prefer to keep secrets in your shell session, pass them as environment variables during registration:
 
 ```bash
 codex mcp add umbraco-mcp \
@@ -39,24 +37,27 @@ codex mcp add umbraco-mcp \
   --env UMBRACO_BASE_URL="https://your-domain.com" \
   --env NODE_TLS_REJECT_UNAUTHORIZED="0" \
   --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" \
-  -- npx -y @umbraco-cms/mcp-dev@beta
+  -- npx -y @umbraco-cms/mcp-dev@16
 ```
 
-Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL`, and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
+Replace the following values with your local connection details:
+
+- `UMBRACO_CLIENT_ID`
+- `UMBRACO_CLIENT_SECRET`
+- `UMBRACO_BASE_URL`
+- `UMBRACO_INCLUDE_TOOL_COLLECTIONS`
 
 This command stores the MCP server as `umbraco-mcp` in your Codex configuration file (typically `~/.codex/config.toml`).
 
-{% hint style="info" %}
-Use the command below at any time to see which MCP servers Codex is currently loading:
+3. Use the command below to see which MCP servers Codex is currently loading:
 
-```
+```cs
 codex mcp list
 ```
-{% endhint %}
 
 ## Managing tools and tool collections
 
-When you change the tool set:
+When you need to change the tool set:
 
-- Update your `.env` file with the tool collections you want (for example `document,media`).
-- Repeat the `codex mcp list` command to confirm that the server is healthy.
+- Update your `.env` file with the tool collections you want (for example, `document,media`).
+- Run the `codex mcp list` command to confirm that the server is healthy.

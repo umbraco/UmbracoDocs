@@ -177,7 +177,7 @@ You can now edit the content item in split view. Only fields that have been conf
 3. Add an optional description to the variant.
 4. Add custom CSS and JavaScript.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (1).png" alt=""><figcaption></figcaption></figure>
 
 5. **Preview** the changes.
 6. **Save** the changes.

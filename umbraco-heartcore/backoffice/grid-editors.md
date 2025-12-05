@@ -8,11 +8,11 @@ description: Documentation for Custom Grid Editors in Umbraco Heartcore
 The grid editor Data Type in Heartcore is deprecated and will be retired in June 2025 or thereafter. For more information read the following [blog post](https://umbraco.com/blog/umbraco-heartcore-update-october-2023#editors).
 {% endhint %}
 
-A custom Grid Editor in Heartcore is built using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_custom\_elements).
+A custom Grid Editor in Heartcore is built using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
 
 Custom Grid Editors can be created under the **Grid Editors** tree in the **Settings** section.
 
-![Screenshot showing the Settings section with the Grid Editors tree expanded](images/settings-grid-editors.png)
+![Screenshot showing the Settings section with the Grid Editors tree expanded](../.gitbook/assets/settings-grid-editors.png)
 
 The Grid Editor must export a default class inheriting from `HTMLElement`
 
@@ -31,7 +31,7 @@ set value(value) { this.#value = value }
 
 The `set value()` is called when the editor is loaded and when the value is changed outside of the editor.
 
-The `get value()` is called when the grid is saving and when the editor raises an [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input\_event).
+The `get value()` is called when the grid is saving and when the editor raises an [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
 
 ## Using external libraries
 
@@ -53,7 +53,7 @@ When importing libraries that registers variables or functions on the global obj
 
 A Module Alias can be configured under **Headless -> Custom Editors Configuration** in the **Settings** section.
 
-![Screenshot showing the Module Aliases configuration](images/module-aliases.png)
+![Screenshot showing the Module Aliases configuration](<../.gitbook/assets/module-aliases (1).png>)
 
 {% hint style="info" %}
 Use a Module Alias when importing libraries to ensure only a single version of that library is loaded.
@@ -144,9 +144,8 @@ To make your custom editors less likely to break with future updates, do not use
 
 If the library is missing any functionality, raise an issue on the [Heartcore issue tracker](https://github.com/umbraco/Umbraco.Heartcore.Issues/issues).
 
-Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web\_Components/Using\_shadow\_DOM).
+Try to avoid relying on backoffice CSS-classes. Instead, it's recommended creating isolated elements using [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).
 
 ## Related articles
 
 * [Creating a Custom Grid Editor](../tutorials/creating-a-custom-grid-editor.md)
-

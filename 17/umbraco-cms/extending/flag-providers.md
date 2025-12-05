@@ -1,21 +1,23 @@
 ---
-description: Describes how to use provide flags in management API responses for use in presenting additional details to consumers.
+description: >-
+  Describes how to use provide flags in management API responses for use in
+  presenting additional details to consumers.
 ---
 
 # Flag Providers
 
 The Umbraco management APIs for trees, collections, and items include a `flags` collection for each item. These indicate additional information for the item that can be presented to users.
 
-The Umbraco backoffice uses this to provide additional overlay icons on tree, collection, and item presentations. This core behavior and extension point is described in the article on [backoffice signs](../customizing/back-office-signs.md).
+The Umbraco backoffice uses this to provide additional overlay icons on tree, collection, and item presentations. This core behavior and extension point is described in the article on [backoffice signs](../customizing/signs.md).
 
 ## Core Flag Providers
 
 Umbraco ships with four flag providers that will provide indications of the following document or media states:
 
-- **Is Protected** - indicates the document is not available for public access.
-- **Has Pending Changes** - indicates that the document is published but has changes in draft waiting for publication
-- **Has Schedule** - indicates that the document is scheduled for publishing in the future
-- **Has Collection** - indicates that the document or media is based on a content type that is configured for display as a collection
+* **Is Protected** - indicates the document is not available for public access.
+* **Has Pending Changes** - indicates that the document is published but has changes in draft waiting for publication
+* **Has Schedule** - indicates that the document is scheduled for publishing in the future
+* **Has Collection** - indicates that the document or media is based on a content type that is configured for display as a collection
 
 For example, an item that is scheduled for publication would contain the following in the tree, collection or item API response:
 
@@ -29,12 +31,12 @@ For example, an item that is scheduled for publication would contain the followi
 
 ## Providing a Custom Flag Provider
 
-If your package or project needs to present additional information for a tree, collection or item value, a custom flag provider can be created. This will be coupled with a presentation extension to determine how the information is interpreted for display as a [backoffice sign](../customizing/back-office-signs.md).
+If your package or project needs to present additional information for a tree, collection or item value, a custom flag provider can be created. This will be coupled with a presentation extension to determine how the information is interpreted for display as a [backoffice sign](../customizing/signs.md).
 
 To create a flag provider, implement the `IFlagProvider` interface. There are two methods to implement:
 
-- `CanProvideFlags<TItem>` - returns `bool` indicating whether this provider can provide flags for the tree, collection or item view model.
-- `PopulateFlagsAsync<TItem>(IEnumerable<TItem> itemViewModels)` - populates the `Flags` property for the provided collection of view models.
+* `CanProvideFlags<TItem>` - returns `bool` indicating whether this provider can provide flags for the tree, collection or item view model.
+* `PopulateFlagsAsync<TItem>(IEnumerable<TItem> itemViewModels)` - populates the `Flags` property for the provided collection of view models.
 
 An illustrative implementation is as follows:
 

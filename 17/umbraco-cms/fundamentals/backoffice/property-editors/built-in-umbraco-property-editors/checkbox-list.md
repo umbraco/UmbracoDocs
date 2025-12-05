@@ -14,7 +14,7 @@ Unlike other property editors, the Option IDs are not directly accessible in Raz
 
 ## Data Type Definition Example
 
-![True/Checkbox List Definition](images/checkbox-list-setup.png)
+![True/Checkbox List Definition](../../../../.gitbook/assets/checkbox-list-setup.png)
 
 {% hint style="info" %}
 You can use dictionary items to translate the options in a Checkbox List property editor in a multilingual setup. For more details, see the [Creating a Multilingual Site](../../../../tutorials/multilanguage-setup.md#translating-multi-value-property-editors) article.
@@ -22,7 +22,7 @@ You can use dictionary items to translate the options in a Checkbox List propert
 
 ## Content Example
 
-![Checkbox List Example](../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
+![Checkbox List Example](<../../../../.gitbook/assets/checkbox-list-content (1).png>)
 
 ## MVC View Example
 

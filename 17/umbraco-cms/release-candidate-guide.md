@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Release Candidate Guide
@@ -78,26 +79,27 @@ Here is a list of all the new or updated articles in this version.
 * [`GenerateVirtualProperties` option to disable virtual properties](reference/configuration/modelsbuildersettings.md#generate-virtual-properties)
 * [Removed the warning on `Microsoft.EntityFrameworkCore.Design` dependency conflicts](tutorials/getting-started-with-entity-framework-core.md)
 * [Kestrel `MaxRequestLength` updated to 50MB](reference/configuration/maximumuploadsizesettings.md#using-kestrel)
-* [Backoffice Signs](customizing/back-office-signs.md)
+* [Backoffice Signs](customizing/signs.md)
 * [Flag Providers](extending/flag-providers.md)
 * [Added `ComposeAfter` attribute to the composer used in the Examine sample](reference/searching/examine/indexing.md#creating-a-configureoptions-class)
-* [Displaying the MiniProfiler](fundamentals/code/debugging/README.md#displaying-the-miniprofiler)
+* [Displaying the MiniProfiler](fundamentals/code/debugging/#displaying-the-miniprofiler)
 * [Load Balancing the Backoffice](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md)
 * [SignalR in a Backoffice Load Balanced Environment](fundamentals/setup/server-setup/load-balancing/signalR-in-backoffice-load-balanced-environment.md)
 * [Distributed jobs settings](reference/configuration/distributedjobssettings.md)
 * [Background jobs when load balancing the backoffice](reference/scheduling.md#background-jobs-when-load-balancing-the-backoffice)
 * [Property Editor Data Source](customizing/property-editors/composition/property-editor-data-source.md)
-* [Picker Data Source Type](customizing/property-editors/data-source-types/picker/README.md)
+* [Picker Data Source Type](customizing/property-editors/data-source-types/picker/)
 * [Collection Data Source](customizing/property-editors/data-source-types/picker/picker-collection-data-source.md)
 * [Tree Data Source](customizing/property-editors/data-source-types/picker/picker-tree-data-source.md)
 * [Entity Data Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/entity-data-picker.md)
 * [Kinds](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md#kinds)
-* [Repositories](customizing/foundation/repositories/README.md)
+* [Repositories](customizing/foundation/repositories/)
 * [Collection Repository](customizing/foundation/repositories/repository-types/collection-repository.md)
 * [Detail Repository](customizing/foundation/repositories/repository-types/detail-repository.md)
 * [Item Repository](customizing/foundation/repositories/repository-types/item-repository.md)
 * [Tree Repository](customizing/foundation/repositories/repository-types/tree-repository.md)
 * [Temporary File Storage](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md#temporary-file-storage)
+* [Backoffice token cookie settings](reference/configuration/securitysettings.md#backoffice-token-cookie-settings)
 
 ### Removed articles
 

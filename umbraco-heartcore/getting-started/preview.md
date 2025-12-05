@@ -20,11 +20,11 @@ This can be done by going to the **Settings** section, expanding the **Headless*
 
 Here you'll get an overview of the preview urls created.
 
-![Empty Preview Urls Overview](images/empty-preview-urls-overview.png)
+![Empty Preview Urls Overview](../.gitbook/assets/empty-preview-urls-overview.png)
 
 Right now the list is empty, so go ahead and click on **Add Preview Url**
 
-![Add Preview Urls](images/add-preview-url.png)
+![Add Preview Urls](../.gitbook/assets/add-preview-url.png)
 
 This will open up a dialog on the right side of the backoffice, from where you can select which **Root Content** the preview url should be assigned to, and for which language it should be available for.
 
@@ -40,13 +40,13 @@ The **Name** field is used when there are multiple Preview Urls for a Content it
 
 After you click save you'll return to the overview where the configured urls is shown. From here, you can edit or delete them.
 
-![Preview Urls Overview](images/preview-urls-overview.png)
+![Preview Urls Overview](../.gitbook/assets/preview-urls-overview.png)
 
 Now if you go back to the **Content** section and click on the node you selected as the **Root node** or one of its child items, you should now have a **Preview** button in the bottom right section of the screen.
 
 If multiple urls have been added for the Content item, there will be an arrow next to the button. When clicked, it will show all the Preview Urls available.
 
-![Preview Content](images/preview-button.png)
+![Preview Content](../.gitbook/assets/preview-button.png)
 
 ## Accessing the Preview API
 
