@@ -69,15 +69,17 @@ This will delete 90% of the oldest logs that are unread and leave you with 10% o
 
 ## IIS Logging
 
-It is possible to enable IIS Logging on each of your Umbraco Cloud environments. There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
+It is possible to enable IIS Logging on each of your Umbraco Cloud environments. You can enable the logging at **Settings --> Advanced** in the project overview for the project.
 
-{% hint style="info" %}
-The IIS logging will be automatically turned off after 12 hours. It's not possible to have them enabled for longer at once due to possible performance degradation while the logging is enabled.
-{% endhint %}
+The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
-You can enable the logging from the **Advanced** menu found under _Settings_ in the project overview for the project. The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
+After enabling or disabling IIS logging for the environment, the site will reboot.
 
-After enabling IIS logging for the environment, the site will have to restart.
+### Limits
+
+There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
+
+The IIS logging will be automatically turned off after 12 hours, also triggering a site reboot. Longer than 12h is not possible due to possible performance degradation.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
 
