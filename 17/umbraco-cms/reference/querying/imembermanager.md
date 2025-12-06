@@ -156,8 +156,12 @@ public async Task<string> GetMemberId(MemberIdentityUser member)
 Checks if the current request contains a logged-in member.
 
 ```csharp
-public async Task<string> GetMemberId(MemberIdentityUser member)
-    => await _memberManager.GetUserIdAsync(member);
+var isLoggedIn = _memberManager.IsLoggedIn();
+
+if (isLoggedIn)
+{
+    // Do something for logged-in members
+}
 ```
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
