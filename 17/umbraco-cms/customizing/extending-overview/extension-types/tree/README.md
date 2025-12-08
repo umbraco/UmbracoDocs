@@ -1,0 +1,263 @@
+---
+description: A guide to creating a custom tree in Umbraco
+---
+
+# Trees
+
+{% hint style="info" %}
+**Looking to add sidebar navigation?** You probably want [Menus](../menu.md) and [Menu Items](../menu-item.md) first. Trees are just data providers that feed into menus - they don't display anything on their own.
+{% endhint %}
+
+{% hint style="warning" %}
+**Trees are data providers, not UI components.** A tree on its own does nothing visible. To create a working tree in the backoffice, you need to understand three things:
+
+1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar
+2. **[Populating Trees](#populating-trees)** - How to provide data to your tree
+3. **[Tree Navigation](#tree-navigation)** - How clicking tree items navigates to workspaces
+{% endhint %}
+
+## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
+
+Trees provide hierarchical data to **Menus**, which display the actual navigation you see in the backoffice sidebar. To display a tree, you need to connect several extensions:
+
+```
+Tree (data provider)
+  ↓ referenced by
+MenuItem (kind: 'tree', treeAlias: 'My.Tree')
+  ↓ belongs to
+Menu
+  ↓ displayed by
+SectionSidebarApp
+  ↓ appears in
+Section (Content, Media, Settings, or custom)
+```
+
+### Tree Manifest
+
+Register your tree with a manifest. The `repositoryAlias` links to how the tree gets its data:
+
+```typescript
+{
+    type: 'tree',
+    kind: 'default',
+    alias: 'My.Tree',
+    name: 'My Tree',
+    meta: {
+        repositoryAlias: 'My.Tree.Repository',
+    },
+}
+```
+
+### Tree Item Manifest
+
+Tree items define how individual items render. Use `kind: 'default'` for standard rendering:
+
+```typescript
+{
+    type: 'treeItem',
+    kind: 'default',
+    alias: 'My.TreeItem',
+    forEntityTypes: ['my-entity-type'],
+}
+```
+
+{% hint style="info" %}
+The `forEntityTypes` array must match the `entityType` values returned by your data source.
+{% endhint %}
+
+### Connecting to a Menu
+
+To display your tree in a section sidebar, create a MenuItem with `kind: 'tree'`:
+
+```typescript
+{
+    type: 'menuItem',
+    kind: 'tree',
+    alias: 'My.MenuItem.Tree',
+    meta: {
+        treeAlias: 'My.Tree',
+        menus: ['My.Menu'],
+        hideTreeRoot: true,  // Optional: show items at root level
+    },
+}
+```
+
+See [Menu Items (Tree kind)](../menu-item.md#tree) and [Section Sidebar](../sections/section-sidebar.md) for the complete setup.
+
+### Standalone Rendering
+
+Trees can also be rendered directly in custom components using the `<umb-tree>` element:
+
+```html
+<umb-tree alias="My.Tree"></umb-tree>
+```
+
+This is less common than displaying via menus but useful for custom UIs.
+
+---
+
+## Populating Trees <a href="#populating-trees" id="populating-trees"></a>
+
+Trees need data. You can populate a tree in two ways:
+
+### Option 1: Manual Data (Simple)
+
+For simple, static trees you can implement a basic data source that returns hardcoded or locally-computed items:
+
+```typescript
+export class MySimpleDataSource implements UmbTreeDataSource<MyTreeItemModel> {
+    async getRootItems() {
+        return {
+            items: [
+                { unique: '1', entityType: 'my-item', name: 'Item 1', hasChildren: false, icon: 'icon-document' },
+                { unique: '2', entityType: 'my-item', name: 'Item 2', hasChildren: false, icon: 'icon-document' },
+            ],
+            total: 2,
+        };
+    }
+
+    async getChildrenOf(args) {
+        return { items: [], total: 0 };
+    }
+
+    async getAncestorsOf(args) {
+        return [];
+    }
+}
+```
+
+### Option 2: Repository Pattern (Recommended for APIs)
+
+For trees backed by server APIs, use the full repository pattern with caching:
+
+```
+Repository (coordinates data + caching)
+  ↓ uses
+Data Source (fetches from API)
+  ↓ caches in
+Store (in-memory cache)
+```
+
+Register these in your manifests:
+
+```typescript
+// Repository - referenced by tree via repositoryAlias
+{
+    type: 'repository',
+    alias: 'My.Tree.Repository',
+    name: 'My Tree Repository',
+    api: () => import('./my-tree.repository.js'),
+}
+
+// Store - caches tree items
+{
+    type: 'treeStore',
+    alias: 'My.TreeStore',
+    name: 'My Tree Store',
+    api: () => import('./my-tree.store.js'),
+}
+```
+
+For detailed implementation guides, see:
+
+- **[Tree Repository](./tree-repository.md)** - Extends `UmbTreeRepositoryBase`
+- **[Tree Data Source](./tree-data-source.md)** - Implements `getRootItems`, `getChildrenOf`, `getAncestorsOf`
+- **[Tree Store](./tree-store.md)** - Extends `UmbUniqueTreeStore`
+
+---
+
+## Tree Navigation <a href="#tree-navigation" id="tree-navigation"></a>
+
+When users click a tree item, Umbraco navigates to a **workspace** to edit that item. This connection is made through the `entityType` - a string that links tree items to workspaces.
+
+{% hint style="warning" %}
+**Clicking tree items shows endless loading?** You need a workspace registered for that `entityType`.
+{% endhint %}
+
+### Quick Setup
+
+For tree items to navigate correctly:
+
+1. Your data source returns items with an `entityType`
+2. Your workspace manifest has a matching `meta.entityType`
+3. Your workspace uses `kind: 'routable'`
+
+```typescript
+// Data source returns items with entityType
+{ unique: '123', entityType: 'my-custom-item', name: 'My Item', ... }
+
+// Workspace receives navigation for that entityType
+{
+    type: 'workspace',
+    kind: 'routable',  // Required for tree navigation
+    alias: 'My.Workspace',
+    meta: {
+        entityType: 'my-custom-item',  // Must match
+    },
+}
+```
+
+For the full explanation including troubleshooting, see **[Tree Navigation & Workspaces](./tree-navigation.md)**.
+
+---
+
+## Further Reading <a href="#further-reading" id="further-reading"></a>
+
+- [Umbraco UI Examples - Trees](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/examples/tree) - Working examples in the Umbraco repository
+- [Workspaces](../workspace/README.md) - Creating workspace extensions
+
+## Custom Tree Items
+
+For specialized tree item rendering, you can create custom elements instead of using `kind: 'default'`. See below for details.
+
+<details>
+<summary>Custom Tree Item Element</summary>
+
+Create a custom element extending `UmbTreeItemElementBase`:
+
+{% code title="Manifest" %}
+```json
+{
+    "type": "treeItem",
+    "alias": "My.TreeItem.Custom",
+    "name": "My Custom Tree Item",
+    "element": "./my-tree-item.element.js",
+    "forEntityTypes": ["my-entity-type"]
+}
+```
+{% endcode %}
+
+{% code title="my-tree-item.element.ts" %}
+```typescript
+import type { MyTreeItemDataModel } from './my-tree-item.model.js';
+import { UmbTreeItemElementBase } from '@umbraco-cms/backoffice/tree';
+import { html, nothing, customElement } from '@umbraco-cms/backoffice/external/lit';
+
+@customElement('my-tree-item')
+export class MyTreeItemElement extends UmbTreeItemElementBase<MyTreeItemDataModel> {
+    override render() {
+        if (!this.item) return nothing;
+        return html`
+            <div>
+                <umb-icon .name=${this.item.icon}></umb-icon>
+                <span>${this.item.name}</span>
+            </div>
+        `;
+    }
+}
+
+export default MyTreeItemElement;
+```
+{% endcode %}
+
+{% code title="my-tree-item.model.ts" %}
+```typescript
+import type { UmbTreeItemModel } from '@umbraco-cms/backoffice/tree';
+
+export interface MyTreeItemDataModel extends UmbTreeItemModel {
+    // Add any additional properties you need
+}
+```
+{% endcode %}
+
+</details>
