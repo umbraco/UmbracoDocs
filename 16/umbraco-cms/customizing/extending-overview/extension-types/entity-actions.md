@@ -287,35 +287,29 @@ Developers can enforce permission controls on **Entity Action** extensions by de
 
 In the following example, the `conditions:alias` property of an `entityAction` extension matches the `alias` property of the `entityUserPermission` extension definition.
 
-Similarly, the `conditions:config:allOf` array must contain the one of the values from the `meta:verbs` array of the `entityUserPermission` extension definition.
+Similarly, the `conditions:allOf` array must contain the one of the values from the `meta:verbs` array of the `entityUserPermission` extension definition.
 
-{% code title="entity-action/manifests.json" %}
-```json
-{
-    "$schema": "../../umbraco-package-schema.json",
-    "name": "My Package",
-    "version": "0.1.0",
-    "extensions": [
-        {
-            "type": "entityAction",
-            "alias": "My.EntityAction.Archive",
-            "name": "Archive Document Action",
-            "forEntityTypes": ["document"],
-            "api": "...",
-            "meta": {
-                "icon": "icon-box",
-                "label": "Archive"
-            },
-            "conditions": [
-                {
-                    "alias": "Umb.Condition.UserPermission.Document",
-                    "config": {
-                        "allOf": ["My.Document.Archive"]
-                    }
-                }
-            ]
-        }
-    ]
-}
+{% code title="entity-action/manifest.ts" %}
+```typescript
+import { extensionRegistry } from '@umbraco-cms/extension-registry';
+
+const manifest = {
+    type: 'entityAction',
+    alias: 'My.EntityAction.DocumentArchive',
+    name: 'My Document Archive Action',
+    api: () => import('./my-document-archive-entity-action.js'),
+    meta: {
+		icon: 'icon-box',
+		label: 'Archive',
+	},
+	conditions: [
+		{
+			alias: 'Umb.Condition.UserPermission.Document',
+			allOf: ['My.Document.Archive'],
+		},
+	],
+};
+
+extensionRegistry.register(manifest);
 ```
 {% endcode %}
