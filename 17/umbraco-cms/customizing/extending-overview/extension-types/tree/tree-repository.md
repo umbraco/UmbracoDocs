@@ -1,6 +1,10 @@
 # Tree Repository
 
-A tree repository is a specific type of repository designed to handle operations related to tree data structures. It provides methods to request tree roots, tree items, and their ancestors.
+A tree repository orchestrates tree data operations by coordinating between a **Data Source** (which fetches data from APIs) and a **Store** (which caches data in memory). The repository itself does not communicate with APIs directly.
+
+{% hint style="info" %}
+The repository delegates all API communication to the [Data Source](./tree-data-source.md). It handles caching through the [Store](./tree-store.md).
+{% endhint %}
 
 The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
 

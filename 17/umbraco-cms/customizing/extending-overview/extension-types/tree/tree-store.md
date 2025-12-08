@@ -6,6 +6,10 @@ description: Implementing a tree store to cache tree data in Umbraco
 
 A tree store caches tree items in memory, improving performance by avoiding repeated API calls for the same data. The store is used by the tree repository to manage tree item state.
 
+{% hint style="info" %}
+The store does not communicate with APIs. It only holds cached data. All API communication happens in the [Data Source](./tree-data-source.md).
+{% endhint %}
+
 ## Implementing a Tree Store
 
 Extend `UmbUniqueTreeStore` and create a context token for dependency injection:

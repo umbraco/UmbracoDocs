@@ -4,7 +4,11 @@ description: Implementing a tree data source to provide tree data in Umbraco
 
 # Tree Data Source
 
-A tree data source is responsible for fetching data for a tree. It implements methods to retrieve root items, children of a specific item, and ancestors of an item.
+The data source is the **only component that communicates with your API**. It implements methods to retrieve root items, children of a specific item, and ancestors of an item.
+
+{% hint style="info" %}
+This is where you call your API endpoints. The [Repository](./tree-repository.md) and [Store](./tree-store.md) never make API calls directly—all server communication goes through the data source.
+{% endhint %}
 
 ## Interface
 

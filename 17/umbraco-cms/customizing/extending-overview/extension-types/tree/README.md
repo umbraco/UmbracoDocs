@@ -168,96 +168,15 @@ For detailed implementation guides, see:
 
 ## Tree Navigation <a href="#tree-navigation" id="tree-navigation"></a>
 
-When users click a tree item, Umbraco navigates to a **workspace** to edit that item. This connection is made through the `entityType` - a string that links tree items to workspaces.
+When users click a tree item, Umbraco navigates to a **workspace** to edit that item. The `entityType` in your tree items must match the `meta.entityType` in your workspace manifest.
 
 {% hint style="warning" %}
-**Clicking tree items shows endless loading?** You need a workspace registered for that `entityType`.
+**Clicking tree items shows endless loading?** See [Tree Navigation & Workspaces](./tree-navigation.md) for setup and troubleshooting.
 {% endhint %}
-
-### Quick Setup
-
-For tree items to navigate correctly:
-
-1. Your data source returns items with an `entityType`
-2. Your workspace manifest has a matching `meta.entityType`
-3. Your workspace uses `kind: 'routable'`
-
-```typescript
-// Data source returns items with entityType
-{ unique: '123', entityType: 'my-custom-item', name: 'My Item', ... }
-
-// Workspace receives navigation for that entityType
-{
-    type: 'workspace',
-    kind: 'routable',  // Required for tree navigation
-    alias: 'My.Workspace',
-    meta: {
-        entityType: 'my-custom-item',  // Must match
-    },
-}
-```
-
-For the full explanation including troubleshooting, see **[Tree Navigation & Workspaces](./tree-navigation.md)**.
 
 ---
 
 ## Further Reading <a href="#further-reading" id="further-reading"></a>
 
 - [Umbraco UI Examples - Trees](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/examples/tree) - Working examples in the Umbraco repository
-- [Workspaces](../workspace/README.md) - Creating workspace extensions
-
-## Custom Tree Items
-
-For specialized tree item rendering, you can create custom elements instead of using `kind: 'default'`. See below for details.
-
-<details>
-<summary>Custom Tree Item Element</summary>
-
-Create a custom element extending `UmbTreeItemElementBase`:
-
-{% code title="Manifest" %}
-```json
-{
-    "type": "treeItem",
-    "alias": "My.TreeItem.Custom",
-    "name": "My Custom Tree Item",
-    "element": "./my-tree-item.element.js",
-    "forEntityTypes": ["my-entity-type"]
-}
-```
-{% endcode %}
-
-{% code title="my-tree-item.element.ts" %}
-```typescript
-import type { MyTreeItemDataModel } from './my-tree-item.model.js';
-import { UmbTreeItemElementBase } from '@umbraco-cms/backoffice/tree';
-import { html, nothing, customElement } from '@umbraco-cms/backoffice/external/lit';
-
-@customElement('my-tree-item')
-export class MyTreeItemElement extends UmbTreeItemElementBase<MyTreeItemDataModel> {
-    override render() {
-        if (!this.item) return nothing;
-        return html`
-            <div>
-                <umb-icon .name=${this.item.icon}></umb-icon>
-                <span>${this.item.name}</span>
-            </div>
-        `;
-    }
-}
-
-export default MyTreeItemElement;
-```
-{% endcode %}
-
-{% code title="my-tree-item.model.ts" %}
-```typescript
-import type { UmbTreeItemModel } from '@umbraco-cms/backoffice/tree';
-
-export interface MyTreeItemDataModel extends UmbTreeItemModel {
-    // Add any additional properties you need
-}
-```
-{% endcode %}
-
-</details>
+- [Workspaces](../workspaces/README.md) - Creating workspace extensions
