@@ -69,7 +69,7 @@ This will delete 90% of the oldest logs that are unread and leave you with 10% o
 
 ## IIS Logging
 
-It is possible to enable IIS Logging on each of your Umbraco Cloud environments. You can enable the logging at **Settings --> Advanced** in the project overview for the project.
+It is possible to enable IIS Logging on each of your Umbraco Cloud environments. You can enable the logging at **Configuration --> Advanced** in the project overview for the project.
 
 The logs will be accessible from KUDU in `C:\home\LogFiles\http`.
 
