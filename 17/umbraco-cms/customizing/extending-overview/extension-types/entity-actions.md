@@ -182,7 +182,7 @@ Each permission has a set of verbs that will be checked against on both the clie
 
 ### Standard Umbraco Permission Letters <a href="#standard-permission-letters" id="standard-permission-letters"></a>
 
-| Current Backoffice letter | Verb                             |
+| Legacy backoffice letter  | Verb                             |
 |---------------------------|----------------------------------|
 | C                         | Umb.Document.Create              |
 | F                         | Umb.Document.Read                |
@@ -199,7 +199,6 @@ Each permission has a set of verbs that will be checked against on both the clie
 | I                         | Umb.Document.CultureAndHostnames |
 | P                         | Umb.Document.PublicAccess        |
 | K                         | Umb.Document.Rollback            |
-| V                         | Umb.DocumentRecycleBin.Restore   |
 
 ### Custom Permission Letters <a href="#custom-permission-letters" id="custom-permission-letters"></a>
 
