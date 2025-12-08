@@ -49,11 +49,16 @@ In addition, a filter syntax can be applied to UFM contents. This can be useful 
 
 The syntax for UFM filters uses a pipe character `|` (Vertical Line). Multiple filters may be applied, and the value from the previous filter is passed onto the next.
 
-To display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
+To display a rich-text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
 
 ```markdown
 {umbValue: bodyText | stripHtml | wordLimit:15}
 ```
+
+{% hint style="info" %}
+Please note, using `umbValue` directly with a rich-text value will not display the contents. This is due to the complexity of the underlying data structure. The `stripHtml` filter has been designed to support the rich-text value.
+Alternatively, you may use the UFM Expression syntax to access the raw rich-text value, e.g. `${ bodyText.markup }`.
+{% endhint %}
 
 The following UFM filters are available to use.
 
