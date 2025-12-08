@@ -156,15 +156,19 @@ public async Task<string> GetMemberId(MemberIdentityUser member)
 Checks if the current request contains a logged-in member.
 
 ```csharp
-public async Task<string> GetMemberId(MemberIdentityUser member)
-    => await _memberManager.GetUserIdAsync(member);
+var isLoggedIn = _memberManager.IsLoggedIn();
+
+if (isLoggedIn)
+{
+    // Do something for logged-in members
+}
 ```
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
 
 Checks if the current member is authorized as specific member types, member groups or concrete members.
 
-For instance, you can use this method to verify if the current logged in member is part of a specific group:
+For instance, you can use this method to verify if the current logged-in member is part of a specific group:
 
 ```csharp
 var memberIsVIP = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
