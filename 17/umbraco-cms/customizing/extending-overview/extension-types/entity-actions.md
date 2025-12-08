@@ -251,36 +251,33 @@ The `entityUserPermission` extension type will render a toggle control in the **
 
 ### Granular User Permission
 
-Extension developers can customize the selection and interaction style of a granular permission using the `element` property. The `element` property accepts the file location of a custom web component, and will render that component in the management interface.
-
-{% code title="entity-action/manifests.json" %}
-```json
-{
-    "$schema": "../../umbraco-package-schema.json",
-    "name": "My Package",
-    "version": "0.1.0",
-    "extensions": [
-        {
-            "type": "userGranularPermission",
-            "alias": "Umb.UserGranularPermission.Document",
-            "name": "Document Granular User Permission",
-            "element": "element.js",
-            "meta": {
-                "schemaType": "DocumentPermissionPresentationModel",
-                "label": "Documents",
-                "description": "Assign permissions to specific documents"
-            }
-        }
-    ]
-}
-```
-{% endcode %}
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" width="796" alt=""><figcaption><p><strong>Default Granular User Permission UI</strong></p></figcaption></figure>
 
 #### Management Interface
 
+Extension developers can customize the selection and interaction style of a granular permission using the `element` property. The `element` property accepts the file location of a custom web component, and will render that component in the management interface.
+
 The `userGranularPermission` extension type will render a document selection control in the **Granular permissions** pane in the Users > User Groups editor by default. The default selector can be replaced with a custom web component.
 
-<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" width="796" alt=""><figcaption><p><strong>Default Granular User Permission UI</strong></p></figcaption></figure>
+{% code title="user-granular-permission/manifest.ts" %}
+```typescript
+import { extensionRegistry } from '@umbraco-cms/extension-registry';
+
+const manifest = {
+    type: 'userGranularPermission',
+    alias: 'My.UserGranularPermission.Document',
+    name: 'My Document Granular User Permission',
+    element: () => import('./my-document-user-granular-permission-ui.js')
+    meta: {
+        schemaType: "DocumentPermissionPresentationModel",
+        label: "Documents",
+        description: "Assign permissions to specific documents"
+    },
+};
+
+extensionRegistry.register(manifest);
+```
+{% endcode %}
 
 <figure><img src="../../../.gitbook/assets/granular-user-permissions-ui-custom.png" width="796" alt=""><figcaption><p><strong>Custom Granular User Permission UI</strong></p></figcaption></figure>
 
