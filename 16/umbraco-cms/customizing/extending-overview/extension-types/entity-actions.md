@@ -221,29 +221,27 @@ These two extension types are used in tandem with each other.
 
 Entity user permissions are assigned to a document, media, member, etc., and are registered using the `entityUserPermission` type in the extension's manifest.
 
-{% code title="entity-action/manifests.json" %}
-```json
-{
-    "$schema": "../../umbraco-package-schema.json",
-    "name": "My Package",
-    "version": "0.1.0",
-    "extensions": [
-        {
-            "type": "entityUserPermission",
-            "alias": "My.UserPermission.Document.Archive",
-            "name": "Document Archive User Permission",
-            "forEntityTypes": ["document"],
-            "meta": {
-                "verbs": ["My.Document.Archive"],
-                "label": "Archive Document",
-                "description": "Allow user to archive documents",
-                "group": "administration"
-            }
-        }
-    ]
-}
+{% code title="entity-user-permission/manifest.ts" %}
+```typescript
+import { extensionRegistry } from '@umbraco-cms/extension-registry';
+
+const manifest = {
+    type: 'entityUserPermission',
+    alias: 'My.UserPermission.Document.Archive',
+    name: 'My Document Archive User Permission',
+    forEntityTypes: ['document'],
+    meta: {
+        verbs: ["My.Document.Archive"],
+        label: "Archive Document",
+        description: "Allow user to archive documents",
+        group: "administration"
+    },
+};
+
+extensionRegistry.register(manifest);
 ```
 {% endcode %}
+
 
 #### Management Interface
 
