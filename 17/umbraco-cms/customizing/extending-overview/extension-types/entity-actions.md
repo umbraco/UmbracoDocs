@@ -137,30 +137,40 @@ export { MyFetchEntityAction as api };
 
 If additional contexts are needed, they can be consumed from the host element via the `constructor` method.
 
-{% code title="entity-action/link-to-server-services-action.ts" %}
+{% code title="entity-action/my-custom-modal-entity-action.ts" %}
 ```typescript
-import {
-    UmbEntityActionBase,
-    UmbEntityActionArgs,
-} from "@umbraco-cms/backoffice/entity-action";
-import { UmbControllerHostElement } from "@umbraco-cms/backoffice/controller-api";
-import { UmbContextConsumerController } from '@umbraco-cms/controller';
-import { UMB_MODAL_SERVICE_CONTEXT } from '@umbraco-cms/modal';
+import { MY_CUSTOM_MODAL_TOKEN } from './my-custom-modal-token.js';
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+import { UMB_MODAL_MANAGER_CONTEXT } from '@umbraco-cms/backoffice/modal';
+import type { UmbControllerHostElement } from '@umbraco-cms/backoffice/controller-api';
+import type { UmbEntityActionArgs } from '@umbraco-cms/backoffice/entity-action';
 
-export class LinkToServerServicesAction extends UmbEntityActionBase<never> {
-    constructor(
-        host: UmbControllerHostElement,
-        args: UmbEntityActionArgs<never>,
-    ) {
-        super(host, args);
+export class MyCustomModalEntityAction extends UmbEntityActionBase<never> {
+	#modalManager?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
-        new UmbContextConsumerController(this.host, UMB_MODAL_SERVICE_CONTEXT, (instance) => {
-            this.#modalService = instance;
-        });
-    }
+	constructor(host: UmbControllerHostElement, args: UmbEntityActionArgs<never>) {
+		super(host, args);
 
-    // ...
+		this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (modalContext) => {
+			this.#modalManager = modalContext;
+		});
+	}
+
+	override async execute() {
+		const modal = this.#modalManager?.open(this, MY_CUSTOM_MODAL_TOKEN, {});
+
+		if (!modal) {
+			console.error('No modal manager found!');
+			return;
+		}
+
+		await modal.onSubmit();
+
+		console.log(modal.value); // Do something with the submitted data.
+	}
 }
+
+export { MyCustomModalEntityAction as api };
 ```
 {% endcode %}
 
