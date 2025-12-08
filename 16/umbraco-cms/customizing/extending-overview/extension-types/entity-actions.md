@@ -109,23 +109,27 @@ The `execute()` method is flexible and allows developers to perform nearly any t
 The [Executing Requests](../../foundation/fetching-data) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
 {% endhint %}
 
-{% code title="entity-action/enable-xgrid-action.ts" %}
+{% code title="entity-action/my-fetch-entity-action.ts" %}
 ```typescript
-import {
-    UmbEntityActionBase,
-} from "@umbraco-cms/backoffice/entity-action";
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 
-export class EnableXgridAction extends UmbEntityActionBase<never> {
-    async execute() {
-        // perform a network request
-        // fetch(`/server-resource/${this.args.unique}`)
+export class MyFetchEntityAction extends UmbEntityActionBase<never> {
+	override async execute() {
+		const response = await fetch(`/server-resource/${this.args.unique}`);
 
-        // or fetch repository
-        //const repository = ...
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
 
-        console.log(this.args.unique);
-    }
+		const data = await response.json();
+
+		if (data) {
+			console.log(data); // Do something with the data
+		}
+	}
 }
+
+export { MyFetchEntityAction as api };
 ```
 {% endcode %}
 
