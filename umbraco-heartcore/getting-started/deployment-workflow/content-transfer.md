@@ -10,7 +10,7 @@ Learn more about how to do that, in the [Structure deployments](structure-deploy
 
 Another difference between the two steps, is that content and media can be restored _against_ the left-to-right flow. This means that when you have a lot of content on a Live environment, it is possible to restore all this content on a Development and/or Staging environment.
 
-![Queue for transfer and restore](images/transfer-and-restore.png)
+![Queue for transfer and restore](../../.gitbook/assets/transfer-and-restore.png)
 
 The screenshot above is from the Content section on a Development environment. Right-click the Content tree to open the menu as shown in the screenshot.
 

@@ -16,6 +16,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.3.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.3.0) (December 4th 2025)
+* Refactored UX for sorting on form designer [#1458](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1458)
+* Render uploaded files as semantically correct HTML [#1373](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1373)
+* Filter out fields from email workflows when 'Include Sensitive Data' is set to false [#1402](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1402)
+* Normalise the JavaScript `form` parameter to always be the native DOM element [#1477](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1477)
+* Fix console error when using `Forms.PropertyEditorUi.TextWithFieldPicker` in custom FieldType or Workflow [#1547](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1547)
+
 ### [16.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.3.0) (November 27th 2025)
 * Umbraco CMS dependency updated to 16.3.0
 * JavaScript now correctly finds the form config element when it is not adjacent

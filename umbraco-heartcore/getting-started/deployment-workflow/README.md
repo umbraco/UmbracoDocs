@@ -6,7 +6,7 @@ When working with multiple environments, it is important to follow the correct w
 
 The workflow uses a classic "left to right" deployment model, meaning that changes are first made on the Development environment and then deployed to the Staging or Live environment. The workflow depends on whether you have a Staging environment which further depends on the plan your project is on.
 
-![Left-to-right deployment model](images/left-to-right.png)
+![Left-to-right deployment model](../../.gitbook/assets/left-to-right.png)
 
 We recommend that you do not work with Document Types directly on the Live environment. This should, as a rule of thumb always be done on the "lowest most" environment: the Development environment.
 

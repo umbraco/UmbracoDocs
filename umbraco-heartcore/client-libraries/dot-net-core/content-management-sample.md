@@ -19,7 +19,8 @@ This sample guide will cover how you can access and work with the [Content Manag
     `dotnet add package Umbraco.Headless.Client.Net`
 2.  Add environment variables for your project alias and your API key.
 
-    {% code title="appsettings.json" %}
+    \{% code title="appsettings.json" %\}
+
     ```json
     {
         "Heartcore": {
@@ -28,30 +29,31 @@ This sample guide will cover how you can access and work with the [Content Manag
         }
     }
     ```
-    {% endcode %}
+
+    \{% endcode %\}
 3. Register the `ContentManagementService` to your dependency injection container. The registration of the `ContentManagementService` is handled by the `AddUmbracoHeartcore` extension method.
 
 {% code title="Program.cs / Startup.cs" %}
-````
-```csharp
-builder.Services.AddUmbracoHeartcore(options =>
-{
-    //configure options
-});
 ```
-````
+```
 {% endcode %}
 
-1.  Inject the `ContentManagementService` into your non-static class.
+\`\`\`\` \`\`\`csharp builder.Services.AddUmbracoHeartcore(options => { //configure options }); \`\`\` \`\`\`\` \{% endcode %\}
 
-    ```csharp
-    private readonly ContentManagementService _contentManagementService;
+1. Inject the \`
 
-    public UmbracoService(ContentManagementService contentManagementService)
-    {
-        _contentManagementService = contentManagementService;
-    }
-    ```
+ContentManagementService\` into your non-static class.
+
+````
+```csharp
+private readonly ContentManagementService _contentManagementService;
+
+public UmbracoService(ContentManagementService contentManagementService)
+{
+    _contentManagementService = contentManagementService;
+}
+```
+````
 
 {% hint style="info" %}
 If you don't want to use dependency injection, you can manually create an instance of the `ContentManagementService` class. The constructor requires that you know the project alias and your API key.
