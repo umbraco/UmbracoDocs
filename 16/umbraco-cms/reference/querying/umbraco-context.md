@@ -111,4 +111,4 @@ For advanced navigation, multi-site setups, or culture-specific root detection, 
 `IDocumentNavigationQueryService.TryGetRootKeys()`, which returns GUID keys representing the structure of the content tree.
 {% endhint %}
 
-UmbracoContext is registered with a scoped lifetime. See the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0#lifetime-and-registration-options) for more information. A service scope is created for each request, which means you can resolve an instance directly in a controller.
+UmbracoContext is registered with a scoped lifetime. See the [Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection#lifetime-and-registration-options) for more information. A service scope is created for each request, which means you can resolve an instance directly in a controller.
