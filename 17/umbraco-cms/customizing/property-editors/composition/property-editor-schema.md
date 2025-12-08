@@ -19,7 +19,7 @@ In essence, the Property Editor Schema defines the data contract for a Property 
 When you want to use a Property Editor to edit content in Umbraco, the Property Editor needs to have a schema. If it does not have a schema, you cannot select the Property Editor when creating a [Data Type](../../../fundamentals/data/data-types/). In other scenarios - when using a Property Editor to edit Data Type settings for instance - a schema is not required.
 {% endhint %}
 
-The Property Editor Schema runs server-side (in C# code) and has the final authority on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema always makes the ultimate decision. This means that if there is a mismatch in client-side and server-side validation, the server-side validation can reject data that the client-side validation considers valid.
+The Property Editor Schema runs server-side (in C# code) and has the final authority on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema always makes the ultimate decision. If there is a mismatch in client-side and server-side validation, the server-side validation can reject data that the client-side validation considers valid.
 
 Because the Property Editor Schema defines how to process and validate data, you can have multiple Property Editor UIs using the same schema. As long as they work with the data as defined in the schema, this works. It also makes it possible to swap out the UI while maintaining the same data.
 
@@ -53,7 +53,9 @@ This components are related in the following way:
 ![The elements that are covered in this article](./images/property-editor-schema-backend.jpg)
 
 {% hint style="info" %}
-For a complete example, there is a tutorial for creating a Property Editor that shows how to [implement a schema to add server-side validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md). It's recommended to use this article together with this one.
+
+For a complete example, there is a tutorial for creating a Property Editor. It shows how to [implement a schema to add server-side validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md). Use this article together with that tutorial.
+
 {% endhint %}
 
 ### DataEditor
@@ -98,7 +100,7 @@ public class MySuggestionsDataValueEditor : DataValueEditor
         => Validators.Add(new MySuggestionsValueValidator());
 }
 ```
-Data Value Editors can have one or more validators to validate the data and check if it complies with any settings that the Property Editor might have.
+Data Value Editors can have one or more validators. These validators check if the data complies with any settings that the Property Editor might have.
 
 See the [full tutorial](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md) on how to implement the `DataValueEditor`.
 

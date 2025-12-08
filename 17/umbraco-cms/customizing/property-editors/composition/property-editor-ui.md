@@ -3,7 +3,7 @@ description: Presenting the Editing Experience of a Property Editor
 ---
 
 # Property Editor UI
-The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. While the Property Editor Schema validates and stores data on the server, the Property Editor UI focuses solely on providing an intuitive editing experience in the browser.
+The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. While the Property Editor Schema validates and stores data on the server, the Property Editor UI focuses on providing an intuitive editing experience in the browser.
 
 
 ## Creating a Property Editor UI
@@ -150,7 +150,7 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
     }
 }
 ```
-Note that this validation is only performed on the value of the property editor as a whole. When you have complex Property Editor UIs with multiple inputs and advanced validation, you need more advanced validation techniques. See the [UI Library Form Validation documentation](../../ui-library.md#form-validation) on how to implement advanced validation.
+This validation is only performed on the value of the property editor as a whole. When you have complex Property Editor UIs with multiple inputs and advanced validation, you need more advanced validation techniques. See the [UI Library Form Validation documentation](../../ui-library.md#form-validation) on how to implement advanced validation.
 
 ### Handle readonly
 The `readonly` property indicates whether the Property Editor should be in read-only mode. This happens automatically based on:

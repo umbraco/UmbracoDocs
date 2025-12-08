@@ -203,7 +203,9 @@ Configuration property aliases in `settings.properties` **must match** the prope
 {% endhint %}
 
 {% hint style="info" %}
-Umbraco ships with several [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) that you can use without creating custom C# classes.
+
+Umbraco ships with [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) that you can use without creating custom C# classes.
+
 {% endhint %}
 
 ## Related Documentation
