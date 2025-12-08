@@ -74,8 +74,8 @@ Umbraco provides a few generic actions that can be used across silos, such as co
 Entity Action extensions will need to supply a class to the extension definition using the `api` property in the manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that invoked it.
 
 The entity action class will provide one of the following methods:
-* `getHref` - returns a url that will be used for navigation
-* `execute` - programs custom imperative behaviors that can work with contexts and service apis
+* `getHref` - returns a URL that will be used for navigation
+* `execute` - programs custom imperative behaviors that can work with contexts and service APIs
 
 If both methods are provided in the entity action class, the `getHref` method will be preferred.
 
@@ -129,7 +129,7 @@ export class EnableXgridAction extends UmbEntityActionBase<never> {
 ```
 {% endcode %}
 
-### Overriding the UmbEntityActionBase Constructor <a href="#umbentityaction-constructor" id="umbentityaction-constructor"></a>
+### Overriding the `UmbEntityActionBase` Constructor <a href="#umbentityaction-constructor" id="umbentityaction-constructor"></a>
 
 If additional contexts are needed, they can be consumed from the host element via the `constructor` method.
 
