@@ -8,22 +8,6 @@
 
 The **Block Grid** property editor enables editors to layout their content in the Umbraco backoffice. The content is made of Blocks that can contain different types of data.
 
-{% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
-## Sample configuration
-
-When testing out the property editor, you can use a set of predefined Blocks. The option will only be possible when there are no other Data Types using the Block Grid property editor.
-
-<figure><img src="../../../../../.gitbook/assets/Install-Sample-Configuration.png" alt=""><figcaption></figcaption></figure>
-
-* Create a new **Data Type**.
-* Select the **Block Grid** as the **Property editor**.
-* **Install** the "Sample Configuration".
-
-4 Blocks will be added to the property, ready for testing.
-
 ## Configuring the Block Grid
 
 The Block Grid property editor is configured via the **Data Types** backoffice interface.
@@ -35,19 +19,23 @@ To set up the Block Grid property editor, follow these steps:
 3. Select **Create** -> **New Data Type**.
 4. Select **Block Grid** from the list of available property editors.
 
-You will see the configuration options for a Block Grid property editor as shown below:
+You will see the configuration options for adding Block Types to the Grid as shown below.
 
-![Block Grid - Data Type Configuration](../../../../../.gitbook/assets/BlockGridEditor_Configuration.png)
+![Block Grid - Blocks Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_Configuration.png)
+
+You will also see the following additional configuration options.
+
+![Block Grid - Additional Data Type Configuration Options](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockGridEditor_Configuration-2.png)
 
 The Data Type editor allows you to configure the following properties:
 
-* **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](block-grid-editor.md#setup-block-types).
+* **Blocks** - Defines the Block Types available for use in the property. For more information, see [Setup Block Types](block-grid-editor.md#setup-block-types). Blocks can also be grouped. This is then visible to editors in the Block Catalogue when populating content, and can also be used to allow a group of Blocks in an Area.
 * **Amount** - Sets the minimum and/or the maximum number of Blocks that should be allowed at the root of the layout.
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
+* **Create Button Label** - Overwrites the label on the Create button.
 * **Grid Columns** - Define the number of columns in your Block Grid. The default is 12 columns.
 * **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
-* **Create Button Label** - Overwrites the label on the Create button.
 
 ## Setup Block Types
 
@@ -55,11 +43,7 @@ Block Types are based on [**Element Types**](../../../../data/defining-content/d
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
-![Block Grid - Data Type Block Configuration](../../../../../.gitbook/assets/BlockGridEditor_DataType_Blocks.png)
-
-### Groups
-
-Blocks can also be grouped. This is visible in the Block Catalogue and can also be used to allow a group of Blocks in an Area.
+![Block Grid - Data Type Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_DataType_Blocks.png)
 
 ## Block Configuration Settings
 
@@ -69,14 +53,14 @@ Each Block has a set of properties that are optional to configure. These are des
 
 Customize the user experience for your content editors when they work with the Blocks in the Content section.
 
-* **Label** - Defines a label for the appearance of the Block in the editor. The label can use AngularJS template-string-syntax to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
-
-{% hint style="info" %}
-Label example: "My Block {=myPropertyAlias}" will be shown as: "My Block FooBar".
-{% endhint %}
-
+* **Label** - Defines a label for the appearance of the Block in the editor. The label can use [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
 * **Content model** - Presents the Element Type used as model for the Content section of this Block. This cannot be changed but you can open the Element Type to perform edits or view the properties available. Useful when writing your Label.
 * **Settings model** - Adds a Settings section to your Block based on a given Element Type. When selected you can open the Element Type or choose to remove the Settings section again.
+
+### Permissions
+
+* **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
+* **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
 
 ### Size options
 
@@ -98,21 +82,6 @@ Additionally, Blocks can be configured to span rows, this enables one Block to b
 
 See the [scaling blocks](block-grid-editor.md#scaling-blocks) section of this article for an example of how scaling works.
 
-### Catalogue appearance
-
-These properties refer to how the Block is presented in the Block catalogue when editors choose which Blocks to use for their content.
-
-* **Background color** - Defines a background color to be displayed beneath the icon or thumbnail. Example: `#424242`.
-* **Icon color** - Changes the color of the Element Type icon. Example: `#242424`.
-* **Thumbnail** - Pick an image or Scalable Vector Graphics (SVG) file to replace the icon of the Block in the catalogue.
-
-The thumbnails for the catalogue are presented in the format of 16:10. We recommend a resolution of 400px width and 250px height.
-
-### Permissions
-
-* **Allow in root** - Determines whether the Block can be created at the root of your layout. Turn this off if you only want a Block to appear within Block Areas.
-* **Allow in areas** - Determines whether the Block can be created inside Areas of other Blocks. If this is turned off it can still be allowed in Block Areas by defining specific allowed Blocks.
-
 ## Areas
 
 Blocks can nest other Blocks to support specific compositions. These compositions can be used as a layout for other Blocks.
@@ -126,56 +95,72 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Grid Columns for Areas** - Overwrites the amount of columns used for the Area grid.
 * **Areas** - Determines whether the Block can be created inside Areas of other Blocks.
 
-![Block Grid - Areas](../../../../../.gitbook/assets/BlockGridEditor_Areas.png)
+![Block Grid - Areas](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_Areas.png)
 
 ### Area configuration
 
-![Block Grid - Area Configuration](../../../../../.gitbook/assets/BlockGridEditor_AreasConfiguration.png)
+![Block Grid - Area Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_AreasConfiguration.png)
 
 * **Alias** - The alias is used to identify this Area. It is being printed by `GetBlockGridHTML()` and used as name for the Area slot in Custom Views. The alias is also available for CSS Selectors to target the HTML-Element representing an Area.
 * **Create Button Label** - Overwrites the Create Button Label of the Area.
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 * **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks. Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
 
-When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well and set the requirements.
+When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well, and setting the requirements accordingly.
 
 ## Advanced
 
-These properties are relevant when working with custom views or complex projects.
+Advanced properties are also available for each Block, as shown below.
 
-* **Custom view** - Overwrites the AngularJS view for the block presentation in the Content editor. Use this view to make a more visual presentation of the Block or make your own editing experience by adding your own AngularJS controller to the view.
+![Block Grid - Advanced Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockGridEditor_AreasConfigurationAdvanced.png)
+
+### Advanced
+
+* **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
+* **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
+* **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
+
+### Custom View
+
+* **Custom view** - Overwrites the view for the block presentation in the Content editor. Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../customizing/extending-overview/extension-types/block-custom-view.md)
+
+### Catalogue appearance
+
+These properties refer to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
+
+* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
+* **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
+* **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
+
+The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
 
 {% hint style="info" %}
-Notice that any styling of a Block is scoped. This means that the default backoffice styles are not present for the view of this Block.
+Configuring the catalogue appearance improves the content editor experience. A well-designed block catalogue with colors and thumbnails makes it easier for editors to quickly identify and select the right blocks for their content.
 {% endhint %}
-
-* **Custom stylesheet** - Pick your own stylesheet to be used by the Block in the Content editor.
-* **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
-* **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
 
 ## Editing Blocks
 
 When viewing a **Block Grid** property editor in the **Content** section for the first time, you will be presented with the option to **Add content**.
 
-![Block Grid - Add Content](../../../../../.gitbook/assets/BlockGridEditor_AddContent.png)
+![Block Grid - Add Content](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_AddContent.png)
 
 Clicking the **Add content** button opens up the **Block Catalogue**.
 
-![Block Grid - Setup](../../../../../.gitbook/assets/BlockGridEditor_BlockPicker.png)
+![Block Grid - Block Catalogue](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_BlockPicker.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block Grid - example setup](../../../../../.gitbook/assets/BlockGridEditor_BlockPicker_exsetup.png)
+![Block Grid - Block Catalogue with Example Block using Catalogue Appearance features](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_BlockPicker_exsetup.png)
 
 Click the Block Type you wish to create and a new Block will appear in the layout.
 
 More Blocks can be added to the layout by clicking the Add content button. Alternatively, use the Add content button that appears on hover to add new Blocks between, besides, or above the existing Blocks.
 
-![Block Grid - Add Content Inline](../../../../../.gitbook/assets/BlockGridEditor_AddContentInline.png)
+![Block Grid - Add Content Inline](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_AddContentInline.png)
 
 To delete a Block, click the trash icon which appears on the mouse hover.
 
-![Block Grid - Delete Content](../../../../../.gitbook/assets/BlockGridEditor_DeleteContent.png)
+![Block Grid - Delete Content](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockGridEditor_DeleteContent.png)
 
 ## Sorting Blocks
 
@@ -183,7 +168,7 @@ Blocks can be rearranged using the click and drag feature. Move them up or down 
 
 Moving a Block from one Area to another is done in the same way. If a Block is not allowed in the given position, the area will display a red color and not allow the new position.
 
-![Block Grid - Sorting Blocks](../../../../../.gitbook/assets/Sorting_BlockGrid_Blocks.gif)
+![Block Grid - Sorting Blocks](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/Sorting_BlockGrid_Blocks.gif)
 
 ## Scaling Blocks
 
@@ -191,14 +176,14 @@ If a Block has multiple size options it can be scaled via the UI. This appears i
 
 The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 
-<figure><img src="../../../../../.gitbook/assets/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
+<figure><img src="../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/resizing-block-block-grid.gif" alt=""><figcaption><p>Scale blocks in the grid by dragging from the bottom-right corner.</p></figcaption></figure>
 
 ## Rendering Block Grid Content
 
 Rendering the stored value of your **Block Grid** property editor can be done in two ways:
 
-1. [Default rendering](block-grid-editor.md#1-default-rendering)
-2. [Build your own rendering](block-grid-editor.md#2-build-custom-rendering)
+1. [Default rendering](#1-default-rendering)
+2. [Build your own rendering](#2-build-custom-rendering)
 
 ### 1. Default rendering
 
@@ -350,6 +335,29 @@ If you do not want to use Partial Views, you can access the block item data dire
 ```
 {% endcode %}
 
+## Using Block Grid with the Delivery API
+
+When using Block Grid in a headless scenario with the [Content Delivery API](../../../../../reference/content-delivery-api/README.md), the property outputs a structured JSON representation instead of rendered HTML.
+
+The JSON structure includes:
+
+* `gridColumns` - The number of columns configured for the grid (typically 12)
+* `items` - An array of block items, each containing:
+  * `content` - The block's content data
+  * `settings` - The block's settings data (if configured)
+  * `rowSpan` and `columnSpan` - Layout dimensions for the block
+  * `areaGridColumns` - Number of columns for nested areas
+  * `areas` - Array of nested areas within the block, each containing their own items
+
+Your frontend application is responsible for:
+
+* Parsing the grid layout structure
+* Implementing CSS Grid or an equivalent layout system
+* Rendering blocks recursively to handle nested areas
+* Handling responsive behavior
+
+For detailed information about the JSON structure and property expansion options, see [Property expansion and limiting](../../../../../reference/content-delivery-api/property-expansion-and-limiting.md#block-grid).
+
 ## Write a Custom Layout Stylesheet
 
 The default layout stylesheet is using CSS Grid. This can be modified to fit your implementation and your project.
@@ -408,7 +416,7 @@ For example: You can use the below HTML structure:
             The structure will be as printed below,
             Do notice targeting the 'area-container' needs a double selector as markup will be different in Backoffice.
             Here is an example of the CSS selector:
-                .umb-block-grid__area-container, .umb-block-grid__block--view::part(area-container) {
+                .umb-block-grid__area-container, umb-block-grid-areas-container::part(area-container) {
                     position: relative;
                 }
             -->
@@ -472,7 +480,7 @@ In this example, we will be creating content programmatically for a "spot" Block
 5. Click **Add** in the **Blocks** Settings and select **Spot Element**.
 6. Select **Spot Settings** in the **Settings model** field.
 
-![Block Grid - Block Configuration](../../../../../.gitbook/assets/BlockEditorConfigurationProgramatically.png)
+![Block Grid - Block Configuration](../../../images/BlockEditorConfigurationProgramatically.png)
 
 The raw input data for the spots looks like this:
 
@@ -730,7 +738,7 @@ public class BlockGridLayoutItem
 ```
 {% endcode %}
 
-8. Create a class called **BlockGridTestController.cs**. By injecting `IContentService` and `IContentTypeService` into an API controller, the raw data can be transformed into Block Grid JSON. It can then be saved to the target content item.
+9. By injecting [ContentService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp
@@ -838,4 +846,6 @@ For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba
 
 10. To test this implementation, run the project and send a `POST` request to `/umbraco/api/blockgridtest/create` after your domain name. If the result shows as **Saved**, then check your content node, and you will see the 2 spotElement contents.
 
-![Block Grid - Result](../../../../../.gitbook/assets/BlockEditorContentCreated.png)
+![Block Grid - Result](../../../images/BlockEditorContentCreated.png)
+
+_This can also be tested via Postman as well if preferred._
