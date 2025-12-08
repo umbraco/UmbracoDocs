@@ -19,7 +19,7 @@ In essence, the Property Editor Schema defines the data contract for a Property 
 When you want to use a Property Editor to edit content in Umbraco, the Property Editor needs to have a schema. If it does not have a schema, you cannot select the Property Editor when creating a [Data Type](../../../fundamentals/data/data-types/). In other scenarios - when using a Property Editor to edit Data Type settings for instance - a schema is not required.
 {% endhint %}
 
-The Property Editor Schema runs server-side (in C# code) and has the final authority on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema always makes the ultimate decision. If there is a mismatch in client-side and server-side validation, the server-side validation can reject data that the client-side validation considers valid.
+The Property Editor Schema runs server-side (in C# code) and has the final authority on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema always makes the ultimate decision. When there is a mismatch between client-side and server-side validation, the server rejects data that the client considers valid.
 
 Because the Property Editor Schema defines how to process and validate data, you can have multiple Property Editor UIs using the same schema. As long as they work with the data as defined in the schema, this works. It also makes it possible to swap out the UI while maintaining the same data.
 
@@ -138,11 +138,11 @@ This chapter covers advanced scenarios in Property Editor Schema development. It
 {% endhint %}
 
 ### Custom Data Editors without a Data Value Editor
-Usually when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, in most cases you can use one of the [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases) and do not need to create a Property Editor Schema at all.
+Usually when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, you can use one of the [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases) instead. In most cases, you do not need to create a Property Editor Schema at all.
 
 However, it is possible to create a custom Data Editor but let the handling of the data be handled by the `DataValueEditor` base class itself. On a Data Editor, you can specify the `ValueType`. This is the type that determines how the data is stored in the database. The `DataValueEditor` can process the data based on the `ValueType`. This means you can create a Data Editor without implementing a custom Data Value Editor.
 
-This pattern is valuable when you need a unique schema identifier for targeting in Property Value Converters or custom indexing, but do not need custom validation or data conversion.
+This pattern is valuable when you need a unique schema identifier. You might use this for targeting in Property Value Converters or custom indexing. However, you do not need custom validation or data conversion.
 
 This example creates a custom `DataEditor` that reuses the standard JSON `DataValueEditor`:
 

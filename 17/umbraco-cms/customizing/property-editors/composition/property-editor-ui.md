@@ -3,7 +3,7 @@ description: Presenting the Editing Experience of a Property Editor
 ---
 
 # Property Editor UI
-The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. While the Property Editor Schema validates and stores data on the server, the Property Editor UI focuses on providing an intuitive editing experience in the browser.
+The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. The Property Editor Schema validates and stores data on the server. The Property Editor UI focuses on providing an intuitive editing experience in the browser.
 
 
 ## Creating a Property Editor UI
