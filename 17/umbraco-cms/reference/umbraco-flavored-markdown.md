@@ -31,14 +31,14 @@ For clarity...
 * The contents within the curly brackets can include any Unicode characters, including whitespace
 * The closing token is `}` Right Curly Bracket
 
-An example of this syntax to render a value of a property by its alias is: `{umbValue: bodyText}`.
+An example of this syntax to render a value of a property by its alias is: `{umbValue: headline}`.
 
-The curly brackets indicate that the UFM syntax should be processed. The `umbValue` alias prefix indicates which UFM component should be rendered, and the `bodyText` contents are the parameter that is passed to that UFM component.
+The curly brackets indicate that the UFM syntax should be processed. The `umbValue` alias prefix indicates which UFM component should be rendered, and the `headline` contents are the parameter that is passed to that UFM component.
 
-With this example, the syntax `{umbValue: bodyText}` would be processed and rendered as the following markup:
+With this example, the syntax `{umbValue: headline}` would be processed and rendered as the following markup:
 
 ```javascript
-<ufm-label-value alias="bodyText"></ufm-label-value>
+<ufm-label-value alias="headline"></ufm-label-value>
 ```
 
 The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/context-api/).
@@ -124,9 +124,9 @@ More UFM components will be available in upcoming Umbraco releases.
 
 The Label Value component will render the current value of a given property alias.
 
-The alias prefix is `umbValue`. An example of the syntax is `{umbValue: bodyText}`, which would render the component as `<ufm-label-value alias="bodyText"></ufm-label-value>`.
+The alias prefix is `umbValue`. An example of the syntax is `{umbValue: headline}`, which would render the component as `<ufm-label-value alias="headline"></ufm-label-value>`.
 
-For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=bodyText}`.
+For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=headline}`.
 
 #### Localize
 
