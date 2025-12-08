@@ -8,7 +8,11 @@ A library of API Reference documentation is auto-generated from the comments wit
 
 ## C# API Documentation
 
-C# API references for the Umbraco Core, Infrastructure, Extensions and Web libraries.
+C# API references for the Umbraco Core, Infrastructure, Extensions, and Web libraries.
+
+{% hint style="warning" %}
+The C# API Documentation is currently not available for Umbraco 17.
+{% endhint %}
 
 ### [Umbraco.Cms.Core](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.html)
 

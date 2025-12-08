@@ -22,8 +22,8 @@ Creating the goal is similar to creating a page view or page event goal. The **g
 
 To trigger the goal, execute C# code during the visitor's pageview. Inject `Umbraco.Engage.Infrastructure.Analytics.Goals.IGoalService`, which provides multiple overloads to trigger goals:
 
-- `TriggerGoal(long goalId, int value)` - Using numeric ID
-- `TriggerGoal(Guid goalKey, int value)` - Using GUID key (preferred)
+* `TriggerGoal(long goalId, int value)` - Using numeric ID
+* `TriggerGoal(Guid goalKey, int value)` - Using GUID key (preferred)
 
 An implementation looks like:
 
@@ -56,7 +56,7 @@ The method automatically determines the current page view, linking the goal to a
 
 To trigger a goal outside of an HTTP request or a valid pageview, use the overload of `TriggerGoal` that takes the GUID of the pageview.
 
-Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IPageviewGuidManager.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
+Retrieve the pageview GUID in the original request using `Umbraco.Engage.Infrastructure.Analytics.Common.IAnalyticsPageviewGuidManager.GetPageviewGuid()`. You will need to store this pageview GUID for later use when invoking:
 
 ```cs
 // Using numeric goal ID
@@ -70,9 +70,9 @@ This custom goal can now be used like other goals and will show up in any statis
 
 ## Available Method Overloads
 
-| Method | Parameters | Use Case |
-|--------|------------|----------|
-| `TriggerGoal` | `(long goalId, int value = 0)` | Within HttpContext/pageview, using numeric ID |
-| `TriggerGoal` | `(Guid goalKey, int value = 0)` | Within HttpContext/pageview, using GUID key (preferred) |
-| `TriggerGoal` | `(Guid pageviewGuid, long goalId, int value = 0)` | Outside HttpContext, using numeric ID |
-| `TriggerGoal` | `(Guid pageviewGuid, Guid goalKey, int value = 0)` | Outside HttpContext, using GUID key (preferred) |
+| Method        | Parameters                                         | Use Case                                                |
+| ------------- | -------------------------------------------------- | ------------------------------------------------------- |
+| `TriggerGoal` | `(long goalId, int value = 0)`                     | Within HttpContext/pageview, using numeric ID           |
+| `TriggerGoal` | `(Guid goalKey, int value = 0)`                    | Within HttpContext/pageview, using GUID key (preferred) |
+| `TriggerGoal` | `(Guid pageviewGuid, long goalId, int value = 0)`  | Outside HttpContext, using numeric ID                   |
+| `TriggerGoal` | `(Guid pageviewGuid, Guid goalKey, int value = 0)` | Outside HttpContext, using GUID key (preferred)         |

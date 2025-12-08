@@ -12,7 +12,7 @@ The default templates for email, print, and export are embedded in Razor Class L
 
 Download the custom templates and place them in `/Views/Partials/Commerce/Email/`.
 
-{% file src="../.gitbook/assets/Umbraco.Commerce.Templates.v15.zip" %}
+{% file src="../.gitbook/assets/Umbraco.Commerce.Templates.v16.zip" %}
 Umbraco Commerce Custom Templates
 {% endfile %}
 

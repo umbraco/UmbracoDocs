@@ -1,14 +1,20 @@
 ---
-description: "Learn how to query Umbraco Heartcore with GraphQL."
+description: Learn how to query Umbraco Heartcore with GraphQL.
 ---
 
 # Querying with GraphQL
 
-In this tutorial we will be looking at how we can fetch data from Umbraco Heartcore using GraphQL.
+In this tutorial, we will be looking at how we can fetch data from Umbraco Heartcore using GraphQL.
 
 We will be using https://demo.heartcore.dev/ as a reference.
 
-At the end of the tutorial we should be able to use the Umbraco Heartcore GraphQL API and be able to fetch all the content needed to render the page in with a single query.
+At the end of the tutorial, we should be able to use the Umbraco Heartcore GraphQL API and be able to fetch all the content needed to render the page in a single query.
+
+{% hint style="info" %}
+This guide uses the Nested Content Property Editor, which is no longer available in the Heartcore product.
+
+Use a [Block Editor](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor) instead for a similar setup.
+{% endhint %}
 
 ## Creating the Document Types
 
@@ -16,13 +22,13 @@ First, we will need to create some Document Types, and as a start, we will creat
 
 Start by creating a folder named **Elements** under the **Document Types** folder in the Settings section of the Backoffice.
 
-In that folder create the following Document Types:
+In that folder, create the following Document Types:
 
 ### Text and Image
 
 **Alias**: textAndImage
 
-![Text and Image Document Type](images/text-and-image.png)
+![Text and Image Document Type](../.gitbook/assets/text-and-image.png)
 
 Add a new group called **Content** with the following properties:
 
@@ -33,13 +39,13 @@ Add a new group called **Content** with the following properties:
 | Image            | image          | Media Picker     | <p>Pick multiple items: not checked<br>Pick only images: checked<br>Disable folder select: checked</p> |
 | Show large image | showLargeImage | Checkbox         | Use defaults                                                                                           |
 
-Then under permissions check **Element Type**
+Then, under permissions check **Element Type**
 
 ### Unique Selling Point
 
 **Alias**: uniqueSellingPoint
 
-![Unique Selling Point Document Type](images/unique-selling-point.png)
+![Unique Selling Point Document Type](../.gitbook/assets/unique-selling-point.png)
 
 Add a new group called **Content** with the following properties:
 
@@ -60,7 +66,7 @@ Then create another folder called **Compositions** and create the following Docu
 
 **Alias**: elementsComposition
 
-![Elements Composition Document Type](images/elements-composition.png)
+![Elements Composition Document Type](../.gitbook/assets/elements-composition.png)
 
 Add a new group called **Elements** with the following properties:
 
@@ -68,17 +74,17 @@ Add a new group called **Elements** with the following properties:
 | -------- | -------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Elements | elements | Nested Content  | <p>Document Types:<br>Element Type: Text and image, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: checked<br>Hide label: checked</p> |
 
-![Nested Content Configured with Elements](images/nested-content-elements.png)
+![Nested Content Configured with Elements](../.gitbook/assets/nested-content-elements.png)
 
 Then click the **Reorder** button and change the value for **Elements** from `0` to `15`
 
-![Elements Composition Reorder](images/elements-composition-reorder.png)
+![Elements Composition Reorder](../.gitbook/assets/elements-composition-reorder.png)
 
 ### Hero Composition
 
 **Alias**: heroComposition
 
-![Hero Composition Document Type](images/hero-composition.png)
+![Hero Composition Document Type](../.gitbook/assets/hero-composition.png)
 
 Add a new group called **Hero** with the following properties:
 
@@ -92,7 +98,7 @@ Add a new group called **Hero** with the following properties:
 
 **Alias**: uniqueSellingPointsComposition
 
-![Unique Selling Points Composition Document Type](images/unique-selling-points-composition.png)
+![Unique Selling Points Composition Document Type](../.gitbook/assets/unique-selling-points-composition.png)
 
 Add a new group called **Unique Selling Points** with the following properties:
 
@@ -101,11 +107,11 @@ Add a new group called **Unique Selling Points** with the following properties:
 | Title                 | uniqueSellingPointsTitle | Textstring      | <p>Document Types:<br>Use defaults</p>                                                                                                                                          |
 | Unique Selling Points | uniqueSellingPoints      | Nested Content  | <p>Document Types:<br>Element Type: Unique Selling Point, Group: Content, Template: {{title}}<br>Confirm Deletes: checked<br>Show icons: not checked<br>Hide label: checked</p> |
 
-![Nested Content Configured with Unique Selling Points](images/nested-content-unique-selling-points.png)
+![Nested Content Configured with Unique Selling Points](../.gitbook/assets/nested-content-unique-selling-points.png)
 
 Then click the **Reorder** button and change the value for **Elements** from `0` to `20`
 
-![Unique Selling Points Composition Reorder](images/unique-selling-points-composition-reorder.png)
+![Unique Selling Points Composition Reorder](../.gitbook/assets/unique-selling-points-composition-reorder.png)
 
 ***
 
@@ -115,17 +121,17 @@ At the root create the following Document Types:
 
 **Alias**: textpage
 
-![Textpage Document Type](images/textpage.png)
+![Textpage Document Type](../.gitbook/assets/textpage.png)
 
 Click on **Compositions** and select **Elements Composition** and **Hero Composition**
 
-![Textpage Compositions](images/textpage-compositions.png)
+![Textpage Compositions](../.gitbook/assets/textpage-compositions.png)
 
 ### Frontpage
 
 **Alias**: frontpage
 
-![Frontpage Document Type](images/frontpage.png)
+![Frontpage Document Type](../.gitbook/assets/frontpage.png)
 
 Add a new group called **Footer** with the following properties:
 
@@ -136,11 +142,11 @@ Add a new group called **Footer** with the following properties:
 
 Then click on **Compositions** and select **Elements Composition**, **Hero Composition** and **Unique Selling Points Composition**, click on **Submit**.
 
-![Frontpage Compositions](images/frontpage-compositions.png)
+![Frontpage Compositions](../.gitbook/assets/frontpage-compositions.png)
 
 On the permissions tab check **Allow at root** and add **Textpage** to the **Allowed child node types** property.
 
-![Frontpage Permissions](images/frontpage-permissions.png)
+![Frontpage Permissions](../.gitbook/assets/frontpage-permissions.png)
 
 Then go to the **Content** section and create a new Frontpage with the name **Home** and create some subpages.
 
