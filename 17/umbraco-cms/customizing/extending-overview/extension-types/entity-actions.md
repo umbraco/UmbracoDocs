@@ -49,14 +49,13 @@ To register an entity action, developers declare the entity action in the manife
 {% code title="entity-action/manifest.ts" %}
 ```typescript
 import { extensionRegistry } from '@umbraco-cms/extension-registry';
-import { MyEntityAction } from './entity-action';
 
 const manifest = {
     type: 'entityAction',
     alias: 'My.EntityAction',
     name: 'My Entity Action',
     weight: 10,
-    api: MyEntityAction,
+    api: () => import('./my-entity-action.js'),
     forEntityTypes: ['my-entity'],
     meta: {
         icon: 'icon-add',
@@ -90,13 +89,15 @@ The `getHref()` method must return a string value, and the result will be render
 
 {% code title="entity-action/my-entity-action.ts" %}
 ```typescript
-import {UmbEntityActionBase} from '@umbraco-cms/backoffice/entity-action';
+import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
 
 export class MyEntityAction extends UmbEntityActionBase<never> {
-    async getHref() {
-        return `my-link/path-to-something/${this.args.unique}`;
-    }
+	override async getHref() {
+		return `my-link/path-to-something/${this.args.unique}`;
+	}
 }
+
+export { MyEntityAction as api };
 ```
 {% endcode %}
 
