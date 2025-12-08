@@ -19,7 +19,7 @@ In essence, the Property Editor Schema defines the data contract for a Property 
 When you want to use a Property Editor to edit content in Umbraco, the Property Editor needs to have a schema. If it does not have a schema, you cannot select the Property Editor when creating a [Data Type](../../../fundamentals/data/data-types/). In other scenarios - when using a Property Editor to edit Data Type settings for instance - a schema is not required.
 {% endhint %}
 
-The Property Editor Schema runs server-side (in C# code) and has the final say on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema has the final say. This means that if there is a mismatch in client-side and server-side validation, the server-side validation can reject data that the client-side validation considers valid.
+The Property Editor Schema runs server-side (in C# code) and has the final authority on whether data is valid to commit to the database. The Property Editor UI is where the user inputs their data. You can have client-side validation, but the Property Editor Schema always makes the ultimate decision. This means that if there is a mismatch in client-side and server-side validation, the server-side validation can reject data that the client-side validation considers valid.
 
 Because the Property Editor Schema defines how to process and validate data, you can have multiple Property Editor UIs using the same schema. As long as they work with the data as defined in the schema, this works. It also makes it possible to swap out the UI while maintaining the same data.
 
@@ -39,9 +39,16 @@ Umbraco ships with a number of [default property editor schemas](../../../tutori
 Otherwise the default schemas are probably fine.
 
 ## Property Editor Schema anatomy
-On the server side, a Property Editor Schema is built from two collaborating components. The `DataEditor` serves as the definition and factory, while `DataValueEditor` instances perform the actual data handling work. This separation allows Umbraco to efficiently reuse schema definitions across multiple Data Type configurations.
+A Property Editor Schema consists of two server side and one optional client side component. This chapter explains these components and how they are related.
 
-The frontend needs to be able to use the schema. Depending on the use case, it might need to be registered in the Extension Registry. The following entities are covered:
+The server side components are:
+* `DataEditor`: serves as the definition and factory.
+* `DataValueEditor`: performs the actual data handling work.
+
+The client side component is:
+* `Property Editor Schema extension`: the registration of the schema in the Extension Registry for use by the frontend.
+
+This components are related in the following way:
 
 ![The elements that are covered in this article](./images/property-editor-schema-backend.jpg)
 

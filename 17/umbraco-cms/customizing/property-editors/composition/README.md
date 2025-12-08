@@ -25,12 +25,12 @@ The Property Editor UI is the visual interface content editors interact with in 
 The UI component can be replaced without affecting stored data as long as the same schema is used. This allows different editing experiences while maintaining the same underlying data structure and validation rules.
 
 ### Separation of Concerns
-This architectural separation provides flexibility. Multiple UIs can use the same schema with different visual presentations. The same schema can serve different purposes through different UI implementations. The schema ensures data integrity while you can swap the UI component without migration or data loss.
+This architectural separation provides flexibility. Multiple UIs can use the same schema with different visual presentations. The schema ensures data integrity while you can swap the UI component without migration or data loss.
 
 ![Property Editor architecture showing Schema and UI separation](images/property-editor-simplified-flow.jpg)
 
 ### Data Types: Configuring Property Editors
-A Data Type is a configured instance of a Property Editor that you create in the Umbraco backoffice. A Data Type is the entity that you add to your content pages for editors to work with. With Data Types, you can create one or multiple instances of the same Property Editor with different settings. When users are editing content, the Data Type knows what UI element to display and what settings to use. When content is saved, the Data Type knows how it needs to process this data. This is because the Data Type knows the alias of the Property Editor UI, the alias of the Property Editor Schema, and the settings set on the Data Type instance.
+A Data Type is a configured instance of a Property Editor that you create in the Umbraco backoffice. A Data Type is the entity that you add as a property on a Document, Media or Member types to define how for editors will manage a particular item of data. With Data Types, you can create one or multiple instances of the same Property Editor with different settings. When users are editing content, the Data Type knows what UI element to display and what settings to use. When content is saved, the Data Type knows how it needs to process this data. This is because the Data Type knows the alias of the Property Editor UI, the alias of the Property Editor Schema, and the settings set on the Data Type instance.
 
 Take the __Text Box__ Property Editor for example. It has a setting for 'Maximum allowed characters'. You can create multiple Data Types using the Text Box Property Editor with different settings, based on what is needed. 
 
