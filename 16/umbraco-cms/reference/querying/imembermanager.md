@@ -168,7 +168,7 @@ if (isLoggedIn)
 
 Checks if the current member is authorized as specific member types, member groups or concrete members.
 
-For instance, you can use this method to verify if the current logged in member is part of a specific group:
+For instance, you can use this method to verify if the current logged-in member is part of a specific group:
 
 ```csharp
 var memberIsVIP = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
