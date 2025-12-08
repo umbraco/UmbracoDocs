@@ -57,16 +57,16 @@ To display a rich text value, stripping out the HTML markup and limiting it to t
 
 The following UFM filters are available to use.
 
-| Name       | Alias        | Example syntax                         |
-| ---------- | ------------ | -------------------------------------- |
-| Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
-| Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
-| Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
-| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`   |
-| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`   |
-| Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
-| Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
-| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`   |
+| Name       | Alias       | Example syntax                         |
+| ---------- | ----------- | -------------------------------------- |
+| Bytes      | `bytes`     | `{umbValue: umbracoBytes \| bytes}`    |
+| Fallback   | `fallback`  | `{umbValue: headline \| fallback:N/A}` |
+| Lowercase  | `lowercase` | `{umbValue: headline \| lowercase}`    |
+| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`    |
+| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`    |
+| Truncate   | `truncate`  | `{umbValue: intro \| truncate:30:...}` |
+| Uppercase  | `uppercase` | `{umbValue: headline \| uppercase}`    |
+| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`    |
 
 {% hint style="info" %}
 Starting from version 16.4, both the kebab-case (for example, `strip-html`, `title-case`,and `word-limit`) and the camelCase syntax (for example, `stripHtml`, `titleCase`, and `wordLimit`) are supported.
