@@ -160,6 +160,7 @@ Register these in your manifests:
 
 For detailed implementation guides, see:
 
+- **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces
 - **[Tree Repository](./tree-repository.md)** - Extends `UmbTreeRepositoryBase`
 - **[Tree Data Source](./tree-data-source.md)** - Implements `getRootItems`, `getChildrenOf`, `getAncestorsOf`
 - **[Tree Store](./tree-store.md)** - Extends `UmbUniqueTreeStore`

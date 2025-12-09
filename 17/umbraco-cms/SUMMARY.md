@@ -190,6 +190,7 @@
       * [Section View](customizing/extending-overview/extension-types/sections/section-view.md)
     * [Trees](customizing/extending-overview/extension-types/tree/README.md)
       * [Tree Navigation](customizing/extending-overview/extension-types/tree/tree-navigation.md)
+      * [Tree Models](customizing/extending-overview/extension-types/tree/tree-models.md)
       * [Tree Repository](customizing/extending-overview/extension-types/tree/tree-repository.md)
       * [Tree Data Source](customizing/extending-overview/extension-types/tree/tree-data-source.md)
       * [Tree Store](customizing/extending-overview/extension-types/tree/tree-store.md)
