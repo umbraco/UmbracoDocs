@@ -5,7 +5,7 @@ description: A guide to creating a custom tree in Umbraco
 # Trees
 
 {% hint style="info" %}
-**Looking to add sidebar navigation?** You probably want [Menus](../menu.md) and [Menu Items](../menu-item.md) first. Trees are just data providers that feed into menus - they don't display anything on their own.
+**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For simple, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API. Trees link to menus as a data source via the `menuItem` with `kind: 'tree'`.
 {% endhint %}
 
 {% hint style="warning" %}
