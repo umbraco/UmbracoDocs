@@ -5,15 +5,15 @@ description: A guide to creating a custom tree in Umbraco
 # Trees
 
 {% hint style="info" %}
-**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For simple, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API. Trees link to menus as a data source via the `menuItem` with `kind: 'tree'`.
+**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For simple, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API.
 {% endhint %}
 
 {% hint style="warning" %}
 **Trees are data providers, not UI components.** A tree on its own does nothing visible. To create a working tree in the backoffice, you need to understand three things:
 
-1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar
-2. **[Populating Trees](#populating-trees)** - How to provide data to your tree
-3. **[Tree Navigation](#tree-navigation)** - How clicking tree items navigates to workspaces
+1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar or elsewhere
+2. **[Populating Trees](#populating-trees)** - How to populate tree with data
+3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces byt clicking menu items
 {% endhint %}
 
 ## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
