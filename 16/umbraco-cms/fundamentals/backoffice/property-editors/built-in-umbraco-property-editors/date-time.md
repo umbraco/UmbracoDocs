@@ -10,7 +10,7 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ## Data Type Definition Example
 
-![Data Type Definiton](images/date-time.png)
+![Data Type Definiton](images/Date-time-picker-v16.png)
 
 There is one setting available for manipulating the DateTime property.
 
@@ -18,7 +18,7 @@ The setting involves defining the format. The default date format in the Umbraco
 
 ## Content Example
 
-![Content Example](../built-in-property-editors/images/date-picker-v8.png)
+![Content Example](images/Date-picker-with-content-v16.png)
 
 ## MVC View Example - displays a datetime
 
