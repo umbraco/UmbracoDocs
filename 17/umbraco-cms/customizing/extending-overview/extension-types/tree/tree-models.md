@@ -12,30 +12,18 @@ The base interface for tree items. All tree items must include these properties:
 
 ```typescript
 interface UmbTreeItemModel {
-  unique: string;        // Unique identifier for this item
-  entityType: string;    // Links to workspace for navigation (must match workspace meta.entityType)
+  unique: string;        // Identifier for selection, navigation, and API calls
+  entityType: string;    // Must match workspace meta.entityType for navigation
   name: string;          // Display name shown in the tree
   hasChildren: boolean;  // Shows expand arrow when true
   isFolder: boolean;     // Visual styling hint
   icon?: string;         // Icon name (e.g., 'icon-document', 'icon-folder')
-  parent?: {             // Parent reference for hierarchy
-    unique: string;
-    entityType: string;
+  parent?: {             // Parent reference for hierarchy and breadcrumbs
+    unique: string;      // Parent's identifier
+    entityType: string;  // Parent's entity type
   };
 }
 ```
-
-### Property Details
-
-| Property | Required | Description |
-|----------|----------|-------------|
-| `unique` | Yes | Identifier used for selection, navigation, and API calls. Usually maps to your entity's ID. |
-| `entityType` | Yes | Must match your workspace's `meta.entityType` for tree clicks to navigate correctly. |
-| `name` | Yes | Displayed as the tree item label. |
-| `hasChildren` | Yes | Controls whether the expand/collapse arrow appears. Set `true` if the item can have children, even if currently empty. |
-| `isFolder` | Yes | Affects visual styling. Folders typically show differently than leaf items. |
-| `icon` | No | Icon displayed next to the name. Uses Umbraco icon names. |
-| `parent` | No | Reference to parent item. Used for building hierarchy and breadcrumbs. |
 
 ### Extending the Model
 
