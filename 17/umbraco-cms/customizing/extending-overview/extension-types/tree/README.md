@@ -170,9 +170,7 @@ For detailed implementation guides, see:
 
 When users click a tree item, Umbraco navigates to a **workspace** to edit that item. The `entityType` in your tree items must match the `meta.entityType` in your workspace manifest.
 
-{% hint style="warning" %}
-**Clicking tree items shows endless loading?** See [Tree Navigation & Workspaces](./tree-navigation.md) for setup and troubleshooting.
-{% endhint %}
+See **[Tree Navigation & Workspaces](./tree-navigation.md)** for setup details and troubleshooting.
 
 ---
 
