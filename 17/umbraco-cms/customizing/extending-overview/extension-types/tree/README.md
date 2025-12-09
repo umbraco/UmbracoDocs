@@ -57,12 +57,12 @@ Tree items define how individual items render. Use `kind: 'default'` for standar
     type: 'treeItem',
     kind: 'default',
     alias: 'My.TreeItem',
-    forEntityTypes: ['my-entity-type'],
+    forEntityTypes: ['my-tree-root', 'my-tree-item'],
 }
 ```
 
 {% hint style="info" %}
-The `forEntityTypes` array must match the `entityType` values returned by your data source.
+Include both your root entity type and item entity type in `forEntityTypes` so the tree item renderer handles all nodes in your tree.
 {% endhint %}
 
 ### Connecting to a Menu
@@ -74,9 +74,14 @@ To display your tree in a section sidebar, create a MenuItem with `kind: 'tree'`
     type: 'menuItem',
     kind: 'tree',
     alias: 'My.MenuItem.Tree',
+    name: 'My Tree Menu Item',
+    weight: 100,
     meta: {
-        treeAlias: 'My.Tree',
+        label: 'My Tree',
+        icon: 'icon-folder',
+        entityType: 'my-tree-root',
         menus: ['My.Menu'],
+        treeAlias: 'My.Tree',
         hideTreeRoot: true,  // Optional: show items at root level
     },
 }
