@@ -23,19 +23,13 @@ The only setting that is available for manipulating the Date property is to set 
 ### With Models Builder
 
 ```csharp
-@Model.Date.ToString("dd MM yyyy")
+@Model.Date
 ```
 
 ### Without Models Builder
 
-{% hint style="warning" %}
-See [Common pitfalls](../../../../reference/common-pitfalls.md) for more information about why the dynamic approach is obsolete.
-{% endhint %}
-
 ```csharp
-@{
-    @Model.Date.ToString("dd-MM-yyyy")
-}
+@Model.Value("date")
 ```
 
 ## Add values programmatically
