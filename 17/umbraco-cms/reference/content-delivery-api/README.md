@@ -83,6 +83,7 @@ A few additional configuration options will allow you to restrict access to the 
                 "PublicAccess": true,
                 "ApiKey": "my-api-key",
                 "DisallowedContentTypeAliases": ["alias1", "alias2", "alias3"],
+                "AllowedContentTypeAliases":  ["allowedAlias1", "allowedAlias2", "allowedAlias3"],
                 "RichTextOutputAsJson": false
             }
         }
@@ -93,7 +94,36 @@ A few additional configuration options will allow you to restrict access to the 
 
 Find a description of each of the configuration keys in the table below.
 
-<table><thead><tr><th width="340">Configuration key</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicAccess</code></td><td>Determines whether the enabled Delivery API should be publicly accessible or if access should require an API key.</td></tr><tr><td><code>ApiKey</code></td><td>Specifies the API key needed to authorize access to the API when public access is disabled. This setting is also used to access draft content for preview.</td></tr><tr><td><code>DisallowedContentTypeAliases</code> </td><td>Contains the aliases of the content types that should never be exposed through the Delivery API, regardless of any other configurations.</td></tr><tr><td><code>RichTextOutputAsJson</code></td><td>Enable outputting rich text content as JSON rather than the default HTML output. JSON can be a preferred format in many scenarios, not least because it supports the routing of internal links better than HTML does.</td></tr></tbody></table>
+<table>
+    <thead>
+        <tr>
+            <th width="340">Configuration key</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>PublicAccess</code></td>
+            <td>Determines whether the enabled Delivery API should be publicly accessible or if access should require an API key.</td>
+        </tr>
+        <tr>
+            <td><code>ApiKey</code></td>
+            <td>Specifies the API key needed to authorize access to the API when public access is disabled. This setting is also used to access draft content for preview.</td>
+        </tr>
+        <tr>
+            <td><code>DisallowedContentTypeAliases</code></td>
+            <td>Contains the aliases of the content types that should never be exposed through the Delivery API.</td>
+        </tr>
+        <tr>
+            <td><code>AllowedContentTypeAliases</code></td>
+            <td>Contains the aliases of the content types that should be exposed through the Delivery API, this configuration takes precedence over the <code>DisallowedContentTypeAliases</code> so if there are any duplicates, they will be allowed regardless. Note that if this configuration contains any aliases, all other aliases will not be exposed through the Delivery API, if the configuration is empty, all aliases will be exposed, unless they are included in the <code>DisallowedContentTypeAliases</code></td>
+        </tr>
+        <tr>
+            <td><code>RichTextOutputAsJson</code></td>
+            <td>Enable outputting rich text content as JSON rather than the default HTML output. JSON can be a preferred format in many scenarios, not least because it supports the routing of internal links better than HTML does.</td>
+        </tr>
+    </tbody>
+</table>
 
 {% hint style="info" %}
 **Are you using Umbraco Cloud?**
