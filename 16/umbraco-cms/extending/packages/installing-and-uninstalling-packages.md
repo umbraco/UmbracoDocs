@@ -154,7 +154,7 @@ In this example, we will be using the SEOChecker package. This package allows de
 
 An example use case of the SEOChecker property on a Document Type, as presented in the Content section:
 
-![SEOChecker in content](../../../../17/umbraco-cms/extending/packages/images/seochecker-content-section.png)
+![SEOChecker in content](images/seochecker-content-section.png)
 
 To uninstall the SEOChecker from a website, the first step is to remove the package via a `dotnet` command or use the NuGet Package Manager.
 
@@ -172,7 +172,7 @@ After that, cleaning the solution is recommended.
 
 While uninstalling the package would remove most of the custom code, the `App_Plugins` folder has to be cleaned manually.
 
-<img src="../../../../17/umbraco-cms/extending/packages/images/seochecker-app-plugins.png" alt="SEOChecker files in App Plugins" data-size="original">
+<img src="images/seochecker-app-plugins.png" alt="SEOChecker files in App Plugins" data-size="original">
 
 Removing _seochecker_ folder from `App_Plugins` will clean up the leftover backoffice section and dashboards.
 
@@ -184,6 +184,6 @@ If content on the website relies on having a custom Property Editor or a data so
 
 In the case of the SEOChecker, the custom property added from the package would look like this after all the package files have been removed:
 
-![The SEOChecker in Content after removing the package](../../../../17/umbraco-cms/extending/packages/images/seochecker-after-removal.png)
+![The SEOChecker in Content after removing the package](images/seochecker-after-removal.png)
 
 Depending on the packages and the implementation, rendering of content from custom editors, or any frontend functionality dependent on external code, might not work correctly. It is always recommended to inspect the frontend of the site after removing any packages.

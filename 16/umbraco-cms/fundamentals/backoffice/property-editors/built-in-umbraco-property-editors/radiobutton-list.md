@@ -18,7 +18,7 @@ You can use dictionary items to translate the values of a Radiobutton List prope
 
 ## Content Example
 
-![Radiobutton List Content](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/RadioButton-List-Content-v8.png)
+![Radiobutton List Content](../built-in-property-editors/images/RadioButton-List-Content-v8.png)
 
 ## MVC View Example
 

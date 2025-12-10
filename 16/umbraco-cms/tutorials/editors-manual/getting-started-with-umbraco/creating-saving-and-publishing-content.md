@@ -103,7 +103,7 @@ To compare content between environments, follow these steps:
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can click the **Actions** drop-down.
 3.  Select **Compare** to open the **Compare** window.
 
-    ![Compare option](../../../../../17/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Compare_option.png)
+    ![Compare option](images/Compare_option.png)
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
 6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
@@ -111,7 +111,7 @@ To compare content between environments, follow these steps:
 8. Restore the content from the higher environment using the **Partial restore** option.
 9.  Click **Close** to continue editing the content node.
 
-    ![Comparing Content](../../../../../17/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco/images/Comparing_Content.png)
+    ![Comparing Content](images/Comparing_Content.png)
 
 ## Transferring content
 

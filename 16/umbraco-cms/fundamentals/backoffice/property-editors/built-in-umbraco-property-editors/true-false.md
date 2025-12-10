@@ -18,7 +18,7 @@ It is also possible to define a label, that will be displayed next to the checkb
 
 ## Content Example
 
-![No Edit Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Checkbox-Content.png)
+![No Edit Content Example](../built-in-property-editors/images/Checkbox-Content.png)
 
 ## MVC View Example
 

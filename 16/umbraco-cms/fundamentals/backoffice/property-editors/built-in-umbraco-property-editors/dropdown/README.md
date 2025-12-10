@@ -30,11 +30,11 @@ You can use dictionary items to translate the options in a Dropdown property edi
 
 ### Single Value
 
-![Single dropdown content example](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
+![Single dropdown content example](../../built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
 
 ### Multiple Values
 
-![Multiple dropdown content example](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
+![Multiple dropdown content example](../../built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
 
 ## MVC View Example
 

@@ -58,17 +58,17 @@ To display the profiler on the front end of your site:
 * Sign in to the backoffice as a user who has access to the **Settings** section.
 * Add `?umbDebug=true` to the request query string.
 
-<figure><img src="../../../../../17/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-view.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8-miniprofiler-view.png" alt=""><figcaption></figcaption></figure>
 
 If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler makes available to you about the execution path of your page:
 
-<figure><img src="../../../../../17/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-trivial.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8-miniprofiler-trivial.png" alt=""><figcaption></figcaption></figure>
 
 and any underlying SQL Statements that are being executed for a part of the execution:
 
-<figure><img src="../../../../../17/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-trigger.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/v8-miniprofiler-sql-trigger.png" alt=""><figcaption></figcaption></figure>
 
-![Underlying SQL query details](../../../../../17/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-sql-details.png)
+![Underlying SQL query details](images/v8-miniprofiler-sql-details.png)
 
 ### Writing to the MiniProfiler
 
@@ -115,7 +115,7 @@ public class RootController : RenderController
 
 and now in the profiler you can see:
 
-![Show Trivial](../../../../../17/umbraco-cms/fundamentals/code/debugging/images/v8-miniprofiler-write.png)
+![Show Trivial](images/v8-miniprofiler-write.png)
 
 ## Umbraco Productivity Tool - Chrome Extension
 
@@ -123,7 +123,7 @@ If you are using the Google Chrome browser you can install this [Umbraco Product
 
 This will allow you to quickly switch between debugging with the MiniProfiler, Trace viewer and normal mode.
 
-![Umbraco Productivity Tool](../../../../../17/umbraco-cms/fundamentals/code/debugging/images/chrome-tool.png)
+![Umbraco Productivity Tool](images/chrome-tool.png)
 
 ## [Logging](logging.md)
 

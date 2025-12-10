@@ -20,11 +20,11 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ### Without a character limit
 
-![Textbox Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textbox-Content-v8.png)
+![Textbox Content Example](../built-in-property-editors/images/Textbox-Content-v8.png)
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textbox-Content-Limit-v8.png)
+![Textbox Content Example Without a Character Limit](../built-in-property-editors/images/Textbox-Content-Limit-v8.png)
 
 ## MVC View Example
 
