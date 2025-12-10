@@ -57,7 +57,7 @@ To display a rich-text value, stripping out the HTML markup and limiting it to t
 
 {% hint style="info" %}
 Please note, using `umbValue` directly with a rich-text value will not display the contents. This is due to the complexity of the underlying data structure. The `stripHtml` filter has been designed to support the rich-text value.
-Alternatively, you may use the UFM Expression syntax to access the raw rich-text value, e.g. `${ bodyText.markup }`.
+Alternatively, you may use the UFM Expression syntax to access the raw rich-text value, like `${ bodyText.markup }`.
 {% endhint %}
 
 The following UFM filters are available to use.
