@@ -49,57 +49,37 @@ public class PeopleController : Controller
             return Problem("Unable to get UmbracoContext");
         }
 
-        try
+        if (context.Content == null)
         {
-            // Use IPublishedContentQuery.ContentAtRoot() instead of context.Content.GetAtRoot()
-            var rootNodes = _publishedContentQuery.ContentAtRoot();
-
-            if (!rootNodes.Any())
-            {
-                return Ok(new { message = "No content found at root", nodes = new string[] { } });
-            }
-
-            // Get all descendant nodes and return their names and types
-            var allContent = rootNodes
-                .SelectMany(root => root.DescendantsOrSelf())
-                .Select(node => new
-                {
-                    name = node.Name,
-                    contentType = node.ContentType.Alias,
-                    id = node.Id,
-                    url = node.Url()
-                })
-                .ToList();
-
-            return Ok(new
-            {
-                message = "Success",
-                totalNodes = allContent.Count,
-                content = allContent
-            });
-        }
-        catch (Exception ex)
-        {
-            return Problem($"Error retrieving content: {ex.Message}");
-        }
-    }
-
-    [HttpGet("test")]
-    public ActionResult TestContext()
-    {
-        if (_umbracoContextAccessor.TryGetUmbracoContext(out IUmbracoContext? context) == false)
-        {
-            return Ok(new { status = "error", message = "Unable to get UmbracoContext" });
+            return Problem("Content Cache is null");
         }
 
-        return Ok(new
+        // Use IPublishedContentQuery to get root content
+        var rootNodes = _publishedContentQuery.ContentAtRoot();
+
+        if (!rootNodes.Any())
         {
-            status = "success",
-            message = "UmbracoContext is accessible",
-            hasContent = context.Content != null,
-            isPreview = context.InPreviewMode,
-            cleanedUrl = context.CleanedUmbracoUrl?.ToString()
-        });
+            return Problem("No content found at root");
+        }
+
+        // Find a specific parent node (e.g., "People" section)
+        var peopleNode = rootNodes
+            .FirstOrDefault()?
+            .Children()
+            .FirstOrDefault(c => c.ContentType.Alias == "people");
+
+        if (peopleNode == null)
+        {
+            return Problem("People node not found");
+        }
+
+        // Get only the direct children of the People node
+        // Use Children() extension method instead of Children property. Scheduled for removal in Umbraco 18.
+        var personNodes = peopleNode.Children()
+            .Where(c => c.ContentType.Alias == "person")
+            .Select(p => p.Name);
+
+        return Ok(personNodes);
     }
 }
 ```
