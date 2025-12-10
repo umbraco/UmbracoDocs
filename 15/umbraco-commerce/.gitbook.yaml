@@ -1,0 +1,8 @@
+root: ./
+
+​structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    key-concepts/events: key-concepts/events/README.md
