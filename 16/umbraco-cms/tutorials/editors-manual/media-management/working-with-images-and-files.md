@@ -56,9 +56,9 @@ To move Media Items within the Media section:
 1. Select the Media Item you want to move.
 2.  Click **...** next to the Media Item and click **Move**.
 
-    ![Move media items](../../../../../17/umbraco-cms/tutorials/editors-manual/media-management/images/move-images-v9.png)
+    ![Move media items](images/move-images-v9.png)
 3.  Choose the location where you want to move the Media Item to in the tree structure.
 
-    ![Move Media.png](../../../../../17/umbraco-cms/tutorials/editors-manual/media-management/images/Move-media-location-v9.png)
+    ![Move Media.png](images/Move-media-location-v9.png)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.

@@ -230,7 +230,7 @@ public class PackageMigrationPlan : AutomaticPackageMigrationPlan
 }
 ```
 
-![Automatic package migration](../../../../17/umbraco-cms/.gitbook/assets/embeded-resource.png)
+![Automatic package migration](../../.gitbook/assets/embeded-resource.png)
 
 {% hint style="info" %}
 Whenever the embedded package.xml file changes, the automatic package migration plan is executed again. This is due to the fact that the migration state is based on the file hash. Existing schema or content will not be overwritten in this process.
@@ -352,13 +352,13 @@ public class CustomPackageAsyncMigration : AsyncPackageMigrationBase
 
 Here we also added the ZIP file as an embedded resource to the package project.
 
-![ZIP as an embedded resource](../../../../17/umbraco-cms/.gitbook/assets/embeded-resource-props.png)
+![ZIP as an embedded resource](../../.gitbook/assets/embeded-resource-props.png)
 
-![Automatic package migration](../../../../17/umbraco-cms/.gitbook/assets/embeded-zip-resource.png)
+![Automatic package migration](../../.gitbook/assets/embeded-zip-resource.png)
 
 Whichever migration plan you choose to create, you will be able to see that your package has been installed after the migration is completed.
 
-![Installed package](../../../../17/umbraco-cms/.gitbook/assets/installed-package.png)
+![Installed package](../../.gitbook/assets/installed-package.png)
 
 When using a custom package migration plan, the current state is ignored by default. This causes it to execute all migrations again whenever this isn't the same as the final state of the plan (e.g. if you added a new migration). This is due to the `IgnoreCurrentState` being set to `true` in the `PackageMigrationPlan` base class. You can override this property and set it to `false` again to make it behave like regular migration plans and only run the migrations that have not yet been executed on the current environment.
 
@@ -379,6 +379,6 @@ By default, all these package migrations are executed unattended during startup 
   }
 ```
 
-![Attended package install](../../../../17/umbraco-cms/extending/packages/images/package-install-attended.png)
+![Attended package install](images/package-install-attended.png)
 
 The configuration of package migrations can be different for each environment and makes it possible to have the migration executed unattended on the development environment, but leave them out or manually execute them on other environments. This is useful when you use a tool like Umbraco Deploy or USync as these will migrate the content.

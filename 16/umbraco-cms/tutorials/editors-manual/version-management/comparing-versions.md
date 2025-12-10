@@ -13,4 +13,4 @@ To compare a page on the site with its previous versions:
 
     After selecting the version, a comparison of the current page with the version you selected is displayed. The text highlighted in red and striked-out will not appear in the selected version and the text highlighted in green means the text that will be added, should you choose to rollback to that version of the page.
 
-    ![Rollback Changes](../../../../../17/umbraco-cms/tutorials/editors-manual/version-management/images/Rollback-changes-v10.png)
+    ![Rollback Changes](images/Rollback-changes-v10.png)

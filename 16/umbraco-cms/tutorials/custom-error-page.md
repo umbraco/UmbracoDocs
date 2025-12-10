@@ -336,7 +336,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 You will be presented with a generic error page when there is an error during boot.
 
-![Boot Failed](../../../17/umbraco-cms/tutorials/images/BootFailedGeneric.png)
+![Boot Failed](images/BootFailedGeneric.png)
 
 You can replace the default BootFailed page with a custom static `BootFailed.html`. Follow the steps below to set it up:
 

@@ -38,7 +38,7 @@ To install Umbraco, follow these steps:
 
 Go to **File > New > Project** and search for `Umbraco` in the _Search for templates_ field.
 
-![The Create a new project dialog in Visual Studio.](../../../../../17/umbraco-cms/fundamentals/setup/install/images/VS/create-project.png)
+![The Create a new project dialog in Visual Studio.](images/VS/create-project.png)
 
 Once you select **Umbraco Project (Umbraco HQ)** navigate to the next step by clicking _Next_.
 
