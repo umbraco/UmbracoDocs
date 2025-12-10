@@ -4,7 +4,7 @@ When forms are created, editors will want to add them to pages in Umbraco. To do
 
 Umbraco Forms provides three variations of a form picker.
 
-<figure><img src="../../../14/umbraco-forms/developer/images/form-pickers.png" alt=""><figcaption><p>Form Pickers</p></figcaption></figure>
+<figure><img src="images/form-pickers.png" alt=""><figcaption><p>Form Pickers</p></figcaption></figure>
 
 Most commonly used is **Form Picker (single)**. This will allow the editor to select a single form for display on page.
 
@@ -20,7 +20,7 @@ Finally you can provide further flexibility for the editor to select not only a 
 
 Each property editor allows you to restrict the forms that can be chosen with the Data Type. You do this by setting either or both of the list of "Allowed folders" or "Allowed forms".
 
-<figure><img src="../../../14/umbraco-forms/developer/images/form-picker-config.png" alt=""><figcaption><p>Form Picker DataType Configuration</p></figcaption></figure>
+<figure><img src="images/form-picker-config.png" alt=""><figcaption><p>Form Picker DataType Configuration</p></figcaption></figure>
 
 The "Form Details Picker" also allows you to select whether a theme or redirect selection is available.
 
