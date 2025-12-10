@@ -13,7 +13,7 @@ Upon character identification in the fluent configuration, the localization cont
 Supported areas:
 
 * Collections - `Name` and `Description` properties.
-* Data Views - only if the key is in a localization resource, not in the translation dictionary. **** document this!!! In the issue I will document how to inject and work with the LocalizationContext for access to both services.
+* Data Views - only if the key is in a localization resource, not in the translation dictionary (e.g. [additional localization](#localizing-an-additional-area)).
 * Collection filters - `Label` and `Description` properties.
 * Cards
 * Editor fields - `Label` and `Description` field properties.
