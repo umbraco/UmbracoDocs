@@ -158,7 +158,7 @@ To add content to the blocks:
 1. Go to the **Content** section and select **Product**.
 2.  Select **Add Content** in the **Features** group. The **Add Content** displays the blocks we created earlier.
 
-    <figure><img src="../../../13/umbraco-cms/tutorials/images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
 3. Select **Feature**. The **Feature** window opens.
 4. Enter the **Name** and **Details** in the Feature window. You will notice you can view the content as you type. This is because we have enabled the **Live editing** mode.
 5. Click **Confirm**.
