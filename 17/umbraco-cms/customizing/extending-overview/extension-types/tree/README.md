@@ -107,7 +107,7 @@ Trees need data. You can populate a tree in two ways:
 
 ### Option 1: Manual Data (Basic)
 
-For simple, static trees you can implement a basic data source that returns hardcoded or locally-computed items:
+For basic, static trees you can implement a basic data source that returns hardcoded or locally-computed items:
 
 ```typescript
 export class MyBasicDataSource implements UmbTreeDataSource<MyTreeItemModel> {
