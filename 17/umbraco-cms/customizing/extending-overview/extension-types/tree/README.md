@@ -5,7 +5,7 @@ description: A guide to creating a custom tree in Umbraco
 # Trees
 
 {% hint style="info" %}
-**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For simple, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API.
+**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For basic, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -18,7 +18,7 @@ description: A guide to creating a custom tree in Umbraco
 
 ## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
 
-Trees provide hierarchical data to **Menus**, which display the actual navigation you see in the backoffice sidebar. To display a tree, you need to connect several extensions:
+Trees provide hierarchical data to **Menus**, which display the actual navigation you see in the backoffice sidebar. To display a tree, you need to connect multiple extensions:
 
 ```
 Tree (data provider)
@@ -105,12 +105,12 @@ This is less common than displaying via menus but useful for custom UIs.
 
 Trees need data. You can populate a tree in two ways:
 
-### Option 1: Manual Data (Simple)
+### Option 1: Manual Data (Basic)
 
 For simple, static trees you can implement a basic data source that returns hardcoded or locally-computed items:
 
 ```typescript
-export class MySimpleDataSource implements UmbTreeDataSource<MyTreeItemModel> {
+export class MyBasicDataSource implements UmbTreeDataSource<MyTreeItemModel> {
     async getRootItems() {
         return {
             items: [

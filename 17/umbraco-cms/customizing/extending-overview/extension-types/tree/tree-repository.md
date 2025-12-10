@@ -1,6 +1,6 @@
 # Tree Repository
 
-A tree repository orchestrates tree data operations by coordinating between a **Data Source** (which fetches data from APIs) and a **Store** (which caches data in memory). The repository itself does not communicate with APIs directly.
+A tree repository orchestrates tree data operations. It coordinates between a **Data Source** (which fetches from APIs) and a **Store** (which caches data in memory).
 
 {% hint style="info" %}
 The repository delegates all API communication to the [Data Source](./tree-data-source.md). It handles caching through the [Store](./tree-store.md).
