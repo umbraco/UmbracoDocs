@@ -116,7 +116,7 @@ Find a description of each of the configuration keys in the table below.
         </tr>
         <tr>
             <td><code>AllowedContentTypeAliases</code></td>
-            <td>Contains the aliases of the content types that should be exposed through the Delivery API, this configuration takes precedence over the <code>DisallowedContentTypeAliases</code> so if there are any duplicates, they will be allowed regardless. Note that if this configuration contains any aliases, all other aliases will not be exposed through the Delivery API, if the configuration is empty, all aliases will be exposed, unless they are included in the <code>DisallowedContentTypeAliases</code></td>
+            <td>Contains the aliases of the content types that should be exposed through the Delivery API. This configuration takes precedence over the <code>DisallowedContentTypeAliases</code> so if there are any duplicates, they will be allowed regardless. If this configuration contains any aliases, all other aliases will not be exposed through the Delivery API. If the configuration is empty, all aliases will be exposed, unless they are included in <code>DisallowedContentTypeAliases</code></td>
         </tr>
         <tr>
             <td><code>RichTextOutputAsJson</code></td>
