@@ -10,6 +10,19 @@ To enable localization, prefix the input string with the `#` character.
 
 Upon character identification in the fluent configuration, the localization context will attempt to lookup a matching localized string using two services available. If no matching record is found, it will default to the provided string value.
 
+Supported areas:
+
+* Collections - `Name` and `Description` properties.
+* Data Views - only if the key is in a localization resource, not in the translation dictionary. **** document this!!! In the issue I will document how to inject and work with the LocalizationContext for access to both services.
+* Collection filters - `Label` and `Description` properties.
+* Cards
+* Editor fields - `Label` and `Description` field properties.
+* Fieldsets names
+* Actions names
+* Context Apps names
+* Dashboards names
+* Sections names
+
 ## Localization Services
 
 The localization context uses two abstractions to provide localization options.
@@ -68,4 +81,39 @@ For a custom section, use the following configuration:
 
 ![section_name](../images/section_name.png)
 
+### Localizing an additional area
 
+In a scenario where a specific area is not covered by the implemented localization, you can update it directly in the fluent configuration by using the `LocalizationContext`.
+
+For example, this custom data view:
+
+```csharp
+public class CommentStatusDataViewsBuilder : DataViewsBuilder<Comment>
+{
+    private readonly LocalizationContext _localizationContext;
+    public CommentStatusDataViewsBuilder(LocalizationContext localizationContext)
+    {
+        _localizationContext = localizationContext;
+    }
+
+    public override IEnumerable<DataViewSummary> GetDataViews()
+    {
+        yield return new DataViewSummary
+        {
+            Name = _localizationContext.TryLocalize("#dataView_All", out string localizedText) ? localizedText : string.Empty,
+            Alias = "all",
+            Group = "Status"
+        };
+        
+        foreach (var val in Enum.GetValues<CommentStatus>())
+        {
+            yield return new DataViewSummary
+            {
+                Name = val.ToString(),
+                Alias = val.ToString().ToLower(),
+                Group = "Status"
+            };
+        }
+    }
+}
+```
