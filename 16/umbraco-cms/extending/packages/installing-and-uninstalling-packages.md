@@ -38,7 +38,7 @@ The Package Manager has an integrated search function that allows you to find an
 
 Once the package has been installed, it will show up under the **Packages** section in the backoffice, under **Installed** tab.
 
-![Backoffice - installed packages](../../../../17/umbraco-cms/extending/packages/images/backoffice-installed-packages.png)
+![Backoffice - installed packages](images/backoffice-installed-packages.png)
 
 ## Uninstalling packages
 
@@ -74,7 +74,7 @@ With packages like the StarterKit, the process does not end there. While the pac
 
 There is no universal way to tell what content comes from a package, and what content is custom-made. In the Content section, delete individual nodes accordingly. If the goal is to fully remove the package and clean the site, all the content can be removed (and the recycle bin emptied).
 
-<img src="../../../../17/umbraco-cms/extending/packages/images/removing-content.png" alt="Backoffice - removing content" data-size="original">
+<img src="images/removing-content.png" alt="Backoffice - removing content" data-size="original">
 
 </details>
 
@@ -104,7 +104,7 @@ Document Types can be removed from the **Settings** section. If fully removing t
 
 As opposed to Document Types, there are some Data Types that are available out of the box when Umbraco is installed. It is not recommended to remove them. The safe approach is to delete any item that starts with a Document Type prefix and includes multiple dashes. That is the default naming convention for new configurations of Data Types (Example: "Blog - How many posts should be shown - Slider")
 
-<img src="../../../../17/umbraco-cms/extending/packages/images/removing-datatypes.png" alt="Backoffice - removing data types" data-size="original">
+<img src="images/removing-datatypes.png" alt="Backoffice - removing data types" data-size="original">
 
 </details>
 
@@ -114,7 +114,7 @@ As opposed to Document Types, there are some Data Types that are available out o
 
 No Templates are available out of the box in a new installation. If cleaning up after a package, it would be okay to delete all that are present
 
-<img src="../../../../17/umbraco-cms/extending/packages/images/removing-templates.png" alt="Backoffice - removing templates" data-size="original">
+<img src="images/removing-templates.png" alt="Backoffice - removing templates" data-size="original">
 
 </details>
 
@@ -124,7 +124,7 @@ No Templates are available out of the box in a new installation. If cleaning up 
 
 Out of the box, there are a few views available in the `blocklist` and `grid` folders. Everything else can theoretically be removed.
 
-<img src="../../../../17/umbraco-cms/extending/packages/images/removing-partials.png" alt="Backoffice - removing partial views" data-size="original">
+<img src="images/removing-partials.png" alt="Backoffice - removing partial views" data-size="original">
 
 </details>
 
