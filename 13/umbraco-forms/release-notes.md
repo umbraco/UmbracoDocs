@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.8.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.8.0) (December 11th 2025)
+* All items detailed under release candidates for 13.8.0.
+
 ### [13.8.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F13.8.0) (December 4th 2025)
 * Improve accuracy of drag-and-drop in form designer [#822](https://github.com/umbraco/Umbraco.Forms.Issues/issues/822)
 * Render uploaded files as semantically correct HTML [#1373](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1373)
