@@ -49,6 +49,17 @@ public class PeopleController : Controller
             return Problem("Unable to get UmbracoContext");
         }
 
+        // Check if we're in preview mode using UmbracoContext
+        if (context.InPreviewMode)
+        {
+            // In preview mode, you might want to show draft content or additional info
+            return Ok(new
+            {
+                message = "Preview mode active",
+                isPreview = true
+            });
+        }
+
         if (context.Content == null)
         {
             return Problem("Content Cache is null");
@@ -62,7 +73,7 @@ public class PeopleController : Controller
             return Problem("No content found at root");
         }
 
-        // Find a specific parent node (e.g., "People" section)
+        // Find a specific parent node (for example, "People" section)
         var peopleNode = rootNodes
             .FirstOrDefault()?
             .Children()
@@ -74,12 +85,21 @@ public class PeopleController : Controller
         }
 
         // Get only the direct children of the People node
-        // Use Children() extension method instead of Children property. Scheduled for removal in Umbraco 18.
         var personNodes = peopleNode.Children()
             .Where(c => c.ContentType.Alias == "person")
             .Select(p => p.Name);
 
-        return Ok(personNodes);
+        // Return results with UmbracoContext information
+        return Ok(new
+        {
+            people = personNodes,
+            // Include UmbracoContext properties in the response
+            contextInfo = new
+            {
+                isPreview = context.InPreviewMode,
+                currentUrl = context.CleanedUmbracoUrl?.ToString()
+            }
+        });
     }
 }
 ```
