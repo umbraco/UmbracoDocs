@@ -72,7 +72,7 @@ Note the constructor minimum needs to inject what is required for the base `Back
 
 ## Notifications
 
-There are [many notifications](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.\
+There are [many notifications](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Web.Common.Security.BackOfficeUserManager.html) you can handle on the `BackOfficeUserManager`.\
 Internally these are mainly used for auditing but there are some that allow you to customize some workflows:
 
 * `SendEmailNotification`

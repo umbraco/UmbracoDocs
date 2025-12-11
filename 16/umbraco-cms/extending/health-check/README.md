@@ -6,7 +6,7 @@ description: "Health Checks are used to determine the state of your Umbraco proj
 
 The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
-For inspiration when building your checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/Checks), as well as our [guides](guides/). Some examples will follow in this document.
+For inspiration when building your checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v16/dev/src/Umbraco.Core/HealthChecks/Checks), as well as our [guides](guides/). Some examples will follow in this document.
 
 ## Built-in checks
 
@@ -188,7 +188,7 @@ Disallow: /umbraco/";
 
 ## Custom health check notifications
 
-Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this, refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v10/dev/src/Umbraco.Core/HealthChecks/NotificationMethods).
+Health check notifications can be scheduled to run periodically and notify you of the results. Included with Umbraco is a notification method to deliver the results via email. In a similar manner to how it's possible to create your health checks, you can also create custom notification methods to send the message summarising the status of the health checks via other means. Again, for further details on implementing this, refer to the [existing notification methods within the core code base](https://github.com/umbraco/Umbraco-CMS/tree/v16/dev/src/Umbraco.CoreCore/HealthChecks/NotificationMethods).
 
 Each notification method needs to implement the core interface `IHealthCheckNotificationMethod` and, for ease of creation, can inherit from the base class `NotificationMethodBase`, which itself implements the `IHealthCheckNotificationMethod` interface. The class must also be decorated with an instance of the `HealthCheckNotificationMethod` attribute. There's one method to implement - `SendAsync(HealthCheckResults results)` - which is responsible for taking the results of the health checks and sending them via the mechanism of your choice.
 

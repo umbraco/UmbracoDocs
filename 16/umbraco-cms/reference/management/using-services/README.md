@@ -6,7 +6,7 @@ description: List of service references along with instructions on how to use th
 
 In this article you can learn how to use and work with some of the services provided with Umbraco CMS.
 
-You can find a list of all supported services in the [API Documentation](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.html).
+You can find a list of all supported services in the [API Documentation](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.html).
 
 ## Getting a Service
 

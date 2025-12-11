@@ -210,7 +210,7 @@ public class ProductsControllerTests
 
 ## Testing ICultureDictionary using the UmbracoHelper
 
-See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
+See [Core documentation on the interface ICultureDictionary](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Dictionary.ICultureDictionary.html).
 
 ```csharp
 public class HomeController : RenderController

@@ -36,11 +36,11 @@ The list of available default Embed Providers in an Umbraco install is as follow
 * Hulu
 * Giphy
 
-You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Core.Media.EmbedProviders](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
+You can see the details of these, and any recent editions in the C# developer reference for [Umbraco.Core.Media.EmbedProviders](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.html).
 
 ## Configuring a new provider
 
-Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `OEmbedProviderBase` class as a starting point. You can read more about this class in the [Api documentation](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.OEmbedProviderBase.html?q=OEmbedProviderBase).
+Create a new provider by creating a C# class that implements the `IEmbedProvider` interface. Umbraco provides a convenient `OEmbedProviderBase` class as a starting point. You can read more about this class in the [Api documentation](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Media.EmbedProviders.OEmbedProviderBase.html?q=OEmbedProviderBase).
 
 ### Adding a new OEmbed Provider Example
 

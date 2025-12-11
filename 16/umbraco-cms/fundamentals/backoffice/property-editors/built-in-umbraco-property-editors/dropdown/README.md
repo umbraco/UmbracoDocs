@@ -30,11 +30,11 @@ You can use dictionary items to translate the options in a Dropdown property edi
 
 ### Single Value
 
-![Single dropdown content example](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
+![Single dropdown content example](../../built-in-property-editors/dropdown/images/DropdownSingle-Content.png)
 
 ### Multiple Values
 
-![Multiple dropdown content example](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
+![Multiple dropdown content example](../../built-in-property-editors/dropdown/images/DropdownMultiple-Content.png)
 
 ## MVC View Example
 
@@ -87,7 +87,7 @@ You can use dictionary items to translate the options in a Dropdown property edi
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
