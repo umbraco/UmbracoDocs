@@ -76,17 +76,17 @@ The `propertyEditorSchema` manifest can contain the following properties:
 
 | Property | Type   | Description                                                                 |
 | -------- | ------ | --------------------------------------------------------------------------- |
-| type     | string | Must be `"propertyEditorSchema"`                                            |
+| type     | string | Must be `"propertyEditorSchema"`.                                            |
 | alias    | string | Unique identifier for the schema. Must match the C# `DataEditor` alias.    |
-| name     | string | Friendly name displayed in the backoffice                                   |
-| meta     | object | Metadata object containing schema configuration (see Meta Properties below) |
+| name     | string | Friendly name displayed in the backoffice.                                   |
+| meta     | object | Metadata object containing schema configuration (see Meta Properties below). |
 
 ### Optional Properties
 
 | Property | Type   | Description                                                    |
 | -------- | ------ | -------------------------------------------------------------- |
 | weight   | number | Ordering weight. Higher numbers appear first in lists.         |
-| kind     | string | Optional kind identifier for grouping related schemas together |
+| kind     | string | Optional kind identifier for grouping related schemas. |
 
 ## Meta Properties
 
@@ -96,13 +96,13 @@ The `meta` object contains the following properties:
 
 | Property                     | Type   | Description                                                           |
 | ---------------------------- | ------ | --------------------------------------------------------------------- |
-| defaultPropertyEditorUiAlias | string | The alias of the default Property Editor UI to use with this schema  |
+| defaultPropertyEditorUiAlias | string | The alias of the default Property Editor UI to use with this schema.  |
 
 ### Optional Meta Properties
 
 | Property | Type   | Description                                                              |
 | -------- | ------ | ------------------------------------------------------------------------ |
-| settings | object | Configuration settings for the property editor (see Settings below)      |
+| settings | object | Configuration settings for the property editor (see Settings below).      |
 
 ## Settings Structure
 
@@ -122,11 +122,11 @@ Each object in the `properties` array defines a configuration field:
 | Property                 | Type   | Required | Description                                                                    |
 | ------------------------ | ------ | -------- | ------------------------------------------------------------------------------ |
 | alias                    | string | Yes      | Unique identifier. Must match the C# `ConfigurationEditor` property name.     |
-| label                    | string | Yes      | Display label for the configuration field                                      |
-| description              | string | No       | Help text shown below the label                                                |
-| propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value             |
-| config                   | object | No       | Optional configuration to pass to the Property Editor UI                       |
-| weight                   | number | No       | Optional ordering weight for the configuration field                           |
+| label                    | string | Yes      | Display label for the configuration field.                                      |
+| description              | string | No       | Help text shown below the label.                                                |
+| propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value.             |
+| config                   | object | No       | Optional configuration to pass to the Property Editor UI.                       |
+| weight                   | number | No       | Optional ordering weight for the configuration field.                           |
 
 ### Settings Default Data Array
 
@@ -134,8 +134,8 @@ Each object in the `defaultData` array provides default values:
 
 | Property | Type    | Required | Description                                   |
 | -------- | ------- | -------- | --------------------------------------------- |
-| alias    | string  | Yes      | The alias of the configuration property       |
-| value    | unknown | Yes      | The default value for this configuration      |
+| alias    | string  | Yes      | The alias of the configuration property.       |
+| value    | unknown | Yes      | The default value for this configuration.      |
 
 ## Complete Example
 
@@ -210,7 +210,7 @@ Umbraco ships with [default property editor schemas](../../../tutorials/creating
 
 ## Related Documentation
 
-* [Property Editor Schema Guide](../../property-editors/composition/property-editor-schema.md) - Learn about implementing the C# classes (`DataEditor` and `DataValueEditor`)
-* [Property Editor UI Extension Type](property-editor-ui.md) - Reference for the Property Editor UI extension type
-* [Creating a Property Editor Tutorial](../../../tutorials/creating-a-property-editor/) - Step-by-step guide to building a custom property editor
-* [Adding Server-Side Validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md) - Tutorial on implementing validation in your schema
+* [Property Editor Schema Guide](../../property-editors/composition/property-editor-schema.md) - Learn about implementing the C# classes (`DataEditor` and `DataValueEditor`).
+* [Property Editor UI Extension Type](property-editor-ui.md) - Reference for the Property Editor UI extension type.
+* [Creating a Property Editor Tutorial](../../../tutorials/creating-a-property-editor/) - Step-by-step guide to building a custom property editor.
+* [Adding Server-Side Validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md) - Tutorial on implementing validation in your schema.
