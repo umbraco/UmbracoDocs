@@ -4,12 +4,6 @@ description: Learn how to configure and use external login providers via your Um
 
 # Organization Login Providers
 
-{% hint style="info" %}
-
-**Beta feature**. Help improve the feature by [reporting feedback](mailto:beta-cloud-portal-login-providers@umbraco.dk).
-
-{% endhint %}
-
 The External Login Providers feature in Umbraco Cloud enables you to integrate third-party authentication systems for managing Portal user logins securely and efficiently. This functionality is built for teams that want to manage login using an existing identity setup.
 
 Using OpenID Connect, Umbraco Cloud supports external login providers like Microsoft Entra ID, Auth0, and Google. The feature helps administrators manage backoffice access, assign user roles, and improve security.
