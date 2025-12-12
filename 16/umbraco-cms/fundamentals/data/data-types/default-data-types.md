@@ -6,7 +6,7 @@ description: Learn about the default data types in Umbraco.
 
 Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../backoffice/property-editors/).
 
-![Umbraco Data Type List](../../../../../17/umbraco-cms/fundamentals/data/data-types/images/default-data-types-9.png)
+![Umbraco Data Type List](images/default-data-types-9.png)
 
 ## Approved Color
 

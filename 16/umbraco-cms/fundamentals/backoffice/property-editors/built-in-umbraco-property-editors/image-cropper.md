@@ -40,7 +40,7 @@ The Image Cropper comes with 3 modes:
 
 The editor exposes a drop area for files. Select it to upload an image.
 
-![Image Cropper Upload](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/imageCropper-upload-v8.png)
+![Image Cropper Upload](../built-in-property-editors/images/imageCropper-upload-v8.png)
 
 ### Set focal point
 
@@ -116,7 +116,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+To update a content property value you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 

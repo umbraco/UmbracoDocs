@@ -22,7 +22,7 @@ You can use dictionary items to translate the options in a Checkbox List propert
 
 ## Content Example
 
-![Checkbox List Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/checkbox-list-content.png)
+![Checkbox List Example](../built-in-property-editors/images/checkbox-list-content.png)
 
 ## MVC View Example
 
@@ -60,7 +60,7 @@ You can use dictionary items to translate the options in a Checkbox List propert
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

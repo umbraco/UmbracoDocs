@@ -18,6 +18,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**16.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.2) **(December 11th 2025)**
+
+* Added additional localization support for editor fields labels and descriptions, collection filters, cards, data views [#208](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/208)
+* Fixed entity menu actions display [#207](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/207)
+* Enable columns sorting for collections list view [#205](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/205)
+* Perform list view update post bulk action [#204](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/204)
+* Fixed the visibility of entity actions when entity is new [#202](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/202)
+* Restored container menu actions [#201](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/201)
+* Fixed handling of entities with key different than `Integer` causing actions visibility issues [#196](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/196)
+
 #### [**16.1.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.1) **(November 27th 2025)**
 
 * Handle entity update notifications on successful operation

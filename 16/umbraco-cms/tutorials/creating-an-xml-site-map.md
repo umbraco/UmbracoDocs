@@ -177,7 +177,7 @@ We are using `IPublishedContent` in this example. Using **ModelsBuilder** instea
 
 Visit the URL of your sitemap page (`http://yoursite.com/sitemap`) to render a single sitemap entry for the homepage.
 
-![Example of Sitemap](../../../17/umbraco-cms/tutorials/images/sitemap.png)
+![Example of Sitemap](images/sitemap.png)
 
 ### Looping through the rest of the site
 
@@ -215,7 +215,7 @@ We will add a `RenderSiteMapUrlEntriesForChildren` helper which accepts a 'Paren
 
 You will now see the XML sitemap rendered for the entire site.
 
-![Example of Sitemap with children](../../../17/umbraco-cms/tutorials/images/sitemapWithChildren.png)
+![Example of Sitemap with children](images/sitemapWithChildren.png)
 
 ## 5. Filter the sitemap content
 

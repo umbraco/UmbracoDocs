@@ -18,11 +18,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-v8.png)
+![Textarea Content Example](../built-in-property-editors/images/Textarea-Content-v8.png)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](../built-in-property-editors/images/Textarea-Content-Limit-v8.png)
 
 ## MVC View Example
 
@@ -47,7 +47,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ## Add value programmatically
 
-See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to learn how a value can be added or changed programmatically to a Textarea property. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.
