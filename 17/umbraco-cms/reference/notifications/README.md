@@ -22,7 +22,7 @@ Check the [Notification Handler](notification-handler.md) article to learn more 
 
 Below you can find a list of most used object notifications.
 
-You can find a list of all supported notifications in the [API Documentation](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.html).
+You can find a list of all supported notifications in the [API Documentation](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.html).
 
 ### Content, Media, and Member notifications
 
@@ -34,30 +34,30 @@ The ContentService class is the most commonly used type when extending Umbraco u
 
 Below you can find a list of the most common ContentService object notifications.
 
-* [ContentSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavingNotification.html)
-* [ContentSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedNotification.html)
-* [ContentPublishingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishingNotification.html)
-* [ContentPublishedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishedNotification.html)
-* [ContentUnpublishingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishingNotification.html)
-* [ContentUnpublishedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishedNotification.html)
-* [ContentCopyingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopyingNotification.html)
-* [ContentCopiedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopiedNotification.html)
-* [ContentMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingNotification.html)
-* [ContentMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedNotification.html)
-* [ContentMovingToRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingToRecycleBinNotification.html)
-* [ContentMovedToRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedToRecycleBinNotification.html)
-* [ContentDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingNotification.html)
-* [ContentDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedNotification.html)
-* [ContentDeletingVersionsNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingVersionsNotification.html)
-* [ContentDeletedVersionsNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedVersionsNotification.html)
-* [ContentRollingBackNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentRollingBackNotification.html)
-* [ContentRolledBackNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentRolledBackNotification.html)
-* [ContentSendingToPublishNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentSendingToPublishNotification.html)
-* [ContentSentToPublishNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentSentToPublishNotification.html)
-* [ContentEmptyingRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptyingRecycleBinNotification.html)
-* [ContentEmptiedRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptiedRecycleBinNotification.html)
-* [ContentSavedBlueprintNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedBlueprintNotification.html)
-* [ContentDeletedBlueprintNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedBlueprintNotification.html)
+* [ContentSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavingNotification.html)
+* [ContentSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedNotification.html)
+* [ContentPublishingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishingNotification.html)
+* [ContentPublishedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentPublishedNotification.html)
+* [ContentUnpublishingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishingNotification.html)
+* [ContentUnpublishedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentUnpublishedNotification.html)
+* [ContentCopyingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopyingNotification.html)
+* [ContentCopiedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentCopiedNotification.html)
+* [ContentMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingNotification.html)
+* [ContentMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedNotification.html)
+* [ContentMovingToRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovingToRecycleBinNotification.html)
+* [ContentMovedToRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentMovedToRecycleBinNotification.html)
+* [ContentDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingNotification.html)
+* [ContentDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedNotification.html)
+* [ContentDeletingVersionsNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletingVersionsNotification.html)
+* [ContentDeletedVersionsNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedVersionsNotification.html)
+* [ContentRollingBackNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentRollingBackNotification.html)
+* [ContentRolledBackNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentRolledBackNotification.html)
+* [ContentSendingToPublishNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentSendingToPublishNotification.html)
+* [ContentSentToPublishNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentSentToPublishNotification.html)
+* [ContentEmptyingRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptyingRecycleBinNotification.html)
+* [ContentEmptiedRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentEmptiedRecycleBinNotification.html)
+* [ContentSavedBlueprintNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentSavedBlueprintNotification.html)
+* [ContentDeletedBlueprintNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentDeletedBlueprintNotification.html)
 
 </details>
 
@@ -67,16 +67,16 @@ Below you can find a list of the most common ContentService object notifications
 
 Below you can find a list of the most common MediaService object notifications.
 
-* [MediaSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavingNotification.html)
-* [MediaSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavedNotification.html)
-* [MediaMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingNotification.html)
-* [MediaMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedNotification.html)
-* [MediaMovingToRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingToRecycleBinNotification.html)
-* [MediaMovedToRecycleBinNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedToRecycleBinNotification.html)
-* [MediaDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingNotification.html)
-* [MediaDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedNotification.html)
-* [MediaDeletingVersionsNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingVersionsNotification.html)
-* [MediaDeletedVersionsNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedVersionsNotification.html)
+* [MediaSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavingNotification.html)
+* [MediaSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaSavedNotification.html)
+* [MediaMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingNotification.html)
+* [MediaMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedNotification.html)
+* [MediaMovingToRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovingToRecycleBinNotification.html)
+* [MediaMovedToRecycleBinNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaMovedToRecycleBinNotification.html)
+* [MediaDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingNotification.html)
+* [MediaDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedNotification.html)
+* [MediaDeletingVersionsNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletingVersionsNotification.html)
+* [MediaDeletedVersionsNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaDeletedVersionsNotification.html)
 
 </details>
 
@@ -88,12 +88,12 @@ The MemberService implements IMemberService and provides access to operations in
 
 Below you can find a list of the most common MemberService object notifications.
 
-* [MemberSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavingNotification.html)
-* [MemberSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavedNotification.html)
-* [MemberDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletingNotification.html)
-* [MemberDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletedNotification.html)
-* [AssignedMemberRolesNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.AssignedMemberRolesNotification.html)
-* [RemovedMemberRolesNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RemovedMemberRolesNotification.html)
+* [MemberSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavingNotification.html)
+* [MemberSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberSavedNotification.html)
+* [MemberDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletingNotification.html)
+* [MemberDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberDeletedNotification.html)
+* [AssignedMemberRolesNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.AssignedMemberRolesNotification.html)
+* [RemovedMemberRolesNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RemovedMemberRolesNotification.html)
 
 </details>
 
@@ -107,13 +107,13 @@ The ContentTypeService class implements IContentTypeService. It provides access 
 
 Below you can find a list of the most common ContentTypeService object notifications.
 
-* [ContentTypeSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavingNotification.html)
-* [ContentTypeSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavedNotification.html)
-* [ContentTypeDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletingNotification.html)
-* [ContentTypeDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletedNotification.html)
-* [ContentTypeMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovingNotification.html)
-* [ContentTypeMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovedNotification.html)
-* [ContentTypeChangedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeChangedNotification.html)
+* [ContentTypeSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavingNotification.html)
+* [ContentTypeSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeSavedNotification.html)
+* [ContentTypeDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletingNotification.html)
+* [ContentTypeDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeDeletedNotification.html)
+* [ContentTypeMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovingNotification.html)
+* [ContentTypeMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeMovedNotification.html)
+* [ContentTypeChangedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentTypeChangedNotification.html)
 
 </details>
 
@@ -125,13 +125,13 @@ The MediaTypeService class implements IMediaTypeService. It provides access to o
 
 Below you can find a list of the most common MediaTypeService object notifications.
 
-* [MediaTypeSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavingNotification.html)
-* [MediaTypeSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavedNotification.html)
-* [MediaTypeDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletingNotification.html)
-* [MediaTypeDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletedNotification.html)
-* [MediaTypeMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovingNotification.html)
-* [MediaTypeMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovedNotification.html)
-* [MediaTypeChangedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeChangedNotification.html)
+* [MediaTypeSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavingNotification.html)
+* [MediaTypeSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeSavedNotification.html)
+* [MediaTypeDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletingNotification.html)
+* [MediaTypeDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeDeletedNotification.html)
+* [MediaTypeMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovingNotification.html)
+* [MediaTypeMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeMovedNotification.html)
+* [MediaTypeChangedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaTypeChangedNotification.html)
 
 </details>
 
@@ -143,13 +143,13 @@ The MemberTypeService class implements IMemberTypeService. It provides access to
 
 Below you can find a list of the most common MemberTypeService object notifications.
 
-* [MemberTypeSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavingNotification.html)
-* [MemberTypeSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavedNotification.html)
-* [MemberTypeDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletingNotification.html)
-* [MemberTypeDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletedNotification.html)
-* [MemberTypeMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovingNotification.html)
-* [MemberTypeMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovedNotification.html)
-* [MemberTypeChangedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeChangedNotification.html)
+* [MemberTypeSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavingNotification.html)
+* [MemberTypeSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeSavedNotification.html)
+* [MemberTypeDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletingNotification.html)
+* [MemberTypeDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeDeletedNotification.html)
+* [MemberTypeMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovingNotification.html)
+* [MemberTypeMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeMovedNotification.html)
+* [MemberTypeChangedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberTypeChangedNotification.html)
 
 </details>
 
@@ -161,12 +161,12 @@ The DataTypeService class implements IDataTypeService. It provides access to ope
 
 Below you can find a list of the most common DataTypeService object notifications.
 
-* [DataTypeSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavingNotification.html)
-* [DataTypeSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavedNotification.html)
-* [DataTypeDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletingNotification.html)
-* [DataTypeDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletedNotification.html)
-* [DataTypeMovingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovingNotification.html)
-* [DataTypeMovedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovedNotification.html)
+* [DataTypeSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavingNotification.html)
+* [DataTypeSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeSavedNotification.html)
+* [DataTypeDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletingNotification.html)
+* [DataTypeDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeDeletedNotification.html)
+* [DataTypeMovingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovingNotification.html)
+* [DataTypeMovedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DataTypeMovedNotification.html)
 
 </details>
 
@@ -178,18 +178,18 @@ The FileService class implements IFileService. It provides access to operations 
 
 Below you can find a list of the most common FileService object notifications.
 
-* [TemplateSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavingNotification.html)
-* [TemplateSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavedNotification.html)
-* [ScriptSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavingNotification.html)
-* [ScriptSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavedNotification.html)
-* [StylesheetSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavingNotification.html)
-* [StylesheetSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavedNotification.html)
-* [TemplateDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletingNotification.html)
-* [TemplateDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletedNotification.html)
-* [ScriptDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletingNotification.html)
-* [ScriptDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletedNotification.html)
-* [StylesheetDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletingNotification.html)
-* [StylesheetDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletedNotification.html)
+* [TemplateSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavingNotification.html)
+* [TemplateSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.TemplateSavedNotification.html)
+* [ScriptSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavingNotification.html)
+* [ScriptSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ScriptSavedNotification.html)
+* [StylesheetSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavingNotification.html)
+* [StylesheetSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetSavedNotification.html)
+* [TemplateDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletingNotification.html)
+* [TemplateDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.TemplateDeletedNotification.html)
+* [ScriptDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletingNotification.html)
+* [ScriptDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ScriptDeletedNotification.html)
+* [StylesheetDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletingNotification.html)
+* [StylesheetDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.StylesheetDeletedNotification.html)
 
 </details>
 
@@ -201,14 +201,14 @@ The LocalizationService class implements ILocalizationService. It provides acces
 
 Below you can find a list of the most common LocalizationService object notifications.
 
-* [LanguageSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavingNotification.html)
-* [LanguageSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavedNotification.html)
-* [DictionaryItemSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavingNotification.html)
-* [DictionaryItemSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavedNotification.html)
-* [LanguageDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletingNotification.html)
-* [LanguageDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletedNotification.html)
-* [DictionaryItemDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletingNotification.html)
-* [DictionaryItemDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletedNotification.html)
+* [LanguageSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavingNotification.html)
+* [LanguageSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavedNotification.html)
+* [DictionaryItemSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavingNotification.html)
+* [DictionaryItemSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemSavedNotification.html)
+* [LanguageDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletingNotification.html)
+* [LanguageDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.LanguageDeletedNotification.html)
+* [DictionaryItemDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletingNotification.html)
+* [DictionaryItemDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.DictionaryItemDeletedNotification.html)
 
 </details>
 
@@ -218,10 +218,10 @@ Below you can find a list of the most common LocalizationService object notifica
 
 Below you can find a list of the most common CacheRefresher object notifications.
 
-* [ContentCacheRefresherNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.ContentCacheRefresherNotification.html)
-* [MediaCacheRefresherNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MediaCacheRefresherNotification.html)
-* [MemberCacheRefresherNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.MemberCacheRefresherNotification.html)
-* [UserCacheRefresherNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.UserCacheRefresherNotification.html)
+* [ContentCacheRefresherNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.ContentCacheRefresherNotification.html)
+* [MediaCacheRefresherNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MediaCacheRefresherNotification.html)
+* [MemberCacheRefresherNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.MemberCacheRefresherNotification.html)
+* [UserCacheRefresherNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.UserCacheRefresherNotification.html)
 
 </details>
 
@@ -233,14 +233,14 @@ Below you can find a list of the most common RelationService object notification
 
 The RelationService provides access to operations involving IRelation and IRelationType, and publishes the following relation notifications:
 
-* [RelationSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavingNotification.html)
-* [RelationSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavedNotification.html)
-* [RelationDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletingNotification.html)
-* [RelationDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletedNotification.html)
-* [RelationTypeSavingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavingNotification.html)
-* [RelationTypeSavedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavedNotification.html)
-* [RelationTypeDeletingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletingNotification.html)
-* [RelationTypeDeletedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletedNotification.html)
+* [RelationSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavingNotification.html)
+* [RelationSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationSavedNotification.html)
+* [RelationDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletingNotification.html)
+* [RelationDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationDeletedNotification.html)
+* [RelationTypeSavingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavingNotification.html)
+* [RelationTypeSavedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeSavedNotification.html)
+* [RelationTypeDeletingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletingNotification.html)
+* [RelationTypeDeletedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.RelationTypeDeletedNotification.html)
 
 </details>
 
@@ -252,16 +252,16 @@ Represents an Umbraco application lifetime (starting, started, stopping, stopped
 
 Below you can find a list of the most common UmbracoApplicationLifetime object notifications.
 
-* [UmbracoApplicationStartingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartingNotification.html)
-* [UmbracoApplicationStartedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartedNotification.html)
-* [UmbracoApplicationStoppingNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppingNotification.html)
-* [UmbracoApplicationStoppedNotification](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppedNotification.html)
+* [UmbracoApplicationStartingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartingNotification.html)
+* [UmbracoApplicationStartedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStartedNotification.html)
+* [UmbracoApplicationStoppingNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppingNotification.html)
+* [UmbracoApplicationStoppedNotification](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.UmbracoApplicationStoppedNotification.html)
 
 </details>
 
 ### Tree notifications
 
-Learn more about these under [Tree Change Notifications](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Notifications.TreeChangeNotification-1.html) in the CMS API Docs.
+Learn more about these under [Tree Change Notifications](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Notifications.TreeChangeNotification-1.html) in the CMS API Docs.
 
 ## Creating and publishing your own custom notifications
 

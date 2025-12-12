@@ -39,7 +39,7 @@ To render a tree in the Backoffice, you can use the `<umb-tree>` element. You ne
 
 ### Render a Custom Tree Item <a href="#render-a-custom-tree-item" id="render-a-custom-tree-item"></a>
 
-The `<umb-tree />` element will render the tree items based on the registered tree item alias. The tree will be rendered using the [<umb-default-tree-item />](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_tree.UmbDefaultTreeItemElement.html) element by default. If you want to render a custom tree item, you need to register a tree item manifest. This manifest can then show a custom element for the tree item.
+The `<umb-tree />` element will render the tree items based on the registered tree item alias. The tree will be rendered using the [<umb-default-tree-item />](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_tree.UmbDefaultTreeItemElement.html) element by default. If you want to render a custom tree item, you need to register a tree item manifest. This manifest can then show a custom element for the tree item.
 
 #### **The Tree Item Manifest**
 
@@ -57,7 +57,7 @@ The `<umb-tree />` element will render the tree items based on the registered tr
 
 #### The Tree Item Element <a href="#the-tree-item-element" id="the-tree-item-element"></a>
 
-To create a custom tree item, you need to create a custom element. This element can optionally extend the [UmbTreeItemElementBase<T>](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_tree.UmbTreeItemElementBase.html) class. However, it can also be used as a standalone element if you prefer to implement the tree item logic yourself.
+To create a custom tree item, you need to create a custom element. This element can optionally extend the [UmbTreeItemElementBase<T>](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_tree.UmbTreeItemElementBase.html) class. However, it can also be used as a standalone element if you prefer to implement the tree item logic yourself.
 
 This example creates a custom tree item that extends the base class. The base class provides the necessary context and functionality for the tree item.
 
@@ -84,7 +84,7 @@ export default MyTreeItemElement;
 
 #### The Tree Item Model <a href="#extending-the-tree-item-model" id="extending-the-tree-item-model"></a>
 
-To define the data model for your tree item, you can create a model that extends the [UmbTreeItemModel](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_tree.UmbTreeItemModel.html). This model will be used to provide the data for your custom tree item.
+To define the data model for your tree item, you can create a model that extends the [UmbTreeItemModel](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeItemModel.html). This model will be used to provide the data for your custom tree item.
 
 {% code title="my-tree-item.model.ts" %}
 ```typescript
@@ -112,7 +112,7 @@ To add data to the tree, you need to create a repository that will provide the d
 
 #### Implementing the repository <a href="#implementing-the-repository" id="implementing-the-repository"></a>
 
-The repository needs to be able to fetch data for the tree. You can implement the repository as a class that extends the [UmbTreeRepositoryBase](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_tree.UmbTreeRepositoryBase.html) class. This class provides the necessary methods to fetch data for the tree.
+The repository needs to be able to fetch data for the tree. You can implement the repository as a class that extends the [UmbTreeRepositoryBase](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_tree.UmbTreeRepositoryBase.html) class. This class provides the necessary methods to fetch data for the tree.
 
 {% code title="my-repository.ts" %}
 ```typescript
@@ -130,7 +130,7 @@ export class MyRepository extends UmbTreeRepositoryBase {
 
 #### Implementing the data source <a href="#implementing-the-data-source" id="implementing-the-data-source"></a>
 
-The data source is responsible for fetching the data for the tree. You can implement the data source as a class that implements the [UmbTreeDataSource](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_tree.UmbTreeDataSource.html) interface.
+The data source is responsible for fetching the data for the tree. You can implement the data source as a class that implements the [UmbTreeDataSource](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeDataSource.html) interface.
 
 {% code title="my-tree-data-source.ts" %}
 ```typescript

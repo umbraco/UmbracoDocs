@@ -938,6 +938,6 @@ The proposed conversion logic should be adaptable to the system used in the loca
 
 If you are using Umbraco Deploy in your solution, you can use its infrastructure to run the migration logic defined above.
 
-To make this work, update the alias of the rich text editor to something else. On import, a migration is triggered. See the [prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the `Umbraco.Deploy.Contrib` package.
+To make this work, update the alias of the rich text editor to something else. On import, a migration is triggered. See the [prevalue example](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v17/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevalueArtifactMigrator.cs) in the `Umbraco.Deploy.Contrib` package.
 
-Create a migrator to handle any value that is of the special alias and convert them into a property with the updated value. For an example see the matching [prevalue property type migrator](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v15/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs).
+Create a migrator to handle any value that is of the special alias and convert them into a property with the updated value. For an example see the matching [prevalue property type migrator](https://github.com/umbraco/Umbraco.Deploy.Contrib/blob/v17/dev/src/Umbraco.Deploy.Contrib/Migrators/Legacy/Content/PrevaluePropertyTypeMigratorBase.cs).

@@ -64,6 +64,6 @@ Learn more about viewing references or implementing tracking in the [Tracking Re
 
 ### Related Services
 
-* [DataTypeService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.IDataTypeService.html)
+* [DataTypeService](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Services.IDataTypeService.html)
 
 ### Umbraco Learning Base Channel
