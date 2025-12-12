@@ -7,7 +7,7 @@ description: Reference documentation for the propertyEditorUi extension type
 The `propertyEditorUi` extension type registers a Property Editor UI in the Umbraco backoffice. A Property Editor UI is the client-side component that renders the editing interface for content editors to input and manage their data.
 
 {% hint style="info" %}
-For detailed information about implementing Property Editor UI web components using Lit, see the [Property Editor UI Guide](../../property-editors/composition/property-editor-ui.md).
+For detailed information about implementing Property Editor UI web components using Lit, read the [Property Editor UI Guide](../../property-editors/composition/property-editor-ui.md).
 {% endhint %}
 
 ## Manifest Structure
@@ -84,11 +84,11 @@ The `propertyEditorUi` manifest can contain the following properties:
 
 | Property | Type                      | Description                                                      |
 | -------- | ------------------------- | ---------------------------------------------------------------- |
-| type     | string                    | Must be `"propertyEditorUi"`                                     |
-| alias    | string                    | Unique identifier for the UI                                     |
-| name     | string                    | Friendly name displayed in the backoffice                        |
-| element  | function \| string        | Path to or import function for the web component element         |
-| meta     | object                    | Metadata object containing UI configuration (see Meta Properties)|
+| type     | string                    | Must be `"propertyEditorUi"`.                                     |
+| alias    | string                    | Unique identifier for the UI.                                     |
+| name     | string                    | Friendly name displayed in the backoffice.                        |
+| element  | function \| string        | Path to or import function for the web component element.         |
+| meta     | object                    | Metadata object containing UI configuration (see Meta Properties).|
 
 ### Optional Properties
 
@@ -104,17 +104,17 @@ The `meta` object contains the following properties:
 
 | Property                     | Type   | Description                                                           |
 | ---------------------------- | ------ | --------------------------------------------------------------------- |
-| label                        | string | Display label shown in the UI picker                                  |
-| propertyEditorSchemaAlias    | string | The alias of the Property Editor Schema this UI works with            |
-| icon                         | string | Icon identifier (e.g., `"icon-autofill"`)                            |
-| group                        | string | Group name for categorizing property editors                          |
+| label                        | string | Display label shown in the UI picker.                                  |
+| propertyEditorSchemaAlias    | string | The alias of the Property Editor Schema this UI works with.            |
+| icon                         | string | Icon identifier (e.g., `"icon-autofill"`).                            |
+| group                        | string | Group name for categorizing property editors.                          |
 
 ### Optional Meta Properties
 
 | Property         | Type    | Description                                                              |
 | ---------------- | ------- | ------------------------------------------------------------------------ |
-| settings         | object  | Configuration settings for the UI (see Settings below)                   |
-| supportsReadOnly | boolean | Indicates whether the UI supports read-only mode                         |
+| settings         | object  | Configuration settings for the UI (see Settings below).                   |
+| supportsReadOnly | boolean | Indicates whether the UI supports read-only mode.                         |
 
 ## Settings Structure
 
@@ -133,14 +133,14 @@ Each object in the `properties` array defines a configuration field:
 
 | Property                 | Type   | Required | Description                                                                    |
 | ------------------------ | ------ | -------- | ------------------------------------------------------------------------------ |
-| alias                    | string | Yes      | Unique identifier for this configuration property                             |
-| label                    | string | Yes      | Display label for the configuration field                                      |
-| description              | string | No       | Help text shown below the label                                                |
-| propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value             |
-| config                   | object | No       | Optional configuration to pass to the Property Editor UI                       |
+| alias                    | string | Yes      | Unique identifier for this configuration property.                             |
+| label                    | string | Yes      | Display label for the configuration field.                                      |
+| description              | string | No       | Help text shown below the label.                                                |
+| propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value.             |
+| config                   | object | No       | Optional configuration to pass to the Property Editor UI.                       |
 | weight                   | number | No       | Ordering weight for the configuration field. Higher numbers appear first.      |
-| validation               | object | No       | Validation rules. Object with `mandatory` (boolean) and optional `mandatoryMessage` (string) properties |
-| propertyEditorDataSourceAlias | string | No  | Alias of a data source to use with this configuration property                 |
+| validation               | object | No       | Validation rules. Object with `mandatory` (boolean) and optional `mandatoryMessage` (string) properties. |
+| propertyEditorDataSourceAlias | string | No  | Alias of a data source to use with this configuration property.                 |
 
 ### Settings Default Data Array
 
@@ -148,12 +148,12 @@ Each object in the `defaultData` array provides default values:
 
 | Property | Type    | Required | Description                                   |
 | -------- | ------- | -------- | --------------------------------------------- |
-| alias    | string  | Yes      | The alias of the configuration property       |
-| value    | unknown | Yes      | The default value for this configuration      |
+| alias    | string  | Yes      | The alias of the configuration property.       |
+| value    | unknown | Yes      | The default value for this configuration.      |
 
 ## Element Loading
 
-The `element` property accepts three formats:
+The `element` property accepts three formats.
 
 ### Import Function (Recommended)
 
@@ -161,7 +161,7 @@ The `element` property accepts three formats:
 element: () => import('./my-editor.element.js')
 ```
 
-This uses dynamic imports for better code splitting and lazy loading.
+The Import Function uses dynamic imports for better code splitting and lazy loading.
 
 ### String Path
 
@@ -169,7 +169,7 @@ This uses dynamic imports for better code splitting and lazy loading.
 element: '/App_Plugins/MyEditor/my-editor.element.js'
 ```
 
-This loads the element from a static file path.
+The String Path loads the element from a static file path.
 
 ### Class Constructor
 
@@ -179,7 +179,7 @@ import { MyEditorElement } from './my-editor.element.js';
 element: MyEditorElement
 ```
 
-This directly provides the custom element class constructor.
+The Class Constructor directly provides the custom element class constructor.
 
 ## Complete Example
 
@@ -231,11 +231,11 @@ export const manifest: ManifestPropertyEditorUi = {
 
 The `icon` property uses Umbraco's built-in icon set. Common icon names include:
 
-- `icon-autofill` - Text and input related editors
+- `icon-autofill` - Text and input-related editors
 - `icon-list` - List and collection editors  
 - `icon-calendar` - Date and time editors
 - `icon-picture` - Media and image editors
-- `icon-user` - User and member related editors
+- `icon-user` - User and member-related editors
 - `icon-link` - Link and URL editors
 - `icon-readonly` - Read-only or display editors
 
@@ -245,7 +245,7 @@ While any string value is technically accepted, using unrecognized icon names ma
 
 The `group` property categorizes property editors in the backoffice UI. Common group names include:
 
-- `common` - General purpose editors (default if not specified)
+- `common` - General-purpose editors (default if not specified)
 - `pickers` - Content, media, and member pickers
 - `lists` - List-based editors like checkboxes and dropdowns
 - `richContent` - Rich text and block-based editors
