@@ -379,19 +379,18 @@ Even worse is when you allocate a lot of large items in memory. These items will
 
 Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content. You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md)
 
-## Blocking Asynchronous Code with .Result or .Wait()
+## Blocking Asynchronous Code with `.Result` or `.Wait()`
 
 Blocking asynchronous operations with the use of `.Result` or `.Wait()` is a common pitfall that can lead to reduced performance and potential deadlocks in the application.
 
 ### Why this is problematic
 
-Async operations in ASP.NET Core are intended to run without blocking the current thread they operate on. When `.Result` or `.Wait()` are used, this forces the operation to complete synchronously instead, interrupting the intended flow. 
+Async operations in ASP.NET Core are intended to run without blocking the current thread they operate on. When `.Result` or `.Wait()` is used, the operation is forced to complete synchronously instead, interrupting the intended flow. 
 
-This can lead to:
-- **Thread pool starvation**: When under load, it is possible for all available threads to become blocked waiting for I/O operations. This leaves no threads available to handle new requests causing response times to increase or time out.
+The behaviour described above can lead to:
 
+- **Thread pool starvation**: When under load, all available threads can become blocked waiting for I/O operations. This leaves no threads available to handle new requests, causing response times to increase or time out.
 - **Deadlocks**: In some situations, the async continuation may need to resume on the original thread that was blocked. If that thread is blocked by `.Result`/`.Wait()`, both sides wait indefinitely.
-
 - **Reduced scalability**: A properly async web application can handle thousands of concurrent requests with relatively few threads. Blocking on async code reduces this significantly, effectively making your app synchronous.
 
 ### Example of what to avoid
