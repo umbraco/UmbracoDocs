@@ -23,7 +23,7 @@ What it does:
 
 ## Published Content Request Instance
 
-When finding published content the [PublishedRouter](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Routing.PublishedRouter.html) will first check if the [PublishedRequestBuilder](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Routing.PublishedRequestBuilder.html) already has content, if it doesn't the content finders will kick in. For more information, see the [Find published content](../../reference/routing/request-pipeline/published-content-request-preparation.md#find-published-content) section in the [Published Content Request Preparation](../../reference/routing/request-pipeline/published-content-request-preparation.md) article.
+When finding published content the [PublishedRouter](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Routing.PublishedRouter.html) will first check if the [PublishedRequestBuilder](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Routing.PublishedRequestBuilder.html) already has content, if it doesn't the content finders will kick in. For more information, see the [Find published content](../../reference/routing/request-pipeline/published-content-request-preparation.md#find-published-content) section in the [Published Content Request Preparation](../../reference/routing/request-pipeline/published-content-request-preparation.md) article.
 
 This information is also used during the [Controller & Action selection](controller-selection.md) process.
 

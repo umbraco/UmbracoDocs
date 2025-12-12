@@ -61,7 +61,7 @@ The autocomplete setting for the overall form can be changed from the default of
 
 The settings available in this section allow you to customize how multi-page forms are presented to site visitors.
 
-<figure><img src="../../../../13/umbraco-forms/editor/creating-a-form/images/multi-page-forms.png" alt=""><figcaption><p>Multi-Page Form Settings</p></figcaption></figure>
+<figure><img src="images/multi-page-forms.png" alt=""><figcaption><p>Multi-Page Form Settings</p></figcaption></figure>
 
 | Option                           | Description                                                                                                                                                                                                     |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

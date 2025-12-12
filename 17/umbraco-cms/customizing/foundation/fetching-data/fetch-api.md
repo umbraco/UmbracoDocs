@@ -113,13 +113,13 @@ You can read more about this concept in the [API Users](../../../fundamentals/da
 
 The Fetch API can also be used to make requests to the Management API using a Backoffice token. This is useful for making requests from custom components that are running in the Backoffice. The concept is similar to the API Users, but the Backoffice token represents the current user in the Backoffice. You will share the access policies of the current user, so you can use the token to make requests on behalf of the current user.
 
-To use the Backoffice access token, you will have to consume the **UMB\_AUTH\_CONTEXT** context. This context is only available in the Backoffice and includes tools to hook on to the authentication process. You can use the [getOpenApiConfiguration](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#getopenapiconfiguration) method to get a configuration object that includes a few useful properties:
+To use the Backoffice access token, you will have to consume the **UMB_AUTH_CONTEXT** context. This context is only available in the Backoffice and includes tools to hook on to the authentication process. You can use the [getOpenApiConfiguration](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_auth.UmbAuthContext.html#getopenapiconfiguration) method to get a configuration object that includes a few useful properties:
 
 * `base`: The base URL of the Management API.
 * `credentials`: The credentials to use for the request.
 * `token()`: A function that returns the current access token.
 
-Read more about this in the [UmbOpenApiConfiguration](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_auth.UmbOpenApiConfiguration.html) interface.
+Read more about this in the [UmbOpenApiConfiguration](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_auth.UmbOpenApiConfiguration.html) interface.
 
 It is rather tiresome to manually add the token to each request. Therefore, you can wrap the Fetch API in a custom function that automatically adds the token to the request headers. This way, you can use the Fetch API without worrying about adding the token manually:
 
@@ -154,7 +154,7 @@ The above example illustrates the process of making a request to the Management 
 
 ## Executing the request
 
-Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
+Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
 
 **Example:**
 
