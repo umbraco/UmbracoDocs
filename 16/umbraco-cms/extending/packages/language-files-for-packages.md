@@ -11,10 +11,6 @@ If you want your package to be available in different languages, you can use the
 To register localizations to a language, you must add a new manifest to the Extension API. The manifest can be added through the `umbraco-package.json` file like this:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
-```
-```
-{% endcode %}
-
 ```json
 {
   ...
@@ -32,5 +28,6 @@ To register localizations to a language, you must add a new manifest to the Exte
   ]
 }
 ```
+{% endcode %}
 
 Read the [UI Localization documentation](../../customizing/foundation/localization.md) to learn in-depth on how you can use languages in your packages and Umbraco in general.
