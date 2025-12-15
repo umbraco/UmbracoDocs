@@ -81,6 +81,10 @@ The `propertyEditorSchema` manifest can contain the following properties:
 | name     | string | Friendly name displayed in the backoffice.                                   |
 | meta     | object | Metadata object containing schema configuration (see Meta Properties below). |
 
+{% hint style="warning" %}
+The `alias` in the manifest **must exactly match** the alias used in the C# `DataEditor` attribute. The alias is the only connection between the server-side schema implementation and the client-side manifest.
+{% endhint %}
+
 ### Optional Properties
 
 | Property | Type   | Description                                                    |
@@ -127,6 +131,10 @@ Each object in the `properties` array defines a configuration field:
 | propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value.             |
 | config                   | object | No       | Optional configuration to pass to the Property Editor UI.                       |
 | weight                   | number | No       | Optional ordering weight for the configuration field.                           |
+
+{% hint style="warning" %}
+Configuration property aliases in `settings.properties` **must match** the property names defined in your C# `ConfigurationEditor` class. If they don't match, configuration values won't be properly passed to the backend for validation and storage.
+{% endhint %}
 
 ### Settings Default Data Array
 
@@ -194,19 +202,7 @@ export const manifest: ManifestPropertyEditorSchema = {
 
 ## Important Notes
 
-{% hint style="warning" %}
-The `alias` in the manifest **must exactly match** the alias used in the C# `DataEditor` attribute. The alias is the only connection between the server-side schema implementation and the client-side manifest.
-{% endhint %}
-
-{% hint style="warning" %}
-Configuration property aliases in `settings.properties` **must match** the property names defined in your C# `ConfigurationEditor` class. If they don't match, configuration values won't be properly passed to the backend for validation and storage.
-{% endhint %}
-
-{% hint style="info" %}
-
 Umbraco ships with [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) that you can use without creating custom C# classes.
-
-{% endhint %}
 
 ## Related Documentation
 
