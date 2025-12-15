@@ -133,9 +133,9 @@ Changing the .NET framework runtime or the `DOTNET_ENVIRONMENT` environment vari
 {% endhint %}
 
 {% hint style="info" %}
-When using `WebApplication`, `DOTNET_ENVIRONMENT` takes precedence over `ASPNETCORE_ENVIRONMENT`. When using the legacy `WebHost`, `ASPNETCORE_ENVIRONMENT` takes precedence instead. 
+When using `WebApplication`, `DOTNET_ENVIRONMENT` takes precedence over `ASPNETCORE_ENVIRONMENT`. When using the legacy `WebHost`, `ASPNETCORE_ENVIRONMENT` takes precedence instead.
 
-The environment value can be overridden by setting the `ASPNETCORE_ENVIRONMENT` variable in `web.config`.
+You can also override the environment value by setting the `ASPNETCORE_ENVIRONMENT` variable in your `web.config` file.
 {% endhint %}
 
 ![Advanced Settings](images/advanced-settings.png)
