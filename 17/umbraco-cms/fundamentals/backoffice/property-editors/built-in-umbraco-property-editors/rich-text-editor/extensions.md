@@ -52,7 +52,7 @@ export default class UmbTiptapHighlightExtensionApi extends UmbTiptapExtensionAp
 
 ```js
 import { UmbTiptapToolbarElementApiBase } from '@umbraco-cms/backoffice/tiptap';
-import type { Editor } from '@umbraco-cms/backoffice/external/tiptap';
+import type { Editor } from '@umbraco-cms/backoffice/tiptap';
 
 export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapToolbarElementApiBase {
     override execute(editor?: Editor) {
