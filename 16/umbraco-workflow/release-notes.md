@@ -16,6 +16,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 16 including all changes for this version.
 
+### [16.0.7](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.7) (December 11 2025)
+* Fixes a bug where removing document approval steps did not persist the changes [#122](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/122)
+* Fixes a bug where the request-approval action was not displaying for new documents, where the new-document approval workflow had been configured [#121](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/121)
+
 ### 16.0.6 (October 31 2025)
 * Fixes a bug where rejected tasks were shown as pending approval for users belonging to the rejecting group.
 * Ensures permissions are correctly observed in configuration elements.

@@ -16,9 +16,9 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Content Example
 
-<figure><img src="../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-no-range.PNG" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../built-in-property-editors/images/Slider-Content-Example-With-Range.png" alt=""><figcaption></figcaption></figure>
 
 ## MVC View Example
 
@@ -59,7 +59,7 @@ There are two flavors of the slider. One with a single value picker. One with a 
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

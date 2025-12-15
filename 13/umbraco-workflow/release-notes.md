@@ -17,6 +17,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### 13.5.0 (December 11 2025)
+* Updates all persistence operations to use scoped transactions.
+
 ### 13.4.6 (October 31 2025)
 * Fixes a bug where rejected tasks were shown as pending approval for users belonging to the rejecting group.
 * Fixes a bug where Advanced Search could not find property editor views.

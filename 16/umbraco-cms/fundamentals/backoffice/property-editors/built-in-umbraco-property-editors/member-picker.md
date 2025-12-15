@@ -14,7 +14,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Content Example
 
-![Member Picker Content](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Member-Picker-Content-v8.png)
+![Member Picker Content](../built-in-property-editors/images/Member-Picker-Content-v8.png)
 
 ## MVC View Example
 
@@ -44,7 +44,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

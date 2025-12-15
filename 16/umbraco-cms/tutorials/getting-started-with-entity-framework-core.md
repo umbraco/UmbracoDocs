@@ -218,7 +218,7 @@ public class BlogCommentsComposer : IComposer
 
 After registering the notification handler, build the project and take a look at the database and we can see our new table:
 
-![Database result of a migration](<../../../17/umbraco-cms/extending/images/db-table (1) (1).png>)
+![Database result of a migration](<../extending/images/db-table.png>)
 
 We now have some custom database tables in our database that we can work with through the Entity framework.
 

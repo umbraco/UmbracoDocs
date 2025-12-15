@@ -21,7 +21,7 @@ We recommend using the [Block Editor](built-in-umbraco-property-editors/block-ed
 
 When creating a Data Type, specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).
 
-![Data Type Definition](../../../../../15/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/images/Media-picker-dataType.png)
+![Data Type Definition](built-in-umbraco-property-editors/images/Media-picker-dataType.png)
 
 ## [Built-in Property Editors in Umbraco](built-in-umbraco-property-editors/)
 
