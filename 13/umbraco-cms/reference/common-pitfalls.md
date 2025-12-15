@@ -385,7 +385,7 @@ The behaviour described above can lead to:
 
 - **Thread pool starvation**: When under load, all available threads can become blocked waiting for I/O operations. This leaves no threads available to handle new requests, causing response times to increase or time out.
 - **Deadlocks**: In some situations, the async continuation may need to resume on the original thread that was blocked. If that thread is blocked by `.Result`/`.Wait()`, both sides wait indefinitely.
-- **Reduced scalability**: A properly async web application can handle thousands of concurrent requests with relatively few threads. Blocking on async code reduces this significantly, effectively making your app synchronous.
+- **Reduced scalability**: A properly async web application can handle thousands of concurrent requests with fewer threads. Blocking on async code reduces this, effectively making your app synchronous.
 
 ### Example of what to avoid
 
