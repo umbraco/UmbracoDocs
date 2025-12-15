@@ -3,16 +3,20 @@ description: Presenting the Editing Experience of a Property Editor
 ---
 
 # Property Editor UI
-The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. The Property Editor Schema validates and stores data on the server. The Property Editor UI focuses on providing an intuitive editing experience in the browser.
 
+The Property Editor UI is the client-side component that renders the editing interface in the Umbraco backoffice. It provides the visual interface for content editors to interact with their data. The Property Editor Schema validates and stores data on the server. The Property Editor UI focuses on providing an intuitive editing experience through the browser.
 
 ## Creating a Property Editor UI
-A Property Editor UI is a purely frontend extension in the shape of a web component. In this example, we will create a Property Editor UI using an Umbraco Lit element step by step. At the end, the full example is provided. To create a Property Editor UI, the following needs to be done:
 
-* Implement the Umbraco Lit component - the actual visible part
-* Register the Property Editor UI using a manifest
+A Property Editor UI is a purely frontend extension in the shape of a web component. In this example, we will create a Property Editor UI using an Umbraco Lit element step by step. At the end of the article, the full example is provided.
+
+To create a Property Editor UI, the following needs to be done:
+
+* Implement the Umbraco Lit component - the actual visible part.
+* Register the Property Editor UI using a manifest.
 
 ### Implement the interface
+
 What makes a standard Umbraco Lit component a Property Editor UI is the implementation of the `UmbPropertyEditorUiElement` interface. The `UmbPropertyEditorUiElement` interface ensures that your element has the necessary properties and methods to be used as a Property Editor UI element. See the [UI API documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for the full interface definition.
 
 ```typescript
@@ -25,9 +29,9 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
 }
 ```
 
-This interface gives access to important information about the data and configuration through a number of properties. None of them are technically required to implement, but in practice you need `value` and probably also `config`.
+This interface gives access to important information about the data and configuration through a collection of properties. None of them are technically required to implement, but in practice, you need `value` and probably also `config`.
 
-* `value`: Contains the actual value that will be processed and stored when the content is saved and retrieved. The value is automatically populated when the component loads. When saved, the value is sent to be processed and saved to the database.
+* `value`: Contains the actual value that will be processed and stored when the content is saved and retrieved. The value is automatically populated when the component loads. When saved, the value is sent to processing and saved to the database.
 * `config`: The configuration as set on the Data Type.
 * `readonly`: If you support read-only mode, this will indicate whether the component should be read-only.
 
@@ -51,6 +55,7 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
 ```
 
 ### Handle value changes
+
 In the previous example, the value is read and placed in a text box. However, it will not react to changes in the value. When the value needs to be changed, it is required to dispatch an `UmbChangeEvent`. 
 
 ```typescript
@@ -76,6 +81,7 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
 ```
 
 ### Handle configuration
+
 As discussed before, both the Property Editor UI and the Property Editor Schema can have settings that are set when creating a Data Type. You can access these settings like this:
 
 ```typescript
@@ -110,16 +116,18 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
     }
 }
 ```
+
 {% hint style="warning" %}
-Setting the `maxlength` attribute is only used for client-side validation and to help editors adhere to data validation rules. This does not automatically trigger server-side validation on save. If you need server-side validation, the Property Editor Schema needs to explicitly implement this.
+Setting the `maxlength` attribute is used only for client-side validation and to help editors adhere to data validation rules. This does not automatically trigger server-side validation on save. If you need server-side validation, the Property Editor Schema needs to implement this explicitly.
 {% endhint %}
 
 ### Handle mandatory and validation
+
 When an editor is creating a Document Type in the backoffice and adds properties, properties can be marked as mandatory. There is also an option to add a custom validation message for that property.
 
 When a property is marked as mandatory, it will automatically perform validation when the content node with that property is saved. This validates whether the `value` property has a value or not. If not, the custom validation message is displayed.
 
-This validation is automatically handled by Umbraco. However, if it makes sense in the context of your Property Editor UI, you can access both the mandatory flag and the custom error message.
+The validation is handled automatically by the CMS. However, if it makes sense in the context of your Property Editor UI, you can access both the mandatory flag and the custom error message.
 
 ```typescript
 export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement implements UmbPropertyEditorUiElement {
@@ -134,7 +142,7 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
     mandatory?: boolean;
 
     /**
-     * Custom validation message when mandatory field is empty.
+     * Custom validation message when a mandatory field is empty.
      * Set in the Document Type property settings in the backoffice
      * and is automatically populated.
      */
@@ -150,19 +158,21 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
     }
 }
 ```
-This validation is only performed on the value of the property editor as a whole. When you have complex Property Editor UIs with multiple inputs and advanced validation, you need more advanced validation techniques. See the [UI Library Form Validation documentation](../../ui-library.md#form-validation) on how to implement advanced validation.
+
+The validation above is only performed on the value of the property editor as a whole. When you have complex Property Editor UIs with multiple inputs and advanced validation, you need more advanced validation techniques. See the [UI Library Form Validation documentation](../../ui-library.md#form-validation) on how to implement advanced validation.
 
 ### Handle readonly
+
 The `readonly` property indicates whether the Property Editor should be in read-only mode. This happens automatically based on:
 
-- User permissions - The current user does not have update permissions for this content
-- Content locks - Another user is currently editing the content
-- Workflow states - Content is in a state that prevents editing (for example, awaiting approval)
-- Variant restrictions - Editing a culture/segment variant without proper permissions
+- User permissions - The current user does not have update permissions for this content.
+- Content locks - Another user is currently editing the content.
+- Workflow states - Content is in a state that prevents editing (for example, awaiting approval).
+- Variant restrictions - Editing a culture/segment variant without proper permissions.
 
 By default, Umbraco places an overlay on the Property Editor if it needs to be read-only. In most cases, this is sufficient. However, you can also handle read-only mode in the Property Editor more gracefully.
 
-If you want to properly support read-only mode, the manifest should set the `supportsReadOnly` property to `true` and you need to handle read-only yourself. This means you need to ensure the editor cannot change any content in read-only mode.
+To properly support read-only mode, the manifest should set the `supportsReadOnly` property to `true`, and you need to handle read-only yourself. This means you need to ensure the editor cannot change any content in read-only mode.
 
  ```typescript
 export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement implements UmbPropertyEditorUiElement {
@@ -185,11 +195,13 @@ export default class UmbPropertyEditorUITextBoxElement extends UmbLitElement imp
 ```
 
 ### Full example
-This is a full example based on all the previous examples. This example Property Editor UI:
-* Reads and updates the value
-* Handles configuration
-* Handles mandatory and the mandatory message
-* Handles read-only mode
+
+The following code is a complete example that includes all the previous examples in this article. This example Property Editor UI:
+
+* Reads and updates the value.
+* Handles configuration.
+* Handles mandatory and the mandatory message.
+* Handles read-only mode.
 
 ```typescript
 import { html, customElement, property, state, ifDefined } from '@umbraco-cms/backoffice/external/lit';
@@ -224,7 +236,7 @@ export default class UmbPropertyEditorUITextBoxElement
     mandatory?: boolean;
 
     /**
-     * Custom validation message when mandatory field is empty.
+     * Custom validation message when a mandatory field is empty.
      * Set in the Document Type property settings in the backoffice.
      * Defaults to a localized "This field is required" message.
      */
@@ -293,12 +305,15 @@ declare global {
     }
 }
 ```
+
 ## Register the Property Editor UI
-To make your Property Editor UI available in Umbraco, you need to register it using a manifest. The manifest defines the alias, element location, and metadata like the label, icon, and which schema it works with.
+
+To make your Property Editor UI available in Umbraco, you need to register it using a manifest. The manifest defines the alias, element location, and metadata such as the label, icon, and which schema it works with.
 
 For details on the manifest structure and all available options, see the [Property Editor UI Extension Type](../../extending-overview/extension-types/property-editor-ui.md) documentation.
 
 ### Basic example
+
 {% code title="umbraco-package.json" %}
 ```json
 {
