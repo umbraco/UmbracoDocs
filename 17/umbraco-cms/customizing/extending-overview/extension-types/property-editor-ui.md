@@ -109,6 +109,10 @@ The `meta` object contains the following properties:
 | icon                         | string | Icon identifier (e.g., `"icon-autofill"`).                            |
 | group                        | string | Group name for categorizing property editors.                          |
 
+{% hint style="warning" %}
+The `propertyEditorSchemaAlias` in the manifest **must match** an existing Property Editor Schema alias. This connects the UI to the backend data handling and validation.
+{% endhint %}
+
 ### Optional Meta Properties
 
 | Property         | Type    | Description                                                              |
@@ -274,13 +278,7 @@ When enabled, your element will receive a `readonly` property that indicates whe
 
 ## Important Notes
 
-{% hint style="warning" %}
-The `propertyEditorSchemaAlias` in the manifest **must match** an existing Property Editor Schema alias. This connects the UI to the backend data handling and validation.
-{% endhint %}
-
-{% hint style="info" %}
 The web component element specified in the `element` property must implement the `UmbPropertyEditorUiElement` interface. See the [Property Editor UI Guide](../../property-editors/composition/property-editor-ui.md) for implementation details.
-{% endhint %}
 
 ## Related Documentation
 
