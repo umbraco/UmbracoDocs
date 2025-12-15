@@ -192,8 +192,6 @@
       * [Tree Navigation](customizing/extending-overview/extension-types/tree/tree-navigation.md)
       * [Tree Models](customizing/extending-overview/extension-types/tree/tree-models.md)
       * [Tree Repository](customizing/extending-overview/extension-types/tree/tree-repository.md)
-      * [Tree Data Source](customizing/extending-overview/extension-types/tree/tree-data-source.md)
-      * [Tree Store](customizing/extending-overview/extension-types/tree/tree-store.md)
     * [Workspaces](customizing/extending-overview/extension-types/workspaces/README.md)
       * [Workspace Actions](customizing/extending-overview/extension-types/workspaces/workspace-editor-actions.md)
       * [Workspace Action Menu Items](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md)

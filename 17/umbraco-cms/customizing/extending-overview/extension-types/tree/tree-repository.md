@@ -1,61 +1,104 @@
 # Tree Repository
 
-A tree repository orchestrates tree data operations. It coordinates between a **Data Source** (which fetches from APIs) and a **Store** (which caches data in memory).
+A tree repository provides data to populate your tree. It implements methods to return the root, root items, children of items, and ancestors.
 
-{% hint style="info" %}
-The repository delegates all API communication to the [Data Source](./tree-data-source.md). It handles caching through the [Store](./tree-store.md).
-{% endhint %}
+The repository is referenced by your tree manifest via `meta.repositoryAlias`.
 
-The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
+## Interface
+
+The `UmbTreeRepository` interface defines the methods your repository must implement:
 
 ```typescript
 interface UmbTreeRepository {
   requestTreeRoot();
   requestTreeRootItems();
-  requestTreeItemsOf();
-  requestTreeItemAncestors();
+  requestTreeItemsOf(args);
+  requestTreeItemAncestors(args);
 }
 ```
 
+See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
+
 ## Implementing a Tree Repository
 
-To implement a tree repository, extend the `UmbTreeRepositoryBase` class. The base class requires:
-
-1. A **Data Source** - Fetches tree data from your API
-2. A **Store Context** - Caches tree items for performance
+Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface. Call your API directly within the repository methods:
 
 {% code title="my-tree.repository.ts" %}
 ```typescript
-import type { UmbControllerHost } from "@umbraco-cms/backoffice/controller-api";
+import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-import { UmbTreeRepositoryBase } from "@umbraco-cms/backoffice/tree";
-import { MY_TREE_STORE_CONTEXT } from "./my-tree.store.js";
-import { MyTreeDataSource } from "./my-tree.data-source.js";
+import type {
+  UmbTreeChildrenOfRequestArgs,
+  UmbTreeRepository,
+  UmbTreeRootModel,
+} from "@umbraco-cms/backoffice/tree";
+import { MyTreeService } from "./api/index.js";
 import {
+  MY_TREE_ITEM_ENTITY_TYPE,
   MY_TREE_ROOT_ENTITY_TYPE,
   type MyTreeItemModel,
-  type MyTreeRootModel,
 } from "./types.js";
 
 export class MyTreeRepository
-  extends UmbTreeRepositoryBase<MyTreeItemModel, MyTreeRootModel>
-  implements UmbApi
+  extends UmbControllerBase
+  implements UmbTreeRepository<MyTreeItemModel>, UmbApi
 {
-  constructor(host: UmbControllerHost) {
-    super(host, MyTreeDataSource, MY_TREE_STORE_CONTEXT);
-  }
-
   async requestTreeRoot() {
-    const data: MyTreeRootModel = {
+    const root: UmbTreeRootModel = {
       unique: null,
       entityType: MY_TREE_ROOT_ENTITY_TYPE,
-      name: "My Tree Root",
-      icon: "icon-folder",
+      name: "My Items",
       hasChildren: true,
       isFolder: true,
+      icon: "icon-folder",
     };
 
-    return { data };
+    return { data: root };
+  }
+
+  async requestTreeRootItems() {
+    const response = await MyTreeService.getRoot();
+
+    const items: Array<MyTreeItemModel> = response.items.map((item) => ({
+      unique: item.id,
+      entityType: MY_TREE_ITEM_ENTITY_TYPE,
+      parent: { unique: null, entityType: MY_TREE_ROOT_ENTITY_TYPE },
+      name: item.name,
+      hasChildren: item.hasChildren,
+      isFolder: false,
+      icon: "icon-document",
+    }));
+
+    return { data: { items, total: response.total } };
+  }
+
+  async requestTreeItemsOf(args: UmbTreeChildrenOfRequestArgs) {
+    if (args.parent.unique === null) {
+      return this.requestTreeRootItems();
+    }
+
+    const response = await MyTreeService.getChildren({
+      parentId: args.parent.unique,
+    });
+
+    const items: Array<MyTreeItemModel> = response.items.map((item) => ({
+      unique: item.id,
+      entityType: MY_TREE_ITEM_ENTITY_TYPE,
+      parent: {
+        unique: args.parent.unique,
+        entityType: args.parent.entityType,
+      },
+      name: item.name,
+      hasChildren: item.hasChildren,
+      isFolder: false,
+      icon: "icon-document",
+    }));
+
+    return { data: { items, total: response.total } };
+  }
+
+  async requestTreeItemAncestors() {
+    return { data: [] };
   }
 }
 
@@ -63,7 +106,7 @@ export { MyTreeRepository as api };
 ```
 {% endcode %}
 
-### Registering the Repository
+## Registering the Repository
 
 Register the repository in your manifest:
 
@@ -76,10 +119,90 @@ Register the repository in your manifest:
 }
 ```
 
-The repository alias is referenced by your tree manifest via `meta.repositoryAlias`.
+The tree manifest references this via `repositoryAlias`:
+
+```typescript
+{
+  type: 'tree',
+  alias: 'My.Tree',
+  name: 'My Tree',
+  meta: {
+    repositoryAlias: 'My.Tree.Repository',
+  },
+}
+```
+
+## Static Data Example
+
+For trees with static or hardcoded data, you can return items directly without API calls:
+
+{% code title="static-tree.repository.ts" %}
+```typescript
+import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
+import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
+import type { UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
+
+const staticItems = [
+  {
+    unique: "1",
+    entityType: "my-item",
+    parent: { unique: null, entityType: "my-root" },
+    name: "First Item",
+    hasChildren: false,
+    isFolder: false,
+    icon: "icon-document",
+  },
+  {
+    unique: "2",
+    entityType: "my-item",
+    parent: { unique: null, entityType: "my-root" },
+    name: "Second Item",
+    hasChildren: false,
+    isFolder: false,
+    icon: "icon-document",
+  },
+];
+
+export class StaticTreeRepository
+  extends UmbControllerBase
+  implements UmbTreeRepository<typeof staticItems[0]>, UmbApi
+{
+  async requestTreeRoot() {
+    return {
+      data: {
+        unique: null,
+        entityType: "my-root",
+        name: "My Static Tree",
+        hasChildren: true,
+        isFolder: true,
+        icon: "icon-folder",
+      },
+    };
+  }
+
+  async requestTreeRootItems() {
+    const items = staticItems.filter((item) => item.parent.unique === null);
+    return { data: { items, total: items.length } };
+  }
+
+  async requestTreeItemsOf(args) {
+    const items = staticItems.filter(
+      (item) => item.parent.unique === args.parent.unique
+    );
+    return { data: { items, total: items.length } };
+  }
+
+  async requestTreeItemAncestors() {
+    return { data: [] };
+  }
+}
+
+export { StaticTreeRepository as api };
+```
+{% endcode %}
 
 ## Related
 
-- [Tree Data Source](./tree-data-source.md) - Implements data fetching methods
-- [Tree Store](./tree-store.md) - Caches tree items
+- [Tree Models](./tree-models.md) - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces
+- [Tree Navigation](./tree-navigation.md) - How tree clicks navigate to workspaces
 - [Trees](./README.md) - Main tree extension documentation

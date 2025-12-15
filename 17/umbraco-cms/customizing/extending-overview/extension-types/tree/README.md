@@ -13,7 +13,7 @@ description: A guide to creating a custom tree in Umbraco
 
 1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar or elsewhere
 2. **[Populating Trees](#populating-trees)** - How to populate tree with data
-3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces byt clicking menu items
+3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces by clicking menu items
 {% endhint %}
 
 ## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
@@ -103,72 +103,93 @@ This is less common than displaying via menus but useful for custom UIs.
 
 ## Populating Trees <a href="#populating-trees" id="populating-trees"></a>
 
-Trees need data. You can populate a tree in two ways:
+Trees get their data from a **Repository**. The repository implements methods to return tree items and is referenced by the tree manifest via `repositoryAlias`.
 
-### Option 1: Manual Data (Basic)
+### Repository Implementation
 
-For basic, static trees you can implement a basic data source that returns hardcoded or locally-computed items:
+Create a repository that extends `UmbControllerBase` and implements the tree repository interface:
 
 ```typescript
-export class MyBasicDataSource implements UmbTreeDataSource<MyTreeItemModel> {
-    async getRootItems() {
-        return {
-            items: [
-                { unique: '1', entityType: 'my-item', name: 'Item 1', hasChildren: false, icon: 'icon-document' },
-                { unique: '2', entityType: 'my-item', name: 'Item 2', hasChildren: false, icon: 'icon-document' },
-            ],
-            total: 2,
-        };
+import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
+import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
+
+export class MyTreeRepository extends UmbControllerBase implements UmbApi {
+  async requestTreeRoot() {
+    return {
+      data: {
+        unique: null,
+        entityType: "my-tree-root",
+        name: "My Tree",
+        hasChildren: true,
+        isFolder: true,
+        icon: "icon-folder",
+      },
+    };
+  }
+
+  async requestTreeRootItems() {
+    // Call your API here
+    const response = await MyTreeService.getRoot();
+
+    const items = response.items.map((item) => ({
+      unique: item.id,
+      entityType: "my-tree-item",
+      parent: { unique: null, entityType: "my-tree-root" },
+      name: item.name,
+      hasChildren: item.hasChildren,
+      isFolder: false,
+      icon: "icon-document",
+    }));
+
+    return { data: { items, total: response.total } };
+  }
+
+  async requestTreeItemsOf(args) {
+    if (args.parent.unique === null) {
+      return this.requestTreeRootItems();
     }
 
-    async getChildrenOf(args) {
-        return { items: [], total: 0 };
-    }
+    // Call your API for children
+    const response = await MyTreeService.getChildren({
+      parentId: args.parent.unique,
+    });
 
-    async getAncestorsOf(args) {
-        return [];
-    }
+    const items = response.items.map((item) => ({
+      unique: item.id,
+      entityType: "my-tree-item",
+      parent: { unique: args.parent.unique, entityType: args.parent.entityType },
+      name: item.name,
+      hasChildren: item.hasChildren,
+      isFolder: false,
+      icon: "icon-document",
+    }));
+
+    return { data: { items, total: response.total } };
+  }
+
+  async requestTreeItemAncestors() {
+    return { data: [] };
+  }
 }
+
+export { MyTreeRepository as api };
 ```
 
-### Option 2: Repository Pattern (Recommended for APIs)
-
-For trees backed by server APIs, use the full repository pattern with caching:
-
-```
-Repository (coordinates data + caching)
-  ↓ uses
-Data Source (fetches from API)
-  ↓ caches in
-Store (in-memory cache)
-```
-
-Register these in your manifests:
+### Register the Repository
 
 ```typescript
-// Repository - referenced by tree via repositoryAlias
 {
     type: 'repository',
     alias: 'My.Tree.Repository',
     name: 'My Tree Repository',
     api: () => import('./my-tree.repository.js'),
 }
-
-// Store - caches tree items
-{
-    type: 'treeStore',
-    alias: 'My.TreeStore',
-    name: 'My Tree Store',
-    api: () => import('./my-tree.store.js'),
-}
 ```
 
-For detailed implementation guides, see:
+For detailed implementation guidance, see:
 
+- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples
 - **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces
-- **[Tree Repository](./tree-repository.md)** - Extends `UmbTreeRepositoryBase`
-- **[Tree Data Source](./tree-data-source.md)** - Implements `getRootItems`, `getChildrenOf`, `getAncestorsOf`
-- **[Tree Store](./tree-store.md)** - Extends `UmbUniqueTreeStore`
 
 ---
 

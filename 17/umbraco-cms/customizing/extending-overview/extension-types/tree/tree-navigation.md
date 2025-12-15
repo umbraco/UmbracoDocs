@@ -68,14 +68,20 @@ For tree navigation to work correctly, your workspace must use `kind: 'routable'
 Here's how tree items, tree item manifests, and workspaces connect:
 
 ```typescript
-// 1. Your data source returns items with entityType
-const mapper = (item: ApiResponse): MyTreeItemModel => ({
-    unique: item.id,
-    entityType: 'my-custom-item',  // This links to the workspace
-    name: item.name,
-    hasChildren: false,
-    icon: 'icon-document',
-});
+// 1. Your repository returns items with entityType
+async requestTreeRootItems() {
+    const response = await MyTreeService.getRoot();
+
+    const items = response.items.map((item) => ({
+        unique: item.id,
+        entityType: 'my-custom-item',  // This links to the workspace
+        name: item.name,
+        hasChildren: false,
+        icon: 'icon-document',
+    }));
+
+    return { data: { items, total: response.total } };
+}
 
 // 2. Tree item manifest handles this entityType
 {

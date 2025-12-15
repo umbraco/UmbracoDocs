@@ -4,7 +4,7 @@ description: Understanding tree item and root models in Umbraco
 
 # Tree Models
 
-Trees use two model types to represent data: **Tree Item Model** for individual nodes and **Tree Root Model** for the root node. Your [Data Source](./tree-data-source.md) transforms API responses into these models.
+Trees use two model types to represent data: **Tree Item Model** for individual nodes and **Tree Root Model** for the root node. Your [Repository](./tree-repository.md) returns these models from its methods.
 
 ## UmbTreeItemModel
 
@@ -39,7 +39,7 @@ export interface MyTreeItemModel extends UmbTreeItemModel {
 }
 ```
 
-Your [Data Source mapper](./tree-data-source.md#the-mapper-function) populates these properties from your API response.
+Your repository methods transform API responses into these models when returning data.
 
 ## UmbTreeRootModel
 
@@ -97,6 +97,5 @@ The `entityType` values must match your workspace and tree item manifests. See [
 
 ## Related
 
-- [Tree Data Source](./tree-data-source.md) - Transforms API responses into tree models
-- [Tree Repository](./tree-repository.md) - Returns root model via `requestTreeRoot()`
+- [Tree Repository](./tree-repository.md) - Returns tree models from its methods
 - [Tree Navigation](./tree-navigation.md) - How `entityType` connects to workspaces
