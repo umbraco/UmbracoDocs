@@ -61,10 +61,11 @@ UMBRACO_EXCLUDE_TOOLS="document-move,media-delete"
 
 | Key | Description |
 | --- | --- |
+| `UMBRACO_READONLY` | *(Optional, security feature)* <br> Enables readonly mode to prevent any modifications to your Umbraco CMS. When enabled, all create, update, delete, and publish tools are disabled while query and retrieval tools remain available. This is useful for safely exploring content or connecting to production environments. <br><br> Default: `false` <br><br> Example: <br> `UMBRACO_READONLY="true"` <br><br> CLI: `--umbraco-readonly` |
 | `UMBRACO_ALLOWED_MEDIA_PATHS` | *(Optional, security feature)* <br> Defines a comma-separated list of absolute directory paths allowed for media uploads using the `filePath` source type. This prevents unauthorized file system access by restricting uploads to specific, trusted directories. <br><br> Required for: Local file path uploads <br> Default: If not configured, all `filePath` uploads are rejected with an error. <br><br> Example: <br> `UMBRACO_ALLOWED_MEDIA_PATHS="/tmp/uploads,/var/media,/home/user/assets"` |
 
 {% hint style="info" %}
-URL-based and base64 media uploads work without this configuration.  
+URL-based and base64 media uploads work without this configuration.
 {% endhint %}
 
 ## Environment Configuration Options

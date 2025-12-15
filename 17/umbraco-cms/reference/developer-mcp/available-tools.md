@@ -112,6 +112,8 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `sort-document` — Sort document order
 - `unpublish-document` — Unpublish a document
 - `update-document` — Update a document
+- `update-document-properties` — Update or add property values on a document without requiring the full document JSON payload
+- `update-block-property` — Update or add property values within BlockList, BlockGrid, or RichText block content
 - `put-document-domains` — Update document domains
 - `put-document-notifications` — Update document notifications
 - `put-document-public-access` — Update document public access
