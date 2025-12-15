@@ -16,11 +16,13 @@ Tiptap has a library of supported native extensions. You can find a list of thes
 
 ### Tiptap extension types
 
-There are two types of extension: `tiptapExtension` and `tiptapToolbarExtension`.
+There are three types of extension: `tiptapExtension`, `tiptapToolbarExtension` and `tiptapStatusbarExtension`.
 
 The `tiptapExtension` extension is used to register a native [Tiptap Extension](https://tiptap.dev/docs/editor/extensions/). These will enhance the capabilities of the rich text editor itself. For example, to enable text formatting, drag-and-drop functionality and spell-checking.
 
 The `tiptapToolbarExtension` extension adds a toolbar action that interacts with the Tiptap editor (and native Tiptap extensions).
+
+The `tiptapStatusbarExtension` extension adds a component to the statusbar, located at the bottom of the Tiptap editor.
 
 ## Adding a native extension
 
