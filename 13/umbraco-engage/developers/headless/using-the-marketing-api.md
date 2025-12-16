@@ -101,7 +101,7 @@ Optionally, provide an External-Visitor-Id header in order to automatically upda
 
 ### Segmentation - Assets
 
-`/umbraco/engage/api/v1/segmentation/assets/item/{path}`&#x20;
+`/umbraco/engage/api/v1/segmentation/assets/item/{path}`
 
 `/umbraco/engage/api/v1/segmentation/assets/item/{id}`
 
@@ -118,15 +118,15 @@ These requests let you verify if a content page has a **JavaScript** or **CSS** 
 }
 ```
 
-![Add custom code for variant](../../.gitbook/assets/engage-headless-segment-css.png)
+![Add custom code for variant](<../../.gitbook/assets/engage-headless-segment-css (1).png>)
 
 ### Segmentation - Content
 
-`/umbraco/engage/api/v1/segmentation/content/segments`&#x20;
+`/umbraco/engage/api/v1/segmentation/content/segments`
 
 `/umbraco/engage/api/v1/segmentation/content/segments/{path}`
 
-&#x20;`/umbraco/engage/api/v1/segmentation/content/segments/{id}`
+`/umbraco/engage/api/v1/segmentation/content/segments/{id}`
 
 These requests return details about segments (personalization and A/B testing) configured for a page. This helps determine if content can be changed by Umbraco Engage or cached more aggressively. The information returned by the APIs is visitor agnostic and reflects all the segments as configured in Umbraco. This returns the following response:
 
@@ -168,9 +168,9 @@ These requests return details about segments (personalization and A/B testing) c
 
 `/umbraco/engage/api/v1/segmentation/content/activesegments/{path}`
 
-&#x20;`/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
+`/umbraco/engage/api/v1/segmentation/content/activesegments/{id}`
 
-These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to. This endpoint requires the External-Visitor-Id header to function.&#x20;
+These requests return the segment (personalization and A/B testing) that the current visitor ID of that specific page belongs to. This endpoint requires the External-Visitor-Id header to function.
 
 This returns the following response:
 
@@ -199,7 +199,7 @@ This returns the following response:
 
 ### Cookies & External Visitor IDs
 
-Umbraco Engage in a non-headless setup uses cookies to track returning visitors. This, however, has proven difficult to work with in a headless setup for most clients. Therefore, it is not a recommended way of working with the Engage API.&#x20;
+Umbraco Engage in a non-headless setup uses cookies to track returning visitors. This, however, has proven difficult to work with in a headless setup for most clients. Therefore, it is not a recommended way of working with the Engage API.
 
 Each API endpoint that allows for tracking analytics, segmentation, and retrieving content has support for adding the External Visitor ID header. This is a unique ID for an individual visitor and is to be used instead of the cookie. When tracking pageviews, a new External Visitor ID will be generated and is to be used for subsequent API calls corresponding to that visitor.
 

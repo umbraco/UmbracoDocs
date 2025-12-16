@@ -12,13 +12,13 @@ In the following guide, we will show how this is done. There are three steps:
 
 1. [C# Definition](implement-your-own-segment-parameters.md#id-1.-c-definition)
 2. [AngularJS Definition](implement-your-own-segment-parameters.md#id-2.-angularjs-definition)
-3. [[Optional] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
+3. [\[Optional\] Cockpit Visualization](implement-your-own-segment-parameters.md#id-3.-optional-cockpit-visualization)
 
 This guide will use code samples to add a "**Day of week**" segment parameter where you can select a single day of the week. If a pageview happens on that day the segment parameter will be satisfied.
 
 You can download the following code files to your project to add the parameter directly to your solution.
 
-{% file src="../../.gitbook/assets/day-of-the-week-segment-parameter.zip" %}
+{% file src="../../.gitbook/assets/day-of-the-week-segment-parameter (1).zip" %}
 
 ## 1. C# Definition
 
@@ -79,14 +79,12 @@ public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 We are using the class `DayOfWeekSegmentRuleConfig` as a representation of the configuration of the rule, which is not strictly necessary but makes it easier. The configuration is stored as a string in the database or IntelliSense support in code. The stored configuration is parsed into this class:
 
 {% code overflow="wrap" %}
-
 ```csharp
 public class DayOfWeekSegmentRuleConfig
 {
     public DayOfWeek DayOfWeek { get; set; }
 }
 ```
-
 {% endcode %}
 
 The segment rule factory needs to be registered so Umbraco Engage can use it.\
@@ -280,9 +278,9 @@ To make sure Umbraco loads your JS files we specify them here:
 
 If all goes well you will see your custom parameter editor show up in the segment builder:
 
-![Day of week segment parameter](../../.gitbook/assets/engage-personalization-developer1.png)
+![Day of week segment parameter](<../../.gitbook/assets/engage-personalization-developer1 (1).png>)
 
-## 3. [Optional] Cockpit Visualization
+## 3. \[Optional] Cockpit Visualization
 
 The new segment parameter will show up automatically in the [Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md) that is part of our package. The cockpit is a live view of Umbraco Engage data for the current visitor.
 
@@ -290,7 +288,7 @@ This includes active segments of the current visitor, and therefore your new seg
 
 If you hover over it you will see the rule identifier `DayOfWeek` rather than a friendly name.
 
-![Raw display of DayOfWeek](../../.gitbook/assets/engage-personalization-day-of-week-raw.png)
+![Raw display of DayOfWeek](<../../.gitbook/assets/engage-personalization-day-of-week-raw (1).png>)
 
 If you want to change this to be more readable you can implement the `Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface.
 
@@ -332,4 +330,4 @@ After it has been registered, Umbraco Engage will use the additional information
 The "**DayOfWeek** test" string is the name of the segment. This segment happens to have only 1 parameter which is the DayOfWeek parameter.
 {% endhint %}
 
-![DayOfWeek formatted](../../.gitbook/assets/engage-personalization-day-of-week-formatted.png)
+![DayOfWeek formatted](<../../.gitbook/assets/engage-personalization-day-of-week-formatted (1).png>)

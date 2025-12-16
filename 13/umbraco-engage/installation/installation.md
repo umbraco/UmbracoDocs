@@ -24,7 +24,7 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 1. Open the project in Visual Studio.
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 
-![NuGet](../.gitbook/assets/NuGet-Package-Manager.png)
+![NuGet](<../.gitbook/assets/NuGet-Package-Manager (1).png>)
 
 3. Navigate to the **Browse** tab.
 4. Search for the **Umbraco.Engage** package.
@@ -32,7 +32,7 @@ The example shown below uses the Nuget Package Manager in Visual Studio.
 6. Choose which project to install it into.
 7. Install the package.
 
-![Umbraco Engage Package](../.gitbook/assets/Umbraco-engage-package.png)
+![Umbraco Engage Package](<../.gitbook/assets/Umbraco-engage-package (1).png>)
 
 ## Installing using the terminal
 
@@ -62,7 +62,7 @@ If you have any trouble, go to [Troubleshooting installs](troubleshooting-instal
 
 ## Next steps
 
-![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1).png>)
+![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1) (1).png>)
 
 When you have installed Umbraco Engage, build or restart your website, and the **Engage** section will appear in the backoffice, as shown above.
 
@@ -148,7 +148,7 @@ Are you using a load-balanced setup or separate CM and CD environments? [Please 
 
 When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
 
-<figure><img src="../.gitbook/assets/Umbraco-Engage-Regenerate-data.png" alt=""><figcaption><p>Regenerate button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Umbraco-Engage-Regenerate-data (1).png" alt=""><figcaption><p>Regenerate button</p></figcaption></figure>
 
 To generate reporting data manually on your local installation, go to **Engage** -> **Configuration.** Scroll down to **Reporting** section and click the red **Regenerate** button.
 

@@ -37,7 +37,7 @@ With the Persona groups and Personas in place, it is time to evaluate and score 
 2. Open a content item that you want to score.
 3. Select the **Personalization** content app.
 
-<figure><img src="../.gitbook/assets/enage-personalization-content-scoring.png" alt=""><figcaption><p>Score content for each Persona from the Personalization Content App on each content item.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/enage-personalization-content-scoring (1).png" alt=""><figcaption><p>Score content for each Persona from the Personalization Content App on each content item.</p></figcaption></figure>
 
 4. Go to **Content scoring**.
 5. Use the sliders to give the content a score of 1-10 for each persona.
@@ -57,16 +57,16 @@ These ingredients can be implicitly scored, explicitly scored, or a combination.
 1. Navigate to the **Engage** section.
 2. Open the **Personalization** dashboard and select **Segments**.
 
-<figure><img src="../.gitbook/assets/engage-personalization-segments.png" alt=""><figcaption><p>Create segments from the Personalization dashboard in the Umbraco Engage section of the backoffice.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-segments (1).png" alt=""><figcaption><p>Create segments from the Personalization dashboard in the Umbraco Engage section of the backoffice.</p></figcaption></figure>
 
 3. Click **Add new segment**.
 4. Choose a parameter to base the segment on.
 
-<figure><img src="../.gitbook/assets/engage-personalization-segments-choose-parameter.png" alt=""><figcaption><p>Choose which parameter you want to base your new segment on.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-segments-choose-parameter (1).png" alt=""><figcaption><p>Choose which parameter you want to base your new segment on.</p></figcaption></figure>
 
 3. Set up the parameter with the relevant configuration.
 
-<figure><img src="../.gitbook/assets/engage-personalization-segments-choose-persona.png" alt=""><figcaption><p>Select the specific persona and whether they should be included or excluded.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-segments-choose-persona (1).png" alt=""><figcaption><p>Select the specific persona and whether they should be included or excluded.</p></figcaption></figure>
 
 4. Click **Save parameter** to apply the parameter to the segment.
 5. Repeat steps 2-4 to add more parameters if needed.
@@ -125,14 +125,14 @@ To personalize content, segmentation needs to be allowed on the Document Types a
 1. Navigate to the content item you want to personalize.
 2. Open the **Personalization** dashboard.
 
-<figure><img src="../.gitbook/assets/engage-personalization-create-variants.png" alt=""><figcaption><p>Create personalized versions of content items from the Personalization dashboard.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-create-variants (1).png" alt=""><figcaption><p>Create personalized versions of content items from the Personalization dashboard.</p></figcaption></figure>
 
 3. Select **Add personalized variant** to get started with the personalization.
 4. Select the **Segment** you want to target with this new variant.
 5. Give the variant a **Name**.
 6. Add a **Description**.
 
-<figure><img src="../.gitbook/assets/engage-personalization-add-new-variant.png" alt=""><figcaption><p>To add a new personalization variant you need to select a segment and add a name and a description.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-add-new-variant (1).png" alt=""><figcaption><p>To add a new personalization variant you need to select a segment and add a name and a description.</p></figcaption></figure>
 
 7. Click on **Add new variant** to start editing the variant.
 
@@ -140,7 +140,7 @@ The content opens in a split-view format when all configuration required for the
 
 Only fields allowed for segmentation can be edited in the variant. Fields not configured for segmentation will use the values from the default content. When you leave a field blank on the variant, it automatically uses the values from the default content.
 
-<figure><img src="../.gitbook/assets/engage-personalization-split-view.png" alt=""><figcaption><p>Use the split-view to personalize the fields in the variant that has been configured for segmentation.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-split-view (1).png" alt=""><figcaption><p>Use the split-view to personalize the fields in the variant that has been configured for segmentation.</p></figcaption></figure>
 
 8. Add content for the new variant.
 9. Select **Save and publish...** when you are done editing.
@@ -164,7 +164,7 @@ After setting up a personalized variant of a content item, you can add custom CS
 4. Click on the **Edit variant** button below the Page Title.
 5. Add your custom CSS and/or JavaScript.
 
-<figure><img src="../.gitbook/assets/engage-personalization-add-custom-code-to-variant.png" alt=""><figcaption><p>Edit the variant to add custom CSS and/or JavaScript to the variant.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-add-custom-code-to-variant (1).png" alt=""><figcaption><p>Edit the variant to add custom CSS and/or JavaScript to the variant.</p></figcaption></figure>
 
 6. **Save and close** to persist the changes.
 7. **Save and publish** the content item.
@@ -179,7 +179,7 @@ In some cases, you might want to change the status of a variant. Follow the step
 4. Click on the **Edit variant** button below the Page Title.
 5. Use the toggle at the bottom of the pop-up to change the variant status.
 
-<figure><img src="../.gitbook/assets/engage-personalization-variant-status.png" alt=""><figcaption><p>Edit the variant to toggle the status in case you want to make a variant active/inactive.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-variant-status (1).png" alt=""><figcaption><p>Edit the variant to toggle the status in case you want to make a variant active/inactive.</p></figcaption></figure>
 
 6. **Save and close** to persist the changes.
 7. **Save and publish** the content item.
