@@ -12,7 +12,7 @@ In the Profiles section, you can access specific visitor profiles, by clicking *
 
 The Insights section provides an overview of the visitor.
 
-![Insight section overview.](../../.gitbook/assets/Insight-section-overview-v16.png)
+![Insight section overview.](<../../.gitbook/assets/Insight-section-overview-v16 (1).png>)
 
 Here, you can see:
 
@@ -37,13 +37,13 @@ By default, a profile is considered engaged when the engagement time of the visi
 
 Within the profile, you can see all [personas](../personalization/implicit-and-explicit-personalization/setting-up-personas.md) and [customer journeys](../personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the Umbraco Engage has assigned the persona "Data & Privacy officer" to this visitor.
 
-![Assigned phase.](../../.gitbook/assets/Assigned-phase-v16.png)
+![Assigned phase.](<../../.gitbook/assets/Assigned-phase-v16 (1).png>)
 
 ## Activity Tab
 
 In the Activity tab, you can view all the activity of this visitor.
 
-![Activity tab.](../../.gitbook/assets/activity-tab-v16.png)
+![Activity tab.](<../../.gitbook/assets/activity-tab-v16 (1).png>)
 
 For each session, you can see:
 
@@ -60,7 +60,7 @@ For each session, you can see:
 
 By clicking on a row, you can access more detailed information about that session.
 
-![Detailed session information.](../../.gitbook/assets/Detailed-session-information.png)
+![Detailed session information.](<../../.gitbook/assets/Detailed-session-information (1).png>)
 
 You will see:
 
@@ -77,7 +77,7 @@ You will see:
 
 Finally, you can drill down into the activity on a specific page:
 
-![Activity on a specific page.](../../.gitbook/assets/Activity-on-specific-page-v16.png)
+![Activity on a specific page.](<../../.gitbook/assets/Activity-on-specific-page-v16 (1).png>)
 
 Here, you can see:
 

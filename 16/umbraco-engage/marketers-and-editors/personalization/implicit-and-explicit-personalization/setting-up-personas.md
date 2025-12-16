@@ -8,7 +8,7 @@ description: >-
 
 This can be done by going to the Engage section in your Umbraco installation and the sub-section "**Personalization**". There you can navigate to the tab "**Personas**".
 
-<figure><img src="../../../.gitbook/assets/engage-personalization-personas.png" alt="Personas."><figcaption><p>Personas.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/engage-personalization-personas (1).png" alt="Personas."><figcaption><p>Personas.</p></figcaption></figure>
 
 Here you can create one or more persona groups, and within each group, you can create one or more personas.
 

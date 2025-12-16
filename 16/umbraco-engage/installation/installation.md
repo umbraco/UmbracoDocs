@@ -57,7 +57,7 @@ If you have any trouble, go to [Troubleshooting installs](troubleshooting-instal
 
 ## Next steps
 
-![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1).png>)
+![Engage section in the Umbraco Backoffice.](<../.gitbook/assets/image (4) (1) (1).png>)
 
 When you have installed Umbraco Engage, build or restart your website, and the **Engage** section will appear in the backoffice, as shown above.
 
@@ -99,7 +99,7 @@ The following client-side tracking script loading types are currently not suppor
 
 The Cockpit is a tool to help with testing segments and diagnosing the data that Umbraco Engage collects. It can be viewed on the front end of your website, only if you are logged into Umbraco as well.
 
-As of Umbraco Engage 16, the cockpit is automatically installed.&#x20;
+As of Umbraco Engage 16, the cockpit is automatically installed.
 
 {% hint style="info" %}
 Automatic injection can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to **false**.
@@ -143,7 +143,7 @@ Are you using a load-balanced setup or separate CM and CD environments? [Check o
 
 When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 To generate reporting data manually on your local installation, go to **Umbraco -> Settings** -> **Engage** section -> **Configuration.** Scroll down to the **Reporting** section and click the red **Regenerate** button.
 

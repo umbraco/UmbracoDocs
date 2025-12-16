@@ -25,13 +25,13 @@ The points of all these different sources are added and this reaches a certain a
 
 In the example, the visitor collected 40 points for the **Data & Privacy officer**, 30 points for the **Marketer**, and 0 points for the developer persona:
 
-![Persona scoring example showing points for Data & Privacy Officer](../../../.gitbook/assets/engage-persona-scoring.png)
+![Persona scoring example showing points for Data & Privacy Officer](<../../../.gitbook/assets/engage-persona-scoring (1).png>)
 
 The threshold in this specific case was set to 25 points. As soon as the **Data & Privacy officer** reached 25 points Umbraco Engage assumed that this visitor was a **Data & Privacy officer**.
 
 In this example the **Think** customer journey step is assumed based on the collected amount of points:
 
-![Customer journey step 'Think' assumed based on the collected points.](../../../.gitbook/assets/engage-journey-scoring.png)
+![Customer journey step 'Think' assumed based on the collected points.](<../../../.gitbook/assets/engage-journey-scoring (1).png>)
 
 ## Tweaking the Scoring
 
@@ -39,6 +39,6 @@ The threshold value and the expected difference between two personas or journey 
 
 Setting up a deviation of at least 35 points between two personas the cockpit will show a different visualization in the previous example:
 
-![Persona scoring showing minimal deviation and the algorithm waiting for the threshold to be reached](../../../.gitbook/assets/engage-persona-scoring-with-minimal-deviation.png)
+![Persona scoring showing minimal deviation and the algorithm waiting for the threshold to be reached](<../../../.gitbook/assets/engage-persona-scoring-with-minimal-deviation (1).png>)
 
 You can see that the "**Data and privacy officer**" still has 40 points and the marketer 30 points. Both have also reached the threshold of 25 points, but there is not a minimal deviation of 35 points. The Umbraco Engage algorithm waits for the deviation to reach the set threshold before assuming a persona. For example: the **Data & privacy officer** reaches 65 points (30 points of the marketer + a minimal deviation of 35 points).

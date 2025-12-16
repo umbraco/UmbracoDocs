@@ -16,6 +16,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.1.1](https://www.nuget.org/packages/Umbraco.Engage/16.1.1) (December 16th 2025)
+
+* Implements additional validation checks before assigning the visitor cookie, improving cookie handling reliability across various request scenarios.
+* Resolved an issue where headless API responses returned absolute URLs instead of relative paths for URL paths.
+* Resolved various bugs regarding A/B Test UI, including the editing and previewing of segments.
+* Resolved multiple issues with reporting tabs, including segment personalization, goal performance, and segment potential displays.
+* Resolved heatmap display issues by ensuring the default culture is used for invariant documents, with minor style improvements.
+* Resolved `ProducesResponseType` attributes using the incorrect `StatusCodeResult` type.
+
 #### [16.1.0](https://www.nuget.org/packages/Umbraco.Engage/16.1.0) (November 7th 2025)
 
 * Bumped the minimal CMS requirement to Umbraco version 16.2.0 due to compatibility changes.
