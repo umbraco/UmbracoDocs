@@ -280,7 +280,7 @@ const elementName = "my-property-editor-ui-number";
 
 @customElement(elementName)
 export class MyPropertyEditorUINumberElement
-  extends UmbFormControlMixin<string>(UmbLitElement, undefined)
+  extends UmbFormControlMixin<string, typeof UmbLitElement, undefined>(UmbLitElement, undefined)
   implements UmbPropertyEditorUiElement
 {
   private onChange(e: Event) {
