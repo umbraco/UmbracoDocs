@@ -2,7 +2,7 @@
 description: Follow the steps to install Umbraco UI Builder into your Umbraco CMS website.
 ---
 
-# Installation
+# Installing Umbraco UI Builder
 
 In this article, you will learn how to install Umbraco UI Builder into your Umbraco CMS implementation.
 
@@ -28,11 +28,11 @@ To install via Visual Studio, follow these steps:
 2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution...**
 3. Select the **Browse** tab and search for **Umbraco.UIBuilder**.
 
-![Installing Umbraco UI Builder via Visual Studio](images/installing-vs.png)
+![Installing Umbraco UI Builder via Visual Studio](../.gitbook/assets/installing-vs.png)
 
 4. Select a version from the **Version** drop-down based on the Umbraco CMS version you are using.
 5. Click **Install**.
-6. *[Optional]* Search for and install **Umbraco.UIBuilder.Startup** if installing without UI elements.
+6. _\[Optional]_ Search for and install **Umbraco.UIBuilder.Startup** if installing without UI elements.
 7. Ensure that the package reference is added to the **.csproj** file once the installation is complete:
 
 ```cs

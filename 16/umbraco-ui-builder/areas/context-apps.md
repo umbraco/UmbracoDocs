@@ -6,7 +6,7 @@ description: Configuring context apps in Umbraco UI Builder.
 
 Context Apps in Umbraco UI Builder function similarly to Workspace Views (previously called as Content Apps). They provide contextual applications within the content editor UI. By defining context apps, you can expose collections that are directly related to the content in question. For example, blog post comments can be linked to their respective blog posts and managed in context through a Workspace View.
 
-![Context App](../images/context_app.png)
+![Context App](../.gitbook/assets/context_app.png)
 
 ## Defining a Context App
 
@@ -126,7 +126,7 @@ withTreeConfig.AddContextAppAfter("umbContent", "Comments", "icon-chat", context
 ### Using the `SetAlias()` Method
 
 Sets the alias of the context app. By default, an alias is automatically generated from the context app's name. You can use the `SetAlias` method to specify a custom alias.
- 
+
 #### Method Syntax
 
 ```cs
@@ -153,9 +153,9 @@ SetIconColor(string color) : ContextAppConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 contextAppConfig.SetIconColor("blue");
-````
+```
 
 ## Changing Context App Visibility
 
@@ -175,9 +175,9 @@ SetVisibility(Func<ContextAppVisibilityContext, bool> visibilityExpression) : Co
 
 #### Example
 
-````csharp
+```csharp
 contextAppConfig.SetVisibility(appCtx => appCtx.Source is IContent content && content.ContentType.Alias == "blogPost");
-````
+```
 
 ## Adding a Collection to a Context App
 
@@ -216,7 +216,7 @@ contextAppConfig.AddCollection<Comment>(
 
 ### Using the `AddCollection<>()` Method with Custom Icon
 
-**AddCollection&lt;TEntityType&gt;(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : ContextAppConfigBuilder**
+**AddCollection\<TEntityType>(Lambda idFieldExpression, Lambda fkFieldExpression, string nameSingular, string namePlural, string description, string iconSingular, string iconPlural, Lambda collectionConfig = null) : ContextAppConfigBuilder**
 
 Adds a collection to the current context app with the specified names, descriptions, and custom icons. Each collection requires an ID field and a foreign key field, linking to Umbraco node UDI values. For more details, see the [Collections](../collections/overview.md) article.
 
