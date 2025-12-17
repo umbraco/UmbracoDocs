@@ -25,7 +25,7 @@ If you are connecting to the secure endpoint of Umbraco locally then always set 
 
 | Key | Description |
 | --- | --- |
-| `UMBRACO_TOOL_MODES` | Specifies semantic tool modes to enable. Modes bundle related collections together for easier configuration. For example, `publisher`, `developer`, `admin`, or `full`. |
+| `UMBRACO_TOOL_MODES` | Specifies semantic tool modes to enable. Modes bundle related collections together for easier configuration. For example, `content`, `media`, or `translation`. |
 
 ### Tool and Tool Collection Configuration
 
@@ -55,7 +55,6 @@ Tool modes provide a higher-level abstraction over collection filtering. Instead
 
 - **Simpler configuration**: One mode name instead of listing multiple collections
 - **Semantic clarity**: Express intent ("I want content editing tools") rather than technical details
-- **Persona-based presets**: Compound modes like `publisher`, `developer`, `admin` match common use cases
 - **Reduced errors**: No need to remember exact collection names
 
 ### Base Modes
@@ -76,17 +75,6 @@ Base modes map directly to specific tool collections:
 | `system` | server, manifest, models-builder | Server info and code generation |
 | `integrations` | webhook, redirect, relation, relation-type, tag | External integrations |
 
-### Compound Modes
-
-Compound modes expand to multiple base modes for common personas:
-
-| Mode | Expands To | Use Case |
-| --- | --- | --- |
-| `publisher` | content, media, translation | Content publishers working with documents and media |
-| `developer` | content-modeling, front-end, system | Developers building templates and schemas |
-| `admin` | users, members, health, system | Administrators managing users and monitoring |
-| `full` | (all base modes) | Full access to all tools |
-
 ### Mode Usage Examples
 
 **Single mode:**
@@ -103,18 +91,11 @@ UMBRACO_TOOL_MODES="content"
 UMBRACO_TOOL_MODES="content,media,translation"
 ```
 
-**Compound mode:**
-
-```bash
-# Full publisher preset (content + media + translation)
-UMBRACO_TOOL_MODES="publisher"
-```
-
 **Mode with exclusions:**
 
 ```bash
-# Publisher mode but exclude version history
-UMBRACO_TOOL_MODES="publisher"
+# Content mode but exclude version history
+UMBRACO_TOOL_MODES="content"
 UMBRACO_EXCLUDE_TOOL_COLLECTIONS="document-version"
 ```
 
