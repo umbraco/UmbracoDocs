@@ -6,7 +6,7 @@ description: Configuring the editor of a collection in Umbraco UI Builder.
 
 An editor is the user interface used to edit an entity. It consists of tabs and property editors.
 
-![A collection editor](../images/people-editor.png)
+![A collection editor](<../.gitbook/assets/people-editor (1).png>)
 
 ## Configuring an Editor
 
@@ -24,11 +24,11 @@ Editor(Lambda editorConfig = null) : EditorConfig<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.Editor(editorConfig => {
     ...
 });
-````
+```
 
 ## Adding a Tab to an Editor
 
@@ -44,11 +44,11 @@ AddTab(string name, Lambda tabConfig = null) : EditorTabConfigBuilder<TEntityTyp
 
 #### Example
 
-````csharp
+```csharp
 editorConfig.AddTab("General", tabConfig => {
     ...
 });
-````
+```
 
 ## Configuring a Sidebar to a Tab
 
@@ -66,11 +66,11 @@ Sidebar(Lambda sidebarConfig = null) : EditorTabSidebarConfigBuilder<TEntityType
 
 #### Example
 
-````csharp
+```csharp
 tabConfig.Sidebar(sidebarConfig => {
     ...
 });
-````
+```
 
 ## Setting the Visibility of a Tab
 
@@ -86,9 +86,9 @@ SetVisibility(Predicate<EditorTabVisibilityContext> visibilityExpression) : Edit
 
 #### Example
 
-````csharp
+```csharp
 tabConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
-````
+```
 
 ## Adding a Fieldset to a Tab
 
@@ -104,11 +104,11 @@ AddFieldset(string name, Lambda fieldsetConfig = null) : EditorFieldsetConfigBui
 
 #### Example
 
-````csharp
+```csharp
 tabConfig.AddFieldset("Contact", fieldsetConfig => {
     ...
 });
-````
+```
 
 ## Setting the Visibility of a Fieldset
 
@@ -124,9 +124,9 @@ SetVisibility(Predicate<EditorFieldsetVisibilityContext> visibilityExpression) :
 
 #### Example
 
-````csharp
+```csharp
 fieldsetConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
-````
+```
 
 ## Adding a Field to a Fieldset
 
@@ -142,11 +142,11 @@ AddField(Lambda propertyExpression, Lambda propertyConfig = null) : EditorFieldC
 
 #### Example
 
-````csharp
+```csharp
 fieldsetConfig.AddField(p => p.FirstName, fieldConfig => {
     ...
 });
-````
+```
 
 ## Changing the Label of a Field
 
@@ -164,9 +164,9 @@ SetLabel(string label) : EditorFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetLabel("First Name");
-````
+```
 
 ## Hiding the Label of a Field
 
@@ -184,9 +184,9 @@ HideLabel() : EditorFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.HideLabel();
-````
+```
 
 ## Adding a Description to a Field
 
@@ -202,9 +202,9 @@ SetDescription(string description) : EditorFieldConfigBuilder<TEntityType, TValu
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetDescription("Enter your age in years");
-````
+```
 
 ## Changing the Data Type of a Field
 
@@ -222,9 +222,9 @@ SetDataType(string dataTypeName) : EditorFieldConfigBuilder<TEntityType, TValueT
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetDataType("Richtext Editor");
-````
+```
 
 #### Method Syntax (by ID)
 
@@ -234,10 +234,10 @@ SetDataType(int dataTypeId) : EditorFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 
 fieldConfig.SetDataType(-88);
-````
+```
 
 ## Setting the Default Value of a Field
 
@@ -253,10 +253,10 @@ SetDefaultValue(TValueType defaultValue) : EditorFieldConfigBuilder<TEntityType,
 
 #### Example
 
-````csharp
+```csharp
 // Example
 fieldConfig.SetDefaultValue(10);
-````
+```
 
 ### Using the `SetDefaultValue()` Method (Function-Based)
 
@@ -270,9 +270,9 @@ SetDefaultValue(Func defaultValueFunc) : EditorFieldConfigBuilder<TEntityType, T
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetDefaultValue(() => DateTime.Now);
-````
+```
 
 ## Making a Field Required
 
@@ -288,9 +288,9 @@ MakeRequired() : EditorFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeRequired();
-````
+```
 
 ## Validating a Field
 
@@ -306,9 +306,9 @@ SetValidationRegex(string regex) : EditorFieldConfigBuilder<TEntityType, TValueT
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetValidationRegex("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
-````
+```
 
 ## Making a Field Read-only
 
@@ -324,9 +324,9 @@ MakeReadOnly() : EditorFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly();
-````
+```
 
 ### Using the `MakeReadOnly(Func<TValueType, string>)` Method
 
@@ -340,9 +340,9 @@ MakeReadOnly(Func<TValueType, string> format) : EditorFieldConfigBuilder<TEntity
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly(distanceProp => $"{distanceProp:## 'km'}");
-````
+```
 
 ### Using the `MakeReadOnly(object dataTypeNameOrId)` Method
 
@@ -356,9 +356,9 @@ MakeReadOnly(object dataTypeNameOrId) : EditorFieldConfigBuilder<TEntityType, TV
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly("myReadOnlyEditor");
-````
+```
 
 ### Using the `MakeReadOnly(Predicate<>)` Method
 
@@ -372,9 +372,9 @@ MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp) : EditorFieldCon
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create);
-````
+```
 
 ### Using the `MakeReadOnly(Predicate<>, Func<>)` Method
 
@@ -388,9 +388,9 @@ MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp, Func<TValueType,
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, distanceProp => $"{distanceProp:## 'km'}");
-````
+```
 
 ### Using the `MakeReadOnly(Predicate<>, Func<>)` Method
 
@@ -404,9 +404,9 @@ MakeReadOnly(Predicate<EditorFieldReadOnlyContext> readOnlyExp, object dataTypeN
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.MakeReadOnly(ctx => ctx.EditorMode == EditorMode.Create, "myReadOnlyEditor");
-````
+```
 
 ## Setting the Visibility of a Field
 
@@ -422,6 +422,6 @@ SetVisibility(Predicate<EditorFieldVisibilityContext> visibilityExpression) : Ed
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetVisibility(ctx => ctx.EditorMode == EditorMode.Create);
-````
+```

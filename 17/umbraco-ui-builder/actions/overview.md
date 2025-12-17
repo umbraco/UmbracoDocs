@@ -2,11 +2,11 @@
 description: Learn how to configure actions in Umbraco UI Builder.
 ---
 
-# Actions
+# Overview
 
 Actions allow you to perform custom tasks on collections and their entities from different areas in the UI. For Example: menu actions, bulk actions, or individual table row actions.
 
-![Bulk Actions UI](../images/bulk_actions.png)
+![Bulk Actions UI](../.gitbook/assets/bulk_actions.png)
 
 To get started with actions, check out the basics:
 
