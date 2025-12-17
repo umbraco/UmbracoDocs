@@ -9,28 +9,49 @@ description: A guide to creating a custom tree in Umbraco
 {% endhint %}
 
 {% hint style="warning" %}
-**Trees are data providers, not UI components.** A tree on its own does nothing visible. To create a working tree in the backoffice, you need to understand three things:
+To create a working Tree in the Backoffice, you need to understand three things:
 
-1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar or elsewhere.
-2. **[Populating Trees](#populating-trees)** - How to populate tree with data.
-3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces by clicking menu items.
+1. **[Populating Trees](#populating-trees)** - How to populate a Tree with data.
+2. **[Displaying Trees](#displaying-trees)** - How to display Trees and connect them to Menus to appear in the Section Sidebar or elsewhere.
+3. **[Trees and Workspaces](#trees-and-workspaces)** - How to navigate to Workspaces by clicking Menu Items.
 {% endhint %}
 
-## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
+## Populating Trees <a href="#populating-trees" id="populating-trees"></a>
 
-Trees provide hierarchical data to **Menus**, which display the actual navigation you see in the backoffice sidebar. To display a tree, you need to connect multiple extensions:
+Trees get their data from a **Repository**. The Repository implements methods to return Tree Items and is referenced by the Tree Manifest via `repositoryAlias`.
 
-```none
-Tree (data provider)
-  ↓ referenced by
-MenuItem (kind: 'tree', treeAlias: 'My.Tree')
-  ↓ belongs to
-Menu
-  ↓ displayed by
-SectionSidebarApp
-  ↓ appears in
-Section (Content, Media, Settings, or custom)
+### Register the Repository
+
+```typescript
+{
+    type: 'repository',
+    alias: 'My.Tree.Repository',
+    name: 'My Tree Repository',
+    api: () => import('./my-tree.repository.js'),
+}
 ```
+
+### Repository Implementation
+
+Create a Repository that implements the `TreeRepository` interface. The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html)
+
+```typescript
+interface UmbTreeRepository {
+    requestTreeRoot();
+    requestTreeRootItems();
+    requestTreeItemsOf();
+    requestTreeItemAncestors();
+}
+```
+
+For detailed implementation guidance, see:
+
+- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples.
+- **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
+
+---
+
+## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
 
 ### Tree Manifest
 
@@ -65,9 +86,18 @@ Tree-items define how individual items render. Use `kind: 'default'` for standar
 Include both your root entity type and item entity type in `forEntityTypes` so the tree item renderer handles all nodes in your tree.
 {% endhint %}
 
+### Standalone Rendering
+
+Trees can be rendered directly in custom components using the `<umb-tree>` element:
+
+```html
+<umb-tree alias="My.Tree"></umb-tree>
+```
+
 ### Connecting to a Menu
 
-To display your tree in a section sidebar, create a MenuItem with `kind: 'tree'`:
+Trees can also provide hierarchical data to **Menu Items**, which display the navigation you see in the Backoffice Section Sidebar. 
+To register your Tree-based Menu Item use the `kind: 'tree'` in the Menu Item Manifest. 
 
 ```typescript
 {
@@ -80,124 +110,28 @@ To display your tree in a section sidebar, create a MenuItem with `kind: 'tree'`
         label: 'My Tree',
         icon: 'icon-folder',
         entityType: 'my-tree-root',
-        menus: ['My.Menu'],
+        menus: ['My.Menu'] // The Menu alias where this item should appear,
         treeAlias: 'My.Tree',
         hideTreeRoot: true,  // Optional: show items at root level
     },
 }
 ```
 
+Examples of built-in menus include:
+
+* Content - `Umb.Menu.Content`
+* Media - `Umb.Menu.Media`
+* Advanced Settings - `Umb.Menu.AdvancedSettings`
+
 See [Menu Items (Tree kind)](../menu-item.md#tree) and [Section Sidebar](../sections/section-sidebar.md) for the complete setup.
 
-### Standalone Rendering
-
-Trees can also be rendered directly in custom components using the `<umb-tree>` element:
-
-```html
-<umb-tree alias="My.Tree"></umb-tree>
-```
-
-This is less common than displaying via menus, but is useful for custom UIs.
-
 ---
 
-## Populating Trees <a href="#populating-trees" id="populating-trees"></a>
+## Trees and Workspaces <a href="#trees-and-workspaces" id="trees-and-workspaces"></a>
 
-Trees get their data from a **Repository**. The repository implements methods to return tree items and is referenced by the tree manifest via `repositoryAlias`.
+When users click a Tree Item, Umbraco navigates to a **Workspace** to edit that item. The `entityType` in your Tree Items must match the `meta.entityType` in your Workspace Manifest.
 
-### Repository Implementation
-
-Create a repository that extends `UmbControllerBase` and implements the tree repository interface:
-
-```typescript
-import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
-import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-
-export class MyTreeRepository extends UmbControllerBase implements UmbApi {
-  async requestTreeRoot() {
-    return {
-      data: {
-        unique: null,
-        entityType: "my-tree-root",
-        name: "My Tree",
-        hasChildren: true,
-        isFolder: true,
-        icon: "icon-folder",
-      },
-    };
-  }
-
-  async requestTreeRootItems() {
-    // Call your API here
-    const response = await MyTreeService.getRoot();
-
-    const items = response.items.map((item) => ({
-      unique: item.id,
-      entityType: "my-tree-item",
-      parent: { unique: null, entityType: "my-tree-root" },
-      name: item.name,
-      hasChildren: item.hasChildren,
-      isFolder: false,
-      icon: "icon-document",
-    }));
-
-    return { data: { items, total: response.total } };
-  }
-
-  async requestTreeItemsOf(args) {
-    if (args.parent.unique === null) {
-      return this.requestTreeRootItems();
-    }
-
-    // Call your API for children
-    const response = await MyTreeService.getChildren({
-      parentId: args.parent.unique,
-    });
-
-    const items = response.items.map((item) => ({
-      unique: item.id,
-      entityType: "my-tree-item",
-      parent: { unique: args.parent.unique, entityType: args.parent.entityType },
-      name: item.name,
-      hasChildren: item.hasChildren,
-      isFolder: false,
-      icon: "icon-document",
-    }));
-
-    return { data: { items, total: response.total } };
-  }
-
-  async requestTreeItemAncestors() {
-    return { data: [] };
-  }
-}
-
-export { MyTreeRepository as api };
-```
-
-### Register the Repository
-
-```typescript
-{
-    type: 'repository',
-    alias: 'My.Tree.Repository',
-    name: 'My Tree Repository',
-    api: () => import('./my-tree.repository.js'),
-}
-```
-
-For detailed implementation guidance, see:
-
-- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples.
-- **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
-
----
-
-## Tree Navigation <a href="#tree-navigation" id="tree-navigation"></a>
-
-When users click a tree item, Umbraco navigates to a **workspace** to edit that item. The `entityType` in your tree items must match the `meta.entityType` in your workspace manifest.
-
-See **[Tree Navigation & Workspaces](./tree-navigation.md)** for setup details and troubleshooting.
+See **[Trees & Workspaces](./trees-and-workspaces.md)** for setup details and troubleshooting.
 
 ---
 

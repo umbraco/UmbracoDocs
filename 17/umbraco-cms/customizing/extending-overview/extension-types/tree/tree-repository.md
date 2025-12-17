@@ -1,6 +1,6 @@
 # Tree Repository
 
-A tree repository provides data to populate your tree. It implements methods to return the root, root items, children of items, and ancestors.
+A Tree Repository provides data to populate your Tree. It implements methods to return the root, root items, children of items, and ancestors.
 
 The repository is referenced by your tree manifest via `meta.repositoryAlias`.
 
@@ -21,94 +21,11 @@ See the full interface in the [UI API Documentation](https://apidocs.umbraco.com
 
 ## Implementing a Tree Repository
 
-Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface. Call your API directly within the repository methods:
-
-{% code title="my-tree.repository.ts" %}
-```typescript
-import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
-import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-import type {
-  UmbTreeChildrenOfRequestArgs,
-  UmbTreeRepository,
-  UmbTreeRootModel,
-} from "@umbraco-cms/backoffice/tree";
-import { MyTreeService } from "./api/index.js";
-import {
-  MY_TREE_ITEM_ENTITY_TYPE,
-  MY_TREE_ROOT_ENTITY_TYPE,
-  type MyTreeItemModel,
-} from "./types.js";
-
-export class MyTreeRepository
-  extends UmbControllerBase
-  implements UmbTreeRepository<MyTreeItemModel>, UmbApi
-{
-  async requestTreeRoot() {
-    const root: UmbTreeRootModel = {
-      unique: null,
-      entityType: MY_TREE_ROOT_ENTITY_TYPE,
-      name: "My Items",
-      hasChildren: true,
-      isFolder: true,
-      icon: "icon-folder",
-    };
-
-    return { data: root };
-  }
-
-  async requestTreeRootItems() {
-    const response = await MyTreeService.getRoot();
-
-    const items: Array<MyTreeItemModel> = response.items.map((item) => ({
-      unique: item.id,
-      entityType: MY_TREE_ITEM_ENTITY_TYPE,
-      parent: { unique: null, entityType: MY_TREE_ROOT_ENTITY_TYPE },
-      name: item.name,
-      hasChildren: item.hasChildren,
-      isFolder: false,
-      icon: "icon-document",
-    }));
-
-    return { data: { items, total: response.total } };
-  }
-
-  async requestTreeItemsOf(args: UmbTreeChildrenOfRequestArgs) {
-    if (args.parent.unique === null) {
-      return this.requestTreeRootItems();
-    }
-
-    const response = await MyTreeService.getChildren({
-      parentId: args.parent.unique,
-    });
-
-    const items: Array<MyTreeItemModel> = response.items.map((item) => ({
-      unique: item.id,
-      entityType: MY_TREE_ITEM_ENTITY_TYPE,
-      parent: {
-        unique: args.parent.unique,
-        entityType: args.parent.entityType,
-      },
-      name: item.name,
-      hasChildren: item.hasChildren,
-      isFolder: false,
-      icon: "icon-document",
-    }));
-
-    return { data: { items, total: response.total } };
-  }
-
-  async requestTreeItemAncestors() {
-    return { data: [] };
-  }
-}
-
-export { MyTreeRepository as api };
-```
-{% endcode %}
+Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
 
 ## Registering the Repository
 
-Register the repository in your manifest:
+Register the Repository in your manifest:
 
 ```typescript
 {
@@ -119,22 +36,7 @@ Register the repository in your manifest:
 }
 ```
 
-The tree manifest references this via `repositoryAlias`:
-
-```typescript
-{
-  type: 'tree',
-  alias: 'My.Tree',
-  name: 'My Tree',
-  meta: {
-    repositoryAlias: 'My.Tree.Repository',
-  },
-}
-```
-
 ## Static Data Example
-
-For trees with static or hardcoded data, you can return items directly without API calls:
 
 {% code title="static-tree.repository.ts" %}
 ```typescript
@@ -163,9 +65,9 @@ const staticItems = [
   },
 ];
 
-export class StaticTreeRepository
+export class MyStaticTreeRepository
   extends UmbControllerBase
-  implements UmbTreeRepository<typeof staticItems[0]>, UmbApi
+  implements UmbTreeRepository, UmbApi
 {
   async requestTreeRoot() {
     return {
@@ -193,11 +95,12 @@ export class StaticTreeRepository
   }
 
   async requestTreeItemAncestors() {
+    // Implement as needed
     return { data: [] };
   }
 }
 
-export { StaticTreeRepository as api };
+export { MyStaticTreeRepository as api };
 ```
 {% endcode %}
 
