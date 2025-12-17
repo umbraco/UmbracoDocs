@@ -10,4 +10,4 @@ Keeping your Umbraco Cloud project up to date ensures security, performance, and
 
 ## End-of-Service Policy for Umbraco Cloud
 
-The End-of-Service policy outlines how long projects and software are supported and available on Umbraco Cloud. Learn more about this policy for given versions of Umbraco CMS and more in the (End-of-Service policy for Umbraco Cloud)[end-of-service-policy.md].
+The End-of-Service policy outlines how long projects and software are supported and available on Umbraco Cloud. Learn more about this policy for given versions of Umbraco CMS and more in the [End-of-Service policy for Umbraco Cloud](end-of-service-policy.md).
