@@ -6,7 +6,7 @@ description: Information on how to work with Tiptap extensions in the rich text 
 
 The Rich Text Editor (RTE) in Umbraco is based on the open-source editor [Tiptap](https://tiptap.dev/).
 
-Out of the box, Tiptap has limited capabilities and everything is an extension by design. Basic text formatting features such as bold, italic, and underline are their own extensions. This offers great flexibility, making the rich text editor highly configurable. The implementation in Umbraco offers a wide range of built-in extensions to enhance the Tiptap editor capabilities.
+Out of the box, Tiptap has limited capabilities, and everything is an extension by design. Basic text formatting features, such as bold, italic, and underline, are their own extensions. This offers great flexibility, making the rich text editor highly configurable. The implementation in Umbraco offers a wide range of built-in extensions to enhance the Tiptap editor capabilities.
 
 Using the same extension points, this article will show you how to add a custom extension to the rich text editor.
 
@@ -16,11 +16,13 @@ Tiptap has a library of supported native extensions. You can find a list of thes
 
 ### Tiptap extension types
 
-There are two types of extension: `tiptapExtension` and `tiptapToolbarExtension`.
+There are three types of extensions: `tiptapExtension`, `tiptapToolbarExtension`, and `tiptapStatusbarExtension`.
 
 The `tiptapExtension` extension is used to register a native [Tiptap Extension](https://tiptap.dev/docs/editor/extensions/). These will enhance the capabilities of the rich text editor itself. For example, to enable text formatting, drag-and-drop functionality and spell-checking.
 
 The `tiptapToolbarExtension` extension adds a toolbar action that interacts with the Tiptap editor (and native Tiptap extensions).
+
+The `tiptapStatusbarExtension` extension adds a component to the statusbar, located at the bottom of the Tiptap editor.
 
 ## Adding a native extension
 
@@ -52,7 +54,7 @@ export default class UmbTiptapHighlightExtensionApi extends UmbTiptapExtensionAp
 
 ```js
 import { UmbTiptapToolbarElementApiBase } from '@umbraco-cms/backoffice/tiptap';
-import type { Editor } from '@umbraco-cms/backoffice/external/tiptap';
+import type { Editor } from '@umbraco-cms/backoffice/tiptap';
 
 export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapToolbarElementApiBase {
     override execute(editor?: Editor) {
@@ -61,7 +63,7 @@ export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapTool
 }
 ```
 
-Once you have the above code in place, they can be referenced using a [bundle extension type](../../../../../customizing/extending-overview/extension-types/bundle.md).
+Once you have the above code in place, it can be referenced using a [bundle extension type](../../../../../customizing/extending-overview/extension-types/bundle.md).
 
 {% code title="manifests.ts" lineNumbers="true" %}
 ```js
