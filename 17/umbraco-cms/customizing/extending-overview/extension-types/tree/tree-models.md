@@ -8,7 +8,7 @@ Trees use two model types to represent data: **Tree Item Model** for individual 
 
 ## UmbTreeItemModel
 
-The base interface for tree items. All tree items must include these properties:
+The base interface for tree items. All tree-items must include these properties:
 
 ```typescript
 interface UmbTreeItemModel {
@@ -92,10 +92,10 @@ export interface MyTreeItemModel extends UmbTreeItemModel {
 ```
 
 {% hint style="info" %}
-The `entityType` values must match your workspace and tree item manifests. See [Tree Navigation](./tree-navigation.md) for how these connect.
+The `entityType` values must match the values in your workspace and tree item manifests. See [Tree Navigation](./tree-navigation.md) for how these connect.
 {% endhint %}
 
 ## Related
 
-- [Tree Repository](./tree-repository.md) - Returns tree models from its methods
-- [Tree Navigation](./tree-navigation.md) - How `entityType` connects to workspaces
+- [Tree Repository](./tree-repository.md) - Returns tree models from its methods.
+- [Tree Navigation](./tree-navigation.md) - How `entityType` connects to workspaces.
