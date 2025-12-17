@@ -53,6 +53,10 @@ Learn more about the [quotas put in place](umbraco-cloud-plans.md) to ensure the
 [baselines.md](../../begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 {% endcontent-ref %}
 
+## End-of-Service Policy for Umbraco Cloud
+
+The End-of-Service policy exists to clearly outline how long projects and software is support is supported and available on Umbraco Cloud. You can learn more about how long hosting is available for a given version of Umbraco CMS and more in the (End-of-Service policy for Umbraco Cloud)[end-of-service-policy.md]. 
+
 ***
 
 ## Umbraco Training
@@ -60,9 +64,3 @@ Learn more about the [quotas put in place](umbraco-cloud-plans.md) to ensure the
 Umbraco HQ offers a full-day training course covering best practices for developing with Umbraco Cloud. The course targets frontend and backend developers who currently work or plan to work with Umbraco Cloud.
 
 [Explore the Umbraco Cloud Developer Training Course](https://umbraco.com/training/course-details/cloud-developer/) to learn more about the topics covered and how they can enhance your Umbraco development skills.
-
-***
-
-## End-of-Service Policy for Umbraco Cloud
-
-The End-of-Service policy exists to clearly outline how long projects and software is support is supported and available on Umbraco Cloud. You can learn more about how long hosting is available for a given version of Umbraco CMS and more in the (End-of-Service policy for Umbraco Cloud)[end-of-service-policy.md]. 
