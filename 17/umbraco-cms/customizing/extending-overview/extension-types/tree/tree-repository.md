@@ -2,7 +2,7 @@
 
 A Tree Repository provides data to populate your Tree. It implements methods to return the root, root items, children of items, and ancestors.
 
-The repository is referenced by your tree manifest via `meta.repositoryAlias`.
+The repository is referenced by your Tree Manifest via `meta.repositoryAlias`.
 
 ## Interface
 
@@ -12,20 +12,16 @@ The `UmbTreeRepository` interface defines the methods your repository must imple
 interface UmbTreeRepository {
   requestTreeRoot();
   requestTreeRootItems();
-  requestTreeItemsOf(args);
-  requestTreeItemAncestors(args);
+  requestTreeItemsOf();
+  requestTreeItemAncestors();
 }
 ```
 
 See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
 
-## Implementing a Tree Repository
-
-Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
-
 ## Registering the Repository
 
-Register the Repository in your manifest:
+Register the Repository in your Manifest:
 
 ```typescript
 {
@@ -36,7 +32,11 @@ Register the Repository in your manifest:
 }
 ```
 
-## Static Data Example
+## Implementing a Tree Repository
+
+Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
+
+### Static Data Example
 
 {% code title="static-tree.repository.ts" %}
 ```typescript
@@ -107,5 +107,5 @@ export { MyStaticTreeRepository as api };
 ## Related
 
 - [Tree Models](./tree-models.md) - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
-- [Tree Navigation](./tree-navigation.md) - How tree clicks navigate to workspaces.
-- [Trees](./README.md) - Main tree extension documentation.
+- [Tree Navigation](./tree-navigation.md) - How Tree clicks navigate to Workspaces.
+- [Trees](./README.md) - Main Tree extension documentation.

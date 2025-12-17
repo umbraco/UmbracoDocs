@@ -1,10 +1,10 @@
 ---
-description: How tree items navigate to workspaces when clicked in Umbraco
+description: How Tree Items navigate to Workspaces when clicked in Umbraco
 ---
 
 # Trees & Workspaces
 
-Trees and workspaces are tightly coupled. When users click a Tree Item, Umbraco navigates to a workspace to edit that item. This connection is established through the `entityType`, a string identifier that links Tree Items to their corresponding Workspace.
+Trees and Workspaces are tightly coupled. When users click a Tree Item, Umbraco navigates to a Workspace to edit that item. This connection is established through the `entityType`, a string identifier that links Tree Items to their corresponding Workspace.
 
 ## How Tree Items Connect to Workspaces
 
@@ -15,10 +15,10 @@ When you click a Tree Item:
 
 ## Workspace Kind: Routable vs Default
 
-To support different routes for new vs existing items, your workspace must be routable to have different routes for each case. Use `kind: 'routable'` and set up matching routes in your Workspace API:
+To support different routes for new and existing items, your Workspace must be routable to have different routes for each case. Use `kind: 'routable'` and set up matching routes in your Workspace API:
 
 ```typescript
-// Tree item manifest
+// Tree Item Manifest
 {
     type: 'treeItem',
     kind: 'default',
@@ -26,7 +26,7 @@ To support different routes for new vs existing items, your workspace must be ro
     forEntityTypes: ['my-custom-item'],
 }
 
-// Workspace manifest - MUST be routable for tree navigation
+// Workspace Manifest - MUST be routable for Tree navigation
 {
     type: 'workspace',
     kind: 'routable',
@@ -34,7 +34,7 @@ To support different routes for new vs existing items, your workspace must be ro
     name: 'My Custom Item Workspace',
     api: () => import('./my-custom-item-workspace.api.js'),
     meta: {
-        entityType: 'my-custom-item',  // Must match tree item entityType
+        entityType: 'my-custom-item',  // Must match Tree Item entityType
     },
 }
 ```
@@ -44,12 +44,12 @@ To support different routes for new vs existing items, your workspace must be ro
 {% hint style="warning" %}
 **Endless loading when clicking Tree Items?** This usually means:
 
-- No workspace is registered for that `entityType`.
-- The `entityType` in your tree data doesn't match the workspace's `meta.entityType`.
+- No Workspace is registered for that `entityType`.
+- The `entityType` in your Tree data doesn't match the Workspace's `meta.entityType`.
 - 
 {% endhint %}
 
 ## Related
 
-- [Trees](./README.md) - Main tree extension documentation.
-- [Workspaces](../workspace/README.md) - Creating workspace extensions.
+- [Trees](./README.md) - Main Tree extension documentation.
+- [Workspaces](../workspace/README.md) - Creating Workspace extensions.

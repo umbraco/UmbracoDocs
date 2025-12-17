@@ -1,5 +1,5 @@
 ---
-description: Understanding tree item and root models in Umbraco
+description: Understanding Tree Item and Root models in Umbraco
 ---
 
 # Tree Models
@@ -8,12 +8,12 @@ Trees use two model types to represent data: **Tree Item Model** for individual 
 
 ## UmbTreeItemModel
 
-The base interface for tree items. All tree-items must include these properties:
+The base interface for Tree Items. All Tree Items must include these properties:
 
 ```typescript
 interface UmbTreeItemModel {
   unique: string;        // Identifier for selection, navigation, and API calls
-  entityType: string;    // Must match workspace meta.entityType for navigation
+  entityType: string;    // Must match Workspace meta.entityType for navigation
   name: string;          // Display name shown in the tree
   hasChildren: boolean;  // Shows expand arrow when true
   isFolder: boolean;     // Visual styling hint
@@ -43,7 +43,7 @@ Your repository methods transform API responses into these models when returning
 
 ## UmbTreeRootModel
 
-The root model represents the top-level node of your tree. It extends `UmbTreeItemModel` but typically has `unique: null`:
+The root model represents the top-level node of your Tree. It extends `UmbTreeItemModel` but typically has `unique: null`:
 
 ```typescript
 interface UmbTreeRootModel extends UmbTreeItemModel {
@@ -92,10 +92,10 @@ export interface MyTreeItemModel extends UmbTreeItemModel {
 ```
 
 {% hint style="info" %}
-The `entityType` values must match the values in your workspace and tree item manifests. See [Tree Navigation](./tree-navigation.md) for how these connect.
+The `entityType` values must match the values in your Workspace and Tree Item Manifests. See [Tree Navigation](./tree-navigation.md) for how these connect.
 {% endhint %}
 
 ## Related
 
-- [Tree Repository](./tree-repository.md) - Returns tree models from its methods.
-- [Tree Navigation](./tree-navigation.md) - How `entityType` connects to workspaces.
+- [Tree Repository](./tree-repository.md) - Returns Tree models from its methods.
+- [Tree Navigation](./tree-navigation.md) - How `entityType` connects to Workspaces.

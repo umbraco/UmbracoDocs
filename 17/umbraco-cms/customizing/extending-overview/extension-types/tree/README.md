@@ -1,11 +1,11 @@
 ---
-description: A guide to creating a custom tree in Umbraco
+description: A guide to creating a custom Tree in Umbraco
 ---
 
 # Trees
 
 {% hint style="info" %}
-**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For basic, static navigation you can use menu items alone. Trees are for **data-driven hierarchical structures** - use them when your menu needs to display dynamic content from an API.
+**New to sidebar navigation?** Read [Menus](../menu.md) and [Menu Items](../menu-item.md) first. For basic, static navigation you can use Menu Items alone. Trees are for **data-driven hierarchical structures** - use them when your Menu needs to display dynamic content from an API.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -46,7 +46,7 @@ interface UmbTreeRepository {
 
 For detailed implementation guidance, see:
 
-- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples.
+- **[Tree Repository](./tree-repository.md)** - Full repository implementation with static data example.
 - **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
 
 ---
@@ -55,7 +55,7 @@ For detailed implementation guidance, see:
 
 ### Tree Manifest
 
-Register your tree with a manifest. The `repositoryAlias` links to how the tree gets its data:
+Register your tree with a Manifest. The `repositoryAlias` links to how the Tree gets its data:
 
 ```typescript
 {
@@ -83,7 +83,7 @@ Tree-items define how individual items render. Use `kind: 'default'` for standar
 ```
 
 {% hint style="info" %}
-Include both your root entity type and item entity type in `forEntityTypes` so the tree item renderer handles all nodes in your tree.
+Include both your root entity type and item entity type in `forEntityTypes` so the Tree Item renderer handles all nodes in your Tree.
 {% endhint %}
 
 ### Standalone Rendering
@@ -117,7 +117,7 @@ To register your Tree-based Menu Item use the `kind: 'tree'` in the Menu Item Ma
 }
 ```
 
-Examples of built-in menus include:
+Examples of built-in Menus include:
 
 * Content - `Umb.Menu.Content`
 * Media - `Umb.Menu.Media`
@@ -138,4 +138,4 @@ See **[Trees & Workspaces](./trees-and-workspaces.md)** for setup details and tr
 ## Further Reading <a href="#further-reading" id="further-reading"></a>
 
 - [Umbraco UI Examples - Trees](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/examples/tree) - Working examples in the Umbraco repository.
-- [Workspaces](../workspaces/README.md) - Creating workspace extensions.
+- [Workspaces](../workspaces/README.md) - Creating Workspace extensions.
