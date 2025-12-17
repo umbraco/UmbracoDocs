@@ -6,7 +6,7 @@ description: Information on how to work with Tiptap extensions in the rich text 
 
 The Rich Text Editor (RTE) in Umbraco is based on the open-source editor [Tiptap](https://tiptap.dev/).
 
-Out of the box, Tiptap has limited capabilities and everything is an extension by design. Basic text formatting features such as bold, italic, and underline are their own extensions. This offers great flexibility, making the rich text editor highly configurable. The implementation in Umbraco offers a wide range of built-in extensions to enhance the Tiptap editor capabilities.
+Out of the box, Tiptap has limited capabilities, and everything is an extension by design. Basic text formatting features, such as bold, italic, and underline, are their own extensions. This offers great flexibility, making the rich text editor highly configurable. The implementation in Umbraco offers a wide range of built-in extensions to enhance the Tiptap editor capabilities.
 
 Using the same extension points, this article will show you how to add a custom extension to the rich text editor.
 
@@ -16,7 +16,7 @@ Tiptap has a library of supported native extensions. You can find a list of thes
 
 ### Tiptap extension types
 
-There are three types of extension: `tiptapExtension`, `tiptapToolbarExtension` and `tiptapStatusbarExtension`.
+There are three types of extensions: `tiptapExtension`, `tiptapToolbarExtension`, and `tiptapStatusbarExtension`.
 
 The `tiptapExtension` extension is used to register a native [Tiptap Extension](https://tiptap.dev/docs/editor/extensions/). These will enhance the capabilities of the rich text editor itself. For example, to enable text formatting, drag-and-drop functionality and spell-checking.
 
@@ -63,7 +63,7 @@ export default class UmbTiptapToolbarHighlightExtensionApi extends UmbTiptapTool
 }
 ```
 
-Once you have the above code in place, they can be referenced using a [bundle extension type](../../../../../customizing/extending-overview/extension-types/bundle.md).
+Once you have the above code in place, it can be referenced using a [bundle extension type](../../../../../customizing/extending-overview/extension-types/bundle.md).
 
 {% code title="manifests.ts" lineNumbers="true" %}
 ```js
