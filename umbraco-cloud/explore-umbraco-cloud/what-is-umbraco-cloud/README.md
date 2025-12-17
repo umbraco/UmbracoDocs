@@ -53,6 +53,10 @@ Learn more about the [quotas put in place](umbraco-cloud-plans.md) to ensure the
 [baselines.md](../../begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
 {% endcontent-ref %}
 
+## End-of-Service Policy for Umbraco Cloud
+
+The End-of-Service policy outlines how long projects and software are supported and available on Umbraco Cloud. Learn more about this policy for given versions of Umbraco CMS and more in the [End-of-Service policy for Umbraco Cloud](end-of-service-policy.md). 
+
 ***
 
 ## Umbraco Training
