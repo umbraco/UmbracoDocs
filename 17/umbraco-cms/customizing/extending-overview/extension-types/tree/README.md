@@ -11,16 +11,16 @@ description: A guide to creating a custom tree in Umbraco
 {% hint style="warning" %}
 **Trees are data providers, not UI components.** A tree on its own does nothing visible. To create a working tree in the backoffice, you need to understand three things:
 
-1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar or elsewhere
-2. **[Populating Trees](#populating-trees)** - How to populate tree with data
-3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces by clicking menu items
+1. **[Displaying Trees](#displaying-trees)** - How trees connect to menus to appear in the sidebar or elsewhere.
+2. **[Populating Trees](#populating-trees)** - How to populate tree with data.
+3. **[Tree Navigation](#tree-navigation)** - How to navigate to workspaces by clicking menu items.
 {% endhint %}
 
 ## Displaying Trees <a href="#displaying-trees" id="displaying-trees"></a>
 
 Trees provide hierarchical data to **Menus**, which display the actual navigation you see in the backoffice sidebar. To display a tree, you need to connect multiple extensions:
 
-```
+```none
 Tree (data provider)
   ↓ referenced by
 MenuItem (kind: 'tree', treeAlias: 'My.Tree')
@@ -50,7 +50,7 @@ Register your tree with a manifest. The `repositoryAlias` links to how the tree 
 
 ### Tree Item Manifest
 
-Tree items define how individual items render. Use `kind: 'default'` for standard rendering:
+Tree-items define how individual items render. Use `kind: 'default'` for standard rendering:
 
 ```typescript
 {
@@ -97,7 +97,7 @@ Trees can also be rendered directly in custom components using the `<umb-tree>` 
 <umb-tree alias="My.Tree"></umb-tree>
 ```
 
-This is less common than displaying via menus but useful for custom UIs.
+This is less common than displaying via menus, but is useful for custom UIs.
 
 ---
 
@@ -188,8 +188,8 @@ export { MyTreeRepository as api };
 
 For detailed implementation guidance, see:
 
-- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples
-- **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces
+- **[Tree Repository](./tree-repository.md)** - Full repository implementation with API examples.
+- **[Tree Models](./tree-models.md)** - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
 
 ---
 
@@ -203,5 +203,5 @@ See **[Tree Navigation & Workspaces](./tree-navigation.md)** for setup details a
 
 ## Further Reading <a href="#further-reading" id="further-reading"></a>
 
-- [Umbraco UI Examples - Trees](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/examples/tree) - Working examples in the Umbraco repository
-- [Workspaces](../workspaces/README.md) - Creating workspace extensions
+- [Umbraco UI Examples - Trees](https://github.com/umbraco/Umbraco-CMS/tree/main/src/Umbraco.Web.UI.Client/examples/tree) - Working examples in the Umbraco repository.
+- [Workspaces](../workspaces/README.md) - Creating workspace extensions.
