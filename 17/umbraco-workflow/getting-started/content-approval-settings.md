@@ -1,6 +1,6 @@
-# Workflow Settings
+# Content Approval Settings
 
-When working with Umbraco Workflow, you can handle the workflow settings directly in the Backoffice from the **Workflow** section. You can configure the following from the Workflow Settings section:
+When working with Umbraco Workflow, you can handle the content approval settings directly in the Backoffice from the **Settings** section. 
 
 * [General settings](workflow-settings.md#general-settings)
 * [New node approval flow](workflow-settings.md#new-node-approval-flow)
@@ -13,7 +13,7 @@ When working with Umbraco Workflow, you can handle the workflow settings directl
 
 ## General Settings
 
-You can configure the **General** Settings from the **Settings** menu in the **Workflow** section. The following settings are available:
+You can configure the **General** Settings from the **Content Approvals** menu in the **Settings** section. The following settings are available:
 
 ![General settings](../images/workflow-settings-v14.png)
 
@@ -113,7 +113,7 @@ To exclude a node from the workflow process:
 
 Umbraco Workflow uses Notifications to allow you to configure email notifications for all workflow activities for the backoffice.
 
-From the **Settings** view in the **Workflow** section, the **Notifications** tab provides access to the following:
+From the **Content Approvals** view in the **Settings** section, the **Notifications** tab provides access to the following:
 
 * **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
 * **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
