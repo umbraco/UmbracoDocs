@@ -92,10 +92,10 @@ export interface MyTreeItemModel extends UmbTreeItemModel {
 ```
 
 {% hint style="info" %}
-The `entityType` values must match the values in your Workspace and Tree Item Manifests. See [Tree Navigation](./tree-navigation.md) for how these connect.
+The `entityType` values must match the values in your Workspace and Tree Item Manifests. See [Trees & Workspaces](./trees-and-workspaces.md) for how these connect.
 {% endhint %}
 
 ## Related
 
 - [Tree Repository](./tree-repository.md) - Returns Tree models from its methods.
-- [Tree Navigation](./tree-navigation.md) - How `entityType` connects to Workspaces.
+- [Trees & Workspaces](./trees-and-workspaces.md) - How `entityType` connects to Workspaces.

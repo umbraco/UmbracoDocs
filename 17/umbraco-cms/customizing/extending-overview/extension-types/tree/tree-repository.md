@@ -107,5 +107,5 @@ export { MyStaticTreeRepository as api };
 ## Related
 
 - [Tree Models](./tree-models.md) - `UmbTreeItemModel` and `UmbTreeRootModel` interfaces.
-- [Tree Navigation](./tree-navigation.md) - How Tree clicks navigate to Workspaces.
+- [Trees & Workspaces](./trees-and-workspaces.md) - How Tree clicks navigate to Workspaces.
 - [Trees](./README.md) - Main Tree extension documentation.
