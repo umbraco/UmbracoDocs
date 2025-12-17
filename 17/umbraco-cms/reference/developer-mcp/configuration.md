@@ -21,6 +21,12 @@ The Developer MCP Server can be configured in multiple ways to manage authentica
 If you are connecting to the secure endpoint of Umbraco locally then always set the `NODE_TLS_REJECT_UNAUTHORIZED` to `0`.
 {% endhint %}
 
+### Tool Mode Configuration
+
+| Key | Description |
+| --- | --- |
+| `UMBRACO_TOOL_MODES` | Specifies semantic tool modes to enable. Modes bundle related collections together for easier configuration. For example, `publisher`, `developer`, `admin`, or `full`. |
+
 ### Tool and Tool Collection Configuration
 
 | Key | Description |
@@ -30,11 +36,230 @@ If you are connecting to the secure endpoint of Umbraco locally then always set 
 | `UMBRACO_INCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to include. Only tools from these collections will be available. |
 | `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` | Specifies collections by name to exclude from the usable tools list. |
 
+### Tool Slice Configuration
+
+| Key | Description |
+| --- | --- |
+| `UMBRACO_INCLUDE_SLICES` | Specifies operation types to include. For example, `read,tree,search` for read-only browsing. |
+| `UMBRACO_EXCLUDE_SLICES` | Specifies operation types to exclude. For example, `delete,recycle-bin` to prevent destructive operations. |
+
 {% hint style="info" %}
 Use these keys to fine-tune which tools or tool collections are exposed to your LLM. This improves performance and clarity in your conversations.
 {% endhint %}
 
-#### Working with Tool Collections
+## Tool Modes
+
+Tool modes provide a higher-level abstraction over collection filtering. Instead of specifying individual collections, you can use semantic modes that bundle related collections together.
+
+### Why Use Modes?
+
+- **Simpler configuration**: One mode name instead of listing multiple collections
+- **Semantic clarity**: Express intent ("I want content editing tools") rather than technical details
+- **Persona-based presets**: Compound modes like `publisher`, `developer`, `admin` match common use cases
+- **Reduced errors**: No need to remember exact collection names
+
+### Base Modes
+
+Base modes map directly to specific tool collections:
+
+| Mode | Collections | Description |
+| --- | --- | --- |
+| `content` | document, document-version, document-blueprint | Content editing, versioning, and blueprints |
+| `content-modeling` | document, document-type, data-type, media, media-type | Document and media structure with content output |
+| `front-end` | template, partial-view, stylesheet, script, static-file | Templates, views, and assets |
+| `media` | media, imaging, temporary-file | Media library and file uploads |
+| `search` | indexer, searcher | Examine indexes and search |
+| `users` | user, user-group, user-data | Back office user management |
+| `members` | member, member-type, member-group | Front-end member management |
+| `health` | health, log-viewer | Health checks and diagnostics |
+| `translation` | culture, language, dictionary | Localization and translations |
+| `system` | server, manifest, models-builder | Server info and code generation |
+| `integrations` | webhook, redirect, relation, relation-type, tag | External integrations |
+
+### Compound Modes
+
+Compound modes expand to multiple base modes for common personas:
+
+| Mode | Expands To | Use Case |
+| --- | --- | --- |
+| `publisher` | content, media, translation | Content publishers working with documents and media |
+| `developer` | content-modeling, front-end, system | Developers building templates and schemas |
+| `admin` | users, members, health, system | Administrators managing users and monitoring |
+| `full` | (all base modes) | Full access to all tools |
+
+### Mode Usage Examples
+
+**Single mode:**
+
+```bash
+# Content publisher - document and media tools
+UMBRACO_TOOL_MODES="content"
+```
+
+**Multiple modes:**
+
+```bash
+# Content editing with translation support
+UMBRACO_TOOL_MODES="content,media,translation"
+```
+
+**Compound mode:**
+
+```bash
+# Full publisher preset (content + media + translation)
+UMBRACO_TOOL_MODES="publisher"
+```
+
+**Mode with exclusions:**
+
+```bash
+# Publisher mode but exclude version history
+UMBRACO_TOOL_MODES="publisher"
+UMBRACO_EXCLUDE_TOOL_COLLECTIONS="document-version"
+```
+
+**Mode with additional collections:**
+
+```bash
+# Front-end development plus webhooks
+UMBRACO_TOOL_MODES="front-end"
+UMBRACO_INCLUDE_TOOL_COLLECTIONS="webhook"
+```
+
+## Tool Slices
+
+Tool slices provide fine-grained control over which tools are registered based on their **operation type**. Slices work alongside mode and collection filtering to enable precise tool selection.
+
+### Why Use Slices?
+
+- **Operation-based filtering**: Include only certain types of operations (for example, read-only browsing)
+- **Safety controls**: Exclude destructive operations like `delete` or `recycle-bin`
+- **Task-specific toolsets**: Enable only the operations needed for a specific workflow
+
+### Available Slices
+
+#### Core CRUD Operations
+
+| Slice | Description |
+| --- | --- |
+| `create` | Create entities including folders |
+| `read` | Get single or batch items by ID |
+| `update` | Update entities including folders |
+| `delete` | Delete entities (excluding recycle bin) |
+
+#### Tree Navigation
+
+| Slice | Description |
+| --- | --- |
+| `tree` | All tree navigation (root, children, ancestors, siblings) |
+| `folders` | Folder-specific operations |
+
+#### Query Operations
+
+| Slice | Description |
+| --- | --- |
+| `search` | Search and filter operations |
+| `list` | List all items |
+| `references` | Reference and dependency queries |
+
+#### Workflow Operations
+
+| Slice | Description |
+| --- | --- |
+| `publish` | Publishing and unpublishing |
+| `recycle-bin` | Recycle bin operations |
+| `move` | Move operations (excluding recycle bin) |
+| `copy` | Copy operations |
+| `sort` | Sort and reorder operations |
+| `validate` | Validation operations |
+| `rename` | Rename file-based entities |
+
+#### Information Operations
+
+| Slice | Description |
+| --- | --- |
+| `configuration` | Configuration retrieval |
+| `audit` | Audit trail access |
+| `urls` | URL and domain management |
+| `domains` | Domain configuration |
+| `permissions` | User permission queries |
+| `user-status` | User account operations (enable, disable, unlock) |
+| `current-user` | Current user context |
+
+#### Entity Management
+
+| Slice | Description |
+| --- | --- |
+| `notifications` | Content notification settings |
+| `public-access` | Content protection rules |
+| `scaffolding` | Content creation helpers |
+| `blueprints` | Blueprint specialized operations |
+
+#### System Operations
+
+| Slice | Description |
+| --- | --- |
+| `server-info` | Server status and information |
+| `diagnostics` | Health checks, log viewer, indexer operations |
+| `templates` | Template and snippet helpers |
+
+### Slice Usage Examples
+
+**Read-only content browsing:**
+
+```bash
+UMBRACO_TOOL_MODES="content"
+UMBRACO_INCLUDE_SLICES="read,tree,search"
+```
+
+**Full CRUD without destructive operations:**
+
+```bash
+UMBRACO_EXCLUDE_SLICES="delete,recycle-bin"
+```
+
+**Content publishers (no system tools):**
+
+```bash
+UMBRACO_INCLUDE_SLICES="create,read,update,tree,search,publish"
+```
+
+**Admin operations only:**
+
+```bash
+UMBRACO_INCLUDE_SLICES="configuration,audit,user-status,diagnostics"
+```
+
+{% hint style="info" %}
+When `UMBRACO_INCLUDE_SLICES` is set, only tools matching those slices are registered. When `UMBRACO_EXCLUDE_SLICES` is set, matching tools are excluded regardless of other settings.
+{% endhint %}
+
+## Filtering Precedence
+
+The filtering system applies in the following order:
+
+1. **Mode expansion**: Tool modes are expanded to their constituent collections
+2. **Collection merging**: Mode collections are merged with explicit `UMBRACO_INCLUDE_TOOL_COLLECTIONS`
+3. **Collection exclusion**: `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` is applied
+4. **Dependency resolution**: Required collections are automatically included
+5. **User permissions**: Tools are filtered by Umbraco API user permissions
+6. **Slice filtering**: Tools are filtered by operation type (slices)
+7. **Tool-level filtering**: Individual tools can be included or excluded
+
+### Default Behavior
+
+- If no filtering is specified, all collections and tools are loaded
+- Collection dependencies are always resolved automatically
+- User permissions are always enforced
+
+### Include vs Exclude
+
+- **Include mode**: Only specified collections/tools are loaded (via modes or explicit includes)
+- **Exclude mode**: All collections/tools are loaded except those specified
+- Tool-level include/exclude can override collection-level decisions
+- Modes and explicit collection includes are merged (union)
+
+## Working with Tool Collections
 
 When configuring tools for the Developer MCP Server, you can fine-tune which tools and collections are available by using comma-separated values.
 
@@ -57,7 +282,7 @@ UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media"
 UMBRACO_EXCLUDE_TOOLS="document-move,media-delete"
 ```
 
-### Security Configuration Keys
+## Security Configuration Keys
 
 | Key | Description |
 | --- | --- |
