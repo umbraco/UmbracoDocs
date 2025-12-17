@@ -16,7 +16,7 @@ Projects on Standard-Term Support (STS) versions follow the same principle: they
 
 ## 2. After the XLTS Period Ends
 
-When the XLTS coverage period for an Umbraco version ends, all projects on that version are **automatically moved from shared to dedicated hosting** on Umbraco Cloud.
+When the XLTS coverage period for an Umbraco version ends, all projects on that version are **automatically moved from shared to dedicated hosting**.
 
 This is done to ensure that unsupported software does not affect the shared hosting environment.
 
