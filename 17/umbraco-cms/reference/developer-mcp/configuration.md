@@ -123,10 +123,10 @@ Tool slices provide fine-grained control over which tools are registered based o
 
 | Slice | Description |
 | --- | --- |
-| `create` | Create entities including folders |
+| `create` | Create entities |
 | `read` | Get single or batch items by ID |
-| `update` | Update entities including folders |
-| `delete` | Delete entities (excluding recycle bin) |
+| `update` | Update entities |
+| `delete` | Delete entities |
 
 #### Tree Navigation
 
@@ -148,8 +148,7 @@ Tool slices provide fine-grained control over which tools are registered based o
 | Slice | Description |
 | --- | --- |
 | `publish` | Publishing and unpublishing |
-| `recycle-bin` | Recycle bin operations |
-| `move` | Move operations (excluding recycle bin) |
+| `move` | Move operations |
 | `copy` | Copy operations |
 | `sort` | Sort and reorder operations |
 | `validate` | Validation operations |
@@ -184,6 +183,31 @@ Tool slices provide fine-grained control over which tools are registered based o
 | `diagnostics` | Health checks, log viewer, indexer operations |
 | `templates` | Template and snippet helpers |
 
+#### Composite Slices
+
+Tools can have multiple slices assigned to allow fine-grained filtering. For example, to include folder creation but exclude folder deletion, you can combine slices.
+
+**Folder operations:**
+
+| Slices | Description |
+| --- | --- |
+| `create` + `folders` | Folder creation |
+| `read` + `folders` | Folder reading |
+| `update` + `folders` | Folder updating |
+| `delete` + `folders` | Folder deletion |
+| `list` + `folders` | List folders |
+
+**Recycle bin operations:**
+
+| Slices | Description |
+| --- | --- |
+| `delete` + `recycle-bin` | Delete from or empty recycle bin |
+| `move` + `recycle-bin` | Move to or restore from recycle bin |
+| `read` + `recycle-bin` | Read recycle bin info (original parent) |
+| `references` + `recycle-bin` | Get references for recycled items |
+| `tree` + `recycle-bin` | Navigate recycle bin (root, children, siblings) |
+
+
 ### Slice Usage Examples
 
 **Read-only content browsing:**
@@ -191,12 +215,6 @@ Tool slices provide fine-grained control over which tools are registered based o
 ```bash
 UMBRACO_TOOL_MODES="content"
 UMBRACO_INCLUDE_SLICES="read,tree,search"
-```
-
-**Full CRUD without destructive operations:**
-
-```bash
-UMBRACO_EXCLUDE_SLICES="delete,recycle-bin"
 ```
 
 **Content publishers (no system tools):**
