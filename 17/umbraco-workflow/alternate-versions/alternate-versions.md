@@ -1,6 +1,7 @@
 ---
 description: >-
-  Create additional draft versions of documents without impacting the 'main' draft version.
+  Create additional draft versions of documents without impacting the 'main'
+  draft version.
 ---
 
 # Alternate Versions
@@ -15,15 +16,11 @@ Versions are managed from the **Versions** workspace view on a document and inhe
 
 ## Working with Alternate Versions
 
-- Ensure the User Group permissions are set to allow appropriate access.
-![Alternate Version permissions](images/alternate-version-permissions.png)
-- Navigate to the **Versions** Workspace View on a content item.
-![Versions Workspace View](images/versions-workspace-view.png)
-- Click the `Create` button to open a workspace modal containing a copy of the current draft.
-![Version workspace](images/version-workspace-editor.png)
-- Update and save the new version.
-- The new version appears in the collection view.
-![Versions collection](images/versions-collection.png)
+* Ensure the User Group permissions are set to allow appropriate access. ![Alternate Version permissions](../.gitbook/assets/alternate-version-permissions.png)
+* Navigate to the **Versions** Workspace View on a content item. ![Versions Workspace View](../.gitbook/assets/versions-workspace-view.png)
+* Click the `Create` button to open a workspace modal containing a copy of the current draft. ![Version workspace](../.gitbook/assets/version-workspace-editor.png)
+* Update and save the new version.
+* The new version appears in the collection view. ![Versions collection](../.gitbook/assets/versions-collection.png)
 
 Editors can create multiple versions of a document and update these independently.
 
@@ -37,10 +34,11 @@ When a version is promoted to be the current draft, it can be further edited bef
 
 ## Variant versions
 
-Alternate versions can vary by culture or segment. 
+Alternate versions can vary by culture or segment.
 
 To create a variant version:
-- Select the desired variant using the document variant selector.
-- Create a new version as outlined above.
+
+* Select the desired variant using the document variant selector.
+* Create a new version as outlined above.
 
 The collection in the workspace view will show only versions matching the current document variant.

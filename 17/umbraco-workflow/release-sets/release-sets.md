@@ -16,15 +16,15 @@ Release Sets are collections of [Alternate Versions](../alternate-versions/alter
 
 1. Ensure the User Group permissions are set to allow appropriate access.
 
-<div align="center"><figure><img src="images/release-set-permissions.png" alt=""><figcaption></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/release-set-permissions.png" alt=""><figcaption></figcaption></figure></div>
 
 2. Navigate to the **Release Sets** dashboard in the **Content** section.
 
-<figure><img src="images/release-sets-dashboard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/release-sets-dashboard.png" alt=""><figcaption></figcaption></figure>
 
 3. Click the **Create** button to open a workspace modal to create a new set.
 
-<figure><img src="images/release-set-workspace-editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/release-set-workspace-editor.png" alt=""><figcaption></figcaption></figure>
 
 A Release Set is comprised of document versions and (optionally) tasks. Tasks are like to-dos that should be tracked alongside the Release Set, but are not necessarily CMS activities.
 
@@ -36,34 +36,34 @@ For example, a task might be to finalize digital advertising. It is not a CMS ac
 2. Select the document node from the picker.
 3. Add or create a new version of the selected document in the version editor.
 
-<figure><img src="images/versions-editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/versions-editor.png" alt=""><figcaption></figcaption></figure>
 
 Adding an existing version opens the version picker. Creating a new version opens the [Alternate Version](../alternate-versions/alternate-versions.md) workspace editor.
 
-<figure><img src="images/version-picker.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/version-picker.png" alt=""><figcaption></figcaption></figure>
 
 Add an existing version or create a version to display it in the version editor.
 
-<figure><img src="images/version-editor-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/version-editor-2.png" alt=""><figcaption></figcaption></figure>
 
-4. Enter the date and time in the **Publish at** field.&#x20;
+4. Enter the date and time in the **Publish at** field.
 5. Click **Schedule publish** to schedule the selected version.
 
-<figure><img src="images/version-scheduling.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/version-scheduling.png" alt=""><figcaption></figcaption></figure>
 
 You can add multiple versions of the same document and schedule them in sequence.
 
-<figure><img src="images/version-editor-3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/version-editor-3.png" alt=""><figcaption></figcaption></figure>
 
-After submitting the modal, the updated versions are displayed in the overlay.&#x20;
+After submitting the modal, the updated versions are displayed in the overlay.
 
 The documents list shows the selected documents, while the calendar shows the Release Set and its components.
 
-<figure><img src="images/release-set-overview.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/release-set-overview.png" alt=""><figcaption></figcaption></figure>
 
 6. Select a day in the calendar to display the scheduled content changes for that date.
 
-<figure><img src="images/calendar-day.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/calendar-day.png" alt=""><figcaption></figcaption></figure>
 
 7. Click the **Add** button in the calendar dialog to add items to the Release Set.
 

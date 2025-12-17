@@ -16,11 +16,11 @@ The approval thresholds feature introduces configuration options to set the requ
 
 The threshold options are:
 
-| Option          | Description                                                                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| One (_default_) | Pending tasks require approval from **any** member of the assigned approval group.                                                                                                                           |
-| Most            | <p>Pending tasks require approval from an absolute <strong>majority</strong> of group members. <br>Example: A group with 3 members requires 2 approvals and a group with 4 members requires 3 approvals.</p> |
-| All             | Pending tasks require approval from **all** group members.                                                                                                                                                   |
+| Option          | Description                                                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| One (_default_) | Pending tasks require approval from **any** member of the assigned approval group.                                                                                                                          |
+| Most            | <p>Pending tasks require approval from an absolute <strong>majority</strong> of group members.<br>Example: A group with 3 members requires 2 approvals and a group with 4 members requires 3 approvals.</p> |
+| All             | Pending tasks require approval from **all** group members.                                                                                                                                                  |
 
 The workflow detail UI displays the following:
 
@@ -29,7 +29,7 @@ The workflow detail UI displays the following:
 * Progress towards meeting the threshold for the current approval stage.
 * Future tasks and the assigned group and its users.
 
-![Tasklist with approval thresholds](images/tasklist-with-approval-thresholds-v14.png)
+![Tasklist with approval thresholds](../.gitbook/assets/tasklist-with-approval-thresholds-v14.png)
 
 Approving a task as an administrator immediately satisfies the approval threshold for the task, and will advance to the next workflow stage.
 
@@ -56,4 +56,4 @@ The settings below can be set from the Backoffice or via settings customization 
 
 The approval threshold for an individual workflow stage can be set using the control below the stage name. Setting the stage threshold requires the **Configuring approval threshold** setting to be `true`.
 
-![Setting approval threshold for individual workflow stages](images/approval-flow-with-thresholds-v14.png)
+![Setting approval threshold for individual workflow stages](../.gitbook/assets/approval-flow-with-thresholds-v14.png)

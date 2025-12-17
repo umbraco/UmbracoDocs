@@ -2,7 +2,7 @@
 
 The **Approval groups** view in the **Workflow** section lists the active groups name, group members, their permissions, and a quick link to email the group.
 
-![Approval groups](../getting-started/images/approval-groups-roles-v14.png)
+![Approval groups](../.gitbook/assets/approval-groups-roles-v14.png)
 
 To add an approval group, follow these steps:
 
@@ -12,9 +12,9 @@ To add an approval group, follow these steps:
 4. Enter a **Name** for the Approval Group. For example: Danish Editors.
 5. Enter the **Group Email** address in the **Settings** section to which the notifications will be sent.
 6. Select the **Group Language** from the drop-down list in the **Settings** section.
-7. Click **Save**.
+7.  Click **Save**.
 
-    ![Create Approval Group](../images/Create-approval-group-v14.png)
+    ![Create Approval Group](../.gitbook/assets/Create-approval-group-v14.png)
 
 {% hint style="info" %}
 You can create a total of 5 groups on unlicensed installations. The paid license removes this restriction.
@@ -30,13 +30,13 @@ The **Settings** tab consists of the following fields:
 * **Group Language:** Select a language variant for the email.
 * **Workflow Activity:** Provides a chart displaying an overview of the workflow activity such as approved, cancelled, rejected, or pending approvals for the current group.
 
-![Approval group Settings](../images/Approval-group-settings-v14.png)
+![Approval group Settings](../.gitbook/assets/Approval-group-settings-v14.png)
 
 ## Members
 
 The **Members** tab manages the membership for the given user group. Add members to approval groups to determine which member will be responsible for approving content changes. Group Members can be explicitly added to the group or can inherit group membership from an existing Umbraco group. Ideally, group members are set explicitly to ensure changes made to Umbraco groups do not cause unexpected changes to workflow permissions.
 
-![Approval group Members](../images/approval-group-members-v14.png)
+![Approval group Members](../.gitbook/assets/approval-group-members-v14.png)
 
 To add a Group member, follow these steps:
 
@@ -45,9 +45,9 @@ To add a Group member, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Choose** in the **Group members** section.
-6. Select the **Users** you want to add to the approval group.
+6.  Select the **Users** you want to add to the approval group.
 
-    ![Add group Members](../images/add-group-member-v14.png)
+    ![Add group Members](../.gitbook/assets/add-group-member-v14.png)
 7. Click **Submit**.
 8. Click **Save**.
 
@@ -60,9 +60,9 @@ To inherit an existing Umbraco group membership, follow these steps:
 3. Select a group from the list to edit its Members.
 4. Go to the **Members** tab.
 5. Click **Choose** in the **Inherited group membership** section.
-6. Select the **User groups** you want to add to the approval group.
+6.  Select the **User groups** you want to add to the approval group.
 
-    ![Inherited group membership](../images/Inherited-group-membership-v14.png)
+    ![Inherited group membership](../.gitbook/assets/Inherited-group-membership-v14.png)
 7. Click **Submit**.
 8. Click **Save**.
 
@@ -77,7 +77,7 @@ The **Roles** tab provides an overview of the current workflow roles for the Gro
 
 You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](workflow-settings.md) article.
 
-![Approval group Roles](../images/approval-groups-role-v14.png)
+![Approval group Roles](../.gitbook/assets/approval-groups-role-v14.png)
 
 ## History
 
@@ -89,10 +89,10 @@ The History tab provides an overview of the workflow activity for the current gr
 * Date the workflow was requested on
 * Comment describing the changes
 
-![Approval group history](../images/approval-group-history-v14.png)
+![Approval group history](../.gitbook/assets/approval-group-history-v14.png)
 
 You can also **Filter** the records based on the Document Type, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
 The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
 
-![Details overlay](../getting-started/images/Workflow-Content-app-Details-overlay-v14.png)
+![Details overlay](../.gitbook/assets/Workflow-Content-app-Details-overlay-v14.png)
