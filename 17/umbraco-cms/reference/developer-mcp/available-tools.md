@@ -249,6 +249,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-media-root` — Get root media items
 - `create-media` — Create new media
 - `create-media-multiple` — Create multiple media items
+- `create-media-folder` — Create a new folder in the media library
 - `delete-media` — Delete media
 - `update-media` — Update media
 - `get-media-configuration` — Get media configuration
