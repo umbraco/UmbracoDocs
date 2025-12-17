@@ -20,7 +20,7 @@ Prefer other context types such as [Workspace Contexts](workspaces/workspace-con
 Global Context extensions are registered using a `umbraco-package.json` manifest file.
 
 **Key fields:**
-- `type`: Must be `"globalContext"`, see: [ManifestGlobalContext](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_extension-registry.ManifestGlobalContext.html)
+- `type`: Must be `"globalContext"`, see: [ManifestGlobalContext](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_extension-registry.ManifestGlobalContext.html)
 - `alias`: A unique identifier for the context
 - `name`: A human-readable name
 - `api`: The path to the compiled JavaScript file

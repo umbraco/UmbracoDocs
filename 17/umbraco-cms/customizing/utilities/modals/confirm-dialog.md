@@ -16,7 +16,7 @@ Extension authors can customize the dialog with configuration options such as he
 -   `confirmLabel` - (Optional) The label of the confirmation button.
 -   `cancelLabel` - (Optional) The label of the cancel button.
 
-To see all properties of the `UMB_CONFIRM_MODAL` token, see the [API reference](https://apidocs.umbraco.com/v16/ui-api/interfaces/packages_core_modal.UmbConfirmModalData.html).
+To see all properties of the `UMB_CONFIRM_MODAL` token, see the [API reference](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_modal.UmbConfirmModalData.html).
 
 The `onSubmit` method returns a promise that resolves when the user confirms the dialog, and rejects when the user cancels the dialog.
 

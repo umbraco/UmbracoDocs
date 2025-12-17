@@ -12,11 +12,11 @@ The intended audience for these reference pages is .NET developers. It is assume
 Since the release of Umbraco 14, the documentation for Models and Services has been removed from the documentation.
 {% endhint %}
 
-## [Models (external)](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Models.html)
+## [Models (external)](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.html)
 
 Find references for the models in the public API. The models include Content, ContentType, Language, Media, and Template classes.
 
-## [Services (external)](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.html)
+## [Services (external)](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Services.html)
 
 Find references for the services available for performing Create, Read, Update, and Delete (CRUD) operations for the models.
 
