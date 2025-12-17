@@ -15,7 +15,7 @@ The following steps are all handled through the Umbraco backoffice.
 2. Select the **Create Payment Method** button to create a new payment method.
 3. Choose **Nets Easy (One Time)** from the list of available payment providers.
 
-![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](../media/nets/umbraco\_create\_payment\_method.png)
+![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](<../.gitbook/assets/umbraco_create_payment_method (2).png>)
 
 ## Step 2: Configure Payment Provider Settings
 
@@ -44,4 +44,4 @@ The following steps are handled within the payment method editor in the Umbraco 
 Refer to the [Nets Developer documentation](https://developers.nets.eu/nets-easy/en-EU/api/#localization) to learn which languages can be used with Nets Easy.
 {% endhint %}
 
-![Overview of the available  Payment Provider Settings in the Umbraco CMS backoffice.](../media/nets/umbraco\_configure\_nets-easy\_settings.png)
+![Overview of the available  Payment Provider Settings in the Umbraco CMS backoffice.](../.gitbook/assets/umbraco_configure_nets-easy_settings.png)

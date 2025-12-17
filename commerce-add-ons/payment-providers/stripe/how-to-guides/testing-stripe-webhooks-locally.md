@@ -73,7 +73,7 @@ C:\PROGRA~1\ngrok\ngrok.exe http --host-header=rewrite localhost:61191
 
 You can run the batch file at any time to launch ngrok and create a publicly accessible tunnel to your website.
 
-![ngrok](../../media/ngrok.png)
+![ngrok](<../../.gitbook/assets/ngrok (1).png>)
 
 {% hint style="info" %}
 When you launch ngrok for the first time, it will ask you to sign in. Enter the credentials you used to sign up. It will remember them from now on.

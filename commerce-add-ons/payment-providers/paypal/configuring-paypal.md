@@ -15,7 +15,7 @@ To use the PayPal provider you will need to sign up for a Business PayPal accoun
 2. Click the **Sign-Up** button in the top corner to create an account.
 3. Choose **Business Account** as the account type.
 
-![PayPal Business Account Signup](../media/paypal/signup\_business\_account.png)
+![PayPal Business Account Signup](../.gitbook/assets/signup_business_account.png)
 
 ### Sandbox accounts
 
@@ -24,19 +24,19 @@ If you wish to test your system before going live, you need to sign up for a set
 1. Sign in to a valid PayPal account - any account will do.
 2. Follow this link: [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/).
 
-![PayPal Sandbox Accounts](../media/paypal/sandbox\_accounts.png)
+![PayPal Sandbox Accounts](../.gitbook/assets/sandbox_accounts.png)
 
 From here you can view and modify any existing Sandbox accounts you have.
 
 3. Select **Create Account** to create both a business and a personal set of accounts.
 
-![Create PayPal Sandbox Accounts](../media/paypal/create\_sandbox\_accounts.png)
+![Create PayPal Sandbox Accounts](../.gitbook/assets/create_sandbox_accounts.png)
 
 4. Locate the **Managed Accounts** column.
 5. Select **View/Edit account** for each account.
 6. Note down the **Email ID** and **Password**.
 
-![PayPal Sandbox Account Details](../media/paypal/sandbox\_account\_details.png)
+![PayPal Sandbox Account Details](../.gitbook/assets/sandbox_account_details.png)
 
 ## Step 2: Create a PayPal App
 
@@ -44,20 +44,20 @@ In order for Umbraco Commerce to perform actions in your PayPal account on your 
 
 1. Access the [PayPal Developer Portal](https://developer.paypal.com/developer/applications/).
 
-![Overview of apps and credentials in the PayPal developer portal.](../media/paypal/applications.png)
+![Overview of apps and credentials in the PayPal developer portal.](../.gitbook/assets/applications.png)
 
 2. Create the two apps by toggling the **Sandbox\Live** toggle buttons.
 3. Clicking the **Create App** button to create an App for each environment.
 4. Give your app a name, and choose the **Sandbox Business Account** to associate the App with the Sandbox App.
 5. Click the **Create App** button to create the App.
 
-![The options when creating a New App in the PayPal developer portal.](../media/paypal/create\_application.png)
+![The options when creating a New App in the PayPal developer portal.](../.gitbook/assets/create_application.png)
 
 6. Note down the **Client ID**.
 7. Click the **Show** link below the **Secret** heading.
 8. Note down the **Secret**.
 
-![API Credentials and secrets for an app in the PayPal developer portal.](../media/paypal/application\_details.png)
+![API Credentials and secrets for an app in the PayPal developer portal.](../.gitbook/assets/application_details.png)
 
 ### Webhooks
 
@@ -66,7 +66,7 @@ Webhooks are used for communication between PayPal and the Umbraco Commerce inst
 1. Scroll down to the **Webhooks** section.
 2. Click the **Add Webhook** button to create a new Webhook.
 
-![The configuration options when add a new webhook through the PayPal developer portal.](../media/paypal/webhooks.png)
+![The configuration options when add a new webhook through the PayPal developer portal.](../.gitbook/assets/webhooks.png)
 
 3. Provide the URL where the webhook notifications should be sent. See the example below:
 
@@ -94,10 +94,10 @@ These are the recommended Event Types to configure notifications for:
 * Payment capture reversed
 {% endhint %}
 
-![Overview of available event types to subscribe to notifications through your webhook.](../media/paypal/sandbox\_webhook.png)
+![Overview of available event types to subscribe to notifications through your webhook.](../.gitbook/assets/sandbox_webhook.png)
 
 6. Note down the **Webhook ID** for the webhook.
 
-![Overview of the created Webhook in the PayPal developer portal.](../media/paypal/webhooks2.png)
+![Overview of the created Webhook in the PayPal developer portal.](../.gitbook/assets/webhooks2.png)
 
 Keep in mind that you will need to create an App and webhook configuration for both Sandbox and Live environments. For the Live environment, this must be set up under the account that will be accepting the payments.
