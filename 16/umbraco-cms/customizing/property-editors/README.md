@@ -44,12 +44,12 @@ Understand how to use the Property Dataset Context API to manage data for multip
 
 ## More Information
 
-* [Built-in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/) - Explore the Property Editors that come out of the box with Umbraco
-* [Creating a Property Editor Tutorial](../../tutorials/creating-a-property-editor/) - Step-by-step guide to building your first custom Property Editor
-* [Adding Configuration](../../tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md) - Learn how to add configurable settings to your Property Editor
-* [Adding Server-side Validation](../../tutorials/creating-a-property-editor/adding-server-side-validation.md) - Implement server-side validation for your Property Editor
-* [Custom Value Conversion](../../tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md) - Create Property Value Converters for custom rendering
-* [Integrating Context](../../tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md) - Work with Umbraco's Context API in your Property Editor
-* [Default Property Editor Schema Aliases](../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) - Reference list of available Property Editor Schemas
-* [Full Property Value Converter Examples](full-examples-value-converters.md) - Complete code examples for implementing Property Value Converters
-* [Extending Overview](../extending-overview/) - Learn about the extension system and development workflow for building Umbraco extensions
+* [Built-in Property Editors](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/) - Explore the Property Editors that come out of the box with Umbraco.
+* [Creating a Property Editor Tutorial](../../tutorials/creating-a-property-editor/) - Step-by-step guide to building your first custom Property Editor.
+* [Adding Configuration](../../tutorials/creating-a-property-editor/adding-configuration-to-a-property-editor.md) - Learn how to add configurable settings to your Property Editor.
+* [Adding Server-side Validation](../../tutorials/creating-a-property-editor/adding-server-side-validation.md) - Implement server-side validation for your Property Editor.
+* [Custom Value Conversion](../../tutorials/creating-a-property-editor/custom-value-conversion-for-rendering.md) - Create Property Value Converters for custom rendering.
+* [Integrating Context](../../tutorials/creating-a-property-editor/integrating-context-with-a-property-editor.md) - Work with Umbraco's Context API in your Property Editor.
+* [Default Property Editor Schema Aliases](../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) - Reference list of available Property Editor Schemas.
+* [Full Property Value Converter Examples](full-examples-value-converters.md) - Complete code examples for implementing Property Value Converters.
+* [Extending Overview](../extending-overview/) - Learn about the extension system and development workflow for building Umbraco extensions.
