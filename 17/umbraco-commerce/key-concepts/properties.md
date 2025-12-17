@@ -62,7 +62,7 @@ On occasions where Umbraco Commerce needs to capture some information about an O
 
 Umbraco Commerce has a built-in mechanism that can be configured to automatically copy properties from a Product information source to the Order Line automatically. This is done by using the **Product Property Aliases** field on the Store settings screen.
 
-![Product Property Aliases Configuration](../media/product_property_aliases.png)
+![Product Property Aliases Configuration](../.gitbook/assets/product_property_aliases.png)
 
 When a Product is added to the Order containing a comma-separated list of property aliases, the property values are automatically copied to the Order Lines Properties collection.
 
@@ -81,7 +81,7 @@ A good example of this is when you have configurable products, such as customiza
 
 Product uniqueness is configured via the **Product Uniqueness Property Aliases** field on the Store setting screen.
 
-![Product Uniqueness Property Aliases Configuration](../media/product_uniqueness_property_aliases.png)
+![Product Uniqueness Property Aliases Configuration](../.gitbook/assets/product_uniqueness_property_aliases.png)
 
 When set to a comma-separated list of property aliases and a Product is added to an Order, the properties are compared against all pre-existing Order Lines for that Product. Should their values be different, then a unique Order Line will be created for that Product.
 
@@ -91,7 +91,7 @@ In Umbraco Commerce, you may need to access order information in a structured wa
 
 Order property maps can be defined per store, but there is also a default map that is pre-configured.
 
-Order property maps are defined via the [`IUmbracoCommerceBuilder`](./umbraco-commerce-builder.md) interface.
+Order property maps are defined via the [`IUmbracoCommerceBuilder`](umbraco-commerce-builder.md) interface.
 
 ```csharp
 // Create a new mapping for the given store

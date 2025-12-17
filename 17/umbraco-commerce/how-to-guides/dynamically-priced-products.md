@@ -9,18 +9,18 @@ Sometimes products do not have a fixed price. Depending on the customer's requir
 This guide shows you how to implement dynamically priced products in Umbraco Commerce.
 
 {% hint style="info" %}
-This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/README.md). It is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Capturing User Input
 
 Add a new field on the product's frontend page, to capture the desired length we want to purchase.
 
-![Length Input](images/dynamic-price/length-input.png)
+![Length Input](../.gitbook/assets/length-input.png)
 
 The selected length will reflect on the cart value.
 
-![Calculated Cart Values](images/dynamic-price/cart-with-length.png)
+![Calculated Cart Values](../.gitbook/assets/cart-with-length.png)
 
 To provide the correct calculations for an order, the captured data will need to go through two different processes behind the scenes:
 
@@ -32,7 +32,6 @@ To provide the correct calculations for an order, the captured data will need to
 1. Add a new property to the `AddToCartDto` class to capture the length.
 
 {% code title="AddToCartDto.cs" %}
-
 ```csharp
 public class AddToCartDto
 {
@@ -40,13 +39,11 @@ public class AddToCartDto
     public string? Length { get; set; }
 }
 ```
-
 {% endcode %}
 
 2. Update the `AddToCart` method of the `CartSurfaceController` to store the length against the order line as a [property](../key-concepts/umbraco-properties.md).
 
 {% code title="CartSurfaceController.cs" %}
-
 ```csharp
 [HttpPost]
 public async Task<IActionResult> AddToCart(AddToCartDto postModel)
@@ -74,7 +71,6 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     ...
 }
 ```
-
 {% endcode %}
 
 ## Calculating the Order Line Price
@@ -84,7 +80,6 @@ We will calculate the price/tax rate of a given order line by multiplying the sp
 1. Create a new class that implements the `IOrderLineCalculator` interface.
 
 {% code title="SwiftOrderLineCalculator.cs" %}
-
 ```csharp
 public class SwiftOrderLineCalculator : IOrderLineCalculator
 {
@@ -137,13 +132,11 @@ public class SwiftOrderLineCalculator : IOrderLineCalculator
     }
 }
 ```
-
 {% endcode %}
 
 2. Register the custom calculator in the `Startup.cs` file or in an `IComposer`.
 
 {% code title="SwiftShopComposer.cs" %}
-
 ```csharp
 internal class SwiftShopComposer : IComposer
 {
@@ -153,7 +146,6 @@ internal class SwiftShopComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 ## Backoffice UI
@@ -165,7 +157,6 @@ This is implemented as a custom [UI Extension](https://docs.umbraco.com/umbraco-
 Create a new `umbraco-package.json` file in a folder in the `App_Plugins` directory in the root of your project and add the following code:
 
 {% code title="umbraco-package.json" %}
-
 ```json
 {
     "name": "SwiftShop",
@@ -200,9 +191,8 @@ Create a new `umbraco-package.json` file in a folder in the `App_Plugins` direct
     ]
 }
 ```
-
 {% endcode %}
 
 The length property is now displayed in the order details in the Backoffice.
 
-![Order Details](images/dynamic-price/order-editor-property.png)
+![Order Details](../.gitbook/assets/order-editor-property.png)

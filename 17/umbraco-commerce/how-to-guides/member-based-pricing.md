@@ -10,11 +10,11 @@ By default, Umbraco Commerce uses a single price for a product. However, in some
 
 1. Creating the Member Groups to use for the member-based pricing. In this example two member groups are created: _Platinum_ and _Gold_.
 
-![Member Groups](images/member-based-pricing/member-groups.png)
+![Member Groups](../.gitbook/assets/member-groups.png)
 
 2. Create one Member for each group:
 
-![Members](images/member-based-pricing/members.png)
+![Members](../.gitbook/assets/members.png)
 
 ## Property Editor Configuration
 
@@ -24,26 +24,25 @@ Next, you will create a new property editor for the member-based pricing. The in
 2. Use the default Umbraco Commerce `Price` property editor for the `Price` property.
 3. Use the in-built `Member Group Picker` property editor for the `Member Group` property.
 
-![Member Price Element](images/member-based-pricing/member-price-element.png)
+![Member Price Element](../.gitbook/assets/member-price-element.png)
 
 4. Open the **Product** Document Type.
 5. Add a new `Member Price` property using a new Block List Property editor configuration.
 6. Select the `Member Price` element type as the only allowed block type.
 
-![Member Price Block List Configuration](images/member-based-pricing/member-price-block-list.png)
+![Member Price Block List Configuration](../.gitbook/assets/member-price-block-list.png)
 
 7. Navigate to the Content section.
 8. Assign member-based pricing for any product you wish.
 9. Populate the `Member Price` field with the required Member Group and price combination.
 
-![Member Group Price](images/member-based-pricing/member-price-content.png)
+![Member Group Price](../.gitbook/assets/member-price-content.png)
 
 ## Product Adapter
 
 With the prices defined, it's time to configure Umbraco Commerce to select the correct price based on the logged-in Member. This is done by creating a custom product adapter to override the default product adapter and select the correct price.
 
 {% code title="MemberPricingProductAdapter.cs" %}
-
 ```csharp
 public class MemberPricingProductAdapter : UmbracoProductAdapter
 {
@@ -112,11 +111,9 @@ public class MemberPricingProductAdapter : UmbracoProductAdapter
 ```
 {% endcode %}
 
-
 Add the following to a `Composer` file to register the custom product adapter:
 
 {% code title="SwiftShopComposer.cs" %}
-
 ```csharp
 internal class SwiftShopComposer : IComposer
 {
@@ -126,7 +123,6 @@ internal class SwiftShopComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 ## Results
@@ -135,12 +131,12 @@ With all this implemented, the product page will display the correct price based
 
 The expected result for the standard product page:
 
-![Default Product Page](images/member-based-pricing/default-product-page.png)
+![Default Product Page](../.gitbook/assets/default-product-page.png)
 
 The expected result for a _Gold_ Member:
 
-![Gold Product Page](images/member-based-pricing/gold-product-page.png)
+![Gold Product Page](../.gitbook/assets/gold-product-page.png)
 
 The expected result for a _Platinum_ Member:
 
-![Platinum Product Page](images/member-based-pricing/platinum-product-page.png)
+![Platinum Product Page](../.gitbook/assets/platinum-product-page.png)
