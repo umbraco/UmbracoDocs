@@ -377,10 +377,7 @@ You can read more about this in the [Understanding and Extending Models Builder 
 
 ### Introduction
 
-Hosting multiple websites within a single Umbraco instance is a powerful feature, but it
-comes with routing complexities that can cause subtle, hard-to-debug issues. This guide
-documents the most common pitfalls and their solutions, verified against official Umbraco
-documentation and source code.
+Hosting multiple sites in one Umbraco instance is powerful, but routing complexity can cause subtle issues. This guide outlines common pitfalls and solutions.
 
 **Key principle:** Always use domain-aware APIs. Never assume content tree structure maps
 to URL structure in multi-site setups.
@@ -389,13 +386,10 @@ to URL structure in multi-site setups.
 
 Use these APIs for correct multi-site URL handling:
 
-* IPublishedUrlProvider.GetUrl(id, UrlMode.Absolute) – Re-resolves URLs with
-current domain context
+* IPublishedUrlProvider.GetUrl(id, UrlMode.Absolute) – Re-resolves URLs with current domain context
 * content.Url(mode: UrlMode.Absolute) – Extension method for IPublishedContent
-* IDomainService.GetAll() – Retrieves all configured domains with their
-RootContentId
-* IUmbracoContextAccessor – Access to current Umbraco context for content
-resolution
+* IDomainService.GetAll() – Retrieves all configured domains with their RootContentId
+* IUmbracoContextAccessor – Access to current Umbraco context for content resolution
 
 ### Problem 1: Using Link.Url Directly
 
@@ -446,7 +440,7 @@ content finders, using tree-walking methods to find configuration nodes is dange
 * Runs on **every request** during Umbraco's routing phase
 * After system reboot, cache rebuild order is non-deterministic
 * May always return Site 1's home node, causing Site 2 to serve Site 1's content
-* Affects entire site rendering, not just specific components
+* Affects entire site rendering, not only specific components
 
 #### The Fix
 
@@ -499,10 +493,7 @@ Add this configuration to your appsettings.json for optimal multi-site routing:
 
 #### Configuration Notes
 
-* TryMatchingEndpointsForAllPages: false – This is the default. Ensures Umbraco
-doesn't attempt endpoint matching across all sites before the dynamic router.
-* UrlProviderMode: "Auto" – Lets Umbraco determine whether to return relative or
-absolute URLs based on context.
-* DisableRedirectUrlTracking: false – Keeps redirect tracking enabled for
-moved/renamed content.
+* TryMatchingEndpointsForAllPages: false – This is the default. Ensures Umbraco doesn't attempt endpoint matching across all sites before the dynamic router.
+* UrlProviderMode: "Auto" – Lets Umbraco determine whether to return relative or absolute URLs based on context.
+* DisableRedirectUrlTracking: false – Keeps redirect tracking enabled for moved/renamed content.
 
