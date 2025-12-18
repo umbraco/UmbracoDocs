@@ -83,7 +83,7 @@ When the action is completed, an event on the host element will be dispatched to
 
 ### The `getHref()` Method <a href="#get-href-method" id="get-href-method"></a>
 
-Entity action extensions are provided `this.args` by the `UmbEntityActionBase` superclass. The `this.args` contains a property, `unique` that allows developers to identity which element the user selected.
+Entity action extensions are provided by the `this.args` property, via the `UmbEntityActionBase` superclass. The `this.args` contains a property, `unique` that allows developers to identity which element the user selected.
 
 The `getHref()` method must return a string value, and the result will be rendered into the DOM as an anchor/link.
 
