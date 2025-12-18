@@ -69,7 +69,7 @@ extensionRegistry.register(manifest);
 
 ## The Entity Action Class <a href="#the-entity-action-class" id="the-entity-action-class"></a>
 
-Umbraco provides a few generic actions that can be used across silos, such as copy, move, trash, etc. Umbraco may include additional generic actions in the future.
+Umbraco provides a few generic actions that can be used across silos, such as copy, move, and trash. Umbraco may include additional generic actions in the future.
 
 Entity Action extensions will need to supply a class to the extension definition using the `api` property in the manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that invoked it.
 
