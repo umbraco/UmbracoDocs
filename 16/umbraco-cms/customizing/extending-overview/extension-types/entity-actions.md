@@ -8,7 +8,7 @@ description: Entity Actions give developers the ability to add custom actions to
 **Entity Actions** was previously known as **Tree Actions.**
 {% endhint %}
 
-Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to an entity (document, media, etc...).
+Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to an entity (document, media, or the like).
 
 Developers can define and associate custom actions for entities in a [tree extension](tree.md), workspace, or collection view. Access to these actions can be controlled via user permissions. The Users section of the backoffice allows Administrators to control which actions a user has permissions to access.
 
