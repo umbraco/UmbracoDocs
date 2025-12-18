@@ -73,9 +73,10 @@ Umbraco provides a few generic actions that can be used across silos, such as co
 
 Entity Action extensions will need to supply a class to the extension definition using the `api` property in the manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that invoked it.
 
-The entity action class will provide one of the following methods:
-* `getHref` - returns a URL that will be used for navigation
-* `execute` - programs custom imperative behaviors that can work with contexts and service APIs
+The Entity Action class will provide one of the following methods:
+
+* `getHref` - returns a URL that will be used for navigation.
+* `execute` - programs custom imperative behaviors that can work with contexts and service APIs.
 
 If both methods are provided in the entity action class, the `getHref` method will be preferred.
 
