@@ -372,3 +372,137 @@ When memory is used, for instance creating 5,000 recipe models with a `Select` s
 
 Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.\
 You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md).
+
+## Multi-Site URL Handling
+
+### Introduction
+
+Hosting multiple websites within a single Umbraco instance is a powerful feature, but it
+comes with routing complexities that can cause subtle, hard-to-debug issues. This guide
+documents the most common pitfalls and their solutions, verified against official Umbraco
+documentation and source code.
+
+**Key principle:** Always use domain-aware APIs. Never assume content tree structure maps
+to URL structure in multi-site setups.
+
+### Recommended APIs
+
+Use these APIs for correct multi-site URL handling:
+
+* IPublishedUrlProvider.GetUrl(id, UrlMode.Absolute) – Re-resolves URLs with
+current domain context
+* content.Url(mode: UrlMode.Absolute) – Extension method for IPublishedContent
+* IDomainService.GetAll() – Retrieves all configured domains with their
+RootContentId
+* IUmbracoContextAccessor – Access to current Umbraco context for content
+resolution
+
+### Problem 1: Using Link.Url Directly
+
+#### The Issue
+
+The Link model from Multi URL Picker stores a pre-resolved URL string. This value is
+cached at save time and does not re-evaluate the domain context at render time.
+
+**Impact:** In multi-site setups, Link.Url may return a URL pointing to the wrong domain,
+causing cross-site linking issues.
+
+#### The Fix
+
+Always re-resolve content links using IPublishedUrlProvider. Check if the link has a Udi
+(indicating an internal content link), then fetch the content and generate a fresh URL:
+
+```csharp
+if (link.Udi != null)
+{
+var content = umbracoContext.Content?.GetById(link.Udi);
+var url = _publishedUrlProvider.GetUrl(content.Id, UrlMode.Absolute);
+}
+```
+
+### Problem 2: Walking the Content Tree to Find Home
+
+#### The Issue
+
+A common pattern is walking up the content tree using Parent or AncestorOrSelf() to findhe "home" node. This approach ignores domain assignments entirely.
+
+**Impact:** After a cache rebuild, the first "home" node found in memory may belong to the
+wrong site. This is non-deterministic and can cause Site B to serve Site A's configuration.
+
+#### The Fix
+Use IDomainService to look up the correct root node based on the current request's domain.
+Match the request's Uri.Authority against configured domains and use the RootContentId
+to fetch the correct home node.
+
+### Problem 3: Non-Domain-Aware Resolution in Routing Handlers
+
+#### The Issue
+
+When implementing `INotificationHandler<RoutingRequestNotification>` or custom
+content finders, using tree-walking methods to find configuration nodes is dangerous.
+
+**Why This Is Critical**
+
+* Runs on **every request** during Umbraco's routing phase
+* After system reboot, cache rebuild order is non-deterministic
+* May always return Site 1's home node, causing Site 2 to serve Site 1's content
+* Affects entire site rendering, not just specific components
+
+#### The Fix
+
+Inject IDomainService and IUmbracoContextAccessor into your handler. Match the current
+request's host against configured domains:
+
+```csharp
+var allDomains = _domainService.GetAll(true).ToList();
+var currentHost = requestBuilder.Uri.Authority;
+var matchingDomain = allDomains.FirstOrDefault(d =>
+d.DomainName == currentHost ||
+d.DomainName == $"https://{currentHost}" ||
+d.DomainName == $"http://{currentHost}");
+var homeNode = umbracoContext.Content?.GetById(matchingDomain.RootContentId.Value);
+```
+
+**Key benefit:** This approach is deterministic – it always returns the correct home node
+regardless of cache order or rebuild timing.
+
+### Problem 4: Link Picker URLs in Multi-Site Setups
+
+This extends Problem 1 to all link picker usage patterns. The Link model's Url property is a
+cached string that may point to the wrong domain.
+
+#### Complete Solution Pattern
+
+Create a helper method that handles all link types correctly:
+
+* **External URLs** (starting with http:// or https://) – return as-is
+* **Content links with Udi** – re-resolve using IPublishedUrlProvider
+* **Relative URLs** – prepend current domain if needed
+
+### Recommended WebRouting Configuration
+
+Add this configuration to your appsettings.json for optimal multi-site routing:
+
+```
+{
+"Umbraco": {
+"CMS": {
+"WebRouting": {
+"TryMatchingEndpointsForAllPages": false,
+"DisableRedirectUrlTracking": false,
+"UrlProviderMode": "Auto"
+}
+}
+}
+}
+```
+
+#### Configuration Notes
+
+* TryMatchingEndpointsForAllPages: false – This is the default. Ensures Umbraco
+doesn't attempt endpoint matching across all sites before the dynamic router.
+* UrlProviderMode: "Auto" – Lets Umbraco determine whether to return relative or
+absolute URLs based on context.
+* DisableRedirectUrlTracking: false – Keeps redirect tracking enabled for
+moved/renamed content.
+
