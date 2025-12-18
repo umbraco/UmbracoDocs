@@ -394,7 +394,7 @@ to URL structure in multi-site setups.
 Use these APIs for correct multi-site URL handling:
 
 * IPublishedUrlProvider.GetUrl(id, UrlMode.Absolute) – Re-resolves URLs with current domain context
-* content.Url(mode: UrlMode.Absolute) – Extension method for IPublishedContent
+* `content.Url(mode: UrlMode.Absolute)` – Extension method for IPublishedContent
 * IDomainService.GetAll() – Retrieves all configured domains with their RootContentId
 * IUmbracoContextAccessor – Access to current Umbraco context for content resolution
 
