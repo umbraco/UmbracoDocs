@@ -220,7 +220,7 @@ These two extension types are used in tandem with each other.
 
 ### Entity User Permissions
 
-Entity user permissions are assigned to a document, media, member, etc., and are registered using the `entityUserPermission` type in the extension's manifest.
+Entity user permissions are assigned to entities like documents, media, and members. They are registered using the `entityUserPermission` type in the extension's manifest.
 
 {% code title="entity-user-permission/manifest.ts" %}
 ```typescript
