@@ -1,5 +1,5 @@
 ---
-description: "Information on the dictionary settings section"
+description: "Information on the dictionary settings section."
 ---
 
 # Dictionary Settings
@@ -33,7 +33,7 @@ When set to `false` (default), only dictionary keys are searched using prefix ma
 When set to `true`, both dictionary keys and translation values are searched. Keys use prefix matching while values use substring matching, allowing editors to find dictionary items by their translated content.
 
 {% hint style="info" %}
-This feature is **disabled by default** to preserve backward compatibility and performance. Only enable it if your editors need to search by translation values.
+This feature is **disabled by default** to preserve backward compatibility and performance. It is recommended to enable the setting only when your editors need to search by translation values.
 {% endhint %}
 
 ## Related Links
