@@ -14,7 +14,7 @@ Video Tutorial
 2. Run `dotnet new install Umbraco.Templates` to install the project templates.
 _The solution is packaged up into the NuGet package_ [_Umbraco.Templates_](https://www.nuget.org/packages/Umbraco.Templates) _and can be installed into the dotnet CLI_.
 
-> Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new --list`:
+> Once that is complete, you can see that Umbraco was added to the list of available projects types by running `dotnet new list`:
 
 ```cli
 Templates                    Short Name               Language          Tags
