@@ -1,6 +1,6 @@
 # Documenting your controllers
 
-Documenting your API controllers using Swagger in Umbraco Version 14 simplifies the creation of detailed and interactive API documentation. Adding Swagger attributes automatically generates comprehensive information about routes, parameters, and response types. This will enhance the developer experience and ensure clarity and consistency in your API documentation.
+Documenting your API controllers using OpenAPI simplifies the creation of detailed and interactive API documentation. Adding the appropriate attributes automatically generates comprehensive information about routes, parameters, and response types. This will enhance the developer experience and ensure clarity and consistency in your API documentation.
 
 ## ApiExplorerSettings
 
@@ -15,7 +15,7 @@ public class MyItemApiController : ManagementApiControllerBase
 
 ## ProducesResponseType Attribute
 
-Use \[ProducesResponseType] to specify the possible responses for each action method. This helps Swagger generate accurate documentation for your API.\
+Use \[ProducesResponseType] to specify the possible responses for each action method. This helps OpenAPI generate accurate documentation for your API.\
 For example, in the GetItem method:
 
 {% code title="MyItemApiController.cs" %}
@@ -95,5 +95,5 @@ public IActionResult DeleteItem(Guid id)
 
 ## Verifying the changes
 
-Run your application and navigate to the Swagger UI (typically found at /swagger).\
+Run your application and navigate to the Swagger UI at `{yourdomain}/umbraco/swagger`.\
 Verify that your API documentation is correctly displaying the routes, parameters, and response types.

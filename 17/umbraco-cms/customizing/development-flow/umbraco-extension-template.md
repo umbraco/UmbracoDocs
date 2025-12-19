@@ -34,7 +34,7 @@ This command creates a new folder called `MyExtension` with the following files 
 
 The `-ex` flag indicates that you want to include examples of how to use the extension. This flag is optional, but it is recommended to include it if you are new to building extensions for Umbraco. It will additionally give you:
 
-- `Composers`: A folder containing an example composer that registers a custom Swagger API.
+- `Composers`: A folder containing an example composer that registers a custom OpenAPI document for the API.
 - `Controllers`: A folder containing an example API controller for a dashboard.
 - `Client/src/api`: A folder containing an example API client that calls the API controller.
 - `Client/src/dashboards`: A folder containing an example dashboard Web Component that uses the API client.

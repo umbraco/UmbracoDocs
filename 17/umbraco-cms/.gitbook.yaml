@@ -154,4 +154,6 @@ redirects:
     customizing/extending-overview/extension-types/modals/confirm-dialog: customizing/utilities/modals/confirm-dialog.md
     customizing/searchable-trees: customizing/overview.md
     customizing/section-trees: customizing/overview.md
-    
+    reference/custom-swagger-api: reference/custom-backoffice-api.md
+    tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md
+

@@ -379,7 +379,7 @@ GET /umbraco/delivery/api/v1/security/member/userinfo
 
 ## Testing with Swagger
 
-The Delivery API Swagger document can be configured to support member authentication.
+The Delivery API OpenAPI document can be configured to support member authentication.
 
 Before we can do that, we need two things in place:
 
@@ -396,7 +396,7 @@ builder.CreateUmbracoBuilder()
     .AddDeliveryApi()
     .AddComposers()
     .Build();
-builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions>();
+builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiOpenApiOptions>();
 ```
 {% endcode %}
 

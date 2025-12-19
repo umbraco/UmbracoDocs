@@ -431,7 +431,7 @@ This configuration will no longer have an effect.
 
 Notifications have changed their behavior to an extent. You can still implement notifications such as `ContentSavingNotification` to react to changes for related systems or add messages to be shown in the Backoffice. You can no longer modify the models being transferred through the API.
 
-If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
+If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-backoffice-api) and even learn how to register your controllers in Swagger UI.
 
 * **Property editors have been split in two**
 
