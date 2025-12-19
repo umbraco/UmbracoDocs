@@ -19,6 +19,90 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <details>
 
+<summary>Umbraco 18</summary>
+
+**Swashbuckle replaced with Microsoft.AspNetCore.OpenApi**
+
+Umbraco no longer uses Swashbuckle for OpenAPI documentation. It has been replaced with [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview).
+
+If you have custom APIs with OpenAPI documentation, you will need to update your code.
+
+*Registering OpenAPI documents*
+
+Replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()`. This can be done in `Program.cs` or in a composer. See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents) for details.
+
+Before:
+
+```csharp
+public class MyApiConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
+{
+    public void Configure(SwaggerGenOptions options)
+    {
+        options.SwaggerDoc("my-api-v1", new OpenApiInfo { Title = "My API v1", Version = "1.0" });
+    }
+}
+
+// In a composer:
+builder.Services.ConfigureOptions<MyApiConfigureSwaggerGenOptions>();
+```
+
+After:
+
+```csharp
+// In Program.cs or a composer:
+builder.Services.AddOpenApi("my-api-v1", options =>
+{
+    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    {
+        document.Info.Title = "My API v1";
+        document.Info.Version = "1.0";
+        return Task.CompletedTask;
+    });
+});
+```
+
+*Backoffice security requirements*
+
+Replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension method. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md) for a complete example.
+
+Before:
+
+```csharp
+public class MyApiSecurityRequirementsOperationFilter : BackOfficeSecurityRequirementsOperationFilterBase
+{
+    protected override string ApiName => "my-api-v1";
+}
+
+options.OperationFilter<MyApiSecurityRequirementsOperationFilter>();
+```
+
+After:
+
+```csharp
+builder.Services.AddOpenApi("my-api-v1", options =>
+{
+    options.AddBackofficeSecurityRequirements();
+});
+```
+
+*Schema ID handlers*
+
+The `ISchemaIdHandler` interface and `SchemaIdHandler` base class have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions` instead. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids) for details.
+
+*Operation ID handlers*
+
+The `IOperationIdHandler` interface and `OperationIdHandler` base class have been removed. Use `IOpenApiOperationTransformer` instead. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids) for details.
+
+*Delivery API member authentication*
+
+The class `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been renamed to `ConfigureUmbracoMemberAuthenticationDeliveryApiOpenApiOptions`.
+
+For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article and [PR #21058](https://github.com/umbraco/Umbraco-CMS/pull/21058).
+
+</details>
+
+<details>
+
 <summary>Umbraco 17</summary>
 
 **System dates are updated to UTC**
