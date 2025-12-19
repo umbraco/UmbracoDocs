@@ -30,7 +30,9 @@ If you use Umbraco Forms, then on the clean installation of Umbraco, you will ne
 ## Video Tutorial
 
 {% hint style="warning" %}
-The video below shows how to complete the upgrade on an Umbraco Cloud project. Most of the process is the same, however, you need to update locally to the latest supported version on Cloud before you can continue on Cloud.
+The video below shows how to complete the upgrade on an Umbraco Cloud project. While the overall process is the same, you must update to the latest supported version on Cloud locally before continuing on Cloud.
+
+Learn more about supported versions in the [End of Service Policy (Cloud)](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/end-of-service-policy) article.
 {% endhint %}
 
 {% embed url="https://www.youtube-nocookie.com/embed/wD9SGeRQR7o" %}
