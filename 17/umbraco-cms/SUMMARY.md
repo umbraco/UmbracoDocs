@@ -276,6 +276,7 @@
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
   * [Example Package Repository](extending/packages/example-package-repository.md)
+* [Single Block Migration](extending/single-block-migration.md)
 
 ## Reference
 
