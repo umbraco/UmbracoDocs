@@ -6,10 +6,6 @@
 
 `Returns: IEnumerable<BlockListItem>`
 
-{% hint style="warning" %}
-This article is a work in progress and may undergo further revisions, updates, or amendments. The information contained herein is subject to change without notice.
-{% endhint %}
-
 **Block List** is a list editing property editor, using [Element Types](../../../../data/defining-content/default-document-types.md#element-type) to define the list item schema.
 
 {% hint style="info" %}
@@ -28,7 +24,7 @@ Then you will see the configuration options for a Block List as shown below.
 
 The Data Type editor allows you to configure the following properties:
 
-* **Available Blocks** - Here you will define the Block Types to be available for use in the property. Read more on how to set up Block Types below.
+* **Available Blocks** - Here you will define the Block Types to be available for use in the property. For more information, see [Setup Block Types](block-list-editor.md#setup-block-types).
 * **Amount** - Sets the minimum and/or maximum number of blocks that should be allowed in the list.
 * **Single block mode** - When in Single block mode, the output will be `BlockListItem<>` instead of `BlockListModel`
 * **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
@@ -37,9 +33,9 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done either directly from the property editor setup process, or you can set them up beforehand and add them to the block list after.
+Block Types are **Element Types** which need to be created before you can start configuring them as Block Types. This can be done directly from the property editor setup process. You can also set them up beforehand and add them to the block list after.
 
-Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
+Once you have added an element type as a Block Type on your Data Type you will have the option to configure it further.
 
 ![Block List - Data Type Block Configuration](../../built-in-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
 
@@ -47,7 +43,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 ### Editor Appearance
 
-By configuring the properties in the group you can customize the user experience for your content editors when they work with the blocks in the Content section.
+You can configure the properties in the group to customize the user experience for your content editors. This helps them to quickly identify and select the right blocks for their content.
 
 * **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../../../../reference/umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
 * **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
@@ -67,7 +63,11 @@ These properties refer to how the Block is presented in the Block catalogue, whe
 * **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
 * **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
-The thumbnails for the catalogue are presented in the format of 16:10, and we recommend a resolution of 400px width and 250px height.
+The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
+
+{% hint style="info" %}
+Configuring the catalogue appearance improves the content editor experience. A well-designed block catalogue with colors and thumbnails makes it easier for editors to quickly identify and select the right blocks for their content.
+{% endhint %}
 
 ### Advanced
 
@@ -77,11 +77,11 @@ These properties are relevant when you work with custom views.
 
 ## Editing Blocks
 
-When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
+When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
 ![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
 
-Clicking the Add content button brings up the Block Catalogue.
+Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
 ![Block List - Setup](../../built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
 
@@ -101,7 +101,7 @@ In inline editing mode the new Blocks will expand to show its inline editor:
 
 ![Block List - Inline editing](../../built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
 
-More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
+More Blocks can be added to the list by clicking the "Create new" button. You can also use the inline Add button that appears on hover between or above existing Blocks.
 
 ![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
 
@@ -133,13 +133,13 @@ Example:
 @Html.GetBlockListHtml(Model.MyBlocks)
 ```
 
-To make this work you will need to create a Partial View for each block, named by the alias of the Element Type that is being used as Content Model.
+To make this work you will need to create a Partial View for each block. The partial view should be named by the alias of the Element Type that is being used as Content Model.
 
 These partial views must be placed in this folder: `Views/Partials/BlockList/Components/`. Example: `Views/Partials/BlockList/Components/MyElementTypeAliasOfContent.cshtml`.
 
 A Partial View will receive the model of `Umbraco.Core.Models.Blocks.BlockListItem`. This gives you the option to access properties of the Content and Settings section of your Block.
 
-In the following example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent`and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model.
+In this example of a Partial view for a Block Type, the `MyElementTypeAliasOfContent` and `MyElementTypeAliasOfSettings` should correspond with the selected Element Type Alias for the given model.
 
 Example:
 
@@ -204,7 +204,7 @@ Example:
 
 ## Extract Block List Content data
 
-In some cases, you might want to use the Block List Editor to hold some data and not necessarily render a view since the data should be presented in different areas on a page. An example could be a product page with variants stored in a Block List Editor.
+Sometimes, you might want to use the Block List Editor to hold some data and not necessarily render a view. This applies when the data should be presented in different areas on a page. An example could be a product page with variants stored in a Block List Editor.
 
 In this case, you can extract the variant's data using the following, which returns `IEnumerable<IPublishedElement>`.
 
@@ -236,12 +236,12 @@ Example:
     foreach (var variant in variants)
     {
         <h4>@variant.VariantName</h4>
-        <p>@variant.Description</h4>
+        <p>@variant.Description</p>
     }
 }
 ```
 
-If you know the Block List Editor only uses a single block, you can cast the collection to a specific type `T` using `.OfType<T>()` otherwise the return value will be `IEnumerable<IPublishedElement>`.
+If your Block List Editor only uses a single block, you can cast the collection to a specific type. Supply a type `T` using `.OfType<T>()`, otherwise the return value will be `IEnumerable<IPublishedElement>`.
 
 ## Build a Custom Backoffice View
 
