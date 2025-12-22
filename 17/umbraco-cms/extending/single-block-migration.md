@@ -3,13 +3,15 @@
 Version 17 introduces the single block property editor. Its purpose is to replace the "single mode" option that exists in the blocklist property editor. This is part of the more general effort to ensure type consistency within core property editors.
 
 ## Included migration
-Version 17 ships with a migration to: 
+
+Version 17 ships with a migration to:
+
 - Update all block list Data Types that have been properly configured in "single" mode.
 - Update all (nested) property data that uses this Data Type.
 
 This migration will not be enabled until at least version 18.
 
-## Pre running the migration
+## Pre-running the migration
 
 You can run the migration at any time by using your own migration plan, as shown in the example below. If you run this migration yourself, the default Umbraco migration won't update any data. It only changes data in the old format.
 
@@ -83,6 +85,7 @@ public class RunTestMigration : INotificationAsyncHandler<UmbracoApplicationStar
 ## Extending the migration
 
 If your non-core property editor nests content and stores it within its own value, you must extend the migration. To do this, create and register a class that implements `ITypedSingleBlockListProcessor` and register it. See how the built-in types are registered at `Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_18_0_0.SingleBlockList.MigrateSingleBlockListComposer`. The interface needs the following properties and methods:
+
 - `IEnumerable<string> PropertyEditorAliases`: The alias of the property editor as defined in its DataEditor attribute. Since a processor can support multiple editors if they use the same model, it takes an IEnumerable rather than a single string. These aliases are used to limit the amount of data fetched from the database.
 - `Type PropertyEditorValueType`: The type of value the property editor would return when `valueEditor.ToEditor()` is called.
 - `Func<object?, Func<object?, bool>, Func<BlockListValue, object>, bool> Process` The function to run when the main processor detects a value that matches your processor. The function must support the following parameters:
