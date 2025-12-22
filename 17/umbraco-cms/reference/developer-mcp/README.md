@@ -163,7 +163,7 @@ If you prefer, you can also install it globally with:
 
 ``` bash
 
-npm install -g @umbraco/mcp-server
+@umbraco-cms/mcp-dev@17
 
 ```
 
