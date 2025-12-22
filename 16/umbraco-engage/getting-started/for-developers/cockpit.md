@@ -16,10 +16,10 @@ Automatic injection of the Cockpit can be disabled by setting ‘**Engage:Cockpi
 
 When visiting the front-end website, the Umbraco Engage Cockpit will appear on the left or right side of the screen. The cockpit will only be rendered if the user is logged into Umbraco.
 
-![Umbraco Engage Cockpit](../../.gitbook/assets/engage-cockpit.png)
+![Umbraco Engage Cockpit](<../../.gitbook/assets/engage-cockpit (1).png>)
 
 Clicking the **Open** button provides detailed information:
 
-![Umbraco Engage Cockpit - Detailed information](../../.gitbook/assets/engage-cockpit-2.png)
+![Umbraco Engage Cockpit - Detailed information](<../../.gitbook/assets/engage-cockpit-2 (1).png>)
 
 If the Cockpit is missing and the Umbraco backoffice runs on a different domain, see the [Load Balancing and CM/CD Environments](loadbalancing-and-cm-cd-environments.md) article.

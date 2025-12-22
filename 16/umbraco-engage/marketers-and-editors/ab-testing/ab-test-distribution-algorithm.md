@@ -12,4 +12,4 @@ Because the algorithm is based on randomness the visitors are not equally distri
 
 In the test shown below, the variant distribution is not a perfect 33,333% as you could expect with three variants.
 
-![An A/B test with three variants where the distribution is not a perfect 33,333%.](../../.gitbook/assets/engage-ab-test-33.png)
+![An A/B test with three variants where the distribution is not a perfect 33,333%.](<../../.gitbook/assets/engage-ab-test-33 (1).png>)

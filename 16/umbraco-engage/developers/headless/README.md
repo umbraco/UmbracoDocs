@@ -22,8 +22,6 @@ All Engage features are supported except:
 * The [Umbraco Engage Cockpit](../../getting-started/for-marketers-and-editors/cockpit.md)
 {% endhint %}
 
-
-
 ## Requirements
 
 To install Umbraco.Engage.Headless, ensure the following prerequisites:
@@ -80,4 +78,4 @@ builder.CreateUmbracoBuilder()
 4. Navigate to **/umbraco/swagger** in your browser.
 5. Check for the **Umbraco Engage API** from the top right definition dropdown.
 
-![Umbraco Engage API](../../.gitbook/assets/umbraco-engage-api.png)
+![Umbraco Engage API](<../../.gitbook/assets/umbraco-engage-api (1).png>)

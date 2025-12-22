@@ -10,7 +10,7 @@ Repositories in Umbraco UI Builder manage entity data storage. By default, colle
 
 Create a class that inherits from `Repository<TEntity, TId>` and implements all abstract methods.
 
-````csharp
+```csharp
 // Example
 public class PersonRepository : Repository<Person, int> {
 
@@ -56,11 +56,9 @@ public class PersonRepository : Repository<Person, int> {
         ...
     }
 }
-````
+```
 
-{% hint style="info" %}
-`Impl` methods have public alternatives without the suffix. Separate implementation methods ensure repositories trigger Umbraco UI Builder events, whether actions originate from the UI or not.
-{% endhint %}
+\{% hint style="info" %\} `Impl` methods have public alternatives without the suffix. Separate implementation methods ensure repositories trigger Umbraco UI Builder events, whether actions originate from the UI or not. \{% endhint %\}
 
 ## Changing the Repository Implementation of a Collection
 
@@ -76,9 +74,9 @@ SetRepositoryType<TRepositoryType>() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetRepositoryType<PersonRepositoryType>();
-````
+```
 
 ### Using the `SetRepositoryType(Type repositoryType)` Method
 
@@ -92,14 +90,13 @@ SetRepositoryType(Type repositoryType) : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetRepositoryType(typeof(PersonRepositoryType));
-````
+```
 
 ## Accessing a Repository in Code
 
-To help with accessing a repository (default or custom) Umbraco UI Builder has an `IRepositoryFactory` you can inject into your code base. This includes a couple of factory methods to create the repository instances for you.
-Repositories should only be created via the repository factory as there are some injected dependencies that can only be resolved by Umbraco UI Builder.
+To help with accessing a repository (default or custom) Umbraco UI Builder has an `IRepositoryFactory` you can inject into your code base. This includes a couple of factory methods to create the repository instances for you. Repositories should only be created via the repository factory as there are some injected dependencies that can only be resolved by Umbraco UI Builder.
 
 ### Using the `GetRepository<TEntity, TId>()` Method
 
@@ -113,7 +110,7 @@ IRepositoryFactory.GetRepository<TEntity, TId>() : Repository<TEntity, TId>
 
 #### Example
 
-````csharp
+```csharp
 public class MyController : Controller
 {
     private readonly Repository<Person, int> _repo;
@@ -123,7 +120,7 @@ public class MyController : Controller
         _repo = repoFactory.GetRepository<Person, int>();
     }
 }
-````
+```
 
 ### Using the `GetRepository<TEntity, TId>(string collectionAlias)` Method
 
@@ -137,7 +134,7 @@ IRepositoryFactory.GetRepository<TEntity, TId>(string collectionAlias) : Reposit
 
 #### Example
 
-````csharp
+```csharp
 public class MyController : Controller
 {
     private readonly Repository<Person, int> _repo;
@@ -147,4 +144,4 @@ public class MyController : Controller
         _repo = repoFactory.GetRepository<Person, int>("person");
     }
 }
-````
+```

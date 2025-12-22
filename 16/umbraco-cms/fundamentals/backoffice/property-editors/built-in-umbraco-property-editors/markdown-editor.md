@@ -20,7 +20,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Content Example
 
-![Content Example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/Markdown-Editor-content-example.png)
+![Content Example](../built-in-property-editors/images/Markdown-Editor-content-example.png)
 
 ### Explanation of buttons from left to right
 
@@ -63,7 +63,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

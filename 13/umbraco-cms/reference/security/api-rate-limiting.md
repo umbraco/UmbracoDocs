@@ -256,3 +256,7 @@ public class ApiRateLimiterComposer : IComposer
 }
 ```
 {% endcode %}
+
+{% hint style="info" %}
+When Umbraco runs behind a WAF or reverse proxy, rate-limiting may fail if the client IP address is not forwarded correctly. Configure your proxy or WAF to send the original client IP using headers like X-Forwarded-For. This will prevent all requests appearing to come from one IP address which would cause incorrect rate-limit enforcement.
+{% endhint %}

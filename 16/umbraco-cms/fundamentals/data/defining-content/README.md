@@ -242,7 +242,7 @@ This is *italic*
 ![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
 ```
 
-![Makrdown description example](../../../../../15/umbraco-cms/fundamentals/data/images/md-description.gif)
+![Makrdown description example](../images/md-description.gif)
 
 ## 5. Defining child nodes
 
@@ -307,8 +307,8 @@ To import a Document Type:
 
 ## Related Services
 
-* [ContentService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
-* [ContentTypeService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
+* [ContentService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
+* [ContentTypeService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
 
 ## Tutorials
 

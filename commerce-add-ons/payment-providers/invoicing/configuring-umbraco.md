@@ -1,6 +1,7 @@
 ---
 description: >-
-  Learn how to configure the Umbraco backoffice to enable the Invoicing payment method.
+  Learn how to configure the Umbraco backoffice to enable the Invoicing payment
+  method.
 ---
 
 # Configure Umbraco
@@ -15,9 +16,9 @@ To create Invoicing as a payment method, follow these steps:
 2. Click **Create Payment Method**.
 3. Select **Invoicing** from the list of available payment providers.
 
-  ![Invoicing Payment method in Umbraco Backoffice](../media/invoicing/umbraco-create-payment-method-new.png)
+![Invoicing Payment method in Umbraco Backoffice](../.gitbook/assets/umbraco-create-payment-method-new.png)
 
-4. **Enter a Name** for the payment method. For example: *Invoicing*.
+4. **Enter a Name** for the payment method. For example: _Invoicing_.
 5. Enter a value for **SKU**.
 6. Click **Save**.
 
@@ -26,7 +27,7 @@ To create Invoicing as a payment method, follow these steps:
 To configure the Invoicing Provider settings, follow these steps:
 
 1. Navigate to **Settings > Stores > {Store Name} > Payment Methods**.
-2. Select *Invoicing*.
+2. Select _Invoicing_.
 3. Choose the appropriate **Tax Class** from the dropdown menu.
 4. Enter the **Default Pricing**.
 5. Enter the URL of the page in the **Continue URL** field where users should be redirected after completing their payment. For example: `https://www.yourwebsite.com/confirmation`.

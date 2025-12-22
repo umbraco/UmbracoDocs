@@ -7,7 +7,7 @@ description: "Using the IMemberManager"
 `IMemberManager` has a variety of methods that are useful for managing members in controllers and views. In this article, we'll have a look at how some of these can be used.
 
 {% hint style="info" %}
-For the full list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
+For the full list of methods, see the [IMemberManager Interface API Documentation](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Security.IMemberManager.html#methods).
 {% endhint %}
 
 ## How to reference IMemberManager
@@ -156,15 +156,19 @@ public async Task<string> GetMemberId(MemberIdentityUser member)
 Checks if the current request contains a logged-in member.
 
 ```csharp
-public async Task<string> GetMemberId(MemberIdentityUser member)
-    => await _memberManager.GetUserIdAsync(member);
+var isLoggedIn = _memberManager.IsLoggedIn();
+
+if (isLoggedIn)
+{
+    // Do something for logged-in members
+}
 ```
 
 ### IsMemberAuthorizedAsync(IEnumerable memberTypes, IEnumerable memberGroups, IEnumerable memberIds)
 
 Checks if the current member is authorized as specific member types, member groups or concrete members.
 
-For instance, you can use this method to verify if the current logged in member is part of a specific group:
+For instance, you can use this method to verify if the current logged-in member is part of a specific group:
 
 ```csharp
 var memberIsVIP = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});

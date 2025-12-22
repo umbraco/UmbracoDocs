@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to configure the Umbraco backoffice for enabling the use of
-  Zero as a payment method.
+  Learn how to configure the Umbraco backoffice for enabling the use of Zero as
+  a payment method.
 ---
 
 # Configure Umbraco
@@ -16,9 +16,9 @@ To create Zero as a payment method, follow these steps:
 2. Click **Create Payment Method**.
 3. Select **Zero Value** from the list of available payment providers.
 
-  ![Zero Payment Provider](../media/zero/zero-payment-provider-new.png)
-  
-4. **Enter a Name** for the payment method. For example: *Zero Payment*.
+![Zero Payment Provider](../.gitbook/assets/zero-payment-provider-new.png)
+
+4. **Enter a Name** for the payment method. For example: _Zero Payment_.
 5. Enter a value for **SKU**.
 6. Click **Save**.
 
@@ -27,7 +27,7 @@ To create Zero as a payment method, follow these steps:
 To configure the Zero Payment Provider settings, follow these steps:
 
 1. Navigate to **Settings > Stores > {Store Name} > Payment Methods**.
-2. Select *Zero Payment*.
+2. Select _Zero Payment_.
 3. Choose the appropriate **Tax Class** from the dropdown menu.
 4. Enter the **Default Pricing**.
 5. Enter the URL of the page in the **Continue URL** field where users should be redirected after completing their payment. For example: `https://www.yourwebsite.com/confirmation`.

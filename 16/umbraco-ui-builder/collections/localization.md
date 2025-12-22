@@ -1,10 +1,12 @@
 ---
-description: Using the available context to handle localization for an UI Builder collection
+description: >-
+  Using the available context to handle localization for an UI Builder
+  collection
 ---
 
 # Localization
 
-The localization context enables developers to use multilingual collection names and descriptions in fluent configurations. It also supports translations for actions, context apps, dashboards, sections, and trees. 
+The localization context enables developers to use multilingual collection names and descriptions in fluent configurations. It also supports translations for actions, context apps, dashboards, sections, and trees.
 
 To enable localization, prefix the input string with the `#` character.
 
@@ -31,7 +33,7 @@ treeConfig.AddCollection<Student>(x => x.Id, "#CollectionStudents", "#Collection
 });
 ```
 
-![collection_translation](../images/collection_translation.png)
+![collection\_translation](../.gitbook/assets/collection_translation.png)
 
 Alternatively, you can use the lowercase version:
 
@@ -43,6 +45,7 @@ treeConfig.AddCollection<Student>(x => x.Id, "#collection_students", "#collectio
 ```
 
 Define the translation in your localization dictionary file:
+
 ```
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
 
@@ -54,9 +57,10 @@ export default {
 }
 ```
 
-![collection_name](../images/collection_name.png)
+![collection\_name](../.gitbook/assets/collection_name.png)
 
 ### Localizing a Section
+
 For a custom section, use the following configuration:
 
 ```csharp
@@ -66,6 +70,4 @@ For a custom section, use the following configuration:
 }
 ```
 
-![section_name](../images/section_name.png)
-
-
+![section\_name](../.gitbook/assets/section_name.png)

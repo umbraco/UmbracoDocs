@@ -6,7 +6,7 @@ description: Configuring Dashboards in Umbraco UI Builder.
 
 Dashboards in Umbraco UI Builder provide an intuitive way to present important information and tools at the root of a section within the Umbraco backoffice. They serve as a starting point for users, offering quick access to relevant data, insights, or actions. Dashboards can be customized, reordered, and configured to display for specific user groups, making them a flexible tool for enhancing the backoffice experience. When multiple dashboards are available in a section, they appear in a tabbed layout for navigation.
 
-![Dashboards](../images/dashboards.png)
+![Dashboards](../.gitbook/assets/dashboards.png)
 
 ## Defining a Dashboard
 
@@ -102,12 +102,12 @@ SetVisibility(Lambda visibilityConfig) : DashboardConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 dashboardConfig.SetVisibility(visibilityConfig => visibilityConfig
     .ShowForUserGroup("admin")
     .HideForUserGroup("translator")
 );
-````
+```
 
 ## Assigning a Collection to a Dashboard
 

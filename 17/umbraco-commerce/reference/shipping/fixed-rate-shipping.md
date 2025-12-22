@@ -8,29 +8,24 @@ Fixed rate shipping in Umbraco Commerce allows you to define a single, fixed shi
 
 ## Configuration
 
-1. Go to **Settings** > **Stores** > {Your Store} > **Shipping Methods**.
+1.  Go to **Settings** > **Stores** > {Your Store} > **Shipping Methods**.
 
-    ![Shipping Methods](../../media/v14/shipping-methods-list-view.png)
-
+    ![Shipping Methods](../../.gitbook/assets/shipping-methods-list-view.png)
 2. Click **Create Shipping Method**.
-3. Choose **Basic** as the shipping provider.
+3.  Choose **Basic** as the shipping provider.
 
-    ![Choose Shipping Provider](../../media/v14/shipping-provider-modal.png)
+    ![Choose Shipping Provider](../../.gitbook/assets/shipping-provider-modal.png)
+4.  Choose **Fixed** as the calculation mode option.
 
-4. Choose **Fixed** as the calculation mode option.
-
-    ![Choose Shipping Calculation Mode](../../media/v14/shipping-provider-config-modal.png)
-
+    ![Choose Shipping Calculation Mode](../../.gitbook/assets/shipping-provider-config-modal.png)
 5. Enter the **Shipping Method Name**, **Alias**, **SKU**, and optional **Tax Rate**.
-6. Enter a fixed rate for the shipping method.
+6.  Enter a fixed rate for the shipping method.
 
-    ![Shipping Method Details](../../media/v14/shipping-method-fixed-rate-general-settings.png)
+    ![Shipping Method Details](../../.gitbook/assets/shipping-method-fixed-rate-general-settings.png)
+7.  Select the countries this shipping method should be allowed in.
 
-7. Select the countries this shipping method should be allowed in.
+    ![Shipping Method Allowed Countries](../../.gitbook/assets/shipping-method-fixed-rate-countries.png)
+8.  Optionally, define a country's specific fixed rate should you wish to have different rates per country.
 
-    ![Shipping Method Allowed Countries](../../media/v14/shipping-method-fixed-rate-countries.png)
-
-8. Optionally, define a country's specific fixed rate should you wish to have different rates per country.
-
-    ![Shipping Method Country Specific Rates](../../media/v14/shipping-method-fixed-rate-country-prices.png)
+    ![Shipping Method Country Specific Rates](../../.gitbook/assets/shipping-method-fixed-rate-country-prices.png)
 9. Click **Save**.

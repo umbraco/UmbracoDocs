@@ -43,10 +43,10 @@ With the help of icons, you can identify different Document Types in the **Conte
 
 To create a Document Type at the root of the **Content Tree**:
 
-1.  Go to the **Permissions** tab.
+1.  Go to the **Structure** tab.
 
     ![Allow Document Type as root](images/figure-9a-allow-document-type-as-root-v8.png)
-2. Toggle the **Allow as root** button.
+2. Toggle the **Allow at root** button.
    * If your **Document Types** do not have the **Allow as root** checked, you will not be able to create any content on your site.
 3. Click **Save**.
 

@@ -127,6 +127,7 @@ exceptions:
   - WAF      # Web Application Firewall
   - WYSIWYG  # What You See Is What You Get
   - XML      # Extensible Markup Language
+  - XLTS     # Extended Long Term Support
   - XSLT     # Extensible Stylesheet Language Transformations
   - XSS      # Cross-Site Scripting
   - YAML     # YAML file

@@ -21,11 +21,11 @@ To create your Personas in Umbraco Engage, follow the steps below:
 1. Go to the **Engage** menu in the top navigation.
 2. Go to **Personalization** in the Umbraco Engage menu.
 
-<figure><img src="../.gitbook/assets/engage-tutorial-how-to-persona.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorial-how-to-persona (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Go to **Personas** in the menu under **Personalization**.
 
-<figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona.png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona (1).png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
 
 4. Click **Add New Persona Group**.
 
@@ -36,7 +36,7 @@ To create your Personas in Umbraco Engage, follow the steps below:
    2. Add a **Description.**
    3. Set the[ Advanced settings](how-to-create-a-persona.md#advanced-persona-group-parameters) to fit your needs.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 6. Click **Create persona group**.
 7. Click **Add persona** to add a new Persona.
@@ -46,7 +46,7 @@ To create your Personas in Umbraco Engage, follow the steps below:
    4. Select an **image** for the Persona
       * You can upload your own image or use one of the default ones.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 7. Click **Add Persona**.
 

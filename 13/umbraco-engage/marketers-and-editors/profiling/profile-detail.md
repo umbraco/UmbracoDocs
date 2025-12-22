@@ -12,7 +12,7 @@ In the Profiles section, you can access specific visitor profiles, which contain
 
 The insights section provides an overview of the visitor.
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt="Insight section overview."><figcaption><p>Insight section overview.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1).png" alt="Insight section overview."><figcaption><p>Insight section overview.</p></figcaption></figure>
 
 Here, you can see:
 
@@ -27,11 +27,7 @@ You can also view any goals triggered by this visitor.
 
 ### Profile Potential
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (29).png" alt="Profile Potential."><figcaption><p>Profile Potential.</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (29) (1).png" alt="Profile Potential."><figcaption><p>Profile Potential.</p></figcaption></figure></div>
 
 Umbraco Engage will also show the potential of the profile based on the engagement time and when the profile was last active.
 
@@ -43,15 +39,15 @@ By default, a profile is considered engaged when the engagement time of the visi
 
 Within the profile, you can see all [personas](../personalization/implicit-and-explicit-personalization/setting-up-personas.md) and [customer journeys](../personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md) that you have set up within Umbraco Engage. Each persona and customer journey phase displays a score. You can see if Umbraco Engage has assigned a persona or journey phase to this visitor. In the below example, you see that the Umbraco Engage has assigned the persona "Data & Privacy officer" to this visitor.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31) (1).png" alt="Assigned phase."><figcaption><p>Assigned phase.</p></figcaption></figure>
 
 ## Activity Tab
 
 In the Activity tab, you can view all the activity of this visitor.
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt="Activity tab."><figcaption><p>Activity tab.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1).png" alt="Activity tab."><figcaption><p>Activity tab.</p></figcaption></figure>
 
 For each session, you can see:
 
@@ -68,7 +64,7 @@ For each session, you can see:
 
 By clicking on a row, you can access more detailed information about that session.
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt="Detailed session information."><figcaption><p>Detailed session information.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33) (1).png" alt="Detailed session information."><figcaption><p>Detailed session information.</p></figcaption></figure>
 
 You will see:
 
@@ -85,7 +81,7 @@ You will see:
 
 Finally, you can drill down into the activity on a specific page:
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt="drill down into the activity on a specific page."><figcaption><p>drill down into the activity on a specific page.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34) (1).png" alt="drill down into the activity on a specific page."><figcaption><p>drill down into the activity on a specific page.</p></figcaption></figure>
 
 Here, you can see:
 

@@ -39,7 +39,7 @@ All Payment Providers inherit from a base class `AsyncPaymentProviderBase<TSetti
 
 The settings class consists of a series of properties, each decorated with a `PaymentProviderSettingAttribute`. These attributes are used to dynamically build an editor interface for the settings in the backoffice.
 
-Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
+Labels and descriptions for providers and their settings are controlled through [Localization](payment-providers.md#localization) entries.
 
 {% hint style="info" %}
 The **Validate Payment Provider Settings** feature is available in Umbraco Commerce 16.4.0 and later.
@@ -79,7 +79,7 @@ _\* denotes a required method implementation_.
 
 What follows is a generalized diagram in order to help in visualizing when each of these methods is called within a regular checkout flow.
 
-![Payment Provider Capture Workflow](../media/payment\_provider\_capture\_flow.png)
+![Payment Provider Capture Workflow](../.gitbook/assets/payment_provider_capture_flow.png)
 
 ### Payment Management
 
@@ -113,7 +113,7 @@ As Meta Data is stored in Orders Properties collections, it is recommended to pr
 
 ### Meta Data Definitions
 
-The Meta Data that is returned from the Payment Provider is useful for the retailer. The Payment Provider can also be used to display Meta Data in the backoffice. This is done by exposing a `TransactionMetaDataDefinitions` property consisting of a list of `TransactionMetaDataDefinition` values, each with a unique `alias.
+The Meta Data that is returned from the Payment Provider is useful for the retailer. The Payment Provider can also be used to display Meta Data in the backoffice. This is done by exposing a `TransactionMetaDataDefinitions` property consisting of a list of `TransactionMetaDataDefinition` values, each with a unique \`alias.
 
 ```csharp
 public override IEnumerable<TransactionMetaDataDefinition> TransactionMetaDataDefinitions => new[]{
@@ -124,9 +124,9 @@ public override IEnumerable<TransactionMetaDataDefinition> TransactionMetaDataDe
 };
 ```
 
-![Transaction Meta Data](../media/transaction\_meta\_data\_dialog.png)
+![Transaction Meta Data](../.gitbook/assets/transaction_meta_data_dialog.png)
 
-Labels and descriptions for meta data fields are controlled through [Localization](#localization) entries.
+Labels and descriptions for meta data fields are controlled through [Localization](payment-providers.md#localization) entries.
 
 ## Localization
 
@@ -134,13 +134,13 @@ When displaying your provider in the backoffice UI, it is neceserray to provide 
 
 Umbraco Commerce will automatically look for the following entries:
 
-| Key |  Description |
-| --- | --- | 
-| `ucPaymentProviders_{providerAlias}Label` | A main label for the provider |
-| `ucPaymentProviders_{providerAlias}Description` | A description of the provider |
-| `ucPaymentProviders_{providerAlias}Settings{settingAlias}Label` | A label for a provider setting |
-| `ucPaymentProviders_{providerAlias}Settings{settingAlias}Description` | A description of a provider setting |
-| `ucPaymentProviders_{providerAlias}MetaData{metaDataAlias}Label` | A label for a provider transaction metadata item |
+| Key                                                                    | Description                                           |
+| ---------------------------------------------------------------------- | ----------------------------------------------------- |
+| `ucPaymentProviders_{providerAlias}Label`                              | A main label for the provider                         |
+| `ucPaymentProviders_{providerAlias}Description`                        | A description of the provider                         |
+| `ucPaymentProviders_{providerAlias}Settings{settingAlias}Label`        | A label for a provider setting                        |
+| `ucPaymentProviders_{providerAlias}Settings{settingAlias}Description`  | A description of a provider setting                   |
+| `ucPaymentProviders_{providerAlias}MetaData{metaDataAlias}Label`       | A label for a provider transaction metadata item      |
 | `ucPaymentProviders_{providerAlias}MetaData{metaDataAlias}Description` | A description of a provider transaction metadata item |
 
 Here `{providerAlias}` is the alias of the provider, `{settingAlias}` is the alias of a setting, and `{metaDataAlias}` is the alias of a transaction meta data item.

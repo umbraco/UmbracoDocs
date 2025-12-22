@@ -14,7 +14,7 @@ You must first define these segments and then you can start personalizing the we
 
 Segments are created via the Umbraco Engage segment builder, located under the **Personalization** and the **Segments** tab.
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1) (1).png" alt="Segment buillder"><figcaption><p>Segment buillder.</p></figcaption></figure>
 
 To create a new segment, follow these steps:
 
@@ -46,45 +46,37 @@ By clicking on the tile you will set up a parameter for the segment. For example
 1. Create a new segment with the name **My first segment**.
 2. Click the **Browser** tile and **include** all visitors using the browser **Firefox**.
 
-<figure><img src="../../.gitbook/assets/image (17) (1).png" alt="Add new segment."><figcaption><p>Add new segment.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1) (1).png" alt="Add new segment."><figcaption><p>Add new segment.</p></figcaption></figure>
 
 You will see all browsers that have visited the website. So if you're missing a specific browser, that is because a visitor to your site has yet to use that browser.
 
 3. Save the parameter and the segment will show the parameter that is part of this segment.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (18) (1).png" alt="Applied parameters."><figcaption><p>Applied parameters.</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (18) (1) (1).png" alt="Applied parameters."><figcaption><p>Applied parameters.</p></figcaption></figure></div>
 
 4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (2).png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
 
 5. Save this parameter and add the segment.
 
 We have now created a first segment and you will find that segment in the overview of your segments:
 
-<figure><img src="../../.gitbook/assets/image (1) (3).png" alt="Segment overview."><figcaption><p>Segment overview.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3) (1).png" alt="Segment overview."><figcaption><p>Segment overview.</p></figcaption></figure>
 
 ## Editing and Deleting Segments
 
 You can edit or delete segments using the icons next to each segment in the overview. Segments can only be deleted if there is no personalization applied to the segment. The third column shows how often the segment is used:
 
-<figure><img src="../../.gitbook/assets/image (2) (3).png" alt="Applied segments.Used segments."><figcaption><p>Used segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3) (1).png" alt="Applied segments.Used segments."><figcaption><p>Used segments.</p></figcaption></figure>
 
 By hovering over the icon you can see what kind of personalization is applied:
 
-<figure><img src="../../.gitbook/assets/image (3) (3).png" alt="Applied segments."><figcaption><p>Applied segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (3) (1).png" alt="Applied segments."><figcaption><p>Applied segments.</p></figcaption></figure>
 
 If you try to delete this segment, a popup notifies that personalization is applied and it is impossible to delete the segment at this moment.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (4) (3).png" alt="Deletion popup"><figcaption><p>Deletion popup.</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (4) (3) (1).png" alt="Deletion popup"><figcaption><p>Deletion popup.</p></figcaption></figure></div>
 
 The popup shows which pages the personalization is applied and you can click directly on these pages.
 
@@ -99,6 +91,6 @@ The ordering of segments is based on:
 
 You can adjust the segment order using the arrows in the segment overview.
 
-<figure><img src="../../.gitbook/assets/image (5) (3).png" alt="Ordering segments."><figcaption><p>Ordering segments.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (3) (1).png" alt="Ordering segments."><figcaption><p>Ordering segments.</p></figcaption></figure>
 
 Now that your segment is created, you can start [personalizing the website experience for visitors](setting-up-personalization.md).

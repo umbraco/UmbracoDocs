@@ -100,9 +100,9 @@ You can do this by querying content relative to your current page in template vi
 </ul>
 ```
 
-You can use the Query Builder in the template editor to build more advanced queries. ![Query button](../../../../17/umbraco-cms/fundamentals/design/images/button-v8.png)
+You can use the Query Builder in the template editor to build more advanced queries. ![Query button](images/button-v8.png)
 
-![Query helper](../../../../17/umbraco-cms/fundamentals/design/images/query-v9.png)
+![Query helper](images/query-v9.png)
 
 ### More information
 

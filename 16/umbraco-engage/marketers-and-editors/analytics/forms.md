@@ -24,7 +24,7 @@ The following are measured:
 
 The **Forms** tab in the **Analytics** section holds all data gathered about your forms.
 
-![Forms tab in the Analytics section](../../.gitbook/assets/engage-analytics-forms.png)
+![Forms tab in the Analytics section](<../../.gitbook/assets/engage-analytics-forms (1).png>)
 
 In this overview, you can see the following:
 
@@ -42,7 +42,7 @@ For each field you see:
 * How often was this field the last field before a visitor abandoned the form.
 * How often an error was triggered on the specific field.
 
-![Form Details](../../.gitbook/assets/engage-analytics-form-details.png)
+![Form Details](<../../.gitbook/assets/engage-analytics-form-details (1).png>)
 
 This data gives you insights on how to optimize your forms to create a better conversion rate.
 
@@ -63,7 +63,7 @@ https://**yoursite.com**/umbraco/#Engage/profiles/profiles/insights?id=**[[visit
 
 The URL above is a link to your website, including a visitor ID. By using a URL like this you can click directly through to view the visitor profile from Forms workflows. This includes emails, Slack messages as well as exported Excel data.
 
-![Adding Analytics - VisitorId field to Form](../../.gitbook/assets/engage-analytics-forms-visitor-id2.png)
+![Adding Analytics - VisitorId field to Form](<../../.gitbook/assets/engage-analytics-forms-visitor-id2 (1).png>)
 
 ## Disable Umbraco Forms tracking
 

@@ -31,14 +31,14 @@ For clarity...
 * The contents within the curly brackets can include any Unicode characters, including whitespace
 * The closing token is `}` Right Curly Bracket
 
-An example of this syntax to render a value of a property by its alias is: `{umbValue: bodyText}`.
+An example of this syntax to render a value of a property by its alias is: `{umbValue: headline}`.
 
-The curly brackets indicate that the UFM syntax should be processed. The `umbValue` alias prefix indicates which UFM component should be rendered, and the `bodyText` contents are the parameter that is passed to that UFM component.
+The curly brackets indicate that the UFM syntax should be processed. The `umbValue` alias prefix indicates which UFM component should be rendered, and the `headline` contents are the parameter that is passed to that UFM component.
 
-With this example, the syntax `{umbValue: bodyText}` would be processed and rendered as the following markup:
+With this example, the syntax `{umbValue: headline}` would be processed and rendered as the following markup:
 
 ```javascript
-<ufm-label-value alias="bodyText"></ufm-label-value>
+<ufm-label-value alias="headline"></ufm-label-value>
 ```
 
 The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../customizing/foundation/context-api/).
@@ -49,24 +49,29 @@ In addition, a filter syntax can be applied to UFM contents. This can be useful 
 
 The syntax for UFM filters uses a pipe character `|` (Vertical Line). Multiple filters may be applied, and the value from the previous filter is passed onto the next.
 
-To display a rich text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
+To display a rich-text value, stripping out the HTML markup and limiting it to the first 15 words could use the following filters:
 
 ```markdown
 {umbValue: bodyText | stripHtml | wordLimit:15}
 ```
 
+{% hint style="info" %}
+Please note, using `umbValue` directly with a rich-text value will not display the contents. This is due to the complexity of the underlying data structure. The `stripHtml` filter has been designed to support the rich-text value.
+Alternatively, you may use the UFM Expression syntax to access the raw rich-text value, like `${ bodyText.markup }`.
+{% endhint %}
+
 The following UFM filters are available to use.
 
-| Name       | Alias        | Example syntax                         |
-| ---------- | ------------ | -------------------------------------- |
-| Bytes      | `bytes`      | `{umbValue: umbracoBytes \| bytes}`    |
-| Fallback   | `fallback`   | `{umbValue: headline \| fallback:N/A}` |
-| Lowercase  | `lowercase`  | `{umbValue: headline \| lowercase}`    |
-| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`   |
-| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`   |
-| Truncate   | `truncate`   | `{umbValue: intro \| truncate:30:...}` |
-| Uppercase  | `uppercase`  | `{umbValue: headline \| uppercase}`    |
-| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`   |
+| Name       | Alias       | Example syntax                         |
+| ---------- | ----------- | -------------------------------------- |
+| Bytes      | `bytes`     | `{umbValue: umbracoBytes \| bytes}`    |
+| Fallback   | `fallback`  | `{umbValue: headline \| fallback:N/A}` |
+| Lowercase  | `lowercase` | `{umbValue: headline \| lowercase}`    |
+| Strip HTML | `stripHtml` | `{umbValue: bodyText \| stripHtml}`    |
+| Title Case | `titleCase` | `{umbValue: headline \| titleCase}`    |
+| Truncate   | `truncate`  | `{umbValue: intro \| truncate:30:...}` |
+| Uppercase  | `uppercase` | `{umbValue: headline \| uppercase}`    |
+| Word Limit | `wordLimit` | `{umbValue: intro \| wordLimit:15}`    |
 
 {% hint style="info" %}
 Starting from version 16.4, both the kebab-case (for example, `strip-html`, `title-case`,and `word-limit`) and the camelCase syntax (for example, `stripHtml`, `titleCase`, and `wordLimit`) are supported.
@@ -124,9 +129,9 @@ More UFM components will be available in upcoming Umbraco releases.
 
 The Label Value component will render the current value of a given property alias.
 
-The alias prefix is `umbValue`. An example of the syntax is `{umbValue: bodyText}`, which would render the component as `<ufm-label-value alias="bodyText"></ufm-label-value>`.
+The alias prefix is `umbValue`. An example of the syntax is `{umbValue: headline}`, which would render the component as `<ufm-label-value alias="headline"></ufm-label-value>`.
 
-For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=bodyText}`.
+For brevity and backwards-compatibility, the `=` marker prefix can be used, e.g. `{=headline}`.
 
 #### Localize
 

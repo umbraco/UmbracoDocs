@@ -2,7 +2,7 @@
 description: Creating your first integration with Umbraco UI Builder.
 ---
 
-# Creating Your First Umbraco UI Builder Integration
+# Creating your First Integration
 
 This guide walks you through a basic implementation of Umbraco UI Builder to manage a custom database table.
 
@@ -134,16 +134,16 @@ After defining the configuration, compile and run your project. To access the ne
 2. Go to the **Users** section.
 3. Navigate to the user group you wish to assign the newly defined section.
 
-![User group permissions](images/permissions.png)
+![User group permissions](../.gitbook/assets/permissions.png)
 
 4. Submit the changes.
 5. Refresh the browser to view the new section.
 
-![Newly defined section](images/new-section.png)
+![Newly defined section](../.gitbook/assets/new-section.png)
 
 If you click on a person's name, you will see the following screen:
 
-![People editor](images/people-editor.png)
+![People editor](../.gitbook/assets/people-editor.png)
 
 ## Summary
 

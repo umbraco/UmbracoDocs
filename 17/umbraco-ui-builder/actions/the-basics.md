@@ -10,7 +10,7 @@ Actions allow you to add custom functionality to Umbraco UI Builder without crea
 
 To define an action, create a class that inherits from the base class `Action<>` and configure it as shown below:
 
-````csharp
+```csharp
 // Example
 public class MyAction : Action<ActionResult>
 {
@@ -24,23 +24,21 @@ public class MyAction : Action<ActionResult>
         // Perform operation here...
     }
 }
-````
+```
 
 ### Configuration Options
 
 |     Option    |                                 Description                                | Required |
-|:-------------:|:--------------------------------------------------------------------------:|----------|
-| Name          | The name of the action.                                                    | Yes      |
-| Alias         | A unique alias for the action.                                             | Yes      |
-| Icon          | An icon to display next to the action’s name.                              | Yes      |
-| Execute       | The method that runs for the given list of entities.                       | Yes      |
+| :-----------: | :------------------------------------------------------------------------: | -------- |
+|      Name     |                           The name of the action.                          | Yes      |
+|     Alias     |                       A unique alias for the action.                       | Yes      |
+|      Icon     |                An icon to display next to the action’s name.               | Yes      |
+|    Execute    |            The method that runs for the given list of entities.            | Yes      |
 | ConfirmAction | Set whether a confirm dialog should display before performing this action. | No       |
 
-The generic argument specifies the return type for the action. For more details, see the [Controlling the Action Result](#controlling-the-action-result) section below.
+The generic argument specifies the return type for the action. For more details, see the [Controlling the Action Result](the-basics.md#controlling-the-action-result) section below.
 
-{% hint style="info" %}
-You can use dependency injection to inject any services required for your specific task. It's recommended to inject `Lazy<YourService>` implementations of the required services to ensure they are resolved only when needed.
-{% endhint %}
+\{% hint style="info" %\} You can use dependency injection to inject any services required for your specific task. It's recommended to inject `Lazy<YourService>` implementations of the required services to ensure they are resolved only when needed. \{% endhint %\}
 
 ## Controlling the Action Result
 
@@ -53,7 +51,7 @@ By default, actions return an `ActionResult`, but you can return other types by 
 
 Sometimes, you need to collect user input before performing an action. You can achieve this by using the `Action<>` base class with an additional `TSetting` generic argument.
 
-````csharp
+```csharp
 // Example
 public class MyAction : Action<MyActionSettings, ActionResult>
 {
@@ -80,7 +78,7 @@ public class MyActionSettings
     public string RecipientName { get; set; }
     public string RecipientEmail { get; set; }
 }
-````
+```
 
 By implementing this base class, you must also implement the `Configure` method which accepts a `SettingsConfigBuilder<>` parameter. Use this builder to define the settings dialog UI and how it maps to the settings type. You can create fieldsets and fields with the same fluent API as in the [Collection Editors](../collections/editors.md#adding-a-fieldset-to-a-tab) section.
 
@@ -102,9 +100,9 @@ AddAction<TMenuActionType>() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddAction<ExportMenuAction>();
-````
+```
 
 #### Using the `AddAction(Type actionType)` Method
 
@@ -118,9 +116,9 @@ AddAction(Type actionType) : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddAction(actionType);
-````
+```
 
 #### Using the `AddAction(IAction action)` Method
 
@@ -134,6 +132,6 @@ AddAction(IAction action) : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddAction(action);
-````
+```

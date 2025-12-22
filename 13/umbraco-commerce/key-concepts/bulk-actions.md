@@ -65,7 +65,7 @@ angular.module('umbraco').requires.push('myModule');
 
 Once created, the bulk action will be displayed in the bulk actions bar for the configured entities.
 
-![Bulk Action Button](../media/custom\_bulk\_action.png)
+![Bulk Action Button](../.gitbook/assets/custom_bulk_action.png)
 
 ## Bulk Action Options
 

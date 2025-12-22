@@ -21,9 +21,9 @@ When logged in to the [Buckaroo Dashboard](https://plaza.buckaroo.nl/) it is imp
 * **Test mode** allows you to perform test transactions to ensure your solution is set up correctly.
 * **Live mode** is where real-life transactions will take place.
 
-In order to enable test mode, you can check the [Buckaroo documentation](https://docs.buckaroo.io/docs/test-transactions#how-to-make-a-test-transaction).&#x20;
+In order to enable test mode, you can check the [Buckaroo documentation](https://docs.buckaroo.io/docs/test-transactions#how-to-make-a-test-transaction).
 
-<figure><img src="../media/buckaroo/enable-test-mode.png" alt=""><figcaption><p>Enable test mode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/enable-test-mode.png" alt=""><figcaption><p>Enable test mode</p></figcaption></figure>
 
 For each of these modes, multiple settings need to be configured.
 
@@ -34,16 +34,16 @@ In order for Umbraco Commerce to communicate with Buckaroo securely, we need to 
 ### Website key
 
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
-2.  Then head to Settings > Websites > General tab to find the website key:&#x20;
+2.  Then head to Settings > Websites > General tab to find the website key:
 
-    <figure><img src="../media/buckaroo/website-key.png" alt=""><figcaption><p>Website key</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/website-key.png" alt=""><figcaption><p>Website key</p></figcaption></figure>
 
 ### Secret key
 
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
-2.  Then head to Settings > Secret key to find the secret key:&#x20;
+2.  Then head to Settings > Secret key to find the secret key:
 
-    <figure><img src="../media/buckaroo/secret-key.png" alt=""><figcaption><p>Secret key in the Buckaroo Dashboard</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/secret-key.png" alt=""><figcaption><p>Secret key in the Buckaroo Dashboard</p></figcaption></figure>
 
 ## Step 3: Webhook
 
@@ -55,7 +55,7 @@ When generating a payment request form, Umbraco Commerce sets the callback URL t
 https://{store_domain}/umbraco/commerce/payment/callback/buckaroo-checkout/{payment_method_id}/
 ```
 
-1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).&#x20;
+1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).
 2. Then head to Settings > Websites > Push settings > Scroll. Then `Select push content type` and set it to `json`.
 
 {% hint style="info" %}

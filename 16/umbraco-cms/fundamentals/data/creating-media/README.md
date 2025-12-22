@@ -53,11 +53,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/upload-images-from-content.gif)
+![Drag and drop images directly into the content](images/upload-images-from-content.gif)
 
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
 
 ## Creating a folder
 
@@ -89,7 +89,7 @@ By selecting multiple media items it is possible to perform bulk operations like
 
 To edit properties on a single media item, click the name of the item, which you will see once you hover over the item.
 
-![Edit media item](../../../../../17/umbraco-cms/fundamentals/data/creating-media/images/hover-over.png)
+![Edit media item](images/hover-over.png)
 
 From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](images/switch-view-v14.png)
 
@@ -210,4 +210,4 @@ Moving the focal point circle on the image will update the crops to focus accord
 
 ## Related Services
 
-* [MediaService](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.MediaService.html)
+* [MediaService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.MediaService.html)

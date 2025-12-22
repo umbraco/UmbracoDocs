@@ -14,7 +14,7 @@ New [Date Time property editors](date-time-editor/) are available. They offer mo
 
 ## Data Type Definition Example
 
-![Data Type Definiton](../../../../.gitbook/assets/date-time.png)
+![Data Type Definiton](../../../../.gitbook/assets/Date-time-picker-v16.png)
 
 There is one setting available for manipulating the DateTime property.
 
@@ -22,7 +22,7 @@ The setting involves defining the format. The default date format in the Umbraco
 
 ## Content Example
 
-![Content Example](../../../../.gitbook/assets/date-picker-v8.png)
+![Content Example](../../../../.gitbook/assets/Date-picker-with-content-v16.png)
 
 ## MVC View Example - displays a datetime
 

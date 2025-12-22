@@ -15,10 +15,10 @@ If you go to the overview you can see all running tests. The overview includes t
 * How many visitors are included in the test?
 * For how long should the test run to produce relevant results?
 
-![Monitoring the A/B tests.](../../.gitbook/assets/engage-ab-test-monitor-v16.png)
+![Monitoring the A/B tests.](<../../.gitbook/assets/engage-ab-test-monitor-v16 (1).png>)
 
 You can see all test variants when you access the details on a test. You can preview the variants, or disable them. If for example, the conversion rate has decreased in a variant, it could be smart to disable that variant.
 
 The algorithm also signals the leading variant based on the Minimal Detectable Effect (MDE) which uses the 95% confidence level.
 
-<figure><img src="../../.gitbook/assets/engage-ab-test-monitor-2.png" alt="Algorithm signaling the leading variants."><figcaption><p>Algorithm signaling the leading variants.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/engage-ab-test-monitor-2 (1).png" alt="Algorithm signaling the leading variants."><figcaption><p>Algorithm signaling the leading variants.</p></figcaption></figure>

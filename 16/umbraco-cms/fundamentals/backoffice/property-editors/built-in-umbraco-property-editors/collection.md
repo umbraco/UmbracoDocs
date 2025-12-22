@@ -66,7 +66,7 @@ Support for changing the Workspace View icon has not been implemented yet.
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
 
-![Collection icon example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/list-icon.png)
+![Collection icon example](../built-in-property-editors/images/list-icon.png)
 
 ### Workspace View name
 

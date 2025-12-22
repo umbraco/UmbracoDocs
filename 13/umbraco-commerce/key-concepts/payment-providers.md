@@ -60,7 +60,7 @@ _\* denotes a required method implementation_.
 
 What follows is a generalized diagram in order to help in visualizing when each of these methods is called within a regular checkout flow.
 
-![Payment Provider Capture Workflow](../media/payment\_provider\_capture\_flow.png)
+![Payment Provider Capture Workflow](../.gitbook/assets/payment_provider_capture_flow.png)
 
 ### Payment Management
 
@@ -105,4 +105,4 @@ public override IEnumerable<TransactionMetaDataDefinition> TransactionMetaDataDe
 };
 ```
 
-![Transaction Meta Data](../media/transaction\_meta\_data\_dialog.png)
+![Transaction Meta Data](../.gitbook/assets/transaction_meta_data_dialog.png)

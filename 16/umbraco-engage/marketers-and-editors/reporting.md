@@ -12,7 +12,7 @@ On the **Reporting** dashboard in the **Engage** section, you can monitor the pe
 
 You can get an overview of how the segments you have configured for your website are doing.
 
-![Segment performance overview](../.gitbook/assets/Segment-performance-overview.png)
+![Segment performance overview](<../.gitbook/assets/Segment-performance-overview (1).png>)
 
 When you select a segment, you will see an overview of the configuration. As you scroll down, you can monitor its performance.
 

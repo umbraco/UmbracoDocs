@@ -18,13 +18,13 @@ Starting A/B tests can be done in two ways:
 
 Open the Umbraco content tree and select the A/B tests Content App on the page.
 
-![You can find the A/B Tests Content App on each of the content items in the Content section.](../../.gitbook/assets/engage-a-b-test-content-app-v16.png)
+![You can find the A/B Tests Content App on each of the content items in the Content section.](<../../.gitbook/assets/engage-a-b-test-content-app-v16 (1).png>)
 
 Make sure that you have access to the Content App. [These permissions can be specified](../settings/permissions.md) per Document Types or User Groups.
 
 When you open the Content App you will have an overview of all the A/B tests that are running or finished. You also have the option to **Create a new test**.
 
-![Use the A/B Tests Content App to get an overview of running tests and create new ones.](../../.gitbook/assets/engage-a-b-test-content-app-overview-v16.png)
+![Use the A/B Tests Content App to get an overview of running tests and create new ones.](<../../.gitbook/assets/engage-a-b-test-content-app-overview-v16 (1).png>)
 
 ## Configure the A/B test
 
@@ -38,7 +38,7 @@ After that, you need to specify which goal you want to measure, as it is all abo
 
 As a final step, you have to specify the type of test and set up the specific test. It is also possible to preview your variant from here.
 
-![An overview of all the configuration options available when setting up an A/B test.](../../.gitbook/assets/engage-a-b-test-test-setup-v16.png)
+![An overview of all the configuration options available when setting up an A/B test.](<../../.gitbook/assets/engage-a-b-test-test-setup-v16 (1).png>)
 
 ## Launching the A/B test
 
@@ -46,4 +46,4 @@ Once you have set everything up the test is ready to go. You can preview the fin
 
 If that is the case you can start the test immediately, or schedule it for later.
 
-![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-ab-test-launch-v16.png)
+![Launch the test right away, or schedule it to start at a later point.](<../../.gitbook/assets/engage-ab-test-launch-v16 (1).png>)

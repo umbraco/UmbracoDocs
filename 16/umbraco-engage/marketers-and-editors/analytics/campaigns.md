@@ -13,8 +13,8 @@ You can add five different parameters to your URLs:
 * `utm_source`: Identify the advertiser, site, publication that is sending traffic to your property. For example: google, newsletter4, billboard.
 * `utm_medium`: The advertising or marketing medium. For example: Cost Per Click (CPC), banner, email newsletter.
 * `utm_campaign`: The individual campaign name, slogan, promo code for a product.
-* `utm_term`: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use _utm_term_ to specify the keyword.
-* `utm_content`: Used to differentiate similar content or links within the same ad. For example: if you have two call-to-action links within the same email message, you can use _utm_content_ and set different values for each so you can tell which version is more effective.
+* `utm_term`: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use _utm\_term_ to specify the keyword.
+* `utm_content`: Used to differentiate similar content or links within the same ad. For example: if you have two call-to-action links within the same email message, you can use _utm\_content_ and set different values for each so you can tell which version is more effective.
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
 
@@ -22,24 +22,22 @@ For example, if you want to link from a newsletter to the pricing page of umbrac
 
 * `utm_source`: Newsletter-july-2024 to identify that this visitor came from this specific newsletter
 * `utm_medium`: Newsletter to show that the medium was a newsletter
-* `utm_campaign`: More_signups because that newsletter was part of a larger campaign
-* `utm_content`: Bottom_button to identify a specific link in the newsletter
+* `utm_campaign`: More\_signups because that newsletter was part of a larger campaign
+* `utm_content`: Bottom\_button to identify a specific link in the newsletter
 
 If you want to use these parameters, you will need to set up the URL like:
 
 {% code overflow="wrap" %}
-
 ```none
 https://www.umbraco.com/pricing/?utm_source=newsletter-july-2024&utm_medium=newsletter&utm_campaign=more_signups&utm_content=bottom_button
 ```
-
 {% endcode %}
 
 ## Campaign Report
 
 The report shows all campaigns set up with the `utm_campaign` parameter.
 
-![Report displaying Campaigns setup](../../.gitbook/assets/Campaigns.png)
+![Report displaying Campaigns setup](<../../.gitbook/assets/Campaigns (1).png>)
 
 You can see:
 
@@ -49,4 +47,4 @@ You can see:
 
 You can also drill down to view the source and medium for each campaign.
 
-![Campaign Details](../../.gitbook/assets/campaign-details.png)
+![Campaign Details](<../../.gitbook/assets/campaign-details (1).png>)

@@ -1,6 +1,5 @@
 ---
-description: >-
-  Learn how to submit content changes for Workflow approval
+description: Learn how to submit content changes for Workflow approval
 ---
 
 # Submitting Content for Approval
@@ -9,22 +8,22 @@ When requesting workflow approval for content changes, editors must provide addi
 
 To submit the content changes, click the **Request publish** button in the editor footer.
 
-![Buttons](../images/Buttons.png)
+![Buttons](../.gitbook/assets/Buttons.png)
 
 The button opens the request approval overlay:
 
-![Request approval overlay](images/approval-request-overlay-detailed.png)
+![Request approval overlay](../.gitbook/assets/approval-request-overlay-detailed.png)
 
 Depending on the Document Type and Workflow settings, the overlay will provide inputs for:
 
-| Fields | Description | Visibility Conditions |
-|---|---|---|
-| **Describe the changes** | A field for adding comments to describe the changes made to the content. | Always visible. |
-| **Action** | Allows to choose the workflow type - either Publish or Unpublish. | Visible only when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**. |
-| **Attachment** | Upload media or files attachment. | Visible only when **Allow attachments** is set to true. |
-| **Publish on** | A date picker for scheduling the content's publishing date. | Editable only when **Allow scheduling** is set to true and the workflow type is **Publish**. It is not possible to schedule a **Publish on** date in an Unpublish workflow. |
-| **Unpublish on** | A date picker for scheduling the content's unpublishing date. | Visible only when **Allow scheduling** is set to true. |
-| **Variants** | Allows selection of language variants to publish. | Visible only for variant content. |
+| Fields                   | Description                                                              | Visibility Conditions                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Describe the changes** | A field for adding comments to describe the changes made to the content. | Always visible.                                                                                                                                                             |
+| **Action**               | Allows to choose the workflow type - either Publish or Unpublish.        | Visible only when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**.                |
+| **Attachment**           | Upload media or files attachment.                                        | Visible only when **Allow attachments** is set to true.                                                                                                                     |
+| **Publish on**           | A date picker for scheduling the content's publishing date.              | Editable only when **Allow scheduling** is set to true and the workflow type is **Publish**. It is not possible to schedule a **Publish on** date in an Unpublish workflow. |
+| **Unpublish on**         | A date picker for scheduling the content's unpublishing date.            | Visible only when **Allow scheduling** is set to true.                                                                                                                      |
+| **Variants**             | Allows selection of language variants to publish.                        | Visible only for variant content.                                                                                                                                           |
 
 It is possible to schedule both **Publish on** and **Unpublish on** dates in a Publish workflow. Once content has been unpublished, a new workflow process is required to republish the content.
 
@@ -34,7 +33,7 @@ If the document varies by culture, the editor must select one or more variants t
 
 When a document is invariant, the variants selector is not displayed, and the approval flow follows the [default permissions inheritance pattern](workflow-content-app.md#approval-flow-types).
 
-![Request approval overlay](images/approval-request-overlay-variants.png)
+![Request approval overlay](../.gitbook/assets/approval-request-overlay-variants.png)
 
 The editor will not be able to select variants where:
 
