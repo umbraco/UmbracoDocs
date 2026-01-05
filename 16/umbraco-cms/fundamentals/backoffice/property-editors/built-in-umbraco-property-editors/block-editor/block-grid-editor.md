@@ -122,7 +122,7 @@ Advanced properties are also available for each Block, as shown below.
 
 ### Custom View
 
-* **Custom view** - Overwrites the view for the block presentation in the Content editor. Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../customizing/extending-overview/extension-types/block-custom-view.md)
+* **Custom view** - Overwrites the view for the block presentation in the Content editor. Building Custom Views for Block representations in Backoffice is the same for all Block Editors. [Read about building a Custom View for Blocks here](../../../../../customizing/extending-overview/extension-types/block-custom-view.md).
 
 ### Catalogue appearance
 
