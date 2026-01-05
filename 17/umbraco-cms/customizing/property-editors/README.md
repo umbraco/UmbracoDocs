@@ -22,7 +22,7 @@ Add validation rules to your custom Property Editors to ensure data integrity. L
 
 A Property Editor is composed of two key extensions: [Property Editor Schema](composition/property-editor-schema.md) and [Property Editor UI](composition/property-editor-ui.md). These components work together to define the data structure and user interface for content entry in the Umbraco backoffice.
 
-Optionally, you can use a [Property Editor Data Source](composition/property-editor-data-source.md) to provide data to your Property Editor UI, allowing the same UI to work with different data sources.
+Optionally, you can use a [Property Editor Data Source](composition/property-editor-data-source.md) to provide data to your Property Editor UI. This will allow the same UI to work with different data sources.
 
 ## [Property Value Converters](property-value-converters.md)
 
@@ -30,7 +30,7 @@ Convert the stored property data value to a useful, strongly-typed object return
 
 ## [Property Actions](property-actions.md)
 
-Use Property Actions to add additional functionality to your custom Property Editors, such as custom buttons or actions that appear alongside the editor in the backoffice.
+Use Property Actions to add additional functionality to your custom Property Editors. This could include custom buttons or actions that appear alongside the editor in the backoffice.
 
 ## [Integrate Property Editors](integrate-property-editors.md)
 

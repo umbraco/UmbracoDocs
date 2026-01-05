@@ -5,7 +5,7 @@ description: Guide on how to work with and create Property Editors in Umbraco
 # Property Editors
 
 {% hint style="info" %}
-[This tutorial](../../tutorials/creating-a-property-editor/) contains step-by-step instructions for building a custom Property Editor.
+This article acts as an overview for all things related to Property Editors. See the [Creating a Property Editor](../../tutorials/creating-a-property-editor/) section for step-by-step instructions on building a custom Property Editor.
 {% endhint %}
 
 This section describes how to work with and create Property Editors. A Property Editor is the editor used to insert content into Umbraco. [See the Property Editors overview for a detailed definition](../../fundamentals/backoffice/property-editors/).
@@ -28,7 +28,7 @@ Convert the stored property data value to a useful, strongly-typed object return
 
 ## [Property Actions](property-actions.md)
 
-Use Property Actions to add additional functionality to your custom Property Editors, such as custom buttons or actions that appear alongside the editor in the backoffice.
+Use Property Actions to add additional functionality to your custom Property Editors. This could include custom buttons or actions that appear alongside the editor in the backoffice.
 
 ## [Integrate Property Editors](integrate-property-editors.md)
 
