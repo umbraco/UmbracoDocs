@@ -128,8 +128,8 @@ Advanced properties are also available for each Block, as shown below.
 
 These properties refer to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
 
-* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
-* **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
+* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. For example, `#424242`.
+* **Icon color** - Change the color of the Element Type icon. For example, `#242424`.
 * **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
