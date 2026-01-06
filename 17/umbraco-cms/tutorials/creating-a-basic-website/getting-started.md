@@ -33,7 +33,7 @@ The template contains some text with dummy links. We’re going to turn this int
 
 ## Logging in to Umbraco
 
-You can log in to Umbraco in two ways:
+You can log in to Umbraco in two steps:
 
 1. Once the installation is complete, you will see the **Login** screen.
 2.  Enter the **Name** and **Password** used during the installation process. You should see a similar Umbraco Backoffice as the image below:
