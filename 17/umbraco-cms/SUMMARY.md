@@ -401,7 +401,7 @@
   * [Configuration](reference/developer-mcp/configuration.md)
   * [Available Tools](reference/developer-mcp/available-tools.md)
   * [Excluded Tools](reference/developer-mcp/excluded-tools.md)
-  * [Use Cases and Scenarios](reference/developer-mcp/scenarios.md)  
+  * [Use Cases and Scenarios](reference/developer-mcp/scenarios.md)
 * [API versioning and OpenAPI](reference/api-versioning-and-openapi.md)
 * [Searching](reference/searching/README.md)
   * [Examine](reference/searching/examine/README.md)
@@ -475,6 +475,7 @@
 * [Content Type Filters](reference/content-type-filters.md)
 * [Database Availability Checks](reference/database-availability.md)
 * [JSON Serialization](reference/json-serialization.md)
+* [Markdown to HTML Conversion](reference/markdown-to-html-conversion.md)
 * [Property Editor UIs](reference/property-editor-uis/README.md)
 
 ## Tutorials
