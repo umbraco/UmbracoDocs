@@ -671,7 +671,6 @@ public interface IMacroMigrator
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Api.Common.Filters;
 using Umbraco.Cms.Api.Management.Controllers;
 using Umbraco.Cms.Core;
@@ -681,7 +680,6 @@ namespace MacrosThirteenToFifteen.MacroMigrator;
 
 [ApiController]
 [ApiVersion("1.0")]
-[MapToApi("macro-migrations-api-v1")]
 [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
 [JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
 [Route("api/v{version:apiVersion}/macro-migrations")]
@@ -714,6 +712,7 @@ public class MacroController : ManagementApiControllerBase
 Add the following to configure the OpenAPI document for the Macro Migrations API:
 
 ```csharp
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Umbraco.Cms.Api.Management.OpenApi;
 
 builder.Services.AddOpenApi("macro-migrations-api-v1", options =>
@@ -724,6 +723,11 @@ builder.Services.AddOpenApi("macro-migrations-api-v1", options =>
         document.Info.Version = "1.0";
         return Task.CompletedTask;
     });
+
+    // Include only controllers from the MacroMigrator namespace
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("MacrosThirteenToFifteen.MacroMigrator") is true;
 
     options.AddBackofficeSecurityRequirements();
 });

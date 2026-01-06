@@ -18,11 +18,16 @@ Umbraco imposes no limitations on adding OpenAPI documents, and the code below i
 In the [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) you will find comprehensive documentation for OpenAPI configuration.
 {% endhint %}
 
-To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The following code sample creates an OpenAPI document called "My API v1":
+To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. You also need to configure `SwaggerUIOptions` to add the document to the Swagger UI dropdown.
+
+The following code sample creates an OpenAPI document called "My API v1" that includes only controllers from a specific namespace:
 
 {% code title="Program.cs" %}
 
 ```csharp
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Swashbuckle.AspNetCore.SwaggerUI;
+
 builder.Services.AddOpenApi("my-api-v1", options =>
 {
     options.AddDocumentTransformer((document, context, cancellationToken) =>
@@ -32,26 +37,39 @@ builder.Services.AddOpenApi("my-api-v1", options =>
         document.Info.Description = "My custom API description";
         return Task.CompletedTask;
     });
+
+    // Include only controllers from your namespace
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api.V1") is true;
+});
+
+// Add the document to Swagger UI
+builder.Services.Configure<SwaggerUIOptions>(options =>
+{
+    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
 });
 ```
 
 {% endcode %}
 
-With this OpenAPI document in place, you can now assign your API controllers to it using the `MapToApi` attribute.
+{% hint style="info" %}
+The `ShouldInclude` property accepts a function that receives an `ApiDescription` and returns `true` if the endpoint should be included in the document. You can use any criteria - namespace, controller name, route pattern, or custom attributes.
+{% endhint %}
+
+With this OpenAPI document in place, ensure your API controllers are in the matching namespace:
 
 {% code title="MyApiController.cs" %}
 
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Api.Common.Attributes;
 
 namespace My.Custom.Api.V1;
 
 [Route("api/v{version:apiVersion}/my")]
 [ApiController]
 [ApiVersion("1.0")]
-[MapToApi("my-api-v1")]
 public class MyApiController : Controller
 {
     [HttpGet("do-something")]
@@ -129,9 +147,8 @@ If you need complete control over operation ID generation, you can create a cust
 {% code title="MyOperationIdTransformer.cs" %}
 
 ```csharp
-using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.OpenApi;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace My.Custom.OpenApi;
 
@@ -142,13 +159,6 @@ public class MyOperationIdTransformer : IOpenApiOperationTransformer
         OpenApiOperationTransformerContext context,
         CancellationToken cancellationToken)
     {
-        // only handle your own APIs here
-        if (context.Description.ActionDescriptor is not ControllerActionDescriptor controllerActionDescriptor
-            || controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api") is not true)
-        {
-            return Task.CompletedTask;
-        }
-
         var relativePath = context.Description.RelativePath;
         if (relativePath is null)
         {
@@ -207,15 +217,26 @@ builder.Services.AddOpenApi("my-api", options =>
 
 {% endcode %}
 
+{% hint style="info" %}
+`CreateSchemaReferenceId` is called for all types in the document - including .NET framework types. The namespace check ensures you only customize schema IDs for your own types. The fallback uses ASP.NET Core's default schema ID generator. If you want to use Umbraco's naming conventions (which adds a "Model" suffix), you can use `UmbracoSchemaIdGenerator.Generate(jsonTypeInfo.Type)` from the `Umbraco.Cms.Api.Common.OpenApi` namespace.
+{% endhint %}
+
+{% hint style="info" %}
+Returning `null` from `CreateSchemaReferenceId` will inline the schema instead of creating a reference. This can be useful for simple types that don't need to be reused.
+{% endhint %}
+
 ## Multiple API versions
 
 A common use case for custom OpenAPI documents is when you maintain multiple versions of the same API. Often you want to have separate OpenAPI documents for each version.
 
-The following code sample creates two OpenAPI documents - "My API v1" and "My API v2":
+The following code sample creates two OpenAPI documents - "My API v1" and "My API v2". Each document uses `ShouldInclude` to filter controllers by their namespace:
 
 {% code title="Program.cs" %}
 
 ```csharp
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Swashbuckle.AspNetCore.SwaggerUI;
+
 builder.Services.AddOpenApi("my-api-v1", options =>
 {
     options.AddDocumentTransformer((document, context, cancellationToken) =>
@@ -224,6 +245,11 @@ builder.Services.AddOpenApi("my-api-v1", options =>
         document.Info.Version = "1.0";
         return Task.CompletedTask;
     });
+
+    // Include only V1 controllers
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api.V1") is true;
 });
 
 builder.Services.AddOpenApi("my-api-v2", options =>
@@ -234,26 +260,36 @@ builder.Services.AddOpenApi("my-api-v2", options =>
         document.Info.Version = "2.0";
         return Task.CompletedTask;
     });
+
+    // Include only V2 controllers
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api.V2") is true;
+});
+
+// Add both documents to Swagger UI
+builder.Services.Configure<SwaggerUIOptions>(options =>
+{
+    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
+    options.SwaggerEndpoint("/umbraco/swagger/my-api-v2/swagger.json", "My API v2");
 });
 ```
 
 {% endcode %}
 
-With these OpenAPI documents in place, you can assign the different versions of your API controllers to their respective documents using the `MapToApi` attribute:
+With these OpenAPI documents in place, ensure your API controllers are in their respective namespaces:
 
 {% code title="MyApiV1Controller.cs" %}
 
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Api.Common.Attributes;
 
 namespace My.Custom.Api.V1;
 
 [Route("api/v{version:apiVersion}/my")]
 [ApiController]
 [ApiVersion("1.0")]
-[MapToApi("my-api-v1")]
 public class MyApiController : Controller
 {
     [HttpGet("do-something")]
@@ -277,21 +313,19 @@ public class MyDoSomethingViewModel
 
 <summary>See the V2 controller example</summary>
 
-The V2 controller follows the same pattern but with `ApiVersion("2.0")` and `MapToApi("my-api-v2")`. You can also extend the view model with additional properties:
+The V2 controller is in a separate namespace (`My.Custom.Api.V2`) and uses `ApiVersion("2.0")`. You can also extend the view model with additional properties:
 
 {% code title="MyApiV2Controller.cs" %}
 
 ```csharp
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Api.Common.Attributes;
 
 namespace My.Custom.Api.V2;
 
 [Route("api/v{version:apiVersion}/my")]
 [ApiController]
 [ApiVersion("2.0")]
-[MapToApi("my-api-v2")]
 public class MyApiController : Controller
 {
     [HttpGet("do-something")]
@@ -343,20 +377,20 @@ public class MyOpenApiRouteTemplatePipelineFilter : OpenApiRouteTemplatePipeline
     /// <summary>
     /// This is how you change the route template for the OpenAPI docs.
     /// </summary>
-    protected override string OpenApiRouteTemplate(IApplicationBuilder applicationBuilder)
+    public override string OpenApiRouteTemplate(IServiceProvider serviceProvider)
         => "swagger/{documentName}/swagger.json";
 
     /// <summary>
     /// This is how you change the route for the Swagger UI.
     /// </summary>
-    protected override string OpenApiUiRoutePrefix(IApplicationBuilder applicationBuilder)
+    public override string OpenApiUiRoutePrefix(IServiceProvider serviceProvider)
         => "swagger";
 
     /// <summary>
     /// This is how you configure OpenAPI to be available always.
     /// Please note that this is NOT recommended.
     /// </summary>
-    protected override bool OpenApiIsEnabled(IApplicationBuilder applicationBuilder)
+    protected override bool OpenApiIsEnabled(IServiceProvider serviceProvider)
         => true;
 }
 

@@ -6,15 +6,20 @@ description: Adding a custom OpenAPI document for a custom Management API
 
 By default, all controllers based on ManagementApiControllerBase will be included in the default Management API OpenAPI document.
 
-When building custom Management API controllers, sometimes it's preferable to have a dedicated OpenAPI document for them. Doing so is a two-step process:
+When building custom Management API controllers, sometimes it's preferable to have a dedicated OpenAPI document for them. Doing so is a three-step process:
 
-1. Register the OpenAPI document and enable Umbraco authentication.
-2. Map the controllers to the OpenAPI document.
+1. Register the OpenAPI document with document inclusion logic.
+2. Enable Umbraco authentication for the OpenAPI document.
+3. Add the document to Swagger UI.
 
-Add the following code to `Program.cs` to register the OpenAPI document:
+Add the following code to `Program.cs` to register the OpenAPI document. The `ShouldInclude` property determines which API endpoints appear in your document - in this example, we filter by namespace:
 
 {% code title="Program.cs" %}
 ```csharp
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Management.OpenApi;
+
 builder.Services.AddOpenApi("my-item-api", options =>
 {
     options.AddDocumentTransformer((document, context, cancellationToken) =>
@@ -24,17 +29,33 @@ builder.Services.AddOpenApi("my-item-api", options =>
         return Task.CompletedTask;
     });
 
+    // Include only controllers from your namespace
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.ItemApi") is true;
+
     // Enable Umbraco authentication for the OpenAPI document
     options.AddBackofficeSecurityRequirements();
+});
+
+// Add the document to Swagger UI
+builder.Services.Configure<SwaggerUIOptions>(options =>
+{
+    options.SwaggerEndpoint("/umbraco/swagger/my-item-api/swagger.json", "My item API");
 });
 ```
 {% endcode %}
 
-With this in place, annotate the relevant API controllers with the `MapToApi` attribute:
+{% hint style="info" %}
+The `ShouldInclude` property accepts a function that receives an `ApiDescription` and returns `true` if the endpoint should be included in the document. You can use any criteria - namespace, controller name, route pattern, or custom attributes.
+{% endhint %}
+
+With this in place, ensure your API controllers are in the matching namespace:
 
 {% code title="MyItemApiController.cs" %}
 ```csharp
-[MapToApi("my-item-api")]
+namespace My.Custom.ItemApi;
+
 public class MyItemApiController : ManagementApiControllerBase
 ```
 {% endcode %}

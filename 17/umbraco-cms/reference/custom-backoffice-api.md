@@ -16,6 +16,10 @@ This example can be a starting point for creating a secure custom API with autom
 
 {% code title="Program.cs" lineNumbers="true" %}
 ```csharp
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Management.OpenApi;
+
 builder.Services.AddOpenApi("my-api-v1", options =>
 {
     options.AddDocumentTransformer((document, context, cancellationToken) =>
@@ -25,13 +29,24 @@ builder.Services.AddOpenApi("my-api-v1", options =>
         return Task.CompletedTask;
     });
 
+    // Include only controllers from your namespace
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("Umbraco.Cms.Web.UI.Custom") is true;
+
     // Add backoffice security requirements to enable authorization in Swagger UI
     options.AddBackofficeSecurityRequirements();
+});
+
+// Add the document to Swagger UI
+builder.Services.Configure<SwaggerUIOptions>(options =>
+{
+    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
 });
 ```
 {% endcode %}
 
-The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI.
+The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI. The `SwaggerUIOptions` configuration adds the document to the Swagger UI dropdown.
 
 {% hint style="info" %}
 For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOptions>` with a composer instead of configuring in Program.cs. See the [API versioning and OpenAPI](api-versioning-and-openapi.md) article for details on different configuration approaches.
@@ -44,7 +59,6 @@ For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOpti
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Api.Common.Filters;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Membership;
@@ -55,7 +69,6 @@ namespace Umbraco.Cms.Web.UI.Custom;
 
 [ApiController]
 [ApiVersion("1.0")]
-[MapToApi("my-api-v1")]
 [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
 [JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
 [Route("api/v{version:apiVersion}/my")]
