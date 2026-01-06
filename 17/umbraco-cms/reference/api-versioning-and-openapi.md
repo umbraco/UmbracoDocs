@@ -71,6 +71,27 @@ public class MyDoSomethingViewModel
 
 {% endcode %}
 
+### Excluding from the default OpenAPI document
+
+When you create a custom OpenAPI document, your controllers may still appear in the "default" document. To exclude them, add the `[ExcludeFromDefaultOpenApiDocument]` attribute to your controllers:
+
+{% code title="MyApiController.cs" %}
+
+```csharp
+using Umbraco.Cms.Api.Common.OpenApi;
+
+namespace My.Custom.Api.V1;
+
+[ApiController]
+[ExcludeFromDefaultOpenApiDocument]
+public class MyApiController : Controller
+{
+    // ...
+}
+```
+
+{% endcode %}
+
 ## Customizing your OpenAPI document
 
 ### Adding custom operation IDs
