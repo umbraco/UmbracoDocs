@@ -95,7 +95,7 @@ person@umbraco.dk; person@umbraco.com, person@umbraco.de
 
 If the _Sender Email_ field is not populated, the address used will be read from CMS configuration.
 
-The [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings) value configured at `Umbraco:CMS:Global:Smtp` will be used if provided.
+The [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings) value configured at `Umbraco:CMS:Global:Smtp:From` will be used if provided.
 
 ```json
     "Umbraco": {
