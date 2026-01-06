@@ -95,21 +95,7 @@ person@umbraco.dk; person@umbraco.com, person@umbraco.de
 
 If the _Sender Email_ field is not populated, the address used will be read from CMS configuration.
 
-The [Content Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/contentsettings) value configured at `Umbraco:CMS:Content:Notifications:Email` will be used if provided.
-
-```json
-    "Umbraco": {
-         "CMS": {
-            "Content": {
-                "Notifications": {
-                    "Email": "person@umbraco.dk"
-                }
-            }
-        }
-    }
-```
-
-If that is not set, the [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings) value configured at `Umbraco:CMS:Global:Smtp` will be used.
+The [Global Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/globalsettings) value configured at `Umbraco:CMS:Global:Smtp` will be used if provided.
 
 ```json
     "Umbraco": {
@@ -117,6 +103,20 @@ If that is not set, the [Global Settings](https://docs.umbraco.com/umbraco-cms/r
             "Global": {
                 "Smtp": {
                     "From": "person@umbraco.dk"
+                }
+            }
+        }
+    }
+```
+
+If that is not set, the [Content Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/contentsettings) value configured at `Umbraco:CMS:Content:Notifications:Email` will be used.
+
+```json
+    "Umbraco": {
+         "CMS": {
+            "Content": {
+                "Notifications": {
+                    "Email": "person@umbraco.dk"
                 }
             }
         }
