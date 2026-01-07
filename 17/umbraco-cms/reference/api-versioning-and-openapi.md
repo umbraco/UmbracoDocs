@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI for your own APIs.
 
 # API versioning and OpenAPI
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents and Swagger UI are available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in production environments.
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents and Swagger UI are available at `{yourdomain}/umbraco/swagger`. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
 
 ## Adding your own OpenAPI documents
 
@@ -356,67 +356,33 @@ public class MyDoSomethingViewModel
 
 ### OpenAPI route and/or availability
 
-Umbraco exposes OpenAPI and Swagger UI at `{yourdomain}/umbraco/swagger`. Both are disabled when the site is in production mode.
+Umbraco exposes OpenAPI and Swagger UI at `{yourdomain}/umbraco/swagger`. Both are disabled in production mode by default to avoid exposing API structure on public-facing websites.
 
-The code sample below shows how to change the OpenAPI route and availability.
+You can customize these settings using `UmbracoOpenApiOptions` in `Program.cs`. Use `PostConfigure` to override the defaults:
 
-{% code title="MyOpenApiRouteTemplatePipelineFilter.cs" %}
+{% code title="Program.cs" %}
 
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
-using Umbraco.Cms.Web.Common.ApplicationBuilder;
 
-namespace My.Custom.OpenApi;
-
-public class MyOpenApiRouteTemplatePipelineFilter : OpenApiRouteTemplatePipelineFilter
+builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
 {
-    public MyOpenApiRouteTemplatePipelineFilter(string name) : base(name)
-    {
-    }
+    // Always enable OpenAPI regardless of environment (see warning below)
+    options.Enabled = true;
 
-    /// <summary>
-    /// This is how you change the route template for the OpenAPI docs.
-    /// </summary>
-    public override string OpenApiRouteTemplate(IServiceProvider serviceProvider)
-        => "swagger/{documentName}/swagger.json";
+    // Change the route template for OpenAPI documents
+    options.RouteTemplate = "swagger/{documentName}/swagger.json";
 
-    /// <summary>
-    /// This is how you change the route for the Swagger UI.
-    /// </summary>
-    public override string OpenApiUiRoutePrefix(IServiceProvider serviceProvider)
-        => "swagger";
-
-    /// <summary>
-    /// This is how you configure OpenAPI to be available always.
-    /// Please note that this is NOT recommended.
-    /// </summary>
-    protected override bool OpenApiIsEnabled(IServiceProvider serviceProvider)
-        => true;
-}
-
-public static class MyConfigureOpenApiRouteUmbracoBuilderExtensions
-{
-    // call this from Program.cs, i.e.:
-    //     CreateUmbracoBuilder()
-    //         ...
-    //         .ConfigureMyOpenApiRoute()
-    //         .Build();
-    public static IUmbracoBuilder ConfigureMyOpenApiRoute(this IUmbracoBuilder builder)
-    {
-        builder.Services.Configure<UmbracoPipelineOptions>(options =>
-        {
-            // include this line if you do NOT want the OpenAPI docs at /umbraco/swagger
-            options.PipelineFilters.RemoveAll(filter => filter is OpenApiRouteTemplatePipelineFilter);
-
-            // setup your own OpenAPI routes
-            options.AddFilter(new MyOpenApiRouteTemplatePipelineFilter("MyApi"));
-        });
-        return builder;
-    }
-}
+    // Change the route prefix for Swagger UI
+    options.UiRoutePrefix = "swagger";
+});
 ```
 
 {% endcode %}
+
+{% hint style="warning" %}
+On public-facing websites, enabling OpenAPI in production exposes your API structure publicly. For internal or authenticated APIs, enabling OpenAPI in production may be acceptable.
+{% endhint %}
 
 ### API versioning
 

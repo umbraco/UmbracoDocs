@@ -97,7 +97,24 @@ The `IOperationIdHandler` interface and `OperationIdHandler` base class have bee
 
 The class `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been renamed to `ConfigureUmbracoMemberAuthenticationDeliveryApiOpenApiOptions`.
 
-For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article and [PR #21058](https://github.com/umbraco/Umbraco-CMS/pull/21058).
+*OpenAPI route and availability configuration*
+
+If you were previously overriding the `OpenApiRouteTemplatePipelineFilter` methods (`OpenApiIsEnabled`, `OpenApiRouteTemplate`, or `OpenApiUiRoutePrefix`) to customize OpenAPI routes or availability, you should migrate to using `UmbracoOpenApiOptions` instead. The pipeline filter methods are now private implementation details.
+
+Use `PostConfigure` to override the defaults:
+
+```csharp
+builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
+{
+    options.Enabled = true;
+    options.RouteTemplate = "swagger/{documentName}/swagger.json";
+    options.UiRoutePrefix = "swagger";
+});
+```
+
+See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability) for details.
+
+For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article.
 
 </details>
 
