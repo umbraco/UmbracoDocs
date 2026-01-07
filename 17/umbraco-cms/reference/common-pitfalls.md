@@ -458,25 +458,25 @@ Create a helper method that handles all link types correctly:
 
 ### Recommended WebRouting Configuration
 
-Add this configuration to your appsettings.json for optimal multi-site routing:
+Add this configuration to your `appsettings.json` for optimal multi-site routing:
 
-```
+```json
 {
 "Umbraco": {
-"CMS": {
-"WebRouting": {
-"TryMatchingEndpointsForAllPages": false,
-"DisableRedirectUrlTracking": false,
-"UrlProviderMode": "Auto"
-}
-}
-}
+    "CMS": {
+        "WebRouting": {
+            "TryMatchingEndpointsForAllPages": false,
+            "DisableRedirectUrlTracking": false,
+            "UrlProviderMode": "Auto"
+            }
+        }
+    }
 }
 ```
 
 #### Configuration Notes
 
-* TryMatchingEndpointsForAllPages: false – This is the default. Ensures Umbraco doesn't attempt endpoint matching across all sites before the dynamic router.
-* UrlProviderMode: "Auto" – Lets Umbraco determine whether to return relative or absolute URLs based on context.
-* DisableRedirectUrlTracking: false – Keeps redirect tracking enabled for moved/renamed content.
+* `TryMatchingEndpointsForAllPages: false` – This is the default. Ensures Umbraco doesn't attempt endpoint matching across all sites before the dynamic router.
+* `UrlProviderMode: "Auto"` – Lets Umbraco determine whether to return relative or absolute URLs based on context.
+* `DisableRedirectUrlTracking: false` – Keeps redirect tracking enabled for moved/renamed content.
 
