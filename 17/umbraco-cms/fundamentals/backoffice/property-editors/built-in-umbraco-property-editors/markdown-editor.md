@@ -51,7 +51,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 The conversion from markdown to HTML is handled by the registered implementation of `IMarkdownToHtmlConverter`.
 
-To understand this more and how you may customize it to your needs, see
+To understand this more and how you may customize it to your needs, see the article on [Markdown to HTML Conversion](../../../../reference/markdown-to-html-conversion.md)
 
 ## MVC View Example
 
