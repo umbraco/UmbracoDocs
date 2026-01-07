@@ -166,7 +166,7 @@ To add content to the blocks:
 
 ## Creating `Settings` section for Blocks
 
-Now, we have overwritten the AngularJS view for the content editor's block presentation by using our own view. Let's create a **Settings** section to control the data alignment of the block. To do this, we need to add a **Settings** model to our block configuration.
+Now, we have overwritten the default view for the content editor's block presentation by using our own view. Let's create a **Settings** section to control the data alignment of the block. To do this, we need to add a **Settings** model to our block configuration.
 
 To add a Settings model:
 
@@ -244,6 +244,72 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
 export default ExampleBlockCustomView;
 ```
 {% endcode %}
+
+## Making the Custom View clickable
+
+We can make editing block content easier by making it possible to click anywhere in the preview to open the editing window. To do this we need to update the `example-block-custom-view.ts` file to get the link from Umbraco's configuration:
+
+{% code title="example-block-custom-view.ts" %}
+```typescript
+import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import type { UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/block-custom-view';
+import type { UmbBlockDataType } from '@umbraco-cms/backoffice/block';
+
+@customElement('example-block-custom-view')
+export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implements UmbBlockEditorCustomViewElement {
+
+    @property({ attribute: false })
+    content?: UmbBlockDataType;
+
+    @property({ attribute: false })
+    settings?: UmbBlockDataType;
+
+    @property({ attribute: false })
+	config?: UmbBlockEditorCustomViewConfiguration;
+
+    override render() {
+        return html`
+            <a href=${this.config?.editContentPath ?? ''}>
+                <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
+                    <h5>My Custom View</h5>
+                    <p>Headline: ${this.content?.headline}</p>
+                    <p>Alignment: ${this.settings?.blockAlignment}</p>
+                </div>
+            </a>
+        `;
+    }
+
+    static override styles = [
+        css`
+            :host {
+                display: block;
+                height: 100%;
+                box-sizing: border-box;
+                background-color: #dddddd;
+                border-radius: 9px;
+                padding: 12px;
+            }
+
+            .align-center {
+                text-align: center;
+            }
+            .align-right {
+                text-align: right;
+            }
+        `,
+    ];
+}
+
+export default ExampleBlockCustomView;
+```
+{% endcode %}
+
+Link to `this.config?.editSettingsPath` if you'd prefer to open the Settings window for the block.
+
+If you are not able to use the URL, then it is still possible to call a method to open the block workspace.
+
+For this, you need to get the context of `UMB_BLOCK_ENTRY_CONTEXT`, which holds the methods `edit()` and `editSettings()`.
 
 ## Rendering the Block List Content
 
