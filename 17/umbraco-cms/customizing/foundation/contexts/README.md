@@ -24,7 +24,7 @@ Manages the editing environment for a specific entity. Handles entity data, trac
 
 **This is the recommended context for Property Editors.**
 
-Provides access to property values for reading and writing. This is the only context you can trust to always be available from a Property Editor perspective, working consistently across documents, media, blocks, and data type configs.
+Provides access to property values for reading and writing. This is the only context always available from a Property Editor perspective. It works consistently across documents, media, blocks, and Data Type configs.
 
 ### Property Context
 
