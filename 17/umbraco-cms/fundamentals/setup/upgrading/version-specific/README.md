@@ -98,14 +98,6 @@ These modes do not rely on Razor runtime compilation. However, ensure the follow
 <RazorCompileOnPublish>false</RazorCompileOnPublish>
 ```
 
-*Configuration Overview*
-
-| Step        | Development                                      | Production                                         |
-|-------------|--------------------------------------------------|----------------------------------------------------|
-| Package     | Install `Umbraco.Cms.DevelopmentMode.Backoffice` | Do not include this package                        |
-| appsettings | Set in `appsettings.Development.json`            | Set in `appsettings.json `                         |
-| ModelsMode  | `InMemoryAuto`                                   | `SourceCodeAuto`, `SourceCodeManual`, or `AppData` |
-| .csproj     | Optional: Add `<RazorCompileOnBuild>false</RazorCompileOnBuild>` for faster builds | Remove `<RazorCompileOnBuild>false</RazorCompileOnBuild>` and `<RazorCompileOnPublish>false</RazorCompileOnPublish>` if present |
 
 *Additional notes*
 
