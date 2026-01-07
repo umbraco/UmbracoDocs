@@ -384,7 +384,7 @@ The Delivery API OpenAPI document can be configured to support member authentica
 Before we can do that, we need two things in place:
 
 1. We have to implement a login page [as described above](./#logging-in-members).
-2. We must add `https://{server-host}/umbraco/swagger/oauth2-redirect.html` to the configured `LoginRedirectUrls`.
+2. We must add `https://{server-host}/umbraco/openapi/oauth2-redirect.html` to the configured `LoginRedirectUrls`.
 
 With these in place, we can enable member authentication in Swagger for the Delivery API by adding the following to `Program.cs`:
 

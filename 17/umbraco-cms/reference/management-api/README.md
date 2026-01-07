@@ -16,7 +16,7 @@ The Management API is a replacement for the backoffice controllers that lacked R
 
 ### OpenAPI Documentation
 
-Umbraco uses OpenAPI to document the Management API. The OpenAPI documents and Swagger UI are based on [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) and are available at `{yourdomain}/umbraco/swagger`. For security reasons, both are disabled in production environments.
+Umbraco uses OpenAPI to document the Management API. The OpenAPI documents are based on [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) and the UI is based on [Swashbuckle.AspNetCore.SwaggerUI](https://github.com/domaindrivendev/Swashbuckle.AspNetCore). Both are available at `{yourdomain}/umbraco/openapi` and are disabled in production environments for security reasons.
 
 The OpenAPI documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. If you are extending the Management API with your own controllers, you can also create custom documentation for these. See [Custom Backoffice API](../custom-backoffice-api.md) and [Creating a backoffice API](../../tutorials/creating-a-backoffice-api/) articles for details.
 
@@ -36,7 +36,7 @@ Then a popup will appear with some setup information and a login form for author
 
 ![Umbraco Management API Authorize Login](../../.gitbook/assets/management-api-swagger-authorize-instructions.png)
 
-The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. Swagger UI is only enabled in non-production environments, so if you need to access the Management API in production, you need a different client.
+The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. The OpenAPI UI is only enabled in non-production environments, so if you need to access the Management API in production, you need a different client.
 
 {% hint style="info" %}
 In production environment, only `umbraco-back-office` **client** is allowed to connect to the Management API. In non-production environments, the `umbraco-swagger` and `umbraco-postman` **clients** can be used.

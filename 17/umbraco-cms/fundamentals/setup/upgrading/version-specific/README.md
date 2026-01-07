@@ -107,12 +107,21 @@ Use `PostConfigure` to override the defaults:
 builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
 {
     options.Enabled = true;
-    options.RouteTemplate = "swagger/{documentName}/swagger.json";
-    options.UiRoutePrefix = "swagger";
+    options.RouteTemplate = "openapi/{documentName}.json";
+    options.UiRoutePrefix = "openapi";
 });
 ```
 
 See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability) for details.
+
+*OpenAPI URL changes*
+
+The OpenAPI endpoints have been renamed from "swagger" to "openapi" to follow Microsoft's naming conventions:
+
+| Old URL | New URL |
+|---------|---------|
+| `/umbraco/swagger` | `/umbraco/openapi` |
+| `/umbraco/swagger/{documentName}/swagger.json` | `/umbraco/openapi/{documentName}.json` |
 
 For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article.
 

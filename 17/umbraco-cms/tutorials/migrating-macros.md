@@ -483,7 +483,7 @@ The last steps are to:
 1. Register the services and their interfaces into the DI container using a composer.
 2. Create a management API controller to call the service.
 
-A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you will have OpenAPI documentation available at `/umbraco/swagger/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
+A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you will have OpenAPI documentation available at `/umbraco/openapi/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
 
 <details>
 

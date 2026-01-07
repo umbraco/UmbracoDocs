@@ -23,7 +23,7 @@ This guide covers the following:
 
 ## Importing the collection
 
-1. Open the swagger UI at `{yourdomain}/umbraco/swagger`.
+1. Open the OpenAPI UI at `{yourdomain}/umbraco/openapi`.
 2. Choose **Umbraco Management API** from **Select a definition**.
 3. Open the JSON file, which you can find right underneath the **Title**:
 

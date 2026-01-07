@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI for your own APIs.
 
 # API versioning and OpenAPI
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents and Swagger UI are available at `{yourdomain}/umbraco/swagger`. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents are available at `{yourdomain}/umbraco/openapi`. The UI is based on [Swashbuckle.AspNetCore.SwaggerUI](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) and is available at the same path. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
 
 ## Adding your own OpenAPI documents
 
@@ -18,7 +18,7 @@ Umbraco imposes no limitations on adding OpenAPI documents, and the code below i
 In the [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) you will find comprehensive documentation for OpenAPI configuration.
 {% endhint %}
 
-To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. You also need to configure `SwaggerUIOptions` to add the document to the Swagger UI dropdown.
+To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. You also need to configure `SwaggerUIOptions` to add the document to the OpenAPI UI dropdown.
 
 The following code sample creates an OpenAPI document called "My API v1" that includes only controllers from a specific namespace:
 
@@ -44,10 +44,10 @@ builder.Services.AddOpenApi("my-api-v1", options =>
         && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api.V1") is true;
 });
 
-// Add the document to Swagger UI
+// Add the document to OpenAPI UI
 builder.Services.Configure<SwaggerUIOptions>(options =>
 {
-    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
+    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
 });
 ```
 
@@ -267,11 +267,11 @@ builder.Services.AddOpenApi("my-api-v2", options =>
         && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.Api.V2") is true;
 });
 
-// Add both documents to Swagger UI
+// Add both documents to OpenAPI UI
 builder.Services.Configure<SwaggerUIOptions>(options =>
 {
-    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
-    options.SwaggerEndpoint("/umbraco/swagger/my-api-v2/swagger.json", "My API v2");
+    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
+    options.SwaggerEndpoint("/umbraco/openapi/my-api-v2.json", "My API v2");
 });
 ```
 
@@ -356,7 +356,7 @@ public class MyDoSomethingViewModel
 
 ### OpenAPI route and/or availability
 
-Umbraco exposes OpenAPI and Swagger UI at `{yourdomain}/umbraco/swagger`. Both are disabled in production mode by default to avoid exposing API structure on public-facing websites.
+Umbraco exposes OpenAPI documents and UI at `{yourdomain}/umbraco/openapi`. Both are disabled in production mode by default to avoid exposing API structure on public-facing websites.
 
 You can customize these settings using `UmbracoOpenApiOptions` in `Program.cs`. Use `PostConfigure` to override the defaults:
 
@@ -371,10 +371,10 @@ builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
     options.Enabled = true;
 
     // Change the route template for OpenAPI documents
-    options.RouteTemplate = "swagger/{documentName}/swagger.json";
+    options.RouteTemplate = "openapi/{documentName}.json";
 
-    // Change the route prefix for Swagger UI
-    options.UiRoutePrefix = "swagger";
+    // Change the route prefix for OpenAPI UI
+    options.UiRoutePrefix = "openapi";
 });
 ```
 
@@ -383,6 +383,26 @@ builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
 {% hint style="warning" %}
 On public-facing websites, enabling OpenAPI in production exposes your API structure publicly. For internal or authenticated APIs, enabling OpenAPI in production may be acceptable.
 {% endhint %}
+
+### Using an alternative OpenAPI UI
+
+The built-in UI is based on Swagger UI. If you prefer an alternative UI, you can disable the default UI while keeping the OpenAPI documents available:
+
+{% code title="Program.cs" %}
+
+```csharp
+using Umbraco.Cms.Api.Common.OpenApi;
+
+builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
+{
+    // Disable the default UI (OpenAPI documents remain available)
+    options.DefaultUiEnabled = false;
+});
+```
+
+{% endcode %}
+
+With the default UI disabled, you can add your preferred UI using a custom pipeline filter or middleware that serves the alternative UI and points it to the OpenAPI document endpoints.
 
 ### API versioning
 

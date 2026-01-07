@@ -38,10 +38,10 @@ builder.Services.AddOpenApi("my-item-api", options =>
     options.AddBackofficeSecurityRequirements();
 });
 
-// Add the document to Swagger UI
+// Add the document to OpenAPI UI
 builder.Services.Configure<SwaggerUIOptions>(options =>
 {
-    options.SwaggerEndpoint("/umbraco/swagger/my-item-api/swagger.json", "My item API");
+    options.SwaggerEndpoint("/umbraco/openapi/my-item-api.json", "My item API");
 });
 ```
 {% endcode %}

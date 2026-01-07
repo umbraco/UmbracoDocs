@@ -427,7 +427,7 @@ Returns single or multiple items.
 | **401**: Unauthorized | Missing permissions after protection is set up. |
 | **404**: Not Found    | Content item not found.                         |
 
-All endpoints are documented in an OpenAPI document at `{yourdomain}/umbraco/swagger`. This document is not available in production mode by default. For more information read the [API versioning and OpenAPI](../api-versioning-and-openapi.md) article.
+All endpoints are documented in an OpenAPI document at `{yourdomain}/umbraco/openapi`. This document is not available in production mode by default. For more information read the [API versioning and OpenAPI](../api-versioning-and-openapi.md) article.
 
 ### Query parameters
 

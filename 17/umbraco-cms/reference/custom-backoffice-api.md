@@ -38,10 +38,10 @@ builder.Services.AddOpenApi("my-api-v1", options =>
     options.AddBackofficeSecurityRequirements();
 });
 
-// Add the document to Swagger UI
+// Add the document to OpenAPI UI
 builder.Services.Configure<SwaggerUIOptions>(options =>
 {
-    options.SwaggerEndpoint("/umbraco/swagger/my-api-v1/swagger.json", "My API v1");
+    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
 });
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ public class MyApiController : Controller
 ```
 {% endcode %}
 
-3. Run the project and navigate to `{yourdomain}/umbraco/swagger`.
+3. Run the project and navigate to `{yourdomain}/umbraco/openapi`.
 4. Choose the OpenAPI document we created with the code above named **My API v1** from **Select a definition**.
 
 ![Created Custom API in OpenAPI documentation](../.gitbook/assets/custom-api-swagger-example.png)
