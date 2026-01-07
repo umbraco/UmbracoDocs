@@ -98,7 +98,6 @@ These modes do not rely on Razor runtime compilation. However, ensure the follow
 <RazorCompileOnPublish>false</RazorCompileOnPublish>
 ```
 
-
 *Additional notes*
 
 If you use the `ModelsMode` enum or its extension methods, use the string constants in `Constants.ModelsBuilder.ModelsModes` instead.
