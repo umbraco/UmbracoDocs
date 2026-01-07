@@ -16,7 +16,7 @@ Both implementations convert standard markdown into HTML, but there are some sub
 
 ## Modifying the Default Behavior
 
-If you prefer to use the Markdig-based implementation, you can replace the default registration with the following composer:
+If you prefer to use the Markdig-based implementation, replace the default registration by adding the following composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
