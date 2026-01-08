@@ -18,6 +18,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### 16.6.0-rc1 (8th Jan 2026)
+
+* Implemented new order caching layer with version based expiry for better load balancing support.
+* Added support for a refund reason when refunding an order.
+* Added Refund Rate analytics widget.
+* Added Top 50 Buyers analytics widget.
+* Added Low Stock analytics widget.
+* Fixed print templates not rendering if you don't have Settings section permission.
+* Fixed variants content endpoints not returning data.
+
 #### [16.5.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.5.1) (Dec 17th 2025)
 
 * Fixed issue with print templates not rendering for non admins [#811](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/811).

@@ -18,6 +18,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.1.0-rc1 (8th Jan 2026)
+
+* Implemented new order caching layer with version based expiry for better load balancing support.
+* Added support for a refund reason when refunding an order.
+* Added Refund Rate analytics widget.
+* Added Top 50 Buyers analytics widget.
+* Added Low Stock analytics widget.
+* Added browser titles to workspaces.
+* Added UFM view template support to editable model properties.
+* Fixed print templates not rendering if you don't have Settings section permission.
+* Fixed variants content endpoints not returning data.
+
 #### 17.0.0 (27th Nov 2025)
 
 * Version 17 final release.
