@@ -126,6 +126,14 @@ For illustration purposes, the following structure represents the full set of op
         "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
         "ShowFieldValidation": false
       },
+      "RecaptchaEnterprise": {
+        "SiteKey": "",
+        "ApiKey": "",
+        "ProjectId": "",
+        "Domain": "Google",
+        "VerificationUrl": "https://recaptchaenterprise.googleapis.com/v1/projects/{PROJECT_ID}/assessments",
+        "ShowFieldValidation": false
+      },
       "RichText": {
         "DataTypeId": "ca90c950-0aff-4e72-b976-a30b1ac57dad"
       },
