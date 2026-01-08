@@ -21,7 +21,7 @@ Follow these steps to enable reCAPTCHA Enterprise in Umbraco Forms:
             "RecaptchaEnterprise": {
                 "SiteKey": "",
                 "ApiKey": "",
-                "ProjectId": "",
+                "ProjectId": ""
             }
         }
     }
