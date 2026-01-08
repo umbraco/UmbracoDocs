@@ -49,3 +49,4 @@ By default, the following Field Types are available:
 * [Recaptcha V3 with Score](recaptcha3.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
 
     ![reCAPTCHA v3](images/recaptcha3-v14.png)
+* [Recaptcha Enterprise with Score](recaptcha-enterprise.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.

@@ -20,6 +20,7 @@ You can obtain the latest version of the Forms default theme from the following 
 
 * [17.0.0](./files/umbraco-forms-default-theme-17.0.0.zip)
 * [17.0.2](./files/umbraco-forms-default-theme-17.0.2.zip)
+* [17.1.0-rc](./files/umbraco-forms-default-theme-17.1.0-rc.zip)
 
 You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
 
