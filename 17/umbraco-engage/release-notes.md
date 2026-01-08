@@ -16,6 +16,17 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.0.4](https://www.nuget.org/packages/Umbraco.Engage/17.0.4) (January 8th 2026)
+
+* Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
+* Resolved Swagger schema generation issues when used in combination with the Umbraco.DeliveryApiExtensions addon.
+* Resolved cookie retention when using the headless `/trackpageview/server` endpoint ([Issue #42](https://github.com/umbraco/Umbraco.Engage.Issues/issues/42)).
+* Resolved broken Pageview Goals migration when updating from Engage 13.x to 17.x ([Issue #43](https://github.com/umbraco/Umbraco.Engage.Issues/issues/43)).
+
+#### [Engage Forms 17.1.0](https://www.nuget.org/packages/Umbraco.Engage.Forms/17.1.0) (January 8th 2026)
+
+* Resolved Form Submission Goal Type migration when migrating from version 13.x.
+
 #### [17.0.3](https://www.nuget.org/packages/Umbraco.Engage/17.0.3) (December 16th 2025)
 
 * Implements additional validation checks before assigning the visitor cookie, improving cookie handling reliability across various request scenarios.

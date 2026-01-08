@@ -16,6 +16,11 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.7.3**](https://www.nuget.org/packages/Umbraco.Engage/13.7.3) **(January 8th 2026)**
+
+* Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
+* Added 'Other' Heatmap option in Analytics for miscellaneous device types.
+
 [**13.7.2**](https://www.nuget.org/packages/Umbraco.Engage/13.7.2) **(December 16th 2025)**
 
 * Implements additional validation checks before assigning the visitor cookie, improving cookie handling reliability across various request scenarios.
