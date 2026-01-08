@@ -156,6 +156,8 @@ The `View` property indicates a property editor UI used for editing the setting 
 
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 
+`DefaultValue` if provided, this value will be pre-filled when a field using this setting is added to a form. This provides a code-based alternative to [configuring default values via `appsettings.json`](../configuration/#settingscustomization). If both are configured, the value from configuration takes precedence.
+
 When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
 
 All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
