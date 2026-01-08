@@ -156,7 +156,25 @@ The `View` property indicates a property editor UI used for editing the setting 
 
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 
-`DefaultValue` if provided, this value will be pre-filled when a field using this setting is added to a form. This provides a code-based alternative to [configuring default values via `appsettings.json`](../configuration/#settingscustomization). If both are configured, the value from configuration takes precedence.
+Default values for settings can be defined in code using two approaches.
+
+Using a property initializer:
+
+```csharp
+[Setting("Minimum")]
+public virtual string? Min { get; set; } = "1";
+```
+
+Using the `DefaultValue` attribute property:
+
+```csharp
+[Setting("Minimum", DefaultValue = "1")]
+public virtual string? Min { get; set; }
+```
+
+If both are provided, the `DefaultValue` attribute property takes precedence over the property initializer.
+
+These code-based defaults provide an alternative to [configuring default values via `appsettings.json`](../configuration/#settingscustomization). If a value is configured in `appsettings.json`, it takes precedence over any code-based default.
 
 When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
 
