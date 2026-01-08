@@ -32,7 +32,7 @@ Represents a single property on a content item. Provides access to the property'
 
 ### Modal Context
 
-Manages modal dialog lifecycle and data flow. Read input data, set return values, and control how the modal closes (submit or reject).
+Manages modal dialog lifecycle and data flow. Used to read input data, set return values, and control how the modal closes (via submit or cancel).
 
 ### Entity Context
 
