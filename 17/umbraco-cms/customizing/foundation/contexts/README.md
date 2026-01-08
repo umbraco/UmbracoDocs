@@ -14,7 +14,7 @@ Provides access to the authenticated backoffice user. Use this to retrieve user 
 
 ### Section Context
 
-Provides information about the currently active backoffice section, including its alias, pathname, and label. Use this to adapt UI and behavior based on which section the user is working in.
+Provides information about the currently active backoffice section, including its alias, path name, and label. Use this to adapt UI and behavior based on which section the user is working in.
 
 ### Workspace Context
 
