@@ -43,10 +43,10 @@ By default, the following Field Types are available:
 *   **Hidden**: A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.
 
     ![Hidden](images/hidden-v9.png)
-*   [reCAPTCHA V2](recaptcha2.md): The field displays a single checkbox for the user to select in order to validate the Form.
+*   [Recaptcha V2](recaptcha2.md): The field displays a single checkbox for the user to select in order to validate the Form.
 
     ![reCAPTCHA v2](images/recaptcha2-v9.png)
-*   [reCAPTCHA V3 with Score](recaptcha3.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
+*   [Recaptcha V3 with Score](recaptcha3.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
 
     ![reCAPTCHA v3](images/recaptcha3-v9.png)
 *   [Recaptcha Enterprise with Score](recaptcha-enterprise.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
