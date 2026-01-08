@@ -18,7 +18,7 @@ Provides information about the currently active backoffice section, including it
 
 ### Workspace Context
 
-Manages the editing environment for a specific entity. Handles entity data, tracks new vs. existing state, manages validation and save operations, and controls workspace routing.
+Manages the editing environment for a specific entity. Handles entity data, tracks differences between new and existing state, manages validation and save operations, and controls workspace routing.
 
 ### [Property Dataset Context](property-dataset-context.md)
 
