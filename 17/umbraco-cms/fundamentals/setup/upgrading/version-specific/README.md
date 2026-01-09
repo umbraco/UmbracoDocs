@@ -78,7 +78,7 @@ Add the package if any of the following apply:
 
 1. You use the `InMemoryAuto` models builder:
     * By explicitly selecting `InMemoryAuto`.
-    * By starting a new project with the default `--models-mode` (which is `InMemoryAuto`, so the package is added automatically).
+    * By starting a new project with the default `--models-mode` (which is `InMemoryAuto`, adding the package automatically).
   
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
