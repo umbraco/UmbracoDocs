@@ -166,7 +166,7 @@ To add content to the blocks:
 
 ## Creating `Settings` section for Blocks
 
-Now, we have overwritten the default view for the content editor's block presentation by using our own view. Let's create a **Settings** section to control the data alignment of the block. To do this, we need to add a **Settings** model to our block configuration.
+Now, we have overwritten the default view for the block presentation by using our own view. Let's create a **Settings** section to control the data alignment of the block. To do this, we need to add a **Settings** model to our block configuration.
 
 To add a Settings model:
 
