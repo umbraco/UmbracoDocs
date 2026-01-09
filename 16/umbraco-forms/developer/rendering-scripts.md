@@ -6,9 +6,21 @@ In many cases, you might prefer rendering your scripts at the bottom of the page
 
 In order to render your scripts where you want, you need to add a snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag.
 
-By default, Forms uses `TempData` for tracking the forms rendered on a page. The stored values are used when rendering the form scripts and associated data.
+By default, Forms uses `HttpContext.Items` for tracking the forms rendered on a page. The stored values are used when rendering the form scripts and associated data.
 
 The following snippet should be used.
+
+```csharp
+@if (Context.Items.TryGetValue("UmbracoForms", out object? formIdsObject) && formIdsObject is IEnumerable<Guid> formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+}
+```
+
+If you have changed the configuration value of `TrackRenderedFormsStorageMethod` to use the legacy behavior `TempData`, the snippet is:
 
 ```csharp
 @using Umbraco.Forms.Web.Extensions;
@@ -24,19 +36,7 @@ The following snippet should be used.
 }
 ```
 
-If you have changed the configuration value `TrackRenderedFormsStorageMethod` to use `HttpContext.Items`, the snippet is:
-
-```csharp
-@if (Context.Items.TryGetValue("UmbracoForms", out object? formIdsObject) && formIdsObject is IEnumerable<Guid> formIds)
-{
-    foreach (var formId in formIds)
-    {
-        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
-    }
-}
-```
-
-Read more about this configuration option in the [configuration ](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
+Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
 
 If you prefer to use a tag helper, that's an option too.
 
