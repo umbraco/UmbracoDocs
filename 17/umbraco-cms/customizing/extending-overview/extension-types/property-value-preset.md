@@ -7,11 +7,13 @@ description: Provide a preset value for a Property.
 The Property Value Preset is an Extension Type that uses an API to provide a Preset Value. The preset value is used when a user scaffolds a new set of Content.
 
 {% hint style="info" %}
-Before creating a Property Value Preset, we recommend reading about the [Extension Registry in Umbraco](../../../customizing/extending-overview/extension-registry/register-extensions.md) to understand how extensions work.
+Before creating a Property Value Preset, it is recommended to read about the [Extension Registry in Umbraco](../../../customizing/extending-overview/extension-registry/register-extensions.md) to understand how extensions work.
 {% endhint %}
 
 ## Manifest
+
 The following Manifest declares a preset for the `TextBox` and `TextArea` Property Editors:
+
 ```typescript
 export const manifest = {
     type: 'propertyValuePreset',
@@ -23,14 +25,17 @@ export const manifest = {
 	forPropertyEditorSchemaAlias: 'Umbraco.TextArea'
 }
 ```
+
 ### Key Properties
-- **`weight`** - execution order (higher runs first).
-- **`forPropertyEditorUiAlias`** - targets specific Property Editor UI.
-- **`forPropertyEditorSchemaAlias`** - targets Property Editor Schema (Content Types only).
+
+- `weight` - Execution order (higher runs first).
+- `forPropertyEditorUiAlias` - Targets specific Property Editor UI.
+- `forPropertyEditorSchemaAlias` - Targets Property Editor Schema (Content Types only).
 
 ## Implementation
 
-Property Preset Value API could look like this:
+A Property Preset Value API could look like this:
+
 {% code title="my-property-value-preset.js" %}
 ```typescript
 import type { UmbPropertyValuePreset } from '@umbraco-cms/backoffice/property';
@@ -63,10 +68,10 @@ Notice that `forPropertyEditorSchemaAlias` only targets the Properties used on t
 
 The `processValue` method takes four arguments:
 
-- **`value`** - The current value.
-- **`UmbPropertyEditorConfig`** - The Data Type configuration.
-- **`UmbPropertyTypePresetModelTypeModel`** - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
-- **`UmbPropertyValuePresetApiCallArgs`** - The call arguments, which contains details about the property and document.
+- `value` - The current value.
+- `UmbPropertyEditorConfig` - The Data Type configuration.
+- `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
+- `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contains details about the property and document.
 
 The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'preset state' configuration that is used as the value of the Toggle.
 
