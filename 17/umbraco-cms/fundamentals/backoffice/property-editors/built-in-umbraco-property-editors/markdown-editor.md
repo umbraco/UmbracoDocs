@@ -47,6 +47,12 @@ There are three settings available for manipulating the **Markdown editor** prop
 | copy       | Ctrl + C |
 | paste      | Ctrl + V |
 
+## Markdown to HTML Conversion
+
+The conversion from markdown to HTML is handled by the registered implementation of `IMarkdownToHtmlConverter`.
+
+To understand this more and how you may customize it to your needs, see the article on [Markdown to HTML Conversion](../../../../reference/markdown-to-html-conversion.md).
+
 ## MVC View Example
 
 ### With Models Builder
@@ -81,8 +87,8 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Create markdown value
     var markdownValue = new HtmlString("#heading  \n**strong text**");
-    
-    // Set the value of the property with alias 'myMarkdownEditor'. 
+
+    // Set the value of the property with alias 'myMarkdownEditor'.
     content.SetValue("myMarkdownEditor", markdownValue);
 
     // Save the change
@@ -95,7 +101,7 @@ Although the use of a GUID is preferable, you can also use the numeric ID to get
 ```csharp
 @{
     // Get the page using it's id
-    var content = ContentService.GetById(1234); 
+    var content = ContentService.GetById(1234);
 }
 ```
 
