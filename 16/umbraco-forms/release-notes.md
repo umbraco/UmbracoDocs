@@ -78,6 +78,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
 * Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
 * Add JavaScript event for post-load form injection [#1224](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1224)
+* Evenly space conditions fields rather than size based on contents [#1448](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1448)
 
 ### [16.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.0) (August 28th 2025)
 
