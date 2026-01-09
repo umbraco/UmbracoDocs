@@ -87,7 +87,7 @@ For a custom section, use the following configuration:
 
 ### Localizing an additional area
 
-In a scenario where a specific area is not covered by the implemented localization, you can update it directly in the fluent configuration by using the `LocalizationContext`.
+When the implemented localization does not cover a specific area, you can update it directly in the fluent configuration by using the `LocalizationContext`.
 
 For example, this custom data view:
 
