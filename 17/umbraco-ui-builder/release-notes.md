@@ -18,6 +18,25 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+#### [**17.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.3) **(December 18th 2025)**
+
+* Updated the cards UI adopting a slimmer appearance [#184](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/184)
+* Fixed card counter caused by a regression in `17.0.0` [#212](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/212)
+* Fixed a top padding issue with child collections [#180](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/180)
+
+#### [**17.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) **(December 12th 2025)**
+
+* Fixed a regression impacting child collections [#213](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/213)
+
+#### [**17.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.1) **(December 11th 2025)**
+
+* Added additional localization support for editor fields labels and descriptions, collection filters, cards, data views [#208](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/208)
+* Fixed entity menu actions display [#207](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/207)
+* Enable columns sorting for collections list view [#205](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/205)
+* Fixed the visibility of entity actions when entity is new [#202](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/202)
+* Restored container menu actions [#201](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/201)
+* Fixed handling of entities with key different than `Integer` causing actions visibility issues [#196](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/196)
+
 ### 17.0.0 (November 27th 2025)
 
 * Final release to support Umbraco 17

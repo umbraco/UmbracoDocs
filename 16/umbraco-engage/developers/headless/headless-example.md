@@ -20,7 +20,7 @@ This article shows how to use the Umbraco Engage Headless API with Umbraco Conte
 
 For more information, see the [Personalization](../personalization/) documentation.
 
-<figure><img src="../../.gitbook/assets/Personalization-add-new-segment-v16.png" alt="Edit segment view."><figcaption><p>Add new segment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Personalization-add-new-segment-v16 (1).png" alt="Edit segment view."><figcaption><p>Add new segment</p></figcaption></figure>
 
 ### Creating a Document Type for Personalization
 
@@ -41,13 +41,13 @@ For more information, see the [Personalization](../personalization/) documentati
    * Choose the segment **Morning People** we added earlier.
    * Give it a name and a meaningful description such as **Home Page for Morning People**.
 
-<figure><img src="../../.gitbook/assets/image (4) (4).png" alt="Add new variant."><figcaption><p>Add new variant.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (4) (1).png" alt="Add new variant."><figcaption><p>Add new variant.</p></figcaption></figure>
 
 4. After adding the variant we will return to the content node in split-view mode.
 5. We can then add a different piece of content we want to return in our Header property specific to morning people such as _Hello you early risers._
 6. Save and publish the node with the variant content.
 
-<figure><img src="../../.gitbook/assets/image (5) (4).png" alt="split-view."><figcaption><p>split-view.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (4) (1).png" alt="split-view."><figcaption><p>split-view.</p></figcaption></figure>
 
 ### Using the Content Delivery API
 
@@ -67,7 +67,7 @@ Let us use the Swagger development tool to make requests to the Umbraco Content 
    * Repeat the earlier steps to fetch the content by its path. The JSON of the content node and the header property now contains our personalized content **Hello you early risers**
      * Remember it will only show different content if we view the page before midday.
 
-<figure><img src="../../.gitbook/assets/image (6) (4).png" alt="Response body."><figcaption><p>Response body.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (4) (1).png" alt="Response body."><figcaption><p>Response body.</p></figcaption></figure>
 
 {% hint style="info" %}
 Umbraco Engage is licensed to individual domains. It requires the Host Header to match one of the registered licensed domains for personalization and A/B Testing to work.

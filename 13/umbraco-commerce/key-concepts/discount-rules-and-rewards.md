@@ -1,5 +1,7 @@
 ---
-description: Define when a Discount should apply and what should be the Reward in Umbraco Commerce.
+description: >-
+  Define when a Discount should apply and what should be the Reward in Umbraco
+  Commerce.
 ---
 
 # Discount Rules / Rewards
@@ -166,7 +168,7 @@ Both the `DiscountRuleProviderAttribute` and the `DiscountRewardProviderAttribut
 
 The Rule/Reward Label View should provide a user-friendly summary of its settings to display in the relevant Builder UI.
 
-![Discount Rule Label Views](../media/discount\_rule\_builder\_label\_views.png)
+![Discount Rule Label Views](../.gitbook/assets/discount_rule_builder_label_views.png)
 
 The Label View file will be passed a `model` property which will be a JavaScript representation of the given Providers settings object.
 

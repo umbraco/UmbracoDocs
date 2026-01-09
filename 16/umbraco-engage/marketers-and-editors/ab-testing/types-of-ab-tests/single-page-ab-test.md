@@ -10,7 +10,7 @@ The Single-Page test allows an editor to start an A/B test without a single line
 
 When you select the Single-Page test type you can create two or more variants.
 
-<figure><img src="../../../.gitbook/assets/ABTest-SinglePage-TestSetup-v16.png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ABTest-SinglePage-TestSetup-v16 (1).png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
 
 The first variant is always the original content and the published page. Variant B is the first variant that can be created and with the button '**Add a variant**' more alternatives can be added. More variants mean that a test should run for longer to become reliable.
 
@@ -18,7 +18,7 @@ The first variant is always the original content and the published page. Variant
 
 The variant can be given a name and if you click on **Edit** you will open up the split view editor:
 
-![Split view editing](../../../.gitbook/assets/Split-view-editing.png)
+![Split view editing](<../../../.gitbook/assets/Split-view-editing (1).png>)
 
 On the left side, the original content is shown (Original) and the variant is shown on the right. In this side-by-side editing mode, you can edit the content for your variant.
 
@@ -28,11 +28,11 @@ Some properties are inactive (_visually indicated because they are greyed out_).
 
 Specifying when segmentation is allowed can be done per property using the **Shared across segments** value.
 
-![Property settings](../../../.gitbook/assets/property-settings.png)
+![Property settings](<../../../.gitbook/assets/property-settings (1).png>)
 
 In the overview of the Document Type, you will see if properties can be segmented as they will have the **Shared across segments** label:
 
-![Shared across segments](../../../.gitbook/assets/Shared-across-segments.png)
+![Shared across segments](<../../../.gitbook/assets/Shared-across-segments (1).png>)
 
 ### Add CSS or JavaScript
 
@@ -40,9 +40,9 @@ Sometimes you cannot adjust a specific property because it was not configured wh
 
 To do this, go to **A/B Tests** Content App. Click **Edit** on the variant. This will give the editor a popup where CSS and JavaScript can be entered:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt="CSS/JavaScript popup"><figcaption><p>CSS/JavaScript popup</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt="CSS/JavaScript popup"><figcaption><p>CSS/JavaScript popup</p></figcaption></figure>
 
-![CSS/JavaScript popup](../../../.gitbook/assets/single=page-ab-test-edit-variant.png)
+![CSS/JavaScript popup](<../../../.gitbook/assets/single=page-ab-test-edit-variant (1).png>)
 
 These lines of code will automatically be inserted at the bottom of the page.
 

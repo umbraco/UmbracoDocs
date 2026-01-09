@@ -14,7 +14,7 @@ The following steps are all handled through the Umbraco backoffice.
 2. Select the **Create Payment Method** button to create a new payment method.
 3. Choose **QuickPay V10** from the list of available payment providers.
 
-![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](../media/quickpay/umbraco\_create\_payment\_method.png)
+![The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.](<../.gitbook/assets/umbraco_create_payment_method (3).png>)
 
 ## Step 2: Configure Payment Provider Settings
 
@@ -37,4 +37,4 @@ The following steps are handled within the payment method editor in the Umbraco 
 | Auto Fee                 | Toggle indicating whether to automatically calculate and apply the fee from the acquirer                                       |
 | Auto Capture             | Toggle indicating whether to immediately capture the payment, or whether to authorize the payment for later (manual) capturing |
 
-![Overview of the available  Payment Provider Settings in the Umbraco CMS backoffice.](../media/quickpay/umbraco\_configure\_quickpay\_settings.png)
+![Overview of the available  Payment Provider Settings in the Umbraco CMS backoffice.](../.gitbook/assets/umbraco_configure_quickpay_settings.png)

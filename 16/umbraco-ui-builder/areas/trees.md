@@ -1,16 +1,18 @@
 ---
-description: Configuring and customizing Trees to organize and manage the backoffice interface effectively.
+description: >-
+  Configuring and customizing Trees to organize and manage the backoffice
+  interface effectively.
 ---
 
-# Tree
+# Trees
 
 A tree is a hierarchical structure that organizes sections into sub-sections. It appears in the main side panel of the Umbraco interface. In Umbraco UI Builder, each section can only have one tree definition, but you can use folder nodes to organize the tree.
 
-![Tree](../images/tree.png)
+![Tree](<../.gitbook/assets/tree (1).png>)
 
 ## Configuring a Umbraco UI Builder Section Tree
 
-The tree configuration for Umbraco UI Builder sections is part of the [`Section`](sections.md)  config builder and is accessed via its `Tree` method.
+The tree configuration for Umbraco UI Builder sections is part of the [`Section`](sections.md) config builder and is accessed via its `Tree` method.
 
 ### Using the `Tree()` Method
 
@@ -46,11 +48,11 @@ AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTree("My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ### Grouping Trees with `AddTree()` Method
 
@@ -64,11 +66,11 @@ AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : 
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTree("My Group", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ### Using `AddTreeBefore()` to Position a Tree
 
@@ -82,11 +84,11 @@ AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = nu
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTreeBefore("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ### Using `AddTreeAfter()` to Position a Tree
 
@@ -100,11 +102,11 @@ AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = nul
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTreeAfter("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ## Changing the Tree Icon Color
 
@@ -124,9 +126,9 @@ SetIconColor(string color) : TreeConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetIconColor("blue");
-````
+```
 
 ## Adding a Group to a Tree
 

@@ -8,7 +8,7 @@ Depending on how your site is set up, not all content is edited through the **Co
 
 Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
-<figure><img src="../../../../17/umbraco-cms/fundamentals/data/images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -19,7 +19,7 @@ To add a Dictionary Item:
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
 4.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../17/umbraco-cms/fundamentals/data/images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
 5. Click **Save**.
 
 ### Grouping Dictionary Items
@@ -35,7 +35,7 @@ To group dictionary items:
 7. Click **Create**.
 8.  Enter the values for the different language versions.
 
-    <figure><img src="../../../../17/umbraco-cms/fundamentals/data/images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
 ## Editing Dictionary Items
@@ -111,6 +111,6 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
-* [Localization Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
+* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
+* [Localization Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ILocalizationService.html)
 * [Creating a Multilingual Site](../../tutorials/multilanguage-setup.md)

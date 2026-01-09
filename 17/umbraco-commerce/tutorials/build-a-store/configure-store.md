@@ -6,14 +6,14 @@ description: Learn how to configure your store in Umbraco Commerce.
 
 Each store comes with a set of predefined configurations that you can extend, covering:
 
-* [Locations](#setting-up-a-location)
-* [Order Statuses](#setting-up-order-statuses)
-* [Payment Methods](#setting-up-payment-methods)
-* [Shipping Methods](#setting-up-shipping-methods)
-* [Countries](#setting-up-a-country)
-* [Currencies](#setting-up-a-currency)
-* [Taxes](#setting-up-taxes)
-* [Templates](#setting-up-templates)
+* [Locations](configure-store.md#setting-up-a-location)
+* [Order Statuses](configure-store.md#setting-up-order-statuses)
+* [Payment Methods](configure-store.md#setting-up-payment-methods)
+* [Shipping Methods](configure-store.md#setting-up-shipping-methods)
+* [Countries](configure-store.md#setting-up-a-country)
+* [Currencies](configure-store.md#setting-up-a-currency)
+* [Taxes](configure-store.md#setting-up-taxes)
+* [Templates](configure-store.md#setting-up-templates)
 
 ## Setting up a Location
 
@@ -24,13 +24,13 @@ If your business operates in multiple regions, setting up locations helps:
 
 ### Steps to set up a location
 
-1. Select your store from the **Stores** menu in the **Settings** section. In this case, *Umbraco Swag Store*.
+1. Select your store from the **Stores** menu in the **Settings** section. In this case, _Umbraco Swag Store_.
 2. Go to **Locations** under the Store.
 3. Click **Create Location**.
-4. Enter the **Name** for the Location. For example: *Denmark*
+4. Enter the **Name** for the Location. For example: _Denmark_
 5. Provide the necessary address details.
 
-![Create Location](../images/create-location.png)
+![Create Location](../../.gitbook/assets/create-location.png)
 
 6. **Save** the changes.
 
@@ -38,16 +38,16 @@ If your business operates in multiple regions, setting up locations helps:
 
 Order Status tracks the progression of an order. It helps both the store owner and customers track the order's progress from the moment it is placed until it is delivered (or returned).
 
-When you first set up Umbraco Commerce, it comes with predefined order statuses to help manage the order lifecycle. These statuses include *New*, *Completed*, *Cancelled*, and *Error*. The statuses can be customized based on your specific business requirements.
+When you first set up Umbraco Commerce, it comes with predefined order statuses to help manage the order lifecycle. These statuses include _New_, _Completed_, _Cancelled_, and _Error_. The statuses can be customized based on your specific business requirements.
 
 ### Steps to create an order status
 
 1. Go to **Order Statuses** under the Store.
 2. Click **Create Order Status**.
-3. Enter a **Name** for the order status. For Example: *Processing*
+3. Enter a **Name** for the order status. For Example: _Processing_
 4. Select a **Color** for the order status.
 
-![Create Order Status](../images/create-order-status.png)
+![Create Order Status](../../.gitbook/assets/create-order-status.png)
 
 5. **Save** the changes.
 
@@ -55,17 +55,17 @@ When you first set up Umbraco Commerce, it comes with predefined order statuses 
 
 Payment Methods define the payment options available in the store. By default, Umbraco Commerce includes basic providers like **Invoicing** and **Zero Value** to get started.
 
-Umbraco Commerce also supports the integration of different third-party payment gateways. For more information, see the [Umbraco Commerce Payment Providers Documentation](../../../../commerce-add-ons/payment-providers/README.md).
+Umbraco Commerce also supports the integration of different third-party payment gateways. For more information, see the [Umbraco Commerce Payment Providers Documentation](../../../../commerce-add-ons/payment-providers/).
 
 ### Steps to set up a payment method
 
 1. Go to **Payment Methods** under the Store.
 2. Click **Create Payment Method**.
-3. Select a payment provider from the list. For example: *Zero Value*.
-4. Enter a **Name** for the payment method. For example: *Zero Payment*.
+3. Select a payment provider from the list. For example: _Zero Value_.
+4. Enter a **Name** for the payment method. For example: _Zero Payment_.
 5. Configure the payment method as per your requirements.
 
-![Create Payment Method](../images/create-payment-methods.png)
+![Create Payment Method](../../.gitbook/assets/create-payment-methods.png)
 
 6. **Save** the changes.
 
@@ -73,17 +73,17 @@ Umbraco Commerce also supports the integration of different third-party payment 
 
 Shipping methods determine how customers receive their orders. Setting up shipping methods effectively is crucial, as it impacts customer satisfaction, fulfillment costs, and overall operational efficiency.
 
-By default, Umbraco Commerce comes with the basic Pickup option. For more information on the integration for different providers, see the [Umbraco Commerce Shipping providers Documentation](../../../../commerce-add-ons/shipping-providers/README.md).
+By default, Umbraco Commerce comes with the basic Pickup option. For more information on the integration for different providers, see the [Umbraco Commerce Shipping providers Documentation](../../../../commerce-add-ons/shipping-providers/).
 
 ### Steps to create a shipping method
 
 1. Go to **Shipping Methods** under the Store.
 2. Click **Create Shipping Method**.
-3. Choose the shipping provider from the list. For Example: *DHL*.
-4. Enter a **Name** for the shipping method. For example: *DHL*.
+3. Choose the shipping provider from the list. For Example: _DHL_.
+4. Enter a **Name** for the shipping method. For example: _DHL_.
 5. Configure the shipping method as per your requirements.
 
-![Create Shipping Method](../images/create-shipping-method.png)
+![Create Shipping Method](../../.gitbook/assets/create-shipping-method.png)
 
 6. **Save** the changes.
 
@@ -95,11 +95,11 @@ Setting up a country involves configuring settings related to shipping, payment 
 
 1. Go to **Countries** under the Store.
 2. Click **Create Country**.
-3. Choose an item from the list. For Example: *Create Country from ISO 3166 preset*.
-4. Select a country from the list. For example: *Denmark*.
+3. Choose an item from the list. For Example: _Create Country from ISO 3166 preset_.
+4. Select a country from the list. For example: _Denmark_.
 5. Configure the country details as per your requirements.
 
-![Create Country](../images/create-country.png)
+![Create Country](../../.gitbook/assets/create-country.png)
 
 6. **Save** the changes.
 
@@ -114,7 +114,7 @@ Setting up currency is essential for ensuring that prices are displayed and tran
 3. Enter a **Name** for the currency. For Example: `DKK`.
 4. Configure the currency details as per your requirements.
 
-![Create Currency](../images/create-currency.png)
+![Create Currency](../../.gitbook/assets/create-currency.png)
 
 5. **Save** the changes.
 
@@ -126,10 +126,10 @@ Tax setup is crucial for compliance with local regulations and for ensuring that
 
 1. Go to **Taxes** under the Store.
 2. Click **Create Tax Class**.
-3. Enter a **Name** for the tax class. For Example: *Custom*.
+3. Enter a **Name** for the tax class. For Example: _Custom_.
 4. Configure the tax rates as per your requirements.
 
-![Create Tax Class Rate](../images/create-tax-rate.png)
+![Create Tax Class Rate](../../.gitbook/assets/create-tax-rate.png)
 
 5. **Save** to changes.
 
@@ -142,10 +142,10 @@ Defines the different **Email**, **Print**, and **Export** templates available f
 1. Expand the **Templates** folder under the Store.
 2. Go to **Email Templates**.
 3. Click **Create Email Template**.
-4. Enter a **Name** for the Email template. For Example: *Shipping Notification*.
+4. Enter a **Name** for the Email template. For Example: _Shipping Notification_.
 5. Configure the email details as per your requirements.
 
-![Create Email Template](../images/create-email-template.png)
+![Create Email Template](../../.gitbook/assets/create-email-template.png)
 
 6. **Save** the changes.
 
@@ -153,4 +153,4 @@ Similarly, you can create custom **Print** and **Export** Templates.
 
 ## Setting up Store Defaults
 
-In addition to the above settings, you can configure a series of default settings on a store from the store editor. See the [Stores reference](../../reference/stores/README.md) article for more information.
+In addition to the above settings, you can configure a series of default settings on a store from the store editor. See the [Stores reference](../../reference/stores/) article for more information.

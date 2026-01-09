@@ -1,4 +1,4 @@
-# Installation
+# Installing Umbraco Workflow
 
 In this article, we will cover the steps required to install Umbraco Workflow on your website.
 
@@ -45,7 +45,7 @@ To install via Visual Studio, follow these steps:
 4. Select the appropriate version from the Version drop-down depending on the Umbraco version you are using.
 5. Click Install.
 
-<figure><img src="../images/VS_Installation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/VS_Installation (1).png" alt=""><figcaption></figcaption></figure>
 
 6. Once the package is installed, open the **.csproj** file to make sure the package reference is added:
 
@@ -65,8 +65,8 @@ Once the installation is completed, you will see the following in the Umbraco Ba
 
 ### A Workflow Dashboard
 
-![Workflow dashboard.](../getting-started/images/WorkflowDashboard-ContentSection.png)
+![Workflow dashboard.](../.gitbook/assets/WorkflowDashboard-ContentSection.png)
 
 ### A Workflow section
 
-![Workflow section.](../images/workflow-section.png)
+![Workflow section.](../.gitbook/assets/workflow-section.png)

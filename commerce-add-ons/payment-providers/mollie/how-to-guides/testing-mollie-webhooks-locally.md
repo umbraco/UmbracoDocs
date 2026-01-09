@@ -5,7 +5,7 @@ description: >-
   Webhooks.
 ---
 
-# How to Test Mollie Webhooks Locally
+# How to test Mollie webhooks locally
 
 Mollie uses webhooks to finalize payments, but testing them locally can be challenging because Mollie requires a public-facing URL to send notifications. Local URLs like `http://localhost:3000` or `http://localhost:8080` are not accessible from the internet.
 
@@ -45,7 +45,7 @@ C:\PROGRA~1\ngrok\ngrok.exe http -host-header=rewrite localhost:61191
 
 You can run the batch file at any time to launch ngrok and create a publicly accessible tunnel to your website.
 
-![The ngrok UI.](../../media/ngrok.png)
+![The ngrok UI.](<../../.gitbook/assets/ngrok (1).png>)
 
 {% hint style="info" %}
 When you launch ngrok for the first time, it will ask you to sign in. Enter the credentials you used to sign up. It will remember them from now on.

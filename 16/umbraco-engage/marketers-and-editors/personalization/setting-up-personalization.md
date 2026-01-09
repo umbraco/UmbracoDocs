@@ -25,26 +25,25 @@ To personalize a specific page:
 2. Open the node. You will find all Umbraco Engage content apps on that specific node.
 3. Go to the "**Personalization**" content app:
 
-![Accessing the 'Personalization' content app for a specific node in Umbraco](../../.gitbook/assets/personalization-content-app-v16.png)
+![Accessing the 'Personalization' content app for a specific node in Umbraco](<../../.gitbook/assets/personalization-content-app-v16 (1).png>)
 
 4. Clicking the content app takes you to an overview of all applied personalizations for the page.
 5. Click **Create personalized variant**:
 
-![Overview of applied personalizations with the option to add a personalized variant](../../.gitbook/assets/engage-personalization-add-personalized-variant-v16.png)
+![Overview of applied personalizations with the option to add a personalized variant](<../../.gitbook/assets/engage-personalization-add-personalized-variant-v16 (1).png>)
 
 6. Select the segment from the dropdown for which you want to personalize the experience in the popup.
 7. Provide a descriptive name for the personalization and a short description:
 
-![Popup for defining the segment](../../.gitbook/assets/engage-personalization-add-new-variant.png)
+![Popup for defining the segment](<../../.gitbook/assets/engage-personalization-add-new-variant (1).png>)
 
 8. Click **Save**.
 9. A split-view editor opens up, where you can create a personalized variant on the right side of the original page.
-
 10. Edit specific properties of your Document Type depending on your segmentation setup. To set this up correctly, see the [Setting up the Document Type for splitview editing](../ab-testing/types-of-ab-tests/single-page-ab-test.md) article.
 
 For example, you can specify a different title for this variant:
 
-![Split-view editor with options to create a personalized variant for the selected segment.](../../.gitbook/assets/engage-personalization-splitview-text-v16.png)
+![Split-view editor with options to create a personalized variant for the selected segment.](<../../.gitbook/assets/engage-personalization-splitview-text-v16 (1).png>)
 
 11. Click **Save & Preview** to save and preview your applied personalization.
 
@@ -60,10 +59,10 @@ Congratulations, you've successfully set up your first personalization.
 
 You can also apply personalization to multiple pages at once. This can only be setup via the Engage section in Umbraco. Within that section you can go to the subsection **Personalization** and click on **Apply new personalization**:
 
-![Accessing the Personalization section in Engage](../../.gitbook/assets/engage-personalization-new-personalization-v16.png)
+![Accessing the Personalization section in Engage](<../../.gitbook/assets/engage-personalization-new-personalization-v16 (1).png>)
 
 Here, you can specify to which pages or Document Types you want to apply the personalization. Also you need to specify for which segment this is triggered.
 
-![Setting up Personalization](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages-v16.png)
+![Setting up Personalization](<../../.gitbook/assets/engage-apply-personalization-to-multiple-pages-v16 (1).png>)
 
 With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.

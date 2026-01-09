@@ -14,10 +14,10 @@ You can define a field view in one of two ways:
 
 For field views, place a view file in the `/Views/Shared/Components/FieldView` folder with the following markup.
 
-````csharp
+```csharp
 @model Umbraco.UIBuilder.Web.Models.FieldViewContext
 <!-- Insert your markup here -->
-````
+```
 
 To register the view, pass the name of the view file (excluding the `.cshtml` file extension) to the relevant API method.
 
@@ -25,7 +25,7 @@ To register the view, pass the name of the view file (excluding the `.cshtml` fi
 
 For more complex field views, create a custom view component class that can use dependency injection for any required dependencies. Use the following signature:
 
-````csharp
+```csharp
 // Example
 public class MyComplexFieldViewViewComponent : ViewComponent
 {
@@ -36,24 +36,22 @@ public class MyComplexFieldViewViewComponent : ViewComponent
         return View("Default", model);
     }
 }
-````
+```
 
-{% hint style="info" %}
-The `FieldViewContext` parameter in the `InvokeAsync` method **must** be named `context`.
-{% endhint %}
+\{% hint style="info" %\} The `FieldViewContext` parameter in the `InvokeAsync` method **must** be named `context`. \{% endhint %\}
 
 For the view component, place a `Default.cshtml` file into the `/Views/Shared/Components/MyComplexFieldView` folder with the following markup:
 
-````csharp
+```csharp
 @model Namespace.Of.Model.Returned.By.Custom.ViewComponent
 <!-- Insert your markup here -->
-````
+```
 
 ## The Field View Context
 
 Field view components are passed a `FieldViewContext` object with the following properties:
 
-````csharp
+```csharp
 public class FieldViewContext
 {
     public string ViewName { get; set; }
@@ -61,7 +59,7 @@ public class FieldViewContext
     public string PropertyName { get; set; }
     public object PropertyValue { get; set; }
 }
-````
+```
 
 ## Setting the Field View of a List View Field
 

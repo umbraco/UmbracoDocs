@@ -14,8 +14,8 @@ The biggest difference with personas is that there is a specific order of custom
 
 When installing Umbraco Engage we add one customer journey based on the Google customer journey with the steps **See, Think, Do and Care**.
 
-<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt="Add journey step."><figcaption><p>Add journey step.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1) (1).png" alt="Add journey step."><figcaption><p>Add journey step.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt="Reorder step."><figcaption><p>Reorder step.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt="Reorder step."><figcaption><p>Reorder step.</p></figcaption></figure>
 
 When installing Umbraco Engage we add one customer journey based on the Google customer journey with the steps **See, Think, Do and Care**.

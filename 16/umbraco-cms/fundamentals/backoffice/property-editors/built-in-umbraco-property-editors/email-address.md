@@ -20,7 +20,7 @@ The Email Address Property Editor does not come with any further configuration. 
 
 ## Content Example
 
-![Single email address content example](../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/images/EmailAddress-Content-v10.png)
+![Single email address content example](../built-in-property-editors/images/EmailAddress-Content-v10.png)
 
 ## MVC View Example
 
@@ -45,7 +45,7 @@ The Email Address Property Editor does not come with any further configuration. 
 
 ## Add value programmatically
 
-See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to learn how a value can be added or changed programmatically to an Email-address property. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

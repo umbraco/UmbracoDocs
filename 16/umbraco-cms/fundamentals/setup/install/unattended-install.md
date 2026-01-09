@@ -91,7 +91,7 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="../../../../../17/umbraco-cms/fundamentals/setup/install/images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 
@@ -142,3 +142,7 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 ### Visual Studio
 
 <figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
+
+## References
+
+For running Umbraco in Docker containers, see [Running Umbraco in Docker using Docker Compose](running-umbraco-on-docker-locally.md) article.

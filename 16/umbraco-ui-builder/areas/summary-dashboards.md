@@ -1,5 +1,7 @@
 ---
-description: Configuring a summary dashboard to provide an overview of collections within a section.
+description: >-
+  Configuring a summary dashboard to provide an overview of collections within a
+  section.
 ---
 
 # Summary Dashboards
@@ -8,7 +10,7 @@ A summary dashboard appears automatically at the root of an Umbraco UI Builder s
 
 By summarizing important data and simplifying navigation, the summary dashboard improves content management efficiency.
 
-![Summary Dashboard](../images/dashboard.png)
+![Summary Dashboard](<../.gitbook/assets/dashboard (1).png>)
 
 ## Displaying a Collection on the Summary Dashboard
 
@@ -16,9 +18,9 @@ To display a collection on the summary dashboard, use the `ShowOnSummaryDashboar
 
 ### Configuration Example
 
-````csharp
+```csharp
 collectionConfig.ShowOnSummaryDashboard();
-````
+```
 
 **Code Reference:** `ShowOnSummaryDashboard() : CollectionConfigBuilder<TEntityType>`
 

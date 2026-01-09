@@ -10,13 +10,13 @@ The Multiple Pages test allows you to run A/B tests across multiple pages at onc
 
 The test type **Multiple pages** can be started in the [Engage section](../../introduction/the-umbraco-engage-section.md) and in the [Content App](../../introduction/content-apps.md). The type is selected in the **Test setup** section.
 
-![Setup Test](../../../.gitbook/assets/engage-ab-test-mutliple-pages-v16.png)
+![Setup Test](<../../../.gitbook/assets/engage-ab-test-mutliple-pages-v16 (1).png>)
 
 The test allows you to select one or more pages within Umbraco. On all these pages the A/B Test will render the additional CSS and JavaScript you enter. The CSS and JavaScript must not create any side effects on these pages. This is a manual job that cannot be automated with Umbraco Engage.
 
 Once you have selected the pages you want to test, you can specify one or more variants. For each variant, it is possible to click the Edit button. This will bring up a popup that allows you to write JavaScript or CSS:
 
-![Edit variant using CSS or JavaScript](../../../.gitbook/assets/engage-ab-test-documettype-edit-variant.png)
+![Edit variant using CSS or JavaScript](<../../../.gitbook/assets/engage-ab-test-documettype-edit-variant (1).png>)
 
 In this example, some JavaScript is added to change the page's background color.
 

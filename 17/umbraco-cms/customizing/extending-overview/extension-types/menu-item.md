@@ -199,6 +199,27 @@ export const menuItemManifest: ManifestMenuItem = {
 ```
 {% endcode %}
 
+#### Hiding the Tree Root
+
+To display tree items at the root level without a parent folder node, add `hideTreeRoot: true` to the menu item's meta:
+
+```typescript
+{
+    type: 'menuItem',
+    kind: 'tree',
+    alias: 'My.MenuItem.Tree',
+    meta: {
+        treeAlias: 'My.Tree',
+        menus: ['My.Menu'],
+        hideTreeRoot: true,
+    },
+}
+```
+
+{% hint style="info" %}
+The `hideTreeRoot` property must be set on the menuItem manifest, not the tree manifest.
+{% endhint %}
+
 ## Custom Menu Items
 
 {% hint style="info" %}

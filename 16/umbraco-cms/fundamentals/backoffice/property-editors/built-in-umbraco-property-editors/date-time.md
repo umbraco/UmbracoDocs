@@ -10,7 +10,7 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ## Data Type Definition Example
 
-![Data Type Definiton](images/date-time.png)
+![Data Type Definiton](images/Date-time-picker-v16.png)
 
 There is one setting available for manipulating the DateTime property.
 
@@ -18,7 +18,7 @@ The setting involves defining the format. The default date format in the Umbraco
 
 ## Content Example
 
-![Content Example](../built-in-property-editors/images/date-picker-v8.png)
+![Content Example](images/Date-picker-with-content-v16.png)
 
 ## MVC View Example - displays a datetime
 
@@ -36,7 +36,7 @@ The setting involves defining the format. The default date format in the Umbraco
 
 ## Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 {% hint style="info" %}
 The example below demonstrates how to add values programmatically using a Razor view. However, this is used for illustrative purposes only and is not the recommended method for production environments.

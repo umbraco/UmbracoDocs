@@ -32,13 +32,13 @@ Creating a custom User Group provides a way of managing Users who have access to
 
 Learn more about [Users and User Groups in the Umbraco CMS Documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users).
 
-![Creating a Commerce User Group in Umbraco](../media/v14/creating-user-group.png)
+![Creating a Commerce User Group in Umbraco](../.gitbook/assets/creating-user-group.png)
 
 ## Accessing the Commerce Section
 
 Once created and assigned, you should be able to refresh the backoffice and see that we now have access to the new **Commerce** section.
 
-![Commerce Section in Umbraco Navigation](../media/v14/commerce-section.png)
+![Commerce Section in Umbraco Navigation](../.gitbook/assets/commerce-section.png)
 
 For more information on gaining [access to the store](../tutorials/build-a-store/permissions.md).
 

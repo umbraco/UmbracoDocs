@@ -16,14 +16,37 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
-### [16.3.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.3.0) (December 4th 2025)
+### [16.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 8th 2026)
+* Umbraco CMS dependency updated to 16.4.0
+* Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
+* Preserving line-spacing in text-area input [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
+* Add `DefaultValue` property to `SettingAttribute` [#1411](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1411)
+* Fix folder creation for users with single start folder [#1546](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1546)
+* Updated field and workflow settings handling when default values are defined [#1421](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1421)
+* Load correct icons for all Forms tree items [#1457](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1457)
+* Improve field alias logic and input event handling [#1459](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1459)
+* Improve form reorder sorting experience [#1482](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1482)
+* Match delete icon to CMS delete icon [#1553](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1553)
+* Redesigned Form designer to match CMS content type designer
+* Fix redirect on entity creation and improve save flow
+* Form Info view: improved references UI and layout
+* Update entry filter UI and hide Entries tab for new forms
+* Set `Cache-Control` headers of form uploads to `private`
+
+### [16.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.1) (December 17th 2025)
+* Fix bug with NPM package exports not resolving correctly [#1556](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1556)
+
+### [16.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (December 11th 2025)
+* All items detailed under release candidates for 16.3.0.
+
+### [16.3.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (December 4th 2025)
 * Refactored UX for sorting on form designer [#1458](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1458)
 * Render uploaded files as semantically correct HTML [#1373](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1373)
 * Filter out fields from email workflows when 'Include Sensitive Data' is set to false [#1402](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1402)
 * Normalise the JavaScript `form` parameter to always be the native DOM element [#1477](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1477)
 * Fix console error when using `Forms.PropertyEditorUi.TextWithFieldPicker` in custom FieldType or Workflow [#1547](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1547)
 
-### [16.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.3.0) (November 27th 2025)
+### [16.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (November 27th 2025)
 * Umbraco CMS dependency updated to 16.3.0
 * JavaScript now correctly finds the form config element when it is not adjacent
 * Stop "Save and preview" modal from displaying an interstitial state
@@ -34,10 +57,10 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Fix endless submit loop when reinitializing forms with `umbracoFormsReinitialize` [#1491](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1491)
 * Resolve issues with missing translations in backoffice [#1492](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1492)
 
-### [16.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 30th 2025)
+### [16.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 30th 2025)
 * All items detailed under release candidates for 16.2.0.
 
-### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 27th 2025)
+### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 27th 2025)
 * Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
 * Refine fieldset caption rendering logic [#1466](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1466)
 * Ensure configured stylesheets are loaded in TipTap rich text editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
@@ -45,7 +68,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Add `autocomplete` attribute to Password FieldType [#1211](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1211)
 * Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1417](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1417)
 
-### [16.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aopen%20label%3Arelease%2F16.2.0) (October 20th 2025)
+### [16.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 20th 2025)
 * Hide caret from backoffice folders if there are no child items [#1446](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1446)
 * Fix type in "Display Layout" property description [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
 * Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
@@ -55,6 +78,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Ensure reCAPTCHA error messages are localized [#1370](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1370)
 * Enhance validation checks and field value retrieval when using Advanced Options rules [#1368](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1368)
 * Add JavaScript event for post-load form injection [#1224](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1224)
+* Evenly space conditions fields rather than size based on contents [#1448](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1448)
 
 ### [16.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.0) (August 28th 2025)
 

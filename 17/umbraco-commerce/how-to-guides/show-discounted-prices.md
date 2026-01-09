@@ -2,7 +2,7 @@
 description: Learn how to show discounted prices on product pages in Umbraco Commerce.
 ---
 
-# Showing Discounted Prices
+# Show Discounted Prices on Product Pages
 
 Imagine the following scenario: You’re preparing for a big sale and want to offer a 10% discount on all your products. With Umbraco Commerce’s powerful discount engine, discounts like these can be set up.
 
@@ -18,8 +18,7 @@ The calculate adjusted prices feature was introduced in Umbraco Commerce version
 
 To start, set up an automatic discount with Order Line Amount Reward set to apply a 10% discount to the unit price.
 
-
-![Configure Discount](images/discounted-prices/discount-config.png)
+![Configure Discount](../.gitbook/assets/discount-config.png)
 
 {% hint style="info" %}
 It is important that the discount applies an order line level reward. It is only order line rewards that will form part of the calculation.
@@ -30,7 +29,6 @@ It is important that the discount applies an order line level reward. It is only
 With the discount configured, you can now update your `ProductPage` view to use the new `TryCalculatePriceWithAdjustmentsAsync` extension method.
 
 {% code title="ProductPage.cshtml" %}
-
 ```csharp
 var priceResult = await Model.AsProduct().TryCalculatePriceWithAdjustmentsAsync().ResultOrThrow();
 if (priceResult.EffectiveUnitPrice.WithoutTax != priceResult.UnitPrice.WithoutTax)
@@ -44,7 +42,6 @@ else
     <text>@(await priceResult.UnitPrice.FormattedAsync())</text>
 }
 ```
-
 {% endcode %}
 
 The `TryCalculatePriceWithAdjustmentsAsync` method returns the following model containing the calculation details.
@@ -107,11 +104,11 @@ public class AdjustedProductPriceCalculatorResult
 
 If you are working with a headless solution, the `GET /umbraco/commerce/storefront/api/v1/products` endpoint can be passed the following query parameters:
 
-| Key | Value | Description |
-| -- | -- | -- |
-| `calculateAdjustedPrices` | `boolean` (default: `false`) | Toggles whether to return calculated adjusted prices |
-|  `adjustedPriceCalculationQuantity` | `decimal` (defualt: 1) | Set the quantity to use for the calculation |
-| `adjustedPriceCalculationDiscountCodes` | `string` | Any discount codes to apply for the calculation |
+| Key                                     | Value                        | Description                                          |
+| --------------------------------------- | ---------------------------- | ---------------------------------------------------- |
+| `calculateAdjustedPrices`               | `boolean` (default: `false`) | Toggles whether to return calculated adjusted prices |
+| `adjustedPriceCalculationQuantity`      | `decimal` (defualt: 1)       | Set the quantity to use for the calculation          |
+| `adjustedPriceCalculationDiscountCodes` | `string`                     | Any discount codes to apply for the calculation      |
 
 Returned products will now have an additional `priceWithAdjustments` property containing the same properties as detailed above.
 

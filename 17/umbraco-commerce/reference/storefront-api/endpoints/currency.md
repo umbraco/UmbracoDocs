@@ -1,11 +1,11 @@
-# Currency Endpoints
+# Currency
 
 The Currency API endpoints allow fetching supported currencies from a store.
 
-{% swagger src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/currencies" method="get" %}
-[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
-{% endswagger %}
+{% openapi src="/broken/files/78gbCIN61lMlplqhVvdQ" path="/umbraco/commerce/storefront/api/v1/currencies" method="get" %}
+[Broken link](/broken/files/78gbCIN61lMlplqhVvdQ)
+{% endopenapi %}
 
-{% swagger src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/currency/{idOrAlias}" method="get" %}
-[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
-{% endswagger %}
+{% openapi src="/broken/files/78gbCIN61lMlplqhVvdQ" path="/umbraco/commerce/storefront/api/v1/currency/{idOrAlias}" method="get" %}
+[Broken link](/broken/files/78gbCIN61lMlplqhVvdQ)
+{% endopenapi %}

@@ -16,17 +16,17 @@ It is possible to visualize this external data alongside the Umbraco Engage prof
 
 When this component is registered a new tab will be rendered in the Engage Profile workspace. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
 
-![External profile data tab.](../../.gitbook/assets/External-profile-data-tab-v16.png)
+![External profile data tab.](<../../.gitbook/assets/External-profile-data-tab-v16 (1).png>)
 
 ### Register custom components
 
 {% hint style="info" %}
-Check the [Creating your first extension](/umbraco-cms/tutorials/creating-your-first-extension) and [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) articles for detailed extension-building tutorials.
+Check the [Creating your first extension](../../../../umbraco-cms/tutorials/creating-your-first-extension/) and [Vite Package Setup](../../../../umbraco-cms/customizing/development-flow/vite-package-setup/) articles for detailed extension-building tutorials.
 {% endhint %}
 
 To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The links above demonstrate different approaches to building Umbraco extensions. This demo uses vanilla JavaScript, but you might choose to use Lit or similar.
 
-The following code demonstrates both steps. 
+The following code demonstrates both steps.
 
 1. Add the below code in a JavaScript file:
 

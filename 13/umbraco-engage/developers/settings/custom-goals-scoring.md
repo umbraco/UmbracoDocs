@@ -16,7 +16,7 @@ To set custom goals:
 
 Creating the goal is similar to creating a page view or page event goal. The **goal ID** displayed in the code snippet after saving, as it's needed to trigger the goal from the code.
 
-![goal id](../../.gitbook/assets/engage-custom-goal-ID.png)
+![goal id](<../../.gitbook/assets/engage-custom-goal-ID (1).png>)
 
 ## Trigger goal in C\#
 

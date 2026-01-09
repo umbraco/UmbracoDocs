@@ -12,7 +12,7 @@ To set up a Split URL test, you must create multiple versions of a page. Each ve
 
 You can start a Split URL test from the [Engage section](../../introduction/the-umbraco-engage-section.md) or within the [Content App](../../introduction/content-apps.md). The type is selected in the **Test setup** section.
 
-![Split URL Test](../../../.gitbook/assets/split-url-test.png)
+![Split URL Test](<../../../.gitbook/assets/split-url-test (1).png>)
 
 When you set up the A/B test, you can send 50% of visitors to page A and 50% to page B. This way, you can see which page helps achieve the goal of the test better.
 

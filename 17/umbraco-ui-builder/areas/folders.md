@@ -6,7 +6,7 @@ description: Configuring folders to organise trees in Umbraco UI Builder.
 
 Folders help organize trees in Umbraco UI Builder, allowing you to structure content with nested folders and collections. A folder can exist within a tree or as a sub-folder within another folder. Folders can contain either sub-folders or [Collections](../collections/overview.md).
 
-![Tree with Settings folder](../images/tree.png)
+![Tree with Settings folder](<../.gitbook/assets/tree (1).png>)
 
 ## Defining a Folder
 
@@ -24,11 +24,11 @@ AddFolder(string name, Lambda folderConfig = null) : FolderConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 treeConfig.AddFolder("Settings", folderConfig => {
     ...
 });
-````
+```
 
 ### Using the `AddFolder()` Method with Custom Icon
 
@@ -42,11 +42,11 @@ AddFolder(string name, string icon, Lambda folderConfig = null) : FolderConfigBu
 
 #### Example
 
-````csharp
+```csharp
 treeConfig.AddFolder("Settings", "icon-settings", folderConfig => {
     ...
 });
-````
+```
 
 ## Changing a Folder Alias
 
@@ -64,9 +64,9 @@ SetAlias(string alias) : FolderConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.SetAlias("settings");
-````
+```
 
 ## Changing a Folder Icon Color
 
@@ -82,9 +82,9 @@ SetIconColor(string color) : FolderConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.SetIconColor("blue");
-````
+```
 
 ## Adding a Sub-Folder To a Folder
 
@@ -100,11 +100,11 @@ AddFolder (string name, Lambda folderConfig = null) : FolderConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddFolder("Categories", subFolderConfig => {
     ...
 });
-````
+```
 
 ### Using the `AddFolder()` Method for Sub-Folders with Custom Icon
 
@@ -118,11 +118,11 @@ AddFolder (string name, string icon, Lambda folderConfig = null) : FolderConfigB
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddFolder("Categories", "icon-tags", subFolderConfig => {
     ...
 });
-````
+```
 
 ## Adding a Collection to a Folder
 
@@ -145,7 +145,7 @@ AddCollection<TEntityType>(
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddCollection<Person>(
     p => p.Id, 
     "Person", 
@@ -155,7 +155,7 @@ folderConfig.AddCollection<Person>(
         ...
     }
 );
-````
+```
 
 ### Using the `AddCollection<>()` Method with Custom Icons
 
@@ -178,7 +178,7 @@ AddCollection<TEntityType>(
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddCollection<Person>(
     p => p.Id, 
     "Person", 
@@ -190,4 +190,4 @@ folderConfig.AddCollection<Person>(
         ...
     }
 );
-````
+```

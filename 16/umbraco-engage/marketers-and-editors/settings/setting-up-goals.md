@@ -14,7 +14,7 @@ In the Goals menu, you can set up goals and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
-![Settings dashboard in the Engage section](../../.gitbook/assets/Settings-Goals-v16.png)
+![Settings dashboard in the Engage section](<../../.gitbook/assets/Settings-Goals-v16 (1).png>)
 
 From this page, you can edit existing goals or set up new goals.
 
@@ -37,9 +37,8 @@ You can specify how the goal will be triggered:
 * Via a page event that can be triggered
   *   If you want to trigger a goal based on a GA4 event, use the following information:
 
-      Category: **GA 4 Bridging**
-      Action: **\<your action>**
+      Category: **GA 4 Bridging** Action: **\<your action>**
 * Via an Umbraco Forms submission
 * Via some custom code
 
-<figure><img src="../../.gitbook/assets/settings-create-goal-v16.png" alt=""><figcaption><p>Create a new goal</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/settings-create-goal-v16 (1).png" alt=""><figcaption><p>Create a new goal</p></figcaption></figure>
