@@ -84,7 +84,7 @@ Add the package if any of the following apply:
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
 
 {% hint style="info" %}
-The choice to include `Umbraco.Cms.DevelopmentMode.Backoffice` depends on how you work with models and templates. It is not based on the hosting environment. Using it enables Razor runtime compilation and disables Hot Reload.
+The choice to include `Umbraco.Cms.DevelopmentMode.Backoffice` depends on how you work with models and templates. It is not based in the hosting environment, and using it enables Razor runtime compilation and disables Hot Reload.
 {% endhint %}
 
 *When you do not need the package*?
