@@ -37,3 +37,5 @@ You can also **Filter** the records based on the Document Type, Review Group, Ne
 Additionally, you can adjust the total number of records displayed on a page.
 
 ![Content Reviews PageSize](../images/content-reviews-pagesize-v14.png)
+
+Read the [Content Review Settings](../getting-started/content-review-settings.md) article to learn how to configure reviews.
