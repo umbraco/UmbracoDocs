@@ -85,7 +85,7 @@ For a custom section, use the following configuration:
 
 In a scenario where a specific area is not covered by the implemented localization, you can update it directly in the fluent configuration by using the `LocalizationContext`.
 
-For example, this custom data view:
+See the following custom data view code snippet for an example:
 
 ```csharp
 public class CommentStatusDataViewsBuilder : DataViewsBuilder<Comment>
