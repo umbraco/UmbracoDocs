@@ -27,9 +27,10 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
 6.  Set the publish date and time if you want to change when the transferred content should be published.
 
-    {% hint style="info" %}
-    By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
-    {% endhint %}
+{% hint style="info" %}
+By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
+{% endhint %}
+
 7. Click **Queue** to add the content item to the transfer queue.
 
 <figure><img src="../.gitbook/assets/image.png" alt="Queue for transfer window"><figcaption><p>Queue for transfer window</p></figcaption></figure>
