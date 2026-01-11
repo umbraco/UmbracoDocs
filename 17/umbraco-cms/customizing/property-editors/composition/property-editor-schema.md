@@ -166,7 +166,7 @@ This example creates a custom `DataEditor` that reuses the standard JSON `DataVa
 {% code title="ProductConfigurationDataEditor.cs" %}
 
 ```csharp
-[DataEditor("MyCompany.ProductConfiguration", ValueType = ValueTypes.Json]
+[DataEditor("MyCompany.ProductConfiguration", ValueType = ValueTypes.Json)]
 public class ProductConfigurationDataEditor : DataEditor
 {
 	public ProductConfigurationDataEditor(IDataValueEditorFactory dataValueEditorFactory)
