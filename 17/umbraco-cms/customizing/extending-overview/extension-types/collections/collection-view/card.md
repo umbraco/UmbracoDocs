@@ -26,7 +26,7 @@ Register the Card Collection View in the extension registry with the kind set to
   "conditions": [
     {
       "alias": "Umb.Condition.CollectionAlias",
-      "match": "My.Collection" // Type of entity to display in this collection view
+      "match": "My.Collection" // Collection alias to display this collection view for
     }
   ]
 }
