@@ -30,8 +30,7 @@ export interface UmbCollectionItemModel {
 ```
 
 ## Custom Ref Collection Item
-
-When you have a more complex data model and need to customize how each item is rendered, you can create and register a custom Ref Collection Item.
+If you want to customize how each item is rendered, you can create and register a custom Ref Collection Item.
 
 ### Manifest
 {% code title="umbraco-package.json" %}
