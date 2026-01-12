@@ -40,7 +40,7 @@ If you want to customize how each item is rendered, you can create and register 
   "alias": "My.EntityCollectionItemRef.EntityType",
   "name": "My Entity Type Collection Item Ref",
   "element": "/App_Plugins/my-collection/ref/my-entity-type-collection-item-ref.element.js",
-  forEntityTypes: ["my-entity-type"]
+  "forEntityTypes": ["my-entity-type"]
 }
 ```
 {% endcode %}

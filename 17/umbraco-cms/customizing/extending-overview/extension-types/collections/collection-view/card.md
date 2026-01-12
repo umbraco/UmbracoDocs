@@ -45,7 +45,7 @@ If you want to customize how each item is rendered, you can create and register 
   "alias": "My.EntityCollectionItemCard.EntityType",
   "name": "My Entity Type Collection Item Card",
   "element": "/App_Plugins/my-collection/card/my-entity-type-collection-item-card.element.js",
-  forEntityTypes: ["my-entity-type"]
+  "forEntityTypes": ["my-entity-type"]
 }
 ```
 {% endcode %}

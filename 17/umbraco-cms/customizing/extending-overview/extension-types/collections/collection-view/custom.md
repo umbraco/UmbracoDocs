@@ -18,7 +18,7 @@ When the existing Collection View kinds do not meet your requirements, you can c
   "conditions": [
     {
       "alias": "Umb.Condition.CollectionAlias",
-      "match": "Umb.Collection.Document" // Type of entity to display in this collection view
+      "match": "Umb.Collection.Document" // Collection alias to display this collection view for
     }
   ]
 }
