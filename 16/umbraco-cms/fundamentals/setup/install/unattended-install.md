@@ -142,3 +142,7 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 ### Visual Studio
 
 <figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
+
+## References
+
+For running Umbraco in Docker containers, see [Running Umbraco in Docker using Docker Compose](running-umbraco-on-docker-locally.md) article.

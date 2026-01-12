@@ -103,7 +103,7 @@ The LocationExtractor only processes new pageviews and will not apply retroactiv
 
 If the pageviews contain location information, the table with countries is displayed:
 
-<figure><img src="../../.gitbook/assets/image (1) (4).png" alt="Location table - missing data error"><figcaption><p>Location table with data</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (4) (1).png" alt="Location table - missing data error"><figcaption><p>Location table with data</p></figcaption></figure>
 
 From the country, you can drill down to the city. This will then filter the displayed graph and table data to only display session and pageview information for the selected country. Even though Umbraco Engage does support the storage for county and province, the UI only supports displaying data by country and city.
 
@@ -112,4 +112,3 @@ From the country, you can drill down to the city. This will then filter the disp
 A community package called "[Engage LocationHeaders](https://github.com/hjaltedaniel-umbraco/Umbraco.Community.Engage.LocationHeaders)" is available. It's a lightweight package that enriches analytics and segmentation data with location information extracted from the HTTP headers, based on the sample code above.
 
 The package is designed to work out-of-the-box on **Umbraco Cloud**, using location headers automatically injected by services like **Cloudflare** or **Azure Front Door**. This allows Umbraco Engage to tap into geographic information such as **country**, **region**, and **city**, without the need for client-side geolocation or third-party services.
-

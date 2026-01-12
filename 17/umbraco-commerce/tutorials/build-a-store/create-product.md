@@ -15,9 +15,9 @@ Because any node in Umbraco can be a product, the first step is to create a **Pr
 3. Add an SKU property with the alias `sku` and select the `Text Box Editor`.
 4. Add a Price property with the alias `price` and select the `Price Property Editor` that comes with Umbraco Commerce.
 
-![Umbraco Commerce Property Editors](../images/blendid/commerce_property_editors.png)
+![Umbraco Commerce Property Editors](../../.gitbook/assets/commerce_property_editors.png)
 
-![Product Composition](../images/blendid/product_composition.png)
+![Product Composition](../../.gitbook/assets/product_composition.png)
 
 6. Click **Save** to create the Element Type.
 
@@ -30,11 +30,11 @@ With the product composition created, you can now create a Document Tyoe for a p
 3. Click the **Compositions** button.
 4. Select the `Product` composition you created earlier and **Submit**.
 
-![Umbraco Commerce Property Editors](../images/blendid/product_pick_composition.png)
+![Umbraco Commerce Property Editors](../../.gitbook/assets/product_pick_composition.png)
 
 5. Add any other properties to your Document Type as needed for your product.
 
-![Umbraco Commerce Property Editors](../images/blendid/product_page_doctype.png)
+![Umbraco Commerce Property Editors](../../.gitbook/assets/product_page_doctype.png)
 
 6. Click **Save** to save the changes.
 
@@ -46,7 +46,7 @@ If you haven't already, you'll need to allow the product Document Type to be a c
 2. Navigate to the **Structure** tab.
 3. Add our new Document Type to the **Allowed child node types** property.
 
-![Allow Product as Child Node](../images/blendid/product_allowed_child_node.png)
+![Allow Product as Child Node](../../.gitbook/assets/product_allowed_child_node.png)
 
 4. Click **Save** to save the changes.
 
@@ -55,15 +55,15 @@ If you haven't already, you'll need to allow the product Document Type to be a c
 1. Navigate to the **Content** section of the backoffice.
 2. Create a new content node somewhere beneath the store root using the Document Type you created earlier.
 
-![Create Product](../images/blendid/create_product.png)
+![Create Product](../../.gitbook/assets/create_product.png)
 
 3. Fill in the details of the product, including the SKU and Price properties.
 
-![Product Page Editor](../images/blendid/product_page_editor.png)
+![Product Page Editor](../../.gitbook/assets/product_page_editor.png)
 
 4. Click **Save and Publish** to save the product.
 5. Navigate to the frontend of the site to view the product page.
 
-![Product Page](../images/blendid/product_page.png)
+![Product Page](../../.gitbook/assets/product_page.png)
 
-With the product created, you can now move on to [Implementing a Shopping Cart](./cart.md).
+With the product created, you can now move on to [Implementing a Shopping Cart](cart.md).

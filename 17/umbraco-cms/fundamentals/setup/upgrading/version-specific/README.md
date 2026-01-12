@@ -76,12 +76,16 @@ By moving `InMemoryAuto` to its own package, Umbraco can enable Hot Reload by de
 
 Add the package if any of the following apply:
 
-1. You use `InMemoryAuto` models builder
-    * Explicitly selecting `InMemoryAuto`
-    * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
+1. You use the `InMemoryAuto` models builder:
+    * By explicitly selecting `InMemoryAuto`.
+    * By starting a new project with the default `--models-mode` (which is `InMemoryAuto`, adding the package automatically).
   
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
+
+{% hint style="info" %}
+The choice to include `Umbraco.Cms.DevelopmentMode.Backoffice` depends on how you work with models and templates. It is not based in the hosting environment, and using it enables Razor runtime compilation and disables Hot Reload.
+{% endhint %}
 
 *When you do not need the package*?
 

@@ -16,6 +16,17 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.7.3**](https://www.nuget.org/packages/Umbraco.Engage/13.7.3) **(January 8th 2026)**
+
+* Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
+* Added 'Other' Heatmap option in Analytics for miscellaneous device types.
+
+[**13.7.2**](https://www.nuget.org/packages/Umbraco.Engage/13.7.2) **(December 16th 2025)**
+
+* Implements additional validation checks before assigning the visitor cookie, improving cookie handling reliability across various request scenarios.
+* Resolves an issue where headless API responses returned absolute URLs instead of relative paths for URL paths.
+* Resolves datepicker locale inconsistency across all date picker components.
+
 [**13.7.1**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(November 7th 2025)**
 
 * Fixed broken User-Agent check for headless bot detection.
@@ -23,12 +34,12 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 [**13.7.0**](https://www.nuget.org/packages/Umbraco.Engage/13.7.0) **(October 27th 2025)**
 
-* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation. This minor update has a minimal dependency on `Umbraco.Cms.Web.BackOfice` ≥ 13.11.&#x20;
+* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation. This minor update has a minimal dependency on `Umbraco.Cms.Web.BackOfice` ≥ 13.11.
   * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details. `umbracoNaviHide`, `umbracoRedirectUrl` , and `umbracoUrlAlias` are excluded by default.
 
 [**13.6.2**](https://www.nuget.org/packages/Umbraco.Engage/13.6.2) **(October 27th 2025)**
 
-* Reverted minimal dependency  `Umbraco.Cms.Web.BackOffice` to 13.0.0 to not introduce dependency changes in patch versions of Engage. This also reverts the `UmbracoUrlAlias` solution previously resolved.
+* Reverted minimal dependency `Umbraco.Cms.Web.BackOffice` to 13.0.0 to not introduce dependency changes in patch versions of Engage. This also reverts the `UmbracoUrlAlias` solution previously resolved.
 * Resolved Analytics 'Visitors' tab to now correctly reflect New and Returning Visitors based on real-time data instead of nightly reporting generation.
 * Resolved various other smaller bugs and tweaks.
 
@@ -36,7 +47,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 * Added a "Scoring Overview" to the Personalization section, allowing you to export a list of all Content Nodes that have Personas and/or Customer Journey Scores configured.
 * Resolved a breaking issue regarding content segments introduced in Umbraco CMS 13.11's VariationContexts.
-* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation.&#x20;
+* Resolved `UmbracoUrlAlias` and other reserved routing property aliases from breaking segmentation.
   * A new String Array field has been added to the configuration to allow additional property aliases to be excluded from segmentation. See [configuration.md](developers/settings/configuration.md "mention") for more details. `umbracoNaviHide`, `umbracoRedirectUrl` , and `umbracoUrlAlias` are excluded by default.
 * Resolved an issue with A/B test baseline conversion rates dropping to 0% when creating a new test, which prevented the A/B test from starting.
 * Resolved an issue with the Headless **TrackPageview Server API** where URLs were incorrectly matched to the CMS hostname URL instead of the API body-provided URL.
@@ -73,7 +84,7 @@ WHERE v.externalId = '11111111-1111-1111-1111-111111111111';
 
 [**13.5.1**](https://www.nuget.org/packages/Umbraco.Engage/13.5.1) **(June 30th 2025)**
 
-* Resolved Data Generation issue involving duplicate primary keys in the  `umbracoEngageReportingDimCampaign` table.
+* Resolved Data Generation issue involving duplicate primary keys in the `umbracoEngageReportingDimCampaign` table.
 * Resolved Visitor Segment Settings being created for invalid or unknown visitors.
 * Removed legacy `umbracoEngage.analytics.ga-bridge.js` script.
 

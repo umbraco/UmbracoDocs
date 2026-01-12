@@ -6,7 +6,7 @@ description: Learn how to configure filterable properties in Umbraco UI Builder.
 
 Umbraco UI Builder dynamically constructs a filter dialog by choosing appropriate editor views based on basic property configurations. Properties of numeric or date types become range pickers, enums become select/checkbox lists, and other properties are text input filters.
 
-![Filterable Properties](../images/filterable_properties.png)
+![Filterable Properties](../.gitbook/assets/filterable_properties.png)
 
 ## Defining Filterable Properties
 
@@ -24,11 +24,11 @@ AddFilterableProperty(Lambda filterablePropertyExpression, Lambda filterConfig =
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddFilterableProperty(p => p.FirstName, filterConfig => filterConfig 
     // ...
 );
-````
+```
 
 ## Changing the Label of a Filterable Property
 
@@ -44,9 +44,9 @@ SetLabel(string label) : FilterablePropertyConfigBuilder<TEntityType, TValueType
 
 #### Example
 
-````csharp
+```csharp
 filterConfig.SetLabel("First Name");
-````
+```
 
 ## Adding a Description to a Filterable Property
 
@@ -62,9 +62,9 @@ SetDescription(string description) : FilterablePropertyConfigBuilder<TEntityType
 
 #### Example
 
-````csharp
+```csharp
 filterConfig.SetDescription("The first name of the person");
-````
+```
 
 ## Defining Basic Options for a Filterable Property
 
@@ -80,12 +80,12 @@ SetOptions(IDictionary<TValueType, string> options) : FilterablePropertyConfigBu
 
 #### Example
 
-````csharp
+```csharp
 filterConfig.SetOptions(new Dictionary<string, string> {
     { "Option1", "Option One" },
     { "Option2", "Option Two" }
 });
-````
+```
 
 ## Defining Options with Custom Compare Clauses for a Filterable Property
 
@@ -101,9 +101,9 @@ AddOption(object key, string label, Lambda compareExpression) : FilterableProper
 
 #### Example
 
-````csharp
+```csharp
 filterConfig.AddOption("Option1", "Option One", (val) => val != "Option Two");
-````
+```
 
 ## Configuring the Mode of a Filterable Property
 
@@ -121,6 +121,6 @@ SetMode(FilterMode mode) : FilterablePropertyConfigBuilder<TEntityType, TValueTy
 
 #### Example
 
-````csharp
+```csharp
 filterConfig.SetMode(FilterMode.MultipleChoice);
-````
+```

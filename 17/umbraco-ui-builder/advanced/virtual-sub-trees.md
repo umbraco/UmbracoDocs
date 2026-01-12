@@ -2,11 +2,11 @@
 description: Configuring virtual sub trees in Umbraco UI Builder.
 ---
 
-# Virtual SubTrees
+# Virtual Sub Trees
 
 Virtual subtrees inject an Umbraco UI Builder tree structure into another Umbraco tree at a specified location, acting as child nodes of the injection point. They extend built-in or third-party package trees with additional features. For example a "loyalty points" program for an e-commerce site can inject related database tables into a Commerce store tree, making management more intuitive.
 
-![Virtual sub tree injected into a Commerce store tree](../images/virtual-sub-tree.png)
+![Virtual sub tree injected into a Commerce store tree](../.gitbook/assets/virtual-sub-tree.png)
 
 ## Defining Virtual SubTrees
 
@@ -24,11 +24,11 @@ AddVirtualSubTree(string sectionAlias, string treeAlias, Lambda visibilityExpres
 
 #### Example
 
-````csharp
+```csharp
 withTreeConfig.AddVirtualSubTree(ctx => ctx.Source.Id == 1056, contextAppConfig => {
     ...
 });
-````
+```
 
 ### Using the `AddVirtualSubTreeBefore()` Method
 
@@ -42,11 +42,11 @@ AddVirtualSubTreeBefore(string sectionAlias, string treeAlias, Lambda visibility
 
 #### Example
 
-````csharp
+```csharp
 withTreeConfig.AddVirtualSubTreeBefore(ctx => ctx.Source.Id == 1056, treeNode => treeNode.Name == "Settings", contextAppConfig => {
     ...
 });
-````
+```
 
 ### Using the `AddVirtualSubTreeAfter()` Method
 
@@ -60,11 +60,11 @@ AddVirtualSubTreeAfter(string sectionAlias, string treeAlias, Lambda visibilityE
 
 #### Example
 
-````csharp
+```csharp
 withTreeConfig.AddVirtualSubTreeAfter(ctx => ctx.Source.Id == 1056, treeNode => treeNode.Name == "Settings", contextAppConfig => {
     ...
 });
-````
+```
 
 ## Control the Virtual SubTrees Inject Location
 
@@ -72,7 +72,7 @@ Control the injection location by passing a visibility expression to the `AddVir
 
 The visibility expression receives a `VirtualSubTreeFilterContext` argument with relevant contextual information. The information includes the current node being rendered, alongside a list of the current user's user groups for permission-based visibility control. It also includes access to an `IServiceProvider` for dependency resolution.
 
-````csharp
+```csharp
 public class VirtualSubTreeFilterContext
 {
     public NodeContext Source { get; }
@@ -87,11 +87,11 @@ public class NodeContext
     public string SectionAlias { get; }
     public FormCollection QueryString { get; }
 }
-````
+```
 
 ### Example: Filter Injection by Document Type
 
-````csharp
+```csharp
 withTreeConfig.AddVirtualSubTree(ctx =>
     {
         using var umbracoContextRef = ctx.ServiceProvider.GetRequiredService<IUmbracoContextFactory>().EnsureUmbracoContext();
@@ -104,13 +104,13 @@ withTreeConfig.AddVirtualSubTree(ctx =>
     virtualNodeConfig => virtualNodeConfig
         ...
 );
-````
+```
 
 ## Control the Position of the injected Virtual SubTrees
 
-The position of a virtual subtree within the child nodes of the injection node is controlled by using one of the  `AddVirtualSubTreeBefore` or `AddVirtualSubTreeAfter` methods. These methods need to be on the root level `UIBuilderConfigBuilder` instance. The match expression identifies the node for insertion. This expression passes a single `TreeNode` argument to determine the position. It also requires a `boolean` return value to indicate the relevant location has been found.
+The position of a virtual subtree within the child nodes of the injection node is controlled by using one of the `AddVirtualSubTreeBefore` or `AddVirtualSubTreeAfter` methods. These methods need to be on the root level `UIBuilderConfigBuilder` instance. The match expression identifies the node for insertion. This expression passes a single `TreeNode` argument to determine the position. It also requires a `boolean` return value to indicate the relevant location has been found.
 
-````csharp
+```csharp
 public class TreeNode
 {
     public object Id { get; }
@@ -123,13 +123,13 @@ public class TreeNode
     public IDictionary<string, object> AdditionalData { get; }
     ...
 }
-````
+```
 
 Below you can find an example of positioning a subtree after a node with the alias "settings":
 
-````csharp
+```csharp
 treeNode => treeNode.alias == "settings"
-````
+```
 
 ## Configuring a Virtual SubTree
 
@@ -137,9 +137,9 @@ Virtual subtrees use the `Tree` config builder API including support for folders
 
 ## Inject Virtual Subtrees into Third-Party Trees
 
-Out of the box, Umbraco UI Builder supports injecting subtrees into the core content, media, members, and member group trees. It also includes third-party support for [Umbraco Commerce](../../umbraco-commerce/README.md) settings and commerce trees. To inject into additional trees, implement an `ITreeHelper` to extract necessary data. The tree helper consists of a tree alias for which the tree helper is. It includes methods to correctly identify the full parent path, a unique ID for a given node ID, and to resolve the actual entity ID. The entity ID should be used for the foreign key collection values.
+Out of the box, Umbraco UI Builder supports injecting subtrees into the core content, media, members, and member group trees. It also includes third-party support for [Umbraco Commerce](../../umbraco-commerce/) settings and commerce trees. To inject into additional trees, implement an `ITreeHelper` to extract necessary data. The tree helper consists of a tree alias for which the tree helper is. It includes methods to correctly identify the full parent path, a unique ID for a given node ID, and to resolve the actual entity ID. The entity ID should be used for the foreign key collection values.
 
-````csharp
+```csharp
 public interface ITreeHelper
 {
     string TreeAlias { get; }
@@ -147,12 +147,12 @@ public interface ITreeHelper
     object GetEntityId(string uniqueId);
     string GetPath(string uniqueId);
 }
-````
+```
 
 Once you have defined a tree helper, register the DI container in your startup class.
 
-````csharp
+```csharp
 builder.Services.AddSingleton<ITreeHelper, MyCustomTreeHelper>();
-````
+```
 
 Once registered, any virtual subtree assigned to the helper’s tree alias will use it to locate required data.

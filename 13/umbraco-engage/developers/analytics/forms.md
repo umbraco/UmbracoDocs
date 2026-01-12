@@ -39,7 +39,7 @@ https://**yoursite.com**/umbraco/#Engage/profiles/profiles/insights?id=**[[visit
 
 The URL above is a link to your website, including a visitor ID. By using a URL like this you can click directly through to view the visitor profile from Forms workflows. This includes emails, Slack messages as well as exported Excel data.
 
-![Visitor Form Submissions - Design view](../../.gitbook/assets/engage-analytics-forms-visitor-id2.png)
+![Visitor Form Submissions - Design view](<../../.gitbook/assets/engage-analytics-forms-visitor-id2 (1).png>)
 
 ## Disable Umbraco Forms tracking
 

@@ -14,13 +14,13 @@ After logging in to Umbraco, you can see the Engage section next to the other ma
 
 If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
-![Engage section in the Backoffice](../.gitbook/assets/engage-engage-section.png)
+![Engage section in the Backoffice](<../.gitbook/assets/engage-engage-section (1).png>)
 
 ### 2. Engage Content Apps
 
 When editing a page within Umbraco, you should be able to see the following Content App on the top right of the page:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Umbraco Engage Content Apps</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Umbraco Engage Content Apps</p></figcaption></figure>
 
 If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
@@ -30,7 +30,7 @@ Is the **Umbraco Engage Cockpit tool** visible on the front end of your site **a
 
 No? Ensure you are logged in to Umbraco and that the [Cockpit Partial view](../getting-started/for-developers/cockpit.md) is added automatically in your main template.
 
-![Umbraco Engage Cockpit tool](../.gitbook/assets/engage-cockpit-v16.png)
+![Umbraco Engage Cockpit tool](<../.gitbook/assets/engage-cockpit-v16 (1).png>)
 
 ### 4. Cockpit Client-Side Data
 
@@ -38,17 +38,17 @@ Can you see client-side data such as **scroll depth** & **total time** on pages 
 
 No? Ensure you have [added the client-side tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) to your main template.
 
-![Cockpit Client-Side Data](../.gitbook/assets/engage-cockpit-2.png)
+![Cockpit Client-Side Data](<../.gitbook/assets/engage-cockpit-2 (1).png>)
 
 ### 5. Umbraco Forms
 
 Go to a form and add a new question. Do you see this option?
 
-![Analytics Visitor ID field in Forms](../.gitbook/assets/engage-analytics-form-field.png)
+![Analytics Visitor ID field in Forms](<../.gitbook/assets/engage-analytics-form-field (1).png>)
 
 Go to **Engage** -> **Settings** -> **Create a new goal**. Do you see the following option called **Umbraco Forms Submission**?
 
-![Umbraco Forms Submission option in Goal dropdown](../.gitbook/assets/engage-forms-goal-type.png)
+![Umbraco Forms Submission option in Goal dropdown](<../.gitbook/assets/engage-forms-goal-type (1).png>)
 
 If you see both options, Umbraco Forms has been configured correctly. If not, ensure that your development team has installed the additional [Umbraco.Engage.Forms NuGet package](https://www.nuget.org/packages/Umbraco.Engage.Forms).
 
@@ -68,7 +68,7 @@ There is also a [community package](https://github.com/hjaltedaniel-umbraco/Umbr
 
 Once set up, you will see analytics for countries like this below:
 
-![Locations](../.gitbook/assets/analytics-locations-v16.png)
+![Locations](<../.gitbook/assets/analytics-locations-v16 (1).png>)
 
 ### 8. Set up IP Filters
 
@@ -76,7 +76,7 @@ Confirm that the IP of your company/office building has been set to be excluded 
 
 You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure it is in the list of IPs by navigating to **Engage** -> **Settings** -> **IP Filters**.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### 9. Reload after Cookie consent
 
@@ -90,7 +90,7 @@ If you have performed all the steps and do not see Analytics data within Umbraco
 * Refresh the page while the developer tools are open.
 * Look for a POST request being made to `umbraco/engage/pagedata/ping` in the Network Tab of requests
 
-![Network tab of your browser](../.gitbook/assets/engage-troubleshoot-missing-data.png)
+![Network tab of your browser](<../.gitbook/assets/engage-troubleshoot-missing-data (1).png>)
 
 Only '**real**' visitors will be tracked and any information we determine to be from a bot is discarded. The following steps are taken to report a page view:
 

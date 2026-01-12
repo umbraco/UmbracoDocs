@@ -6,7 +6,7 @@ description: Configuring the list view of a collection in Umbraco UI Builder.
 
 A list view displays a collection entity in a list format and includes features like pagination, custom data views, searching, and bulk actions.
 
-![A collection list view](../images/listview.png)
+![A collection list view](../.gitbook/assets/listview.png)
 
 ## Configuring a List View
 
@@ -24,11 +24,11 @@ ListView(Lambda listViewConfig = null) : ListViewConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.ListView(listViewConfig => {
     ...
 });
-````
+```
 
 ## Adding a Field to the List View
 
@@ -44,11 +44,11 @@ AddField(Lambda propertyExpression, Lambda fieldConfig = null) : ListViewFieldCo
 
 #### Example
 
-````csharp
+```csharp
 listViewConfig.AddField(p => p.FirstName, fieldConfig => {
     ...
 });
-````
+```
 
 ## Changing the Heading of a Field
 
@@ -64,9 +64,9 @@ SetHeading(string heading) : ListViewFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetHeading("First Name");
-````
+```
 
 ## Formatting the Value of a Field
 
@@ -82,9 +82,9 @@ SetFormat(Lambda formatExpression) : ListViewFieldConfigBuilder<TEntityType, TVa
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetFormat((v, p) => $"{v} years old");
-````
+```
 
 ## Setting the View of a Field
 
@@ -102,9 +102,9 @@ SetView(string viewComponentName) : ListViewFieldConfigBuilder<TEntityType, TVal
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetView("ImageFieldView");
-````
+```
 
 ### Using the `SetView<TView>()` Method
 
@@ -118,9 +118,9 @@ SetView<TView>() : ListViewFieldConfigBuilder<TEntityType, TValueType>
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetView<ImageFieldView>();
-````
+```
 
 ## Setting the Visibility of a Field
 
@@ -136,9 +136,9 @@ SetVisibility(Predicate<ListViewFieldVisibilityContext> visibilityExpression) : 
 
 #### Example
 
-````csharp
+```csharp
 fieldConfig.SetVisibility(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
-````
+```
 
 ## Changing the Page Size
 
@@ -154,6 +154,6 @@ SetPageSize(int pageSize) : ListViewConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 listViewConfig.SetPageSize(20);
-````
+```

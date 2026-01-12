@@ -97,7 +97,7 @@ The following steps guide you through configuring the different parts of the tes
 2. Select which **Project** the test is a part of or create a new project.
 3. Give the test a **Description** ideally focused on the hypothesis the test is based on.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-setup-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-1 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Setup Test
 
@@ -110,7 +110,7 @@ The following steps guide you through configuring the different parts of the tes
 3. Give the new variant a name.
    * You can edit the variants at a later point.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-setup-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-2 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Settings
 
@@ -119,7 +119,7 @@ The following steps guide you through configuring the different parts of the tes
 3. Change the Expected conversion rate under **Advanced settings** if relevant.
 4. **Save** the test.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-setup-3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-3 (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Select **Next step** to get an overview of the test.
 
@@ -138,11 +138,11 @@ It is now time to start building the variant(s). This is primarily done by addin
 3. Select the test.
 4. Click on **Edit** next to the variant you want to make changes to.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant (1).png" alt=""><figcaption></figcaption></figure>
 
 You can now edit the content item in split view. Only fields that have been configured for segmentation can be edited. If you leave a field blank, it will use the values from the original version.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (1).png" alt=""><figcaption></figcaption></figure>
 
 1. **Preview** the changes before publishing.
 2. **Save and publish** the content variant.
@@ -157,7 +157,7 @@ You can now edit the content item in split view. Only fields that have been conf
 4. Click on **Edit** next to the variant you want to make changes to.
 5. Click on the **Edit variant** button below the Page Title.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content-customcode.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content-customcode (1).png" alt=""><figcaption></figcaption></figure>
 
 6. Add an optional description to the variant.
 7. Add custom CSS and JavaScript.
@@ -177,7 +177,7 @@ You can now edit the content item in split view. Only fields that have been conf
 3. Add an optional description to the variant.
 4. Add custom CSS and JavaScript.
 
-<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom (1).png" alt=""><figcaption></figcaption></figure>
 
 5. **Preview** the changes.
 6. **Save** the changes.

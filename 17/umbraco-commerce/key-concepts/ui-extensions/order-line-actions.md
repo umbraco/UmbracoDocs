@@ -10,8 +10,7 @@ Available from Umbraco Commerce 15.1.0
 
 Order Line Actions allow you to display buttons against each order line of a cart/order enabling you to perform custom actions per order line.
 
-
-![Custom Order Line Action](../../media/v14/order-line-action.png)
+![Custom Order Line Action](../../.gitbook/assets/order-line-action.png)
 
 ## Registering an Order Line Action
 
@@ -39,13 +38,12 @@ extensionRegistry.register(manifests);
 
 Each entry must have a type of `ucOrderLineAction` along with a unique `alias` and `name`. Unless you wish to override the button, the `kind` key should be set to `default`. An `api` key that imports the implementation of the `UcOrderLineActionApi` interface, should be defined.
 
-
 A `meta` entry provides configuration options for order line actions:
 
-| Name | Description |  
-| -- | -- |
+| Name    | Description                                                                  |
+| ------- | ---------------------------------------------------------------------------- |
 | `label` | A label for this action (supports the `#` prefix localization string syntax) |
-| `icon` | In icon to display for the action |
+| `icon`  | In icon to display for the action                                            |
 
 ## The Order Line Action API
 
@@ -62,7 +60,6 @@ export interface UcOrderLineActionApi extends UmbApi {
 ```
 
 This provides order line action implementations with access to the defined `manifest` and contextual information via the `storeId`, `orderId` and `orderLineId` properties. It expects the implementation of an `execute` method to act.
-
 
 An example implementation would be
 

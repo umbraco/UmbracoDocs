@@ -7,7 +7,7 @@ description: Learn how to implement product bundles in Umbraco Commerce.
 Product bundles are Umbraco Commerces' way of creating composite products. This feature allows you to create a product that consists of multiple sub-products. The sub-products can be optional or mandatory, and you can define the quantity of each sub-product. The final order line will be a composite order line of the selected primary product and its sub-product options.
 
 {% hint style="info" %}
-This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/README.md). It is assumed that your store is set up in a similar structure.
+This guide is not a direct follow-on from the [getting started tutorial](../tutorials/build-a-store/). It is assumed that your store is set up in a similar structure.
 {% endhint %}
 
 ## Product Setup
@@ -17,15 +17,15 @@ To create a product bundle, you need to create a primary product with multiple s
 1. Navigate to the Settings section in the Umbraco backoffice.
 2. Create a Document Type for your primary product.
 
-![Bundle Document Type](images/product-bundles/bundle-document-type.png)
+![Bundle Document Type](../.gitbook/assets/bundle-document-type.png)
 
 2. Create a Document Type for your sub-products.
 
-![Product Variant Details](images/product-bundles/product-variant-details.png)
+![Product Variant Details](../.gitbook/assets/product-variant-details.png)
 
 3. Update your primary product Document Type to allow child nodes of the sub-product type.
 
-![Product Variant Children](images/product-bundles/bundle-document-type-structure.png)
+![Product Variant Children](../.gitbook/assets/bundle-document-type-structure.png)
 
 ## Content Configuration
 
@@ -35,7 +35,7 @@ The bundle content tree will contain a bundle page with variant elements as chil
 2. Create a new product page with the primary product Document Type.
 3. Add variant elements as children.
 
-![Product Variant Children](images/product-bundles/product-variant-children.png)
+![Product Variant Children](../.gitbook/assets/product-variant-children.png)
 
 ## Frontend Configuration
 
@@ -44,7 +44,6 @@ The base product page will display the product details with a list of variants t
 Add the following to your product page template.
 
 {% code title="ProductPage.cshtml" %}
-
 ```csharp
 @using (Html.BeginUmbracoForm("AddToCart", "CartSurface", FormMethod.Post))
 {
@@ -82,10 +81,9 @@ Add the following to your product page template.
     </div>
 }
 ```
-
 {% endcode %}
 
-![Product with Bundle](images/product-bundles/product-bundles.png)
+![Product with Bundle](../.gitbook/assets/product-bundles.png)
 
 ## Add to Cart Updates
 
@@ -94,7 +92,6 @@ With the frontend setup, you must update the add-to-cart functionality to handle
 1. Update the `AddToCartDto` object to include the bundle product reference and an array of variant product references.
 
 {% code title="AddToCartDto.cs" %}
-
 ```csharp
 public class AddToCartDto
 {
@@ -103,13 +100,11 @@ public class AddToCartDto
     public string[] BundleItemReferences { get; set; }
 }
 ```
-
 {% endcode %}
 
 2. Update the `AddToCart` method on your `CartSurfaceController` to handle the bundle product and its sub-products.
 
 {% code title="CartSurfaceController.cs" %}
-
 ```csharp
 [HttpPost]
 public async Task<IActionResult> AddToCart(AddToCartDto postModel)
@@ -158,7 +153,6 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
     return RedirectToCurrentUmbracoPage();
 }
 ```
-
 {% endcode %}
 
 When a user adds a product including variants to the cart, the order is created with the primary product and its sub-products combined.
@@ -167,4 +161,4 @@ When a user adds a product including variants to the cart, the order is created 
 
 When an order includes a bundled product, the order editor will display the primary product and its sub-products as a composite order line.
 
-![Order Editor](images/product-bundles/order-editor.png)
+![Order Editor](<../.gitbook/assets/order-editor (1).png>)

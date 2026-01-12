@@ -42,17 +42,17 @@ With these configuration files, you can customize the columns displayed in the C
 
 The following properties are supported:
 
-| Name          | Description                                                                                                  |
-| ------------- | ------------------------------------------------------------------------------------------------------------ |
-| `alias`       | The alias of the Order property to use                                                                       |
-| `label`       | A label to display as the table column header                                                                |
-| `align`       | Sets the alignment of the column. Can be `left` (default), `center` or `right`                               |
-| `placeholder` | The placeholder value to display if there is no Order property value                                        |
+| Name          | Description                                                                                                |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| `alias`       | The alias of the Order property to use                                                                     |
+| `label`       | A label to display as the table column header                                                              |
+| `align`       | Sets the alignment of the column. Can be `left` (default), `center` or `right`                             |
+| `placeholder` | The placeholder value to display if there is no Order property value                                       |
 | `template`    | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}` |
 
 Properties configured to display in the list view will appear in order, after the cart name column.
 
-![Order List Properties](../media/cart\_list\_properties.png)
+![Order List Properties](../.gitbook/assets/cart_list_properties.png)
 
 ## Cart/Order Editor Config Files
 
@@ -117,7 +117,7 @@ The Order Line config block configures which Order Line properties should be vie
 | `alias`                  | The alias of the Order Line property                                                                                               |
 | `label`                  | A friendly label to display for this property in the editor interface                                                              |
 | `description`            | A friendly description to display for this property in the editor interface                                                        |
-| `template`               | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}`                         |                                                        |
+| `template`               | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}`                         |
 | `isReadOnly`             | Sets the property as read only and so doesn't provide a means of editing the value in the editor interface (Default: `false`)      |
 | `showInOrderLineSummary` | Sets whether to display this property in the Order Lines summary next to the `SKU` in the Order editor interface (Default: `true`) |
 | `view`                   | Sets the name or path of a Property Editor to use when editing this property                                                       |
@@ -125,11 +125,11 @@ The Order Line config block configures which Order Line properties should be vie
 
 Properties configured to display in the Order Line Summary will be displayed inline next to the "Order Lines `SKU`" as follows:
 
-![Order Line Summary](../media/order\_line\_summary.png)
+![Order Line Summary](../.gitbook/assets/order_line_summary.png)
 
 Where there are editable Order Line Properties for an Order Line, a pencil icon is displayed next to the Order Lines Product name which when clicked will open out the Order Line Property editor interface for that Order Line.
 
-![Order Line Property Editing](../media/order\_line\_property\_editing.png)
+![Order Line Property Editing](../.gitbook/assets/order_line_property_editing.png)
 
 ### Customer Config Options
 
@@ -158,11 +158,11 @@ For each property, the following config options are available:
 
 A fully configured Customer config block will produce a Customer summary like so:
 
-![Order Line Property Editing](../media/order\_customer\_info.png)
+![Order Line Property Editing](../.gitbook/assets/order_customer_info.png)
 
 Clicking the Customer Details `Edit` button will display an editing interface like so:
 
-![Order Line Property Editing](../media/order\_customer\_info\_editor.png)
+![Order Line Property Editing](../.gitbook/assets/order_customer_info_editor.png)
 
 ### Billing Config Options
 
@@ -192,11 +192,11 @@ For each property, the following config options are available:
 
 A fully configured Billing config block will produce a Billing Address summary like so:
 
-![Order Billing Address Summary](../media/order\_billing\_address\_summary.png)
+![Order Billing Address Summary](../.gitbook/assets/order_billing_address_summary.png)
 
 Clicking the Customer Details `Edit` button will display an editing interface like so:
 
-![Order Billing Address Editor](../media/order\_billing\_address\_editor.png)
+![Order Billing Address Editor](../.gitbook/assets/order_billing_address_editor.png)
 
 ### Shipping Config Options
 
@@ -239,19 +239,19 @@ For the `sameAsBilling` property, the following config options are available:
 
 A fully configured Shipping config block, where the `sameAsBilling` property is `false`, will produce a Shipping Address summary like so:
 
-![Order Shipping Address Summary](../media/order\_shipping\_address\_summary.png)
+![Order Shipping Address Summary](../.gitbook/assets/order_shipping_address_summary.png)
 
 Where as, a fully configured Shipping config block, where the `sameAsBilling` property is `true`, will produce a Shipping Address summary like so:
 
-![Order Shipping Address Summary - Same as Billing](../media/order\_shipping\_address\_summary\_same\_as\_billing.png)
+![Order Shipping Address Summary - Same as Billing](../.gitbook/assets/order_shipping_address_summary_same_as_billing.png)
 
 Clicking the Customer Details `Edit` button will display an editing interface like so:
 
-![Order Shipping Address Editor](../media/order\_shipping\_address\_editor.png)
+![Order Shipping Address Editor](../.gitbook/assets/order_shipping_address_editor.png)
 
 If the `sameAsBilling` toggle switch is toggled, the appropriate Cart/Order property will be toggled between the configured Properties true/false values, and the editor interface will be collapsed like so:
 
-![Order Shipping Address Editor - Same as Billing](../media/order\_shipping\_address\_editor\_same\_as\_billing.png)
+![Order Shipping Address Editor - Same as Billing](../.gitbook/assets/order_shipping_address_editor_same_as_billing.png)
 
 ### Notes Config Options
 
@@ -274,7 +274,7 @@ For each property the following config options are available:
 
 A fully configured Notes config block will produce an editor interface like so:
 
-![Order Notes Editor](../media/order\_notes\_editor.png)
+![Order Notes Editor](../.gitbook/assets/order_notes_editor.png)
 
 ### Additional Info Config Options
 
@@ -285,18 +285,18 @@ The Additional Info config block configures any other Cart/Order properties you 
 | `alias`       | The alias of the Order property                                                                                               |
 | `label`       | A friendly label to display for this property in the editor interface                                                         |
 | `description` | A friendly description to display for this property in the editor interface                                                   |
-| `template`    | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}`                    | 
+| `template`    | An angular template to use for rendering the property value. Defaults to `{{ properties['alias'].value }}`                    |
 | `isReadOnly`  | Sets the property as read only and so doesn't provide a means of editing the value in the editor interface (Default: `false`) |
 | `view`        | Sets the name or path of a Property Editor to use when editing this property                                                  |
 | `config`      | Defines a JSON config for the Property Editor if required                                                                     |
 
 A fully configured Additional Info config block will produce an Additional Info summary interface like so:
 
-![Additional Info Summary](../media/order\_additional\_info\_summary.png)
+![Additional Info Summary](../.gitbook/assets/order_additional_info_summary.png)
 
 Clicking the Additional Info `Edit` button will display an editing interface like so:
 
-![Additional Info Editor](../media/order\_additional\_info\_editor.png)
+![Additional Info Editor](../.gitbook/assets/order_additional_info_editor.png)
 
 ### Custom Cart/Order Editor View
 

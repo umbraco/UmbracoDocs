@@ -1,6 +1,6 @@
 # Upgrading Umbraco Commerce
 
-This article shows how to manually upgrade Umbraco Commerce to run the latest version.
+This article shows how to manually upgrade Umbraco Commerce to run the latest version.\
 When upgrading Umbraco Commerce, be sure to also consult the [version specific upgrade](version-specific-upgrades.md) notes to learn about potential breaking changes and common pitfalls.
 
 {% hint style="warning" %}
@@ -10,15 +10,14 @@ Before upgrading, it is always advisable to take a complete backup of your site 
 ## Get the latest version of Umbraco Commerce
 
 To get the latest version of Umbraco Commerce you can upgrade using:
-- NuGet
-- Visual Studio
+
+* NuGet
+* Visual Studio
 
 ### NuGet
 
-- NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Commerce` command unless you specify a package version: `dotnet add package Umbraco.Commerce --version <VERSION>`
-
-- After you have added a package reference to your project by executing the `dotnet add package Umbraco.Commerce` command in the directory that contains your project file, run `dotnet restore` to install the package.
-
+* NuGet installs the latest version of the package when you use the `dotnet add package Umbraco.Commerce` command unless you specify a package version: `dotnet add package Umbraco.Commerce --version <VERSION>`
+* After you have added a package reference to your project by executing the `dotnet add package Umbraco.Commerce` command in the directory that contains your project file, run `dotnet restore` to install the package.
 
 ### Visual Studio
 
@@ -26,6 +25,7 @@ To get the latest version of Umbraco Commerce you can upgrade using:
 2. Select **Umbraco.Commerce**.
 3. Select the latest version from the Version drop-down and click Install.
 4. When the command completes, open the **.csproj** file to make sure the package reference is updated:
+
 ```xml
 <ItemGroup>
   <PackageReference Include="Umbraco.Commerce" Version="xx.x.x" />

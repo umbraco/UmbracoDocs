@@ -36,7 +36,7 @@ Attributes define a property `key`, `name`, `description` to display in the UI a
 
 An example of a generated UI built from these properties would look something like this:
 
-![Discount Rule UI](../media/discount\_rule\_ui.png)
+![Discount Rule UI](../.gitbook/assets/discount_rule_ui.png)
 
 ### Default Values
 

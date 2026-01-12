@@ -16,9 +16,9 @@ The **Settings** section is where the configuration of all Store settings is man
 
 The UI for the **Settings** section consists of a Tree which lists all available Stores and their key areas available for configuration. It also contains a right-hand editor panel. This can either act as an editor interface or as a list view interface for listing items within that given configuration area.
 
-![Umbraco Commerce Settings - Editor View](../media/umbraco-commerce\_settings\_section\_editor\_view.png)
+![Umbraco Commerce Settings - Editor View](../.gitbook/assets/umbraco-commerce_settings_section_editor_view.png)
 
-![Umbraco Commerce Settings - List View](../media/umbraco-commerce\_settings\_section\_list\_view.png)
+![Umbraco Commerce Settings - List View](../.gitbook/assets/umbraco-commerce_settings_section_list_view.png)
 
 Each Store has 8 key areas of configuration accessible within the **Settings** section:
 
@@ -35,12 +35,12 @@ Each Store has 8 key areas of configuration accessible within the **Settings** s
 
 The **Commerce** section contains a Tree to access the Stores and their different features, as well as a right-hand panel for managing the items.
 
-![Umbraco Commerce Orders View](../media/commerce\_orders\_view.png)
+![Umbraco Commerce Orders View](../.gitbook/assets/commerce_orders_view.png)
 
-![Umbraco Commerce Order Editor](../media/commerce\_order\_details.png)
+![Umbraco Commerce Order Editor](../.gitbook/assets/commerce_order_details.png)
 
 ## Content Section
 
 The **Content** section is where the Umbraco Commerce product nodes are managed. Managing products with Umbraco Commerce is similar to working with regular content nodes.
 
-![Umbraco Commerce Store Picker Dialog](../media/content\_store\_picker.png)
+![Umbraco Commerce Store Picker Dialog](../.gitbook/assets/content_store_picker.png)
