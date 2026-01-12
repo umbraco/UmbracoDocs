@@ -82,15 +82,16 @@ Lit does provide a render helper method called `repeat` that does this for us. T
 
     render() {
 		return html`
-			
+			<div class="sorter-container">
 				${repeat(
 					this._items,
 					(item) => item.id,
 					(item) =>
-						html`${item.name}
+						html`
+                            <p class="sorter-item" data-sorter-id="${item.id}">${item.name}</p>
 						`,
 				)}
-			
+			</div>
 		`;
 	}
 ```
