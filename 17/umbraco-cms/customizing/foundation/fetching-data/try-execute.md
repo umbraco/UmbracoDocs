@@ -7,7 +7,7 @@ description:: Learn how to execute requests in the Backoffice.
 Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and automatically refreshes the token if it has expired. If the session has expired, it prompts the user to log in again.
 
 {% hint style="info" %}
-You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v16/ui-api/functions/packages_core_resources.tryExecute.html) class.
+You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/functions/packages_core_resources.tryExecute.html) class.
 {% endhint %}
 
 ## Using the Umbraco HTTP Client
@@ -29,7 +29,7 @@ if (error) {
 }
 ```
 
-The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v16/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v16/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
+The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v17/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
 
 {% hint style="info" %}
 The above example requires a host element illustrated by the use of `this`. This is typically a custom element that extends the `UmbLitElement` class.

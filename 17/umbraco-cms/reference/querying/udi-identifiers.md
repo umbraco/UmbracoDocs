@@ -71,10 +71,10 @@ There are two types of UDIs in Umbraco:
 
 Used for objects that have a GUID identifier, such as content and media.
 
-* [API Reference: GuidUdi](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
+* [API Reference: GuidUdi](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.GuidUdi.html)
 
 ### String UDI
 
 Used for objects that are not GUID-based, such as dictionary items.
 
-* [API Reference: StringUdi](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.StringUdi.html)
+* [API Reference: StringUdi](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.StringUdi.html)
