@@ -64,6 +64,12 @@ export interface MyCollectionItemModel extends UmbCollectionItemModel {
 
 {% code title="my-entity-type-collection-item-card.element.ts" %}
 ```typescript
+import type { MyCollectionItemModel } from './types.ts';
+import type { UmbEntityCollectionItemElement } from '@umbraco-cms/backoffice/collection'
+import { UmbDeselectedEvent, UmbSelectedEvent } from '@umbraco-cms/backoffice/event';
+import { customElement, html, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+
 @customElement('my-entity-type-collection-item-card')
 export class MyEntityTypeCollectionItemCardElement extends UmbLitElement implements UmbEntityCollectionItemElement {
 	@property({ type: Object })
@@ -105,7 +111,7 @@ export class MyEntityTypeCollectionItemCardElement extends UmbLitElement impleme
 
 declare global {
 	interface HTMLElementTagNameMap {
-		'my-entity-type-collection-item-card': UmbDefaultCollectionItemCardElement;
+		'my-entity-type-collection-item-card': MyEntityTypeCollectionItemCardElement;
 	}
 }
 ```
