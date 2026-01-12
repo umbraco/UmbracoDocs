@@ -54,7 +54,7 @@ When you have a more complex data model and need to customize how each card is r
 
 Implement your custom Card Collection Item as a Lit element that extends `UmbLitElement`. This defines how an individual card is rendered in the collection.
 
-Get more information about Card elements and base element starting points at the [UUI documentation](https://uui.umbraco.com/?path=/docs/uui-card--docs)
+Get more information about Card elements and base element starting points at the [UI Library documentation](https://uui.umbraco.com/?path=/docs/uui-card--docs)
 
 ```typescript
 export interface MyCollectionItemModel extends UmbCollectionItemModel {

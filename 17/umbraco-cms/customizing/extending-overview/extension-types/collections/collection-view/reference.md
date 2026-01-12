@@ -49,7 +49,7 @@ When you have a more complex data model and need to customize how each item is r
 ### Implementation
 Implement your custom Ref Collection Item as a Lit element that extends `UmbLitElement`. This defines how an individual item is rendered in the collection.
 
-Get more information of Reference elements and base element starting points at the [UUI documentation](https://uui.umbraco.com/?path=/docs/displays-references-ref--docs)
+Get more information of Reference elements and base element starting points at the [UI Library documentation](https://uui.umbraco.com/?path=/docs/displays-references-ref--docs)
 
 ```typescript
 export interface MyCollectionItemModel extends UmbCollectionItemModel {
