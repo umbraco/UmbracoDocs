@@ -156,7 +156,7 @@ The `View` property indicates a property editor UI used for editing the setting 
 
 `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
 
-Default values for settings can be defined in code using two approaches.
+Default values for settings can be defined in code using one of two approaches.
 
 Using a property initializer:
 

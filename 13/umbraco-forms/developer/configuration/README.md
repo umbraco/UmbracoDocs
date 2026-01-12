@@ -187,7 +187,7 @@ For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fi
 Forms allows you to configure default values and visibility for field, workflow, data source, and prevalue source settings. Default values can be set in two ways:
 
 1. **In code** - by using the `DefaultValue` property on the [`Setting` attribute](../extending/adding-a-fieldtype.md#field-settings), or a property initializer, when defining custom or extended provider types.
-2. **In configuration** - using this `SettingsCustomization` section, which takes precedence over code-based defaults.
+2. **In configuration** - by using the `SettingsCustomization` section, which takes precedence over code-based defaults.
 
 Without any configuration, the default behavior when a new field or workflow is added to a form is for each setting to be empty. The values are then completed by the editor. All settings defined on the type are displayed for entry.
 
