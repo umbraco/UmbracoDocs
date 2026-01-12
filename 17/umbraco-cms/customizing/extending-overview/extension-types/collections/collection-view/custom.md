@@ -1,18 +1,6 @@
----
-description: >-
-  Learn how to create a Collection View that defines how data is displayed within a collection in Umbraco.
----
+## Custom Collection View
 
-## Purpose
-Use a Collection View when you need to:
-- Present data in a structured or visual way (for example, table, cards, grid)
-- Customize how entity fields are displayed
-
-## Create a Collection View
-
-{% hint style="info" %}
-Before creating a Collection View, make sure you are familiar with the [Extension Registry in Umbraco](../../../../customizing/extending-overview/extension-registry/register-extensions.md).
-{% endhint %}
+When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
 
 ### Manifest
 {% code title="umbraco-package.json" %}
