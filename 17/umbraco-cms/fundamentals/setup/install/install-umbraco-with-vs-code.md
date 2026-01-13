@@ -1,12 +1,13 @@
 # Install using Visual Studio Code
 
-Follow these steps to set up an Umbraco project with Visual Studio Code. The benefit of using Visual Studio Code is that it is super quick to get up and running.
+The benefit of using Visual Studio Code is that it is super quick to get up and running. Follow these steps to set up an Umbraco project with Visual Studio Code.
 
 ## Installing and setting up Visual Studio Code
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download Visual Studio Code for free.
 2. Once installed, launch Visual Studio Code.
-3. Click the extensions menu at the bottom on the left side. Then search for **C#** and install it.
+3. Click the extensions menu on the left side.
+4. Search for **C#** and install it.
 
     ![Visual Studio Code install extension](../../../.gitbook/assets/Marketplace.jpg)
 
@@ -16,12 +17,12 @@ Follow the [Install using .NET CLI](install-umbraco-with-templates.md) article t
 
 ## Configure Visual Studio Code to run the Umbraco project
 
-1. Open your project folder in Visual Studio Code. Your project will look something like this:
+1. Open your project folder in Visual Studio Code.
 
 ![Fresh Umbraco installation](../../../.gitbook/assets/VS_Code_Explorer.png)
 
-2. Open the command palette.
-3. Use the shortcut `Ctrl+Shift+P` and type **Tasks: Configure**.
+2. Open the command palette using the shortcut `Ctrl+Shift+P`.
+3. Type **Tasks: Configure**.
 4. Select **Tasks: Configure Task**.
 
 ![Configure task option](<../../../.gitbook/assets/ConfigureTask (1).png>)
@@ -34,14 +35,14 @@ Follow the [Install using .NET CLI](install-umbraco-with-templates.md) article t
 
 ![Create .NET Core Template](<../../../.gitbook/assets/NetcoreTemplate (1).png>)
 
-7. Visual Studio Code creates a folder called **.vscode** that contains a file called **tasks.json**. The **tasks.json** file tells Visual Studio Code how to build your project.
+Visual Studio Code creates a folder called **.vscode** that contains a file called **tasks.json**. The **tasks.json** file tells Visual Studio Code how to build your project.
 
-8. Select the **Run and Debug** button in the left side menu.
-9. Select the **Create a launch.json file** link.
+7. Select the **Run and Debug** button from the left side menu.
+8. Select the **Create a launch.json file** link.
 
 ![Creating launch.json file](../../../.gitbook/assets/Create_LaunchJson_file.jpg)
 
-10. Select **.NET 5+ and .NET Core**.
+9. Select **.NET 5+ and .NET Core**.
 
 ![Prompt Menu](<../../../.gitbook/assets/Prompt_Menu (1).jpg>)
 
