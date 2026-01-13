@@ -64,7 +64,7 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 
     public override string ApiEndpoint => "https://backend.deviantart.com/oembed?url=";
 
-    public override string[] UrlSchemeRegex => new[]
+    public override string[] UrlSchemeRegex =>
     {
         @"fav\.me/*",
         @"\w+\.deviantart.com\/\w+\/art\/*",
@@ -73,7 +73,7 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
         @"\w+\.deviantart.com\/\w+#\/d*"
     };
 
-    public override Dictionary<string, string> RequestParams => new();
+    public override Dictionary<string, string> RequestParams => [];
 
     public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
     {
