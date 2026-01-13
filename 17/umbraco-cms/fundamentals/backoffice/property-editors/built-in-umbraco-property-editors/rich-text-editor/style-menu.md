@@ -1,6 +1,6 @@
 # Style Menu
 
-A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting.
+A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting. Use a Style Select menu when you want editors to apply predefined, consistent styles instead of manually formatting text.
 
 ![Rich Text Editor cascading style menu](../../../../../.gitbook/assets/rte-tiptap-stylemenu.png)
 
@@ -22,9 +22,13 @@ Alternatively, while configuring an editor on a Document Type, you can drag **St
 
 ![Adding Style Select to the Rich Text Editor](../../../../../.gitbook/assets/adding-style-select-to-toolbar.png)
 
-## Creating a Style Select Menu
+## Creating a Custom Style Select Menu
 
-In this article, you can find an example of how to set up a Style Select Menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
+Adding Style Select enables the menu, but creating a package manifest is only required if you want custom styles or structure.
+
+Below, you can find an example of how to set up a custom Style Select menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
+
+1. Create an `umbraco-package.json` file in `App_Plugins/{YourPackageName}`.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -99,7 +103,9 @@ The `items` property defines the structure of the style select menu. Each menu i
 * `separatorAfter`: When `true`, it will add a line separator after the menu item.
 * `items`: To enable a cascading menu, an array of nested menu items may be added.
 
-Once configured, all custom style select menus will appear in the Rich Text Editor toolbar options, as described in the [Rich Text Editor Configuration](configuration.md) article.
+2. Once configured, the custom style select menu will appear in the Rich Text Editor's **Toolbar** section. You can look for it in the **Available actions** block.
+
+![Custom Style Select menu](../../../../../.gitbook/assets/custom-style-select-menu.png)
 
 ### Supported HTML tags
 
