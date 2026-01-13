@@ -1,4 +1,4 @@
-# Style Menu
+# Style Select Menu
 
 A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting. Use a Style Select menu when you want editors to apply predefined, consistent styles instead of manually formatting text.
 
