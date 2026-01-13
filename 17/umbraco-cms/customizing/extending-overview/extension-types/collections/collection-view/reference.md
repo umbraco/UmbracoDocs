@@ -13,6 +13,8 @@ export interface UmbCollectionItemModel {
 }
 ```
 
+Register the Referemce Collection View in the extension registry with the kind set to "ref":
+
 ### Manifest
 {% code title="umbraco-package.json" %}
 ```json
@@ -30,17 +32,6 @@ export interface UmbCollectionItemModel {
 }
 ```
 {% endcode %}
-
-Default Collection Item Model
-
-```typescript
-export interface UmbCollectionItemModel {
-  unique: string;
-  entityType: string;
-  name?: string;
-  icon?: string;
-}
-```
 
 ## Custom Reference Collection Item
 If you want to customize how each item is rendered, you can create and register a custom Ref Collection Item.

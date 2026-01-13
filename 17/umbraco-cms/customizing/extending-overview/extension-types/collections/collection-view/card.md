@@ -34,7 +34,6 @@ Register the Card Collection View in the extension registry with the kind set to
 {% endcode %}
 
 ## Custom Card Collection Item
-
 If you want to customize how each item is rendered, you can create and register a custom Card Collection Item.
 
 ### Manifest
