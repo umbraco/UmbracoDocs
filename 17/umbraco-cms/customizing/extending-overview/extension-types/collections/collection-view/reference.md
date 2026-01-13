@@ -1,5 +1,18 @@
 # Reference Collection View
 
+When you want to display entities as a list of references within a collection, use the Reference Collection View Kind. This will render a simple list layout. Each item renders a default layout with the entity's name and icon. You can further customize the item layout by registering a custom Ref Collection Item when needed.
+
+The default Collection Item Model used in a Reference Collection View is based on the following interface:
+
+```typescript
+export interface UmbCollectionItemModel {
+  unique: string;
+  entityType: string;
+  name?: string;
+  icon?: string;
+}
+```
+
 ### Manifest
 {% code title="umbraco-package.json" %}
 ```json
@@ -29,7 +42,7 @@ export interface UmbCollectionItemModel {
 }
 ```
 
-## Custom Ref Collection Item
+## Custom Reference Collection Item
 If you want to customize how each item is rendered, you can create and register a custom Ref Collection Item.
 
 ### Manifest
