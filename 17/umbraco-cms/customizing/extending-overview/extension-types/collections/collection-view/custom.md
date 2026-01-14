@@ -1,8 +1,9 @@
-## Custom Collection View
+# Custom Collection View
 
 When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
 
-### Manifest
+## Manifest
+
 {% code title="umbraco-package.json" %}
 ```json
 {
@@ -25,7 +26,7 @@ When the existing Collection View kinds do not meet your requirements, you can c
 ```
 {% endcode %}
 
-### Implementation
+## Implementation
 
 Implement your Collection View as a Lit element that extends `UmbLitElement`.
 This defines how a list of entities is rendered in your collection.
@@ -153,9 +154,10 @@ declare global {
 ```
 {% endcode %}
 
-### Common Collection Match Values
+## Common Collection Match Values
 
 Use the `match` property in your manifest to target a specific collection type.
+
 | **Match Value** | **Description** |
 |------------------|-----------------|
 | `Umb.Collection.Document` | Targets the **Document** collection (content items). |
