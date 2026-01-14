@@ -1,20 +1,9 @@
----
-description: >-
-  Learn how to create a Collection View that defines how data is displayed within a collection in Umbraco.
----
+# Custom Collection View
 
-## Purpose
-Use a Collection View when you need to:
-- Present data in a structured or visual way (for example, table, cards, grid)
-- Customize how entity fields are displayed
+When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
 
-## Create a Collection View
+## Manifest
 
-{% hint style="info" %}
-Before creating a Collection View, make sure you are familiar with the [Extension Registry in Umbraco](../../../../customizing/extending-overview/extension-registry/register-extensions.md).
-{% endhint %}
-
-### Manifest
 {% code title="umbraco-package.json" %}
 ```json
 {
@@ -30,14 +19,14 @@ Before creating a Collection View, make sure you are familiar with the [Extensio
   "conditions": [
     {
       "alias": "Umb.Condition.CollectionAlias",
-      "match": "Umb.Collection.Document" // Type of entity to display in this collection view
+      "match": "Umb.Collection.Document" // Collection alias to display this collection view for
     }
   ]
 }
 ```
 {% endcode %}
 
-### Implementation
+## Implementation
 
 Implement your Collection View as a Lit element that extends `UmbLitElement`.
 This defines how a list of entities is rendered in your collection.
@@ -165,9 +154,10 @@ declare global {
 ```
 {% endcode %}
 
-### Common Collection Match Values
+## Common Collection Match Values
 
 Use the `match` property in your manifest to target a specific collection type.
+
 | **Match Value** | **Description** |
 |------------------|-----------------|
 | `Umb.Collection.Document` | Targets the **Document** collection (content items). |
