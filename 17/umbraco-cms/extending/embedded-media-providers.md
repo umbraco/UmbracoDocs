@@ -150,7 +150,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
 
     public override Dictionary<string, string> RequestParams => new();
 
-    public override Task<string?> GetMarkupAsync(string url, int maxWidth = 0, int maxHeight = 0)
+    public override Task<string?> GetMarkupAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
     {
         // format of markup
         string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
