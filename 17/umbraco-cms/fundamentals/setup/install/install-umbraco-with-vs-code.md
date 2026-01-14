@@ -5,7 +5,7 @@ The benefit of using Visual Studio Code is that it is super quick to get up and 
 ## Installing and setting up Visual Studio Code
 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download Visual Studio Code for free.
-2. Once installed, launch Visual Studio Code.
+2. Launch Visual Studio Code once the installation is complete.
 3. Click the extensions menu on the left side.
 4. Search for **C#** and install it.
 
