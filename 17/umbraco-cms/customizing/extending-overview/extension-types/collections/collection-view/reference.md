@@ -13,9 +13,10 @@ export interface UmbCollectionItemModel {
 }
 ```
 
-Register the Referemce Collection View in the extension registry with the kind set to "ref":
+Register the Reference Collection View in the extension registry with the kind set to "ref":
 
-### Manifest
+## Manifest
+
 {% code title="umbraco-package.json" %}
 ```json
 {
@@ -34,9 +35,11 @@ Register the Referemce Collection View in the extension registry with the kind s
 {% endcode %}
 
 ## Custom Reference Collection Item
+
 If you want to customize how each item is rendered, you can create and register a custom Ref Collection Item.
 
 ### Manifest
+
 {% code title="umbraco-package.json" %}
 ```json
 {
@@ -50,9 +53,10 @@ If you want to customize how each item is rendered, you can create and register 
 {% endcode %}
 
 ### Implementation
+
 Implement your custom Ref Collection Item as a Lit element that extends `UmbLitElement`. This defines how an individual item is rendered in the collection.
 
-Get more information of Reference elements and base element starting points at the [UI Library documentation](https://uui.umbraco.com/?path=/docs/displays-references-ref--docs)
+Get more information on Reference elements and base element starting points at the [UI Library documentation](https://uui.umbraco.com/?path=/docs/displays-references-ref--docs)
 
 ```typescript
 export interface MyCollectionItemModel extends UmbCollectionItemModel {
