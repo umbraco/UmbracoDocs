@@ -1,11 +1,11 @@
 # Style Select Menu
 
-A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting.
+A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting. Use a Style Select menu when you want editors to apply predefined, consistent styles instead of manually formatting text.
 
-![Rich Text Editor cascading style menu](images/rte-tiptap-stylemenu.png)
+![Rich Text Editor cascading style menu](../../../../../.gitbook/assets/rte-tiptap-stylemenu.png)
 
 {% hint style="info" %}
-Any custom stylesheets associated with the Rich Text Editor will not auto-generate a style select menu in the toolbar. See the [Creating a Style Select Menu](#creating-a-style-select-menu) section below.
+Any custom stylesheets associated with the Rich Text Editor will not auto-generate a style select menu in the toolbar. See the [Creating a Style Select Menu](style-menu.md#creating-a-custom-style-select-menu) section below.
 {% endhint %}
 
 ## Adding Style Select to Rich Text Editor
@@ -20,11 +20,15 @@ To add Style Select to the Rich Text Editor:
 
 Alternatively, while configuring an editor on a Document Type, you can drag **Style Select** from **Available Actions** into the **Toolbar** section.
 
-![Adding Style Select to the Rich Text Editor](images/adding-style-select-to-toolbar.png)
+![Adding Style Select to the Rich Text Editor](../../../../../.gitbook/assets/adding-style-select-to-toolbar.png)
 
-## Creating a Style Select Menu
+## Creating a Custom Style Select Menu
 
-In this article, you can find an example of how to set up a Style Select Menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
+Adding Style Select enables the menu, but creating a package manifest is only required if you want custom styles or structure.
+
+Below, you can find an example of how to set up a custom Style Select menu using an [Umbraco Package Manifest](../../../../../customizing/umbraco-package.md) file.
+
+1. Create an `umbraco-package.json` file in `App_Plugins/{YourPackageName}`.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -88,38 +92,40 @@ In this article, you can find an example of how to set up a Style Select Menu us
 
 The `items` property defines the structure of the style select menu. Each menu item has the following options:
 
-- `label`: _(required)_ The label of the menu item. This supports localization keys.
-- `appearance`: This defines the appearance of the menu item. The value has 2 optional properties:
-  - `icon`: To prefix an icon to the menu item.
-  - `style`: To apply CSS rules to the menu item.
-- `data`: To configure the function of the style select menu item. The value has 3 optional properties:
-  - `tag`: A [supported HTML tag](#supported-html-tags) name. This will be applied to the selected text.
-  - `class`: Applies a class attribute with the defined class name to the containing tag of the selected text.
-  - `id`: Applies an ID attribute with the defined ID value to the containing tag of the selected text.
-- `separatorAfter`: When `true`, it will add a line separator after the menu item.
-- `items`: To enable a cascading menu, an array of nested menu items may be added.
+* `label`: _(required)_ The label of the menu item. This supports localization keys.
+* `appearance`: This defines the appearance of the menu item. The value has 2 optional properties:
+  * `icon`: To prefix an icon to the menu item.
+  * `style`: To apply CSS rules to the menu item.
+* `data`: To configure the function of the style select menu item. The value has 3 optional properties:
+  * `tag`: A [supported HTML tag](style-menu.md#supported-html-tags) name. This will be applied to the selected text.
+  * `class`: Applies a class attribute with the defined class name to the containing tag of the selected text.
+  * `id`: Applies an ID attribute with the defined ID value to the containing tag of the selected text.
+* `separatorAfter`: When `true`, it will add a line separator after the menu item.
+* `items`: To enable a cascading menu, an array of nested menu items may be added.
 
-Once configured, all custom style select menus will appear in the Rich Text Editor toolbar options, as described in the [Rich Text Editor Configuration](configuration.md) article.
+2. Once configured, the custom style select menu will appear in the Rich Text Editor's **Toolbar** section. You can look for it in the **Available actions** block.
+
+![Custom Style Select menu](../../../../../.gitbook/assets/custom-style-select-menu.png)
 
 ### Supported HTML tags
 
 Due to Tiptap’s strict rich-text schema, only supported HTML tags are allowed in the style select menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported:
 
-- `h1`
-- `h2`
-- `h3`
-- `h4`
-- `h5`
-- `h6`
-- `p`
-- `blockquote`
-- `code`
-- `codeBlock`
-- `div`
-- `em` (italic)
-- `ol`
-- `strong` (bold)
-- `s` (strike-through)
-- `span`
-- `u` (underline)
-- `ul`
+* `h1`
+* `h2`
+* `h3`
+* `h4`
+* `h5`
+* `h6`
+* `p`
+* `blockquote`
+* `code`
+* `codeBlock`
+* `div`
+* `em` (italic)
+* `ol`
+* `strong` (bold)
+* `s` (strike-through)
+* `span`
+* `u` (underline)
+* `ul`
