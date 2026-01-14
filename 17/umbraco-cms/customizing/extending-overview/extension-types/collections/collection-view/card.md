@@ -1,6 +1,6 @@
 # Card Collection View
 
-When you want to display entities as cards within a collection, use the Card Collection View Kind. This will render a card-style grid layout. Each card renders a default layout with the entity's name and icon. You can further customize the card layout by registering a custom card collection item when needed.
+When you want to display entities as cards within a collection, use the Card Collection View Kind. This will render a card-style grid layout. Each card renders a default layout with the entity's name and icon. You can further customize the card layout by registering a custom card collection item as needed.
 
 The default Collection Item Model used in a Card Collection View is based on the following interface:
 
@@ -15,7 +15,8 @@ export interface UmbCollectionItemModel {
 
 Register the Card Collection View in the extension registry with the kind set to "card":
 
-### Manifest
+## Manifest
+
 {% code title="umbraco-package.json" %}
 ```json
 {
@@ -34,9 +35,11 @@ Register the Card Collection View in the extension registry with the kind set to
 {% endcode %}
 
 ## Custom Card Collection Item
+
 If you want to customize how each item is rendered, you can create and register a custom Card Collection Item.
 
 ### Manifest
+
 {% code title="umbraco-package.json" %}
 ```json
 {
