@@ -54,7 +54,7 @@ If **.NET 5+ and .NET Core** is missing in the drop-down menu:
    This command will generate the necessary assets for building and debugging your .NET application.
 {% endhint %}
 
-Now you'll see a green play button appear with a dropdown where **.NET Core Launch (web)** is selected.
+You'll see a green play button appear with a dropdown where **.NET Core Launch (web)** is selected.
 
 ![Green play button options](<../../../.gitbook/assets/Dropdown_option (1).jpg>)
 
@@ -62,7 +62,9 @@ If you navigate to the **Explorer** section, a new **launch.json** file is creat
 
 ![launch.json file](../../../.gitbook/assets/launchJson.jpg)
 
-With that, you're ready to run the project. Press F5 or click the green play button in the **Run and Debug** section to run your brand new Umbraco site locally.
+With that, you're ready to run the project.
+
+3. Press **F5** or click the green play button in the **Run and Debug** section to run your brand new Umbraco site locally.
 
 ## Umbraco Web Installer
 
