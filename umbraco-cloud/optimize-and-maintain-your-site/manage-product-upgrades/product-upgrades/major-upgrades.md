@@ -115,7 +115,7 @@ Delete the `<PackageReference>` entries for these packages.
   * `Umbraco.Cloud.Cms`
   * `Umbraco.Cloud.StorageProviders.AzureBlob`
 
-* Delete the `Licenses` folder and all `.lic` files within it.
+* Delete the `Licenses` folder and all `.lic` files within it. Please note that `.lic` files may exist for third-party add-ons. In such cases, these files should generally be preserved, and the `Licenses` folder should not be removed.
 
 * _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
   1. Locate and open the `appsettings.json` file (and any environment-specific variants).
