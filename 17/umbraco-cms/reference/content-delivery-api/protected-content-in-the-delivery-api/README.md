@@ -390,15 +390,20 @@ With these in place, we can enable member authentication in Swagger for the Deli
 
 {% code title="Program.cs" %}
 ```csharp
+using Umbraco.Cms.Api.Delivery.OpenApi;
+
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
     .Build();
-builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiOpenApiOptions>();
+
+builder.Services.AddDeliveryApiOpenApiMemberAuthentication();
 ```
 {% endcode %}
+
+The `AddDeliveryApiOpenApiMemberAuthentication()` extension method adds the OAuth2 security scheme and marks the Delivery API as supporting member authorization via Swagger UI.
 
 The Swagger UI will now feature authorization.
 

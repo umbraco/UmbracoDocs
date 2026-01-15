@@ -100,7 +100,15 @@ The `IOperationIdHandler` interface and `OperationIdHandler` base class have bee
 
 *Delivery API member authentication*
 
-The class `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been renamed to `ConfigureUmbracoMemberAuthenticationDeliveryApiOpenApiOptions`.
+The class `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension method to add member authentication support to the Delivery API OpenAPI document:
+
+```csharp
+using Umbraco.Cms.Api.Delivery.OpenApi;
+
+builder.Services.AddDeliveryApiOpenApiMemberAuthentication();
+```
+
+For more details, see [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
 
 *OpenAPI route and availability configuration*
 
