@@ -669,14 +669,13 @@ If you use TypeScript, you can use this interface to define the properties:
 
 {% code title="login-types.ts" %}
 ```typescript
-type UserViewState = 'loggingIn' | 'loggedOut' | 'timedOut';
+type UserLoginState = 'loggingIn' | 'loggedOut' | 'timedOut';
 
 interface IExternalLoginCustomViewElement {
-  displayName?: string;
-  providerName?: string;
-  externalLoginUrl?: string;
-  userViewState?: UserViewState;
-};
+	userLoginState: UserLoginState;
+	manifest: { forProviderName: string; meta?: { label?: string } };
+	onSubmit: (providerName: string) => void;
+}
 ```
 {% endcode %}
 
