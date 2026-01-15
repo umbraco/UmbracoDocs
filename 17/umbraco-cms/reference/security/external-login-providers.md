@@ -724,53 +724,6 @@ You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in 
 {% endcode %}
 
 {% tabs %}
-{% tab title="Vanilla (JavaScript)" %}
-We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
-
-{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
-```javascript
-const template = document.createElement('template');
-template.innerHTML = `
-  <style>
-    :host {
-      display: block;
-      width: 100%;
-    }
-    #button {
-      width: 100%;
-    }
-  </style>
-  <h3>Our Company</h3>
-  <p>If you have signed up with Our Company, you can sign in to Umbraco by clicking the button below.</p>
-  <uui-button type="button" id="button" look="primary">
-    <uui-icon name="icon-cloud"></uui-icon>
-    Sign in with Our Company
-  </uui-button>
-`;
-
-/**
- * This is an example how to set up a custom element as a Web Component.
- */
-export default class MyCustomView extends HTMLElement {
-  manifest = {};
-  onSubmit = () => {};
-  userLoginState = '';
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-
-    this.shadowRoot.getElementById('button').addEventListener('click', () => {
-      this.onSubmit(this.manifest.forProviderName);
-    });
-  }
-}
-
-customElements.define('my-custom-view', MyCustomView);
-```
-{% endcode %}
-{% endtab %}
 
 {% tab title="Lit (JavaScript)" %}
 It is also possible to use a library like [Lit](https://lit.dev/) to render the custom element. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
@@ -825,6 +778,54 @@ export default class MyLitView extends LitElement {
 }
 
 customElements.define('my-lit-view', MyLitView);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Vanilla (JavaScript)" %}
+We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
+
+{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
+```javascript
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    #button {
+      width: 100%;
+    }
+  </style>
+  <h3>Our Company</h3>
+  <p>If you have signed up with Our Company, you can sign in to Umbraco by clicking the button below.</p>
+  <uui-button type="button" id="button" look="primary">
+    <uui-icon name="icon-cloud"></uui-icon>
+    Sign in with Our Company
+  </uui-button>
+`;
+
+/**
+ * This is an example how to set up a custom element as a Web Component.
+ */
+export default class MyCustomView extends HTMLElement {
+  manifest = {};
+  onSubmit = () => {};
+  userLoginState = '';
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.shadowRoot.getElementById('button').addEventListener('click', () => {
+      this.onSubmit(this.manifest.forProviderName);
+    });
+  }
+}
+
+customElements.define('my-custom-view', MyCustomView);
 ```
 {% endcode %}
 {% endtab %}
