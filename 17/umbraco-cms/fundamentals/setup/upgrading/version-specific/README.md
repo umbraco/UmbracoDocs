@@ -59,7 +59,12 @@ builder.Services.AddOpenApi("my-api-v1", options =>
         return Task.CompletedTask;
     });
 });
+
+// Add the document to the Swagger UI dropdown
+builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 ```
+
+Note that `AddOpenApiDocumentToUi()` is required to show the document in Swagger UI. Previously with Swashbuckle, documents were automatically added to the UI when registered. The second parameter (title) is optional and defaults to the document name if not specified.
 
 *Backoffice security requirements*
 

@@ -17,7 +17,7 @@ This example can be a starting point for creating a secure custom API with autom
 {% code title="Program.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
 
 builder.Services.AddOpenApi("my-api-v1", options =>
@@ -39,14 +39,11 @@ builder.Services.AddOpenApi("my-api-v1", options =>
 });
 
 // Add the document to OpenAPI UI
-builder.Services.Configure<SwaggerUIOptions>(options =>
-{
-    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
-});
+builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 ```
 {% endcode %}
 
-The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI. The `SwaggerUIOptions` configuration adds the document to the Swagger UI dropdown.
+The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI. The `AddOpenApiDocumentToUi()` method adds the document to the Swagger UI dropdown.
 
 {% hint style="info" %}
 For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOptions>` with a composer instead of configuring in Program.cs. See the [API versioning and OpenAPI](api-versioning-and-openapi.md) article for details on different configuration approaches.

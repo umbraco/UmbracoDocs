@@ -17,7 +17,7 @@ Add the following code to `Program.cs` to register the OpenAPI document. The `Sh
 {% code title="Program.cs" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
 
 builder.Services.AddOpenApi("my-item-api", options =>
@@ -39,10 +39,7 @@ builder.Services.AddOpenApi("my-item-api", options =>
 });
 
 // Add the document to OpenAPI UI
-builder.Services.Configure<SwaggerUIOptions>(options =>
-{
-    options.SwaggerEndpoint("/umbraco/openapi/my-item-api.json", "My item API");
-});
+builder.Services.AddOpenApiDocumentToUi("my-item-api", "My item API");
 ```
 {% endcode %}
 

@@ -18,7 +18,7 @@ Umbraco imposes no limitations on adding OpenAPI documents, and the code below i
 In the [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) you will find comprehensive documentation for OpenAPI configuration.
 {% endhint %}
 
-To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. You also need to configure `SwaggerUIOptions` to add the document to the OpenAPI UI dropdown.
+To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. Use `AddOpenApiDocumentToUi` to add the document to the OpenAPI UI dropdown.
 
 The following code sample creates an OpenAPI document called "My API v1" that includes only controllers from a specific namespace:
 
@@ -26,7 +26,7 @@ The following code sample creates an OpenAPI document called "My API v1" that in
 
 ```csharp
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Common.DependencyInjection;
 
 builder.Services.AddOpenApi("my-api-v1", options =>
 {
@@ -45,10 +45,7 @@ builder.Services.AddOpenApi("my-api-v1", options =>
 });
 
 // Add the document to OpenAPI UI
-builder.Services.Configure<SwaggerUIOptions>(options =>
-{
-    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
-});
+builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 ```
 
 {% endcode %}
@@ -235,7 +232,7 @@ The following code sample creates two OpenAPI documents - "My API v1" and "My AP
 
 ```csharp
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Swashbuckle.AspNetCore.SwaggerUI;
+using Umbraco.Cms.Api.Common.DependencyInjection;
 
 builder.Services.AddOpenApi("my-api-v1", options =>
 {
@@ -268,11 +265,8 @@ builder.Services.AddOpenApi("my-api-v2", options =>
 });
 
 // Add both documents to OpenAPI UI
-builder.Services.Configure<SwaggerUIOptions>(options =>
-{
-    options.SwaggerEndpoint("/umbraco/openapi/my-api-v1.json", "My API v1");
-    options.SwaggerEndpoint("/umbraco/openapi/my-api-v2.json", "My API v2");
-});
+builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
+builder.Services.AddOpenApiDocumentToUi("my-api-v2", "My API v2");
 ```
 
 {% endcode %}
