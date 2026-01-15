@@ -724,14 +724,79 @@ You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in 
 
 {% tabs %}
 
-{% tab title="Lit (JavaScript)" %}
-It is also possible to use a library like [Lit](https://lit.dev/) to render the custom element. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
+{% tab title="Lit" %}
+It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the login screen. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
 
-We are using Lit version 3 in this example imported directly from a JavaScript delivery network to keep the example slim. You can also use a bundler like [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
+We are using Lit version 3 in this example imported from a node module. You must set up npm and install the Lit package first. You should use a bundler such as [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
 
 {% hint style="info" %}
 To learn more about how to set up a project with Vite, see the [Creating your first extension](../../tutorials/creating-your-first-extension.md) tutorial.
 {% endhint %}
+
+{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.ts" lineNumbers="true" %}
+```typescript
+import { LitElement, css, html } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+
+type UserLoginState = 'loggingIn' | 'loggedOut' | 'timedOut';
+
+interface IExternalLoginCustomViewElement {
+	userLoginState: UserLoginState;
+	manifest: { forProviderName: string; meta?: { label?: string } };
+	onSubmit: (providerName: string) => void;
+}
+
+/**
+ * This is an example how to set up a LitElement component.
+ */
+@customElement('my-lit-view')
+export default class MyLitView extends LitElement implements IExternalLoginCustomViewElement {
+	@property({ type: String, attribute: false })
+	userLoginState!: UserLoginState;
+
+	@property({ type: Object, attribute: false })
+	manifest!: { forProviderName: string; meta?: { label?: string } };
+
+	@property({ attribute: false })
+	onSubmit!: (providerName: string) => void;
+
+	get displayName() {
+		return this.manifest.meta?.label ?? this.manifest.forProviderName;
+	}
+
+	override render() {
+		return html`
+			<h3>Our Company</h3>
+			<p>If you have an account with Our Company, you can sign in to Umbraco by clicking the button below.</p>
+			<p>The user is currently: ${this.userLoginState}</p>
+			<uui-button
+				type="button"
+				id="button"
+				look="primary"
+				label="${this.displayName}"
+				@click=${() => this.onSubmit(this.manifest.forProviderName)}>
+				<uui-icon name="icon-cloud"></uui-icon>
+				${this.displayName}
+			</uui-button>
+		`;
+	}
+
+	static override readonly styles = css`
+		:host {
+			display: block;
+			width: 100%;
+		}
+		#button {
+			width: 100%;
+		}
+	`;
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Lit (JavaScript)" %}
+It is also possible to use vanilla JavaScript with Lit. The following example imports Lit from a CDN and uses it to render the custom element needed for the login screen.
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
 ```javascript
