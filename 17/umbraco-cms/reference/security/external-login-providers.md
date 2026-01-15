@@ -211,7 +211,8 @@ namespace MyUmbracoProject.CustomAuthentication;
 public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
     public const string SchemeName = "Generic";
-    public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+
+    public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
     {
         if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
         {
@@ -233,7 +234,7 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
             // [OPTIONAL]
             // Default: "Editor"
             // Specify User Group.
-            defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
+            defaultUserGroups: ["editor"],
 
             // [OPTIONAL]
             // Default: The culture specified in appsettings.json.
@@ -270,6 +271,11 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
             }
         };
 
+        // [OPTIONAL]
+        // Disable the ability for users to login with a username/password.
+        // If set to true, it will disable username/password login
+        // even if there are other external login providers installed.
+        options.DenyLocalLogin = true;
     }
 }
 ```
@@ -487,7 +493,6 @@ public class ConfigureGenericAuthenticationOptions : IConfigureNamedOptions<Gene
         }
     }
 }
-
 ```
 {% endcode %}
 
@@ -499,11 +504,9 @@ The extension class is required to extend on the default authentication implemen
 {% tab title="User Authentication" %}
 {% code title="GenericBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-using Umbraco.Cms.Web.BackOffice.Security;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
+using Umbraco.Cms.Web.Common.Helpers;
 
 namespace MyUmbracoProject.CustomAuthentication;
 
@@ -513,6 +516,7 @@ public static class GenericBackofficeAuthenticationExtensions
     {
         // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
         builder.Services.ConfigureOptions<GenericBackOfficeExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<ConfigureGenericAuthenticationOptions>();
 
         builder.AddBackOfficeExternalLogins(logins =>
         {
@@ -522,36 +526,68 @@ public static class GenericBackofficeAuthenticationExtensions
                     // The scheme must be set with this method to work for the back office
                     // Replace GenericOfficeExternalLoginProviderOptions with the Options method from the provider you are using
                     var schemeName =
-                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GenericOfficeExternalLoginProviderOptions
+                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
                             .SchemeName);
 
                     ArgumentNullException.ThrowIfNull(schemeName);
 
                     // Replace AddGenericProvider with the Add method from the provider you are using
-
                     backOfficeAuthenticationBuilder.AddGenericProvider(
-                        schemeName,
-                        options =>
+                        schemeName, _ =>
                         {
-                            // Callback path: Represents the URL to which the browser should be redirected to.
-                            // The default value is '/signin-provider'.
-                            // The value here should match what you have configured in you external login provider.
-                            // The value needs to be unique.
-                            options.CallbackPath = "/umbraco-provider-signin";
-                            options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
-                            options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
-
-                            // Example: Map Claims
-                            // Relevant when using auto-linking.
-                            options.GetClaimsFromUserInfoEndpoint = true;
-                            options.TokenValidationParameters.NameClaimType = "name";
-
-                            // Example: Add scopes
-                            options.Scope.Add("email");
+                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
+                            // you can set the configuration right here instead.
                         });
                 });
         });
         return builder;
+    }
+
+    // the ...AuthenticationOptions method will be part of the OathProvider nuget package you install
+    // check the Add... method invoked on the backOfficeAuthenticationBuilder to figure out the correct type
+    public class ConfigureGenericAuthenticationOptions : IConfigureNamedOptions<GenericAuthenticationOptions>
+    {
+        private readonly OAuthOptionsHelper _helper;
+
+        public ConfigureGenericAuthenticationOptions(OAuthOptionsHelper helper)
+        {
+            _helper = helper;
+        }
+
+        public void Configure(GenericAuthenticationOptions options)
+        {
+            // Callback path: Represents the URL to which the browser should be redirected to.
+            // The default value is '/signin-provider'.
+            // The value here should match what you have configured in you external login provider.
+            // The value needs to be unique.
+            options.CallbackPath = "/umbraco-provider-signin";
+            options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
+            options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
+
+            // Example: Map Claims
+            // Relevant when using auto-linking.
+            options.GetClaimsFromUserInfoEndpoint = true;
+            options.TokenValidationParameters.NameClaimType = "name";
+
+            // Example: Add scopes
+            options.Scope.Add("email");
+
+            // This will redirect error responses from the login provider towards the default umbraco oath login error page
+            // which will try to display the error state in a meaningful way.
+            // You can implement your own error handling by handling options.Events.OnAccessDenied & options.Events.OnRemoteFailure
+            _helper.SetDefaultErrorEventHandling(options, GenericBackOfficeExternalLoginProviderOptions.SchemeName);
+        }
+
+        public void Configure(string? name, GenericAuthenticationOptions options)
+        {
+            // only configure the options if it is for the backend
+            if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+                    .SchemeName))
+            {
+                Configure(options);
+            }
+        }
     }
 }
 ```
@@ -653,7 +689,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}
