@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Fix prevalue source dropdown rendering [#1550](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1550)
 * Fix prevalue source disappearing properties [#1551](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1551)
 * Add disabled state for unconfigured field types [#1557](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1557)
-* Fix form picker multiple value converstion [#1562](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1562)
+* Fix form picker multiple value conversion [#1562](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1562)
 * Fix form picker multiple selection storage [#1563](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1563)
 * Add disabled state to workflows [#1566](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1566)
 * Fix workflow sorting [#1567](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1567)
