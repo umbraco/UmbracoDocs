@@ -802,7 +802,9 @@ export default class MyLitView extends LitElement implements IExternalLoginCusto
 {% endtab %}
 
 {% tab title="Lit (JavaScript)" %}
-It is also possible to use vanilla JavaScript with Lit. The following example imports Lit from a CDN and uses it to render the custom element needed for the login screen.
+It is also possible to use vanilla JavaScript with Lit. 
+
+The following example imports Lit from a CDN and uses it to render the custom element needed for the Login screen:
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
 ```javascript
