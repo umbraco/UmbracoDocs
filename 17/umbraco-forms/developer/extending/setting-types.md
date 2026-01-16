@@ -6,7 +6,7 @@ These settings are completed by the editor when using the type on their form.
 
 Each setting type can have it's own user interface. So a string can use a text box but a more complicated JSON structure can use a more appropriate user interface.
 
-From Forms 14, each interface is defined as an Umbraco [property editor UI](https://docs.umbraco.com/umbraco-cms/extending/property-editors/composition/property-editor-ui).
+From Forms 14, each interface is defined as an Umbraco [property editor UI](https://docs.umbraco.com/umbraco-cms/customizing/property-editors/composition/property-editor-ui).
 
 The user interface used for a particular setting is defined by the `View` property:
 
