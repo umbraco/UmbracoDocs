@@ -26,6 +26,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Name                                             | Source       | Description                                                       | Used in                                         |
 |--------------------------------------------------|--------------|-------------------------------------------------------------------|-------------------------------------------------|
 | Umb.PropertyEditorUi.ContentPicker.Source        | CMS          | Uses a content picker with the option for XPath entry             | The "Save as Umbraco node" workflow             |
+| Umb.PropertyEditorUi.DocumentPicker              | CMS          | Uses a content picker                                             |                                                 |
 | Umb.PropertyEditorUi.Dropdown                    | CMS          | Used for selection from a list of options                         |                                                 |
 | Umb.PropertyEditorUi.Integer                     | CMS          | Uses numerical text box for entry                                 |                                                 |
 | Umb.PropertyEditorUi.MediaEntityPicker           | CMS          | Uses a media item picker for entry                                | The "Send email with XSLT template" workflow    |
@@ -33,7 +34,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.Slider                      | CMS          | Uses a slider for range input                                     | The "reCAPTCHAv3" field type                    |
 | Umb.PropertyEditorUi.TextArea                    | CMS          | Uses a multiline textbox for entry                                |                                                 |
 | Umb.PropertyEditorUi.TextBox                     | CMS          | Uses a single-line textbox for entry                              |                                                 |
-| Umb.PropertyEditorUi.Tiptap                     | CMS          | Uses a rich text editor for input                                 | The "Send email" workflows                      |
+| Umb.PropertyEditorUi.Tiptap                      | CMS          | Uses a rich text editor for input                                 | The "Send email" workflows                      |
 | Umb.PropertyEditorUi.Toggle                      | CMS          | Uses a single checkbox for entry                                  |                                                 |
 | Umb.PropertyEditorUi.UploadField                 | CMS          | Used for selection of a file                                      | The "Text file" prevalue source                 |
 | Forms.PropertyEditorUi.DataTypePicker            | Forms        | Uses a datatype picker                                            | The "Umbraco prevalues" prevalue source         |
