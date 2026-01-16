@@ -725,7 +725,13 @@ You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in 
 {% tabs %}
 
 {% tab title="Lit" %}
-It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the login screen. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
+It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the Login screen. 
+
+The following example shows how to use Lit to render the custom element. 
+
+The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. 
+
+No logic needs to be performed in the  `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
 
 We are using Lit version 3 in this example imported from a node module. You must set up npm and install the Lit package first. You should use a bundler such as [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
 
