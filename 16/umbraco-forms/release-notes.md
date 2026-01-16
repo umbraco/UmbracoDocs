@@ -33,6 +33,19 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Resolve migration of Form Picker and Theme Picker from v13 [#1578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1578)
 
 ### [16.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 8th 2026)
+
+#### reCAPTCHA Enterprise field type added
+
+A new reCAPTCHA Enterprise field type has been added. It provides advanced bot protection using Google's reCAPTCHA Enterprise service.
+
+#### Unconfigured reCAPTCHA fields now display as disabled
+
+The reCAPTCHA v2, v3, and Enterprise field types now display as disabled in the form designer. This applies when their respective settings are not configured. It prevents editors from adding unconfigured reCAPTCHA fields that would not work on the frontend.
+
+This change also ensures that field types remain registered. This prevents issues when transferring forms with Umbraco Deploy between environments where reCAPTCHA settings may not yet be configured.
+
+![Disabled reCAPTCHA field type in form designer](images/disabled-fields.png)
+
 * Umbraco CMS dependency updated to 16.4.0
 * Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
 * Preserving line-spacing in text-area input [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
