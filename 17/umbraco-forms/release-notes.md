@@ -39,14 +39,16 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 A new reCAPTCHA Enterprise field type has been added, providing advanced bot protection using Google's reCAPTCHA Enterprise service.
 
 {% hint style="warning" %}
+
 The "Score Threshold" setting for the reCAPTCHA Enterprise field type is currently not fully functional due to a dependent issue in Umbraco CMS (see [CMS PR #21339](https://github.com/umbraco/Umbraco-CMS/pull/21339)). This will be resolved in a future release.
+
 {% endhint %}
 
 #### Unconfigured reCAPTCHA fields now display as disabled
 
 The reCAPTCHA v2, v3, and Enterprise field types now display as disabled in the form designer when their respective settings are not configured. This prevents editors from adding unconfigured reCAPTCHA fields that would not work on the frontend. 
 
-This change also ensures that field types remain registered, preventing issues when transferring forms with Umbraco Deploy between environments where reCAPTCHA settings may not yet be configured.
+This change also ensures that field types remain registered. This prevents issues when transferring forms with Umbraco Deploy between environments where reCAPTCHA settings may not yet be configured.
 
 ![Disabled reCAPTCHA field type in form designer](images/disabled-fields.png)
 
