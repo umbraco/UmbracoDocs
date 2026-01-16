@@ -40,7 +40,7 @@ A new reCAPTCHA Enterprise field type has been added, providing advanced bot pro
 
 {% hint style="warning" %}
 
-The "Score Threshold" setting for the reCAPTCHA Enterprise field type is currently not fully functional due to a dependent issue in Umbraco CMS (see [CMS PR #21339](https://github.com/umbraco/Umbraco-CMS/pull/21339)). This will be resolved in a future release.
+The "Score Threshold" setting for the reCAPTCHA Enterprise field type is currently not fully functional. This is due to a dependent issue in Umbraco CMS (see [CMS PR #21339](https://github.com/umbraco/Umbraco-CMS/pull/21339)). This will be resolved in a future release.
 
 {% endhint %}
 
