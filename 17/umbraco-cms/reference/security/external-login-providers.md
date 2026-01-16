@@ -733,7 +733,7 @@ The custom element will render a form with a button. The button will submit the 
 
 No logic needs to be performed in the  `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
 
-We are using Lit version 3 in this example imported from a node module. You must set up npm and install the Lit package first. You should use a bundler such as [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
+In this example, Lit version 3 is used and imported from a node module. You must set up npm and install the Lit package first. You should use a bundler such as [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
 
 {% hint style="info" %}
 To learn more about how to set up a project with Vite, see the [Creating your first extension](../../tutorials/creating-your-first-extension.md) tutorial.
