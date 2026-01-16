@@ -853,7 +853,9 @@ customElements.define('my-lit-view', MyLitView);
 {% endtab %}
 
 {% tab title="Vanilla (JavaScript)" %}
-We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
+It is necessary to define a template first and then the custom element itself. The template is a small HTML form with a button. 
+
+The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
 ```javascript
