@@ -16,16 +16,45 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.4.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 15th 2026)
+* Add confirmation modal for entry bulk deletion [#1490](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1490)
+* Fix prevalue source validation [#1549](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1549)
+* Fix prevalue source dropdown rendering [#1550](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1550)
+* Fix prevalue source disappearing properties [#1551](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1551)
+* Add disabled state for unconfigured field types [#1557](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1557)
+* Fix form picker multiple value conversion [#1562](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1562)
+* Fix form picker multiple selection storage [#1563](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1563)
+* Add disabled state to workflows [#1566](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1566)
+* Fix workflow sorting [#1567](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1567)
+* Allow sorting between workflow stages [#1568](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1568)
+* Handle missing or deleted workflows [#1570](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1570)
+* Workflow name field now longer [#1573](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1573)
+* Fix Forms Theme Picker validation [#1577](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1577)
+* Resolve migration of Form Picker and Theme Picker from v13 [#1578](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1578)
+
 ### [16.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 8th 2026)
+
+#### reCAPTCHA Enterprise field type added
+
+A new reCAPTCHA Enterprise field type has been added. It provides advanced bot protection using Google's reCAPTCHA Enterprise service.
+
+#### Unconfigured reCAPTCHA fields now display as disabled
+
+The reCAPTCHA v2, v3, and Enterprise field types now display as disabled in the form designer. This applies when their respective settings are not configured. It prevents editors from adding unconfigured reCAPTCHA fields that would not work on the frontend.
+
+This change also ensures that field types remain registered. This prevents issues when transferring forms with Umbraco Deploy between environments where reCAPTCHA settings may not yet be configured.
+
+![Disabled reCAPTCHA field type in form designer](images/disabled-fields.png)
+
 * Umbraco CMS dependency updated to 16.4.0
 * Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
 * Preserving line-spacing in text-area input [#1369](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1369)
 * Add `DefaultValue` property to `SettingAttribute` [#1411](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1411)
-* Fix folder creation for users with single start folder [#1546](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1546)
 * Updated field and workflow settings handling when default values are defined [#1421](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1421)
 * Load correct icons for all Forms tree items [#1457](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1457)
 * Improve field alias logic and input event handling [#1459](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1459)
 * Improve form reorder sorting experience [#1482](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1482)
+* Fix folder creation for users with single start folder [#1546](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1546)
 * Match delete icon to CMS delete icon [#1553](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1553)
 * Redesigned Form designer to match CMS content type designer
 * Fix redirect on entity creation and improve save flow

@@ -225,94 +225,79 @@ If there is only a small change to the logic around Url generation, then a smart
 
 #### Example
 
-Add /fish on the end of every URL. It's important to note here that since we're changing the outbound URL, but not how we handle URLs inbound, this **will** break the routing. In order to make the routing work again you have to implement a custom content finder, see [IContentFinder](icontentfinder.md) for more information on how to do that.
+This example replaces the default URL provider with a custom implementation, based on the default URL provider itself. The custom URL provider implements a new routing scheme for product pages.
 
-{% hint style="warning" %}
-The below example is using `ILocalizationService` which is currently obsolete and will be removed in v15. Use `ILanguageService` or `IDictionaryItemService` (for dictionary item operations) instead.
+{% hint style="info" %}
+The code below alters the outbound URL for product pages, but does not provide similar handling for inbound URL routing. This _will_ break the inbound URL routing, effectively making the product pages unroutable.
+
+To fix the inbound URL routing, you have to implement a custom content finder. See [IContentFinder](icontentfinder.md) for more information.
 {% endhint %}
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 
 namespace RoutingDocs.UrlProviders;
 
-public class ProductPageUrlProvider : NewDefaultUrlProvider
+// A custom URL provider, designed to replace the default URL provider to provide a custom URL scheme for product pages.
+public class CustomUrlProvider : NewDefaultUrlProvider
 {
-    public ProductPageUrlProvider(
-        IOptionsMonitor<RequestHandlerSettings> requestSettings,
-        ILogger<NewDefaultUrlProvider> logger,
-        ISiteDomainMapper siteDomainMapper,
-        IUmbracoContextAccessor umbracoContextAccessor,
-        UriUtility uriUtility,
-        ILocalizationService localizationService)
-        : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility, localizationService)
+    // Constructor dependencies omitted for brevity.
+    public CustomUrlProvider(...)
+        : base(...)
     {
-    }
-
-    public override IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
-    {
-        // Add custom logic to return 'additional urls' - this method populates a list of additional urls for the node to display in the Umbraco backoffice
-        return base.GetOtherUrls(id, current);
     }
 
     public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {
-        if (content is null)
+        // Get the default url from the base URL provider implementation (NewDefaultUrlProvider).
+        UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
+        if (defaultUrlInfo?.Url is null)
         {
+            // The base URL provider could not resolve a URL.
             return null;
         }
-        
-        // Only apply this to product pages
-        if (content.ContentType.Alias == "productPage")
+
+        // Only apply the custom URL scheme to product pages
+        if (content.ContentType.Alias is not "productPage")
         {
-            // Get the original base url that the DefaultUrlProvider would have returned,
-            // it's important to call this via the base, rather than .Url, or UrlProvider.GetUrl to avoid cyclically calling this same provider in an infinite loop!!)
-            UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
-            if (defaultUrlInfo is null)
-            {
-                return null;
-            }
-            
-            if (!defaultUrlInfo.IsUrl)
-            {
-                // This is a message (eg published but not visible because the parent is unpublished or similar)
-                return defaultUrlInfo;
-            }
-            else
-            {
-                // Manipulate the url somehow in a custom fashion:
-                var originalUrl = defaultUrlInfo.Text;
-                var customUrl = $"{originalUrl}fish/";
-                return new UrlInfo(customUrl, true, defaultUrlInfo.Culture);
-            }
+            // Not a product page, return the default URL.
+            return defaultUrlInfo;
         }
-        // Otherwise return null
-        return null;
+
+        // Implement the custom URL scheme for product pages.
+        var productPageUrl = $"{defaultUrlInfo.Url.ToString().TrimEnd('/')}/some-custom-path";
+        return UrlInfo.FromUri(
+            new Uri(productPageUrl, UriKind.RelativeOrAbsolute),
+            Alias,
+            defaultUrlInfo.Culture,
+            defaultUrlInfo.IsExternal
+        );
     }
 }
 ```
 
-Register the custom UrlProvider with Umbraco:
+Use a composer to replace the default URL provider with the custom implementation:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Routing;
 
 namespace RoutingDocs.UrlProviders;
 
 public class RegisterCustomUrlProviderComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
-    {
-        builder.UrlProviders().Insert<ProductPageUrlProvider>();
-    }
+        // Register the custom URL provider instead of the default URL provider.
+        => builder.UrlProviders()
+            .Remove<NewDefaultUrlProvider>()
+            .Insert<CustomUrlProvider>();
 }
 ```
 
@@ -325,6 +310,19 @@ If you want to have multiple URL providers, you can add them one after the other
 The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
 
 For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma-delimited list of alternative URLs for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollection` to display this list to the Editor in the backoffice Info Content app for a node.
+
+### GetPreviewUrlAsync
+
+Implement this method if the URL provider supports a custom preview URL scheme.
+
+A common use case for this is providing external preview environments for headless sites. See [Additional preview environments support](../../content-delivery-api/additional-preview-environments-support.md) for a complete example.
+
+Most custom URL providers do not support this, and thus a default implementation is sufficient:
+
+```csharp
+public Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment)
+    => Task.FromResult<UrlInfo?>(null);
+```
 
 ### Url Provider Mode
 

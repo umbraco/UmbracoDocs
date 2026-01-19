@@ -12,7 +12,7 @@
 * [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 * [Configure Licenses](configure-licenses.md)
-* [Commercial Products, Relations and dependencies](commercial-product-dependencies.md)
+* [Commercial Products, Relations, and Dependencies](commercial-product-dependencies.md)
 
 ## Marketplace
 

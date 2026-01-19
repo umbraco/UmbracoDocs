@@ -211,7 +211,8 @@ namespace MyUmbracoProject.CustomAuthentication;
 public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
     public const string SchemeName = "Generic";
-    public void Configure(string name, BackOfficeExternalLoginProviderOptions options)
+
+    public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
     {
         if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
         {
@@ -233,7 +234,7 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
             // [OPTIONAL]
             // Default: "Editor"
             // Specify User Group.
-            defaultUserGroups: new[] { Constants.Security.EditorGroupAlias },
+            defaultUserGroups: ["editor"],
 
             // [OPTIONAL]
             // Default: The culture specified in appsettings.json.
@@ -270,6 +271,11 @@ public class GenericBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
             }
         };
 
+        // [OPTIONAL]
+        // Disable the ability for users to login with a username/password.
+        // If set to true, it will disable username/password login
+        // even if there are other external login providers installed.
+        options.DenyLocalLogin = true;
     }
 }
 ```
@@ -487,7 +493,6 @@ public class ConfigureGenericAuthenticationOptions : IConfigureNamedOptions<Gene
         }
     }
 }
-
 ```
 {% endcode %}
 
@@ -499,11 +504,9 @@ The extension class is required to extend on the default authentication implemen
 {% tab title="User Authentication" %}
 {% code title="GenericBackofficeAuthenticationExtensions.cs" lineNumbers="true" %}
 ```csharp
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
-using Umbraco.Cms.Web.BackOffice.Security;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Api.Management.Security;
+using Umbraco.Cms.Web.Common.Helpers;
 
 namespace MyUmbracoProject.CustomAuthentication;
 
@@ -513,6 +516,7 @@ public static class GenericBackofficeAuthenticationExtensions
     {
         // Register ProviderBackOfficeExternalLoginProviderOptions here rather than require it in startup
         builder.Services.ConfigureOptions<GenericBackOfficeExternalLoginProviderOptions>();
+        builder.Services.ConfigureOptions<ConfigureGenericAuthenticationOptions>();
 
         builder.AddBackOfficeExternalLogins(logins =>
         {
@@ -522,36 +526,68 @@ public static class GenericBackofficeAuthenticationExtensions
                     // The scheme must be set with this method to work for the back office
                     // Replace GenericOfficeExternalLoginProviderOptions with the Options method from the provider you are using
                     var schemeName =
-                        backOfficeAuthenticationBuilder.SchemeForBackOffice(GenericOfficeExternalLoginProviderOptions
+                        BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
                             .SchemeName);
 
                     ArgumentNullException.ThrowIfNull(schemeName);
 
                     // Replace AddGenericProvider with the Add method from the provider you are using
-
                     backOfficeAuthenticationBuilder.AddGenericProvider(
-                        schemeName,
-                        options =>
+                        schemeName, _ =>
                         {
-                            // Callback path: Represents the URL to which the browser should be redirected to.
-                            // The default value is '/signin-provider'.
-                            // The value here should match what you have configured in you external login provider.
-                            // The value needs to be unique.
-                            options.CallbackPath = "/umbraco-provider-signin";
-                            options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
-                            options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
-
-                            // Example: Map Claims
-                            // Relevant when using auto-linking.
-                            options.GetClaimsFromUserInfoEndpoint = true;
-                            options.TokenValidationParameters.NameClaimType = "name";
-
-                            // Example: Add scopes
-                            options.Scope.Add("email");
+                            // need to give an empty action here for the options pattern configuration to work 🤷
+                            // if you do not wish to use the umbraco default error handling and hardcode all your values instead of injecting them,
+                            // you can set the configuration right here instead.
                         });
                 });
         });
         return builder;
+    }
+
+    // the ...AuthenticationOptions method will be part of the OathProvider nuget package you install
+    // check the Add... method invoked on the backOfficeAuthenticationBuilder to figure out the correct type
+    public class ConfigureGenericAuthenticationOptions : IConfigureNamedOptions<GenericAuthenticationOptions>
+    {
+        private readonly OAuthOptionsHelper _helper;
+
+        public ConfigureGenericAuthenticationOptions(OAuthOptionsHelper helper)
+        {
+            _helper = helper;
+        }
+
+        public void Configure(GenericAuthenticationOptions options)
+        {
+            // Callback path: Represents the URL to which the browser should be redirected to.
+            // The default value is '/signin-provider'.
+            // The value here should match what you have configured in your external login provider.
+            // The value needs to be unique.
+            options.CallbackPath = "/umbraco-provider-signin";
+            options.ClientId = "YOURCLIENTID"; // Replace with your client id generated while creating OAuth client ID
+            options.ClientSecret = "YOURCLIENTSECRET"; // Replace with your client secret generated while creating OAuth client ID
+
+            // Example: Map Claims
+            // Relevant when using auto-linking.
+            options.GetClaimsFromUserInfoEndpoint = true;
+            options.TokenValidationParameters.NameClaimType = "name";
+
+            // Example: Add scopes
+            options.Scope.Add("email");
+
+            // This will redirect error responses from the login provider towards the default umbraco oath login error page
+            // which will try to display the error state in a meaningful way.
+            // You can implement your own error handling by handling options.Events.OnAccessDenied & options.Events.OnRemoteFailure
+            _helper.SetDefaultErrorEventHandling(options, GenericBackOfficeExternalLoginProviderOptions.SchemeName);
+        }
+
+        public void Configure(string? name, GenericAuthenticationOptions options)
+        {
+            // only configure the options if it is for the backend
+            if (name == BackOfficeAuthenticationBuilder.SchemeForBackOffice(GenericBackOfficeExternalLoginProviderOptions
+                    .SchemeName))
+            {
+                Configure(options);
+            }
+        }
     }
 }
 ```
@@ -633,14 +669,13 @@ If you use TypeScript, you can use this interface to define the properties:
 
 {% code title="login-types.ts" %}
 ```typescript
-type UserViewState = 'loggingIn' | 'loggedOut' | 'timedOut';
+type UserLoginState = 'loggingIn' | 'loggedOut' | 'timedOut';
 
 interface IExternalLoginCustomViewElement {
-  displayName?: string;
-  providerName?: string;
-  externalLoginUrl?: string;
-  userViewState?: UserViewState;
-};
+	userLoginState: UserLoginState;
+	manifest: { forProviderName: string; meta?: { label?: string } };
+	onSubmit: (providerName: string) => void;
+}
 ```
 {% endcode %}
 
@@ -653,7 +688,7 @@ The Custom Element can be implemented in a number of ways with many different li
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
 {% hint style="info" %}
-You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UUI components directly in your template.
+You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in the custom element. You can use the UI components directly in your template.
 {% endhint %}
 
 {% code title="App_Plugins/ExternalLoginProviders/umbraco-package.json" lineNumbers="true" %}
@@ -688,62 +723,88 @@ You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in 
 {% endcode %}
 
 {% tabs %}
-{% tab title="Vanilla (JavaScript)" %}
-We have to define a template first and then the custom element itself. The template is a small HTML form with a button. The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
 
-{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
-```javascript
-const template = document.createElement('template');
-template.innerHTML = `
-  <style>
-    :host {
-      display: block;
-      width: 100%;
-    }
-    #button {
-      width: 100%;
-    }
-  </style>
-  <h3>Our Company</h3>
-  <p>If you have signed up with Our Company, you can sign in to Umbraco by clicking the button below.</p>
-  <uui-button type="button" id="button" look="primary">
-    <uui-icon name="icon-cloud"></uui-icon>
-    Sign in with Our Company
-  </uui-button>
-`;
+{% tab title="Lit" %}
+It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the Login screen. 
 
-/**
- * This is an example how to set up a custom element as a Web Component.
- */
-export default class MyCustomView extends HTMLElement {
-  manifest = {};
-  onSubmit = () => {};
-  userLoginState = '';
+The following example shows how to use Lit to render the custom element. 
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. 
 
-    this.shadowRoot.getElementById('button').addEventListener('click', () => {
-      this.onSubmit(this.manifest.forProviderName);
-    });
-  }
+No logic needs to be performed in the  `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
+
+In this example, Lit version 3 is used and imported from a node module. You must set up npm and install the Lit package first. You should use a bundler such as [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
+
+{% hint style="info" %}
+To learn more about how to set up a project with Vite, see the [Creating your first extension](../../tutorials/creating-your-first-extension.md) tutorial.
+{% endhint %}
+
+{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.ts" lineNumbers="true" %}
+```typescript
+import { LitElement, css, html } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+
+type UserLoginState = 'loggingIn' | 'loggedOut' | 'timedOut';
+
+interface IExternalLoginCustomViewElement {
+	userLoginState: UserLoginState;
+	manifest: { forProviderName: string; meta?: { label?: string } };
+	onSubmit: (providerName: string) => void;
 }
 
-customElements.define('my-custom-view', MyCustomView);
+/**
+ * This is an example how to set up a LitElement component.
+ */
+@customElement('my-lit-view')
+export default class MyLitView extends LitElement implements IExternalLoginCustomViewElement {
+	@property({ type: String, attribute: false })
+	userLoginState!: UserLoginState;
+
+	@property({ type: Object, attribute: false })
+	manifest!: { forProviderName: string; meta?: { label?: string } };
+
+	@property({ attribute: false })
+	onSubmit!: (providerName: string) => void;
+
+	get displayName() {
+		return this.manifest.meta?.label ?? this.manifest.forProviderName;
+	}
+
+	override render() {
+		return html`
+			<h3>Our Company</h3>
+			<p>If you have an account with Our Company, you can sign in to Umbraco by clicking the button below.</p>
+			<p>The user is currently: ${this.userLoginState}</p>
+			<uui-button
+				type="button"
+				id="button"
+				look="primary"
+				label="${this.displayName}"
+				@click=${() => this.onSubmit(this.manifest.forProviderName)}>
+				<uui-icon name="icon-cloud"></uui-icon>
+				${this.displayName}
+			</uui-button>
+		`;
+	}
+
+	static override readonly styles = css`
+		:host {
+			display: block;
+			width: 100%;
+		}
+		#button {
+			width: 100%;
+		}
+	`;
+}
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="Lit (JavaScript)" %}
-It is also possible to use a library like [Lit](https://lit.dev/) to render the custom element. The following example shows how to use Lit to render the custom element. The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. We do not have to perform any logic in the `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
+It is also possible to use vanilla JavaScript with Lit. 
 
-We are using Lit version 3 in this example imported directly from a JavaScript delivery network to keep the example slim. You can also use a bundler like [Vite](https://vitejs.dev) to bundle the Lit library with your custom element.
-
-{% hint style="info" %}
-To learn more about how to set up a project with Vite, see the [Creating your first extension](../../tutorials/creating-your-first-extension.md) tutorial.
-{% endhint %}
+The following example imports Lit from a CDN and uses it to render the custom element needed for the Login screen:
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
 ```javascript
@@ -789,6 +850,56 @@ export default class MyLitView extends LitElement {
 }
 
 customElements.define('my-lit-view', MyLitView);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Vanilla (JavaScript)" %}
+It is necessary to define a template first and then the custom element itself. The template is a small HTML form with a button. 
+
+The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
+
+{% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
+```javascript
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    #button {
+      width: 100%;
+    }
+  </style>
+  <h3>Our Company</h3>
+  <p>If you have signed up with Our Company, you can sign in to Umbraco by clicking the button below.</p>
+  <uui-button type="button" id="button" look="primary">
+    <uui-icon name="icon-cloud"></uui-icon>
+    Sign in with Our Company
+  </uui-button>
+`;
+
+/**
+ * This is an example how to set up a custom element as a Web Component.
+ */
+export default class MyCustomView extends HTMLElement {
+  manifest = {};
+  onSubmit = () => {};
+  userLoginState = '';
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.shadowRoot.getElementById('button').addEventListener('click', () => {
+      this.onSubmit(this.manifest.forProviderName);
+    });
+  }
+}
+
+customElements.define('my-custom-view', MyCustomView);
 ```
 {% endcode %}
 {% endtab %}

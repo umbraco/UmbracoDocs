@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 15th 2026)
+* Fix mandatory validation for Form Picker and Theme Picker property editors [#1400](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1400)
+
 ### [13.9.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 8th 2026)
 * Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
 * Better handling of dirty fields in PrevalueSource setting types [#1249](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1249)
