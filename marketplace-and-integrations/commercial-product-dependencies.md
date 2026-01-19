@@ -26,9 +26,9 @@ graph RL
     Deploy --> Licenses
     Forms --> Licenses
     Engage --> Licenses
-    Commerce --> Licenses
     Workflow --> Licenses
     UIBuilder --> Licenses
+    Commerce --> Licenses
 
     subgraph "Integration Packages"
         FormsDeploy["Umbraco.Forms.Deploy"]
