@@ -34,8 +34,7 @@ By the end of this tutorial, you will learn how to:
 
 ![Create a new partial view from the Login snippet](../.gitbook/assets/create-partial-view-from-login-snippet.png)
 
-6. Name the partial view **Login** and save it:
-
+6. Name the partial view **Login** and save it.
 7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets.
 8. Save the partial views as "Register" and "LoginStatus" respectively.
 

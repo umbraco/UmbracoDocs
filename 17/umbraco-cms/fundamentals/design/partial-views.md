@@ -83,13 +83,13 @@ To create a folder:
 
 To render a partial view into any template, use any of these helper methods:
 
-1. Using `PartialAsync` (async Razor helper)
+### Using `PartialAsync` (async Razor helper)
 
 ```csharp
 @await Html.PartialAsync("~/Views/Partials/Login.cshtml")
 ```
 
-2. Using the `<partial>` Razor tag helper
+### Using the `<partial>` Razor tag helper
 
 ```csharp
 <partial name="~/Views/Partials/Login.cshtml" />
