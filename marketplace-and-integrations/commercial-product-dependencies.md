@@ -47,6 +47,7 @@ graph RL
     EngageCommerce --> Engage
     EngageCommerce --> Commerce
     CommerceDeploy --> Commerce
+    CommerceDeploy --> Deploy
 
     subgraph "Commerce Extensions"
         CommerceCheckout["Umbraco.Commerce.Checkout"]
