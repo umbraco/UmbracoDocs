@@ -98,9 +98,9 @@ To enable language variants on Document Types, follow these steps:
     ![Allow property editor Language Variants](../.gitbook/assets/allow-varying-property-editor-v14.png)
 4. Click **Save**.
 5. Go to the **Design** tab.
-6.  Click on the Data Type of the **Page Title** and toggle **Vary by culture**.
+6.  Click on the Data Type of the **Page Title** and toggle **Shared across cultures**.
 
-    ![Allow Vary by Culture](../.gitbook/assets/allow-vary-by-culture-v14.png)
+    ![Allow Vary by Culture](../.gitbook/assets/allow-vary-by-culture.png)
 7. Click **Update**.
 8. For this tutorial, we will not make any changes to the **Address**.
 9. Click **Save**.
@@ -111,10 +111,10 @@ When you return to your content node you will notice two things:
 
 1.  At the top of the content tree, there is a dropdown to view the content tree in the language of your choice.
 
-    ![Variant Content Tree](../.gitbook/assets/Variant-content-tree-v14.png)
+    ![Variant Content Tree](../.gitbook/assets/Variant-content-tree.png)
 2.  To the right of the content name, there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
-    ![Variant Drop-down list](../.gitbook/assets/variant-dropdown-v14.png)
+    ![Variant Drop-down list](../.gitbook/assets/variant-dropdown.png)
 
 ## Adding Culture and Hostnames to the Root Node of the Website
 
