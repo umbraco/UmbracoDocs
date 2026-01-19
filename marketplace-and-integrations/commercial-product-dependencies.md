@@ -7,50 +7,73 @@ description: Describes the Umbraco commercial products, their dependencies and r
 The following diagram shows the Umbraco commercial products, their dependencies, and the relations between them. Depending on your setup, you may need one or more of the additional packages shown here when working with them.
 
 ```mermaid
-graph LR
-    CMS["Umbraco.CMS"]
-    
-    CMS --> Forms["Umbraco.Forms"]
-    CMS --> Licensing["Umbraco.Licensing"]
-    CMS --> Deploy["Umbraco.Deploy"]
-    CMS --> Workflow["Umbraco.Workflow"]
-    CMS --> Commerce["Umbraco.Commerce"]
-    
-    Forms --> FormsDeploy["Umbraco.Forms.Deploy"]
-    Deploy --> DeployControls["Umbraco.Deploy.Controls"]
-    
-    Engage["Umbraco.Engage"]
-    Engage --> EngageForms["Umbraco.Engage.Forms"]
-    Engage --> UIBuilder["Umbraco.UI.Builder"]
-    
-    CMS --> Engage
+graph RL
+    subgraph Core
+        CMS["Umbraco.CMS"]
+        Licenses["Umbraco.Licenses"]
+        Licenses --> CMS
+    end
+
+    subgraph "Commercial Products"
+        Deploy["Umbraco.Deploy"]
+        Forms["Umbraco.Forms"]
+        Engage["Umbraco.Engage"]
+        Commerce["Umbraco.Commerce"]
+        Workflow["Umbraco.Workflow"]
+        UIBuilder["Umbraco.UIBuilder"]
+    end
+
+    Deploy --> Licenses
+    Forms --> Licenses
+    Engage --> Licenses
+    Commerce --> Licenses
+    Workflow --> Licenses
+    UIBuilder --> Licenses
+
+    subgraph "Integration Packages"
+        FormsDeploy["Umbraco.Forms.Deploy"]
+        EngageDeploy["Umbraco.Engage.Deploy"]
+        EngageForms["Umbraco.Engage.Forms"]
+        EngageCommerce["Umbraco.Engage.Commerce"]
+        CommerceDeploy["Umbraco.Commerce.Deploy"]
+    end
+
+    FormsDeploy --> Forms
+    FormsDeploy --> Deploy
+    EngageDeploy --> Engage
+    EngageDeploy --> Deploy
     EngageForms --> Engage
-    
-    Licensing --> UIBuilder
-    
-    Commerce --> CommerceDeploy["Umbraco.Commerce.Deploy"]
-    Commerce --> CommerceCheckout["Umbraco.Commerce.Checkout"]
-    Commerce --> CommercePaymentProviders["Umbraco.Commerce.Payment.Providers"]
-    Commerce --> CommerceShippingProviders["Umbraco.Commerce.Shipping.Providers"]
-    Commerce --> CommerceTaxProviders["Umbraco.Commerce.Tax.Providers"]
-    
-    CommercePaymentProviders --> Stripe["Stripe"]
-    CommercePaymentProviders --> QuickPay["QuickPay"]
-    CommercePaymentProviders --> Mollie["Mollie"]
-    CommercePaymentProviders --> Opayo["Opayo"]
-    CommercePaymentProviders --> Klarna["Klarna"]
-    CommercePaymentProviders --> Worldpay["Worldpay"]
-    CommercePaymentProviders --> PayPal["PayPal"]
-    CommercePaymentProviders --> Buckaroo["Buckaroo"]
-    
-    CommerceShippingProviders --> DHL["DHL"]
-    CommerceShippingProviders --> Shipmonodo["Shipmonodo"]
-    CommerceShippingProviders --> EasyPost["EasyPost"]
-    
-    CommerceTaxProviders --> TaxJar["TaxJar"]
-    
-    EngageCommerce["Umbraco.Engage.Commerce"]
-    EngageCommerce --> CommercePaymentProviders
+    EngageForms --> Forms
+    EngageCommerce --> Engage
+    EngageCommerce --> Commerce
+    CommerceDeploy --> Commerce
+
+    subgraph "Commerce Extensions"
+        CommerceCheckout["Umbraco.Commerce.Checkout"]
+        CommercePaymentProviders["Umbraco.Commerce.Payment.Providers"]
+        CommerceShippingProviders["Umbraco.Commerce.Shipping.Providers"]
+        CommerceTaxProviders["Umbraco.Commerce.Tax.Providers"]
+    end
+
+    CommerceCheckout --> Commerce
+    CommercePaymentProviders --> Commerce
+    CommerceShippingProviders --> Commerce
+    CommerceTaxProviders --> Commerce
+
+    subgraph "Payment Providers"
+        Stripe & QuickPay & Mollie & Opayo & Klarna & Worldpay & PayPal & Buckaroo
+    end
+    Stripe & QuickPay & Mollie & Opayo --> CommercePaymentProviders
+    Klarna & Worldpay & PayPal & Buckaroo --> CommercePaymentProviders
+
+    subgraph "Shipping Providers"
+        DHL & Shipmondo & EasyPost
+    end
+    DHL & Shipmondo & EasyPost --> CommerceShippingProviders
+
+    subgraph "Tax Providers"
+        TaxJar --> CommerceTaxProviders
+    end
 ```
 
 Explanatory notes:
