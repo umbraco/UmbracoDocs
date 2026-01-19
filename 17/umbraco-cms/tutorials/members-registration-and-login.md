@@ -51,6 +51,7 @@ To render these partial views, we need a new Document Type with a dedicated temp
 2. Click **Compositions**.
 3. Select **Content Base** and **Navigation Base** Compositions.
 4. Click **Submit**.
+
 ![Composition View](../.gitbook/assets/composition-view.png)
 
 {% hint style="info" %}
@@ -61,6 +62,7 @@ The **Content Base** and **Navigation Base** Compositions are available once the
 6. Go to the **Home** Document Type.
 7. Go to the **Structure** tab.
 8. Choose the **Login** Document Type under **Allowed child node types**.
+
 ![Structure Setting](../.gitbook/assets/structure-setting.png)
 
 9. Click **Choose**.
