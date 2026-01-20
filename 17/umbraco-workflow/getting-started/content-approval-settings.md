@@ -52,7 +52,7 @@ To add an approval group to the workflow:
 5. Click **Submit**.
 6. Click **Save**.
 
-When you click on the approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Approval Groups](../workflow-section/approval-groups#approval-groups-settings) article.
+When you click on the approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Approval Groups](../workflow-section/approval-groups.md#approval-groups-settings) article.
 
 To remove an approval group, click **Remove**.
 
