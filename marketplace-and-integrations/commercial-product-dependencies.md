@@ -7,6 +7,10 @@ description: Describes the Umbraco commercial products, their dependencies and r
 The following diagram shows the Umbraco commercial products, their dependencies, and the relations between them. Depending on your setup, you may need one or more of the additional packages shown here when working with them.
 
 ```mermaid
+---
+    config:
+        theme: 'neutral'
+---
 graph RL
     subgraph Core
         CMS["Umbraco.CMS"]
