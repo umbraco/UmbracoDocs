@@ -1,3 +1,7 @@
+---
+description: Learn more about workflow Expanders and how they are implemented.
+---
+
 # Workflow Expanders
 
 Workflow Expanders allow developers to capture additional data as part of a workflow submission. Expansion data is displayed in the workflow detail dialog, and can be accessed programmatically via Workflow notifications or custom code.
