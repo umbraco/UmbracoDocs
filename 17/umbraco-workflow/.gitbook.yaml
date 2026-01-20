@@ -6,3 +6,4 @@ root: ./
 
 redirects:
     getting-started/workflow-settings: getting-started/content-approval-settings.md
+    
