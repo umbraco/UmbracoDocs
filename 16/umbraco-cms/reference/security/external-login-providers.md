@@ -27,6 +27,21 @@ In some cases, when using Azure AD for login, you may encounter the following er
 Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
 {% endhint %}
 
+## Call back requests
+
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../../reference/configuration/globalsettings.md#reserved-paths).
+
+For example, with Open ID Connect, you should configure:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/signin-oidc/,",
+```
+
+This avoids Umbraco treating this call back as a potential request for content, improving performance of the authentication operation.
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}

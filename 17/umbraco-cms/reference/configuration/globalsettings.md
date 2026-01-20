@@ -71,6 +71,8 @@ Type: `string` (default: `~/.well-known,`)
 
 A comma-separated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
+
+
 ### Reserved paths
 
 Key: `ReservedPaths`
@@ -79,7 +81,7 @@ Type: `string` (default: `~/app_plugins/,~/install/,~/mini-profiler-resources/,~
 A comma-separated list of all the folders in your directory to be left alone by Umbraco. If you have folders with custom files, add them to this setting to make sure Umbraco leaves them alone.
 
 {% hint style="warning" %}
-Adding additional values to the Reserves URLs and Reserved Paths will overwrite default/current values. This causes performance issues as well.
+Adding additional values to the Reserved URLs and Reserved Paths will overwrite the default values. You should make sure to include these values as well as any additional ones you provide.
 {% endhint %}
 
 ### Timeout
