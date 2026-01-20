@@ -51,10 +51,12 @@ To add a content item review, follow these steps:
 2. Go to the **Settings** tab in the **Content reviews** menu.
 3. Click **Add** in the **Content item reviews** section.
 
-    ![Content Item Reviews](../images/content-item-reviews-v14.png)
+![Content Item Reviews](../images/content-item-reviews-v14.png)
+
 4. Select **Content node** to add to the Content item reviews section.
 
-    ![Select Content Node](../images/content-item-reviews-select-content-v14.png)
+![Select Content Node](../images/content-item-reviews-select-content-v14.png)
+
 5. Select **Choose**.
 6. Select the **Language** from the drop-down.
 7. *[Optional]* Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
@@ -64,7 +66,8 @@ To add a content item review, follow these steps:
 11. Select **Submit**.
 12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-    ![Edit Content Item Review Settings](../images/Content-review-permissions-v14.png)
+![Edit Content Item Review Settings](../images/Content-review-permissions-v14.png)
+
 13. Click Submit.
 14. Click **Save**.
 
@@ -80,10 +83,11 @@ To add a Document Type review, follow these steps:
 2. Go to the **Settings** tab in **Content reviews**.
 3. Click **Add** in the **Document-type reviews** section.
 
-    ![Document Type reviews](../images/document-type-reviews-v14.png)
+![Document Type reviews](../images/document-type-reviews-v14.png)
+
 4. Select **Content type** to add to the Document-type reviews section.
 
-    ![Select Content Type](../images/document-type-reviews-select-content-v14.png)
+![Select Content Type](../images/document-type-reviews-select-content-v14.png)
 
 5. Select **Choose**
 6. Select the **Language** from the drop-down.
@@ -94,7 +98,8 @@ To add a Document Type review, follow these steps:
 11. Click Submit.
 12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-    ![Add Document Type Review Settings](../images/document-type-review-settings-v13.png)
+![Add Document Type Review Settings](../images/document-type-review-settings-v13.png)
+
 13. Click Submit.
 14. Click **Save Settings**.
 
