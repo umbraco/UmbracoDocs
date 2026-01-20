@@ -1,21 +1,20 @@
+# Content Review Settings
 
-## Content Reviews Settings
+The Content review settings allow for the configuration of email notifications, review period days, reminder days, and the like. When using Content reviews, all content has a default review period.
 
-The Content reviews settings allow configuring email notifications, review period days, reminder days, and so on. Using Content reviews, all content has a default review period.
-
-### General Settings
+## General Settings
 
 You can configure the **General** Settings from the **Content reviews** tab in the **Settings** section. The following settings are available:
 
 ![General settings](../images/content-reviews-general-settings-v14.png)
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
-* **Send notifications** - Enable this setting to send email notification to approval groups when content requires review.
+* **Send notifications** - Enable this setting to send email notifications to approval groups when content requires review.
 * **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the default Review period value. If disabled, content must be explicitly reviewed via the review banner displayed on the content item.
 * **Review period (days)** - The default number of days between content reviews.
-* **Reminder threshold (days)** - Determines how many days prior to the review date the Workflow should notify editors of required reviews. By default, the number of days is set to 1.
+* **Reminder threshold (days)** - Determines how many days before the review date the Workflow should notify editors of required reviews. By default, the number of days is set to 1.
 
-### Content Review Permissions
+## Content Review Permissions
 
 You can configure specific review groups to review designated content nodes or Document Types. The review group responsible for reviewing content is determined by the workflow configuration. This means a site with workflow already configured can leverage the existing permissions model for assigning content review responsibilities. By default, content reviews are assigned to the approval group defined in the first stage of the workflow.
 
@@ -30,21 +29,21 @@ The current permissions for a content node are displayed in the **Workflow** con
 
 ![Workflow Content App - Configuration tab](../getting-started/images/content-approval-flow-v14.png)
 
-### Content Item and Document Type Reviews
+## Content Item and Document Type Reviews
 
 You can configure content reviews for individual content nodes or for all nodes of a given Document Type. For both Content Item and Document Type Reviews, the following settings are available:
 
 * **Language** - Allows you to specify which language version of the content is being reviewed.
 * **Exclude from review** - Enable this setting to ignore the specific content node (or all content nodes of this Document Type) when determining nodes to review.
 * **Review period (days)** - The review period in days between required reviews.
-* **Review group** - The group responsible for reviewing the content node. Can contain more than one group.
+* **Review group** - The group responsible for reviewing the content node. It can contain more than one group.
 * **External reviewers** - Assign email addresses for reviewers without CMS access. Feedback from external reviewers is not managed by Workflow.
 
 {% hint style="info" %}
-When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status. It assesses all the content needing review and provides this data in the Content reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
+When reviews are enabled or any changes to content review settings are saved, Workflow determines the review status. It assesses all the content needing review and provides this data in the Content Reviews Dashboard. For large sites, or on the first run, this may take a few seconds to complete.
 {% endhint %}
 
-#### Content Item Reviews
+### Content Item Reviews
 
 To add a content item review, follow these steps:
 
@@ -69,11 +68,11 @@ To add a content item review, follow these steps:
 13. Click Submit.
 14. Click **Save**.
 
-To Edit a content item review, click on the Content item and update the settings as per your requirement.
+To edit a content item review, click on the Content item and update the settings as per your requirement.
 
 To remove a content item review, click **Remove**.
 
-#### Document Type Reviews
+### Document Type Reviews
 
 To add a Document Type review, follow these steps:
 
@@ -88,7 +87,7 @@ To add a Document Type review, follow these steps:
 
 5. Select **Choose**
 6. Select the **Language** from the drop-down.
-7. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document-type from content review. If you enable this setting, skip to step 12.
+7. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document Type from content review. If you enable this setting, skip to step 12.
 8. Enter the **Review period** in days.
 9. Click **Choose** to add the **Review Group**.
 10. Select an **approval group**.
@@ -99,19 +98,19 @@ To add a Document Type review, follow these steps:
 13. Click Submit.
 14. Click **Save Settings**.
 
-To Edit a Document-type review, click **Edit** and update the settings as per your requirement.
+To edit a Document Type review, click **Edit** and update the settings as per your requirement.
 
-To remove a Document-type review, click **Remove**.
+To remove a Document Type review, click **Remove**.
 
 ## Content Review Notifications
 
-Content review notifications use the email template available at `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`, which can be customized as required. For example to add a corporate branding or send customized messages.
+Content review notifications use the email template available at `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`, which can be customized as required. For example, to add a corporate branding or send customized messages.
 
 To add templates for other languages:
 
 1. Go to the `~/Views/Partials/WorkflowEmails/` folder.
 2. Copy the required template and paste it into the same folder.
-3. Append the culture code to the file name prefixed with an underscore.
+3. Append the culture code to the file name, prefixed with an underscore.
 
 For example:
 

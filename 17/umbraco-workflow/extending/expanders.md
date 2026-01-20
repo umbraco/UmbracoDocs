@@ -1,8 +1,8 @@
-# Expanders
+# Workflow Expanders
 
 Workflow Expanders allow developers to capture additional data as part of a workflow submission. Expansion data is displayed in the workflow detail dialog, and can be accessed programmatically via Workflow notifications or custom code.
 
-Implementing a Workflow Expander requires a C# class definition, and a backoffice extension.
+Implementing a Workflow Expander requires a C# class definition and a backoffice extension.
 
 ## Server-side implementation
 
@@ -21,15 +21,15 @@ The server-side implementation requires a C# class fulfilling the `IWorkflowExpa
     }
 ```
 
-In this example, the Expander will be applied to document workflows. The `Bar` property has a corresponding property in the client-side implementation. The Expander can define multiple properties - the example includes a single property for simplicity.
+In this example, the Expander will be applied to document workflows. The `Bar` property has a corresponding property in the client-side implementation. The Expander can define multiple properties, and the example above includes a single property for simplicity.
 
-The Expander does NOT need to be registered. Workflow builds a collection on startup, minimising developer work.
+The Expander does not require registration. Workflow builds a collection on startup, minimising developer work.
 
 ## Client-side implementation
 
 The client-side implementation requires a backoffice extension of type `workflowExpansion`:
 
-```ts
+```typescript
 {
     type: 'workflowExpansion',
     alias: "MyWorkflowExtensions.Expansion.Document",
@@ -53,6 +53,6 @@ The client-side implementation requires a backoffice extension of type `workflow
 
 The `workflowExpansion` type requires `meta.properties`, where `properties` is an array of expander definitions.
 
-In this example, the `alias` matches a property from the C# class. The `propertyEditorUiAlias` can be any valid property editor, but ideally would be a basic editor - a toggle, a textstring or similar.
+In this example, the `alias` matches a property from the C# class. The `propertyEditorUiAlias` can be any valid property editor, but ideally would be a basic editor such as a toggle, a text string, or similar.
 
 The default properties in the workflow submit dialog are also registered using this extension-first approach.
