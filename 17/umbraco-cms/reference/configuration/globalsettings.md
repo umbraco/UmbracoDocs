@@ -71,8 +71,6 @@ Type: `string` (default: `~/.well-known,`)
 
 A comma-separated list of files to be left alone by Umbraco, these files will be served, and the Umbraco request pipeline will not be triggered.
 
-
-
 ### Reserved paths
 
 Key: `ReservedPaths`
