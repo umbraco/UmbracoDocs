@@ -52,7 +52,7 @@ To add an approval group to the workflow:
 5. Click **Submit**.
 6. Click **Save**.
 
-When you click on the approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Settings](approval-groups.md#approval-groups-settings) section in the [Approval Groups](approval-groups.md) article.
+When you click on the approval group, you are presented with different configuration options for that group. For more information on the approval group settings, see the [Approval Groups](../workflow-section/approval-groups#approval-groups-settings) article.
 
 To remove an approval group, click **Remove**.
 
@@ -125,7 +125,7 @@ From the **Content Approvals** view in the **Settings** section, the **Notificat
 * **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
 * **Edit site URL:** The URL for the editing environment (including schema - http\[s]). This is a mandatory field.
 * **Site URL:** The URL for the public website (including schema - http\[s]). This is a mandatory field.
-* [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
+* [**Email templates**](#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
 ![Notifications tab in the Workflow Section](../.gitbook/assets/Notifications-tab-v14.png)
 
