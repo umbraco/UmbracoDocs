@@ -8,7 +8,7 @@ description: >-
 
 Use this template to add a top bar to your website. The template can be set up and used without help from a developer.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>A screen capture of the Generic Topbar Template as it looks without customization.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>A screen capture of the Generic Topbar Template as it looks without customization.</p></figcaption></figure>
 
 It is recommended to personalize the popup to make it even more relevant for your specific audience.
 

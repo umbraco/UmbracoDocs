@@ -132,6 +132,12 @@ Enabling IIS logging will cause the site to restart. For additional information,
 Changing the .NET framework runtime or the `DOTNET_ENVIRONMENT` environment variable will also cause your website to restart.
 {% endhint %}
 
+{% hint style="info" %}
+When using `WebApplication`, `DOTNET_ENVIRONMENT` takes precedence over `ASPNETCORE_ENVIRONMENT`. When using the legacy `WebHost`, `ASPNETCORE_ENVIRONMENT` takes precedence instead.
+
+You can also override the environment value by setting the `ASPNETCORE_ENVIRONMENT` variable in your `web.config` file.
+{% endhint %}
+
 ![Advanced Settings](images/advanced-settings.png)
 
 ![Advanced Settings continued](images/advanced-settings-continued.png)

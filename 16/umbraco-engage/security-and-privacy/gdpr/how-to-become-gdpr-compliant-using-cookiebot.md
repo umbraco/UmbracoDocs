@@ -10,7 +10,7 @@ Integrating a cookie consent banner service such as CookieBot allows you to conf
 
 This article gives you a working implementation to use with [CookieBot](https://www.cookiebot.com/).
 
-<figure><img src="../../.gitbook/assets/image (7) (3).png" alt="Cookiebot in Umbraco."><figcaption><p>Cookiebot in Umbraco.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (3) (1).png" alt="Cookiebot in Umbraco."><figcaption><p>Cookiebot in Umbraco.</p></figcaption></figure>
 
 ## Code Example
 

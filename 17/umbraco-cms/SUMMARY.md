@@ -183,6 +183,8 @@
     * [Modals](customizing/extending-overview/extension-types/modals/README.md)
       * [Custom Modals](customizing/extending-overview/extension-types/modals/custom-modals.md)
       * [Modal Route Registration](customizing/extending-overview/extension-types/modals/route-registration.md)
+    * [Property Editor Schema](customizing/extending-overview/extension-types/property-editor-schema.md)
+    * [Property Editor UI](customizing/extending-overview/extension-types/property-editor-ui.md)
     * [Property Value Preset](customizing/extending-overview/extension-types/property-value-preset.md)
     * [Sections](customizing/extending-overview/extension-types/sections/README.md)
       * [Section](customizing/extending-overview/extension-types/sections/section.md)

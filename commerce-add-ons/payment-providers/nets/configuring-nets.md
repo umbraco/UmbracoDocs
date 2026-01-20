@@ -11,11 +11,11 @@ description: >-
 
 If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
 
-![Sign up for Nets Easy on the Nets Portal.](../media/nets/nets-easy\_signup.png)
+![Sign up for Nets Easy on the Nets Portal.](../.gitbook/assets/nets-easy_signup.png)
 
 Or [login to the portal](https://portal.dibspayment.eu/dashboard) if you already have an account.
 
-![Login to your Nets Easy account on the Nets Portal.](../media/nets/nets-easy\_signin.png)
+![Login to your Nets Easy account on the Nets Portal.](../.gitbook/assets/nets-easy_signin.png)
 
 ## Step 2: API Keys
 
@@ -23,7 +23,7 @@ In order for Umbraco Commerce to communicate with Nets securely we need to retri
 
 The keys can be found under **Company > Integration** in the Nets Easy portal.
 
-![Nets Easy Integration Keys](../media/nets/nets-easy\_integration\_keys.png)
+![Nets Easy Integration Keys](../.gitbook/assets/nets-easy_integration_keys.png)
 
 ## Step 3: Webhook
 

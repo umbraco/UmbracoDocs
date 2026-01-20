@@ -6,7 +6,7 @@ description: Learn how to configure data views in Umbraco UI Builder.
 
 Data views allow you to define multiple pre-filtered views of the same data source. This is useful when entities exist in different states and you need a way to toggle between them.
 
-![Data Views](../images/data_views.png)
+![Data Views](../.gitbook/assets/data_views.png)
 
 ## Defining Data Views
 
@@ -24,13 +24,13 @@ AddDataView(string name, Lambda whereClauseExpression) : CollectionConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddDataView("Active", p => p.IsActive);
-````
+```
 
 ### Using the `AddDataView()` Method with Group
 
-Creates a data view within a specified group, using a where clause filter expression. The expression must return a  `boolean` value.
+Creates a data view within a specified group, using a where clause filter expression. The expression must return a `boolean` value.
 
 #### Method Syntax
 
@@ -40,9 +40,9 @@ AddDataView(string group, string name, Lambda whereClauseExpression) : Collectio
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.AddDataView("Status", "Active", p => p.IsActive);
-````
+```
 
 ### Using the `AddAllDataView` Method
 
@@ -53,4 +53,3 @@ Enables the `All` option for data views in the collection. The method can take a
 ```cs
 collectionConfig.AddAllDataView(string? label)
 ```
-

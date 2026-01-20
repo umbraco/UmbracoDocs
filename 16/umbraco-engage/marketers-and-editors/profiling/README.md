@@ -8,11 +8,11 @@ description: >-
 
 The **Profiles** section offers an overview of all the visitors that visited your website. To access the profiles section, navigate to **Engage** -> **Profiles**.
 
-![Profiles section](../../.gitbook/assets/Profiles-v16.png)
+![Profiles section](<../../.gitbook/assets/Profiles-v16 (1).png>)
 
 This section provides an overview of all visitors:
 
-![Profiles Overview](../../.gitbook/assets/profiles-overview-v16.png)
+![Profiles Overview](<../../.gitbook/assets/profiles-overview-v16 (1).png>)
 
 At the top, the total number of visitors that visited your website is displayed. You can also see how many visitors are identified versus unidentified.
 
@@ -28,7 +28,7 @@ However, once a visitor logs in (via Umbraco's Members section) or submits an Um
 
 ## Profiles Overview
 
-![Table view of Profiles Overview](../../.gitbook/assets/profiles-overview-table-view-v16.png)
+![Table view of Profiles Overview](<../../.gitbook/assets/profiles-overview-table-view-v16 (1).png>)
 
 The Profiles table displays all visitors to the website, showing:
 
@@ -46,7 +46,7 @@ Finally, you can see a blue or a grey icon at the beginning of the row. A grey i
 
 It is possible to filter the profiles table by clicking the **Filter** button.
 
-![Filtering the profiles overview using the filter button](../../.gitbook/assets/filtering-results-v16.png)
+![Filtering the profiles overview using the filter button](<../../.gitbook/assets/filtering-results-v16 (1).png>)
 
 You can filter by:
 
@@ -60,4 +60,4 @@ You can filter by:
 
 For more details, click **Show profile** in a specific profile's row. For more information, see the [Profile Detail](profile-detail.md) article.
 
-![Filtering Options](../../.gitbook/assets/filtering-results-options-v16.png)
+![Filtering Options](<../../.gitbook/assets/filtering-results-options-v16 (1).png>)

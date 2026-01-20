@@ -28,11 +28,11 @@ To enable **Radar for Fraud Teams** follow these steps:
 1. Log in to your Stripe dashboard.
 2. Navigate to the **Settings > Product Settings > Radar Settings** section.
 
-![Stripe Product Settings](../../media/stripe/stripe\_product\_settings.png)
+![Stripe Product Settings](../../.gitbook/assets/stripe_product_settings.png)
 
 3. Enable the **Radar for Fraud Teams** feature, allowing us to define custom Radar rules.
 
-![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe\_radar\_for\_fraud\_teams.png)
+![Stripe Radar for Fraud Teams Setting](../../.gitbook/assets/stripe_radar_for_fraud_teams.png)
 
 ## Step 4: Setup a Stripe Radar rule
 
@@ -47,12 +47,12 @@ To set up a new Stripe Radar rule, follow these steps:
 Block if ::customer:billingCountry:: != :card_country:
 ```
 
-![Stripe Radar for Fraud Teams Setting](../../media/stripe/stripe\_block\_country\_rule2.png)
+![Stripe Radar for Fraud Teams Setting](../../.gitbook/assets/stripe_block_country_rule2.png)
 
 5. Click the **Test rule** button to test the rule.
 6. Click the **Add and enable** button to add the rule to the list of block rules.
 
-![Stripe Radar blocking rules](../../media/stripe/stripe\_block\_rules2.png)
+![Stripe Radar blocking rules](../../.gitbook/assets/stripe_block_rules2.png)
 
 {% hint style="info" %}
 The rule test may fail when you click the **Test rule** button due to there being no transaction with the given metadata being attached to them. You will, however, be able to continue regardless.

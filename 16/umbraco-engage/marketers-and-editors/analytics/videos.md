@@ -51,7 +51,7 @@ Apart from the metadata above we also track actions performed on the video playe
 
 By collecting this data, you can visualize different reports about the videos. You will find these reports in the Videos tab of the Analytics section.
 
-![Reports in the Videos tab of the Analytics section](../../.gitbook/assets/engage-analytics-videos.png)
+![Reports in the Videos tab of the Analytics section](<../../.gitbook/assets/engage-analytics-videos (1).png>)
 
 Here you find all the videos that are displayed on the website. For each video you can see the following:
 
@@ -61,6 +61,6 @@ Here you find all the videos that are displayed on the website. For each video y
 
 From here you can also drill down on a specific video to see more details about that video. You can do that by clicking on the video itself.
 
-![View detailed analytics for a specific video](../../.gitbook/assets/enage-analytics-video-details.png)
+![View detailed analytics for a specific video](<../../.gitbook/assets/enage-analytics-video-details (1).png>)
 
 You see how often the video was started and paused, how often it was resumed, and how often visitors sought within the video.

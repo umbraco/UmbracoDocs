@@ -11,11 +11,11 @@ The cockpit lets you check out all the stored data when browsing the website. It
 
 You should see the Umbraco Engage Cockpit on the left or right side of the screen:
 
-![Cockpit](../../.gitbook/assets/engage-cockpit-3.png)
+![Cockpit](<../../.gitbook/assets/engage-cockpit-3 (1).png>)
 
 Click **Open** to see all the features of the Cockpit:
 
-![Cockpit features](../../.gitbook/assets/engage-cockpit-overview.png)
+![Cockpit features](<../../.gitbook/assets/engage-cockpit-overview (1).png>)
 
 ## Access to the cockpit
 
@@ -35,7 +35,7 @@ The following information is tracked:
 * All [fired events](../../developers/analytics/client-side-events-and-additional-javascript-files/create-your-own-events.md) are tracked.
 * Every out-click to other domains, a pdf file or excel file is measured by default.
 
-![Cockpit Analytics](../../.gitbook/assets/engage-cockpit-analytics.png)
+![Cockpit Analytics](<../../.gitbook/assets/engage-cockpit-analytics (1).png>)
 
 ### Data reporting server-side
 
@@ -49,10 +49,10 @@ In this section you can see all the data that is captured on the server side:
 
 Also, you have the option to delete your Umbraco Engage cookie
 
-![Delete Umbraco Engage cookies](../../.gitbook/assets/engage-cockpit-analytics-2.png)
+![Delete Umbraco Engage cookies](<../../.gitbook/assets/engage-cockpit-analytics-2 (1).png>)
 
 ### Segments
 
 In the segments section, you can see which segments are configured and which are applied to the current visitor.
 
-![Segments](../../.gitbook/assets/engage-cockpit-personalization.png)
+![Segments](<../../.gitbook/assets/engage-cockpit-personalization (1).png>)

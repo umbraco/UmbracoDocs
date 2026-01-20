@@ -118,6 +118,7 @@
   * [Hotfixes](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/README.md)
     * [Apply hotfix by manually moving files](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/move-files-manually.md)
     * [Apply hotfix by using Git](optimize-and-maintain-your-site/manage-product-upgrades/hotfixes/using-git.md)
+  * [End-of-Service Policy](optimize-and-maintain-your-site/manage-product-upgrades/end-of-service-policy.md)
 * [Optimize Performance](optimize-and-maintain-your-site/optimize-performance/README.md)
   * [CDN Caching and Optimizations](optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
   * [Migrate between regions](optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md)

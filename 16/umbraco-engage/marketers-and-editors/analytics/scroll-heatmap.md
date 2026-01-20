@@ -12,6 +12,6 @@ The feature gives a visual representation of the average scroll depth of your vi
 
 An advantage is that you do not need to integrate any 3rd-party tools. This will prevent additional load times and possible issues with data ownership.
 
-![View a scroll heatmap on each published content item in the Content section.](../../.gitbook/assets/engage-analytics-scroll-heatmap-v16.png)
+![View a scroll heatmap on each published content item in the Content section.](<../../.gitbook/assets/engage-analytics-scroll-heatmap-v16 (1).png>)
 
 The heatmap only collects data if [the client-side script](../../developers/analytics/client-side-events-and-additional-javascript-files/) is installed on your website.

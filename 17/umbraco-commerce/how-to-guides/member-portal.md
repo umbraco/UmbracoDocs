@@ -13,10 +13,10 @@ The first step in building a members portal is to create a Member Type for your 
 ### Creating a Member Group
 
 1. Navigate to the **Members** section of the backoffice.
-2. Click the **+** button next to the **Member Groups** heading in the navigation to create a new Member Type. 
+2. Click the **+** button next to the **Member Groups** heading in the navigation to create a new Member Type.
 3. Enter a name for the Member Group, such as `Customer`.
 
-![Customer Member Group](images/member-portal/customer-member-group.png)
+![Customer Member Group](../.gitbook/assets/customer-member-group.png)
 
 4. Click the **Save** button to create the Member Group.
 
@@ -27,7 +27,7 @@ The first step in building a members portal is to create a Member Type for your 
 3. Click on the Member you want to assign to the `Customer` Member Group.
 4. Select the `Customer` Member Group in the **Member Group** property.
 
-![Example Customer](images/member-portal/customer-assign-member-group.png)
+![Example Customer](../.gitbook/assets/customer-assign-member-group.png)
 
 5. Click the **Save** button to assign the Member to the `Customer` Member Group.
 
@@ -40,11 +40,11 @@ The next step in building a members portal is to create the pages and templates 
 1. Navigate to the **Settings** section of the backoffice.
 2. Create two new Document Types: `Customer Portal` and `Login`.
 
-![Customer Portal Document Types](images/member-portal/document-types.png)
+![Customer Portal Document Types](../.gitbook/assets/document-types.png)
 
 3. Update your site root Document Type to include the `Customer Portal` and `Login` Document Types as child-pages.
 
-![Allowed Children Configuration](images/member-portal/allowed-children.png)
+![Allowed Children Configuration](../.gitbook/assets/allowed-children.png)
 
 ### Content Setup
 
@@ -52,7 +52,7 @@ The next step in building a members portal is to create the pages and templates 
 2. Create a new page using the `Customer Portal` Document Type and name it `Customer Portal`.
 3. Create a new page using the `Login` Document Type and name it `Login`.
 
-![Customer Portal Content Structure](images/member-portal/content-structure.png)
+![Customer Portal Content Structure](../.gitbook/assets/content-structure.png)
 
 4. Expand the context menu for the `Customer Portal` node by clicking the three dots.
 5. Click on the **Public Access** option.
@@ -60,7 +60,7 @@ The next step in building a members portal is to create the pages and templates 
 7. Select the `Customer` Member Group for the group option.
 8. Select the `Login` node for the login and error page options.
 
-![Public Access Configuration](images/member-portal/public-access.png)
+![Public Access Configuration](../.gitbook/assets/public-access.png)
 
 9. Click **Save** to apply the public access settings.
 
@@ -72,7 +72,6 @@ To access the members portal, customers need to log in. Through the following st
 2. Add the following code to create a login form:
 
 {% code title="Login.cshtml" %}
-
 ```csharp
 @using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin", new { RedirectUrl = "/customer-portal" }))
 {
@@ -93,7 +92,6 @@ To access the members portal, customers need to log in. Through the following st
     <button type="submit">Login</button>
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -102,7 +100,7 @@ The `UmbLoginController` class comes pre-installed with Umbraco. It handles the 
 
 On the frontend, customers can enter their username and password and click the **Login** button to access the members portal.
 
-![Login Page](images/member-portal/login-page.png)
+![Login Page](../.gitbook/assets/login-page.png)
 
 ## Displaying Member Order History
 
@@ -112,7 +110,6 @@ Now that members can log in, update the `Customer Portal` page to display the or
 2. Add the following code to display the order history:
 
 {% code title="CustomerPortal.cshtml" %}
-
 ```csharp
 @inject IMemberManager memberManager
 @inject IUmbracoCommerceApi commerceApi
@@ -151,12 +148,11 @@ else
     <h2>You haven't placed any orders yet</h2>
 }
 ```
-
 {% endcode %}
 
 The `Customer Portal` page will now display a table of the member's order history, including the order number, date, and total price.
 
-![Order History](images/member-portal/order-history.png)
+![Order History](../.gitbook/assets/order-history.png)
 
 ### Assigning Orders to a Customer
 
@@ -173,7 +169,6 @@ writableOrder.AssignToCustomer(member.Key.ToString());
 In your site header, add the following code to display the member login status:
 
 {% code title="Header.cshtml" %}
-
 ```csharp
 @{
     var isLoggedIn = Context.User?.Identity?.IsAuthenticated ?? false;
@@ -191,12 +186,11 @@ In your site header, add the following code to display the member login status:
     }
 }
 ```
-
 {% endcode %}
 
-![Logged Out Status](images/member-portal/logged-out.png)  
+![Logged Out Status](../.gitbook/assets/logged-out.png)
 
-![Logged In Status](images/member-portal/logged-in.png)  
+![Logged In Status](../.gitbook/assets/logged-in.png)
 
 ### Registering a Member
 
@@ -206,7 +200,6 @@ To allow customers to register as members, you can create a registration form al
 2. Open the `Register.cshtml` template file and add the following code to create a registration form:
 
 {% code title="Register.cshtml" %}
-
 ```csharp
 @using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember", new { RedirectUrl = "/customer-portal", UsernameIsEmail = true }))
 {
@@ -239,7 +232,6 @@ To allow customers to register as members, you can create a registration form al
     <button type="submit">Register</button>
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -248,4 +240,4 @@ The `UmbRegisterController` class comes pre-installed with Umbraco. It handles t
 
 On the frontend, customers can enter their name, email address, and password to register as a member.
 
-![Register Page](images/member-portal/register-page.png)
+![Register Page](../.gitbook/assets/register-page.png)

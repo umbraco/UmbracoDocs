@@ -10,17 +10,17 @@ Related collections support the editing of many-to-many relationships in UI Buil
 
 A classic example is the relationship between `Students` and `Courses`, where each student takes many courses, and each course has many students.
 
-![Child Collection](../images/related_collections_child.png)
+![Child Collection](../.gitbook/assets/related_collections_child.png)
 
-![Parent Collection](../images/related_collections_parent.png)
+![Parent Collection](../.gitbook/assets/related_collections_parent.png)
 
-![Entity Picker](../images/entity_picker_config.png)
+![Entity Picker](../.gitbook/assets/entity_picker_config.png)
 
 ## Collections Representation
 
 This is how the collections would be represented:
 
-![Related Collections Diagram](../images/related_collections_diagram.png)
+![Related Collections Diagram](../.gitbook/assets/related_collections_diagram.png)
 
 The models representing the entities would be as follows:
 

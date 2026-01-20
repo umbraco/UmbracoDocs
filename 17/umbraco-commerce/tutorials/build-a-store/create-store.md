@@ -8,7 +8,7 @@ With Umbraco setup and Umbraco Commerce installed, the next step is to create a 
 
 A store is an online platform where products or services are listed for customers to browse, purchase, and complete transactions online.
 
-Setting up a store allows you to manage both the content and commerce aspects of your site. It allows you to create a custom and scalable online shopping experience. For more information, see the [Stores](../../reference/stores/README.md) article.
+Setting up a store allows you to manage both the content and commerce aspects of your site. It allows you to create a custom and scalable online shopping experience. For more information, see the [Stores](../../reference/stores/) article.
 
 ## Create a Store
 
@@ -16,11 +16,11 @@ Setting up a store allows you to manage both the content and commerce aspects of
 2. Click the "+" button next to the Stores heading in the navigation area to launch the Create Store dialog.
 3. Enter a unique name for your store and click **Create**.
 
-![Create a store](../images/blendid/create_store.png)
+![Create a store](../../.gitbook/assets/create_store.png)
 
 4. Click **Save** to create the store and auto-populate it with the default configuration.
 
-![Store editor](../images/blendid/store_settings.png)
+![Store editor](../../.gitbook/assets/store_settings.png)
 
 The store is now created and ready to be used.
 
@@ -35,13 +35,13 @@ With the store defined, the next step is to link the store to the website. This 
 3. Add a new property to the Document Type using the `Store Picker Property Editor` that comes with Umbraco Commerce.
 4. Give the property the alias `store`.
 
-![Configure Document Type](../images/blendid/homepage_doctype_store_setting.png)
+![Configure Document Type](../../.gitbook/assets/homepage_doctype_store_setting.png)
 
 5. **Save** the changes.
 6. Navigate to the root content node in the **Content** section.
 7. Select your store via the store property.
 
-![Umbraco Commerce Store Picker](../images/blendid/homepage_editor_pick_store.png)
+![Umbraco Commerce Store Picker](../../.gitbook/assets/homepage_editor_pick_store.png)
 
 8. **Save and Publish** the changes.
 

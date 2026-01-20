@@ -6,7 +6,7 @@ description: A guide to using Umbraco UI Builder for creating custom backoffice 
 
 Umbraco UI Builder is a tool for creating custom Backoffice User Interfaces (UIs) in Umbraco using a fluent API.
 
-![Example Umbraco UI Builder UI](images/listview.png)
+![Example Umbraco UI Builder UI](.gitbook/assets/listview.png)
 
 If you have a custom data store that you want to manage within Umbraco, you can use Umbraco UI Builder. With few lines of code, you can configure a custom administration UI, and reuse many core components with a consistent look and feel.
 

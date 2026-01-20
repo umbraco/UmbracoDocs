@@ -1,9 +1,10 @@
 ---
 description: >-
-  Learn the steps needed in order to install Umbraco Commerce into your Umbraco CMS website.
+  Learn the steps needed in order to install Umbraco Commerce into your Umbraco
+  CMS website.
 ---
 
-# Installation
+# Installing Umbraco Commerce
 
 Learn how to install Umbraco Commerce into your Umbraco CMS implementation.
 
@@ -21,7 +22,7 @@ PM> dotnet add package Umbraco.Commerce
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager in Visual Studio. You will see a number of packages available, however, you will want to install the main **Umbraco Commerce** package.
 
-![Installing Umbraco Commerce via the NuGet Package Manager](../media/nuget-packages-overview.png)
+![Installing Umbraco Commerce via the NuGet Package Manager](../.gitbook/assets/nuget-packages-overview.png)
 
 For most sites using a single solution, the above will be all you need to install Umbraco Commerce into your project. When you have a more complex solution structure consisting of multiple projects, Umbraco Commerce is available in multiple sub-packages with varying dependencies.
 

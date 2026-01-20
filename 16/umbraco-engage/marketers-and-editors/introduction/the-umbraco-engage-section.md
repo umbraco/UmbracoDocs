@@ -8,7 +8,7 @@ description: >-
 
 When you install Umbraco Engage, a new section called **Engage** is automatically enabled in the Umbraco backoffice.
 
-![Engage section in Umbraco backoffice](../../.gitbook/assets/Engage-section-v16.png)
+![Engage section in Umbraco backoffice](<../../.gitbook/assets/Engage-section-v16 (1).png>)
 
 If you do not see the Engage section, it is likely that you have not been granted access to it. You can set up access in the **Users** section of Umbraco. If the Engage or Users section is not visible, ask your administrator for assistance.
 

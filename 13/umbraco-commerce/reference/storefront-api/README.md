@@ -215,7 +215,7 @@ GET /umbraco/commerce/storefront/api/v1.0/country/GB?expand=defaultCurrency[allo
 }
 ```
 
-#### Shortcuts
+**Shortcuts**
 
 As well as expanding explicit properties, the Storefront API supports shortcut expansion keys that when passed will expand all entities of a given type. Shortcut keys are idenfitied by a `$` prefix. There is currently only one supported shortcut key which is `$prices`.
 
@@ -536,7 +536,7 @@ The Storefront API is broken down into a number of endpoints grouped by resource
 
 You can access a Swagger document for the Storefront API at `{yourdomain}/umbraco/swagger`, selecting `Umbraco Commerce Storefront API` from the definitions dropdown in the top right. From here you can see a full list of supported APIs, the parameters they accept and the expected payloads and responses.
 
-![Storefront API Swagger](../../media/uc\_storefront\_api\_swagger.png)
+![Storefront API Swagger](../../.gitbook/assets/uc_storefront_api_swagger.png)
 
 ## Value Converters
 

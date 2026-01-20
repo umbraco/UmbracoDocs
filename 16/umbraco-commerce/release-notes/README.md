@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.5.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.5.1) (Dec 17th 2025)
+
+* Fixed issue with print templates not rendering for non admins [#811](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/811).
+
 #### [16.5.0](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.5.0) (Nov 26th 2025)
 
 * Added links to the top-selling product analytics widget.

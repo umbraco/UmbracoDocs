@@ -9,13 +9,13 @@ When working with Umbraco Workflow, you can handle the content approval settings
 * [Notification Settings](workflow-settings.md#notifications-settings)
 * [Email templates](workflow-settings.md#email-templates)
 
-![Workflow settings](../images/workflow-settings-v14.png)
+![Workflow settings](../.gitbook/assets/workflow-settings-v14.png)
 
 ## General Settings
 
 You can configure the **General** Settings from the **Content Approvals** menu in the **Settings** section. The following settings are available:
 
-![General settings](../images/workflow-settings-v14.png)
+![General settings](../.gitbook/assets/workflow-settings-v14.png)
 
 * **Flow type** - Determines the approval flow progress. These options manage how the Change Author is included in the workflow:
   * **Explicit** - All steps of the workflow must be completed and all users will be notified of tasks (including the Change Author).
@@ -43,13 +43,12 @@ To add an approval group to the workflow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Choose** in the **New node approval flow** section.
+3.  Click **Choose** in the **New node approval flow** section.
 
-    ![New Node Approval Flow](../images/new-node-approval-flow-v14.png)
+    ![New Node Approval Flow](../.gitbook/assets/new-node-approval-flow-v14.png)
+4.  Select an **approval group** to add to the workflow.
 
-4. Select an **approval group** to add to the workflow.
-
-    ![Add Workflow Approval Groups](../images/add-approval-flow-v14.png)
+    ![Add Workflow Approval Groups](../.gitbook/assets/add-approval-flow-v14.png)
 5. Click **Submit**.
 6. Click **Save**.
 
@@ -65,16 +64,16 @@ To add a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Add document type** in the **Document type approval flows** section.
+3.  Click **Add document type** in the **Document type approval flows** section.
 
-    ![Document Type Approval Flows](../images/doc-type-approval-flows-v14.png)
+    ![Document Type Approval Flows](../.gitbook/assets/doc-type-approval-flows-v14.png)
 4. Select a **Document Type** from the drop-down list.
 5. Select a **Language** from the drop-down list.
 6. Click **Choose** in the **Approval groups**.
 7. Click **Submit**.
-8. Click **Add condition** to add a condition to the workflow process.
+8.  Click **Add condition** to add a condition to the workflow process.
 
-    ![Configure Document Type Approval Flow Settings](../images/add-doc-type-approval-flows-settings-v14.png)
+    ![Configure Document Type Approval Flow Settings](../.gitbook/assets/add-doc-type-approval-flows-settings-v14.png)
 9. Click **Submit**.
 10. Click **Save**.
 
@@ -82,13 +81,13 @@ To edit a Document type approval flow:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click the content node in the **Document type approval flows** section.
+3.  Click the content node in the **Document type approval flows** section.
 
-    ![Edit Document Type Approval Flow](../images/edit-doc-type-approval-flows-v14.png)
+    ![Edit Document Type Approval Flow](../.gitbook/assets/edit-doc-type-approval-flows-v14.png)
 4. **Add**, **Edit**, or **Remove** approval groups from the current workflow.
-5. Click **Add condition** to add or edit a condition to the workflow process.
+5.  Click **Add condition** to add or edit a condition to the workflow process.
 
-    ![Configure Document Type Approval Flow](../images/edit-doc-type-approval-flows-settings-v14.png)
+    ![Configure Document Type Approval Flow](../.gitbook/assets/edit-doc-type-approval-flows-settings-v14.png)
 6. Click **Submit**.
 7. Click **Save**.
 
@@ -100,12 +99,12 @@ To exclude a node from the workflow process:
 
 1. Go to the **Workflow** section.
 2. Go to the **General** tab in the **Settings** menu.
-3. Click **Choose** in the **Exclude nodes** section.
+3.  Click **Choose** in the **Exclude nodes** section.
 
-    ![Exclude Nodes](../images/exclude-nodes-v14.png)
-4. Select the **Content node** from the Content tree.
+    ![Exclude Nodes](../.gitbook/assets/exclude-nodes-v14.png)
+4.  Select the **Content node** from the Content tree.
 
-    ![Select Content Node](../images/select-content-from-tree-v14.png)
+    ![Select Content Node](../.gitbook/assets/select-content-from-tree-v14.png)
 5. Click **Choose**.
 6. Click **Save**.
 
@@ -118,11 +117,11 @@ From the **Content Approvals** view in the **Settings** section, the **Notificat
 * **Send notifications:** If you wish to send email notifications to approval groups, you can enable it here. If your users are active in the backoffice, email notifications might not be required.
 * **Workflow email:** Provide a sender address for email notifications. This is a mandatory field.
 * **Reminder delay (days):** Set a delay in days for sending reminder emails for outstanding workflow processes. Set to 0 to disable reminder emails.
-* **Edit site URL:** The URL for the editing environment (including schema - http[s]). This is a mandatory field.
-* **Site URL:** The URL for the public website (including schema - http[s]). This is a mandatory field.
-* [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
+* **Edit site URL:** The URL for the editing environment (including schema - http\[s]). This is a mandatory field.
+* **Site URL:** The URL for the public website (including schema - http\[s]). This is a mandatory field.
+*   [**Email templates**](workflow-settings.md#email-templates)**:** Configure which users receive emails for which workflow actions and modify the templates for those emails.
 
-    ![Notifications tab in the Workflow Section](../images/Notifications-tab-v14.png)
+    ![Notifications tab in the Workflow Section](../.gitbook/assets/Notifications-tab-v14.png)
 
 ## Notifications Overview
 

@@ -6,7 +6,7 @@ description: Analytics Widgets UI Extension for Umbraco Commerce
 
 Analytics Widgets allow you to display custom charts and reports in the analytics section to track your important KPIs.
 
-![Analytics Widget](../../media/v14/analytics-widget.png)
+![Analytics Widget](../../.gitbook/assets/analytics-widget.png)
 
 ## Registering an Analytics Widget
 
@@ -33,10 +33,10 @@ Each entry must have a type of `ucAnalyticsWidget` along with a unique `alias` a
 
 A `meta` entry provides configuration options for the widget
 
-| Name | Description |  
-| -- | -- |
-| `label` | A label for this widget (supports the `#` prefix localization string syntax) |
-| `description` |  A description for this widget (supports the `#` prefix localization string syntax) |
+| Name          | Description                                                                        |
+| ------------- | ---------------------------------------------------------------------------------- |
+| `label`       | A label for this widget (supports the `#` prefix localization string syntax)       |
+| `description` | A description for this widget (supports the `#` prefix localization string syntax) |
 
 ## The Analytics Widget element
 

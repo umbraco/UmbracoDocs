@@ -12,7 +12,7 @@ Search terms automatically track keywords entered in your website's search field
 
 You can identify common user interests and personalize their experience by tracking search terms both site-wide and per-profile basis. This helps in delivering more targeted content, improving engagement, and increasing conversion rates.
 
-<figure><img src="../../.gitbook/assets/Search-terms.png" alt=""><figcaption><p>Search terms</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Search-terms (1).png" alt=""><figcaption><p>Search terms</p></figcaption></figure>
 
 ## Configure Search Term Parameters
 

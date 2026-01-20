@@ -36,11 +36,11 @@ Attributes define an optional `Key` parameter to override the default setting al
 See the CMS documentation for a list of [available Property Editor UI elements and their config properties](https://docs.umbraco.com/umbraco-cms/reference/property-editor-uis).
 {% endhint %}
 
-Labels and descriptions for settings are controlled through [Localization](#localization) entries.
+Labels and descriptions for settings are controlled through [Localization](settings-objects.md#localization) entries.
 
 An example of a generated UI built from these properties would look something like this:
 
-![Discount Rule UI](../media/discount_rule_ui.png)
+![Discount Rule UI](../.gitbook/assets/discount_rule_ui.png)
 
 ### Default Values
 

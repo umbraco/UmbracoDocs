@@ -4,7 +4,7 @@ description: Learn how to send a payment link to customers in Umbraco Commerce.
 
 # Sending Payment Links to Customers
 
-A common scenario in e-commerce is when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios. It could be when customers request a quote, and the store owner wants to send a link to the customer to make the payment. 
+A common scenario in e-commerce is when a store owner wants to send a pre-filled cart to a customer for them to complete. This can be useful in many scenarios. It could be when customers request a quote, and the store owner wants to send a link to the customer to make the payment.
 
 In Umbraco Commerce, it only takes a few clicks to create and send a payment link. The customer can then click the link and complete the purchase.
 
@@ -21,37 +21,35 @@ The payment links feature was introduced in Umbraco Commerce version 15.3.0
 5. Click on the **Save** button to save the cart.
 6. Click on the **Generate Payment Link** button to launch the payment link generator modal.
 
-![Generate Payment Link](images/payment-links/generate-payment-link-button.png)
+![Generate Payment Link](../.gitbook/assets/generate-payment-link-button.png)
 
 7. Configure the payment link settings in the Payment Link Generator modal. You can set the following options:
+   * **Validity Period**: The period in minutes for which the payment link will be valid.
+   * **Landing Page URL**: The URL to which the customer will be directed when clicking on the payment link.
 
-   - **Validity Period**: The period in minutes for which the payment link will be valid.
-   - **Landing Page URL**: The URL to which the customer will be directed when clicking on the payment link.
-
-![Payment Link Generator](images/payment-links/generate-payment-link-modal.png)
+![Payment Link Generator](../.gitbook/assets/generate-payment-link-modal.png)
 
 8. Use one of the two options to send the payment link to the customer:
-
-   - [**Copy to Clipboard**](#copy-to-clipboard)
-   - [**Send via Email**](#send-via-email)
+   * [**Copy to Clipboard**](payment-links.md#copy-to-clipboard)
+   * [**Send via Email**](payment-links.md#send-via-email)
 
 ### Copy to Clipboard
 
 Clicking on the **Copy to Clipboard** button generates the payment link and then copies it to the clipboard. A notification will display to confirm the copy was successful. You can paste the link into an email or other communication form.
 
-![Copy to Clipboard Notification](images/payment-links/payment-link-copied-to-clipboard.png)
+![Copy to Clipboard Notification](../.gitbook/assets/payment-link-copied-to-clipboard.png)
 
 ### Send via Email
 
 Clicking on the **Send via Email** button launches the Send Email modal. From here, you can select an email template and set the recipient's email address.
 
-![Email Template Selection](images/payment-links/choose-payment-link-email-template.png)
+![Email Template Selection](../.gitbook/assets/choose-payment-link-email-template.png)
 
-![Recipient Configuration](images/payment-links/send-payment-link-email.png)
+![Recipient Configuration](../.gitbook/assets/send-payment-link-email.png)
 
 Clicking the **Send** button will send the email to the recipient with the payment link.
 
-![Email Payment Link Example](images/payment-links/email.png)
+![Email Payment Link Example](../.gitbook/assets/email.png)
 
 {% hint style="info" %}
 Umbraco Commerce includes a default email template for sending payment links. You can customize this template by going to the **Settings** section in the Umbraco backoffice and selecting the **Email Templates** menu item.
@@ -61,7 +59,7 @@ Umbraco Commerce includes a default email template for sending payment links. Yo
 
 When the customer receives the payment link, they can click on the link to open the cart in the store. The cart will be pre-filled with the products and quantities that were added when the payment link was generated.
 
-![Payment Link Populated Cart](images/payment-links/checkout.png)
+![Payment Link Populated Cart](../.gitbook/assets/checkout.png)
 
 The customer can proceed to the checkout and complete the purchase as normal.
 
@@ -101,4 +99,4 @@ The payment links feature has different configuration options you can set via `a
 ```
 {% endcode %}
 
-By default, Umbraco Commerce payment link tokens are based on the JSON Web Token (JWT) format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` value is used to configure the querystring parameter name used for the payment link token. The `ErrorQueryParameterName` value is used to configure the querystring parameter name used for an error message. 
+By default, Umbraco Commerce payment link tokens are based on the JSON Web Token (JWT) format and are signed using the `TokenSigningSecret` value. The `TokenQueryParameterName` value is used to configure the querystring parameter name used for the payment link token. The `ErrorQueryParameterName` value is used to configure the querystring parameter name used for an error message.

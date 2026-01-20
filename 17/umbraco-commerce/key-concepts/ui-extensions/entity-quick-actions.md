@@ -6,7 +6,7 @@ description: Entity Quick Actions UI Extension for Umbraco Commerce
 
 Entity Quick Actions allow you to display a button directly in the entity editor screen for important actions that require instant access.
 
-![Quick Actions](../../media/v14/quick-actions.png)
+![Quick Actions](../../.gitbook/assets/quick-actions.png)
 
 ## Registering a Quick Action
 
@@ -36,11 +36,11 @@ Each entry must have a type of `ucEntityQuickAction` along with a unique `alias`
 
 A `meta` entry provides configuration options for quick actions:
 
-| Name | Description |  
-| -- | -- |
-| `entityType` | The entity type for which this quick action should be displayed |
-| `label` | A label for this quick action (supports the `#` prefix localization string syntax) |
-| `look` | Can be `primary` for a highlighted button, or `secondary` for a more muted button |
+| Name         | Description                                                                        |
+| ------------ | ---------------------------------------------------------------------------------- |
+| `entityType` | The entity type for which this quick action should be displayed                    |
+| `label`      | A label for this quick action (supports the `#` prefix localization string syntax) |
+| `look`       | Can be `primary` for a highlighted button, or `secondary` for a more muted button  |
 
 ## The Entity Quick Action API
 

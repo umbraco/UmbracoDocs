@@ -1,12 +1,14 @@
 ---
-description: Configuring and customizing sections in Umbraco UI Builder to organize and manage the backoffice interface effectively.
+description: >-
+  Configuring and customizing sections in Umbraco UI Builder to organize and
+  manage the backoffice interface effectively.
 ---
 
 # Sections
 
 A section in Umbraco represents a distinct area within the backoffice, such as content, media, and so on. Sections are accessible via links in the main menu at the top of the Umbraco interface. Using Umbraco UI Builder, multiple sections can be defined to organize the management of models logically.
 
-![Sections](../images/sections.png)
+![Sections](../.gitbook/assets/sections.png)
 
 ## Defining a Section
 
@@ -72,7 +74,7 @@ config.AddSectionAfter("media", "Repositories", sectionConfig => {
 
 This method sets a custom alias for the section.
 
-*Optional:* By default, an alias is automatically generated from the section's name. To customize the alias, the `SetAlias()` method can be used.
+_Optional:_ By default, an alias is automatically generated from the section's name. To customize the alias, the `SetAlias()` method can be used.
 
 #### Method Syntax
 
@@ -100,11 +102,11 @@ Tree(Lambda treeConfig = null) : TreeConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 sectionConfig.Tree(treeConfig => {
     ...
 });
-````
+```
 
 ## Adding Dashboards to the Section
 
@@ -198,11 +200,11 @@ AddTree(string name, string icon, Lambda treeConfig = null) : TreeConfigBuilder
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTree("My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ### Grouping Trees with `AddTree()` Method
 
@@ -216,11 +218,11 @@ AddTree(string groupName, string name, string icon, Lambda treeConfig = null) : 
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTree("My Group", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ## Adding a Tree Before or After an Existing Tree
 
@@ -236,11 +238,11 @@ AddTreeBefore(string treeAlias, string name, string icon, Lambda treeConfig = nu
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTreeBefore("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ### Using `AddTreeAfter()` to Position a Tree
 
@@ -254,11 +256,11 @@ AddTreeAfter(string treeAlias, string name, string icon, Lambda treeConfig = nul
 
 #### Example
 
-````csharp
+```csharp
 withSectionConfig.AddTreeAfter("member", "My Tree", "icon-folder", treeConfig => {
     ...
 });
-````
+```
 
 ## Adding a Dashboard to an Existing Section
 

@@ -2,7 +2,7 @@
 description: Learn how to configure the abandoned cart notification.
 ---
 
-# Configuring Abandoned Cart Notification
+# Configuring Abandoned Carts Notification
 
 {% hint style="info" %}
 Available from Umbraco Commerce 16.1.0
@@ -11,6 +11,7 @@ Available from Umbraco Commerce 16.1.0
 ## Abandoned Cart Recurring Background Job
 
 The abandoned cart recurring background job automatically sends reminder emails to customers about items left in their shopping carts. To configure it, follow these steps:
+
 1. Go to **Store Settings** in your admin dashboard.
 2. Select the store you want to configure.
 3. Navigate to the **Cart Settings** section.
@@ -19,8 +20,7 @@ The abandoned cart recurring background job automatically sends reminder emails 
 6. Enter the landing page URL where customers will be redirected when they click the links in the abandoned cart email.
 7. Click the **Save** button to apply your changes.
 
-![store notification settings](images/configuring-abandoned-cart-notification/store-notification-settings.png)
-
+![store notification settings](../.gitbook/assets/store-notification-settings.png)
 
 The advanced settings can be configured in the `appsettings.json` file:
 
@@ -41,15 +41,17 @@ The advanced settings can be configured in the `appsettings.json` file:
 
 The `appsettings.json` section supports the following keys:
 
-| Key | Description |
-| -- | -- |
-| `Enable` | Enable this feature.
-| `FirstRunTime` | The time to first run the scheduled cleanup task, in crontab format. If empty, runs immediately on app startup. |
-| `Period` | How often to run the task, in timespan format. Defaults to every 24 hours. |
-| `NotificationBatchSize` | The number of abandoned carts processed each time the job is run. |
+| Key                     | Description                                                                                                     |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Enable`                | Enable this feature.                                                                                            |
+| `FirstRunTime`          | The time to first run the scheduled cleanup task, in crontab format. If empty, runs immediately on app startup. |
+| `Period`                | How often to run the task, in timespan format. Defaults to every 24 hours.                                      |
+| `NotificationBatchSize` | The number of abandoned carts processed each time the job is run.                                               |
 
 ## Abandoned Cart Webhook
+
 A new webhook called Cart Abandoned has been added. It is triggered when the Abandoned Cart Recurring Background Job detects any abandoned carts. The POST payload will look like this:
+
 ```json
 {
   "orderIds": [
@@ -64,4 +66,4 @@ A new webhook called Cart Abandoned has been added. It is triggered when the Aba
 
 The widget shows how many notified abandoned carts are recovered through completed purchases, reflecting your store’s abandoned cart conversion rate.
 
-![Abandoned cart conversion rates widget](images/configuring-abandoned-cart-notification/abandoned-cart-conversion-rates-widget.png)
+![Abandoned cart conversion rates widget](../.gitbook/assets/abandoned-cart-conversion-rates-widget.png)
