@@ -12,7 +12,7 @@ Before creating a Property Value Preset, it is recommended to read about the [Ex
 
 ## Manifest
 
-The following Manifest declares a preset for the `TextBox` and `TextArea` Property Editors:
+The following Manifest declares a preset for the `TextBox` Property Editors:
 
 ```typescript
 export const manifest = {
@@ -21,8 +21,7 @@ export const manifest = {
     name: 'My Property Value Preset for TextBox',
 	weight: 10,
     api: () => import('./my-property-value-preset.js'),
-    forPropertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox',
-	forPropertyEditorSchemaAlias: 'Umbraco.TextArea'
+    forPropertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox'
 }
 ```
 
@@ -30,7 +29,6 @@ export const manifest = {
 
 - `weight` - Execution order (higher runs first).
 - `forPropertyEditorUiAlias` - Targets specific Property Editor UI.
-- `forPropertyEditorSchemaAlias` - Targets Property Editor Schema (Content Types only).
 
 ## Implementation
 
@@ -56,7 +54,7 @@ This API will set the value to "Hello there" for all properties using the `Umb.P
 
 ### Target a Property Editor Schema
 
-You can also choose to target your Preset for a Property Editor Schema.
+You can also choose to target your Preset for a [Property Editor Schema](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) .
 
 Define `forPropertyEditorSchemaAlias` to show the Preset Value for all Properties based on that Schema.
 
