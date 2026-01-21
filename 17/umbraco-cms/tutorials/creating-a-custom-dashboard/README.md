@@ -40,7 +40,7 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 ### The end result
 
-At the end of this guide, we will have a friendly welcoming dashboard displaying a list of the most recent site logs.
+At the end of this guide, the tutorial results in a friendly welcoming dashboard displaying a list of the most recent site logs.
 
 {% hint style="info" %}
 At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and umbraco-package.json`to confirm your placement for code snippets.
@@ -134,7 +134,7 @@ When running the site in production mode, the cache is long-lived. You can read 
 
 ## Creating the Dashboard Web Component
 
-Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.
+Create the web component for the property editor. This web component contains all HTML, CSS, and logic.
 
 1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
 2. In this new file, add the following code:
@@ -180,7 +180,7 @@ declare global {
 ```
 {% endcode %}
 
-3. In the `vite.config.ts` file update the `entry` to point to our newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
+3. In the `vite.config.ts` file update the `entry` to point to the newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
 
 ```typescript
 import { defineConfig } from "vite";
@@ -202,7 +202,7 @@ export default defineConfig({
 });
 ```
 
-4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
+4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see the new dashboard:
 
 <figure><img src="../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
@@ -210,4 +210,4 @@ export default defineConfig({
 
 With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
-In the next part, we will look into how to add localization to the dashboard using our own custom translations.
+In the next part, the tutorial covers how to add localization to the dashboard using custom translations.
