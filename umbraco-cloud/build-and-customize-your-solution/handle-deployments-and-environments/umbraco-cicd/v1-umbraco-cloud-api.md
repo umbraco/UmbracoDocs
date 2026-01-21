@@ -21,7 +21,7 @@ You will find relevant examples using `Curl` and `Powershell` in the sections be
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
-To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > Advanced** in the Umbraco Cloud portal.
+To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > CI/CD Flow** in the Umbraco Cloud portal.
 
 ![Umbraco CI/CD Flow](../../set-up-your-project/project-settings/images/Advanced-Section.png)
 
