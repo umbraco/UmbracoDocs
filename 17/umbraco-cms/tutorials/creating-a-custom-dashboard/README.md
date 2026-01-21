@@ -49,8 +49,15 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ## Setting up a package
 
 1. Follow the [Vite Package Setup](../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
-3. Add the following code to `umbraco-package.json`:
+2. Create a manifest file to define and configure your dashboard. You can define the manifest in either JSON or TypeScript.
+
+### Manifest
+
+Dashboard extensions can be defined either with JSON in `umbraco-package.json` or with JavaScript/TypeScript.
+
+{% tabs %}
+{% tab title="JSON" %}
+Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder, and add the following code:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -81,6 +88,41 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 }
 ```
 {% endcode %}
+{% endtab %}
+{% tab title="TypeScript" %}
+
+Extension authors define the dashboard manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../customizing/extending-overview/extension-types/backoffice-entry-point.md) extension.
+
+Create a manifest file named `manifests.ts` and add the following code:
+
+{% code title="manifests.ts" %}
+```typescript
+import type { ManifestDashboard } from '@umbraco-cms/backoffice/dashboard';
+
+export const manifests: Array<ManifestDashboard> = [
+    {
+      type: "dashboard",
+      alias: "my.welcome.dashboard",
+      name: "My Welcome Dashboard",
+      element: "/App_Plugins/welcome-dashboard/welcome-dashboard.js",
+      elementName: "my-welcome-dashboard",
+      weight: 30,
+      meta: {
+        label: "Welcome Dashboard",
+        pathname: "welcome-dashboard"
+      },
+      conditions: [
+        {
+          alias: "Umb.Condition.SectionAlias",
+          match: "Umb.Section.Content"
+        }
+      ]
+    }
+];
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 For more information about the `umbraco-package.json` file, read the article [Extension Manifest](../../customizing/extending-overview/extension-registry/extension-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/extending-overview/extension-types/dashboard.md) article.
 
