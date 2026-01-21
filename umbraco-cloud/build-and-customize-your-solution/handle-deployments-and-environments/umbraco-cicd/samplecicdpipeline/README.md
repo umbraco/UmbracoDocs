@@ -44,9 +44,9 @@ In this guide, deployments are targeted at the leftmost environment in your Umbr
 To get started with API interactions, you'll need to obtain your Project ID and API key. If you haven't already enabled the CI/CD feature, follow these steps:
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
-2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
+2. Go to `Settings` -> `CI/CD Flow`. This is where you can generate an API key and find your Project ID.
 
-<figure><img src="../../../../.gitbook/assets/image (27).png" alt="Advanced tab on Cloud."><figcaption><p>Advanced tab on Cloud.</p></figcaption></figure>
+![CI/CD Flow page](images/cicd-flow-page.png)
 
 3. Click on "Activate CI/CD Flow" toggle to enable the feature.
 
