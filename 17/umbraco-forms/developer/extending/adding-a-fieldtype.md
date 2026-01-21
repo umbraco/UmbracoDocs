@@ -190,7 +190,7 @@ With Forms 14+, aspects of the presentation and functionality of the custom fiel
 * A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
 * Translations for setting labels and descriptions.
 
-To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://app.gitbook.com/s/G1Byxw7XfiZAj8zDMCTD/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
+To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
 The examples here are using the `@umbraco-forms/backoffice` package to get access to Forms-specific types and contexts. It is recommended to install this package as a development dependency in your project.
 
@@ -204,7 +204,7 @@ npm install -D @umbraco-forms/backoffice@x.x.x
 
 This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
-To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://app.gitbook.com/s/7MBVdnTbFiAgWuRsHpNS/customizing/extending-overview/extension-types/localization) article.
+To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension) article.
 
 ### Field Preview
 
