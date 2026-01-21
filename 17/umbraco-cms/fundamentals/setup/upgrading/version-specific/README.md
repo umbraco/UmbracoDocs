@@ -95,8 +95,8 @@ You don’t need to reference it if you use Models Builder in a source-code mode
 * `SourceCodeAuto`
 * `SourceCodeManual`
 
-{% hint style="info" %}
-Important! These modes do not rely on Razor runtime compilation. However, ensure the following settings are removed from your `.csproj` file.
+{% hint style="warning" %}
+**Important!** These modes do not rely on Razor runtime compilation. However, ensure the following settings are removed from your `.csproj` file.
 {% endhint %}
 
 ```xml
