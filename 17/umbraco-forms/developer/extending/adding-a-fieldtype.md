@@ -204,7 +204,7 @@ npm install -D @umbraco-forms/backoffice@x.x.x
 
 This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
-To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension) article.
+To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://docs.umbraco.com/umbraco-cms/customizing/foundation/localization) article.
 
 ### Field Preview
 
