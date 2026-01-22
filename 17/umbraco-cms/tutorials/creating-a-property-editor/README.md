@@ -38,8 +38,15 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 ## Setting up a plugin
 
 1. Follow the [Vite Package Setup](../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
-2. Then create the manifest file named `umbraco-package.json` at the root of the `suggestions` folder. Here we define and configure our dashboard.
-3. Add the following code to `umbraco-package.json`:
+2. Create a manifest file to define and configure the property editor. The manifest can be defined in either JSON or TypeScript.
+
+### Manifest
+
+Property editor UI extensions can be defined either with JSON in `umbraco-package.json` or with JavaScript/TypeScript.
+
+{% tabs %}
+{% tab title="JSON" %}
+Create a manifest file named `umbraco-package.json` at the root of the `suggestions` folder, and add the following code:
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -65,6 +72,36 @@ At each step, you will find a dropdown for `suggestions-property-editor-ui.eleme
 }
 ```
 {% endcode %}
+{% endtab %}
+{% tab title="TypeScript" %}
+
+Extension authors define the property editor UI manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../customizing/extending-overview/extension-types/backoffice-entry-point.md) extension.
+
+Create a manifest file named `manifests.ts` and add the following code:
+
+{% code title="manifests.ts" %}
+```typescript
+import type { ManifestPropertyEditorUi } from '@umbraco-cms/backoffice/property-editor';
+
+export const propertyEditorUiManifest: ManifestPropertyEditorUi[] = [
+    {
+        type: 'propertyEditorUi',
+        alias: 'My.PropertyEditorUi.Suggestions',
+        name: 'My Suggestions Property Editor UI',
+        element: () => import('./suggestions-property-editor-ui.element.js'),
+        elementName: 'my-suggestions-property-editor-ui',
+        meta: {
+            label: 'Suggestions',
+            icon: 'icon-list',
+            group: 'common',
+            propertyEditorSchemaAlias: 'Umbraco.Plain.String'
+        }
+    }
+];
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 The `umbraco-package.json` files are cached by the server. When creating new `umbraco-package.json` files, it might take a few seconds before those are loaded into the server cache.
