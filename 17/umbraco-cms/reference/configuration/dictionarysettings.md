@@ -20,7 +20,7 @@ The following snippet contains all the available options with their default valu
 }
 ```
 
-## UseDictionaryValueSearch
+## EnableValueSearch
 
 Key: `UseDictionaryValueSearch`
 
