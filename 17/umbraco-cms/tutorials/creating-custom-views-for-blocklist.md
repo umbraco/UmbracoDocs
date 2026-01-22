@@ -8,7 +8,7 @@ This article is a work in progress and may undergo further revisions, updates, o
 
 ## Creating the Document Type
 
-For this tutorial, you will set-up a Document Type and create a new property using Block List as the property editor.
+For this tutorial, you will set up a Document Type and create a new property using Block List as the property editor.
 
 To create a Document Type:
 
@@ -37,7 +37,7 @@ Your Document Type will now look like:
 
 ## Creating the Content Node
 
-To create the Content Node follow these steps:
+To create the Content Node, follow these steps:
 
 1. Go to the **Permissions** tab of the root content node and select **Add Child** in the **Allowed child node types**.
 2. Select the **Product** Document Type and click **Save**.
@@ -64,13 +64,13 @@ The **Configuration** section allows you to
 * Control the live and inline editing mode
 * Set the property editor width.
 
-The Available Blocks in the Block List editor configuration differentiates it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
+The Available Blocks in the Block List editor configuration differentiate it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
 
-To add blocks to our Block List editor follow these steps:
+To add blocks to our Block List editor, follow these steps:
 
 1. Click **Add** in the **Available Blocks** to open the **Pick Element Type** window.
 
-From here, you have the option to select an existing Element Type, if any, or you can create a new Element Type from the configuration screen.
+From here, you have the option to select an existing Element Type or create a new Element Type from the configuration screen.
 
 2. Choose **Create a new Element Type**.
 3. Set up a new Element type called **Feature** and use the following configuration:
@@ -90,7 +90,7 @@ The block configuration window opens. For more information on the block configur
 
 ## Creating Custom Views for blocks
 
-You can improve the editing experience by overwriting the default representation of the block entries with a custom view. This can be used to provide a more detailed representation of the block. You can make the content look as it will on the frontend or highlight specific values for data overview.
+You can enhance the editing experience by replacing the default representation of block entries with a custom view. This can be used to provide a more detailed representation of the block. You can make the content look as it will on the frontend or highlight specific values for a data overview.
 
 A Custom View is a Web Component registered as a Backoffice Extension.
 
@@ -135,7 +135,7 @@ export default ExampleBlockCustomView;
 {% endcode %}
 
 {% hint style="info" %}
-This is a TypeScript file. It is recommended to follow the documentation on how to compile TypeScript.
+This is a TypeScript file. It is recommended to follow the documentation on compiling TypeScript.
 {% endhint %}
 
 ### Assigning the View to a Block Type
@@ -273,7 +273,7 @@ export default ExampleBlockCustomView;
 
 ## Making the Custom View clickable
 
-You can make editing block content faster by making it possible to click anywhere in the preview to open the editing window. To do this you need to update the `example-block-custom-view.ts` file to get the link from Umbraco's configuration:
+You can make editing block content faster by making it possible to click anywhere in the preview to open the editing window. To do this, you need to update the `example-block-custom-view.ts` file to get the link from Umbraco's configuration:
 
 {% code title="example-block-custom-view.ts" %}
 ```typescript
