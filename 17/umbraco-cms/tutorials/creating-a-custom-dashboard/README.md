@@ -49,14 +49,10 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ## Setting up a package
 
 1. Follow the [Vite Package Setup](../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-2. Create a manifest file to define and configure your dashboard. You can define the manifest in either JSON or TypeScript.
-
-### Manifest
-
-Dashboard extensions can be defined either with JSON in `umbraco-package.json` or with JavaScript/TypeScript.
+2. Create a manifest file to define and configure your dashboard using either JSON or TypeScript.
 
 {% tabs %}
-{% tab title="JSON" %}
+{% tab title="JSON Manifest" %}
 Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder, and add the following code:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
@@ -89,7 +85,7 @@ Create a manifest file named `umbraco-package.json` within the `public` folder, 
 ```
 {% endcode %}
 {% endtab %}
-{% tab title="TypeScript" %}
+{% tab title="TypeScript Manifest" %}
 
 Extension authors define the dashboard manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../customizing/extending-overview/extension-types/backoffice-entry-point.md) extension.
 
