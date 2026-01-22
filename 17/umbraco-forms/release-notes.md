@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.0) (January 22nd 2026)
+* All items detailed under release candidates for 17.1.0.
+
 ### [17.1.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.0) (January 15th 2026)
 * Add confirmation modal for entry bulk deletion [#1490](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1490)
 * Fix prevalue source validation [#1549](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1549)
