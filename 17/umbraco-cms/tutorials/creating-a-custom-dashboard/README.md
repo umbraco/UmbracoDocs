@@ -40,7 +40,7 @@ There are a lot of parallels with Creating a Property Editor. The tutorial '[Cre
 
 ### The end result
 
-At the end of this guide, we will have a friendly welcoming dashboard displaying a list of the most recent site logs.
+At the end of this guide, the tutorial results in a friendly welcoming dashboard displaying a list of the most recent site logs.
 
 {% hint style="info" %}
 At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and umbraco-package.json`to confirm your placement for code snippets.
@@ -49,8 +49,11 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 ## Setting up a package
 
 1. Follow the [Vite Package Setup](../../customizing/development-flow/vite-package-setup.md) by creating a new project folder called "`welcome-dashboard`" in `App_Plugins`.
-2. Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder. Here we define and configure our dashboard.
-3. Add the following code to `umbraco-package.json`:
+2. Create a manifest file to define and configure your dashboard using either JSON or TypeScript.
+
+{% tabs %}
+{% tab title="JSON Manifest" %}
+Create a manifest file named `umbraco-package.json` within the `public` folder, located at the root of the `welcome-dashboard` folder, and add the following code:
 
 {% code title="umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -81,6 +84,41 @@ At each step, you will find a dropdown for `welcome-dashboard.element.ts`, `and 
 }
 ```
 {% endcode %}
+{% endtab %}
+{% tab title="TypeScript Manifest" %}
+
+Extension authors define the dashboard manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../customizing/extending-overview/extension-types/backoffice-entry-point.md) extension.
+
+Create a manifest file named `manifests.ts` and add the following code:
+
+{% code title="manifests.ts" %}
+```typescript
+import type { ManifestDashboard } from '@umbraco-cms/backoffice/dashboard';
+
+export const manifests: Array<ManifestDashboard> = [
+    {
+      type: "dashboard",
+      alias: "my.welcome.dashboard",
+      name: "My Welcome Dashboard",
+      element: "/App_Plugins/welcome-dashboard/welcome-dashboard.js",
+      elementName: "my-welcome-dashboard",
+      weight: 30,
+      meta: {
+        label: "Welcome Dashboard",
+        pathname: "welcome-dashboard"
+      },
+      conditions: [
+        {
+          alias: "Umb.Condition.SectionAlias",
+          match: "Umb.Section.Content"
+        }
+      ]
+    }
+];
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 For more information about the `umbraco-package.json` file, read the article [Extension Manifest](../../customizing/extending-overview/extension-registry/extension-manifest.md). For more information about the dashboard configurations read the [Dashboards](../../customizing/extending-overview/extension-types/dashboard.md) article.
 
@@ -92,7 +130,7 @@ When running the site in production mode, the cache is long-lived. You can read 
 
 ## Creating the Dashboard Web Component
 
-Now let's create the web component we need for our property editor. This web component contains all our HTML, CSS, and logic.
+Create the web component for the property editor. This web component contains all HTML, CSS, and logic.
 
 1. Create a file in the `src` folder with the name `welcome-dashboard.element.ts`
 2. In this new file, add the following code:
@@ -138,7 +176,7 @@ declare global {
 ```
 {% endcode %}
 
-3. In the `vite.config.ts` file update the `entry` to point to our newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
+3. In the `vite.config.ts` file update the `entry` to point to the newly created `.ts` file, and also ensure that the `outDir` and `base` attributes are pointing to the `welcome-dashboard` folder:
 
 ```typescript
 import { defineConfig } from "vite";
@@ -160,7 +198,7 @@ export default defineConfig({
 });
 ```
 
-4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see our new dashboard:
+4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see the new dashboard:
 
 <figure><img src="../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
@@ -168,4 +206,4 @@ export default defineConfig({
 
 With all the steps completed, you should have a dashboard welcoming your users to the Backoffice.
 
-In the next part, we will look into how to add localization to the dashboard using our own custom translations.
+In the next part, the tutorial covers how to add localization to the dashboard using custom translations.
