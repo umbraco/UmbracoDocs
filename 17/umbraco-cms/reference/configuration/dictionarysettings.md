@@ -13,7 +13,7 @@ The following snippet contains all the available options with their default valu
   "Umbraco": {
     "CMS": {
       "Dictionary": {
-        "UseDictionaryValueSearch": false
+        "EnableValueSearch": false
       }
     }
   }
