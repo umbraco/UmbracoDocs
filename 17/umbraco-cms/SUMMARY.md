@@ -327,6 +327,7 @@
   * [Type finder settings](reference/configuration/typefindersettings.md)
   * [Unattended](reference/configuration/unattendedsettings.md)
   * [Web routing](reference/configuration/webroutingsettings.md)
+  * [Dictionary](reference/configuration/dictionarysettings.md)
 * [Templating](reference/templating/README.md)
   * [Models Builder](reference/templating/modelsbuilder/README.md)
     * [Introduction](reference/templating/modelsbuilder/introduction.md)
