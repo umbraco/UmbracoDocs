@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+
+#### 16.6.0 (22nd Jan 2026)
+
+* 16.6.0 stable release
+
 #### 16.6.0-rc1 (8th Jan 2026)
 
 * Implemented new order caching layer with version based expiry for better load balancing support.
