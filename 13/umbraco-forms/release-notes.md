@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 22nd 2026)
+* All items detailed under release candidates for 13.9.0.
+
 ### [13.9.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 15th 2026)
 * Fix mandatory validation for Form Picker and Theme Picker property editors [#1400](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1400)
 
