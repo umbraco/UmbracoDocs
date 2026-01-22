@@ -58,7 +58,7 @@ You can also choose to target your Preset for a [Property Editor Schema](../../.
 
 Define `forPropertyEditorSchemaAlias` to show the Preset Value for all Properties based on that Schema.
 
-If both `forPropertyEditorSchemaAlias` and `forPropertyEditorUiAlias` are defined, it will not limit the target. The matching is independently for each of them.
+If both `forPropertyEditorSchemaAlias` and `forPropertyEditorUiAlias` are defined, it will not limit the target. The matching is independent for each of them.
 
 Notice that `forPropertyEditorSchemaAlias` only targets the Properties used on the Content Type based data. This could affect Documents, Media, Members, and Blocks, and not properties of a Data Type Configuration.
 
@@ -68,8 +68,8 @@ The `processValue` method takes four arguments:
 
 - `value` - The current value.
 - `UmbPropertyEditorConfig` - The Data Type configuration.
-- `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
-- `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contains details about the property and document.
+- `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contain details such as whether the property is mandatory, and how it varies by culture and segment.
+- `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contain details about the property and document.
 
 The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'preset state' configuration that is used as the value of the Toggle.
 
