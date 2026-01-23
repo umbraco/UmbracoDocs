@@ -113,11 +113,18 @@ You can configure deployment webhooks for your environments in this section. Web
 
 ![Webhooks](images/webhooks.png)
 
+### CI/CD Flow
+
+The CI/CD Flow section allows you to manage settings related to CI/CD deployments:
+
+* [Umbraco CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
+
+![CI/CD Flow settings](images/cicd-flow-page.png)
+
 ### Advanced
 
 The Advanced section provides options for managing advanced settings for your project, including:
 
-* [Umbraco CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
 * [Enable static outbound IP addresses](../../../expand-your-projects-capabilities/external-services/#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
