@@ -77,7 +77,7 @@ By default, the User Groups available to new users are **Administrators**, **Edi
 * **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
 * **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../reference/security/sensitive-data-on-members.md) article.
 * **Translators**: These are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
-* **Writers**: Allowed to browse nodes, create nodes, and request for publication of items. Not allowed to publish directly without someone else's approval like an Editor (has permissions to **Browse Node**, **Create**, **Send to Publish,** and **Update**).
+* **Writers**: Allowed to browse nodes, create nodes and save content. Not allowed to publish directly (has permissions to **Browse Node**, **Create** and **Update**). In previous versions of Umbraco there was a "Send to publish" permission enabled for Writers but, from v16 onwards, this approval process can now be configured by using the official [Workflow package](https://umbraco.com/products/add-ons/workflow/) which is available for free or on a yearly licence for an extra feature set.
 
 ## Creating a User Group
 
