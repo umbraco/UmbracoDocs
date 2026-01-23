@@ -24,13 +24,11 @@ The **left-most mainline environment** is where you can connect to your local ma
 
 The **right-most mainline environment** is your live website, often called the Live or Production environment.
 
-Each mainline environment can have one or more flexible environments branching off from it.
-
 ## Flexible Environments
 
 A flexible environment is an environment that branches off a mainline environment. It is positioned vertically from the mainline deployment flow.
 
-Changes made on a flexible environment can only be pushed to the next designated Mainline Environment in the pipeline.
+The flexible environment can only be connected to the left-most mainline environment and changes can only be pushed to the Mainline Environment it derives.
 
 Technically, the flexible environment is connected only to its mainline environment using a Git remote. This ensures that changes follow a structured path while allowing flexibility in development workflows.
 
@@ -38,7 +36,7 @@ Learn more about how this works in the [Flexible Environments](flexible-environm
 
 ## Plans and availability
 
-<table><thead><tr><th width="117">Plan</th><th width="116" data-type="number">Mainline Environments</th><th width="167" data-type="checkbox">Flexible Environments</th></tr></thead><tbody><tr><td>Starter</td><td>2</td><td>false</td></tr><tr><td>Standard</td><td>3</td><td>true</td></tr><tr><td>Professional</td><td>4</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th width="117">Plan</th><th width="116" data-type="number">Mainline Environments</th><th width="167" data-type="checkbox">Flexible Environments</th></tr></thead><tbody><tr><td>Starter</td><td>2</td><td>false</td></tr><tr><td>Standard</td><td>3</td><td>true</td></tr><tr><td>Professional</td><td>3</td><td>true</td></tr></tbody></table>
 
 ## Environment Components
 
