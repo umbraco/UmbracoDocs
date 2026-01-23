@@ -810,3 +810,32 @@ customElements.define('my-lit-view', MyLitView);
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+## Common issues
+
+### 404 error on callback path
+
+Some external login providers, such as Microsoft Entra ID, may send large query strings when the response mode is set to `query`. By default, IIS restricts the maximum allowed query string length, which can cause the external login callback to fail with a 404 error.
+
+This typically occurs during the authentication callback to Umbraco.
+
+{% hint style="info" %}
+This limitation is imposed by IIS and is not specific to Umbraco.
+{% endhint %}
+
+To resolve this, increase the allowed query string and URL length by setting `maxQueryString` and `maxUrl` in your `web.config` file.
+
+For example:
+
+```xml
+<?xml version="1.0"?>
+<configuration>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="8192" maxUrl="16384"/>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+</configuration>
+```
