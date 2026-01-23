@@ -66,7 +66,7 @@ The **Configuration** section allows you to
 
 The Available Blocks in the Block List editor configuration differentiate it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
 
-To add blocks to our Block List editor, follow these steps:
+To add blocks to the Block List editor, follow these steps:
 
 1. Click **Add** in the **Available Blocks** to open the **Pick Element Type** window.
 
@@ -140,7 +140,7 @@ This is a TypeScript file. It is recommended to follow the documentation on comp
 
 ### Assigning the View to a Block Type
 
-Now that you have created a Web Component, register it to show up on our block:
+Now that you have created a Web Component, register it to show up on the block:
 
 ```typescript
 {
@@ -182,7 +182,7 @@ To add content to the blocks:
 3. Select **Feature** to open the **Feature** window.
 4. Enter the **Name** and **Details** in the Feature window.
 
-You will notice you can view the content as you type. This is because we have enabled the **Live editing** mode.
+You will notice you can view the content as you type. This is because the **Live editing** mode is enabled.
 
 5. Click **Confirm** when the content is added.
 
