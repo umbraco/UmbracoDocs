@@ -1,6 +1,6 @@
 ---
 description: >-
-  Details an integration available for Hubspot with Umbraco Forms, built and
+  Details an integration available for HubSpot with Umbraco Forms, built and
   maintained by Umbraco HQ.
 ---
 
@@ -43,14 +43,14 @@ When the OAuth authentication method is being used, the API call to retrieve the
 
 Follow the steps outlined below to start working with the integration:
 
-1. Add the "Save Contact to Hubspot" workflow to a form.
+1. Add the "Save Contact to HubSpot" workflow to a form.
 2. Configure the mappings between the form and HubSpot fields.
 
 ![Select the HubSpot workflow](../.gitbook/assets/hubspot-with-umbraco-forms-select-workflow.png)
 
 ![Defining mappings](../.gitbook/assets/hubspot-with-umbraco-forms-mapping.png)
 
-When a form is submitted on the website, the workflow will execute and create a new contact record in your Hubspot account. It will be populated using the information mapped from the fields in the form submission.
+When a form is submitted on the website, the workflow will execute and create a new contact record in your HubSpot account. It will be populated using the information mapped from the fields in the form submission.
 
 ![Hubspot contacts](../.gitbook/assets/hubspot-with-umbraco-forms-contacts.png)
 
