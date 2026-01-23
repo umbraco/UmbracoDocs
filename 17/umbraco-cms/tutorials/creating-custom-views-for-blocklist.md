@@ -208,7 +208,7 @@ To add a Settings model:
    * Click **Add Group** and **Enter a Name**: _Settings_.
    * Click **Add Property** and **Enter a Name**: _Block Alignment_. The `blockAlignment` alias is automatically generated.
    * Select **Dropdown List** as the editor.
-   * In the Add options field, add **left**, **center** and **right** as values.
+   * Add **left**, **center** and **right** as values to the Dropdown List.
    * Click **Submit**.
 
 <figure><img src="../.gitbook/assets/prevalue-options-1 (1).png" alt=""><figcaption></figcaption></figure>
