@@ -16,62 +16,73 @@ By the end of this tutorial, you will learn how to:
 
 ## Prerequisites
 
-1. Install the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md): `dotnet new umbraco`.
+1. Install the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md): `dotnet new install Umbraco.Templates`.
 2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
 3. Run the project: `dotnet run`
 4. Complete the installer and login to the backoffice.
 
-## Create partial views for Registration and Login
+## Create Partial Views for Registration and Login
 
-1. Navigate to the Settings section in the backoffice.
-2. Locate the Partial Views entry under Templating in the left-hand section.
-3. Click the "+" to create a new partial view.
-4. Choose **New partial view from snippet...**.
+1. Navigate to the **Settings** section in the backoffice.
+2. Locate the **Partial Views** folder under **Templating** in the left-hand section.
+3. Click **+** to create a new partial view.
+4. Choose **Partial view from snippet...**.
 
-![Create a new partial view](../.gitbook/assets/v14-create-partial-view-from-snippet.png)
+![Create a new partial view](../.gitbook/assets/create-partial-view-from-snippet.png)
 
 5. Pick the **Login** snippet from the list.
 
-![Create a new partial view from the Login snippet](../.gitbook/assets/v14-create-partial-view-from-login-snippet.png)
+![Create a new partial view from the Login snippet](../.gitbook/assets/create-partial-view-from-login-snippet.png)
 
-6. Name the partial view **Login** and save it:
-
-![Edit and save the "Login" partial view](../.gitbook/assets/v14-create-login-partial-view.png)
-
+6. Name the partial view **Login** and save it.
 7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets.
 8. Save the partial views as "Register" and "LoginStatus" respectively.
 
-The Partial Views list should now look like this:
+The Partial Views folder should now look like this:
 
-![The list of partial views](../.gitbook/assets/v14-list-of-partial-views.png)
+![The list of partial views](../.gitbook/assets/list-of-partial-views.png)
 
 ## Create a new Document Type for Registration and Login
 
 To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/)):
 
-1. Create a new **Document Type with a template** and name it "Login".
-2. Setup the "Login" Document Type to be composed by the "Content Base" and "Navigation Base" Document Types.
+1. Create a new **Document Type with Template** and name it **Login**.
+2. Click **Compositions**.
+3. Select **Content Base** and **Navigation Base** Compositions.
+4. Click **Submit**.
 
 ![Composition View](../.gitbook/assets/composition-view.png)
 
 {% hint style="info" %}
-The "Content Base" and "Navigation Base" Document Types are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](members-registration-and-login.md#prerequisites) section.
+The **Content Base** and **Navigation Base** Compositions are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](members-registration-and-login.md#prerequisites) section.
 {% endhint %}
 
-3. Allow the "Login" Document Type as a child under the "Home" Document Type.
+5. Click **Save**.
+6. Go to the **Home** Document Type.
+7. Go to the **Structure** tab.
+8. Choose the **Login** Document Type under **Allowed child node types**.
+
+![Structure Setting](../.gitbook/assets/structure-setting.png)
+
+9. Click **Choose**.
+10. Clikc **Save**.
 
 ## Render the partial views in the template
 
-Locate the newly created "Login" template, and overwrite its content with this:
+1. Locate the **Login** template in the **Templates** folder under **Templating**.
+2. Overwrite its content with the following snippet:
 
 {% code title="Login.cshtml" %}
+
 ```cshtml
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Login>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-    Layout = "master.cshtml";
+    Layout = "_Master.cshtml";
 }
 
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<partial name="Partials/SectionHeader"/>
 
 <section class="section">
 
@@ -79,18 +90,19 @@ Locate the newly created "Login" template, and overwrite its content with this:
 
         <div class="col-md-3">
             <nav class="nav-bar nav-bar--list">
-                @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
+                <partial name="Partials/Navigation/SubNavigation" />
             </nav>
         </div>
 
         <div class="col-md-9">
             <article>
-                @await Html.GetBlockGridHtmlAsync(Model, "bodyText")
+             @await Html.GetBlockGridHtmlAsync(Model, "bodyText")
             </article>
             <article>
-                @await Html.PartialAsync("partials/loginStatus")
-                @await Html.PartialAsync("partials/register")
-                @await Html.PartialAsync("partials/login")
+                @await Html.PartialAsync("~/Views/Partials/LoginStatus.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Login.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Register.cshtml")
+               
             </article>
         </div>
     </div>
@@ -99,26 +111,28 @@ Locate the newly created "Login" template, and overwrite its content with this:
 
 <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-blockgrid.css")" />
 ```
+
 {% endcode %}
 
 ## Create the Register/Login page
 
-Halfway there!
-
-1. Navigate to the Content section.
-2. Create a new page based on the "Login" Document Type Under the _Home_ node:
+1. Navigate to the **Content** section.
+2. Create a new page based on the **Login** Document Type Under the **Home** node:
 
 ![Creating the Register/Login page](../.gitbook/assets/v14-create-register-login-page.png)
 
-3. Save and publish the page.
+3. Enter the details.
+4. Click **Save and publish**.
+5. Go to the **Info** tab.
+6. Click on the link under the **Links** section.
 
-The Register and Login functionality is rendered by the "Login" template:
+The Login and Register functionality is rendered by the **Login** template:
 
-![The Register/Login functionality rendered](../.gitbook/assets/v14-register-login-page-rendered.png)
+![The Login/Register functionality rendered](../.gitbook/assets/register-login-page-rendered.png)
 
-You can now use the page to register new Members. Every registered person will show up in the Members section in the backoffice:
+You can now use the page to register new Members. Every registered person will show up in the **Members** section in the backoffice:
 
-![Overview of created Members](../.gitbook/assets/v14-members-overview.png)
+![Overview of created Members](../.gitbook/assets/members-overview.png)
 
 The "LoginStatus" partial view comes into play after registering as a new Member (or logging in as an existing Member). It will render a welcome message and a "log out" button:
 
@@ -154,7 +168,7 @@ We can take this a bit further and specify which parts of our website should be 
 1. Go to the **Member** section in the Backoffice.
 2. Create a new **Member Group**.
 
-![Create a new member group](../.gitbook/assets/v14-create-member-group.png)
+![Create a new member group](../.gitbook/assets/create-member-group.png)
 
 3. Give the group a name.
 4. Save the Member Group.
@@ -162,7 +176,7 @@ We can take this a bit further and specify which parts of our website should be 
 ![Naming the new member group](../.gitbook/assets/v14-create-member-group-step-2.png)
 
 5. Navigate back to the created Member.
-6. Assign the newly created Member Group.
+6. Go to the **Info** tab and assign the newly created Member Group.
 7. Save the member:
 
 ![Assign the new Member group to the created Member](../.gitbook/assets/v14-assign-member-group.png)
