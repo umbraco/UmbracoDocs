@@ -56,7 +56,7 @@ When a form is submitted on the website, the workflow will execute and create a 
 
 ## Contact Updates
 
-By default, the integration creates a new contact record in HubSpot for each form submission. If a conflict is detected by HubSpot during the attempt to create a new record (existing record with same email address), the create process will be skipped.
+By default, the integration creates a new contact record in HubSpot for each form submission. If HubSpot detects a conflict during the attempt to create a new record, the create process will be skipped. A conflict could be that a record with the same email address already exists.
 
 However, you can configure the integration to update existing contacts instead.
 
