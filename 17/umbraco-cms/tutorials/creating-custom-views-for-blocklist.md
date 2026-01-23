@@ -39,29 +39,32 @@ Your Document Type will now look like:
 
 To create the Content Node, follow these steps:
 
-1. Go to the **Permissions** tab of the root content node and select **Add Child** in the **Allowed child node types**.
-2. Select the **Product** Document Type and click **Save**.
-3. Go to **Content**.
-4. Select **...** next to the root content node and choose **Product**.
-5. **Name** the article _Product_.
-6. Fill the required details in the **Product** page and **Save** it.
+1. Go to the **Permissions** tab of the root content node.
+2. Select **Add Child** in the **Allowed child node types**.
+3. Select the **Product** Document Type and click **Save**.
+4. Go to **Content**.
+5. Select **...** next to the root content node.
+6. Choose **Product**.
+7. **Name** the article _Product_.
+8. Fill the required details in the **Product** page and **Save** it.
 
 ## Configuring the Block List Editor
 
 To configure the Block List editor:
 
-1. Go to **Settings** and open the **Product** Document Type.
-2. Click on the **Block List** property you created earlier.
+1. Go to **Settings**.
+2. Open the **Product** Document Type.
+3. Click on the **Block List** property you created earlier.
 
 You'll see the Block list editor's configuration, as shown below:
 
 ![Document Type](<../.gitbook/assets/blocklist-editor-settings (1).png>)
 
-The **Configuration** section allows you to
+The **Configuration** section allows you to perform the following actions:
 
-* Add **Available Blocks**
-* Define the range of blocks that can be added
-* Control the live and inline editing mode
+* Add **Available Blocks**.
+* Define the range of blocks that can be added.
+* Control the live and inline editing mode.
 * Set the property editor width.
 
 The Available Blocks in the Block List editor configuration differentiate it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
@@ -83,7 +86,7 @@ From here, you have the option to select an existing Element Type or create a ne
 
 4. Click **Save and Close**.
 
-The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md#setup-block-types) section.
+For more information on the block configuration, see the [Setup Block Types](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md#setup-block-types) section.
 
 5. Follow steps 1-4 to set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
@@ -196,9 +199,9 @@ To add a Settings model:
 
 1. Go to **Product** in the **Settings** tree.
 2. Click the `cog` wheel next to **Features**.
-3. Select the **Product - Features - Block List**. The **Editor Settings** window opens.
+3. Select the **Product - Features - Block List** to open the **Editor Settings** window.
 4. Select **Feature** from the **Available Blocks** configuration.
-5. Select **Settings Model** in the Data Models section. The **Attach a settings Element Type** window opens.
+5. Select **Settings Model** in the Data Models section to open the **Attach a settings Element Type** window.
 6. Select **Create new Element Type**.
    * **Enter a Name** for the element type: _Feature Settings_.
    * Give it an icon.
