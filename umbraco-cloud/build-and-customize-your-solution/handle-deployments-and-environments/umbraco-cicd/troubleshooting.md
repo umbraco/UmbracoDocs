@@ -6,7 +6,7 @@
 
 If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes will be made to the website. This happened even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository.
 
-The reason for this is that the KUDU deploy process fails. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
+The reason for this is that the Kudu deploy process fails. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
@@ -167,9 +167,9 @@ If you want you can change the filename back to `Readme.md` after a successful C
 
 In rare cases deployments fail, and the cloud infrastructure doesn't clean up correctly. This leaves behind an "updating" marker. The next time you try to deploy through your pipeline you will encounter an error.
 
-In order to fix this issue, you need to use [KUDU](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
+In order to fix this issue, you need to use [Kudu](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
-1. Access KUDU on the affected environment
+1. Access Kudu on the affected environment
 
 * If you only have one environment you want the live environment
 * If you use V1 endpoints and have more than one environment, you want the left-most mainline environment
@@ -184,12 +184,12 @@ Once the marker file is removed, run your pipeline again.
 This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
 When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
-The Project History page offers more information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
+The Project History page offers information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
 
 A couple of steps to try:
 - Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
 - For a project running Umbraco 15 or later make sure the `CompressionEnabled` setting is set to false
-  - The static assets compression operation on the app service is very resource extensive and slows down the deployment 
+  - The static assets compression operation on the app service is resource extensive and slows down the Kudu deployment 
 - Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
 - Create and commit a small change and try deploying again
   - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
