@@ -12,7 +12,7 @@ The CI/CD flow on the `Configuration -> Advanced` page has been moved to `Config
 
 ## Enhanced debug information for CI/CD deployments
 
-On the `Insights -> Project History` page, you will now see CI/CD Flow deployments, as well as a "See More" button that leads to a page that has much more useful information.
+On the `Insights -> Project History` page, you will now see CI/CD Flow deployments. Use the "See More" button to find even more information about each deployment.
 
 ![Project History page with new CI/CD Deployment](../images/project-history-cicd.png)
 
