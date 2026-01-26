@@ -928,7 +928,7 @@ Some external login providers, such as Microsoft Entra ID, may send large query 
 This typically occurs during the authentication callback to Umbraco.
 
 {% hint style="info" %}
-This limitation is imposed by IIS and is not specific to Umbraco.
+This limitation is imposed by IIS and is not specific to Umbraco. For more details on configuring request limits, see the official Microsoft documentation on the [Request Limits element](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/requestfiltering/requestlimits/).
 {% endhint %}
 
 To resolve this, increase the allowed query string and URL length by setting `maxQueryString` and `maxUrl` in your `web.config` file.
