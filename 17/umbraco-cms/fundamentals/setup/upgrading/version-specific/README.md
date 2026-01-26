@@ -226,6 +226,14 @@ The other specific dependency updates made for Umbraco 17 for server and client-
 - [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
 - [#20925](https://github.com/umbraco/Umbraco-CMS/pull/20925)
 
+**Sections**
+
+In `UmbSectionContext`, the `setManifest()` method has been replaced with a manifest (to align with most other extension types).
+The `ManifestSection` interface has been modified to extend from `ManifestElementAndApi`, (previously it was `ManifestElement`).
+The `UmbSectionElement` (that a section will extend from) now extends from `UmbControllerHostElement`, (previously it was `HTMLElement`).
+
+For more details on this update, see the following PRs: [#20305](https://github.com/umbraco/Umbraco-CMS/pull/20305)
+
 **Other breaking changes**
 
 The full details of breaking changes can be found from [this list of labelled PRs](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/17.0.0).
