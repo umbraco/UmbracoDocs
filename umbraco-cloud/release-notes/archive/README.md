@@ -24,4 +24,4 @@ This section contains release note overviews from previous years — perfect for
 
 ### Latest Updates
 
-Looking for the latest updates? See the[ Release Notes Overview 2026](../overview-2026/overview-2026.md).
+Looking for the latest updates? See the[ Release Notes Overview 2026](../overview-2026/).
