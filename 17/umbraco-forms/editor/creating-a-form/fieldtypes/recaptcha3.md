@@ -31,4 +31,4 @@ You can create your keys by logging into your [reCAPTCHA account](https://www.go
 
 ## Additional Configuration Options
 
-Refer to [Configuration](https://docs.umbraco.com/umbraco-forms/developer/configuration#recaptcha-v3-field-type-configuration) to see additional options that can be set in the `appSettings.json` for reCAPTCHA v3.
+Refer to [Configuration](../../../developer/configuration#recaptcha-v3-field-type-configuration) to see additional options that can be set in the `appSettings.json` for reCAPTCHA v3.
