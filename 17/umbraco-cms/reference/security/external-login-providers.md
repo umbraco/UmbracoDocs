@@ -874,6 +874,7 @@ It is necessary to define a template first and then the custom element itself. T
 The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
+
 ```javascript
 const template = document.createElement('template');
 template.innerHTML = `
@@ -915,7 +916,9 @@ export default class MyCustomView extends HTMLElement {
 
 customElements.define('my-custom-view', MyCustomView);
 ```
+
 {% endcode %}
+
 {% endtab %}
 {% endtabs %}
 
