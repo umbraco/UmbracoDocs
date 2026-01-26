@@ -925,7 +925,7 @@ customElements.define('my-custom-view', MyCustomView);
 
 Some external login providers, such as Microsoft Entra ID, may send large query strings when the response mode is set to `query`. By default, IIS restricts the maximum allowed query string length, which can cause the external login callback to fail with a 404 error.
 
-This typically occurs during the authentication callback to Umbraco.
+This typically occurs during the authentication callback to Umbraco. 
 
 {% hint style="info" %}
 This limitation is imposed by IIS and is not specific to Umbraco. For more details on configuring request limits, see the official Microsoft documentation on the [Request Limits element](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/requestfiltering/requestlimits/).
