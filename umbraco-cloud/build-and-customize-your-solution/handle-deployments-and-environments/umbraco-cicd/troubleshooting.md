@@ -184,11 +184,16 @@ Once the marker file is removed, run your pipeline again.
 This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
 When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
+The Project History page offers more information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
+
 A couple of steps to try:
 - Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
+- For a project running Umbraco 15 or later make sure the `CompressionEnabled` setting is set to false
+  - The static assets compression operation on the app service is very resource extensive and slows down the deployment 
 - Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
 - Create and commit a small change and try deploying again
   - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
+- Make sure your artifact is following [the best practice](./samplecicdpipeline/artifact-best-practice.md)
 
 ## Environment errors after deployment
 
