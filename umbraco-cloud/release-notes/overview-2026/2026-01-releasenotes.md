@@ -24,7 +24,7 @@ This detail page for the event contains the following information:
 - The process log.
 - The Kudu log.
 
-Having these details available makes debugging deployments that went wrong much easier.
+Having these details available increases your options for debugging deployments that went wrong.
 
 ## List of deployment artifacts
 
