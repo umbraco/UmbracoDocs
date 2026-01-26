@@ -163,7 +163,6 @@
 
 * [Overview 2026](release-notes/overview-2026/README.md)
   * [January 2026](release-notes/overview-2026/2026-01-releasenotes.md)
-
 * [Archive](release-notes/archive/README.md)
   * [Overview 2025](release-notes/overview-2025/README.md)
     * [October 2025](release-notes/overview-2025/2025-10-releasenotes.md)
