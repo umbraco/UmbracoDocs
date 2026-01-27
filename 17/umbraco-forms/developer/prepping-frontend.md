@@ -42,13 +42,13 @@ If using `async`, please make sure to [disable the Forms client-side validation 
 
 ## Validation Using jQuery
 
-If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies:
+If you want to use jQuery as your validation framework for Umbraco Forms instead of the ASP.NET Client Validation library, you can manually add the following client dependencies:
 
 - `jQuery` (JavaScript library)
 - `jQuery validate` (jQuery plugin that provides client-side Form validation)
 - `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
 
-You should remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.
+Be sure to remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.  
 
 The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
 
