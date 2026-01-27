@@ -4,13 +4,13 @@ description: The Server side part of a Property Editor
 
 # Property Editor Schema
 
-A Property Editor Schema is the data part of a Property Editor in Umbraco. It defines the type of data that can be stored (string, number, date, JSON) and how that data should be validated. It can also perform conversions of data going in or out of the database. 
+A Property Editor Schema is the data part of a Property Editor in Umbraco. It defines the type of data that can be stored (string, number, date, JSON) and how that data should be validated. It can also perform conversions of data going in or out of the database.
 
 The schema's `settings` define the configuration options that are available for the Property Editor (such as maximum characters, allowed file types, etc.). When you create a Data Type, you provide values for these settings. Those configured values are then passed to both the server-side validation and the Property Editor UI.
 
 {% hint style="info" %}
 You can define settings on both the Property Editor Schema and the Property Editor UI. It's good practice to define settings that impact the data (like validation rules) on the Property Editor Schema. Settings that only affect the UI should be set on the Property Editor UI.
- {% endhint %}
+{% endhint %}
 
 For details on the settings structure, see the [Property Editor Schema Extension Type](../../extending-overview/extension-types/property-editor-schema.md) documentation.
 
@@ -26,11 +26,11 @@ Because the Property Editor Schema defines how to process and validate data, you
 
 You can see the used schema of a Property Editor in the backoffice of Umbraco when you create a new [Data Type](../../../fundamentals/data/data-types/).
 
-![The Property Editor Schema Alias in the Backoffice](images/property-editor-schema-alias-in-backoffice.jpg)
+![The Property Editor Schema Alias in the Backoffice](../../../.gitbook/assets/property-editor-schema-alias-in-backoffice.jpg)
 
 ## A custom schema or not?
 
-Umbraco ships with a collection of [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases) that cover most scenarios that are less demanding. Although each situation is different, if you answer yes to any of the following statements, it makes sense to create a custom schema:
+Umbraco ships with a collection of [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases/) that cover most scenarios that are less demanding. Although each situation is different, if you answer yes to any of the following statements, it makes sense to create a custom schema:
 
 * You expect the schema to be used by multiple Property Editor UIs.
 * You need a custom [Property Value Converter](../property-value-converters.md) to convert the data going into the cache, or you want the Umbraco ModelsBuilder to have a more specific, strongly-typed model.
@@ -55,12 +55,10 @@ The client-side component is:
 
 These components are related in the following way:
 
-![The elements that are covered in this article](./images/property-editor-schema-backend.jpg)
+![The elements that are covered in this article](../../../.gitbook/assets/property-editor-schema-backend.jpg)
 
 {% hint style="info" %}
-
 For a complete example, there is a tutorial for creating a Property Editor. It shows how to [implement a schema to add server-side validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md). Use this article together with that tutorial.
-
 {% endhint %}
 
 ### DataEditor
@@ -85,9 +83,9 @@ public class MySuggestionsDataEditor : DataEditor
 
 * `ValueType`: Defines how the data is stored in the database. The default is `String`. Other options are: `Integer`, `Decimal`, `DateTime`, `Date`, `Time`, `Text`, and `Json`.
 * `ValueEditorIsReusable`: Defines if the `DataValueEditor` instance is cached and reused as a singleton or created fresh each time. For most custom Property Editors, the default `true` value is best for performance. Set this to `false` if your editor:
-	* Maintains state between operations.
-	* Has a complex configuration that varies per Data Type.
-	* Is a block-based editor or a similar complex scenario.
+  * Maintains state between operations.
+  * Has a complex configuration that varies per Data Type.
+  * Is a block-based editor or a similar complex scenario.
 
 See the [full tutorial on how to implement the DataEditor](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md).
 
@@ -155,7 +153,7 @@ This chapter covers advanced scenarios in Property Editor Schema development. It
 
 ### Custom Data Editors without a Data Value Editor
 
-Usually, when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, you can use one of the [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases) instead. In most cases, you do not need to create a Property Editor Schema at all.
+Usually, when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, you can use one of the [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases/) instead. In most cases, you do not need to create a Property Editor Schema at all.
 
 However, it is possible to create a custom Data Editor, but let the handling of the data be handled by the `DataValueEditor` base class itself. On a Data Editor, you can specify the `ValueType`. This is the type that determines how the data is stored in the database. The `DataValueEditor` can process the data based on the `ValueType`. This means you can create a Data Editor without implementing a custom Data Value Editor.
 
@@ -164,7 +162,6 @@ This pattern is valuable when you need a unique schema identifier. You might use
 This example creates a custom `DataEditor` that reuses the standard JSON `DataValueEditor`:
 
 {% code title="ProductConfigurationDataEditor.cs" %}
-
 ```csharp
 [DataEditor("MyCompany.ProductConfiguration", ValueType = ValueTypes.Json)]
 public class ProductConfigurationDataEditor : DataEditor

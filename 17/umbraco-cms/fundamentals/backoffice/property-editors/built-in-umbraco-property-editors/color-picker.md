@@ -31,7 +31,7 @@ It is possible to add a label to use with the color.
 
     if (hexColor != null)
     {
-        <div style="background-color: #@hexColor">@colorLabel</div>
+        <div style="background-color: @hexColor">@colorLabel</div>
     }
 }
 ```
@@ -48,7 +48,7 @@ It is possible to add a label to use with the color.
 
     if (hexColor != null)
     {
-        <div style="background-color: #@hexColor">@colorLabel</div>
+        <div style="background-color: @hexColor">@colorLabel</div>
     }
 }
 ```

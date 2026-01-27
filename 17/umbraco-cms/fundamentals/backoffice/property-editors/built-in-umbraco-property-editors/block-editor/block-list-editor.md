@@ -20,7 +20,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_DataType.png)
+![Block List - Data Type Definition](../../../../../.gitbook/assets/BlockListEditor_DataType.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -37,7 +37,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
+![Block List - Data Type Block Configuration](<../../../../../.gitbook/assets/BlockListEditor_DataType_Blocks (2).png>)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -79,15 +79,15 @@ These properties are relevant when you work with custom views.
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
-![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_AddContent.png)
+![Block List - Create new](<../../../../../.gitbook/assets/BlockListEditor_AddContent (2).png>)
 
 Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
-![Block List - Setup](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.png)
+![Block List - Setup](../../../../../.gitbook/assets/BlockListEditor_BlockPicker_simplesetup.png)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](../../../../../../../17/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](<../../../../../.gitbook/assets/BlockListEditor_BlockPicker (2).jpg>)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -95,15 +95,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_EditingOverlay.png)
+![Block List - Overlay editing](../../../../../.gitbook/assets/BlockListEditor_EditingOverlay.png)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/images/BlockListEditor_InlineEditing.png)
+![Block List - Inline editing](../../../../../.gitbook/assets/BlockListEditor_InlineEditing.png)
 
 More Blocks can be added to the list by clicking the "Create new" button. You can also use the inline Add button that appears on hover between or above existing Blocks.
 
-![Block List - Create new](../../../../../../../16/umbraco-cms/fundamentals/backoffice/property-editors/built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Create new](<../../../../../.gitbook/assets/BlockListEditor_AddContentInline (2).jpg>)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
