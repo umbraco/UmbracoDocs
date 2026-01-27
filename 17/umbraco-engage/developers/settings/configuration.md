@@ -82,7 +82,16 @@ The default configuration will look like this:
       "DataGenerationTime": "04:00:00"
     },
     "Cockpit": {
-      "EnableInjection": true
+      "EnableInjection": true,
+      "Authentication": {
+        "TokenLifetimeSeconds": 60,
+        "SessionLifetimeMinutes": 30,
+        "RequireHttps": true,
+        "CleanupIntervalMinutes": 60,
+        "TokenRetentionBufferMinutes": 5,
+        "SessionRetentionBufferMinutes": 1440,
+        "SessionCookieSameSite": "Lax"
+      }
     },
     "Segmentation": {
       "ExcludedPropertyAliases": []
