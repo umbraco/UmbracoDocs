@@ -1,8 +1,12 @@
+---
+description: Learn how to troubleshoot and debug different scenarios you might encounter.
+---
+
 # Troubleshooting
 
 ## Special Cases
 
-### Using `RestorePackagesWithLockFile` in your .csproj file
+### Using `RestorePackagesWithLockFile` in your `.csproj` file
 
 If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes will be made to the website. This happened even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository.
 
