@@ -184,7 +184,7 @@ Once the marker file is removed, run your pipeline again.
 This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
 When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
-The Project History page offers information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
+The [Project History page](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md) offers information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
 
 A couple of steps to try:
 - Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
