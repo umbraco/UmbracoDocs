@@ -7,7 +7,7 @@ This section contains release note overviews from previous years — perfect for
 ## Release Notes by Year
 
 {% content-ref url="overview-2025/" %}
-[overview-2025](overview-2025/)
+[overview-2025](overview-2025/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="overview-2024/" %}
