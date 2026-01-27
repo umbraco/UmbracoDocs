@@ -1,5 +1,5 @@
 ---
-description: How to extend Umbraco Deploy to synchronize custom data
+description: How to extend Umbraco Deploy to synchronize custom data.
 ---
 
 # Extending
@@ -12,7 +12,7 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 ### Entities
 
-_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are the Document Types, Data Type, documents etc. In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco content. These can still be managed in the Backoffice using custom trees and editors.
+_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are the Document Types, Data Types, documents, and the live. In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco content. These can still be managed in the Backoffice using custom trees and editors.
 
 For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
@@ -292,7 +292,7 @@ As well as dependencies at the level of entities, we can also have dependencies 
 
 Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
 
-The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
+The following illustrative example considers a property editor that stores the integer ID of a media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
 
 ```csharp
 using Umbraco.Cms.Core;
@@ -387,9 +387,9 @@ Connectors do not need to be registered. The fact that they inherit from particu
 
 If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](#disk-based-transfers) section below.
 
-### Disk Based Transfers
+### Disk-Based Transfers
 
-To deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a composer.
+To deploy the entity as schema, via disk-based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a composer.
 
 Additionally, when an entity is saved, the disk artifact and signature cache should be updated. This is handled by implementing a notification handler that inherits from `EntitySavedDeployRefresherNotificationAsyncHandlerBase`.
 
@@ -599,7 +599,7 @@ The entity type name is used to look up a localized display name via the `deploy
 Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrades/version-specific.md) for an example.
 {% endhint %}
 
-The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 
 * A function responsible for returning a level of a tree.
 * The name of the entity (or entities) that can be restored from the remote tree.
