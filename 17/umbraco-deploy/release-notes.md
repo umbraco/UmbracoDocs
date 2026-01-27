@@ -16,6 +16,49 @@ If you are upgrading to a new major version you can find the details about the b
 
 This section contains the release notes for Umbraco Deploy 17 including all changes for this version.
 
+### [17.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.1) (January 8th 2026)
+
+* Set environment URL when fetching remote items and close dropdown after changing environment [#300](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/300)
+* Register all supported entity types on back-end and front-end [#273](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/273)
+
+### [17.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (November 27th 2025)
+
+* Compatibility with Umbraco 17.0.0
+* Simplified entity type registration that relies more on client-side registrations for the backoffice UI
+* Resource-based authorization now takes permissions into account for descendant entities, ensuring you can only transfer or export items you are allowed to access
+* Add support for Single Block data type/editor values
+* Fix scheduled publishing dates to use UTC
+
+### [17.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (November 25th 2025)
+
+* Compatibility with Umbraco 17.0.0-rc4
+
+### [17.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (November 21th 2025)
+
+* Compatibility with Umbraco 17.0.0-rc3
+
+### [17.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (October 30th 2025)
+
+* Compatibility with Umbraco 17.0.0-rc1
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md)
+
+## Umbraco.Deploy.Contrib
+
+### [17.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-17.0.0) (November 27th 2025)
+
+* Compatibility with Umbraco 17.0.0 and Deploy 17.0.0
+
+### [17.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-17.0.0-rc3) (November 25th 2025)
+
+* Compatibility with Umbraco 17.0.0-rc4 and Deploy 17.0.0-rc3
+
+### [17.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-17.0.0-rc2) (November 21st 2025)
+
+* Compatibility with Umbraco 17.0.0-rc3 and Deploy 17.0.0-rc2
+
+### [17.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-17.0.0-rc1) (October 30th 2025)
+
+* Compatibility with Umbraco 17.0.0-rc1 and Deploy 17.0.0-rc1
 
 ## Legacy release notes
 
