@@ -1,8 +1,10 @@
 ---
-description: Create reusable, standardized configurations for extensions, helping to streamline development, ensure consistency, and reduce duplication.
+description: >-
+  Create reusable, standardized configurations for extensions, helping to
+  streamline development, ensure consistency, and reduce duplication.
 ---
 
-# Kind
+# Kinds
 
 A Kind is a preset configuration that extensions inherit for consistency. It reduces redundancy by defining default properties. This simplifies maintenance for extensions sharing similar functionality.
 
@@ -10,30 +12,30 @@ Every Kind links to a specific extension type. Extensions of that type referenci
 
 ## Benefits of Using a Kind
 
-- **Reduces redundancy** – Defines common settings once for reuse across extensions.
-- **Ensures consistency** – Extensions using the same Kind follow a standardized structure.
-- **Simplifies definitions** – Extensions inherit predefined properties to reduce manual configuration.
+* **Reduces redundancy** – Defines common settings once for reuse across extensions.
+* **Ensures consistency** – Extensions using the same Kind follow a standardized structure.
+* **Simplifies definitions** – Extensions inherit predefined properties to reduce manual configuration.
 
 ## Kind Registration
 
 Register a Kind using the standard extension method. The key properties defining a Kind registration are:
 
-- `type`: Always set this to `kind`.
-- `alias`: A unique identifier for the Kind.
-- `matchType`: Specifies the applicable extension type.
-- `matchKind`: Defines the Kind alias referenced by extensions.
-- `manifest`: Contains preset values for inheritance.
+* `type`: Always set this to `kind`.
+* `alias`: A unique identifier for the Kind.
+* `matchType`: Specifies the applicable extension type.
+* `matchKind`: Defines the Kind alias referenced by extensions.
+* `manifest`: Contains preset values for inheritance.
 
 ### Example: Registering a Button Kind for Header Apps
 
-This example registers a Button Kind for [**Header Apps**](../extension-types/header-apps.md). It provides a preset button configuration for other extensions to reuse.
+This example registers a Button Kind for [**Header Apps**](header-apps.md). It provides a preset button configuration for other extensions to reuse.
 
 Properties:
 
-- `type` is 'kind', registering it as a Kind extension.
-- `matchType` is 'headerApp', targeting Header App extensions.
-- `matchKind` is 'button', serving as the Kind's alias.
-- The `manifest` holds default properties, like `elementName`, for inheritance.
+* `type` is 'kind', registering it as a Kind extension.
+* `matchType` is 'headerApp', targeting Header App extensions.
+* `matchKind` is 'button', serving as the Kind's alias.
+* The `manifest` holds default properties, like `elementName`, for inheritance.
 
 ```typescript
 import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
@@ -153,7 +155,7 @@ Use the previously defined `Kind` extension, `welcomeHeaderAppMessage` to create
 
 * For each derived extension, the `kind` property must match the `matchKind` property on `welcomeHeaderAppMessage`.
 * The `type` property must also match the `matchType` property on `welcomeHeaderAppMessage`.
-* Use `element` to import the custom component. 
+* Use `element` to import the custom component.
 
 {% code title="kinds/manifests.ts" %}
 ```typescript

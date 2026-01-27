@@ -27,6 +27,21 @@ In some cases, when using Azure AD for login, you may encounter the following er
 Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
 {% endhint %}
 
+## Call back requests
+
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../../reference/configuration/globalsettings.md#reserved-paths).
+
+For example, with Open ID Connect, you should configure:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/signin-oidc/,",
+```
+
+This avoids Umbraco treating this call back as a potential request for content, improving performance of the authentication operation.
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
@@ -795,3 +810,32 @@ customElements.define('my-lit-view', MyLitView);
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+## Common issues
+
+### 404 error on callback path
+
+Some external login providers, such as Microsoft Entra ID, may send large query strings when the response mode is set to `query`. By default, IIS restricts the maximum allowed query string length, which can cause the external login callback to fail with a 404 error.
+
+This typically occurs during the authentication callback to Umbraco.
+
+{% hint style="info" %}
+This limitation is imposed by IIS and is not specific to Umbraco. For more details on configuring request limits, see the official Microsoft documentation on the [Request Limits element](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/requestfiltering/requestlimits/).
+{% endhint %}
+
+To resolve this, increase the allowed query string and URL length by setting `maxQueryString` and `maxUrl` in your `web.config` file.
+
+For example:
+
+```xml
+<?xml version="1.0"?>
+<configuration>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="8192" maxUrl="16384"/>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+</configuration>
+```

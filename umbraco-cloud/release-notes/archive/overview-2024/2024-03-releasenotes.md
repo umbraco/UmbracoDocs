@@ -10,7 +10,7 @@ With the introduction of the Point-In-Time Recovery (PITR) feature on the new "B
 
 All previous backups are neatly organized for ease of access. From this list, you can opt to download the .bacpac file or delete any backup. Accessing the new page requires admin permission on the cloud project.
 
-![Backup Database Example](../../images/BackupDbExample.gif)
+![Backup Database Example](../../../.gitbook/assets/BackupDbExample.gif)
 
 Looking ahead, we're enhancing this feature to include the ability to import and swap database backups, which will add another layer of flexibility to your data management strategy. We're also planning to broaden the backup solution to encompass media files, aiming for a comprehensive approach that ensures every aspect of your project is securely backed up.
 

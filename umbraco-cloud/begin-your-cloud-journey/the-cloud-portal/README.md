@@ -6,7 +6,7 @@ The Umbraco Cloud Portal helps you manage your Umbraco Cloud project. From here,
 
 When you log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/home/login/), the projects dashboard gives an overview of all your Umbraco Cloud projects. Here, you can view all the projects you've created or have been added to as a team member.
 
-![The Umbraco Cloud Portal - Projects Dashboard](images/Umbraco-cloud-portal-projects-dashboard.png)
+![The Umbraco Cloud Portal - Projects Dashboard](../../.gitbook/assets/Umbraco-cloud-portal-projects-dashboard.png)
 
 You can see the project's environments, usage for each project, and which plans it is on. You can also see whether it is a baseline or baseline-child project.
 
@@ -22,13 +22,13 @@ In the top-right corner of the Umbraco Cloud Portal, you will find:
 
 In the right-side corner of the Umbraco Cloud Portal, you can enable **Show environments** and **Show usage** of the project from the **Settings** option.
 
-![Project Groups Settings](images/project-group-settings.png)
+![Project Groups Settings](../../.gitbook/assets/project-group-settings.png)
 
 ### Collapse Groups
 
 Collapse Groups allows you to collapse the groups on the project dashboard. You can also expand the groups depending on the view you prefer.
 
-![Collapse Groups](images/collapse-groups.png)
+![Collapse Groups](../../.gitbook/assets/collapse-groups.png)
 
 ### Edit Groups
 
@@ -40,7 +40,7 @@ After clicking on **Edit Groups**, you can create new groups to categorize your 
 
 <figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
-![Create Group](images/add-group.png)
+![Create Group](../../.gitbook/assets/add-group.png)
 
 Click **Add Group**, give the group a name, and then drag and drop your projects into the group of your choice.
 
@@ -48,7 +48,7 @@ Click **Add Group**, give the group a name, and then drag and drop your projects
 
 In the bottom-right corner of the Umbraco Cloud Portal, you'll find a chat bubble. This feature allows you to contact the Umbraco HQ Support team for assistance with your Umbraco Cloud projects.
 
-![Chat Feature](images/chat-feature.png)
+![Chat Feature](../../.gitbook/assets/chat-feature.png)
 
 Support availability depends on your plan:
 
@@ -94,25 +94,22 @@ On Umbraco Cloud, you may receive invitations to join different projects. These 
 * Status
 * Options to approve, reject, or delete the invitations that have expired.
 
-![Project Invites](images/project-invites.png)
+![Project Invites](../../.gitbook/assets/project-invites.png)
 
 ### Profile
 
 The Profile section includes the following information:
 
-![Edit profile](images/view-profile-details.png)
+![Edit profile](../../.gitbook/assets/view-profile-details.png)
 
 * Name: The name displayed on Umbraco Cloud.
 *   Email: The email address used for logging in to Umbraco Cloud and receiving email notifications from the Umbraco Cloud Portal.
 
-    {% hint style="info" %}
-    It is not possible to change this email address at a later time.
-    {% endhint %}
-* Telephone: The contact number of the user.
+    \{% hint style="info" %\} It is not possible to change this email address at a later time. \{% endhint %\}\* Telephone: The contact number of the user.
 * Edit profile: Allows you to update and ensure your information is valid and up to date for your Umbraco Cloud profile.
 * Change Password: Provides the option to change the password for your Umbraco Cloud account.
 
-![change password](images/change-password.png)
+![change password](../../.gitbook/assets/change-password.png)
 
 ### Release Notes
 

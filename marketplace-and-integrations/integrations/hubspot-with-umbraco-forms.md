@@ -1,10 +1,10 @@
 ---
 description: >-
-  Details an integration available for Hubspot with Umbraco Forms, built and
+  Details an integration available for HubSpot with Umbraco Forms, built and
   maintained by Umbraco HQ.
 ---
 
-# HubSpot With Umbraco Forms
+# HubSpot with Umbraco Forms
 
 This integration provides a custom workflow for Umbraco Forms. The workflow settings allow form entries to be mapped to a HubSpot contact record. When the form is submitted, the details are stored within the Customer Relationship Management (CRM) platform.
 
@@ -25,7 +25,7 @@ The package supports authentication using the OAuth protocol.
 The first time the workflow is used, the installation needs to be authorized. That can be done by following these steps:
 
 1. Click the prompted link which will redirect to the HubSpot authentication page for the Umbraco Forms HubSpot app.
-2. Log into the HubSpot account and agree to the permissions that the app requires.&#x20;
+2. Log into the HubSpot account and agree to the permissions that the app requires.
    * Permission is required in order to be able to read and write contact information.
 
 After agreeing to the permissions a redirect happens to a website hosted at `https://hubspot-forms-auth.umbraco.com`.
@@ -43,13 +43,43 @@ When the OAuth authentication method is being used, the API call to retrieve the
 
 Follow the steps outlined below to start working with the integration:
 
-1. Add the "Save Contact to Hubspot" workflow to a form.
-2. Configure the mappings between the form and Hubspot fields.
+1. Add the "Save Contact to HubSpot" workflow to a form.
+2. Configure the mappings between the form and HubSpot fields.
 
-![Select the HubSpot workflow](images/hubspot-with-umbraco-forms-select-workflow.png)
+![Select the HubSpot workflow](../.gitbook/assets/hubspot-with-umbraco-forms-select-workflow.png)
 
-![Defining mappings](images/hubspot-with-umbraco-forms-mapping.png)
+![Defining mappings](../.gitbook/assets/hubspot-with-umbraco-forms-mapping.png)
 
-When a form is submitted on the website, the workflow will execute and create a new contact record in your Hubspot account. It will be populated using the information mapped from the fields in the form submission.
+When a form is submitted on the website, the workflow will execute and create a new contact record in your HubSpot account. It will be populated using the information mapped from the fields in the form submission.
 
-![Hubspot contacts](images/hubspot-with-umbraco-forms-contacts.png)
+![Hubspot contacts](../.gitbook/assets/hubspot-with-umbraco-forms-contacts.png)
+
+## Contact Updates
+
+By default, the integration creates a new contact record in HubSpot for each form submission. If HubSpot detects a conflict during the attempt to create a new record, the create process will be skipped. A conflict could be that a record with the same email address already exists.
+
+However, you can configure the integration to update existing contacts instead.
+
+To enable contact updates, add the following setting to your website's `appsettings.json` file:
+
+```json
+{
+  "Umbraco": {
+    "Forms": {
+      "Integrations": {
+        "Crm": {
+          "Hubspot": {
+            "Settings": {
+              "AllowContactUpdate": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+When `AllowContactUpdate` is set to `true` and HubSpot detects a conflict with an existing record, the integration will perform instead an update request. As a result, the contact details will be updated.
+
+

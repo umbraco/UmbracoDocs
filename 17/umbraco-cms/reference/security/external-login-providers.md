@@ -23,9 +23,23 @@ Install an appropriate Nuget package for the provider you wish to use. Some popu
 
 {% hint style="info" %}
 In some cases, when using Azure AD for login, you may encounter the following error: `OpenIdConnectProtocol requires the jwt token to have an 'iss' claim`.
-
 Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
 {% endhint %}
+
+## Call back requests
+
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../../reference/configuration/globalsettings.md#reserved-paths).
+
+For example, with Open ID Connect, you should configure:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/signin-oidc/,",
+```
+
+This avoids Umbraco treating this call back as a potential request for content, improving performance of the authentication operation.
 
 ## Try it out
 
@@ -725,11 +739,11 @@ You have access to the [Umbraco UI Library](../../customizing/ui-library.md) in 
 {% tabs %}
 
 {% tab title="Lit" %}
-It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the Login screen. 
+It is possible to use a library such as [Lit](https://lit.dev/) to render the custom element needed for the Login screen.
 
-The following example shows how to use Lit to render the custom element. 
+The following example shows how to use Lit to render the custom element.
 
-The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property. 
+The custom element will render a form with a button. The button will submit the form to the `externalLoginUrl` property.
 
 No logic needs to be performed in the  `constructor` method because Lit will automatically update any event listeners. Styling is also handled by Lit in the `static styles` property.
 
@@ -802,7 +816,7 @@ export default class MyLitView extends LitElement implements IExternalLoginCusto
 {% endtab %}
 
 {% tab title="Lit (JavaScript)" %}
-It is also possible to use vanilla JavaScript with Lit. 
+It is also possible to use vanilla JavaScript with Lit.
 
 The following example imports Lit from a CDN and uses it to render the custom element needed for the Login screen:
 
@@ -855,11 +869,12 @@ customElements.define('my-lit-view', MyLitView);
 {% endtab %}
 
 {% tab title="Vanilla (JavaScript)" %}
-It is necessary to define a template first and then the custom element itself. The template is a small HTML form with a button. 
+It is necessary to define a template first and then the custom element itself. The template is a small HTML form with a button.
 
 The custom element will then render the template and attach an event listener for clicks on the button in the `constructor` method.
 
 {% code title="~/App_Plugins/ExternalLoginProviders/my-external-login.js" lineNumbers="true" %}
+
 ```javascript
 const template = document.createElement('template');
 template.innerHTML = `
@@ -901,6 +916,37 @@ export default class MyCustomView extends HTMLElement {
 
 customElements.define('my-custom-view', MyCustomView);
 ```
+
 {% endcode %}
+
 {% endtab %}
 {% endtabs %}
+
+## Common issues
+
+### 404 error on callback path
+
+Some external login providers, such as Microsoft Entra ID, may send large query strings when the response mode is set to `query`. By default, IIS restricts the maximum allowed query string length, which can cause the external login callback to fail with a 404 error.
+
+This typically occurs during the authentication callback to Umbraco. 
+
+{% hint style="info" %}
+This limitation is imposed by IIS and is not specific to Umbraco. For more details on configuring request limits, see the official Microsoft documentation on the [Request Limits element](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/requestfiltering/requestlimits/).
+{% endhint %}
+
+To resolve this, increase the allowed query string and URL length by setting `maxQueryString` and `maxUrl` in your `web.config` file.
+
+For example:
+
+```xml
+<?xml version="1.0"?>
+<configuration>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="8192" maxUrl="16384"/>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+</configuration>
+```

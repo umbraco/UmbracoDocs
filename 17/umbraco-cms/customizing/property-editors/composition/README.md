@@ -32,7 +32,7 @@ The UI component can be replaced without affecting stored data as long as the sa
 
 This architectural separation provides flexibility. Multiple UIs can use the same schema with different visual presentations. The schema ensures data integrity, allowing you to swap the UI component without migration or data loss.
 
-![Property Editor architecture showing Schema and UI separation](images/property-editor-simplified-flow.jpg)
+![Property Editor architecture showing Schema and UI separation](../../../.gitbook/assets/property-editor-simplified-flow.jpg)
 
 ### Data Types: Configuring Property Editors
 
@@ -40,7 +40,7 @@ A Data Type is a configured instance of a Property Editor that you create in the
 
 With Data Types, you can create one or multiple instances of the same Property Editor with different settings. When users are editing content, the Data Type recognizes which UI element to display and which settings to use. When content is saved, the Data Type knows how to process the data. It stores the Property Editor UI alias, the Property Editor Schema alias, and the Data Type settings.
 
-Take the __Text Box__ Property Editor for example. It has a setting for 'Maximum allowed characters'. You can create multiple Data Types using the Text Box Property Editor with different settings, based on your needs. 
+Take the **Text Box** Property Editor for example. It has a setting for 'Maximum allowed characters'. You can create multiple Data Types using the Text Box Property Editor with different settings, based on your needs.
 
 ### Settings
 
@@ -56,9 +56,9 @@ There is technically nothing stopping you from doing it differently. However, re
 
 When creating a custom Property Editor, consider what needs to be implemented. As discussed, the architecture of the Property Editor is flexible with separation of concerns. For a custom Property Editor, you need to decide what to implement yourself and what to reuse from existing components.
 
-If Umbraco already has a UI available that you can use, you do not have to implement the UI. In this case, you reuse a UI and implement a custom Schema for custom data handling. However, in most common scenarios, you will create a new Property Editor UI to work with. For more information about how to create a UI, see the [Property Editor UI](./property-editor-ui.md) article.
+If Umbraco already has a UI available that you can use, you do not have to implement the UI. In this case, you reuse a UI and implement a custom Schema for custom data handling. However, in most common scenarios, you will create a new Property Editor UI to work with. For more information about how to create a UI, see the [Property Editor UI](property-editor-ui.md) article.
 
-When it comes to a Property Editor Schema, whether you need to create a custom Schema depends on your needs. Does your Property Editor require custom data validation and logic? Umbraco comes with a selection of default Property Editor Schemas that are suitable for many common scenarios. The article about the [Property Editor Schema](./property-editor-schema.md) provides more information about how to create a Schema. It also provides considerations on whether a custom Property Editor Schema is needed.
+When it comes to a Property Editor Schema, whether you need to create a custom Schema depends on your needs. Does your Property Editor require custom data validation and logic? Umbraco comes with a selection of default Property Editor Schemas that are suitable for many common scenarios. The article about the [Property Editor Schema](property-editor-schema.md) provides more information about how to create a Schema. It also provides considerations on whether a custom Property Editor Schema is needed.
 
 ## Advanced
 

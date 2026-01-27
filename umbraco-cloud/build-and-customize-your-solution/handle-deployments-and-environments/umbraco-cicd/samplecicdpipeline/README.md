@@ -20,7 +20,7 @@ In Umbraco Cloud only C# code is built, and all frontend artifacts need to be bu
 
 You can use Azure DevOps as an external repository and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of Umbraco Cloud of the development environment.
 
-![UmbracoCloud CI/CD sample pipeline](../../../set-up-your-project/project-settings/images/UmbracoCloudCicdSample.png)
+![UmbracoCloud CI/CD sample pipeline](../../../../.gitbook/assets/UmbracoCloudCicdSample.png)
 
 ## Setting Up an Umbraco Cloud Project
 
@@ -44,9 +44,9 @@ In this guide, deployments are targeted at the leftmost environment in your Umbr
 To get started with API interactions, you'll need to obtain your Project ID and API key. If you haven't already enabled the CI/CD feature, follow these steps:
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
-2. Go to `Settings` -> `Advanced`. This is where you can generate an API key and find your Project ID.
+2. Go to `Configuration` -> `CI/CD Flow`. This is where you can generate an API key and find your Project ID.
 
-<figure><img src="../../../../.gitbook/assets/image (27).png" alt="Advanced tab on Cloud."><figcaption><p>Advanced tab on Cloud.</p></figcaption></figure>
+![CI/CD Flow page](../../../../.gitbook/assets/cicd-flow-page.png)
 
 3. Click on "Activate CI/CD Flow" toggle to enable the feature.
 
@@ -61,7 +61,7 @@ The API key is tied to the specific project for which it is generated. Make sure
 With the feature enabled a button called "CI/CD Environment Targets" becomes available. Clicking the button will show a modal with your environments and their aliases.\
 Next to the environment alias is a button you can click to copy the alias.
 
-<figure><img src="../../../set-up-your-project/project-settings/images/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
 
 {% hint style="info" %}
 If the alias is greyed out it is currently not a valid target through the Umbraco CI/CD flow api.

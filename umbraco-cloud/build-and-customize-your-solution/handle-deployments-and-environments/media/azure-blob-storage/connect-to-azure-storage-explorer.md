@@ -39,7 +39,7 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 
 1. Click the **Open Connect Dialog** button to get the Connect dialogue.
 
-![Connect my machine](../images/storage-explorer-connection.png)
+![Connect my machine](../../../../.gitbook/assets/storage-explorer-connection.png)
 
 2. Select the **Blob container** in the first prompt.
 
@@ -62,7 +62,7 @@ https://ucmediastoragewelive.blob.core.windows.net/92f27eee-eb18-445e-b9e4-c7a98
 
 You are now connected to the blob storage for your environment and you can upload your files to Azure Blob Storage through the explorer.
 
-![Open media folder](../images/storage-explorer-connected.png)
+![Open media folder](../../../../.gitbook/assets/storage-explorer-connected.png)
 
 {% hint style="warning" %}
 **Important**: If you upload your media files manually using this method, they will not be available in the backoffice.

@@ -27,6 +27,13 @@
 * [Configure Umbraco](klarna/configuring-umbraco.md)
 * [Release Notes](klarna/release-notes.md)
 
+## Kustom
+
+* [Overview](kustom/README.md)
+* [Configure Kustom](kustom/configuring-kustom.md)
+* [Configure Umbraco](kustom/configuring-umbraco.md)
+* [Release Notes](kustom/release-notes.md)
+
 ## Mollie
 
 * [Overview](mollie/README.md)

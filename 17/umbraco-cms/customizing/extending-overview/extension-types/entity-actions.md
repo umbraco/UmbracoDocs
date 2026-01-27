@@ -1,5 +1,7 @@
 ---
-description: Entity Actions give developers the ability to add custom actions to a fly-out menu.
+description: >-
+  Entity Actions give developers the ability to add custom actions to a fly-out
+  menu.
 ---
 
 # Entity Actions
@@ -10,7 +12,7 @@ description: Entity Actions give developers the ability to add custom actions to
 
 Entity Actions is an extension type that provides a fly-out context menu for secondary or additional functionality to an entity (document, media, etc...).
 
-Developers can define and associate custom actions for entities in a [tree extension](tree.md), workspace, or collection view. Access to these actions can be controlled via user permissions. The Users section of the backoffice allows Administrators to control which actions a user has permissions to access.
+Developers can define and associate custom actions for entities in a [tree extension](tree/), workspace, or collection view. Access to these actions can be controlled via user permissions. The Users section of the backoffice allows Administrators to control which actions a user has permissions to access.
 
 ## Display Modes <a href="#display-modes" id="display-modes"></a>
 
@@ -20,25 +22,25 @@ Entity Actions extensions can be displayed in a variety of formats.
 
 The sidebar context mode provides a second-level context menu that flies out from the content tree. Backoffice users will typically find default items such as sorting, moving, deleting, and publishing workflow actions here.
 
-<img src="../../../.gitbook/assets/entity-action-sidebar-context.svg" alt="graphic representation of the sidebar context menu">
+![graphic representation of the sidebar context menu](../../../.gitbook/assets/entity-action-sidebar-context.svg)
 
 ### Workspace Entity Menu <a href="#workspace-entity-action-menu" id="workspace-entity-action-menu"></a>
 
 The workspace entity mode provides a drop-down menu that flies out from the upper decking of a workspace.
 
-<img src="../../../.gitbook/assets/entity-action-workspace-menu.svg" alt="Workspace Entity Action Menu">
+![Workspace Entity Action Menu](../../../.gitbook/assets/entity-action-workspace-menu.svg)
 
 ### Collection Menu <a href="#collection-menu" id="collection-menu"></a>
 
 The collection mode provides a drop-down menu that appears above a collection view.
 
-<img src="../../../.gitbook/assets/entity-action-collection-menu.svg" alt="Collection">
+![Collection](../../../.gitbook/assets/entity-action-collection-menu.svg)
 
 ### Picker Menu <a href="#picker-menu" id="picker-menu"></a>
 
 The picker mode provides a menu in a sidebar modal.
 
-<img src="../../../.gitbook/assets/entity-action-picker-context-menu.svg" alt="Pickers">
+![Pickers](../../../.gitbook/assets/entity-action-picker-context-menu.svg)
 
 ## Registering an Entity Action <a href="#registering-an-entity-action" id="registering-an-entity-action"></a>
 
@@ -74,6 +76,7 @@ Umbraco provides a few generic actions that can be used across silos, such as co
 Entity Action extensions will need to supply a class to the extension definition using the `api` property in the manifest file. This class will be instantiated as part of the action and will be passed a reference to the entity that invoked it.
 
 The entity action class will provide one of the following methods:
+
 * `getHref` - returns a URL that will be used for navigation
 * `execute` - programs custom imperative behaviors that can work with contexts and service APIs
 
@@ -106,7 +109,7 @@ export { MyEntityAction as api };
 The `execute()` method is flexible and allows developers to perform nearly any task on an entity. Developers can perform network requests using `fetch()`, or access a repository.
 
 {% hint style="info" %}
-The [Executing Requests](../../foundation/fetching-data) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
+The [Executing Requests](../../foundation/fetching-data/) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
 {% endhint %}
 
 {% code title="entity-action/my-fetch-entity-action.ts" %}
@@ -182,31 +185,31 @@ Each permission has a set of verbs that will be checked against on both the clie
 
 ### Standard Umbraco Permission Letters <a href="#standard-permission-letters" id="standard-permission-letters"></a>
 
-| Legacy backoffice letter  | Verb                             |
-|---------------------------|----------------------------------|
-| C                         | Umb.Document.Create              |
-| F                         | Umb.Document.Read                |
-| A                         | Umb.Document.Update              |
-| D                         | Umb.Document.Delete              |
-| I                         | Umb.Document.CreateBlueprint     |
-| N                         | Umb.Document.Notifications       |
-| U                         | Umb.Document.Publish             |
-| R                         | Umb.Document.Permissions         |
-| Z                         | Umb.Document.Unpublish           |
-| O                         | Umb.Document.Duplicate           |
-| M                         | Umb.Document.Move                |
-| S                         | Umb.Document.Sort                |
-| I                         | Umb.Document.CultureAndHostnames |
-| P                         | Umb.Document.PublicAccess        |
-| K                         | Umb.Document.Rollback            |
+| Legacy backoffice letter | Verb                             |
+| ------------------------ | -------------------------------- |
+| C                        | Umb.Document.Create              |
+| F                        | Umb.Document.Read                |
+| A                        | Umb.Document.Update              |
+| D                        | Umb.Document.Delete              |
+| I                        | Umb.Document.CreateBlueprint     |
+| N                        | Umb.Document.Notifications       |
+| U                        | Umb.Document.Publish             |
+| R                        | Umb.Document.Permissions         |
+| Z                        | Umb.Document.Unpublish           |
+| O                        | Umb.Document.Duplicate           |
+| M                        | Umb.Document.Move                |
+| S                        | Umb.Document.Sort                |
+| I                        | Umb.Document.CultureAndHostnames |
+| P                        | Umb.Document.PublicAccess        |
+| K                        | Umb.Document.Rollback            |
 
 ### Custom Permission Letters <a href="#custom-permission-letters" id="custom-permission-letters"></a>
 
 Developers who create packages with custom entity actions are encouraged to update this document by submitting pull requests to the [documentation repository](https://github.com/umbraco/UmbracoDocs). This will inform other developers which permission letters they should avoid defining.
 
-| Custom Backoffice letter | Verb                           |
-|--------------------------|--------------------------------|
-| ⌘                        | *Placeholder*                  |
+| Custom Backoffice letter | Verb          |
+| ------------------------ | ------------- |
+| ⌘                        | _Placeholder_ |
 
 ## Entity Action Permissions <a href="#user-permissions" id="user-permissions"></a>
 
@@ -242,7 +245,6 @@ extensionRegistry.register(manifest);
 ```
 {% endcode %}
 
-
 #### Management Interface
 
 The `entityUserPermission` extension type will render a toggle control in the **Default permissions** pane in the Users > User Groups editor.
@@ -251,7 +253,7 @@ The `entityUserPermission` extension type will render a toggle control in the **
 
 ### Granular User Permission
 
-<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" width="796" alt=""><figcaption><p><strong>Default Granular User Permission UI</strong></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui.png" alt="" width="796"><figcaption><p><strong>Default Granular User Permission UI</strong></p></figcaption></figure>
 
 #### Management Interface
 
@@ -279,7 +281,7 @@ extensionRegistry.register(manifest);
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui-custom.png" width="796" alt=""><figcaption><p><strong>Custom Granular User Permission UI</strong></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/granular-user-permissions-ui-custom.png" alt="" width="796"><figcaption><p><strong>Custom Granular User Permission UI</strong></p></figcaption></figure>
 
 ### Enforcing Permissions
 

@@ -14,9 +14,7 @@ Environment Secrets are intended to be utilized exclusively within a particular 
 Shared Secrets are utilized across all environments and will be seamlessly integrated into any new environment you create. Shared Secrets are particularly well-suited for safeguarding credentials necessary for project development, such as access to private NuGet feeds.
 
 {% hint style="warning" %}
-
 Utilizing environment-specific secrets for private NuGet feeds will result in the unsuccessful creation of new environments due to the unknown status of the secret. In such instances, **Shared Secrets** should be used.
-
 {% endhint %}
 
 Typical secrets are **Private Keys**, **3rd-party API tokens**, **database passwords**, or otherwise **sensitive data** that needs to be kept secret.
@@ -34,14 +32,11 @@ Starter Plans have a limit of 5 secrets per environment, whereas higher-tiered p
 ## How to add secrets
 
 {% hint style="warning" %}
-
-## Important
+### Important
 
 When adding a secret to your environment, it will restart.
 
-Secrets are stored as environment variables.
-The underlying platform has a maximum size limit for all environment variables combined.
-If too many secrets are added, or if secret values are too large, your environment may fail to start.
+Secrets are stored as environment variables. The underlying platform has a maximum size limit for all environment variables combined. If too many secrets are added, or if secret values are too large, your environment may fail to start.
 
 It is recommended to:
 

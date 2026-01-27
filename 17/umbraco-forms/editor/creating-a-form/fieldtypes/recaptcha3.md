@@ -28,3 +28,7 @@ Follow these steps to enable reCAPTCHA V3 in Umbraco Forms:
 ```
 
 You can create your keys by logging into your [reCAPTCHA account](https://www.google.com/recaptcha/).
+
+## Additional Configuration Options
+
+Refer to [Configuration](../../../developer/configuration#recaptcha-v3-field-type-configuration) to see additional options that can be set in the `appSettings.json` for reCAPTCHA v3.

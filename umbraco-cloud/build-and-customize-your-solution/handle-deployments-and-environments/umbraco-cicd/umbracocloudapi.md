@@ -3,8 +3,7 @@
 The Umbraco Cloud API serves as a publicly accessible endpoint that customers can utilize to execute relevant tasks.
 
 {% hint style="info" %}
-
-### Changes between endpoints for version 1 and 2
+#### Changes between endpoints for version 1 and 2
 
 With the endpoints for version 2, you are given more control over the process.
 
@@ -17,7 +16,6 @@ These are the most important differences between the V1 and V2 endpoints:
 [Do you want to migrate from V1 to V2 endpoints?](samplecicdpipeline/migrate.md)
 
 [The V1 endpoints are still available](v1-umbraco-cloud-api.md).
-
 {% endhint %}
 
 ## Getting started
@@ -42,9 +40,9 @@ You will find relevant examples using `HTTP Request Syntax` in the sections belo
 
 ### How to enable CI/CD Integrator in the Umbraco Cloud Portal
 
-To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > Advanced** in the Umbraco Cloud portal.
+To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > CI/CD Flow** in the Umbraco Cloud portal.
 
-![Umbraco CI/CD Flow](../../set-up-your-project/project-settings/images/Advanced-Section.png)
+![Umbraco CI/CD Flow](../../../.gitbook/assets/Advanced-Section.png)
 
 The two elements to be used for the authentication are:
 
@@ -236,8 +234,7 @@ It is not recommended to enable the `skipVersionCheck`. This is to ensure that v
 
 Enabling the `noBuildAndRestore` only disabled the restore and build inside the isolated instance. Once the system pushes the source code to the environment a build and publish operation will run as usual. One minute or more can be saved during the deployment process by enabling this option.
 
-For more information on using the `skipVersionCheck` and `noBuildAndRestore` setting in the pipeline , see the [Advanced Setup: Deployment options](./samplecicdpipeline/advanced-deployment-options.md) article.
-
+For more information on using the `skipVersionCheck` and `noBuildAndRestore` setting in the pipeline , see the [Advanced Setup: Deployment options](samplecicdpipeline/advanced-deployment-options.md) article.
 {% endhint %}
 
 ### Get Deployment status
@@ -365,9 +362,7 @@ Content-Type: application/json
 The API response will vary based on whether or not there are changes to report. If no changes are detected, you'll receive an HTTP 204 No Content status. If there are changes, the API will return an HTTP 200 OK status along with a git-patch file as the content. This git-patch file can then be applied to your local repository to sync it with the changes.
 
 {% hint style="info" %}
-
 It is only possible to generate git-patch files when the selected `deploymentId` points to a deployment where the `targetEnvironmentAlias` is the same as in this request.
-
 {% endhint %}
 
 ## Possible errors

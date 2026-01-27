@@ -18,9 +18,7 @@ Source control is a way to control changes to files and directories. You can kee
 There are different source code management tools that you can use such as GitHub, Git, GitLab, Apache Subversion (SVN), Mercurial, etc.
 
 {% hint style="info" %}
-
 An example of how to use GitLab for setting up automatic deployments can be found on the [online Umbraco Community magazine Skrift.io](https://skrift.io/issues/using-gitlab-bidirectional-mirroring-azure-devops-release-pipelines-to-auto-deploy-into-umbraco-cloud/).
-
 {% endhint %}
 
 {% tabs %}
@@ -41,30 +39,30 @@ Once you're happy with the results or wish to see how your website has progresse
 
 {% tabs %}
 {% tab title="Umbraco 10+" %}
-#### Code Deployment Summary
+**Code Deployment Summary**
 
-![Umbraco Cloud Overview](images/UCP.png)
+![Umbraco Cloud Overview](../../.gitbook/assets/UCP.png)
 
 In the above diagram, the Umbraco Git repository contains the source code of a class library CS project.
 
 Once you commit your code in the Umbraco Cloud Git repository, your C# source code is built and then deployed to the `wwwroot` folder.
 
-#### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+**Disadvantages of using an Umbraco Cloud Project repository as a source code repository**
 
 * We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 * You will need to commit your frontend artifacts as the build pipeline only builds dlls from your C# code.
 {% endtab %}
 
 {% tab title="Legacy Umbraco 7 and 8" %}
-#### Code Deployment Summary
+**Code Deployment Summary**
 
-<figure><img src="images/UCP_v8.png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/UCP_v8 (1).png" alt=""><figcaption><p>Umbraco cloud overview Legacy versions</p></figcaption></figure>
 
 In the above diagram, the external git repository contains the source code of a class library CS project with a class library project.
 
 With this setup, you commit your changes twice. Once to commit your code in your source control and the other commit to the Umbraco Cloud Git repository to deploy your website. Your source code is not hosted on Umbraco Cloud but only your cloned project will be in the Umbraco Cloud Git Repository. Your code is built and compiled into the cloned project and then pushed to Umbraco Cloud. Thus updating the site with your latest code changes.
 
-#### Disadvantages of using an Umbraco Cloud Project repository as a source code repository
+**Disadvantages of using an Umbraco Cloud Project repository as a source code repository**
 
 * We only guarantee to maintain and keep the `master` branch. If there are any other branches, they might be removed without any notification causing data loss.
 * You will always need to commit your dll files.

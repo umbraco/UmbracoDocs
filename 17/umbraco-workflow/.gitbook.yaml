@@ -3,3 +3,7 @@ root: ./
 ​structure:
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    getting-started/workflow-settings: getting-started/content-approval-settings.md
+    

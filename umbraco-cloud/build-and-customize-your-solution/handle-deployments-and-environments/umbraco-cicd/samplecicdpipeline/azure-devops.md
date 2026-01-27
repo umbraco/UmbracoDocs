@@ -40,7 +40,7 @@ Please be aware that since this involves using your custom pipeline, any issues 
 Go to your repositories in Azure DevOps and click on "Create a repository".
 
 * Create a new empty repository (don't add a README and don't add a .gitignore), and note down the clone URL.
-* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/README.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
+* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 * Now working locally remove the Git Remote called `origin`, which currently points to Umbraco Cloud
 
 ```sh
@@ -142,9 +142,9 @@ For a pipeline that uses Bash scripts you will need the following files:
 
 ## Configure Azure DevOps
 
-The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./README.md#obtaining-the-project-id-and-api-key) section describes how to get these values.
+The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./#obtaining-the-project-id-and-api-key) section describes how to get these values.
 
-You will also need the alias of the environment you want to target. The [Getting environment aliases to target](./README.md#getting-environment-aliases-to-target) section describes how to view the list of environments you can target. Note the alias of the environment you want to target.
+You will also need the alias of the environment you want to target. The [Getting environment aliases to target](./#getting-environment-aliases-to-target) section describes how to view the list of environments you can target. Note the alias of the environment you want to target.
 
 * Now go to the repository in Azure and click on "Set up build".
 
@@ -152,12 +152,12 @@ You will also need the alias of the environment you want to target. The [Getting
 
 * On the next screen click on "Existing Azure Pipelines YAML file"
 
-<figure><img src="../../../set-up-your-project/project-settings/images/Pipeline3.png" alt=""><figcaption><p>Configure pipeline with existing YAML file</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Pipeline3.png" alt=""><figcaption><p>Configure pipeline with existing YAML file</p></figcaption></figure>
 
 * Select `main` (or `master` if you did not change the branch name) in Branch
 * Select `/devops/azure-release-pipeline.yaml` in Path and continue
 
-<figure><img src="../../../set-up-your-project/project-settings/images/Pipeline4.png" alt=""><figcaption><p>Select Branch and Path</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Pipeline4.png" alt=""><figcaption><p>Select Branch and Path</p></figcaption></figure>
 
 * Now you are on the "Review your pipeline YAML" screen
   * Replace the `##Your project Id here##` with the Project Id you got from Umbraco Cloud Portal
@@ -234,16 +234,14 @@ If you want to customize the artifact take a look at [Artifact Best Practice](ar
 The `cloud-deployment.yml` shows how you can deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for cloud to finish the operation.
 
 {% hint style="info" %}
-
 If you have frontend assets that needs to be built (using tools like npm/yarn or others), you should add the needed steps before `cloudPrepareArtifact`. This is to ensure that the fresh frontend assets will be part of the package to be sent to Umbraco Cloud.
-
 {% endhint %}
 
 ## Next step
 
 Please follow the above guide first.
 
-* [Deployment options](advanced-deployment-options.md) 
+* [Deployment options](advanced-deployment-options.md)
 * [Deploy to multiple targets](advanced-multiple-targets.md)
 
 ## Further information

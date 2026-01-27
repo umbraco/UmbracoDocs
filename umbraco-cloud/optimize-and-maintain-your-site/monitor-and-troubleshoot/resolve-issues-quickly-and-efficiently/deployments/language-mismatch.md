@@ -10,11 +10,11 @@ This error occurs when a language is deleted from the backoffice after you have 
 
 The issue will show up as an extraction error on your Umbraco Cloud environment with a red indicator.
 
-<figure><img src="../../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (54) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upon closer inspection, a more detailed error will reveal itself: `Languages in source and destination site do not match.`
 
-![Languages do not match](images/detailed-error.png)
+![Languages do not match](../../../../.gitbook/assets/detailed-error.png)
 
 This error can occur in two scenarios and is caused by deleting any backoffice language while having **dictionary items** present on your project.
 
@@ -36,6 +36,6 @@ _Method 1_ - prevention is better than cure! If you resave all your dictionary i
 
 _Method 2_ - if you have already created the new instance and do not wish to re-create it, you could instead follow this flow: Navigate to `site/wwwroot/data/revision` folder via [KUDU tools](../../power-tools/), find the dictionary items, and then edit the UDA files directly.
 
-![KUDU tools procedure](images/kudutools.png)
+![KUDU tools procedure](../../../../.gitbook/assets/kudutools.png)
 
 Deleting the section responsible for the removed language and saving the file should clear out the error - as long as you run a [manual extraction](../../power-tools/manual-extractions.md) afterward. Manually re-saving the dictionary items in the backoffice after the extraction is greatly recommended - it will log those changes in the git repository, and will correct said dictionary items on the source environment with the next deployment.
