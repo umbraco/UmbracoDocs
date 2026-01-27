@@ -68,7 +68,7 @@ For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](troubleshooting.md#s
 3. Open the `main.yml` file in a text editor and navigate to the “jobs” section.
 4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
 
-![Cloud sync code highlight](../../set-up-your-project/project-settings/images/cloudsync.png)
+![Cloud sync code highlight](../../../.gitbook/assets/cloudsync.png)
 
 5. Commit the changes, and push them to GitHub. This action will trigger a build and run the pipeline.
 6. At this point, the pipeline should execute successfully and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
@@ -95,15 +95,15 @@ Trigger a code deployment and ensure that you uncheck the "Umbraco Cloud Sync" s
 2. Find the pipeline in Azure DevOps.
 3. Click on "Run Pipeline" in the top right corner.
 
-![Run Pipeline in Azure DevOps](../../set-up-your-project/project-settings/images/az-run-pipeline.png)
+![Run Pipeline in Azure DevOps](../../../.gitbook/assets/az-run-pipeline.png)
 
 4. Click on "Stages to run"
 
-![The Run Pipeline View](../../set-up-your-project/project-settings/images/az-run-pipeline-view.png)
+![The Run Pipeline View](../../../.gitbook/assets/az-run-pipeline-view.png)
 
 5. Uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
 
-![The Stages to run View](../../set-up-your-project/project-settings/images/az-stages-to-run-view.png)
+![The Stages to run View](../../../.gitbook/assets/az-stages-to-run-view.png)
 
 5. Click on "Run" back in the "Run Pipeline" view.
 
@@ -181,14 +181,14 @@ Once the marker file is removed, run your pipeline again.
 
 ### Unable to verify Deployment has finished
 
-This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
-When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
+This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu. When a change is pushed to a Cloud Environment the Kudu deployment is started. CI/CD is also utilizing this flow.
 
 A couple of steps to try:
-- Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
-- Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
-- Create and commit a small change and try deploying again
-  - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
+
+* Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2)
+* Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud
+* Create and commit a small change and try deploying again
+  * A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
 
 ## Environment errors after deployment
 

@@ -14,11 +14,11 @@ You can either use **Email**, **Phone**, or an **Authenticator App** when loggin
 
 To enable MFA for Umbraco Cloud, go to **Profile**, click **Edit Profile**, and select the **Multifactor Authentication Method** from the drop-down list.
 
-![MFA-Registration](../../images/2FA-Registration.gif)
+![MFA-Registration](../../../.gitbook/assets/2FA-Registration.gif)
 
 MFA code can be sent either to your email or as a text message on your phone. Alternatively, you can use an authentication app such as Google Authenticator, Authy, or similar.
 
-![Phone-auth](<../../images/Phone-auth (1).png>)
+![Phone-auth](<../../../.gitbook/assets/Phone-auth (1).png>)
 
 As your Umbraco profile is used to log in to the backoffice for your projects, these are all now protected with MFA.
 
@@ -28,7 +28,7 @@ Until now, Umbraco Cloud has been exclusively hosted in the West Europe region o
 
 You can select which region you would like to host your Umbraco Cloud project while creating a new Cloud project.
 
-![USRegionRegistration](../../images/USRegionRegistration.gif)
+![USRegionRegistration](../../../.gitbook/assets/USRegionRegistration.gif)
 
 As excited as we are about making Umbraco Cloud available in the US, we also have the ability to expand to **new regions**. If you have specific requests regarding the next region you want Umbraco Cloud to expand to, let us know at product@umbraco.com.
 
@@ -44,6 +44,6 @@ By clicking on “Edit groups”, you can sort projects into groups with the dra
 
 After saving your projects, you can choose between a detailed view with relevant information for your projects such as environments, product versions, and bandwidth/media storage usage, or a more compact view with less information. You can decide by using the “Settings” option.
 
-![ProjectsDashboardV1](../../images/ProjectsDashboardV1.gif)
+![ProjectsDashboardV1](../../../.gitbook/assets/ProjectsDashboardV1.gif)
 
 You can try out the Projects Dashboard on https://www.s1.umbraco.io/projectsdashboard and start grouping the Cloud projects as per your preference. We will add new features and functionality to the dashboard in future releases starting with a filtering system as one of the next new additions.

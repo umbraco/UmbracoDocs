@@ -15,9 +15,9 @@ Pre-validating hostnames allows you to prepare domains before pointing DNS to Um
 * **Zero-downtime hostname migration** – Move production domains to Umbraco Cloud without service interruptions.
 * **On-premise proxy support** – Keep using your existing proxy or Web Application Firewall (WAF) setup while preparing hostnames in Umbraco Cloud.
 
-<figure><img src="../../go-live/manage-hostnames/images/pre-validation-status-modal.png" alt="A screenshot of the Pre-Validation status modal"></figure>
+<figure><img src="../../../.gitbook/assets/pre-validation-status-modal.png" alt="A screenshot of the Pre-Validation status modal"><figcaption></figcaption></figure>
 
-This means safer go-lives and improved domain management. See the [Hostname Pre-Validation documentation](../../go-live/manage-hostnames/hostname-pre-validation.md) for a full overview of how to use the feature.  
+This means safer go-lives and improved domain management. See the [Hostname Pre-Validation documentation](../../../go-live/manage-hostnames/hostname-pre-validation.md) for a full overview of how to use the feature.
 
 ## Managed Challenges
 
@@ -29,9 +29,10 @@ When websites face unusual load, whether from bots, scraping, or coordinated att
 * Works seamlessly alongside the built-in WAF.
 
 WAF sensitivity and Manage Challenge features can be applied in Security Settings:
-<figure><img src="../images/security-settings.png" alt="A screenshot of the Security Settings with the new features for Managed Challenges"></figure>
 
-You get added resilience without manual intervention and tools to ensure resources are spent serving customers, not malicious requests. Read more about the new features in the updated [Managing Transport Security documentation](../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)
+<figure><img src="../../../.gitbook/assets/security-settings (1).png" alt="A screenshot of the Security Settings with the new features for Managed Challenges"><figcaption></figcaption></figure>
+
+You get added resilience without manual intervention and tools to ensure resources are spent serving customers, not malicious requests. Read more about the new features in the updated [Managing Transport Security documentation](../../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)
 
 ## Custom Identity Provider (Public Beta)
 
@@ -43,8 +44,8 @@ You can now connect identity providers, like Microsoft Entra ID, Octa, or Google
 * Map roles and project access directly from your provider.
 * Keep audit logs of external login usage.
 
-<figure><img src="../../.gitbook/assets/organization-external-login-provider.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/organization-external-login-provider.png" alt=""><figcaption></figcaption></figure>
 
-Enterprises and organizations can rely on centralized account management with industry-standard security. This means less time spent managing accounts and permissions, whether you're onboarding or offboarding. 
+Enterprises and organizations can rely on centralized account management with industry-standard security. This means less time spent managing accounts and permissions, whether you're onboarding or offboarding.
 
-Custom Identity Providers for Cloud organizations is currently in Public Beta, and we aim for full release early October. If you have any feedback or encounter issues with the feature, reach out to us on [beta-cloud-portal-login-providers@umbraco.dk](mailto:beta-cloud-portal-login-providers@umbraco.dk). For a full overview of the features and how to use them, see the [Organization Login Providers documentation](../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md). 
+Custom Identity Providers for Cloud organizations is currently in Public Beta, and we aim for full release early October. If you have any feedback or encounter issues with the feature, reach out to us on [beta-cloud-portal-login-providers@umbraco.dk](mailto:beta-cloud-portal-login-providers@umbraco.dk). For a full overview of the features and how to use them, see the [Organization Login Providers documentation](../../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md).

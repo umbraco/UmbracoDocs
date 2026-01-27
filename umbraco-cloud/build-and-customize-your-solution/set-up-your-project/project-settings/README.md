@@ -2,7 +2,7 @@
 
 When working with an Umbraco Cloud project, you can handle the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the left-side menu:
 
-![Settings menu](images/settings-menu.png)
+![Settings menu](../../../.gitbook/assets/settings-menu.png)
 
 ## Overview
 
@@ -49,7 +49,7 @@ The Team section allows you to:
 
 The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
 
-![Project Summary](images/summary-details.png)
+![Project Summary](../../../.gitbook/assets/summary-details.png)
 
 ## Insights
 
@@ -57,13 +57,13 @@ The **Summary** section displays key information such as the project plan, the r
 
 In the Project History section, you can view a list of high-level activities for your cloud project.
 
-![Project History](images/project-history.png)
+![Project History](../../../.gitbook/assets/project-history.png)
 
 ### [Availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md)
 
 You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution.
 
-![Availability & Performance](images/availability-performance.png)
+![Availability & Performance](../../../.gitbook/assets/availability-performance.png)
 
 ### [Usage](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/)
 
@@ -73,7 +73,7 @@ The Usage section allows you to:
 * Check whether the project is using above or below the allowed amount for its plan.
 * View the top 10 bandwidth usage paths, referrers, and the top 50 media files.
 
-![Usage](images/usage-new.png)
+![Usage](../../../.gitbook/assets/usage-new.png)
 
 ## Configuration
 
@@ -81,7 +81,7 @@ The Usage section allows you to:
 
 The Connections section provides connection details for your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
 
-![Connections](images/connections.png)
+![Connections](../../../.gitbook/assets/connections.png)
 
 ### [Automatic Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
 
@@ -89,7 +89,7 @@ The Automatic Upgrades section handles minor upgrades for the Umbraco components
 
 From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) section.
 
-![Automatic Upgrades](images/automatic-upgrades.png)
+![Automatic Upgrades](../../../.gitbook/assets/automatic-upgrades.png)
 
 ### [Content Delivery Network (CDN) and Caching](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
 
@@ -99,19 +99,19 @@ The CDN and Caching section lets you manage CDN Caching and Optimization setting
 * Set specific caching settings per hostname if different configurations are required for certain hostnames.
 * Purge Cache for individual hostnames or all of them.
 
-![CDN & Caching](images/cdn-caching.png)
+![CDN & Caching](../../../.gitbook/assets/cdn-caching.png)
 
 ### [Hostnames](../../../go-live/manage-hostnames/)
 
 In the Hostnames section, you can bind hostnames to your Umbraco Cloud project.
 
-![Hostnames](images/hostnames.png)
+![Hostnames](../../../.gitbook/assets/hostnames.png)
 
 ### [Webhooks](../../handle-deployments-and-environments/deployment/deployment-webhook.md)
 
 You can configure deployment webhooks for your environments in this section. Webhooks are triggered upon successful deployments, and you can specify where the deployment information is sent.
 
-![Webhooks](images/webhooks.png)
+![Webhooks](../../../.gitbook/assets/webhooks.png)
 
 ### CI/CD Flow
 
@@ -120,8 +120,7 @@ The CI/CD Flow section allows you to manage settings related to CI/CD deployment
 * [Umbraco CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
 * See a paginated list of artifacts that has been pushed to your project via the CI/CD pipeline.
 
-![CI/CD Flow settings](images/cicd-flow-page.png)
-![CI/CD Flow Artifact list](images/cicd-artifacts.png)
+![CI/CD Flow settings](<../../../.gitbook/assets/cicd-flow-page (1).png>) ![CI/CD Flow Artifact list](<../../../.gitbook/assets/cicd-artifacts (1).png>)
 
 ### Advanced
 
@@ -147,15 +146,15 @@ When using `WebApplication`, `DOTNET_ENVIRONMENT` takes precedence over `ASPNETC
 You can also override the environment value by setting the `ASPNETCORE_ENVIRONMENT` variable in your `web.config` file.
 {% endhint %}
 
-![Advanced Settings](images/advanced-settings.png)
+![Advanced Settings](../../../.gitbook/assets/advanced-settings.png)
 
-![Advanced Settings continued](images/advanced-settings-continued.png)
+![Advanced Settings continued](../../../.gitbook/assets/advanced-settings-continued.png)
 
 ### [Backups](../databases/backups.md#backup-on-umbraco-cloud)
 
 The Backups section enables you to create database backups for one or more of your cloud environments.
 
-![Backups](images/backups.png)
+![Backups](../../../.gitbook/assets/backups.png)
 
 ## Security
 
@@ -171,19 +170,19 @@ The Public access setting, found under the Security tab, allows you to deny acce
 
 You can enable or disable this setting on the Public access page. Access to manage Public access requires your project to be on the Standard plan or higher.
 
-![Public Access](images/public-access.png)
+![Public Access](../../../.gitbook/assets/public-access.png)
 
 ### [Transport Security](../security/managing-transport-security.md)
 
 The Transport Security section enables you to manage transport security settings for your project. You can configure specific transport security options for all hostnames or individual hostnames within your project.
 
-![Transport Security](images/transport-security.png)
+![Transport Security](../../../.gitbook/assets/transport-security.png)
 
 ### [Management API Security](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
 
 The Management API Security section allows you to secure access to the backend services of your project. This can be managed from the Security menu on the Umbraco Cloud Portal.
 
-![Management API Security](images/management-api-security.png)
+![Management API Security](../../../.gitbook/assets/management-api-security.png)
 
 ### [Certificates](../../../go-live/manage-hostnames/security-certificates.md)
 
@@ -193,13 +192,13 @@ This feature is only available on **Professional** or **Enterprise** plan.
 
 If you have a custom certificate, you can upload and bind it to your custom hostnames. This can be done instead of using the TLS: Transport Layer Security (HTTPS) certificates provided by the Umbraco Cloud service.
 
-![Certificates](images/certificates.png)
+![Certificates](../../../.gitbook/assets/certificates.png)
 
 ### [Secrets](../../../begin-your-cloud-journey/project-features/secrets-management.md)
 
 The Secrets Management section is used for storing sensitive information such as API keys, encryption keys, and connection strings used by your Umbraco Cloud project.
 
-![Secrets](images/secrets.png)
+![Secrets](../../../.gitbook/assets/secrets.png)
 
 ## Management
 
@@ -207,25 +206,23 @@ The Secrets Management section is used for storing sensitive information such as
 
 You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between different dedicated options depending on the number of resources you will need for your project.
 
-![Dedicated Resources](images/dedicated-resources.png)
+![Dedicated Resources](../../../.gitbook/assets/dedicated-resources.png)
 
 ### Upgrade Project
 
 You can upgrade your project to a **Standard** or a **Professional** plan from the **Management** menu, depending on your needs. The option is not available if you are already on a specific plan or if you are running in **Trial** mode.
 
-![Upgrade Project](images/upgrade-project.png)
+![Upgrade Project](../../../.gitbook/assets/upgrade-project.png)
 
 ### Rename Project
 
 You can rename your Umbraco Cloud project from the **Management** menu.
 
 {% hint style="info" %}
-
 If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project once you’ve changed your project name.
-
 {% endhint %}
 
-![Rename Project](images/rename-project.png)
+![Rename Project](../../../.gitbook/assets/rename-project.png)
 
 #### [Renaming the Project file and folder](../../handle-deployments-and-environments/working-locally/#renaming-the-project-files-and-folders)
 
@@ -239,4 +236,4 @@ You can delete your Umbraco Cloud project from the **Management** menu. Deleting
 Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
 {% endhint %}
 
-![Delete Project](images/delete-project.png)
+![Delete Project](../../../.gitbook/assets/delete-project.png)

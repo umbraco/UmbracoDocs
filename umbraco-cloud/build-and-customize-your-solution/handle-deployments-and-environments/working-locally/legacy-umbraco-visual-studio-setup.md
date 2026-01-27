@@ -23,7 +23,7 @@ A Visual Studio solution with a
 
 Below is a screenshot of our recommendation on how the projects should be configured. We use the following naming conventions: `*.Web` for the Umbraco website and `*.Core` for the accompanying code.
 
-![Visual Studio Project setup](../../set-up-your-project/project-settings/images/vs-project-setup.png)
+![Visual Studio Project setup](../../../.gitbook/assets/vs-project-setup.png)
 
 ## Prerequisites
 
@@ -51,15 +51,11 @@ Manually creating and configuring a Visual Studio solution with the right projec
 Download the UaaS.cmd tool from [umbra.co/uaas-cmd](https://umbra.co/uaas-cmd) and place it in the folder you want the solution in.
 
 {% hint style="info" %}
-
 **Important**: To use the UaaS.cmd tool you will need to have Visual Studio 2017 version 15.9.6 or any later version installed.
-
 {% endhint %}
 
 {% hint style="warning" %}
-
 **Important**: Be aware if you run the Uaas.cmd tool as an administrator it will generate the files in your Windows/System folder.
-
 {% endhint %}
 
 This is a recommended setup. If you don't like the setup then you can play with it and make it your own. There's nothing magic about this setup. It is adding a few files to your Umbraco Cloud website to give you a flying start to begin working with Visual Studio.
@@ -79,7 +75,7 @@ Does an error appear where the tool says: "Unable to connect to the remote serve
 
 If you haven't cloned the repository before, you will be asked to enter the username and password for the Umbraco Cloud Project. This also happens if you do not have a [git credentials manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) installed. In both cases, use the credentials you use to access the Portal and the Umbraco backoffice.
 
-![Cloning down using Command line](../../set-up-your-project/project-settings/images/cmd-clone.png)
+![Cloning down using Command line](../../../.gitbook/assets/cmd-clone.png)
 
 Once it's done running the tool will have created a Visual Studio solution file `*.sln` and two Projects.
 
@@ -90,7 +86,7 @@ Both projects are configured with the NuGet packages for Umbraco using the versi
 
 The result should look something like this within the folder where the UaaS.cmd tool ran:
 
-![The Generated Umbraco Solution](../../set-up-your-project/project-settings/images/generated-solution.png)
+![The Generated Umbraco Solution](../../../.gitbook/assets/generated-solution.png)
 
 You can now open the solution in Visual Studio and hit `F5` to start the site directly from Visual Studio.
 
@@ -154,7 +150,7 @@ In order to use Umbraco's features in your `*.Core` project, you have to add ref
 
 You can do this by right-clicking on **References** and selecting **Add Reference**. Browse and select the DLLs you'd like to use and then hit **OK**. Don't forget to build.
 
-![Add references to DLLs](../../set-up-your-project/project-settings/images/references.gif)
+![Add references to DLLs](../../../.gitbook/assets/references.gif)
 
 ## Git - what should be committed
 
@@ -168,11 +164,9 @@ The cloned git repository from Umbraco Cloud comes with its own `.gitignore` so 
 All files that are required to run the Umbraco site should be committed to the git repository in the `*.Web` folder. From there they can be deployed to Umbraco Cloud. This includes assemblies (`*.dll`).
 
 {% hint style="info" %}
-
 To ensure your `.dll` files are created in release mode, switch to "Release" mode instead of "Debug" mode when building the project.
 
 It is recommended to build the project in release mode, before deploying the changes through Git.
-
 {% endhint %}
 
 For the `*.Core` part of the solution as well as the solution file and default `.gitignore` file you commit that to the source code repository. You should ideally set a remote for this git repository to your own git host like GitHub, BitBucket or Visual Studio Team Services.

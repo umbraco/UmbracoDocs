@@ -14,11 +14,11 @@ Since these 5 data types are part of the Umbraco CMS, these will be created by d
 
 The issue will present itself as an extraction error on your mainline environment once you've created them.
 
-<figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
 
 Open the error message by clicking **More info**.
 
-![Error message](images/extraction-on-dev-detailed.png)
+![Error message](../../../../.gitbook/assets/extraction-on-dev-detailed.png)
 
 In the case illustrated above, there are four data types and each has two `UDA files`.
 

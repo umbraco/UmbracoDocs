@@ -14,7 +14,7 @@ You can have multiple environments in your Umbraco Cloud project, with two types
 
 The image below shows a Cloud setup including two mainline environments and one flexible environment connected to the left-most mainline environment.
 
-![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](images/cloud-environments.png)
+![A Cloud setup including 2 mainline environments and 1 flexible environment connected to the left-most mainline environment](../../.gitbook/assets/cloud-environments.png)
 
 ## Mainline Environments
 
@@ -62,9 +62,7 @@ The value of the `DOTNET_ENVIRONMENT` environment variable can be managed throug
 Learn more about how to transform configuration files in the [Config Transforms](../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) article.
 
 {% hint style="info" %}
-
 When you start up the Umbraco Application, ensure you load the correct JSON file as per the ASP.NET Configuration in the official [Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0).
-
 {% endhint %}
 
 ### Team Members
@@ -93,4 +91,4 @@ Each of your Umbraco Cloud environments has a Git repository and therefore also 
 
 In the History view, you'll be able to see what file changes have been made in the environment.
 
-![Umbraco Cloud Environment Technical Overview](images/environment-tech-overview.png)
+![Umbraco Cloud Environment Technical Overview](../../.gitbook/assets/environment-tech-overview.png)
