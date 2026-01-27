@@ -133,11 +133,11 @@ redirects:
     set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
     build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md
     release-notes/overview-2025: release-notes/archive/overview-2025/README.md
-    umbraco-cloud/release-notes/overview-2025/2025-01-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-01-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-02-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-02-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-03-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-03-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-04-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-04-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-05-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-05-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-06-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-06-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-09-03-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-09-03-releasenotes.md
-    umbraco-cloud/release-notes/overview-2025/2025-10-releasenotes: umbraco-cloud/release-notes/archive/overview-2025/2025-10-releasenotes.md
+    release-notes/overview-2025/2025-01-releasenotes: release-notes/archive/overview-2025/2025-01-releasenotes.md
+    release-notes/overview-2025/2025-02-releasenotes: release-notes/archive/overview-2025/2025-02-releasenotes.md
+    release-notes/overview-2025/2025-03-releasenotes: release-notes/archive/overview-2025/2025-03-releasenotes.md
+    release-notes/overview-2025/2025-04-releasenotes: release-notes/archive/overview-2025/2025-04-releasenotes.md
+    release-notes/overview-2025/2025-05-releasenotes: release-notes/archive/overview-2025/2025-05-releasenotes.md
+    release-notes/overview-2025/2025-06-releasenotes: release-notes/archive/overview-2025/2025-06-releasenotes.md
+    release-notes/overview-2025/2025-09-03-releasenotes: release-notes/archive/overview-2025/2025-09-03-releasenotes.md
+    release-notes/overview-2025/2025-10-releasenotes: release-notes/archive/overview-2025/2025-10-releasenotes.md
