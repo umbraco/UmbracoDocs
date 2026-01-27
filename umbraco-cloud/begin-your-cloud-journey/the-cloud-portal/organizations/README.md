@@ -18,13 +18,13 @@ Are you interested in getting an organization, or need a project added to a diff
 
 In the **Information** section of the Organization, you can find all the details about your Organization. If there are any changes to your details, you can change them here.
 
-![Information](../images/Information-v10.png)
+![Information](../../../.gitbook/assets/Information-v10.png)
 
 ### Members
 
 In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also set up different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Roles**.
 
-<figure><img src="../../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
 
 Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**. Below you can see what each user group has access to under the organization they are a part of.
 
@@ -59,14 +59,14 @@ Organization Members with **Read Access** can do the following in the organizati
 * See Organization Members
 
 {% hint style="info" %}
-Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../../../begin-your-cloud-journey/project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
+Being a Member of an organization does not give access to any projects under it. To get access to a project under an organization, you need to be [invited](../../project-features/users-on-cloud.md) to the project. This can be done by either someone who is already part of the project or an administrator in your organization.
 {% endhint %}
 
 ### Multi-Factor Authentication (MFA) enforcement
 
 When working in organizations on Umbraco Cloud, as a company, you can enforce a certain type of Multi-Factor Authentication (MFA) method for members.
 
-![MFA for members](../images/mfa-page.png)
+![MFA for members](../../../.gitbook/assets/mfa-page.png)
 
 Administrators of Organizations on Umbraco Cloud can enforce MFA for specific members of their organization.
 
@@ -84,7 +84,7 @@ Once it has been enabled, the next time the member logs in, they will be forced 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](../images/org-projects.png)
+![Project overview](../../../.gitbook/assets/org-projects.png)
 
 It is possible to see the plan, project status, payment status, creation date, region, and number of environments for each of your projects.
 
@@ -94,7 +94,7 @@ As an administrator, you can invite members of your organization to the differen
 
 In the **Access Rights** section, you can get a list of all the Access Rights your Members have to each Project in your Organization.
 
-![Access Rights](../images/Access_rights-v10.png)
+![Access Rights](../../../.gitbook/assets/Access_rights-v10.png)
 
 ## Finance
 
@@ -111,6 +111,7 @@ In the **Payment Methods** section, you can view the payment methods for your or
 In the **Payment History** section, you can see the payment history for your organization.
 
 ## Insights
+
 <figure><img src="../../../.gitbook/assets/org-menu-insights.png" alt="Insights section"><figcaption><p>Insights section</p></figcaption></figure>
 
 ### Sustainability

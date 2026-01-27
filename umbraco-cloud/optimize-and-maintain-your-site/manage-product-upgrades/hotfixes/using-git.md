@@ -18,7 +18,7 @@ You have been working on building the site on a local clone of the Development e
 
 A set of commits have been pushed from your local clone to the Development environment. Out of these commits, you only need the changes from two of the commits in the Live environment for now.
 
-![Commits](images/commits-for-cherry.png)
+![Commits](../../../.gitbook/assets/commits-for-cherry.png)
 
 ## Apply selected changes to the Live environment
 
@@ -31,7 +31,7 @@ Here are the steps to follow to apply selected changes to the Live environment w
 3. Choose the commit where you want to create a new branch.
    *   This branch should be created in an earlier commit that is corresponding to the state of the Live environment (before the changes you've made locally have been committed).
 
-       ![Creating new branch](images/create-branch.png)
+       ![Creating new branch](../../../.gitbook/assets/create-branch.png)
 4. With the new _Hotfix_ branch checked out, it's now time to _cherry-pick_ the commits you want to apply to the Live environment.
 5. _Right-click_ the commit you want and choose **"Cherrypick commit"**.
    * You will be asked if you want to commit this directly to the new branch - Choose **Yes**.
@@ -39,7 +39,7 @@ Here are the steps to follow to apply selected changes to the Live environment w
 6. You can cherrypick as many commit as you like.
 7.  Your Git history will now look something like this.
 
-    ![Cherrypicking](images/cherry-picked-commits.png)
+    ![Cherrypicking](../../../.gitbook/assets/cherry-picked-commits.png)
 
 ### Push to Live
 
@@ -51,22 +51,20 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 1.  In GitKraken add a **new remote**, by clicking the **+** next to _Remote_.
 
-    ![Add new remote](images/add-remote.png)
+    ![Add new remote](../../../.gitbook/assets/add-remote.png)
 2.  Give the new remote a name - like **Live**, and add the clone URL for the Live environment to both _Push URL_ and _Pull URL_ - click **Add Remote**.
 
-    ![Add Live as remote](images/live-remote.png)
+    ![Add Live as remote](../../../.gitbook/assets/live-remote.png)
 3. You will be prompted to authenticate - use your Umbraco Cloud credentials.
 4. You will see that the history from the Live repository is visible in the Git history.
 5. Click **Push**.
-6. Choose to push to the newly added remote, and write `master` to make sure you are pushing to the master branch on the Live environment.
+6.  Choose to push to the newly added remote, and write `master` to make sure you are pushing to the master branch on the Live environment.
 
-    ![Choose remote](images/choose-remote.png)
+    ![Choose remote](../../../.gitbook/assets/choose-remote.png)
 7. Hit **Submit** and the push will start.
 
 {% hint style="info" %}
-
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted into the site.
-
 {% endhint %}
 
 Find a guide on how to extract the files in the [Manual Extraction](../../monitor-and-troubleshoot/power-tools/manual-extractions.md) article.

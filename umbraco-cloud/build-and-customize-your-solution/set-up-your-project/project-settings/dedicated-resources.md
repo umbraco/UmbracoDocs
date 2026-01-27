@@ -22,7 +22,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 * There are currently three dedicated options for you to choose from the Professional plan, two dedicated options from the Standard plan, and one dedicated option from the Starter plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt="Dedicated plans (Starter plan)"><figcaption><p>Dedicated plans (Starter plan)</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt="Dedicated plans (Starter plan)"><figcaption><p>Dedicated plans (Starter plan)</p></figcaption></figure>
 
 * By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
@@ -34,7 +34,7 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 
 Moving away from dedicated resources and back to a shared plan can be done from the _Dedicated Resources_ page.
 
-![Downgrade](images/DowngradeA.png)
+![Downgrade](../../../.gitbook/assets/DowngradeA.png)
 
 * By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
 * Your Cloud project is now back on a shared resource.

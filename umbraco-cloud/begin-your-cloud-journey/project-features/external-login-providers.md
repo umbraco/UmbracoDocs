@@ -53,7 +53,7 @@ Make sure you have set up a tenant or organization in the provider.
 2. Locate the Microsoft Entra ID and enter your tenant.
 3. Select **Add**.
 
-![Select Add and then choose App Registration to start registering your app](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-azure-2.png)
+![Select Add and then choose App Registration to start registering your app](../../.gitbook/assets/elp-azure-2.png)
 
 4. Choose **App registration**.
 5. Register your app.
@@ -72,7 +72,7 @@ Locate and note down the following keys:
 * **Client Secret** - needs to be generated on the **Certificates & Secrets** page.
 
 {% hint style="info" %}
-### Enterprise or custom setup
+#### Enterprise or custom setup
 
 If you're working with an enterprise or a custom setup, ensure the email claim is included in the ID token configuration.
 {% endhint %}
@@ -83,7 +83,7 @@ If you're working with an enterprise or a custom setup, ensure the email claim i
 2. Navigate to **Applications**.
 3. Select **Create Application**.
 
-![Select Create Application to get started](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-1.png)
+![Select Create Application to get started](../../.gitbook/assets/elp-oauth-1.png)
 
 4. Give the application a name and select **Regular Web Application**.
 5. Go to the **Settings** section.
@@ -160,7 +160,7 @@ The **alias** must be unique across different login providers in the same enviro
 2. Scroll down to find the **Application URIs**.
 3. Add the Redirect URI to the **Allowed Callback URLs**.
 
-![Add the Redirect URI to the Allowed Callback URLs](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/elp-oauth-4.png)
+![Add the Redirect URI to the Allowed Callback URLs](../../.gitbook/assets/elp-oauth-4.png)
 
 13. Add more Redirect URIs if needed.
 {% endtab %}
@@ -177,15 +177,7 @@ The **alias** must be unique across different login providers in the same enviro
 
 Learn about what type of data and information you need for each field in the configuration form.
 
-<table><thead><tr><th width="227">Field</th><th>Description</th><th>Formatting</th></tr></thead><tbody><tr><td>Alias</td><td>A unique alias for the provider.</td><td><p>Use only lowercase.</p><p>Spaces are not allowed.</p></td></tr><tr><td>Client ID</td><td>A unique Client ID generated in the external login provider.</td><td>Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code></td></tr><tr><td>Client Secret</td><td>A secret that is generated in the External Login Provider and is associated with the Client ID. </td><td></td></tr><tr><td>Authority</td><td>The URL for the External Login Provider. This can be found in the External Login Provider.</td><td>Entra ID: <code>https://login.microsoftonline.com/&#x3C;Directory (tenant)></code><br>Auth0: <code>https://{accountId}.uk.auth0.com</code><br>Google: <code>https://accounts.google.com</code></td></tr><tr><td>Scopes</td><td>These are OpenID Connect scopes. These are the minimum requirements and will allow the app to authenticate and get the user's profile data, email, and name.</td><td>Default values: <code>openid</code>, <code>profile</code>, and <code>email</code>.</td></tr><tr><td>Auth Type</td><td>Currently only OpenIDConnect is available.</td><td>Default: <code>OpenIdConnect</code></td></tr><tr><td>Default User Group</td><td>Choose which <strong>Umbraco User Group</strong> the user should be assigned to if nothing else is defined.<br>A custom User Group added to the backoffice will also be available.</td><td>Default Options:<br><code>Administrators</code><br><code>Writers</code><br><code>Editors</code><br><code>Translators</code><br><code>Sensitive Data</code></td></tr><tr><td>Enforce User Group on login</td><td>A checkbox to choose whether each login will re-evaluate the user's role or if it should happen only on the first login.</td><td>N/A</td></tr><tr><td>User Group Mappings</td><td>Use this field to map roles within the login provider with Umbraco User Groups.<br><br><em>Example: A user with the "Content Editor" role in the login provider will be added to the Writer User Group in Umbraco.</em></td><td><code>Login Provider Role</code> = <code>Umbraco User Group</code><br><br>Entra ID: <code>Object ID of User Group</code> = <code>Umbraco User Group</code></td></tr><tr><td>No User Group Found Behaviour</td><td>This defines what happens if the mapping for the user’s User Group hasn’t been defined. The options are to select the Default User Group or to disallow the user access to the backoffice.</td><td>Options: <code>UseDefaultUserGroup</code>, <code>Unauthorized</code></td></tr>
-
-<tr><td>User Group Claim Name</td>
-
-<td>Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.<br><br>Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.<br><br><strong>NOTE:</strong> If the field is left blank, the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as the claim name.</td>
-
-<td>Entra ID: <code>groups</code></td></tr>
-
-<tr><td>Metadata Address</td><td>If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority URL, which is why this property is optional.</td><td>A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="227">Field</th><th>Description</th><th>Formatting</th></tr></thead><tbody><tr><td>Alias</td><td>A unique alias for the provider.</td><td><p>Use only lowercase.</p><p>Spaces are not allowed.</p></td></tr><tr><td>Client ID</td><td>A unique Client ID generated in the external login provider.</td><td>Entra ID: Guid<br>Auth0: Random characters<br>Google: <code>{randomchars}.apps.googleusercontent.com</code></td></tr><tr><td>Client Secret</td><td>A secret that is generated in the External Login Provider and is associated with the Client ID.</td><td></td></tr><tr><td>Authority</td><td>The URL for the External Login Provider. This can be found in the External Login Provider.</td><td>Entra ID: <code>https://login.microsoftonline.com/&#x3C;Directory (tenant)></code><br>Auth0: <code>https://{accountId}.uk.auth0.com</code><br>Google: <code>https://accounts.google.com</code></td></tr><tr><td>Scopes</td><td>These are OpenID Connect scopes. These are the minimum requirements and will allow the app to authenticate and get the user's profile data, email, and name.</td><td>Default values: <code>openid</code>, <code>profile</code>, and <code>email</code>.</td></tr><tr><td>Auth Type</td><td>Currently only OpenIDConnect is available.</td><td>Default: <code>OpenIdConnect</code></td></tr><tr><td>Default User Group</td><td>Choose which <strong>Umbraco User Group</strong> the user should be assigned to if nothing else is defined.<br>A custom User Group added to the backoffice will also be available.</td><td>Default Options:<br><code>Administrators</code><br><code>Writers</code><br><code>Editors</code><br><code>Translators</code><br><code>Sensitive Data</code></td></tr><tr><td>Enforce User Group on login</td><td>A checkbox to choose whether each login will re-evaluate the user's role or if it should happen only on the first login.</td><td>N/A</td></tr><tr><td>User Group Mappings</td><td>Use this field to map roles within the login provider with Umbraco User Groups.<br><br><em>Example: A user with the "Content Editor" role in the login provider will be added to the Writer User Group in Umbraco.</em></td><td><code>Login Provider Role</code> = <code>Umbraco User Group</code><br><br>Entra ID: <code>Object ID of User Group</code> = <code>Umbraco User Group</code></td></tr><tr><td>No User Group Found Behaviour</td><td>This defines what happens if the mapping for the user’s User Group hasn’t been defined. The options are to select the Default User Group or to disallow the user access to the backoffice.</td><td>Options: <code>UseDefaultUserGroup</code>, <code>Unauthorized</code></td></tr><tr><td>User Group Claim Name</td><td>Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).<br><br>The <strong>User Group Claim Name</strong> is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.<br><br>Example: If your provider sends roles in a claim named <code>user_roles</code>, you would set the <strong>User Group Claim Name</strong> to <code>user_roles</code> so the system can properly recognize user permissions.<br><br><strong>NOTE:</strong> If the field is left blank, the system will default to use <code>http://schemas.microsoft.com/ws/2008/06/identity/claims/role</code> as the claim name.</td><td>Entra ID: <code>groups</code></td></tr><tr><td>Metadata Address</td><td>If you need a special metadata address for your External Login Provider, you can set it here. By default, the system will resolve the metadata address from the Authority URL, which is why this property is optional.</td><td>A common scenario for using a special metadata address is when working with Entra ID and configuring claims mapping. In this case, you must set the metadata address to the following:<code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}</code>.</td></tr></tbody></table>
 
 ### Handling invites when using an External Login Provider
 

@@ -13,7 +13,7 @@ If you already have a CI/CD pipeline, you're halfway there. Umbraco CI/CD Flow b
 
 The basic flow is depicted in the sequence diagram below.
 
-![Basic Flow](<../../images/NewBasicFlow (1).png>)
+![Basic Flow](<../../../.gitbook/assets/NewBasicFlow (1).png>)
 
 Whether you're a CI/CD novice or a seasoned developer, we offer tailored guidance for a frictionless deployment experience. If you're starting from scratch, our thorough documentation outlines how to establish a CI/CD pipeline with popular platforms like Azure DevOps or GitHub Actions. For those with an existing setup, integrate effortlessly with Umbraco Cloud's specialized hosting features.
 
@@ -25,7 +25,7 @@ We are pleased to announce an extension to our Automatic Upgrade feature. Previo
 
 For those running existing Cloud projects, you can opt-in to enable Automatic Minor Upgrades directly from Umbraco Cloud on the new Automatic upgrade page.
 
-![Automatic Updates](../../images/Automatic-Updates-Minor.png)
+![Automatic Updates](../../../.gitbook/assets/Automatic-Updates-Minor.png)
 
 If you're starting a new Cloud project, the feature will be enabled by default, ensuring you're always running on the latest and most secure version across Umbraco CMS, Umbraco Forms, and Umbraco Deploy.
 

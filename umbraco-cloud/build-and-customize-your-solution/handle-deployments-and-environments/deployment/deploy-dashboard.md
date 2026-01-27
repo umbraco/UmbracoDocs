@@ -1,7 +1,7 @@
 ---
 description: >-
-  With the Deploy Dashboard, it is possible to get an overview of your
-  Umbraco Deploy installation and perform Deploy operations.
+  With the Deploy Dashboard, it is possible to get an overview of your Umbraco
+  Deploy installation and perform Deploy operations.
 ---
 
 # Deploy Dashboard
@@ -17,23 +17,23 @@ To access the Deploy dashboard, follow these steps:
 3. Choose the environment you want to work with (for example, Development, Staging, or Live).
 4. Click **Backoffice** to open the Umbraco backoffice for that environment.
 
-![Backoffice link in the Portal](images/Portal-backoffice-link.png)
+![Backoffice link in the Portal](../../../.gitbook/assets/Portal-backoffice-link.png)
 
 5. Navigate to the **Settings** section in the Backoffice. You will find the **Deploy** Dashboard at the end.
 
-![Deploy Dashboard in the Backoffice](images/deploy-dashboard.png)
+![Deploy Dashboard in the Backoffice](../../../.gitbook/assets/deploy-dashboard.png)
 
 ## Deploy Status
 
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running, and the last time an operation was run.
 
-![Umbraco Deploy status](images/deploy-status-v16.png)
+![Umbraco Deploy status](../../../.gitbook/assets/deploy-status-v16.png)
 
 ## Deploy Operations
 
 With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-![Deploy Operations](images/deploy-operations-v16.png)
+![Deploy Operations](../../../.gitbook/assets/deploy-operations-v16.png)
 
 Below you can read what each operation will do when run through the dashboard.
 
@@ -59,13 +59,13 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-![Download Deploy artifacts](images/download-deploy-artifacts.png)
+![Download Deploy artifacts](../../../.gitbook/assets/download-deploy-artifacts.png)
 
 ## Configuration Details
 
 In the Configuration details, you can see how Umbraco Deploy has been [configured](https://docs.umbraco.com/umbraco-deploy/deploy-settings) on your environment. You get an overview of the Setting options, the current value(s), and notes help you understand each of the settings. Updates to the need to be applied in the `appsettings.json` file.
 
-![Deploy configuration](images/Configuration-Details-v16.png)
+![Deploy configuration](../../../.gitbook/assets/Configuration-Details-v16.png)
 
 ## Schema Comparison
 
@@ -81,12 +81,12 @@ The table shows:
 * Whether the file exists
 * Whether the file is up-to-date
 
-![Deploy configuration](images/Configuration-Details-v16.png)
+![Deploy configuration](../../../.gitbook/assets/Configuration-Details-v16.png)
 
-<figure><img src="images/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Document type schema comparison</p></figcaption></figure>
 
 You can also view details about a certain element by selecting "View Details".
 
 This will show the difference between entities stored in Umbraco and the `.uda` file stored on disk.
 
-<figure><img src="images/image (7).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption><p>Showing how you can compare schema in the deploy dashboard</p></figcaption></figure>

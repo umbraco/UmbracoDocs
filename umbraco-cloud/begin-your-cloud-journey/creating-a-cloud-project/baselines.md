@@ -6,7 +6,7 @@ Any project can act as a Baseline project.
 
 The basic idea is that you have a project that contains all your standard Umbraco packages/components. Some default Document Types which you want to use as a baseline for future projects is also configured. When you've made changes to your Baseline project, you push these changes out to all the Child projects with a click of a button.
 
-![Baseline workflow](images/baseline-workflow.gif)
+![Baseline workflow](../../.gitbook/assets/baseline-workflow.gif)
 
 ## Video Tutorial
 
@@ -37,12 +37,10 @@ Any Umbraco Cloud project can be used as a Baseline project
 
 It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
 
-![Creating a Baseline child project](images/baseline-creation.gif)
+![Creating a Baseline child project](../../.gitbook/assets/baseline-creation.gif)
 
 {% hint style="info" %}
-
 Depending on the size of the project chosen as a Baseline project, it can take a while before the Child project is ready.
-
 {% endhint %}
 
 ### Restore content from the Baseline project
@@ -57,7 +55,7 @@ When you've created the Child project you can choose to restore content from you
 
 If you do not see the content, **Reload** the content tree once the restore is complete.
 
-![Restore content from Baseline project](images/RestoreFromBaseline_v10.gif)
+![Restore content from Baseline project](../../.gitbook/assets/RestoreFromBaseline_v10.gif)
 
 ## [Merge Conflicts](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/)
 

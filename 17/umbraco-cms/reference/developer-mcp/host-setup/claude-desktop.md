@@ -1,21 +1,20 @@
 ---
-description: "Host set up for Claude Desktop"
+description: Host set up for Claude Desktop
 ---
 
-# Claude Desktop Setup
+# Claude Desktop
 
 [Claude Desktop](https://www.anthropic.com/claude/desktop) is Anthropic's AI-powered assistant for macOS and Windows. It is designed to help you work conversationally across all kinds of tasks from writing and brainstorming to coding and automation.
 
 ## Getting started
 
-1. Download and install the [Claude.ai desktop app](https://claude.ai/download).  
-
+1. Download and install the [Claude.ai desktop app](https://claude.ai/download).
 2. Go to **Settings** → **Developer** → **Edit Config** to edit the MCP settings,.
 
-![MCP Panel](../images/Claude%20Desktop.png)
+![MCP Panel](<../../../.gitbook/assets/Claude Desktop.png>)
 
 3. Open the JSON configuration file in your preferred text editor.
-4. Add the following snippet.  
+4. Add the following snippet.
 
 ```bash
 {
@@ -39,9 +38,7 @@ description: "Host set up for Claude Desktop"
 ```
 
 5. Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
-
 6. Restart Claude to activate the new configuration.
-
 7. Open the logs and review the `mcp-server-umbraco-mcp.log` file if you encounter a connection error. This file contains details on how to resolve the issue.
 
 {% hint style="info" %}
