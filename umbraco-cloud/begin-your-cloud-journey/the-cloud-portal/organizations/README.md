@@ -24,7 +24,7 @@ In the **Information** section of the Organization, you can find all the details
 
 In the **Members** section, you can view current members, pending invites, and see the Multi-Factor Authentication (MFA) status for the Members of your Organization. You can also set up different permissions for your Members, such as Read, Write, and Administrators for your organization by adjusting their **Roles**.
 
-<figure><img src="../../../.gitbook/assets/members.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/members-new.png" alt=""><figcaption></figcaption></figure>
 
 Members added to your organization can see different details about their organization based on the user group they are added to. Currently there are three different groups, **Read**, **Write** and **Admin**. Below you can see what each user group has access to under the organization they are a part of.
 
