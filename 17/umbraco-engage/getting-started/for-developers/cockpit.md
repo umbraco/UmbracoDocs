@@ -23,3 +23,9 @@ Clicking the **Open** button provides detailed information:
 ![Umbraco Engage Cockpit - Detailed information](../../.gitbook/assets/engage-cockpit-2.png)
 
 If the Cockpit is missing and the Umbraco backoffice runs on a different domain, see the [Load Balancing and CM/CD Environments](loadbalancing-and-cm-cd-environments.md) article.
+
+## Opening the Cockpit in CM/CD Environments
+
+In load-balanced setups where the backoffice runs on a separate CM server, you can open the Cockpit using the **Open Cockpit** button in the Engage dashboard. This provides secure authentication without requiring cookie domain configuration.
+
+See [Load Balancing and CM/CD Environments](loadbalancing-and-cm-cd-environments.md#cockpit) for detailed setup instructions.

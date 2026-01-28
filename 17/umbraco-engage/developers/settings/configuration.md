@@ -82,7 +82,16 @@ The default configuration will look like this:
       "DataGenerationTime": "04:00:00"
     },
     "Cockpit": {
-      "EnableInjection": true
+      "EnableInjection": true,
+      "Authentication": {
+        "TokenLifetimeSeconds": 60,
+        "SessionLifetimeMinutes": 30,
+        "RequireHttps": true,
+        "CleanupIntervalMinutes": 60,
+        "TokenRetentionBufferMinutes": 5,
+        "SessionRetentionBufferMinutes": 1440,
+        "SessionCookieSameSite": "Lax"
+      }
     },
     "Segmentation": {
       "ExcludedPropertyAliases": []
@@ -92,7 +101,7 @@ The default configuration will look like this:
 ```
 {% endcode %}
 
-All these settings are also visualized in Umbraco Engage. This overview can be found in the **Engage** -> **Settings** -> **Configuration** section.
+All these settings are also visualized in Umbraco Engage. This overview can be found in the **Settings** section under **Engage** -> **Configuration**.
 
 ![Settings Configuration Overview](../../.gitbook/assets/engage-settings-configuration.png)
 
