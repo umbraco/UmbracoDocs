@@ -51,7 +51,7 @@ To install via Visual Studio, follow these steps:
 
     ```cs
     <ItemGroup>
-    <PackageReference Include="Umbraco.Commerce" Version="17.x.x" />
+    <PackageReference Include="Umbraco.Commerce" Version="xx.x.x" />
     </ItemGroup>
     ```
 
