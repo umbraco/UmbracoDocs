@@ -277,7 +277,7 @@ You can use the `IVariationContextAccessor` to set the culture context for your 
 Follow these steps to create an API controller that returns content in different languages:
 
 1. Create a folder named **Controllers**.
-2. Add a file named **ContentApiController.cs**.
+2. Add a file named `ContentApiController.cs`.
 3. Add the following code snippet:
 
 ```csharp
@@ -349,7 +349,7 @@ public class ContentApiController : SurfaceController
 4. Build and run your project.
 5. Test the API endpoint using: `https://localhost:xxxxx/umbraco/surface/ContentApi/GetContent?id=1177&culture=da`
 
-When you call the API with different cultures, you should receive different values. For example, Danish (da):
+When you call the API with different cultures, you should receive different values. For example, for Danish (da):
 
 ```json
 {
