@@ -9,7 +9,7 @@ description: >-
 
 Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS website. It can be used to set up small webshops, while it can also be implemented for big-scale e-commerce solutions spanning multiple countries.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="getting-started/install.md"><strong>Install Umbraco Commerce</strong></a></td><td>Find all the information you need to get started using Umbraco Commerce with your Umbraco CMS implementation.</td><td><a href="getting-started/install.md">install.md</a></td><td><a href=".gitbook/assets/commerce-icon.png">commerce-icon.png</a></td></tr><tr><td><a href="how-to-guides/overview.md"><strong>How-to Guides</strong></a></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><a href="key-concepts/overview.md"><strong>Key Concepts</strong></a></td><td>Looking to learn more about the different concepts and features of Umbraco Commerce? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png">Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="installation/install.md"><strong>Install Umbraco Commerce</strong></a></td><td>Find all the information you need to get started using Umbraco Commerce with your Umbraco CMS implementation.</td><td><a href="installation/install.md">install.md</a></td><td><a href=".gitbook/assets/commerce-icon.png">commerce-icon.png</a></td></tr><tr><td><a href="how-to-guides/overview.md"><strong>How-to Guides</strong></a></td><td>Looking to configure and implement something specific? Take a look through the How-to section where you might find a guide that fits your needs.</td><td><a href="how-to-guides/overview.md">overview.md</a></td><td><a href=".gitbook/assets/umbraco_free_way_01.png">umbraco_free_way_01.png</a></td></tr><tr><td><a href="key-concepts/overview.md"><strong>Key Concepts</strong></a></td><td>Looking to learn more about the different concepts and features of Umbraco Commerce? You can find detailed information about each of them in this section.</td><td><a href="key-concepts/overview.md">overview.md</a></td><td><a href=".gitbook/assets/Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png">Umbraco_Brand_Guidelines_2020_28_Illustration blocks.png</a></td></tr></tbody></table>
 
 ## Extend Umbraco Commerce
 
@@ -21,16 +21,8 @@ Umbraco Commerce is the official Umbraco e-commerce addon for your Umbraco CMS w
 [go-behind-the-scenes.md](reference/go-behind-the-scenes.md)
 {% endcontent-ref %}
 
-{% hint style="info" %}
-Are you looking for Vendr documentation?
+### Using This Documentation
 
-The articles and topics covered on this documentation site are for Umbraco Commerce.
-
-Documentation for Vendr is located on the [Vendr Documentation site](https://vendr.net/docs/).
-{% endhint %}
-
-### Using These Docs
-
-**These docs are aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
+**This documentation is aimed at developers** who have at least a basic understanding of [Umbraco](https://umbraco.com), as well as C# and MVC principals.
 
 If you require assistance you can use our support channels to seek assistance.
