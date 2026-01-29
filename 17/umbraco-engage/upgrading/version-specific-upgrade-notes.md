@@ -32,10 +32,10 @@ After upgrading to Engage v17 from an older major version, you need to manually 
 
 To regenerate the reporting data:
 
-1. Go to the **Settings** section in the Umbraco backoffice
-2. Navigate to **Engage** > **Configuration**
-3. Select the **Reporting** tab
-4. Click the **Regenerate** button
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Navigate to **Engage** > **Configuration**.
+3. Select the **Reporting** tab.
+4. Click the **Regenerate** button.
 
 {% hint style="warning" %}
 Until the reporting data is regenerated, Analytics dashboards may show incomplete or missing data.
