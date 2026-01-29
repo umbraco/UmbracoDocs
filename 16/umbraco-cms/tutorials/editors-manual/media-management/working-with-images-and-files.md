@@ -15,7 +15,7 @@ The following default Media Types are available:
 In the Media Library, there are multiple ways to upload media items. The two most commonly used ones are:
 
 1. Use the **Create** button to create a new media item and then upload directly from your machine.
-2.  The **...** next to the Media tree in the Media section.
+2. The **...** next to the Media tree in the Media section.
 
     ![mediaUpload.jpg](images/upload-images-v14.png)
 
@@ -30,7 +30,7 @@ If you wish to tidy up the Media section of your site, you can delete existing m
 To delete a Media Item:
 
 1. Select the media item you want to delete.
-2.  Click **...** and select **Trash**.
+2. Click **...** and select **Trash**.
 
     ![mediaUpload.jpg](images/delete-media-item-v14.png)
 3. Click **Trash**.
@@ -44,7 +44,7 @@ The **Recycle Bin** is a separate tree structure within the Media section. Click
 To restore a Media Item:
 
 1. Click **•••** next to the Media Item.
-2.  Select **Restore**.
+2. Select **Restore**.
 
     ![Restore Folder](images/Restore-MediaItem-v14.png)
 3. Click **Restore**.
@@ -54,11 +54,17 @@ To restore a Media Item:
 To move Media Items within the Media section:
 
 1. Select the Media Item you want to move.
-2.  Click **...** next to the Media Item and click **Move**.
+2. Click **...** next to the Media Item and click **Move**.
 
     ![Move media items](images/move-images-v9.png)
-3.  Choose the location where you want to move the Media Item to in the tree structure.
+3. Choose the location where you want to move the Media Item to in the tree structure.
 
     ![Move Media.png](images/Move-media-location-v9.png)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.
+
+## More Information
+
+* [Media Picker](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md)
+* [Creating Media](../../../fundamentals/data/creating-media/README.md)
+* [Rendering Media](../../../fundamentals/design/rendering-media.md)
