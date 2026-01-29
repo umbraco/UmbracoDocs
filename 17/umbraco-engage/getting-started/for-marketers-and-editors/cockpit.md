@@ -29,12 +29,11 @@ If your website runs on a different server than the Umbraco backoffice (a CM/CD 
 
 In this case, you can open the Cockpit from the Umbraco backoffice:
 
-1. Go to the **Engage** section in the backoffice
-2. Click the **Open Cockpit** button on the dashboard
-3. If your website has multiple domains, select the one you want to view
-4. The Cockpit opens in a new browser tab
+1. Go to the **Engage** section in the backoffice.
+2. Click the **Open Cockpit** button on the dashboard.
+3. Select the domain you want to view, and the Cockpit opens in a new browser tab.
 
-Your Cockpit session stays active for 30 minutes. After that, simply click the Open Cockpit button again to continue.
+Your Cockpit session stays active for 30 minutes. After that, click the Open Cockpit button again to continue.
 
 {% hint style="info" %}
 If you don't see the Open Cockpit button, your Umbraco Engage version may need to be updated. Contact your development team for assistance.
@@ -42,7 +41,7 @@ If you don't see the Open Cockpit button, your Umbraco Engage version may need t
 
 ### Data reporting client-side
 
-If the [additional analytics script](../../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) of Umbraco Engage is installed you can find all tracked data in the Cockpit.
+If the [additional analytics script](../../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) of Umbraco Engage is installed, you can find all tracked data in the Cockpit.
 
 The following information is tracked:
 
