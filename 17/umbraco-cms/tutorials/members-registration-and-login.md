@@ -65,7 +65,7 @@ The **Content Base** and **Navigation Base** Compositions are available once the
 ![Structure Setting](../.gitbook/assets/structure-setting.png)
 
 9. Click **Choose**.
-10. Clikc **Save**.
+10. Click **Save**.
 
 ## Render the partial views in the template
 

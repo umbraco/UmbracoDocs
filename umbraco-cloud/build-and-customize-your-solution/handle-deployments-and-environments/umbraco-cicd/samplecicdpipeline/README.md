@@ -103,5 +103,5 @@ Details the setup of a CI/CD pipeline using GitHub Actions.
 
 These are the guides for the old samples, relevant if you are using version 1 endpoints.
 
-* [Azure DevOps Sample](../../../../set-up/project-settings/umbraco-cicd/samplecicdpipeline/v1-azure-devops.md)
-* [GitHub Actions Sample](../../../../set-up/project-settings/umbraco-cicd/samplecicdpipeline/v1-github-actions.md)
+* [Azure DevOps Sample](azure-devops-v1.md)
+* [GitHub Actions Sample](github-actions-v1.md)

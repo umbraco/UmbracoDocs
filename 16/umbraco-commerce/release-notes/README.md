@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 16 including all changes for this version.
 
+#### [16.6.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.6.1) (29th Jan 2026)
+
+* Allow decimal input for percentage property editor [#817](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/817)
+* Make `CompactSortableOrderNumberGenerator` and `INodeIdAccessor` public [#819](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/819)
 
 #### 16.6.0 (22nd Jan 2026)
 
