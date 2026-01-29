@@ -18,24 +18,24 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
-#### [**17.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.4) **(January 28th 2026)**
+### [**17.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.4) **(January 28th 2026)**
 
 * Replace deprecated `PagedResult` with `PagedModel` [#214](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/214).
 * Fixed translation issue when using localization files.
 * Fixed items pagination in Entity Picker.
 * Removed obsolete code scheduled for removal in V17.
 
-#### [**17.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.3) **(December 18th 2025)**
+### [**17.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.3) **(December 18th 2025)**
 
 * Updated the cards UI adopting a slimmer appearance [#184](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/184)
 * Fixed card counter caused by a regression in `17.0.0` [#212](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/212)
 * Fixed a top padding issue with child collections [#180](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/180)
 
-#### [**17.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) **(December 12th 2025)**
+### [**17.0.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) **(December 12th 2025)**
 
 * Fixed a regression impacting child collections [#213](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/213)
 
-#### [**17.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.1) **(December 11th 2025)**
+### [**17.0.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.1) **(December 11th 2025)**
 
 * Added additional localization support for editor fields labels and descriptions, collection filters, cards, data views [#208](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/208)
 * Fixed entity menu actions display [#207](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/207)
