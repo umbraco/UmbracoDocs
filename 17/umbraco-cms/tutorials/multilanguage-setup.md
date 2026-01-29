@@ -16,14 +16,10 @@ To add a new language, follow these steps:
 2. Go to **Languages** in the **Structure** tree.
 3. Click **Create**.
 4. Select a **Language** from the dropdown list. In this tutorial, we will pick _Danish_.
-
-    ![Adding the Danish language](../.gitbook/assets/adding-danish-language-v14.png)
 5. In **Settings**, select the following options to set the new language as the:
    * Default language for your site, toggle **Default Language**.
    * Mandatory language for your site, toggle **Mandatory Language**.
 6. Select a **Fallback Language**.
-
-    ![Adding a Fallback language](../.gitbook/assets/fallback-language-v14.png)
 7. Click **Save**.
 
 ### Adding Multiple Languages
@@ -44,8 +40,6 @@ We can add multiple languages depending on our website requirements. In the prev
     * Click **Submit**.
     * Click **Save**.
 
-    ![Adding a Fallback language](../.gitbook/assets/Language-variants-v14.png)
-
 ### Changing the Default Language of a Website
 
 To change the default language of a website:
@@ -54,8 +48,6 @@ To change the default language of a website:
 2. Go to **Languages** in the **Structure** tree.
 3. Select the language you want to set as the new default language.
 4. Toggle **Default Language**.
-
-    ![Changing the Default Language of a Website](../.gitbook/assets/change-default-language-v14.png)
 5. Click **Save**.
 
 {% hint style="info" %}
@@ -70,7 +62,8 @@ To change the default language of a User:
 2. Select the user whose backoffice language you wish to change.
 3. Select the new language from the **UI Culture** drop-down list.
 
-    ![Changing the Default Backoffice Language of a User](../.gitbook/assets/change-backoffice-language-v14.png)
+![Changing the Default Backoffice Language of a User](../.gitbook/assets/change-backoffice-language-v14.png)
+
 4. Click **Save**.
 
 ## Document Types
@@ -79,13 +72,15 @@ For this tutorial, we will create the following document types:
 
 * Home Page
 
-    ![Home Page](../.gitbook/assets/home-page.png)
+![Home Page](../.gitbook/assets/home-page.png)
+
 * Blogs
 
-    ![Blogs](../.gitbook/assets/Blogs.png)
+![Blogs](../.gitbook/assets/Blogs.png)
+
 * Contact Us
 
-    ![Contact Us](../.gitbook/assets/Contact-us.png)
+![Contact Us](../.gitbook/assets/Contact-us.png)
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -95,12 +90,14 @@ To enable language variants on Document Types, follow these steps:
 2. Select **Contact Us** from the **Document Types** folder.
 3. Go to the **Settings** tab and toggle **Allow vary by culture**
 
-    ![Allow property editor Language Variants](../.gitbook/assets/allow-varying-property-editor-v14.png)
+![Allow property editor Language Variants](../.gitbook/assets/allow-varying-property-editor-v14.png)
+
 4. Click **Save**.
 5. Go to the **Design** tab.
 6. Click on the Data Type of the **Page Title** and toggle **Shared across cultures**.
 
-    ![Allow Vary by Culture](../.gitbook/assets/allow-vary-by-culture.png)
+![Shared across Cultures field](../.gitbook/assets/allow-vary-by-culture.png)
+
 7. Click **Update**.
 8. For this tutorial, we will not make any changes to the **Address**.
 9. Click **Save**.
@@ -111,10 +108,11 @@ When you return to your content node, you will notice two things:
 
 1. At the top of the content tree, there is a dropdown to view the content tree in the language of your choice.
 
-    ![Variant Content Tree](../.gitbook/assets/Variant-content-tree.png)
+![Variant Content Tree](../.gitbook/assets/Variant-content-tree.png)
+
 2. To the right of the content name, there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
-    ![Variant Drop-down list](../.gitbook/assets/variant-dropdown-v17.png)
+![Variant Drop-down list](../.gitbook/assets/variant-dropdown-v17.png)
 
 ## Adding Culture and Hostnames to the Root Node of the Website
 
@@ -125,23 +123,22 @@ To add culture and hostnames, follow these steps:
 3. Select **Culture and Hostnames**.
 4. Add a domain for each hostname, like it's done here:
 
-    ![Culture and Hostnames](<../.gitbook/assets/culture-and-hostnames-v14 (2).png>)
+![Culture and Hostnames](<../.gitbook/assets/culture-and-hostnames-v14 (2).png>)
+
 5. Click **Save**.
 
 ## Using Side-by-Side Mode for Editing Content
 
 To use side-by-side mode for editing content at the same time, follow these steps:
 
-1. Go to the **Contact Us** node. You will find a language dropdown next to the title at the top:
-
-    ![Language Variant dropdown](../.gitbook/assets/variant-dropdown-v17.png)
+1. Go to the **Contact Us** node. You will find a language dropdown next to the title at the top.
 2. Click **Open in Split view**. In this splitview, we can see the content node with each language side by side.
 
-    You may notice that the **Address** and other fields do not have a **Shared** tag. This is because the **Shared across cultures** toggle is disabled for these fields.
+You may notice that the **Address** and other fields do not have a **Shared** tag. This is because the **Shared across cultures** toggle is disabled for these fields.
 
-    ![Splitview editing](../.gitbook/assets/splitview-editing-v17.png)
+![Splitview editing](../.gitbook/assets/splitview-editing-v17.png)
 
-    To enable these fields, follow the steps mentioned in the [Enabling Language Variants on Document Types and Properties](multilanguage-setup.md#enabling-language-variants-on-document-types-and-properties) section.
+To enable these fields, follow the steps mentioned in the [Enabling Language Variants on Document Types and Properties](multilanguage-setup.md#enabling-language-variants-on-document-types-and-properties) section.
 
 ## Adding Language Variants to the Content
 
@@ -151,7 +148,8 @@ To add language variants to the content.
 2. Enter the **Name** for your content node and the **Page Title** in the new language.
 3. Click **Save and Publish**. The **Save and Publish** window opens providing the options to publish in one or more languages.
 
-    ![Publishing Variant content](../.gitbook/assets/publishing-variant-content-v17.png)
+![Publishing Variant content](../.gitbook/assets/publishing-variant-content-v17.png)
+
 4. Select either one or multiple languages and click **Save and Publish**.
 
 ## Rendering Variant Content in Templates
@@ -186,7 +184,8 @@ To create dictionary items:
 4. Enter a **Name** for the dictionary item. Let's say **Address**.
 5.  Enter the different language versions for the dictionary item.
 
-    ![Creating Dictionary Items](../.gitbook/assets/add-dictionary-item-v14.png)
+![Creating Dictionary Items](../.gitbook/assets/add-dictionary-item-v14.png)
+
 6. Click **Save**.
 7. Similarly, we will add different language versions for the **Contact Number** field.
 
@@ -207,37 +206,35 @@ To use property editors with dictionary items:
 
 1. Create a corresponding dictionary item with the same name for each option in your property editor. For example:
 
-    | Key         | English Value | French Value |
-    | ----------- | ------------- | ------------ |
-    | Electronics | Electronics   | Électronique |
-    | Clothing    | Clothing      | Vêtements    |
-    | Books       | Books         | Livres       |
-    | Toys        | Toys          | Jouets       |
+| Key         | English Value | French Value |
+| ----------- | ------------- | ------------ |
+| Electronics | Electronics   | Électronique |
+| Clothing    | Clothing      | Vêtements    |
+| Books       | Books         | Livres       |
+| Toys        | Toys          | Jouets       |
 
 2. In your Document Type, set up a property editor and use the keys of the dictionary items as the **Options**:
 
-    _Option 1:_ Electronics, _Option 2:_ Clothing, _Option 3:_ Books, and _Option 4:_ Toys
-
-    ![Dropdown Options](../.gitbook/assets/add-dictionary-item-v17.png)
+![Dropdown Options](../.gitbook/assets/add-dictionary-item-v17.png)
 
 3. Use the following code in your template to retrieve and display the translated value:
 
-    ```cs
-    @{
-        var selectedValues = Model.Value<IEnumerable<string>>("dropdown");
-    }
+```cs
+@{
+     var selectedValues = Model.Value<IEnumerable<string>>("dropdown");
+}
 
-    @if (selectedValues != null)
+@if (selectedValues != null)
+{
+    foreach (var key in selectedValues)
     {
-        foreach (var key in selectedValues)
-        {
-            <span>@Umbraco.GetDictionaryValue(key)</span>
-            <br />
-        }
+        <span>@Umbraco.GetDictionaryValue(key)</span>
+        <br />
     }
-    ```
+}
+```
 
-    The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
+The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
 
 ## Adding a Translator to the Website
 
@@ -253,8 +250,6 @@ To view the language variant on the browser, follow these steps:
 2. Select your new language from the language dropdown above your content tree.
 3. Select the **Contact Us** node and go to the **Info** tab.
 4. The Links section contains the language variant links. If it's not there, you might need to refresh the page.
-
-    ![Viewing the Language Variant Link](../.gitbook/assets/viewing-langvariant-browser-v17.png)
 5. Click on the link to view the varied node in the browser.
 6. Alternatively, you can add the domain name to your localhost in the browser. For example: `https://localhost:xxxx/da/`
 
@@ -347,7 +342,9 @@ public class ContentApiController : SurfaceController
 ```
 
 4. Build and run your project.
-5. Test the API endpoint using: `https://localhost:xxxxx/umbraco/surface/ContentApi/GetContent?id=1177&culture=da`
+5. Test the API endpoint:
+
+`https://localhost:xxxxx/umbraco/surface/ContentApi/GetContent?id=1177&culture=da`
 
 When you call the API with different cultures, you should receive different values. For example, for Danish (da):
 
