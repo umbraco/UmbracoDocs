@@ -78,13 +78,13 @@ The following settings can be configured in `appsettings.json` under `Engage:Coc
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| TokenLifetimeSeconds | 60 | How long the authentication token remains valid after clicking Open Cockpit |
-| SessionLifetimeMinutes | 30 | How long your Cockpit session lasts before requiring re-authentication |
-| RequireHttps | true | Requires HTTPS for security. Set to `false` only for local development |
-| CleanupIntervalMinutes | 60 | How often expired tokens and sessions are cleaned up from the database |
-| TokenRetentionBufferMinutes | 5 | How long to keep expired tokens before deletion (for debugging) |
-| SessionRetentionBufferMinutes | 1440 | How long to keep expired sessions before deletion (24 hours default) |
-| SessionCookieSameSite | Lax | Cookie SameSite policy. Options: `Lax`, `Strict`, or `None` |
+| TokenLifetimeSeconds | 60 | How long the authentication token remains valid after clicking Open Cockpit. |
+| SessionLifetimeMinutes | 30 | How long your Cockpit session lasts before requiring re-authentication. |
+| RequireHttps | true | Requires HTTPS for security. Set to `false` only for local development. |
+| CleanupIntervalMinutes | 60 | How often expired tokens and sessions are cleaned up from the database. |
+| TokenRetentionBufferMinutes | 5 | How long to keep expired tokens before deletion (for debugging). |
+| SessionRetentionBufferMinutes | 1440 | How long to keep expired sessions before deletion (24 hours default). |
+| SessionCookieSameSite | Lax | Cookie SameSite policy. Options: `Lax`, `Strict`, or `None`. |
 
 {% hint style="warning" %}
 Do not set `RequireHttps` to `false` in production environments. This setting is only intended for local development without HTTPS.
