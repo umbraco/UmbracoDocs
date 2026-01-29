@@ -16,7 +16,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
-#### [13.2.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.4) (Jan 29th 2026)
+#### [13.2.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.5) (Jan 29th 2026)
 
 * Update `isPreview` check for variant split view [#790](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/790)
 
