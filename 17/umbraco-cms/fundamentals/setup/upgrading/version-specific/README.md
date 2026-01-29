@@ -228,7 +228,7 @@ The other specific dependency updates made for Umbraco 17 for server and client-
 
 **Sections**
 
-In `UmbSectionContext`, the `setManifest()` method has been replaced with a manifest (to align with most other extension types).
+In `UmbSectionContext`, the `setManifest()` method has been replaced with a manifest. This is done to align with most other extension types.
 The `ManifestSection` interface has been modified to extend from `ManifestElementAndApi`, (previously it was `ManifestElement`).
 The `UmbSectionElement` (that a section will extend from) now extends from `UmbControllerHostElement`, (previously it was `HTMLElement`).
 
