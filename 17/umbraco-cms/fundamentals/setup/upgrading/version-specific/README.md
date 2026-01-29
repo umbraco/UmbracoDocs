@@ -232,7 +232,7 @@ In `UmbSectionContext`, the `setManifest()` method has been replaced with a mani
 The `ManifestSection` interface has been modified to extend from `ManifestElementAndApi`, (previously it was `ManifestElement`).
 The `UmbSectionElement` (that a section will extend from) now extends from `UmbControllerHostElement`, (previously it was `HTMLElement`).
 
-For more details on this update, see the following PRs: [#20305](https://github.com/umbraco/Umbraco-CMS/pull/20305)
+For more details on these updates, see the following PRs: [#20305](https://github.com/umbraco/Umbraco-CMS/pull/20305)
 
 **Other breaking changes**
 
