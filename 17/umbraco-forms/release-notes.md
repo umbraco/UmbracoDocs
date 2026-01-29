@@ -16,6 +16,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.1) (January 29th 2026)
+* Ensure entries selection can be cleared correctly after delete [#1590](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1590)
+* Ensure entries selection can be cleared completely [#1591](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1591)
+* Add additional exports for NPM package [#1592](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1592)
+* Fix bug where prevalue sources couldn't be saved and didn't show existing values
+* Path traversal and file enumeration vulnerability on Linux/macOS [GHSA-hm5p-82g6-m3xh](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-hm5p-82g6-m3xh)
+
 ### [17.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.0) (January 22nd 2026)
 * All items detailed under release candidates for 17.1.0.
 
