@@ -26,6 +26,21 @@ The same applies to all references to Umbraco user groups in Engage tables. They
 
 The last update involves a change to the `[umbracoEngageAbTestingAbTestVariant]` table, which now contains a new column `[redirectNodeKey]` , which contains a NodeKey used for Split URL A/B Tests.
 
+#### Regenerate Reporting Data
+
+After upgrading to Engage v17 from an older major version, you need to manually regenerate the reporting data to ensure Analytics works correctly.
+
+To regenerate the reporting data:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Navigate to **Engage** > **Configuration**.
+3. Select the **Reporting** tab.
+4. Click the **Regenerate** button.
+
+{% hint style="warning" %}
+Until the reporting data is regenerated, Analytics dashboards may show incomplete or missing data.
+{% endhint %}
+
 #### Public Services
 
 Engage v17 introduces new overloads of public-facing service methods to allow the use of keys where previously numeric IDs were expected, resolving [issue #23](https://github.com/umbraco/Umbraco.Engage.Issues/issues/23). These overloads have been added to the following services:

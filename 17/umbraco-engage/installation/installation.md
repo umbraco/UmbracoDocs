@@ -145,7 +145,12 @@ When you visit your site locally for the first time, Umbraco Engage will begin t
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-To generate reporting data manually on your local installation, go to **Umbraco -> Settings** -> **Engage** section -> **Configuration.** Scroll down to the **Reporting** section and click the red **Regenerate** button.
+To generate reporting data manually on your local installation, follow these steps:
+
+1. Go to the **Settings** section.
+2. Navigate to **Engage** -> **Configuration**.
+3. Select the **Reporting** tab.
+4. Click the red **Regenerate** button.
 
 {% hint style="warning" %}
 Use the **Regenerate** button only in non-production environments because it can cause temporary performance degradation.
