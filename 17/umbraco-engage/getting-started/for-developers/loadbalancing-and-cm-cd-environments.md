@@ -16,11 +16,12 @@ In CM/CD environments, the Cockpit needs to authenticate users across different 
 
 As of Umbraco Engage 17, you can open the Cockpit directly from the Umbraco backoffice:
 
-1. Log in to the Umbraco backoffice on your CM server
-2. Navigate to the **Engage** section
-3. Click the **Open Cockpit** button in the dashboard
-4. If multiple domains are configured, select the domain you want to view
-5. The Cockpit opens in a new tab, already authenticated
+1. Log in to the Umbraco backoffice on your CM server.
+2. Navigate to the **Engage** section.
+3. Click the **Open Cockpit** button in the dashboard.
+4. Select the domain you want to view.
+
+The Cockpit opens in a new tab, already authenticated.
 
 This method uses secure, short-lived authentication tokens. No additional cookie configuration is required.
 
@@ -38,7 +39,7 @@ When you log out of the Umbraco backoffice, all your Cockpit sessions across all
 
 ### Method 2: Cookie Domain Configuration (Alternative)
 
-If you prefer the Cockpit to appear automatically when browsing the frontend (without using the Open Cockpit button), you can configure Umbraco to share authentication cookies across domains.
+To keep the Cockpit visible automatically, configure Umbraco to share authentication cookies across domains. This removes the need to use the Open Cockpit button while browsing.
 
 This requires Umbraco and your website to run on the same domain or subdomain. For example:
 

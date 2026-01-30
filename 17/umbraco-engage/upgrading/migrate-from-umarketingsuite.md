@@ -325,7 +325,9 @@ With the migration complete, there are a few more steps to ensure everything con
 1. Validate the new license:
    * Go to Settings -> Licenses in the backoffice and click **Validate**.
 2. Generate the reporting data:
-   * Go to Settings -> Engage -> Configuration in the backoffice, select the Reporting tab, and click the Regenerate button. Depending on the number of page views in the database this could take a while.
+   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Select the Reporting tab.
+   * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 3. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
 
 ## Step 8: Upgrade additional environments
@@ -343,7 +345,9 @@ Repeat the steps below for each environment that needs to be migrated.
 7. Validate the new license, if this has not happened already:
    * Go to Settings -> Licenses in the backoffice and click **Validate**.
 8. Generate the reporting data
-   * Go to Settings -> Engage -> Configuration in the backoffice, select the Reporting tab, and click the Regenerate button. Depending on the number of page views in the database this could take a while.
+   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Select the Reporting tab.
+   * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
 
 {% hint style="info" %}

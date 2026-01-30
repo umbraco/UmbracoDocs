@@ -25,7 +25,7 @@ If the Cockpit is missing while the Umbraco backoffice runs on a different domai
 
 ### Opening the Cockpit from the Backoffice
 
-If your website runs on a different server than the Umbraco backoffice (a CM/CD setup), you may not see the Cockpit automatically when browsing the frontend.
+If your website runs separately from the backoffice (a CM/CD setup), you may not see the Cockpit automatically when browsing the frontend.
 
 In this case, you can open the Cockpit from the Umbraco backoffice:
 
