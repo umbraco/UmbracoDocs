@@ -17,6 +17,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.1) (January 30 2025)
+* Ensures email templates render correctly when runtimeMode is set to 'Production' [#125](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/125)
+
 ### 13.5.0 (December 11 2025)
 * Updates all persistence operations to use scoped transactions.
 
