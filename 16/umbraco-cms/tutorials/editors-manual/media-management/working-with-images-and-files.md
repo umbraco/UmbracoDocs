@@ -7,7 +7,7 @@ The following default Media Types are available:
 * File - used for uploading and storing different types of files in the Media section.
 * Folder - a container for organizing media items in the media tree.
 * Image - used for uploading and storing images.
-* Vector Graphics (SVG) - used for uploading and storing Scalable Vector Graphics files which are text files containing source code to draw the desired image.
+* Vector Graphics (SVG) - used for uploading and storing Scalable Vector Graphics files, which are text files containing source code to draw the desired image.
 * Video - used for uploading and storing video files.
 
 ## Uploading a Media Item
