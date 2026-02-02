@@ -87,19 +87,14 @@ The next steps are outlined based on the scripting language your prefer using.
 {% tab title="Powershell" %}
 For a pipeline that uses Powershell scripts you will need the following files:
 
-| Folder | Files |
-| :--- | :--- |
-| **Root (`/`)** | `cloud.zipignore` |
-| **`powershell`** | `Get-LatestDeployment.ps1` |
-| | `Get-ChangesById.ps1` |
-| | `Apply-Patch.ps1` |
-| | `Add-DeploymentArtifact.ps1` |
-| | `Start-Deployment.ps1` |
-| | `Test-DeploymentStatus.ps1` |
-| **`powershell/azuredevops`** | `azure-release-pipeline.yml` |
-| | `cloud-sync.yml` |
-| | `cloud-artifact.yml` |
-| | `cloud-deployment.yml` |
+| Root (/) | powershell/ | powershell/azuredevops/ |
+| :--- | :--- | :--- |
+| `cloud.zipignore` | `Get-LatestDeployment.ps1` | `azure-release-pipeline.yml` |
+| | `Get-ChangesById.ps1` | `cloud-sync.yml` |
+| | `Apply-Patch.ps1` | `cloud-artifact.yml` |
+| | `Add-DeploymentArtifact.ps1` | `cloud-deployment.yml` |
+| | `Start-Deployment.ps1` | |
+| | `Test-DeploymentStatus.ps1` | |
 
 ### Prepare the pipeline
 
@@ -119,19 +114,14 @@ For a pipeline that uses Powershell scripts you will need the following files:
 
 For a pipeline that uses Bash scripts you will need the following files:
 
-| Folder | Files |
-| :--- | :--- |
-| **Root (`/`)** | `cloud.zipignore` |
-| **`bash`** | `get_latest_deployment.sh` |
-| | `get_changes_by_id.sh` |
-| | `apply-patch.sh` |
-| | `upload_artifact.sh` |
-| | `start_deployment.sh` |
-| | `get_deployment_status.sh` |
-| **`bash/azuredevops`** | `azure-release-pipeline.yml` |
-| | `cloud-sync.yml` |
-| | `cloud-artifact.yml` |
-| | `cloud-deployment.yml` |
+| Root (/) | bash/ | bash/azuredevops/ |
+| :--- | :--- | :--- |
+| `cloud.zipignore` | `get_latest_deployment.sh` | `azure-release-pipeline.yml` |
+| | `get_changes_by_id.sh` | `cloud-sync.yml` |
+| | `apply-patch.sh` | `cloud-artifact.yml` |
+| | `upload_artifact.sh` | `cloud-deployment.yml` |
+| | `start_deployment.sh` | |
+| | `get_deployment_status.sh` | |
 
 ### Prepare the pipeline
 
