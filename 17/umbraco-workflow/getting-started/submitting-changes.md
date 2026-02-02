@@ -50,4 +50,4 @@ The invariant workflow will publish all variants, regardless of their node state
 
 When submitting for approval, Workflow will automatically save variants with pending changes.
 
-Validation errors are reported in the UI using Umbraco's validation messages.
+Validation errors are reported in the UI using Umbraco's validation messages. 
