@@ -48,10 +48,9 @@ Follow these steps to import your repository to Azure DevOps:
 git remote remove origin
 ```
 
-7. Rename branch `master` to `main`.
+7. Rename `master` branch to `main`.
 
 ```sh
-# optional step
 git branch -m  main
 git symbolic-ref HEAD refs/heads/main
 ```
