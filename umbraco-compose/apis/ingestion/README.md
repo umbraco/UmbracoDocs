@@ -21,7 +21,7 @@ If you are creating a custom integration to Compose, you can use the standard [R
 
 ## Prerequisites
 
-In addition to an API key, to ingest data into your Compose project, you also need an [Environment](https://github.com/umbraco/OrchestrationDocs/blob/main/ingestion/.../orchestration/environments.md) with a [Collection](../../content-orchestration/collections.md).
+In addition to an API key, to ingest data into your Compose project, you also need an [Environment](../../content-orchestration/environments.md) with a [Collection](../../content-orchestration/collections.md).
 
 The path to the RESTful Ingestion API endpoint is as follows:
 
@@ -29,8 +29,4 @@ The path to the RESTful Ingestion API endpoint is as follows:
 
 ## API Documentation
 
-You can find an overview and examples of how to call the Ingestion API on the API Documentation page.
-
-{% content-ref url="https://apidocs.umbracocompose.com/?api=ingestion-api" %}
-[https://apidocs.umbracocompose.com/?api=ingestion-api](https://apidocs.umbracocompose.com/?api=ingestion-api)
-{% endcontent-ref %}
+Check out the [Ingestion API Documentation](https://apidocs.umbracocompose.com/?api=ingestion-api) for an overview and examples on how to make calls.

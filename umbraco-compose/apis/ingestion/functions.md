@@ -140,4 +140,4 @@ When any of these limitations are exceeded, your content will not be successfull
 
 ## Outbound IP Addresses
 
-See [Outbound Traffic](https://github.com/umbraco/OrchestrationDocs/blob/main/ingestion/outbound-traffic.md) for a list of IP addresses from which function HTTP calls will originate.
+See [Outbound Traffic](../../content-orchestration/outbound-traffic.md) for a list of IP addresses from which function HTTP calls will originate.
