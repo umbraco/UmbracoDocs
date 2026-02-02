@@ -2,7 +2,7 @@
 
 Umbraco Forms is a commercial product. You can run Umbraco Forms unrestricted locally without the need for a license. Running Umbraco Forms in the public domain will require a valid license.
 
-Version 16 supports both the one-off purchase and (in 16.1+) subscription license.
+Version 16 supports both the one-off purchase and (in 16.1+) subscription license. 
 
 ## How does it work?
 
