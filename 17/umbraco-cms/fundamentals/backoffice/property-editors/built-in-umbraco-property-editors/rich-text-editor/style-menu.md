@@ -118,6 +118,7 @@ Due to Tiptap’s strict rich-text schema, only supported HTML tags are allowed 
 * `h5`
 * `h6`
 * `p`
+* `a` (link)
 * `blockquote`
 * `code`
 * `codeBlock`
