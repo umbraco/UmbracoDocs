@@ -44,6 +44,7 @@ This avoids Umbraco treating this call back as a potential request for content, 
 ## Enable RedirectToLoginPage
 
 When you are configuring an external login for **backoffice users**, you need to enable RedirectToLoginPage in the [BasicAuth section](../../reference/configuration/basicauthsettings.md#redirecttologinpage).
+
 ```json
   "Umbraco": {
     "CMS": {
