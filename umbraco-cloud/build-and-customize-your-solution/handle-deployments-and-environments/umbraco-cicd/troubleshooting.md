@@ -237,7 +237,7 @@ This happens when using CI/CD to deploy changes to your live environment, and la
 
 This issue arises because the environment is missing in the local `umbraco-cloud.json` file.
 
-#### How to resolve the issue:
+#### How to resolve the issue
 
 To resolve this issue, follow these steps:
 
