@@ -1,28 +1,28 @@
 ---
-description: Learn how to configure a CI/CD pipeline using provided sample scripts.
+description: Learn how to configure a CI/CD pipeline using the sample scripts provided.
 ---
 
 # Configuring a CI/CD pipeline
 
-In this section you can learn how to configure a CI/CD pipeline using either **Azure DevOps** or **GitHub Actions Workflows**.
+In this section, you can learn how to configure a CI/CD pipeline using either **Azure DevOps** or **GitHub Actions Workflows**.
 
 You'll find sample shell scripts and pipeline configurations in the **Sample scripts** section. These cover both Azure DevOps and GitHub Actions Workflows.
 
 {% hint style="info" %}
-Samples are provided "AS IS" to get you started. Please familiarize yourself with them, and feel free to change them to fit your needs.
+Samples are provided "AS IS" to get you started. Please familiarize yourself with them and feel free to change them to fit your needs.
 {% endhint %}
 
 ## Why configure a sample CI/CD pipeline?
 
-Umbraco Cloud repositories are not meant to be used as source code repositories. [More details here](../../../../explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md).
+Umbraco Cloud repositories are not meant as source code repositories. [More details here](../../../../explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md).
 
-Once you commit your code to Cloud the build pipeline converts your C# code to DLLs and deploys it on the respective environment.
+Once you commit your code to the Cloud, the build pipeline converts your C# code into DLLs and deploys them to the respective environment.
 
 {% hint style="info" %}
-In Umbraco Cloud only C# code is built. This means that all frontend artifacts need to be built before they are committed to the repository.
+In Umbraco Cloud, only C# code is built. This means that all frontend artifacts need to be built before they are committed to the repository.
 {% endhint %}
 
-You can use Azure DevOps as an external repository and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of the left-most Umbraco Cloud environment.
+You can use Azure DevOps as an external repository, and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of the left-most Umbraco Cloud environment.
 
 ![UmbracoCloud CI/CD sample pipeline](../../../../.gitbook/assets/UmbracoCloudCicdSample.png)
 
@@ -39,7 +39,7 @@ Before proceeding, you'll need an Umbraco Cloud project and a CI/CD pipeline. Yo
 2. Create a new or an existing CI/CD pipeline in [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops\&tabs=browser) or [GitHub Actions](https://github.com/features/actions).
 
 {% hint style="info" %}
-In this guide, deployments are targeted at the left-most environment in your Umbraco Cloud setup. This means if you have more than one environment, the left-most environment will automatically be selected for deployment. If only a single environment exists, this environment will be used.
+In this guide, deployments target the left-most environment in your Umbraco Cloud setup. This means if you have more than one environment, the left-most environment will automatically be selected for deployment. If only a single environment exists, this environment will be used.
 {% endhint %}
 
 ## Obtaining the Project ID and API Key
@@ -56,28 +56,28 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 <figure><img src="../../../../.gitbook/assets/UC-advanced-CICD.png" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
 
 {% hint style="warning" %}
-The API key is tied to the specific project for which it is generated. Make sure to keep it secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
+The API key is tied to the specific project for which it is generated. Ensure to keep it secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
 ## Getting environment aliases to target
 
-With the feature enabled, a button called "CI/CD Environment Targets" becomes available. Clicking the button will open a modal with your environments and their aliases.
+With the feature enabled, a button called "CI/CD Environment Targets" becomes available. Clicking the button opens a modal with your environments and their aliases.
 
 Next to the environment alias is a button you can click to copy the alias.
 
 <figure><img src="../../../../.gitbook/assets/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
 
 {% hint style="info" %}
-If the alias is greyed out it is currently not a valid target through the Umbraco CI/CD flow API.
+If the alias is greyed out, it is currently not a valid target through the Umbraco CI/CD flow API.
 
-Currently flexible environments and the left-most environment are considered valid targets.
+Currently, flexible environments and the left-most environment are considered valid targets.
 
-The impact on allowing CI/CD deployments to all environments is being investigated.
+The impact of allowing CI/CD deployments to all environments is being investigated.
 {% endhint %}
 
 ## Sample pipelines
 
-Below is a couple of examples on how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
+Below are a couple of examples on how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
 
 Each guide describes:
 
@@ -85,21 +85,21 @@ Each guide describes:
 * How to get a copy of your Umbraco Cloud project into that repository.
 * How to configure a new pipeline using the provided samples.
 
-The sample pipelines are using either Bash-scripts or Powershell-scripts to facilitate communication with the Umbraco CI/CD API.
+The sample pipelines use either Bash or PowerShell scripts to facilitate communication with the Umbraco CI/CD API.
 
 {% hint style="info" %}
-During the guides, you will have the option to choose between Powershell or Bash scripts. Choose the scripting technology you feel most comfortable with.
+During the guides, you will have the option to choose between PowerShell or Bash scripts. You can select the scripting technology you feel most comfortable with.
 {% endhint %}
 
 ### Azure DevOps sample
 
-Details the setup of a CI/CD pipeline using Azure DevOps.
+Covers setting up a CI/CD pipeline using Azure DevOps.
 
 * [Azure DevOps Sample](azure-devops.md)
 
 ### GitHub Actions sample
 
-Details the setup of a CI/CD pipeline using GitHub Actions.
+Covers setting up a CI/CD pipeline using GitHub Actions.
 
 * [GitHub Actions Sample](github-actions.md)
 
