@@ -11,7 +11,7 @@ All requests to the Umbraco Compose APIs must be authenticated and authorized.
 
 Compose supports two different methods of access control. They are summarized in the table below.
 
-| Authentication Method | Valid For...                   | Best Suited To...                                                                      |
+| Authentication Method | Valid For                      | Best Suited To                                                                         |
 | --------------------- | ------------------------------ | -------------------------------------------------------------------------------------- |
 | Personal Access Token | Ingestion, GraphQL             | Accessing Compose as a user - during development, exploring APIs, etc.                 |
 | Client Credentials    | Ingestion, GraphQL, Management | Accessing Compose from another system - ingesting or retrieving data, automation, etc. |
@@ -26,11 +26,11 @@ Personal Access Tokens can be managed from the [Umbraco Cloud Portal](https://ww
 
 Personal Access Tokens can be assigned different scopes that affect which APIs and endpoints they are authorized to call. The following scopes are available:
 
-| Scope                 | Supported Operations                                                                      |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| ingestion             | Adding or removing content to or from Umbraco Compose via the Ingestion API.              |
-| graphql               | Querying content from the GraphQL API. Does not allow retrieving type schema information. |
-| graphql:introspection | Retrieving type schema information from the GraphQL API via introspection queries.        |
+| Scope                   | Supported Operations                                                                      |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| `ingestion`             | Adding or removing content to or from Umbraco Compose via the Ingestion API.              |
+| `graphql`               | Querying content from the GraphQL API. Does not allow retrieving type schema information. |
+| `graphql:introspection` | Retrieving type schema information from the GraphQL API via introspection queries.        |
 
 Assigning a scope grants the respective access over all environments in the project.
 
@@ -57,13 +57,13 @@ API applications support the same [project-level scopes](access-control.md#scope
 
 Supported environment scopes are:
 
-| Scope                 | Supported Operations                                                                      |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| ingestion             | Adding or removing content to or from Umbraco Compose via the Ingestion API.              |
-| graphql               | Querying content from the GraphQL API. Does not allow retrieving type schema information. |
-| graphql:introspection | Retrieving type schema information from the GraphQL API via introspection queries.        |
-| typeschema:read       | All operations that read type schemas                                                     |
-| typeschema:write      | All operations involving type schemas                                                     |
+| Scope                   | Supported Operations                                                                      |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| `ingestion`             | Adding or removing content to or from Umbraco Compose via the Ingestion API.              |
+| `graphql`               | Querying content from the GraphQL API. Does not allow retrieving type schema information. |
+| `graphql:introspection` | Retrieving type schema information from the GraphQL API via introspection queries.        |
+| `typeschema:read`       | All operations that read type schemas                                                     |
+| `typeschema:write`      | All operations involving type schemas                                                     |
 
 Including a project scope will grant authorization for that action across all environments, irrespective of environment-specific scopes. For example, consider the following two scopes granted on a single project:
 

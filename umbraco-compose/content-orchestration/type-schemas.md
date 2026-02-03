@@ -43,28 +43,28 @@ Properties define the fields available on your content type. Each property requi
 
 Properties must have a static type. The following types are supported:
 
-| Property type | Description                                                                                                           |
-| ------------- | --------------------------------------------------------------------------------------------------------------------- |
-| string        | Text values of any length, including letters, numbers, and special characters (e.g., "Product Name").                 |
-| integer       | Whole numbers without decimal points (e.g., -1, 0, 42, 1000).                                                         |
-| number        | Numeric values that can include decimals, supporting both integers and floating-point numbers (e.g., 3.14, 42, -7.5). |
-| boolean       | True or false values.                                                                                                 |
-| array         | A list of values. Use the `items` property to define the type of elements in the array.                               |
-| object        | Used for nested properties or references to other content.                                                            |
+| Property type | Description                                                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `string`      | Text values of any length, including letters, numbers, and special characters (for example, "Product Name").                 |
+| `integer`     | Whole numbers without decimal points (for example, -1, 0, 42, 1000).                                                         |
+| `number`      | Numeric values that can include decimals, supporting both integers and floating-point numbers (for example, 3.14, 42, -7.5). |
+| `boolean`     | True or false values.                                                                                                        |
+| `array`       | A list of values. Use the `items` property to define the type of elements in the array.                                      |
+| `object`      | Used for nested properties or references to other content.                                                                   |
 
 ### String Formats
 
 String properties can specify a `format` to indicate the expected data format:
 
-| Format        | Description                                      |
-| ------------- | ------------------------------------------------ |
-| date          | Date without time (ISO 8601, e.g., "2024-01-15") |
-| date-time     | Date with time (ISO 8601)                        |
-| time          | Time without date                                |
-| html          | HTML markup content                              |
-| uuid          | UUID/GUID identifier                             |
-| uri           | Absolute URI                                     |
-| uri-reference | Relative or absolute URI                         |
+| Format          | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| `date`          | Date without time (ISO 8601, for example, "2024-01-15") |
+| `date-time`     | Date with time (ISO 8601)                               |
+| `time`          | Time without date                                       |
+| `html`          | HTML markup content                                     |
+| `uuid`          | UUID/GUID identifier                                    |
+| `uri`           | Absolute URI                                            |
+| `uri-reference` | Relative or absolute URI                                |
 
 Example:
 
@@ -219,9 +219,9 @@ See [Referenced Content](referenced-content.md) for more information about how t
 
 ## Delivery Properties
 
-It is possible to configure some of how GraphQL returns your content by specifying a `$delivery` section on your property.
+It is possible to configure how GraphQL returns your content by specifying a `$delivery` section on your property.
 
-For example, to ingest content with one property name but retrieve it using a different one, then you can specify the `fieldName` delivery property.
+For example, to ingest content with one property name but retrieve it using a different one, you can specify the `fieldName` delivery property.
 
 The following Type Schema expects the `sku` field to be defined when instances are created. However, when queried via GraphQL, no `sku` field will be available. Rather, that field will be called `productName`.
 
@@ -244,11 +244,11 @@ The following Type Schema expects the `sku` field to be defined when instances a
 
 The following delivery properties are available:
 
-| Property      | Description                                                                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| expose        | Determines whether the property is exposed by GraphQL or remains internal to the platform. Set this to `false` to prevent the property from being returned from GraphQL. Defaults to `true`. |
-| fieldName     | Allows you to override the name of the property in GraphQL. Defaults to the name of the property.                                                                                            |
-| refCollection | Controls which collection from which referenced content will be retrieved. Defaults to the current collection if not specified.                                                              |
+| Property        | Description                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `expose`        | Determines whether the property is exposed by GraphQL or remains internal to the platform. Set this to `false` to prevent the property from being returned from GraphQL. Defaults to `true`. |
+| `fieldName`     | Allows you to override the name of the property in GraphQL. Defaults to the name of the property.                                                                                            |
+| `refCollection` | Controls which collection from which referenced content will be retrieved. Defaults to the current collection if not specified.                                                              |
 
 ## Further Reading
 
