@@ -20,7 +20,7 @@ To follow this guide, you will need the following:
 
 ## Create a Management API Application
 
-The first thing you need to work with your Compose project is an API Application. This application is used to call the Management API to configure the project. It can also be used later to call the [Ingestion](../apis/ingestion/) and [GraphQL](../apis/graphql/) APIs.
+To work with your Compose project you will need an API Application. This application is used to call the Management API to configure the project. It can also be used later to call the [Ingestion](../apis/ingestion/) and [GraphQL](../apis/graphql/) APIs.
 
 Creating an API application is done in the [Umbraco Cloud Portal](https://s1.umbraco.io/compose).
 
@@ -28,7 +28,7 @@ Creating an API application is done in the [Umbraco Cloud Portal](https://s1.umb
 2. Select **API Applications**.
 3. Select **Create New API Application**.
 
-![Image of a page in Umbraco Cloud showing your Compose projects](../.gitbook/assets/starter-guide-api-applications.png)
+![Compose project list in the Umbraco Cloud portal](../.gitbook/assets/starter-guide-api-applications.png)
 
 4. Provide an **alias** for the API Application and, optionally, a **description**.
 
@@ -104,7 +104,7 @@ Instead of manually issuing a new access token each time the previous one expire
 3. Use `https://management.umbracocompose.com/v1/auth/token` as the Access Token URL.
 4. Enter the **Client ID** and **Client Secret** for the API application.
 
-![API tool with configured auto-renew of access tokens](../.gitbook/assets/starter-guide-token-auto-renew.png)
+![API tool with configured auto-renew of Compose access tokens](../.gitbook/assets/starter-guide-token-auto-renew.png)
 
 Your tool should now be able to request and use access tokens without you needing to manually copy-paste them in different requests.
 
@@ -189,10 +189,10 @@ You are now ready to store some content in Compose. To do this, make a request t
 
 Adding content to Compose can be done in two ways: either using [RESTful Ingestion](../apis/ingestion/restful-ingestion.md) or by using a transformation [Ingestion Function](../apis/ingestion/functions.md). In this guide, you will add content from your API tool and have full control over its structure. This makes RESTful Ingestion the more straightforward of the two.
 
-First, create another POST request, this time to the Ingestion API. Unlike Management API requests, you also need to include your project region in the URL. Make sure to replace `{projectAlias}` with the actual alias of your project.
+First, create a PUT request to the Ingestion API. Unlike Management API requests, you will also need to include your project region in the URL. Also make sure to replace `{projectAlias}` with the actual alias of your project.
 
 ```http
-POST https://ingest.germanywestcentral.umbracocompose.com/v1/{projectAlias}/production/content
+PUT https://ingest.germanywestcentral.umbracocompose.com/v1/{projectAlias}/production/content
 ```
 
 In the body of the request, you specify content entries to modify.
@@ -235,7 +235,7 @@ Navigate to the portal and select _Ingested content diagnostics_ on the relevant
 
 You will be presented with a data view where, by default, you can see your most recently ingested content. The filters at the top of the page let you refine the display by collection, variant, type schema, and so on.
 
-![Screenshot of the Umbraco Cloud Portal showing the Compose Ingested Content UI](../.gitbook/assets/starter-guide-token-exchange.png)
+![Ingested Content UI in the Umbraco Cloud Portal](../.gitbook/assets/starter-guide-ingested-content.png)
 
 ## Delivery With GraphQL
 
