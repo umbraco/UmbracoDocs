@@ -14,17 +14,17 @@ If you customized the flow or the version 1 scripts, take extra care to incorpor
 
 ## What has changed in version 2?
 
-While you can continue to use the version 1 endpoints, the version 2 endpoints contains a list of improvements that enhances the CI/CD feature. Follow the migration guide below to start reaping the full benefits of this workflow.
+While you can continue to use the version 1 endpoints, the version 2 endpoints contain improvements that enhance the CI/CD feature. Follow the migration guide below to start reaping the full benefits of this workflow.
 
-The biggest enhancement is the **ability to target different environments**. You can target the flexible as well as the left-most mainline environment.
+The biggest enhancement is the **ability to target different environments**. You can target both the flexible and the left-most mainline environment.
 
 The new endpoints are created to accommodate this enhancement, meaning you will have to supply a target environment alias in some requests.
 
-The initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but is now a separate step. Every uploaded artifact can be queried by the API, similar to querying deployments via the API. 
+The initial flow has been slightly changed. Uploading a deployment package is no longer tied to "deployment-meta" and is now a separate step. Every uploaded artifact can be queried in the API. This works similarly to querying deployments via the API. 
 
-When you request a deployment, you now also need to supply an `artifactId`. Additionally, more options are available to you when deploying.
+When you request a deployment, you now also need to supply an `artifactId`. Additionally, more options are available when deploying.
 
-To showcase how to use the version 2 endpoints and flow, updated samples are provided.  
+Updated samples are provided to showcase how to use the version 2 endpoints and flow.  
 
 ## Migrate Azure DevOps
 
@@ -62,9 +62,9 @@ Follow the migration steps below if you are using Azure DevOps.
   - [How to get the project id](./README.md#obtaining-the-project-id-and-api-key) 
   - [How to get the environment alias](./README.md#getting-environment-aliases-to-target)
 
-4. Open the `azure-release-pipeline.yaml` in your favorite editor. 
+4. Open the `azure-release-pipeline.yaml` in your favorite editor.
 5. Replace `##Your project Id here##` with the project ID.
-6. Replace `##Your target environment alias here#` with the environment alias. 
+6. Replace `##Your target environment alias here#` with the environment alias.
 
 You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
 
@@ -111,4 +111,4 @@ Follow the migration steps below if you are using GitHub.
 9. Use the environment alias as a value.
 10. Click on `Add variable`.
 
-You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
+You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Left-most mainline`.
