@@ -109,7 +109,7 @@ The `items` property defines the structure of the style select menu. Each menu i
 
 ### Supported HTML tags
 
-Due to Tiptap’s strict rich-text schema, only supported HTML tags are allowed in the style select menu, _(arbitrary markup will be excluded)._ The following HTML tag names are supported:
+Due to Tiptap’s strict rich-text schema, only supported HTML tags are allowed in the style select menu *(arbitrary markup will be excluded)*. The following HTML tag names are supported:
 
 * `h1`
 * `h2`
