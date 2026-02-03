@@ -6,7 +6,7 @@ Umbraco uses SignalR to abstract away these types of communication. This also al
 
 A traditional SignalR backplane (such as SQL Server or Redis) distributes *messages* between servers. Any server can broadcast messages to clients connected to other servers. However, the WebSocket connection remains tied to the server the client initially connected to.
 
-This means that with a traditional backplane, if a subsequent HTTP request is routed to a different server than the one holding the WebSocket connection, you will encounter "No connection with that ID" errors.
+Using a traditional backplane, routing HTTP requests to a server without the active WebSocket connection causes "No connection with that ID" errors.
 
 **Azure SignalR Service** works differently. Instead of clients connecting directly to your servers, they connect to the Azure SignalR Service. This centralizes connection management, allowing requests to be handled by any server without sticky sessions.
 
