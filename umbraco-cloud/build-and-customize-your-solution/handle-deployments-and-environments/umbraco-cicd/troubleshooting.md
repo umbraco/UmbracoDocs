@@ -1,5 +1,5 @@
 ---
-description: Learn how to troubleshoot and debug different scenarios you might encounter.
+description: Learn how to troubleshoot and debug different scenarios you might encounter while using the CI/CD feature.
 ---
 
 # Troubleshooting
@@ -8,15 +8,25 @@ description: Learn how to troubleshoot and debug different scenarios you might e
 
 ### Using `RestorePackagesWithLockFile` in your `.csproj` file
 
-If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes will be made to the website. This happened even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository.
+**Symptom**:
 
-The reason for this is that the Kudu deploy process fails. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
+If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes is made to the website. 
+
+**Reason**:
+
+This happens even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository. The reason for this is that the Kudu deployment process fails. This process takes the newly committed files from the Cloud repository and runs the restore, build, and publish operations on the Cloud environment.
+
+#### How to resolve the issue
 
 To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
 
-### Deployment reports: No changes detected - cleaning up
+### Deployment report: No changes detected - cleaning up
+
+**Symptom**:
 
 The package you uploaded didn't contain any changes that would affect the Git repository on the Cloud Environment. The CI/CD job will skip the remaining steps and complete.
+
+#### How to resolve the issue
 
 If you expected the deployment to create changes in the Cloud Environment, make sure you are uploading the correct ZIP file.
 
@@ -24,7 +34,13 @@ If you expected the deployment to create changes in the Cloud Environment, make 
 
 ### The project's left-most mainline environment has changed
 
-The mechanism to determine changes since the last deployment is not able to do so when the left-most mainline environment has changed. This happens when you either add or remove a mainline environment. The [get diff endpoint](umbracocloudapi.md#get-deployment-diff) responds with status 409 and the following json payload:
+**Symptom**:
+
+The mechanism to determine changes since the last deployment is not able to do so when the left-most mainline environment has changed.
+
+**Reason**:
+
+This happens when you either add or remove a mainline environment. The ['get diff' endpoint](umbracocloudapi.md#get-deployment-diff) responds with status 409 and the following JSON payload:
 
 ```json
 {
@@ -36,16 +52,20 @@ The mechanism to determine changes since the last deployment is not able to do s
 }
 ```
 
+#### How to resolve the issue
+
 You need to _manually_ make sure that all the latest changes on your left-most mainline environment are also present in your local copy.
 
 Once this is done, you can run a new deployment, where you skip the cloud-sync step.
 
-* [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github)
-* [Skip cloud-sync in Azure DevOps](troubleshooting.md#skip-cloud-sync-in-azure-devops)
+* [Skip cloud-sync in GitHub](#skip-cloud-sync-in-github)
+* [Skip cloud-sync in Azure DevOps](#skip-cloud-sync-in-azure-devops)
 
-If you experience problems with your environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](troubleshooting.md#unable-to-determine-environment-by-its-environment-id).
+If you experience problems with your environment not properly booting up after deployment, read the [Unable to determine environment by its {environment-id}](#unable-to-determine-environment-by-its-environment-id) guide.
 
 ### “Apply Remote Changes” step is failing
+
+**Symptom**:
 
 The sample pipelines are naively trying to apply any change coming from the generated patch file on the cloud. This doesn't always work, and you might see an error similar to the following:
 
