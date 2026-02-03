@@ -37,17 +37,6 @@ This approach requires additional setup but allows for true horizontal scaling w
 Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../reference/configuration/cache-settings.md) for more information.
 {% endhint %}
 
-### Configuration Compatibility
-
-| Backplane | Sticky Sessions | Works? |
-|-----------|-----------------|--------|
-| SQL Server | No | No - Intermittent failures |
-| SQL Server | Yes | Yes |
-| Redis | No | No - Intermittent failures |
-| Redis | Yes | Yes |
-| Azure SignalR Service | No | Yes |
-| Azure SignalR Service | Yes | Yes |
-
 ## Choosing the Right Backplane
 
 Choosing the right backplane comes down to a few factors:
