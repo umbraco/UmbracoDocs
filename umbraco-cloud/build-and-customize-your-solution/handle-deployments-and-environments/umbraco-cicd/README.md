@@ -1,12 +1,12 @@
 ---
-description: Learn how to use Umbraco CI/CD to built a workflow that fits with how you and your team work.
+description: Learn how to use Umbraco CI/CD to build a workflow that fits into your team.
 ---
 
 # Umbraco CI/CD Flow
 
-Umbraco CI/CD Flow is designed to facilitate the seamless integration of your existing CI/CD flow with Umbraco Cloud. The primary objective of this feature is to enable your automated workflows to deploy directly to Umbraco Cloud. This lets you leverage the best of both worlds: the robustness of your current CI/CD setup and the specialized hosting environment of Umbraco Cloud.
+Umbraco CI/CD Flow is designed to seamlessly integrate your existing CI/CD flow with Umbraco Cloud. The primary objective of this feature is to enable your automated workflows to deploy directly to Umbraco Cloud. This lets you leverage the best of both worlds: the robustness of your current CI/CD setup and the specialized hosting environment of Umbraco Cloud.
 
-Umbraco Cloud continues to be a cornerstone in this setup, providing a cloud-based hosting solution specifically optimized for Umbraco CMS. With integration to your Continuous Integration and Continuous Deployment (CI/CD) pipeline, Umbraco CI/CD allows the inclusion of automated workflows. These automated workflows include building, testing, and deploying your Umbraco projects.
+Umbraco Cloud is a cornerstone in this setup, providing a cloud-based hosting solution specifically optimized for Umbraco CMS. With integration to your Continuous Integration and Continuous Deployment (CI/CD) pipeline, Umbraco CI/CD allows the inclusion of automated workflows. These automated workflows include building, testing, and deploying your Umbraco projects.
 
 ## Advantages of Utilizing Umbraco CI/CD Flow
 
@@ -26,23 +26,23 @@ Umbraco CI/CD Flow allows for greater scalability and flexibility in your deploy
 
 **Centralized Management**
 
-With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risk for human errors that could have a negative effect on the target environment.
+With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risk of human errors that could have a negative effect on the target environment.
 
-Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and Umbraco Cloud, enabling a more streamlined and automated deployment process. While it offers a number of advantages, there are also limitations that need to be considered. On the page '[Known Limitations and Considerations](known-limitations-and-considerations.md)' you will find a detailed list of the pros and cons of using Umbraco CI/CD Flow.
+Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and Umbraco Cloud, enabling a more streamlined and automated deployment process. While it offers a number of advantages, there are also limitations that need to be considered. On the page '[Known Limitations and Considerations](known-limitations-and-considerations.md)', you will find a detailed list of the pros and cons of using Umbraco CI/CD Flow.
 
 ## Overview of Flow
 
-The CI/CD process for Umbraco projects involves some key steps, from code development locally to deployment to Umbraco Cloud. The flow of these steps are as follows:
+The CI/CD process for Umbraco projects involves some key steps, from code development locally to deployment to Umbraco Cloud. The flow of these steps is as follows:
 
 1. **Code Development**: Developers work on features or bug fixes in their local environments.
 2. **Customer code repository**: Changes are committed and pushed to a version control system like Git in the customer's own repository.
 3. **Customer pipeline**: The code is compiled and built. Tests can be run automatically in the associated pipeline to ensure code quality. Finally, the code is packaged into a zip file and prepared for deployment.
-4. **Umbraco Cloud API**: The customer pipeline uploads the source packed as a zip file to Umbraco Cloud API.
-5. **Umbraco cloud repository**: The deployments start and triggers the queueing of the build-in Umbraco services. It then pushes the Umbraco Cloud repository to the left-most mainline environment. If pushed directly to a live environment, the website has been updated.
+4. **Umbraco Cloud API**: The customer pipeline uploads the source packed as a zip file to the Umbraco Cloud API.
+5. **Umbraco cloud repository**: The deployments start and trigger the queueing of the built-in Umbraco services. It then pushes the Umbraco Cloud repository to the left-most mainline environment. If pushed directly to a live environment, the website has been updated.
 
 ![Basic overview](../../../.gitbook/assets/NewBasicFlow.png)
 
-In a bit more detail the flow will look like this from a pipeline perspective.
+In a bit more detail, the flow will look like this from a pipeline perspective.
 
 ![Detailed overview](../../../.gitbook/assets/NewAdvancedFlow.png)
 
