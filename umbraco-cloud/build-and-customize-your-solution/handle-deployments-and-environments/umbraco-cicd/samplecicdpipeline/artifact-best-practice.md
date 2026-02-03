@@ -1,30 +1,30 @@
 ---
-description: For a smooth deployment process it recommended to follow the best practice guidelines for artifacts outlined in this article.
+description: For a smooth deployment process, it is recommended to follow the best practice guidelines for artifacts outlined in this article.
 ---
 
 # Deployment Artifact best practice
 
-The zip package you are deploying needs to contain all things that are normally present in an Umbraco Cloud environment repository.
+The zip package you are deploying must contain all things normally present in an Umbraco Cloud environment repository.
 
-Every new Umbraco Cloud project contains a `readme.md` file that explains the structure and how you can adapt it to suit your needs.
+Every new Umbraco Cloud project contains a `readme.md` file that explains the structure and how you can adapt it to fit your needs.
 
 {% hint style="info" %}
 The sample scripts on GitHub include a way to package the zip. As the scripts are samples, they show a universal way to do this, which works well for most people. But not all projects are alike, and you may not want to use that particular approach.
 {% endhint %}
 
-## Do not include .NET Binaries
+## Exclude .NET Binaries
 
 Don’t include any binary build artifacts coming from the .NET build/publish process. 
 
 The general deployment process on Umbraco Cloud needs the source code, and the system will rebuild it once it is pushed back to the environment.
 
-## Do not include the `.git` directory
+## Exclude the `.git` directory
 
-The `.git` directory will be ignored in the isolated instance, but the extra megabytes will still slow down the deployment process. Due to these two facts, it is recommended to not include this directory in your deployments.
+The `.git` directory will be ignored in the isolated instance, but the extra megabytes will still slow down the deployment process. Due to these two facts, it is recommended not to include this directory in your deployments.
 
 Also, consider the artifact size limitation below. 
 
-## Do include the finished frontend assets
+## Include only finished frontend assets
 
 If you are using modern frontend build tools, include only the finished frontend assets that are needed. There is no need to include JavaScript or TypeScript source files if you need to build the frontend. 
 
