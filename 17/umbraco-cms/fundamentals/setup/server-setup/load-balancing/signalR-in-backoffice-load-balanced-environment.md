@@ -19,6 +19,7 @@ When load balancing the backoffice, you need to decide between two approaches:
 Configure your load balancer to use sticky sessions (session affinity). This ensures that once a client connects to a server, all subsequent requests from that client go to the same server.
 
 With sticky sessions enabled, any SignalR backplane works:
+
 - SQL Server backplane
 - Redis backplane
 - Other third-party backplanes
@@ -28,24 +29,26 @@ This approach works if your load balancer supports sticky sessions.
 ### Option 2: Stateless with Azure SignalR Service
 
 If you want fully stateless servers without sticky sessions, you need:
-- **Azure SignalR Service** for SignalR connection management
-- **IDistributedCache** for session state management (see [Distributed Cache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed))
+
+- **Azure SignalR Service** for SignalR connection management.
+- **IDistributedCache** for session state management (see [Distributed Cache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed)).
 
 This approach requires additional setup but allows for true horizontal scaling without server affinity.
 
 {% hint style="info" %}
-Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../reference/configuration/cache-settings.md) for more information.
+Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means that setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../reference/configuration/cache-settings.md) for more information.
 {% endhint %}
 
 ## Choosing the Right Backplane
 
 Choosing the right backplane comes down to a few factors:
+
 - Whether you can use sticky sessions
 - Message throughput requirements
 - Cost
-- What infrastructure you already have in place
+- The infrastructure you already have in place
 
-Microsoft has a good list of available backplanes in its [SignalR load balancing article](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-10.0), including a list of well known [third party offerings](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-9.0#third-party-signalr-backplane-providers).
+Microsoft has a good list of available backplanes in its [SignalR load balancing article](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-10.0), including a list of well-known [third-party offerings](https://learn.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-9.0#third-party-signalr-backplane-providers).
 
 ## Code examples
 The following code examples show how you can activate SignalR load balancing using an Umbraco composer.
