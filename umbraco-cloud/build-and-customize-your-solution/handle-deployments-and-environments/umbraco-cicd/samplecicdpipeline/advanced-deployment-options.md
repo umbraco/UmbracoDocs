@@ -13,12 +13,12 @@ During deployment, the system automatically checks for downgrades of Cloud depen
 Enabling the `skipVersionCheck` option will allow deployments that include downgraded packages. 
 
 {% hint style="info" %}
-This option increases risk and is not recommended for normal workflows. Only use this options when you understand the package differences and accept the potential consequences.
+This option increases risk and is not recommended for normal workflows. Do not skip the version checks unless you understand the package differences and accept the potential consequences.
 {% endhint %}
 
 ## Skip build and restore steps
 
-The Umbraco CI/CD flow runs the deployment in an isolated instance and performs `dotnet restore` and `dotnet build` to catch obvious build issues before deploying to Cloud.
+The Umbraco CI/CD flow runs the deployment in an isolated instance and performs `dotnet restore` and `dotnet build` to catch obvious build issues before deploying to the Cloud.
 
 Enabling the `noBuildAndRestore` option skips the restore and build steps in that isolated instance, which can shorten deployment time by a few minutes.
 
