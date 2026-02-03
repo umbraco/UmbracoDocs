@@ -30,7 +30,7 @@ If you expected the deployment to create changes in the Cloud Environment, make 
 
 The mechanism to determine changes since the last deployment is not able to do so when the left-most mainline environment has changed.
 
-This happens when you either add or remove a mainline environment. The ['get diff' endpoint](umbracocloudapi.md#get-deployment-diff) responds with status 409 and the following JSON payload:
+This happens when you either add or remove a mainline environment. The ['get diff' endpoint](umbraco-cloud-api.md#get-deployment-diff) responds with status 409 and the following JSON payload:
 
 ```json
 {

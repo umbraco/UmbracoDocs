@@ -28,7 +28,7 @@ Umbraco CI/CD Flow allows for greater scalability and flexibility in your deploy
 
 With Umbraco CI/CD Flow, you can centralize the management of your deployments, tests, and workflows. This makes it easier to monitor, troubleshoot, and optimize your processes, leading to more efficient and reliable deployments. Automating deployment minimizes the risk for human errors that could have a negative effect on the target environment.
 
-Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and Umbraco Cloud, enabling a more streamlined and automated deployment process. While it offers a number of advantages, there are also limitations that need to be considered. On the page '[Known Limitations and Considerations](knownlimitationsandconsiderations.md)' you will find a detailed list of the pros and cons of using Umbraco CI/CD Flow.
+Umbraco CI/CD Flow serves as a bridge between your existing CI/CD pipeline and Umbraco Cloud, enabling a more streamlined and automated deployment process. While it offers a number of advantages, there are also limitations that need to be considered. On the page '[Known Limitations and Considerations](known-limitations-and-considerations.md)' you will find a detailed list of the pros and cons of using Umbraco CI/CD Flow.
 
 ## Overview of Flow
 
@@ -52,8 +52,8 @@ To ensure you make the most of the Umbraco CI/CD Flow, it is recommended to expl
 
 Here are three essential pages to get you started:
 
-1. [**How to use the Umbraco Cloud API for CI/CD Flow**](umbracocloudapi.md): Gain a comprehensive understanding of how to interact with the Umbraco Cloud API for seamless deployments and management.
+1. [**How to use the Umbraco Cloud API for CI/CD Flow**](umbraco-cloud-api.md): Gain a comprehensive understanding of how to interact with the Umbraco Cloud API for seamless deployments and management.
 2. [**How To Configure A Sample CI/CD Pipeline**](samplecicdpipeline/): Follow our step-by-step guide to set up a sample pipeline, making your development and deployment process more efficient.
-3. [**Known Limitations and Considerations**](knownlimitationsandconsiderations.md): Familiarize yourself with the current limitations and considerations to ensure you're making the most out of Umbraco CI/CD Flow.
+3. [**Known Limitations and Considerations**](known-limitations-and-considerations.md): Familiarize yourself with the current limitations and considerations to ensure you're making the most out of Umbraco CI/CD Flow.
 
 These resources will provide you with the knowledge and tools you need to successfully implement and optimize your use of Umbraco CI/CD Flow.
