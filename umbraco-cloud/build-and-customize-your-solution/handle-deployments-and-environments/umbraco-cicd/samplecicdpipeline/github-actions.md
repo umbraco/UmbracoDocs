@@ -4,7 +4,7 @@ description: This section provides a step-by-step guide to setting up a CI/CD pi
 
 # GitHub Actions
 
-Before setting up the pipeline in GitHub, make sure that the following steps from the [Configuring a CI/CD pipeline](./) are done:
+Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](README.md) article are complete:
 
 * Pick a Cloud project.
 * Activate CI/CD Flow.
