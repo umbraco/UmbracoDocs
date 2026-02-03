@@ -13,8 +13,9 @@ Before configuring backoffice load balancing, you need to decide between two app
 Configure your load balancer to use sticky sessions (session affinity). This ensures all requests from a client are routed to the same server.
 
 **Requirements:**
-- Sticky sessions enabled on your load balancer
-- Any SignalR backplane (SQL Server, Redis, or Azure SignalR Service)
+
+- Sticky sessions are enabled on your load balancer.
+- Any SignalR backplane (SQL Server, Redis, or Azure SignalR Service).
 
 This approach works well for most scenarios.
 
@@ -23,11 +24,12 @@ This approach works well for most scenarios.
 If you want true horizontal scaling without server affinity, you need additional configuration:
 
 **Requirements:**
-- [Azure SignalR Service](./signalR-in-backoffice-load-balanced-environment.md) for SignalR connection management
-- [IDistributedCache](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for session state management
+
+- [Azure SignalR Service](./signalR-in-backoffice-load-balanced-environment.md) for SignalR connection management.
+- [IDistributedCache](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for session state management.
 
 {% hint style="info" %}
-Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../reference/configuration/cache-settings.md) for more information.
+Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means that setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../reference/configuration/cache-settings.md) for more information.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -80,7 +82,7 @@ If you have custom recurring background jobs that should only run on a single se
 
 ## Temporary File Storage
 
-When load balancing the backoffice, temporary files uploaded through `/umbraco/management/api/v1/temporary-file`, for instance media uploads, must be accessible across all server instances.
+When load balancing the backoffice, temporary files uploaded through `/umbraco/management/api/v1/temporary-file`, for instance, media uploads, must be accessible across all server instances.
 
 Temporary files are saved to `umbraco/Data/TEMP/TemporaryFile/` by default.
 
