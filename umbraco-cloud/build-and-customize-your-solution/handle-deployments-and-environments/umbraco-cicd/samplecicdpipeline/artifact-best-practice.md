@@ -4,7 +4,7 @@ description: For a smooth deployment process, it is recommended to follow the be
 
 # Deployment Artifact best practice
 
-The zip package you are deploying must contain all things normally present in an Umbraco Cloud environment repository.
+The zip package you are deploying must contain everything that is normally present in an Umbraco Cloud environment repository.
 
 Every new Umbraco Cloud project contains a `readme.md` file that explains the structure and how you can adapt it to fit your needs.
 

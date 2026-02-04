@@ -1,5 +1,5 @@
 ---
-description: Learn how to set up your CI/CD pipeline to include more than 1 target environment.
+description: Learn how to set up your CI/CD pipeline to include more than one target environment.
 ---
 
 # Advanced Setup: Deploy to multiple targets
