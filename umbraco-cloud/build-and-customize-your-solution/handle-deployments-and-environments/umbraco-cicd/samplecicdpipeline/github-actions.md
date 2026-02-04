@@ -174,7 +174,7 @@ For a pipeline that uses PowerShell scripts, you will need the following files:
 {% tab title="Bash" %}
 For a pipeline that uses Bash scripts, you will need the following files:
 
-| Root (/) | bash/ | bash/github/ |
+| Root (`/`) | `bash/` | `bash/github/` |
 | :--- | :--- | :--- |
 | `cloud.zipignore` | `get_latest_deployment.sh` | `main.yml` |
 | | `get_changes_by_id.sh` | `cloud-sync.yml` |
