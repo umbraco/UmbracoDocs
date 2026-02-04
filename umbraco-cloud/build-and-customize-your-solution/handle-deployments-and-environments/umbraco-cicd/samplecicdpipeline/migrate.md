@@ -1,127 +1,114 @@
+---
+description: Learn how to migrate your CI/CD setup from version 1 to version 2.
+---
+
 # Migrate from version 1 to version 2
 
-The original flow has been improved based on the feedback received from users of the feature.
-
-This article covers how to migrate from version 1 samples to version 2. 
-
 {% hint style="info" %}
-Be advised that both scripts and pipeline files have changes.
+Scripts and pipeline files have changes.
 
 Familiarize yourself with the new samples.
 
 If you customized the flow or the version 1 scripts, take extra care to incorporate your changes. 
 {% endhint %}
 
-You can keep using the old endpoints and samples, but you will miss out on the enhancements. There are currently no plans to deprecate the version 1 endpoints.
+## What has changed in version 2?
 
-## What has changed?
+While you can continue to use the version 1 endpoints, the version 2 endpoints contain improvements that enhance the CI/CD feature. Follow the migration guide below to start reaping the full benefits of this workflow.
 
-The biggest enhancement is the ability to target different environments. You can now target the flexible and the leftmost mainline environment.
+The biggest enhancement is the **ability to target different environments**. You can target both the flexible and the left-most mainline environment.
 
 The new endpoints are created to accommodate this enhancement, meaning you will have to supply a target environment alias in some requests.
 
-The initial flow has been slightly changed. The upload of a deployment package is no longer tied to a "deployment-meta", but is now a separate step. Every uploaded artifact can be queried by the API, similar to querying deployments via the API. 
+The initial flow has been slightly changed. Uploading a deployment package is no longer tied to "deployment-meta" and is now a separate step. Every uploaded artifact can be queried in the API. This works similarly to querying deployments via the API. 
 
-When you request a deployment, you now also need to supply an `artifactId`. More options are available when deploying.
+When you request a deployment, you now also need to supply an `artifactId`. Additionally, more options are available when deploying.
 
-To showcase how to use the version 2 endpoints and flow, updated samples are provided.  
+Updated samples are provided to showcase how to use the version 2 endpoints and flow.  
 
 ## Migrate Azure DevOps
 
-Start by deleting the scripts and YAML files you initially got from the CI/CD samples:
+Follow the migration steps below if you are using Azure DevOps.
 
-- Delete the YAML:
-  - `azure-release-pipeline.yaml`
-  - `cloud-sync.yml`
-  - `cloud-deployment.yml`
+1. Delete the scripts and YAML files you initially got from the CI/CD samples:
 
-You probably only have either PowerShell or Bash.
+| YAML files | PowerShell files | Bash files |
+| :--- | :--- | :--- |
+| `azure-release-pipeline.yaml` | `Add-DeploymentPackage.ps1` | `apply_patch.sh` |
+| `cloud-sync.yml` | `Apply-Patch.ps1` | `create_deployment.sh` |
+| `cloud-deployment.yml` | `Get-ChangesById.ps1` | `get_changes_by_id.sh` |
+| | `Get-LatestDeployment.ps1` | `get_deployment_status.sh` |
+| | `New-Deployment.ps1` | `get_latest_deployment.sh` |
+| | `Start-Deployment.ps1` | `start_deployment.sh` |
+| | `Test-Deployment.ps1` | `upload_package.sh` |
 
-- PowerShell files to delete:
-  - `Add-DeploymentPackage.ps1`
-  - `Apply-Patch.ps1`
-  - `Get-ChangesById.ps1`
-  - `Get-LatestDeployment.ps1`
-  - `New-Deployment.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-Deployment.ps1`
-- Bash files to delete:
-  - `apply_patch.sh`
-  - `create_deployment.sh`
-  - `get_changes_by_id.sh`
-  - `get_deployment_status.sh`
-  - `get_latest_deployment.sh`
-  - `start_deployment.sh`
-  - `upload_package.sh`
+2. Copy the scripts from the sample repository's [V2 folder](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main/V2) to the corresponding folder in your repository:
 
-Copy the scripts from the sample repository's [version 2 folder](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main/V2) to the corresponding folder in your repo:
+**PowerShell files**:
 
-- If you prefer PowerShell:
-  - All `.ps1` files in `V2/powershell` should be copied to `devops/powershell`
-  - All `.yaml/.yml` files in `V2/powershell/azuredevops` should be copied to `devops` 
-- If you prefer Bash:
-  - All `.sh` files in `V2/bash` should be copied to `devops/scripts`
-  - All `.yaml/.yml` files in `V2/bash/azuredevops` should be copied to `devops` 
+| File Type | Sample location | Move to |
+| :--- | :--- | :--- |
+| `.ps1` | `V2/powershell` | **`devops/powershell`** |
+| `.yaml/.yml` | `V2/powershell/azuredevops` | **`devops`** |
 
-Now you need some important values: Project ID and Target environment alias.
+**Bash files**:
 
-- [How to get the project id](./README.md#obtaining-the-project-id-and-api-key) 
-- [How to get the environment alias](./README.md#getting-environment-aliases-to-target)
+| File Type | Sample location | Move to |
+| :--- | :--- | :--- |
+| `.sh` | `V2/bash` | **`devops/scripts`** |
+| `.yaml/.yml` | `V2/bash/azuredevops` | **`devops`** |
 
-Open the `azure-release-pipeline.yaml` in your favorite editor. 
+3. Fetch the following values from your Cloud project: Project ID and Target environment alias.
+  - [How to get the project id](./README.md#obtaining-the-project-id-and-api-key) 
+  - [How to get the environment alias](./README.md#getting-environment-aliases-to-target)
 
-Replace `##Your project Id here##` with the project ID and the value `##Your target environment alias here#` with the environment alias. 
+4. Open the `azure-release-pipeline.yaml` in your favorite editor.
+5. Replace `##Your project Id here##` with the project ID.
+6. Replace `##Your target environment alias here#` with the environment alias.
 
 You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
 
 ## Migrate GitHub
 
-Start by deleting the scripts and YAML files you initially got from the CI/CD samples:
+Follow the migration steps below if you are using GitHub.
 
-- Delete the YAML:
-  - `main.yml`
-  - `cloud-sync.yml`
-  - `cloud-deployment.yml`
+1. Delete the scripts and YAML files you initially got from the CI/CD samples:
 
-You probably only have either PowerShell or Bash.
+| YAML files | PowerShell files | Bash files |
+| :--- | :--- | :--- |
+| `main.yml` | `Add-DeploymentPackage.ps1` | `apply_patch.sh` |
+| `cloud-sync.yml` | `Apply-Patch.ps1` | `create_deployment.sh` |
+| `cloud-deployment.yml` | `Get-ChangesById.ps1` | `get_changes_by_id.sh` |
+| | `Get-LatestDeployment.ps1` | `get_deployment_status.sh` |
+| | `New-Deployment.ps1` | `get_latest_deployment.sh` |
+| | `Start-Deployment.ps1` | `start_deployment.sh` |
+| | `Test-Deployment.ps1` | `upload_package.sh` |
 
-- PowerShell files to delete:
-  - `Add-DeploymentPackage.ps1`
-  - `Apply-Patch.ps1`
-  - `Get-ChangesById.ps1`
-  - `Get-LatestDeployment.ps1`
-  - `New-Deployment.ps1`
-  - `Start-Deployment.ps1`
-  - `Test-Deployment.ps1`
-- Bash files to delete:
-  - `apply_patch.sh`
-  - `create_deployment.sh`
-  - `get_changes_by_id.sh`
-  - `get_deployment_status.sh`
-  - `get_latest_deployment.sh`
-  - `start_deployment.sh`
-  - `upload_package.sh`
+2. Copy the scripts from the sample repository's [V2 folder](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples/tree/main/V2) to the corresponding folder in your repository:
 
-Now copy the scripts from the sample repository's V2 folder to the corresponding folder in you repo:
+**PowerShell files**:
 
-- If you prefer PowerShell:
-  - All `.ps1` files in `V2/powershell` should be copied to `.github/powershell`
-  - All `.yaml/.yml` files in `V2/powershell/github` should be copied to `.github/workflows` 
-- If you prefer Bash:
-  - All `.sh` files in `V2/bash` should be copied to `.github/scripts`
-  - All `.yaml/.yml` files in `V2/bash/github` should be copied to `.github/workflows` 
+| File Type | Sample location | Move to |
+| :--- | :--- | :--- |
+| `.ps1` | `V2/powershell` | **`.github/powershell`** |
+| `.yaml/.yml` | `V2/powershell/github` | **`.github/workflows`** |
 
-Now we need one important value: Target environment alias.
+**Bash files**:
 
-- The [Getting environment aliases to target](./README.md#getting-environment-aliases-to-target) section explains how to get the environment alias.
+| File Type | Sample location | Move to |
+| :--- | :--- | :--- |
+| `.sh` | `V2/bash` | **`.github/scripts`** |
+| `.yaml/.yml` | `V2/bash/github` | **`.github/workflows`** |
 
-Go to your GitHub repository and enter the `Settings` section.
+3. Fetch the Target environment alias from the Cloud project.
+  - The [Getting environment aliases to target](./README.md#getting-environment-aliases-to-target) section explains how to get the environment alias.
 
-- On the left side menu, find the `Security` section and click on `Actions`.
-- Click on the tab `Variables`.
-- Click on `New repository variable`.
-  - Call the variable `TARGET_ENVIRONMENT_ALIAS`.
-  - Use the environment alias as a value.
-- Click on `Add variable`.
+4. Go to your GitHub repository and enter the `Settings` section.
+5. Locate the `Security` section in the left-side menu and click on `Actions`.
+6. Click on the tab `Variables`.
+7. Click on `New repository variable`.
+8. Call the variable `TARGET_ENVIRONMENT_ALIAS`.
+9. Use the environment alias as a value.
+10. Click on `Add variable`.
 
-You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Leftmost mainline`.
+You can use any of the available aliases, but to get similar functionality as before, select the environment described as `Left-most mainline`.

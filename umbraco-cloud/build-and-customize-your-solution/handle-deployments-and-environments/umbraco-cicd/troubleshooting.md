@@ -1,5 +1,5 @@
 ---
-description: Learn how to troubleshoot and debug different scenarios you might encounter.
+description: Learn how to troubleshoot and debug different scenarios you might encounter while using the CI/CD feature.
 ---
 
 # Troubleshooting
@@ -8,15 +8,19 @@ description: Learn how to troubleshoot and debug different scenarios you might e
 
 ### Using `RestorePackagesWithLockFile` in your `.csproj` file
 
-If `RestorePackagesWithLockFile` is used and set to true, you will experience that no changes will be made to the website. This happened even though the CI/CD deployments were completed successfully, and files were updated as expected in the Cloud repository.
+If `RestorePackagesWithLockFile` is set to true, you will experience that no changes are made to the website. 
 
-The reason for this is that the Kudu deploy process fails. This process takes the newly committed files from the cloud repository and runs restore, build, and publish on the cloud environment.
+This happens even though the CI/CD deployments were successfull, and files were updated as expected in the Cloud repository. The reason for this is that the Kudu deployment process fails. This process takes the newly committed files from the Cloud repository and runs the restore, build, and publish operations on the Cloud environment.
 
-To resolve this issue, remove the `RestorePackagesWithLockFile` to allow the deployments to go through as expected.
+#### How to resolve the issue
 
-### Deployment reports: No changes detected - cleaning up
+To resolve this issue, remove `RestorePackagesWithLockFile` for deployments to go through as expected.
+
+### Deployment report: No changes detected - cleaning up
 
 The package you uploaded didn't contain any changes that would affect the Git repository on the Cloud Environment. The CI/CD job will skip the remaining steps and complete.
+
+#### How to resolve the issue
 
 If you expected the deployment to create changes in the Cloud Environment, make sure you are uploading the correct ZIP file.
 
@@ -24,7 +28,9 @@ If you expected the deployment to create changes in the Cloud Environment, make 
 
 ### The project's left-most mainline environment has changed
 
-The mechanism to determine changes since the last deployment is not able to do so when the left-most mainline environment has changed. This happens when you either add or remove a mainline environment. The [get diff endpoint](umbracocloudapi.md#get-deployment-diff) responds with status 409 and the following json payload:
+The mechanism to determine changes since the last deployment can't do so when the left-most mainline environment has changed.
+
+This happens when you either add or remove a mainline environment. The ['get diff' endpoint](umbraco-cloud-api.md#get-deployment-diff) responds with status 409 and the following JSON payload:
 
 ```json
 {
@@ -36,18 +42,20 @@ The mechanism to determine changes since the last deployment is not able to do s
 }
 ```
 
-You need to _manually_ make sure that all the latest changes on your left-most mainline environment are also present in your local copy.
+#### How to resolve the issue
 
-Once this is done, you can run a new deployment, where you skip the cloud-sync step.
+You need to _manually_ ensure that all the latest changes on your left-most mainline environment are also present in your local copy.
 
-* [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github)
-* [Skip cloud-sync in Azure DevOps](troubleshooting.md#skip-cloud-sync-in-azure-devops)
+Once this is done, you can run a new deployment that skips the `cloud-sync` step.
 
-If you experience problems with your environment not properly booting up after deployment, [read the Unable to determine environment by its {environment-id} guide](troubleshooting.md#unable-to-determine-environment-by-its-environment-id).
+* [How to skip cloud-sync in GitHub](#how-to-skip-cloud-sync-in-github)
+* [How to skip cloud-sync in Azure DevOps](#how-to-skip-cloud-sync-in-azure-devops)
+
+If you experience problems with your environment not properly booting up after deployment, read the [Unable to determine environment by its {environment-id}](#unable-to-determine-environment-by-its-environment-id) guide.
 
 ### “Apply Remote Changes” step is failing
 
-The sample pipelines are naively trying to apply any change coming from the generated patch file on the cloud. This doesn't always work, and you might see an error similar to the following:
+The sample pipelines are naively trying to apply any changes from the generated patch file on the Cloud. This doesn't always work, and you might see an error similar to the following:
 
 ```sh
 error: patch failed: src/UmbracoProject/UmbracoProject.csproj:9
@@ -56,60 +64,65 @@ error: src/UmbracoProject/UmbracoProject.csproj: patch does not apply
 
 The root cause is due to conflicts between your source and the code in the repository on Umbraco Cloud. This is usually due to one of two things:
 
-1. Cloud project package(s) have been auto-upgraded, and that diff was already applied.
+1. The Cloud project package(s) have been auto-upgraded, and that diff was already applied.
 2. You and your team are not following the ["left to right" deployment model](../deployment/).
 
-In both cases, you have to make sure that your repository is up to speed with any changes there are in the cloud environment. You'll need to resolve potential conflicts manually.
+#### How to resolve the issue
 
-Once that has been done, you should run a new deployment without the `cloud-sync` step.
+1. Ensure that your repository contains the changes that are in the Cloud environment.
+2. Resolve any potential conflicts manually.
+3. Run a new deployment without the `cloud-sync` step.
 
-### Skip cloud-sync in GitHub
+#### How to skip `cloud-sync` in GitHub
 
 For Azure DevOps, see the [Skip cloud-sync in Azure DevOps](troubleshooting.md#skip-cloud-sync-in-azure-devops) section.
 
 1. Ensure your GitHub repository is up-to-date with any changes in your Umbraco Cloud environment.
 2. Locate the `main.yml` file in the following directory: `{projectname}.github\workflows` on your local project.
 3. Open the `main.yml` file in a text editor and navigate to the “jobs” section.
-4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”. An example is provided in the screenshot below.
+4. Comment out the entire “cloud-sync” section and the “needs: cloud-sync” under “cloud-deployment”.
+
+The screenshots below provide an example:
 
 ![Cloud sync code highlight](../../../.gitbook/assets/cloudsync.png)
 
 5. Commit the changes and push them to GitHub. This action will trigger a build and run the pipeline.
-6. At this point, the pipeline should execute successfully, and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
-7. Uncomment the lines you previously commented out and make a new commit. Push these changes to GitHub.
 
-* Optional: Add "\[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
+At this point, the pipeline should execute successfully, and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
 
-Your pipeline should now be functioning as expected.
+6. Remove the comments added in step 4 and make a new commit.
+  - Optional: Add "\[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
+7. Push these changes to GitHub.
 
-### Skip cloud-sync in Azure DevOps
+Your pipeline should now function as expected.
+
+#### How to skip `cloud-sync` in Azure DevOps
 
 For GitHub, see the [Skip cloud-sync in GitHub](troubleshooting.md#skip-cloud-sync-in-github) section.
 
-Navigate to your `azure-release-pipeline.yaml` and comment out these two lines:
+1. Navigate to your `azure-release-pipeline.yaml` and comment out these two lines:
 
 ```sh
 dependsOn: cloudSyncStage
 condition: in(dependencies.cloudSyncStage.result, 'Succeeded', 'Skipped')
 ```
 
-Trigger a code deployment and ensure that you uncheck the "Umbraco Cloud Sync" stage as mentioned below.
-
-1. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
-2. Find the pipeline in Azure DevOps.
-3. Click on "Run Pipeline" in the top right corner.
+2. Ensure that your Azure DevOps repository is up to date with any changes in your Umbraco Cloud environment.
+3. Find the pipeline in Azure DevOps.
+4. Click on "Run Pipeline" in the top right corner.
 
 ![Run Pipeline in Azure DevOps](../../../.gitbook/assets/az-run-pipeline.png)
 
-4. Click on "Stages to run."
+5. Click on "Stages to run."
 
 ![The Run Pipeline View](../../../.gitbook/assets/az-run-pipeline-view.png)
 
-5. Uncheck the "Umbraco Cloud Sync" checkbox. Confirm on "Use selected stages".
+6. Uncheck the "Umbraco Cloud Sync" checkbox.
+7. Confirm on "Use selected stages".
 
 ![The Stages to run View](../../../.gitbook/assets/az-stages-to-run-view.png)
 
-5. Click on "Run" back in the "Run Pipeline" view.
+8. Click on "Run" back in the "Run Pipeline" view.
 
 As no changes were made to your pipeline, it will run as usual on the next push to Azure DevOps.
 
@@ -117,21 +130,19 @@ As no changes were made to your pipeline, it will run as usual on the next push 
 
 ### Failed to read the request form. Multipart body length limit 134217728 exceeded
 
-We currently have a size limit set to 134217728 bytes or about \~128 MB.
+The current size limit is set to 134217728 bytes (or about \~128 MB).
 
-Make sure that the package you are trying to upload does not contain anything unnecessary.
+#### How to resolve the issue
 
-You can see an example of how you could zip your repository before uploading it, by referring to our [GitHub](samplecicdpipeline/github-actions.md) or [Azure DevOps](samplecicdpipeline/azure-devops.md) samples.
+Ensure that the package you are trying to upload does not contain any unnecessary items.
+
+You can see an example of how to zip your repository before uploading it, by referring to our [GitHub](samplecicdpipeline/github-actions.md) or [Azure DevOps](samplecicdpipeline/azure-devops.md) samples.
 
 ## Deployment failed
 
 ### File missing: The `.umbraco` file cannot be found in the root of the repository
 
-The `.umbraco` file is missing or has been renamed. This file needs to be present in the root of the zipped package.
-
-### File format Error: The `.umbraco` file is not valid
-
-The `.umbraco` file has invalid characters. Sometimes people need to change the repository's folder structure and the default project's name. Ensure that the base field does not use backslashes ('') as the folder denominator.
+The `.umbraco` file is missing or has been renamed. This file must be present at the root of the zip file.
 
 Below is an example of the default `.umbraco` file that comes with a new Umbraco Cloud project.
 
@@ -141,9 +152,15 @@ base = "src/UmbracoProject"
 csproj = "UmbracoProject.csproj"
 ```
 
+### File format Error: The `.umbraco` file is not valid
+
+The `.umbraco` file has invalid characters. Sometimes you might need to change the repository's folder structure and the default project's name. Ensure that the base field does not use backslashes ('') as the folder denominator.
+
+See an example of the default `.umbraco` file in the section above.
+
 ### Cannot apply update because the following packages would be downgraded: Package: Umbraco.{abc}, Version: {x.y.z}
 
-The service goes through all .csproj-files contained in the uploaded package, and compares that to the versions running in your left-most cloud environment. We do this to try to prevent you from downgrading the crucial Umbraco packages used by the cloud.
+The service goes through all `.csproj` files in the uploaded package and compares them to the versions running in your left-most cloud environment. This is done to try to prevent you from downgrading the crucial Umbraco packages used by the cloud.
 
 The full error could look like this:
 
@@ -151,47 +168,56 @@ The full error could look like this:
 Cannot apply update because the following packages would be downgraded: Package: Umbraco.Cms, Version: 13.4.0 ==> Project file: /Update/src/MyAwesomeProject.Code/MyAwesomeProject.Code.csproj contains lower Version: 13.1.0 .
 ```
 
-The error tells you which package to look for and which version is currently in your left-most cloud environment. The error also contains the problematic incoming .csproj-file and the version referenced by it.
+The error tells you which package to look for and which version is currently in your left-most cloud environment. The error also contains the problematic incoming `.csproj`file and the version referenced by it.
 
-If the incoming package references multiple packages with lower versions, the error will list each one.
+If the incoming package references multiple lower-versioned packages, the error will list each one.
 
-We recommend aligning the package versions in your _.csproj_ files with the higher version mentioned in the error for that package or a later version.
+#### How to resolve the issue
 
-If you have orphaned csproj-files you should remove them or rename them. Orphaned would be backup _.csproj_ files or files not referenced by any of the main project files nor referenced in a _.sln_ file.
+Align the package versions in your `.csproj` files with the higher version mentioned in the error for that package.
+
+If you have orphaned `.csproj` files, remove or rename them. Orphaned would be backup `.csproj` files or files not referenced by any of the main project files nor referenced in a `.sln` file.
 
 ### Could not find `/app/work/repository/Readme.md` to stat: No such file or directory
 
-In some instances, we see an issue where filename casing is causing an error.
+In some cases, you might see an issue where filename casing causes an error.
 
-Rename the `Readme.md` file in the root of your repository to something different; the file can keep the markdown extension. Commit the change to your repository and run the pipeline.
+#### How to resolve the issue
+
+1. Rename the `Readme.md` file in the root of your repository to something different. The file can keep the markdown extension.
+2. Commit the change to your repository.
+3. Run the pipeline.
 
 If you want, you can change the filename back to `Readme.md` after a successful CI/CD deployment.
 
 ### The site can't be upgraded as it's blocked with the following markers: updating
 
-In rare cases, deployments fail, and the cloud infrastructure doesn't clean up correctly. This leaves behind an "updating" marker. The next time you try to deploy through your pipeline you will encounter an error.
+In rare cases, deployments fail, and the Cloud infrastructure doesn't clean up correctly. This leaves behind an "updating" marker. The next time you try to deploy through your pipeline, you will encounter an error.
 
-In order to fix this issue, you need to use [Kudu](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
+#### How to resolve the issue
 
-1. Access Kudu on the affected environment
+To fix this issue, use [Kudu](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
-* If you only have one environment, you want the live environment
-* If you use V1 endpoints and have more than one environment, you want the left-most mainline environment
-
-3. Navigate to `site` > `locks` folder. In there, there should be a file named `updating`.
+1. Access Kudu on the affected environment.
+  * If you only have one environment, you want the live environment.
+  * If you use V1 endpoints and have more than one environment, you want the left-most mainline environment.
+2. Navigate to the `site` > `locks` folder. 
+3. Locate the file named `updating`.
 4. Remove the `updating` file.
-
-Once the marker file is removed, run your pipeline again.
+5. Run the pipeline to verify whether the issue has been resolved.
 
 ### Unable to verify the deployment has finished
 
-This error will be shown when the system is unable to verify that the latest deployment has been pushed and deployed in Kudu.
+This error will be shown when the system can't verify that the latest deployment has been pushed and deployed in Kudu.
 When a change is pushed to a Cloud Environment, the Kudu deployment is started. CI/CD is also utilizing this flow.
 
 The [Project History page](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md) offers information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
 
-A couple of steps to try:
-- Make sure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2).
+#### How to resolve the issue
+
+Below is a list of different options for fixing the issue:
+
+- Ensure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2).
 - For a project running Umbraco 15 or later, make sure the `CompressionEnabled` setting is set to false.
   - The static assets compression operation on the app service is resource-intensive and slows down the Kudu deployment.
 - Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud.
@@ -209,7 +235,11 @@ This happens when using CI/CD to deploy changes to your live environment, and la
 “System.InvalidOperationException: Unable to determine environment by its {environment-id}”
 ```
 
-This issue arises because the environment is missing in the local `umbraco-cloud.json` file. To resolve this issue, follow these steps:
+This issue arises because the environment is missing in the local `umbraco-cloud.json` file.
+
+#### How to resolve the issue
+
+To resolve this issue, follow these steps:
 
 1. Navigate to Kudu in your Live environment.
 2. Select “Debug console” and choose “CMD”.
