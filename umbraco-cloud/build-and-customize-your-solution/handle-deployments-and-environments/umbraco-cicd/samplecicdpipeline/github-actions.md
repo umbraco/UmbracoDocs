@@ -148,7 +148,7 @@ The next steps are outlined based on the scripting language you prefer using.
 {% tab title="Powershell" %}
 For a pipeline that uses PowerShell scripts, you will need the following files:
 
-| Root (/) | powershell/ | powershell/github/ |
+| Root (`/`) | `powershell/` | `powershell/github/` |
 | :--- | :--- | :--- |
 | `cloud.zipignore` | `Get-LatestDeployment.ps1` | `main.yml` |
 | | `Get-ChangesById.ps1` | `cloud-sync.yml` |
