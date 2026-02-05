@@ -32,7 +32,7 @@ See the [Managing Transport Security documentation](../../../build-and-customize
 
 ## Improved handling and notifications for project usage limits
 
-Based on partner feedback, Umbraco Cloud now communicates usage limits for bandwidth and media storage more effeciently. Daily warning emails have been removed to reduce unnecessary noise. Repeated threshold alerts ensure you are notified each time your media storage exceeds the limit (e.g. if you reduce Media storage use and then subsequently exceed the limit again).
+Based on partner feedback, Umbraco Cloud now communicates usage limits for bandwidth and media storage more efficiently. Daily warning emails have been removed to reduce unnecessary noise. Repeated threshold alerts notify you each time your media storage exceeds the limit. For example, if you reduce usage and then exceed the limit again, you receive another alert.
 
 Combined with the [recently added daily bandwidth usage graph](2025-10-releasenotes.md), these changes make monitoring your project's resource consumption easier.
 
