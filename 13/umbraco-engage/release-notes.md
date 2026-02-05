@@ -18,9 +18,9 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 [**13.7.4**](https://www.nuget.org/packages/Umbraco.Engage/13.7.4) **(February 5th 2026)**
 
-* Added the ability to choose 'All cultures' from the Pageview Goal Picker
+* Added the ability to choose 'All cultures' from the Pageview Goal Picker.
 * Resolves an issue where `HttpContext.Request` was being corrupted in the `UrlUmbracoPageVariantExtractor`, which could cause unexpected behavior during page variant extraction.
-* Resolves various issues with path handling in Headless CM/CD server configurations.
+* Resolves issues with path handling in Headless CM/CD server configurations.
 
 [**13.7.3**](https://www.nuget.org/packages/Umbraco.Engage/13.7.3) **(January 8th 2026)**
 
