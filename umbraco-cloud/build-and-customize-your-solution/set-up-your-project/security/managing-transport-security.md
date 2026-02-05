@@ -85,7 +85,7 @@ On the security page, you can enable or disable individual cipher suites for you
 
 Each cipher suite is labeled with a security recommendation:
 
-- **Modern**: Highest security with authenticated encryption (AEAD). Recommended for maximum protection.
+- **Modern**: Highest security with Authenticated Encryption with Associated Data (AEAD). Recommended for maximum protection.
 - **Compatible**: Balanced security with broader client support.
 - **Legacy**: Basic security for outdated clients.
 
