@@ -2,37 +2,51 @@
 description: Installing Umbraco Forms
 ---
 
-# Installing Umbraco Forms
+# Installing Umbraco Forms 
 
-Umbraco contains the **Forms** section, by default. You will see a similar interface, when you click on the **Forms** section in the **Umbraco Backoffice**.
+This article covers two ways to install Umbraco Forms:
 
-![Form section in backoffice](images/Forms\_Section\_Backoffice.png)
+* [Via NuGet](#installation-via-nuget), or
+* [Via a Terminal](#installing-using-the-terminal).
 
-## Video Tutorial
+## Prerequisites
 
-{% embed url="https://www.youtube.com/watch?v=3Aojbp_1MPc" %}
+An Umbraco CMS website set up locally or in a development environment.
 
-To install the Umbraco Forms package (**Umbraco.Forms**), follow these steps:
+## Installation via NuGet
 
-1.  Identify the Umbraco CMS version your project is running.
-2.  Find a compatible version of Umbraco Forms that matches your Umbraco CMS version. A list of Umbraco Forms versions can be found on [nuget.org](https://www.nuget.org/packages/Umbraco.Forms#versions-body-tab).
-3.  Run the following command on a command prompt of your choice, replacing `<version_number>` with the appropriate version identified above:
+To install Umbraco Forms using NuGet in Visual Studio, follow these steps:
 
-    ```cs
-    dotnet add package Umbraco.Forms --version <version_number>
-    ```
-4.  Restart the web application using the following command:
+1. Open the project in Visual Studio.
+2. Go to **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
+3. Select the **Browse** tab.
+4. Search for `Umbraco.Forms`.
+5. Select the package.
+6. Choose the project you want to install it into.
+7. Install the latest stable version of the package.
 
-    ```cs
-     dotnet run
-    ```
+## Installing using the terminal
+
+You can also install Umbraco Forms using a terminal. Follow these steps:
+
+1. Open a terminal of your choice.
+2. Navigate to the folder containing your Umbraco CMS project.
+3. Install the `Umbraco.Forms` NuGet package with the following command:
+
+```console
+dotnet add package Umbraco.Forms
+```
+
+4. Build and run your project.
 
 ## Start Building Forms
 
-Once the installation is successful, you will see a similar screen in the **Forms** section:
+Once the installation is complete and the site is running, you will see a **Forms** section in the Umbraco backoffice similar to the screen below:
 
 ![Create form](images/start-with-forms-v14.png)
 
+The next step is to [configure the license](licensing.md).
+
 ## Using Forms
 
-For details on using Forms, see the [Editor Documentation](../editor/creating-a-form/README.md).
+For details on creating and managing forms, see the [Editor Documentation](../editor/creating-a-form/README.md).
