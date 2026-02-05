@@ -60,7 +60,7 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/s/HKthAwBJOkU2Xzt1IHX4/" %}
-[What are Sales Tax Providers?](https://app.gitbook.com/s/HKthAwBJOkU2Xzt1IHX4/)
+[Commerce Sales Tax Providers](https://app.gitbook.com/s/HKthAwBJOkU2Xzt1IHX4/)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FW5BR4euWkgLSfJs4O4r/" %}
