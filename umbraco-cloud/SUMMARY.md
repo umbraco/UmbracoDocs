@@ -165,6 +165,7 @@
   * [January 2026](release-notes/overview-2026/2026-01-releasenotes.md)
 * [Archive](release-notes/archive/README.md)
   * [Overview 2025](release-notes/archive/overview-2025/README.md)
+    * [December 2025](release-notes/archive/overview-2025/2025-12-releasenotes.md)
     * [October 2025](release-notes/archive/overview-2025/2025-10-releasenotes.md)
     * [September 2025](release-notes/archive/overview-2025/2025-09-03-releasenotes.md)
     * [June 2025](release-notes/archive/overview-2025/2025-06-releasenotes.md)
