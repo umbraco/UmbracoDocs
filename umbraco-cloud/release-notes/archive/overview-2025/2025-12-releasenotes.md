@@ -12,7 +12,7 @@
 
 Custom Login Provider support for Umbraco Cloud is now generally available. You can integrate your organization's identity provider to manage access to the Cloud Portal and projects. Use your existing authentication flows and policies.
 
-See the [Organization Login Providers documentation](../../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md) for more details.
+See the [Organization Login Providers documentation](../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md) for more details.
 
 ## TLS cipher suite updates
 
