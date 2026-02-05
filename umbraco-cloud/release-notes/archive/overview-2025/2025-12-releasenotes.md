@@ -46,4 +46,4 @@ The test is controlled and does not affect existing projects or regions outside 
 
 The policy provides a predictable timeline for all Umbraco Cloud projects that reach end-of-life. You can now do up-front and long-term planning for your clients on Cloud.
 
-[See the full policy in the Umbraco Cloud documentation](../../../optimize-and-maintain-your-site/manage-product-upgrades/end-of-service-policy.md) along with dates and milestones for all major CMS versions.
+[See the full policy in the Umbraco Cloud documentation](../../optimize-and-maintain-your-site/manage-product-upgrades/end-of-service-policy.md) along with dates and milestones for all major CMS versions.
