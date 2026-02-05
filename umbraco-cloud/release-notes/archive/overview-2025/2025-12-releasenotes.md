@@ -12,7 +12,7 @@
 
 Custom Login Provider support for Umbraco Cloud is now generally available. You can integrate your organization's identity provider to manage access to the Cloud Portal and projects. Use your existing authentication flows and policies.
 
-See the [Organization Login Providers documentation](../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md) for more details.
+See the [Organization Login Providers documentation](../../../begin-your-cloud-journey/the-cloud-portal/organizations/organization-login-providers.md) for more details.
 
 ## TLS cipher suite updates
 
@@ -28,7 +28,7 @@ Adjust these settings under **Security > Transport Security** in your project se
 
 No action is required for existing projects. As always, periodically review your security configurations to ensure they align with current best practices.
 
-See the [Managing Transport Security documentation](../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md) for more details.
+See the [Managing Transport Security documentation](../../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md) for more details.
 
 ## Improved handling and notifications for project usage limits
 
