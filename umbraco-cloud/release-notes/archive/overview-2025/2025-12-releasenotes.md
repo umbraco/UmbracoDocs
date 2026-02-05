@@ -28,7 +28,7 @@ Adjust these settings under **Security > Transport Security** in your project se
 
 No action is required for existing projects. As always, periodically review your security configurations to ensure they align with current best practices.
 
-See the [Managing Transport Security documentation](../../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md) for more details.
+See the [Managing Transport Security documentation](../../build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md) for more details.
 
 ## Improved handling and notifications for project usage limits
 
