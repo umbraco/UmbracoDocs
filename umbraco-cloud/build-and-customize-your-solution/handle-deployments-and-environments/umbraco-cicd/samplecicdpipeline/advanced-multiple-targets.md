@@ -1,5 +1,7 @@
 ---
-description: Learn how to set up your CI/CD pipeline to include more than one target environment.
+description: >-
+  Learn how to set up your CI/CD pipeline to include more than one target
+  environment.
 ---
 
 # Advanced Setup: Deploy to multiple targets
@@ -14,20 +16,15 @@ If a deployment is already in progress to a named environment, it will not be po
 
 {% tabs %}
 {% tab title="Azure DevOps" %}
-
 1. Replace the `azure-release-pipeline.yaml` with the file called `azure-release-pipeline-more-targets.yaml`. It's okay to rename `azure-release-pipeline-more-targets.yaml`.
-
-The file can be found in these locations within the sample files:
-
-* Bash: `/V2/bash/azuredevops/advanced`
-* PowerShell: `/V2/powershell/azuredevops/advanced`
-
+   * The file can be found in these locations within the sample files:
+     * Bash: `/V2/bash/azuredevops/advanced`
+     * PowerShell: `/V2/powershell/azuredevops/advanced`
 2. Ensure you don't have multiple YAML files that contain triggers (unless you designed your pipeline's workflow that way).
 3. Fetch the aliases of the environments you want to target from the Cloud portal.
 4. Insert the aliases into the following placeholders in `azure-release-pipeline-more-targets.yaml`:
-  * `##Your target environment alias here##`
-  * `##Your other target environment alias here##`
-
+   * `##Your target environment alias here##`
+   * `##Your other target environment alias here##`
 5. Fill in the `projectId` placeholder if you haven't already: `##Your project ID here##`.
 6. Look at the triggers for the pipeline:
 
@@ -72,22 +69,17 @@ The triggering branch is evaluated in the `if [ "$(Build.SourceBranchName)" = "m
 
 The code will write which alias is targeted and write a pipeline variable (`targetEnvironment`). This variable is used by steps later.
 
-When updating the triggering branch names, it must be updated in the two mentioned places: 
+When updating the triggering branch names, it must be updated in the two mentioned places:
 
 * The trigger
 * The script
-
 {% endtab %}
 
 {% tab title="GitHub Actions" %}
-
 1. Replace the `main.yml` with the one called `main-more-targets.yml`. It's okay to rename `main-more-targets.yml`.
-
-The file can be found in these locations within the sample files:
-
-* Bash: `/V2/bash/github/advanced`
-* PowerShell: `/V2/powershell/github/advanced`
-
+   * The file can be found in these locations within the sample files:
+     * Bash: `/V2/bash/github/advanced`
+     * PowerShell: `/V2/powershell/github/advanced`
 2. Ensure you don't have multiple YAML files that contain triggers (unless you designed your pipeline's workflow that way).
 3. Fetch the aliases of the environments you want to target from the Cloud portal.
 4. Go to the repository in GitHub, and navigate to the Settings section.
@@ -144,10 +136,9 @@ The triggering branch is evaluated in the statement `if [[ "${{ github.ref_name 
 
 The code will write which alias is targeted and write a pipeline variable (`targetEnvironmentAlias`). This variable is used by jobs later.
 
-When updating the triggering branch names, it must be updated in the two mentioned places: 
+When updating the triggering branch names, it must be updated in the two mentioned places:
 
 * The trigger
 * The script
-
 {% endtab %}
 {% endtabs %}

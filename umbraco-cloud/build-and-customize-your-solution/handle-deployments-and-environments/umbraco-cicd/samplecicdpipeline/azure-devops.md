@@ -1,10 +1,12 @@
 ---
-description: This section provides a step-by-step guide to setting up a CI/CD pipeline in Azure DevOps using a provided sample.
+description: >-
+  This section provides a step-by-step guide to setting up a CI/CD pipeline in
+  Azure DevOps using a provided sample.
 ---
 
 # Azure DevOps
 
-Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](README.md) article are complete:
+Before setting up the pipeline in Azure DevOps, make sure that the following steps from the [Configuring a CI/CD pipeline](./) article are complete:
 
 * Pick a Cloud project.
 * Activate CI/CD Flow.
@@ -86,61 +88,56 @@ The next steps are outlined based on the scripting language you prefer using.
 {% tab title="Powershell" %}
 For a pipeline that uses PowerShell scripts, you will need the following files:
 
-| Root (/) | powershell/ | powershell/azuredevops/ |
-| :--- | :--- | :--- |
-| `cloud.zipignore` | `Get-LatestDeployment.ps1` | `azure-release-pipeline.yml` |
-| | `Get-ChangesById.ps1` | `cloud-sync.yml` |
-| | `Apply-Patch.ps1` | `cloud-artifact.yml` |
-| | `Add-DeploymentArtifact.ps1` | `cloud-deployment.yml` |
-| | `Start-Deployment.ps1` | |
-| | `Test-DeploymentStatus.ps1` | |
+| Root (/)          | powershell/                  | powershell/azuredevops/      |
+| ----------------- | ---------------------------- | ---------------------------- |
+| `cloud.zipignore` | `Get-LatestDeployment.ps1`   | `azure-release-pipeline.yml` |
+|                   | `Get-ChangesById.ps1`        | `cloud-sync.yml`             |
+|                   | `Apply-Patch.ps1`            | `cloud-artifact.yml`         |
+|                   | `Add-DeploymentArtifact.ps1` | `cloud-deployment.yml`       |
+|                   | `Start-Deployment.ps1`       |                              |
+|                   | `Test-DeploymentStatus.ps1`  |                              |
 
-### Prepare the pipeline
+#### Prepare the pipeline
 
 1. Copy the `cloud.zipignore` file to the root of your repository.
 2. Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`.
-  * Both files should be in the root of your repository.
+   * Both files should be in the root of your repository.
 3. Add the line `**/git-patch.diff` to the bottom of the `.gitignore`file.
 4. Create a folder in the root, and call it `devops`.
 5. Copy the 4 YAML files from the `powershell/azuredevops` folder into the `devops` folder.
 6. Create an additional folder within `devops`, and call it `powershell`.
 7. Copy the PowerShell scripts from the `powershell` folder to the `powershell` folder.
 8. Commit all changes and push to Azure DevOps.
-
 {% endtab %}
 
 {% tab title="Bash" %}
-
 For a pipeline that uses Bash scripts, you will need the following files:
 
-| Root (/) | bash/ | bash/azuredevops/ |
-| :--- | :--- | :--- |
+| Root (/)          | bash/                      | bash/azuredevops/            |
+| ----------------- | -------------------------- | ---------------------------- |
 | `cloud.zipignore` | `get_latest_deployment.sh` | `azure-release-pipeline.yml` |
-| | `get_changes_by_id.sh` | `cloud-sync.yml` |
-| | `apply-patch.sh` | `cloud-artifact.yml` |
-| | `upload_artifact.sh` | `cloud-deployment.yml` |
-| | `start_deployment.sh` | |
-| | `get_deployment_status.sh` | |
+|                   | `get_changes_by_id.sh`     | `cloud-sync.yml`             |
+|                   | `apply-patch.sh`           | `cloud-artifact.yml`         |
+|                   | `upload_artifact.sh`       | `cloud-deployment.yml`       |
+|                   | `start_deployment.sh`      |                              |
+|                   | `get_deployment_status.sh` |                              |
 
-### Prepare the pipeline
+#### Prepare the pipeline
 
 1. Copy the `cloud.zipignore` file to the root of your repository.
 2. Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`.
-  * Both files should be in the root of your repository.
+   * Both files should be in the root of your repository.
 3. Add the line `**/git-patch.diff` at the bottom of the `.gitignore` file.
 4. Create a folder in the root and call it `devops`.
 5. Copy the 4 YAML files from the `bash/azuredevops` folder into the `devops` folder.
 6. Create an additional folder within `devops` and call it `scripts`.
 7. Copy the Bash scripts from the `bash` folder to the `scripts` folder.
 8. Commit all changes and push to Azure DevOps.
-
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-
-To learn more about the components used in the pipeline, read the [High-level overview of the pipeline components](#high-level-overview-of-the-pipeline-components) section further down this article.
-
+To learn more about the components used in the pipeline, read the [High-level overview of the pipeline components](azure-devops.md#high-level-overview-of-the-pipeline-components) section further down this article.
 {% endhint %}
 
 ## Configure Azure DevOps
@@ -238,9 +235,7 @@ If you want to customize the artifact, take a look at the [Artifact Best Practic
 The `cloud-deployment.yml` shows how to deploy to a named environment of your Cloud project. The sample shows how to request the deployment and wait for the Cloud to finish the operation.
 
 {% hint style="info" %}
-
 If you have frontend assets that need to be built (using tools like npm/yarn or others), you should add the required steps before `cloudPrepareArtifact`. This ensures that the fresh frontend assets are included in the package sent to Umbraco Cloud.
-
 {% endhint %}
 
 ## Next steps

@@ -1,5 +1,7 @@
 ---
-description: Learn how to troubleshoot and debug different scenarios you might encounter while using the CI/CD feature.
+description: >-
+  Learn how to troubleshoot and debug different scenarios you might encounter
+  while using the CI/CD feature.
 ---
 
 # Troubleshooting
@@ -8,7 +10,7 @@ description: Learn how to troubleshoot and debug different scenarios you might e
 
 ### Using `RestorePackagesWithLockFile` in your `.csproj` file
 
-If `RestorePackagesWithLockFile` is set to true, you will experience that no changes are made to the website. 
+If `RestorePackagesWithLockFile` is set to true, you will experience that no changes are made to the website.
 
 This happens even though the CI/CD deployments were successfull, and files were updated as expected in the Cloud repository. The reason for this is that the Kudu deployment process fails. This process takes the newly committed files from the Cloud repository and runs the restore, build, and publish operations on the Cloud environment.
 
@@ -48,10 +50,10 @@ You need to _manually_ ensure that all the latest changes on your left-most main
 
 Once this is done, you can run a new deployment that skips the `cloud-sync` step.
 
-* [How to skip cloud-sync in GitHub](#how-to-skip-cloud-sync-in-github)
-* [How to skip cloud-sync in Azure DevOps](#how-to-skip-cloud-sync-in-azure-devops)
+* [How to skip cloud-sync in GitHub](troubleshooting.md#how-to-skip-cloud-sync-in-github)
+* [How to skip cloud-sync in Azure DevOps](troubleshooting.md#how-to-skip-cloud-sync-in-azure-devops)
 
-If you experience problems with your environment not properly booting up after deployment, read the [Unable to determine environment by its {environment-id}](#unable-to-determine-environment-by-its-environment-id) guide.
+If you experience problems with your environment not properly booting up after deployment, read the [Unable to determine environment by its {environment-id}](troubleshooting.md#unable-to-determine-environment-by-its-environment-id) guide.
 
 ### “Apply Remote Changes” step is failing
 
@@ -91,7 +93,7 @@ The screenshots below provide an example:
 At this point, the pipeline should execute successfully, and your changes will be pushed to Umbraco Cloud. If this is the case, proceed to the next step.
 
 6. Remove the comments added in step 4 and make a new commit.
-  - Optional: Add "\[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
+   1. Optional: Add "\[skip ci]" to the last commit message, to avoid automatically triggering the pipeline
 7. Push these changes to GitHub.
 
 Your pipeline should now function as expected.
@@ -199,17 +201,16 @@ In rare cases, deployments fail, and the Cloud infrastructure doesn't clean up c
 To fix this issue, use [Kudu](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/) to remove the leftover marker file.
 
 1. Access Kudu on the affected environment.
-  * If you only have one environment, you want the live environment.
-  * If you use V1 endpoints and have more than one environment, you want the left-most mainline environment.
-2. Navigate to the `site` > `locks` folder. 
+   1. If you only have one environment, you want the live environment.
+   2. If you use V1 endpoints and have more than one environment, you want the left-most mainline environment.
+2. Navigate to the `site` > `locks` folder.
 3. Locate the file named `updating`.
 4. Remove the `updating` file.
 5. Run the pipeline to verify whether the issue has been resolved.
 
 ### Unable to verify the deployment has finished
 
-This error will be shown when the system can't verify that the latest deployment has been pushed and deployed in Kudu.
-When a change is pushed to a Cloud Environment, the Kudu deployment is started. CI/CD is also utilizing this flow.
+This error will be shown when the system can't verify that the latest deployment has been pushed and deployed in Kudu. When a change is pushed to a Cloud Environment, the Kudu deployment is started. CI/CD is also utilizing this flow.
 
 The [Project History page](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md) offers information on CI/CD flow deployments. Navigate to the deployment and inspect the `Deployment Kudu Log` for insights.
 
@@ -217,13 +218,13 @@ The [Project History page](../../../optimize-and-maintain-your-site/monitor-and-
 
 Below is a list of different options for fixing the issue:
 
-- Ensure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2).
-- For a project running Umbraco 15 or later, make sure the `CompressionEnabled` setting is set to false.
-  - The static assets compression operation on the app service is resource-intensive and slows down the Kudu deployment.
-- Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud.
-- Create and commit a small change and try deploying again.
-  - A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
-- Make sure your artifact is following [the best practice](./samplecicdpipeline/artifact-best-practice.md).
+* Ensure your code can compile and run (relevant only if you have enabled the `skipBuildAndRestore` toggle in V2).
+* For a project running Umbraco 15 or later, make sure the `CompressionEnabled` setting is set to false.
+  * The static assets compression operation on the app service is resource-intensive and slows down the Kudu deployment.
+* Running npm commands via `.csproj` files is generally unsupported on Umbraco Cloud.
+* Create and commit a small change and try deploying again.
+  * A small change can be adding a dummy text file next to your code files or adding a comment in a `.cs` file.
+* Make sure your artifact is following [the best practice](samplecicdpipeline/artifact-best-practice.md).
 
 ## Environment errors after deployment
 
