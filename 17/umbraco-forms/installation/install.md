@@ -2,7 +2,7 @@
 description: Installing Umbraco Forms
 ---
 
-# Installing Umbraco Forms
+# Installing Umbraco Forms 
 
 This article covers two ways to install Umbraco Forms:
 
