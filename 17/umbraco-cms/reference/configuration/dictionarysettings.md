@@ -1,5 +1,5 @@
 ---
-description: "Information on the dictionary settings section."
+description: Information on the dictionary settings section.
 ---
 
 # Dictionary Settings
