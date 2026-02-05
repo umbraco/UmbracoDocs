@@ -36,7 +36,7 @@ Umbraco is highly customizable which means you can integrate it with anything an
 
 Umbraco uses ASP.NET and MVC patterns and you can extend and write your own controllers using the approach outlined in this section.
 
-![Umbraco on devices](../../../new-backoffice/.gitbook/assets/backoffice.png)
+![Umbraco on devices](../../.gitbook/assets/Umbraco_Brand_Guidelines_2020_30_Illustrationbuilding.png)
 
 ## Integrated Development Environment (IDE) recommendations
 

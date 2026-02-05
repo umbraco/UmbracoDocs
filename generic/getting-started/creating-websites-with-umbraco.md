@@ -10,7 +10,7 @@ In this section, you will find information on which frameworks, languages, and p
 
 There is a set of key concepts that you will need to familiarize yourself with. This section will give you the details you need as well as introduce you to how you can work with them in the Umbraco backoffice.
 
-![Umbraco tree image](developing-websites-with-umbraco/images/Headless\_Email\_hero\_780x405px.png)
+![Umbraco tree image](../.gitbook/assets/Headless_Email_hero_780x405px.png)
 
 We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
 
@@ -20,7 +20,7 @@ Your website's content is based on **Document Types**. Each of these Document Ty
 
 Once you've created content based on the Document Types, they will be published on your website using **Templates**.
 
-![Example of tree content structure](images/contentstructure.png)
+![Example of tree content structure](../.gitbook/assets/contentstructure.png)
 
 There are a lot of terminologies here! Let's look at breaking those terms down:
 
@@ -36,7 +36,7 @@ There are a lot of terminologies here! Let's look at breaking those terms down:
 
 [Learn how to create a website with Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/creating-a-basic-website)
 
-[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI\&list=PLgX62vUaGZsFBcq9eSJ\_178rXgn82sJ-T)
+[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI\&list=PLgX62vUaGZsFBcq9eSJ_178rXgn82sJ-T)
 
 ## Other resources
 

@@ -20,8 +20,8 @@ In this section you will find information on the key concepts and requirements o
 
 [How do I manage users with Umbraco?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/users)
 
-[What is the deployment process for Umbraco?](https://app.gitbook.com/s/PzKn70Piyd2fd5UkYZGf/deployments/deployment)
+[What is the deployment process for Umbraco?](https://app.gitbook.com/s/PzKn70Piyd2fd5UkYZGf/build-and-customize-your-solution/handle-deployments-and-environments/deployment)
 
 [What is the Umbraco Community?](https://community.umbraco.com)
 
-![Umbraco business](<../../10/umbraco-workflow/.gitbook/assets/Documentation\_blogpost\_styleguide\_b (1) (1) (1).png>)
+![Umbraco business](<../.gitbook/assets/Documentation_blogpost_styleguide_b (1).png>)

@@ -72,4 +72,4 @@ If you're in a creative mood then why not experiment with some of our tutorials:
 
 [Creating a Package](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/extending/packages#creating-a-package)
 
-![Extending Umbraco](images/Headless\_Email\_hero\_780x405px.png)
+![Extending Umbraco](../../.gitbook/assets/Headless_Email_hero_780x405px.png)

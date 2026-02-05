@@ -38,4 +38,4 @@ When you're developing with Umbraco you might sometimes run into some errors and
 * [General debugging](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/code/debugging)
 * [Debugging with SourceLink](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/reference/debugging)
 
-![Umbraco packages](images/corona\_blogpost\_05SoMe\_768x432px.png)
+![Umbraco packages](../../.gitbook/assets/corona_blogpost_05SoMe_768x432px.png)
