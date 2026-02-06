@@ -96,6 +96,10 @@ For example, to change the Serilog's default options under `Serilog:MinimumLevel
 
 `Serilog__MinimumLevel__Default`
 
+If you need to use a dot as part of the app setting, it should be replaced with a single underscore.
+
+The app setting `Umbraco:Licenses:Products:Umbraco.Commerce` should become `Umbraco__Licenses__Products__Umbraco_Commerce`.
+
 The value defined in `appsettings.json` file will be overwritten with the Cloud Secret's value.
 
 ## Naming standards for secrets
