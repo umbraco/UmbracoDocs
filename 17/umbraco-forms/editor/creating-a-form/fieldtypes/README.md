@@ -19,7 +19,7 @@ By default, the following Field Types are available:
 * [File Upload](fileupload.md): Allows the user to select and upload a local file.
 
     ![File upload](images/fileupload-v14.png)
-* **Password**: Allows to type a password. The input is not visible when typing.
+* **Password**: Allows typing a password. The input is not visible when typing.
 
     ![Password field](images/password-v14.png)
 * **Multiple Choice**: Displays a list of items with a checkbox for each item where the user can select multiple options.
