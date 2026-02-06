@@ -1,6 +1,6 @@
 # Overview Of The Field Types
 
-Umbraco Forms comes with a bunch of default Field Types also known as **Answer Types**. You can choose from different field types when adding new fields to your Forms.
+Umbraco Forms comes with a bunch of default Field Types, also known as **Answer Types**. You can choose from different field types when adding new fields to your Forms.
 
 By default, the following Field Types are available:
 
@@ -16,7 +16,7 @@ By default, the following Field Types are available:
 * **Checkbox**: Displays a single checkbox that can be checked or not.
 
     ![Checkbox](images/CheckBox-v14.png)
-* [File Upload](fileupload.md): Allows user to select and upload a local file.
+* [File Upload](fileupload.md): Allows the user to select and upload a local file.
 
     ![File upload](images/fileupload-v14.png)
 * **Password**: Allows to type a password. The input is not visible when typing.
@@ -28,7 +28,7 @@ By default, the following Field Types are available:
 * **Data Consent**: A field for the purpose of asking for data consent. By default, this field is added to all new Forms.&#x20;
 
     ![Data Consent](images/dataconsent-v14.png)
-* **Dropdown**: Displays a list of items in a drop down box where the user can select a single option.
+* **Dropdown**: Displays a list of items in a drop-down box where the user can select a single option.
 
     ![Dropdownlist](images/dropdown-v14.png)
 * **Single Choice**: Displays a list of items with a radio button for each item where the user can select a single option.
@@ -43,10 +43,10 @@ By default, the following Field Types are available:
 * **Hidden**: A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.
 
     ![Hidden](images/hidden-v14.png)
-* [Recaptcha V2](recaptcha2.md): The field displays a single checkbox for the user to select in order to validate the Form.
+* [Recaptcha V2](recaptcha2.md): The field displays a single checkbox for the user to select to validate the Form.
 
     ![reCAPTCHA v2](images/recaptcha2-v14.png)
 * [Recaptcha V3 with Score](recaptcha3.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
 
-    ![reCAPTCHA v3](images/recaptcha3-v14.png)
+    ![reCAPTCHA v3](images/recaptcha3-v14.png) 
 * [Recaptcha Enterprise with Score](recaptcha-enterprise.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
