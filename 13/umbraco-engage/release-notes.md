@@ -16,6 +16,12 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.7.4**](https://www.nuget.org/packages/Umbraco.Engage/13.7.4) **(February 5th 2026)**
+
+* Added the ability to choose 'All cultures' from the Pageview Goal Picker.
+* Resolves an issue where `HttpContext.Request` was being corrupted in the `UrlUmbracoPageVariantExtractor`, which could cause unexpected behavior during page variant extraction.
+* Resolves issues with path handling in Headless CM/CD server configurations.
+
 [**13.7.3**](https://www.nuget.org/packages/Umbraco.Engage/13.7.3) **(January 8th 2026)**
 
 * Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
