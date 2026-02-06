@@ -167,7 +167,8 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 * `Umbraco__CMS__DeliveryAPI__`
 * `UMBRACO__LICENSES__`
 * `UMBRACO__AUTHORIZEDSERVICES__`
-* `UMBRACO__COMMERCE__`
+* `UMBRACO__COMMERCE__`,
+* `UMBRACO__AI__`
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
