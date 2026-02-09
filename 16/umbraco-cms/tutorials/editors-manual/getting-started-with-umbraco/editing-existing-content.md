@@ -27,7 +27,7 @@ When you [enable Collection](#enabling-collection) on a page, its child pages ar
 
 2. **Grid**
 
-You can switch between list and grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
+You can switch to the grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
 
 ![Grid](../../../.gitbook/assets/grid-view-v14.png)
 
