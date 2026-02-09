@@ -148,6 +148,7 @@ The page you choose should have a _Form Picker_ Data Type which you can add in t
 
 You will be able to select from the full list of forms. If available on your installation, you can select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
-    ![Content page add macro](images/ContentPageAddForm-v17.png)
+![Content page add macro](images/ContentPageAddForm-v17.png)
+
 4. Click **Choose**.
-5. The Form is inserted on your page. Click **Save and publish**.
+5. Click **Save and publish**.
