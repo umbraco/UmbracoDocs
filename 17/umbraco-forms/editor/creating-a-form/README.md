@@ -4,7 +4,7 @@ This article walks you through creating a basic form in Umbraco Forms and adding
 
 ## Accessing the Forms Section
 
-You can manage the Forms in the **Forms** section of the Umbraco backoffice. You need to have access to the section in order to see it.
+You can manage the Forms in the **Forms** section of the Umbraco backoffice. You need access to the section to see it.
 
 If you cannot see the **Forms** section, ask an Administrator to grant you access from the **Users** section.
 
