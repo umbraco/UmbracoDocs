@@ -90,17 +90,17 @@ You can use the method, getting it from the System namespace in .NET as below:
 
 Secrets can also be used to override AppSettings defined in `appsettings.json` files.
 
-In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores.
+For this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores.
 
 For example, to change the Serilog's default options under `Serilog:MinimumLevel:Default`, the Secret key would look like this:
 
 `Serilog__MinimumLevel__Default`
 
-If you need to use a dot as part of the app setting, it should be replaced with a single underscore.
+If you need to use a dot (`.`) as part of the app setting, it should be replaced with a single underscore.
 
 The app setting `Umbraco:Licenses:Products:Umbraco.Commerce` should become `Umbraco__Licenses__Products__Umbraco_Commerce`.
 
-The value defined in `appsettings.json` file will be overwritten with the Cloud Secret's value.
+The value defined in the `appsettings.json` file will be overwritten with the Cloud Secret's value.
 
 ## Naming standards for secrets
 
