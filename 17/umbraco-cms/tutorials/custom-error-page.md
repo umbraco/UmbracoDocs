@@ -39,13 +39,13 @@ A 404 error occurs when a requested page cannot be found, usually due to deleted
 1. Go to the **Settings** section in the backoffice.
 2. Create a new **Document Type with Template**.
 3. Name the Document Type _Page Not Found_.
-4. \[Optional] Add custom properties (for example, title, message), though most 404 pages are static.
+4. [Optional] Add custom properties (for example, title, message), though most 404 pages are static.
 5. Click **Save**.
 6. Go to the **Templates** folder and edit the generated template.
 7. Add your custom markup and design for the error page in the template.
 8. Click **Save**.
 
-### \[Optional] Create a Container for Error Pages
+### [Optional] Create a Container for Error Pages
 
 You can create a _Page Not Found_ page directly in your content tree, or organize it within a container for error pages. Using a container allows for better content organization, especially if you plan to handle multiple status codes (for example, 404, 500, maintenance, and so on). Both options work as long as the page ID is referenced correctly in the `appsettings.json` file.
 
@@ -62,11 +62,8 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
 ### Add the Content
 
 1. Go to the **Content** section.
-2. Create a new content node based on the _Error Pages Container_ Document Type. For example _Home Page_.
+2. Create a new content node based on the _Error Pages Container_ Document Type. For example _Error Page_.
 3. Click **Save** or **Save and Publish**.
-
-![Parent Content Node](../.gitbook/assets/content-node.png)
-
 4. Create a child node, using the _Page Not Found_ Document Type.
 5. Name it _Page Not Found_ or similar.
    * This will be the content shown when a 404 error occurs.
@@ -127,7 +124,7 @@ It is also possible to set up a 404 error page programmatically using `IContentL
 
 Before following this example, follow the [Create a Page Not Found page in the backoffice](custom-error-page.md#create-a-page-not-found-page-in-the-backoffice) part. The example below will use the _Page Not Found_ alias of the Document Type to find and display the error page.
 
-1. Create a new `.cs` file called _PageNotFound_ at the root of the project.
+1. Create a new `.cs` file called `PageNotFound.cs` at the root of the project.
 2. Add the following code to the newly created class:
 
 {% code title="PageNotFound.cs" lineNumbers="true" %}
