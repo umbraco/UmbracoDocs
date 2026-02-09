@@ -25,24 +25,13 @@ To create a Form, follow these steps:
 9. Select **Short Answer** in the **Choose field type** dialog.
 10. Enter the following values in the **Edit field** window:
 
-    | Field Name         | Value                |
-    | ------------------ | -------------------- |
-    | Enter a name       | Name                 |
-    | Enter help text    | Enter your name here |
+| Field Name         | Value                |
+| ------------------ | -------------------- |
+| Enter a name       | Name                 |
+| Enter help text    | Enter your name here |
 
-11. Configure additional settings as needed:
-    * **Sensitive data**: Enable the field if the data should be restricted.
-
-    Once enabled, the data from this field cannot be downloaded and viewed by users who do not have permission. Only members of the sensitive data user group will see this option of downloading.
-
-    * **Mandatory**: Enable the field and customize the validation message.
-    * **Show Label**: Choose whether the field label should be visible when the form is rendered. By default, the field is enabled.
-    * **Conditions**: Control when the field is shown or hidden. For more information on Conditions, see the [Setting-up conditional logic on fields](conditional-logic.md) article.
-
-    Some settings depend on the selected field type. For example, _Short answer_ fields include options such as **Default Value** and **Placeholder**.
-
-12. Click **Submit** to add the field to the form.
-13. Click **Save**.
+11. Click **Submit** to add the field to the form.
+12. Click **Save**.
 
 Similary, you can add other fields to the form.
 
@@ -153,11 +142,11 @@ To add the Form, follow these steps:
 1. Go to the **Content** section of the Umbraco Backoffice.
 2. Open the content page where you want to display the form.
 
-    The page you choose should have a _Form Picker_ Data Type which you can add in the **Settings** section under **Document Types**.
+The page you choose should have a _Form Picker_ Data Type which you can add in the **Settings** section under **Document Types**.
 
 3. Click **Choose** and select the Form you want to insert.
 
-    You will be able to select from the full list of forms. If available on your installation, you can select using a folder based view, which can be quicker to navigate when many forms have been prepared.
+You will be able to select from the full list of forms. If available on your installation, you can select using a folder based view, which can be quicker to navigate when many forms have been prepared.
 
     ![Content page add macro](images/ContentPageAddForm-v17.png)
 4. Click **Choose**.
