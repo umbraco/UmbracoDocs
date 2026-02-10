@@ -2,7 +2,7 @@
 
 In this section, you will get an overview of how to create and save pages. You will also learn more about how to publish and unpublish your content.
 
-If you are a Cloud user, you will also learn how to compare and transfer content between environments. In Umbraco Cloud, an environment is a separate workspace such as Development, Staging, or Live/Production. It lets you preview and test changes before moving them to your live site. For more information about environments, see the [Environments](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/environments) article.
+If you are a Cloud user, you will also learn how to compare and transfer content between environments. In Umbraco Cloud, an environment is a separate workspace such as Development, Staging, or Live/Production. It lets you preview and test changes before moving them to your live site. For more information about environments, see the [Environments](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/environments) article in the Umbraco Cloud documentation.
 
 ## Creating a New Page
 
