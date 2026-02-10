@@ -56,7 +56,10 @@ internal class OneHomePageOnlyContentTypeFilter : IContentTypeFilter
             .Where(x => docTypeAliasesToExclude.Contains(x.Alias) is false));
     }
 
-    public Task<IEnumerable<ContentTypeSort>> FilterAllowedChildrenAsync(IEnumerable<ContentTypeSort> contentTypes, Guid parentKey)
+    public Task<IEnumerable<ContentTypeSort>> FilterAllowedChildrenAsync(
+        IEnumerable<ContentTypeSort> contentTypes,
+        Guid parentContentTypeKey,
+        Guid? parentContentKey)
         => Task.FromResult(contentTypes);
 }
 ```
