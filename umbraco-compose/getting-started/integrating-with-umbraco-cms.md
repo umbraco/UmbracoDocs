@@ -11,7 +11,7 @@ The Umbraco Compose integration packages allow you to connect an Umbraco CMS ins
 
 The integration provides three main capabilities:
 
-* **Content Type Synchronization** - Document types in Umbraco CMS are automatically converted to JSON type schemas and saved to Compose.
+* **Content Type Synchronization** - Document Types in Umbraco CMS are automatically converted to JSON type schemas and saved to Compose.
 * **Content Synchronization** - Published content is automatically ingested into Compose, keeping your headless content in sync with your CMS.
 * **Data Source Integration** - Use Compose as a data source for content pickers in the Umbraco backoffice.
 
@@ -130,16 +130,16 @@ await app.RunAsync();
 
 Once configured, the Schema package automatically synchronizes content types to Compose whenever they are saved in the Umbraco backoffice.
 
-When you create or modify a document type, the integration:
+When you create or modify a Document Type, the integration:
 
 1. Intercepts the save event.
-2. Convers the Document Type to a JSON Schema that conforms to the Compose format.
+2. Converts the Document Type to a JSON Schema that conforms to the Compose format.
 3. Sends the schema to the Compose Management API as a type schema.
 
-The type schema alias in Compose will match the document type alias in Umbraco. Properties are mapped to their JSON Schema equivalents based on their Umbraco property editor types.
+The type schema alias in Compose will match the Document Type alias in Umbraco. Properties are mapped to their JSON Schema equivalents based on their Umbraco property editor types.
 
 {% hint style="info" %}
-Type schemas are only synchronized when document types are saved. If you have existing document types that you want to synchronize, open each one in the backoffice and save it.
+Type schemas are only synchronized when Document Types are saved. If you have existing Document Types that you want to synchronize, open each one in the backoffice and save it.
 {% endhint %}
 
 Likewise, a similar process occurs whenever you publish a content node. The integration:
@@ -189,5 +189,5 @@ If content is not being synchronized to Compose:
 1. **Verify credentials** - Ensure your Client Id and Client Secret are correct and that the API Application has the required scopes.
 1. **Verify project / environment / collection** - Confirm that you have specified the correct project, environment, and collection in your app settings, environment variables, or entity data picker configuration.
 1. **Check logs** - Check your Umbraco logs for errors.
-1. **Re-save affected content / types** - Sometimes a transient failure might disrupt delivery. Try re-saving the document type or content a second time and see whether it succeeds.
+1. **Re-save affected content / types** - Sometimes a transient failure might disrupt delivery. Try re-saving the Document Type or content a second time and see whether it succeeds.
 1. **Contact support** - If nothing else works, create a ticket from the Umbraco Cloud portal.
