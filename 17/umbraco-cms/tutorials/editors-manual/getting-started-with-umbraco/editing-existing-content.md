@@ -4,7 +4,7 @@
 
 When you are looking to edit content, locate the _**page**_ you want to edit in the Content tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](../../../.gitbook/assets/View-page-v14.png)
+![Viewing Pages in Content Section](images/View-page-v14.png)
 
 To edit existing content, follow these steps:
 
@@ -17,15 +17,15 @@ To edit existing content, follow these steps:
 
 ## View Page Layout
 
-By default, you can view Page layouts in two ways:
+By default, you can view Page layouts in two ways: in a List or in a Grid.
 
-1. **List**
+### List
 
 When you [enable Collection](#enabling-collection) on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a list view within the main content area. For more information, see the [Collection](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md) article.
 
 ![List](../../../.gitbook/assets/List-view-v14.png)
 
-2. **Grid**
+### Grid
 
 You can switch to the grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
 
