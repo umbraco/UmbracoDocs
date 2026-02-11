@@ -53,9 +53,9 @@ Tool modes provide a higher-level abstraction over collection filtering. Instead
 
 ### Why Use Modes?
 
-- **Simpler configuration**: One mode name instead of listing multiple collections
-- **Semantic clarity**: Express intent ("I want content editing tools") rather than technical details
-- **Reduced errors**: No need to remember exact collection names
+- **Simpler configuration**: One mode name instead of listing multiple collections.
+- **Semantic clarity**: Express intent ("I want content editing tools") rather than technical details.
+- **Reduced errors**: No need to remember exact collection names.
 
 ### Base Modes
 
@@ -63,17 +63,17 @@ Base modes map directly to specific tool collections:
 
 | Mode | Collections | Description |
 | --- | --- | --- |
-| `content` | document, document-version, document-blueprint, tag | Content editing, versioning, blueprints, and tags |
-| `content-modeling` | document-type, data-type, media-type | Document and media type definitions |
-| `front-end` | template, partial-view, stylesheet, script, static-file | Templates, views, and assets |
-| `media` | media, imaging, temporary-file | Media library and file uploads |
-| `search` | indexer, searcher | Examine indexes and search |
-| `users` | user, user-group, user-data | Back office user management |
-| `members` | member, member-type, member-group | Front-end member management |
-| `health` | health, log-viewer | Health checks and diagnostics |
-| `translation` | culture, language, dictionary | Localization and translations |
-| `system` | server, manifest, models-builder | Server info and code generation |
-| `integrations` | webhook, redirect, relation, relation-type | External integrations |
+| `content` | document, document-version, document-blueprint, tag | Content editing, versioning, blueprints, and tags. |
+| `content-modeling` | document-type, data-type, media-type | Document and media type definitions. |
+| `front-end` | template, partial-view, stylesheet, script, static-file | Templates, views, and assets. |
+| `media` | media, imaging, temporary-file | Media library and file uploads. |
+| `search` | indexer, searcher | Examine indexes and search. |
+| `users` | user, user-group, user-data | Back office user management. |
+| `members` | member, member-type, member-group | Front-end member management. |
+| `health` | health, log-viewer | Health checks and diagnostics. |
+| `translation` | culture, language, dictionary | Localization and translations. |
+| `system` | server, manifest, models-builder | Server info and code generation. |
+| `integrations` | webhook, redirect, relation, relation-type | External integrations. |
 
 ### Mode Usage Examples
 
@@ -113,9 +113,9 @@ Tool slices provide fine-grained control over which tools are registered based o
 
 ### Why Use Slices?
 
-- **Operation-based filtering**: Include only certain types of operations (for example, read-only browsing)
-- **Safety controls**: Exclude destructive operations like `delete` or `recycle-bin`
-- **Task-specific toolsets**: Enable only the operations needed for a specific workflow
+- **Operation-based filtering**: Include only certain types of operations (for example, read-only browsing).
+- **Safety controls**: Exclude destructive operations like `delete` or `recycle-bin`.
+- **Task-specific toolsets**: Enable only the operations needed for a specific workflow.
 
 ### Available Slices
 
@@ -123,65 +123,65 @@ Tool slices provide fine-grained control over which tools are registered based o
 
 | Slice | Description |
 | --- | --- |
-| `create` | Create entities |
-| `read` | Get single or batch items by ID |
-| `update` | Update entities |
-| `delete` | Delete entities |
+| `create` | Create entities. |
+| `read` | Get single or batch items by ID. |
+| `update` | Update entities. |
+| `delete` | Delete entities. |
 
 #### Tree Navigation
 
 | Slice | Description |
 | --- | --- |
-| `tree` | All tree navigation (root, children, ancestors, siblings) |
-| `folders` | Folder-specific operations |
+| `tree` | All tree navigation (root, children, ancestors, siblings). |
+| `folders` | Folder-specific operations. |
 
 #### Query Operations
 
 | Slice | Description |
 | --- | --- |
-| `search` | Search and filter operations |
-| `list` | List all items |
-| `references` | Reference and dependency queries |
+| `search` | Search and filter operations. |
+| `list` | List all items. |
+| `references` | Reference and dependency queries. |
 
 #### Workflow Operations
 
 | Slice | Description |
 | --- | --- |
-| `publish` | Publishing and unpublishing |
-| `move` | Move operations |
-| `copy` | Copy operations |
-| `sort` | Sort and reorder operations |
-| `validate` | Validation operations |
-| `rename` | Rename file-based entities |
+| `publish` | Publishing and unpublishing. |
+| `move` | Move operations. |
+| `copy` | Copy operations. |
+| `sort` | Sort and reorder operations. |
+| `validate` | Validation operations. |
+| `rename` | Rename file-based entities. |
 
 #### Information Operations
 
 | Slice | Description |
 | --- | --- |
-| `configuration` | Configuration retrieval |
-| `audit` | Audit trail access |
-| `urls` | URL and domain management |
-| `domains` | Domain configuration |
-| `permissions` | User permission queries |
-| `user-status` | User account operations (enable, disable, unlock) |
-| `current-user` | Current user context |
+| `configuration` | Configuration retrieval. |
+| `audit` | Audit trail access. |
+| `urls` | URL and domain management. |
+| `domains` | Domain configuration. |
+| `permissions` | User permission queries. |
+| `user-status` | User account operations (enable, disable, unlock). |
+| `current-user` | Current user context. |
 
 #### Entity Management
 
 | Slice | Description |
 | --- | --- |
-| `notifications` | Content notification settings |
-| `public-access` | Content protection rules |
-| `scaffolding` | Content creation helpers |
-| `blueprints` | Blueprint specialized operations |
+| `notifications` | Content notification settings. |
+| `public-access` | Content protection rules. |
+| `scaffolding` | Content creation helpers. |
+| `blueprints` | Blueprint specialized operations. |
 
 #### System Operations
 
 | Slice | Description |
 | --- | --- |
-| `server-info` | Server status and information |
-| `diagnostics` | Health checks, log viewer, indexer operations |
-| `templates` | Template and snippet helpers |
+| `server-info` | Server status and information. |
+| `diagnostics` | Health checks, log viewer, indexer operations. |
+| `templates` | Template and snippet helpers. |
 
 #### Composite Slices
 
@@ -191,21 +191,21 @@ Tools can have multiple slices assigned to allow fine-grained filtering. For exa
 
 | Slices | Description |
 | --- | --- |
-| `create` + `folders` | Folder creation |
-| `read` + `folders` | Folder reading |
-| `update` + `folders` | Folder updating |
-| `delete` + `folders` | Folder deletion |
-| `list` + `folders` | List folders |
+| `create` + `folders` | Folder creation. |
+| `read` + `folders` | Folder reading. |
+| `update` + `folders` | Folder updating. |
+| `delete` + `folders` | Folder deletion. |
+| `list` + `folders` | List folders. |
 
 **Recycle bin operations:**
 
 | Slices | Description |
 | --- | --- |
-| `delete` + `recycle-bin` | Delete from or empty recycle bin |
-| `move` + `recycle-bin` | Move to or restore from recycle bin |
-| `read` + `recycle-bin` | Read recycle bin info (original parent) |
-| `references` + `recycle-bin` | Get references for recycled items |
-| `tree` + `recycle-bin` | Navigate recycle bin (root, children, siblings) |
+| `delete` + `recycle-bin` | Delete from or empty recycle bin. |
+| `move` + `recycle-bin` | Move to or restore from recycle bin. |
+| `read` + `recycle-bin` | Read recycle bin info (original parent). |
+| `references` + `recycle-bin` | Get references for recycled items. |
+| `tree` + `recycle-bin` | Navigate recycle bin (root, children, siblings). |
 
 
 ### Slice Usage Examples
@@ -237,26 +237,26 @@ When `UMBRACO_INCLUDE_SLICES` is set, only tools matching those slices are regis
 
 The filtering system applies in the following order:
 
-1. **Mode expansion**: Tool modes are expanded to their constituent collections
-2. **Collection merging**: Mode collections are merged with explicit `UMBRACO_INCLUDE_TOOL_COLLECTIONS`
-3. **Collection exclusion**: `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` is applied
-4. **Dependency resolution**: Required collections are automatically included
-5. **User permissions**: Tools are filtered by Umbraco API user permissions
-6. **Slice filtering**: Tools are filtered by operation type (slices)
-7. **Tool-level filtering**: Individual tools can be included or excluded
+1. **Mode expansion**: Tool modes are expanded to their constituent collections.
+2. **Collection merging**: Mode collections are merged with explicit `UMBRACO_INCLUDE_TOOL_COLLECTIONS`.
+3. **Collection exclusion**: `UMBRACO_EXCLUDE_TOOL_COLLECTIONS` is applied.
+4. **Dependency resolution**: Required collections are automatically included.
+5. **User permissions**: Tools are filtered by Umbraco API user permissions.
+6. **Slice filtering**: Tools are filtered by operation type (slices).
+7. **Tool-level filtering**: Individual tools can be included or excluded.
 
 ### Default Behavior
 
-- If no filtering is specified, all collections and tools are loaded
-- Collection dependencies are always resolved automatically
-- User permissions are always enforced
+- If no filtering is specified, all collections and tools are loaded.
+- Collection dependencies are always resolved automatically.
+- User permissions are always enforced.
 
 ### Include vs Exclude
 
-- **Include mode**: Only specified collections/tools are loaded (via modes or explicit includes)
-- **Exclude mode**: All collections/tools are loaded except those specified
-- Tool-level include/exclude can override collection-level decisions
-- Modes and explicit collection includes are merged (union)
+- **Include mode**: Only specified collections/tools are loaded (via modes or explicit includes).
+- **Exclude mode**: All collections/tools are loaded except those specified.
+- Tool-level include/exclude can override collection-level decisions.
+- Modes and explicit collection includes are merged (union).
 
 ## Working with Tool Collections
 
@@ -296,9 +296,9 @@ URL-based and base64 media uploads work without this configuration.
 
 The Umbraco Developer MCP Server supports configuration through multiple methods, allowing flexibility across different environments and workflows:
 
-1. Environment variables defined in the MCP client configuration (for example, Claude Desktop, Visual Studio Code, Cursor)  
-2. A local `.env` file for development
-3. CLI arguments when running the MCP Server directly  
+1. Environment variables defined in the MCP client configuration (for example, Claude Desktop, Visual Studio Code, Cursor).
+2. A local `.env` file for development.
+3. CLI arguments when running the MCP Server directly . 
 
 Configuration precedence:
 
