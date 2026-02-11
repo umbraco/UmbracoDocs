@@ -24,7 +24,7 @@ description: "Host set up for Claude Desktop"
     "umbraco-mcp": 
     {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@17"],
+      "args": ["@umbraco-cms/mcp-dev@17.1"],
       "env": 
       {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
