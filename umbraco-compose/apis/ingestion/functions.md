@@ -81,11 +81,11 @@ To create a new function, you need to send a `POST` request to an endpoint on th
 The endpoint looks like the one below, where you've replaced `{projectAlias}` and `{environmentAlias}` with values matching your project.
 
 ```http
-https:/apidocs.umbracocompose.com#tag/ingestionfunctions/post/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
+[https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
 ```
 
 {% hint style="info" %}
-Ingestion functions can be managed using the [Management Api](https://https/apidocs.umbracocompose.com#tag/ingestionfunctions).
+Ingestion functions can be managed using the [Management Api](https://apidocs.umbracocompose.com#tag/ingestionfunctions).
 {% endhint %}
 
 ```json
