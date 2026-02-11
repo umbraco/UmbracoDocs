@@ -40,7 +40,7 @@ The integrations are distributed as NuGet packages. Each package provides specif
 | ------- | ----------- |
 | `Umbraco.Compose.Integrations.UmbracoCms` | Meta-package that includes all of the below, plus automatic startup configuration. |
 | `Umbraco.Compose.Integrations.UmbracoCms.Core` | Core authentication and configuration. Required by all other packages. |
-| `Umbraco.Compose.Integrations.UmbracoCms.Schema` | Automatic content type to JSON schema synchronization. |
+| `Umbraco.Compose.Integrations.UmbracoCms.TypeSchemaManagement` | Automatic content type to JSON schema synchronization. |
 | `Umbraco.Compose.Integrations.UmbracoCms.Ingestion` | Automatic content synchronization on publish and unpublish. |
 | `Umbraco.Compose.Integrations.UmbracoCms.DataSource` | Use Compose as a data source for content pickers. |
 
