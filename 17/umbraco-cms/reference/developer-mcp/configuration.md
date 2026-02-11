@@ -66,15 +66,15 @@ Base modes map directly to specific tool collections:
 | `content` | document, document-version, document-blueprint, tag | Content editing, versioning, blueprints, and tags. |
 | `content` | `document`, `document-version`, `document-blueprint`, `tag` | Content editing, versioning, blueprints, and tags. |
 | `content-modeling` | `document-type`, `data-type`, `media-type` | Document and media type definitions. |
-| `front-end` | template, partial-view, stylesheet, script, static-file | Templates, views, and assets. |
-| `media` | media, imaging, temporary-file | Media library and file uploads. |
-| `search` | indexer, searcher | Examine indexes and search. |
-| `users` | user, user-group, user-data | Back office user management. |
-| `members` | member, member-type, member-group | Front-end member management. |
-| `health` | health, log-viewer | Health checks and diagnostics. |
-| `translation` | culture, language, dictionary | Localization and translations. |
-| `system` | server, manifest, models-builder | Server info and code generation. |
-| `integrations` | webhook, redirect, relation, relation-type | External integrations. |
+| `front-end` | `template`, `partial-view`, `stylesheet`, `script`, `static-file` | Templates, views, and assets. |
+| `media` | `media`, `imaging`, `temporary-file` | Media library and file uploads. |
+| `search` | `indexer`, `searcher` | Examine indexes and search. |
+| `users` | `user`, `user-group`, `user-data` | Back office user management. |
+| `members` | `member`, `member-type`, `member-group` | Front-end member management. |
+| `health` | `health`, `log-viewer` | Health checks and diagnostics. |
+| `translation` | `culture`, `language`, `dictionary` | Localization and translations. |
+| `system` | `server`, `manifest`, `models-builder` | Server info and code generation. |
+| `integrations` | `webhook`, `redirect`, `relation`, `relation-type` | External integrations. |
 
 ### Mode Usage Examples
 
