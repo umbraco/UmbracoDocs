@@ -64,7 +64,8 @@ Base modes map directly to specific tool collections:
 | Mode | Collections | Description |
 | --- | --- | --- |
 | `content` | document, document-version, document-blueprint, tag | Content editing, versioning, blueprints, and tags. |
-| `content-modeling` | document-type, data-type, media-type | Document and media type definitions. |
+| `content` | `document`, `document-version`, `document-blueprint`, `tag` | Content editing, versioning, blueprints, and tags. |
+| `content-modeling` | `document-type`, `data-type`, `media-type` | Document and media type definitions. |
 | `front-end` | template, partial-view, stylesheet, script, static-file | Templates, views, and assets. |
 | `media` | media, imaging, temporary-file | Media library and file uploads. |
 | `search` | indexer, searcher | Examine indexes and search. |
