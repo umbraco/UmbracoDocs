@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.1.3 (February 12th 2026)
+* Fix reCAPTCHA Enterprise script not loading correctly on the front end
+
 ### [17.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.2) (January 30th 2026)
 * Fix export path resolution for paths starting with `~` [#1610](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1610)
 
