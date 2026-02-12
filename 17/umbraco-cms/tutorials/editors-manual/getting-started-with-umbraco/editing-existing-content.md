@@ -4,7 +4,7 @@
 
 When you are looking to edit content, locate the _**page**_ you want to edit in the Content tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](../../../.gitbook/assets/View-page-v14.png)
+![Viewing Pages in Content Section](images/View-page-v14.png)
 
 To edit existing content, follow these steps:
 
@@ -17,18 +17,21 @@ To edit existing content, follow these steps:
 
 ## View Page Layout
 
-By default, you can view Page layouts in two ways:
+By default, you can view Page layouts in two ways: in a List or in a Grid.
 
-1.  **List**
+### List
 
-    When you enable Collection on a page, there will be no standard tree view for that page. Clicking on the parent page displays the child pages in a list.
+When you [enable Collection](#enabling-collection) on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a list view within the main content area. For more information, see the [Collection](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md) article.
 
-    ![List](../../../.gitbook/assets/List-view-v14.png)
-2.  **Grid**
+![List](../../../.gitbook/assets/List-view-v14.png)
 
-    You can switch between list and grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
+### Grid
 
-    ![Grid](../../../.gitbook/assets/grid-view-v14.png)
+You can switch to the grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
+
+![Grid](../../../.gitbook/assets/grid-view-v14.png)
+
+### Enabling Collection
 
 To enable Collection:
 
@@ -37,9 +40,10 @@ To enable Collection:
 3. Go to the **Structure** tab.
 4. Click **Configure as a Collection** in the Collections field.
 5. Select **List View - Content**.
-6.  Click **Save**.
+6. Click **Save**.
 
-    ![Configure as a Collection](<../../../.gitbook/assets/configure-collection-v14 (1).png>)
+![Configure as a Collection](<../../../.gitbook/assets/configure-collection-v14 (1).png>)
+
 7. Click **Save**.
 
 Additionally, you can sort the list items by the **Name**, **Last Edited**, and **Updated By** columns in either ascending or descending order.
