@@ -9,12 +9,15 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific/) article.
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
+
+### 17.1.3 (February 12th 2026)
+* Fix reCAPTCHA Enterprise script not loading correctly on the frontend
 
 ### [17.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.2) (January 30th 2026)
 * Fix export path resolution for paths starting with `~` [#1610](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1610)
