@@ -12,7 +12,7 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 ### Entities
 
-_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are the Document Types, Data Types, documents, and the live. In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco content. These can still be managed in the Backoffice using custom trees and editors.
+_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are for example the Document Types, Data Types and Documents (content). In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco schema or content. These can still be managed in the Backoffice using custom trees and editors.
 
 For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
@@ -80,7 +80,7 @@ An illustrative data service is provided via dependency injection. This will be 
 {% hint style="info" %}
 Service connectors support a caching mechanism via the `IContextCache` parameter. This allows connectors to read from and write to a cache during deploy operations, improving performance when the same data is requested multiple times.
 
-The example below shows the basic pattern. To leverage the cache, pass the `IContextCache` from the `IDeployContext` to your service calls and store frequently accessed data.
+It's recommended to only cache frequent lookups, e.g. to validate whether a parent entity exists. Deploy provides extension methods in `Umbraco.Deploy.Core.ContextCacheExtensions` for frequently used CMS service calls. If the `IContextCache` parameter is not available, you can create an instance from the `IDeployContext` using `new DeployContextCache(deployContext)`.
 {% endhint %}
 
 ```csharp
@@ -251,7 +251,7 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
 }
 ```
 
-It's also recommended to provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID (and ensure it's not an open/root UDI):
+It's recommended to provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root UDI:
 
 ```csharp
 public static GuidUdi GetUdi(this Example entity)
@@ -515,7 +515,7 @@ public class ExampleDataService : IExampleDataService
 
 #### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
 
-The schema comparison feature available under _Settings > Deploy_ lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+The schema comparison feature available under _Settings > Deploy_, compares Umbraco’s Deploy-managed entities with the data held in the `.uda` files on disk.
 
 All core Umbraco entities, such as Document Types and Data Types, will be shown. Custom entities registered with `RegisterDiskEntityType` are also included.
 
@@ -590,7 +590,7 @@ The `RegisterTransferEntityType` method on the `ITransferEntityService` takes th
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
 * A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity this will likely just be parsing a GUID from a string. For more complex scenarios where there is more than one entity in a single tree, we need a way to distinguish which entity a particular tree node ID is for based on only the ID. Hence it's likely the node ID will need to have a prefix or similar (e.g. "product-[guid]" and "store-[guid]") that this function will need to parse to extract the GUID.
+* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-[guid]" or "store-[guid]".
 * An optional `RemoteTreeDetail` parameter that adds support for implementing Deploy's "partial restore" feature.
 
 {% hint style="info" %}
@@ -640,7 +640,7 @@ Umbraco Deploy improves the efficiency of transfers by caching signatures of eac
 
 When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
 
-If you only need to refresh signatures without writing disk artifacts (for example, for content entities that are transferred via the backoffice rather than disk), you can set `HandleDiskArtifacts = false`:
+If you only need to refresh signatures without writing disk artifacts, you can set `HandleDiskArtifacts = false`. An example of this could be for content entities that are transferred via the backoffice rather than disk:
 
 ```csharp
 private sealed class ExampleSavedDeployRefresherNotificationAsyncHandler

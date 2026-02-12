@@ -30,7 +30,7 @@ The name was only used in the backoffice, for example, to group items in the tra
 
 The `isUmbracoEntity` flag was used when fetching entities in the schema comparison dashboard and for setting signatures. This could only be enabled for built-in Umbraco entities directly supported by Deploy. Custom entities require providing the `installedUdisGetter` or `entitiesGetter` parameter for these features to work correctly. However, getting all entities is already possible via the service connectors (`IServiceConnector.GetRangeAsync()` and `IServiceConnector.GetArtifactAsync()`), making these parameters redundant.
 
-The `treeAlias`, `matchesRoutePath`, and `matchesNodeId` parameters are removed because the client-side already tracks the entity types. It's recommended to use the same entity types on both the client (in workspaces and routes) and the server (in UDIs, artifacts, and service connectors). If different, Deploy supports mapping the client-side entity types to their server-side counterpart using a `deployEntityTypeMapping` manifest, as shown in the following example:
+The `treeAlias`, `matchesRoutePath`, and `matchesNodeId` parameters are removed because the client-side already tracks the entity types. It's recommended to use the same entity types on both the client (workspaces and routes) and the server (UDIs, artifacts, and service connectors). If different, Deploy supports mapping the client-side entity types to their server-side counterpart using a `deployEntityTypeMapping` manifest. This is shown in the following example:
 
 ```json
 {
