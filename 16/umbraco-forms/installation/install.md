@@ -6,8 +6,8 @@ description: Installing Umbraco Forms
 
 This article covers two ways to install Umbraco Forms:
 
-* [Via NuGet](#installation-via-nuget), or
-* [Via a Terminal](#installing-using-the-terminal).
+* [Via NuGet](install.md#installation-via-nuget), or
+* [Via a Terminal](install.md#installing-using-the-terminal).
 
 ## Prerequisites
 
@@ -43,10 +43,10 @@ dotnet add package Umbraco.Forms
 
 Once the installation is complete and the site is running, you will see a **Forms** section in the Umbraco backoffice similar to the screen below:
 
-![Create form](images/start-with-forms-v14.png)
+![Create form](../.gitbook/assets/start-with-forms-v14.png)
 
 The next step is to [configure the license](licensing.md).
 
 ## Using Forms
 
-For details on creating and managing forms, see the [Editor Documentation](../editor/creating-a-form/README.md).
+For details on creating and managing forms, see the [Editor Documentation](../editor/creating-a-form/).

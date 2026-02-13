@@ -10,7 +10,7 @@ By default, when a Form is submitted the record data is stored in the database. 
 
 The behavior to display a message to the user who submitted the form can be configured by clicking on the built-in first workflow step. This step is labelled **Submit message/Go to page**, and it can also configure the redirection to another page.
 
-![Submit message/Go to page](images/MessageOnSubmit-v14.png)
+![Submit message/Go to page](../../.gitbook/assets/MessageOnSubmit-v14.png)
 
 If a value is selected for **Go to page**, it will be used to redirect to that page once the form has been submitted.
 
@@ -18,7 +18,7 @@ If no value is selected, the message in **Message on submit** is displayed to th
 
 By default, the message is created and rendered in plain text. If you need to add formatting to the message, toggle the **Format message in rich text** button.
 
-![Submit message/Go to page](images/MessageOnSubmitRichText-v14.png)
+![Submit message/Go to page](../../.gitbook/assets/MessageOnSubmitRichText-v14.png)
 
 ## Video Tutorial
 
@@ -30,17 +30,17 @@ Attaching Workflows to Umbraco Forms
 
 At the bottom of your Form, a default workflow is already attached to the Form, as well as an option to configure the workflows.
 
-![Button](images/configure-workflows-v14.png)
+![Button](../../.gitbook/assets/configure-workflows-v14.png)
 
 Clicking **Configure workflow** will give you the option to configure existing workflows, as well as setup new ones.
 
-![Workflow add](images/WorkflowsPage-v14.png)
+![Workflow add](../../.gitbook/assets/WorkflowsPage-v14.png)
 
 ### Choose a Workflow
 
 A new workflow can be of different types and Umbraco Forms ships with a few default ones. You can find an overview of the types in the [Workflow types](workflow-types.md) article.
 
-![Workflow add modal](images/WorkflowsAddModel-v14.png)
+![Workflow add modal](../../.gitbook/assets/WorkflowsAddModel-v14.png)
 
 ### Update Type-specific Settings
 
@@ -56,7 +56,7 @@ Select **Enable conditions** to open the condition editor. In the condition edit
 
 For example: You have a form with a dropdown field labeled **Preferred Contact Method** with options such as **Email** and **Phone**. You can set up a workflow that sends an email notification only when the user selects **Email**.
 
-![Workflow Conditions](images/workflow-conditions.png)
+![Workflow Conditions](../../.gitbook/assets/workflow-conditions.png)
 
 Now, this email notification will only be sent when the user selects **Email** as their preferred contact method.
 
@@ -74,10 +74,10 @@ If a workflow encounters an unexpected error, it will silently fail from the per
 
 From Umbraco Forms versions 8.13.0 and 10.1, an audit trail has been made available. In the list of entries for a form, a summary is presented that shows how many workflows were executed, and how many were successful:
 
-![Workflow execution summary](images/workflow-summary.png)
+![Workflow execution summary](../../.gitbook/assets/workflow-summary.png)
 
 For each entry, in the backoffice a table can be viewed that shows each of the workflows and the success, or otherwise, of the operation.
 
-![Workflow execution summary](images/workflow-audit.png)
+![Workflow execution summary](../../.gitbook/assets/workflow-audit.png)
 
 For any workflows that did not complete successfully, a "Retry" link is available to trigger the workflow again. This is useful for example if there was a temporary infrastructure issue that perhaps prevented an email going out. You would be able to retrigger the workflow once the issue is resolved.

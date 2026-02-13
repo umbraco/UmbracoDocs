@@ -1,10 +1,10 @@
-# File upload
+# File Upload
 
 The File Upload field allows the users to upload a file along with the Form on your website.
 
 In this article, you will find details about the configuration options you have for the File Upload field.
 
-![fileupload](images/fileupload-types-v14.png)
+![fileupload](../../../.gitbook/assets/fileupload-types-v14.png)
 
 ## Predefined allowed File Types
 

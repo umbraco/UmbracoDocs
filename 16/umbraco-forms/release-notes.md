@@ -1,8 +1,10 @@
 ---
-description: Get an overview of the things changed and fixed in each version of Umbraco Forms.
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Forms.
 ---
 
-# Release notes
+# Release Notes
 
 In this section, we have summarized the changes to Umbraco Forms released in each version. Each version is presented with a link to the [Forms issue tracker](https://github.com/umbraco/Umbraco.Forms.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the detail.
 
@@ -17,12 +19,15 @@ If you are upgrading to a new major version, you can find information about the 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
 ### 16.4.3 (February 12th 2026)
+
 * Fix reCAPTCHA Enterprise script not loading correctly on the frontend
 
 ### [16.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.2) (January 30th 2026)
+
 * Fix export path resolution for paths starting with `~` [#1610](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1610)
 
 ### [16.4.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.1) (January 29th 2026)
+
 * Ensure entries selection can be cleared correctly after delete [#1590](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1590)
 * Ensure entries selection can be cleared completely [#1591](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1591)
 * Add additional exports for NPM package [#1592](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1592)
@@ -30,9 +35,11 @@ This section contains the release notes for Umbraco Forms 16 including all chang
 * Path traversal and file enumeration vulnerability on Linux/macOS [GHSA-hm5p-82g6-m3xh](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-hm5p-82g6-m3xh)
 
 ### [16.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 22nd 2026)
+
 * All items detailed under release candidates for 16.4.0.
 
 ### [16.4.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.4.0) (January 15th 2026)
+
 * Add confirmation modal for entry bulk deletion [#1490](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1490)
 * Fix prevalue source validation [#1549](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1549)
 * Fix prevalue source dropdown rendering [#1550](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1550)
@@ -60,7 +67,7 @@ The reCAPTCHA v2, v3, and Enterprise field types now display as disabled in the 
 
 This change also ensures that field types remain registered. This prevents issues when transferring forms with Umbraco Deploy between environments where reCAPTCHA settings may not yet be configured.
 
-![Disabled reCAPTCHA field type in form designer](images/disabled-fields.png)
+![Disabled reCAPTCHA field type in form designer](.gitbook/assets/disabled-fields.png)
 
 * Umbraco CMS dependency updated to 16.4.0
 * Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
@@ -79,12 +86,15 @@ This change also ensures that field types remain registered. This prevents issue
 * Set `Cache-Control` headers of form uploads to `private`
 
 ### [16.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.1) (December 17th 2025)
+
 * Fix bug with NPM package exports not resolving correctly [#1556](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1556)
 
 ### [16.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (December 11th 2025)
+
 * All items detailed under release candidates for 16.3.0.
 
 ### [16.3.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (December 4th 2025)
+
 * Refactored UX for sorting on form designer [#1458](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1458)
 * Render uploaded files as semantically correct HTML [#1373](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1373)
 * Filter out fields from email workflows when 'Include Sensitive Data' is set to false [#1402](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1402)
@@ -92,6 +102,7 @@ This change also ensures that field types remain registered. This prevents issue
 * Fix console error when using `Forms.PropertyEditorUi.TextWithFieldPicker` in custom FieldType or Workflow [#1547](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1547)
 
 ### [16.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.3.0) (November 27th 2025)
+
 * Umbraco CMS dependency updated to 16.3.0
 * JavaScript now correctly finds the form config element when it is not adjacent
 * Stop "Save and preview" modal from displaying an interstitial state
@@ -103,9 +114,11 @@ This change also ensures that field types remain registered. This prevents issue
 * Resolve issues with missing translations in backoffice [#1492](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1492)
 
 ### [16.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 30th 2025)
+
 * All items detailed under release candidates for 16.2.0.
 
 ### [16.2.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 27th 2025)
+
 * Improved redirects in UmbracoFormsController for handling IContentFinder and virtual pages [#1456](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1456)
 * Refine fieldset caption rendering logic [#1466](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1466)
 * Ensure configured stylesheets are loaded in TipTap rich text editor [#1441](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1441)
@@ -114,6 +127,7 @@ This change also ensures that field types remain registered. This prevents issue
 * Configure `Umbraco:CMS:Global:Smtp:From` to take priority over `Umbraco:CMS:Content:Notifications:Email` in email workflows [#1417](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1417)
 
 ### [16.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.2.0) (October 20th 2025)
+
 * Hide caret from backoffice folders if there are no child items [#1446](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1446)
 * Fix type in "Display Layout" property description [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
 * Remove Umbraco branding from default email template [#1433](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1433)
@@ -133,7 +147,7 @@ In addition to the existing one-off license using the `umbracoForms.lic` file, s
 
 The 14-day trial license is no longer generated on install. You can still fully test Forms on `localhost`. The option to configure the license from the backoffice is removed. This is due to the direct integration with the legacy license infrastructure and to align the license management to the Licenses dashboard.
 
-Read more about [the licensing model](./installation/the-licensing-model.md).
+Read more about [the licensing model](installation/the-licensing-model.md).
 
 #### Only show reCAPTCHA v2 or v3 fields when settings are configured
 
@@ -154,9 +168,9 @@ builder.FormsFields().Add<Recaptcha3>();
 
 #### Allow using ViewEngine to resolve theme views
 
-The default theme views are resolved using the [Partial Views file system](../umbraco-cms/extending/filesystemproviders/README.md#other-ifilesystems) (an abstraction over the `/Views/Partials` directory). This requires I/O lookups to determine whether specific theme views exist and manually specifying all files when using a [Razor Class Library](./developer/themes.md#shipping-themes-in-a-razor-class-library).
+The default theme views are resolved using the [Partial Views file system](../umbraco-cms/extending/filesystemproviders/#other-ifilesystems) (an abstraction over the `/Views/Partials` directory). This requires I/O lookups to determine whether specific theme views exist and manually specifying all files when using a [Razor Class Library](developer/themes.md#shipping-themes-in-a-razor-class-library).
 
-By enabling the [`UseViewEngineFormThemeResolver` setting](./developer/configuration/README.md#useviewengineformthemeresolver), theme vies are resolved using the `ICompositeViewEngine`, which will include compiled views (including those shipped in RCLs).
+By enabling the [`UseViewEngineFormThemeResolver` setting](developer/configuration/#useviewengineformthemeresolver), theme vies are resolved using the `ICompositeViewEngine`, which will include compiled views (including those shipped in RCLs).
 
 ### [16.0.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.0.0) (June 12th 2025)
 

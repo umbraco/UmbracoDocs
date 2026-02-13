@@ -22,19 +22,19 @@ For example:
 
 The API supports two endpoints, one for rendering a form and one for submitting it.
 
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/definitions/{id}" method="get" %}
+{% openapi src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/definitions/{id}" method="get" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
-{% endswagger %}
+{% endopenapi %}
 
-{% swagger src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/entries/{id}" method="post" %}
+{% openapi src="../.gitbook/assets/umbraco_forms_swagger.json" path="/umbraco/forms/delivery/api/v1/entries/{id}" method="post" %}
 [umbraco_forms_swagger.json](../.gitbook/assets/umbraco_forms_swagger.json)
-{% endswagger %}
+{% endopenapi %}
 
 As well as this documentation, the definition of the API can also be reviewed via the Swagger UI.
 
 This is available alongside the Umbraco 12 Content Delivery Api at: `/umbraco/swagger/index.html`. Select "Umbraco Forms API" from the "Select a definition" list to view the methods available.
 
-![Swagger UI](images/swagger-ui.png)
+![Swagger UI](../.gitbook/assets/swagger-ui.png)
 
 The Open API specification is available from: `/umbraco/swagger/forms/swagger.json`
 
@@ -52,7 +52,7 @@ An optional `contentId` parameter can be provided, which can either be the integ
 
 A `culture` parameter can also be provided, expected as an ISO code identifying a language used in the Umbraco installation (for example, `en-US`). This will be used to ensure the correct translation for dictionary keys is used. It will also retrieve page content from the appropriate language variant. If the parameter is not provided in the request, the default Umbraco language will be used.
 
-Finally, an `additionalData` parameter can be provided as a dictionary. This information will be made available when rendering the form allowing it to be used as a source for ["magic string" replacements](./magic-strings.md).
+Finally, an `additionalData` parameter can be provided as a dictionary. This information will be made available when rendering the form allowing it to be used as a source for ["magic string" replacements](magic-strings.md).
 
 If the requested form is not found, a 404 status code will be returned.
 

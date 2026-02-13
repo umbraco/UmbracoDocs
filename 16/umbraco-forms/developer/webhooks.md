@@ -6,7 +6,7 @@ Workflows are operations that you can associate with form submission, approval, 
 
 On the Umbraco **Settings** > **Advanced** > **Webhooks** dashboard, you can configure webhooks to respond to workflows.
 
-![Webhook events](images/wehbook-events-v14.png)
+![Webhook events](../.gitbook/assets/wehbook-events-v14.png)
 
 You can amend the registration of workflow events in code.
 
