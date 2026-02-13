@@ -6,7 +6,7 @@ Prevalue sources are a way to pre-define and/or retrieve a list of items from a 
 
 Prevalue sources can be managed in the **Prevalue sources** folder available in the **Forms** section.
 
-![Prevalue source tree](images/prevaluesourcetree-v14.png)
+![Prevalue source tree](../../.gitbook/assets/prevaluesourcetree-v14.png)
 
 To set a prevalue source:
 
@@ -16,17 +16,13 @@ To set a prevalue source:
 4. The **Choose prevalue source type** pane opens in the right-side of the editor.
 5. Select the type of prevalue source. For more information on the different default types, see the [Overview of the Prevalue Source Types](prevalue-source-types.md) article.
 
-    ![Choose type](images/choosetype-v14.png.png)
-
 ### Configuring the Prevalue Source
 
 Depending on the **prevalue source type** you choose, you'll need to provide some additional settings. For this article, we will select **Get values from textfile**.
 
-1. Select **Get values from textfile** from the **Choose prevalue source type** pane.
-    ![Type settings](images/typesettings-v14.png)
-
-2. Enter a Name for the prevalue source type. Let's call it *My Prevalue Source*.
-3. Now, create a file containing the list to use as prevalues. For example: a `.txt` file containing the following values:
+1. Select **Get values from textfile** from the **Choose prevalue source type** pane. ![Type settings](../../.gitbook/assets/typesettings-v14.png)
+2. Enter a Name for the prevalue source type. Let's call it _My Prevalue Source_.
+3.  Now, create a file containing the list to use as prevalues. For example: a `.txt` file containing the following values:
 
     ```cs
     example value 1
@@ -35,13 +31,12 @@ Depending on the **prevalue source type** you choose, you'll need to provide som
     example value 4
     example value 5
     ```
-
 4. Select **Click to upload** in the **Text File**.
 5. Choose the text file you created. Click **Open**.
 6. Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
-7. Click **Save**.
+7.  Click **Save**.
 
-    ![Prevalue source settings](images/preview-v14.png)
+    ![Prevalue source settings](../../.gitbook/assets/preview-v14.png)
 
 If you would like to have different values presented to your users from the value stored, you can provide two values per line, separated with a vertical bar (|), e.g.:
 
@@ -65,11 +60,11 @@ Given the variation here, we allow you to select an appropriate level of caching
 
 You can choose between:
 
-- `No Caching` - no caching will be applied and the list of options will be retrieved from source on every request. You will likely only want to choose this option if the information changes frequently and it's important that the latest is presented to website visitors.
-- `Cache For Specified Time` - the list will be cached for the period of time provided.
-- `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This ismost appropriate to use for information held within the prevalue source data itself (such as  when uploading a text file).
+* `No Caching` - no caching will be applied and the list of options will be retrieved from source on every request. You will likely only want to choose this option if the information changes frequently and it's important that the latest is presented to website visitors.
+* `Cache For Specified Time` - the list will be cached for the period of time provided.
+* `Cache With No Expiry` - the list will be cached on first request and not retrieved again until either the prevalue source is edited or the website is restarted. This ismost appropriate to use for information held within the prevalue source data itself (such as when uploading a text file).
 
-![Prevalue cache options](images/prevalue-cache-options-v14.png)
+![Prevalue cache options](../../.gitbook/assets/prevalue-cache-options-v14.png)
 
 ## Attaching a Prevalue Source to a Field
 
@@ -79,8 +74,8 @@ Once a prevalue source has been created, it can be used while building Forms in 
 
 If there is at least one prevalue source defined in the project, the Prevalues source will contain a dropdown from where you can choose the predefined value.
 
-![Prevalue source](images/FieldPrevalueSource-v16.png)
+![Prevalue source](../../.gitbook/assets/FieldPrevalueSource-v16.png)
 
 Once you have selected the prevalue source, the values are rendered in the Forms designer from the attached source.
 
-![Preview](images/fieldpreview.png)
+![Preview](../../.gitbook/assets/fieldpreview.png)

@@ -221,8 +221,8 @@ public class MyComposer : IComposer
 
 This will then make the **UI Builder Repository** available when creating a new prevalue source:
 
-![UI Builder Repository available as a prevalue source](./images/uibuilder-repository-prevalue-source.png)
+![UI Builder Repository available as a prevalue source](../../.gitbook/assets/uibuilder-repository-prevalue-source.png)
 
 Once selected, you can pick a **Section**, **Collection**, and **Data View** from the configured UI Builder repositories:
 
-![Selecting a UI Builder repository as a prevalue source](./images/uibuilder-repository-prevalue-configuration.png)
+![Selecting a UI Builder repository as a prevalue source](../../.gitbook/assets/uibuilder-repository-prevalue-configuration.png)
