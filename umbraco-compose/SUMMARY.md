@@ -6,6 +6,7 @@
 
 * [Access Control](getting-started/access-control.md)
 * [Working With Content in Compose](getting-started/working-with-content.md)
+* [Integrating With Umbraco CMS](getting-started/integrating-with-umbraco-cms.md)
 
 ## Content Orchestration
 
