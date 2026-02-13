@@ -133,7 +133,7 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 
-namespace UmbracoProject;
+namespace YourProjectNamespace;
 
 public class PageNotFound : IContentLastChanceFinder
 {
