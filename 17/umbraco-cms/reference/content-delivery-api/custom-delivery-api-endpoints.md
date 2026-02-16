@@ -46,7 +46,7 @@ public class BasicDeliveryApiController : DeliveryApiControllerBase
 ```
 {% endcode %}
 
-There is quite a lot going on here, so let's break it down.
+There is a lot going on here, so let's break it down.
 
 Implementing the `DeliveryApiControllerBase` ensures that:
 
