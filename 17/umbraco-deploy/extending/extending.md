@@ -80,7 +80,7 @@ An illustrative data service is provided via dependency injection. This will be 
 {% hint style="info" %}
 Service connectors support a caching mechanism via the `IContextCache` parameter. This allows connectors to read from and write to a cache during deploy operations, improving performance when the same data is requested multiple times.
 
-It's recommended to only cache frequent lookups, e.g. to validate whether a parent entity exists. Deploy provides extension methods in `Umbraco.Deploy.Core.ContextCacheExtensions` for frequently used CMS service calls. If the `IContextCache` parameter is not available, you can create an instance from the `IDeployContext` using `new DeployContextCache(deployContext)`.
+It's recommended to only cache frequent lookups, like validating whether a parent entity exists. Deploy provides extension methods in `Umbraco.Deploy.Core.ContextCacheExtensions` for frequently used CMS service calls. If the `IContextCache` parameter is not available, you can create an instance from the `IDeployContext` using `new DeployContextCache(deployContext)`.
 {% endhint %}
 
 ```csharp
@@ -251,7 +251,7 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
 }
 ```
 
-It's recommended to provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root UDI:
+Provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root UDI:
 
 ```csharp
 public static GuidUdi GetUdi(this Example entity)
