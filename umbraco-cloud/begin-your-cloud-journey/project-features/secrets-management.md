@@ -90,7 +90,7 @@ You can use the method, getting it from the System namespace in .NET as below:
 
 Secrets can also be used to override AppSettings defined in `appsettings.json` files.
 
-In order for this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores.
+For this to work, when adding the secret, the Key value should be all the settings' names joined by double underscores.
 
 For example, to change the Serilog's default options under `Serilog:MinimumLevel:Default`, the Secret key would look like this:
 
@@ -101,6 +101,12 @@ The value defined in `appsettings.json` file will be overwritten with the Cloud 
 ## Naming standards for secrets
 
 When naming a secret, it is possible to use alphanumeric characters as well as '\_' (underscore).
+
+{% hint style="info" %}
+If you need to use a dot (`.`) as part of the app setting, it should be replaced with a single underscore.
+
+The app setting `Umbraco:Licenses:Products:Umbraco.Commerce` should become `Umbraco__Licenses__Products__Umbraco_Commerce`.
+{% endhint %}
 
 Some words are reserved and **cannot** be accepted:
 
@@ -167,7 +173,8 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 * `Umbraco__CMS__DeliveryAPI__`
 * `UMBRACO__LICENSES__`
 * `UMBRACO__AUTHORIZEDSERVICES__`
-* `UMBRACO__COMMERCE__`
+* `UMBRACO__COMMERCE__`,
+* `UMBRACO__AI__`
 
 It is also possible to use Secrets to save API keys, Passwords, and ReChaptcha for all our Umbraco products on Umbraco Cloud.
 
