@@ -129,13 +129,15 @@ Before following this example, follow the [Create a Page Not Found page in the b
 
 {% code title="PageNotFound.cs" lineNumbers="true" %}
 ```csharp
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 
-namespace YourProjectNamespace;
+namespace YourProjectNamespace.ContentFinders;
 
-public class PageNotFound : IContentLastChanceFinder
+public class PageNotFoundContentFinder : IContentLastChanceFinder
 {
     private readonly IUmbracoContextFactory _umbracoContextFactory;
 
@@ -143,22 +145,24 @@ public class PageNotFound : IContentLastChanceFinder
     private static readonly Guid NotFoundPageKey =
         Guid.Parse("PUT-YOUR-404-GUID-HERE");
 
-    public PageNotFound(IUmbracoContextFactory umbracoContextFactory)
+    public PageNotFoundContentFinder(IUmbracoContextFactory umbracoContextFactory)
     {
         _umbracoContextFactory = umbracoContextFactory;
     }
 
     public Task<bool> TryFindContent(IPublishedRequestBuilder request)
     {
-        using var contextRef = _umbracoContextFactory.EnsureUmbracoContext();
+        using UmbracoContextReference contextRef = _umbracoContextFactory.EnsureUmbracoContext();
 
-        var notFoundPage = contextRef
+        IPublishedContent? notFoundPage = contextRef
             .UmbracoContext
             .Content?
             .GetById(NotFoundPageKey);
 
         if (notFoundPage == null)
+        {
             return Task.FromResult(false);
+        }
 
         request.SetPublishedContent(notFoundPage);
         request.SetResponseStatus(404);
@@ -167,12 +171,13 @@ public class PageNotFound : IContentLastChanceFinder
     }
 }
 
+
 // Register the content finder
-public class MyComposer : IComposer
+public class PageNotFoundContentFinderComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.SetContentLastChanceFinder<PageNotFound>();
+        builder.SetContentLastChanceFinder<PageNotFoundContentFinder>();
     }
 }
 ```
@@ -226,6 +231,8 @@ To ensure that the 500 page is shown during server errors, you’ll need to conf
 {% code title="ErrorController.cs" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
 
 namespace YourProjectNamespace.Controllers;
@@ -234,23 +241,23 @@ public class ErrorController : Controller
 {
     private readonly IUmbracoContextFactory _umbracoContextFactory;
 
-    
     private static readonly Guid Error500PageKey =
-        Guid.Parse("b80a6f63-b074-4932-bf36-550795db90d4"); // Replace with your actual 500 page GUID
+        Guid.Parse("PUT-YOUR-500-GUID-HERE"); // Replace with your actual 500 page GUID
 
     public ErrorController(IUmbracoContextFactory umbracoContextFactory)
     {
         _umbracoContextFactory = umbracoContextFactory;
     }
 
+    [HttpGet]
     [Route("Error")]
     public IActionResult Index()
     {
         if (Response.StatusCode == StatusCodes.Status500InternalServerError)
         {
-            using var contextRef = _umbracoContextFactory.EnsureUmbracoContext();
+            using UmbracoContextReference contextRef = _umbracoContextFactory.EnsureUmbracoContext();
 
-            var error500Page = contextRef
+            IPublishedContent? error500Page = contextRef
                 .UmbracoContext
                 .Content?
                 .GetById(Error500PageKey);
@@ -261,7 +268,7 @@ public class ErrorController : Controller
                 return View(error500Page.GetTemplateAlias(), error500Page);
             }
 
-            // Fallback if page not found
+            // Fallback if page not found.
             Response.StatusCode = 500;
             return View("~/Views/Error500Fallback.cshtml");
         }
@@ -295,14 +302,24 @@ Replace _YourProjectNamespace_ with the actual project namespace. In Visual Stud
 
 {% code title="Program.cs" %}
 ```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
 await app.BootUmbracoAsync();
 
-// Configure exception handling
+// Configure exception handling.
 if (app.Environment.IsDevelopment())
 {
-    // For testing error pages, use custom error handler
+    // For testing error pages, use custom error handler.
     app.UseExceptionHandler("/error");
-    
+
     // For normal development with detailed errors, comment out the above line
     // and uncomment this line:
     // app.UseDeveloperExceptionPage();
@@ -312,7 +329,19 @@ else
     app.UseExceptionHandler("/error");
 }
 
-app.UseHttpsRedirection();
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
 ```
 {% endcode %}
 
