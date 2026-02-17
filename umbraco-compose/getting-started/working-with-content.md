@@ -49,10 +49,10 @@ The `ProjectWrite` scope is granted at the project level. The others apply only 
 
 ![Create API application form with required scopes checked](../.gitbook/assets/starter-guide-api-application-config.png)
 
-5. Submit the form. If successful, the portal will now show you the client secret for your new Application.
+5. Submit the form. If successful, the portal will now show you the client secret for your new Application. Store this somewhere secure.
 
 {% hint style="warning" %}
-The client secret is shown only once, immediately after the API Application is created. Store it securely, as it is required to authenticate the application.
+The client secret is shown only once, immediately after the API Application is created. Store it securely, as it is required for authenticating all following requests to Compose APIs.
 {% endhint %}
 
 ## Requesting an Access Token
