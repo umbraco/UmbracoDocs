@@ -47,7 +47,7 @@ Scopes are how Compose determine which APIs an Application is authorized to call
 
 The `ProjectWrite` scope is granted at the project level. The others apply only to a single environment. Make sure to apply them to the `production` environment.
 
-![Create API application form with required scopes checked](../.gitbook/assets/starter-guide-api-applications.png)
+![Create API application form with required scopes checked](../.gitbook/assets/starter-guide-api-application-config.png)
 
 5. Submit the form. If successful, the portal will now show you the client secret for your new Application.
 
