@@ -50,16 +50,16 @@ Since a lot is happening above, you can explore the following sections to unders
 
 Implementing the `DeliveryApiControllerBase` ensures that:
 
-1. The endpoint is automatically included in the Swagger documentation for the Delivery API.
-2. The endpoint respects the JSON serialization scheme for the entire Delivery API.
+- The endpoint is automatically included in the Swagger documentation for the Delivery API.
+- The endpoint respects the JSON serialization scheme for the entire Delivery API.
 
 There are also a few attributes applied to the endpoint:
  
-1. The `ApiVersion` and `MapToApiVersion` attributes match the endpoint version to the current Delivery API version.
-2. The `VersionedDeliveryApiRoute` attribute ensures that the endpoint routing matches that of the Delivery API.
-3. The `ApiExplorerSettings` attribute adds the endpoint to a custom group in the Swagger documentation.
-4. The `DeliveryApiAccess` attribute ensures that this endpoint can only be invoked if the Content Delivery API is [enabled](README.md#enable-the-content-delivery-api).
-5. The `ProducesResponseType` attributes help the Swagger documentation understand the endpoint. 
+- The `ApiVersion` and `MapToApiVersion` attributes match the endpoint version to the current Delivery API version.
+- The `VersionedDeliveryApiRoute` attribute ensures that the endpoint routing matches that of the Delivery API.
+- The `ApiExplorerSettings` attribute adds the endpoint to a custom group in the Swagger documentation.
+- The `DeliveryApiAccess` attribute ensures that this endpoint can only be invoked if the Content Delivery API is [enabled](README.md#enable-the-content-delivery-api).
+- The `ProducesResponseType` attributes help the Swagger documentation understand the endpoint. 
 
 {% hint style="info" %}
 `DeliveryApiAccess` also comes in a specific version for the [Media Delivery API](media-delivery-api.md) - the `DeliveryApiMediaAccess` attribute.
