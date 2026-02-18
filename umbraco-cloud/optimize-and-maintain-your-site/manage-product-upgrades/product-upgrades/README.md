@@ -71,24 +71,24 @@ What is a breaking change is documented here: [https://our.umbraco.com/documenta
 
 ## Can I opt out of automated upgrades?
 
-### Minor Upgrades
-
-Yes. You can enable or disable automatic minor upgrades from the Cloud Portal:
+Yes. You can enable or disable automatic minor and/or patch upgrades from the Cloud Portal:
 
 1. Go to your Umbraco Cloud project.
 2. Navigate to **Configuration** -> **Automatic Upgrades**.
-3. Toggle **Automatic Minor Upgrades** on or off.
+3. Toggle **Automatic Minor Upgrades** or **Automatic Patch Upgrades** on or off.
+
+### Minor Upgrades
 
 New projects have automatic minor upgrades enabled by default. When disabled, you are responsible for upgrading to new minor versions manually. See the [Minor Upgrades](minor-upgrades.md) article for details.
 
 ### Patch Upgrades
 
-By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released. This ensures all sites run the most stable and secure versions of our products.
+By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released, including security patches. This ensures all sites run the most stable and secure versions of our products.
 
-If your project requires full control over the timing of upgrades, for example, due to change management policies or release schedules, you can request to opt out of automated patch upgrades by contacting Umbraco support.
+If your project requires full control over the timing of upgrades, you can disable automated patch upgrades.
 
 {% hint style="danger" %}
-When opted out of automated patch upgrades, you are responsible for keeping your project up to date. Umbraco Cloud requires all projects to run supported product versions. Falling behind on patches may affect your eligibility for support and could expose your project to known security vulnerabilities.
+When you disable automated patch upgrades, you are responsible for keeping your project up to date. Falling behind on patches may affect your eligibility for support and can expose your project to known security vulnerabilities.
 {% endhint %}
 
 {% hint style="warning" %}
