@@ -46,7 +46,7 @@ public class BasicDeliveryApiController : DeliveryApiControllerBase
 ```
 {% endcode %}
 
-There is a lot going on here, so let's break it down.
+Since a lot is happening above, you can explore the following sections to understand the implementations and attributes.
 
 Implementing the `DeliveryApiControllerBase` ensures that:
 
@@ -55,11 +55,11 @@ Implementing the `DeliveryApiControllerBase` ensures that:
 
 There are also a few attributes applied to the endpoint:
  
-1. The `ApiVersion` and `MapToApiVersion` attributes matches the endpoint version to the current Delivery API version.
+1. The `ApiVersion` and `MapToApiVersion` attributes match the endpoint version to the current Delivery API version.
 2. The `VersionedDeliveryApiRoute` attribute ensures that the endpoint routing matches that of the Delivery API.
 3. The `ApiExplorerSettings` attribute adds the endpoint to a custom group in the Swagger documentation.
 4. The `DeliveryApiAccess` attribute ensures that this endpoint can only be invoked if the Content Delivery API is [enabled](README.md#enable-the-content-delivery-api).
-5. The `ProducesResponseType` attributes helps the Swagger documentation understand the endpoint. 
+5. The `ProducesResponseType` attributes help the Swagger documentation understand the endpoint. 
 
 {% hint style="info" %}
 `DeliveryApiAccess` also comes in a specific version for the [Media Delivery API](media-delivery-api.md) - the `DeliveryApiMediaAccess` attribute.
@@ -67,7 +67,7 @@ There are also a few attributes applied to the endpoint:
 
 ## A Delivery API endpoint for content
 
-If your custom Delivery API endpoint outputs content, you will likely find the `ContentApiControllerBase` a better fit as base class. Here is an example of how to use it:
+If your custom Delivery API endpoint outputs content, you will likely find `ContentApiControllerBase` a better fit as a base class. Here is an example of how to use it:
 
 {% code title="ContentDeliveryApiController.cs" lineNumbers="true" %}
 ```csharp
@@ -118,6 +118,7 @@ The `ContentApiControllerBase` adds a lot of functionality to your custom endpoi
 - Comprehensive Swagger documentation for [property expansion and limiting](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/property-expansion-and-limiting).
 
 The base class also gives convenient access to:
+
 - The `IApiPublishedContentCache`, a specialized content cache tailored for the Delivery API. Among other things, it enforces the configuration of [(dis)allowed output types](README.md#additional-configuration).
 - The `IApiContentResponseBuilder` for generating a content response format that conforms with the Delivery API. This includes support for property expansion and limiting.
 
