@@ -31,6 +31,14 @@ Creating an API application is done in the [Umbraco Cloud Portal](https://s1.umb
 ![Compose project list in the Umbraco Cloud portal](../.gitbook/assets/starter-guide-api-applications.png)
 
 4. Provide an **alias** for the API Application and, optionally, a **description**.
+5. Ensure that all required scopes are checked. See below for an overview of which scopes are necessary.
+6. Submit the form.
+
+{% hint style="warning" %}
+When you submit the form you will be shown a client secret. This is shown only once and can not be retrieved later. Store it securely, as it is required for authenticating all subsequent requests to Compose APIs.
+{% endhint %}
+
+7. Store the client secret for your new Application somewhere secure.
 
 In many real-world use cases, you will use different API Applications for calling Compose APIs from different sources. For example, you might have one for ingesting content and a different one for retrieving it from GraphQL.
 
@@ -48,12 +56,6 @@ Scopes are how Compose determine which APIs an Application is authorized to call
 The `ProjectWrite` scope is granted at the project level. The others apply only to a single environment. Make sure to apply them to the `production` environment.
 
 ![Create API application form with required scopes checked](../.gitbook/assets/starter-guide-api-application-config.png)
-
-5. Submit the form. If successful, the portal will now show you the client secret for your new Application. Store this somewhere secure.
-
-{% hint style="warning" %}
-The client secret is shown only once, immediately after the API Application is created. Store it securely, as it is required for authenticating all following requests to Compose APIs.
-{% endhint %}
 
 ## Requesting an Access Token
 
