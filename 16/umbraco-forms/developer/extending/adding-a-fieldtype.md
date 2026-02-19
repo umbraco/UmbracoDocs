@@ -72,6 +72,23 @@ In the constructor or via overridden properties, we can specify details of the f
 * `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
 * `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
 * `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
+* `IsConfigured` - indicates whether the field type is configured for use. This is derived from the `GetConfigurationErrors` method — it returns `true` when no configuration errors are reported.
+
+### Configuration Validation
+
+The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection, meaning the field type is considered configured and available for use.
+
+When the method returns one or more error messages, the field type will be shown as unavailable in the backoffice form builder until the issues are resolved. This is useful when your field type depends on external API keys or other application configuration settings.
+
+```csharp
+public override IEnumerable<string> GetConfigurationErrors()
+{
+    if (string.IsNullOrWhiteSpace(_myRequiredApiKey))
+    {
+        yield return "MyFieldType requires an API key to be configured in appsettings.json.";
+    }
+}
+```
 
 You now need to register this new field as a dependency:
 
@@ -121,9 +138,7 @@ The file name for the partial view should match the value set on the `FieldTypeV
 
 This will be rendered when the default theme is used.
 
-If working with Umbraco 9 or earlier versions, you'll find the `Views\Partials\Forms\Themes\default\` folder on disk and can create the files there.
-
-For Umbraco 10 and above, we've moved to [distributing the theme as part of a Razor Class Library](../../upgrading/version-specific/#views-and-client-side-files) so the folder won't exist. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
+The theme is distributed as part of a Razor Class Library, so the folder won't exist on disk. However, you can create it for your custom field type. If you would like to reference the partial views of the default theme, you can download them as mentioned in the [Themes](../themes.md) article.
 
 ### Read-only partial view
 
@@ -190,7 +205,7 @@ With Forms 14+, aspects of the presentation and functionality of the custom fiel
 * A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
 * Translations for setting labels and descriptions.
 
-To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://app.gitbook.com/s/G1Byxw7XfiZAj8zDMCTD/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
+To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
 The examples here are using the `@umbraco-forms/backoffice` package to get access to Forms-specific types and contexts. It is recommended to install this package as a development dependency in your project.
 
