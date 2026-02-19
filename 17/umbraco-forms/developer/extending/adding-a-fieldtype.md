@@ -72,6 +72,23 @@ In the constructor or via overridden properties, we can specify details of the f
 * `FieldTypeViewName` - indicates the name of the partial view used to render the field on the website.
 * `EditView` - indicates the name of a property editor UI that is used for editing the field in the backoffice. If nothing is provided, the built-in label will be used and the field won't be editable.
 * `PreviewView` - indicates the name of a manifest registered client-side resource that is used for previewing the field in the backoffice. If nothing is provided, the name of the field type will be used as the preview.
+* `IsConfigured` - indicates whether the field type is configured for use. This is derived from the `GetConfigurationErrors` method — it returns `true` when no configuration errors are reported.
+
+### Configuration Validation
+
+The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection, meaning the field type is considered configured and available for use.
+
+When the method returns one or more error messages, the field type will be shown as unavailable in the backoffice form builder until the issues are resolved. This is useful when your field type depends on external API keys or other application configuration settings.
+
+```csharp
+public override IEnumerable<string> GetConfigurationErrors()
+{
+    if (string.IsNullOrWhiteSpace(_myRequiredApiKey))
+    {
+        yield return "MyFieldType requires an API key to be configured in appsettings.json.";
+    }
+}
+```
 
 You now need to register this new field as a dependency:
 
