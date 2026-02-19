@@ -121,10 +121,7 @@ git rev-list --objects --all | \
 
 ### Remove large files from Git history
 
-Once you have identified the problematic files, use a history-rewriting tool to remove them:
-
-* [git filter-repo](https://github.com/newren/git-filter-repo) (recommended)
-* [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
+Once you have identified the problematic files, use a history-rewriting tool such as [Git filter-repo](https://github.com/newren/git-filter-repo) to remove them.
 
 {% hint style="warning" %}
 Rewriting Git history is a destructive operation. It changes commit hashes and requires a force push. Coordinate with your team before proceeding and ensure everyone re-clones the repository after the cleanup.
