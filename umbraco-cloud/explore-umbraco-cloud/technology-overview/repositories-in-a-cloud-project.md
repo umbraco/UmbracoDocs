@@ -12,7 +12,7 @@ The git repositories provided by Umbraco Cloud are **deployment repositories**. 
 Umbraco Cloud repositories are only deployment repositories and should not be used as source code repositories.
 {% endhint %}
 
-A deployment repository differs from a source code repository in several important ways:
+A deployment repository differs from a source code repository in the following ways:
 
 * **Limited branch support** - Only the `master` branch is guaranteed to be maintained. Any other branches may be removed without notice, which can lead to data loss.
 * **No pull request or review workflows** - The deployment repository does not support the collaboration features you would expect from a full source code management platform.
