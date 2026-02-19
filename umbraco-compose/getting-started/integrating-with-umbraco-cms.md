@@ -21,14 +21,14 @@ To follow this guide, you will need the following:
 
 * An Umbraco CMS project running Umbraco 14 or later.
 * An Umbraco Compose project with an API Application, environment, and collection configured. See the [Working with Content](./working-with-content.md) guide for an example of how to create these.
-* The **Client Id** and **Client Secret** for your API Application.
+* The **Client ID** and **Client Secret** for your API Application.
 * Your Compose project alias and environment alias (typically `production` for live environments).
 
 If you do not yet have an API Application, see [Working with Content in Compose](working-with-content.md#create-a-management-api-application) for instructions on how to create one.
 
 Your API Application will need the following scopes:
 
-* `environment:your-environent:typeschema:write` - Required for creating type schemas.
+* `environment:your-environment:typeschema:write` - Required for creating type schemas.
 * `ingestion` - Required for syncing content.
 * `graphql` - Required if using the data source feature.
 
@@ -80,7 +80,7 @@ The following table describes all available configuration options:
 
 | Property | Required | Description |
 | -------- | -------- | ----------- |
-| `ClientId` | Yes | The OAuth client id from your Compose API Application. |
+| `ClientId` | Yes | The OAuth client ID from your Compose API Application. |
 | `ClientSecret` | Yes | The OAuth client secret from your Compose API Application. |
 | `ProjectAlias` | Yes | The alias of your Compose project. |
 | `EnvironmentAlias` | Yes | The Compose environment to synchronize with (for example, `production`). |
@@ -90,7 +90,7 @@ The following table describes all available configuration options:
 
 ## Registering Services
 
-If you are not using the meta `Umbraco.Compose.Integrations.UmbracoCms` package, then you will need to manually register services in your startup file. This is done by way of extension methods on an `IUmbracoBuilder` instance/
+If you are not using the meta `Umbraco.Compose.Integrations.UmbracoCms` package, then you will need to manually register services in your startup file. This is done by way of extension methods on an `IUmbracoBuilder` instance.
 
 Add the appropriate extension methods to your Umbraco builder:
 
@@ -152,7 +152,7 @@ Likewise, a similar process occurs whenever you publish a content node. The inte
 Support for removing content from Compose on unpublish or delete is not presently available. This is an upcoming feature of the integration.
 {% endhint %}
 
-### Multi-lingual Content
+### Multilingual Content
 
 The integration supports content that varies by language. When a content item has multiple language variants, each variant is ingested separately with its culture code as the variant identifier.
 
@@ -186,8 +186,8 @@ The data source queries Compose using GraphQL to retrieve matching content items
 
 If content is not being synchronized to Compose:
 
-1. **Verify credentials** - Ensure your Client Id and Client Secret are correct and that the API Application has the required scopes.
-1. **Verify project / environment / collection** - Confirm that you have specified the correct project, environment, and collection in your app settings, environment variables, or entity data picker configuration.
-1. **Check logs** - Check your Umbraco logs for errors.
-1. **Re-save affected content / types** - Sometimes a transient failure might disrupt delivery. Try re-saving the Document Type or content a second time and see whether it succeeds.
-1. **Contact support** - If nothing else works, create a ticket from the Umbraco Cloud portal.
+1. **Verify credentials** - Ensure your Client ID and Client Secret are correct and that the API Application has the required scopes.
+2. **Verify project / environment / collection** - Confirm that you have specified the correct project, environment, and collection in your app settings, environment variables, or entity data picker configuration.
+3. **Check logs** - Check your Umbraco logs for errors.
+4. **Re-save affected content / types** - Sometimes a transient failure might disrupt delivery. Try re-saving the Document Type or content a second time and see whether it succeeds.
+5. **Contact support** - If nothing else works, create a ticket from the Umbraco Cloud portal.
