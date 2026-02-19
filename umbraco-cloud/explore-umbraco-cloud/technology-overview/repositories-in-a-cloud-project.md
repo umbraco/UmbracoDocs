@@ -61,11 +61,10 @@ See the [Azure Blob Storage](../../build-and-customize-your-solution/handle-depl
 
 ### Keep the Git history clean and slim
 
-Only commit files that are necessary for deploying your site. Avoid committing:
+Keep the repository focused on source code and configuration. Avoid committing:
 
 * Large binary files (images, videos, archives)
 * `node_modules` or other package manager directories
-* Build output directories (`bin`, `obj`, `dist`)
 * Temporary or generated files
 
 Every file committed to the repository stays in the Git history, even after it is deleted. This means a single large file committed by mistake will continue to bloat the repository until the history is cleaned up.
