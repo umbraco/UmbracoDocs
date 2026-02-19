@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Forms 13 including all chang
 
 ### [13.9.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.1) (February 19th 2026)
 * Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)
-* Add server-side length validation for String data type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
+* Add server-side length validation for String Data Type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
 * Fix form re-initialization for dynamically injected forms [#1617](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1617)
 
 ### [13.9.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 22nd 2026)
