@@ -86,7 +86,7 @@ The following table describes all available configuration options:
 | `EnvironmentAlias` | Yes | The Compose environment to synchronize with (for example, `production`). |
 | `Region` | Yes | The Compose deployment region in which your project resides. |
 | `Endpoints:BaseDomain` | No | Override the base domain for Compose APIs. Defaults to `https://umbracocompose.com`. |
-| `Ingestion:CollectionAlias` | Yes* | The collection to ingest content into. Required when using the Ingestion package. |
+| `Ingestion:CollectionAlias` | Yes | The collection to ingest content into. Required when using the Ingestion package. |
 
 ## Registering Services
 
