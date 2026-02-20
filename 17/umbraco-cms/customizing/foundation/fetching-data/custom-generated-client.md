@@ -106,7 +106,7 @@ if (data) {
 This uses the backoffice's HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
 {% hint style="warning" %}
-The `auth` callback on `umbHttpClient` only fires for SDK functions that have `security` metadata. This metadata is generated automatically when your OpenAPI specification includes a security scheme (for example, Bearer authentication). If your spec does not include a security scheme, the generated functions will not send an `Authorization` header. For direct `.get()` / `.post()` calls (without a generated client), see [Calling custom API endpoints](http-client.md#calling-custom-api-endpoints).
+The `auth` callback on `umbHttpClient` only fires for SDK functions that have `security` metadata. This metadata is generated automatically when your OpenAPI specification includes a security scheme (for example, Bearer authentication). If your spec does not include a security scheme, the generated functions will not send an `Authorization` header. For direct `.get()` / `.post()` calls (without a generated client), see [Umbraco HTTP Client](http-client.md).
 {% endhint %}
 
 ### Fetch API
