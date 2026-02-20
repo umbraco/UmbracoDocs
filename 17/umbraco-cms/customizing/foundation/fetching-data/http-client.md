@@ -12,17 +12,22 @@ The Umbraco Backoffice includes a built-in HTTP client commonly referred to as t
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
 const { data } = await umbHttpClient.get({
-	url: '/umbraco/management/api/v1/server/status'
+	url: '/umbraco/myextension/api/v1/endpoint',
+	security: [{ scheme: 'bearer', type: 'http' }],
 });
 
 if (data) {
-	console.log('Server status:', data);
+	console.log('Data:', data);
 }
 ```
 
-The above example shows how to use the Umbraco HTTP client to make a GET request to the Management API. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method accepts an options object with the URL, headers, and body of the request.
+The above example shows how to use the Umbraco HTTP client to make a GET request. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method accepts an options object with the URL, headers, and body of the request.
 
-The Umbraco HTTP client automatically handles authentication and error handling, so you don't have to worry about those details. It also provides a convenient way to parse the response data as JSON.
+The `security` array tells the client to invoke the `auth` callback, which provides the Bearer token for the request. Generated SDK functions include this metadata automatically from the OpenAPI specification — but when calling endpoints directly with `.get()` or `.post()`, you must pass it yourself.
+
+{% hint style="info" %}
+You can also pass `umbHttpClient` as the `client` parameter to any generated SDK function. This lets the generated function use the backoffice's HTTP client (with its authentication) instead of its own. See [Custom Generated Client](custom-generated-client.md) for details.
+{% endhint %}
 
 ## Using the Umbraco HTTP Client
 
