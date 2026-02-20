@@ -42,28 +42,34 @@ The [Umbraco Extension Template](../../development-flow/umbraco-extension-templa
 
 ### Using `runtimeConfigPath` (Recommended)
 
-Add the `runtimeConfigPath` option to the `@hey-api/client-fetch` plugin in your generation config:
+To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags. Create `openapi-ts.config.ts` in your project root:
 
-```javascript
-await createClient({
-    input: swaggerUrl,
+```typescript
+import { defineConfig } from '@hey-api/openapi-ts';
+
+export default defineConfig({
+    input: 'https://localhost:44339/umbraco/swagger/myextension/swagger.json',
     output: 'src/api',
     plugins: [
-      ...defaultPlugins,
-      {
-        name: '@hey-api/client-fetch',
-        runtimeConfigPath: './src/hey-api.ts',
-      },
-      {
-        name: '@hey-api/sdk',
-        asClass: true,
-        classNameBuilder: '{{name}}Service',
-      }
+        {
+            name: '@hey-api/client-fetch',
+            runtimeConfigPath: './src/hey-api.ts',
+        },
+        {
+            name: '@hey-api/sdk',
+            asClass: true,
+        },
     ],
 });
 ```
 
-Then create `src/hey-api.ts`:
+Then run the generator (it picks up the config file automatically):
+
+```bash
+npx openapi-ts
+```
+
+Next, create `src/hey-api.ts`:
 
 ```typescript
 import type { CreateClientConfig } from './api/client.gen';
@@ -77,7 +83,7 @@ export const createClientConfig: CreateClientConfig = (config) => ({
 
 This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice's HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
 
-When you regenerate the client (`npm run generate-client`), the generated `client.gen.ts` will automatically import `createClientConfig` and apply it during client creation. Your SDK functions will be authenticated without any entrypoint setup.
+When the generator runs, the generated `client.gen.ts` will automatically import `createClientConfig` and apply it during client creation. Your SDK functions will be authenticated without any entrypoint setup.
 
 ### Passing `umbHttpClient` directly
 
