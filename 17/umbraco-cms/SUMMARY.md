@@ -387,6 +387,7 @@
   * [Output caching](reference/content-delivery-api/output-caching.md)
   * [Property expansion and limiting](reference/content-delivery-api/property-expansion-and-limiting.md)
   * [Additional preview environments support](reference/content-delivery-api/additional-preview-environments-support.md)
+  * [Custom Delivery API endpoints](reference/content-delivery-api/custom-delivery-api-endpoints.md)
 * [Webhooks](reference/webhooks/README.md)
   * [Expanding Webhook Events](reference/webhooks/expanding-webhook-events.md)
 * [Developer MCP](reference/developer-mcp/README.md)
