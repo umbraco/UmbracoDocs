@@ -69,11 +69,31 @@ It is important that developers understand what is considered a breaking change 
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
-## Can I opt out of product auto upgrades?
+## Can I opt out of automated upgrades?
 
-No, it´s not possible to opt-out of product auto upgrades on Umbraco Cloud.
+Yes. You can enable or disable automatic minor and/or patch upgrades from the Cloud Portal:
 
-To support a site on Umbraco Cloud, all sites must run the latest versions of our products. That way, we know the sites are running in the most stable state.
+1. Go to your Umbraco Cloud project.
+2. Navigate to **Configuration** -> **Automatic Upgrades**.
+3. Toggle **Automatic Minor Upgrades** or **Automatic Patch Upgrades** on or off.
+
+### Minor Upgrades
+
+New projects have automatic minor upgrades enabled by default. When disabled, you are responsible for upgrading to new minor versions manually. See the [Minor Upgrades](minor-upgrades.md) article for details.
+
+### Patch Upgrades
+
+By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released, including security patches. This ensures all sites run the most stable and secure versions of our products.
+
+If your project requires full control over the timing of upgrades, you can disable automated patch upgrades.
+
+{% hint style="danger" %}
+When you disable automated patch upgrades, you are responsible for keeping your project up to date. Falling behind on patches may affect your eligibility for support and can expose your project to known security vulnerabilities.
+{% endhint %}
+
+{% hint style="warning" %}
+Please be aware that in the event of a critical vulnerability that can affect the Umbraco Cloud platform, we reserve the right to apply patches to ensure stable and secure cloud operations.
+{% endhint %}
 
 ## Related Information
 
