@@ -17,7 +17,7 @@ const { data } = await umbHttpClient.get({
 });
 
 if (data) {
-	console.log('Server status:', data);
+	console.log('Data:', data);
 }
 ```
 

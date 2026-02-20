@@ -99,7 +99,7 @@ const { data } = await tryExecute(this, getMyControllerAction({
 }));
 
 if (data) {
-    console.log('Server status:', data);
+    console.log('Data:', data);
 }
 ```
 
