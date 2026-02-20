@@ -18,7 +18,7 @@ A deployment repository differs from a source code repository in the following w
 * **No pull request or review workflows** - The deployment repository does not support the collaboration features you would expect from a full source code management platform.
 * **Size constraints** - Deployment repositories are optimized for lightweight, frequent deployments. Large repositories slow down cloning, deployments, and environment provisioning.
 
-It is possible to use the Cloud repository as your source code repository, and some customers do. However, doing so means working within the limitations listed above. For the best experience, use a dedicated source code management platform and treat the Cloud repository as the last step in your development pipeline.
+It is possible to use the Cloud repository as your source code repository. However, doing so means working within the limitations listed above. For the best experience, use a dedicated source code management platform and treat the Cloud repository as the last step in your development pipeline.
 
 ## Use Your Own Source Code Repository
 
