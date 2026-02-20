@@ -34,7 +34,7 @@ To learn more about OpenAPI and how to define your API specification, visit the 
 
 ## Connecting to the Management API
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api’s `runtimeConfigPath` to inherit these settings automatically from the backoffice’s built-in HTTP client (`umbHttpClient`).
+Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
@@ -47,17 +47,17 @@ Add the `runtimeConfigPath` option to the `@hey-api/client-fetch` plugin in your
 ```javascript
 await createClient({
     input: swaggerUrl,
-    output: ‘src/api’,
+    output: 'src/api',
     plugins: [
       ...defaultPlugins,
       {
-        name: ‘@hey-api/client-fetch’,
-        runtimeConfigPath: ‘./src/hey-api.ts’,
+        name: '@hey-api/client-fetch',
+        runtimeConfigPath: './src/hey-api.ts',
       },
       {
-        name: ‘@hey-api/sdk’,
+        name: '@hey-api/sdk',
         asClass: true,
-        classNameBuilder: ‘{{name}}Service’,
+        classNameBuilder: '{{name}}Service',
       }
     ],
 });
@@ -66,8 +66,8 @@ await createClient({
 Then create `src/hey-api.ts`:
 
 ```typescript
-import type { CreateClientConfig } from ‘./api/client.gen’;
-import { umbHttpClient } from ‘@umbraco-cms/backoffice/http-client’;
+import type { CreateClientConfig } from './api/client.gen';
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
 export const createClientConfig: CreateClientConfig = (config) => ({
     ...config,
@@ -75,7 +75,7 @@ export const createClientConfig: CreateClientConfig = (config) => ({
 });
 ```
 
-This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice’s HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
+This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice's HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
 
 When you regenerate the client (`npm run generate-client`), the generated `client.gen.ts` will automatically import `createClientConfig` and apply it during client creation. Your SDK functions will be authenticated without any entrypoint setup.
 
@@ -84,20 +84,20 @@ When you regenerate the client (`npm run generate-client`), the generated `clien
 If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
 
 ```javascript
-import { getMyControllerAction } from ‘./my-client’;
-import { tryExecute } from ‘@umbraco-cms/backoffice/resources’;
-import { umbHttpClient } from ‘@umbraco-cms/backoffice/http-client’;
+import { getMyControllerAction } from './my-client';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
 const { data } = await tryExecute(this, getMyControllerAction({
     client: umbHttpClient,
 }));
 
 if (data) {
-    console.log(‘Server status:’, data);
+    console.log('Server status:', data);
 }
 ```
 
-This uses the backoffice’s HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
+This uses the backoffice's HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
 {% hint style="warning" %}
 The `auth` callback on `umbHttpClient` only fires for SDK functions that have `security` metadata. This metadata is generated automatically when your OpenAPI specification includes a security scheme (for example, Bearer authentication). If your spec does not include a security scheme, the generated functions will not send an `Authorization` header. For direct `.get()` / `.post()` calls (without a generated client), see [Calling custom API endpoints](http-client.md#calling-custom-api-endpoints).
