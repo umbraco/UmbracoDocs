@@ -18,4 +18,5 @@ description: Get an overview of the release notes for each month in 2026.
 ## [February 2026](2026-02-releasenotes.md)
 
 * **Opt out of automatic patch upgrades** - Allows project admins to opt out of automatic patch upgrades so you can now fully control when your project upgrades.
+* **Disable parallel builds** - Disable parallel builds for Umbraco 9+ sites to prevent resource contention.
 
