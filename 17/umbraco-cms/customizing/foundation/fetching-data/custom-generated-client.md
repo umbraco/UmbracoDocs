@@ -1,5 +1,5 @@
 ---
-description: Learn how to create a custom generated client with TypeScript types for your OpenAPI specification.
+description: Learn how to create a custom-generated client with TypeScript types for your OpenAPI specification.
 ---
 
 # Custom Generated Client
@@ -34,7 +34,7 @@ To learn more about OpenAPI and how to define your API specification, visit the 
 
 ## Connecting to the Management API
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
+Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses Hey-API's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
@@ -42,7 +42,9 @@ The [Umbraco Extension Template](../../development-flow/umbraco-extension-templa
 
 ### Using `runtimeConfigPath` (Recommended)
 
-To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags. Create `openapi-ts.config.ts` in your project root:
+To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags.
+
+1. Create `openapi-ts.config.ts` in your project root:
 
 ```typescript
 import { defineConfig } from '@hey-api/openapi-ts';
@@ -63,13 +65,13 @@ export default defineConfig({
 });
 ```
 
-Then run the generator (it picks up the config file automatically):
+2. Run the generator, which will pick up the config file automatically:
 
 ```bash
 npx openapi-ts
 ```
 
-Next, create `src/hey-api.ts`:
+3. Create a `src/hey-api.ts` file and add the following:
 
 ```typescript
 import type { CreateClientConfig } from './api/client.gen';
