@@ -49,7 +49,7 @@ When using the Fetch API, you need to manually handle errors and authentication.
 
 When making requests to the Umbraco API controllers, you may need to include an authorization token in the request headers. This is especially important when making requests to endpoints that require authentication.
 
-The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. The recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
+The Fetch API does not automatically include authentication tokens in requests. Add the authentication token to the request headers manually. The recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
 
 ### Example: Using `UMB_AUTH_CONTEXT` for Authentication
 
