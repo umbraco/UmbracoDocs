@@ -379,3 +379,92 @@ Even worse is when you allocate a lot of large items in memory. These items will
 
 Extending models should be used to add stateless, local features to models. It should not be used to transform content models into view models or manage trees of content.\
 You can read more about this in the [Understanding and Extending Models Builder documentation](templating/modelsbuilder/understand-and-extend.md)
+
+## Blocking Asynchronous Code with `.Result` or `.Wait()`
+
+Blocking asynchronous operations with the use of `.Result` or `.Wait()` is a common pitfall that can lead to reduced performance and potential deadlocks in the application.
+
+### Why this is problematic
+
+Async operations in ASP.NET Core are intended to run without blocking the current thread they operate on. When `.Result` or `.Wait()` is used, the operation is forced to complete synchronously instead, interrupting the intended flow. 
+
+The behaviour described above can lead to:
+
+- **Thread pool starvation**: When under load, all available threads can become blocked waiting for I/O operations. This leaves no threads available to handle new requests, causing response times to increase or time out.
+- **Deadlocks**: In some situations, the async continuation may need to resume on the original thread that was blocked. If that thread is blocked by `.Result`/`.Wait()`, both sides wait indefinitely.
+- **Reduced scalability**: A properly async web application can handle thousands of concurrent requests with fewer threads. Blocking on async code reduces this, effectively making your app synchronous.
+
+### Example of what to avoid
+
+```csharp
+public class BadContentController : Controller
+{
+    private readonly IContentService _contentService;
+    
+    public BadContentController(IContentService contentService)
+    {
+        _contentService = contentService;
+    }
+    
+    public IActionResult GetContent(int id)
+    {
+        // Not recommended - blocks current thread
+        var content = _contentService.GetByIdAsync(id).Result;
+        
+        return Ok(content);
+    }
+}
+```
+
+### Recommended approach
+
+```csharp
+public class GoodContentController : Controller
+{
+    private readonly IContentService _contentService;
+    
+    public GoodContentController(IContentService contentService)
+    {
+        _contentService = contentService;
+    }
+    
+    public async Task<IActionResult> GetContent(int id)
+    {
+        // Recommended approach - thread is released during I/O
+        var content = await _contentService.GetByIdAsync(id);
+        
+        return Ok(content);
+    }
+}
+```
+
+### The "async all the way" principle
+
+Once async code is introduced, it should propagate up the entire call stack. If one method becomes async, every caller should become async as well:
+
+```csharp
+// Repository
+public async Task<IEnumerable<Recipe>> GetRecipesAsync()
+{
+    return await _dbContext.Recipes.ToListAsync();
+}
+
+// Service
+public async Task<IEnumerable<RecipeViewModel>> GetRecipeViewModelsAsync()
+{
+    var recipes = await _repository.GetRecipesAsync();
+    return recipes.Select(r => new RecipeViewModel(r));
+}
+
+// Controller
+public async Task<IActionResult> Index()
+{
+    var viewModels = await _recipeService.GetRecipeViewModelsAsync();
+    return View(viewModels);
+}
+```
+
+### Further reading
+
+- [Async/Await - Best Practices in Asynchronous Programming](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming)
+- [ASP.NET Core Performance Best Practices](https://docs.microsoft.com/en-us/aspnet/core/performance/performance-best-practices)
