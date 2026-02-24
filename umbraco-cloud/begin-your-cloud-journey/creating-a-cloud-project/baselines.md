@@ -8,7 +8,7 @@ description: >-
 
 A Baseline Child project is similar to a Fork (forked repository) on GitHub. A clone of an existing project is created while maintaining a connection between the two projects. The connection exists between the Live environment of the **Baseline project** and the left-most mainline environment of the **Child project**.
 
-Any project can act as a Baseline project.
+Any project can act as a Baselne project.
 
 The idea is that you have a project containing all your standard Umbraco packages and components. Some default Document Types that you want to use as a baseline for future projects are also configured. When you've made changes to your Baseline project, you can push them out to all the Child projects with a click of a button.
 
@@ -42,7 +42,7 @@ Any Umbraco Cloud project can be used as a Baseline project
 7. Click **Create Project**.
 
 {% hint style="info" %}
-Depending on the size of the project chosen as a Baseline project, it can take a while before the Child project is ready.
+Depending on the size of the project chosen as a Baseline project, it can take a while before the Child project document type is ready.
 {% endhint %}
 
 ### Restore content from the Baseline project
@@ -65,7 +65,7 @@ As with any Git repository-based development, it is not uncommon to have merge c
 
 In this article, you'll find a guide on how to upgrade your Child project with changes from your Baseline project.
 
-## [Handling configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
+## [Handling configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-mege-conflicts/configuration-files.md)
 
 When you are working with Baseline Child projects, you might sometimes want to have an individual configuration for each project. This can be handled using config transforms.
 
