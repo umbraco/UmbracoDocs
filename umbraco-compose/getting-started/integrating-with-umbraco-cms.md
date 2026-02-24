@@ -62,6 +62,7 @@ Configuration is provided through the standard .NET configuration system. Add th
       "ClientSecret": "your-client-secret",
       "ProjectAlias": "your-project-alias",
       "EnvironmentAlias": "production",
+      "Region": "germanywestcentral",
       "Ingestion": {
         "CollectionAlias": "content"
       }
@@ -187,7 +188,7 @@ The data source queries Compose using GraphQL to retrieve matching content items
 If content is not being synchronized to Compose:
 
 1. **Verify credentials** - Ensure your Client ID and Client Secret are correct and that the API Application has the required scopes.
-2. **Verify project / environment / collection** - Confirm that you have specified the correct project, environment, and collection in your app settings, environment variables, or entity data picker configuration.
+2. **Verify project, environment, and/or collection** - Confirm that you have specified the correct project, environment, and collection in your app settings, environment variables, or entity data picker configuration.
 3. **Check logs** - Check your Umbraco logs for errors.
 4. **Re-save affected content / types** - Sometimes a transient failure might disrupt delivery. Try re-saving the Document Type or content a second time and see whether it succeeds.
 5. **Contact support** - If nothing else works, create a ticket from the Umbraco Cloud portal.
