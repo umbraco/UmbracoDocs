@@ -62,6 +62,7 @@ Configuration is provided through the standard .NET configuration system. Add th
       "ClientSecret": "your-client-secret",
       "ProjectAlias": "your-project-alias",
       "EnvironmentAlias": "production",
+      "Region": "germanywestcentral",
       "Ingestion": {
         "CollectionAlias": "content"
       }
