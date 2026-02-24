@@ -32,7 +32,7 @@ Starter Plans have a limit of 5 secrets per environment, whereas higher-tiered p
 ## How to add secrets
 
 {% hint style="warning" %}
-### Important
+#### Important
 
 When adding a secret to your environment, it will restart.
 

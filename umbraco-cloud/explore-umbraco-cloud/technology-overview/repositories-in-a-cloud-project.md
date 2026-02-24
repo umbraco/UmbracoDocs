@@ -1,6 +1,12 @@
+---
+description: >-
+  Learn how Umbraco Cloud environment Git repositories work, how they differ
+  from source control, and how to keep them small and healthy.
+---
+
 # Repositories in a Cloud Project
 
-Each Umbraco Cloud project can have multiple environments: Mainline and Flexible Environments. Each environment has its own git repository that is hosted on Umbraco's Cloud platform.
+Each Umbraco Cloud project can have multiple environments: Mainline and Flexible Environments. Each environment has its own repository hosted on Umbraco's Cloud platform.
 
 These repositories serve a specific purpose: **deploying code to your Cloud environments**. Understanding how they work and how to use them correctly will help you avoid common issues with deployments, performance, and repository management.
 
@@ -14,7 +20,7 @@ Umbraco Cloud repositories are only deployment repositories and should not be us
 
 A deployment repository differs from a source code repository in the following ways:
 
-* **Limited branch support** - Only the `master` branch is guaranteed to be maintained. Any other branches may be removed without notice, which can lead to data loss.
+* **Limited branch support** - Only the main branch (`master`) is guaranteed to be maintained. Any other branches may be removed without notice, potentially leading to data loss.
 * **No pull request or review workflows** - The deployment repository does not support the collaboration features you would expect from a full source code management platform.
 * **Size constraints** - Deployment repositories are optimized for lightweight, frequent deployments. Large repositories slow down cloning, deployments, and environment provisioning.
 
@@ -63,9 +69,9 @@ See the [Azure Blob Storage](../../build-and-customize-your-solution/handle-depl
 
 Keep the repository focused on source code and configuration. Avoid committing:
 
-* Large binary files (images, videos, archives)
-* `node_modules` or other package manager directories
-* Temporary or generated files
+* Large binary files (images, videos, archives).
+* `node_modules` or other package manager directories.
+* Temporary or generated files.
 
 Every file committed to the repository stays in the Git history, even after it is deleted. This means a single large file committed by mistake will continue to bloat the repository until the history is cleaned up.
 
@@ -77,29 +83,16 @@ Ensure your project includes a `.gitignore` file that excludes common non-essent
 
 The size of your deployment repository directly affects how quickly environments can be cloned, provisioned, and deployed. Use the following guidelines to assess the health of your repository:
 
-{% hint style="info" %}
-**<= 75 MB - Healthy**
-
-Your repository is in good shape. No action is needed.
-{% endhint %}
-
-{% hint style="warning" %}
-**75 MB - 150 MB - Warning**
-
-Your repository is growing large. Review what is being committed and remove any unnecessary files. Check for accidentally committed media files, build artifacts, or large binaries.
-{% endhint %}
-
-{% hint style="danger" %}
-**> 150 MB - Needs fixing**
-
-Your repository is too large and may cause deployment failures, slow environment provisioning, and degraded performance. Immediate cleanup is recommended.
-{% endhint %}
+| <= 75 MB                                               | 75 MB - 150 MB                                                                                                                                                                       | > 150 MB                                                                                                                                                   |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <mark style="color:green;">Healthy</mark>              | <mark style="color:$warning;">Warning</mark>                                                                                                                                         | <mark style="color:red;">Needs fixing</mark>                                                                                                               |
+| Your repository is in good shape. No action is needed. | Your repository is growing large. Review what is being committed and remove any unnecessary files. Check for accidentally committed media files, build artifacts, or large binaries. | Your repository is too large and may cause deployment failures, slow environment provisioning, and degraded performance. Immediate cleanup is recommended. |
 
 Large repositories cause problems because every deployment and environment clone requires downloading the full Git history. This affects:
 
 * **Deployment speed** - Larger repositories take longer to push and pull.
 * **Environment provisioning** - Creating new environments requires cloning the full repository.
-* **Local development** - Cloning the repository for local development becomes slow.
+* **Local development** - Cloning the repository becomes slow.
 
 ## How to Reduce Your Repository Size
 
@@ -137,7 +130,7 @@ See the [Working with a Local Clone](../../build-and-customize-your-solution/han
 
 ## Working with a Locally Cloned Umbraco Project
 
-It is recommended to create a Cloud project with at least two environments: a Live environment including one extra mainline environment. Work with a local copy of the site by cloning down the left-most environment. This repository is different from your source control repository.
+It is recommended to create a Cloud project with at least two environments: a Live environment, including one extra mainline environment. Work with a local copy of the site by cloning down the left-most environment. This repository is different from your source control repository.
 
 Once you're happy with the results or wish to see how your website has progressed, you push the changes back to the Cloud. If everything is working as expected, deploy your changes to the Live environment.
 
