@@ -96,6 +96,15 @@ The `Form` references the form the record is from and `FormState` provides its s
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
+## Field settings
+
+Field settings that will be managed in the backoffice by editors adding workflows can be added to the C# class. These settings can be added as properties with a `Setting` attribute.
+
+```csharp
+[Setting("My Setting", Description = "Help text for the setting", View = "TextField", SupportsPlaceholders = true, DisplayOrder = 10)]
+public virtual string MySetting { get; set; }
+```
+
 ## Registering the workflow type
 
 To use the new workflow type, you will need to register it as part of application startup.
