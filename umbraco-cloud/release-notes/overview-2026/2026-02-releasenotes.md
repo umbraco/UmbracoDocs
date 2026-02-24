@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2** - Adds middleware that ensures the underlying AzureWebsites url remains hidden on initial requests.
+* **Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2** - Adds middleware that ensures the internal Azure url remains hidden on initial requests.
 
 ## Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2
 
