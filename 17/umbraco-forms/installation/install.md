@@ -1,10 +1,10 @@
 ---
-description: Installing Umbraco Forms
+description: This article covers two ways to install Umbraco Forms.
 ---
 
 # Installing Umbraco Forms 
 
-This article covers two ways to install Umbraco Forms:
+Install Umbraco Forms following either of the two guides:
 
 * [Via NuGet](#installation-via-nuget), or
 * [Via a Terminal](#installing-using-the-terminal).
