@@ -24,7 +24,25 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL`
 
 Once you’ve added your MCP Server and updated the JSON configuration, restarting and managing the server is straightforward.
 
-![MCP Control](../images/GitHub%20Coplot.png)
+```json
+{
+  "servers": {
+    "umbraco-mcp": {
+      "command": "npx",
+      "args": ["@umbraco-cms/mcp-dev@16"],
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0",
+        "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
+        "UMBRACO_CLIENT_SECRET": "1234567890",
+        "UMBRACO_BASE_URL": "https://localhost:12345",
+        "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
+      },
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}
+```
 
 {% hint style="info" %}
 Restarting the MCP Server applies any configuration or tool changes immediately without needing to reinstall or re-add the server.
