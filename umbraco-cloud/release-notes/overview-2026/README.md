@@ -6,7 +6,7 @@ description: Get an overview of the release notes for each month in 2026.
 
 ## [February 2026](2026-02-releasenotes.md)
 
-* **Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2** - Adds middleware that ensures the internal Azure url remains hidden on initial requests.
+* **Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2** - Adds middleware that ensures the internal Azure URL remains hidden on initial requests.
 
 ## [January 2026](2026-01-releasenotes.md)
 
