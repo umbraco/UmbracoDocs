@@ -45,7 +45,7 @@ Once the installation is complete and the site is running, you will see a **Form
 
 ![Create form](images/start-with-forms-v14.png)
 
-The next step is to [configure the license](licensing.md).
+The next step is to [configure the license](the-licensing-model.md).
 
 ## Using Forms
 
