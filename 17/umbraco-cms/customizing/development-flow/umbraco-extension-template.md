@@ -41,6 +41,8 @@ The `-ex` flag indicates that you want to include examples of how to use the ext
 
 After setup, the dashboard appears in the main **Content** section of the Backoffice.
 
+By default the Umbraco Extensions project will have a reference to the latest version of Umbraco.  It does this by having the version number set to *.  This will however download the latest version of Umbraco when you restore the packages.  If you don't want this to happen, you should update your reference to the version of Umbraco that you are using.
+
 ### Add the Extension to an Umbraco Project
 
 To include the extension in your Umbraco project, you need to add a reference to the extension project in your Umbraco project. 
