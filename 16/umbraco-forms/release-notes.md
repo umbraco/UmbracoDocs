@@ -18,6 +18,22 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### 16.5.0-rc (February 19th 2026)
+* Umbraco CMS dependency updated to 16.5.0
+* Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)
+* Fix conditions not seeing field values modified by previous workflows [#1464](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1464)
+* Fix form entry count not displaying on first load of dashboard [#1469](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1469)
+* Fix Rich Text Editor (RTE) missing formatting options when changing field type [#1476](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1476)
+* Add server-side length validation for String Data Type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
+* Replace native button with styled anchor in "Copy Workflows" [#1595](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1595)
+* Improve Danish translations [#1596](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1596)
+* Add missing translations for multiple languages [#1599](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1599)
+* Use `uui-form-layout-item` for UI consistency in form settings [#1607](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1607)
+* Add Form reference tracking API and UI [#1609](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1609)
+* Use localized labels for Workflow stage dropdown [#1612](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1612)
+* Fix form re-initialization for dynamically injected forms [#1617](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1617)
+* Fix sensitive data field showing localization key as tooltip [#1633](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1633)
+
 ### 16.4.3 (February 12th 2026)
 
 * Fix reCAPTCHA Enterprise script not loading correctly on the frontend

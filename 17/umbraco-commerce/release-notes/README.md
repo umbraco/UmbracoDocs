@@ -18,6 +18,15 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### [17.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.2) (19th Feb 2026)
+* Updated the hashing depth of the realtime shipping rates calculator
+* Fixed passing transaction fee on payment authorisation
+* Add searching to Gift Cards [#765](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/765)
+* Enable cachebusting for backoffice JavaScript assets [#793](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/793)
+* Fix shipping and payment buttons in Cart order details [#820](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/820)
+* Fix order CSV export [#822](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/822)
+
+
 #### [17.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.1) (29th Jan 2026)
 
 * Allow decimal input for percentage property editor [#817](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/817)

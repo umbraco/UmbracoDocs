@@ -1,10 +1,10 @@
 ---
-description: Installing Umbraco Forms
+description: This article covers two ways to install Umbraco Forms.
 ---
 
 # Installing Umbraco Forms
 
-This article covers two ways to install Umbraco Forms:
+Install Umbraco Forms following either of the two guides:
 
 * [Via NuGet](install.md#installation-via-nuget), or
 * [Via a Terminal](install.md#installing-using-the-terminal).
@@ -45,7 +45,7 @@ Once the installation is complete and the site is running, you will see a **Form
 
 ![Create form](../.gitbook/assets/start-with-forms-v14.png)
 
-The next step is to [configure the license](licensing.md).
+The next step is to [configure the license](the-licensing-model.md).
 
 ## Using Forms
 

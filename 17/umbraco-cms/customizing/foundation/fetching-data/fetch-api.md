@@ -49,13 +49,9 @@ When using the Fetch API, you need to manually handle errors and authentication.
 
 When making requests to the Umbraco API controllers, you may need to include an authorization token in the request headers. This is especially important when making requests to endpoints that require authentication.
 
-The Fetch API does not automatically include authentication tokens in requests. You need to manually add the authentication token to the request headers. While you can manage tokens manually, the recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
+The Fetch API does not automatically include authentication tokens in requests. Add the authentication token to the request headers manually. The recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
 
 ### Example: Using `UMB_AUTH_CONTEXT` for Authentication
-
-{% hint style="info" %}
-The example assumes that you have a valid authentication token. You can replace this with your own token as needed. Read more about authentication in the [Security](../../../implementation/security.md) article.
-{% endhint %}
 
 The following example demonstrates how to use `UMB_AUTH_CONTEXT` to retrieve the latest token and make an authenticated request:
 
@@ -67,6 +63,7 @@ async function fetchData(host, endpoint) {
   const token = await authContext?.getLatestToken();
 
   const response = await fetch(endpoint, {
+    credentials: 'include',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -113,15 +110,9 @@ You can read more about this concept in the [API Users](../../../fundamentals/da
 
 The Fetch API can also be used to make requests to the Management API using a Backoffice token. This is useful for making requests from custom components that are running in the Backoffice. The concept is similar to the API Users, but the Backoffice token represents the current user in the Backoffice. You will share the access policies of the current user, so you can use the token to make requests on behalf of the current user.
 
-To use the Backoffice access token, you will have to consume the **UMB_AUTH_CONTEXT** context. This context is only available in the Backoffice and includes tools to hook on to the authentication process. You can use the [getOpenApiConfiguration](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_auth.UmbAuthContext.html#getopenapiconfiguration) method to get a configuration object that includes a few useful properties:
+To use the Backoffice access token, you will have to consume the **UMB_AUTH_CONTEXT** context. You can use the `getLatestToken()` method to get the current access token.
 
-* `base`: The base URL of the Management API.
-* `credentials`: The credentials to use for the request.
-* `token()`: A function that returns the current access token.
-
-Read more about this in the [UmbOpenApiConfiguration](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_auth.UmbOpenApiConfiguration.html) interface.
-
-It is rather tiresome to manually add the token to each request. Therefore, you can wrap the Fetch API in a custom function that automatically adds the token to the request headers. This way, you can use the Fetch API without worrying about adding the token manually:
+It is rather tiresome to manually add the token to each request. Therefore, you can wrap the Fetch API in a custom function that automatically adds the token to the request headers:
 
 ```typescript
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
@@ -140,6 +131,7 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
   const token = await authContext?.getLatestToken();
   const response = await fetch(url, {
     method,
+    credentials: 'include',
     body: body ? JSON.stringify(body) : undefined,
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -150,7 +142,7 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
 }
 ```
 
-The above example illustrates the process of making a request to the Management API. You can use this function to make requests to any endpoint in the Management API. The function does not handle errors or responses, so you will need to add that logic yourself, nor does it handle the authentication process. If the token is timed out, you will get a 401 error back, if the `getLatestToken` method failed to refresh the token.
+The above example illustrates the process of making a request to the Management API. The function does not handle errors or responses, so you will need to add that logic yourself. If the token has expired, you will get a 401 error back.
 
 ## Executing the request
 

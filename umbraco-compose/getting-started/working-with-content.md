@@ -26,13 +26,21 @@ Creating an API application is done in the [Umbraco Cloud Portal](https://s1.umb
 
 1. Open the Umbraco Cloud Portal and select the relevant project.
 2. Select **API Applications**.
-3. Select **Create New API Application**.
+3. Select **Create API Application**.
 
 ![Compose project list in the Umbraco Cloud portal](../.gitbook/assets/starter-guide-api-applications.png)
 
 4. Provide an **alias** for the API Application and, optionally, a **description**.
+5. Ensure that all required scopes are checked. See below for an overview of which scopes are necessary.
+6. Submit the form.
 
-In many real-world use cases, you will typically use different API Applications for calling Compose APIs from different sources. For example, you might have one for ingesting content and a different one for retrieving it from GraphQL.
+{% hint style="warning" %}
+When you submit the form you will be shown a client secret. This is shown only once and can not be retrieved later. Store it securely, as it is required for authenticating all subsequent requests to Compose APIs.
+{% endhint %}
+
+7. Store the client secret for your new Application somewhere secure.
+
+In many real-world use cases, you will use different API Applications for calling Compose APIs from different sources. For example, you might have one for ingesting content and a different one for retrieving it from GraphQL.
 
 Additionally, you may later wish to configure different environments. For example, you may wish to use a test environment to keep your non-production content clearly separated from live. Compose projects have a `production` environment created by default.
 
@@ -40,18 +48,14 @@ For simplicity, this guide uses a single API Application and the default `produc
 
 Scopes are how Compose determine which APIs an Application is authorized to call. For this guide your application will need the following scopes:
 
-* `project:write`
-* `ingestion`
-* `graphql`
-* `graphql:introspection`
+* `ProjectWrite`
+* `Ingestion`
+* `GraphQL`
+* `TypeSchemaWrite`
 
-The `project:write` scope is granted at the project level. The others apply only to a single environment. Make sure to apply them to the `production` environment.
+The `ProjectWrite` scope is granted at the project level. The others apply only to a single environment. Make sure to apply them to the `production` environment.
 
-5. Select _Create API Application_. If successful, the portal will now show you the client secret for your new Application.
-
-{% hint style="warning" %}
-The client secret is shown only once, immediately after the API Application is created. Store it securely, as it is required to authenticate the application.
-{% endhint %}
+![Create API application form with required scopes checked](../.gitbook/assets/starter-guide-api-application-config.png)
 
 ## Requesting an Access Token
 

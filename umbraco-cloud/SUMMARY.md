@@ -162,6 +162,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [February 2026](release-notes/overview-2026/2026-02-releasenotes.md)
   * [January 2026](release-notes/overview-2026/2026-01-releasenotes.md)
 * [Archive](release-notes/archive/README.md)
   * [Overview 2025](release-notes/archive/overview-2025/README.md)
