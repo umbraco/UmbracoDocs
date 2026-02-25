@@ -20,6 +20,11 @@ This is to provide you with better oversight and control over your project.
 
 <figure><img src="../../.gitbook/assets/project-history-overview.png" alt="Project History overview"><figcaption><p>Project History page</p></figcaption></figure>
 
+
+## Viewing Activity Details
+
+To get a detailed view of an activity, click the button on the right side of the entry.
+
 For each activity, you can see the following information:
 
 * The type of activity
@@ -30,10 +35,6 @@ For each activity, you can see the following information:
 * The status of the activity (In Progress, Completed, or Failed)
 
 You can copy the activity ID to your clipboard using the clipboard icon on each entry. This is useful when contacting support.
-
-## Viewing Activity Details
-
-To get a detailed view of an activity, click the button on the right side of the entry.
 
 For deployments, CI/CD flow deployments, pull/push changes, and upgrades, clicking **See more** opens a detail page with logs, timestamps, and error information.
 
