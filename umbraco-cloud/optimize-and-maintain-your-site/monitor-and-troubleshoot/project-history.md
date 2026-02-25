@@ -20,11 +20,11 @@ This is to provide you with better oversight and control over your project.
 
 <figure><img src="../../.gitbook/assets/project-history-overview.png" alt="Project History overview"><figcaption><p>Project History page</p></figcaption></figure>
 
-For each activity you can see the following information:
+For each activity, you can see the following information:
 
 * The type of activity
 * Information about the activity
-* Who the activity was started by
+* Who started the activity
 * When the activity was started
 * When the activity ended
 * The status of the activity (Completed, In Progress, or Failed)
