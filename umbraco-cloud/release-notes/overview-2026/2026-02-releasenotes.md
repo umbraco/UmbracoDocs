@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2** - Adds middleware that ensures the internal Azure URL remains hidden on initial requests.
-* **Configure automatic patch upgrades** - Allows project admins to enable or dissable automatic patch upgrades so you can now fully control when your project upgrades.
+* **Configure automatic patch upgrades** - Allows project admins to enable or disable automatic patch upgrades so you can now fully control when your project upgrades.
 * **Disable parallel builds** - Disable parallel builds for Umbraco 9+ sites to prevent resource contention.
 
 ## Release Umbraco.Cloud.Cms 13.0.1, 16.0.2 & 17.0.2
@@ -14,10 +14,10 @@ We fixed this by using early middleware and forwarded headers to ensure the [`um
 
 ## Configure automatic patch upgrades
 
-It is now possible to [dissable automatic patch upgrades](../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md#automatic-upgrades). New projects default to having automatic upgrades enabled. 
+It is now possible to [disable automatic patch upgrades](../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md#automatic-upgrades) from the Project Settings page. New projects default to having automatic upgrades enabled. 
 
 {% hint style="warning" %} 
-If you have previously dissabled automatic upgrades through Umbraco support this will still be in effect. You can enable upgrades again using the toggles.
+If you have previously disabled automatic upgrades through Umbraco Support this will still be in effect. You can enable upgrades again using the toggles.
 {% endhint %}
 
 ![UI for selecting which upgrades you want to automatically apply](../../.gitbook/assets/automatic-upgrades.png)
