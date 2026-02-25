@@ -18,7 +18,7 @@ By default automatic upgrades will occur for patch and minor upgrades, major upg
 * The decision to roll out an upgrade will be made no later than the **Thursday** prior and the status page will be updated accordingly
 * A product upgrade will be rolled out if:
   * A fix needs to be shipped due to a critical issue in any product
-  * A new version of Umbraco Cms is ready for release
+  * A new version of Umbraco CMS is ready for release
   * A new version of Deploy is ready for release
   * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
