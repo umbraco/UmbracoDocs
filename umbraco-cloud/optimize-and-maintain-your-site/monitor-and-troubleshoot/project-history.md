@@ -41,8 +41,8 @@ For deployments, CI/CD flow deployments, synchronize/reintegrate operations, and
 
 For upgrades, clicking **See more** redirects to an Upgrade Details page where you can see details about how the upgrade went.
 
-<figure><img src="../../.gitbook/assets/project-history-upgrade-details.png" alt="Upgrade details"><figcaption><p>Upgrade details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/project-history-automatic-upgrades-details.png" alt="Upgrade details"><figcaption><p>Upgrade details</p></figcaption></figure>
 
-For other activities such as adding or removing environments, plan changes, moving to dedicated or shared resources, and database restores, clicking **See activity** opens a dialog showing the stages and tasks involved in the process.
+Click **See activity** to view a dialog showing the stages and tasks for environment changes, plan updates, resource moves, or database restores.
 
-<figure><img src="../../.gitbook/assets/project-history-activity-dialog.png" alt="Activity dialog"><figcaption><p>Activity details dialog</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/project-history-add-environement-activity.png" alt="Activity dialog"><figcaption><p>Activity details dialog</p></figcaption></figure>
