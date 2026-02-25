@@ -9,6 +9,8 @@ This document describes when and what product updates are rolled out on Umbraco 
 * Deploy
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases, if they do we will notify Umbraco Cloud users via the status page)
 
+By default automatic upgrades will occur for patch and minor upgrades, major upgrades will require manually upgrading. You can [opt out of automatic minor and/or patch upgrades](#can-i-opt-out-of-automated-upgrades).
+
 ## When do upgrades happen?
 
 * The status page will include all important rollout information: [**https://status.umbraco.io/**](https://status.umbraco.io/)

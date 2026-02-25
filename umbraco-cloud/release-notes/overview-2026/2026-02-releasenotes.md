@@ -14,7 +14,7 @@ We fixed this by using early middleware and forwarded headers to ensure the [`um
 
 ## Opt out of automatic patch upgrades
 
-It is now possible to opt out of automatic patch upgrades. The default setting for new projects will be on, and the default settings for existing projects will be on. 
+It is now possible to [opt out of automatic patch upgrades](../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md#automatic-upgrades). The default setting for new projects will be on, and the default settings for existing projects will be on. 
 
 {% hint style="warning" %} 
 If you have talked to support to have them set up something that ignores your project then that will still be in effect, but if you then go and use these toggles it will overwrite the stored settings.
