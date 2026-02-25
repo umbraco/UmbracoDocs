@@ -16,6 +16,14 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
+{% hint style="warning" %}
+**Do not perform major version upgrades directly in Umbraco Cloud.**
+
+Major upgrades involve significant database migrations that should be run locally where you have full visibility into the migration process. Attempting to run major version migrations directly on Cloud (for example, by restoring an older database into a new Cloud project running a newer major version) can result in boot failures, 503 errors, and incomplete migrations that are difficult to diagnose.
+
+Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
+{% endhint %}
+
 ## Before you start the upgrade
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
