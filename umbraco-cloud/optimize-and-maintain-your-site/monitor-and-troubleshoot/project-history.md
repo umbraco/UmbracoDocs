@@ -35,7 +35,7 @@ You can copy the activity ID to your clipboard using the clipboard icon on each 
 
 To get a detailed view of an activity, click the button on the right side of the entry.
 
-For deployments, CI/CD flow deployments, pull/push operations, and upgrades, clicking **See more** opens a detail page with logs, timestamps, and error information.
+For deployments, CI/CD flow deployments, pull/push changes, and upgrades, clicking **See more** opens a detail page with logs, timestamps, and error information.
 
 <figure><img src="../../.gitbook/assets/project-history-deployment-details.png" alt="Deployment details"><figcaption><p>Deployment details</p></figcaption></figure>
 
