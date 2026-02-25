@@ -9,7 +9,7 @@ description: >-
 The Project History page shows details about the following changes to your project:
 
 * Deployments and CI/CD flow deployments.
-* Synchronizing (pulling) and reintegrating (pushing) changes between environments.
+* Pulling and pushing changes between a flexible environment and it's mainline environment.
 * Adding or removing environments.
 * Project plan changes.
 * Transitions between shared and dedicated resources.
@@ -27,7 +27,7 @@ For each activity, you can see the following information:
 * Who started the activity
 * When the activity was started
 * When the activity ended
-* The status of the activity (Completed, In Progress, or Failed)
+* The status of the activity (In Progress, Completed, or Failed)
 
 You can copy the activity ID to your clipboard using the clipboard icon on each entry. This is useful when contacting support.
 
@@ -35,7 +35,7 @@ You can copy the activity ID to your clipboard using the clipboard icon on each 
 
 To get a detailed view of an activity, click the button on the right side of the entry.
 
-For deployments, CI/CD flow deployments, synchronize/reintegrate operations, and upgrades, clicking **See more** opens a detail page with logs, timestamps, and error information.
+For deployments, CI/CD flow deployments, pull/push operations, and upgrades, clicking **See more** opens a detail page with logs, timestamps, and error information.
 
 <figure><img src="../../.gitbook/assets/project-history-deployment-details.png" alt="Deployment details"><figcaption><p>Deployment details</p></figcaption></figure>
 
