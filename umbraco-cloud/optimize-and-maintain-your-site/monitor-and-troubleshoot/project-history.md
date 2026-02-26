@@ -9,7 +9,7 @@ description: >-
 The Project History page shows details about the following changes to your project:
 
 * Deployments and CI/CD flow deployments.
-* Pulling and pushing changes between a flexible environment and it's mainline environment.
+* Pulling and pushing changes between a flexible environment and its mainline environment.
 * Adding or removing environments.
 * Project plan changes.
 * Transitions between shared and dedicated resources.
