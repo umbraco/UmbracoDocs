@@ -9,6 +9,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: errata-ai/vale-action@reviewdog
         with:
+
+          # This is the key change to remove 'Raw Output'
+          reporter: github-pr-review
+
+          # 'added' ensures Vale only comments on the lines the user actually changed
+          # instead of flagging every existing typo in the whole file.
+          filter_mode: added
+          
           fail_on_error: true
         env:
           # Required, set by GitHub Actions automatically:

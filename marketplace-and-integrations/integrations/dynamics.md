@@ -31,7 +31,8 @@ To connect to your Dynamics 365 instance, the following configuration is require
 {% code title="appsettings.json" %}
 ```json
 "Umbraco": {
-  "Integrations": {
+  "CMS": {
+    "Integrations": {
       "Crm": {
         "Dynamics": {
           "Settings": {
@@ -42,6 +43,7 @@ To connect to your Dynamics 365 instance, the following configuration is require
       }
     }
   }
+}
 ```
 {% endcode %}
 {% endtab %}
