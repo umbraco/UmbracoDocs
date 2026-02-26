@@ -19,4 +19,4 @@ A notification badge is now displayed in the UI, incrementing based on the numbe
 
 This makes project onboarding more visible and ensures that invitations are not missed, especially for users who are invited to multiple projects.
 
-<img width="497" height="531" alt="image" src="https://github.com/user-attachments/assets/392907bd-9819-4e07-a184-e04e08f4acf6" />
+<figure><img src="../images/pending-invite-notification.png" alt="Pending Invite Notification"><figcaption><p>Pending Invite Notification</p></figcaption></figure>
