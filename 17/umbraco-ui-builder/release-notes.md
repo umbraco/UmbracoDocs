@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.5) **(February 27th 2026)**
+
+* Fixed bulk actions for collections [#215](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/215)
+
 ### [**17.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.4) **(January 28th 2026)**
 
 * Replace deprecated `PagedResult` with `PagedModel` [#214](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/214).
