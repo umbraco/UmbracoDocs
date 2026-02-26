@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.1.3 (26th Feb 2026)
+* Make `DiscountRuleContext` and `DiscountRewardContext` constructors public for custom `DiscountsPriceAdjuster` implementations
+* Fix transaction fee not being tracked on `AuthorizeTransactionActivity`
+
 #### [17.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.2) (19th Feb 2026)
 * Updated the hashing depth of the realtime shipping rates calculator
 * Fixed passing transaction fee on payment authorisation
