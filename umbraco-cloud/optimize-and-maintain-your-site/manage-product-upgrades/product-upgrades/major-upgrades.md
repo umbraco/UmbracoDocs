@@ -19,7 +19,7 @@ Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamen
 {% hint style="warning" %}
 **Do not perform major version upgrades directly in Umbraco Cloud.**
 
-Major upgrades involve significant database migrations that should be run locally where you have full visibility into the migration process. Attempting to run major version migrations directly on Cloud (for example, by restoring an older database into a new Cloud project running a newer major version) can result in boot failures, 503 errors, and incomplete migrations that are difficult to diagnose.
+Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
 
 Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
 {% endhint %}
