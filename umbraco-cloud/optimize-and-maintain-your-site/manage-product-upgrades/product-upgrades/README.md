@@ -89,7 +89,7 @@ When you disable automated patch upgrades, you are responsible for keeping your 
 {% endhint %}
 
 {% hint style="warning" %}
-Please be aware that in the event of a critical vulnerability that can affect the Umbraco Cloud platform, we reserve the right to apply patches to ensure stable and secure cloud operations.
+We reserve the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
 {% endhint %}
 
 ## Related Information
