@@ -20,7 +20,7 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**16.1.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.6) **(February 27th 2026)**
 
-* Fixed bulk actions for collections [#215](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/215)
+* Fixed bulk actions for collections [#215](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/215) 
 
 #### [**16.1.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F16.1.5) **(January 28th 2026)**
 
