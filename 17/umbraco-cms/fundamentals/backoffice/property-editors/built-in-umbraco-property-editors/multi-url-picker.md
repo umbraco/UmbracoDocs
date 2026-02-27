@@ -6,7 +6,7 @@
 
 `Returns: IEnumerable<Link> or Link`
 
-Multi Url Picker allows an editor to pick and sort multiple URLs. It returns either a single item or a collection. This depends on the "Maximum number of items" Data Type setting. When that is set to 1, it returns a single item, otherwise a collection. Multi URL Picker allows editors to select and sort multiple URLs. The property returns either a single item or a collection, depending on the **Maximum number of items** setting in the Data Type configuration.
+Multi URL Picker allows editors to select and sort multiple URLs. The property returns either a single item or a collection, depending on the **Maximum number of items** setting in the Data Type configuration.
 
 * When the maximum is set to 1, it returns a single item.
 * When the maximum is greater than 1, it returns a collection.
@@ -80,6 +80,48 @@ And here is the case of `Maximum number of items` set to `1`:
     {
         <a href="@link.Url" target="@link.Target">@link.Name</a>
     }
+}
+```
+
+## Getting Absolute URLs
+
+By default, `link.Url` returns a relative URL for internal content links (for example, /products/, /blog/, and so on). If you need absolute URLs, for example in emails, sitemaps, or cross-domain scenarios, you can use `IPublishedUrlProvider` with `UrlMode.Absolute`.
+
+Inject `IPublishedUrlProvider` at the top of your view and resolve internal links using `UrlMode.Absolute`. External and media links are already stored as absolute strings and pass through unchanged.
+
+```csharp
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.PublishedContent
+@inject Umbraco.Cms.Core.Routing.IPublishedUrlProvider UrlProvider
+
+@{
+    var links = Model.Value<IEnumerable<Link>>("footerLinks");
+    if (links.Any())
+    {
+        <ul>
+            @foreach (var link in links)
+            {
+                var url = link.Type == LinkType.Content
+                    ? UrlProvider.GetUrl(Umbraco.Content(link.Udi), UrlMode.Absolute)
+                    : link.Url;
+
+                <li><a href="@url" target="@link.Target">@link.Name</a></li>
+            }
+        </ul>
+    }
+}
+```
+
+When setting values programmatically, you can also pass `UrlMode.Absolute` when building `Link` objects in code:
+
+```csharp
+new Link
+{
+    Target = "_self",
+    Name = contentPage.Name,
+    Url = contentPage.Url(mode: UrlMode.Absolute),
+    Type = LinkType.Content,
+    Udi = contentPageUdi
 }
 ```
 
