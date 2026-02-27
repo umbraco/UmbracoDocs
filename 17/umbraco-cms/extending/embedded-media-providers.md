@@ -64,7 +64,7 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 
     public override string ApiEndpoint => "https://backend.deviantart.com/oembed?url=";
 
-    public override string[] UrlSchemeRegex => new[]
+    public override string[] UrlSchemeRegex =>
     {
         @"fav\.me/*",
         @"\w+\.deviantart.com\/\w+\/art\/*",
@@ -73,14 +73,14 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
         @"\w+\.deviantart.com\/\w+#\/d*"
     };
 
-    public override Dictionary<string, string> RequestParams => new();
+    public override Dictionary<string, string> RequestParams => [];
 
     public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
     {
         return GeOEmbedDataAsync(url, maxWidth, maxHeight, CancellationToken.None).GetAwaiter().GetResult();
     }
 
-    public override async Task<string?> GeOEmbedDataAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
+    public override async Task<string?> GetMarkupAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
     {
         var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
         OEmbedResponseWithStringDimensions? oembed = await base.GetJsonResponseAsync<OEmbedResponseWithStringDimensions>(requestUrl, cancellationToken);
@@ -150,7 +150,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
 
     public override Dictionary<string, string> RequestParams => new();
 
-    public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
+    public override Task<string?> GetMarkupAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
     {
         // format of markup
         string videoFormat = "<div class=\"iplayer-container\"><iframe src=\"//aka.ms/ampembed?url={0}\" name=\"azuremediaplayer\" scrolling=\"no\" frameborder=\"no\" align=\"center\" autoplay=\"false\" width=\"{1}\" height=\"{2}\" allowfullscreen></iframe></div>";
@@ -158,7 +158,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
         // pass in encoded Url, with and height, and turn off autoplay...
         var videoPlayerMarkup = string.Format(videoFormat, WebUtility.UrlEncode(url) + "&amp;autoplay=false", maxWidth, maxHeight);
 
-        return videoPlayerMarkup;
+        return Task.FromResult<string?>(videoPlayerMarkup);
     }
 }
 ```
