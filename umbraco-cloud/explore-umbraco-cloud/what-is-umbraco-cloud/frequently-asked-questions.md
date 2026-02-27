@@ -1015,7 +1015,11 @@ Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. 
 
 ### Will customized files be overwritten during upgrades?
 
-Any default Umbraco files may be overwritten during upgrades. This usually affects only files changed in the newest release, but there’s no guarantee. For example, if you’ve customized the login page, it will likely be reverted after each upgrade.
+Any default Umbraco files may be overwritten during upgrades. This usually affects only files changed in the newest release, but there's no guarantee. For example, if you've customized the login page, it will likely be reverted after each upgrade.
+
+### Can I opt out of automated upgrades?
+
+Yes. Both Minor and Patch upgrades can be toggled on or off in the Cloud Portal under **Configuration** -> **Automatic Upgrades**. See the [Product Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md#can-i-opt-out-of-automated-upgrades) article for full details.
 
 ## Testing
 
