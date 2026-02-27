@@ -87,7 +87,9 @@ The Connections section provides connection details for your Umbraco Cloud datab
 
 The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects have automatic upgrades enabled.
 
-From this page, you can manage whether your site is automatically upgraded to the latest minor and patch version(s) of the Cloud products (Umbraco CMS, Forms, and Deploy). For information about opting out of automated upgrades, see the [Product Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md) article.
+You can manage whether your site is automatically upgraded with the latest patch and minor version(s) of Umbraco CMS, Forms, and Deploy.
+
+For information about opting out of automated upgrades, see the [Product Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md) article.
 
 ![Automatic Upgrades](../../../.gitbook/assets/automatic-upgrades.png)
 
