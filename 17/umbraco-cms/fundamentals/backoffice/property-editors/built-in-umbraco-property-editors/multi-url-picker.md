@@ -112,7 +112,7 @@ Inject `IPublishedUrlProvider` at the top of your view and resolve internal link
 }
 ```
 
-When setting values programmatically, you can also pass `UrlMode.Absolute` when building `Link` objects in code:
+When setting values programmatically, you can pass `UrlMode.Absolute` when building `Link` objects in code:
 
 ```csharp
 new Link
