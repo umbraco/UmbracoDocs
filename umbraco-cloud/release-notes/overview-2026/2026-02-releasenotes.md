@@ -26,7 +26,9 @@ For more on configuring automatic upgrades refer to the [Projects Settings docum
 
 ## Disable parallel builds
 
-For Umbraco 9+ sites only!
+{% hint style="info" %} 
+The following applies to sites using Umbraco 9 and newer.
+{% endhint %}
 
 When deploying to Umbraco Cloud, the build step of a deployment could previously utilize all available resources on the underlying infrastructure. This had the side effect that the deployments could end up experiencing resource contention, causing it to complete slowly or fail entirely.
 
