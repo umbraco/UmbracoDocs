@@ -16,6 +16,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.2.0-rc2 (February 26th 2026)
+* Add global backoffice search for Forms
+* Fix regression with new Forms missing default page, group and data consent field
+* Fix reCAPTCHA Enterprise field not correctly validating assessments
+* Remove unnecessary API calls for users without Forms section access [#1648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1648)
+* Fix export error when form name contains a dot [#1649](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1649)
+
 ### 17.2.0-rc (February 19th 2026)
 * Umbraco CMS dependency updated to 17.2.0
 * Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)

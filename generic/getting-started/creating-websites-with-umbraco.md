@@ -1,43 +1,37 @@
 ---
 description: >-
-  This section shows you some beginner tools and information to get you started
-  with Umbraco. From making a local installation to extending the backoffice.
+  This section provides beginner-friendly tools and guidance to get started with
+  Umbraco
 ---
 
 # Creating websites
 
-In this section, you will find information on which frameworks, languages, and platforms to use with Umbraco to create user-friendly and responsive websites.
+In this section, you will find information about which frameworks, languages, and platforms work best with Umbraco to create user-friendly, responsive websites.
 
-There is a set of key concepts that you will need to familiarize yourself with. This section will give you the details you need as well as introduce you to how you can work with them in the Umbraco backoffice.
+Before diving in, it’s helpful to familiarize yourself with some key concepts. This section introduces these concepts and explains how they are used in the Umbraco backoffice.
 
-![Umbraco tree image](../.gitbook/assets/Headless_Email_hero_780x405px.png)
+## How Umbraco Works
 
-We've even included some helpful tutorials which you can follow for creating a basic site to get you started.
+Your website’s content is structured using **Document Types**, which define the types of content you can create. Each Document Type is composed of Properties, which utilize **Data Types** to define the type of data that can be entered. Every Data Type relies on a **Property Editor**, which determines how content is edited in the backoffice.
 
-## How Umbraco works
+Once content is created using Document Types, it is displayed on your website through **Templates**.
 
-Your website's content is based on **Document Types**. Each of these Document Types is structured by **Properties** made up of **Data Types**, and each Data Type has an underlying **Property Editor**.
+### Key Terminology
 
-Once you've created content based on the Document Types, they will be published on your website using **Templates**.
+There are a lot of terminologies here. Let's look at breaking these terms down:
 
-![Example of tree content structure](../.gitbook/assets/contentstructure.png)
-
-There are a lot of terminologies here! Let's look at breaking those terms down:
-
-[Defining content in Umbraco using Document Types](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/defining-content)
-
-[What is a Data Type?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/data/data-types)
-
-[What is a Property Editor?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice/property-editors)
-
-[Working with Templates](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/design/templates)
+* [**Document Types**](https://docs.umbraco.com/umbraco-cms/fundamentals/data/defining-content)**:** Define the structure and type of content on your website.
+* [**Data Types**](https://docs.umbraco.com/umbraco-cms/fundamentals/data/data-types)**:** Specify the kind of data a Property can store (for example, text, number, date).
+* [**Property Editors**](https://docs.umbraco.com/umbraco-cms/13.latest/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors)**:** Control how content is entered and displayed in the backoffice.
+* [**Templates**](https://docs.umbraco.com/umbraco-cms/fundamentals/design/templates)**:** Determine how content is rendered on the front end of your website.
 
 ## Try it out
 
-[Learn how to create a website with Umbraco](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/creating-a-basic-website)
+* [Creating a basic website Tutorial](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/creating-a-basic-website): Learn how to create a basic website and start exploring Umbraco CMS hands-on.
+* [Video: Create an Umbraco website](https://www.youtube.com/watch?v=_Is_bk2xnKg): Watch a step-by-step guide to creating your first website with Umbraco.
 
-[Video: Create an Umbraco website](https://www.youtube.com/watch?v=Yu29dE-0OoI\&list=PLgX62vUaGZsFBcq9eSJ_178rXgn82sJ-T)
+## Other Resources
 
-## Other resources
-
-[How can translations be used with content?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice/variants)
+* [How can translations be used with content?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice/variants)
+* [Customize the Backoffice](https://docs.umbraco.com/umbraco-cms/customizing/overview)
+* [Extending Umbraco](https://docs.umbraco.com/umbraco-cms/extending/build-on-umbraco-functionality)
