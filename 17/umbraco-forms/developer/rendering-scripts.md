@@ -58,7 +58,7 @@ This will use the appropriate storage method that you have configured.
 
 When setting up templates for Umbraco Forms, two separate script-rendering methods are involved and both are required for forms to work correctly.
 
-`@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](./prepping-frontend.md) article, renders client-side validation scripts such as jQuery Validate and unobtrusive validation. This goes in the `<head>` of your template.
+`@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](/umbraco-forms/developer/prepping-frontend) article, renders client-side validation scripts such as jQuery Validate and unobtrusive validation. This goes in the `<head>` of your template.
 
 The `<umb-forms-render-scripts />` tag helper (or the equivalent view component calls shown above) renders form-specific scripts covering conditional field logic, field behaviors, and any theme JavaScript. This goes before the closing `</body>` tag.
 
