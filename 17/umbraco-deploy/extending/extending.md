@@ -1,5 +1,5 @@
 ---
-description: How to extend Umbraco Deploy to synchronize custom data
+description: How to extend Umbraco Deploy to synchronize custom data.
 ---
 
 # Extending
@@ -12,7 +12,7 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 ### Entities
 
-_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are the Document Types, Data Type, documents etc. In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco content. These can still be managed in the Backoffice using custom trees and editors.
+_Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are for example the Document Types, Data Types and Documents (content). In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco schema or content. These can still be managed in the Backoffice using custom trees and editors.
 
 For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
@@ -78,96 +78,106 @@ The following example shows a service connector, responsible for handling the ar
 An illustrative data service is provided via dependency injection. This will be whatever is appropriate for to use for Create, Read, Update and Delete (CRUD) operations around reading and writing of entities.
 
 {% hint style="info" %}
-In Deploy 9.5/10.1, to improve performance on deploy operations, we introduced a cache. This change required the addition of new methods to interfaces, allowing the passing in of a cache parameter. In order to introduce this without breaking changes, we created some new interfaces and base classes.
+Service connectors support a caching mechanism via the `IContextCache` parameter. This allows connectors to read from and write to a cache during deploy operations, improving performance when the same data is requested multiple times.
 
-In the example below, if instead we inherited from `ServiceConnectorBase2`, which has a type parameter of `IServiceConnector2`, we would be able to implement `IArtifact? IServiceConnector2.GetArtifact(Udi udi, IContextCache contextCache)`. This would allow the connector to read and write to the cache and remove the use of the obsolete methods.
-
-There's no harm in what is listed below though. It's only that the connectors won't be able to use the cache for any look-ups that are repeated in deploy operations. The obsolete methods won't be removed until Deploy 11. In that version we plan to return back to the original interface and class names. We also plan to introduce the new method overloads which will be a documented breaking change.
+It's recommended to only cache frequent lookups, like validating whether a parent entity exists. Deploy provides extension methods in `Umbraco.Deploy.Core.ContextCacheExtensions` for frequently used CMS service calls. If the `IContextCache` parameter is not available, you can create an instance from the `IDeployContext` using `new DeployContextCache(deployContext)`.
 {% endhint %}
 
 ```csharp
+using System.Runtime.CompilerServices;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Deploy.Core.Connectors.ServiceConnectors;
+using Umbraco.Deploy.Infrastructure.Connectors.ServiceConnectors;
+
 [UdiDefinition("mypackage-example", UdiType.GuidUdi)]
-public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, GuidUdi, ArtifactDeployState<ExampleArtifact, Example>>
+public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, GuidUdi, Example>
 {
     private readonly IExampleDataService _exampleDataService;
 
-    public ExampleServiceConnector(IExampleDataService exampleDataService) => _exampleDataService = exampleDataService;
+    public ExampleServiceConnector(IExampleDataService exampleDataService)
+        => _exampleDataService = exampleDataService;
 
-    public override ExampleArtifact GetArtifact(object o)
-    {
-        var entity = o as Example;
-        if (entity == null)
-        {
-            throw new InvalidEntityTypeException($"Unexpected entity type \"{o.GetType().FullName}\".");
-        }
-
-        return GetArtifact(entity.GetUdi(), entity);
-    }
-
-    public override ExampleArtifact GetArtifact(GuidUdi udi)
-    {
-        EnsureType(udi);
-        var entity = _exampleDataService.GetExampleById(udi.Guid);
-
-        return GetArtifact(udi, entity);
-    }
-
-    private ExampleArtifact GetArtifact(GuidUdi udi, Example entity)
-    {
-        if (entity == null)
-        {
-            return null;
-        }
-
-        var dependencies = new ArtifactDependencyCollection();
-        var artifact = Map(udi, entity, dependencies);
-        artifact.Dependencies = dependencies;
-
-        return artifact;
-    }
-
-    private ExampleArtifact Map(GuidUdi udi, Example entity, ICollection<ArtifactDependency> dependencies)
-    {
-        var artifact = new ExampleArtifact(udi);
-        artifact.Description = example.Description;
-        return artifact;
-    }
-
-    private string[] ValidOpenSelectors => new[]
+    protected override string[] ValidOpenSelectors => new[]
     {
         DeploySelector.This,
         DeploySelector.ThisAndDescendants,
         DeploySelector.DescendantsOfThis
     };
-    private const string OpenUdiName = "All Examples";
 
-    public override void Explode(UdiRange range, List<Udi> udis)
+    protected override string OpenUdiName => "All Examples";
+
+    protected override int[] ProcessPasses => new[] { 1 };
+
+    public override async Task<ExampleArtifact?> GetArtifactAsync(
+        GuidUdi udi,
+        IContextCache contextCache,
+        CancellationToken cancellationToken = default)
     {
-        EnsureType(range.Udi);
+        var entity = await _exampleDataService.GetExampleByIdAsync(udi.Guid, cancellationToken);
+        if (entity is null)
+        {
+            return null;
+        }
 
+        return CreateArtifact(udi, entity);
+    }
+
+    public override Task<ExampleArtifact> GetArtifactAsync(
+        Example entity,
+        IContextCache contextCache,
+        CancellationToken cancellationToken = default)
+    {
+        var artifact = CreateArtifact(entity.GetUdi(), entity);
+
+        return Task.FromResult(artifact);
+    }
+
+    private ExampleArtifact CreateArtifact(
+        GuidUdi udi, 
+        Example entity)
+    {
+        var dependencies = new ArtifactDependencyCollection();
+
+        var artifact = new ExampleArtifact(udi)
+        {
+            Description = entity.Description
+        };
+
+        artifact.Dependencies = dependencies;
+
+        return artifact;
+    }
+
+    public override async IAsyncEnumerable<GuidUdi> ExpandRangeAsync(
+        UdiRange range,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
         if (range.Udi.IsRoot)
         {
-            EnsureSelector(range, ValidOpenSelectors);
-            udis.AddRange(_exampleDataService.GetExamples().Select(e => e.GetUdi()));
+            await foreach (var example in _exampleDataService.GetExamplesAsync(cancellationToken))
+            {
+                yield return example.GetUdi();
+            }
         }
         else
         {
-            var entity = _exampleDataService.GetExampleById(((GuidUdi)range.Udi).Guid);
-            if (entity == null)
-            {
-                return;
-            }
-
-            EnsureSelector(range.Selector, DeploySelector.This);
-            udis.Add(entity.GetUdi());
+            yield return (GuidUdi)range.Udi;
         }
     }
 
-    public override NamedUdiRange GetRange(string entityType, string sid, string selector)
+    public override async Task<NamedUdiRange> GetRangeAsync(
+        string entityType,
+        string sid,
+        string selector,
+        CancellationToken cancellationToken = default)
     {
+        EnsureType(entityType);
+
         if (sid == "-1")
         {
-            EnsureSelector(selector, ValidOpenSelectors);
+            EnsureOpenSelector(selector);
+
             return new NamedUdiRange(Udi.Create("mypackage-example"), OpenUdiName, selector);
         }
 
@@ -176,67 +186,54 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
             throw new ArgumentException("Invalid identifier.", nameof(sid));
         }
 
-        var entity = _exampleDataService.GetExampleById(id);
+        var entity = await _exampleDataService.GetExampleByIdAsync(id, cancellationToken);
         if (entity == null)
         {
             throw new ArgumentException("Could not find an entity with the specified identifier.", nameof(sid));
         }
 
-        return GetRange(entity, selector);
+        return new NamedUdiRange(entity.GetUdi(), entity.Name, selector);
     }
 
-    public override NamedUdiRange GetRange(GuidUdi udi, string selector)
+    public override async Task<NamedUdiRange> GetRangeAsync(
+        GuidUdi udi,
+        string selector,
+        CancellationToken cancellationToken = default)
     {
-        EnsureType(udi);
-
         if (udi.IsRoot)
         {
-            EnsureSelector(selector, ValidOpenSelectors);
             return new NamedUdiRange(udi, OpenUdiName, selector);
         }
 
-        var entity = _exampleDataService.GetExampleById(udi.Guid);
+        var entity = await _exampleDataService.GetExampleByIdAsync(udi.Guid, cancellationToken);
         if (entity == null)
         {
             throw new ArgumentException("Could not find an entity with the specified identifier.", nameof(udi));
         }
 
-        return GetRange(entity, selector);
+        return new NamedUdiRange(udi, entity.Name, selector);
     }
 
-    private static NamedUdiRange GetRange(Example e, string selector) => new NamedUdiRange(e.GetUdi(), e.Name, selector);
-
-    public override ArtifactDeployState<ExampleArtifact, Example> ProcessInit(ExampleArtifact art, IDeployContext context)
+    public override async Task<ArtifactDeployState<ExampleArtifact, Example>> ProcessInitAsync(
+        ExampleArtifact artifact,
+        IDeployContext context,
+        CancellationToken cancellationToken = default)
     {
-        EnsureType(art.Udi);
+        var entity = await _exampleDataService.GetExampleByIdAsync(artifact.Udi.Guid, cancellationToken);
 
-        var entity = _exampleDataService.GetExampleById(art.Udi.Guid);
-
-        return ArtifactDeployState.Create(art, entity, this, 1);
+        return CreateInitState(artifact, entity);
     }
 
-    public override void Process(ArtifactDeployState<ExampleArtifact, Example> state, IDeployContext context, int pass)
+    public override async Task ProcessAsync(
+        ArtifactDeployState<ExampleArtifact, Example> state,
+        IDeployContext context,
+        int pass,
+        CancellationToken cancellationToken = default)
     {
-        switch (pass)
-        {
-            case 1:
-                Pass1(state, context);
-                state.NextPass = 2;
-                break;
-            default:
-                state.NextPass = -1; // exit
-                break;
-        }
-    }
+        state.NextPass = GetNextPass(pass);
 
-    private void Pass1(ArtifactDeployState<ExampleArtifact, Example> state, IDeployContext context)
-    {
         var artifact = state.Artifact;
-
-        artifact.Udi.EnsureType("mypackage-example");
-
         var isNew = state.Entity == null;
-
         var entity = state.Entity ?? new Example { Id = artifact.Udi.Guid };
 
         entity.Name = artifact.Name;
@@ -244,17 +241,17 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
 
         if (isNew)
         {
-            _exampleDataService.AddExample(entity);
+            await _exampleDataService.AddExampleAsync(entity, cancellationToken);
         }
         else
         {
-            _exampleDataService.UpdateExample(entity);
+            await _exampleDataService.UpdateExampleAsync(entity, cancellationToken);
         }
     }
 }
 ```
 
-It's also necessary to provide an extension method to generate the appropriate identifier:
+Provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root UDI:
 
 ```csharp
 public static GuidUdi GetUdi(this Example entity)
@@ -295,13 +292,13 @@ As well as dependencies at the level of entities, we can also have dependencies 
 
 Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
 
-The following illustrative example considers a property editor that stores the integer ID of an media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
+The following illustrative example considers a property editor that stores the integer ID of a media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
 
-```c#
+```csharp
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Deploy;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core;
 using Microsoft.Extensions.Logging;
 using Umbraco.Deploy.Core.Connectors.ValueConnectors;
 
@@ -320,56 +317,62 @@ public class MyMediaPropertyValueConnector : ValueConnectorBase
 
     public override IEnumerable<string> PropertyEditorAliases => new[] { "MyMediaPropertyEditor" };
 
-    public override string? ToArtifact(object? value, IPropertyType propertyType, ICollection<ArtifactDependency> dependencies, IContextCache contextCache)
+    public override Task<string?> ToArtifactAsync(
+        object? value,
+        IPropertyType propertyType,
+        ICollection<ArtifactDependency> dependencies,
+        IContextCache contextCache,
+        CancellationToken cancellationToken = default)
     {
         var svalue = value as string;
         if (string.IsNullOrWhiteSpace(svalue))
         {
-            return null;
+            return Task.FromResult<string?>(null);
         }
 
         if (!int.TryParse(svalue, out var intvalue))
         {
-            return null;
+            return Task.FromResult<string?>(null);
         }
 
         Attempt<Guid> getKeyAttempt = _entityService.GetKey(intvalue, UmbracoObjectTypes.Media);
-
         if (getKeyAttempt.Success)
         {
             var udi = new GuidUdi(Constants.UdiEntityType.Media, getKeyAttempt.Result);
             dependencies.Add(new ArtifactDependency(udi, false, ArtifactDependencyMode.Exist));
 
-            return udi.ToString();
-        }
-        else
-        {
-            _logger.LogDebug($"Couldn't convert integer value #{intvalue} to UDI");
+            return Task.FromResult<string?>(udi.ToString());
         }
 
-        return null;
+        _logger.LogDebug("Couldn't convert integer value #{IntValue} to UDI", intvalue);
+
+        return Task.FromResult<string?>(null);
     }
 
-    public override object? FromArtifact(string? value, IPropertyType propertyType, object? currentValue, IContextCache contextCache)
+    public override Task<object?> FromArtifactAsync(
+        string? value,
+        IPropertyType propertyType,
+        object? currentValue,
+        IContextCache contextCache,
+        CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            return null;
+            return Task.FromResult<object?>(null);
         }
 
         if (!UdiParser.TryParse(value, out GuidUdi? udi) || udi!.Guid == Guid.Empty)
         {
-            return null;
+            return Task.FromResult<object?>(null);
         }
 
         Attempt<int> getIdAttempt = _entityService.GetId(udi.Guid, UmbracoObjectTypes.Media);
-
         if (!getIdAttempt.Success)
         {
-            return null;
+            return Task.FromResult<object?>(null);
         }
 
-        return getIdAttempt.Result.ToString();
+        return Task.FromResult<object?>(getIdAttempt.Result.ToString());
     }
 }
 ```
@@ -382,81 +385,141 @@ Connectors do not need to be registered. The fact that they inherit from particu
 
 ### Custom Entity Types
 
-If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references.
+If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](#disk-based-transfers) section below.
 
-This is done via the following code, which can be triggered from a Umbraco component or an `UmbracoApplicationStartingNotification` handler.
+### Disk-Based Transfers
 
-```
-UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
-```
+To deploy the entity as schema, via disk-based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a composer.
 
-### Disk Based Transfers
+Additionally, when an entity is saved, the disk artifact and signature cache should be updated. This is handled by implementing a notification handler that inherits from `EntitySavedDeployRefresherNotificationAsyncHandlerBase`.
 
-To deploy the entity as schema, via disk based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a component, where events are used to trigger a serialization of the entity to disk whenever one of them is saved.
+First, create a custom notification for your entity that inherits from `SavedNotification<T>`:
 
 ```csharp
-public class ExampleDataDeployComponent : IComponent
-{
-    private readonly IDiskEntityService _diskEntityService;
-    private readonly IServiceConnectorFactory _serviceConnectorFactory;
-    private readonly IExampleDataService _exampleDataService;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 
-    public ExampleDataDeployComponent(
-        IDiskEntityService diskEntityService,
-        IServiceConnectorFactory serviceConnectorFactory,
-        IExampleDataService exampleDataService)
+public class ExampleSavedNotification : SavedNotification<Example>
+{
+    public ExampleSavedNotification(Example target, EventMessages messages)
+        : base(target, messages)
+    { }
+
+    public ExampleSavedNotification(IEnumerable<Example> target, EventMessages messages)
+        : base(target, messages)
+    { }
+}
+```
+
+Then create a composer that registers the UDI type and notification handlers:
+
+```csharp
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Deploy.Core;
+using Umbraco.Deploy.Core.Connectors.ServiceConnectors;
+using Umbraco.Deploy.Infrastructure.Disk;
+using Umbraco.Deploy.Infrastructure.NotificationHandlers;
+
+public class ExampleDataDeployComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        // Register the custom UDI type with Umbraco
+        UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
+
+        // Register the application starting handler (registers disk entity types)
+        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, ExampleDeployStartingHandler>();
+
+        // Register the saved notification handler (handles disk artifacts and signatures)
+        builder.AddNotificationAsyncHandler<ExampleSavedNotification, ExampleSavedDeployRefresherNotificationAsyncHandler>();
+    }
+
+    private sealed class ExampleDeployStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
+    {
+        private readonly IRuntimeState _runtimeState;
+        private readonly IDiskEntityService _diskEntityService;
+
+        public ExampleDeployStartingHandler(IRuntimeState runtimeState, IDiskEntityService diskEntityService)
         {
+            _runtimeState = runtimeState;
             _diskEntityService = diskEntityService;
-            _serviceConnectorFactory = serviceConnectorFactory;
-            _exampleDataService = exampleDataService;
         }
 
-    public void Initialize()
-    {
-        _diskEntityService.RegisterDiskEntityType("mypackage-example");
-        _exampleDataService.ExampleSaved += ExampleOnSaved;
+        public void Handle(UmbracoApplicationStartingNotification notification)
+        {
+            if (_runtimeState.Level != RuntimeLevel.Run)
+            {
+                return;
+            }
+
+            _diskEntityService.RegisterDiskEntityType("mypackage-example");
+        }
     }
 
-    private void ExampleOnSaved(object sender, ExampleEventArgs e)
+    private sealed class ExampleSavedDeployRefresherNotificationAsyncHandler
+        : EntitySavedDeployRefresherNotificationAsyncHandlerBase<Example, ExampleSavedNotification>
     {
-        var artifact = GetExampleArtifactFromEvent(e);
-        _diskEntityService.WriteArtifacts(new[] { artifact });
+        public ExampleSavedDeployRefresherNotificationAsyncHandler(
+            IServiceConnectorFactory serviceConnectorFactory,
+            IDiskEntityService diskEntityService,
+            ISignatureService signatureService)
+            : base(serviceConnectorFactory, diskEntityService, signatureService)
+        {
+            HandleDiskArtifacts = true;
+            HandleSignatures = true;
+        }
+    }
+}
+```
+
+The `HandleDiskArtifacts` property controls whether the artifact is written to disk as a `.uda` file, and the `HandleSignatures` property controls whether the signature cache is updated. Both default to `true`.
+
+Finally, ensure your data service publishes the notification when an entity is saved:
+
+```csharp
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Scoping;
+
+public class ExampleDataService : IExampleDataService
+{
+    private readonly ICoreScopeProvider _scopeProvider;
+    private readonly IEventMessagesFactory _eventMessagesFactory;
+
+    public ExampleDataService(ICoreScopeProvider scopeProvider, IEventMessagesFactory eventMessagesFactory)
+    {
+        _scopeProvider = scopeProvider;
+        _eventMessagesFactory = eventMessagesFactory;
     }
 
-    private IArtifact GetExampleArtifactFromEvent(ExampleEventArgs e)
+    public async Task SaveExampleAsync(Example example)
     {
-        var udi = e.Example.GetUdi();
-        return _serviceConnectorFactory.GetConnector(udi.EntityType).GetArtifact(e.Example);
-    }
+        using (ICoreScope scope = _scopeProvider.CreateCoreScope())
+        {
+            // Save the entity to your data store
+            // ...
 
-    public void Terminate()
-    {
+            // Publish the saved notification
+            var notification = new ExampleSavedNotification(example, _eventMessagesFactory.Get());
+            await scope.Notifications.PublishAsync(notification);
+
+            scope.Complete();
+        }
     }
 }
 ```
 
 #### Including Plugin Registered Disk Entities in the Schema Comparison Dashboard
 
-In Umbraco Deploy 9.4 a schema comparison feature was added to the dashboard available under _Settings > Deploy_. This lists the Deploy managed entities held in Umbraco and shows a comparison with the data held in the `.uda` files on disk.
+The schema comparison feature available under _Settings > Deploy_, compares Umbraco’s Deploy-managed entities with the data held in the `.uda` files on disk.
 
-All core Umbraco entities, such as Document Types and Data Types, will be shown.
+All core Umbraco entities, such as Document Types and Data Types, will be shown. Custom entities registered with `RegisterDiskEntityType` are also included.
 
-To include entities from plugins, they need to be registered using a method overload as shown above, that allows to provide additional detail, e.g.:
-
-```csharp
-_diskEntityService.RegisterDiskEntityType(
-    "mypackage-example",
-    "Examples",
-    false,
-    _exampleDataService.GetAll().Select(x => new DeployDiskRegisteredEntityTypeDetail.InstalledEntityDetail(x.GetUdi(), x.Name, x))));
-```
-
-The parameters are as follows:
-
-* The system name of the entity type (as used in the `UdiDefinition` attribute).
-* A human readable, pluralized name for display in the schema comparison dashboard user interface.
-* A flag indicating whether the entity is an Umbraco one, which should be set to `false`.
-* A function that returns all entities of the type installed in Umbraco, mapped to an object exposing the Udi and name of the entity.
+The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
 ### Backoffice Integrated Transfers
 
@@ -466,27 +529,39 @@ An introduction to this feature can be found in the second half of [this recorde
 
 There's also a code sample, demonstrated in the video linked above, available at [GitHub](https://github.com/AndyButland/RaceData).
 
-The following code shows the registration of an entity for Backoffice deployment, where we have the simplest case of a single tree for the entity.
+The following code shows the registration of an entity for Backoffice deployment, where we have the simplest case of a single tree for the entity. Registration should be done in an `UmbracoApplicationStartingNotification` handler:
 
 ```csharp
-public class ExampleDataDeployComponent : IComponent
-{
-    private readonly ITransferEntityService _transferEntityService;
-    private readonly IExampleDataService exampleDataService;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Deploy;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Deploy.Infrastructure.Transfer;
 
-    public ExampleDataDeployComponent(
-        ITransferEntityService transferEntityService,
-        IExampleDataService exampleDataService)
+public class ExampleTransferDeployStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
+{
+    private readonly IRuntimeState _runtimeState;
+    private readonly ITransferEntityService _transferEntityService;
+
+    public ExampleTransferDeployStartingHandler(
+        IRuntimeState runtimeState,
+        ITransferEntityService transferEntityService)
     {
+        _runtimeState = runtimeState;
         _transferEntityService = transferEntityService;
-        _exampleDataService = exampleDataService;
     }
 
-    public void Initialize()
+    public void Handle(UmbracoApplicationStartingNotification notification)
     {
+        if (_runtimeState.Level != RuntimeLevel.Run)
+        {
+            return;
+        }
+
         _transferEntityService.RegisterTransferEntityType(
             "mypackage-example",
-            "Examples",
             new DeployRegisteredEntityTypeDetailOptions
             {
                 SupportsQueueForTransfer = true,
@@ -495,17 +570,18 @@ public class ExampleDataDeployComponent : IComponent
                 PermittedToRestore = true,
                 SupportsPartialRestore = true,
             },
-            false,
-            "exampleTreeAlias",
-            (string routePath, HttpContext httpContext) => true,
-            (string nodeId, HttpContext httpContext) => true,
-            (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId, out entityId),
-            new DeployRegisteredEntityTypeDetail.RemoteTreeDetail(FormsTreeHelper.GetExampleTree, "example", "externalExampleTree"),
-            entitiesGetter: () => _exampleDataService.Get());
-    }
-
-    public void Terminate()
-    {
+            (string nodeId, HttpContext httpContext, out UdiRange? udiRange) =>
+            {
+                if (Guid.TryParse(nodeId, out Guid entityId))
+                {
+                    udiRange = new UdiRange(new GuidUdi("mypackage-example", entityId), DeploySelector.This);
+                    return true;
+                }
+                udiRange = null;
+                return false;
+            },
+            new DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail(
+                ExampleTreeHelper.GetExampleTree, "example", "mypackage-example"));
     }
 }
 ```
@@ -513,48 +589,17 @@ public class ExampleDataDeployComponent : IComponent
 The `RegisterTransferEntityType` method on the `ITransferEntityService` takes the following parameters:
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
-* A pluralized, human-readable name of the entity, which is used in the transfer queue visual presentation to users.
 * A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* A value indicating whether the entity is an Umbraco entity, queryable via the `IEntityService`. For custom solutions and packages, the value to use here is always `false`.
-* The alias of the tree used for creating and editing the entity data.
+* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-[guid]" or "store-[guid]".
+* An optional `RemoteTreeDetail` parameter that adds support for implementing Deploy's "partial restore" feature.
 
-We then have three functions, which are used to determine if the registered entity matches a specific node and tree alias. For trees managing single entities as we have here, we know that all nodes related to that tree alias will be for the registered entity. And that each node Id is the Guid identifier for the entity. Hence we can use the following function definitions:
+{% hint style="info" %}
+The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
-* Return `true` for all route paths.
-* Return `true` for all node Ids.
-* Return `true` and parse the Guid identity value from the provided string.
+Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrades/version-specific.md) for an example.
+{% endhint %}
 
-For more complex cases we need the means to distinguish between entities. An example could be when a tree manages more than one entity type. Here we would need to identify whether the entity is being referenced by a particular route path or node ID. A common way to handle this is to prefix the GUID identifier with a different value for each entity. It can then be used to determine to which entity the value refers.
-
-For example, as shown in the linked sample and video, we have entities for "Team" and "Rider", both managed in the same tree. When rendering the tree, a prefix of "team-" or "rider-" is added to the Guid identifier for the team or rider respectively. We then register the following functions, firstly for the team entity registration:
-
-```csharp
-_transferEntityService.RegisterTransferEntityType(
-    ...
-    "teams",
-    (string routePath, HttpContext httpContext) => routePath.Contains($"/teamEdit/") || routePath.Contains($"/teamsOverview"),
-    (string nodeId, HttpContext httpContext) => nodeId == "-1" || nodeId.StartsWith("team-"),
-    (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("team-".Length), out entityId);
-```
-
-And then for the rider:
-
-```csharp
-_transferEntityService.RegisterTransferEntityType(
-    ...
-    "teams",
-    (string routePath) => routePath.Contains($"/riderEdit/"),
-    (string nodeId) => nodeId.StartsWith("rider-"),
-    (string nodeId, HttpContext httpContext, out Guid entityId) => Guid.TryParse(nodeId.Substring("rider-".Length), out entityId);
-```
-
-If access to services is required when parsing the entity ID, where the `HttpContext` is provided as a parameter, a service can be retrieved. For example:
-
-```csharp
-var localizationService = httpContext.RequestServices.GetRequiredService<ILocalizationService>();
-```
-
-The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore, from a tree picker displaying details from a remote environment. The parameter is of type `DeployRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
 
 * A function responsible for returning a level of a tree.
 * The name of the entity (or entities) that can be restored from the remote tree.
@@ -563,129 +608,52 @@ The `remoteTree` optional parameter adds support for plugins to implement Deploy
 An example function that returns a level of a remote tree may look like this:
 
 ```csharp
-public static IEnumerable<RemoteTreeNode> GetExampleTree(string parentId, HttpContext httpContext)
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Deploy.Core.Environments;
+
+public static IEnumerable<RemoteTreeEntity> GetExampleTree(string parentId, string entityType, HttpContext httpContext)
 {
     var exampleDataService = httpContext.RequestServices.GetRequiredService<IExampleDataService>();
     var items = exampleDataService.GetItems(parentId);
     return items
-        .Select(x => new RemoteTreeNode
+        .Select(x => new RemoteTreeEntity
         {
-            Id = x.Id,,
+            Id = x.Id.ToString(),
             Title = x.Name,
             Icon = "icon-box",
             ParentId = parentId,
             HasChildren = true,
+            EntityType = entityType,
         })
         .ToList();
 }
 ```
 
-Finally, the `entitiesGetter` parameter allows you to pass a function that will return all entities for the registered type. This is necessary to allow support for the "set signatures" operation available via the backoffice settings dashboard. By providing a function that returns the collection of entities, the triggered operation will be able to prepare the signature for each one.
-
-To complete the setup for partial restore support, an external tree controller needs to be added, attributed to match the registered tree alias. Using a base class available in `Umbraco.Deploy.Forms.Tree`, this can look like the following:
-
-```csharp
-[Tree(DeployConstants.SectionAlias, "externalExampleTree", TreeUse = TreeUse.Dialog)]
-public class ExternalDataSourcesTreeController : ExternalTreeControllerBase
-{
-    public ExternalDataSourcesTreeController(
-        ILocalizedTextService localizedTextService,
-        UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
-        IEventAggregator eventAggregator,
-        IExtractEnvironmentInfo environmentInfoExtractor,
-        LinkGenerator linkGenerator,
-        ILoggerFactory loggerFactory,
-        IOptions<DeploySettings> deploySettings)
-        : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator, environmentInfoExtractor, linkGenerator, loggerFactory, deploySettings, "mypackage-example")
-    {
-    }
-}
-```
-
-#### Client-Side Registration
-
-Most features that are available for the deployment of Umbraco entities will also be accessible to entities defined in custom solutions or packages. The "Transfer Now" option available from "Save and Publish" or "Save" button for content/media is only available to custom entities if requested client-side.
-
-You would do this in the custom AngularJS controller responsible for handling the edit operations on your entity. Inject the `pluginEntityService` and calling the `addInstantDeployButton` function as shown in the following stripped down sample (for the full code, see the sample data repository linked above):
-
-```js
-(function () {
-    "use strict";
-
-    function MyController($scope, $routeParams, myResource, formHelper, notificationsService, editorState, pluginEntityService) {
-
-        var vm = this;
-
-        vm.page = {};
-        vm.entity = {};
-        ...
-
-        vm.page.defaultButton = {
-            alias: "save",
-            hotKey: "ctrl+s",
-            hotKeyWhenHidden: true,
-            labelKey: "buttons_save",
-            letter: "S",
-            handler: function () { vm.save(); }
-        };
-        vm.page.subButtons = [];
-
-        function init() {
-
-            ...
-
-            if (!$routeParams.create) {
-
-                myResource.getById($routeParams.id).then(function (entity) {
-
-                    vm.entity = entity;
-
-                    // Augment with additional details necessary for identifying the node for a deployment.
-                    vm.entity.metaData = { treeAlias: $routeParams.tree };
-
-                    ...
-                });
-            }
-
-            pluginEntityService.addInstantDeployButton(vm.page.subButtons);
-        }
-
-        ...
-
-        init();
-
-    }
-
-    angular.module("umbraco").controller("MyController", MyController);
-
-})();
-```
+{% hint style="info" %}
+Umbraco Deploy provides the `ExternalEntityTreeController` to serve the external entity tree for partial restore. When you register an entity type with a `RemoteTreeDetail`, Deploy automatically handles retrieving the tree from the remote environment using the provided `TreeEntityGetter` function. No custom tree controller implementation is required.
+{% endhint %}
 
 ### Refreshing Signatures
 
-Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifacts in the database for each environment. The signature is a string based, hashed representation of the serialized artifact. When an update is made to an entity, this signature value should be refreshed.
+Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifact in the database for each environment. The signature is a string-based, hashed representation of the serialized artifact. When an update is made to an entity, this signature value should be refreshed.
 
-Hooking this up can be achieved by applying code similar to the following, extending the `ExampleDataDeployComponent` shown above.
+When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
+
+If you only need to refresh signatures without writing disk artifacts, you can set `HandleDiskArtifacts = false`. An example of this could be for content entities that are transferred via the backoffice rather than disk:
 
 ```csharp
-public class ExampleDataDeployComponent : IComponent
+private sealed class ExampleSavedDeployRefresherNotificationAsyncHandler
+    : EntitySavedDeployRefresherNotificationAsyncHandlerBase<Example, ExampleSavedNotification>
 {
-    ...
-    private readonly ISignatureService _signatureService;
-
-    public ExampleDataDeployComponent(
-    ...
-    ISignatureService signatureService)
+    public ExampleSavedDeployRefresherNotificationAsyncHandler(
+        IServiceConnectorFactory serviceConnectorFactory,
+        IDiskEntityService diskEntityService,
+        ISignatureService signatureService)
+        : base(serviceConnectorFactory, diskEntityService, signatureService)
     {
-        _signatureService = signatureService;
+        HandleDiskArtifacts = false;
+        HandleSignatures = true;
     }
-
-    public void Initialize()
-    {
-        ...
-        _signatureService.RegisterHandler<ExampleDataService, ExampleEventArgs>(nameof(IExampleDataService.ExampleSaved), (refresher, args) => refresher.SetSignature(GetExampleArtifactFromEvent(args)));
-    }
-
-    ...
 }
 ```

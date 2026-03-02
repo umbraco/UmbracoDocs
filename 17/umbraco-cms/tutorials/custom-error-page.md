@@ -39,13 +39,13 @@ A 404 error occurs when a requested page cannot be found, usually due to deleted
 1. Go to the **Settings** section in the backoffice.
 2. Create a new **Document Type with Template**.
 3. Name the Document Type _Page Not Found_.
-4. \[Optional] Add custom properties (for example, title, message), though most 404 pages are static.
+4. [Optional] Add custom properties (for example, title, message), though most 404 pages are static.
 5. Click **Save**.
 6. Go to the **Templates** folder and edit the generated template.
 7. Add your custom markup and design for the error page in the template.
 8. Click **Save**.
 
-### \[Optional] Create a Container for Error Pages
+### [Optional] Create a Container for Error Pages
 
 You can create a _Page Not Found_ page directly in your content tree, or organize it within a container for error pages. Using a container allows for better content organization, especially if you plan to handle multiple status codes (for example, 404, 500, maintenance, and so on). Both options work as long as the page ID is referenced correctly in the `appsettings.json` file.
 
@@ -62,11 +62,8 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
 ### Add the Content
 
 1. Go to the **Content** section.
-2. Create a new content node based on the _Error Pages Container_ Document Type. For example _Home Page_.
+2. Create a new content node based on the _Error Pages Container_ Document Type. For example _Error Page_.
 3. Click **Save** or **Save and Publish**.
-
-![Parent Content Node](../.gitbook/assets/content-node.png)
-
 4. Create a child node, using the _Page Not Found_ Document Type.
 5. Name it _Page Not Found_ or similar.
    * This will be the content shown when a 404 error occurs.
@@ -74,7 +71,7 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
 
 ![Child Node](../.gitbook/assets/page-not-found.png)
 
-### Configure the Error Page in `appsettings.json` file
+### [Recommended]: Configuration via the `appsettings.json` file
 
 After publishing the _Page Not Found_ page, connect it in the configuration:
 
@@ -121,48 +118,46 @@ You can define different error pages for each language or culture (such as `en-u
 
 Each entry maps a culture to its specific 404 page using the content’s GUID.
 
-### Set a custom 404 page using IContentLastChanceFinder
+### [Advanced]: Set a custom 404 page using IContentLastChanceFinder
 
-It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder`, read the [Custom Routing](../implementation/custom-routing/) article.
+It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder`, read the [Custom Routing](../implementation/custom-routing/) article. Use this approach only if you need dynamic logic, multi-tenant routing, or other custom behavior.
 
 Before following this example, follow the [Create a Page Not Found page in the backoffice](custom-error-page.md#create-a-page-not-found-page-in-the-backoffice) part. The example below will use the _Page Not Found_ alias of the Document Type to find and display the error page.
 
-1. Create a new `.cs` file called _PageNotFound_ at the root of the project.
+1. Create a new `.cs` file called `PageNotFound.cs` at the root of the project.
 2. Add the following code to the newly created class:
 
 {% code title="PageNotFound.cs" lineNumbers="true" %}
 ```csharp
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 
-namespace YourProjectNamespace;
+namespace YourProjectNamespace.ContentFinders;
 
-public class PageNotFound : IContentLastChanceFinder
+public class PageNotFoundContentFinder : IContentLastChanceFinder
 {
-    private readonly IServiceProvider _serviceProvider;
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
 
-    public PageNotFound(IServiceProvider serviceProvider)
+    // Replace with your actual 404 page GUID
+    private static readonly Guid NotFoundPageKey =
+        Guid.Parse("PUT-YOUR-404-GUID-HERE");
+
+    public PageNotFoundContentFinder(IUmbracoContextFactory umbracoContextFactory)
     {
-        _serviceProvider = serviceProvider;
+        _umbracoContextFactory = umbracoContextFactory;
     }
 
     public Task<bool> TryFindContent(IPublishedRequestBuilder request)
     {
-        using var scope = _serviceProvider.CreateScope();
+        using UmbracoContextReference contextRef = _umbracoContextFactory.EnsureUmbracoContext();
 
-        var umbracoContextAccessor = scope.ServiceProvider.GetRequiredService<IUmbracoContextAccessor>();
-
-        if (!umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
-        {
-            return Task.FromResult(false);
-        }
-
-        var notFoundPage = umbracoContext
-            .Content
-            ?.GetAtRoot()
-            .SelectMany(x => x.DescendantsOrSelf())
-            .FirstOrDefault(c => c.ContentType.Alias == "pageNotFound");
+        IPublishedContent? notFoundPage = contextRef
+            .UmbracoContext
+            .Content?
+            .GetById(NotFoundPageKey);
 
         if (notFoundPage == null)
         {
@@ -171,16 +166,18 @@ public class PageNotFound : IContentLastChanceFinder
 
         request.SetPublishedContent(notFoundPage);
         request.SetResponseStatus(404);
+
         return Task.FromResult(true);
     }
 }
 
+
 // Register the content finder
-public class MyComposer : IComposer
+public class PageNotFoundContentFinderComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.SetContentLastChanceFinder<PageNotFound>();
+        builder.SetContentLastChanceFinder<PageNotFoundContentFinder>();
     }
 }
 ```
@@ -198,13 +195,13 @@ This section guides you in setting up a custom page for handling internal server
 
 1. Go to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Document Type with Template** called _ErrorPage500_.
-3. \[Optional] Add any relevant properties to the Document Type.
+3. [Optional] Add any relevant properties to the Document Type.
 4. Click **Save**.
 5. Go to the **Templates** folder.
 6. Add your custom markup and design for the error page in the template. In this case, _ErrorPage500_.
 7. Click **Save**.
 
-### \[Optional] Create a Container for Error Pages
+### [Optional] Create a Container for Error Pages
 
 1. Create a new **Document Type**.
 2. Name it **Error Pages Container**.
@@ -234,22 +231,48 @@ To ensure that the 500 page is shown during server errors, you’ll need to conf
 {% code title="ErrorController.cs" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Web;
 
 namespace YourProjectNamespace.Controllers;
 
 public class ErrorController : Controller
 {
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
+
+    private static readonly Guid Error500PageKey =
+        Guid.Parse("PUT-YOUR-500-GUID-HERE"); // Replace with your actual 500 page GUID
+
+    public ErrorController(IUmbracoContextFactory umbracoContextFactory)
+    {
+        _umbracoContextFactory = umbracoContextFactory;
+    }
+
+    [HttpGet]
     [Route("Error")]
     public IActionResult Index()
     {
         if (Response.StatusCode == StatusCodes.Status500InternalServerError)
         {
-            return Redirect("/statuscodes/500");
+            using UmbracoContextReference contextRef = _umbracoContextFactory.EnsureUmbracoContext();
+
+            IPublishedContent? error500Page = contextRef
+                .UmbracoContext
+                .Content?
+                .GetById(Error500PageKey);
+
+            if (error500Page != null)
+            {
+                Response.StatusCode = 500;
+                return View(error500Page.GetTemplateAlias(), error500Page);
+            }
+
+            // Fallback if page not found.
+            Response.StatusCode = 500;
+            return View("~/Views/Error500Fallback.cshtml");
         }
-        else if (Response.StatusCode != StatusCodes.Status200OK)
-        {
-            return Redirect("/statuscodes");
-        }
+
         return Redirect("/");
     }
 }
@@ -279,16 +302,46 @@ Replace _YourProjectNamespace_ with the actual project namespace. In Visual Stud
 
 {% code title="Program.cs" %}
 ```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddComposers()
+    .Build();
+
 WebApplication app = builder.Build();
 
-if (builder.Environment.IsDevelopment())
+await app.BootUmbracoAsync();
+
+// Configure exception handling.
+if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+    // For testing error pages, use custom error handler.
+    app.UseExceptionHandler("/error");
+
+    // For normal development with detailed errors, comment out the above line
+    // and uncomment this line:
+    // app.UseDeveloperExceptionPage();
 }
 else
 {
     app.UseExceptionHandler("/error");
 }
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
 ```
 {% endcode %}
 

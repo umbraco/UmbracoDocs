@@ -20,7 +20,7 @@ Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamen
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
 
-### Upgrading from a Short Term Supported (STS) version
+### Upgrading from a Short-Term Supported (STS) version
 
 When upgrading from an STS version, you must start by upgrading to the closest Long-term Support (LTS) major. If the version you are upgrading to is an STS version, you can upgrade to that version, directly from the closest LTS. You can upgrade directly if there are no LTS versions between the current one and the one you are upgrading to.
 
@@ -30,7 +30,7 @@ Refer to the [Long-term support and EOL article](https://umbraco.com/products/kn
 
 Start by upgrading to the closest LTS. In this case, that is Umbraco 13. After that, you can upgrade directly from Umbraco 13 to Umbraco 15.
 
-### Upgrading from a Long Term Supported (LTS) version
+### Upgrading from a Long-Term Supported (LTS) version
 
 When upgrading from an LTS version, you must start by looking at the versions between yours and the one you are upgrading to. Is there another LTS version in that line, you need to upgrade to that version first.
 
@@ -57,10 +57,18 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.
+ 
+{% hint style="warning" %}
+**Do not perform major version upgrades directly in Umbraco Cloud.**
+
+Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
+
+Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
+{% endhint %}
 
 ## Step 1: Enable .NET
 
-Before proceeding, you must determine whether the .NET framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
+Before proceeding, you must determine whether the .NET Framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
 
 Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
 

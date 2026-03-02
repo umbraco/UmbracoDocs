@@ -80,4 +80,9 @@ If you do not have many translations, you can also choose to include them direct
 ```
 {% endcode %}
 
+{% hint style="info" %}
+All keys must be wrapped within a single grouping level (for example `section`) inside the `localizations` object. You cannot place key-value pairs directly under `localizations`, and further nesting is not supported.
+{% endhint %}
+
 In this case, the `en.js` file is not required and we can remove the "js" property from the manifest. Only strings can be used in the meta-object.
+

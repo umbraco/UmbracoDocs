@@ -4,6 +4,13 @@ description: Get an overview of the release notes for each month in 2025.
 
 # Overview 2025
 
+## [December 2025](2025-12-releasenotes.md)
+* **Custom Login Provider out of beta** – Organizations can now integrate their own identity provider to manage access to the Cloud Portal and projects.
+* **TLS cipher suite updates** – Updated supported TLS cipher suites to align with current security best practices.
+* **Improved handling and notifications for project usage limits** – Better tracking and communication of bandwidth and storage limits.
+* **Testing Dedicated Resources as the default in the US market** – Dedicated Resources is now the default option during project creation in the US region.
+* **End-of-Service policy for Umbraco Cloud** – Predictable timeline for Umbraco Cloud projects that reach end-of-life.
+
 ## [October 2025](2025-10-releasenotes.md)
 * **Daily Usage** – Track daily bandwidth usage and trends over the past month.
 * **CI/CD Improvements** – Faster deployments and new verification step. 

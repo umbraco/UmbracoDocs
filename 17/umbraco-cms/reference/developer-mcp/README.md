@@ -105,7 +105,7 @@ Although the details vary slightly, the general pattern is the same across all h
 {
   "umbraco-mcp": {
     "command": "npx",
-    "args": ["@umbraco-cms/mcp-dev@17"],
+    "args": ["@umbraco-cms/mcp-dev@17.1"],
     "env": {
       "NODE_TLS_REJECT_UNAUTHORIZED": "0",
       "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
@@ -186,7 +186,7 @@ The Umbraco MCP Server is designed to work with specific major versions of Umbra
 |--------------------|----------------------------|--------------------------------------|
 | 15.x.x             | alpha                      | @umbraco-mcp/umbraco-mcp-cms@alpha   |
 | 16.x.x             | 16.x                       | @umbraco-cms/mcp-dev@16              |
-| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@17              |
+| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@17.1              |
 
 ### Version Checking
 

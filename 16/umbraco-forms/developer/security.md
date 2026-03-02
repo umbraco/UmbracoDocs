@@ -32,7 +32,7 @@ If a single start folder is selected, that will act as the root of the tree view
 
 If more than one start folder is selected, they will appear underneath the root of the tree view of forms. The user will have access to only those folders and their descendant folders and forms.
 
-![Start folders](images/user-start-folders-v14.png)
+![Start folders](../.gitbook/assets/user-start-folders-v14.png)
 
 ## User group based permissions
 
@@ -74,7 +74,7 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 * The effective permissions for each user will now be derived from their user groups.
 * If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
 
-![User group permissions](images/user-group-permissions.png)
+![User group permissions](../.gitbook/assets/user-group-permissions.png)
 
 ## Handling Sensitive Data in Umbraco Forms
 
@@ -93,7 +93,7 @@ To allow users to view and handle sensitive data in Umbraco Forms, you must assi
 5. Click **Submit**.
 6. Click **Save**.
 
-![Assigning Users to the Sensitive Data Group](images/assign-sensitive-data-to-user.png)
+![Assigning Users to the Sensitive Data Group](../.gitbook/assets/assign-sensitive-data-to-user.png)
 
 ### Marking Questions in Forms as Sensitive
 
@@ -108,9 +108,9 @@ To mark questions as sensitive, follow these steps:
 3. Click on the cogwheel icon next to the form field you want to secure.
 4. Enable the **Sensitive data** setting for the field.
 
-![Mark Question as Sensitive](images/mark-field-as-sensitive.png)
+![Mark Question as Sensitive](../.gitbook/assets/mark-field-as-sensitive.png)
 
 5. Click **Submit**.
 6. Click **Save**.
 
-![Sensitive Data on Field](images/sensitive-data-field.png)
+![Sensitive Data on Field](../.gitbook/assets/sensitive-data-field.png)

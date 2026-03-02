@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### 13.9.2 (February 19th 2026)
+* Fix conditions not seeing field values modified by previous workflows [#1464](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1464)
+
+### [13.9.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.1) (February 19th 2026)
+* Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)
+* Add server-side length validation for String Data Type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
+* Fix form re-initialization for dynamically injected forms [#1617](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1617)
+
 ### [13.9.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 22nd 2026)
 * All items detailed under release candidates for 13.9.0.
 

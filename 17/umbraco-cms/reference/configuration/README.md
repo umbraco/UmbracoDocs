@@ -120,6 +120,7 @@ A complete list of all the configuration sections included in Umbraco, by defaul
 * [Connection strings settings](connectionstringssettings.md)
 * [Content settings](contentsettings.md)
 * [Debug settings](debugsettings.md)
+* [Dictionary settings](dictionarysettings.md)
 * [Distributed jobs settings](distributedjobssettings.md)
 * [Examine settings](examinesettings.md)
 * [Exception filter settings](exceptionfiltersettings.md)

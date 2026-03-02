@@ -141,3 +141,5 @@ redirects:
     release-notes/overview-2025/2025-06-releasenotes: release-notes/archive/overview-2025/2025-06-releasenotes.md
     release-notes/overview-2025/2025-09-03-releasenotes: release-notes/archive/overview-2025/2025-09-03-releasenotes.md
     release-notes/overview-2025/2025-10-releasenotes: release-notes/archive/overview-2025/2025-10-releasenotes.md
+    build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/knownlimitationsandconsiderations: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/known-limitations-and-considerations.md
+    build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbracocloudapi: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbraco-cloud-api.md
