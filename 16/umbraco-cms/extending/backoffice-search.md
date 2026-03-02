@@ -51,7 +51,11 @@ public class BackofficeSearchComposer : IComposer
 ```
 
 {% hint style="warning" %}
-The below example is using `ILocalizationService` which is currently obsolete and will be removed in v15. Use `ILanguageService` instead.
+`ILocalizationService` is marked as obsolete and will be removed in a future verison. `ILocalizationService` is intended to be replaced by `ILanguageService` and `IDictionaryItemService`.
+
+The example below reflects the current implementation and therefore continues to use `ILocalizationService`.
+
+For new development, you should evaluate whether `ILanguageService` or `IDictionaryItemService` better fits your use case.
 {% endhint %}
 
 ```csharp

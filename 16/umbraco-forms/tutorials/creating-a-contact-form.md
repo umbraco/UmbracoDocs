@@ -34,7 +34,7 @@ To create a Composition, follow these steps:
     | Title Box | Subtitle   | subtitle | Textarea   |
 8.  Click **Save** to save the Composition.
 
-    ![Add Composition Properties](images/composition-properties-v14.png)
+    ![Add Composition Properties](../.gitbook/assets/composition-properties-v14.png)
 
 ### Creating a Contact Us Document Type with Template
 
@@ -58,7 +58,7 @@ To create a **Contact Us** Document Type, follow these steps:
     | Content | Body Text    | bodyText    | Richtext Editor |
 10. Click **Save**.
 
-    ![Contact Us Document Type Properties](images/contact-us-doc-type-properties-v14.png)
+    ![Contact Us Document Type Properties](../.gitbook/assets/contact-us-doc-type-properties-v14.png)
 
 ### Updating the Document Type Permission
 
@@ -71,7 +71,7 @@ To update the **Contact Us** Document Type permissions, follow these steps:
 3. Select **Choose** in the **Allowed child node types** section.
 4.  Select the **Contact Us** page.
 
-    ![Update Home Page Document Type Properties](images/update-doc-type-permissions-v14.png)
+    ![Update Home Page Document Type Properties](../.gitbook/assets/update-doc-type-permissions-v14.png)
 5. Click **Choose**.
 6. Click **Save**.
 
@@ -88,7 +88,7 @@ To add the content node, follow these steps:
 5. Enter the name for the content node. let's call it _Contact Us_.
 6.  Enter a **Title**, **Subtitle**, and **Body Text** value. These can always be updated at a later point.
 
-    ![Enter values in Contact Us Content node](images/fill-contact-us-node-v14.png)
+    ![Enter values in Contact Us Content node](../.gitbook/assets/fill-contact-us-node-v14.png)
 7. Click **Save** or **Save and Publish**.
 
 ## Step 3: Creating the Contact Form
@@ -175,7 +175,7 @@ To create a form, follow these steps:
     | Size               | normal               |
     | Mandatory          | On                   |
 
-    ![Add questions](images/contact-us-form-add-questions-v14.png)
+    ![Add questions](../.gitbook/assets/contact-us-form-add-questions-v14.png)
 24. Select the **Reorder** option.
 25. Drag the **Data consent** group below the **Information** group.
 26. Click **I am done reordering**.
@@ -225,7 +225,7 @@ To add the Contact Form to the Content Node, follow these steps:
 5. Select the **Contact Us** Form.
 6.  Click **Choose**.
 
-    ![Adding the Contact Us Form](images/select-form-v14.png)
+    ![Adding the Contact Us Form](../.gitbook/assets/select-form-v14.png)
 7. Click **Save** or **Save and Publish**.
 
 ## Step 5: Additional configuration

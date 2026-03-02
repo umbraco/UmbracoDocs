@@ -41,6 +41,17 @@ For example, with Open ID Connect, you should configure:
 
 This avoids Umbraco treating this call back as a potential request for content, improving performance of the authentication operation.
 
+## Enable RedirectToLoginPage
+
+When you are configuring an external login for **backoffice users**, you need to enable RedirectToLoginPage in the [BasicAuth section](../../reference/configuration/basicauthsettings.md#redirecttologinpage).
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "BasicAuth": {
+        "RedirectToLoginPage": true
+```
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}

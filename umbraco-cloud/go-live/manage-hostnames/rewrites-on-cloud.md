@@ -25,6 +25,7 @@ When setting up rewrite rules on Umbraco Cloud, there are a few important things
 * Always include a condition to exclude the Umbraco backoffice path (`/umbraco`). Failing to do so may prevent you from deploying to and from the environment.
 * To continue working locally with your Umbraco Cloud project, you should also add a condition to exclude `localhost`.
 * To serve verification files from the `.well-known` directory (for example, Apple Pay or Google), follow the [Rewrite rule workaround in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules#example-serving-files-from-the-well-known-path).
+* If the Umbraco Cloud baseline feature is used, only apply the rewrites to the child project and not the baseline itself.
 
 ## Hiding the default `umbraco.io` URL
 

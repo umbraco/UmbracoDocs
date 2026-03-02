@@ -1,5 +1,5 @@
 ---
-description: "Provides details of the built-in provider types available with Umbraco Forms"
+description: Provides details of the built-in provider types available with Umbraco Forms
 ---
 
 # Forms Provider Type Details
@@ -184,7 +184,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>reCAPTCHA Enterprise</summary>
+<summary></summary>
 
 **ID:** `1BAB78CB-52B1-495C-BBC2-A46540642828`
 
@@ -200,7 +200,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Rich Text</summary>
+<summary></summary>
 
 **ID:** `1F8D45F8-76E6-4550-A0F5-9637B8454619`
 
@@ -215,7 +215,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Single Choice</summary>
+<summary></summary>
 
 **ID:** `903DF9B0-A78C-11DE-9FC1-DB7A56D89593`
 
@@ -231,7 +231,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Short Answer</summary>
+<summary></summary>
 
 **ID:** `3F92E01B-29E2-4a30-BF33-9DF5580ED52C`
 
@@ -269,7 +269,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Change Record State</summary>
+<summary></summary>
 
 **ID:** `4C40A092-0CB5-481d-96A7-A02D8E7CDB2F`
 
@@ -284,7 +284,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Post as XML</summary>
+<summary></summary>
 
 **ID:** `470EEB3A-CB15-4b08-9FC0-A2F091583332`
 
@@ -303,7 +303,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Save As Umbraco Content Node</summary>
+<summary></summary>
 
 **ID:** `89FB1E31-9F36-4e08-9D1B-AF1180D340DB`
 
@@ -319,7 +319,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Save As XML File</summary>
+<summary></summary>
 
 **ID:** `9CC5854D-61A2-48f6-9F4A-8F3BDFAFB521`
 
@@ -377,7 +377,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Send Email With Extensible Stylesheet Language Transformations (XSLT) Template</summary>
+<summary></summary>
 
 **ID:** `616edfeb-badf-414b-89dc-d8655eb85998`
 
@@ -397,7 +397,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Send Form To URL</summary>
+<summary></summary>
 
 **ID:** `FD02C929-4E7D-4f90-B9FA-13D074A76688`
 
@@ -416,7 +416,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Slack</summary>
+<summary></summary>
 
 **ID:** `bc52ab28-d3ff-42ee-af75-a5d49be83040`
 
@@ -449,7 +449,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Datasource</summary>
+<summary></summary>
 
 **ID:** `cc9f9b2a-a746-11de-9e17-681b56d89593`
 
@@ -459,7 +459,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Get Values From Text File</summary>
+<summary></summary>
 
 **ID:** `35C2053E-CBF7-4793-B27C-6E97B7671A2D`
 
@@ -473,7 +473,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>SQL Database</summary>
+<summary></summary>
 
 **ID:** `F1F5BD4D-E6AE-44ed-86CB-97661E4660B2`
 
@@ -492,7 +492,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
-<summary>Umbraco Datatype Prevalues</summary>
+<summary></summary>
 
 **ID:** `EA773CAF-FEF2-491B-B5B7-6A3552B1A0E2`
 

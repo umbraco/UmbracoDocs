@@ -9,12 +9,41 @@ In this section, we have summarized the changes to Umbraco Forms released in eac
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific/) article.
+If you are upgrading to a new major version, you can find information about the breaking changes in the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
+
+### 17.2.0-rc2 (February 26th 2026)
+* Add global backoffice search for Forms
+* Fix regression with new Forms missing default page, group and data consent field
+* Fix reCAPTCHA Enterprise field not correctly validating assessments
+* Remove unnecessary API calls for users without Forms section access [#1648](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1648)
+* Fix export error when form name contains a dot [#1649](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1649)
+
+### 17.2.0-rc (February 19th 2026)
+* Umbraco CMS dependency updated to 17.2.0
+* Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)
+* Fix conditions not seeing field values modified by previous workflows [#1464](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1464)
+* Fix form entry count not displaying on first load of dashboard [#1469](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1469)
+* Fix Rich Text Editor (RTE) missing formatting options when changing field type [#1476](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1476)
+* Add server-side length validation for String Data Type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
+* Replace native button with styled anchor in "Copy Workflows" [#1595](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1595)
+* Improve Danish translations [#1596](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1596)
+* Add missing translations for multiple languages [#1599](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1599)
+* Use `uui-form-layout-item` for UI consistency in form settings [#1607](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1607)
+* Add Form reference tracking API and UI [#1609](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1609)
+* Fix form re-initialization for dynamically injected forms [#1617](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1617)
+* Use localized labels for Workflow stage dropdown [#1612](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1612)
+* Fix sensitive data field showing localization key as tooltip [#1633](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1633)
+
+### 17.1.3 (February 12th 2026)
+* Fix reCAPTCHA Enterprise script not loading correctly on the frontend
+
+### [17.1.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.2) (January 30th 2026)
+* Fix export path resolution for paths starting with `~` [#1610](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1610)
 
 ### [17.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F17.1.1) (January 29th 2026)
 * Ensure entries selection can be cleared correctly after delete [#1590](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1590)

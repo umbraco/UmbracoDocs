@@ -40,14 +40,13 @@ When selecting Content from the dropdown, the option to specify a root node, als
 
 <figure><img src="../../../../.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
 
-
-
 When picking the **origin** there are several different options available:
 
-<figure><img src="../../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
+<figure><img src="./images/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
 
 The following options are available when picking the origin:
 
+* **Content Root**: The root of the content tree.
 * **Root**: The root is the first level item of the sub-tree of the current node.
 * **Parent**: The parent is the nearest ancestor of the current node.
 * **Current**: The current node.&#x20;

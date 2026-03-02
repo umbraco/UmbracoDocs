@@ -36,7 +36,7 @@ If you have changed the configuration value of `TrackRenderedFormsStorageMethod`
 }
 ```
 
-Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
+Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](configuration/#TrackRenderedFormsStorageMethod) article.
 
 If you prefer to use a tag helper, that's an option too.
 
@@ -62,7 +62,7 @@ To enable `ExcludeScripts`:
 
 *   Using the **Insert Form with Theme** macro:
 
-    ![Exclude scripts](images/exclude-scripts-v9.png)
+    ![Exclude scripts](../.gitbook/assets/exclude-scripts-v9.png)
 *   While inserting Forms **directly** in your template:
 
     ```csharp

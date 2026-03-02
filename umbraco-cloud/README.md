@@ -1,21 +1,6 @@
 ---
 description: Explore, build, launch, and maintain your projects with ease.
 coverY: 0
-layout:
-  width: default
-  cover:
-    visible: false
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Welcome to Umbraco Cloud Documentation
@@ -34,8 +19,8 @@ The documentation is structured to match your journey. From discovery to going l
 
 ### Quick Links
 
-{% content-ref url="begin-your-cloud-journey/the-cloud-portal/README.md" %}
-[The Cloud Portal](begin-your-cloud-journey/the-cloud-portal/README.md)
+{% content-ref url="begin-your-cloud-journey/the-cloud-portal/" %}
+[the-cloud-portal](begin-your-cloud-journey/the-cloud-portal/)
 {% endcontent-ref %}
 
 ### New to Umbraco Cloud?

@@ -20,7 +20,7 @@ Multi-page forms are ideal for use cases such as event registration, job applica
 1. Click **+** next to the Forms folder.
 2. Select **New Form**.
 
-![New Form Creation](images/create-form.png)
+![New Form Creation](../.gitbook/assets/create-form.png)
 
 3. Enter a **Name** for the form. For example: _Book a Meeting_.
 4. Click **Save**.
@@ -55,7 +55,7 @@ For this tutorial, the following fields are added with the respective specificat
 
 If you wish to reorder your fields, click **Reorder**.
 
-![Personal Information Questions on the First Page](images/first-page-of-form.png)
+![Personal Information Questions on the First Page](../.gitbook/assets/first-page-of-form.png)
 
 ## Create the Second Page
 
@@ -70,7 +70,7 @@ To create a multi-page form, you need to add more pages:
 7. Click **Submit**.
 8. Click **Save**.
 
-![Default Value displayed](images/company-information.png)
+![Default Value displayed](../.gitbook/assets/company-information.png)
 
 Similarly, you can also add other relevant fields based on your requirements.
 
@@ -90,7 +90,7 @@ To add conditions, follow these steps:
     * Yes
     * No
 
-![Values in the Options Field](images/prevalue-fields.png)
+![Values in the Options Field](../.gitbook/assets/prevalue-fields.png)
 
 5. Mark the field as **Mandatory**.
 6. Click **Submit**.
@@ -104,7 +104,7 @@ To add conditions, follow these steps:
     * 5-10 years
     * 10+ years
 
-![Conditional Question Values in the Options Field](images/conditional-question-part-1.png)
+![Conditional Question Values in the Options Field](../.gitbook/assets/conditional-question-part-1.png)
 
 10. Enable **Conditions**.
 11. Set the parameters for the condition as follows:
@@ -113,12 +113,12 @@ To add conditions, follow these steps:
     * Condition: **is**
     * Value: **Yes**
 
-![Values for adding a Condition](images/conditional-question-part-2.png)
+![Values for adding a Condition](../.gitbook/assets/conditional-question-part-2.png)
 
 12. Click **Submit**.
 13. Click **Save**.
 
-![Company information Questions on the Second Page](images/page-2-details.png)
+![Company information Questions on the Second Page](../.gitbook/assets/page-2-details.png)
 
 ## Create the Final Page
 
@@ -139,12 +139,12 @@ To add conditions, follow these steps:
     * Umbraco Commerce
     * Umbraco Workflow
 
-![Multiple Values in the Option Field](images/multiple-choice.png)
+![Multiple Values in the Option Field](../.gitbook/assets/multiple-choice.png)
 
 7. Click **Submit**.
 8. Click **Save**.
 
-![Products Selection Question on the Final Page](images/Final-page.png)
+![Products Selection Question on the Final Page](../.gitbook/assets/Final-page.png)
 
 ## Embed the Form on a Web Page
 
@@ -156,13 +156,13 @@ To display the form on the website, follow these steps:
 2. Click **+** next to the parent page of the website.
 3. Select the Document Type.
 
-![Pick a Document Type](images/pick-document-type.png)
+![Pick a Document Type](../.gitbook/assets/pick-document-type.png)
 
 4. **Enter a Name** for the page. For example, _Book a Meeting!_
 5. Select the **Book a Meeting** form using the _Form Picker_.
 6. Click **Save and Publish**.
 
-![New Page created in the Content Section](images/Form-Content-section.png)
+![New Page created in the Content Section](../.gitbook/assets/Form-Content-section.png)
 
 ## Customize Form Settings
 
@@ -184,6 +184,6 @@ To render the Form on the frontend, see the [Rendering Forms](../developer/rende
 6. Navigate to the **Book a Meeting** Form.
 7. Click on the **Entries** tab and verify that the data is captured.
 
-![Form Data in the Entries tab](images/form-data-entry.png)
+![Form Data in the Entries tab](../.gitbook/assets/form-data-entry.png)
 
 You have successfully created a multi-page form with conditional logic in Umbraco Forms. By using multi-page forms, you have made complex data entry much simpler and more user-friendly. This not only improves the experience for your users but also makes your forms more efficient and manageable.

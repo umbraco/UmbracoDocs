@@ -1,10 +1,16 @@
+---
+description: >-
+  Use Baselines to quickly create new Umbraco Cloud projects using pre-made
+  schema and setup.
+---
+
 # Baselines
 
-A Baseline Child project is similar to a Fork (forked repository) on GitHub. A clone is created of an existing project while maintaining a connection between the two projects. The connection exists between the Live environment of the **Baseline project**, and the left-most mainline environment of the **Child project**.
+A Baseline Child project is similar to a Fork (forked repository) on GitHub. A clone of an existing project is created while maintaining a connection between the two projects. The connection exists between the Live environment of the **Baseline project** and the left-most mainline environment of the **Child project**.
 
 Any project can act as a Baseline project.
 
-The basic idea is that you have a project that contains all your standard Umbraco packages/components. Some default Document Types which you want to use as a baseline for future projects is also configured. When you've made changes to your Baseline project, you push these changes out to all the Child projects with a click of a button.
+The idea is that you have a project containing all your standard Umbraco packages and components. Some default Document Types that you want to use as a baseline for future projects are also configured. When you've made changes to your Baseline project, you can push them out to all the Child projects with a click of a button.
 
 ![Baseline workflow](../../.gitbook/assets/baseline-workflow.gif)
 
@@ -16,28 +22,24 @@ Learn how to work with Baselines.
 
 ## Create a Child Project
 
-To create a child project:
+To create a child project, follow the steps outlined below:
 
 1. Log in to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects).
-2. Click the **Create New Project** button.
-3. Select **Baseline Project**.
-4. Open the **Choose baseline** drop-down list and select the Cloud project, the new project should be based on.
-5. Choose either **Starter**, **Standard** or **Professional** plan from the **Plan Selection** window.
-6. Enter the **Project Name** in the **Project Information** window.
+2. Click the **Create Project** button.
+3. Select **Umbraco Baseline**.
+4. Use the dropdown to choose the project to be used as the baseline.
 
 {% hint style="info" %}
 Any Umbraco Cloud project can be used as a Baseline project
 {% endhint %}
 
-7. **Choose an Owner** from the drop-down list.
-8. Enter your **Name**, **Email**, and **Telephone** in the **Technical Contact** section.
-9. Click **Continue**.
-10. Review the entered information and select **I have read and agree to the terms and conditions and the Data Processing Agreement**.
-11. Click **Create Project**.
-
-It might take couple of minutes for the project to spin up before your environments are ready. When your environments are ready, you will see a _green_ light next to the environment name.
-
-![Creating a Baseline child project](../../.gitbook/assets/baseline-creation.gif)
+1. Choose a **Plan** for the project.&#x20;
+2. Enter the **Project Name** under **Project Information**.
+3. **Choose an Owner** from the drop-down list.
+4. Fill in the required information for **Technical Contact.**
+5. Click **Continue**.
+6. Review the entered information and **agree to the terms and conditions and the Data Processing Agreement**.
+7. Click **Create Project**.
 
 {% hint style="info" %}
 Depending on the size of the project chosen as a Baseline project, it can take a while before the Child project is ready.
@@ -45,17 +47,15 @@ Depending on the size of the project chosen as a Baseline project, it can take a
 
 ### Restore content from the Baseline project
 
-When you've created the Child project you can choose to restore content from your Baseline project:
+When you've created the Child project, you can choose to restore content from your Baseline project:
 
 1. Go to the **Content** section.
 2. Right-click the top of the **Content** tree in the Umbraco backoffice.
-3. Choose **Workspace Restore**.
-4. The _Baseline project_ should already be selected as the environment to restore from
+3. Choose **Environment Restore**.
+4. Ensure that **Baseline** is selected as the source to restore from.&#x20;
 5. Click **Restore from Baseline**
 
-If you do not see the content, **Reload** the content tree once the restore is complete.
-
-![Restore content from Baseline project](../../.gitbook/assets/RestoreFromBaseline_v10.gif)
+If you do not see the content, **reload** the content tree once the restore is complete.
 
 ## [Merge Conflicts](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/)
 
@@ -67,8 +67,8 @@ In this article, you'll find a guide on how to upgrade your Child project with c
 
 ## [Handling configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
 
-When you are working with Baseline Child projects you might sometimes want to have an individual configuration for each project. This can be handled using config transforms.
+When you are working with Baseline Child projects, you might sometimes want to have an individual configuration for each project. This can be handled using config transforms.
 
-## [Break reference between baseline and child project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
+## [Break the reference between the baseline and the child project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
 
-In this article, we will look at how to break the connection between the baseline and one of its child projects.
+Learn how to break the connection between the baseline and one of its child projects.

@@ -4,7 +4,7 @@ description: A guide to multilanguage setup in Umbraco
 
 # Creating a Multilingual Site
 
-You can use **language variants** to setup a multilingual site. **Language Variants** allow you to have variants of the same content all under the same project. So, if you open a page and a language variant is enabled, you will see the option to switch the language from the drop-down list. Additionally, you can view or input the translated content.
+You can use **language variants** to setup a multilingual site. **Language Variants** allow you to have variants of the same content all under the same project. If you open a page and a language variant is enabled, there will be an option to switch the language from the drop-down list. Additionally, you can view or input the translated content.
 
 This tutorial explains how to set-up a basic multilingual website.
 
@@ -15,15 +15,11 @@ To add a new language, follow these steps:
 1. Go to the **Settings** section.
 2. Go to **Languages** in the **Structure** tree.
 3. Click **Create**.
-4.  Select a **Language** from the dropdown list. In this tutorial, we will pick _Danish_.
-
-    ![Adding the Danish language](../.gitbook/assets/adding-danish-language-v14.png)
+4. Select a **Language** from the dropdown list. In this tutorial, we will pick _Danish_.
 5. In **Settings**, select the following options to set the new language as the:
    * Default language for your site, toggle **Default Language**.
    * Mandatory language for your site, toggle **Mandatory Language**.
-6.  Select a **Fallback Language**.
-
-    ![Adding a Fallback language](../.gitbook/assets/fallback-language-v14.png)
+6. Select a **Fallback Language**.
 7. Click **Save**.
 
 ### Adding Multiple Languages
@@ -36,15 +32,13 @@ We can add multiple languages depending on our website requirements. In the prev
 4. For English Variant:
    * Select **English (United States)** from the drop-down list.
    * Click **Save**.
-5.  For German Variant:
+5. For German Variant:
 
     * Select **German** from the drop-down list.
     * Toggle **Mandatory Language** option.
     * Select **Danish** from the **Fallback Language** drop-down list.
     * Click **Submit**.
     * Click **Save**.
-
-    ![Adding a Fallback language](../.gitbook/assets/Language-variants-v14.png)
 
 ### Changing the Default Language of a Website
 
@@ -53,9 +47,7 @@ To change the default language of a website:
 1. Go to the **Settings** section.
 2. Go to **Languages** in the **Structure** tree.
 3. Select the language you want to set as the new default language.
-4.  Toggle **Default Language**.
-
-    ![Changing the Default Language of a Website](../.gitbook/assets/change-default-language-v14.png)
+4. Toggle **Default Language**.
 5. Click **Save**.
 
 {% hint style="info" %}
@@ -68,24 +60,27 @@ To change the default language of a User:
 
 1. Go to the **Users** section.
 2. Select the user whose backoffice language you wish to change.
-3.  Select the new language from the **UI Culture** drop-down list.
+3. Select the new language from the **UI Culture** drop-down list.
 
-    ![Changing the Default Backoffice Language of a User](../.gitbook/assets/change-backoffice-language-v14.png)
+![Changing the Default Backoffice Language of a User](../.gitbook/assets/change-backoffice-language-v14.png)
+
 4. Click **Save**.
 
 ## Document Types
 
 For this tutorial, we will create the following document types:
 
-*   Home Page
+* Home Page
 
-    ![Home Page](../.gitbook/assets/home-page.png)
-*   Blogs
+![Home Page](../.gitbook/assets/home-page.png)
 
-    ![Blogs](../.gitbook/assets/Blogs.png)
-*   Contact Us
+* Blogs
 
-    ![Contact Us](../.gitbook/assets/Contact-us.png)
+![Blogs](../.gitbook/assets/Blogs.png)
+
+* Contact Us
+
+![Contact Us](../.gitbook/assets/Contact-us.png)
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -93,28 +88,31 @@ To enable language variants on Document Types, follow these steps:
 
 1. Go to the **Settings** tab.
 2. Select **Contact Us** from the **Document Types** folder.
-3.  Go to the **Settings** tab and toggle **Allow vary by culture**
+3. Go to the **Settings** tab and toggle **Allow vary by culture**
 
-    ![Allow property editor Language Variants](../.gitbook/assets/allow-varying-property-editor-v14.png)
+![Allow property editor Language Variants](../.gitbook/assets/allow-varying-property-editor-v14.png)
+
 4. Click **Save**.
 5. Go to the **Design** tab.
-6.  Click on the Data Type of the **Page Title** and toggle **Vary by culture**.
+6. Click on the Data Type of the **Page Title** and toggle **Shared across cultures**.
 
-    ![Allow Vary by Culture](../.gitbook/assets/allow-vary-by-culture-v14.png)
+![Shared across Cultures field](../.gitbook/assets/allow-vary-by-culture.png)
+
 7. Click **Update**.
 8. For this tutorial, we will not make any changes to the **Address**.
 9. Click **Save**.
 
 ## Viewing the Language Variants in the Content section
 
-When you return to your content node you will notice two things:
+When you return to your content node, you will notice two things:
 
-1.  At the top of the content tree, there is a dropdown to view the content tree in the language of your choice.
+1. At the top of the content tree, there is a dropdown to view the content tree in the language of your choice.
 
-    ![Variant Content Tree](../.gitbook/assets/Variant-content-tree-v14.png)
-2.  To the right of the content name, there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
+![Variant Content Tree](../.gitbook/assets/Variant-content-tree.png)
 
-    ![Variant Drop-down list](../.gitbook/assets/variant-dropdown-v14.png)
+2. To the right of the content name, there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
+
+![Variant Drop-down list](../.gitbook/assets/variant-dropdown-v17.png)
 
 ## Adding Culture and Hostnames to the Root Node of the Website
 
@@ -123,25 +121,24 @@ To add culture and hostnames, follow these steps:
 1. Go to the **Content** tab.
 2. Click on the **...** dots next to the **Contact Us** content node.
 3. Select **Culture and Hostnames**.
-4.  Add a domain for each hostname, like it's done here:
+4. Add a domain for each hostname, like it's done here:
 
-    ![Culture and Hostnames](<../.gitbook/assets/culture-and-hostnames-v14 (2).png>)
+![Culture and Hostnames](<../.gitbook/assets/culture-and-hostnames-v14 (2).png>)
+
 5. Click **Save**.
 
 ## Using Side-by-Side Mode for Editing Content
 
 To use side-by-side mode for editing content at the same time, follow these steps:
 
-1.  Go to the **Contact Us** node. You will find a language dropdown next to the title at the top:
+1. Go to the **Contact Us** node. You will find a language dropdown next to the title at the top.
+2. Click **Open in Split view**. In this splitview, we can see the content node with each language side by side.
 
-    ![Language Variant dropdown](<../.gitbook/assets/language-dropdown-v14 (1).png>)
-2.  Click **Split view**. In this splitview, we can see the content node with each language side by side.
+You may notice that the **Address** and other fields do not have a **Shared** tag. This is because the **Shared across cultures** toggle is disabled for these fields.
 
-    You may notice that the **Address** and other fields are greyed out - this is because we haven't checked the **Allow vary by culture** checkbox.
+![Splitview editing](../.gitbook/assets/splitview-editing-v17.png)
 
-    ![Splitview editing](../.gitbook/assets/splitview-editing.png)
-
-    To enable these fields, follow the steps mentioned in the [Enabling Language Variants on Document Types and Properties](multilanguage-setup.md#enabling-language-variants-on-document-types-and-properties) section.
+To enable these fields, follow the steps mentioned in the [Enabling Language Variants on Document Types and Properties](multilanguage-setup.md#enabling-language-variants-on-document-types-and-properties) section.
 
 ## Adding Language Variants to the Content
 
@@ -149,10 +146,11 @@ To add language variants to the content.
 
 1. Go to the **Contact Us** node.
 2. Enter the **Name** for your content node and the **Page Title** in the new language.
-3.  Click **Save and Publish**. The **Ready to Publish** window opens providing the option to publish in one or more languages.
+3. Click **Save and Publish**. The **Save and Publish** window opens providing the options to publish in one or more languages.
 
-    ![Publishing Variant content](<../.gitbook/assets/publishing-variant-content-v14 (1).png>)
-4. You can select either one or multiple languages and click **Publish**.
+![Publishing Variant content](../.gitbook/assets/publishing-variant-content-v17.png)
+
+4. Select either one or multiple languages and click **Save and Publish**.
 
 ## Rendering Variant Content in Templates
 
@@ -182,11 +180,12 @@ To create dictionary items:
 
 1. Go to the **Translation** section.
 2. Click on the **...** dots next to **Dictionary**.
-3. Select **Create dictionary item**.
+3. Select **Create**.
 4. Enter a **Name** for the dictionary item. Let's say **Address**.
 5.  Enter the different language versions for the dictionary item.
 
-    ![Creating Dictionary Items](../.gitbook/assets/add-dictionary-item-v14.png)
+![Creating Dictionary Items](../.gitbook/assets/add-dictionary-item-v14.png)
+
 6. Click **Save**.
 7. Similarly, we will add different language versions for the **Contact Number** field.
 
@@ -205,30 +204,37 @@ Property editors such as Dropdown, Checkbox List, and Radiobutton List enable yo
 
 To use property editors with dictionary items:
 
-1.  Create a corresponding dictionary item with the same name for each option in your property editor. For example:
+1. Create a corresponding dictionary item with the same name for each option in your property editor. For example:
 
-    | Key         | English Value | French Value |
-    | ----------- | ------------- | ------------ |
-    | Electronics | Electronics   | Électronique |
-    | Clothing    | Clothing      | Vêtements    |
-    | Books       | Books         | Livres       |
-    | Toys        | Toys          | Jouets       |
-2.  In your Document Type, set up a property editor and use the keys of the dictionary items as the **Options**:
+| Key         | English Value | French Value |
+| ----------- | ------------- | ------------ |
+| Electronics | Electronics   | Électronique |
+| Clothing    | Clothing      | Vêtements    |
+| Books       | Books         | Livres       |
+| Toys        | Toys          | Jouets       |
 
-    _Option 1:_ Electronics, _Option 2:_ Clothing, _Option 3:_ Books, and _Option 4:_ Toys
+2. In your Document Type, set up a property editor and use the keys of the dictionary items as the **Options**:
 
-    ![Dropdown Options](../.gitbook/assets/dropdown-options.png)
-3.  Use the following code in your template to retrieve and display the translated value:
+![Dropdown Options](../.gitbook/assets/add-dictionary-item-v17.png)
 
-    ```cs
-    @{
-        var dropdownValue = Model.Value<string>("yourDropdownAlias");
-        var translatedValue = Umbraco.GetDictionaryValue(dropdownValue);
+3. Use the following code in your template to retrieve and display the translated value:
+
+```cs
+@{
+     var selectedValues = Model.Value<IEnumerable<string>>("dropdown");
+}
+
+@if (selectedValues != null)
+{
+    foreach (var key in selectedValues)
+    {
+        <span>@Umbraco.GetDictionaryValue(key)</span>
+        <br />
     }
-    <span>@translatedValue</span>
-    ```
+}
+```
 
-    The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
+The code retrieves the selected value from the property editor and translates it using the corresponding dictionary item.
 
 ## Adding a Translator to the Website
 
@@ -243,13 +249,11 @@ To view the language variant on the browser, follow these steps:
 1. Go to the **Content** tab.
 2. Select your new language from the language dropdown above your content tree.
 3. Select the **Contact Us** node and go to the **Info** tab.
-4.  You will notice the links with the new language domain added to it. If it's not there, you might need to refresh the page.
+4. The Links section contains the language variant links. If it's not there, you might need to refresh the page.
+5. Click on the link to view the varied node in the browser.
+6. Alternatively, you can add the domain name to your localhost in the browser. For example: `https://localhost:xxxx/da/`
 
-    ![Viewing the Language Variant Link](<../.gitbook/assets/viewing-langvariant-browser-v14 (1).png>)
-5. Click on the link to view the new language varied node in the browser.
-6. Alternatively, you can add the domain name to your localhost in the browser. For example: `http://localhost:xxxx/da/`
-
-For viewing purposes, I've added a stylesheet to my website. The final result should look similar to the image below:
+For screenshot purposes, there's a stylesheet added to the website. The final result should look similar to the image below:
 
 Danish Version:
 
@@ -263,36 +267,93 @@ German Version:
 
 When requesting content over an API, the culture will fall back to the default, unless explicitly set.
 
-To do this, you can use the IVariationContextAccessor.
+You can use the `IVariationContextAccessor` to set the culture context for your API requests.
+
+Follow these steps to create an API controller that returns content in different languages:
+
+1. Create a folder named **Controllers**.
+2. Add a file named `ContentApiController.cs`.
+3. Add the following code snippet:
 
 ```csharp
-public class ExampleController : SurfaceController
-{
-	private readonly ILanguageService _languageService;
-    private readonly IVariationContextAccessor _variationContextAccessor;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Cache;
+using Umbraco.Cms.Core.Logging;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Infrastructure.Persistence;
+using Umbraco.Cms.Web.Common;
+using Umbraco.Cms.Web.Website.Controllers;
 
-    public ExampleController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, ILocalizationService localizationService, IVariationContextAccessor variationContextAccessor) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+public class ContentApiController : SurfaceController
+{
+    private readonly ILanguageService _languageService;
+    private readonly IVariationContextAccessor _variationContextAccessor;
+    private readonly UmbracoHelper _umbracoHelper;
+
+    public ContentApiController(
+        IUmbracoContextAccessor umbracoContextAccessor,
+        IUmbracoDatabaseFactory databaseFactory,
+        ServiceContext services,
+        AppCaches appCaches,
+        IProfilingLogger profilingLogger,
+        IPublishedUrlProvider publishedUrlProvider,
+        ILanguageService languageService,
+        IVariationContextAccessor variationContextAccessor,
+        UmbracoHelper umbracoHelper)
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
-        _localizationService = localizationService;
+        _languageService = languageService;
         _variationContextAccessor = variationContextAccessor;
+        _umbracoHelper = umbracoHelper;
     }
 
-    public IActionResult Index(string culture = null)
+    [HttpGet]
+    public async Task<IActionResult> GetContent(int id, string? culture = null)
     {
-        IEnumerable<ILanguage> UmbracoLanguages = _languageService.GetAllAsync().Result; //a helpful method to get all configured languages
-        var requestedCulture = UmbracoLanguages.FirstOrDefault(l => l.IsoCode == culture);
-
-        if (requestedCulture != null)
+        if (!string.IsNullOrWhiteSpace(culture))
         {
-            _variationContextAccessor.VariationContext = new VariationContext(requestedCulture.IsoCode);
+            var languages = await _languageService.GetAllAsync();
+            var requestedCulture = languages.FirstOrDefault(l => l.IsoCode == culture);
+
+            if (requestedCulture != null)
+            {
+                _variationContextAccessor.VariationContext = new VariationContext(requestedCulture.IsoCode);
+            }
         }
 
-        //this will now be in the requested culture
-        var content = UmbracoContext.Content.GetAtRoot();
+        var content = _umbracoHelper.Content(id);
 
-        //Content requested in this View Component will now be in the requested culture
-        return ViewComponent();
+        if (content == null)
+        {
+            return NotFound();
+        }
+
+        return Json(new
+        {
+            name = content.Name,
+            title = content.Value<string>("pageTitle"),
+            culture = culture ?? "default"
+        });
     }
+}
+```
+
+4. Build and run your project.
+5. Test the API endpoint:
+
+`https://localhost:xxxxx/umbraco/surface/ContentApi/GetContent?id=1177&culture=da`
+
+When you call the API with different cultures, you should receive different values. For example, for Danish (da):
+
+```json
+{
+  "id": 1177,
+  "name": "Kontakt Os",
+  "title": "Contact Us",
+  "culture": "da"
 }
 ```
 
@@ -307,15 +368,13 @@ Once you have these, you need to loop through the languages and provide links to
 
 ### Getting all the languages for a site
 
-There are three ways to achieve this. The best one is to use `languageService.GetAllAsync();` which retrieves items from the cache.
+The recommended way to retrieve all configured languages is to use `IlanguageService.GetAllAsync()`, which retrieves items from the cache efficiently.
 
-Another is to use `localizationService.GetAllLanguages();` to call the database, which is expensive and ideally includes caching. This should only be done if you cannot use the ILanguage service. This service is marked as obsolete.
-
-The alternative is to get the Home node and find all of the cultures associated with it. This has a few benefits including speed and providing us with a link to show the user. It is the process you will use when following this guide.
+Alternatively, you can get the Home node and find all of the cultures associated with it. This approach has benefits including speed and providing you with URLs to show users.
 
 ### Identify the language for the current page
 
-This is achieved in `cs.html` files using `umbracoHelper.AssignedContentItem.GetCultureFromDomains();`
+This is achieved in `.cshtml` files using `umbracoHelper.AssignedContentItem.GetCultureFromDomains();`
 
 #### Steps
 

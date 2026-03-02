@@ -2,7 +2,7 @@
 
 The date picker uses a front-end library called [Pikaday](https://github.com/dbushell/Pikaday) to display a UI to pick dates.
 
-![Date picker on frontend](images/date-v14.png)
+![Date picker on frontend](../../../.gitbook/assets/date-v14.png)
 
 Pikaday date picker can be localized based on the page the Form is rendered on.
 
@@ -14,5 +14,4 @@ The **DatePicker.cshtml** includes the `moment-with-locales.min.js` library to h
 
 ## Configure the date picker
 
-The Date picker has [configuration settings](../../../developer/configuration/README.md#date-picker-field-type-configuration) to control the number of years shown in the picker and the date format.
-
+The Date picker has [configuration settings](../../../developer/configuration/#date-picker-field-type-configuration) to control the number of years shown in the picker and the date format.
