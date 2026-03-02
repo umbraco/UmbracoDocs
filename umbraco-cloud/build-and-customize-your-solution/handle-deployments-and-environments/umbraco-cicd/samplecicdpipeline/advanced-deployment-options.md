@@ -7,7 +7,7 @@ description: Learn how to use the deployment options available with the version 
 This provides control over the CI/CD deployment process within the isolated instance before your code is pushed to the Cloud environment.
 
 ## Skip preserve Umbraco-Cloud.json 
-The umbraco-cloud.json file is controlled by the Umbraco Cloud platform. It hold a description of the environment relationships used for content deployments as well as the configuration needed to be able to log in to the backoffice locally with Umbraco Id. The CI/CD Flow deployment system makes sure that the current json file on the cloud environment is preserved.
+The umbraco-cloud.json file is controlled by the Umbraco Cloud platform. It hold a description of the environment relationships used for content deployments as well as the configuration needed to be able to log in to the backoffice locally with Umbraco ID. The CI/CD Flow deployment system makes sure that the current JSON file on the cloud environment is preserved.
 
 In edge cases users could have the need to supply their own umbraco-cloud.json to the system and overwrite the one on cloud. 
 
