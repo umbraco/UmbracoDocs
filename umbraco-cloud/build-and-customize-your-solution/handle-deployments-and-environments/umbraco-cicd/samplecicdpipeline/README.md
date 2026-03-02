@@ -22,7 +22,7 @@ Once you commit your code to the Cloud, the build pipeline converts your C# code
 In Umbraco Cloud, only C# code is built. This means that all frontend artifacts need to be built before they are committed to the repository.
 {% endhint %}
 
-You can use Azure DevOps as an external repository, and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of the left-most Umbraco Cloud environment.
+You can use Azure DevOps as an external repository, and with the pipelines, it will automatically keep your Azure DevOps source code repository in sync. The sync is done with the git repository of the Umbraco Cloud environment that you are targeting.
 
 ![UmbracoCloud CI/CD sample pipeline](../../../../.gitbook/assets/UmbracoCloudCicdSample.png)
 
@@ -46,32 +46,73 @@ In this guide, deployments target the left-most environment in your Umbraco Clou
 To get started with API interactions, you'll need to obtain your Project ID and API key. If you haven't already enabled the CI/CD feature, follow these steps:
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
-2. Go to `Configuration` -> `CI/CD Flow`. This is where you can generate an API key and find your Project ID.
-
-![CI/CD Flow page](../../../../.gitbook/assets/cicd-flow-page.png)
-
+2. Go to `Configuration` -> `CI/CD Flow`. This is where you can generate API keys and find your Project ID.
 3. Toggle "Activate CI/CD Flow" to enable the feature.
 
-<figure><img src="../../../../.gitbook/assets/UC-advanced-CICD.png" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/cicd-flow-page.png" alt=""><figcaption><p>"Umbraco CI/CD Flow" page under Configuration.</p></figcaption></figure>
+
+The box will expand to show your Project Id and a Primary API key and a Secondary API key. You can use either key to interact with the APIs.
 
 {% hint style="warning" %}
-The API key is tied to the specific project for which it is generated. Ensure to keep it secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
+The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
-## Getting environment aliases to target
+## More options
 
-With the feature enabled, a button called "CI/CD Environment Targets" becomes available. Clicking the button opens a modal with your environments and their aliases.
+With more options we are expanding the configurability of CI/CD flow.
 
-Next to the environment alias is a button you can click to copy the alias.
+### Deployments to any target
 
-<figure><img src="../../../../.gitbook/assets/cicd-target-environments.webp" alt=""><figcaption><p>"Umbraco CI/CD Flow" section on the Advanced page.</p></figcaption></figure>
+By default CI/CD flow only allows deployments to the left-most or the flexible environment. With the "Deployments to any target" toggle you now have control to enable CI/CD Flow deployments to all your environments.
+
+<figure><img src="../../../../.gitbook/assets/cicd-target-any-environment.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - More options" section showing the enabled "Deployment to any target" setting and environment you can target for deployments.</p></figcaption></figure>
+
+{% hint style="warning" %}
+
+This setting is for advanced users.
+
+Enabling "Deployments to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
+
+If you are just setting up CI/CD Flow for the first time, you should skip ahead to [the next section](#getting-environment-aliases-to-target).
+
+{% endhint %}
+
+When the setting is enabled the environments overview will change on your project. This will also affect how you do deployments between environments because:
+
+- Pending changes indicator is removed; you will not be able to see how far ahead your environments is compared to the next.
+- Deploy button is removed; you will not be able to push changes forward by using the Cloud Portal UI.
+
+Instead you will now be able to see which artifact is deployed to your environment.
+
+<figure><img src="../../../../.gitbook/assets/cicd-environment-card-deployment.png" alt=""><figcaption><p>Example of an environment card showing the current deployed artifact.</p></figcaption></figure>
+
+The git repository under the environment can still receive changes from outside of CI/CD flow:
+
+- Adding or removing an environment will in most cases write to each affected environment. 
+- Auto upgrades on cloud also creates commits.   
+- Adding or editing document type in the backoffice (or other work that changes schema) on the cloud environment will also create commits. 
+
+If changes have been applied to an environment the environment card will have an indicator that shows how far ahead it is of the latest deployment.
+
+<figure><img src="../../../../.gitbook/assets/cicd-environment-card-deployment-with-changes.png" alt=""><figcaption><p>Example of an environment card showing the current deployed artifact, but with a change committed to the environment after the deployment.</p></figcaption></figure>
+
+You are now fully in control of deploying to all environments through your CI/CD setup. 
+Se the [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.md) article for an example of deploying to multiple targets.
+
+### Getting environment aliases to target
+
+When the CI/CD flow feature is enabled, the "More options" section will expand to show a table with all your environments. 
+
+The table shows you which environments you can currently target with CI/CD Flow. Note that you will need the environment alias shown in the table. You can click the button next to the environment alias to copy it for later use.
+
+<figure><img src="../../../../.gitbook/assets/cicd-target-environments.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - More options" section showing the disabled "Deployment to any target" setting and environment you can target for deployments.</p></figcaption></figure>
 
 {% hint style="info" %}
 If the alias is greyed out, it is currently not a valid target through the Umbraco CI/CD flow API.
 
-Currently, flexible environments and the left-most environment are considered valid targets.
+By default, flexible environments and the left-most environment are considered valid targets.
 
-The impact of allowing CI/CD deployments to all environments is being investigated.
+You can enable all environments to be valid targets by enabling the "Deployments to any target" toggle above. 
 {% endhint %}
 
 ## Sample pipelines
