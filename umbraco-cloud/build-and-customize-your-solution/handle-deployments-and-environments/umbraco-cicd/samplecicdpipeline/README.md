@@ -54,12 +54,12 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 The box will expand to show your Project Id and a Primary API key and a Secondary API key. You can use either key to interact with the APIs.
 
 {% hint style="warning" %}
-The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub, as it will be used for all subsequent API interactions related to that project.
+The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub. It will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
 ## More options
 
-With more options we are expanding the configurability of CI/CD flow.
+With "More options" we are expanding the capabilities of CI/CD flow.
 
 ### Deployments to any target
 
@@ -73,7 +73,7 @@ This setting is for advanced users.
 
 Enabling "Deployments to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
 
-If you are just setting up CI/CD Flow for the first time, you should skip ahead to [the next section](#getting-environment-aliases-to-target).
+If you are setting up CI/CD Flow for the first time, you should skip ahead to [the next section](#getting-environment-aliases-to-target).
 
 {% endhint %}
 
@@ -90,9 +90,9 @@ The git repository under the environment can still receive changes from outside 
 
 - Adding or removing an environment will in most cases write to each affected environment. 
 - Auto upgrades on cloud also creates commits.   
-- Adding or editing document type in the backoffice (or other work that changes schema) on the cloud environment will also create commits. 
+- Adding or editing Document types in the backoffice (or other work that changes schema) on the cloud environment will also create commits. 
 
-If changes have been applied to an environment the environment card will have an indicator that shows how far ahead it is of the latest deployment.
+If changes have been applied to an environment, the environment card will indicate how far ahead it is of the latest deployment.
 
 <figure><img src="../../../../.gitbook/assets/cicd-environment-card-deployment-with-changes.png" alt=""><figcaption><p>Example of an environment card showing the current deployed artifact, but with a change committed to the environment after the deployment.</p></figcaption></figure>
 
@@ -103,7 +103,7 @@ Se the [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.
 
 When the CI/CD flow feature is enabled, the "More options" section will expand to show a table with all your environments. 
 
-The table shows you which environments you can currently target with CI/CD Flow. Note that you will need the environment alias shown in the table. You can click the button next to the environment alias to copy it for later use.
+The table shows you which environments you can currently target with CI/CD Flow. You will need the environment alias shown in the table. You can click the button next to the environment alias to copy it for later use.
 
 <figure><img src="../../../../.gitbook/assets/cicd-target-environments.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - More options" section showing the disabled "Deployment to any target" setting and environment you can target for deployments.</p></figcaption></figure>
 

@@ -38,7 +38,7 @@ Keep in mind that the final Kudu deployment on the Cloud environment will still 
 
 ## Disable schema extraction
 
-When deploying schema changes to environments beyond "left-most", the CICD flow deployment system will automatically run a schema extraction. 
+When deploying schema changes to environments beyond "left-most", the CI/CD Flow deployment system will automatically run a schema extraction. 
 
 Setting `runSchemaExtration` to false, will result in the system not automatically running the schema extraction on the environment. Schema extraction can still be triggered from the backoffice.
 

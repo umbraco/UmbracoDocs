@@ -28,6 +28,6 @@ Without coordination between teams, the risk of project conflicts increases, esp
 * **Direct Commits to Umbraco Git Repos**: Any commits made directly to the Umbraco Git Repos is not advised.
 * **Incomplete API**: The promotion endpoint for transitioning between environments is not fully functional yet.
 * **Lack of Predefined Tasks**: There are no Umbraco-provided Azure DevOps tasks or GitHub Actions available.
-  * [Github Actions: Our Umbraco Cloud Action](https://github.com/marketplace/actions/umbraco-cloud-deployment-action)
+  * [GitHub Actions: Our Umbraco Cloud Action](https://github.com/marketplace/actions/umbraco-cloud-deployment-action)
 * **No Webhooks**: Currently, there's no webhook support for real-time feedback to the pipeline; polling is the only option.
 * **Casing Conflicts**: Be cautious of casing issues, such as having a `README.md` file created by Azure DevOps and a `Readme.md` file from the default Umbraco Cloud. This can cause conflicts in the cloud Git repository.
