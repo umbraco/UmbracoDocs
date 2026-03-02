@@ -16,6 +16,18 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.1) (March 2 2026)
+* Fixes a bug where content scheduling via workflow approval could result in a key conflict exception, causing workflow initiation to fail [#132](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/132)
+* Fixes Document Type filtering in Content Review configuration. A Document Type should be considered valid if it is not an Element, and has at least one property [#131](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/131)
+
+### [17.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) (February 19 2026)
+* Improves culture variation handling in email template generation
+* Improves culture variation handling when scheduling release/expiry via workflow approval
+* UI improvements for approval group workspace
+* Adds missing email translations
+* Introduces RazorLight for email template rendering. This fixes rendering issues when running in a hosted service in Production runtime mode.
+* Fixes a bug where fallback email templates were not being detected and assigned (if the requested culture template did not exist)[#128] (https://github.com/umbraco/Umbraco.Workflow.Issues/issues/128)
+
 ### [17.0.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) (December 19, 2025)
 * Fixes a bug where email templates were not compiled, resulting in emails failing to send [#124](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/124)
 * Fixes async blocking code in email body generation
