@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Workflow 13 including all ch
 * Fixes Document Type filtering in Content Review configuration. A Document Type should be considered valid if it is not an Element, and has at least one property [#131](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/131)
 
 ### [13.5.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.2) (February 19 2026)
-* Ensures RazorLight is initialised with the correct context [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
+* Ensures RazorLight is initialized with the correct context [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
 * Fixes a bug where fallback email templates were not being detected and assigned (if the requested culture template did not exist)[#128] (https://github.com/umbraco/Umbraco.Workflow.Issues/issues/128)
 
 ### [13.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.1) (January 30 2025)
