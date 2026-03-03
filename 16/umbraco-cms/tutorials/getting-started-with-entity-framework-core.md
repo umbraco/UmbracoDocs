@@ -244,7 +244,7 @@ public class BlogCommentsComposer : IComposer
 
 After registering the notification handler, build the project and check the database. You should see the new `blogComment` table has been created.
 
-![Database result of a migration](<../.gitbook/assets/db-table (1) (1).png>)
+![Database result of a migration](<../extending/images/db-table.png>)
 
 {% hint style="info" %}
 If you are using the default SQLite database, you cannot use SQL Server Management Studio (SSMS) to view your tables. Use a tool like **DB Browser for SQLite** and open the file located at `/umbraco/Data/Umbraco.sqlite.db`.
