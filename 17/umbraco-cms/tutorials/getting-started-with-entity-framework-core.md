@@ -165,9 +165,9 @@ dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 
 In this example, the migration is named `InitialCreate`. You can choose any name you like.
 
-The DbContext class in this example is named `BlogContext`. If you've used a different name, make sure to update the `--context` argument accordingly.
+The `DbContext` class in this example is named `BlogContext`. If you've used a different name, make sure to update the `--context` argument accordingly.
 
-This might be confusing. when working with EFCore you would normally inject your `Context` class directly. You can still do that, but it is not the recommended approach in Umbraco.
+This might be confusing. When working with EFCore you would normally inject your `Context` class directly. You can still do that, but it is not the recommended approach in Umbraco.
 
 In Umbraco, the `Scope` concept is an implementation of the `Unit of work` pattern. This ensures that a transaction is started when using the database. If the scope is not completed (for example when an exception is thrown), it will roll back automatically.
 

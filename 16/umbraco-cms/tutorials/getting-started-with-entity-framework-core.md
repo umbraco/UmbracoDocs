@@ -11,7 +11,7 @@ description: >-
 
 Custom database tables let you store additional data in the Umbraco database that you don't want to be stored as normal content nodes.
 
-Using custom tables can be great for many things such as storing massive amounts of data that you do not need to edit from the backoffice.
+Use custom tables to store large datasets. They are ideal when you do not need to edit information from the backoffice.
 
 Decoupling part of your data from being managed by Umbraco as content is a way to achieve better performance for your site. It will no longer take up space in indexes and caches, and the Umbraco database.
 
@@ -27,18 +27,25 @@ Data stored in custom tables are not supported by default by add-ons such as Umb
 
 ## Prerequisite
 
-* An Umbraco project with content
-* If the code is created in a separate project (outside the main Umbraco project), that project must reference:
+* An Umbraco project with content.
+* `Umbraco.Cms.Persistence.EFCore` NuGet package installed.
+* If the code is created in a separate project (outside the main Umbraco project), that project must also reference:
   * `Microsoft.EntityFrameworkCore`
   * `Microsoft.EntityFrameworkCore.Relational`
-* EFCore CLI tool
-  * Can be installed by running `dotnet tool install --global dotnet-ef` in the terminal
+* EFCore CLI tool:
+  * Install it by running `dotnet tool install --global dotnet-ef` in your terminal.
+* For .NET 9 Compatibility: To avoid version conflicts with the Roslyn compiler during migration generation, ensure the following packages are explicitly added to your `.csproj` and match the version required by your EF Core Design tools:
+  * `Microsoft.CodeAnalysis.CSharp` (Version 4.14.0 or later)
+  * `Microsoft.CodeAnalysis.CSharp.Workspaces` (Version 4.14.0 or later)
+  * `Microsoft.EntityFrameworkCore.Design` (Version 9.0.x)
 
 The tutorial will show how to create custom database tables using a composer and a notification handler. With this pattern, you create and run a similar migration but trigger it in response to a [notification handler](https://docs.umbraco.com/umbraco-cms/fundamentals/code/subscribing-to-notifications).
 
 ## Step 1: Create Model Class
 
 First, create a class and add the following code:
+
+{% code title="BlogComment.cs" %}
 
 ```csharp
 namespace Umbraco.Demo;
@@ -59,9 +66,13 @@ public class BlogComment
 }
 ```
 
+{% endcode %}
+
 ## Step 2: Create DBContext class
 
-Now that we have the model, we create a `DbContext` class so we can interact with the database and add the following code:
+With the model in place, create a file called `BlogContext.cs` to interact with the database:
+
+{% code title="BlogContext.cs" %}
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -91,91 +102,85 @@ public class BlogContext : DbContext
 }
 ```
 
+{% endcode %}
+
 ## Step 3: Register the DbContext
 
-We need to register the `DbContext` to be able to use it in Umbraco.
+The `DbContext` must be registered so Umbraco can use it. The recommended place to do this is inside an IComposer. Create a file called `BlogCommentsComposer.cs`. Inside `Compose`, register the context using `AddUmbracoDbContext`:
 
-To do this we can use this helpful extension method:
+{% code title="BlogCommentsComposer.cs" %}
 
 ```csharp
-builder.Services.AddUmbracoDbContext<BlogContext>(options => 
+using Microsoft.EntityFrameworkCore;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Extensions;
+
+namespace Umbraco.Demo;
+
+public class BlogCommentsComposer : IComposer
 {
-    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
-    //If you are using SQlite, replace UseSqlServer with UseSqlite
-});
-```
-
-If you are using SQlite, replace `UseSqlServer` with `UseSqlite`.
-
-1. Add the method in the `Program.cs` file:
-
-```csharp
-builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .Build();
-
-builder.Services.AddUmbracoDbContext<BlogContext>(options => 
-{
-    options.UseSqlServer("{YOUR CONNECTIONSTRING HERE}");
-    //If you are using SQlite, replace UseSqlServer with UseSqlite
-});
-```
-
-We can then access the database via the `BlogContext.` First, we need to migrate the database to add our tables. With EFCore, we can autogenerate the migrations with the terminal.
-
-{% hint style="info" %}
-For package developers and not only, but in general as well, it's recommended to use the `UseUmbracoDatabaseProvider` logic. This is because it will then figure out what the correct database is used:
-
-```csharp
-builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options) =>
+    public void Compose(IUmbracoBuilder builder)
     {
-        options.UseUmbracoDatabaseProvider(serviceProvider);
-    });
-```
-{% endhint %}
+        builder.Services.AddUmbracoDbContext<BlogContext>((serviceProvider, options, connectionString, providerName) =>
+        {
+            if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+            {
+                return;
+            }
 
-2. Open your terminal and navigate to your project folder.
-3. Generate the migration by running:
+            // Automatically uses the correct provider (SQL Server, SQLite, etc.)
+            // based on your Umbraco connection string configuration.
+            options.UseDatabaseProvider(providerName, connectionString);
+        });
+    }
+}
+```
+
+{% endcode %}
+
+Using `UseDatabaseProvider(providerName, connectionString)` is the recommended approach. It reads the provider name and connection string directly from your Umbraco configuration (`appsettings.json`). It works correctly for SQL Server, SQLite, and any other supported database without any hardcoding.
+
+The database can then be accessed via `BlogContext.` First, the database needs to be migrated to add the custom tables. With EFCore, migrations can be auto-generated from the terminal.
+
+1. Open your terminal and navigate to your project folder.
+2. Generate the migration by running:
 
 ```bash
 dotnet ef migrations add InitialCreate --context BlogContext
 ```
 
 {% hint style="info" %}
-If you use another class library in your project to store models and DBContext classes such as Project.Core (Project.Web being the main startup Project):
 
-* Go to the project folder where you have your custom class library such as /Project.Core
-* Run the following script with the relative path to your main startup project Project.Web:
+If your models and `DBContext` reside in a separate library like `Project.Core`, while `Project.Web` is the startup project, follow these steps:
+
+* Navigate to your custom library folder, for example, `/Project.Core`
+* Run the following command with the relative path to your startup project:
 
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
+
 {% endhint %}
 
-In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
+In this example, the migration is named `InitialCreate`. You can choose any name you like.
 
-We've named the DbContext class `BlogContext`, however, if you have renamed it to something else, make sure to also change it when running the command.
+The `DbContext` class in this example is named `BlogContext`. If you've used a different name, make sure to update the `--context` argument accordingly.
 
-This might be confusing at first, as when working with EFCore you would inject your `Context` class. You can still do that, it is however not the recommended approach in Umbraco.
+This might be confusing. When working with EFCore you would normally inject your `Context` class directly. You can still do that, but it is not the recommended approach in Umbraco.
 
-In Umbraco, we use a concept called `Scope` which is our implementation of the `Unit of work` pattern. This ensures that we start a transaction when using the database. If the scope is not completed (for example when exceptions are thrown) it will roll it back.
+In Umbraco, the `Scope` concept is an implementation of the `Unit of work` pattern. This ensures that a transaction is started when using the database. If the scope is not completed (for example when an exception is thrown), it will roll back automatically.
 
-## Step 4: Create the notification handler
+## Step 4: Create the Notification Handler
 
-Next, we create the notification handler that will handle our migrations. We need to create a new class and add the following code to it:
+Create a file called `RunBlogCommentsMigration.cs` with the following code. This handler checks for any pending EF migrations and applies them automatically on startup:
+
+{% code title="RunBlogCommentsMigration.cs" %}
 
 ```csharp
-using Umbraco.Cms.Core;
+using Microsoft.EntityFrameworkCore;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Migrations;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 
 namespace Umbraco.Demo;
 
@@ -190,49 +195,77 @@ public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplica
 
     public async Task HandleAsync(UmbracoApplicationStartedNotification notification, CancellationToken cancellationToken)
     {
-        IEnumerable<string> pendingMigrations = await _blogContext.Database.GetPendingMigrationsAsync();
+        IEnumerable<string> pendingMigrations = await _blogContext.Database.GetPendingMigrationsAsync(cancellationToken);
 
         if (pendingMigrations.Any())
         {
-            await _blogContext.Database.MigrateAsync();
+            await _blogContext.Database.MigrateAsync(cancellationToken);
         }
     }
 }
 ```
 
-## Step 5: Register the notification handler
+{% endcode %}
 
-Lastly, we have to register the notification handler, with an `IComposer` class and add the following code:
+## Step 5: Register the Notification Handler
+
+Add the notification handler registration to `BlogCommentsComposer.cs`. This is also where the `DbContext` registration from Step 3 lives, both belong in the same Composer:
+
+{% code title="BlogCommentsComposer.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Notifications;
+using Umbraco.Extensions;
 
 namespace Umbraco.Demo;
 
 public class BlogCommentsComposer : IComposer
 {
-    public void Compose(IUmbracoBuilder builder) => builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
+    public void Compose(IUmbracoBuilder builder)
+    {
+
+        builder.Services.AddUmbracoDbContext<BlogContext>((serviceProvider, options, connectionString, providerName) =>
+        {
+            if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+            {
+                return;
+            }
+
+            options.UseDatabaseProvider(providerName, connectionString);
+        });
+
+        builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
+    }
 }
 ```
 
-After registering the notification handler, build the project and take a look at the database and we can see our new table:
+{% endcode %}
 
-![Database result of a migration](<../extending/images/db-table.png>)
+After registering the notification handler, build the project and check the database. You should see the new `blogComment` table has been created.
 
-We now have some custom database tables in our database that we can work with through the Entity framework.
+![Database result of a migration](<../.gitbook/assets/db-table (1) (1).png>)
+
+{% hint style="info" %}
+If you are using the default SQLite database, you cannot use SQL Server Management Studio (SSMS) to view your tables. Use a tool like **DB Browser for SQLite** and open the file located at `/umbraco/Data/Umbraco.sqlite.db`.
+{% endhint %}
+
+The custom database tables are now available to work with through Entity Framework.
 
 ## Going Further
 
-### Working with the data in the Custom Database Tables
+### Working with the Data in the Custom Database Tables
 
-To create, read, update, or delete data from your custom database tables, use the `IEFCoreScopeProvider<T>` (T is your `DbContext` class) to access the EFCore context.
+To create, read, update, or delete data from your custom database tables, use the `IEFCoreScopeProvider<T>` (where `T` is your `DbContext` class) to access the EFCore context.
 
-The example below creates a `UmbracoApiController` to be able to fetch and insert blog comments in a custom database table.
+The example below creates a `BlogCommentsController.cs` file with an `UmbracoApiController` to fetch and insert blog comments from a custom database table.
 
 {% hint style="warning" %}
-* This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
+This example uses the `BlogComment` class directly as a database model. The recommended approach would be to map it to a ViewModel instead, so your database and UI layers are not coupled. Error handling and data validation have been omitted for brevity.
+
 {% endhint %}
+
+{% code title="BlogCommentsController.cs" %}
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -286,5 +319,6 @@ public class BlogCommentsController : Controller
     }
 }
 
-
 ```
+
+{% endcode %}
