@@ -1,3 +1,7 @@
+---
+description: Learn how to configure Umbraco to run only the services required on each specific server in your setup.
+---
+
 # Service Registration
 
 Umbraco can be configured to run with different combinations of the backoffice, website, and Content Delivery API. This allows you to tailor each server in your infrastructure to its specific role, reducing attack surface and unnecessary processing.
