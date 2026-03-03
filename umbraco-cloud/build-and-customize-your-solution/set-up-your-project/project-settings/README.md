@@ -113,14 +113,15 @@ You can configure deployment webhooks for your environments in this section. Web
 
 ![Webhooks](../../../.gitbook/assets/webhooks.png)
 
-### CI/CD Flow
+### [CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
 
 The CI/CD Flow section allows you to manage settings related to CI/CD deployments:
 
-* [Umbraco CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
+* Enable CI/CD Flow with or without Advanced options.
+* See a list of environment that can be targeted by CI/CD Flow.
 * See a paginated list of artifacts that has been pushed to your project via the CI/CD pipeline.
 
-![CI/CD Flow settings](<../../../.gitbook/assets/cicd-flow-page (1).png>) ![CI/CD Flow Artifact list](<../../../.gitbook/assets/cicd-artifacts (1).png>)
+![CI/CD Flow settings](<../../../.gitbook/assets/cicd-flow-page.png>) ![CI/CD Flow Artifact list](<../../../.gitbook/assets/cicd-artifacts (1).png>)
 
 ### Advanced
 

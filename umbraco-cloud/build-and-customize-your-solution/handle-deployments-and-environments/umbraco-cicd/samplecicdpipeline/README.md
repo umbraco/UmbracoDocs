@@ -73,7 +73,7 @@ If the alias is greyed out and without a checkmark, it is currently not a valid 
 
 By default, flexible environments and the left-most environment are considered valid targets.
 
-You can enable all environments to be valid targets by enabling the "Deploy to any target" toggle above in the "Advanced options section". 
+You can enable all environments to be valid targets by enabling the "Deploy to any target" toggle above in the "Advanced options" section. 
 
 If you are using the old CI/CD samples that target V1 endpoint, you can only target the left-most environment.
 
@@ -87,7 +87,7 @@ With "Advanced options" we are expanding the capabilities of CI/CD flow.
 
 This setting is for advanced users.
 
-Enabling "Deployments to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
+Enabling "Deploy to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
 
 If you are setting up CI/CD Flow for the first time, you should skip ahead to [the next section](#sample-pipelines).
 
