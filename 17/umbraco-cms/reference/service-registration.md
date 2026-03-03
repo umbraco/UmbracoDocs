@@ -4,16 +4,16 @@ Umbraco can be configured to run with different combinations of the backoffice, 
 
 ## Supported Configurations
 
-By default, Umbraco registers all services — the backoffice, website rendering, and Content Delivery API. However, you can choose to run only the services you need.
+By default, Umbraco registers all services: the backoffice, website rendering, and Content Delivery API. However, you can choose to run only the services you need.
 
 The following configurations are supported:
 
 | Configuration | Builder Methods | Use Case |
 |---|---|---|
-| Full (default) | `AddBackOffice()` + `AddWebsite()` + `AddDeliveryApi()` | Traditional Umbraco with all features enabled |
-| Website + Delivery API | `AddCore()` + `AddWebsite()` + `AddDeliveryApi()` | Front-end servers serving both rendered pages and headless content |
-| Website only | `AddCore()` + `AddWebsite()` | Front-end servers serving only rendered pages |
-| Delivery API only | `AddCore()` + `AddDeliveryApi()` | Pure headless API servers |
+| Full (default) | `AddBackOffice()` + `AddWebsite()` + `AddDeliveryApi()` | Traditional Umbraco with all features enabled. |
+| Website + Delivery API | `AddCore()` + `AddWebsite()` + `AddDeliveryApi()` | Front-end servers serving both rendered pages and headless content. |
+| Website only | `AddCore()` + `AddWebsite()` | Front-end servers serving only rendered pages. |
+| Delivery API only | `AddCore()` + `AddDeliveryApi()` | Pure headless API servers. |
 
 The key distinction is between `AddBackOffice()` and `AddCore()`:
 
@@ -28,9 +28,9 @@ The key distinction is between `AddBackOffice()` and `AddCore()`:
 
 ## Full Umbraco (default)
 
-This is the standard configuration that includes the backoffice, website rendering, and Content Delivery API.
+The following is the standard configuration that includes the backoffice, website rendering, and Content Delivery API.
 
-If you install a new Umbraco project this is what you will see in the `Program.cs` file.
+When you install a new Umbraco project, this is what you will see in the `Program.cs` file:
 
 {% code title="Program.cs" %}
 ```csharp
@@ -65,7 +65,7 @@ await app.RunAsync();
 
 ## Website + Delivery API (no backoffice)
 
-This configuration is useful for front-end servers in a load-balanced setup where a single backoffice instance is running.
+The following configuration is useful for front-end servers in a load-balanced setup where a single backoffice instance is running.
 
 The server can render pages and serve headless content, but the backoffice is not available.
 
@@ -101,7 +101,7 @@ await app.RunAsync();
 
 ## Website only
 
-This configuration is for front-end servers that only serve rendered pages. Neither the backoffice nor the Content Delivery API is available.
+The following configuration is used for front-end servers that only serve rendered pages. Neither the backoffice nor the Content Delivery API is available.
 
 {% code title="Program.cs" %}
 ```csharp
@@ -133,7 +133,7 @@ await app.RunAsync();
 
 ## Delivery API only
 
-This configuration is for pure headless API servers. Only the Content Delivery API is available — no website rendering and no backoffice.
+The following configuration is used for pure headless API servers. Only the Content Delivery API is available — no website rendering and no backoffice.
 
 {% code title="Program.cs" %}
 ```csharp
@@ -176,7 +176,7 @@ await app.RunAsync();
 - **`UseDeliveryApiEndpoints()`** — Maps the Content Delivery API controllers. Use this when running the Delivery API without the backoffice.
 
 {% hint style="info" %}
-`UseDeliveryApiEndpoints()` is only needed when running the Delivery API **without** the backoffice. When the full backoffice is enabled, `UseBackOfficeEndpoints()` takes care of mapping all API controllers, including the Delivery API.
+`UseDeliveryApiEndpoints()` is only needed when running the Delivery API **without** the backoffice. When the full backoffice is enabled, `UseBackOfficeEndpoints()` handles mapping all API controllers, including the Delivery API.
 {% endhint %}
 
 ## Considerations for Composers
@@ -201,4 +201,5 @@ public class MyComposer : IComposer
     }
 }
 ```
+
 {% endcode %}
