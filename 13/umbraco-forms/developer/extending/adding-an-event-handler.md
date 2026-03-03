@@ -74,7 +74,10 @@ namespace MyFormsExtensions
 The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a `ModelError`.
 
 {% hint style="info" %}
-Submitted field values are accessed via `Field.Values`, which is populated before the notification fires for both standard form POST submissions and headless API JSON submissions. Previous versions of this documentation showed reading values from `HttpContext.Request.Form`, which only works for standard form posts and returns empty values when the form is submitted via the headless API.
+
+Submitted field values are accessed via `Field.Values`. This property is populated before the notification fires for both standard form POST and headless API submissions.
+
+Previous versions of this documentation showed reading values from `HttpContext.Request.Form`. That approach only works for standard form posts and returns empty values for headless API submissions.
 
 When adding model errors, the key used must match the submission path:
 
@@ -82,6 +85,7 @@ When adding model errors, the key used must match the submission path:
 - **Headless API**: use `field.Alias` (the API returns validation errors keyed by field alias).
 
 You can check `notification.Context.Request.HasFormContentType` to determine which path is in use.
+
 {% endhint %}
 
 To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Program.cs`:
