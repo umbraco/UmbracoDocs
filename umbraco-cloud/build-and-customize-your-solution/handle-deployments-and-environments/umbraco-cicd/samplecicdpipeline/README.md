@@ -79,6 +79,8 @@ If you are using the old CI/CD samples that target V1 endpoint, you can only tar
 
 {% endhint %}
 
+If you are setting up CI/CD Flow for the first time, you should skip ahead to the section about ["Sample pipelines"](#sample-pipelines).
+
 ## Advanced configuration
 
 With "Advanced configuration" we are expanding the capabilities of CI/CD flow.
@@ -87,7 +89,6 @@ With "Advanced configuration" we are expanding the capabilities of CI/CD flow.
 
 This setting is for advanced users.
 
-If you are setting up CI/CD Flow for the first time, you should skip ahead to the section about ["Sample pipelines"](#sample-pipelines).
 
 Enabling "Deploy to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
 
@@ -128,6 +129,7 @@ Next step after enabling "Deploy to any target": [Advanced Setup: Deploy to mult
 
 Disabling "Deploy to any target" will change the UI back to Umbraco Clouds original environments overview. Bringing back Deploy-buttons and pending changes on the environments cards.
 
+{% hint style="info" %}
 #### A note about disabling "Deploy to any target"
 
 When you use CI/CD to deploy to the left-most environment and the Portal to deploy changes between environments, the environments are aligned. Following the left-to-right deployment flow they will eventually have the same commits. This connection and alignment between environment is utilized by the Portal to keeps track of Pending changes between environments.
@@ -135,6 +137,8 @@ When you use CI/CD to deploy to the left-most environment and the Portal to depl
 With "Deploy to any target" enabled the commits are no longer pushed between the environment in a way that keeps track. Each CI/CD Flow deployment creates new unique commit on the receiving environments. For example: if you deploy the same artifact to two different environment, this creates unique commits on each environment.
  
 The more you are using "Deploy to any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
+
+{% endhint %}
 
 ## Sample pipelines
 
