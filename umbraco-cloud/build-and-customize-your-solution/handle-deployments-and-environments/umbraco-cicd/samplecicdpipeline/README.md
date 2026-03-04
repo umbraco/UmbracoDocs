@@ -83,7 +83,7 @@ If you are setting up CI/CD Flow for the first time, you should skip ahead to th
 
 ## Advanced configuration
 
-With "Advanced configuration" we are expanding the capabilities of CI/CD flow.
+The "Advanced configuration" section expands the capabilities of CI/CD Flow.
 
 {% hint style="warning" %}
 
@@ -96,16 +96,16 @@ Enabling "Deploy to any target" will drastically change the deployment workflow 
 
 ### Deploy to any target
 
-By default CI/CD flow only allows deployments to the left-most or the flexible environment. With the "Deploy to any target" toggle you now have control to enable CI/CD Flow deployments to all your environments. 
+By default, CI/CD flow only allows deployments to the left-most or the flexible environment. With the "Deploy to any target" toggle you now have control to enable CI/CD Flow deployments to all your environments. 
 
 <figure><img src="../../../../.gitbook/assets/cicd-advanced-configuration.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Advanced configuration" section showing the enabled "Deploy to any target".</p></figcaption></figure>
 
-When the setting is enabled, we will disable the ability to deploy between environment through the Cloud portal. All deployments should now be handled by you and your CI/CD setup.
+When the setting is enabled, we will disable the ability to deploy between environments through the Cloud Portal. All deployments should now be handled by you and your CI/CD setup.
 
 The environments overview on your project will no longer show: 
 
-- Pending changes indicator; you will not be able to see how far ahead your environments is compared to the next.
-- Deploy button is removed; you will not be able to push changes forward by using the Cloud Portal UI.
+- Pending changes indicator; you will not be able to see how far ahead your environments are compared to the next.
+- The Deploy button is removed; you will not be able to push changes forward by using the Cloud Portal UI.
 
 <figure><img src="../../../../.gitbook/assets/cicd-changed-environment-overview.png" alt=""><figcaption><p>Example of the updated environment overview.</p></figcaption></figure>
 
@@ -116,7 +116,7 @@ Instead you will now be able to see which artifact is deployed to your environme
 The git repository under the environment can still receive changes from outside of CI/CD flow:
 
 - Adding or removing an environment will in most cases write to each affected environment. 
-- Auto upgrades on cloud also creates commits.   
+- Auto upgrades on Cloud also create commits.
 - Adding or editing Document types in the backoffice (or other work that changes schema) on the cloud environment will also create commits. 
 
 If changes outside CI/CD have been applied to an environment, the environment card will indicate how far ahead it is of the latest deployment.
@@ -134,9 +134,9 @@ Disabling "Deploy to any target" will change the UI back to Umbraco Clouds origi
 
 When you use CI/CD to deploy to the left-most environment and the Portal to deploy changes between environments, the environments are aligned. Following the left-to-right deployment flow they will eventually have the same commits. This connection and alignment between environment is utilized by the Portal to keeps track of Pending changes between environments.
 
-With "Deploy to any target" enabled the commits are no longer pushed between the environment in a way that keeps track. Each CI/CD Flow deployment creates new unique commit on the receiving environments. For example: if you deploy the same artifact to two different environment, this creates unique commits on each environment.
+With "Deploy to any target" enabled the commits are no longer pushed between environments in a synchronized way. Each CI/CD Flow deployment creates a new unique commit on each receiving environment. For example: if you deploy the same artifact to two different environments, this creates unique commits on each environment.
  
-The more you are using "Deploy to any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
+The more you are using "Deploy to any target", the more each environment's git repository will diverge. This divergence can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time-consuming task.
 
 {% endhint %}
 

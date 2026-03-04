@@ -6,16 +6,16 @@ description: Learn how to use the deployment options available with the version 
 
 This provides control over the CI/CD deployment process within the isolated instance before your code is pushed to the Cloud environment.
 
-## Skip preserve Umbraco-Cloud.json 
-The umbraco-cloud.json file is controlled by the Umbraco Cloud platform. It hold a description of the environment relationships used for content deployments. The configuration needed to be able to log in to the backoffice locally with Umbraco ID is also part of this file. The CI/CD Flow deployment system makes sure that the current JSON file on the cloud environment is preserved.
+## Skip preserving umbraco-cloud.json
+The umbraco-cloud.json file is controlled by the Umbraco Cloud platform. It holds a description of the environment relationships used for content deployments. The configuration needed to be able to log in to the backoffice locally with Umbraco ID is also part of this file. The CI/CD Flow deployment system makes sure that the current JSON file on the cloud environment is preserved.
 
-In edge cases users could have the need to supply their own umbraco-cloud.json to the system and overwrite the one on cloud. 
+In edge cases users might need to supply their own umbraco-cloud.json to the system and overwrite the one on cloud. 
 
 Enabling the `skipPreserveUmbracoCloudJson` option will allow user to overwrite the umbraco-cloud.json through CI/CD Flow.
 
 {% hint style="warning" %}
 We recommend that you do not edit or add values to the umbraco-cloud.json file. You should use the appropriate appSettings.*.json file or add secrets through the Secrets Management page in the Cloud Portal.
-The cloud platform uses umbraco-clous.json to update environment relationships when adding or removing environments.
+The cloud platform uses umbraco-cloud.json to update environment relationships when adding or removing environments.
 {% endhint %}
 
 ## Skip version checks
@@ -40,7 +40,7 @@ Keep in mind that the final Kudu deployment on the Cloud environment will still 
 
 When deploying schema changes to environments beyond "left-most", the CI/CD Flow deployment system will automatically run a schema extraction. 
 
-Setting `runSchemaExtration` to false, will result in the system not automatically running the schema extraction on the environment. Schema extraction can still be triggered from the backoffice.
+Setting `runSchemaExtraction` to false, will result in the system not automatically running the schema extraction on the environment. Schema extraction can still be triggered from the backoffice.
 
 {% hint style="info" %}
 This setting doesn't have any effect on the `left-most environment`. 
@@ -72,7 +72,7 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
           skipPreserveUmbracoCloudJson: 'false'
           noBuildAndRestore: 'false'
           skipVersionCheck: 'false'
-          runSchemaExtration: 'true'
+          runSchemaExtraction: 'true'
 ```
 
 The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`. 
@@ -99,7 +99,7 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
           skipPreserveUmbracoCloudJson: false
           noBuildAndRestore: false
           skipVersionCheck: false
-          runSchemaExtration: true
+          runSchemaExtraction: true
 ```
 
 The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`. 
@@ -124,7 +124,7 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
       skipPreserveUmbracoCloudJson: "false"
       noBuildAndRestore: "false"
       skipVersionCheck: "false"
-      runSchemaExtration: "true"
+      runSchemaExtraction: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
@@ -151,7 +151,7 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
       skipPreserveUmbracoCloudJson: 0
       noBuildAndRestore: 0
       skipVersionCheck: 0
-      runSchemaExtration: 1
+      runSchemaExtraction: 1
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}

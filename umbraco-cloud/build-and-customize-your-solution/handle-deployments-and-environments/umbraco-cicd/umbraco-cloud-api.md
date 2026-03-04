@@ -241,13 +241,13 @@ The API response should be an HTTP 201 Created response including a `deploymentI
 You can use the `deploymentId` to query the Get Deployment status endpoint.
 
 {% hint style="info" %}
- **Use `skipPreserveUmbracoCloudJson` with care.** The Cloud platform uses the file to make sure your environment are correctly configured for content deployments. 
+ **Use `skipPreserveUmbracoCloudJson` with care.** The Cloud platform uses the file to make sure your environments are correctly configured for content deployments. 
  
  **Use `skipVersionCheck` with care.** This setting exists to prevent version regression (overwriting newer Umbraco packages with older ones). Only set this to `true` if you intentionally need to deploy an older artifact.
 
 Enabling the `noBuildAndRestore` only disables the restore and build inside the isolated instance. Once the system pushes the source code to the environment, a build and publish operation will run as usual. Enabling this option lets you save one or more minutes during the deployment process.
 
-Disabling the `runSchemaExtration` will prevent the Umbraco installation to automatically have it's schema updated after a CI/CD flow deployment. This setting can only affect non-left-most environment. Schema extraction can still be triggered from the backoffice.
+Disabling the `runSchemaExtraction` will prevent the Umbraco installation from automatically having its schema updated after a CI/CD flow deployment. This setting can only affect non-left-most environment. Schema extraction can still be triggered from the backoffice.
 
 For more information on using the settings in the pipeline, see the [Advanced Setup: Deployment options](samplecicdpipeline/advanced-deployment-options.md) article.
 {% endhint %}
