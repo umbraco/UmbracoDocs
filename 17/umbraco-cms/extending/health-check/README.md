@@ -31,7 +31,7 @@ Umbraco comes with the following checks by default:
   * **Excessive Headers (id: `92ABBAA2-0586-4089-8AE2-9A843439D577`)** - checks to ensure that various headers that can provide details about the technology used to build and host the website have been removed
   * **HTTPS Configuration (id: `EB66BB3B-1BCD-4314-9531-9DA2C1D6D9A7`)** - to determine if the current site is running on a secure connection
   * **UseHttps check** - when the site is running on HTTPS, `Umbraco.Cms.Core.Configuration.Models.GlobalSettings.UseHttps` needs to be enabled to secure the backoffice. The setting can be found under `Umbraco:CMS:Global` in the `appsettings.json` file
-  * **Imaging HMAC Secret Key** - verifies the presence of a configured imaging [HMAC secret key](../../reference/configuration/imagingsettings.md). The setting can be found under `Umbraco:CMS:Imaging:HMACSecretKey` in the `appsettings.json` file
+  * **Imaging Hash-based Message Authentication Code (HMAC) Secret Key** - verifies the presence of a configured imaging [HMAC secret key](../../reference/configuration/imagingsettings.md). The setting can be found under `Umbraco:CMS:Imaging:HMACSecretKey` in the `appsettings.json` file
 * Category **Services**
   * **SMTP Settings (id: `1B5D221B-CE99-4193-97CB-5F3261EC73DF`)** - checks that an Simple Mail Transfer Protocol (SMTP) server is configured and is accepting requests for sending emails
 
