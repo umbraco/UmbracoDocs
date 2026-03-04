@@ -162,7 +162,7 @@ The database can now be accessed via `BlogContext.` Before using it, generate a 
 
 1. Open your terminal.
 2. Navigate to your project folder.
-3. Run the following command to generate the migrationg:
+3. Run the following command to generate the migration:
 
 ```bash
 dotnet ef migrations add InitialCreate --context BlogContext
