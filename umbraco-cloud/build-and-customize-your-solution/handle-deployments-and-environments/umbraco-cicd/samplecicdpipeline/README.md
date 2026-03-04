@@ -48,12 +48,12 @@ In this guide, deployments target the left-most environment in your Umbraco Clou
 To get started with API interactions, you'll need to obtain your Project ID and API key. If you haven't already enabled the CI/CD feature, follow these steps:
 
 1. Navigate to the [Umbraco Cloud Portal](https://www.s1.umbraco.io/projects) and select your project.
-2. Go to `Configuration` -> `CI/CD Flow`. This is where you can generate API keys and find your Project ID.
+2. Go to `Configuration` -> `CI/CD Flow`. 
 3. Toggle "Activate CI/CD Flow" to enable the feature.
 
 <figure><img src="../../../../.gitbook/assets/cicd-project-api-keys.png" alt=""><figcaption><p>Enabling Umbraco CI/CD Flow.</p></figcaption></figure>
 
-The box will expand to show your Project Id and a Primary API key and a Secondary API key. You can use either key to interact with the APIs.
+The box will expand to show your Project Id and two API keys. You can use either key to interact with the APIs.
 
 {% hint style="warning" %}
 The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub. It will be used for all subsequent API interactions related to that project.
@@ -73,37 +73,37 @@ If the alias is greyed out and without a check mark, it is currently not a valid
 
 By default, flexible environments and the left-most environment are considered valid targets.
 
-You can enable all environments to be valid targets by enabling the "Deploy to any target" toggle above in the "Advanced options" section. 
+You can enable all environments to be valid targets by enabling the "Deploy to any target" toggle in the "Advanced configuration" section. 
 
 If you are using the old CI/CD samples that target V1 endpoint, you can only target the left-most environment.
 
 {% endhint %}
 
-## Advanced options
+## Advanced configuration
 
-With "Advanced options" we are expanding the capabilities of CI/CD flow.
+With "Advanced configuration" we are expanding the capabilities of CI/CD flow.
 
 {% hint style="warning" %}
 
 This setting is for advanced users.
 
-Enabling "Deploy to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
+If you are setting up CI/CD Flow for the first time, you should skip ahead to the section about ["Sample pipelines"](#sample-pipelines).
 
-If you are setting up CI/CD Flow for the first time, you should skip ahead to [the next section](#sample-pipelines).
+Enabling "Deploy to any target" will drastically change the deployment workflow between environments in the Cloud Portal for the affected project.
 
 {% endhint %}
 
 ### Deploy to any target
 
-By default CI/CD flow only allows deployments to the left-most or the flexible environment. With the "Deployments to any target" toggle you now have control to enable CI/CD Flow deployments to all your environments.
+By default CI/CD flow only allows deployments to the left-most or the flexible environment. With the "Deploy to any target" toggle you now have control to enable CI/CD Flow deployments to all your environments. 
 
-<figure><img src="../../../../.gitbook/assets/cicd-advanced-options.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Advanced options" section showing the enabled "Deploy to any target".</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/cicd-advanced-configuration.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Advanced configuration" section showing the enabled "Deploy to any target".</p></figcaption></figure>
 
+When the setting is enabled, we will disable the ability to deploy between environment through the Cloud portal. All deployments should now be handled by you and your CI/CD setup.
 
+The environments overview on your project will no longer show: 
 
-When the setting is enabled the environments overview will change on your project. This will also affect how you do deployments between environments because:
-
-- Pending changes indicator is removed; you will not be able to see how far ahead your environments is compared to the next.
+- Pending changes indicator; you will not be able to see how far ahead your environments is compared to the next.
 - Deploy button is removed; you will not be able to push changes forward by using the Cloud Portal UI.
 
 <figure><img src="../../../../.gitbook/assets/cicd-changed-environment-overview.png" alt=""><figcaption><p>Example of the updated environment overview.</p></figcaption></figure>
@@ -126,23 +126,15 @@ You are in control of deploying to all environments through your CI/CD setup.
 
 Se the [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.md) article for an example of deploying to multiple targets.
 
-{% hint style="info" %}
+#### A note about disabling "Deploy to any target"
 
-Each CI/CD Flow deployment creates new unique commits on the receiving environments. 
+When you use CI/CD to deploy to the left-most environment and the Portal to deploy changes between environments, the environments are aligned. Following the left-to-right deployment flow they will eventually have the same commits. This connection and alignment between environment is utilized by the Portal to keeps track of Pending changes between environments.
 
-If you only use CI/CD to deploy to the left-most environment and use the Portal to deploy changes between environments, the environments are aligned and have the same commits.
-
-This is how the Cloud Portal keeps track of changes.
-
-This will make the environments git repositories diverge from each other   
+With "Deploy to any target" enabled the commits are no longer pushed between the environment in a way that keeps track. Each CI/CD Flow deployment creates new unique commit on the receiving environments. For example: if you deploy the same artifact to two different environment, this creates unique commits on each environment.
+ 
+The more you are using "Deploy to any any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
 
 Disabling "Deploy to any target" will change the UI back to Umbraco Clouds original environments overview. Bringing back Deploy-buttons and pending changes on the environments cards.
-
-Because of the "Deploy to any target" setting, the environments are not keeping track witch each other regarding changes as is the case when using the original 
-
-{% endhint %}
-
-
 
 ## Sample pipelines
 
