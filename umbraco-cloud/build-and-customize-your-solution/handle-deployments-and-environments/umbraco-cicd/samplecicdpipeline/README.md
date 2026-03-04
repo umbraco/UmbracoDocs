@@ -118,13 +118,15 @@ The git repository under the environment can still receive changes from outside 
 - Auto upgrades on cloud also creates commits.   
 - Adding or editing Document types in the backoffice (or other work that changes schema) on the cloud environment will also create commits. 
 
-If changes have been applied to an environment, the environment card will indicate how far ahead it is of the latest deployment.
+If changes outside CI/CD have been applied to an environment, the environment card will indicate how far ahead it is of the latest deployment.
 
 <figure><img src="../../../../.gitbook/assets/cicd-environment-card-deployment-with-changes.png" alt=""><figcaption><p>Example of an environment card showing the current deployed artifact, but with a change committed to the environment after the deployment.</p></figcaption></figure>
 
 You are in control of deploying to all environments through your CI/CD setup. 
 
-Se the [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.md) article for an example of deploying to multiple targets.
+Next step after enabling "Deploy to any target": [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.md).
+
+Disabling "Deploy to any target" will change the UI back to Umbraco Clouds original environments overview. Bringing back Deploy-buttons and pending changes on the environments cards.
 
 #### A note about disabling "Deploy to any target"
 
@@ -133,8 +135,6 @@ When you use CI/CD to deploy to the left-most environment and the Portal to depl
 With "Deploy to any target" enabled the commits are no longer pushed between the environment in a way that keeps track. Each CI/CD Flow deployment creates new unique commit on the receiving environments. For example: if you deploy the same artifact to two different environment, this creates unique commits on each environment.
  
 The more you are using "Deploy to any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
-
-Disabling "Deploy to any target" will change the UI back to Umbraco Clouds original environments overview. Bringing back Deploy-buttons and pending changes on the environments cards.
 
 ## Sample pipelines
 
