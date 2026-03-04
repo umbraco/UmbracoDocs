@@ -132,7 +132,7 @@ When you use CI/CD to deploy to the left-most environment and the Portal to depl
 
 With "Deploy to any target" enabled the commits are no longer pushed between the environment in a way that keeps track. Each CI/CD Flow deployment creates new unique commit on the receiving environments. For example: if you deploy the same artifact to two different environment, this creates unique commits on each environment.
  
-The more you are using "Deploy to any any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
+The more you are using "Deploy to any target", the more each environment's git repository will diverge. This diversion can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time consuming task.
 
 Disabling "Deploy to any target" will change the UI back to Umbraco Clouds original environments overview. Bringing back Deploy-buttons and pending changes on the environments cards.
 
