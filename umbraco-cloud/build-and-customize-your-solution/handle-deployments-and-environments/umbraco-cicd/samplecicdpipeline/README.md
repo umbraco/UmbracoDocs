@@ -69,7 +69,7 @@ The table shows you which environments you can currently target with CI/CD Flow.
 
 {% hint style="info" %}
 
-If the alias is greyed out and without a checkmark, it is currently not a valid target through the Umbraco CI/CD flow API.
+If the alias is greyed out and without a check mark, it is currently not a valid target through the Umbraco CI/CD flow API.
 
 By default, flexible environments and the left-most environment are considered valid targets.
 
@@ -130,7 +130,7 @@ Se the [Advanced Setup: Deploy to multiple targets](./advanced-multiple-targets.
 
 Each CI/CD Flow deployment creates new unique commits on the receiving environments. 
 
-If you only use CI/CD to deploy to the left-most environment and use the Portal to deploy changes between environments, the environments are aligned and have the same commmits.
+If you only use CI/CD to deploy to the left-most environment and use the Portal to deploy changes between environments, the environments are aligned and have the same commits.
 
 This is how the Cloud Portal keeps track of changes.
 
