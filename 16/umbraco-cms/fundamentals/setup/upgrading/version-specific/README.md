@@ -424,7 +424,7 @@ You need to be aware of some things if you are using EF Core, and have installed
 {% endhint %}
 
 {% hint style="success" %}
-Community Insight: Check out byte5’s [video walkthrough](https://www.youtube.com/watch?v=LHW3bbIR_VU) for a deep dive into the major shifts between Umbraco versions 13 and 17.
+Community Insight: Watch this [video walkthrough](https://www.youtube.com/watch?v=LHW3bbIR_VU) for a deep dive into the major changes from Umbraco 13 through 17.
 {% endhint %}
 
 </details>
