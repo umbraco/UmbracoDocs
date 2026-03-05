@@ -51,7 +51,7 @@ You need to be aware of some things if you are using EF Core, and have installed
 * This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.8.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same that Umbraco has.
 {% endhint %}
 
-{% hint style="success" %}
+{% hint style="success"  icon = "lightbulb-message"%}
 Community Insight: Watch this [video walkthrough](https://www.youtube.com/watch?v=LHW3bbIR_VU) for a deep dive into the major changes from Umbraco 13 through 17.
 {% endhint %}
 
