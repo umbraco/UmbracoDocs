@@ -25,12 +25,14 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 
 | Name                                           | Source | Description                                               | Used in                                       |
 | ---------------------------------------------- | ------ | --------------------------------------------------------- | --------------------------------------------- |
+| Umb.PropertyEditorUi.CheckBoxList              | CMS    | Uses multiple checkboxes for entry                        |                                               |
 | Umb.PropertyEditorUi.ContentPicker.Source      | CMS    | Uses a content picker with the option for XPath entry     | The "Save as Umbraco node" workflow           |
 | Umb.PropertyEditorUi.DocumentPicker            | CMS    | Uses a content picker                                     |                                               |
 | Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selection from a list of options                 |                                               |
 | Umb.PropertyEditorUi.Integer                   | CMS    | Uses numerical text box for entry                         |                                               |
 | Umb.PropertyEditorUi.MediaEntityPicker         | CMS    | Uses a media item picker for entry                        | The "Send email with XSLT template" workflow  |
-| Umb.PropertyEditorUi.MultipleTextString        | CMS    | Uses multiple text boxes for entry                        | Not used in core types                        |
+| Umb.PropertyEditorUi.MultipleTextString        | CMS    | Uses multiple text boxes for entry                        |                                               |
+| Umb.PropertyEditorUi.RadioButtonList           | CMS    | Uses multiple radio buttons for entry                     |                                               |
 | Umb.PropertyEditorUi.Slider                    | CMS    | Uses a slider for range input                             | The "reCAPTCHAv3" field type                  |
 | Umb.PropertyEditorUi.TextArea                  | CMS    | Uses a multiline textbox for entry                        |                                               |
 | Umb.PropertyEditorUi.TextBox                   | CMS    | Uses a single-line textbox for entry                      |                                               |
@@ -45,7 +47,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Forms.PropertyEditorUi.FieldMapper             | Forms  | Used to map fields from a form to required aliases        | The "Send to URL" workflow                    |
 | Forms.PropertyEditorUi.Password                | Forms  | Uses password text box for entry                          |                                               |
 | Forms.PropertyEditorUi.StandardFieldMapper     | Forms  | Used to map system fields from a form to required aliases | The "Send to URL" workflow                    |
-| Forms.PropertyEditorUi.TextWithFieldPicker     | Forms  | Uses a single-line textbox/form field list for entry      | Not used in core types                        |
+| Forms.PropertyEditorUi.TextWithFieldPicker     | Forms  | Uses a single-line textbox/form field list for entry      |                                               |
 
 Most of the above setting types are used in one or more field, prevalue source and workflow types available with Umbraco Forms. For the less common ones, a usage has been indicated in the table.
 
