@@ -57,7 +57,8 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
 ```yml
   # Deploy to Umbraco Cloud
   # ####
-  # you can edit the variables noBuildAndRestore and skipVersionCheck    
+  # you can edit the variables noBuildAndRestore, skipVersionCheck, skipPreserveUmbracoCloudJson,
+  # and runSchemaExtraction
   # use booleans but as strings
   - stage: CloudDeploymentStage
     displayName: Deploy To Cloud
@@ -75,7 +76,8 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
           runSchemaExtraction: 'true'
 ```
 
-The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`. 
+The `skipPreserveUmbracoCloudJson`, `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `'true'`.
+The `runSchemaExtraction` can be disabled by changing the value to `'false'`.
 
 {% endtab %}
 {% tab title="Azure DevOps PowerShell" %}
@@ -84,7 +86,8 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
 ```yml
   # Deploy to Umbraco Cloud
   # ####
-  # you can edit the variables noBuildAndRestore and skipVersionCheck    
+  # you can edit the variables noBuildAndRestore, skipVersionCheck, skipPreserveUmbracoCloudJson,
+  # and runSchemaExtraction   
   # use booleans
   - stage: CloudDeploymentStage
     displayName: Deploy To Cloud
@@ -102,7 +105,8 @@ Locate the main entry pipeline file. It will usually be this one: `azure-release
           runSchemaExtraction: true
 ```
 
-The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`. 
+The `skipPreserveUmbracoCloudJson`, `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`.
+The `runSchemaExtraction` can be disabled by changing the value to `false`.
 
 
 {% endtab %}
@@ -111,8 +115,8 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
 
 ```yml
   # Deploy to Umbraco Cloud
-  # ####
-  # you can edit the variables noBuildAndRestore and skipVersionCheck    
+  # you can edit the variables noBuildAndRestore, skipVersionCheck, skipPreserveUmbracoCloudJson,
+  # and runSchemaExtraction  
   # use booleans but as strings
   cloud-deployment:
     name: "Deploy to Cloud"
@@ -130,7 +134,8 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
 ```
 
-The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `true`. 
+The `skipPreserveUmbracoCloudJson`, `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `"true"`.
+The `runSchemaExtraction` can be disabled by changing the value to `"false"`.
 
 {% endtab %}
 {% tab title="GitHub Actions PowerShell" %}
@@ -139,7 +144,8 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
 ```yml
   # Deploy to Umbraco Cloud
   # ####
-  # you can edit the variables noBuildAndRestore and skipVersionCheck    
+  # you can edit the variables noBuildAndRestore, skipVersionCheck, skipPreserveUmbracoCloudJson,
+  # and runSchemaExtraction 
   # use 0 for false and 1 for true
   cloud-deployment:
     name: "Deploy to Cloud"
@@ -157,7 +163,8 @@ Locate the main entry pipeline file. It will usually be this one: `main.yml`.
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
 ```
 
-The `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `1`. 
+The `skipPreserveUmbracoCloudJson`, `noBuildAndRestore` and `skipVersionCheck` options can be enabled by changing the value to `1`. 
+The `runSchemaExtraction` can be disabled by changing the value to `0`.
 
 {% endtab %}
 {% endtabs %}
