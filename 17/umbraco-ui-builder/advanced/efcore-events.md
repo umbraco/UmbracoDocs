@@ -4,7 +4,7 @@ description: Configuring event handlers for EF Core in Umbraco UI Builder.
 
 # Events
 
-For data access support using EF Core, Umbraco UI Builder publishes EF Core-specific query notifications that allow you to modify queries before and after they are built. 
+Umbraco UI Builder now supports EF Core. It publishes specific notifications, allowing you to modify queries before and after they are built.
 
 These are the EF Core equivalents of the NPoco `SqlQueryBuildingNotification` and `SqlQueryBuiltNotification`.
 
