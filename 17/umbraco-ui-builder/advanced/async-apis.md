@@ -4,7 +4,7 @@ description: Learn about Async API Changes
 
 # Async APIs
 
-With the release of UI Builder `17.1.0` and the newly added support for EF Core, the entire data access pipeline - from web API controllers through the service layer to repositories and database extensions - has been converted to async-first, with sync methods preserved as obsolete, and scheduled for removal in V19.
+UI Builder `17.1.0` adds EF Core support, converting the data access pipeline to async-first. This update impacts API controllers, services, repositories, and database extensions. Existing sync methods are now obsolete and scheduled for removal in V19.
 
 This migration handled the following:
 
