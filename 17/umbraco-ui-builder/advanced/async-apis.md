@@ -17,8 +17,8 @@ This migration handled the following:
 
 | Version | Status |
 |---|---|
-| **Current (v17)** | Sync methods marked `[Obsolete]`, async methods added. |
-| **version 19** | Sync methods removed. |
+| **Version 17** | Sync methods marked `[Obsolete]`, async methods added. |
+| **Version 19** | Sync methods removed. |
 
 ## Migration Guide for Custom Repository Implementations
 
