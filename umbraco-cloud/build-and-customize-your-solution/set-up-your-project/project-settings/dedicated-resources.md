@@ -8,7 +8,7 @@ In this article, you can read about how to move your Umbraco Cloud project to de
 
 Before you decide to move your Umbraco Cloud project, you need to consider a few things:
 
-* Umbraco Cloud offers dedicated resources for Starter, Standard, and Professional plans. You can choose among one dedicated option for projects on a Starter plan, two dedicated options for a Standard plan project, and three dedicated options for a Professional plan project.
+* Umbraco Cloud offers dedicated resources for Standard and Professional plans. You can choose between two dedicated options for a Standard plan project and three dedicated options for a Professional plan project.
 * Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](../../../expand-your-projects-capabilities/external-services/).
 
 ## How to move from shared to dedicated
@@ -20,9 +20,9 @@ The first step in moving to a dedicated resource is to access your project in th
 
 <figure><img src="../../../.gitbook/assets/image (22).png" alt="Dedicated resources"><figcaption><p>Dedicated resources</p></figcaption></figure>
 
-* There are currently three dedicated options for you to choose from the Professional plan, two dedicated options from the Standard plan, and one dedicated option from the Starter plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
+* There are currently three dedicated options to choose from for the Professional plan and two dedicated options for the Standard plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt="Dedicated plans (Starter plan)"><figcaption><p>Dedicated plans (Starter plan)</p></figcaption></figure>
+<figure><img src="images/Dedicated_Options_Standard.png" alt="Dedicated plan options for Standard plan"><figcaption><p>Dedicated plan options (Standard plan)</p></figcaption></figure>
 
 * By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
