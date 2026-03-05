@@ -6,8 +6,9 @@ description: Configuring Entity Framework Core in Umbraco UI Builder.
 
 Umbraco UI Builder supports Entity Framework Core (EF Core) as an alternative data access strategy to the default NPoco-based repository. When enabled, collections use EF Core for all CRUD operations, including querying, pagination, saving, and deleting entities.
 
-
-{% hint style="info" %}EF Core support is available from Umbraco UI Builder 17.1.{% endhint %}
+{% hint style="info" %}
+EF Core support is available from Umbraco UI Builder 17.1.
+{% endhint %}
 
 ## Configuration
 
@@ -239,7 +240,7 @@ collectionConfig.AddRelatedCollection<Product, Category, ProductCategory>(
 
 For full control over data access, create a custom repository that extends `EFCoreRepository<TEntity, TId>`. This base class provides access to the `UIBuilderDbContext` and a typed `DbSet<TEntity>`, while inheriting event lifecycle, encryption, and soft-delete support from `Repository<TEntity, TId>`.
 
-To assign your custom EF Core repository to a collection, use the `SetRepositoryType` method :
+To assign your custom EF Core repository to a collection, use the `SetRepositoryType` method:
 
 ```csharp
 collectionConfig.SetRepositoryType<ProductRepository>();
@@ -257,5 +258,3 @@ All standard entity lifecycle events work the same way regardless of the data ac
 - `EntityDeletingNotification` / `EntityDeletedNotification`
 
 When using EF Core, UI Builder publishes EF Core-specific query notifications. See the [EF Core Events](./efcore-events.md) documentation for more details.
-
-
