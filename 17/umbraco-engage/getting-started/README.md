@@ -15,3 +15,8 @@ Are you are a marketer looking to create personalized content or a developer int
 {% content-ref url="for-developers/" %}
 [for-developers](for-developers/)
 {% endcontent-ref %}
+
+## Umbraco Training
+
+{% include "../.gitbook/includes/umbraco-engage-for-marketers-training.md" %}
+
