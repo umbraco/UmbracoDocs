@@ -20,7 +20,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 * Added the ability to explicitly lock persona and customer journey scores for individual visitor profiles. This allows manual overriding of calculated scores, with optional expiration, managed from the profile insights view.
 * Added the ability to reorder personas via drag-and-drop in the backoffice.
-* Redesigned the reporting star schema by introducing a new `FctSessionNode` fact table, replacing the previous `DimNodeAncestor` table and pre-computed `withSubpages` approach. This significantly reduces star generation time and TempDB usage for large datasets.
+* Redesigned the reporting star schema by introducing a new `FctSessionNode` fact table, replacing the previous `DimNodeAncestor` table and pre-computed `withSubpages` approach. This reduces star generation time and TempDB usage for large datasets.
 * Added the ability to view heatmaps for 'Other' (unknown) device types.
 * Added an 'All cultures' option to the Pageview Goal picker, defaulting to all cultures when creating new pageview goals.
 * Improved path handling for CM/CD server configurations in the Headless package, ensuring correct content retrieval based on specified culture.
