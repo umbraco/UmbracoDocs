@@ -18,6 +18,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### 16.5.1
+* Fix: string length validation for file upload fields
+
 ### [16.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.5.0) (March 5th 2026)
 * File Upload: Treat JPEG and JPG as equivalent in validation [#1383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1383)
 * Field Preview: Fix CSS selector for horizontal prevalue spacing [#1635](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1635)
