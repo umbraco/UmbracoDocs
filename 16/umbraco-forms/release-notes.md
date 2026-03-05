@@ -18,6 +18,16 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F16.5.0) (March 5th 2026)
+* File Upload: Treat JPEG and JPG as equivalent in validation [#1383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1383)
+* Field Preview: Fix CSS selector for horizontal prevalue spacing [#1635](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1635)
+* Password Field: Fix unknown property editor UI for autocomplete setting [#1636](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1636)
+* Data Consent: Fix field always evaluating as `True` in workflow conditions [#1646](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1646)
+* Entries: Fix Workflows and Updated columns hidden with custom display fields [#1655](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1655)
+* Settings: Fix default value leak across field type instances [#1656](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1656)
+* Settings: Add CheckBoxList and RadioButtonList support for custom field/workflow type settings [#1657](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1657)
+* All items detailed under release candidates for 16.5.0.
+
 ### 16.5.0-rc2 (February 26th 2026)
 * Add global backoffice search for Forms
 * Fix regression with new Forms missing default page, group and data consent field
