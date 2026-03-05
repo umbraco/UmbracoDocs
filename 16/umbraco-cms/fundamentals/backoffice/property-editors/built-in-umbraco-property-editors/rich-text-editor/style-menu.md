@@ -1,8 +1,6 @@
-# Style Select Menu
+# Style Menu
 
 A Style Select Menu is a configurable extension that adds a cascading menu to the toolbar for applying text styles and formatting. Use a Style Select menu when you want editors to apply predefined, consistent styles instead of manually formatting text.
-
-![Rich Text Editor cascading style menu](../../../../../.gitbook/assets/rte-tiptap-stylemenu.png)
 
 {% hint style="info" %}
 Any custom stylesheets associated with the Rich Text Editor will not auto-generate a style select menu in the toolbar. See the [Creating a Style Select Menu](style-menu.md#creating-a-custom-style-select-menu) section below.
@@ -19,8 +17,6 @@ To add Style Select to the Rich Text Editor:
 5. Click **Save**.
 
 Alternatively, while configuring an editor on a Document Type, you can drag **Style Select** from **Available Actions** into the **Toolbar** section.
-
-![Adding Style Select to the Rich Text Editor](../../../../../.gitbook/assets/adding-style-select-to-toolbar.png)
 
 ## Creating a Custom Style Select Menu
 

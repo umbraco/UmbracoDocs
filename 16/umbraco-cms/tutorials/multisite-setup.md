@@ -22,7 +22,7 @@ All websites in the solution use the same schema. In most cases, content pages o
 On Umbraco Cloud, hostnames must be mapped to the project. Before mapping hostnames to individual websites, add them to the **Hostnames** page in the Cloud portal. This ensures they are secure with TLS.
 {% endhint %}
 
-![Adding hostnames to the project](images/1-addinghostnames.png)
+![Adding hostnames to the project](../.gitbook/assets/1-addinghostnames.png)
 
 Keep in mind that [hostnames must be configured in a specific way](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/manage-hostnames).
 
@@ -32,23 +32,22 @@ At this point, multiple root nodes exist, each acting as a separate website. To 
 
 1. Go to the **Content** section.
 2. Click **...** next to the root node to assign the hostname.
-3. Select **Culture and Hostnames**.
+3.  Select **Culture and Hostnames**.
 
-    ![Culture and hostnames](images/culturehostnames-v14.png)
+    ![Culture and hostnames](../.gitbook/assets/culturehostnames-v14.png)
 4. Click **Add new Domain** in the **Domains** section.
 5. Enter the domain in the **Domain** field.
-6. Select the language from the **Language** drop-down list. For multilanguage setups, different hostnames can map to specific languages.
+6.  Select the language from the **Language** drop-down list. For multilanguage setups, different hostnames can map to specific languages.
 
-    ![Domain](images/inherit-domain.png)
-
+    ![Domain](../.gitbook/assets/inherit-domain.png)
 7. Click **Save**.
 8. Repeat steps 2-7 for each root node in the Content tree.
 
 The sites are now available under the assigned domains.
 
-![Dolphin Website](images/6-dolphins.png)
+![Dolphin Website](../.gitbook/assets/6-dolphins.png)
 
-![Swato Website](images/7-swato.png)
+![Swato Website](../.gitbook/assets/7-swato.png)
 
 ## Best practices
 

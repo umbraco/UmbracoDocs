@@ -29,7 +29,7 @@ Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to 
 
 ## Call back requests
 
-External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../../reference/configuration/globalsettings.md#reserved-paths).
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../configuration/globalsettings.md#reserved-paths).
 
 For example, with Open ID Connect, you should configure:
 
@@ -186,7 +186,6 @@ To disable the automatic redirect to Umbraco ID, follow these steps:
 4. Set the value to `false`.
 
 {% code title="umbraco-cloud.json" %}
-
 ```json
 "Identity": {
     "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
@@ -196,7 +195,6 @@ To disable the automatic redirect to Umbraco ID, follow these steps:
     "AutoRedirectLogin": false
   }
 ```
-
 {% endcode %}
 
 ### Auto-linking on Member authentication
@@ -421,7 +419,7 @@ You have a few options to configure the button:
 
 The button will now be displayed on the login page in the Umbraco Backoffice.
 
-<figure><img src="images/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
 
 ### Generic backoffice login provider composer
 
@@ -665,7 +663,7 @@ interface IExternalLoginCustomViewElement {
 
 The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
 
-![Login form with custom external login button](images/external-login-provider-javascript.jpg)
+![Login form with custom external login button](../../.gitbook/assets/external-login-provider-javascript.jpg)
 
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 

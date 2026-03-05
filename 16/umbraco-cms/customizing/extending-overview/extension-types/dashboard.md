@@ -6,7 +6,7 @@ description: A guide to creating custom dashboards in Umbraco
 
 Each section of the Umbraco backoffice has its own set of default dashboards. Your own custom sections can show dashboards, and you can create your own custom dashboards for existing sections.
 
-<figure><img src="../../../extending/images/getting-started-dashboard.jpg" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/getting-started-dashboard.jpg" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
 
 The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards is shown in the dashboard area.
 
@@ -165,22 +165,25 @@ You can read more about [Extension Conditions](condition.md) in the documentatio
 
 The dashboard manifest can contain the following properties:
 
-| Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
-| ----------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | string | The type of extension, should be `dashboard`                                                                                                                                                                                                                                                              |
-| alias       | string | A unique alias for the dashboard extension                                                                                                                                                                                                                                                                |
-| name        | string | The name of the dashboard extension                                                                                                                                                                                                                                                                       |
-| element     | string | The path to the JavaScript file that exports the dashboard                                                                                                                                                                                                                                                |
-| elementName | string | (Optional) The name of the Web Component that contains the dashboard (only if not a default export)                                                                                                                                                                                                       |
-| weight      | number | (Optional) The weight of the dashboard, higher numbers are displayed first                                                                                                                                                                                                                                |
-| meta        | object | <p>Additional metadata for the dashboard</p><table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Label</td><td>string</td><td>The label shown to the user</td></tr><tr><td>pathname</td><td>string</td><td>The routable URL pathname</td></tr></tbody></table> |
-| Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
-| Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
-| pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
-| Property    | Type   | Description                                                                                                                                                                                                                                                                                               |
-| Label       | string | The label shown to the user                                                                                                                                                                                                                                                                               |
-| pathname    | string | The routable URL pathname                                                                                                                                                                                                                                                                                 |
-| conditions  | array  | (Optional) [Conditions](condition.md) for when the dashboard should be displayed                                                                                                                                                                                                                          |
+| Property    | Type   | Description                                                                                         |
+| ----------- | ------ | --------------------------------------------------------------------------------------------------- |
+| type        | string | The type of extension, should be `dashboard`                                                        |
+| alias       | string | A unique alias for the dashboard extension                                                          |
+| name        | string | The name of the dashboard extension                                                                 |
+| element     | string | The path to the JavaScript file that exports the dashboard                                          |
+| elementName | string | (Optional) The name of the Web Component that contains the dashboard (only if not a default export) |
+| weight      | number | (Optional) The weight of the dashboard, higher numbers are displayed first                          |
+| meta        | object | Additional metadata for the dashboard                                                               |
+| Property    | Type   | Description                                                                                         |
+| Label       | string | The label shown to the user                                                                         |
+| pathname    | string | The routable URL pathname                                                                           |
+| Property    | Type   | Description                                                                                         |
+| Label       | string | The label shown to the user                                                                         |
+| pathname    | string | The routable URL pathname                                                                           |
+| Property    | Type   | Description                                                                                         |
+| Label       | string | The label shown to the user                                                                         |
+| pathname    | string | The routable URL pathname                                                                           |
+| conditions  | array  | (Optional) [Conditions](condition.md) for when the dashboard should be displayed                    |
 
 ### Full Example
 
@@ -206,6 +209,6 @@ The dashboard manifest can contain the following properties:
 ```
 {% endcode %}
 
-<figure><img src="../../../extending/images/welcome-dashboard.jpg" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/welcome-dashboard.jpg" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
 
 You can learn about [creating a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.

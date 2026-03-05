@@ -1,14 +1,14 @@
 ---
-description: "Information on how to change the default cap of upload size"
+description: Information on how to change the default cap of upload size
 ---
 
 # Maximum Upload Size Settings
 
 Learn how to change the upload size limit for your Umbraco site depending on your hosting setup:
 
-- [Using IIS](#using-iis)
-- [Hosting on Umbraco Cloud](#hosting-on-umbraco-cloud)
-- [Using Kestrel](#using-kestrel)
+* [Using IIS](maximumuploadsizesettings.md#using-iis)
+* [Hosting on Umbraco Cloud](maximumuploadsizesettings.md#hosting-on-umbraco-cloud)
+* [Using Kestrel](maximumuploadsizesettings.md#using-kestrel)
 
 By default, Umbraco does not restrict upload size. The limits are controlled by the hosting platform.
 
@@ -18,7 +18,7 @@ It is advisable that you tell Umbraco what the maximum upload size is by setting
 
 ## Using IIS
 
-The default upload limit in IIS is 30000000 bytes (~28.6 MB). The maximum value allowed is 4 GB.
+The default upload limit in IIS is 30000000 bytes (\~28.6 MB). The maximum value allowed is 4 GB.
 
 To increase the upload limit:
 
@@ -41,9 +41,9 @@ To increase the upload limit:
 
 `maxAllowedContentLength` is specified in bytes. For example:
 
-- 2 MB = 2,000,000 bytes
-- 100 MB = 100,000,000 bytes
-- 4 GB = 4294967295 (maximum value allowed)
+* 2 MB = 2,000,000 bytes
+* 100 MB = 100,000,000 bytes
+* 4 GB = 4294967295 (maximum value allowed)
 
 ## Hosting on Umbraco Cloud
 
@@ -67,16 +67,13 @@ Example configuration:
 }
 ```
 
-- `MaxRequestLength` is specified in kilobytes. For example:
-  - 2000 KB = 2 MB
-  - 100000 KB = 100 MB
+* `MaxRequestLength` is specified in kilobytes. For example:
+  * 2000 KB = 2 MB
+  * 100000 KB = 100 MB
 
 You can check the current configuration by inspecting the "System information" output in the Backoffice. You can access it by clicking the logo and then "System information":
 
-<figure>
-  <img src="images/systeminformation-tempfileconfig.jpg" alt="System Information with Maximum Upload Size Settings">
-  <caption>System Information with "Max allowed file size" Settings</caption>
-</figure>
+<figure><img src="../../.gitbook/assets/systeminformation-tempfileconfig.jpg" alt="System Information with Maximum Upload Size Settings"><figcaption></figcaption></figure>
 
 ## External Server Configurations
 

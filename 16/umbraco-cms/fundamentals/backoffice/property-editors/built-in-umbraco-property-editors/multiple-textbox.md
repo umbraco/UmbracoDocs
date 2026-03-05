@@ -10,11 +10,11 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Data Type Definition Example
 
-![Repeatable textstrings Data Type Definition](images/Repeatable-Textstrings-DataType.png)
+![Repeatable textstrings Data Type Definition](../../../../.gitbook/assets/Repeatable-Textstrings-DataType.png)
 
 ## Content Example
 
-![Repeatable textstrings Content](<../built-in-property-editors/images/Multiple-Textbox-Repeatable-Textstrings-Content.png>)
+![Repeatable textstrings Content](../../../../.gitbook/assets/Multiple-Textbox-Repeatable-Textstrings-Content.png)
 
 ## MVC View Example
 

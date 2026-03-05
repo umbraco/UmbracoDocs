@@ -91,7 +91,7 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/final-screen (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 
@@ -141,7 +141,7 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 
 ### Visual Studio
 
-<figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Additional_Info (1) (1).jpg" alt=""><figcaption></figcaption></figure>
 
 ## References
 

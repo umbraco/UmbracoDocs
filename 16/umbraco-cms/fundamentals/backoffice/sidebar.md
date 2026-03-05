@@ -1,7 +1,7 @@
 ---
 description: >-
-  This section explains how the concept of infinite editing using the Sidebar in the Umbraco
-  backoffice works.
+  This section explains how the concept of infinite editing using the Sidebar in
+  the Umbraco backoffice works.
 ---
 
 # Sidebar
@@ -14,7 +14,7 @@ This feature enables you to work with your content without losing the context of
 
 Document Types are in different sections than content but the sidebar enables you to make changes to them directly from the content you are editing.
 
-![Sidebar](images/update-dropdown-options.gif)
+![Sidebar](../../.gitbook/assets/update-dropdown-options.gif)
 
 In the example showcased above, new options are being added to a Data Type, without losing the context of the content. The example also shows how you can edit images, without being sent to the 'Media' section.
 

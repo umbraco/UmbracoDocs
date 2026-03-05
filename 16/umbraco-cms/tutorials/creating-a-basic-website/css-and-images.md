@@ -11,9 +11,9 @@ The Umbraco project folder refers to the folder created during the [Umbraco inst
 2. Copy the **css** and **images** folders from the _Custom Umbraco template_ folder.
 3. Paste them inside the **wwwroot** folder of your Umbraco project.
 4. Go to the **HomePage** template in the **Settings** section.
-5. Make sure the stylesheet reference in the HTML is `/css/main.css`.
+5.  Make sure the stylesheet reference in the HTML is `/css/main.css`.
 
-    ![Stylesheet reference](images/stylesheet-reference.png)
+    ![Stylesheet reference](../../.gitbook/assets/stylesheet-reference.png)
 
 ## Stylesheet Reference
 

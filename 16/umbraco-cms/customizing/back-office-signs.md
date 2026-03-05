@@ -1,8 +1,10 @@
 ---
-description: Describes how to use sign information provided in management API responses to present additional details to consumers.
+description: >-
+  Describes how to use sign information provided in management API responses to
+  present additional details to consumers.
 ---
 
-# Backoffice Signs
+# BackOffice Signs
 
 When trees, collections and items are presented in the backoffice, additional information can be displayed in the form of Signs.
 
@@ -64,7 +66,7 @@ export const manifests: UmbExtensionManifest = {
 
 When an entity includes the `Umb.IsProtected` flag, this Sign appears next to it in the UI, indicating that the item is protected.
 
-![Screenshot of Recently Created sign](../reference/images/protected-entity-sign.png)
+![Screenshot of Recently Created sign](../.gitbook/assets/protected-entity-sign.png)
 
 ### Example: Rendering an Entity Sign with Custom Logic
 
@@ -114,7 +116,7 @@ export class UmbRecentlyCreatedSignElement extends UmbLitElement {
 }
 ```
 
-![Screenshot of Recently Created sign](../reference/images/custom-entity-sign.png)
+![Screenshot of Recently Created sign](../.gitbook/assets/custom-entity-sign.png)
 
 {% hint style="info" %}
 Client extensions for backoffice signs are available in Umbraco version 16.4.
