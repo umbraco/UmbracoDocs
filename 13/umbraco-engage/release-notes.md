@@ -16,6 +16,11 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.7.5**](https://www.nuget.org/packages/Umbraco.Engage/13.7.5) **(March 4th 2026)**
+
+* Resolved an issue where the `pagehide` event listener was not correctly handling page visibility changes in the analytics tracking script.
+* Fixed extraction of the Membership Provider Key, resolving cases where the key was not correctly retrieved from the HTTP context.
+
 [**13.7.4**](https://www.nuget.org/packages/Umbraco.Engage/13.7.4) **(February 5th 2026)**
 
 * Added the ability to choose 'All cultures' from the Pageview Goal Picker.

@@ -16,6 +16,24 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.2.0](https://www.nuget.org/packages/Umbraco.Engage/16.2.0) (March 4th 2026)
+
+* Redesigned the reporting star schema by introducing a new `FctSessionNode` fact table, replacing the previous `DimNodeAncestor` table and pre-computed `withSubpages` approach. This reduces star generation time and TempDB usage for large datasets.
+* Added the ability to view heatmaps for 'Other' (unknown) device types.
+* Added an 'All cultures' option to the Pageview Goal picker, defaulting to all cultures when creating new pageview goals.
+* Improved path handling for CM/CD server configurations in the Headless package, ensuring correct content retrieval based on specified culture.
+* Resolved an issue where the `pagehide` event listener was not correctly handling page visibility changes in the analytics tracking script.
+* Fixed extraction of the Membership Provider Key, resolving cases where the key was not correctly retrieved from the HTTP context.
+* Fixed `HttpContext.Request` corruption in `UrlUmbracoPageVariantExtractor`, ensuring request state is preserved for downstream middleware.
+* Resolved multiple UI interaction bugs in the analytics dashboard affecting chart rendering, table prefabs, and A/B testing save-and-publish visibility conditions.
+* Fixed incorrect sum calculation by excluding `pageSessionsWithSubpages` from the analytics table aggregation.
+* Resolved NPoco not supporting `int[]` expansion in the HeatmapService query.
+* Fixed persona ordering in CSV exports to be alphabetical.
+
+#### [Engage Forms 16.2.1](https://www.nuget.org/packages/Umbraco.Engage.Forms/16.2.1) (February 19th 2026)
+
+* Fixed a security issue ([GHSA-86vq-ccwf-rm62](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-86vq-ccwf-rm62)).
+
 #### [16.1.2](https://www.nuget.org/packages/Umbraco.Engage/16.1.2) (January 8th 2026)
 
 * Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
