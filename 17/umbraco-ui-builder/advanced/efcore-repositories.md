@@ -28,7 +28,7 @@ To enable EF Core, add the following to your `appsettings.json`:
 }
 ```
 
-When `UseEFCore` is `true`, the custom built-in EF Core repository is used instead of the NPoco-based one. Collections with a custom repository type set via `SetRepositoryType` are not affected by this flag.
+When `UseEFCore` is `true`, the built-in EF Core repository is used instead of the NPoco-based one. Collections with a custom repository type set via `SetRepositoryType` are not affected by this flag.
 
 {% hint style="warning" %}
 The NPoco-based repository remains the default when the feature flag is not set or is set to `false`. EF Core support is intended to become the default in a future release, at which point the NPoco implementation will be deprecated.
