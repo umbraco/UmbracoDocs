@@ -8,7 +8,6 @@ For data access support using EF Core, Umbraco UI Builder publishes EF Core-spec
 
 These are the EF Core equivalents of the NPoco `SqlQueryBuildingNotification` and `SqlQueryBuiltNotification`.
 
-
 ## Registering Event Handlers
 
 Umbraco UI Builder follows the [Umbraco Notification mechanism](../../umbraco-cms/fundamentals/code/subscribing-to-notifications.md) for event registration.
@@ -55,7 +54,7 @@ public class MyEFCoreQueryBuiltHandler : INotificationHandler<EFCoreQueryBuiltNo
 
 ### Registering Event Handlers
 
-Register EF Core query event handlers the same way as other Umbraco notifications:
+Register EF Core query event handlers the same way you would other Umbraco notifications:
 
 ```csharp
 builder.CreateUmbracoBuilder()
