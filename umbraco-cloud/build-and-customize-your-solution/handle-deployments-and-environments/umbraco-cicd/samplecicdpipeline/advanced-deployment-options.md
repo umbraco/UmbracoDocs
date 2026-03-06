@@ -17,8 +17,8 @@ In edge cases users might need to supply their own umbraco-cloud.json to the sys
 Enabling the `skipPreserveUmbracoCloudJson` option will allow user to overwrite the umbraco-cloud.json through CI/CD Flow.
 
 {% hint style="warning" %}
-We recommend that you do not edit or add values to the umbraco-cloud.json file. You should use the appropriate appSettings.*.json file or add secrets through the Secrets Management page in the Cloud Portal.
-The cloud platform uses umbraco-cloud.json to update environment relationships when adding or removing environments.
+It is not recommended to edit or add values to the `umbraco-cloud.json` file. Use the appropriate `appSettings.*.json` file instead, or add secrets through the Secrets Management page in the Cloud Portal.
+The cloud platform uses `umbraco-cloud.json` to update environment relationships when adding or removing environments.
 {% endhint %}
 
 ## Skip version checks
