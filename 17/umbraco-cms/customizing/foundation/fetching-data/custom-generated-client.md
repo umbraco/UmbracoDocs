@@ -119,7 +119,7 @@ When hey-api then generates your client from that spec, the `security` metadata 
 
 ### Custom separate API
 
-If you expose a separate API with its own Swagger document, you need to add the security scheme to your OpenAPI specification yourself. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
+If you expose a separate API with its own Swagger document, you need to ensure that security requirements are applied to the operations in your OpenAPI specification, for example via an operation filter. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
 
 ```csharp
 using Umbraco.Cms.Api.Management.OpenApi;
