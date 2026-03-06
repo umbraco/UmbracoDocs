@@ -132,22 +132,13 @@ Disabling "Deploy to any target" will change the UI back to Umbraco Clouds origi
 {% hint style="info" %}
 #### A note about disabling "Deploy to any target"
 
-The default behavior is to promote changes between environments using the Cloud Portal.
-This keeps environments aligned — following the left-to-right flow, they will eventually
-share the same commits. The Portal uses this alignment to track pending changes between
-environments.
+The default behavior is to promote changes between environments using the Cloud Portal. This keeps environments aligned following the left-to-right flow, and they will eventually share the same commits. The Portal uses this alignment to track pending changes between environments.
 
-Sticking to this flow means pushing locally or via CI/CD to the leftmost environment,
-then promoting changes rightward through the Portal.
+Sticking to this flow means pushing locally or via CI/CD to the leftmost environment, then promoting changes rightward through the Portal.
 
-When "Deploy to any target" is enabled, commits are no longer pushed between environments.
-The Portal can no longer track changes between environments in the traditional way. Instead,
-each CI/CD deployment creates a new unique commit on each receiving environment. For example,
-deploying the same artifact to two environments results in two different commits — one per environment.
+When "Deploy to any target" is enabled, commits are no longer pushed between environments. The Portal can no longer track changes between environments in the traditional way. Instead, each CI/CD deployment creates a new unique commit on each receiving environment. For example, deploying the same artifact to two environments results in two different commits — one per environment.
 
-The more you use "Deploy to any target", the more each environment's git repository will diverge.
-This can become a problem if you later disable the feature, as you will need to realign the
-environments — which can be a time-consuming task.
+The more you use "Deploy to any target", the more each environment's git repository will diverge. This can become a problem if you later disable the feature, as you will need to realign the environments, which can be a time-consuming task.
 
 {% endhint %}
 
