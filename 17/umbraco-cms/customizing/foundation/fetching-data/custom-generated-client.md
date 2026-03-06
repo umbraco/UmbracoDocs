@@ -34,7 +34,7 @@ To learn more about OpenAPI and how to define your API specification, visit the 
 
 ## Connecting to the Management API
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
+Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the built-in backoffice HTTP client (`umbHttpClient`).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
@@ -83,7 +83,7 @@ export const createClientConfig: CreateClientConfig = (config) => ({
 });
 ```
 
-This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice's HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
+This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
 
 When the generator runs, the generated `client.gen.ts` will automatically import `createClientConfig` and apply it during client creation. Your SDK functions will be authenticated without any entrypoint setup.
 
@@ -105,7 +105,7 @@ if (data) {
 }
 ```
 
-This uses the backoffice's HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
+This uses the backoffice HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
 ## How security metadata works
 
