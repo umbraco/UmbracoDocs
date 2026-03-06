@@ -251,7 +251,7 @@ You can use the `deploymentId` to query the Get Deployment status endpoint.
 
 Enabling the `noBuildAndRestore` only disables the restore and build inside the isolated instance. Once the system pushes the source code to the environment, a build and publish operation will run as usual. Enabling this option lets you save one or more minutes during the deployment process.
 
-Disabling the `runSchemaExtraction` will prevent the Umbraco installation from automatically having its schema updated after a CI/CD flow deployment. This setting can only affect non-left-most environment. Schema extraction can still be triggered from the backoffice.
+Disabling the `runSchemaExtraction` will prevent the Umbraco installation from automatically having its schema updated after a CI/CD flow deployment. This setting doesn't affect the left-most environment. Schema extraction can still be triggered from the backoffice.
 
 For more information on using the settings in the pipeline, see the [Advanced Setup: Deployment options](samplecicdpipeline/advanced-deployment-options.md) article.
 {% endhint %}
