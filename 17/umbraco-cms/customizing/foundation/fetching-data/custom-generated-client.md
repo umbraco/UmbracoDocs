@@ -119,7 +119,7 @@ That resolved shape is what `umbHttpClient` checks before invoking the `auth` ca
 
 ### Management API (automatic)
 
-If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup: if neither the controller class nor the action method carries `[AllowAnonymous]`, it adds the security requirement referencing the globally registered `"Backoffice-User"` scheme.
+If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup. If neither the controller class nor the action method carries `[AllowAnonymous]`, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
 
 When hey-api generates your client from that spec, it resolves the scheme and emits the runtime security metadata into each SDK function. No extra setup needed.
 
