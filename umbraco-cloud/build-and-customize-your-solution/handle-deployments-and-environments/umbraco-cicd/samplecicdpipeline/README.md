@@ -100,9 +100,9 @@ By default, CI/CD flow only allows deployments to the left-most or the flexible 
 
 <figure><img src="../../../../.gitbook/assets/cicd-advanced-configuration.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Advanced configuration" section showing the enabled "Deploy to any target".</p></figcaption></figure>
 
-When the setting is enabled, the ability to deploy between environments through the Cloud Portal is disabled. All deployments should now be handled by you and your CI/CD setup.
+When the setting is enabled, the ability to deploy between environments through the Cloud Portal is disabled. All deployments should now be handled by you through CI/CD Flow.
 
-The environments overview on your project will no longer show: 
+The environments overview on your project will no longer show:
 
 - Pending changes indicator; you will not be able to see how far ahead your environments are compared to the next.
 - The Deploy button is removed; you will not be able to push changes forward by using the Cloud Portal UI.
