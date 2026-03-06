@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) (March 5th 2026)
+
+* Set create date on new documents/media/members [#259](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/259)
+* Request children/structure reload and entity update after import or restore [#286](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/286)
+* Fix `InvalidOperationException` when getting value from `JsonValue` [#324](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/324)
+* Ensure all blocks are exposed during migration [#325](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/325)
+* Maintain reverse UDI order when cleaning entities [#327](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/327)
+
 ### [17.0.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.1) (January 8th 2026)
 
 * Set environment URL when fetching remote items and close dropdown after changing environment: [#300](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/300).
