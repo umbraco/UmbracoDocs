@@ -245,7 +245,7 @@ The API response should be an HTTP 201 Created response including a `deploymentI
 You can use the `deploymentId` to query the Get Deployment status endpoint.
 
 {% hint style="info" %}
- **Use `skipPreserveUmbracoCloudJson` with care.** The Cloud platform uses the file to make sure your environments are correctly configured for content deployments.
+ **Use `skipPreserveUmbracoCloudJson` with care.** The Cloud platform uses the file to ensure your environments are correctly configured for content deployments.
  
  **Use `skipVersionCheck` with care.** This setting exists to prevent version regression (overwriting newer Umbraco packages with older ones). Only set this to `true` if you intentionally need to deploy an older artifact.
 
