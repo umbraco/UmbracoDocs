@@ -51,7 +51,7 @@ app.UseUmbraco()...
 If you use the [NWebsec.AspNetCore.Middleware](https://www.nuget.org/packages/NWebsec.AspNetCore.Middleware/) NuGet package, configure CSP with the `UseCsp` extension method. Then call `UseUmbracoCspNonceInjection()` to inject the Umbraco nonce into the header that NWebsec produces.
 
 {% hint style="warning" %}
-Place `UseUmbracoCspNonceInjection()` **after** `UseCsp()` so the nonce is injected into the existing header.
+Place `UseUmbracoCspNonceInjection()` **after** `UseCsp()` to ensure the nonce is injected into the existing header.
 {% endhint %}
 
 ```csharp
