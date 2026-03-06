@@ -252,6 +252,7 @@
   * [Integrate Property Editors](customizing/property-editors/integrate-property-editors.md)
   * [Tracking References](customizing/property-editors/tracking.md)
   * [Property Dataset](customizing/property-editors/property-dataset.md)
+  * [Sortable Property Values](customizing/property-editors/property-editor-sortable-values.md)
 * [Utilities](customizing/utilities/README.md)
   * [Modals](customizing/utilities/modals/README.md)
     * [Confirm Dialog](customizing/utilities/modals/confirm-dialog.md)
