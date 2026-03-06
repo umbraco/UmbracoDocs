@@ -185,15 +185,15 @@ The Create Deployment endpoint starts a new deployment and returns a unique `dep
 
 The following options are available to use in the request payload:
 
-| Parameter | Requirement | Description |
-| :--- | :--- | :--- |
-| `artifactId` | **REQUIRED** | The ID of the artifact you want to deploy. |
-| `targetEnvironmentAlias` | **REQUIRED** | The alias of the environment you want to deploy to. |
-| `commitMessage` | **OPTIONAL** | The commit message you want stamped in the Umbraco Cloud environment repository. |
-| `skipPreserveUmbracoCloudJson` | **OPTIONAL** | Setting to true will allow you to overwrite the umbraco-cloud.json with your incoming file. Default: `false`. |
-| `noBuildAndRestore` | **OPTIONAL** | An option to skip the restore and build in the isolated instance. Default: `false`. |
-| `skipVersionCheck` | **OPTIONAL** | An option to skip the version check in the isolated instance. Default: `false`. |
-| `runSchemaExtraction` | **OPTIONAL** | An option to control if schema extraction should run after deploying schema files. Default: `true` |
+| Parameter | Requirement | Description | Default value |
+| :--- | :--- | :--- | :--- |
+| `artifactId` | **REQUIRED** | The ID of the artifact you want to deploy. | - |
+| `targetEnvironmentAlias` | **REQUIRED** | The alias of the environment you want to deploy to. | - |
+| `commitMessage` | **OPTIONAL** | The commit message you want stamped in the Umbraco Cloud environment repository. | - |
+| `skipPreserveUmbracoCloudJson` | **OPTIONAL** | Setting to true will allow you to overwrite the umbraco-cloud.json with your incoming file. | `false` |
+| `noBuildAndRestore` | **OPTIONAL** | An option to skip the restore and build in the isolated instance. | `false` |
+| `skipVersionCheck` | **OPTIONAL** | An option to skip the version check in the isolated instance. | `false` |
+| `runSchemaExtraction` | **OPTIONAL** | An option to control if schema extraction should run after deploying schema files. | `true` |
 
 ```http
 @projectId = Get this value from the portal
