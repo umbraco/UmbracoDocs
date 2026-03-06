@@ -17,7 +17,7 @@ Use your local clone to add or edit Document Types, Data Types, Templates, and t
 
 ## Additional Build Steps
 
-The feature takes time to complete. CI/CD Flow starts an isolated instance which may add an extra build to the deployment process. It takes longer for a deployment to finish through Umbraco CI/CD Flow compared to standard deployments.
+The CI/CD Flow starts an isolated instance, which may add an extra build to the deployment process. It takes longer for a deployment to finish through Umbraco CI/CD Flow compared to standard deployments.
 
 ## Conflict Management
 

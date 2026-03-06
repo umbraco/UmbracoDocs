@@ -63,7 +63,7 @@ The API keys are tied to the specific project for which it is generated. Ensure 
 
 When the CI/CD flow feature is enabled, navigate down to the section called "Environment targets". This section expands to show a table with all your environments. 
 
-The table shows you which environments you can currently target with CI/CD Flow. You will need the environment alias shown in the table. You can click the button next to the environment alias to copy it for later use.
+The table shows you which environments you can currently target with CI/CD Flow. The environment aliases in the tables are the ones you need. You can click the button next to the environment alias to copy it and save it for later use.
 
 <figure><img src="../../../../.gitbook/assets/cicd-environment-targets.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Environment targets" section showing the environments you can target for deployments.</p></figcaption></figure>
 
@@ -75,7 +75,7 @@ By default, flexible environments and the left-most environment are considered v
 
 You can enable all environments to be valid targets by enabling the "Deploy to any target" toggle in the "Advanced configuration" section. 
 
-If you are using the old CI/CD samples that target V1 endpoint, you can only target the left-most environment.
+If you are using the old CI/CD samples targeting the V1 endpoint, you can only target the left-most environment.
 
 {% endhint %}
 
@@ -100,7 +100,7 @@ By default, CI/CD flow only allows deployments to the left-most or the flexible 
 
 <figure><img src="../../../../.gitbook/assets/cicd-advanced-configuration.png" alt=""><figcaption><p>"Umbraco CI/CD Flow - Advanced configuration" section showing the enabled "Deploy to any target".</p></figcaption></figure>
 
-When the setting is enabled, we will disable the ability to deploy between environments through the Cloud Portal. All deployments should now be handled by you and your CI/CD setup.
+When the setting is enabled, the ability to deploy between environments through the Cloud Portal is disabled. All deployments should now be handled by you and your CI/CD setup.
 
 The environments overview on your project will no longer show: 
 
@@ -113,7 +113,7 @@ Instead you will now be able to see which artifact is deployed to your environme
 
 <figure><img src="../../../../.gitbook/assets/cicd-environment-card-deployment.png" alt=""><figcaption><p>Example of an environment card showing the current deployed artifact.</p></figcaption></figure>
 
-The git repository under the environment can still receive changes from outside of CI/CD flow:
+The git repository under the environment can still receive changes from outside of the CI/CD flow:
 
 - Adding or removing an environment will in most cases write to each affected environment. 
 - Auto upgrades on Cloud also create commits.
