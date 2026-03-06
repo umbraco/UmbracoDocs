@@ -40,7 +40,7 @@ Keep in mind that the final Kudu deployment on the Cloud environment will still 
 
 When deploying schema changes to environments beyond "left-most", the CI/CD Flow deployment system will automatically run a schema extraction. 
 
-Setting `runSchemaExtraction` to false, will result in the system not automatically running the schema extraction on the environment. Schema extraction can still be triggered from the backoffice.
+Setting `runSchemaExtraction` to false, will result in the system not automatically running the schema extraction on the environment. [You can still run schema extractions manually](../../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md).
 
 {% hint style="info" %}
 This setting doesn't have any effect on the `left-most environment`. 
