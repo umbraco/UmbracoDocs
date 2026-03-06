@@ -34,7 +34,7 @@ To learn more about OpenAPI and how to define your API specification, visit the 
 
 ## Connecting to the Management API
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses Hey-API's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
+Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the backoffice's built-in HTTP client (`umbHttpClient`).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
