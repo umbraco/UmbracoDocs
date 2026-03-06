@@ -109,13 +109,19 @@ This uses the backoffice's HTTP client directly for that request instead of the 
 
 ## How security metadata works
 
-The `auth` callback on `umbHttpClient` only fires when a request carries `security` metadata. This metadata originates from the `security` field on each operation in your OpenAPI specification. When hey-api generates your client from the spec, it reads that field and includes `security: [{ type: 'http', scheme: 'bearer' }]` directly in each generated SDK function.
+The `auth` callback on `umbHttpClient` only fires when a request carries `security` metadata. Here is how that metadata flows from your API to the generated client:
+
+1. Each operation in your OpenAPI spec has an optional `security` field listing which security schemes it requires — for example, `[{ "Backoffice-User": [] }]`.
+2. Those scheme names are defined in `components.securitySchemes`, where their type (OAuth2, HTTP Bearer, and so on) is declared.
+3. When hey-api generates your client, it reads both and resolves them into its own runtime shape — `security: [{ type: 'http', scheme: 'bearer' }]` — emitted directly into each generated SDK function.
+
+That resolved shape is what `umbHttpClient` checks before invoking the `auth` callback.
 
 ### Management API (automatic)
 
-If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco adds the `security` field to every non-anonymous endpoint automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup: if neither the controller class nor the action method carries `[AllowAnonymous]`, it writes the security requirement into the OpenAPI spec.
+If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup: if neither the controller class nor the action method carries `[AllowAnonymous]`, it adds the security requirement referencing the globally registered `"Backoffice-User"` scheme.
 
-When hey-api then generates your client from that spec, the `security` metadata is already in place. No extra setup needed.
+When hey-api generates your client from that spec, it resolves the scheme and emits the runtime security metadata into each SDK function. No extra setup needed.
 
 ### Custom separate API
 
