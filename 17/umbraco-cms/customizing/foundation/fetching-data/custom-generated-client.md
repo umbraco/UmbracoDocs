@@ -107,11 +107,54 @@ if (data) {
 
 This uses the backoffice's HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
-{% hint style="warning" %}
-The `auth` callback on `umbHttpClient` only fires for SDK functions that have `security` metadata. This metadata is generated automatically when your OpenAPI specification includes a security scheme (for example, Bearer authentication). If your spec does not include a security scheme, the generated functions will not send an `Authorization` header. For direct `.get()` / `.post()` calls (without a generated client), see [Umbraco HTTP Client](http-client.md).
-{% endhint %}
+## How security metadata works
 
-### Fetch API
+The `auth` callback on `umbHttpClient` only fires when a request carries `security` metadata. This metadata originates from the `security` field on each operation in your OpenAPI specification. When hey-api generates your client from the spec, it reads that field and includes `security: [{ type: 'http', scheme: 'bearer' }]` directly in each generated SDK function.
+
+### Management API (automatic)
+
+If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco adds the `security` field to every non-anonymous endpoint automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup: if neither the controller class nor the action method carries `[AllowAnonymous]`, it writes the security requirement into the OpenAPI spec.
+
+When hey-api then generates your client from that spec, the `security` metadata is already in place. No extra setup needed.
+
+### Custom separate API
+
+If you expose a separate API with its own Swagger document, you need to add the security scheme to your OpenAPI specification yourself. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
+
+```csharp
+using Umbraco.Cms.Api.Management.OpenApi;
+
+internal sealed class MyExtensionSecurityRequirementsOperationFilter : BackOfficeSecurityRequirementsOperationFilterBase
+{
+    // Must match the [MapToApi("...")] attribute on your controllers
+    protected override string ApiName => "myextension";
+}
+```
+
+Register it in your SwaggerGen configuration:
+
+```csharp
+swaggerGenOptions.OperationFilter<MyExtensionSecurityRequirementsOperationFilter>();
+```
+
+No `AddSecurityDefinition` call is needed — Umbraco already registers the `"Backoffice-User"` Bearer scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
+
+For a full walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md).
+
+### Direct calls without a generated client
+
+When calling `umbHttpClient` directly — without a generated SDK function — there is no spec to derive security metadata from. Pass it explicitly on each call:
+
+```typescript
+const { data } = await umbHttpClient.get({
+    url: '/umbraco/myextension/api/v1/endpoint',
+    security: [{ type: 'http', scheme: 'bearer' }],
+});
+```
+
+See [Umbraco HTTP Client](http-client.md) for more details.
+
+## Fetch API
 
 If you only have a few requests, you can also use the `fetch` function directly. Read more about that here:
 
