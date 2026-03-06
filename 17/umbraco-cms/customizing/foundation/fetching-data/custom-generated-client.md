@@ -137,7 +137,7 @@ Register it in your SwaggerGen configuration:
 swaggerGenOptions.OperationFilter<MyExtensionSecurityRequirementsOperationFilter>();
 ```
 
-No `AddSecurityDefinition` call is needed — Umbraco already registers the `"Backoffice-User"` Bearer scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
+No `AddSecurityDefinition` call is needed — Umbraco already registers the required Bearer security scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
 
 For a full walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md).
 
