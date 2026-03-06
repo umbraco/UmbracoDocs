@@ -132,10 +132,12 @@ Disabling "Deploy to any target" will change the UI back to Umbraco Clouds origi
 {% hint style="info" %}
 #### A note about disabling "Deploy to any target"
 
-When you use CI/CD to deploy to the left-most environment and the Portal to deploy changes between environments, the environments are aligned. Following the left-to-right deployment flow they will eventually have the same commits. This connection and alignment between environment is utilized by the Portal to keeps track of Pending changes between environments.
+The default behavior is using the Cloud Portal to deploy changes between environments. This keeps environments aligned. Following the left-to-right deployment flow they will eventually have the same commits. This connection and alignment between environment is utilized by the Portal to keeps track of Pending changes between environments.
 
-With "Deploy to any target" enabled the commits are no longer pushed between environments in a synchronized way. Each CI/CD Flow deployment creates a new unique commit on each receiving environment. For example: if you deploy the same artifact to two different environments, this creates unique commits on each environment.
- 
+Pushing changes locally or running CI/CD deployments to the leftmost environment and then using the Portal to promote deployments, adheres to the established left-to-right deployment flow.
+
+When "Deploy to any target" is enabled the commits are no longer pushed between environments. And the Portal is not able to track of the changes between environments in the traditional way. Each CI/CD Flow deployment creates a new unique commit on each receiving environment. For example: if you deploy the same artifact to two different environments, this creates unique commits on each environment.
+
 The more you are using "Deploy to any target", the more each environment's git repository will diverge. This divergence can become a problem if you decide to disable the feature again. In that case you need to be prepared to realign the environments which might be a time-consuming task.
 
 {% endhint %}
