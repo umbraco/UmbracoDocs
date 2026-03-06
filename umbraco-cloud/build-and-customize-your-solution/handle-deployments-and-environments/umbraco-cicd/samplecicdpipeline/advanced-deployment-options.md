@@ -12,9 +12,9 @@ The Umbraco Cloud platform controls the `umbraco-cloud.json` file. It holds a de
 
 The CI/CD deployment system ensures that the current JSON file in the cloud environment is preserved.
 
-In edge cases users might need to supply their own umbraco-cloud.json to the system and overwrite the one on cloud. 
+In edge cases, users might need to supply their own `umbraco-cloud.json` to the system and overwrite the one on the cloud. 
 
-Enabling the `skipPreserveUmbracoCloudJson` option will allow user to overwrite the umbraco-cloud.json through CI/CD Flow.
+Enabling the `skipPreserveUmbracoCloudJson` option allows users to overwrite the `umbraco-cloud.json` through CI/CD Flow.
 
 {% hint style="warning" %}
 It is not recommended to edit or add values to the `umbraco-cloud.json` file. Use the appropriate `appSettings.*.json` file instead, or add secrets through the Secrets Management page in the Cloud Portal.
