@@ -128,6 +128,7 @@ We can then access the database via the `BlogContext.` First, we need to migrate
 
 {% hint style="info" %}
 For package developers and not only, but in general as well, it's recommended to use the `UseUmbracoDatabaseProvider` logic. This is because it will then figure out what the correct database is used:
+{% endhint %}
 
 ```csharp
 builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options) =>
@@ -135,6 +136,19 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
+
+{% hint style="warning" %}
+**SQL Server and MARS (Multiple Active Result Sets)**
+
+When using `AddUmbracoDbContext` with SQL Server, your custom `DbContext` shares the Umbraco database connection. If your code performs nested or concurrent database queries on this shared connection — for example, iterating over query results while executing additional queries inside the loop — SQL Server requires MARS to be enabled on the connection string.
+
+Without MARS, you will encounter errors such as: _"There is already an open DataReader associated with this Command which must be closed first"_ or connection pool timeout exceptions under load.
+
+To enable MARS, add `MultipleActiveResultSets=True` to your connection string:
+
+`Server=myserver;Database=mydb;MultipleActiveResultSets=True;...`
+
+If you are hosting on **Umbraco Cloud**, the connection string is managed by the platform. Contact Umbraco Support to request MARS be enabled for your project.
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
@@ -153,6 +167,7 @@ If you use another class library in your project to store models and DBContext c
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
+
 {% endhint %}
 
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
@@ -231,7 +246,7 @@ To create, read, update, or delete data from your custom database tables, use th
 The example below creates a `UmbracoApiController` to be able to fetch and insert blog comments in a custom database table.
 
 {% hint style="warning" %}
-* This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
+This example uses the `BlogComment` class, which is a database model. The recommended approach would be to map these over to a ViewModel instead, that way your database & UI layers are not coupled. Be aware that things like error handling and data validation have been omitted for brevity.
 {% endhint %}
 
 ```csharp
@@ -285,6 +300,28 @@ public class BlogCommentsController : Controller
         scope.Complete();
     }
 }
+```
 
+### Important: Scope Lifecycle and Connection Pool Safety
 
+{% hint style="danger" %}
+**Always use `using` when creating scopes.** Each scope acquires a database connection from the connection pool. If a scope is not disposed — either because the `using` keyword was omitted or because an exception occurs before manual disposal — the connection is never returned to the pool.
+
+Under sustained load, leaked connections will exhaust the pool and cause `SqlException: Timeout expired. The timeout period elapsed prior to obtaining a connection from the pool.`
+{% endhint %}
+
+```csharp
+// ✅ CORRECT — scope is always disposed, even if an exception occurs
+using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+var result = await scope.ExecuteWithContextAsync(async db => db.BlogComments.ToArray());
+scope.Complete();
+return result;
+```
+
+```csharp
+// ❌ WRONG — if an exception occurs before Complete(), the connection leaks
+var scope = _efCoreScopeProvider.CreateScope();  // No using!
+var result = await scope.ExecuteWithContextAsync(async db => db.BlogComments.ToArray());
+scope.Complete();
+return result;
 ```
