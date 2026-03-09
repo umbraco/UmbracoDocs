@@ -240,6 +240,7 @@ public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplica
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Umbraco.Demo;
 
