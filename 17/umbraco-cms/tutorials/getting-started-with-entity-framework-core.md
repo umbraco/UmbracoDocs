@@ -247,7 +247,6 @@ public class BlogCommentsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-
         builder.Services.AddUmbracoDbContext<BlogContext>((serviceProvider, options, connectionString, providerName) =>
         {
             if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
