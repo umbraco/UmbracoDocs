@@ -301,25 +301,25 @@
   * [Example Package Repository](extending/packages/example-package-repository.md)
 * [Single Block Migration](extending/single-block-migration.md)
 
-## AI & Automation
+## AI
 
-* [Developer MCP](ai-and-automation/developer-mcp/README.md)
-  * [Key Concepts](ai-and-automation/developer-mcp/concepts/README.md)
-    * [Model Context Protocol](ai-and-automation/developer-mcp/concepts/model-context-protocol.md)
-    * [Context Engineering](ai-and-automation/developer-mcp/concepts/context-enginerring.md)
-  * [Host Setup](ai-and-automation/developer-mcp/host-setup/README.md)
-    * [Claude Desktop](ai-and-automation/developer-mcp/host-setup/claude-desktop.md)
-    * [Claude Code](ai-and-automation/developer-mcp/host-setup/claude-code.md)
-    * [Cursor](ai-and-automation/developer-mcp/host-setup/cursor.md)
-    * [GitHub Copilot](ai-and-automation/developer-mcp/host-setup/github-copilot.md)
-    * [OpenAI Codex](ai-and-automation/developer-mcp/host-setup/openai-codex.md)
-  * [Best Practice](ai-and-automation/developer-mcp/best-practice/README.md)
-    * [Example Instruction File](ai-and-automation/developer-mcp/best-practice/example-instructions.md)
-    * [Creating Media](ai-and-automation/developer-mcp/best-practice/creating-media.md)
-  * [Configuration](ai-and-automation/developer-mcp/configuration.md)
-  * [Available Tools](ai-and-automation/developer-mcp/available-tools.md)
-  * [Excluded Tools](ai-and-automation/developer-mcp/excluded-tools.md)
-  * [Use Cases and Scenarios](ai-and-automation/developer-mcp/scenarios.md)
+* [Developer MCP](ai/developer-mcp/README.md)
+  * [Key Concepts](ai/developer-mcp/concepts/README.md)
+    * [Model Context Protocol](ai/developer-mcp/concepts/model-context-protocol.md)
+    * [Context Engineering](ai/developer-mcp/concepts/context-enginerring.md)
+  * [Host Setup](ai/developer-mcp/host-setup/README.md)
+    * [Claude Desktop](ai/developer-mcp/host-setup/claude-desktop.md)
+    * [Claude Code](ai/developer-mcp/host-setup/claude-code.md)
+    * [Cursor](ai/developer-mcp/host-setup/cursor.md)
+    * [GitHub Copilot](ai/developer-mcp/host-setup/github-copilot.md)
+    * [OpenAI Codex](ai/developer-mcp/host-setup/openai-codex.md)
+  * [Best Practice](ai/developer-mcp/best-practice/README.md)
+    * [Example Instruction File](ai/developer-mcp/best-practice/example-instructions.md)
+    * [Creating Media](ai/developer-mcp/best-practice/creating-media.md)
+  * [Configuration](ai/developer-mcp/configuration.md)
+  * [Available Tools](ai/developer-mcp/available-tools.md)
+  * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
+  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
 
 ## Reference
 
