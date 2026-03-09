@@ -35,7 +35,7 @@ Ensure the following requirements are met before starting:
   * `Microsoft.EntityFrameworkCore.Relational`
 * Install the EF Core CLI tool by running the following command in your terminal:
   * `dotnet tool install --global dotnet-ef`.
-* For .NET 9 Compatibility: To avoid Roslyn compiler version conflicts during migration generation, ensure the following packages are explicitly added to your `.csproj`. Match the version required by your EF Core Design tools:
+* For .NET 10 Compatibility: To avoid Roslyn compiler version conflicts during migration generation, ensure the following packages are explicitly added to your `.csproj`. Match the version required by your EF Core Design tools:
   * `Microsoft.CodeAnalysis.CSharp` (Version 5.0.0 or later)
   * `Microsoft.CodeAnalysis.CSharp.Workspaces` (Version 5.0.0 or later)
   * `Microsoft.EntityFrameworkCore.Design` (Version 10.0.x)
