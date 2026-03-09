@@ -158,7 +158,7 @@ Using `UseDatabaseProvider(providerName, connectionString)` is the recommended a
 
 ## Step 4: Generate the Migration
 
-The database can now be accessed via `BlogContext.` Before using it, generate a migration to create the custom tables. With EFCore, migrations can be auto-generated from the terminal.
+The database can now be accessed via `BlogContext`. Before using it, generate a migration to create the custom tables. With EFCore, migrations can be auto-generated from the terminal.
 
 1. Open your terminal.
 2. Navigate to your project folder.
