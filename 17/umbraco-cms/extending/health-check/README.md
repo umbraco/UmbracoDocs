@@ -4,6 +4,10 @@ description: "Health Checks are used to determine the state of your Umbraco proj
 
 # Health Check
 
+{% hint style="info" %}
+Looking for the .NET health probe endpoints used by orchestrators and load balancers? See [Health Probes](../../fundamentals/setup/server-setup/health-probes.md).
+{% endhint %}
+
 The Settings section of the Umbraco backoffice holds a dashboard named "Health Check". It is a handy list of checks to see if your Umbraco installation is configured according to best practices. It's possible to add your custom-built health checks.
 
 For inspiration when building your checks you can look at the checks we've [built into Umbraco](https://github.com/umbraco/Umbraco-CMS/tree/v16/dev/src/Umbraco.Core/HealthChecks/Checks), as well as our [guides](guides/). Some examples will follow in this document.
