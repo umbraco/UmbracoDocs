@@ -42,6 +42,7 @@
     * [File And Folder Permissions](fundamentals/setup/server-setup/permissions.md)
     * [Runtime Modes](fundamentals/setup/server-setup/runtime-modes.md)
     * [Running Umbraco in Docker](fundamentals/setup/server-setup/running-umbraco-in-docker.md)
+    * [Health Probes](fundamentals/setup/server-setup/health-probes.md)
     * [Umbraco in Load Balanced Environments](fundamentals/setup/server-setup/load-balancing/README.md)
       * [Load Balancing Azure Web Apps](fundamentals/setup/server-setup/load-balancing/azure-web-apps.md)
       * [Load Balancing the Backoffice](fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice.md)

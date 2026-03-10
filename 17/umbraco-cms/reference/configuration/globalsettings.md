@@ -31,6 +31,7 @@ The following snippet contains all the available options, with default values, a
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
+      "UpgradingViewPath": "~/umbraco/UmbracoWebsite/Upgrading.cshtml",
       "Smtp": {
         "From": "person@umbraco.dk",
         "Host": "localhost",
@@ -241,6 +242,13 @@ Key: `NoNodesViewPath`
 Type: `string` (default: `~/umbraco/UmbracoWebsite/NoNodes.cshtml`)
 
 This setting specifies what view to render when there is no content on the site.
+
+### Upgrading view path
+
+Key: `UpgradingViewPath`
+Type: `string` (default: `~/umbraco/UmbracoWebsite/Upgrading.cshtml`)
+
+This setting specifies the view to render when an unattended upgrade is running in the background. Frontend and surface controller requests receive an HTTP 503 response with this view during the upgrade. See [Upgrade Unattended](../../fundamentals/setup/upgrading/upgrade-unattended.md) for details on the upgrade process.
 
 ## SMTP settings
 
