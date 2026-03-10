@@ -7,7 +7,7 @@ description: Use .NET health probe endpoints to monitor whether your Umbraco app
 .NET includes a built-in [health checks](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/monitor-app-health) middleware that exposes HTTP endpoints reporting whether an application is alive and functioning. Orchestrators, load balancers, and monitoring tools poll these endpoints to decide if an instance should receive traffic.
 
 {% hint style="info" %}
-These endpoints are infrastructure-level HTTP probes used by orchestrators and load balancers. They are different from the [Health Check dashboard](../../../extending/health-check/) in the backoffice, which validates Umbraco and website specific best practices.
+These endpoints are infrastructure-level HTTP probes used by orchestrators and load balancers. They are different from the [Health Check dashboard](../../../extending/health-check/) in the backoffice, which validates Umbraco and website-specific best practices.
 {% endhint %}
 
 ## Overview
@@ -19,9 +19,9 @@ Umbraco builds on this middleware and exposes two health probe endpoints that re
 | Endpoint | Behavior |
 |---|---|
 | `GET /umbraco/api/health/live` | Returns HTTP 200 if the process is responding. No checks run. |
-| `GET /umbraco/api/health/ready` | Returns HTTP 200 when the site is running normally. Returns HTTP 503 when the site is not ready, for example during startup or an unattended upgrade. |
+| `GET /umbraco/api/health/ready` | Returns HTTP 200 when the site is running normally. Returns HTTP 503 when the site is not ready, for example, during startup or an unattended upgrade. |
 
-Both endpoints are anonymous and bypass the maintenance page re-route that is active during upgrades.
+Both endpoints are anonymous and bypass the maintenance-page re-route active during upgrades.
 
 ## Configuring health probes
 
