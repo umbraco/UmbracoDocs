@@ -133,7 +133,7 @@ Controls concurrent login behavior for members only. When `null`, the value fall
 `UserAllowConcurrentLogins` and `MemberAllowConcurrentLogins` are available from Umbraco 17.3.
 {% endhint %}
 
-**Configuration examples:**
+#### Configuration examples
 
 Allow concurrent logins for members but not backoffice users:
 
