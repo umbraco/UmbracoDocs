@@ -35,7 +35,7 @@ app.Use(async (context, next) =>
         $"default-src 'self'; " +
         $"script-src 'self' 'nonce-{nonce}'; " +
         $"style-src 'self' 'unsafe-inline'; " +
-        $"img-src 'self' data: news-dashboard.umbraco.com; " +
+        $"img-src 'self' data: https://news-dashboard.umbraco.com; " +
         $"connect-src 'self'; " +
         $"font-src 'self'; " +
         $"frame-src 'self' https://marketplace.umbraco.com");
@@ -62,7 +62,7 @@ app.UseCsp(options => options
         .Self()
         .CustomSources(
             "data:",
-            "news-dashboard.umbraco.com"))
+            "https://news-dashboard.umbraco.com"))
     .ScriptSources(s => s
         .Self())
     .StyleSources(s => s
