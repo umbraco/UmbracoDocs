@@ -341,8 +341,10 @@ Kickstarter
 Konstrukt
 Koomen
 KPIs
+Kubernetes
 labelled
 lifecycle
+liveness
 Loadbalancing
 loadbalancing
 localhost
@@ -407,6 +409,7 @@ Nibbs
 nodeId
 nodeIds
 nodename
+nonces
 notificationEvent
 notificationEvents
 npm
@@ -418,6 +421,7 @@ nullability
 nullable
 NUnit
 nvarchar
+NWebsec
 OAuth
 observablePart
 Octa
