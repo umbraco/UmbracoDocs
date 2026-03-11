@@ -345,6 +345,13 @@
     * [Project Template](ai/base-mcp/create-umbraco-mcp-server/project-template.md)
     * [Development Workflow](ai/base-mcp/create-umbraco-mcp-server/development-workflow.md)
     * [Claude Code Plugin](ai/base-mcp/create-umbraco-mcp-server/claude-code-plugin.md)
+* [Backoffice Skills](ai/backoffice-skills/README.md)
+  * [What Are Skills?](ai/backoffice-skills/what-are-skills.md)
+  * [Quickstart](ai/backoffice-skills/quickstart.md)
+  * [Backoffice Skills](ai/backoffice-skills/backoffice-skills.md)
+  * [Testing Skills](ai/backoffice-skills/testing-skills.md)
+  * [Tips for Best Results](ai/backoffice-skills/tips.md)
+  * [How It Works](ai/backoffice-skills/how-it-works.md)
 
 ## Reference
 

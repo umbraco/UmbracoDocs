@@ -2,7 +2,9 @@
   "permissions": {
     "deny": [
       "Edit(/Users/philw/Projects/umbraco-mcp-base/**)",
-      "Write(/Users/philw/Projects/umbraco-mcp-base/**)"
+      "Write(/Users/philw/Projects/umbraco-mcp-base/**)",
+      "Edit(/Users/philw/Projects/UmbracoCMS_Skills/**)",
+      "Write(/Users/philw/Projects/UmbracoCMS_Skills/**)"
     ]
   }
 }

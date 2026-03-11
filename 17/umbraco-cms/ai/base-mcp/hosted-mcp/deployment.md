@@ -167,5 +167,4 @@ wrangler kv key list --namespace-id YOUR_KV_NAMESPACE_ID
 
 ## Known Limitations
 
-- **MCP chaining not supported**: `McpClientManager` uses stdio child processes which are unavailable in the Workers runtime.
 - **Cold starts**: The first request to a Durable Object may have slightly higher latency.

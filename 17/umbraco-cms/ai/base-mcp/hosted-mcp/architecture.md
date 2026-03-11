@@ -189,6 +189,6 @@ Instead, the consent screen shows a **site picker** (radio buttons) when multipl
 | Tool definitions | Same | Same |
 | Tool filtering | Same | Same + user consent choices |
 | Decorators | Same | Same |
-| MCP chaining | Supported | Not supported |
+| MCP chaining | Supported | Supported |
 | Multi-site | N/A | Supported |
 
