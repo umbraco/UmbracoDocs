@@ -38,7 +38,7 @@ app.Use(async (context, next) =>
         $"img-src 'self' data: news-dashboard.umbraco.com; " +
         $"connect-src 'self'; " +
         $"font-src 'self'; " +
-        $"frame-src 'self'");
+        $"frame-src 'self' marketplace.umbraco.com");
 
     await next();
 });
@@ -73,7 +73,10 @@ app.UseCsp(options => options
     .ConnectSources(s => s
         .Self())
     .FrameSources(s => s
-        .Self()));
+        .Self()
+        .CustomSources(
+            "data:",
+            "marketplace.umbraco.com")));
 
 // Inject Umbraco's nonce into the CSP header produced by NWebsec.
 app.UseUmbracoCspNonceInjection();
