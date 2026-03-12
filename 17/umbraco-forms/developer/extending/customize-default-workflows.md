@@ -50,7 +50,7 @@ namespace MyNamespace
             _logger = logger;
         }
 
-        [Setting("Message", Description = "The log message to write", View = "TextField")]
+        [Setting("Message", Description = "The log message to write", View = "Umb.PropertyEditorUi.TextBox")]
         public string Message { get; set; }
 
         public override List<Exception> ValidateSettings()
