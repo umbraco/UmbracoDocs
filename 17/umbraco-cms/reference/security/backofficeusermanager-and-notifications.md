@@ -88,8 +88,8 @@ Internally these are mainly used for auditing but there are some that allow you 
     The notification has a property `SignOutRedirectUrl`. If this property is assigned then Umbraco will redirect to that URL upon successful\
     backoffice sign out in order to sign the user out of the external login provider.
 
-### Example: Signing out of an external OIDC provider
-  The following handler demonstrates how to assign `SignOutRedirectUrl` using Auth0 as the external login provider. The following handler retrieves the user's stored `id_token` and constructs a logout URL for the external provider with the appropriate `id_token_hint` and `post_logout_redirect_uri` parameters, then assigns that URL to `notification.SignOutRedirectUrl`.
+### Example: Signing out of Auth0 after backoffice logout
+  The following handler demonstrates how to assign `SignOutRedirectUrl` when using Auth0. 
   
 ```csharp
 public class UserLogoutSuccessNotificationHandler
