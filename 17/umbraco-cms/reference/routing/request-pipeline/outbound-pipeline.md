@@ -1,34 +1,34 @@
 ---
-description: How the Umbraco outbound request pipeline works
+description: Learn how the Umbraco outbound request pipeline works.
 ---
 
 # Outbound request pipeline
 
 The **outbound pipeline** consists out of the following steps:
 
-1. [Create segments](outbound-pipeline.md#1-create-segments)
-2. [Create paths](outbound-pipeline.md#2-create-paths)
-3. [Create urls](outbound-pipeline.md#3-creating-urls)
+1. [Create segments](#id-1.-create-segments)
+2. [Create paths](#id-2.-create-paths)
+3. [Create URLs](#id-3.-creating-urls)
 
-To explain things we will use the following content tree:
+To explain these steps, the following content tree is used as an example:
 
 ![Content Tree](../../../.gitbook/assets/simple-content-tree-v14.png)
 
 ## 1. Create segments
 
-When the URL is constructed, Umbraco will convert every node in the tree into a segment. Each published Content item has a corresponding URL segment.
+When a URL is constructed, Umbraco converts every node in the tree into a segment. Each published content item has a corresponding URL segment.
 
-In our example "Our Products" will become "our-products" and "Swibble" will become "swibble".
+In the example above, "Our Products" becomes "our-products" and "Swibble" becomes "swibble".
 
-The segments are created by the "Url Segment provider"
+Segments are created by the URL Segment Provider.
 
-### Url Segment Provider
+### URL Segment Provider
 
-The DI container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco boot up. Umbraco ships with a 'DefaultUrlSegmentProvider' - but custom implementations can be added to the collection.
+The Dependency Injection (DI) container of an Umbraco implementation contains a collection of `UrlSegmentProviders`. This collection is populated during Umbraco startup. Umbraco ships with a 'DefaultUrlSegmentProvider', but custom implementations can be added to the collection.
 
-When the `GetUrlSegment` extension method is called for a content item + culture combination, each registered `IUrlSegmentProvider` in the collection is executed in 'collection order'. This continues until a particular `UrlSegmentProvider` returns a segment value for the content, and no further `UrlSegmentProviders` in the collection will be executed. If no segment is returned by any provider in the collection a `DefaultUrlSegmentProvider` will be used to create a segment. This ensures that a segment is always created, like when a default provider is removed from a collection without a new one being added.
+When the `GetUrlSegment` extension method is called for a content item and culture combination, each registered `IUrlSegmentProvider` in the collection is executed in collection order. This continues until `UrlSegmentProvider` returns a segment value for the content. No further `UrlSegmentProviders` in the collection are executed after that point. If no segment is returned by any provider in the collection, the `DefaultUrlSegmentProvider` is used as a fallback. This ensures that a segment is always created.
 
-To create a new Url Segment Provider, implement the following interface:
+To create a new URL Segment Provider, implement the `IUrlSegmentProvider` interface:
 
 ```csharp
 public interface IUrlSegmentProvider
@@ -37,13 +37,15 @@ public interface IUrlSegmentProvider
 }
 ```
 
-Note each 'culture' variation can have a different Url Segment!
+{% hint style="info" %}
+Each culture variation can have a different URL segment.
+{% endhint %}
 
-The returned string will be the Url Segment for this node. Any string value can be returned here but it cannot contain the URL segment separator character `/`. This would create additional "segments" - something like `5678/swibble` is not allowed.
+The returned string becomes the URL segment for the node. The value cannot contain the URL segment separator character `/`. A value such as `5678/swibble` would create additional segments, which is not allowed.
 
 #### Example
 
-For the segment of a 'product page', add its unique SKU / product ref to the existing Url segment.
+The following example adds the unique SKU or product reference of a product page to the existing URL segment.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
@@ -75,11 +77,11 @@ public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
 }
 ```
 
-The returned string becomes the native Url segment - there is no need for any Url rewriting.
+The returned string becomes the native URL segment. There is no need for URL rewriting.
 
-For our "swibble" product in our example content tree the `ProductPageUrlSegmentProvider`, would return a segment `swibble--123xyz`. In this case, 123xyz is the unique product sku/reference for the swibble product.
+For the "swibble" product in the example content tree, `ProductPageUrlSegmentProvider` returns the segment `swibble--123xyz`, where `123xyz` is the unique product SKU for the swibble product.
 
-Register the custom UrlSegmentProvider with Umbraco, either using a composer or an extension method on the `IUmbracoBuilder`:
+Register the custom `UrlSegmentProvider` with Umbraco using a composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -96,24 +98,24 @@ public class RegisterCustomSegmentProviderComposer : IComposer
 }
 ```
 
-### The Default Url Segment Provider
+### The Default URL Segment Provider
 
-The Default Url Segment provider builds its segments by looking for one of the below values, checked in this order:
+The Default URL Segment Provider builds segments by checking for one of the following values, in this order:
 
-1. A property with alias _umbracoUrlName_ on the node. (this is a convention led way of giving editors control of the segment name - with variants - this can vary by culture).
-2. The 'name' of the content item e.g. `content.Name`.
+1. A property with alias `umbracoUrlName` on the node. This is a convention-based way to give editors control of the segment name. With variants, this can vary by culture.
+2. The name of the content item, for example `content.Name`.
 
-The Umbraco string extension `ToUrlSegment()` is used to produce a clean 'Url safe' segment.
+The Umbraco string extension `ToUrlSegment()` is used to produce a clean, URL-safe segment.
 
 ## 2. Create paths
 
-To create a path, the pipeline will use the segments of each node to produce a path.
+To create a path, the pipeline uses the segments of each node.
 
-If we look at our example, the "swibble" node will receive the path: "/our-products/swibble". If we take the `ProductPageUrlSegmentProvider` from above, the path would become: "/our-products/swibble-123xyz".
+In the example, the "swibble" node receives the path `/our-products/swibble`. Using the `ProductPageUrlSegmentProvider` from above, the path becomes `/our-products/swibble-123xyz`.
 
 ### Multiple sites in a single Umbraco implementation
 
-But, what if there are multiple websites in a single Umbraco Implementation? in this multi-site scenario then an (internal) path to a node such as "/our-products/swibble-123xyz" could belong to any of the sites, or match multiple nodes in multiple sites. In this scenario additional sites will have their internal path prefixed by the node id of their root node. Any content node with a hostname defines a “new root” for paths.
+In a multi-site scenario, an internal path such as `/our-products/swibble-123xyz` could belong to any of the sites, or match multiple nodes across multiple sites. In this case, additional sites have their internal path prefixed by the node ID of their root node. Any content node with a hostname defines a new root for paths.
 
 ![Path example](../../../.gitbook/assets/path-example-v14.png)
 
@@ -126,22 +128,22 @@ But, what if there are multiple websites in a single Umbraco Implementation? in 
 | Another Site | another-site   | **9676**/                    |
 | Their Values | their-values   | **9676**/their-values        |
 
-Paths can be cached, what comes next cannot (http vs https, current request…).
+Paths can be cached. Scheme, domain, and current request cannot be cached.
 
-#### Some further considerations when **working with hostnames**
+#### Considerations when working with Hostnames
 
-* **Domain without path** e.g. "www.site.com" will become "1234/path/to/page"
-* **Domain with path** e.g. "www.site.com/dk" will produce "1234/dk/path/to/page" as path
-* **No domain specified**: "/path/to/page"
-* **Unless HideTopLevelNodeFromPath config is true**, then the path becomes "/to/page"
+* Domain without path: `www.site.com` produces `1234/path/to/page`.
+* Domain with path: `www.site.com/dk` produces `1234/dk/path/to/page`.
+* No domain specified: `/path/to/page`.
+* `HideTopLevelNodeFromPath` set to `true`: the path becomes `/to/page`.
 
-## 3. Creating Urls
+## 3. Creating URLs
 
-The Url of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the Schema, Domain name, (port) and the path.
+The URL of a node consists of a complete [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier): the Schema, Domain name, port, and path.
 
-In our example the "swibble" node could have the following URL: "[http://example.com/our-products/swibble](http://example.com/our-products/swibble)"
+In the example, the "swibble" node has the URL: `http://example.com/our-products/swibble`.
 
-Generating this url is handled by the Url Provider. The Url Provider is called whenever a request is made in code for a Url e.g.:
+URL generation is handled by the URL Provider. The URL Provider is called whenever a URL is requested in code, for example:
 
 ```csharp
 @Model.Url
@@ -149,54 +151,30 @@ Generating this url is handled by the Url Provider. The Url Provider is called w
 @UmbracoContext.UrlProvider.GetUrl(1234);
 ```
 
-The DI container of an Umbraco implementation contains a collection of `UrlProviders` this collection is populated during Umbraco boot up. Umbraco ships with a `DefaultUrlProvider` - but custom implementations can be added to the collection. When .Url is called each `IUrlProvider` registered in the collection is executed in 'collection order' until a particular `IUrlProvider` returns a value. (and no further `IUrlProviders` in the collection will be executed.)
+The DI container of an Umbraco implementation contains a collection of `UrlProviders`. This collection is populated during Umbraco startup. Umbraco ships with a `DefaultUrlProvider`, but custom implementations can be added to the collection. When `.Url` is called, each `IUrlProvider` in the collection is executed in collection order until a particular `IUrlProvider` returns a value.
 
 ### DefaultUrlProvider
 
-Umbraco ships with a `DefaultUrlProvider`, which provides the implementation for the out-of-the-box mapping of the structure of the content tree to the URL.
+Umbraco ships with a `DefaultUrlProvider`, which maps the structure of the content tree to URLs out of the box. In Umbraco 15 and later, this is implemented as `NewDefaultUrlProvider`.
 
-```csharp
-// This one is initialized by default
-public class NewDefaultUrlProvider : IUrlProvider
-{
-    public string Alias => …;
+### How the Default URL provider works
 
-    public virtual UrlInfo GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
-    {…}
+* If the current domain matches the root domain of the target content, return a relative URL. Otherwise, return an absolute URL.
+* If the target content has one root domain, use that domain to build the absolute URL.
+* If the target content has more than one root domain, determine which one to use to build the absolute URL.
+* Complete the absolute URL with the scheme (HTTP or HTTPS). Use the scheme from the domain if one is specified; otherwise use the current request scheme.
+* If `addTrailingSlash` is `true`, add a trailing slash.
+* Add the virtual directory.
 
-    public virtual IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current)
-    {…}
-
-    public virtual Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment)
-    {…}
-}
-```
-
-### How the Default Url provider works
-
-* If the current domain matches the root domain of the target content.
-  * Return a relative Url.
-  * Else must return an absolute Url.
-* If the target content has only one root domain.
-  * Use that domain to build the absolute Url.
-* If the target content has more than one root domain.
-  * Figure out which one to use.
-  * To build the absolute Url.
-* Complete the absolute Url with scheme (http vs https).
-  * If the domain contains a scheme use it.
-  * Else use the current request’s scheme.
-* If "addTrailingSlash" is true, then add a slash.
-* Then add the virtual directory.
-
-If the URL provider encounters collisions when generating content URLs, it will always select the first available node and assign the URL to this one. The remaining nodes will be marked as colliding and will not have a URL generated. Fetching the URL of a node with a collision URL will result in an error string including the node ID (#err-1094) since this node does not currently have an active URL. This can happen if an umbracoUrlName property is being used to override the generated URL of a node, or in some cases when having multiple root nodes without hostnames assigned.
+If the URL provider encounters collisions when generating content URLs, it selects the first available node and assigns the URL to that node. The remaining nodes are marked as colliding and do not receive a generated URL. Fetching the URL of a node with a collision URL results in an error string that includes the node ID, for example `#err-1094`. This can happen when an `umbracoUrlName` property overrides the generated URL of a node, or when multiple root nodes exist without hostnames assigned.
 
 {% hint style="warning" %}
-This means publishing an unpublished node with a conflicting URL, might change the active node being rendered on that specific URL in cases where the published node should now take priority according to sort order in the tree!
+Publishing an unpublished node with a conflicting URL may change the active node rendered at that URL. This occurs when the newly published node takes priority based on sort order in the tree.
 {% endhint %}
 
-### Custom Url Provider
+### Custom URL Provider
 
-Create a custom Url Provider by implementing `IUrlProvider` interface:
+Create a custom URL Provider by implementing the `IUrlProvider` interface:
 
 ```csharp
 public interface IUrlProvider
@@ -211,29 +189,30 @@ public interface IUrlProvider
 }
 ```
 
-The URL returned in the 'UrlInfo' object by GetUrl can be completely custom.
+The `UrlInfo` object returned by `GetUrl` can contain a custom URL.
 
-If implementing a custom Url Provider, consider the following things:
+When implementing a custom URL Provider, consider the following:
 
-* Cache things.
-* Be sure to know how to handle schema's (http vs https) and hostnames.
-* Inbound might require rewriting.
+* Cache results where possible.
+* Handle schemes (HTTP vs HTTPS) and hostnames.
+* Inbound routing may require a matching `IContentFinder`.
 
 {% hint style="info" %}
-If there is only a small change to the logic around Url generation, then a smart way to create a custom Url Provider is to inherit from the DefaultUrlProvider and override the GetUrl() virtual method.
+For small changes to URL generation logic, inherit from `NewDefaultUrlProvider` and override the `GetUrl()` virtual method rather than implementing `IUrlProvider` from scratch.
 {% endhint %}
 
 #### Example
 
-This example replaces the default URL provider with a custom implementation, based on the default URL provider itself. The custom URL provider implements a new routing scheme for product pages.
+This example replaces the default URL provider with a custom implementation, based on `NewDefaultUrlProvider`. The custom URL provider implements a new routing scheme for product pages.
 
-{% hint style="info" %}
-The code below alters the outbound URL for product pages, but does not provide similar handling for inbound URL routing. This _will_ break the inbound URL routing, effectively making the product pages unroutable.
+{% hint style="warning" %}
+The code below alters the outbound URL for product pages but does not provide matching inbound URL routing. This **will** break inbound routing, making the product pages unroutable.
 
-To fix the inbound URL routing, you have to implement a custom content finder. See [IContentFinder](icontentfinder.md) for more information.
+To restore inbound routing, implement a custom content finder. See [IContentFinder](icontentfinder.md) for more information.
 {% endhint %}
 
 ```csharp
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -245,33 +224,48 @@ using Umbraco.Cms.Core.Web;
 
 namespace RoutingDocs.UrlProviders;
 
-// A custom URL provider, designed to replace the default URL provider to provide a custom URL scheme for product pages.
+// A custom URL provider that replaces the default URL provider
+// to implement a custom URL scheme for product pages.
 public class CustomUrlProvider : NewDefaultUrlProvider
 {
-    // Constructor dependencies omitted for brevity.
-    public CustomUrlProvider(...)
-        : base(...)
+    public CustomUrlProvider(
+        IOptionsMonitor<RequestHandlerSettings> requestSettings,
+        ILogger<NewDefaultUrlProvider> logger,
+        ISiteDomainMapper siteDomainMapper,
+        IUmbracoContextAccessor umbracoContextAccessor,
+        UriUtility uriUtility,
+        IPublishedContentCache publishedContentCache,
+        IDomainCache domainCache,
+        IIdKeyMap idKeyMap,
+        IDocumentUrlService documentUrlService,
+        IDocumentNavigationQueryService documentNavigationQueryService,
+        IPublishedContentStatusFilteringService publishedContentStatusFilteringService,
+        ILanguageService languageService)
+        : base(requestSettings, logger, siteDomainMapper, umbracoContextAccessor, uriUtility,
+            publishedContentCache, domainCache, idKeyMap, documentUrlService,
+            documentNavigationQueryService, publishedContentStatusFilteringService, languageService)
     {
     }
 
     public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {
-        // Get the default url from the base URL provider implementation (NewDefaultUrlProvider).
+        // Get the default URL from the base implementation (NewDefaultUrlProvider).
         UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
+
         if (defaultUrlInfo?.Url is null)
         {
             // The base URL provider could not resolve a URL.
             return null;
         }
 
-        // Only apply the custom URL scheme to product pages
+        // Only apply the custom URL scheme to product pages.
         if (content.ContentType.Alias is not "productPage")
         {
-            // Not a product page, return the default URL.
+            // Not a product page — return the default URL.
             return defaultUrlInfo;
         }
 
-        // Implement the custom URL scheme for product pages.
+        // Build the custom URL for product pages.
         var productPageUrl = $"{defaultUrlInfo.Url.ToString().TrimEnd('/')}/some-custom-path";
         return UrlInfo.FromUri(
             new Uri(productPageUrl, UriKind.RelativeOrAbsolute),
@@ -302,22 +296,22 @@ public class RegisterCustomUrlProviderComposer : IComposer
 ```
 
 {% hint style="info" %}
-If you want to have multiple URL providers, you can add them one after the other with multiple `Insert` methods. Umbraco will cycle through all the providers registered until it finds one that doesn't return `null`. If all custom URL providers return `null` it will fall back to the default URL provider. The last added with `Insert` is the first that will be executed.
+To use multiple URL providers, add them with multiple `Insert` calls. Umbraco cycles through all registered providers until one returns a non-`null` value. If all custom providers return `null`, Umbraco falls back to the default URL provider. The last provider added with `Insert` is the first to execute.
 {% endhint %}
 
 ### GetOtherUrls
 
-The GetOtherUrls method is only used in the Umbraco Backoffice to provide a list to editors of other Urls which also map to the node.
+The `GetOtherUrls` method is used only in the Umbraco Backoffice. It provides editors with a list of other URLs that also map to the node.
 
-For example, let's consider a convention-led `umbracoUrlAlias` property that enables editors to specify a comma-delimited list of alternative URLs for the node. It has a corresponding `AliasUrlProvider` registered in the `UrlProviderCollection` to display this list to the Editor in the backoffice Info Content app for a node.
+For example, the convention-based `umbracoUrlAlias` property allows editors to specify a comma-delimited list of alternative URLs for a node. A corresponding `AliasUrlProvider` is registered in the `UrlProviderCollection` to display this list in the backoffice **Info** panel.
 
 ### GetPreviewUrlAsync
 
-Implement this method if the URL provider supports a custom preview URL scheme.
+Implement this method when the URL provider supports a custom preview URL scheme.
 
-A common use case for this is providing external preview environments for headless sites. See [Additional preview environments support](../../content-delivery-api/additional-preview-environments-support.md) for a complete example.
+A common use case is providing external preview environments for headless sites. See [Additional preview environments support](../../content-delivery-api/additional-preview-environments-support.md) for a complete example.
 
-Most custom URL providers do not support this, and thus a default implementation is sufficient:
+Most custom URL providers do not support this. A default implementation returning `null` is sufficient in those cases:
 
 ```csharp
 public Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment)
@@ -326,9 +320,9 @@ public Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, stri
 
 ### Url Provider Mode
 
-Specifies the type of URLs that the URL provider should produce, eg. absolute vs. relative URLs. Auto is the default
+The URL Provider Mode specifies whether the URL provider produces absolute or relative URLs. `Auto` is the default.
 
-These are the different modes:
+The available modes are:
 
 ```csharp
 public enum UrlMode
@@ -355,7 +349,7 @@ public enum UrlMode
 }
 ```
 
-Default setting can be changed in the `Umbraco:CMS:WebRouting` section of `appsettings.json`:
+Change the default setting in the  `Umbraco:CMS:WebRouting` section of `appsettings.json`:
 
 ```json
 "Umbraco": {
@@ -371,9 +365,9 @@ See [WebRouting config reference documentation](../../configuration/webroutingse
 
 ### Site Domain Mapper
 
-The `ISiteDomainMapper` implementation is used in the `IUrlProvider` and filters a list of `DomainAndUri` to pick one that best matches the current request.
+The `ISiteDomainMapper` implementation is used in the `IUrlProvider`. It filters a list of `DomainAndUri` objects to return the one that best matches the current request.
 
-Create a custom SiteDomainMapper by implementing ISiteDomainMapper
+Create a custom `SiteDomainMapper` by implementing `ISiteDomainMapper`:
 
 ```csharp
 public interface ISiteDomainMapper
@@ -383,11 +377,11 @@ public interface ISiteDomainMapper
 }
 ```
 
-The MapDomain methods will receive the Current Uri of the request, and custom logic can be implemented to decide upon the preferred domain to use for a site in the context of that request. The SiteDomainMapper's role is to get the current Uri and all eligible domains, and only return one domain which is then used by the UrlProvider to create the Url.
+The `MapDomain` methods receive the current request URI. Custom logic determines which domain to use for a site in the context of that request. The `SiteDomainMapper` receives the current URI and all eligible domains, and returns the single domain used by the URL Provider to construct the URL.
 
 Only a single `ISiteDomainMapper` can be registered with Umbraco.
 
-Register the custom `ISiteDomainMapper` with Umbraco using the `SetSiteDomainHelper` extension method
+Register the custom `ISiteDomainMapper` using the `SetSiteDomainHelper` extension method:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -407,52 +401,50 @@ public class RegisterCustomSiteDomainMapperComposer : IComposer
 
 ### Default SiteDomainMapper
 
-Umbraco ships with a default `SiteDomainMapper`. This has some useful functionality for grouping sets of domains together. With Umbraco Cloud, or another Umbraco development environment scenario, there maybe be multiple domains setup for a site 'live, 'staging', 'testing' or a separate domain to access the backoffice. Each domain will be setup as a 'Culture and Hostname' inside Umbraco. By default editors will see the full list of possible URLs for each of their content items on each domain, which can be confusing. If the additional URLs aren't present in Culture and Hostnames, then when testing the front-end of the site on a 'staging' URL, will result in navigation links taking you to the registered domain!
+Umbraco ships with a default `SiteDomainMapper` that supports grouping sets of domains together. In a multi-environment setup such as Umbraco Cloud, multiple domains may be configured for a single site. For example, live, staging, testing, and a backoffice domain. Each domain is set up as a **Culture and Hostname** entry inside Umbraco.
 
-![Culture and Hostnames multiple domains](../../../.gitbook/assets/culture-and-hostnames-v8.png)
+![Culture and Hostnames multiple domains](../../../.gitbook/assets/culture-and-hostnames-v17.png)
 
-What the editor sees without any SiteDomainMapper, visiting the backoffice URL:
+Without a `SiteDomainMapper`, editors see the full list of possible URLs for each content item across all configured domains:
 
-![All domains listed](../../../.gitbook/assets/no-sitedomainhelp.png)
+![All domains listed](../../../.gitbook/assets/no-sitedomainhelp-v17.png)
 
-Which is 'noise' and can lead to confusion: accidentally clicking the staging url, which is likely to be served from a different environment / different database etc may display the wrong content...
+This can lead to confusion. Clicking a staging URL may display content from a different environment or database.
 
-To avoid this problem, use the default SiteDomainMapper's AddSite method to group Urls together.
-
-Since the SiteDomainMapper is registered in the DI, we can't consume it directly from a composer, so first create a component which adds the sites in the initialize method:
+To avoid this, use the default `SiteDomainMapper`'s `AddSite` method to group related URLs together. Because the `SiteDomainMapper` is registered in the DI container, create a component to add the sites in the `Initialize` method:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Routing;
 
-namespace RoutingDocs.SiteDomainMapping;
+namespace UmbracoProject.App_Plugins.Outbound;
 
-public class SiteDomainMapperComponent : IComponent
+public class SiteDomainMapperComponent : IAsyncComponent
 {
     private readonly SiteDomainMapper? _siteDomainMapper;
 
     public SiteDomainMapperComponent(ISiteDomainMapper siteDomainMapper)
     {
-        // SiteDomainMapper can be overwritten, so ensure it's the default one which contains the AddSite
         if (siteDomainMapper is SiteDomainMapper concreteSiteDomainMapper)
         {
             _siteDomainMapper = concreteSiteDomainMapper;
         }
     }
 
-    public void Initialize()
+    public Task InitializeAsync(bool isCompleted, CancellationToken cancellationToken)
     {
-        _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-        _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-        _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
+        _siteDomainMapper?.AddSite("dev", "myproject-dev.euwest01.umbraco.io", "myproject.euwest01.umbraco.io");
+        _siteDomainMapper?.AddSite("staging", "myproject-staging.euwest01.umbraco.io");
+
+        return Task.CompletedTask;
     }
 
-    public void Terminate()
-    { }
+    public Task TerminateAsync(bool isCompleted, CancellationToken cancellationToken)
+        => Task.CompletedTask;
 }
 ```
 
-Then add the component with a composer:
+Register the component with a composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -464,28 +456,31 @@ public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
 }
 ```
 
-Now if an editor visits the backoffice via the staging url they will only see domains for the staging url:
+When an editor visits the backoffice, the **Links** panel filters the displayed URLs to only those in the same site group as the current domain. An editor visiting via `myproject-staging.euwest01.umbraco.io` sees only the staging URL:
 
-![Staging domain only](../../../.gitbook/assets/staging-only-staging.png)
+![Staging domain only](../../../.gitbook/assets/staging-only-staging-v17.png)
 
-Now if an editor visits the backoffice via the backoffice url they will only see domains for the backoffice url and the production url:
+An editor visiting via `myproject-dev.euwest01.umbraco.io` sees only the `dev` and `live` URLs:
 
-![Backoffice + production domains only](../../../.gitbook/assets/backoffice-see-prod.png)
+![Backoffice and production domains only](../../../.gitbook/assets/backoffice-see-prod-v17.png)
 
-NB: it's not a 1-1 mapping, but a grouping. Multiple Urls can be added to a group. Think multilingual production and staging variations, and in the example above, if an editor logged in to the backoffice via the production url, eg umbraco-v8.localtest.me/umbraco - they would see the umbraco-v8-backoffice.localtest.me domain listed.
+{% hint style="info" %}
+This is a grouping, not a one-to-one mapping. Multiple URLs can be added to a group. In the example above, an editor visiting via `myproject.euwest01.umbraco.io` (the live domain) would also see `myproject-dev.euwest01.umbraco.io` listed, as both belong to the `dev` group.
+{% endhint %}
 
 #### Grouping the groupings - BindSites
 
-The SiteDomainMapper contains a 'BindSites' method that enables different site groupings to be bound together:
+The `SiteDomainMapper` includes a `BindSites` method to bind different site groupings together:
 
 ```csharp
-public void Initialize()
+public Task InitializeAsync(bool isCompleted, CancellationToken cancellationToken)
 {
-    _siteDomainMapper?.AddSite("backoffice", "umbraco-v8-backoffice.localtest.me", "umbraco-v8.localtest.me");
-    _siteDomainMapper?.AddSite("preproduction", "umbraco-v8-preprod.localtest.me");
-    _siteDomainMapper?.AddSite("staging", "umbraco-v8-staging.localtest.me");
-    _siteDomainMapper?.BindSites("backoffice", "staging");
+    _siteDomainMapper?.AddSite("dev", "myproject-dev.euwest01.umbraco.io", "myproject.euwest01.umbraco.io");
+    _siteDomainMapper?.AddSite("staging", "myproject-staging.euwest01.umbraco.io");
+    _siteDomainMapper?.BindSites("dev", "staging");
+
+    return Task.CompletedTask;
 }
 ```
 
-Visiting the backoffice now via umbraco-v8-backoffice.localtest.me/umbraco would list all the 'backoffice' grouped domains AND all the 'staging' grouped domains.
+Visiting the backoffice via `myproject-dev.euwest01.umbraco.io` now lists all domains from both the `dev` and the `staging` group.
