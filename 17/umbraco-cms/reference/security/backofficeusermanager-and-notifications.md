@@ -2,7 +2,7 @@
 description: >-
   The BackOfficeUserManager is the ASP.NET Core Identity UserManager
   implementation in Umbraco. It exposes APIs for working with Umbraco User's via
-  the ASP.NET Core Identity including password handling.
+  the ASP.NET Core Identity, including password handling.
 ---
 
 # BackOfficeUserManager and Events
