@@ -4,7 +4,9 @@ The **Creating a Basic Site** tutorial provides step-by-step instructions to bui
 
 ## **What You Need**
 
-To begin this tutorial, you will need to download the [Custom Umbraco Template](https://umbra.co/Umbracotemplate). Clicking the link will automatically download the files to your device.
+To begin this tutorial, download the Custom Umbraco Template folder attached below:
+
+{% file src="../../.gitbook/assets/CustomUmbracoTemplate.zip" %}
 
 ### Installing Umbraco
 
@@ -24,7 +26,7 @@ The installation will take a couple of minutes to complete.
 
 ### Preparing the Custom Umbraco Template Site
 
-1. Unzip the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) to a folder on your system. Clicking the link will automatically download the files to your device.
+1. Unzip the Custom Umbraco Template to a folder on your system.&#x20;
 2.  Open the **index.html** from the folder in your preferred browser to see the template.
 
     ![Default template homepage](../../.gitbook/assets/figure-5-retrospect-template-v8.png)

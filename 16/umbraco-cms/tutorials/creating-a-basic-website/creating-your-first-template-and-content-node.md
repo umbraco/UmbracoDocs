@@ -18,7 +18,7 @@ To edit the template:
 
     ![Home Page Template](../../.gitbook/assets/empty-homepage-template.png)
 
-We will use the files from the [Custom Umbraco Template](https://umbra.co/Umbracotemplate) folder. Clicking the link will automatically download the files to your device.
+Use the files from the Custom Umbraco Template folder:
 
 1. Open the **Custom Umbraco Template** folder and copy the contents of **index.html**.
 2. Paste the content into the _HomePage_ template below the closing curly brace "}".
