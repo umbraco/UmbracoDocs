@@ -87,3 +87,92 @@ Internally these are mainly used for auditing but there are some that allow you 
     and you want to log out of that external provider when the user is logged out of the backoffice (that is log out of everywhere).\
     The notification has a property `SignOutRedirectUrl`. If this property is assigned then Umbraco will redirect to that URL upon successful\
     backoffice sign out in order to sign the user out of the external login provider.
+
+### Example: Signing out of an external OIDC provider
+  The following handler demonstrates how to assign `SignOutRedirectUrl` using Auth0 as the external login provider. The following handler retrieves the user's stored `id_token` and constructs a logout URL for the external provider with the appropriate `id_token_hint` and `post_logout_redirect_uri` parameters, then assigns that URL to `notification.SignOutRedirectUrl`.
+  
+```csharp
+public class UserLogoutSuccessNotificationHandler
+    : INotificationAsyncHandler<UserLogoutSuccessNotification>
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IUserService _userService;
+    private readonly IExternalLoginWithKeyService _externalLoginWithKeyService;
+
+    public UserLogoutSuccessNotificationHandler(
+        IHttpContextAccessor httpContextAccessor,
+        IUserService userService,
+        IExternalLoginWithKeyService externalLoginWithKeyService)
+    {
+        _httpContextAccessor = httpContextAccessor;
+        _userService = userService;
+        _externalLoginWithKeyService = externalLoginWithKeyService;
+    }
+
+    public Task HandleAsync(
+        UserLogoutSuccessNotification notification,
+        CancellationToken cancellationToken)
+    {
+        HttpRequest? request = _httpContextAccessor.HttpContext?.Request;
+        if (request is null)
+        {
+            return Task.CompletedTask;
+        }
+
+        Guid? userKey = GetUserKey(notification.AffectedUserId);
+        if (userKey is null)
+        {
+            return Task.CompletedTask;
+        }
+
+        var schemeName = BackOfficeAuthenticationBuilder
+            .SchemeForBackOffice(Auth0ProviderOptions.SchemeName);
+
+        var idToken = _externalLoginWithKeyService
+            .GetExternalLoginTokens(userKey.Value)
+            .Where(e => schemeName.Equals(e.LoginProvider, StringComparison.Ordinal))
+            .FirstOrDefault(e => OpenIdConnectParameterNames.IdToken
+                .Equals(e.Name, StringComparison.Ordinal))
+            ?.Value;
+
+        if (idToken is null)
+        {
+            return Task.CompletedTask;
+        }
+
+        // Replace with your actual tenant ID, 
+        const string ExternalLoginProviderTenant = "{your-tenant-id}";
+
+        notification.SignOutRedirectUrl =
+            $"https://{ExternalLoginProviderTenant}/oidc/logout" +
+            $"?id_token_hint={Uri.EscapeDataString(idToken)}" +
+            $"&post_logout_redirect_uri={Uri.EscapeDataString(
+                $"{request.Scheme}://{request.Host}/umbraco/logout")}";
+
+        return Task.CompletedTask;
+    }
+
+    private Guid? GetUserKey(string? userId)
+    {
+        if (userId is null)
+        {
+            return null;
+        }
+
+        if (int.TryParse(userId, NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out var id))
+        {
+            return _userService.GetUserById(id)?.Key;
+        }
+
+        if (Guid.TryParse(userId, out Guid key))
+        {
+            return key;
+        }
+
+        return null;
+    }
+}
+```
+> **Note:** Replace `{your-tenant-id}` with your external login provider tenant ID, and adjust `Auth0ProviderOptions.SchemeName` to match your provider's scheme name.
+
