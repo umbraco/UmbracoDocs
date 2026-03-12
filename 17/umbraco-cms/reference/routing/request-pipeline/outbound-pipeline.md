@@ -6,9 +6,9 @@ description: Learn how the Umbraco outbound request pipeline works.
 
 The **outbound pipeline** consists out of the following steps:
 
-1. [Create segments](outbound-pipeline.md#1-create-segments)
-2. [Create paths](outbound-pipeline.md#2-create-paths)
-3. [Create URLs](outbound-pipeline.md#3-creating-urls)
+1. [Create segments](#id-1.-create-segments)
+2. [Create paths](#id-2.-create-paths)
+3. [Create URLs](#id-3.-creating-urls)
 
 To explain these steps, the following content tree is used as an example:
 
@@ -41,7 +41,7 @@ public interface IUrlSegmentProvider
 Each culture variation can have a different URL segment.
 {% endhint %}
 
-The returned string becomes the URL segment for the node. The value cannot contain the URL segment separator characte `/`. A value such as `5678/swibble` would create additional segments, which is not allowed.
+The returned string becomes the URL segment for the node. The value cannot contain the URL segment separator character `/`. A value such as `5678/swibble` would create additional segments, which is not allowed.
 
 #### Example
 
@@ -307,7 +307,7 @@ For example, the convention-based `umbracoUrlAlias` property allows editors to s
 
 ### GetPreviewUrlAsync
 
-mplement this method when the URL provider supports a custom preview URL scheme.
+Implement this method when the URL provider supports a custom preview URL scheme.
 
 A common use case is providing external preview environments for headless sites. See [Additional preview environments support](../../content-delivery-api/additional-preview-environments-support.md) for a complete example.
 
@@ -460,7 +460,7 @@ When an editor visits the backoffice, the **Links** panel filters the displayed 
 
 ![Staging domain only](../../../.gitbook/assets/staging-only-staging-v17.png)
 
-An editor visiting via `myproject-dev.euwest01.umbraco.io` sees only the dev and live URLs:
+An editor visiting via `myproject-dev.euwest01.umbraco.io` sees only the `dev` and `live` URLs:
 
 ![Backoffice and production domains only](../../../.gitbook/assets/backoffice-see-prod-v17.png)
 
