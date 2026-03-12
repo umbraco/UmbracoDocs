@@ -16,7 +16,13 @@ This happens even though the CI/CD deployments were successfull, and files were 
 
 #### How to resolve the issue
 
-To resolve this issue, remove `RestorePackagesWithLockFile` for deployments to go through as expected.
+To resolve this issue, you need to ensure that when the site is restoring on Umbraco Cloud it is not using the lock file. You can do this by adding this line in your csproj file:
+
+```xml
+<RestoreForceEvaluate Condition="'$(KUDU_SYNC_CMD)' != ''">>true</RestoreForceEvaluate>
+```
+
+[Force Evaluate option on dotnet restore](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore#options)
 
 ### Deployment report: No changes detected - cleaning up
 
