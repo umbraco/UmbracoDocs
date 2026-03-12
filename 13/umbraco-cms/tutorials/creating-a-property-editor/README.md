@@ -165,11 +165,11 @@ Now our basic parts of the editor are done, namely:
 
 We will now restart our application. In the Document Type, add a new property called "Suggestion" and add to it the newly created property editor "Suggestions" and save it.
 
-![Suggestion Property Editor](images/suggestion-property-editor.png)
+![Suggestion Property Editor](<../../.gitbook/assets/suggestion-property-editor (1).png>)
 
 Now open the content item of that Document Type and there will be an alert message saying "The controller has landed", which means all is well.
 
-![Controller Landed](images/Controller-landed.png)
+![Controller Landed](<../../.gitbook/assets/Controller-landed (1).png>)
 
 We can now edit the assigned property's value with our new property editor.
 
@@ -213,7 +213,7 @@ Then update the HTML file with the following, where we add the id to the button:
 
 Now, clear the cache, reload the document, and see the Suggestions Data Type running.
 
-![Example of the Suggestions Data Type running](images/suggestion-editor-backoffice.png)
+![Example of the Suggestions Data Type running](<../../.gitbook/assets/suggestion-editor-backoffice (1).png>)
 
 When we save or publish, the value of the Data Type is automatically synced to the current content object and sent to the server, all through the power of Angular and the `ng-model` attribute.
 

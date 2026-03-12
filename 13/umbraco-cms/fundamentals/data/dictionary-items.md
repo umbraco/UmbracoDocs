@@ -6,9 +6,9 @@ description: Creating Dictionary Items in Umbraco
 
 Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates or macros that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
 
-Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:&#x20;
+Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
 
-<figure><img src="images/dictionary-item.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dictionary-item (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Adding a Dictionary Item
 
@@ -18,11 +18,11 @@ To add a Dictionary Item:
 2. Click on **Dictionary** in the **Translation** tree and select **Create**.
 3.  Enter the **Name** for the dictionary item. Let's say _Welcome_.
 
-    <figure><img src="images/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Create-dictionary-item.png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
 5.  Enter the values for the different language versions.
 
-    <figure><img src="images/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/dictionary-item-values (1).png" alt=""><figcaption></figcaption></figure>
 6. Click **Save**.
 
 ### Grouping Dictionary Items
@@ -38,7 +38,7 @@ To group dictionary items:
 7. Click **Create**.
 8.  Enter the values for the different language versions.
 
-    <figure><img src="images/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/display-dictionary-item (1).png" alt=""><figcaption></figcaption></figure>
 9. Click **Save**.
 
 ## Editing Dictionary Items
@@ -67,7 +67,7 @@ To use dictionary values in the Document Type, follow these steps:
 2. Open the Document Type where you want to use the Dictionary value.
 3. Locate the label and type `#MyDictionaryKey`. For example: `#Welcome` or `#WelcomeDescription`.
 
-<figure><img src="../../.gitbook/assets/Using_Dictionary_Value.jpg" alt=""><figcaption><p>Using Dictionary Value in Document Type</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Using_Dictionary_Value (1).jpg" alt=""><figcaption><p>Using Dictionary Value in Document Type</p></figcaption></figure>
 
 4. Click **Save**.
 5. Go to the **Content** section.
@@ -85,7 +85,7 @@ To fetch dictionary values in the template, replace the text with the following 
 @Umbraco.GetDictionaryValue("Welcome")
 ```
 
-![Rendering dictionary item](images/rendering-dictionary-item.png)
+![Rendering dictionary item](<../../.gitbook/assets/rendering-dictionary-item (1).png>)
 
 Alternatively, you can specify an `altText` which will be returned if the dictionary value is empty.
 
@@ -93,7 +93,7 @@ Alternatively, you can specify an `altText` which will be returned if the dictio
 @Umbraco.GetDictionaryValueOrDefault("Welcome", "Another amazing day in Umbraco")
 ```
 
-![Rendering dictionary item](images/rendering-altvalue-dictionary-item.png)
+![Rendering dictionary item](<../../.gitbook/assets/rendering-altvalue-dictionary-item (1).png>)
 
 ## Importing and exporting Dictionary Items
 
@@ -110,7 +110,7 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Right-click the Dictionary Item to open the options menu with the Export feature](images/export.png)
+![Right-click the Dictionary Item to open the options menu with the Export feature](<../../.gitbook/assets/export (1).png>)
 
 ### Importing Dictionary Items
 
@@ -126,7 +126,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 The Dictionary Items have now been added to your website.
 
-![Review the Dictionary Items for import before confirming](images/import.png)
+![Review the Dictionary Items for import before confirming](<../../.gitbook/assets/import (1).png>)
 
 ## Using Dictionary Item in a Multilingual website
 

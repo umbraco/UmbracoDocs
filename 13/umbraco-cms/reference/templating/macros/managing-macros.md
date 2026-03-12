@@ -10,7 +10,7 @@ There are a couple of ways to create a macro.
 
 The first way is to manually create a macro, by right-clicking the Macro folder in the Settings section:
 
-![Create macro](images/create-macro-tree-8.png)
+![Create macro](../../../.gitbook/assets/create-macro-tree-8.png)
 
 Give it a name in the dialog screen, and you'll be presented with the macro editor.
 
@@ -18,7 +18,7 @@ Give it a name in the dialog screen, and you'll be presented with the macro edit
 
 The second option is to create the macro through **Partial View Macro Files**.
 
-![Partial View Macro files dialog](images/partial-view-macro-files-8.png)
+![Partial View Macro files dialog](../../../.gitbook/assets/partial-view-macro-files-8.png)
 
 The dialog provides the following options:
 
@@ -31,7 +31,7 @@ The dialog provides the following options:
 
 The macro editor view comes with a set of configuration options.
 
-![Macro editor](images/macro-editor-8.png)
+![Macro editor](../../../.gitbook/assets/macro-editor-8.png)
 
 ### Macro partial view
 
@@ -63,7 +63,7 @@ Macro parameters can be used to change the output of a macro at runtime. Macro p
 
 The macro parameter dialog looks like this:
 
-![Macro editor](images/macro-parameters-v8.png)
+![Macro editor](../../../.gitbook/assets/macro-parameters-v8.png)
 
 Here you can add/modify/remove macro parameters.
 
@@ -94,7 +94,7 @@ This list defines the different types of macro parameters:
 
 In some case you want to have the macro in the middle of a sentence.
 
-![Inline macros used multiple places inside a single Rich Text Editor](images/inline-macro-in-richtext.png)
+![Inline macros used multiple places inside a single Rich Text Editor](../../../.gitbook/assets/inline-macro-in-richtext.png)
 
 To enable editors to add the macro inline, follow these steps:
 

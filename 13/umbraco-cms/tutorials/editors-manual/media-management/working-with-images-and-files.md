@@ -15,9 +15,9 @@ The following default Media Types are available:
 In the Media Library, there are multiple ways to upload media items. The two most commonly used ones are:
 
 1. Use the **Create** button to create a new media item and then upload directly from your machine.
-2. The **Upload** field is available in every folder in the Media section, where you can drag and drop files or choose files to the desired location.
+2.  The **Upload** field is available in every folder in the Media section, where you can drag and drop files or choose files to the desired location.
 
-    ![mediaUpload.jpg](images/upload-images-v9.png)
+    ![mediaUpload.jpg](<../../../.gitbook/assets/upload-images-v9 (1).png>)
 
 {% hint style="info" %}
 We recommend using folders to organize your media items if you are going to add a lot of media to your website.
@@ -30,9 +30,9 @@ If you wish to tidy up the Media section of your site, you can delete existing m
 To delete a Media Item:
 
 1. Select the media item you want to delete.
-2. Right-click the media item and select **Delete**.
+2.  Right-click the media item and select **Delete**.
 
-    ![mediaUpload.jpg](images/delete-media-item-v9.png)
+    ![mediaUpload.jpg](<../../../.gitbook/assets/delete-media-item-v9 (1).png>)
 3. Click **OK**.
 4. Click **OK** to dismiss the confirmation message.
 
@@ -40,14 +40,14 @@ To delete a Media Item:
 
 The **Recycle Bin** is a separate tree structure within the Media section. Clicking on the arrow next to the Recycle Bin will display its contents.
 
-![Recycle Bin](images/mediaRecycle-v9.png)
+![Recycle Bin](<../../../.gitbook/assets/mediaRecycle-v9 (1).png>)
 
 To restore a Media Item:
 
 1. Click **•••** next to the Media Item or right-click the Media Item you want to restore.
-2. Select **Restore**.
+2.  Select **Restore**.
 
-    ![Restore Folder](images/Restore-MediaItem-v9.png)
+    ![Restore Folder](<../../../.gitbook/assets/Restore-MediaItem-v9 (1).png>)
 3. Click **Restore**.
 
 ## Moving an Image or File
@@ -55,17 +55,17 @@ To restore a Media Item:
 To move Media Items within the Media section:
 
 1. Select the Media Item you want to move.
-2. Right-click the Media Item and click **Move**.
+2.  Right-click the Media Item and click **Move**.
 
-    ![Move media items](images/move-images-v9.png)
-3. Choose the location where you want to move the Media Item to in the tree structure.
+    ![Move media items](<../../../.gitbook/assets/move-images-v9 (1).png>)
+3.  Choose the location where you want to move the Media Item to in the tree structure.
 
-    ![Move Media.png](images/Move-media-location-v9.png)
+    ![Move Media.png](<../../../.gitbook/assets/Move-media-location-v9 (1).png>)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.
 
 ## More Information
 
 * [Media Picker](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/media-picker-3.md)
-* [Creating Media](../../../fundamentals/data/creating-media/README.md)
+* [Creating Media](../../../fundamentals/data/creating-media/)
 * [Rendering Media](../../../fundamentals/design/rendering-media.md)
