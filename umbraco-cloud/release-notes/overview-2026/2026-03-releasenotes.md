@@ -28,7 +28,7 @@ For more information on setting up pipelines that deploy to multiple environment
 
 ## Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3
 
-Added functionality that ensures if a user already exists with the same email as the one from an External Login Provider, then we no longer overwrite their user groups but keeps them the same. [#993](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993)
+If a user’s email matches an existing account during external login, their user groups are now preserved instead of being overwritten. [#993](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993)
 
 Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. [#990](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990)
 
