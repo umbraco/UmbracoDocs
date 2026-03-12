@@ -89,7 +89,8 @@ Internally these are mainly used for auditing but there are some that allow you 
     backoffice sign out in order to sign the user out of the external login provider.
 
 ### Example: Signing out of Auth0 after backoffice logout
-  The following handler demonstrates how to assign `SignOutRedirectUrl` when using Auth0. 
+
+The following handler demonstrates how to assign `SignOutRedirectUrl` when using Auth0. 
   
 ```csharp
 public class UserLogoutSuccessNotificationHandler
@@ -174,5 +175,8 @@ public class UserLogoutSuccessNotificationHandler
     }
 }
 ```
-> **Note:** Replace `{your-tenant-id}` with your external login provider tenant ID, and adjust `Auth0ProviderOptions.SchemeName` to match your provider's scheme name.
+
+{% hint style="info" %}
+Replace `{your-tenant-id}` with your external login provider tenant ID, and adjust `Auth0ProviderOptions.SchemeName` to match your provider's scheme name.
+{% endhint %}
 
