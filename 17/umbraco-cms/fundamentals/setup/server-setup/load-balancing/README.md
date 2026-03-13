@@ -27,8 +27,8 @@ It is highly recommended that you setup your staging environment to also be load
 These instructions make the following assumptions:
 
 * All web servers can communicate with the database where Umbraco data is stored
-* You are running Umbraco 9.0.0 or above
-* _**You will designate a single server to be the backoffice server for which your editors will log into for editing content.**_ Umbraco will not work correctly if the backoffice is behind the load balancer.
+* You are running Umbraco 17.0.0 or above
+* You will choose how to handle the backoffice: either designate a single server outside the load balancer, or load balance the backoffice itself (requires additional configuration).
 
 There are three design alternatives you can use to effectively load balance servers:
 
@@ -42,11 +42,21 @@ You will need a load balancer to do your load balancing.
 
 In order to understand how to host your site it is best to understand how Umbraco's flexible load balancing works.
 
-The following diagram shows the data flow/communication between each item in the environment:
+There are two approaches to structuring your load balanced environment:
+
+**Option 1: Load balance the backoffice**
+
+You can place the backoffice behind the load balancer alongside your front-end servers. This requires additional configuration steps — see [Load Balancing the Backoffice](./load-balancing-backoffice.md) for details.
+
+![Umbraco load balanced backoffice diagram](../../../../.gitbook/assets/load-balanced-backoffice.png)
+
+**Option 2: Dedicated backoffice server (SchedulingPublisher/Subscriber)**
+
+Alternatively, you can designate a single server as the backoffice (`SchedulingPublisher`) that sits outside the load balancer, with the remaining servers acting as `Subscriber` (front-end) nodes. This is the more traditional approach.
 
 ![Umbraco flexible load balancing diagram](<../../../../.gitbook/assets/flexible-load-balancing-v9 (1).png>)
 
-The process is as follows:
+In this setup, the data flow works as follows:
 
 * Administrators and editors create, update, delete data/content on the backoffice server
 * These events are converted into data structures called "instructions" and are stored in the database in a queue
@@ -134,24 +144,6 @@ Ensure to analyze logs from all servers and check for any warnings and errors.
 When upgrading it is possible to run the upgrades unattended.
 
 Find steps on how to enable the feature for a load balanced setup in the [General Upgrades](../../upgrading/upgrade-unattended.md#unattended-upgrades-in-a-load-balanced-setup) article.
-
-## FAQs
-
-_Here's some common questions that are asked regarding Load Balancing with Umbraco:_
-
-**Question>** _Why do I need to have a single web instance for Umbraco admin?_
-
-_TL:DR_ You must not load balance the Umbraco backoffice, you will end up with data integrity or corruption issues.
-
-The reason you need a single server is because there is no way to guarantee transactional safety between servers. This is because we don't currently use database level locking, we only use application (c#) level locks to guarantee transactional data integrity which is only possible to work on one server. If you have multiple admins saving and publishing at once between servers then the order in which this data is read and written to the database absolutely must be consistent otherwise you will end up with data corruption.
-
-Additionally, the order in which cache instructions are written to the cache instructions table is important for LB, this order is guaranteed by having a single admin server.
-
-**Question>** _Can my SchedulingPublisher backoffice admin server also serve front-end requests?_
-
-Yes. There are no problems with having your SchedulingPublisher backoffice admin server also serve front-end request.
-
-However, if you wish to have different security policies for your front-end servers and your back office servers, you may choose to not do this.
 
 ***
 
