@@ -190,7 +190,7 @@ Umbraco ID automatically removes the native Umbraco login from the backoffice. W
 
 Adding your own login provider to a Cloud project stops the automatic redirect. Available login providers are shown instead.
 
-Umbraco Cloud also offers an external login provider feature, where you only have to bring your own configuration. [External Login Providers on Umbraco Cloud](../../../../umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers.md).
+Umbraco Cloud also offers an external login provider feature, where you only have to bring your own configuration. For more information, see [External Login Providers on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers).
 
 ### Auto-linking on Member authentication
 
