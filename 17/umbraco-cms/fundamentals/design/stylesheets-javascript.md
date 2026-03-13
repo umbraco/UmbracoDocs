@@ -6,21 +6,20 @@ description: Information on working with stylesheets and JavaScript in Umbraco.
 
 ## Stylesheets in the Backoffice
 
-You can create and edit stylesheets in the Stylesheets folder in the Settings section of the Backoffice.
+You can create and edit stylesheets in the **Stylesheets** folder in the **Settings** section of the Backoffice.
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt="Creating a new stylesheet"><figcaption><p>Creating a new stylesheet</p></figcaption></figure>
+![Creating a new stylesheet](../../.gitbook/assets/creating-stylesheet.png)
 
-In the Create menu, these options are available:
+The **Create** menu consists of:
 
 * Stylesheet file (for use in templates/views)
-* Rich Text Editor stylesheet file (for use in [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/))
 * Folder (for keeping stylesheets organized)
 
 {% hint style="info" %}
 It is currently not possible to use any CSS preprocessor (such as Syntactically Awesome Style Sheets (SASS)) in the backoffice.
 {% endhint %}
 
-After creating a new stylesheet, you would work with it as you would with templates or JavaScript files - using the built-in backoffice text editor. When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
+After creating a new stylesheet, you would work with it as you would with templates or JavaScript files using the built-in backoffice text editor. When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
 
 ![Stylesheet Rich Text Editor (RTE)](<../../.gitbook/assets/2-rte-editor (1).png>)
 
@@ -28,7 +27,7 @@ The rules you create in the Rich Text Editor section will carry over to the Code
 
 ![Stylesheet RTE tab](<../../.gitbook/assets/3-rte-editor-p2 (1).png>) ![Stylesheet Code tab](<../../.gitbook/assets/3-rte-editor-p3 (1).png>)
 
-To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (css files are usually referenced in the layout or home templates) and link to it with the `link` tag.
+To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (CSS files are usually referenced in the layout or home templates) and link to it with the `link` tag.
 
 ![Linking CSS in template](<../../.gitbook/assets/4-link-css-v9 (1).png>)
 
@@ -54,15 +53,15 @@ If your RTE is styled differently on the frontend of the site, the backoffice st
 
 ## JavaScript files in the Backoffice
 
-To create and edit JavaScript files in the Backoffice, head on over to the Scripts folder in the Settings section of the Backoffice.
+To create and edit JavaScript files in the Backoffice, go to the **Scripts** folder in the **Settings** section of the Backoffice.
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt="Creating a new JavaScript"><figcaption><p>Creating a new JavaScript</p></figcaption></figure>
+![Creating a new JavaScript](../../.gitbook/assets/creating-scripts.png)
 
 From here you can add a new JavaScript file, or a new folder.
 
 Add a new JavaScript file and write your code:
 
-![Sample JS script](<../../.gitbook/assets/9-myscript (1).png>)
+![Sample Javascript](../../.gitbook/assets/sample-Javacsript.png)
 
 Then, navigate to the template where you would like to include your JS file.
 
