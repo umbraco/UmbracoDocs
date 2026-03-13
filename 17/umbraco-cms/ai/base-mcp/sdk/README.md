@@ -6,22 +6,6 @@ description: Overview of the MCP Server SDK package for building MCP servers tha
 
 The `@umbraco-cms/mcp-server-sdk` package provides infrastructure for building Model Context Protocol (MCP) servers that expose Umbraco APIs to AI assistants. The SDK handles tool registration, API communication, error handling, configuration loading, tool filtering, and MCP chaining.
 
-Use this SDK when building your own MCP server on top of Umbraco. For a quick start, see the [Create Umbraco MCP Server](../create-umbraco-mcp-server/README.md) CLI.
-
-## Package Exports
-
-The SDK is organized into focused entry points so you can import only what you need.
-
-| Entry Point | Purpose |
-|---|---|
-| `@umbraco-cms/mcp-server-sdk` | Main: tool helpers, decorators, types, filtering, MCP chaining, constants |
-| `@umbraco-cms/mcp-server-sdk/testing` | Test utilities: environment setup, MSW helpers, snapshot normalization |
-| `@umbraco-cms/mcp-server-sdk/evals` | LLM eval framework: scenario tests, agent runner, verification |
-| `@umbraco-cms/mcp-server-sdk/config` | Configuration loading from env vars and CLI flags |
-| `@umbraco-cms/mcp-server-sdk/helpers` | API call helpers only |
-| `@umbraco-cms/mcp-server-sdk/types` | Type definitions only |
-| `@umbraco-cms/mcp-server-sdk/constants` | Umbraco well-known IDs (media types, user groups, etc.) |
-
 ## Getting Started
 
 Create a new MCP server project with the [Create Umbraco MCP Server](../create-umbraco-mcp-server/README.md) CLI. The project template includes this SDK and configures it for you.
