@@ -36,8 +36,11 @@ npx my-mcp-server --env="/path/to/custom/.env"
 | `excludeTools` | `UMBRACO_EXCLUDE_TOOLS` | `--umbraco-exclude-tools` | csv | No |
 | `allowedMediaPaths` | `UMBRACO_ALLOWED_MEDIA_PATHS` | `--umbraco-allowed-media-paths` | csv-path | No |
 | `readonly` | `UMBRACO_READONLY` | `--umbraco-readonly` | boolean | No |
+| `disableOutputCompatibilityMode` | `DISABLE_OUTPUT_COMPATIBILITY_MODE` | `--disable-output-compatibility-mode` | boolean | No |
 
 `allowedMediaPaths` restricts which filesystem paths media upload tools can write to. When set, any upload to a path outside this list is rejected.
+
+`disableOutputCompatibilityMode` controls how tool results are returned to the MCP client. By default, the SDK returns both `structuredContent` and a JSON-stringified `content` fallback for maximum client compatibility. Setting this to `true` disables the compatibility fallback and returns `structuredContent` only, omitting the duplicated JSON in `content`. Use this when your MCP client supports `structuredContent` (for example, Claude Code and Claude Desktop).
 
 See [Tool Filtering](./tool-filtering.md) for how modes, slices, collections, and read-only mode control which tools are registered.
 
