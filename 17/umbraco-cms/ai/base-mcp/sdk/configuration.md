@@ -44,6 +44,14 @@ npx my-mcp-server --env="/path/to/custom/.env"
 
 See [Tool Filtering](./tool-filtering.md) for how modes, slices, collections, and read-only mode control which tools are registered.
 
+### Local Development
+
+When connecting to a local Umbraco instance over HTTPS with a self-signed certificate, set the `NODE_TLS_REJECT_UNAUTHORIZED` environment variable to `0` to disable TLS certificate validation.
+
+{% hint style="warning" %}
+If you are connecting to the secure endpoint of Umbraco locally then always set `NODE_TLS_REJECT_UNAUTHORIZED` to `0`.
+{% endhint %}
+
 ## Field Types
 
 | Type | Description | Example |

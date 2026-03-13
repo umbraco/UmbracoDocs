@@ -6,6 +6,10 @@ description: "Host setup for OpenAI Codex"
 
 [OpenAI Codex](https://openai.com/blog/openai-codex) is OpenAI's terminal-first workspace that pairs a shell, editor, and conversational developer agent. With Model Context Protocol (MCP) support, you can connect Codex directly to Umbraco's tools and data so the assistant can work inside your projects.
 
+{% hint style="info" %}
+The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
+{% endhint %}
+
 ## Getting started
 
 Option A: Install via npm:
@@ -25,7 +29,7 @@ brew install codex
 1. Add the Umbraco MCP server with the Codex CLI:
 
 ```bash
-codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@17.1
+codex mcp add umbraco-mcp -- npx -y @umbraco-cms/mcp-dev@latest
 ```
 
 2. Define configuration values directly. If you prefer to keep secrets in your shell session, pass them as environment variables during registration:
@@ -37,7 +41,7 @@ codex mcp add umbraco-mcp \
   --env UMBRACO_BASE_URL="https://your-domain.com" \
   --env NODE_TLS_REJECT_UNAUTHORIZED="0" \
   --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" \
-  -- npx -y @umbraco-cms/mcp-dev@17.1
+  -- npx -y @umbraco-cms/mcp-dev@latest
 ```
 
 Replace the following values with your local connection details:

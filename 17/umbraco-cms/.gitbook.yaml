@@ -161,3 +161,12 @@ redirects:
     customizing/extending-overview/extension-types/collections/collection-view.md: customizing/extending-overview/extension-types/collections/collection-view/README.md
     ai/base-mcp/hosted-mcp/token-isolation: ai/base-mcp/hosted-mcp/security.md
     ai/base-mcp/hosted-mcp/auth-internals: ai/base-mcp/hosted-mcp/security.md
+    ai/developer-mcp/concepts: ai/concepts/README.md
+    ai/developer-mcp/concepts/model-context-protocol: ai/concepts/model-context-protocol.md
+    ai/developer-mcp/concepts/context-enginerring: ai/concepts/context-enginerring.md
+    ai/developer-mcp/host-setup: ai/host-setup/README.md
+    ai/developer-mcp/host-setup/claude-desktop: ai/host-setup/claude-desktop.md
+    ai/developer-mcp/host-setup/claude-code: ai/host-setup/claude-code.md
+    ai/developer-mcp/host-setup/cursor: ai/host-setup/cursor.md
+    ai/developer-mcp/host-setup/github-copilot: ai/host-setup/github-copilot.md
+    ai/developer-mcp/host-setup/openai-codex: ai/host-setup/openai-codex.md
