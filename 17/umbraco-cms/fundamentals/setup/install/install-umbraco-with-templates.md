@@ -59,6 +59,13 @@ Template options:
                                                Latest  The latest umbraco release
                                                LTS     The most recent long term supported version
                                              Default: Latest
+   -pm, --package-management <choice>         Choose how to manage NuGet package versions
+                                             Type: choice
+                                               Central     Use Directory.Packages.props (recommended for new standalone
+                                             projects)
+                                               PerProject  Use versions in .csproj (recommended when adding to existing
+                                             projects)
+                                             Default: Central
   --use-https-redirect                       Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
                                              Type: bool
                                              Default: false
