@@ -41,11 +41,29 @@ With the correct configuration applied, the project will be upgraded on the next
 
 ### Boot order
 
-The Runtime level uses `Run` instead of `Upgrade` to allow the website to continue to boot up directly after the migration is run. This happens instead of initiating the otherwise required restart.
-
-{% hint style="info" %}
-The upgrade is run after Composers but before Components, and the `UmbracoApplicationStartingNotification`. This is because the migration requires services that are registered in Composers, and Components require that Umbraco and the database are ready.
+{% hint style=”info” %}
+The behavior described below applies to Umbraco 17.3 and later. In earlier versions, migrations ran synchronously before the web server started accepting requests.
 {% endhint %}
+
+When the application starts, migrations run in a background service after the web server begins listening. During the migration the RuntimeLevel is `Upgrading`. The web server is reachable during this time, serving health probe responses and maintenance pages.
+
+Once all migrations complete, the RuntimeLevel transitions to `Run` and the site operates normally.
+
+### HTTP behavior during upgrade
+
+While the RuntimeLevel is `Upgrading`, Umbraco responds differently depending on the request surface:
+
+| Surface | Behavior |
+|---|---|
+| Frontend | HTTP 503 with `Upgrading.cshtml` view |
+| Surface controllers | HTTP 503 with `Upgrading.cshtml` view |
+| Backoffice | Upgrade-in-progress screen |
+| Management API | HTTP 503 JSON ProblemDetails |
+| Delivery API | HTTP 503 JSON ProblemDetails |
+
+The [liveness probe](../server-setup/health-probes.md) returns HTTP 200 during the upgrade, confirming the process is alive. The [readiness probe](../server-setup/health-probes.md) returns HTTP 503, indicating the site is not yet ready to serve normal traffic.
+
+You can customize the maintenance page shown to frontend visitors by setting the `Umbraco:CMS:Global:UpgradingViewPath` configuration key. See [Global Settings](../../../reference/configuration/globalsettings.md#upgrading-view-path) for details.
 
 ## Unattended upgrades in a load-balanced setup
 
@@ -57,3 +75,5 @@ Follow the steps outlined below to use unattended upgrades in a load-balanced se
 4. Boot the Main server, and the upgrade will run automatically.
 5. Wait for the upgrade to complete.
 6. Boot the **Read-Only** servers and ensure they do not show the “Upgrade Required” screen.
+
+You can use the [readiness probe](../server-setup/health-probes.md) to let your load balancer detect when each server has completed its upgrade and is ready to receive traffic.
