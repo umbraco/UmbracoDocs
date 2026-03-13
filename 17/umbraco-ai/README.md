@@ -1,3 +1,3 @@
-# Umbraco Search Documentation
+# Umbraco AI Documentation
 
 ...
