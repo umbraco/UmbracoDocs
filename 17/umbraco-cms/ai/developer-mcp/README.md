@@ -93,11 +93,11 @@ Only use a dedicated API user for MCP connections. Do not share or reuse credent
 
 Each MCP-compatible host application has its own setup process. Below you can find dedicated setup guides for the main developer environments seen most often:
 
-- [Claude Desktop](../host-setup/claude-desktop.md)
-- [Claude Code](../host-setup/claude-code.md)
-- [GitHub Copilot](../host-setup/github-copilot.md)
-- [Cursor](../host-setup/cursor.md)
-- [OpenAI Codex](../host-setup/openai-codex.md)
+- [Claude Desktop](../local-mcp-setup/claude-desktop.md)
+- [Claude Code](../local-mcp-setup/claude-code.md)
+- [GitHub Copilot](../local-mcp-setup/github-copilot.md)
+- [Cursor](../local-mcp-setup/cursor.md)
+- [OpenAI Codex](../local-mcp-setup/openai-codex.md)
 
 Although the details vary slightly, the general pattern is the same across all hosts:
 

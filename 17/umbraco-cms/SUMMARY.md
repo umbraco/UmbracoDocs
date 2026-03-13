@@ -303,12 +303,12 @@
 
 ## AI
 
-* [Host Setup](ai/host-setup/README.md)
-  * [Claude Desktop](ai/host-setup/claude-desktop.md)
-  * [Claude Code](ai/host-setup/claude-code.md)
-  * [Cursor](ai/host-setup/cursor.md)
-  * [GitHub Copilot](ai/host-setup/github-copilot.md)
-  * [OpenAI Codex](ai/host-setup/openai-codex.md)
+* [Local MCP Setup](ai/local-mcp-setup/README.md)
+  * [Claude Desktop](ai/local-mcp-setup/claude-desktop.md)
+  * [Claude Code](ai/local-mcp-setup/claude-code.md)
+  * [Cursor](ai/local-mcp-setup/cursor.md)
+  * [GitHub Copilot](ai/local-mcp-setup/github-copilot.md)
+  * [OpenAI Codex](ai/local-mcp-setup/openai-codex.md)
 * [Key Concepts](ai/concepts/README.md)
   * [Model Context Protocol](ai/concepts/model-context-protocol.md)
   * [Context Engineering](ai/concepts/context-enginerring.md)
