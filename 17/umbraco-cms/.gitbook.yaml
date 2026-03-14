@@ -5,7 +5,6 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
-    ai/backoffice-skills/what-are-skills: ai/concepts/agent-skills.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/configuration: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
@@ -160,14 +159,3 @@ redirects:
     customizing/extending-overview/extension-types/stores-and-repositories/tree-store: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/foundation/repositories/repository-types/tree-repository.md: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/extension-types/collections/collection-view.md: customizing/extending-overview/extension-types/collections/collection-view/README.md
-    ai/base-mcp/hosted-mcp/token-isolation: ai/base-mcp/hosted-mcp/security.md
-    ai/base-mcp/hosted-mcp/auth-internals: ai/base-mcp/hosted-mcp/security.md
-    ai/developer-mcp/concepts: ai/concepts/README.md
-    ai/developer-mcp/concepts/model-context-protocol: ai/concepts/model-context-protocol.md
-    ai/developer-mcp/concepts/context-enginerring: ai/concepts/context-enginerring.md
-    ai/developer-mcp/host-setup: ai/local-mcp-setup/README.md
-    ai/developer-mcp/host-setup/claude-desktop: ai/local-mcp-setup/claude-desktop.md
-    ai/developer-mcp/host-setup/claude-code: ai/local-mcp-setup/claude-code.md
-    ai/developer-mcp/host-setup/cursor: ai/local-mcp-setup/cursor.md
-    ai/developer-mcp/host-setup/github-copilot: ai/local-mcp-setup/github-copilot.md
-    ai/developer-mcp/host-setup/openai-codex: ai/local-mcp-setup/openai-codex.md
