@@ -6,39 +6,7 @@ description: Guide for deploying the Hosted MCP server to Cloudflare Workers for
 
 ## Local Development
 
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Build the Worker
-
-```bash
-npm run build
-```
-
-### 3. Run locally
-
-```bash
-npx wrangler dev
-```
-
-The Worker runs at `http://localhost:8787`. For local development, you need:
-
-- A running Umbraco instance (the `UMBRACO_BASE_URL`)
-- The OAuth client registered in Umbraco with `http://localhost:8787/callback` as the redirect URI (see [Umbraco Setup](umbraco-setup.md))
-- A `.dev.vars` file with your secrets
-
-### Self-Signed Certificates
-
-The workerd runtime (used by `wrangler dev`) cannot connect to HTTPS endpoints with self-signed certificates. See [Local Development Setup](local-dev-setup.md) for the full walkthrough. That guide covers disabling OpenIdDict's transport security requirement in dev mode. It also explains how to configure `UMBRACO_SERVER_URL` to use Umbraco's HTTP port.
-
-This is only needed for local development. In production, `UMBRACO_BASE_URL` points to a real domain with a valid certificate. `UMBRACO_SERVER_URL` is not needed.
-
-### 4. Test the connection
-
-Use the [MCP Inspector](https://inspector.tools.modelcontextprotocol.io/) in **Direct** mode with the URL `http://localhost:8787/`. The Inspector triggers the OAuth flow automatically.
+See [Local Development Setup](local-dev-setup.md) for the full guide to running the Worker locally with `wrangler dev`.
 
 ## Production Deployment
 

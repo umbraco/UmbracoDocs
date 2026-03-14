@@ -88,7 +88,3 @@ The SDK provides two HTTP client implementations depending on the transport:
 * **Hosted transport** — Uses a fetch-based client provided by the [`@umbraco-cms/mcp-hosted`](../hosted-mcp/README.md) package. The authenticated backoffice user's token is used.
 
 The project template configures both transports for you. The API call helpers work with either client through the `configureApiClient` provider — your tool handlers do not need to know which transport is in use.
-
-## Orval Integration
-
-API clients are generated from the Umbraco OpenAPI spec using Orval. The SDK exports `orvalImportFixer` as a hook for fixing ESM imports in the generated code — this is already wired into the template's Orval config.

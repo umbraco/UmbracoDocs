@@ -49,10 +49,10 @@ The Worker is simultaneously:
 |---|---|
 | Worker access token | Managed by OAuthProvider |
 | Umbraco access token | Approximately 1 hour |
-| KV TTL buffer | `expires_in` + 5 minutes (for refresh window) |
+| KV entry TTL | 30 days |
 | Refresh token | Long-lived (days/weeks) |
 
-The KV entry's TTL is set to `expires_in + 300` seconds. The 5-minute buffer ensures the refresh token is still available in KV when the access token expires.
+The KV entry uses a long TTL (30 days) rather than matching the access token lifetime. The access token expires naturally, but the refresh token stored in the same KV entry allows the Worker to transparently obtain a new access token on 401 responses. A shorter TTL would delete both the access and refresh tokens from KV, leaving the MCP session with no way to recover.
 
 ### Token Refresh
 

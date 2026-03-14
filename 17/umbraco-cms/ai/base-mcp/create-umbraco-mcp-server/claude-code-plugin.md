@@ -30,6 +30,10 @@ Skills often invoke agents as part of their workflow. You can also trigger agent
 
 ## Skills
 
+### Bulk Generation
+
+These skills generate entire collections, test suites, or eval suites from scratch. They skip collections that already have output files.
+
 ### `/build-tools`
 
 Generates tool collections from the `.discover.json` manifest produced by the discover phase.
@@ -100,6 +104,85 @@ Generates LLM eval tests for tool collections.
 5. Builds and runs the tests
 
 Collections that already have eval test files are skipped.
+
+### Incremental Additions
+
+These skills add individual tools, tests, or evals to existing collections. Use them after the bulk generation skills, or when adding new API endpoints.
+
+### `/add-tool`
+
+Adds a new tool to an existing collection. Use this when a new API endpoint has been added, or when `/build-tools` skipped a collection because it already exists.
+
+**Phase:** 4 (Tool Implementation)
+
+**Usage:**
+
+```
+/add-tool form                      # Add a tool to the form collection (will show available endpoints)
+/add-tool form "copy form endpoint" # Add a specific endpoint
+```
+
+**What it does:**
+
+1. Reads the existing collection to match patterns and conventions
+2. Reads the Swagger spec to find the new endpoint
+3. Delegates to the `mcp-tool-creator` agent to create the tool file
+4. Delegates to the `mcp-tool-description-writer` agent to write the description
+5. Updates the collection `index.ts` to export the new tool
+6. Compiles with `npm run compile` to verify types
+7. Delegates to the `mcp-tool-reviewer` agent to check LLM-readiness
+8. Adds an integration test if the collection already has tests
+9. Updates eval tests if the collection already has evals
+
+This skill fills the gap between `/build-tools` (which generates entire collections from scratch) and manual tool creation. It reuses the same agents but operates on a single tool within an existing collection.
+
+### `/add-test`
+
+Adds an integration test for a specific tool in an existing collection.
+
+**Phase:** 4 (Tool Implementation)
+
+**Usage:**
+
+```
+/add-test form                # Show untested tools in the form collection
+/add-test form copy-form      # Add a test for the copy-form tool
+```
+
+**What it does:**
+
+1. Reads the existing test infrastructure (setup, builders, helpers)
+2. Identifies the tool to test and reads its schema and handler
+3. Updates the builder or helper if the new tool needs additional methods
+4. Delegates to the `integration-test-creator` agent to create the test file
+5. Compiles and runs the test
+6. Delegates to the `integration-test-validator` agent to check quality
+
+Requires existing test infrastructure (`__tests__/setup.ts`). If it doesn't exist, run `/build-tools-tests` first.
+
+### `/add-eval`
+
+Adds or updates an LLM eval test for a specific tool or collection.
+
+**Phase:** 5 (Evaluation and Iteration)
+
+**Usage:**
+
+```
+/add-eval form                       # Show tools without eval coverage
+/add-eval form "copy form workflow"  # Add eval for a specific workflow
+```
+
+**What it does:**
+
+1. Compares collection tools against existing eval scenarios to find gaps
+2. Decides whether to update an existing scenario or create a new one
+3. Delegates to the `eval-test-creator` agent to create or update the test file
+4. Builds and runs the eval test, iterating on the prompt if needed
+
+Requires existing eval infrastructure (`tests/evals/helpers/e2e-setup.ts`). If it doesn't exist, run `/build-evals` first.
+
+### Advisory
 
 ### `/discuss-mcp`
 
@@ -233,18 +316,21 @@ See [Testing and Evals](../sdk/testing.md) in the SDK docs for the eval framewor
 | Skill | Command | Phase | Purpose |
 |---|---|---|---|
 | build-tools | `/build-tools` | 4 | Generate tool collections from `.discover.json` |
+| add-tool | `/add-tool` | 4 | Add a new tool to an existing collection |
 | build-tools-tests | `/build-tools-tests` | 4 | Generate integration tests per collection |
+| add-test | `/add-test` | 4 | Add an integration test for a specific tool |
 | build-evals | `/build-evals` | 5 | Generate LLM eval tests per collection |
+| add-eval | `/add-eval` | 5 | Add or update an eval test for a specific tool |
 | discuss-mcp | `/discuss-mcp` | 5 | Advisory: trace optimization, chaining, coverage |
 
 ### Agents Reference
 
 | Agent | Invoked By | Purpose |
 |---|---|---|
-| mcp-tool-creator | `/build-tools` | Creates tool files following SDK patterns |
-| mcp-tool-description-writer | `/build-tools` | Writes LLM-optimized tool descriptions |
-| mcp-tool-reviewer | `/build-tools` | Reviews tools for LLM-readiness |
-| integration-test-creator | `/build-tools-tests` | Creates integration tests |
-| integration-test-validator | `/build-tools-tests` | Validates test quality |
+| mcp-tool-creator | `/build-tools`, `/add-tool` | Creates tool files following SDK patterns |
+| mcp-tool-description-writer | `/build-tools`, `/add-tool` | Writes LLM-optimized tool descriptions |
+| mcp-tool-reviewer | `/build-tools`, `/add-tool` | Reviews tools for LLM-readiness |
+| integration-test-creator | `/build-tools-tests`, `/add-test` | Creates integration tests |
+| integration-test-validator | `/build-tools-tests`, `/add-test` | Validates test quality |
 | test-builder-helper-creator | `/build-tools-tests` | Creates test builders and helpers |
-| eval-test-creator | `/build-evals` | Creates LLM eval workflow tests |
+| eval-test-creator | `/build-evals`, `/add-eval` | Creates LLM eval workflow tests |

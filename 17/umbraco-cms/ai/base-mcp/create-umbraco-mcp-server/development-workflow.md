@@ -149,7 +149,7 @@ Generate tool collections from the `.discover.json` manifest:
 /build-tools form         # Build a single collection
 ```
 
-For each collection, the skill reads the Swagger spec and maps operations to Orval-generated client functions. The skill creates tool files with correct slices and annotations, then compiles to verify types. Collections that already have an `index.ts` file are skipped. See [`/build-tools`](./claude-code-plugin.md#build-tools) for full details.
+For each collection, the skill reads the Swagger spec and maps operations to Orval-generated client functions. The skill creates tool files with correct slices and annotations, then compiles to verify types. Collections that already have an `index.ts` file are skipped — use [`/add-tool`](./claude-code-plugin.md#add-tool) to add new tools to existing collections. See [`/build-tools`](./claude-code-plugin.md#build-tools) for full details.
 
 ### Build Tests
 

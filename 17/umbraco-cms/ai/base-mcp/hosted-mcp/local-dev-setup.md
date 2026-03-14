@@ -132,6 +132,12 @@ The script performs these steps:
 
 After starting, restart both Umbraco (to register the tunnel callback URI) and the Worker (to pick up the new `UMBRACO_BASE_URL`).
 
+{% hint style="warning" %}
+Quick tunnels generate a random domain name each time `tunnels.sh` runs. This means you must restart both Umbraco and the Worker every time you re-run the script, as the URLs will have changed. Quick tunnel domains also expire after a period of inactivity.
+
+To avoid this, configure [named tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/) with stable domain names. Named tunnels keep the same URL across restarts, so you only need to configure Umbraco and the Worker once.
+{% endhint %}
+
 {% hint style="info" %}
 This requires [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) installed.
 {% endhint %}

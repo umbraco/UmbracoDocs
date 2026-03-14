@@ -73,7 +73,7 @@ After building, validation is mandatory:
 3. **Fix issues** — High and medium severity issues are auto-fixed.
 4. **Rebuild** if fixes were made.
 5. **Restart Umbraco** — Stop and restart `dotnet run`.
-6. **Browser test** — Navigate to your extension in the backoffice. Verify: no console errors, UI renders correctly, interactions work.
+6. **Browser test** — The coding assistant drives the browser to navigate to your extension in the backoffice, interacting with it as a user would. It checks for console errors, verifies the UI renders correctly, and validates that interactions work as expected.
 
 ## Optional: Add Source Code References
 
