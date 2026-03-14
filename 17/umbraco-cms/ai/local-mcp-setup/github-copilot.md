@@ -6,6 +6,10 @@ description: Host set up for GitHub Copilot
 
 [GitHub Copilot](https://github.com/features/copilot) is an AI-powered coding assistant developed by GitHub and OpenAI. It works as an extension to Visual Studio Code, enhancing your editor with intelligent code suggestions and natural language capabilities.
 
+{% hint style="info" %}
+The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
+{% endhint %}
+
 ## Getting started
 
 ### Install MCP Server via Button
@@ -29,7 +33,7 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
   "servers": {
     "umbraco-mcp": {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@17.1"],
+      "args": ["@umbraco-cms/mcp-dev@latest"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
