@@ -47,7 +47,8 @@ A full configuration with all default values can be seen here:
       "PasswordResetEmailExpiry": "01:00:00",
       "UserInviteEmailExpiry": "3.00:00:00",
       "BackOfficeTokenCookie": {
-        "SameSite": "Strict"
+        "SameSite": "Strict",
+        "SiteName": ""
       }
     }
   }
@@ -176,3 +177,11 @@ It is not recommended to change these settings, as it may result in lesser secur
 ### Same site
 
 Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).
+
+### Site name
+
+The `SiteName` configuration changes the names used for the token cookies.
+
+This can be helpful when working with multiple Umbraco sites on the same host. Unique cookie names allows for signing in to multiple backoffices simultaneously.
+
+This configuration is likely paired with a custom [auth cookie name](#auth-cookie-name).
