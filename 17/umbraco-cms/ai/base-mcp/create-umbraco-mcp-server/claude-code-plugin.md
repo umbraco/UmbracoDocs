@@ -19,15 +19,6 @@ Add the marketplace and install the plugin:
 
 The plugin requires a project built with `@umbraco-cms/mcp-server-sdk`. See [Project Template](./project-template.md) for the expected project structure.
 
-## How Skills and Agents Work
-
-Skills and agents serve different purposes in the development workflow:
-
-* **Skills** are slash commands you invoke explicitly. They load reference information or orchestrate multi-step workflows. For example, `/build-tools` reads the `.discover.json` manifest and orchestrates the creation of tool collections.
-* **Agents** are invoked automatically by Claude Code when a task matches their purpose. For example, when `/build-tools` needs to create a tool file, it delegates to the `mcp-tool-creator` agent.
-
-Skills often invoke agents as part of their workflow. You can also trigger agents directly by describing a task in natural language.
-
 ## Skills
 
 ### Bulk Generation
