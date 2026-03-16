@@ -20,10 +20,6 @@ Both modes use the same tool collections. No code changes are required.
 
 The MCP transport protocol used for hosted servers. Unlike stdio (stdin/stdout for local tools), Streamable HTTP sends MCP messages over standard HTTP requests. This enables remote access.
 
-### Wrangler Virtual Modules
-
-`agents/mcp` and `@cloudflare/workers-oauth-provider` are provided by Wrangler at build time. They are not installed via npm. Your TypeScript editor will not resolve them. This is expected. The `@umbraco-cms/mcp-hosted` package re-exports the types you need (such as `AuthProps` and `HostedMcpEnv`).
-
 ### Three-Tier Configuration
 
 Tool availability is controlled by three layers. Each layer narrows the one above:

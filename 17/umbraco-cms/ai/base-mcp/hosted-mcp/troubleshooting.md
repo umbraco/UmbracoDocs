@@ -90,6 +90,12 @@ The `agents` library requires SQLite-backed Durable Objects.
 
 **Fix**: This usually indicates the Umbraco authorization was interrupted or the callback URL was accessed directly. Retry the OAuth flow from the beginning.
 
+### TypeScript Errors for `agents/mcp` or `@cloudflare/workers-oauth-provider`
+
+**Cause**: These are Wrangler virtual modules provided at build time, not npm packages. Your TypeScript editor cannot resolve them and shows errors. This is expected.
+
+**Fix**: No action needed. The imports work when Wrangler builds and deploys. The `@umbraco-cms/mcp-hosted` package re-exports the types you need (such as `AuthProps` and `HostedMcpEnv`), so you do not need to import from the virtual modules directly.
+
 ### "Invalid or expired OAuth state parameter"
 
 **Cause**: The state parameter in the callback does not match any stored state, or the 10-minute TTL has expired.
