@@ -1,21 +1,18 @@
 ---
 description: >-
-  The testing pyramid for Umbraco backoffice extensions, with 8 skills covering
-  unit tests, MSW integration, mocked backoffice, and E2E with Playwright.
+  The testing pyramid for Umbraco backoffice extensions, with 7 skills covering
+  unit tests, MSW integration, and E2E with Playwright.
 ---
 
 # Testing Skills
 
-8 skills covering a complete testing pyramid for Umbraco backoffice extensions.
+7 skills covering a complete testing pyramid for Umbraco backoffice extensions.
 
 ## The Testing Pyramid
 
 ```
-                ┌─────────────┐
-                │   E2E Tests │  Level 4: Real Umbraco, complete workflows
-                └─────────────┘
           ┌─────────────────────────┐
-          │   Mocked Backoffice     │  Level 3: No backend, realistic UI
+          │        E2E Tests        │  Level 3: Real Umbraco, complete workflows
           └─────────────────────────┘
     ┌─────────────────────────────────────┐
     │       Integration Tests (MSW)       │  Level 2: Mocked APIs
@@ -34,7 +31,6 @@ Start at the bottom. Most of your tests should be unit tests. Move up the pyrami
 | `umbraco-testing` | **Router skill** — Choose the right testing approach |
 | `umbraco-unit-testing` | Unit tests with @open-wc/testing |
 | `umbraco-msw-testing` | MSW handlers for API mocking |
-| `umbraco-mocked-backoffice` | Test in mocked backoffice (no .NET required) |
 | `umbraco-e2e-testing` | E2E tests against real Umbraco |
 | `umbraco-playwright-testhelpers` | Full `testhelpers` API reference |
 | `umbraco-test-builders` | JsonModels.Builders for test data |
@@ -70,17 +66,7 @@ Test with mocked backend APIs using MSW (Mock Service Worker). Simulate errors, 
 - Can test API interaction patterns
 - Great for: API error handling, loading states, data transformation
 
-## Level 3: Mocked Backoffice E2E
-
-**Skill:** `umbraco-mocked-backoffice`
-
-Run your extension inside the full Umbraco backoffice UI with all APIs mocked. Uses `VITE_EXTERNAL_EXTENSION` with the Umbraco-CMS client.
-
-- No .NET backend required
-- Full backoffice Chrome around your extension
-- Great for: visual testing, integration with backoffice UI, layout verification
-
-## Level 4: Real Backend E2E Tests
+## Level 3: Real Backend E2E Tests
 
 **Skill:** `umbraco-e2e-testing`
 
@@ -105,8 +91,7 @@ Using raw Playwright selectors against the Umbraco backoffice is fragile and mis
 
 1. **Start with unit tests** — Test your components and logic in isolation
 2. **Add MSW tests** for API interactions — Verify your code handles success, errors, and edge cases
-3. **Add mocked backoffice tests** if your extension needs to work within the backoffice Chrome
-4. **Add E2E tests** for critical user workflows that need to run against real Umbraco
+3. **Add E2E tests** for critical user workflows that need to run against real Umbraco
 
 ## Next Steps
 
