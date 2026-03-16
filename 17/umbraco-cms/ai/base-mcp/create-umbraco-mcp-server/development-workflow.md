@@ -160,7 +160,7 @@ Generate integration tests per collection:
 /build-tools-tests form   # Generate tests for a single collection
 ```
 
-For each collection, the skill creates test setup, builders, helpers, and integration test files. Tests run sequentially against the real API. Collections that already have a `__tests__/setup.ts` file are skipped. See [`/build-tools-tests`](./claude-code-plugin.md#build-tools-tests) for full details.
+For each collection, the skill creates test setup, builders, helpers, and integration test files. Tests run sequentially against the real API. Collections that already have a `__tests__/setup.ts` file are skipped — use [`/add-test`](./claude-code-plugin.md#add-test) to add tests for new tools in existing collections. See [`/build-tools-tests`](./claude-code-plugin.md#build-tools-tests) for full details.
 
 ### Tool Review
 
@@ -179,7 +179,7 @@ Generate eval tests for tool collections:
 /build-evals form         # Generate eval tests for a single collection
 ```
 
-For each collection, the skill designs workflow scenarios, creates eval test files, builds, and runs them. Collections that already have eval test files in `tests/evals/` are skipped. See [`/build-evals`](./claude-code-plugin.md#build-evals) for full details.
+For each collection, the skill designs workflow scenarios, creates eval test files, builds, and runs them. Collections that already have eval test files in `tests/evals/` are skipped — use [`/add-eval`](./claude-code-plugin.md#add-eval) to add evals for new tools or workflows. See [`/build-evals`](./claude-code-plugin.md#build-evals) for full details.
 
 {% hint style="info" %}
 Eval tests differ from integration tests. Integration tests verify each tool individually. Eval tests group related tools into workflow scenarios (1-2 files per collection) and verify that an LLM can use them together effectively.
