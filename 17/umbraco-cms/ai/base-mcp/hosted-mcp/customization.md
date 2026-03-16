@@ -79,7 +79,7 @@ Inject custom CSS to style the consent screen. The built-in consent screen uses 
 |----------|---------|
 | `.card` | White card container (max-width: 480px) |
 | `h1` | Header (default color: `#1b264f`) |
-| `.field`, `.field-label`, `.field-value` | Info fields (client name, Umbraco URL, etc.) |
+| `.field`, `.field-label`, `.field-value` | Info fields (client name, Umbraco URL, and so on) |
 | `.scopes`, `.scopes li` | Scope list |
 | `.actions` | Button container |
 | `.btn-approve` | Approve button (default background: `#1b264f`) |
@@ -149,7 +149,7 @@ Your custom renderer **must** include these form fields:
 
 When using a custom renderer, you are responsible for:
 
-- **HTML escaping** all dynamic values (`opts.clientName`, `opts.umbracoBaseUrl`, etc.) to prevent XSS.
+- **HTML escaping** all dynamic values (`opts.clientName`, `opts.umbracoBaseUrl`, and so on) to prevent XSS.
 - Including the `state` hidden field (required for CSRF protection).
 - Including `action` buttons with values `"approve"` and `"deny"`.
 

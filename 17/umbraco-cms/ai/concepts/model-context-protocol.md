@@ -71,7 +71,7 @@ These are predefined, parameterized conversations that define complex interactio
 
 The Developer MCP Server builds on top of Umbraco's Management API (introduced in version 14). This API exposes everything the Backoffice can do through consistent, structured endpoints. This includes content, media, document types, and data types.
 
-These APIs follow predictable patterns for CRUD operations, listings etc, making them an ideal foundation for the Model Context Protocol (MCP).
+These APIs follow predictable patterns for CRUD operations, listings, and so on, making them an ideal foundation for the Model Context Protocol (MCP).
 
 However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management, not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are often too specialized, too costly, or too confusing to implement in the UI.
 

@@ -17,7 +17,7 @@ The SDK provides a layered filtering system that controls which tools are regist
 
 ## Read-Only Mode
 
-When read-only mode is enabled (`UMBRACO_READONLY=true`), only tools with the `readOnlyHint` annotation are registered. This overrides all other filtering — modes, slices, collections, and tool-level rules are still applied, but any tool that is not marked as read-only is excluded regardless of other settings.
+When read-only mode is enabled (`UMBRACO_READONLY=true`), only tools with the `readOnlyHint` annotation are registered. This overrides all other filtering. Modes, slices, collections, and tool-level rules still apply. Any tool not marked as read-only is excluded regardless of other settings.
 
 ## How Filters Compose
 

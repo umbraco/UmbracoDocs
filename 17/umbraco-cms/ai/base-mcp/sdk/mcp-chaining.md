@@ -14,7 +14,7 @@ This enables three patterns:
 * **Delegation** — Call tools on another server from within your tool handlers to perform sub-operations
 * **Composite tools** — Combine calls to multiple servers into a single tool that orchestrates a multi-step workflow
 
-For example, a commerce MCP server could chain to the Umbraco Developer MCP Server (`@umbraco-cms/mcp-dev`) to give the AI assistant access to both commerce and content tools without requiring separate server configuration.
+For example, a commerce MCP server could chain to the Umbraco Developer MCP Server (`@umbraco-cms/mcp-dev`). This gives the AI assistant access to both commerce and content tools without requiring separate server configuration.
 
 ## Setup
 
@@ -80,7 +80,7 @@ The SDK also exports lower-level utilities (`parseProxiedToolName`, `createProxy
 
 ## Pattern 2: Delegation
 
-Delegation lets your tool handlers call tools on a chained server behind the scenes. Unlike proxying, the chained tools are not exposed to the AI assistant. Delegation allows you to enrich your tools with data from other servers — for example, fetching a document from the CMS server to include in your tool's response — without the AI assistant needing to know about the underlying server or make multiple tool calls.
+Delegation lets your tool handlers call tools on a chained server behind the scenes. Unlike proxying, the chained tools are not exposed to the AI assistant. You can enrich your tools with data from other servers. For example, you could fetch a document from the CMS server to include in your response. The AI assistant does not need to know about the underlying server.
 
 ```typescript
 import { createToolResult } from "@umbraco-cms/mcp-server-sdk";
@@ -116,7 +116,7 @@ const myTool = {
 
 ## Pattern 3: Composite Tools
 
-Composite tools combine multiple chained calls into a single tool. Without a composite tool, the AI assistant would need to make several separate tool calls and reason about the results between each one. A composite tool handles the entire workflow in one invocation. The AI assistant makes one call and gets the final result back, reducing LLM round-trips.
+Composite tools combine multiple chained calls into a single tool. Without a composite tool, the AI assistant would need to make separate tool calls and reason about the results between each one. A composite tool handles the entire workflow in one invocation, reducing LLM round-trips.
 
 ```typescript
 const syncContentTool = {

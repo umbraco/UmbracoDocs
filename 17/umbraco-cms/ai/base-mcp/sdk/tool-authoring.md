@@ -158,8 +158,8 @@ export default withStandardDecorators(myTool);
 
 This applies two decorators in order:
 
-1. **withPreExecutionCheck** - runs a configurable hook before each tool call (for example, version checking).
-2. **withErrorHandling** - catches all errors and converts them to MCP tool error results.
+1. **`withPreExecutionCheck`** — Runs a configurable hook before each tool call (for example, version checking).
+2. **`withErrorHandling`** — Catches all errors and converts them to MCP tool error results.
 
 ### Error Handling Priority
 

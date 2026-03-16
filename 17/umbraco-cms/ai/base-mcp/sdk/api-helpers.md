@@ -61,7 +61,7 @@ client.deleteDataTypeById(id)
 
 API errors follow the RFC 7807 Problem Details format. The SDK provides two error classes:
 
-- **`UmbracoApiError`** — wraps a ProblemDetails object for API-level errors (404, 409, etc.)
+- **`UmbracoApiError`** — wraps a ProblemDetails object for API-level errors (404, 409, and so on)
 - **`ToolValidationError`** — for input validation failures before the API call is made
 
 The `withErrorHandling` decorator catches both error types automatically and converts them to tool error results — you don't need to handle them yourself.

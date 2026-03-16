@@ -6,7 +6,7 @@ description: Security model for the Hosted MCP server including token isolation,
 
 ## Token Isolation
 
-MCP clients need to call the Umbraco Management API on behalf of a backoffice user. Passing the Umbraco token directly to the MCP client would be dangerous — the client could leak the token, reuse the token for API calls outside the MCP server's scope, or gain direct Umbraco API access if compromised.
+MCP clients need to call the Umbraco Management API on behalf of a backoffice user. Passing the Umbraco token directly to the MCP client would be dangerous. The client could leak the token, reuse it for API calls outside the MCP server's scope, or gain direct Umbraco API access if compromised.
 
 The hosted MCP server uses a **dual-OAuth architecture** to solve this. The Worker maintains two independent OAuth flows. The MCP client sees tokens from only one of them: the Worker's own tokens. The Umbraco tokens exist only inside the Worker and its KV storage.
 
@@ -52,7 +52,7 @@ The Worker is simultaneously:
 | KV entry TTL | 30 days |
 | Refresh token | Long-lived (days/weeks) |
 
-The KV entry uses a long TTL (30 days) rather than matching the access token lifetime. The access token expires naturally, but the refresh token stored in the same KV entry allows the Worker to transparently obtain a new access token on 401 responses. A shorter TTL would delete both the access and refresh tokens from KV, leaving the MCP session with no way to recover.
+The KV entry uses a long TTL (30 days) rather than matching the access token lifetime. The access token expires naturally. The refresh token stored in the same KV entry allows the Worker to obtain a new access token on 401 responses. A shorter TTL would delete both tokens from KV. This would leave the MCP session with no way to recover.
 
 ### Token Refresh
 

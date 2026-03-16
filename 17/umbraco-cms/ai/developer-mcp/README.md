@@ -72,7 +72,7 @@ Even for users with limited permissions, the MCP Server exposes many management-
 Do not connect the Developer MCP Server to a production Umbraco environment. Always use a local or isolated development instance.
 {% endhint %}
 
-Additional MCP servers tailored to other roles such as editors and content managers are in development. These will provide safer, simplified toolsets and workflows.
+Additional MCP servers tailored to other roles such as editors and content managers are in development. These will provide safer, simplified tool collections and workflows.
 
 ## Getting started
 
@@ -154,10 +154,10 @@ Your first step after setup should be deciding which tools you want to enable. A
 
 Choosing the right tools improves how efficiently the AI communicates with Umbraco, making each conversation faster and more context-aware. [Learn more about Context Engineering](../concepts/context-enginerring.md).
 
-### Using npx?
+### Using `npx`?
 
-It is recommended to launch the Developer MCP Server using npx. This allows you to run the `Node.js` application without needing to install anything globally.
-npx will temporarily download the package, execute it, and clean up automatically, ensuring you’re always using the latest version.
+It is recommended to launch the Developer MCP Server using `npx`. This allows you to run the `Node.js` application without needing to install anything globally.
+`npx` will temporarily download the package, execute it, and clean up automatically, ensuring you’re always using the latest version.
 
 If you prefer, you can also install it globally with:
 

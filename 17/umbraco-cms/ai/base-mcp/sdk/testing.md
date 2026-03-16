@@ -103,7 +103,7 @@ const normalizedError = normalizeErrorResponse(result);
 The normalization replaces:
 
 - **IDs** with `BLANK_UUID`
-- **Dates** (`created`, `updateDate`, etc.) with `NORMALIZED_DATE`
+- **Dates** (`created`, `updateDate`, and so on) with `NORMALIZED_DATE`
 - **Timestamps** in names and paths with `NORMALIZED_TIMESTAMP`
 - **Email addresses** with normalized patterns
 - **Avatar URLs** and **media paths** with normalized strings
@@ -209,8 +209,8 @@ Available models: `ClaudeModels.Haiku`, `ClaudeModels.Sonnet`, `ClaudeModels.Opu
 type VerbosityLevel = "quiet" | "normal" | "verbose";
 ```
 
-- **quiet**: Pass/fail per test, summary at end.
-- **normal**: Tools called, cost info.
-- **verbose**: Full conversation trace with all messages.
+- **Quiet**: Pass/fail per test, summary at end.
+- **Normal**: Tools called, cost information.
+- **Verbose**: Full conversation trace with all messages.
 
 Set via the `E2E_VERBOSITY` environment variable or in test options.
