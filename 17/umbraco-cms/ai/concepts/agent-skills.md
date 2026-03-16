@@ -1,6 +1,6 @@
 # What Are Skills?
 
-Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-enginerring.md) through active context management. Skills are not activated unless the task requires them. They use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
+Agent Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-enginerring.md) through active context management. Skills are not activated unless the task requires them. They use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
 
 For Umbraco, skills allow us to:
 
@@ -10,12 +10,11 @@ For Umbraco, skills allow us to:
 
 ## What's Inside a Skill?
 
-Each skill is a `SKILL.md` file containing:
+Each skill is a directory containing a `SKILL.md` file along with supporting reference files and scripts:
 
-- **Correct, validated code patterns** for a specific Umbraco concept
-- **Links to official documentation** that the AI fetches at runtime
-- **Working examples** tested against real Umbraco instances
-- **Workflow guidance** (what to do first, what to check after)
+- **`SKILL.md`** — the main instruction file with workflow guidance and code patterns
+- **Reference files** — detailed documentation, style guides, or API references that the skill loads on demand
+- **Scripts** — helper scripts the AI can run to validate work or automate checks
 
 When you ask your AI assistant to "create a dashboard", it loads the `umbraco-dashboard` skill and gets precise, current instructions instead of guessing.
 
