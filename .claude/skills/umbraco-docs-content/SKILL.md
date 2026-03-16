@@ -23,7 +23,8 @@ When creating or modifying documentation, follow this checklist:
 
 - Write in **second person** ("you"), **present tense**, **active voice**
 - **No editorializing** — avoid: simple, simply, just, easily, actually
-- Keep sentences **under 25 words**; don't use "it" or "this" as vague references
+- Keep sentences **under 25 words** — split at conjunctions ("and", "or") or trailing clauses ("without", "which"). For example, instead of "You can use the API to serve content to front-end apps, mobile apps, and other consumers without relying on server-side rendering" (27 words), write two sentences: "You can use the API to serve content to front-end apps and mobile apps. This removes the need for server-side rendering."
+- Don't use "it" or "this" as vague references
 - No punctuation at end of headings; use `#` only once (the title)
 - Use **relative paths** for internal links; use the **article title** as link text
 
@@ -105,7 +106,7 @@ redirects:
 For any structural change, apply the SUMMARY.md and .gitbook.yaml rules above:
 
 - **Add**: create the file + add to SUMMARY.md
-- **Move**: move the file + update SUMMARY.md path + add redirect
+- **Move**: move the file + update SUMMARY.md path + add redirect + if the destination is a new directory, create a `README.md` landing page for it
 - **Rename**: rename the file + update SUMMARY.md title and path + add redirect
 - **Delete**: remove from SUMMARY.md + add redirect to replacement or parent + delete file
 

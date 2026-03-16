@@ -4,18 +4,39 @@ description: >-
   Review documentation from the reader's perspective. Use when you want to check
   if docs are clear, useful, and focused on what a user actually needs to know.
   Identifies fluff, missing context, unnecessary detail, and maintenance burden.
-argument_hint: "<file-path>"
+  Works on a single file or all changed files in a PR.
+argument_hint: "<file-path or 'pr'>"
 ---
 
 # Documentation Review Skill
 
 You are a technical documentation reviewer. Think from the perspective of a developer who wants to use the features being documented. You have limited time and need to understand what something does, when to use it, and how to get started.
 
+## Modes
+
+This skill works in two modes:
+
+### File mode (default)
+
+Review one or more specific files. Use this when a file path is provided as an argument, multiple paths are provided, or the user has a file open in the IDE.
+
+### PR mode
+
+Review all markdown files changed on the current branch compared to main. Use this when:
+
+- The user says "review the PR", "check the branch", or similar
+- The argument is "pr"
+- No file path is provided and no file is open in the IDE
+
+To get the changed files, follow the process in `references/pr-changed-files.md`.
+
 ## What to Review
 
-If a file path is provided as an argument (for example, `/review-docs path/to/file.md`), read that file. If the user has a file open in the IDE, review that file. Otherwise, ask the user which file to review.
+In **file mode**, evaluate each page against the review criteria below.
 
-Evaluate the page against the criteria below.
+In **PR mode**, run the automated checks (Vale linting and link checking) across all changed files first, then review individual pages that have issues or that the user wants to discuss.
+
+Evaluate each page against the criteria below.
 
 ## Review Criteria
 
@@ -73,9 +94,19 @@ Use the Grep and Read tools to check the source when something looks uncertain.
 
 Before reviewing, load the `umbraco-docs-content` skill to get the project's style guide, markdown conventions, and article templates. Flag any violations of the style guide as part of the review.
 
+### 8. Vale Linting
+
+Run Vale on the files being reviewed and report any errors on changed lines. For the full process — how to match CI behavior, when to add dictionary words vs rewrite content, and how to handle acronyms — read `references/vale-linting.md`.
+
+### 9. Link Checking
+
+Verify that internal links in the reviewed files point to existing targets. For what to check and common issues, read `references/link-checking.md`.
+
 ## How to Review
 
-### Phase 1: Overview
+### File Mode
+
+#### Phase 1: Overview
 
 Load the `umbraco-docs-content` skill, then read the full page and give a holistic assessment. Present:
 
@@ -84,21 +115,47 @@ Load the `umbraco-docs-content` skill, then read the full page and give a holist
 3. **Key issues** — the most important problems, with your recommended action for each (keep, trim, remove, rework). Be opinionated — say what you think should change and why, don't just list questions.
 4. **What's good** — anything that works well and should stay
 
-Use the AskUserQuestion tool to ask if the user agrees with the overview or wants to adjust anything before moving on.
+When reviewing multiple files, use the AskUserQuestion tool with one question per file so the user can respond to each file independently. When reviewing a single file, use one question asking if the user agrees with the overview or wants to adjust anything before moving on.
 
-### Phase 2: Section-by-Section (if needed)
+#### Phase 2: Section-by-Section (if needed)
 
 If the overview raises issues that need discussion, or if the user wants to go deeper, work through specific sections:
 
-1. Summarise the section and your recommendation
+1. Summarize the section and your recommendation
 2. Use the AskUserQuestion tool to confirm or discuss
 3. Wait for their response before moving to the next section
 
 Skip sections that are clearly fine — only discuss sections where there's something to change.
 
-### Phase 3: Summary
+#### Phase 3: Summary
 
-Once the review is complete, summarise the agreed changes so they can be applied.
+Once the review is complete, summarize the agreed changes so they can be applied.
+
+### PR Mode
+
+#### Step 1: Identify changed files
+
+Follow `references/pr-changed-files.md` to get the list of changed markdown files. Report the file count to the user.
+
+#### Step 2: Automated checks
+
+Run Vale and link checks across all changed files. Follow `references/vale-linting.md` and `references/link-checking.md` for the process. Present the results as a summary:
+
+- Number of Vale errors on changed lines (group by error type)
+- Any broken internal links
+- Which files have issues
+
+#### Step 3: Discuss and fix
+
+Use the AskUserQuestion tool to ask if the user wants to fix the automated issues, review specific files in depth, or both. Then proceed accordingly — fixing automated issues directly, or switching to file mode for deeper review of individual pages.
+
+## Permissions
+
+Commands that start with `vale`, `python3 .claude/skills/review-docs/scripts/`, and `git diff` are pre-approved in `.claude/settings.json`. To keep auto-approval working:
+
+- **Do not use pipes** (`|`) or subshells (`$(...)`) in Bash commands — they break permission matching
+- **Get file lists and pass them separately** — run `git diff` in one command, then pass the resulting file paths as direct arguments in the next command
+- **Use `--diff-filter=d`** (lowercase) to exclude deleted files instead of piping through `grep`
 
 ## Important
 
