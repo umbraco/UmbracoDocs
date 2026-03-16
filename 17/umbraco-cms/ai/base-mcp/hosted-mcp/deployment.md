@@ -1,5 +1,5 @@
 ---
-description: Guide for deploying the Hosted MCP server to Cloudflare Workers for local development and production.
+description: Guide for deploying the Hosted MCP server to Cloudflare Workers for production.
 ---
 
 # Deployment
