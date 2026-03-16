@@ -182,6 +182,6 @@ Sets the `SameSite` configuration for the token cookies. Valid values are "Unspe
 
 The `SiteName` configuration changes the names used for the token cookies.
 
-This can be helpful when working with multiple Umbraco sites on the same host. Unique cookie names allows for signing in to multiple backoffices simultaneously.
+This can be helpful when working with multiple Umbraco sites on the same host. Unique cookie names allow for signing in to more than one backoffice simultaneously.
 
 This configuration is likely paired with a custom [auth cookie name](#auth-cookie-name).
