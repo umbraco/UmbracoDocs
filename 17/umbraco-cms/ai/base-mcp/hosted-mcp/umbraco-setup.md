@@ -8,7 +8,7 @@ The Umbraco instance needs the hosted MCP server registered as an OAuth client. 
 
 ## Prerequisites
 
-- Umbraco 17+ with Management API enabled
+- Umbraco 14+ with Management API enabled
 - Admin access to the Umbraco project source code
 - The hosted MCP server's callback URL (for example, `https://my-umbraco-mcp.workers.dev/callback`)
 
