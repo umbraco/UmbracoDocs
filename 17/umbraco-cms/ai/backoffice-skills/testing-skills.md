@@ -36,7 +36,7 @@ Start at the bottom. Most of your tests should be unit tests. Move up the pyrami
 | `umbraco-msw-testing` | MSW handlers for API mocking |
 | `umbraco-mocked-backoffice` | Test in mocked backoffice (no .NET required) |
 | `umbraco-e2e-testing` | E2E tests against real Umbraco |
-| `umbraco-playwright-testhelpers` | Full testhelpers API reference |
+| `umbraco-playwright-testhelpers` | Full `testhelpers` API reference |
 | `umbraco-test-builders` | JsonModels.Builders for test data |
 | `umbraco-example-generator` | Generate testable extensions |
 
@@ -77,7 +77,7 @@ Test with mocked backend APIs using MSW (Mock Service Worker). Simulate errors, 
 Run your extension inside the full Umbraco backoffice UI with all APIs mocked. Uses `VITE_EXTERNAL_EXTENSION` with the Umbraco-CMS client.
 
 - No .NET backend required
-- Full backoffice chrome around your extension
+- Full backoffice Chrome around your extension
 - Great for: visual testing, integration with backoffice UI, layout verification
 
 ## Level 4: Real Backend E2E Tests
@@ -97,7 +97,7 @@ E2E tests **must** use `@umbraco/playwright-testhelpers` and `@umbraco/json-mode
 These packages provide:
 
 - **`@umbraco/playwright-testhelpers`** — Fixtures, API helpers, and UI helpers purpose-built for the Umbraco backoffice. Handles login, navigation, waiting for elements, and common assertion patterns.
-- **`@umbraco/json-models-builders`** (`umbraco-test-builders` skill) — Builder pattern for creating test data (document types, content, media, etc.) through the Umbraco API.
+- **`@umbraco/json-models-builders`** (`umbraco-test-builders` skill) — Builder pattern for creating test data (document types, content, media, and so on) through the Umbraco API.
 
 Using raw Playwright selectors against the Umbraco backoffice is fragile and misses the abstractions that make tests maintainable.
 
@@ -105,7 +105,7 @@ Using raw Playwright selectors against the Umbraco backoffice is fragile and mis
 
 1. **Start with unit tests** — Test your components and logic in isolation
 2. **Add MSW tests** for API interactions — Verify your code handles success, errors, and edge cases
-3. **Add mocked backoffice tests** if your extension needs to work within the backoffice chrome
+3. **Add mocked backoffice tests** if your extension needs to work within the backoffice Chrome
 4. **Add E2E tests** for critical user workflows that need to run against real Umbraco
 
 ## Next Steps

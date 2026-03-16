@@ -126,7 +126,7 @@ interface ToolDefinition<
 
 ### Key Points
 
-- **inputSchema** takes a Zod shape (`ZodRawShape`), not a `z.object()`. The SDK wraps it in `z.object()` for you.
+- **`inputSchema`** takes a Zod shape (`ZodRawShape`), not a `z.object()`. The SDK wraps it in `z.object()` for you.
 - **slices** controls which filtering categories the tool belongs to. An empty array means the tool is always included.
 - **annotations.openWorldHint** is always `true` for tools that call the Umbraco API. The `createToolAnnotations` helper enforces this.
 

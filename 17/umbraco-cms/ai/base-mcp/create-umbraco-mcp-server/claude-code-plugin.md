@@ -214,7 +214,7 @@ Creates MCP tool files following SDK patterns.
 
 **What it does:**
 
-* Creates a tool file with the correct structure (inputSchema, outputSchema, slices, annotations, handler)
+* Creates a tool file with the correct structure (`inputSchema`, `outputSchema`, `slices`, `annotations`, `handler`)
 * Uses the appropriate API helper function (`executeGetApiCall`, `executeVoidApiCall`, or manual handling)
 * Wraps the export with `withStandardDecorators`
 * Uses Zod schemas from the Orval-generated code
@@ -231,7 +231,7 @@ Writes LLM-optimized tool descriptions. Focuses on making descriptions clear and
 
 * Writes descriptions using action verbs (Gets, Creates, Deletes)
 * Includes parameter constraints and valid values
-* Specifies when NOT to use the tool
+* Specifies when not to use the tool
 * Keeps descriptions concise but informative
 
 ### mcp-tool-reviewer
@@ -245,7 +245,7 @@ Reviews tools against an LLM-readiness checklist. The reviewer flags issues that
 | Category | What it checks |
 |---|---|
 | Schema simplification | Maximum 3-5 fields, no nested objects, no UUID generation expected from the LLM |
-| Description quality | Action verbs, constraints, when NOT to use |
+| Description quality | Action verbs, constraints, when not to use |
 | Response shaping | Essential fields only, actionable errors |
 | Composite opportunities | Sequences that should be bundled into a single tool |
 | Naming and annotations | Consistent naming, correct hints per HTTP method |

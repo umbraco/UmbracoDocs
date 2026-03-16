@@ -26,7 +26,7 @@ See [Umbraco Setup](umbraco-setup.md) for the full Composer code.
 
 ## Step 2: Allow HTTP for Token Exchange
 
-The Cloudflare Workers runtime (workerd) cannot connect to HTTPS endpoints with self-signed certificates. You need to allow HTTP in your local Umbraco's OpenIdDict configuration.
+The Cloudflare Workers runtime (`workerd`) cannot connect to HTTPS endpoints with self-signed certificates. You need to allow HTTP in your local Umbraco's OpenIdDict configuration.
 
 See [Umbraco Setup - Allow HTTP for Token Exchange](umbraco-setup.md#allow-http-for-token-exchange) for the `Program.cs` change.
 
@@ -51,7 +51,7 @@ COOKIE_ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789
 | `COOKIE_ENCRYPTION_KEY` | Any 64-char hex string for local dev. Generate properly for production: `openssl rand -hex 32`. |
 
 {% hint style="info" %}
-**Why two URLs?** `UMBRACO_BASE_URL` (HTTPS) is what the user's browser navigates to. The browser trusts the self-signed cert. `UMBRACO_SERVER_URL` (HTTP) is what workerd uses for server-side calls. Workerd does not trust self-signed certs, so it uses the HTTP port instead.
+**Why two URLs?** `UMBRACO_BASE_URL` (HTTPS) is what the user's browser navigates to. The browser trusts the self-signed cert. `UMBRACO_SERVER_URL` (HTTP) is what `workerd` uses for server-side calls. `workerd` does not trust self-signed certs, so it uses the HTTP port instead.
 {% endhint %}
 
 ### wrangler.toml
@@ -139,7 +139,7 @@ To avoid this, configure [named tunnels](https://developers.cloudflare.com/cloud
 {% endhint %}
 
 {% hint style="info" %}
-This requires [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) installed.
+This requires [`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/) installed.
 {% endhint %}
 
 ## Troubleshooting
@@ -160,7 +160,7 @@ This requires [cloudflared](https://developers.cloudflare.com/cloudflare-one/con
 
 **Fix**: Check your `.dev.vars` and verify Umbraco is listening on the HTTP port (check `launchSettings.json`).
 
-### "The specified 'redirect_uri' is not valid" (OpenIdDict ID2043)
+### "The specified `redirect_uri` is not valid" (OpenIdDict ID2043)
 
 **Cause**: The callback URL does not match.
 
@@ -168,7 +168,7 @@ This requires [cloudflared](https://developers.cloudflare.com/cloudflare-one/con
 
 ### "internal error; reference = ..."
 
-**Cause**: This is a generic workerd error. It usually means a server-side fetch failed.
+**Cause**: This is a generic `workerd` error. It usually means a server-side fetch failed.
 
 **Fix**: Check the following:
 

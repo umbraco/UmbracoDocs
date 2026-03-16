@@ -111,7 +111,7 @@ No changes to the OAuthProvider configuration are needed. The `apiRoute` and `au
 |-------|-------------|
 | `/` | MCP endpoint (shared by all sites). Browser visits show site listing. |
 | `/authorize` | Consent screen with site picker. |
-| `/callback/:siteId` | OAuth callback (siteId matches Umbraco's registered redirect_uri). |
+| `/callback/:siteId` | OAuth callback (`siteId` matches Umbraco's registered `redirect_uri`). |
 
 ## Per-Site Tool Filtering
 
@@ -146,7 +146,7 @@ A staging site configured as read-only stays read-only even if the user does not
 
 ## Local Development
 
-For local dev with multiple sites, each Umbraco instance needs `http://localhost:8787/callback/:siteId` registered as a redirect URI. If using self-signed certs, set `serverUrl` per site:
+For local dev with multiple sites, each Umbraco instance needs `http://localhost:8787/callback/:siteId` registered as a `redirect_uri`. If using self-signed certs, set `serverUrl` per site:
 
 ```typescript
 {
@@ -165,7 +165,7 @@ If you do not configure `multiSite`, the Worker operates in single-site mode:
 
 - No site picker on the consent screen.
 - Uses `UMBRACO_BASE_URL` and `UMBRACO_OAUTH_CLIENT_ID` from env.
-- The callback URL is `/callback` (no siteId suffix).
+- The callback URL is `/callback` (no `siteId` suffix).
 - The landing page shows the single Umbraco instance.
 
 This is the default and requires no changes from the basic setup.

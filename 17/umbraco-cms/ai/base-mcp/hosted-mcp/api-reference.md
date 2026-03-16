@@ -133,7 +133,7 @@ Rules:
 
 - **Mode intersection**: If admin allows `[content, media]` and user selects `[content]`, the result is `[content]`.
 - **No admin mode restriction** + user selects `[content]` results in `[content]`.
-- **Read-only**: The user can turn ON (adds `create`, `update`, `delete` to excludeSlices) but never turn OFF.
+- **Read-only**: The user can enable read-only mode (adds `create`, `update`, `delete` to `excludeSlices`) but cannot disable it.
 
 Called internally by `createPerRequestServer`. Exported for advanced use cases.
 
@@ -145,7 +145,7 @@ Full options for rendering the consent screen.
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
-| `clientName` | `string` | Yes | MCP client display name or client_id. |
+| `clientName` | `string` | Yes | MCP client display name or `client_id`. |
 | `umbracoBaseUrl` | `string` | Yes | Umbraco instance URL. |
 | `scopes` | `string[]` | Yes | Requested OAuth scopes. |
 | `redirectUri` | `string` | Yes | Registered redirect URI. |
@@ -191,7 +191,7 @@ interface MultiSiteConfig {
 }
 ```
 
-### loadSiteConfig(site, baseConfig)
+### `loadSiteConfig(site, baseConfig)`
 
 Merges site-specific filter overrides into a base config from env vars. Site values replace base values where specified.
 
@@ -238,7 +238,7 @@ const client = createUmbracoFetchClient({
 });
 ```
 
-### createFetchClientFromKV(env, tokenKey)
+### `createFetchClientFromKV(env, tokenKey)`
 
 Convenience function that creates a fetch client from stored KV tokens.
 
@@ -270,11 +270,11 @@ Creates the authorize endpoint handler for the Umbraco OAuth flow. When `options
 
 Creates the callback endpoint handler for completing the Umbraco OAuth flow. Extracts `consentChoices` from KV state and includes them in the returned `AuthProps`.
 
-### getStoredUmbracoToken(kv, tokenKey)
+### `getStoredUmbracoToken(kv, tokenKey)`
 
 Retrieves a stored Umbraco token from KV.
 
-### refreshUmbracoToken(env, tokenKey, refreshToken)
+### `refreshUmbracoToken(env, tokenKey, refreshToken)`
 
 Refreshes an expired Umbraco token.
 

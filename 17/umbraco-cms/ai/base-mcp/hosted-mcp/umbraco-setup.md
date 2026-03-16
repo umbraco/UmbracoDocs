@@ -108,7 +108,7 @@ The hosted MCP server requires the **authorization code** grant type because end
 
 ## Allow HTTP for Token Exchange
 
-The Cloudflare Workers runtime (workerd) cannot connect to HTTPS endpoints with self-signed certificates. For local development, allow HTTP in your Umbraco OpenIdDict configuration.
+The Cloudflare Workers runtime (`workerd`) cannot connect to HTTPS endpoints with self-signed certificates. For local development, allow HTTP in your Umbraco OpenIdDict configuration.
 
 Add this to your `Program.cs` **after** the Umbraco builder and **before** `app.Build()`:
 
@@ -175,19 +175,19 @@ You can register multiple redirect URIs in the Composer for different environmen
 
 ## Troubleshooting
 
-### "The specified 'redirect_uri' is not valid" (OpenIdDict ID2043)
+### "The specified `redirect_uri` is not valid" (OpenIdDict ID2043)
 
 **Cause**: The callback URL sent by the Worker does not match any URI in the Composer's `RedirectUris`.
 
-**Fix**: Ensure `http://localhost:8787/callback` is listed for local dev. For multi-site, ensure `/callback/:siteId` is registered. The URL must match exactly with no trailing slashes and the correct protocol.
+**Fix**: Ensure `http://localhost:8787/callback` is listed for local dev. For multi-site, ensure `/callback/:siteId` is registered for each site. The URL must match exactly with no trailing slashes and the correct protocol.
 
 ### "Token exchange failed" / TLS errors in local dev
 
-**Cause**: The Worker (workerd) cannot connect to Umbraco over HTTPS with a self-signed certificate.
+**Cause**: The Worker (`workerd`) cannot connect to Umbraco over HTTPS with a self-signed certificate.
 
 **Fix**: Disable OpenIdDict's transport security requirement in dev mode and set `UMBRACO_SERVER_URL` to Umbraco's HTTP port. See [Local Development Setup](local-dev-setup.md) for the full walkthrough.
 
-### "invalid_client" on token exchange
+### `invalid_client` on token exchange
 
 **Cause**: The OAuth client ID in the Worker does not match the Composer registration, or the client type is wrong.
 

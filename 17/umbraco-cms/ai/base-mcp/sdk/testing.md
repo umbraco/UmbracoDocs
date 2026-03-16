@@ -117,7 +117,7 @@ The eval framework runs end-to-end tests using the Claude Agent SDK. The framewo
 Evals run against the **built output** of your MCP server (`dist/index.js`). You must rebuild your project before running evals, otherwise your changes will not be picked up. Run `npm run build` (or your configured build command) between code changes and eval runs.
 {% endhint %}
 
-### configureEvals
+### `configureEvals`
 
 Configure the eval framework before running tests:
 

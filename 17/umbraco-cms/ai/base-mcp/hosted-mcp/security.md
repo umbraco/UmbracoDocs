@@ -142,7 +142,7 @@ The Worker supports two base URLs:
 - **`UMBRACO_BASE_URL`** — used for the authorization endpoint (browser-facing). Must be reachable by the user's browser.
 - **`UMBRACO_SERVER_URL`** (optional) — used for the token endpoint (server-side). Falls back to `UMBRACO_BASE_URL` if not set.
 
-In local development, the Worker runtime (workerd) cannot reach HTTPS endpoints with self-signed certificates. Setting `UMBRACO_SERVER_URL` to an HTTP address allows server-side token exchange to succeed while the browser redirect still uses the real HTTPS URL.
+In local development, the Worker runtime (`workerd`) cannot reach HTTPS endpoints with self-signed certificates. Setting `UMBRACO_SERVER_URL` to an HTTP address allows server-side token exchange to succeed while the browser redirect still uses the real HTTPS URL.
 
 ## Multi-Site Security
 

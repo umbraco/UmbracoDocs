@@ -6,7 +6,7 @@ description: Common errors and fixes for the Hosted MCP server.
 
 ## Error Reference
 
-### "The specified 'redirect_uri' is not valid" (OpenIdDict ID2043)
+### "The specified `redirect_uri` is not valid" (OpenIdDict ID2043)
 
 **Cause**: The callback URL sent by the Worker does not match any URI in the Umbraco Composer's `RedirectUris`.
 
@@ -21,7 +21,7 @@ See [Umbraco Setup - Redirect URI Configuration](umbraco-setup.md#redirect-uri-c
 
 ### "Token exchange failed" / TLS Errors in Local Dev
 
-**Cause**: The Worker runtime (workerd) cannot connect to HTTPS endpoints with self-signed certificates. This is common in local Umbraco development.
+**Cause**: The Worker runtime (`workerd`) cannot connect to HTTPS endpoints with self-signed certificates. This is common in local Umbraco development.
 
 **Fix**: Two things are needed:
 
@@ -31,7 +31,7 @@ See [Umbraco Setup - Redirect URI Configuration](umbraco-setup.md#redirect-uri-c
 
 See [Local Development Setup](local-dev-setup.md) for the full walkthrough.
 
-### "invalid_client" on Token Exchange
+### `invalid_client` on Token Exchange
 
 **Cause**: The OAuth client ID in the Worker does not match the Umbraco Composer registration, or the client type is wrong.
 
