@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get from zero to a working Umbraco backoffice extension using the quickstart skill
-  and the Plan, Build, Validate workflow.
+  Get from zero to a working Umbraco backoffice extension using the quickstart skill.
 ---
 
 # Quickstart
