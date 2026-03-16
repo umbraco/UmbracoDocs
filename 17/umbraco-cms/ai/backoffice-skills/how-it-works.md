@@ -6,7 +6,7 @@ description: >-
 
 # How It Works
 
-For a general introduction to agent skills and the SKILL.md format, see [What Are Skills?](../concepts/agent-skills.md).
+For a general introduction to agent skills and the `SKILL.md` format, see [What Are Skills?](../concepts/agent-skills.md).
 
 This page explains how the Umbraco backoffice skills use that format to guide AI agents through extension development.
 
@@ -15,12 +15,12 @@ This page explains how the Umbraco backoffice skills use that format to guide AI
 Each skill acts as a routing layer between the agent and three sources of knowledge:
 
 - **Best practices** — Validated code patterns for each extension type
-- **Live documentation** — Current pages from docs.umbraco.com, fetched at runtime
+- **Live documentation** — Current pages from the Umbraco documentation, fetched at runtime
 - **Working examples** — Complete, buildable extensions that demonstrate real combinations
 
-When you describe a task, the agent loads only the skill relevant to that task. The skill then guides the agent through a workflow, pointing it to the right documentation and patterns. The agent decides how much context it needs based on the complexity of the task.
+When you describe a task, the agent loads only the relevant skill. The skill guides the agent through a workflow, pointing it to the right documentation and patterns. The agent decides how much context it needs based on task complexity.
 
-The `umbraco-backoffice` skill acts as the top-level router. It contains an extension map showing where all extension types appear in the backoffice UI, and directs the agent to the specific skill for each extension type. For tasks that span multiple extension types, it provides blueprints showing how skills combine.
+The `umbraco-backoffice` skill acts as the top-level router. It contains an extension map showing where all extension types appear in the backoffice UI. It directs the agent to the specific skill for each extension type. For multi-extension tasks, it provides blueprints showing how skills combine.
 
 This means the agent does not need the entire Umbraco backoffice documentation upfront. It discovers what it needs as it works.
 
@@ -50,7 +50,7 @@ AI generates code using skill patterns + fetched docs
 Post-build validation (build, review, test)
 ```
 
-Skills combine **static patterns** (validated code in the SKILL.md) with **dynamic content** (documentation fetched at runtime). This means skills stay accurate even as Umbraco documentation evolves.
+Skills combine **static patterns** (validated code in the `SKILL.md`) with **dynamic content** (documentation fetched at runtime). This means skills stay accurate even as Umbraco documentation evolves.
 
 ## Skill Composition
 

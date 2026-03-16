@@ -41,7 +41,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL`
 ![MCP Panel Added](../../../.gitbook/assets/Cursor-MCP-Added.png)
 
 * The warning above indicates that the number of tools exceeds the limit is expected behaviour.
-* [Choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
+* [Choose which tools or tool collections](../developer-mcp/available-tools.md) you want to enable for your first task.
 
 {% hint style="info" %}
 Selecting only the tools you need helps keep your setup efficient and conversations with your AI assistant more focused.

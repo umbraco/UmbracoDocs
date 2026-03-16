@@ -20,7 +20,7 @@ Specificity helps the AI pick the right skills and generate code that matches yo
 
 ## Iterate with Specific Feedback
 
-When the generated code is not quite right, be specific about what needs changing:
+When the generated code needs adjustment, be specific about what needs changing:
 
 Instead of:
 > "That's not right, fix it"
@@ -90,7 +90,7 @@ Generating code with skills is fast, so use that to your advantage. Ask for two 
 
 For example, ask for a dashboard layout using a `uui-table` and another using `uui-box` cards. See both in the browser, pick the one that fits, and discard the other. This works well for UI-heavy components where the right approach is not obvious until you see it.
 
-You can also use this to explore different architectural approaches — a tree-based navigation versus a collection view, or a modal workflow versus an inline editor. Generating a second option costs little and often reveals a better solution.
+You can also explore different architectural approaches. Compare a tree-based navigation with a collection view, or a modal workflow with an inline editor. Generating a second option costs little and often reveals a better solution.
 
 ## Review Generated Code
 
@@ -112,4 +112,4 @@ A passing build does not mean the extension works. Visual verification catches l
 
 ## Automate the Full Process
 
-To have the entire setup, build, and validation process guided for you, use the `umbraco-quickstart` skill. It handles project creation, extension setup, and walks you through the PLAN, BUILD, VALIDATE workflow. See the [Quickstart](quickstart.md) for details.
+To have the entire setup, build, and validation process guided for you, use the `umbraco-quickstart` skill. It handles project creation, extension setup, and walks you through the **Plan**, **Build**, **Validate** workflow. See the [Quickstart](quickstart.md) for details.

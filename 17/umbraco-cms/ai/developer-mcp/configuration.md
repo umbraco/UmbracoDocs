@@ -10,7 +10,7 @@ This page lists the specific tool modes and slices that the Developer MCP ships 
 
 ## Tool Filtering
 
-The Developer MCP Server uses the SDK's [tool filtering system](../base-mcp/sdk/tool-filtering.md) to control which tools are registered. Filtering is built around three concepts: **modes**, **collections**, and **slices**. See the SDK docs for how these compose and the available configuration keys.
+The Developer MCP Server uses the SDK [tool filtering system](../base-mcp/sdk/tool-filtering.md) to control which tools are registered. Filtering is built around three concepts: **modes**, **collections**, and **slices**. See the SDK documentation for how these compose and the available configuration keys.
 
 ### Available Modes
 

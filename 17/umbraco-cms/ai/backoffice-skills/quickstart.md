@@ -1,7 +1,7 @@
 ---
 description: >-
   Get from zero to a working Umbraco backoffice extension using the quickstart skill
-  and the PLAN, BUILD, VALIDATE workflow.
+  and the Plan, Build, Validate workflow.
 ---
 
 # Quickstart
@@ -10,7 +10,7 @@ Get from zero to a working Umbraco backoffice extension.
 
 ## Setup
 
-The `umbraco-quickstart` skill creates an Umbraco instance, creates an extension project, registers the extension, and guides you through the development workflow:
+The `umbraco-quickstart` skill handles the full setup for you. It creates an Umbraco instance and extension project, registers the extension, and guides you through the development workflow:
 
 ```bash
 # Full setup with custom credentials
@@ -27,11 +27,11 @@ The `umbraco-quickstart` skill creates an Umbraco instance, creates an extension
 The `/` syntax is for Claude Code. In other editors, describe the task in natural language and the agent loads the skill automatically.
 {% endhint %}
 
-## The PLAN, BUILD, VALIDATE Workflow
+## The **Plan**, **Build**, **Validate** Workflow
 
 All extension development follows this workflow.
 
-### PLAN
+### **Plan**
 
 Before writing any code:
 
@@ -56,7 +56,7 @@ Before writing any code:
 
 Planning prevents building the wrong extension type. You approve the plan before any code is written.
 
-### BUILD
+### **Build**
 
 With the plan approved:
 
@@ -64,7 +64,7 @@ With the plan approved:
 2. **Invoke the identified sub-skills** — each extension type has its own skill with correct patterns
 3. **Follow the examples** — Copy from the closest blueprint and adapt
 
-### VALIDATE
+### **Validate**
 
 After building, validation is mandatory:
 
@@ -73,11 +73,11 @@ After building, validation is mandatory:
 3. **Fix issues** — High and medium severity issues are auto-fixed.
 4. **Rebuild** if fixes were made.
 5. **Restart Umbraco** — Stop and restart `dotnet run`.
-6. **Browser test** — The coding assistant drives the browser to navigate to your extension in the backoffice, interacting with it as a user would. It checks for console errors, verifies the UI renders correctly, and validates that interactions work as expected.
+6. **Browser test** — The coding assistant drives the browser to navigate to your extension in the backoffice. It checks for console errors, verifies the UI renders, and validates that interactions work as expected.
 
 ## Optional: Add Source Code References
 
-For better code generation, give the AI access to the Umbraco source:
+For better code generation, give your coding assistant access to the Umbraco source:
 
 ```bash
 git clone https://github.com/umbraco/Umbraco-CMS.git

@@ -1,6 +1,6 @@
 # What Are Skills?
 
-Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-enginerring.md) through active context management — they are not activated unless the task requires them, and they use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
+Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-enginerring.md) through active context management. Skills are not activated unless the task requires them. They use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
 
 For Umbraco, skills allow us to:
 
@@ -21,13 +21,13 @@ When you ask your AI assistant to "create a dashboard", it loads the `umbraco-da
 
 ## What Skills Are Not
 
-- **Not a replacement for documentation.** Skills point to docs and teach the AI how to apply them. You should still read the [Umbraco documentation](https://docs.umbraco.com/) yourself.
+- **Not a replacement for documentation.** Skills point to the documentation and teach the AI how to apply it. You should still read the [Umbraco documentation](https://docs.umbraco.com/) yourself.
 - **Not scaffolding tools.** They don't generate boilerplate from templates. They teach the AI to write code that fits your specific requirements.
-- **Not perfect.** Skills significantly improve results but can't guarantee correctness. Always review generated code.
+- **Not perfect.** Skills improve results but cannot guarantee correctness. Always review generated code.
 
 ## How Skills Differ Across Editors
 
-Skills use the open [SKILL.md format](https://agentskills.io/home), which is supported by multiple AI coding tools. The experience varies slightly:
+Skills use the open [`SKILL.md` format](https://agentskills.io/home), which is supported by multiple AI coding tools. The experience varies slightly:
 
 | Editor | How Skills Load | Installation |
 |--------|----------------|--------------|
@@ -38,7 +38,7 @@ Skills use the open [SKILL.md format](https://agentskills.io/home), which is sup
 
 The skill content is identical across editors. What differs is how each editor discovers and loads the skill files. Claude Code uses a plugin/marketplace system; other editors use the [Vercel Skills CLI](https://github.com/vercel-labs/skills) to install skills into editor-specific directories.
 
-Some advanced features (like spawning reviewer agents or entering plan mode) work best in Claude Code but the core value — correct code patterns from current documentation — works everywhere.
+Some advanced features (like spawning reviewer agents or entering plan mode) work best in Claude Code. The core value — correct code patterns from current documentation — works everywhere.
 
 ## Skills and MCP
 

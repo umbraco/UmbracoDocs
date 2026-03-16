@@ -49,7 +49,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 A paid version of Claude.ai will have a higher token limit and can run more complex prompts.
 {% endhint %}
 
-8. [Choose the tools or tool collections](../available-tools.md) to enable your first task.
+8. [Choose the tools or tool collections](../developer-mcp/available-tools.md) to enable your first task.
 
 You will need to restart Claude Desktop every time you make a change to the tools you are using.
 

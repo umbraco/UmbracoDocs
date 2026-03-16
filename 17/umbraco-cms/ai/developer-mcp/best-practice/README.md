@@ -59,7 +59,7 @@ To help manage this, you can condense context to keep the model focused and free
 
 - **Use built-in compression tools (if available)**
 
-Some clients (for example, Claude Code) include options to automatically compress or summarise earlier parts of the conversation. Use these to reduce noise while keeping relevant information accessible.
+Some clients (for example, Claude Code) include options to automatically compress or summarize earlier parts of the conversation. Use these to reduce noise while keeping relevant information accessible.
 
 - **Checkpoint progress into a file**
 

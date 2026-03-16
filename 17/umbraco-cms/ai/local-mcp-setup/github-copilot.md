@@ -52,4 +52,4 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
 Restarting the MCP Server applies any configuration or tool changes immediately without needing to reinstall or re-add the server.
 {% endhint %}
 
-[Choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
+[Choose which tools or tool collections](../developer-mcp/available-tools.md) you want to enable for your first task.

@@ -1,14 +1,14 @@
 ---
 description: >-
   AI skills for building Umbraco backoffice extensions. Available for Claude Code, Cursor,
-  GitHub Copilot, Windsurf, and other editors that support the SKILL.md format.
+  GitHub Copilot, Windsurf, and other editors that support the `SKILL.md` format.
 ---
 
 # Backoffice Skills
 
 Backoffice skills give your AI coding assistant deep knowledge of Umbraco's extension points. Each skill covers one extension type — dashboards, trees, property editors, modals, and more — with patterns, code examples, and references to the latest documentation.
 
-Skills use the open [SKILL.md](https://agentskills.io/home) format. They load on-demand: only the skill relevant to your current task is pulled into context, so installing all skills does not affect performance. For a general introduction to agent skills and how they work, see [Agent Skills](../concepts/agent-skills.md).
+Skills use the open [`SKILL.md`](https://agentskills.io/home) format. They load on-demand: only the skill relevant to your current task is pulled into context. Installing all skills does not affect performance. For a general introduction to agent skills and how they work, see [Agent Skills](../concepts/agent-skills.md).
 
 ## Installation
 
@@ -56,7 +56,7 @@ Always use the `-a` flag to target your editor. Without it, skills are symlinked
 
 | Guide | Description |
 |-------|-------------|
-| [Quickstart](quickstart.md) | Set up Umbraco and an extension project, learn the PLAN, BUILD, VALIDATE workflow |
+| [Quickstart](quickstart.md) | Set up Umbraco and an extension project, learn the **Plan**, **Build**, **Validate** workflow |
 | [Backoffice Skills](backoffice-skills.md) | All 65 extension skills, the extension map, and working examples |
 | [Testing Skills](testing-skills.md) | The 4-level testing pyramid and 8 testing skills |
 | [Tips for Best Results](tips.md) | Source code references, prompting advice, and editor requirements |

@@ -81,7 +81,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and
 }
 ```
 
-For details on `.env` format and supported configuration keys, see the [Configuration guide](../configuration.md).
+For details on `.env` format and supported configuration keys, see the [Configuration guide](../developer-mcp/configuration.md).
 
 {% hint style="warning" %}
 Never commit live credentials to source control. Always use environment variables or a `.env` file.
@@ -94,4 +94,4 @@ Another benefit of using a `.env` file for configuration is that it makes it muc
 Steps to reconnect an MCP server:
 
 - Update the `.env` file with the new tool set.
-- In the Claude Code CLI, run `/mcp reconnect umbraco-mcp` to restart the mcp server.
+- In the Claude Code CLI, run `/mcp reconnect umbraco-mcp` to restart the MCP server.
