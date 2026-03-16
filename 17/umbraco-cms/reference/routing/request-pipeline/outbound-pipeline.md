@@ -33,7 +33,18 @@ To create a new URL Segment Provider, implement the `IUrlSegmentProvider` interf
 ```csharp
 public interface IUrlSegmentProvider
 {
-  string GetUrlSegment(IContentBase content, string? culture = null);
+    string? GetUrlSegment(IContentBase content, string? culture = null);
+
+    string? GetUrlSegment(IContentBase content, bool published, string? culture = null)
+        => GetUrlSegment(content, culture);
+
+    bool HasUrlSegmentChanged(IContentBase content, string? currentPublishedSegment, string? culture)
+        => !string.Equals(
+            GetUrlSegment(content, published: false, culture),
+            currentPublishedSegment,
+            StringComparison.OrdinalIgnoreCase);
+
+    bool MayAffectDescendantSegments(IContentBase content) => false;
 }
 ```
 
@@ -42,6 +53,15 @@ Each culture variation can have a different URL segment.
 {% endhint %}
 
 The returned string becomes the URL segment for the node. The value cannot contain the URL segment separator character `/`. A value such as `5678/swibble` would create additional segments, which is not allowed.
+
+#### Redirect tracking optimization
+
+When content is published, Umbraco checks whether the URL segment has changed before traversing descendant nodes to create redirects. The redirect tracker uses `HasUrlSegmentChanged` to compare the draft segment (what the segment will be after publishing) against the currently published segment. If the segment is unchanged, descendant traversal is skipped because no descendant URLs can have changed either.
+
+The default implementations of `HasUrlSegmentChanged` and `MayAffectDescendantSegments` handle the common case automatically. Custom providers only need to override these methods in specific scenarios:
+
+* **`HasUrlSegmentChanged`**: Override if your provider derives segments from external state (for example, a database or API) rather than from content properties. The default implementation compares the draft segment to the published segment using `GetUrlSegment`.
+* **`MayAffectDescendantSegments`**: Override to return `true` if your provider computes descendant URL segments based on ancestor data that does not affect the ancestor's own segment. When ancestor data changes the ancestor's segment, Umbraco already traverses descendants. This method covers the rare case where ancestor data changes without changing the ancestor's segment, but still affects descendant segments.
 
 #### Example
 
@@ -61,7 +81,7 @@ public class ProductPageUrlSegmentProvider : IUrlSegmentProvider
     {
         _provider = new DefaultUrlSegmentProvider(stringHelper);
     }
-    
+
     public string GetUrlSegment(IContentBase content, string? culture = null)
     {
         // Only apply this rule for product pages
@@ -452,7 +472,7 @@ using Umbraco.Cms.Core.Composing;
 namespace RoutingDocs.SiteDomainMapping;
 
 public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
-{ 
+{
 }
 ```
 
