@@ -219,7 +219,7 @@ Creates MCP tool files following SDK patterns.
 * Wraps the export with `withStandardDecorators`
 * Uses Zod schemas from the Orval-generated code
 
-See [Tool Authoring](../sdk/tool-authoring.md) in the SDK docs for the patterns used.
+See [Tool Authoring](../sdk/tool-authoring.md) in the SDK documentation for the patterns used.
 
 ### mcp-tool-description-writer
 
@@ -266,7 +266,7 @@ Creates integration tests for tool collections. Tests run against a real Umbraco
 * Uses builder patterns for test data setup and cleanup
 * Runs tests sequentially to avoid API conflicts
 
-See [Testing and Evals](../sdk/testing.md) in the SDK docs for the patterns used.
+See [Testing and Evals](../sdk/testing.md) in the SDK documentation for the patterns used.
 
 ### integration-test-validator
 
@@ -307,7 +307,7 @@ Creates LLM eval workflow tests using the Claude Agent SDK.
 * Designs scenarios that exercise CRUD lifecycles, search, hierarchy traversal, and edge cases
 * Sets appropriate timeouts and budget limits
 
-See [Testing and Evals](../sdk/testing.md) in the SDK docs for the eval framework.
+See [Testing and Evals](../sdk/testing.md) in the SDK documentation for the eval framework.
 
 ## Skills and Agents Summary
 

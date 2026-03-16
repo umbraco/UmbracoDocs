@@ -200,7 +200,7 @@ When eval tests reveal problems, use this reference to diagnose and fix them:
 | Symptom | Likely Cause | Fix |
 |---|---|---|
 | Wrong tool selected | Poor tool description | Improve description clarity |
-| Missing parameters | Unclear parameter docs | Add examples to descriptions |
+| Missing parameters | Unclear parameter documentation | Add examples to descriptions |
 | Tool not found | Unintuitive name | Rename the tool |
 | Inefficient tool chain | Missing composite tool | Create a workflow tool |
 
@@ -232,5 +232,5 @@ If `/discuss-mcp` or your own analysis suggests chaining would help, determine w
 | Commerce-only operations | No | Standalone is simpler |
 | Complex workflows | Yes | Leverage existing tools |
 
-If chaining adds value, configure connections in `src/config/mcp-servers.ts`. See [MCP Chaining](../sdk/mcp-chaining.md) in the SDK docs.
+If chaining adds value, configure connections in `src/config/mcp-servers.ts`. See [MCP Chaining](../sdk/mcp-chaining.md) in the SDK documentation.
 

@@ -97,7 +97,7 @@ UI extensions for the backoffice:
 
 ### Property Editors (7 skills)
 
-Custom data type editors:
+Custom Data Type editors:
 
 | Skill | Description |
 |-------|-------------|

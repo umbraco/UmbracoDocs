@@ -6,7 +6,7 @@ description: Architecture of the Hosted MCP server including auth flow, three-ti
 
 ## Overview
 
-The hosted MCP server runs as a Cloudflare Worker that acts as both an **OAuth Authorization Server** (to MCP clients) and an **OAuth Client** (to Umbraco via OpenIdDict).
+The hosted MCP server runs as a Cloudflare Worker. It acts as both an **OAuth Authorization Server** (to MCP clients) and an **OAuth Client** (to Umbraco via OpenIdDict).
 
 The MCP Authorization spec mandates this "Third-Party Authorization Flow." This flow ensures that Umbraco tokens are never exposed to MCP clients.
 
@@ -167,7 +167,7 @@ A single Worker can serve multiple Umbraco instances. All sites share one MCP en
 
 ### Why a Single Endpoint?
 
-MCP OAuth discovery (`.well-known/oauth-authorization-server`) returns one `authorization_endpoint`. Clients auto-discover this endpoint. Separate `/authorize/:siteId` routes would not work because the client does not know which siteId to use.
+MCP OAuth discovery (`.well-known/oauth-authorization-server`) returns one `authorization_endpoint`. Clients auto-discover this endpoint. Separate `/authorize/:siteId` routes would not work because the client does not know which site ID to use.
 
 Instead, the consent screen shows a **site picker** (radio buttons) when multiple sites are configured. The user selects which Umbraco instance to authorize against as part of the consent flow.
 
