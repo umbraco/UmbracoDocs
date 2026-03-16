@@ -10,9 +10,9 @@ All LLM interaction happens in the host application (for example, Claude Desktop
 
 This enables three patterns:
 
-* **Proxying** — Re-expose tools from another server alongside your own. Proxied tools are prefixed with the server name (for example, `cms:get-document`) so the AI assistant sees one unified set without naming conflicts
-* **Delegation** — Call tools on another server from within your tool handlers to perform sub-operations
-* **Composite tools** — Combine calls to multiple servers into a single tool that orchestrates a multi-step workflow
+* **Proxying** — Re-expose tools from another server alongside your own. The AI sees them directly. Proxied tools are prefixed with the server name (for example, `cms:get-document`) to avoid naming conflicts.
+* **Delegation** — Make a single hidden call to a chained server from within your tool handler. The AI does not see the chained tool. Use this when your tool needs one piece of data from another server.
+* **Composite tools** — Orchestrate multiple chained calls into one tool. Without this, the AI would need to make each call separately. Use this to reduce LLM round-trips for multi-step workflows.
 
 For example, a commerce MCP server could chain to the Umbraco Developer MCP Server (`@umbraco-cms/mcp-dev`). This gives the AI assistant access to both commerce and content tools without requiring separate server configuration.
 
@@ -80,7 +80,7 @@ The SDK also exports lower-level utilities (`parseProxiedToolName`, `createProxy
 
 ## Pattern 2: Delegation
 
-Delegation lets your tool handlers call tools on a chained server behind the scenes. Unlike proxying, the chained tools are not exposed to the AI assistant. You can enrich your tools with data from other servers. For example, you could fetch a document from the CMS server to include in your response. The AI assistant does not need to know about the underlying server.
+Delegation makes a single call to a chained server from inside your tool handler. Unlike proxying, the chained tool is not exposed to the AI assistant. Use delegation when your tool needs one piece of data from another server. For example, you could fetch a document from the CMS to include in your response.
 
 ```typescript
 import { createToolResult } from "@umbraco-cms/mcp-server-sdk";
@@ -116,7 +116,7 @@ const myTool = {
 
 ## Pattern 3: Composite Tools
 
-Composite tools combine multiple chained calls into a single tool. Without a composite tool, the AI assistant would need to make separate tool calls and reason about the results between each one. A composite tool handles the entire workflow in one invocation, reducing LLM round-trips.
+Composite tools combine multiple chained calls into a single tool. Without a composite tool, the AI would need to make each call separately and reason about the results between steps. A composite tool handles the entire workflow in one invocation, reducing LLM round-trips.
 
 ```typescript
 const syncContentTool = {
