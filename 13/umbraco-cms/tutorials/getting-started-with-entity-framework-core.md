@@ -132,7 +132,6 @@ builder.Services.AddUmbracoDbContext<CustomDbContext>((serviceProvider, options)
         options.UseUmbracoDatabaseProvider(serviceProvider);
     });
 ```
-
 {% endhint %}
 
 2. Open your terminal and navigate to your project folder.
@@ -151,7 +150,6 @@ If you use another class library in your project to store models and DBContext c
 ```bash
 dotnet ef migrations add initialCreate -s ../Project.Web/ --context BlogContext
 ```
-
 {% endhint %}
 
 In this example, we have named the migration `InitialCreate`. However, you can choose the name you like.
@@ -217,7 +215,7 @@ public class BlogCommentsComposer : IComposer
 
 After registering the notification handler, build the project and take a look at the database and we can see our new table:
 
-![Database result of a migration](images/db-table.png)
+![Database result of a migration](<../.gitbook/assets/db-table (1).png>)
 
 We now have some custom database tables in our database that we can work with through the Entity framework.
 

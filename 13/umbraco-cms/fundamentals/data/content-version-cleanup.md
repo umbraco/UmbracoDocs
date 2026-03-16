@@ -13,7 +13,6 @@ The default cleanup policy will:
 * Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
 
 {% hint style="info" %}
-
 Based on the default cleanup policy, you can roll back content to the latest version saved on a particular day as long as it was
 
 * Created within the last 90 days, or
@@ -50,7 +49,7 @@ It is worth noting that whilst we delete rows, we do not shrink database files o
 
 It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions" Content App for each Document Type.
 
-![Content Version Cleanup - Document Type overrides](images/per-doctype-override.png)
+![Content Version Cleanup - Document Type overrides](<../../.gitbook/assets/per-doctype-override (1).png>)
 
 ## Prevent cleanup of important versions
 
@@ -58,7 +57,7 @@ It is possible to mark important content versions as "prevent cleanup" to ensure
 
 1.  Open rollback modal.
 
-    <figure><img src="images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-1 (1).png" alt=""><figcaption></figcaption></figure>
 2.  Click **Prevent cleanup** button for each important version.
 
-    <figure><img src="images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-2 (1).png" alt=""><figcaption></figcaption></figure>
