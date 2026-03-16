@@ -218,6 +218,28 @@ interface AuthProps {
 }
 ```
 
+### HostedMcpEnv
+
+The Cloudflare Worker environment interface. Use this to type the `env` parameter in your `worker.ts`.
+
+```typescript
+interface HostedMcpEnv {
+  UMBRACO_BASE_URL: string;        // Umbraco instance URL
+  UMBRACO_SERVER_URL?: string;     // Server-side URL override (local dev)
+  UMBRACO_OAUTH_CLIENT_ID: string; // OAuth client ID
+  UMBRACO_OAUTH_CLIENT_SECRET?: string;
+  COOKIE_ENCRYPTION_KEY: string;   // Hex string, 32 bytes
+  OAUTH_KV: KVNamespace;           // Token and state storage
+  MCP_AGENT: DurableObjectNamespace;
+  OAUTH_PROVIDER: OAuthProviderHelpers; // Injected at runtime
+  UMBRACO_TOOL_MODES?: string;     // Tool mode filter
+  UMBRACO_INCLUDE_SLICES?: string;
+  UMBRACO_EXCLUDE_SLICES?: string;
+  UMBRACO_READONLY?: string;
+  UMBRACO_SITES?: string;          // JSON-encoded SiteConfig[]
+}
+```
+
 ## HTTP Client
 
 ### createUmbracoFetchClient(config)
@@ -269,6 +291,10 @@ Creates the authorize endpoint handler for the Umbraco OAuth flow. When `options
 ### createCallbackHandler(env)
 
 Creates the callback endpoint handler for completing the Umbraco OAuth flow. Extracts `consentChoices` from KV state and includes them in the returned `AuthProps`.
+
+### createLogoutCallbackHandler(env)
+
+Creates the handler for the logout callback route. After Umbraco completes the logout, it redirects to this endpoint. The handler consumes the stored logout state from KV and redirects the user back to the authorize URL to start a fresh session.
 
 ### `getStoredUmbracoToken(kv, tokenKey)`
 
