@@ -6,7 +6,7 @@ description: >-
 
 # Quickstart
 
-Get from zero to a working Umbraco backoffice extension.
+Use the quickstart skill to set up your development environment, then follow the Plan, Build, Validate workflow to create extensions.
 
 ## Setup
 
