@@ -421,39 +421,55 @@ public class SiteService : ISiteService
 ```
 
 **2 - The service can be used within or outside of a web request**
+In order to replicate ContentAtRoot outside of a web request you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to a store in memory of the unique keys of any nodes at the root of the Umbraco Content (or Media tree). 
+
+{% hint style="tip" %}
+Fun Fact! - This replaces the PublishedContentCache (or PublishedMediaCache) GetAtRoot() method, you used to be able to write umbracoContext.Content.GetAtRoot(). Don't be scared, although there is a long standing convention that anything called a 'service' in Umbraco acts against the database and should only ever be used for CRUD operations, and certainly not in the rendering of content on your site due to performance, this is NOT THE CASE with IDocumentNavigationQueryService, it's totally cool to use it in the front end implementation of the site, it doesn't hit the database, really it should be called IDocumentNavigationQuery to fit in with the Umbraco Marvellous Universe, but it isn't! so it's now the exception that proves the rule!
+{% endhint %}
 
 ```csharp
-using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
-namespace Umbraco9.Services;
+namespace UmbracoExamples.Services;
 
 public class SiteService : ISiteService
 {
-    private readonly IUmbracoContextFactory _umbracoContextFactory;
+	private readonly IUmbracoContextFactory _umbracoContextFactory;
+	private readonly IDocumentNavigationQueryService _documentationNavigationQueryService;
 
-    public SiteService(IUmbracoContextFactory umbracoContextFactory)
-    {
-        _umbracoContextFactory = umbracoContextFactory;
-    }
-    public IPublishedContent GetNewsSection()
-    {
-        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-        var contentQuery = umbracoContextReference.UmbracoContext.Content;
-        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-        var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
-        return newsSection;
-    }
-    public IPublishedContent GetContactUsPage()
-    {
-        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-        var contentQuery = umbracoContextReference.UmbracoContext.Content;
-        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-        var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
-        return contactUs;
-    }
+	public SiteService(IUmbracoContextFactory umbracoContextFactory, IDocumentNavigationQueryService documentationNavigationQueryService)
+	{
+		_umbracoContextFactory = umbracoContextFactory;
+		_documentationNavigationQueryService = documentationNavigationQueryService;
+	}
+	public IPublishedContent? GetNewsSection()
+	{
+		IPublishedContent? newsSection = default;
+		using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+		var contentQuery = umbracoContextReference.UmbracoContext.Content;
+		if (_documentationNavigationQueryService.TryGetRootKeys(out var keys) || keys == null) { 
+			IEnumerable<IPublishedContent?> rootItems = keys!.Select(key => contentQuery.GetById(key)).Where(x => x != null);
+			var siteRoot = rootItems.FirstOrDefault();
+			newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
+		}
+		return newsSection;
+	}
+	public IPublishedContent? GetContactUsPage()
+	{
+		IPublishedContent? contactUs = default;
+		using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+		var contentQuery = umbracoContextReference.UmbracoContext.Content;
+		if (_documentationNavigationQueryService.TryGetRootKeys(out var keys) || keys == null)
+		{
+			IEnumerable<IPublishedContent?> rootItems = keys!.Select(key => contentQuery.GetById(key)).Where(x => x != null);
+			var siteRoot = rootItems.FirstOrDefault();
+			contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
+		}
+		return contactUs;
+	}
 }
 ```
 
