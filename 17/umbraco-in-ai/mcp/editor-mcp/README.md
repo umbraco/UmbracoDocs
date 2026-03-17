@@ -1,0 +1,3 @@
+# Editor MCP Documentation
+
+...

@@ -1,0 +1,3 @@
+# Base MCP for Package Developers Documentation
+
+...
