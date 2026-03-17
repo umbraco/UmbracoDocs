@@ -24,6 +24,7 @@
   * [API Applications](apis/management/api-applications.md)
   * [Aliases](apis/management/aliases.md)
 * [Ingestion](apis/ingestion/README.md)
+  * [Ingestion Structure](apis/ingestion/ingestion-structure.md)
   * [RESTful Ingestion](apis/ingestion/restful-ingestion.md)
   * [Functions](apis/ingestion/functions.md)
 * [GraphQL](apis/graphql/README.md)
