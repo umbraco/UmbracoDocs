@@ -10,7 +10,7 @@ All LLM interaction happens in the host application (for example, Claude Desktop
 
 This enables three patterns:
 
-* **Proxying** — Re-expose tools from another server alongside your own. The AI sees them directly. Proxied tools are prefixed with the server name (for example, `cms:get-document`) to avoid naming conflicts.
+* **Proxying** — Re-expose tools from another server alongside your own. The AI sees them directly. Proxied tools are prefixed with the server name (for example, `cms--get-document`) to avoid naming conflicts.
 * **Delegation** — Make a single hidden call to a chained server from within your tool handler. The AI does not see the chained tool. Use this when your tool needs one piece of data from another server.
 * **Composite tools** — Orchestrate multiple chained calls into one tool. Without this, the AI would need to make each call separately. Use this to reduce LLM round-trips for multi-step workflows.
 
@@ -58,7 +58,7 @@ for (const server of servers) {
 import { discoverProxiedTools } from "@umbraco-cms/mcp-server-sdk";
 
 const proxiedTools = await discoverProxiedTools(mcpClientManager);
-// Returns: [{ prefixedName: "cms:get-document", serverName: "cms", ... }]
+// Returns: [{ prefixedName: "cms--get-document", serverName: "cms", ... }]
 ```
 
 ### 4. Cleanup on Shutdown
@@ -72,7 +72,7 @@ process.on("SIGINT", async () => {
 
 ## Pattern 1: Proxying
 
-Proxying exposes tools from a chained server to the LLM. Each proxied tool gets a prefix based on the server name (for example, `cms:get-document`).
+Proxying exposes tools from a chained server to the LLM. Each proxied tool gets a prefix based on the server name (for example, `cms--get-document`).
 
 When `proxyTools` is `true` (the default) on a server config, `discoverProxiedTools` connects to the server, lists its tools, and returns `ProxiedTool` objects.
 
