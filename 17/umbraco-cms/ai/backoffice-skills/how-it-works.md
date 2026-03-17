@@ -14,9 +14,9 @@ This page explains how the Umbraco backoffice skills use that format to guide AI
 
 Each skill acts as a routing layer between the agent and three sources of knowledge:
 
-- **Best practices** — Validated code patterns for each extension type
-- **Live documentation** — Current pages from the Umbraco documentation, fetched at runtime
-- **Working examples** — Complete, buildable extensions that demonstrate real combinations
+- **Best practices** — Validated code patterns for each extension type.
+- **Live documentation** — Current pages from the Umbraco documentation, fetched at runtime.
+- **Working examples** — Complete, buildable extensions that demonstrate real combinations.
 
 When you describe a task, the agent loads only the relevant skill. The skill guides the agent through a workflow, pointing it to the right documentation and patterns. The agent decides how much context it needs based on task complexity.
 
@@ -56,7 +56,7 @@ Skills combine **static patterns** (validated code in the `SKILL.md`) with **dyn
 
 Skills reference each other through their content. A skill might say "use the `umbraco-context-api` skill for data sharing" or "invoke `umbraco-openapi-client` for API calls." The agent follows these references to load additional skills as needed.
 
-The `umbraco-backoffice` backbone skill provides a central index with an extension map, blueprints, and a sub-skills reference organized by category. Each skill stays focused on one extension type while the backbone skill shows how they fit together.
+The `umbraco-backoffice` backbone skill provides a central index with an extension map, blueprints, and a sub-skills reference organized by category. Each skill stays focused on one extension type, while the backbone skill shows how they fit together.
 
 ## Plugin Packaging
 
