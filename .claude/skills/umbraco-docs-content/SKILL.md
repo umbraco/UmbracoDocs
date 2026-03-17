@@ -9,6 +9,17 @@ description: >-
 
 # Umbraco Documentation Content Skill
 
+## Source of Truth
+
+The contributing guide is the single source of truth for documentation standards. Read these files for the full rules:
+
+- **Style guide**: `contributing/documentation/style-guide/README.md`
+- **Markdown conventions**: `contributing/documentation/style-guide/markdown-conventions.md`
+- **Code samples**: `contributing/documentation/style-guide/code-samples.md`
+- **File structure and images**: `contributing/documentation/style-guide/structure.md`
+
+For acronym exceptions and how to add new ones, read `references/acronyms.md`.
+
 ## Workflow Checklist
 
 When creating or modifying documentation, follow this checklist:
@@ -28,8 +39,7 @@ When creating or modifying documentation, follow this checklist:
 - No punctuation at end of headings; use `#` only once (the title)
 - Use **relative paths** for internal links; use the **article title** as link text
 
-For full rules (lists, terms, Umbraco-specific casing, brands, good/bad examples), read `references/style-guide.md`.
-For acronym exceptions and how to add new ones, read `references/acronyms.md`.
+For all rules including lists, terms, Umbraco-specific casing, brands, and good/bad examples, read `contributing/documentation/style-guide/README.md`.
 
 ## Article Template
 
@@ -67,6 +77,8 @@ Content here.
 - All names: **lowercase**, **hyphens** for spaces
 - Parent articles are always `README.md`
 - Images directory sits next to the `.md` files that reference them
+
+For full structure rules and image guidelines, read `contributing/documentation/style-guide/structure.md`.
 
 ## SUMMARY.md Format
 
@@ -115,18 +127,18 @@ For any structural change, apply the SUMMARY.md and .gitbook.yaml rules above:
 - Always add **syntax highlighting** and a **caption** (filename) to code blocks
 - Provide **complete, compilable** code with real-life examples
 
-For caption format, syntax highlighting languages, file-scoped namespaces, and all other code guidelines, read `references/code-samples.md`.
+For caption format, syntax highlighting languages, file-scoped namespaces, and all other code guidelines, read `contributing/documentation/style-guide/code-samples.md`.
 
 ## Images
 
 - Store in `images/` directory next to the referencing `.md` file
 - Always provide alt text or caption
 
-For formats, naming, and markdown syntax, read `references/images.md`.
+For formats, naming, and markdown syntax, read `contributing/documentation/style-guide/structure.md`.
 
 ## Markdown Conventions
 
 - Use GitBook hint blocks for notes/warnings (`info`, `success`, `warning`, `danger`)
 - Do not edit Cards HTML on landing pages
 
-For hint syntax, links, content-ref, expandables, and other markdown conventions, read `references/markdown.md`.
+For hint syntax, links, content-ref, expandables, and other markdown conventions, read `contributing/documentation/style-guide/markdown-conventions.md`.
