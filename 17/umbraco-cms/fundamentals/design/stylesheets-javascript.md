@@ -4,37 +4,41 @@ description: Information on working with stylesheets and JavaScript in Umbraco.
 
 # Stylesheets And JavaScript
 
+In Umbraco, you can manage stylesheets and JavaScript files directly from the backoffice. These files are used to control the appearance and behavior of your website.
+
+This article explains how to work with stylesheets and JavaScript and clarifies how styling works with the Rich Text Editor (RTE) in the latest versions.
+
 ## Stylesheets in the Backoffice
 
-You can create and edit stylesheets in the **Stylesheets** folder in the **Settings** section of the Backoffice.
+Stylesheets are used to define how your website content is displayed. You can create and manage CSS files from the **Settings** section.
+
+### Creating a stylesheet
+
+To create a stylesheet:
+
+1. Go to **Settings** section in the backoffice.
+2. Expand the **Stylesheets** folder.
+3. Click the **⋯** (options) menu.
+4. Select **Create**.
 
 ![Creating a new stylesheet](../../.gitbook/assets/creating-stylesheet.png)
 
-The **Create** menu consists of:
+5. Select **Stylesheet file**.
+6. Give the file a name and add your CSS.
 
-* Stylesheet file (for use in templates/views)
-* Folder (for keeping stylesheets organized)
+![Stylesheet Editor](../../.gitbook/assets/stylesheet-editor.png)
+7. Click **Save**.
 
-{% hint style="info" %}
-It is currently not possible to use any CSS preprocessor (such as Syntactically Awesome Style Sheets (SASS)) in the backoffice.
-{% endhint %}
+The stylesheet is saved in the `wwwroot/css` folder of your project.
 
-After creating a new stylesheet, you would work with it as you would with templates or JavaScript files using the built-in backoffice text editor. When you're working with stylesheets, you also have access to the Rich Text Editor, which allows you to create CSS styles and get a real-time preview.
+### Using stylesheets
 
-![Stylesheet Rich Text Editor (RTE)](<../../.gitbook/assets/2-rte-editor (1).png>)
+Stylesheets created in the backoffice are standard CSS files. To use them on your website, reference them in your templates or layout files:
 
-The rules you create in the Rich Text Editor section will carry over to the Code tab.
-
-![Stylesheet RTE tab](<../../.gitbook/assets/3-rte-editor-p2 (1).png>) ![Stylesheet Code tab](<../../.gitbook/assets/3-rte-editor-p3 (1).png>)
-
-To reference your newly included stylesheet in a template file, navigate to Templates, pick the template you like (CSS files are usually referenced in the layout or home templates) and link to it with the `link` tag.
-
-![Linking CSS in template](<../../.gitbook/assets/4-link-css-v9 (1).png>)
-
-By default, the stylesheets will be saved in the `wwwroot/css` folder in the solution. To reference them you can use either of the methods used in the above screenshot.
+![Linking CSS in template](../../.gitbook/assets/linking-stylesheet.png)
 
 ```html
-<link rel="stylesheet" href='@Url.Content("~/css/mystylesheet.css")' />
+<link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")"/>
 ```
 
 or
@@ -43,36 +47,49 @@ or
 <link rel="stylesheet" href="/css/mystylesheet.css" />
 ```
 
-With the stylesheet referenced, you will be able to style the template file with the rules and classes defined in the stylesheet.
-
-Your stylesheets can be used in Rich Text Editors (datatype) as well. See the [Rich Text Editor](../backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/css-properties.md) documentation for more information.
-
-{% hint style="info" %}
-If your RTE is styled differently on the frontend of the site, the backoffice styling might be getting overwritten by other stylesheets you have included.
-{% endhint %}
-
 ## JavaScript files in the Backoffice
 
-To create and edit JavaScript files in the Backoffice, go to the **Scripts** folder in the **Settings** section of the Backoffice.
+JavaScript files can also be created and managed from the backoffice.
+
+### Creating a JavaScript file
+
+To create JavaScript files:
+
+1. Go to **Settings** section in the backoffice.
+2. Expand the **Scripts** folder.
+3. Click the **⋯** (options) menu.
+4. Select **Create**.
 
 ![Creating a new JavaScript](../../.gitbook/assets/creating-scripts.png)
 
-From here you can add a new JavaScript file, or a new folder.
-
-Add a new JavaScript file and write your code:
+5. Select **JavaScript file**.
+6. Give the file a name and add your JavaScript code.
 
 ![Sample Javascript](../../.gitbook/assets/sample-Javacsript.png)
+7. Click **Save**.
 
-Then, navigate to the template where you would like to include your JS file.
+The JavaScript is saved in the `wwwroot/scripts` folder of your project.
+
+### Using JavaScript files
+
+Navigate to the template where you would like to reference your scripts.
 
 ```html
 <script src="/scripts/myScript.js"></script>
 ```
 
-![Reference the script in template](<../../.gitbook/assets/10-reference-script-v9 (1).png>)
-
-By default all JavaScript files will be stored in the `wwwroot/scripts` folder in the solution.
+![Reference the script in template](../../.gitbook/assets/script-reference.png)
 
 {% hint style="info" %}
-If you are working locally, you can create CSS and JS files outside of the Backoffice - as long as they are placed in appropriate folders (`css` and `scripts`), they will show up in the Backoffice when you click **...** next to the **Stylesheets** folder and then select **Reload**.
+If you are working locally, you can create CSS and JS files outside of the Backoffice. Place files in the `css` or `scripts` folders. In the Backoffice, click **...** next to the **Stylesheets**  or **Scripts** folder and select **Reload children**.
 {% endhint %}
+
+## Rich Text Editor styling
+
+Editor styles are configured using the Style Menu. To provide editors with predefined styles such as classes, tags, or IDs, you must configure them as part of the Style Menu configuration. For more information, see the [Rich Text Editor](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu#creating-a-custom-style-select-menu) article.
+
+{% hint style="info" %}
+Styles defined in your CSS must still exist for the frontend, but they will not automatically appear in the Rich Text Editor.
+{% endhint %}
+
+If content appears differently in the backoffice editor than on the frontend, it may be caused by additional stylesheets applied in your site.
