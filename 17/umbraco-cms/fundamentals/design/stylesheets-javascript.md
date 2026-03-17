@@ -88,7 +88,7 @@ If you are working locally, you can create CSS and JS files outside of the Backo
 
 ## Rich Text Editor styling
 
-Editor styles are configured using the Style Menu in RTE. To provide editors with predefined styles such as classes, tags, or IDs, you must configure them as part of the Style Menu configuration. For more information, see the [Rich Text Editor](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu#creating-a-custom-style-select-menu) article.
+Editor styles are configured using the Style Menu in RTE. To provide editors with predefined styles such as classes, tags, or IDs, you must configure them as part of the Style Menu configuration. For more information, see the [Rich Text Editor](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu#creating-a-custom-style-select-menu) article.
 
 {% hint style="info" %}
 Styles defined in your CSS must still exist for the frontend, but they will not automatically appear in the Rich Text Editor.
