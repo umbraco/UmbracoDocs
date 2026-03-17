@@ -6,7 +6,7 @@ description: Information on working with stylesheets and JavaScript in Umbraco.
 
 In Umbraco, you can manage stylesheets and JavaScript files directly from the backoffice. These files are used to control the appearance and behavior of your website.
 
-This article explains how to work with stylesheets and JavaScript and clarifies how styling works with the Rich Text Editor (RTE) in the latest versions.
+This article explains how to work with stylesheets and JavaScript and clarifies how styling works with the Rich Text Editor (RTE) Data Type.
 
 ## Stylesheets in the Backoffice
 
@@ -27,6 +27,7 @@ To create a stylesheet:
 6. Give the file a name and add your CSS.
 
 ![Stylesheet Editor](../../.gitbook/assets/stylesheet-editor.png)
+
 7. Click **Save**.
 
 The stylesheet is saved in the `wwwroot/css` folder of your project.
@@ -66,13 +67,14 @@ To create JavaScript files:
 6. Give the file a name and add your JavaScript code.
 
 ![Sample Javascript](../../.gitbook/assets/sample-Javacsript.png)
+
 7. Click **Save**.
 
 The JavaScript is saved in the `wwwroot/scripts` folder of your project.
 
 ### Using JavaScript files
 
-Navigate to the template where you would like to reference your scripts.
+Navigate to the template where you would like to reference your scripts:
 
 ```html
 <script src="/scripts/myScript.js"></script>
@@ -86,7 +88,7 @@ If you are working locally, you can create CSS and JS files outside of the Backo
 
 ## Rich Text Editor styling
 
-Editor styles are configured using the Style Menu. To provide editors with predefined styles such as classes, tags, or IDs, you must configure them as part of the Style Menu configuration. For more information, see the [Rich Text Editor](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu#creating-a-custom-style-select-menu) article.
+Editor styles are configured using the Style Menu in RTE. To provide editors with predefined styles such as classes, tags, or IDs, you must configure them as part of the Style Menu configuration. For more information, see the [Rich Text Editor](../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu#creating-a-custom-style-select-menu) article.
 
 {% hint style="info" %}
 Styles defined in your CSS must still exist for the frontend, but they will not automatically appear in the Rich Text Editor.
