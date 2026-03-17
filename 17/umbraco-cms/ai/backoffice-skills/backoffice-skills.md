@@ -1,6 +1,6 @@
 ---
 description: >-
-  All backoffice extension skills organized by category, with composition examples
+  A list of all backoffice extension skills organized by category, with composition examples
   and working blueprints.
 ---
 
@@ -22,9 +22,9 @@ No single extension type does everything. Understanding how they combine is key 
 
 The most important skill. It provides:
 
-- **Complete Extension Map** — Visual diagram showing where all extension types appear in the backoffice UI
-- **Working Blueprints** — Copy-and-adapt examples for common patterns
-- **Sub-Skill Reference** — Links to all other skills organized by category
+- **Complete Extension Map** — Visual diagram showing where all extension types appear in the backoffice UI.
+- **Working Blueprints** — Copy-and-adapt examples for common patterns.
+- **Sub-Skill Reference** — Links to all other skills organized by category.
 
 Use this skill when starting a new backoffice project, understanding how extension types connect, or finding the right skill for a specific UI location.
 
@@ -40,19 +40,19 @@ Core architectural concepts used across all extensions:
 
 | Skill | Description |
 |-------|-------------|
-| `umbraco-context-api` | Provider-consumer pattern for data sharing |
-| `umbraco-repository-pattern` | Data access layer abstraction |
-| `umbraco-extension-registry` | Dynamic extension registration |
-| `umbraco-conditions` | Control where extensions appear |
-| `umbraco-state-management` | Reactive UI with @state |
-| `umbraco-localization` | Multi-language support |
-| `umbraco-routing` | URL structure and navigation |
-| `umbraco-notifications` | Toast messages and events |
-| `umbraco-umbraco-element` | Base class for components |
-| `umbraco-controllers` | C# API endpoints |
-| `umbraco-sorter` | Drag-and-drop sorting with UmbSorterController |
-| `umbraco-manifest-picker` | Pick registered extensions with umb-input-manifest |
-| `umbraco-validation-context` | Form validation with UmbValidationContext |
+| `umbraco-context-api` | Provider-consumer pattern for data sharing. |
+| `umbraco-repository-pattern` | Data access layer abstraction. |
+| `umbraco-extension-registry` | Dynamic extension registration. |
+| `umbraco-conditions` | Control where extensions appear. |
+| `umbraco-state-management` | Reactive UI with @state. |
+| `umbraco-localization` | Multi-language support. |
+| `umbraco-routing` | URL structure and navigation. |
+| `umbraco-notifications` | Toast messages and events. |
+| `umbraco-umbraco-element` | Base class for components. |
+| `umbraco-controllers` | C# API endpoints. |
+| `umbraco-sorter` | Drag-and-drop sorting with UmbSorterController. |
+| `umbraco-manifest-picker` | Pick registered extensions with umb-input-manifest. |
+| `umbraco-validation-context` | Form validation with UmbValidationContext. |
 
 ### Extension Types (30 skills)
 
@@ -137,12 +137,12 @@ Setup, validation, and project management:
 
 | Skill | Description |
 |-------|-------------|
-| `umbraco-quickstart` | Quick setup for extension development |
-| `umbraco-extension-template` | Create extensions using the dotnet template |
-| `umbraco-add-extension-reference` | Add extension project references to your solution |
-| `package-script-writer` | Generate installation scripts using the Package Script Writer CLI |
-| `umbraco-validation-checks` | Browser validation checks for manual testing |
-| `umbraco-review-checks` | Review checks reference for validating extensions |
+| `umbraco-quickstart` | Quick setup for extension development. |
+| `umbraco-extension-template` | Create extensions using the dotnet template. |
+| `umbraco-add-extension-reference` | Add extension project references to your solution. |
+| `package-script-writer` | Generate installation scripts using the Package Script Writer CLI. |
+| `umbraco-validation-checks` | Browser validation checks for manual testing. |
+| `umbraco-review-checks` | Review checks reference for validating extensions. |
 
 ## How Skills Compose
 
@@ -150,13 +150,12 @@ Skills are designed to work together. Here is how a typical flow looks:
 
 **"I need a custom admin section with a tree and editing workspace"**
 
-1. `umbraco-backoffice` — Understand the pattern, pick the right blueprint
-2. `umbraco-sections` — Create the section (top-level nav tab)
-3. `umbraco-menu` + `umbraco-menu-items` — Add sidebar navigation
-4. `umbraco-tree` + `umbraco-tree-item` — Add hierarchical tree
-5. `umbraco-workspace` — Create the editing workspace
-6. `umbraco-context-api` — Wire up data sharing between components
-7. `umbraco-controllers` + `umbraco-openapi-client` — Backend API if needed
+1. `umbraco-backoffice` — Understand the pattern, pick the right blueprint.
+2. `umbraco-sections` — Create the section (top-level nav tab).
+3. `umbraco-menu` + `umbraco-menu-items` — Add sidebar navigation.
+4. `umbraco-tree` + `umbraco-tree-item` — Add hierarchical tree.
+5. `umbraco-workspace` — Create the editing workspace.
+6. `umbraco-context-api` — Wire up data sharing between components.
+7. `umbraco-controllers` + `umbraco-openapi-client` — Backend API if needed.
 
 Each skill provides the correct patterns for its piece. The `umbraco-backoffice` skill shows how the pieces connect.
-
