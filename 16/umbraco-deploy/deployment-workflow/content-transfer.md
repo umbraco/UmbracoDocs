@@ -48,7 +48,6 @@ Media items are transferred the same way as content:
 
 1. Click **...** next to an item in the **Media** section.
 2. Choose **Queue for transfer**.
-3. Use the **Deployment dashboard** in the **Content** section to finish the transfer.
 
 #### Restoring Media Between Environments
 
@@ -63,7 +62,7 @@ To synchronize a lower environment's media library with a higher one (for exampl
 7. Reload the Media tree to see the updated library.
 
 {% hint style="info" %}
-A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror (including the removal of orphaned items), you must manually empty the Media section (and the Recycle Bin) on the target environment. You could also use the [Import and Export](import-export.md) feature with a full media export from the source environment.
+A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the Media section and Recycle Bin on the target environment. You could also use the [Import and Export](import-export.md) feature with a full media export from the source environment.
 {% endhint %}
 
 {% hint style="success" %}
