@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  How to configure the Examine search provider.
+  How to configure the Examine search provider
 ---
 
 # The Examine search provider
@@ -14,7 +14,7 @@ In this article you'll learn how to configure the Examine search provider, so it
 
 ## Configuring fields for faceting and/or sorting
 
-Fields that will be used for faceting and/or sorting must be explicitly configured for the Examine search provider, _before_ anything is added to the indexes. This is done by configuring the `FieldOptions` using the options pattern.
+Fields that will be used for faceting and/or sorting must be explicitly configured for the Examine search provider. This is done by configuring the `FieldOptions` using the options pattern, and _must_ be done prior to indexing any content.
 
 The field configuration is essentially a mapping between the Umbraco property aliases that hold the values, and the expected field index type of those properties. For example, the "genre" and "releaseYear" fields used throughout this article should be configured like this:
 

@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  Installing Umbraco Search into your Umbraco CMS.
+  Installing Umbraco Search into your Umbraco CMS
 ---
 
 # Installation

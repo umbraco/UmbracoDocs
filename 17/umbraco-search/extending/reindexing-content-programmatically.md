@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  An article discussing how to trigger reindexing of content programmatically - and when to do it.
+  An article discussing how to trigger reindexing of content programmatically - and when to do it
 ---
 
 # Reindexing content programmatically

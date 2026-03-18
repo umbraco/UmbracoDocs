@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  Indexing and searching data that does not originate from Umbraco.
+  Indexing and searching data that does not originate from Umbraco
 ---
 
 # Indexing and searching data from other sources
@@ -16,7 +16,7 @@ This article explores how to index and search for bespoke data.
 
 Umbraco Search does perform any active handling for custom indexes - you are in complete control.
 
-It's your responsibility to create the index, to keep it up to date with changes, and to clean it up if you don't need it anymore.
+It's your responsibility to create the index and to keep it up to date with changes.
 
 If you need management UI for index maintenance (for example, rebuilding the index), you must supply this as well.
 
