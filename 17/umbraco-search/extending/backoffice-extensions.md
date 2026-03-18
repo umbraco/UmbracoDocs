@@ -207,7 +207,7 @@ export class MyRoutableEntityAction extends UmbEntityActionBase<never> {
 
 See [Routable modals](#routable-modals) for a complete example using this pattern.
 
-The Examine provider's "Show Fields" action ([`show-fields.entity-action.ts`](../src/Umbraco.Cms.Search.Provider.Examine/Client/src/show-fields.entity-action.ts)) is a real-world reference implementation.
+The Examine provider's "Show Fields" action ([`show-fields.entity-action.ts`](https://github.com/umbraco/Umbraco.Cms.Search/tree/main/src/Umbraco.Cms.Search.Provider.Examine/Client/src/show-fields.entity-action.ts)) is a real-world reference implementation.
 
 ## Adding a workspace view to the search workspace
 
