@@ -55,7 +55,7 @@ Each result row displays:
 | **Object type** | The content type (for example "Document", "Media") |
 | **Score** | The relevance score for the search query |
 
-An entity action dropdown on each row provides per-document actions. The available actions depend on which search providers are installed (e.g. the Examine provider adds a "Show Fields" action).
+An entity action dropdown on each row provides per-document actions. The available actions depend on which search providers are installed. For example, the Examine provider adds a "Show Fields" action.
 
 ## Index health status
 
