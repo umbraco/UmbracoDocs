@@ -9,8 +9,9 @@ Umbraco Search is built for handling Umbraco content (documents, media and membe
 
 This article explores how to index and search for bespoke data.
 
-> [!TIP]
-> If your site does not own the data, please consider if your site should really be responsible for searching the data, or if that responsibility would be better placed at the data source.
+{% hint style="info" %}
+If your site does not own the data, please consider if your site should really be responsible for searching the data, or if that responsibility would be better placed at the data source.
+{% endhint %}
 
 ## You are in control
 
@@ -109,25 +110,26 @@ internal sealed class BookIndexService(IIndexer indexer, IBookService bookServic
 ```
 {% endcode %}
 
-> [!NOTE]
-> The default search provider for Umbraco Search is powered by Examine. It requires you to register a Lucene index for the new entity in a composer:
->
-> ```csharp
-> using Examine;
-> using Examine.Lucene.Providers;
-> using Umbraco.Cms.Core.Composing;
-> using Umbraco.Cms.Infrastructure.Examine;
-> 
-> namespace My.Services;
-> 
-> public class MyComposer : IComposer
-> {
->     public void Compose(IUmbracoBuilder builder)
->         => builder.Services.AddExamineLuceneIndex<LuceneIndex, ConfigurationEnabledDirectoryFactory>("My_Books", _ => { });
-> }
-> ```
->
-> Also keep in mind that additional, field level configuration may be needed to suit your search requirements. See the [Examine search provider](../getting-started/examine-search-provider.md) documentation for details.
+{% hint style="info" %}
+The default search provider for Umbraco Search is powered by Examine. It requires you to register a Lucene index for the new entity in a composer:
+
+```csharp
+using Examine;
+using Examine.Lucene.Providers;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Infrastructure.Examine;
+
+namespace My.Services;
+
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.AddExamineLuceneIndex<LuceneIndex, ConfigurationEnabledDirectoryFactory>("My_Books", _ => { });
+}
+```
+
+Also keep in mind that additional, field level configuration may be needed to suit your search requirements. See the [Examine search provider](../getting-started/examine-search-provider.md) documentation for details.
+{% endhint %}
 
 ### The `ISearcher`
 

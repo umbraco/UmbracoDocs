@@ -9,8 +9,9 @@ Umbraco Search uses a provider based approach to the underlying search technolog
 
 In this article you'll learn how to configure the Examine search provider, so it produces the results you're expecting.
 
-> [!NOTE]
-> This article _only_ applies to the default Examine search provider. Alternative search providers might be available, and they might require a different configuration.
+{% hint style="info" %}
+This article _only_ applies to the default Examine search provider. Alternative search providers might be available, and they might require a different configuration.
+{% endhint %}
 
 ## Configuring fields for faceting and/or sorting
 
@@ -53,10 +54,11 @@ public class FieldOptionsComposer : IComposer
 ```
 {% endcode %}
 
-> [!IMPORTANT]
-> The field configurations must be known at index time. Any changes made to this configuration only takes effect for newly indexed content.
-> 
-> If an index is already populated, it might be necessary to rebuild it for changes to take effect.
+{% hint style="warning" %}
+The field configurations must be known at index time. Any changes made to this configuration only takes effect for newly indexed content.
+
+If an index is already populated, it might be necessary to rebuild it for changes to take effect.
+{% endhint %}
 
 ## Configuring the search behavior
 
@@ -100,8 +102,9 @@ The default behavior for facet results is to _exclude_ the facet values that are
 
 If all (applicable) facet values should be _included_ for all groups in the search result, configure `SearcherOptions.ExpandFacetValues` as `true`.
 
-> [!CAUTION]
-> Expanding the facet values incurs a performance penalty, which is more or less linear to the number of facet groups in the search.
+{% hint style="warning" %}
+Expanding the facet values incurs a performance penalty, which is more or less linear to the number of facet groups in the search.
+{% endhint %}
 
 ### Max facet values
 

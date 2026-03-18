@@ -133,8 +133,9 @@ filters:
 ]
 ```
 
-> [!TIP]
-> Ranges include the lower interval and excludes the upper. The example above translates into: _"releaseYear" either between 1950 and 1959 (both inclusive) or between 1980 and 1989 (both inclusive)_.
+{% hint style="info" %}
+Ranges include the lower interval and excludes the upper. The example above translates into: _"releaseYear" either between 1950 and 1959 (both inclusive) or between 1980 and 1989 (both inclusive)_.
+{% endhint %}
 
 ## Facets in search results
 
@@ -237,8 +238,9 @@ public class MySearchService(ISearcher searcher)
 ```
 {% endcode %}
 
-> [!TIP]
-> Use the `ScoreSorter` to sort by search result score (relevance).
+{% hint style="info" %}
+Use the `ScoreSorter` to sort by search result score (relevance).
+{% endhint %}
 
 ## Search result pagination
 
@@ -270,8 +272,9 @@ public class MySearchService(ISearcher searcher)
 
 By default, Umbraco Search will search only for invariant content. Use `culture` and/or `segment` to include within specific content variations.
 
-> [!TIP]
-> Invariant content will automatically be included in the search result when searching for variant content.
+{% hint style="info" %}
+Invariant content will automatically be included in the search result when searching for variant content.
+{% endhint %}
 
 {% code title="MySearchService.cs" %}
 ```csharp
@@ -300,8 +303,9 @@ Use the `AccessContext` to include protected content (that is, content with publ
 
 The `AccessContext` requires the ID (key) of the currently logged-in [member](../../umbraco-cms/fundamentals/data/members.md), and accepts an optional collection of group IDs.
 
-> [!IMPORTANT]
-> Umbraco Search has no knowledge of members. If public access rules are defined based on member groups, make sure to pass the group IDs alongside the member ID in `AccessContext`.
+{% hint style="info" %}
+Umbraco Search has no knowledge of members. If public access rules are defined based on member groups, make sure to pass the group IDs alongside the member ID in `AccessContext`.
+{% endhint %}
 
 {% code title="MySearchService.cs" %}
 ```csharp

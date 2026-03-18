@@ -120,8 +120,9 @@ The detail view renders two columns:
 
 ## Adding an entity action to search documents
 
-> [!NOTE]
-> `entityAction` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/entity-actions) for the full API. This section covers what is specific to Umbraco Search.
+{% hint style="info" %}
+`entityAction` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/entity-actions) for the full API. This section covers what is specific to Umbraco Search.
+{% endhint %}
 
 ### Search entity types
 
@@ -211,8 +212,9 @@ The Examine provider's "Show Fields" action ([`show-fields.entity-action.ts`](ht
 
 ## Adding a workspace view to the search workspace
 
-> [!NOTE]
-> `workspaceView` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms) for the full API. This section covers what is specific to Umbraco Search.
+{% hint style="info" %}
+`workspaceView` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms) for the full API. This section covers what is specific to Umbraco Search.
+{% endhint %}
 
 A workspace view adds an entirely new tab to the search workspace. Use this when you need a full-page view rather than a box within the existing "Details" tab.
 

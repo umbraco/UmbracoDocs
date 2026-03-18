@@ -12,8 +12,9 @@ This is useful when you need to:
 - Index data that is not covered by the built-in `IndexValue`.
 - Add custom filtering capabilities to the searcher.
 
-> [!NOTE]
-> This article _only_ applies to the default Examine search provider. Alternative search providers might provide similar means of extending the query capabilities.
+{% hint style="info" %}
+This article _only_ applies to the default Examine search provider. Alternative search providers might provide similar means of extending the query capabilities.
+{% endhint %}
 
 ## Create a custom `IndexValue`
 
@@ -216,8 +217,9 @@ public class MyDataContentIndexer : IContentIndexer
 ```
 {% endcode %}
 
-> [!NOTE]
-> The `IMyDataService` service in this sample is a fictional service of your own making.
+{% hint style="info" %}
+The `IMyDataService` service in this sample is a fictional service of your own making.
+{% endhint %}
 
 ## Registering custom implementations
 

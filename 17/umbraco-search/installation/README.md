@@ -55,8 +55,9 @@ public sealed class SiteComposer : IComposer
 ```
 {% endcode %}
 
-> [!TIP]
-> See Examine specific configuration options in the [Examine search provider](../getting-started/examine-search-provider.md) article.
+{% hint style="info" %}
+See Examine specific configuration options in the [Examine search provider](../getting-started/examine-search-provider.md) article.
+{% endcode %}
 
 ### The backoffice search
 
