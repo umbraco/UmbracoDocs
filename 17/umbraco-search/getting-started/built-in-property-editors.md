@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  A list of the built-in Umbraco property editors and their corresponding index value types in Umbraco Search.
+  A list of the built-in Umbraco property editors and their corresponding index value types in Umbraco Search
 hidden: true
 ---
 
@@ -32,7 +32,7 @@ Some property editors have deliberately been left out, because it was deemed tha
 | `Umbraco.RadioButtonList`     | `Keyword`        |
 | `Umbraco.RichText`            | `Text`           | Headings (H1, H2, H3) are indexed with individual relevance, all other tags as lowest relevance text. If the property contains blocks, they are indexed in the same way as the block editors. |
 | `Umbraco.Slider`              | `Decimal`        | For range slides, both the lower and upper bounds are indexed.                                                                                                                                |
-| `Umbraco.Tags`                | `Keyword`        | Also note that all tags for all properties are accumulated into a dedicated system field (see Appendix B).                                                                                    |
+| `Umbraco.Tags`                | `Keyword`        | In addition, all tags for all properties are accumulated into a dedicated system field (see [system fields](system-fields.md).                                                                |
 | `Umbraco.TextArea`            | `Text`           | Indexed as lowest relevance text.                                                                                                                                                             |
 | `Umbraco.TextBox`             | `Text`           | Indexed as lowest relevance text.                                                                                                                                                             |
 | `Umbraco.TrueFalse`           | `Integer`        | Indexed as 1 for `true`, 0 for `false`.                                                                                                                                                       |
@@ -43,4 +43,4 @@ Block editors contain other property editors. These will iterate their contained
 
 ### Special case: `Umbraco.Label`
 
-The label editor indexes as either `Integer`, `Decimal`, `DateTimeOffset` or `Text`, depending on the data type configuration (the property editor value type).
+The label editor indexes as either `Integer`, `Decimal`, `DateTimeOffset` or `Text`, depending on the Data Type configuration (the property editor value type).

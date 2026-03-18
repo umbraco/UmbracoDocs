@@ -1,17 +1,17 @@
 ﻿---
 description: >-
-  Getting started on searching with Umbraco Search.
+  Getting started on searching with Umbraco Search
 ---
 
 # Getting started with Umbraco Search
 
-The fundamental purpose of Umbraco Search is to build search experience. The `ISearcher` interface is your main entrypoint for searching.
+The fundamental purpose of Umbraco Search is to build search experience. The `ISearcher` interface is your main entry point for searching.
 
 `ISearcher` features multiple different approaches to search, all of which you can combine into single queries. Each of these are described below.
 
 ## Indexed values
 
-Umbraco Search indexes all relevant content properties alongside system fields like the content ID (key), name, type etc.
+Umbraco Search indexes all relevant content properties alongside system fields like the content ID (key), name, type and so on.
 
 An overview of the indexed system fields can be found in [system fields](system-fields.md) article.
 

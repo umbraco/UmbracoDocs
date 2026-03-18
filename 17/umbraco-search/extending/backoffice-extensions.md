@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  Developer guide for adding detail boxes, entity actions, workspace views, and routable modals.
+  Developer guide for adding detail boxes, entity actions, workspace views, and routable modals
 ---
 
 # Extending the search backoffice
@@ -121,7 +121,7 @@ The detail view renders two columns:
 ## Adding an entity action to search documents
 
 > [!NOTE]
-> `entityAction` is a standard Umbraco extension type. See the [official Umbraco docs](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/entity-actions) for the full API. This section covers what is specific to Umbraco Search.
+> `entityAction` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/entity-actions) for the full API. This section covers what is specific to Umbraco Search.
 
 ### Search entity types
 
@@ -212,7 +212,7 @@ The Examine provider's "Show Fields" action ([`show-fields.entity-action.ts`](..
 ## Adding a workspace view to the search workspace
 
 > [!NOTE]
-> `workspaceView` is a standard Umbraco extension type. See the [official Umbraco docs](https://docs.umbraco.com/umbraco-cms) for the full API. This section covers what is specific to Umbraco Search.
+> `workspaceView` is a standard Umbraco extension type. See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms) for the full API. This section covers what is specific to Umbraco Search.
 
 A workspace view adds an entirely new tab to the search workspace. Use this when you need a full-page view rather than a box within the existing "Details" tab.
 
@@ -442,7 +442,7 @@ export const manifests: Array<UmbExtensionManifest> = [
 ];
 ```
 
-This is a minimal declaration &mdash; it does not import Core Client types, just tells TypeScript that `'searchIndexDetailBox'` is a valid extension type.
+This is a minimal declaration &mdash; it does not import Core Client types, it only tells TypeScript that `'searchIndexDetailBox'` is a valid extension type.
 
 ### tsconfig path mappings
 

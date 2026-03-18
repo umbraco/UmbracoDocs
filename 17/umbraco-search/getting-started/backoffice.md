@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  A guide for interacting with Umbraco Search in the Umbraco backoffice.
+  A guide for interacting with Umbraco Search in the Umbraco backoffice
 ---
 
 # The backoffice 
@@ -15,11 +15,11 @@ The Search section is available to users with access to the Settings section in 
 
 The root view displays a table of all registered search indexes. Each row shows:
 
-| Column | Description |
-|--------|-------------|
-| **Alias** | The index alias (e.g. `Umb_PublishedContent`, `Umb_Content`, `Umb_Media`, `Umb_Members`) |
-| **Health** | The current health status of the index |
-| **Documents** | The number of documents currently in the index |
+| Column | Description                                                                                      |
+|--------|--------------------------------------------------------------------------------------------------|
+| **Alias** | The index alias (for example `Umb_PublishedContent`, `Umb_Content`, `Umb_Media`, `Umb_Members`) |
+| **Health** | The current health status of the index                                                           |
+| **Documents** | The number of documents currently in the index                                                   |
 
 Each row also has an entity action dropdown for per-index operations like rebuilding.
 
@@ -52,7 +52,7 @@ Each result row displays:
 |--------|-------------|
 | **Document ID** | The content key (clickable link to open the content item) |
 | **Name** | The document name |
-| **Object type** | The content type (e.g. "Document", "Media") |
+| **Object type** | The content type (for example "Document", "Media") |
 | **Score** | The relevance score for the search query |
 
 An entity action dropdown on each row provides per-document actions. The available actions depend on which search providers are installed (e.g. the Examine provider adds a "Show Fields" action).

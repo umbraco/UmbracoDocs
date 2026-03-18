@@ -1,7 +1,7 @@
 ---
 title: Umbraco Search Documentation
 description: >-
-  Developer documentation on how to build with and extend Umbraco Search.
+  Developer documentation on how to build with and extend Umbraco Search
 ---
 
 # Umbraco Search Documentation

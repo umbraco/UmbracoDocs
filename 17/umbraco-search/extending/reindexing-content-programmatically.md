@@ -10,7 +10,7 @@ If you ever need to trigger the reindexing of content manually, you should use t
 As the name implies, this service ensures that the content reindexing happens correctly across all instances in a load balanced setup. This is important, because some search providers (including the [default provider](../getting-started/examine-search-provider.md)) explicitly depend on this behavior.
 
 > [!NOTE]
-> In Umbraco, "content" implies either documents, media or members. However, documents are actually named "content", which can be a little confusing.
+> In Umbraco, "content" implies either documents, media or members. However, documents are also named "content", which can be a little confusing.
 
 ## How to use the service
 

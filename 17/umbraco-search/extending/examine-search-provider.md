@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  Extension points for the Examine search provider.
+  Extension points for the Examine search provider
 ---
 
 # Extending the Examine search provider
@@ -9,7 +9,7 @@ The Examine search provider is built with extensibility in mind. It provides ext
 
 This is useful when you need to:
 
-- Index data types not covered by the built-in `IndexValue`.
+- Index data that is not covered by the built-in `IndexValue`.
 - Add custom filtering capabilities to the searcher.
 
 > [!NOTE]
@@ -101,7 +101,7 @@ public class CustomIndexer : Indexer
 
 ## Create a custom `Filter`
 
-Create a custom filter record that extends `Filter` to enable filtering by your custom data type:
+Create a custom filter record that extends `Filter` to enable filtering by your custom data:
 
 {% code title="GuidFilter.cs" %}
 ```csharp

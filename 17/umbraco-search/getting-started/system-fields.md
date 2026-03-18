@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  A list of the system fields included by Umbraco Search in all content indexes.
+  A list of the system fields included by Umbraco Search in all content indexes
 hidden: true
 ---
 
@@ -15,7 +15,7 @@ The following fields are explicitly indexed for all content.
 | `Umb_Id`            | `Keyword`        | The content ID (key).                                                        |
 | `Umb_Level`         | `Integer`        | The content level in the tree.                                               |
 | `Umb_Name`          | `Text`           | The name of the content. Indexed as highest relevance text.                  |
-| `Umb_ObjectType`    | `Keyword`        | The content object type (i.e. "Document").                                   |
+| `Umb_ObjectType`    | `Keyword`        | The content object type (for example "Document").                            |
 | `Umb_ParentId`      | `Keyword`        | The ID (key) of the parent (if any).                                         |
 | `Umb_PathIds`       | `Keyword`        | The IDs (keys) of all ancestors and the content itself.                      |
 | `Umb_SortOrder`     | `Integer`        | The sort order of the content.                                               |

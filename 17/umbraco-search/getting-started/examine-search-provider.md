@@ -16,7 +16,7 @@ In this article you'll learn how to configure the Examine search provider, so it
 
 Fields that will be used for faceting and/or sorting must be explicitly configured for the Examine search provider. This is done by configuring the `FieldOptions` using the options pattern, and _must_ be done prior to indexing any content.
 
-The field configuration is essentially a mapping between the Umbraco property aliases that hold the values, and the expected field index type of those properties. For example, the "genre" and "releaseYear" fields used throughout this article should be configured like this:
+The field configuration is a mapping between the Umbraco property aliases that hold the values, and the expected field index type of those properties. For example, the "genre" and "releaseYear" fields used throughout this article should be configured like this:
 
 {% code title="FieldOptionsComposer.cs" %}
 ```csharp
@@ -60,7 +60,7 @@ public class FieldOptionsComposer : IComposer
 
 ## Configuring the search behavior
 
-The `SearcherOptions` allow for configuring various aspects of how a search is executed. It is configured using the options pattern:
+The `SearcherOptions` allow for configuring certain aspects of how a search is executed. It is configured using the options pattern:
 
 {% code title="SearcherOptionsComposer.cs" %}
 ```csharp
@@ -84,9 +84,9 @@ public class SearcherOptionsComposer : IComposer
 
 Certain Umbraco properties yield different textual relevance values. The Examine search provider automatically performs relevance boosting accordingly, but the boost levels can be tweaked if required. Use:
 
-- `SearcherOptions.BoostFactorTextR1` to control the relevance of highest relevance text (e.g. document names and H1 tags).
-- `SearcherOptions.BoostFactorTextR2` to control the relevance of second-highest relevance text (e.g. H2 tags).
-- `SearcherOptions.BoostFactorTextR3` to control the relevance of third-highest relevance text (e.g. H3 tags).
+- `SearcherOptions.BoostFactorTextR1` to control the relevance of highest relevance text (for example document names and H1 tags).
+- `SearcherOptions.BoostFactorTextR2` to control the relevance of second-highest relevance text (for example H2 tags).
+- `SearcherOptions.BoostFactorTextR3` to control the relevance of third-highest relevance text (for example H3 tags).
 
 See also the [built-in property editors](system-fields.md) article.
 
@@ -94,11 +94,11 @@ See also the [built-in property editors](system-fields.md) article.
 
 The available facet values are grouped by the `FieldName` passed to the facet definition when searching. In the examples above, this would be "genre" and "releaseYear".
 
-When an end user picks a facet value from a search result, the subsequent search should contain a filter for the picked value - for example, the `KeywordFilter` in the examples above.
+When an end user picks a facet value from a search result, the subsequent search should contain a filter for the picked value. For example, the `KeywordFilter` in the examples above.
 
-If a facet value has been picked and is applied as a filter, the default behavior for facet results is to exclude the facet values that are _not_ picked within the facet group.
+The default behavior for facet results is to _exclude_ the facet values that are not a part of the search result. Effectively, that means all the facet values that are _not_ picked within the facet group.
 
-If all (applicable) facet values should be included for all groups in the search result, configure `SearcherOptions.ExpandFacetValues` as `true`.
+If all (applicable) facet values should be _included_ for all groups in the search result, configure `SearcherOptions.ExpandFacetValues` as `true`.
 
 > [!CAUTION]
 > Expanding the facet values incurs a performance penalty, which is more or less linear to the number of facet groups in the search.
@@ -109,9 +109,13 @@ The Examine search provider limits the number of resulting facet values within a
 
 ## Optimizing server resources
 
-If Umbraco Search powers both frontend search, backoffice search and the Delivery API (if applicable), the default Examine indexes from Umbraco CMS are no longer in use. However, Umbraco CMS continues to keep them up-to-date with content changes.
+The default Examine indexes from Umbraco CMS are no longer in use, if Umbraco Search powers all things search - that is:
 
-Since this is a waste of server resources, the default Examine indexes can be explicitly disabled by means of composition:
+- Frontend search.
+- Backoffice search.
+- The Delivery API (if applicable on your site).
+
+However, Umbraco CMS continues to keep them up-to-date with content changes. Since this is a waste of server resources, the default Examine indexes can be explicitly disabled by means of composition:
 
 {% code title="DisableDefaultIndexesComposer.cs" %}
 ```csharp
