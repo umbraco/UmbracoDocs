@@ -103,7 +103,7 @@ The default behavior for facet results is to _exclude_ the facet values that are
 If all (applicable) facet values should be _included_ for all groups in the search result, configure `SearcherOptions.ExpandFacetValues` as `true`.
 
 {% hint style="warning" %}
-Expanding the facet values incurs a performance penalty, which is more or less linear to the number of facet groups in the search.
+This incurs a performance penalty, which is linear to the number of active facet groups in the query.
 {% endhint %}
 
 ### Max facet values
