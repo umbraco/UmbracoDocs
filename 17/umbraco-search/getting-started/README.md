@@ -298,7 +298,7 @@ public class MySearchService(ISearcher searcher)
 
 Use the `AccessContext` to include protected content (that is, content with public access restrictions applied) in search results.
 
-The `AccessContext` requires the ID (key) of the currently logged-in [member](../../umbraco-cms/fundamentals/data/members), and accepts an optional collection of group IDs.
+The `AccessContext` requires the ID (key) of the currently logged-in [member](../../umbraco-cms/fundamentals/data/members.md), and accepts an optional collection of group IDs.
 
 > [!IMPORTANT]
 > Umbraco Search has no knowledge of members. If public access rules are defined based on member groups, make sure to pass the group IDs alongside the member ID in `AccessContext`.

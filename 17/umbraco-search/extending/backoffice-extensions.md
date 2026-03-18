@@ -411,7 +411,7 @@ The entity action imports `myRouteBuilder` directly from the route provider modu
 - **Module-level route builder**: The route builder is exported at module level (not via a context or event bus) because the entity action and route provider are always loaded together as part of the same bundle. This is the simplest way to share the builder.
 - **Non-visual `searchIndexDetailBox`**: Registering the route provider as a detail box ensures it loads inside the workspace context, where it has access to the index alias via `UMB_ENTITY_WORKSPACE_CONTEXT`.
 
-The Examine provider's implementation ([`fields-route-provider.element.ts`](../src/Umbraco.Cms.Search.Provider.Examine/Client/src/fields-route-provider.element.ts) and [`show-fields.entity-action.ts`](../src/Umbraco.Cms.Search.Provider.Examine/Client/src/show-fields.entity-action.ts)) is a complete working reference.
+The Examine provider's implementation ([`fields-route-provider.element.ts`](https://github.com/umbraco/Umbraco.Cms.Search/tree/main/src/Umbraco.Cms.Search.Provider.Examine/Client/src/fields-route-provider.element.ts) and [`show-fields.entity-action.ts`](https://github.com/umbraco/Umbraco.Cms.Search/tree/main/src/Umbraco.Cms.Search.Provider.Examine/Client/src/show-fields.entity-action.ts)) is a complete working reference.
 
 ## Cross-package type augmentation
 
