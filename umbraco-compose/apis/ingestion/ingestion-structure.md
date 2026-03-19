@@ -138,6 +138,6 @@ The following ingestion payload adds a `newProperty` to the content item and rem
 
 Umbraco Compose requires that you define [Type Schemas](../../content-orchestration/type-schemas.md) that specify the structure of your content.
 
-When ingesting content, you specify the type schema of an item via the `type` property. Compose will not perform any synchronous validation to ensure that the supplied content matches the type schema. However, if a field is not specified in the type schema, then that field cannot be retrieved from GraphQL - even if you have content instances that have a value in that field.
+When ingesting content you specify the type schema of an item via the `type` property. Compose will not perform any synchronous validation to ensure that the supplied content matches the type schema. Fields omitted from the type schema cannot be retrieved via GraphQL, even if content instances contain values for those fields.
 
 This is by design to support scenarios in which source systems cannot guarantee message ordering.
