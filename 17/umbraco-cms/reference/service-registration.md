@@ -1,5 +1,7 @@
 ---
-description: Learn how to configure Umbraco to run only the services required on each specific server in your setup.
+description: >-
+  Learn how to configure Umbraco to run only the services required on each
+  specific server in your setup.
 ---
 
 # Service Registration
@@ -12,23 +14,25 @@ By default, Umbraco registers all services: the backoffice, website rendering, a
 
 The following configurations are supported:
 
-| Configuration | Builder Methods | Use Case |
-|---|---|---|
-| Full (default) | `AddBackOffice()` + `AddWebsite()` + `AddDeliveryApi()` | Traditional Umbraco with all features enabled. |
-| Website + Delivery API | `AddCore()` + `AddWebsite()` + `AddDeliveryApi()` | Front-end servers serving both rendered pages and headless content. |
-| Website only | `AddCore()` + `AddWebsite()` | Front-end servers serving only rendered pages. |
-| Delivery API only | `AddCore()` + `AddDeliveryApi()` | Pure headless API servers. |
+<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="115.69140625" data-type="checkbox">AddCore()</th><th width="155.87109375" data-type="checkbox">AddBackOffice()</th><th width="138.25390625" data-type="checkbox">AddWebsite()</th><th width="164.05859375" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
 
 The key distinction is between `AddBackOffice()` and `AddCore()`:
 
-- **`AddBackOffice()`** registers everything needed for the Umbraco backoffice, including the Management API, backoffice identity, and all supporting services.
-- **`AddCore()`** registers only the foundational Umbraco services — configuration, core services, web components, caching, and background jobs — without any backoffice-specific services.
+* **`AddBackOffice()`** registers everything needed for the Umbraco backoffice, including the Management API, backoffice identity, and all supporting services.
+* **`AddCore()`** registers only the foundational Umbraco services — configuration, core services, web components, caching, and background jobs — without any backoffice-specific services.
 
 `AddBackOffice()` calls `AddCore()` internally, so there is no need to call both.
 
 {% hint style="info" %}
 `AddCore()` is idempotent. If both `AddBackOffice()` and `AddCore()` are called, the core services are only registered once.
 {% endhint %}
+
+### Configuration use cases
+
+* **Full (default)**: Traditional Umbraco with all features enabled.
+* **Website + Delivery API**: Front-end servers serving both rendered pages and headless content.
+* **Website Only**: Front-end servers serving only rendered pages.
+* **Delivery API Only**: Pure headless API servers.
 
 ## Full Umbraco (default)
 
@@ -170,14 +174,14 @@ await app.RunAsync();
 
 ### Middleware
 
-- **`UseBackOffice()`** — Registers middleware for the backoffice, including authentication and authorization. Only needed when using `AddBackOffice()`.
-- **`UseWebsite()`** — Registers middleware for website rendering. Needed when using `AddWebsite()`.
+* **`UseBackOffice()`** — Registers middleware for the backoffice, including authentication and authorization. Only needed when using `AddBackOffice()`.
+* **`UseWebsite()`** — Registers middleware for website rendering. Needed when using `AddWebsite()`.
 
 ### Endpoints
 
-- **`UseBackOfficeEndpoints()`** — Maps the Management API controllers and backoffice routes. Only needed when using `AddBackOffice()`.
-- **`UseWebsiteEndpoints()`** — Maps website rendering endpoints. Needed when using `AddWebsite()`.
-- **`UseDeliveryApiEndpoints()`** — Maps the Content Delivery API controllers. Use this when running the Delivery API without the backoffice.
+* **`UseBackOfficeEndpoints()`** — Maps the Management API controllers and backoffice routes. Only needed when using `AddBackOffice()`.
+* **`UseWebsiteEndpoints()`** — Maps website rendering endpoints. Needed when using `AddWebsite()`.
+* **`UseDeliveryApiEndpoints()`** — Maps the Content Delivery API controllers. Use this when running the Delivery API without the backoffice.
 
 {% hint style="info" %}
 `UseDeliveryApiEndpoints()` is only needed when running the Delivery API **without** the backoffice. When the full backoffice is enabled, `UseBackOfficeEndpoints()` handles mapping all API controllers, including the Delivery API.
@@ -205,5 +209,4 @@ public class MyComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
