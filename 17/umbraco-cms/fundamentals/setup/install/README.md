@@ -26,6 +26,9 @@ dotnet new install Umbraco.Templates
 ```bash
 dotnet new umbraco --name MyProject
 ```
+{% hint style="info" %}
+New projects created with this template use [Central Package Management (CPM)](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management) by default. NuGet package versions are managed centrally in a `Directory.Packages.props` file created at the project root, rather than in the individual `.csproj` file. If you later add additional projects, you can move the `Directory.Packages.props` file to the solution root and version all dependencies in one place.
+{% endhint %}
 
 4. Navigate to the newly created project folder. It will be the folder containing the `.csproj` file:
 
