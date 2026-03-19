@@ -105,17 +105,17 @@ if (data) {
 }
 ```
 
-This uses the backoffice HTTP client directly for that request instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
+The example above uses the backoffice HTTP client directly instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
 ## How security metadata works
 
 The `auth` callback on `umbHttpClient` only fires when a request carries `security` metadata. Here is how that metadata flows from your API to the generated client:
 
-1. Each operation in your OpenAPI spec has an optional `security` field listing which security schemes it requires — for example, `[{ "Backoffice-User": [] }]`.
+1. Each operation in your OpenAPI spec has an optional `security` field listing the security schemes it requires. Example: `[{ "Backoffice-User": [] }]`.
 2. Those scheme names are defined in `components.securitySchemes`, where their type (OAuth2, HTTP Bearer, and so on) is declared.
-3. When hey-api generates your client, it reads both and resolves them into its own runtime shape — `security: [{ type: 'http', scheme: 'bearer' }]` — emitted directly into each generated SDK function.
+3. When hey-api generates your client, it reads both and resolves them into its own runtime shape - `security: [{ type: 'http', scheme: 'bearer' }]` - emitted directly into each generated SDK function.
 
-That resolved shape is what `umbHttpClient` checks before invoking the `auth` callback.
+The resolved shape is what `umbHttpClient` checks before invoking the `auth` callback.
 
 ### Management API (automatic)
 
