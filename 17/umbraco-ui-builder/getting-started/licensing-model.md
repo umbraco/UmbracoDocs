@@ -8,7 +8,7 @@ Umbraco UI Builder is a commercial product. You can use Umbraco UI Builder local
 
 ## How Licensing Works
 
-Licenses are sold per backoffice domain and applies to all subdomains. If you have alternative staging/QA environment domains, additional domains can be added to the license on request.
+Licenses are sold per Umbraco installation. If you have alternative staging/QA environment domains, additional domains can be added to the license on request.
 
 {% hint style="info" %}
 The licenses are not tied to a specific product version. They work across all versions of the related product.
