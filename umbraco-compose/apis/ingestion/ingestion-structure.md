@@ -11,7 +11,7 @@ The Ingestion data structure is a JSON object that contains the following proper
 
 | Property     | Type              | Description                                                                                                                                |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `action`     | String            | One of several [Actions](#actions) specifying how you would like to modify the content item represented by this ingestion.                 |
+| `action`     | String            | One of more [Actions](#actions) specifying how you would like to modify the content item represented by this ingestion.                 |
 | `id`         | String            | Canonical identifier for the content.                                                                                                      |
 | `variant`    | String (optional) | Variant key for the content.                                                                                                               |
 | `type`       | String            | Type schema alias for the desired type.                                                                                                    |
@@ -58,7 +58,7 @@ There are several actions available for modifying content in Compose.
 
 This action combines "insert" and "update" functionality. If an entry with a matching `id` already exists in the collection, Umbraco Compose will update it with the object specified in the `data` property. If no matching entry is found, then a new content item will instead be created in the specified collection.
 
-The following ingestion example will result in the existence of a content item called "Umbraco CMS", with an `id` of `"1"`. If an item with that id previously existed, it has now been overwritten.
+The following ingestion example will result in the existence of a content item called "Umbraco CMS", with an `id` of `"1"`. If an item with that `id` previously existed, it has now been overwritten.
 
 ```json
 [
@@ -111,7 +111,7 @@ The following ingestion payload adds a `newProperty` to the content item and rem
 
 For more information about available JSON Patch operations, refer to [its documentation](https://jsonpatch.com/#operations).
 
-A limitation of JSON Patch is that the client application needs to know in advance whether to `add` or `replace` a given property. Attempting to `add` a property that already exists, or to `replace` one that doesn't will result in a failure to process the ingestion.
+A limitation of JSON Patch is that the client application needs to know in advance whether to `add` or `replace` a given property. Attempting to `add` a property that already exists, or to `replace` one that doesn't, will fail to process the ingestion.
 
 ### `merge-patch`
 
@@ -138,6 +138,6 @@ The following ingestion payload adds a `newProperty` to the content item and rem
 
 Umbraco Compose requires that you define [Type Schemas](../../content-orchestration/type-schemas.md) that specify the structure of your content.
 
-When ingesting content you specify the type schema of an item via the `type` property. Compose will not perform any synchronous validation to ensure that the supplied content matches the type schema. However, if a field is not specified in the type schema, then that field cannot be retrieved from GraphQL - even if you have content instances that have a value in that field.
+When ingesting content, you specify the type schema of an item via the `type` property. Compose will not perform any synchronous validation to ensure that the supplied content matches the type schema. However, if a field is not specified in the type schema, then that field cannot be retrieved from GraphQL - even if you have content instances that have a value in that field.
 
-This is by design in order to support scenarios in which source systems cannot guarantee message ordering.
+This is by design to support scenarios in which source systems cannot guarantee message ordering.
