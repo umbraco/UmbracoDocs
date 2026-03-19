@@ -6,7 +6,7 @@ A license for Umbraco Deploy is included when hosting on Umbraco Cloud.
 
 ## How does it work?
 
-Licenses are sold per domain and will also work on all subdomains. With every license, you will also be able to configure two development/testing domains.
+Licenses are sold per Umbraco installation. With every license, you will also be able to configure two development/testing domains.
 
 ### Example
 
