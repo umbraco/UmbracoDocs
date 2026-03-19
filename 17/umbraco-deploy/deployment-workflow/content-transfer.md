@@ -57,7 +57,7 @@ To synchronize a lower environment's media library with a higher one (for exampl
 1. Log into the target environment (for example, _Staging_).
 2. Go to the **Media** section of the Umbraco backoffice.
 3. Click **...** next to the **Media** root node.
-4. Select **Tree restore...**(Use **Environment restore...** if you also need to pull all Content and Forms).
+4. Select **Tree restore...**.
 5. Select the source environment (for example, _Live_) from the **Restore this tree from** dropdown.
 6. Click **Restore from Live** and wait for the process to complete.
 7. Reload the Media tree to see the updated library.
