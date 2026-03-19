@@ -11,12 +11,12 @@ The Ingestion data structure is a JSON object that contains the following proper
 
 | Property     | Type              | Description                                                                                                                                |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `action`     | String            | One of more [Actions](#actions) specifying how you would like to modify the content item represented by this ingestion.                 |
+| `action`     | String            | An [Action](#actions) specifying how you would like to modify the content item represented by this ingestion.                 |
 | `id`         | String            | Canonical identifier for the content.                                                                                                      |
 | `variant`    | String (optional) | Variant key for the content.                                                                                                               |
 | `type`       | String            | Type schema alias for the desired type.                                                                                                    |
 | `data`       | Object            | Body of the content.                                                                                                                       |
-| `operations` | Object            | Should only be specified when action is `patch`. A JSON Patch (Request for Comments (RFC) #6902) compliant array of operations to mutate an existing content item. |
+| `operations` | Object            | Should only be specified when action is `patch`. A JSON Patch ([Request for Comments (RFC) #6902](https://datatracker.ietf.org/doc/html/rfc6902/)) compliant array of operations to mutate an existing content item. |
 
 Even when making changes to a single content item, Ingestions are always supplied in an array.
 
