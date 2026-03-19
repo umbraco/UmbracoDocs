@@ -73,17 +73,17 @@ The following ingestion example will result in the existence of a content item c
 ]
 ```
 
-### `remove`
+### `delete`
 
 This action removes an item with a given `id` and optional `variant` from Umbraco Compose. Only these properties and the `action` should be supplied.
 
-If no such item exists already, then the `remove` operation is a no-op.
+If no such item exists already, then the `delete` operation is a no-op.
 
 ```json
 [
   {
     "id": "1",
-    "action": "remove"
+    "action": "delete"
   }
 ]
 ```
