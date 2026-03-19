@@ -55,6 +55,7 @@ The following snippet contains all the available options, with default values, a
       "DistributedLockingMechanism": "",
       "DistributedLockingReadLockDefaultTimeout": "00:01:00",
       "DistributedLockingWriteLockDefaultTimeout": "00:00:05",
+      "MainDomAcquisitionTimeout": "00:00:40"
     }
   }
 }
@@ -371,3 +372,12 @@ Type: `string` (default: `00:00:05`)
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
 
 The default value is 5 seconds.
+
+### Main Domain Acquisition Timeout
+
+Key: `MainDomAcquisitionTimeout`
+Type: `string` (default: `00:00:40`)
+
+Gets or sets a value representing the maximum time to wait whilst attempting to acquire MainDom status on startup.
+
+The default value is 40 seconds.
