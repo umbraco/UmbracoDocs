@@ -49,7 +49,7 @@ public interface IDataValueSortable
 
 ## How it works
 
-When a property value is saved, Umbraco checks whether the associated `DataValueEditor` implements `IDataValueSortable`. If it does, the `GetSortableValue` method is called and the result is stored in the `sortableValue` column. Collection views sort by this column first. When the value is `null`, the default sorting behavior is used.
+When a property value is saved, Umbraco checks whether the associated `DataValueEditor` implements `IDataValueSortable`. If it does, the `GetSortableValue` method is called, and the result is stored in the `sortableValue` column. Collection views sort by this column first. When the value is `null`, the default sorting behavior is used.
 
 ## Implementation example
 
