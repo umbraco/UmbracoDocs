@@ -1,5 +1,7 @@
 ---
-description: Use .NET health probe endpoints to monitor whether your Umbraco application is alive and ready to serve requests.
+description: >-
+  Use .NET health probe endpoints to monitor whether your Umbraco application is
+  alive and ready to serve requests.
 ---
 
 # Health Probes
@@ -16,9 +18,9 @@ Umbraco builds on this middleware and exposes two health probe endpoints that re
 
 ## Endpoints
 
-| Endpoint | Behavior |
-|---|---|
-| `GET /umbraco/api/health/live` | Returns HTTP 200 if the process is responding. No checks run. |
+| Endpoint                        | Behavior                                                                                                                                               |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `GET /umbraco/api/health/live`  | Returns HTTP 200 if the process is responding. No checks run.                                                                                          |
 | `GET /umbraco/api/health/ready` | Returns HTTP 200 when the site is running normally. Returns HTTP 503 when the site is not ready, for example, during startup or an unattended upgrade. |
 
 Both endpoints are anonymous and bypass the maintenance-page re-route active during upgrades.
@@ -29,8 +31,8 @@ Use the endpoints above to configure liveness and readiness probes on your hosti
 
 Examples for some common hosting environments are shown below.
 
-### Azure App Service
-
+{% tabs %}
+{% tab title="Azure App Services" %}
 In the Azure Portal, navigate to your App Service and open **Monitoring > Health check**. Set the path to:
 
 ```
@@ -38,9 +40,9 @@ In the Azure Portal, navigate to your App Service and open **Monitoring > Health
 ```
 
 Azure uses this path to determine whether the instance is healthy and should receive traffic.
+{% endtab %}
 
-### Kubernetes
-
+{% tab title="Kubernetes" %}
 ```yaml
 livenessProbe:
   httpGet:
@@ -55,9 +57,9 @@ readinessProbe:
   initialDelaySeconds: 5
   periodSeconds: 10
 ```
+{% endtab %}
 
-### Docker Compose
-
+{% tab title="Docker Compose" %}
 ```yaml
 services:
   umbraco:
@@ -69,13 +71,19 @@ services:
       retries: 3
       start_period: 30s
 ```
+{% endtab %}
 
-### Load balancers
+{% tab title="Load balancers" %}
+Use the readiness probe path (`/umbraco/api/health/ready`) as the health check URL for your load balancer.
 
-Use the readiness probe path (`/umbraco/api/health/ready`) as the health check URL for your load balancer. The endpoint returns HTTP 503 while the site is upgrading. This causes the load balancer to stop routing traffic to that node until the upgrade completes. For more details on load-balanced setups, see [Umbraco in Load Balanced Environments](load-balancing/).
+The endpoint returns HTTP 503 while the site is upgrading. This causes the load balancer to stop routing traffic to that node until the upgrade completes.
+
+For more details on load-balanced setups, see [Umbraco in Load Balanced Environments](https://github.com/umbraco/UmbracoDocs/blob/0ced4b7098c7495dbf57f810d7bcb393db3fa421/17/umbraco-cms/fundamentals/setup/server-setup/load-balancing).
+{% endtab %}
+{% endtabs %}
 
 ## Related
 
 * [Upgrade Unattended](../upgrading/upgrade-unattended.md)
-* [Umbraco in Load Balanced Environments](load-balancing/README.md)
+* [Umbraco in Load Balanced Environments](load-balancing/)
 * [Running Umbraco in Docker](running-umbraco-in-docker.md)
