@@ -42,6 +42,8 @@ A full configuration with all default values can be seen here:
       "UserDefaultLockoutTimeInMinutes": 43200,
       "MemberDefaultLockoutTimeInMinutes": 43200,
       "AllowConcurrentLogins": false,
+      "UserAllowConcurrentLogins": null,
+      "MemberAllowConcurrentLogins": null,
       "UserDefaultFailedLoginDurationInMilliseconds": 1000,
       "UserMinimumFailedLoginDurationInMilliseconds": 250,
       "PasswordResetEmailExpiry": "01:00:00",
@@ -108,7 +110,48 @@ The default lockout time for users is 30 days (43200 minutes).
 
 ### Allow concurrent logins
 
-When set to `false`, any user account is prevented from having multiple simultaneous sessions. In this mode, only one session per user can be active at any given time. This enhances security and prevents concurrent logins with the same user credentials.
+Key: `AllowConcurrentLogins`
+Type: `bool` (default: `false`)
+
+When set to `false`, each account is limited to one active session at a time. A new login invalidates any existing session for the same account. This applies to both backoffice users and members unless overridden by the settings below.
+
+### User allow concurrent logins
+
+Key: `UserAllowConcurrentLogins`
+Type: `bool?` (default: `null`)
+
+Controls concurrent login behavior for backoffice users only. When `null`, the value falls back to `AllowConcurrentLogins`. Set to `true` or `false` to override the global setting for backoffice users.
+
+### Member allow concurrent logins
+
+Key: `MemberAllowConcurrentLogins`
+Type: `bool?` (default: `null`)
+
+Controls concurrent login behavior for members only. When `null`, the value falls back to `AllowConcurrentLogins`. Set to `true` or `false` to override the global setting for members.
+
+{% hint style="info" %}
+`UserAllowConcurrentLogins` and `MemberAllowConcurrentLogins` are available from Umbraco 17.3.
+{% endhint %}
+
+#### Configuration examples
+
+Allow concurrent logins for members but not backoffice users:
+
+```json
+"Security": {
+  "AllowConcurrentLogins": false,
+  "MemberAllowConcurrentLogins": true
+}
+```
+
+Disable concurrent logins for backoffice users while keeping them enabled globally:
+
+```json
+"Security": {
+  "AllowConcurrentLogins": true,
+  "UserAllowConcurrentLogins": false
+}
+```
 
 ### User login duration
 
