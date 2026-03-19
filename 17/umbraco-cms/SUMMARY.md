@@ -431,6 +431,7 @@
   * [Umbraco Application Lifetime Notifications](reference/notifications/umbracoapplicationlifetime-notifications.md)
   * [Hot vs. cold restarts](reference/notifications/hot-vs-cold-restarts.md)
 * [Inversion of Control / Dependency injection](reference/using-ioc.md)
+* [Service Registration](reference/service-registration.md)
 * [Management](reference/management/README.md)
   * [Using Umbraco services](reference/management/using-services/README.md)
     * [Consent Service](reference/management/using-services/consentservice.md)
