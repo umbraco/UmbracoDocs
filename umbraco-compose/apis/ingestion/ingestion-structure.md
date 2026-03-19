@@ -16,7 +16,7 @@ The Ingestion data structure is a JSON object that contains the following proper
 | `variant`    | String (optional) | Variant key for the content.                                                                                                               |
 | `type`       | String            | Type schema alias for the desired type.                                                                                                    |
 | `data`       | Object            | Body of the content.                                                                                                                       |
-| `operations` | Object            | Should only be specified when action is `patch`. A JSON Patch (RFC 6902) compliant array of operations to mutate an existing content item. |
+| `operations` | Object            | Should only be specified when action is `patch`. A JSON Patch (Request for Comments (RFC) #6902) compliant array of operations to mutate an existing content item. |
 
 Even when making changes to a single content item, Ingestions are always supplied in an array.
 

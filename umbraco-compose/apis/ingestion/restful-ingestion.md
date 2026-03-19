@@ -4,7 +4,7 @@ description: 'REST ingestion guide for Umbraco Compose: upserts, deletes, and bu
 
 # RESTful Ingestion
 
-In many scenarios you may wish to create an integration with Umbraco Compose from an application which has control over the payload sent to the Ingestion API.
+You can integrate Umbraco Compose with applications that control the payload sent to the Ingestion API.
 
 These scenarios are perfect for standard RESTful ingestion.
 
