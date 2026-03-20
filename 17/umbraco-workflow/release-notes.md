@@ -22,19 +22,19 @@ This section contains the release notes for Umbraco Workflow 17, including all c
 
 Content review settings can now be managed directly from the document workspace, without navigating to the dedicated Content Reviews settings area. When editing a content node, a new config panel shows the assigned review group, review period, and whether the configuration is explicit or inherited.
 
-Editors can add, edit, or remove review configuration in-place, with changes taking effect immediately. Removing an explicit configuration causes the node to fall back to inherited settings from ancestor nodes or document-type config.
+Editors can add, edit, or remove review configuration in-place, with changes taking effect immediately. Removing an explicit configuration causes the node to fall back to inherited settings from ancestor nodes or Document Type config.
 
 #### Performance: cached approval groups and permissions
 
-Approval group and permission data is now cached in memory using a decorator pattern over the existing repositories. These are the most frequently queried datasets in Workflow — read on every workflow initiation, task progression, dashboard load, and content tree decoration — but change infrequently. 
+Approval group and permission data is now cached in memory using a decorator pattern over the existing repositories. These hot-paths in Workflow are read on every workflow initiation, task progression, dashboard load, and content tree decoration. 
 
-The cache uses a ConcurrentDictionary for thread safety and prefix-based selective invalidation, so a mutation (e.g., adding a user to a group) only evicts the affected cache entries while keeping unrelated entries warm. Sites with many workflow-enabled nodes should see a noticeable reduction in database load.
+The cache uses a ConcurrentDictionary for thread safety and prefix-based selective invalidation. A mutation (for example, adding a user to a group) only evicts the affected cache entries while keeping unrelated entries warm. Sites with many workflow-enabled nodes should see a noticeable reduction in database load.
 
 #### Modular frontend architecture
 
 The frontend has been refactored to eliminate cross-cutting imports between the core module and feature modules (documents, release sets, alternate versions). Previously, core had direct dependencies on feature modules to register workspace views, contexts, and config elements. 
 
-Each feature module noew registers its own manifests against extension point contracts defined in core, and config/history tabs render dynamically via <umb-extension-slot>. 
+Each feature module now registers its own manifests against extension point contracts defined in core, and config/history tabs render dynamically via <umb-extension-slot>. 
 
 This means:
   * Import dependencies flow strictly one-way (feature → core)
@@ -47,7 +47,9 @@ This means:
 
 #### Migration reliability
 
-Several fixes improve the reliability of database migrations, particularly for sites upgrading from older versions with large datasets. The issues below were resolved as part of [#134](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/134).
+Fixes to improve the reliability of database migrations, particularly for sites upgrading from older versions with large datasets. 
+
+The issues below were resolved as part of [#134](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/134).
 
 * Batched inserts: The legacy v14 migration now processes bulk inserts in batches of 100 rows, preventing timeouts and memory pressure on large tables.
 * Orphaned task approvals: History cleanup previously deleted tasks but not their associated approvals. The migration now cleans up orphaned approval records before migrating tasks. The cleanup process itself has been fixed to delete approvals alongside tasks going forward.
@@ -61,14 +63,14 @@ Several fixes improve the reliability of database migrations, particularly for s
 
 * Culture/segment variation in alternate versions: Properties that don't vary by culture or segment were incorrectly receiving culture/segment values from individual property records rather than from the version's own variation settings. Invariant properties no longer receive spurious culture/segment values. [#136](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/136)
 * Missing node name in workspace detail: The node name could be null in the workspace detail modal when it wasn't populated from the tasks query. The scaffold now falls back to the already-fetched content slim record [#137](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/137)
-* SignalR route registration: Hub routes are now registered via the Endpoints property of UmbracoPipelineFilter instead of postPipeline, aligning with the correct Umbraco pipeline API.
-* Translation typo: Fixed "delte" → "delete" in an approval groups permission label. [#135](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/135)
-* Missing content review configuration: The document-level configuration for content review was not displaying correctly in the document workspace. Content review configuration querying has been refactored and optimised. [#133](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/133)
+* SignalR route registration: Hub routes are now registered via the `Endpoints` property of `UmbracoPipelineFilter` instead of `PostPipeline`, aligning with the correct Umbraco pipeline API.
+* Translation typo: Fixed in an approval groups permission label. [#135](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/135)
+* Missing content review configuration: The document-level configuration for content review was not displaying correctly in the document workspace. Content review configuration querying has been refactored and should deliver performance improvements. [#133](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/133)
 
 #### UI improvements
 
 * Approval groups table: Membership and permissions columns share a common base element, eliminating duplicated rendering logic. Column text no longer wraps unexpectedly.
-* Instances table: Progress and requested-by columns use nowrap to prevent layout shifts.
+* Instances table: Progress and requested-by columns styles updated to prevent layout shifts.
 * Task list: Nested tasks with NOT_REQUIRED status no longer show a redundant status tag when their parent also has that status.
 
 ### [17.1.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.1) (March 2 2026)
