@@ -13,19 +13,16 @@ To authenticate to the Ingestion API, you need an API key with the `ingestion` s
 
 ## Ingesting data
 
-There are two ways to use the Ingestion API to store your content in Compose: Ingestion Function and RESTful Ingestion.
+There are two ways to use the Ingestion API to store your content in Compose:
 
-If your source application supports webhooks, then you can use a managed [Ingestion Function](functions.md) to transform their payload into a format that Compose understands.
+* If your source application supports webhooks, then you can use a managed [Ingestion Function](functions.md) to transform their payload into a format that Compose understands.
+* If you are creating a custom integration to Compose, you can use the standard [RESTful Ingestion](restful-ingestion.md) endpoint.
 
-If you are creating a custom integration to Compose, you can use the standard [RESTful Ingestion](restful-ingestion.md) endpoint.
+Regardless of which Ingestion method your applications use, the [same structure](./ingestion-structure.md) should be supplied to Compose.
 
 ## Prerequisites
 
 In addition to an API key, to ingest data into your Compose project, you also need an [Environment](../../content-orchestration/environments.md) with a [Collection](../../content-orchestration/collections.md).
-
-The path to the RESTful Ingestion API endpoint is as follows:
-
-`https://ingest.{region}.umbracocompose.com/{project-alias}/{environment-alias}/{collection-alias}`
 
 ## API Documentation
 

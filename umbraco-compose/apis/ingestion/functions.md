@@ -26,15 +26,7 @@ export default function(body) {
 }
 ```
 
-Returned objects in the array should have the following properties:
-
-| Property  | Type              | Description                                                                                                                                             |
-| --------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `action`  | String            | Should be set to `'upsert'` to insert or update content in the platform, or `'delete'` to remove an existing item with matching id from the collection. |
-| `id`      | String            | Canonical identifier for the content.                                                                                                                   |
-| `variant` | String (optional) | Variant key for the content.                                                                                                                            |
-| `type`    | String            | Type schema alias for the desired type.                                                                                                                 |
-| `data`    | Object            | Body of the content.                                                                                                                                    |
+Returned objects in the array should match the [Ingestion Structure](ingestion-structure.md).
 
 ## Example Function
 
