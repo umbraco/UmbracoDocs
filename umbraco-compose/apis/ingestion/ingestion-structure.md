@@ -52,7 +52,7 @@ For example:
 
 ## Actions
 
-There are several actions available for modifying content in Compose.
+A range of actions are available for modifying content in Compose.
 
 ### `upsert`
 
