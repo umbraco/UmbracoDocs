@@ -422,37 +422,59 @@ public class SiteService : ISiteService
 
 **2 - The service can be used within or outside of a web request**
 
-```csharp
-using System.Linq;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Extensions;
+In order to replicate `ContentAtRoot` outside of a web request, you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to a store in memory of the unique keys of any nodes at the root of the Umbraco Content (or Media tree). 
 
-namespace Umbraco9.Services;
+{% hint style="tip" %}
+This replaces the `PublishedContentCache` (or PublishedMediaCache) `GetAtRoot()` method.
+{% endhint %}
+
+```csharp
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
+using Umbraco.Cms.Core.Services.Navigation;
+using Umbraco.Cms.Core.Web;
+
+namespace UmbracoExamples.Services;
+
+public interface ISiteService
+{
+    IPublishedContent? GetNewsSection();
+
+    IPublishedContent? GetContactUsPage();
+}
 
 public class SiteService : ISiteService
 {
     private readonly IUmbracoContextFactory _umbracoContextFactory;
+    private readonly IDocumentNavigationQueryService _documentNavigationQueryService;
 
-    public SiteService(IUmbracoContextFactory umbracoContextFactory)
+    public SiteService(IUmbracoContextFactory umbracoContextFactory, IDocumentNavigationQueryService documentNavigationQueryService)
     {
         _umbracoContextFactory = umbracoContextFactory;
+        _documentNavigationQueryService = documentNavigationQueryService;
     }
-    public IPublishedContent GetNewsSection()
+
+    public IPublishedContent? GetNewsSection() => GetFirstChildOfRoot("newsSection");
+
+    public IPublishedContent? GetContactUsPage() => GetFirstChildOfRoot("contactUs");
+
+    private IPublishedContent? GetFirstChildOfRoot(string contentTypeAlias)
     {
-        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-        var contentQuery = umbracoContextReference.UmbracoContext.Content;
-        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-        var newsSection = siteRoot?.FirstChild(f => f.ContentType.Alias == "newsSection") ?? null;
-        return newsSection;
-    }
-    public IPublishedContent GetContactUsPage()
-    {
-        using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
-        var contentQuery = umbracoContextReference.UmbracoContext.Content;
-        var siteRoot = contentQuery.GetAtRoot().FirstOrDefault();
-        var contactUs = siteRoot?.FirstChild(f => f.ContentType.Alias == "contactUs") ?? null;
-        return contactUs;
+        using UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+        IPublishedContentCache contentQuery = umbracoContextReference.UmbracoContext.Content;
+
+        if (_documentNavigationQueryService.TryGetRootKeys(out IEnumerable<Guid> rootKeys) is false)
+        {
+            return null;
+        }
+
+        IPublishedContent? siteRoot = rootKeys
+            .Select(key => contentQuery.GetById(key))
+            .WhereNotNull()
+            .FirstOrDefault();
+
+        return siteRoot?.FirstChild(f => f.ContentType.Alias == contentTypeAlias);
     }
 }
 ```
