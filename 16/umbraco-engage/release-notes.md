@@ -16,6 +16,39 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.3.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.3.0-rc1) (release date TBD)
+
+* Rewritten analytics data cleanup with improved scheduling and performance:
+  * Cleanup now runs once daily instead of every 30 minutes, processing all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
+  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
+  * Configurable first-run scheduling via crontab expression (e.g., `"0 2 * * *"` for 2 AM daily).
+* Database schema alignment bringing existing installations in line with clean installs:
+  * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
+  * Requires running the `CompleteAlignSchema.sql` script during a maintenance window after upgrading (see below).
+  * **Important**: Until the script is executed, only anonymization and visitor control group/raw data cleanup will run. Full analytics data cleanup (pageviews, sessions, visitors) requires the schema alignment to be completed.
+  * Helper script included: `GetDeleteAnalyticsDataAfterDays.sql` (recommends safe initial configuration, see below).
+* Added 'Database Schema Status' and 'Constraint Integrity' health checks to monitor upgrade completion.
+* Aligned `culture` column length with Umbraco CMS.
+* Fixed `Anonymize IP Address` setting not showing in the UI.
+* Clean-up of orphaned page variants and bot visitor data.
+* Fixed duplicate page variant rows being created per pageview instead of reusing existing data. A `DeduplicatePageVariants.sql` helper script is included to consolidate duplicates on existing installations (see below).
+* Added wildcard domain support for licensing (e.g., `*.example.com`).
+* Improved goal deserialization handling with caching and graceful error recovery.
+* Security fix: server-side enforcement of `createdBy` on annotations and other entities — client-provided values are no longer trusted.
+* Page variant segment nullability fixes.
+
+{% file src="scripts/CompleteAlignSchema.sql" %}
+Run during a maintenance window to add missing foreign keys, indexes, and constraints.
+{% endfile %}
+
+{% file src="scripts/GetDeleteAnalyticsDataAfterDays.sql" %}
+Recommends a safe initial `DeleteAnalyticsDataAfterDays` value based on your data.
+{% endfile %}
+
+{% file src="scripts/DeduplicatePageVariants.sql" %}
+Consolidates duplicate page variant rows and reassigns pageviews. Run during a maintenance window as the update on the pageviews table can take a while on large installations.
+{% endfile %}
+
 #### [16.2.0](https://www.nuget.org/packages/Umbraco.Engage/16.2.0) (March 4th 2026)
 
 * Redesigned the reporting star schema by introducing a new `FctSessionNode` fact table, replacing the previous `DimNodeAncestor` table and pre-computed `withSubpages` approach. This reduces star generation time and TempDB usage for large datasets.
