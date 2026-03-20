@@ -1,7 +1,7 @@
 # March 2026
 
 ## Key Takeaways
-* **Umbraco Cloud branded error pages for platform errors** - After doing deployments or restarts of an environment, we no longer serve the default IIS 503 message. Instead, we show a simple error page that automatically refreshes once the site is back up.
+* **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
 
