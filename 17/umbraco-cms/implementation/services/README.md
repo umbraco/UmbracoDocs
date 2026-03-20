@@ -424,7 +424,8 @@ public class SiteService : ISiteService
 In order to replicate ContentAtRoot outside of a web request you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to a store in memory of the unique keys of any nodes at the root of the Umbraco Content (or Media tree). 
 
 {% hint style="tip" %}
-Fun Fact! - This replaces the PublishedContentCache (or PublishedMediaCache) GetAtRoot() method, you used to be able to write umbracoContext.Content.GetAtRoot(). Don't be scared, although there is a long standing convention that anything called a 'service' in Umbraco acts against the database and should only ever be used for CRUD operations, and certainly not in the rendering of content on your site due to performance, this is NOT THE CASE with IDocumentNavigationQueryService, it's totally cool to use it in the front end implementation of the site, it doesn't hit the database, really it should be called IDocumentNavigationQuery to fit in with the Umbraco Marvellous Universe, but it isn't! so it's now the exception that proves the rule!
+{% hint style="tip" %}
+This replaces the `PublishedContentCache` (or PublishedMediaCache) `GetAtRoot()` method.
 {% endhint %}
 
 ```csharp
