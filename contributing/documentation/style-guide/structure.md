@@ -28,18 +28,23 @@ Diving one step deeper, each individual topic is contained in its own directory.
 
 Each directory must have a `README.md` file which will act as a landing page for that directory and a parent page to all other articles added within.
 
-When images are used, they must be in an `images` directory next to the `.md` file referencing them using relative paths.
+Images are stored in the `.gitbook/assets/` directory at the root of the repository. This is the recommended location for all images.
 
+* `.gitbook` _(directory)_
+  * `/assets` _(directory)_
+    * `dashboard-view.png`
+    * `content-section.png`
 * `/topic` _(directory)_
   * `README.md`  (_landing page/parent article_)
   * `another-article.md`
-  * `/images` _(directory)_
-    * `images.png`
   * `/subtopic` _(directory)_
     * `README.md` (_landing page/parent article_)
     * `article.md`
     * `another-article.md`
-    * `/images` _(directory)_
+
+{% hint style="info" %}
+Many existing articles still reference images from a local `/images/` directory next to the `.md` file. This structure remains valid while the documentation is being migrated to use `.gitbook/assets/` directory.
+{% endhint %}
 
 ## Documentation Navigation&#x20;
 
