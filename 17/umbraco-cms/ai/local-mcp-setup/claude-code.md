@@ -6,6 +6,10 @@ description: "Host set up for Claude Code"
 
 [Claude Code](https://www.claude.com/product/claude-code) is a developer-focused agentic CLI (command line interface) tool from Anthropic. It integrates Claude's large language models (LLMs) directly into your terminal window. This allows you to explore, refactor, and generate code within your projects.
 
+{% hint style="info" %}
+The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
+{% endhint %}
+
 ## Getting started
 
 Installing Claude Code depends on your environment. For installation details, see the [Claude Code Quickstart Guide](https://code.claude.com/docs/en/quickstart).
@@ -16,7 +20,7 @@ Installing Claude Code depends on your environment. For installation details, se
 1. Add the Umbraco MCP server using the Claude CLI:
 
 ```bash
-claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@17.1
+claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
 ```
 
 2. Define configuration values directly using this pattern:
@@ -24,7 +28,7 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@17.1
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@17.1
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@latest
 ```
 
 Replace the following values with your local connection details:
@@ -71,13 +75,13 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@17.1"],
+      "args": ["@umbraco-cms/mcp-dev@latest"],
     }
   }
 }
 ```
 
-For details on `.env` format and supported configuration keys, see the [Configuration guide](../configuration.md).
+For details on `.env` format and supported configuration keys, see the [Configuration guide](../developer-mcp/configuration.md).
 
 {% hint style="warning" %}
 Never commit live credentials to source control. Always use environment variables or a `.env` file.
@@ -90,4 +94,4 @@ Another benefit of using a `.env` file for configuration is that it makes it muc
 Steps to reconnect an MCP server:
 
 - Update the `.env` file with the new tool set.
-- In the Claude Code CLI, run `/mcp reconnect umbraco-mcp` to restart the mcp server.
+- In the Claude Code CLI, run `/mcp reconnect umbraco-mcp` to restart the MCP server.

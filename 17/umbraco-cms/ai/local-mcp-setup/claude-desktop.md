@@ -6,6 +6,10 @@ description: Host set up for Claude Desktop
 
 [Claude Desktop](https://www.anthropic.com/claude/desktop) is Anthropic's AI-powered assistant for macOS and Windows. It is designed to help you work conversationally across all kinds of tasks from writing and brainstorming to coding and automation.
 
+{% hint style="info" %}
+The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
+{% endhint %}
+
 ## Getting started
 
 1. Download and install the [Claude.ai desktop app](https://claude.ai/download).
@@ -23,7 +27,7 @@ description: Host set up for Claude Desktop
     "umbraco-mcp": 
     {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@17.1"],
+      "args": ["@umbraco-cms/mcp-dev@latest"],
       "env": 
       {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
@@ -45,7 +49,7 @@ description: Host set up for Claude Desktop
 A paid version of Claude.ai will have a higher token limit and can run more complex prompts.
 {% endhint %}
 
-8. [Choose the tools or tool collections](../available-tools.md) to enable your first task.
+8. [Choose the tools or tool collections](../developer-mcp/available-tools.md) to enable your first task.
 
 You will need to restart Claude Desktop every time you make a change to the tools you are using.
 

@@ -22,7 +22,7 @@ Always enable only the tools (or tool collection) needed for the current task.
 
 Every time you interact with the LLM, the entire context is sent to the model to generate a response. This includes the system prompt, tools, instruction files, and chat history. The smaller and more focused your context, the better.
 
-Large prompts and bloated toolsets not only lead to slower and less accurate results, they also increase cost and environmental impact. The more tokens you send and receive, the higher the:
+Large prompts and bloated tool collections not only lead to slower and less accurate results, they also increase cost and environmental impact. The more tokens you send and receive, the higher the:
 
 - Monetary cost (especially on usage-based APIs)
 - Compute usage, which has a direct carbon footprint
@@ -59,7 +59,7 @@ To help manage this, you can condense context to keep the model focused and free
 
 - **Use built-in compression tools (if available)**
 
-Some clients (for example, Claude Code) include options to automatically compress or summarise earlier parts of the conversation. Use these to reduce noise while keeping relevant information accessible.
+Some clients (for example, Claude Code) include options to automatically compress or summarize earlier parts of the conversation. Use these to reduce noise while keeping relevant information accessible.
 
 - **Checkpoint progress into a file**
 

@@ -65,15 +65,15 @@ Provide read-only, parameterized calls that retrieve data to add to the LLM’s 
 
 - **Prompts**
 
-These are predefined, parameterized conversations that define complex interactions with the model. Prompts are ideal for multi-step tasks or for standardising a common process.
+These are predefined, parameterized conversations that define complex interactions with the model. Prompts are ideal for multi-step tasks or for standardizing a common process.
 
 ## MCP in Umbraco
 
 The Developer MCP Server builds on top of Umbraco's Management API (introduced in version 14). This API exposes everything the Backoffice can do through consistent, structured endpoints. This includes content, media, document types, and data types.
 
-These APIs follow predictable patterns for CRUD operations, listings etc, making them an ideal foundation for the Model Context Protocol (MCP).
+These APIs follow predictable patterns for CRUD operations, listings, and so on, making them an ideal foundation for the Model Context Protocol (MCP).
 
-However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management, not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are often too specialised, too costly, or too confusing to implement in the UI.
+However, the Backoffice UI can only ever expose a fraction of the functionality that the Management API makes possible. It’s designed for day-to-day content management, not for executing complex, multi-step operations that span across entities or require dynamic logic. Many advanced or edge case workflows are often too specialized, too costly, or too confusing to implement in the UI.
 
 By giving an LLM or AI agent access to these APIs through MCP, you can now ask it to perform powerful, compound tasks. These tasks would be impossible in the Backoffice and impractical to achieve manually.
 
@@ -93,7 +93,7 @@ Example use cases include:
 - **Schema scaffolding** – Generate or manage Document Types and Data Types directly from a prompt.
 - **Maintenance** – Reorganize into folders, standardize naming conventions or tidy up accumulated technical debt.
 - **Reporting** – Extract and analyze content patterns, audit site structure, or generate usage reports across your entire site.
-- [**Plus many, many more**](../scenarios.md)
+- [**Plus many, many more**](../developer-mcp/scenarios.md)
 
 This represents a fundamental shift in how you build with Umbraco.
 
@@ -105,4 +105,4 @@ The only limit is your imagination. If you can explain what you want, an LLM tha
 
 ## LLM as a Collaborator
 
-Beyond automation, MCP enables you to leverage the expertise of the LLM as an intelligent contributor to your Umbraco project. Instead of merely executing tasks, the model can assist in planning schema changes, refactoring document types, improving naming conventions, and proposing best practices. All of this is based on a deep understanding of the CMS. It can help you migrate, restructure, and optimise your setup, reducing manual effort while increasing technical quality. With the Developer MCP Server, the LLM evolves from an executor of commands into a **collaborative development partner**.
+Beyond automation, MCP enables you to leverage the expertise of the LLM as an intelligent contributor to your Umbraco project. Instead of merely executing tasks, the model can assist in planning schema changes, refactoring document types, improving naming conventions, and proposing best practices. All of this is based on a deep understanding of the CMS. It can help you migrate, restructure, and optimize your setup, reducing manual effort while increasing technical quality. With the Developer MCP Server, the LLM evolves from an executor of commands into a **collaborative development partner**.

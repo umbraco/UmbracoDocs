@@ -6,6 +6,10 @@ description: Host set up for Cursor
 
 [Cursor](https://cursor.com/) is an AI-powered code editor built as a fork of Visual Studio Code. It enhances the familiar Visual Studio Code experience with conversational AI features that help you write, refactor, and understand code more efficiently.
 
+{% hint style="info" %}
+The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
+{% endhint %}
+
 ## Getting started
 
 1. Go to **Cursor Settings** -> **Tools & MCP** -> **Add Custom MCP**.
@@ -19,7 +23,7 @@ description: Host set up for Cursor
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx", 
-      "args": ["@umbraco-cms/mcp-dev@17.1"],
+      "args": ["@umbraco-cms/mcp-dev@latest"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
@@ -37,7 +41,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL`
 ![MCP Panel Added](../../../.gitbook/assets/Cursor-MCP-Added.png)
 
 * The warning above indicates that the number of tools exceeds the limit is expected behaviour.
-* [Choose which tools or tool collections](../available-tools.md) you want to enable for your first task.
+* [Choose which tools or tool collections](../developer-mcp/available-tools.md) you want to enable for your first task.
 
 {% hint style="info" %}
 Selecting only the tools you need helps keep your setup efficient and conversations with your AI assistant more focused.

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vale *)",
+      "Bash(python3 .claude/skills/review-docs/scripts/*)",
+      "Bash(git diff *)"
+    ]
+  }
+}

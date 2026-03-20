@@ -30,7 +30,7 @@ Created by [Tom Madden](https://github.com/TwoMoreThings)
 ## Block List Configuration
 
 - Items require a contentKey in UUID/GUID format
-    - Define labels using the Umbraco Flavored Markdown format, e.g. {umbValue: propertyAlias} (NOT {{$propertyAlias}})
+    - Define labels using the Umbraco Flavored Markdown format, e.g. {umbValue: propertyAlias} (not {{$propertyAlias}})
 
 ## Templates & Content Types
 
