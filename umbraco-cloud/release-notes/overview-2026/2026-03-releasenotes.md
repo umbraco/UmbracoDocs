@@ -1,9 +1,14 @@
 # March 2026
 
 ## Key Takeaways
-
+* **Umbraco Cloud branded error pages for platform errors** - After doing deployments or restarts of an environment, we no longer serve the default IIS 503 message. Instead, we show a simple error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
+
+## Umbraco Cloud branded error pages for platform errors
+
+When doing a deployment or a restart of an environment on Umbraco Cloud, it often results in the website being restarted. This causes the platform (Azure) to serve a default `503 - Service Unavailable` error page, indicating that something is wrong. We have replaced this page with a notice that the site is undergoing maintenance and will be back shortly. The page will automatically refresh once the environment is fully back online.
+<figure><img src="../images/umbraco-cloud-branded-503-custom-error-page.png" alt="Umbraco Cloud, Custom error page for 503"><figcaption><p>Custom error page for 503 errors</p></figcaption></figure>
 
 ## CI/CD Deploy to any target
 
