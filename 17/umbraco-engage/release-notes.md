@@ -40,6 +40,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Optimized annotation fetching using EntityService for improved performance.
 * Fixed partial UTM data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
+* Added `EngageDataCleanupProcessors()` extension method for registering [custom data cleanup processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md).
 
 {% file src="scripts/CompleteAlignSchema.sql" %}
 Run during a maintenance window to add missing foreign keys, indexes, and constraints.

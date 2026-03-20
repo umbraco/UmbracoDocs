@@ -36,6 +36,7 @@ Below are the release notes for Umbraco Engage 16, detailing all changes in this
 * Improved goal deserialization handling with caching and graceful error recovery.
 * Security fix: server-side enforcement of `createdBy` on annotations and other entities — client-provided values are no longer trusted.
 * Page variant segment nullability fixes.
+* Added `EngageDataCleanupProcessors()` extension method for registering [custom data cleanup processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md).
 
 {% file src="scripts/CompleteAlignSchema.sql" %}
 Run during a maintenance window to add missing foreign keys, indexes, and constraints.
