@@ -261,8 +261,6 @@ Webhook settings are configured in `appsettings.*.json` under `Umbraco::CMS`:
 | `KeepLogsForDays`      | Determines how long webhook logs are retained.    |
 | `PayloadType`          | Sets the webhook [payload format](#json-payload). |
 
-## Webhook payload formats
-
 ## Testing Webhooks
 
 Use [Beeceptor](https://beeceptor.com/) or [RequestBin](https://pipedream.com/requestbin) to test the event trigger integrations before deploying them to production.
