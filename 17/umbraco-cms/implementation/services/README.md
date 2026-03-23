@@ -422,7 +422,7 @@ public class SiteService : ISiteService
 
 **2 - The service can be used within or outside of a web request**
 
-In order to replicate `ContentAtRoot` outside of a web request, you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to a store in memory of the unique keys of any nodes at the root of the Umbraco Content (or Media tree). 
+In order to replicate `ContentAtRoot` outside of a web request, you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to an in-memory store of unique keys for all root nodes within the Umbraco Content or Media trees.
 
 {% hint style="tip" %}
 This replaces the `PublishedContentCache` (or PublishedMediaCache) `GetAtRoot()` method.
