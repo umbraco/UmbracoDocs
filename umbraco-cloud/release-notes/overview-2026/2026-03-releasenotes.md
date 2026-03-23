@@ -9,9 +9,9 @@
 ## Show Windows event logs on the log page
 
 The Windows Event logs have previously been findable through Kudu, where it is presented in its base XML format that can be hard to read. 
-Now the environment specific log page has a new section to show messages from the event log, and also allow you to download it without having to go through Kudu. [#833](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833)
+Event log messages are now visible on the environment log page and can be downloaded without going through Kudu. [#833](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833)
 It also allows you to filter on the log level, and the machine name.
-Additionally we have made sure that the tab selected on the logs page is persisted in it's URL so refreshing the page or linking it will go to the intended tab on a reload. [#909](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/909)
+The logs page now persists the selected tab in the URL, preserving it across refreshes and shared links. [#909](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/909)
 
 ![New view of the event logs](../images/EventLogs.png)
 
