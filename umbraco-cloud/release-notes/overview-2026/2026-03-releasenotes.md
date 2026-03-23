@@ -1,9 +1,18 @@
 # March 2026
 
 ## Key Takeaways
+* **Show Windows event logs on the logpage** - On the environments logpage we already showed the Umbraco logs, Deployment logs, Site extension logs and IIS logs. Now this page has been expanded with a new log type - Event logs.
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
+
+## Show Windows event logs on the logpage
+
+The Windows Event logs have previously been findable through Kudu, where it is presented in its base xml format that can be hard to read. Now the environment specific logpage has a new section to show messages from the event log, and also allow you to download it without having to go through Kudu. [#833](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833)
+It also allows you to filter on the log level, and the machinename (mainly useful for the upcoming loadbalancing feature with potentially many duplicated log messages).
+Additionally we have made sure that the tab selected on the logs page is persisted in it's url so refreshing the page or linking it will go to the intended tab on a reload. [#909](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/909)
+
+![New view of the event logs](../images/EventLogs.png)
 
 ## Umbraco Cloud branded error pages for platform errors
 
