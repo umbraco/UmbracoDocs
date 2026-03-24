@@ -56,7 +56,7 @@ This will use the appropriate storage method that you have configured.
 
 ## Using Form Scripts Alongside Validation Dependencies
 
-When setting up templates for Umbraco Forms, two separate script-rendering methods are involved and both are required for forms to work correctly.
+When setting up templates for Umbraco Forms, two separate script-rendering methods are involved, and both are required for forms to work correctly.
 
 `@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](/umbraco-forms/developer/prepping-frontend) article, renders client-side validation scripts such as jQuery Validate and unobtrusive validation. This goes in the `<head>` of your template.
 
