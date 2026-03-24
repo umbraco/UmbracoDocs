@@ -96,12 +96,12 @@ The default configuration will look like this:
 **DataCleanup settings:**
 
 * `Enabled`: Whether the data cleanup process runs at all.
-* `FirstRunTime`: Optional crontab expression (e.g., `"0 2 * * *"` for 2 AM daily) to schedule the first cleanup run. Takes precedence over `Delay` when set.
+* `FirstRunTime`: Optional crontab expression (`"0 2 * * *"` for 2 AM daily) to schedule the first cleanup run. Takes precedence over `Delay` when set.
 * `Delay`: Time after application startup before the first cleanup run (default: 5 minutes). Used only when `FirstRunTime` is not set.
 * `Period`: Interval between cleanup runs (default: 24 hours).
 * `CommandTimeout`: Database command timeout in seconds (default: 1200 = 20 minutes).
 
-The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and shouyld no longer be used.
+The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and should no longer be used.
 {% endhint %}
 
 All these settings are also visualized in Umbraco Engage. This overview can be found in the **Engage** -> **Settings** -> **Configuration** section.

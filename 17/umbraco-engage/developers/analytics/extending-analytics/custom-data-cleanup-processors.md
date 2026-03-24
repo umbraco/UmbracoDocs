@@ -45,7 +45,7 @@ The `AnalyticsDataCleanupType` enum controls the execution order. Processors are
 | --- | --- |
 | `Anonymize` | Replaces personally identifiable information with anonymized values for data that has exceeded its retention period. Runs first. |
 | `DeleteAnalyticsData` | Deletes analytics data (pageviews, control group data, raw data) that has exceeded its retention period. Runs second. |
-| `DeleteOrphanedData` | Deletes orphaned records no longer referenced by any analytics data (e.g., sessions, visitors, devices without pageviews). Runs last. |
+| `DeleteOrphanedData` | Deletes orphaned records no longer referenced by any analytics data (for example: sessions, visitors, devices without pageviews). Runs last. |
 
 ## Registering a custom processor
 

@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 * Rewritten analytics data cleanup with improved scheduling and performance:
   * Cleanup now runs once daily instead of every 30 minutes, processing all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
   * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
-  * Configurable first-run scheduling via crontab expression (e.g., `"0 2 * * *"` for 2 AM daily).
+  * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
 * Database schema alignment bringing existing installations in line with clean installs:
   * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
   * Requires running the `CompleteAlignSchema.sql` script during a maintenance window after upgrading (see below).

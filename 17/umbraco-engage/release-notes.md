@@ -21,7 +21,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Rewritten analytics data cleanup with improved scheduling and performance:
   * Cleanup now runs once daily instead of every 30 minutes, processing all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
   * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
-  * Configurable first-run scheduling via crontab expression (e.g., `"0 2 * * *"` for 2 AM daily).
+  * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
 * Database schema alignment bringing existing installations in line with clean installs:
   * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
   * Requires running the `CompleteAlignSchema.sql` script during a maintenance window after upgrading (see below).
@@ -32,13 +32,13 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Fixed `Anonymize IP Address` setting not showing in the UI.
 * Clean-up of orphaned page variants and bot visitor data.
 * Fixed duplicate page variant rows being created per pageview instead of reusing existing data. A `DeduplicatePageVariants.sql` helper script is included to consolidate duplicates on existing installations (see below).
-* Added wildcard domain support for licensing (e.g., `*.example.com`).
+* Added wildcard domain support for licensing.
 * Improved goal deserialization handling with caching and graceful error recovery.
 * Security fix: server-side enforcement of `createdBy` on annotations and other entities — client-provided values are no longer trusted.
 * Page variant segment nullability fixes.
 * New `DeliveryApi.DisableVisitorCookie` configuration (default: `false`) — when `true`, suppresses the visitor cookie on headless API requests, requiring clients to use the `External-Visitor-Id` header instead. See [configuration](developers/settings/configuration.md) for details.
 * Optimized annotation fetching using EntityService for improved performance.
-* Fixed partial UTM data missing from Analytics Campaigns view.
+* Fixed partial UTM (Urchin Tracking Module) data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
 * Added `EngageDataCleanupProcessors()` extension method for registering [custom data cleanup processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md).
 
