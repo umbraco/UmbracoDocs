@@ -8,10 +8,10 @@ Read `.github/workflows/check-broken-pr-links.yml` to understand the CI configur
 
 ## Checking Links Locally
 
-You do not need Lychee installed locally. Run the `check-links.py` script in this directory to batch-check all internal links:
+You do not need Lychee installed locally. Run the `check-links.mjs` script in this directory to batch-check all internal links:
 
 ```bash
-python3 .claude/skills/review-docs/scripts/check-links.py file1.md file2.md ...
+node .claude/skills/review-docs/scripts/check-links.mjs file1.md file2.md ...
 ```
 
 For PR mode, get the file list first, then pass the files as direct arguments:
@@ -21,7 +21,7 @@ For PR mode, get the file list first, then pass the files as direct arguments:
 git diff main --diff-filter=d --name-only -- '*.md'
 
 # Step 2: Pass files directly (do NOT use $() subshell — it breaks permission auto-approval)
-python3 .claude/skills/review-docs/scripts/check-links.py file1.md file2.md ...
+node .claude/skills/review-docs/scripts/check-links.mjs file1.md file2.md ...
 ```
 
 **Important:** Do not use `$(git diff ...)` subshells when calling this script. Subshells and pipes in Bash commands require separate permission approval. Instead, get the file list in one command, then pass the files as direct arguments in a second command.

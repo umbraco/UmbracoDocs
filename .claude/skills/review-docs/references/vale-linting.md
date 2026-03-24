@@ -6,6 +6,25 @@ This project uses Vale for style and spelling checks, enforced in CI by ReviewDo
 
 Read `.github/workflows/Vale-Linter.yml` to understand the CI configuration. The key setting is `filter_mode` — it controls which lines ReviewDog comments on. Check the current value before deciding what to fix.
 
+## Installing Vale
+
+Vale must be installed before you can run linting locally. Install it with one of the following:
+
+```bash
+# macOS
+brew install vale
+
+# Windows
+choco install vale
+
+# Linux (snap)
+snap install vale
+
+# Or download the binary from https://vale.sh/docs/install/
+```
+
+After installing, run `vale sync` from the repository root to download the style packages configured in `.vale.ini`.
+
 ## Running Vale Locally
 
 Run Vale on the files you are reviewing:

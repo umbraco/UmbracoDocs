@@ -151,7 +151,7 @@ Use the AskUserQuestion tool to ask if the user wants to fix the automated issue
 
 ## Permissions
 
-Commands that start with `vale`, `python3 .claude/skills/review-docs/scripts/`, and `git diff` are pre-approved in `.claude/settings.json`. To keep auto-approval working:
+Commands that start with `vale`, `node .claude/skills/review-docs/scripts/`, and `git diff` are pre-approved in `.claude/settings.json`. To keep auto-approval working:
 
 - **Do not use pipes** (`|`) or subshells (`$(...)`) in Bash commands — they break permission matching
 - **Get file lists and pass them separately** — run `git diff` in one command, then pass the resulting file paths as direct arguments in the next command
