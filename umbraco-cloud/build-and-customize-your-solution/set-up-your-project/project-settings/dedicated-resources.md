@@ -31,9 +31,9 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 {% endhint %}
 
 ## Moving to a higher or lower dedicated server
-When on Dedicated, you can scale the Dedicated server up to a higher tier or scale down to a lower tier, depending on the plan you are on. On a standard plan, you can scale up from Standard dedicated 1 to Standard dedicated 2, and you can scale down from Standard dedicated 2 back to Standard dedicated 1.
+When on Dedicated, you can scale the Dedicated server up to a higher tier or scale down to a lower tier. On a standard plan, you can scale up from Standard dedicated 1 to Standard dedicated 2, and scale down back to Standard dedicated 1 again.
 
-If you are on a Professional plan and upgraded to Pro dedicated 1, you can scale it up to Pro dedicated 2 or Pro dedicated 3, and similiarly you you can scale down from Pro dedicated 3 to the lower tiers.
+On a Professional plan with Pro dedicated 1, you can scale it up to Pro dedicated 2 or Pro dedicated 3.  similiarly you, you can scale down from Pro dedicated 3 to the lower tiers.
 
 Once it has been scaled, the environment will do a [Cold Boot](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts?q=cold+boot#cold-start), which will restart the environment.
 
