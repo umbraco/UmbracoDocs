@@ -1,9 +1,21 @@
 # March 2026
 
 ## Key Takeaways
+* **Show Windows event logs on the log page** - On the environments log page we already showed the Umbraco logs, Deployment logs, Site extension logs and IIS logs. Now this page has been expanded with a new log type - Event logs.
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
+
+## Show Windows event logs on the log page
+
+The Windows Event logs have previously been findable through Kudu, where it is presented in its base XML format that can be hard to read. 
+Event log messages are now visible on the environment log page and can be downloaded without going through Kudu. Learn more about the improvement from reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833).
+
+It also allows you to filter on the log level, and the machine name.
+
+The logs page now persists the selected tab in the URL, preserving it across refreshes and shared links. Learn more about this decision by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/909).
+
+![New view of the event logs](../images/EventLogs.png)
 
 ## Umbraco Cloud branded error pages for platform errors
 
@@ -33,9 +45,9 @@ For more information on setting up pipelines that deploy to multiple environment
 
 ## Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3
 
-If a user’s email matches an existing account during external login, their user groups are now preserved instead of being overwritten. [#993](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993)
+If a user’s email matches an existing account during external login, their user groups are now preserved instead of being overwritten. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993).
 
-Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. [#990](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990)
+Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990).
 
 
 
