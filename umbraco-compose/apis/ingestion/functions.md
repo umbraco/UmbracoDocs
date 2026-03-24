@@ -90,15 +90,15 @@ Ingestion functions can be managed using the [Management Api](https://apidocs.um
 
 ## Invoking a Function
 
-Functions can be invoked by sending an [Ingestion request](./#ingesting-data) to your ingestion function URL. The URL can be constructed by using your `project alias`, `environment alias`, `collection alias`, and `ingestion function alias` using this scheme:
+Functions can be invoked by sending an [Ingestion request](./#ingesting-data) to your ingestion function URL. The URL can be constructed by using your project region and the aliases of your project, environment, collection, and function using this scheme:
 
 ```http
-https://ingest.umbracocompose.com/v1/:projectAlias/:environmentAlias/:collectionAlias/:ingestionFunctionAlias
+https://ingest.{region}.umbracocompose.com/v1/{projectAlias}/{environmentAlias}/{collectionAlias}/{ingestionFunctionAlias}
 ```
 
 ### Example
 
-Your project contains the following aliases:
+Your project in the `germanywestcentral` region contains the following aliases:
 
 * Project name: `considerate-cute-otter`
 * Environment alias: `production`
@@ -108,7 +108,7 @@ Your project contains the following aliases:
 Your Ingestion Function URL will look like this:
 
 ```http
-https://ingest.umbracocompose.com/v1/considerate-cute-otter/production/products/products-from-webshop
+https://ingest.germanywestcentral.umbracocompose.com/v1/considerate-cute-otter/production/products/products-from-webshop
 ```
 
 {% hint style="warning" %}
