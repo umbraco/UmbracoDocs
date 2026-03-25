@@ -16,6 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### 13.9.5
+* Umbraco Licenses dependency updated to 13.3.4
+
 ### 13.9.4
 * Fix: string length validation for file upload fields
 
