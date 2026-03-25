@@ -28,7 +28,7 @@ When creating or modifying documentation, follow this checklist:
 2. **Use correct markdown** per the conventions below
 3. **Add to SUMMARY.md** if this is a new article
 4. **Add redirects** to `.gitbook.yaml` if moving/renaming/deleting
-5. **Add images** to an `images/` directory next to the article if needed
+5. **Add images** to the first `.gitbook/assets` directory found when looking up in the file structure from where the article is.
 
 ## Style Guide Summary
 
@@ -51,6 +51,9 @@ description: >-
   A one-to-two sentence description of what this article covers.
 ---
 
+- The article description will be displayed directly under the page title.
+- The description should be no longer than 160 characters, as it's also used as the meta description
+
 # Article Title
 
 Introduction paragraph explaining what the reader will learn.
@@ -66,17 +69,14 @@ Content here.
 /topic/
 ├── README.md              # Landing page (required)
 ├── another-article.md
-├── images/
-│   └── descriptive-name.png
 └── subtopic/
     ├── README.md
     ├── article.md
-    └── images/
 ```
 
 - All names: **lowercase**, **hyphens** for spaces
 - Parent articles are always `README.md`
-- Images directory sits next to the `.md` files that reference them
+- Images are placed in a `.gitbook/assets` directory at the root of the product directory
 
 For full structure rules and image guidelines, read `contributing/documentation/style-guide/structure.md`.
 
@@ -131,8 +131,9 @@ For caption format, syntax highlighting languages, file-scoped namespaces, and a
 
 ## Images
 
-- Store in `images/` directory next to the referencing `.md` file
-- Always provide alt text or caption
+- Store in the `.gitbook/assets` directory closest in the file structure to the article that references them
+- Always provide alt text
+- Provide caption when relevant
 
 For formats, naming, and markdown syntax, read `contributing/documentation/style-guide/structure.md`.
 

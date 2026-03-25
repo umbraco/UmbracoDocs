@@ -8,7 +8,7 @@ description: Security model for the Hosted MCP server including token isolation,
 
 MCP clients need to call the Umbraco Management API on behalf of a backoffice user. Passing the Umbraco token directly to the MCP client would be dangerous. The client could leak the token, reuse it for API calls outside the MCP server's scope, or gain direct Umbraco API access if compromised.
 
-The hosted MCP server uses a **dual-OAuth architecture** to solve this. The Worker maintains two independent OAuth flows. The MCP client sees tokens from only one of them: the Worker's own tokens. The Umbraco tokens exist only inside the Worker and its KV storage.
+The hosted MCP server uses a **dual-OAuth architecture** to solve this. The Worker maintains two independent OAuth flows. The MCP client sees tokens from only one of them: the Worker's own tokens. The Umbraco tokens exist only inside the Worker and its Key-Value (KV) storage.
 
 ```
 MCP Client ---Worker-issued token---> Worker ---Umbraco token---> Umbraco
@@ -119,7 +119,7 @@ The admin tier is the **maximum boundary**. No user action can exceed it. Users 
 - The consent form includes a hidden state field.
 - `X-Frame-Options: DENY` and `Content-Security-Policy: frame-ancestors 'none'` are set on all HTML responses.
 
-## SSRF Mitigations
+## Server-Side Request Forgery (SSRF) Mitigations
 
 - `UMBRACO_BASE_URL` is configured as a secret, not from user input.
 - All API calls go through the configured base URL only.

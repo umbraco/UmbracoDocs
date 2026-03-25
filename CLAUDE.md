@@ -8,7 +8,7 @@
 - **Moving, renaming, or deleting articles** requires a redirect in the relevant `.gitbook.yaml` under `redirects:`
   - Format: `old/path/without/extension: new/path/with/extension.md`
 - Each directory must have a `README.md` as its landing page
-- Images go in an `images/` directory next to the `.md` file referencing them
+- Images go in a `.gitbook/assets` directory at the root of the product directory
 - All file and directory names: **lowercase**, **hyphens** instead of spaces
 
 ## Version Structure

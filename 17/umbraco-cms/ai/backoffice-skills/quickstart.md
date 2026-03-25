@@ -37,7 +37,7 @@ Before writing any code:
 1. **Describe what you want to build** — "A dashboard that shows recent content changes", "A tree in Settings for managing custom data"
 2. **Draw a wireframe** — The AI creates ASCII wireframes showing where UI elements appear in the backoffice
 3. **Identify extension types** — Label each part of the wireframe: section, dashboard, workspace, tree
-4. **Identify UUI components** — Map out which `uui-*` components you need (buttons, inputs, boxes, tables)
+4. **Identify Umbraco UI Library (UUI) components** — Map out which `uui-*` components you need (buttons, inputs, boxes, tables)
 5. **Map data flow** — How does data move? Which contexts, repositories, and APIs are involved?
 
 ```

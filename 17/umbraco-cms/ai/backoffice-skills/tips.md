@@ -48,7 +48,7 @@ Add them as working directories in your editor. In Claude Code:
 
 This gives the AI direct access to:
 - **Umbraco.Web.UI.Client** — Backoffice TypeScript source code, showing production implementations of all extension types
-- **UUI** — Umbraco UI component library with all `uui-*` components
+- **Umbraco UI Library (UUI)** — Component library with all `uui-*` components
 
 ## Explore the Backoffice First
 

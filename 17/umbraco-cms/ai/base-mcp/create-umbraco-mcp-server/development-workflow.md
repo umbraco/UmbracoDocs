@@ -41,7 +41,7 @@ The CLI prompts you to choose how to connect to an Umbraco instance. You can cre
 
 This option walks you through creating a local Umbraco instance:
 
-1. Detects whether the [PSW CLI](https://www.nuget.org/packages/PackageScriptWriter.Cli) is installed, and installs it if needed
+1. Detects whether the [Package Script Writer (PSW) CLI](https://www.nuget.org/packages/PackageScriptWriter.Cli) is installed, and installs it if needed
 2. Prompts for a SQL Server connection string
 3. Searches the Umbraco Marketplace and lets you select NuGet packages to install
 4. Builds the Umbraco instance in a `demo-site/` directory

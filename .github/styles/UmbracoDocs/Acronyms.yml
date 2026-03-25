@@ -93,7 +93,6 @@ exceptions:
   - PKCE     # Proof Key for Code Exchange
   - PNG      # Portable Network Graphics
   - POST     # HTTP POST method
-  - PSW      # Package Script Writer
   - PUT      # HTTP PUT method
   - RAM      # Random Access Memory
   - REST     # Representational State Transfer
@@ -112,7 +111,6 @@ exceptions:
   - SSD      # Solid State Drive
   - SSE      # Server-Sent Events
   - SSL      # Secure Sockets Layer
-  - SSRF     # Server-Side Request Forgery
   - SVG      # Scalable Vector Graphics
   - TCP      # Transmission Control Protocol
   - TEMP     # Temporary
@@ -127,7 +125,6 @@ exceptions:
   - URL      # Uniform Resource Locator
   - USB      # Universal Serial Bus
   - UTC      # Coordinated Universal Time
-  - UUI      # Umbraco UI component library
   - UUID     # Universally Unique Identifier
   - UWP      # Universal Windows Platform
   - UX       # User Experience

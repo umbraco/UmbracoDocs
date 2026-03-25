@@ -100,4 +100,4 @@ The `agents` library requires SQLite-backed Durable Objects.
 
 **Cause**: The state parameter in the callback does not match any stored state, or the 10-minute TTL has expired.
 
-**Fix**: Retry the OAuth flow. State parameters are single-use and expire after 10 minutes. If this happens frequently, check that the Umbraco login flow completes within 10 minutes.
+**Fix**: Retry the OAuth flow. State parameters are single-use and expire after 10 minutes. If this happens frequently, check for stale browser tabs or interrupted login flows.
