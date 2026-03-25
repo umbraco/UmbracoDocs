@@ -31,7 +31,7 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 {% endhint %}
 
 ## Moving to a higher or lower dedicated server
-When on Dedicated, you can scale the Dedicated server up to a higher tier or scale down to a lower tier. On a standard plan, you can scale up from Standard dedicated 1 to Standard dedicated 2, and scale down back to Standard dedicated 1 again.
+When on a Dedicated plan, you can scale the dedicated server up to a higher tier or scale down to a lower tier. On a Standard plan, you can scale up from Standard Dedicated 1 to Standard Dedicated 2, and scale down back to Standard Dedicated 1 again.
 
 On a Professional plan with Pro dedicated 1, you can scale it up to Pro dedicated 2 or 3. Similarly, you can scale down from higher to lower tiers.
 
