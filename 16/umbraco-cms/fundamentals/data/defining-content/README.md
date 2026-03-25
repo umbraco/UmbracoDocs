@@ -196,8 +196,8 @@ This is *italic*
 You can make links by using the syntax:
 
 ```md
-[This is an absolute link](https://google.com)
-[This is a relative link](/umbraco#/media)
+[This is an absolute link](https://umbraco.com)
+[This is a relative link](/umbraco/section/media)
 ```
 
 **Note**: Links will always have the`target="_blank"` set. This is currently not configurable.
@@ -236,13 +236,17 @@ Now if we put it all together we get something like this:
 ```md
 This is **bold**
 This is *italic*
-[This is an absolute link](https://google.com)
-[This is a relative link](/umbraco#/media)
---
+[This is an absolute link](https://umbraco.com)
+[This is a relative link](/umbraco/section/media)
+<details>
+<summary>Read More</summary>
+
 ![Image alt text](https://media.giphy.com/media/bezxCUK2D2TuBCJ7r5/giphy.gif)
+
+</details>
 ```
 
-![Makrdown description example](<../../../.gitbook/assets/md-description (1).gif>)
+![Markdown description example](<../../../.gitbook/assets/md-description-v17.gif>)
 
 ## 5. Defining child nodes
 
