@@ -19,16 +19,16 @@ PATCH /umbraco/management/api/v1/document/{id:guid}/patch
 | Header | Value |
 |--------|-------|
 | `Content-Type` | `application/json-patch+json` |
-| `Authorization` | Bearer token or cookie-based auth |
+| `Authorization` | Bearer token or cookie-based auth. |
 
 **Status Codes:**
 
 | Code | Condition |
 |------|-----------|
 | 200 | Success |
-| 400 | Invalid path syntax, missing value, path resolution failure, invalid culture |
-| 404 | Document not found, content type not found |
-| 422 | Property type not found on content type |
+| 400 | Invalid path syntax, missing value, path resolution failure, invalid culture. |
+| 404 | Document not found, content type not found. |
+| 422 | Property type not found on content type. |
 
 ---
 
@@ -68,13 +68,13 @@ token         ::= RFC6901_TOKEN             // with ~1 decoded to "/" and ~0 dec
 ```
 
 **Constraints:**
-- Path MUST start with `/`
-- Path MUST contain at least one segment
-- `/-` (AppendSegment) MUST be the last segment
-- `/-` is only valid with `add` operations
-- Filter brackets MUST be closed
-- Filter conditions MUST contain `=`
-- Filter keys MUST NOT be empty
+- Path **must** start with `/`.
+- Path **must** contain at least one segment.
+- `/-` (AppendSegment) **must** be the last segment.
+- `/-` is only valid with `add` operations.
+- Filter brackets **must** be closed.
+- Filter conditions **must** contain `=`.
+- Filter keys **must not** be empty.
 
 ---
 
@@ -82,10 +82,10 @@ token         ::= RFC6901_TOKEN             // with ~1 decoded to "/" and ~0 dec
 
 | Type | Syntax | Resolves To | Example |
 |------|--------|-------------|---------|
-| PropertySegment | `/name` | Named property on a JsonObject | `/value`, `/markup`, `/layout` |
-| FilterSegment | `[k=v,k2=v2]` | First element in a JsonArray matching ALL conditions | `[alias=title,culture=en-US,segment=null]` |
-| IndexSegment | `/0`, `/1` | Element at numeric index in a JsonArray | `/contentData/0` |
-| AppendSegment | `/-` | Past-the-end position in a JsonArray | `/contentData/-` |
+| PropertySegment | `/name` | Named property on a JsonObject. | `/value`, `/markup`, `/layout` |
+| FilterSegment | `[k=v,k2=v2]` | First element in a JsonArray matching **all** conditions. | `[alias=title,culture=en-US,segment=null]` |
+| IndexSegment | `/0`, `/1` | Element at numeric index in a JsonArray. | `/contentData/0` |
+| AppendSegment | `/-` | Past-the-end position in a JsonArray. | `/contentData/-` |
 
 ---
 
@@ -94,11 +94,11 @@ token         ::= RFC6901_TOKEN             // with ~1 decoded to "/" and ~0 dec
 Given an array element (JsonObject) and a set of filter conditions:
 
 1. For each condition `(key, value)`:
-   - If `value` is `null`: match succeeds if the element does NOT have the property, OR the property value is JSON `null`
-   - If `value` is a string: match succeeds if the element HAS the property AND its string representation equals `value` (StringComparison.Ordinal — **case-sensitive**)
-2. ALL conditions must match (AND logic)
-3. The **first** matching element is returned
-4. If no element matches, the operation fails with 400
+   - If `value` is `null`: match succeeds if the element does **not** have the property, OR the property value is JSON `null`.
+   - If `value` is a string: match succeeds if the element **has** the property AND its string representation equals `value` (StringComparison.Ordinal — **case-sensitive**).
+2. ALL conditions must match (AND logic).
+3. The **first** matching element is returned.
+4. If no element matches, the operation fails with 400.
 
 **Note:** The `null` keyword in filter values is matched case-insensitively (`null`, `NULL`, `Null` all work). All other string values are case-sensitive.
 
@@ -110,24 +110,24 @@ Given an array element (JsonObject) and a set of filter conditions:
 
 | Target | Behavior |
 |--------|----------|
-| Object property | Sets property to new value |
-| Array element (by index or filter) | Replaces element value |
+| Object property | Sets property to new value. |
+| Array element (by index or filter) | Replaces element value. |
 | Cannot target `/-` | Error |
 
 ### Add
 
 | Target | Behavior |
 |--------|----------|
-| Object property | Sets property (creates if missing) |
-| Array with `/-` | Appends to end of array |
-| Array with index `/N` | Inserts at index N, shifts existing elements right |
+| Object property | Sets property (creates if missing). |
+| Array with `/-` | Appends to end of array. |
+| Array with index `/N` | Inserts at index N, shifts existing elements right. |
 
 ### Remove
 
 | Target | Behavior |
 |--------|----------|
-| Object property | Removes the property |
-| Array element (by index or filter) | Removes element, shifts subsequent elements left |
+| Object property | Removes the property. |
+| Array element (by index or filter) | Removes element, shifts subsequent elements left. |
 | Cannot target `/-` | Error |
 
 ---
@@ -375,18 +375,18 @@ When adding a block to any block editor, you need these operations:
 
 | # | Operation | Path suffix | Value |
 |---|-----------|-------------|-------|
-| 1 | `add` | `/contentData/-` | BlockItemData object |
-| 2 | `add` | `/layout/<EditorAlias>/-` | Layout item |
-| 3 | `add` | `/expose/-` | Expose entry (one per culture/segment) |
+| 1 | `add` | `/contentData/-` | BlockItemData object. |
+| 2 | `add` | `/layout/<EditorAlias>/-` | Layout item. |
+| 3 | `add` | `/expose/-` | Expose entry (one per culture/segment). |
 
 ### Rich Text Editor (4 operations)
 
 | # | Operation | Path suffix | Value |
 |---|-----------|-------------|-------|
-| 1 | `add` | `/blocks/contentData/-` | BlockItemData object |
-| 2 | `add` | `/blocks/layout/Umbraco.RichText/-` | Layout item |
-| 3 | `add` | `/blocks/expose/-` | Expose entry |
-| 4 | `replace` | `/markup` | Updated HTML with `<umb-rte-block data-content-key="NEW_GUID">` |
+| 1 | `add` | `/blocks/contentData/-` | BlockItemData object. |
+| 2 | `add` | `/blocks/layout/Umbraco.RichText/-` | Layout item. |
+| 3 | `add` | `/blocks/expose/-` | Expose entry. |
+| 4 | `replace` | `/markup` | Updated HTML with `<umb-rte-block data-content-key="NEW_GUID">`. |
 
 ### Culture-Variant Blocks
 
@@ -440,24 +440,24 @@ Document
 
 | Segment | Type | Resolves to |
 |---------|------|-------------|
-| `/values` | Property | root values array |
-| `[alias=blockList,culture=null,segment=null]` | Filter | the blockList property entry |
-| `/value` | Property | the block list value object |
-| `/contentData` | Property | content data array |
-| `[key=f32d4827-...]` | Filter | the container block |
-| `/values` | Property | container block's values array |
-| `[alias=block,culture=null,segment=null]` | Filter | the "block" property (inner block list) |
-| `/value` | Property | the inner block list value object |
-| `/contentData` | Property | inner content data array |
-| `[key=dc9db89c-...]` | Filter | the grid container block |
-| `/values` | Property | grid container's values array |
-| `[alias=grid,culture=null,segment=null]` | Filter | the "grid" property (block grid) |
-| `/value` | Property | the block grid value object |
-| `/contentData` | Property | grid content data array |
-| `[key=5122504c-...]` | Filter | the text block |
-| `/values` | Property | text block's values array |
-| `[alias=text,culture=nl,segment=null]` | Filter | the Dutch text value |
-| `/value` | Property | the actual string value |
+| `/values` | Property | Root values array. |
+| `[alias=blockList,culture=null,segment=null]` | Filter | The blockList property entry. |
+| `/value` | Property | The block list value object. |
+| `/contentData` | Property | Content data array. |
+| `[key=f32d4827-...]` | Filter | The container block. |
+| `/values` | Property | Container block's values array. |
+| `[alias=block,culture=null,segment=null]` | Filter | The "block" property (inner block list). |
+| `/value` | Property | The inner block list value object. |
+| `/contentData` | Property | Inner content data array. |
+| `[key=dc9db89c-...]` | Filter | Yhe grid container block. |
+| `/values` | Property | Grid container's values array. |
+| `[alias=grid,culture=null,segment=null]` | Filter | The "grid" property (block grid). |
+| `/value` | Property | The block grid value object. |
+| `/contentData` | Property | Grid content data array. |
+| `[key=5122504c-...]` | Filter | The text block. |
+| `/values` | Property | Text block's values array. |
+| `[alias=text,culture=nl,segment=null]` | Filter | The Dutch text value. |
+| `/value` | Property | The actual string value. |
 
 ---
 
@@ -466,12 +466,12 @@ Document
 | Error | HTTP Code | Cause |
 |-------|-----------|-------|
 | Invalid path syntax | 400 | Path doesn't start with `/`, unclosed bracket, empty filter key, etc. |
-| Missing value | 400 | `replace` or `add` operation has `value: null` |
-| Path resolution failed | 400 | Property not found on object, filter matched no elements, index out of bounds |
-| Invalid culture | 400 | Culture in path doesn't exist in the system |
-| Document not found | 404 | No document with the given ID |
-| Content type not found | 404 | Document's content type was deleted |
-| Property type not found | 422 | Property alias doesn't exist on the content type |
+| Missing value | 400 | `replace` or `add` operation has `value: null`. |
+| Path resolution failed | 400 | Property not found on object, filter matched no elements, index out of bounds. |
+| Invalid culture | 400 | Culture in path doesn't exist in the system. |
+| Document not found | 404 | No document with the given ID. |
+| Content type not found | 404 | Document's content type was deleted. |
+| Property type not found | 422 | Property alias doesn't exist on the content type. |
 
 ---
 
