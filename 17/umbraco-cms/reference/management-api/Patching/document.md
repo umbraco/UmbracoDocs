@@ -5,10 +5,11 @@
 The Document PATCH endpoint lets you make **partial updates** to an Umbraco document. Instead of sending the entire document back (like a PUT), you describe only the changes you want to make.
 
 This is useful when you need to:
-- Update a single property without touching the rest of the document
-- Modify a value inside a deeply nested block editor
-- Add or remove blocks from a block list, block grid, or rich text editor
-- Update variant names for specific cultures
+
+- Update a single property without touching the rest of the document.
+- Modify a value inside a deeply nested block editor.
+- Add or remove blocks from a block list, block grid, or rich text editor.
+- Update variant names for specific cultures.
 
 ## Endpoint
 
@@ -17,8 +18,8 @@ PATCH /umbraco/management/api/v1/document/{id}/patch
 Content-Type: application/json-patch+json
 ```
 
-- `{id}` is the document's GUID (e.g., `a4ecec0e-3218-40b1-875b-dbaa7175028e`)
-- Requires authentication (backoffice user with update permission on the document)
+- `{id}` is the document's GUID (e.g., `a4ecec0e-3218-40b1-875b-dbaa7175028e`).
+- Requires authentication (backoffice user with update permission on the document).
 
 ## Request Format
 
@@ -38,9 +39,9 @@ The request body is a JSON object with an `operations` array. Each operation has
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `op` | Yes | The operation: `"replace"`, `"add"`, or `"remove"` |
-| `path` | Yes | A path expression pointing to the target location in the document |
-| `value` | For replace/add | The new value to set |
+| `op` | Yes | The operation: `"replace"`, `"add"`, or `"remove"`. |
+| `path` | Yes | A path expression pointing to the target location in the document. |
+| `value` | For replace/add | The new value to set. |
 
 Multiple operations are applied **in order** - each operation sees the result of all previous ones.
 
@@ -60,9 +61,9 @@ Replaces an existing value at the target location.
 
 Adds a value. Behavior depends on the target:
 
-- **To an array with `/-`**: appends to the end
-- **To an array with an index (e.g., `/1`)**: inserts at that position, shifting existing elements
-- **To an object property**: sets the property (creates it if missing)
+- **To an array with `/-`**: appends to the end.
+- **To an array with an index (e.g., `/1`)**: inserts at that position, shifting existing elements.
+- **To an object property**: sets the property (creates it if missing).
 
 ```json
 { "op": "add", "path": "/values[alias=blocks,culture=null,segment=null]/value/contentData/-", "value": { ... } }
@@ -80,10 +81,10 @@ Removes the value at the target location.
 
 | Code | Meaning |
 |------|---------|
-| **200** | All operations applied successfully |
-| **400** | Invalid path syntax, missing value for replace/add, or path could not be resolved |
-| **404** | Document not found, or content type not found |
-| **422** | Property type not found on the content type |
+| **200** | All operations applied successfully. |
+| **400** | Invalid path syntax, missing value for replace/add, or path could not be resolved. |
+| **404** | Document not found, or content type not found. |
+| **422** | Property type not found on the content type. |
 
 ---
 
@@ -95,22 +96,22 @@ Paths tell the PATCH endpoint exactly where in the document JSON to apply the op
 
 | Syntax | What it does | Example |
 |--------|-------------|---------|
-| `/property` | Access a named property on an object | `/value`, `/name`, `/markup` |
-| `[key=value]` | Find an array element where `key` equals `value` | `[alias=title]` |
-| `[k1=v1,k2=v2]` | Find an element matching ALL conditions | `[alias=title,culture=en-US,segment=null]` |
-| `/0`, `/1`, ... | Access an array element by index (zero-based) | `/contentData/0` |
-| `/-` | Target the end of an array (for add/append) | `/contentData/-` |
-| `~1` | Escape sequence for `/` in a property name | `/Umbraco.BlockList` uses no escape since `.` is fine |
-| `~0` | Escape sequence for `~` in a property name | Rarely needed |
+| `/property` | Access a named property on an object. | `/value`, `/name`, `/markup` |
+| `[key=value]` | Find an array element where `key` equals `value`. | `[alias=title]` |
+| `[k1=v1,k2=v2]` | Find an element matching ALL conditions. | `[alias=title,culture=en-US,segment=null]` |
+| `/0`, `/1`, ... | Access an array element by index (zero-based). | `/contentData/0` |
+| `/-` | Target the end of an array (for add/append). | `/contentData/-` |
+| `~1` | Escape sequence for `/` in a property name. | `/Umbraco.BlockList` uses no escape since `.` is fine |
+| `~0` | Escape sequence for `~` in a property name. | Rarely needed |
 
 ### Filter Syntax Details
 
 Filters match array elements by their properties. All conditions must match (AND logic).
 
-- **String values**: matched exactly, case-sensitive
-- **Null values**: use the literal word `null` (case-insensitive) to match properties that are null or missing
-- **Multiple conditions**: separated by commas, ALL must match
-- **First match wins**: if multiple elements match, the first one is used
+- **String values**: matched exactly, case-sensitive.
+- **Null values**: use the literal word `null` (case-insensitive) to match properties that are null or missing.
+- **Multiple conditions**: separated by commas, ALL must match.
+- **First match wins**: if multiple elements match, the first one is used.
 
 ```
 [alias=title,culture=en-US,segment=null]
@@ -149,6 +150,7 @@ Each entry in `values` represents a single property value for a specific culture
 ```
 
 For simple property editors (Textbox, Textarea, etc.), `value` is a string or number.
+
 For complex editors (Block List, Block Grid, Rich Text), `value` is a nested JSON object.
 
 ### Variants Array
@@ -212,11 +214,13 @@ When a property uses a block editor (Block List, Block Grid, or Rich Text), the 
 ### Layout Items by Editor Type
 
 **Block List** layout items:
+
 ```json
 { "contentKey": "guid", "settingsKey": null }
 ```
 
 **Block Grid** layout items (include size and areas):
+
 ```json
 {
   "columnSpan": 12,
@@ -233,6 +237,7 @@ When a property uses a block editor (Block List, Block Grid, or Rich Text), the 
 ```
 
 **Rich Text** layout items:
+
 ```json
 { "contentKey": "guid", "settingsKey": null }
 ```
@@ -264,10 +269,11 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 ```
 
 **Key differences from Block List / Block Grid:**
-- The block data lives under `blocks`, not directly in the value
-- Paths into RTE blocks go through `/value/blocks/contentData/...` (not `/value/contentData/...`)
-- The `markup` contains `<umb-rte-block data-content-key="guid">` tags that reference blocks
-- When adding an RTE block, you must also update `markup` to include the new `<umb-rte-block>` tag
+
+- The block data lives under `blocks`, not directly in the value.
+- Paths into RTE blocks go through `/value/blocks/contentData/...` (not `/value/contentData/...`).
+- The `markup` contains `<umb-rte-block data-content-key="guid">` tags that reference blocks.
+- When adding an RTE block, you must also update `markup` to include the new `<umb-rte-block>` tag.
 
 ---
 
@@ -521,6 +527,6 @@ Adding a block to a Rich Text Editor requires **4 operations** — the markup mu
 
 8. **First match wins** — if a filter matches multiple array elements, the first one is used. Use `key=guid` for unique matching.
 
-9. **Block Grid contentData is flat** — don't look for blocks nested inside areas in contentData. All blocks are at the top level of contentData regardless of their visual area placement.
+9. **Block Grid `contentData` is flat** — don't look for blocks nested inside areas in `contentData`. All blocks are at the top level of `contentData` regardless of their visual area placement.
 
 10. **GET response as reference** — use the GET response from `/umbraco/management/api/v1/document/{id}` to understand the current structure and find the keys/aliases you need for your PATCH paths. The JSON structure the PATCH operates on closely mirrors the block value structures in the GET response.
