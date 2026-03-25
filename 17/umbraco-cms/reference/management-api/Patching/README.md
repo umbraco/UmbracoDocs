@@ -1,8 +1,8 @@
 # What is Patching
 
-The Management API includes a PATCH endpoint for making partial updates to content. Rather than sending the entire content payload back to the server (as you would with a PUT request), you describe only the changes you want to make. The server applies those changes to existing content and saves it.
+The Management API includes a PATCH endpoint for making partial updates to content. Instead of sending the entire payload back to the server like a PUT request, you describe only the specific changes you want to make. The server applies those changes to existing content and saves it.
 
-This is particularly valuable when working with complex content structures — such as deeply nested block editors — where a full PUT requires you to reconstruct the entire document just to change a single value.
+This is particularly valuable when working with complex content structures — such as deeply nested block editors — where a full PUT requires you to reconstruct the entire document only to change a single value.
 
 Patching is currently only supported for documents.
 
@@ -16,7 +16,7 @@ Umbraco supports three operations: **replace**, **add**, and **remove**. The `mo
 
 ### Array filters instead of index-only addressing
 
-Standard JSON Patch addresses array elements by index only (e.g., `/values/0`). This is fragile — if the array order changes between your GET and PATCH calls, you may update the wrong element.
+Standard JSON Patch addresses array elements by index only (such as `/values/0`). This is fragile — if the array order changes between your GET and PATCH calls, you may update the wrong element.
 
 Umbraco extends the path syntax with **array filters** that let you match elements by their properties:
 
@@ -24,7 +24,7 @@ Umbraco extends the path syntax with **array filters** that let you match elemen
 /values[alias=title,culture=en-US,segment=null]/value
 ```
 
-This targets the value entry where `alias` is `title`, `culture` is `en-US`, and `segment` is null — regardless of its position in the array. Filters use AND logic (all conditions must match), and the first matching element is used.
+This targets the value entry where `alias` is `title`, `culture` is `en-US`, and `segment` is null — regardless of its position in the array. Filters use `AND` logic (all conditions must match), and the first matching element is used.
 
 ## What Happens Behind the Scenes
 
@@ -42,9 +42,9 @@ Here is what happens step by step:
    - The operation (replace, add, or remove) is applied as a mutation to the JSON.
    - Each subsequent operation sees the result of all previous ones, so operations can build on each other.
 
-4. **Deserialize** — The modified JSON is deserialized back into an update model. If the JSON is structurally invalid at this point (e.g., a malformed block editor value), a `400 Bad Request` is returned.
+4. **Deserialize** — The modified JSON is deserialized back into an update model. If the JSON is structurally invalid at this point (such as a malformed block editor value), a `400 Bad Request` is returned.
 
-5. **Validate and save** — The update model is passed through the standard document update flow. This includes limited validation for allowed cultures and allowed propperty updates If validation fails, the appropriate error response is returned. Any configured notification handlers on save will also trigger.
+5. **Validate and save** — The update model is passed through the standard document update flow. This includes limited validation for allowed cultures and allowed property updates. If validation fails, the appropriate error response is returned. Any configured notification handlers on save will also trigger.
 
 Because the patch layer is thin and delegates to the standard save pipeline, you get the same guarantees as a PUT: property editor rules are enforced, notifications fire, and the document is saved transactionally.
 
