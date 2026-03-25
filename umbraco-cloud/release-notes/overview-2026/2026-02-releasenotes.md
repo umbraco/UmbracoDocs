@@ -13,22 +13,21 @@ This release resolved an issue where Cloud sites end up using `localhost` or `*.
 
 We fixed this by using early middleware and forwarded headers to ensure the [`umbracoApplicationUrl`](../../../17/umbraco-cms/reference/configuration/webroutingsettings.md) overrides Azure hostnames before they are persisted.
 
-
 ## Configure automatic patch upgrades
 
-It is now possible to [disable automatic patch upgrades](../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md#automatic-upgrades) from the Project Settings page. New projects default to having automatic upgrades enabled. 
+It is now possible to [disable automatic patch upgrades](../../build-and-customize-your-solution/set-up-your-project/project-settings/#automatic-upgrades) from the Project Settings page. New projects default to having automatic upgrades enabled.
 
-{% hint style="warning" %} 
+{% hint style="warning" %}
 If you have previously disabled automatic upgrades through Umbraco Support this will still be in effect. You can enable upgrades again using the toggles.
 {% endhint %}
 
 ![UI for selecting which upgrades you want to automatically apply](../../.gitbook/assets/automatic-upgrades.png)
 
-For more on configuring automatic upgrades refer to the [Projects Settings documentation](../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md#automatic-upgrades).
+For more on configuring automatic upgrades refer to the [Projects Settings documentation](../../build-and-customize-your-solution/set-up-your-project/project-settings/#automatic-upgrades).
 
 ## Disable parallel builds
 
-{% hint style="info" %} 
+{% hint style="info" %}
 The following applies to sites using Umbraco 9 and newer.
 {% endhint %}
 
@@ -44,4 +43,4 @@ A notification badge is now displayed in the UI, incrementing based on the numbe
 
 This makes project onboarding more visible and ensures that invitations are not missed, especially for users who are invited to multiple projects.
 
-<figure><img src="../images/pending-invite-notification.png" alt="Pending Invite Notification"><figcaption><p>Pending Invite Notification</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pending-invite-notification.png" alt="Pending Invite Notification"><figcaption><p>Pending Invite Notification</p></figcaption></figure>

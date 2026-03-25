@@ -1,6 +1,7 @@
 # March 2026
 
 ## Key Takeaways
+
 * **Show Windows event logs on the log page** - On the environments log page we already showed the Umbraco logs, Deployment logs, Site extension logs and IIS logs. Now this page has been expanded with a new log type - Event logs.
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
@@ -8,19 +9,19 @@
 
 ## Show Windows event logs on the log page
 
-The Windows Event logs have previously been findable through Kudu, where it is presented in its base XML format that can be hard to read. 
-Event log messages are now visible on the environment log page and can be downloaded without going through Kudu. Learn more about the improvement from reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833).
+The Windows Event logs have previously been findable through Kudu, where it is presented in its base XML format that can be hard to read. Event log messages are now visible on the environment log page and can be downloaded without going through Kudu. Learn more about the improvement from reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/833).
 
 It also allows you to filter on the log level, and the machine name.
 
 The logs page now persists the selected tab in the URL, preserving it across refreshes and shared links. Learn more about this decision by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/909).
 
-![New view of the event logs](../images/EventLogs.png)
+![New view of the event logs](../../.gitbook/assets/EventLogs.png)
 
 ## Umbraco Cloud branded error pages for platform errors
 
 When doing a deployment or a restart of an environment on Umbraco Cloud, it often results in the website being restarted. This causes the platform (Azure) to serve a default `503 - Service Unavailable` error page, indicating that something is wrong. We have replaced this page with a notice that the site is undergoing maintenance and will be back shortly. The page will automatically refresh once the environment is fully back online.
-<figure><img src="../images/umbraco-cloud-branded-503-custom-error-page.png" alt="Umbraco Cloud, Custom error page for 503"><figcaption><p>Custom error page for 503 errors</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/umbraco-cloud-branded-503-custom-error-page.png" alt="Umbraco Cloud, Custom error page for 503"><figcaption><p>Custom error page for 503 errors</p></figcaption></figure>
 
 ## CI/CD Deploy to any target
 
@@ -30,8 +31,8 @@ By default, CI/CD Flow only allows deployments to the left-most or the flexible 
 
 When enabled, deploying between environments through the Cloud Portal is disabled. All deployments must be handled through CI/CD Flow. As a result, the environments overview will no longer show:
 
-- **Pending changes indicator** — the Portal will not track how far ahead environments are relative to each other.
-- **Deploy button** — you can no longer push changes forward using the Cloud Portal UI.
+* **Pending changes indicator** — the Portal will not track how far ahead environments are relative to each other.
+* **Deploy button** — you can no longer push changes forward using the Cloud Portal UI.
 
 <figure><img src="../../.gitbook/assets/cicd-changed-environment-overview.png" alt="Updated environment overview without Deploy button and pending changes"><figcaption><p>Example of the updated environment overview when "Deploy to any target" is enabled.</p></figcaption></figure>
 
@@ -48,6 +49,3 @@ For more information on setting up pipelines that deploy to multiple environment
 If a user’s email matches an existing account during external login, their user groups are now preserved instead of being overwritten. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993).
 
 Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990).
-
-
-

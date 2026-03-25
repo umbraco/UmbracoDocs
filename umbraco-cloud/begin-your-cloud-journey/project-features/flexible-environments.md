@@ -44,7 +44,7 @@ Before you can add a Flexible environment to your project, the following prerequ
 ### Limitations
 
 * Only one flexible environment is available.
-* Flexible environments are available only for projects paid by credit cards, invoices, or credits.
+* Flexible environments are available only for projects paid by credit cards or credits.
 * Flexible Environments are not available for Heartcore projects.
 * Learn more about pricing for Flexible Environments on the [Umbraco Pricing](https://umbraco.com/pricing/) page.
 

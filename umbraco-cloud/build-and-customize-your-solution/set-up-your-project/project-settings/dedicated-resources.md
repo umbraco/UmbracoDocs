@@ -22,7 +22,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 * There are currently three dedicated options to choose from for the Professional plan and two dedicated options for the Standard plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
-<figure><img src="images/Dedicated_Options_Standard.png" alt="Dedicated plan options for Standard plan"><figcaption><p>Dedicated plan options (Standard plan)</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Dedicated_Options_Standard.png" alt="Dedicated plan options for Standard plan"><figcaption><p>Dedicated plan options (Standard plan)</p></figcaption></figure>
 
 * By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
 
