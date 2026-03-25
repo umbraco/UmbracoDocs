@@ -246,7 +246,7 @@ This is *italic*
 </details>
 ```
 
-![Makrdown description example](<../../../.gitbook/assets/md-description-17.gif>)
+![Markdown description example](<../../../.gitbook/assets/md-description-v17.gif>)
 
 ## 5. Defining child nodes
 
