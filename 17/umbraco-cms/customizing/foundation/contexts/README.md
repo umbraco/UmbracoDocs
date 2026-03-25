@@ -34,6 +34,10 @@ Represents a single property on a content item. Provides access to the property'
 
 Manages modal dialog lifecycle and data flow. Used to read input data, set return values, and control how the modal closes (via submit or cancel).
 
+### Notification Context
+
+Provides the ability to display backoffice notifications to the user. Use this to show success, warning, info, or error messages in response to user actions or background operations. As a global context, it can be consumed from anywhere in the backoffice, including workspaces, dashboards, modals, or any other UI element.
+
 ### Entity Context
 
 Identifies the entity currently in scope by providing the entity type and unique ID. Use this to target entity actions, enable conditional UI, or identify the current entity.
