@@ -70,6 +70,5 @@ All environments that have been selected to be moved, will be moved simultaneous
 
 There will always be an active live environment that continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
 
-Once 
 
 If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
