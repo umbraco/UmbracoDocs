@@ -85,6 +85,7 @@ exceptions:
   - ONLY     # 
   - ORM      # Object-Relational Mapping
   - PaaS     # Platform as a Service
+  - PATCH    # HTTP PATCH method
   - PATH     # file system path
   - PDF      # Portable Document Format
   - PNG      # Portable Network Graphics
