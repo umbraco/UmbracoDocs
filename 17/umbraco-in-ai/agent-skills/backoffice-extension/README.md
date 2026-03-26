@@ -1,3 +1,0 @@
-# Backoffice Extension Documentation
-
-...

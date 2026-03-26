@@ -1,3 +1,0 @@
-# Content Modelling Documentation
-
-...
