@@ -166,7 +166,7 @@ public class CustomSearcher : Searcher
 
 ## Create a custom `IContentIndexer`
 
-Implement an `IContentIndexer` to hook into the content indexing pipeline and add custom fields whenever content is indexed:
+Implement an [`IContentIndexer`](gathering-data-with-content-indexers.md) to hook into the content indexing pipeline and add custom fields whenever content is indexed:
 
 {% code title="MyDataContentIndexer.cs" %}
 ```csharp

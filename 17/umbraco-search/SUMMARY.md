@@ -20,3 +20,5 @@
 * [Reindexing content programmatically](extending/reindexing-content-programmatically.md)
 * [Indexing and searching data from other sources](extending/data-from-other-sources.md)
 * [Extending the search backoffice](extending/backoffice-extensions.md)
+* [Index values for property editors](extending/index-values-for-property-editors.md)
+* [Gathering data with content indexers](extending/gathering-data-with-content-indexers.md)
