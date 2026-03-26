@@ -312,7 +312,7 @@
   * [Available Tools](ai/developer-mcp/available-tools.md)
   * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
   * [Configuration](ai/developer-mcp/configuration.md)
-  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)    
+  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
 
 ## Reference
 
