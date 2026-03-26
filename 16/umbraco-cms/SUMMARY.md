@@ -52,6 +52,7 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Checkbox List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
+      * [Code Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/code-editor.md)
       * [Collection](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md)
       * [Color Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/color-picker.md)
       * [Content Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md)
