@@ -311,12 +311,6 @@
   * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
   * [Configuration](ai/developer-mcp/configuration.md)
   * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)    
-* [Backoffice Skills](ai/backoffice-skills/README.md)
-  * [Quickstart](ai/backoffice-skills/quickstart.md)
-  * [Backoffice Skills](ai/backoffice-skills/backoffice-skills.md)
-  * [Testing Skills](ai/backoffice-skills/testing-skills.md)
-  * [Tips for Best Results](ai/backoffice-skills/tips.md)
-  * [How It Works](ai/backoffice-skills/how-it-works.md)
 
 ## Reference
 
