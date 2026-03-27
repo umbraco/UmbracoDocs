@@ -6,7 +6,7 @@ description: >-
 
 # Proactive Auto-Heal
 
-Proactive Auto-Heal is an Azure App Service feature that automatically monitors the health of your Umbraco Cloud environments. When the platform detects that an environment is in an unhealthy state — based on memory consumption or slow request processing — it performs an overlapping restart to recover the environment. This means a new instance is started before the old one is stopped, minimizing downtime.
+Proactive Auto-Heal is an Azure App Service feature that automatically monitors the health of your Umbraco Cloud environments. When the platform detects that an environment is in an unhealthy state. The health of your environment is based on memory consumption or slow request processing. In such cases, it performs an overlapping restart to recover the environment. This means a new instance is started before the old one is stopped, minimizing downtime.
 
 Proactive Auto-Heal is **enabled by default** on all Umbraco Cloud projects and helps ensure your site remains available without manual intervention.
 
@@ -19,7 +19,7 @@ In most cases, Proactive Auto-Heal should remain enabled. However, there are sce
 * **Large content imports** — Bulk importing content can temporarily increase memory usage and request processing times.
 * **Examine index rebuilds** — Rebuilding search indexes is resource-intensive and can trigger the monitoring thresholds.
 * **Schema migrations** — Running database schema migrations may cause slow request processing during the migration.
-* **Large content caches** — Projects with very large content caches may consistently use higher memory, which could be misidentified as an unhealthy state.
+* **Large content caches** — Projects with large content caches may consistently use higher memory, which could be misidentified as an unhealthy state.
 
 {% hint style="warning" %}
 Disabling Proactive Auto-Heal means your environment will no longer be automatically restarted when it enters an unhealthy state. If your site experiences genuine resource exhaustion, you will need to manually restart the environment or wait for the issue to resolve itself. Only disable this feature if you understand the trade-offs.
@@ -40,10 +40,10 @@ To manage the Proactive Auto-Heal setting for your project:
 3. Locate the **Proactive Auto-Heal** toggle.
 4. Toggle the setting to **enable** or **disable** Proactive Auto-Heal.
 
-The change takes effect immediately. No restart is required.
+The change triggers a restart.
 
 ## Automatic Re-enablement on Plan Downgrade
 
 If you downgrade your project from a **Dedicated** plan to a **Shared** plan, Proactive Auto-Heal is automatically re-enabled. This ensures that projects on shared infrastructure benefit from the automatic recovery behavior.
 
-You do not need to take any action — the setting is applied automatically as part of the downgrade process.
+You do not need to take any action, the setting is applied automatically as part of the downgrade process.
