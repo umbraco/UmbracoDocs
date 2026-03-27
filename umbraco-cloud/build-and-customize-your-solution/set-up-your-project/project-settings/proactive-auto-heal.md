@@ -12,7 +12,7 @@ Proactive Auto-Heal is **enabled by default** on all Umbraco Cloud projects and 
 
 ## When is Auto-Heal triggered?
 
-Auto-Heal monitors two aspects of your environment and triggers a restart when either threshold is exceeded:
+Auto-Heal monitors your environment and triggers a restart depending on the following factors:
 
 * **Memory usage** — If the environment's memory consumption exceeds 90% of the available limit for more than 30 seconds, an overlapping restart is triggered. The exact memory limit depends on the worker size and process architecture.
 
