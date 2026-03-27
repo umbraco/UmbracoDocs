@@ -306,21 +306,12 @@
 ## AI
 
 * [Developer MCP](ai/developer-mcp/README.md)
-  * [Key Concepts](ai/developer-mcp/concepts/README.md)
-    * [Model Context Protocol](ai/developer-mcp/concepts/model-context-protocol.md)
-    * [Context Engineering](ai/developer-mcp/concepts/context-enginerring.md)
-  * [Host Setup](ai/developer-mcp/host-setup/README.md)
-    * [Claude Desktop](ai/developer-mcp/host-setup/claude-desktop.md)
-    * [Claude Code](ai/developer-mcp/host-setup/claude-code.md)
-    * [Cursor](ai/developer-mcp/host-setup/cursor.md)
-    * [GitHub Copilot](ai/developer-mcp/host-setup/github-copilot.md)
-    * [OpenAI Codex](ai/developer-mcp/host-setup/openai-codex.md)
   * [Best Practice](ai/developer-mcp/best-practice/README.md)
     * [Example Instruction File](ai/developer-mcp/best-practice/example-instructions.md)
     * [Creating Media](ai/developer-mcp/best-practice/creating-media.md)
-  * [Configuration](ai/developer-mcp/configuration.md)
   * [Available Tools](ai/developer-mcp/available-tools.md)
   * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
+  * [Configuration](ai/developer-mcp/configuration.md)
   * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
 
 ## Reference
@@ -476,6 +467,7 @@
 * [API Documentation](reference/api-documentation.md)
 * [Debugging with SourceLink](reference/debugging.md)
 * [Language Variation](reference/language-variation.md)
+* [Adding Additional Languages](reference/adding-additional-languages.md)
 * [UmbracoMapper](reference/mapping.md)
 * [Distributed Locks](reference/distributed-locks.md)
 * [Management API](reference/management-api/README.md)

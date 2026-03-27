@@ -159,3 +159,4 @@ redirects:
     customizing/extending-overview/extension-types/stores-and-repositories/tree-store: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/foundation/repositories/repository-types/tree-repository.md: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/extension-types/collections/collection-view.md: customizing/extending-overview/extension-types/collections/collection-view/README.md
+    ai/developer-mcp/host-setup: ai/local-mcp-setup/README.md

@@ -1,3 +1,0 @@
-# Developer MCP Documentation
-
-...

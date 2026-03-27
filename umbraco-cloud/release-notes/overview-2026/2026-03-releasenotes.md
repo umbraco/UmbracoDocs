@@ -7,6 +7,7 @@
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
 * **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
+* **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
 
 ## Show Windows event logs on the log page
 
@@ -58,3 +59,9 @@ Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Conf
 With this release, Dedicated plan customers have full control over whether Proactive Auto-Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto-Heal is automatically re-enabled.
 
 For more details, see the [Proactive Auto-Heal](../../build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal.md) documentation.
+
+## Start and stop environments
+
+You can now start and stop your Cloud environments directly from the project overview. The **Stop** option is available in the environment context menu alongside the existing **Restart** option. This lets you shut down environments not actively in use and start them when needed. The feature was requested in the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002).
+
+<figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
