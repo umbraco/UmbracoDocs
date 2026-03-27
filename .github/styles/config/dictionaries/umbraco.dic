@@ -10,6 +10,7 @@ actioning
 Adblocker
 Addon
 addon
+agentic
 ajax
 allowlist
 altTemplate
@@ -19,6 +20,7 @@ amongst
 amountAuthorized
 analyticsService
 Anaximapper
+Anthropic's
 anonymization
 Anonymization
 anonymize
@@ -41,8 +43,10 @@ articlesTitle
 articleTitle
 assignDomain
 async
+Auditability
 authorizer
 authProvider
+Axios
 autocomplete
 autocompletion
 autogenerate
@@ -68,6 +72,7 @@ Bottom_button
 bottom_button
 breakpoint
 browsable
+buildable
 bundleId
 bundler
 cacheable
@@ -108,6 +113,7 @@ colours
 Commerce
 compareTo
 comparisonOperator
+composable
 Config
 config
 configs
@@ -130,6 +136,7 @@ crontab
 cshtml
 csproj
 css
+csv
 Ctrl
 ctrl
 currencyId
@@ -165,6 +172,7 @@ deregistration
 deserialize
 deserialized
 deserializing
+dev
 devDependencies
 dialogs
 Diplo
@@ -204,10 +212,13 @@ entryPoint
 enum
 enumerables
 enums
+env
 environmentVariables
 EPPlus
 erroring
 ESModules
+eval
+evals
 existingAmount
 existingPrice
 extensionless
@@ -234,6 +245,7 @@ foreach
 formId
 Forms
 frontend
+frontmatter
 frontpage
 fullName
 geolocation
@@ -261,6 +273,7 @@ Heartcore
 Heatmap
 heatmap
 HMACs
+Homebrew
 hostname
 hostnames
 Hotfix
@@ -344,7 +357,9 @@ KPIs
 Kubernetes
 labelled
 lifecycle
+lifecycles
 liveness
+LLMs
 Loadbalancing
 loadbalancing
 localhost
@@ -372,6 +387,7 @@ middleware
 migrators
 minification
 Minimap
+mitigations
 misconfiguration
 misconfigurations
 misconfigured
@@ -450,6 +466,7 @@ paramName
 params
 parentId
 partialKey
+passthrough
 paymentMethod
 paymentService
 paymentStatus
@@ -602,6 +619,7 @@ statusbar
 Storages
 storeId
 storeService
+Streamable
 strType
 struct
 stylesheet
@@ -616,6 +634,7 @@ subtrees
 Subtrees
 svg
 SVGs
+symlinked
 swappable
 Swashbuckle
 Swibble
@@ -625,6 +644,7 @@ sysuser
 Tada
 tagGroup
 tagService
+targetable
 Tasklist
 taxClass
 taxRate
@@ -664,6 +684,7 @@ transactionId
 translationService
 treeItem
 Treepicker
+truthy
 tryExecute
 TSConfig
 TSource
@@ -700,6 +721,7 @@ uncheck
 Uncomment
 underperforming
 unfinalized
+Unintuitive
 unioned
 unpackaging
 Unprocessable
@@ -722,6 +744,7 @@ Unversion
 uowProvider
 upgrader
 uptime
+URIs
 Usercontrol
 USync
 uSync
@@ -730,6 +753,7 @@ validator
 validators
 Vendr
 Vendr's
+Vercel
 viewData
 viewmodel
 viewport
@@ -757,6 +781,8 @@ whereafter
 wideThumbnail
 widget's
 wikipedia
+wireframe
+wireframes
 Word
 Workflow
 workspaceAction
@@ -766,3 +792,4 @@ writability
 XPath
 Youtube
 Zapier
+Zod

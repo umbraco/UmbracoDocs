@@ -445,6 +445,7 @@
 * [API Documentation](reference/api-documentation.md)
 * [Debugging with SourceLink](reference/debugging.md)
 * [Language Variation](reference/language-variation.md)
+* [Adding Additional Languages](reference/adding-additional-languages.md)
 * [UmbracoMapper](reference/mapping.md)
 * [Distributed Locks](reference/distributed-locks.md)
 * [Management API](reference/management-api/README.md)

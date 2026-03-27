@@ -1,13 +1,14 @@
 ---
-description: This article explains how Minor upgrades work in Umbraco Cloud.
+description: This article explains how Minor and Patch upgrades work in Umbraco Cloud.
 ---
 
-# Minor Upgrades
+# Minor and Patch Upgrades
 
-When a new minor version is released, there are two ways to upgrade your project:
+Both minor and patch upgrades can be managed from the **Configuration** -> **Automatic Upgrades** page in the Cloud Portal.
 
 * [Automatic Minor Upgrades](minor-upgrades.md#automatic-minor-upgrades)
-* [Manual Minor Upgrades](minor-upgrades.md#manual-minor-upgrades)
+* [Automatic Patch Upgrades](minor-upgrades.md#automatic-patch-upgrades)
+* [Manual Upgrades](minor-upgrades.md#manual-upgrades)
 
 ## Automatic Minor Upgrades
 
@@ -31,7 +32,21 @@ For projects where automatic minor upgrades are enabled, having a secondary main
 
 A secondary mainline environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
 
-## Manual Minor Upgrades
+## Automatic Patch Upgrades
+
+By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released. This includes security patches and ensures all sites run the most stable and secure versions.
+
+You can toggle **Automatic Patch Upgrades** on or off from the same **Configuration** -> **Automatic Upgrades** page.
+
+{% hint style="danger" %}
+When you disable automated patch upgrades, you are responsible for keeping your project up to date. Falling behind on patches may affect your eligibility for support. It can also expose your project to known security vulnerabilities.
+{% endhint %}
+
+{% hint style="warning" %}
+Umbraco reserves the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
+{% endhint %}
+
+## Manual Upgrades
 
 A manual upgrade involves a more hands-on approach, where the upgrade process is initiated and controlled by the user or development team. This allows for greater flexibility and oversight, enabling teams to test and adapt the upgrade to their specific needs and configurations. A manual upgrade provides an opportunity to thoroughly test the new version in a controlled environment before applying it to live production environments. This ensures compatibility and minimizes disruptions.
 

@@ -1,3 +1,0 @@
-# Hosted MCP Documentation
-
-...

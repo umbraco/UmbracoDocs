@@ -9,7 +9,7 @@ In this article, you can read about how to move your Umbraco Cloud project to de
 Before you decide to move your Umbraco Cloud project, you need to consider a few things:
 
 * Umbraco Cloud offers dedicated resources for Standard and Professional plans. You can choose between two dedicated options for a Standard plan project and three dedicated options for a Professional plan project.
-* Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease visit the documentation for [external services](../../../expand-your-projects-capabilities/external-services/).
+* Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease, visit the documentation for [external services](../../../expand-your-projects-capabilities/external-services/).
 
 ## How to move from shared to dedicated
 
@@ -24,11 +24,18 @@ The first step in moving to a dedicated resource is to access your project in th
 
 <figure><img src="../../../.gitbook/assets/Dedicated_Options_Standard.png" alt="Dedicated plan options for Standard plan"><figcaption><p>Dedicated plan options (Standard plan)</p></figcaption></figure>
 
-* By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page where you will be notified when the move to a dedicated resource has been completed.
+* By hitting the "Upgrade" button on your dedicated option of choice and confirming this, you will be redirected to the project page, where you will be notified when the move to a dedicated resource has been completed.
 
 {% hint style="info" %}
 Are you moving your Cloud project to a dedicated resource in the middle of the month? Dedicated resources are reserved on a per-month basis. The price of the dedicated resource will take effect from the next period of your subscription. The time from that date until the start of the next subscription period will be added to the next invoice.
 {% endhint %}
+
+## Moving to a higher or lower dedicated server
+When on a Dedicated plan, you can scale the dedicated server up to a higher tier or scale down to a lower tier. On a Standard plan, you can scale up from Standard Dedicated 1 to Standard Dedicated 2, and scale down back to Standard Dedicated 1 again.
+
+On a Professional plan with Pro dedicated 1, you can scale it up to Pro dedicated 2 or 3. Similarly, you can scale down from higher to lower tiers.
+
+Once it has been scaled, the environment will do a [Cold Boot](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts?q=cold+boot#cold-start), which will restart the environment.
 
 ## How to move from dedicated to shared
 
@@ -36,12 +43,12 @@ Moving away from dedicated resources and back to a shared plan can be done from 
 
 ![Downgrade](../../../.gitbook/assets/DowngradeA.png)
 
-* By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page where you will be notified when the move back to a shared resource has been completed.
+* By hitting "Downgrade to shared" and confirming your choice, you will be redirected to the project page, where you will be notified when the move back to a shared resource has been completed.
 * Your Cloud project is now back on a shared resource.
 
 ## Frequently asked questions
 
-Wondering what happens when you move your environment to a dedicated server? Below you can find a list of the most frequently asked questions including answers.
+Wondering what happens when you move your environment to a dedicated server? Below you can find a list of the most frequently asked questions, including answers.
 
 ### Will it move all the environments to the dedicated server?
 
@@ -62,5 +69,6 @@ All environments that have been selected to be moved, will be moved simultaneous
 ### Will the live environment be unavailable while the Project is moved?
 
 There will always be an active live environment that continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
+
 
 If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).
