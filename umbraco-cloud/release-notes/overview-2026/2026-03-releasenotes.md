@@ -53,7 +53,7 @@ Added functionality that allows you to map a single role in your External Login 
 
 ## Proactive Auto-Heal toggle for Dedicated plans
 
-Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Configuration** > **Advanced** section in the Umbraco Cloud Portal. Proactive Auto-Heal is an Azure App Service feature that automatically restarts your environment when it detects unhealthy resource usage. While this is beneficial for most projects, it can cause unnecessary restarts during legitimate high-resource operations such as large content imports, Examine index rebuilds, or schema migrations. Learn more about this feature by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1007).
+Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Configuration** > **Advanced** section in the Umbraco Cloud Portal. Proactive Auto-Heal is an Azure App Service feature that automatically restarts your environment when it detects unhealthy resource usage. While this is beneficial for most projects, it can cause unnecessary restarts during legitimate high-resource operations. Some of these operations can be large content imports, Examine index rebuilds, or schema migrations. Learn more about this feature by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1007).
 
 With this release, Dedicated plan customers have full control over whether Proactive Auto-Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto-Heal is automatically re-enabled.
 
