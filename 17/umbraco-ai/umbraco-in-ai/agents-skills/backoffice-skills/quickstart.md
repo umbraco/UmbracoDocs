@@ -1,6 +1,7 @@
 ---
 description: >-
-  Get from zero to a working Umbraco backoffice extension using the quickstart skill.
+  Get from zero to a working Umbraco backoffice extension using the quickstart
+  skill.
 ---
 
 # Quickstart
@@ -34,11 +35,11 @@ All extension development follows this workflow.
 
 Before writing any code:
 
-1. **Describe what you want to build** — "A dashboard that shows recent content changes", "A tree in Settings for managing custom data"
-2. **Draw a wireframe** — The AI creates ASCII wireframes showing where UI elements appear in the backoffice
-3. **Identify extension types** — Label each part of the wireframe: section, dashboard, workspace, tree
-4. **Identify Umbraco UI Library (UUI) components** — Map out which `uui-*` components you need (buttons, inputs, boxes, tables)
-5. **Map data flow** — How does data move? Which contexts, repositories, and APIs are involved?
+1. **Describe what you want to build:** "A dashboard that shows recent content changes", "A tree in Settings for managing custom data."
+2. **Draw a wireframe:** The AI creates ASCII wireframes showing where UI elements appear in the backoffice
+3. **Identify extension types:** Label each part of the wireframe: section, dashboard, workspace, tree
+4. **Identify Umbraco UI Library (UUI) components:** Map out which `uui-*` components you need (buttons, inputs, boxes, tables)
+5. **Map data flow:** How does data move? Which contexts, repositories, and APIs are involved?
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -60,19 +61,19 @@ Planning prevents building the wrong extension type. You approve the plan before
 With the plan approved:
 
 1. **Load the `umbraco-backoffice` skill** for best practices and example blueprints
-2. **Invoke the identified sub-skills** — each extension type has its own skill with correct patterns
-3. **Follow the examples** — Copy from the closest blueprint and adapt
+2. **Invoke the identified sub-skills:** each extension type has its own skill with correct patterns
+3. **Follow the examples:** Copy from the closest blueprint and adapt
 
 ### **Validate**
 
 After building, validation is mandatory:
 
-1. **Build** — Run `npm run build` in the extension directory. Must compile without errors.
-2. **Code review** — The `umbraco-extension-reviewer` agent checks for correct extension type usage, proper imports, context patterns, and manifest registration.
-3. **Fix issues** — High and medium severity issues are auto-fixed.
+1. **Build:** Run `npm run build` in the extension directory. Must compile without errors.
+2. **Code review:** The `umbraco-extension-reviewer` agent checks for correct extension type usage, proper imports, context patterns, and manifest registration.
+3. **Fix issues:** High and medium-severity issues are auto-fixed.
 4. **Rebuild** if fixes were made.
-5. **Restart Umbraco** — Stop and restart `dotnet run`.
-6. **Browser test** — The coding assistant drives the browser to navigate to your extension in the backoffice. It checks for console errors, verifies the UI renders, and validates that interactions work as expected.
+5. **Restart Umbraco:** Stop and restart `dotnet run`.
+6. **Browser test:** The coding assistant drives the browser to navigate to your extension in the backoffice. It checks for console errors, verifies the UI renders, and validates that interactions work as expected.
 
 ## Optional: Add Source Code References
 
@@ -86,10 +87,10 @@ git clone https://github.com/umbraco/Umbraco.UI.git
 /add-dir /path/to/Umbraco.UI/packages/uui
 ```
 
-See [Tips for Best Results](tips.md) for more on this.
+For more information, see [Tips for Best Results](tips.md).&#x20;
 
 ## Next Steps
 
-- **[Backoffice Skills](backoffice-skills.md)** — Explore the 65 extension skills
-- **[Testing Skills](testing-skills.md)** — Add tests to your extension
-- **[Tips for Best Results](tips.md)** — Get better results from your AI assistant
+* [**Backoffice Skills**](backoffice-skills.md)**:** Explore the different extension skills.
+* [**Testing Skills**](testing-skills.md)**:** Add tests to your extension.
+* [**Tips for Best Results**](tips.md)**:** Get better results from your AI assistant.

@@ -26,15 +26,15 @@ Start at the bottom. Most of your tests should be unit tests. Move up the pyrami
 
 ## All Testing Skills
 
-| Skill | Description |
-|-------|-------------|
-| `umbraco-testing` | **Router skill** — Choose the right testing approach |
-| `umbraco-unit-testing` | Unit tests with @open-wc/testing |
-| `umbraco-msw-testing` | MSW handlers for API mocking |
-| `umbraco-e2e-testing` | E2E tests against real Umbraco |
-| `umbraco-playwright-testhelpers` | Full `testhelpers` API reference |
-| `umbraco-test-builders` | JsonModels.Builders for test data |
-| `umbraco-example-generator` | Generate testable extensions |
+| Skill                            | Description                                          |
+| -------------------------------- | ---------------------------------------------------- |
+| `umbraco-testing`                | **Router skill** — Choose the right testing approach |
+| `umbraco-unit-testing`           | Unit tests with @open-wc/testing                     |
+| `umbraco-msw-testing`            | MSW handlers for API mocking                         |
+| `umbraco-e2e-testing`            | E2E tests against real Umbraco                       |
+| `umbraco-playwright-testhelpers` | Full `testhelpers` API reference                     |
+| `umbraco-test-builders`          | JsonModels.Builders for test data                    |
+| `umbraco-example-generator`      | Generate testable extensions                         |
 
 ## The Router: `umbraco-testing`
 
@@ -52,9 +52,9 @@ The router skill asks what you want to test and routes you to the right specific
 
 Fast, isolated testing of Lit elements, contexts, and controllers. Uses `@open-wc/testing` with Web Test Runner.
 
-- No Umbraco instance required
-- Tests run in milliseconds
-- Great for: component rendering, state changes, event handling, utility functions
+* No Umbraco instance required
+* Tests run in milliseconds
+* Great for: component rendering, state changes, event handling, utility functions
 
 ## Level 2: Integration Tests (MSW)
 
@@ -62,9 +62,9 @@ Fast, isolated testing of Lit elements, contexts, and controllers. Uses `@open-w
 
 Test with mocked backend APIs using MSW (Mock Service Worker). Simulate errors, delays, and edge cases without a real server.
 
-- No Umbraco instance required
-- Can test API interaction patterns
-- Great for: API error handling, loading states, data transformation
+* No Umbraco instance required
+* Can test API interaction patterns
+* Great for: API error handling, loading states, data transformation
 
 ## Level 3: Real Backend E2E Tests
 
@@ -72,9 +72,9 @@ Test with mocked backend APIs using MSW (Mock Service Worker). Simulate errors, 
 
 Full acceptance tests against a running Umbraco instance using Playwright.
 
-- Requires running Umbraco instance
-- Tests real API calls and UI interaction
-- Great for: complete workflows, regression testing, acceptance criteria
+* Requires running an Umbraco instance
+* Tests real API calls and UI interaction
+* Great for: complete workflows, regression testing, acceptance criteria
 
 ### The "Never Raw Playwright" Rule
 
@@ -82,8 +82,8 @@ E2E tests **must** use `@umbraco/playwright-testhelpers` and `@umbraco/json-mode
 
 These packages provide:
 
-- **`@umbraco/playwright-testhelpers`** — Fixtures, API helpers, and UI helpers purpose-built for the Umbraco backoffice. Handles login, navigation, waiting for elements, and common assertion patterns.
-- **`@umbraco/json-models-builders`** (`umbraco-test-builders` skill) — Builder pattern for creating test data (document types, content, media, and so on) through the Umbraco API.
+* **`@umbraco/playwright-testhelpers`** — Fixtures, API helpers, and UI helpers purpose-built for the Umbraco backoffice. Handles login, navigation, waiting for elements, and common assertion patterns.
+* **`@umbraco/json-models-builders`** (`umbraco-test-builders` skill) — Builder pattern for creating test data (document types, content, media, and so on) through the Umbraco API.
 
 Using raw Playwright selectors against the Umbraco backoffice is fragile and misses the abstractions that make tests maintainable.
 
@@ -95,6 +95,6 @@ Using raw Playwright selectors against the Umbraco backoffice is fragile and mis
 
 ## Next Steps
 
-- **[Backoffice Skills](backoffice-skills.md)** — The extension skills your tests will exercise
-- **[Quickstart](quickstart.md)** — Set up a project to start testing
-- **[Tips for Best Results](tips.md)** — Get better results from your AI assistant
+* [**Backoffice Skills**](backoffice-skills.md)**:** The extension skills your tests will exercise.
+* [**Quickstart**](quickstart.md)**:** Set up a project to start testing.
+* [**Tips for Best Results**](tips.md)**:** Get better results from your AI assistant.

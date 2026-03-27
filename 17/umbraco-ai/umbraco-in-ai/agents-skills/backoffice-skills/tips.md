@@ -11,9 +11,11 @@ Get the most out of AI-assisted Umbraco backoffice development.
 ## Be Specific in Prompts
 
 Instead of:
+
 > "Create a dashboard"
 
 Try:
+
 > "Create a dashboard in the Content section that shows the 10 most recently published pages with their publish date and author"
 
 Specificity helps the AI pick the right skills and generate code that matches your actual requirements.
@@ -23,9 +25,11 @@ Specificity helps the AI pick the right skills and generate code that matches yo
 When the generated code needs adjustment, be specific about what needs changing:
 
 Instead of:
+
 > "That's not right, fix it"
 
 Try:
+
 > "The tree items need to use entityType 'my-entity' not 'my-tree-entity', and the workspace should have two views: Details and Settings"
 
 ## Add Source Code References
@@ -47,8 +51,9 @@ Add them as working directories in your editor. In Claude Code:
 ```
 
 This gives the AI direct access to:
-- **Umbraco.Web.UI.Client** — Backoffice TypeScript source code, showing production implementations of all extension types
-- **Umbraco UI Library (UUI)** — Component library with all `uui-*` components
+
+* **Umbraco.Web.UI.Client:** Backoffice TypeScript source code, showing production implementations of all extension types
+* **Umbraco UI Library (UUI):** Component library with all `uui-*` components
 
 ## Explore the Backoffice First
 
@@ -66,14 +71,14 @@ Describe your existing customization to the AI and ask it to recreate it using c
 
 If you are not sure which skill to use:
 
-- **`umbraco-backoffice`** — Routes you to the right extension skill based on what you want to build
-- **`umbraco-testing`** — Routes you to the right testing approach based on what you want to test
+* **`umbraco-backoffice`** : Routes you to the right extension skill based on what you want to build
+* **`umbraco-testing`** : Routes you to the right testing approach based on what you want to test
 
 These router skills understand the full landscape and guide you to the right place.
 
 ## Build Component by Component
 
-You do not need to generate an entire extension in one go. Use skills as a building assistant — ask for one component at a time and verify each piece before moving on.
+You do not need to generate an entire extension in one go. Use skills as a building assistant, ask for one component at a time, and verify each piece before moving on.
 
 For example, when building a custom section with a tree and workspace:
 
@@ -94,19 +99,19 @@ You can also explore different architectural approaches. Compare a tree-based na
 
 ## Review Generated Code
 
-Skills reduce hallucination but cannot eliminate it entirely. Always:
+Skills reduce hallucination but cannot eliminate it. Always:
 
-1. **Read the generated code** — Understand what it does before running it
-2. **Check imports** — Verify packages and paths exist
-3. **Run the build** — `npm run build` catches most issues
-4. **Use the reviewer** — The `umbraco-extension-reviewer` agent catches Umbraco-specific issues
+1. **Read the generated code:** Understand what it does before running it
+2. **Check imports:** Verify packages and paths exist
+3. **Run the build:** `npm run build` catches most issues
+4. **Use the reviewer:** The `umbraco-extension-reviewer` agent catches Umbraco-specific issues
 
 ## Manual Validation Testing
 
 After building, verify your extension in the browser. You can do this manually, or use tools that let your AI assistant see the backoffice directly:
 
-- **Playwright** — Write E2E tests that interact with the backoffice. See [Testing Skills](testing-skills.md) for the full testing pyramid.
-- **Browser automation** — Tools like Claude for Chrome let the AI see and interact with your running backoffice, catching visual issues that a build step cannot.
+* **Playwright:** Write E2E tests that interact with the backoffice. See [Testing Skills](testing-skills.md) for the full testing pyramid.
+* **Browser automation:** Tools like Claude for Chrome let the AI see and interact with your running backoffice, catching visual issues that a build step cannot.
 
 A passing build does not mean the extension works. Visual verification catches layout issues, missing UI elements, and interaction bugs.
 

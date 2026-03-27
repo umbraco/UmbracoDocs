@@ -1,7 +1,7 @@
 ---
 description: >-
-  How backoffice skills route agents to best practices, documentation, and working examples
-  through progressive discovery.
+  How backoffice skills route agents to best practices, documentation, and
+  working examples through progressive discovery.
 ---
 
 # How It Works
@@ -14,9 +14,9 @@ This page explains how the Umbraco backoffice skills use that format to guide AI
 
 Each skill acts as a routing layer between the agent and three sources of knowledge:
 
-- **Best practices** — Validated code patterns for each extension type.
-- **Live documentation** — Current pages from the Umbraco documentation, fetched at runtime.
-- **Working examples** — Complete, buildable extensions that demonstrate real combinations.
+* **Best practices:**  Validated code patterns for each extension type.
+* **Live documentation:** Current pages from the Umbraco documentation, fetched at runtime.
+* **Working examples:** Complete, buildable extensions that demonstrate real combinations.
 
 When you describe a task, the agent loads only the relevant skill. The skill guides the agent through a workflow, pointing it to the right documentation and patterns. The agent decides how much context it needs based on task complexity.
 
