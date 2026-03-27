@@ -6,8 +6,8 @@
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
-* **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
 * **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
+* **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
 
 ## Show Windows event logs on the log page
 
@@ -52,6 +52,12 @@ If a user’s email matches an existing account during external login, their use
 
 Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990).
 
+## Start and stop environments
+
+You can now start and stop your Cloud environments directly from the project overview. The **Stop** option is available in the environment context menu alongside the existing **Restart** option. This lets you shut down environments not actively in use and start them when needed. The feature was requested in the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002).
+
+<figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
+
 ## Proactive Auto-Heal toggle for Dedicated plans
 
 Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Configuration** > **Advanced** section in the Umbraco Cloud Portal. Proactive Auto-Heal is an Azure App Service feature that automatically restarts your environment when it detects unhealthy resource usage. While this is beneficial for most projects, it can cause unnecessary restarts during legitimate high-resource operations. Some of these operations can be large content imports, Examine index rebuilds, or schema migrations. Learn more about this feature by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1007).
@@ -59,9 +65,3 @@ Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Conf
 With this release, Dedicated plan customers have full control over whether Proactive Auto-Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto-Heal is automatically re-enabled.
 
 For more details, see the [Proactive Auto-Heal](../../build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal.md) documentation.
-
-## Start and stop environments
-
-You can now start and stop your Cloud environments directly from the project overview. The **Stop** option is available in the environment context menu alongside the existing **Restart** option. This lets you shut down environments not actively in use and start them when needed. The feature was requested in the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002).
-
-<figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
