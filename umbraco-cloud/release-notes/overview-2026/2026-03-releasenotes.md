@@ -6,7 +6,7 @@
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
-* **Proactive Auto Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
+* **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
 
 ## Show Windows event logs on the log page
 
@@ -51,10 +51,10 @@ If a user’s email matches an existing account during external login, their use
 
 Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990).
 
-## Proactive Auto Heal toggle for Dedicated plans
+## Proactive Auto-Heal toggle for Dedicated plans
 
-Projects on a Dedicated plan can now disable Proactive Auto Heal from the **Configuration** > **Advanced** section in the Umbraco Cloud Portal. Proactive Auto Heal is an Azure App Service feature that automatically restarts your environment when it detects unhealthy resource usage. While this is beneficial for most projects, it can cause unnecessary restarts during legitimate high-resource operations such as large content imports, Examine index rebuilds, or schema migrations. Learn more about this feature by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1007).
+Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Configuration** > **Advanced** section in the Umbraco Cloud Portal. Proactive Auto-Heal is an Azure App Service feature that automatically restarts your environment when it detects unhealthy resource usage. While this is beneficial for most projects, it can cause unnecessary restarts during legitimate high-resource operations such as large content imports, Examine index rebuilds, or schema migrations. Learn more about this feature by reading the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1007).
 
-With this release, Dedicated plan customers have full control over whether Proactive Auto Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto Heal is automatically re-enabled.
+With this release, Dedicated plan customers have full control over whether Proactive Auto-Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto-Heal is automatically re-enabled.
 
-For more details, see the [Proactive Auto Heal](../../build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal.md) documentation.
+For more details, see the [Proactive Auto-Heal](../../build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal.md) documentation.
