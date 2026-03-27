@@ -10,11 +10,11 @@ When adding a new language in the Umbraco backoffice, you may find that a langua
 
 ## Why some languages are missing
 
-From version 9 onward, Umbraco runs on .NET (Core) and uses [app-local ICU](https://learn.microsoft.com/en-us/dotnet/core/extensions/globalization-icu#app-local-icu) for globalization data. This is a deliberate choice to ensure consistent behavior across platforms (Windows, Linux, and macOS).
+From version 9 onward, Umbraco runs on .NET (Core) and uses [app-local ICU (International Components for Unicode)](https://learn.microsoft.com/en-us/dotnet/core/extensions/globalization-icu#app-local-icu) for globalization data. This is a deliberate choice to ensure consistent behavior across platforms (Windows, Linux, and macOS).
 
 The app-local ICU data contains fewer culture codes than the Windows NLS (National Language Support) data that .NET Framework used. If you are migrating from Umbraco 8 or earlier, you may notice that some cultures you previously used are no longer listed.
 
-In addition, Umbraco's default `IIsoCodeValidator` filters out cultures flagged as `UserCustomCulture`. This ensures the available languages are consistent across all platforms and hosting environments. Under app-local ICU, some valid BCP 47 locale codes (such as `zh-HK`) are classified as custom cultures even though they are standard cultures.
+In addition, Umbraco's default `IIsoCodeValidator` filters out cultures flagged as `UserCustomCulture`. This ensures the available languages are consistent across all platforms and hosting environments. Under app-local ICU, some valid BCP (Best Current Practice) 47 locale codes (such as `zh-HK`) are classified as custom cultures even though they are standard cultures.
 
 These two factors combined mean certain languages will not appear in the backoffice language dropdown by default.
 
