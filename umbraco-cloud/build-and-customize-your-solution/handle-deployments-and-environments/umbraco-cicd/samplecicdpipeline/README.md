@@ -142,6 +142,13 @@ The more you use "Deploy to any target", the more each environment's git reposit
 
 {% endhint %}
 
+### Regenerate API Keys
+
+The refresh button next to each API Key allows you to regenerate the key.
+If you regenerate a key that is currently used in your pipeline, you will need to update the value there. If the used API Key is invalid, the API will respond with 401 Unauthorized errors.
+
+<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-regenerate-highlight.png" alt=""><figcaption><p>Buttons for regenerating the API Keys needed for CI/CD flow.</p></figcaption></figure>
+
 ## Sample pipelines
 
 Below are a couple of examples on how to set up a CI/CD Pipeline using either Azure DevOps or GitHub Actions.
