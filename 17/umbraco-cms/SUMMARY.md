@@ -303,17 +303,6 @@
   * [Example Package Repository](extending/packages/example-package-repository.md)
 * [Single Block Migration](extending/single-block-migration.md)
 
-## AI
-
-* [Developer MCP](ai/developer-mcp/README.md)
-  * [Best Practice](ai/developer-mcp/best-practice/README.md)
-    * [Example Instruction File](ai/developer-mcp/best-practice/example-instructions.md)
-    * [Creating Media](ai/developer-mcp/best-practice/creating-media.md)
-  * [Available Tools](ai/developer-mcp/available-tools.md)
-  * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
-  * [Configuration](ai/developer-mcp/configuration.md)
-  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
-
 ## Reference
 
 * [Dive into the code](reference/dive-into-the-code.md)

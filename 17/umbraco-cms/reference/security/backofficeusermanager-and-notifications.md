@@ -2,7 +2,7 @@
 description: >-
   The BackOfficeUserManager is the ASP.NET Core Identity UserManager
   implementation in Umbraco. It exposes APIs for working with Umbraco User's via
-  the ASP.NET Core Identity, including password handling.
+  the ASP.NET Core Identity, including password handling
 ---
 
 # BackOfficeUserManager and Events
@@ -90,8 +90,8 @@ Internally these are mainly used for auditing but there are some that allow you 
 
 ### Example: Signing out of Auth0 after backoffice logout
 
-The following handler demonstrates how to assign `SignOutRedirectUrl` when using Auth0. 
-  
+The following handler demonstrates how to assign `SignOutRedirectUrl` when using Auth0.
+
 ```csharp
 public class UserLogoutSuccessNotificationHandler
     : INotificationAsyncHandler<UserLogoutSuccessNotification>
@@ -179,4 +179,3 @@ public class UserLogoutSuccessNotificationHandler
 {% hint style="info" %}
 Replace `{your-tenant-id}` with your external login provider tenant ID, and adjust `Auth0ProviderOptions.SchemeName` to match your provider's scheme name.
 {% endhint %}
-
