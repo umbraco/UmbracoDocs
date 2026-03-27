@@ -87,10 +87,10 @@ git clone https://github.com/umbraco/Umbraco.UI.git
 /add-dir /path/to/Umbraco.UI/packages/uui
 ```
 
-For more information, see [Tips for Best Results](tips.md).&#x20;
+For more information, see [Tips for Best Results](tips.md) article. &#x20;
 
 ## Next Steps
 
-* [**Backoffice Skills**](backoffice-skills.md)**:** Explore the different extension skills.
+* [**Backoffice Skills Overview**](backoffice-skills.md)**:** Explore the different extension skills.
 * [**Testing Skills**](testing-skills.md)**:** Add tests to your extension.
 * [**Tips for Best Results**](tips.md)**:** Get better results from your AI assistant.

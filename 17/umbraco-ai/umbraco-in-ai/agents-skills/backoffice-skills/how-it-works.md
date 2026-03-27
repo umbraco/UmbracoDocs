@@ -6,7 +6,7 @@ description: >-
 
 # How It Works
 
-For a general introduction to agent skills and the `SKILL.md` format, see [What Are Skills?](../concepts/agent-skills.md).
+For a general introduction to agent skills and the `SKILL.md` format, see [What Are Skills?](https://app.gitbook.com/s/NnUDSAShVcdETvjguL9v/agent-skills) article.
 
 This page explains how the Umbraco backoffice skills use that format to guide AI agents through extension development.
 

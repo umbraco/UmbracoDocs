@@ -95,6 +95,6 @@ Using raw Playwright selectors against the Umbraco backoffice is fragile and mis
 
 ## Next Steps
 
-* [**Backoffice Skills**](backoffice-skills.md)**:** The extension skills your tests will exercise.
+* [**Backoffice Skills Overview**](backoffice-skills.md)**:** The extension skills your tests will exercise.
 * [**Quickstart**](quickstart.md)**:** Set up a project to start testing.
 * [**Tips for Best Results**](tips.md)**:** Get better results from your AI assistant.

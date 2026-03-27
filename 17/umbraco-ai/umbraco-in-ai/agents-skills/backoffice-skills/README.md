@@ -55,10 +55,10 @@ Always use the `-a` flag to target your editor. Without it, skills are symlinked
 
 ## Documentation
 
-| Guide                                     | Description                                                                                   |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [Quickstart](quickstart.md)               | Set up Umbraco and an extension project, learn the **Plan**, **Build**, **Validate** workflow |
-| [Backoffice Skills](backoffice-skills.md) | All 65 extension skills, the extension map, and working examples                              |
-| [Testing Skills](testing-skills.md)       | The 4-level testing pyramid and 8 testing skills                                              |
-| [Tips for Best Results](tips.md)          | Source code references, prompting advice, and editor requirements                             |
-| [How It Works](how-it-works.md)           | How skills route agents to best practices through progressive discovery                       |
+| Guide                                              | Description                                                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [Quickstart](quickstart.md)                        | Set up Umbraco and an extension project, learn the **Plan**, **Build**, **Validate** workflow |
+| [Backoffice Skills Overview](backoffice-skills.md) | All 65 extension skills, the extension map, and working examples                              |
+| [Testing Skills](testing-skills.md)                | The 4-level testing pyramid and 8 testing skills                                              |
+| [Tips for Best Results](tips.md)                   | Source code references, prompting advice, and editor requirements                             |
+| [How It Works](how-it-works.md)                    | How skills route agents to best practices through progressive discovery                       |
