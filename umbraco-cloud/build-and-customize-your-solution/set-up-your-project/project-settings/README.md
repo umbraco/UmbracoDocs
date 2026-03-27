@@ -134,6 +134,7 @@ The Advanced section provides options for managing advanced settings for your pr
 * [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
 * Change the .NET framework runtime for each environment of your Umbraco Cloud project.
 * Change the value of the `DOTNET_ENVIRONMENT` environment variable for each environment of your Umbraco Cloud project. To learn more about working with multiple environments in ASP.NET Core, refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-9.0).
+* [Manage Proactive Auto Heal](proactive-auto-heal.md) to disable automatic restarts during high-resource workloads. This option is available only for projects on a **Dedicated** plan.
 
 {% hint style="info" %}
 Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
