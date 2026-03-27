@@ -51,7 +51,7 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 2. Go to `Configuration` -> `CI/CD Flow`. 
 3. Toggle "Activate CI/CD Flow" to enable the feature.
 
-<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys.png" alt=""><figcaption><p>Enabling Umbraco CI/CD Flow.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-activate-highlight.png" alt=""><figcaption><p>Enabling Umbraco CI/CD Flow.</p></figcaption></figure>
 
 The box will expand to show your Project Id and two API keys. You can use either key to interact with the APIs.
 
