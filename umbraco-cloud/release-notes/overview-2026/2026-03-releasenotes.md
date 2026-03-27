@@ -53,6 +53,6 @@ Added functionality that allows you to map a single role in your External Login 
 
 ## Start and stop environments
 
-You can now start and stop your Cloud environments directly from the project overview. The new **Stop** option is available in the environment context menu alongside the existing **Restart** option. This gives you more control over your hosting resources, allowing you to shut down environments that are not actively in use and start them back up when needed. Feature was requested in the [related disussions](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002)
+You can now start and stop your Cloud environments directly from the project overview. The new **Stop** option is available in the environment context menu alongside the existing **Restart** option. This lets you shut down environments not actively in use and start them when needed. The feature was requested in the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002).
 
 <figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
