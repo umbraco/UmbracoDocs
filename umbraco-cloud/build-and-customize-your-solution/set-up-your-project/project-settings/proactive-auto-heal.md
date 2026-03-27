@@ -38,9 +38,13 @@ To manage the Proactive Auto-Heal setting for your project:
 1. Go to your project in the [Umbraco Cloud Portal](https://www.s1.umbraco.io).
 2. Navigate to **Configuration** > **Advanced** in the left-side menu.
 3. Locate the **Proactive Auto-Heal** toggle.
+
+<figure><img src="../../../.gitbook/assets/proactive-auto-heal-toggle.png" alt="Proactive Auto-Heal toggle in Advanced Configuration"><figcaption><p>Proactive Auto-Heal toggle</p></figcaption></figure>
+
 4. Toggle the setting to **enable** or **disable** Proactive Auto-Heal.
 
-The change triggers a restart.
+5. Confirm the dialog that has a warning about the change causing a restart.
+<figure><img src="../../../.gitbook/assets/proactive-auto-heal-dialog.png" alt="Proactive Auto-Heal confirmation dialog in Advanced Configuration"><figcaption><p>Proactive Auto-Heal confirmation dialog</p></figcaption></figure>
 
 ## Automatic Re-enablement on Plan Downgrade
 
