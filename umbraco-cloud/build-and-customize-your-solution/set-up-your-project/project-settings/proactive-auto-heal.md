@@ -10,7 +10,7 @@ Proactive Auto-Heal is an Azure App Service feature that automatically monitors 
 
 Proactive Auto-Heal is **enabled by default** on all Umbraco Cloud projects and helps ensure your site remains available without manual intervention.
 
-For more technical details on how Proactive Auto-Heal works, see the Azure blog post [Introducing Proactive Auto-Heal](https://azure.github.io/AppService/2017/08/17/Introducing-Proactive-Auto-Heal.html) and the [Azure App Service environment variables reference](https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings#app-environment).
+For more details on how Proactive Auto-Heal works, see the Azure blog post [Introducing Proactive Auto-Heal](https://azure.github.io/AppService/2017/08/17/Introducing-Proactive-Auto-Heal.html).
 
 ## When to Disable Proactive Auto-Heal
 
