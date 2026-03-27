@@ -59,7 +59,17 @@ The box will expand to show your Project Id and two API keys. You can use either
 The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub. It will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
-### Getting environment aliases to target
+### Regenerate API Keys
+
+The refresh button next to each API Key allows you to regenerate one or both of the keys.
+
+If you regenerate a key that is currently used in your pipeline, you will need to update the value there.
+It is not possible to restore an API Key to its previous value.
+If the used API Key is invalid, the API will respond with 401 Unauthorized errors.
+
+<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-regenerate-highlight.png" alt=""><figcaption><p>Buttons for regenerating the API Keys needed for CI/CD flow.</p></figcaption></figure>
+
+## Getting environment aliases to target
 
 When the CI/CD flow feature is enabled, navigate down to the section called "Environment targets". This section expands to show a table with all your environments. 
 
@@ -141,13 +151,6 @@ When "Deploy to any target" is enabled, commits are no longer pushed between env
 The more you use "Deploy to any target", the more each environment's git repository will diverge. Disabling the feature later is problematic, as realigning the environments is a time-consuming task.
 
 {% endhint %}
-
-### Regenerate API Keys
-
-The refresh button next to each API Key allows you to regenerate the key.
-If you regenerate a key that is currently used in your pipeline, you will need to update the value there. If the used API Key is invalid, the API will respond with 401 Unauthorized errors.
-
-<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-regenerate-highlight.png" alt=""><figcaption><p>Buttons for regenerating the API Keys needed for CI/CD flow.</p></figcaption></figure>
 
 ## Sample pipelines
 
