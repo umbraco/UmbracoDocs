@@ -10,7 +10,13 @@ Proactive Auto-Heal is an Azure App Service feature that automatically monitors 
 
 Proactive Auto-Heal is **enabled by default** on all Umbraco Cloud projects and helps ensure your site remains available without manual intervention.
 
-For more details on how Proactive Auto-Heal works, see the Azure blog post [Introducing Proactive Auto-Heal](https://azure.github.io/AppService/2017/08/17/Introducing-Proactive-Auto-Heal.html).
+## When is Auto-Heal triggered?
+
+Auto-Heal monitors two aspects of your environment and triggers a restart when either threshold is exceeded:
+
+* **Memory usage** — If the environment's memory consumption exceeds 90% of the available limit for more than 30 seconds, an overlapping restart is triggered. The exact memory limit depends on the worker size and process architecture.
+
+* **Slow requests** — If 80% or more of all requests take longer than 200 seconds within a 2-minute rolling window, a restart is triggered. This rule requires a minimum of 5 requests in the window before it activates, and it is not applied during the initial warm-up period after a process start.
 
 ## When to Disable Proactive Auto-Heal
 
