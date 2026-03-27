@@ -13,8 +13,6 @@ At its most basic level, context is the conversation between you and a tool like
 * The entire message history (your inputs and the model’s outputs).
 * The most recent system and user instructions that define the current topic or task.
 
-![Conversation window in ChatGPT](../../../.gitbook/assets/chat-gpt-conversation.png)
-
 LLMs are stateless, they do not retain information between individual requests. Each time you send a message, the entire context is sent to the model. This includes conversation history and any injected system data.
 
 You can never fully control what an LLM with return. You can influence the outcome, and context is the only way that you do that.
@@ -45,8 +43,6 @@ Modern AI systems rely on increasingly complex and layered context, which includ
 * **MCP definitions**, describing how external tools and data sources are used during a conversation.
 
 All elements must fit inside the model’s context window, the limited amount of information the model can “see” at once. The most advanced models today have larger but still finite context windows, so how you fill that space still matters.
-
-![Claude Code Context Window](../../../.gitbook/assets/claude-code-context-window.png)
 
 If too much irrelevant, poorly structured, or contradictory information is included, useful parts of the context may get pushed out or forgotten. This leads to confusion, incomplete answers, or hallucinations. That’s why context engineering is more important now than ever. It’s about managing this limited space carefully and intentionally.
 
