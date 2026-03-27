@@ -26,6 +26,10 @@ To add a new language, follow these steps:
     ![Adding a Fallback language](../.gitbook/assets/fallback-language-v14.png)
 7. Click **Save**.
 
+{% hint style="info" %}
+If the language you need does not appear in the dropdown, see the [Adding Additional Languages](../reference/adding-additional-languages.md) article.
+{% endhint %}
+
 ### Adding Multiple Languages
 
 We can add multiple languages depending on our website requirements. In the previous step, we have already set Danish as our default language. We will now set-up English and German as our variants for this tutorial.
