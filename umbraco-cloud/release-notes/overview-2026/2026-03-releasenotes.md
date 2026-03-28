@@ -6,6 +6,7 @@
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
+* **Release Umbraco.Cloud.Cms 17.1.0** - Preparation for the upcoming Load Balancing feature
 * **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
 
 ## Show Windows event logs on the log page
@@ -50,6 +51,12 @@ For more information on setting up pipelines that deploy to multiple environment
 If a user’s email matches an existing account during external login, their user groups are now preserved instead of being overwritten. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/993).
 
 Added functionality that allows you to map a single role in your External Login Provider to multiple Umbraco user groups. Learn more about this decision by reading the [related issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/990).
+
+## Release Umbraco.Cloud.Cms 17.1.0
+
+A release of Umbraco.Cloud.Cms has been created. This version does not contain any user-facing changes. It contains code preparing for the upcoming Load Balancing feature.
+
+This version will not be auto-upgraded as it contains no relevant changes.
 
 ## Start and stop environments
 
