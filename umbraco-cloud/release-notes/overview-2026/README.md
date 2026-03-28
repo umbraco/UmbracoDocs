@@ -10,8 +10,8 @@ description: Get an overview of the release notes for each month in 2026.
 * **Umbraco Cloud branded error pages for platform errors** - After deploying or restarting environments, the default IIS 503 message is no longer served. Instead, you'll see an error page that automatically refreshes once the site is back up.
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
-* **Release Umbraco.Cloud.Cms 17.1.0** - Preparation for the upcoming Load Balancing feature
 * **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
+* **Release Umbraco.Cloud.Cms 17.1.0** - Preparation for the upcoming Load Balancing feature
 
 ## [February 2026](2026-02-releasenotes.md)
 
