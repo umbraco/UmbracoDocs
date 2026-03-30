@@ -51,7 +51,7 @@ To get started with API interactions, you'll need to obtain your Project ID and 
 2. Go to `Configuration` -> `CI/CD Flow`. 
 3. Toggle "Activate CI/CD Flow" to enable the feature.
 
-<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys.png" alt=""><figcaption><p>Enabling Umbraco CI/CD Flow.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-activate-highlight.png" alt=""><figcaption><p>Enabling Umbraco CI/CD Flow.</p></figcaption></figure>
 
 The box will expand to show your Project Id and two API keys. You can use either key to interact with the APIs.
 
@@ -59,7 +59,17 @@ The box will expand to show your Project Id and two API keys. You can use either
 The API keys are tied to the specific project for which it is generated. Ensure to keep the one you use secure in Azure or GitHub. It will be used for all subsequent API interactions related to that project.
 {% endhint %}
 
-### Getting environment aliases to target
+### Regenerate API Keys
+
+The regenerate button next to each API key allows you to regenerate the key.
+
+If you regenerate a key that is currently used in your pipeline, you must update the value in your pipeline configuration. 
+It is not possible to restore an API Key to its previous value.
+If an invalid API key is used, the API will respond with 401 Unauthorized errors.
+
+<figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-regenerate-highlight.png" alt=""><figcaption><p>Buttons for regenerating the API Keys needed for CI/CD flow.</p></figcaption></figure>
+
+## Getting environment aliases to target
 
 When the CI/CD flow feature is enabled, navigate down to the section called "Environment targets". This section expands to show a table with all your environments. 
 

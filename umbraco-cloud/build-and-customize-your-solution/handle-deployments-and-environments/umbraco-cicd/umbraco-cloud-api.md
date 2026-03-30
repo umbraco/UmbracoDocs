@@ -46,7 +46,7 @@ You will find relevant examples using `HTTP Request Syntax` in the sections belo
 
 To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > CI/CD Flow** in the Umbraco Cloud portal.
 
-![Umbraco CI/CD Flow](../../../.gitbook/assets/Advanced-Section.png)
+![Umbraco CI/CD Flow](../../../.gitbook/assets/cicd-project-api-keys.png)
 
 The two elements you need for the authentication are:
 
