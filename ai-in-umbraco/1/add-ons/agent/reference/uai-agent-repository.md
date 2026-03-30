@@ -543,7 +543,7 @@ if (result.error) {
 
 ## Related
 
-- [Agent Detail Repository](uai-agent-detail-repository.md) - Full CRUD repository
+- Agent Detail Repository - Full CRUD repository
 - [UaiAgentClient](../frontend-client.md) - Client for running agents
 - [Agent Concepts](../concepts.md) - Understanding agents and scopes
 - [Scopes](../scopes.md) - Agent categorization system

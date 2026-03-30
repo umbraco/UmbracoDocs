@@ -134,7 +134,7 @@ public class AIAuditLog
 
 ---
 
-# AIAuditLogStatus
+## AIAuditLogStatus
 
 {% code title="AIAuditLogStatus" %}
 
@@ -153,7 +153,7 @@ public enum AIAuditLogStatus
 
 ---
 
-# AIAuditLogErrorCategory
+## AIAuditLogErrorCategory
 
 {% code title="AIAuditLogErrorCategory" %}
 
@@ -174,7 +174,7 @@ public enum AIAuditLogErrorCategory
 
 ---
 
-# AIAuditLogFilter
+## AIAuditLogFilter
 
 Used to filter audit log queries.
 

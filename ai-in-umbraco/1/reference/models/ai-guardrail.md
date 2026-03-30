@@ -101,7 +101,7 @@ var guardrail = new AIGuardrail
 
 ---
 
-# AIGuardrailRule
+## AIGuardrailRule
 
 Represents a single evaluation rule within a guardrail.
 

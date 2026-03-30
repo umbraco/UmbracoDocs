@@ -80,7 +80,7 @@ foreach (var version in versions)
 
 ---
 
-# AIVersionComparison
+## AIVersionComparison
 
 Result of comparing two entity versions.
 
@@ -105,7 +105,7 @@ public class AIVersionComparison
 
 ---
 
-# AIVersionChange
+## AIVersionChange
 
 Represents a single change between two versions.
 
@@ -132,7 +132,7 @@ public enum AIVersionChangeType
 
 ---
 
-# AIVersionCleanupResult
+## AIVersionCleanupResult
 
 Result of version cleanup operation.
 
@@ -150,7 +150,7 @@ public class AIVersionCleanupResult
 
 ---
 
-# IAIVersionableEntity
+## IAIVersionableEntity
 
 Interface implemented by entities that support versioning.
 

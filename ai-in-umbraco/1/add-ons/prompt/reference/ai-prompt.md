@@ -102,7 +102,7 @@ var saved = await _promptService.SavePromptAsync(prompt);
 
 ---
 
-# AIPromptScope
+## AIPromptScope
 
 Defines content type scoping rules for a prompt.
 

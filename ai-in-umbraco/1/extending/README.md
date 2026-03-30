@@ -116,8 +116,8 @@ Umbraco.AI is designed to be extensible. You can add support for new AI provider
 [Custom Tools](tools/README.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../add-ons/agent/workflows.md" %}
-[Agent Workflows](../../add-ons/agent/workflows.md)
+{% content-ref url="../add-ons/agent/workflows.md" %}
+[Agent Workflows](../add-ons/agent/workflows.md)
 {% endcontent-ref %}
 
 {% content-ref url="notifications/README.md" %}

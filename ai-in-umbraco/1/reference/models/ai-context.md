@@ -92,7 +92,7 @@ var context = new AIContext
 
 ---
 
-# AIContextResource
+## AIContextResource
 
 Represents a single resource within a context.
 
