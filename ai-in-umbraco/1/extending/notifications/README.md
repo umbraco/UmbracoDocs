@@ -34,6 +34,9 @@ All entity operations publish notifications following Umbraco CMS patterns:
 - **AIProfile** - Save/Delete/Rollback
 - **AIConnection** - Save/Delete/Rollback
 - **AIContext** - Save/Delete/Rollback
+- **AIGuardrail** - Save/Delete
+- **AISettings** - Save
+- **AIChat** (Inline) - Executing/Executed
 
 ### Prompt Add-on (Umbraco.AI.Prompt)
 

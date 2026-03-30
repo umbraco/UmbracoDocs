@@ -106,6 +106,20 @@ The API uses URL-based versioning. The current version is `v1`.
 | GET    | `/analytics/by-profile`  | Breakdown by profile  |
 | GET    | `/analytics/by-user`     | Breakdown by user     |
 
+### Tools
+
+| Method | Endpoint       | Description                                    |
+| ------ | -------------- | ---------------------------------------------- |
+| GET    | `/tools`       | List all user-configurable tools grouped by scope |
+| GET    | `/tool-scopes` | List all tool scopes                           |
+
+### Context Resource Types
+
+| Method | Endpoint                      | Description                                  |
+| ------ | ----------------------------- | -------------------------------------------- |
+| GET    | `/context-resource-types`      | List all resource types                      |
+| GET    | `/context-resource-types/{id}` | Get a resource type with its settings schema |
+
 ### Provider Information
 
 | Method | Endpoint          | Description             |
@@ -205,6 +219,14 @@ Response includes total count:
 
 {% content-ref url="providers/README.md" %}
 [Providers](providers/README.md)
+{% endcontent-ref %}
+
+{% content-ref url="tools/README.md" %}
+[Tools](tools/README.md)
+{% endcontent-ref %}
+
+{% content-ref url="context-resource-types/README.md" %}
+[Context Resource Types](context-resource-types/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="embeddings/README.md" %}

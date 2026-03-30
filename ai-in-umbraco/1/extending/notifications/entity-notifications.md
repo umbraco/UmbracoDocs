@@ -14,8 +14,11 @@ Umbraco.AI publishes notifications for all entity lifecycle operations. Subscrib
 | **AIProfile** | ✅ | ✅ | - |
 | **AIConnection** | ✅ | ✅ | - |
 | **AIContext** | ✅ | ✅ | - |
+| **AIGuardrail** | ✅ | - | - |
+| **AISettings** | ✅ (Save only) | - | - |
 | **AIPrompt** | ✅ | - | ✅ |
 | **AIAgent** | ✅ | - | ✅ |
+| **AIChat** (Inline) | - | - | ✅ |
 
 ## AIProfile Notifications
 
@@ -819,9 +822,178 @@ public class WebhookHandler : INotificationAsyncHandler<AIProfileSavedNotificati
 
 {% endcode %}
 
+## Inline Chat Notifications
+
+Umbraco.AI publishes notifications for inline chat executions. These are separate from agent execution notifications and are published when the inline chat feature is used.
+
+### AIChatExecutingNotification
+
+**Namespace:** `Umbraco.AI.Core.Chat`
+
+Published **before** an inline chat execution starts (cancelable).
+
+**Properties:**
+- `ChatId` (Guid) - The unique identifier for the chat session
+- `Alias` (string) - The alias of the chat configuration
+- `Name` (string) - The display name of the chat configuration
+- `ProfileId` (Guid?) - The profile ID used for the chat, if specified
+- `Messages` (EventMessages) - Add messages for cancellation reasons
+- `Cancel` (bool) - Set to true to prevent execution
+
+**Use Cases:**
+- Rate limiting inline chat usage
+- Custom authorization checks
+- Restricting chat to specific profiles or configurations
+
+**Example:**
+
+{% code title="ChatExecutingHandler.cs" %}
+
+```csharp
+public class ChatExecutingHandler : INotificationAsyncHandler<AIChatExecutingNotification>
+{
+    private readonly IRateLimiter _rateLimiter;
+
+    public async Task HandleAsync(AIChatExecutingNotification notification, CancellationToken ct)
+    {
+        var userId = GetCurrentUserId();
+
+        if (!await _rateLimiter.AllowAsync(userId, "inline-chat"))
+        {
+            notification.Cancel = true;
+            notification.Messages.Add(new EventMessage(
+                "RateLimit",
+                "Chat rate limit exceeded. Please try again later.",
+                EventMessageType.Error));
+        }
+    }
+}
+```
+
+{% endcode %}
+
+### AIChatExecutedNotification
+
+**Namespace:** `Umbraco.AI.Core.Chat`
+
+Published **after** an inline chat execution completes (not cancelable).
+
+**Properties:**
+- `ChatId` (Guid) - The unique identifier for the chat session
+- `Alias` (string) - The alias of the chat configuration
+- `Name` (string) - The display name of the chat configuration
+- `ProfileId` (Guid?) - The profile ID used for the chat, if specified
+- `Duration` (TimeSpan) - The execution duration
+- `IsSuccess` (bool) - Whether the execution completed successfully
+- `Messages` (EventMessages) - Event messages from the operation
+
+**Use Cases:**
+- Telemetry and usage tracking
+- Performance monitoring
+- Logging chat activity for audit purposes
+
+**Example:**
+
+{% code title="ChatExecutedHandler.cs" %}
+
+```csharp
+public class ChatExecutedHandler : INotificationAsyncHandler<AIChatExecutedNotification>
+{
+    private readonly ILogger<ChatExecutedHandler> _logger;
+
+    public Task HandleAsync(AIChatExecutedNotification notification, CancellationToken ct)
+    {
+        _logger.LogInformation(
+            "Inline chat {ChatAlias} (ChatId: {ChatId}) completed in {Duration}ms. Success: {IsSuccess}",
+            notification.Alias,
+            notification.ChatId,
+            notification.Duration.TotalMilliseconds,
+            notification.IsSuccess);
+
+        if (!notification.IsSuccess)
+        {
+            _logger.LogWarning(
+                "Inline chat execution failed: {ChatAlias} (ChatId: {ChatId})",
+                notification.Alias,
+                notification.ChatId);
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
+
+{% endcode %}
+
+### Registering Inline Chat Notification Handlers
+
+{% code title="ChatNotificationComposer.cs" %}
+
+```csharp
+public class ChatNotificationComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder
+            .AddNotificationAsyncHandler<AIChatExecutingNotification, ChatExecutingHandler>()
+            .AddNotificationAsyncHandler<AIChatExecutedNotification, ChatExecutedHandler>();
+    }
+}
+```
+
+{% endcode %}
+
+## Guardrail and Settings Notifications
+
+In addition to the entity lifecycle notifications documented above, Umbraco.AI also publishes notifications for guardrail and settings operations:
+
+### Guardrail Notifications
+
+**Namespace:** `Umbraco.AI.Core.Guardrails`
+
+- `AIGuardrailSavingNotification` - Before a guardrail is saved (cancelable)
+- `AIGuardrailSavedNotification` - After a guardrail is saved
+- `AIGuardrailDeletingNotification` - Before a guardrail is deleted (cancelable)
+- `AIGuardrailDeletedNotification` - After a guardrail is deleted
+
+These follow the same pattern as other entity Save/Delete notifications. Use them to validate guardrail configurations before saving or to trigger automation after changes.
+
+### Settings Notifications
+
+**Namespace:** `Umbraco.AI.Core.Settings`
+
+- `AISettingsSavingNotification` - Before settings are saved (cancelable)
+- `AISettingsSavedNotification` - After settings are saved
+
+Use these to validate or react to changes in the global AI settings. For example, you can enforce required configuration or notify administrators when settings change.
+
+{% code title="SettingsSavingHandler.cs" %}
+
+```csharp
+public class SettingsSavingHandler : INotificationAsyncHandler<AISettingsSavingNotification>
+{
+    public Task HandleAsync(AISettingsSavingNotification notification, CancellationToken ct)
+    {
+        // Enforce that a default profile is always set
+        if (notification.Entity.DefaultProfileId == null)
+        {
+            notification.Cancel = true;
+            notification.Messages.Add(new EventMessage(
+                "Validation",
+                "A default profile must be configured.",
+                EventMessageType.Error));
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
+
+{% endcode %}
+
 ## Summary
 
-- **34 notifications** across 5 entities (Profile, Connection, Context, Prompt, Agent)
+- **40+ notifications** across 7 entities (Profile, Connection, Context, Prompt, Agent, Guardrail, Settings) plus inline chat
 - **Cancelable** (Saving/Deleting/RollingBack/Executing) for validation and prevention
 - **Stateful** (Saved/Deleted/RolledBack/Executed) for audit and automation
 - **Umbraco CMS patterns** - Same familiar API as Content/Media notifications
