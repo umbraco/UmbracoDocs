@@ -52,6 +52,7 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Checkbox List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
+      * [Code Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/code-editor.md)
       * [Collection](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md)
       * [Color Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/color-picker.md)
       * [Content Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md)
@@ -273,26 +274,6 @@
   * [Maintaining packages](extending/packages/maintaining-packages.md)
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
   * [Example Package Repository](extending/packages/example-package-repository.md)
-
-## AI
-
-* [Developer MCP](ai/developer-mcp/README.md)
-  * [Key Concepts](ai/developer-mcp/concepts/README.md)
-    * [Model Context Protocol](ai/developer-mcp/concepts/model-context-protocol.md)
-    * [Context Engineering](ai/developer-mcp/concepts/context-enginerring.md)
-  * [Host Setup](ai/developer-mcp/host-setup/README.md)
-    * [Claude Desktop](ai/developer-mcp/host-setup/claude-desktop.md)
-    * [Claude Code](ai/developer-mcp/host-setup/claude-code.md)
-    * [Cursor](ai/developer-mcp/host-setup/cursor.md)
-    * [GitHub Copilot](ai/developer-mcp/host-setup/github-copilot.md)
-    * [OpenAI Codex](ai/developer-mcp/host-setup/openai-codex.md)
-  * [Best Practice](ai/developer-mcp/best-practice/README.md)
-    * [Example Instruction File](ai/developer-mcp/best-practice/example-instructions.md)
-    * [Creating Media](ai/developer-mcp/best-practice/creating-media.md)
-  * [Configuration](ai/developer-mcp/configuration.md)
-  * [Available Tools](ai/developer-mcp/available-tools.md)
-  * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
-  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
 
 ## Reference
 

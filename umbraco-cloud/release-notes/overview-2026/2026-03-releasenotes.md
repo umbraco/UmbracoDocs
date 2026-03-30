@@ -7,6 +7,7 @@
 * **CI/CD Deploy to any target** - Enables CI/CD Flow deployments to all environments in your project, giving you full control over which environment receives each deployment.
 * **Release Umbraco.Cloud.Identity.Cms 13.2.6, Umbraco.Cloud.Cms 16.0.3 & 17.0.3** - Retains current user group if user already exists, and allows for mapping a single role to multiple Umbraco user groups.
 * **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
+* **Release Umbraco.Cloud.Cms 17.1.0** - Preparation for the upcoming Load Balancing feature.
 * **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal to prevent automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
 
 ## Show Windows event logs on the log page
@@ -57,6 +58,12 @@ Added functionality that allows you to map a single role in your External Login 
 You can now start and stop your Cloud environments directly from the project overview. The **Stop** option is available in the environment context menu alongside the existing **Restart** option. This lets you shut down environments not actively in use and start them when needed. The feature was requested in the [related discussion](https://github.com/umbraco/Umbraco.Cloud.Issues/discussions/1002).
 
 <figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
+
+## Release Umbraco.Cloud.Cms 17.1.0
+
+A release of Umbraco.Cloud.Cms has been created. This version does not contain any user-facing changes. It contains code preparing for the upcoming Load Balancing feature.
+
+This version will not be auto-upgraded as it contains no relevant changes.
 
 ## Proactive Auto-Heal toggle for Dedicated plans
 

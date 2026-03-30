@@ -386,6 +386,7 @@ messageTemplate
 middleware
 migrators
 minification
+Minimap
 mitigations
 misconfiguration
 misconfigurations

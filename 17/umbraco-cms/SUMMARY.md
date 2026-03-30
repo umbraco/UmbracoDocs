@@ -55,6 +55,7 @@
   * [Property Editors](fundamentals/backoffice/property-editors/README.md)
     * [Built-in Property Editors](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/README.md)
       * [Checkbox List](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
+      * [Code Editor](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/code-editor.md)
       * [Collection](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md)
       * [Color Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/color-picker.md)
       * [Content Picker](fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/content-picker.md)
@@ -302,17 +303,6 @@
   * [Create accessible Umbraco packages](extending/packages/accessibility.md)
   * [Example Package Repository](extending/packages/example-package-repository.md)
 * [Single Block Migration](extending/single-block-migration.md)
-
-## AI
-
-* [Developer MCP](ai/developer-mcp/README.md)
-  * [Best Practice](ai/developer-mcp/best-practice/README.md)
-    * [Example Instruction File](ai/developer-mcp/best-practice/example-instructions.md)
-    * [Creating Media](ai/developer-mcp/best-practice/creating-media.md)
-  * [Available Tools](ai/developer-mcp/available-tools.md)
-  * [Excluded Tools](ai/developer-mcp/excluded-tools.md)
-  * [Configuration](ai/developer-mcp/configuration.md)
-  * [Use Cases and Scenarios](ai/developer-mcp/scenarios.md)
 
 ## Reference
 
