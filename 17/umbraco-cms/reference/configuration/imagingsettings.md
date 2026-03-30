@@ -84,23 +84,33 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
 }
 ```
 
-## HMAC secret key
+## Hash-based Message Authentication Code (HMAC) secret key
 
-Specifies the key used to secure image requests by generating a hash-based message authentication code (HMAC). This ensures that only valid requests can access or manipulate images.
+Specifies the key used to secure image requests by generating an HMAC. This ensures that only valid requests can access or manipulate images.
 
 To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the `IOptions` pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
 
 The key must be the same across all environments (development, staging, production) to ensure that image requests work for content published across environments.
 
-### Default Behavior
+### New installs
+
+For new Umbraco installations, a unique key will be automatically created and applied to the configuration.
+
+### Upgraded projects
+
+For projects created on Umbraco 17.2 or earlier, a unique key was not automatically created and applied.
 
 If the `HMACSecretKey` is not set, image requests are not secured, and any person can request images with any parameters. This may expose your server to abuse, such as excessive resizing requests or unauthorized access to images.
 
-### Key Length
+It is recommended to add this key.
+
+A health check is available under _Settings > Health Checks_ that verifies the existence of the configured key and warns if it is absent.
+
+### Key length
 
 The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using `HMACSHA384` or `HMACSHA512`, you may want to use a longer key (for example: 128 bytes).
 
-### Example Configuration
+### Example configuration
 
 **appsettings.json**
 

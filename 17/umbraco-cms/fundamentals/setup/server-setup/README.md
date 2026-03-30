@@ -29,3 +29,7 @@ Best practices for running Umbraco on Azure Web Apps.
 ## [Runtime modes](runtime-modes.md)
 
 The runtime mode setting optimizes Umbraco for the best development experience or optimal production environment.
+
+## [Health Probes](health-probes.md)
+
+Use .NET health check endpoints to monitor whether your Umbraco application is alive and ready to serve requests.

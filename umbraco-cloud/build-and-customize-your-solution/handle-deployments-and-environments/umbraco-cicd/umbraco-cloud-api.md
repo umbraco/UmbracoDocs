@@ -46,7 +46,7 @@ You will find relevant examples using `HTTP Request Syntax` in the sections belo
 
 To authenticate with the Umbraco Cloud API, you'll need your Project ID and API Key. These credentials can be found under **Configuration > CI/CD Flow** in the Umbraco Cloud portal.
 
-![Umbraco CI/CD Flow](../../../.gitbook/assets/Advanced-Section.png)
+![Umbraco CI/CD Flow](../../../.gitbook/assets/cicd-project-api-keys.png)
 
 The two elements you need for the authentication are:
 
@@ -185,13 +185,15 @@ The Create Deployment endpoint starts a new deployment and returns a unique `dep
 
 The following options are available to use in the request payload:
 
-| Parameter | Requirement | Description |
-| :--- | :--- | :--- |
-| `artifactId` | **REQUIRED** | The ID of the artifact you want to deploy. |
-| `targetEnvironmentAlias` | **REQUIRED** | The alias of the environment you want to deploy to. |
-| `commitMessage` | **OPTIONAL** | The commit message you want stamped in the Umbraco Cloud environment repository. |
-| `noBuildAndRestore` | **OPTIONAL** | An option to skip the restore and build in the isolated instance. Default: `false`. |
-| `skipVersionCheck` | **OPTIONAL** | An option to skip the version check in the isolated instance. Default: `false`. |
+| Parameter | Requirement | Description | Default value |
+| :--- | :--- | :--- | :--- |
+| `artifactId` | **REQUIRED** | The ID of the artifact you want to deploy. | - |
+| `targetEnvironmentAlias` | **REQUIRED** | The alias of the environment you want to deploy to. | - |
+| `commitMessage` | **OPTIONAL** | The commit message you want stamped in the Umbraco Cloud environment repository. | - |
+| `skipPreserveUmbracoCloudJson` | **OPTIONAL** | Setting to true will allow you to overwrite the umbraco-cloud.json with your incoming file. | `false` |
+| `noBuildAndRestore` | **OPTIONAL** | An option to skip the restore and build in the isolated instance. | `false` |
+| `skipVersionCheck` | **OPTIONAL** | An option to skip the version check in the isolated instance. | `false` |
+| `runSchemaExtraction` | **OPTIONAL** | An option to control if schema extraction should run after deploying schema files. | `true` |
 
 ```http
 @projectId = Get this value from the portal
@@ -201,6 +203,8 @@ The following options are available to use in the request payload:
 @commitMessage = My awesome commit message for cloud
 @noBuildAndRestore = false
 @skipVersionCheck = false
+@skipPreserveUmbracoCloudJson = false
+@runSchemaExtraction = true
 
 POST https://api.cloud.umbraco.com/v2/projects/{{projectId}}/deployments
 Umbraco-Cloud-Api-Key: {{apiKey}}
@@ -211,7 +215,9 @@ Content-Type: application/json
     "artifactId": {{artifactId}},
     "targetEnvironmentAlias": {{targetEnvironmentAlias}},
     "noBuildAndRestore": {{noBuildAndRestore}},
-    "skipVersionCheck": {{skipVersionCheck}}
+    "skipVersionCheck": {{skipVersionCheck}},
+    "skipPreserveUmbracoCloudJson": {{skipPreserveUmbracoCloudJson}},
+    "runSchemaExtraction": {{runSchemaExtraction}}
 }
 ```
 
@@ -239,11 +245,15 @@ The API response should be an HTTP 201 Created response including a `deploymentI
 You can use the `deploymentId` to query the Get Deployment status endpoint.
 
 {% hint style="info" %}
+ **Use `skipPreserveUmbracoCloudJson` with care.** The Cloud platform uses the file to ensure your environments are correctly configured for content deployments.
+ 
  **Use `skipVersionCheck` with care.** This setting exists to prevent version regression (overwriting newer Umbraco packages with older ones). Only set this to `true` if you intentionally need to deploy an older artifact.
 
 Enabling the `noBuildAndRestore` only disables the restore and build inside the isolated instance. Once the system pushes the source code to the environment, a build and publish operation will run as usual. Enabling this option lets you save one or more minutes during the deployment process.
 
-For more information on using the `skipVersionCheck` and `noBuildAndRestore` settings in the pipeline, see the [Advanced Setup: Deployment options](samplecicdpipeline/advanced-deployment-options.md) article.
+Disabling the `runSchemaExtraction` will prevent the Umbraco installation from automatically having its schema updated after a CI/CD flow deployment. This setting doesn't affect the left-most environment. Schema extraction can still be triggered from the backoffice.
+
+For more information on using the settings in the pipeline, see the [Advanced Setup: Deployment options](samplecicdpipeline/advanced-deployment-options.md) article.
 {% endhint %}
 
 ### Get Deployment status

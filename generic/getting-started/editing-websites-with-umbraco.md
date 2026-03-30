@@ -1,25 +1,23 @@
 ---
 description: >-
-  This section shows you some beginner tools and information to get you started
-  with editor content in Umbraco.
+  This section introduces the tools and information needed to start editing
+  content in Umbraco.
 ---
 
 # Editing websites
 
-Creating, editing, and publishing content onto your website using Umbraco doesn't require any super special skills or prior knowledge - honestly!
+Creating, editing, and publishing content doesn’t require prior technical knowledge; anyone can get started.
 
-This section will help you get started as a content editor in Umbraco, introduce Umbraco-specific terminology, and lead you to find further help.
+This guide will help you navigate the Umbraco backoffice, understand key terminology, and point you to further resources.
 
-There is also information on how to use features such as translations, forms, and other ways to personalize your site.
+You’ll also learn how to use features like translations, forms, and other personalization tools to enhance your website.
 
-[Get to know the Umbraco Backoffice](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/fundamentals/backoffice)
+## Get to Know the Umbraco Backoffice
 
-[The Editors Manual](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/editors-manual)
+The backoffice is where content editors manage websites in Umbraco. Here, you can create pages, add media, manage forms, and configure content settings.
 
-[What are the options for managing content?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/editors-manual#getting-started-with-umbraco)
+* [**Editors Manual**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual)**:** Step-by-step guidance for navigating and using the backoffice.
+* [**Managing Content:**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco) Learn the options for creating, editing, and publishing content.
+* [**Managing Media:**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual/media-management) Discover how to upload, organize, and use images, videos, and documents.
+* [**Managing Forms:**](https://docs.umbraco.com/umbraco-forms/editor/creating-a-form) Explore how to create and manage forms for collecting data from users.
 
-[What are the options for managing media?](https://app.gitbook.com/s/gEH4FChbCn7eDDqREvdE/tutorials/editors-manual#media-management)
-
-[What are the options for managing forms?](https://app.gitbook.com/s/HN4dErU7ghf8hOdcQpSs/editor)
-
-![Editing Umbraco](../.gitbook/assets/umbraco_8_2_A.png)

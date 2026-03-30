@@ -36,13 +36,13 @@ The following code sample demonstrates how to consume the Management API by
 ![The "current user" endpoint in Swagger UI](../../.gitbook/assets/current-user-endpoint.png)
 
 {% hint style="info" %}
-This sample requires the [`IdentityModel`](https://www.nuget.org/packages/IdentityModel) NuGet package to run.
+This sample requires the [`Duende.IdentityModel` NuGet package](https://www.nuget.org/packages/Duende.IdentityModel/) to run.
 {% endhint %}
 
 {% code title="Program.cs" lineNumbers="true" %}
 ```csharp
 using System.Net.Http.Json;
-using IdentityModel.Client;
+using Duende.IdentityModel.Client;
 
 // the base URL of the Umbraco site - change this to fit your setup
 const string host = "https://localhost:44391";

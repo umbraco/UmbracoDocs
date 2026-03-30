@@ -95,5 +95,5 @@ public IActionResult DeleteItem(Guid id)
 
 ## Verifying the changes
 
-Run your application and navigate to the Swagger UI (typically found at /swagger).\
+Run your application and navigate to the Swagger UI (typically found at /umbraco/swagger).
 Verify that your API documentation is correctly displaying the routes, parameters, and response types.

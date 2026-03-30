@@ -46,9 +46,28 @@ If everything went well, you will see the confirmation screen saying that the tr
 
 Media items are transferred the same way as content:
 
-1. In the Media section, Click **...** next to the items you want to transfer and choose **Queue for transfer**.
-   * Or click **...** next to the Media section to transfer all you media at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+1. Click **...** next to an item in the **Media** section.
+2. Choose **Queue for transfer**.
+
+#### Restoring Media Between Environments
+
+To synchronize a lower environment's media library with a higher one (for example, pulling Live media down to Staging), use the **Tree Restore** feature. This ensures that media metadata and the physical files are synchronized.
+
+1. Log into the target environment (for example, _Staging_).
+2. Go to the **Media** section of the Umbraco backoffice.
+3. Click **...** next to the **Media** root node.
+4. Select **Tree restore...**.
+5. Select the source environment (for example, _Live_) from the **Restore this tree from** dropdown.
+6. Click **Restore from Live** and wait for the process to complete.
+7. Reload the Media tree to see the updated library.
+
+{% hint style="info" %}
+A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the Media section and Recycle Bin on the target environment. You could also use the [Import and Export](import-export.md) feature with a full media export from the source environment.
+{% endhint %}
+
+{% hint style="success" %}
+On Umbraco Cloud: Each environment uses a separate Azure Blob Storage container. During a restore, Umbraco Deploy handles the server-side copying of blobs between the unique storage containers of each environment. For more details ,see the [Media on Cloud](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/media) article.
+{% endhint %}
 
 ### Umbraco Forms
 

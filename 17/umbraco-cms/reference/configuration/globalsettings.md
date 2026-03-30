@@ -31,6 +31,7 @@ The following snippet contains all the available options, with default values, a
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
+      "UpgradingViewPath": "~/umbraco/UmbracoWebsite/Upgrading.cshtml",
       "Smtp": {
         "From": "person@umbraco.dk",
         "Host": "localhost",
@@ -55,6 +56,7 @@ The following snippet contains all the available options, with default values, a
       "DistributedLockingMechanism": "",
       "DistributedLockingReadLockDefaultTimeout": "00:01:00",
       "DistributedLockingWriteLockDefaultTimeout": "00:00:05",
+      "MainDomAcquisitionTimeout": "00:00:40"
     }
   }
 }
@@ -242,6 +244,13 @@ Type: `string` (default: `~/umbraco/UmbracoWebsite/NoNodes.cshtml`)
 
 This setting specifies what view to render when there is no content on the site.
 
+### Upgrading view path
+
+Key: `UpgradingViewPath`
+Type: `string` (default: `~/umbraco/UmbracoWebsite/Upgrading.cshtml`)
+
+This setting specifies the view to render when an unattended upgrade is running in the background. Frontend and surface controller requests receive an HTTP 503 response with this view during the upgrade. See [Upgrade Unattended](../../fundamentals/setup/upgrading/upgrade-unattended.md) for details on the upgrade process.
+
 ## SMTP settings
 
 By adding this settings to the appsettings.json you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specify SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
@@ -371,3 +380,12 @@ Type: `string` (default: `00:00:05`)
 Gets or sets a value representing the maximum time to wait whilst attempting to obtain a distributed write lock.
 
 The default value is 5 seconds.
+
+### Main Domain Acquisition Timeout
+
+Key: `MainDomAcquisitionTimeout`
+Type: `string` (default: `00:00:40`)
+
+Gets or sets a value representing the maximum time to wait whilst attempting to acquire MainDom status on startup.
+
+The default value is 40 seconds.

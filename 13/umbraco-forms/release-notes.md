@@ -16,6 +16,17 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### 13.9.5
+* Umbraco Licenses dependency updated to 13.3.4
+
+### 13.9.4
+* Fix: string length validation for file upload fields
+
+### [13.9.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.3) (March 5th 2026)
+* File Upload: Treat JPEG and JPG as equivalent in validation [#1383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1383)
+* Data Consent: Fix field always evaluating as `True` in workflow conditions [#1646](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1646)
+* Settings: Fix default value leak across field type instances [#1656](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1656)
+
 ### 13.9.2 (February 19th 2026)
 * Fix conditions not seeing field values modified by previous workflows [#1464](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1464)
 

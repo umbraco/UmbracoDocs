@@ -108,7 +108,7 @@
   * [Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md)
     * [Product Dependencies](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/product-dependencies.md)
     * [Major Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md)
-    * [Minor Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
+    * [Minor and Patch Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
     * [Version Specific Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/README.md)
       * [Migrate from Umbraco 8 to the latest version](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
       * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
@@ -162,6 +162,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [March 2026](release-notes/overview-2026/2026-03-releasenotes.md)
   * [February 2026](release-notes/overview-2026/2026-02-releasenotes.md)
   * [January 2026](release-notes/overview-2026/2026-01-releasenotes.md)
 * [Archive](release-notes/archive/README.md)

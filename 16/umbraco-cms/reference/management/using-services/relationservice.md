@@ -62,7 +62,7 @@ public class RelationComposer : IComposer
 
 After saving and publishing the `Products` node, the following result is displayed:
 
-![Relations](images/relations.PNG)
+![Relations](../../../.gitbook/assets/relations.PNG)
 
 The next step is to fetch the data from an API.
 
@@ -126,7 +126,7 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` returns the following output:
 
-![Relations](images/relations-api.PNG)
+![Relations](../../../.gitbook/assets/relations-api.PNG)
 
 {% hint style="info" %}
 When implementing similar functionality, consider wrapping a caching layer around it. The `RelationService` queries the database directly.

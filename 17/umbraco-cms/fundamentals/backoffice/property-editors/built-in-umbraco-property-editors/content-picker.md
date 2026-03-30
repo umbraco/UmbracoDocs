@@ -36,20 +36,20 @@ Checking this field allows users to choose nodes they normally cannot access.
 
 This option allows for configuring what type of content is available when using the Data Type. The available types of content are Content, Members, or Media items.
 
-When selecting Content from the dropdown, the option to specify a root node, also called the **origin**, becomes available.&#x20;
+When selecting Content from the dropdown, the option to specify a root node, also called the **origin**, becomes available.
 
 <figure><img src="../../../../.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
 
 When picking the **origin** there are several different options available:
 
-<figure><img src="./images/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pick-origin-root-node (1).png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
 
 The following options are available when picking the origin:
 
 * **Content Root**: The root of the content tree.
 * **Root**: The root is the first level item of the sub-tree of the current node.
 * **Parent**: The parent is the nearest ancestor of the current node.
-* **Current**: The current node.&#x20;
+* **Current**: The current node.
   * A picker that uses the current node, cannot pick anything when the current node is created, as it will not have any children.
 * **Site**: The nearest ancestor of the current node with a domain assigned.
 * **Specific node**: A specific node selected from the existing content.

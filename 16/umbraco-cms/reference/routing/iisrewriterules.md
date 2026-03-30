@@ -191,7 +191,7 @@ If you use **Umbraco Cloud**, check the [Rewrite Rules](https://docs.umbraco.com
 
 Some third-party services such as Apple Pay, Google, or other integrations, require you to host a verification file at a specific URL like:
 
-```text
+```
 https://yourdomain.com/.well-known/apple-developer-merchantid-domain-association
 ```
 
@@ -202,11 +202,10 @@ To work around this, you can serve the required file using Umbraco's **Media** l
 To do so, follow these steps:
 
 1. Go to the **Media** section in the Umbraco backoffice.
-2. Create a folder named `.well-known`.
-   This folder is only for your own organization. It does not affect the public file URL.
-3. Upload the verification file. For example: *test.txt*.
+2. Create a folder named `.well-known`. This folder is only for your own organization. It does not affect the public file URL.
+3. Upload the verification file. For example: _test.txt_.
 
-![Uploading Verification file in the Backoffice](images/upload-verification-file.png)
+![Uploading Verification file in the Backoffice](../../.gitbook/assets/upload-verification-file.png)
 
 4. Copy the Media file URL. For example, `/media/4jhhlmxk/verification.txt`.
 5. Add a rewrite rule in your `web.config` file:

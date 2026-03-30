@@ -4,66 +4,30 @@ description: 'REST ingestion guide for Umbraco Compose: upserts, deletes, and bu
 
 # RESTful Ingestion
 
-## Upserting
+You can integrate Umbraco Compose with applications that control the payload sent to the Ingestion API.
 
-To create or update data in Umbraco Compose, set the `action` parameter on each entry to `upsert`.
+These scenarios are perfect for standard RESTful ingestion.
 
-This action combines `insert` and `update` functionality. If an entry with a matching `id` already exists in the collection, Umbraco Compose will update it with your new data. If no matching entry is found, Umbraco Compose will create a new entry in the collection.
+If you do not have control over the payload sent by your application, then you may wish to consider using an [Ingestion Function](./functions.md) instead.
 
-{% hint style="warning" %}
-While it is possible to ingest any valid JSON data, Umbraco Compose will only expose the fields that correspond to the specified type schema. It is, therefore, best practice to only ingest data that is going to be used.
-{% endhint %}
+## Making an Ingestion Request
 
-```json
-[
-  {
-    "id": "1",
-    "type": "software",
-    "data": {
-      "name": "Umbraco Compose"
-    },
-    "action": "upsert"
-  }
-]
+The RESTful ingestion endpoint expects an HTTP `PUT` request. The body of the request should be `application/json` and should consist an array of [Ingestion objects](./ingestion-structure.md).
 
-```
+An example of ingesting a single content item might look like the following:
 
-## Deleting
+```HTTP
+PUT /{project-alias}/{environment-alias}/{collection-alias}
+Host: ingest.{region}.umbracocompose.com
+Content-Type: application/json
+Authorization: Bearer {access-token}
 
-To delete data from Umbraco Compose, you must specify the `id` of the entry and set the `action` to `"delete"`.
-
-```json
-[
-  {
-    "id": "1",
-    "action": "delete"
-  }
-]
-```
-
-## Bulk ingestion
-
-With Umbraco Compose, it is possible to bulk ingest data, which may include both upserts and deletes. This is controlled by the `action` parameter.
-
-```json
 [
   {
     "id": "1",
     "type": "Software",
     "data": {
       "name": "Umbraco Compose"
-    },
-    "action": "upsert"
-  },
-  {
-    "id": "5",
-    "action": "delete"
-  },
-  {
-    "id": "4",
-    "type": "Software",
-    "data": {
-      "name": "Umbraco Forms"
     },
     "action": "upsert"
   }

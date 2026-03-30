@@ -12,7 +12,7 @@ To create a new master template:
    A template opens up in the content editor.
 4.  Enter a **Name** for the master template. Let's call it _Master_.
 
-    ![Master Template](images/master-template-v14.png)
+    ![Master Template](../../.gitbook/assets/master-template-v14.png)
 5. Click **Save**.
 
 ## Using the Master Template
@@ -28,7 +28,7 @@ To use the master template:
 6.  Click **Choose**.\
     The Razor code section is updated from `Layout = null;` to `Layout = "Master.cshtml";`
 
-    ![Adding Master Template to HomePage](images/homepage-has-master-template.png)
+    ![Adding Master Template to HomePage](../../.gitbook/assets/homepage-has-master-template.png)
 7. Click **Save**.
 
 ## Updating Templates With the New Master Template
@@ -42,20 +42,20 @@ To update templates with the new master template, follow these steps:
 3. Navigate to the **Homepage** template.
 4.  Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
 
-    ![Header and navigation tags selected in the HomePage template](images/homepage-after-cutting-the-header.png)
+    ![Header and navigation tags selected in the HomePage template](../../.gitbook/assets/homepage-after-cutting-the-header.png)
 5. Click **Save**.
 6.  Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
 
-    ![Header and navigation tags added in the Master template](images/master-after-adding-the-header.png)
+    ![Header and navigation tags added in the Master template](../../.gitbook/assets/master-after-adding-the-header.png)
 7.  Add `@RenderBody()` at the end of the markup. This will tell Umbraco to insert the child template's content.
 
-    ![Adding renderbody in the Master template](images/adding-renderbody.png)
+    ![Adding renderbody in the Master template](../../.gitbook/assets/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
    * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
    *   Go to the **Master** template and paste this HTML markup after the `@RenderBody()` field we've added.
 
-       ![End of the Master template](images/master-template-complete.png)
+       ![End of the Master template](../../.gitbook/assets/master-template-complete.png)
 10. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.

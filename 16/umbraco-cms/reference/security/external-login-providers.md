@@ -29,7 +29,7 @@ Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to 
 
 ## Call back requests
 
-External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../../reference/configuration/globalsettings.md#reserved-paths).
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../configuration/globalsettings.md#reserved-paths).
 
 For example, with Open ID Connect, you should configure:
 
@@ -176,28 +176,11 @@ When auto-linking for the backoffice you will want to define what user groups th
 
 Umbraco Cloud uses Umbraco ID for all authentication, including access to the Umbraco Backoffice.
 
-If you are working with External Login Providers on a project hosted on Umbraco Cloud, extra configuration is required.
+Umbraco ID automatically removes the native Umbraco login from the backoffice. When only one login provider is registered, Umbraco redirects to the Umbraco ID login screen.
 
-To disable the automatic redirect to Umbraco ID, follow these steps:
+Adding your own login provider to a Cloud project stops the automatic redirect. Available login providers are shown instead.
 
-1. Open the `umbraco-cloud.json` file in your favorite code editor.
-2. Locate the `Identity` section.
-3. Add a new key: `AutoRedirectLogin`.
-4. Set the value to `false`.
-
-{% code title="umbraco-cloud.json" %}
-
-```json
-"Identity": {
-    "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
-    "ClientSecret": "Q5~T526ixOHlj47lg7Mu7_.zN1fK.7ua.9",
-    "EnvironmentId": "3105e6eb-4a1e-42dd-91e9-ffdbe3dd30a8",
-    "LocalLoginRedirectUri": "https://redirect.identity.umbraco.com",
-    "AutoRedirectLogin": false
-  }
-```
-
-{% endcode %}
+Umbraco Cloud also offers an external login provider feature, where you only have to bring your own configuration. For more information, see [External Login Providers on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers).
 
 ### Auto-linking on Member authentication
 
@@ -421,7 +404,7 @@ You have a few options to configure the button:
 
 The button will now be displayed on the login page in the Umbraco Backoffice.
 
-<figure><img src="images/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
 
 ### Generic backoffice login provider composer
 
@@ -665,7 +648,7 @@ interface IExternalLoginCustomViewElement {
 
 The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
 
-![Login form with custom external login button](images/external-login-provider-javascript.jpg)
+![Login form with custom external login button](../../.gitbook/assets/external-login-provider-javascript.jpg)
 
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 

@@ -8,7 +8,7 @@ description: >-
 
 On Umbraco Cloud, you can add Multi-Factor Authentication (MFA) for your Umbraco Cloud account.
 
-It is also possible on the organizational level to [enforce Multi-Factor Authentication](../the-cloud-portal/organizations.md#multi-factor-authentication-mfa-enforcement) for the members.
+At the organizational level, it is also possible to [enforce Multi-Factor Authentication (MFA)](../the-cloud-portal/organizations/README.md#multi-factor-authentication-mfa-enforcement) for members.
 
 You can use Email, Phone, or an Authenticator App when logging in to the Umbraco Cloud Portal or the Umbraco Backoffice.
 

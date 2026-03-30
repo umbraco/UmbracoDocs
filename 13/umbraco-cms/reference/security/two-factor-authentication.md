@@ -8,15 +8,13 @@ description: >-
 
 This article includes guides for implementing two-factor authentication options for both backoffice users and website members:
 
-* [Two-Factor Authentication for Members](#two-factor-authentication-for-members)
-* [Two-Factor Authentication for Users](#two-factor-authentication-for-users)
+* [Two-Factor Authentication for Members](two-factor-authentication.md#two-factor-authentication-for-members)
+* [Two-Factor Authentication for Users](two-factor-authentication.md#two-factor-authentication-for-users)
 
 Two-factor authentication (2FA) for Umbraco Users and Members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to support authentication apps like the Microsoft- or Google Authentication Apps.
 
 {% hint style="info" %}
-
 If you are using [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/), you can enable multi-factor authentication in Umbraco ID. For more information, see the [Multi-Factor Authentication](https://docs.umbraco.com/umbraco-cloud/set-up/multi-factor-authentication-on-cloud) article.
-
 {% endhint %}
 
 ## Two-factor authentication for Members
@@ -39,7 +37,6 @@ As an example, the guide will use the [GoogleAuthenticator NuGet Package](https:
 3. Update the file with the following code snippet.
 
 {% code title="QrCodeSetupData.cs" lineNumbers="true" %}
-
 ```csharp
 using System;
 using System.Threading.Tasks;
@@ -129,7 +126,6 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
-
 {% endcode %}
 
 4. Update `namespace` on line 7 to match your project.
@@ -137,7 +133,6 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
 6. Create a Composer and register the `UmbracoAppAuthenticator` implementation as shown below.
 
 {% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Security;
@@ -153,19 +148,17 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, we will add the following to our view showing the edit profile of the member.
 
 7. Add or choose a members-only page that should have the two-factor authentication setup.
-    * The page needs to be behind the public access.
-    * The page should not be using strongly types models.
+   * The page needs to be behind the public access.
+   * The page should not be using strongly types models.
 8. Open the view file for the selected page.
 9. Add the following code:
 
 {% code title="ExampleMembersPage.cshtml" lineNumbers="true" %}
-
 ```csharp
 @using Umbraco.Cms.Core.Services
 @using Umbraco.Cms.Web.Website.Controllers
@@ -217,12 +210,11 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
     }
 }
 ```
-
 {% endcode %}
 
-10. [Optional] Customize the text fields and buttons to match your websites tone of voice.
+10. \[Optional] Customize the text fields and buttons to match your websites tone of voice.
 
-![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-Members-QR-code.png)
+![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](../../.gitbook/assets/2fa-Members-QR-code.png)
 
 ### Test the set up for Members
 
@@ -234,7 +226,7 @@ At this point, the 2FA is active, but no members have set up 2FA yet. The setup 
 
 You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
 
-![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](images/2fa-member-backoffice.png)
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](../../.gitbook/assets/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
@@ -255,7 +247,6 @@ As an example, the guide will use the [GoogleAuthenticator NuGet Package](https:
 3. Update the file with the following code snippet.
 
 {% code title="TwoFactorAuthInfo.cs" lineNumbers="true" %}
-
 ```csharp
 using System.Runtime.Serialization;
 using Google.Authenticator;
@@ -344,7 +335,6 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
-
 {% endcode %}
 
 4. Update `namespace` on line 7 to match your project.
@@ -353,7 +343,6 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
 7. Implement a new composer and register the `UmbracoAppAuthenticator` implementation as shown below.
 
 {% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Security;
@@ -376,7 +365,6 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 8. Update the `namespace` on line 5 to match your project.
@@ -389,7 +377,6 @@ In the composer above, a view for the two-factor authentication is configured. T
 12. Open the file and add the following markup:
 
 {% code title="twoFactorProviderGoogleAuthenticator.html" lineNumbers="true" %}
-
 ```html
 <div ng-controller="CustomCode.TwoFactorProviderGoogleAuthenticator as vm">
 
@@ -454,7 +441,6 @@ In the composer above, a view for the two-factor authentication is configured. T
 
 </div>
 ```
-
 {% endcode %}
 
 The view above uses an Angular controller, which needs to be created and configured in a `package.manifest` file.
@@ -463,7 +449,6 @@ The view above uses an Angular controller, which needs to be created and configu
 14. Add the following code:
 
 {% code title="twoFactorProviderGoogleAuthenticator.controller.js" lineNumbers="true" %}
-
 ```javascript
 !(function () {
   "use strict";
@@ -533,14 +518,12 @@ The view above uses an Angular controller, which needs to be created and configu
   angular.module("umbraco").controller("CustomCode.TwoFactorProviderGoogleAuthenticator", googleTwoFactorProviderCtrl);
 })();
 ```
-
 {% endcode %}
 
 15. Create a new file: `App_Plugins\TwoFactorProviders\package.manifest`.
 16. Point to the path of the Angular controller created above:
 
 {% code title="package.manifest" lineNumbers="true" %}
-
 ```json
 {
   "javascript": [
@@ -548,7 +531,6 @@ The view above uses an Angular controller, which needs to be created and configu
   ]
 }
 ```
-
 {% endcode %}
 
 At this point, the 2FA is active, but no users have set it up.
@@ -560,21 +542,21 @@ Each user can now enable the configured 2fa providers on their user.
 1. Access the Umbraco backoffice.
 2. Click the user avatar in the top-right corner.
 
-![User panel](images/user-panel.png)
+![User panel](../../.gitbook/assets/user-panel.png)
 
 3. Select `Configure Two-Factor` button to open a new panel listing all enabled two-factor providers.
 
-![Configure 2fa](images/configure-2fa.png)
+![Configure 2fa](../../.gitbook/assets/configure-2fa.png)
 
 4. Select `Enable` to show the configured view.
 
-![Enable 2fa](images/enable-2fa.png)
+![Enable 2fa](../../.gitbook/assets/enable-2fa.png)
 
 5. Follow the instructions to configure 2FA.
 
 When the authenticator is enabled correctly, a disable button is shown instead.
 
-![Disable 2fa](images/2fa-user-disable.png)
+![Disable 2fa](../../.gitbook/assets/2fa-user-disable.png)
 
 To disable the two-factor authentication on your user, it is required to enter the verification code.
 
@@ -588,7 +570,7 @@ When a user with 2FA enabled logs in, they will be presented with a screen to en
 
 While the 2FA is enabled, the user will be presented with this screen after entering the username and password.
 
-![Default 2FA login](images/2fa-login-default-view.jpg)
+![Default 2FA login](../../.gitbook/assets/2fa-login-default-view.jpg)
 
 If the code is correct, the user will be logged in. If the code is incorrect, the user will be presented with an error message.
 
@@ -604,9 +586,9 @@ The 2FA login screen can be customized. This should be done if you have a 2FA pr
 
 You should only customize the 2FA login screen in certain cases, for example:
 
-- If you have a provider that requires a non-numeric field or additional info.
-- If you have a provider that requires the user to scan a QR code, you should additionally show the QR code.
-- If you need to authenticate the user in a different way than the default [AuthenticationController](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.BackOffice.Controllers.AuthenticationController.html#Umbraco_Cms_Web_BackOffice_Controllers_AuthenticationController_PostVerify2FACode_Verify2FACodeModel_) in Umbraco.
+* If you have a provider that requires a non-numeric field or additional info.
+* If you have a provider that requires the user to scan a QR code, you should additionally show the QR code.
+* If you need to authenticate the user in a different way than the default [AuthenticationController](https://apidocs.umbraco.com/v13/csharp/api/Umbraco.Cms.Web.BackOffice.Controllers.AuthenticationController.html#Umbraco_Cms_Web_BackOffice_Controllers_AuthenticationController_PostVerify2FACode_Verify2FACodeModel_) in Umbraco.
 
 You need to create a JavaScript module that exports a default custom element to be used in the login screen. This module should be placed in the `App_Plugins` folder. The module should be registered using a composer.
 
@@ -618,18 +600,15 @@ It is still supported to load an HTML file as a view. However, Umbraco no longer
 
 You can use the following code as a starting point. This will give you a view looking like this, where the user can enter a code and click a button to verify the code. This is similar to the built-in view in Umbraco. In a real world scenario, you would probably want to authenticate the user in a different way.
 
-![Custom 2FA login](images/2fa-login-custom-view.png)
+![Custom 2FA login](../../.gitbook/assets/2fa-login-custom-view.png)
 
 {% tabs %}
-
 {% tab title="Frontend (JavaScript)" %}
-
 The following code is an example of a custom 2FA login screen using [Lit](https://lit.dev/). This is the recommended way of creating a custom 2FA login screen. Lit is a light-weight library that augments the [Custom Elements API](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) to provide a declarative, performant, and interoperable way to create web components.
 
 The element registers two properties: providers and returnPath. These properties are used to render the view. The providers property is an array of strings, where each string is the name of a 2FA provider. The returnPath is the path to redirect to after a successful login. Both supplied by the login screen automatically.
 
 {% code title="~/App_Plugins/TwoFactorProviders/Custom2faLogin.js" lineNumbers="true" %}
-
 ```javascript
 import {LitElement, css, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
@@ -752,17 +731,13 @@ customElements.define('my-2fa-view', My2faView);
 
 export default My2faView;
 ```
-
 {% endcode %}
-
 {% endtab %}
 
 {% tab title="Backend (C#)" %}
-
 We need to register the custom view using a composer. This can be done on the `IUmbracoBuilder` in your startup or a composer. In this case, we will add a composer to your project. This composer will overwrite the `IBackOfficeTwoFactorOptions` to use the custom view.
 
-{% code title="TwoFactorConfiguration.cs" lineNumbers=true %}
-
+{% code title="TwoFactorConfiguration.cs" lineNumbers="true" %}
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Web.BackOffice.Security;
@@ -785,9 +760,6 @@ public class TwoFactorConfigurationComposer : IComposer
 }
 
 ```
-
 {% endcode %}
-
 {% endtab %}
-
 {% endtabs %}

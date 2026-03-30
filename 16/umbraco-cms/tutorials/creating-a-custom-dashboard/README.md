@@ -8,14 +8,14 @@ description: A guide to creating a custom dashboard in Umbraco
 
 This guide outlines the steps to set up a custom dashboard in Umbraco. Part one covers:
 
-1. [Setting up a Package](./README.md#setting-up-a-package)
-2. [Creating the Dashboard Web Component](./README.md#creating-the-dashboard-web-component)
+1. [Setting up a Package](./#setting-up-a-package)
+2. [Creating the Dashboard Web Component](./#creating-the-dashboard-web-component)
 
 ### What is a Dashboard?
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](../images/welcome-dashboard.png)
+![Welcome dashboard](../../.gitbook/assets/welcome-dashboard.png)
 
 #### Why provide a Custom Dashboard for your editors?
 

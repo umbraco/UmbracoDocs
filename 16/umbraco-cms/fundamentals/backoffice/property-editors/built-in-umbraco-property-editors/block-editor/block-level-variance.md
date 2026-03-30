@@ -8,13 +8,13 @@ In a variant context, a Block Editor behaves like any other Umbraco property edi
 
 In other words, both Block content and structure can vary between each Document variant.
 
-![Default Block Editor behavior in the backoffice](images/block-level-variance-1.png)
+![Default Block Editor behavior in the backoffice](../../../../../.gitbook/assets/block-level-variance-1.png)
 
 This is the desired behavior for many cases. However, in some cases it is preferable to have a shared Block structure across all variants, where only the Block content varies.
 
 This is known as Block Level Variance:
 
-![Block Level Variance in the backoffice](images/block-level-variance-2.png)
+![Block Level Variance in the backoffice](../../../../../.gitbook/assets/block-level-variance-2.png)
 
 Block Level Variance is achieved when:
 
@@ -30,7 +30,7 @@ The Block will start out in an "unexposed" state for all other Document variants
 
 The "unexposed" state is visualized by a dimmed-down icon and title (or likely a missing title, if [Umbraco Flavored Markdown](../../../../../reference/umbraco-flavored-markdown.md) is used):
 
-![Block Level Variance in the backoffice - with an unexposed block](images/block-level-variance-3.png)
+![Block Level Variance in the backoffice - with an unexposed block](../../../../../.gitbook/assets/block-level-variance-3.png)
 
 {% hint style="info" %}
 "Unexposed" Blocks are omitted from the published Document output. So, you do not need to worry about defensive coding to avoid rendering these Blocks.
@@ -42,22 +42,22 @@ It is entirely possible to mix and match variance and invariance within the scop
 
 Invariance within Block Level Variance follows the same rules as invariance at Document level:
 
-- Invariant content is added to and updated across all Document variants.
-- Invariant content is explicitly published for all published Document variants when one or more variants are published.
+* Invariant content is added to and updated across all Document variants.
+* Invariant content is explicitly published for all published Document variants when one or more variants are published.
 
 ### Examples
 
 Consider a Document with English and Danish language variants, which is published in both languages.
 
-- An editor opens the English variant.
-- They add an invariant Block, and
-- They re-publish the English variant.
+* An editor opens the English variant.
+* They add an invariant Block, and
+* They re-publish the English variant.
 
 **Result:** The new block will appear in both the English and Danish published content.
 
-- An editor opens the Danish variant.
-- They update an invariant property value in a variant Block, and
-- They re-publish the Danish variant.
+* An editor opens the Danish variant.
+* They update an invariant property value in a variant Block, and
+* They re-publish the Danish variant.
 
 **Result:** The updated property value appears in both the English and Danish published content.
 

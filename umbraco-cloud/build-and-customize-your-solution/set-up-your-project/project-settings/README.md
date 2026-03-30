@@ -85,9 +85,11 @@ The Connections section provides connection details for your Umbraco Cloud datab
 
 ### [Automatic Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
 
-The Automatic Upgrades section handles minor upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects are opt-in for these upgrades.
+The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects have automatic upgrades enabled.
 
-From this page, you can manage whether your site is automatically upgraded to the latest minor version(s) of the Cloud products. To learn more about automatic upgrades, visit the [Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) section.
+You can manage whether your site is automatically upgraded with the latest patch and minor version(s) of Umbraco CMS, Forms, and Deploy.
+
+For information about opting out of automated upgrades, see the [Product Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md) article.
 
 ![Automatic Upgrades](../../../.gitbook/assets/automatic-upgrades.png)
 
@@ -113,14 +115,15 @@ You can configure deployment webhooks for your environments in this section. Web
 
 ![Webhooks](../../../.gitbook/assets/webhooks.png)
 
-### CI/CD Flow
+### [CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
 
 The CI/CD Flow section allows you to manage settings related to CI/CD deployments:
 
-* [Umbraco CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
-* See a paginated list of artifacts that has been pushed to your project via the CI/CD pipeline.
+* Enable CI/CD Flow with or without Advanced options.
+* See a list of environments that can be targeted by CI/CD Flow.
+* See a paginated list of artifacts that have been pushed to your project via the CI/CD pipeline.
 
-![CI/CD Flow settings](<../../../.gitbook/assets/cicd-flow-page (1).png>) ![CI/CD Flow Artifact list](<../../../.gitbook/assets/cicd-artifacts (1).png>)
+![CI/CD Flow settings](<../../../.gitbook/assets/cicd-flow-page.png>) ![CI/CD Flow Artifact list](<../../../.gitbook/assets/cicd-artifacts (1).png>)
 
 ### Advanced
 

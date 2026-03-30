@@ -10,11 +10,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character limit
 
-![Textarea Data Type Definition](../built-in-property-editors/images/Textarea-Setup-v10.png)
+![Textarea Data Type Definition](<../../../../.gitbook/assets/Textarea-Setup-v10 (1).png>)
 
 ### With a character limit
 
-![Textarea Data Type Definition With Limits](../built-in-property-editors/images/Textarea-Setup-Limit-v8.png)
+![Textarea Data Type Definition With Limits](<../../../../.gitbook/assets/Textarea-Setup-Limit-v8 (1).png>)
 
 ## Settings
 
@@ -22,11 +22,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../built-in-property-editors/images/Textarea-Content-v8.png)
+![Textarea Content Example](<../../../../.gitbook/assets/Textarea-Content-v8 (1).png>)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../built-in-property-editors/images/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](<../../../../.gitbook/assets/Textarea-Content-Limit-v8 (1).png>)
 
 ## MVC View Example
 
