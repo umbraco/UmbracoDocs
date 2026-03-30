@@ -16,6 +16,33 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.0) (April 2nd 2026)
+* Umbraco CMS dependency updated to 17.3.0
+* Optimise record collection query performance
+* Add per-row entity actions to entries table
+* Redesigned Field and Workflow modals to match CMS style and improve usability
+* Fix sort order and group for field type not being respected [#1634](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1634)
+* Fix many column overflow in sidebar modal [#1608](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1608)
+* Fix Rich Text editor not allowing block picks in "Thank you" workflow [#1194](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1194)
+* Fix workflow failing to submit with decimal field [#1574](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1574)
+* Fix error when viewing entries without Manage Forms permission [#1638](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1638)
+* Use native textarea for validation regex [#1642](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1642)
+* Fix data consent field included when created from template [#1651](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1651)
+* Add validation for prevalue options on dropdown and similar fields [#1660](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1660)
+* Fix text in tags/actions in forms overview wrapping on multiple lines [#1661](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1661)
+* Fix deleting a selected prevalue throwing an error [#1666](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1666)
+* Fix store records setting not respected from template [#1669](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1669)
+* Fix save & preview opening modal with blank node names [#1670](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1670)
+* Fix "Updated By" not updating accordingly [#1671](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1671)
+* Fix creating form inside folder adding the form to root [#1672](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1672)
+* Fix value failing to save [#1673](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1673)
+* Fix page-specific magic strings not working in delivery API [#1674](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1674)
+* Fix `ManageSecurityWithUserGroups` not working [#1675](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1675)
+* Fix form entries not visible in Firefox [#1677](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1677) [#1678](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1678)
+* Resolve property editor UI from configured data type [#1680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1680)
+* Add filter by record state (Submitted/Approved/Rejected) to entries list [#1681](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1681)
+
+
 ### 17.2.1
 * Fix: string length validation for file upload fields
 
