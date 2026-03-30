@@ -117,7 +117,7 @@ When you execute a test:
 
 All runs from a single execution share an `ExecutionId`. Batch runs also share a `BatchId`.
 
-![Test run detail showing score, graders passed, and outcome](../../.gitbook/assets/backoffice-ai-test-run-details.png)
+![Test run detail showing score, graders passed, and outcome](../.gitbook/assets/backoffice-ai-test-run-details.png)
 
 ### Metrics
 

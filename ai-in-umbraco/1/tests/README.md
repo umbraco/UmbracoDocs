@@ -15,7 +15,7 @@ The testing framework is included in the core `Umbraco.AI` package. No additiona
 You need the Prompt Management or Agent Runtime add-on installed to test prompts or agents respectively.
 {% endhint %}
 
-![The tests list showing configured tests with their features and run counts](../../.gitbook/assets/backoffice-ai-test-list.png)
+![The tests list showing configured tests with their features and run counts](../.gitbook/assets/backoffice-ai-test-list.png)
 
 ## Features
 
@@ -82,7 +82,6 @@ curl -X POST "https://your-site.com/umbraco/ai/management/api/v1/tests" \
 
 ## Related
 
-- [Add-ons Overview](../README.md) - All add-on packages
-- [Prompt Management](../prompt/README.md) - Prompt templates
-- [Agent Runtime](../agent/README.md) - Agent definitions
-- [Guardrails](../../concepts/guardrails.md) - Safety and compliance rules
+- [Prompt Management](../add-ons/prompt/README.md) - Prompt templates
+- [Agent Runtime](../add-ons/agent/README.md) - Agent definitions
+- [Guardrails](../concepts/guardrails.md) - Safety and compliance rules

@@ -53,7 +53,7 @@ curl -X POST "https://your-site.com/umbraco/ai/management/api/v1/tests" \
 
 The response returns the created test with its generated `id`.
 
-![Test settings showing target, profile, and context configuration](../../.gitbook/assets/backoffice-ai-test-settings.png)
+![Test settings showing target, profile, and context configuration](../.gitbook/assets/backoffice-ai-test-settings.png)
 
 ## Step 2: Run the Test
 
@@ -115,7 +115,7 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/test-runs?testId
 
 Each run includes the status, duration, outcome, and per-grader results.
 
-![Test runs view showing 4 runs with pass rates and execution details](../../.gitbook/assets/backoffice-ai-test-runs.png)
+![Test runs view showing 4 runs with pass rates and execution details](../.gitbook/assets/backoffice-ai-test-runs.png)
 
 ## Step 4: Add an LLM Judge Grader
 

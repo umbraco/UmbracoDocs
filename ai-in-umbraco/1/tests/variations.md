@@ -130,7 +130,7 @@ curl -X POST "https://your-site.com/umbraco/ai/management/api/v1/tests" \
 
 {% endcode %}
 
-![Add Variation form showing name, description, and override fields for profile, contexts, and run count](../../.gitbook/assets/backoffice-ai-test-variation-details.png)
+![Add Variation form showing name, description, and override fields for profile, contexts, and run count](../.gitbook/assets/backoffice-ai-test-variation-details.png)
 
 In this example:
 - The default config (GPT-4o) runs 3 times

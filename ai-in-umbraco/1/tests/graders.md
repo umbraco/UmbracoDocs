@@ -23,7 +23,7 @@ Every grader supports these options in addition to its type-specific configurati
 - **Warning** - Logs a failure but does not block the test.
 - **Error** - Fails the test and blocks (default).
 
-![Configure Contains Grader showing name, severity, weight, negate, and search pattern fields](../../.gitbook/assets/backoffice-ai-test-grader-settings.png)
+![Configure Contains Grader showing name, severity, weight, negate, and search pattern fields](../.gitbook/assets/backoffice-ai-test-grader-settings.png)
 
 ## Code-Based Graders
 
@@ -296,4 +296,4 @@ In this example, the test fails if the length check or quality score grader fail
 
 - [Concepts](concepts.md) - Core testing concepts
 - [Variations](variations.md) - A/B testing across configurations
-- [Guardrails](../../concepts/guardrails.md) - Guardrail evaluators
+- [Guardrails](../concepts/guardrails.md) - Guardrail evaluators
