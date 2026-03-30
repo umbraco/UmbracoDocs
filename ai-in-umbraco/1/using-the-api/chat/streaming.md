@@ -40,7 +40,9 @@ public class StreamingExample
             new(ChatRole.User, question)
         };
 
-        await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+        await foreach (var update in _chatService.StreamChatResponseAsync(
+            chat => chat.WithAlias("console-stream"),
+            messages))
         {
             // Each update contains a chunk of text
             Console.Write(update.Text);
@@ -66,7 +68,9 @@ Each streamed chunk is a `ChatResponseUpdate`:
 {% code title="UpdateDetails.cs" %}
 
 ```csharp
-await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+await foreach (var update in _chatService.StreamChatResponseAsync(
+    chat => chat.WithAlias("update-details"),
+    messages))
 {
     if (update.Text is not null)
     {
@@ -112,7 +116,9 @@ public class ChatController : UmbracoApiController
             new(ChatRole.User, request.Message)
         };
 
-        await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+        await foreach (var update in _chatService.StreamChatResponseAsync(
+            chat => chat.WithAlias("chat-stream"),
+            messages))
         {
             if (update.Text is not null)
             {
@@ -149,7 +155,9 @@ public async Task StreamChatSSE([FromBody] ChatRequest request)
         new(ChatRole.User, request.Message)
     };
 
-    await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+    await foreach (var update in _chatService.StreamChatResponseAsync(
+        chat => chat.WithAlias("chat-sse"),
+        messages))
     {
         if (update.Text is not null)
         {
@@ -185,7 +193,9 @@ public async Task<(string FullText, ChatFinishReason? Reason)> StreamAndCollect(
     var fullText = new StringBuilder();
     ChatFinishReason? finishReason = null;
 
-    await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+    await foreach (var update in _chatService.StreamChatResponseAsync(
+        chat => chat.WithAlias("stream-and-collect"),
+        messages))
     {
         if (update.Text is not null)
         {
@@ -223,9 +233,10 @@ public async Task StreamWithCancellation(
 
     try
     {
-        await foreach (var update in _chatService.GetStreamingChatResponseAsync(
+        await foreach (var update in _chatService.StreamChatResponseAsync(
+            chat => chat.WithAlias("cancellable-stream"),
             messages,
-            cancellationToken: cancellationToken))
+            cancellationToken))
         {
             Console.Write(update.Text);
         }
@@ -245,8 +256,10 @@ public async Task StreamWithCancellation(
 
 ```csharp
 // With profile ID
-await foreach (var update in _chatService.GetStreamingChatResponseAsync(
-    profileId,
+await foreach (var update in _chatService.StreamChatResponseAsync(
+    chat => chat
+        .WithAlias("profiled-stream")
+        .WithProfile(profileId),
     messages))
 {
     Console.Write(update.Text);
@@ -255,9 +268,11 @@ await foreach (var update in _chatService.GetStreamingChatResponseAsync(
 // With options
 var options = new ChatOptions { Temperature = 0.8f };
 
-await foreach (var update in _chatService.GetStreamingChatResponseAsync(
-    messages,
-    options))
+await foreach (var update in _chatService.StreamChatResponseAsync(
+    chat => chat
+        .WithAlias("custom-options-stream")
+        .WithChatOptions(options),
+    messages))
 {
     Console.Write(update.Text);
 }

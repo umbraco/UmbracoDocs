@@ -52,7 +52,9 @@ var messages = new List<ChatMessage>
     new(ChatRole.User, "What's the weather like in London?")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("tool-chat").WithChatOptions(options),
+    messages);
 // The model calls GetWeather("London"), gets the result,
 // and responds with a natural language answer.
 ```
@@ -91,7 +93,9 @@ var messages = new List<ChatMessage>
     new(ChatRole.User, "What time is it in Tokyo and what's the weather?")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("tool-chat").WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}

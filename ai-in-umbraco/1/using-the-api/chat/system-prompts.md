@@ -22,7 +22,9 @@ var messages = new List<ChatMessage>
     new(ChatRole.User, "Suggest a better title for my blog post about CMS platforms.")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-editor"),
+    messages);
 ```
 
 {% endcode %}
@@ -64,7 +66,9 @@ var messages = new List<ChatMessage>
 };
 
 // The profile's system prompt is prepended automatically
-var response = await _chatService.GetChatResponseAsync(profileId, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-assistant").WithProfile(profileId),
+    messages);
 ```
 
 {% endcode %}

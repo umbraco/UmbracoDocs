@@ -82,10 +82,14 @@ When you call an AI service without specifying a profile:
 
 ```csharp
 // Uses the default chat profile from Settings
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat"),
+    messages);
 
 // Explicitly specifies a profile (overrides default)
-var response = await _chatService.GetChatResponseAsync(profileId, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat").WithProfile(profileId),
+    messages);
 ```
 
 {% endcode %}

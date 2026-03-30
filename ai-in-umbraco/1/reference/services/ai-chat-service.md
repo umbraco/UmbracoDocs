@@ -26,31 +26,47 @@ using Microsoft.Extensions.AI;
 public interface IAIChatService
 {
     Task<ChatResponse> GetChatResponseAsync(
+        Action<AIChatBuilder> configure,
         IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<ChatResponse> GetChatResponseAsync(
-        Guid profileId,
+    IAsyncEnumerable<ChatResponseUpdate> StreamChatResponseAsync(
+        Action<AIChatBuilder> configure,
         IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
-        IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
-        Guid profileId,
-        IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    Task<IChatClient> GetChatClientAsync(
-        Guid? profileId = null,
+    Task<IChatClient> CreateChatClientAsync(
+        Action<AIChatBuilder> configure,
         CancellationToken cancellationToken = default);
 }
+```
+
+{% endcode %}
+
+## AIChatBuilder
+
+All methods accept an `Action<AIChatBuilder>` to configure the request. The builder provides the following fluent methods:
+
+| Method | Description |
+| --- | --- |
+| `.WithAlias(string alias)` | **Required.** Sets an alias for auditing and telemetry. |
+| `.WithProfile(Guid profileId)` | Selects a profile by ID. Uses default if omitted. |
+| `.WithProfile(string profileAlias)` | Selects a profile by alias. |
+| `.WithChatOptions(ChatOptions options)` | Overrides profile defaults for temperature, max tokens, etc. |
+| `.WithGuardrails(params Guid[] guardrailIds)` | Applies guardrails by ID. |
+| `.WithGuardrails(params string[] guardrailAliases)` | Applies guardrails by alias. |
+| `.WithContextItems(IEnumerable<AIRequestContextItem> contextItems)` | Attaches context items to the request. |
+
+{% code title="Builder example" %}
+
+```csharp
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat
+        .WithAlias("my-summarizer")
+        .WithProfile("default-chat")
+        .WithChatOptions(new ChatOptions { Temperature = 0.7f }),
+    messages,
+    cancellationToken);
 ```
 
 {% endcode %}
@@ -65,25 +81,18 @@ Performs a chat completion and returns the full response.
 
 ```csharp
 Task<ChatResponse> GetChatResponseAsync(
+    Action<AIChatBuilder> configure,
     IEnumerable<ChatMessage> messages,
-    ChatOptions? options = null,
-    CancellationToken cancellationToken = default);
-
-Task<ChatResponse> GetChatResponseAsync(
-    Guid profileId,
-    IEnumerable<ChatMessage> messages,
-    ChatOptions? options = null,
     CancellationToken cancellationToken = default);
 ```
 
 {% endcode %}
 
-| Parameter           | Type                       | Description                                     |
-| ------------------- | -------------------------- | ----------------------------------------------- |
-| `profileId`         | `Guid`                     | (Optional) Profile ID. Uses default if omitted. |
-| `messages`          | `IEnumerable<ChatMessage>` | The conversation messages                       |
-| `options`           | `ChatOptions?`             | Options to override profile defaults            |
-| `cancellationToken` | `CancellationToken`        | Cancellation token                              |
+| Parameter           | Type                       | Description                                          |
+| ------------------- | -------------------------- | ---------------------------------------------------- |
+| `configure`         | `Action<AIChatBuilder>`    | Builder action to set alias, profile, options, etc.  |
+| `messages`          | `IEnumerable<ChatMessage>` | The conversation messages                            |
+| `cancellationToken` | `CancellationToken`        | Cancellation token                                   |
 
 **Returns**: `ChatResponse` with the assistant's message, usage stats, and finish reason.
 
@@ -96,7 +105,9 @@ var messages = new[]
     new ChatMessage(ChatRole.User, "What is Umbraco?")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("my-assistant"),
+    messages);
 
 Console.WriteLine(response.Message.Text);
 Console.WriteLine($"Tokens: {response.Usage?.TotalTokenCount}");
@@ -104,33 +115,26 @@ Console.WriteLine($"Tokens: {response.Usage?.TotalTokenCount}");
 
 {% endcode %}
 
-### GetStreamingChatResponseAsync
+### StreamChatResponseAsync
 
 Performs a streaming chat completion, yielding updates as they arrive.
 
 {% code title="Signature" %}
 
 ```csharp
-IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
+IAsyncEnumerable<ChatResponseUpdate> StreamChatResponseAsync(
+    Action<AIChatBuilder> configure,
     IEnumerable<ChatMessage> messages,
-    ChatOptions? options = null,
-    CancellationToken cancellationToken = default);
-
-IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
-    Guid profileId,
-    IEnumerable<ChatMessage> messages,
-    ChatOptions? options = null,
     CancellationToken cancellationToken = default);
 ```
 
 {% endcode %}
 
-| Parameter           | Type                       | Description                                     |
-| ------------------- | -------------------------- | ----------------------------------------------- |
-| `profileId`         | `Guid`                     | (Optional) Profile ID. Uses default if omitted. |
-| `messages`          | `IEnumerable<ChatMessage>` | The conversation messages                       |
-| `options`           | `ChatOptions?`             | Options to override profile defaults            |
-| `cancellationToken` | `CancellationToken`        | Cancellation token                              |
+| Parameter           | Type                       | Description                                          |
+| ------------------- | -------------------------- | ---------------------------------------------------- |
+| `configure`         | `Action<AIChatBuilder>`    | Builder action to set alias, profile, options, etc.  |
+| `messages`          | `IEnumerable<ChatMessage>` | The conversation messages                            |
+| `cancellationToken` | `CancellationToken`        | Cancellation token                                   |
 
 **Returns**: `IAsyncEnumerable<ChatResponseUpdate>` yielding content chunks.
 
@@ -142,7 +146,9 @@ var messages = new[]
     new ChatMessage(ChatRole.User, "Write a story about a robot.")
 };
 
-await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages))
+await foreach (var update in _chatService.StreamChatResponseAsync(
+    chat => chat.WithAlias("story-writer"),
+    messages))
 {
     Console.Write(update.Text);
 }
@@ -150,32 +156,33 @@ await foreach (var update in _chatService.GetStreamingChatResponseAsync(messages
 
 {% endcode %}
 
-### GetChatClientAsync
+### CreateChatClientAsync
 
-Gets a configured `IChatClient` for advanced scenarios.
+Creates a configured `IChatClient` for advanced scenarios.
 
 {% code title="Signature" %}
 
 ```csharp
-Task<IChatClient> GetChatClientAsync(
-    Guid? profileId = null,
+Task<IChatClient> CreateChatClientAsync(
+    Action<AIChatBuilder> configure,
     CancellationToken cancellationToken = default);
 ```
 
 {% endcode %}
 
-| Parameter           | Type                | Description                       |
-| ------------------- | ------------------- | --------------------------------- |
-| `profileId`         | `Guid?`             | Profile ID. Uses default if null. |
-| `cancellationToken` | `CancellationToken` | Cancellation token                |
+| Parameter           | Type                    | Description                                          |
+| ------------------- | ----------------------- | ---------------------------------------------------- |
+| `configure`         | `Action<AIChatBuilder>` | Builder action to set alias, profile, options, etc.  |
+| `cancellationToken` | `CancellationToken`     | Cancellation token                                   |
 
 **Returns**: Configured `IChatClient` with middleware applied.
 
 {% code title="Example" %}
 
 ```csharp
-// Get client for advanced usage
-var client = await _chatService.GetChatClientAsync();
+// Create client for advanced usage
+var client = await _chatService.CreateChatClientAsync(
+    chat => chat.WithAlias("advanced-client").WithProfile("default-chat"));
 
 // Use M.E.AI methods directly
 var response = await client.GetChatResponseAsync(
@@ -199,7 +206,11 @@ var options = new ChatOptions
     StopSequences = new[] { "END" }
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat
+        .WithAlias("creative-chat")
+        .WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}

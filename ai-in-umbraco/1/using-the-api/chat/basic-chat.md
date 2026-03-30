@@ -32,7 +32,9 @@ public class ChatController : UmbracoApiController
             new(ChatRole.User, question)
         };
 
-        var response = await _chatService.GetChatResponseAsync(messages);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("chat-api"),
+            messages);
 
         return Ok(new
         {
@@ -59,7 +61,9 @@ The `ChatResponse` object contains:
 {% code title="ResponseDetails.cs" %}
 
 ```csharp
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("response-details"),
+    messages);
 
 // The response text
 string? text = response.Message.Text;
@@ -93,7 +97,9 @@ var messages = new List<ChatMessage>
     new(ChatRole.User, "Explain what a CMS is.")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("system-prompt-example"),
+    messages);
 ```
 
 {% endcode %}
@@ -127,7 +133,9 @@ public class ConversationService
         _history.Add(new ChatMessage(ChatRole.User, userMessage));
 
         // Send entire conversation
-        var response = await _chatService.GetChatResponseAsync(_history);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("conversation"),
+            _history);
 
         // Add assistant response to history
         _history.Add(response.Message);
@@ -153,7 +161,11 @@ public async Task<string> GetResponse(Guid profileId, string question)
         new(ChatRole.User, question)
     };
 
-    var response = await _chatService.GetChatResponseAsync(profileId, messages);
+    var response = await _chatService.GetChatResponseAsync(
+        chat => chat
+            .WithAlias("profiled-chat")
+            .WithProfile(profileId),
+        messages);
 
     return response.Message.Text ?? string.Empty;
 }
@@ -166,36 +178,20 @@ public async Task<string> GetResponse(Guid profileId, string question)
 {% code title="ByProfileAlias.cs" %}
 
 ```csharp
-public class ProfiledChatService
+public async Task<string> GetCreativeResponse(string prompt)
 {
-    private readonly IAIChatService _chatService;
-    private readonly IAIProfileService _profileService;
-
-    public ProfiledChatService(
-        IAIChatService chatService,
-        IAIProfileService profileService)
+    var messages = new List<ChatMessage>
     {
-        _chatService = chatService;
-        _profileService = profileService;
-    }
+        new(ChatRole.User, prompt)
+    };
 
-    public async Task<string> GetCreativeResponse(string prompt)
-    {
-        var profile = await _profileService.GetProfileByAliasAsync("creative-writer");
-        if (profile is null)
-        {
-            throw new InvalidOperationException("Profile 'creative-writer' not found");
-        }
+    var response = await _chatService.GetChatResponseAsync(
+        chat => chat
+            .WithAlias("creative-response")
+            .WithProfile("creative-writer"),
+        messages);
 
-        var messages = new List<ChatMessage>
-        {
-            new(ChatRole.User, prompt)
-        };
-
-        var response = await _chatService.GetChatResponseAsync(profile.Id, messages);
-
-        return response.Message.Text ?? string.Empty;
-    }
+    return response.Message.Text ?? string.Empty;
 }
 ```
 
@@ -219,7 +215,11 @@ var options = new ChatOptions
     MaxOutputTokens = 50       // Keep it short
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat
+        .WithAlias("creative-tagline")
+        .WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}
@@ -238,7 +238,9 @@ public async Task<string?> SafeGetResponse(string question)
             new(ChatRole.User, question)
         };
 
-        var response = await _chatService.GetChatResponseAsync(messages);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("safe-chat"),
+            messages);
         return response.Message.Text;
     }
     catch (InvalidOperationException ex) when (ex.Message.Contains("profile"))

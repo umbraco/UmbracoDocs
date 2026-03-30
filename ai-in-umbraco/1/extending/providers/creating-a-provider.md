@@ -288,7 +288,7 @@ After installation:
 
 1. Navigate to the **AI** section > **Connections**
 2. Click **Create Connection**
-3. Your provider should appear in the provider dropdown
+3. Your provider should appear in the Select AI Provider dialog
 4. Configure settings and save
 5. Create a profile using the connection
 6. Test with a chat request

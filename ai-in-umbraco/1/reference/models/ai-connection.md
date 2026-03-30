@@ -22,16 +22,19 @@ using Umbraco.AI.Core.Connections;
 {% code title="AIConnection" %}
 
 ```csharp
-public class AIConnection
+public class AIConnection : IAIVersionableEntity
 {
     public Guid Id { get; internal set; }
-    public required string Alias { get; init; }
+    public required string Alias { get; set; }
     public required string Name { get; set; }
     public required string ProviderId { get; init; }
     public object? Settings { get; set; }
     public bool IsActive { get; set; } = true;
     public DateTime DateCreated { get; init; } = DateTime.UtcNow;
     public DateTime DateModified { get; set; } = DateTime.UtcNow;
+    public int Version { get; internal set; }
+    public Guid? CreatedByUserId { get; set; }
+    public Guid? ModifiedByUserId { get; set; }
 }
 ```
 
@@ -49,6 +52,9 @@ public class AIConnection
 | `IsActive`     | `bool`     | Whether connection is enabled                |
 | `DateCreated`  | `DateTime` | Creation timestamp (UTC)                     |
 | `DateModified` | `DateTime` | Last modification timestamp (UTC)            |
+| `Version`      | `int`      | Version number, starts at 1, increments with each save |
+| `CreatedByUserId` | `Guid?` | ID of the user who created the connection    |
+| `ModifiedByUserId` | `Guid?` | ID of the user who last modified the connection |
 
 ## Settings
 
@@ -130,7 +136,10 @@ Console.WriteLine($"Connection ID: {saved.Id}");
 
 ## Notes
 
+- `AIConnection` implements `IAIVersionableEntity` for version tracking
 - `Id` is assigned automatically when saving
-- `Alias` and `ProviderId` are immutable after creation (`init` setter)
+- `Version` starts at 1 and increments with each save
+- `Alias` is mutable and can be changed after creation
+- `ProviderId` is immutable after creation (`init` setter)
 - `ProviderId` must match a registered provider
 - Settings are validated against the provider's schema on save

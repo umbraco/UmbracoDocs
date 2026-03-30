@@ -73,7 +73,9 @@ public class ChatController : UmbracoApiController
             new(ChatRole.User, message)
         };
 
-        var response = await _chatService.GetChatResponseAsync(messages);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("quick-chat"),
+            messages);
 
         return Ok(response.Message.Text);
     }

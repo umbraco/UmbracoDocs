@@ -79,10 +79,14 @@ When you call `IAIChatService.GetChatResponseAsync()` without specifying a profi
 
 ```csharp
 // Uses the default chat profile (database settings or appsettings.json fallback)
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat"),
+    messages);
 
 // Uses a specific profile
-var response = await _chatService.GetChatResponseAsync(specificProfileId, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat").WithProfile(specificProfileId),
+    messages);
 ```
 
 {% endcode %}

@@ -28,10 +28,14 @@ When you call `IAIChatService.GetChatResponseAsync()` without specifying a profi
 
 ```csharp
 // Uses the default chat profile configured in Settings
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat"),
+    messages);
 
 // Or explicitly specify a profile
-var response = await _chatService.GetChatResponseAsync(profileId, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat").WithProfile(profileId),
+    messages);
 ```
 
 {% endcode %}

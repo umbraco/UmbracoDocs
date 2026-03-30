@@ -27,7 +27,9 @@ var options = new ChatOptions
     StopSequences = ["---"]
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("tagline-writer").WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}
@@ -67,7 +69,9 @@ var messages = new List<ChatMessage>
     new(ChatRole.User, "Describe Umbraco CMS.")
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("json-responder").WithChatOptions(options),
+    messages);
 // response.Message.Text contains JSON: {"title": "...", "summary": "..."}
 ```
 
@@ -86,7 +90,9 @@ var options = new ChatOptions
     Temperature = 0.2f  // Override to more deterministic for this request
 };
 
-var response = await _chatService.GetChatResponseAsync(profileId, messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("profile-example").WithProfile(profileId).WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}

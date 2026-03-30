@@ -68,7 +68,9 @@ Then use the service without specifying a profile:
 
 ```csharp
 // Uses the default profile configured in Settings
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat"),
+    messages);
 ```
 
 {% endcode %}
@@ -81,7 +83,9 @@ Look up and use a specific profile:
 
 ```csharp
 var profile = await _profileService.GetProfileByAliasAsync("code-assistant");
-var response = await _chatService.GetChatResponseAsync(profile!.Id, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("code-assistant").WithProfile(profile!.Id),
+    messages);
 ```
 
 {% endcode %}
@@ -99,7 +103,9 @@ var options = new ChatOptions
     MaxOutputTokens = 500
 };
 
-var response = await _chatService.GetChatResponseAsync(messages, options);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-chat").WithChatOptions(options),
+    messages);
 ```
 
 {% endcode %}

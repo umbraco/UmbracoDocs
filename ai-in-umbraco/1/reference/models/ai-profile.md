@@ -22,7 +22,7 @@ using Umbraco.AI.Core.Profiles;
 {% code title="AIProfile" %}
 
 ```csharp
-public sealed class AIProfile
+public sealed class AIProfile : IAIVersionableEntity
 {
     public Guid Id { get; internal set; }
     public required string Alias { get; set; }
@@ -32,6 +32,11 @@ public sealed class AIProfile
     public required Guid ConnectionId { get; set; }
     public IAIProfileSettings? Settings { get; set; }
     public IReadOnlyList<string> Tags { get; set; } = Array.Empty<string>();
+    public int Version { get; internal set; }
+    public DateTime DateCreated { get; init; }
+    public DateTime DateModified { get; set; }
+    public Guid? CreatedByUserId { get; set; }
+    public Guid? ModifiedByUserId { get; set; }
 }
 ```
 
@@ -49,6 +54,11 @@ public sealed class AIProfile
 | `ConnectionId` | `Guid`                  | ID of the connection to use             |
 | `Settings`     | `IAIProfileSettings?`   | Capability-specific settings            |
 | `Tags`         | `IReadOnlyList<string>` | Optional categorization tags            |
+| `Version`      | `int`                   | Version number, starts at 1, increments with each save |
+| `DateCreated`  | `DateTime`              | Creation timestamp                      |
+| `DateModified` | `DateTime`              | Last modification timestamp             |
+| `CreatedByUserId` | `Guid?`              | ID of the user who created the profile  |
+| `ModifiedByUserId` | `Guid?`             | ID of the user who last modified the profile |
 
 ## Settings Types
 
@@ -61,9 +71,11 @@ Settings are polymorphic based on capability.
 ```csharp
 public class AIChatProfileSettings : IAIProfileSettings
 {
-    public float? Temperature { get; set; }
-    public int? MaxTokens { get; set; }
-    public string? SystemPromptTemplate { get; set; }
+    public float? Temperature { get; init; }
+    public int? MaxTokens { get; init; }
+    public string? SystemPromptTemplate { get; init; }
+    public IReadOnlyList<Guid> ContextIds { get; init; }
+    public IReadOnlyList<Guid> GuardrailIds { get; init; }
 }
 ```
 
@@ -74,6 +86,8 @@ public class AIChatProfileSettings : IAIProfileSettings
 | `Temperature`          | `float?`  | Randomness (0.0-1.0, default varies by model) |
 | `MaxTokens`            | `int?`    | Maximum response tokens                       |
 | `SystemPromptTemplate` | `string?` | Default system prompt                         |
+| `ContextIds`           | `IReadOnlyList<Guid>` | Context IDs for injection              |
+| `GuardrailIds`         | `IReadOnlyList<Guid>` | Guardrail IDs for safety               |
 
 ### AIEmbeddingProfileSettings
 
@@ -119,7 +133,9 @@ var saved = await profileService.SaveProfileAsync(profile);
 
 ## Notes
 
+- `AIProfile` implements `IAIVersionableEntity` for version tracking
 - `Id` is assigned automatically when saving a new profile
+- `Version` starts at 1 and increments with each save
 - `Capability` is immutable after creation (`init` setter)
 - `Alias` must be unique across all profiles
 - `ConnectionId` must reference a valid connection with a matching provider

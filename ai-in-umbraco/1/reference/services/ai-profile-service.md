@@ -45,6 +45,35 @@ public interface IAIProfileService
     Task<AIProfile> SaveProfileAsync(AIProfile profile, CancellationToken cancellationToken = default);
 
     Task<bool> DeleteProfileAsync(Guid id, CancellationToken cancellationToken = default);
+
+    Task<bool> HasDefaultProfileAsync(AICapability capability, CancellationToken cancellationToken = default);
+
+    Task<AIProfile> GetClassifierProfileAsync(CancellationToken cancellationToken = default);
+
+    Task<(IEnumerable<AIEntityVersion> Items, int Total)> GetProfileVersionHistoryAsync(
+        Guid profileId,
+        int skip,
+        int take,
+        CancellationToken cancellationToken = default);
+
+    Task<AIProfile?> GetProfileVersionSnapshotAsync(
+        Guid profileId,
+        int version,
+        CancellationToken cancellationToken = default);
+
+    Task<AIProfile> RollbackProfileAsync(
+        Guid profileId,
+        int targetVersion,
+        CancellationToken cancellationToken = default);
+
+    Task<bool> ProfileAliasExistsAsync(
+        string alias,
+        Guid? excludeId = null,
+        CancellationToken cancellationToken = default);
+
+    Task<bool> ProfilesExistWithConnectionAsync(
+        Guid connectionId,
+        CancellationToken cancellationToken = default);
 }
 ```
 
@@ -230,6 +259,170 @@ var deleted = await _profileService.DeleteProfileAsync(profileId);
 if (deleted)
 {
     Console.WriteLine("Profile deleted");
+}
+```
+
+{% endcode %}
+
+### HasDefaultProfileAsync
+
+Checks if a default profile is configured and exists for the given capability.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `capability`        | `AICapability`      | The capability     |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: `true` if a default profile is configured and exists, otherwise `false`.
+
+{% code title="Example" %}
+
+```csharp
+if (await _profileService.HasDefaultProfileAsync(AICapability.Chat))
+{
+    var profile = await _profileService.GetDefaultProfileAsync(AICapability.Chat);
+    // Use profile
+}
+```
+
+{% endcode %}
+
+### GetClassifierProfileAsync
+
+Gets the classifier profile. Falls back to the default chat profile if no dedicated classifier profile is configured.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: The classifier profile.
+
+{% code title="Example" %}
+
+```csharp
+var classifierProfile = await _profileService.GetClassifierProfileAsync();
+Console.WriteLine($"Classifier uses model: {classifierProfile.Model}");
+```
+
+{% endcode %}
+
+### GetProfileVersionHistoryAsync
+
+Gets paginated version history for a profile.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `profileId`         | `Guid`              | The profile ID     |
+| `skip`              | `int`               | Items to skip      |
+| `take`              | `int`               | Items to take      |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: Tuple of (version history items, total count).
+
+{% code title="Example" %}
+
+```csharp
+var (versions, total) = await _profileService.GetProfileVersionHistoryAsync(
+    profileId, skip: 0, take: 10);
+
+foreach (var version in versions)
+{
+    Console.WriteLine($"Version {version.Version} - {version.DateModified}");
+}
+```
+
+{% endcode %}
+
+### GetProfileVersionSnapshotAsync
+
+Gets a snapshot of a profile at a specific version.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `profileId`         | `Guid`              | The profile ID     |
+| `version`           | `int`               | The version number |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: The profile at the specified version, or `null` if not found.
+
+{% code title="Example" %}
+
+```csharp
+var snapshot = await _profileService.GetProfileVersionSnapshotAsync(profileId, version: 3);
+if (snapshot != null)
+{
+    Console.WriteLine($"Profile at v{snapshot.Version}: {snapshot.Name}");
+}
+```
+
+{% endcode %}
+
+### RollbackProfileAsync
+
+Rolls back a profile to a previous version. This creates a new version with the content from the target version.
+
+| Parameter           | Type                | Description                        |
+| ------------------- | ------------------- | ---------------------------------- |
+| `profileId`         | `Guid`              | The profile ID                     |
+| `targetVersion`     | `int`               | The version number to roll back to |
+| `cancellationToken` | `CancellationToken` | Cancellation token                 |
+
+**Returns**: The profile after rollback (with a new version number).
+
+{% code title="Example" %}
+
+```csharp
+var rolledBack = await _profileService.RollbackProfileAsync(profileId, targetVersion: 2);
+Console.WriteLine($"Rolled back to v2, now at v{rolledBack.Version}");
+```
+
+{% endcode %}
+
+### ProfileAliasExistsAsync
+
+Checks if a profile alias already exists. Optionally excludes a specific profile ID (useful when updating).
+
+| Parameter           | Type                | Description                          |
+| ------------------- | ------------------- | ------------------------------------ |
+| `alias`             | `string`            | The alias to check                   |
+| `excludeId`         | `Guid?`             | Profile ID to exclude from the check |
+| `cancellationToken` | `CancellationToken` | Cancellation token                   |
+
+**Returns**: `true` if the alias is already in use, otherwise `false`.
+
+{% code title="Example" %}
+
+```csharp
+var exists = await _profileService.ProfileAliasExistsAsync("content-assistant");
+if (exists)
+{
+    Console.WriteLine("Alias already taken");
+}
+
+// When updating, exclude the current profile
+var taken = await _profileService.ProfileAliasExistsAsync("content-assistant", excludeId: profileId);
+```
+
+{% endcode %}
+
+### ProfilesExistWithConnectionAsync
+
+Checks if any profiles reference a specific connection. Useful before deleting a connection.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `connectionId`      | `Guid`              | The connection ID  |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: `true` if one or more profiles reference the connection, otherwise `false`.
+
+{% code title="Example" %}
+
+```csharp
+var inUse = await _profileService.ProfilesExistWithConnectionAsync(connectionId);
+if (inUse)
+{
+    Console.WriteLine("Cannot delete connection: profiles are using it");
 }
 ```
 

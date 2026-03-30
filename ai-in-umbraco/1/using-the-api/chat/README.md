@@ -18,31 +18,19 @@ public interface IAIChatService
 {
     // Non-streaming responses
     Task<ChatResponse> GetChatResponseAsync(
+        Action<AIChatBuilder> configure,
         IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    Task<ChatResponse> GetChatResponseAsync(
-        Guid profileId,
-        IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
         CancellationToken cancellationToken = default);
 
     // Streaming responses
-    IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
+    IAsyncEnumerable<ChatResponseUpdate> StreamChatResponseAsync(
+        Action<AIChatBuilder> configure,
         IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    IAsyncEnumerable<ChatResponseUpdate> GetStreamingChatResponseAsync(
-        Guid profileId,
-        IEnumerable<ChatMessage> messages,
-        ChatOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    // Advanced: Get the underlying client
-    Task<IChatClient> GetChatClientAsync(
-        Guid? profileId = null,
+    // Advanced: Create the underlying client
+    Task<IChatClient> CreateChatClientAsync(
+        Action<AIChatBuilder> configure,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -73,7 +61,9 @@ public class ContentAssistant
             new(ChatRole.User, prompt)
         };
 
-        var response = await _chatService.GetChatResponseAsync(messages);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("content-assistant"),
+            messages);
 
         return response.Message.Text ?? string.Empty;
     }
@@ -106,7 +96,9 @@ var conversation = new List<ChatMessage>
     new(ChatRole.User, "Make it shorter.")
 };
 
-var response = await _chatService.GetChatResponseAsync(conversation);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("content-editor"),
+    conversation);
 // Response considers the full conversation context
 ```
 
@@ -125,22 +117,31 @@ Configure a default profile through the backoffice:
 Then call without specifying a profile:
 
 ```csharp
-var response = await _chatService.GetChatResponseAsync(messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat.WithAlias("default-chat"),
+    messages);
 ```
 
 ### Specific Profile
 
-Pass the profile ID:
+Pass the profile ID using the builder:
 
 ```csharp
-var response = await _chatService.GetChatResponseAsync(profileId, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat
+        .WithAlias("profiled-chat")
+        .WithProfile(profileId),
+    messages);
 ```
 
-Or look up by alias first:
+Or use the profile alias directly:
 
 ```csharp
-var profile = await _profileService.GetProfileByAliasAsync("content-assistant");
-var response = await _chatService.GetChatResponseAsync(profile!.Id, messages);
+var response = await _chatService.GetChatResponseAsync(
+    chat => chat
+        .WithAlias("content-assistant")
+        .WithProfile("content-assistant"),
+    messages);
 ```
 
 ## In This Section

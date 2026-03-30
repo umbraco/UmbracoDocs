@@ -77,8 +77,8 @@ For advanced scenarios like CI/CD or infrastructure-as-code, defaults can also b
 
 | Scenario                                                 | Default Used  |
 | -------------------------------------------------------- | ------------- |
-| `_chatService.GetChatResponseAsync(messages)`            | Yes           |
-| `_chatService.GetChatResponseAsync(profileId, messages)` | No (explicit) |
+| `_chatService.GetChatResponseAsync(chat => chat.WithAlias("my-feature"), messages)`            | Yes           |
+| `_chatService.GetChatResponseAsync(chat => chat.WithAlias("my-feature").WithProfile(profileId), messages)` | No (explicit) |
 | Prompt without ProfileId                                 | Yes           |
 | Prompt with ProfileId                                    | No (explicit) |
 | Agent without ProfileId                                  | Yes           |

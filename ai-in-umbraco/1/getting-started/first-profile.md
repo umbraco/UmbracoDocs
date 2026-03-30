@@ -87,7 +87,9 @@ public class ContentController : UmbracoApiController
         };
 
         // Uses the default profile configured in Settings
-        var response = await _chatService.GetChatResponseAsync(messages);
+        var response = await _chatService.GetChatResponseAsync(
+            chat => chat.WithAlias("content-summary"),
+            messages);
 
         return Ok(response.Message.Text);
     }
@@ -114,7 +116,9 @@ public async Task<IActionResult> GenerateSummary(
         new(ChatRole.User, $"Summarize this content:\n\n{content}")
     };
 
-    var response = await _chatService.GetChatResponseAsync(profile!.Id, messages);
+    var response = await _chatService.GetChatResponseAsync(
+        chat => chat.WithAlias("content-summary").WithProfile(profile!.Id),
+        messages);
 
     return Ok(response.Message.Text);
 }

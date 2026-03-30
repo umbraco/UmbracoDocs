@@ -51,7 +51,7 @@ Consider these factors when selecting a provider:
 
 ## Installing Multiple Providers
 
-You can install multiple providers simultaneously. Each provider registers independently and becomes available in the connection dropdown.
+You can install multiple providers simultaneously. Each provider registers independently and becomes available in the Select AI Provider dialog.
 
 {% code title="Package Manager Console" %}
 
