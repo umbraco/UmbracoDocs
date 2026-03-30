@@ -63,9 +63,9 @@ The API keys are tied to the specific project for which it is generated. Ensure 
 
 The regenerate button next to each API key allows you to regenerate the key.
 
-If you regenerate a key that is currently used in your pipeline, you will need to update the value there.
+If you regenerate a key that is currently used in your pipeline, you must update the value in your pipeline configuration. 
 It is not possible to restore an API Key to its previous value.
-If the used API Key is invalid, the API will respond with 401 Unauthorized errors.
+If an invalid API key is used, the API will respond with 401 Unauthorized errors.
 
 <figure><img src="../../../../.gitbook/assets/cicd-project-api-keys-regenerate-highlight.png" alt=""><figcaption><p>Buttons for regenerating the API Keys needed for CI/CD flow.</p></figcaption></figure>
 
