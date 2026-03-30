@@ -61,7 +61,7 @@ The API keys are tied to the specific project for which it is generated. Ensure 
 
 ### Regenerate API Keys
 
-The refresh button next to each API Key allows you to regenerate one or both of the keys.
+The regenerate button next to each API key allows you to regenerate the key.
 
 If you regenerate a key that is currently used in your pipeline, you will need to update the value there.
 It is not possible to restore an API Key to its previous value.
