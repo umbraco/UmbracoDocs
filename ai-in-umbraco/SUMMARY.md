@@ -1,3 +1,3 @@
 # Table of contents
 
-* [AI in Umbraco Documentation](README.md)
+* [Umbraco AI Documentation](README.md)
