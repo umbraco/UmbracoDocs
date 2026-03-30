@@ -14,9 +14,7 @@ Every AI operation (chat completion, embedding generation) is logged with detail
 
 ## Understanding the Log List
 
-{% hint style="info" %}
-**Screenshot needed**: [The audit logs list view with columns visible]
-{% endhint %}
+![The audit logs list with timestamps, users, features, and token counts](../.gitbook/assets/backoffice-audit-log-list.png)
 
 The log list shows recent AI operations:
 
@@ -55,9 +53,7 @@ Use the filter options to narrow results:
 
 Click a log entry to view full details:
 
-{% hint style="info" %}
-**Screenshot needed**: [Log detail view showing Summary, AI Configuration, Token Usage sections]
-{% endhint %}
+![Audit log detail showing status, user, profile, and prompt content](../.gitbook/assets/backoffice-audit-log-detail.png)
 
 ### Summary
 

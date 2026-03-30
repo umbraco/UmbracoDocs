@@ -104,6 +104,8 @@ builder.Services.AddOpenTelemetry()
 
 {% endcode %}
 
+![Aspire Dashboard trace view showing gen_ai.chat spans with umbraco.ai tags](../.gitbook/assets/observability-trace-example.png)
+
 ## Example: Jaeger
 
 {% code title="Program.cs" %}

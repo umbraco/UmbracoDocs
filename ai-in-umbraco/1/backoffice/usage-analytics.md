@@ -14,9 +14,7 @@ The Usage Analytics dashboard provides aggregated insights into AI operations, h
 
 ## Dashboard Overview
 
-{% hint style="info" %}
-**Screenshot needed**: [The full analytics dashboard with summary metrics and charts]
-{% endhint %}
+![The analytics dashboard showing usage metrics, success rate, and usage over time chart](../.gitbook/assets/backoffice-analytics-dashboard.png)
 
 The analytics dashboard shows:
 
@@ -45,6 +43,8 @@ Pie or bar charts showing distribution:
 - **By Model** - Which models consume most tokens
 - **By Profile** - Which profiles are most active
 - **By User** - Who uses AI features most
+
+![Analytics breakdown tables by provider, model, profile, and user](../.gitbook/assets/backoffice-analytics-breakdowns.png)
 
 ## Date Range Selection
 

@@ -34,6 +34,8 @@ The **Agent Copilot** add-on registers the `copilot` scope, which indicates agen
 
 When creating or editing an agent in the backoffice, you can assign scopes in the **Scopes** section. Available scopes are populated from all registered scope providers.
 
+![The agent scope assignment UI in the backoffice](../../.gitbook/assets/agent-scope-assignment.png)
+
 ### Via API
 
 Include `scopeIds` when creating or updating an agent:

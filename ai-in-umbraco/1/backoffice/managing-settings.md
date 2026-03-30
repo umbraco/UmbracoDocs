@@ -12,9 +12,7 @@ AI Settings provide a central place to configure system-wide defaults, including
 1. Navigate to the **AI** section in the main navigation
 2. Click **Settings** in the tree
 
-{% hint style="info" %}
-**Screenshot needed**: [The AI Settings page showing all profile dropdowns]
-{% endhint %}
+![The AI Settings page with Default Chat, Classifier, and Embedding profile dropdowns](../.gitbook/assets/backoffice-ai-settings-page.png)
 
 ## Available Settings
 

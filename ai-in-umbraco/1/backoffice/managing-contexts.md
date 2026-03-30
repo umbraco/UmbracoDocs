@@ -12,9 +12,7 @@ AI Contexts allow you to define reusable content collections like brand voice gu
 1. Navigate to the **AI** section in the main navigation
 2. Click **Contexts** in the tree
 
-{% hint style="info" %}
-**Screenshot needed**: [The contexts list in the AI section]
-{% endhint %}
+![The contexts list showing the Brand Voice context](../.gitbook/assets/backoffice-contexts-list.png)
 
 ## Creating a Context
 
@@ -28,9 +26,7 @@ AI Contexts allow you to define reusable content collections like brand voice gu
 
 3. Click **Create**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Context form with resource editor]
-{% endhint %}
+![The Create Context form with resource editor](../.gitbook/assets/backoffice-create-context-form.png)
 
 ## Adding Resources
 
@@ -48,6 +44,10 @@ Contexts contain one or more resources. Each resource represents a piece of cont
 | Injection Mode | When to inject: Always or On Demand |
 
 3. Click **Add**
+
+![The Select Resource Type dialog](../.gitbook/assets/backoffice-context-add-resource.png)
+
+![The resource details form with name, injection mode, and settings](../.gitbook/assets/backoffice-context-add-resource-details.png)
 
 ### Resource Types
 

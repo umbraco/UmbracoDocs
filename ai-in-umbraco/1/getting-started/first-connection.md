@@ -19,13 +19,13 @@ A connection stores the credentials and settings needed to communicate with an A
 3. Click **Connections** in the tree
 4. Click **Create Connection**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Connection form showing Name, Alias, Provider, and settings fields]
-{% endhint %}
+![The Select AI Provider dialog showing available providers](../.gitbook/assets/backoffice-create-connection-modal.png)
 
 {% hint style="info" %}
 If you don't see the AI section, ensure your user group has access to it. See the [Installation](installation.md#verify-installation) guide for details on granting section access.
 {% endhint %}
+
+![The Create Connection form with provider settings](../.gitbook/assets/backoffice-create-connection-form.png)
 
 ## Configure the Connection
 

@@ -77,6 +77,8 @@ Claude's 200K token context window is ideal for processing long documents, exten
 4. Enter your API key
 5. Save the connection
 
+![Anthropic connection detail showing API Key field](../.gitbook/assets/anthropic-create-connection.png)
+
 ### Via Code
 
 {% code title="CreateAnthropicConnection.cs" %}

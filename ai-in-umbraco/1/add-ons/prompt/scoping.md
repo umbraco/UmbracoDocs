@@ -25,6 +25,8 @@ Scoping allows you to control which content types can use a prompt. This helps o
 4. For Allow/Deny modes, select content types
 5. Save
 
+![Prompt scope configuration showing content types, properties, and editor rules](../../.gitbook/assets/prompt-availability-scopes.png)
+
 ### Via Code
 
 {% code title="ProductDescriptionPrompt.cs" %}

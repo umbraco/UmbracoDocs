@@ -13,6 +13,8 @@ Tool permissions apply to **standard agents** only. **Orchestrated agents** mana
 
 Tool permissions are configured in the **Governance** tab of the agent workspace, alongside [guardrails](../../concepts/guardrails.md).
 
+![The agent Governance tab showing tool permission configuration](../../.gitbook/assets/agent-governance-tab.png)
+
 ## Permission System Overview
 
 The permission system operates at three levels:

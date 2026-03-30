@@ -118,6 +118,8 @@ Before using a model, you must enable it in your AWS account:
 4. Enter your AWS credentials and region
 5. Save the connection
 
+![Amazon Bedrock connection detail showing Region and Access Key fields](../.gitbook/assets/amazon-bedrock-create-connection.png)
+
 ### Via Code
 
 {% code title="Example.cs" %}

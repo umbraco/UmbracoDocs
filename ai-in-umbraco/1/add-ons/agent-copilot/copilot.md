@@ -40,9 +40,7 @@ The Copilot is available in the **Content** and **Media** sections:
 The Copilot button only appears in sections where it's relevant (Content and Media).
 {% endhint %}
 
-{% hint style="info" %}
-**Screenshot needed:** The AI Copilot sidebar in the Umbraco backoffice.
-{% endhint %}
+![The AI Copilot sidebar showing a conversation in the Umbraco backoffice](../../.gitbook/assets/copilot-sidebar.png)
 
 ## Features
 
@@ -87,6 +85,8 @@ For sensitive operations, the Copilot requests confirmation:
 ```
 
 The approval workflow ensures editors maintain control over content changes.
+
+![The Human-in-the-Loop approval dialog with Approve and Skip buttons](../../.gitbook/assets/copilot-hitl-approval.png)
 
 ## Configuring Copilot Agents
 

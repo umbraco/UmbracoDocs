@@ -121,6 +121,8 @@ Available models depend on your Azure subscription, region, and deployed models 
 4. Enter your endpoint URL and API key
 5. Save the connection
 
+![Microsoft AI Foundry connection detail showing endpoint and authentication fields](../.gitbook/assets/microsoft-foundry-create-connection.png)
+
 ### Via Code (Entra ID)
 
 {% code title="CreateFoundryConnectionEntraID.cs" %}

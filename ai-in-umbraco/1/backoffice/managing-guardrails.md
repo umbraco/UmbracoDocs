@@ -12,9 +12,7 @@ AI Guardrails allow you to define safety, compliance, and quality rules that eva
 1. Navigate to the **AI** section in the main navigation
 2. Click **Guardrails** in the tree
 
-{% hint style="info" %}
-**Screenshot needed**: [The guardrails list in the AI section]
-{% endhint %}
+![The guardrails list showing Content Safety Policy and PII Protection](../.gitbook/assets/backoffice-guardrails-list.png)
 
 ## Creating a Guardrail
 
@@ -28,9 +26,7 @@ AI Guardrails allow you to define safety, compliance, and quality rules that eva
 
 3. Click **Create**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Guardrail form]
-{% endhint %}
+![The Create Guardrail form](../.gitbook/assets/backoffice-create-guardrail-form.png)
 
 ## Adding Rules
 
@@ -49,9 +45,9 @@ Guardrails contain one or more rules. Each rule references a registered evaluato
 
 3. Click **Add**
 
-{% hint style="info" %}
-**Screenshot needed**: [Add Rule dialog showing Evaluator, Phase, and Action fields]
-{% endhint %}
+![The Select Evaluator panel showing Contains, LLM Safety Judge, and Regex Match](../.gitbook/assets/backoffice-create-guardrail-add-guardrail.png)
+
+![The rule configuration panel with name, phase, action, and settings](../.gitbook/assets/backoffice-create-guardrail-add-guardrail-details.png)
 
 ### Evaluation Phases
 

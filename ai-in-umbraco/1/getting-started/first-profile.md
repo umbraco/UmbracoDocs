@@ -17,9 +17,7 @@ A profile combines a connection with model settings for a specific use case. Pro
 2. Click **Profiles** in the tree
 3. Click **Create Profile**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Profile form showing Name, Alias, Capability, Connection, and Model fields]
-{% endhint %}
+![The Create Profile capability selection showing Chat and Embedding](../.gitbook/assets/backoffice-create-profile-modal.png)
 
 ## Configure the Profile
 
@@ -46,6 +44,8 @@ For chat profiles, you can configure:
 {% hint style="info" %}
 Leave settings empty to use the model's default values. Only set values you want to override.
 {% endhint %}
+
+![The Create Profile form with connection and model settings](../.gitbook/assets/backoffice-create-profile-form.png)
 
 ## Set as Default
 

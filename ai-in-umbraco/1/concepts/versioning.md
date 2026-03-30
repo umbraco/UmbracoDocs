@@ -119,6 +119,8 @@ public async Task<AIVersionComparison?> CompareVersions(
 
 {% endcode %}
 
+![Version comparison showing changes between two versions](../.gitbook/assets/backoffice-version-compare.png)
+
 ## Rolling Back
 
 To roll back to a previous version:
@@ -192,6 +194,8 @@ public async Task<AIVersionCleanupResult> CleanupOldVersions()
 2. Select the entity you want to view
 3. Click the **Version History** tab
 4. View, compare, or restore previous versions
+
+![The Version History tab showing version list for a profile](../.gitbook/assets/backoffice-version-history.png)
 
 ### Via Management API
 

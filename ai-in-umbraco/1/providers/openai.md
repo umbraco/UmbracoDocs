@@ -86,6 +86,8 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 5. Optionally add Organization ID
 6. Save the connection
 
+![OpenAI connection detail showing API Key and Organization fields](../.gitbook/assets/openai-create-connection.png)
+
 ### Via Code
 
 {% code title="CreateOpenAIConnection.cs" %}

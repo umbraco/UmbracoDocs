@@ -57,6 +57,8 @@ The tree-walking approach allows you to set a context once at a parent level and
 3. Select your AI Context data type
 4. Save
 
+![The AI Context Picker property editor on a content node](../.gitbook/assets/content-node-context-picker.png)
+
 {% hint style="info" %}
 Place the context picker on parent content types (like Site or Section) to enable inheritance for all child content.
 {% endhint %}

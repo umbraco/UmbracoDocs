@@ -13,9 +13,7 @@ Umbraco.AI automatically tracks version history for connections, profiles, conte
 2. Select the entity you want to view
 3. Click the **Version History** tab (or icon)
 
-{% hint style="info" %}
-**Screenshot needed**: [The Version History tab showing version list]
-{% endhint %}
+![The Version History tab showing version list for a profile](../.gitbook/assets/backoffice-version-history.png)
 
 The version history shows:
 
@@ -34,9 +32,7 @@ To see what changed between versions:
 2. Select two versions to compare
 3. Click **Compare**
 
-{% hint style="info" %}
-**Screenshot needed**: [Version comparison view showing diff between two versions]
-{% endhint %}
+![Version comparison showing changes between two versions](../.gitbook/assets/backoffice-version-compare.png)
 
 The comparison view shows:
 

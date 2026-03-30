@@ -76,6 +76,8 @@ Gemini 1.5 Pro has a 2 million token context window, ideal for processing entire
 4. Enter your API key
 5. Save the connection
 
+![Google Gemini connection detail](../.gitbook/assets/google-create-connection.png)
+
 ### Via Code
 
 {% code title="CreateGoogleConnection.cs" %}

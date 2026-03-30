@@ -70,9 +70,7 @@ dotnet build
 
 When you run your Umbraco site, a new **AI** section will appear in the backoffice.
 
-{% hint style="info" %}
-**Screenshot needed**: [The AI section visible in the Umbraco backoffice main navigation]
-{% endhint %}
+![The AI section in the Umbraco backoffice main navigation](../.gitbook/assets/backoffice-ai-section-overview.png)
 
 {% hint style="info" %}
 **User Permissions**: The AI section is a standalone section in the backoffice (not under Settings). You may need to grant your user group access to the AI section:
@@ -82,6 +80,8 @@ When you run your Umbraco site, a new **AI** section will appear in the backoffi
 4. Save the user group
 5. Refresh your browser to see the AI section
 {% endhint %}
+
+![User Groups edit screen showing AI section access](../.gitbook/assets/user-group-ai-section-access.png)
 
 ## Next Steps
 

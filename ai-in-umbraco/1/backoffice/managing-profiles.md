@@ -14,9 +14,7 @@ Profiles combine a connection with model settings for specific use cases. Create
 3. Use filters to find profiles by capability (Chat, Embedding)
 4. Click a profile to view or edit its details
 
-{% hint style="info" %}
-**Screenshot needed**: [The profiles list view]
-{% endhint %}
+![The profiles list showing the Default Chat profile](../.gitbook/assets/backoffice-profiles-list.png)
 
 ## Creating a Profile
 
@@ -34,15 +32,13 @@ Profiles combine a connection with model settings for specific use cases. Create
 3. Configure capability-specific settings
 4. Click **Save**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Profile form with capability, connection, and model fields]
-{% endhint %}
+![The Create Profile capability selection](../.gitbook/assets/backoffice-create-profile-modal.png)
+
+![The Create Profile form with connection and model settings](../.gitbook/assets/backoffice-create-profile-form.png)
 
 ## Chat Profile Settings
 
-{% hint style="info" %}
-**Screenshot needed**: [Chat profile settings panel showing Temperature, Max Tokens, and System Prompt]
-{% endhint %}
+![Chat profile settings showing Temperature, Max Tokens, and System Prompt](../.gitbook/assets/backoffice-chat-profile-settings.png)
 
 For profiles with the **Chat** capability:
 

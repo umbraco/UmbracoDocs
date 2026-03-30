@@ -13,9 +13,7 @@ Connections store the credentials needed to communicate with AI providers. Manag
 2. The connection list shows all configured connections
 3. Click a connection to view or edit its details
 
-{% hint style="info" %}
-**Screenshot needed**: [The connections list view showing connections with their status]
-{% endhint %}
+![The connections list showing the OpenAI connection with Active status](../.gitbook/assets/backoffice-connections-list.png)
 
 ## Creating a Connection
 
@@ -31,9 +29,9 @@ Connections store the credentials needed to communicate with AI providers. Manag
 3. Configure provider-specific settings (varies by provider)
 4. Click **Save**
 
-{% hint style="info" %}
-**Screenshot needed**: [The Create Connection form with fields visible]
-{% endhint %}
+![The Select AI Provider dialog](../.gitbook/assets/backoffice-create-connection-modal.png)
+
+![The Create Connection form with provider settings](../.gitbook/assets/backoffice-create-connection-form.png)
 
 ### OpenAI Provider Settings
 

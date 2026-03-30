@@ -1,6 +1,6 @@
-# Images Needed for Umbraco AI Documentation
+# Images for Umbraco AI Documentation
 
-This document tracks all screenshots and images needed for the documentation. Images should be placed in `.gitbook/assets/` at the product root.
+All screenshots are in `.gitbook/assets/` at the product root.
 
 ## Image Conventions
 
@@ -11,111 +11,73 @@ This document tracks all screenshots and images needed for the documentation. Im
 
 ## Capture Script
 
-Run `node scripts/capture-screenshots.mjs` from the repo root to auto-capture screenshots from a running Umbraco instance. The script logs into the backoffice and navigates through the AI section. See the script for configuration (URL, credentials).
+Run `node scripts/capture-screenshots.mjs` from the repo root to auto-capture a subset of screenshots from a running Umbraco instance. Most screenshots were captured manually for better quality.
 
 ---
 
-## Getting Started
+## Inventory (40 images)
 
-| File | Filename | Description | Priority | Status |
-|------|----------|-------------|----------|--------|
-| `getting-started/installation.md` | `backoffice-ai-section-sidebar.png` | The AI section visible in the Umbraco backoffice main navigation sidebar | High | ✅ |
-| `getting-started/installation.md` | `user-group-ai-section-access.png` | User Groups edit screen with the AI section checkbox enabled under Sections | Medium | ❌ |
-| `getting-started/first-connection.md` | `backoffice-create-connection-form.png` | The Create Connection form showing Name, Alias, Provider dropdown, and settings fields | High | ✅ |
-| `getting-started/first-profile.md` | `backoffice-create-profile-form.png` | The Create Profile form showing Name, Alias, Capability, Connection, and Model fields | High | ❌ Create button blocked by shadow DOM |
-| `getting-started/first-profile.md` | `backoffice-ai-settings-page.png` | The AI Settings page with the Default Chat Profile dropdown | Medium | ✅ |
-| `getting-started/configuration.md` | `backoffice-ai-settings-page.png` | The AI Settings page showing both Default Chat Profile and Default Embedding Profile dropdowns | Medium | ✅ Same image |
+### Getting Started
 
-## Concepts
+| Filename | Used In | Description |
+|----------|---------|-------------|
+| `backoffice-ai-section-overview.png` | `getting-started/installation.md`, `backoffice/README.md` | AI section welcome page with full sidebar |
+| `user-group-ai-section-access.png` | `getting-started/installation.md` | User Groups edit with AI section checkbox |
+| `backoffice-create-connection-modal.png` | `getting-started/first-connection.md`, `backoffice/managing-connections.md` | Provider selection modal |
+| `backoffice-create-connection-form.png` | `getting-started/first-connection.md`, `backoffice/managing-connections.md` | Connection configuration form |
+| `backoffice-create-profile-modal.png` | `getting-started/first-profile.md`, `backoffice/managing-profiles.md` | Capability selection (Chat/Embedding) |
+| `backoffice-create-profile-form.png` | `getting-started/first-profile.md`, `backoffice/managing-profiles.md` | Profile configuration form |
 
-| File | Filename | Description | Priority | Status |
-|------|----------|-------------|----------|--------|
-| `concepts/connections.md` | `openai-create-connection.png` | The OpenAI connection detail page with provider-specific fields visible | Medium | ✅ |
-| `concepts/profiles.md` | `backoffice-ai-settings-page.png` | The AI Settings page showing the Default Chat Profile dropdown | Low | ✅ Same image |
-| `concepts/contexts.md` | `backoffice-manage-contexts.png` | The Brand Voice context detail showing the resource editor | Medium | ✅ |
-| `concepts/context-picker.md` | `content-node-context-picker.png` | The AI Context Picker property editor on a content node with a context selected | High | ❌ Requires Document Type + content node setup |
-| `concepts/context-picker.md` | `context-picker-inheritance-tree.png` | Content tree showing context assignments and inheritance visualization | Medium | ❌ Requires content tree setup |
-| `concepts/guardrails.md` | `backoffice-guardrail-rules.png` | The Content Safety Policy guardrail showing rule configuration | Medium | ✅ |
-| `concepts/settings.md` | `backoffice-ai-settings-page.png` | The full AI Settings page with all profile dropdowns | Low | ✅ Same image |
-| `concepts/versioning.md` | `backoffice-version-history.png` | The Version History tab showing version list and comparison view | Medium | ❌ Needs entity with multiple versions |
-| `concepts/observability.md` | `observability-trace-example.png` | Application Insights or Jaeger trace view showing gen_ai.chat span with Umbraco tags | Low | ❌ Requires external APM tool |
+### Backoffice
 
-## Providers
+| Filename | Used In | Description |
+|----------|---------|-------------|
+| `backoffice-connections-list.png` | `backoffice/managing-connections.md` | Connections list with Active status |
+| `backoffice-profiles-list.png` | `backoffice/managing-profiles.md` | Profiles list |
+| `backoffice-chat-profile-settings.png` | `backoffice/managing-profiles.md` | Profile settings (Temperature, Max Tokens, System Prompt) |
+| `backoffice-profile-governance-tab.png` | `backoffice/managing-profiles.md` | Governance tab with guardrails assigned |
+| `backoffice-contexts-list.png` | `backoffice/managing-contexts.md` | Contexts list |
+| `backoffice-create-context-form.png` | `backoffice/managing-contexts.md` | Create context form |
+| `backoffice-context-add-resource.png` | `backoffice/managing-contexts.md` | Resource type picker (Brand Voice, Text) |
+| `backoffice-context-add-resource-details.png` | `backoffice/managing-contexts.md` | Resource details form |
+| `backoffice-manage-contexts.png` | `concepts/contexts.md` | Brand Voice context detail |
+| `backoffice-guardrails-list.png` | `backoffice/managing-guardrails.md` | Guardrails list |
+| `backoffice-create-guardrail-form.png` | `backoffice/managing-guardrails.md` | Create guardrail form |
+| `backoffice-create-guardrail-add-guardrail.png` | `backoffice/managing-guardrails.md` | Evaluator selection panel |
+| `backoffice-create-guardrail-add-guardrail-details.png` | `backoffice/managing-guardrails.md` | Rule configuration panel |
+| `backoffice-guardrail-rules.png` | `backoffice/managing-guardrails.md`, `concepts/guardrails.md` | Content Safety Policy rules detail |
+| `backoffice-ai-settings-page.png` | `backoffice/managing-settings.md`, `getting-started/configuration.md` | AI Settings with profile dropdowns |
+| `backoffice-version-history.png` | `backoffice/version-history.md`, `concepts/versioning.md` | Version history tab |
+| `backoffice-version-compare.png` | `backoffice/version-history.md` | Version comparison diff |
+| `backoffice-audit-log-list.png` | `backoffice/audit-logs.md` | Audit logs list with data |
+| `backoffice-audit-log-detail.png` | `backoffice/audit-logs.md` | Audit log detail panel |
+| `backoffice-analytics-dashboard.png` | `backoffice/usage-analytics.md` | Analytics dashboard with metrics + chart |
+| `backoffice-analytics-breakdowns.png` | `backoffice/usage-analytics.md` | Breakdown tables by provider, model, profile, user |
 
-| File | Filename | Description | Priority | Status |
-|------|----------|-------------|----------|--------|
-| `providers/openai.md` | `openai-create-connection.png` | OpenAI connection detail showing API Key and Organization fields | Medium | ✅ |
-| `providers/anthropic.md` | `anthropic-create-connection.png` | Create Connection dialog with Anthropic selected, showing API Key field | Medium | ❌ Requires Anthropic provider installed |
-| `providers/google.md` | `google-create-connection.png` | Create Connection dialog with Google Gemini selected | Low | ❌ Requires Google provider installed |
-| `providers/amazon.md` | `amazon-bedrock-create-connection.png` | Create Connection dialog with Amazon Bedrock selected, showing Region and Access Key fields | Low | ❌ Requires Amazon provider installed |
-| `providers/microsoft-foundry.md` | `microsoft-foundry-create-connection.png` | Create Connection dialog with Microsoft AI Foundry selected, showing Entra ID fields | Low | ❌ Requires Microsoft Foundry provider installed |
+### Providers
 
-## Backoffice (Highest Priority)
+| Filename | Used In | Description |
+|----------|---------|-------------|
+| `openai-create-connection.png` | `providers/openai.md` | OpenAI connection detail |
+| `anthropic-create-connection.png` | `providers/anthropic.md` | Anthropic connection detail |
+| `google-create-connection.png` | `providers/google.md` | Google Gemini connection detail |
+| `amazon-bedrock-create-connection.png` | `providers/amazon.md` | Amazon Bedrock connection detail |
+| `microsoft-foundry-create-connection.png` | `providers/microsoft-foundry.md` | Microsoft AI Foundry connection detail |
 
-| File | Filename | Description | Priority | Status |
-|------|----------|-------------|----------|--------|
-| `backoffice/README.md` | `backoffice-ai-section-overview.png` | The AI section welcome page with sidebar showing all navigation nodes | High | ✅ |
-| `backoffice/managing-connections.md` | `backoffice-connections-list.png` | The connections list view showing the OpenAI connection with Active status | High | ✅ |
-| `backoffice/managing-connections.md` | `backoffice-create-connection-form.png` | The Create Connection form with provider selection and fields visible | High | ✅ |
-| `backoffice/managing-connections.md` | `backoffice-connection-active-toggle.png` | Connection detail showing the Active/Inactive toggle | Low | ❌ |
-| `backoffice/managing-profiles.md` | `backoffice-profiles-list.png` | The profiles list view showing the Default Chat profile | High | ✅ |
-| `backoffice/managing-profiles.md` | `backoffice-create-profile-form.png` | The Create Profile form with capability, connection, and model fields | High | ❌ Create button blocked by shadow DOM |
-| `backoffice/managing-profiles.md` | `backoffice-chat-profile-settings.png` | Chat profile settings showing Temperature, Max Tokens, and System Prompt fields | High | ✅ |
-| `backoffice/managing-profiles.md` | `backoffice-profile-governance-tab.png` | The Governance tab showing Content Safety Policy and PII Protection guardrails | Medium | ✅ |
-| `backoffice/managing-contexts.md` | `backoffice-contexts-list.png` | The contexts list showing the Brand Voice context | High | ✅ |
-| `backoffice/managing-contexts.md` | `backoffice-create-context-form.png` | The Create Context form with resource editor | High | ❌ Create button blocked by shadow DOM |
-| `backoffice/managing-contexts.md` | `backoffice-context-add-resource.png` | Resource editor showing Type, Name, Content, and Injection Mode fields | Medium | ❌ |
-| `backoffice/managing-guardrails.md` | `backoffice-guardrails-list.png` | The guardrails list showing Content Safety Policy and PII Protection | High | ✅ |
-| `backoffice/managing-guardrails.md` | `backoffice-create-guardrail-form.png` | The Create Guardrail form | High | ❌ Create button blocked by shadow DOM |
-| `backoffice/managing-guardrails.md` | `backoffice-guardrail-add-rule.png` | Add Rule dialog showing Evaluator, Phase, and Action dropdowns | High | ❌ |
-| `backoffice/managing-guardrails.md` | `backoffice-profile-guardrails-assigned.png` | Governance tab on Default Chat profile with guardrails assigned | Medium | ✅ Same as governance tab |
-| `backoffice/managing-settings.md` | `backoffice-ai-settings-page.png` | The AI Settings page showing Default Chat, Classifier, and Embedding profile dropdowns | High | ✅ |
-| `backoffice/version-history.md` | `backoffice-version-history-tab.png` | Version History tab showing version list for an entity | High | ❌ Needs entity with multiple versions |
-| `backoffice/version-history.md` | `backoffice-version-compare.png` | Version comparison view showing diff between two versions | High | ❌ Needs multiple versions |
-| `backoffice/version-history.md` | `backoffice-version-rollback.png` | Rollback confirmation dialog | Medium | ❌ |
-| `backoffice/audit-logs.md` | `backoffice-audit-logs-list.png` | Audit logs list view (empty — no AI operations run yet) | High | ✅ Empty state |
-| `backoffice/audit-logs.md` | `backoffice-audit-logs-filters.png` | Audit logs with filter panel expanded | Medium | ❌ |
-| `backoffice/audit-logs.md` | `backoffice-audit-log-detail.png` | Log detail view showing Summary, AI Configuration, Token Usage sections | High | ❌ Requires AI operation data |
-| `backoffice/usage-analytics.md` | `backoffice-analytics-dashboard.png` | Analytics dashboard showing Usage metrics and Usage Over Time chart (empty state) | High | ✅ Empty state |
-| `backoffice/usage-analytics.md` | `backoffice-analytics-time-series.png` | Time series chart showing usage over time | Medium | ❌ Requires usage data |
-| `backoffice/usage-analytics.md` | `backoffice-analytics-breakdowns.png` | Breakdown charts (by provider, model, profile, user) | Medium | ❌ Requires usage data |
+### Concepts
 
-## Add-ons
+| Filename | Used In | Description |
+|----------|---------|-------------|
+| `content-node-context-picker.png` | `concepts/context-picker.md` | Context picker property editor on content node |
+| `observability-trace-example.png` | `concepts/observability.md` | Aspire trace with umbraco.ai.* tags |
 
-| File | Filename | Description | Priority | Status |
-|------|----------|-------------|----------|--------|
-| `add-ons/prompt/property-actions.md` | `prompt-property-action-dropdown.png` | The AI action dropdown menu on a property editor in the content editor | Medium | ❌ Requires content node with property |
-| `add-ons/agent-copilot/copilot.md` | `copilot-sidebar.png` | The AI Copilot sidebar in the Umbraco backoffice showing a conversation | High | ❌ Requires opening copilot + conversation |
-| `add-ons/agent-copilot/copilot.md` | `copilot-hitl-approval.png` | The Human-in-the-Loop approval dialog in the Copilot | Medium | ❌ Requires agent interaction |
-| `add-ons/agent/permissions.md` | `agent-governance-tab.png` | The Governance tab showing tool permission configuration | Medium | ❌ |
-| `add-ons/agent/scopes.md` | `agent-scope-assignment.png` | The backoffice scope assignment UI for agents | Low | ❌ |
+### Add-ons
 
-## Summary
-
-| Section | ✅ Captured | ❌ To Do | Total |
-|---------|------------|---------|-------|
-| Getting Started | 4 | 2 | 6 |
-| Concepts | 5 | 4 | 9 |
-| Providers | 1 | 4 | 5 |
-| Backoffice | 13 | 12 | 25 |
-| Add-ons | 0 | 5 | 5 |
-| **Total** | **23** | **27** | **50** |
-
-## Remaining Blockers
-
-### Shadow DOM pointer interception
-The Umbraco backoffice uses Lit web components with `umb-router-slot` and `umb-split-panel` elements that intercept pointer events, preventing Playwright from clicking "Create" buttons in collection views. Possible fixes:
-- Use `{ force: true }` on clicks to bypass actionability checks
-- Navigate directly to the create workspace URL (e.g., `/umbraco/section/ai/workspace/connection/create`)
-- Use `page.evaluate()` to dispatch click events directly on the shadow DOM elements
-
-### Content/data dependencies
-Some screenshots require specific content or data to exist:
-- **Context Picker**: Needs a Document Type with the `Uai.ContextPicker` property editor and a content node
-- **Version History**: Needs an entity that has been saved multiple times
-- **Audit Logs / Analytics with data**: Needs actual AI operations to have been executed
-- **Copilot**: Needs to open the copilot sidebar and have a conversation
-- **Provider-specific connections**: Needs each provider package installed
-
-### External tools
-- **Observability trace**: Needs Application Insights or Jaeger configured and an AI operation traced
+| Filename | Used In | Description |
+|----------|---------|-------------|
+| `prompt-property-action-dropdown.png` | `add-ons/prompt/property-actions.md` | AI action dropdown on property editor |
+| `prompt-availability-scopes.png` | `add-ons/prompt/scoping.md` | Prompt scope configuration |
+| `copilot-sidebar.png` | `add-ons/agent-copilot/copilot.md` | Copilot sidebar conversation |
+| `copilot-hitl-approval.png` | `add-ons/agent-copilot/copilot.md` | HITL approval dialog |
+| `agent-governance-tab.png` | `add-ons/agent/permissions.md` | Agent governance/permissions config |
+| `agent-scope-assignment.png` | `add-ons/agent/scopes.md` | Agent scope assignment UI |

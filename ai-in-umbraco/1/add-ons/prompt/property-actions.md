@@ -30,9 +30,7 @@ When you create an active prompt:
 └─────────────────────────────────────────────────────┘
 ```
 
-{% hint style="info" %}
-**Screenshot needed:** The AI action dropdown on a property editor.
-{% endhint %}
+![The AI action dropdown on a property editor](../../.gitbook/assets/prompt-property-action-dropdown.png)
 
 ## Compatible Property Editors
 
