@@ -6,6 +6,10 @@ description: >-
 
 # Analytics
 
+{% hint style="info" %}
+This feature is available from Umbraco Forms 17.3.
+{% endhint %}
+
 Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time, see which hours of the day are most active, monitor workflow success rates, and identify which pages are driving form submissions.
 
 ## Accessing Analytics
@@ -15,6 +19,8 @@ There are two ways to access form analytics in the backoffice.
 ### From the Forms Section Menu
 
 In the Forms section, click the **Analytics** menu item in the sidebar. This opens the analytics overview where you can browse analytics across all your forms.
+
+![Analytics overview showing a submissions chart and forms table](images/analytics-overview.png)
 
 ### From a Specific Form
 
@@ -36,7 +42,9 @@ The analytics view provides controls to adjust the data displayed.
 
 ### Date Range
 
-Use the date range picker to select the time period for the analytics data. You can also enable a comparison date range to compare the current period against a previous one.
+Use the date range picker to select the time period for the analytics data. You can choose from preset ranges such as "Last 7 days" or "Last 30 days", or set a custom date range. You can also enable a comparison date range to compare the current period against a previous one.
+
+![Date range picker with preset options and comparison toggle](images/analytics-date-picker.png)
 
 ### Group By
 
@@ -46,13 +54,23 @@ Use the group by control to change how the data is aggregated in the time-series
 * **Week** — groups data by week.
 * **Month** — groups data by month.
 
+## Overview Table
+
+The overview table lists all forms you have access to with summary statistics for the selected date range, including entry counts, workflow counts, workflow errors, and the number of source pages.
+
+![Analytics overview table showing all forms with entry counts and statistics](images/analytics-overview-table.png)
+
+Click on a form name to navigate to its detailed analytics view.
+
 ## Analytics Widgets
 
-The analytics view displays four widgets, each providing a different perspective on form performance.
+When viewing analytics for a specific form, the view displays four widgets providing different perspectives on form performance.
 
 ### Submissions
 
 A time-series chart showing the number of form submissions over the selected date range. This chart also displays the number of errored workflows, allowing you to see at a glance whether submissions are being processed successfully.
+
+![Form analytics showing the submissions chart with entries and workflow errors](images/analytics-form-submissions.png)
 
 ### Submissions by Hour
 
@@ -62,9 +80,15 @@ A chart showing the distribution of form submissions across the 24 hours of the 
 
 A table listing each workflow attached to the form, along with the number of times it was triggered, how many times it succeeded, and how many times it failed. Use this to monitor the health of your form processing workflows.
 
+![Hourly distribution chart and workflow statistics table](images/analytics-form-hourly-workflows.png)
+
 ### Origins
 
 A time-series chart showing form submissions broken down by the page where the form was submitted. This is useful when the same form is placed on multiple pages across your site, as it shows which pages are driving the most submissions.
+
+Below the chart, a table lists each source page with its name, URL, and entry count.
+
+![Origins chart and table showing submissions by source page](images/analytics-form-origins-table.png)
 
 ## Permissions
 
