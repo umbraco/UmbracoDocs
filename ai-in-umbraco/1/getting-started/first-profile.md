@@ -52,7 +52,7 @@ Leave settings empty to use the model's default values. Only set values you want
 To use this profile when no profile is specified in code:
 
 1. Navigate to the **AI** section > **Settings**
-2. Select "Content Assistant" from the **Default Chat Profile** dropdown
+2. Select "Content Assistant" in the **Default Chat Profile** picker
 3. Click **Save**
 
 {% hint style="info" %}
