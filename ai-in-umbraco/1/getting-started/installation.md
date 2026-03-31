@@ -85,6 +85,6 @@ When you run your Umbraco site, a new **AI** section will appear in the backoffi
 
 ## Next Steps
 
-{% content-ref url="configuration.md" %}
-[Configuration](configuration.md)
+{% content-ref url="first-connection.md" %}
+[Creating your First Connection](first-connection.md)
 {% endcontent-ref %}
