@@ -186,9 +186,13 @@ Runs a guardrail evaluator against the test output. The grader passes when the e
 ```json
 {
     "graderTypeId": "guardrail",
-    "name": "Detects PII",
+    "name": "Detects email addresses",
     "config": {
-        "evaluatorId": "pii"
+        "evaluatorId": "regex",
+        "evaluatorConfig": {
+            "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+            "ignoreCase": true
+        }
     }
 }
 ```
@@ -204,10 +208,14 @@ The guardrail grader passes when the evaluator **flags** the content. To assert 
 ```json
 {
     "graderTypeId": "guardrail",
-    "name": "No toxicity",
+    "name": "No competitor mentions",
     "negate": true,
     "config": {
-        "evaluatorId": "toxicity"
+        "evaluatorId": "contains",
+        "evaluatorConfig": {
+            "searchPattern": "CompetitorBrand",
+            "ignoreCase": true
+        }
     }
 }
 ```

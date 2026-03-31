@@ -37,11 +37,14 @@ GET /umbraco/ai/management/api/v1/guardrails
             "rules": [
                 {
                     "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-                    "evaluatorId": "pii",
-                    "name": "Block PII in inputs",
-                    "phase": "PreGenerate",
+                    "evaluatorId": "contains",
+                    "name": "Block competitor mentions",
+                    "phase": "PostGenerate",
                     "action": "Block",
-                    "config": null,
+                    "config": {
+                        "searchPattern": "CompetitorBrand",
+                        "ignoreCase": true
+                    },
                     "sortOrder": 0
                 }
             ],

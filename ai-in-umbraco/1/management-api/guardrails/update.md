@@ -30,18 +30,26 @@ PUT /umbraco/ai/management/api/v1/guardrails/{id}
     "rules": [
         {
             "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-            "evaluatorId": "pii",
-            "name": "Block PII in inputs",
-            "phase": "PreGenerate",
+            "evaluatorId": "contains",
+            "name": "Block competitor mentions",
+            "phase": "PostGenerate",
             "action": "Block",
+            "config": {
+                "searchPattern": "CompetitorBrand",
+                "ignoreCase": true
+            },
             "sortOrder": 0
         },
         {
             "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
-            "evaluatorId": "toxicity",
-            "name": "Block toxic responses",
+            "evaluatorId": "regex",
+            "name": "Block SSNs in responses",
             "phase": "PostGenerate",
             "action": "Block",
+            "config": {
+                "pattern": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+                "ignoreCase": false
+            },
             "sortOrder": 1
         },
         {
@@ -50,8 +58,8 @@ PUT /umbraco/ai/management/api/v1/guardrails/{id}
             "phase": "PostGenerate",
             "action": "Warn",
             "config": {
-                "criteria": "Evaluate whether the response follows brand guidelines.",
-                "threshold": 0.7
+                "evaluationCriteria": "Evaluate whether the response follows brand guidelines.",
+                "safetyThreshold": 0.7
             },
             "sortOrder": 2
         }
@@ -80,20 +88,26 @@ Include existing rule IDs to update them. Rules without IDs are created as new. 
     "rules": [
         {
             "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-            "evaluatorId": "pii",
-            "name": "Block PII in inputs",
-            "phase": "PreGenerate",
+            "evaluatorId": "contains",
+            "name": "Block competitor mentions",
+            "phase": "PostGenerate",
             "action": "Block",
-            "config": null,
+            "config": {
+                "searchPattern": "CompetitorBrand",
+                "ignoreCase": true
+            },
             "sortOrder": 0
         },
         {
             "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
-            "evaluatorId": "toxicity",
-            "name": "Block toxic responses",
+            "evaluatorId": "regex",
+            "name": "Block SSNs in responses",
             "phase": "PostGenerate",
             "action": "Block",
-            "config": null,
+            "config": {
+                "pattern": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+                "ignoreCase": false
+            },
             "sortOrder": 1
         },
         {
@@ -103,8 +117,8 @@ Include existing rule IDs to update them. Rules without IDs are created as new. 
             "phase": "PostGenerate",
             "action": "Warn",
             "config": {
-                "criteria": "Evaluate whether the response follows brand guidelines.",
-                "threshold": 0.7
+                "evaluationCriteria": "Evaluate whether the response follows brand guidelines.",
+                "safetyThreshold": 0.7
             },
             "sortOrder": 2
         }
@@ -160,10 +174,11 @@ curl -X PUT "https://your-site.com/umbraco/ai/management/api/v1/guardrails/3fa85
     "rules": [
       {
         "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-        "evaluatorId": "pii",
-        "name": "Block PII in inputs",
-        "phase": "PreGenerate",
+        "evaluatorId": "contains",
+        "name": "Block competitor mentions",
+        "phase": "PostGenerate",
         "action": "Block",
+        "config": { "searchPattern": "CompetitorBrand", "ignoreCase": true },
         "sortOrder": 0
       }
     ]

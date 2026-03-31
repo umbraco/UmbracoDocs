@@ -27,35 +27,77 @@ GET /umbraco/ai/management/api/v1/guardrails/evaluators
 {
     "items": [
         {
-            "id": "pii",
-            "name": "PII Detection",
-            "description": "Detects personal identifiable information using regex patterns for emails, phone numbers, SSNs, and credit card numbers.",
+            "id": "contains",
+            "name": "Contains",
+            "description": "Flags content containing a specific substring.",
             "type": "CodeBased",
-            "configSchema": null
+            "configSchema": {
+                "fields": [
+                    {
+                        "alias": "searchPattern",
+                        "name": "Search Pattern",
+                        "description": "The substring to search for in the content.",
+                        "type": "string"
+                    },
+                    {
+                        "alias": "ignoreCase",
+                        "name": "Ignore Case",
+                        "description": "Whether to perform case-insensitive matching.",
+                        "type": "boolean"
+                    }
+                ]
+            }
         },
         {
-            "id": "toxicity",
-            "name": "Toxicity Detection",
-            "description": "Detects toxic or harmful language using keyword and pattern matching with configurable word lists.",
+            "id": "regex",
+            "name": "Regex Match",
+            "description": "Flags content matching a regular expression pattern.",
             "type": "CodeBased",
-            "configSchema": null
+            "configSchema": {
+                "fields": [
+                    {
+                        "alias": "pattern",
+                        "name": "Pattern",
+                        "description": "The regular expression pattern to match.",
+                        "type": "string"
+                    },
+                    {
+                        "alias": "ignoreCase",
+                        "name": "Ignore Case",
+                        "description": "Whether to perform case-insensitive matching.",
+                        "type": "boolean"
+                    },
+                    {
+                        "alias": "multiline",
+                        "name": "Multiline",
+                        "description": "Whether to enable multiline mode.",
+                        "type": "boolean"
+                    }
+                ]
+            }
         },
         {
             "id": "llm-judge",
-            "name": "LLM Judge",
-            "description": "Uses an AI model to evaluate content against configurable criteria with a confidence threshold.",
+            "name": "LLM Safety Judge",
+            "description": "Uses an AI model to evaluate content for safety and compliance against configurable criteria.",
             "type": "ModelBased",
             "configSchema": {
                 "fields": [
                     {
-                        "alias": "criteria",
+                        "alias": "profileId",
+                        "name": "Profile",
+                        "description": "The AI profile to use for evaluation.",
+                        "type": "string"
+                    },
+                    {
+                        "alias": "evaluationCriteria",
                         "name": "Evaluation Criteria",
                         "description": "The criteria the LLM should use to evaluate content.",
                         "type": "string"
                     },
                     {
-                        "alias": "threshold",
-                        "name": "Threshold",
+                        "alias": "safetyThreshold",
+                        "name": "Safety Threshold",
                         "description": "Confidence threshold (0-1) above which content is flagged.",
                         "type": "number"
                     }

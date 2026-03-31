@@ -24,7 +24,7 @@ Each guardrail contains one or more rules. A rule references a registered evalua
 | Property      | Description                                          |
 | ------------- | ---------------------------------------------------- |
 | `Id`          | Unique identifier (GUID)                             |
-| `EvaluatorId` | The registered evaluator to use (e.g., "pii")        |
+| `EvaluatorId` | The registered evaluator to use (e.g., "contains")    |
 | `Name`        | Display name for the rule                            |
 | `Phase`       | When the rule runs: `PreGenerate` or `PostGenerate`  |
 | `Action`      | What happens when flagged: `Block`, `Warn`, or `Redact` |
@@ -54,8 +54,8 @@ Rules specify what happens when content is flagged:
 
 Guardrails provide these benefits:
 
-- **Safety** - Prevent toxic, harmful, or inappropriate content from reaching users
-- **Compliance** - Enforce data protection by detecting PII in inputs and outputs
+- **Safety** - Prevent harmful or inappropriate content from reaching users
+- **Compliance** - Enforce data protection by detecting sensitive patterns in inputs and outputs
 - **Quality** - Use LLM-as-judge evaluation to ensure responses meet brand standards
 - **Flexibility** - Combine multiple evaluators with different phases and actions
 - **Reusability** - Assign the same guardrail to multiple profiles, prompts, and agents
@@ -64,20 +64,20 @@ Guardrails provide these benefits:
 
 | Guardrail            | Use Case                | Rules                                     |
 | -------------------- | ----------------------- | ----------------------------------------- |
-| `content-safety`     | General safety          | Toxicity (Block), PII (Block)             |
-| `brand-compliance`   | Brand voice enforcement | LLM judge with brand criteria (Warn)      |
-| `data-protection`    | General Data Protection Regulation (GDPR) compliance         | PII pre-generate (Redact), PII post (Redact)|
-| `quality-assurance`  | Output quality          | LLM judge for accuracy (Warn)             |
+| `content-safety`     | General safety          | Contains for competitor brands (Block), Regex for SSNs (Block) |
+| `brand-compliance`   | Brand voice enforcement | LLM Safety Judge with brand criteria (Warn)      |
+| `data-protection`    | Data protection         | Regex for emails pre-generate (Redact), Regex for phone numbers post (Redact) |
+| `quality-assurance`  | Output quality          | LLM Safety Judge for accuracy (Warn)             |
 
 ## Built-in Evaluators
 
 Umbraco.AI ships with three evaluators:
 
-| Evaluator    | ID          | Type       | Redact | Description                                                       |
-| ------------ | ----------- | ---------- | ------ | ----------------------------------------------------------------- |
-| PII          | `pii`       | Code-based | Yes    | Regex patterns for emails, phone numbers, Social Security Numbers (SSNs), credit cards      |
-| Toxicity     | `toxicity`  | Code-based | Yes    | Keyword and pattern matching with configurable word lists          |
-| LLM Judge    | `llm-judge` | Model-based| No     | Uses an AI model to evaluate content against configurable criteria |
+| Evaluator        | ID          | Type       | Redact | Description                                                       |
+| ---------------- | ----------- | ---------- | ------ | ----------------------------------------------------------------- |
+| Contains         | `contains`  | Code-based | Yes    | Flags content containing a specific substring. Config: `SearchPattern`, `IgnoreCase` |
+| Regex Match      | `regex`     | Code-based | Yes    | Flags content matching a regular expression pattern. Config: `Pattern`, `IgnoreCase`, `Multiline` |
+| LLM Safety Judge | `llm-judge` | Model-based| No     | Uses an AI model to evaluate content against configurable criteria. Config: `ProfileId`, `EvaluationCriteria`, `SafetyThreshold` |
 
 ### Evaluator Types
 
@@ -126,18 +126,20 @@ public async Task<AIGuardrail> CreateGuardrail()
         [
             new AIGuardrailRule
             {
-                EvaluatorId = "pii",
-                Name = "Block PII in inputs",
-                Phase = AIGuardrailPhase.PreGenerate,
+                EvaluatorId = "contains",
+                Name = "Block competitor brand mentions",
+                Phase = AIGuardrailPhase.PostGenerate,
                 Action = AIGuardrailAction.Block,
+                Config = JsonSerializer.SerializeToElement(new { searchPattern = "CompetitorBrand", ignoreCase = true }),
                 SortOrder = 0
             },
             new AIGuardrailRule
             {
-                EvaluatorId = "toxicity",
-                Name = "Block toxic responses",
+                EvaluatorId = "regex",
+                Name = "Block SSNs in responses",
                 Phase = AIGuardrailPhase.PostGenerate,
                 Action = AIGuardrailAction.Block,
+                Config = JsonSerializer.SerializeToElement(new { pattern = @"\b\d{3}-\d{2}-\d{4}\b", ignoreCase = false }),
                 SortOrder = 1
             }
         ]
@@ -158,24 +160,26 @@ public async Task<AIGuardrail> CreateRedactionGuardrail()
 {
     var guardrail = new AIGuardrail
     {
-        Alias = "pii-redaction",
-        Name = "PII Redaction Policy",
+        Alias = "email-redaction",
+        Name = "Email Redaction Policy",
         Rules =
         [
             new AIGuardrailRule
             {
-                EvaluatorId = "pii",
-                Name = "Redact PII in inputs",
+                EvaluatorId = "regex",
+                Name = "Redact emails in inputs",
                 Phase = AIGuardrailPhase.PreGenerate,
                 Action = AIGuardrailAction.Redact,
+                Config = JsonSerializer.SerializeToElement(new { pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", ignoreCase = true }),
                 SortOrder = 0
             },
             new AIGuardrailRule
             {
-                EvaluatorId = "pii",
-                Name = "Redact PII in responses",
+                EvaluatorId = "regex",
+                Name = "Redact emails in responses",
                 Phase = AIGuardrailPhase.PostGenerate,
                 Action = AIGuardrailAction.Redact,
+                Config = JsonSerializer.SerializeToElement(new { pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", ignoreCase = true }),
                 SortOrder = 1
             }
         ]
@@ -188,7 +192,7 @@ public async Task<AIGuardrail> CreateRedactionGuardrail()
 {% endcode %}
 
 {% hint style="info" %}
-The Redact action is only available for evaluators that support it (code-based evaluators like PII and Toxicity). Model-based evaluators such as LLM Judge cannot identify specific text positions, so Redact rules using them degrade to Warn at runtime.
+The Redact action is only available for evaluators that support it (code-based evaluators like Contains and Regex Match). Model-based evaluators such as LLM Safety Judge cannot identify specific text positions, so Redact rules using them degrade to Warn at runtime.
 {% endhint %}
 
 ### Assigning Guardrails to a Profile

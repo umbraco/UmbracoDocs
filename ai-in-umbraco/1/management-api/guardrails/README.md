@@ -37,20 +37,26 @@ Guardrails define rules that evaluate AI inputs and responses for safety, compli
     "rules": [
         {
             "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-            "evaluatorId": "pii",
-            "name": "Block PII in inputs",
-            "phase": "PreGenerate",
+            "evaluatorId": "contains",
+            "name": "Block competitor mentions",
+            "phase": "PostGenerate",
             "action": "Block",
-            "config": null,
+            "config": {
+                "searchPattern": "CompetitorBrand",
+                "ignoreCase": true
+            },
             "sortOrder": 0
         },
         {
             "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
-            "evaluatorId": "toxicity",
-            "name": "Block toxic responses",
+            "evaluatorId": "regex",
+            "name": "Block SSNs in responses",
             "phase": "PostGenerate",
             "action": "Block",
-            "config": null,
+            "config": {
+                "pattern": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+                "ignoreCase": false
+            },
             "sortOrder": 1
         }
     ],
@@ -66,7 +72,7 @@ Guardrails define rules that evaluate AI inputs and responses for safety, compli
 | Property      | Type   | Description                                          |
 | ------------- | ------ | ---------------------------------------------------- |
 | `id`          | guid   | Unique identifier                                    |
-| `evaluatorId` | string | Registered evaluator ID (e.g., "pii", "toxicity")   |
+| `evaluatorId` | string | Registered evaluator ID (e.g., "contains", "regex")  |
 | `name`        | string | Display name                                         |
 | `phase`       | string | `PreGenerate` or `PostGenerate`                      |
 | `action`      | string | `Block` or `Warn`                                    |

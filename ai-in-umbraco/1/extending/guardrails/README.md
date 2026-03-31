@@ -12,7 +12,7 @@ Guardrail evaluators are the components that perform the actual content evaluati
 Each evaluator:
 
 - Has a unique ID and display name
-- Defines what it checks (PII, brand compliance, factual accuracy, etc.)
+- Defines what it checks (prohibited content, sensitive patterns, brand compliance, etc.)
 - Can be code-based (deterministic, fast) or model-based (LLM-powered, nuanced)
 - Optionally accepts configuration with a dynamic UI schema
 - Is auto-discovered at startup

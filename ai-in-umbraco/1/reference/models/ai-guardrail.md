@@ -65,18 +65,20 @@ var guardrail = new AIGuardrail
     [
         new AIGuardrailRule
         {
-            EvaluatorId = "pii",
-            Name = "Block PII in inputs",
-            Phase = AIGuardrailPhase.PreGenerate,
+            EvaluatorId = "contains",
+            Name = "Block competitor brand mentions",
+            Phase = AIGuardrailPhase.PostGenerate,
             Action = AIGuardrailAction.Block,
+            Config = JsonSerializer.SerializeToElement(new { searchPattern = "CompetitorBrand", ignoreCase = true }),
             SortOrder = 0
         },
         new AIGuardrailRule
         {
-            EvaluatorId = "toxicity",
-            Name = "Block toxic responses",
-            Phase = AIGuardrailPhase.PostGenerate,
-            Action = AIGuardrailAction.Block,
+            EvaluatorId = "regex",
+            Name = "Redact email addresses",
+            Phase = AIGuardrailPhase.PreGenerate,
+            Action = AIGuardrailAction.Redact,
+            Config = JsonSerializer.SerializeToElement(new { pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", ignoreCase = true }),
             SortOrder = 1
         },
         new AIGuardrailRule
@@ -85,7 +87,7 @@ var guardrail = new AIGuardrail
             Name = "Quality check",
             Phase = AIGuardrailPhase.PostGenerate,
             Action = AIGuardrailAction.Warn,
-            Config = JsonSerializer.SerializeToElement(new { criteria = "Check brand compliance", threshold = 0.7 }),
+            Config = JsonSerializer.SerializeToElement(new { evaluationCriteria = "Check brand compliance", safetyThreshold = 0.7 }),
             SortOrder = 2
         }
     ]
