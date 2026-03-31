@@ -5,7 +5,7 @@ description: >-
 
 # Anthropic
 
-Anthropic provides access to Claude models, known for their large context windows and strong reasoning capabilities.
+Anthropic provides access to Claude models, supporting the Chat capability.
 
 ## Installation
 
@@ -27,13 +27,6 @@ dotnet add package Umbraco.AI.Anthropic
 
 {% endcode %}
 
-## Capabilities
-
-| Capability | Supported | Description                       |
-| ---------- | --------- | --------------------------------- |
-| Chat       | Yes       | Claude 3.5, Claude 3 model family |
-| Embedding  | No        | Not currently supported           |
-
 ## Connection Settings
 
 | Setting  | Required | Description                                                                        |
@@ -52,175 +45,9 @@ dotnet add package Umbraco.AI.Anthropic
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
 {% endhint %}
 
-## Available Models
-
-Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
-
-{% hint style="info" %}
-Check your provider's documentation for the latest model details, pricing, and capabilities.
-{% endhint %}
-
-## Creating a Connection
-
-### Via Backoffice
-
-Create a connection through the backoffice by selecting **Anthropic** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
-
-Once created, configure the provider-specific settings:
-
 ![Anthropic connection detail showing API Key field](../.gitbook/assets/anthropic-create-connection.png)
-
-### Via Code
-
-{% code title="CreateAnthropicConnection.cs" %}
-
-```csharp
-var connection = new AIConnection
-{
-    Alias = "anthropic-production",
-    Name = "Anthropic Production",
-    ProviderId = "anthropic",
-    Settings = new AnthropicProviderSettings
-    {
-        ApiKey = "sk-ant-..."
-    }
-};
-
-await _connectionService.SaveConnectionAsync(connection);
-```
-
-{% endcode %}
-
-## Creating a Profile
-
-{% code title="AnthropicChatProfile.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "claude-assistant",
-    Name = "Claude Assistant",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("anthropic", "claude-sonnet-4-20250514"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.7f,
-        MaxTokens = 4096,
-        SystemPromptTemplate = "You are a helpful assistant."
-    }
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-## Claude-Specific Features
-
-### Long Context Processing
-
-Claude handles processing long documents. The 200K context window allows:
-
-- Analyzing complete documents (books, reports, legal documents)
-- Maintaining extensive conversation history
-- Processing large codebases for code review
-
-{% code title="LongContextChat.cs" %}
-
-```csharp
-// Claude can handle very long inputs
-var messages = new List<ChatMessage>
-{
-    new ChatMessage(ChatRole.User, fullDocumentContent) // Up to ~150K tokens
-};
-
-var response = await _chatService.GetChatResponseAsync(profileId, messages);
-```
-
-{% endcode %}
-
-### System Prompts
-
-Claude responds well to detailed system prompts:
-
-{% code title="SystemPromptProfile.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    // ...
-    Settings = new AIChatProfileSettings
-    {
-        SystemPromptTemplate = @"You are a technical documentation writer.
-
-Guidelines:
-- Use clear, concise language
-- Include code examples where appropriate
-- Structure content with headings
-- Avoid jargon unless necessary"
-    }
-};
-```
-
-{% endcode %}
-
-## Pricing Considerations
-
-Anthropic uses pay-per-token pricing:
-
-| Model             | Input (1M tokens) | Output (1M tokens) |
-| ----------------- | ----------------- | ------------------ |
-| Claude Sonnet 4   | ~$3.00            | ~$15.00            |
-| Claude Opus 4     | ~$15.00           | ~$75.00            |
-| Claude 3.5 Sonnet | ~$3.00            | ~$15.00            |
-| Claude 3 Haiku    | ~$0.25            | ~$1.25             |
-
-{% hint style="info" %}
-Prices are approximate and subject to change. Check [Anthropic pricing](https://www.anthropic.com/pricing) for current rates.
-{% endhint %}
-
-## Troubleshooting
-
-### Invalid API Key
-
-{% code title="Error" %}
-```
-Error: Invalid API key
-```
-{% endcode %}
-
-Verify your API key starts with `sk-ant-` and hasn't been revoked.
-
-### Rate Limits
-
-{% code title="Error" %}
-```
-Error: Rate limit exceeded
-```
-{% endcode %}
-
-Anthropic has rate limits based on your account tier. Consider:
-
-- Implementing retry logic with exponential backoff
-- Requesting a rate limit increase
-- Using Claude 3 Haiku for high-volume tasks
-
-### Context Length Exceeded
-
-{% code title="Error" %}
-```
-Error: Request too large
-```
-{% endcode %}
-
-Even with 200K context, very large requests can exceed limits. Consider:
-
-- Summarizing or chunking long documents
-- Using RAG to retrieve only relevant portions
 
 ## Related
 
-- [Providers Overview](README.md) - Compare all providers
-- [Connections](../concepts/connections.md) - Managing credentials
-- [Profiles](../concepts/profiles.md) - Configuring models
+- [Providers Overview](README.md)
+- [Managing Connections](../backoffice/managing-connections.md)

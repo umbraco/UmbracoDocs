@@ -5,7 +5,7 @@ description: >-
 
 # Google Gemini
 
-Google Gemini provides access to Google's latest AI models with native multimodal capabilities.
+Google Gemini provides access to Google's Gemini models, supporting the Chat capability.
 
 ## Installation
 
@@ -27,13 +27,6 @@ dotnet add package Umbraco.AI.Google
 
 {% endcode %}
 
-## Capabilities
-
-| Capability | Supported | Description                           |
-| ---------- | --------- | ------------------------------------- |
-| Chat       | Yes       | Gemini 2.0, Gemini 1.5 model families |
-| Embedding  | No        | Not currently supported               |
-
 ## Connection Settings
 
 | Setting | Required | Description                                                          |
@@ -52,158 +45,9 @@ dotnet add package Umbraco.AI.Google
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
 {% endhint %}
 
-## Available Models
-
-Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
-
-{% hint style="info" %}
-Check your provider's documentation for the latest model details, pricing, and capabilities.
-{% endhint %}
-
-## Creating a Connection
-
-### Via Backoffice
-
-Create a connection through the backoffice by selecting **Google** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
-
-Once created, configure the provider-specific settings:
-
 ![Google Gemini connection detail](../.gitbook/assets/google-create-connection.png)
-
-### Via Code
-
-{% code title="CreateGoogleConnection.cs" %}
-
-```csharp
-var connection = new AIConnection
-{
-    Alias = "google-production",
-    Name = "Google Production",
-    ProviderId = "google",
-    Settings = new GoogleProviderSettings
-    {
-        ApiKey = "AIza..."
-    }
-};
-
-await _connectionService.SaveConnectionAsync(connection);
-```
-
-{% endcode %}
-
-## Creating a Profile
-
-{% code title="GoogleChatProfile.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "gemini-assistant",
-    Name = "Gemini Assistant",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("google", "gemini-2.0-flash"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.7f,
-        MaxTokens = 8192,
-        SystemPromptTemplate = "You are a helpful assistant."
-    }
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-## Gemini-Specific Features
-
-### Extended Context Window
-
-Gemini 1.5 Pro's 2M token context is exceptional for:
-
-- Processing entire codebases
-- Analyzing book-length documents
-- Long-running conversations with full history
-
-### Cost Efficiency
-
-Gemini Flash models offer strong performance at lower cost:
-
-{% code title="CostEfficientProfile.cs" %}
-
-```csharp
-// Use Flash for high-volume, cost-sensitive operations
-var costEfficientProfile = new AIProfile
-{
-    Alias = "gemini-budget",
-    Name = "Gemini Budget",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("google", "gemini-1.5-flash-8b"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.5f,
-        MaxTokens = 1024
-    }
-};
-```
-
-{% endcode %}
-
-## Pricing Considerations
-
-Google Gemini uses pay-per-token pricing:
-
-| Model               | Input (1M tokens) | Output (1M tokens) |
-| ------------------- | ----------------- | ------------------ |
-| Gemini 2.0 Flash    | ~$0.10            | ~$0.40             |
-| Gemini 1.5 Pro      | ~$1.25            | ~$5.00             |
-| Gemini 1.5 Flash    | ~$0.075           | ~$0.30             |
-| Gemini 1.5 Flash-8B | ~$0.0375          | ~$0.15             |
-
-{% hint style="info" %}
-Prices are approximate and subject to change. Check [Google AI pricing](https://ai.google.dev/pricing) for current rates.
-{% endhint %}
-
-## Troubleshooting
-
-### Invalid API Key
-
-{% code title="Error" %}
-```
-Error: API key not valid
-```
-{% endcode %}
-
-Verify your API key is correct and hasn't been revoked or restricted.
-
-### Model Not Available
-
-{% code title="Error" %}
-```
-Error: Model not found
-```
-{% endcode %}
-
-Some models may have regional restrictions or require specific account access.
-
-### Rate Limits
-
-{% code title="Error" %}
-```
-Error: Resource exhausted
-```
-{% endcode %}
-
-Google has rate limits based on your account. Consider:
-
-- Implementing retry logic with exponential backoff
-- Requesting quota increases through Google Cloud Console
-- Using Flash models for high-volume operations
 
 ## Related
 
-- [Providers Overview](README.md) - Compare all providers
-- [Connections](../concepts/connections.md) - Managing credentials
-- [Profiles](../concepts/profiles.md) - Configuring models
+- [Providers Overview](README.md)
+- [Managing Connections](../backoffice/managing-connections.md)

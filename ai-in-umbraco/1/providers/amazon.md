@@ -5,7 +5,7 @@ description: >-
 
 # Amazon Bedrock
 
-Amazon Bedrock provides a unified API for accessing multiple AI models from Amazon, Anthropic, Meta, Mistral, and others through AWS infrastructure.
+Amazon Bedrock provides access to multiple AI models from Amazon, Anthropic, Meta, Mistral, and others through AWS infrastructure, supporting both Chat and Embedding capabilities.
 
 ## Installation
 
@@ -26,13 +26,6 @@ dotnet add package Umbraco.AI.Amazon
 ```
 
 {% endcode %}
-
-## Capabilities
-
-| Capability | Supported | Description                                |
-| ---------- | --------- | ------------------------------------------ |
-| Chat       | Yes       | Amazon Nova, Claude, Llama, Mistral models |
-| Embedding  | Yes       | Amazon Titan Embeddings, Cohere            |
 
 ## Connection Settings
 
@@ -74,15 +67,7 @@ Use IAM roles with least-privilege permissions. The user needs `bedrock:InvokeMo
 
 {% endcode %}
 
-## Available Models
-
-Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
-
-{% hint style="info" %}
-Check your provider's documentation for the latest model details, pricing, and capabilities.
-{% endhint %}
-
-## Enabling Models
+### Enabling Models
 
 Before using a model, you must enable it in your AWS account:
 
@@ -92,176 +77,9 @@ Before using a model, you must enable it in your AWS account:
 4. Select the models you want to use
 5. Submit the request (some models require approval)
 
-## Creating a Connection
-
-### Via Backoffice
-
-Create a connection through the backoffice by selecting **Amazon Bedrock** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
-
-Once created, configure the provider-specific settings:
-
 ![Amazon Bedrock connection detail showing Region and Access Key fields](../.gitbook/assets/amazon-bedrock-create-connection.png)
-
-### Via Code
-
-{% code title="Example.cs" %}
-
-```csharp
-var connection = new AIConnection
-{
-    Alias = "bedrock-production",
-    Name = "Amazon Bedrock Production",
-    ProviderId = "amazon",
-    Settings = new AmazonProviderSettings
-    {
-        Region = "us-east-1",
-        AccessKeyId = "AKIA...",
-        SecretAccessKey = "..."
-    }
-};
-
-await _connectionService.SaveConnectionAsync(connection);
-```
-
-{% endcode %}
-
-## Creating Profiles
-
-### Chat Profile (Amazon Nova)
-
-{% code title="Example.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "nova-assistant",
-    Name = "Nova Assistant",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("amazon", "amazon.nova-pro-v1:0"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.7f,
-        MaxTokens = 4096,
-        SystemPromptTemplate = "You are a helpful assistant."
-    }
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-### Chat Profile (Claude via Bedrock)
-
-{% code title="Example.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "claude-bedrock",
-    Name = "Claude via Bedrock",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("amazon", "anthropic.claude-3-5-sonnet-20241022-v2:0"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.7f,
-        MaxTokens = 4096
-    }
-};
-```
-
-{% endcode %}
-
-### Embedding Profile
-
-{% code title="Example.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "bedrock-embeddings",
-    Name = "Bedrock Embeddings",
-    Capability = AICapability.Embedding,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("amazon", "amazon.titan-embed-text-v2:0")
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-## VPC Endpoints
-
-For enhanced security, use VPC endpoints:
-
-{% code title="Example.cs" %}
-
-```csharp
-var connection = new AIConnection
-{
-    // ...
-    Settings = new AmazonProviderSettings
-    {
-        Region = "us-east-1",
-        AccessKeyId = "AKIA...",
-        SecretAccessKey = "...",
-        Endpoint = "https://vpce-xxx.bedrock-runtime.us-east-1.vpce.amazonaws.com"
-    }
-};
-```
-
-{% endcode %}
-
-## Pricing Considerations
-
-Amazon Bedrock uses pay-per-token pricing that varies by model:
-
-| Model             | Input (1K tokens) | Output (1K tokens) |
-| ----------------- | ----------------- | ------------------ |
-| Amazon Nova Pro   | ~$0.0008          | ~$0.0032           |
-| Amazon Nova Lite  | ~$0.00006         | ~$0.00024          |
-| Claude 3.5 Sonnet | ~$0.003           | ~$0.015            |
-| Claude 3 Haiku    | ~$0.00025         | ~$0.00125          |
-
-{% hint style="info" %}
-Prices are approximate and subject to change. Check [Amazon Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) for current rates.
-{% endhint %}
-
-## Troubleshooting
-
-### Access Denied
-
-```
-Error: AccessDeniedException
-```
-
-Verify:
-
-- IAM user has `bedrock:InvokeModel` permission
-- The model is enabled in your account
-- You're using the correct region
-
-### Model Not Enabled
-
-```
-Error: Model not available
-```
-
-Enable the model in the Bedrock console under **Model access**.
-
-### Region Not Supported
-
-```
-Error: Service not available in region
-```
-
-Amazon Bedrock isn't available in all regions. Use a supported region like `us-east-1` or `eu-west-1`.
 
 ## Related
 
-- [Providers Overview](README.md) - Compare all providers
-- [Connections](../concepts/connections.md) - Managing credentials
-- [Profiles](../concepts/profiles.md) - Configuring models
+- [Providers Overview](README.md)
+- [Managing Connections](../backoffice/managing-connections.md)

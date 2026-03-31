@@ -5,7 +5,7 @@ description: >-
 
 # OpenAI
 
-OpenAI provides access to GPT models for chat and text-embedding models for semantic search. It offers comprehensive model selection across chat and embedding capabilities.
+OpenAI provides access to GPT and text-embedding models, supporting both Chat and Embedding capabilities.
 
 ## Installation
 
@@ -27,13 +27,6 @@ dotnet add package Umbraco.AI.OpenAI
 
 {% endcode %}
 
-## Capabilities
-
-| Capability | Supported | Description                                             |
-| ---------- | --------- | ------------------------------------------------------- |
-| Chat       | Yes       | GPT-4o, GPT-4, GPT-3.5-turbo, o1 models                 |
-| Embedding  | Yes       | text-embedding-3-small, text-embedding-3-large, ada-002 |
-
 ## Connection Settings
 
 | Setting         | Required | Description                                                                 |
@@ -53,93 +46,7 @@ dotnet add package Umbraco.AI.OpenAI
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
 {% endhint %}
 
-## Available Models
-
-Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
-
-{% hint style="info" %}
-Check your provider's documentation for the latest model details, pricing, and capabilities.
-{% endhint %}
-
-## Creating a Connection
-
-### Via Backoffice
-
-Create a connection through the backoffice by selecting **OpenAI** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
-
-Once created, configure the provider-specific settings:
-
-![OpenAI connection detail showing API Key and Organization fields](../.gitbook/assets/openai-create-connection.png)
-
-### Via Code
-
-{% code title="CreateOpenAIConnection.cs" %}
-
-```csharp
-var connection = new AIConnection
-{
-    Alias = "openai-production",
-    Name = "OpenAI Production",
-    ProviderId = "openai",
-    Settings = new OpenAIProviderSettings
-    {
-        ApiKey = "sk-...",
-        OrganizationId = "org-..."
-    }
-};
-
-await _connectionService.SaveConnectionAsync(connection);
-```
-
-{% endcode %}
-
-## Creating a Profile
-
-### Chat Profile
-
-{% code title="OpenAIChatProfile.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "content-writer",
-    Name = "Content Writer",
-    Capability = AICapability.Chat,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("openai", "gpt-4o"),
-    Settings = new AIChatProfileSettings
-    {
-        Temperature = 0.7f,
-        MaxTokens = 2000,
-        SystemPromptTemplate = "You are a helpful content writer."
-    }
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-### Embedding Profile
-
-{% code title="OpenAIEmbeddingProfile.cs" %}
-
-```csharp
-var profile = new AIProfile
-{
-    Alias = "search-embeddings",
-    Name = "Search Embeddings",
-    Capability = AICapability.Embedding,
-    ConnectionId = connectionId,
-    Model = new AIModelRef("openai", "text-embedding-3-small")
-};
-
-await _profileService.SaveProfileAsync(profile);
-```
-
-{% endcode %}
-
-## Azure OpenAI
+### Azure OpenAI
 
 OpenAI models are also available through Azure OpenAI Service. To use Azure:
 
@@ -154,58 +61,9 @@ OpenAI models are also available through Azure OpenAI Service. To use Azure:
 Azure OpenAI provides data residency, enterprise compliance, and integration with Azure security features.
 {% endhint %}
 
-## Pricing Considerations
-
-OpenAI uses pay-per-token pricing:
-
-| Model Tier    | Input (1M tokens) | Output (1M tokens) |
-| ------------- | ----------------- | ------------------ |
-| GPT-4o        | ~$2.50            | ~$10.00            |
-| GPT-4o-mini   | ~$0.15            | ~$0.60             |
-| GPT-3.5-turbo | ~$0.50            | ~$1.50             |
-
-{% hint style="info" %}
-Prices are approximate and subject to change. Check [OpenAI pricing](https://openai.com/pricing) for current rates.
-{% endhint %}
-
-## Troubleshooting
-
-### Invalid API Key
-
-{% code title="Error" %}
-```
-Error: Invalid API key provided
-```
-{% endcode %}
-
-Verify your API key is correct and hasn't been revoked.
-
-### Rate Limits
-
-{% code title="Error" %}
-```
-Error: Rate limit exceeded
-```
-{% endcode %}
-
-OpenAI has rate limits based on your account tier. Consider:
-
-- Implementing retry logic with exponential backoff
-- Upgrading your OpenAI account tier
-- Using a smaller/faster model
-
-### Model Not Found
-
-{% code title="Error" %}
-```
-Error: The model 'gpt-5' does not exist
-```
-{% endcode %}
-
-Check the model name matches exactly. Available models depend on your OpenAI account access.
+![OpenAI connection detail showing API Key and Organization fields](../.gitbook/assets/openai-create-connection.png)
 
 ## Related
 
-- [Providers Overview](README.md) - Compare all providers
-- [Connections](../concepts/connections.md) - Managing credentials
-- [Profiles](../concepts/profiles.md) - Configuring models
+- [Providers Overview](README.md)
+- [Managing Connections](../backoffice/managing-connections.md)
