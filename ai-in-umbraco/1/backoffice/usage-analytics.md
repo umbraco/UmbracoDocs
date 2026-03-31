@@ -1,163 +1,83 @@
 ---
 description: >-
-    Understand AI usage patterns with analytics dashboards.
+    Understand AI usage patterns with the analytics dashboard.
 ---
 
 # Usage Analytics
 
-The Usage Analytics dashboard provides aggregated insights into AI operations, helping you understand usage patterns, costs, and performance.
+The Usage Analytics dashboard provides aggregated insights into AI operations, helping you understand usage patterns and performance.
 
 ## Accessing Analytics
 
 1. Navigate to the **AI** section in the main navigation
-2. Click **Analytics** (or **Usage**) in the tree
+2. Click **Analytics** in the tree
 
 ## Dashboard Overview
 
 ![The analytics dashboard showing usage metrics, success rate, and usage over time chart](../.gitbook/assets/backoffice-analytics-dashboard.png)
 
-The analytics dashboard shows:
-
 ### Summary Metrics
 
-| Metric         | Description                           |
-| -------------- | ------------------------------------- |
-| Total Requests | Number of AI operations in the period |
-| Total Tokens   | Combined input and output tokens      |
-| Success Rate   | Percentage of successful operations   |
-| Avg Duration   | Average operation time                |
+The dashboard displays six summary cards at the top:
 
-### Time Series Chart
+| Metric           | Description                                    |
+| ---------------- | ---------------------------------------------- |
+| Total Requests   | Number of AI operations in the selected period |
+| Input Tokens     | Tokens sent to AI providers                    |
+| Output Tokens    | Tokens received from AI providers              |
+| Total Tokens     | Combined input and output tokens               |
+| Success Rate     | Percentage of successful operations            |
+| Avg Duration     | Average operation response time                |
 
-A chart showing usage over time:
+### Usage Over Time
 
-- **X-axis**: Time (hours, days, weeks, or months)
-- **Y-axis**: Requests, tokens, or success rate
-- **Granularity**: Adjustable based on date range
+A chart showing usage trends across the selected period. The chart displays:
+
+- **Bars** for input tokens and output tokens per time bucket
+- **Line** for total request count
 
 ### Breakdowns
 
-Pie or bar charts showing distribution:
+Tables showing usage distribution across four dimensions:
 
-- **By Provider** - Which providers are used most
-- **By Model** - Which models consume most tokens
-- **By Profile** - Which profiles are most active
-- **By User** - Who uses AI features most
+- **By Provider** — Which providers handle the most requests and tokens
+- **By Model** — Which models are used most
+- **By Profile** — Which profiles are most active
+- **By User** — Which users generate the most AI operations
+
+Each breakdown table shows Name, Requests, Tokens, and Share (percentage).
 
 ![Analytics breakdown tables by provider, model, profile, and user](../.gitbook/assets/backoffice-analytics-breakdowns.png)
 
-## Date Range Selection
+## Date Range
 
-Select the time period to analyze:
+Select the time period to analyze using the picker in the top-right corner:
 
-| Range         | Best For             |
-| ------------- | -------------------- |
-| Last 24 hours | Real-time monitoring |
-| Last 7 days   | Weekly trends        |
-| Last 30 days  | Monthly analysis     |
-| Custom range  | Specific period      |
-
-## Reading the Charts
-
-### Usage Trends
-
-Look for patterns:
-
-- **Peak hours** - When is usage highest?
-- **Growth trends** - Is usage increasing?
-- **Anomalies** - Sudden spikes or drops
-
-### Provider Distribution
-
-Understand cost drivers:
-
-- Which providers handle most requests
-- Token distribution across providers
-- Opportunities to optimize costs
-
-### User Distribution
-
-Identify usage patterns:
-
-- Power users who might benefit from training
-- Unexpected usage that might indicate issues
-- Opportunities for user education
-
-## Cost Estimation
-
-While exact costs depend on your provider contracts, you can estimate costs:
-
-1. View the **By Model** breakdown
-2. Note total tokens per model
-3. Calculate based on provider pricing
-
-{% hint style="info" %}
-Analytics show token counts. Multiply by your provider's per-token pricing for cost estimates.
-{% endhint %}
-
-## Exporting Data
-
-To export analytics data:
-
-1. Set your desired date range
-2. Click **Export**
-3. Choose format (CSV, JSON)
+| Range          | Description          |
+| -------------- | -------------------- |
+| Last 24 Hours  | Real-time monitoring |
+| Last 7 Days    | Weekly trends        |
+| Last 30 Days   | Monthly analysis     |
 
 ## Use Cases
 
-### Cost Optimization
+### Cost Estimation
 
 1. Review the **By Model** breakdown
-2. Identify high-cost models
-3. Consider whether cheaper models could work for some use cases
-4. Create separate profiles for different quality requirements
-
-### Capacity Planning
-
-1. Review the **Time Series** chart
-2. Identify usage growth trends
-3. Project future needs
-4. Adjust rate limits or provider tiers accordingly
-
-### User Training
-
-1. Review the **By User** breakdown
-2. Identify users with unusual patterns
-3. Provide training to optimize usage
-4. Identify effective usage patterns from active users
+2. Note total tokens per model
+3. Calculate costs based on your provider's per-token pricing
 
 ### Performance Monitoring
 
-1. Monitor **Success Rate** over time
-2. Alert on drops in success rate
-3. Investigate **Avg Duration** increases
-4. Correlate with system changes
+1. Monitor **Success Rate** for drops
+2. Watch **Avg Duration** for increases
+3. Use the time series chart to identify trends
 
-## Configuration
+### Capacity Planning
 
-### Data Retention
-
-Analytics are derived from audit logs. Configure retention:
-
-{% code title="appsettings.json" %}
-
-```json
-{
-    "Umbraco": {
-        "AI": {
-            "AuditLog": {
-                "RetentionDays": 90
-            }
-        }
-    }
-}
-```
-
-{% endcode %}
-
-{% hint style="warning" %}
-Analytics for periods older than the retention period will be incomplete or unavailable.
-{% endhint %}
+1. Review usage growth over time
+2. Identify peak usage periods
+3. Adjust provider tiers or rate limits accordingly
 
 ## Programmatic Access
 
@@ -165,5 +85,5 @@ For custom dashboards or integrations, use the [Analytics API](../management-api
 
 ## Related
 
-- [Audit Logs](audit-logs.md) - Raw operation data
+- [Audit Logs](audit-logs.md) - Individual AI operation records
 - [Analytics API](../management-api/analytics/README.md) - Programmatic access
