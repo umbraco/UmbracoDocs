@@ -50,7 +50,7 @@ using Umbraco.Cms.Core.Web;
 
 namespace MyProject.Tools;
 
-[AITool("search_content", "Search Content", Category = "Content")]
+[AITool("search_content", "Search Content", ScopeId = "content-read")]
 public class ContentSearchTool : AIToolBase<ContentSearchArgs>
 {
     private readonly IUmbracoContextFactory _contextFactory;
@@ -139,7 +139,7 @@ The `[AITool]` attribute provides metadata:
 [AITool(
     "tool_id",              // Unique identifier (required)
     "Display Name",         // Human-readable name (required)
-    Category = "Category",  // Grouping category (default: "General")
+    ScopeId = "scope-id",   // Scope identifier for tool grouping
     IsDestructive = false,  // Whether tool modifies data (default: false)
     Tags = new[] { "tag1", "tag2" }  // Additional tags (default: empty)
 )]
@@ -195,7 +195,7 @@ For tools that don't need input:
 using Umbraco.AI.Core.Tools;
 using Umbraco.Cms.Core.Configuration;
 
-[AITool("get_server_info", "Get Server Info", Category = "System")]
+[AITool("get_server_info", "Get Server Info", ScopeId = "system")]
 public class ServerInfoTool : AIToolBase
 {
     private readonly IUmbracoVersion _version;
@@ -340,7 +340,7 @@ public record WeatherResult(
     int Humidity,
     DateTime RetrievedAt);
 
-[AITool("get_weather", "Get Weather", Category = "Utilities", Tags = new[] { "weather", "external" })]
+[AITool("get_weather", "Get Weather", ScopeId = "utilities", Tags = new[] { "weather", "external" })]
 public class WeatherTool : AIToolBase<WeatherArgs>
 {
     private readonly HttpClient _httpClient;

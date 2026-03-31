@@ -23,12 +23,12 @@ public class AIContext : IAIVersionableEntity
     public Guid Id { get; internal set; }
     public required string Alias { get; set; }
     public required string Name { get; set; }
-    public IList<AIContextResource> Resources { get; set; } = new List<AIContextResource>();
+    public IList<AIContextResource> Resources { get; set; } = [];
 
     // Audit properties
     public DateTime DateCreated { get; init; } = DateTime.UtcNow;
     public DateTime DateModified { get; set; } = DateTime.UtcNow;
-    public Guid? CreatedByUserId { get; init; }
+    public Guid? CreatedByUserId { get; set; }
     public Guid? ModifiedByUserId { get; set; }
 
     // Versioning
@@ -69,7 +69,7 @@ var context = new AIContext
             Name = "Tone of Voice",
             Description = "Writing style guidelines",
             SortOrder = 0,
-            Data = "Always use a friendly, professional tone...",
+            Settings = "Always use a friendly, professional tone...",
             InjectionMode = AIContextResourceInjectionMode.Always
         },
         new AIContextResource
@@ -77,7 +77,7 @@ var context = new AIContext
             ResourceTypeId = "text",
             Name = "Product Terminology",
             SortOrder = 1,
-            Data = "Use these terms when discussing products..."
+            Settings = "Use these terms when discussing products..."
         }
     }
 };
@@ -108,7 +108,7 @@ public class AIContextResource
     public required string Name { get; set; }
     public string? Description { get; set; }
     public int SortOrder { get; set; }
-    public object? Data { get; set; }
+    public object? Settings { get; set; }
     public AIContextResourceInjectionMode InjectionMode { get; set; } = AIContextResourceInjectionMode.Always;
 }
 ```
@@ -124,7 +124,7 @@ public class AIContextResource
 | `Name`           | `string`                         | Display name (required)                |
 | `Description`    | `string?`                        | Optional description                   |
 | `SortOrder`      | `int`                            | Order for injection                    |
-| `Data`           | `object?`                        | Resource content (type-specific)       |
+| `Settings`       | `object?`                        | Resource content (type-specific)       |
 | `InjectionMode`  | `AIContextResourceInjectionMode` | When to inject                         |
 
 ## Resource Types

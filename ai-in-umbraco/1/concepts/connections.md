@@ -17,6 +17,7 @@ A connection represents a configured instance of an AI provider with credentials
 | `ProviderId` | Which provider this connection uses                       |
 | `Settings`   | Provider-specific settings (API key, endpoint, and so on) |
 | `IsActive`   | Whether the connection is enabled                         |
+| `Version`    | Current version number, increments with each save         |
 
 ## Connection vs Provider
 

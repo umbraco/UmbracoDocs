@@ -28,7 +28,7 @@ Each context contains one or more resources. A resource represents a piece of co
 | `Name`           | Display name for the resource                   |
 | `Description`    | Optional description                            |
 | `SortOrder`      | Controls injection order                        |
-| `Data`           | Type-specific resource data                     |
+| `Settings`       | Type-specific settings                           |
 | `InjectionMode`  | When the resource is injected                   |
 
 ### Injection Modes
@@ -103,7 +103,7 @@ public async Task<AIContext> CreateContext()
                 Name = "Tone of Voice",
                 Description = "Writing style guidelines",
                 SortOrder = 0,
-                Data = "Always use a friendly, professional tone..."
+                Settings = "Always use a friendly, professional tone..."
             }
         }
     };

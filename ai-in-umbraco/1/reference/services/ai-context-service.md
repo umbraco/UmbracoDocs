@@ -37,6 +37,12 @@ public interface IAIContextService
     Task<bool> DeleteContextAsync(Guid id, CancellationToken cancellationToken = default);
 
     Task<bool> ContextAliasExistsAsync(string alias, Guid? excludeId = null, CancellationToken cancellationToken = default);
+
+    Task<(IEnumerable<AIEntityVersion> Items, int Total)> GetContextVersionHistoryAsync(Guid contextId, int skip, int take, CancellationToken cancellationToken = default);
+
+    Task<AIContext?> GetContextVersionSnapshotAsync(Guid contextId, int version, CancellationToken cancellationToken = default);
+
+    Task<AIContext> RollbackContextAsync(Guid contextId, int targetVersion, CancellationToken cancellationToken = default);
 }
 ```
 
@@ -212,6 +218,78 @@ if (await _contextService.ContextAliasExistsAsync("new-alias", existingContextId
 {
     Console.WriteLine("Alias already in use by another context");
 }
+```
+
+{% endcode %}
+
+### GetContextVersionHistoryAsync
+
+Gets the version history for a context.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `contextId`         | `Guid`              | The context ID     |
+| `skip`              | `int`               | Items to skip      |
+| `take`              | `int`               | Items to take      |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: Tuple of (version entries, total count).
+
+{% code title="Example" %}
+
+```csharp
+var (versions, total) = await _contextService.GetContextVersionHistoryAsync(
+    contextId, skip: 0, take: 10);
+
+foreach (var version in versions)
+{
+    Console.WriteLine($"Version {version.Version} at {version.CreatedUtc}");
+}
+```
+
+{% endcode %}
+
+### GetContextVersionSnapshotAsync
+
+Gets a snapshot of a context at a specific version.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `contextId`         | `Guid`              | The context ID     |
+| `version`           | `int`               | The version number |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: The context as it was at the specified version, or `null` if not found.
+
+{% code title="Example" %}
+
+```csharp
+var snapshot = await _contextService.GetContextVersionSnapshotAsync(contextId, version: 3);
+if (snapshot != null)
+{
+    Console.WriteLine($"Context name at v3: {snapshot.Name}");
+}
+```
+
+{% endcode %}
+
+### RollbackContextAsync
+
+Rolls back a context to a previous version.
+
+| Parameter           | Type                | Description                     |
+| ------------------- | ------------------- | ------------------------------- |
+| `contextId`         | `Guid`              | The context ID                  |
+| `targetVersion`     | `int`               | The version to roll back to     |
+| `cancellationToken` | `CancellationToken` | Cancellation token              |
+
+**Returns**: The context after rollback, with a new version number.
+
+{% code title="Example" %}
+
+```csharp
+var rolledBack = await _contextService.RollbackContextAsync(contextId, targetVersion: 2);
+Console.WriteLine($"Rolled back to v2, new version is {rolledBack.Version}");
 ```
 
 {% endcode %}

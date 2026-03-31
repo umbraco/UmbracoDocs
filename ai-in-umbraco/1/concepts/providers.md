@@ -69,18 +69,21 @@ Each provider defines its own settings class. Common settings include:
 | Endpoint     | API URL (for custom endpoints)          |
 | Organization | Organization identifier (if applicable) |
 
-Settings are defined using the `[AISetting]` attribute:
+Settings are defined using the `[AIField]` attribute:
 
 {% code title="OpenAIProviderSettings.cs" %}
 
 ```csharp
+using System.ComponentModel.DataAnnotations;
+
 public class OpenAIProviderSettings
 {
-    [AISetting(Label = "API Key", Description = "Your OpenAI API key")]
-    public required string ApiKey { get; set; }
+    [AIField(IsSensitive = true)]
+    [Required]
+    public string? ApiKey { get; set; }
 
-    [AISetting(Label = "Organization", Description = "Optional organization ID")]
-    public string? Organization { get; set; }
+    [AIField]
+    public string? OrganizationId { get; set; }
 }
 ```
 

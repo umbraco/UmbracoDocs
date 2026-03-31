@@ -99,15 +99,18 @@ Content snapshots are controlled by the `PersistPrompts` and `PersistResponses` 
 
 When operations fail, the error category helps diagnose the issue:
 
-| Category       | Description            | Typical Cause                   |
-| -------------- | ---------------------- | ------------------------------- |
-| Authentication | Credential issues      | Invalid or expired API key      |
-| RateLimit      | Too many requests      | Provider rate limit exceeded    |
-| Timeout        | Request timed out      | Slow response or network issues |
-| InvalidRequest | Bad request format     | Invalid parameters or content   |
-| ModelError     | Model processing error | Content policy violation        |
-| NetworkError   | Connection issues      | Network connectivity            |
-| GuardrailBlocked | Guardrail blocked    | Content flagged by a guardrail rule |
+| Category          | Description               | Typical Cause                        |
+| ----------------- | ------------------------- | ------------------------------------ |
+| Authentication    | Authentication failure    | Invalid or expired API key           |
+| RateLimiting      | Provider rate limit exceeded | Too many requests in a short period |
+| ModelNotFound     | Requested model not available | Model ID is invalid or deprecated |
+| InvalidRequest    | Invalid request parameters | Bad request format or content       |
+| ServerError       | Provider server error     | Issue on the provider side           |
+| NetworkError      | Network connectivity issue | Connection failure or DNS error     |
+| ContextResolution | Context resolution failure | Failed to resolve a context resource |
+| ToolExecution     | Tool execution failure    | A tool returned an error             |
+| GuardrailBlocked  | Blocked by guardrail rule | Content flagged by a guardrail rule  |
+| Unknown           | Unclassified error        | Unexpected or unmapped failure       |
 
 ## Deleting Logs
 
@@ -131,7 +134,7 @@ To remove old logs:
 
 ### Automatic Cleanup
 
-Configure automatic cleanup in `appsettings.json`:
+Configure audit log options in `appsettings.json`:
 
 {% code title="appsettings.json" %}
 
@@ -140,9 +143,12 @@ Configure automatic cleanup in `appsettings.json`:
     "Umbraco": {
         "AI": {
             "AuditLog": {
-                "RetentionDays": 90,
-                "AutoCleanupEnabled": true,
-                "AutoCleanupIntervalHours": 24
+                "Enabled": true,
+                "RetentionDays": 14,
+                "PersistPrompts": true,
+                "PersistResponses": true,
+                "PersistFailureDetails": true,
+                "RedactionPatterns": []
             }
         }
     }
@@ -150,6 +156,15 @@ Configure automatic cleanup in `appsettings.json`:
 ```
 
 {% endcode %}
+
+| Property               | Default | Description                                      |
+| ---------------------- | ------- | ------------------------------------------------ |
+| `Enabled`              | `true`  | Whether audit logging is enabled                 |
+| `RetentionDays`        | `14`    | Number of days to retain logs before cleanup      |
+| `PersistPrompts`       | `true`  | Store prompt snapshots in logs                   |
+| `PersistResponses`     | `true`  | Store response snapshots in logs                 |
+| `PersistFailureDetails`| `true`  | Store failure details in logs                    |
+| `RedactionPatterns`    | `[]`    | Regex patterns for redacting sensitive content   |
 
 ## Use Cases
 

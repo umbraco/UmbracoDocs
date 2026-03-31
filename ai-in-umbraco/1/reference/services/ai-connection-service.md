@@ -49,6 +49,14 @@ public interface IAIConnectionService
     Task<IEnumerable<AIConnection>> GetConnectionsByCapabilityAsync(AICapability capability, CancellationToken cancellationToken = default);
 
     Task<IAIConfiguredProvider?> GetConfiguredProviderAsync(Guid connectionId, CancellationToken cancellationToken = default);
+
+    Task<(IEnumerable<AIEntityVersion> Items, int Total)> GetConnectionVersionHistoryAsync(Guid connectionId, int skip, int take, CancellationToken cancellationToken = default);
+
+    Task<AIConnection?> GetConnectionVersionSnapshotAsync(Guid connectionId, int version, CancellationToken cancellationToken = default);
+
+    Task<AIConnection> RollbackConnectionAsync(Guid connectionId, int targetVersion, CancellationToken cancellationToken = default);
+
+    Task<bool> ConnectionAliasExistsAsync(string alias, Guid? excludeId = null, CancellationToken cancellationToken = default);
 }
 ```
 
@@ -240,6 +248,101 @@ if (provider != null)
 {
     // Access provider capabilities
     var chatCapability = provider.GetCapability<IAIChatCapability>();
+}
+```
+
+{% endcode %}
+
+### GetConnectionVersionHistoryAsync
+
+Gets the version history for a connection.
+
+| Parameter           | Type                | Description        |
+| ------------------- | ------------------- | ------------------ |
+| `connectionId`      | `Guid`              | The connection ID  |
+| `skip`              | `int`               | Items to skip      |
+| `take`              | `int`               | Items to take      |
+| `cancellationToken` | `CancellationToken` | Cancellation token |
+
+**Returns**: Tuple of (version entries, total count).
+
+{% code title="Example" %}
+
+```csharp
+var (versions, total) = await _connectionService.GetConnectionVersionHistoryAsync(
+    connectionId, skip: 0, take: 10);
+
+foreach (var version in versions)
+{
+    Console.WriteLine($"Version {version.Version} at {version.CreatedUtc}");
+}
+```
+
+{% endcode %}
+
+### GetConnectionVersionSnapshotAsync
+
+Gets a snapshot of a connection at a specific version.
+
+| Parameter           | Type                | Description            |
+| ------------------- | ------------------- | ---------------------- |
+| `connectionId`      | `Guid`              | The connection ID      |
+| `version`           | `int`               | The version number     |
+| `cancellationToken` | `CancellationToken` | Cancellation token     |
+
+**Returns**: The connection as it was at the specified version, or `null` if not found.
+
+{% code title="Example" %}
+
+```csharp
+var snapshot = await _connectionService.GetConnectionVersionSnapshotAsync(connectionId, version: 3);
+if (snapshot != null)
+{
+    Console.WriteLine($"Connection name at v3: {snapshot.Name}");
+}
+```
+
+{% endcode %}
+
+### RollbackConnectionAsync
+
+Rolls back a connection to a previous version.
+
+| Parameter           | Type                | Description                     |
+| ------------------- | ------------------- | ------------------------------- |
+| `connectionId`      | `Guid`              | The connection ID               |
+| `targetVersion`     | `int`               | The version to roll back to     |
+| `cancellationToken` | `CancellationToken` | Cancellation token              |
+
+**Returns**: The connection after rollback, with a new version number.
+
+{% code title="Example" %}
+
+```csharp
+var rolledBack = await _connectionService.RollbackConnectionAsync(connectionId, targetVersion: 2);
+Console.WriteLine($"Rolled back to v2, new version is {rolledBack.Version}");
+```
+
+{% endcode %}
+
+### ConnectionAliasExistsAsync
+
+Checks if a connection alias is already in use.
+
+| Parameter           | Type                | Description                          |
+| ------------------- | ------------------- | ------------------------------------ |
+| `alias`             | `string`            | The alias to check                   |
+| `excludeId`         | `Guid?`             | Optional ID to exclude (for updates) |
+| `cancellationToken` | `CancellationToken` | Cancellation token                   |
+
+**Returns**: `true` if alias exists, `false` otherwise.
+
+{% code title="Example" %}
+
+```csharp
+if (await _connectionService.ConnectionAliasExistsAsync("my-openai"))
+{
+    Console.WriteLine("Alias already in use");
 }
 ```
 

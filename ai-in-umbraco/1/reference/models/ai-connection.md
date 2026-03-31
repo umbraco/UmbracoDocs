@@ -32,7 +32,7 @@ public class AIConnection : IAIVersionableEntity
     public bool IsActive { get; set; } = true;
     public DateTime DateCreated { get; init; } = DateTime.UtcNow;
     public DateTime DateModified { get; set; } = DateTime.UtcNow;
-    public int Version { get; internal set; }
+    public int Version { get; internal set; } = 1;
     public Guid? CreatedByUserId { get; set; }
     public Guid? ModifiedByUserId { get; set; }
 }

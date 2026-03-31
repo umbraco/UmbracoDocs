@@ -35,26 +35,26 @@ Define the configuration your provider needs:
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
-using Umbraco.AI.Core.Settings;
+using Umbraco.AI.Core.EditableModels;
 
 namespace MyCompany.Umbraco.AI.MyProvider;
 
 public class MyProviderSettings
 {
-    [AISetting(
+    [AIField(
         Label = "API Key",
         Description = "Your MyProvider API key. Use $Config:Key for config reference.",
         SortOrder = 1)]
     [Required]
     public required string ApiKey { get; set; }
 
-    [AISetting(
+    [AIField(
         Label = "Base URL",
         Description = "API endpoint (leave empty for default)",
         SortOrder = 2)]
     public string? BaseUrl { get; set; }
 
-    [AISetting(
+    [AIField(
         Label = "Organization ID",
         Description = "Optional organization identifier",
         SortOrder = 3)]
@@ -101,9 +101,9 @@ public class MyProviderChatCapability : AIChatCapabilityBase<MyProviderSettings>
         // Fetch models from your API, or return a static list
         var models = new List<AIModelDescriptor>
         {
-            new("model-standard", "Standard Model"),
-            new("model-advanced", "Advanced Model"),
-            new("model-fast", "Fast Model")
+            new(new AIModelRef(Provider.Id, "model-standard"), "Standard Model"),
+            new(new AIModelRef(Provider.Id, "model-advanced"), "Advanced Model"),
+            new(new AIModelRef(Provider.Id, "model-fast"), "Fast Model")
         };
 
         return models;
@@ -295,6 +295,6 @@ After installation:
 
 ## Next Steps
 
-- [Provider Settings](provider-settings.md) - Learn about `[AISetting]` options
+- [Provider Settings](provider-settings.md) - Learn about `[AIField]` options
 - [Chat Capability](chat-capability.md) - Detailed chat implementation guide
 - [Embedding Capability](embedding-capability.md) - Add embedding support
