@@ -13,8 +13,6 @@ A capability represents a type of AI operation. Providers implement capabilities
 | -------------- | ----------------------------------------------- | ----------------------------------------------- |
 | **Chat**       | Conversational AI, text generation, completions | `IChatClient`                                   |
 | **Embedding**  | Vector embeddings for semantic search           | `IEmbeddingGenerator<string, Embedding<float>>` |
-| **Media**      | Image generation (future)                       | Planned for a future release                    |
-| **Moderation** | Content safety checks (future)                  | Planned for a future release                    |
 
 ## Chat Capability
 
@@ -132,41 +130,6 @@ public interface IAIEmbeddingCapability : IAICapability
         object settings,
         AIProfile profile,
         CancellationToken cancellationToken = default);
-}
-```
-
-{% endcode %}
-
-## Future Capabilities
-
-Additional capabilities are planned:
-
-### Media Capability
-
-Generate images from text prompts:
-
-{% code title="MediaExample.cs" %}
-
-```csharp
-// Future API (not yet implemented)
-var image = await _mediaService.GenerateImageAsync(
-    "A serene mountain landscape at sunset");
-```
-
-{% endcode %}
-
-### Moderation Capability
-
-Check content for safety:
-
-{% code title="ModerationExample.cs" %}
-
-```csharp
-// Future API (not yet implemented)
-var result = await _moderationService.CheckContentAsync(userInput);
-if (result.IsFlagged)
-{
-    // Handle inappropriate content
 }
 ```
 

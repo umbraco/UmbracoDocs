@@ -64,8 +64,6 @@ Possible capability values:
 | ------------ | ------------------------------------ |
 | `Chat`       | Conversational AI / chat completions |
 | `Embedding`  | Text to vector embeddings            |
-| `Media`      | Image/media generation (planned)     |
-| `Moderation` | Content safety (planned)             |
 
 ## Example
 

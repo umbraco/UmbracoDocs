@@ -21,9 +21,7 @@ using Umbraco.AI.Core.Models;
 public enum AICapability
 {
     Chat = 0,
-    Embedding = 1,
-    Media = 2,
-    Moderation = 3
+    Embedding = 1
 }
 ```
 
@@ -35,8 +33,6 @@ public enum AICapability
 | ------------ | --- | ------------------------------------ | --------- |
 | `Chat`       | 0   | Conversational AI / chat completions | Available |
 | `Embedding`  | 1   | Text to vector embeddings            | Available |
-| `Media`      | 2   | Image/media generation               | Planned   |
-| `Moderation` | 3   | Content safety/moderation            | Planned   |
 
 ## Usage
 
@@ -115,5 +111,4 @@ var embeddingConnections = await connectionService.GetConnectionsByCapabilityAsy
 ## Notes
 
 - `Chat` and `Embedding` are currently implemented
-- `Media` and `Moderation` are reserved for future use
 - Capability is set on profile creation and cannot be changed

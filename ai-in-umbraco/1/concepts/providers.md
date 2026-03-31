@@ -92,8 +92,6 @@ A provider can support multiple capabilities:
 
 - **Chat** - Conversational AI and text generation
 - **Embedding** - Vector embeddings for semantic search
-- **Media** - Image generation (future)
-- **Moderation** - Content safety checks (future)
 
 Each capability is implemented as a separate class and registered in the provider constructor.
 

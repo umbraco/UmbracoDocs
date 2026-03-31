@@ -98,10 +98,6 @@ curl -X GET "https://localhost:44331/umbraco/ai/management/api/v1/connections/ca
 | `Chat`      | Conversational AI and text generation |
 | `Embedding` | Vector embeddings for semantic search |
 
-{% hint style="info" %}
-Additional capabilities (Media, Moderation) may be added in future releases.
-{% endhint %}
-
 ## Use Cases
 
 ### Check Before Creating Profile
