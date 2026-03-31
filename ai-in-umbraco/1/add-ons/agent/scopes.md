@@ -209,31 +209,6 @@ public class MyFeatureService
 
 {% endcode %}
 
-## Scope Interface
-
-The `IAIAgentScope` interface defines the contract for scopes:
-
-{% code title="IAIAgentScope.cs" %}
-
-```csharp
-public interface IAIAgentScope
-{
-    /// <summary>
-    /// Gets the unique identifier for this scope.
-    /// Should be a simple, URL-safe string like "copilot" or "content-editing".
-    /// </summary>
-    string Id { get; }
-
-    /// <summary>
-    /// Gets the icon to display for this scope.
-    /// Uses Umbraco icon names (e.g., "icon-chat", "icon-document").
-    /// </summary>
-    string Icon { get; }
-}
-```
-
-{% endcode %}
-
 ## Frontend Localization
 
 Scope names and descriptions are localized on the frontend using a naming convention:
@@ -256,70 +231,10 @@ export default {
 
 {% endcode %}
 
-## Scope Collection
-
-The `AIAgentScopeCollection` provides methods for working with registered scopes:
-
-{% code title="MyScopeHelper.cs" %}
-
-```csharp
-public class MyScopeHelper
-{
-    private readonly AIAgentScopeCollection _scopes;
-
-    public MyScopeHelper(AIAgentScopeCollection scopes)
-    {
-        _scopes = scopes;
-    }
-
-    public void CheckScopes()
-    {
-        // Check if a scope exists
-        if (_scopes.Exists("my-feature"))
-        {
-            // Get scope by ID
-            var scope = _scopes.GetById("my-feature");
-
-            // Get multiple scopes
-            var selectedScopes = _scopes.GetByIds(["copilot", "my-feature"]);
-        }
-    }
-}
-```
-
-{% endcode %}
-
 ## Best Practices
 
-### Scope Naming
-
-- Use lowercase, URL-safe identifiers (e.g., `content-editing`, not `Content Editing`)
-- Keep names short but descriptive
-- Use hyphens to separate words
-
-### Scope Design
-
-- **Single purpose** - each scope should represent one clear use case
-- **Document your scopes** - provide localization keys for UI display
-- **Use constants** - define a `ScopeId` constant for code references
-
-### Multi-Scope Agents
-
-Agents can belong to multiple scopes when they serve multiple purposes:
-
-{% code title="MultiScopeAgent.cs" %}
-
-```csharp
-var versatileAgent = new AIAgent
-{
-    Alias = "universal-assistant",
-    Name = "Universal Assistant",
-    ScopeIds = ["copilot", "content-editing", "my-feature"],
-    Instructions = "You can help with various tasks..."
-};
-```
-
-{% endcode %}
+- **Use lowercase, hyphenated IDs** - Use URL-safe identifiers like `content-editing` and define a `ScopeId` constant for code references.
+- **Keep scopes single-purpose** - Each scope should represent one clear use case, with localization keys for UI display.
 
 ## Related
 

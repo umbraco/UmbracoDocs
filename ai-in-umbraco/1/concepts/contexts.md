@@ -40,25 +40,6 @@ Resources can be injected based on different conditions:
 | `Always`   | Resource is always included (default)               |
 | `OnDemand` | Resource is included only when explicitly requested |
 
-## Why Use Contexts
-
-Contexts provide these benefits:
-
-- **Consistency** - Maintain brand voice across all AI interactions
-- **Separation** - Keep guidelines separate from business logic
-- **Reusability** - Share the same context across multiple profiles
-- **Manageability** - Update guidelines without code changes
-- **RAG Support** - Inject relevant content for RAG workflows
-
-## Example Context Configurations
-
-| Context            | Use Case         | Resources                           |
-| ------------------ | ---------------- | ----------------------------------- |
-| `brand-voice`      | Consistent tone  | Writing guidelines, terminology     |
-| `product-catalog`  | E-commerce       | Product descriptions, pricing rules |
-| `support-kb`       | Customer service | FAQ, troubleshooting guides         |
-| `legal-compliance` | Regulatory       | Compliance rules, disclaimers       |
-
 ## Using Contexts in Code
 
 ### Getting a Context
@@ -124,13 +105,7 @@ When an AI operation executes with contexts:
 4. Resource content is formatted and injected into the system message
 5. The AI model receives the enriched request
 
-## Context Resolution Order
-
-When multiple contexts are used:
-
-1. Contexts are processed in the order they're listed
-2. Within each context, resources are processed by `SortOrder`
-3. All resource content is concatenated into the system context
+When multiple contexts are used, they are processed in the order they are listed. Within each context, resources are processed by `SortOrder`, and all resource content is concatenated into the system context.
 
 ## Managing Contexts
 
@@ -140,31 +115,7 @@ You can create, edit, and delete contexts through the backoffice. See [Managing 
 
 ### Via Code
 
-{% code title="Example.cs" %}
-
-```csharp
-public class ContextManagement
-{
-    private readonly IAIContextService _contextService;
-
-    public ContextManagement(IAIContextService contextService)
-    {
-        _contextService = contextService;
-    }
-
-    public async Task<IEnumerable<AIContext>> GetAllContexts()
-    {
-        return await _contextService.GetContextsAsync();
-    }
-
-    public async Task<bool> DeleteContext(Guid id)
-    {
-        return await _contextService.DeleteContextAsync(id);
-    }
-}
-```
-
-{% endcode %}
+For programmatic context management, see the [IAIContextService](../reference/services/ai-context-service.md) reference.
 
 ## Version History
 

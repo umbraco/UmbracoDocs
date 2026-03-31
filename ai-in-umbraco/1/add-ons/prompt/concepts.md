@@ -112,25 +112,10 @@ Every change to a prompt creates a new version:
 
 ## Best Practices
 
-### Template Design
-
-1. **Be specific** - Clear instructions produce better results
-2. **Use examples** - Show the AI what you want
-3. **Set constraints** - Specify length, format, tone
-4. **Test iteratively** - Refine based on results
-
-### Organization
-
-1. **Use meaningful aliases** - `summarize-article` not `prompt-1`
-2. **Tag by purpose** - Group related prompts
-3. **Document descriptions** - Help editors understand usage
-4. **Archive unused** - Deactivate rather than delete
-
-### Performance
-
-1. **Associate profiles** - Don't rely on defaults
-2. **Minimize contexts** - Only include necessary content
-3. **Consider model choice** - Faster models for straightforward tasks
+- **Be specific in templates** - Clear instructions with examples and constraints (length, format, tone) produce better results.
+- **Use meaningful aliases** - Use descriptive names like `summarize-article` rather than `prompt-1`, and tag by purpose.
+- **Associate profiles explicitly** - Do not rely on defaults; choose the right model for the task.
+- **Deactivate rather than delete** - Archive unused prompts to preserve history.
 
 ## Related
 

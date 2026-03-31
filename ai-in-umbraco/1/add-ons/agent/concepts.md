@@ -205,25 +205,10 @@ Every change to an agent creates a new version:
 
 ## Best Practices
 
-### Instruction Design
-
-1. **Be specific** about the agent's role and capabilities
-2. **Define boundaries** - what the agent should and shouldn't do
-3. **Provide examples** of expected interactions
-4. **Include guardrails** for safety
-
-### Tool Design
-
-1. **Single responsibility** - one action per tool
-2. **Clear descriptions** - help the model understand usage
-3. **Proper schemas** - validate parameters
-4. **Meaningful names** - action-oriented naming
-
-### Performance
-
-1. **Associate profiles** - don't rely on defaults
-2. **Minimize contexts** - only include necessary content
-3. **Handle errors** - implement reconnection logic
+- **Be specific in instructions** - Define the agent's role, boundaries, and expected behavior clearly.
+- **Keep tools focused** - One action per tool with clear descriptions and validated parameters.
+- **Associate profiles explicitly** - Do not rely on defaults; link a profile to control model and settings.
+- **Minimize contexts** - Only include necessary content to reduce token usage.
 
 ## Related
 

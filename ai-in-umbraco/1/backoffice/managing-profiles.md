@@ -137,28 +137,6 @@ Tags help organize profiles:
 
 Example tags: `production`, `content-team`, `experimental`
 
-## Example Profile Configurations
-
-### Content Writer
-
-- **Capability**: Chat
-- **Model**: gpt-4o
-- **Temperature**: 0.7
-- **System Prompt**: "You are a professional content writer. Write engaging, SEO-friendly content."
-
-### Code Assistant
-
-- **Capability**: Chat
-- **Model**: gpt-4o
-- **Temperature**: 0.2
-- **System Prompt**: "You are a coding assistant. Provide clear, well-documented code examples."
-
-### Search Embeddings
-
-- **Capability**: Embedding
-- **Model**: text-embedding-3-small
-- **Tags**: `search`, `production`
-
 ## Related
 
 - [Managing Connections](managing-connections.md) - Connections are required for profiles

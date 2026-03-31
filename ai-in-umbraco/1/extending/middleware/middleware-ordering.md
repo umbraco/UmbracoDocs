@@ -123,38 +123,7 @@ public class MyComposer : IComposer
 
 ## Common Patterns
 
-### Logging Should Be Outer
-
-Put logging middleware early so it captures the full request lifecycle:
-
-```csharp
-builder.AIChatMiddleware()
-    .Append<LoggingMiddleware>()       // First - logs everything
-    .Append<RetryMiddleware>()         // Second - logging sees retries
-    .Append<CachingMiddleware>();      // Third - logging sees cache hits
-```
-
-### Caching Should Be Inner
-
-Put caching close to the client so cached responses skip other middleware:
-
-```csharp
-builder.AIChatMiddleware()
-    .Append<MetricsMiddleware>()       // First - tracks all requests
-    .Append<RateLimitMiddleware>()     // Second - applies rate limiting
-    .Append<CachingMiddleware>();      // Third - cache hits skip rate limiting
-```
-
-### Error Handling Should Be Outer
-
-Put error handling early to catch exceptions from all middleware:
-
-```csharp
-builder.AIChatMiddleware()
-    .Append<ErrorHandlingMiddleware>() // First - catches all errors
-    .Append<LoggingMiddleware>()       // Second
-    .Append<BusinessLogicMiddleware>();// Third
-```
+As a rule of thumb, place logging and error handling middleware early (outermost) so they capture the full request lifecycle, and place caching middleware late (innermost) so cached responses skip other middleware.
 
 ## Multiple Composers
 
@@ -194,25 +163,6 @@ public class ComposerB : IComposer
 {% endcode %}
 
 Use `[ComposeBefore]` and `[ComposeAfter]` attributes to control composer order.
-
-## Debugging Order
-
-To inspect the current middleware order:
-
-{% code title="Debugging" %}
-
-```csharp
-public class DebugComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-    {
-        // After building, the collection contains middleware in order
-        // You can log or inspect during development
-    }
-}
-```
-
-{% endcode %}
 
 {% hint style="info" %}
 Middleware order is set at application startup and cannot change at runtime.

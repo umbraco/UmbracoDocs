@@ -34,15 +34,6 @@ A profile is a named configuration that combines a connection with specific mode
 
 Embedding profiles currently use model defaults. Additional settings may be added in future releases.
 
-## Why Use Profiles
-
-Profiles provide these benefits:
-
-- **Consistency** - Same settings across your application
-- **Reusability** - Configure once, use everywhere
-- **Separation** - Different profiles for different tasks
-- **Manageability** - Change settings without code changes
-
 ## Example Profile Configurations
 
 | Profile          | Use Case        | Model                  | Temperature | System Prompt                         |
@@ -108,15 +99,7 @@ var response = await _chatService.GetChatResponseAsync(
 
 ## Profile Resolution
 
-When you make a request:
-
-1. Profile is resolved by ID or alias
-2. Connection is retrieved for credentials
-3. Model is selected from the profile
-4. Settings are applied as defaults
-5. Request-specific options override defaults
-6. Middleware is applied
-7. Request is sent
+When you make a request, the profile is resolved by ID or alias and its connection, model, and settings are applied as defaults. Any request-specific options override these defaults, and then middleware is applied before the request is sent.
 
 ## Managing Profiles
 
@@ -126,39 +109,7 @@ You can create, edit, and delete profiles through the backoffice. See [Managing 
 
 ### Via Code
 
-{% code title="Example.cs" %}
-
-```csharp
-public class ProfileManagement
-{
-    private readonly IAIProfileService _profileService;
-
-    public ProfileManagement(IAIProfileService profileService)
-    {
-        _profileService = profileService;
-    }
-
-    public async Task<AIProfile> CreateProfile()
-    {
-        var profile = new AIProfile
-        {
-            Alias = "new-profile",
-            Name = "New Profile",
-            Capability = AICapability.Chat,
-            ConnectionId = connectionId,
-            Model = new AIModelRef("openai", "gpt-4o"),
-            Settings = new AIChatProfileSettings
-            {
-                Temperature = 0.7f
-            }
-        };
-
-        return await _profileService.SaveProfileAsync(profile);
-    }
-}
-```
-
-{% endcode %}
+For programmatic profile management, see the [IAIProfileService](../reference/services/ai-profile-service.md) reference.
 
 ## Related
 

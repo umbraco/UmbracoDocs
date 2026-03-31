@@ -109,7 +109,9 @@ public class ChatController : UmbracoApiController
     [HttpPost("stream")]
     public async Task StreamChat([FromBody] ChatRequest request)
     {
-        Response.ContentType = "text/event-stream";
+        Response.Headers.Append("Content-Type", "text/event-stream");
+        Response.Headers.Append("Cache-Control", "no-cache");
+        Response.Headers.Append("Connection", "keep-alive");
 
         var messages = new List<ChatMessage>
         {
@@ -136,119 +138,13 @@ public record ChatRequest(string Message);
 
 {% endcode %}
 
-## Server-Sent Events (SSE)
-
-For proper SSE formatting:
-
-{% code title="SSEController.cs" %}
-
-```csharp
-[HttpPost("stream-sse")]
-public async Task StreamChatSSE([FromBody] ChatRequest request)
-{
-    Response.Headers.Append("Content-Type", "text/event-stream");
-    Response.Headers.Append("Cache-Control", "no-cache");
-    Response.Headers.Append("Connection", "keep-alive");
-
-    var messages = new List<ChatMessage>
-    {
-        new(ChatRole.User, request.Message)
-    };
-
-    await foreach (var update in _chatService.StreamChatResponseAsync(
-        chat => chat.WithAlias("chat-sse"),
-        messages))
-    {
-        if (update.Text is not null)
-        {
-            // Escape newlines in SSE data
-            var escapedText = update.Text.Replace("\n", "\\n");
-            await Response.WriteAsync($"data: {{\"text\":\"{escapedText}\"}}\n\n");
-            await Response.Body.FlushAsync();
-        }
-    }
-
-    await Response.WriteAsync("data: {\"done\":true}\n\n");
-}
-```
-
-{% endcode %}
-
 ## Collecting the Full Response
 
-If you need both streaming and the complete text:
+To collect the full text while streaming, append each `update.Text` to a `StringBuilder` inside the `await foreach` loop.
 
-{% code title="CollectResponse.cs" %}
-
-```csharp
-public async Task<(string FullText, ChatFinishReason? Reason)> StreamAndCollect(
-    string question,
-    Action<string> onChunk)
-{
-    var messages = new List<ChatMessage>
-    {
-        new(ChatRole.User, question)
-    };
-
-    var fullText = new StringBuilder();
-    ChatFinishReason? finishReason = null;
-
-    await foreach (var update in _chatService.StreamChatResponseAsync(
-        chat => chat.WithAlias("stream-and-collect"),
-        messages))
-    {
-        if (update.Text is not null)
-        {
-            fullText.Append(update.Text);
-            onChunk(update.Text); // Callback for each chunk
-        }
-
-        if (update.FinishReason is not null)
-        {
-            finishReason = update.FinishReason;
-        }
-    }
-
-    return (fullText.ToString(), finishReason);
-}
-```
-
-{% endcode %}
-
-## With Cancellation
-
-Support user cancellation:
-
-{% code title="WithCancellation.cs" %}
-
-```csharp
-public async Task StreamWithCancellation(
-    string question,
-    CancellationToken cancellationToken)
-{
-    var messages = new List<ChatMessage>
-    {
-        new(ChatRole.User, question)
-    };
-
-    try
-    {
-        await foreach (var update in _chatService.StreamChatResponseAsync(
-            chat => chat.WithAlias("cancellable-stream"),
-            messages,
-            cancellationToken))
-        {
-            Console.Write(update.Text);
-        }
-    }
-    catch (OperationCanceledException)
-    {
-        Console.WriteLine("\n[Cancelled by user]");
-    }
-}
-```
-
-{% endcode %}
+{% hint style="info" %}
+`StreamChatResponseAsync` accepts a `CancellationToken` parameter to support user cancellation.
+{% endhint %}
 
 ## Using a Specific Profile
 
@@ -275,47 +171,6 @@ await foreach (var update in _chatService.StreamChatResponseAsync(
     messages))
 {
     Console.Write(update.Text);
-}
-```
-
-{% endcode %}
-
-## Client-Side JavaScript
-
-Consuming SSE in the browser:
-
-{% code title="client.js" %}
-
-```javascript
-async function streamChat(message) {
-    const response = await fetch("/api/chat/stream", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-    });
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-
-    while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        const text = decoder.decode(value);
-        const lines = text.split("\n\n");
-
-        for (const line of lines) {
-            if (line.startsWith("data: ")) {
-                const data = line.slice(6);
-                if (data === "[DONE]") {
-                    console.log("Stream complete");
-                } else {
-                    // Append to UI
-                    document.getElementById("output").textContent += data;
-                }
-            }
-        }
-    }
 }
 ```
 

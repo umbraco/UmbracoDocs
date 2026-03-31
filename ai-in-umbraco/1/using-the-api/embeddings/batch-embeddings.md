@@ -164,43 +164,6 @@ public class ChunkedEmbeddingService
 
 {% endcode %}
 
-## With Progress Reporting
-
-Report progress for large batch operations:
-
-{% code title="WithProgress.cs" %}
-
-```csharp
-public async Task<IList<Embedding<float>>> GenerateWithProgress(
-    IList<string> texts,
-    IProgress<int>? progress = null,
-    CancellationToken cancellationToken = default)
-{
-    const int batchSize = 100;
-    var allEmbeddings = new List<Embedding<float>>();
-    var processed = 0;
-
-    for (int i = 0; i < texts.Count; i += batchSize)
-    {
-        cancellationToken.ThrowIfCancellationRequested();
-
-        var chunk = texts.Skip(i).Take(batchSize);
-        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
-            chunk,
-            cancellationToken: cancellationToken);
-
-        allEmbeddings.AddRange(embeddings);
-
-        processed += embeddings.Count;
-        progress?.Report(processed);
-    }
-
-    return allEmbeddings;
-}
-```
-
-{% endcode %}
-
 ## Using a Specific Profile
 
 {% code title="BatchWithProfile.cs" %}
@@ -219,63 +182,6 @@ public async Task<IList<float[]>> GenerateBatchWithProfile(
 ```
 
 {% endcode %}
-
-## Parallel Processing
-
-For large datasets, consider parallel processing with rate limiting:
-
-{% code title="ParallelBatch.cs" %}
-
-```csharp
-public async Task<IDictionary<string, float[]>> GenerateParallel(
-    IDictionary<string, string> idToText,
-    int maxParallelism = 3,
-    CancellationToken cancellationToken = default)
-{
-    const int batchSize = 100;
-    var results = new ConcurrentDictionary<string, float[]>();
-
-    var batches = idToText
-        .Chunk(batchSize)
-        .ToList();
-
-    await Parallel.ForEachAsync(
-        batches,
-        new ParallelOptions
-        {
-            MaxDegreeOfParallelism = maxParallelism,
-            CancellationToken = cancellationToken
-        },
-        async (batch, ct) =>
-        {
-            var texts = batch.Select(kv => kv.Value).ToList();
-            var ids = batch.Select(kv => kv.Key).ToList();
-
-            var embeddings = await _embeddingService.GenerateEmbeddingsAsync(texts, cancellationToken: ct);
-
-            for (int i = 0; i < ids.Count; i++)
-            {
-                results[ids[i]] = embeddings[i].Vector.ToArray();
-            }
-        });
-
-    return results;
-}
-```
-
-{% endcode %}
-
-{% hint style="warning" %}
-Be mindful of API rate limits when using parallel processing. Most providers limit requests per minute.
-{% endhint %}
-
-## Best Practices
-
-1. **Use batches** - Always prefer batch operations over individual calls
-2. **Respect limits** - Check your provider's batch size limits (often 100-2000)
-3. **Handle failures** - Implement retry logic for transient failures
-4. **Monitor usage** - Track token usage to manage costs
-5. **Consider caching** - Store embeddings to avoid regenerating unchanged content
 
 ## Related
 

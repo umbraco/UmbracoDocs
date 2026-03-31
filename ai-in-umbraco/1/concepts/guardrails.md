@@ -50,16 +50,6 @@ Rules specify what happens when content is flagged:
 | `Warn`   | Allow the content through unchanged and log a warning                             |
 | `Redact` | Replace flagged content with `[REDACTED]` before it reaches the AI model or caller |
 
-## Why Use Guardrails
-
-Guardrails provide these benefits:
-
-- **Safety** - Prevent harmful or inappropriate content from reaching users
-- **Compliance** - Enforce data protection by detecting sensitive patterns in inputs and outputs
-- **Quality** - Use LLM-as-judge evaluation to ensure responses meet brand standards
-- **Flexibility** - Combine multiple evaluators with different phases and actions
-- **Reusability** - Assign the same guardrail to multiple profiles, prompts, and agents
-
 ## Example Guardrail Configurations
 
 | Guardrail            | Use Case                | Rules                                     |
@@ -113,6 +103,8 @@ public class GuardrailExample
 
 ### Creating a Guardrail
 
+This example creates a guardrail that combines a Block rule for competitor brand mentions with a Redact rule for email addresses:
+
 {% code title="Example.cs" %}
 
 ```csharp
@@ -136,48 +128,8 @@ public async Task<AIGuardrail> CreateGuardrail()
             new AIGuardrailRule
             {
                 EvaluatorId = "regex",
-                Name = "Block SSNs in responses",
-                Phase = AIGuardrailPhase.PostGenerate,
-                Action = AIGuardrailAction.Block,
-                Config = JsonSerializer.SerializeToElement(new { pattern = @"\b\d{3}-\d{2}-\d{4}\b", ignoreCase = false }),
-                SortOrder = 1
-            }
-        ]
-    };
-
-    return await _guardrailService.SaveGuardrailAsync(guardrail);
-}
-```
-
-{% endcode %}
-
-### Creating a Guardrail with Redaction
-
-{% code title="Example.cs" %}
-
-```csharp
-public async Task<AIGuardrail> CreateRedactionGuardrail()
-{
-    var guardrail = new AIGuardrail
-    {
-        Alias = "email-redaction",
-        Name = "Email Redaction Policy",
-        Rules =
-        [
-            new AIGuardrailRule
-            {
-                EvaluatorId = "regex",
                 Name = "Redact emails in inputs",
                 Phase = AIGuardrailPhase.PreGenerate,
-                Action = AIGuardrailAction.Redact,
-                Config = JsonSerializer.SerializeToElement(new { pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", ignoreCase = true }),
-                SortOrder = 0
-            },
-            new AIGuardrailRule
-            {
-                EvaluatorId = "regex",
-                Name = "Redact emails in responses",
-                Phase = AIGuardrailPhase.PostGenerate,
                 Action = AIGuardrailAction.Redact,
                 Config = JsonSerializer.SerializeToElement(new { pattern = @"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", ignoreCase = true }),
                 SortOrder = 1
@@ -221,19 +173,7 @@ await _profileService.SaveProfileAsync(profile);
 
 ## How Guardrail Evaluation Works
 
-When an AI operation executes with guardrails:
-
-1. The guardrail middleware resolves all applicable guardrails
-2. **Pre-generate** rules evaluate the input messages before sending to the AI provider
-3. If any pre-generate rule with `Block` action flags content, an `AIGuardrailBlockedException` is thrown
-4. If any pre-generate rule with `Redact` action flags content, matched text is replaced with `[REDACTED]` in the user message before sending to the AI provider
-5. The request proceeds to the AI provider
-6. **Post-generate** rules evaluate the response
-7. If any post-generate rule with `Block` action flags content, an `AIGuardrailBlockedException` is thrown
-8. If any post-generate rule with `Redact` action flags content, matched text is replaced with `[REDACTED]` in the response
-9. Rules with `Warn` action allow content through unchanged (a warning is logged)
-
-Action precedence when multiple rules flag the same content: **Block > Redact > Warn**.
+When an AI operation executes, the guardrail middleware resolves all applicable guardrails and runs **pre-generate** rules against the input before it reaches the AI provider, then runs **post-generate** rules against the response. Rules flagged with `Block` throw an `AIGuardrailBlockedException`, rules with `Redact` replace matched text with `[REDACTED]`, and rules with `Warn` allow content through and log a warning. Action precedence when multiple rules flag the same content: **Block > Redact > Warn**.
 
 ### Streaming Behavior
 
@@ -268,49 +208,9 @@ catch (AIGuardrailBlockedException ex)
 
 {% endcode %}
 
-## Guardrail Resolution
-
-Guardrails are resolved automatically based on where they are assigned:
-
-1. **Profile guardrails** - From `AIChatProfileSettings.GuardrailIds`
-2. **Prompt guardrails** - From `AIPrompt.GuardrailIds` (Prompt add-on)
-3. **Agent guardrails** - From `AIAgent.GuardrailIds` (Agent add-on)
-
-The resolution system aggregates guardrails from all sources and deduplicates by guardrail ID.
-
 ## Managing Guardrails
 
-### Via Backoffice
-
-You can create, edit, and delete guardrails through the backoffice. See [Managing Guardrails](../backoffice/managing-guardrails.md) for step-by-step instructions.
-
-### Via Code
-
-{% code title="Example.cs" %}
-
-```csharp
-public class GuardrailManagement
-{
-    private readonly IAIGuardrailService _guardrailService;
-
-    public GuardrailManagement(IAIGuardrailService guardrailService)
-    {
-        _guardrailService = guardrailService;
-    }
-
-    public async Task<IEnumerable<AIGuardrail>> GetAllGuardrails()
-    {
-        return await _guardrailService.GetGuardrailsAsync();
-    }
-
-    public async Task DeleteGuardrail(Guid id)
-    {
-        await _guardrailService.DeleteGuardrailAsync(id);
-    }
-}
-```
-
-{% endcode %}
+You can create, edit, and delete guardrails through the backoffice. See [Managing Guardrails](../backoffice/managing-guardrails.md) for step-by-step instructions. For programmatic management, see the [IAIGuardrailService](../reference/services/ai-guardrail-service.md) reference.
 
 ## Version History
 
@@ -325,8 +225,4 @@ See [Version History](versioning.md) for more information.
 ## Related
 
 - [Profiles](profiles.md) - Assign guardrails to chat profiles
-- [Prompts](../add-ons/prompt/concepts.md) - Assign guardrails to prompts
-- [Agents](../add-ons/agent/concepts.md) - Assign guardrails to agents
-- [Middleware](middleware.md) - How guardrails integrate into the pipeline
-- [Version History](versioning.md) - Track guardrail changes over time
 - [Managing Guardrails](../backoffice/managing-guardrails.md) - Backoffice guide

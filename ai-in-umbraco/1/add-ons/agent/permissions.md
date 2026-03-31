@@ -51,32 +51,7 @@ Umbraco.AI provides built-in scopes for common tool categories:
 
 ### Configuring Scope Permissions
 
-#### Via Backoffice
-
-1. Navigate to the **AI** section > **Agents**
-2. Open an agent or create a new one
-3. Go to the **Governance** tab
-4. Under **Tool Permissions** > **Allowed Tool Scopes**, select the scopes to allow
-5. Save the agent
-
-#### Via API
-
-Include `allowedToolScopeIds` when creating or updating an agent:
-
-{% code title="Request" %}
-
-```json
-{
-    "alias": "content-assistant",
-    "name": "Content Assistant",
-    "allowedToolScopeIds": ["content-read", "search", "navigation"],
-    "instructions": "You help users find and read content."
-}
-```
-
-{% endcode %}
-
-#### Via Code
+Scope permissions can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithToolScopes.cs" %}
 
@@ -108,36 +83,7 @@ Use explicit tool permissions when you need to:
 
 ### Configuring Explicit Tool Permissions
 
-#### Via Backoffice
-
-1. Navigate to the **AI** section > **Agents**
-2. Open an agent or create a new one
-3. Go to the **Governance** tab
-4. Under **Tool Permissions** > **Allowed Tools**, click **Add Tool**
-5. Select tools from the picker
-6. Save the agent
-
-#### Via API
-
-Include `allowedToolIds` when creating or updating an agent:
-
-{% code title="Request" %}
-
-```json
-{
-    "alias": "search-only-agent",
-    "name": "Search Only Agent",
-    "allowedToolIds": [
-        "search_umbraco",
-        "get_page_info"
-    ],
-    "instructions": "You can search content and get page information."
-}
-```
-
-{% endcode %}
-
-#### Via Code
+Explicit tool permissions can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithExplicitTools.cs" %}
 
@@ -206,66 +152,7 @@ User group overrides **replace** the agent's base permissions entirely. They do 
 
 ### Configuring User Group Overrides
 
-#### Via Backoffice
-
-1. Navigate to the **AI** section > **Agents**
-2. Open an agent
-3. Go to the **Governance** tab
-4. Under **Tool Permissions** > **User Group Permissions**, click **Add Override**
-5. Select a user group
-6. Configure the tool scopes and explicit tools for this group
-7. Save the agent
-
-The UI displays which permissions apply to each user group:
-
-```
-┌─────────────────────────────────────────────────┐
-│ User Group Permission Overrides                 │
-├─────────────────────────────────────────────────┤
-│ [+] Add Override                                │
-│                                                 │
-│ ▼ Content Editors                               │
-│   Tool Scopes: content-read, content-write      │
-│   Explicit Tools: (none)                        │
-│   [Edit] [Remove]                               │
-│                                                 │
-│ ▼ Contributors                                  │
-│   Tool Scopes: content-read                     │
-│   Explicit Tools: (none)                        │
-│   [Edit] [Remove]                               │
-└─────────────────────────────────────────────────┘
-```
-
-#### Via API
-
-Include `userGroupPermissions` when creating or updating an agent:
-
-{% code title="Request" %}
-
-```json
-{
-    "alias": "content-agent",
-    "name": "Content Agent",
-    "allowedToolScopeIds": ["content-read"],
-    "userGroupPermissions": [
-        {
-            "userGroupId": "550e8400-e29b-41d4-a716-446655440000",
-            "allowedToolScopeIds": ["content-read", "content-write"],
-            "allowedToolIds": []
-        },
-        {
-            "userGroupId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
-            "allowedToolScopeIds": ["content-read"],
-            "allowedToolIds": ["search_umbraco"]
-        }
-    ],
-    "instructions": "You help manage content."
-}
-```
-
-{% endcode %}
-
-#### Via Code
+User group overrides can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithUserGroupOverrides.cs" %}
 
@@ -428,56 +315,7 @@ public async Task<IReadOnlyList<string>> GetAllowedToolsAsync(
 
 ## Permission Filtering at Runtime
 
-When an agent runs, the `IAIAgentService.StreamAgentAsync` method automatically filters frontend tools based on the current user's permissions:
-
-```csharp
-// Frontend sends tools with metadata
-var frontendTools = new List<AIFrontendTool>
-{
-    new AIFrontendTool(
-        new AGUITool { Name = "search_umbraco", ... },
-        Scope: "search",
-        IsDestructive: false
-    ),
-    new AIFrontendTool(
-        new AGUITool { Name = "create_content", ... },
-        Scope: "content-write",
-        IsDestructive: true
-    )
-};
-
-// Service filters based on agent permissions and user's group overrides
-await foreach (var evt in _agentService.StreamAgentAsync(
-    agentId,
-    request,
-    frontendTools,
-    cancellationToken))
-{
-    // Only permitted tools are passed to the agent
-    // Unpermitted tools are silently filtered out
-}
-```
-
-The filtering logic:
-
-```csharp
-// For each frontend tool, check if permitted:
-bool isPermitted = false;
-
-// 1. Check if tool ID is explicitly allowed
-if (agent.AllowedToolIds.Contains(tool.Name, StringComparer.OrdinalIgnoreCase))
-{
-    isPermitted = true;
-}
-// 2. Check if tool's scope is allowed
-else if (tool.Scope != null &&
-         agent.AllowedToolScopeIds.Contains(tool.Scope, StringComparer.OrdinalIgnoreCase))
-{
-    isPermitted = true;
-}
-
-// Tool is only included if permitted
-```
+When an agent runs, `IAIAgentService.StreamAgentAsync` automatically filters frontend tools based on the resolved permissions -- a tool is included only if its ID is in `AllowedToolIds` or its scope is in `AllowedToolScopeIds`; unpermitted tools are silently excluded.
 
 ## Security Considerations
 
@@ -489,70 +327,7 @@ else if (tool.Scope != null &&
 4. **Document Agent Permissions** - Clearly document why permissions are granted
 5. **Audit Permission Changes** - Track changes to agent permissions over time
 
-### Common Pitfalls
-
-❌ **Granting all scopes by default** - Limits future flexibility and security
-
-```csharp
-// DON'T DO THIS
-AllowedToolScopeIds = new[] { "content-read", "content-write", "media-read",
-    "media-write", "search", "navigation", "web" }
-```
-
-✅ **Grant specific scopes as needed**
-
-```csharp
-// DO THIS
-AllowedToolScopeIds = new[] { "content-read", "search" }
-```
-
-❌ **Ignoring user group overrides** - Missing opportunity to restrict access
-
-✅ **Use overrides for role-based permissions**
-
-```csharp
-// Content editors get write access
-UserGroupPermissions = new[]
-{
-    new AIAgentUserGroupPermissions
-    {
-        UserGroupId = editorGroupId,
-        AllowedToolScopeIds = new[] { "content-read", "content-write" }
-    }
-}
-```
-
-## Troubleshooting
-
-### Tool Not Available to Agent
-
-**Problem**: A tool doesn't appear in the agent's available tools.
-
-**Solutions**:
-1. Verify the tool's scope is in `allowedToolScopeIds`
-2. Or verify the tool ID is in `allowedToolIds`
-3. Check if a user group override is limiting permissions
-4. Ensure the tool is properly registered in the frontend
-
-### User Group Override Not Applied
-
-**Problem**: User group override permissions aren't taking effect.
-
-**Solutions**:
-1. Verify the user belongs to the specified user group
-2. Check that `UserGroupId` in the override matches the actual group ID
-3. Confirm the agent was saved after adding the override
-4. Test with a different user account in the same group
-
-### Permissions Too Permissive
-
-**Problem**: Agent has access to more tools than intended.
-
-**Solutions**:
-1. Review both `allowedToolScopeIds` and `allowedToolIds`
-2. Check if multiple scopes are granting overlapping permissions
-3. Audit user group overrides for unintended permissions
-4. Use explicit tool IDs instead of broad scopes
+Avoid granting all scopes by default -- instead, grant only the specific scopes each agent needs. Use user group overrides to provide role-based access rather than giving broad permissions to all users.
 
 ## Related
 

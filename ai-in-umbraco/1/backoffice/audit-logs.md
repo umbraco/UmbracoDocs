@@ -99,18 +99,18 @@ Content snapshots are controlled by the `PersistPrompts` and `PersistResponses` 
 
 When operations fail, the error category helps diagnose the issue:
 
-| Category          | Description               | Typical Cause                        |
-| ----------------- | ------------------------- | ------------------------------------ |
-| Authentication    | Authentication failure    | Invalid or expired API key           |
-| RateLimiting      | Provider rate limit exceeded | Too many requests in a short period |
-| ModelNotFound     | Requested model not available | Model ID is invalid or deprecated |
-| InvalidRequest    | Invalid request parameters | Bad request format or content       |
-| ServerError       | Provider server error     | Issue on the provider side           |
-| NetworkError      | Network connectivity issue | Connection failure or DNS error     |
-| ContextResolution | Context resolution failure | Failed to resolve a context resource |
-| ToolExecution     | Tool execution failure    | A tool returned an error             |
-| GuardrailBlocked  | Blocked by guardrail rule | Content flagged by a guardrail rule  |
-| Unknown           | Unclassified error        | Unexpected or unmapped failure       |
+| Category          | Description                  |
+| ----------------- | ---------------------------- |
+| Authentication    | Authentication failure       |
+| RateLimiting      | Provider rate limit exceeded |
+| ModelNotFound     | Requested model not available|
+| InvalidRequest    | Invalid request parameters   |
+| ServerError       | Provider server error        |
+| NetworkError      | Network connectivity issue   |
+| ContextResolution | Context resolution failure   |
+| ToolExecution     | Tool execution failure       |
+| GuardrailBlocked  | Blocked by guardrail rule    |
+| Unknown           | Unclassified error           |
 
 ## Deleting Logs
 
@@ -165,27 +165,6 @@ Configure audit log options in `appsettings.json`:
 | `PersistResponses`     | `true`  | Store response snapshots in logs                 |
 | `PersistFailureDetails`| `true`  | Store failure details in logs                    |
 | `RedactionPatterns`    | `[]`    | Regex patterns for redacting sensitive content   |
-
-## Use Cases
-
-### Debugging Failed Operations
-
-1. Filter by Status = Failed
-2. Review error category and message
-3. Check the prompt snapshot for issues
-4. Identify patterns (time, user, profile)
-
-### Monitoring Usage
-
-1. View recent logs to see activity
-2. Check token usage trends
-3. Identify heavy users or operations
-
-### Compliance Auditing
-
-1. Filter by date range for the audit period
-2. Export or document the relevant logs
-3. Include user, timestamp, and operation details
 
 ## Related
 

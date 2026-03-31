@@ -211,13 +211,6 @@ POST /umbraco/management/api/v1/ai/versions/{entityType}/{entityId}/{version}/ro
 
 See [Versions API](../management-api/versions/README.md) for details.
 
-## Best Practices
-
-- **Use meaningful change descriptions** when saving through code
-- **Review before rollback** - compare versions to understand what will change
-- **Configure cleanup** to prevent unbounded growth
-- **Monitor storage** if you have many entities with frequent changes
-
 ## Related
 
 - [Connections](connections.md) - Versioned credential storage

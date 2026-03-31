@@ -99,55 +99,8 @@ public class ConnectionExample
 
 {% endcode %}
 
-## Enabling and Disabling Connections
-
-The `IsActive` flag controls whether a connection is available for use:
-
-- **Active (`IsActive = true`)** - Connection can be used by profiles
-- **Inactive (`IsActive = false`)** - Connection is disabled and cannot be used
-
-{% hint style="info" %}
-Deactivating a connection is useful when you need to temporarily disable an API key without deleting the connection configuration.
-{% endhint %}
-
-## Testing Connections
-
-You can test a connection via the Management API to verify credentials work:
-
-{% code title="Example.cs" %}
-
-```csharp
-// Using HttpClient to call the Management API
-var response = await httpClient.PostAsync(
-    $"/umbraco/ai/management/api/v1/connections/{connectionId}/test",
-    null);
-
-var result = await response.Content.ReadFromJsonAsync<ConnectionTestResult>();
-if (result.Success)
-{
-    // Connection works
-}
-else
-{
-    // Check result.ErrorMessage for details
-}
-```
-
-{% endcode %}
-
-{% hint style="info" %}
-Connection testing is currently available via the API only. A backoffice UI test button will be added in a future release.
-{% endhint %}
-
-## Connection Lifecycle
-
-1. **Created** - Connection saved with settings
-2. **Active** - Available for use by profiles (default state)
-3. **Inactive** - Disabled but configuration preserved
-4. **Deleted** - Removed from the system
-
 {% hint style="warning" %}
-Deleting a connection that profiles depend on will break those profiles. Deactivate connections instead of deleting them if you're unsure.
+Deleting a connection that profiles depend on will break those profiles. Deactivate connections instead of deleting them if you are unsure.
 {% endhint %}
 
 ## Related

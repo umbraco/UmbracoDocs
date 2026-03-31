@@ -169,41 +169,6 @@ Resources are available as tools the AI can invoke when needed:
 - FAQ content
 - Optional context materials
 
-## Example: Site-Wide Brand Voice
-
-### 1. Create the Context
-
-In **Settings** > **AI** > **Contexts**, create a context:
-
-- **Name**: Corporate Brand Voice
-- **Alias**: `corporate-brand`
-- **Resources**:
-    - Brand Voice Guidelines (Always)
-    - Style Guide (Always)
-    - Product Reference (OnDemand)
-
-### 2. Create the Data Type
-
-Create an AI Context Picker data type:
-
-- **Allow Multiple**: No
-- Leave min/max empty
-
-### 3. Add to Site Document Type
-
-Add the property to your root document type:
-
-- **Name**: AI Context
-- **Alias**: `aiContext`
-
-### 4. Assign the Context
-
-Edit your site root content and select "Corporate Brand Voice" in the context picker.
-
-### 5. Automatic Inheritance
-
-All content under the site root now inherits this context. AI operations on any page will include the corporate brand voice guidelines.
-
 ## Profile-Level Contexts
 
 Contexts can also be assigned at the profile level:
@@ -213,34 +178,6 @@ Contexts can also be assigned at the profile level:
 3. These contexts apply to all operations using this profile
 
 Profile contexts are merged with content contexts, allowing layered context strategies.
-
-## Best Practices
-
-### Organize by Content Structure
-
-Match your context hierarchy to your content structure:
-
-```
-Site Root → Corporate brand context
-├── Blog → Blog writing context (overrides)
-├── Products → Product-focused context (overrides)
-└── Support → Support tone context (overrides)
-```
-
-### Use Meaningful Names
-
-Name contexts by their purpose:
-
-- "Corporate Brand Voice" not "Context 1"
-- "Technical Documentation" not "Tech"
-
-### Limit Context Size
-
-Keep contexts focused:
-
-- Split large contexts into multiple smaller ones
-- Use OnDemand mode for reference materials
-- Only include essential guidelines in Always mode
 
 ## Related
 

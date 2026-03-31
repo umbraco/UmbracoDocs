@@ -146,68 +146,6 @@ Resulting order:
 3. CachingMiddleware
 4. MetricsMiddleware
 
-## Common Middleware Patterns
-
-### Caching
-
-Cache responses for identical requests:
-
-{% code title="CachingMiddleware.cs" %}
-
-```csharp
-public IChatClient Apply(IChatClient client)
-{
-    return new CachingChatClient(client, _cache, _options);
-}
-```
-
-{% endcode %}
-
-### Rate Limiting
-
-Prevent exceeding API limits:
-
-{% code title="RateLimitingMiddleware.cs" %}
-
-```csharp
-public IChatClient Apply(IChatClient client)
-{
-    return new RateLimitingChatClient(client, _rateLimiter);
-}
-```
-
-{% endcode %}
-
-### Retry with Backoff
-
-Handle transient failures:
-
-{% code title="RetryMiddleware.cs" %}
-
-```csharp
-public IChatClient Apply(IChatClient client)
-{
-    return new RetryingChatClient(client, _retryPolicy);
-}
-```
-
-{% endcode %}
-
-### Request Modification
-
-Add headers or modify requests:
-
-{% code title="HeaderInjectingMiddleware.cs" %}
-
-```csharp
-public IChatClient Apply(IChatClient client)
-{
-    return new HeaderInjectingChatClient(client, _headers);
-}
-```
-
-{% endcode %}
-
 ## M.E.AI Built-in Middleware
 
 Microsoft.Extensions.AI provides middleware you can use:

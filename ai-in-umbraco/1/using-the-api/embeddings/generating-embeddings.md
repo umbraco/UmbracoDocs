@@ -98,99 +98,6 @@ public class ProfiledEmbeddingService
 
 {% endcode %}
 
-## Indexing Content
-
-A common pattern for search indexing:
-
-{% code title="ContentIndexer.cs" %}
-
-```csharp
-public class ContentIndexer
-{
-    private readonly IAIEmbeddingService _embeddingService;
-    private readonly IVectorStore _vectorStore;
-
-    public ContentIndexer(
-        IAIEmbeddingService embeddingService,
-        IVectorStore vectorStore)
-    {
-        _embeddingService = embeddingService;
-        _vectorStore = vectorStore;
-    }
-
-    public async Task IndexContent(IContent content)
-    {
-        // Combine relevant text fields
-        var textToEmbed = $"{content.Name} {content.GetValue<string>("bodyText")}";
-
-        // Generate embedding
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(textToEmbed);
-
-        // Store in vector database
-        await _vectorStore.UpsertAsync(new VectorDocument
-        {
-            Id = content.Key.ToString(),
-            Vector = embedding.Vector.ToArray(),
-            Metadata = new Dictionary<string, object>
-            {
-                ["contentType"] = content.ContentType.Alias,
-                ["name"] = content.Name
-            }
-        });
-    }
-}
-```
-
-{% endcode %}
-
-## Computing Similarity
-
-Compare two embeddings using cosine similarity:
-
-{% code title="Similarity.cs" %}
-
-```csharp
-public class SimilarityService
-{
-    private readonly IAIEmbeddingService _embeddingService;
-
-    public SimilarityService(IAIEmbeddingService embeddingService)
-    {
-        _embeddingService = embeddingService;
-    }
-
-    public async Task<double> ComputeSimilarity(string text1, string text2)
-    {
-        var embedding1 = await _embeddingService.GenerateEmbeddingAsync(text1);
-        var embedding2 = await _embeddingService.GenerateEmbeddingAsync(text2);
-
-        return CosineSimilarity(embedding1.Vector.Span, embedding2.Vector.Span);
-    }
-
-    private static double CosineSimilarity(ReadOnlySpan<float> a, ReadOnlySpan<float> b)
-    {
-        double dotProduct = 0;
-        double normA = 0;
-        double normB = 0;
-
-        for (int i = 0; i < a.Length; i++)
-        {
-            dotProduct += a[i] * b[i];
-            normA += a[i] * a[i];
-            normB += b[i] * b[i];
-        }
-
-        return dotProduct / (Math.Sqrt(normA) * Math.Sqrt(normB));
-    }
-}
-```
-
-{% endcode %}
-
-{% hint style="info" %}
-Cosine similarity returns a value between -1 and 1, where 1 means identical, 0 means unrelated, and -1 means opposite.
-{% endhint %}
-
 ## Error Handling
 
 {% code title="ErrorHandling.cs" %}
@@ -217,13 +124,6 @@ public async Task<float[]?> SafeGenerateEmbedding(string text)
 ```
 
 {% endcode %}
-
-## Best Practices
-
-1. **Normalize input text** - Remove excessive whitespace, consider lowercasing
-2. **Chunk long content** - Most models have token limits; split long documents
-3. **Cache embeddings** - Store generated embeddings to avoid regenerating
-4. **Use consistent profiles** - Query embeddings should use the same model as indexed embeddings
 
 ## Next Steps
 

@@ -59,26 +59,6 @@ Select the time period to analyze using the picker in the top-right corner:
 | Last 7 Days    | Weekly trends        |
 | Last 30 Days   | Monthly analysis     |
 
-## Use Cases
-
-### Cost Estimation
-
-1. Review the **By Model** breakdown
-2. Note total tokens per model
-3. Calculate costs based on your provider's per-token pricing
-
-### Performance Monitoring
-
-1. Monitor **Success Rate** for drops
-2. Watch **Avg Duration** for increases
-3. Use the time series chart to identify trends
-
-### Capacity Planning
-
-1. Review usage growth over time
-2. Identify peak usage periods
-3. Adjust provider tiers or rate limits accordingly
-
 ## Programmatic Access
 
 For custom dashboards or integrations, use the [Analytics API](../management-api/analytics/README.md).
