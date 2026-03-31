@@ -22,14 +22,7 @@ Settings are a singleton entity - there is only one settings record for the enti
 
 ## Configuring Default Profiles
 
-The recommended way to configure default profiles is through the backoffice:
-
-1. Navigate to the **AI** section > **Settings**
-2. Select your default chat profile via the picker
-3. Select your default embedding profile (if applicable)
-4. Click **Save**
-
-See [Managing Settings](../backoffice/managing-settings.md) for detailed instructions.
+The recommended way to configure default profiles is through the backoffice. See [Managing Settings](../backoffice/managing-settings.md) for step-by-step instructions.
 
 ## Using Settings in Code
 
@@ -136,9 +129,7 @@ Database settings (configured via backoffice) take precedence over configuration
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Settings**
-2. Select default profiles via the pickers
-3. Save changes
+You can configure settings through the backoffice. See [Managing Settings](../backoffice/managing-settings.md) for step-by-step instructions.
 
 ### Via Management API
 

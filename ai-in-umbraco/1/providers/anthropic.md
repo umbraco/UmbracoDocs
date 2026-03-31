@@ -71,11 +71,9 @@ Claude's 200K token context window is ideal for processing long documents, exten
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Connections**
-2. Click **Create Connection**
-3. Select **Anthropic** as the provider
-4. Enter your API key
-5. Save the connection
+Create a connection through the backoffice by selecting **Anthropic** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
+
+Once created, configure the provider-specific settings:
 
 ![Anthropic connection detail showing API Key field](../.gitbook/assets/anthropic-create-connection.png)
 

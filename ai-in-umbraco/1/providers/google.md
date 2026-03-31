@@ -70,11 +70,9 @@ Gemini 1.5 Pro has a 2 million token context window, ideal for processing entire
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Connections**
-2. Click **Create Connection**
-3. Select **Google** as the provider
-4. Enter your API key
-5. Save the connection
+Create a connection through the backoffice by selecting **Google** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
+
+Once created, configure the provider-specific settings:
 
 ![Google Gemini connection detail](../.gitbook/assets/google-create-connection.png)
 

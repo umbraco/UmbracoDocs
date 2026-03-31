@@ -154,9 +154,7 @@ When multiple contexts are used:
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Contexts**
-2. Create, edit, or delete contexts through the UI
-3. Add and organize resources within each context
+You can create, edit, and delete contexts through the backoffice. See [Managing Contexts](../backoffice/managing-contexts.md) for step-by-step instructions.
 
 ### Via Code
 

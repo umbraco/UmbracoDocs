@@ -112,11 +112,9 @@ Before using a model, you must enable it in your AWS account:
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Connections**
-2. Click **Create Connection**
-3. Select **Amazon Bedrock** as the provider
-4. Enter your AWS credentials and region
-5. Save the connection
+Create a connection through the backoffice by selecting **Amazon Bedrock** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
+
+Once created, configure the provider-specific settings:
 
 ![Amazon Bedrock connection detail showing Region and Access Key fields](../.gitbook/assets/amazon-bedrock-create-connection.png)
 

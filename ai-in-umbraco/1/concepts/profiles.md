@@ -56,11 +56,7 @@ Profiles provide these benefits:
 
 ### Default Profile
 
-Configure a default profile through the backoffice:
-
-1. Navigate to the **AI** section > **Settings**
-2. Select "content-writer" via the **Default Chat Profile** picker
-3. Click **Save**
+Configure a default profile through the backoffice. See [Managing Settings](../backoffice/managing-settings.md) for details.
 
 Then use the service without specifying a profile:
 
@@ -126,8 +122,7 @@ When you make a request:
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Profiles**
-2. Create, edit, or delete profiles through the UI
+You can create, edit, and delete profiles through the backoffice. See [Managing Profiles](../backoffice/managing-profiles.md) for step-by-step instructions.
 
 ### Via Code
 

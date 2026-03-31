@@ -282,9 +282,7 @@ The resolution system aggregates guardrails from all sources and deduplicates by
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Guardrails**
-2. Create, edit, or delete guardrails through the UI
-3. Add and configure rules within each guardrail
+You can create, edit, and delete guardrails through the backoffice. See [Managing Guardrails](../backoffice/managing-guardrails.md) for step-by-step instructions.
 
 ### Via Code
 

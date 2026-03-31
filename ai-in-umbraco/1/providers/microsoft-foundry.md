@@ -115,11 +115,9 @@ Available models depend on your Azure subscription, region, and deployed models 
 
 ### Via Backoffice
 
-1. Navigate to the **AI** section > **Connections**
-2. Click **Create Connection**
-3. Select **Microsoft AI Foundry** as the provider
-4. Enter your endpoint URL and API key
-5. Save the connection
+Create a connection through the backoffice by selecting **Microsoft AI Foundry** as the provider. See [Managing Connections](../backoffice/managing-connections.md) for the step-by-step process.
+
+Once created, configure the provider-specific settings:
 
 ![Microsoft AI Foundry connection detail showing endpoint and authentication fields](../.gitbook/assets/microsoft-foundry-create-connection.png)
 

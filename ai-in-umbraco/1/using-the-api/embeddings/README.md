@@ -89,13 +89,7 @@ public class SearchService
 
 ### Default Profile
 
-Configure a default profile through the backoffice:
-
-1. Navigate to the **AI** section > **Settings**
-2. Select your embedding profile via the **Default Embedding Profile** picker
-3. Click **Save**
-
-Then call without specifying a profile:
+Once you have [configured a default embedding profile](../../backoffice/managing-settings.md) in the backoffice, you can call without specifying a profile:
 
 ```csharp
 var embedding = await _embeddingService.GenerateEmbeddingAsync(text);

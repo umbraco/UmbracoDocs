@@ -36,13 +36,7 @@ OpenAI Provider
 
 ## Creating Connections
 
-Connections are typically created through the Umbraco backoffice:
-
-1. Navigate to the **AI** section > **Connections**
-2. Click **Create Connection**
-3. Select a provider
-4. Enter the required settings
-5. Save the connection
+You can create and manage connections through the backoffice. See [Managing Connections](../backoffice/managing-connections.md) for step-by-step instructions.
 
 ## Configuration References
 
