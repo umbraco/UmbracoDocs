@@ -91,6 +91,7 @@ Use `$` prefix to reference values from `appsettings.json`:
     "name": "OpenAI Production",
     "providerId": "openai",
     "isActive": true,
+    "version": 1,
     "dateCreated": "2024-01-15T10:30:00Z",
     "dateModified": "2024-01-15T10:30:00Z",
     "settings": {

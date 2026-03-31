@@ -41,7 +41,7 @@ GET /umbraco/ai/management/api/v1/context
                     "name": "Tone of Voice",
                     "description": "Writing style guidelines",
                     "sortOrder": 0,
-                    "data": "Always use a friendly, professional tone...",
+                    "settings": "Always use a friendly, professional tone...",
                     "injectionMode": "Always"
                 }
             ],

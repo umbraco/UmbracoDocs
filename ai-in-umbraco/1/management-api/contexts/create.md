@@ -27,7 +27,7 @@ POST /umbraco/ai/management/api/v1/context
             "name": "Tone of Voice",
             "description": "Writing style guidelines",
             "sortOrder": 0,
-            "data": "Always use a friendly, professional tone...",
+            "settings": "Always use a friendly, professional tone...",
             "injectionMode": "Always"
         }
     ]
@@ -52,7 +52,7 @@ POST /umbraco/ai/management/api/v1/context
 | `name`           | string | Yes      | Display name                     |
 | `description`    | string | No       | Optional description             |
 | `sortOrder`      | int    | No       | Order for injection (default: 0) |
-| `data`           | object | No       | Resource content                 |
+| `settings`       | object | No       | Resource content                 |
 | `injectionMode`  | string | No       | `Always` (default) or `OnDemand` |
 
 ## Response
@@ -74,7 +74,7 @@ POST /umbraco/ai/management/api/v1/context
             "name": "Tone of Voice",
             "description": "Writing style guidelines",
             "sortOrder": 0,
-            "data": "Always use a friendly, professional tone...",
+            "settings": "Always use a friendly, professional tone...",
             "injectionMode": "Always"
         }
     ],
@@ -117,7 +117,7 @@ curl -X POST "https://your-site.com/umbraco/ai/management/api/v1/context" \
       {
         "resourceTypeId": "text",
         "name": "Tone of Voice",
-        "data": "Always use a friendly, professional tone..."
+        "settings": "Always use a friendly, professional tone..."
       }
     ]
   }'
@@ -138,7 +138,7 @@ var context = new
         {
             resourceTypeId = "text",
             name = "Tone of Voice",
-            data = "Always use a friendly, professional tone..."
+            settings = "Always use a friendly, professional tone..."
         }
     }
 };

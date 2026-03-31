@@ -18,16 +18,16 @@ using Umbraco.AI.Core.Versioning;
 {% code title="AIEntityVersion" %}
 
 ```csharp
-public class AIEntityVersion
+public sealed class AIEntityVersion
 {
-    public Guid Id { get; set; }
-    public Guid EntityId { get; set; }
-    public string EntityType { get; set; } = string.Empty;
-    public int Version { get; set; }
-    public string Snapshot { get; set; } = string.Empty;
-    public DateTime DateCreated { get; set; }
-    public Guid? CreatedByUserId { get; set; }
-    public string? ChangeDescription { get; set; }
+    public Guid Id { get; init; }
+    public Guid EntityId { get; init; }
+    public string EntityType { get; init; } = string.Empty;
+    public int Version { get; init; }
+    public string Snapshot { get; init; } = string.Empty;
+    public DateTime DateCreated { get; init; }
+    public Guid? CreatedByUserId { get; init; }
+    public string? ChangeDescription { get; init; }
 }
 ```
 
@@ -89,15 +89,11 @@ Result of comparing two entity versions.
 ```csharp
 public class AIVersionComparison
 {
-    public Guid EntityId { get; set; }
-    public string EntityType { get; set; } = string.Empty;
-    public int FromVersion { get; set; }
-    public int ToVersion { get; set; }
-    public DateTime FromDate { get; set; }
-    public DateTime ToDate { get; set; }
-    public IReadOnlyList<AIVersionChange> Changes { get; set; } = Array.Empty<AIVersionChange>();
-    public string? FromSnapshot { get; set; }
-    public string? ToSnapshot { get; set; }
+    public Guid EntityId { get; init; }
+    public string EntityType { get; init; } = string.Empty;
+    public int FromVersion { get; init; }
+    public int ToVersion { get; init; }
+    public IReadOnlyList<AIValueChange> Changes { get; init; } = Array.Empty<AIValueChange>();
 }
 ```
 
@@ -105,26 +101,18 @@ public class AIVersionComparison
 
 ---
 
-## AIVersionChange
+## AIValueChange
 
 Represents a single change between two versions.
 
-{% code title="AIVersionChange" %}
+{% code title="AIValueChange" %}
 
 ```csharp
-public class AIVersionChange
+public class AIValueChange
 {
-    public string Path { get; set; } = string.Empty;
-    public AIVersionChangeType ChangeType { get; set; }
-    public string? FromValue { get; set; }
-    public string? ToValue { get; set; }
-}
-
-public enum AIVersionChangeType
-{
-    Added = 0,
-    Removed = 1,
-    Modified = 2
+    public string Path { get; init; } = string.Empty;
+    public string? OldValue { get; init; }
+    public string? NewValue { get; init; }
 }
 ```
 
@@ -141,8 +129,12 @@ Result of version cleanup operation.
 ```csharp
 public class AIVersionCleanupResult
 {
-    public int DeletedCount { get; set; }
-    public DateTime? OldestRetained { get; set; }
+    public int DeletedByAge { get; init; }
+    public int DeletedByCount { get; init; }
+    public int TotalDeleted => DeletedByAge + DeletedByCount;
+    public int RemainingVersions { get; init; }
+    public bool WasSkipped { get; init; }
+    public string? SkipReason { get; init; }
 }
 ```
 

@@ -40,7 +40,7 @@ Contexts define collections of resources (brand voice, guidelines, content) that
             "name": "Tone of Voice",
             "description": "Writing style guidelines",
             "sortOrder": 0,
-            "data": "Always use a friendly, professional tone...",
+            "settings": "Always use a friendly, professional tone...",
             "injectionMode": "Always"
         }
     ],
@@ -62,7 +62,7 @@ Contexts define collections of resources (brand voice, guidelines, content) that
 | `name`           | string | Display name                                |
 | `description`    | string | Optional description                        |
 | `sortOrder`      | int    | Controls injection order                    |
-| `data`           | object | Type-specific resource data                 |
+| `settings`       | object | Type-specific resource data                 |
 | `injectionMode`  | string | When to inject: `Always` or `OnDemand`      |
 
 ## Related

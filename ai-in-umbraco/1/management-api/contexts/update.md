@@ -34,14 +34,14 @@ PUT /umbraco/ai/management/api/v1/context/{id}
             "name": "Tone of Voice",
             "description": "Updated writing style guidelines",
             "sortOrder": 0,
-            "data": "Always use a friendly, professional, and engaging tone...",
+            "settings": "Always use a friendly, professional, and engaging tone...",
             "injectionMode": "Always"
         },
         {
             "resourceTypeId": "text",
             "name": "Key Messages",
             "sortOrder": 1,
-            "data": "Our core values are...",
+            "settings": "Our core values are...",
             "injectionMode": "Always"
         }
     ]
@@ -73,7 +73,7 @@ Include existing resource IDs to update them. Resources without IDs are created 
             "name": "Tone of Voice",
             "description": "Updated writing style guidelines",
             "sortOrder": 0,
-            "data": "Always use a friendly, professional, and engaging tone...",
+            "settings": "Always use a friendly, professional, and engaging tone...",
             "injectionMode": "Always"
         },
         {
@@ -81,7 +81,7 @@ Include existing resource IDs to update them. Resources without IDs are created 
             "resourceTypeId": "text",
             "name": "Key Messages",
             "sortOrder": 1,
-            "data": "Our core values are...",
+            "settings": "Our core values are...",
             "injectionMode": "Always"
         }
     ],
@@ -140,7 +140,7 @@ curl -X PUT "https://your-site.com/umbraco/ai/management/api/v1/context/3fa85f64
         "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
         "resourceTypeId": "text",
         "name": "Tone of Voice",
-        "data": "Updated content..."
+        "settings": "Updated content..."
       }
     ]
   }'

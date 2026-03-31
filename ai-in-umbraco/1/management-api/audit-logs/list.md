@@ -40,17 +40,19 @@ GET /umbraco/ai/management/api/v1/audit-log
         {
             "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "startTime": "2024-01-25T09:15:00Z",
-            "endTime": "2024-01-25T09:15:02Z",
-            "duration": "00:00:02.345",
+            "durationMs": 2345,
             "status": "Succeeded",
             "capability": "Chat",
             "profileAlias": "content-assistant",
+            "profileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
             "providerId": "openai",
             "modelId": "gpt-4o",
             "userName": "admin@example.com",
+            "userId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "featureType": "prompt",
+            "featureId": "b2c3d4e5-f6a7-8901-bcde-f23456789012",
             "inputTokens": 150,
-            "outputTokens": 420,
-            "totalTokens": 570
+            "outputTokens": 420
         }
     ],
     "total": 1250

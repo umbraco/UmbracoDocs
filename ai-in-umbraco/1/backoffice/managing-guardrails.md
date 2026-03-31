@@ -126,6 +126,8 @@ Rules are evaluated in order. To reorder:
 
 Rules at the top are evaluated first.
 
+![Content Safety Policy guardrail showing configured rules](../.gitbook/assets/backoffice-guardrail-rules.png)
+
 ## Editing a Guardrail
 
 1. Select the guardrail from the list

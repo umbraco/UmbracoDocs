@@ -35,36 +35,37 @@ GET /umbraco/ai/management/api/v1/versions/{entityType}/{entityId}
 
 ```json
 {
-    "items": [
+    "currentVersion": 5,
+    "versions": [
         {
             "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
             "entityId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "entityType": "profile",
             "version": 5,
             "dateCreated": "2024-01-25T09:15:00Z",
             "createdByUserId": "user-guid",
+            "createdByUserName": "admin@example.com",
             "changeDescription": "Updated system prompt"
         },
         {
             "id": "b2c3d4e5-f6a7-8901-bcde-f23456789012",
             "entityId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "entityType": "profile",
             "version": 4,
             "dateCreated": "2024-01-22T16:30:00Z",
             "createdByUserId": "user-guid",
+            "createdByUserName": "admin@example.com",
             "changeDescription": "Changed temperature to 0.8"
         },
         {
             "id": "c3d4e5f6-a7b8-9012-cdef-345678901234",
             "entityId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "entityType": "profile",
             "version": 3,
             "dateCreated": "2024-01-20T14:45:00Z",
             "createdByUserId": "user-guid",
+            "createdByUserName": "admin@example.com",
             "changeDescription": null
         }
     ],
-    "total": 5
+    "totalVersions": 5
 }
 ```
 

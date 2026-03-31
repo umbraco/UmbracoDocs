@@ -56,6 +56,8 @@ Contexts contain one or more resources. Each resource represents a piece of cont
 | **Text**     | Plain text content like guidelines or terminology |
 | **Document** | Structured content with metadata                  |
 
+![Brand Voice context detail showing resources and settings](../.gitbook/assets/backoffice-manage-contexts.png)
+
 ## Editing a Context
 
 1. Select the context from the list

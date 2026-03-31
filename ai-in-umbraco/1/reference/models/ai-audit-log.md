@@ -18,7 +18,7 @@ using Umbraco.AI.Core.AuditLog;
 {% code title="AIAuditLog" %}
 
 ```csharp
-public class AIAuditLog
+public sealed class AIAuditLog
 {
     public Guid Id { get; set; }
 
@@ -61,6 +61,9 @@ public class AIAuditLog
     // Content snapshots (if configured to persist)
     public string? PromptSnapshot { get; set; }
     public string? ResponseSnapshot { get; set; }
+
+    // Tracing
+    public string? TraceId { get; set; }
 
     // Relationships
     public Guid? ParentAuditLogId { get; set; }
@@ -145,7 +148,8 @@ public enum AIAuditLogStatus
     Succeeded = 1,
     Failed = 2,
     Cancelled = 3,
-    PartialSuccess = 4
+    PartialSuccess = 4,
+    Blocked = 5
 }
 ```
 
@@ -160,13 +164,16 @@ public enum AIAuditLogStatus
 ```csharp
 public enum AIAuditLogErrorCategory
 {
-    Unknown = 0,
-    Authentication = 1,
-    RateLimit = 2,
-    Timeout = 3,
-    InvalidRequest = 4,
-    ModelError = 5,
-    NetworkError = 6
+    Authentication = 0,
+    RateLimiting = 1,
+    ModelNotFound = 2,
+    InvalidRequest = 3,
+    ServerError = 4,
+    NetworkError = 5,
+    ContextResolution = 6,
+    ToolExecution = 7,
+    GuardrailBlocked = 8,
+    Unknown = 99
 }
 ```
 
@@ -183,14 +190,19 @@ Used to filter audit log queries.
 ```csharp
 public class AIAuditLogFilter
 {
-    public DateTime? From { get; set; }
-    public DateTime? To { get; set; }
+    public DateTime? FromDate { get; set; }
+    public DateTime? ToDate { get; set; }
     public AIAuditLogStatus? Status { get; set; }
     public AICapability? Capability { get; set; }
     public Guid? ProfileId { get; set; }
     public string? ProviderId { get; set; }
-    public Guid? UserId { get; set; }
+    public string? UserId { get; set; }
     public string? FeatureType { get; set; }
+    public Guid? FeatureId { get; set; }
+    public string? EntityId { get; set; }
+    public string? EntityType { get; set; }
+    public Guid? ParentAuditLogId { get; set; }
+    public string? SearchText { get; set; }
 }
 ```
 

@@ -90,6 +90,8 @@ Chat profiles have a **Governance** tab where you can assign [guardrails](managi
 3. Click **Add Guardrail** to select guardrails
 4. Save the profile
 
+![The Governance tab showing assigned guardrails](../.gitbook/assets/backoffice-profile-governance-tab.png)
+
 {% hint style="info" %}
 The Governance tab is only available for **Chat** profiles. Embedding profiles do not support guardrails.
 {% endhint %}

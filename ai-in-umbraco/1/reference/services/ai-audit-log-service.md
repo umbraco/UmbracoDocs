@@ -22,27 +22,27 @@ public interface IAIAuditLogService
 {
     // Recording methods (used internally by AI services)
     Task<AIAuditLog> StartAuditLogAsync(AIAuditLog auditLog, CancellationToken cancellationToken = default);
-    Task CompleteAuditLogAsync(AIAuditLog audit, object? response, CancellationToken cancellationToken = default);
-    Task RecordAuditLogFailureAsync(AIAuditLog audit, Exception exception, CancellationToken cancellationToken = default);
+    Task CompleteAuditLogAsync(AIAuditLog audit, AIAuditPrompt? prompt, AIAuditResponse? response, CancellationToken cancellationToken = default);
+    Task RecordAuditLogFailureAsync(AIAuditLog audit, AIAuditPrompt? prompt, Exception exception, CancellationToken cancellationToken = default);
 
     // Fire-and-forget variants (non-blocking)
-    void QueueStartAuditLogAsync(AIAuditLog auditLog, CancellationToken cancellationToken = default);
-    void QueueCompleteAuditLogAsync(AIAuditLog audit, object? response, CancellationToken cancellationToken = default);
-    void QueueRecordAuditLogFailureAsync(AIAuditLog audit, Exception exception, CancellationToken cancellationToken = default);
+    ValueTask QueueStartAuditLogAsync(AIAuditLog auditLog, CancellationToken cancellationToken = default);
+    ValueTask QueueCompleteAuditLogAsync(AIAuditLog audit, AIAuditPrompt? prompt, AIAuditResponse? response, CancellationToken cancellationToken = default);
+    ValueTask QueueRecordAuditLogFailureAsync(AIAuditLog audit, AIAuditPrompt? prompt, Exception exception, CancellationToken cancellationToken = default);
 
     // Query methods
     Task<AIAuditLog?> GetAuditLogAsync(Guid id, CancellationToken cancellationToken = default);
 
     Task<(IEnumerable<AIAuditLog> Items, int Total)> GetAuditLogsPagedAsync(
-        AIAuditLogFilter? filter = null,
-        int skip = 0,
-        int take = 50,
+        AIAuditLogFilter filter,
+        int skip,
+        int take,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIAuditLog>> GetEntityHistoryAsync(
         string entityId,
         string entityType,
-        int limit = 20,
+        int limit,
         CancellationToken cancellationToken = default);
 
     // Management methods
@@ -86,7 +86,7 @@ Gets audit logs with filtering and pagination.
 
 | Parameter           | Type                | Description               |
 | ------------------- | ------------------- | ------------------------- |
-| `filter`            | `AIAuditLogFilter?` | Filter criteria           |
+| `filter`            | `AIAuditLogFilter`  | Filter criteria           |
 | `skip`              | `int`               | Records to skip           |
 | `take`              | `int`               | Records to take (max 100) |
 | `cancellationToken` | `CancellationToken` | Cancellation token        |

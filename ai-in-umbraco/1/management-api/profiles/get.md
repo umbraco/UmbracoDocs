@@ -42,7 +42,10 @@ GET /umbraco/ai/management/api/v1/profile/{idOrAlias}
         "maxTokens": 4096,
         "systemPromptTemplate": "You are a helpful content assistant for a website."
     },
-    "tags": ["content", "assistant"]
+    "tags": ["content", "assistant"],
+    "version": 1,
+    "dateCreated": "2024-01-15T10:30:00Z",
+    "dateModified": "2024-01-20T14:45:00Z"
 }
 ```
 
@@ -99,6 +102,9 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/profile/content-
 | `connectionId` | guid   | ID of the connection used                       |
 | `settings`     | object | Capability-specific settings                    |
 | `tags`         | array  | Optional categorization tags                    |
+| `version`      | int    | Current version number                          |
+| `dateCreated`  | datetime | When the profile was created                  |
+| `dateModified` | datetime | When the profile was last modified            |
 
 ## Settings by Capability
 

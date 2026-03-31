@@ -23,8 +23,8 @@ public interface IAIEntityVersionService
     Task<(IEnumerable<AIEntityVersion> Items, int Total)> GetVersionHistoryAsync(
         Guid entityId,
         string entityType,
-        int skip = 0,
-        int take = 20,
+        int skip,
+        int take,
         CancellationToken cancellationToken = default);
 
     Task<AIEntityVersion?> GetVersionAsync(

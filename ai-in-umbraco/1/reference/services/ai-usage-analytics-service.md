@@ -23,39 +23,39 @@ public interface IAIUsageAnalyticsService
     Task<AIUsageSummary> GetSummaryAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         AIUsageFilter? filter = null,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIUsageTimeSeriesPoint>> GetTimeSeriesAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         AIUsageFilter? filter = null,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIUsageBreakdownItem>> GetBreakdownByProviderAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIUsageBreakdownItem>> GetBreakdownByModelAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIUsageBreakdownItem>> GetBreakdownByProfileAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         CancellationToken cancellationToken = default);
 
     Task<IEnumerable<AIUsageBreakdownItem>> GetBreakdownByUserAsync(
         DateTime from,
         DateTime to,
-        AIUsageGranularity requestedGranularity = AIUsageGranularity.Day,
+        AIUsagePeriod? requestedGranularity = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -72,7 +72,7 @@ Gets aggregated usage statistics for a time period.
 | ---------------------- | -------------------- | ------------------ |
 | `from`                 | `DateTime`           | Start of period    |
 | `to`                   | `DateTime`           | End of period      |
-| `requestedGranularity` | `AIUsageGranularity` | Data granularity   |
+| `requestedGranularity` | `AIUsagePeriod?` | Data granularity   |
 | `filter`               | `AIUsageFilter?`     | Optional filter    |
 | `cancellationToken`    | `CancellationToken`  | Cancellation token |
 
@@ -101,7 +101,7 @@ Gets usage metrics over time for trend analysis.
 | ---------------------- | -------------------- | ------------------ |
 | `from`                 | `DateTime`           | Start of period    |
 | `to`                   | `DateTime`           | End of period      |
-| `requestedGranularity` | `AIUsageGranularity` | Time interval      |
+| `requestedGranularity` | `AIUsagePeriod?` | Time interval      |
 | `filter`               | `AIUsageFilter?`     | Optional filter    |
 | `cancellationToken`    | `CancellationToken`  | Cancellation token |
 
@@ -113,7 +113,7 @@ Gets usage metrics over time for trend analysis.
 var timeSeries = await _analyticsService.GetTimeSeriesAsync(
     from: DateTime.UtcNow.AddDays(-7),
     to: DateTime.UtcNow,
-    requestedGranularity: AIUsageGranularity.Day);
+    requestedGranularity: AIUsagePeriod.Daily);
 
 foreach (var point in timeSeries)
 {
@@ -221,14 +221,12 @@ var byUser = await _analyticsService.GetBreakdownByUserAsync(
 | `TotalTokens`   | `long`    | Tokens used    |
 | `Percentage`    | `double`  | Share of total |
 
-### AIUsageGranularity
+### AIUsagePeriod
 
-| Value   | Description       |
-| ------- | ----------------- |
-| `Hour`  | Hourly intervals  |
-| `Day`   | Daily intervals   |
-| `Week`  | Weekly intervals  |
-| `Month` | Monthly intervals |
+| Value    | Description       |
+| -------- | ----------------- |
+| `Hourly` | Hourly intervals  |
+| `Daily`  | Daily intervals   |
 
 ## Usage Example
 

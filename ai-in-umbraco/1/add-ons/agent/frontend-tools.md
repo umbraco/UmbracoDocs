@@ -87,41 +87,6 @@ await foreach (var evt in _agentService.StreamAgentAsync(
 
 {% endcode %}
 
-## Tool Schema
-
-Tools use JSON Schema for parameter definitions:
-
-{% code title="Tool Definition" %}
-
-```json
-{
-    "name": "search_content",
-    "description": "Search for content in the CMS",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "query": {
-                "type": "string",
-                "description": "Search query"
-            },
-            "contentType": {
-                "type": "string",
-                "enum": ["article", "page", "product"],
-                "description": "Type of content to search"
-            },
-            "limit": {
-                "type": "integer",
-                "default": 10,
-                "description": "Maximum results to return"
-            }
-        },
-        "required": ["query"]
-    }
-}
-```
-
-{% endcode %}
-
 ## Handling Tool Calls
 
 ### Frontend Handler
@@ -200,69 +165,6 @@ async function handleAgentEvents(events: AsyncIterable<AgentEvent>) {
 ```
 
 {% endcode %}
-
-## Common Tool Patterns
-
-### Content Manipulation
-
-```json
-{
-    "name": "insert_heading",
-    "description": "Insert a heading at the cursor",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "level": { "type": "integer", "minimum": 1, "maximum": 6 },
-            "text": { "type": "string" }
-        },
-        "required": ["level", "text"]
-    }
-}
-```
-
-### UI Actions
-
-```json
-{
-    "name": "open_media_picker",
-    "description": "Open the media picker dialog",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "allowedTypes": {
-                "type": "array",
-                "items": { "type": "string" }
-            }
-        }
-    }
-}
-```
-
-### Data Retrieval
-
-```json
-{
-    "name": "get_linked_content",
-    "description": "Get content linked from the current page",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "relationshipType": {
-                "type": "string",
-                "enum": ["parent", "children", "related"]
-            }
-        }
-    }
-}
-```
-
-## Best Practices
-
-1. **Single responsibility** - Each tool does one thing
-2. **Clear descriptions** - Help the model choose correctly
-3. **Validate parameters** - Check inputs before execution
-4. **Return meaningful results** - Help the model understand outcomes
-5. **Handle errors gracefully** - Return error objects, don't throw
 
 ## Related
 
