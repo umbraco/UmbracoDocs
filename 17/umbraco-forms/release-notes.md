@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 
 ### [17.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.0) (April 2nd 2026)
 * Umbraco CMS dependency updated to 17.3.0
-* Optimise record collection query performance
+* Optimize record collection query performance
 * Add per-row entity actions to entries table
 * Redesigned Field and Workflow modals to match CMS style and improve usability
 * Fix sort order and group for field type not being respected [#1634](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1634)
@@ -39,7 +39,7 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 * Fix page-specific magic strings not working in delivery API [#1674](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1674)
 * Fix `ManageSecurityWithUserGroups` not working [#1675](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1675)
 * Fix form entries not visible in Firefox [#1677](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1677) [#1678](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1678)
-* Resolve property editor UI from configured data type [#1680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1680)
+* Resolve property editor UI from configured Data Type [#1680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1680)
 * Add filter by record state (Submitted/Approved/Rejected) to entries list [#1681](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1681)
 
 
