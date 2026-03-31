@@ -5,3 +5,4 @@ structure:
     summary: SUMMARY.md
 
 redirects:
+    getting-started/configuration: getting-started/first-profile.md

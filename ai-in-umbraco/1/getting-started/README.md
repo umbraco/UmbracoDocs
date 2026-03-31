@@ -35,11 +35,7 @@ Before you begin, ensure you have:
 </tr>
 <tr>
 <td><strong>3. First Profile</strong></td>
-<td>Create a profile and use it in code</td>
-</tr>
-<tr>
-<td><strong>4. Configuration</strong></td>
-<td>Configure default profiles in appsettings.json</td>
+<td>Create a profile, set defaults, and use it in code</td>
 </tr>
 </tbody>
 </table>
@@ -56,8 +52,4 @@ Before you begin, ensure you have:
 
 {% content-ref url="first-profile.md" %}
 [Your First Profile](first-profile.md)
-{% endcontent-ref %}
-
-{% content-ref url="configuration.md" %}
-[Configuration](configuration.md)
 {% endcontent-ref %}

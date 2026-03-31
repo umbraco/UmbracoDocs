@@ -8,7 +8,6 @@
   * [Installation](getting-started/installation.md)
   * [Your First Connection](getting-started/first-connection.md)
   * [Your First Profile](getting-started/first-profile.md)
-  * [Configuration](getting-started/configuration.md)
 
 ## Concepts
 
