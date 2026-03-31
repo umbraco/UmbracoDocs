@@ -73,7 +73,7 @@ When you run your Umbraco site, a new **AI** section will appear in the backoffi
 ![The AI section in the Umbraco backoffice main navigation](../.gitbook/assets/backoffice-ai-section-overview.png)
 
 {% hint style="info" %}
-**User Permissions**: The AI section is a standalone section in the backoffice (not under Settings). You may need to grant your user group access to the AI section:
+**User Permissions**: The AI section is a standalone section in the backoffice. You may need to grant your user group access to the AI section:
 1. Navigate to **Users** > **User Groups**
 2. Edit the relevant user group (for example, Administrators)
 3. Enable **AI** in the **Sections** list
