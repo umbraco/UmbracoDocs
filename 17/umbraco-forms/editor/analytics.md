@@ -10,7 +10,7 @@ description: >-
 This feature is available from Umbraco Forms 17.3.
 {% endhint %}
 
-Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time and see which hours are most active. You can also monitor workflow success rates and identify which pages are driving submissions.
+Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time, monitor workflow success rates, and identify which pages are driving submissions.
 
 ## Accessing Analytics
 
@@ -68,7 +68,7 @@ When viewing analytics for a specific form, the view displays four widgets provi
 
 ### Submissions
 
-A time-series chart showing the number of form submissions over the selected date range. This chart also displays the number of failed workflows. This allows you to see at a glance whether submissions are being processed.
+A time-series chart showing the number of form submissions and failed workflows over the selected date range.
 
 ![Form analytics showing the submissions chart with entries and workflow errors](images/analytics-form-submissions.png)
 
@@ -76,11 +76,11 @@ A time-series chart showing the number of form submissions over the selected dat
 
 A chart showing the distribution of form submissions across the 24 hours of the day. This helps identify peak submission times and can inform decisions about when to schedule maintenance or review submissions.
 
+![Hourly distribution chart and workflow statistics table](images/analytics-form-hourly-workflows.png)
+
 ### Workflow Statistics
 
 A table listing each workflow attached to the form. It shows the number of times each workflow was triggered, succeeded, and failed. Use this to monitor the health of your form processing workflows.
-
-![Hourly distribution chart and workflow statistics table](images/analytics-form-hourly-workflows.png)
 
 ### Origins
 

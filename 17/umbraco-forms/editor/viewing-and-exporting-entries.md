@@ -50,7 +50,7 @@ If you have fields that allow the user to upload files within your form, you wil
 
 ## Analytics
 
-For a deeper understanding of form submission trends, workflow performance, and submission origins, see the [Analytics](analytics.md) section.
+For a deeper understanding of form submission trends, workflow performance, and submission origins, see the [Analytics](analytics.md) section. Analytics provide time-series charts, hourly breakdowns, and per-page origin tracking for each form.
 
 ## Record Actions
 
