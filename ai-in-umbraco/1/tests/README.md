@@ -34,41 +34,14 @@ You need the Prompt Management or Agent Runtime add-on installed to test prompts
 4. **Set a baseline** and compare future runs for regression detection
 5. **Add variations** to compare different model configurations side by side
 
-## Quick Example
+## Quick Start
 
-{% code title="cURL" %}
+1. Navigate to the **AI** section > **Tests**
+2. Click **Create** and select a prompt or agent to test
+3. Add graders to define success criteria
+4. Click **Run** to execute the test and review results
 
-```bash
-# Create a test for a summarization prompt
-curl -X POST "https://your-site.com/umbraco/ai/management/api/v1/tests" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "alias": "test-summarize-quality",
-    "name": "Summarization Quality",
-    "testFeatureId": "prompt",
-    "testTargetId": "PROMPT_GUID_HERE",
-    "runCount": 3,
-    "graders": [
-      {
-        "graderTypeId": "contains",
-        "name": "Has bullet points",
-        "config": { "searchPattern": "- ", "ignoreCase": true }
-      },
-      {
-        "graderTypeId": "llm-judge",
-        "name": "Quality check",
-        "config": {
-          "evaluationCriteria": "Is the summary concise and accurate?",
-          "passThreshold": 0.7
-        }
-      }
-    ],
-    "tags": ["quality", "summarization"]
-  }'
-```
-
-{% endcode %}
+See [Getting Started](getting-started.md) for a detailed walkthrough.
 
 ## Documentation
 
