@@ -5,16 +5,16 @@ description: >-
 
 # Provider Settings
 
-Provider settings define the configuration properties needed to connect to an AI service. Use the `[AISetting]` attribute to control how settings appear in the backoffice UI.
+Provider settings define the configuration properties needed to connect to an AI service. Use the `[AIField]` attribute to control how settings appear in the backoffice UI.
 
-## AISettingAttribute
+## AIFieldAttribute
 
-The `[AISetting]` attribute decorates setting properties with UI metadata:
+The `[AIField]` attribute decorates setting properties with UI metadata:
 
-{% code title="AISettingAttribute Properties" %}
+{% code title="AIFieldAttribute Properties" %}
 
 ```csharp
-[AISetting(
+[AIField(
     Label = "Display Label",           // Shown in the UI
     Description = "Help text",         // Description below the field
     EditorUiAlias = "Umb.PropertyEditorUi.TextBox",  // Umbraco editor
@@ -28,13 +28,14 @@ public string? MyProperty { get; set; }
 
 ## Properties
 
-| Property        | Type   | Description                           |
-| --------------- | ------ | ------------------------------------- |
-| `Label`         | string | Display label in the UI               |
-| `Description`   | string | Help text shown below the field       |
-| `EditorUiAlias` | string | Umbraco property editor UI alias      |
-| `DefaultValue`  | object | Default value for the setting         |
-| `SortOrder`     | int    | Order in which settings are displayed |
+| Property        | Type   | Description                                     |
+| --------------- | ------ | ----------------------------------------------- |
+| `Label`         | string | Display label in the UI                         |
+| `Description`   | string | Help text shown below the field                 |
+| `EditorUiAlias` | string | Umbraco property editor UI alias                |
+| `SortOrder`     | int    | Order in which settings are displayed            |
+| `IsSensitive`   | bool   | Marks the field as sensitive (value masked in UI) |
+| `Group`         | string | Groups settings under a collapsible heading      |
 
 ## Automatic Type Inference
 
@@ -53,39 +54,39 @@ If `EditorUiAlias` is not specified, the editor is inferred from the property ty
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
-using Umbraco.AI.Core.Settings;
+using Umbraco.AI.Core.EditableModels;
 
 public class MyProviderSettings
 {
-    [AISetting(
+    [AIField(
         Label = "API Key",
         Description = "Your API key. Supports config references like $MyProvider:ApiKey",
         SortOrder = 1)]
     [Required]
     public required string ApiKey { get; set; }
 
-    [AISetting(
+    [AIField(
         Label = "Base URL",
         Description = "Override the default API endpoint",
         DefaultValue = "https://api.myprovider.com",
         SortOrder = 2)]
     public string? BaseUrl { get; set; }
 
-    [AISetting(
+    [AIField(
         Label = "Max Retries",
         Description = "Number of retry attempts for failed requests",
         DefaultValue = 3,
         SortOrder = 3)]
     public int MaxRetries { get; set; } = 3;
 
-    [AISetting(
+    [AIField(
         Label = "Enable Logging",
         Description = "Log all requests and responses",
         DefaultValue = false,
         SortOrder = 4)]
     public bool EnableLogging { get; set; }
 
-    [AISetting(
+    [AIField(
         Label = "Timeout (seconds)",
         Description = "Request timeout in seconds",
         DefaultValue = 30.0,
@@ -98,26 +99,26 @@ public class MyProviderSettings
 
 ## Validation Attributes
 
-Use standard .NET validation attributes alongside `[AISetting]`:
+Use standard .NET validation attributes alongside `[AIField]`:
 
 {% code title="Validation Example" %}
 
 ```csharp
 public class ValidatedSettings
 {
-    [AISetting(Label = "API Key")]
+    [AIField(Label = "API Key")]
     [Required(ErrorMessage = "API Key is required")]
     public required string ApiKey { get; set; }
 
-    [AISetting(Label = "Max Tokens")]
+    [AIField(Label = "Max Tokens")]
     [Range(1, 100000, ErrorMessage = "Max tokens must be between 1 and 100000")]
     public int? MaxTokens { get; set; }
 
-    [AISetting(Label = "Email")]
+    [AIField(Label = "Email")]
     [EmailAddress(ErrorMessage = "Invalid email address")]
     public string? NotificationEmail { get; set; }
 
-    [AISetting(Label = "Endpoint URL")]
+    [AIField(Label = "Endpoint URL")]
     [Url(ErrorMessage = "Must be a valid URL")]
     public string? CustomEndpoint { get; set; }
 }
@@ -152,20 +153,16 @@ This keeps secrets out of the database and supports environment-specific values.
 
 ## Sensitive Settings
 
-For API keys and secrets, don't use a special editor - use a regular text field. The value will be masked when displayed back to the user.
+Mark API keys and secrets with `IsSensitive = true`. The value is masked when displayed back in the UI.
 
 {% code title="Sensitive Settings" %}
 
 ```csharp
-[AISetting(
-    Label = "API Key",
-    Description = "Your secret API key")]
+[AIField(IsSensitive = true)]
 [Required]
-public required string ApiKey { get; set; }
+public string? ApiKey { get; set; }
 
-[AISetting(
-    Label = "Secret Token",
-    Description = "Authentication token")]
+[AIField(IsSensitive = true)]
 public string? SecretToken { get; set; }
 ```
 
@@ -179,13 +176,13 @@ Use Umbraco property editor UI aliases for specialized input:
 
 ```csharp
 // Textarea for longer text
-[AISetting(
+[AIField(
     Label = "System Prompt",
     EditorUiAlias = "Umb.PropertyEditorUi.TextArea")]
 public string? SystemPrompt { get; set; }
 
 // Integer with spinner
-[AISetting(
+[AIField(
     Label = "Max Tokens",
     EditorUiAlias = "Umb.PropertyEditorUi.Integer")]
 public int? MaxTokens { get; set; }

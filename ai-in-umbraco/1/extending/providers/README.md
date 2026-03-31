@@ -12,13 +12,13 @@ Providers are plugins that connect Umbraco.AI to AI services. Create a custom pr
 A provider consists of:
 
 1. **Provider class** - Main class with `[AIProvider]` attribute
-2. **Settings class** - Configuration properties with `[AISetting]` attributes
+2. **Settings class** - Configuration properties with `[AIField]` attributes
 3. **Capability classes** - Implementations for Chat, Embedding, and so on
 
 ```
 MyProvider/
 ├── MyProvider.cs              # Main provider class
-├── MyProviderSettings.cs      # Settings with [AISetting] attributes
+├── MyProviderSettings.cs      # Settings with [AIField] attributes
 ├── MyChatCapability.cs        # Chat capability implementation
 └── MyEmbeddingCapability.cs   # Embedding capability (optional)
 ```
@@ -34,10 +34,10 @@ using Umbraco.AI.Core.Settings;
 
 public class MyProviderSettings
 {
-    [AISetting(Label = "API Key", Description = "Your API key")]
+    [AIField(Label = "API Key", Description = "Your API key")]
     public required string ApiKey { get; set; }
 
-    [AISetting(Label = "Endpoint", Description = "API endpoint URL")]
+    [AIField(Label = "Endpoint", Description = "API endpoint URL")]
     public string? Endpoint { get; set; }
 }
 ```
@@ -104,7 +104,7 @@ public class MyProvider : AIProviderBase<MyProviderSettings>
 
 1. Providers are discovered automatically via assembly scanning
 2. The `[AIProvider]` attribute registers the provider with an ID and name
-3. Settings are rendered in the backoffice using `[AISetting]` metadata
+3. Settings are rendered in the backoffice using `[AIField]` metadata
 4. Capabilities are registered in the constructor with `WithCapability<T>()`
 
 ## In This Section
