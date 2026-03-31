@@ -12,7 +12,7 @@ After creating your first profile, you can configure default profiles and provid
 Default profiles determine which profile is used when calling AI services without specifying a profile ID. Configure defaults through the backoffice:
 
 1. Navigate to the **AI** section > **Settings**
-2. Select your default chat profile from the dropdown
+2. Select your default chat profile via the picker
 3. Select your default embedding profile (if applicable)
 4. Click **Save**
 
