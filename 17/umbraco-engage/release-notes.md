@@ -19,12 +19,12 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 #### [17.2.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.2.0-rc1) (release date TBD)
 
 * Rewritten analytics data cleanup with improved scheduling and performance:
-  * Cleanup now runs once daily instead of every 30 minutes, processing all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
+  * Cleanup now processes all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
   * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
   * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
 * Database schema alignment bringing existing installations in line with clean installs:
   * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
-  * Requires running the `CompleteAlignSchema.sql` script during a maintenance window after upgrading (see below).
+  * Requires running the `EnsureDataConsistency.sql` script first to clean up any orphaned data, followed by the `CompleteAlignSchema.sql` script to add the constraints. Both scripts should be run during a maintenance window after upgrading (see below).
   * **Important**: Until the script is executed, only anonymization and visitor control group/raw data cleanup will run. Full analytics data cleanup (pageviews, sessions, visitors) requires the schema alignment to be completed.
   * Helper script included: `GetDeleteAnalyticsDataAfterDays.sql` (recommends safe initial configuration, see below).
 * Added 'Database Schema Status' and 'Constraint Integrity' health checks to monitor upgrade completion.
@@ -40,10 +40,20 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Optimized annotation fetching using EntityService for improved performance.
 * Fixed partial UTM (Urchin Tracking Module) data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
+* Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and startpage data retention status.
+* Added support for soft-deleting segments with automatic background cleanup. Deleted segments are now gracefully removed from the system without affecting historical analytics data.
+* Added a Suspicious Activity overview in the backoffice, allowing you to identify and review visitors with unusual pageview patterns. Includes configurable pageview thresholds and the ability to provide feedback on flagged activity.
+* Enforced UTC date handling across the entire codebase, preventing timezone-related issues in analytics, A/B testing, and reporting.
+* Fixed analytics POST requests being broken by trailing-slash URL rewrite rules.
+* Fixed campaign graph not updating correctly when switching between campaigns.
 * Added `EngageDataCleanupProcessors()` extension method for registering [custom data cleanup processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md).
 
+{% file src="scripts/EnsureDataConsistency.sql" %}
+Run during a maintenance window **before** `CompleteAlignSchema.sql` to clean up orphaned data and verify all foreign key constraints.
+{% endfile %}
+
 {% file src="scripts/CompleteAlignSchema.sql" %}
-Run during a maintenance window to add missing foreign keys, indexes, and constraints.
+Run during a maintenance window **after** `EnsureDataConsistency.sql` to add missing foreign keys, indexes, and constraints. **Execute each batch individually** — do not run the entire script at once. See [version-specific upgrade notes](upgrading/version-specific-upgrade-notes.md) for details.
 {% endfile %}
 
 {% file src="scripts/GetDeleteAnalyticsDataAfterDays.sql" %}

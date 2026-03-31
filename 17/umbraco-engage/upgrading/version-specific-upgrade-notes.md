@@ -14,6 +14,61 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
+### 17.2.0 — Database Schema Alignment
+
+Engage 17.2.0 introduces a database schema alignment that brings existing installations in line with clean installs by adding missing foreign keys (with `ON DELETE CASCADE`), indexes, and constraints. This is a **manual post-upgrade step** that requires running two SQL scripts during a maintenance window.
+
+#### What changed
+
+The analytics data cleanup has been rewritten with new configuration settings. The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and replaced by `Enabled`, `FirstRunTime`, `Delay`, `Period`, and `CommandTimeout`. See the [configuration](../developers/settings/configuration.md) page for details.
+
+To support the new `ON DELETE CASCADE` foreign keys, the database schema must be aligned. This requires that all existing data satisfies the new constraints — which is not guaranteed on older installations that may have accumulated orphaned records over time.
+
+#### Post-upgrade steps
+
+After upgrading to 17.2.0, follow these steps during a **maintenance window**:
+
+{% stepper %}
+{% step %}
+##### 1. Determine a safe DeleteAnalyticsDataAfterDays value
+
+Run the `GetDeleteAnalyticsDataAfterDays.sql` script against your database. This analyzes your data volume and recommends a safe initial value for the `DeleteAnalyticsDataAfterDays` configuration setting. Update your `appsettings.json` accordingly before proceeding.
+{% endstep %}
+
+{% step %}
+##### 2. Ensure data consistency
+
+Run the `EnsureDataConsistency.sql` script against your database. This script cleans up orphaned records across all Engage tables by removing or nullifying rows that reference non-existent parent records, and then re-validates all existing foreign key constraints.
+
+This step is **required** before running the schema alignment script — without it, the `CompleteAlignSchema.sql` script will fail if orphaned data violates the new constraints.
+{% endstep %}
+
+{% step %}
+##### 3. Complete the schema alignment
+
+Run the `CompleteAlignSchema.sql` script against your database. This adds the missing foreign keys, indexes, and constraints that align your schema with a clean install.
+
+{% hint style="warning" %}
+The script contains 6 numbered batches separated by `GO` statements. Execute each batch separately and verify it completes successfully before proceeding to the next.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
+
+{% hint style="warning" %}
+**Until the schema alignment is completed**, the analytics data cleanup will only perform anonymization and visitor control group/raw data cleanup. Full cleanup of pageviews, sessions, and visitors requires the schema alignment to be complete.
+{% endhint %}
+
+All three scripts are available for download from the [release notes](../release-notes.md) page.
+
+#### Health checks
+
+Two new health checks have been added to help monitor the upgrade process:
+
+- **Database Schema Status** — Reports whether the schema alignment has been completed. Also warns if analytics data cleanup is disabled.
+- **Constraint Integrity** — Verifies that all foreign key constraints are trusted and valid.
+
+These health checks are accessible from the Umbraco Health Check dashboard.
+
 ### 17.0.0 (Umbraco Engage v17 Launch)
 
 With the introduction of Engage version 17, breaking changes have been introduced to accommodate the transition between multiple major versions of the core CMS.
