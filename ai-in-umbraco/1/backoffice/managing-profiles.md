@@ -99,8 +99,8 @@ The Governance tab is only available for **Chat** profiles. Embedding profiles d
 To use a profile as the default when no profile is specified in code:
 
 1. Navigate to the **AI** section > **Settings**
-2. Select your chat profile from the **Default Chat Profile** dropdown
-3. Select your embedding profile from the **Default Embedding Profile** dropdown
+2. Select your chat profile via the **Default Chat Profile** picker
+3. Select your embedding profile via the **Default Embedding Profile** picker
 4. Click **Save**
 
 {% hint style="info" %}
