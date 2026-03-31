@@ -59,7 +59,7 @@
   * [Scopes](add-ons/agent/scopes.md)
   * [Permissions](add-ons/agent/permissions.md)
   * [Streaming](add-ons/agent/streaming.md)
-  * [Copilot](add-ons/agent/copilot.md)
+
   * [Frontend Client](add-ons/agent/frontend-client.md)
   * [Frontend Tools](add-ons/agent/frontend-tools.md)
   * [API](add-ons/agent/api/README.md)
