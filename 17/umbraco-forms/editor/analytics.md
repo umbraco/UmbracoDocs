@@ -10,7 +10,7 @@ description: >-
 This feature is available from Umbraco Forms 17.3.
 {% endhint %}
 
-Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time, see which hours of the day are most active, monitor workflow success rates, and identify which pages are driving form submissions.
+Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time and see which hours are most active. You can also monitor workflow success rates and identify which pages are driving submissions.
 
 ## Accessing Analytics
 
@@ -56,7 +56,7 @@ Use the group by control to change how the data is aggregated in the time-series
 
 ## Overview Table
 
-The overview table lists all forms you have access to with summary statistics for the selected date range, including entry counts, workflow counts, workflow errors, and the number of source pages.
+The overview table lists all forms you have access to with summary statistics for the selected date range. This includes entry counts, workflow counts, workflow errors, and source pages.
 
 ![Analytics overview table showing all forms with entry counts and statistics](images/analytics-overview-table.png)
 
@@ -68,7 +68,7 @@ When viewing analytics for a specific form, the view displays four widgets provi
 
 ### Submissions
 
-A time-series chart showing the number of form submissions over the selected date range. This chart also displays the number of errored workflows, allowing you to see at a glance whether submissions are being processed successfully.
+A time-series chart showing the number of form submissions over the selected date range. This chart also displays the number of failed workflows. This allows you to see at a glance whether submissions are being processed.
 
 ![Form analytics showing the submissions chart with entries and workflow errors](images/analytics-form-submissions.png)
 
@@ -78,7 +78,7 @@ A chart showing the distribution of form submissions across the 24 hours of the 
 
 ### Workflow Statistics
 
-A table listing each workflow attached to the form, along with the number of times it was triggered, how many times it succeeded, and how many times it failed. Use this to monitor the health of your form processing workflows.
+A table listing each workflow attached to the form. It shows the number of times each workflow was triggered, succeeded, and failed. Use this to monitor the health of your form processing workflows.
 
 ![Hourly distribution chart and workflow statistics table](images/analytics-form-hourly-workflows.png)
 
