@@ -76,26 +76,10 @@ Use IAM roles with least-privilege permissions. The user needs `bedrock:InvokeMo
 
 ## Available Models
 
-### Chat Models
-
-| Model Family     | Models                                                                                                                           | Context Window |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| Amazon Nova      | `amazon.nova-pro-v1:0`, `amazon.nova-lite-v1:0`, `amazon.nova-micro-v1:0`                                                        | 300K           |
-| Anthropic Claude | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `anthropic.claude-3-sonnet-20240229-v1:0`, `anthropic.claude-3-haiku-20240307-v1:0` | 200K           |
-| Meta Llama       | `meta.llama3-2-90b-instruct-v1:0`, `meta.llama3-2-11b-instruct-v1:0`                                                             | 128K           |
-| Mistral          | `mistral.mistral-large-2407-v1:0`, `mistral.mixtral-8x7b-instruct-v0:1`                                                          | 32K            |
-
-### Embedding Models
-
-| Model                          | Dimensions | Best For             |
-| ------------------------------ | ---------- | -------------------- |
-| `amazon.titan-embed-text-v2:0` | 1024       | General purpose      |
-| `amazon.titan-embed-text-v1`   | 1536       | Legacy compatibility |
-| `cohere.embed-english-v3`      | 1024       | English text         |
-| `cohere.embed-multilingual-v3` | 1024       | Multilingual         |
+Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
 
 {% hint style="info" %}
-Model availability varies by AWS region. Check the [Bedrock model documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html) for region-specific availability.
+Check your provider's documentation for the latest model details, pricing, and capabilities.
 {% endhint %}
 
 ## Enabling Models

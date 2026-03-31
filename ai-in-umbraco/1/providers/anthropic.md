@@ -54,17 +54,10 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ## Available Models
 
-| Model                        | Context Window | Best For                               |
-| ---------------------------- | -------------- | -------------------------------------- |
-| `claude-sonnet-4-20250514`   | 200K           | Best balance of speed and intelligence |
-| `claude-opus-4-20250514`     | 200K           | Most capable, complex tasks            |
-| `claude-3-5-sonnet-20241022` | 200K           | Previous generation, stable            |
-| `claude-3-opus-20240229`     | 200K           | Previous generation, complex reasoning |
-| `claude-3-sonnet-20240229`   | 200K           | Previous generation, general purpose   |
-| `claude-3-haiku-20240307`    | 200K           | Fastest, most cost-effective           |
+Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
 
 {% hint style="info" %}
-Claude's 200K token context window is ideal for processing long documents, extensive conversation history, or large codebases.
+Check your provider's documentation for the latest model details, pricing, and capabilities.
 {% endhint %}
 
 ## Creating a Connection

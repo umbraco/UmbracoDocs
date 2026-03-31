@@ -88,27 +88,10 @@ Keep credentials secure. Never commit API keys or client secrets to source contr
 
 ## Available Models
 
-Microsoft AI Foundry provides access to models from multiple providers. All models are available through a single endpoint:
-
-### Chat Models
-
-| Model Family  | Example Models                | Notes                             |
-| ------------- | ----------------------------- | --------------------------------- |
-| Azure OpenAI  | GPT-4o, GPT-4, GPT-3.5-turbo  | Microsoft-hosted OpenAI           |
-| Microsoft Phi | Phi-3-medium, Phi-3-mini      | Microsoft's small language models |
-| Meta Llama    | Llama-3.1-405B, Llama-3.1-70B | Open source, hosted on Azure      |
-| Mistral       | Mistral Large, Mistral Small  | Open source, Azure-hosted         |
-
-### Embedding Models
-
-| Model                  | Dimensions | Notes                   |
-| ---------------------- | ---------- | ----------------------- |
-| text-embedding-ada-002 | 1536       | Azure OpenAI embeddings |
-| text-embedding-3-small | 1536       | Latest Azure OpenAI     |
-| text-embedding-3-large | 3072       | Highest quality         |
+Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
 
 {% hint style="info" %}
-Available models depend on your Azure subscription, region, and deployed models in AI Foundry.
+Check your provider's documentation for the latest model details, pricing, and capabilities.
 {% endhint %}
 
 ## Creating a Connection

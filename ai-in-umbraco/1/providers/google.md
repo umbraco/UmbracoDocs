@@ -54,16 +54,10 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ## Available Models
 
-| Model                   | Context Window | Best For                        |
-| ----------------------- | -------------- | ------------------------------- |
-| `gemini-2.0-flash`      | 1M             | Latest, best performance        |
-| `gemini-2.0-flash-lite` | 1M             | Cost-optimized, fast            |
-| `gemini-1.5-pro`        | 2M             | Complex reasoning, long context |
-| `gemini-1.5-flash`      | 1M             | Balanced speed and quality      |
-| `gemini-1.5-flash-8b`   | 1M             | Most cost-effective             |
+Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
 
 {% hint style="info" %}
-Gemini 1.5 Pro has a 2 million token context window, ideal for processing entire codebases or book-length documents.
+Check your provider's documentation for the latest model details, pricing, and capabilities.
 {% endhint %}
 
 ## Creating a Connection

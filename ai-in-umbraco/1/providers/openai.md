@@ -55,25 +55,11 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ## Available Models
 
-### Chat Models
+Available models are fetched directly from the provider when you create or edit a profile. The model list in the backoffice always reflects the current models available through your connection.
 
-| Model           | Context Window | Best For                             |
-| --------------- | -------------- | ------------------------------------ |
-| `gpt-4o`        | 128K           | General purpose, recommended default |
-| `gpt-4o-mini`   | 128K           | Cost-effective, fast responses       |
-| `gpt-4-turbo`   | 128K           | Complex reasoning tasks              |
-| `gpt-4`         | 8K             | Legacy, stable behavior              |
-| `gpt-3.5-turbo` | 16K            | Budget-conscious applications        |
-| `o1`            | 200K           | Advanced reasoning, coding           |
-| `o1-mini`       | 128K           | Efficient reasoning                  |
-
-### Embedding Models
-
-| Model                    | Dimensions | Best For                     |
-| ------------------------ | ---------- | ---------------------------- |
-| `text-embedding-3-small` | 1536       | Cost-effective, good quality |
-| `text-embedding-3-large` | 3072       | Highest quality              |
-| `text-embedding-ada-002` | 1536       | Legacy, widely compatible    |
+{% hint style="info" %}
+Check your provider's documentation for the latest model details, pricing, and capabilities.
+{% endhint %}
 
 ## Creating a Connection
 
