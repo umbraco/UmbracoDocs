@@ -111,7 +111,7 @@ var response = await _chatService.GetChatResponseAsync(
 Configure a default profile through the backoffice:
 
 1. Navigate to the **AI** section > **Settings**
-2. Select your chat profile from the **Default Chat Profile** dropdown
+2. Select your chat profile via the **Default Chat Profile** picker
 3. Click **Save**
 
 Then call without specifying a profile:
