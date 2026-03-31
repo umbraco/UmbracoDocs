@@ -114,24 +114,6 @@ public async Task<AIContext> CreateContext()
 
 {% endcode %}
 
-### Using Contexts with Profiles
-
-Contexts are typically associated with prompts or agents rather than directly with profiles. When executing a prompt or running an agent, the associated contexts are automatically injected.
-
-{% code title="Example.cs" %}
-
-```csharp
-// Contexts are injected automatically when using prompts
-var result = await _promptService.ExecutePromptAsync(
-    promptId,
-    new AIPromptExecutionRequest
-    {
-        EntityContext = "The product being described..."
-    });
-```
-
-{% endcode %}
-
 ## How Context Injection Works
 
 When an AI operation executes with contexts:
