@@ -56,15 +56,6 @@ Contexts contain one or more resources. Each resource represents a piece of cont
 | **Text**     | Plain text content like guidelines or terminology |
 | **Document** | Structured content with metadata                  |
 
-### Reordering Resources
-
-Resources are injected in order. To reorder:
-
-1. Drag resources using the handle on the left
-2. Or use the arrow buttons to move resources up/down
-
-Resources at the top are injected first.
-
 ## Editing a Context
 
 1. Select the context from the list
