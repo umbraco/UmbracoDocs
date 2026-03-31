@@ -132,7 +132,7 @@ public class SettingsManager
 ## Notes
 
 - Settings use a singleton pattern - there is always exactly one settings record
-- Changes to settings are tracked in the audit log
+- Settings are not versionable
 - Settings are cached for performance; cache is invalidated on save
 
 ## Related

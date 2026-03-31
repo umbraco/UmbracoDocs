@@ -96,13 +96,6 @@ When no default is configured:
 
 - Operations without an explicit profile will fail with an error
 
-## Audit Trail
-
-Changes to settings are tracked in the audit log:
-
-1. Navigate to the **AI** section > **Audit Logs**
-2. Filter by entity type "Settings"
-
 ## Related
 
 - [Settings Concept](../concepts/settings.md) - Understanding settings

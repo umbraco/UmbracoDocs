@@ -61,7 +61,7 @@ public class AISettings : IAIAuditableEntity
 
 - Settings use a singleton pattern with a fixed ID
 - The `[AISetting]` attribute marks properties that are persisted to the database
-- Settings changes are tracked in the audit log
+- Settings are not versionable
 
 ## Example
 

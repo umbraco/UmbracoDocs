@@ -132,16 +132,6 @@ For advanced scenarios like Continuous Integration/Continuous Deployment (CI/CD)
 Database settings (configured via backoffice) take precedence over configuration file settings. Use configuration files only when you need environment-specific defaults that can't be managed through the backoffice.
 {% endhint %}
 
-## Audit Trail
-
-AI Settings changes are tracked in the audit log. Every modification records:
-
-- When the change was made
-- Who made the change
-- What was changed
-
-See [Audit Logs](../backoffice/audit-logs.md) for more information.
-
 ## Managing Settings
 
 ### Via Backoffice

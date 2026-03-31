@@ -5,7 +5,7 @@ description: >-
 
 # Update Settings
 
-Updates the global AI settings. Changes are tracked in the audit log.
+Updates the global AI settings.
 
 ## Request
 
@@ -106,5 +106,4 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 ## Notes
 
 - The specified profiles must exist and have the correct capability (Chat or Embedding)
-- Changes to settings are recorded in the audit log
 - Settings changes take effect immediately for new requests
