@@ -30,18 +30,6 @@ When set, this profile is used by:
 - Prompts without an associated profile
 - Agents without an associated profile
 
-### Default Embedding Profile
-
-The profile used for embedding operations when no profile is explicitly specified.
-
-| Field                     | Description                              |
-| ------------------------- | ---------------------------------------- |
-| Default Embedding Profile | Select from available embedding profiles |
-
-When set, this profile is used by:
-
-- `IAIEmbeddingService.GenerateEmbeddingsAsync()` without a profile ID
-
 ### Classifier Chat Profile
 
 An optional profile for internal classification tasks such as agent routing. The classifier profile lets you use a cheaper or faster model for basic classification decisions, reducing costs.
@@ -55,6 +43,18 @@ When set, this profile is used by:
 - Agent routing in the Copilot's "Auto" mode (selecting the best agent for a user prompt)
 
 If not set, the default chat profile is used instead.
+
+### Default Embedding Profile
+
+The profile used for embedding operations when no profile is explicitly specified.
+
+| Field                     | Description                              |
+| ------------------------- | ---------------------------------------- |
+| Default Embedding Profile | Select from available embedding profiles |
+
+When set, this profile is used by:
+
+- `IAIEmbeddingService.GenerateEmbeddingsAsync()` without a profile ID
 
 ## Configuring Settings
 
