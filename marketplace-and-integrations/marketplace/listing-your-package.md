@@ -27,7 +27,7 @@ To appear on the Marketplace and show Umbraco version compatibility, your NuGet 
 * `UmbracoCms.*` (Umbraco 8 only)
 * `Umbraco.Commerce.*`
 
-The Marketplace uses these dependencies to determine which Umbraco versions your package supports. If your package has no dependency on any of these packages (directly or transitively), it will **not** be listed.
+The Marketplace uses these dependencies to determine supported Umbraco versions. If your package has no dependency on any of these packages (directly or transitively), it will **not** be listed.
 
 {% hint style="info" %}
 If direct dependencies on the Umbraco packages listed above are found, only those are used for version detection. Transitive dependencies (dependencies of your dependencies) are only used when no direct Umbraco dependency exists.
