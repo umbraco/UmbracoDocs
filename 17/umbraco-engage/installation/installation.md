@@ -83,6 +83,28 @@ dotnet add package Umbraco.Engage.Forms
 {% endtab %}
 {% endtabs %}
 
+### Umbraco Deploy
+
+If you are using **Umbraco Deploy** and want to transfer Engage configuration items between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package. These items include goals, personas, customer journeys, and A/B tests.
+
+{% tabs %}
+{% tab title="Visual Studio Package Manager" %}
+```
+PM> install-package Umbraco.Engage.Deploy
+```
+{% endtab %}
+
+{% tab title="Console" %}
+```console
+dotnet add package Umbraco.Engage.Deploy
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Analytics data is not transferred between environments. Only configuration items such as goals, personas, customer journeys, and A/B tests are included in deployments.
+{% endhint %}
+
 ### Clientside tracking
 
 To capture events that happen on the clientside (frontend) of your website, you need to add the [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). This is done by including the following snippet on all of your pages.
