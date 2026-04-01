@@ -85,7 +85,7 @@ dotnet add package Umbraco.Engage.Forms
 
 ### Umbraco Deploy
 
-If you are using **Umbraco Deploy** and want to transfer Engage configuration items (goals, personas, customer journeys, and A/B tests) between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package.
+If you are using **Umbraco Deploy** and want to transfer Engage configuration items between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package. These items include (goals, personas, customer journeys, and A/B tests) 
 
 {% tabs %}
 {% tab title="Visual Studio Package Manager" %}
@@ -102,7 +102,7 @@ dotnet add package Umbraco.Engage.Deploy
 {% endtabs %}
 
 {% hint style="info" %}
-Analytics data is not transferred between environments. Only configuration items such as segments, personas, journey steps, and goals are included in deployments.
+Analytics data is not transferred between environments. Only configuration items such as goals, personas, customer journeys, and A/B tests are included in deployments.
 {% endhint %}
 
 ### Clientside tracking
