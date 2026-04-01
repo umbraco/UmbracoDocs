@@ -11,7 +11,7 @@ Do you want to be listed on the official Umbraco Marketplace? Follow this guide 
 Your package needs to live up to the following requirements to be listed on the Umbraco Marketplace:
 
 * The `umbraco-marketplace` tag is added to your NuGet package.
-* The package has a NuGet dependency on an Umbraco package (see [Umbraco Version Detection](#umbraco-version-detection) below).
+* The package must have a NuGet dependency on an Umbraco package (see [Umbraco Version Detection](#umbraco-version-detection) below).
 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
@@ -21,9 +21,9 @@ Only tag the installable component of your package. For example, if your package
 
 ### Umbraco Version Detection
 
-To appear on the Marketplace and show Umbraco version compatibility, your NuGet package **must** have a dependency on one of the following Umbraco packages:
+To appear on the Marketplace and show Umbraco version compatibility, your NuGet package **must** depend on one of these Umbraco packages:
 
-* `Umbraco.Cms.*` (for example `Umbraco.Cms.Core`, `Umbraco.Cms.Web.Common`, etc.)
+* `Umbraco.Cms.*` (for example `Umbraco.Cms.Core`, `Umbraco.Cms.Web.Common`, and so on.)
 * `UmbracoCms.*` (Umbraco 8 only)
 * `Umbraco.Commerce.*`
 
@@ -36,11 +36,11 @@ If direct dependencies on the Umbraco packages listed above are found, only thos
 The supported version range is derived from the NuGet dependency version range on the Umbraco package. For example, a dependency on `Umbraco.Cms.Core` with version range `[14.0.0, 18.0.0)` indicates support for Umbraco 14 up to (but not including) Umbraco 18.
 
 {% hint style="info" %}
-By default, the Marketplace assumes that packages with a minimum dependency of Umbraco 13 or lower (and no explicit maximum) are **not** compatible with Umbraco 14+, due to the backoffice rewrite. If your package does work across this boundary, you can override this behavior using the [Version Dependency Mode](#version-dependency-mode) setting.
+By default, the Marketplace assumes packages targeting Umbraco 13 or lower are not compatible with Umbraco 14+ due to the backoffice rewrite. If your package works across this boundary, you can override this behavior using the [Version Dependency Mode](#version-dependency-mode) setting.
 {% endhint %}
 
 {% hint style="warning" %}
-If your package is a **client-side only** package (for example a TipTap extension or property editor with no .NET code), you still need to add a NuGet dependency on an Umbraco package to indicate which versions are supported.
+If your package is a **client-side only** package (for example, a TipTap extension), you still need a NuGet dependency on an Umbraco package to indicate supported versions.
 {% endhint %}
 
 ## Additional Package Information
