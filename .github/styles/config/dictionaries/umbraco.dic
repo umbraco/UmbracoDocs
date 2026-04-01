@@ -132,6 +132,7 @@ cookiebot
 countryId
 countryService
 createDate
+cron
 crontab
 cshtml
 csproj
