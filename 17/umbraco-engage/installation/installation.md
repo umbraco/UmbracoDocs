@@ -85,7 +85,7 @@ dotnet add package Umbraco.Engage.Forms
 
 ### Umbraco Deploy
 
-If you are using **Umbraco Deploy** and want to transfer Engage configuration items between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package. These items include (goals, personas, customer journeys, and A/B tests) 
+If you are using **Umbraco Deploy** and want to transfer Engage configuration items between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package. These items include goals, personas, customer journeys, and A/B tests.
 
 {% tabs %}
 {% tab title="Visual Studio Package Manager" %}
