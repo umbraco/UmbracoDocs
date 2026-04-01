@@ -259,7 +259,7 @@ For example, an export type with `Alias = "exportAsHtml"` will look for the keys
 Without localization entries, the backoffice will display the raw localization key strings instead of the intended label and description.
 {% endhint %}
 
-Create a JavaScript language file with the translations:
+Create a JavaScript language file containing the translations:
 
 ```javascript
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
@@ -293,7 +293,7 @@ const localizationManifests: Array<ManifestLocalization> = [
 export const manifests = [...localizationManifests];
 ```
 
-Register the manifests in your entry point:
+Register the localization manifests in your entry point:
 
 ```javascript
 import { manifests as localizationManifests } from "./lang/manifests.js";

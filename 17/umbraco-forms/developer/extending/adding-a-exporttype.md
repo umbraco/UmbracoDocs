@@ -6,12 +6,12 @@ Add a new class to your project and have it inherit from `Umbraco.Forms.Core.Exp
 
 ## Basic Example
 
-You can implement the method `public override Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would perform your logic to build up a comma-separated string in the `ExportRecordsAsync` method.
+You can implement the method `public override Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)` in your export provider class. You need to return the string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would implement your logic to build up a comma-separated string in the `ExportRecordsAsync` method.
 
 {% hint style="info" %}
-In the constructor of your provider, you will need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
+In the constructor of your provider, you need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
 
-The `Alias` is used to construct localization keys for the export type's label and description displayed in the backoffice. See [Localization](#localization) below for details.
+The `Alias` is used to construct localization keys for the export type label and description displayed in the backoffice. See [Localization](#localization) below for details.
 {% endhint %}
 
 `FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
@@ -248,7 +248,7 @@ For example, an export type with `Alias = "exportAsHtml"` will look for the keys
 Without localization entries, the backoffice will display the raw localization key strings instead of the intended label and description.
 {% endhint %}
 
-Create a JavaScript language file with the translations:
+Create a JavaScript language file containing the translations:
 
 ```javascript
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
@@ -282,7 +282,7 @@ const localizationManifests: Array<ManifestLocalization> = [
 export const manifests = [...localizationManifests];
 ```
 
-Register the manifests in your entry point:
+Register the localization manifests in your entry point:
 
 ```javascript
 import { manifests as localizationManifests } from "./lang/manifests.js";
