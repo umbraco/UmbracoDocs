@@ -106,5 +106,5 @@ Analytics data is pre-aggregated by a background process that runs daily. This m
 When forms are first installed or upgraded to a version that includes analytics, the background process will aggregate historical submission data. This may take some time depending on the volume of existing records.
 
 {% hint style="info" %}
-The analytics data processing is enabled by default. It can be configured or disabled via the `AnalyticsProcessing` settings in `appsettings.json`. See the [Configuration](../developer/configuration/README.md) article for details.
+The analytics data processing is enabled by default. It can be configured or disabled via the `AnalyticsProcessing` settings in `appsettings.json`. For more details, see the [Configuration](../developer/configuration/README.md) article.
 {% endhint %}
