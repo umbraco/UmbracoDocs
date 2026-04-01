@@ -476,23 +476,23 @@ To make the feature available to editors and include the dependency when using `
 
 ## Analytics processing configuration
 
-A background process runs periodically to aggregate form submission data into summary tables, providing fast-loading analytics views in the backoffice. The following settings control this process.
+A background process runs periodically to aggregate form submission data into summary tables. This provides fast-loading analytics views in the backoffice. The following settings control this process:
 
 ### Enabled
 
-Set to `true` (the default) to enable the background analytics data processing task. When disabled, no pre-aggregated data will be created, but the analytics views in the backoffice will still be available.
+Set to `true` (the default) to enable the background analytics data processing task. When disabled, no pre-aggregated data is created, but the analytics views in the backoffice are still available.
 
 ### FirstRunTime
 
-Configures when the analytics processing task will run for the first time. If not configured, the task will start shortly after the website launches. The value is specified as a string in crontab format. For example, a value of `"0 1 * * *"` schedules the first run at 01:00.
+Configures when the analytics processing task will run for the first time. If not configured, the task will start shortly after the site starts. The value must be specified as a cron expression. For example, a value of `"0 1 * * *"` schedules the first run at 01:00.
 
 ### Period
 
-Defines how often the analytics data processing task will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours.
+Defines how often the analytics data processing task will run. The default value is `1.00:00:00`, which is equivalent to once every 24 hours.
 
 ### RetainProcessedDataForDays
 
-Defines the number of days to retain pre-aggregated analytics summary data. Summary rows older than this value will be removed by the processing task. The default value is `1095` (approximately 3 years). Set to `0` to retain data indefinitely.
+Defines the number of days to retain pre-aggregated analytics summary data. Summary data older than this value will be removed by the processing task. The default value is `1095` (approximately 3 years). Set to `0` to retain data indefinitely.
 
 ## Security configuration
 

@@ -10,15 +10,23 @@ description: >-
 This feature is available from Umbraco Forms 17.3.
 {% endhint %}
 
-Umbraco Forms provides built-in analytics that give you insight into how your forms are performing. You can view submission trends over time, monitor workflow success rates, and identify which pages are driving submissions.
+Umbraco Forms includes built-in analytics that provide insight into how your forms are performing. You can view submission trends over time, monitor workflow success rates, and identify which pages are driving submissions.
 
+## Permissions
+
+To view form analytics, you need:
+
+* Access to the **Forms** section in the backoffice.
+* The **View Entries** permission for the form.
+
+Users will only see analytics for forms they have permission to manage.
 ## Accessing Analytics
 
 There are two ways to access form analytics in the backoffice.
 
 ### From the Forms Section Menu
 
-In the Forms section, click the **Analytics** menu item in the sidebar. This opens the analytics overview where you can browse analytics across all your forms.
+In the Forms section, click the **Analytics** menu item in the sidebar. This opens the analytics overview where you can browse data across all your forms.
 
 ![Analytics overview showing a submissions chart and forms table](images/analytics-overview.png)
 
@@ -42,13 +50,13 @@ The analytics view provides controls to adjust the data displayed.
 
 ### Date Range
 
-Use the date range picker to select the time period for the analytics data. You can choose from preset ranges such as "Last 7 days" or "Last 30 days", or set a custom date range. You can also enable a comparison date range to compare the current period against a previous one.
+Use the date range picker to select the time period for the analytics data. You can choose from preset ranges such as **Last 7 days** or **Last 30 days**, or set a custom date range. You can also enable a comparison date range to compare the current period against a previous one.
 
 ![Date range picker with preset options and comparison toggle](images/analytics-date-picker.png)
 
 ### Group By
 
-Use the group by control to change how the data is aggregated in the time-series charts:
+Use the **Group by** control to change how the data is aggregated in the time-series charts:
 
 * **Day** — shows data points for each day in the selected range.
 * **Week** — groups data by week.
@@ -60,7 +68,7 @@ The overview table lists all forms you have access to with summary statistics fo
 
 ![Analytics overview table showing all forms with entry counts and statistics](images/analytics-overview-table.png)
 
-Click on a form name to navigate to its detailed analytics view.
+Click a form name to navigate to its detailed analytics view.
 
 ## Analytics Widgets
 
@@ -90,14 +98,6 @@ Below the chart, a table lists each source page with its name, URL, and entry co
 
 ![Origins chart and table showing submissions by source page](images/analytics-form-origins-table.png)
 
-## Permissions
-
-To view form analytics, you need:
-
-* Access to the **Forms** section in the backoffice.
-* The **View Entries** permission for the form.
-
-Users will only see analytics for forms they have permission to manage.
 
 ## Data Processing
 
