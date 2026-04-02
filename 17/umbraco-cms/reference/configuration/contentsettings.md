@@ -207,7 +207,8 @@ See [Content Version Cleanup](../../fundamentals/data/content-version-cleanup.md
 "ContentVersionCleanupPolicy": {
   "EnableCleanup": false,
   "KeepAllVersionsNewerThanDays": 7,
-  "KeepLatestVersionPerDayForDays": 90
+  "KeepLatestVersionPerDayForDays": 90,
+  "MaxVersionsToDeletePerRun": 50000
 }
 ```
 
@@ -230,6 +231,12 @@ All versions that fall in this period will be kept.
 For content versions that fall in this period, the most recent version for each day is kept. All previous versions for that day are removed unless marked as preventCleanup.
 
 This variable is independent of `KeepAllVersionsNewerThanDays`, if both were set to the same value `KeepLatestVersionPerDayForDays` would never apply as `KeepAllVersionsNewerThanDays` is considered first.
+
+### Maximum versions to delete per run
+
+This setting controls how many content versions are processed in a single cleanup run. When more eligible versions exist than this limit, the remainder will be cleaned up in subsequent hourly runs. This allows large version histories to be cleaned incrementally without overwhelming the database.
+
+Set to 0 to disable the limit and process all eligible versions in a single run.
 
 ## Imaging
 
