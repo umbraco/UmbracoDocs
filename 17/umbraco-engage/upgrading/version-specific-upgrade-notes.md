@@ -20,7 +20,7 @@ Engage 17.2.0 introduces a database schema alignment that brings existing instal
 
 #### What changed
 
-The analytics data cleanup has been rewritten with new configuration settings. The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and replaced by `Enabled`, `FirstRunTime`, `Delay`, `Period`, and `CommandTimeout`. See the [configuration](../developers/settings/configuration.md) page for details.
+The analytics data cleanup has been rewritten with new configuration settings. The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and replaced by `Enabled`, `FirstRunTime`, `StartupDelay`, `Interval`, and `CommandTimeout`. See the [configuration](../developers/settings/configuration.md) page for details.
 
 To support the new `ON DELETE CASCADE` foreign keys, the database schema must be aligned. This requires that all existing data satisfies the new constraints — which is not guaranteed on older installations that may have accumulated orphaned records over time.
 

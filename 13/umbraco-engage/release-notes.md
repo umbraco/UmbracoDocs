@@ -16,11 +16,11 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
-[**13.8.0-rc1**](https://www.nuget.org/packages/Umbraco.Engage/13.8.0-rc1) **(release date TBD)**
+[**13.8.0-rc1**](https://www.nuget.org/packages/Umbraco.Engage/13.8.0-rc1) **(April 2nd 2026)**
 
 * Rewritten analytics data cleanup with improved scheduling and performance:
   * Cleanup now processes all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
-  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
+  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `StartupDelay`, `Interval`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
   * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
 * Database schema alignment bringing existing installations in line with clean installs:
   * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.

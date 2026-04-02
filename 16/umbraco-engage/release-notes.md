@@ -16,11 +16,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
-#### [16.3.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.3.0-rc1) (release date TBD)
+#### [16.3.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/16.3.0-rc1) (April 2nd 2026)
 
 * Rewritten analytics data cleanup with improved scheduling and performance:
   * Cleanup now processes all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
-  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `Delay`, `Period`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
+  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `StartupDelay`, `Interval`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
   * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
 * Database schema alignment bringing existing installations in line with clean installs:
   * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
@@ -54,6 +54,11 @@ Recommends a safe initial `DeleteAnalyticsDataAfterDays` value based on your dat
 {% file src="scripts/DeduplicatePageVariants.sql" %}
 Consolidates duplicate page variant rows and reassigns pageviews. Run during a maintenance window as the update on the pageviews table can take a while on large installations.
 {% endfile %}
+
+#### [Engage Forms 16.2.2](https://www.nuget.org/packages/Umbraco.Engage.Forms/16.2.2) (April 2nd 2026)
+
+* Fixed broken migration step regarding Goals table name misalignment.
+* Fixed broken swagger documentation generation.
 
 #### [16.2.0](https://www.nuget.org/packages/Umbraco.Engage/16.2.0) (March 4th 2026)
 
