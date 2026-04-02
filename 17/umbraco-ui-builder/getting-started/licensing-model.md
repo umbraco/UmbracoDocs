@@ -8,24 +8,23 @@ Umbraco UI Builder is a commercial product. You can use Umbraco UI Builder local
 
 ## How Licensing Works
 
-Licenses are sold per backoffice domain and applies to all subdomains. If you have alternative staging/QA environment domains, additional domains can be added to the license on request.
+Licenses are sold per Umbraco installation. This means one license covers a single Umbraco database and its associated web project.
+
+While the license is sold per installation, it is configured on a domain basis. This allows the Umbraco licensing server to verify that the backoffice is being accessed from an authorized environment.
 
 {% hint style="info" %}
 The licenses are not tied to a specific product version. They work across all versions of the related product.
 {% endhint %}
 
-### Example License Coverage
+### Example License Configuration
 
-A license for `mysite.com` and requested dev domains (`devdomain.com` and `devdomain2.com`) will cover:
+When you purchase a license, you define one production domain (which includes all its subdomains) and up to two development or testing domains.
 
-* `localhost`
-* `*.local`
-* `*.mysite.com`
-* `www.mysite.com`
-* `devdomain.com`
-* `www.devdomain.com`
-* `devdomain2.com`
-* `www.devdomain2.com`
+For a license configured for `mysite.com`, with development domains `devdomain.com` and `devdomain2.com`, the following are covered:
+
+* **Local Development:** `localhost`, `*.local`, and `*.test`.
+* **Production:** `mysite.com` and all subdomains (for example, `www.mysite.com`, `shop.mysite.com`).
+* **Staging/QA:** Your two specifically registered domains, such as `devdomain.com` and `devdomain2.com`.
 
 {% hint style="info" %}
 Only one license per Umbraco installation is allowed.
