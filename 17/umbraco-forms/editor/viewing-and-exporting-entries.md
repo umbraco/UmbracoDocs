@@ -48,6 +48,10 @@ To export all the entries from your Form:
 
 If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
+## Analytics
+
+For a deeper understanding of form submission trends, workflow performance, and submission origins, see the [Analytics](analytics.md) section. Analytics provide time-series charts, hourly breakdowns, and per-page origin tracking for each form.
+
 ## Record Actions
 
 When selecting entries, it is possible to execute different actions. To select an entry, click anywhere on the entry.
