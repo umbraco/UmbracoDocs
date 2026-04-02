@@ -16,6 +16,34 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.8.0-rc1**](https://www.nuget.org/packages/Umbraco.Engage/13.8.0-rc1) **(April 2nd 2026)**
+
+* Rewritten analytics data cleanup with improved scheduling and performance:
+  * Cleanup now processes all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).
+  * New configuration settings: `Enabled`, `FirstRunTime` (crontab), `StartupDelay`, `Interval`, `CommandTimeout` — replacing deprecated `StartAfterSeconds`, `IntervalInSeconds`, `NumberOfRows`. See [configuration](developers/settings/configuration.md) for details.
+  * Configurable first-run scheduling via crontab expression (`"0 2 * * *"` for 2 AM daily).
+* Database schema alignment bringing existing installations in line with clean installs:
+  * Adds missing foreign keys with `ON DELETE CASCADE`, indexes, and constraints.
+  * Requires running the `EnsureDataConsistency.sql` script first to clean up any orphaned data, followed by the `CompleteAlignSchema.sql` script to add the constraints. Both scripts should be run during a maintenance window after upgrading (see below).
+  * **Important**: Until the script is executed, only anonymization and visitor control group/raw data cleanup will run. Full analytics data cleanup (pageviews, sessions, visitors) requires the schema alignment to be completed.
+  * Helper script included: `GetDeleteAnalyticsDataAfterDays.sql` (recommends safe initial configuration, see below).
+* Added 'Database Schema Status' and 'Constraint Integrity' health checks to monitor upgrade completion.
+* Aligned `culture` column length with Umbraco CMS.
+* Fixed `Anonymize IP Address` setting not showing in the UI.
+* Clean-up of orphaned page variants and bot visitor data.
+
+{% file src="scripts/EnsureDataConsistency.sql" %}
+Run during a maintenance window **before** `CompleteAlignSchema.sql` to clean up orphaned data and verify all foreign key constraints.
+{% endfile %}
+
+{% file src="scripts/CompleteAlignSchema.sql" %}
+Run during a maintenance window **after** `EnsureDataConsistency.sql` to add missing foreign keys, indexes, and constraints. **Execute each batch individually** — do not run the entire script at once. See [version-specific upgrade notes](upgrading/version-specific-upgrade-notes.md) for details.
+{% endfile %}
+
+{% file src="scripts/GetDeleteAnalyticsDataAfterDays.sql" %}
+Recommends a safe initial `DeleteAnalyticsDataAfterDays` value based on your data.
+{% endfile %}
+
 [**13.7.5**](https://www.nuget.org/packages/Umbraco.Engage/13.7.5) **(March 4th 2026)**
 
 * Resolved an issue where the `pagehide` event listener was not correctly handling page visibility changes in the analytics tracking script.

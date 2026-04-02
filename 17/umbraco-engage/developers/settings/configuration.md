@@ -49,9 +49,11 @@ The default configuration will look like this:
         "DeleteRawDataAfterDays": 5
       },
       "DataCleanup": {
-        "StartAfterSeconds": 300,
-        "IntervalInSeconds": 1800,
-        "NumberOfRows": 1000
+        "Enabled": true,
+        "FirstRunTime": null,
+        "StartupDelay": "00:05:00",
+        "Interval": "1.00:00:00",
+        "CommandTimeout": 1200
       }
     },
     "ABTesting": {
@@ -59,6 +61,7 @@ The default configuration will look like this:
       "MinimumPercentageMacroGoalWarning": 10
     },
     "DeliveryApi": {
+      "DisableVisitorCookie": false,
       "Segmentation": {
         "ContentById": true,
         "ContentByIds": true,
@@ -100,6 +103,18 @@ The default configuration will look like this:
 }
 ```
 {% endcode %}
+
+{% hint style="info" %}
+**DataCleanup settings:**
+
+* `Enabled`: Whether the data cleanup process runs at all.
+* `FirstRunTime`: Optional crontab expression (`"0 2 * * *"` for 2 AM daily) to schedule the first cleanup run. Takes precedence over `StartupDelay` when set.
+* `StartupDelay`: Time after application startup before the first cleanup run (default: 5 minutes). Used only when `FirstRunTime` is not set.
+* `Interval`: Interval between cleanup runs (default: 24 hours).
+* `CommandTimeout`: Database command timeout in seconds (default: 1200 = 20 minutes).
+
+The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and no longer used.
+{% endhint %}
 
 All these settings are also visualized in Umbraco Engage. This overview can be found in the **Settings** section under **Engage** -> **Configuration**.
 
