@@ -9,7 +9,9 @@ Add a new class to your project and have it inherit from `Umbraco.Forms.Core.Exp
 You can implement the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would perform your logic to build up a comma-separated string in the `ExportRecords` method.
 
 {% hint style="info" %}
-In the constructor of your provider, you will need a further two properties, `FileExtension` and `Icon`.
+In the constructor of your provider, you will need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
+
+The `Alias` is used to construct localization keys for the export type's label and description displayed in the backoffice. See [Localization](#localization) below for details.
 {% endhint %}
 
 `FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
@@ -44,6 +46,7 @@ namespace MyFormsExtensions
 
             Name = "Export as HTML";
             Description = "Export entries as a single HTML report";
+            Alias = "exportAsHtml";
             Id = new Guid("4117D352-FB41-4A4C-96F5-F6EF35B384D2");
             FileExtension = "html";
             Icon = "icon-article";
@@ -135,6 +138,7 @@ namespace MyFormsExtensions
 
             this.Name = "Export as text files";
             this.Description = "Export entries as text files inside a zip file";
+            this.Alias = "exportAsTextFiles";
             this.Id = new Guid("171CABC9-2207-4575-83D5-2A77E824D5DB");
             this.FileExtension = "zip";
             this.Icon = "icon-zip";
@@ -241,3 +245,62 @@ namespace MyFormsExtensions
     }
 }
 ```
+
+## Localization
+
+The backoffice uses localization keys to display the label and description for each export type. These keys are based on the `Alias` property set in the constructor:
+
+* Label: `formProviderExportTypes_{alias}`
+* Description: `formProviderExportTypes_{alias}Description`
+
+For example, an export type with `Alias = "exportAsHtml"` will look for the keys `formProviderExportTypes_exportAsHtml` and `formProviderExportTypes_exportAsHtmlDescription`.
+
+{% hint style="info" %}
+Without localization entries, the backoffice will display the raw localization key strings instead of the intended label and description.
+{% endhint %}
+
+Create a JavaScript language file containing the translations:
+
+```javascript
+import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
+
+export default {
+  formProviderExportTypes: {
+    exportAsHtml: "Export as HTML",
+    exportAsHtmlDescription: "Export entries as a single HTML report",
+  },
+} as UmbLocalizationDictionary;
+```
+
+Register the language file with a localization manifest:
+
+```javascript
+import type { ManifestLocalization } from '@umbraco-cms/backoffice/localization';
+
+const localizationManifests: Array<ManifestLocalization> = [
+  {
+    type: "localization",
+    alias: "My.Localization.En_US",
+    weight: -100,
+    name: "English (US)",
+    meta: {
+      culture: "en-us",
+    },
+    js: () => import("./en-us.js"),
+  },
+];
+
+export const manifests = [...localizationManifests];
+```
+
+Register the localization manifests in your entry point:
+
+```javascript
+import { manifests as localizationManifests } from "./lang/manifests.js";
+
+export const onInit = async (host, extensionRegistry) => {
+  extensionRegistry.registerMany(localizationManifests);
+};
+```
+
+For more details on setting up localization files, see the [Localization](https://docs.umbraco.com/umbraco-cms/customizing/foundation/localization) article.
