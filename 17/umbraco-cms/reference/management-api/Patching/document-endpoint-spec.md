@@ -1,10 +1,8 @@
 # Umbraco Document PATCH Endpoint Specification
 
-> Machine-readable reference for tooling, LLMs, and AI agents constructing PATCH payloads.
+Machine-readable reference for tooling, LLMs, and AI agents constructing PATCH payloads.
 
----
-
-## 1. Endpoint
+## Endpoint
 
 ```
 PATCH /umbraco/management/api/v1/document/{id:guid}/patch
@@ -30,9 +28,7 @@ PATCH /umbraco/management/api/v1/document/{id:guid}/patch
 | 404 | Document not found, content type not found. |
 | 422 | Property type not found on content type. |
 
----
-
-## 2. Request Schema
+## Request Schema
 
 ```json
 {
@@ -50,9 +46,7 @@ PATCH /umbraco/management/api/v1/document/{id:guid}/patch
 - Operations are applied sequentially. Each operation sees the result of all prior operations.
 - If any operation fails, the entire request fails (no partial application).
 
----
-
-## 3. Path Syntax Grammar
+## Path Syntax Grammar
 
 ```bnf
 path          ::= "/" segment ( "/" segment | filter )*
@@ -76,9 +70,7 @@ token         ::= RFC6901_TOKEN             // with ~1 decoded to "/" and ~0 dec
 - Filter conditions **must** contain `=`.
 - Filter keys **must not** be empty.
 
----
-
-## 4. Path Segment Types
+## Path Segment Types
 
 | Type | Syntax | Resolves To | Example |
 |------|--------|-------------|---------|
@@ -87,9 +79,7 @@ token         ::= RFC6901_TOKEN             // with ~1 decoded to "/" and ~0 dec
 | IndexSegment | `/0`, `/1` | Element at numeric index in a JsonArray. | `/contentData/0` |
 | AppendSegment | `/-` | Past-the-end position in a JsonArray. | `/contentData/-` |
 
----
-
-## 5. Filter Matching Rules
+## Filter Matching Rules
 
 Given an array element (JsonObject) and a set of filter conditions:
 
@@ -100,11 +90,11 @@ Given an array element (JsonObject) and a set of filter conditions:
 3. The **first** matching element is returned.
 4. If no element matches, the operation fails with 400.
 
-**Note:** The `null` keyword in filter values is matched case-insensitively (`null`, `NULL`, `Null` all work). All other string values are case-sensitive.
+{% hint style="info" %}
+The `null` keyword in filter values is matched case-insensitively (`null`, `NULL`, `Null` all work). All other string values are case-sensitive.
+{% endhint %}
 
----
-
-## 6. Operation Semantics
+## Operation Semantics
 
 ### Replace
 
@@ -130,13 +120,11 @@ Given an array element (JsonObject) and a set of filter conditions:
 | Array element (by index or filter) | Removes element, shifts subsequent elements left. |
 | Cannot target `/-` | Error |
 
----
-
-## 7. JSON Structure Specification
+## JSON Structure Specification
 
 The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. This section defines the exact shape at each level.
 
-### 7.1 Root Object
+### Root Object
 
 ```
 {
@@ -146,7 +134,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-### 7.2 DocumentValueModel (root-level values entry)
+### DocumentValueModel (Root-Level Values Entry)
 
 ```
 {
@@ -157,9 +145,11 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-**Note:** Root-level value entries do NOT have an `editorAlias` field.
+{% hint style="info" %}
+Root-level value entries do not have an `editorAlias` field.
+{% endhint %}
 
-### 7.3 DocumentVariantRequestModel
+### DocumentVariantRequestModel
 
 ```
 {
@@ -169,7 +159,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-### 7.4 Block Value (BlockList, BlockGrid, or bare block structure in RTE)
+### Block Value (BlockList, BlockGrid, or Bare Block Structure in RTE)
 
 ```
 {
@@ -190,7 +180,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 | Block Grid | `Umbraco.BlockGrid` |
 | Rich Text | `Umbraco.RichText` |
 
-### 7.5 Layout Items
+### Layout Items
 
 **Block List:**
 ```
@@ -227,7 +217,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-### 7.6 BlockItemData (contentData / settingsData entry)
+### BlockItemData (contentData / settingsData Entry)
 
 ```
 {
@@ -237,7 +227,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-### 7.7 BlockPropertyValue (values inside block contentData)
+### BlockPropertyValue (Values Inside Block contentData)
 
 ```
 {
@@ -249,9 +239,11 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-**Note:** Block-level values DO have `editorAlias`. Root-level values do NOT.
+{% hint style="info" %}
+Block-level values have `editorAlias`. Root-level values do not.
+{% endhint %}
 
-### 7.8 Expose Entry
+### Expose Entry
 
 ```
 {
@@ -261,7 +253,7 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 }
 ```
 
-### 7.9 RichTextEditorValue (value of an RTE property)
+### RichTextEditorValue (Value of an RTE Property)
 
 ```
 {
@@ -275,13 +267,12 @@ The PATCH operates on a JSON representation of `UpdateDocumentRequestModel`. Thi
 <umb-rte-block data-content-key="GUID"></umb-rte-block>
 ```
 
----
 
-## 8. Path Construction Algorithm
+## Path Construction Algorithm
 
 Use this step-by-step process to construct a path to any target in the document.
 
-### 8.1 Reaching a Root Property Value
+### Reaching a Root Property Value
 
 ```
 /values[alias=<ALIAS>,culture=<CULTURE|null>,segment=<SEGMENT|null>]/value
@@ -294,13 +285,13 @@ Examples:
 /values[alias=description,culture=en-US,segment=desktop]/value
 ```
 
-### 8.2 Reaching a Variant Name
+### Reaching a Variant Name
 
 ```
 /variants[culture=<CULTURE|null>,segment=<SEGMENT|null>]/name
 ```
 
-### 8.3 Navigating Into Block Editor Values
+### Navigating Into Block Editor Values
 
 Once at a block editor's `/value`, append paths to navigate its internal structure:
 
@@ -322,7 +313,7 @@ If the block property's value is itself a block editor, just continue with `/con
 /contentData[key=OUTER_BLOCK]/values[alias=innerList,culture=null,segment=null]/value/contentData[key=INNER_BLOCK]/values[alias=text]/value
 ```
 
-### 8.4 RTE Path Adjustment
+### RTE Path Adjustment
 
 For Rich Text Editor values, block data is under `/blocks/`, not directly under `/value/`:
 
@@ -337,7 +328,7 @@ The markup is at:
 /values[alias=rte,culture=null,segment=null]/value/markup
 ```
 
-### 8.5 Layout and Expose Paths
+### Layout and Expose Paths
 
 Layout arrays are keyed by editor alias:
 ```
@@ -352,7 +343,7 @@ Expose arrays:
 .../value/blocks/expose/-                      (RTE: note /blocks/)
 ```
 
-### 8.6 General Recursive Pattern
+### General Recursive Pattern
 
 For any level of nesting, the pattern repeats:
 
@@ -365,9 +356,8 @@ For any level of nesting, the pattern repeats:
           → ... (repeat as deep as needed)
 ```
 
----
 
-## 9. Adding a Block Checklist
+## Adding a Block Checklist
 
 When adding a block to any block editor, you need these operations:
 
@@ -405,9 +395,8 @@ For invariant blocks, expose has `culture: null`:
 { "contentKey": "GUID", "culture": null, "segment": null }
 ```
 
----
 
-## 10. Complete Worked Example
+## Complete Worked Example
 
 **Scenario:** A document has a root Block List (`blockList` property, invariant). Inside it is a container block that has a `block` property (another Block List, invariant). Inside that is a grid container block with a `grid` property (Block Grid, invariant). Inside the grid is a text block with a culture-variant `text` property. We want to update the Dutch text.
 
@@ -459,9 +448,8 @@ Document
 | `[alias=text,culture=nl,segment=null]` | Filter | The Dutch text value. |
 | `/value` | Property | The actual string value. |
 
----
 
-## 11. Error Conditions
+## Error Conditions
 
 | Error | HTTP Code | Cause |
 |-------|-----------|-------|
@@ -473,9 +461,8 @@ Document
 | Content type not found | 404 | Document's content type was deleted. |
 | Property type not found | 422 | Property alias doesn't exist on the content type. |
 
----
 
-## 12. Important Rules
+## Important Rules
 
 1. **No JSON comments.** JSON does not support `//` or `/* */`. Including them will cause a parse error.
 

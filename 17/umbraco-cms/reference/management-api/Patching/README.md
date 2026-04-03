@@ -50,5 +50,5 @@ Because the patch layer is thin and delegates to the standard save pipeline, you
 
 ## Further Reading
 
-- [Document PATCH Endpoint Guide](document.md) — Detailed path syntax, document structure reference, block editor guidance, and step-by-step recipes for common tasks.
-- [Document PATCH Endpoint Specification](document-spec.md) — Machine-readable technical specification for tooling and AI agents, including formal path grammar, JSON schemas, and error conditions.
+- [Document PATCH Endpoint Guide](document-endpoint-guide.md) — Detailed path syntax, document structure reference, block editor guidance, and step-by-step recipes for common tasks.
+- [Document PATCH Endpoint Specification](document-endpoint-spec.md) — Machine-readable technical specification for tooling and AI agents, including formal path grammar, JSON schemas, and error conditions.

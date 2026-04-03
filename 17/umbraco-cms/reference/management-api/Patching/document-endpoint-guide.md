@@ -1,6 +1,6 @@
 # Umbraco Document PATCH Endpoint Guide
 
-## What is the PATCH endpoint?
+## What is the PATCH Endpoint
 
 The Document PATCH endpoint lets you make **partial updates** to an Umbraco document. Instead of sending the entire document back (like a PUT), you describe only the changes you want to make.
 
@@ -45,7 +45,9 @@ The request body is a JSON object with an `operations` array. Each operation has
 
 Multiple operations are applied **in order** - each operation sees the result of all previous ones.
 
-> **Important**: JSON does not support comments. Do not include `//` comment lines in your request body.
+{% hint style="warning" %}
+JSON does not support comments. Do not include `//` comment lines in your request body.
+{% endhint %}
 
 ## Operations
 
@@ -86,7 +88,6 @@ Removes the value at the target location.
 | **404** | Document not found, or content type not found. |
 | **422** | Property type not found on the content type. |
 
----
 
 ## Path Syntax
 
@@ -120,7 +121,6 @@ Filters match array elements by their properties. All conditions must match (AND
  name=value     match            values
 ```
 
----
 
 ## The Document JSON Structure
 
@@ -165,7 +165,6 @@ Each entry represents a culture/segment variant of the document:
 }
 ```
 
----
 
 ## Block Editor Values
 
@@ -250,7 +249,6 @@ In a Block Grid, ALL blocks appear in the same flat `contentData` array, regardl
 
 When a block property contains another block editor (e.g., a block that has a Block List property), the inner block editor value is fully expanded into a nested JSON object. You can navigate into it by continuing the path through the inner block's `value`.
 
----
 
 ## Rich Text Editor Specifics
 
@@ -275,11 +273,10 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 - The `markup` contains `<umb-rte-block data-content-key="guid">` tags that reference blocks.
 - When adding an RTE block, you must also update `markup` to include the new `<umb-rte-block>` tag.
 
----
 
 ## Common Recipes
 
-### 1. Update a simple property value
+### Update a Simple Property Value
 
 ```json
 {
@@ -293,7 +290,7 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 }
 ```
 
-### 2. Update a variant name
+### Update a Variant Name
 
 ```json
 {
@@ -307,7 +304,7 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 }
 ```
 
-### 3. Update a culture-specific property
+### Update a Culture-Specific Property
 
 ```json
 {
@@ -321,7 +318,7 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 }
 ```
 
-### 4. Replace a value inside a Block List block
+### Replace a Value Inside a Block List Block
 
 Given a document with a `contentBlocks` property (Block List), find the block by its key and update its `headline` property:
 
@@ -337,7 +334,7 @@ Given a document with a `contentBlocks` property (Block List), find the block by
 }
 ```
 
-### 5. Add a block to a Block List
+### Add a Block to a Block List
 
 Adding a block requires **3 operations** — add the content data, the layout entry, and the expose entry:
 
@@ -381,7 +378,7 @@ Adding a block requires **3 operations** — add the content data, the layout en
 }
 ```
 
-### 6. Insert a block at a specific position
+### Insert a Block at a Specific Position
 
 Use an index instead of `/-` to insert before a specific position. This inserts at index 1 (second position):
 
@@ -407,9 +404,11 @@ Use an index instead of `/-` to insert before a specific position. This inserts 
 }
 ```
 
-> Note: `contentData` and `layout` use index `/1` to insert at position 1, but `expose` uses `/-` to append (order doesn't matter for expose).
+{% hint style="info" %}
+`contentData` and `layout` use index `/1` to insert at position 1, but `expose` uses `/-` to append (order does not matter for expose).
+{% endhint %}
 
-### 7. Remove a block
+### Remove a Block
 
 Removing a block requires **3 operations** — remove from contentData, layout, and expose:
 
@@ -432,9 +431,11 @@ Removing a block requires **3 operations** — remove from contentData, layout, 
 }
 ```
 
-> For blocks with multiple expose entries (culture-variant blocks), you need a separate remove for each expose entry.
+{% hint style="info" %}
+For blocks with multiple expose entries (culture-variant blocks), you need a separate remove for each expose entry.
+{% endhint %}
 
-### 8. Deeply nested: update a property 4 levels deep
+### Update a Deeply Nested Property
 
 Consider a document with this nesting: Root Block List > container block > nested Block List > grid container block > Block Grid > text block.
 
@@ -468,7 +469,7 @@ Reading this path left to right:
                     /value                            → the actual text string
 ```
 
-### 9. Add a block to an RTE
+### Add a Block to an RTE
 
 Adding a block to a Rich Text Editor requires **4 operations** — the markup must also be updated:
 
@@ -505,9 +506,10 @@ Adding a block to a Rich Text Editor requires **4 operations** — the markup mu
 }
 ```
 
-> Note the path goes through `/value/blocks/contentData` (not `/value/contentData`) because the RTE wraps its block data inside a `blocks` object.
+{% hint style="info" %}
+The path goes through `/value/blocks/contentData` (not `/value/contentData`) because the RTE wraps its block data inside a `blocks` object.
+{% endhint %}
 
----
 
 ## Tips and Gotchas
 
