@@ -85,8 +85,8 @@ Given an array element (JsonObject) and a set of filter conditions:
 
 1. For each condition `(key, value)`:
    - If `value` is `null`: match succeeds if the element does **not** have the property, OR the property value is JSON `null`.
-   - If `value` is a string: match succeeds if the element **has** the property AND its string representation equals `value` (StringComparison.Ordinal — **case-sensitive**).
-2. ALL conditions must match (AND logic).
+   - If `value` is a string: match succeeds if the element **has** the property and its string representation equals `value` (StringComparison.Ordinal — **case-sensitive**).
+2. All conditions must match (and logic).
 3. The **first** matching element is returned.
 4. If no element matches, the operation fails with 400.
 
@@ -159,16 +159,16 @@ Root-level value entries do not have an `editorAlias` field.
 }
 ```
 
-### Block Value (BlockList, BlockGrid, or Bare Block Structure in RTE)
+### Block Value (BlockList, BlockGrid, or Bare Block Structure in Rich Text Editor)
 
 ```
 {
   "layout": {
-    "<EditorAlias>": LayoutItem[]   // See 7.5 for layout item shapes
+    "<EditorAlias>": LayoutItem[]   // See Layout Items section
   },
-  "contentData": BlockItemData[],   // See 7.6
+  "contentData": BlockItemData[],   // See BlockItemData section
   "settingsData": BlockItemData[],  // Same shape as contentData
-  "expose": ExposeEntry[]           // See 7.8
+  "expose": ExposeEntry[]           // See Expose Entry section
 }
 ```
 
@@ -217,17 +217,17 @@ Root-level value entries do not have an `editorAlias` field.
 }
 ```
 
-### BlockItemData (contentData / settingsData Entry)
+### BlockItemData (`contentData` / `settingsData` Entry)
 
 ```
 {
   "key": GUID,                         // Unique block instance identifier
   "contentTypeKey": GUID,              // Element type key
-  "values": BlockPropertyValue[]       // See 7.7
+  "values": BlockPropertyValue[]       // See BlockPropertyValue section
 }
 ```
 
-### BlockPropertyValue (Values Inside Block contentData)
+### BlockPropertyValue (Values Inside Block `contentData`)
 
 ```
 {
@@ -253,16 +253,16 @@ Block-level values have `editorAlias`. Root-level values do not.
 }
 ```
 
-### RichTextEditorValue (Value of an RTE Property)
+### RichTextEditorValue (Value of a Rich Text Editor Property)
 
 ```
 {
   "markup": string,       // HTML content with <umb-rte-block> tags for inline blocks
-  "blocks": BlockValue    // Standard block value structure (see 7.4)
+  "blocks": BlockValue    // Standard block value structure (see Block Value section)
 }
 ```
 
-**RTE block reference in markup:**
+**Rich Text Editor block reference in markup:**
 ```html
 <umb-rte-block data-content-key="GUID"></umb-rte-block>
 ```
@@ -308,19 +308,19 @@ Once at a block editor's `/value`, append paths to navigate its internal structu
 ```
 
 **Navigate into a nested block editor:**
-If the block property's value is itself a block editor, just continue with `/contentData[key=...]/values[alias=...]/value` again:
+If the block property's value is itself a block editor, continue with `/contentData[key=...]/values[alias=...]/value` again:
 ```
 /contentData[key=OUTER_BLOCK]/values[alias=innerList,culture=null,segment=null]/value/contentData[key=INNER_BLOCK]/values[alias=text]/value
 ```
 
-### RTE Path Adjustment
+### Rich Text Editor Path Adjustment
 
 For Rich Text Editor values, block data is under `/blocks/`, not directly under `/value/`:
 
 ```
 /values[alias=rte,culture=null,segment=null]/value/blocks/contentData[key=<GUID>]/values[alias=text]/value
                                                   ^^^^^^^^
-                                                  Extra /blocks/ segment for RTE
+                                                  Extra /blocks/ segment for Rich Text Editor
 ```
 
 The markup is at:
@@ -334,13 +334,13 @@ Layout arrays are keyed by editor alias:
 ```
 .../value/layout/Umbraco.BlockList/-
 .../value/layout/Umbraco.BlockGrid/-
-.../value/blocks/layout/Umbraco.RichText/-     (RTE: note /blocks/)
+.../value/blocks/layout/Umbraco.RichText/-     (Rich Text Editor: note /blocks/)
 ```
 
 Expose arrays:
 ```
 .../value/expose/-
-.../value/blocks/expose/-                      (RTE: note /blocks/)
+.../value/blocks/expose/-                      (Rich Text Editor: note /blocks/)
 ```
 
 ### General Recursive Pattern
@@ -349,9 +349,9 @@ For any level of nesting, the pattern repeats:
 
 ```
 /values[alias=<PROP>,culture=<C>,segment=<S>]/value
-  → for RTE: /blocks
+  → for Rich Text Editor: /blocks
   → /contentData[key=<GUID>]/values[alias=<PROP>,culture=<C>,segment=<S>]/value
-      → for RTE: /blocks
+      → for Rich Text Editor: /blocks
       → /contentData[key=<GUID>]/values[alias=<PROP>,...]/value
           → ... (repeat as deep as needed)
 ```
@@ -438,7 +438,7 @@ Document
 | `[alias=block,culture=null,segment=null]` | Filter | The "block" property (inner block list). |
 | `/value` | Property | The inner block list value object. |
 | `/contentData` | Property | Inner content data array. |
-| `[key=dc9db89c-...]` | Filter | Yhe grid container block. |
+| `[key=dc9db89c-...]` | Filter | The grid container block. |
 | `/values` | Property | Grid container's values array. |
 | `[alias=grid,culture=null,segment=null]` | Filter | The "grid" property (block grid). |
 | `/value` | Property | The block grid value object. |
@@ -453,7 +453,7 @@ Document
 
 | Error | HTTP Code | Cause |
 |-------|-----------|-------|
-| Invalid path syntax | 400 | Path doesn't start with `/`, unclosed bracket, empty filter key, etc. |
+| Invalid path syntax | 400 | Path doesn't start with `/`, unclosed bracket, empty filter key, and so on. |
 | Missing value | 400 | `replace` or `add` operation has `value: null`. |
 | Path resolution failed | 400 | Property not found on object, filter matched no elements, index out of bounds. |
 | Invalid culture | 400 | Culture in path doesn't exist in the system. |
@@ -468,19 +468,19 @@ Document
 
 2. **All block keys must be unique GUIDs.** When adding blocks, generate a fresh GUID for each new block. Duplicates will cause save errors.
 
-3. **contentData, layout, and expose must stay in sync.** Every block must have entries in all three arrays. Missing entries cause validation failures on save.
+3. **`contentData`, `layout`, and `expose` must stay in sync.** Every block must have entries in all three arrays. Missing entries cause validation failures on save.
 
 4. **Property names are camelCase.** The JSON uses `camelCase` naming: `contentData` (not `ContentData`), `layout` (not `Layout`), `contentTypeKey` (not `ContentTypeKey`).
 
-5. **Filter values are case-sensitive.** `culture=en-US` will NOT match `culture=en-us`. Use the exact casing from the GET response.
+5. **Filter values are case-sensitive.** `culture=en-US` will not match `culture=en-us`. Use the exact casing from the GET response.
 
-6. **Block Grid contentData is flat.** All blocks in a grid are in the same `contentData` array regardless of area nesting. Area structure exists only in `layout`.
+6. **Block Grid `contentData` is flat.** All blocks in a grid are in the same `contentData` array regardless of area nesting. Area structure exists only in `layout`.
 
-7. **RTE blocks need /blocks/ in the path.** RTE values wrap block data in `{ markup, blocks: { ... } }`. Always include `/blocks/` before `contentData`, `layout`, `settingsData`, or `expose` when targeting RTE block data.
+7. **Rich Text Editor blocks need /blocks/ in the path.** Rich Text Editor values wrap block data in `{ markup, blocks: { ... } }`. Always include `/blocks/` before `contentData`, `layout`, `settingsData`, or `expose` when targeting Rich Text Editor block data.
 
-8. **RTE blocks need markup updates.** When adding/removing RTE blocks, also update the `markup` to add/remove the corresponding `<umb-rte-block data-content-key="GUID"></umb-rte-block>` tag.
+8. **Rich Text Editor blocks need markup updates.** When adding or removing Rich Text Editor blocks, also update the `markup` to add or remove the corresponding `<umb-rte-block data-content-key="GUID"></umb-rte-block>` tag.
 
-9. **Nested block values are fully expanded.** When a block property contains another block editor, its value is a complete block value object (with its own layout, contentData, settingsData, expose). Navigate into it by continuing the path.
+9. **Nested block values are fully expanded.** When a block property contains another block editor, its value is a complete block value object (with its own `layout`, `contentData`, `settingsData`, `expose`). Navigate into it by continuing the path.
 
 10. **Operations are sequential.** Operation N sees the document state after operations 1 through N-1. You can add a block in one operation and reference it in the next.
 

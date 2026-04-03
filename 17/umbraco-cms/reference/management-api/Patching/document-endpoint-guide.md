@@ -18,7 +18,7 @@ PATCH /umbraco/management/api/v1/document/{id}/patch
 Content-Type: application/json-patch+json
 ```
 
-- `{id}` is the document's GUID (e.g., `a4ecec0e-3218-40b1-875b-dbaa7175028e`).
+- `{id}` is the document's GUID (for example, `a4ecec0e-3218-40b1-875b-dbaa7175028e`).
 - Requires authentication (backoffice user with update permission on the document).
 
 ## Request Format
@@ -64,7 +64,7 @@ Replaces an existing value at the target location.
 Adds a value. Behavior depends on the target:
 
 - **To an array with `/-`**: appends to the end.
-- **To an array with an index (e.g., `/1`)**: inserts at that position, shifting existing elements.
+- **To an array with an index (for example, `/1`)**: inserts at that position, shifting existing elements.
 - **To an object property**: sets the property (creates it if missing).
 
 ```json
@@ -91,7 +91,7 @@ Removes the value at the target location.
 
 ## Path Syntax
 
-Paths tell the PATCH endpoint exactly where in the document JSON to apply the operation. The syntax is based on [JSON Pointer (RFC 6901)](https://datatracker.ietf.org/doc/html/rfc6901) with Umbraco extensions for filtering arrays.
+Paths tell the PATCH endpoint exactly where in the document JSON to apply the operation. The syntax is based on [JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) with Umbraco extensions for filtering arrays.
 
 ### Building Blocks
 
@@ -99,7 +99,7 @@ Paths tell the PATCH endpoint exactly where in the document JSON to apply the op
 |--------|-------------|---------|
 | `/property` | Access a named property on an object. | `/value`, `/name`, `/markup` |
 | `[key=value]` | Find an array element where `key` equals `value`. | `[alias=title]` |
-| `[k1=v1,k2=v2]` | Find an element matching ALL conditions. | `[alias=title,culture=en-US,segment=null]` |
+| `[k1=v1,k2=v2]` | Find an element matching all conditions. | `[alias=title,culture=en-US,segment=null]` |
 | `/0`, `/1`, ... | Access an array element by index (zero-based). | `/contentData/0` |
 | `/-` | Target the end of an array (for add/append). | `/contentData/-` |
 | `~1` | Escape sequence for `/` in a property name. | `/Umbraco.BlockList` uses no escape since `.` is fine |
@@ -107,11 +107,11 @@ Paths tell the PATCH endpoint exactly where in the document JSON to apply the op
 
 ### Filter Syntax Details
 
-Filters match array elements by their properties. All conditions must match (AND logic).
+Filters match array elements by their properties. All conditions must match (and logic).
 
 - **String values**: matched exactly, case-sensitive.
 - **Null values**: use the literal word `null` (case-insensitive) to match properties that are null or missing.
-- **Multiple conditions**: separated by commas, ALL must match.
+- **Multiple conditions**: separated by commas, all must match.
 - **First match wins**: if multiple elements match, the first one is used.
 
 ```
@@ -149,7 +149,7 @@ Each entry in `values` represents a single property value for a specific culture
 }
 ```
 
-For simple property editors (Textbox, Textarea, etc.), `value` is a string or number.
+For standard property editors (Textbox, Textarea, and so on), `value` is a string or number.
 
 For complex editors (Block List, Block Grid, Rich Text), `value` is a nested JSON object.
 
@@ -241,18 +241,18 @@ When a property uses a block editor (Block List, Block Grid, or Rich Text), the 
 { "contentKey": "guid", "settingsKey": null }
 ```
 
-### Important: Block Grid contentData is Flat
+### Block Grid `contentData` is Flat
 
-In a Block Grid, ALL blocks appear in the same flat `contentData` array, regardless of whether they're at the root or nested inside an area. The area nesting structure is only expressed in the `layout`. This means you can find any block directly with `contentData[key=guid]`.
+In a Block Grid, all blocks appear in the same flat `contentData` array, regardless of nesting. The area structure is only expressed in the `layout`. You can find any block directly with `contentData[key=guid]`.
 
-### Important: Nested Block Values Are Expanded
+### Nested Block Values Are Expanded
 
-When a block property contains another block editor (e.g., a block that has a Block List property), the inner block editor value is fully expanded into a nested JSON object. You can navigate into it by continuing the path through the inner block's `value`.
+When a block property contains another block editor (for example, a block that has a Block List property), the inner block editor value is fully expanded into a nested JSON object. You can navigate into it by continuing the path through the inner block's `value`.
 
 
 ## Rich Text Editor Specifics
 
-RTE values have a different shape than Block List or Block Grid. The value wraps in an object with `markup` and `blocks`:
+Rich Text Editor values have a different shape than Block List or Block Grid. The value wraps in an object with `markup` and `blocks`:
 
 ```json
 {
@@ -269,14 +269,14 @@ RTE values have a different shape than Block List or Block Grid. The value wraps
 **Key differences from Block List / Block Grid:**
 
 - The block data lives under `blocks`, not directly in the value.
-- Paths into RTE blocks go through `/value/blocks/contentData/...` (not `/value/contentData/...`).
+- Paths into Rich Text Editor blocks go through `/value/blocks/contentData/...` (not `/value/contentData/...`).
 - The `markup` contains `<umb-rte-block data-content-key="guid">` tags that reference blocks.
-- When adding an RTE block, you must also update `markup` to include the new `<umb-rte-block>` tag.
+- When adding a Rich Text Editor block, you must also update `markup` to include the new `<umb-rte-block>` tag.
 
 
 ## Common Recipes
 
-### Update a Simple Property Value
+### Update a Property Value
 
 ```json
 {
@@ -410,7 +410,7 @@ Use an index instead of `/-` to insert before a specific position. This inserts 
 
 ### Remove a Block
 
-Removing a block requires **3 operations** — remove from contentData, layout, and expose:
+Removing a block requires **3 operations** — remove from `contentData`, `layout`, and `expose`:
 
 ```json
 {
@@ -469,7 +469,7 @@ Reading this path left to right:
                     /value                            → the actual text string
 ```
 
-### Add a Block to an RTE
+### Add a Block to a Rich Text Editor
 
 Adding a block to a Rich Text Editor requires **4 operations** — the markup must also be updated:
 
@@ -507,7 +507,7 @@ Adding a block to a Rich Text Editor requires **4 operations** — the markup mu
 ```
 
 {% hint style="info" %}
-The path goes through `/value/blocks/contentData` (not `/value/contentData`) because the RTE wraps its block data inside a `blocks` object.
+The path goes through `/value/blocks/contentData` (not `/value/contentData`) because the Rich Text Editor wraps its block data inside a `blocks` object.
 {% endhint %}
 
 
@@ -523,7 +523,7 @@ The path goes through `/value/blocks/contentData` (not `/value/contentData`) bec
 
 5. **GUIDs must be unique** — when adding new blocks, each block key must be a unique GUID that doesn't already exist in the document.
 
-6. **Keep contentData, layout, and expose in sync** — when adding a block, you need entries in all three. When removing, remove from all three. Mismatches will cause save errors.
+6. **Keep `contentData`, `layout`, and `expose` in sync** — when adding a block, you need entries in all three. When removing, remove from all three. Mismatches will cause save errors.
 
 7. **Operations are sequential** — each operation sees the result of previous ones. If you add a block in operation 1 and reference its key in operation 2, that works.
 

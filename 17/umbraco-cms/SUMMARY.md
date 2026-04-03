@@ -481,7 +481,7 @@
 * [Management API](reference/management-api/README.md)
   * [External Access](reference/management-api/external-access.md)
   * [Setup OAuth using Postman](reference/management-api/postman-setup-swagger.md)
-  * [Patching](reference/management-api/README.md)
+  * [Patching](reference/management-api/Patching/README.md)
     * [Document PATCH endpoint guide](reference/management-api/Patching/document-endpoint-guide.md)
     * [Document PATCH endpoint spec](reference/management-api/Patching/document-endpoint-spec.md)
 * [Custom Swagger API](reference/custom-swagger-api.md)

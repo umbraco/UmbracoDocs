@@ -8,11 +8,11 @@ Patching is currently only supported for documents.
 
 ## How Umbraco Patching Differs from Standard JSON Patch
 
-The PATCH endpoint draws inspiration from [JSON Patch (RFC 6902)](https://datatracker.ietf.org/doc/html/rfc6902) but is tailored specifically for Umbraco content. The key differences are:
+The PATCH endpoint draws inspiration from [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) but is tailored specifically for Umbraco content. The key differences are:
 
 ### Targeted operations
 
-Umbraco supports three operations: **replace**, **add**, and **remove**. The `move`, `copy`, and `test` operations from RFC 6902 are not included.
+Umbraco supports three operations: **replace**, **add**, and **remove**. The `move`, `copy`, and `test` operations from the JSON Patch specification are not included.
 
 ### Array filters instead of index-only addressing
 
@@ -24,7 +24,7 @@ Umbraco extends the path syntax with **array filters** that let you match elemen
 /values[alias=title,culture=en-US,segment=null]/value
 ```
 
-This targets the value entry where `alias` is `title`, `culture` is `en-US`, and `segment` is null — regardless of its position in the array. Filters use `AND` logic (all conditions must match), and the first matching element is used.
+This targets the value entry where `alias` is `title`, `culture` is `en-US`, and `segment` is null — regardless of its position in the array. Filters use `and` logic (all conditions must match), and the first matching element is used.
 
 ## What Happens Behind the Scenes
 
