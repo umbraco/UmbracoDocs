@@ -8,6 +8,15 @@ description: >-
 
 Umbraco Cloud services access external applications using static outbound IP addresses. This enables you to allowlist Cloud services in IP-based firewalls. This is particularly useful if you wish to control access to your website based on IP addresses.
 
+{% hint style="warning" %}
+
+Changing plans (topology changes)
+When you change your Umbraco Cloud project's plan — for example, moving from Shared to Dedicated or between Dedicated tiers — the static outbound IP addresses may temporarily not be applied. During the transition, outbound traffic from your project can originate from an IP address that is not in your project's static outbound IP range.
+If your solution connects to external services that whitelist traffic by IP address (such as external SQL databases or third-party APIs), this can cause connection failures during and briefly after the plan change.
+To avoid downtime, we recommend temporarily opening your external firewall rules to allow traffic from any source before initiating the plan change, and then restricting back to the static outbound IPs once the transition is complete and you have verified connectivity.
+
+{% endhint %}
+
 ## Allowlisting IP Addresses
 
 To ensure uninterrupted access and functionality, allowlist the global and regional services IP addresses. Use the regional IP addresses from the region where your website is hosted.
