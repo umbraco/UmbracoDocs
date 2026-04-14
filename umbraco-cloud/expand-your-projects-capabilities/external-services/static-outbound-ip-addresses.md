@@ -11,9 +11,9 @@ Umbraco Cloud services access external applications using static outbound IP add
 {% hint style="warning" %}
 
 Changing plans (topology changes)
-When you change your Umbraco Cloud project's plan — for example, moving from Shared to Dedicated or between Dedicated tiers — the static outbound IP addresses may temporarily not be applied. During the transition, outbound traffic from your project can originate from an IP address that is not in your project's static outbound IP range.
-If your solution connects to external services that whitelist traffic by IP address (such as external SQL databases or third-party APIs), this can cause connection failures during and briefly after the plan change.
-To avoid downtime, we recommend temporarily opening your external firewall rules to allow traffic from any source before initiating the plan change, and then restricting back to the static outbound IPs once the transition is complete and you have verified connectivity.
+When you change your Umbraco Cloud project plan, such as moving from Shared to Dedicated or between Dedicated tiers, the static outbound IP addresses may not be applied for a short time. During this period, outbound traffic from your project may come from an IP address outside your static outbound IP range.
+If your solution connects to external services that allow traffic based on IP address, such as external SQL databases or third party APIs, this can cause connection failures during and shortly after the plan change.
+To avoid downtime, temporarily open your external firewall rules to allow traffic from any source before starting the plan change. After the transition is complete and connectivity is confirmed, restrict access again to the static outbound IP addresses.
 
 {% endhint %}
 
