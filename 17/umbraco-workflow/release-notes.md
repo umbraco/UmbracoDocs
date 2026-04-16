@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Workflow 17, including all c
 ### [17.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0) (April 16 2026)
 
 * All changes from 17.2.0 release candidates
-* Replaced RazorLight with IRazorViewEngine and precompiled Razor views shipped in the StaticAssets RCL. Email templates are now standard partial views, making customization simpler and removing the third-party RazorLight dependency. [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
+* Replaced RazorLight with IRazorViewEngine and precompiled Razor views shipped in the StaticAssets library. Email templates are now standard partial views, making customization simpler and removing the third-party RazorLight dependency. [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
 * Fixed email reminder period not being read from settings.
 * Added option to create an empty alternate version instead of always cloning the current content.
 
