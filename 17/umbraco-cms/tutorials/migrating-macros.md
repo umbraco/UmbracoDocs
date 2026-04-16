@@ -483,7 +483,7 @@ The last steps are to:
 1. Register the services and their interfaces into the DI container using a composer.
 2. Create a management API controller to call the service.
 
-A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you will have OpenAPI documentation available at `/umbraco/openapi/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
+A full list of files including the full version of the `MacroMigrationService` and its dependencies can be found below. Once all of this is in place you will have some Swagger docs available at `/umbraco/swagger/index.html?urls.primaryName=Macro+Migrations+Api+v1` to test the migrators.
 
 <details>
 
@@ -671,8 +671,13 @@ public interface IMacroMigrator
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Api.Common.Filters;
 using Umbraco.Cms.Api.Management.Controllers;
+using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.Common.Authorization;
 
@@ -680,6 +685,7 @@ namespace MacrosThirteenToFifteen.MacroMigrator;
 
 [ApiController]
 [ApiVersion("1.0")]
+[MapToApi("macro-migrations-api-v1")]
 [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
 [JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
 [Route("api/v{version:apiVersion}/macro-migrations")]
@@ -705,32 +711,20 @@ public class MacroController : ManagementApiControllerBase
         return Ok();
     }
 }
-```
 
-**Program.cs**
-
-Add the following to configure the OpenAPI document for the Macro Migrations API:
-
-```csharp
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Umbraco.Cms.Api.Management.OpenApi;
-
-builder.Services.AddOpenApi("macro-migrations-api-v1", options =>
+public class MacroMigrationsSecurityRequirementsOperationFilter : BackOfficeSecurityRequirementsOperationFilterBase
 {
-    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    protected override string ApiName => "macro-migrations-api-v1";
+}
+
+public class MacroMigrationsConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
+{
+    public void Configure(SwaggerGenOptions options)
     {
-        document.Info.Title = "Macro Migrations Api v1";
-        document.Info.Version = "1.0";
-        return Task.CompletedTask;
-    });
-
-    // Include only controllers from the MacroMigrator namespace
-    options.ShouldInclude = apiDescription =>
-        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
-        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("MacrosThirteenToFifteen.MacroMigrator") is true;
-
-    options.AddBackofficeSecurityRequirements();
-});
+        options.SwaggerDoc("macro-migrations-api-v1", new OpenApiInfo { Title = "Macro Migrations Api v1", Version = "1.0" });
+        options.OperationFilter<MacroMigrationsSecurityRequirementsOperationFilter>();
+    }
+}
 ```
 
 **MacroMigrationComposer.cs**
@@ -744,6 +738,7 @@ public class MacroMigrationComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
+        builder.Services.ConfigureOptions<MacroMigrationsConfigureSwaggerGenOptions>();
         builder.Services.AddUnique<IMacroMigrationService, MacroMigrationService>();
         builder.Services.AddSingleton<IMacroMigrator, CtaButtonMacroMigrator>();
 

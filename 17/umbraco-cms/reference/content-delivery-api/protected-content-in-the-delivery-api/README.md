@@ -379,31 +379,26 @@ GET /umbraco/delivery/api/v1/security/member/userinfo
 
 ## Testing with Swagger
 
-The Delivery API OpenAPI document can be configured to support member authentication.
+The Delivery API Swagger document can be configured to support member authentication.
 
 Before we can do that, we need two things in place:
 
 1. We have to implement a login page [as described above](./#logging-in-members).
-2. We must add `https://{server-host}/umbraco/openapi/oauth2-redirect.html` to the configured `LoginRedirectUrls`.
+2. We must add `https://{server-host}/umbraco/swagger/oauth2-redirect.html` to the configured `LoginRedirectUrls`.
 
 With these in place, we can enable member authentication in Swagger for the Delivery API by adding the following to `Program.cs`:
 
 {% code title="Program.cs" %}
 ```csharp
-using Umbraco.Cms.Api.Delivery.OpenApi;
-
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
     .Build();
-
-builder.Services.AddDeliveryApiOpenApiMemberAuthentication();
+builder.Services.ConfigureOptions<Umbraco.Cms.Api.Delivery.Configuration.ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions>();
 ```
 {% endcode %}
-
-The `AddDeliveryApiOpenApiMemberAuthentication()` extension method adds the OAuth2 security scheme and marks the Delivery API as supporting member authorization via Swagger UI.
 
 The Swagger UI will now feature authorization.
 
