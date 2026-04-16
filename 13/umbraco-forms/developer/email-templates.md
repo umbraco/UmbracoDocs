@@ -177,6 +177,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 								{
 									"FieldType.Recaptcha2.cshtml",
 									"FieldType.Recaptcha3.cshtml",
+									"FieldType.RecaptchaEnterprise.cshtml",
 									"FieldType.RichText.cshtml",
 									"FieldType.Text.cshtml"
 								};

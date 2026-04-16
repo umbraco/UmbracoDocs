@@ -4,7 +4,7 @@ This section outlines how to manually resolve a merge conflict after having upda
 
 On a Baseline project, click _Manage updates here_. This enables you to push updates to your child projects from the Live environment of the Baseline project.
 
-![Upgrades Baseline children](images/manage-baseline-children.gif)
+![Upgrades Baseline children](../../../../.gitbook/assets/manage-baseline-children.gif)
 
 Select the child projects you want to upgrade, and click **Update selected children**. The overview will then change to show the progress and status for updating the different child projects.
 
@@ -16,19 +16,19 @@ The outcome of the update will result in one of three statuses:
 
 A merge conflict needs to be handled manually to push future updates to the child project, which encountered a merge conflict upon updating.
 
-![environment](images/mergeconflict.jpg)
+![environment](../../../../.gitbook/assets/mergeconflict.jpg)
 
 ## Resolving merge conflicts
 
 **Note:** Since the following documentation was outlined there have been a few improvements to the Baseline workflow. For the most part this documentation is still relevant and we are working on getting them updated with the latest details.
 
-To resolve the conflict you need to go to the **child site** open up the Source Control Management (SCM)/Kudu site for the development environment. Click the “[link]” for the project (see screenshot above) and find clone URL for the development site, similar to `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git`. Remove everything after the last slash, so you have a URL that looks like `https://dev-my-website-alias.scm.umbraco.io`.
+To resolve the conflict you need to go to the **child site** open up the Source Control Management (SCM)/Kudu site for the development environment. Click the “\[link]” for the project (see screenshot above) and find clone URL for the development site, similar to `https://dev-my-website-alias.scm.umbraco.io/c565ead8-7a27-4696-9ab4-dad7eba2cd2c.git`. Remove everything after the last slash, so you have a URL that looks like `https://dev-my-website-alias.scm.umbraco.io`.
 
-![environment](images/getcloneurl.jpg)
+![environment](../../../../.gitbook/assets/getcloneurl.jpg)
 
 You will be prompted to login to the SCM/Kudu site - use the credentials you normally use to login to the Umbraco Cloud portal. Now click “Debug console” from the top menu and select “CMD”. This will take you to a command line interface from where you need to navigate to the repository folder: site / repository
 
-![environment](images/image03.png)
+![environment](../../../../.gitbook/assets/image03.png)
 
 From here you need to merge the `upstream/master` branch, which contains the updates which were fetched from the Baseline project. In the console enter: `git merge upstream/master`
 

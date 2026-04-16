@@ -4,17 +4,17 @@ description: Gather Extension Manifests in one file
 
 # Bundle
 
-The `bundle` Extension Type points to a single JavaScript file that exports or re-exports Extension Manifests written in JavaScript.
+The `bundle` extension type points to a single JavaScript file that exports or re-exports Extension Manifests written in JavaScript.
 
 It can be used as the entry point for a package, or as a grouping for a set of manifests. A Bundle can reference other Bundles.
 
 ## Use Bundle as an entry point for a package
 
-If you want to declare your manifests in JavaScript/TypeScript, the Bundle is a great choice.
+If you want to declare your manifests in JavaScript/TypeScript, then Bundle is a great choice.
 
 The following example shows an `umbraco-package.json` that refers to one bundle, which can then declare manifests.
 
-{% code title="umbraco-package.json" %}
+{% code title="/App_Plugins/my-package/umbraco-package.json" %}
 ```json
     {
 		"name": "My Package Name",
@@ -31,7 +31,7 @@ The following example shows an `umbraco-package.json` that refers to one bundle,
 ```
 {% endcode %}
 
-{% code title="manifests.ts" %}
+{% code title="/src/manifests.ts" %}
 ```typescript
 export const manifests: Array<UmbExtensionManifest> = [
 	{

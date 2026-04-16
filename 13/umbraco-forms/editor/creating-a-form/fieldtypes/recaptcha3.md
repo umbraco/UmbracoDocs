@@ -15,7 +15,7 @@ Follow these steps to enable reCAPTCHA V3 in Umbraco Forms:
 5. Configure ReCAPTCHA settings in the `appSettings.json` file to include public and private keys:
 
 ```json
-"Umbraco"{
+"Umbraco": {
     "Forms": {
       "FieldTypes": {
         "Recaptcha3": {

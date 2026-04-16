@@ -35,25 +35,25 @@ For the solution developer, the Umbraco Authorized Services offers two primary f
 
 Firstly there's a tree available in the _Settings_ section of the backoffice, called _Authorized Services_. The tree shows the list of services based on the details provided in configuration.
 
-![authorized-services-tree](images/authorized-services-tree.png)
+![authorized-services-tree](../.gitbook/assets/authorized-services-tree.png)
 
 Each tree entry has a management screen where an administrator can authenticate with an app that has been setup with the service. The status of each service is shown on this screen. When authorized, the authentication and authorization flow has been completed and an access token stored.
 
-![not-authorized-screen](images/not-authorized-screen.png)
+![not-authorized-screen](../.gitbook/assets/not-authorized-screen.png)
 
-![authorized-screen](images/authorized-screen.png)
+![authorized-screen](../.gitbook/assets/authorized-screen.png)
 
 A service can be configured to allow the manual entry of access tokens/API keys manually using the `CanManuallyProvideToken` or `CanManuallyProvideApiKey` settings. If this is set to `true`, a new section will be available for providing them.
 
-<figure><img src="images/provide-api-key.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/provide-api-key.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="images/provide-oauth2-token.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/provide-oauth2-token.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="images/provide-oauth1-token.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/provide-oauth1-token.png" alt=""><figcaption></figcaption></figure>
 
 From the settings panel the administrator can review the service configuration.
 
-<figure><img src="images/settings-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-screen.png" alt=""><figcaption></figcaption></figure>
 
 ### IAuthorizedServiceCaller interface
 
@@ -229,10 +229,10 @@ Task<Attempt<AuthorizedServiceResponse<TResponse>>> GetRequestAsync<TResponse>(s
 
 The response from the service is wrapped in an instance of `AuthorizedServiceResponse`, which contains the following properties:
 
-- `Data` - the response deserialized into an instance of the provided type (`TResponse`).
-- `RawResponse` - the raw response as string.
-- `RawHeaders` - the raw headers as a dictionary.
-- `Metadata` - metadata about the response parsed from the headers into an instance of `ServiceResponseMetadata`.
+* `Data` - the response deserialized into an instance of the provided type (`TResponse`).
+* `RawResponse` - the raw response as string.
+* `RawHeaders` - the raw headers as a dictionary.
+* `Metadata` - metadata about the response parsed from the headers into an instance of `ServiceResponseMetadata`.
 
 `ServiceResponseMetadata` contains properties that will allow you to retrieve information about rate limits and other response details.
 

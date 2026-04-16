@@ -1,49 +1,44 @@
-## Finding your first issue: Up for grabs
+# Finding your first issue: Up for grabs
 
-Umbraco HQ will regularly mark newly created issues on the issue tracker with [the `community/up-for-grabs` tag][up for grabs issues]. This means that the proposed changes are wanted in Umbraco but the HQ does not have the time to make them at this time. We encourage anyone to pick them up and help out.
+### Finding your first issue: Up for grabs
+
+Umbraco HQ will regularly mark newly created issues on the issue tracker with [the `community/up-for-grabs` tag](https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity%2Fup-for-grabs). This means that the proposed changes are wanted in Umbraco but the HQ does not have the time to make them at this time. We encourage anyone to pick them up and help out.
 
 If you do start working on something, make sure to leave a small comment on the issue saying something like: "I'm working on this". That way other people stumbling upon the issue know they don't need to pick it up, someone already has.
 
-## Making your changes
+### Making your changes
 
 Great question! The short version goes like this:
 
-1. **Fork**
+1.  **Fork**
 
-    Create a fork of [`Umbraco-CMS` on GitHub][Umbraco CMS repo]
+    Create a fork of [`Umbraco-CMS` on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
-    ![Fork the repository](img/forkrepository.png)
-
-1. **Clone**
+    ![Fork the repository](../.gitbook/assets/forkrepository.png)
+2.  **Clone**
 
     When GitHub has created your fork, you can clone it in your favorite Git tool
 
-    ![Clone the fork](img/clonefork.png)
-
-1. **Switch to the correct branch**
+    ![Clone the fork](../.gitbook/assets/clonefork.png)
+3.  **Switch to the correct branch**
 
     Switch to the `main` branch
+4.  **Build**
 
-1. **Build**
+    Build your fork of Umbraco locally as described in the build documentation: you can [debug with Visual Studio Code](BUILD.md#debugging-with-vs-code) or [with Visual Studio](BUILD.md#debugging-with-visual-studio).
+5.  **Branch**
 
-    Build your fork of Umbraco locally as described in the build documentation: you can [debug with Visual Studio Code][build - debugging with code] or [with Visual Studio][build - debugging with vs].
+    Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp-12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`. Don't commit to `main`, create a new branch first.
+6.  **Change**
 
-1. **Branch**
-
-    Create a new branch now and name it after the issue you're fixing, we usually follow the format: `temp-12345`. This means it's a temporary branch for the particular issue you're working on, in this case issue number `12345`.  Don't commit to `main`, create a new branch first.
-
-1. **Change**
-
-    Make your changes, experiment, have fun, explore and learn, and don't be afraid. We welcome all contributions and will [happily give feedback][questions].
-
-1. **Commit and push**
+    Make your changes, experiment, have fun, explore and learn, and don't be afraid. We welcome all contributions and will [happily give feedback](first-issue.md#questions).
+7.  **Commit and push**
 
     Done? Yay! 🎉
 
     Remember to commit to your new `temp` branch, and don't commit to `main`. Then you can push the changes up to your fork on GitHub.
 
-#### Keeping your Umbraco fork in sync with the main repository
-[sync fork]: #keeping-your-umbraco-fork-in-sync-with-the-main-repository
+**Keeping your Umbraco fork in sync with the main repository**
 
 Once you've already got a fork and cloned your fork locally, you can skip steps 1 and 2 going forward. Just remember to keep your fork up to date before making further changes.
 
@@ -62,32 +57,18 @@ git rebase upstream/main
 
 In this command we're syncing with the `main` branch, but you can choose another one if needed.
 
-[More information on how this works can be found on the thoughtbot blog.][sync fork ext]
+[More information on how this works can be found on the thoughtbot blog.](http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated)
 
-#### Style guide
+**Style guide**
 
 To be honest, we don't like rules very much. We trust you have the best of intentions and we encourage you to create working code. If it doesn't look perfect then we'll happily help clean it up.
 
 That said, the Umbraco development team likes to follow the hints that ReSharper gives us (no problem if you don't have this installed) and we've added a `.editorconfig` file so that Visual Studio knows what to do with whitespace, line endings, etc.
 
-#### Questions?
-[questions]: #questions
+**Questions?**
 
-You can get in touch with [the core contributors team][core collabs] in multiple ways; we love open conversations and we are a friendly bunch. No question you have is stupid. Any question you have usually helps out multiple people with the same question. Ask away:
+You can get in touch with \[the core contributors team]\[core collabs] in multiple ways; we love open conversations and we are a friendly bunch. No question you have is stupid. Any question you have usually helps out multiple people with the same question. Ask away:
 
-- If there's an existing issue on the issue tracker then that's a good place to leave questions and discuss how to start or move forward.
-- If you want to ask questions on some code you've already written you can create a draft pull request, [detailed in a GitHub blog post][draft prs].
-- Unsure where to start? Did something not work as expected? Try leaving a note in the ["Contributing to Umbraco"][contrib forum] forum. The team monitors that one closely, so one of us will be on hand and ready to point you in the right direction.
-
-
-  <!-- Local -->
-
-[build - debugging with vs]: BUILD.md#debugging-with-visual-studio	"Details on building and debugging Umbraco with Visual Studio"
-[build - debugging with code]: BUILD.md#debugging-with-vs-code	"Details on building and debugging Umbraco with Visual Studio Code"
-
-
-[sync fork ext]: http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated	"Details on keeping a git fork updated"
-[draft prs]: https://github.blog/2019-02-14-introducing-draft-pull-requests/	"GitHub's blog post providing details on draft pull requests"
-[contrib forum]: https://forum.umbraco.com/
-[Umbraco CMS repo]: https://github.com/umbraco/Umbraco-CMS
-[up for grabs issues]: https://github.com/umbraco/Umbraco-CMS/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity%2Fup-for-grabs
+* If there's an existing issue on the issue tracker then that's a good place to leave questions and discuss how to start or move forward.
+* If you want to ask questions on some code you've already written you can create a draft pull request, [detailed in a GitHub blog post](https://github.blog/2019-02-14-introducing-draft-pull-requests/).
+* Unsure where to start? Did something not work as expected? Try leaving a note in the ["Contributing to Umbraco"](https://forum.umbraco.com/) forum. The team monitors that one closely, so one of us will be on hand and ready to point you in the right direction.

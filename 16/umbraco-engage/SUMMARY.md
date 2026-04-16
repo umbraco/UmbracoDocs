@@ -15,6 +15,7 @@
 
 * [Upgrade Umbraco Engage](upgrading/upgrade-umbraco-engage.md)
 * [Version specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md)
+* [Schema Alignment Guide](upgrading/schema-alignment-guide.md)
 * [Migrate from uMarketingSuite](upgrading/migrate-from-umarketingsuite.md)
 
 ## Getting Started
@@ -111,6 +112,7 @@
   * [Extending Analytics](developers/analytics/extending-analytics/README.md)
     * [Getting the Correct IP Address](developers/analytics/extending-analytics/getting-the-correct-ip-address.md)
     * [Sending data to the GTM Datalayer](developers/analytics/extending-analytics/sending-data-to-the-gtm-datalayer.md)
+    * [Custom Data Cleanup Processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md)
 * [A/B testing](developers/ab-testing/README.md)
   * [Retrieving A/B test variants in C#](developers/ab-testing/csharp-api.md)
 * [Personalization](developers/personalization/README.md)

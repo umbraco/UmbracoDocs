@@ -32,6 +32,7 @@ exceptions:
   - CPU      # Central Processing Unit
   - CRM      # Customer Relationship Management
   - CRUD     # Create, Read, Update, Delete
+  - CSRF     # Cross-Site Request Forgery
   - CSS      # Cascading Style Sheets
   - CSV      # Comma Separated Values
   - CTRL     # Control (Keyboard key)
@@ -77,21 +78,25 @@ exceptions:
   - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
   - MDN      # Mozilla Developer Network
   - MFA      # Multi-factor Authentication
+  - MSW      # Mock Service Worker
   - MVC      # Model-View-Controller
   - NET      # .NET Framework
   - NGINX    # Engine X (web server)
   - NPM      # Node Package Manager
+  - OIDC     # OpenID Connect
   - OAuth    # Open Authorization
   - ONLY     # 
   - ORM      # Object-Relational Mapping
   - PaaS     # Platform as a Service
   - PATH     # file system path
   - PDF      # Portable Document Format
+  - PKCE     # Proof Key for Code Exchange
   - PNG      # Portable Network Graphics
   - POST     # HTTP POST method
   - PUT      # HTTP PUT method
   - RAM      # Random Access Memory
   - REST     # Representational State Transfer
+  - RFC      # Request for Comments
   - RGBA     # Red Green Blue Alpha (color model)
   - RPG      # Role-Playing Game
   - RTX      # Ray Tracing Texel eXtreme (NVIDIA tech)
@@ -104,11 +109,13 @@ exceptions:
   - SMTP     # Simple Mail Transfer Protocol
   - SQL      # Structured Query Language
   - SSD      # Solid State Drive
+  - SSE      # Server-Sent Events
   - SSL      # Secure Sockets Layer
   - SVG      # Scalable Vector Graphics
   - TCP      # Transmission Control Protocol
   - TEMP     # Temporary
   - TS       # TypeScript
+  - TTL      # Time to Live
   - TXT      # Text (file format)
   - TLS      # Transport Layer Security
   - UDA      # Files for Umbraco project's metadata

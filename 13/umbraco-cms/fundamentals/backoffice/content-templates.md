@@ -20,23 +20,23 @@ Before following this method you should have some [content](../data/defining-con
 
 Select a **Content node** from the **Content** menu:
 
-![Content Menu](images/v8-01-Content-Menu.png)
+![Content Menu](<../../.gitbook/assets/v8-01-Content-Menu (1).png>)
 
 Right-click the Content node and select the **Create Content Template** option. Alternatively, select the **Actions** dropdown of the content node and select the **Create Content Template** option:
 
-![Actions Button](images/v8-02-Actions-Menu.png)
+![Actions Button](<../../.gitbook/assets/v8-02-Actions-Menu (1).png>)
 
 Give your content template a **Name**:
 
-![Content Template Name Field](images/v8-03-Name-Content-Template.png)
+![Content Template Name Field](<../../.gitbook/assets/v8-03-Name-Content-Template (1).png>)
 
 Click the **Create** button and if the creation was successful, you will see a success notification:
 
-![Create Button](images/v8-04-Save-Content-Template.png)
+![Create Button](<../../.gitbook/assets/v8-04-Save-Content-Template (1).png>)
 
 The new content template will be created in **Content Templates** node of the **Settings** tree:
 
-![New Content Template](images/v8-05-Find-Content-Template.png)
+![New Content Template](<../../.gitbook/assets/v8-05-Find-Content-Template (1).png>)
 
 {% hint style="info" %}
 Refresh your browser, if you do not see the new content template in the **Content Templates** folder.
@@ -46,15 +46,15 @@ Refresh your browser, if you do not see the new content template in the **Conten
 
 Click on the **Settings** menu:
 
-![Settings Menu](images/v8-07-Settings-Menu.png)
+![Settings Menu](<../../.gitbook/assets/v8-07-Settings-Menu (1).png>)
 
 Right-click on the **Content Templates** tree and select the **Create** menu item:
 
-![Create Content Template](images/v8-08-Create-Content-Template.png)
+![Create Content Template](<../../.gitbook/assets/v8-08-Create-Content-Template (1).png>)
 
 Select the Document Type you want to create a content template for:
 
-![Select Content Type](images/v8-09-Select-Content-Type.png)
+![Select Content Type](<../../.gitbook/assets/v8-09-Select-Content-Type (1).png>)
 
 {% hint style="warning" %}
 You can create content templates only from **Document Types** or **Document Types with Templates**
@@ -62,27 +62,27 @@ You can create content templates only from **Document Types** or **Document Type
 
 Give your content template a **Name** and click the **Save** button:
 
-![Content Template Name Field](images/v8-10-Save-Template.png)
+![Content Template Name Field](<../../.gitbook/assets/v8-10-Save-Template (1).png>)
 
 The new content template will be created in **Content Templates** folder of the **Settings** tree:
 
-![New Content Template](images/v8-11-Find-Template.png)
+![New Content Template](<../../.gitbook/assets/v8-11-Find-Template (1).png>)
 
 ## Edit
 
 To edit an existing content template, select a content template from the **Content Templates** folder of the **Settings** tree. When you have finished editing click the **Save** button:
 
-![Edit Content Template](images/v8-06-Edit-Content-Template.png)
+![Edit Content Template](<../../.gitbook/assets/v8-06-Edit-Content-Template (1).png>)
 
 ## Use
 
 Once you have created a content template, you can use the template to create new content nodes. To use a content template, right-click the **Content** tree and select **Create**:
 
-![Create From Template](images/v8-12-Create-From-Template.png)
+![Create From Template](<../../.gitbook/assets/v8-12-Create-From-Template (1).png>)
 
 When you click on a Document Type that has a content template you will see two options:
 
 * Create a new node based on a content template
 * Create a blank one
 
-![Select Template](images/v8-13-Select-Template.png)
+![Select Template](<../../.gitbook/assets/v8-13-Select-Template (1).png>)

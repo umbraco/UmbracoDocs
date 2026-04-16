@@ -10,20 +10,86 @@ Make sure your Umbraco is set up according to best practices. Please refer to th
 
 ## Cockpit
 
-For the Cockpit to function properly it is necessary that the cockpit can read the Umbraco login cookie. Umbraco and the site should run on the same domain or sub-domain.
+In CM/CD environments, the Cockpit needs to authenticate users across different domains. Umbraco Engage provides two methods for this:
 
-For example:
+### Method 1: Open Cockpit Button (Recommended)
+
+As of Umbraco Engage 17, you can open the Cockpit directly from the Umbraco backoffice:
+
+1. Log in to the Umbraco backoffice on your CM server.
+2. Navigate to the **Engage** section.
+3. Click the **Open Cockpit** button in the dashboard.
+4. Select the domain you want to view.
+
+The Cockpit opens in a new tab, already authenticated.
+
+This method uses secure, short-lived authentication tokens. No additional cookie configuration is required.
+
+{% hint style="info" %}
+This feature requires Data Protection keys to be shared across all servers. See the [Machine Key and Data Protection](#machine-key-and-data-protection) section below.
+{% endhint %}
+
+#### Session Duration
+
+Your Cockpit session remains active for 30 minutes by default. After this period, you will need to use the Open Cockpit button again to re-authenticate.
+
+#### Logging Out
+
+When you log out of the Umbraco backoffice, all your Cockpit sessions across all CD servers are automatically ended.
+
+### Method 2: Cookie Domain Configuration (Alternative)
+
+To keep the Cockpit visible automatically, configure Umbraco to share authentication cookies across domains. This removes the need to use the Open Cockpit button while browsing.
+
+This requires Umbraco and your website to run on the same domain or subdomain. For example:
 
 **Umbraco:** `umbraco.domain.com`\
 **Site:** `domain.com`
 
-Make sure the `AuthCookieDomain` in your SecuritySettings of your Umbraco config has the following value:
+Configure the `AuthCookieDomain` in your SecuritySettings:
 
 ```json
 "AuthCookieDomain": ".domain.com",
 ```
 
-To learn more, read the documentation about the [SecuritySettings](https://docs.umbraco.com/umbraco-cms/reference/configuration/securitysettings)
+To learn more, read the documentation about [SecuritySettings](https://docs.umbraco.com/umbraco-cms/reference/configuration/securitysettings).
+
+### Cockpit Authentication Settings
+
+The following settings can be configured in `appsettings.json` under `Engage:Cockpit:Authentication`:
+
+```json
+{
+  "Engage": {
+    "Cockpit": {
+      "EnableInjection": true,
+      "Authentication": {
+        "TokenLifetimeSeconds": 60,
+        "SessionLifetimeMinutes": 30,
+        "RequireHttps": true,
+        "CleanupIntervalMinutes": 60,
+        "TokenRetentionBufferMinutes": 5,
+        "SessionRetentionBufferMinutes": 1440,
+        "SessionCookieSameSite": "Lax"
+      }
+    }
+  }
+}
+```
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| TokenLifetimeSeconds | 60 | How long the authentication token remains valid after clicking Open Cockpit. |
+| SessionLifetimeMinutes | 30 | How long your Cockpit session lasts before requiring re-authentication. |
+| RequireHttps | true | Requires HTTPS for security. Set to `false` only for local development. |
+| CleanupIntervalMinutes | 60 | How often expired tokens and sessions are cleaned up from the database. |
+| TokenRetentionBufferMinutes | 5 | How long to keep expired tokens before deletion (for debugging). |
+| SessionRetentionBufferMinutes | 1440 | How long to keep expired sessions before deletion (24 hours default). |
+| SessionCookieSameSite | Lax | Cookie SameSite policy. Options: `Lax`, `Strict`, or `None`. |
+
+{% hint style="warning" %}
+Do not set `RequireHttps` to `false` in production environments. This setting is only intended for local development without HTTPS.
+{% endhint %}
 
 ## Machine Key and Data Protection
 

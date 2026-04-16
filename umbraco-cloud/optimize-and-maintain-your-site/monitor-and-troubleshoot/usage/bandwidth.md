@@ -10,7 +10,7 @@ Bandwidth usage includes all data sent by your website. Every time a visitor loa
 
 In Umbraco Cloud, bandwidth is measured in gigabytes (GB). It represents the total amount of data transferred from your site to users over a period, typically one month. It is calculated by summarizing the `bytes_served` from all request logs at the edge. All requests, whether served from the edge or the origin, pass through the edge, so all egress bandwidth is summarized.
 
-<figure><img src="images/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/bandwidth-flow-diagram.png" alt="Bandwidth data flow diagram"><figcaption></figcaption></figure>
 
 **What is Edge?**
 
@@ -22,3 +22,4 @@ To avoid upgrades to higher Umbraco Cloud Tiers and improve performance, conside
 
 * **Optimize Images**: Compress images and use modern formats like WebP to reduce their size without losing quality.
 * **Cache Static Content**: Leverage caching mechanisms to reduce the number of times static assets (like images, CSS, and JavaScript) are requested from the server. You can control your caching configuration here.
+* **Video Files**: Host videos on a dedicated platform such as [Vimeo](https://vimeo.com) or [YouTube](https://youtube.com) and embed them using an `<iframe>`. This means video playback is streamed from the external platform's infrastructure.

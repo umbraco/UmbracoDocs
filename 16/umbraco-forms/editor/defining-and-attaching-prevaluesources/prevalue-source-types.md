@@ -6,7 +6,7 @@ There are some default prevalue source types that can be used. In this article, 
 
 Upload a textfile that contains the prevalues. Each prevalue should have its own line in the file. Once the file has been uploaded, you can find it in `~/wwwroot/App_Data/UmbracoForms/Data/PreValueTextFiles/{GUID}` where the `{GUID}`is replaced with the pre-value ID.
 
-![Get values from textfile](images/preview-v14.png)
+![Get values from textfile](../../.gitbook/assets/preview-v14.png)
 
 ## Umbraco Documents
 
@@ -23,7 +23,7 @@ Allows you to use content nodes from a specific source as prevalues. Configure t
 * Select **Order by** from the drop-down list to display how the prevalue list is sorted.
 * Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
 
-![Umbraco Documents](images/umbraco-documents-v16.png)
+![Umbraco Documents](../../.gitbook/assets/umbraco-documents-v16.png)
 
 ## SQL Database
 
@@ -39,7 +39,7 @@ Configure the following options in the **Details** section:
 * Caption Column
 * Select your preferred **Cache option** for caching the list of prevalues when rendering in a form.
 
-![SQL Database](images/SQLdatabase-v16.png)
+![SQL Database](../../.gitbook/assets/SQLdatabase-v16.png)
 
 ## Umbraco Data Type Prevalues
 
@@ -47,4 +47,4 @@ Choose an Umbraco Data Type to use its configured prevalue collection.
 
 In the example below, the prevalue collection from a Data Type called `Home - Font - Radio button` is used:
 
-![Data Type prevalues](images/datatype-prevalues-v14.png)
+![Data Type prevalues](../../.gitbook/assets/datatype-prevalues-v14.png)

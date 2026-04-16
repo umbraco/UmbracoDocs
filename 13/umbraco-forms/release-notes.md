@@ -16,6 +16,45 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.6) (April 9th 2026)
+
+* Update "Umbraco Forms scheduled record deletion task" log message grammar [#1683](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1683)
+* Fix `ManageSecurityWithUserGroups` not working [#1675](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1675)
+* Fix value failing to save [#1673](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1673)
+* Fix "Updated By" not updating accordingly [#1671](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1671)
+
+### 13.9.5
+* Umbraco Licenses dependency updated to 13.3.4
+
+### 13.9.4
+* Fix: string length validation for file upload fields
+
+### [13.9.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.3) (March 5th 2026)
+* File Upload: Treat JPEG and JPG as equivalent in validation [#1383](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1383)
+* Data Consent: Fix field always evaluating as `True` in workflow conditions [#1646](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1646)
+* Settings: Fix default value leak across field type instances [#1656](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1656)
+
+### 13.9.2 (February 19th 2026)
+* Fix conditions not seeing field values modified by previous workflows [#1464](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1464)
+
+### [13.9.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.1) (February 19th 2026)
+* Add ARIA attributes for form validation accessibility [#1382](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1382)
+* Add server-side length validation for String Data Type fields [#1478](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1478)
+* Fix form re-initialization for dynamically injected forms [#1617](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1617)
+
+### [13.9.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 22nd 2026)
+* All items detailed under release candidates for 13.9.0.
+
+### [13.9.0-rc2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 15th 2026)
+* Fix mandatory validation for Form Picker and Theme Picker property editors [#1400](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1400)
+
+### [13.9.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.9.0) (January 8th 2026)
+* Add reCAPTCHA Enterprise field type [#1046](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1046)
+* Better handling of dirty fields in PrevalueSource setting types [#1249](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1249)
+* Add `DefaultValue` property to `SettingAttribute` [#1411](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1411)
+* Fix folder creation for users with single start folder [#1546](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1546)
+* Set `Cache-Control` headers of form uploads to `private`
+
 ### [13.8.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F13.8.0) (December 11th 2025)
 * All items detailed under release candidates for 13.8.0.
 

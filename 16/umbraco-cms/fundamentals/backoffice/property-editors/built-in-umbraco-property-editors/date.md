@@ -10,13 +10,13 @@ Displays a calendar UI for selecting dates which are saved as a DateTime value.
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](images/date-time-v16.png)
+![Data Type Definition Example](../../../../.gitbook/assets/date-time-v16.png)
 
 The only setting that is available for manipulating the Date property is to set a format. By default the format of the date in the Umbraco backoffice will be `YYYY-MM-DD`, but you can change this to something else. See [MomentJS.com](https://momentjs.com/) for the supported formats.
 
 ## Content Example
 
-![Content Example](images/date-time-content-v16.png)
+![Content Example](../../../../.gitbook/assets/date-time-content-v16.png)
 
 ## MVC View Example - displays a datetime
 

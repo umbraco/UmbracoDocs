@@ -43,7 +43,7 @@ Versioning is done via the file structure, where all versioned products are loca
 
 For example, version folders such as '10' and '11' contain documentation specific to those product versions.
 
-<figure><img src="../../../generic/.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>An overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/repository-folder-structure.png" alt=""><figcaption><p>An overview of the file structure in the UmbracoDocs GitHub repository.</p></figcaption></figure>
 
 Umbraco Cloud and Umbraco Heartcore are not documented by version, which is why they are separate from this structure.
 

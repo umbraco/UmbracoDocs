@@ -84,7 +84,10 @@
 * [Encrypted Properties](advanced/encrypted-properties.md)
 * [Value Mappers](advanced/value-mappers.md)
 * [Repositories](advanced/repositories.md)
+* [EF Core Repositories](advanced/efcore-repositories.md)
 * [Events](advanced/events.md)
+* [EF Core Events](advanced/efcore-events.md)
+* [Async APIs](advanced/async-apis.md)
 
 ## Miscellaneous
 

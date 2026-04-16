@@ -35,7 +35,7 @@ If your connection string is for SQLite or SQL Server Express LocalDB it is assu
 ```
 
 {% hint style="info" %}
-The 'umbracoDbDSN_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
+The 'umbracoDbDSN\_ProviderName' attribute sets the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
 {% endhint %}
 
 ### SQLite Example in appsettings.json
@@ -91,7 +91,7 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="images/unattended/final-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/final-screen (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 
@@ -141,4 +141,4 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 
 ### Visual Studio
 
-<figure><img src="../../../.gitbook/assets/Additional_Info (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Additional_Info (1) (1).jpg" alt=""><figcaption></figcaption></figure>

@@ -1,13 +1,9 @@
 # Table of contents
 
 * [Umbraco Documentation](README.md)
-* [Where can I get help?](where-can-i-get-help.md)
+* [Where can I get Help?](where-can-i-get-help.md)
 * [Versioning Strategy](documentation-and-versions.md)
-* [Add on products](add-on-products.md)
-* [Changelogs](changelogs/README.md)
-  * [Umbraco CMS](changelogs/umbraco-cms.md)
-  * [Umbraco Cloud](changelogs/umbraco-cloud.md)
-  * [Add-on Products](changelogs/add-on-products.md)
+* [Digital Experience (DXP) Products](add-on-products.md)
 
 ## Getting Started
 

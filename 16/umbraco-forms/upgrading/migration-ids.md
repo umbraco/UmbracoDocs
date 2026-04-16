@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Migration IDs
 
 A unique **migration ID** is generated for each Umbraco Forms upgrade that requires a migration. The migration IDs are all listed in this article.
@@ -26,3 +22,6 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | a5ffa9a7-ca77-4a7c-a1e4-f32e25cde758 | 14.1.0/15.0.0         | Same as 13.2.0 to allow upgrading 14.1 to 15.0.                                    |
 | db5ef50d-51d0-4f93-aae9-bd3df53a3bb1 | 14.2.0/15.0.0         | Same as 13.3.0 to allow upgrading 14.2 to 15.0.                                    |
 | 5b74ad79-3faa-4c08-bfba-472a860704e5 | 13.4.0/15.1.0/16.0.0  | Same as 13.4.0 to allow upgrading 13.4/15.1 to 16.0.                               |
+| 8f3c2d7e-6a1b-4e9f-9c8a-2d4e5f6a7b8c | 16.4.0                | Adds FieldPreValueSourceTypeId column to field pre-values.                         |
+| 0f296610-47f5-415d-8042-f4b8f2a51a4a | 16.4.0                | Migrates node pre-values to dynamic root.                                          |
+| d3c1e2f4-5b6a-4c7d-8e9f-0a1b2c3d4e5f | 16.4.0                | Updates the form picker property editor UI alias.                                  |

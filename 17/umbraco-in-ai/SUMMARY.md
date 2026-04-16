@@ -1,0 +1,62 @@
+# Table of contents
+
+* [Umbraco in AI](README.md)
+
+## Concepts
+
+* [Model Context Protocol (MCP)](concepts/model-context-protocol.md)
+* [Context Engineering](concepts/context-enginerring.md)
+* [Agent Skills](concepts/agent-skills.md)
+
+## MCP
+
+* [Base MCP](mcp/base-mcp/README.md)
+  * [Create Umbraco MCP Server](mcp/base-mcp/create-umbraco-mcp-server/README.md)
+    * [Claude Code Plugin](mcp/base-mcp/create-umbraco-mcp-server/claude-code-plugin.md)
+    * [Development Workflow](mcp/base-mcp/create-umbraco-mcp-server/development-workflow.md)
+    * [Project Template](mcp/base-mcp/create-umbraco-mcp-server/project-template.md)
+  * [Hosted MCP Server](mcp/base-mcp/hosted-mcp/README.md)
+    * [API Reference](mcp/base-mcp/hosted-mcp/api-reference.md)
+    * [Architecture](mcp/base-mcp/hosted-mcp/architecture.md)
+    * [Customization](mcp/base-mcp/hosted-mcp/customization.md)
+    * [Deployment](mcp/base-mcp/hosted-mcp/deployment.md)
+    * [Local Development Setup](mcp/base-mcp/hosted-mcp/local-dev-setup.md)
+    * [Manual Setup](mcp/base-mcp/hosted-mcp/manual-setup.md)
+    * [Multi-Site Deployments](mcp/base-mcp/hosted-mcp/multi-site.md)
+    * [Security](mcp/base-mcp/hosted-mcp/security.md)
+    * [Troubleshooting](mcp/base-mcp/hosted-mcp/troubleshooting.md)
+    * [Umbraco Setup](mcp/base-mcp/hosted-mcp/umbraco-setup.md)
+  * [MCP Server SDK](mcp/base-mcp/sdk/README.md)
+    * [API Helpers](mcp/base-mcp/sdk/api-helpers.md)
+    * [CLI Reference](mcp/base-mcp/sdk/cli.md)
+    * [Configuration](mcp/base-mcp/sdk/configuration.md)
+    * [Constants](mcp/base-mcp/sdk/constants.md)
+    * [Coverage Tracking](mcp/base-mcp/sdk/coverage-tracking.md)
+    * [MCP Chaining](mcp/base-mcp/sdk/mcp-chaining.md)
+    * [Testing and Evals](mcp/base-mcp/sdk/testing.md)
+    * [Tool Authoring](mcp/base-mcp/sdk/tool-authoring.md)
+    * [Tool Filtering](mcp/base-mcp/sdk/tool-filtering.md)
+* [Developer Model Context Protocol (MCP) Server](mcp/cms-developer-mcp/README.md)
+  * [Available Tools](mcp/cms-developer-mcp/available-tools.md)
+  * [Configuration Options](mcp/cms-developer-mcp/configuration.md)
+  * [Excluded Tools](mcp/cms-developer-mcp/excluded-tools.md)
+  * [Use Cases](mcp/cms-developer-mcp/scenarios.md)
+  * [CLI Usage](mcp/cms-developer-mcp/cli-usage.md)
+  * [Best Practice](mcp/cms-developer-mcp/best-practice/README.md)
+    * [Creating Media](mcp/cms-developer-mcp/best-practice/creating-media.md)
+    * [Example Instructions File](mcp/cms-developer-mcp/best-practice/example-instructions.md)
+* [Local MCP Setup](mcp/local-mcp-setup/README.md)
+  * [Claude Code Setup](mcp/local-mcp-setup/claude-code.md)
+  * [Claude Desktop](mcp/local-mcp-setup/claude-desktop.md)
+  * [Cursor](mcp/local-mcp-setup/cursor.md)
+  * [GitHub Copilot](mcp/local-mcp-setup/github-copilot.md)
+  * [OpenAI Codex Setup](mcp/local-mcp-setup/openai-codex.md)
+
+## Agent Skills
+
+* [Backoffice Skills](agents-skills/backoffice-skills/README.md)
+  * [Overview](agents-skills/backoffice-skills/backoffice-skills.md)
+  * [How It Works](agents-skills/backoffice-skills/how-it-works.md)
+  * [Quickstart](agents-skills/backoffice-skills/quickstart.md)
+  * [Testing Skills](agents-skills/backoffice-skills/testing-skills.md)
+  * [Tips for Best Results](agents-skills/backoffice-skills/tips.md)

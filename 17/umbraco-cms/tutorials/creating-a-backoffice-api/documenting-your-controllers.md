@@ -95,5 +95,5 @@ public IActionResult DeleteItem(Guid id)
 
 ## Verifying the changes
 
-Run your application and navigate to the OpenAPI UI at `{yourdomain}/umbraco/openapi`.\
+Run your application and navigate to the OpenAPI UI at /umbraco/openapi.\
 Verify that your API documentation is correctly displaying the routes, parameters, and response types.

@@ -15,6 +15,7 @@
 
 * [Upgrade Umbraco Engage](upgrading/upgrade-umbraco-engage.md)
 * [Version specific Upgrade Notes](upgrading/version-specific-upgrade-notes.md)
+* [Schema Alignment Guide](upgrading/schema-alignment-guide.md)
 * [Migrate from uMarketingSuite](upgrading/migrate-from-umarketingsuite.md)
 
 ## Getting Started

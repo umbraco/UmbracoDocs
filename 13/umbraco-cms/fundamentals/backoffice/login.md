@@ -10,7 +10,7 @@ To access the backoffice, you will need to login. You can do this by adding `/um
 
 You will be presented with a login form similar to this:
 
-![Login screen](images/login-backoffice-login.png)
+![Login screen](../../.gitbook/assets/login-backoffice-login.png)
 
 The **login** screen contains a **Greeting**, **Email**, **Password** field and optionally a **Forgotten password** link
 
@@ -39,7 +39,7 @@ The login screen features a greeting which you can personalize by overriding the
 
 * Before the changes takes place you will need to restart the site.
 
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/5ba40c65fc45f0effb0153bb69ac435e40ed605c/src/Umbraco.Core/EmbeddedResources/Lang/en_us.xml) in the Umbraco CMS GitHub repository. Thereafter, copy the ones you want to translate into the `~/config/lang/en_us.user.xml` file.
+You can customize other text on the login screen as well. First, grab the default values and keys from the [en\_us.xml](https://github.com/umbraco/Umbraco-CMS/blob/5ba40c65fc45f0effb0153bb69ac435e40ed605c/src/Umbraco.Core/EmbeddedResources/Lang/en_us.xml) in the Umbraco CMS GitHub repository. Thereafter, copy the ones you want to translate into the `~/config/lang/en_us.user.xml` file.
 
 ## Password reset
 

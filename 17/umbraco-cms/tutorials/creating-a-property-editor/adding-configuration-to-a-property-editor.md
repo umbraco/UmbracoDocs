@@ -6,24 +6,26 @@ description: Adding configuration options to the editor.
 
 ## Overview
 
-This is step two in our guide to building a Property Editor. This step continues work on the Suggestion Data Type we built in part one but goes further to show how to add configuration options to our editor.
+This is step two in the guide to building a Property Editor. This step builds on part one and covers adding configuration options to the editor.
 
-The steps we will go through in the second part are:
+This article covers the following:
 
 * [Adding settings object to umbraco-package.json](adding-configuration-to-a-property-editor.md#adding-settings-object-to-umbraco-package.json)
 * [Using the configuration](adding-configuration-to-a-property-editor.md#using-the-configuration)
 
 ### Configuration
 
-An important part of building good Property Editors is to build something flexible, so we can reuse it many times, for different things. Like the Rich Text Editor in Umbraco, which allows us to choose which buttons and stylesheets we want to use on each instance of the editor.
+An important part of building good Property Editors is making them flexible so they can be reused in many contexts. The Rich Text Editor, for example, lets you choose which buttons and stylesheets to use per instance.
 
-An editor can be used again and again, with different configurations, and that is what we will be working on now.
+The same editor can be reused with different configurations.
 
 ## Adding settings object to umbraco-package.json
 
-To add a Data Type configuration field when using our Suggestion Property Editor, open the `umbraco-package.json` file. Inside the `meta` object, we can add the `settings` object, which has the optional objects `properties` and `defaultData`.
+To add a Data Type configuration field to the Suggestion Property Editor:
 
-1. Add some `properties`:
+1. Open the `umbraco-package.json` file.
+2. Add the `settings` object inside the `meta` object.
+3. Add some `properties`:
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -57,11 +59,11 @@ To add a Data Type configuration field when using our Suggestion Property Editor
 ```
 {% endcode %}
 
-In the section above, we added three configuration fields. Each entry in the `properties` collection represents a Configuration field. It contains the necessary information for that field.
+The code above adds three configuration fields. Each entry in the `properties` collection represents a Configuration field.
 
-* The field labeled "`Disabled`" uses the Toggle Property Editor UI. This enables to switch the suggestion button on or off and provides the user with a toggle button.
-* The field labeled "`Placeholder text`" uses the TextBox Property Editor UI, allowing the user to write a text.
-* The field labeled "`Max characters allowed`" uses the Integer Property Editor UI, enabling the user to enter a numeric value.
+* `Disabled` uses the Toggle Property Editor UI. This enables to switch the suggestion button on or off and provides the user with a toggle button.
+* `Placeholder text` uses the TextBox Property Editor UI, allowing the user to write a text.
+* `Max characters allowed` uses the Integer Property Editor UI, enabling the user to enter a numeric value.
 
 {% hint style="info" %}
 The Property Editor UI needs to be declared as it declares what User Interface should be used for this field.
@@ -69,7 +71,7 @@ The Property Editor UI needs to be declared as it declares what User Interface s
 You can use any Property Editor UI to define Configuration fields. The alias of a given Property Editor UI can be found in Data Type configurations using that Property Editor.
 {% endhint %}
 
-2. We can now also set some default data on our new configurations:
+4. Add default values for the new configuration fields:
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -165,7 +167,16 @@ You can use any Property Editor UI to define Configuration fields. The alias of 
 
 </details>
 
-3. Save the files and reload the backoffice. We can now configure our Data Type:
+{% hint style="warning" %}
+`defaultData` only applies to newly created Data Types.
+If you already saved the Data Type in [Part 1](README.md) of the tutorial, adding `defaultData` here won't automatically populate the existing configuration. Umbraco only reads default values when a Data Type is first created.
+If your Data Type already exists, you have two options:
+
+* Manually set the values by going to **Settings** → **Data Types**. Open your Data Type and enter the values there.
+* Delete and recreate the Data Type to have `defaultData` take effect automatically.
+{% endhint %}
+
+5. Save the files and reload the backoffice. You can now see the Configurations in the Data Type:
 
 <figure><img src="../../.gitbook/assets/suggestion-editor-config_3.png" alt=""><figcaption><p>Data Type configuration.</p></figcaption></figure>
 
@@ -209,7 +220,7 @@ import { type UmbPropertyEditorConfigCollection } from '@umbraco-cms/backoffice/
 ```
 {% endcode %}
 
-We can now use the configurations. Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
+Let's use the `placeholder` and `maxChars` for the input field and the `disabled` option for the suggestion button.
 
 4. Add a new import `ifDefined` :
 
@@ -377,6 +388,4 @@ declare global {
 
 ## Going further
 
-We have now added some configurations to our data type and used them in our Property Editor.
-
-In the next step, we are going to integrate context with our Property Editor.
+The Data Type now has configuration options wired up to the Property Editor. The next part covers integrating context with the Property Editor.

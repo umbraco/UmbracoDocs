@@ -20,7 +20,7 @@ As an administrator of your organization in Umbraco Cloud, you now have access t
 
 The project team page can be accessed from the overview showing all the organization's projects. The administrator can by clicking the icon listed to the right of the individual project. He will be able to invite users to the project team with a set of permissions and backoffice user group memberships. He can also revoke access to the project of an existing project team member.
 
-![OrgAdminEditUserPage](../../images/OrgAdminEditUserPage.gif)
+![OrgAdminEditUserPage](../../../.gitbook/assets/OrgAdminEditUserPage.gif)
 
 This change provides a centralized and convenient way for the organization administrator to manage the team members' access to the cloud projects. Hereby Ensuring that trusted individuals of your organization are able to grant and restrict access to cloud projects in Umbraco Cloud.
 
@@ -30,7 +30,7 @@ The new addition overall improves security, enhances collaboration, and streamli
 
 We've launched a minor update on the usage page. The update lets you see the **total bandwidth used every month for the past seven months**.
 
-![BandwidthHistory](../../images/BandwidthHistory.png)
+![BandwidthHistory](../../../.gitbook/assets/BandwidthHistory.png)
 
 With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe this new addition is valuable for customers running high-traffic websites and weekly need to monitor the bandwidth usage to ensure the project stays within the plan tier limit.
 
@@ -40,6 +40,6 @@ The newest feature to launch in the new front end stack is “Upgrade project”
 
 You can change the project plan and opt for a dedicated option or return to a shared resource during the flow. And like the new project creation flow launched in the February update, you will see a summary at the end before accepting the upgrade.
 
-![UpgradeProject](../../images/UpgradeProject.gif)
+![UpgradeProject](../../../.gitbook/assets/UpgradeProject.gif)
 
 With this new flow, you can quickly upgrade your existing projects to a new upgrade or dedicated plan in a few minutes.

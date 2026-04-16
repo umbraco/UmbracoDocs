@@ -10,7 +10,7 @@ Cloud highlights June 2022
 
 For Umbraco 9 projects and Umbraco 10 you can on the project subpage “Advanced” toggle the runtime settings between .NET 5 til .NET 6 on a per-environment basis.
 
-![RuntimeSettingsForV9](../../images/RuntimeSettingsForV9.gif)
+![RuntimeSettingsForV9](../../../.gitbook/assets/RuntimeSettingsForV9.gif)
 
 Before updating, ensure the packages used are available in Umbraco 10 and that your custom code is valid with the .NET 6 Framework.
 
@@ -18,7 +18,7 @@ Before updating, ensure the packages used are available in Umbraco 10 and that y
 
 The “Edit team” page has received a facelift and is now based on the Umbraco UI Library web components. The new design has a modern look and gives you a sneak preview of the look and feel of the future Cloud Portal.
 
-![NewEditTeamPage.gif](../../images/NewEditTeamPage.gif)
+![NewEditTeamPage.gif](../../../.gitbook/assets/NewEditTeamPage.gif)
 
 We will continuously improve the many other sections in the Portal and ensure that all pages will adopt the new design as shown on the reworked “Edit team” page.
 

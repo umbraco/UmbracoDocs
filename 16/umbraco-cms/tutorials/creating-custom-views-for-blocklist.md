@@ -20,7 +20,7 @@ To create a Document Type:
 5. Click **Add Group** and **Enter a Name** for the group. Let's call it _Product Details_.
 6.  Add the following properties:
 
-    <figure><img src="images/document-properties.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/document-properties (1).png" alt=""><figcaption></figcaption></figure>
 7.  Add another group called **Features** and a property with the following specification:
 
     | Name      | Features   |
@@ -29,7 +29,7 @@ To create a Document Type:
     | Data Type | Block List |
 8.  Click **Save**. Your document type should look like:
 
-    <figure><img src="images/document-type.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/document-type (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating the Content Node
 
@@ -49,7 +49,7 @@ To configure the Block List editor:
 1. Go to **Settings** and open the **Product** Document Type.
 2.  Click on the **Block List** property we created earlier. You'll see the Block list editor's configuration, as shown below:
 
-    ![Document Type](images/blocklist-editor-settings.png)
+    ![Document Type](<../.gitbook/assets/blocklist-editor-settings (1).png>)
 
 In the **Configuration** section, we can add **Available Blocks**, define the range of blocks that can be added, control the live and inline editing mode, or set the property editor width. The Available Blocks in the Block List editor configuration differentiates it from the other property editors. The list you create with the Block List editor is based on one or more blocks. Each block is based on an Element Type.
 
@@ -64,7 +64,6 @@ To add blocks to our Block List editor:
     | Name          | featureName | Textstring   |
     | Details       | details     | Textarea     |
     | Image         | image       | Media Picker |
-
 4. Click **Save and Close**. The block configuration window opens. For more information on the block configuration, see the [Setup Block Types](../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md#setup-block-types) section.
 5. Similarly, I'll set up another block called **Hero**.
 6. Toggle **Live Editing mode** and select **Submit**.
@@ -158,12 +157,12 @@ To add content to the blocks:
 1. Go to the **Content** section and select **Product**.
 2.  Select **Add Content** in the **Features** group. The **Add Content** displays the blocks we created earlier.
 
-    <figure><img src="images/Content-block-list.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Content-block-list (1).png" alt=""><figcaption></figcaption></figure>
 3. Select **Feature**. The **Feature** window opens.
 4. Enter the **Name** and **Details** in the Feature window. You will notice you can view the content as you type. This is because we have enabled the **Live editing** mode.
 5. Click **Confirm**.
 
-<figure><img src="images/Feature-Content.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Feature-Content (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating `Settings` section for Blocks
 
@@ -185,11 +184,11 @@ To add a Settings model:
    * In the Add options field, add **left**, **center** and **right** as values.
    *   Click **Submit**.
 
-       <figure><img src="images/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../.gitbook/assets/prevalue-options-1 (1).png" alt=""><figcaption></figcaption></figure>
 7. Click **Submit**.
 8.  Click **Save and Close**.
 
-    <figure><img src="images/Feature-Settings-1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Feature-Settings-1 (1).png" alt=""><figcaption></figcaption></figure>
 9. Click **Submit** until you reach the Product Document Type.
 10. Click **Save**.
 

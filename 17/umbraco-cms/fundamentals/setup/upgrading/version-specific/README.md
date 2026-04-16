@@ -199,12 +199,16 @@ By moving `InMemoryAuto` to its own package, Umbraco can enable Hot Reload by de
 
 Add the package if any of the following apply:
 
-1. You use `InMemoryAuto` models builder
-    * Explicitly selecting `InMemoryAuto`
-    * Starting a new project with the default `--models-mode` (default is `InMemoryAuto`, so the package is added automatically)
+1. You use the `InMemoryAuto` models builder:
+    * By explicitly selecting `InMemoryAuto`.
+    * By starting a new project with the default `--models-mode` (which is `InMemoryAuto`, adding the package automatically).
   
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
+
+{% hint style="info" %}
+The choice to include `Umbraco.Cms.DevelopmentMode.Backoffice` depends on how you work with models and templates. It is not based in the hosting environment, and using it enables Razor runtime compilation and disables Hot Reload.
+{% endhint %}
 
 *When you do not need the package*?
 
@@ -214,12 +218,14 @@ You don’t need to reference it if you use Models Builder in a source-code mode
 * `SourceCodeAuto`
 * `SourceCodeManual`
 
-These modes do not rely on Razor runtime compilation. However, ensure the following settings are removed from your `.csproj` file:
+{% hint style="warning" %}
+**Important!** These modes do not rely on Razor runtime compilation. However, ensure the following settings are removed from your `.csproj` file.
 
 ```xml
 <RazorCompileOnBuild>false</RazorCompileOnBuild>
 <RazorCompileOnPublish>false</RazorCompileOnPublish>
 ```
+{% endhint %}
 
 *Additional notes*
 
@@ -342,6 +348,14 @@ The other specific dependency updates made for Umbraco 17 for server and client-
 - [#20385](https://github.com/umbraco/Umbraco-CMS/pull/20385)
 - [#20184](https://github.com/umbraco/Umbraco-CMS/pull/20184)
 - [#20925](https://github.com/umbraco/Umbraco-CMS/pull/20925)
+
+**Sections**
+
+In `UmbSectionContext`, the `setManifest()` method has been replaced with a manifest. This is done to align with most other extension types.
+The `ManifestSection` interface has been modified to extend `ManifestElementAndApi` instead of `ManifestElement`.
+The `UmbSectionElement` that a section extends from now extends `UmbControllerHostElement` instead of `HTMLElement`.
+
+For more details on these updates, see the following PRs: [#20305](https://github.com/umbraco/Umbraco-CMS/pull/20305)
 
 **Other breaking changes**
 
@@ -747,11 +761,18 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 
 You can find more information about all breaking changes for v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
 
-**Note:** You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package:
+{% hint style="info" %}
+You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package:
 
 * This package has a transient dependency to `Microsoft.CodeAnalysis.Common` which clashes with the same transient dependency from `Umbraco.Cms 13.0.0`. This happens because `Microsoft.EntityFrameworkCore.Design 8.0.0` requires `Microsoft.CodeAnalysis.CSharp.Workspaces` in v4.5.0 or higher.
 * If there are no other dependencies that need that package then it installs it in the lowest allowed version (4.5.0). That package then has a strict dependency on `Microsoft.CodeAnalysis.Common` version 4.5.0. The problem is `Umbraco.Cms` through its own transient dependencies that require the version of `Microsoft.CodeAnalysis.Common` to be >= 4.8.0.
 * This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.8.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same that Umbraco has.
+{% endhint %}
+
+{% hint style="success"  icon = "lightbulb-message" %}
+Community Insight: Watch this [video walkthrough](https://www.youtube.com/watch?v=LHW3bbIR_VU) for a deep dive into the major changes from Umbraco 13 through 17.
+{% endhint %}
+
 
 </details>
 

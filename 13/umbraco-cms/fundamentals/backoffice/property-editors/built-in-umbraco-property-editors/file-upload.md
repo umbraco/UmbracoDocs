@@ -16,13 +16,13 @@ Find the full documentation for the property in the [Media Picker](media-picker-
 
 ## Data Type Definition Example
 
-![Data Type Definition Example](../built-in-property-editors/images/definition-example-v10.png)
+![Data Type Definition Example](<../../../../.gitbook/assets/definition-example-v10 (1).png>)
 
 ## Content Example
 
-![Content Example Empty](../built-in-property-editors/images/content-example-empty.png)
+![Content Example Empty](<../../../../.gitbook/assets/content-example-empty (1).png>)
 
-![Content Example](../built-in-property-editors/images/File-Upload-content-example.png)
+![Content Example](<../../../../.gitbook/assets/File-Upload-content-example (1).png>)
 
 In code, the property is a string, which references the location of the file.
 

@@ -27,3 +27,7 @@ Learn the steps to plan, create, configure, and launch an A/B test on your Umbra
 ## [Marketing Resources](marketing-resources/)
 
 Access ready-to-use templates for topbars, popups, and exit-intent popups to enhance your website's marketing efforts without developer assistance.
+
+## Umbraco Training
+
+{% include "../.gitbook/includes/umbraco-engage-for-marketers-training.md" %}

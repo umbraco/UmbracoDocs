@@ -10,7 +10,6 @@ Add a new class to your project as a handler for the `FormValidateNotification` 
 
 ```csharp
 using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Forms.Core.Models;
 using Umbraco.Forms.Core.Services.Notifications;
@@ -34,37 +33,60 @@ namespace MyFormsExtensions
                 }
 
                 // A sample validation
-                var email = GetPostFieldValue(notification.Form, notification.Context, "email");
-                var emailConfirm = GetPostFieldValue(notification.Form, notification.Context, "verifyEmail");
+                var email = GetFieldValue(notification.Form, "email");
+                var emailConfirm = GetFieldValue(notification.Form, "verifyEmail");
 
-                // If the validation fails, return a ModelError
+                // If the validation fails, return a ModelError.
                 if (email.ToLower() != emailConfirm.ToLower())
                 {
-                    notification.ModelState.AddModelError(GetPostField(notification.Form, "verifyEmail").Id.ToString(), "Email does not match");
+                    // Standard form POST renders validation messages keyed by field Id,
+                    // while the headless API returns errors keyed by field alias.
+                    Field verifyEmailField = GetField(notification.Form, "verifyEmail")!;
+                    var errorKey = notification.Context.Request.HasFormContentType
+                        ? verifyEmailField.Id.ToString()
+                        : verifyEmailField.Alias;
+
+                    notification.ModelState.AddModelError(errorKey, "Email does not match");
                 }
             }
         }
 
-        private static string GetPostFieldValue(Form form, HttpContext context, string key)
+        /// <summary>
+        /// Gets the submitted value for a field by its alias.
+        /// </summary>
+        /// <remarks>
+        /// Field.Values is populated before the notification fires in both submission paths
+        /// (standard form POST and headless API JSON submissions), making it the reliable way
+        /// to access submitted values regardless of how the form was submitted.
+        /// </remarks>
+        private static string GetFieldValue(Form form, string alias)
         {
-            Field field = GetPostField(form, key);
-            if (field == null)
-            {
-                return string.Empty;
-            }
-
-
-            return context.Request.HasFormContentType &&  context.Request.Form.Keys.Contains(field.Id.ToString())
-                ? context.Request.Form[field.Id.ToString()].ToString().Trim()
-                : string.Empty;
+            Field? field = GetField(form, alias);
+            return field?.Values.FirstOrDefault()?.ToString()?.Trim() ?? string.Empty;
         }
 
-        private static Field GetPostField(Form form, string key) => form.AllFields.SingleOrDefault(f => f.Alias == key);
+        private static Field? GetField(Form form, string alias)
+            => form.AllFields.SingleOrDefault(f => f.Alias == alias);
     }
 }
 ```
 
 The handler will check the `ModelState` and `Form` field values provided in the notification. If validation fails, we add a `ModelError`.
+
+{% hint style="info" %}
+
+Submitted field values are accessed via `Field.Values`. This property is populated before the notification fires for both standard form POST and headless API submissions.
+
+Previous versions of this documentation showed reading values from `HttpContext.Request.Form`. That approach only works for standard form posts and returns empty values for headless API submissions.
+
+When adding model errors, the key used must match the submission path:
+
+- **Standard form POST**: use `field.Id.ToString()` (the form view renders validation messages keyed by field Id).
+- **Headless API**: use `field.Alias` (the API returns validation errors keyed by field alias).
+
+You can check `notification.Context.Request.HasFormContentType` to determine which path is in use.
+
+{% endhint %}
 
 To register the handler, add the following code into the startup pipeline. In this example, the registration is implemented as an extension method to `IUmbracoBuilder` and should be called from `Program.cs`:
 

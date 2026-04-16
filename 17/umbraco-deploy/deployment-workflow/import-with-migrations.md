@@ -105,9 +105,9 @@ When an import is started, the following happens:
    4. Migrate the JSON object (using `IArtifactJsonMigrator`).
    5. Deserialize the JSON object into the artifact type.
    6. Migrate the artifact (using `IArtifactMigrator`).
-   7. Initialize artifact processing (using `IServiceConnector.ProcessInit(...)`) and track deploy state with next passes.
+   7. Initialize artifact processing (using `IServiceConnector.ProcessInitAsync(...)`) and track deploy state with next passes.
 7. For each next process pass (starting at the lowest initial next pass):
-   1. Process artifact (using `IServiceConnector.Process(...)`).
+   1. Process artifact (using `IServiceConnector.ProcessAsync(...)`).
    2. During processing: service connectors for content, media and members migrate property type values if a property editor alias has changed (using `IPropertyTypeMigrator`).
    3. When no next pass is required (the deploy state returns -1 as next pass):
       1. Publish an `ArtifactImportedNotification`.
@@ -118,7 +118,7 @@ When an import is started, the following happens:
 
 Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
 
-Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v15/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v17/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
 
 ### Grid to Block Grid
 

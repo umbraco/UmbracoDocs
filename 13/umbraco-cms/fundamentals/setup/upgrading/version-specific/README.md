@@ -43,11 +43,17 @@ Below you can find the list of breaking changes introduced in Umbraco 13.
 
 You can find more information about all breaking changes for v13.0.0 on [Our Umbraco](https://our.umbraco.com/download/releases/1300) website.
 
-**Note:** You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package:
+{% hint style="info" %}
+You need to be aware of some things if you are using EF Core, and have installed the `Microsoft.EntityFrameworkCore.Design 8.0.0` package:
 
 * This package has a transient dependency to `Microsoft.CodeAnalysis.Common` which clashes with the same transient dependency from `Umbraco.Cms 13.0.0`. This happens because `Microsoft.EntityFrameworkCore.Design 8.0.0` requires `Microsoft.CodeAnalysis.CSharp.Workspaces` in v4.5.0 or higher.
 * If there are no other dependencies that need that package then it installs it in the lowest allowed version (4.5.0). That package then has a strict dependency on `Microsoft.CodeAnalysis.Common` version 4.5.0. The problem is `Umbraco.Cms` through its own transient dependencies that require the version of `Microsoft.CodeAnalysis.Common` to be >= 4.8.0.
 * This can be fixed by installing `Microsoft.CodeAnalysis.CSharp.Workspaces` version 4.8.0 as a specific package instead of leaving it as a transient dependency. This is because it will then have a strict transient dependency on `Microsoft.CodeAnalysis.Common` version 4.8.0, which is the same that Umbraco has.
+{% endhint %}
+
+{% hint style="success"  icon = "lightbulb-message"%}
+Community Insight: Watch this [video walkthrough](https://www.youtube.com/watch?v=LHW3bbIR_VU) for a deep dive into the major changes from Umbraco 13 through 17.
+{% endhint %}
 
 </details>
 
@@ -1025,7 +1031,7 @@ This is possible using Models Builder and through the inclusion of [core propert
 
 To not break everybody's sites (the results of queries are different when PVCs are enabled), we disabled these PVCs by default.
 
-Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://our.umbraco.com/Documentation/Reference/Querying/Udi). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
+Umbraco 7.6.0 also came with new pickers that store their data as a [UDI (Umbraco Identifier)](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers). We wanted to simplify the use of these new pickers and by default we wanted PVC's to always be enabled for those pickers.
 
 We noticed that some new pickers also got their PVC's disabled when the configuration setting was set to false (`<EnablePropertyValueConverters>false</EnablePropertyValueConverters>`).
 
@@ -1174,7 +1180,7 @@ and
 
 Umbraco Forms 6.0.0 has been released to be compatible with Umbraco 7.6. It is a new major version release of Forms primarily due to the strict dependency on 7.6+. If you are using Forms, you will need to update it to version 6.0.0
 
-There are [**important Forms upgrade documentation that you will need to read.**](https://docs.umbraco.com/umbraco-forms/installation/version-specific.md#version-4-to-version-6).
+There are [**important Forms upgrade documentation that you will need to read.**](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
 
 **Courier**
 

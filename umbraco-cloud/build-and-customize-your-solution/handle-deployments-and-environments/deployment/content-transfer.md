@@ -107,6 +107,6 @@ When changing the values for`TransferDictionaryAsContent` and `TransferFormsAsCo
 
 Sometimes a content transfer is not possible. For example, adding a new property to the _HomePage_ Document Type that's missing in another Cloud environment throws an error. The error contains details on how to fix it.
 
-![clone dialog](images/schema-mismatch_v10.png)
+![clone dialog](../../../.gitbook/assets/schema-mismatch_v10.png)
 
 If you encounter this issue while transferring content, refer to the [Schema Mismatches](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md) article. This article provides guidance on resolving these issues.

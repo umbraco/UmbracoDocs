@@ -38,7 +38,7 @@ The second option for restoring your content and media is found in the Umbraco b
 
 1. Go to the Umbraco backoffice on the environment you want to restore content and media to.
 2. Click **...** next to the Content Tree.
-3. Choose _Workspace restore..._ from the menu.
+3. Choose _Environment restore..._ from the menu.
 4. You will now have the option to restore content from any environment that's _to the right of_ the current environment in the deployment workflow.
 5. To ensure the restore will succeed, [make sure that your environments have the same meta data and structure files](../deploying-changes.md).
 6. Click _Restore from .._ and wait till the process completes - this might take a while, depending on the amount of content and media you have on your project.
@@ -58,7 +58,7 @@ Umbraco Deploy - Content transfer and restore
 
 The operation is triggered in the same way as when restoring everything, but instead the _Tree restore..._ menu option should be selected.
 
-For example, if triggered from the content tree, only content entities will be restored. This will also restore any media that’s referenced in that content, but it won’t attempt to restore the full media library, nor any other entities.
+For example, if triggered from the content tree, only content entities will be restored. This restores referenced media but ignores the full media library and other entities. To restore or sync media across environments, see the [Transferring Content, Media and Forms](../content-transfer.md#restoring-media-between-environments) article.
 
 ### [Partial Restore](partial-restore.md)
 

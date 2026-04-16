@@ -10,11 +10,11 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](images/Member-Picker.png)
+![Media Picker Data Type Definition](../../../../.gitbook/assets/Member-Picker.png)
 
 ## Content Example
 
-![Member Picker Content](../built-in-property-editors/images/Member-Picker-Content-v8.png)
+![Member Picker Content](<../../../../.gitbook/assets/Member-Picker-Content-v8 (1).png>)
 
 ## MVC View Example
 

@@ -211,3 +211,21 @@ A visitor will be considered an **existing visitor** when either of the followin
 
 If neither applies, the requests will be considered coming from a new visitor.
 {% endhint %}
+
+#### Disabling the Visitor Cookie
+
+In headless setups where cookies are not practical, you can disable the visitor cookie entirely by setting `DisableVisitorCookie` to `true`:
+
+```json
+"Engage": {
+  "DeliveryApi": {
+    "DisableVisitorCookie": true
+  }
+}
+```
+
+When set to `true`, the `umbracoEngageAnalyticsVisitorId` cookie will not be set or read on headless API requests. Clients must then exclusively use the `External-Visitor-Id` header to identify returning visitors.
+
+| **Key**              | **Description**                                                                                                                                                      | **Default Value** |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| DisableVisitorCookie | When `true`, the visitor cookie is not set or read on Delivery API requests. Clients must use the `External-Visitor-Id` header to identify visitors instead.          | false             |

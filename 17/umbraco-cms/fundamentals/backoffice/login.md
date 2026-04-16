@@ -210,7 +210,7 @@ The following CSS properties are available for customization:
 | `--umb-login-curves-color`               | The color of the curves                        | `#f5c1bc`                                                                                  |
 | `--umb-login-curves-display`             | The display of the curves                      | `inline`                                                                                   |
 
-The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v14/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS GitHub repository.
+The CSS custom properties may change in future versions of Umbraco. You can always find the latest values in the [login layout element](https://github.com/umbraco/Umbraco-CMS/blob/v16/dev/src/Umbraco.Web.UI.Login/src/components/layouts/auth-layout.element.ts) in the Umbraco CMS GitHub repository.
 
 ## The Time Out Screen
 

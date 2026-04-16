@@ -18,9 +18,9 @@ As mentioned above, server-side validation is the most common use-case for imple
 
 Less common use-cases include:
 
-* Custom content indexing for search,
-* Server-side conversion of the data that is passed to - and received from - the Property Editor UI,
-* and more.
+* Custom content indexing for search
+* Server-side conversion of the data that is passed to and received from the Property Editor UI
+* More
 
 These will be discussed briefly at the end of this article.
 
@@ -114,7 +114,7 @@ public class MySuggestionsValueValidator : IValueValidator
 ## Coupling the Property Editor and the Data Editor
 
 With the Data Editor in place, update the Property Editor `propertyEditorSchemaAlias` in `umbraco-package.json` to match the Data Editor alias (`My.DataEditor.Suggestions`):
-
+{% code title="umbraco-package.json" %}
 ```json
 {
     "$schema": "../../umbraco-package-schema.json",
@@ -132,12 +132,13 @@ With the Data Editor in place, update the Property Editor `propertyEditorSchemaA
     ]
 }
 ```
+{% endcode %}
 
 Reload the backoffice and open the "Suggestions" Data Type:
 
 ![The Data Type with the new Data Editor registered](../../.gitbook/assets/suggestion-editor-config_4.png)
 
-The Umbraco UI already lists the Data Type as using the Data Editor. However, the Data Type configuration is still stored in the database using `Umbraco.Plain.String`. To effectively apply the Data Editor, we must re-save the Data Type.
+The Umbraco UI already lists the Data Type as using the Data Editor. However, the Data Type configuration is still stored in the database using `Umbraco.Plain.String`. To effectively apply the Data Editor, you must re-save the Data Type.
 
 ## Advanced Data Editor use-cases
 

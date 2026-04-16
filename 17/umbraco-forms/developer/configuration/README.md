@@ -94,7 +94,13 @@ For illustration purposes, the following structure represents the full set of op
       "DisableRelationTracking": false,
       "TrackRenderedFormsStorageMethod": "HttpContextItems",
       "EnableMultiPageFormSettings": true,
-      "EnableAdvancedValidationRules": false
+      "EnableAdvancedValidationRules": false,
+      "AnalyticsProcessing": {
+        "Enabled": true,
+        "FirstRunTime": "",
+        "Period": "1.00:00:00",
+        "RetainProcessedDataForDays": 1095
+      }
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -123,6 +129,14 @@ For illustration purposes, the following structure represents the full set of op
         "PrivateKey": "",
         "Domain": "Google",
         "VerificationUrl": "https://www.google.com/recaptcha/api/siteverify",
+        "ShowFieldValidation": true
+      },
+      "RecaptchaEnterprise": {
+        "SiteKey": "",
+        "ApiKey": "",
+        "ProjectId": "",
+        "Domain": "Google",
+        "VerificationUrl": "https://recaptchaenterprise.googleapis.com/v1/projects/{PROJECT_ID}/assessments",
         "ShowFieldValidation": true
       },
       "RichText": {
@@ -171,7 +185,12 @@ For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fi
 
 ### SettingsCustomization
 
-Forms introduced the ability to configure settings for the field, workflow, data source, and prevalue sources. The default behavior, when a new field or workflow is added to a form, is for each setting to be empty. The values are then completed by the editor. All settings defined on the type are displayed for entry.
+Forms allows you to configure default values and visibility for field, workflow, data source, and prevalue source settings. Default values can be set in two ways:
+
+1. **In code** - by using the `DefaultValue` property on the [`Setting` attribute](../extending/adding-a-fieldtype.md#field-settings), or a property initializer, when defining custom or extended provider types.
+2. **In configuration** - by using the `SettingsCustomization` section, which takes precedence over code-based defaults.
+
+Without any configuration, the default behavior when a new field or workflow is added to a form is for each setting to be empty. The values are then completed by the editor. All settings defined on the type are displayed for entry.
 
 In some situations, you may want to hide certain settings from entry, so they always take an empty value. In others, you may want to provide a default value that the editor can accept or amend. And lastly, you may have a requirement for a fixed, non-empty value, that's enforced by the organization and not editable. Each of these scenarios can be supported by this configuration setting.
 
@@ -455,6 +474,26 @@ By default, the value is `false`.  This is partly because the feature is only co
 
 To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
 
+## Analytics processing configuration
+
+A background process runs periodically to aggregate form submission data into summary tables. This provides fast-loading analytics views in the backoffice. The following settings control this process:
+
+### Enabled
+
+Set to `true` (the default) to enable the background analytics data processing task. When disabled, no pre-aggregated data is created, but the analytics views in the backoffice are still available.
+
+### FirstRunTime
+
+Configures when the analytics processing task will run for the first time. If not configured, the task will start shortly after the site starts. The value must be specified as a cron expression. For example, a value of `"0 1 * * *"` schedules the first run at 01:00.
+
+### Period
+
+Defines how often the analytics data processing task will run. The default value is `1.00:00:00`, which is equivalent to once every 24 hours.
+
+### RetainProcessedDataForDays
+
+Defines the number of days to retain pre-aggregated analytics summary data. Summary data older than this value will be removed by the processing task. The default value is `1095` (approximately 3 years). Set to `0` to retain data indefinitely.
+
 ## Security configuration
 
 ### DisallowedFileUploadExtensions
@@ -558,6 +597,32 @@ Some customers with a locked-down production environment cannot configure the fi
 #### ShowFieldValidation
 
 The validation message returned from a failed reCAPTCHA 3 request will be displayed in the form level validation summary and alongside the field.
+
+To remove rendering at the field level, set this value to `false`.
+
+### reCAPTCHA Enterprise field type configuration
+
+#### SiteKey, ApiKey & ProjectId
+
+These configuration values are needed in order to use the "_reCAPTCHA Enterprise with Score_" field type implementing ReCaptcha Enterprise from Google.
+
+You can obtain these values after signing up to create a reCAPTCHA Enterprise key here: [https://www.google.com/recaptcha/](https://www.google.com/recaptcha/).
+
+#### Domain
+
+This setting defines the domain from which the client-side assets for using the reCAPTCHA service are requested.
+
+Valid options are `Google` (the default) or `Recaptcha`. You may want to use the latter for control of which domains are setting cookies on your site. [Read more at the reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/faq#does-recaptcha-use-cookies).
+
+#### VerificationUrl
+
+By default, the server-side validation of the reCAPTCHA response is sent to Google's servers at `https://recaptchaenterprise.googleapis.com/v1/projects/{PROJECT_ID}/assessments`.
+
+Some customers with a locked-down production environment cannot configure the firewall to allow these requests and instead use a proxy server. They can use this setting to configure the URL to their proxy server, which will relay the request to and response from Google.
+
+#### ShowFieldValidation
+
+The validation message returned from a failed reCAPTCHA Enterprise request will be displayed in the form level validation summary and alongside the field.
 
 To remove rendering at the field level, set this value to `false`.
 

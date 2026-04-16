@@ -14,16 +14,14 @@ The following steps are a quick-start guide:
 
     Create a fork of [`Umbraco-CMS` on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
-    ![Fork the repository](img/forkrepository.png)
+    ![Fork the repository](../.gitbook/assets/forkrepository.png)
 
 {% embed url="https://youtu.be/8Ala994K5Ww" fullWidth="false" %}
 
 2. **Clone**\
    When GitHub has created your fork, you can clone it in your favorite Git tool or on the command line with `git clone https://github.com/[YourUsername]/Umbraco-CMS`.
 
-![Clone the fork](img/clonefork.png)
-
-
+![Clone the fork](../.gitbook/assets/clonefork.png)
 
 {% embed url="https://youtu.be/Vww4cb0FflE" %}
 

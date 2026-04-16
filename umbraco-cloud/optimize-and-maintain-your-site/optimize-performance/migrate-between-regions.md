@@ -19,9 +19,7 @@ The East US and West EU regions will be used as examples in this article.
 * A local setup that can run an Umbraco instance. Learn more about this in the [Requirements](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements) article.
 
 {% hint style="info" %}
-
 If you want to migrate an Umbraco 8 project, you must upgrade to the latest supported [Long-Term-Supported (LTS)](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version of Umbraco CMS.
-
 {% endhint %}
 
 ## Prepare your projects
@@ -30,7 +28,7 @@ The first step in this process is to create a new Umbraco Cloud project in the r
 
 This is done by selecting **East US** from the **Region** dropdown when creating the Cloud project.
 
-![Select the East US region](images/creationflow-chooseRegion.png)
+![Select the East US region](../../.gitbook/assets/creationflow-chooseRegion.png)
 
 The new project in the US region will run the latest version of Umbraco CMS, Umbraco Forms, and Umbraco Deploy. You will need to ensure that the project you are migrating is running the exact same version of each product before initiating the migration process.
 
@@ -71,7 +69,7 @@ In this step, we will migrate our files and media items from our project in the 
 4. Move the **view** files located in the view folder from **West EU** to the view folder in the **East US** project.
    * When prompted replace the existing files.
 5. Move the **CSS** and **Script** files located in the **wwwroot** folder from the **West EU** folder to the **wwwroot** folder in the **East US** project.
-   * **Optional:** Move files from **App_Plugins** if you have extended the Umbraco Backoffice
+   * **Optional:** Move files from **App\_Plugins** if you have extended the Umbraco Backoffice
 6. Move custom code (Models, Controllers and other relevant code) from the **West EU** to the **East US** project
 7. Run the **East US** project locally.
 

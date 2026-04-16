@@ -28,10 +28,10 @@ To run the health check:
 
 1.  Navigate to the **Health Check** dashboard in the **Settings** section in the Umbraco backoffice.
 
-    <figure><img src="images/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Umb-backoffice.png" alt=""><figcaption></figcaption></figure>
 2.  Click on the **Forms** button and select **Perform checks**. You'll see a result that looks something like this:
 
-    <figure><img src="images/healthcheck-v14.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/healthcheck-v14.png" alt=""><figcaption></figcaption></figure>
 
 If you have a full set of green ticks, then you're all good - and no need to read on!
 

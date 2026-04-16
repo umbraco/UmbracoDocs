@@ -4,12 +4,12 @@ This document describes when and what product updates are rolled out on Umbraco 
 
 ## What products are auto-upgraded?
 
-* Umbraco CMS patch updates
-* Forms patch updates
+* Umbraco CMS
+* Forms
 * Deploy
 * Internal Umbraco Cloud services (generally these updates will not affect running websites but in some cases, if they do we will notify Umbraco Cloud users via the status page)
 
-When minor upgrades are available, you will need an additional mainline environment on your project in order to get the new version. Read the [Minor Upgrades](minor-upgrades.md) article for more details.
+By default, automatic upgrades occur for patch and minor updates, while major updates require manual action. You can [opt out of automatic minor and/or patch upgrades](#can-i-opt-out-of-automated-upgrades).
 
 ## When do upgrades happen?
 
@@ -18,7 +18,7 @@ When minor upgrades are available, you will need an additional mainline environm
 * The decision to roll out an upgrade will be made no later than the **Thursday** prior and the status page will be updated accordingly
 * A product upgrade will be rolled out if:
   * A fix needs to be shipped due to a critical issue in any product
-  * A patch version of Umbraco Core is ready for release
+  * A new version of Umbraco CMS is ready for release
   * A new version of Deploy is ready for release
   * A new version of Forms is ready for release
 * Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
@@ -33,12 +33,9 @@ Your project will not be auto-upgraded if your environments aren't running the s
 
 Before a live upgrade is rolled out on Umbraco Cloud:
 
-* Write release notes and include special upgrade instructions and/or blog posts if necessary
-* Create a new version on the issue tracker
-* Take the build from AppVeyor and push to NuGet
-* Update our.umbraco.com release page
+* Release notes, special upgrade instructions and/or blog posts are published when necessary
 * Update Umbraco Cloud’s site creation engine with the new version so that all new sites are built with the latest version
-* Run the auto-upgrader on Umbraco Cloud on a subset of test sites to verify there are no issues
+* Run the auto-upgrader on Umbraco Cloud on a subset of internal test sites to verify there are no issues
 * Run the auto-upgrader on all Umbraco Cloud sites
 
 ## The process of auto-upgrading a Umbraco Cloud project
@@ -69,11 +66,31 @@ It is important that developers understand what is considered a breaking change 
 
 What is a breaking change is documented here: [https://our.umbraco.com/documentation/development-guidelines/breaking-changes](https://our.umbraco.com/documentation/development-guidelines/breaking-changes)
 
-## Can I opt out of product auto upgrades?
+## Can I opt out of automated upgrades?
 
-No, it´s not possible to opt-out of product auto upgrades on Umbraco Cloud.
+Yes. You can enable or disable automatic minor and/or patch upgrades from the Cloud Portal:
 
-To support a site on Umbraco Cloud, all sites must run the latest versions of our products. That way, we know the sites are running in the most stable state.
+1. Go to your Umbraco Cloud project.
+2. Navigate to **Configuration** -> **Automatic Upgrades**.
+3. Toggle **Automatic Minor Upgrades** or **Automatic Patch Upgrades** on or off.
+
+### Minor Upgrades
+
+New projects have automatic minor upgrades enabled by default. When disabled, you are responsible for upgrading to new minor versions manually. See the [Minor Upgrades](minor-upgrades.md) article for details.
+
+### Patch Upgrades
+
+By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released, including security patches. This ensures all sites run the most stable and secure versions of our products.
+
+If your project requires full control over the timing of upgrades, you can disable automated patch upgrades.
+
+{% hint style="danger" %}
+When you disable automated patch upgrades, you are responsible for keeping your project up to date. Falling behind on patches may affect your eligibility for support and can expose your project to known security vulnerabilities.
+{% endhint %}
+
+{% hint style="warning" %}
+We reserve the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
+{% endhint %}
 
 ## Related Information
 

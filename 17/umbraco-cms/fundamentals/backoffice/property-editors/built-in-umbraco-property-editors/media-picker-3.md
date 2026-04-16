@@ -71,7 +71,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("medias");
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaUrl()" style="width:200px" />
+        <img src="@entry.MediaUrl()" />
     }
 }
 ```
@@ -84,7 +84,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
     var listOfImages = Model.Value<IEnumerable<IPublishedContent>>("medias");
     foreach (var image in listOfImages)
     {
-        <img src="@image.Url()" alt="@image.Name" />
+        <img src="@image.Url()" />
     }
 }
 ```
@@ -100,7 +100,7 @@ While `MediaWithCrops` is the default return type, `IPublishedContent` may be us
     var typedMultiMediaPicker = Model.Medias;
     foreach (var entry in typedMultiMediaPicker)
     {
-        <img src="@entry.MediaUrl()" style="width:200px" />
+        <img src="@entry.MediaUrl()" />
     }
 }
 ```
@@ -113,7 +113,7 @@ While `MediaWithCrops` is the default return type, `IPublishedContent` may be us
     var typedMediaPickerSingle = Model.Value<MediaWithCrops>("media");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.MediaUrl()" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+        <img src="@typedMediaPickerSingle.MediaUrl()" />
     }
 }
 ```
@@ -126,7 +126,7 @@ While `MediaWithCrops` is the default return type, `IPublishedContent` may be us
     var typedMediaPickerSingle = Model.Media;
     if (typedMediaPickerSingle is MediaWithCrops mediaEntry)
     {
-        <img src="@mediaEntry.MediaUrl()" style="width:200px"/>
+        <img src="@mediaEntry.MediaUrl()" />
     }
 }
 ```
@@ -141,7 +141,7 @@ The following is an example of how to retrieve a crop from a `MediaWithCrops` en
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@entry.GetCropUrl("cropAlias")"/>
+        <img src="@entry.GetCropUrl("cropAlias")" />
     }
 }
 ```
@@ -154,14 +154,14 @@ You can retrieve globally defined crops explicitly by using `GetCropUrl` on the 
 @{
     foreach (var entry in Model.Medias)
     {
-        <img src="@Url.GetCropUrl(entry, "cropAlias")"/>
+        <img src="@Url.GetCropUrl(entry, "cropAlias")" />
     }
 }
 ```
 
 ### Add values programmatically
 
-See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v15/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 The following sample will update a single image in a Media Picker.
 

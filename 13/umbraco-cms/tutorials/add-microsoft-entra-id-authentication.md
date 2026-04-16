@@ -1,9 +1,10 @@
 ---
 description: >-
-  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to login to Umbraco as a member.
+  Learn how to use Microsoft Entra ID (Azure Active Directory) credentials to
+  login to Umbraco as a member.
 ---
 
-# Add Microsoft Entra ID (Azure Active Directory) authentication (Members)
+# Add Microsoft Entra ID authentication (Members)
 
 This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory/Azure AD) for the member login on your Umbraco CMS website.
 
@@ -27,17 +28,13 @@ Before your applications can interact with Entra ID, they must be registered wit
 Follow these steps to register your web application with your Entra tenant and configure it for member sign-in:
 
 1. Follow the instructions in [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret) using the [Microsoft Entra admin center](https://entra.microsoft.com/).
-
-2. On the **App Registrations** screen, copy the **Application (Client) ID** value. You will need this in your code later. 
+2. On the **App Registrations** screen, copy the **Application (Client) ID** value. You will need this in your code later.
 3. Click **Add a certificate or secret**.
 
-![Entra Example: App Registration Screen](<../../../13/umbraco-cms/tutorials/images/Entra-Example-App-Registration-ClientCredentials.png>)
+![Entra Example: App Registration Screen](../.gitbook/assets/Entra-Example-App-Registration-ClientCredentials.png)
 
 4. Add a new client secret and copy the generated **Value**. You will use this in your code as well.
-
-
 5. Return to the **Overview** screen and click **Add a Redirect URI**.
-
 6. Add full URLs for all of your applicable environments (local, dev, live, etc.) with the path `/umbraco-b2c-members-signin` appended. For example, `https://mysite.com/umbraco-b2c-members-signin`.
 
 ## Step 2: Install the NuGet package
@@ -129,9 +126,7 @@ public class EntraIDB2CMembersExternalLoginProviderOptions : IConfigureNamedOpti
 {% endcode %}
 
 {% hint style="info" %}
-
 With **autolinking**, if a visitor uses **Sign in with Microsoft** and their email matches a member, that member is signed in. If no matching member exists, a new one is created. By default, it isn’t assigned to any groups.
-
 {% endhint %}
 
 2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
@@ -186,21 +181,16 @@ public static class MemberAuthenticationExtensions
 {% endcode %}
 
 {% hint style="info" %}
-
 Ensure to replace `YOURCLIENTID` and `YOURCLIENTSECRET` in the code with the values from the Entra ID tenant. If Entra ID is configured to use accounts in the organizational directory only (single tenant registration), you must specify the Token and Authorization endpoint. For more information on the differences between single and multi tenant registration, refer to [Microsoft's identity platform documentation](https://learn.microsoft.com/en-us/entra/identity-platform/howto-modify-supported-accounts).
-
 {% endhint %}
 
 {% hint style="warning" %}
-
 The Client Secret value will expire and must be regenerated in the Entra admin center. Use configurable secret storage to provide the value to your code, rather than hard-coding it.
-
 {% endhint %}
 
 4. Add the Members authentication configuration in the `Program.cs` file:
 
 {% code title="Program.cs" lineNumbers="true" %}
-
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -211,20 +201,17 @@ builder.CreateUmbracoBuilder()
     .ConfigureAuthenticationMembers()
     .Build();
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
-
 Are you building a package for Umbraco?
 
 Then you will not have access to the `Program.cs` file. Instead you need to create a composer in order to register your extension method.
 
 Learn more about this in the [Dependency Injection](../reference/using-ioc.md) article.
-
 {% endhint %}
 
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](images/AD_Login_Members.png)
+![Entra ID Login Screen](../.gitbook/assets/AD_Login_Members.png)

@@ -14,6 +14,12 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
+### 17.2.0 — Database Schema Alignment
+
+Engage 17.2.0 introduces a rewritten analytics data cleanup system and a database schema alignment. This is a **manual post-upgrade step** that requires running SQL scripts during a maintenance window.
+
+See the [Schema Alignment Guide](schema-alignment-guide.md) for full details on the cleanup changes, configuration settings, and step-by-step post-upgrade instructions.
+
 ### 17.0.0 (Umbraco Engage v17 Launch)
 
 With the introduction of Engage version 17, breaking changes have been introduced to accommodate the transition between multiple major versions of the core CMS.
@@ -25,6 +31,21 @@ Three database structure changes have been introduced in the transition from Eng
 The same applies to all references to Umbraco user groups in Engage tables. They have also been updated to use the unique key of that user group instead.
 
 The last update involves a change to the `[umbracoEngageAbTestingAbTestVariant]` table, which now contains a new column `[redirectNodeKey]` , which contains a NodeKey used for Split URL A/B Tests.
+
+#### Regenerate Reporting Data
+
+After upgrading to Engage v17 from an older major version, you need to manually regenerate the reporting data to ensure Analytics works correctly.
+
+To regenerate the reporting data:
+
+1. Go to the **Settings** section in the Umbraco backoffice.
+2. Navigate to **Engage** > **Configuration**.
+3. Select the **Reporting** tab.
+4. Click the **Regenerate** button.
+
+{% hint style="warning" %}
+Until the reporting data is regenerated, Analytics dashboards may show incomplete or missing data.
+{% endhint %}
 
 #### Public Services
 

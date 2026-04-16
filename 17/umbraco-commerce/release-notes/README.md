@@ -18,6 +18,40 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.1.3 (26th Feb 2026)
+* Make `DiscountRuleContext` and `DiscountRewardContext` constructors public for custom `DiscountsPriceAdjuster` implementations
+* Fix transaction fee not being tracked on `AuthorizeTransactionActivity`
+
+#### [17.1.2](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.2) (19th Feb 2026)
+* Updated the hashing depth of the realtime shipping rates calculator
+* Fixed passing transaction fee on payment authorisation
+* Add searching to Gift Cards [#765](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/765)
+* Enable cachebusting for backoffice JavaScript assets [#793](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/793)
+* Fix shipping and payment buttons in Cart order details [#820](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/820)
+* Fix order CSV export [#822](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/822)
+
+
+#### [17.1.1](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.1) (29th Jan 2026)
+
+* Allow decimal input for percentage property editor [#817](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/817)
+* Make `CompactSortableOrderNumberGenerator` and `INodeIdAccessor` public [#819](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/819)
+
+#### 17.1.0 (22nd Jan 2026)
+
+* 17.1.0 stable release
+
+#### 17.1.0-rc1 (8th Jan 2026)
+
+* Implemented new order caching layer with version based expiry for better load balancing support.
+* Added support for a refund reason when refunding an order.
+* Added Refund Rate analytics widget.
+* Added Top 50 Buyers analytics widget.
+* Added Low Stock analytics widget.
+* Added browser titles to workspaces.
+* Added UFM view template support to editable model properties.
+* Fixed print templates not rendering if you don't have Settings section permission.
+* Fixed variants content endpoints not returning data.
+
 #### 17.0.0 (27th Nov 2025)
 
 * Version 17 final release.

@@ -243,7 +243,8 @@ Webhook settings are configured in `appsettings.*.json` under `Umbraco::CMS`:
                 "MaximumRetries": 5,
                 "Period": "00:00:10",
                 "EnableLoggingCleanup": true,
-                "KeepLogsForDays": 30
+                "KeepLogsForDays": 30,
+                "PayloadType": "Legacy"
             }
         }
     }
@@ -251,13 +252,14 @@ Webhook settings are configured in `appsettings.*.json` under `Umbraco::CMS`:
 ```
 {% endcode %}
 
-| Setting                | Description                                    |
-| ---------------------- | ---------------------------------------------- |
-| `Enabled`              | Enables or disables webhooks.                  |
-| `MaximumRetries`       | Sets the maximum number of retry attempts.     |
-| `Period`               | Defines the retry interval.                    |
-| `EnableLoggingCleanup` | Enables automatic cleanup of logs.             |
-| `KeepLogsForDays`      | Determines how long webhook logs are retained. |
+| Setting                | Description                                       |
+|------------------------|---------------------------------------------------|
+| `Enabled`              | Enables or disables webhooks.                     |
+| `MaximumRetries`       | Sets the maximum number of retry attempts.        |
+| `Period`               | Defines the retry interval.                       |
+| `EnableLoggingCleanup` | Enables automatic cleanup of logs.                |
+| `KeepLogsForDays`      | Determines how long webhook logs are retained.    |
+| `PayloadType`          | Sets the webhook [payload format](#json-payload). |
 
 ## Testing Webhooks
 

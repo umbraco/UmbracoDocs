@@ -1,24 +1,24 @@
+---
+description: Learn how to break the connection between a Baseline project and one of its Child projects.
+---
+
 # Break Reference between Baseline and Child Project
 
-Umbraco Cloud Portal offers a powerful baseline-child relationship between projects. A Baseline Child project is similar to a Fork (forked repository) on GitHub. We create a clone of an existing project while maintaining a connection between the two projects.
-
-If, at some point, you wish to sever the connection between the baseline and one of its child projects, you can do so. This action is possible with admin privileges.
+To remove the connection between a Baseline and a Child project, you need admin privileges. Once disconnected, the Child project becomes a standalone project and will no longer receive updates from the Baseline.
 
 {% hint style="warning" %}
-Kindly be aware that this action cannot be undone.
+Breaking the connection cannot be undone.
 {% endhint %}
 
-![Baseline child project](images/Baseline-child-project.png)
+1. Go to the Baseline project in the Umbraco Cloud portal.
+2. Click the **Baseline** label at the bottom of the left-side menu.
+   * Alternatively, go to **Management** > **Baselines**.
 
-From this page, you can break the connection of all the Child Projects this Baseline project has.
+   ![The Baselines management page showing connected Child projects](../../../../.gitbook/assets/manage-child-projects.png)
+3. Click the ![Disconnect icon](../../../../.gitbook/assets/disconnect-icon.png) next to the Child project you want to disconnect.
 
-To break reference between a baseline and child project:
+   A confirmation window appears, showing the consequences of disconnecting.
+4. Enter the Child project name you wish to disconnect.
+5. Click **Disconnect**.
 
-1. Go to the Baseline project on the Cloud portal.
-2. Click on Manage updates **here**.
-3. Click on the ![Disconnect](images/disconnect-icon.png) icon in the **Manage child projects** page.
-4. A window with the consequences of the action is displayed.
-5. Check all the boxes after reading and understanding the consequences mentioned.
-6.  Click **Disconnect**.
-
-    ![Break Baseline and child project](images/Break-baseline.gif)
+   ![Break Baseline and child project](../../../../.gitbook/assets/break-reference.png)

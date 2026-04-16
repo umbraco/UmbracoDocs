@@ -18,7 +18,7 @@ To set up your Block List Editor property, create a new _Data Type_ and select *
 
 Then you will see the configuration options for a Block List as shown below.
 
-![Block List - Data Type Definition](../../built-in-property-editors/block-editor/images/BlockListEditor_DataType.jpg)
+![Block List - Data Type Definition](<../../../../../.gitbook/assets/BlockListEditor_DataType (1).jpg>)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -35,7 +35,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Block List Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](../../built-in-property-editors/block-editor/images/BlockListEditor_DataType_Blocks.png)
+![Block List - Data Type Block Configuration](<../../../../../.gitbook/assets/BlockListEditor_DataType_Blocks (1).png>)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -75,15 +75,15 @@ These properties are relevant when you work with custom views.
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to Add content.
 
-![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor_AddContent.png)
+![Block List - Add Content](<../../../../../.gitbook/assets/BlockListEditor_AddContent (1).png>)
 
 Clicking the Add content button brings up the Block Catalogue.
 
-![Block List - Setup](../../built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker_simplesetup.jpg)
+![Block List - Setup](<../../../../../.gitbook/assets/BlockListEditor_BlockPicker_simplesetup (1).jpg>)
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](../../built-in-property-editors/block-editor/images/BlockListEditor_BlockPicker.jpg)
+![Block List - example setup from Umbraco.com](<../../../../../.gitbook/assets/BlockListEditor_BlockPicker (1).jpg>)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -91,15 +91,15 @@ Depending on whether your Block List Editor is setup to use default or inline ed
 
 In default mode you will enter the editing overlay of that Block:
 
-![Block List - Overlay editing](../../built-in-property-editors/block-editor/images/BlockListEditor_EditingOverlay.jpg)
+![Block List - Overlay editing](<../../../../../.gitbook/assets/BlockListEditor_EditingOverlay (1).jpg>)
 
 In inline editing mode the new Blocks will expand to show its inline editor:
 
-![Block List - Inline editing](../../built-in-property-editors/block-editor/images/BlockListEditor_InlineEditing.jpg)
+![Block List - Inline editing](<../../../../../.gitbook/assets/BlockListEditor_InlineEditing (1).jpg>)
 
 More Blocks can be added to the list by clicking the Add content button or using the inline Add content button that appears on hover between or above existing Blocks.
 
-![Block List - Add Content](../../built-in-property-editors/block-editor/images/BlockListEditor_AddContentInline.jpg)
+![Block List - Add Content](<../../../../../.gitbook/assets/BlockListEditor_AddContentInline (1).jpg>)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
@@ -157,10 +157,6 @@ With ModelsBuilder:
 // Output the value of field with alias 'heading' from the Element Type selected as Content section
 <h1>@content.Heading</h1>
 ```
-
-{% embed url="<https://www.youtube.com/watch?ab_channel=UmbracoLearningBase&v=ltZTgfIoCtg>" %}
-Working with Block List Editor in Umbraco
-{% endembed %}
 
 ### 2. Build your own rendering
 

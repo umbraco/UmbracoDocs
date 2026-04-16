@@ -36,7 +36,7 @@ Here are a few examples of when to create an issue:
 1. Go to the [Issue Tracker on GitHub](https://github.com/umbraco/UmbracoDocs/issues).
 2. Select **New Issue**.
 
-![New issue on GitHub](../images/new-issue-new.png)
+![New issue on GitHub](../../.gitbook/assets/new-issue-new.png)
 
 3. Fill out the form, answering the questions to explain your suggestion or problem clearly.
 4. Submit the issue.
