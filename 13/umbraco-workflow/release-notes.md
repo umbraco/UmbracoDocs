@@ -17,6 +17,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.5.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.4) (April 16 2026)
+* Replaced RazorLight with IRazorViewEngine and precompiled Razor views shipped in the StaticAssets RCL. Email templates are now standard partial views, making customization simpler and removing the third-party RazorLight dependency. [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
+
 ### [13.5.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.3) (March 2 2026)
 * Fixes a bug where content scheduling via workflow approval could result in a key conflict exception, causing workflow initiation to fail [#132](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/132)
 * Fixes Document Type filtering in Content Review configuration. A Document Type should be considered valid if it is not an Element, and has at least one property [#131](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/131)
