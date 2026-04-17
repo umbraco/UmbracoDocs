@@ -486,6 +486,7 @@
   * [Articles and Article Items](tutorials/creating-a-basic-website/article-parent-and-article-items.md)
   * [Adding Language Variants](tutorials/creating-a-basic-website/adding-language-variants.md)
   * [Conclusions](tutorials/creating-a-basic-website/conclusion.md)
+* [Building a One-Page Site](tutorials/building-a-one-page-site.md)
 * [Creating your First Extension](tutorials/creating-your-first-extension.md)
 * [Creating a Custom Dashboard](tutorials/creating-a-custom-dashboard/README.md)
   * [Adding localization to the dashboard](tutorials/creating-a-custom-dashboard/adding-localization-to-the-dashboard.md)
