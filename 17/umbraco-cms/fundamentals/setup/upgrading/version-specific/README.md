@@ -250,7 +250,7 @@ In Umbraco 15, two property editors were available for a rich text editor: TinyM
 
 With Umbraco 16, only TipTap is available as an option out of the box. TinyMCE's [change of license](https://github.com/tinymce/tinymce/issues/9453#issuecomment-2327646149) precludes us from shipping it with the MIT-licensed Umbraco CMS.
 
-When upgrading to Umbraco 16, any data types using TinyMCE will be migrated to use TipTap.
+When upgrading to Umbraco 16, any data types using TinyMCE will be migrated to use TipTap. (Data will be migrated for Block List, Block Grid and Rich Text Editor property editors - Third-party property editors data can also be included in the migration by using an implementation of [ITypedLocalLinkProcessor](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/LocalLinks/ITypedLocalLinkProcessor.cs)
 
 To continue to use TinyMCE, a third-party package must be installed prior to the upgrade. This will disable the migration and allow you to continue with TinyMCE.
 
