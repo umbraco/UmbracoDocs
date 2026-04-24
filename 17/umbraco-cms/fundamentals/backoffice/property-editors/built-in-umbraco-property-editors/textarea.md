@@ -18,11 +18,11 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](<../../../../.gitbook/assets/Textarea-Content-v8 (1).png>)
+![Textarea Content Example](../../../../.gitbook/assets/Textarea-Content-v8.png)
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](<../../../../.gitbook/assets/Textarea-Content-Limit-v8 (1).png>)
+![Textbox Content Example With Limits](../../../../.gitbook/assets/Textarea-Content-Limit-v8.png)
 
 ## MVC View Example
 

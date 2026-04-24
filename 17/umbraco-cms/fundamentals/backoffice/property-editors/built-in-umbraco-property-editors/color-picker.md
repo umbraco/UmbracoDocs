@@ -18,7 +18,7 @@ It is possible to add a label to use with the color.
 
 ## Content Example
 
-![Color Picker Content](<../../../../.gitbook/assets/Color-Picker-Content-v8 (1).png>)
+![Color Picker Content](../../../../.gitbook/assets/Color-Picker-Content-v8.png)
 
 ## Example with Models Builder
 

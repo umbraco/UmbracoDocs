@@ -28,7 +28,7 @@ This allows you to set up a maximum value. If you will always need a maximum val
 
 ## Content Example
 
-![Numeric Content Definition](<../../../../.gitbook/assets/numeric-content (1).png>)
+![Numeric Content Definition](../../../../.gitbook/assets/numeric-content.png)
 
 ## MVC View Examples
 

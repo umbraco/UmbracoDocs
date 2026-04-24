@@ -22,7 +22,7 @@ The change was made as the word **Content** in the backoffice acts as an umbrell
 
 ## Document Picker Example
 
-![Document Picker Content](<../../../../.gitbook/assets/Content-Picker-Content-v10 (1).png>)
+![Document Picker Content](../../../../.gitbook/assets/Content-Picker-Content-v10.png)
 
 ## MVC View Example
 

@@ -30,7 +30,7 @@ You can see the used schema of a Property Editor in the backoffice of Umbraco wh
 
 ## A custom schema or not?
 
-Umbraco ships with a collection of [default property editor schemas](../../../tutorials/creating-a-property-editor/adding-server-side-validation/default-property-editor-schema-aliases/) that cover most scenarios that are less demanding. Although each situation is different, if you answer yes to any of the following statements, it makes sense to create a custom schema:
+Umbraco ships with a collection of [default property editor schemas](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/tutorials/creating-a-property-editor/adding-server-side-validation/default-property-editor-schema-aliases/README.md) that cover most scenarios that are less demanding. Although each situation is different, if you answer yes to any of the following statements, it makes sense to create a custom schema:
 
 * You expect the schema to be used by multiple Property Editor UIs.
 * You need a custom [Property Value Converter](../property-value-converters.md) to convert the data going into the cache, or you want the Umbraco ModelsBuilder to have a more specific, strongly-typed model.
@@ -58,7 +58,7 @@ These components are related in the following way:
 ![The elements that are covered in this article](../../../.gitbook/assets/property-editor-schema-backend.jpg)
 
 {% hint style="info" %}
-For a complete example, there is a tutorial for creating a Property Editor. It shows how to [implement a schema to add server-side validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md). Use this article together with that tutorial.
+For a complete example, there is a tutorial for creating a Property Editor. It shows how to [implement a schema to add server-side validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation/). Use this article together with that tutorial.
 {% endhint %}
 
 ### DataEditor
@@ -87,7 +87,7 @@ public class MySuggestionsDataEditor : DataEditor
   * Has a complex configuration that varies per Data Type.
   * Is a block-based editor or a similar complex scenario.
 
-See the [full tutorial on how to implement the DataEditor](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md).
+See the [full tutorial on how to implement the DataEditor](../../../tutorials/creating-a-property-editor/adding-server-side-validation/).
 
 ### DataValueEditor
 
@@ -112,7 +112,7 @@ public class MySuggestionsDataValueEditor : DataValueEditor
 
 Data Value Editors can have one or more validators. These validators test whether the data complies with the settings configured in the Property Editor.
 
-See the [full tutorial](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md) on how to implement the `DataValueEditor`.
+See the [full tutorial](../../../tutorials/creating-a-property-editor/adding-server-side-validation/) on how to implement the `DataValueEditor`.
 
 ### Register the schema client-side
 
@@ -153,7 +153,7 @@ This chapter covers advanced scenarios in Property Editor Schema development. It
 
 ### Custom Data Editors without a Data Value Editor
 
-Usually, when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, you can use one of the [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases/) instead. In most cases, you do not need to create a Property Editor Schema at all.
+Usually, when you create a custom Data Editor Schema, you implement both the Data Editor and the Data Value Editor. If you do not need custom validation or data manipulation, you can use one of the [default property editor schemas](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/tutorials/creating-a-property-editor/default-property-editor-schema-aliases/README.md) instead. In most cases, you do not need to create a Property Editor Schema at all.
 
 However, it is possible to create a custom Data Editor, but let the handling of the data be handled by the `DataValueEditor` base class itself. On a Data Editor, you can specify the `ValueType`. This is the type that determines how the data is stored in the database. The `DataValueEditor` can process the data based on the `ValueType`. This means you can create a Data Editor without implementing a custom Data Value Editor.
 

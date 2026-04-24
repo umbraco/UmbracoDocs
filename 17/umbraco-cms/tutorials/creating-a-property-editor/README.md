@@ -69,8 +69,8 @@ Create a manifest file named `umbraco-package.json` at the root of the `suggesti
 ```
 {% endcode %}
 {% endtab %}
-{% tab title="TypeScript Manifest" %}
 
+{% tab title="TypeScript Manifest" %}
 Extension authors define the property editor UI manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../customizing/extending-overview/extension-types/backoffice-entry-point.md) extension.
 
 Create a manifest file named `manifests.ts` and add the following code:
@@ -106,7 +106,7 @@ The `umbraco-package.json` files are cached by the server. When creating new `um
 {% hint style="info" %}
 It is important to select the right `propertyEditorSchemaAlias` as it affects how the Property Editor data is made available when rendering the website.
 
-In this example, `Umbraco.Plain.String` is selected because a string value is expected. For more options, see the [default Property Editor Schema aliases](default-property-editor-schema-aliases.md) article.
+In this example, `Umbraco.Plain.String` is selected because a string value is expected. For more options, see the [default Property Editor Schema aliases](adding-server-side-validation/default-property-editor-schema-aliases.md) article.
 {% endhint %}
 
 ## Creating a Web Component
@@ -139,13 +139,12 @@ declare global {
 ```
 {% endcode %}
 
-3.  In the `vite.config.ts` file, replace the following:
+3. In the `vite.config.ts` file, replace the following:
 
-  - `entry` to the newly created `.ts` file.
-  - `outDir: 'dist'` so the output lands in `App_Plugins/suggestions/dist/`.
+* `entry` to the newly created `.ts` file.
+* `outDir: 'dist'` so the output lands in `App_Plugins/suggestions/dist/`.
 
 {% code title="vite.config.ts" lineNumbers="true" %}
-
 ```typescript
 	import { defineConfig } from "vite";
 	
@@ -166,7 +165,6 @@ declare global {
 	    base: "/App_Plugins/client/", // the base path of the app in the browser (used for assets)
 	});
 ```
-
 {% endcode %}
 
 The basic parts of the editor are now in place:

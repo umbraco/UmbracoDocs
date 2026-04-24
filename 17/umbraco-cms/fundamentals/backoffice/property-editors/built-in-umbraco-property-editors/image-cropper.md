@@ -40,7 +40,7 @@ The Image Cropper comes with 3 modes:
 
 The editor exposes a drop area for files. Select it to upload an image.
 
-![Image Cropper Upload](<../../../../.gitbook/assets/imageCropper-upload-v8 (1).png>)
+![Image Cropper Upload](../../../../.gitbook/assets/imageCropper-upload-v8.png)
 
 ### Set focal point
 

@@ -10,7 +10,7 @@ To set up notifications for a content item:
     ![Notifications Menu](../../../.gitbook/assets/Notifications-menu-v14.png)
 3.  Check the actions in which you are interested and you will receive notifications each time the given action occurs.
 
-    ![notifications.jpg](<../../../.gitbook/assets/notifications-v9 (1).png>)
+    ![notifications.jpg](../../../.gitbook/assets/notifications-v9.png)
 4. Click **Save**.
 
 {% hint style="info" %}

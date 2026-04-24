@@ -424,7 +424,7 @@ public class SiteService : ISiteService
 
 In order to replicate `ContentAtRoot` outside of a web request, you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to an in-memory store of unique keys for all root nodes within the Umbraco Content or Media trees.
 
-{% hint style="tip" %}
+{% hint style="info" %}
 This replaces the `PublishedContentCache` (or PublishedMediaCache) `GetAtRoot()` method.
 {% endhint %}
 
@@ -564,7 +564,7 @@ public class BlogPostController : RenderController
 
 You can generate this ctor in Visual Studio by using either ctrl + . or alt + enter when your cursor is on the base class:
 
-<figure><img src="../../.gitbook/assets/vs-di-constructor-generation-tip (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vs-di-constructor-generation-tip.gif" alt=""><figcaption></figcaption></figure>
 
 #### Using the SiteService inside a View
 

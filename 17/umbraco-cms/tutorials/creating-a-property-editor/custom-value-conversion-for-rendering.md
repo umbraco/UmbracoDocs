@@ -12,7 +12,7 @@ To this end, we will create a Property Value Converter that converts the stored 
 
 ## When should I use a Property Value Converter?
 
-A Property Value Converter is usually not necessary. Based on the chosen `propertyEditorSchemaAlias`, Umbraco will automatically provide appropriately typed models for rendering the Property Editor. For more information, see the [Default Property Editor Schema Alias options](default-property-editor-schema-aliases.md) article.
+A Property Value Converter is usually not necessary. Based on the chosen `propertyEditorSchemaAlias`, Umbraco will automatically provide appropriately typed models for rendering the Property Editor. For more information, see the [Default Property Editor Schema Alias options](adding-server-side-validation/default-property-editor-schema-aliases.md) article.
 
 The most common use-cases for building a Property Value Converter are:
 

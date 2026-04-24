@@ -96,7 +96,7 @@ The `tree` extension type is used to create a hierarchical structure composed of
 
 The `workspace` extension type provides functionality that operates within specific workspace environments, such as document editing, media management, or member editing.
 
-### [Property Editor UIs](../../../reference/property-editor-uis/)
+### [Property Editor UIs](../../../reference/property-editor-uis.md)
 
 The `PropertyEditorUi` extension type allows you to create custom property editors in the Umbraco backoffice. See the [guide on how to work with and create property editors](../../property-editors/) for more information on how to implement this type of extension.
 
@@ -180,9 +180,9 @@ These are the current types of UI Extensions:
 
 **Repositories**
 
-| Type       | Description                                                                                                                                                                                                                            |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| repository | A repository is a class that can be used to interact with a data source. It is used either by context classes or elements directly to interact with the data source. Read more about [Repositories](../../foundation/repositories.md). |
+| Type       | Description                                                                                                                                                                                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| repository | A repository is a class that can be used to interact with a data source. It is used either by context classes or elements directly to interact with the data source. Read more about [Repositories](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/foundation/repositories.md). |
 
 **Sections**
 

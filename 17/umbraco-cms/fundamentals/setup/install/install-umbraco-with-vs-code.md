@@ -7,7 +7,7 @@ The benefit of using Visual Studio Code is that it is super quick to get up and 
 1. Go to [https://code.visualstudio.com/](https://code.visualstudio.com/) and download Visual Studio Code for free.
 2. Launch Visual Studio Code once the installation is complete.
 3. Click the extensions menu on the left side.
-4. Search for **C#** and install it.
+4.  Search for **C#** and install it.
 
     ![Visual Studio Code install extension](../../../.gitbook/assets/Marketplace.jpg)
 
@@ -25,15 +25,15 @@ Follow the [Install using .NET CLI](install-umbraco-with-templates.md) article t
 3. Type **Tasks: Configure**.
 4. Select **Tasks: Configure Task**.
 
-![Configure task option](<../../../.gitbook/assets/ConfigureTask (1).png>)
+![Configure task option](../../../.gitbook/assets/ConfigureTask.png)
 
 5. Select **Create task.json from template**.
 
-![Create task from template](<../../../.gitbook/assets/TaskJsonFromTemplate (1).png>)
+![Create task from template](../../../.gitbook/assets/TaskJsonFromTemplate.png)
 
 6. select **.NET Core** as your template.
 
-![Create .NET Core Template](<../../../.gitbook/assets/NetcoreTemplate (1).png>)
+![Create .NET Core Template](../../../.gitbook/assets/NetcoreTemplate.png)
 
 Visual Studio Code creates a folder called **.vscode** that contains a file called **tasks.json**. The **tasks.json** file tells Visual Studio Code how to build your project.
 
@@ -44,19 +44,18 @@ Visual Studio Code creates a folder called **.vscode** that contains a file call
 
 9. Select **.NET 5+ and .NET Core**.
 
-![Prompt Menu](<../../../.gitbook/assets/Prompt_Menu (1).jpg>)
+![Prompt Menu](../../../.gitbook/assets/Prompt_Menu.jpg)
 
 {% hint style="info" %}
 If **.NET 5+ and .NET Core** is missing in the drop-down menu:
 
 1. Press **Ctrl + Shift + P** (on Windows/Linux) or **Cmd + Shift + P** (on macOS) to open the Command Palette.
-2. Search for the command `.NET: Generate Assets for Build and Debug`.
-   This command will generate the necessary assets for building and debugging your .NET application.
+2. Search for the command `.NET: Generate Assets for Build and Debug`. This command will generate the necessary assets for building and debugging your .NET application.
 {% endhint %}
 
 You'll see a green play button appear with a dropdown where **.NET Core Launch (web)** is selected.
 
-![Green play button options](<../../../.gitbook/assets/Dropdown_option (1).jpg>)
+![Green play button options](../../../.gitbook/assets/Dropdown_option.jpg)
 
 If you navigate to the **Explorer** section, a new **launch.json** file is created in the **.vscode** folder. When you press F5, the **launch.json** file tells Visual Studio Code to build your project, run it, and then open a browser.
 

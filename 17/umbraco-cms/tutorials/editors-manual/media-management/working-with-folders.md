@@ -70,10 +70,10 @@ To move Folders within the Media section:
 1. Click **•••** next to the folder.
 2.  Select **Move**.
 
-    ![Move Folder](<../../../.gitbook/assets/Move-Folder-v9 (1).png>)
+    ![Move Folder](../../../.gitbook/assets/Move-Folder-v9.png)
 3.  Choose the location where you want to move the folder to in the tree structure.
 
-    ![Move Media.png](<../../../.gitbook/assets/Move-media-location-v9 (1).png>)
+    ![Move Media.png](../../../.gitbook/assets/Move-media-location-v9.png)
 4. Click **Move**.
 5. Click **OK** to dismiss the confirmation message.
 
@@ -86,8 +86,8 @@ To sort the order of the items in a folder:
 1. Click **...** next to the folder you want to sort.
 2.  Select **Sort**.
 
-    ![Sort Folder](<../../../.gitbook/assets/Sort-Folder-v9 (1).png>)
+    ![Sort Folder](../../../.gitbook/assets/Sort-Folder-v9.png)
 3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
 
-    ![Sort Items](<../../../.gitbook/assets/sort-items-v9 (1).png>)
+    ![Sort Items](../../../.gitbook/assets/sort-items-v9.png)
 4. Click **Save.**

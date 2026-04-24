@@ -1,7 +1,8 @@
 ---
 meta.Title: Umbraco Database
 description: >-
-  Learn how to create custom database tables in Umbraco using Entity Framework Core, including migrations, composers, and notification handlers.
+  Learn how to create custom database tables in Umbraco using Entity Framework
+  Core, including migrations, composers, and notification handlers.
 ---
 
 # Creating Custom Database Tables with Entity Framework
@@ -44,12 +45,12 @@ Ensure the following requirements are met before starting:
 
 You will:
 
-* [Create a model class](#step-1-create-a-model-class)
-* [Create a DbContext](#step-2-create-the-dbcontext-class)
-* [Register the DbContext in a Composer](#step-3-register-the-dbcontext-class)
-* [Generate a migration](#step-4-generate-the-migration)
-* [Create a notification handler to run migrations](#step-5-create-the-notification-handler)
-* [Register the notification handler](#step-6-register-the-notification-handler)
+* [Create a model class](getting-started-with-entity-framework-core.md#step-1-create-a-model-class)
+* [Create a DbContext](getting-started-with-entity-framework-core.md#step-2-create-the-dbcontext-class)
+* [Register the DbContext in a Composer](getting-started-with-entity-framework-core.md#step-3-register-the-dbcontext-class)
+* [Generate a migration](getting-started-with-entity-framework-core.md#step-4-generate-the-migration)
+* [Create a notification handler to run migrations](getting-started-with-entity-framework-core.md#step-5-create-the-notification-handler)
+* [Register the notification handler](getting-started-with-entity-framework-core.md#step-6-register-the-notification-handler)
 
 ## Step 1: Create a Model Class
 
@@ -57,7 +58,6 @@ You will:
 2. Add the following code:
 
 {% code title="BlogComment.cs" %}
-
 ```csharp
 namespace Umbraco.Demo;
 
@@ -76,7 +76,6 @@ public class BlogComment
     public string Message { get; set; } = string.Empty;
 }
 ```
-
 {% endcode %}
 
 ## Step 2: Create the DbContext class
@@ -85,7 +84,6 @@ public class BlogComment
 2. Add the following code:
 
 {% code title="BlogContext.cs" %}
-
 ```csharp
 using Microsoft.EntityFrameworkCore;
 
@@ -113,7 +111,6 @@ public class BlogContext : DbContext
         });
 }
 ```
-
 {% endcode %}
 
 ## Step 3: Register the DbContext class
@@ -124,7 +121,6 @@ The `DbContext` must be registered so Umbraco can resolve it. The recommended pl
 2. Register the context using `AddUmbracoDbContext` inside the `Compose` method:
 
 {% code title="BlogCommentsComposer.cs" %}
-
 ```csharp
 using Microsoft.EntityFrameworkCore;
 using Umbraco.Cms.Core.Composing;
@@ -151,7 +147,6 @@ public class BlogCommentsComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 Using `UseDatabaseProvider(providerName, connectionString)` is the recommended approach. It reads the provider name and connection string directly from your Umbraco configuration (`appsettings.json`). It works correctly for SQL Server, SQLite, and any other supported database without any hardcoding.
@@ -198,7 +193,6 @@ To ensure migrations are applied automatically at startup:
 3. Add the following code:
 
 {% code title="RunBlogCommentsMigration.cs" %}
-
 ```csharp
 using Microsoft.EntityFrameworkCore;
 using Umbraco.Cms.Core.Events;
@@ -226,7 +220,6 @@ public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplica
     }
 }
 ```
-
 {% endcode %}
 
 ## Step 6: Register the Notification Handler
@@ -235,7 +228,6 @@ public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplica
 2. Add the handler registration inside `Compose`.
 
 {% code title="BlogCommentsComposer.cs" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Notifications;
@@ -262,7 +254,6 @@ public class BlogCommentsComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 ## Verify the Migration
@@ -274,7 +265,7 @@ After registering the notification handler:
 3. Open your database.
 4. Confirm that the `blogComment` table has been created.
 
-![Database result of a migration](<../.gitbook/assets/db-table (1) (1).png>)
+![Database result of a migration](<../.gitbook/assets/db-table (1).png>)
 
 {% hint style="info" %}
 If you are using the default SQLite database, you cannot use SQL Server Management Studio (SSMS) to view your tables. Use a tool like **DB Browser for SQLite** and open the file located at `/umbraco/Data/Umbraco.sqlite.db`.
@@ -292,11 +283,9 @@ The example below creates a `BlogCommentsController.cs` file with an `UmbracoApi
 
 {% hint style="warning" %}
 This example uses the `BlogComment` class directly as a database model. The recommended approach would be to map it to a ViewModel instead, so your database and UI layers are not coupled. Error handling and data validation have been omitted for brevity.
-
 {% endhint %}
 
 {% code title="BlogCommentsController.cs" %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Persistence.EFCore.Scoping;
@@ -350,5 +339,4 @@ public class BlogCommentsController : Controller
 }
 
 ```
-
 {% endcode %}

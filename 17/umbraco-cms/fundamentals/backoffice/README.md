@@ -26,7 +26,7 @@ _The **Section menu** is the horizontal menu located on the top of the backoffic
 
 [Read more about the section menu](sections.md).
 
-## [Tree](../../customizing/section-trees.md)
+## [Tree](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/section-trees.md)
 
 A tree is a hierarchical list of items related (and usually restricted) to a specific concept, like for example content or media.
 
@@ -34,7 +34,7 @@ You can expand trees by clicking the side arrow ![Expand Node](../../.gitbook/as
 
 ![Tree](../../.gitbook/assets/highlight-tree-v14.png)
 
-[Read more about the Tree](../../customizing/section-trees.md)
+[Read more about the Tree](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/section-trees.md)
 
 ## Node
 

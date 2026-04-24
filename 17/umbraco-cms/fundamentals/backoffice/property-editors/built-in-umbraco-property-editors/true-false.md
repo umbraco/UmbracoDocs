@@ -18,7 +18,7 @@ It is also possible to define a label, that will be displayed next to the checkb
 
 ## Content Example
 
-![No Edit Content Example](<../../../../.gitbook/assets/Checkbox-Content (1).png>)
+![No Edit Content Example](../../../../.gitbook/assets/Checkbox-Content.png)
 
 ## MVC View Example
 

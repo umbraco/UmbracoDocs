@@ -20,7 +20,7 @@ There is also a Value Type: Long string if you need to set a long string value f
 
 ## Content Example
 
-![Label Content Example](<../../../../.gitbook/assets/Label-Content-v8 (1).png>)
+![Label Content Example](../../../../.gitbook/assets/Label-Content-v8.png)
 
 ## MVC View Example
 

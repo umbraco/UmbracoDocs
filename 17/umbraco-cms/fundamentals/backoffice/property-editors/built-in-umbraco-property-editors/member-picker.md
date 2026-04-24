@@ -14,7 +14,7 @@ The member picker opens a panel to pick a specific member from the member sectio
 
 ## Content Example
 
-![Member Picker Content](<../../../../.gitbook/assets/Member-Picker-Content-v8 (1).png>)
+![Member Picker Content](../../../../.gitbook/assets/Member-Picker-Content-v8.png)
 
 ## MVC View Example
 

@@ -123,4 +123,4 @@ For more information on how to register and use notification handlers see [Notif
 
 ### Related articles
 
-* [Find out how to add your own hub(s) with SignalR to the existing setup](signalR.md))
+* [Find out how to add your own hub(s) with SignalR to the existing setup](signalr.md))
