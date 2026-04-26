@@ -23,7 +23,7 @@ Types are compile-time only. Runtime Zod validation inside each MCP remains auth
 
 ## Setup
 
-Add the codegen as a `postbuild` script in your MCP package's `package.json`, and expose the generated `.d.ts` via a `./tool-types` subpath export so consumers can import it:
+Add the codegen as a `postbuild` script in your MCP package's `package.json`, and expose the generated `.d.ts` via a `./tool-types` export so consumers can import it:
 
 ```json
 {
@@ -120,4 +120,4 @@ const tools = collections.flatMap((c) =>
 );
 ```
 
-The returned object should only be passed to `collection.tools(user)` — its properties are Proxy-backed and not safe to read directly (`user.id` is not a string).
+Pass the returned object only to `collection.tools(user)` — its properties are Proxy-backed and not safe to read directly (`user.id` is not a string).
