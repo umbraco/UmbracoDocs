@@ -15,10 +15,6 @@ The Umbraco CMS codebase comes with a set of customization examples and a way to
 3. Open a terminal and navigate to `src/Umbraco.Web.UI.Client` .
 4. Run the command: `npm install` .
 
-### Run an Example
-
-Start a local server and run one of the examples: `npm run example` .
-
 ### Create a playground
 
 You can add a new example and use it as your playground. If it covers a specific topic that would be of interest to others, you can contribute it as a pull request.
