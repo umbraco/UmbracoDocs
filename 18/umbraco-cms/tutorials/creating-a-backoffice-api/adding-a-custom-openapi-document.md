@@ -66,5 +66,7 @@ Swagger UI sometimes has persistent caching, which can prevent the new definitio
 {% endhint %}
 
 {% hint style="info" %}
+
 For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOptions>` with a composer instead of configuring in Program.cs. See the [API versioning and OpenAPI](../../reference/api-versioning-and-openapi.md) article for details.
+
 {% endhint %}

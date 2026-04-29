@@ -219,7 +219,7 @@ builder.Services.AddOpenApi("my-api", options =>
 {% endhint %}
 
 {% hint style="info" %}
-Returning `null` from `CreateSchemaReferenceId` will inline the schema instead of creating a reference. This can be useful for simple types that don't need to be reused.
+Returning `null` from `CreateSchemaReferenceId` will inline the schema instead of creating a reference. This can be useful for types that don't need to be reused.
 {% endhint %}
 
 ## Multiple API versions
@@ -396,7 +396,7 @@ builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
 
 {% endcode %}
 
-With the default UI disabled, you can add your preferred UI using a custom pipeline filter or middleware that serves the alternative UI and points it to the OpenAPI document endpoints.
+With the default UI disabled, you can register your preferred UI yourself. Refer to the UI's documentation for setup details.
 
 ### API versioning
 

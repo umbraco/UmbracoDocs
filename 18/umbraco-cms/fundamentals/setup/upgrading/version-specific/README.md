@@ -64,7 +64,7 @@ builder.Services.AddOpenApi("my-api-v1", options =>
 builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 ```
 
-Note that `AddOpenApiDocumentToUi()` is required to show the document in Swagger UI. Previously with Swashbuckle, documents were automatically added to the UI when registered. The second parameter (title) is optional and defaults to the document name if not specified.
+`AddOpenApiDocumentToUi()` is required to show the document in Swagger UI. Previously with Swashbuckle, documents were automatically added to the UI when registered. The second parameter (title) is optional and defaults to the document name if not specified.
 
 *Backoffice security requirements*
 
@@ -129,7 +129,7 @@ See [OpenAPI route and/or availability](../../../../reference/api-versioning-and
 
 *OpenAPI URL changes*
 
-The OpenAPI endpoints have been renamed from "swagger" to "openapi" to follow Microsoft's naming conventions:
+The OpenAPI endpoints have been renamed from `swagger` to `openapi` to follow Microsoft's naming conventions:
 
 | Old URL | New URL |
 |---------|---------|

@@ -36,7 +36,7 @@ Then a popup will appear with some setup information and a login form for author
 
 ![Umbraco Management API Authorize Login](../../.gitbook/assets/management-api-swagger-authorize-instructions.png)
 
-The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. The OpenAPI UI is only enabled in non-production environments, so if you need to access the Management API in production, you need a different client.
+The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. The OpenAPI UI is only enabled in non-production environments. To access the Management API in production, you need a different client.
 
 {% hint style="info" %}
 In production environment, only `umbraco-back-office` **client** is allowed to connect to the Management API. In non-production environments, the `umbraco-swagger` and `umbraco-postman` **clients** can be used.

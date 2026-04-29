@@ -46,7 +46,9 @@ builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI. The `AddOpenApiDocumentToUi()` method adds the document to the Swagger UI dropdown.
 
 {% hint style="info" %}
+
 For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOptions>` with a composer instead of configuring in Program.cs. See the [API versioning and OpenAPI](api-versioning-and-openapi.md) article for details on different configuration approaches.
+
 {% endhint %}
 
 2. Create a new `.cs` file called `MyApiController` and add the ApiController to setup the logic behind the endpoint:
