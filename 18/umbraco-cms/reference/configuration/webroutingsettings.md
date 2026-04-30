@@ -118,7 +118,9 @@ Controls how Umbraco determines the application URL when `UmbracoApplicationUrl`
 * `EveryRequest`: The application URL is set from the first HTTP request and can be overwritten by every subsequent request.
 
 {% hint style="warning" %}
-In environments where Umbraco is not behind a reverse proxy that validates the `Host` header, allowing auto-detection (`FirstRequest` or `EveryRequest`) can enable a forged `Host` header to influence the URL used in email notifications. Explicitly configuring `UmbracoApplicationUrl` is the recommended approach.
+
+Auto-detection modes (`FirstRequest` and `EveryRequest`) rely on the incoming `Host` header. In environments without a reverse proxy that validates this header, a forged `Host` header could influence the URL used in email notifications. Explicitly configuring `UmbracoApplicationUrl` is the recommended approach.
+
 {% endhint %}
 
 `UmbracoApplicationUrl` always takes precedence over the value derived through `ApplicationUrlDetection`.
