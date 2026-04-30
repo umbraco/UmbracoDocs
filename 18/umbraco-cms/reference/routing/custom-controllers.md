@@ -168,11 +168,11 @@ So for example, if your custom model is of type 'MyProductViewModel' then your `
 ```
 
 {% hint style="info" %}
-Views will likely specify a master view to use as the common layout for the site HTML. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the master layout view. Eg. if your master layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown. To avoid this you could:
+Views will likely specify a layout view to use as the common layout for the site HTML. When using a custom view model it's necessary to make sure this doesn't conflict with any implementation in the layout view. Eg. if your layout view is inheriting from a specific model `UmbracoViewPage<SpecificModel>` and using a property from SpecificModel that isn't available in your custom model an exception will be thrown. To avoid this you could:
 
-* Keep your Master layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties. or
-* Break the dependency on `Umbraco.Cms.Core.Models` in your master layout by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the master layout view uses. or
-* Ensure your custom models inherit from whichever class is used to strongly type the master layout view.
+* Keep your Layout view 'generically typed', eg. only have `@inherits UmbracoViewPage`, and use Model.Value syntax to access properties. or
+* Break the dependency on `Umbraco.Cms.Core.Models` in your layout view by having it instead inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. This would be where ISomeInterface is implemented by all your models and contains the properties that the layout view uses. or
+* Ensure your custom models inherit from whichever class is used to strongly type the layout view.
 {% endhint %}
 
 In most cases you will need your custom model to build upon the underlying existing PublishedContent model for the page. This can be achieved by making your custom model inherit from a special base class called `PublishedContentWrapped`:
@@ -265,7 +265,7 @@ and in our template
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<MyProductViewModel>
 @{
-Layout = "Master";
+Layout = "Layout";
 }
 <h1>@Model.Name</h1>
 

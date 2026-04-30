@@ -2,13 +2,13 @@
 
 Next step is to get the Open Graph code rendered on the website. This is done in the `head` section of the HTML, so you need to find the template for this.
 
-In the `Starter Kit` the head is placed in the Master Template, which is responsible for wrapping all the other templates.
+In the `Starter Kit` the head is placed in the Layout Template, which is responsible for wrapping all the other templates.
 
 Because you've added the Open Graph feature as a composition you can check if the composition is present on the current page and then render meta tags.
 
 1. Go to the **Settings** section.
 2. Expand the **Templates** folder.
-3. Select the *Master* template.
+3. Select the *Layout* template.
 4. Find the `<head>` HTML tags at the top of the Template.
 5. Write the following before the closing `</head>` tag:
 

@@ -38,7 +38,7 @@ To use a Template on your content, you must first allow it on the content Docume
 
 ## Inheriting a Template
 
-A Template can inherit content from a "Master Template". This is done by using the ASP.NET views Layout feature.
+A Template can inherit content from a "Layout Template". This is done by using the ASP.NET views Layout feature.
 
 Let's say you have a Template called **MainView**, containing the following HTML:
 
@@ -58,13 +58,13 @@ Let's say you have a Template called **MainView**, containing the following HTML
 
 This file contains the structural HTML tags for your website.
 
-By using the Template as the "Master Template" on your other Templates, you can ensure that they inherit the same structural HTML.
+By using the Template as the "Layout Template" on your other Templates, you can ensure that they inherit the same structural HTML.
 
-Follow these steps to use a Template file as a Master Template:
+Follow these steps to use a Template file as a Layout Template:
 
 1. Open one of your Template files.
-2. Select the **Master template: No master** button above the editor.
-3. Select the Template that should be defined as the Master Template.
+2. Select the **Layout template: No layout** button above the editor.
+3. Select the Template that should be defined as the Layout Template.
 4. Click **Choose**.
 
 ![Inherit template](../../../.gitbook/assets/inherit-template.png)
@@ -81,9 +81,9 @@ The updated markup will look something like the snippet below and the Template i
 <p>My content</p>
 ```
 
-When a page that uses a Template with a Master Template defined is rendered, the HTML of the two templates is merged.
+When a page that uses a Template with a Layout Template defined is rendered, the HTML of the two templates is merged.
 
-The code from the Template replaces the `@RenderBody()` tag in the Master Template. Following the examples above, the final HTML will look like the code in the snippet below:
+The code from the Template replaces the `@RenderBody()` tag in the Layout Template. Following the examples above, the final HTML will look like the code in the snippet below:
 
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
@@ -101,9 +101,9 @@ The code from the Template replaces the `@RenderBody()` tag in the Master Templa
 
 ## Named Sections
 
-Template Sections give you added flexibility when building your templates. Use the Template Section together with a Master Template setup, to decide where sections of content are placed.
+Template Sections give you added flexibility when building your templates. Use the Template Section together with a Layout Template setup, to decide where sections of content are placed.
 
-If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Master Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA).
+If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Layout Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA).
 
 The following steps will guide you through defining and using a Named Section:
 
@@ -124,7 +124,7 @@ The following code will be added to your Template:
 
 5. Add your code between the curly brackets.
 6. Save the changes.
-7. Open the Master Template.
+7. Open the Layout Template.
 8. Choose a spot for the section and set the cursor there.
 9. Select the **Sections** option.
 10. Choose **Render a named section**.
@@ -150,7 +150,7 @@ For instance, if you want to be able to add HTML to your `<head>` tags, you woul
 </html>
 ```
 
-You can decide whether a section should be mandatory or not. Making a section mandatory means that any template using the Master Template is required to have the section defined.
+You can decide whether a section should be mandatory or not. Making a section mandatory means that any template using the Layout Template is required to have the section defined.
 
 {% hint style="info" %}
 Keep in mind that whenever a mandatory named section is missing, it will result in errors on your website.
@@ -176,7 +176,7 @@ The created partial view can now be injected into any template by using the `@Ht
 ```csharp
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    Layout = "MasterView.cshtml";
+    Layout = "MainView.cshtml";
 }
 
 <h1>My new page</h1>

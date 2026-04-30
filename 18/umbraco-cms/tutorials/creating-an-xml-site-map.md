@@ -102,7 +102,7 @@ Editing the template can be done in two different ways:
 * Locate the XmlSiteMap Template in the **Settings** section of the Umbraco backoffice and use the editor to make the changes, or
 * Open and work with the `Views/XmlSiteMap.cshtml` file in your preferred Integrated Development Environment (IDE) on your machine.
 
-We will start by adding the XML schema for the sitemap. Since we do not want our template to inherit any 'master' HTML layouts we will set the `layout` to be `null`.
+We will start by adding the XML schema for the sitemap. Since we do not want our template to inherit any layout HTML we will set the `Layout` to be `null`.
 
 1. Navigate to the **Settings** section of the Umbraco backoffice.
 2. Find and open the XmlSiteMap Template.

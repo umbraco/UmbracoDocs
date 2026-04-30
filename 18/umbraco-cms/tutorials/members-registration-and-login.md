@@ -79,7 +79,7 @@ The **Content Base** and **Navigation Base** Compositions are available once the
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Login>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-    Layout = "_Master.cshtml";
+    Layout = "_Layout.cshtml";
 }
 
 <partial name="Partials/SectionHeader"/>
