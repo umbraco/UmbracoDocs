@@ -166,7 +166,7 @@ export class MyExtensionCondition
         // enable extension after 10 seconds
         setTimeout(() => {
             this.permitted = true;
-            args.onChange();
+            args.onChange(this.permitted);
         }, 10000);
     }
 }
@@ -188,7 +188,7 @@ export const manifest: UmbExtensionManifest = {
     type: "condition",
     name: "My Condition",
     alias: "My.Condition.CustomName",
-    api: MyExtensionCondition,
+    api: () => import('./MyExtensionCondition').then((m) => m.MyExtensionCondition),
 };
 ```
 
@@ -229,7 +229,7 @@ export class MyExtensionCondition
 
         if (args.config.match === "Yes") {
             this.permitted = true;
-            args.onChange();
+            args.onChange(this.permitted);
         }
     }
 }
