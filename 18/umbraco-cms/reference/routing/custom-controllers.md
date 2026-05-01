@@ -172,12 +172,14 @@ Views will likely specify a layout view to use as the common layout for the site
 
 When using a custom view model, make sure it doesn't conflict with any implementation in the layout view.
 
-For example, if your layout view inherits from `UmbracoViewPage<SpecificModel>` and uses a property from `SpecificModel`, an exception will be thrown when that property isn't available on your custom model.
+For example, your layout view might inherit from `UmbracoViewPage<SpecificModel>` and use a property from `SpecificModel`.
+
+If that property isn't available on your custom model, an exception will be thrown.
 
 To avoid this, you can do one of the following:
 
 * Keep your layout view generically typed. Use `@inherits UmbracoViewPage` and access properties via `Model.Value` syntax.
-* Break the dependency on `Umbraco.Cms.Core.Models` in your layout view. Have it inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`, where `ISomeInterface` is implemented by all your models and contains the properties used by the layout view.
+* Break the dependency on `Umbraco.Cms.Core.Models` in your layout view. Have it inherit from `Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ISomeInterface>`. `ISomeInterface` should be implemented by all your models and contain the properties used by the layout view.
 * Ensure your custom models inherit from whichever class is used to strongly type the layout view.
 {% endhint %}
 
