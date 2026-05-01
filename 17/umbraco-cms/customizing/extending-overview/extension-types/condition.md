@@ -184,11 +184,13 @@ The global declaration on the last five lines makes your Condition appear valid 
 The Condition then needs to be registered in the Extension Registry:
 
 ```typescript
+import { MyExtensionCondition } from "./MyExtensionCondition";
+
 export const manifest: UmbExtensionManifest = {
     type: "condition",
     name: "My Condition",
     alias: "My.Condition.CustomName",
-    api: () => import('./MyExtensionCondition').then((m) => m.MyExtensionCondition),
+    api: MyExtensionCondition,
 };
 ```
 
