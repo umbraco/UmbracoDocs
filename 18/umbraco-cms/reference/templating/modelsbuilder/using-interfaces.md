@@ -10,7 +10,11 @@ A common use-case for this is if you have a separate composition for the "SEO pr
 
 You would usually use this composition on both your `Home` and `Textpage` document types. Since both `Home` and `Textpage` will implement the generated `ISeoProperties` interface, you will still be able to use the simpler models builder syntax (e.g. `Model.PageTitle`).
 
-However, you won't be able to use the nice models builder syntax on any layout template, since a layout template needs to be bound to a generic `IPublishedContent`. So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties. It is possible to solve this issue of layout templating, by using partial views, to render the SEO specific properties. 
+A layout template needs to be bound to a generic `IPublishedContent`, so you can't use the Models Builder syntax there directly.
+
+You'd have to resort to the slightly clumsier `Model.Value("pageTitle")` syntax to render these properties.
+
+This issue can be solved by using partial views to render the SEO-specific properties.
 
 ## Render with a partial
 
@@ -31,4 +35,4 @@ You can then render the partial from your Layout Template with something like th
 @RenderBody()
 ```
 
-It's important to note though, that this layout template will only work for content types that use the Seo Properties composition.
+It's important to note though, that this layout template will only work for content types that use the SEO Properties composition.
