@@ -74,10 +74,10 @@ The `propertyEditorSchema` manifest can contain the following properties:
 
 ### Required Properties
 
-| Property | Type   | Description                                                                 |
-| -------- | ------ | --------------------------------------------------------------------------- |
+| Property | Type   | Description                                                                  |
+| -------- | ------ | ---------------------------------------------------------------------------- |
 | type     | string | Must be `"propertyEditorSchema"`.                                            |
-| alias    | string | Unique identifier for the schema. Must match the C# `DataEditor` alias.    |
+| alias    | string | Unique identifier for the schema. Must match the C# `DataEditor` alias.      |
 | name     | string | Friendly name displayed in the backoffice.                                   |
 | meta     | object | Metadata object containing schema configuration (see Meta Properties below). |
 
@@ -87,9 +87,9 @@ The `alias` in the manifest **must exactly match** the alias used in the C# `Dat
 
 ### Optional Properties
 
-| Property | Type   | Description                                                    |
-| -------- | ------ | -------------------------------------------------------------- |
-| weight   | number | Ordering weight. Higher numbers appear first in lists.         |
+| Property | Type   | Description                                            |
+| -------- | ------ | ------------------------------------------------------ |
+| weight   | number | Ordering weight. Higher numbers appear first in lists. |
 | kind     | string | Optional kind identifier for grouping related schemas. |
 
 ## Meta Properties
@@ -98,15 +98,15 @@ The `meta` object contains the following properties:
 
 ### Required Meta Properties
 
-| Property                     | Type   | Description                                                           |
-| ---------------------------- | ------ | --------------------------------------------------------------------- |
-| defaultPropertyEditorUiAlias | string | The alias of the default Property Editor UI to use with this schema.  |
+| Property                     | Type   | Description                                                          |
+| ---------------------------- | ------ | -------------------------------------------------------------------- |
+| defaultPropertyEditorUiAlias | string | The alias of the default Property Editor UI to use with this schema. |
 
 ### Optional Meta Properties
 
-| Property | Type   | Description                                                              |
-| -------- | ------ | ------------------------------------------------------------------------ |
-| settings | object | Configuration settings for the property editor (see Settings below).      |
+| Property | Type   | Description                                                          |
+| -------- | ------ | -------------------------------------------------------------------- |
+| settings | object | Configuration settings for the property editor (see Settings below). |
 
 ## Settings Structure
 
@@ -123,14 +123,14 @@ settings: {
 
 Each object in the `properties` array defines a configuration field:
 
-| Property                 | Type   | Required | Description                                                                    |
-| ------------------------ | ------ | -------- | ------------------------------------------------------------------------------ |
-| alias                    | string | Yes      | Unique identifier. Must match the C# `ConfigurationEditor` property name.     |
-| label                    | string | Yes      | Display label for the configuration field.                                      |
-| description              | string | No       | Help text shown below the label.                                                |
-| propertyEditorUiAlias    | string | Yes      | The Property Editor UI to use for editing this configuration value.             |
-| config                   | object | No       | Optional configuration to pass to the Property Editor UI.                       |
-| weight                   | number | No       | Optional ordering weight for the configuration field.                           |
+| Property              | Type   | Required | Description                                                               |
+| --------------------- | ------ | -------- | ------------------------------------------------------------------------- |
+| alias                 | string | Yes      | Unique identifier. Must match the C# `ConfigurationEditor` property name. |
+| label                 | string | Yes      | Display label for the configuration field.                                |
+| description           | string | No       | Help text shown below the label.                                          |
+| propertyEditorUiAlias | string | Yes      | The Property Editor UI to use for editing this configuration value.       |
+| config                | object | No       | Optional configuration to pass to the Property Editor UI.                 |
+| weight                | number | No       | Optional ordering weight for the configuration field.                     |
 
 {% hint style="warning" %}
 Configuration property aliases in `settings.properties` **must match** the property names defined in your C# `ConfigurationEditor` class. If they don't match, configuration values won't be properly passed to the backend for validation and storage.
@@ -140,10 +140,10 @@ Configuration property aliases in `settings.properties` **must match** the prope
 
 Each object in the `defaultData` array provides default values:
 
-| Property | Type    | Required | Description                                   |
-| -------- | ------- | -------- | --------------------------------------------- |
-| alias    | string  | Yes      | The alias of the configuration property.       |
-| value    | unknown | Yes      | The default value for this configuration.      |
+| Property | Type    | Required | Description                               |
+| -------- | ------- | -------- | ----------------------------------------- |
+| alias    | string  | Yes      | The alias of the configuration property.  |
+| value    | unknown | Yes      | The default value for this configuration. |
 
 ## Complete Example
 
@@ -202,11 +202,11 @@ export const manifest: ManifestPropertyEditorSchema = {
 
 ## Important Notes
 
-Umbraco ships with [default property editor schemas](../../../tutorials/creating-a-property-editor/default-property-editor-schema-aliases.md) that you can use without creating custom C# classes.
+Umbraco ships with [default property editor schemas](../../../tutorials/creating-a-property-editor/adding-server-side-validation/default-property-editor-schema-aliases.md) that you can use without creating custom C# classes.
 
 ## Related Documentation
 
 * [Property Editor Schema Guide](../../property-editors/composition/property-editor-schema.md) - Learn about implementing the C# classes (`DataEditor` and `DataValueEditor`).
 * [Property Editor UI Extension Type](property-editor-ui.md) - Reference for the Property Editor UI extension type.
 * [Creating a Property Editor Tutorial](../../../tutorials/creating-a-property-editor/) - Step-by-step guide to building a custom property editor.
-* [Adding Server-Side Validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation.md) - Tutorial on implementing validation in your schema.
+* [Adding Server-Side Validation](../../../tutorials/creating-a-property-editor/adding-server-side-validation/) - Tutorial on implementing validation in your schema.

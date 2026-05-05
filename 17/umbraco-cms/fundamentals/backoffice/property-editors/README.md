@@ -16,7 +16,7 @@ The following Property Editors have been removed with the release of Umbraco 14:
 * Grid Layout
 * Nested content
 
-We recommend using the [Block Editor](built-in-umbraco-property-editors/block-editor/) or the [Rich Text Editor Blocks](broken-reference/) instead.
+We recommend using the [Block Editor](built-in-umbraco-property-editors/block-editor/) or the [Rich Text Editor Blocks](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/fundamentals/backoffice/property-editors/broken-reference/README.md) instead.
 {% endhint %}
 
 When creating a Data Type, specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).

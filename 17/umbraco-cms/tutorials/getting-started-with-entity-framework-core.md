@@ -345,24 +345,6 @@ public class BlogCommentsController : Controller
 }
 
 ```
-{% endcode %}
-
-### Using a separate database
-
-By default, `AddUmbracoDbContext<T>(..., shareUmbracoConnection: true)` binds your `DbContext` to Umbraco's database connection and transaction scope. Every EF Core query runs against the Umbraco database, and writes commit or roll back together with the enclosing Umbraco scope. That is the right choice when your custom tables live inside the Umbraco database.
-
-If your `DbContext` targets a **different** database — for example, a separate SQLite file or an entirely different SQL Server instance — pass `shareUmbracoConnection: false`. Without it, the connection string you configure through `UseSqlite(...)` or `UseSqlServer(...)` is replaced at runtime and your queries run against the Umbraco database instead.
-
-{% code title="BlogCommentsComposer.cs" %}
-
-```csharp
-builder.Services.AddUmbracoDbContext<BlogContext>(
-    (serviceProvider, options, connectionString, providerName) =>
-    {
-        options.UseSqlite("Data Source=blog-comments.db");
-    },
-    shareUmbracoConnection: false);
-```
 
 {% endcode %}
 

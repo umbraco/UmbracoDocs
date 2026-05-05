@@ -44,12 +44,11 @@ To support different routes for new and existing items, your Workspace must be r
 {% hint style="warning" %}
 **Endless loading when clicking Tree Items?** This usually means:
 
-- No Workspace is registered for that `entityType`.
-- The `entityType` in your Tree data doesn't match the Workspace's `meta.entityType`.
-- 
+* No Workspace is registered for that `entityType`.
+* The `entityType` in your Tree data doesn't match the Workspace's `meta.entityType`. -
 {% endhint %}
 
 ## Related
 
-- [Trees](./README.md) - Main Tree extension documentation.
-- [Workspaces](../workspace/README.md) - Creating Workspace extensions.
+* [Trees](./) - Main Tree extension documentation.
+* [Workspaces](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/extending-overview/extension-types/workspace/README.md) - Creating Workspace extensions.

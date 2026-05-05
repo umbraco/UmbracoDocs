@@ -14,7 +14,7 @@ In this section, you will find comprehensive resources about the foundational co
 
 Get an overview of the general terms used in the Umbraco Backoffice and what they represent.
 
-### [Umbraco Element](umbraco-element/)
+### [Umbraco Element](umbraco-element.md)
 
 The Umbraco Element provides the foundation you need to integrate your custom UI components.
 
@@ -32,7 +32,7 @@ Learn about Lit Element, the Web Component framework that most examples and the 
 
 Learn how to communicate with the rest of the application, whether you want to retrieve data or manipulate it.
 
-### [Contexts](contexts/)
+### [Contexts](../contexts/)
 
 Explore specific context implementations, including the Property Dataset Context that connects Property Editors with Workspaces.
 
@@ -50,7 +50,7 @@ Discover how to use repositories to manage data operations in a structured way, 
 
 Bring life to your UI by ensuring it stays up to date with the current data through reactive state management.
 
-### [Icons](icons.md)
+### [Icons](../icons.md)
 
 Learn how to use icons in the Umbraco Backoffice, based on Lucide Icons and Simple Icons.
 
@@ -62,7 +62,7 @@ Discover how to manage and use Backoffice UI localization files to translate you
 
 Learn how to bind and use the validation system when working with Form Controls and custom Property Editors.
 
-### [Sorting](sorting.md)
+### [Sorting](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/foundation/sorting.md)
 
 Create a UI that users can sort via drag and drop functionality.
 
