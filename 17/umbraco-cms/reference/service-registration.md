@@ -73,6 +73,8 @@ await app.RunAsync();
 ```
 {% endcode %}
 
+{% hint style="info" %} The order of registration of the endpoints is important. `UseBackOfficeEndpoints()` must be registered before `UseWebsiteEndpoints`. If they are mistakenly registered in the opposite order, site installation won't start. {% endhint %}
+
 ## Website + Delivery API (no backoffice)
 
 The following configuration is useful for front-end servers in a load-balanced setup where a single backoffice instance is running.
