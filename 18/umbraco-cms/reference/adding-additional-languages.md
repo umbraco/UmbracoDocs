@@ -6,7 +6,6 @@ description: >-
 
 # Adding Additional Languages
 
-When adding a new language in the Umbraco backoffice, you may find that a language culture you need is not listed in the dropdown. This article explains why some cultures are missing and how to make them available.
 
 ## Why some languages are missing
 
