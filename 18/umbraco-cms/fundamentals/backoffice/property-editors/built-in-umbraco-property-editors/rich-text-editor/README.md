@@ -45,10 +45,11 @@ Customize the appearance of the Rich Text Editor with custom CSS properties.
 ### With Models Builder
 
 ```csharp
+@using Umbraco.Extensions
 @{
-    if (!string.IsNullOrEmpty(Model.RichText.ToString()))
+    if (!Model.MyRichTextEditorProperty.IsNullOrWhiteSpace())
     {
-        <p>@Model.RichText</p>
+        @Model.MyRichTextEditorProperty
     }
 }
 ```
@@ -57,8 +58,8 @@ Customize the appearance of the Rich Text Editor with custom CSS properties.
 
 ```csharp
 @{
-    if (Model.HasValue("richText")){
-        <p>@(Model.Value("richText"))</p>
+    if (Model.HasValue("richTextEditorAlias")){
+        @(Model.Value("richTextEditorAlias"))
     }
 }
 ```

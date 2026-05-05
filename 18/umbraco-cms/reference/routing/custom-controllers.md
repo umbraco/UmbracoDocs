@@ -391,6 +391,10 @@ public class MyRenderController : RenderController
 }
 ```
 
+{% hint style="info" %}
+When [Website Output Caching](../website-output-caching.md) is enabled, controllers that inherit from `RenderController` inherit caching automatically. You can opt out for a specific controller by applying `[OutputCache(NoStore = true)]` to the `Index()` action.
+{% endhint %}
+
 The last step is to configure Umbraco to use your implementation. You can do that in the `Program.cs` class.
 
 ```csharp

@@ -51,7 +51,7 @@ Besides the Data Types that are available out of the box there are some addition
 
 To view the Data Type reference, go to the **Settings** section and expand the **Data Types** folder. Select the **Data Type** you wish to view the reference for and click the **Info** tab.
 
-![Content Picker References](<../../../.gitbook/assets/viewing-data-type-reference (1).png>)
+![Content Picker References](../../../.gitbook/assets/viewing-data-type-reference.png)
 
 This gives you an overview of the Types that currently use the Data Type.
 

@@ -47,6 +47,16 @@ Select the width of the link picker overlay. The overlay size comes in three siz
 
 Blocks can be added as elements in the Rich Text Editor. Configuration and rendering of Blocks are described in the [Blocks in Rich Text Editor](blocks.md) article.
 
+## Accepted Media Types
+
+![Accepted media types configuration](../../../../../.gitbook/assets/rte-tiptap-accepted-media-types.png)
+
+By default, only Image and Vector Graphics media types are accepted in the Rich Text Editor. You can change this by selecting specific types in the **Accepted media types** setting.
+
+Only matching media types can be picked from the library or uploaded via the toolbar and drag-and-drop.
+
+If an uploaded file matches multiple accepted media types, a picker dialog lets the editor choose the correct type.
+
 ## Image Upload Folder
 
 Images added through the RTE are by default added to the root of the Media library.

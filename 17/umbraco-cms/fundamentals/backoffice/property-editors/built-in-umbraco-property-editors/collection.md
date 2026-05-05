@@ -24,7 +24,7 @@ Once Collections are configured, the parent content item displays its child item
 
 It is possible to add more columns to the collection, via adding the properties through the picker modal. These properties are based on the Data Types which are used by the Document Type. The properties will listed for selection.
 
-![Collection property picker example](<../../../../.gitbook/assets/collection-property-picker (1).png>)
+![Collection property picker example](../../../../.gitbook/assets/collection-property-picker.png)
 
 Once you have selected a column you want to display, define what its heading label should be and what kind of value it should display. You can also move the headers around, re-ordering how they should look. This is done by the move icon on the left side of the alias.
 
@@ -66,7 +66,7 @@ Support for changing the Workspace View icon has not been implemented yet.
 
 Changes the icon in the backoffice of the collection. By default it will look like the image below.
 
-![Collection icon example](<../../../../.gitbook/assets/list-icon (1).png>)
+![Collection icon example](../../../../.gitbook/assets/list-icon.png)
 
 ### Workspace View name
 
@@ -100,16 +100,16 @@ You can use the [Umbraco Flavored Markdown](../../../../reference/umbraco-flavor
 
 First, a Content Picker property needs to be present on the content item. In this example, the `child item` has gotten a Content Picker Data Type with the alias of `contentPicker`.
 
-![Collection content picker](<../../../../.gitbook/assets/content-picker-property (1).png>)
+![Collection content picker](../../../../.gitbook/assets/content-picker-property.png)
 
 The child item has a document and the value that should be displayed is the name of the picked value. The next step is to reconfigure the template value in the collection setting.
 
-![Collection content picker](<../../../../.gitbook/assets/collection-column-content-picker (1).png>)
+![Collection content picker](../../../../.gitbook/assets/collection-column-content-picker.png)
 
 This will take the value picked up by the content picker.
 
-![Collection content picker with picked value](<../../../../.gitbook/assets/content-picker-picked-value (1).png>)
+![Collection content picker with picked value](../../../../.gitbook/assets/content-picker-picked-value.png)
 
 And display it in the collection. Shown in the example below:
 
-![Collection view cards with content picker value](<../../../../.gitbook/assets/collection-view-cards-content-picker (1).png>)
+![Collection view cards with content picker value](../../../../.gitbook/assets/collection-view-cards-content-picker.png)

@@ -21,6 +21,7 @@ An example of a web routing config with default values, and a placeholder for th
       "DisableRedirectUrlTracking": false,
       "UrlProviderMode": "Auto",
       "UmbracoApplicationUrl": "http://www.mysite.com/",
+      "ApplicationUrlDetection": "None",
       "UseStrictDomainMatching": false
     }
   }
@@ -100,11 +101,27 @@ Will set the URL provider mode, options are:
 
 ## Umbraco application URL
 
-Defines the Umbraco application URL that the server should reach itself. By default, Umbraco will guess that URL from the first request made to the server. Use this setting if the guess is not correct (because you are behind a load-balancer, for example). Format is: `http://www.mysite.com/`, ensure to contain the scheme (http/https) and complete hostname.
+Defines the Umbraco application URL that the server should reach itself. This URL is used in features such as password reset links, user invitations, and other email notifications, as well as for some health checks. The format is: `http://www.mysite.com/` and must contain the scheme (http/https) and complete hostname.
+
+When this setting is provided, it always takes precedence over any value detected through `ApplicationUrlDetection`. Setting an explicit value is the recommended approach for production environments.
 
 {% hint style="info" %}
-Previously before v9, it was required to specify **backoffice** path as this was customizable (`/umbraco` by default). However, from v9+ this is no longer possible, so it's sufficient to use the URL that contains the scheme (http/https) and complete hostname.
+Previously before v9, it was required to specify the **backoffice** path as this was customizable (`/umbraco` by default). However, from v9+ this is no longer possible, so it's sufficient to use the URL that contains the scheme (http/https) and complete hostname.
 {% endhint %}
+
+## Application URL detection
+
+Controls how Umbraco determines the application URL when `UmbracoApplicationUrl` has not been set explicitly. Available options are:
+
+* `None` (default): No auto-detection takes place. The application URL must be set explicitly via `UmbracoApplicationUrl`. Operations that require it (such as user invitations and password resets) will fail with a `400 Bad Request` response indicating that the application URL is not configured.
+* `FirstRequest`: The application URL is set from the first HTTP request received by the server, after which it is locked. Subsequent requests with different `Host` headers are ignored.
+* `EveryRequest`: The application URL is set from the first HTTP request and can be overwritten by every subsequent request.
+
+{% hint style="warning" %}
+In environments where Umbraco is not behind a reverse proxy that validates the `Host` header, allowing auto-detection (`FirstRequest` or `EveryRequest`) can enable a forged `Host` header to influence the URL used in email notifications. Explicitly configuring `UmbracoApplicationUrl` is the recommended approach.
+{% endhint %}
+
+`UmbracoApplicationUrl` always takes precedence over the value derived through `ApplicationUrlDetection`.
 
 ## Strict domain matching
 

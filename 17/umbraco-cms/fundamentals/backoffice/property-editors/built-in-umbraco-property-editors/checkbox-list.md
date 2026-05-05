@@ -22,7 +22,7 @@ You can use dictionary items to translate the options in a Checkbox List propert
 
 ## Content Example
 
-![Checkbox List Example](<../../../../.gitbook/assets/checkbox-list-content (1).png>)
+![Checkbox List Example](../../../../.gitbook/assets/checkbox-list-content.png)
 
 ## MVC View Example
 

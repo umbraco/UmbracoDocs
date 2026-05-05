@@ -18,6 +18,12 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 16 including all changes for this version.
 
+### [16.5.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F16.5.3) (April 30th 2026)
+* Allow editing hidden fields on submitted form entries [#1605](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1605) [#1693](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1693)
+* Fix casing for "On Reject" label [#1696](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1696)
+* Localize **Change Record State** action dropdown labels
+* Update design of **Form Picker (Single)** to match CMS style
+
 ### [16.5.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F16.5.2) (April 9th 2026)
 
 * Update "Umbraco Forms scheduled record deletion task" log message grammar [#1683](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1683)

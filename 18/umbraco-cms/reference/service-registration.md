@@ -14,12 +14,13 @@ By default, Umbraco registers all services: the backoffice, website rendering, a
 
 The following configurations are supported:
 
-<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="115.69140625" data-type="checkbox">AddCore()</th><th width="155.87109375" data-type="checkbox">AddBackOffice()</th><th width="138.25390625" data-type="checkbox">AddWebsite()</th><th width="164.05859375" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="105" data-type="checkbox">AddCore()</th><th width="160" data-type="checkbox">AddBackOfficeSignIn()</th><th width="145" data-type="checkbox">AddBackOffice()</th><th width="125" data-type="checkbox">AddWebsite()</th><th width="145" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website + Basic Auth</td><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
 
-The key distinction is between `AddBackOffice()` and `AddCore()`:
+The key distinctions between the registration methods are:
 
-* **`AddBackOffice()`** registers everything needed for the Umbraco backoffice, including the Management API, backoffice identity, and all supporting services.
 * **`AddCore()`** registers only the foundational Umbraco services — configuration, core services, web components, caching, and background jobs — without any backoffice-specific services.
+* **`AddBackOfficeSignIn()`** registers backoffice identity and cookie authentication without the full backoffice. Use this when you need [Basic Authentication](configuration/basicauthsettings.md) with backoffice credentials on a frontend-only server. This enables the standalone login page with support for two-factor authentication and external login providers.
+* **`AddBackOffice()`** registers everything needed for the Umbraco backoffice, including the Management API, backoffice identity, and all supporting services. This calls both `AddCore()` and `AddBackOfficeSignIn()` internally.
 
 `AddBackOffice()` calls `AddCore()` internally, so there is no need to call both.
 
@@ -31,6 +32,7 @@ The key distinction is between `AddBackOffice()` and `AddCore()`:
 
 * **Full (default)**: Traditional Umbraco with all features enabled.
 * **Website + Delivery API**: Front-end servers serving both rendered pages and headless content.
+* **Website + Basic Auth**: Front-end servers with basic authentication using backoffice credentials, but no backoffice UI.
 * **Website Only**: Front-end servers serving only rendered pages.
 * **Delivery API Only**: Pure headless API servers.
 
@@ -106,6 +108,43 @@ app.UseUmbraco()
 await app.RunAsync();
 ```
 {% endcode %}
+
+## Website with basic authentication (no backoffice)
+
+The following configuration is used for front-end servers that need [Basic Authentication](configuration/basicauthsettings.md) with backoffice credentials but no backoffice UI. This enables a standalone server-rendered login page with support for two-factor authentication and external login providers.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddCore()
+    .AddBackOfficeSignIn()
+    .AddWebsite()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+{% hint style="info" %}
+`AddBackOfficeSignIn()` can also be combined with `AddDeliveryApi()` for servers that serve both rendered pages and headless content with basic authentication.
+{% endhint %}
 
 ## Website only
 

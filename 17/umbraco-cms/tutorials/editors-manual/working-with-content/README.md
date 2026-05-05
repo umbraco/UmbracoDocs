@@ -57,7 +57,7 @@ To apply pre-defined styles:
 1. Select the text you want to apply the style.
 2. Choose the style from the **Format** drop-down list.
 
-For more information on how to create the Styles, see the [Rich Text Editor Styles](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles) article.
+For more information on how to create the Styles, see the [Rich Text Editor Styles](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu.md) article.
 
 ## Text Formatting
 
@@ -222,7 +222,7 @@ You can make images into clickable links in Umbraco:
 <img src="../../../.gitbook/assets/Link-from-Image-v11.png" alt="Create a Link from an Image" data-size="original">
 
 1. Insert an image into the Rich Text Editor.
-   * For more information, see the [Working with Images](./#working-with-images) section.
+   * For more information, see the [Working with Images](#working-with-images) section.
 2. Select the image that will form the hyperlink.
 3. Enter the URL of the web page you wish to link to in the **Link** field.
 4. Enter the text that will be displayed as the link title in the **Link Title** field.
@@ -287,6 +287,27 @@ You can upload images directly from the Rich Text Editor on the page you are edi
 
 <details>
 
+<summary>Editing an Inserted Image</summary>
+
+After inserting an image, you can edit its alt text, caption, and dimensions without removing and re-inserting it.
+
+1. Click on the image in the Rich Text Editor to select it.
+2. Click the **Media Picker** button in the toolbar.
+   * The Media Picker is skipped and the **Edit selected media** panel opens directly.
+3. Update any of the following properties:
+   * **Alt text** — A description used by screen readers. Pre-filled with the media item name.
+   * **Caption** — Optional text displayed below the image. Adding a caption wraps the image in a figure element.
+   * **Width** and **Height** — Display dimensions in pixels. A lock icon constrains the aspect ratio by default. Changing one value adjusts the other automatically. Click the lock icon to set each value independently. Click **Reset** to restore original dimensions.
+4. Click **Submit** to apply the changes.
+
+{% hint style="info" %}
+The Rich Text Editor setting **Maximum size for inserted images** may limit image dimensions. Images exceeding the configured **Maximum size for inserted images** are scaled down proportionally.
+{% endhint %}
+
+</details>
+
+<details>
+
 <summary>Deleting an Image from the Page</summary>
 
 To delete an image from the page:
@@ -319,4 +340,4 @@ There are other options available for modifying cells, rows, and columns such as
 
 The Rich Text Editor in Umbraco can be configured in many different ways.
 
-For more information, see the [Rich Text Editor Configuration](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration) article.
+For more information, see the [Rich Text Editor Configuration](../../../fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md) article.

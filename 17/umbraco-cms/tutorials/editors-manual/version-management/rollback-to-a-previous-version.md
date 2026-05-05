@@ -11,6 +11,6 @@ To rollback to a previous version of the page:
     ![Rollback](../../../.gitbook/assets/Rollback-v14.png)
 4.  The Rollback window opens. Select a version of the page you wish to Rollback to.
 
-    ![Confirm Rollback](<../../../.gitbook/assets/Rollback-changes-v10 (1).png>)
+    ![Confirm Rollback](../../../.gitbook/assets/Rollback-changes-v10.png)
 5. Click **Rollback** to proceed with the changes. Your content has now been rolled back to the selected version of the page and is saved as a **Draft** version.
 6. To publish the draft version, click **Save and publish**.

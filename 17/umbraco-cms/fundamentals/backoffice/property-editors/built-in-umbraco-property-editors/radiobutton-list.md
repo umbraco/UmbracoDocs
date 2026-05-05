@@ -18,7 +18,7 @@ You can use dictionary items to translate the values of a Radiobutton List prope
 
 ## Content Example
 
-![Radiobutton List Content](<../../../../.gitbook/assets/RadioButton-List-Content-v8 (1).png>)
+![Radiobutton List Content](../../../../.gitbook/assets/RadioButton-List-Content-v8.png)
 
 ## MVC View Example
 

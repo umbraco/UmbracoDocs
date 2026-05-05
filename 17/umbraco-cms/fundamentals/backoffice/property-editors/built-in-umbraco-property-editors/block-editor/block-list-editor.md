@@ -87,7 +87,7 @@ Clicking the "Create new" button brings up the Block Catalogue. If you only have
 
 The Block Catalogue looks different depending on the amount of available Blocks and their catalogue appearance.
 
-![Block List - example setup from Umbraco.com](<../../../../../.gitbook/assets/BlockListEditor_BlockPicker (2).jpg>)
+![Block List - example setup from Umbraco.com](../../../../../.gitbook/assets/BlockListEditor_BlockPicker.jpg)
 
 Click the Block Type you wish to create and a new Block will appear in the list.
 
@@ -103,7 +103,7 @@ In inline editing mode the new Blocks will expand to show its inline editor:
 
 More Blocks can be added to the list by clicking the "Create new" button. You can also use the inline Add button that appears on hover between or above existing Blocks.
 
-![Block List - Create new](<../../../../../.gitbook/assets/BlockListEditor_AddContentInline (2).jpg>)
+![Block List - Create new](../../../../../.gitbook/assets/BlockListEditor_AddContentInline.jpg)
 
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 

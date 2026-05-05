@@ -26,7 +26,7 @@ When a content node is saved it will save the entity references as relations.
 1. Go to the **Settings** section.
 2. Under the **Relations** from the **Advanced** section, select **Related Document** relations.
 
-![Viewing document references](../../.gitbook/assets/document-references.png)
+![Viewing document references](../../.gitbook/assets/media-references.png)
 
 ### For Data Types
 

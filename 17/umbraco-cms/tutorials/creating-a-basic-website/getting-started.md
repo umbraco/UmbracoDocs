@@ -4,9 +4,9 @@ The **Creating a Basic Site** tutorial provides step-by-step instructions to bui
 
 ## **What You Need**
 
-To begin this tutorial, download the Custom Umbraco Template folder attached below.&#x20;
+To begin this tutorial, download the Custom Umbraco Template folder attached below:
 
-{% file src="/broken/files/OGFbeL2xF63kNJmswHZ4" %}
+{% file src="../../.gitbook/assets/CustomUmbracoTemplate.zip" %}
 
 ### Installing Umbraco
 

@@ -2,6 +2,12 @@
 
 Response caching reduces the number of requests a client or proxy makes to a web server. See the Microsoft documentation for details of [Response caching in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response?view=aspnetcore-6.0) and how to implement the [Response Caching Middleware](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-6.0).
 
+{% hint style="info" %}
+Response caching controls `Cache-Control` HTTP headers. These headers tell browsers and proxies to cache the response, but the server still processes every request that reaches it.
+
+For **server-side** caching that avoids re-executing the Razor rendering pipeline entirely, see the [Website Output Caching](website-output-caching.md) article.
+{% endhint %}
+
 ## Modify the `Cache-Control` header for Static Files
 
 Example class to allow the modification of the `Cache-Control` header for static assets by file extension, but excluding Umbraco BackOffice assets.

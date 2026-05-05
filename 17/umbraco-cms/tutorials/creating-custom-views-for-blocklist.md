@@ -20,7 +20,7 @@ To create a Document Type:
 5. Click **Add Group** and name the group _Product Details_.
 6. Add the following properties:
 
-<figure><img src="../.gitbook/assets/document-properties (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/document-properties.png" alt=""><figcaption></figcaption></figure>
 
 7. Add another group called **Features** and a property with the following specification:
 
@@ -33,7 +33,7 @@ To create a Document Type:
 
 Your Document Type will now look like:
 
-<figure><img src="../.gitbook/assets/document-type (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/document-type.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating the Content Node
 
@@ -58,7 +58,7 @@ To configure the Block List editor:
 
 You'll see the Block list editor's configuration, as shown below:
 
-![Document Type](<../.gitbook/assets/blocklist-editor-settings (1).png>)
+![Document Type](../.gitbook/assets/blocklist-editor-settings.png)
 
 The **Configuration** section allows you to perform the following actions:
 
@@ -189,7 +189,7 @@ You will notice you can view the content as you type. This is because the **Live
 
 5. Click **Confirm** when the content is added.
 
-<figure><img src="../.gitbook/assets/Feature-Content (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Feature-Content.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating `Settings` section for Blocks
 
@@ -211,12 +211,12 @@ To add a Settings model:
    * Add **left**, **center** and **right** as values to the Dropdown List.
    * Click **Submit**.
 
-<figure><img src="../.gitbook/assets/prevalue-options-1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/prevalue-options-1.png" alt=""><figcaption></figcaption></figure>
 
 7. Click **Submit**.
 8. Click **Save and Close**.
 
-<figure><img src="../.gitbook/assets/Feature-Settings-1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Feature-Settings-1.png" alt=""><figcaption></figcaption></figure>
 
 9. Click **Submit** until you reach the Product Document Type.
 10. Click **Save**.

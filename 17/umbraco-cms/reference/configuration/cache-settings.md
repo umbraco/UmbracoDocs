@@ -153,6 +153,39 @@ Specifies the duration for which seeded cache entries should be kept in the cach
 }
 ```
 
+## Content type rebuild mode
+
+When you save a content type with structural changes, Umbraco rebuilds the database cache for every affected content item. Structural changes include removing a property, changing a property alias, or changing the variation mode.
+
+By default, this rebuild runs during the save operation and blocks it until every content item of the affected types has been re-serialized. On sites with many content items per type, or when multiple related content types are saved in succession, the save can be slow.
+
+### ContentTypeRebuildMode
+
+The `ContentTypeRebuildMode` setting controls whether the database cache rebuild runs immediately or is deferred to a background task. It accepts two values:
+
+* `Immediate` (default): the database cache rebuild runs during the save operation.
+* `Deferred`: the database cache rebuild is queued to a background task. The save returns without waiting for the rebuild to complete.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "ContentTypeRebuildMode": "Deferred"
+    }
+  }
+}
+```
+
+When `Deferred` is set, the content cache is still evicted immediately during the save. The next request reads the previously serialized data from the database. Once the background rebuild completes, the content cache is evicted again, and subsequent requests pick up the fresh data. Content continues to be served throughout the rebuild without errors, but may be temporarily stale.
+
+If multiple content types are saved in quick succession, the affected content type IDs are accumulated and processed together in a single batch. This avoids overlapping rebuild work between related types.
+
+The same setting also controls the deferral of search re-indexing triggered by content type changes.
+
+{% hint style="info" %}
+The `ContentTypeRebuildMode` setting is available from Umbraco 17.4.
+{% endhint %}
+
 ## NuCache Settings
 
 For backward compatibility reasons, certain settings are under the `Umbraco:CMS:NuCache` settings node.

@@ -6,7 +6,7 @@ description: Integrate one of the built-in Umbraco Contexts.
 
 ## Overview
 
-This is the third step in the Property Editor tutorial. This part shows how to integrate built-in Umbraco Contexts. For this sample, let us use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbNotificationContext`  shows a notification when the Trim button is clicked and the input exceeds the `maxChars` limit.
+This is the third step in the Property Editor tutorial. This part shows how to integrate built-in Umbraco Contexts. For this sample, let us use the `UmbNotificationContext` for some pop-ups and the `UmbModalManagerContext`. `UmbNotificationContext` shows a notification when the Trim button is clicked and the input exceeds the `maxChars` limit.
 
 This part covers:
 
@@ -90,7 +90,7 @@ Use the `NotificationContext`'s `peek` method here. It has two parameters `UmbNo
 
 If the input length is less or equal to the maxLength configuration, a notification is displayed when clicking on the Trim button.
 
-<figure><img src="../../.gitbook/assets/nothing-to-trim.png" alt="A danger notification reading 'Nothing to trim!' displayed in the Umbraco backoffice."><figcaption><p>Trim Button Notification</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nothing-to-trim.png" alt="A danger notification reading &#x27;Nothing to trim!&#x27; displayed in the Umbraco backoffice."><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
 ## Adding more logic to the context
 
@@ -344,7 +344,7 @@ To enforce the limit properly, your property editor needs to be a form control.
 
 {% stepper %}
 {% step %}
-### Import `UmbLitElement` and `UmbFormControlMixin`
+#### Import `UmbLitElement` and `UmbFormControlMixin`
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
@@ -353,8 +353,9 @@ import { UmbFormControlMixin } from '@umbraco-cms/backoffice/validation';
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Update the Lit import
+#### Update the Lit import
 
 Remove `UmbElementMixin` and `LitElement` from the `@umbraco-cms/backoffice/external/lit` import as they are no longer needed.
 
@@ -364,8 +365,9 @@ import { css, customElement, html, ifDefined, property, state } from '@umbraco-c
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Update the class declaration
+#### Update the class declaration
 
 Extend `UmbFormControlMixin` wrapping `UmbLitElement`:
 
@@ -377,8 +379,9 @@ export default class MySuggestionsPropertyEditorUIElement
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Replace `value` with a getter/setter
+#### Replace `value` with a getter/setter
 
 `UmbFormControlMixin` already defines `value` as an accessor:
 
@@ -394,8 +397,9 @@ public override get value(): string | undefined {
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Add a validation rule
+#### Add a validation rule
 
 Add this in the constructor to block saving when the character limit is exceeded:
 
@@ -409,8 +413,9 @@ this.addValidator(
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Register the input as a form control
+#### Register the input as a form control
 
 Add `firstUpdated()` to register the input:
 
@@ -428,7 +433,7 @@ protected override firstUpdated() {
 
 {% stepper %}
 {% step %}
-### Add the character counter
+#### Add the character counter
 
 Add a character counter below the `uui-input` in your `render()` method:
 
@@ -442,8 +447,9 @@ ${this._maxChars !== undefined
 ```
 {% endcode %}
 {% endstep %}
+
 {% step %}
-### Add the styles
+#### Add the styles
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript

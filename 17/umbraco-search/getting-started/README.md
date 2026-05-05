@@ -336,3 +336,29 @@ public class MySearchService(ISearcher searcher)
 }
 ```
 {% endcode %}
+
+### Bypassing content protection in search queries
+
+Sometimes it's relevant to surface search results for protected content, regardless if a member is currently logged in. To this end you can pass `AccessContent.BypassProtection()` to the searcher:
+
+{% code title="MySearchService.cs" %}
+```csharp
+using Umbraco.Cms.Search.Core.Models.Searching;
+using Umbraco.Cms.Search.Core.Services;
+using Constants = Umbraco.Cms.Search.Core.Constants;
+
+namespace My.Site.Services;
+
+public class MySearchService(ISearcher searcher)
+{
+    public async Task<SearchResult> SearchWithBypassForProtectedContent()
+    {
+        return await searcher.SearchAsync(
+            indexAlias: Constants.IndexAliases.PublishedContent,
+            query: "pink",
+            accessContext: AccessContext.BypassProtection()
+        );
+    }
+}
+```
+{% endcode %}

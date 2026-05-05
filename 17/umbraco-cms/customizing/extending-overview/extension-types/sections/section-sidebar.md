@@ -1,12 +1,12 @@
 ---
 description: >-
-   Use Section Sidebar extensions to add navigation, coordinate Section Views, and provide additional functionality inside Section extensions.
+  Use Section Sidebar extensions to add navigation, coordinate Section Views,
+  and provide additional functionality inside Section extensions.
 ---
 
 # Section Sidebar
 
-[Section extensions](./section.md) can add a Section Sidebar to add navigation, coordinate subviews such as
-[Section View extensions](./section-view.md), and provide Section-wide functionality.
+[Section extensions](section.md) can add a Section Sidebar to add navigation, coordinate subviews such as [Section View extensions](section-view.md), and provide Section-wide functionality.
 
 Section Sidebar extensions are optional; if not defined, the Section extension defaults to a single full-screen subview.
 
@@ -16,18 +16,18 @@ Section Sidebar extensions are optional; if not defined, the Section extension d
 
 The `sectionSidebarApp` manifest supports the following properties:
 
-| Property      | Type     | Required | Description |
-|---------------|----------|----------|-------------|
-| `type`        | string   | Yes      | Must be `sectionSidebarApp`. |
-| `alias`       | string   | Yes      | A unique identifier for this extension. |
-| `name`        | string   | Yes      | A human-readable name shown in Extension Insights. |
-| `weight`      | number   | No       | Controls the display order when multiple sidebar apps are registered in the same section. Higher values display higher in the sidebar. |
-| `kind`        | string   | No       | Inherit a preset configuration, for example, `menu`. See [Extension Kinds](../kind.md). |
-| `element`     | string   | No       | Path to a custom web component file. |
-| `elementName` | string   | No       | The custom element tag name (if not a default export). |
-| `meta`        | object   | No       | Additional configuration depending on the `kind` used. |
-| `conditions`  | array    | No       | Conditions that must pass for the app to appear. See [Extension Conditions](../../extension-conditions.md). |
-| `overwrites`  | string \| string[] | No | Alias(es) of extensions this manifest replaces. |
+| Property      | Type                | Required | Description                                                                                                                            |
+| ------------- | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`        | string              | Yes      | Must be `sectionSidebarApp`.                                                                                                           |
+| `alias`       | string              | Yes      | A unique identifier for this extension.                                                                                                |
+| `name`        | string              | Yes      | A human-readable name shown in Extension Insights.                                                                                     |
+| `weight`      | number              | No       | Controls the display order when multiple sidebar apps are registered in the same section. Higher values display higher in the sidebar. |
+| `kind`        | string              | No       | Inherit a preset configuration, for example, `menu`. See [Extension Kinds](../kind.md).                                                |
+| `element`     | string              | No       | Path to a custom web component file.                                                                                                   |
+| `elementName` | string              | No       | The custom element tag name (if not a default export).                                                                                 |
+| `meta`        | object              | No       | Additional configuration depending on the `kind` used.                                                                                 |
+| `conditions`  | array               | No       | Conditions that must pass for the app to appear. See [Extension Conditions](../../extension-conditions.md).                            |
+| `overwrites`  | string \| string\[] | No       | Alias(es) of extensions this manifest replaces.                                                                                        |
 
 For the full TypeScript interface, see [`ManifestSectionSidebarApp`](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_section.ManifestSectionSidebarApp.html) in the API documentation.
 
@@ -43,13 +43,11 @@ Section Sidebar extensions can be composed of **one or more** section sidebar ap
 
 Section Sidebar extension authors can place any custom web component into the sidebar. Extension authors will need to supply the `element` property with the path of their custom web component. Specify the full path, starting from the Umbraco project root.
 
-Sidebar Section extension authors may specify where the Section Sidebar app appears using
-[extension conditions](../condition.md).
+Sidebar Section extension authors may specify where the Section Sidebar app appears using [extension conditions](../condition.md).
 
 {% tabs %}
 {% tab title="JSON" %}
 {% code title="umbraco-package.json" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -69,16 +67,13 @@ Sidebar Section extension authors may specify where the Section Sidebar app appe
     }]
 }
 ```
-
 {% endcode %}
 {% endtab %}
 
 {% tab title="TypeScript" %}
-
 These should be registered via a [Backoffice Entry Point](../backoffice-entry-point.md).
 
 {% code title="manifests.ts" %}
-
 ```ts
 import type { ManifestSectionSidebarApp } from '@umbraco-cms/backoffice/section';
 
@@ -94,7 +89,6 @@ export const manifest: ManifestSectionSidebarApp = {
     }]
 };
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -112,7 +106,6 @@ The menu sidebar app, provided by Umbraco, can be placed in Section Sidebar exte
 {% tabs %}
 {% tab title="JSON" %}
 {% code title="umbraco-package.json" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -136,15 +129,13 @@ The menu sidebar app, provided by Umbraco, can be placed in Section Sidebar exte
     }]
 }
 ```
-
 {% endcode %}
 {% endtab %}
-{% tab title="TypeScript" %}
 
+{% tab title="TypeScript" %}
 These should be registered via a [Backoffice Entry Point](../backoffice-entry-point.md).
 
 {% code title="manifests.ts" %}
-
 ```ts
 import type { ManifestSectionSidebarAppMenu } from '@umbraco-cms/backoffice/menu';
 
@@ -164,7 +155,6 @@ export const manifest: ManifestSectionSidebarAppMenu = {
     }]
 };
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -176,7 +166,6 @@ Umbraco also provides a menuWithEntityActions kind, which extends the menu kind 
 In the example below, a menu extension is created and bound to the `meta:menu` (`My.Menu`) property, which matches the menu extension’s `alias`. The _My.Menu_ alias is also used to attach a menu item extension.
 
 {% code title="umbraco-package.json" %}
-
 ```json
 [
     {
@@ -195,19 +184,15 @@ In the example below, a menu extension is created and bound to the `meta:menu` (
     }
 ]
 ```
-
 {% endcode %}
 
 For more information, see the documentation for the [menus](../menu.md) extension.
 
 #### Coordinating subviews with menu items
 
-Menu sidebar apps can coordinate navigation between subviews in the section extension by referencing [workspace extensions](../../extension-types/workspaces/README.md). Modify the menu item extension to include the `meta:entityType` property, and assign it the same value as a workspace view extension's own `meta:entityType` property.
+Menu sidebar apps can coordinate navigation between subviews in the section extension by referencing [workspace extensions](../workspaces/). Modify the menu item extension to include the `meta:entityType` property, and assign it the same value as a workspace view extension's own `meta:entityType` property.
 
-{% tabs %}
-{% tab title="JSON" %}
 {% code title="umbraco-package.json" %}
-
 ```json
 [
     {
@@ -231,14 +216,16 @@ Menu sidebar apps can coordinate navigation between subviews in the section exte
     }
 ]
 ```
-
 {% endcode %}
-{% endtab %}
-{% tab title="TypeScript" %}
+
+
 
 These should be registered via a Backoffice Entry Point.
 
 {% code title="manifests.ts" %}
+```
+```
+{% endcode %}
 
 ```ts
 import type { UmbExtensionManifest } from '@umbraco-cms/backoffice/extension-api';
@@ -277,7 +264,6 @@ Authors can add their extensions to the sidebar of any Umbraco-provided section 
 {% tabs %}
 {% tab title="JSON" %}
 {% code title="umbraco-package.json" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -296,15 +282,13 @@ Authors can add their extensions to the sidebar of any Umbraco-provided section 
     }]
 }
 ```
-
 {% endcode %}
 {% endtab %}
-{% tab title="TypeScript" %}
 
+{% tab title="TypeScript" %}
 These should be registered via a Backoffice Entry Point.
 
 {% code title="manifests.ts" %}
-
 ```ts
 import type { ManifestSectionSidebarApp } from '@umbraco-cms/backoffice/section';
 
@@ -321,19 +305,18 @@ export const manifest: ManifestSectionSidebarApp = {
     ]
 };
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-##### Section Aliases
+**Section Aliases**
 
 Common Umbraco-provided section aliases:
 
-- `Umb.Section.Content`
-- `Umb.Section.Media`
-- `Umb.Section.Settings`
-- `Umb.Section.Packages`
-- `Umb.Section.Users`
-- `Umb.Section.Members`
-- `Umb.Section.Translation`
+* `Umb.Section.Content`
+* `Umb.Section.Media`
+* `Umb.Section.Settings`
+* `Umb.Section.Packages`
+* `Umb.Section.Users`
+* `Umb.Section.Members`
+* `Umb.Section.Translation`
