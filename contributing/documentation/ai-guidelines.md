@@ -35,6 +35,8 @@ Any feedback we receive on articles you've generated with AI will be directed ba
 
 The repo includes the [**`umbraco-docs-content` skill**](../../.claude/skills/umbraco-docs-content/SKILL.md) built for our structure, tone, and formatting. We recommend using it exclusively.
 
+Additionally, use the `review-docs` skill to review your work before submitting the PR. Catching minor style guide violations during your own review process, ensures an even smoother review process once the PR is submitted.
+
 Using other prompts, custom skills, or third-party templates is **not recommended**, as it risks inconsistency across the documentation. If you spot something the skill does poorly, suggest an improvement — don't work around it.
 
 ## 4. Maximum 10 files per PR
