@@ -27,6 +27,6 @@ Pushing a baseline update to child projects will trigger an activity on the base
 
 ## Basic Authentication for all plans
 
-Basic Authentication is now available on all Umbraco Cloud plans. You can enable it from **Settings** > **Public Access** to restrict access to your project environments to project members and allowlisted IPs.
+Basic Authentication is now available on all Umbraco Cloud plans. You can enable it from **Settings** > **Public Access** to restrict access to your project environments to project members and allowed IPs.
 
 For setup steps and configuration details, see the [Public Access](../../build-and-customize-your-solution/set-up-your-project/project-settings/public-access.md) documentation.
