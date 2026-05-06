@@ -29,7 +29,7 @@ The table kind always renders the following columns automatically:
 | **Name** | Always the first column. Renders the item icon and name. |
 | **Description** | Rendered only when at least one item in the collection has a description. |
 | _(manifest columns)_ | Any columns defined in `meta.columns`, inserted after Name/Description. Values are rendered as strings. |
-| **[Entity Actions](../entity-actions.md)** | Always the last column. Right-aligned; renders the item's context menu. |
+| **[Entity Actions](../../entity-actions.md)** | Always the last column. Right-aligned; renders the item's context menu. |
 
 Register the Table Collection View in the extension registry with the kind set to "table":
 
