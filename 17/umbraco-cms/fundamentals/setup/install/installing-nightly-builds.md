@@ -4,6 +4,10 @@ description: Instructions on installing nightly builds of Umbraco.
 
 # Installing Nightly Builds
 
+{% hint style="warning" %}
+Nightly builds are pre-release and may be unstable. Do not use them in production environments.
+{% endhint %}
+
 In this article, we'll explain how you can get the latest builds of Umbraco. You can do this in three steps:
 
 1. [Adding the nightly feed as a NuGet source](installing-nightly-builds.md#adding-the-nightly-feed-as-a-nuget-source)
@@ -61,7 +65,7 @@ To add the nightly feed using Rider:
 1. Open Rider.
 2. Go to **View** > **Tool Windows** > **NuGet**.
 3. Go to **Sources** tab.
-4. Choose the `C:\Users\Úmbraco\AppData\Roaming\NuGet\NuGet.Config` to add the feed globally.
+4. Select the global `NuGet.Config` to add the feed globally.
 5. Click the green `+` button in the **New Feed** field.
 
 ![Open the new feed menu](../../../.gitbook/assets/NuGet_NewFeed.jpg)
@@ -126,7 +130,7 @@ You can use the NuGet window in Rider to browse the available template versions.
 
 ![Choose the feed](../../../.gitbook/assets/Rider_Nightly_Feed.jpg)
 
-4. Check the **Prerelase** checkbox.
+4. Check the **Prerelease** checkbox.
 5. Search for **Umbraco.Templates** in the **Search** field.
 6. Choose that package.
 7. Click on the **Version** drop down and see the available nightly builds.
@@ -141,13 +145,11 @@ Now that our feed is added and we know the exact version we're ready to install 
 To install the latest nightly version template:
 
 1. Open your command prompt.
-2. Run the following command using the latest version:
+2. Run the following command, replacing the version with the one you noted in the previous step:
 
 ```bash
-dotnet new install Umbraco.Templates
+dotnet new install Umbraco.Templates::X.Y.Z--build.N
 ```
-
-With that, we've successfully installed the latest nightly build of Umbraco.
 
 All we have to do now is to create a site using the `dotnet new umbraco -n MyAwesomeNightlySite` command.
 
