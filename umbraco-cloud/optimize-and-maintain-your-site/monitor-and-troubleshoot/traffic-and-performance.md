@@ -4,7 +4,7 @@ description: >-
   projects' past and current health.
 ---
 
-# Availability and Performance
+# Traffic and Performance
 
 Leveraging Azure metrics data, the **Availability & Performance** page provides users with valuable insights into the availability and performance of their cloud project. This enables them to monitor and address any issues that may impact the user experience.
 
@@ -56,7 +56,7 @@ Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cl
 
 ### Chart and statistics view
 
-For each segment, there will be shown a chart and a set of related statistics. The charts also show [platform and CMS events](availability-performance.md#platform-and-cms-events), making it convenient to see how different events impact performance.
+For each segment, there will be shown a chart and a set of related statistics. The charts also show [platform and CMS events](traffic-and-performance.md#platform-and-cms-events), making it convenient to see how different events impact performance.
 
 #### Failed request
 
