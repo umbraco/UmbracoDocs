@@ -19,6 +19,7 @@ The page is made up of the following sections:
 * [Edge data granularity](#edge-data-granularity)
 * [Edge data limitations](#edge-data-limitations)
 
+<figure><img src="../../.gitbook/assets/tp-page-overview.png" alt="The Traffic & Performance page showing the selectors, overview tiles, chart, and breakdown tables."><figcaption><p>The Traffic & Performance page.</p></figcaption></figure>
 
 ## Time Range, Environment, and Hostname Selectors
 
