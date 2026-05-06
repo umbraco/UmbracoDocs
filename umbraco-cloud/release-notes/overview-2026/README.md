@@ -8,6 +8,7 @@ description: Get an overview of the release notes for each month in 2026.
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname, so visitors see your own page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.
 
 ## [April 2026](2026-04-releasenotes.md)
 
