@@ -4,6 +4,10 @@ This article covers team members added to your project via the **Invite User** b
 
 Team members are automatically added as users in the Backoffice of all environments for the project. These users can clone the project locally and log in using the same credentials they use for Umbraco Cloud.
 
+{% hint style="info" %}
+When you remove a team member from a project, the matching backoffice user is anonymized across every environment. The user is disabled, and their name and email are replaced with anonymized values. Audit history and content references are preserved.
+{% endhint %}
+
 ![Add team member](<../../../.gitbook/assets/invite_user (1).png>)
 
 When adding a user, the default permission is _Read_ for each environment. You can assign backoffice user groups to the user for each environment.
