@@ -219,14 +219,6 @@ The redirect URI registered in the Composer must match the Worker's callback URL
 
 You can register multiple redirect URIs in the Composer for different environments.
 
-## Verifying the Setup
-
-1. Restart the Umbraco instance (so the Composer runs).
-2. Start the Worker: `npx wrangler dev --port 8787`.
-3. Visit `http://localhost:8787`. You should see the landing page.
-4. Use the MCP Inspector in Direct mode with `http://localhost:8787/`.
-5. The Inspector should trigger the OAuth flow: consent screen, then Umbraco login, then connected.
-
 ## Troubleshooting
 
 ### "The specified `redirect_uri` is not valid" (OpenIdDict ID2043)

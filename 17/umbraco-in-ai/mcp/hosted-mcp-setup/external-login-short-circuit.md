@@ -134,13 +134,6 @@ The composer only rewrites the redirect when all three conditions are met:
 
 Other unauthenticated requests fall through to the previous `OnRedirectToLogin` handler, which preserves the default behaviour for non-MCP traffic.
 
-## Verifying the Setup
-
-1. Deploy the composer to your Umbraco Cloud project.
-2. Connect a fresh MCP client to the hosted Worker.
-3. Approve the consent screen.
-4. The browser should redirect to `identity.umbraco.com` (Azure B2C) for Cloud login, not the local Umbraco username and password form.
-
 ## Troubleshooting
 
 ### Cold-start authentication lands on the local username and password form
