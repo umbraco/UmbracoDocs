@@ -125,6 +125,7 @@
 * [Optimize Performance](optimize-and-maintain-your-site/optimize-performance/README.md)
   * [CDN Caching and Optimizations](optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
   * [Migrate between regions](optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md)
+  * [Load Balancing](optimize-and-maintain-your-site/optimize-performance/load-balancing.md)
 * [Monitor and Troubleshoot](optimize-and-maintain-your-site/monitor-and-troubleshoot/README.md)
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
