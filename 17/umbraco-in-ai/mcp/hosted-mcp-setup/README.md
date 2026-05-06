@@ -40,7 +40,7 @@ Every Umbraco instance that connects to a hosted MCP Worker needs:
         └────── access token ──────────┘
 ```
 
-The Worker registers itself with Umbraco's OpenIddict as an `authorization_code` OAuth client. When an MCP client connects, the Worker redirects the user to Umbraco for login, exchanges the resulting code for an access token, and uses the token on every Management API call.
+The Worker registers itself with Umbraco's OpenIddict as an `authorization_code` OAuth client. When an MCP client connects, the Worker redirects the user to Umbraco for login. The Worker exchanges the resulting code for an access token and uses the token on every Management API call.
 
 ## Articles in This Section
 

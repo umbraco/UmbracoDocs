@@ -88,7 +88,7 @@ You can override `pathPrefix`, `region`, `validateProject`, or `cacheTtl` if nee
 
 ## OAuthProvider Wiring
 
-`OAuthProvider` must recognise both `/mcp` and `/at/` as protected resources. The rewrite from `/at/<alias>/` to `/mcp` happens **inside** `apiHandler`, after the audience check passes:
+`OAuthProvider` must recognize both `/mcp` and `/at/` as protected resources. The rewrite from `/at/<alias>/` to `/mcp` happens **inside** `apiHandler`, after the audience check passes:
 
 {% code title="worker.ts" %}
 ```typescript
@@ -150,16 +150,16 @@ The first time an MCP client connects to `/at/<alias>/`:
 
 1. The Worker returns 401 with `WWW-Authenticate: Bearer`.
 2. The client fetches `/.well-known/oauth-protected-resource/at/<alias>` and learns the token must bind to `https://<worker-host>/at/<alias>`.
-3. The client registers (DCR) and reads the issuer metadata.
+3. The client registers via Dynamic Client Registration and reads the issuer metadata.
 4. The client opens `/authorize?...&resource=https://<worker-host>/at/<alias>`. The Worker shows the consent screen.
 5. The user approves. The Worker stores `siteId=<alias>` in KV state and redirects to the project's authorize endpoint.
 6. The Cloud project redirects to Umbraco login. The short-circuit composer appends `identity_provider=Umbraco.UmbracoId` to route through the Cloud SSO provider.
 7. The user logs in at `identity.umbraco.com` (Azure B2C).
-8. The OIDC callback (`/umbraco-signin-oidc`) converts the external login into a back-office cookie sign-in.
+8. The OIDC callback (`/umbraco-signin-oidc`) converts the external login into a backoffice cookie sign-in.
 9. The Cloud project redirects back to the Worker's `/callback/<alias>`. The Worker exchanges the authorization code and issues an access token bound to `aud=https://<worker-host>/at/<alias>`.
 10. The MCP client retries `/at/<alias>/` with the access token. The audience matches, the request is rewritten to `/mcp`, and the tools list is returned.
 
-The siteId reaches per-request server creation through `props.consentChoices.siteId`. `createPerRequestServer` calls `siteRouting.resolveSite` to look up the project's `baseUrl` for outbound API calls.
+The `siteId` reaches per-request server creation through `props.consentChoices.siteId`. `createPerRequestServer` calls `siteRouting.resolveSite` to look up the project's `baseUrl` for outbound API calls.
 
 ## Adding a New Cloud Project
 
@@ -211,9 +211,9 @@ Audience validation works the same way for self-hosted projects.
 
 ### Authentication loops between the project authorize endpoint and `identity.umbraco.com`
 
-**Cause**: The OIDC callback is not converting the external sign-in to a back-office cookie.
+**Cause**: The OIDC callback is not converting the external sign-in to a backoffice cookie.
 
-**Fix**: Confirm the short-circuit composer appends `identity_provider=Umbraco.UmbracoId` to the redirect, which routes through `BackOfficeController.AuthorizeExternal`. Direct OIDC challenges bypass the cookie sign-in.
+**Fix**: Confirm the short-circuit composer appends `identity_provider=Umbraco.UmbracoId` to the redirect, which routes through `BackOfficeController.AuthorizeExternal`. Direct OIDC challenges bypass the backoffice cookie sign-in.
 
 ## Related Articles
 
