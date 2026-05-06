@@ -51,7 +51,7 @@ public class RegisterMcpClientHandler
         UmbracoApplicationStartingNotification notification,
         CancellationToken cancellationToken)
     {
-        const string clientId = "umbraco-back-office-mcp";
+        const string clientId = "umbraco-back-office-hosted-mcp";
 
         // Remove any existing registration so we can update it cleanly
         var existing = await _applicationManager.FindByClientIdAsync(clientId, cancellationToken);
@@ -95,6 +95,10 @@ public class RegisterMcpClientHandler
 }
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+Use a `clientId` value that is unique to the hosted MCP Worker. The composer deletes any existing client with the same ID on every startup. API user clients registered through **Settings > Users** would silently lose their registration if their client ID matches.
+{% endhint %}
 
 ## How It Works
 
