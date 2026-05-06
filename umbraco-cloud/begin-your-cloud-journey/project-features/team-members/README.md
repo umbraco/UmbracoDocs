@@ -4,10 +4,6 @@ This article covers team members added to your project via the **Invite User** b
 
 Team members are automatically added as users in the Backoffice of all environments for the project. These users can clone the project locally and log in using the same credentials they use for Umbraco Cloud.
 
-{% hint style="info" %}
-When you remove a team member from a project, the matching backoffice user is anonymized across every environment. The user is disabled, and their name and email are replaced with anonymized values. Audit history and content references are preserved.
-{% endhint %}
-
 ![Add team member](<../../../.gitbook/assets/invite_user (1).png>)
 
 When adding a user, the default permission is _Read_ for each environment. You can assign backoffice user groups to the user for each environment.
@@ -41,6 +37,14 @@ Find invitation details in the **Member(s) who still need to accept the project 
 * Delete the invitation.
 
 ![Team Members Pending Invitation](<../../../.gitbook/assets/Pending-Project-Invites (1).png>)
+
+## Removing Team Members
+
+When you remove a team member from a project, Umbraco Cloud disables and anonymizes the corresponding backoffice user across all environments. The name and email are replaced with anonymized values, and the user can no longer sign in.
+
+Audit history, content history, and any other records that reference the removed user are preserved. The history points to the anonymized user, so the audit trail stays intact without retaining personal data.
+
+Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for clearing personal data from a project for users who have signed in.
 
 ## [Technical Contacts](technical-contact.md)
 
