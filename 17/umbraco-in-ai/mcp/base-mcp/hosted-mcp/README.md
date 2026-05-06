@@ -37,7 +37,7 @@ Each MCP request creates a fresh `McpServer` instance. No state is shared betwee
 - A [Cloudflare account](https://dash.cloudflare.com/sign-up)
 - The [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (`npm install -g wrangler`)
 - An Umbraco instance with Management API enabled
-- An OAuth client registered in the Umbraco instance (see [Umbraco Setup](umbraco-setup.md))
+- An OAuth client registered in the Umbraco instance (see [Hosted MCP Setup](../../hosted-mcp-setup/README.md))
 
 ## Getting Set Up
 
@@ -90,7 +90,7 @@ See [Multi-Site Deployments](multi-site.md) for setup instructions, route struct
 
 Read these articles in order:
 
-1. [Umbraco Setup](umbraco-setup.md) - Register the Worker as an OAuth client (one-time).
+1. [Hosted MCP Setup](../../hosted-mcp-setup/README.md) - Prepare the Umbraco instance (OAuth composer and Cloud-specific configuration).
 2. [Deployment](deployment.md) - Deploy, set secrets, and verify the connection.
 3. [Manual Setup](manual-setup.md) - Worker entry point, wrangler.toml, and secrets (reference).
 
@@ -98,6 +98,7 @@ Read these articles in order:
 
 4. [Customization](customization.md) - Consent screen tool selection, branding, and custom rendering.
 5. [Multi-Site Deployments](multi-site.md) - Serve multiple Umbraco instances from one Worker.
+6. [URL-Based Routing](url-based-routing.md) - Serve multiple Umbraco Cloud projects through one Worker.
 
 ### Understanding the System
 
