@@ -34,8 +34,8 @@ For setup steps and configuration details, see the [Public Access](../../build-a
 
 ## Anonymized backoffice users on team removal
 
-When you remove a team member from a project, Umbraco Cloud now anonymizes the matching backoffice user across every environment. The user is disabled, and the name and email are replaced with anonymized values. Content history, audit logs, and other records that reference the user are preserved, so the audit trail stays intact without retaining personal data.
+When you remove a team member from a project, Umbraco Cloud now anonymizes the corresponding backoffice user across all environments. The user is disabled, and the name and email are replaced with anonymized values. Content history, audit logs, and other records that reference the user are preserved, so the audit trail stays intact without retaining personal data.
 
-Umbraco does not allow deletion of a backoffice user who has logged in at least once. Anonymization is the supported way to clear personal data from a project for users who have signed in. After a team member is removed, no project holds personal data for that person.
+Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for removing personal data from a project for users who have signed in. After a team member is removed, no project holds personal data for that person.
 
 <figure><img src="../../.gitbook/assets/cloud-anonymized-user.png" alt="Backoffice user profile after anonymization, showing the name 'Anonymized User', a placeholder email at deleted.invalid, and a Disabled status badge."><figcaption><p>A backoffice user profile after anonymization, with a generic name, a placeholder email, and a Disabled status.</p></figcaption></figure>
