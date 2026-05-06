@@ -204,6 +204,7 @@
       * [Workspace Views](customizing/extending-overview/extension-types/workspaces/workspace-views.md)
     * [Collections](customizing/extending-overview/extension-types/collections/README.md)
       * [Collection View](customizing/extending-overview/extension-types/collections/collection-view/README.md)
+        * [Table View](customizing/extending-overview/extension-types/collections/collection-view/table.md)
         * [Card View](customizing/extending-overview/extension-types/collections/collection-view/card.md)
         * [Reference View](customizing/extending-overview/extension-types/collections/collection-view/reference.md)
         * [Custom View](customizing/extending-overview/extension-types/collections/collection-view/custom.md)
