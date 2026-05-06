@@ -4,6 +4,7 @@
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname. Visitors see your page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 
 ## Error pages
 
@@ -23,3 +24,9 @@ For authoring guidelines and a ready-to-use HTML template, see the [Error Pages]
 ## Baseline enhancements
 
 Pushing a baseline update to child projects will trigger an activity on the baseline project. The activity is non-blocking, but will run until all children are updated.
+
+## Basic Authentication for all plans
+
+Basic Authentication is now available on all Umbraco Cloud plans. You can enable it from **Settings** > **Public Access** to restrict access to your project environments to project members and allowlisted IPs.
+
+For setup steps and configuration details, see the [Public Access](../../build-and-customize-your-solution/set-up-your-project/project-settings/public-access.md) documentation.
