@@ -22,14 +22,14 @@ This section contains the release notes for Umbraco Deploy 17, including all cha
 * Add entity signs for queued entities.
 * Add environment name header app, showing the current environment with its icon and a badge with the number of items in the transfer queue.
 * Add support for user group descriptions (introduced in Umbraco CMS 17.2).
-* Allow exporting all supported entity tree roots (including a fix for members, so you can now transfer/restore/export all members when `AllowMembersDeploymentOperations` is not set to `None`).
-* Ensure compatibility with Umbraco CMS 17.4, which makes `IHostingEnvironment.ApplicationMainUrl` nullable at runtime ([umbraco/Umbraco-CMS#22307](https://github.com/umbraco/Umbraco-CMS/pull/22307)) by falling back to the current request's origin when the application URL is not configured.
+* Allow exporting all supported entity tree roots, including a fix for members. You can now transfer/restore/export all members when `AllowMembersDeploymentOperations` is not set to `None`.
+* Ensure compatibility with Umbraco CMS 17.4, which makes `IHostingEnvironment.ApplicationMainUrl` nullable at runtime ([umbraco/Umbraco-CMS#22307](https://github.com/umbraco/Umbraco-CMS/pull/22307)). Deploy now falls back to the current request's origin when the application URL is not configured.
 
 #### `@umbraco-deploy/backoffice` NPM package
 
-The new [`@umbraco-deploy/backoffice`](https://www.npmjs.com/package/@umbraco-deploy/backoffice) NPM package publishes Deploy's TypeScript type definitions so external packages can consume Deploy's extension points. It exports extension manifest types (such as `ManifestDeployEntityActionRegistrar` and `ManifestDeployEntityTypeMapping`), entity action base classes, context tokens, conditions, and the referenced API and entity models.
+The new [`@umbraco-deploy/backoffice`](https://www.npmjs.com/package/@umbraco-deploy/backoffice) NPM package publishes Deploy's TypeScript type definitions so external packages can consume Deploy's extension points. The package exports extension manifest types (such as `ManifestDeployEntityActionRegistrar` and `ManifestDeployEntityTypeMapping`), entity action base classes, context tokens, conditions, and the referenced API and entity models.
 
-Add it as a development dependency in your custom backoffice extension to get accurate type information when integrating with Deploy.
+Add the package as a development dependency in your custom backoffice extension to get accurate type information when integrating with Deploy.
 
 ### [17.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) (March 5th 2026)
 
