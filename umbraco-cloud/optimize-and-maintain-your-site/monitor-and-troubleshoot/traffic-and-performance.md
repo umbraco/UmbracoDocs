@@ -1,88 +1,156 @@
 ---
 description: >-
-  The Availability & Performance page lets you see get an overview of your cloud
+  The Traffic & Performance page lets you see get an overview of your cloud
   projects' past and current health.
 ---
 
 # Traffic and Performance
 
-Leveraging Azure metrics data, the **Availability & Performance** page provides users with valuable insights into the availability and performance of their cloud project. This enables them to monitor and address any issues that may impact the user experience.
+**Traffic & Performance** combines Azure application metrics with Cloudflare edge analytics to give users a complete picture of their cloud project's health and traffic patterns. This enables them to monitor HTTP traffic, response times, resource usage, and detailed traffic breakdowns — helping them identify and resolve issues that impact user experience.
 
 ## Overview
 
-Under Availability & Performance, you'll find visualization and statistics for three sections:
+The page is made up of the following sections:
 
-* Time range and granularity selector
-* Panel view
-* Chart and statistics view
+* [Time range, environment, and hostname selectors](#time-range-environment-and-hostname-selectors)
+* [Performance overview tiles](#performance-overview-tiles)
+* [Dataset selector and chart](#dataset-selector-and-chart)
+* [Performance status](#performance-status)
+* [Traffic breakdown tables](#traffic-breakdown-tables)
 
-The visualization and statistics can be seen for all your different environments.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Availability and performance Overview</p></figcaption></figure>
+## Time Range, Environment, and Hostname Selectors
 
-{% hint style="info" %}
-Future updates will include more detailed visualization and troubleshooting tools, available exclusively to **Standard** and **Professional** project plans.
-{% endhint %}
+At the top of the page you will find controls that determine which data is displayed.
 
-### Time range and granularity selector
-
-Upon entering the page, you'll see a default visualization of failed requests over the last 24 hours, with data points every five minutes. You are able to change the time range to a predefined interval or define a specific start and end time. You can also select the granularity of the data points.
+### Time Range
+The default view shows data for the **last 24 hours** with data points every 5 minutes. The edge analytics granularity table can be seen here (insert link).
+You are able to change the time range to a predefined interval or define a specific start and end time.  
 
 ![Time-range-selector](../../.gitbook/assets/AP-time-range-selector.png)
 
-Initially, you will only be able to set the time granularity to “_5 minutes_”.
+### Environment
 
-### Panel view
+Use the environment dropdown to select which environment (for example, Live, Staging, or Development) to view metrics for.
 
-The panel selector consists of four tiles, each representing a specific segment of data. The four segments are **failed request**, **App Performance**, **CPU Usage**, and **Memory Usage**.
+### Hostname Selector
 
-![Pane-view](../../.gitbook/assets/AP-Panel-Selector.png)
+The hostname selector lets you pick one or more custom hostnames associated with your project. Selecting at least one hostname **enables edge analytics** — the Requests and Data Transfer tiles, edge metrics on the chart, and the traffic breakdown tables.
+
+{% hint style="info" %}
+Edge analytics data is only available when at least one hostname is selected.
+{% endhint %}
+
+## Performance Overview Tiles
+
+The overview section shows summary tiles for key metrics. There are up to six tiles — four Azure metric tiles that are always visible, and two Cloudflare edge tiles that appear when hostnames are selected.
+
+![Performance overview tiles](../../.gitbook/assets/tp-performance-overview-tiles.png)
 
 Each tile includes relevant statistics and potentially a warning or an error indicator in case there is something you might want to consider.
 
-An error indicator is shown in the following situations:
+### Application Metric Tiles
 
-* **Failed Requests**: when one or more server errors have occurred in the selected time range.
-* **CPU Usage**: when the maximum CPU time has exceeded 100% of the plan quota in 5 minutes during the selected time range.
-* **Memory Usage**: when the maximum private time has exceeded 100% of the plan quota in 5 minutes during the selected time range.
+#### Failed Requests
 
-A warning indicator is shown in the following situations:
+Displays the total count of HTTP 4xx and 5xx responses.
 
-* **Failed Requests**: when one or more client errors (but no server errors) have occurred in the selected time range.
-* **CPU Usage**: when the maximum CPU time has exceeded 80% percent of the plan quota in a 5-minute period during the selected time range.
-* **Memory Usage**: when the maximum private time has exceeded 80% percent of the plan quota in a 5-minute period during the selected time range.
+- **Error indicator** appears when one or more HTTP 5xx (server error) responses occur.
 
-Errors and warnings for **CPU Usage** and **Memory Usage** are only shown for cloud projects on shared plans with a granularity of 5 minutes selected.
+- **Warning indicator** appears when HTTP 4xx client errors exist but there are no server errors.
 
-### Chart and statistics view
+#### App Performance
 
-For each segment, there will be shown a chart and a set of related statistics. The charts also show [platform and CMS events](traffic-and-performance.md#platform-and-cms-events), making it convenient to see how different events impact performance.
+Displays the average response time in milliseconds across all requests.
 
-#### Failed request
+#### CPU Usage
+
+Displays CPU time consumed.
+
+* **Shared plans**: Shown as a percentage of your plan quota. An orange warning appears when maximum CPU exceeds **80%** of the plan quota within a 5-minute period. A red error appears when maximum CPU exceeds **100%**.
+* **Dedicated plans**: Shows average CPU time.
+
+#### Memory Usage
+
+Displays private bytes (memory) consumed.
+
+* **Shared plans**: Shown as a percentage of your plan quota. An orange warning appears when maximum private bytes exceed **80%** of the plan quota within a 5-minute period. A red error appears when maximum private bytes exceed **100%**.
+* **Dedicated plans**: Shows average private bytes in MB.
+
+{% hint style="info" %}
+CPU and Memory warning/error indicators only display for shared plans.
+{% endhint %}
+
+### Edge Metric Tiles
+
+These tiles appear when you have selected one or more hostnames in the hostname selector.
+
+#### Requests
+
+Displays the total number of HTTP requests hitting your site through Cloudflare's edge network.
+
+#### Data Transfer
+
+Displays the total data transferred from your site through the edge. High values may indicate large media files or heavy traffic.
+
+## Dataset Selector and Chart
+
+### Dataset Selector
+
+![Dataset selector](../../.gitbook/assets/tp-dataset-selector.png)
+
+Above the chart, a pill-based selector lets you choose which metrics to display. You can:
+
+* Click a pill to remove a metric from the chart.
+* Click **Add metric** to add additional metrics.
+* Display multiple metrics simultaneously on the same chart for comparison.
+
+Available metrics include:
+
+* Four application metrics — Failed Requests, App Performance, CPU Usage, and Memory Usage.
+* Two edge metrics (when hostnames are selected) — Requests and Data Transfer.
+
+At least one metric must always be selected.
+
+The chart also shows [platform and CMS events](traffic-and-performance.md#platform-and-cms-events), making it convenient to see how different events impact performance.
+
+#### Chart Toolbar
+
+The chart toolbar provides the following controls:
+
+* **Platform events toggle** — Show or hide deployment events, restarts, and other platform events as vertical annotations on the chart.
+* **Zoom in / Zoom out / Reset zoom** — Adjust the chart zoom level.
+* **Selection zoom** (default) — Click and drag to zoom into a specific area.
+* **Pan mode** — Click and drag to move across the chart.
+* **Export** — Download the chart as SVG, PNG, or CSV.
+
+### Chart
+
+The chart displays an interactive line graph of the selected metrics over the chosen time range.
+
+#### Failed requests
 
 The chart shows the breakdown of HTTP status codes for each data point with the selected granularity. Only responses indicating a client (4xx region) or server errors (5xx region) are shown.
 
-![Failed-request](../../.gitbook/assets/AP-1-FailedRequests.png)
+![Failed requests](../../.gitbook/assets/tp-graph-failed-requests.png)
 
-In the statistics panel on the right, you will find the total instances of the status code in the time range.
+In the statistics tiles under the graph, you will find the total instances of the status code in the time range.
 
 #### App Performance
 
 The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to average response time.
 
-![AppPerformance](../../.gitbook/assets/AP-2-AppPerformance.png)
+![App performance](../../.gitbook/assets/tp-graph-app-performance.png)
 
-The statistics panel shows the average, maximum, and minimum response for the shown data points.
+The statistics tiles show the average, maximum, and minimum response for the shown data points.
 
 #### CPU Usage
 
 The chart depicts the CPU time consumed by the application in the selected time range with time periods equaling the selected granularity.
 
-![Cpu usage](../../.gitbook/assets/AP-3-CpuUsage2.png)
-
 Cloud projects with shared resources and a granularity of 5 minutes will display assigned CPU time in seconds, along with a comparison to [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
-In this case, the statistics panel shows the following:
+In this case, the statistics tiles show the following:
 
 * The maximum CPU time
 * The average CPU time
@@ -95,11 +163,25 @@ Cloud projects on dedicated options (or a shared plan with another granularity t
 
 The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equaling the selected granularity.
 
-![Memory usage](../../.gitbook/assets/AP-4-MemoryUsage.png)
+![CPU and memory usage](../../.gitbook/assets/tp-graph-cpu-and-memory-usage.png)
 
 Cloud projects utilizing shared resources with a granularity of 5 minutes will display the allocated private bytes in megabytes (MB). It also displays a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
 
-For Cloud projects with dedicated options or shared plans other than 5-minute granularity, users will see the average assigned private bytes displayed in bytes. Here the statistics panel will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
+For Cloud projects with dedicated options or shared plans other than 5-minute granularity, users will see the average assigned private bytes displayed in bytes. Here the statistics tiles below will display the maximum, average, and minimum allocation of private bytes based on selected granularity.
+
+#### Edge Requests
+
+The chart depicts the number of HTTP requests served through Cloudflare's edge network for the selected hostnames in the selected time range.
+
+The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page shows a more detailed view of edge traffic, broken down by status code, cache status, HTTP version, path, host, and data center.
+
+#### Edge Data Transfer 
+
+The chart depicts the amount of data (in bytes) transferred through Cloudflare's edge network for the selected hostnames in the selected time range.
+
+![Edge requests and data transfer](../../.gitbook/assets/tp-graph-edge-requests-and-data-transfer.png)
+
+The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page shows a more detailed view of edge data transer, broken down by status code, cache status, HTTP version, path, host, and data center.
 
 #### Platform and CMS events
 
@@ -138,15 +220,140 @@ You can disable Hot/Cold boots tracking on your Umbraco Cloud Project by adding 
 
 It is also possible to remove the reference to the `Umbraco.Cloud.Cms` package in the UmbracoProject.csproj.
 
+## Traffic Breakdown Tables
+
+The breakdown tables provide detailed Cloudflare edge analytics, giving you visibility into how traffic flows through the edge network. This section appears when edge analytics are available (hostnames selected and valid time range).
+
+A toggle at the top of the section lets you switch between viewing data by **Edge Requests** (count) or **Edge Data Traffic** (bytes transferred).
+
+![Breakdown tables with toggle](../../.gitbook/assets/tp-breakdown-tables-and-toggle.png)
+
+Each table shows the top entries sorted by count or bytes. 
+
+### Response Characteristics
+
+![Response characteristics breakdown](../../.gitbook/assets/tp-breakdown-tables-response-characteristics.png)
+
+#### Edge Status Codes
+
+Shows the distribution of HTTP status codes returned by the Cloudflare edge. Examples:
+
+* 200 OK
+* 301 Moved Permanently
+* 404 Not Found
+* 500 Internal Server Error
+
+#### Cache Statuses
+
+Shows how the Cloudflare cache serves requests — for example, `HIT` (served from cache), `MISS` (fetched from origin), or `BYPASS` (cache skipped).
+
+#### HTTP Versions
+
+Shows the distribution of HTTP protocol versions used by clients (HTTP/1.0, HTTP/1.1, HTTP/2, HTTP/3).
+
+### Traffic Destination
+
+![Traffic destination breakdown](../../.gitbook/assets/tp-breakdown-tables-traffic-destination.png)
+
+#### Paths
+
+The most requested URL paths on your site.
+
+#### Hosts
+
+The hostnames receiving traffic.
+
+#### Data Centers
+
+The Cloudflare data centers serving requests to your site. The data centers help you understand the geographic distribution of your edge traffic.
+
+#### HTTP Methods
+
+The distribution of HTTP methods used by clients (for example, GET, POST, PUT, DELETE).
+
+### Traffic Source
+
+![Traffic source breakdown](../../.gitbook/assets/tp-breakdown-tables-traffic-source.png)
+
+#### Referers
+
+The HTTP referrer headers — showing which sites or pages are sending traffic to you.
+
+#### Countries
+
+The geographic origin of requests by country.
+
+#### Source IPs
+
+The client IP addresses making requests.
+
+#### Source Browsers
+
+The browser types used by visitors (for example, Chrome, Firefox, Safari).
+
+#### Source Device Types
+
+The device classification of visitors — desktop, mobile, tablet, and so on.
+
+#### Source Operating Systems
+
+The operating systems used by visitors (for example, Windows, macOS, Android, iOS).
+
+#### Source User Agents
+
+The full user agent strings from requests.
+
+#### ASNs
+
+Autonomous System Numbers (ASN) — the network providers from which requests originate.
+
+### Other
+
+![Other breakdown](../../.gitbook/assets/tp-breakdown-tables-other.png)
+
+#### X-Requested-With Headers
+
+Shows values of the `X-Requested-With` HTTP header, commonly used to identify AJAX requests. Entries without this header appear as "(not set)".
+
+## Edge Data Granularity
+
+Cloudflare edge data (the Requests and Data Transfer chart series, and the traffic breakdown tables) is bucketed automatically based on the selected time range:
+
+| Selected time range   | Data point interval |
+| --------------------- | ------------------- |
+| 30 minutes to 6 hours | 5 minutes           |
+| 6 hours to 3 days     | 15 minutes          |
+| 3 days to 8 days      | 1 hour              |
+| 8 days and longer     | 1 day               |
+
+Granularity is not user-configurable. Application metric tiles and charts use a separate fixed 5-minute granularity.
+
+## Edge Data Limitations
+
+Cloudflare edge analytics have the following constraints:
+
+* Data is available for up to **90 days** in the past.
+* A single time range query can span at most **30 days**.
+* Select at least one hostname.
+* The page displays a notice when the selected time range is too far back, the time range is too wide, or extends into the future.
+
 ## Key benefits
 
 Below you can read about the benefits the **Availability & Performance** page gives.
 
 ### Health Monitoring
 
-The page allows users to monitor the health of their cloud projects more effectively. By leveraging Azure metrics data, you can access critical information such as HTTPS status codes, response times, CPU time, and memory usage in private bytes.
+The page allows users to monitor the health of their cloud projects more effectively. By leveraging Azure metrics data, you can access critical information such as HTTPS status codes, response times, CPU time, and memory usage in private bytes. With hostnames selected, edge metrics show request volume and data transfer.
 
 The CPU and memory usage is particularly important to keep an eye on from time to time. This is to ensure the cloud project running on a shared that the plan quotas aren’t exceeded.
+
+### Traffic Analysis
+
+The traffic breakdown tables show:
+
+* Where traffic comes from — geography, devices, browsers, and network providers.
+* How traffic flows through the Cloudflare edge — cache hit rates, status codes, and HTTP versions.
+* Where traffic goes — paths, hosts, and data centers.
 
 ### Issue Discovery
 
@@ -154,6 +361,10 @@ The page enables users to discover application issues that may impact the overal
 
 Real-time monitoring of HTTPS status codes helps you identify any errors or disruptions to your application's availability. This proactive approach allows you to respond swiftly, ensuring that your website or application remains accessible and responsive to users.
 
+Cloudflare edge analytics complement this by surfacing issues that occur before traffic reaches your application. Such as unexpected spikes in request volume, low cache hit rates, or a high share of edge-level errors. Combining Azure and edge data makes it easier to pinpoint whether a problem originates in your application, the edge layer, or the traffic itself.
+
 ### User-Friendly Interface
 
-Umbraco Cloud provides a user-friendly interface for accessing and interpreting the "Availability and Performance" page. The interface presents Azure metrics data in a clear and understandable manner, making it easier for users to navigate and gain actionable insights. With intuitive SVG-based visualizations and highlighted statistics for the selected time range, you can monitor the health and performance of your cloud projects effortlessly.
+Umbraco Cloud provides a user-friendly interface for accessing and interpreting the "Traffic and Performance" page. The interface presents Azure metrics data in a clear and understandable manner, making it easier for users to navigate and gain actionable insights. With intuitive SVG-based visualizations and highlighted statistics for the selected time range, you can monitor the health and performance of your cloud projects effortlessly.
+
+Cloudflare edge analytics are presented alongside the Azure metrics in the same chart and overview tiles, so you can compare application and edge behavior side by side. The traffic breakdown tables make it straightforward to drill into specific dimensions without leaving the page.
