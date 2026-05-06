@@ -79,7 +79,7 @@ The Extra Small SKU on the Starter plan does not include an SLA. The Extra Small
 
 ## Performance and availability
 
-Load balancing changes how performance and availability behave on an Umbraco Cloud environment. Two behaviours stand out.
+Load balancing changes how performance and availability behave on an Umbraco Cloud environment. Two behaviors stand out.
 
 ### Logs are split per instance
 
