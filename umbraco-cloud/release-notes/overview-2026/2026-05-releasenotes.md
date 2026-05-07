@@ -6,6 +6,7 @@
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 * **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
+* **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.
 
 ## Error pages
 
@@ -39,3 +40,13 @@ When you remove a team member from a project, Umbraco Cloud now anonymizes the c
 Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for removing personal data from a project for users who have signed in. After a team member is removed, no project holds personal data for that person.
 
 <figure><img src="../../.gitbook/assets/cloud-anonymized-user.png" alt="Backoffice user profile after anonymization, showing the name 'Anonymized User', a placeholder email at deleted.invalid, and a Disabled status badge."><figcaption><p>A backoffice user profile after anonymization, with a generic name, a placeholder email, and a Disabled status.</p></figcaption></figure>
+
+## Edge traffic analytics on Traffic & Performance
+
+The **Traffic & Performance** page now combines Azure application metrics with Cloudflare edge analytics. Selecting a hostname displays edge metric tiles for Requests and Data Transfer, edge series on the chart, and the Traffic Breakdown Tables section.
+
+<figure><img src="../../.gitbook/assets/tp-page-overview.png" alt="The Traffic & Performance page showing the selectors, overview tiles, chart, and breakdown tables."><figcaption><p>The Traffic & Performance page.</p></figcaption></figure>
+
+The breakdown tables let you drill into edge traffic by status code, paths, hosts, geography, browsers, devices, and more. A toggle at the top of the section switches the view between request count and data transferred.
+
+For full details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md) documentation.
