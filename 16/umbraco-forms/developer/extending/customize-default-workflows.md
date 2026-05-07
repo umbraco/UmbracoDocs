@@ -182,6 +182,7 @@ The following class shows the default implementation provided with Forms. You ca
 using Microsoft.Extensions.Options;
 using Umbraco.Forms.Core.Configuration;
 using Umbraco.Forms.Core.Models;
+using Umbraco.Forms.Core.Providers;
 using Umbraco.Forms.Web.Extensions;
 using Umbraco.Forms.Web.Models.Backoffice;
 
@@ -190,9 +191,13 @@ namespace Umbraco.Forms.Web.Behaviors
     internal class CustomApplyDefaultFieldsBehavior : IApplyDefaultFieldsBehavior
     {
         private readonly FormDesignSettings _formDesignSettings;
+        private readonly FieldCollection _fieldCollection;
 
-        public CustomApplyDefaultFieldsBehavior(IOptions<FormDesignSettings> formDesignSettings) =>
+        public CustomApplyDefaultFieldsBehavior(IOptions<FormDesignSettings> formDesignSettings, FieldCollection fieldCollection)
+        {
             _formDesignSettings = formDesignSettings.Value;
+            _fieldCollection = fieldCollection;
+        }
 
         public virtual void ApplyDefaultFields(FormDesign form)
         {
