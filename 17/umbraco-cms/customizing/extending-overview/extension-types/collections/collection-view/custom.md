@@ -60,6 +60,7 @@ export class MyCollectionViewElement extends UmbCollectionViewElementBase {
                 .href=${item.unique ? this._itemHrefs.get(item.unique) : undefined}
                 ?selectable=${this._isSelectableItem(item)}
                 ?selected=${this._isSelectedItem(item.unique)}
+                ?selectOnly=${this._selectOnly}
                 @selected=${() => this._selectItem(item.unique)}
                 @deselected=${() => this._deselectItem(item.unique)}>
             </my-collection-view-item>
@@ -117,6 +118,9 @@ export class MyCollectionViewItemElement extends UmbLitElement {
     @property({ type: Boolean })
     selected = false;
 
+    @property({ type: Boolean })
+    selectOnly = false;
+
     @property({ type: String })
     href?: string;
 
@@ -131,7 +135,7 @@ export class MyCollectionViewItemElement extends UmbLitElement {
                             .checked=${this.selected}
                             @change=${() => this.selected ? this.#onDeselected() : this.#onSelected()}/>`
                     : nothing}
-                ${this.href
+                ${this.href && !this.selectOnly
                     ? html`<a href=${this.href}>${this.item.name}</a>`
                     : html`<span>${this.item.name}</span>`}
                 <umb-entity-actions-bundle></umb-entity-actions-bundle>
