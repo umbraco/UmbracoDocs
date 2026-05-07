@@ -4,27 +4,7 @@ The Table Collection View renders items produced by an active [Collection](../co
 
 When you want to display entities in a tabular layout within a collection, use the Table Collection View Kind. The table renders without a custom element — you only need to define which columns to show in the manifest.
 
-The base Collection Item Model that all items must satisfy is:
-
-```typescript
-export interface UmbCollectionItemModel {
-  unique: string;
-  entityType: string;
-  name?: string;
-  icon?: string;
-}
-```
-
-If your collection's repository returns additional fields, extend the base model with your own interface. This interface documents the contract between the repository output and the column definitions.
-
-```typescript
-export interface MyCollectionItemModel extends UmbCollectionItemModel {
-  status: string;
-  creator: string;
-}
-```
-
-Define this interface alongside your repository. For a full example of a repository that populates these fields, see [Collection](../collection.md).
+The columns defined in `meta.columns` map to fields on your collection item model. In the example below, `status` and `creator` map to fields on `MyCollectionItemModel`. For details on defining the item model, see [Collection](../collection.md#item-model).
 
 The table kind always renders the following columns automatically:
 
