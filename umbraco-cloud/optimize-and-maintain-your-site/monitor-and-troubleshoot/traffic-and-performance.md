@@ -340,6 +340,7 @@ Cloudflare edge analytics has the following constraints:
 * A single time range query can span at most **30 days**.
 * Select at least one hostname.
 * The page displays a notice when the selected time range is too far back, the time range is too wide, or extends into the future.
+* Cloudflare applies **adaptive sampling** to high-traffic datasets. For projects with high request volumes, Cloudflare samples the data and extrapolates totals. The edge tiles, chart, and breakdown tables show estimates rather than exact counts. Cloudflare does not sample smaller projects, and the sampling thresholds are not user-configurable.
 
 ## Key Benefits
 
