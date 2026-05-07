@@ -18,7 +18,7 @@ The "edge" refers to servers located closer to the end-users, which cache conten
 
 ## How to Reduce Bandwidth Usage
 
-To avoid upgrades to higher Umbraco Cloud Tiers and improve performance, consider the following optimization techniques:
+To avoid upgrades to higher Umbraco Cloud plans and improve performance, consider the following optimization techniques:
 
 * **Optimize Images**: Compress images and use modern formats like WebP to reduce their size without losing quality.
 * **Cache Static Content**: Leverage caching mechanisms to reduce the number of times static assets (like images, CSS, and JavaScript) are requested from the server. You can control your caching configuration here.

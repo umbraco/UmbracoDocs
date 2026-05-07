@@ -14,7 +14,7 @@ The user picker opens a panel to pick a specific user from the Users section. Th
 
 ## Content Example
 
-![Member Picker Content](<../../../../.gitbook/assets/User-Picker-Content-v8 (1).png>)
+![Member Picker Content](../../../../.gitbook/assets/User-Picker-Content-v8.png)
 
 ## MVC View Example
 

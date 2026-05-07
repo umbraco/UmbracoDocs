@@ -18,6 +18,24 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.2) (May 1st 2026)
+
+* Fix: rename `workflow` entity types to avoid clashes with Umbraco Workflow [#1694](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1694)
+
+### [17.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.1) (April 30th 2026)
+
+* Fix Rich Text field type not allowing blocks [#1194](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1194)
+* Allow editing hidden fields on submitted form entries [#1605](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1605) [#1693](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1693)
+* Reveal workflow action bar on keyboard focus [#1692](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1692)
+* Fix casing for "On Reject" label [#1696](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1696)
+* Resolve variant-aware title in the preview modal [#1699](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1699)
+* Prevent `MigrateSystemDatesToUtc` failure on SQL datetime underflow [#1703](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1703)
+* Add **View entries** entity action for submitted records [#1704](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1704)
+* Localize **Change Record State** action dropdown labels
+* Update design of **Form Picker (Single)** to match CMS style
+* Update design of **Field Type** and **Workflow Type** picker modals
+
+
 ### [17.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.0) (April 9th 2026)
 
 #### UTC date handling fix

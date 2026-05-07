@@ -129,6 +129,38 @@ Read more about Extension Types in the Backoffice to get a better understanding 
 [extending-overview/extension-types/README.md#full-list-of-extension-types](extending-overview/extension-types/README.md#full-list-of-extension-types)
 {% endcontent-ref %}
 
+#### The `conditions` property
+
+Each extension in the `extensions` array can include an optional `conditions` property. This is an array of condition objects that must all be satisfied before the extension is loaded and activated. It gives you fine-grained control over where and when an extension appears in the backoffice.
+
+##### Structure
+
+```json
+{
+    "type": "workspaceAction",
+    "alias": "My.WorkspaceAction",
+    "name": "My Workspace Action",
+    "element": "/App_Plugins/MyPackage/my-action.js",
+    "conditions": [
+        {
+            "alias": "Umb.Condition.WorkspaceAlias",
+            "match": "Umb.Workspace.Document"
+        }
+    ]
+}
+```
+
+Each condition object requires at minimum an `alias` identifying which condition to evaluate. Many conditions also accept a `match` value specifying what to match against.
+
+Common aliases include:
+
+- `Umb.Condition.WorkspaceAlias`
+- `Umb.Condition.SectionAlias`
+- `Umb.Condition.WorkspaceEntityType`
+- `Umb.Condition.UserPermission.Document`.
+
+For a full list and details, see the [Extension Conditions](extending-overview/extension-types/condition.md) article.
+
 ## Package Manifest IntelliSense
 
 Make your IDE be aware about the opportunities of the `umbraco-package.json` by adding a JSON schema. This gives your code editor abilities to autocomplete and knowledge about the format. This helps to avoid mistakes or errors when editing the `umbraco-package.json` file.

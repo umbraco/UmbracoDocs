@@ -20,7 +20,7 @@ The Email Address Property Editor does not come with any further configuration. 
 
 ## Content Example
 
-![Single email address content example](<../../../../.gitbook/assets/EmailAddress-Content-v10 (1).png>)
+![Single email address content example](../../../../.gitbook/assets/EmailAddress-Content-v10.png)
 
 ## MVC View Example
 

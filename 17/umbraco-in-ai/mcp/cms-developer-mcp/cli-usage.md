@@ -16,7 +16,7 @@ If you are using Claude Code, install the Developer MCP plugin. The `/umb-cms-de
 
 ```bash
 /plugin marketplace add umbraco/Umbraco-CMS-MCP-Dev
-/plugin install umbraco-cms-mcp-dev@umbraco/Umbraco-CMS-MCP-Dev
+/plugin install umb-cms-mcp@umb-cms-mcp-plugins 
 ```
 
 Once installed, use `/umb-cms-dev-cli` with a query to interact with Umbraco:

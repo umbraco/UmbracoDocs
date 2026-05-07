@@ -68,4 +68,5 @@ After Phase 3, install the [Claude Code plugin](./claude-code-plugin.md) to auto
 
 * [Project Template](./project-template.md) — Structure, configuration, registries, and conventions of the generated project
 * [Development Workflow](./development-workflow.md) — Detailed five-phase guide from scaffolding to evaluation
+* [Testing Your MCP Server](./testing-your-mcp-server.md) — Run the scaffolded server in Claude Code via `.mcp.json` and iterate on tools
 * [Claude Code Plugin](./claude-code-plugin.md) — Skills and agents for automated tool building and testing

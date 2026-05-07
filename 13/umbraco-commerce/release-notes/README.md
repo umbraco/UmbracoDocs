@@ -16,6 +16,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.3.0
+
+* Added order cache optimization
+
+#### 13.2.6
+* Umbraco Licenses dependency updated to 13.3.4
+
 #### 13.2.6
 * Umbraco Licenses dependency updated to 13.3.4
 

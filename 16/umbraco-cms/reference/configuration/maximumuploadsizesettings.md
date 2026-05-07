@@ -43,13 +43,14 @@ To increase the upload limit:
 
 * 2 MB = 2,000,000 bytes
 * 100 MB = 100,000,000 bytes
+* 500 MB = 524288000 byte
 * 4 GB = 4294967295 (maximum value allowed)
 
 ## Hosting on Umbraco Cloud
 
-Umbraco Cloud uses IIS for hosting, so changes must be made in the `web.config` file as described above. The default upload limit on Umbraco Cloud is 50 MB.
+Umbraco Cloud uses IIS for hosting, so you must apply this setting in your `web.config` file. The maximum permitted upload size on Umbraco Cloud is `500 MB`.
 
-To customize this limit, adjust the `maxAllowedContentLength` value in your `web.config` file accordingly.
+To change the limit, update the `maxAllowedContentLength` value in your `web.config` file accordingly.
 
 ## Using Kestrel
 

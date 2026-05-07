@@ -4,7 +4,7 @@ description: Get started with the Umbraco CMS Developer Model Context Protocol (
 
 # Developer Model Context Protocol (MCP) Server
 
-The Developer [MCP Server](../../concepts/model-context-protocol#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
+The Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
 
 This MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, GitHub Copilot, and many more.
 
@@ -18,7 +18,7 @@ Think of it as giving your AI tools a secure, structured way to “speak to Umbr
 
 Unlike most Umbraco integrations, the Developer MCP Server is not a plugin that you install into your Umbraco site. Instead, it runs as a standalone Node.js application that acts as an MCP Server.
 
-[MCP clients](../../concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](../../concepts/model-context-protocol#host-applications) such as Claude Desktop, Cursor, or Windsurf. These clients connect to the server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+[MCP clients](../../concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](../../concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf. These clients connect to the server. When you interact with your chat-based development environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
 
 Learn more about [Model Context Protocol (MCP)](../../concepts/model-context-protocol.md).
 
@@ -152,7 +152,7 @@ Even with limited user permissions, the scope and power of LLM-driven actions ma
 
 Your first step after setup should be deciding which tools you want to enable. All tools are grouped into collections for easier management and isolation. [Learn more about Tool Collections](available-tools.md).
 
-Choosing the right tools improves how efficiently the AI communicates with Umbraco, making each conversation faster and more context-aware. Learn more about [Context Engineering](../../concepts/context-enginerring.md).
+Choosing the right tools improves how efficiently the AI communicates with Umbraco, making each conversation faster and more context-aware. Learn more about [Context Engineering](../../concepts/context-engineering.md).
 
 ### Using `npx`?
 

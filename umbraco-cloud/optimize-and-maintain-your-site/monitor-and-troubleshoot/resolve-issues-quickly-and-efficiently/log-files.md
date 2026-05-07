@@ -86,5 +86,5 @@ Find more information about IIS Logging on [the Official Microsoft Documentation
 {% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.
 
-For more details on the different tiers, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
+For more details on the different plans, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
 {% endhint %}

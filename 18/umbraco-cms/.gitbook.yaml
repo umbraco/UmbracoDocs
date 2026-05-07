@@ -120,7 +120,7 @@ redirects:
     extending/packages/types-of-packages: extending/packages/README.md
     reference/configuration/nucachesettings: reference/configuration/cache-settings.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/listview: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/collection.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles.md
+    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/style-menu.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-plugins: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/plugins.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/rte-blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/blocks.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/block-editor/label-property-configuration: reference/umbraco-flavored-markdown.md

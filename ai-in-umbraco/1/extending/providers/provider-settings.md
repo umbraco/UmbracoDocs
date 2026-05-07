@@ -164,6 +164,10 @@ public string? SecretToken { get; set; }
 
 {% endcode %}
 
+{% hint style="info" %}
+Sensitive values are encrypted at rest using [ASP.NET Core Data Protection](https://learn.microsoft.com/aspnet/core/security/data-protection/configuration/overview). If the Data Protection keyring isn't persisted across restarts, decryption will fail. This occurs when Windows IIS app pools lack profiles or containers with persistent volumes. The value will appear as `ENC:...` in the UI, and the log will show `The key {guid} was not found in the key ring`. Configure Data Protection to persist keys to a stable store. Alternatively, use configuration references to store secrets in appsettings.json instead of the database.
+{% endhint %}
+
 ## Custom Editors
 
 Use Umbraco property editor UI aliases for specialized input:

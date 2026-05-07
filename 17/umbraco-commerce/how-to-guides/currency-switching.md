@@ -63,6 +63,89 @@ This is done by creating a `CurerrencySwitcher.cshtml` partial with the followin
 ```
 {% endcode %}
 
+This can then be placed in your sites base template by adding the following:
+
+{% code title="Layout.cshtml" %}
+
+```csharp
+@(await Html.PartialAsync("CurerrencySwitcher"))
+```
+
+{% endcode %}
+
+## Handle Switching Currencies
+
+Switching the culture is handled by a Surface controller.
+
+Create a new Surface controller called `CultureSurfaceController` and add the following code:
+
+{% code title="CultureSurfaceController.cs" %}
+
+````csharp
+public class CultureSurfaceController : SurfaceController
+{
+    private readonly IUmbracoCommerceApi _commerceApi;
+
+    public CultureSurfaceController(
+        IUmbracoContextAccessor umbracoContextAccessor, 
+        IUmbracoDatabaseFactory databaseFactory, 
+        ServiceContext services, 
+        AppCaches appCaches, 
+        IProfilingLogger profilingLogger, 
+        IPublishedUrlProvider publishedUrlProvider,
+        IUmbracoCommerceApi commerceApi) 
+        : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+    {
+        _commerceApi = commerceApi;
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> ChangeCountry(ChangeCountryDto changeCountryDto)
+    {
+        var store = CurrentPage.GetStore();
+        var country = await _commerceApi.GetCountryAsync(store.Id, changeCountryDto.CountryIsoCode);
+        var currency = await _commerceApi.GetCurrencyAsync(country.DefaultCurrencyId.Value);
+    
+        await _commerceApi.SetDefaultPaymentCountryAsync(store.Id, country);
+        await _commerceApi.SetDefaultShippingCountryAsync(store.Id, country);
+        await _commerceApi.SetDefaultCurrencyAsync(store.Id, currency);
+    
+        var currentOrder = await _commerceApi.GetCurrentOrderAsync(store.Id);
+        if (currentOrder != null)
+        {
+            await _commerceApi.Uow.ExecuteAsync(async uow =>
+            {
+                var writableOrder = await currentOrder.AsWritableAsync(uow)
+                    .ClearPaymentCountryRegionAsync()
+                    .ClearShippingCountryRegionAsync()
+                    .SetCurrencyAsync(currency.Id);
+    
+                await _commerceApi.SaveOrderAsync(writableOrder);
+    
+                uow.Complete();
+            });
+        }
+    
+        return RedirectToCurrentUmbracoPage();
+    }
+}
+````
+
+{% endcode %}
+
+The `ChangeCountryDto` class binds the country ISO code from the form.
+
+{% code title="ChangeCountryDto.cs" %}
+
+````csharp
+public class ChangeCountryDto
+{
+    public string CountryIsoCode { get; set; }
+}
+````
+
+{% endcode %}
+
 ## Result
 
 With the currency switcher implemented, users can switch between countries/currencies on your website.

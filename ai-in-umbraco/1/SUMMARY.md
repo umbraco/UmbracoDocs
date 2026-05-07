@@ -118,11 +118,11 @@
 ## Testing and Evaluation
 
 * [Overview](tests/README.md)
-  * [Concepts](tests/concepts.md)
-  * [Getting Started](tests/getting-started.md)
-  * [Graders](tests/graders.md)
-  * [Variations](tests/variations.md)
-  * [API](tests/api/README.md)
+* [Concepts](tests/concepts.md)
+* [Getting Started](tests/getting-started.md)
+* [Graders](tests/graders.md)
+* [Variations](tests/variations.md)
+* [API](tests/api/README.md)
     * [List](tests/api/list.md)
     * [Get](tests/api/get.md)
     * [Create](tests/api/create.md)

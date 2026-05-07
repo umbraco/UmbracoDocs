@@ -14,7 +14,7 @@ The Member Group Picker opens a panel to pick one or more member groups from the
 
 ## Content Example
 
-![Member Grouep Picker Content](<../../../../.gitbook/assets/Member-Group-Picker-Content (1).png>)
+![Member Grouep Picker Content](../../../../.gitbook/assets/Member-Group-Picker-Content.png)
 
 ## MVC View Example
 

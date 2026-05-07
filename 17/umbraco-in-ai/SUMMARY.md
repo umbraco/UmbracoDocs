@@ -5,7 +5,8 @@
 ## Concepts
 
 * [Model Context Protocol (MCP)](concepts/model-context-protocol.md)
-* [Context Engineering](concepts/context-enginerring.md)
+* [Context Engineering](concepts/context-engineering.md)
+* [Token Efficiency](concepts/token-efficiency.md)
 * [Agent Skills](concepts/agent-skills.md)
 
 ## MCP
@@ -15,6 +16,7 @@
     * [Claude Code Plugin](mcp/base-mcp/create-umbraco-mcp-server/claude-code-plugin.md)
     * [Development Workflow](mcp/base-mcp/create-umbraco-mcp-server/development-workflow.md)
     * [Project Template](mcp/base-mcp/create-umbraco-mcp-server/project-template.md)
+    * [Testing Your MCP Server](mcp/base-mcp/create-umbraco-mcp-server/testing-your-mcp-server.md)
   * [Hosted MCP Server](mcp/base-mcp/hosted-mcp/README.md)
     * [API Reference](mcp/base-mcp/hosted-mcp/api-reference.md)
     * [Architecture](mcp/base-mcp/hosted-mcp/architecture.md)

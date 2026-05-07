@@ -258,6 +258,10 @@ The following guide will take you through implementing an option for backoffice 
 
 This guide will not cover setting up the UI for user login and edits as this is handled elsewhere in the CMS.
 
+{% hint style="info" %}
+Two-factor authentication also works with basic authentication, including in frontend-only deployments where the backoffice is not available. When a user with 2FA enabled logs in via the basic authentication login page, they are redirected to a standalone 2FA page at `/umbraco/basic-auth/2fa`. For frontend-only setups, register `AddBackOfficeSignIn()` in your `Program.cs`. See the [Basic Authentication](basic-authentication.md) article for details.
+{% endhint %}
+
 ### Example implementation for Authenticator Apps for Users
 
 As an example, the guide will use the [GoogleAuthenticator NuGet Package](https://www.nuget.org/packages/GoogleAuthenticator/). This package works for both Google and Microsoft authenticator apps. It can be used to generate the QR code needed to activate the app for the website.

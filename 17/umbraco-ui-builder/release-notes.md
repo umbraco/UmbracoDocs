@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.2.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.2) **(May 1st 2026)**
+
+* Fixed issue with section dashboard collections [#221](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/221)
+* Fixed issue when filtering collections by a property of type `DateTime` [#219](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/219)
+
 ### [**17.2.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.1) **(April 16th 2026)**
 
 * Fixed an issue in list views when using fields that have the same name [#220](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/220)

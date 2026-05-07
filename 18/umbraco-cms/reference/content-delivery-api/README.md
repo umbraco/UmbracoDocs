@@ -25,7 +25,7 @@ You can also enable the Delivery API at a later point by following these steps:
 1. Open your project's `appsettings.json`.
 2. Insert the `DeliveryApi` configuration section under `Umbraco:CMS`.
 3. Add the `Enabled` key and set its value to `true`.
-4. Open `Program.Cs`
+4. Open `Program.cs`
 5. Add `.AddDeliveryApi()` to `builder.CreateUmbracoBuilder()`
 
 {% code title="appsettings.json" %}

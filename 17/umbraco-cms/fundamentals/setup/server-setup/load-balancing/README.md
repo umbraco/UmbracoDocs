@@ -46,7 +46,7 @@ There are two approaches to structuring your load balanced environment:
 
 **Option 1: Load balance the backoffice**
 
-You can place the backoffice behind the load balancer alongside your front-end servers. This requires additional configuration steps — see [Load Balancing the Backoffice](./load-balancing-backoffice.md) for details.
+You can place the backoffice behind the load balancer alongside your front-end servers. This requires additional configuration steps — see [Load Balancing the Backoffice](load-balancing-backoffice.md) for details.
 
 ![Umbraco load balanced backoffice diagram](../../../../.gitbook/assets/load-balanced-backoffice.png)
 
@@ -54,7 +54,7 @@ You can place the backoffice behind the load balancer alongside your front-end s
 
 Alternatively, you can designate a single server as the backoffice (`SchedulingPublisher`) that sits outside the load balancer, with the remaining servers acting as `Subscriber` (front-end) nodes. This is the more traditional approach.
 
-![Umbraco flexible load balancing diagram](<../../../../.gitbook/assets/flexible-load-balancing-v9 (1).png>)
+![Umbraco flexible load balancing diagram](../../../../.gitbook/assets/flexible-load-balancing-v9.png)
 
 In this setup, the data flow works as follows:
 
@@ -88,7 +88,7 @@ Each instance will be allocated a role by the automatic server role election pro
 
 For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
 
-![Umbraco flexible load balancing diagram](<../../../../.gitbook/assets/flexible-load-balancing-scheduler-v9 (1).png>)
+![Umbraco flexible load balancing diagram](../../../../.gitbook/assets/flexible-load-balancing-scheduler-v9.png)
 
 By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts. It is assumed that this address will be a DNS address that the server can resolve.
 

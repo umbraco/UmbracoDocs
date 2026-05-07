@@ -29,7 +29,7 @@ Authentication is required for this API. You must supply a Bearer Token via an A
 
 ## Errors
 
-If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
+If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
 | Status Code | Error Code           | Message                                                                  |
 | ----------- | -------------------- | ------------------------------------------------------------------------ |
@@ -38,7 +38,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 | 401         | Unauthorized         | Authorization has been denied for this request.                          |
 | 403         | Forbidden            | You are not authorized to access the given resource.                     |
 | 404         | NotFound             | Member with username '{username}' could not be found.                    |
-| 422         | ValidationFailed     | Validation error occured when trying to save or update the member.       |
+| 422         | ValidationFailed     | Validation error occurred when trying to save or update the member.       |
 | 500         | InternalServerError  | Internal server error.                                                   |
 
 **JSON example**:

@@ -20,7 +20,7 @@ There are three settings available for manipulating the **Markdown editor** prop
 
 ## Content Example
 
-![Content Example](<../../../../.gitbook/assets/Markdown-Editor-content-example (1).png>)
+![Content Example](../../../../.gitbook/assets/Markdown-Editor-content-example.png)
 
 ### Explanation of buttons from left to right
 

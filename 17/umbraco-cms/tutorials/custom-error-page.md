@@ -39,13 +39,13 @@ A 404 error occurs when a requested page cannot be found, usually due to deleted
 1. Go to the **Settings** section in the backoffice.
 2. Create a new **Document Type with Template**.
 3. Name the Document Type _Page Not Found_.
-4. [Optional] Add custom properties (for example, title, message), though most 404 pages are static.
+4. \[Optional] Add custom properties (for example, title, message), though most 404 pages are static.
 5. Click **Save**.
 6. Go to the **Templates** folder and edit the generated template.
 7. Add your custom markup and design for the error page in the template.
 8. Click **Save**.
 
-### [Optional] Create a Container for Error Pages
+### \[Optional] Create a Container for Error Pages
 
 You can create a _Page Not Found_ page directly in your content tree, or organize it within a container for error pages. Using a container allows for better content organization, especially if you plan to handle multiple status codes (for example, 404, 500, maintenance, and so on). Both options work as long as the page ID is referenced correctly in the `appsettings.json` file.
 
@@ -71,7 +71,7 @@ You can create a _Page Not Found_ page directly in your content tree, or organiz
 
 ![Child Node](../.gitbook/assets/page-not-found.png)
 
-### [Recommended]: Configuration via the `appsettings.json` file
+### \[Recommended]: Configuration via the `appsettings.json` file
 
 After publishing the _Page Not Found_ page, connect it in the configuration:
 
@@ -118,7 +118,7 @@ You can define different error pages for each language or culture (such as `en-u
 
 Each entry maps a culture to its specific 404 page using the content’s GUID.
 
-### [Advanced]: Set a custom 404 page using IContentLastChanceFinder
+### \[Advanced]: Set a custom 404 page using IContentLastChanceFinder
 
 It is also possible to set up a 404 error page programmatically using `IContentLastChanceFinder`. To learn more about `IContentLastChanceFinder`, read the [Custom Routing](../implementation/custom-routing/) article. Use this approach only if you need dynamic logic, multi-tenant routing, or other custom behavior.
 
@@ -195,13 +195,13 @@ This section guides you in setting up a custom page for handling internal server
 
 1. Go to the **Settings** section in the Umbraco backoffice.
 2. Create a new **Document Type with Template** called _ErrorPage500_.
-3. [Optional] Add any relevant properties to the Document Type.
+3. \[Optional] Add any relevant properties to the Document Type.
 4. Click **Save**.
 5. Go to the **Templates** folder.
 6. Add your custom markup and design for the error page in the template. In this case, _ErrorPage500_.
 7. Click **Save**.
 
-### [Optional] Create a Container for Error Pages
+### \[Optional] Create a Container for Error Pages
 
 1. Create a new **Document Type**.
 2. Name it **Error Pages Container**.
@@ -389,7 +389,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 You will be presented with a generic error page when there is an error during boot.
 
-![Boot Failed](<../.gitbook/assets/BootFailedGeneric (1).png>)
+![Boot Failed](../.gitbook/assets/BootFailedGeneric.png)
 
 You can replace the default BootFailed page with a custom static `BootFailed.html`. Follow the steps below to set it up:
 

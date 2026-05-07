@@ -32,7 +32,7 @@ We've launched a minor update on the usage page. The update lets you see the **t
 
 ![BandwidthHistory](../../../.gitbook/assets/BandwidthHistory.png)
 
-With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. We believe this new addition is valuable for customers running high-traffic websites and weekly need to monitor the bandwidth usage to ensure the project stays within the plan tier limit.
+With this new feature, you can track your website's bandwidth usage over time and identify any patterns or trends. This is especially useful for high-traffic websites. Monitor bandwidth usage regularly to ensure your project stays within plan limits.
 
 ## Upgrade Project Flow
 

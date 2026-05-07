@@ -1,7 +1,7 @@
 ---
 description: >-
-    Umbraco.AI is a provider-agnostic AI integration layer for Umbraco CMS,
-    built on Microsoft.Extensions.AI.
+  Umbraco.AI is a provider-agnostic AI integration layer for Umbraco CMS, built
+  on Microsoft.Extensions.AI.
 ---
 
 # AI in Umbraco
@@ -12,48 +12,47 @@ description: >-
 
 ## Key Features
 
-- **Provider-agnostic** - Install provider packages for the AI services you use
-- **Profile-based configuration** - Create reusable profiles for different use cases
-- **Built on Microsoft.Extensions.AI (M.E.AI)** - Uses standard M.E.AI types like `IChatClient` and `ChatMessage`
-- **Extensible middleware** - Add logging, caching, rate limiting, and custom behavior
-- **Backoffice integration** - Manage connections and profiles through the Umbraco UI
+* **Provider-agnostic** - Install provider packages for the AI services you use
+* **Profile-based configuration** - Create reusable profiles for different use cases
+* **Built on Microsoft.Extensions.AI (M.E.AI)** - Uses standard M.E.AI types like `IChatClient` and `ChatMessage`
+* **Extensible middleware** - Add logging, caching, rate limiting, and custom behavior
+* **Backoffice integration** - Manage connections and profiles through the Umbraco UI
 
 ## Getting Started
 
 New to Umbraco.AI? Start here:
 
-{% content-ref url="getting-started/README.md" %}
-[Getting Started](getting-started/README.md)
+{% content-ref url="getting-started/" %}
+[getting-started](getting-started/)
 {% endcontent-ref %}
 
 ## Core Concepts
 
 Understand how Umbraco.AI is structured:
 
-{% content-ref url="concepts/README.md" %}
-[Core Concepts](concepts/README.md)
+{% content-ref url="concepts/" %}
+[concepts](concepts/)
 {% endcontent-ref %}
 
 ## Using the API
 
 Learn how to use AI services in your code:
 
-{% content-ref url="using-the-api/README.md" %}
-[Using the API](using-the-api/README.md)
+{% content-ref url="using-the-api/" %}
+[using-the-api](using-the-api/)
 {% endcontent-ref %}
 
 ## Extending
 
 Create custom providers, middleware, and tools:
 
-{% content-ref url="extending/README.md" %}
-[Extending](extending/README.md)
+{% content-ref url="extending/" %}
+[extending](extending/)
 {% endcontent-ref %}
 
 ## Quick Example
 
 {% code title="ChatController.cs" %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.AI;
@@ -86,11 +85,10 @@ public class ChatController : Controller
     }
 }
 ```
-
 {% endcode %}
 
 ## Requirements
 
-- Umbraco CMS 17.1 or later
-- .NET 10.0 or later
-- At least one AI provider package (for example, `Umbraco.AI.OpenAI`)
+* Umbraco CMS 17.1 or later
+* .NET 10.0 or later
+* At least one AI provider package (for example, `Umbraco.AI.OpenAI`)

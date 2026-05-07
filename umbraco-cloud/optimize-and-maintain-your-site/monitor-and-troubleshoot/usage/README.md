@@ -46,7 +46,7 @@ The list shows the name of the file, its path, size, and type (whether it is a j
 
 ## Usage limits
 
-You can see the Usage limits and prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when [upgrading your plan](../../../build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan.md).
+You can see the Usage limits and prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when [changing your plan](../../../build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md).
 
 You can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project. You can **Upgrade the Plan** from the **Management** tab on your project.
 

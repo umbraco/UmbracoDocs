@@ -20,6 +20,7 @@ Umbraco comes with the following checks by default:
   * **Notification Email Settings (id: `3E2F7B14-4B41-452B-9A30-E67FBC8E1206`)** - checks that the "from" email address used for email notifications has been changed from its default value
 * Category **Data Integrity**
   * **Database data integrity check (id: `73DD0C1C-E0CA-4C31-9564-1DCA509788AF`)** - checks for various data integrity issues in the Umbraco database
+  * **Untrusted database constraints (id: `0B1E71E4-8D37-4F9B-A9A4-86C5B9EA5B0B`)** - on SQL Server, checks for foreign key or check constraints that are untrusted (`is_not_trusted = 1`), which indicates pre-existing data integrity issues that must be resolved manually
 * Category **Live Environment**
   * **Debug Compilation Mode (id: `61214FF3-FC57-4B31-B5CF-1D095C977D6D`)** - should be set to `debug="false"` on your live site
   * **Runtime Mode (id: `8E31E5C9-7A1D-4ACB-A3A8-6495F3EDB932`)** - should be set to `Production` on your live site

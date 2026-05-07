@@ -137,17 +137,19 @@ public class BlogCommentsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.Services.AddUmbracoDbContext<BlogContext>((serviceProvider, options, connectionString, providerName) =>
-        {
-            if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+        builder.Services.AddUmbracoDbContext<BlogContext>(
+            (serviceProvider, options, connectionString, providerName) =>
             {
-                return;
-            }
+                if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+                {
+                    return;
+                }
 
-            // Automatically uses the correct provider (SQL Server, SQLite, etc.)
-            // based on your Umbraco connection string configuration.
-            options.UseDatabaseProvider(providerName, connectionString);
-        });
+                // Automatically uses the correct provider (SQL Server, SQLite, etc.)
+                // based on your Umbraco connection string configuration.
+                options.UseDatabaseProvider(providerName, connectionString);
+            },
+            shareUmbracoConnection: true);
     }
 }
 ```
@@ -155,6 +157,8 @@ public class BlogCommentsComposer : IComposer
 {% endcode %}
 
 Using `UseDatabaseProvider(providerName, connectionString)` is the recommended approach. It reads the provider name and connection string directly from your Umbraco configuration (`appsettings.json`). It works correctly for SQL Server, SQLite, and any other supported database without any hardcoding.
+
+The `shareUmbracoConnection: true` argument tells Umbraco that your `DbContext` uses the Umbraco database. EF Core queries then run on the same connection and transaction as Umbraco's own data access. See [Using a separate database](#using-a-separate-database) below if your `DbContext` targets a different database.
 
 ## Step 4: Generate the Migration
 
@@ -248,15 +252,17 @@ public class BlogCommentsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.Services.AddUmbracoDbContext<BlogContext>((serviceProvider, options, connectionString, providerName) =>
-        {
-            if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+        builder.Services.AddUmbracoDbContext<BlogContext>(
+            (serviceProvider, options, connectionString, providerName) =>
             {
-                return;
-            }
+                if (string.IsNullOrEmpty(providerName) || string.IsNullOrEmpty(connectionString))
+                {
+                    return;
+                }
 
-            options.UseDatabaseProvider(providerName, connectionString);
-        });
+                options.UseDatabaseProvider(providerName, connectionString);
+            },
+            shareUmbracoConnection: true);
 
         builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, RunBlogCommentsMigration>();
     }
@@ -352,3 +358,26 @@ public class BlogCommentsController : Controller
 ```
 
 {% endcode %}
+
+### Using a separate database
+
+By default, `AddUmbracoDbContext<T>(..., shareUmbracoConnection: true)` binds your `DbContext` to Umbraco's database connection and transaction scope. Every EF Core query runs against the Umbraco database, and writes commit or roll back together with the enclosing Umbraco scope. That is the right choice when your custom tables live inside the Umbraco database.
+
+If your `DbContext` targets a **different** database — for example, a separate SQLite file or an entirely different SQL Server instance — pass `shareUmbracoConnection: false`. Without it, the connection string you configure through `UseSqlite(...)` or `UseSqlServer(...)` is replaced at runtime and your queries run against the Umbraco database instead.
+
+{% code title="BlogCommentsComposer.cs" %}
+
+```csharp
+builder.Services.AddUmbracoDbContext<BlogContext>(
+    (serviceProvider, options, connectionString, providerName) =>
+    {
+        options.UseSqlite("Data Source=blog-comments.db");
+    },
+    shareUmbracoConnection: false);
+```
+
+{% endcode %}
+
+{% hint style="info" %}
+When `shareUmbracoConnection` is `false`, the custom `DbContext` has its own connection and transaction. Completing an Umbraco scope does not commit writes made through your EF Core scope (and vice versa). You still use `IEFCoreScopeProvider<T>` and `IEfCoreScope<T>` the same way as before — the scope manages the separate connection on your behalf.
+{% endhint %}

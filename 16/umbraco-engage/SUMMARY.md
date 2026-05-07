@@ -127,6 +127,7 @@
   * [Configuration](developers/settings/configuration.md)
 * [Headless](developers/headless/README.md)
   * [Using the Engage API](developers/headless/using-the-marketing-api.md)
+  * [Forced-Segment header](developers/headless/forced-segment.md)
   * [Headless Example](developers/headless/headless-example.md)
 
 ## Security and Privacy

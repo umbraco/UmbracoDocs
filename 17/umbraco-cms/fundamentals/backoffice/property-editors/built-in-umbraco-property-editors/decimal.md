@@ -18,7 +18,7 @@ If the value of **Step Size** is not set then all decimal values between 8 and 1
 
 ## Content Example
 
-![Content Example](<../../../../.gitbook/assets/content-example (2).png>)
+![Content Example](<../../../../.gitbook/assets/content-example (1).png>)
 
 ## MVC View Example
 

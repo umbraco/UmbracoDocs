@@ -16,7 +16,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
-#### [17.2.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.2.0-rc1) (April 2nd 2026)
+#### [17.2.0](https://www.nuget.org/packages/Umbraco.Engage/17.2.0) (April 20th 2026)
 
 * Rewritten analytics data cleanup with improved scheduling and performance:
   * Cleanup now processes all eligible records without a batch size limit (the `NumberOfRows` setting is no longer used).

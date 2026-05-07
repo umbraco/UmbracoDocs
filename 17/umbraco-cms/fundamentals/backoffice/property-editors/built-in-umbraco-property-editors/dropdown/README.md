@@ -30,11 +30,11 @@ You can use dictionary items to translate the options in a Dropdown property edi
 
 ### Single Value
 
-![Single dropdown content example](<../../../../../.gitbook/assets/DropdownSingle-Content (1).png>)
+![Single dropdown content example](../../../../../.gitbook/assets/DropdownSingle-Content.png)
 
 ### Multiple Values
 
-![Multiple dropdown content example](<../../../../../.gitbook/assets/DropdownMultiple-Content (1).png>)
+![Multiple dropdown content example](../../../../../.gitbook/assets/DropdownMultiple-Content.png)
 
 ## MVC View Example
 

@@ -67,4 +67,4 @@ The default Umbraco page is gone and we can see a basic unstyled page. We are ge
 If you see a blank page, check if the template is entered and remember to save it.
 {% endhint %}
 
-![An Unstyled Homepage](<../../.gitbook/assets/figure-16-unstyled-homepage-v8 (1).png>)
+![An Unstyled Homepage](../../.gitbook/assets/figure-16-unstyled-homepage-v8.png)

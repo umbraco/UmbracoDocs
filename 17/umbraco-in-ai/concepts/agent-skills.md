@@ -1,6 +1,6 @@
 # What Are Skills?
 
-Agent Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-enginerring.md) through active context management. Skills are not activated unless the task requires them. They use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
+Agent Skills are modular instruction sets that guide AI coding agents toward the right information at the right time. They automate [context engineering](context-engineering.md) through active context management. Skills are not activated unless the task requires them. They use progressive discovery so the agent starts with a summary and pulls in deeper detail only when needed.
 
 For Umbraco, skills allow us to:
 

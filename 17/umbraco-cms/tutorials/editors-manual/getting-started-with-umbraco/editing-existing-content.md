@@ -4,7 +4,7 @@
 
 When you are looking to edit content, locate the _**page**_ you want to edit in the Content tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](<../../../.gitbook/assets/View-page-v14 (1).png>)
+![Viewing Pages in Content Section](../../../.gitbook/assets/View-page-v14.png)
 
 To edit existing content, follow these steps:
 

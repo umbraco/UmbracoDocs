@@ -42,11 +42,15 @@ public class PublishContentDemo
         _contentService.Save(demoProduct);
 
         // Publish content
-        var userId = 0; // 0 = system user
+        var userId = -1; // -1 = system user
         _contentService.Publish(demoProduct, new[] { "*" }, userId); // use "*" for invariant content
     }
 }
 ```
+
+{% hint style="info" %}
+Always call `Save()` before `Publish()`, as publishing without saving first will not persist the changes.
+{% endhint %}
 
 In a multi-language setup, it is necessary to set the name of the content item for a specified culture:
 
@@ -82,7 +86,7 @@ public class PublishBranchContentDemo
         var content = _contentService.GetById(key)
             ?? throw new InvalidOperationException($"Could not find content with key: {key}.");
 
-        var userId = 0;
+        var userId = -1;
         _contentService.PublishBranch(content, PublishBranchFilter.Default, new[] { "*" }, userId);
     }
 }

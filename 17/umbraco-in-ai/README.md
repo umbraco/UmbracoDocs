@@ -12,7 +12,7 @@ This section introduces the core concepts behind AI-assisted Umbraco workflows. 
 
 ### Core concepts
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Model Context Protocol (MCP)</strong></td><td>Learn how MCP connects LLMs to tools, APIs, and structured Umbraco capabilities.</td><td></td><td><a href="concepts/model-context-protocol.md">model-context-protocol.md</a></td></tr><tr><td><strong>Context Engineering</strong></td><td>Learn how to shape prompts, tools, and context so models produce better results.</td><td></td><td><a href="concepts/context-enginerring.md">context-enginerring.md</a></td></tr><tr><td><strong>Agent Skills</strong></td><td>Learn how reusable instructions help coding agents apply Umbraco patterns correctly.</td><td></td><td><a href="concepts/agent-skills.md">agent-skills.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Model Context Protocol (MCP)</strong></td><td>Learn how MCP connects LLMs to tools, APIs, and structured Umbraco capabilities.</td><td></td><td><a href="concepts/model-context-protocol.md">model-context-protocol.md</a></td></tr><tr><td><strong>Context Engineering</strong></td><td>Learn how to shape prompts, tools, and context so models produce better results.</td><td></td><td><a href="concepts/context-engineering.md">context-engineering.md</a></td></tr><tr><td><strong>Agent Skills</strong></td><td>Learn how reusable instructions help coding agents apply Umbraco patterns correctly.</td><td></td><td><a href="concepts/agent-skills.md">agent-skills.md</a></td></tr></tbody></table>
 
 ### Why these concepts matter
 
@@ -23,7 +23,7 @@ When these parts work together, AI can help with content operations, schema plan
 ### Explore each topic
 
 * [Model Context Protocol (MCP)](concepts/model-context-protocol.md): explains how LLMs connect to Umbraco tools, APIs, and external systems.
-* [Context Engineering](concepts/context-enginerring.md): explains how to improve reliability by controlling what the model sees.
+* [Context Engineering](concepts/context-engineering.md): explains how to improve reliability by controlling what the model sees.
 * [Agent Skills](concepts/agent-skills.md): explains how agent skills provide reusable instructions for AI coding tools.
 
 ### What you will learn

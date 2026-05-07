@@ -14,7 +14,7 @@ The Repeatable textstrings property editor enables a content editor to make a li
 
 ## Content Example
 
-![Repeatable textstrings Content](<../../../../.gitbook/assets/Multiple-Textbox-Repeatable-Textstrings-Content (1) (1) (1).png>)
+![Repeatable textstrings Content](<../../../../.gitbook/assets/Multiple-Textbox-Repeatable-Textstrings-Content (1) (1).png>)
 
 ## MVC View Example
 
