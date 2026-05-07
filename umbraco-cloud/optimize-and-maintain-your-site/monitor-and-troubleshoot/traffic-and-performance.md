@@ -23,7 +23,7 @@ The page is made up of the following sections:
 
 ## Time Range, Environment, and Hostname Selectors
 
-At the top of the page you will find controls that determine which data is displayed.
+At the top of the page, you will find controls that determine which data is displayed.
 
 ### Time Range
 
@@ -47,7 +47,7 @@ Edge analytics data is only available when at least one hostname is selected.
 
 ## Performance Overview Tiles
 
-The overview section shows summary tiles for key metrics. There are up to six tiles in total. Four application metric tiles are always visible. Two edge metric tiles appear when hostnames are selected.
+The overview section shows summary tiles for key metrics. There are up to six tiles in total. Four application metric tiles are always visible. Two-edge metric tiles appear when hostnames are selected.
 
 ![Performance overview tiles](../../.gitbook/assets/tp-performance-overview-tiles.png)
 
@@ -60,7 +60,7 @@ Each tile includes relevant statistics and potentially a warning or an error ind
 Displays the total count of HTTP 4xx and 5xx responses.
 
 * **Error indicator** appears when one or more HTTP 5xx (server error) responses occur.
-* **Warning indicator** appears when HTTP 4xx client errors exist but there are no server errors.
+* **Warning indicator** appears when HTTP 4xx client errors exist, but there are no server errors.
 
 #### App Performance
 
@@ -70,7 +70,7 @@ Displays the average response time in milliseconds across all requests.
 
 Displays CPU time consumed.
 
-* **Shared plans**: Shown as a percentage of your plan quota. An orange warning appears when maximum CPU exceeds **80%** of the plan quota within a 5-minute period. A red error appears when maximum CPU exceeds **100%**.
+* **Shared plans**: Shown as a percentage of your plan quota. An orange warning appears when the maximum CPU usage exceeds **80%** of the plan quota within a 5-minute period. A red error appears when the maximum CPU exceeds **100%**.
 * **Dedicated plans**: Shows average CPU time.
 
 #### Memory Usage
@@ -131,7 +131,7 @@ In the statistics tiles under the graph, you will find the total instances of th
 
 #### App Performance
 
-The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to average response time.
+The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to the average response time.
 
 ![App performance](../../.gitbook/assets/tp-graph-app-performance.png)
 
@@ -192,7 +192,7 @@ The charts are enhanced with platform events like restarts, automatic and manual
 
 These events help you correlate performance changes with deployments and other project activity.
 
-By utilizing the `Umbraco.Cloud.Cms` package we are tracking the **hot** and **cold** boots of your Umbraco environment on Cloud.
+By utilizing the `Umbraco.Cloud.Cms` package, the platform tracks the **hot** and **cold** boots of your Umbraco environment on Cloud.
 
 <figure><img src="../../.gitbook/assets/image (87).png" alt="Hot and Cold boot."><figcaption><p>Hot and Cold boot.</p></figcaption></figure>
 
@@ -206,9 +206,10 @@ Only installations running in Umbraco Cloud are tracked. The following data is r
 * Environment identifier
 * Timestamp
 * The Umbraco version
-* Boot mode, i.e. "warm" or "cold" boot
+* Boot mode, like "warm" or "cold" boot
 
 The telemetry is not sent if you are running a cloned environment on your local machine.
+
 {% endhint %}
 
 You can disable Hot/Cold boots tracking on your Umbraco Cloud Project by adding `Umbraco:Cloud:DisableBootTracking` and set to true in the `appsettings.json` file.
@@ -225,7 +226,7 @@ You can also remove the reference to the `Umbraco.Cloud.Cms` package in the Umbr
 
 ## Traffic Breakdown Tables
 
-The breakdown tables provide detailed Cloudflare edge analytics, giving you visibility into how traffic flows through the edge network. The section appears when edge analytics are available (hostnames selected and valid time range).
+The breakdown tables provide detailed Cloudflare edge analytics, giving you visibility into how traffic flows through the edge network. The section appears when edge analytics are available (hostnames selected and a valid time range).
 
 A toggle at the top of the section lets you switch between viewing data by **Edge Requests** (count) or **Edge Data Traffic** (bytes transferred).
 
@@ -268,7 +269,7 @@ The hostnames receiving traffic.
 
 #### Data Centers
 
-The Cloudflare data centers serving requests to your site. The data centers help you understand the geographic distribution of your edge traffic.
+The Cloudflare data centers serve requests to your site. The data centers help you understand the geographic distribution of your edge traffic.
 
 #### HTTP Methods
 
@@ -288,7 +289,7 @@ The geographic origin of requests by country.
 
 #### Source IPs
 
-The client IP addresses making requests.
+The client IP addresses that make requests.
 
 #### Source Browsers
 
@@ -333,7 +334,7 @@ Granularity is not user-configurable. Application metric tiles and charts use a 
 
 ## Edge Data Limitations
 
-Cloudflare edge analytics have the following constraints:
+Cloudflare edge analytics has the following constraints:
 
 * Data is available for up to **90 days** in the past.
 * A single time range query can span at most **30 days**.
@@ -362,7 +363,7 @@ The traffic breakdown tables show:
 
 Use the application metrics to discover application-level issues, such as slow response times or rising CPU and memory consumption. Real-time HTTPS status codes help you identify errors or availability disruptions early.
 
-Cloudflare edge analytics surface issues that occur before traffic reaches your application. Examples include unexpected spikes in request volume, low cache hit rates, or a high share of edge-level errors. Combining Azure and edge data makes it easier to pinpoint whether a problem originates in your application, the edge layer, or the traffic itself.
+Cloudflare edge analytics surfaces issues that occur before traffic reaches your application. Examples include unexpected spikes in request volume, low cache hit rates, or a high share of edge-level errors. Combining Azure and edge data makes it easier to pinpoint whether a problem originates in your application, the edge layer, or the traffic itself.
 
 ### Side-by-Side Comparison
 
