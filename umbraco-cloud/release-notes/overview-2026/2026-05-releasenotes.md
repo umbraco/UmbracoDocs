@@ -43,10 +43,10 @@ Umbraco does not allow the deletion of a backoffice user who has logged in at le
 
 ## Edge traffic analytics on Traffic & Performance
 
-The **Traffic & Performance** page now combines Azure application metrics with Cloudflare edge analytics. When at least one hostname is selected, the page shows edge metric tiles (Requests and Data Transfer), edge series on the chart, and a Traffic Breakdown Tables section.
+The **Traffic & Performance** page now combines Azure application metrics with Cloudflare edge analytics. Selecting a hostname displays edge metric tiles for Requests and Data Transfer, edge series on the chart, and the Traffic Breakdown Tables section.
 
 <figure><img src="../../.gitbook/assets/tp-page-overview.png" alt="The Traffic & Performance page showing the selectors, overview tiles, chart, and breakdown tables."><figcaption><p>The Traffic & Performance page.</p></figcaption></figure>
 
-The breakdown tables let you drill into edge traffic by status code, cache status, HTTP version, paths, hosts, data centers, geography, browsers, devices, operating systems, and more. A toggle at the top of the section switches the view between request count and data transferred.
+The breakdown tables let you drill into edge traffic by status code, paths, hosts, geography, browsers, devices, and more. A toggle at the top of the section switches the view between request count and data transferred.
 
 For full details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md) documentation.

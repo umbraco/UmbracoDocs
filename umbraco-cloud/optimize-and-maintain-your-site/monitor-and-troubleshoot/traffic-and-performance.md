@@ -174,7 +174,7 @@ The chart depicts the amount of data (in bytes) transferred through Cloudflare's
 
 ![Edge requests and data transfer](../../.gitbook/assets/tp-graph-edge-requests-and-data-transfer.png)
 
-The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page shows a more detailed view of edge data transfer, broken down by status code, cache status, HTTP version, path, host, and data center.
+The [Traffic Breakdown Tables](#traffic-breakdown-tables) section below details edge data transfer, categorized by status code, cache status, HTTP version, path, host, and data center.
 
 #### Chart Toolbar
 
@@ -307,9 +307,9 @@ The operating systems used by visitors (for example, Windows, macOS, Android, iO
 
 The full user agent strings from requests.
 
-#### ASNs
+#### Autonomous System Numbers (ASN)
 
-Autonomous System Numbers (ASN) — the network providers from which requests originate.
+ASNs are the network providers from which requests originate.
 
 ### Other
 
