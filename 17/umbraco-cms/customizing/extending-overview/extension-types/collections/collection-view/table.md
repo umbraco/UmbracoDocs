@@ -1,8 +1,10 @@
 # Table Collection View
 
-When you want to display entities in a tabular layout within a collection, use the Table Collection View Kind. This will render a table layout without requiring a custom element — you only need to define which columns to show in the manifest.
+The Table Collection View renders items produced by an active [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
 
-The default Collection Item Model used in a Table Collection View is based on the following interface:
+When you want to display entities in a tabular layout within a collection, use the Table Collection View Kind. The table renders without a custom element — you only need to define which columns to show in the manifest.
+
+The base Collection Item Model that all items must satisfy is:
 
 ```typescript
 export interface UmbCollectionItemModel {
@@ -13,7 +15,7 @@ export interface UmbCollectionItemModel {
 }
 ```
 
-If your collection exposes additional fields, extend the base model with your own interface:
+If your collection's repository returns additional fields, extend the base model with your own interface. This interface documents the contract between the repository output and the column definitions.
 
 ```typescript
 export interface MyCollectionItemModel extends UmbCollectionItemModel {
@@ -22,6 +24,8 @@ export interface MyCollectionItemModel extends UmbCollectionItemModel {
 }
 ```
 
+Define this interface alongside your repository. For a full example of a repository that populates these fields, see [Collection](../collection.md).
+
 The table kind always renders the following columns automatically:
 
 | Column | Description |
@@ -29,7 +33,7 @@ The table kind always renders the following columns automatically:
 | **Name** | Always the first column. Renders the item icon and name. |
 | **Description** | Rendered only when at least one item in the collection has a description. |
 | _(manifest columns)_ | Any columns defined in `meta.columns`, inserted after Name/Description. Values are rendered as strings. |
-| **[Entity Actions](../../entity-actions.md)** | Always the last column. Right-aligned; renders the item's context menu. |
+| **[Entity Actions](../../entity-actions.md)** | Renders the item's Entity Actions menu. |
 
 Register the Table Collection View in the extension registry with the kind set to "table":
 
