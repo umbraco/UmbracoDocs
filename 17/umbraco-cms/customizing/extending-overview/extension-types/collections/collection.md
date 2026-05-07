@@ -49,6 +49,17 @@ Register the repository as a separate extension. The `api` property points to th
 
 Define the shape of the items your repository returns by extending `UmbCollectionItemModel`. The property names you add here are what Collection Views use when rendering the items.
 
+The base Collection Item Model that all items must satisfy is:
+
+```typescript
+export interface UmbCollectionItemModel {
+  unique: string;
+  entityType: string;
+  name?: string;
+  icon?: string;
+}
+```
+
 {% code title="types.ts" %}
 ```typescript
 import type { UmbCollectionItemModel } from '@umbraco-cms/backoffice/collection';
