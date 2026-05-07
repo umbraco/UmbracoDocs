@@ -50,9 +50,32 @@ builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 
 {% endcode %}
 
-{% hint style="info" %}
-The `ShouldInclude` property accepts a function that receives an `ApiDescription` and returns `true` if the endpoint should be included in the document. You can use any criteria - namespace, controller name, route pattern, or custom attributes.
-{% endhint %}
+### Including endpoints in a custom OpenAPI document
+
+`Microsoft.AspNetCore.OpenApi` configures each OpenAPI document independently: every document has its own `OpenApiOptions` instance, with its own `ShouldInclude` predicate. There is no global hook that sees every document at once, which means Umbraco can wire up automatic filtering for the documents it owns (the Management API, the Delivery API, and the default document) but not for documents you register yourself. For those, you must set `ShouldInclude` and decide what it checks.
+
+The `[MapToApi("name")]` attribute is still around. It is honored automatically for Umbraco's built-in documents (`ManagementApiControllerBase` carries `[MapToApi("management")]`, for example) and you can opt into the same filtering for your own documents by checking it inside your `ShouldInclude` predicate.
+
+Common predicate shapes:
+
+* By namespace - the example above. Useful when each version of your API lives in its own namespace.
+* By `[MapToApi]` attribute - matches the v17 model and is what the [Umbraco extension template](../customizing/development-flow/umbraco-extension-template.md) does:
+
+  ```csharp
+  using Umbraco.Cms.Api.Common.Attributes;
+
+  options.ShouldInclude = apiDescription =>
+      apiDescription.ActionDescriptor.EndpointMetadata
+          .OfType<MapToApiAttribute>()
+          .Any(attribute => attribute.ApiName == "my-api-v1");
+  ```
+
+* By route prefix - useful when your endpoints share a route segment:
+
+  ```csharp
+  options.ShouldInclude = apiDescription =>
+      apiDescription.RelativePath?.StartsWith("api/v1/my") is true;
+  ```
 
 With this OpenAPI document in place, ensure your API controllers are in the matching namespace:
 

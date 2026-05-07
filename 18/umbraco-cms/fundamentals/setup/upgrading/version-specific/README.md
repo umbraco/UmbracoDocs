@@ -138,6 +138,28 @@ The OpenAPI endpoints have been renamed from `swagger` to `openapi` to follow Mi
 
 For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article.
 
+*Filtering custom OpenAPI documents*
+
+In Umbraco 17, Swashbuckle had a single global filter wired up to `[MapToApi("name")]`, so decorating a controller with the attribute was enough to make it land in the matching custom OpenAPI document automatically.
+
+`Microsoft.AspNetCore.OpenApi` configures each document independently, so there is no equivalent global hook. Umbraco can apply automatic filtering only to its own documents. For a custom document registered with `AddOpenApi("name", ...)`, you must set `ShouldInclude` yourself.
+
+To preserve the v17 behavior, check the attribute inside the predicate:
+
+```csharp
+using Umbraco.Cms.Api.Common.Attributes;
+
+builder.Services.AddOpenApi("my-api-v1", options =>
+{
+    options.ShouldInclude = apiDescription =>
+        apiDescription.ActionDescriptor.EndpointMetadata
+            .OfType<MapToApiAttribute>()
+            .Any(attribute => attribute.ApiName == "my-api-v1");
+});
+```
+
+The [Umbraco extension template](../../../../customizing/development-flow/umbraco-extension-template.md) is wired up this way out of the box. See [How filtering works](../../../../reference/api-versioning-and-openapi.md#how-filtering-works) for other predicate shapes.
+
 </details>
 
 <details>
