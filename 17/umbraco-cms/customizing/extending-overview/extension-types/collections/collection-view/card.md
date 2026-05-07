@@ -1,8 +1,8 @@
 # Card Collection View
 
-The Card Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
-
 When you want to display entities as cards within a collection, use the Card Collection View Kind. This will render a card-style grid layout. Each card renders a default layout with the entity's name and icon. You can further customize the card layout by registering a custom card collection item as needed.
+
+The Card Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
 
 Each card renders fields from your collection item model. For details on defining and extending the item model, see [Collection](../collection.md#item-model).
 

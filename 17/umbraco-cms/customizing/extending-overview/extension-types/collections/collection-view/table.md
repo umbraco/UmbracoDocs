@@ -1,8 +1,8 @@
 # Table Collection View
 
-The Table Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
-
 When you want to display entities in a tabular layout within a collection, use the Table Collection View Kind. The table renders without a custom element — you only need to define which columns to show in the manifest.
+
+The Table Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
 
 The columns defined in `meta.columns` map to fields on your collection item model. In the example below, `status` and `creator` map to fields on `MyCollectionItemModel`. For details on defining the item model, see [Collection](../collection.md#item-model).
 
