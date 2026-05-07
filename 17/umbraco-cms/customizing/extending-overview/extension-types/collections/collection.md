@@ -126,4 +126,4 @@ The exported `api` alias lets the extension registry instantiate the class when 
 
 ## Next steps
 
-With a collection and repository registered, add a [Collection View](collection-view/README.md) to control how the items are displayed. Each view binds to your collection via its alias using the `Umb.Condition.CollectionAlias` condition.
+With a collection and repository registered, add a [Collection View](collection-view/README.md) to control how the items are displayed.
