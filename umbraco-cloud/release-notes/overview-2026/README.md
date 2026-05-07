@@ -4,6 +4,13 @@ description: Get an overview of the release notes for each month in 2026.
 
 # Overview 2026
 
+## [May 2026](2026-05-releasenotes.md)
+
+* **Error pages** - Upload your own HTML error pages and assign them per hostname, so visitors see your own page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
+* **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
+* **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
+
 ## [April 2026](2026-04-releasenotes.md)
 
 * **Always On toggle for Dedicated plans** - A new Always On toggle is available in the Platform Configuration section. It keeps your application loaded at all times so it does not unload after periods of inactivity.

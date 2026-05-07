@@ -15,3 +15,7 @@ This section covers working with environments, deployments, and CI/CD pipelines,
 {% content-ref url="manage-environments.md" %}
 [manage-environments.md](manage-environments.md)
 {% endcontent-ref %}
+
+{% content-ref url="error-pages.md" %}
+[error-pages.md](error-pages.md)
+{% endcontent-ref %}

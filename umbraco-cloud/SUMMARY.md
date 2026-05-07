@@ -63,6 +63,7 @@
     * [Deployment Webhook](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deployment-webhook.md)
   * [Working with a Local Clone](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md)
     * [Legacy Umbraco Visual Studio Setup](build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md)
+  * [Error Pages](build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md)
   * [Umbraco CI/CD Flow](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/README.md)
     * [Cloud API For CI/CD Flow](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbraco-cloud-api.md)
     * [Cloud API For CI/CD Flow V1](build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/v1-umbraco-cloud-api.md)
@@ -164,6 +165,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [May 2026](release-notes/overview-2026/2026-05-releasenotes.md)
   * [April 2026](release-notes/overview-2026/2026-04-releasenotes.md)
   * [March 2026](release-notes/overview-2026/2026-03-releasenotes.md)
   * [February 2026](release-notes/overview-2026/2026-02-releasenotes.md)
