@@ -5,7 +5,7 @@ description: >-
 
 # Collections
 
-A Collection is an extension that fetches and exposes a list of entities in the Umbraco backoffice. It connects a **Collection Repository**, for fetching data, and to one or more **Collection Views** (the display layer).
+A Collection is an extension that fetches and exposes a list of entities in the Umbraco backoffice. It connects a **Collection Repository**, for fetching data, and one or more **Collection Views** (the display layer).
 
 The Collection itself does not render anything. It manages pagination, filtering, and selection state — the Collection Views decide how items are presented.
 
