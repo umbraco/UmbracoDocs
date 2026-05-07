@@ -15,6 +15,8 @@ You can use Umbraco pipeline filters in case you want to add your own middleware
 * `PostRouting` - executed after the routing middleware is added and can be used to [configure Cross-origin resource sharing (CORS)](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0).
 * `PostPipeline` - executed after all Umbraco-specific middleware is added.
 * `Endpoints` - executed right before the Umbraco-specific endpoints are added using `WithEndpoints()`.
+* `PreMapEndpoints` - executed inside `UseEndpoints`, before Umbraco maps its own endpoints. The callback receives an `IEndpointRouteBuilder`, so endpoints can be mapped directly without nesting another `UseEndpoints` block.
+* `PostMapEndpoints` - the same as `PreMapEndpoints`, but runs after Umbraco's endpoints have been mapped.
 
 The addition of the `PostRouting` callback is to allow correctly configuring the Cross-Origin Resource Sharing (CORS) middleware without having to use the `WithCustomMiddleware()` method.
 
@@ -43,11 +45,11 @@ public class CorsComposer : IComposer
         .AddCors(options => options.AddPolicy(AllowAnyOriginPolicyName, policy => policy.AllowAnyOrigin()))
         .Configure<UmbracoPipelineOptions>(options => options.AddFilter(new UmbracoPipelineFilter("Cors", postRouting: app => app.UseCors())))
         // For testing only
-        .Configure<UmbracoPipelineOptions>(options => options.AddFilter(new UmbracoPipelineFilter("CorsTest", endpoints: app => app.UseEndpoints(endpoints =>
+        .Configure<UmbracoPipelineOptions>(options => options.AddFilter(new UmbracoPipelineFilter("CorsTest", preMapEndpoints: endpoints =>
         {
             endpoints.MapGet("/echo", context => context.Response.WriteAsync("echo")).RequireCors(AllowAnyOriginPolicyName);
             endpoints.MapGet("/echo2", context => context.Response.WriteAsync("echo2"));
-        }))));
+        })));
 }
 ```
 
