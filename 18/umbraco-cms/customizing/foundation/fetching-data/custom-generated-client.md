@@ -50,7 +50,7 @@ To pass plugin options like `runtimeConfigPath`, create a config file instead of
 import { defineConfig } from '@hey-api/openapi-ts';
 
 export default defineConfig({
-    input: 'https://localhost:44339/umbraco/swagger/myextension/swagger.json',
+    input: 'https://localhost:44339/umbraco/openapi/myextension.json',
     output: 'src/api',
     plugins: [
         {
@@ -119,33 +119,30 @@ The resolved shape is what `umbHttpClient` checks before invoking the `auth` cal
 
 ### Management API (automatic)
 
-If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by `BackOfficeSecurityRequirementsOperationFilter`, a Swashbuckle operation filter registered as part of the Management API configuration. It inspects each operation at startup. If neither the controller class nor the action method carries `[AllowAnonymous]`, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
+If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by an `IOpenApiOperationTransformer` registered as part of the Management API configuration. It inspects each operation at document generation time. If neither the controller class nor the action method carries `[AllowAnonymous]`, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
 
 When hey-api generates your client from that spec, it resolves the scheme and emits the runtime security metadata into each SDK function. No extra setup needed.
 
 ### Custom separate API
 
-If you expose a separate API with its own Swagger document, security requirements are not added automatically. You must apply them to each operation in your OpenAPI specification, for example via an operation filter. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
+If you expose a separate API with its own OpenAPI document, security requirements are not added automatically. The Management API ships an `AddBackofficeSecurityRequirements()` extension method that registers both the document-level Bearer scheme and the per-operation requirement (skipping any operation marked with `[AllowAnonymous]`).
+
+Call it on the `OpenApiOptions` passed into `AddOpenApi`:
 
 ```csharp
 using Umbraco.Cms.Api.Management.OpenApi;
 
-internal sealed class MyExtensionSecurityRequirementsOperationFilter : BackOfficeSecurityRequirementsOperationFilterBase
+builder.Services.AddOpenApi("myextension", options =>
 {
-    // Must match the [MapToApi("...")] attribute on your controllers
-    protected override string ApiName => "myextension";
-}
+    // ...other configuration
+
+    options.AddBackofficeSecurityRequirements();
+});
 ```
 
-Register it in your SwaggerGen configuration:
+No `AddSecurityDefinition` call is needed — `AddBackofficeSecurityRequirements()` adds it. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
 
-```csharp
-swaggerGenOptions.OperationFilter<MyExtensionSecurityRequirementsOperationFilter>();
-```
-
-No `AddSecurityDefinition` call is needed — Umbraco already registers the required Bearer security scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
-
-For a full walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md).
+For a complete walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md), [Custom Backoffice API](../../../reference/custom-backoffice-api.md), and [API versioning and OpenAPI](../../../reference/api-versioning-and-openapi.md).
 
 ### Direct calls without a generated client
 

@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI for your own APIs.
 
 # API versioning and OpenAPI
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents are available at `{yourdomain}/umbraco/openapi`. The UI is based on [Swashbuckle.AspNetCore.SwaggerUI](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) and is available at the same path. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents are available at `{yourdomain}/umbraco/openapi`. The UI is Swagger UI and is available at the same path. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
 
 ## Adding your own OpenAPI documents
 
