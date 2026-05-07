@@ -1,5 +1,7 @@
 # Custom Collection View
 
+A Custom Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
+
 When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
 
 ## Manifest
