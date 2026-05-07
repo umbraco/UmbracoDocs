@@ -17,8 +17,6 @@ The Collection itself does not render anything. It manages pagination, filtering
 | **Collection Repository** | Fetches and returns items |
 | **Collection View** | Bound to the collection via its alias; renders the items |
 
-A Collection View uses the `Umb.Condition.CollectionAlias` condition to attach itself to a specific collection. This means you can register multiple views (table, card, reference) for the same collection alias, and the backoffice will offer them as view options.
-
 ## Articles
 
 * [Collection](collection.md)
