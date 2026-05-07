@@ -194,7 +194,7 @@ These events help you correlate performance changes with deployments and other p
 
 By utilizing the `Umbraco.Cloud.Cms` package, the platform tracks the **hot** and **cold** boots of your Umbraco environment on Cloud.
 
-<figure><img src="../../.gitbook/assets/image (87).png" alt="Hot and Cold boot."><figcaption><p>Hot and Cold boot.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-platform-metrics.png" alt="Hot and Cold boot."><figcaption><p>Hot and Cold boot.</p></figcaption></figure>
 
 Learn more about the difference between [Hot vs. Cold restarts](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts).
 
