@@ -5,6 +5,7 @@
 * **Error pages** - Upload your own HTML error pages and assign them per hostname. Visitors see your page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
+* **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
 
 ## Error pages
 
@@ -30,3 +31,11 @@ Pushing a baseline update to child projects will trigger an activity on the base
 Basic Authentication is now available on all Umbraco Cloud plans. You can enable it from **Settings** > **Public Access** to restrict access to your project environments to project members and allowed IPs.
 
 For setup steps and configuration details, see the [Public Access](../../build-and-customize-your-solution/set-up-your-project/project-settings/public-access.md) documentation.
+
+## Anonymized backoffice users on team removal
+
+When you remove a team member from a project, Umbraco Cloud now anonymizes the corresponding backoffice user across all environments. The user is disabled, and the name and email are replaced with anonymized values. Content history, audit logs, and other records that reference the user are preserved, so the audit trail stays intact without retaining personal data.
+
+Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for removing personal data from a project for users who have signed in. After a team member is removed, no project holds personal data for that person.
+
+<figure><img src="../../.gitbook/assets/cloud-anonymized-user.png" alt="Backoffice user profile after anonymization, showing the name 'Anonymized User', a placeholder email at deleted.invalid, and a Disabled status badge."><figcaption><p>A backoffice user profile after anonymization, with a generic name, a placeholder email, and a Disabled status.</p></figcaption></figure>
