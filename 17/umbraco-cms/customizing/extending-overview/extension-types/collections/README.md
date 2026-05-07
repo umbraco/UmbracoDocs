@@ -14,7 +14,7 @@ The Collection itself does not render anything. It manages pagination, filtering
 | Part | Role |
 |---|---|
 | **Collection** | Registers the extension and points to a repository alias |
-| **Collection Repository** | Implements `requestCollection` to fetch and return items |
+| **Collection Repository** | Fetches and returns items |
 | **Collection View** | Bound to the collection via its alias; renders the items |
 
 A Collection View uses the `Umb.Condition.CollectionAlias` condition to attach itself to a specific collection. This means you can register multiple views (table, card, reference) for the same collection alias, and the backoffice will offer them as view options.
