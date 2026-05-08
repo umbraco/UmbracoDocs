@@ -14,7 +14,7 @@ Value Summary depends on the [Value Type](value-type.md) concept. Define a Value
 
 ## Creating a Value Summary
 
-The simplest Value Summary consists of a manifest, an element, and a Value Type. The Value Type is what tells the renderer which summary to use for a given piece of data:
+The basic Value Summary consists of a manifest, an element, and a Value Type. The Value Type is what tells the renderer which summary to use for a given piece of data:
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
@@ -43,7 +43,7 @@ Then register a `valueSummary` manifest. The `forValueType` property links the m
 ```
 {% endcode %}
 
-Extend `UmbValueSummaryElementBase` and override `render()`. The current value is available as `this._value`:
+The element is responsible for rendering the value. Extend `UmbValueSummaryElementBase` and override `render()`. The current value is available as `this._value`:
 
 {% code title="status-value-summary.element.ts" %}
 ```typescript
@@ -60,26 +60,7 @@ export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<stri
 
 Sometimes the stored value is not meaningful on its own. You might store a key or unique identifier, but want to display a name. In those cases, you need to fetch additional data from the server before you can render the summary. A resolver handles this lookup.
 
-Because a collection can show many rows at once, the resolver receives all values for the entire column in a single batch call rather than one call per row. The resolver returns a `data` array that must be in the same order and the same length as the input — this is how each resolved result maps back to the correct row. If a value cannot be resolved, include a placeholder at that position to keep the arrays aligned.
-
-{% code title="category-value-summary.resolver.ts" %}
-```typescript
-export class MyCategoryValueSummaryResolver extends UmbValueSummaryResolverBase<string, CategoryItem> {
-  async resolveValues(values: ReadonlyArray<string>) {
-    const items = await fetchCategoriesByKeys(values);
-    return { data: items };
-  }
-}
-
-export { MyCategoryValueSummaryResolver as valueResolver };
-```
-{% endcode %}
-
-The module must export the resolver class under the name `valueResolver` — this is the specific name the extension system looks for when loading the module.
-
-If the resolved data can change while the user has the collection open — for example, if a linked entity can be renamed elsewhere in the backoffice — return an `asObservable` function alongside `data`. The collection will then stay in sync reactively without a full reload.
-
-Add `valueResolver` to the manifest to wire it up:
+Add a `valueResolver` property to the manifest pointing to the resolver module:
 
 {% code title="manifests.ts" %}
 ```typescript
@@ -94,6 +75,23 @@ Add `valueResolver` to the manifest to wire it up:
 }
 ```
 {% endcode %}
+
+The resolver module must export the resolver class under the name `valueResolver` — this is the specific name the extension system looks for when loading the module. Because a collection can show many rows at once, the resolver receives all values for the entire column in a single batch call rather than one call per row. The resolver returns a `data` array that must be in the same order and the same length as the input — this is how each resolved result maps back to the correct row. If a value cannot be resolved, include a placeholder at that position to keep the arrays aligned.
+
+{% code title="category-value-summary.resolver.ts" %}
+```typescript
+export class MyCategoryValueSummaryResolver extends UmbValueSummaryResolverBase<string, CategoryItem> {
+  async resolveValues(values: ReadonlyArray<string>) {
+    const items = await fetchCategoriesByKeys(values);
+    return { data: items };
+  }
+}
+
+export { MyCategoryValueSummaryResolver as valueResolver };
+```
+{% endcode %}
+
+If the resolved data can change while the user has the collection open — for example, if a linked entity can be renamed elsewhere in the backoffice — return an `asObservable` function alongside `data`. The collection will then stay in sync reactively without a full reload.
 
 The resolved result should still be compact. If you are resolving a reference, show a name or label — not a full entity representation.
 
