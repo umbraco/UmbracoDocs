@@ -52,7 +52,8 @@ The element is responsible for rendering the value. Extend `UmbValueSummaryEleme
 @customElement('my-status-value-summary')
 export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<MyStatusValue> {
   override render() {
-    return html`<uui-tag look="secondary">${this._value}</uui-tag>`;
+    if (!this._value) return nothing;
+    return html`<uui-tag look="secondary">${this.localize.term(`myStatus_${this._value}`)}</uui-tag>`;
   }
 }
 ```
