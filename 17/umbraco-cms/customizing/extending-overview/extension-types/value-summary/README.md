@@ -140,7 +140,18 @@ export { MyCategoryValueSummaryResolver as valueResolver };
 ```
 {% endcode %}
 
-If the resolved data can change while the user has the collection open — for example, if a linked entity can be renamed elsewhere in the backoffice — return an `asObservable` function alongside `data`. The collection will then stay in sync reactively without a full reload.
+If the resolved data can change while the user has the collection open — for example, if a linked entity can be renamed elsewhere in the backoffice — return an `asObservable` function alongside `data`. The collection subscribes to it and updates the displayed values reactively without a full reload.
+
+Most item repositories already return an `asObservable` alongside the data. Pass it through from your fetch call:
+
+{% code title="category-value-summary.resolver.ts" %}
+```typescript
+async resolveValues(values: ReadonlyArray<string>) {
+  const { data, asObservable } = await fetchCategoriesByKeys(values);
+  return { data, asObservable };
+}
+```
+{% endcode %}
 
 The resolved result should still be compact. If you are resolving a reference, show a name or label — not a full entity representation.
 
