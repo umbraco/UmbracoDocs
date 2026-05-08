@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for the Value Type concept. Use it to define a named, type-safe key for values used in valueSummary manifests.
+description: A guide to defining a custom Value Type in Umbraco.
 ---
 
 # Value Type
