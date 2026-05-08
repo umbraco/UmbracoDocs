@@ -56,7 +56,7 @@ export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<stri
 ```
 {% endcode %}
 
-The value type can also be an object. If your data has structure, define the TypeScript type accordingly and access its properties directly in `render()`. A color value with a hex code and a label, for example, lets you render a swatch alongside the name — all from the stored value, no server call needed:
+A value type can represent any data structure, including complex objects. If your data has shape, define it accordingly and access its properties directly in `render()`. A color value with a hex code and a label, for example, lets you render a swatch alongside the name — all from the stored value, no server call needed:
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
