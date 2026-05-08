@@ -56,6 +56,50 @@ export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<stri
 ```
 {% endcode %}
 
+The value type can also be an object. If your data has structure, define the TypeScript type accordingly and access its properties directly in `render()`. A color value with a hex code and a label, for example, lets you render a swatch alongside the name — all from the stored value, no server call needed:
+
+{% code title="my-feature/value-type/constants.ts" %}
+```typescript
+export const MY_COLOR_VALUE_TYPE = 'My.ValueType.Color' as const;
+
+declare global {
+  interface UmbValueTypeMap {
+    [MY_COLOR_VALUE_TYPE]: { hex: string; label: string };
+  }
+}
+```
+{% endcode %}
+
+{% code title="color-value-summary.element.ts" %}
+```typescript
+@customElement('my-color-value-summary')
+export class MyColorValueSummaryElement extends UmbValueSummaryElementBase<{ hex: string; label: string }> {
+  override render() {
+    if (!this._value) return nothing;
+    return html`
+      <span style="background: ${this._value.hex};" id="color-swatch"></span>
+      ${this._value.label}
+    `;
+  }
+
+  static styles = css`
+    :host {
+      display: flex;
+      align-items: center;
+      gap: var(--uui-size-3);
+    }
+    
+    #color-swatch {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+    }
+  `;
+}
+```
+{% endcode %}
+
 ## Resolving server-side values
 
 Sometimes the stored value is not meaningful on its own. You might store a key or unique identifier, but want to display a name. In those cases, you need to fetch additional data from the server before you can render the summary. A resolver handles this lookup.
@@ -76,7 +120,7 @@ Add a `valueResolver` property to the manifest pointing to the resolver module:
 ```
 {% endcode %}
 
-The resolver module must export the resolver class under the name `valueResolver` — this is the specific name the extension system looks for when loading the module. Because a collection can show many rows at once, the resolver receives all values for the entire column in a single batch call rather than one call per row. The resolver returns a `data` array that must be in the same order and the same length as the input — this is how each resolved result maps back to the correct row. If a value cannot be resolved, include a placeholder at that position to keep the arrays aligned.
+The resolver module must export the resolver class under the name `valueResolver` — this is the specific name the extension system looks for when loading the module. Because a table can show many rows at once, the resolver receives all values for the entire column in a single batch call rather than one call per row. The resolver returns a `data` array that must be in the same order and the same length as the input — this is how each resolved result maps back to the correct row. If a value cannot be resolved, include a placeholder at that position to keep the arrays aligned.
 
 {% code title="category-value-summary.resolver.ts" %}
 ```typescript
