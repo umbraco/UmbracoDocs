@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for the valueSummary extension type. Use it to render a compact value representation in collection views.
+description: A guide to creating a custom Value Summary in Umbraco. Use it to render a compact value presentation.
 ---
 
 # Value Summary
