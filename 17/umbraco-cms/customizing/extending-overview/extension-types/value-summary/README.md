@@ -155,22 +155,14 @@ async resolveValues(values: ReadonlyArray<string>) {
 
 The resolved result should still be compact. If you are resolving a reference, show a name or label — not a full entity representation.
 
-## Using Value Summary in a collection
+Value Summary can be used with Property Editors to display property values in a Document Collection:
 
-### Property editor collections
+{% content-ref url="../../../../customizing/property-editors/property-editor-value-summary.md" %}
+[Property Editor Value Summary](../../../../customizing/property-editors/property-editor-value-summary.md)
+{% endcontent-ref %}
 
-If you are building a property editor and want your values to display meaningfully in the Content section's list view, you do not need to configure anything in the collection manifest. The collection receives an editor alias from the server for each property and uses it to look up the correct summary. Registering a `valueSummary` manifest with `forValueType` set to your property editor's schema alias is all that is needed.
+Value Summary can also be used in a Table Collection View:
 
-### Generic table collections
-
-If you are building a custom collection with columns that hold data you want to display as more than plain text, set `valueType` in the column definition of your collection view manifest:
-
-```typescript
-{
-  field: 'status',
-  label: 'Status',
-  valueType: MY_STATUS_VALUE_TYPE,
-}
-```
-
-The table renders your summary for every cell in that column. If `valueType` is omitted, the raw value is rendered as text.
+{% content-ref url="../collections/collection-view/README.md" %}
+[Table Collection View](../collections/collection-view/README.md)
+{% endcontent-ref %}
