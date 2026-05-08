@@ -18,11 +18,13 @@ The basic Value Summary consists of a manifest, an element, and a Value Type. Th
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
+export type MyStatusValue = 'active' | 'inactive' | 'pending';
+
 export const MY_STATUS_VALUE_TYPE = 'My.ValueType.Status' as const;
 
 declare global {
   interface UmbValueTypeMap {
-    [MY_STATUS_VALUE_TYPE]: string;
+    [MY_STATUS_VALUE_TYPE]: MyStatusValue;
   }
 }
 ```
@@ -48,7 +50,7 @@ The element is responsible for rendering the value. Extend `UmbValueSummaryEleme
 {% code title="status-value-summary.element.ts" %}
 ```typescript
 @customElement('my-status-value-summary')
-export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<string> {
+export class MyStatusValueSummaryElement extends UmbValueSummaryElementBase<MyStatusValue> {
   override render() {
     return html`<uui-tag look="secondary">${this._value}</uui-tag>`;
   }
