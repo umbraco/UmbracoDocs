@@ -20,7 +20,7 @@ Whether you need to roll back to a previous version or recover from an issue, re
 
 The Database Restore feature also allows you to tailor each environment with the exact data you need. Whether you are prepping for a staging deployment or testing in a development environment, you can restore the relevant database to match the specific requirements. This ensures that your team is always working with the right data at the right time.
 
-## [Update to availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md#platform-and-cms-events)
+## [Update to availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#platform-and-cms-events)
 
 The Performance and Availability page in Umbraco Cloud now provides even more transparency with the addition of Boot Status insights. You can now see whether an environment experienced a **hot** or **cold** boot, giving you a clearer picture of your site’s performance.
 
