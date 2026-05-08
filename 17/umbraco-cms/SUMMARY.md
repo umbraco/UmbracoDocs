@@ -197,7 +197,7 @@
       * [Tree Models](customizing/extending-overview/extension-types/tree/tree-models.md)
       * [Trees & Workspaces](customizing/extending-overview/extension-types/tree/trees-and-workspaces.md)
     * [Value Summary](customizing/extending-overview/extension-types/value-summary/README.md)
-      * [Value Type](customizing/extending-overview/extension-types/value-summary/value-type.md)
+    * [Value Type](customizing/extending-overview/extension-types/value-type.md)
     * [Workspaces](customizing/extending-overview/extension-types/workspaces/README.md)
       * [Workspace Actions](customizing/extending-overview/extension-types/workspaces/workspace-editor-actions.md)
       * [Workspace Action Menu Items](customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md)

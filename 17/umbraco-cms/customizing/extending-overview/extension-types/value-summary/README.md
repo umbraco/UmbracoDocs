@@ -9,7 +9,7 @@ The `valueSummary` extension controls how a value appear in compact space like a
 With a Value Summary, you control the presentation: a date formatted for the user's locale, a status code shown as a colored badge, or a stored reference resolved to a name. Without a registered summary, raw values appear as plain text.
 
 {% hint style="info" %}
-Value Summary depends on the [Value Type](value-type.md) concept. Define a Value Type for your data before registering a summary.
+Value Summary depends on the [Value Type](../value-type.md) concept. Define a Value Type for your data before registering a summary.
 {% endhint %}
 
 ## Creating a Value Summary
