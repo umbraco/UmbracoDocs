@@ -60,11 +60,16 @@ The value type can also be an object. If your data has structure, define the Typ
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
+export interface MyColorValue {
+  hex: string;
+  label: string;
+}
+
 export const MY_COLOR_VALUE_TYPE = 'My.ValueType.Color' as const;
 
 declare global {
   interface UmbValueTypeMap {
-    [MY_COLOR_VALUE_TYPE]: { hex: string; label: string };
+    [MY_COLOR_VALUE_TYPE]: MyColorValue;
   }
 }
 ```
@@ -73,7 +78,7 @@ declare global {
 {% code title="color-value-summary.element.ts" %}
 ```typescript
 @customElement('my-color-value-summary')
-export class MyColorValueSummaryElement extends UmbValueSummaryElementBase<{ hex: string; label: string }> {
+export class MyColorValueSummaryElement extends UmbValueSummaryElementBase<MyColorValue> {
   override render() {
     if (!this._value) return nothing;
     return html`
