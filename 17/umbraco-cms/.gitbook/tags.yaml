@@ -1,3 +1,6 @@
 - tag: ai-generated
   label: AI-generated content
   icon: brain
+- tag: early-access
+  label: Early Access
+  color: $primary
