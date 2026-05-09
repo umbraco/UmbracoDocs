@@ -118,12 +118,6 @@ All expressions are evaluated in a sandbox. Only safe operations and methods are
 
 The following UFM components are available to use.
 
-* Label Value
-* Localize
-* Content Name
-* Link Title
-* Form Name
-
 | Name         | Example syntax                         |
 | ------------ | -------------------------------------- |
 | Label Value  | `{umbValue: headline}`                 |
