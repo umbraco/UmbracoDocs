@@ -99,7 +99,7 @@ For more details, see [#22692](https://github.com/umbraco/Umbraco-CMS/pull/22692
 
 **`IPublishedContent.Parent` and `IPublishedContent.Children` removed**
 
-The `Parent` and `Children` navigation members on `IPublishedContent` have been removed.
+The `Parent` and `Children` navigation members on `IPublishedContent` — obsolete in earlier versions — have now been removed.
 
 In Razor views and other code with access to the ambient Umbraco services, switch to the equivalent extension methods `Parent()` and `Children()`, defined in the `Umbraco.Extensions` namespace.
 
@@ -129,7 +129,7 @@ See [Querying IPublishedContent](../../../../reference/querying/ipublishedconten
 
 **`GetAtRoot()` removed**
 
-`GetAtRoot()` has been removed from `UmbracoHelper`, `IPublishedContentCache`, and `IUmbracoContext.Content`. The replacement depends on the use case:
+The `GetAtRoot()` method — obsolete in earlier versions — has now been removed from `UmbracoHelper`, `IPublishedContentCache`, and `IUmbracoContext.Content`. The replacement depends on the use case:
 
 - To enumerate all root nodes inside a web request, use `ContentAtRoot()` on `UmbracoHelper` or `IPublishedContentQuery`:
 
@@ -142,14 +142,14 @@ See [Querying IPublishedContent](../../../../reference/querying/ipublishedconten
 
 **Content finder and URL provider renames**
 
-Two routing types previously suffixed with `New` have been renamed to drop the suffix:
+The earlier `ContentFinderByUrl` and `DefaultUrlProvider` classes — obsolete since their `New`-suffixed replacements were introduced — have now been removed, and the replacements have been renamed to drop the suffix:
 
 - `ContentFinderByUrlNew` → `ContentFinderByUrl`
 - `NewDefaultUrlProvider` → `DefaultUrlProvider`
 
 **ILocalizationService removed**
 
-`ILocalizationService` has been removed. Its responsibilities have been split between two services:
+`ILocalizationService` — obsolete since Umbraco 12 — has now been removed. Its responsibilities have been split between two services:
 
 - `ILanguageService` for language operations.
 - `IDictionaryItemService` for dictionary item operations.
@@ -192,7 +192,7 @@ For more details, see [#22677](https://github.com/umbraco/Umbraco-CMS/pull/22677
 
 **IFileService split into per-file-type services**
 
-`IFileService` has been removed. Its functionality is now split across four dedicated services:
+`IFileService` — obsolete in earlier versions — has now been removed. Its functionality was previously moved into four dedicated services:
 
 | Old (`IFileService`) | New |
 |----------------------|-----|
@@ -203,9 +203,9 @@ For more details, see [#22677](https://github.com/umbraco/Umbraco-CMS/pull/22677
 
 For more details, see [#22675](https://github.com/umbraco/Umbraco-CMS/pull/22675).
 
-**Service cleanups: sync method removals**
+**Service cleanups: obsolete sync method removals**
 
-Synchronous methods on the following services that had been marked obsolete in favor of async equivalents have now been removed. Switch to the `…Async` overloads:
+Synchronous methods on the following services — obsolete in earlier versions in favor of async equivalents — have now been removed. Switch to the `…Async` overloads:
 
 - `IContentTypeBaseService` and `IDomainService` ([#22629](https://github.com/umbraco/Umbraco-CMS/pull/22629))
 - `IDataTypeService` ([#22634](https://github.com/umbraco/Umbraco-CMS/pull/22634))
@@ -223,11 +223,11 @@ The return type of `GetDictionaryValue` has been changed from `string?` to `stri
 
 **Allowed application and start node claim helpers removed**
 
-Obsolete methods and constants relating to allowed application and start node claims have been removed. Code that referenced these helpers should be migrated to the current claim APIs. See [#20124](https://github.com/umbraco/Umbraco-CMS/pull/20124).
+Methods and constants relating to allowed application and start node claims — obsolete in earlier versions — have now been removed. Code that referenced these helpers should be migrated to the current claim APIs. See [#20124](https://github.com/umbraco/Umbraco-CMS/pull/20124).
 
 **MigrationBase removed — migrations must inherit AsyncMigrationBase**
 
-The synchronous `MigrationBase` class has been removed, and all bundled migrations between Umbraco 13 and 17 have been deleted. Custom migrations must now inherit `AsyncMigrationBase` and implement `MigrateAsync`. The synchronous `PackageMigrationBase` has likewise been removed — package migrations must inherit `AsyncPackageMigrationBase`.
+The synchronous `MigrationBase` class — obsolete since Umbraco 16, when `AsyncMigrationBase` was introduced — has now been removed, and all bundled migrations between Umbraco 13 and 17 have been deleted. Custom migrations must now inherit `AsyncMigrationBase` and implement `MigrateAsync`. The synchronous `PackageMigrationBase` has likewise been removed — package migrations must inherit `AsyncPackageMigrationBase`.
 
 Before:
 
