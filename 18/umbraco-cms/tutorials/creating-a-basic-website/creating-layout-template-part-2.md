@@ -1,4 +1,4 @@
-# Creating Pages and Using the Master Template
+# Creating Pages and Using the Layout Template
 
 ## Creating a Contact Us Page
 
@@ -32,7 +32,7 @@ To create a content-only contact page in Umbraco, follow these steps:
 10. Go to **Templates** to view your _Simple Content Page_ template that was created automatically with the Document Type.
 
     \{% hint style="info" %\} If you do not see the template, try refreshing the page. \{% endhint %\}11. Open the \_Simple Content Page\_ template.\
-    12\. Select \`Master Template: No Master\` and choose the \*\*Master\*\* template.\
+    12\. Select \`Layout Template: No Layout\` and choose the \*\*Layout\*\* template.\
     13\. Click \*\*Choose\*\*.\
     14\. Add the following HTML after the closing \`}\`.
 
@@ -96,7 +96,7 @@ To add the Document Type properties:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
-3. Go to **Master** and open the **Simple Content Page** template.
+3. Go to **Layout** and open the **Simple Content Page** template.
 4. Scroll to the `<!-- Jumbotron, w title -->` (around line 7) section and highlight the text `“Umbraco Support”` (around line 10).
 5. Click **Insert** and select **Value**.
    * Select **Document Type** from the **Choose field** drop-down list.
@@ -133,7 +133,7 @@ To use the Document Type properties from the _Homepage_ Document Type, do the fo
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
-3. Open the **Master** template.
+3. Open the template named **Layout**.
 4. Highlight `@Model.Value("footerText")` in the footer (around line 51).
 5. Click **Insert** and select **Value**.
 6. Select **Document Type** from the **Choose field** drop-down list.

@@ -15,13 +15,404 @@ If any specific steps are involved with upgrading to a specific version they wil
 
 Use the [general upgrade guide](../) to complete the upgrade of your project.
 
+### Preparation for Upgrade
+
+Before running the upgrade, consider the following:
+
+**Empty the media recycle bin**
+
+In Umbraco 18, the `EnableMediaRecycleBinProtection` setting defaults to `true`. With this enabled, media files moved to the recycle bin are renamed with a `.deleted` suffix (and renamed back on restore). Emptying the media recycle bin before upgrading avoids any uncertainty around the state of files already in the bin from prior versions.
+
+For details, see the entry on `EnableMediaRecycleBinProtection` further down.
+
+**Implement `ITypedSingleBlockListProcessor` for custom block-list nesting property editors**
+
+The single-mode block list migration — added in Umbraco 17 but disabled — now runs by default during the upgrade to Umbraco 18. Sites with custom property editors that nest block list values must implement and register an `ITypedSingleBlockListProcessor` before the upgrade runs. Without this, nested data in those property values will be left in the old format.
+
+For details, see the [Single block migration](../../../../extending/single-block-migration.md) article.
+
 ### Breaking changes
 
 <details>
 
 <summary>Umbraco 18</summary>
 
-*Add details about breaking changes in Umbraco 18 here.*
+**Swashbuckle replaced with Microsoft.AspNetCore.OpenApi**
+
+Umbraco no longer uses Swashbuckle for OpenAPI documentation. It has been replaced with [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview). If you have custom APIs with OpenAPI documentation, you will need to update your code.
+
+You can still use Swashbuckle for your own OpenAPI documents if you prefer, but Umbraco no longer ships or configures it. You are responsible for installing the `Swashbuckle.AspNetCore` NuGet package and wiring it up yourself.
+
+See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article for the new APIs. The main changes you will need to migrate:
+
+- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
+- **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
+- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids).
+- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids).
+- **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
+- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability).
+- **Filtering custom OpenAPI documents** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Including endpoints in a custom OpenAPI document](../../../../reference/api-versioning-and-openapi.md#including-endpoints-in-a-custom-openapi-document).
+
+*OpenAPI URL changes*
+
+The OpenAPI endpoints have been renamed from `swagger` to `openapi` to follow Microsoft's naming conventions:
+
+| Old URL | New URL |
+|---------|---------|
+| `/umbraco/swagger` | `/umbraco/openapi` |
+| `/umbraco/swagger/{documentName}/swagger.json` | `/umbraco/openapi/{documentName}.json` |
+
+For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article.
+
+For more details, see [#21058](https://github.com/umbraco/Umbraco-CMS/pull/21058).
+
+**UmbracoApiController and front-end API auto-routing removed**
+
+The `UmbracoApiController` base class — obsoleted in Umbraco 15 — has now been removed, along with the convention-based front-end API auto-routing pipeline that supported it. Custom APIs must be written as standard ASP.NET Core controllers using the `[ApiController]` and `[Route]` attributes.
+
+Before:
+
+```csharp
+public class ProductsController : UmbracoApiController
+{
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair" });
+}
+```
+
+After:
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+[ApiController]
+[Route("/api/shop/products")]
+public class ProductsController : Controller
+{
+    [HttpGet]
+    public IActionResult GetAll() => Ok(new[] { "Table", "Chair" });
+}
+```
+
+See the [Umbraco API Controllers](../../../../reference/routing/umbraco-api-controllers/README.md) article for the supported patterns.
+
+For more details, see [#22692](https://github.com/umbraco/Umbraco-CMS/pull/22692).
+
+**`IPublishedContent.Parent` and `IPublishedContent.Children` removed**
+
+The `Parent` and `Children` navigation members on `IPublishedContent` have been removed.
+
+In Razor views and other code with access to the ambient Umbraco services, switch to the equivalent extension methods `Parent()` and `Children()`, defined in the `Umbraco.Extensions` namespace.
+
+Before:
+
+```csharp
+var parent = Model.Parent;
+foreach (var child in Model.Children)
+{
+    // ...
+}
+```
+
+After:
+
+```csharp
+var parent = Model.Parent();
+foreach (var child in Model.Children())
+{
+    // ...
+}
+```
+
+The extension methods are designed for view-side use and rely on ambient Umbraco services that may not be set up outside a web request. In code that runs outside a request — for example, a background service — inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media) to obtain parent and child keys. Resolve those keys through `IPublishedContentCache` or `IPublishedContentQuery`.
+
+See [Querying IPublishedContent](../../../../reference/querying/ipublishedcontent/README.md) and [Services and Helpers](../../../../implementation/services/README.md) for the current patterns.
+
+**`GetAtRoot()` removed**
+
+`GetAtRoot()` has been removed from `UmbracoHelper`, `IPublishedContentCache`, and `IUmbracoContext.Content`. The replacement depends on the use case:
+
+- To enumerate all root nodes inside a web request, use `ContentAtRoot()` on `UmbracoHelper` or `IPublishedContentQuery`:
+
+  ```csharp
+  IEnumerable<IPublishedContent> roots = Umbraco.ContentAtRoot();
+  ```
+
+- To enumerate root nodes outside a web request, inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media) and use its `TryGetRootKeys(out IEnumerable<Guid> rootKeys)` method to obtain the root keys, then resolve them via `IPublishedContentCache.GetById(key)`.
+- To look up a specific node by its key or ID, use `IPublishedContentQuery.Content(id)` (or `UmbracoHelper.Content(id)`) directly.
+
+**Content finder and URL provider renames**
+
+Two routing types previously suffixed with `New` have been renamed to drop the suffix:
+
+- `ContentFinderByUrlNew` → `ContentFinderByUrl`
+- `NewDefaultUrlProvider` → `DefaultUrlProvider`
+
+**ILocalizationService removed**
+
+`ILocalizationService` has been removed. Its responsibilities have been split between two services:
+
+- `ILanguageService` for language operations.
+- `IDictionaryItemService` for dictionary item operations.
+
+The new services expose an asynchronous API throughout, removing the sync-over-async patterns that existed on `ILocalizationService`.
+
+Before:
+
+```csharp
+public class MyComponent
+{
+    private readonly ILocalizationService _localizationService;
+
+    public MyComponent(ILocalizationService localizationService)
+        => _localizationService = localizationService;
+
+    public IEnumerable<ILanguage> GetLanguages()
+        => _localizationService.GetAllLanguages();
+}
+```
+
+After:
+
+```csharp
+public class MyComponent
+{
+    private readonly ILanguageService _languageService;
+
+    public MyComponent(ILanguageService languageService)
+        => _languageService = languageService;
+
+    public async Task<IEnumerable<ILanguage>> GetLanguagesAsync()
+        => await _languageService.GetAllAsync();
+}
+```
+
+For dictionary item operations such as `GetDictionaryItemByKey`, switch the injected service to `IDictionaryItemService` and use the corresponding async method.
+
+For more details, see [#22677](https://github.com/umbraco/Umbraco-CMS/pull/22677).
+
+**IFileService split into per-file-type services**
+
+`IFileService` has been removed. Its functionality is now split across four dedicated services:
+
+| Old (`IFileService`) | New |
+|----------------------|-----|
+| Templates | `ITemplateService` |
+| Partial views | `IPartialViewService` |
+| Stylesheets | `IStylesheetService` |
+| Scripts | `IScriptService` |
+
+For more details, see [#22675](https://github.com/umbraco/Umbraco-CMS/pull/22675).
+
+**Service cleanups: sync method removals**
+
+Synchronous methods on the following services that had been marked obsolete in favor of async equivalents have now been removed. Switch to the `…Async` overloads:
+
+- `IContentTypeBaseService` and `IDomainService` ([#22629](https://github.com/umbraco/Umbraco-CMS/pull/22629))
+- `IDataTypeService` ([#22634](https://github.com/umbraco/Umbraco-CMS/pull/22634))
+- `IEmailSender`, `MediaPermissions`, and `MemberConfigurationResponseModel` ([#22642](https://github.com/umbraco/Umbraco-CMS/pull/22642))
+- `IMemberGroupService` ([#22632](https://github.com/umbraco/Umbraco-CMS/pull/22632))
+- `IMemberService.GetMembersByPropertyValue` ([#22678](https://github.com/umbraco/Umbraco-CMS/pull/22678))
+
+**`IHostingEnvironment.ApplicationMainUrl` is now nullable**
+
+The `ApplicationMainUrl` property on `IHostingEnvironment` is now declared as `Uri?`. Add a null-check before using it. See [#22558](https://github.com/umbraco/Umbraco-CMS/pull/22558).
+
+**`UmbracoHelper.GetDictionaryValue` nullability change**
+
+The return type of `GetDictionaryValue` has been changed from `string?` to `string`. This matches the actual runtime behavior — an empty string is returned when no dictionary item is found for the key. Callers can remove any defensive null checks against the return value. See [#21372](https://github.com/umbraco/Umbraco-CMS/pull/21372).
+
+**Allowed application and start node claim helpers removed**
+
+Obsolete methods and constants relating to allowed application and start node claims have been removed. Code that referenced these helpers should be migrated to the current claim APIs. See [#20124](https://github.com/umbraco/Umbraco-CMS/pull/20124).
+
+**MigrationBase removed — migrations must inherit AsyncMigrationBase**
+
+The synchronous `MigrationBase` class has been removed, and all bundled migrations between Umbraco 13 and 17 have been deleted. Custom migrations must now inherit `AsyncMigrationBase` and implement `MigrateAsync`. The synchronous `PackageMigrationBase` has likewise been removed — package migrations must inherit `AsyncPackageMigrationBase`.
+
+Before:
+
+```csharp
+public class AddCommentsTable : MigrationBase
+{
+    public AddCommentsTable(IMigrationContext context) : base(context)
+    {
+    }
+
+    protected override void Migrate()
+    {
+        if (TableExists("BlogComments") == false)
+        {
+            Create.Table<BlogCommentSchema>().Do();
+        }
+    }
+}
+```
+
+After:
+
+```csharp
+public class AddCommentsTable : AsyncMigrationBase
+{
+    public AddCommentsTable(IMigrationContext context) : base(context)
+    {
+    }
+
+    protected override Task MigrateAsync()
+    {
+        if (TableExists("BlogComments") == false)
+        {
+            Create.Table<BlogCommentSchema>().Do();
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
+
+Custom migration plans must also be executed via `IMigrationPlanExecutor.ExecutePlanAsync()`. For details, see [#22618](https://github.com/umbraco/Umbraco-CMS/pull/22618) and the updated examples in [Creating a custom database table](../../../../extending/database.md).
+
+<!-- vale UmbracoDocs.Terms = NO -->
+
+**Master Template renamed to Layout Template**
+
+To match the terminology used elsewhere in the editor and templating engine, "Master Template" has been renamed to "Layout Template" throughout the codebase:
+
+<!-- vale UmbracoDocs.Terms = YES -->
+
+- `ITemplate` adds `IsLayoutTemplate` and `LayoutTemplateAlias` properties.
+- Service parameters previously named `masterTemplateId` are now `layoutTemplateId`.
+
+The old `MasterTemplate…` members are retained as `[Obsolete]` shims and will be removed in Umbraco 20.
+
+For more details, see [#21743](https://github.com/umbraco/Umbraco-CMS/pull/21743).
+
+**Granular content type change types**
+
+The `ContentTypeChangeTypes` enum has gained seven new flags that describe content type changes at a finer granularity:
+
+- `AliasChanged`
+- `PropertyAliasChanged`
+- `PropertyRemoved`
+- `CompositionRemoved`
+- `PropertyVariationChanged`
+- `PropertyAdded`
+- `CompositionAdded`
+
+In addition, `VariationChanged` is now classified as a sub-flag of `RefreshMain`. As a result, the following expression has changed behavior:
+
+```csharp
+ContentTypeChangeTypes.VariationChanged.HasType(ContentTypeChangeTypes.RefreshMain);
+// Previously returned false; now returns true.
+```
+
+Code that inspects content type change flags — for example, in custom notification handlers — should be reviewed against the new flag set.
+
+For more details, see [#22223](https://github.com/umbraco/Umbraco-CMS/pull/22223).
+
+**Entity constructors require a non-null name**
+
+The constructors for `Content`, `Element`, `Media`, and `Member` no longer accept `null` for the `name` parameter. Callers that previously passed `null` must supply a valid name string. See [#22638](https://github.com/umbraco/Umbraco-CMS/pull/22638).
+
+**Entity `Key` property is now immutable**
+
+Attempting to set the `Key` property on an existing entity now throws `InvalidOperationException`. Code that mutated keys programmatically must be refactored. See [#21374](https://github.com/umbraco/Umbraco-CMS/pull/21374).
+
+**Default webhook payload type is now "Minimal"**
+
+The global default for `Constants.Webhooks.DefaultPayloadType` has changed from `WebhookPayloadType.Legacy` to `WebhookPayloadType.Minimal`. Sites that don't configure a payload type explicitly will start firing `Minimal` payloads (entity key only). Consumers must fetch the full entity through the appropriate API.
+
+To keep the previous behavior, configure the payload type explicitly when registering the webhook events:
+
+```csharp
+builder.WebhookEvents().AddCms(payloadType: WebhookPayloadType.Legacy);
+```
+
+The `Legacy` payload type is marked `[Obsolete]` and is scheduled for removal in Umbraco 19.
+
+For more details, see [#22217](https://github.com/umbraco/Umbraco-CMS/pull/22217).
+
+**LegacyContentCopiedWebhookEvent now provides the parent key**
+
+`LegacyContentCopiedWebhookEvent` previously surfaced the parent ID (`int`) of the copied content in its payload. It now surfaces the parent key (`Guid?`) instead. Update any custom webhook handlers that consume this event accordingly.
+
+**Element cache added — interface and service changes**
+
+Elements now have their own Hybrid Cache implementation, mirroring the document cache. The user-facing consequences:
+
+- `IUmbracoContext` and `ICacheManager` gained a new `Elements` property of type `IPublishedElementCache`. Custom implementations of either interface must add this property.
+- `IPublishStatusQueryService` and `IPublishStatusManagementService` are marked `[Obsolete]` (scheduled for removal in Umbraco 19). Switch to `IDocumentPublishStatusQueryService` / `IDocumentPublishStatusManagementService` (the new interfaces the obsolete ones inherit from).
+- `PublishStatusService` is now `abstract`. Code that derived from it must use `DocumentPublishStatusService` or `ElementPublishStatusService` instead.
+
+For more details, see [#22369](https://github.com/umbraco/Umbraco-CMS/pull/22369).
+
+**Element flag support — Management API response models refactored**
+
+The backoffice tree for elements now displays pending-changes and scheduled-publish flags (mirroring the document tree). To support this, the Management API response models and presentation factories were refactored:
+
+- The shared `IHasFlags` implementation has been moved into `PublishableVariantResponseModelBase`. A new `PublishableVariantItemResponseModelBase` removes duplication in the item-level variant models. Code that derived from the previous per-document or per-element response model bases must be updated to use the shared types.
+- Document and element presentation factories now share a common `PublishableContentPresentationFactoryBase`, and new async methods (`CreateVariantsItemResponseModelsAsync`, `CreateItemResponseModelAsync`, `PopulateFlagsAsync`) supplement the sync APIs.
+
+For most extension code (Razor, services, custom property editors) this PR is not breaking. For more details, see [#21877](https://github.com/umbraco/Umbraco-CMS/pull/21877).
+
+**EF Core type names: `EfCore` renamed to `EFCore`**
+
+EF Core code constructs in `Umbraco.Cms.Persistence.EFCore` have been renamed to use the all-uppercase `EF` acronym. For example, `EfCoreScope` is now `EFCoreScope`, `IEfCoreScopeProvider` is now `IEFCoreScopeProvider`, and `EfCoreMigrationExecutor` is now `EFCoreMigrationExecutor`. Code that referenced these types directly must be updated to the new casing. See [#22313](https://github.com/umbraco/Umbraco-CMS/pull/22313) for the full rename list.
+
+**Block list "single mode" migrated to the single block editor**
+
+Umbraco 17 shipped a migration to convert "single" mode block list Data Types to the new single block property editor, but kept it disabled. It now runs by default in Umbraco 18 ([#22627](https://github.com/umbraco/Umbraco-CMS/pull/22627)).
+
+Standard block list Data Types are migrated automatically and require no action. Sites with custom property editors that nest block list values must implement `ITypedSingleBlockListProcessor` so their nested data is migrated correctly. See [Single block migration](../../../../extending/single-block-migration.md) for the full migration details and an example.
+
+**`HideBackOfficeLogo` content setting removed**
+
+The `HideBackOfficeLogo` option has been removed from `ContentSettings`. Remove any entries for it from `appsettings.json`.
+
+**`EnableMediaRecycleBinProtection` now defaults to `true`**
+
+The `EnableMediaRecycleBinProtection` content setting — introduced in Umbraco 17 — now defaults to `true`. With protection enabled, media files moved to the recycle bin are renamed with a `.deleted` suffix (and renamed back on restore). A middleware component blocks unauthenticated access to recycle bin media URLs.
+
+To restore the previous (unprotected) behavior, set `Umbraco:CMS:Content:EnableMediaRecycleBinProtection` to `false` in your configuration.
+
+**Default markdown converter changed**
+
+`MarkdigMarkdownToHtmlConverter` is now the default registered implementation of `IMarkdownToHtmlConverter`, replacing the previous Hey Red Markdown-based default.
+
+The Hey Red Markdown library is deprecated and the corresponding implementation will be removed in Umbraco 19. To revert to the previous behavior for now, register `HeyRedMarkdownToHtmlConverter` explicitly in a composer. See [Markdown to HTML Conversion](../../../../reference/markdown-to-html-conversion.md) for details.
+
+**`ConfigureSecurityStampOptions` service registration removed**
+
+The `ConfigureSecurityStampOptions` options-configuration class is no longer registered by the framework. Host applications that copied `Program.cs` from earlier versions should remove any explicit `services.ConfigureOptions<ConfigureSecurityStampOptions>()` call.
+
+**Backoffice client-side deprecations removed**
+
+Client-side APIs that had been deprecated in earlier versions of the backoffice have been removed. UI extension authors should review any extensions against the [#21984](https://github.com/umbraco/Umbraco-CMS/pull/21984) change list before upgrading.
+
+**Removed obsolete APIs**
+
+The following pull requests remove additional obsolete code paths or address internal cleanup tasks scheduled for resolution in Umbraco 18. They are unlikely to affect typical extension code but are listed here for completeness:
+
+- Obsolete `InstalledPackage` mapping removed ([#22713](https://github.com/umbraco/Umbraco-CMS/pull/22713))
+- Obsoleted code removal — Part 1 ([#21980](https://github.com/umbraco/Umbraco-CMS/pull/21980)), Part 2 ([#22137](https://github.com/umbraco/Umbraco-CMS/pull/22137)), Part 3 ([#22335](https://github.com/umbraco/Umbraco-CMS/pull/22335))
+
+**Updated dependencies**
+
+As is usual for a major upgrade, Umbraco's dependencies have been updated to their latest compatible versions.
+
+`Markdig` was updated by a major version from 0.45.0 to 1.1.x. If you are using this library directly — for example, via `MarkdigMarkdownToHtmlConverter` — minor API differences may be encountered.
+
+`Microsoft.CodeAnalysis.CSharp` was updated by a major version from 4.14.0 to 5.0.0. Projects that take a direct dependency on Roslyn for code analysis may need updates.
+
+The Serilog hosting packages were updated by a major version from 9.0.0 to 10.0.0. This includes `Serilog.AspNetCore`, `Serilog.Extensions.Hosting`, and `Serilog.Settings.Configuration`. Sites with custom Serilog configuration should review the [Serilog release notes](https://github.com/serilog/serilog-aspnetcore/releases).
+
+`Asp.Versioning.Mvc` was updated by a major version from 8.1.1 to 10.0.0. Custom code using these APIs should review the new major version for breaking changes.
+
+`Umbraco.Code` (a build-time analyzer package) was updated by a major version from 2.4.0 to 3.0.0.
+
+The other specific dependency updates made for Umbraco 18 for server-side libraries can be found in these PRs:
+
+- [#22060](https://github.com/umbraco/Umbraco-CMS/pull/22060)
+- [#22693](https://github.com/umbraco/Umbraco-CMS/pull/22693)
 
 </details>
 
@@ -87,7 +478,7 @@ Add the package if any of the following apply:
 1. You use the `InMemoryAuto` models builder:
     * By explicitly selecting `InMemoryAuto`.
     * By starting a new project with the default `--models-mode` (which is `InMemoryAuto`, adding the package automatically).
-  
+
 2. You rely on Razor runtime compilation to edit templates via the backoffice.
 3. You use the RoslynCompiler class (you'll also need to update your namespace usings).
 

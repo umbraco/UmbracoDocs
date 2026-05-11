@@ -10,7 +10,7 @@ A common use-case for this is if you have a separate composition for the "SEO pr
 
 You would usually use this composition on both your `Home` and `Textpage` document types. Since both `Home` and `Textpage` will implement the generated `ISeoProperties` interface, you will still be able to use the simpler models builder syntax (e.g. `Model.PageTitle`).
 
-However, you won't be able to use the nice models builder syntax on any master template, since a master template needs to be bound to a generic `IPublishedContent`. So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties. It is possible to solve this issue of master templating, by using partial views, to render the SEO specific properties. 
+However, you won't be able to use the nice models builder syntax on any layout template, since a layout template needs to be bound to a generic `IPublishedContent`. So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties. It is possible to solve this issue of layout templating, by using partial views, to render the SEO specific properties. 
 
 ## Render with a partial
 
@@ -22,7 +22,7 @@ If you create a partial and change the first line to use the *interface name* fo
 <meta name="description" content="@Model.PageDescription">
 ```
 
-You can then render the partial from your Master Template with something like this (assuming the partial is named `Metatags.cshtml`):
+You can then render the partial from your Layout Template with something like this (assuming the partial is named `Metatags.cshtml`):
 
 ```csharp
 <head>
@@ -31,4 +31,4 @@ You can then render the partial from your Master Template with something like th
 @RenderBody()
 ```
 
-It's important to note though, that this master template will only work for content types that use the Seo Properties composition.
+It's important to note though, that this layout template will only work for content types that use the Seo Properties composition.

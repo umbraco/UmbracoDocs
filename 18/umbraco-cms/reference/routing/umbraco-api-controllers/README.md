@@ -7,7 +7,7 @@ description: A guide to implementing APIs in Umbraco projects
 This article describes how to work with API Controllers in Umbraco to create REST services.
 
 {% hint style="warning" %}
-`UmbracoApiController` has been removed from Umbraco CMS as of version 15.
+`UmbracoApiController` and the convention-based front-end API auto-routing it relied on have been removed from Umbraco CMS as of version 18.
 
 Read the article [Porting old Umbraco APIs](porting-old-umbraco-apis.md) for more details.
 {% endhint %}

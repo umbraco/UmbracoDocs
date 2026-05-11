@@ -1,61 +1,61 @@
-# Creating a Master Template
+# Creating a Layout Template
 
 We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a website containing Home, News, and Contact Us pages, you will need to create a _**Document Type**_ with a corresponding **Template**.
 
-You may end up copying the same HTML code into each of these templates, which can be time-consuming and repetitive. In such scenario, you might want to consider creating a new master template.
+You may end up copying the same HTML code into each of these templates, which can be time-consuming and repetitive. In such scenario, you might want to consider creating a new layout template.
 
-To create a new master template:
+To create a new layout template:
 
 1. Go to **Settings**.
 2. Select the **...** next to the **Templates** folder. Alternatively, click **+** to open a blank template.
 3. Click **Create**.\
    A template opens up in the content editor.
-4.  Enter a **Name** for the master template. Let's call it _Master_.
+4.  Enter a **Name** for the layout template. Let's call it _Layout_.
 
-    ![Master Template](../../.gitbook/assets/master-template-v14.png)
+    ![Layout Template](../../.gitbook/assets/master-template-v14.png)
 5. Click **Save**.
 
-## Using the Master Template
+## Using the Layout Template
 
-To use the master template:
+To use the layout template:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Homepage** template.
-4. Select `Master Template: No Master`.\
-   The Master template dialog opens on the right-side of the browser.
-5. Select the template called **Master**.
+4. Select `Layout Template: No Layout`.\
+   The Layout template dialog opens on the right-side of the browser.
+5. Select the template called **Layout**.
 6.  Click **Choose**.\
-    The Razor code section is updated from `Layout = null;` to `Layout = "Master.cshtml";`
+    The Razor code section is updated from `Layout = null;` to `Layout = "layout.cshtml";`
 
-    ![Adding Master Template to HomePage](../../.gitbook/assets/homepage-has-master-template.png)
+    ![Adding Layout Template to HomePage](../../.gitbook/assets/homepage-has-master-template.png)
 7. Click **Save**.
 
-## Updating Templates With the New Master Template
+## Updating Templates With the New Layout Template
 
-We now need to move the parts of our HTML template that are common across all templates into the _**Master**_. It might be slightly different for different websites. You'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the master.
+We now need to move the parts of our HTML template that are common across all templates into the _**Layout**_. It might be slightly different for different websites. You'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the layout.
 
-To update templates with the new master template, follow these steps:
+To update templates with the new layout template, follow these steps:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Navigate to the **Homepage** template.
-4.  Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the master template.
+4.  Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the layout template.
 
     ![Header and navigation tags selected in the HomePage template](../../.gitbook/assets/homepage-after-cutting-the-header.png)
 5. Click **Save**.
-6.  Go to the **Master** template and paste this HTML markup after the closing curly brace (around line 7).
+6.  Go to the template named **Layout** and paste this HTML markup after the closing curly brace (around line 7).
 
-    ![Header and navigation tags added in the Master template](../../.gitbook/assets/master-after-adding-the-header.png)
+    ![Header and navigation tags added in the Layout template](../../.gitbook/assets/master-after-adding-the-header.png)
 7.  Add `@RenderBody()` at the end of the markup. This will tell Umbraco to insert the child template's content.
 
-    ![Adding renderbody in the Master template](../../.gitbook/assets/adding-renderbody.png)
+    ![Adding renderbody in the Layout template](../../.gitbook/assets/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
    * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
-   *   Go to the **Master** template and paste this HTML markup after the `@RenderBody()` field we've added.
+   *   Go to the template named **Layout** and paste this HTML markup after the `@RenderBody()` field we've added.
 
-       ![End of the Master template](../../.gitbook/assets/master-template-complete.png)
+       ![End of the Layout template](../../.gitbook/assets/master-template-complete.png)
 10. Click **Save**.
 
 Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
@@ -64,9 +64,9 @@ If you are missing any content such as header or footer, ensure that the templat
 
 <details>
 
-<summary>See the entire file: Master Template</summary>
+<summary>See the entire file: Layout Template</summary>
 
-{% code title="master.cshtml" lineNumbers="true" %}
+{% code title="layout.cshtml" lineNumbers="true" %}
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -142,7 +142,7 @@ If you are missing any content such as header or footer, ensure that the templat
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = "master.cshtml";
+	Layout = "layout.cshtml";
 }
 
 

@@ -258,7 +258,7 @@ public class CustomPackageMigrationPlan : PackageMigrationPlan
 }
 ```
 
-The custom migrations can inherit from `PackageMigrationBase` where we can use helper methods to pick up the schema. But we can also use the regular `MigrationBase` class.
+The custom migration inherits from `AsyncPackageMigrationBase`, which provides helper methods to pick up the schema:
 
 ```csharp
 using Microsoft.Extensions.Options;
@@ -272,7 +272,7 @@ using Umbraco.Cms.Infrastructure.Packaging;
 
 namespace CustomWelcomeDashboardProject.Migrations;
 
-public class CustomPackageMigration : PackageMigrationBase
+public class CustomPackageMigration : AsyncPackageMigrationBase
 {
     public CustomPackageMigration(
         IPackagingService packagingService,
@@ -295,57 +295,10 @@ public class CustomPackageMigration : PackageMigrationBase
     {
     }
 
-    protected override void Migrate()
+    protected override Task MigrateAsync()
     {
         ImportPackage.FromEmbeddedResource<CustomPackageMigration>().Do();
-    }
-}
-```
-
-If your migration step has a requirement for asynchronous work, you can also inherit from `AsyncPackageMigrationBase`:
-
-```csharp
-using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.IO;
-using Umbraco.Cms.Core.Models.Membership;
-using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Strings;
-using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Packaging;
-
-namespace Umbraco.Cms.Web.UI.Custom.PackageMigration;
-
-public class CustomPackageAsyncMigration : AsyncPackageMigrationBase
-{
-
-    public TestMigrationStep2(
-        IPackagingService packagingService,
-        IMediaService mediaService,
-        MediaFileManager mediaFileManager,
-        MediaUrlGeneratorCollection mediaUrlGenerators,
-        IShortStringHelper shortStringHelper,
-        IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
-        IMigrationContext context,
-        IOptions<PackageMigrationSettings> packageMigrationsSettings,
-        IUserGroupService userGroupService,
-        IUserService userService)
-        : base(
-              packagingService,
-              mediaService,
-              mediaFileManager,
-              mediaUrlGenerators,
-              shortStringHelper,
-              contentTypeBaseServiceProvider,
-              context,
-              packageMigrationsSettings)
-    {
-    }
-
-    protected override async Task MigrateAsync()
-    {
-        // Use await for asynchronous work.
+        return Task.CompletedTask;
     }
 }
 ```

@@ -72,7 +72,8 @@ public class BlogCommentsComponent : IComponent
         // Go and upgrade our site (Will check if it needs to do the work or not)
         // Based on the current/latest step
         var upgrader = new Upgrader(migrationPlan);
-        upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+        upgrader.ExecuteAsync(_migrationPlanExecutor, _coreScopeProvider, _keyValueService)
+            .GetAwaiter().GetResult();
     }
 
     public void Terminate()
@@ -80,16 +81,17 @@ public class BlogCommentsComponent : IComponent
     }
 }
 
-public class AddCommentsTable : MigrationBase
+public class AddCommentsTable : AsyncMigrationBase
 {
     public AddCommentsTable(IMigrationContext context) : base(context)
     {
     }
-    protected override void Migrate()
+
+    protected override Task MigrateAsync()
     {
         Logger.LogDebug("Running migration {MigrationStep}", "AddCommentsTable");
 
-        // Lots of methods available in the MigrationBase class - discover with this.
+        // Lots of methods available in the AsyncMigrationBase class - discover with this.
         if (TableExists("BlogComments") == false)
         {
             Create.Table<BlogCommentSchema>().Do();
@@ -98,6 +100,8 @@ public class AddCommentsTable : MigrationBase
         {
             Logger.LogDebug("The database table {DbTable} already exists, skipping", "BlogComments");
         }
+
+        return Task.CompletedTask;
     }
 
     [TableName("BlogComments")]
@@ -149,7 +153,7 @@ using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
 namespace MyNamespace;
 
-public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationStartingNotification>
+public class RunBlogCommentsMigration : INotificationAsyncHandler<UmbracoApplicationStartingNotification>
 {
     private readonly IMigrationPlanExecutor _migrationPlanExecutor;
     private readonly ICoreScopeProvider _coreScopeProvider;
@@ -168,7 +172,7 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
         _runtimeState = runtimeState;
     }
 
-    public void Handle(UmbracoApplicationStartingNotification notification)
+    public async Task HandleAsync(UmbracoApplicationStartingNotification notification, CancellationToken cancellationToken)
     {
         if (_runtimeState.Level < RuntimeLevel.Run)
         {
@@ -187,7 +191,7 @@ public class RunBlogCommentsMigration : INotificationHandler<UmbracoApplicationS
         // Go and upgrade our site (Will check if it needs to do the work or not)
         // Based on the current/latest step
         var upgrader = new Upgrader(migrationPlan);
-        upgrader.Execute(
+        await upgrader.ExecuteAsync(
             _migrationPlanExecutor,
             _coreScopeProvider,
             _keyValueService);
@@ -210,7 +214,7 @@ public class BlogCommentsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
+        builder.AddNotificationAsyncHandler<UmbracoApplicationStartingNotification, RunBlogCommentsMigration>();
     }
 }
 ```

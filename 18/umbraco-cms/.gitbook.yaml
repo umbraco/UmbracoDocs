@@ -31,6 +31,9 @@ redirects:
     reference/management/services/externalloginservice: reference/management/README.md
     reference/management/services/fileservice: reference/management/README.md
     reference/management/services/localizationservice: reference/management/README.md
+    reference/management/using-services/localizationservice: reference/management/README.md
+    tutorials/creating-a-basic-website/creating-master-template-part-1: tutorials/creating-a-basic-website/creating-layout-template-part-1.md
+    tutorials/creating-a-basic-website/creating-master-template-part-2: tutorials/creating-a-basic-website/creating-layout-template-part-2.md
     reference/management/services/macroservice: reference/management/README.md
     reference/management/services/membergroupservice: reference/management/README.md
     reference/management/services/memberservice: reference/management/README.md

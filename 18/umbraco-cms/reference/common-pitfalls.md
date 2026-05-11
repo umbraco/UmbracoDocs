@@ -123,7 +123,7 @@ Instead of using the snippet above, something similar to the snippet below can b
 ```csharp
 <ul>
  <li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
- @foreach (var node in Model.Root().Children)
+ @foreach (var node in Model.Root().Children())
  {
   <li><a href="@node.Url()">@node.Name</a></li>
  }
@@ -143,7 +143,7 @@ Following the example above, the menu is going to be rendered using the current 
 ```csharp
 <ul>
  <li><a href="@Model.Root().Url()">@Model.Root().Name</a></li>
- @foreach (var node in Model.Root().Children)
+ @foreach (var node in Model.Root().Children())
  {
   <li><a href="@node.Url()">@node.Name</a></li>
  }
@@ -160,7 +160,7 @@ Consider writing something similar to the example below:
 }
 <ul>
  <li><a href="@root.Url()">@root.Name</a></li>
- @foreach (var node in root.Children)
+ @foreach (var node in root.Children())
  {
   <li><a href="@node.Url()">@node.Name</a></li>
  }
@@ -269,7 +269,7 @@ public class RecipeModel : PublishedContentWrapped
     public RecipeModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
     {
         RelatedRecipes = content
-            .Parent
+            .Parent()?
             .Children<RecipeModel>()
             .Where(x => x.Value<IEnumerable<int>>("related")
                 .Contains(content.Id));
@@ -293,7 +293,7 @@ You run the following code to show the favorites:
 }
 
 <ul>
- @foreach (var recipe in recipeNode.Children
+ @foreach (var recipe in recipeNode.Children()
   .Select(x => new RecipeModel(x, _publishedValueFallback))
   .OrderByDescending(x => x.Votes)
   .Take(10))
@@ -352,7 +352,7 @@ There really is not much reason to create a `RecipeModel`. Instead, it could be 
 }
 
 <ul>
- @foreach (var recipe in recipeNode.Children
+ @foreach (var recipe in recipeNode.Children()
   .OrderByDescending(x => x.Value<int>("votes"))
   .Take(10))
  {

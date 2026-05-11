@@ -181,7 +181,9 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Infrastructure.Services.Implement;
 
@@ -190,12 +192,18 @@ public class CustomNewsArticleService: ICustomNewsArticleService
     private readonly IMediaService _mediaService;
     private readonly ILogger<CustomNewsArticleService> _logger;
     private readonly IUmbracoContextFactory _contextFactory;
+    private readonly IDocumentNavigationQueryService _documentNavigation;
 
-    public CustomNewsArticleService(ILogger<CustomNewsArticleService> logger, IUmbracoContextFactory contextFactory, IMediaService mediaService)
+    public CustomNewsArticleService(
+        ILogger<CustomNewsArticleService> logger,
+        IUmbracoContextFactory contextFactory,
+        IMediaService mediaService,
+        IDocumentNavigationQueryService documentNavigation)
     {
         _logger = logger;
         _contextFactory = contextFactory;
         _mediaService = mediaService;
+        _documentNavigation = documentNavigation;
     }
 
     public void DoSomethingWithNewsArticles()
@@ -203,7 +211,17 @@ public class CustomNewsArticleService: ICustomNewsArticleService
         using (var contextReference = _contextFactory.EnsureUmbracoContext())
         {
             IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-            IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children().FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+            if (_documentNavigation.TryGetRootKeys(out IEnumerable<Guid> rootKeys) is false)
+            {
+                return;
+            }
+
+            IPublishedContent? siteRoot = rootKeys
+                .Select(key => contentCache.GetById(key))
+                .WhereNotNull()
+                .FirstOrDefault();
+            IPublishedContent? newsSection = siteRoot?.Children()
+                .FirstOrDefault(f => f.ContentType.Alias == "newsSection");
             if (newsSection == null)
             {
                 _logger.LogDebug("News Section Not Found");

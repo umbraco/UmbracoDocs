@@ -96,13 +96,13 @@ To update the **Articles Main** template, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder in the **Templating** section.
 3. Open the **Articles Main** template.
-4. Select **Master** in the **Master template:No Master** field.
+4. Select **Layout** in the **Layout template:No Layout** field.
 5. Click **Choose**.
 6. Click **Save**.
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blog.html**.
 9. Paste the content into **Articles Main** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Master template.
+10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
 11. Remove everything from the `<!-- Footer -->` tag (around line 83) to the end of the `</html>` tag (around line 130)
 12. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to _**articlesTitle**_.
 13. Replace the static text within the `<div>` tags (from line 23 to 29) with the Model.Value reference to _**articlesBodyText**_.
@@ -154,7 +154,7 @@ To update the **Articles Main** template, follow these steps:
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = "master.cshtml";
+	Layout = "layout.cshtml";
 }
 
 <!DOCTYPE HTML>
@@ -252,13 +252,13 @@ To update the **Articles Item** template, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder in the **Templating** section.
 3. Open the **Articles Item** template.
-4. Select **Master** in the **Master template:No master** field.
+4. Select **Layout** in the **Layout template:No layout** field.
 5. Click **Choose**.
 6. Click **Save**.
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blogpost.html**.
 9. Paste the content into **Articles Item** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Master template.
+10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
 11. Remove everything from the `<!-- Footer -->` tag (around line 113) to the end of the `</html>` tag (around line 160)
 12. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to _**articleTitle**_.
 13. Replace the static text within the `<div>` tags (from line 25 to 39) with the Model.Value reference to _**articleContent**_.
@@ -276,7 +276,7 @@ To update the **Articles Item** template, follow these steps:
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = "master.cshtml";
+	Layout = "layout.cshtml";
 }
 
 <!DOCTYPE HTML>
