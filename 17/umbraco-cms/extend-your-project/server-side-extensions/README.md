@@ -10,15 +10,15 @@ Server-side extensions give you direct control over the underlying .NET framewor
 
 ## Additional Resources
 
-* [API Documentation](api-documentation.md)
-* [API Versioning and OpenAPI](api-versioning-and-openapi.md)
-* [Backoffice Search](backoffice-search.md)
-* [Content Type Filters](content-type-filters.md)
-* [Creating a Custom Database Table](database.md)
-* [Custom Swagger API](custom-swagger-api.md)
-* [Embedded Media Providers](embedded-media-providers.md)
-* [Flag Providers](flag-providers.md)
-* [JSON Serialization](json-serialization.md)
-* [Scheduling](scheduling.md)
-* [Server Events From SignalR](server-events.md)
-* [UmbracoMapper](mapping.md)
+* [API Documentation](api-documentation.md) - generate and browse API documentation for your Umbraco project.
+* [API Versioning and OpenAPI](api-versioning-and-openapi.md) - version your APIs and configure OpenAPI documentation.
+* [Backoffice Search](backoffice-search.md) - customise search in the Umbraco backoffice.
+* [Content Type Filters](content-type-filters.md) - restrict the content types available to editors.
+* [Creating a Custom Database Table](database.md) - add and manage custom database tables in Umbraco.
+* [Custom Swagger API](custom-swagger-api.md) - configure custom Swagger documents for your APIs.
+* [Embedded Media Providers](embedded-media-providers.md) - add support for embedding media from external providers.
+* [Flag Providers](flag-providers.md) - expose flag information in Management API responses.
+* [JSON Serialization](json-serialization.md) - configure JSON serialization behavior in Umbraco.
+* [Scheduling](scheduling.md) - run scheduled background tasks in Umbraco.
+* [Server Events From SignalR](server-events.md) - push real-time server events to the browser using SignalR.
+* [UmbracoMapper](mapping.md) - map between objects using UmbracoMapper.

@@ -1,6 +1,5 @@
 ---
-description: >-
-  System requirements and step-by-step guides for installing Umbraco CMS.
+description: System requirements and step-by-step guides for installing Umbraco CMS.
 ---
 
 # Installation

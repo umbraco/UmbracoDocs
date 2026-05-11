@@ -1,6 +1,5 @@
 ---
-description: >-
-  Learn how to define and structure content in Umbraco using Document Types, Media Types, Data Types, compositions, and relations.
+description: Learn how to define and structure content in Umbraco using Document Types, Media Types, Data Types, compositions, and relations.
 ---
 
 # Content Types and Structure

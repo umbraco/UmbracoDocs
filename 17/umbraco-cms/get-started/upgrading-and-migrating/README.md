@@ -1,7 +1,5 @@
 ---
-description: >-
-  Choose the guide fitting your upgrade situation and learn more about the
-  recommended approach.
+description: Choose the guide fitting your upgrade situation and learn more about the recommended approach.
 ---
 
 # Upgrading and Migrating
