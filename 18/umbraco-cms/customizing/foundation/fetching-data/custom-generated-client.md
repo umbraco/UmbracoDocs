@@ -40,7 +40,7 @@ Your generated client needs the correct base URL, credentials, and authenticatio
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
 {% endhint %}
 
-### Using `runtimeConfigPath` (Recommended)
+### Using `runtimeConfigPath` (recommended)
 
 To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags.
 
@@ -119,7 +119,7 @@ The resolved shape is what `umbHttpClient` checks before invoking the `auth` cal
 
 ### Management API (automatic)
 
-If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by an `IOpenApiOperationTransformer` registered as part of the Management API configuration. It inspects each operation at document generation time. If neither the controller class nor the action method carries `[AllowAnonymous]`, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
+If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by an `IOpenApiOperationTransformer` registered as part of the Management API configuration. It inspects each operation at document generation time. If the operation is marked `[AllowAnonymous]` (either on the action or the controller), the transformer explicitly clears its security. Otherwise, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
 
 When hey-api generates your client from that spec, it resolves the scheme and emits the runtime security metadata into each SDK function. No extra setup needed.
 
