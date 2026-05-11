@@ -4,47 +4,44 @@ description: Adding a dedicated OpenAPI document for custom Management API contr
 
 # Adding a custom OpenAPI document
 
-By default, all controllers based on `ManagementApiControllerBase` are included in the default Management API OpenAPI document. To put them in a dedicated document instead, register an OpenAPI document and filter your controllers into it.
+By default, all controllers based on `ManagementApiControllerBase` are included in the default Management API OpenAPI document. To put them in a dedicated document instead, register an OpenAPI document with `AddBackOfficeOpenApiDocument` and tag your controllers with `[MapToApi]`.
 
-Add the following code to `Program.cs`:
+Register the document in a composer:
 
-{% code title="Program.cs" %}
+{% code title="MyItemApiComposer.cs" %}
 ```csharp
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Umbraco.Cms.Api.Common.DependencyInjection;
+using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Api.Management.OpenApi;
+using Umbraco.Cms.Core.Composing;
 
-builder.Services.AddOpenApi("my-item-api", options =>
+namespace My.Custom.ItemApi;
+
+public class MyItemApiComposer : IComposer
 {
-    options.AddDocumentTransformer((document, context, cancellationToken) =>
-    {
-        document.Info.Title = "My item API";
-        document.Info.Version = "1.0";
-        return Task.CompletedTask;
-    });
-
-    // Include only controllers from your namespace
-    options.ShouldInclude = apiDescription =>
-        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
-        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("My.Custom.ItemApi") is true;
-
-    // Enable Umbraco authentication for the OpenAPI document
-    options.AddBackofficeSecurityRequirements();
-});
-
-// Add the document to OpenAPI UI
-builder.Services.AddOpenApiDocumentToUi("my-item-api", "My item API");
+    public void Compose(IUmbracoBuilder builder)
+        => builder.AddBackOfficeOpenApiDocument(
+            "my-item-api",
+            document => document
+                .WithTitle("My item API")
+                .WithBackOfficeAuthentication());
+}
 ```
 {% endcode %}
 
-This uses `ShouldInclude` to filter by namespace and `AddBackofficeSecurityRequirements()` to wire up backoffice authentication. See [API versioning and OpenAPI](../../reference/api-versioning-and-openapi.md) for other filtering approaches and configuration options.
+`AddBackOfficeOpenApiDocument` applies Umbraco's defaults to the document. It includes any controller tagged with `[MapToApi("my-item-api")]`, applies the schema and operation ID conventions, and adds the document to the Swagger UI dropdown. `WithBackOfficeAuthentication()` wires up backoffice authentication.
 
-Ensure your API controllers are in the matching namespace:
+See [API versioning and OpenAPI](../../reference/api-versioning-and-openapi.md) for the underlying `AddOpenApi` primitive and other configuration options.
+
+Tag your controller with `[MapToApi]` to route it into the document. Because `ManagementApiControllerBase` already carries `[MapToApi("management")]`, the attribute on your controller overrides that and moves the endpoint out of the default Management document.
 
 {% code title="MyItemApiController.cs" %}
 ```csharp
+using Umbraco.Cms.Api.Common.Attributes;
+using Umbraco.Cms.Api.Management.Controllers;
+
 namespace My.Custom.ItemApi;
 
+[MapToApi("my-item-api")]
 public class MyItemApiController : ManagementApiControllerBase
 {
     // your endpoints here

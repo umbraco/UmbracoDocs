@@ -21,6 +21,10 @@ OpenAPI documents and the Swagger UI are disabled in production environments by 
 Your custom APIs will appear in the default document unless you register them elsewhere or [exclude them explicitly](#excluding-endpoints-from-the-default-document). If you want more control over where your APIs show up, you can add your own OpenAPI documents.
 
 {% hint style="info" %}
+Building a custom **backoffice** API? See [Custom Backoffice API](custom-backoffice-api.md) for the `AddBackOfficeOpenApiDocument` builder, which wires up backoffice authentication and Umbraco's conventions for you.
+{% endhint %}
+
+{% hint style="info" %}
 The [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) covers OpenAPI configuration in depth.
 {% endhint %}
 

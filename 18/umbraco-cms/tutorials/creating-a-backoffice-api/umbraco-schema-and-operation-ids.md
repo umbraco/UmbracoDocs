@@ -12,6 +12,10 @@ These conventions are opt-in to avoid affecting custom APIs by default. This art
 If you're happy with the default schema and operation IDs, you don't need the Umbraco conventions.
 {% endhint %}
 
+{% hint style="info" %}
+If you register your OpenAPI document using `AddBackOfficeOpenApiDocument`, Umbraco's schema conventions are applied for you. The examples below show how to opt in manually when registering without the builder.
+{% endhint %}
+
 ## Schema IDs
 
 Schema IDs are configured using the `CreateSchemaReferenceId` property when adding your OpenAPI document. You can use the `UmbracoSchemaIdGenerator.Generate()` method to generate schema IDs following Umbraco's naming conventions:

@@ -29,7 +29,7 @@ You can still use Swashbuckle for your own OpenAPI documents if you prefer, but 
 
 See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article for the new APIs. The main changes you will need to migrate:
 
-- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
+- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents). For backoffice APIs, the new `AddBackOfficeOpenApiDocument(name, configure)` builder wires up authentication and Umbraco's conventions in one call — see [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
 - **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
 - **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Schema IDs](../../../../reference/api-versioning-and-openapi.md#schema-ids).
 - **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Operation IDs](../../../../reference/api-versioning-and-openapi.md#operation-ids).

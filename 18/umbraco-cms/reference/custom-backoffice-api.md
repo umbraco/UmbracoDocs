@@ -16,8 +16,7 @@ This example can be a starting point for creating a secure custom API with autom
 
 {% code title="MyApiComposer.cs" lineNumbers="true" %}
 ```csharp
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Umbraco.Cms.Api.Common.DependencyInjection;
+using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Core.Composing;
 
@@ -26,33 +25,16 @@ namespace Umbraco.Cms.Web.UI.Custom;
 public class MyApiComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
-    {
-        builder.Services.AddOpenApi("my-api-v1", options =>
-        {
-            options.AddDocumentTransformer((document, context, cancellationToken) =>
-            {
-                document.Info.Title = "My API v1";
-                document.Info.Version = "1.0";
-                return Task.CompletedTask;
-            });
-
-            // Include only controllers from your namespace
-            options.ShouldInclude = apiDescription =>
-                apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
-                && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("Umbraco.Cms.Web.UI.Custom") is true;
-
-            // Add backoffice security requirements to enable authorization in Swagger UI
-            options.AddBackofficeSecurityRequirements();
-        });
-
-        // Add the document to OpenAPI UI
-        builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
-    }
+        => builder.AddBackOfficeOpenApiDocument(
+            "my-api-v1",
+            document => document
+                .WithTitle("My API v1")
+                .WithBackOfficeAuthentication());
 }
 ```
 {% endcode %}
 
-The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks the API as supporting authorization via Swagger UI. The `AddOpenApiDocumentToUi()` method adds the document to the Swagger UI dropdown.
+`AddBackOfficeOpenApiDocument` registers a custom OpenAPI document with Umbraco's defaults applied. It includes any controller decorated with `[MapToApi("my-api-v1")]`, applies Umbraco's schema and operation ID conventions, and adds the document to the Swagger UI dropdown. `WithBackOfficeAuthentication()` enables OAuth2-based backoffice authorization in Swagger UI.
 
 2. Create a new file `MyApiController.cs` with the following controller:
 
@@ -61,6 +43,7 @@ The `ShouldInclude` property determines which endpoints appear in the document -
 using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Api.Common.Filters;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Membership;
@@ -71,6 +54,7 @@ namespace Umbraco.Cms.Web.UI.Custom;
 
 [ApiController]
 [ApiVersion("1.0")]
+[MapToApi("my-api-v1")]
 [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
 [JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]
 [Route("api/v{version:apiVersion}/my")]
