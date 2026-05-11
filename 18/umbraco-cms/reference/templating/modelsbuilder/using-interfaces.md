@@ -10,7 +10,7 @@ A common use-case for this is if you have a separate composition for the "SEO pr
 
 You would usually use this composition on both your `Home` and `Textpage` document types. Since both `Home` and `Textpage` will implement the generated `ISeoProperties` interface, you will still be able to use the simpler models builder syntax (e.g. `Model.PageTitle`).
 
-A layout template is bound to a generic `IPublishedContent`, so the models builder syntax isn't available there. You'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax instead. Using partial views to render the SEO-specific properties is one way to solve this.
+A master template is bound to a generic `IPublishedContent`, so the models builder syntax isn't available there. You'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax instead. Using partial views to render the SEO-specific properties is one way to solve this.
 
 ## Render with a partial
 
@@ -22,7 +22,7 @@ If you create a partial and change the first line to use the *interface name* fo
 <meta name="description" content="@Model.PageDescription">
 ```
 
-You can then render the partial from your Layout Template with something like this (assuming the partial is named `Metatags.cshtml`):
+You can then render the partial from your Master Template with something like this (assuming the partial is named `Metatags.cshtml`):
 
 ```csharp
 <head>
@@ -31,4 +31,4 @@ You can then render the partial from your Layout Template with something like th
 @RenderBody()
 ```
 
-It's important to note though, that this layout template will only work for content types that use the Seo Properties composition.
+It's important to note though, that this master template will only work for content types that use the Seo Properties composition.

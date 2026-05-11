@@ -33,13 +33,13 @@ Learn how to integrate CSS and JavaScript into your Umbraco site.
 
 Find out how to connect Document Type Properties (Umbraco Data Fields) to templates to display the editor's data correctly.
 
-## [Creating a Layout Template](creating-layout-template-part-1.md)
+## [Creating a Master Template](creating-master-template-part-1.md)
 
-Learn how to create a Layout Template to streamline the creation of additional pages and reduce repetitive HTML code.
+Learn how to create a Master Template to streamline the creation of additional pages and reduce repetitive HTML code.
 
-## [Creating Pages and using the Layout Template](creating-layout-template-part-2.md)
+## [Creating Pages and using the Master Template](creating-master-template-part-2.md)
 
-Use the Layout Template to generate new page types.
+Use the Master Template to generate new page types.
 
 ## [Setting The Navigation Menu](setting-the-navigation-menu.md)
 

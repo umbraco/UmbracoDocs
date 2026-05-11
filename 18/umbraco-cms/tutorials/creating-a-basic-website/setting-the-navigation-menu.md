@@ -11,14 +11,14 @@ To create dynamic navigation links from the published content nodes, follow thes
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
-3. Open the **Layout** template.
+3. Open the **Master** template.
 4. Locate the `<!-- Navigation -->` tag (around line 20).
 5. Right below it, place the cursor on an empty line.
 6. Select **Query builder...** in the top-right side of the editor.
 7. Make sure it is set to say "I want **all content** from **my website**".
 8. Click **Submit**.
 
-You now have the following snippet in your **Layout** Template:
+You now have the following snippet in your **Master** Template:
 
 ```csharp
 @{
@@ -72,7 +72,7 @@ To add a basic hardcoded navigation, follow these steps:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
-3. Open the **Layout** template.
+3. Open the **Master** template.
 4. Go to the `<!-- Navigation -->` tag (around line 20).
 5. Copy the content within the `<div>` tags (around line 21 to 43) and replace it with the following code:
 
