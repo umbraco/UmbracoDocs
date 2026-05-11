@@ -117,10 +117,13 @@ All expressions are evaluated in a sandbox. Only safe operations and methods are
 
 The following UFM components are available to use.
 
-* Label Value
-* Localize
-* Content Name
-* Link Title
+| Name         | Example syntax                         |
+| ------------ | -------------------------------------- |
+| Label Value  | `{umbValue: headline}`                 |
+| Localize     | `{umbLocalize: general_name}`          |
+| Content Name | `{umbContentName: pickerAlias}`        |
+| Link Title   | `{umbLink: pickerAlias}`               |
+| Form Name    | `{umbFormName: formAlias}`             | 
 
 More UFM components will be available in upcoming Umbraco releases.
 
@@ -153,6 +156,11 @@ The Content Name component supports content-based pickers, such as the Document 
 The Link Title component will render the title of a link from the value of a given Link Picker property editor. Multiple links will render the titles as a comma-separated list.
 
 The alias prefix is `umbLink`. An example of the syntax is `{umbLink: pickerAlias}`, which would render the component as `<ufm-link alias="pickerAlias"></ufm-link>`.
+
+#### Form Name
+The Form Name component will render the name of a selected form. See ["Block List Labels" section in Umbraco Forms documentation](https://docs.umbraco.com/umbraco-forms/16.latest/developer/blocklistlabels) for more information.
+
+The alias prefix is `umbFormName`. An example of the syntax is `{umbFormName: formAlias}`, which would render the component as `<ufm-form-name alias="pickerAlias"></ufm-form-name>`.
 
 ### Custom UFM components
 
