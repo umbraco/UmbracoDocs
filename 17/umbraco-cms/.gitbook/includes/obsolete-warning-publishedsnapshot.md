@@ -3,5 +3,5 @@ title: 'Obsolete Warning: PublishedSnapshot'
 ---
 
 {% hint style="warning" %}
-The following example uses `PublishedSnapshot`, which is obsolete in Umbraco 15 and will be removed in a future version. For more information, see the [Version specific upgrades](../../get-started/upgrading-and-migrating/version-specific/#umbraco-15) article.
+The following example uses `PublishedSnapshot`, which is obsolete in Umbraco 15 and will be removed in a future version. For more information, see the [Version specific upgrades](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-15) article.
 {% endhint %}

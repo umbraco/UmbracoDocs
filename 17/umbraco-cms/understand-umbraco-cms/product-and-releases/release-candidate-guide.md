@@ -72,7 +72,7 @@ The blog post will mention if there are any specific features or workflows that 
 
 Here is a list of all the new or updated articles in this version.
 
-* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/#umbraco-17)
+* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17)
 * [Date Time Property Editor](../../model-your-content/property-editors/built-in-umbraco-property-editors/date-time-editor/)
 * [`UnattendedTelemetryLevel` Setting](../../get-started/installation/install/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](../../get-started/installation/install/unattended-install.md)
 * [`UnattendedTelemetryLevel` in the Configuration article](../../develop-with-umbraco/configuration/unattendedsettings.md#unattended-telemetry-level)
@@ -82,7 +82,7 @@ Here is a list of all the new or updated articles in this version.
 * [Backoffice Signs](../../extend-your-project/backoffice-extensions/signs.md)
 * [Flag Providers](../../extend-your-project/server-side-extensions/flag-providers.md)
 * [Added `ComposeAfter` attribute to the composer used in the Examine sample](../../develop-with-umbraco/application-code/examine/indexing.md#creating-a-configureoptions-class)
-* [Displaying the MiniProfiler](../../develop-with-umbraco/testing-and-debugging/#displaying-the-miniprofiler)
+* [Displaying the MiniProfiler](../../develop-with-umbraco/testing-and-debugging/README.md#displaying-the-miniprofiler)
 * [Load Balancing the Backoffice](../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/load-balancing-backoffice.md)
 * [SignalR in a Backoffice Load Balanced Environment](../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md)
 * [Distributed jobs settings](../../develop-with-umbraco/configuration/distributedjobssettings.md)
@@ -111,4 +111,4 @@ Here is a list of all the new or updated articles in this version.
 * [Additional preview environments support](../../develop-with-umbraco/headless-and-apis/content-delivery-api/additional-preview-environments-support.md)
 * [Outbound Pipeline](../../develop-with-umbraco/application-code/backend-and-custom-logic/routing/request-pipeline/outbound-pipeline.md)
 * [Property Actions](../../extend-your-project/backoffice-extensions/property-editors/property-actions.md)
-* [Confirm Dialog](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/extending-overview/extension-types/modals/confirm-dialog.md)
+* [Confirm Dialog](../../extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog.md)

@@ -20,7 +20,7 @@ Setting up localization for Document Types is a three-step process:
 * Apply the localizations to the Document Type.
 
 {% hint style="info" %}
-Everything in this article also applies to defining [Media Types](../../backoffice/#media-types) and [Member Types](../../backoffice/#member-types).
+Everything in this article also applies to defining [Media Types](../../backoffice/README.md#media-types) and [Member Types](../../backoffice/README.md#member-types).
 {% endhint %}
 
 ## Registering Document Type localization Files

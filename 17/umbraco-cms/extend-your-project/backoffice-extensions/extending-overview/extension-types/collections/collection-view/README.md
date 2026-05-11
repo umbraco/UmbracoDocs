@@ -12,7 +12,7 @@ Use a Collection View when you need to:
 * Customize how entity fields are displayed
 
 {% hint style="info" %}
-Before creating a Collection View, make sure you are familiar with the [Extension Registry in Umbraco](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/customizing/extending-overview/extension-registry/register-extensions.md).
+Before creating a Collection View, make sure you are familiar with the [Extension Registry in Umbraco](../../../extension-registry/register-extensions.md).
 {% endhint %}
 
 ## Kinds

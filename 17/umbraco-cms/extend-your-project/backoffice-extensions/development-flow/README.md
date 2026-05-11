@@ -18,7 +18,7 @@ Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-
 
 ## Package Setup
 
-### App\_Plugins
+### App_Plugins
 
 Extensions such as JavaScript, CSS, and manifests, will go into a folder called `App_Plugins`. If you do not have this folder, you can create it at the root of your Umbraco project.
 

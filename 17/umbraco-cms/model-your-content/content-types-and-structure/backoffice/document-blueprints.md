@@ -15,7 +15,7 @@ A Document Blueprint allows editors to preconfigure a content node. It serves as
 ### Method 1 – Create a Document Blueprint from the Content Section
 
 {% hint style="warning" %}
-Before using this method, make sure you have already [created some content](../data/defining-content/#3-creating-the-content).
+Before using this method, make sure you have already [created some content](../data/defining-content/README.md#3-creating-the-content).
 {% endhint %}
 
 1. Go to the **Content** section and select an existing content node.

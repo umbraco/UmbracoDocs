@@ -7,15 +7,13 @@ description: >-
 
 # Version Specific Upgrades
 
-## Version Specific Upgrades
-
 Use the information below to learn about any potential breaking changes and common pitfalls when upgrading your Umbraco CMS project.
 
 If any specific steps are involved with upgrading to a specific version they will be listed below.
 
 Use the [general upgrade guide](../) to complete the upgrade of your project.
 
-### Breaking changes
+## Breaking changes
 
 <details>
 
