@@ -4,12 +4,12 @@ description: How to apply the Umbraco schema and operation IDs for custom Manage
 
 # Umbraco schema and operation IDs
 
-All core Management APIs use custom naming conventions for their generated OpenAPI schema and operation IDs.
+Umbraco's Management API uses custom naming conventions for its OpenAPI schema and operation IDs.
 
-These conventions are strictly opt-in to avoid affecting custom APIs by default. In this article, we'll see how to opt-in to the scheme.
+These conventions are opt-in to avoid affecting custom APIs by default. This article shows how to opt in.
 
 {% hint style="info" %}
-If you are happy with your APIs' default schema and operation IDs, nothing is likely gained by using the Umbraco ones.
+If you're happy with the default schema and operation IDs, you don't need the Umbraco conventions.
 {% endhint %}
 
 ## Schema IDs
