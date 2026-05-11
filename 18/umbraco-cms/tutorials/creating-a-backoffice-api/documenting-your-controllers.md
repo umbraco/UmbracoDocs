@@ -15,7 +15,7 @@ public class MyItemApiController : ManagementApiControllerBase
 
 ## ProducesResponseType Attribute
 
-Use \[ProducesResponseType] to specify the possible responses for each action method. This helps OpenAPI generate accurate documentation for your API.\
+Use \[ProducesResponseType] to specify the possible responses for each action method. This helps generate accurate documentation for your API.\
 For example, in the GetItem method:
 
 {% code title="MyItemApiController.cs" %}
