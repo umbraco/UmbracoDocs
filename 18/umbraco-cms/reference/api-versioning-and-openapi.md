@@ -4,21 +4,27 @@ description: How to use API versioning and OpenAPI for your own APIs.
 
 # API versioning and OpenAPI
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management and Content Delivery APIs. The OpenAPI documents are available at `{yourdomain}/umbraco/openapi`. The UI is Swagger UI and is available at the same path. Both are disabled in production environments by default to avoid exposing API structure on public-facing websites.
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document its APIs. Out of the box you get the following OpenAPI documents:
+
+- **Management** — the backoffice Management API.
+- **Delivery** — the Content Delivery API. Only present when the Delivery API is enabled.
+- **Default** — a catch-all containing every API endpoint not mapped to a named document.
+
+All documents and the Swagger UI are served from `{yourdomain}/umbraco/openapi`.
+
+{% hint style="info" %}
+OpenAPI documents and the Swagger UI are disabled in production environments by default to avoid exposing API structure on public-facing websites. See [Route and availability](#route-and-availability) to override this.
+{% endhint %}
 
 ## Adding your own OpenAPI documents
 
-Umbraco automatically adds a "default" OpenAPI document to contain all APIs that are not explicitly mapped to a named document. This means that your custom APIs will automatically appear in the "default" OpenAPI document.
-
-If you want to exercise more control over where your APIs show up, you can do so by adding your own OpenAPI documents.
+Your custom APIs will appear in the default document unless you register them elsewhere or [exclude them explicitly](#excluding-endpoints-from-the-default-document). If you want more control over where your APIs show up, you can add your own OpenAPI documents.
 
 {% hint style="info" %}
-Umbraco imposes no limitations on adding OpenAPI documents, and the code below is a simplistic example.
-
-In the [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) you will find comprehensive documentation for OpenAPI configuration.
+The [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) covers OpenAPI configuration in depth.
 {% endhint %}
 
-To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs`. The `ShouldInclude` property determines which API endpoints appear in your document. Use `AddOpenApiDocumentToUi` to add the document to the OpenAPI UI dropdown.
+To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs` or a composer, then `AddOpenApiDocumentToUi` to add it to the OpenAPI UI dropdown.
 
 The following code sample creates an OpenAPI document called "My API v1" that includes only controllers from a specific namespace:
 
@@ -50,34 +56,9 @@ builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 
 {% endcode %}
 
-### Including endpoints in a custom OpenAPI document
+The `ShouldInclude` predicate above filters by namespace. See [Controlling which endpoints appear in your document](#controlling-which-endpoints-appear-in-your-document) for other approaches.
 
-`Microsoft.AspNetCore.OpenApi` configures each OpenAPI document independently: every document has its own `OpenApiOptions` instance, with its own `ShouldInclude` predicate. There is no global hook that sees every document at once, which means Umbraco can wire up automatic filtering for the documents it owns (the Management API, the Delivery API, and the default document) but not for documents you register yourself. For those, you must set `ShouldInclude` and decide what it checks.
-
-The `[MapToApi("name")]` attribute is still around. It is honored automatically for Umbraco's built-in documents (`ManagementApiControllerBase` carries `[MapToApi("management")]`, for example) and you can opt into the same filtering for your own documents by checking it inside your `ShouldInclude` predicate.
-
-Common predicate shapes:
-
-* By namespace - the example above. Useful when each version of your API lives in its own namespace.
-* By `[MapToApi]` attribute - matches the v17 model and is what the [Umbraco extension template](../customizing/development-flow/umbraco-extension-template.md) does:
-
-  ```csharp
-  using Umbraco.Cms.Api.Common.Attributes;
-
-  options.ShouldInclude = apiDescription =>
-      apiDescription.ActionDescriptor.EndpointMetadata
-          .OfType<MapToApiAttribute>()
-          .Any(attribute => attribute.ApiName == "my-api-v1");
-  ```
-
-* By route prefix - useful when your endpoints share a route segment:
-
-  ```csharp
-  options.ShouldInclude = apiDescription =>
-      apiDescription.RelativePath?.StartsWith("api/v1/my") is true;
-  ```
-
-With this OpenAPI document in place, ensure your API controllers are in the matching namespace:
+Ensure your API controllers are in the matching namespace:
 
 {% code title="MyApiController.cs" %}
 
@@ -109,9 +90,25 @@ public class MyDoSomethingViewModel
 
 {% endcode %}
 
-### Excluding from the default OpenAPI document
+### Controlling which endpoints appear in your document
 
-When you create a custom OpenAPI document, your controllers may still appear in the "default" document. To exclude them, add the `[ExcludeFromDefaultOpenApiDocument]` attribute to your controllers:
+Set `ShouldInclude` on your document to control which endpoints appear in it. The example above filters by namespace. You can also filter by the `[MapToApi]` attribute, as used by the [Umbraco extension template](../customizing/development-flow/umbraco-extension-template.md):
+
+```csharp
+using Umbraco.Cms.Api.Common.Attributes;
+
+options.ShouldInclude = apiDescription =>
+    apiDescription.ActionDescriptor.EndpointMetadata
+        .OfType<MapToApiAttribute>()
+        .Any(attribute => attribute.ApiName == "my-api-v1");
+```
+
+### Excluding endpoints from the default document
+
+When you create a custom OpenAPI document, your controllers may still appear in the default document. There are two ways to exclude them:
+
+- **Apply `[MapToApi("your-document-name")]`** to the controller. This both maps the controller to your named document (when your `ShouldInclude` filters by `[MapToApi]`) and removes it from the default.
+- **Apply `[ExcludeFromDefaultOpenApiDocument]`** to the controller. Use this when your custom document does not filter by `[MapToApi]`:
 
 {% code title="MyApiController.cs" %}
 
@@ -130,25 +127,26 @@ public class MyApiController : Controller
 
 {% endcode %}
 
-## Customizing your OpenAPI document
+## Customizing operation and schema IDs
 
-### Adding custom operation IDs
+Operation and schema IDs control how endpoints and types are named in your OpenAPI document. Custom IDs can make consumers' generated code more readable, especially when those consumers generate API contracts from your OpenAPI documents.
 
-Custom operation IDs can be a great way to make your API easier to use. Especially for consumers that generate API contracts from your OpenAPI documents.
+### Operation IDs
 
-#### Using Umbraco's operation IDs
+There are three ways to customize operation IDs:
 
-Umbraco provides `UmbracoOperationIdTransformer` which generates operation IDs following Umbraco's naming conventions. You can use this transformer for your own APIs:
+**Use Umbraco's transformer.** `UmbracoOperationIdTransformer` generates operation IDs following Umbraco's naming conventions:
 
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
 
-options.AddOperationTransformer<UmbracoOperationIdTransformer>();
+builder.Services.AddOpenApi("my-api", options =>
+{
+    options.AddOperationTransformer<UmbracoOperationIdTransformer>();
+});
 ```
 
-#### Using explicit operation IDs
-
-The simplest way to define custom operation IDs for specific endpoints is to use the `Name` property on the route attribute:
+**Use the `Name` property on the route attribute.** The most direct way to set an explicit ID for a specific endpoint:
 
 {% code title="MyApiController.cs" %}
 
@@ -160,9 +158,7 @@ public IActionResult DoSomething(string value)
 
 {% endcode %}
 
-#### Using a custom transformer
-
-If you need complete control over operation ID generation, you can create a custom operation transformer. The following code sample shows how to create a transformer that generates operation IDs for your APIs:
+**Write a custom transformer.** For complete control over generation:
 
 {% code title="MyOperationIdTransformer.cs" %}
 
@@ -197,7 +193,7 @@ public class MyOperationIdTransformer : IOpenApiOperationTransformer
 
 {% endcode %}
 
-To apply this transformer to your OpenAPI document:
+Apply the custom transformer when registering the document:
 
 ```csharp
 builder.Services.AddOpenApi("my-api", options =>
@@ -206,11 +202,9 @@ builder.Services.AddOpenApi("my-api", options =>
 });
 ```
 
-### Adding custom schema IDs
+### Schema IDs
 
-Custom schema IDs can make it easier for your API consumers to understand and work with your APIs. Umbraco applies custom schema IDs to the Umbraco APIs.
-
-If you want to create custom schema IDs for your APIs, you can do so by setting the `CreateSchemaReferenceId` property when adding your OpenAPI document. The following code sample illustrates how that can be done:
+Schema IDs are configured via the `CreateSchemaReferenceId` property when adding your OpenAPI document. Umbraco applies custom schema IDs to its own APIs; the same pattern works for yours:
 
 {% code title="Program.cs" %}
 
@@ -245,9 +239,11 @@ builder.Services.AddOpenApi("my-api", options =>
 Returning `null` from `CreateSchemaReferenceId` will inline the schema instead of creating a reference. This can be useful for types that don't need to be reused.
 {% endhint %}
 
-## Multiple API versions
+## Versioning your APIs
 
-A common use case for custom OpenAPI documents is when you maintain multiple versions of the same API. Often you want to have separate OpenAPI documents for each version.
+### Separate OpenAPI documents per version
+
+A common use case for custom OpenAPI documents is maintaining multiple versions of the same API, with one OpenAPI document per version.
 
 The following code sample creates two OpenAPI documents - "My API v1" and "My API v2". Each document uses `ShouldInclude` to filter controllers by their namespace:
 
@@ -369,61 +365,9 @@ public class MyDoSomethingViewModel
 
 </details>
 
-## Advanced configuration
+### Reading the requested version
 
-### OpenAPI route and/or availability
-
-Umbraco exposes OpenAPI documents and UI at `{yourdomain}/umbraco/openapi`. Both are disabled in production mode by default to avoid exposing API structure on public-facing websites.
-
-You can customize these settings using `UmbracoOpenApiOptions` in `Program.cs`. Use `PostConfigure` to override the defaults:
-
-{% code title="Program.cs" %}
-
-```csharp
-using Umbraco.Cms.Api.Common.OpenApi;
-
-builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
-{
-    // Always enable OpenAPI regardless of environment (see warning below)
-    options.Enabled = true;
-
-    // Change the route template for OpenAPI documents
-    options.RouteTemplate = "openapi/{documentName}.json";
-
-    // Change the route prefix for OpenAPI UI
-    options.UiRoutePrefix = "openapi";
-});
-```
-
-{% endcode %}
-
-{% hint style="warning" %}
-On public-facing websites, enabling OpenAPI in production exposes your API structure publicly. For internal or authenticated APIs, enabling OpenAPI in production may be acceptable.
-{% endhint %}
-
-### Using an alternative OpenAPI UI
-
-The built-in UI is based on Swagger UI. If you prefer an alternative UI, you can disable the default UI while keeping the OpenAPI documents available:
-
-{% code title="Program.cs" %}
-
-```csharp
-using Umbraco.Cms.Api.Common.OpenApi;
-
-builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
-{
-    // Disable the default UI (OpenAPI documents remain available)
-    options.DefaultUiEnabled = false;
-});
-```
-
-{% endcode %}
-
-With the default UI disabled, you can register your preferred UI yourself. Refer to the UI's documentation for setup details.
-
-### API versioning
-
-The Umbraco APIs rely on having the requested API version as part of the URL. If you prefer a different versioning for your own APIs, you can setup alternatives while still preserving the functionality of the Umbraco API.
+The Umbraco APIs rely on having the requested API version as part of the URL. If you prefer a different versioning scheme for your own APIs, you can set up alternatives while still preserving the functionality of the Umbraco API.
 
 The following code sample illustrates how you can use a custom header to pass the requested API version to your own APIs.
 
@@ -461,3 +405,53 @@ public static class MyConfigureApiVersioningUmbracoBuilderExtensions
 ```
 
 {% endcode %}
+
+## Route and UI configuration
+
+### Route and availability
+
+You can customize the OpenAPI route, UI prefix, and production availability using `UmbracoOpenApiOptions` in `Program.cs`. Use `PostConfigure` to override the defaults:
+
+{% code title="Program.cs" %}
+
+```csharp
+using Umbraco.Cms.Api.Common.OpenApi;
+
+builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
+{
+    // Always enable OpenAPI regardless of environment (see warning below)
+    options.Enabled = true;
+
+    // Change the route template for OpenAPI documents
+    options.RouteTemplate = "openapi/{documentName}.json";
+
+    // Change the route prefix for OpenAPI UI
+    options.UiRoutePrefix = "openapi";
+});
+```
+
+{% endcode %}
+
+{% hint style="warning" %}
+On public-facing websites, enabling OpenAPI in production exposes your API structure publicly. For internal or authenticated APIs, enabling OpenAPI in production may be acceptable.
+{% endhint %}
+
+### Using an alternative UI
+
+The built-in UI is based on Swagger UI. If you prefer an alternative UI, you can disable the default UI while keeping the OpenAPI documents available:
+
+{% code title="Program.cs" %}
+
+```csharp
+using Umbraco.Cms.Api.Common.OpenApi;
+
+builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
+{
+    // Disable the default UI (OpenAPI documents remain available)
+    options.DefaultUiEnabled = false;
+});
+```
+
+{% endcode %}
+
+With the default UI disabled, you can register your preferred UI yourself. Refer to the UI's documentation for setup details.

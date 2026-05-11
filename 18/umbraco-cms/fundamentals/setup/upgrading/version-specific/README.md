@@ -31,11 +31,11 @@ See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-op
 
 - **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
 - **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
-- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids).
-- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids).
+- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Schema IDs](../../../../reference/api-versioning-and-openapi.md#schema-ids).
+- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Operation IDs](../../../../reference/api-versioning-and-openapi.md#operation-ids).
 - **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
-- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability).
-- **Filtering custom OpenAPI documents** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Including endpoints in a custom OpenAPI document](../../../../reference/api-versioning-and-openapi.md#including-endpoints-in-a-custom-openapi-document).
+- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [Route and availability](../../../../reference/api-versioning-and-openapi.md#route-and-availability).
+- **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Controlling which endpoints appear in your document](../../../../reference/api-versioning-and-openapi.md#controlling-which-endpoints-appear-in-your-document).
 
 *OpenAPI URL changes*
 

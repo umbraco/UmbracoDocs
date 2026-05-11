@@ -47,4 +47,4 @@ builder.Services.AddOpenApi("my-item-api", options =>
 ```
 {% endcode %}
 
-If you need more control, you can create a custom operation transformer. See the [API versioning and OpenAPI](../../reference/api-versioning-and-openapi.md#using-a-custom-transformer) article for an example.
+If you need more control, you can create a custom operation transformer. See the [Operation IDs](../../reference/api-versioning-and-openapi.md#operation-ids) section for an example.
