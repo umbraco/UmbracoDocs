@@ -12,34 +12,43 @@ Before proceeding, make sure to read the [Management API](management-api/) artic
 
 This example can be a starting point for creating a secure custom API with automatic OpenAPI documentation. You can find other examples in the [API versioning and OpenAPI](api-versioning-and-openapi.md) article.
 
-1. Add the following code to `Program.cs` so that the new API shows in the OpenAPI documentation and Swagger UI:
+1. Create a composer to register the OpenAPI document so that the new API shows in the OpenAPI documentation and Swagger UI:
 
-{% code title="Program.cs" lineNumbers="true" %}
+{% code title="MyApiComposer.cs" lineNumbers="true" %}
 ```csharp
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Umbraco.Cms.Api.Common.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
+using Umbraco.Cms.Core.Composing;
 
-builder.Services.AddOpenApi("my-api-v1", options =>
+namespace Umbraco.Cms.Web.UI.Custom;
+
+public class MyApiComposer : IComposer
 {
-    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    public void Compose(IUmbracoBuilder builder)
     {
-        document.Info.Title = "My API v1";
-        document.Info.Version = "1.0";
-        return Task.CompletedTask;
-    });
+        builder.Services.AddOpenApi("my-api-v1", options =>
+        {
+            options.AddDocumentTransformer((document, context, cancellationToken) =>
+            {
+                document.Info.Title = "My API v1";
+                document.Info.Version = "1.0";
+                return Task.CompletedTask;
+            });
 
-    // Include only controllers from your namespace
-    options.ShouldInclude = apiDescription =>
-        apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
-        && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("Umbraco.Cms.Web.UI.Custom") is true;
+            // Include only controllers from your namespace
+            options.ShouldInclude = apiDescription =>
+                apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor
+                && controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("Umbraco.Cms.Web.UI.Custom") is true;
 
-    // Add backoffice security requirements to enable authorization in Swagger UI
-    options.AddBackofficeSecurityRequirements();
-});
+            // Add backoffice security requirements to enable authorization in Swagger UI
+            options.AddBackofficeSecurityRequirements();
+        });
 
-// Add the document to OpenAPI UI
-builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
+        // Add the document to OpenAPI UI
+        builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
+    }
+}
 ```
 {% endcode %}
 

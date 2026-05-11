@@ -16,17 +16,34 @@ If you're happy with the default schema and operation IDs, you don't need the Um
 
 Schema IDs are configured using the `CreateSchemaReferenceId` property when adding your OpenAPI document. You can use the `UmbracoSchemaIdGenerator.Generate()` method to generate schema IDs following Umbraco's naming conventions:
 
-{% code title="Program.cs" %}
+{% code title="MyItemApiComposer.cs" %}
 ```csharp
+using Microsoft.AspNetCore.OpenApi;
 using Umbraco.Cms.Api.Common.OpenApi;
+using Umbraco.Cms.Core.Composing;
 
-builder.Services.AddOpenApi("my-item-api", options =>
+public class MyItemApiComposer : IComposer
 {
-    // ...other configuration
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddOpenApi("my-item-api", options =>
+        {
+            // ...other configuration
 
-    options.CreateSchemaReferenceId = jsonTypeInfo
-        => UmbracoSchemaIdGenerator.Generate(jsonTypeInfo.Type);
-});
+            options.CreateSchemaReferenceId = jsonTypeInfo =>
+            {
+                // Inline primitives and other types the default generator skips
+                var defaultId = OpenApiOptions.CreateDefaultSchemaReferenceId(jsonTypeInfo);
+                if (defaultId is null)
+                {
+                    return null;
+                }
+
+                return UmbracoSchemaIdGenerator.Generate(jsonTypeInfo.Type);
+            };
+        });
+    }
+}
 ```
 {% endcode %}
 
@@ -34,16 +51,23 @@ builder.Services.AddOpenApi("my-item-api", options =>
 
 Operation IDs are configured using operation transformers. You can use the `UmbracoOperationIdTransformer` to generate operation IDs following Umbraco's naming conventions:
 
-{% code title="Program.cs" %}
+{% code title="MyItemApiComposer.cs" %}
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
+using Umbraco.Cms.Core.Composing;
 
-builder.Services.AddOpenApi("my-item-api", options =>
+public class MyItemApiComposer : IComposer
 {
-    // ...other configuration
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddOpenApi("my-item-api", options =>
+        {
+            // ...other configuration
 
-    options.AddOperationTransformer<UmbracoOperationIdTransformer>();
-});
+            options.AddOperationTransformer<UmbracoOperationIdTransformer>();
+        });
+    }
+}
 ```
 {% endcode %}
 
