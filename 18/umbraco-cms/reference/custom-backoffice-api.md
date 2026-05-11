@@ -4,7 +4,7 @@ description: Example of a Custom Backoffice API with Authorization and OpenAPI
 
 # Custom Backoffice API
 
-This article covers how to create a Custom API controller protected by the backoffice authorization policies. It also shows how to enable the authorization UI in Swagger UI.
+This article covers how to create a Custom API controller protected by the backoffice authorization policies. It also shows how to enable authorization in Swagger UI.
 
 {% hint style="info" %}
 Before proceeding, make sure to read the [Management API](management-api/) article. It provides information about the OpenAPI documentation and Authorization used in this article.
@@ -43,15 +43,9 @@ builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
 ```
 {% endcode %}
 
-The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks our API as supporting authorization via Swagger UI. The `AddOpenApiDocumentToUi()` method adds the document to the Swagger UI dropdown.
+The `ShouldInclude` property determines which endpoints appear in the document - in this case, only controllers from your custom namespace. The `AddBackofficeSecurityRequirements()` extension method adds the OAuth2 security scheme and marks the API as supporting authorization via Swagger UI. The `AddOpenApiDocumentToUi()` method adds the document to the Swagger UI dropdown.
 
-{% hint style="info" %}
-
-For more modular configurations, you can use `IConfigureNamedOptions<OpenApiOptions>` with a composer instead of configuring in Program.cs. See the [API versioning and OpenAPI](api-versioning-and-openapi.md) article for details on different configuration approaches.
-
-{% endhint %}
-
-2. Create a new `.cs` file called `MyApiController` and add the ApiController to setup the logic behind the endpoint:
+2. Create a new file `MyApiController.cs` with the following controller:
 
 {% code title="MyApiController.cs" lineNumbers="true" %}
 ```csharp
@@ -108,4 +102,4 @@ GET /api/v1/my/say-hello
 
 ![Trying out the endpoint](../.gitbook/assets/custom-api-swagger-example-response.png)
 
-We now get the response we have setup using the code: `"Hello, {{userName}}"`.
+We now get the response we have set up using the code: `"Hello, <user name>"`.
