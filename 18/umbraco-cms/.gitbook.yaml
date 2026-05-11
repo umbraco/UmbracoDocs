@@ -162,3 +162,4 @@ redirects:
     ai/developer-mcp/host-setup: ai/local-mcp-setup/README.md
     reference/custom-swagger-api: reference/custom-backoffice-api.md
     tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md
+    tutorials/migrating-macros: tutorials/overview.md
