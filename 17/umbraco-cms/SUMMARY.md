@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Umbraco CMS Documentation](README.md)
-* [Restructure Summary](restructure-summary.md)
 
 ## Understand Umbraco CMS
 
