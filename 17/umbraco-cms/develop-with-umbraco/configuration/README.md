@@ -1,12 +1,12 @@
 ---
-description: Information on configuring Umbraco
+description: Configure Umbraco using appsettings.json, environment variables, command line arguments, and UserSecrets.
 ---
 
 # Configuration
 
 Umbraco uses the .NET built-in configuration pattern. This means that the configuration is handled in the `appsettings.json` file and primarily done using `IConfiguration` with different sources.
 
-For more in depth information on the configuration pattern see Microsofts [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0) article.
+For more in depth information on the configuration pattern see Microsoft's [Configuration in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/) article.
 
 {% hint style="info" %}
 **Are you looking for the RuntimeMinificationSettings?**
@@ -20,7 +20,7 @@ You can install the Smidge package separately if needed. Learn more and see how 
 
 You might not always want to have the configuration stored in the `appsettings.json` file, for instance, you might not want to have the admin password in the file if using the unattended feature. You might also want to use a specific set of configurations when developing your solution. To achieve this, the `IConfiguration` pattern can be used for this.
 
-With the configuration pattern the settings can be read from multiple different source, where some take precedence over other, you can configure you site with:
+With the configuration pattern the settings can be read from multiple different sources, where some take precedence over others. You can configure your site with:
 
 1. The `appsettings.json` file
 2. An `appsettings.{environment}.json` file
@@ -82,7 +82,7 @@ A great thing about `appsettings.json` is that it allows for intellisense with a
 
 You might need to read the configuration from your code.
 
-When reading the configuration you need to inject an [`IOptions<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1?view=dotnet-plat-ext-6.0) or [`IOptionsMonitor<>`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1?view=dotnet-plat-ext-6.0) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
+When reading the configuration you need to inject an [`IOptions<>`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptions-1) or [`IOptionsMonitor<>`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1) object into the class that needs it. Here is an example of how you would read the `Host` value from the SMTP settings contained within the global settings:
 
 ```csharp
 using Microsoft.Extensions.Options;
@@ -103,7 +103,7 @@ public class SomeClass
 }
 ```
 
-First off `using Microsoft.Extensions.Options` is added, to gain access to the `IOptions` type, and `using Umbraco.Cms.Core.Configuration.Models;` is added to get access to the `GlobalSettings` type.
+First, `using Microsoft.Extensions.Options` is added, to gain access to the `IOptions` type, and `using Umbraco.Cms.Core.Configuration.Models;` is added to get access to the `GlobalSettings` type.
 
 `IOptions<GlobalSettings>` is then injected into the constructor of the class, where we can use the `Value` property to gain access to the actual settings object.
 

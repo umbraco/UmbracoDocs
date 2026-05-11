@@ -1,5 +1,5 @@
 ---
-description: Documentation for Umbraco CMS — install, build, extend, and run Umbraco in production.
+description: Documentation for Umbraco CMS. Install, build, extend, and run Umbraco in production.
 ---
 
 # Umbraco CMS Documentation
