@@ -96,7 +96,9 @@ public class MyDoSomethingViewModel
 
 ### Controlling which endpoints appear in your document
 
-Set `ShouldInclude` on your document to control which endpoints appear in it. The example above filters by namespace. You can also filter by the `[MapToApi]` attribute, as used by the [Umbraco extension template](../customizing/development-flow/umbraco-extension-template.md):
+Set `ShouldInclude` on your document to control which endpoints appear in it. The example above filters by namespace.
+
+You can also filter by the `[MapToApi]` attribute — this is how the [`AddBackOfficeOpenApiDocument`](custom-backoffice-api.md) builder filters by default. The attribute is optional — controllers only need it when your `ShouldInclude` predicate checks for it.
 
 ```csharp
 using Umbraco.Cms.Api.Common.Attributes;
