@@ -7,31 +7,29 @@ description: >-
 
 # Version Specific Upgrades
 
-## Version Specific Upgrades
-
 Use the information below to learn about any potential breaking changes and common pitfalls when upgrading your Umbraco CMS project.
 
-If any specific steps are involved with upgrading to a specific version they will be listed below.
+If any specific steps are involved with upgrading to a specific version, they will be listed below.
 
 Use the [general upgrade guide](../) to complete the upgrade of your project.
 
-### Preparation for Upgrade
+## Preparation for Upgrade
 
 Before running the upgrade, consider the following:
 
-**Empty the media recycle bin**
+### Empty the media recycle bin
 
 In Umbraco 18, the `EnableMediaRecycleBinProtection` setting defaults to `true`. With this enabled, media files moved to the recycle bin are renamed with a `.deleted` suffix (and renamed back on restore). Emptying the media recycle bin before upgrading avoids any uncertainty around the state of files already in the bin from prior versions.
 
 For details, see the entry on `EnableMediaRecycleBinProtection` further down.
 
-**Implement `ITypedSingleBlockListProcessor` for custom block-list nesting property editors**
+### Implement `ITypedSingleBlockListProcessor` for custom block-list nesting property editors
 
 The single-mode block list migration — added in Umbraco 17 but disabled — now runs by default during the upgrade to Umbraco 18. Sites with custom property editors that nest block list values must implement and register an `ITypedSingleBlockListProcessor` before the upgrade runs. Without this, nested data in those property values will be left in the old format.
 
 For details, see the [Single block migration](../../../../extending/single-block-migration.md) article.
 
-### Breaking changes
+## Breaking changes
 
 <details>
 
@@ -356,7 +354,7 @@ The backoffice tree for elements now displays pending-changes and scheduled-publ
 - The shared `IHasFlags` implementation has been moved into `PublishableVariantResponseModelBase`. A new `PublishableVariantItemResponseModelBase` removes duplication in the item-level variant models. Code that derived from the previous per-document or per-element response model bases must be updated to use the shared types.
 - Document and element presentation factories now share a common `PublishableContentPresentationFactoryBase`, and new async methods (`CreateVariantsItemResponseModelsAsync`, `CreateItemResponseModelAsync`, `PopulateFlagsAsync`) supplement the sync APIs.
 
-For most extension code (Razor, services, custom property editors) this PR is not breaking. For more details, see [#21877](https://github.com/umbraco/Umbraco-CMS/pull/21877).
+For most extension code (Razor, services, custom property editors), this PR is not breaking. For more details, see [#21877](https://github.com/umbraco/Umbraco-CMS/pull/21877).
 
 **EF Core type names: `EfCore` renamed to `EFCore`**
 
@@ -382,7 +380,7 @@ To restore the previous (unprotected) behavior, set `Umbraco:CMS:Content:EnableM
 
 `MarkdigMarkdownToHtmlConverter` is now the default registered implementation of `IMarkdownToHtmlConverter`, replacing the previous Hey Red Markdown-based default.
 
-The Hey Red Markdown library is deprecated and the corresponding implementation will be removed in Umbraco 19. To revert to the previous behavior for now, register `HeyRedMarkdownToHtmlConverter` explicitly in a composer. See [Markdown to HTML Conversion](../../../../reference/markdown-to-html-conversion.md) for details.
+The Hey Red Markdown library is deprecated, and the corresponding implementation will be removed in Umbraco 19. To revert to the previous behavior for now, register `HeyRedMarkdownToHtmlConverter` explicitly in a composer. See [Markdown to HTML Conversion](../../../../reference/markdown-to-html-conversion.md) for details.
 
 **`ConfigureSecurityStampOptions` service registration removed**
 
@@ -403,7 +401,7 @@ The following pull requests remove additional obsolete code paths or address int
 
 As is usual for a major upgrade, Umbraco's dependencies have been updated to their latest compatible versions.
 
-`Markdig` was updated by a major version from 0.45.0 to 1.1.x. If you are using this library directly — for example, via `MarkdigMarkdownToHtmlConverter` — minor API differences may be encountered.
+`Markdig` was updated to a major version from 0.45.0 to 1.1.x. If you are using this library directly — for example, via `MarkdigMarkdownToHtmlConverter` — minor API differences may be encountered.
 
 `Microsoft.CodeAnalysis.CSharp` was updated by a major version from 4.14.0 to 5.0.0. Projects that take a direct dependency on Roslyn for code analysis may need updates.
 
