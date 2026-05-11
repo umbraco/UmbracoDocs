@@ -272,7 +272,8 @@ public class RecipeModel : PublishedContentWrapped
             .Parent()?
             .Children<RecipeModel>()
             .Where(x => x.Value<IEnumerable<int>>("related")
-                .Contains(content.Id));
+                .Contains(content.Id))
+            ?? Enumerable.Empty<RecipeModel>();
 
         Votes = content.Value<int>("votes");
     }
