@@ -69,7 +69,7 @@ For more information, see the [Settings Dashboards](../../../model-your-content/
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](/broken/pages/ntadL6PYEjcdxw84WKmL) article.
+For more information, see the [Packages](../../../extend-your-project/packages/README.md) article.
 
 ## Users
 

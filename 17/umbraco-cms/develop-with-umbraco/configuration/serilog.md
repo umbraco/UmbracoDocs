@@ -124,7 +124,7 @@ You can also disable this sink if you do not wish to write files to disk.
 
 You may wish to add a log property to all log messages. A good example could be a log property for the `environment` to determine if the log message came from `development` or `production`.
 
-This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as Elasticsearch. This would allow you to search and filter for a specific project and its environment to see the log messages.  You can also reference your hosting server's environment variables in the property values.
+This is useful when you could be writing logs from all environments or multiple customer projects into a single logging source, such as Elasticsearch. This would allow you to search and filter for a specific project and its environment to see the log messages. You can also reference your hosting server's environment variables in the property values.
 
 In the `appsettings.json` configuration file you can add the following lines
 

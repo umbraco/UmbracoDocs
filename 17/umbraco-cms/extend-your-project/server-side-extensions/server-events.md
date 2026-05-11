@@ -24,7 +24,7 @@ The currently authorized user will have one or more claims indicating the access
 
 Which groups they have access to is determined by the collection of registered `IEventSourceAuthorizer` instances.
 
-For example, there is a `DocumentEventAuthorizer` that ensures users with access to the documents (content) tree are assigned to the `Umbraco:CMS:Document` event source.  As a result, when server events are emitted for documents, only those users with this access will receive them.
+For example, there is a `DocumentEventAuthorizer` that ensures users with access to the documents (content) tree are assigned to the `Umbraco:CMS:Document` event source. As a result, when server events are emitted for documents, only those users with this access will receive them.
 
 ## Extending Server Events
 

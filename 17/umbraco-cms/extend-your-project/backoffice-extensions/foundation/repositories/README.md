@@ -91,7 +91,6 @@ Some of the common repository interfaces are:
 
 * [UmbDetailRepository](repository-types/detail-repository.md) - for detail views of a single entity.
 * [UmbCollectionRepository](repository-types/collection-repository.md) - for collection views of multiple entities.
-* [UmbTreeRepository](/broken/pages/yMlx6WISE7QKjbGs3R2z) - for tree structures of entities.
 * [UmbItemRepository](repository-types/item-repository.md) - for item requests.
 
 See the example below of how to register a custom repository:

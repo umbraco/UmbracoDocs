@@ -78,7 +78,7 @@ You can use the built-in performance profiler to assess the performance when ren
 
 The Profiling dashboard provides a toggle option - `Activate the profiler by default` to keep the profiler active by default for all page renderings. You can use this option without having to set `umbDebug=true` on each page request. The toggle button sets a cookie named `UMB-DEBUG` in your browser, which then activates the profiler automatically.
 
-For more information about MiniProfiler, see the [MiniProfiler](/broken/pages/9KVMb5z0o0S7zGsDGgqt#miniprofiler) section in the [Debugging](/broken/pages/9KVMb5z0o0S7zGsDGgqt) article.
+For more information about MiniProfiler, see the [MiniProfiler](../../../develop-with-umbraco/testing-and-debugging/README.md#miniprofiler) section in the [Testing and Debugging](../../../develop-with-umbraco/testing-and-debugging/README.md) article.
 
 </details>
 

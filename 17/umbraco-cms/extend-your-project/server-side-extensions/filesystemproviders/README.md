@@ -53,7 +53,7 @@ The `rootPath` is where your media will be stored on the disk. Since netcore by 
 
 The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important.
 
-In the code sample above, the `rootUrl` must map to the the same physical location as `rootPath`, which again must be placed under `wwwroot`. If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
+In the code sample above, the `rootUrl` must map to the same physical location as `rootPath`, which again must be placed under `wwwroot`. If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
 
 The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important. With the code sample above, the `rootUrl` must map to the same physical location as `rootPath`, otherwise, you will get 404's for your images.
 

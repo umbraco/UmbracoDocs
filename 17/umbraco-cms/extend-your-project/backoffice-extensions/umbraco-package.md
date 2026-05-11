@@ -125,8 +125,8 @@ The `extensions` field is an array of Extension Manifest objects. Each object de
 
 Read more about Extension Types in the Backoffice to get a better understanding of the different types of extensions:
 
-{% content-ref url="extending-overview/extension-types/#full-list-of-extension-types" %}
-[#full-list-of-extension-types](extending-overview/extension-types/#full-list-of-extension-types)
+{% content-ref url="extending-overview/extension-types/README.md#full-list-of-extension-types" %}
+[#full-list-of-extension-types](extending-overview/extension-types/README.md#full-list-of-extension-types)
 {% endcontent-ref %}
 
 #### The `conditions` property
@@ -202,4 +202,3 @@ Umbraco also supports [Razor Class Library (RCL)](https://learn.microsoft.com/en
 ```
 {% endcode %}
 
-Read more about getting set up for Backoffice development in the [Customize Backoffice](/broken/pages/Dr0RMvG5fGAoq3danxzU) section.

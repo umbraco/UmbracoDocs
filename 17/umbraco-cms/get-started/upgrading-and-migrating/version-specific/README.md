@@ -1336,7 +1336,7 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 **Update code using Angular JS**
 
-Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Customize Backoffice](/broken/pages/Dr0RMvG5fGAoq3danxzU) documentation.
+Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Backoffice Extensions](../../../extend-your-project/backoffice-extensions/README.md) documentation.
 
 **Deprecated property editors**
 
@@ -1920,7 +1920,7 @@ Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to
 ```
 
 * The `usercontrol` value has changed to: `/create/user.ascx`. This is a required change otherwise creating a new user will not work.
-* There is a breaking change to be aware of, full details can be found [here](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
+* There is a breaking change to be aware of, full details can be found in [the Umbraco blog post](https://umbraco.com/blog/heads-up-breaking-change-coming-in-702-and-62/).
 
 Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 

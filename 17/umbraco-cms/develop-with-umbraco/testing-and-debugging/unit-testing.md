@@ -19,7 +19,7 @@ These tests follows an approach thats based on isolating your tests from Umbraco
 Once you get familiar with these underlying dependencies you might want to start looking into replacing them with actual implementations. This leans more towards integration or E2E testing. Again these examples should be a source of inspiration and the quickest way to get started with Unit Testing.
 
 {% hint style="info" %}
-If you are new to mocking you can read more on this topic [here](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
+If you are new to mocking you can read more on the [Test Doubles](https://martinfowler.com/bliki/TestDouble.html) or use the [Moq Quickstart](https://github.com/Moq/moq4/wiki/Quickstart) guide. For more inspiration and other ways of how to write tests in Umbraco there's a blogpost from HQ member Bjarke Berg about [Automated Testing](https://umbraco.com/blog/automated-testing-in-umbraco/).
 {% endhint %}
 
 ### Testing a ContentModel

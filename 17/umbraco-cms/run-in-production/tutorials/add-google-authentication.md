@@ -23,7 +23,7 @@ We are sure a lot of content editors and implementors of your Umbraco sites woul
 ### What the tutorial covers
 
 1. [Setting up a Google OAuth API](add-google-authentication.md#id-1.-setting-up-a-google-oauth-api)
-2. [Integrating Google Auth in in your project](add-google-authentication.md#id-2.-integrating-google-auth-in-your-project)
+2. [Integrating Google Auth in your project](add-google-authentication.md#id-2.-integrating-google-auth-in-your-project)
 3. [Configuring the solution to allow Google logins](add-google-authentication.md#id-3.-configuring-the-solution-to-allow-google-logins)
 
 ### Prerequisites

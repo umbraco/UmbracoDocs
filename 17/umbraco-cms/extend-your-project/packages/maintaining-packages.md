@@ -34,7 +34,7 @@ If you want to maintain tighter control over this, you can specify an upper boun
 <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0, 13)" />
 ```
 
-This states that the package is compatible with Umbraco 10, 11 and 12, but not 13. Thus it prevents anyone installing your package into an Umbraco solution that you haven't verified compatibility with.  Once you have, you can increase the bound or otherwise update the dependent Umbraco version as appropriate.
+This states that the package is compatible with Umbraco 10, 11 and 12, but not 13. Thus it prevents anyone installing your package into an Umbraco solution that you haven't verified compatibility with. Once you have, you can increase the bound or otherwise update the dependent Umbraco version as appropriate.
 
 ## Manage feature requests and issues
 

@@ -34,13 +34,13 @@ All users with access to the Content section in the Umbraco backoffice are able 
 
 In some cases you will need to adjust your configuration to ensure that scheduled publishing/unpublishing works. The schedule works by the server sending an HTTP(S) request to itself.
 
-If you are in a load balanced environment special care must be given to ensure you've configured this correctly, [see the docs here](../../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/file-system-replication.md)
+If you are in a load balanced environment special care must be given to ensure you've configured this correctly, [see the documentation](../../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/file-system-replication.md)
 
 If you are not load balancing, the way that Umbraco determines the base URL to send the scheduled HTTP(S) request to is as follows:
 
-* umbracoSettings:settings/web.routing/@umbracoApplicationUrl if it exists _(see_ [_these docs_](../../../develop-with-umbraco/configuration/webroutingsettings.md) _for details)_
-* Else umbracoSettings:settings/scheduledTasks/@baseUrl if it exits _(deprecated)_
-* Else umbracoSettings:distributedCall/servers if we have the server in there _(deprecated, see load balance docs)_
+* `umbracoSettings:settings/web.routing/@umbracoApplicationUrl` if it exists _(see_ [_Web Routing Settings article_](../../../develop-with-umbraco/configuration/webroutingsettings.md) _for details)_
+* Else `umbracoSettings:settings/scheduledTasks/@baseUrl` if it exits _(deprecated)_
+* Else `umbracoSettings:distributedCall/servers` if we have the server in there _(deprecated, see load balance documentation)_
 * Else it's based on the first request that the website receives and uses the base URL of this request _(default)_
 
 If the `umbracoApplicationUrl` is used, the value also specifies the scheme (either HTTP or HTTPS). The request for scheduled publishing will always be sent over HTTPS if the appSettings `umbracoUseSSL` is set to `true`.

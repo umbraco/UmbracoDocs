@@ -110,8 +110,7 @@ Conditions that check whether the current user has a specific permission.
 - `Umb.Condition.UserPermission.Document` - Requires the current user to have specific Document permissions. Example: 'Umb.Document.Save'.
 - `Umb.Condition.UserPermission.Document.PropertyValue` - Requires the current user to have the required permission for the Document's property values.
 - `Umb.Condition.UserPermission.Language` - Requires the current user to have the required permission for the given Language.
-- `Umb.Condition.UserPermission.Fallback` - Requires the current user to have specific fallback permissions. Accepts `allOf` (array of permission verbs) and `oneOf` (array of permission
-  verbs).
+- `Umb.Condition.UserPermission.Fallback` - Requires the current user to have specific fallback permissions. Accepts `allOf` (array of permission verbs) and `oneOf` (array of permission verbs).
 
 ### Templating & Data Types
 

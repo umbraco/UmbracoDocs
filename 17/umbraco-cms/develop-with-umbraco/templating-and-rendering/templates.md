@@ -185,7 +185,7 @@ The created partial view can now be injected into any template by using the `@Ht
 
 ### Related Articles
 
-* [Basic Razor syntax](/broken/pages/ai5MeoHZdpsHN39vPz2R)
+* [Working with MVC](templating/mvc/README.md)
 * [Rendering content](design/rendering-content.md)
 
 ### Tutorials

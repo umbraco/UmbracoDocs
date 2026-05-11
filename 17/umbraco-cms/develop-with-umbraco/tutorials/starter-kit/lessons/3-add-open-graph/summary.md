@@ -1,4 +1,4 @@
-# Add Open Graph - Step 4
+# Add Open Graph - Summary
 
 All done, great job! Now test out if it works. Try adding it to more document types. Remember this is only one way of adding this functionality. You might want additional Open Graph tags or the properties to be on a different tab (e.g. *Navigation* or *SEO*).
 

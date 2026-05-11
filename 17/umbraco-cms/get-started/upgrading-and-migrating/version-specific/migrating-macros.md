@@ -365,7 +365,7 @@ public class CtaButtonMacroMigrator : IMacroMigrator
 
 ## Retrieving the data
 
-In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting get the data needed. This example does not take nested data into account. For an example on how to to do this, [check out one of the alternatives](migrating-macros.md#alternative-approaches) at the bottom of this article.
+In this setup, the values are received straight from the database using custom Data Transfer Objects (DTOs). This allows for getting get the data needed. This example does not take nested data into account. For an example on how to do this, [check out one of the alternatives](migrating-macros.md#alternative-approaches) at the bottom of this article.
 
 This example also only fetches the active (draft/current) version of the affected data to reduce processing time.
 

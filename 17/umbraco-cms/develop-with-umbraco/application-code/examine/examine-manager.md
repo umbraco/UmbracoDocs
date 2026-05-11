@@ -35,7 +35,7 @@ This returns an active instance of the ExamineManager which exposes operations s
 
 Important to note that the `Search` methods on the ExamineManager will call the Search methods of the **default** search provider specified in config. If you want to search using a specific provider, there are generally two approaches for this.
 
-If you want to use the searcher of a specific index, you should get the the searcher via the index:
+If you want to use the searcher of a specific index, you should get the searcher via the index:
 
 ```csharp
 @inherits UmbracoViewPage

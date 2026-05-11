@@ -40,4 +40,4 @@ A value connector is an extension to Umbraco Deploy that allows you to transform
 
 They also manage dependencies for property data. If you save an ID of an image in your property editor, you can make sure the related image media item is transferred too.
 
-You can read more about value connectors and other extensions to Umbraco Deploy [here](https://docs.umbraco.com/umbraco-deploy/getting-started/extending).
+You can read more about value connectors and other extensions to Umbraco Deploy in the [Extending Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/extending/extending) documentation.

@@ -4,6 +4,6 @@ description: >-
     used in your extension when customizing the Backoffice.
 ---
 
-## [Confirm Dialog](modals/confirm-dialog.md)
+## [Confirm Dialog](confirm-dialog.md)
 
 Present a dialog to ask the user for confirmation.

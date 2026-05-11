@@ -46,18 +46,18 @@ The `-P` flag is required to specify the correct paths in the docker-compose fil
 
 The folder structure should now look like this:
 
-* MyDockerProject/
-  * Database/
-    * Dockerfile
-    * healthcheck.sh
-    * setup.sql
-    * startup.sh
-  * MyDockerProject/
-    * Your project files
-    * Dockerfile
-    * .dockerignore
-  * .env
-  * docker-compose.yml
+* `MyDockerProject/`
+  * `Database/`
+    * `Dockerfile`
+    * `healthcheck.sh`
+    * `setup.sql`
+    * `startup.sh`
+  * `MyDockerProject/`
+    * `Your project files`
+    * `Dockerfile`
+    * `.dockerignore`
+  * `.env`
+  * `docker-compose.yml`
 
 The project now includes docker files for both Umbraco and the SQL server database.
 
