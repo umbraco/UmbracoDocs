@@ -227,7 +227,7 @@ Methods and constants relating to allowed application and start node claims — 
 
 **MigrationBase removed — migrations must inherit AsyncMigrationBase**
 
-The synchronous `MigrationBase` class — obsolete since Umbraco 16, when `AsyncMigrationBase` was introduced — has now been removed, and all bundled migrations between Umbraco 13 and 17 have been deleted. Custom migrations must now inherit `AsyncMigrationBase` and implement `MigrateAsync`. The synchronous `PackageMigrationBase` has likewise been removed — package migrations must inherit `AsyncPackageMigrationBase`.
+The synchronous `MigrationBase` class — obsolete since Umbraco 16, when `AsyncMigrationBase` was introduced — has now been removed. All bundled migrations between Umbraco 13 and 17 have also been deleted. Custom migrations must inherit `AsyncMigrationBase` and implement `MigrateAsync`. The synchronous `PackageMigrationBase` has likewise been removed; package migrations must inherit `AsyncPackageMigrationBase`.
 
 Before:
 
