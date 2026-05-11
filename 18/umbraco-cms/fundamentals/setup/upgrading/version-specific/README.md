@@ -23,109 +23,19 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 **Swashbuckle replaced with Microsoft.AspNetCore.OpenApi**
 
-Umbraco no longer uses Swashbuckle for OpenAPI documentation. It has been replaced with [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview).
+Umbraco no longer uses Swashbuckle for OpenAPI documentation. It has been replaced with [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview). If you have custom APIs with OpenAPI documentation, you will need to update your code.
 
-If you have custom APIs with OpenAPI documentation, you will need to update your code.
+You can still use Swashbuckle for your own OpenAPI documents if you prefer, but Umbraco no longer ships or configures it. You are responsible for installing the `Swashbuckle.AspNetCore` NuGet package and wiring it up yourself.
 
-*Registering OpenAPI documents*
+See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article for the new APIs. The main changes you will need to migrate:
 
-Replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()`. This can be done in `Program.cs` or in a composer. See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents) for details.
-
-Before:
-
-```csharp
-public class MyApiConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
-{
-    public void Configure(SwaggerGenOptions options)
-    {
-        options.SwaggerDoc("my-api-v1", new OpenApiInfo { Title = "My API v1", Version = "1.0" });
-    }
-}
-
-// In a composer:
-builder.Services.ConfigureOptions<MyApiConfigureSwaggerGenOptions>();
-```
-
-After:
-
-```csharp
-// In Program.cs or a composer:
-builder.Services.AddOpenApi("my-api-v1", options =>
-{
-    options.AddDocumentTransformer((document, context, cancellationToken) =>
-    {
-        document.Info.Title = "My API v1";
-        document.Info.Version = "1.0";
-        return Task.CompletedTask;
-    });
-});
-
-// Add the document to the Swagger UI dropdown
-builder.Services.AddOpenApiDocumentToUi("my-api-v1", "My API v1");
-```
-
-`AddOpenApiDocumentToUi()` is required to show the document in Swagger UI. Previously with Swashbuckle, documents were automatically added to the UI when registered. The second parameter (title) is optional and defaults to the document name if not specified.
-
-*Backoffice security requirements*
-
-Replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension method. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md) for a complete example.
-
-Before:
-
-```csharp
-public class MyApiSecurityRequirementsOperationFilter : BackOfficeSecurityRequirementsOperationFilterBase
-{
-    protected override string ApiName => "my-api-v1";
-}
-
-options.OperationFilter<MyApiSecurityRequirementsOperationFilter>();
-```
-
-After:
-
-```csharp
-builder.Services.AddOpenApi("my-api-v1", options =>
-{
-    options.AddBackofficeSecurityRequirements();
-});
-```
-
-*Schema ID handlers*
-
-The `ISchemaIdHandler` interface and `SchemaIdHandler` base class have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions` instead. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids) for details.
-
-*Operation ID handlers*
-
-The `IOperationIdHandler` interface and `OperationIdHandler` base class have been removed. Use `IOpenApiOperationTransformer` instead. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids) for details.
-
-*Delivery API member authentication*
-
-The class `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension method to add member authentication support to the Delivery API OpenAPI document:
-
-```csharp
-using Umbraco.Cms.Api.Delivery.OpenApi;
-
-builder.Services.AddDeliveryApiOpenApiMemberAuthentication();
-```
-
-For more details, see [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
-
-*OpenAPI route and availability configuration*
-
-If you were previously overriding the `OpenApiRouteTemplatePipelineFilter` methods (`OpenApiIsEnabled`, `OpenApiRouteTemplate`, or `OpenApiUiRoutePrefix`) to customize OpenAPI routes or availability, you should migrate to using `UmbracoOpenApiOptions` instead. The pipeline filter methods are now private implementation details.
-
-Use `PostConfigure` to override the defaults:
-
-```csharp
-builder.Services.PostConfigure<UmbracoOpenApiOptions>(options =>
-{
-    options.Enabled = true;
-    options.RouteTemplate = "openapi/{documentName}.json";
-    options.UiRoutePrefix = "openapi";
-});
-```
-
-See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability) for details.
+- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
+- **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
+- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids).
+- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids).
+- **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
+- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability).
+- **Filtering custom OpenAPI documents** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Including endpoints in a custom OpenAPI document](../../../../reference/api-versioning-and-openapi.md#including-endpoints-in-a-custom-openapi-document).
 
 *OpenAPI URL changes*
 
@@ -135,30 +45,6 @@ The OpenAPI endpoints have been renamed from `swagger` to `openapi` to follow Mi
 |---------|---------|
 | `/umbraco/swagger` | `/umbraco/openapi` |
 | `/umbraco/swagger/{documentName}/swagger.json` | `/umbraco/openapi/{documentName}.json` |
-
-For more details, see the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article.
-
-*Filtering custom OpenAPI documents*
-
-In Umbraco 17, Swashbuckle had a single global filter wired up to `[MapToApi("name")]`, so decorating a controller with the attribute was enough to make it land in the matching custom OpenAPI document automatically.
-
-`Microsoft.AspNetCore.OpenApi` configures each document independently, so there is no equivalent global hook. Umbraco can apply automatic filtering only to its own documents. For a custom document registered with `AddOpenApi("name", ...)`, you must set `ShouldInclude` yourself.
-
-To preserve the v17 behavior, check the attribute inside the predicate:
-
-```csharp
-using Umbraco.Cms.Api.Common.Attributes;
-
-builder.Services.AddOpenApi("my-api-v1", options =>
-{
-    options.ShouldInclude = apiDescription =>
-        apiDescription.ActionDescriptor.EndpointMetadata
-            .OfType<MapToApiAttribute>()
-            .Any(attribute => attribute.ApiName == "my-api-v1");
-});
-```
-
-The [Umbraco extension template](../../../../customizing/development-flow/umbraco-extension-template.md) is wired up this way out of the box. See [How filtering works](../../../../reference/api-versioning-and-openapi.md#how-filtering-works) for other predicate shapes.
 
 </details>
 
