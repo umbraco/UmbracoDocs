@@ -19,5 +19,5 @@ Find the latest release information, test upcoming versions, or browse older doc
 * Links to documentation for versions outside active support.
 
 {% hint style="info" %}
-This documentation covers supported Umbraco CMS versions. Use the legacy resources for older versions.
+This documentation covers supported Umbraco CMS versions. Use the legacy documentation for older versions.
 {% endhint %}

@@ -1,16 +1,13 @@
 ---
-description: Information on the requirements to setup, install & upgrade Umbraco
+description: >-
+  System requirements and step-by-step guides for installing Umbraco CMS.
 ---
 
 # Installation
 
-How to install and configure your Umbraco installation.
+Before you install, check that your environment meets the system requirements. Then follow one of the installation guides to set up your Umbraco project.
 
-## [Requirements](requirements.md)
+## Guides
 
-Defines the system requirements to run Umbraco.
-
-## [Installation](install/)
-
-Umbraco installation steps and guidelines.
-
+* [Requirements](requirements.md) - supported .NET versions, databases, and browsers required to run Umbraco.
+* [Install Umbraco](install/) - step-by-step guides for installing via .NET CLI templates, Visual Studio, VS Code, or Docker.

@@ -6,23 +6,23 @@ description: Learn the core workflows in the Umbraco backoffice.
 
 Whether you are an editor managing daily content or a developer configuring the system for the first time, understanding the Backoffice is essential. This section covers the fundamental operations of the Umbraco interface from initial login and content creation to advanced node management.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Getting Started</td><td><a href="getting-started-with-umbraco/">getting-started-with-umbraco</a></td></tr><tr><td>Tips &#x26; Tricks</td><td><a href="tips-and-tricks/">tips-and-tricks</a></td></tr><tr><td>The Starter Kit</td><td><a href="../../develop-with-umbraco/tutorials/starter-kit/">starter-kit</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Log in, navigate the interface, and create your first content.</td><td><a href="getting-started-with-umbraco/">getting-started-with-umbraco</a></td></tr><tr><td><strong>Tips and Tricks</strong></td><td>Audit trails, notifications, session timeout, and other useful backoffice features.</td><td><a href="tips-and-tricks/">tips-and-tricks</a></td></tr></tbody></table>
 
-### What you will learn
+## What this section covers
 
-* Content Lifecycle: How to create, save, preview, publish, and unpublish content.
-* Node Management: How to find, edit, sort, move, copy, delete, and restore pages.
-* Interface Mastery: How to work confidently with common backoffice tools.
+* **Content lifecycle** — create, save, preview, publish, and unpublish content
+* **Node management** — find, edit, sort, move, copy, delete, and restore pages
 
-### Related resources
+## Related Resources
 
 * [Publishing and workflow](../../manage-and-publish-content/publishing-and-workflow/)
 * [Media and assets](../../manage-and-publish-content/media-and-assets/)
 * [Users and members](../../manage-and-publish-content/users-and-members/)
+* [The Starter Kit](../../develop-with-umbraco/tutorials/starter-kit/)
 
 ***
 
-### Umbraco Training
+## Umbraco Training
 
 Umbraco HQ offers training on backoffice workflows, content management, and editorial best practices.
 

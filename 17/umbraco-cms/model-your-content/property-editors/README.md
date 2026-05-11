@@ -1,34 +1,29 @@
 ---
 description: >-
-  Learn more about the default property editors that ships with an Umbraco
-  installation.
+  Overview of Property Editors in Umbraco, how they work, the built-in editors available, and how to create custom ones.
 ---
 
 # Property Editors
 
-A Property Editor is the editor that a Data Type references. A Data Type is defined by a user in the Umbraco backoffice and references a Property Editor. In Umbraco a Property Editor is defined in a JSON manifest file and associated JavaScript files.
+A Property Editor is what content editors use to input data on a Document Type. When you create a Data Type in the backoffice, you choose a Property Editor and configure it. Umbraco ships with a wide range of built-in Property Editors, and you can create custom ones.
 
 {% hint style="info" %}
 **Are you looking for the Grid Layout or Nested Content?**
 
-The following Property Editors have been removed with the release of Umbraco 14:
+These Property Editors were removed in Umbraco version 14:
 
 * Grid Layout
 * Nested content
 
-We recommend using the [Block Editor](built-in-umbraco-property-editors/block-editor/) or [Rich Text Editor blocks](built-in-umbraco-property-editors/rich-text-editor/blocks.md) instead.
+Use the [Block Editor](built-in-umbraco-property-editors/block-editor/) or [Rich Text Editor blocks](built-in-umbraco-property-editors/rich-text-editor/blocks.md) instead.
 {% endhint %}
 
-When creating a Data Type, specify the property editor for the Data Type to use by selecting from the "Property editor" list (as shown below).
+## In this section
 
-## [Built-in Property Editors in Umbraco](built-in-umbraco-property-editors/)
+* [Built-in Property Editors](built-in-umbraco-property-editors/README.md) - the full list of Property Editors that ship with Umbraco.
+* [Umbraco Flavored Markdown](umbraco-flavored-markdown.md) - a Markdown dialect with Umbraco-specific extensions for rich content editing.
 
-Umbraco comes pre-installed with many useful property editors.
+## Related resources
 
-## More information
-
-* [Customizing Data Types](../content-types-and-structure/data/data-types/)
-
-## Tutorials
-
-* [How to create a custom Property Editor](../../extend-your-project/tutorials/creating-a-property-editor/)
+* [Customizing Data Types](../content-types-and-structure/data/data-types/README.md)
+* [Creating a custom Property Editor](../../extend-your-project/tutorials/creating-a-property-editor/README.md)
