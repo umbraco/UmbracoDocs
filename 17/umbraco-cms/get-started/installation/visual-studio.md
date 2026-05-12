@@ -2,7 +2,7 @@
 description: A guide to install Umbraco CMS using Visual Studio.
 ---
 
-# Install using Visual Studio
+# Install Using Visual Studio
 
 ## Prerequisites
 
@@ -17,14 +17,9 @@ description: A guide to install Umbraco CMS using Visual Studio.
 
 1. Go to **File > New > Project/Solution**.
 2. Search for `Umbraco` in the _Search for templates_ field.
-
-![The Create a new project dialog in Visual Studio.](../../../.gitbook/assets/create-project.png)
-
 3. Select **Umbraco Project (Umbraco HQ)**.
 4. Click **Next**.
 5. Enter a **Project name**.
-
-![The Configure your new project dialog in Visual Studio.](../../../.gitbook/assets/New_Project.png)
 
 {% hint style="info" %}
 Refrain from changing the Solution name, as this will cause a namespace conflict with the CMS itself.
@@ -34,8 +29,6 @@ Refrain from changing the Solution name, as this will cause a namespace conflict
 6. Click **Create**.
 
 The Umbraco Project is ready for you.
-
-![Overview of files in the project solution](../../../.gitbook/assets/Solution_Explorer.png)
 
 ### Running the site
 

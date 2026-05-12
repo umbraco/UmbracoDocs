@@ -271,7 +271,7 @@ After registering the notification handler:
 3. Open your database.
 4. Confirm that the `blogComment` table has been created.
 
-![Database result of a migration](<../../.gitbook/assets/db-table (1).png>)
+![Database result of a migration](../../.gitbook/assets/db-table.png)
 
 {% hint style="info" %}
 If you are using the default SQLite database, you cannot use SQL Server Management Studio (SSMS) to view your tables. Use a tool like **DB Browser for SQLite** and open the file located at `/umbraco/Data/Umbraco.sqlite.db`.
@@ -354,7 +354,6 @@ By default, `AddUmbracoDbContext<T>(..., shareUmbracoConnection: true)` binds yo
 If your `DbContext` targets a **different** database — for example, a separate SQLite file or an entirely different SQL Server instance — pass `shareUmbracoConnection: false`. Without it, the connection string you configure through `UseSqlite(...)` or `UseSqlServer(...)` is replaced at runtime and your queries run against the Umbraco database instead.
 
 {% code title="BlogCommentsComposer.cs" %}
-
 ```csharp
 builder.Services.AddUmbracoDbContext<BlogContext>(
     (serviceProvider, options, connectionString, providerName) =>
@@ -363,7 +362,6 @@ builder.Services.AddUmbracoDbContext<BlogContext>(
     },
     shareUmbracoConnection: false);
 ```
-
 {% endcode %}
 
 {% hint style="info" %}

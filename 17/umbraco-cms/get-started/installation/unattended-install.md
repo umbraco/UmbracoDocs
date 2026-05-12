@@ -95,8 +95,6 @@ After completing the steps above you can now initialize the installation by boot
 
 Once it has completed, you should see the following when visiting the frontend of the site.
 
-<figure><img src="../../../.gitbook/assets/final-screen.png" alt=""><figcaption></figcaption></figure>
-
 ## Configuration options
 
 Depending on your preferences, you can use any type of configuration to specify the connection string and login information, as well as enable unattended install. With the extending configuration functionality, it is possible to read from all kinds of sources. One example can be using a JSON file or environment variables.
@@ -145,8 +143,6 @@ dotnet new umbraco -n MyNewProject --friendly-name "Friendly User" --email user@
 ```
 
 ### Visual Studio
-
-<figure><img src="../../../.gitbook/assets/Addtional_Info_17.png" alt=""><figcaption></figcaption></figure>
 
 ## References
 

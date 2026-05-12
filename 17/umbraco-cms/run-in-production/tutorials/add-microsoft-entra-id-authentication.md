@@ -4,7 +4,7 @@ description: >-
   login to Umbraco as a member.
 ---
 
-# Add Microsoft Entra ID authentication (Members)
+# Add Microsoft Entra ID Authentication (Members)
 
 This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory/Azure AD) for the member login on your Umbraco CMS website.
 
@@ -190,4 +190,4 @@ Learn more about this in the [Dependency Injection](../../develop-with-umbraco/a
 5. Build the project.
 6. Run the website.
 
-![Entra ID Login Screen](<../../.gitbook/assets/AD_Login_Members (1) (1).png>)
+![Entra ID Login Screen](../../.gitbook/assets/AD_Login_Members.png)

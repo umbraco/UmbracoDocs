@@ -4,9 +4,9 @@ description: >-
   using Umbraco 7.
 ---
 
-# Minor upgrades for Umbraco 7
+# Minor Upgrades for Umbraco 7
 
-Sometimes there are exceptions to these guidelines, which are listed in the [**version-specific guide**](./README.md).
+Sometimes there are exceptions to these guidelines, which are listed in the [**version-specific guide**](./).
 
 ## Note
 
@@ -23,7 +23,7 @@ In this article you will find instructions for 2 different ways of upgrading:
 
 1. Open up the **Package Console** and type: `Update-Package UmbracoCms`
 2. Choose **"No to All"** by pressing the **"L"** when prompted.
-   * If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the [**version-specific guide**](./README.md).
+   * If there are any specific configuration changes required for the version you are upgrading to then they will be noted in the [**version-specific guide**](./).
 
 Alternatively, you can use the Visual Studio **NuGet Package Manager** to upgrade:
 
@@ -40,7 +40,7 @@ You will be asked to overwrite your web.config file and the files in /config, ma
 
 For some inexplicable reason, the installation will fail if you click "No to All" (in the GUI) or answer "L" (in the package manager console) to the question: "File 'Web.config' already exists in project 'MySite'. Do you want to overwrite it?" So make sure to only answer "**No**" (in the GUI) or "**N**" (in the package manager console).
 
-![File conflict dialog with a web.config file in conflict](<../../../.gitbook/assets/nuget-overwrite-dialog (1) (1) (1).png>) ![File conflict console message with multiple files in conflict](<../../../.gitbook/assets/nuget-upgrade-overwrite (1) (1) (1).png>)
+![File conflict dialog with a web.config file in conflict](../../../.gitbook/assets/nuget-overwrite-dialog.png) ![File conflict console message with multiple files in conflict](../../../.gitbook/assets/nuget-upgrade-overwrite.png)
 
 We will overwrite the `web.config` file. We'll back it up so don't worry. You can find the backup in `App_Data\NuGetBackup\20140320-165450\`. The `20140320-165450` bit is the date and time when the backup occurred, which varies. You can then merge your config files and make sure they're up to date.
 

@@ -42,7 +42,7 @@ When selecting Content from the dropdown, the option to specify a root node, als
 
 When picking the **origin** there are several different options available:
 
-<figure><img src="../../../.gitbook/assets/pick-origin-root-node (1).png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
 
 The following options are available when picking the origin:
 

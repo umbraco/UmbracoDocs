@@ -42,7 +42,7 @@ To enable Collection:
 5. Select **List View - Content**.
 6. Click **Save**.
 
-![Configure as a Collection](<../../../.gitbook/assets/configure-collection-v14 (1).png>)
+![Configure as a Collection](../../../.gitbook/assets/configure-collection-v14.png)
 
 7. Click **Save**.
 

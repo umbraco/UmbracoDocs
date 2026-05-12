@@ -12,11 +12,7 @@ The guide will assume you already have IIS configured and know your way around i
 
 First, you need to ensure you have "Development time IIS support installed". To check this, go to the Visual Studio installer, click modify and check on the right side under "ASP.NET and web development":
 
-![Checking the IIS module exists](../../../.gitbook/assets/iis-module.png)
-
 Once that is installed you should set up a new IIS site - and make sure to add the hostname to your hosts file as well. Here is my setup for an example:
-
-![IIS site example](../../../.gitbook/assets/iis-site.png)
 
 {% hint style="info" %}
 For the path you want to point it at the root of your site - where the `.csproj` file is.
@@ -24,7 +20,7 @@ For the path you want to point it at the root of your site - where the `.csproj`
 
 ## Add permissions to NuGet cache folder
 
-You might need to change permissions for the NuGet cache folder - `C:\users\<username>\.nuget\packages`. The user or group (IIS_IUSRS) that the IIS site is running on requires Read permissions on this folder because this is where some of the files for Umbraco and Umbraco packages are being served from during development. If the IIS user or group does not have permission to read from the NuGet cache folder, you could run into a `DirectoryNotFoundException` while running the site.
+You might need to change permissions for the NuGet cache folder - `C:\users\<username>\.nuget\packages`. The user or group (IIS\_IUSRS) that the IIS site is running on requires Read permissions on this folder because this is where some of the files for Umbraco and Umbraco packages are being served from during development. If the IIS user or group does not have permission to read from the NuGet cache folder, you could run into a `DirectoryNotFoundException` while running the site.
 
 When the site is published these files are copied from the NuGet cache folder to `wwwroot/umbraco` and `wwwroot/App_Plugins` and these folders will typically have the correct permissions. For more information on setting permissions, see the [File and folder permissions](../../../run-in-production/infrastructure-and-ops/server-setup/permissions.md) article.
 
@@ -106,8 +102,4 @@ You can add a new profile called IIS, and point it at your local domain. Here it
 
 At this point IIS will be added to the launch profiles, and you can run the site from Visual Studio by choosing IIS in the dropdown:
 
-![Launch profiles](../../../.gitbook/assets/launchprofiles.png)
-
 And finally the site is running from your local IIS:
-
-![Local IIS site](../../../.gitbook/assets/voila.png)
