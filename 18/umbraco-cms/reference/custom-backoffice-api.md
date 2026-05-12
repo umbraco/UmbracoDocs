@@ -1,5 +1,5 @@
 ---
-description: Example of a Custom Backoffice API with Authorization and OpenAPI
+description: Example of a Custom Backoffice API with Authorization and OpenAPI.
 ---
 
 # Custom Backoffice API
@@ -10,7 +10,7 @@ This article covers how to create a Custom API controller protected by the backo
 Before proceeding, make sure to read the [Management API](management-api/) article. It provides information about the OpenAPI documentation and Authorization used in this article.
 {% endhint %}
 
-This example can be a starting point for creating a secure custom API with automatic OpenAPI documentation. You can find other examples in the [API versioning and OpenAPI](api-versioning-and-openapi.md) article.
+The following example can be a starting point for creating a secure custom API with automatic OpenAPI documentation. You can find other examples in the [API versioning and OpenAPI](api-versioning-and-openapi.md) article.
 
 1. Create a composer to register the OpenAPI document so that the new API shows in the OpenAPI documentation and Swagger UI:
 
@@ -79,11 +79,11 @@ public class MyApiController : Controller
 {% endcode %}
 
 3. Run the project and navigate to `{yourdomain}/umbraco/openapi`.
-4. Choose the OpenAPI document we created with the code above named **My API v1** from **Select a definition**.
+4. Choose the OpenAPI document created with the code above named **My API v1** from **Select a definition**.
 
 ![Created Custom API in OpenAPI documentation](../.gitbook/assets/custom-api-swagger-example.png)
 
-Here, we can find the endpoint that we created:
+Here, you can find the endpoint that was created:
 
 ```http
 GET /api/v1/my/say-hello
@@ -95,4 +95,4 @@ GET /api/v1/my/say-hello
 
 ![Trying out the endpoint](../.gitbook/assets/custom-api-swagger-example-response.png)
 
-We now get the response we have set up using the code: `"Hello, <user name>"`.
+You now get the response you have set up using the code: `"Hello, <user name>"`.
