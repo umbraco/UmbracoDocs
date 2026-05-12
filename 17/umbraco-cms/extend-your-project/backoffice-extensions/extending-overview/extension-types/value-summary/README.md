@@ -160,7 +160,7 @@ The resolved result should still be compact. If you are resolving a reference, s
 
 Value Summary can be used with Property Editors to display property values in a Document Collection:
 
-{% content-ref url="../../../property-editors/property-editor-value-summary.md" %}
+{% content-ref url="../../property-editors/property-editor-value-summary.md" %}
 Property Editor Value Summary
 {% endcontent-ref %}
 
