@@ -129,7 +129,7 @@
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
   * [Project History](optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md)
-  * [Availability and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md)
+  * [Traffic and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
   * [Hostname Monitoring](optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
   * [Management API Security](optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
   * [Sustainability Dashboard](optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
