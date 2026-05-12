@@ -30,11 +30,10 @@ Additionally, Umbraco Controllers implement a `getHostElement()` method, which e
 
 A Controller should register itself with a given host. This is handled automatically when extending the `UmbControllerBase` class. The following example demonstrates a controller implementation:
 
-```
-import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+<pre><code>import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
-
-export class MyOwnControllerImplementation extends UmbControllerBase {
+<strong>
+</strong>export class MyOwnControllerImplementation extends UmbControllerBase {
 
     #secondsAlive = 0;
 
@@ -66,7 +65,7 @@ export class MyOwnControllerImplementation extends UmbControllerBase {
         // We do not need to stop the timer in the Destroy method, because the hostDisconnected method is also called if connected and destroyed.
     }
 }
-```
+</code></pre>
 
 If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. Note that manual deregistration is required in this case.
 

@@ -30,7 +30,7 @@ A minimal Extension Manifest looks like this:
 
 These fields are all required and have the following meaning:
 
-* `type` — The type defines the purpose of the extension. Umbraco has many [extension types](../extension-types/) available.
+* `type` — The type defines the purpose of the extension. Umbraco has many [extension types](../extension-types) available.
 * `alias` — Unique identifier for this manifest. Prefix it with something that makes your extension unique. For example: _FictiveCompany.MyProject.Dashboard.Overview_.
 * `name` — Representational name of this manifest. This name does not need to be unique, but this can be beneficial when debugging extensions. This name also shows up in the Extensions Insights in the backoffice of Umbraco. For example: _My Fictive Company Overview Dashboard_.
 
@@ -41,7 +41,7 @@ Most extension types support the use of the following generic features for their
 * `weight` - Define a weight to determine the importance or visual order of this extension. A higher weight gives a more prominent position. For instance, for a dashboard it determines its order between other dashboards.
 * `overwrites` - If you want to omit an existing extension, then define one or more Extension Aliases that this extension should omit when presented. Read more in [Replace, Exclude or Unregister extensions](replace-exclude-or-unregister.md).
 * `conditions` - Define one or more conditions that must pass for the extension to become available. For instance, don't show a section if you don't have the proper rights. Read more in [Extension Conditions](../extension-conditions.md).
-* `kind` - Some extension types can reference a predefined `kind`. By specifying a `kind`, the manifest inherits the `kind`'s properties. This allows for reuse of predefined settings. See [Extension Kind](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/extending-overview/extension-kind.md).
+* `kind` - Some extension types can reference a predefined `kind`. By specifying a `kind`, the manifest inherits the `kind`'s properties. This allows for reuse of predefined settings. See [Extension Kind](../extension-types/kind.md).
 * `meta` - Many Extension Types require additional information declared as part of a `meta` field. It depends on the Extension Type what is required. For instance label and icon of a menu item.
 
 For more information, see an overview of all possible [Extension Types](../extension-types/) and their requirements.

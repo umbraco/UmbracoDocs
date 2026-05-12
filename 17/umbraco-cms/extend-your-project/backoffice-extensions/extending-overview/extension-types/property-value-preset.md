@@ -27,8 +27,8 @@ export const manifest = {
 
 ### Key Properties
 
-* `weight` - Execution order (higher runs first).
-* `forPropertyEditorUiAlias` - Targets specific Property Editor UI.
+- `weight` - Execution order (higher runs first).
+- `forPropertyEditorUiAlias` - Targets specific Property Editor UI.
 
 ## Implementation
 
@@ -66,10 +66,10 @@ Notice that `forPropertyEditorSchemaAlias` only targets the Properties used on t
 
 The `processValue` method takes four arguments:
 
-* `value` - The current value.
-* `UmbPropertyEditorConfig` - The Data Type configuration.
-* `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
-* `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contains details about the property and document.
+- `value` - The current value.
+- `UmbPropertyEditorConfig` - The Data Type configuration.
+- `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
+- `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contains details about the property and document.
 
 The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'preset state' configuration that is used as the value of the Toggle.
 

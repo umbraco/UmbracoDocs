@@ -62,7 +62,7 @@ Discover how to manage and use Backoffice UI localization files to translate you
 
 Learn how to bind and use the validation system when working with Form Controls and custom Property Editors.
 
-### [Sorting](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-cms/customizing/foundation/sorting.md)
+### [Sorting](../utilities/sorting.md)
 
 Create a UI that users can sort via drag and drop functionality.
 

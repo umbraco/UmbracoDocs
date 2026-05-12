@@ -69,8 +69,8 @@ Create a manifest file named `umbraco-package.json` at the root of the `suggesti
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="TypeScript Manifest" %}
+
 Extension authors define the property editor UI manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../backoffice-extensions/extending-overview/extension-types/backoffice-entry-point.md) extension.
 
 Create a manifest file named `manifests.ts` and add the following code:
@@ -145,6 +145,7 @@ declare global {
 * `outDir: 'dist'` so the output lands in `App_Plugins/suggestions/dist/`.
 
 {% code title="vite.config.ts" lineNumbers="true" %}
+
 ```typescript
 	import { defineConfig } from "vite";
 	
