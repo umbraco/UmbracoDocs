@@ -73,7 +73,7 @@ export interface MyCollectionItemModel extends UmbCollectionItemModel {
 
 ### Implementation
 
-Extend `UmbRepositoryBase` and implement `UmbCollectionRepository`. The `requestCollection` method receives a filter object with `skip` and `take` for pagination, and must return `{ data: { items, total } }`. For guidance on making HTTP requests to a server API, see [Fetching Data](../../../../foundation/fetching-data/README.md):
+Extend `UmbRepositoryBase` and implement `UmbCollectionRepository`. The `requestCollection` method receives a filter object with `skip` and `take` for pagination, and must return `{ data: { items, total } }`. For guidance on making HTTP requests to a server API, see [Fetching Data](../../../foundation/fetching-data/README.md):
 
 {% code title="my-collection.repository.ts" %}
 ```typescript
