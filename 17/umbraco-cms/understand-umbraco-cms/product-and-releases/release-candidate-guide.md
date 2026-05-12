@@ -74,7 +74,7 @@ Here is a list of all the new or updated articles in this version.
 
 * [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17)
 * [Date Time Property Editor](../../model-your-content/property-editors/built-in-umbraco-property-editors/date-time-editor/)
-* [`UnattendedTelemetryLevel` Setting](../../get-started/installation/install/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](../../get-started/installation/install/unattended-install.md)
+* [`UnattendedTelemetryLevel` Setting](../../get-started/installation/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](../../get-started/installation/unattended-install.md)
 * [`UnattendedTelemetryLevel` in the Configuration article](../../develop-with-umbraco/configuration/unattendedsettings.md#unattended-telemetry-level)
 * [`GenerateVirtualProperties` option to disable virtual properties](../../develop-with-umbraco/configuration/modelsbuildersettings.md#generate-virtual-properties)
 * [Removed the warning on `Microsoft.EntityFrameworkCore.Design` dependency conflicts](../../extend-your-project/tutorials/getting-started-with-entity-framework-core.md)

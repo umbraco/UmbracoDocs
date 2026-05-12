@@ -10,7 +10,7 @@ To begin this tutorial, download the Custom Umbraco Template folder attached bel
 
 ### Installing Umbraco
 
-To download the latest version of Umbraco, refer to the [Installation article](../../../get-started/installation/install/). On the installation wizard, follow the steps:
+To download the latest version of Umbraco, refer to the [Installation article](../../../get-started/installation/). On the installation wizard, follow the steps:
 
 1.  Enter your **Name**, **Email**, and **Password**.
 

@@ -16,7 +16,7 @@ By the end of this tutorial, you will learn how to:
 
 ## Prerequisites
 
-1. Install the latest [dotnet templates](../../get-started/installation/install/install-umbraco-with-templates.md): `dotnet new install Umbraco.Templates`.
+1. Install the latest [dotnet templates](../../get-started/installation/install-umbraco-with-templates.md): `dotnet new install Umbraco.Templates`.
 2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
 3. Run the project: `dotnet run`
 4. Complete the installer and login to the backoffice.
