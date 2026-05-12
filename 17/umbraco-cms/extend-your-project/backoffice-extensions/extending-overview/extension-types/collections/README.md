@@ -21,4 +21,3 @@ The Collection itself does not render anything. It manages pagination, filtering
 
 * [Collection](collection.md)
 * [Collection View](collection-view/README.md)
-* [Collection Action](collection-action.md)
