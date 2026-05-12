@@ -21,38 +21,7 @@ Use the [general upgrade guide](../) to complete the upgrade of your project.
 
 <summary>Umbraco 18</summary>
 
-**Swashbuckle replaced with Microsoft.AspNetCore.OpenApi**
-
-Umbraco no longer uses Swashbuckle for OpenAPI documentation. It has been replaced with [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview). If you have custom APIs with OpenAPI documentation, you will need to update your code.
-
-You can still use Swashbuckle for your own OpenAPI documents if you prefer, but Umbraco no longer ships or configures it. You are responsible for installing the `Swashbuckle.AspNetCore` NuGet package and wiring it up yourself.
-
-See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article for the new APIs. The main changes you will need to migrate:
-
-- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents). For backoffice APIs, the new `AddBackOfficeOpenApiDocument(name, configure)` builder wires up authentication and Umbraco's conventions in one call — see [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
-- **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
-- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` / `ISchemaIdSelector` / `SchemaIdSelector` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Schema IDs](../../../../reference/api-versioning-and-openapi.md#schema-ids).
-- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` / `IOperationIdSelector` / `OperationIdSelector` have been removed. Use `IOpenApiOperationTransformer`. See [Operation IDs](../../../../reference/api-versioning-and-openapi.md#operation-ids).
-- **Sub-types handlers** — `ISubTypesHandler`, `ISubTypesSelector`, `SubTypesHandler`, and `SubTypesSelector` have been removed. Configure JSON polymorphism through `JsonSerializerOptions` instead.
-- **Document inclusion selector** — `IDocumentInclusionSelector` and `DocumentInclusionSelector` have been removed. Each document now controls its own membership through `ShouldInclude`.
-- **Enum schema filter** — `EnumSchemaFilter` has been removed. Enum serialization is now driven by the document's `JsonOptions`.
-- **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
-- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [Route and availability](../../../../reference/api-versioning-and-openapi.md#route-and-availability).
-- **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Controlling which endpoints appear in your document](../../../../reference/api-versioning-and-openapi.md#controlling-which-endpoints-appear-in-your-document).
-- **OpenAPI spec version** — generated documents now use OpenAPI 3.1 instead of 3.0. Regenerated client SDKs may differ — verify your generator supports OpenAPI 3.1.
-
-{% hint style="info" %}
-The OAuth client ID for the OpenAPI UI remains `umbraco-swagger` for backwards compatibility with existing entries in `umbracoOpenIddictApplications`. No action needed when upgrading.
-{% endhint %}
-
-*OpenAPI URL changes*
-
-The OpenAPI endpoints have been renamed from `swagger` to `openapi` to follow Microsoft's naming conventions:
-
-| Old URL | New URL |
-|---------|---------|
-| `/umbraco/swagger` | `/umbraco/openapi` |
-| `/umbraco/swagger/{documentName}/swagger.json` | `/umbraco/openapi/{documentName}.json` |
+*Add details about breaking changes in Umbraco 18 here.*
 
 </details>
 
@@ -484,7 +453,7 @@ This configuration will no longer have an effect.
 
 Notifications have changed their behavior to an extent. You can still implement notifications such as `ContentSavingNotification` to react to changes for related systems or add messages to be shown in the Backoffice. You can no longer modify the models being transferred through the API.
 
-If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-backoffice-api) and even learn how to register your controllers in Swagger UI.
+If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
 
 * **Property editors have been split in two**
 
