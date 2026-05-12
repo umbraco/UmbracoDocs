@@ -8,6 +8,8 @@ description: Get an overview of the release notes for each month in 2026.
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname, so visitors see your own page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Baseline enhancements** - Baseline update UI state is restored when an update is running.
+* **Baseline enhancements** - An activity starts on the Baseline project during the creation of a child project.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 * **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
 * **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.

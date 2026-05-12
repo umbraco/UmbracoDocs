@@ -4,6 +4,8 @@
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname. Visitors see your page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Baseline enhancements** - Baseline update UI state is restored when an update is running.
+* **Baseline enhancements** - An activity starts on the Baseline project during the creation of a child project.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 * **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
 * **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.
@@ -26,6 +28,10 @@ For authoring guidelines and a ready-to-use HTML template, see the [Error Pages]
 ## Baseline enhancements
 
 Pushing a baseline update to child projects will trigger an activity on the baseline project. The activity is non-blocking, but will run until all children are updated.
+
+The UI restores the current state of a running Baseline update when you navigate back to or refresh the **Manage child projects** page. This helps you track update progress, especially for large batches.
+
+When creating a new child project from a baseline, a non-blocking activity starts on the baseline. The activity is available on the **Project history** page for later review, for instance in case of a failed creation.
 
 ## Basic Authentication for all plans
 
