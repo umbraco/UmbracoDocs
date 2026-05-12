@@ -1,5 +1,5 @@
 ---
-description: Adding a dedicated OpenAPI document for custom Management API controllers
+description: Adding a dedicated OpenAPI document for custom Management API controllers.
 ---
 
 # Adding a custom OpenAPI document
