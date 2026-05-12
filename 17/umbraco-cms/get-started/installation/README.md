@@ -6,6 +6,7 @@ description: Instructions on installing Umbraco on various platforms using vario
 
 {% hint style="warning" %}
 **Before you begin**
+
 Ensure your environment meets the [System Requirements](requirements.md). You must have the latest [.NET SDK](https://dotnet.microsoft.com/download) installed and a compatible database ready.
 {% endhint %}
 
