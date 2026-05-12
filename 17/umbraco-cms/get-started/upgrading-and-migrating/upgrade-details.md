@@ -2,7 +2,7 @@
 description: Describes how to upgrade existing installations to new versions.
 ---
 
-# Upgrade Details
+# Upgrade Your Project
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 

@@ -10,7 +10,7 @@ The Umbraco CMS codebase comes with a set of customization examples and a way to
 
 ## Get Started
 
-1. Clone the source code from [https://github.com/umbraco/Umbraco-CMS/](https://github.com/umbraco/Umbraco-CMS/).
+1. Clone the source code from [Umbraco-CMS GitHub repository](https://github.com/umbraco/Umbraco-CMS/).
 2. Make sure you have **npm** installed.
 3. Open a terminal and navigate to `src/Umbraco.Web.UI.Client` .
 4. Run the command: `npm install` .
@@ -28,4 +28,3 @@ To create a new example, follow these steps:
 1. Create a new folder with a name of your choice in the `examples/` folder.
 2. Add an `index.ts` file that exports an array of manifests as the default export (See the other examples if in doubt).
 3. Run your example using the command listed above in [Run an example](examples-and-playground.md#run-an-example).
-

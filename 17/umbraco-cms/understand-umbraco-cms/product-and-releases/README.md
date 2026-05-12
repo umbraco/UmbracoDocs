@@ -12,7 +12,7 @@ Find the latest release information, test upcoming versions, or browse older doc
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Release Notes</td><td><a href="https://releases.umbraco.com/all-releases/">https://releases.umbraco.com/all-releases/</a></td></tr><tr><td>Legacy Documentation</td><td><a href="legacy-documentation/">legacy-documentation</a></td></tr></tbody></table>
 
-### What you will find
+## In this section
 
 * Current release information and release history.
 * Guidance for testing the latest release candidate.

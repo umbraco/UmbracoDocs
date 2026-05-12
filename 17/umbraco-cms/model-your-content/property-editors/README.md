@@ -17,6 +17,8 @@ These Property Editors were removed in Umbraco version 14:
 Use the [Block Editor](built-in-umbraco-property-editors/block-editor/) or [Rich Text Editor blocks](built-in-umbraco-property-editors/rich-text-editor/blocks.md) instead.
 {% endhint %}
 
+## In this section
+
 * [Built-in Property Editors](built-in-umbraco-property-editors/README.md) - the full list of Property Editors that ship with Umbraco.
 * [Umbraco Flavored Markdown](umbraco-flavored-markdown.md) - a Markdown dialect with Umbraco-specific extensions for rich content editing.
 

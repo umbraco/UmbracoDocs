@@ -141,23 +141,23 @@ Template options:
 
 ## Create an Umbraco project
 
-1. Create a new empty Umbraco solution:\
+1. Create a new empty Umbraco solution:
    `dotnet new umbraco -n MyCustomUmbracoProject`
 
 You will now have a new project with the name _MyCustomUmbracoProject_, or the name you chose to use. The new project can be opened and run using your favorite IDE or you can continue using the CLI commands.
 
 {% hint style="info" %}
-If you want to create a solution file as well you can run the commands below.\
-`dotnet new sln`\
+If you want to create a solution file as well you can run the commands below.
+`dotnet new sln`
 `dotnet sln add MyCustomUmbracoProject`
 {% endhint %}
 
 ## Run Umbraco
 
-1. Navigate to the newly created project folder:\
+1. Navigate to the newly created project folder:
    `cd MyCustomUmbracoProject`
-2. Build and run the new Umbraco .Net Core project:\
-   `dotnet build`\
+2. Build and run the new Umbraco .Net Core project:
+   `dotnet build`
    `dotnet run`
 
 The project is now running on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0\&tabs=windows#kestrel) and has assigned a free available port to run it on. Look in the terminal window after the `dotnet run` command to see the URLs.
