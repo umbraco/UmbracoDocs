@@ -417,6 +417,7 @@
     * [Integrate Property Editors](extend-your-project/backoffice-extensions/property-editors/integrate-property-editors.md)
     * [Tracking References](extend-your-project/backoffice-extensions/property-editors/tracking.md)
     * [Property Dataset](extend-your-project/backoffice-extensions/property-editors/property-dataset.md)
+    * [Property Editor Value Summary](extend-your-project/backoffice-extensions/property-editors/property-editor-value-summary.md)
     * [Sortable Property Values](extend-your-project/backoffice-extensions/property-editors/property-editor-sortable-values.md)
   * [Utilities](extend-your-project/backoffice-extensions/utilities/README.md)
     * [Modals](extend-your-project/backoffice-extensions/utilities/modals/README.md)
