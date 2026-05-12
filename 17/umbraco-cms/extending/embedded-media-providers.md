@@ -65,13 +65,13 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
     public override string ApiEndpoint => "https://backend.deviantart.com/oembed?url=";
 
     public override string[] UrlSchemeRegex =>
-    {
+    [
         @"fav\.me/*",
         @"\w+\.deviantart.com\/\w+\/art\/*",
         @"\w+\.deviantart.com\/art\/*",
         @"sta\.sh/*",
         @"\w+\.deviantart.com\/\w+#\/d*"
-    };
+    ];
 
     public override Dictionary<string, string> RequestParams => [];
 
