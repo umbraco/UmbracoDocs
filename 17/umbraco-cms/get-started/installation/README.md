@@ -65,11 +65,11 @@ Choose the path that best fits your development environment and workflow.
 
 | Method | Best For | Description |
 | :--- | :--- | :--- |
-| **[.NET CLI installation](install/install-umbraco-with-templates.md)** | All Platforms / Power Users | Detailed CLI commands for managing templates, custom project bootstrapping, and advanced NuGet options. |
-| **[Visual Studio](install/visual-studio.md)** | Windows / Full IDE | The standard wizard-based setup for developers who prefer a full IDE experience on Windows. |
-| **[Visual Studio Code](install/install-umbraco-with-vs-code.md)** | Lightweight / Cross-platform | A streamlined setup for developers using Visual Studio Code on macOS, Linux, or Windows. |
-| **[Docker Compose](install/running-umbraco-on-docker-locally.md)** | Containerization | Spin up Umbraco and its database dependencies quickly in a consistent, isolated environment. |
-| **[IIS & Local Hosting](install/iis.md)** | Windows Server | Guidance for hosting and running your local installation on Internet Information Services. |
-| **[Linux / macOS](install/running-umbraco-on-linux-macos.md)** | Unix-based Native | Specific environment configurations and steps for running Umbraco natively on non-Windows systems. |
-| **[Unattended Install](install/unattended-install.md)** | Automation & CI/CD | An automation-friendly setup—ideal for Azure Web Apps, build pipelines, and rapid deployments. |
-| **[Nightly Builds](install/installing-nightly-builds.md)** | Early Adopters | Get early access to the latest "bleeding edge" features and fixes before the official release. |
+| **[.NET CLI installation](install-umbraco-with-templates.md)** | All Platforms / Power Users | Detailed CLI commands for managing templates, custom project bootstrapping, and advanced NuGet options. |
+| **[Visual Studio](visual-studio.md)** | Windows / Full IDE | The standard wizard-based setup for developers who prefer a full IDE experience on Windows. |
+| **[Visual Studio Code](install-umbraco-with-vs-code.md)** | Lightweight / Cross-platform | A streamlined setup for developers using Visual Studio Code on macOS, Linux, or Windows. |
+| **[Docker Compose](running-umbraco-on-docker-locally.md)** | Containerization | Spin up Umbraco and its database dependencies quickly in a consistent, isolated environment. |
+| **[IIS & Local Hosting](iis.md)** | Windows Server | Guidance for hosting and running your local installation on Internet Information Services. |
+| **[Linux / macOS](running-umbraco-on-linux-macos.md)** | Unix-based Native | Specific environment configurations and steps for running Umbraco natively on non-Windows systems. |
+| **[Unattended Install](unattended-install.md)** | Automation & CI/CD | An automation-friendly setup—ideal for Azure Web Apps, build pipelines, and rapid deployments. |
+| **[Nightly Builds](installing-nightly-builds.md)** | Early Adopters | Get early access to the latest "bleeding edge" features and fixes before the official release. |
