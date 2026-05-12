@@ -52,10 +52,5 @@ For property editors, always use the schema alias as the key. See [Property Edit
 
 Value types are used across several extension points:
 
-{% content-ref url="extending-overview/extension-types/value-summary/README.md" %}
-Value Summary
-{% endcontent-ref %}
-
-{% content-ref url="../../property-editors/property-editor-value-summary.md" %}
-Property Editor Value Summary
-{% endcontent-ref %}
+{% content-ref url="value-summary/README.md" %}{% endcontent-ref %}
+{% content-ref url="../../property-editors/property-editor-value-summary.md" %}{% endcontent-ref %}
