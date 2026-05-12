@@ -364,7 +364,7 @@
         * [Workspace Footer Apps](extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-footer-apps.md)
         * [Workspace Views](extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-views.md)
       * [Collections](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/README.md)
-        * [Collection](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collction.md)
+        * [Collection](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection.md)
         * [Collection View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/README.md)
           * [Table View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/table.md)
           * [Card View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/card.md)
