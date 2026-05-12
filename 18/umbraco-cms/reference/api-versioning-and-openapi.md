@@ -4,7 +4,7 @@ description: How to use API versioning and OpenAPI for your own APIs.
 
 # API versioning and OpenAPI
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document its APIs. Out of the box you get the following OpenAPI documents:
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document its APIs. Out of the box, you get the following OpenAPI documents:
 
 - **Management** — the backoffice Management API.
 - **Delivery** — the Content Delivery API. Only present when the Delivery API is enabled.
@@ -98,7 +98,7 @@ public class MyDoSomethingViewModel
 
 Set `ShouldInclude` on your document to control which endpoints appear in it. The example above filters by namespace.
 
-You can also filter by the `[MapToApi]` attribute — this is how the [`AddBackOfficeOpenApiDocument`](custom-backoffice-api.md) builder filters by default. The attribute is optional — controllers only need it when your `ShouldInclude` predicate checks for it.
+You can also filter by the `[MapToApi]` attribute. This is how the [`AddBackOfficeOpenApiDocument`](custom-backoffice-api.md) builder filters by default. The attribute is optional — controllers only need it when your `ShouldInclude` predicate checks for it.
 
 ```csharp
 using Umbraco.Cms.Api.Common.Attributes;
@@ -238,7 +238,7 @@ builder.Services.AddOpenApi("my-api", options =>
 {% endcode %}
 
 {% hint style="info" %}
-`CreateSchemaReferenceId` is called for all types in the document - including .NET framework types. The namespace check ensures you only customize schema IDs for your own types. The fallback uses ASP.NET Core's default schema ID generator. If you want to use Umbraco's naming conventions (which adds a "Model" suffix), you can use `UmbracoSchemaIdGenerator.Generate(jsonTypeInfo.Type)` from the `Umbraco.Cms.Api.Common.OpenApi` namespace.
+`CreateSchemaReferenceId` is called for all types in the document, including .NET Framework types. The namespace check ensures you only customize schema IDs for your own types. The fallback uses ASP.NET Core's default schema ID generator. If you want to use Umbraco's naming conventions (which adds a "Model" suffix), you can use `UmbracoSchemaIdGenerator.Generate(jsonTypeInfo.Type)` from the `Umbraco.Cms.Api.Common.OpenApi` namespace.
 {% endhint %}
 
 {% hint style="info" %}
@@ -251,7 +251,7 @@ Returning `null` from `CreateSchemaReferenceId` will inline the schema instead o
 
 A common use case for custom OpenAPI documents is maintaining multiple versions of the same API, with one OpenAPI document per version.
 
-The following code sample creates two OpenAPI documents - "My API v1" and "My API v2". Each document uses `ShouldInclude` to filter controllers by their namespace:
+The following code sample creates two OpenAPI documents: "My API v1" and "My API v2". Each document uses `ShouldInclude` to filter controllers by their namespace:
 
 {% code title="Program.cs" %}
 
