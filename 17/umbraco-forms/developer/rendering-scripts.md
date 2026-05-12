@@ -92,5 +92,5 @@ To enable `ExcludeScripts`:
     ```
 
 {% hint style="info" %}
-`ExcludeScripts = "1"` prevents the associated scripts from being rendered. Any other value, an empty value, or if the parameter is excluded, will render the scripts on the Form.
+`includeScripts = false` prevents the associated scripts from being rendered. Any other value, an empty value, or if the parameter is excluded, will render the scripts on the Form.
 {% endhint %}
