@@ -4,7 +4,7 @@ description: A guide to creating a custom Value Summary in Umbraco. Use it to re
 
 # Value Summary
 
-The `valueSummary` extension controls how a value appear in compact space like a table column. The purpose is to surface the most meaningful parts of the value so users can scan and compare at a glance.
+The `valueSummary` extension controls how a value appear in a compact space like a table column. The purpose is to surface the most meaningful parts of the value so users can scan and compare at a glance.
 
 With a Value Summary, you control the presentation: a date formatted for the user's locale, a status code shown as a colored badge, or a stored reference resolved to a name. Without a registered summary, raw values appear as plain text.
 
