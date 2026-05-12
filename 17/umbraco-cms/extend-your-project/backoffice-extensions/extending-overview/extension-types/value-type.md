@@ -24,11 +24,13 @@ When none of the built-in types describe your data, define your own. Declare a c
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
+export type MyStatusValue = 'active' | 'inactive' | 'pending';
+
 export const MY_STATUS_VALUE_TYPE = 'My.ValueType.Status' as const;
 
 declare global {
   interface UmbValueTypeMap {
-    [MY_STATUS_VALUE_TYPE]: string;
+    [MY_STATUS_VALUE_TYPE]: MyStatusValue;
   }
 }
 ```
@@ -42,7 +44,7 @@ Follow the pattern that matches your use case:
 
 | Category | Pattern | Example |
 |---|---|---|
-| Primitive or simple value | `My.ValueType.{Type}` | `My.ValueType.Status` |
+| Primitive or basic value | `My.ValueType.{Type}` | `My.ValueType.Status` |
 | Domain — reference shapes | `My.ValueType.{Entity}.{Shape}` | `My.ValueType.Category.References` |
 | Property editor | Property editor schema alias | `My.PropertyEditor.Alias` |
 
@@ -50,7 +52,7 @@ For property editors, always use the schema alias as the key. See [Property Edit
 
 ## Use cases
 
-Value types are used across several extension points:
+Value types are used in these extension points:
 
 {% content-ref url="value-summary/README.md" %}{% endcontent-ref %}
 {% content-ref url="../../property-editors/property-editor-value-summary.md" %}{% endcontent-ref %}

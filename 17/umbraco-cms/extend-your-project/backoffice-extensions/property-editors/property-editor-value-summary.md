@@ -4,7 +4,7 @@ description: A guide to adding a Value Summary to a custom Property Editor in Um
 
 # Property Editor Value Summary
 
-When Documents are displayed in a collection, the backoffice shows each property's value in a compact table column. By default, raw values appear as plain text. Registering a [Value Summary](../extending-overview/extension-types/value-summary/README.md) for your Property Editor lets you control how that value is presented — a formatted date, a color swatch, a tag — without any configuration in the collection itself.
+When Documents are displayed in a collection, the backoffice shows each property's value in a compact table column. By default, raw values appear as plain text. Register a [Value Summary](../extending-overview/extension-types/value-summary/README.md) for your Property Editor to control how that value is presented. You can show a formatted date, a color swatch, or a tag — without any configuration in the collection itself.
 
 The Document Collection receives the Editor Alias from the server for each property and uses it to look up the correct summary. This means the Value Type key for a Property Editor must match the schema alias exactly.
 
