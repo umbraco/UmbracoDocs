@@ -32,6 +32,7 @@ The names shown in parentheses, for example, `(content)` or `(media)` refer to t
 - [Public Access (`public-access`)](#public-access-public-access)
 - [Content Notifications (`notifications`)](#content-notifications-notifications)
 - [Recycle Bin (`recycle-bin`)](#recycle-bin-recycle-bin)
+- [Account (`account`)](#account-account)
 
 ## Content (`content`)
 
@@ -44,13 +45,20 @@ Search, browse, and manage content pages.
 - `get-document-type` — Get the full schema for a Document Type, including the list of editable properties (alias, name, description). Use before `edit-page` or `save-and-publish` to discover which property aliases can be set.
 - `inspect-blocks` — Inspect the block structure of a content page. Shows each block's type, unique key, and property values. Use this before `edit-block` to understand how content is structured.
 - `report-page-references` — List all items that reference a content page — for example, other pages with content pickers, rich-text links, or multi-node-tree-picker values pointing at it. Use before `delete-page` to understand the impact.
+- `list-page-templates` — List the templates a page can use. Returns the current template, the Document Type's default template, and every allowed template with `isDefault`/`isCurrent` flags. Use before `set-page-template`.
+- `get-property-value-template` — Get the expected JSON value shape for a non-block structured property editor — for example, `Umbraco.MediaPicker3`, `Umbraco.MultiNodeTreePicker`, `Umbraco.ImageCropper`, or `Umbraco.DateTime`. Use before `edit-page`, `create-page`, `bulk-set-property`, or when composing inner-block values for `edit-block` and the `add-*-block` tools. Omit the editor alias to list every available editor.
 - `create-page` — Create a new content page as a draft. The page will not be published automatically. Call `list-document-types` first to find a valid Document Type ID.
 - `duplicate-page` — Duplicate a content page (and optionally all its descendants) to a new location. The copy is created as a draft named `Original Name (N)`. Returns the new page ID for follow-up edits.
+- `add-blocklist-block` — Add a new block to a BlockList property on a page. Use `inspect-blocks` first to find the property alias and a sample content type key. For non-string values inside the block, call `get-property-value-template` first to discover the expected JSON shape. Changes are saved as a draft, not published.
+- `add-blockgrid-block` — Add a new block to a BlockGrid property on a page. Supports `rowSpan`/`columnSpan` and inserting into a named area on a parent block. Use `inspect-blocks` first to find the property alias and a sample content type key. Changes are saved as a draft, not published.
+- `add-rte-block` — Add a new block inside a Rich Text property on a page. Inserts the `umb-rte-block` tag in the markup and adds the matching content/settings entries. Use `inspect-blocks` first to find the property alias and a sample content type key. Changes are saved as a draft, not published.
 - `edit-page` — Update specific fields on a content page. Changes are saved but not published. Call `get-page` first to discover valid property aliases.
 - `edit-block` — Update properties within a specific block (BlockList, BlockGrid, or Rich Text block). Use `inspect-blocks` first to find the property alias and content key.
 - `sort-children` — Reorder child pages under a parent (or at the content root) by specifying their new sort-order values. Use `list-children` to discover the current order first.
+- `set-page-template` — Switch the template (rendering layout) of a page. Pass a `templateId` from the Document Type's allowed templates, or `null` to clear back to the default. Changes are saved but not published — the live page keeps the old template until you publish.
 - `restore-page` — Restore a content page from the recycle bin. Optionally specify a parent page ID, otherwise it restores to the content root.
 - `delete-page` — Move a content page to the recycle bin. The page can be restored later if needed.
+- `delete-block` — Remove a single block from a BlockList, BlockGrid, or Rich Text property on a page. Supply the page ID, property alias, and block content key — use `inspect-blocks` first to find these. The change is saved as a draft, not published.
 
 ## Publishing (`publishing`)
 
@@ -234,3 +242,9 @@ List the content or media recycle bin and permanently delete items or empty the 
 - `list-recycle-bin` — List items in the content or media recycle bin. Returns one level at a time — when a trashed item has `hasChildren: true` it is a trashed folder; pass its ID as `parentId` on a follow-up call to drill into its contents.
 - `permanent-delete-recycle-bin-item` — Permanently delete a single item from the content or media recycle bin. Deleting a trashed folder deletes its entire subtree. This cannot be undone. Always asks for confirmation with an itemized preview before deleting.
 - `empty-recycle-bin` — Empty the entire content or media recycle bin — permanently deletes every trashed item including the contents of any trashed folders. This cannot be undone. Always asks for two successive confirmations before executing.
+
+## Account (`account`)
+
+Identify the Umbraco backoffice user this MCP server is authenticated as.
+
+- `get-current-user` — Identify which Umbraco backoffice user the MCP server is authenticated as. Returns the user's name, email, admin flag, and resolved user-group names. Use to confirm identity when permissions behave unexpectedly — for example, when an action fails or returns different data than expected — before assuming the API is broken.
