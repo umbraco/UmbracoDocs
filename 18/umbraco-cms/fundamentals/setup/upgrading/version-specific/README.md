@@ -43,13 +43,21 @@ You can still use Swashbuckle for your own OpenAPI documents if you prefer, but 
 
 See the [API versioning and OpenAPI](../../../../reference/api-versioning-and-openapi.md) article for the new APIs. The main changes you will need to migrate:
 
-- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
+- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../../reference/api-versioning-and-openapi.md#adding-your-own-openapi-documents). For backoffice APIs, the new `AddBackOfficeOpenApiDocument(name, configure)` builder wires up authentication and Umbraco's conventions in one call — see [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
 - **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../../reference/custom-backoffice-api.md).
-- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Adding custom schema IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-schema-ids).
-- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` have been removed. Use `IOpenApiOperationTransformer`. See [Adding custom operation IDs](../../../../reference/api-versioning-and-openapi.md#adding-custom-operation-ids).
+- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` / `ISchemaIdSelector` / `SchemaIdSelector` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Schema IDs](../../../../reference/api-versioning-and-openapi.md#schema-ids).
+- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` / `IOperationIdSelector` / `OperationIdSelector` have been removed. Use `IOpenApiOperationTransformer`. See [Operation IDs](../../../../reference/api-versioning-and-openapi.md#operation-ids).
+- **Sub-types handlers** — `ISubTypesHandler`, `ISubTypesSelector`, `SubTypesHandler`, and `SubTypesSelector` have been removed. Configure JSON polymorphism through `JsonSerializerOptions` instead.
+- **Document inclusion selector** — `IDocumentInclusionSelector` and `DocumentInclusionSelector` have been removed. Each document now controls its own membership through `ShouldInclude`.
+- **Enum schema filter** — `EnumSchemaFilter` has been removed. Enum serialization is now driven by the document's `JsonOptions`.
 - **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../../reference/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
-- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [OpenAPI route and/or availability](../../../../reference/api-versioning-and-openapi.md#openapi-route-andor-availability).
-- **Filtering custom OpenAPI documents** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Including endpoints in a custom OpenAPI document](../../../../reference/api-versioning-and-openapi.md#including-endpoints-in-a-custom-openapi-document).
+- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [Route and availability](../../../../reference/api-versioning-and-openapi.md#route-and-availability).
+- **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Controlling which endpoints appear in your document](../../../../reference/api-versioning-and-openapi.md#controlling-which-endpoints-appear-in-your-document).
+- **OpenAPI spec version** — generated documents now use OpenAPI 3.1 instead of 3.0. Regenerated client SDKs may differ — verify your generator supports OpenAPI 3.1.
+
+{% hint style="info" %}
+The OAuth client ID for the OpenAPI UI remains `umbraco-swagger` for backwards compatibility with existing entries in `umbracoOpenIddictApplications`. No action needed when upgrading.
+{% endhint %}
 
 *OpenAPI URL changes*
 
