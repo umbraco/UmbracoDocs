@@ -17,8 +17,6 @@ redirects:
     customizing/foundation/working-with-data/repositories: customizing/foundation/repositories.md
     customizing/foundation/working-with-data/states: customizing/foundation/states.md
     customizing/foundation/working-with-data/store: customizing/foundation/README.md
-    fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/blocks: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
-    tutorials/creating-a-custom-dashboard: tutorials/creating-a-custom-dashboard/README.md
     extending/property-editors/declaring-your-property-editor: tutorials/creating-a-property-editor/README.md
     reference/management/services/create-a-new-user: reference/management/using-services/userservice.md
     reference/management/services/auditservice: reference/management/README.md
@@ -148,13 +146,11 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/date-time-editor/README.md
     customizing/extending-overview/extension-types/workspaces/workspace-action-menu-item: customizing/extending-overview/extension-types/workspaces/workspace-action-menu-items.md
     customizing/extending-overview/extension-types/workspaces/workspace-footer-app: customizing/extending-overview/extension-types/workspaces/workspace-footer-apps.md
-    customizing/foundation/repositories: customizing/foundation/repositories/README.md
     customizing/extending-overview/extension-kind: customizing/extending-overview/extension-types/kind.md
     customizing/foundation/sorting: customizing/utilities/sorting.md
     customizing/extending-overview/extension-types/modals/confirm-dialog: customizing/utilities/modals/confirm-dialog.md
     customizing/searchable-trees: customizing/overview.md
     customizing/section-trees: customizing/overview.md
-    customizing/extending-overview/extension-types/tree: customizing/extending-overview/extension-types/tree/README.md
     customizing/extending-overview/extension-types/tree-item: customizing/extending-overview/extension-types/tree/README.md
     customizing/extending-overview/extension-types/stores-and-repositories/tree-store: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/foundation/repositories/repository-types/tree-repository.md: customizing/extending-overview/extension-types/tree/tree-repository.md
@@ -495,7 +491,6 @@ redirects:
     reference/templating/mvc/viewcomponents: develop-with-umbraco/templating-and-rendering/templating/mvc/viewcomponents.md
     reference/templating/mvc/querying: develop-with-umbraco/templating-and-rendering/querying/README.md
     reference/templating/mvc/forms: develop-with-umbraco/templating-and-rendering/templating/mvc/forms.md
-    reference/templating/macros: develop-with-umbraco/templating-and-rendering/README.md
     reference/querying: develop-with-umbraco/templating-and-rendering/querying/README.md
     reference/querying/imembermanager: develop-with-umbraco/templating-and-rendering/querying/imembermanager.md
     reference/querying/ipublishedcontentquery: develop-with-umbraco/templating-and-rendering/querying/ipublishedcontentquery.md
