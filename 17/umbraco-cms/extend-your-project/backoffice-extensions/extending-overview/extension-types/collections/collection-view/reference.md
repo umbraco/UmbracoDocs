@@ -2,16 +2,9 @@
 
 When you want to display entities as a list of references within a collection, use the Reference Collection View Kind. This will render a basic list layout. Each item renders a default layout with the entity's name and icon. You can further customize the item layout by registering a custom Ref Collection Item when needed.
 
-The default Collection Item Model used in a Reference Collection View is based on the following interface:
+The Reference Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
 
-```typescript
-export interface UmbCollectionItemModel {
-  unique: string;
-  entityType: string;
-  name?: string;
-  icon?: string;
-}
-```
+Each item renders fields from your collection item model. For details on defining and extending the item model, see [Collection](../collection.md#item-model).
 
 Register the Reference Collection View in the extension registry with the kind set to "ref":
 
