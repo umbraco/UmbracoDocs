@@ -4,7 +4,7 @@ description: A guide to defining a custom Value Type in Umbraco.
 
 # Value Type
 
-In an extensible system, different parts of the codebase need to agree on what kind of data they are working with. A value type is the contract that makes this possible — a named string constant that identifies the kind of data a value holds. Define one and you get compile-time autocomplete and type checking wherever value type keys are accepted across the system.
+In an extensible system, different parts of the codebase need to agree on what kind of data they are working with. A value type is the contract that makes this possible — a named string constant that identifies the kind of data a value holds. Define one and you get compile-time autocomplete and type checking wherever value type keys are accepted across the system. [Value Summary](value-summary/README.md) extensions are one example of where value types are used to match a value to the right renderer.
 
 ## Built-in types
 
@@ -20,7 +20,7 @@ If your data matches one of these, you can use the constant directly without def
 
 ## Defining a value type
 
-When none of the built-in types describe your data, define your own. Declare a constant with `as const` and extend the global `UmbValueTypeMap` interface in the same file. The TypeScript type you assign is the type of the raw value:
+When none of the built-in types describe your data, define your own. Declare a constant with `as const` and extend the global `UmbValueTypeMap` interface in the same file. The TypeScript type you assign is the shape of the data this value type represents:
 
 {% code title="my-feature/value-type/constants.ts" %}
 ```typescript
@@ -42,9 +42,11 @@ Follow the pattern that matches your use case:
 
 | Category | Pattern | Example |
 |---|---|---|
-| System / primitive | `Umb.ValueType.{Type}` | `Umb.ValueType.DateTime` |
-| Domain — reference shapes | `Umb.ValueType.{Entity}.{Shape}` | `Umb.ValueType.Tag.References` |
-| Property editor | Property editor schema alias | `My.PropertyEditor.RichText` |
+| Primitive or simple value | `My.ValueType.{Type}` | `My.ValueType.Status` |
+| Domain — reference shapes | `My.ValueType.{Entity}.{Shape}` | `My.ValueType.Category.References` |
+| Property editor | Property editor schema alias | `My.PropertyEditor.Alias` |
+
+For property editors, always use the schema alias as the key. See [Property Editor Value Summary](../../property-editors/property-editor-value-summary.md) for details on why.
 
 ## Use cases
 
