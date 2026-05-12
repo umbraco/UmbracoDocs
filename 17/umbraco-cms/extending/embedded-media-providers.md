@@ -75,11 +75,6 @@ public class DeviantArtEmbedProvider : OEmbedProviderBase
 
     public override Dictionary<string, string> RequestParams => [];
 
-    public override string? GetMarkup(string url, int maxWidth = 0, int maxHeight = 0)
-    {
-        return GeOEmbedDataAsync(url, maxWidth, maxHeight, CancellationToken.None).GetAwaiter().GetResult();
-    }
-
     public override async Task<string?> GetMarkupAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
     {
         var requestUrl = base.GetEmbedProviderUrl(url, maxWidth, maxHeight);
