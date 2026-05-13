@@ -6,6 +6,28 @@ description: >-
 
 # Major Upgrades
 
+A major Umbraco upgrade is more involved than a minor or patch update. Customers who attempt it without understanding the full process often encounter unexpected site downtime. Read this article before touching any environment.
+
+## Why major upgrades are different
+
+A major upgrade involves a database schema migration, the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process. Once migrated locally push the changes back to Cloud.
+
+## High-level Overview
+
+Before reading the detailed steps, understand the overall flow for a project with different environments. For this article, the environments are called Dev, Staging, and Live but it could be any enviroment
+
+1. Upgrade the Dev environment by cloning it locally, running the upgrade, and pushing the upgraded
+code back up.
+2. Deploy to Staging — the code will deploy but the database migration may not complete
+automatically. This is expected behaviour, not a bug.
+3. Perform the Staging database migration locally by cloning Staging, connecting to its cloud
+database via a connection string, and running the project locally. Your local machine performs the
+migration against the cloud database.
+4. Validate Staging thoroughly. Move your custom hostnames from Live to Staging so you can test on
+real traffic while Live remains untouched.
+5. Repeat the same local database migration process for Live.
+6. Move hostnames back to Live. All environments are now upgraded.
+
 {% hint style="info" %}
 **Are you using custom packages or code on your Umbraco Cloud project?**
 
