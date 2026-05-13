@@ -30,6 +30,7 @@ Use the table below to determine which .NET version to upgrade to when going thr
 
 | CMS version | .NET version |
 | ----------- | ------------ |
+| 18          | 10.0         |
 | 17          | 10.0         |
 | 16          | 9.0          |
 | 15          | 9.0          |
