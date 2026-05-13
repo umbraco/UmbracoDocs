@@ -84,6 +84,24 @@ You might run into issues when using a period in the product name when using env
 
 {% endhint %}
 
+{% hint style="info" %}
+For version 14 and above, if you are using Umbraco Deploy and Umbraco Forms on Umbraco Cloud, you can use `UMBRACO-CLOUD` as the license key.
+
+```json
+{
+  "Umbraco": {
+    "Licenses": {
+      "Products": {
+        "Umbraco.Deploy": "UMBRACO-CLOUD",
+        "Umbraco.Forms": "UMBRACO-CLOUD"
+      }
+    }
+  }
+}
+```
+
+{% endhint %}
+
 ## Verifying the License Installation
 
 You can verify that your license is successfully installed by logging into your project's backoffice:
