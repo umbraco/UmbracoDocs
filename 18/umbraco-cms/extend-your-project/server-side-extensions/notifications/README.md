@@ -195,11 +195,11 @@ Below you can find a list of the most common FileService object notifications.
 
 <details>
 
-<summary><strong>LocalizationService</strong> Notifications</summary>
+<summary><strong>Language and Dictionary Item</strong> Notifications</summary>
 
-The LocalizationService class implements ILocalizationService. It provides access to operations involving Language and DictionaryItem.
+The `ILanguageService` and `IDictionaryItemService` services provide access to operations involving Language and DictionaryItem.
 
-Below you can find a list of the most common LocalizationService object notifications.
+Below you can find a list of the most common language and dictionary item notifications.
 
 * [LanguageSavingNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavingNotification.html)
 * [LanguageSavedNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.LanguageSavedNotification.html)
