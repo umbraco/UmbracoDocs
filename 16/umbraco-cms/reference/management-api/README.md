@@ -20,7 +20,7 @@ Umbraco ships with Swagger to document the Management API. Swagger and the Swagg
 
 The Swagger documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. If you are extending the Management API with your own controllers, you can also create custom documentation for these in Swagger. See [Custom Swagger API](../custom-swagger-api.md) and [Creating a backoffice API](../../tutorials/creating-a-backoffice-api/) articles for details.
 
-![Umbraco Management API documentation in Swagger](../images/management-api-swagger.png)
+![Umbraco Management API documentation in Swagger](../../.gitbook/assets/management-api-swagger.png)
 
 In the Swagger Umbraco Management API, you can find a collection of available endpoints in this version of Umbraco.
 
@@ -30,11 +30,11 @@ The Management API endpoints are protected by the backoffice authorization polic
 
 To set the authorization, click on the **Authorize** button:
 
-![Umbraco Management API Authorize Button](../images/management-api-swagger-authorize-button.png)
+![Umbraco Management API Authorize Button](../../.gitbook/assets/management-api-swagger-authorize-button.png)
 
 Then a popup will appear with some setup information and a login form for authorization:
 
-![Umbraco Management API Authorize Login](../images/management-api-swagger-authorize-instructions.png)
+![Umbraco Management API Authorize Login](../../.gitbook/assets/management-api-swagger-authorize-instructions.png)
 
 The available integration for the authorization is done via a backoffice user with the integration of `OAuth2, authorizationCode with PKCE`. Swagger is only enabled in non-production environments, so if you need to access the Management API in production, you need a different client.
 
@@ -50,7 +50,7 @@ To test a Management API endpoint, follow these steps:
 
 1. Authenticate via the **Authorize** button. Make sure you use `umbraco-swagger` as the `client_id`:
 
-![Umbraco Management API when Authenticated](../images/management-api-swagger-authenticated.png)
+![Umbraco Management API when Authenticated](../../.gitbook/assets/management-api-swagger-authenticated.png)
 
 {% hint style="info" %}
 In non-production environments, you will always need only the `client_id` to authenticate. The `client_secret` should always be left blank, as the authentication flow does not use a client secret.
@@ -58,12 +58,12 @@ In non-production environments, you will always need only the `client_id` to aut
 
 2. Expand the first endpoint of **Audit Log** and click **Try it out**
 
-![Umbraco Management API Endpoint - Try it Out Button](../images/management-api-try-it-out.png)
+![Umbraco Management API Endpoint - Try it Out Button](../../.gitbook/assets/management-api-try-it-out.png)
 
 3. You now have the option to change the values of the **parameters**. In this case, let´s leave the default values as they are.
 4. Click on **Execute** so that we can get some data for our **Audit Log** endpoint.
 
-![Umbraco Management API Endpoint - Execute - Response](../images/management-api-execute-response.png)
+![Umbraco Management API Endpoint - Execute - Response](../../.gitbook/assets/management-api-execute-response.png)
 
 In the **Response Body** we get the details of the **Audit Log** that we have requested.
 

@@ -1,0 +1,6 @@
+extends: spelling
+message: "Check the word '%s' for typos."
+level: error
+dictionaries:
+  - en_US
+  - umbraco

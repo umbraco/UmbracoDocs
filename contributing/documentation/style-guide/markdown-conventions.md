@@ -96,40 +96,66 @@ Do not use "**here"** or "**link"** as the link text, as this provides no inform
 
 ## Images
 
-Images used in documentation articles must always be added to the repository as well. Learn more about where to add the images in the [File Names and Structure](structure.md) article.
+Images used in documentation articles must always be added to the repository. Use relative paths when referencing images in an article.
 
-Use relative paths when referencing images in an article.
+Always provide alt text. Add a caption where it helps the reader understand the context.
 
-Use descriptive alt text and captions to enhance accessibility and Search Engine Optimization (SEO) benefits.
+### Image Location
 
-```md
-// Block with Caption
+GitBook, the platform used to host the Umbraco Documentation, automatically places images uploaded through its web editor into a top-level `.gitbook/assets/` directory. For more information, see the [File Names and Structure](structure.md#file-structure) article.
 
-![This is a sample Caption](images/sample.png)
+{% hint style="info" %}
+Many existing articles still reference images from a local `/images/` directory next to the article. Both locations are valid while the documentation is being cleaned up to use the `.gitbook/assets/` directory.
+{% endhint %}
 
-// Block with Alt text
+### Syntax
 
-<figure><img src="images/sample.png" alt="This is a sample Alt text"></figure>
+Use the full `<figure>` block to include both alt text and a visible caption:
 
-// Block with Caption and Alt text
-
+```
 <figure>
-  <img src="images/sample.png" alt="This is a sample Alt text">
+  <img src="images/content-dashboard.png" alt="The Content dashboard showing three published pages.">
   <figcaption>
-    <p>This is a sample Caption</p>
+    <p>The Content dashboard in the Umbraco backoffice.</p>
   </figcaption>
 </figure>
 ```
 
-{% hint style="info" %}
-Always provide an alt text or a caption to describe the image’s purpose and content.
-{% endhint %}
+* Alt text (`alt=""`): is read by screen readers and displayed if the image fails to load. Describe what the image shows.
+* Caption (`<figcaption>`): is visible text rendered below the image. Use it to explain why the image is there or what the reader should notice.
 
-### Best practices when working with images
+For simple inline images where no visible caption is needed, the short Markdown syntax is acceptable:
 
-* Use clear and relevant filenames. Example: `dashboard-view.png` instead of `image1.png`.
-* Avoid placing large amounts of text in images. If text is required, provide it in the article instead.
-* Use SVG format for diagrams and icons where possible to ensure scalability.
+```md
+![The Content dashboard showing three published pages](images/content-dashboard.png)
+```
+
+### Format
+
+Use `.png` for screenshots and `.svg` for diagrams and icons. `.svg` ensures scalability. `.png` preserves sharp edges in UI captures. Avoid `.jpeg` for screenshots.
+
+### Best practices
+
+* Use clear and descriptive filenames. Example: `dashboard-view.png` instead of `image1.png`.
+* Avoid placing large amounts of text in images. Provide any necessary text in the article instead.
+* Crop screenshots tightly to the relevant UI area.
+* When using annotations (arrows, boxes), keep them simple and use consistent Umbraco Colors.
+
+<figure><img src="../../.gitbook/assets/Umbraco-Colors.png" alt=""><figcaption></figcaption></figure>
+
+* Write alt text that describes what the image shows and why it is there,  not just "screenshot". Keep the text under 125 characters.
+
+### Images in lists
+
+When a screenshot or diagram accompanies a step in a numbered or bulleted list, it must be added on a new line. A blank line after the image is required. GitBook will handle indentation automatically.
+
+```markdown
+1. Open the **Content** section.
+
+![The Content section open in the backoffice](images/content-section.png)
+
+2. Click **Create**.
+```
 
 ## Notes and Warnings
 

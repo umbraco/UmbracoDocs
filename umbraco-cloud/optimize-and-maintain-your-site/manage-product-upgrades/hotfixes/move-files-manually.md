@@ -23,7 +23,7 @@ You have been working on building the site on a local clone of the Development e
 
 Three commits have been pushed from your local clone to the Development environment. Out of these three commits, you only need the changes from one of the commits in the Live environment.
 
-![Commits](images/commits.png)
+![Commits](../../../.gitbook/assets/commits.png)
 
 ## Apply selected changes to the Live environment
 
@@ -42,11 +42,11 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
     <figure><img src="../../../.gitbook/assets/image (43).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
 
-    ![Clone Project](images/live-clone-url-v10.png)
+    ![Clone Project](../../../.gitbook/assets/live-clone-URL_v10.png)
 2. Locate the files from the Development repository that you want to move to Live.
    *   Check the commits in the Git history for the Development repository to verify which files you need.
 
-       ![Files changes or added](images/commit-files-changed.png)
+       ![Files changes or added](../../../.gitbook/assets/commit-files-changed.png)
    * The _new files_ can be moved from the Development repository to the Live repository.
    * The same goes for _changed files_. You can also edit the files, and only move the code snippets you need on the Live environment.
 3. Copy and paste the new and/or updated files from your Development repository to your Live repository.
@@ -71,9 +71,7 @@ Once you've checked that everything works locally, you are ready to push to the 
 1. Push the committed changes to the Live environment using Git.
 
 {% hint style="info" %}
-
 When changes are pushed directly to a Live environment and you have more than one environment, the changes are not automatically extracted to the site.
-
 {% endhint %}
 
 2. Run the Deploy operation `Update Umbraco Schema From Data Files`from the Deploy Dashboard

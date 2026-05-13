@@ -24,10 +24,10 @@ Video example.
 
 1.  Go to your project and click on the arrow next to the environment name.
 
-    <figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
 
-<figure><img src="images/logs-table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/logs-table.png" alt=""><figcaption></figcaption></figure>
 
 ### On Kudu
 
@@ -86,5 +86,5 @@ Find more information about IIS Logging on [the Official Microsoft Documentation
 {% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.
 
-For more details on the different tiers, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
+For more details on the different plans, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
 {% endhint %}

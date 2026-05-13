@@ -42,13 +42,15 @@ If using `async`, please make sure to [disable the Forms client-side validation 
 
 ## Validation Using jQuery
 
-If you want to use jQuery as your validation framework for Umbraco Forms, you can manually add the following client dependencies:
+It is possible to use jQuery as your validation framework instead of the ASP.NET Client Validation library.
+
+To use jQuery validation, add the following client dependencies:
 
 - `jQuery` (JavaScript library)
 - `jQuery validate` (jQuery plugin that provides client-side Form validation)
 - `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
 
-You should remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.
+Be sure to remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.  
 
 The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
 
@@ -62,7 +64,7 @@ To add the three client dependencies, see the examples below:
 ```html
 <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
 </head>
 ```
@@ -76,7 +78,7 @@ When adding the script to the bottom of the page, you will also need to render t
     <!-- Page content here -->
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
 </body>
 ```

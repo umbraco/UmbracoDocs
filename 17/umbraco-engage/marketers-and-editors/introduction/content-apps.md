@@ -34,7 +34,7 @@ It also allows you to set up personalized variants for each node.
 
 ## Managing the access to content apps
 
-In the **Engage** -> **Settings** section, you can manage which Document Types the content apps are displayed, and which Umbraco user groups can access them. They can be managed per Document Type and per user group
+In the **Settings** section, navigate to **Engage** -> **Configuration** and select the **Permissions** tab. Here you can manage which Document Types the content apps are displayed on, and which Umbraco user groups can access them. They can be managed per Document Type and per user group
 
 ![Document Type Permissions in the Settings section](../../.gitbook/assets/engage-content-apps-doc-type-permissions.png)
 

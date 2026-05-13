@@ -27,6 +27,21 @@ In some cases, when using Azure AD for login, you may encounter the following er
 Install a newer version of `Microsoft.IdentityModel.Protocols.OpenIdConnect` to solve this problem.
 {% endhint %}
 
+## Call back requests
+
+External login providers will invoke a callback to the website on a known path. For example, Open ID Connect will use the path `/signin-oidc`, whilst Google uses `/signin-google`. You should add this path to the [configured reserved paths](../configuration/globalsettings.md#reserved-paths).
+
+For example, with Open ID Connect, you should configure:
+
+```json
+  "Umbraco": {
+    "CMS": {
+      "Global": {
+        "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/signin-oidc/,",
+```
+
+This avoids Umbraco treating this call back as a potential request for content, improving performance of the authentication operation.
+
 ## Try it out
 
 {% content-ref url="../../tutorials/add-microsoft-entra-id-authentication.md" %}
@@ -161,28 +176,11 @@ When auto-linking for the backoffice you will want to define what user groups th
 
 Umbraco Cloud uses Umbraco ID for all authentication, including access to the Umbraco Backoffice.
 
-If you are working with External Login Providers on a project hosted on Umbraco Cloud, extra configuration is required.
+Umbraco ID automatically removes the native Umbraco login from the backoffice. When only one login provider is registered, Umbraco redirects to the Umbraco ID login screen.
 
-To disable the automatic redirect to Umbraco ID, follow these steps:
+Adding your own login provider to a Cloud project stops the automatic redirect. Available login providers are shown instead.
 
-1. Open the `umbraco-cloud.json` file in your favorite code editor.
-2. Locate the `Identity` section.
-3. Add a new key: `AutoRedirectLogin`.
-4. Set the value to `false`.
-
-{% code title="umbraco-cloud.json" %}
-
-```json
-"Identity": {
-    "ClientId": "0297c0f6-83ad-4481-9ae2-07a3f5475333",
-    "ClientSecret": "Q5~T526ixOHlj47lg7Mu7_.zN1fK.7ua.9",
-    "EnvironmentId": "3105e6eb-4a1e-42dd-91e9-ffdbe3dd30a8",
-    "LocalLoginRedirectUri": "https://redirect.identity.umbraco.com",
-    "AutoRedirectLogin": false
-  }
-```
-
-{% endcode %}
+Umbraco Cloud also offers an external login provider feature, where you only have to bring your own configuration. For more information, see [External Login Providers on Umbraco Cloud](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers).
 
 ### Auto-linking on Member authentication
 
@@ -406,7 +404,7 @@ You have a few options to configure the button:
 
 The button will now be displayed on the login page in the Umbraco Backoffice.
 
-<figure><img src="images/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/login-external.jpg" alt=""><figcaption><p>The login page with a Generic button shown</p></figcaption></figure>
 
 ### Generic backoffice login provider composer
 
@@ -650,7 +648,7 @@ interface IExternalLoginCustomViewElement {
 
 The Custom Element can be implemented in a number of ways with many different libraries or frameworks. The following examples show how to make a button appear and redirect to the external login provider. You will learn how to use the `externalLoginUrl` property to redirect to the external login provider. The login form should look like this when you open Umbraco:
 
-![Login form with custom external login button](images/external-login-provider-javascript.jpg)
+![Login form with custom external login button](../../.gitbook/assets/external-login-provider-javascript.jpg)
 
 When you click the button, the form will submit a POST request to the `externalLoginUrl` property. The external login provider will then redirect back to the Umbraco site with the user logged in.
 
@@ -795,3 +793,32 @@ customElements.define('my-lit-view', MyLitView);
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+## Common issues
+
+### 404 error on callback path
+
+Some external login providers, such as Microsoft Entra ID, may send large query strings when the response mode is set to `query`. By default, IIS restricts the maximum allowed query string length, which can cause the external login callback to fail with a 404 error.
+
+This typically occurs during the authentication callback to Umbraco.
+
+{% hint style="info" %}
+This limitation is imposed by IIS and is not specific to Umbraco. For more details on configuring request limits, see the official Microsoft documentation on the [Request Limits element](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/security/requestfiltering/requestlimits/).
+{% endhint %}
+
+To resolve this, increase the allowed query string and URL length by setting `maxQueryString` and `maxUrl` in your `web.config` file.
+
+For example:
+
+```xml
+<?xml version="1.0"?>
+<configuration>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="8192" maxUrl="16384"/>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+</configuration>
+```

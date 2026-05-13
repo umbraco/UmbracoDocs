@@ -13,7 +13,7 @@ As part of our continuous evolution, _**Umbraco 13**_, is now the default settin
 
 We maintain a versatile approach in our offerings to support the unique needs and preferences of our diverse user community. While we position version 13 as the new benchmark for excellence and innovation in new projects, we also acknowledge the importance of choice and flexibility. To this end, we continue to offer access to other actively supported CMS versions, including 8, 10, and 12.
 
-![Basic Flow](../../images/CMS13.png)
+![Basic Flow](../../../.gitbook/assets/CMS13.png)
 
 For an in-depth understanding of how Umbraco 13 improves your developer and editor experience, we encourage you to visit our detailed [blog post](https://umbraco.com/blog/umbraco-13-lts-release/).
 
@@ -33,11 +33,11 @@ This capability eases the migration process, allowing for the efficient handling
 
 When exporting, you can choose to include associated media files and, if your account has access to the Settings section, the schema information and files as well.
 
-![drawing](../../images/ExportZip.png)
+![drawing](../../../.gitbook/assets/ExportZip.png)
 
 That exported zip file can be used to import the content, files, and/or schema into a new environment. You can import the exported file in the content section from the backoffice of your Umbraco project.
 
-![drawing](../../images/ImportZip.png)
+![drawing](../../../.gitbook/assets/ImportZip.png)
 
 For more in-depth information on the import/export feature and other additions in the latest Deploy minor release, see the [deploy release candidate blog post](https://umbraco.com/blog/umbraco-deploy-release-candidates-49103121/). You can also visit the documentation page for the [export/import of schema and content](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export) for more details.
 
@@ -45,7 +45,7 @@ For more in-depth information on the import/export feature and other additions i
 
 In our commitment to providing top-tier security, we have expanded the availability of Transport Layer Security (TLS) 1.3 to all Umbraco Cloud plans. This enhancement means users can now activate TLS 1.3 for their custom hostnames, bringing advanced security settings to all project plans.
 
-![TLS 1.3 default enabled](../../images/TLS13.png)
+![TLS 1.3 default enabled](../../../.gitbook/assets/TLS13.png)
 
 The initiative also includes optimizing default settings for new projects where TLS 1.3 will be the standard protocol, alongside other security standards like HTTP/2 and the upcoming HTTP/3. This not only boosts security and performance but also contributes to sustainable digital operations by optimizing resource use.
 

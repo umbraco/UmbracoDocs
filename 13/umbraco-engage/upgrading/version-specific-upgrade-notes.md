@@ -11,6 +11,13 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 {% endhint %}
 
 ## Breaking changes
+
+### v13.8.0 — Database Schema Alignment
+
+Engage 13.8.0 introduces a rewritten analytics data cleanup system and a database schema alignment. This is a **manual post-upgrade step** that requires running SQL scripts during a maintenance window.
+
+See the [Schema Alignment Guide](schema-alignment-guide.md) for full details on the cleanup changes, configuration settings, and step-by-step post-upgrade instructions.
+
 #### v13.2.0 (Umbraco Engage) & v13.1.0 (Umbraco Engage Forms)
 Introduced Razor Class Library support to serve static files for Engage, removing physical backoffice, views, and assets files from development projects.
 

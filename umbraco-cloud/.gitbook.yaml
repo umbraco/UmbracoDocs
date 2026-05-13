@@ -89,7 +89,7 @@ redirects:
     set-up/project-settings/manage-cdn-caching: optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md
     set-up/project-settings/usage/bandwidth: optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md
     getting-started/migrate-between-regions: optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md
-    set-up/project-settings/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/project-settings/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
     set-up/project-settings/hostname-monitoring: optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md
     set-up/project-settings/management-api-security: optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md
     set-up/media: build-and-customize-your-solution/handle-deployments-and-environments/media/README.md
@@ -128,7 +128,21 @@ redirects:
     monitor-and-troubleshoot/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
     project-overview/environments: begin-your-cloud-journey/project-features/environments.md
     setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
-    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
+    optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
     set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
     set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
     build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md
+    release-notes/overview-2025: release-notes/archive/overview-2025/README.md
+    release-notes/overview-2025/2025-01-releasenotes: release-notes/archive/overview-2025/2025-01-releasenotes.md
+    release-notes/overview-2025/2025-02-releasenotes: release-notes/archive/overview-2025/2025-02-releasenotes.md
+    release-notes/overview-2025/2025-03-releasenotes: release-notes/archive/overview-2025/2025-03-releasenotes.md
+    release-notes/overview-2025/2025-04-releasenotes: release-notes/archive/overview-2025/2025-04-releasenotes.md
+    release-notes/overview-2025/2025-05-releasenotes: release-notes/archive/overview-2025/2025-05-releasenotes.md
+    release-notes/overview-2025/2025-06-releasenotes: release-notes/archive/overview-2025/2025-06-releasenotes.md
+    release-notes/overview-2025/2025-09-03-releasenotes: release-notes/archive/overview-2025/2025-09-03-releasenotes.md
+    release-notes/overview-2025/2025-10-releasenotes: release-notes/archive/overview-2025/2025-10-releasenotes.md
+    build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/knownlimitationsandconsiderations: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/known-limitations-and-considerations.md
+    build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbracocloudapi: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbraco-cloud-api.md
+    build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan: build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md
+    build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal: build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md

@@ -1,4 +1,4 @@
-# Managing Hostnames
+# Manage Hostnames
 
 When you create an Umbraco Cloud project, the project URLs are based on the name of your project.
 
@@ -59,7 +59,7 @@ If you're using the [Former A and AAAA records](./#former-a-and-aaaa-records) co
 
 <summary>Former A and AAAA records</summary>
 
-The following Records are now obsolete and remain here for documentation purposes. 
+The following Records are now obsolete and remain here for documentation purposes.
 
 * A Records
   * `104.19.191.28`
@@ -75,11 +75,9 @@ The following Records are now obsolete and remain here for documentation purpose
 </details>
 
 {% hint style="info" %}
-
 Once you have updated your DNS records, remove the hostname and re-add it from Umbraco Cloud to re-validate the certificate with Cloudflare.
 
 You can also check the DNS propagation using a site like [What is my DNS?](https://www.whatsmydns.net/).
-
 {% endhint %}
 
 Check with your DNS host or hostname registrar regarding configuration details for your Hostnames.
@@ -96,7 +94,7 @@ To specify the hostname for each root node using a multisite setup, follow these
 4. Click **Add New Domain** in the **Culture and Hostnames** window.
 5. Enter your **Domain** name and select the **Language** from the drop-down list.
 
-<figure><img src="images/culture-and-hostnames-v10.png" alt="Enter domain and select Language."><figcaption><p>Enter domain and select Language.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/culture-and-hostnames-v10.png" alt="Enter domain and select Language."><figcaption><p>Enter domain and select Language.</p></figcaption></figure>
 
 6. Click **Save**.
 
@@ -165,8 +163,7 @@ Configuration may vary depending on which WAF you are using, so you should alway
 
 If your hostname can't point to `dns.umbraco.io`, Umbraco Cloud won't be able to reissue a certificate for your hostname during future renewals (3 months). You can publish a Domain Control Validation (DCV) record or use a custom certificate.
 
-The DCV record is a CNAME record with key `_acme-challenge.<hostname>` pointing to `<hostname>.0df3da1ce1ef695a.dcv.cloudflare.com`. 
-For example, `www.example.com` - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
+The DCV record is a CNAME record with key `_acme-challenge.<hostname>` pointing to `<hostname>.0df3da1ce1ef695a.dcv.cloudflare.com`. For example, `www.example.com` - CNAME `_acme-challenge.www.example.com` points to `www.example.com.0df3da1ce1ef695a.dcv.cloudflare.com`
 
 The DCV record will ensure that Umbraco Cloud can always issue/renew the certificate for the custom hostname.
 

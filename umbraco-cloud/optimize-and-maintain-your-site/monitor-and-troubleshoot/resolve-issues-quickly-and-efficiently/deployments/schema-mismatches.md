@@ -14,7 +14,7 @@ How to fix Schema mismatches
 
 When you run into schema mismatch errors, they will usually look something like this:
 
-![Schema Mismatch error message](images/schema-mismatch-on-transfer_v10.png)
+![Schema Mismatch error message](../../../../.gitbook/assets/schema-mismatch-on-transfer_v10.png)
 
 In this error message, you can see exactly which schema mismatch(es) is preventing the content transfer/restore.
 

@@ -3,3 +3,10 @@ root: ./
 ​structure:
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    getting-started/workflow-settings: getting-started/content-approval-settings.md
+    workflow-section/workflow-settings: getting-started/content-approval-settings.md
+    getting-started/workflow-content-app: getting-started/workflow-workspace-view.md
+    legacy-documentation/notifications: legacy-documentation.md
+    

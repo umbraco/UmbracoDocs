@@ -36,7 +36,7 @@ If you have changed the configuration value of `TrackRenderedFormsStorageMethod`
 }
 ```
 
-Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
+Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](configuration/#TrackRenderedFormsStorageMethod) article.
 
 If you prefer to use a tag helper, that's an option too.
 
@@ -54,6 +54,28 @@ Then instead of reading from `TempData` and invoking the view component directly
 
 This will use the appropriate storage method that you have configured.
 
+## Using Form Scripts Alongside Validation Dependencies
+
+When setting up templates for Umbraco Forms, two separate script-rendering methods are involved, and both are required for forms to work correctly.
+
+`@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](../../../umbraco-forms/developer/prepping-frontend/) article, renders client-side validation scripts such as jQuery Validate and unobtrusive validation. This goes in the `<head>` of your template.
+
+The `<umb-forms-render-scripts />` tag helper (or the equivalent view component calls shown above) renders form-specific scripts covering conditional field logic, field behaviors, and any theme JavaScript. This goes before the closing `</body>` tag.
+
+Because both methods output `<script>` tags, they can appear to duplicate each other. The script contents are entirely different, however, and serve distinct purposes. A complete template uses both:
+
+```cshtml
+<head>
+    @Html.RenderUmbracoFormDependencies(Url)
+</head>
+<body>
+    @await Component.InvokeAsync("RenderForm", new { formId = Model.FormGuid })
+    <umb-forms-render-scripts theme="default" />
+</body>
+```
+
+Omitting `RenderUmbracoFormDependencies` will break client-side validation. Omitting `<umb-forms-render-scripts />` will break conditional fields and theme behaviour.
+
 ## Enabling `ExcludeScripts`
 
 If you do not want to render the associated scripts with a Form, you need to explicitly say so. You need to make sure `ExcludeScripts` is checked/enabled, whether you are inserting your Form using a macro or adding it directly in your template.
@@ -62,7 +84,7 @@ To enable `ExcludeScripts`:
 
 *   Using the **Insert Form with Theme** macro:
 
-    ![Exclude scripts](images/exclude-scripts-v9.png)
+    ![Exclude scripts](../.gitbook/assets/exclude-scripts-v9.png)
 *   While inserting Forms **directly** in your template:
 
     ```csharp

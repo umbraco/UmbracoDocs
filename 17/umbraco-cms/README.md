@@ -1,5 +1,7 @@
 ---
-description: Your main resource when building and managing an Umbraco CMS website.
+description: >-
+  Documentation for Umbraco CMS. Install, build, extend, and run Umbraco in
+  production.
 ---
 
 # Umbraco CMS Documentation
@@ -8,26 +10,30 @@ Umbraco CMS is a flexible and editor-friendly Content Management System (CMS) th
 
 Learn more about Umbraco CMS and get an overview of the top features on [Umbraco.com](https://umbraco.com/products/umbraco-cms/).
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Fundamentals</strong></td><td>Learn the basics of working with Umbraco CMS. How to install and setup your first site is also included in this section.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals.png">Documentations Icons_Umbraco_CMS_Fundamentals.png</a></td><td><a href="fundamentals/get-to-know-umbraco.md">get-to-know-umbraco.md</a></td></tr><tr><td><strong>Install Umbraco CMS</strong></td><td>Ready to get started with Umbraco? Head over to the Setup section to learn how to install Umbraco CMS.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Install.png">Documentations Icons_Umbraco_CMS_Install.png</a></td><td><a href="fundamentals/setup/install/">install</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find detailed step-by-step guides on everything from building a site from scratch to implementing a custom maintenance page.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Tutorials.png">Documentations Icons_Umbraco_CMS_Tutorials.png</a></td><td><a href="tutorials/overview.md">overview.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Get Started</strong></td><td>Install Umbraco, upgrade existing projects, and start your first build.</td><td><a href="get-started/installation/">installation</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Commerce_How_to_Guide.png">Documentations Icons_Umbraco_Commerce_How_to_Guide.png</a></td></tr><tr><td><strong>Model Your Content</strong></td><td>Define schema, configure property editors, and set up localization.</td><td><a href="model-your-content/content-types-and-structure/">content-types-and-structure</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Querying_and_Models.png">Documentations Icons_Umbraco_CMS_Reference_Querying_and_Models.png</a></td></tr><tr><td><strong>Manage and Publish Content</strong></td><td>Learn editor workflows, publishing, media handling, and user management.</td><td><a href="manage-and-publish-content/publishing-and-workflow/">publishing-and-workflow</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Configuration.png">Documentations Icons_Umbraco_CMS_Reference_Configuration.png</a></td></tr><tr><td><strong>Develop With Umbraco</strong></td><td>Create the frontend, work with APIs, and implement application logic.</td><td><a href="develop-with-umbraco/templating-and-rendering/">templating-and-rendering</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals.png">Documentations Icons_Umbraco_CMS_Fundamentals.png</a></td></tr><tr><td><strong>Extend Your Project</strong></td><td>Customize the backoffice, add server-side features, and build packages.</td><td><a href="extend-your-project/backoffice-extensions/">backoffice-extensions</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_API_Documentation.png">Documentations Icons_Umbraco_CMS_Reference_API_Documentation.png</a></td></tr><tr><td><strong>Run in Production</strong></td><td>Secure, configure, scale, and operate Umbraco in production.</td><td><a href="run-in-production/runtime-modes.md">runtime-modes.md</a></td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice.png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice.png</a></td></tr></tbody></table>
 
-The documentation for Umbraco CMS provides information for experienced Umbraco and .NET developers. It also offers guides and high-level articles for people starting out with the CMS.
+## New to Umbraco?
 
-{% content-ref url="tutorials/creating-a-basic-website/" %}
-[creating-a-basic-website](tutorials/creating-a-basic-website/)
+Start with the installation guide, then follow one of the tutorials to build your first project.
+
+{% content-ref url="get-started/installation/" %}
+[installation](get-started/installation/)
 {% endcontent-ref %}
 
-{% content-ref url="reference/configuration/" %}
-[configuration](reference/configuration/)
+{% content-ref url="develop-with-umbraco/tutorials/creating-a-basic-website/" %}
+[creating-a-basic-website](develop-with-umbraco/tutorials/creating-a-basic-website/)
 {% endcontent-ref %}
 
-{% content-ref url="fundamentals/setup/requirements.md" %}
-[requirements.md](fundamentals/setup/requirements.md)
+{% content-ref url="extend-your-project/tutorials/creating-a-custom-dashboard/" %}
+[creating-a-custom-dashboard](extend-your-project/tutorials/creating-a-custom-dashboard/)
 {% endcontent-ref %}
 
-{% content-ref url="reference/notifications/" %}
-[notifications](reference/notifications/)
+{% content-ref url="extend-your-project/tutorials/creating-a-property-editor/" %}
+[creating-a-property-editor](extend-your-project/tutorials/creating-a-property-editor/)
 {% endcontent-ref %}
 
 ***
+
+## Umbraco Training
 
 {% include ".gitbook/includes/umbraco-fundamentals-training-course.md" %}

@@ -18,11 +18,11 @@ The change was made as the word **Content** in the backoffice acts as an umbrell
 
 ## Data Type Definition Example
 
-![Document Picker Data Type Definition](images/Document-Picker-DataType.png)
+![Document Picker Data Type Definition](../../../../.gitbook/assets/Document-Picker-DataType.png)
 
 ## Document Picker Example
 
-![Document Picker Content](../built-in-property-editors/images/Content-Picker-Content-v10.png)
+![Document Picker Content](<../../../../.gitbook/assets/Content-Picker-Content-v10 (1).png>)
 
 ## MVC View Example
 

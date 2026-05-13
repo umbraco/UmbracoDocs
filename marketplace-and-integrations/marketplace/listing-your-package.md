@@ -11,12 +11,36 @@ Do you want to be listed on the official Umbraco Marketplace? Follow this guide 
 Your package needs to live up to the following requirements to be listed on the Umbraco Marketplace:
 
 * The `umbraco-marketplace` tag is added to your NuGet package.
-* It meets the minimum Umbraco version requirement: **Umbraco 8**
+* The package must have a NuGet dependency on an Umbraco package (see [Umbraco Version Detection](#umbraco-version-detection) below).
 
 The base package information is then sourced from NuGet, including the package name, icon, authors, description, readme, and project URL.
 
 {% hint style="warning" %}
 Only tag the installable component of your package. For example, if your package `MyPackage` references `MyPackage.Core`, only tag the former.
+{% endhint %}
+
+### Umbraco Version Detection
+
+To appear on the Marketplace and show Umbraco version compatibility, your NuGet package **must** depend on one of these Umbraco packages:
+
+* `Umbraco.Cms.*` (for example `Umbraco.Cms.Core`, `Umbraco.Cms.Web.Common`, and so on.)
+* `UmbracoCms.*` (Umbraco 8 only)
+* `Umbraco.Commerce.*`
+
+The Marketplace uses these dependencies to determine supported Umbraco versions. If your package has no dependency on any of these packages (directly or transitively), it will **not** be listed.
+
+{% hint style="info" %}
+If direct dependencies on the Umbraco packages listed above are found, only those are used for version detection. Transitive dependencies (dependencies of your dependencies) are only used when no direct Umbraco dependency exists.
+{% endhint %}
+
+The supported version range is derived from the NuGet dependency version range on the Umbraco package. For example, a dependency on `Umbraco.Cms.Core` with version range `[14.0.0, 18.0.0)` indicates support for Umbraco 14 up to (but not including) Umbraco 18.
+
+{% hint style="info" %}
+By default, the Marketplace assumes packages targeting Umbraco 13 or lower are not compatible with Umbraco 14+ due to the backoffice rewrite. If your package works across this boundary, you can override this behavior using the [Version Dependency Mode](#version-dependency-mode) setting.
+{% endhint %}
+
+{% hint style="warning" %}
+If your package is a **client-side only** package (for example, a TipTap extension), you still need a NuGet dependency on an Umbraco package to indicate supported versions.
 {% endhint %}
 
 ## Additional Package Information
@@ -65,7 +89,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
         ],
         "SyncContributorsFromRepository": true|false
       },
-      "Categories": "",
+      "Category": "",
       "Description": "",
       "DiscussionForumUrl": "",
       "DocumentationUrl": "",
@@ -113,7 +137,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 | **AuthorDetails.ImageUrl**                       | String value     | A URL to a headshot or avatar image for the package developer (`.png` or `.jpg`). To use an existing GitHub avatar, use `https://github.com/{username}.png`                                                                                                                                                                                                                                                                         |
 | **AuthorDetails.Contributors**                   | Array of objects | A collection of key contributors can also be provided, each having a required name and an optional URL.                                                                                                                                                                                                                                                                                                                             |
 | **AuthorDetails.SyncContributorsFromRepository** | Boolean value    | If contributors are not explicitly provided, a GitHub repository is available in the 'RepositoryUrl' of the NuGet package. This option is set to `true`; the contributors will be synchronized from the GitHub repo.                                                                                                                                                                                                                |
-| **Categories**                                   | String value     | The name of a single category as defined on the marketplace website. The package will be displayed under this category on the website.                                                                                                                                                                                                                                                                                              |
+| **Category**                                     | String value     | The name of a single category as defined on the marketplace website. The package will be displayed under this category on the website.                                                                                                                                                                                                                                                                                              |
 | **Description**                                  | String value     | The package description. If omitted, the Description defined in the NuGet package details will be used. A short paragraph of text is recommended.                                                                                                                                                                                                                                                                                   |
 | **DocumentationUrl**                             | String value     | A URL to a the documentation related to the package.                                                                                                                                                                                                                                                                                                                                                                                |
 | **DiscussionForumUrl**                           | String value     | A URL to a discussion forum related to the package.                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -128,7 +152,7 @@ The [schema for the JSON file is available](https://marketplace.umbraco.com/umbr
 | **Screenshots**                                  | Object array     | A collection of media assets for displaying on the package details page. Each element should consist of a URL to either a video or image file and a short caption. The order of the assets will be reflected in the package details page.                                                                                                                                                                                                                                                                                |
 | **Tags**                                         | String array     | One or more package owner-defined tags for the package. Multiple word tags are supported, e.g. "property editor".                                                                                                                                                                                                                                                                                                                   |
 | **Title**                                        | String value     | The package title. If omitted, if a title is defined in the NuGet package details this will be used. Otherwise, the package ID itself is displayed.                                                                                                                                                                                                                                                                                 |
-| **VersionDependencyMode**                        | String value     | The version dependency mode for the package.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **VersionDependencyMode**                        | String value     | Defines the version dependency mode. Set to `SemVer` to have the Marketplace respect the version range as declared in your NuGet dependency without any assumptions. See [Umbraco Version Detection](#umbraco-version-detection) and [Version Dependency Mode](#version-dependency-mode) for details.                                                                                                                                 |
 | **VersionSpecificPackageIds**                    | Object array     | If a developer has created their package for older Umbraco versions under a different package ID, they can be listed here. Each element should contain an integer value for the Umbraco major version and the associated NuGet package ID.                                                                                                                                                                                          |
 | **Video URL**                                    | String value     | A URL to a video for embedding.                                                                                                                                                                                                                                                                                                                                                                                                     |
 

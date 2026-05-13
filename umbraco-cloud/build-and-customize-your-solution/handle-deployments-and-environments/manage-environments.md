@@ -1,3 +1,7 @@
+---
+description: Learn how to add and remove environments on your Umbraco Cloud projects.
+---
+
 # Manage Environments
 
 The number of environments available on your project is dependent on which plan you are on:
@@ -24,17 +28,15 @@ The following sections provide guidance on managing your Cloud environments.
 
 ### Adding an Environment
 
-Before adding an environment, ensure there are no local changes that haven’t been pushed to Live. Adding an environment will push all changes in the current deployment chain.
-
-To add an environment:
+Follow the steps outlined below to add a new environment to your Cloud project.
 
 1. Click **Configure environments**.
 
-![Adding an environment](../set-up-your-project/project-settings/images/environments-overview-new.png)
+![Adding an environment](<../../.gitbook/assets/environments-overview-new (1).png>)
 
 2. Click **Create environment**.
 
-![Create environment](../set-up-your-project/project-settings/images/create-environment.png)
+![Create environment](../../.gitbook/assets/create-environment.png)
 
 3. Choose an **Environment name**.
 4. Click **Confirm**.
@@ -49,6 +51,6 @@ To remove an environment:
 2. Click on the three dots.
 3. Click **Delete**.
 
-![Deleting an environment](../set-up-your-project/project-settings/images/delete-environment.png)
+![Deleting an environment](../../.gitbook/assets/delete-environment.png)
 
 It may take a few minutes for Cloud to set up the changes after adding or removing an environment.

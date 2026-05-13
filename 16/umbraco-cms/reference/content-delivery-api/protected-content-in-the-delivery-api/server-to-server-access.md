@@ -1,10 +1,12 @@
 ---
-description: How to fetch protected content from the Delivery API with a server-to-server approach.
+description: >-
+  How to fetch protected content from the Delivery API with a server-to-server
+  approach.
 ---
 
-# Server-to-server access to protected content in the Delivery API
+# Server to server access
 
-If protected content is consumed from the Delivery API in a server-to-server context, the [interactive authorization flow](README.md) won't work. Instead, we have to utilize the OpenId Connect Client Credentials flow, which is configured in the application settings.
+If protected content is consumed from the Delivery API in a server-to-server context, the [interactive authorization flow](./) won't work. Instead, we have to utilize the OpenId Connect Client Credentials flow, which is configured in the application settings.
 
 ## Configuration
 
@@ -17,7 +19,6 @@ An API Member works the same as a regular Member, with the added option of autho
 In the following configuration example, the Member "member@local" is mapped to a set of Client Credentials:
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -41,12 +42,11 @@ In the following configuration example, the Member "member@local" is mapped to a
     }
 }
 ```
-
 {% endcode %}
 
 After restarting the site, the backoffice will list "member@local" as an API Member:
 
-![An API Member in the backoffice](images/api-member.png)
+![An API Member in the backoffice](../../../.gitbook/assets/api-member.png)
 
 ## Authorizing and consuming the Delivery API
 

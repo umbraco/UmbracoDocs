@@ -17,6 +17,8 @@
 
 ## Getting Started
 
+* [Content Approval Settings](getting-started/content-approval-settings.md)
+* [Content Review Settings](getting-started/content-review-settings.md)
 * [Dashboards and Buttons](getting-started/dashboards-and-buttons.md)
 * [Submitting Content for Approval](getting-started/submitting-changes.md)
 * [Workspace View](getting-started/workflow-workspace-view.md)
@@ -32,7 +34,6 @@
 * [Approval Groups](workflow-section/approval-groups.md)
 * [Content Reviews](workflow-section/content-reviews.md)
 * [Workflow History](workflow-section/workflow-history.md)
-* [Workflow Settings](workflow-section/workflow-settings.md)
 
 ## Advanced Search
 
@@ -49,3 +50,7 @@
 ## Data Generator
 
 * [Data Generator](data-generator/data-generator.md)
+
+## Extending
+
+* [Workflow Expanders](extending/expanders.md)

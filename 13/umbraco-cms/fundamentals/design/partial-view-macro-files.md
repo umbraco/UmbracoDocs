@@ -2,19 +2,21 @@
 description: Information on working with partial view macro files in Umbraco
 ---
 
+# Partial View Macro Files
+
 {% hint style="warning" %}
 Partial View Macro Files will be removed in the next version. Consider using Partial Views.
 {% endhint %}
 
-# Partial View Macro Files
+## Partial View Macro Files
 
 A Macro is a reusable piece of functionality with some configuration options in the Backoffice. A Partial View Macro File (`.cshtml` file) is a specific file configuration that is associated with the Macro. A Partial View Macro File generates a Macro that can be inserted and rendered in the Grid and Rich Text Editor data types. Additionally, you can define parameter values and enable caching in Macros in the Backoffice. Partial View Macro Files are the recommended macro type to use in Umbraco.
 
-## Partial View Macro Files in the Backoffice
+### Partial View Macro Files in the Backoffice
 
 You can create and edit Partial View Macro Files in the **Partial View Macro Files** folder from the **Settings** section of the Backoffice.
 
-![Creating a new partial view macro file](images/creating-partial-view-macro-files.png)
+![Creating a new partial view macro file](<../../.gitbook/assets/creating-partial-view-macro-files (1).png>)
 
 In the **Create** menu, there are four options available:
 
@@ -23,27 +25,27 @@ In the **Create** menu, there are four options available:
 * New partial view macro from snippet
 * Folder (for keeping the partial view macro files organized)
 
-## Creating a Partial View Macro File
+### Creating a Partial View Macro File
 
 To create a Partial View Macro File, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder. You also see the macro in the **Macros** folder in the Backoffice.
 
-![Created partial view](images/created-partial-view-macro-file.png)
+![Created partial view](<../../.gitbook/assets/created-partial-view-macro-file (1).png>)
 
 By default, the Partial View Macro File is saved in the `Views/MacroPartials` folder.
 
-## Creating a Partial View Macro File (without macro)
+### Creating a Partial View Macro File (without macro)
 
 To create a Partial View Macro File without a macro, go to the **Settings** section in the Umbraco backoffice. Click right on the **Partial View Macro Files** folder. Choose **Create**. Select **New partial view macro (without macro)** and enter a Partial View Macro Filename. Enter the macro logic and click the **Save** button. You will now see _only_ the Partial View Macro File in the **Partial View Macro Files** folder in the Backoffice.
 
-![Created partial view](images/created-partial-view-macro-file-without-macro.png)
+![Created partial view](<../../.gitbook/assets/created-partial-view-macro-file-without-macro (1).png>)
 
 By default, the Partial View Macro File is saved in the `Views/MacroPartials` folder.
 
-## Creating a Partial View Macro File from Snippet
+### Creating a Partial View Macro File from Snippet
 
 To create a Partial View Macro File from the snippet, go to the **Settings** section in the Umbraco backoffice. Click right on the **Partial Views Macro Files** folder. Choose **Create**. Select **New empty partial view macro from snippet**. Select the snippet you want to create a partial view for and enter a Partial View Macro Filename. The code snippet you selected is displayed in the backoffice editor. Click the **Save** button. You will now see the Partial View Macro File in the **Partial View Macro Files** folder. You also see the macro in the **Macros** folder in the Backoffice.
 
-![Created partial view from snippet](images/created-partial-view-macro-file-from-snippet.png)
+![Created partial view from snippet](<../../.gitbook/assets/created-partial-view-macro-file-from-snippet (1).png>)
 
 By default, the partial view is saved in the `Views/MacroPartials` folder. Umbraco provides the following partial view macro snippets:
 
@@ -68,13 +70,13 @@ By default, the partial view is saved in the `Views/MacroPartials` folder. Umbra
 * InsertUmbracoFormWithTheme - If a theme is provided as a macro parameter, Umbraco Forms will use the custom theme files.
 * RenderUmbracoFormScripts - Renders your Umbraco Forms scripts. In many cases, you might prefer rendering your scripts at the bottom of the page as this generally improves site performance.
 
-## Creating a Folder
+### Creating a Folder
 
 To create a folder, go to the **Settings** section in the Umbraco backoffice and right-click the **Partial Views Macro Files** folder. Choose **Create** and select **Folder**. Enter a folder name and click the **Create** button.
 
-![Created folder](images/folder.png)
+![Created folder](<../../.gitbook/assets/folder (1).png>)
 
-## Rendering a Partial View Macro File
+### Rendering a Partial View Macro File
 
 To render the created Partial View Macro File in any template, use the `RenderMacroAsync` method:
 
@@ -82,7 +84,7 @@ To render the created Partial View Macro File in any template, use the `RenderMa
 @await Umbraco.RenderMacroAsync("InsertImages")
 ```
 
-### Related Articles
+#### Related Articles
 
 * [Macros](../../reference/templating/macros/)
 * [Managing Macros](../../reference/templating/macros/managing-macros.md)

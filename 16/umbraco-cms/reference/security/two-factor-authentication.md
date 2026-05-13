@@ -8,8 +8,8 @@ description: >-
 
 This article includes guides for implementing two-factor authentication options for both backoffice users and website members:
 
-* [Two-Factor Authentication for Members](#two-factor-authentication-for-members)
-* [Two-Factor Authentication for Users](#two-factor-authentication-for-users)
+* [Two-Factor Authentication for Members](two-factor-authentication.md#two-factor-authentication-for-members)
+* [Two-Factor Authentication for Users](two-factor-authentication.md#two-factor-authentication-for-users)
 
 Two-factor authentication (2FA) for Umbraco Users and Members is activated by implementing an `ITwoFactorProvider` interface and registering the implementation. The implementation can use third-party packages to support authentication apps like the Microsoft- or Google Authentication Apps.
 
@@ -37,7 +37,6 @@ As an example, the guide will use the [GoogleAuthenticator NuGet Package](https:
 3. Update the file with the following code snippet.
 
 {% code title="UmbracoAppAuthenticator.cs" lineNumbers="true" %}
-
 ```csharp
 using Google.Authenticator;
 using System.Runtime.Serialization;
@@ -128,7 +127,6 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
-
 {% endcode %}
 
 4. Update `namespace` on line 7 to match your project.
@@ -136,7 +134,6 @@ public class UmbracoAppAuthenticator : ITwoFactorProvider
 6. Create a Composer and register the `UmbracoAppAuthenticator` implementation as shown below.
 
 {% code title="UmbracoAppAuthenticatorComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -153,7 +150,6 @@ public class UmbracoAppAuthenticatorComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 At this point, the 2FA is active, but no members have set up 2FA yet. The setup of 2FA depends on the type. In the case of App Authenticator, the **view** showing the option to edit member profiles needs to be modified.
@@ -163,13 +159,12 @@ If you already have a members-only page with the edit profile options, you can s
 {% endhint %}
 
 7. Add or choose a members-only page that should have the two-factor authentication setup.
-    * The page needs to be behind the public access.
-    * The page should **not** be using strongly types models.
+   * The page needs to be behind the public access.
+   * The page should **not** be using strongly types models.
 8. Open the view file for the selected page.
 9. Add the following code:
 
 {% code title="ExampleMemberPage.cshtml" lineNumbers="true" %}
-
 ```csharp
 @using Umbraco.Cms.Core.Services;
 @using Umbraco.Cms.Web.Website.Controllers;
@@ -234,13 +229,12 @@ If you already have a members-only page with the edit profile options, you can s
     }
 }
 ```
-
 {% endcode %}
 
 10. Update the `@using` in line 4 to match the namespace of your project.
-11. [Optional] Customize the text fields and buttons to match your websites tone of voice (lines 33-39).
+11. \[Optional] Customize the text fields and buttons to match your websites tone of voice (lines 33-39).
 
-![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](images/2fa-members-configuration.png)
+![The QR Code is shown along with a field to enter a value to set up the two factor authentication.](../../.gitbook/assets/2fa-members-configuration.png)
 
 ### Test the set up for Members
 
@@ -252,7 +246,7 @@ If you already have a members-only page with the edit profile options, you can s
 
 You can also check that the **Two-factor Authentication** option is checked on the member in the Umbraco backoffice.
 
-![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](images/2fa-member-backoffice.png)
+![Check the Member profile in the Umbraco backoffice to verify whether two-factor authentication is enabled.](../../.gitbook/assets/2fa-member-backoffice.png)
 
 ### Notification when 2FA is requested for a member
 
@@ -273,7 +267,6 @@ As an example, the guide will use the [GoogleAuthenticator NuGet Package](https:
 3. Update the file with the following code snippet.
 
 {% code title="UmbracoUserAppAuthenticator.cs" lineNumbers="true" %}
-
 ```csharp
 using System.Runtime.Serialization;
 using Google.Authenticator;
@@ -359,7 +352,6 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
     public bool ValidateTwoFactorSetup(string secret, string token) => ValidateTwoFactorPIN(secret, token);
 }
 ```
-
 {% endcode %}
 
 4. Update `namespace` on line 7 to match your project.
@@ -368,7 +360,6 @@ public class UmbracoUserAppAuthenticator : ITwoFactorProvider
 7. Implement a new composer and register the `UmbracoUserAppAuthenticator` implementation as shown below.
 
 {% code title="UmbracoUserAppAuthenticatorComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Security;
@@ -385,7 +376,6 @@ public class UmbracoUserAppAuthenticatorComposer : IComposer
  }
 }
 ```
-
 {% endcode %}
 
 8. Update the `namespace` on line 4 to match your project.
@@ -396,7 +386,6 @@ With the 2FA in place, the provider needs to be registered in the backoffice cli
 10. Add the following code to the new file:
 
 {% code title="~/App_Plugins/TwoFactorProviders/umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -415,7 +404,6 @@ With the 2FA in place, the provider needs to be registered in the backoffice cli
   ]
 }
 ```
-
 {% endcode %}
 
 At this point, the 2FA is active, but no users have set up 2FA yet.
@@ -427,25 +415,25 @@ Each user can now enable the configured 2FA providers on their user.
 1. Access the Umbraco backoffice.
 2. Click the user avatar in the top-right corner.
 
-![User panel](images/user-panel.jpg)
+![User panel](../../.gitbook/assets/user-panel.jpg)
 
 3. Select `Configure Two-Factor` button to get a list of all enabled two-factor providers.
 
-![Configure 2fa](images/configure-2fa.jpg)
+![Configure 2fa](../../.gitbook/assets/configure-2fa.jpg)
 
 4. Select `Enable` to show the configured view.
 
-![Enable 2fa](images/enable-2fa.jpg)
+![Enable 2fa](../../.gitbook/assets/enable-2fa.jpg)
 
 5. Follow the instructions to configure 2FA.
 
 When the authenticator is enabled correctly, a disable button is shown instead.
 
-![Disable 2fa](images/disable-2fa.jpg)
+![Disable 2fa](../../.gitbook/assets/disable-2fa.jpg)
 
 To disable the two-factor authentication on your user, it is required to enter the verification code.
 
-![Verify disable](images/verify-disable.jpg)
+![Verify disable](../../.gitbook/assets/verify-disable.jpg)
 
 If the code is correct, the provider is disabled.
 
@@ -459,7 +447,7 @@ When a user with 2FA enabled logs in, they will be presented with a screen to en
 
 While the 2FA is enabled, the user will be presented with this screen after entering the username and password.
 
-![Default 2FA login](images/2fa-login-default-view.jpg)
+![Default 2FA login](../../.gitbook/assets/2fa-login-default-view.jpg)
 
 If the code is correct, the user will be logged in. If the code is incorrect, the user will be presented with an error message.
 
@@ -737,7 +725,7 @@ You need to create a JavaScript module that exports a default custom element to 
 
 You can use the following code as a starting point. This will give you a view looking like this, where the user can enter a code and click a button to verify the code. This is similar to the built-in view in Umbraco. In a real world scenario, you would probably want to authenticate the user in a different way.
 
-![Custom 2FA login](images/2fa-login-custom-view.png)
+![Custom 2FA login](../../.gitbook/assets/2fa-login-custom-view.png)
 
 The following code is an example of a custom 2FA login screen using [Lit](https://lit.dev/). This is the recommended way of creating a custom 2FA login screen. Lit is a light-weight library that augments the [Custom Elements API](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) to provide a declarative, performant, and interoperable way to create web components.
 

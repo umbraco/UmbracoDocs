@@ -216,7 +216,7 @@ Each item is treated as a standard `IPublishedElement` entity, which means you c
 
 The markdown above will output the following:
 
-![Example of inline code](../images/inline-sample.png)
+![Example of inline code](../../.gitbook/assets/inline-sample.png)
 
 #### Smaller code snippets
 
@@ -238,7 +238,7 @@ Example:
 
 The Razor snippet above will output the following:
 
-![Example of smaller code snippet](../images/codesnippet-sample.png)
+![Example of smaller code snippet](../../.gitbook/assets/codesnippet-sample.png)
 
 #### Large code samples
 

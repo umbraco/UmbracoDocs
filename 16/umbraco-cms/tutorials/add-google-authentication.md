@@ -14,7 +14,7 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
 
-![Google login screen](images/googleLoginScreen.jpg)
+![Google login screen](../.gitbook/assets/googleLoginScreen.jpg)
 
 ## Why?
 
@@ -42,7 +42,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 1.  Click the project dropdown and select **New Project**.
 
-    ![Project dropdown list](images/Project_dropdown_list_v13.png)
+    ![Project dropdown list](../.gitbook/assets/Project_dropdown_list_v13.png)
 2. Enter a **Project name**, **Organization**, and **Location**.
 3. Click **Create**.
 
@@ -51,11 +51,11 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 1. Open the newly created project from the project dropdown.
 2.  Click **Enable APIs and Services**.
 
-    ![Enable APIs](images/Enable_Apis_v13.png)
+    ![Enable APIs](../.gitbook/assets/Enable_Apis_v13.png)
 3. Type **Google+ API** in the **Search** field.
 4.  Select it and then **Enable** it.
 
-    ![Enable Google APIs](images/Enable_Google_API_v13.png)
+    ![Enable Google APIs](../.gitbook/assets/Enable_Google_API_v13.png)
 
 ### Set up an OAuth Consent Screen
 
@@ -65,7 +65,7 @@ Before you can create the credentials, you need to configure your consent screen
 2. Choose the **User Type** that fits your setup.
 3.  Click **Create**.
 
-    ![Select User Type](images/User_Type_v13.png)
+    ![Select User Type](../.gitbook/assets/User_Type_v13.png)
 4. Fill in the required information:
    * App name
    * User support email
@@ -82,7 +82,7 @@ Before you can create the credentials, you need to configure your consent screen
 2. Click **Create Credentials**.
 3.  Select **OAuth Client ID** from the dropdown.
 
-    ![Select OAuth Client ID](images/OAuth_Client_Id_v13.png)
+    ![Select OAuth Client ID](../.gitbook/assets/OAuth_Client_Id_v13.png)
 4. Select **Web Application** from the **Application type** dropdown.
 5.  Enter the following details:
 
@@ -90,7 +90,7 @@ Before you can create the credentials, you need to configure your consent screen
     * **Authorized JavaScript origins**
     * **Authorized redirect URIs**
 
-    ![Credentials](images/credentials_v13.png)
+    ![Credentials](../.gitbook/assets/credentials_v13.png)
 6. Click **Create**.
 
 A popup appears displaying the **Client Id** and **Client Secret**. You will need these values later while configuring your solution.
@@ -355,7 +355,7 @@ If auto-linking is disabled, the user will need to follow these steps in order t
 For future backoffice logins, the user will be able to use Google Authentication.
 {% endhint %}
 
-![Google login screen](images/googleLoginScreen.jpg)
+![Google login screen](../.gitbook/assets/googleLoginScreen.jpg)
 
 ## Related Links
 

@@ -1,0 +1,277 @@
+---
+description: >-
+  In this article you can learn about how to create Member registration and
+  login functionality for the frontend of your application.
+---
+
+# Member Registration and Login
+
+With a fresh Umbraco CMS install, you can create frontend registration, login functions, and restrict site access based on the system.
+
+By the end of this tutorial, you will learn how to:
+
+* Implement a basic register/login functionality on your website,
+* Hide pages from non-logged-in members, and
+* Assign newly registered members to specific member groups.
+
+## Prerequisites
+
+1. Install the latest [dotnet templates](../fundamentals/setup/install/install-umbraco-with-templates.md): `dotnet new install Umbraco.Templates`.
+2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
+3. Run the project: `dotnet run`
+4. Complete the installer and login to the backoffice.
+
+## Create Partial Views for Registration and Login
+
+1. Navigate to the **Settings** section in the backoffice.
+2. Locate the **Partial Views** folder under **Templating** in the left-hand section.
+3. Click **+** to create a new partial view.
+4. Choose **Partial view from snippet...**.
+
+![Create a new partial view](../.gitbook/assets/create-partial-view-from-snippet.png)
+
+5. Pick the **Login** snippet from the list.
+
+![Create a new partial view from the Login snippet](../.gitbook/assets/create-partial-view-from-login-snippet.png)
+
+6. Name the partial view **Login** and save it.
+7. Repeat the above steps using the _Register Member_ and _Login Status_ snippets.
+8. Save the partial views as "Register" and "LoginStatus" respectively.
+
+The Partial Views folder should now look like this:
+
+![The list of partial views](../.gitbook/assets/list-of-partial-views.png)
+
+## Create a new Document Type for Registration and Login
+
+To render these partial views, we need a new Document Type with a dedicated template (see also [Defining Content](../fundamentals/data/defining-content/)):
+
+1. Create a new **Document Type with Template** and name it **Login**.
+2. Click **Compositions**.
+3. Select **Content Base** and **Navigation Base** Compositions.
+4. Click **Submit**.
+
+![Composition View](../.gitbook/assets/composition-view.png)
+
+{% hint style="info" %}
+The **Content Base** and **Navigation Base** Compositions are available once the Umbraco Starter Kit is installed. For more information, see the [Prerequisites](members-registration-and-login.md#prerequisites) section.
+{% endhint %}
+
+5. Click **Save**.
+6. Go to the **Home** Document Type.
+7. Go to the **Structure** tab.
+8. Choose the **Login** Document Type under **Allowed child node types**.
+
+![Structure Setting](../.gitbook/assets/structure-setting.png)
+
+9. Click **Choose**.
+10. Click **Save**.
+
+## Render the partial views in the template
+
+1. Locate the **Login** template in the **Templates** folder under **Templating**.
+2. Overwrite its content with the following snippet:
+
+{% code title="Login.cshtml" %}
+
+```cshtml
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Login>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Master.cshtml";
+}
+
+<partial name="Partials/SectionHeader"/>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="col-md-3">
+            <nav class="nav-bar nav-bar--list">
+                <partial name="Partials/Navigation/SubNavigation" />
+            </nav>
+        </div>
+
+        <div class="col-md-9">
+            <article>
+             @await Html.GetBlockGridHtmlAsync(Model, "bodyText")
+            </article>
+            <article>
+                @await Html.PartialAsync("~/Views/Partials/LoginStatus.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Login.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Register.cshtml")
+               
+            </article>
+        </div>
+    </div>
+
+</section>
+
+<link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-blockgrid.css")" />
+```
+
+{% endcode %}
+
+## Create the Register/Login page
+
+1. Navigate to the **Content** section.
+2. Create a new page based on the **Login** Document Type Under the **Home** node:
+
+![Creating the Register/Login page](../.gitbook/assets/v14-create-register-login-page.png)
+
+3. Enter the details.
+4. Click **Save and publish**.
+5. Go to the **Info** tab.
+6. Click on the link under the **Links** section.
+
+The Login and Register functionality is rendered by the **Login** template:
+
+![The Login/Register functionality rendered](../.gitbook/assets/register-login-page-rendered.png)
+
+You can now use the page to register new Members. Every registered person will show up in the **Members** section in the backoffice:
+
+![Overview of created Members](../.gitbook/assets/members-overview.png)
+
+The "LoginStatus" partial view comes into play after registering as a new Member (or logging in as an existing Member). It will render a welcome message and a "log out" button:
+
+![Login status rendering](../.gitbook/assets/v14-login-status.png)
+
+{% hint style="info" %}
+In a real-life scenario, you probably don't want all this functionality on a single page. However, you can still use the partial views as a basis for your own implementation.
+{% endhint %}
+
+## Member-only pages/Restricted access
+
+{% hint style="info" %}
+If you are on Umbraco Cloud you need to do the following steps to be able to restrict access for your users:
+
+1. Go to the Users section in the Backoffice.
+2. Select your User.
+3. Add the "Sensitive Data" Group.
+
+Once you have added the "Sensitive Data" group go to the Members section in the backoffice. In the Members section you need to select each member and approve them by toggling the Approved button.
+
+Once the users have been approved, you can go ahead and continue the tutorial.
+{% endhint %}
+
+Now that we have the options to:
+
+* Register a member
+* Log in as a member
+* Check the current login status
+* Log out a member
+
+We can take this a bit further and specify which parts of our website should be accessible to logged-in members. To do this:
+
+1. Go to the **Member** section in the Backoffice.
+2. Create a new **Member Group**.
+
+![Create a new member group](../.gitbook/assets/create-member-group.png)
+
+3. Give the group a name.
+4. Save the Member Group.
+
+![Naming the new member group](../.gitbook/assets/v14-create-member-group-step-2.png)
+
+5. Navigate back to the created Member.
+6. Go to the **Info** tab and assign the newly created Member Group.
+7. Save the member:
+
+![Assign the new Member group to the created Member](../.gitbook/assets/v14-assign-member-group.png)
+
+Almost there!
+
+1. Navigate to the **Content** section.
+2. Create a new page that should only be visible to "Premium" members.
+3. Click the menu icon (•••) and select **Public Access**.
+
+![Restricting public access to content](../.gitbook/assets/v16-restrict-content-access.png)
+
+You will now have the option to restrict access to a specific member or a specific group. Choose **Group based protection**. In the dialog that follows, provide the following details:
+
+* The group(s) that will have access to the page.
+* The page with the login form.
+* The page to display if the content page is inaccessible to the logged-in member.
+
+![Configuring public access for content](../.gitbook/assets/v14-configure-public-access.png)
+
+{% hint style="info" %}
+It is recommended to have a dedicated page for the "No access" page - though you can use any page you have.
+{% endhint %}
+
+Congratulations! With all of that setup, the "Premium Content" page is only accessible to logged-in "Premium" Members. When not logged in, the website visitors will automatically be redirected to the "Register/Login" page.
+
+However, with the above approach, members will not be assigned to any group automatically. For this to happen, we would need to write a bit of custom code.
+
+## Assigning new members to groups automatically
+
+We can leverage the [built-in Notifications](../reference/notifications/) to handle the automatic Member Group assignment. Specifically the `MemberSavedNotification`, which is triggered whenever a Member is saved.
+
+{% hint style="info" %}
+This notification is triggered when _any_ Member is saved. Make sure test its usage carefully.
+{% endhint %}
+
+The following code automatically assigns Members to the "Premium" Member Group.
+
+{% code title="AssignMembersToPremiumRoleHandler.cs" %}
+```csharp
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Services;
+
+namespace UmbracoDocs.Samples;
+
+public class AssignMembersToPremiumRoleHandler : INotificationHandler<MemberSavedNotification>
+{
+    private const string RoleName = "Premium";
+
+    private readonly IMemberService _memberService;
+    private readonly ILogger<AssignMembersToPremiumRoleHandler> _logger;
+
+    public AssignMembersToPremiumRoleHandler(
+        IMemberService memberService,
+        ILogger<AssignMembersToPremiumRoleHandler> logger)
+    {
+        _memberService = memberService;
+        _logger = logger;
+    }
+
+    public void Handle(MemberSavedNotification notification)
+    {
+        foreach (IMember member in notification.SavedEntities)
+        {
+            if (_memberService.GetAllRoles(member.Id).Contains(RoleName))
+            {
+                continue;
+            }
+            _logger.LogInformation("Automatically assigning member with ID: {memberId} to role: {roleName}", member.Id, RoleName);
+            _memberService.AssignRole(member.Id, RoleName);
+        }
+    }
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+Member Groups are also referred to as "Roles" in the service layers.
+{% endhint %}
+
+To enable the notification handler, we also need a composer:
+
+{% code title="AssignMembersToPremiumRoleComposer.cs" %}
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Notifications;
+
+namespace UmbracoDocs.Samples;
+
+public class AssignMembersToPremiumRoleComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.AddNotificationHandler<MemberSavedNotification, AssignMembersToPremiumRoleHandler>();
+}
+```
+{% endcode %}

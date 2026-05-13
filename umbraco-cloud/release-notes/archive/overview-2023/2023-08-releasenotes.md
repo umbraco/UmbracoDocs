@@ -12,7 +12,7 @@ There is an interest increase in expanding the regional hosting choices for Umbr
 
 The availability of _**regional hosting**_ options empowers you to pinpoint the exact location for hosting and storing your Umbraco Cloud project. It also encompasses all its environments and data with a significant improvement in performance for users close to the selected hosting center.
 
-![Australia East cloud region](../../images/AusEast.png)
+![Australia East cloud region](../../../.gitbook/assets/AusEast.png)
 
 Another significant stride for Umbraco Cloud is the introduction of the East Australia regional hosting option, marking the fourth supported region. This addition is met with great enthusiasm by professionals within this region and those collaborating with clients here
 
@@ -22,11 +22,11 @@ Read the entire [blog post](https://umbraco.com/blog/umbraco-cloud-expands-with-
 
 Umbraco Cloud introduces a pragmatic enhancement – Event Visualization on the "Availability & Performance" dashboard. This feature seamlessly incorporates event monitoring into the Scalable Vector Graphics (SVG) visualization for each metrics panel.
 
-![Event 1](../../images/Event1.png)
+![Event 1](../../../.gitbook/assets/Event1.png)
 
 Gain insight into critical project events, such as restarts, automatic and manual upgrades, updates involving environment deployments, and changes in plans. This concise display allows for a comprehensive understanding of the events affecting your project.
 
-![Event 2](../../images/Event2.png)
+![Event 2](../../../.gitbook/assets/Event2.png)
 
 Stay informed about pivotal alterations, ranging from routine restarts to intricate deployments and upgrades. Whether it's a system restart, an environment deployment, or an upgrade, you'll have gained more of the information you need. This information will assist you in potential troubleshooting, make informed decisions, and ensure smooth project management.
 
@@ -38,7 +38,7 @@ We're pleased to introduce that the trial flow has undergone a significant visua
 
 New users to Umbraco get the option to explore the new trial flow for Umbraco Cloud and Heartcore projects to better understand their capabilities.
 
-![Umbraco Cloud trial flow](../../images/NewTrialFlow.gif)
+![Umbraco Cloud trial flow](../../../.gitbook/assets/NewTrialFlow.gif)
 
 And maybe it is also something for you! Whether you're an experienced developer or new to web development, this enhanced trial flow caters to your needs. Embrace Umbraco Cloud or Umbraco Heartcore with confidence, benefitting from a robust and user-friendly environment.
 

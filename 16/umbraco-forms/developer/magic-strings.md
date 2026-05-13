@@ -47,6 +47,7 @@ Some extra variables are:
 
 * `[#pageName]`: The nodename of the current page
 * `[#pageID]`: The node ID of the current page
+* `[#pageKey]`: The GUID key of the current page
 
 ### Recursive Umbraco Page field
 

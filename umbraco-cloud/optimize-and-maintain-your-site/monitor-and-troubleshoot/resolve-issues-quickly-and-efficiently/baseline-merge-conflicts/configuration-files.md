@@ -1,34 +1,38 @@
+---
+description: >-
+  Learn how to handle configuration files when working with Baseline and Child
+  projects on Umbraco Cloud.
+---
+
 # Handling configuration files
 
 {% hint style="warning" %}
-This is currently not possible on projects that run Umbraco 9 and above.
-
-We are working on making it available for Umbraco Cloud projects using version 9 and above.
+This article only applies to Umbraco Cloud projects running Umbraco versions 7 or 8.
 {% endhint %}
 
-When you are doing your normal development process, you'd be updating the configuration files in your solution as usual. When you are working with a Baseline setup there are a few things to keep in mind.
+When developing with a Baseline setup, there are a few things to keep in mind when updating configuration files.
 
-When you are deploying updates from the Baseline project to the Child projects, all solvable merge conflicts on configuration files will be solved by using the setting on the Child project.
+When deploying updates from the Baseline to Child projects, all solvable merge conflicts on configuration files are resolved using the Child project's settings.
 
-That also means that if a file has been changed in both the Baseline and in the Child project, the change from the Baseline won’t be applied to the Child. To have custom settings on the Child project, you should take advantage of the vendor-specific transform files.
+If a file has been changed in both the Baseline and the Child project, the Baseline change will not be applied to the Child. To have custom settings on the Child project, you should take advantage of the vendor-specific transform files.
 
 On Umbraco Cloud, it is possible to create transform files that will be applied to certain environments by naming them like `web.live.xdt.config` (see [Config-Transforms](../../../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md)). This should be used when a Child project needs different settings than the Baseline project.
 
-It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child projects repository, which can be achieved by creating the file locally and pushing it directly to the Child project. Read the [Working locally](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/) article to learn more about how this is done.
+It can be achieved by using a configuration file that is specific to the Child Project, naming it like `child.web.live.xdt.config`. This file should only be in the Child project's repository. Create the file locally and push it directly to the Child project. Read the [Working locally](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/) article to learn more about how this is done.
 
-Following this workflow will ensure that when the Child is updated from the Baseline, the settings won’t be overwritten.
+Following this workflow will ensure that when the Child is updated from the Baseline, the settings won't be overwritten.
 
-This practice is especially important when the Baseline project gets major new functionality, like new code that is dependent on the configuration files or when upgrades are applied.
+This practice is especially important when the Baseline project receives major new functionality. This includes new code that depends on configuration files, or when upgrades are applied.
 
 {% hint style="warning" %}
-When you need a specific configuration on Child projects, you should always use config transforms. Making changes directly to the default config files on the Child project might prevent you from being able to push changes from your Baseline project in the future.
+When you need a specific configuration on Child projects, always use config transforms.
+
+Editing default config files on the Child project directly may prevent you from pushing changes from your Baseline project in the future.
 {% endhint %}
 
 ## Examples
 
-Here is a few examples of what could be transformed in the child sites.
-
-## Adding or updating appsettings
+### Adding or updating appsettings
 
 {% code title="child-appsettings.web.live.xdt.config" %}
 ```xml
@@ -47,7 +51,7 @@ Here is a few examples of what could be transformed in the child sites.
 ```
 {% endcode %}
 
-## Setting the Simple Mail Transfer Protocol (SMTP) settings for the child project
+### Setting the Simple Mail Transfer Protocol (SMTP) settings for the child project
 
 {% code title="child-smtpsettings.web.live.xdt.config" %}
 ```xml
@@ -65,7 +69,7 @@ Here is a few examples of what could be transformed in the child sites.
 ```
 {% endcode %}
 
-## Setting custom rewrite rules for the child project
+### Setting custom rewrite rules for the child project
 
 {% code title="child-iisrewrite.web.live.xdt.config" %}
 ```xml

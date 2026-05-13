@@ -21,6 +21,10 @@ The steps to track & retrieve personalized content are as follows:
 _Without providing the_ `External-Visitor-Id` _header, each registered pageview will be considered as a new visitor._
 {% endhint %}
 
+{% hint style="info" %}
+If you want to bypass visitor-based segmentation and request a specific variant directly, use the [Forced-Segment header](forced-segment.md) instead.
+{% endhint %}
+
 5. Repeat these steps for each page visit for a new or existing visitor.
 
 By tracking visitor behavior, Engage determines if the user meets criteria for segmenting, A/B testing, or applying personalization. Subsequent requests to the Umbraco content API then deliver personalized content.
@@ -211,3 +215,21 @@ A visitor will be considered an **existing visitor** when either of the followin
 
 If neither applies, the requests will be considered coming from a new visitor.
 {% endhint %}
+
+#### Disabling the Visitor Cookie
+
+In headless setups where cookies are not practical, you can disable the visitor cookie entirely by setting `DisableVisitorCookie` to `true`:
+
+```json
+"Engage": {
+  "DeliveryApi": {
+    "DisableVisitorCookie": true
+  }
+}
+```
+
+When set to `true`, the `umbracoEngageAnalyticsVisitorId` cookie will not be set or read on headless API requests. Clients must then exclusively use the `External-Visitor-Id` header to identify returning visitors.
+
+| **Key**              | **Description**                                                                                                                                                      | **Default Value** |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| DisableVisitorCookie | When `true`, the visitor cookie is not set or read on Delivery API requests. Clients must use the `External-Visitor-Id` header to identify visitors instead.          | false             |

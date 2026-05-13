@@ -180,7 +180,7 @@ public class Suggestions : DataEditor
 
 Save the file, rebuild the application and have a look at the Suggestions Data Type. You should see that you have one configuration option.
 
-![An example of how the configuration will look](images/suggestion-editor-config\_1.png)
+![An example of how the configuration will look](<../../.gitbook/assets/suggestion-editor-config_1 (1).png>)
 
 ## Using the configuration
 
@@ -244,7 +244,7 @@ angular.module("umbraco")
 });
 ```
 
-3. Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
+3.  Finally, we'll add the `hideLabel` functionality. For this, we'll open the `Suggestion.cs` file and override the GetValueEditor method with configuration as a parameter.
 
     ```cs
     public override IDataValueEditor GetValueEditor(object? configuration)
@@ -272,11 +272,11 @@ angular.module("umbraco")
     namespace YourProjectName;
 
     [DataEditor(
-	alias: "Suggestions editor",
-	name: "Suggestions Editor",
-	view: "/App_Plugins/Suggestions/suggestion.html",
-	Group = "Common",
-	Icon = "icon-list")]
+    alias: "Suggestions editor",
+    name: "Suggestions Editor",
+    view: "/App_Plugins/Suggestions/suggestion.html",
+    Group = "Common",
+    Icon = "icon-list")]
     public class Suggestions : DataEditor
     {
         private readonly IIOHelper _ioHelper;
@@ -307,6 +307,6 @@ angular.module("umbraco")
 
 Save the files and rebuild the application. To access the configuration options, enable/disable the `Enabled?` and `Hide Label?` options. Additionally, you can set a default value in the `Default Value` field and see the Suggestions Data Type at play.
 
-![An example of setting the configuration](images/suggestion-editor-config\_2.png)
+![An example of setting the configuration](<../../.gitbook/assets/suggestion-editor-config_2 (1).png>)
 
-![Backoffice view](images/suggestion-editor-backoffice\_1.png)
+![Backoffice view](<../../.gitbook/assets/suggestion-editor-backoffice_1 (1).png>)

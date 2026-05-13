@@ -6,12 +6,12 @@
 
 This property editors returns one of the following:
 
-- A collection (`IEnumerable<MediaWithCrops>`) if the **Pick multiple items** setting is enabled.
-- A single `MediaWithCrops` item if the **Pick multiple items** setting is disabled.
+* A collection (`IEnumerable<MediaWithCrops>`) if the **Pick multiple items** setting is enabled.
+* A single `MediaWithCrops` item if the **Pick multiple items** setting is disabled.
 
 ## Data Type Definition Example
 
-![Media Picker Data Type Definition](../built-in-property-editors/images/MediaPicker-DataType-v10.png)
+![Media Picker Data Type Definition](<../../../../.gitbook/assets/MediaPicker-DataType-v10 (1).png>)
 
 ### Accepted types
 
@@ -57,7 +57,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 
 ## Content Example
 
-![Media Picker Content](../built-in-property-editors/images/Media-Picker3-Content.jpg)
+![Media Picker Content](<../../../../.gitbook/assets/Media-Picker3-Content (1).jpg>)
 
 ## MVC View Example
 
@@ -74,7 +74,7 @@ Global crops are configured on the Image Cropper property of the Image Media Typ
 }
 ```
 
-#### Multiple enabled without Modelsbuilder to retrieve IEnumerable<IPublishedContent> data
+#### Multiple enabled without Modelsbuilder to retrieve IEnumerable data
 
 ```csharp
 @using Umbraco.Cms.Core.Models

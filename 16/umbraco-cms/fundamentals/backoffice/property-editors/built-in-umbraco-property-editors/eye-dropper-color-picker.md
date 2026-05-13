@@ -10,11 +10,11 @@ The Eye Dropper Color picker allows you to choose a color from the full color sp
 
 ## Data Type Definition Example
 
-![Eye Dropper Color Picker Data Type Definition](images/Eye-Dropper-Color-Picker-DataType.png)
+![Eye Dropper Color Picker Data Type Definition](../../../../.gitbook/assets/Eye-Dropper-Color-Picker-DataType.png)
 
 ## Content Example
 
-![Eye Dropper Color Picker Content](images/Eye-Dropper-Color-Picker-Content.png)
+![Eye Dropper Color Picker Content](../../../../.gitbook/assets/Eye-Dropper-Color-Picker-Content.png)
 
 ## Example with Models Builder
 

@@ -34,7 +34,7 @@ Please be aware that since this involves using your custom pipeline, any issues 
 Go to your repositories in Azure DevOps and click on "Create a repository".
 
 * Create a new empty repository (don't add a README and don't add a .gitignore), and note down the clone URL.
-* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/README.md#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
+* Go to the Umbraco Cloud Portal and clone your cloud project down locally. [This article](../../working-locally/#cloning-an-umbraco-cloud-project) describes how you can find the clone URL.
 * Now working locally remove the Git Remote called `origin`, which currently points to Umbraco Cloud
 
 ```sh
@@ -136,7 +136,7 @@ For a pipeline that uses Bash scripts you will need the following files:
 
 ## Configure Azure DevOps
 
-The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./README.md#obtaining-the-project-id-and-api-key) section describes how to get these values.
+The pipeline needs to know which Umbraco Cloud project to deploy to. To do this, you need the `Project ID` and the `API Key`. The [Obtaining the Project ID and API Key](./#obtaining-the-project-id-and-api-key) section describes how to get these values.
 
 * Now go to the repository in Azure and click on "Set up build".
 
@@ -144,12 +144,12 @@ The pipeline needs to know which Umbraco Cloud project to deploy to. To do this,
 
 * On the next screen click on "Existing Azure Pipelines YAML file"
 
-<figure><img src="../../../set-up-your-project/project-settings/images/Pipeline3.png" alt=""><figcaption><p>Configure pipeline with existing YAML file</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Pipeline3.png" alt=""><figcaption><p>Configure pipeline with existing YAML file</p></figcaption></figure>
 
 * Select `main` (or `master` if you did not change the branch name) in Branch
 * Select `/devops/azure-release-pipeline.yaml` in Path and continue
 
-<figure><img src="../../../set-up-your-project/project-settings/images/Pipeline4.png" alt=""><figcaption><p>Select Branch and Path</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Pipeline4.png" alt=""><figcaption><p>Select Branch and Path</p></figcaption></figure>
 
 * Now you are on the "Review your pipeline YAML" screen
   * Replace the `##Your project Id here##` with the Project Id you got from Umbraco Cloud Portal

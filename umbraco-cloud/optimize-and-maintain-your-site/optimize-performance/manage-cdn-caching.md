@@ -10,7 +10,7 @@ The options that are currently available are:
 * Cache TTL: Time to Live (default: 120 minutes)
 * Cache Everything (default: off)
 
-![Default Options](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-default.png)
+![Default Options](../../.gitbook/assets/CDN-caching-default.png)
 
 When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project so that the new hostnames will get the settings you have chosen. This means that when enabling caching in the default settings and adding a new hostname, caching is enabled for that new hostname.
 
@@ -20,22 +20,9 @@ When caching is enabled on your project static assets like CSS and images are ca
 
 By default, Umbraco Cloud enforces a minimum TTL based on the plan of your Umbraco Cloud Project. This means that assets cannot be cached for a shorter period than what your Plan allows. You can always choose a longer duration, especially, if you don't expect your assets to change.
 
-The following file types are cached as static assets through the CDN: 
+The following file types are cached as static assets through the CDN:
 
-| `7z`  | `ppt`  | `webm` | `bz2`   |
-| `csv` | `tiff` | `bin`  | `eps`   |
-| `gif` | `zst`  | `ejs`  | `jpeg`  |
-| `midi`| `avif` | `jar`  | `pdf`   |
-| `png` | `docx` | `ogg`  | `svgz`  |
-| `tif` | `ico`  | `rar`  | `woff2` |
-| `zip` | `mp3`  | `webp` | `class` |
-| `avi` | `pptx` | `bmp`  | `exe`   |
-| `doc` | `ttf`  | `eot`  | `js`    |
-| `gz`  | `apk`  | `jpg`  | `pict`  |
-| `mkv` | `dmg`  | `otf`  | `swf`   |
-| `ps`  | `iso`  | `svg`  | `xls`   |
-| `mp4` | `css`  | `woff` | `flac`  |
-| `pls` | `mid`  | `tar`  | `xlsx`  |
+\| `7z` | `ppt` | `webm` | `bz2` | | `csv` | `tiff` | `bin` | `eps` | | `gif` | `zst` | `ejs` | `jpeg` | | `midi`| `avif` | `jar` | `pdf` | | `png` | `docx` | `ogg` | `svgz` | | `tif` | `ico` | `rar` | `woff2` | | `zip` | `mp3` | `webp` | `class` | | `avi` | `pptx` | `bmp` | `exe` | | `doc` | `ttf` | `eot` | `js` | | `gz` | `apk` | `jpg` | `pict` | | `mkv` | `dmg` | `otf` | `swf` | | `ps` | `iso` | `svg` | `xls` | | `mp4` | `css` | `woff` | `flac` | | `pls` | `mid` | `tar` | `xlsx` |
 
 If you want to disable caching on certain types of static assets, you can use a 'no-cache' cache-control header. This will be respected by the caching strategy in the CDN. You can utilize an outbound rewrite rule to add such a cache-control header to the request.
 
@@ -61,14 +48,13 @@ The webpage itself is not cached when CDN Caching is enabled.
 
 ## Cache Everything
 
-![Cache Everything](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-everything.png)
+![Cache Everything](../../.gitbook/assets/CDN-caching-everything.png)
 
 When **Cache Everything** is enabled, everything including the webpage is cached in the CDN. So, in addition to static assets, the webpage will also be cached and served from the CDN instead of loading from the origin.
 
 {% hint style="info" %}
 When a webpage is cached, it will be stripped of any cookies that are otherwise part of the request. If you use cookies as part of the website, be aware of the implications of using Cache Everything.
 {% endhint %}
-
 
 When using Cache TTL, the Editor's expectations of when the webpage is refreshed is matched with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours. Then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, they will have to wait at least two hours until they can see the changes on the website.
 
@@ -78,7 +64,7 @@ We recommend using Cache Everything with caution.
 
 ## Purge Caching
 
-![Purge Cache](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-purge.png)
+![Purge Cache](../../.gitbook/assets/CDN-purge.png)
 
 When you need to refresh cached assets, you can purge the CDN cache to remove everything and force a refresh. This can be useful after having deployed changes to JS and CSS files, which are cached in the CDN. If you have caching enabled, you can purge the cache in the Purge Cache section at the bottom of the page.
 
@@ -128,7 +114,7 @@ From your Umbraco Cloud Project, click **CDN Caching & Optimization** from the *
 
 Aside from environments, the CDN Caching & Optimization page is divided into two parts: **Default Settings** and **Hostname Specific Settings**.
 
-![Default Settings](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/CDN-caching-hostname.png)
+![Default Settings](../../.gitbook/assets/CDN-caching-hostname.png)
 
 Use the **Default settings** to configure default settings that should be applied to new and existing hostnames.
 

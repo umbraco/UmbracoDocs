@@ -6,7 +6,7 @@ description: >-
 
 # Getting Started
 
-Are you are a marketer looking to create personalized content or a developer integrating Umbraco Engage into your infrastructure? This section offers essential articles on configuring the system, understanding its features, and optimizing it for your needs.
+Are you a marketer looking to create personalized content or a developer integrating Umbraco Engage into your infrastructure? This section offers essential articles on configuring the system, understanding its features, and optimizing it for your needs.
 
 {% content-ref url="for-marketers-and-editors/" %}
 [for-marketers-and-editors](for-marketers-and-editors/)
@@ -15,3 +15,8 @@ Are you are a marketer looking to create personalized content or a developer int
 {% content-ref url="for-developers/" %}
 [for-developers](for-developers/)
 {% endcontent-ref %}
+
+## Umbraco Training
+
+{% include "../.gitbook/includes/umbraco-hq-offers-a-special....md" %}
+

@@ -94,7 +94,13 @@ For illustration purposes, the following structure represents the full set of op
       "DisableRelationTracking": false,
       "TrackRenderedFormsStorageMethod": "HttpContextItems",
       "EnableMultiPageFormSettings": true,
-      "EnableAdvancedValidationRules": false
+      "EnableAdvancedValidationRules": false,
+      "AnalyticsProcessing": {
+        "Enabled": true,
+        "FirstRunTime": "",
+        "Period": "1.00:00:00",
+        "RetainProcessedDataForDays": 1095
+      }
     },
     "Security": {
       "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
@@ -467,6 +473,26 @@ This setting determines whether [advanced form validation rules](../../editor/cr
 By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
 To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
+
+## Analytics processing configuration
+
+A background process runs periodically to aggregate form submission data into summary tables. This provides fast-loading analytics views in the backoffice. The following settings control this process:
+
+### Enabled
+
+Set to `true` (the default) to enable the background analytics data processing task. When disabled, no pre-aggregated data is created, but the analytics views in the backoffice are still available.
+
+### FirstRunTime
+
+Configures when the analytics processing task will run for the first time. If not configured, the task will start shortly after the site starts. The value must be specified as a cron expression. For example, a value of `"0 1 * * *"` schedules the first run at 01:00.
+
+### Period
+
+Defines how often the analytics data processing task will run. The default value is `1.00:00:00`, which is equivalent to once every 24 hours.
+
+### RetainProcessedDataForDays
+
+Defines the number of days to retain pre-aggregated analytics summary data. Summary data older than this value will be removed by the processing task. The default value is `1095` (approximately 3 years). Set to `0` to retain data indefinitely.
 
 ## Security configuration
 

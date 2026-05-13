@@ -6,7 +6,7 @@ Toggle is a standard checkbox which saves either 0 or 1, depending on the checkb
 
 ## Data Type Definition Example
 
-![True/False Data Type Definition](../built-in-property-editors/images/Checkbox-Data-Type-v10.png)
+![True/False Data Type Definition](<../../../../.gitbook/assets/Checkbox-Data-Type-v10 (1).png>)
 
 The Toggle property has a setting which allows you to set the default value of the checkbox, either checked (true) or unchecked (false).
 
@@ -14,7 +14,7 @@ It is also possible to define a label, that will be displayed next to the checkb
 
 ## Content Example
 
-![No Edit Content Example](../built-in-property-editors/images/Checkbox-Content.png)
+![No Edit Content Example](<../../../../.gitbook/assets/Checkbox-Content (1).png>)
 
 ## MVC View Example
 

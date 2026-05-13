@@ -30,7 +30,7 @@ The **`.pfx`** file can only contain one certificate. Each certificate can then 
 2. Select **Choose file** in the **Certificate (.pfx file)** field and upload your certificate from your local machine.
 3.  Enter the **Password** for your certificate.
 
-    ![Add Manual Certificate](images/Add-Manual-Certificate.png)
+    ![Add Manual Certificate](../../.gitbook/assets/Add-Manual-Certificate.png)
 4. Click **Add**.
 
 ## Bind Certificate to a Hostname
