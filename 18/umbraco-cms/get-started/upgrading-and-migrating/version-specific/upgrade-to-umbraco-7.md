@@ -7,7 +7,7 @@ description: >-
 
 # Upgrade to Umbraco 7
 
-The [standard upgrade instructions](../) still apply to this process as well.
+The [standard upgrade instructions](../upgrade-details.md) still apply to this process as well.
 
 ## Backup
 

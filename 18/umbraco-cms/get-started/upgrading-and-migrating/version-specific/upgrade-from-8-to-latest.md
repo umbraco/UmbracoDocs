@@ -75,7 +75,7 @@ You need to manually update the view files and custom code implementation. For m
    * `~/Media` - Media folder from v8 needs to be copied over into the `wwwroot - media` folder
    * Any files/folders related to Stylesheets and JavaScript.
 2. Migrate custom configuration from the Umbraco 8 configuration files (`.config`) into the `appsettings.json` file on the new project.
-   * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file. Learn more about this in the [Configuration](../../../develop-with-umbraco/configuration/) article.
+   * As of Umbraco version 9, the configuration no longer lives in the `Web.Config` file and has been replaced by the `appsettings.json` file. Learn more about this in the [Configuration](../../../develop-with-umbraco/configuration/README.md) article.
 3. [Migrate Umbraco Forms data to the database](https://docs.umbraco.com/umbraco-forms/developer/forms-in-the-database#migrating-forms-in-files-into-a-site), if relevant.
    * As of Umbraco Forms version 9, it is only possible to store Forms data in the database. If Umbraco Forms was used on the Umbraco 8 project, the files need to be migrated to the database.
 4. Run the new project.
@@ -107,5 +107,5 @@ This concludes this tutorial. Find related information and further reading in th
 ## Related Information
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
-* [Configuration in modern Umbraco](../../../develop-with-umbraco/configuration/)
+* [Configuration in modern Umbraco](../../../develop-with-umbraco/configuration/README.md)
 * [Configuration in legacy Umbraco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)

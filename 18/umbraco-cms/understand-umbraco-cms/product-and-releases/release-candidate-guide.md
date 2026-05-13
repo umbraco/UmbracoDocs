@@ -2,12 +2,11 @@
 description: >-
   Learn how to start testing the Release Candidate for the latest version of
   Umbraco CMS, and find information about new and updated documentation.
-hidden: true
 ---
 
 # Release Candidate Guide
 
-The RC can be used to test your website and projects against the next major version of Umbraco CMS.
+The beta can be used to test your website and projects against the next major version of Umbraco CMS.
 
 This article contains all the resources needed for you to start testing.
 
@@ -29,12 +28,12 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Install the Release Candidate
 
-The [release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/17.0.0-beta).
+The [release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/18.0.0-beta).
 
 1. Install the Umbraco dotnet template for the Release Candidate.
 
 ```cmd
-dotnet new install Umbraco.Templates::17.0.0-beta
+dotnet new install Umbraco.Templates::18.0.0-beta
 ```
 
 2. Create a new Umbraco project.
@@ -62,17 +61,11 @@ This will boot the project, and write the log to the console. The website is now
 Alternatively, you can install and run the Umbraco project using your favorite IDE (Integrated Development Environment).
 {% endhint %}
 
-## What to focus on when testing
-
-Read the [Release Candidate blog post](https://umbraco.com/blog/umbraco-17-beta-is-out/) to learn more about notable features and changes added to the upcoming version.
-
-The blog post will mention if there are any specific features or workflows that the Umbraco HQ team needs feedback on.
-
 ## New and updated documentation
 
 Here is a list of all the new or updated articles in this version.
 
-* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17)
+* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/README.md)
 * [Date Time Property Editor](../../model-your-content/property-editors/built-in-umbraco-property-editors/date-time-editor/)
 * [`UnattendedTelemetryLevel` Setting](../../get-started/installation/install-umbraco-with-templates.md) and [`UnattendedTelemetryLevel` in Unattended Install](../../get-started/installation/unattended-install.md)
 * [`UnattendedTelemetryLevel` in the Configuration article](../../develop-with-umbraco/configuration/unattendedsettings.md#unattended-telemetry-level)
