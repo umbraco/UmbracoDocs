@@ -112,7 +112,7 @@ Notice there isn't any implementation written here. The regex maps the incoming 
 
 ## Custom Embed Providers
 
-If your third-party media provider lacks OEmbed support or requires custom HTML due to content quirks, implement `GetMarkup()` without using base helper methods.
+If your third-party media provider lacks OEmbed support or requires custom HTML due to content quirks, implement `GetMarkupAsync()` without using base helper methods.
 
 ### Custom Embed Provider Example
 
@@ -143,7 +143,7 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
         @"windows\.net/*"
     ];
 
-    public override Dictionary<string, string> RequestParams => new();
+    public override Dictionary<string, string> RequestParams => [];
 
     public override Task<string?> GetMarkupAsync(string url, int? maxWidth, int? maxHeight, CancellationToken cancellationToken)
     {
