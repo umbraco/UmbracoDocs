@@ -197,6 +197,7 @@
     * [Property Expansion and Limiting](develop-with-umbraco/headless-and-apis/content-delivery-api/property-expansion-and-limiting.md)
     * [Additional Preview Environments Support](develop-with-umbraco/headless-and-apis/content-delivery-api/additional-preview-environments-support.md)
     * [Custom Delivery API Endpoints](develop-with-umbraco/headless-and-apis/content-delivery-api/custom-delivery-api-endpoints.md)
+    * [Content type schemas in OpenAPI](develop-with-umbraco/headless-and-apis/content-delivery-api/content-type-schemas-in-openapi.md)
   * [Management API](develop-with-umbraco/headless-and-apis/management-api/README.md)
     * [External Access](develop-with-umbraco/headless-and-apis/management-api/external-access.md)
     * [Setup OAuth Using Postman](develop-with-umbraco/headless-and-apis/management-api/postman-setup-swagger.md)
