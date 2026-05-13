@@ -8,7 +8,7 @@ Use the information below to learn about any potential breaking changes and comm
 
 If any specific steps are involved with upgrading to a specific version they will be listed below.
 
-Use the [general upgrade guide](../) to complete the upgrade of your project.
+Use the [general upgrade guide](../upgrade-details.md) to complete the upgrade of your project.
 
 ## Preparation for Upgrade
 
@@ -24,7 +24,7 @@ For details, see the entry on `EnableMediaRecycleBinProtection` further down.
 
 The single-mode block list migration — added in Umbraco 17 but disabled — now runs by default during the upgrade to Umbraco 18. Sites with custom property editors that nest block list values must implement and register an `ITypedSingleBlockListProcessor` before the upgrade runs. Without this, nested data in those property values will be left in the old format.
 
-For details, see the [Single block migration](single-block-migration.md) article.
+For details, see the [Single block migration](./single-block-migration.md) article.
 
 ## Breaking changes
 

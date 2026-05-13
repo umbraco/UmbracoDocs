@@ -123,13 +123,13 @@ In the following guide we will migrate the content of an Umbraco 7.13.1 site to 
 
 ### Step 1: Upgrading to 7.14+
 
-Before the content migration can start the site has to run Umbraco 7.14+. Make sure to **always take a backup of the database** before doing an upgrade, and then check the [version specific upgrade instructions](./).
+Before the content migration can start the site has to run Umbraco 7.14+. Make sure to **always take a backup of the database** before doing an upgrade, and then check the [version specific upgrade instructions](./README.md).
 
 The site in this example is an Umbraco 7.13.1 site, and we will use Nuget to update it.
 
 ![v7 site with content](../../../.gitbook/assets/v7-content.png)
 
-Following the [general upgrade instructions](../) we will now upgrade via Nuget until we get to this point:
+Following the [general upgrade instructions](../upgrade-details.md) we will now upgrade via Nuget until we get to this point:
 
 ![Upgrading to v7.14](../../../.gitbook/assets/upgrading-7_14.png)
 
