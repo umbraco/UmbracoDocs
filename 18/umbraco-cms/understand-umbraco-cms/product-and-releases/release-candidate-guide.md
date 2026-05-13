@@ -6,7 +6,7 @@ description: >-
 
 # Release Candidate Guide
 
-The RC can be used to test your website and projects against the next major version of Umbraco CMS.
+The beta can be used to test your website and projects against the next major version of Umbraco CMS.
 
 This article contains all the resources needed for you to start testing.
 

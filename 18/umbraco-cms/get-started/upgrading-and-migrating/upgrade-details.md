@@ -6,7 +6,7 @@ description: Describes how to upgrade existing installations to new versions.
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
-If you are new to upgrades, be sure to read the [upgrade introduction article](upgrade-overview.md) first.
+If you are new to upgrades, be sure to read the [upgrade introduction article](./README.md) first.
 
 * [Upgrade to a new Major](upgrade-details.md#upgrade-to-a-new-major)
 * [Upgrade to a new Minor](upgrade-details.md#upgrade-to-a-new-minor)
