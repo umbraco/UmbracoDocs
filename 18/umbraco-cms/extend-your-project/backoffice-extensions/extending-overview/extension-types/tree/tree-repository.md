@@ -17,7 +17,7 @@ interface UmbTreeRepository {
 }
 ```
 
-See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
+See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
 
 ## Registering the Repository
 

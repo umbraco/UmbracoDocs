@@ -29,7 +29,7 @@ The `sectionSidebarApp` manifest supports the following properties:
 | `conditions`  | array               | No       | Conditions that must pass for the app to appear. See [Extension Conditions](../../extension-conditions.md).                            |
 | `overwrites`  | string \| string\[] | No       | Alias(es) of extensions this manifest replaces.                                                                                        |
 
-For the full TypeScript interface, see [`ManifestSectionSidebarApp`](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_section.ManifestSectionSidebarApp.html) in the API documentation.
+For the full TypeScript interface, see [`ManifestSectionSidebarApp`](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_section.ManifestSectionSidebarApp.html) in the API documentation.
 
 For a general overview of manifest properties shared across all extension types, see [Extension Manifest Introduction](../../extension-registry/extension-manifest.md).
 

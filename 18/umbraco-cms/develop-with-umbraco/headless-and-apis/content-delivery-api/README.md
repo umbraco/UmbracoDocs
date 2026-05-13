@@ -400,6 +400,8 @@ Returns single or multiple items.
 
 All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. This document is not available in production mode by default. For more information read the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
 
+You can also configure the Delivery API to emit per-content-type schemas in its OpenAPI document. See the [Content type schemas in OpenAPI](content-type-schemas-in-openapi.md) article.
+
 ### Query parameters
 
 The Content Delivery API provides query parameters that allow you to customize the content returned by the API. The relevant query parameters for each endpoint are already specified in the corresponding documentation above.

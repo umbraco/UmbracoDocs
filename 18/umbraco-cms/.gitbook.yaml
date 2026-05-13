@@ -31,6 +31,7 @@ redirects:
     reference/management/services/externalloginservice: reference/management/README.md
     reference/management/services/fileservice: reference/management/README.md
     reference/management/services/localizationservice: reference/management/README.md
+    reference/management/using-services/localizationservice: reference/management/README.md
     reference/management/services/macroservice: reference/management/README.md
     reference/management/services/membergroupservice: reference/management/README.md
     reference/management/services/memberservice: reference/management/README.md

@@ -33,7 +33,7 @@ Trees get their data from a **Repository**. The Repository implements methods to
 
 ### Repository Implementation
 
-Create a Repository that implements the `TreeRepository` interface. The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html)
+Create a Repository that implements the `TreeRepository` interface. The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html)
 
 ```typescript
 interface UmbTreeRepository {

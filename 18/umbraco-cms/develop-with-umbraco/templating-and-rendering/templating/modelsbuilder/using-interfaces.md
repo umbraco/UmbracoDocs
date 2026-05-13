@@ -10,7 +10,7 @@ A common use-case for this is if you have a separate composition for the "SEO pr
 
 You would usually use this composition on both your `Home` and `Textpage` document types. Since both `Home` and `Textpage` will implement the generated `ISeoProperties` interface, you will still be able to use the simpler models builder syntax (e.g. `Model.PageTitle`).
 
-However, you won't be able to use the nice models builder syntax on any master template, since a master template needs to be bound to a generic `IPublishedContent`. So you'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax to render these properties. It is possible to solve this issue of master templating, by using partial views, to render the SEO specific properties. 
+A master template is bound to a generic `IPublishedContent`, so the models builder syntax isn't available there. You'd have to resort to the *ever-so-slightly* clumsier `Model.Value("pageTitle")` syntax instead. Using partial views to render the SEO-specific properties is one way to solve this.
 
 ## Render with a partial
 
