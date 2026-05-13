@@ -25,7 +25,6 @@ The following snippet will give an overview of the keys and values in the conten
       "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
       "BackOfficeLogo": "../media/qyci4xti/logo.png",
-      "HideBackOfficeLogo": false,
       "Imaging": {
         "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
         "AutoFillImageProperties": [
@@ -131,10 +130,6 @@ If you have more than two sites and forget to add a 404 page and a culture, the 
 ### Backoffice logo
 
 This setting can be used to set a custom image path to replace the Umbraco logo in the backoffice.
-
-### Hide backoffice logo
-
-This setting can be used to hide the Umbraco logo in backoffice.
 
 ### Login background image
 
