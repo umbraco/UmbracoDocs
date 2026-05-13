@@ -5,7 +5,7 @@
 ## Understand Umbraco CMS
 
 * [Product and Releases](understand-umbraco-cms/product-and-releases/README.md)
-  * [Release Candidate Guide](understand-umbraco-cms/product-and-releases/release-candidate-guide.md)
+  * [Pre-Release Guide](understand-umbraco-cms/product-and-releases/release-candidate-guide.md)
   * [Release Notes](https://our.umbraco.com/download/releases/)
   * [Legacy Documentation](understand-umbraco-cms/product-and-releases/legacy-documentation/README.md)
     * [Our Umbraco](https://our.umbraco.com/documentation/)
