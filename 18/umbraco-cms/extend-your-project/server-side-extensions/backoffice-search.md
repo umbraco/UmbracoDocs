@@ -50,14 +50,6 @@ public class BackofficeSearchComposer : IComposer
 }
 ```
 
-{% hint style="warning" %}
-`ILocalizationService` is marked as obsolete and will be removed in a future verison. `ILocalizationService` is intended to be replaced by `ILanguageService` and `IDictionaryItemService`.
-
-The example below reflects the current implementation and therefore continues to use `ILocalizationService`.
-
-For new development, you should evaluate whether `ILanguageService` or `IDictionaryItemService` better fits your use case.
-{% endhint %}
-
 ```csharp
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Services;
@@ -68,7 +60,7 @@ namespace Umbraco.Docs.Samples.Web.BackofficeSearch;
 
 public class CustomUmbracoTreeSearcherFields : UmbracoTreeSearcherFields, IUmbracoTreeSearcherFields
 {
-    public CustomUmbracoTreeSearcherFields(ILocalizationService localizationService) : base(localizationService)
+    public CustomUmbracoTreeSearcherFields(ILanguageService languageService) : base(languageService)
     {
     }
 

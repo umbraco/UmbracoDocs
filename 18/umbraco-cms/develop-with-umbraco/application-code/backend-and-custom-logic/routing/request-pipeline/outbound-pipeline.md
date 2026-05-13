@@ -175,7 +175,7 @@ The DI container of an Umbraco implementation contains a collection of `UrlProvi
 
 ### DefaultUrlProvider
 
-Umbraco ships with a `DefaultUrlProvider`, which maps the structure of the content tree to URLs out of the box. In Umbraco 15 and later, this is implemented as `NewDefaultUrlProvider`.
+Umbraco ships with a `DefaultUrlProvider`, which maps the structure of the content tree to URLs out of the box.
 
 ### How the Default URL provider works
 
@@ -218,12 +218,12 @@ When implementing a custom URL Provider, consider the following:
 * Inbound routing may require a matching `IContentFinder`.
 
 {% hint style="info" %}
-For small changes to URL generation logic, inherit from `NewDefaultUrlProvider` and override the `GetUrl()` virtual method rather than implementing `IUrlProvider` from scratch.
+For small changes to URL generation logic, inherit from `DefaultUrlProvider` and override the `GetUrl()` virtual method rather than implementing `IUrlProvider` from scratch.
 {% endhint %}
 
 #### Example
 
-This example replaces the default URL provider with a custom implementation, based on `NewDefaultUrlProvider`. The custom URL provider implements a new routing scheme for product pages.
+This example replaces the default URL provider with a custom implementation, based on `DefaultUrlProvider`. The custom URL provider implements a new routing scheme for product pages.
 
 {% hint style="warning" %}
 The code below alters the outbound URL for product pages but does not provide matching inbound URL routing. This **will** break inbound routing, making the product pages unroutable.
@@ -246,11 +246,11 @@ namespace RoutingDocs.UrlProviders;
 
 // A custom URL provider that replaces the default URL provider
 // to implement a custom URL scheme for product pages.
-public class CustomUrlProvider : NewDefaultUrlProvider
+public class CustomUrlProvider : DefaultUrlProvider
 {
     public CustomUrlProvider(
         IOptionsMonitor<RequestHandlerSettings> requestSettings,
-        ILogger<NewDefaultUrlProvider> logger,
+        ILogger<DefaultUrlProvider> logger,
         ISiteDomainMapper siteDomainMapper,
         IUmbracoContextAccessor umbracoContextAccessor,
         UriUtility uriUtility,
@@ -269,7 +269,7 @@ public class CustomUrlProvider : NewDefaultUrlProvider
 
     public override UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
     {
-        // Get the default URL from the base implementation (NewDefaultUrlProvider).
+        // Get the default URL from the base implementation (DefaultUrlProvider).
         UrlInfo? defaultUrlInfo = base.GetUrl(content, mode, culture, current);
 
         if (defaultUrlInfo?.Url is null)
@@ -310,7 +310,7 @@ public class RegisterCustomUrlProviderComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
         // Register the custom URL provider instead of the default URL provider.
         => builder.UrlProviders()
-            .Remove<NewDefaultUrlProvider>()
+            .Remove<DefaultUrlProvider>()
             .Insert<CustomUrlProvider>();
 }
 ```

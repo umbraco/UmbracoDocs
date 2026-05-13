@@ -458,7 +458,6 @@
       * [Relation Service](extend-your-project/server-side-extensions/management/using-services/relationservice.md)
       * [Content Service](extend-your-project/server-side-extensions/management/using-services/contentservice.md)
       * [Content Type Service](extend-your-project/server-side-extensions/management/using-services/contenttypeservice.md)
-      * [Localization Service](extend-your-project/server-side-extensions/management/using-services/localizationservice.md)
       * [User Service](extend-your-project/server-side-extensions/management/using-services/userservice.md)
   * [Scheduling](extend-your-project/server-side-extensions/scheduling.md)
   * [Server Events From SignalR](extend-your-project/server-side-extensions/server-events.md)

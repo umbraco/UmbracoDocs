@@ -8,7 +8,7 @@ Umbraco 14 has obsoleted or removed base classes that were widely adopted for bu
 
 ## Porting over `UmbracoApiController` implementations
 
-`UmbracoApiController` is obsolete from Umbraco 14 and will be removed in Umbraco 15. The recommended approach is to base APIs on the ASP.NET Core `Controller` class instead.
+`UmbracoApiController` was obsoleted in Umbraco 14 and has been removed in Umbraco 18, along with the convention-based front-end API auto-routing it relied on. The recommended approach is to base APIs on the ASP.NET Core `Controller` class instead.
 
 `UmbracoApiController` would automatically route the API actions to `/umbraco/api/[ControllerName]/[ControllerAction]`. Moving forward, you control your API routes with the `[Route]` annotation.
 

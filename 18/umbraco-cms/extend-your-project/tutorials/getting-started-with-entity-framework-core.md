@@ -310,7 +310,7 @@ public class BlogCommentsController : Controller
     [HttpGet("all")]
     public async Task<IActionResult> All()
     {
-        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        using IEFCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
         IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db => db.BlogComments.ToArray());
         scope.Complete();
         return Ok(comments);
@@ -319,7 +319,7 @@ public class BlogCommentsController : Controller
     [HttpGet("getcomments")]
     public async Task<IActionResult> GetComments(Guid umbracoNodeKey)
     {
-        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        using IEFCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
         IEnumerable<BlogComment> comments = await scope.ExecuteWithContextAsync(async db =>
         {
             return db.BlogComments.Where(x => x.BlogPostUmbracoKey == umbracoNodeKey).ToArray();
@@ -332,7 +332,7 @@ public class BlogCommentsController : Controller
     [HttpPost("insertcomment")]
     public async Task InsertComment(BlogComment comment)
     {
-        using IEfCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
+        using IEFCoreScope<BlogContext> scope = _efCoreScopeProvider.CreateScope();
 
         await scope.ExecuteWithContextAsync<Task>(async db =>
         {
@@ -365,7 +365,7 @@ builder.Services.AddUmbracoDbContext<BlogContext>(
 {% endcode %}
 
 {% hint style="info" %}
-When `shareUmbracoConnection` is `false`, the custom `DbContext` has its own connection and transaction. Completing an Umbraco scope does not commit writes made through your EF Core scope (and vice versa). You still use `IEFCoreScopeProvider<T>` and `IEfCoreScope<T>` the same way as before — the scope manages the separate connection on your behalf.
+When `shareUmbracoConnection` is `false`, the custom `DbContext` has its own connection and transaction. Completing an Umbraco scope does not commit writes made through your EF Core scope (and vice versa). You still use `IEFCoreScopeProvider<T>` and `IEFCoreScope<T>` the same way as before — the scope manages the separate connection on your behalf.
 {% endhint %}
 
 {% hint style="info" %}

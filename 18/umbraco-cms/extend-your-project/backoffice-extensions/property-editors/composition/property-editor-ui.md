@@ -17,7 +17,7 @@ To create a Property Editor UI, the following needs to be done:
 
 ### Implement the interface
 
-What makes a standard Umbraco Lit component a Property Editor UI is the implementation of the `UmbPropertyEditorUiElement` interface. The `UmbPropertyEditorUiElement` interface ensures that your element has the necessary properties and methods to be used as a Property Editor UI element. See the [UI API documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for the full interface definition.
+What makes a standard Umbraco Lit component a Property Editor UI is the implementation of the `UmbPropertyEditorUiElement` interface. The `UmbPropertyEditorUiElement` interface ensures that your element has the necessary properties and methods to be used as a Property Editor UI element. See the [UI API documentation](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for the full interface definition.
 
 ```typescript
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
@@ -36,7 +36,7 @@ This interface gives access to important information about the data and configur
 * `readonly`: If you support read-only mode, this will indicate whether the component should be read-only.
 
 {% hint style="info" %}
-For the full interface properties of the `UmbPropertyEditorUiElement`, see the [UI API documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for more information.
+For the full interface properties of the `UmbPropertyEditorUiElement`, see the [UI API documentation](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_property-editor.UmbPropertyEditorUiElement.html) for more information.
 {% endhint %}
 
 A minimal implementation where the value is read and placed in a textbox looks like this:

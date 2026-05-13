@@ -4,31 +4,22 @@ All collections of `IPublishedContent` are `IEnumerable<IPublishedContent>`. Thi
 
 ## Collections
 
-### .Children
+### .Children()
 
 Returns a collection of child items available in the current culture, below the current content item.
 
 ```csharp
 <ul>
-    @foreach(var item in Model.Children)
+    @foreach(var item in Model.Children())
     {
         <li><a href="@item.Url()">@item.Name</a></li>
     }
 </ul>
 ```
 
-### .ChildrenForAllCultures
-
-Returns a collection of child items for all cultures, below the current content item, regardless of whether they are available for the current culture.
-
-```csharp
-<ul>
-    @foreach(var item in Model.ChildrenForAllCultures)
-    {
-        <li><a href="@item.Url()">@item.Name</a></li>
-    }
-</ul>
-```
+{% hint style="info" %}
+The `Children` property on `IPublishedContent` was removed in Umbraco 18. Use the `Children()` extension method instead.
+{% endhint %}
 
 ### .Children(string culture = null)
 
@@ -139,7 +130,7 @@ var nodes = Model.Descendants().Where(x => x.TemplateId > 0 && x.Name.StartsWith
 
 ```csharp
 @* Orders a collection by the property name "title" *@
-var nodes = Model.Children.OrderBy(x => x.GetProperty("title"))
+var nodes = Model.Children().OrderBy(x => x.GetProperty("title"))
 ```
 
 ### .GroupBy
@@ -166,7 +157,7 @@ Return only the number of items for a collection specified by the integer value.
 
 ```csharp
 @* return the first 3 items from the child collection *@
-var nodes = Model.Children.Take(3);
+var nodes = Model.Children().Take(3);
 ```
 
 ### .Skip(int)
@@ -175,7 +166,7 @@ Return items from the collection after skipping the specified number of items.
 
 ```csharp
 @* Skip the first 3 items in the collection and return the rest *@
-var nodes = Model.Children.Skip(3);
+var nodes = Model.Children().Skip(3);
 ```
 
 {% hint style="info" %}
@@ -184,7 +175,7 @@ You can combine Skip and Take when using for paging operations
 
 ```csharp
 @* using skip and take together you can perform paging operations *@
-var nodes = Model.Children.Skip(10).Take(10);
+var nodes = Model.Children().Skip(10).Take(10);
 ```
 
 ### .Count()
@@ -192,7 +183,7 @@ var nodes = Model.Children.Skip(10).Take(10);
 Returns the number of items in the collection
 
 ```csharp
-int numberOfChildren =  Model.Children.Count();
+int numberOfChildren =  Model.Children().Count();
 ```
 
 ### .Any()
@@ -200,7 +191,7 @@ int numberOfChildren =  Model.Children.Count();
 Returns a boolean True/False value determined by whether there are any items in the collection
 
 ```csharp
-bool hasChildren =  Model.Children.Any();
+bool hasChildren =  Model.Children().Any();
 ```
 
 ## Filtering Conventions
@@ -212,7 +203,7 @@ Some filtering and routing behaviour is dependent upon a set of special naming c
 If you create a checkbox property on a document type with an alias `umbracoNaviHide` then the value of this property is used by the `IsVisible()` extension method when filtering.
 
 ```csharp
-IEnumerable<IPublishedContent> sectionPages =  Model.Children.Where(x => x.IsVisible());
+IEnumerable<IPublishedContent> sectionPages =  Model.Children().Where(x => x.IsVisible());
 ```
 
 Use case: When displaying a navigation menu for a section of the site, following this convention gives editors the option to 'hide' certain pages from appearing in the section navigation. (hence the unusual _umbracoNaviHide_ property alias!)
