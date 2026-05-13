@@ -138,10 +138,10 @@ public class AzureVideoEmbedProvider : OEmbedProviderBase
     // no ApiEndpoint!
     public override string ApiEndpoint => string.Empty;
 
-    public override string[] UrlSchemeRegex => new[]
-    {
+    public override string[] UrlSchemeRegex =>
+    [
         @"windows\.net/*"
-    };
+    ];
 
     public override Dictionary<string, string> RequestParams => new();
 
