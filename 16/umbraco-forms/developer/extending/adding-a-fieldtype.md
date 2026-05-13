@@ -657,4 +657,4 @@ For Umbraco to discover this entry point, the compiled output must be referenced
 
 {% endcode %}
 
-For more information on compiling your source files to the `dist` folder, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
+For more information on compiling your source files to the `dist` folder, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/extend-your-project/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
