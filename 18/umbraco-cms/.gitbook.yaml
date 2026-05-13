@@ -160,3 +160,17 @@ redirects:
     customizing/extending-overview/foundation/repositories/repository-types/tree-repository.md: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/extension-types/collections/collection-view.md: customizing/extending-overview/extension-types/collections/collection-view/README.md
     ai/developer-mcp/host-setup: ai/local-mcp-setup/README.md
+    implementation/learn-how-umbraco-works: README.md
+    implementation/data-persistence: develop-with-umbraco/application-code/backend-and-custom-logic/umbraco-services.md
+    implementation/nullable-reference-types: develop-with-umbraco/application-code/common-pitfalls.md
+    reference/plugins: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/plugins/creating-resolvers: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/plugins/finding-types: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/templating/macros: develop-with-umbraco/templating-and-rendering/README.md
+    fundamentals/design/templates/basic-razor-syntax: develop-with-umbraco/templating-and-rendering/templates.md
+    fundamentals/design/templates/razor-cheatsheet: develop-with-umbraco/templating-and-rendering/templates.md
+    customizing/overview: extend-your-project/backoffice-extensions/README.md
+    extending/build-on-umbraco-functionality: extend-your-project/server-side-extensions/README.md
+    fundamentals/get-to-know-umbraco: README.md
+    reference/dive-into-the-code: develop-with-umbraco/application-code/README.md
+    reference/property-editor-uis: extend-your-project/backoffice-extensions/extending-overview/extension-types/property-editor-ui/property-editor-uis.md
