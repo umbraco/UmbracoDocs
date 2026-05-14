@@ -18,6 +18,11 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0-rc) (May 14th 2026)
+
+* Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
+* Fix `FormSavingNotification` message display on `CancelOperation` [#1487](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1487)
+
 ### [17.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.2) (May 1st 2026)
 
 * Fix: rename `workflow` entity types to avoid clashes with Umbraco Workflow [#1694](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1694)
