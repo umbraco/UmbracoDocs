@@ -16,6 +16,22 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (May 14 2026)
+
+* Adds support for additional preview environments via custom URL providers [#130](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/130)
+* Adds CSV exports for content approval and content review activity 
+* Adds a UI property for enabling/disabling Alternate Versions
+* Adds cross-cutting cache management between Group and Permission repositories
+* Restores `View differences` button in workflow detail overlay [#139](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/139)
+* Fixes a bug where scheduled workflows were treated as UTC, but not generated as such. This change also updates Workflow's date pickers to use Umbraco's `DateTimeWithTimeZonePicker` editor [#138](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/138)
+* Fixes a bug where the node name was not always shown in the request-approval dialog [#140](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/140)
+* Improves interactivity in variant picker, increasing the click target to the entire ref-node element [#142](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/142)
+* Fixes a bug where excluded nodes were not falling back to the user's default workspace actions [#143](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/143)
+* Fixes a bug related to NPoco's handling of multiple properties decorated with `[Reference]` attribute in a FetchOneToMany query [#145](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/145) 
+* Fixes a migration bug where int-to-guid mapping dictionary may throw with a key collision [#144](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/144)
+* Fixes a potential foreign key constraint violation when assigning permissions in a migration
+* General improvements in @umbraco-workflow/backoffice NPM package
+
 ### [17.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0) (April 16 2026)
 
 * All changes from 17.2.0 release candidates
