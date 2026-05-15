@@ -1,0 +1,255 @@
+---
+description: >-
+  Learn how to configure Umbraco to run only the services required on each
+  specific server in your setup.
+---
+
+# Service Registration
+
+Umbraco can be configured to run with different combinations of the backoffice, website, and Content Delivery API. This allows you to tailor each server in your infrastructure to its specific role, reducing attack surface and unnecessary processing.
+
+## Supported Configurations
+
+By default, Umbraco registers all services: the backoffice, website rendering, and Content Delivery API. However, you can choose to run only the services you need.
+
+The following configurations are supported:
+
+<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="105" data-type="checkbox">AddCore()</th><th width="160" data-type="checkbox">AddBackOfficeSignIn()</th><th width="145" data-type="checkbox">AddBackOffice()</th><th width="125" data-type="checkbox">AddWebsite()</th><th width="145" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website + Basic Auth</td><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
+
+The key distinctions between the registration methods are:
+
+* **`AddCore()`** registers only the foundational Umbraco services — configuration, core services, web components, caching, and background jobs — without any backoffice-specific services.
+* **`AddBackOfficeSignIn()`** registers backoffice identity and cookie authentication without the full backoffice. Use this when you need [Basic Authentication](configuration/basicauthsettings.md) with backoffice credentials on a frontend-only server. This enables the standalone login page with support for two-factor authentication and external login providers.
+* **`AddBackOffice()`** registers everything needed for the Umbraco backoffice, including the Management API, backoffice identity, and all supporting services. This calls both `AddCore()` and `AddBackOfficeSignIn()` internally.
+
+`AddBackOffice()` calls `AddCore()` internally, so there is no need to call both.
+
+{% hint style="info" %}
+`AddCore()` is idempotent. If both `AddBackOffice()` and `AddCore()` are called, the core services are only registered once.
+{% endhint %}
+
+### Configuration use cases
+
+* **Full (default)**: Traditional Umbraco with all features enabled.
+* **Website + Delivery API**: Front-end servers serving both rendered pages and headless content.
+* **Website + Basic Auth**: Front-end servers with basic authentication using backoffice credentials, but no backoffice UI.
+* **Website Only**: Front-end servers serving only rendered pages.
+* **Delivery API Only**: Pure headless API servers.
+
+## Full Umbraco (default)
+
+The following is the standard configuration that includes the backoffice, website rendering, and Content Delivery API.
+
+When you install a new Umbraco project, this is what you will see in the `Program.cs` file:
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+{% hint style="info" %}
+Endpoint registration is order-dependent. `UseBackOfficeEndpoints()` must be registered before `UseWebsiteEndpoints`. If they are mistakenly registered in the opposite order, the site installation won't start.
+{% endhint %}
+
+## Website + Delivery API (no backoffice)
+
+The following configuration is useful for front-end servers in a load-balanced setup where a single backoffice instance is running.
+
+The server can render pages and serve headless content, but the backoffice is not available.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddCore()
+    .AddWebsite()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseWebsiteEndpoints();
+        u.UseDeliveryApiEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+## Website with basic authentication (no backoffice)
+
+The following configuration is used for front-end servers that need [Basic Authentication](configuration/basicauthsettings.md) with backoffice credentials but no backoffice UI. This enables a standalone server-rendered login page with support for two-factor authentication and external login providers.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddCore()
+    .AddBackOfficeSignIn()
+    .AddWebsite()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+{% hint style="info" %}
+`AddBackOfficeSignIn()` can also be combined with `AddDeliveryApi()` for servers that serve both rendered pages and headless content with basic authentication.
+{% endhint %}
+
+## Website only
+
+The following configuration is used for front-end servers that only serve rendered pages. Neither the backoffice nor the Content Delivery API is available.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddCore()
+    .AddWebsite()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseWebsiteEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+## Delivery API only
+
+The following configuration is used for pure headless API servers. Only the Content Delivery API is available — no website rendering and no backoffice.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddCore()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseDeliveryApiEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
+
+## Key differences between configurations
+
+### Middleware
+
+* **`UseBackOffice()`** — Registers middleware for the backoffice, including authentication and authorization. Only needed when using `AddBackOffice()`.
+* **`UseWebsite()`** — Registers middleware for website rendering. Needed when using `AddWebsite()`.
+
+### Endpoints
+
+* **`UseBackOfficeEndpoints()`** — Maps the Management API controllers and backoffice routes. Only needed when using `AddBackOffice()`.
+* **`UseWebsiteEndpoints()`** — Maps website rendering endpoints. Needed when using `AddWebsite()`.
+* **`UseDeliveryApiEndpoints()`** — Maps the Content Delivery API controllers. Use this when running the Delivery API without the backoffice.
+
+{% hint style="info" %}
+`UseDeliveryApiEndpoints()` is only needed when running the Delivery API **without** the backoffice. When the full backoffice is enabled, `UseBackOfficeEndpoints()` handles mapping all API controllers, including the Delivery API.
+{% endhint %}
+
+## Considerations for Composers
+
+When building packages or custom code using [Composers](../model-your-content/content-types-and-structure/composing.md), be aware that some services are only available when the backoffice is enabled. If your Composer depends on backoffice-specific services, it will not work on servers configured with `AddCore()`.
+
+You can check whether the backoffice is enabled by looking for the `IBackOfficeEnabledMarker` in the service collection:
+
+{% code title="MyComposer.cs" %}
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        if (builder.Services.Any(s => s.ServiceType == typeof(IBackOfficeEnabledMarker)))
+        {
+            // Register services that depend on the backoffice
+        }
+    }
+}
+```
+{% endcode %}

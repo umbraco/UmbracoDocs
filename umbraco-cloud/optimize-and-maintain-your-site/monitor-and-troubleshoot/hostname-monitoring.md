@@ -50,7 +50,7 @@ Umbraco Cloud hostname monitoring checks any path, like `https://customhostname.
 * A response code different from `200` may indicate an issue.
 
 {% hint style="info" %}
-The Ping Results table also shows [platform and CMS events](availability-performance.md#platform-and-cms-events), making it possible to see how different events impact performance.
+The Ping Results table also shows [platform and CMS events](traffic-and-performance.md#platform-and-cms-events), making it possible to see how different events impact performance.
 {% endhint %}
 
 ## Plan Limitations

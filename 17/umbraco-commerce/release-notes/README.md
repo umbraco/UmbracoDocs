@@ -18,6 +18,9 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### [17.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.4) (14th May 2026)
+* Added search notifications events for orders, carts and gift cards [#824](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/824), [#827](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/827)
+
 #### 17.1.3 (26th Feb 2026)
 * Make `DiscountRuleContext` and `DiscountRewardContext` constructors public for custom `DiscountsPriceAdjuster` implementations
 * Fix transaction fee not being tracked on `AuthorizeTransactionActivity`

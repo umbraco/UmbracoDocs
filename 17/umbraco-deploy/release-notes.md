@@ -16,6 +16,15 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) (May 14th 2026)
+
+* All items from 17.1.0-rc1 and 17.1.0-rc2.
+
+### [17.1.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0-rc2) (May 11th 2026)
+
+* Refresh entity signs after a transfer completes and the queue is cleared.
+* Update the `@umbraco-deploy/backoffice` NPM package: prefix non-generated exported types with `Deploy`, add missing types, and fix `UmbExtensionConditionConfigMap` augmentations.
+
 ### [17.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0-rc1) (May 6th 2026)
 
 * Add `@umbraco-deploy/backoffice` NPM package (see below for details).
