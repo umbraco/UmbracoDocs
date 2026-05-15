@@ -40,16 +40,16 @@ You can still use Swashbuckle for your own OpenAPI documents if you prefer, but 
 
 The main changes you will need to migrate:
 
-- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()`.
-- **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension.
-- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` / `ISchemaIdSelector` / `SchemaIdSelector` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`.
-- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` / `IOperationIdSelector` / `OperationIdSelector` have been removed. Use `IOpenApiOperationTransformer`.
+- **Registering OpenAPI documents** — replace `IConfigureOptions<SwaggerGenOptions>` with `AddOpenApi()` (and `AddOpenApiDocumentToUi()` to show it in the Swagger UI dropdown). See [Adding your own OpenAPI documents](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#adding-your-own-openapi-documents). For backoffice APIs, the new `AddBackOfficeOpenApiDocument(name, configure)` builder wires up authentication and Umbraco's conventions in one call — see [Custom Backoffice API](../../../extend-your-project/server-side-extensions/custom-backoffice-api.md).
+- **Backoffice security requirements** — replace `BackOfficeSecurityRequirementsOperationFilterBase` with the `AddBackofficeSecurityRequirements()` extension. See [Custom Backoffice API](../../../extend-your-project/server-side-extensions/custom-backoffice-api.md).
+- **Schema ID handlers** — `ISchemaIdHandler` / `SchemaIdHandler` / `ISchemaIdSelector` / `SchemaIdSelector` have been removed. Use `CreateSchemaReferenceId` on `OpenApiOptions`. See [Schema IDs](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#schema-ids).
+- **Operation ID handlers** — `IOperationIdHandler` / `OperationIdHandler` / `IOperationIdSelector` / `OperationIdSelector` have been removed. Use `IOpenApiOperationTransformer`. See [Operation IDs](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#operation-ids).
 - **Sub-types handlers** — `ISubTypesHandler`, `ISubTypesSelector`, `SubTypesHandler`, and `SubTypesSelector` have been removed. Configure JSON polymorphism through `JsonSerializerOptions` instead.
 - **Document inclusion selector** — `IDocumentInclusionSelector` and `DocumentInclusionSelector` have been removed. Each document now controls its own membership through `ShouldInclude`.
 - **Enum schema filter** — `EnumSchemaFilter` has been removed. Enum serialization is now driven by the document's `JsonOptions`.
-- **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension.
-- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead.
-- **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document.
+- **Delivery API member authentication** — `ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions` has been removed. Use the `AddDeliveryApiOpenApiMemberAuthentication()` extension. See [Testing with Swagger](../../../develop-with-umbraco/headless-and-apis/content-delivery-api/protected-content-in-the-delivery-api/README.md#testing-with-swagger).
+- **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [Route and availability](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#route-and-availability).
+- **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Controlling which endpoints appear in your document](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#controlling-which-endpoints-appear-in-your-document).
 - **OpenAPI spec version** — generated documents now use OpenAPI 3.1 instead of 3.0. Regenerated client SDKs may differ — verify your generator supports OpenAPI 3.1.
 
 *OpenAPI URL changes*
@@ -681,7 +681,7 @@ We have for some time [encouraged to not use the legacy Media Picker](https://gi
 
 Depending on the usage of macros, you’ll be able to use either partial views or blocks in the Rich Text Editor. They are not the same kind of functionality, but they cover all the identified use cases in a more consistent and supportable way.&#x20;
 
-For more information on migrating from macros to using blocks in the Rich Text Editor, see the [Migrating Macros](migrating-macros.md) article.
+For more information on migrating from macros to using blocks in the Rich Text Editor, see the [Migrating Macros](https://docs.umbraco.com/umbraco-cms/17.latest/get-started/upgrading-and-migrating/version-specific/migrating-macros) article.
 
 * **XPath has been removed**
 
@@ -739,7 +739,7 @@ This configuration will no longer have an effect.
 
 Notifications have changed their behavior to an extent. You can still implement notifications such as `ContentSavingNotification` to react to changes for related systems or add messages to be shown in the Backoffice. You can no longer modify the models being transferred through the API.
 
-If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](https://docs.umbraco.com/umbraco-cms/reference/custom-swagger-api) and even learn how to register your controllers in the Swagger UI.
+If you wish to modify the Backoffice UI, register the extensions through the manifest system that hook on to the desired areas of the Backoffice UI. If you used to modify the models because you needed more data on the models, it's recommended that you build your own API controller to achieve this. You can read more about [building custom API controllers on the Umbraco Documentation](../../../extend-your-project/server-side-extensions/custom-backoffice-api.md) and even learn how to register your controllers in Swagger UI.
 
 * **Property editors have been split in two**
 
