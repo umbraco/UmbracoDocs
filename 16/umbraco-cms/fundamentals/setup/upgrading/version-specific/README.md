@@ -1478,7 +1478,7 @@ Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to
 
 <summary>7.4.0 to 7.6.0</summary>
 
-Find a list of all the breaking changes below and [a list of the items is also available on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
+Find a list of all the breaking changes below.
 
 The three most important things to note are:
 
@@ -1550,7 +1550,7 @@ The property editors for pickers for content, media, members, and related links 
 
 New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
 
-**Rich Text Editor (RTE) Images attributes (**[**U4-6228**](https://issues.umbraco.org/issue/U4-6228)**,** [**U4-6595**](http://issues.umbraco.org/issue/U4-6595)**)**
+**Rich Text Editor (RTE) Images attributes (U4-6228, U4-6595)**.
 
 For a long time, we had a `rel` attribute on an `<img>` tag when inserted into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead of storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
 
@@ -1624,7 +1624,7 @@ For manual upgrades:
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
   * If you forget `trees.config` you will either not be able to browse the Developer section or you will be logged out immediately when trying to go to the developer section
-* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](http://issues.umbraco.org/issue/U4-8031)
+* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by clearing your cookies on localhost.
 
 Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 
