@@ -13,6 +13,7 @@ description: Get an overview of the release notes for each month in 2026.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 * **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
 * **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.
+* **Release Umbraco.Cloud.Cms v17.1.3** - Adds support for the new Basic Authentication login form introduced in Umbraco 17.4.0.
 
 ## [April 2026](2026-04-releasenotes.md)
 
