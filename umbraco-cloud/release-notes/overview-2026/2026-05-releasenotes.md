@@ -29,7 +29,7 @@ For authoring guidelines and a ready-to-use HTML template, see the [Error Pages]
 
 Pushing a baseline update to child projects will trigger an activity on the baseline project. The activity is non-blocking, but will run until all children are updated.
 
-The UI restores the current state of a running Baseline update when you navigate back to or refresh the **Manage child projects** page. This helps you track update progress, especially for large batches.
+The UI restores the current state of a running baseline update when you return to or refresh the **Manage child projects** page. This helps you track update progress, especially for large batches.
 
 When creating a new child project from a baseline, a non-blocking activity starts on the baseline. The activity is available on the **Project history** page for later review, for instance in case of a failed creation.
 
