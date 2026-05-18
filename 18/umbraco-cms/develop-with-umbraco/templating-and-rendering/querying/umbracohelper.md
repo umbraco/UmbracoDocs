@@ -130,7 +130,7 @@ Previously the `UmbracoHelper` could be used to run queries on your content, thi
 
 ### .GetDictionaryValue(string key)
 
-Returns a dictionary value(`string`) for the key specified.
+Returns a dictionary value (`string`) for the key specified. Returns an empty string if no value is found for the key.
 
 ```cshtml
 <p>@Umbraco.GetDictionaryValue("createdOn"): @Model.CreateDate</p>

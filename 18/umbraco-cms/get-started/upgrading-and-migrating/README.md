@@ -38,7 +38,7 @@ As above, breaking changes that would prevent packages from working other than i
 
 For the reasons described, projects always need to be considered case by case when upgrading to new versions.
 
-Umbraco communicates about the breaking changes in release blog posts and on the documented [version specific upgrade details](version-specific/). There will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
+Umbraco communicates about the breaking changes in release blog posts and on the documented [version specific upgrade details](version-specific/README.md). There will be extended release candidate periods to ensure upgrades can be tested and to help package developers support new major versions.
 
 Breaking changes are minimized but there will be cases when such updates are needed. How straightforward the upgrade will be depends on the breaking changes included in the major and whether your project(s) are impacted by them.
 
@@ -46,7 +46,7 @@ Breaking changes are minimized but there will be cases when such updates are nee
 
 The following lists a few things to be aware of before initiating an upgrade of your Umbraco CMS project.
 
-* Sometimes, there are exceptions to general upgrade guidelines. These are listed in the [**version-specific guide**](version-specific/). Be sure to read this article before moving on.
+* Sometimes, there are exceptions to general upgrade guidelines. These are listed in the [**version-specific guide**](version-specific/README.md). Be sure to read this article before moving on.
 * Ensure your setup meets the [requirements](../installation/requirements.md) for the new versions you will be upgrading your project to.
 * Things may go wrong for different reasons. Be sure to **always** keep a backup of both your site's files and the database. This way, you can always return to a version that you know works.
 * Before upgrading to a new major version, check if the packages you're using are compatible with the version you're upgrading to. On the package's page on the [Umbraco Marketplace](https://marketplace.umbraco.com/), check the "Umbraco versions" field.
@@ -55,5 +55,5 @@ The following lists a few things to be aware of before initiating an upgrade of 
 
 * [Upgrade Details](upgrade-details.md) - how to upgrade Umbraco across major, minor, and patch versions.
 * [Upgrade Unattended](upgrade-unattended.md) - configure Umbraco to upgrade in an unattended mode, avoiding the need to click through the installation wizard.
-* [Version Specific Upgrades](version-specific/) - details of changes to be aware of when upgrading to specific versions.
+* [Version Specific Upgrades](version-specific/README.md) - details of changes to be aware of when upgrading to specific versions.
 * [Downgrades and Re-running Migrations](downgrades-and-rerunning-migrations.md) - covers the possibility of downgrading to a previous version and re-running migrations from an upgrade.

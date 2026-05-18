@@ -13,10 +13,9 @@ Common Examples
 @* gets the Creation date, and formats it to a short date *@
 @Model.CreateDate.ToString("D")
 
-@* Outputs the name of the parent if it exists *@
-@if(Model.Parent != null){
-    <h1>@Model.Parent.Name</h1>
-}
+{% hint style="info" %}
+The `Parent` and `Children` navigation properties were removed from `IPublishedContent` in Umbraco 18. In Razor views use the `Parent()` and `Children()` extension methods instead. See the [Version-specific upgrades](../../../../get-started/upgrading-and-migrating/version-specific/README.md) article for details.
+{% endhint %}
 ```
 
 ### .Id
@@ -60,13 +59,13 @@ Returns a culture from a configured domain in the content tree.
 @Model.GetCultureFromDomains(ContextAccessor, DomainHelper)
 ```
 
-### .Parent
+### .Parent() (Extension method)
 
-Returns the parent content item
+Returns the parent content item, or `null` if the current item is at the root.
 
 ```csharp
-@Model.Parent
-@Model.Parent.Name
+@Model.Parent()
+@Model.Parent()?.Name
 ```
 
 ### .Path

@@ -8,15 +8,15 @@ Umbraco requires Markdown to be converted into HTML. Primarily, this is to suppo
 
 The conversion is managed via the `IMarkdownToHtmlConverter` interface.
 
-Umbraco registers a default implementation of `HeyRedMarkdownToHtmlConverter`, which is based on the [Hey Red Markdown library](https://github.com/hey-red/Markdown).
+Umbraco registers a default implementation of `MarkdigMarkdownToHtmlConverter`, which is based on the [`Markdig` library](https://github.com/xoofx/markdig).
 
-Also provided is an unregistered, alternate implementation of `MarkdigMarkdownToHtmlConverter`, based on the [Markdig library](https://github.com/xoofx/markdig).
+Also provided is an unregistered, alternate implementation of `HeyRedMarkdownToHtmlConverter`, based on the [Hey Red Markdown library](https://github.com/hey-red/Markdown). This implementation is deprecated and will be removed in Umbraco 19.
 
 Both implementations convert standard markdown into HTML, but there are some subtle differences in the output produced.
 
 ## Modifying the Default Behavior
 
-If you prefer to use the Markdig-based implementation, replace the default registration by adding the following composer:
+If you prefer to use the Hey Red-based implementation, replace the default registration by adding the following composer:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -27,7 +27,7 @@ public class MarkdownToHtmlComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.Services.AddUnique<IMarkdownToHtmlConverter, MarkdigMarkdownToHtmlConverter>();
+        builder.Services.AddUnique<IMarkdownToHtmlConverter, HeyRedMarkdownToHtmlConverter>();
     }
 }
 ```
@@ -50,4 +50,4 @@ public interface IMarkdownToHtmlConverter
 
 ## Planned Updates
 
-The Hey Red Markdown library is now deprecated. We expect to make the implementation based on Markdig the default one registered from Umbraco 18. The Hey Red Markdown library implementation will be removed in Umbraco 19.
+The Hey Red Markdown library is deprecated. The `HeyRedMarkdownToHtmlConverter` implementation will be removed in Umbraco 19.

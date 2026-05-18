@@ -398,7 +398,9 @@ Returns single or multiple items.
 | **401**: Unauthorized | Missing permissions after protection is set up. |
 | **404**: Not Found    | Content item not found.                         |
 
-All endpoints are documented in a Swagger document at `{yourdomain}/umbraco/swagger`. This document is not available in production mode by default. For more information read the [API versioning and OpenAPI](https://docs.umbraco.com/umbraco-cms/reference/api-versioning-and-openapi) article.
+All endpoints are documented in an OpenAPI document at `{yourdomain}/umbraco/openapi`. This document is not available in production mode by default. For more information read the [API versioning and OpenAPI](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md) article.
+
+You can also configure the Delivery API to emit per-content-type schemas in its OpenAPI document. See the [Content type schemas in OpenAPI](content-type-schemas-in-openapi.md) article.
 
 ### Query parameters
 

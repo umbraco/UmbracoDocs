@@ -31,6 +31,7 @@ redirects:
     reference/management/services/externalloginservice: reference/management/README.md
     reference/management/services/fileservice: reference/management/README.md
     reference/management/services/localizationservice: reference/management/README.md
+    reference/management/using-services/localizationservice: reference/management/README.md
     reference/management/services/macroservice: reference/management/README.md
     reference/management/services/membergroupservice: reference/management/README.md
     reference/management/services/memberservice: reference/management/README.md
@@ -174,3 +175,7 @@ redirects:
     fundamentals/get-to-know-umbraco: README.md
     reference/dive-into-the-code: develop-with-umbraco/application-code/README.md
     reference/property-editor-uis: extend-your-project/backoffice-extensions/extending-overview/extension-types/property-editor-ui/property-editor-uis.md
+    reference/custom-swagger-api: extend-your-project/server-side-extensions/custom-backoffice-api.md
+    extend-your-project/server-side-extensions/custom-swagger-api: extend-your-project/server-side-extensions/custom-backoffice-api.md
+    tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md
+    extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md

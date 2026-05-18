@@ -12,7 +12,7 @@ While most cache configurations are under the `Umbraco:CMS:Cache` settings node,
 
 ## HybridCacheOptions
 
-Umbraco's cache is implemented using Microsofts `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
+Umbraco's cache is implemented using Microsoft's `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
 
 ### MaximumPayLoadBytes
 
@@ -42,7 +42,7 @@ The Seeding settings allow you to specify which content should be seeded into yo
 
 ### ContentTypeKeys
 
-The `ContentTypeKeys` setting specifies which Document Types should be seeded into the cache. The setting is a comma-separated list of Document Type keys.
+The `ContentTypeKeys` setting specifies which Document Types and Element Types should be seeded into the cache. The setting is a comma-separated list of Document Type and Element Type keys.
 
 ```json
 "Umbraco": {
@@ -54,31 +54,33 @@ The `ContentTypeKeys` setting specifies which Document Types should be seeded in
 }
 ```
 
-### DocumentBreadthFirstSeedCount and MediaBreadthFirstSeedCount
+### Breadth-first seed counts
 
-The `DocumentBreadthFirstSeedCount` setting specifies how many documents should be seeded into the cache when doing a breadth-first traversal. `MediaBreadthFirstSeedCount` provides the same for media. The default value for both is 100.
+The `DocumentBreadthFirstSeedCount` setting specifies how many documents should be seeded into the cache when doing a breadth-first traversal. `MediaBreadthFirstSeedCount` provides the same for media, and `ElementBreadthFirstSeedCount` provides the same for elements. The default value for all is 100.
 
 ```json
 "Umbraco": {
   "CMS": {
     "Cache": {
       "DocumentBreadthFirstSeedCount": 500,
-      "MediaBreadthFirstSeedCount": 500
+      "MediaBreadthFirstSeedCount": 500,
+      "ElementBreadthFirstSeedCount": 500
     }
   }
 }
 ```
 
-## DocumentSeedBatchSize and MediaSeedBatchSize
+## Seed batch sizes
 
-When populating the cache on startup the content keys defined by the seeding strategy are processed in batches. The batch size for documents and media can be modified via the `DocumentSeedBatchSize` and `MediaSeedBatchSize` respectively. The default value for both is 100.
+When populating the cache on startup the content keys defined by the seeding strategy are processed in batches. The batch size for documents and media can be modified via the `DocumentSeedBatchSize` and `MediaSeedBatchSize` respectively. `ElementSeedBatchSize` provides the same for elements. The default value for all is 100.
 
 ```json
 "Umbraco": {
   "CMS": {
     "Cache": {
       "DocumentSeedBatchSize": 500,
-      "MediaSeedBatchSize": 500
+      "MediaSeedBatchSize": 500,
+      "ElementSeedBatchSize": 500
     }
   }
 }
@@ -86,7 +88,7 @@ When populating the cache on startup the content keys defined by the seeding str
 
 ## Cache Entry settings
 
-The Entry settings allow you to specify how long cache entries should be kept. The cache entry settings are identical for documents and media.
+The Entry settings allow you to specify how long cache entries should be kept. The cache entry settings are identical for documents, media and elements.
 
 ## LocalCacheDuration
 
@@ -102,6 +104,9 @@ Specifies the duration for which cache entries should be kept in the local memor
         },
         "Media": {
           "LocalCacheDuration": "50.00:00:00"
+        },
+        "Element": {
+          "LocalCacheDuration": "2.00:00:00"
         }
       }
     }
@@ -123,6 +128,9 @@ Specifies the duration that cache entries should be kept in the remote cache, se
         },
         "Media": {
           "RemoteCacheDuration": "150.00:00:00"
+        },
+        "Element": {
+          "RemoteCacheDuration": "100.00:00:00"
         }
       }
     }
@@ -144,6 +152,9 @@ Specifies the duration for which seeded cache entries should be kept in the cach
         },
         "Media": {
           "SeedCacheDuration": "250.00:00:00"
+        },
+        "Element": {
+          "SeedCacheDuration": "200.00:00:00"
         }
       }
     }

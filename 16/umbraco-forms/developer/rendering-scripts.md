@@ -66,9 +66,9 @@ To enable `ExcludeScripts`:
 *   While inserting Forms **directly** in your template:
 
     ```csharp
-    @await Umbraco.RenderMacroAsync("renderUmbracoForm", new {FormGuid="6c3f053c-1774-43fa-ad95-710a01d9cd12", FormTheme="bootstrap3-horizontal", ExcludeScripts="1"})
+    @await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("6c3f053c-1774-43fa-ad95-710a01d9cd12"), theme = "bootstrap3-horizontal", includeScripts = false })
     ```
 
 {% hint style="info" %}
-`ExcludeScripts = "1"` prevents the associated scripts from being rendered. Any other value, an empty value, or if the parameter is excluded, will render the scripts on the Form.
+`includeScripts = false` prevents the associated scripts from being rendered. If value is `includeScripts = true`, or if the parameter is excluded, it will render the scripts on the form.
 {% endhint %}
