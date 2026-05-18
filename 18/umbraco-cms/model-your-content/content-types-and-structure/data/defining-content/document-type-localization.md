@@ -59,9 +59,9 @@ Once you have registered the Document Type localization, you can add your locali
 export default {
     contentTypes: {
         article: 'Article page',
-        'article-desc': 'A textual, article-like page on the site. Use this as the main type of content.',
+        article_desc: 'A textual, article-like page on the site. Use this as the main type of content.',
         landing: 'Landing page',
-        'landing-desc': 'An inviting, very graphical page. Use this as an entry point for a campaign, and supplement with Article pages.'
+        landing_desc: 'An inviting, very graphical page. Use this as an entry point for a campaign, and supplement with Article pages.'
     },
     tabs: {
         content: 'Page content',
@@ -72,10 +72,10 @@ export default {
     },
     properties: {
         title: 'Main title',
-        'title-desc': 'This is the main title of the page.',
-        'title-message': 'The main title is required for this page.',
+        title_desc: 'This is the main title of the page.',
+        title_message: 'The main title is required for this page.',
         subTitle: 'Sub title',
-        'subTitle-desc': 'This is the sub title of the page.',
+        subTitle_desc: 'This is the sub title of the page.',
     }
 };
 ```
@@ -91,14 +91,14 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
 
 1. Create a **Document Type with Template** called `#contentTypes_article` with the **alias**: `articlePage`.
 2. Under the newly created Document Type, follow these steps:
-   * Set the **description** to `#contentTypes_article-desc`.
+   * Set the **description** to `#contentTypes_article_desc`.
    * Create a new **tab** called `#tabs_content`.
    * Add a new **group** called `#groups_titles`.
    * Add a **property** called `#properties_title` with **alias** `title`.
-     * Set the description to `{#properties_title-desc}`.
+     * Set the description to `{#properties_title_desc}`.
      * Use a `TextString` editor.
      * Set the field validation to `mandatory`.
-     * Under validation add `#properties_title-message`.
+     * Under validation add `{#properties_title_message}`.
 
 {% hint style="info" %}
 Property descriptions support [Umbraco Flavored Markdown](../../../property-editors/umbraco-flavored-markdown.md), which uses a different syntax (wrapped in brackets) to avoid conflicts with Markdown headers.
@@ -107,7 +107,7 @@ Property descriptions support [Umbraco Flavored Markdown](../../../property-edit
 ![Applying localization to a property](../../../../.gitbook/assets/localization-document-type-editor-validation-v15.png)
 
 3. Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
-   * Set the description to `{#properties_subTitle-desc}`.
+   * Set the description to `{#properties_subTitle_desc}`.
    * Use a `TextString` editor.
 4. Enable `Allow at root` in the **Structure** tab.
 
