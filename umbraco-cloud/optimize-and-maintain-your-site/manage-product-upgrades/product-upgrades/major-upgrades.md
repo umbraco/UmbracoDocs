@@ -12,21 +12,30 @@ A major Umbraco upgrade is more involved than a minor or patch update. Customers
 
 A major upgrade involves a database schema migration, the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process. Once migrated locally push the changes back to Cloud.
 
-## High-level Overview
+## High-level Upgrade Process
 
-Before reading the detailed steps, understand the overall flow for a project with different environments. For this article, the environments are called Dev, Staging, and Live but it could be any enviroment
+Watch this short walkthrough to understand why a local database migration is required and how your local machine handles the heavy lifting.
 
-1. Upgrade the Dev environment by cloning it locally, running the upgrade, and pushing the upgraded
-code back up.
-2. Deploy to Staging — the code will deploy but the database migration may not complete
-automatically. This is expected behaviour, not a bug.
-3. Perform the Staging database migration locally by cloning Staging, connecting to its cloud
-database via a connection string, and running the project locally. Your local machine performs the
-migration against the cloud database.
-4. Validate Staging thoroughly. Move your custom hostnames from Live to Staging so you can test on
-real traffic while Live remains untouched.
+![A short video walkthrough of the complete upgrade process](../../../.gitbook/assets/umbraco_upgrade.mp4)
+
+Use this visual map as a quick reference guide to track how code deployments and database schema migrations move across your environments sequentially.
+
+![Umbraco Cloud Major Version Upgrade Roadmap](../../../.gitbook/assets/umbraco_upgrade_flow_process.svg)
+
+1. Upgrade the Dev environment by cloning it locally, running the upgrade, and push the upgraded code back up.
+2. Deploy to Staging. The code will deploy but the database migration may not complete automatically. This is expected behaviour, not a bug.
+3. Perform the Staging database migration locally by cloning Staging, connecting to its cloud database via a connection string, and running the project locally. Your local machine performs the migration against the cloud database.
+4. Validate Staging thoroughly. Move your custom hostnames from Live to Staging so you can test on real traffic while Live remains untouched.
 5. Repeat the same local database migration process for Live.
 6. Move hostnames back to Live. All environments are now upgraded.
+
+{% hint style="warning" %}
+**Do not perform major version upgrades directly in Umbraco Cloud.**
+
+Major upgrades involve significant database schema changes. Running these migrations directly on Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
+
+Always perform the database migration locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. The steps below follow this recommended approach.
+{% endhint %}
 
 {% hint style="info" %}
 **Are you using custom packages or code on your Umbraco Cloud project?**
@@ -38,7 +47,7 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
-## Before you start the upgrade
+## Determine your upgrade path
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
 
@@ -59,7 +68,7 @@ When upgrading from an LTS version, you must start by looking at the versions be
 Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are LTS.
 
 {% hint style="info" %}
-Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
+Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. Keep the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) open throughout your upgrade.
 {% endhint %}
 
 #### Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)
@@ -72,48 +81,34 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 
 ## Prerequisites
 
-* Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/requirements#local-development).
-* An Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://our.umbraco.com/download/releases)
-* The **latest** .[NET version](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) is installed locally.
+* Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements#local-development).
+* Your Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://releases.umbraco.com/all-releases/).
+* The **latest** [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) installed locally.
 * **At least two environments** on your Cloud project.
-* A backup of your project database.
-  * Directly from your environment. See the [Database backups](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) article,
-  * Or clone down, restore the project, and back up the local database.
- 
-{% hint style="warning" %}
-**Do not perform major version upgrades directly in Umbraco Cloud.**
-
-Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
-
-Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
-{% endhint %}
+* A database backup taken before you begin either [directly from the Cloud portal](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) or by cloning and backing up locally.
 
 ## Step 1: Enable .NET
 
-Before proceeding, you must determine whether the .NET Framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
+Check whether the [.NET framework version](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/upgrade-details#choose-the-correct-.net-version) needs to change for the target Umbraco version. If no change is needed, skip to [Step 2: Clone down your environment and restore](#step-2-clone-down-your-environment-and-restore).
 
-Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
-
-1. Go to the project in the Umbraco Cloud portal.
-2. Navigate to **Configuration** -> **Advanced**.
-3. Scroll down to the **Runtime Settings** section.
-4. Select the appropriate .NET version from the **Change .NET framework runtime for your Umbraco install** dropdown for each environment in your Cloud project.
+1. Open your project in the Umbraco Cloud portal.
+2. Go to **Configuration** -> **Advanced**.
+3. Scroll to **Runtime Settings**.
+4. Select the correct .NET version for each environment from the dropdown.
 
 <figure><img src="../../../.gitbook/assets/runtime-settings-v17.png" alt=""><figcaption><p>Runtime settings</p></figcaption></figure>
 
-## Step 2: Clone down your environment
+## Step 2: Clone down your environment and restore
 
 1. Clone down the **left-most mainline environment**.
-2. Build and run the [project locally](../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#running-the-site-locally).
+2. Build and run the [project locally](../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md#running-the-site-locally).
 3. Log in to the backoffice.
 4. Restore content from your Cloud environment.
 
-## Step 3: Upgrade the project locally using Visual Studio
+## Step 3: Upgrade the project locally in Visual Studio
 
 1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
-2. Determine if you need to update the .NET version based on the changes made in [Step 1](#step-1-enable-net):
-   * **If the .NET version was updated:** Update the `<TargetFramework>` to match the version set in your Cloud environment.
-   * **If the .NET version was not updated:** Skip this step.
+2. If you updated .NET in [Step 1: Enable .NET](#step-1-enable-net), update the `<TargetFramework>` value to match.
 
 <details>
 
@@ -237,11 +232,11 @@ Update the following packages:
 Update all projects and packages in your solution to support the latest .NET.
 {% endhint %}
 
-## Step 4: Finishing the Upgrade
+## Step 4: Finish the local upgrade
 
-1. Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-unattended) feature.
-2. Run the **project locally**.
-3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
+1. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/upgrade-unattended) in your configuration.
+2. Run the project locally.
+3. Log in to the backoffice to **verify the upgrade** has happened.
    * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
 
 <figure><img src="../../../.gitbook/assets/Cloud-upgraded-version.png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
@@ -250,6 +245,7 @@ Update all projects and packages in your solution to support the latest .NET.
 
 If you receive a missing deploy license error after upgrading, even though the license is valid, it may be due to browser caching. Google Chrome has an aggressive caching that can interfere with license validation during startup.
 To resolve this:
+
 1. Open Chrome's Developer Tools (F12).
 2. Right-click the reload button next to the address bar.
 3. Select **Empty cache and hard reload**.
@@ -260,7 +256,7 @@ This step can help resolve unexpected startup issues after the upgrade.
 If the issue persists and your project has CDN Caching and Optimization enabled, cached responses may interfere with license validation. In this case, try purging the cache and reloading the site.
 {% endhint %}
 
-5. Ensure that the project runs locally without any errors.
+5. Verify the project runs locally without errors.
 
 <details>
 
@@ -291,8 +287,7 @@ When upgrading **from** Umbraco 13, you need to be aware that `UseInstallerEndpo
 Update the `Program` class in the `Program.cs` file to the following:\
 using Umbraco.Cms.Web.Common.Hosting;
 
-```
-
+```cs
 public class Program
     {
         public static void Main(string[] args)
@@ -342,12 +337,12 @@ Remove the same files from the left-most environment. This should be done from t
 
 </details>
 
-5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
-6. Test that everything works with the upgrade on the Cloud environment.
+5. Push the changes to the left-most (Dev) environment. See the [Deploying from local to your environments](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
+6. Test that everything works with the upgrade on the left-most (Dev) environment.
 
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
-## Step 5: Deploy the upgrade
+## Step 5: Deploy the upgrade to Production
 
 The next part is to deploy the upgrade through to the production environment.
 
@@ -358,40 +353,72 @@ For major upgrades that include content migrations, the process can be extensive
 
 You can choose between two approaches based on your needs:
 
-* "**With content freeze**" - involves a more detailed upgrade process but helps reduce downtime on your live website.
-* "**Without content freeze**" - provides a more straightforward process that may result in longer downtime on your live website.
+* **With content freeze** (recommended for larger sites) - involves a more detailed upgrade process but helps reduce downtime on your live website.
+* **Without content freeze** - provides a more straightforward process that may result in longer downtime on your live website.
 
 {% tabs %}
-{% tab title="With content freeze" %}
+{% tab title="With content freeze (recommended for larger sites)" %}
 {% hint style="info" %}
 The following steps involve setting a **content-freeze** period on the project. It is recommended to coordinate this with your content editors before moving forward.
 {% endhint %}
 
-1. Delete any environments between your left-most and production environments.
-2. Create a new environment from the production environment - call it Staging.
-3. Initiate **content-freeze**.
-4. Import content using either of the following approaches:
-   1. [Restore content and media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) directly from the backoffice.
-   2. Use the [Database Backup and Restore](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) functionality in the Cloud Portal.
-5. Deploy the upgrade from the left-most environment.
-6. Verify and test all functionality on the upgraded environment.
-7. [Remove your custom hostname(s)](../../../go-live/manage-hostnames/) from the production environment.
-8. Ensure the hostname(s) no longer point to the production environment.
-9. [Add the custom hostname(s)](../../../go-live/manage-hostnames/) to the new environment (Staging).
-10. Deploy the upgrade to the production environment.
-    1. In case the upgrade is taking longer than expected, restore a backup of the Staging database on the production environment.
-11. Cancel **content-freeze**.
-12. Verify and test all functionality in the production environment.
-13. [Remove your custom hostname(s)](../../../go-live/manage-hostnames/) from the Staging environment.
-14. Ensure the hostname(s) no longer point to the Staging environment.
-15. [Add the custom hostname(s)](../../../go-live/manage-hostnames/) to the production environment.
+1. Delete your existing Staging environment.
+2. Recreate the Staging environment as a direct clone from your production (Live) environment. This guarantees Staging begins as a clean environment with identical data.
+3. Initiate **content-freeze**. Ask editors to stop all backoffice work.
+4. Restore the production [database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) and [media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) to Staging so the content is identical.
+5. Deploy the upgrade from the left-most (Dev) environment to Staging.
+
+{% hint style="warning" %}
+The deployment to Staging may not automatically complete the database migration. If the site does not boot correctly after deployment, this is expected. Proceed to the local database migration step below rather than retrying the deployment.
+{% endhint %}
+
+6. Perform the Staging database migration locally:
+    1. Clone down the Staging environment (this pulls the upgraded codebase).
+    2. Connect to the Staging cloud database using the connection string from the Cloud portal.
+    3. Run the project locally. The migration executes against the cloud database, your local machine provides the compute.
+    4. Verify the backoffice loads and the upgrade is confirmed.
+    5. Push the result back to the Staging Cloud environment.
+
+![Verify and test all functionality on the upgraded (Staging) environment](../../../.gitbook/assets/local_bridge_infographic_v2.svg)
+
+7. Verify and test all functionality on the upgraded Staging environment.
+8. [Remove your custom hostname(s)](../../../go-live/manage-hostnames/README.md) from the production environment.
+9. Ensure the hostname(s) no longer point to the production environment.
+10. [Add the custom hostname(s)](../../../go-live/manage-hostnames/) to the Staging environment. Your live site is now running on the upgraded Staging environment.
+11. Perform the same local database migration process for the production (Live) environment:
+    1. Clone down the production (Live) environment codebase (which now contains your major upgrades files).
+    2. Update your local `appsettings.json` with the Production (Live) Cloud Database Connection String.
+    3. Run the project locally. Your local machine's compute power will execute the schema migration directly against the Live cloud database.
+    4. Log into the Live backoffice to verify the upgrade version. No database push is required, as the migration occurred live over the connection string
+
+{% hint style="tip" %}
+If the production migration takes longer than expected, you can restore a backup of the Staging database onto production as a fallback. Both will be at the upgraded version.
+{% endhint %}
+
+12. Cancel the **content-freeze**.
+13. Verify and test all functionality in the production environment.
+14. [Remove your custom hostname(s)](../../../go-live/manage-hostnames/) from the Staging environment.
+15. Ensure the hostname(s) no longer point to the Staging environment.
+16. [Add the custom hostname(s)](../../../go-live/manage-hostnames/) to the production environment.
 {% endtab %}
 
 {% tab title="Without content freeze" %}
-1. Deploy the upgrade to the next environment.
-2. Verify and test all functionality on the upgraded environment.
-3. Deploy the upgrade to the production environment.
+
+Use this approach for smaller sites where a short downtime window is acceptable.
+
+1. Deploy the upgrade to the next (Staging) environment.
+2. If the database migration does not complete automatically, perform it locally using the connection string method:
+    1. Clone down the Staging environment (this pulls the upgraded codebase).
+    2. Connect to the Staging cloud database using the connection string from the Cloud portal.
+    3. Run the project locally. The migration executes against the cloud database, your local machine provides the compute.
+    4. Verify the backoffice loads and the upgrade is confirmed.
+    5. Push the result back to the Staging Cloud environment.
+
+![Verify and test all functionality on the upgraded (Staging) environment](../../../.gitbook/assets/local_bridge_infographic_v2.svg)
+
+3. Verify and test all functionality on the upgraded (Staging) environment.
+4. Deploy the upgrade to the production (Live) environment.
    1. In case the upgrade is taking longer than expected, restore a backup of the database on the production environment.
-4. Verify and test all functionality in the production environment.
+5. Verify and test all functionality in the production (Live) environment.
 {% endtab %}
 {% endtabs %}
