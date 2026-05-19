@@ -22,13 +22,6 @@ Use this visual map as a quick reference guide to track how code deployments and
 
 ![Umbraco Cloud Major Version Upgrade Roadmap](../../../.gitbook/assets/umbraco_upgrade_flow_process.svg)
 
-1. Upgrade the Dev environment by cloning it locally, running the upgrade, and push the upgraded code back up.
-2. Deploy to Staging. The code will deploy but the database migration may not complete automatically. This is expected behaviour, not a bug.
-3. Perform the Staging database migration locally by cloning Staging, connecting to its cloud database via a connection string, and running the project locally. Your local machine performs the migration against the cloud database.
-4. Validate Staging thoroughly. Move your custom hostnames from Live to Staging so you can test on real traffic while Live remains untouched.
-5. Repeat the same local database migration process for Live.
-6. Move hostnames back to Live. All environments are now upgraded.
-
 {% hint style="warning" %}
 **Do not perform major version upgrades directly in Umbraco Cloud.**
 
@@ -36,6 +29,13 @@ Major upgrades involve significant database schema changes. Running these migrat
 
 Always perform the database migration locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. The steps below follow this recommended approach.
 {% endhint %}
+
+1. Upgrade the Dev environment by cloning it locally, running the upgrade, and push the upgraded code back up.
+2. Deploy to Staging. The code will deploy but the database migration may not complete automatically. This is expected behaviour, not a bug.
+3. Perform the Staging database migration locally by cloning Staging, connecting to its cloud database via a connection string, and running the project locally. Your local machine performs the migration against the cloud database.
+4. Validate Staging thoroughly. Move your custom hostnames from Live to Staging so you can test on real traffic while Live remains untouched.
+5. Repeat the same local database migration process for Live.
+6. Move hostnames back to Live. All environments are now upgraded.
 
 {% hint style="info" %}
 **Are you using custom packages or code on your Umbraco Cloud project?**
