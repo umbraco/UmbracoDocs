@@ -10,7 +10,7 @@ A major Umbraco upgrade is more involved than a minor or patch update. Customers
 
 ## Why major upgrades are different
 
-A major upgrade involves a database schema migration, the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process. Once migrated locally push the changes back to Cloud.
+A major upgrade involves a database schema migration, the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process. Once migrated locally via the connection string, verify the backoffice loads successfully in the cloud.
 
 ## High-level Upgrade Process
 
@@ -237,7 +237,7 @@ Update all projects and packages in your solution to support the latest .NET.
 1. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/upgrade-unattended) in your configuration.
 2. Run the project locally.
 3. Log in to the backoffice to **verify the upgrade** has happened.
-   * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
+   * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=`, this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
 
 <figure><img src="../../../.gitbook/assets/Cloud-upgraded-version.png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
