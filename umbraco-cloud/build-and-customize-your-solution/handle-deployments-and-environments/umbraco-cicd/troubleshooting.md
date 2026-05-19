@@ -19,7 +19,7 @@ This happens even though the CI/CD deployments were successfull, and files were 
 To resolve this issue, you need to ensure that when the site is restoring on Umbraco Cloud it is not using the lock file. You can do this by adding this line in your csproj file:
 
 ```xml
-<RestoreForceEvaluate Condition="'$(KUDU_SYNC_CMD)' != ''">>true</RestoreForceEvaluate>
+<RestoreForceEvaluate Condition="'$(KUDU_SYNC_CMD)' != ''">true</RestoreForceEvaluate>
 ```
 
 [Force Evaluate option on dotnet restore](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore#options)
