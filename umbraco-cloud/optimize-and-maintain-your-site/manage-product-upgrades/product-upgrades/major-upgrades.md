@@ -6,7 +6,7 @@ description: >-
 
 # Major Upgrades
 
-A major Umbraco upgrade is more involved than a minor or patch update. Customers who attempt it without understanding the full process often encounter unexpected site downtime. Read this article before touching any environment.
+A major Umbraco upgrade is more involved than a minor or patch update. Read this article before starting the upgrade process to avoid any unexpected site downtime.
 
 ## Why major upgrades are different
 
