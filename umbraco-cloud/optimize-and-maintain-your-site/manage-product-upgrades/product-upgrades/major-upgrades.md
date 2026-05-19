@@ -258,7 +258,7 @@ This step can help resolve unexpected startup issues after the upgrade.
 If the issue persists and your project has CDN Caching and Optimization enabled, cached responses may interfere with license validation. In this case, try purging the cache and reloading the site.
 {% endhint %}
 
-5. Verify the project runs locally without errors.
+4. Verify the project runs locally without errors.
 
 <details>
 
