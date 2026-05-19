@@ -365,7 +365,7 @@ The following steps involve setting a **content-freeze** period on the project. 
 {% endhint %}
 
 1. Delete your existing Staging environment.
-2. Recreate the Staging environment as a direct clone from your production (Live) environment. This guarantees Staging begins as a clean environment with identical data.
+2. Recreate the Staging environment to ensure a clean environment in sync with production/Live.
 3. Initiate **content-freeze**. Ask editors to stop all backoffice work.
 4. Restore the production [database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) and [media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) to Staging so the content is identical.
 5. Deploy the upgrade from the left-most (Dev) environment to Staging.
