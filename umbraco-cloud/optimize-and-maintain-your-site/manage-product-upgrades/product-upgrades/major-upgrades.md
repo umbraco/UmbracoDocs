@@ -14,9 +14,9 @@ A major upgrade involves a database schema migration, the structure of the datab
 
 ## High-level Upgrade Process
 
-Watch this short walkthrough to understand why a local database migration is required and how your local machine handles the heavy lifting.
+Watch this short video to understand why a local database migration is required and how your local machine handles the heavy lifting.
 
-![A short video walkthrough of the complete upgrade process](../../../.gitbook/assets/umbraco_upgrade.mp4)
+<TBA>
 
 Use this visual map as a quick reference guide to track how code deployments and database schema migrations move across your environments sequentially.
 
