@@ -16,6 +16,17 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.2.1](https://www.nuget.org/packages/Umbraco.Engage/17.2.1) (May 19th 2026)
+
+* Resolved a thread-safety issue in the personalization visitor profile that could corrupt profile state under concurrent pageviews.
+* Resolved failed migration steps being silently masked at boot. Failures now surface clearly without blocking application startup.
+* Fixed duplicate-row replacement in the permissions dashboard, which previously caused "Duplicate permissions found for ContentTypeIds" errors when toggling document-type permissions that shared a default record.
+* Added `ICampaignGroupService` for public access to campaign-group data, including `GetCampaignGroupIdsWithRecentActivity` documented in UTC calendar-day semantics.
+* Added a `GetAll` method to `ISegmentService` for retrieving all configured segments.
+* Added orphaned-record cleanup for personalization groups, removing stale references left behind by deleted personas and customer journey groups.
+* Improved personalization cache invalidation by short-circuiting invalidated rules.
+* Improved CPU efficiency by preventing recurring background jobs from hot-looping when no work is available.
+
 #### [17.2.0](https://www.nuget.org/packages/Umbraco.Engage/17.2.0) (April 20th 2026)
 
 * Rewritten analytics data cleanup with improved scheduling and performance:
