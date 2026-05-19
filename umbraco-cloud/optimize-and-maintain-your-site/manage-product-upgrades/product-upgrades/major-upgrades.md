@@ -10,7 +10,7 @@ A major Umbraco upgrade is more involved than a minor or patch update. Read this
 
 ## Why major upgrades are different
 
-A major upgrade involves a database schema migration, the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process. Once migrated locally via the connection string, verify the backoffice loads successfully in the cloud.
+A major upgrade involves a database schema migration, as the structure of the database changes between major versions. On Umbraco Cloud, this migration may not run automatically during a standard cloud deployment. When this occurs, you will need to run the database migration locally, where your machine has full control over the process.
 
 ## High-level Upgrade Process
 
