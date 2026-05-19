@@ -8,7 +8,7 @@ description: >-
 
 Test all pages using a specific Document Type with this test. Select the Document Type(s) you want to test and Umbraco Engage makes sure the correct CSS and JavaScript is inserted to the correct pages.
 
-The test type **Content Type** can be started in the [Engage section](../../introduction/the-umbraco-engage-section.md) and in the [Content App](../../introduction/content-apps.md). The type is selected in the **Test setup** section.
+The test type **Content Type** can be started in the [Engage section](../../introduction/the-umbraco-engage-section.md) and in the [Workspace View](../../introduction/workspace-views.md). The type is selected in the **Test setup** section.
 
 ![Setup Test](<../../../.gitbook/assets/engage-ab-test-content-type-test (1).png>)
 

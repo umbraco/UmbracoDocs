@@ -19,4 +19,4 @@ When setting up the A/B test, you can select the type of test you want to set up
 
 ![When you set up an A/B test you have to choose which type of test you want to use.](../../../.gitbook/assets/ABTest-SetupTest-v16.png)
 
-A Single-Page test can only be started in the A/B test [Content App](../../introduction/content-apps.md) and not from the Engage [section](../../introduction/the-umbraco-engage-section.md).
+A Single-Page test can only be started in the A/B test [Workspace View](../../introduction/workspace-views.md) and not from the Engage [section](../../introduction/the-umbraco-engage-section.md).

@@ -8,7 +8,7 @@ description: >-
 
 The Multiple Pages test allows you to run A/B tests across multiple pages at once. In Umbraco, you can select the pages you want to test. For all these pages you can specify which type of CSS or JavaScript will be added to the specific variant. The multiple pages test requires you to write (or copy in) some CSS and JavaScript code.
 
-The test type **Multiple pages** can be started in the [Engage section](../../introduction/the-umbraco-engage-section.md) and in the [Content App](../../introduction/content-apps.md). The type is selected in the **Test setup** section.
+The test type **Multiple pages** can be started in the [Engage section](../../introduction/the-umbraco-engage-section.md) and in the [Workspace View](../../introduction/workspace-views.md). The type is selected in the **Test setup** section.
 
 ![Setup Test](<../../../.gitbook/assets/engage-ab-test-mutliple-pages-v16 (1).png>)
 

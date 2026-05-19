@@ -14,9 +14,9 @@ This section covers topics such as an introduction to the platform, its componen
 
 Explore the Umbraco Engage section to access Analytics, A/B Testing, Personalization, Profiling, Reporting and global settings.
 
-## [Content Apps](content-apps.md)
+## [Workspace Views](workspace-views.md)
 
-Discover how the Content Apps enhance each node with different features for improved content management.
+Discover how the Workspace Views enhance each node with different features for improved content management.
 
 ## [The Umbraco Engage Cookie](the-umbraco-engage-cookie.md)
 

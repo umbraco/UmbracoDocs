@@ -22,12 +22,12 @@ You can apply personalization in two ways:
 To personalize a specific page:
 
 1. Go to any content node within Umbraco.
-2. Open the node. You will find all Umbraco Engage content apps on that specific node.
-3. Go to the "**Personalization**" content app:
+2. Open the node. You will find all Umbraco Engage workspace views on that specific node.
+3. Go to the "**Personalization**" workspace view:
 
-![Accessing the 'Personalization' content app for a specific node in Umbraco](../../.gitbook/assets/personalization-content-app-v16.png)
+![Accessing the 'Personalization' workspace view for a specific node in Umbraco](../../.gitbook/assets/personalization-content-app-v16.png)
 
-4. Clicking the content app takes you to an overview of all applied personalizations for the page.
+4. Clicking the workspace view takes you to an overview of all applied personalizations for the page.
 5. Click **Create personalized variant**:
 
 ![Overview of applied personalizations with the option to add a personalized variant](../../.gitbook/assets/engage-personalization-add-personalized-variant-v16.png)

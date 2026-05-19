@@ -9,7 +9,7 @@ description: >-
 The data is visualized in two parts in Umbraco:
 
 * The Umbraco Engage section gives an overview of all data that is recorded. The data is visualized for the entire installation and all pages and visitors. These reports give a perfect overview on a top level.
-* For more detailed reports on an individual page (Umbraco node), you can go to the Analytics [Content app](../../../marketers-and-editors/introduction/content-apps.md).
+* For more detailed reports on an individual page (Umbraco node), you can go to the Analytics [Workspace View](../../../marketers-and-editors/introduction/workspace-views.md).
 
 ## Source of data
 
