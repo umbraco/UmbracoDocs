@@ -4,9 +4,12 @@
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname. Visitors see your page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.
 * **Baseline enhancements** - An activity starts when the baseline pushes updates to child projects.
+* **Baseline enhancements** - Baseline update UI state is restored when an update is running.
+* **Baseline enhancements** - An activity starts on the baseline project during the creation of a child project.
 * **Basic Authentication for all plans** - Basic Authentication is now available on all Umbraco Cloud plans.
 * **Anonymized backoffice users on team removal** - Removing a team member from a project now anonymizes their backoffice user across every environment. Audit history is preserved while personal data is cleared.
 * **Edge traffic analytics on Traffic & Performance** - The Traffic & Performance page now combines Azure application metrics with Cloudflare edge analytics. New edge metric tiles, chart series, and breakdown tables let you analyze HTTP traffic by status code, cache status, geography, devices, and more.
+* **Release Umbraco.Cloud.Cms v17.1.3** - Adds support for the new Basic Authentication login form introduced in Umbraco 17.4.0.
 
 ## Error pages
 
@@ -26,6 +29,10 @@ For authoring guidelines and a ready-to-use HTML template, see the [Error Pages]
 ## Baseline enhancements
 
 Pushing a baseline update to child projects will trigger an activity on the baseline project. The activity is non-blocking, but will run until all children are updated.
+
+The UI restores the current state of a running baseline update when you return to or refresh the **Manage child projects** page. This helps you track update progress, especially for large batches.
+
+When creating a new child project from a baseline, a non-blocking activity starts on the baseline. The activity is available on the **Project history** page for later review, for instance in case of a failed creation.
 
 ## Basic Authentication for all plans
 
@@ -50,3 +57,7 @@ The **Traffic & Performance** page now combines Azure application metrics with C
 The breakdown tables let you drill into edge traffic by status code, paths, hosts, geography, browsers, devices, and more. A toggle at the top of the section switches the view between request count and data transferred.
 
 For full details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md) documentation.
+
+## Release Umbraco.Cloud.Cms v17.1.3
+
+Umbraco.Cloud.Cms v17.1.3 supports the new Basic Authentication login form introduced in Umbraco 17.4.0. When you use a Basic Authentication-only login flow, the CMS redirects to the new login page. For implementation details, see [Umbraco-CMS PR #22168](https://github.com/umbraco/Umbraco-CMS/pull/22168).
