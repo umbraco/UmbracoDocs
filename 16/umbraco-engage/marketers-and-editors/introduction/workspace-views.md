@@ -11,7 +11,7 @@ In the Content section of Umbraco, you will see the Umbraco nodes. Most of them 
 ![Umbraco content nodes with Engage workspace views](<../../.gitbook/assets/Engage-content-apps-v16 (1).png>)
 
 {% hint style="info" %}
-Workspace Views are a concept in Umbraco CMS. See the [Workspace Views](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-views) article in the CMS documentation to learn more.
+Content Apps have been renamed to Workspace Views to align with the Umbraco backoffice architecture. If you are configuring or customizing these views, refer to the [Workspace Views](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-views) article for full implementation details.
 {% endhint %}
 
 ## Analytics
