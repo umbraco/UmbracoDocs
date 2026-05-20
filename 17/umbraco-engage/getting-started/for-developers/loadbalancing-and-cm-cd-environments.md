@@ -109,7 +109,7 @@ Make sure the `IsProcessingServer` is set to `true` on the content management (U
 
 The setting can be set in your`appSettings.json`file.
 
-## Sticky sessions
+## Enabling Sticky sessions
 
 Sticky sessions, also known as session affinity, are essential for the proper functioning of Umbraco Engage in a load-balanced environment. Sticky sessions can be enabled using different methods such as cookie-based, IP-based, or URL-based session affinity, depending on the load balancer configuration. By enabling sticky sessions, you can ensure that user sessions remain intact and data consistency is maintained across the Umbraco Engage application. Sticky sessions will ensure that analytics, A/B testing and personalization works properly.
 
