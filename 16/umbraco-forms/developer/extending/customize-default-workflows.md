@@ -50,7 +50,7 @@ namespace MyNamespace
             _logger = logger;
         }
 
-        [Setting("Message", Description = "The log message to write", View = "TextField")]
+        [Setting("Message", Description = "The log message to write", View = "Umb.PropertyEditorUi.TextBox")]
         public string Message { get; set; }
 
         public override List<Exception> ValidateSettings()
@@ -79,8 +79,8 @@ Secondly, the custom implementation of `IApplyDefaultWorkflowsBehavior`:
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Cms.Core.Hosting;
 using Umbraco.Forms.Core;
+using Umbraco.Forms.Core.Attributes;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Providers;
 using Umbraco.Forms.Web.Behaviors;
@@ -90,20 +90,19 @@ namespace MyNamespace
 {
     public class CustomApplyDefaultWorkflowsBehavior : IApplyDefaultWorkflowsBehavior
     {
-        private readonly WorkflowCollection _workflowCollection;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly WorkflowCollectionFactory _workflowCollectionFactory;
 
-        public CustomApplyDefaultWorkflowsBehavior(
-            WorkflowCollection workflowCollection, IHostingEnvironment hostingEnvironment)
-        {
-            _workflowCollection = workflowCollection;
-            _hostingEnvironment = hostingEnvironment;
-        }
+        public CustomApplyDefaultWorkflowsBehavior(WorkflowCollectionFactory workflowCollectionFactory) =>
+            _workflowCollectionFactory = workflowCollectionFactory;
 
         public void ApplyDefaultWorkflows(FormDesign form)
         {
+            // WorkflowCollection is registered as transient, so resolve it via the factory
+            // rather than injecting it directly into this singleton service.
+            WorkflowCollection workflowCollection = _workflowCollectionFactory.GetWorkflowCollection();
+
             // Retrieve the type of the default workflow to add.
-            WorkflowType testWorkflowType = _workflowCollection[new Guid(LogMessageWorkflow.LogMessageWorkflowId)];
+            WorkflowType testWorkflowType = workflowCollection[new Guid(LogMessageWorkflow.LogMessageWorkflowId)];
 
             // Create a workflow object based on the workflow type.
             var defaultWorkflow = new FormWorkflowWithTypeSettings
@@ -124,35 +123,15 @@ namespace MyNamespace
                 IsMandatory = true
             };
 
-            // Retrieve the settings from the type.
-            Dictionary<string, Core.Attributes.Setting> workflowTypeSettings = testWorkflowType.Settings();
-
-            // Create a collection for the specific settings to be applied to the workflow.
-            // Populate with the setting details from the type.
-            var workflowSettings = new List<SettingWithValue>();
-            foreach (KeyValuePair<string, Core.Attributes.Setting> setting in workflowTypeSettings)
-            {
-                Core.Attributes.Setting settingItem = setting.Value;
-
-                var settingItemToAdd = new SettingWithValue
-                {
-                    Name = settingItem.Name,
-                    Alias = settingItem.Alias,
-                    Description = settingItem.Description,
-                    Prevalues = settingItem.GetPreValues(),
-                    View = _hostingEnvironment.ToAbsolute(settingItem.GetSettingView()),
-                    Value = string.Empty
-                };
-
-                workflowSettings.Add(settingItemToAdd);
-            }
+            // Retrieve the settings declared on the type and build a dictionary keyed by setting alias.
+            // FormWorkflowWithTypeSettings.Settings is an IDictionary<string, string> mapping alias to value.
+            Dictionary<string, SettingAttribute> workflowTypeSettings = testWorkflowType.Settings();
+            var workflowSettings = workflowTypeSettings.ToDictionary(
+                kvp => kvp.Value.Alias,
+                kvp => string.Empty);
 
             // For each setting, provide a value for the workflow instance (in this example, we only have one).
-            SettingWithValue messageSetting = workflowSettings.SingleOrDefault(x => x.Alias == "Message");
-            if (messageSetting != null)
-            {
-                messageSetting.Value = "A test log message";
-            }
+            workflowSettings["Message"] = "A test log message";
 
             // Apply the settings to the workflow.
             defaultWorkflow.Settings = workflowSettings;
@@ -203,6 +182,7 @@ The following class shows the default implementation provided with Forms. You ca
 using Microsoft.Extensions.Options;
 using Umbraco.Forms.Core.Configuration;
 using Umbraco.Forms.Core.Models;
+using Umbraco.Forms.Core.Providers;
 using Umbraco.Forms.Web.Extensions;
 using Umbraco.Forms.Web.Models.Backoffice;
 
@@ -211,9 +191,13 @@ namespace Umbraco.Forms.Web.Behaviors
     internal class CustomApplyDefaultFieldsBehavior : IApplyDefaultFieldsBehavior
     {
         private readonly FormDesignSettings _formDesignSettings;
+        private readonly FieldCollection _fieldCollection;
 
-        public CustomApplyDefaultFieldsBehavior(IOptions<FormDesignSettings> formDesignSettings) =>
+        public CustomApplyDefaultFieldsBehavior(IOptions<FormDesignSettings> formDesignSettings, FieldCollection fieldCollection)
+        {
             _formDesignSettings = formDesignSettings.Value;
+            _fieldCollection = fieldCollection;
+        }
 
         public virtual void ApplyDefaultFields(FormDesign form)
         {
