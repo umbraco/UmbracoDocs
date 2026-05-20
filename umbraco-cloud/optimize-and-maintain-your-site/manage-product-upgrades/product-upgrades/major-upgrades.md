@@ -86,7 +86,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * Follow the **requirements** for [local development](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements#local-development).
 * Your Umbraco Cloud project running [the latest version of your current Umbraco CMS installation](https://releases.umbraco.com/all-releases/).
 * The **latest** [.NET SDK](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) installed locally.
-* **At least two environments** on your Cloud project.
+* **At least three environments** on your Cloud project.
 * A database backup taken before you begin either [directly from the Cloud portal](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) or by cloning and backing up locally.
 
 ## Step 1: Enable .NET
@@ -368,6 +368,11 @@ The following steps involve setting a **content-freeze** period on the project. 
 2. Recreate the Staging environment to ensure a clean environment in sync with production/Live.
 3. Initiate **content-freeze**. Ask editors to stop all backoffice work.
 4. Restore the production [database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) and [media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) to Staging so the content is identical.
+
+{% hint style="info" %}
+Depending on the size of your production site, restoring a full database backup and media blob library to your newly created Staging environment can be a time-consuming process. For larger sites, expect this step to take longer. Plan your upgrade window accordingly and ensure the data sync finishes completely before deploying your upgraded code.
+{% endhint %}
+
 5. Deploy the upgrade from the left-most (Dev) environment to Staging.
 
 {% hint style="warning" %}
