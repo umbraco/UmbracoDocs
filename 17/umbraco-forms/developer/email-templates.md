@@ -18,10 +18,12 @@ The Razor view must inherit from FormsHtmlModel:
 
 You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
 
-Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
+Below is an example of an email template based on `Example-Template.cshtml` shipped with Umbraco Forms. Use this as a base for creating your own template.
 
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
+@using System.Net
+@using Umbraco.Forms.Core.Extensions
 
 @{
 	//This is an example email template where you can use Razor Views to send HTML emails
@@ -225,8 +227,14 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 												{
 													if (value != null)
 													{
-														@(value is string strValue ? strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps) : value)
-
+														if (value is string strValue)
+														{
+															@Html.Raw(WebUtility.HtmlEncode(strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps)).ReplaceLineEndings("<br/>"))
+														}
+														else
+														{
+															@value
+														}
 														<br />
 													}
 												}
