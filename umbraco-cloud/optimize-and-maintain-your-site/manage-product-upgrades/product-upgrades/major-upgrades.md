@@ -370,7 +370,7 @@ The following steps involve setting a **content-freeze** period on the project. 
 4. Restore the production [database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) and [media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) to Staging so the content is identical.
 
 {% hint style="info" %}
-Depending on the size of your production site, restoring a full database backup and media blob library to your newly created Staging environment can be a time-consuming process. For larger sites, expect this step to take longer. Plan your upgrade window accordingly and ensure the data sync finishes completely before deploying your upgraded code.
+Restoring a full production database and media library to Staging takes time. Large sites will experience longer wait times. Plan your upgrade window carefully. Ensure the data sync finishes before deploying your upgraded code framework.
 {% endhint %}
 
 5. Deploy the upgrade from the left-most (Dev) environment to Staging.
