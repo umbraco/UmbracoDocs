@@ -166,7 +166,6 @@ export class MyExtensionCondition
         // enable extension after 10 seconds
         setTimeout(() => {
             this.permitted = true;
-            args.onChange(this.permitted);
         }, 10000);
     }
 }
@@ -231,7 +230,6 @@ export class MyExtensionCondition
 
         if (args.config.match === "Yes") {
             this.permitted = true;
-            args.onChange(this.permitted);
         }
     }
 }
