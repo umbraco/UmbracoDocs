@@ -99,6 +99,9 @@ The `RunJobAsync()` overload without a cancellation token is obsolete and schedu
 This example shows the minimum code necessary to implement a recurring background job using `RecurringBackgroundJobBase`. The job runs every 60 minutes on the default server roles (`Single` and `SchedulingPublisher`).
 
 ```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Umbraco.Cms.Infrastructure.BackgroundJobs;
 
 namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
@@ -120,6 +123,9 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
 This example shows how to inject other Umbraco services into your background job. The job cleans the recycle bin every 60 minutes. It injects an `IContentService` to access the Recycle Bin and an `ICoreScopeProvider` to provide an ambient scope for the `EmptyRecycleBin` method.
 
 ```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
@@ -170,6 +176,9 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
 The complex example builds on the previous one by injecting additional services. It includes a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. It also injects an `IOptionsMonitor` to allow the period to be updated while the server is running. It demonstrates how to override and raise the `PeriodChanged` event to signal the job's host.
 
 ```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
@@ -286,6 +295,9 @@ Triggering is opt-in. A job must implement the marker interface `ITriggerableRec
 Add `ITriggerableRecurringBackgroundJob` to the job declaration. The interface is empty and extends `IRecurringBackgroundJob`.
 
 ```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Umbraco.Cms.Infrastructure.BackgroundJobs;
 
 namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
@@ -409,7 +421,7 @@ These notifications are triggered in pairs depending on the success, failure, or
 * The Executing notification is triggered before the job is run.
 * The Executed notification is triggered after the job completes.
 * The Failed notification is triggered from the catch block if an exception is thrown.
-* The Canceled notification is triggered when the job is cancelled during host shutdown.
+* The Canceled notification is triggered when the job is canceled during host shutdown.
 
 For **successful** job runs, the following notifications are published:
 
@@ -421,7 +433,7 @@ For **failed** job runs, the following notifications are published:
 1. Executing
 2. Failed
 
-For **cancelled** job runs (typically during host shutdown), the following notifications are published:
+For **canceled** job runs (typically during host shutdown), the following notifications are published:
 
 1. Executing
 2. Canceled
@@ -455,6 +467,11 @@ By default, distributed background jobs are checked every 5 seconds, with an ini
 To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. As with `IRecurringBackgroundJob`, dependency injection (DI) is available in the constructor.
 
 ```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Umbraco.Cms.Infrastructure.BackgroundJobs;
+
 public class MyCustomBackgroundJob : IDistributedBackgroundJob
 {
     private readonly ILogger<MyCustomBackgroundJob> _logger;
