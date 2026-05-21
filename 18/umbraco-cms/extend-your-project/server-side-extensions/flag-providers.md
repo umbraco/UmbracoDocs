@@ -90,4 +90,4 @@ For an example of this, see the core flag provider `IsProtectedFlagProvider` who
 
 More complex flags will require additional information, using the identifiers of the view models to retrieve the necessary data. It's important to avoid "N+1" issues. The aim should be to retrieve all the data needed to populate the flags for the whole collection in one step.
 
-In core, the flag provider `HasScheduleFlagProvider` shows a good example of this. The [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/HasScheduleFlagProvider.cs).
+In core, the flag provider `HasDocumentScheduleFlagProvider` shows a good example of this. The [source code can be found here](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Api.Management/Services/Flags/HasDocumentScheduleFlagProvider.cs).
