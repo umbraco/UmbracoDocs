@@ -16,11 +16,11 @@ If you cannot see this, check if your Umbraco user or user group has access to t
 
 ![Engage section in the Backoffice](../.gitbook/assets/engage-engage-section.png)
 
-### 2. Engage Content Apps
+### 2. Engage Workspace Views
 
-When editing a page within Umbraco, you should be able to see the following Content App on the top right of the page:
+When editing a page within Umbraco, you should be able to see the following Workspace Views on the top right of the page:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Umbraco Engage Content Apps</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Umbraco Engage Workspace Views</p></figcaption></figure>
 
 If you cannot see this, check if your Umbraco user or user group has access to the Engage section.
 
@@ -54,7 +54,7 @@ If you see both options, Umbraco Forms has been configured correctly. If not, en
 
 ### 6. Analytics
 
-Edit a page and go to the Content App marked **Analytics** or **Engage** -> **Analytics** from the top navigation.
+Edit a page and go to the Workspace View marked **Analytics** or **Engage** -> **Analytics** from the top navigation.
 
 Are you able to see analytical data? If not, then you **need to wait 24 hours for today's analytics** to be collected and reported.
 

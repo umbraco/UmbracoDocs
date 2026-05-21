@@ -8,7 +8,7 @@ description: >-
 
 Each Umbraco node can be scored against personas and the customer journey.
 
-To do this navigate to a node in Umbraco and open the content app "**Personalization**" on that node:
+To do this navigate to a node in Umbraco and open the workspace view "**Personalization**" on that node:
 
 ![Open personalization on content node.](../../../.gitbook/assets/engage-personalization-on-content-v16.png)
 
