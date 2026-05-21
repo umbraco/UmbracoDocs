@@ -16,6 +16,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) (May 22 2026)
+ * Fixes lingering bugs related to approval group role display [#145](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/145)
+ * Improvements to invariant permission handling and display.
+ * Embeds implementations (avoiding lazy-loading) in the core package to generated fewer chunks. This in turn reduces the number of files downloaded when the Backoffice loads.
+
 ### [17.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (May 14 2026)
 
 * Adds support for additional preview environments via custom URL providers [#130](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/130)
