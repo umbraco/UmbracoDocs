@@ -44,7 +44,7 @@ Set `Delay` to `Timeout.InfiniteTimeSpan` to skip the automatic first run. The j
 
 Defines how long to wait after an ignored execution before re-evaluating execution conditions. The default is 1 minute.
 
-A job is ignored when the runtime is not ready, the current server role is not in the allowed list, or this instance is not the main domain. The back-off prevents tight looping when `Period` is short and the runtime keeps skipping the job.
+A job is ignored when the runtime is not ready, the server role is not allowed, or this instance is not the main domain. The back-off prevents tight looping when `Period` is short and the runtime keeps skipping the job.
 
 ```csharp
 // Wait 5 minutes before re-evaluating after an ignored execution.
@@ -80,7 +80,7 @@ For example, if the period for your job is controlled by a configuration file se
 
 ### RunJobAsync(CancellationToken)
 
-The main method where your job logic is implemented. The `CancellationToken` is signalled when the host is shutting down. Pass it through to async operations to support cooperative cancellation.
+The main method where your job logic is implemented. The `CancellationToken` is signaled when the host is shutting down. Pass it through to async operations to support cooperative cancellation.
 
 ```csharp
 public override Task RunJobAsync(CancellationToken cancellationToken)
@@ -91,7 +91,7 @@ public override Task RunJobAsync(CancellationToken cancellationToken)
 ```
 
 {% hint style="info" %}
-The parameterless `RunJobAsync()` overload is obsolete and scheduled for removal in Umbraco 19. New jobs should use `RunJobAsync(CancellationToken)`.
+The `RunJobAsync()` overload without a cancellation token is obsolete and scheduled for removal in Umbraco 19. New jobs should use `RunJobAsync(CancellationToken)`.
 {% endhint %}
 
 ## Example
@@ -279,9 +279,9 @@ Learn more about how to register dependencies in the [Dependency Injection](../.
 
 A recurring background job can be triggered to run immediately, in addition to its normal schedule. This is useful when you want to run a job in response to an event or a user action. For example, after a configuration change or from an API endpoint.
 
-Triggering is opt-in. A job must implement the marker interface `ITriggerableRecurringBackgroundJob` to be triggerable.
+Triggering is opt-in. A job must implement the marker interface `ITriggerableRecurringBackgroundJob` to support manual triggering.
 
-### Marking a job as triggerable
+### Opting in to manual triggering
 
 Add `ITriggerableRecurringBackgroundJob` to the job declaration. The interface is empty and extends `IRecurringBackgroundJob`.
 
@@ -364,7 +364,7 @@ Combine this with `Delay => Timeout.InfiniteTimeSpan` to also skip the initial r
 
 `RecurringBackgroundJobBase` is the recommended base class for new jobs. It implements `IRecurringBackgroundJob` and provides defaults for `Delay`, `IgnoredDelay`, `ServerRoles`, and `PeriodChanged`. Implementors only need to provide `Period` and `RunJobAsync(CancellationToken)`.
 
-`RecurringHostedServiceBase` is a low-level base class. It inherits from .NET's `BackgroundService` and runs the job on a recurring basis using a cancellable wait loop. The loop supports periodic execution, manual triggering, exception resilience, and cooperative cancellation on host shutdown.
+`RecurringHostedServiceBase` is a low-level base class. It inherits from .NET's `BackgroundService` and runs the job on a recurring basis using a wait loop with cancellation support. The loop supports periodic execution, manual triggering, exception resilience, and cooperative cancellation on host shutdown.
 
 `RecurringBackgroundJobHostedService` is an Umbraco-specific hosted service that extends `RecurringHostedServiceBase`. It uses Umbraco system services to ensure that your jobs only execute once Umbraco is up and running. It checks:
 
