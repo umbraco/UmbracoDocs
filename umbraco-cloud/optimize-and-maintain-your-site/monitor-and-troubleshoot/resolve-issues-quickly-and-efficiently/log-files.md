@@ -3,7 +3,6 @@
 You can access the different types of log files on Umbraco Cloud or through [Kudu](../power-tools/). You have access to different types of logs:
 
 * Umbraco logs
-* Persisting logs externally
 * Deploy logs
 * Environment logs
 * Site Extension logs
