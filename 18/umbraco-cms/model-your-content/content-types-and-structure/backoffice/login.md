@@ -20,7 +20,8 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
-To override the greetings, register a 'localization' manifest for the default language of your Umbraco site (usually en-US). Provide the new strings inline under `meta.localizations`:
+1. Register a 'localization' manifest for the default language of your Umbraco site (default: en-US).
+2. Provide the new strings inline under `meta.localizations`:
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -55,7 +56,7 @@ To override the greetings, register a 'localization' manifest for the default la
 ```
 {% endcode %}
 
-This will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" instead of "Welcome" on a Sunday. (These are the day-specific greetings the backoffice shipped with before v13 — a nostalgic drop-in replacement for the plain "Welcome".)
+Adding the code above will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" on Sundays instead of "Welcome".
 
 {% hint style="info" %}
 For larger overrides, declare the strings in a separate JavaScript file referenced from the manifest (for example `/App_Plugins/Login/en-us.js`). The file should export a default object with the same `{ group: { key: value } }` shape.
@@ -66,7 +67,7 @@ For larger overrides, declare the strings in a separate JavaScript file referenc
 {% endhint %}
 
 {% hint style="info" %}
-**Renamed in v18: `auth.*` → `login.*`.** Before v18 the login screen had its own dictionary under an `auth` group (`auth.greeting0`, `auth.instruction`, …). In v18 the login screen reuses the shared backoffice dictionary and the keys moved to a `login` group. Existing translation packages still shipping `auth.greeting*` overrides continue to work through v19 with a deprecation warning in the console; the legacy fallback is removed in v20. New packages should target `login.*` directly.
+**Renamed: `auth.*` → `login.*`.** The login screen previously had its own dictionary under an `auth` group (`auth.greeting0`, `auth.instruction`, …). It now reuses the shared backoffice dictionary, with keys moved to a `login` group. Existing translation packages that still ship with `auth.greeting*` overrides will continue to work through version 19, with a deprecation warning in the console. The legacy fallback will eventually be removed. New packages should target `login.*` directly.
 {% endhint %}
 
 You can customize other text on the login screen as well. Grab the default values and keys from the [`en.ts`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Client/src/assets/lang/en.ts) dictionary in the Umbraco CMS GitHub repository — look under the `login` group. Then copy the ones you want to translate into your `en-us.js` file.
@@ -218,7 +219,7 @@ The time out screen is displayed when the user has been inactive for a certain a
 
 If you have added more than one login provider, the users will also see this screen first. This is because they need to choose which provider to use first. In that case, the screen is also referred to as the **Choose provider screen**.
 
-You can customize the time out screen in the same way as the login screen. From v18 both screens share the same backoffice localization dictionary. The `login.*` keys you override for the login screen automatically apply to the time out screen as well.
+You can customize the timeout screen in the same way as the login screen. Both screens share the same backoffice localization dictionary. The `login.*` keys you override for the login screen automatically apply to the timeout screen as well.
 
 ### Greeting
 

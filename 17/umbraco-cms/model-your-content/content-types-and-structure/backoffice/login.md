@@ -20,7 +20,8 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
-To override the greetings, register a 'localization' manifest for the default language of your Umbraco site (usually en-US). Provide the new strings inline under `meta.localizations`:
+1. Register a 'localization' manifest for the default language of your Umbraco site (default: en-US).
+2. Provide the new strings inline under `meta.localizations`:
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -55,7 +56,7 @@ To override the greetings, register a 'localization' manifest for the default la
 ```
 {% endcode %}
 
-This will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" instead of "Welcome" on a Sunday. (These are the day-specific greetings the backoffice shipped with before v13 — a nostalgic drop-in replacement for the plain "Welcome".)
+Adding the code above will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" on Sundays instead of "Welcome".
 
 {% hint style="info" %}
 For larger overrides, declare the strings in a separate JavaScript file referenced from the manifest (for example `/App_Plugins/Login/en-us.js`). The file should export a default object with the same `{ group: { key: value } }` shape.
