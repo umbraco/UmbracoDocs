@@ -38,30 +38,24 @@ Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requi
 ## Scaling modes
 
 {% hint style="info" %}
-**Image placeholder**: Portal screenshot of the load-balancing settings panel showing the static and dynamic scaling options. Will be added once the Portal user interface is final.
+**Image placeholder**: Portal screenshot of the load-balancing settings panel showing the manual scaling option. Will be added once the Portal user interface is final.
 {% endhint %}
 
-Umbraco Cloud offers two scaling modes. Select the mode that fits your traffic profile.
+Umbraco Cloud supports manual scaling. Dynamic scaling, where the platform adjusts the instance count automatically based on load, is planned for a future release.
 
-### Static scaling
+### Manual scaling
 
-Set a fixed instance count for the environment. The count remains the same until you change the value manually.
+You choose the exact number of instances your environment runs on. The count remains fixed until you change the value.
 
-Choose static scaling when:
+Choose manual scaling when:
 
 * Your traffic is predictable.
 * You want full control over running cost.
 * You are sizing for a known peak.
 
-### Dynamic scaling
-
-Umbraco Cloud increases or decreases the instance count automatically based on load. The platform adds instances when demand rises and removes them when demand falls.
-
-Choose dynamic scaling when:
-
-* Your traffic is spiky or hard to predict.
-* You want capacity to follow demand without manual intervention.
-* You want to reduce running cost during low-traffic periods.
+{% hint style="warning" %}
+Load-balanced environments currently have sticky sessions enabled. Each visitor is routed to the same instance for the duration of their session, which limits how evenly traffic is distributed across instances.
+{% endhint %}
 
 ## Redis Configuration by Cloud Plan
 
