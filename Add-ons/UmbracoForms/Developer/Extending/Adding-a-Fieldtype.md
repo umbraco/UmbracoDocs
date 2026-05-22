@@ -12,9 +12,10 @@ meta.Title: "Adding a field type to Umbraco Forms"
 Add a new class to the Visual Studio solution, make it inherit from `Umbraco.Forms.Core.FieldType` and fill in the constructor:
 
 ```csharp
-using Umbraco.Forms.Core.Data.Storage;
+using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Models;
+using System;
 
 public class MyCustomField : Umbraco.Forms.Core.FieldType
 {
@@ -25,6 +26,7 @@ public class MyCustomField : Umbraco.Forms.Core.FieldType
         this.Description = "Render a custom text field.";
         this.Icon = "icon-autofill";
         this.DataType = FieldDataType.String;
+        this.FieldTypeViewName = "FieldType.MyCustomField.cshtml";
         this.SortOrder = 10;
         this.SupportsRegex = true;
     }
