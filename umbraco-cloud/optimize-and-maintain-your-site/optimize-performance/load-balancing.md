@@ -25,9 +25,15 @@ Confirm your project meets these requirements before turning load balancing on.
 
 Load balancing requires:
 
-* Umbraco CMS **17.0.0 or higher**.
-* The project must run in **Umbraco Production Mode**.
-* A plan that supports load balancing — Redis defaults differ per plan, see [Redis backplane and default configuration](#redis-backplane-and-default-configuration) below.
+* Umbraco CMS **17.4.2 or higher**.
+* The project must run in [Umbraco Production Mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
+* `Umbraco:CMS:ModelsBuilder:ModelsMode` set to `Nothing` — see [ModelsBuilder Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
+* Pre-compiled views at build/publish time — see [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
+* A plan that supports load balancing — see [Redis Configuration by Cloud Plan](#redis-configuration-by-cloud-plan) below.
+
+{% hint style="info" %}
+Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requirements at boot — an Umbraco app in Production mode that fails either check throws `BootFailedException`. They are listed separately so you can verify each one against your project before enabling Production mode.
+{% endhint %}
 
 ## Scaling modes
 
@@ -63,17 +69,18 @@ Choose dynamic scaling when:
 **Image placeholder**: Portal screenshot of the Redis Stock Keeping Unit (SKU) display on the environment settings page. Will be added once the Portal user interface is final.
 {% endhint %}
 
+Load balancing is available on dedicated plans from **Standard Dedicated 2** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco support to discuss upgrade paths.
+
 Each load-balanced environment is provisioned with a managed Redis instance. Redis acts as the SignalR backplane and the distributed cache that keeps state consistent across all running instances.
 
-When you enable load balancing, Umbraco Cloud provisions a Redis Stock Keeping Unit (SKU) by default based on your plan. Higher-tier defaults include High Availability (HA) and a Service Level Agreement (SLA).
+When you enable load balancing, Umbraco Cloud provisions a Redis Stock Keeping Unit (SKU) automatically based on your plan. All eligible plans include High Availability (HA) and a Service Level Agreement (SLA) on the Redis instance.
 
-| Plan         | Default Redis SKU    |
-| ------------ | -------------------- |
-| Starter      | Extra Small (no SLA) |
-| Standard     | Extra Small+ (HA)    |
-| Professional | Small+ (HA)          |
-
-The Extra Small SKU on the Starter plan does not include an SLA. The Extra Small+ and Small+ defaults on Standard and Professional plans include both an SLA and high availability.
+| Plan                 | Default Redis SKU | High Availability |
+| -------------------- | ----------------- | ----------------- |
+| Standard Dedicated 2 | Extra Small+      | ✅                 |
+| Pro Dedicated 1      | Small+            | ✅                 |
+| Pro Dedicated 2      | Small+            | ✅                 |
+| Pro Dedicated 3      | Small+            | ✅                 |
 
 ## Performance and availability
 
