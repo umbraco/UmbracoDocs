@@ -20,9 +20,8 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
-To do this follow the steps below:
-
-1. Register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
+1. Register a 'localization' manifest for the default language of your Umbraco site (default: en-US).
+2. Provide the new strings inline under `meta.localizations`:
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -36,9 +35,20 @@ To do this follow the steps below:
             "type": "localization",
             "alias": "Login.Localize.EnUS",
             "name": "English",
-            "js": "/App_Plugins/Login/en-us.js",
             "meta": {
-                "culture": "en-US"
+                "culture": "en-US",
+                "localizations": {
+                    "auth": {
+                        "instruction": "Log in again to continue",
+                        "greeting0": "Happy super Sunday",
+                        "greeting1": "Happy manic Monday",
+                        "greeting2": "Happy tubular Tuesday",
+                        "greeting3": "Happy wonderful Wednesday",
+                        "greeting4": "Happy thunderous Thursday",
+                        "greeting5": "Happy funky Friday",
+                        "greeting6": "Happy Caturday"
+                    }
+                }
             }
         }
     ]
@@ -46,26 +56,11 @@ To do this follow the steps below:
 ```
 {% endcode %}
 
-2. Add an `en-us.js` file containing the following:
+Adding the code above will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" on Sundays instead of "Welcome".
 
-{% code title="App_Plugins/Login/en-us.js" %}
-```javascript
-export default {
-  auth: {
-    instruction: "Log in again to continue",
-    greeting0: "Is is Sunday",
-    greeting1: "Is is Monday",
-    greeting2: "Is is Tuesday",
-    greeting3: "Is is Wednesday",
-    greeting4: "Is is Thursday",
-    greeting5: "Is is Friday",
-    greeting6: "Is is Saturday",
-  }
-}
-```
-{% endcode %}
-
-This will override the default greetings with the ones you provide. The login screen will now display "It is Sunday" instead of "Welcome" for example.
+{% hint style="info" %}
+For larger overrides, declare the strings in a separate JavaScript file referenced from the manifest (for example `/App_Plugins/Login/en-us.js`). The file should export a default object with the same `{ group: { key: value } }` shape.
+{% endhint %}
 
 {% hint style="info" %}
 The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../../extend-your-project/backoffice-extensions/foundation/localization.md) article.
@@ -224,7 +219,7 @@ You can customize the time out screen in the same way as the login screen. The t
 
 ### Greeting
 
-To update the greeting message on this screen, you will have to change the section to `login`:
+To update the greeting message on this screen, register a manifest using the `login` section (instead of `auth`):
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -238,31 +233,23 @@ To update the greeting message on this screen, you will have to change the secti
             "type": "localization",
             "alias": "Login.Localize.EnUS",
             "name": "English",
-            "js": "/App_Plugins/Login/en-us.js",
             "meta": {
-                "culture": "en-US"
+                "culture": "en-US",
+                "localizations": {
+                    "login": {
+                        "instruction": "Log in again to continue",
+                        "greeting0": "Happy super Sunday",
+                        "greeting1": "Happy manic Monday",
+                        "greeting2": "Happy tubular Tuesday",
+                        "greeting3": "Happy wonderful Wednesday",
+                        "greeting4": "Happy thunderous Thursday",
+                        "greeting5": "Happy funky Friday",
+                        "greeting6": "Happy Caturday"
+                    }
+                }
             }
         }
     ]
-}
-```
-{% endcode %}
-
-The `en-us.js` file should contain the following:
-
-{% code title="App_Plugins/Login/en-us.js" %}
-```javascript
-export default {
-  auth: {
-    instruction: "Log in again to continue",
-    greeting0: "Is is Sunday",
-    greeting1: "Is is Monday",
-    greeting2: "Is is Tuesday",
-    greeting3: "Is is Wednesday",
-    greeting4: "Is is Thursday",
-    greeting5: "Is is Friday",
-    greeting6: "Is is Saturday",
-  }
 }
 ```
 {% endcode %}
