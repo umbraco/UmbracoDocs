@@ -6,9 +6,9 @@ description: Run a background job on a recurring basis
 
 You can run recurring code using a recurring background job. The recommended way is to inherit from the abstract `RecurringBackgroundJobBase` class. The class provides defaults for delay, server roles, and event handling, so you only need to set the `Period` and implement `RunJobAsync(CancellationToken)`.
 
-If you need more control, you can implement the `IRecurringBackgroundJob` interface directly.
+Alternatively, implement the `IRecurringBackgroundJob` interface directly — for example, when your job class already inherits from another base class. The interface provides the same defaults via default interface methods, so you only need to override what you want to change.
 
-Once you have created your background job class, register it using a Composer. The job is detected at startup and a new `HostedService` is created to run it.
+Once you have created your background job class, register it using `AddRecurringBackgroundJob<TJob>()`. The job is detected at startup and a new hosted service is created to run it.
 
 {% hint style="warning" %}
 Be aware you may or may not want this background job to run on all servers. If you are using Load Balancing with multiple servers, see the [load balancing documentation](../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/) for more information.
@@ -27,18 +27,20 @@ Defines how often the job runs. This property is a `TimeSpan`.
 public override TimeSpan Period => TimeSpan.FromMinutes(5);
 ```
 
-Set `Period` to `Timeout.InfiniteTimeSpan` to disable automatic scheduling. The job then only runs when [triggered manually](scheduling.md#on-demand-triggering).
+Set `Period` to `Timeout.InfiniteTimeSpan` to disable recurring runs. The job then only runs when [triggered manually](scheduling.md#on-demand-triggering).
 
 ### Delay
 
 Defines how long to wait after application startup before running the job for the first time. The default is 3 minutes.
+
+The delay prevents the job from competing with startup work for resources. It also gives caches and other dependencies time to populate before the first run.
 
 ```csharp
 // Wait 1 minute after application startup before running this job for the first time.
 public override TimeSpan Delay => TimeSpan.FromMinutes(1);
 ```
 
-Set `Delay` to `Timeout.InfiniteTimeSpan` to skip the automatic first run. The job then only runs when triggered manually.
+Set `Delay` to `Timeout.InfiniteTimeSpan` to not automatically start the recurring runs. The job then only runs (and starts recurring runs) when triggered manually.
 
 ### IgnoredDelay
 
@@ -148,9 +150,6 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
     }
 
     public override TimeSpan Period => TimeSpan.FromMinutes(60);
-
-    // Run on all servers
-    public override ServerRole[] ServerRoles => Enum.GetValues<ServerRole>();
 
     public override Task RunJobAsync(CancellationToken cancellationToken)
     {
@@ -263,7 +262,7 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
 
 ### Registering with a composer
 
-Create a composer and register the background job with `AddRecurringBackgroundJob`.
+Create a composer and register the background job with `AddRecurringBackgroundJob<TJob>()`.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -364,10 +363,12 @@ _trigger.TriggerExecution(NextExecutionStrategy.Reset);
 
 ### Manual-only jobs
 
-To create a job that only runs when triggered manually, set `Period` to `Timeout.InfiniteTimeSpan`. The job is registered and a hosted service is created for it, but no automatic execution occurs.
+To create a job that only runs when triggered manually, set both `Period` and `Delay` to `Timeout.InfiniteTimeSpan`. The job is registered and a hosted service is created for it, but no automatic execution occurs.
 
 ```csharp
 public override TimeSpan Period => Timeout.InfiniteTimeSpan;
+
+public override TimeSpan Delay => Timeout.InfiniteTimeSpan;
 ```
 
 Combine this with `Delay => Timeout.InfiniteTimeSpan` to also skip the initial run after startup.
@@ -388,19 +389,19 @@ When any of these checks fail, the execution is ignored and the loop waits for `
 
 ## Notifications
 
-The `RecurringBackgroundJobHostedService` publishes a number of notifications that can be hooked to report on the status of background jobs. All notifications extend from the base `Umbraco.Cms.Infrastructure.Notifications.RecurringBackgroundJobNotification` class.
+The `RecurringBackgroundJobHostedService` publishes a number of notifications that can be used to report on the status of background jobs. All notifications extend from the base `Umbraco.Cms.Infrastructure.Notifications.RecurringBackgroundJobNotification` class.
 
 The following notifications are available:
 
-* Starting
-* Started
-* Stopping
-* Stopped
-* Executing
-* Executed
-* Failed
-* Canceled
-* Ignored
+* `RecurringBackgroundJobStartingNotification` - published before starting the recurring job
+* `RecurringBackgroundJobStartedNotification` - published after the recurring job has started
+* `RecurringBackgroundJobExecutingNotification` - published before running the job
+* `RecurringBackgroundJobIgnoredNotification` - published when the job is ignored (see `IgnoredDelay`)
+* `RecurringBackgroundJobExecutedNotification` - published after `RunJobAsync()` is called
+* `RecurringBackgroundJobCanceledNotification` - published when the job was cancelled due to application shutdown
+* `RecurringBackgroundJobFailedNotification` - published when an unhandled exception was thrown while running the job
+* `RecurringBackgroundJobStoppingNotification` - published before stopping the recurring job
+* `RecurringBackgroundJobStoppedNotification` - published after the recurring job has stopped
 
 ### Start/Stop
 
@@ -413,6 +414,11 @@ These notifications are there to support low-level debugging of background jobs 
 The Ignored notification is published when a background job's schedule is triggered, but the Umbraco runtime checks prevent it from running.
 
 This notification is there to support low-level debugging of background jobs to ascertain why they are or aren't running. As the runtime checks include runtime state readiness, this event may be triggered during the install phase. Any notification handlers associated with this notification should also conduct their own checks before relying on Umbraco services, including database access.
+
+For **ignored** job runs, the following notifications are published:
+
+1. Executing
+2. Ignored
 
 ### Executing/Executed/Failed/Canceled
 
