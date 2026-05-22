@@ -1,18 +1,28 @@
 # Element Picker
 
-`Schema Alias: Umbraco.ContentPicker`
+`Schema Alias: Umbraco.ElementPicker`
 
-`UI Alias: Umb.PropertyEditorUi.DocumentPicker`
+`UI Alias: Umb.PropertyEditorUi.ElementPicker`
 
-`Returns: IEnumerable<IPublishedContent>`
+`Returns: IEnumerable<IPublishedElement>`
 
-The Content Picker enables choosing the type of content tree to display and which specific part to render. It also allows you to set a dynamic root node for the content based on the current document using the Content Picker.
+The Element Picker enables you to choose a specific element to display as part of your content. Elements are build as [Element Types](../../content-types-and-structure/data/defining-content/elements.md) in the Settings section and managed from the Library section.
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Settings](../../../.gitbook/assets/ContentPicker-data-type-definition.png)
+![Element Picker Data Type Settings](../../../.gitbook/assets/elementpicker-data-type-definition.png)
 
-### Config Option1
+### Amount
+
+Define how many elements should be allowed to pick via the Element Picker.
+
+### Start Node
+
+Choose a start node for the Element Picker. Use this option when your Library section is organized into folders.
+
+### Ignore User Start Nodes
+
+Checking this field allows users to choose nodes they normally cannot access.
 
 ## MVC View Example
 
@@ -20,12 +30,14 @@ The Content Picker enables choosing the type of content tree to display and whic
 
 ```csharp
 @{
-    var typedContentPicker = Model.Value<IEnumerable<IPublishedContent>>("featuredArticles");
-    if (typedContentPicker != null) {
-        foreach (var item in typedContentPicker)
+    IEnumerable<IPublishedElement>? elements = Model.Value<IEnumerable<IPublishedElement>>("elementPicker");
+    if (elements != null) {
+        foreach (var element in elements)
         {
-            <p>@item.Name</p>
+            <h1>@element.Name</h1>
+            <p>@element.Value("featuredText")</p>
         }
+    }
 }
 ```
 
@@ -33,10 +45,13 @@ The Content Picker enables choosing the type of content tree to display and whic
 
 ```csharp
 @{
-    var typedContentPicker = Model.FeaturedArticles;
-    foreach (var item in typedContentPicker)
-    {
-        <p>@item.Name</p>
+    IEnumerable<IPublishedElement>? elements = Model.ElementPicker;
+    if (elements != null) {
+        foreach (var element in elements)
+        {
+            <h1>@element.Name</h1>
+            <p>@element.Value("featuredText")</p>
+        }
     }
 }
 ```
