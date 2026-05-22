@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to configure and use the Element Picker property editor in Umbraco CMS.
+---
+
 # Element Picker
 
 `Schema Alias: Umbraco.ElementPicker`
@@ -6,7 +11,7 @@
 
 `Returns: IEnumerable<IPublishedElement>`
 
-The Element Picker enables you to choose a specific element to display as part of your content. Elements are build as [Element Types](../../content-types-and-structure/data/defining-content/elements.md) in the Settings section and managed from the Library section.
+The Element Picker enables you to choose a specific element to display as part of your content. Elements are built as [Element Types](../../content-types-and-structure/data/defining-content/elements.md) in the Settings section and managed from the Library section.
 
 ## Data Type Definition Example
 
