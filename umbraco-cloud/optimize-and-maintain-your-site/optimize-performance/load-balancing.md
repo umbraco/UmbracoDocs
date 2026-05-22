@@ -5,7 +5,7 @@ description: >-
 
 # Load Balancing
 
-Load balancing distributes traffic across multiple instances of the same Umbraco Cloud environment. In this article, you can read about what load balancing on Umbraco Cloud does and when to enable it. The article also covers how scaling works and what to expect during deployments.
+Load balancing distributes traffic across multiple instances of the same Umbraco Cloud environment. Enable it when you need higher throughput, resilience against instance failures, or capacity for traffic spikes.
 
 ## What load balancing is and why you would enable it
 
@@ -23,13 +23,11 @@ Load balancing is **not** a multi-region failover and does not provide zero-down
 
 Confirm your project meets these requirements before turning load balancing on.
 
-{% hint style="warning" %}
 Load balancing requires:
 
 * Umbraco CMS **17.0.0 or higher**.
 * The project must run in **Umbraco Production Mode**.
 * A plan that supports load balancing — Redis defaults differ per plan, see [Redis backplane and default configuration](#redis-backplane-and-default-configuration) below.
-{% endhint %}
 
 ## Scaling modes
 
@@ -59,7 +57,7 @@ Choose dynamic scaling when:
 * You want capacity to follow demand without manual intervention.
 * You want to reduce running cost during low-traffic periods.
 
-## Redis backplane and default configuration
+## Redis Configuration by Cloud Plan
 
 {% hint style="info" %}
 **Image placeholder**: Portal screenshot of the Redis Stock Keeping Unit (SKU) display on the environment settings page. Will be added once the Portal user interface is final.
@@ -79,11 +77,11 @@ The Extra Small SKU on the Starter plan does not include an SLA. The Extra Small
 
 ## Performance and availability
 
-Load balancing changes how performance and availability behave on an Umbraco Cloud environment. Two behaviors stand out.
+Load balancing changes how performance and availability behave in an Umbraco Cloud environment. Two behaviors stand out:
 
 ### Logs are split per instance
 
-Each instance writes a separate log stream. Per-instance logs let you trace requests back to the specific instance that served them. Per-instance logs help when diagnosing problems that affect only one instance in the fleet.
+Each instance writes a separate log stream. Per-instance logs trace requests to the specific serving instance. This helps diagnose problems affecting only one instance in the fleet.
 
 For where to find logs and how to read them, see [Log files](../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/log-files.md).
 
@@ -94,10 +92,10 @@ Multiple instances absorb traffic spikes more effectively than a single instance
 ## Deployments and restarts
 
 {% hint style="warning" %}
-Load balancing does **not** provide rolling updates. When you deploy code or publish content, all instances are restarted. Visitors can see brief unavailability against an instance while the restart completes.
+Load balancing does **not** provide rolling updates. When you deploy code or publish content, all instances are restarted. Visitors may experience brief downtime while instances restart.
 {% endhint %}
 
-Plan deployments and large content publishes during low-traffic windows where possible.
+Plan deployments and large content transfers during low-traffic windows where possible.
 
 ## Related articles
 
