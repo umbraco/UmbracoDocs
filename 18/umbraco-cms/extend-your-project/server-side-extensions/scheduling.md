@@ -4,7 +4,7 @@ description: Run a background job on a recurring basis
 
 # Scheduling
 
-You can run recurring code using a recurring background job. The recommended way is to inherit from the abstract `RecurringBackgroundJobBase` class. The class provides defaults for delay, server roles, and event handling, so you only need to set the `Period` and implement `RunJobAsync(CancellationToken)`.
+You can run recurring code using a recurring background job. The recommended way is to inherit from the abstract `RecurringBackgroundJobBase` class. The class provides defaults for delay, server roles, and event handling. Pass the `Period` to the base constructor and implement `RunJobAsync(CancellationToken)`.
 
 Alternatively, implement the `IRecurringBackgroundJob` interface directly — for example, when your job class already inherits from another base class. The interface provides the same defaults via default interface methods, so you only need to override what you want to change.
 
@@ -20,12 +20,17 @@ The members below are defined on `IRecurringBackgroundJob` and either inherited 
 
 ### Period
 
-Defines how often the job runs. This property is a `TimeSpan`.
+Defines how often the job runs. This property is a `TimeSpan`. Pass the initial value to the base constructor.
 
 ```csharp
 // Run this job every 5 minutes
-public override TimeSpan Period => TimeSpan.FromMinutes(5);
+public CleanUpYourRoom()
+    : base(TimeSpan.FromMinutes(5))
+{
+}
 ```
+
+To change the period at runtime, assign the protected setter (`Period = newValue`). The base class validates the value, no-ops if the value is unchanged, and raises `PeriodChanged` automatically. See the [Complex example](scheduling.md#complex-example) below.
 
 Set `Period` to `Timeout.InfiniteTimeSpan` to disable recurring runs. The job then only runs when [triggered manually](scheduling.md#on-demand-triggering).
 
@@ -74,11 +79,15 @@ For more information about server roles, see the [Load Balancing](../../run-in-p
 
 ### PeriodChanged
 
-An event used to notify the background job service if the job's period changes dynamically.
+An event used to notify the background job service when the job's period changes dynamically. The base class raises this automatically when `Period` is assigned via the protected setter.
 
-For example, if the period for your job is controlled by a configuration file setting, raise the `PeriodChanged` event when the configuration changes.
+For example, if the period for your job is controlled by a configuration file setting, assign `Period = newValue` when the configuration changes. See the [Complex example](scheduling.md#complex-example) below for an implementation.
 
-`RecurringBackgroundJobBase` provides a no-op implementation. Override the event when you need to raise it. See the [Complex example](scheduling.md#complex-example) below for an implementation.
+### IgnoredDelayChanged
+
+Mirrors `PeriodChanged`. The base class raises this event automatically when `IgnoredDelay` is assigned a new value via the protected setter. The recurring background job host listens for it and interrupts any in-progress ignored back-off so the new value is picked up immediately.
+
+This makes it possible to start a job with `IgnoredDelay = Timeout.InfiniteTimeSpan` (effectively disabled after the first ignored execution until further notice), and later re-enable it by assigning a finite value. This is useful when an external signal indicates that the previously-ignored condition has cleared.
 
 ### RunJobAsync(CancellationToken)
 
@@ -110,7 +119,10 @@ namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
 
 public class CleanUpYourRoom : RecurringBackgroundJobBase
 {
-    public override TimeSpan Period => TimeSpan.FromMinutes(60);
+    public CleanUpYourRoom()
+        : base(TimeSpan.FromMinutes(60))
+    {
+    }
 
     public override Task RunJobAsync(CancellationToken cancellationToken)
     {
@@ -144,12 +156,11 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
     public CleanUpYourRoom(
         IContentService contentService,
         ICoreScopeProvider scopeProvider)
+        : base(TimeSpan.FromMinutes(60))
     {
         _contentService = contentService;
         _scopeProvider = scopeProvider;
     }
-
-    public override TimeSpan Period => TimeSpan.FromMinutes(60);
 
     public override Task RunJobAsync(CancellationToken cancellationToken)
     {
@@ -172,7 +183,7 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
 
 ## Complex example
 
-The complex example builds on the previous one by injecting additional services. It includes a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. It also injects an `IOptionsMonitor` to allow the period to be updated while the server is running. It demonstrates how to override and raise the `PeriodChanged` event to signal the job's host.
+The complex example builds on the previous one by injecting additional services. It includes a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. It also injects an `IOptionsMonitor` to allow the period to be updated while the server is running. Assigning the new value to `Period` raises `PeriodChanged` so the host reschedules. The `IOptionsMonitor.OnChange` registration is disposed via the base class's `Dispose(bool)` hook.
 
 ```csharp
 using System;
@@ -192,33 +203,24 @@ namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
 
 public class CleanUpYourRoom : RecurringBackgroundJobBase
 {
-    private TimeSpan _period = TimeSpan.FromMinutes(60);
-
-    public override TimeSpan Period => _period;
-
-    // Run on all servers
-    public override ServerRole[] ServerRoles => Enum.GetValues<ServerRole>();
-
-    private event EventHandler? _periodChanged;
-    public override event EventHandler PeriodChanged
-    {
-        add { _periodChanged += value; }
-        remove { _periodChanged -= value; }
-    }
-
     private readonly IContentService _contentService;
     private readonly IServerRoleAccessor _serverRoleAccessor;
     private readonly IProfilingLogger _profilingLogger;
     private readonly ILogger<CleanUpYourRoom> _logger;
     private readonly ICoreScopeProvider _scopeProvider;
+    private readonly IDisposable? _onChangeRegistration;
+
+    // Run on all servers
+    public override ServerRole[] ServerRoles => Enum.GetValues<ServerRole>();
 
     public CleanUpYourRoom(
         IContentService contentService,
         IServerRoleAccessor serverRoleAccessor,
         IProfilingLogger profilingLogger,
         ILogger<CleanUpYourRoom> logger,
-        ICoreScopeProvider scopeProvider,
-        IOptionsMonitor<HealthChecksSettings> healthChecksSettings)
+        IOptionsMonitor<HealthChecksSettings> healthChecksSettings,
+        ICoreScopeProvider scopeProvider)
+        : base(healthChecksSettings.CurrentValue.Notification.Period)
     {
         _contentService = contentService;
         _serverRoleAccessor = serverRoleAccessor;
@@ -226,12 +228,8 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
         _logger = logger;
         _scopeProvider = scopeProvider;
 
-        // When the settings change, update the period and raise the event so the host reschedules.
-        healthChecksSettings.OnChange(x =>
-        {
-            _period = x.Notification.Period;
-            _periodChanged?.Invoke(this, EventArgs.Empty);
-        });
+        // When the period config changes, assign Period - the setter raises PeriodChanged.
+        _onChangeRegistration = healthChecksSettings.OnChange(x => Period = x.Notification.Period);
     }
 
     public override Task RunJobAsync(CancellationToken cancellationToken)
@@ -256,6 +254,16 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
         // Remember to complete the scope when done.
         scope.Complete();
         return Task.CompletedTask;
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            _onChangeRegistration?.Dispose();
+        }
+
+        base.Dispose(disposing);
     }
 }
 ```
@@ -303,7 +311,10 @@ namespace Umbraco.Docs.Samples.Web.RecurringBackgroundJob;
 
 public class CleanUpYourRoom : RecurringBackgroundJobBase, ITriggerableRecurringBackgroundJob
 {
-    public override TimeSpan Period => TimeSpan.FromMinutes(60);
+    public CleanUpYourRoom()
+        : base(TimeSpan.FromMinutes(60))
+    {
+    }
 
     public override Task RunJobAsync(CancellationToken cancellationToken)
     {
@@ -363,19 +374,22 @@ _trigger.TriggerExecution(NextExecutionStrategy.Reset);
 
 ### Manual-only jobs
 
-To create a job that only runs when triggered manually, set both `Period` and `Delay` to `Timeout.InfiniteTimeSpan`. The job is registered and a hosted service is created for it, but no automatic execution occurs.
+To create a job that only runs when triggered manually, pass `Timeout.InfiniteTimeSpan` to the base constructor and override `Delay` to the same value. The job is registered and a hosted service is created for it, but no automatic execution occurs.
 
 ```csharp
-public override TimeSpan Period => Timeout.InfiniteTimeSpan;
+public MyJob()
+    : base(Timeout.InfiniteTimeSpan)
+{
+}
 
 public override TimeSpan Delay => Timeout.InfiniteTimeSpan;
 ```
 
-Combine this with `Delay => Timeout.InfiniteTimeSpan` to also skip the initial run after startup.
-
 ## Base Classes
 
-`RecurringBackgroundJobBase` is the recommended base class for new jobs. It implements `IRecurringBackgroundJob` and provides defaults for `Delay`, `IgnoredDelay`, `ServerRoles`, and `PeriodChanged`. Implementors only need to provide `Period` and `RunJobAsync(CancellationToken)`.
+`RecurringBackgroundJobBase` is the recommended base class for new jobs. It implements `IRecurringBackgroundJob` and provides defaults for `Delay`, `IgnoredDelay`, `ServerRoles`, `PeriodChanged`, and `IgnoredDelayChanged`. Implementors pass `Period` to the base constructor and provide `RunJobAsync(CancellationToken)`.
+
+The base class also implements `IDisposable` with a `protected virtual Dispose(bool disposing)` hook. Subclasses with disposable resources (for example, an `IOptionsMonitor.OnChange` registration) should override the hook and call `base.Dispose(disposing)`.
 
 `RecurringHostedServiceBase` is a low-level base class. It inherits from .NET's `BackgroundService` and runs the job on a recurring basis using a wait loop with cancellation support. The loop supports periodic execution, manual triggering, exception resilience, and cooperative cancellation on host shutdown.
 
