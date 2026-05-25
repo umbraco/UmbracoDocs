@@ -29,7 +29,7 @@ Load balancing requires:
 * The project must run in [Umbraco Production Mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
 * `Umbraco:CMS:ModelsBuilder:ModelsMode` set to `Nothing` — see [ModelsBuilder Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
 * Pre-compiled views at build/publish time — see [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
-* A plan that supports load balancing — see [Redis Configuration by Cloud Plan](#redis-configuration-by-cloud-plan) below.
+* A plan that supports load balancing — see [Cache Configuration by Cloud Plan](#cache-configuration-by-cloud-plan) below.
 
 {% hint style="info" %}
 Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requirements at boot — an Umbraco app in Production mode that fails either check throws `BootFailedException`. They are listed separately so you can verify each one against your project before enabling Production mode.
@@ -57,17 +57,19 @@ Choose manual scaling when:
 Load-balanced environments currently have sticky sessions enabled. Each visitor is routed to the same instance for the duration of their session, which limits how evenly traffic is distributed across instances.
 {% endhint %}
 
-## Redis Configuration by Cloud Plan
+## Cache Configuration by Cloud Plan
 
 {% hint style="info" %}
 **Image placeholder**: Portal screenshot of the Redis Stock Keeping Unit (SKU) display on the environment settings page. Will be added once the Portal user interface is final.
 {% endhint %}
 
-Load balancing is available on dedicated plans from **Standard Dedicated 2** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco support to discuss upgrade paths.
+Load balancing is available on dedicated plans from **Standard Dedicated 1** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
 
-Each load-balanced environment is provisioned with a managed Redis instance. Redis acts as the SignalR backplane and the distributed cache that keeps state consistent across all running instances.
+Each load-balanced environment runs against a managed Redis instance. Redis acts as the SignalR backplane and the distributed cache that keeps state consistent across all running instances. If the environment does not already have Cache enabled, Umbraco Cloud provisions a managed Redis cache as part of enabling load balancing — see [Cache Configuration](cache-configuration.md).
 
-When you enable load balancing, Umbraco Cloud provisions a Redis Stock Keeping Unit (SKU) automatically based on your plan. All eligible plans include High Availability (HA) and a Service Level Agreement (SLA) on the Redis instance.
+Umbraco CMS uses Microsoft's HybridCache for its distributed cache. See the [HybridCacheOptions reference](https://docs.umbraco.com/umbraco-cms/reference/configuration/cache-settings#hybridcacheoptions) for configuration details.
+
+When you enable load balancing, Umbraco Cloud selects a Redis Stock Keeping Unit (SKU) automatically based on your plan. All eligible plans include High Availability (HA) and a Service Level Agreement (SLA) on the Redis instance.
 
 | Plan                 | Default Redis SKU | High Availability |
 | -------------------- | ----------------- | ----------------- |
@@ -75,6 +77,8 @@ When you enable load balancing, Umbraco Cloud provisions a Redis Stock Keeping U
 | Pro Dedicated 1      | Small+            | ✅                 |
 | Pro Dedicated 2      | Small+            | ✅                 |
 | Pro Dedicated 3      | Small+            | ✅                 |
+
+For the full list of available Redis SKUs and how to choose one, see [Cache Configuration](cache-configuration.md).
 
 ## Performance and availability
 
@@ -100,6 +104,7 @@ Plan deployments and large content transfers during low-traffic windows where po
 
 ## Related articles
 
+* [Cache Configuration](cache-configuration.md) — managed Redis cache that backs load-balanced environments; lists available SKUs.
 * [Umbraco CMS Load Balancing](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing) — for projects hosted outside Umbraco Cloud.
 * [Load Balancing the Backoffice](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing/load-balancing-backoffice) — backoffice-specific configuration available from Umbraco 17.
 * [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) — when to combine load balancing with dedicated server resources.
