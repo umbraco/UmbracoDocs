@@ -29,7 +29,7 @@ Load balancing requires:
 * The project must run in [Umbraco Production Mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
 * `Umbraco:CMS:ModelsBuilder:ModelsMode` set to `Nothing` — see [ModelsBuilder Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
 * Pre-compiled views at build/publish time — see [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
-* A plan that supports load balancing — see [Cache Configuration by Cloud Plan](#cache-configuration-by-cloud-plan) below.
+* A Cloud plan that supports load balancing — see [Cache Configuration by Cloud Plan](#cache-configuration-by-cloud-plan) below.
 
 {% hint style="info" %}
 Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requirements at boot — an Umbraco app in Production mode that fails either check throws `BootFailedException`. They are listed separately so you can verify each one against your project before enabling Production mode.

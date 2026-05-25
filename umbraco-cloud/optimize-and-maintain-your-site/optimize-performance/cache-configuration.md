@@ -16,7 +16,9 @@ Enable Cache when you need:
 * Lower database load on read-heavy sites.
 
 {% hint style="info" %}
-If you enable Load Balancing on an environment that does not already have Cache enabled, Umbraco Cloud provisions a managed Redis cache for you as part of enabling Load Balancing. You do not need to enable Cache first.
+
+You do not need to enable Cache before turning on Load Balancing. If Cache is not already enabled on the environment, Umbraco Cloud provisions a managed Redis cache as part of enabling Load Balancing.
+
 {% endhint %}
 
 ## How the managed Redis cache is used
