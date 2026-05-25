@@ -87,7 +87,7 @@ For example, if the period for your job is controlled by a configuration file se
 
 Mirrors `PeriodChanged`. The base class raises this event automatically when `IgnoredDelay` is assigned a new value via the protected setter. The recurring background job host listens for it and interrupts any in-progress ignored back-off so the new value is picked up immediately.
 
-This makes it possible to start a job with `IgnoredDelay = Timeout.InfiniteTimeSpan` (effectively disabled after the first ignored execution until further notice), and later re-enable it by assigning a finite value. This is useful when an external signal indicates that the previously-ignored condition has cleared.
+This makes it possible to start a job with `IgnoredDelay = Timeout.InfiniteTimeSpan` (effectively disabled after the first ignored execution until further notice). You can later re-enable it by assigning a finite value. This is useful when an external signal indicates that the previously-ignored condition has cleared.
 
 ### RunJobAsync(CancellationToken)
 
