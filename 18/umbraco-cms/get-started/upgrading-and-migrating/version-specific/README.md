@@ -22,7 +22,9 @@ For details, see the entry on `EnableMediaRecycleBinProtection` further down.
 
 ### Implement `ITypedSingleBlockListProcessor` for custom block-list nesting property editors
 
-The single-mode block list migration — added in Umbraco 17 but disabled — now runs by default during the upgrade to Umbraco 18. Sites with custom property editors that nest block list values must implement and register an `ITypedSingleBlockListProcessor` before the upgrade runs. Without this, nested data in those property values will be left in the old format.
+The single-mode block list migration was added in Umbraco 17 but disabled by default. It now runs automatically during the upgrade to Umbraco 18.
+
+If your site has custom property editors that nest block list values, you must implement and register an `ITypedSingleBlockListProcessor` before upgrading. Without this, nested data in those property values will not be migrated and will remain in the old format.
 
 For details, see the [Single block migration](./single-block-migration.md) article.
 

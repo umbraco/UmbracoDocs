@@ -1,18 +1,14 @@
+---
+description: >-
+  Learn how to migrate Block List property editors configured in single mode to 
+  the new Single Block property editor.
+---
+
 # Single Block Migration for Umbraco 18
-
-{% updates format="full" %}
-{% update date="2025-10-27" tags="early-access" %}
-## Early Access - Umbraco 18
-
-This article describes a migration that will not be enabled by default until Umbraco version 18. The feature is available in Umbraco version 17 for early access only, meaning you can run it manually using your own migration plan ahead of the version 18 release.
-{% endupdate %}
-{% endupdates %}
-
-### Introduction
 
 Version 17 introduced the single block property editor. Its purpose is to replace the "single mode" option that exists in the Block List property editor. This is part of the broader effort to ensure type consistency across core property editors.
 
-### Included migration
+## Included migration
 
 Umbraco ships with a migration to:
 
@@ -21,7 +17,7 @@ Umbraco ships with a migration to:
 
 The migration was added in Umbraco 17 but disabled. It now runs by default during the upgrade to Umbraco 18.
 
-### Pre-running the migration
+## Pre-running the migration
 
 You can run the migration at any time by using your own migration plan, as shown in the example below. If you run this migration yourself, the default Umbraco migration won't update any data. It only changes data in the old format.
 
@@ -92,7 +88,7 @@ public class RunTestMigration : INotificationAsyncHandler<UmbracoApplicationStar
 
 ```
 
-### Extending the migration
+## Extending the migration
 
 If your non-core property editor nests content and stores it within its own value, you must extend the migration. To do this, create and register a class that implements `ITypedSingleBlockListProcessor` and register it. See how the built-in types are registered at `Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_18_0_0.SingleBlockList.MigrateSingleBlockListComposer`. The interface needs the following properties and methods:
 
