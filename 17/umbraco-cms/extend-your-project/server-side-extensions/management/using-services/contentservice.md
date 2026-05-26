@@ -99,3 +99,39 @@ The `PublishBranchFilter` option can include one or more of the following flags:
 - `ForceRepublish` - republishes all nodes, even if unchanged.
 - `All` - combines `IncludeUnpublished` and `ForceRepublish`.
 - For multilingual content, replace `"*"` with the array of cultures, for example, `new[] { "en-us", "da" }`.
+
+
+## Getting date values programmatically
+```csharp
+using System.Text.Json;
+using Umbraco.Cms.Core.Services;
+using static Umbraco.Cms.Core.PropertyEditors.ValueConverters.DateTimeValueConverterBase;
+
+namespace Umbraco.Cms.Web.UI.Custom;
+public class GetDateValueDemo
+{
+	private readonly IContentService _contentService;
+
+	public GetDateValueDemo(IContentService contentService) => _contentService = contentService;
+
+	public void GetDate(Guid key)
+	{
+		var content = _contentService.GetById(key);
+
+		if (content is not null)
+		{
+			var rawValue = content.GetValue("myDateProperty");
+
+			if (string.IsNullOrEmpty(rawValue?.ToString()) is false)
+			{
+				var dto = JsonSerializer.Deserialize<DateTimeDto>(rawValue.ToString()!);
+
+				if (dto is not null)
+				{
+					var dateOnly = DateOnly.FromDateTime(dto.Date.Date);
+				}
+			}
+		}
+	}
+}
+```
