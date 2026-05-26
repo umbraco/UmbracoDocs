@@ -8,7 +8,7 @@ Umbraco UI Builder triggers different notification events during operation, allo
 
 ## Registering Event Handlers
 
-Umbraco UI Builder follows the [Umbraco Notification mechanism](../../umbraco-cms/fundamentals/code/subscribing-to-notifications.md) for event registration.
+Umbraco UI Builder follows the [Umbraco Notification mechanism](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/application-code/backend-and-custom-logic/subscribing-to-notifications) for event registration.
 
 Define a notification event handler for the target event:
 

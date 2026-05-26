@@ -10,7 +10,7 @@ These are the EF Core equivalents of the NPoco `SqlQueryBuildingNotification` an
 
 ## Registering Event Handlers
 
-Umbraco UI Builder follows the [Umbraco Notification mechanism](../../umbraco-cms/fundamentals/code/subscribing-to-notifications.md) for event registration.
+Umbraco UI Builder follows the [Umbraco Notification mechanism](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/application-code/backend-and-custom-logic/subscribing-to-notifications) for event registration.
 
 To define a notification event handler for the target event, please check the [Registering Event Handlers](./events.md) section.
 

@@ -55,7 +55,7 @@ To install via Visual Studio, follow these steps:
 ```
 
 {% hint style="info" %}
-To test-drive Umbraco Workflow consider installing the [Umbraco.Workflow.DataGenerator package](../data-generator/data-generator/).
+To test-drive Umbraco Workflow consider installing the [Umbraco.Workflow.DataGenerator package](../data-generator/data-generator.md).
 {% endhint %}
 
 ## Using Umbraco Workflow
