@@ -50,7 +50,7 @@ Use Identity Access Management (IAM) roles with least-privilege permissions. Att
 
 ### Required IAM Policy
 
-The IAM principal needs permission to invoke Bedrock models and to subscribe to AWS Marketplace products. The Marketplace actions are used by Bedrock to auto-enable foundation models on first use.
+The IAM principal needs permission to invoke Bedrock models and to subscribe to Amazon Web Services (AWS) Marketplace products. The Marketplace actions are used by Bedrock to auto-enable foundation models on first use.
 
 {% code title="bedrock-policy.json" %}
 
