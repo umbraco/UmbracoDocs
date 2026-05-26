@@ -11,7 +11,7 @@ description: >-
 
 `Returns: IEnumerable<IPublishedElement>`
 
-The Element Picker enables you to choose a specific element to display as part of your content. Elements are built as [Element Types](../../content-types-and-structure/data/defining-content/elements.md) in the Settings section and managed from the Library section.
+The Element Picker enables you to choose one or more elements to display as part of your content. Elements are based on [Element Types](../../content-types-and-structure/data/defining-content/elements.md) defined in the Settings section. They are created and managed in the Library section.
 
 ## Data Type Definition Example
 
@@ -27,7 +27,7 @@ Choose a start node for the Element Picker. Use this option when your Library se
 
 ### Ignore User Start Nodes
 
-Checking this field allows users to choose nodes they normally cannot access.
+Checking this field allows users to select items outside their assigned start nodes.
 
 ## MVC View Example
 

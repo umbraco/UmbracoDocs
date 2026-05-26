@@ -4,7 +4,7 @@ description: Learn how to use Elements to add reusable content to your website.
 
 # Elements
 
-Instead of replicating the same content on a per-page basis, Elements allows you to separate and abstract content into a single source of truth. By creating your content once, you can reuse it across as many pages and documents as you need.
+Instead of replicating the same content on a per-page basis, Elements allow you to create reusable content. By creating your content once, you can reuse it across as many pages and documents as you need.
 
 Elements are ideal for call-to-action blocks, banners, and other shared content that appears across multiple pages.
 
@@ -20,7 +20,7 @@ Toggle the **Allow in Library** option on the Structure Workspace View to turn y
 
 ![Element Type Structure tab with Allow in Library toggled](../../../../.gitbook/assets/elements-allow-in-library.png)
 
-You can add groups, tabs and properties to an Element like you would any other Document Type.
+You can add groups, tabs, and properties to an Element like you would any other Document Type.
 
 Since your project will contain different Document Types, group your Elements into a dedicated folder to keep your workspace organized.
 
@@ -39,7 +39,7 @@ To maintain an overview of your reusable content, it can be a good idea to use f
 
 ### Use Elements
 
-Once you have created the elements in the Library section, they can be used across all documents and content on your project.
+Once you have created the elements in the Library section, they can be referenced anywhere an Element Picker has been configured.
 
 [Image of an element added to a content node/document here.]
 
