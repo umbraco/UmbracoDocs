@@ -84,14 +84,14 @@ public class DayOfWeekSegmentRuleConfig
 ## 2. Web component definition
 
 {% hint style="info" %}
-Check the [Creating your first extension](/umbraco-cms/tutorials/creating-your-first-extension) and [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) articles for detailed extension-building tutorials.
+Check the [Creating your first extension](https://docs.umbraco.com/umbraco-cms/extend-your-project/tutorials/creating-your-first-extension) and [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/development-flow/vite-package-setup) articles for detailed extension-building tutorials.
 {% endhint %}
 
 The business logic for the segment parameter has been implemented, but the parameter cannot yet be used in the backoffice. In this step, a web component will be added to render the new rule in the Engage segment builder.
 
 This demo assumes you are creating multiple custom rules, which are then provided as a bundle in the backoffice.
 
-First, follow the [Vite Package Setup](/umbraco-cms/customizing/development-flow/vite-package-setup) article to scaffold your extension. Use `MySegmentRules` as your package name.
+First, follow the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/development-flow/vite-package-setup) article to scaffold your extension. Use `MySegmentRules` as your package name.
 
 1. Install `@umbraco-engage/backoffice` package, replacing `x.x.x` with your Engage version:
 
