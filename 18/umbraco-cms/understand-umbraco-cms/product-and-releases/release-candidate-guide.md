@@ -67,7 +67,8 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 Here is a list of all the new or updated articles in this version.
 
 * [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/)
-* More coming soon
+* [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md)
+* [Element Picker](../../model-your-content/property-editors/built-in-umbraco-property-editors/element-picker.md)
 
 ### Removed articles
 
