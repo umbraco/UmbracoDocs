@@ -26,7 +26,9 @@ public class EmbeddingExample
 
     public async Task<float[]> GenerateEmbedding(string text)
     {
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(text);
+        var embedding = await _embeddingService.GenerateEmbeddingAsync(
+            emb => emb.WithAlias("content-embedding"),
+            text);
 
         // The vector is a ReadOnlyMemory<float>
         return embedding.Vector.ToArray();
@@ -49,7 +51,9 @@ The `Embedding<float>` type contains:
 {% code title="EmbeddingDetails.cs" %}
 
 ```csharp
-var embedding = await _embeddingService.GenerateEmbeddingAsync(text);
+var embedding = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-embedding"),
+    text);
 
 // Access the vector
 ReadOnlyMemory<float> vector = embedding.Vector;
@@ -66,31 +70,28 @@ string? model = embedding.ModelId;
 
 ## Using a Specific Profile
 
+Select a profile by alias directly on the builder. The service resolves the alias for you.
+
 {% code title="WithProfile.cs" %}
 
 ```csharp
 public class ProfiledEmbeddingService
 {
     private readonly IAIEmbeddingService _embeddingService;
-    private readonly IAIProfileService _profileService;
 
-    public ProfiledEmbeddingService(
-        IAIEmbeddingService embeddingService,
-        IAIProfileService profileService)
+    public ProfiledEmbeddingService(IAIEmbeddingService embeddingService)
     {
         _embeddingService = embeddingService;
-        _profileService = profileService;
     }
 
     public async Task<float[]> GenerateWithProfile(string text, string profileAlias)
     {
-        var profile = await _profileService.GetProfileByAliasAsync(profileAlias);
-        if (profile is null)
-        {
-            throw new InvalidOperationException($"Profile '{profileAlias}' not found");
-        }
+        var embedding = await _embeddingService.GenerateEmbeddingAsync(
+            emb => emb
+                .WithAlias("content-embedding")
+                .WithProfile(profileAlias),
+            text);
 
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(profile.Id, text);
         return embedding.Vector.ToArray();
     }
 }
@@ -107,7 +108,9 @@ public async Task<float[]?> SafeGenerateEmbedding(string text)
 {
     try
     {
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(text);
+        var embedding = await _embeddingService.GenerateEmbeddingAsync(
+            emb => emb.WithAlias("content-embedding"),
+            text);
         return embedding.Vector.ToArray();
     }
     catch (InvalidOperationException ex) when (ex.Message.Contains("profile"))
