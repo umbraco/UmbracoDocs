@@ -61,7 +61,7 @@ Load-balanced environments currently have sticky sessions enabled. Each visitor 
 
 ## Cache Configuration by Cloud Plan
 
-Load balancing is available on dedicated plans from **Standard Dedicated 1** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
+Load balancing is available on dedicated plans from **Standard Dedicated 2** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
 
 Each load-balanced environment runs against a managed Redis instance. Redis acts as the SignalR backplane and the distributed cache that keeps state consistent across all running instances. If the environment does not already have Cache enabled, Umbraco Cloud provisions a managed Redis cache as part of enabling load balancing — see [Cache Configuration](cache-configuration.md).
 
