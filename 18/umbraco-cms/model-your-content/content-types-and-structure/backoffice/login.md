@@ -20,9 +20,8 @@ Below, you will find instructions on how to customize the login screen.
 
 The login screen features a greeting text: The "Welcome" headline. This can be personalized by overriding the existing language translation keys.
 
-To do this follow the steps below:
-
-1. Register a 'localization' manifest for the default language of your Umbraco site, (usually en-US) to override the greetings.
+1. Register a 'localization' manifest for the default language of your Umbraco site (default: en-US).
+2. Provide the new strings inline under `meta.localizations`:
 
 {% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
 ```json
@@ -36,9 +35,20 @@ To do this follow the steps below:
             "type": "localization",
             "alias": "Login.Localize.EnUS",
             "name": "English",
-            "js": "/App_Plugins/Login/en-us.js",
             "meta": {
-                "culture": "en-US"
+                "culture": "en-US",
+                "localizations": {
+                    "login": {
+                        "instruction": "Log in again to continue",
+                        "greeting0": "Happy super Sunday",
+                        "greeting1": "Happy manic Monday",
+                        "greeting2": "Happy tubular Tuesday",
+                        "greeting3": "Happy wonderful Wednesday",
+                        "greeting4": "Happy thunderous Thursday",
+                        "greeting5": "Happy funky Friday",
+                        "greeting6": "Happy Caturday"
+                    }
+                }
             }
         }
     ]
@@ -46,32 +56,21 @@ To do this follow the steps below:
 ```
 {% endcode %}
 
-2. Add an `en-us.js` file containing the following:
-
-{% code title="App_Plugins/Login/en-us.js" %}
-```javascript
-export default {
-  auth: {
-    instruction: "Log in again to continue",
-    greeting0: "Is is Sunday",
-    greeting1: "Is is Monday",
-    greeting2: "Is is Tuesday",
-    greeting3: "Is is Wednesday",
-    greeting4: "Is is Thursday",
-    greeting5: "Is is Friday",
-    greeting6: "Is is Saturday",
-  }
-}
-```
-{% endcode %}
-
-This will override the default greetings with the ones you provide. The login screen will now display "It is Sunday" instead of "Welcome" for example.
+Adding the code above will override the default greetings with the ones you provide. The login screen will now display "Happy super Sunday" on Sundays instead of "Welcome".
 
 {% hint style="info" %}
-The login screen has its own set of localization files independent of the rest of the Backoffice. You can read more about Backoffice localization in the [UI Localization](../../../extend-your-project/backoffice-extensions/foundation/localization.md) article.
+For larger overrides, declare the strings in a separate JavaScript file referenced from the manifest (for example `/App_Plugins/Login/en-us.js`). The file should export a default object with the same `{ group: { key: value } }` shape.
 {% endhint %}
 
-You can customize other text on the login screen as well. First, grab the default values and keys from the [en.ts](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Login/src/localization/lang/en.ts) in the Umbraco CMS GitHub repository. Thereafter copy the ones you want to translate into `~/App_Plugins/Login/umbraco-package.json` file.
+{% hint style="info" %}
+**`culture` must match the active UI locale.** The default is `en-US` (`GlobalSettings.DefaultUILanguage`), so on a default install your override extension must declare `culture: "en-US"` to affect the login screen. The keys themselves live in the canonical `en.ts` dictionary under the `login` group, but that does not change which override file is selected at runtime. An override declared with `culture: "en"` only applies when `en` is the active locale, or if locale fallback resolution uses it; it does not replace an active `en-US` override.
+{% endhint %}
+
+{% hint style="info" %}
+**Renamed: `auth.*` → `login.*`.** The login screen previously had its own dictionary under an `auth` group (`auth.greeting0`, `auth.instruction`, …). It now reuses the shared backoffice dictionary, with keys moved to a `login` group. Existing translation packages that still ship with `auth.greeting*` overrides will continue to work through version 19, with a deprecation warning in the console. The legacy fallback will eventually be removed. New packages should target `login.*` directly.
+{% endhint %}
+
+You can customize other text on the login screen as well. Grab the default values and keys from the [`en.ts`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Web.UI.Client/src/assets/lang/en.ts) dictionary in the Umbraco CMS GitHub repository — look under the `login` group. Then copy the ones you want to translate into your `en-us.js` file.
 
 ## Password reset
 
@@ -220,54 +219,11 @@ The time out screen is displayed when the user has been inactive for a certain a
 
 If you have added more than one login provider, the users will also see this screen first. This is because they need to choose which provider to use first. In that case, the screen is also referred to as the **Choose provider screen**.
 
-You can customize the time out screen in the same way as the login screen. The time out screen uses the same localization files as the rest of the Backoffice and **not** those of the login screen. The notable difference is that the time out screen is scoped to the `login` section. The login screen is scoped to the `auth` section of the localization files.
+You can customize the timeout screen in the same way as the login screen. Both screens share the same backoffice localization dictionary. The `login.*` keys you override for the login screen automatically apply to the timeout screen as well.
 
 ### Greeting
 
-To update the greeting message on this screen, you will have to change the section to `login`:
-
-{% code title="App_Plugins/Login/umbraco-package.json" lineNumbers="true" %}
-```json
-{
-    "alias": "login.extensions",
-    "name": "Login extensions",
-    "version": "1.0.0",
-    "allowPublicAccess": true,
-    "extensions": [
-        {
-            "type": "localization",
-            "alias": "Login.Localize.EnUS",
-            "name": "English",
-            "js": "/App_Plugins/Login/en-us.js",
-            "meta": {
-                "culture": "en-US"
-            }
-        }
-    ]
-}
-```
-{% endcode %}
-
-The `en-us.js` file should contain the following:
-
-{% code title="App_Plugins/Login/en-us.js" %}
-```javascript
-export default {
-  auth: {
-    instruction: "Log in again to continue",
-    greeting0: "Is is Sunday",
-    greeting1: "Is is Monday",
-    greeting2: "Is is Tuesday",
-    greeting3: "Is is Wednesday",
-    greeting4: "Is is Thursday",
-    greeting5: "Is is Friday",
-    greeting6: "Is is Saturday",
-  }
-}
-```
-{% endcode %}
-
-The `instruction` key is shown when the user has timed out, and the `greeting0..6` keys are shown when the user has to choose a login provider.
+The greeting on the time out screen uses the same `login.greeting0..6` and `login.instruction` keys as the login screen — override them as shown in the [Greeting](#greeting) section above. The `instruction` key is shown when the user has timed out, and the `greeting0..6` keys are shown when the user has to choose a login provider.
 
 ### Image
 
