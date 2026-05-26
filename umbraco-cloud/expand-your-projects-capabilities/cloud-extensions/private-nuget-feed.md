@@ -84,10 +84,10 @@ You can now use this feed to host and manage your own internal libraries or prop
 
 ## Hints to use Azure DevOps private feeds
 
-For Azure DevOps feeds, it is recommended to use Personal Access Tokens (PAT). The PAT must have at minimum the "Packaging (Read)" permission to consume packages from the feed.
+For Azure DevOps feeds, it is recommended to use Personal Access Tokens (PAT). The PAT must have at a minimum the "Packaging (Read)" permission to consume packages from the feed.
 
 {% hint style="info" %}
-PAT-tokens in Azure DevOps have an expire date. Make sure to update your secret when you rotate your tokens.
+PAT-tokens in Azure DevOps have an expiration date. Make sure to update your secret when you rotate your tokens.
 {% endhint %}
 
 Below is an example `NuGet.Config` configured for an Azure DevOps private feed:
@@ -123,17 +123,18 @@ Below is an example `NuGet.Config` configured for an Azure DevOps private feed:
 
 ### Troubleshooting
 
-If you experience any errors with restores on Umbraco Cloud and private NuGet feeds there are a couple of things to consider:
+If you experience any errors with restores on Umbraco Cloud and private NuGet feeds, there are a couple of things to consider:
 
-* Make sure passwords, API keys, or PAT-tokens are correct
-* Secret values may have changed, but not updated in Secrets Management
-* In MyGet, the username is not an email address but the account username associated with the API key
-* PAT-tokens in Azure DevOps can expire - check if value needs to be rotated. Remember to update the secret in the Cloud Portal.
+* Make sure passwords, API keys, or PAT-tokens are correct.
+* Secret values may have changed, but have not been updated in Secrets Management.
+* In MyGet, the username is not an email address but the account username associated with the API key.
+* PAT-tokens in Azure DevOps can expire - check if the value needs to be rotated. Remember to update the secret in the Cloud Portal.
 * PAT-tokens in Azure DevOps need to have the right kind of permission. Make sure it has the 'Read' permission on 'Packaging'.
 
 ### Test the connection to a private feed locally
 
 It is a good idea to validate the connection to a feed locally before using it on Cloud.
+
 It is usually easier to troubleshoot if there are connection issues or problems with credentials.
 
 You need to update the `NuGet.Config` file by replacing any placeholder values with valid credentials.
