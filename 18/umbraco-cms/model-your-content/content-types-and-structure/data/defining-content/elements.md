@@ -51,7 +51,7 @@ With your Element configured, you can start using it to create reusable content 
 
 To maintain an overview of your reusable content, it can be a good idea to use folders for organizing the content in your Library.
 
-Use the **Info** workspace view to find relevant details about the element, such as history and where they element is used.
+Use the **Info** workspace view to find relevant details about the element, such as history and where the element is used.
 
 ![Element Type Structure tab with Allow in Library toggled](../../../../.gitbook/assets/elements-info-workspace-view.png)
 
