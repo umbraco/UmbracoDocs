@@ -12,7 +12,7 @@ On this page, you will find the default Document Types in Umbraco. If you want t
 
 ## Document Type
 
-A Document Type defines the content structure and fields that can be used across different content items. When creating a Document Type without a template, you focus solely on structured content without tying it to a specific design or layout. This is ideal for content that doesn’t require direct front-end rendering, such as reusable blocks or items managed within a headless CMS setup.
+A Document Type defines the content structure and fields that can be used across different content items. When creating a Document Type without a template, you focus solely on structured content without tying it to a specific design or layout. This is ideal for content that doesn’t require direct front-end rendering, such as blocks or items managed within a headless CMS setup.
 
 Use a Document Type without a template for structured, reusable content like metadata schemas, settings, or components such as product details and author profiles.
 
@@ -26,11 +26,11 @@ Use a Document Type with a template for pages like blog posts, landing pages, or
 
 An Element Type is a Document Type _without a template_ designed for reusable and repeatable set of properties. These are primarily used in editors like the Block List Editor or Block Grid Editor to create structured, nested content.
 
-Element Types are not part of the Content tree and cannot render directly on the front end. When created, the **Is an Element Type** flag in the **Permissions** tab is automatically set to **True**.
+Element Types are not part of the Content tree and cannot render directly on the front end.
 
 ![Element type](../../../../.gitbook/assets/Element-Type.png)
 
-Use an Element Type when defining building blocks for complex page layouts, such as grid blocks or call-to-action sections. They are an essential part of modular content design.
+Use an Element Type when defining building blocks for complex page layouts, such as grid blocks or reusable sections. They are an essential part of modular content design.
 
 ## Folder
 
