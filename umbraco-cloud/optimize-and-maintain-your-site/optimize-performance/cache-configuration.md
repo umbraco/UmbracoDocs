@@ -1,6 +1,6 @@
 ---
 description: >-
-  Enable a managed Redis cache on your Umbraco Cloud project. Compare the available SKUs, see pricing, and tune the cache via the CMS Hybrid Cache reference.
+  Enable a managed Redis cache on your Umbraco Cloud project. Compare the available SKUs and tune the cache via the CMS Hybrid Cache reference.
 ---
 
 # Cache Configuration
