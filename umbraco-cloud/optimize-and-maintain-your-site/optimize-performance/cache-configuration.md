@@ -7,6 +7,10 @@ description: >-
 
 You can enable a managed Redis cache on your Umbraco Cloud project. The cache improves performance on a single-instance project and backs [Load Balancing](load-balancing.md) on load-balanced environments.
 
+{% hint style="info" %}
+You enable and configure the managed Redis cache in the [Umbraco Cloud Portal](https://www.s1.umbraco.io/) under `Project -> Configuration -> Cache Configuration`.
+{% endhint %}
+
 ## When to enable Cache
 
 Enable Cache when you need:
@@ -31,6 +35,8 @@ When you enable Cache, Umbraco Cloud provisions a managed Redis instance for you
 Umbraco CMS uses Microsoft's HybridCache under the hood. For details on how the CMS layers in-memory and distributed caching, and how to tune the cache, see the [HybridCacheOptions reference](https://docs.umbraco.com/umbraco-cms/reference/configuration/cache-settings#hybridcacheoptions).
 
 ## Available Redis SKUs
+
+![Redis SKU selector on the environment settings page](../../.gitbook/assets/redis-sku-selector.png)
 
 Umbraco Cloud offers six Redis SKUs. The entry-level **Extra Small** tier runs without High Availability (HA) and is not covered by a Service Level Agreement (SLA). All other tiers include HA and an SLA on the Redis instance.
 

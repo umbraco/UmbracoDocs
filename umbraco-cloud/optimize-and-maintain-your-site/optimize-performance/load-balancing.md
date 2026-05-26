@@ -7,6 +7,10 @@ description: >-
 
 Load balancing distributes traffic across multiple instances of the same Umbraco Cloud environment. Enable it when you need higher throughput, resilience against instance failures, or capacity for traffic spikes.
 
+{% hint style="info" %}
+You enable and configure load balancing in the [Umbraco Cloud Portal](https://www.s1.umbraco.io/) under `Project -> Configuration -> Load Balancing`.
+{% endhint %}
+
 ## What load balancing is and why you would enable it
 
 Load balancing runs an Umbraco Cloud environment on two or more instances that share the same database, media storage, and Redis backplane. Incoming requests are distributed across the instances by the platform.
@@ -37,9 +41,7 @@ Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requi
 
 ## Scaling modes
 
-{% hint style="info" %}
-**Image placeholder**: Portal screenshot of the load-balancing settings panel showing the manual scaling option. Will be added once the Portal user interface is final.
-{% endhint %}
+![Load balancing settings panel with the manual scaling option selected](../../.gitbook/assets/load-balancing-manual-scaling.png)
 
 Umbraco Cloud supports manual scaling. Dynamic scaling, where the platform adjusts the instance count automatically based on load, is planned for a future release.
 
@@ -58,10 +60,6 @@ Load-balanced environments currently have sticky sessions enabled. Each visitor 
 {% endhint %}
 
 ## Cache Configuration by Cloud Plan
-
-{% hint style="info" %}
-**Image placeholder**: Portal screenshot of the Redis Stock Keeping Unit (SKU) display on the environment settings page. Will be added once the Portal user interface is final.
-{% endhint %}
 
 Load balancing is available on dedicated plans from **Standard Dedicated 1** and up. It is not available on Starter, Standard (shared), Standard Dedicated 1, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
 
