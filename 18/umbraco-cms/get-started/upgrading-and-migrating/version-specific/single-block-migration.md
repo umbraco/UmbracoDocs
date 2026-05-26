@@ -4,7 +4,7 @@ description: >-
   the new Single Block property editor.
 ---
 
-# Single Block Migration for Umbraco 18
+# Single Block Migration
 
 Version 17 introduced the single block property editor. Its purpose is to replace the "single mode" option that exists in the Block List property editor. This is part of the broader effort to ensure type consistency across core property editors.
 
