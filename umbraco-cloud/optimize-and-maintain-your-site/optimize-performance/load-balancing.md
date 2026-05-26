@@ -84,7 +84,7 @@ Load balancing changes how performance and availability behave in an Umbraco Clo
 
 ### Logs are split per instance
 
-Each instance writes a separate log stream. Per-instance logs trace requests to the specific serving instance. This helps diagnose problems affecting only one instance in the fleet.
+Each instance writes a separate log stream. Per-instance logs trace requests to the specific serving instance. This helps diagnose problems affecting only one instance.
 
 For where to find logs and how to read them, see [Log files](../monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/log-files.md).
 
