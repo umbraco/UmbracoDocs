@@ -65,3 +65,29 @@ Checking this field allows users to select items outside their assigned start no
 
 The Element Picker stores an array of Element keys (`Guid[]`). The example below illustrates how an Element Picker value can be added or changed programmatically.
 
+```csharp
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Serialization;
+using Umbraco.Cms.Core.Services;
+namespace Umbraco.Documentation;
+public class ElementPickerExample
+{
+    private readonly IContentService _contentService;
+    private readonly IJsonSerializer _jsonSerializer;
+    public ElementPickerExample(IContentService contentService, IJsonSerializer jsonSerializer)
+    {
+        _contentService = contentService;
+        _jsonSerializer = jsonSerializer;
+    }
+    public bool SaveElementPickerValue(Guid contentId, string propertyAlias, Guid[] pickedElementIds)
+    {
+        IContent? content = _contentService.GetById(contentId);
+        if (content is null)
+        {
+            return false;
+        }
+        content.SetValue(propertyAlias, _jsonSerializer.Serialize(pickedElementIds));
+        return true;
+    }
+}
+```
