@@ -6,7 +6,7 @@ description: Using Umbraco entities as reference with an UI Builder collection
 
 Umbraco stores identifiers in UDI format for most Umbraco object types.
 
-You can read more about them in the [UDI Identifiers](../../umbraco-cms/reference/querying/udi-identifiers.md) section of the documentation.
+You can read more about them in the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/templating-and-rendering/querying/udi-identifiers) section of the documentation.
 
 If you want to reference an Umbraco object in your model and retrieve its `Integer` or `Guid` value, you must convert the `UDI` value.
 
