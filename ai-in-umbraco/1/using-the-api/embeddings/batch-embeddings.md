@@ -26,7 +26,9 @@ public class BatchEmbeddingExample
 
     public async Task<IList<float[]>> GenerateEmbeddings(IEnumerable<string> texts)
     {
-        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(texts);
+        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
+            emb => emb.WithAlias("batch-embedding"),
+            texts);
 
         return embeddings.Select(e => e.Vector.ToArray()).ToList();
     }
@@ -49,7 +51,9 @@ public class BatchEmbeddingExample
 ```csharp
 var texts = new[] { "First document", "Second document", "Third document" };
 
-var embeddings = await _embeddingService.GenerateEmbeddingsAsync(texts);
+var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
+    emb => emb.WithAlias("batch-embedding"),
+    texts);
 
 // Embeddings are in the same order as input
 for (int i = 0; i < texts.Length; i++)
@@ -99,7 +103,9 @@ public class BatchContentIndexer
             $"{c.Name} {c.GetValue<string>("bodyText")}").ToList();
 
         // Generate all embeddings in one request
-        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(texts);
+        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
+            emb => emb.WithAlias("content-batch-index"),
+            texts);
 
         // Store each embedding with its content
         var documents = contentList.Zip(embeddings, (content, embedding) =>
@@ -151,8 +157,9 @@ public class ChunkedEmbeddingService
             var chunk = textList.Skip(i).Take(BatchSize);
 
             var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
+                emb => emb.WithAlias("chunked-batch-embedding"),
                 chunk,
-                cancellationToken: cancellationToken);
+                cancellationToken);
 
             allEmbeddings.AddRange(embeddings);
         }
@@ -166,6 +173,8 @@ public class ChunkedEmbeddingService
 
 ## Using a Specific Profile
 
+Select a profile by ID or alias on the builder:
+
 {% code title="BatchWithProfile.cs" %}
 
 ```csharp
@@ -174,7 +183,9 @@ public async Task<IList<float[]>> GenerateBatchWithProfile(
     Guid profileId)
 {
     var embeddings = await _embeddingService.GenerateEmbeddingsAsync(
-        profileId,
+        emb => emb
+            .WithAlias("batch-embedding")
+            .WithProfile(profileId),
         texts);
 
     return embeddings.Select(e => e.Vector.ToArray()).ToList();
