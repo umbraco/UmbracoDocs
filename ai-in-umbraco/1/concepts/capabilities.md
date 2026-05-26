@@ -54,6 +54,7 @@ The Embedding capability generates vector representations of text:
 
 ```csharp
 var embedding = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-embedding"),
     "Umbraco is a content management system");
 
 // embedding.Vector contains the float array

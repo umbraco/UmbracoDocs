@@ -27,31 +27,19 @@ public interface IAIEmbeddingService
 {
     // Single embedding
     Task<Embedding<float>> GenerateEmbeddingAsync(
+        Action<AIEmbeddingBuilder> configure,
         string value,
-        EmbeddingGenerationOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    Task<Embedding<float>> GenerateEmbeddingAsync(
-        Guid profileId,
-        string value,
-        EmbeddingGenerationOptions? options = null,
         CancellationToken cancellationToken = default);
 
     // Multiple embeddings
     Task<GeneratedEmbeddings<Embedding<float>>> GenerateEmbeddingsAsync(
+        Action<AIEmbeddingBuilder> configure,
         IEnumerable<string> values,
-        EmbeddingGenerationOptions? options = null,
         CancellationToken cancellationToken = default);
 
-    Task<GeneratedEmbeddings<Embedding<float>>> GenerateEmbeddingsAsync(
-        Guid profileId,
-        IEnumerable<string> values,
-        EmbeddingGenerationOptions? options = null,
-        CancellationToken cancellationToken = default);
-
-    // Advanced: Get the underlying generator
-    Task<IEmbeddingGenerator<string, Embedding<float>>> GetEmbeddingGeneratorAsync(
-        Guid? profileId = null,
+    // Advanced: Get a configured generator
+    Task<IEmbeddingGenerator<string, Embedding<float>>> CreateEmbeddingGeneratorAsync(
+        Action<AIEmbeddingBuilder> configure,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -77,7 +65,9 @@ public class SearchService
 
     public async Task<float[]> GetEmbedding(string text)
     {
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(text);
+        var embedding = await _embeddingService.GenerateEmbeddingAsync(
+            emb => emb.WithAlias("content-search"),
+            text);
         return embedding.Vector.ToArray();
     }
 }
@@ -89,18 +79,24 @@ public class SearchService
 
 ### Default Profile
 
-Once you have [configured a default embedding profile](../../backoffice/managing-settings.md) in the backoffice, you can call without specifying a profile:
+Once you have [configured a default embedding profile](../../backoffice/managing-settings.md) in the backoffice, you can call without specifying a profile on the builder:
 
 ```csharp
-var embedding = await _embeddingService.GenerateEmbeddingAsync(text);
+var embedding = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-search"),
+    text);
 ```
 
 ### Specific Profile
 
-Pass the profile ID:
+Select a profile by ID or alias on the builder:
 
 ```csharp
-var embedding = await _embeddingService.GenerateEmbeddingAsync(profileId, text);
+var embedding = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb
+        .WithAlias("content-search")
+        .WithProfile(profileId),
+    text);
 ```
 
 ## Common Use Cases
@@ -116,8 +112,12 @@ var embedding = await _embeddingService.GenerateEmbeddingAsync(profileId, text);
 Compare two pieces of content:
 
 ```csharp
-var embedding1 = await _embeddingService.GenerateEmbeddingAsync(content1);
-var embedding2 = await _embeddingService.GenerateEmbeddingAsync(content2);
+var embedding1 = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-similarity"),
+    content1);
+var embedding2 = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-similarity"),
+    content2);
 
 var similarity = CosineSimilarity(embedding1.Vector, embedding2.Vector);
 ```

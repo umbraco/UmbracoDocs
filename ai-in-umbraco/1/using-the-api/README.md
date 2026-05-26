@@ -110,6 +110,7 @@ await foreach (var update in _chatService.StreamChatResponseAsync(
 
 ```csharp
 var embedding = await _embeddingService.GenerateEmbeddingAsync(
+    emb => emb.WithAlias("content-embedding"),
     "Umbraco is a content management system");
 
 float[] vector = embedding.Vector.ToArray();
