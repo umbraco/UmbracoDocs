@@ -159,7 +159,7 @@ The following prefixes are allowed for Secrets on Umbraco Cloud:
 
 * `Umbraco__CMS__Global__Smtp__`
 * `Umbraco__Forms__Security__FormsApiKey__`
-* `Umbraco__Forms__FieldTypes__Recaptcha__`
+* `Umbraco__Forms__FieldTypes__Recaptcha`
 * `Umbraco__CMS__Integrations__`
 * `Umbraco__CMS__DeliveryAPI__`
 * `UMBRACO__LICENSES__`
