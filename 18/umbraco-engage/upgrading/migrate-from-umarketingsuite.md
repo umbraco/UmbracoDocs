@@ -12,7 +12,7 @@ Since the latest version of uMarketingSuite runs on Umbraco 13, upgrading to Umb
 1. **Migrate from uMarketingSuite to Umbraco Engage** (while still on Umbraco 13).
 2. **Upgrade Umbraco CMS and Umbraco Engage** from version 13 to version 17.
 
-**Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 17. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
+**Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 17. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific) article in the Umbraco CMS Documentation.
 {% endhint %}
 
 Migrating directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 17 is technically possible. However, it is recommended to split the process:

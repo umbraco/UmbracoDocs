@@ -12,7 +12,7 @@ Upgrade to the latest version of Vendr before continuing with the migration.
 You can upgrade your installation by installation the [latest version](https://www.nuget.org/packages/Vendr/) on top of the existing one.
 {% endhint %}
 
-You can find details on migrating the Checkout package as well as custom Payment Providers in the [Further Migrations section](./#further-migrations) of this article.
+You can find details on migrating the Checkout package as well as custom Payment Providers in the [Further Migrations section](#further-migrations) of this article.
 
 ## Key changes
 
@@ -99,7 +99,7 @@ dotnet add package Umbraco.Commerce
 
 ## Step 2: Update namespaces and entity names
 
-Based on the [Key Changes](./#key-changes) outlined above update all Vendr references to the new Umbraco Commerce alternatives. Ensure you update any Views/Partials that also reference these.
+Based on the [Key Changes](#key-changes) outlined above update all Vendr references to the new Umbraco Commerce alternatives. Ensure you update any Views/Partials that also reference these.
 
 ## Step 3: Update the database
 

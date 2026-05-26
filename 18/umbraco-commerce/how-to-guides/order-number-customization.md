@@ -119,7 +119,7 @@ builder.Services.AddUnique<IOrderNumberGenerator, CustomOrderNumberGenerator>();
 
 {% endcode %}
 
-The `AddUnique` method ensures that your custom generator replaces the default `IOrderNumberGenerator`, overriding both the automatic selection system and the built-in generators. For more details on dependency injection, see the [Dependency Injection](dependency-injection.md) article.
+The `AddUnique` method ensures that your custom generator replaces the default `IOrderNumberGenerator`, overriding both the automatic selection system and the built-in generators. For more details on dependency injection, see the [Dependency Injection](../key-concepts/dependency-injection.md) article.
 
 ## Important Considerations
 
