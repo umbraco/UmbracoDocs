@@ -1,0 +1,96 @@
+# Rendering Forms Scripts
+
+Forms output some JavaScript which is by default rendered right below the markup.
+
+In many cases, you might prefer rendering your scripts at the bottom of the page. For example, before the closing `</body>` tag. This generally improves site performance.
+
+In order to render your scripts where you want, you need to add a snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag.
+
+By default, Forms uses `HttpContext.Items` for tracking the forms rendered on a page. The stored values are used when rendering the form scripts and associated data.
+
+The following snippet should be used.
+
+```csharp
+@if (Context.Items.TryGetValue("UmbracoForms", out object? formIdsObject) && formIdsObject is IEnumerable<Guid> formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+}
+```
+
+If you have changed the configuration value of `TrackRenderedFormsStorageMethod` to use the legacy behavior `TempData`, the snippet is:
+
+```csharp
+@using Umbraco.Forms.Web.Extensions;
+
+@if (TempData.Get<Guid[]>("UmbracoForms") is Guid[] formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+
+    TempData.Remove("UmbracoForms");
+}
+```
+
+Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](configuration/#TrackRenderedFormsStorageMethod) article.
+
+If you prefer to use a tag helper, that's an option too.
+
+Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the Umbraco Forms tag helpers with:
+
+```cshtml
+@addTagHelper *, Umbraco.Forms.Web
+```
+
+Then instead of reading from `TempData` and invoking the view component directly, you can use:
+
+```cshtml
+<umb-forms-render-scripts theme="default" />
+```
+
+This will use the appropriate storage method that you have configured.
+
+## Using Form Scripts Alongside Validation Dependencies
+
+When setting up templates for Umbraco Forms, two separate script-rendering methods are involved, and both are required for forms to work correctly.
+
+`@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](prepping-frontend.md) article, renders client-side validation scripts such as jQuery Validate and unobtrusive validation. This goes in the `<head>` of your template.
+
+The `<umb-forms-render-scripts />` tag helper (or the equivalent view component calls shown above) renders form-specific scripts covering conditional field logic, field behaviors, and any theme JavaScript. This goes before the closing `</body>` tag.
+
+Because both methods output `<script>` tags, they can appear to duplicate each other. The script contents are entirely different, however, and serve distinct purposes. A complete template uses both:
+
+```cshtml
+<head>
+    @Html.RenderUmbracoFormDependencies(Url)
+</head>
+<body>
+    @await Component.InvokeAsync("RenderForm", new { formId = Model.FormGuid })
+    <umb-forms-render-scripts theme="default" />
+</body>
+```
+
+Omitting `RenderUmbracoFormDependencies` will break client-side validation. Omitting `<umb-forms-render-scripts />` will break conditional fields and theme behaviour.
+
+## Enabling `ExcludeScripts`
+
+If you do not want to render the associated scripts with a Form, you need to explicitly say so. You need to make sure `ExcludeScripts` is checked/enabled, whether you are inserting your Form using a macro or adding it directly in your template.
+
+To enable `ExcludeScripts`:
+
+*   Using the **Insert Form with Theme** macro:
+
+    ![Exclude scripts](../.gitbook/assets/exclude-scripts-v9.png)
+*   While inserting Forms **directly** in your template:
+
+    ```csharp
+    @await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("6c3f053c-1774-43fa-ad95-710a01d9cd12"), theme = "bootstrap3-horizontal", includeScripts = false })
+    ```
+
+{% hint style="info" %}
+`includeScripts = false` prevents the associated scripts from being rendered. If value is `includeScripts = true`, or if the parameter is excluded, it will render the scripts on the form.
+{% endhint %}
