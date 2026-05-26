@@ -45,10 +45,12 @@ dotnet add package Umbraco.AI.Amazon
 5. Copy the Access Key ID and Secret Access Key
 
 {% hint style="warning" %}
-Use IAM roles with least-privilege permissions. The user needs `bedrock:InvokeModel` permission.
+Use IAM roles with least-privilege permissions. Attach the policy shown in [Required IAM Policy](#required-iam-policy) to the user or role.
 {% endhint %}
 
 ### Required IAM Policy
+
+The IAM principal needs permission to invoke Bedrock models and to subscribe to AWS Marketplace products. The Marketplace actions are used by Bedrock to auto-enable foundation models on first use.
 
 {% code title="bedrock-policy.json" %}
 
@@ -58,8 +60,20 @@ Use IAM roles with least-privilege permissions. The user needs `bedrock:InvokeMo
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
             "Resource": "arn:aws:bedrock:*::foundation-model/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "aws-marketplace:Subscribe",
+                "aws-marketplace:Unsubscribe",
+                "aws-marketplace:ViewSubscriptions"
+            ],
+            "Resource": "*"
         }
     ]
 }
@@ -67,15 +81,23 @@ Use IAM roles with least-privilege permissions. The user needs `bedrock:InvokeMo
 
 {% endcode %}
 
+The AWS managed policy [AmazonBedrockFullAccess](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonBedrockFullAccess.html) covers all of these actions if you prefer to attach a managed policy.
+
 ### Enabling Models
 
-Before using a model, you must enable it in your AWS account:
+In commercial AWS regions, foundation model access is enabled automatically. The first time you invoke a third-party model in an account, Amazon Bedrock initiates the subscription in the background. Auto-enablement can take up to 15 minutes, during which calls may return `AccessDeniedException`.
 
-1. Go to **Amazon Bedrock** in the AWS Console
-2. Navigate to **Model access**
-3. Click **Manage model access**
-4. Select the models you want to use
-5. Submit the request (some models require approval)
+{% hint style="info" %}
+The **Manage model access** page in the Bedrock console was retired in October 2025. You no longer need to opt-in to individual models before using them.
+{% endhint %}
+
+#### Anthropic models
+
+Anthropic models require a one-time use-case form per AWS account or organization. Submit the form by selecting an Anthropic model from the model catalog in the Bedrock console, or by calling the [PutUseCaseForModelAccess](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutUseCaseForModelAccess.html) API. Access is granted immediately after submission.
+
+#### AWS GovCloud (US)
+
+GovCloud accounts in `us-gov-west-1` still use the **Model access** page in the Bedrock console for manual enablement. Third-party models also need to be enabled in the linked commercial account. For full details, see the AWS guide on [Request access to models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html#model-access-govcloud).
 
 ![Amazon Bedrock connection detail showing Region and Access Key fields](../.gitbook/assets/amazon-bedrock-create-connection.png)
 
