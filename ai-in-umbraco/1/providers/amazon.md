@@ -45,7 +45,7 @@ dotnet add package Umbraco.AI.Amazon
 5. Copy the Access Key ID and Secret Access Key
 
 {% hint style="warning" %}
-Use IAM roles with least-privilege permissions. Attach the policy shown in [Required IAM Policy](#required-iam-policy) to the user or role.
+Use Identity Access Management (IAM) roles with least-privilege permissions. Attach the policy shown in [Required IAM Policy](#required-iam-policy) to the user or role.
 {% endhint %}
 
 ### Required IAM Policy
