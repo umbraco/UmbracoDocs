@@ -33,4 +33,4 @@ To add new file type:
 
 The file upload field type will verify the file contents using the registered set of `IFileStreamSecurityValidator` instances.
 
-To read more about this feature, see [Server-side file validation](https://docs.umbraco.com/umbraco-cms/v/10.latest-lts/reference/security/serverside-file-validation) in the CMS documentation.
+To read more about this feature, see [Server-side file validation](https://docs.umbraco.com/umbraco-cms/run-in-production/security/serverside-file-validation) in the CMS documentation.
