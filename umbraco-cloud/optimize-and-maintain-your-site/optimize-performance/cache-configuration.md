@@ -32,7 +32,7 @@ When you enable Cache, Umbraco Cloud provisions a managed Redis instance for you
 * **Distributed cache** — keeps cached state consistent across instances so every visitor sees the same content.
 * **SignalR backplane** — coordinates real-time backoffice messages across all running instances.
 
-Umbraco CMS uses Microsoft's HybridCache under the hood. For details on how the CMS layers in-memory and distributed caching, and how to tune the cache, see the [HybridCacheOptions reference](https://docs.umbraco.com/umbraco-cms/reference/configuration/cache-settings#hybridcacheoptions).
+Umbraco CMS uses Microsoft's HybridCache for in-memory and distributed caching. See the [HybridCacheOptions reference](https://docs.umbraco.com/umbraco-cms/reference/configuration/cache-settings#hybridcacheoptions) for more details and for how to tune the cache.
 
 ## Available Redis SKUs
 
