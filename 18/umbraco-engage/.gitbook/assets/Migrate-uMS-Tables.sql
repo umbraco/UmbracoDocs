@@ -1,0 +1,355 @@
+---UMBRACO.ENGAGE---
+-- Drop all the existing reporting tables (Will be regenerated within 24 hours)
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimBot];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimBrowser];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimCampaign];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimDate];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimDevice];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimEvent];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimGoal];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimLocation];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimNodeAncestor];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimPage];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimReferrer];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimSearchTerm];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimSegment];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimUmbracoForm];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimUmbracoFormField];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimUmbracoPageVariant];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingDimVideo];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctCampaigns];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctEvent];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctGoal];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctGoalPersonalizationPerformance];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctPageSessions];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctPageview];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctPersonalizedSegmentPageviews];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctPersonalizedSegmentProfiles];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctPersonalizedSegmentSessions];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSearches];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSegmentPageviews];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSegmentPersonalizationSessionsNeeded];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSegmentPotentialSessionsNeeded];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSegmentProfiles];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSegmentSessions];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctSession];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctUmbracoForm];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctUmbracoFormField];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctUmbracoFormFieldError];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctUser];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctVideo];
+DROP TABLE IF EXISTS [uMarketingSuiteReportingFctVideoEvent];
+
+-- Rename all tables from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTest', 'umbracoEngageAbTestingAbTest';
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTestContentType', 'umbracoEngageAbTestingAbTestContentType';
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTestProject', 'umbracoEngageAbTestingAbTestProject';
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTestUmbracoPageVariant', 'umbracoEngageAbTestingAbTestUmbracoPageVariant';
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTestVariant', 'umbracoEngageAbTestingAbTestVariant';
+EXEC sp_rename 'uMarketingSuiteAbTestingAbTestVisitorToVariant', 'umbracoEngageAbTestingAbTestVisitorToVariant';
+EXEC sp_rename 'uMarketingSuiteAnalyticsAnnotation', 'umbracoEngageAnalyticsAnnotation';
+EXEC sp_rename 'uMarketingSuiteAnalyticsAnnotationPageVariant', 'umbracoEngageAnalyticsAnnotationPageVariant';
+EXEC sp_rename 'uMarketingSuiteAnalyticsBrowser', 'umbracoEngageAnalyticsBrowser';
+EXEC sp_rename 'uMarketingSuiteAnalyticsBrowserVersion', 'umbracoEngageAnalyticsBrowserVersion';
+EXEC sp_rename 'uMarketingSuiteAnalyticsCleanupLog', 'umbracoEngageAnalyticsCleanupLog';
+EXEC sp_rename 'uMarketingSuiteAnalyticsDevice', 'umbracoEngageAnalyticsDevice';
+EXEC sp_rename 'uMarketingSuiteAnalyticsGoal', 'umbracoEngageAnalyticsGoal';
+EXEC sp_rename 'uMarketingSuiteAnalyticsGoalCompletion', 'umbracoEngageAnalyticsGoalCompletion';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpAddress', 'umbracoEngageAnalyticsIpAddress';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpCity', 'umbracoEngageAnalyticsIpCity';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpCountry', 'umbracoEngageAnalyticsIpCountry';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpCounty', 'umbracoEngageAnalyticsIpCounty';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpFilter', 'umbracoEngageAnalyticsIpFilter';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpFilterIpAddress', 'umbracoEngageAnalyticsIpFilterIpAddress';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpLocation', 'umbracoEngageAnalyticsIpLocation';
+EXEC sp_rename 'uMarketingSuiteAnalyticsIpProvince', 'umbracoEngageAnalyticsIpProvince';
+EXEC sp_rename 'uMarketingSuiteAnalyticsLinks', 'umbracoEngageAnalyticsLinks';
+EXEC sp_rename 'uMarketingSuiteAnalyticsOperatingSystem', 'umbracoEngageAnalyticsOperatingSystem';
+EXEC sp_rename 'uMarketingSuiteAnalyticsOperatingSystemVersion', 'umbracoEngageAnalyticsOperatingSystemVersion';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPage', 'umbracoEngageAnalyticsPage';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPageEvent', 'umbracoEngageAnalyticsPageEvent';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPageview', 'umbracoEngageAnalyticsPageview';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPageviewAbTestVariant', 'umbracoEngageAnalyticsPageviewAbTestVariant';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPageviewCleanupQueue', 'umbracoEngageAnalyticsPageviewCleanupQueue';
+EXEC sp_rename 'uMarketingSuiteAnalyticsPageviewPersonalizationSegment', 'umbracoEngageAnalyticsPageviewPersonalizationSegment';
+EXEC sp_rename 'uMarketingSuiteAnalyticsRawClientSideData', 'umbracoEngageAnalyticsRawClientSideData';
+EXEC sp_rename 'uMarketingSuiteAnalyticsRawCustomPageviewData', 'umbracoEngageAnalyticsRawCustomPageviewData';
+EXEC sp_rename 'uMarketingSuiteAnalyticsScreen', 'umbracoEngageAnalyticsScreen';
+EXEC sp_rename 'uMarketingSuiteAnalyticsScrollDepth', 'umbracoEngageAnalyticsScrollDepth';
+EXEC sp_rename 'uMarketingSuiteAnalyticsSearchEngine', 'umbracoEngageAnalyticsSearchEngine';
+EXEC sp_rename 'uMarketingSuiteAnalyticsSearchQuery', 'umbracoEngageAnalyticsSearchQuery';
+EXEC sp_rename 'uMarketingSuiteAnalyticsSession', 'umbracoEngageAnalyticsSession';
+EXEC sp_rename 'uMarketingSuiteAnalyticsTimeOnPage', 'umbracoEngageAnalyticsTimeOnPage';
+EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoFormsField', 'umbracoEngageAnalyticsUmbracoFormsField';
+EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoFormsSubmission', 'umbracoEngageAnalyticsUmbracoFormsSubmission';
+EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoFormsSubmissionAction', 'umbracoEngageAnalyticsUmbracoFormsSubmissionAction';
+EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoFormsSubmissionError', 'umbracoEngageAnalyticsUmbracoFormsSubmissionError';
+EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoPageVariant', 'umbracoEngageAnalyticsUmbracoPageVariant';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVideo', 'umbracoEngageAnalyticsVideo';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVideoEvent', 'umbracoEngageAnalyticsVideoEvent';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVideoStatistics', 'umbracoEngageAnalyticsVideoStatistics';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVisitor', 'umbracoEngageAnalyticsVisitor';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVisitorTypeBot', 'umbracoEngageAnalyticsVisitorTypeBot';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVisitorTypeBotVersion', 'umbracoEngageAnalyticsVisitorTypeBotVersion';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVisitorTypeMonitor', 'umbracoEngageAnalyticsVisitorTypeMonitor';
+EXEC sp_rename 'uMarketingSuiteAnalyticsVisitorTypeSpam', 'umbracoEngageAnalyticsVisitorTypeSpam';
+EXEC sp_rename 'uMarketingSuiteLock', 'umbracoEngageLock';
+EXEC sp_rename 'uMarketingSuitePersonalizationAppliedPersonalization', 'umbracoEngagePersonalizationAppliedPersonalization';
+EXEC sp_rename 'uMarketingSuitePersonalizationAppliedPersonalizationContentType', 'umbracoEngagePersonalizationAppliedPersonalizationContentType';
+EXEC sp_rename 'uMarketingSuitePersonalizationAppliedPersonalizationUmbracoPageVariant', 'umbracoEngagePersonalizationAppliedPersonalizationUmbracoPageVariant';
+EXEC sp_rename 'uMarketingSuitePersonalizationCampaign', 'umbracoEngagePersonalizationCampaign';
+EXEC sp_rename 'uMarketingSuitePersonalizationCampaignGroup', 'umbracoEngagePersonalizationCampaignGroup';
+EXEC sp_rename 'uMarketingSuitePersonalizationCampaignGroupCustomerJourneyScoring', 'umbracoEngagePersonalizationCampaignGroupCustomerJourneyScoring';
+EXEC sp_rename 'uMarketingSuitePersonalizationCampaignGroupPersonaScoring', 'umbracoEngagePersonalizationCampaignGroupPersonaScoring';
+EXEC sp_rename 'uMarketingSuitePersonalizationContentScoringCustomerJourneyStep', 'umbracoEngagePersonalizationContentScoringCustomerJourneyStep';
+EXEC sp_rename 'uMarketingSuitePersonalizationContentScoringPersona', 'umbracoEngagePersonalizationContentScoringPersona';
+EXEC sp_rename 'uMarketingSuitePersonalizationCustomerJourneyGroup', 'umbracoEngagePersonalizationCustomerJourneyGroup';
+EXEC sp_rename 'uMarketingSuitePersonalizationCustomerJourneyStep', 'umbracoEngagePersonalizationCustomerJourneyStep';
+EXEC sp_rename 'uMarketingSuitePersonalizationPageviewCustomerJourneyStepScore', 'umbracoEngagePersonalizationPageviewCustomerJourneyStepScore';
+EXEC sp_rename 'uMarketingSuitePersonalizationPageviewPersonaScore', 'umbracoEngagePersonalizationPageviewPersonaScore';
+EXEC sp_rename 'uMarketingSuitePersonalizationPersona', 'umbracoEngagePersonalizationPersona';
+EXEC sp_rename 'uMarketingSuitePersonalizationPersonaGroup', 'umbracoEngagePersonalizationPersonaGroup';
+EXEC sp_rename 'uMarketingSuitePersonalizationReferralGroup', 'umbracoEngagePersonalizationReferralGroup';
+EXEC sp_rename 'uMarketingSuitePersonalizationReferralGroupCustomerJourneyScoring', 'umbracoEngagePersonalizationReferralGroupCustomerJourneyScoring';
+EXEC sp_rename 'uMarketingSuitePersonalizationReferralGroupPage', 'umbracoEngagePersonalizationReferralGroupPage';
+EXEC sp_rename 'uMarketingSuitePersonalizationReferralGroupPersonaScoring', 'umbracoEngagePersonalizationReferralGroupPersonaScoring';
+EXEC sp_rename 'uMarketingSuitePersonalizationSegment', 'umbracoEngagePersonalizationSegment';
+EXEC sp_rename 'uMarketingSuitePersonalizationSegmentRule', 'umbracoEngagePersonalizationSegmentRule';
+EXEC sp_rename 'uMarketingSuitePersonalizationVisitorSegmentSettings', 'umbracoEngagePersonalizationVisitorSegmentSettings';
+EXEC sp_rename 'uMarketingSuiteReportingStarGenerationLog', 'umbracoEngageReportingStarGenerationLog';
+EXEC sp_rename 'uMarketingSuiteReportingStarGenerationStatus', 'umbracoEngageReportingStarGenerationStatus';
+EXEC sp_rename 'uMarketingSuiteSettingsDocumentTypePermission', 'umbracoEngageSettingsDocumentTypePermission';
+EXEC sp_rename 'uMarketingSuiteSettingsUserGroupPermission', 'umbracoEngageSettingsUserGroupPermission';
+
+-- Rename all Primary Keys from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTest', 'PK_umbracoEngageAbTestingAbTest', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTestContentType', 'PK_umbracoEngageAbTestingAbTestContentType', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTestProject', 'PK_umbracoEngageAbTestingAbTestProject', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTestUmbracoPageVariant_1', 'PK_umbracoEngageAbTestingAbTestUmbracoPageVariant_1', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTestVariant', 'PK_umbracoEngageAbTestingAbTestVariant', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAbTestingAbTestVisitorToVariant', 'PK_umbracoEngageAbTestingAbTestVisitorToVariant', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsAnnotation_id', 'PK_umbracoEngageAnalyticsAnnotation_id', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsAnnotationPageVariant_id', 'PK_umbracoEngageAnalyticsAnnotationPageVariant_id', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteBrowser', 'PK_umbracoEngageBrowser', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteBrowserVersion', 'PK_umbracoEngageBrowserVersion', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteDevice', 'PK_umbracoEngageDevice', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsGoal', 'PK_umbracoEngageAnalyticsGoal', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsIpAdress', 'PK_umbracoEngageAnalyticsIpAdress', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsCity', 'PK_umbracoEngageAnalyticsCity', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsCountry', 'PK_umbracoEngageAnalyticsCountry', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsCounty', 'PK_umbracoEngageAnalyticsCounty', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsIpFilter_id', 'PK_umbracoEngageAnalyticsIpFilter_id', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsIpFilterIpAddress_id', 'PK_umbracoEngageAnalyticsIpFilterIpAddress_id', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteIpAddressLocation2', 'PK_umbracoEngageIpAddressLocation2', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsProvince', 'PK_umbracoEngageAnalyticsProvince', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsLinks', 'PK_umbracoEngageAnalyticsLinks', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteOperatingSystem', 'PK_umbracoEngageOperatingSystem', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteOperatingSystemVersion', 'PK_umbracoEngageOperatingSystemVersion', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePageResource', 'PK_umbracoEngagePageResource', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePageEvent', 'PK_umbracoEngagePageEvent', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePageView', 'PK_umbracoEngagePageView', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsPageviewAbTestVariant', 'PK_umbracoEngageAnalyticsPageviewAbTestVariant', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsPageviewPersonalizationSegment', 'PK_umbracoEngageAnalyticsPageviewPersonalizationSegment', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsRawClientSideData', 'PK_umbracoEngageAnalyticsRawClientSideData', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsRawCustomPageviewData', 'PK_umbracoEngageAnalyticsRawCustomPageviewData', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsScrollDepth', 'PK_umbracoEngageAnalyticsScrollDepth', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsSearchEngine', 'PK_umbracoEngageAnalyticsSearchEngine', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsSearchQuery', 'PK_umbracoEngageAnalyticsSearchQuery', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteSession', 'PK_umbracoEngageSession', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsTimeOnPage', 'PK_umbracoEngageAnalyticsTimeOnPage', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsUmbracoFormsField', 'PK_umbracoEngageAnalyticsUmbracoFormsField', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsUmbracoFormsSubmission', 'PK_umbracoEngageAnalyticsUmbracoFormsSubmission', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsFormAction', 'PK_umbracoEngageAnalyticsFormAction', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsFormError', 'PK_umbracoEngageAnalyticsFormError', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsUmbracoPageVariant_1', 'PK_umbracoEngageAnalyticsUmbracoPageVariant_1', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsVideo', 'PK_umbracoEngageAnalyticsVideo', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsVideoEvent', 'PK_umbracoEngageAnalyticsVideoEvent', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsVideoStatistics', 'PK_umbracoEngageAnalyticsVideoStatistics', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteVisitor', 'PK_umbracoEngageVisitor', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteBot', 'PK_umbracoEngageBot', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteBotVersion', 'PK_umbracoEngageBotVersion', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsVisitorTypeMonitor_1', 'PK_umbracoEngageAnalyticsVisitorTypeMonitor_1', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteAnalyticsVisitorTypeSpam_1', 'PK_umbracoEngageAnalyticsVisitorTypeSpam_1', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteLock_name', 'PK_umbracoEngageLock_name', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationAppliedPersonalization', 'PK_umbracoEngagePersonalizationAppliedPersonalization', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationAppliedPersonalizationContentType', 'PK_umbracoEngagePersonalizationAppliedPersonalizationContentType', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationAppliedPersonalizationUmbracoPageVariant', 'PK_umbracoEngagePersonalizationAppliedPersonalizationUmbracoPageVariant', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCampaign', 'PK_umbracoEngagePersonalizationCampaign', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCampaignGroup', 'PK_umbracoEngagePersonalizationCampaignGroup', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCampaignGroupJourneyScoring', 'PK_umbracoEngagePersonalizationCampaignGroupJourneyScoring', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCampaignGroupPersonaScoring', 'PK_umbracoEngagePersonalizationCampaignGroupPersonaScoring', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCustomerJourneyGroup', 'PK_umbracoEngagePersonalizationCustomerJourneyGroup', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationCustomerJourneyStep', 'PK_umbracoEngagePersonalizationCustomerJourneyStep', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationPageviewCustomerJourneyStepScore', 'PK_umbracoEngagePersonalizationPageviewCustomerJourneyStepScore', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationPageviewPersonaScore', 'PK_umbracoEngagePersonalizationPageviewPersonaScore', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationPersona', 'PK_umbracoEngagePersonalizationPersona', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationPersonaGroup', 'PK_umbracoEngagePersonalizationPersonaGroup', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationReferralGroup', 'PK_umbracoEngagePersonalizationReferralGroup', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationReferralGroupJourneyScoring', 'PK_umbracoEngagePersonalizationReferralGroupJourneyScoring', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationReferralGroupPage', 'PK_umbracoEngagePersonalizationReferralGroupPage', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationReferralGroupPersonaScoring', 'PK_umbracoEngagePersonalizationReferralGroupPersonaScoring', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationSegment', 'PK_umbracoEngagePersonalizationSegment', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationSegmentRule', 'PK_umbracoEngagePersonalizationSegmentRule', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuitePersonalizationVisitorSegmentSettings', 'PK_umbracoEngagePersonalizationVisitorSegmentSettings', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteSettingsDocumentTypePermission', 'PK_umbracoEngageSettingsDocumentTypePermission', 'OBJECT';
+EXEC sp_rename 'PK_uMarketingSuiteSettingsUserGroupPermission', 'PK_umbracoEngageSettingsUserGroupPermission', 'OBJECT';
+
+-- Rename all Foreign Keys from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTest_uMarketingSuiteAbTestingAbTestProject', 'FK_umbracoEngageAbTestingAbTest_umbracoEngageAbTestingAbTestProject', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTest_uMarketingSuiteAbTestingAbTestVariant', 'FK_umbracoEngageAbTestingAbTest_umbracoEngageAbTestingAbTestVariant', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTest_uMarketingSuiteAnalyticsGoal', 'FK_umbracoEngageAbTestingAbTest_umbracoEngageAnalyticsGoal', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestContentType_uMarketingSuiteAbTestingAbTest', 'FK_umbracoEngageAbTestingAbTestContentType_umbracoEngageAbTestingAbTest', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestUmbracoPageVariant_uMarketingSuiteAbTestingAbTest', 'FK_umbracoEngageAbTestingAbTestUmbracoPageVariant_umbracoEngageAbTestingAbTest', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestVariant_uMarketingSuiteAbTestingAbTest', 'FK_umbracoEngageAbTestingAbTestVariant_umbracoEngageAbTestingAbTest', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestVisitorToVariant_uMarketingSuiteAbTestingAbTest', 'FK_umbracoEngageAbTestingAbTestVisitorToVariant_umbracoEngageAbTestingAbTest', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestVisitorToVariant_uMarketingSuiteAbTestingAbTestVariant', 'FK_umbracoEngageAbTestingAbTestVisitorToVariant_umbracoEngageAbTestingAbTestVariant', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAbTestingAbTestVisitorToVariant_uMarketingSuiteAnalyticsVisitor', 'FK_umbracoEngageAbTestingAbTestVisitorToVariant_umbracoEngageAnalyticsVisitor', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsAnnotationPageVariant_annotationId', 'FK_umbracoEngageAnalyticsAnnotationPageVariant_annotationId', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsBotVersion_uMarketingSuiteAnalyticsBot', 'FK_umbracoEngageAnalyticsBotVersion_umbracoEngageAnalyticsBot', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsBrowserVersion_uMarketingSuiteAnalyticsBrowser', 'FK_umbracoEngageAnalyticsBrowserVersion_umbracoEngageAnalyticsBrowser', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsDevice_uMarketingSuiteAnalyticsBrowserVersion', 'FK_umbracoEngageAnalyticsDevice_umbracoEngageAnalyticsBrowserVersion', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsDevice_uMarketingSuiteAnalyticsOperatingSystemVersion', 'FK_umbracoEngageAnalyticsDevice_umbracoEngageAnalyticsOperatingSystemVersion', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsGoalCompletion_uMarketingSuiteAnalyticsGoal', 'FK_umbracoEngageAnalyticsGoalCompletion_umbracoEngageAnalyticsGoal', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsGoalCompletion_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsGoalCompletion_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsIpAdress_uMarketingSuiteAnalyticsLocation', 'FK_umbracoEngageAnalyticsIpAdress_umbracoEngageAnalyticsLocation', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsIpFilterIpAddress_ipFilterId', 'FK_umbracoEngageAnalyticsIpFilterIpAddress_ipFilterId', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsIpLocation_uMarketingSuiteAnalyticsIpCity', 'FK_umbracoEngageAnalyticsIpLocation_umbracoEngageAnalyticsIpCity', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsLinks_uMarketingSuiteAnalyticsPage_id', 'FK_umbracoEngageAnalyticsLinks_umbracoEngageAnalyticsPage_id', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsLinks_uMarketingSuiteAnalyticsPageview_id', 'FK_umbracoEngageAnalyticsLinks_umbracoEngageAnalyticsPageview_id', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsLocation_uMarketingSuiteAnalyticsCountry', 'FK_umbracoEngageAnalyticsLocation_umbracoEngageAnalyticsCountry', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsLocation_uMarketingSuiteAnalyticsCounty', 'FK_umbracoEngageAnalyticsLocation_umbracoEngageAnalyticsCounty', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsLocation_uMarketingSuiteAnalyticsProvince', 'FK_umbracoEngageAnalyticsLocation_umbracoEngageAnalyticsProvince', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsOperatingSystemVersion_uMarketingSuiteAnalyticsOperatingSystem', 'FK_umbracoEngageAnalyticsOperatingSystemVersion_umbracoEngageAnalyticsOperatingSystem', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPage_uMarketingSuiteAnalyticsPage', 'FK_umbracoEngageAnalyticsPage_umbracoEngageAnalyticsPage', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPage_uMarketingSuiteAnalyticsSearchEngine', 'FK_umbracoEngageAnalyticsPage_umbracoEngageAnalyticsSearchEngine', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageEvent_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsPageEvent_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageView_uMarketingSuiteAnalyticsIpAddress', 'FK_umbracoEngageAnalyticsPageView_umbracoEngageAnalyticsIpAddress', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageView_uMarketingSuiteAnalyticsPage', 'FK_umbracoEngageAnalyticsPageView_umbracoEngageAnalyticsPage', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageView_uMarketingSuiteAnalyticsPage_Referrer', 'FK_umbracoEngageAnalyticsPageView_umbracoEngageAnalyticsPage_Referrer', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageview_uMarketingSuiteAnalyticsSession', 'FK_umbracoEngageAnalyticsPageview_umbracoEngageAnalyticsSession', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageview_uMarketingSuiteAnalyticsUmbracoPageVariant', 'FK_umbracoEngageAnalyticsPageview_umbracoEngageAnalyticsUmbracoPageVariant', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageview_uMarketingSuitePersonalizationAppliedPersonalization', 'FK_umbracoEngageAnalyticsPageview_umbracoEngagePersonalizationAppliedPersonalization', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageviewAbTestVariant_uMarketingSuiteAbTestingAbTestVariant', 'FK_umbracoEngageAnalyticsPageviewAbTestVariant_umbracoEngageAbTestingAbTestVariant', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageviewAbTestVariant_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsPageviewAbTestVariant_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageviewPersonalizationSegment_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsPageviewPersonalizationSegment_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsPageviewPersonalizationSegment_uMarketingSuitePersonalizationSegment', 'FK_umbracoEngageAnalyticsPageviewPersonalizationSegment_umbracoEngagePersonalizationSegment', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsScrollDepth_uMarketingSuiteAnalyticsPageview_id', 'FK_umbracoEngageAnalyticsScrollDepth_umbracoEngageAnalyticsPageview_id', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsSearchQuery_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsSearchQuery_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsTimeOnPage_uMarketingSuiteAnalyticsPageview_id', 'FK_umbracoEngageAnalyticsTimeOnPage_umbracoEngageAnalyticsPageview_id', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsUmbracoFormsSubmission_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsUmbracoFormsSubmission_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsUmbracoFormsSubmissionAction_uMarketingSuiteAnalyticsUmbracoFormsField', 'FK_umbracoEngageAnalyticsUmbracoFormsSubmissionAction_umbracoEngageAnalyticsUmbracoFormsField', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsUmbracoFormsSubmissionAction_uMarketingSuiteAnalyticsUmbracoFormsSubmission', 'FK_umbracoEngageAnalyticsUmbracoFormsSubmissionAction_umbracoEngageAnalyticsUmbracoFormsSubmission', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsUmbracoFormsSubmissionError_uMarketingSuiteAnalyticsUmbracoFormsField', 'FK_umbracoEngageAnalyticsUmbracoFormsSubmissionError_umbracoEngageAnalyticsUmbracoFormsField', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsUmbracoFormsSubmissionError_uMarketingSuiteAnalyticsUmbracoFormsSubmission', 'FK_umbracoEngageAnalyticsUmbracoFormsSubmissionError_umbracoEngageAnalyticsUmbracoFormsSubmission', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVideoEvent_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsVideoEvent_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVideoStatistics_uMarketingSuiteAnalyticsPageview', 'FK_umbracoEngageAnalyticsVideoStatistics_umbracoEngageAnalyticsPageview', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVideoStatistics_uMarketingSuiteAnalyticsVideo', 'FK_umbracoEngageAnalyticsVideoStatistics_umbracoEngageAnalyticsVideo', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVisitorTypeBotVersion_uMarketingSuiteAnalyticsVisitor', 'FK_umbracoEngageAnalyticsVisitorTypeBotVersion_umbracoEngageAnalyticsVisitor', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVisitorTypeMonitor_uMarketingSuiteAnalyticsVisitor', 'FK_umbracoEngageAnalyticsVisitorTypeMonitor_umbracoEngageAnalyticsVisitor', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuiteAnalyticsVisitorTypeSpam_uMarketingSuiteAnalyticsVisitor', 'FK_umbracoEngageAnalyticsVisitorTypeSpam_umbracoEngageAnalyticsVisitor', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationAppliedPersonalizationContentType_uMarketingSuitePersonalizationAppliedPersonalization', 'FK_umbracoEngagePersonalizationAppliedPersonalizationContentType_umbracoEngagePersonalizationAppliedPersonalization', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationAppliedPersonalizationUmbracoPageVariant_uMarketingSuitePersonalizationAppliedPersonalization', 'FK_umbracoEngagePersonalizationAppliedPersonalizationUmbracoPageVariant_umbracoEngagePersonalizationAppliedPersonalization', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCampaign_uMarketingSuitePersonalizationCampaignGroup', 'FK_umbracoEngagePersonalizationCampaign_umbracoEngagePersonalizationCampaignGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCampaignGroupJourneyScoring_uMarketingSuitePersonalizationCampaignGroup', 'FK_umbracoEngagePersonalizationCampaignGroupJourneyScoring_umbracoEngagePersonalizationCampaignGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCampaignGroupJourneyScoring_uMarketingSuitePersonalizationCustomerJourneyStep', 'FK_umbracoEngagePersonalizationCampaignGroupJourneyScoring_umbracoEngagePersonalizationCustomerJourneyStep', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCampaignGroupPersonaScoring_uMarketingSuitePersonalizationCampaignGroup', 'FK_umbracoEngagePersonalizationCampaignGroupPersonaScoring_umbracoEngagePersonalizationCampaignGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCampaignGroupPersonaScoring_uMarketingSuitePersonalizationPersona', 'FK_umbracoEngagePersonalizationCampaignGroupPersonaScoring_umbracoEngagePersonalizationPersona', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationContentScoringCustomerJourneyStep_uMarketingSuitePersonalizationCustomerJourneyStep', 'FK_umbracoEngagePersonalizationContentScoringCustomerJourneyStep_umbracoEngagePersonalizationCustomerJourneyStep', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationContentScoringPersona_uMarketingSuitePersonalizationPersona', 'FK_umbracoEngagePersonalizationContentScoringPersona_umbracoEngagePersonalizationPersona', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationCustomerJourneyStep_uMarketingSuitePersonalizationCustomerJourneyGroup', 'FK_umbracoEngagePersonalizationCustomerJourneyStep_umbracoEngagePersonalizationCustomerJourneyGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationPersona_uMarketingSuitePersonalizationPersonaGroup', 'FK_umbracoEngagePersonalizationPersona_umbracoEngagePersonalizationPersonaGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupJourneyScoring_uMarketingSuitePersonalizationCustomerJourneyStep', 'FK_umbracoEngagePersonalizationReferralGroupJourneyScoring_umbracoEngagePersonalizationCustomerJourneyStep', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupJourneyScoring_uMarketingSuitePersonalizationReferralGroup', 'FK_umbracoEngagePersonalizationReferralGroupJourneyScoring_umbracoEngagePersonalizationReferralGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupPage_uMarketingSuiteAnalyticsPage', 'FK_umbracoEngagePersonalizationReferralGroupPage_umbracoEngageAnalyticsPage', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupPage_uMarketingSuitePersonalizationReferralGroup', 'FK_umbracoEngagePersonalizationReferralGroupPage_umbracoEngagePersonalizationReferralGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupPersonaScoring_uMarketingSuitePersonalizationPersona', 'FK_umbracoEngagePersonalizationReferralGroupPersonaScoring_umbracoEngagePersonalizationPersona', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationReferralGroupPersonaScoring_uMarketingSuitePersonalizationReferralGroup', 'FK_umbracoEngagePersonalizationReferralGroupPersonaScoring_umbracoEngagePersonalizationReferralGroup', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationSegmentRule_uMarketingSuitePersonalizationSegment', 'FK_umbracoEngagePersonalizationSegmentRule_umbracoEngagePersonalizationSegment', 'OBJECT';
+EXEC sp_rename 'FK_uMarketingSuitePersonalizationVisitorSegmentSettings_uMarketingSuitePersonalizationSegment', 'FK_umbracoEngagePersonalizationVisitorSegmentSettings_umbracoEngagePersonalizationSegment', 'OBJECT';
+
+-- Rename Unique Keys from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'IX_uMarketingSuiteAbTestingAbTestUmbracoPageVariant', 'IX_umbracoEngageAbTestingAbTestUmbracoPageVariant';
+EXEC sp_rename 'IX_uMarketingSuiteAbTestingAbTestVisitorToVariant', 'IX_umbracoEngageAbTestingAbTestVisitorToVariant';
+EXEC sp_rename 'IX_uMarketingSuiteAnalyticsVideoStatistics', 'IX_umbracoEngageAnalyticsVideoStatistics';
+EXEC sp_rename 'IX_uMarketingSuitePersonalizationVisitorSegmentSettings', 'IX_umbracoEngagePersonalizationVisitorSegmentSettings';
+EXEC sp_rename 'IX_uMarketingSuiteVisitor', 'IX_umbracoEngageVisitor';
+EXEC sp_rename 'UQ_uMarketingSuiteAnalyticsBrowser_name', 'UQ_umbracoEngageAnalyticsBrowser_name';
+EXEC sp_rename 'UQ_uMarketingSuiteAnalyticsOperatingSystem_name', 'UQ_umbracoEngageAnalyticsOperatingSystem_name';
+
+-- Rename Constraints (Check & Default) from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'CK_uMarketingSuiteAnalyticsVideoEvent', 'CK_umbracoEngageAnalyticsVideoEvent';
+EXEC sp_rename 'DF_uMarketingSuiteAbTestingAbTest_assignVisitorsOnAnyPage', 'DF_umbracoEngageAbTestingAbTest_assignVisitorsOnAnyPage';
+EXEC sp_rename 'DF_uMarketingSuiteAbTestingAbTest_created', 'DF_umbracoEngageAbTestingAbTest_created';
+EXEC sp_rename 'DF_uMarketingSuiteAbTestingAbTest_isWinnerSelected', 'DF_umbracoEngageAbTestingAbTest_isWinnerSelected';
+EXEC sp_rename 'DF_uMarketingSuiteAbTestingAbTestProject_archived', 'DF_umbracoEngageAbTestingAbTestProject_archived';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsAnnotation_invalid', 'DF_umbracoEngageAnalyticsAnnotation_invalid';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsBrowserVersion_created', 'DF_umbracoEngageAnalyticsBrowserVersion_created';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsOperatingSystemVersion_created', 'DF_umbracoEngageAnalyticsOperatingSystemVersion_created';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsPageEvent_nonInteraction', 'DF_umbracoEngageAnalyticsPageEvent_nonInteraction';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsPageview_guid', 'DF_umbracoEngageAnalyticsPageview_guid';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsRawClientSideData_processingFailed', 'DF_umbracoEngageAnalyticsRawClientSideData_processingFailed';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsVisitorTypeBotVersion_created', 'DF_umbracoEngageAnalyticsVisitorTypeBotVersion_created';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsVisitorTypeMonitor_created', 'DF_umbracoEngageAnalyticsVisitorTypeMonitor_created';
+EXEC sp_rename 'DF_uMarketingSuiteAnalyticsVisitorTypeSpam_created', 'DF_umbracoEngageAnalyticsVisitorTypeSpam_created';
+EXEC sp_rename 'DF_uMarketingSuitePersonalizationSegment_controlGroupSize', 'DF_umbracoEngagePersonalizationSegment_controlGroupSize';
+EXEC sp_rename 'DF_uMarketingSuitePersonalizationSegment_isTemporary', 'DF_umbracoEngagePersonalizationSegment_isTemporary';
+
+-- Renaming Indexes from the main uMarketingSuite package to umbracoEngage
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_NonClustered_uMarketingSuiteAnalyticsPageview_GUID', 'IX_NonClustered_umbracoEngageAnalyticsPageview_GUID', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_NonClustered_uMarketingSuiteAnalyticsPageview_sessionId', 'IX_NonClustered_umbracoEngageAnalyticsPageview_sessionId', 'INDEX';
+EXEC sp_rename 'umbracoEngagePersonalizationPageviewCustomerJourneyStepScore.IX_NonClustered_uMarketingSuitePersonalizationPageviewCustomerJourneyStepScore_externalId', 'IX_NonClustered_umbracoEngagePersonalizationPageviewCustomerJourneyStepScore_externalId', 'INDEX';
+EXEC sp_rename 'umbracoEngagePersonalizationPageviewPersonaScore.IX_NonClustered_uMarketingSuitePersonalizationPageviewPersonaScore_externalId', 'IX_NonClustered_umbracoEngagePersonalizationPageviewPersonaScore_externalId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAbTestingAbTestVisitorToVariant.IX_uMarketingSuiteAbTestingAbTestVisitorToVariant_PROFILES', 'IX_umbracoEngageAbTestingAbTestVisitorToVariant_PROFILES', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsDevice.IX_uMarketingSuiteAnalyticsDevice_operatingSystemVersionId', 'IX_umbracoEngageAnalyticsDevice_operatingSystemVersionId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsGoalCompletion.IX_uMarketingSuiteAnalyticsGoalCompletion_Optimization', 'IX_umbracoEngageAnalyticsGoalCompletion_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsGoalCompletion.IX_uMarketingSuiteAnalyticsGoalCompletion_pageviewId', 'IX_umbracoEngageAnalyticsGoalCompletion_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsGoalCompletion.IX_uMarketingSuiteAnalyticsGoalCompletion_PROFILES', 'IX_umbracoEngageAnalyticsGoalCompletion_PROFILES', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsIpAddress.IX_uMarketingSuiteAnalyticsIpAddress_ipAddress', 'IX_umbracoEngageAnalyticsIpAddress_ipAddress', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsLinks.IX_uMarketingSuiteAnalyticsLinks_pageId', 'IX_umbracoEngageAnalyticsLinks_pageId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsLinks.IX_uMarketingSuiteAnalyticsLinks_pageviewId', 'IX_umbracoEngageAnalyticsLinks_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageEvent.IX_uMarketingSuiteAnalyticsPageEvent_Optimization', 'IX_umbracoEngageAnalyticsPageEvent_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageEvent.IX_uMarketingSuiteAnalyticsPageEvent_pageviewId', 'IX_umbracoEngageAnalyticsPageEvent_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_uMarketingSuiteAnalyticsPageview', 'IX_umbracoEngageAnalyticsPageview', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_uMarketingSuiteAnalyticsPageview_IpAddressId', 'IX_umbracoEngageAnalyticsPageview_IpAddressId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_uMarketingSuiteAnalyticsPageview_Optimization', 'IX_umbracoEngageAnalyticsPageview_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsPageview.IX_uMarketingSuiteAnalyticsPageview_timestamp_inc_sessionId', 'IX_umbracoEngageAnalyticsPageview_timestamp_inc_sessionId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsScrollDepth.IX_uMarketingSuiteAnalyticsScrollDepth_pageviewId', 'IX_umbracoEngageAnalyticsScrollDepth_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsSession.IX_uMarketingSuiteAnalyticsSession_Optimization', 'IX_umbracoEngageAnalyticsSession_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsSession.IX_uMarketingSuiteAnalyticsSession_PROFILES', 'IX_umbracoEngageAnalyticsSession_PROFILES', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsSession.IX_uMarketingSuiteAnalyticsSession_VisitorSessionSequence', 'IX_umbracoEngageAnalyticsSession_VisitorSessionSequence', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsTimeOnPage.IX_uMarketingSuiteAnalyticsTimeOnPage_pageviewId', 'IX_umbracoEngageAnalyticsTimeOnPage_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsUmbracoFormsSubmission.IX_uMarketingSuiteAnalyticsUmbracoFormsSubmission_pageviewId', 'IX_umbracoEngageAnalyticsUmbracoFormsSubmission_pageviewId', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsUmbracoPageVariant.IX_uMarketingSuiteAnalyticsUmbracoPageVariant_Optimization', 'IX_umbracoEngageAnalyticsUmbracoPageVariant_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsVisitor.IX_uMarketingSuiteAnalyticsVisitor_Optimization', 'IX_umbracoEngageAnalyticsVisitor_Optimization', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsVisitor.IX_uMarketingSuiteAnalyticsVisitor_PROFILES1', 'IX_umbracoEngageAnalyticsVisitor_PROFILES1', 'INDEX';
+EXEC sp_rename 'umbracoEngageAnalyticsVisitor.IX_uMarketingSuiteAnalyticsVisitor_PROFILES2', 'IX_umbracoEngageAnalyticsVisitor_PROFILES2', 'INDEX';
+EXEC sp_rename 'umbracoEngagePersonalizationPageviewCustomerJourneyStepScore.IX_uMarketingSuitePersonalizationPageviewCustomerJourneyStepScore', 'IX_umbracoEngagePersonalizationPageviewCustomerJourneyStepScore', 'INDEX';
+EXEC sp_rename 'umbracoEngagePersonalizationPageviewPersonaScore.IX_uMarketingSuitePersonalizationPageviewPersonaScore', 'IX_umbracoEngagePersonalizationPageviewPersonaScore', 'INDEX';
+EXEC sp_rename 'umbracoEngagePersonalizationVisitorSegmentSettings.IX_uMarketingSuitePersonalizationVisitorSegmentSettings_created', 'IX_umbracoEngagePersonalizationVisitorSegmentSettings_created', 'INDEX';
+
+---UMBRACO.ENGAGE.FORMS---
+--Rename Table
+IF OBJECT_ID('dbo.uMarketingSuiteAnalyticsUmbracoFormsSubmissionRecord', 'U') IS NOT NULL
+    BEGIN
+        EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoFormsSubmissionRecord', 'umbracoEngageAnalyticsUmbracoFormsSubmissionRecord';
+    END
+    
+--Rename Index
+IF EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_uMarketingSuiteAnalyticsUmbracoFormsSubmissionRecord_visitorExternalId' AND object_id = OBJECT_ID('dbo.umbracoEngageAnalyticsUmbracoFormsSubmissionRecord'))
+    BEGIN
+        EXEC sp_rename 'umbracoEngageAnalyticsUmbracoFormsSubmissionRecord.IX_uMarketingSuiteAnalyticsUmbracoFormsSubmissionRecord_visitorExternalId', 'IX_umbracoEngageAnalyticsUmbracoFormsSubmissionRecord_visitorExternalId', 'INDEX';
+    END    
+    
+---UMBRACO.ENGAGE.COMMERCE---
+--Rename Table
+IF OBJECT_ID('dbo.uMarketingSuiteAnalyticsUmbracoCommerceVisitorOrder', 'U') IS NOT NULL
+    BEGIN
+        EXEC sp_rename 'uMarketingSuiteAnalyticsUmbracoCommerceVisitorOrder', 'umbracoEngageAnalyticsUmbracoCommerceVisitorOrder';
+    END
+
+--Rename Index
+IF EXISTS (SELECT 1 FROM sys.indexes WHERE name = 'IX_uMarketingSuiteAnalyticsUmbracoCommerceVisitorOrder_visitorExternalId' AND object_id = OBJECT_ID('umbracoEngageAnalyticsUmbracoCommerceVisitorOrder'))
+    BEGIN
+        EXEC sp_rename 'umbracoEngageAnalyticsUmbracoCommerceVisitorOrder.IX_uMarketingSuiteAnalyticsUmbracoCommerceVisitorOrder_visitorExternalId', 'IX_umbracoEngageAnalyticsUmbracoCommerceVisitorOrder_visitorExternalId', 'INDEX';
+    END
+
