@@ -1,22 +1,22 @@
 ---
-description: "Documentation for Umbraco Heartcore REST APIs"
+description: Documentation for Umbraco Heartcore REST APIs
 ---
 
 # API Documentation
 
 This page contains documentation for the available API endpoints for Umbraco Heartcore. It includes endpoints for the GraphQL API as well as for the REST API which is divided into two main areas: Content Delivery and Content Management.
 
-[The GraphQL API](graphql/README.md) can be used to query the read-only Content that you would normally retrieve to show the published content in your apps, websites, or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
+[The GraphQL API](graphql/) can be used to query the read-only Content that you would normally retrieve to show the published content in your apps, websites, or other platforms. The API is available on `https://graphql.umbraco.io`. This API is available on Trial projects as well as Starter and Professional Plans.
 
-[The Content Delivery API](content-delivery/README.md) is a read-only Content and Media API that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
+[The Content Delivery API](content-delivery/) is a read-only Content and Media API that you would normally retrieve to show the published content in your apps, websites or other platforms. The API is available on `https://cdn.umbraco.io`.
 
-[The Content Management API](content-management/README.md) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members, and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
+[The Content Management API](content-management/) can be used to Create, Read, Update and Delete Content, Media, Languages, Relations, Members, and the associated types using Umbraco Backoffice user credentials or API Keys. The API is available on `https://api.umbraco.io`.
 
 The Preview API is the read-only Content and Media that you would retrieve to show the draft content in your apps, websites, or other platforms. The API is available on `https://preview.umbraco.io`. The Preview API is always protected and requires an `Api-Key`. The endpoints are the same as the Content Delivery API.
 
 ## REST API Standard
 
-The REST APIs are based on the [HAL Standard](https://weierophinney.github.io/hal/hal/).
+The REST APIs are based on the [HAL Standard](https://www.ietf.org/archive/id/draft-kelly-json-hal-11.html).
 
 ### System level properties
 
@@ -113,8 +113,7 @@ This feature is currently not available when using [External Login Providers.](.
 
 The endpoints implement OAuth 2.0.
 
-A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user.
-This corresponds to a user logging into the backoffice and is thus only meant to be used for the Content Management API.
+A bearer token can be created by posting to `https://api.umbraco.io/oauth/token` and supplying a username and password for a backoffice user. This corresponds to a user logging into the backoffice and is thus only meant to be used for the Content Management API.
 
 ```http
 POST https://api.umbraco.io/oauth/token

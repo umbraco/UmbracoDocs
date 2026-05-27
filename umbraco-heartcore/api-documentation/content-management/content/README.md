@@ -40,14 +40,14 @@ In addition to the specific permissions listed under each endpoint, all requests
 
 If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
-| Status Code | Error Code          | Message                                                                  |
-| ----------- | ------------------- | ------------------------------------------------------------------------ |
-| 400         | BadRequest          | Body cannot be empty.                                                    |
-| 401         | Unauthorized        | Authorization has been denied for this request.                          |
-| 403         | Forbidden           | You are not authorized to access the given resource.                     |
-| 404         | NotFound            | Content with id '{id}' could not be found.                               |
+| Status Code | Error Code          | Message                                                                   |
+| ----------- | ------------------- | ------------------------------------------------------------------------- |
+| 400         | BadRequest          | Body cannot be empty.                                                     |
+| 401         | Unauthorized        | Authorization has been denied for this request.                           |
+| 403         | Forbidden           | You are not authorized to access the given resource.                      |
+| 404         | NotFound            | Content with id '{id}' could not be found.                                |
 | 422         | ValidationFailed    | Validation error occurred when trying to save or update the content item. |
-| 500         | InternalServerError | Internal server error.                                                   |
+| 500         | InternalServerError | Internal server error.                                                    |
 
 **JSON example**:
 
@@ -541,46 +541,21 @@ In this example only one language exists, so the properties are marked with `$in
 
 {% hint style="info" %}
 If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
-{% endhint %}  
+{% endhint %}
 
-```json
-{
-    "name": {
-        "$invariant": "Another one"
-    },
-    "contentTypeAlias": "blogpost",
-    "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4",
-    "sortOrder": 0,
-    "seoMetaDescription": {
-        "$invariant": ""
-    },
-    "keywords": {
-        "$invariant": []
-    },
-    "umbNaviHide": {
-        "$invariant": "0"
-    },
-    "pageTitle": {
-        "$invariant": "Another one"
-    },
-    "categories": {
-        "$invariant": [
-            "cg16",
-            "codegarden",
-            "umbraco"
-        ]
-    },
-    "excerpt": {
-        "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh."
-    },
-    "multinodeTreePicker": {
-        "$invariant": "umb://document/067c7c926709487ab01be84168b333cf,umb://document/8a4dec90cf394028a743eae0729d47ba,umb://document/5fdd887233394a3492000bbf74e3b005"
-    },
-    "bodyText": {
-        "$invariant": "<p>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>\n<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.</p>\n<p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.</p>"
-    }
-}
-```
+\`\`\`json { "name": { "$invariant": "Another one" }, "contentTypeAlias": "blogpost", "parentId": "8007e923-e62a-4ac1-a33f-caf3052582f4", "sortOrder": 0, "seoMetaDescription": { "$invariant": "" }, "keywords": { "$invariant": \[] }, "umbNaviHide": { "$invariant": "0" }, "pageTitle": { "$invariant": "Another one" }, "categories": { "$invariant": \[ "cg16", "codegarden", "umbraco" ] }, "excerpt": { "$invariant": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh." }, "multinodeTreePicker": { "$invariant": "umb://document/067c7c926709487ab01be84168b333cf,umb://document/8a4dec90cf394028a743eae0729d47ba,umb://document/5fdd887233394a3492000bbf74e3b005" }, "bodyText": { "$invariant": "
+
+Donec sollicitudin molestie malesuada. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.
+
+\n
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Sed porttitor lectus nibh.
+
+\n
+
+Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat.
+
+" } } \`\`\`
 
 ### Success Response
 
@@ -770,7 +745,7 @@ In this example only one language exists, so the properties are marked with `$in
 
 {% hint style="info" %}
 If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
-{% endhint %} 
+{% endhint %}
 
 ```json
 {
