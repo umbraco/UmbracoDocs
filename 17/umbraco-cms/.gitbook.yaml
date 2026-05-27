@@ -697,3 +697,5 @@ redirects:
     tutorials/editors-manual/tips-and-tricks/notifications: get-started/editors-manual/tips-and-tricks/notifications.md
     tutorials/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view.md
     tutorials/editors-manual/tips-and-tricks/session-timeout: get-started/editors-manual/tips-and-tricks/session-timeout.md
+    extend-your-project/server-side-extensions/custom-routing/adding-a-hub-with-signalr-and-umbraco: extend-your-project/server-side-extensions/custom-routing/signalr.md
+    run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-load-balanced-environments: run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md
