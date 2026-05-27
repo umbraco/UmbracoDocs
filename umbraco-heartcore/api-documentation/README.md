@@ -108,7 +108,7 @@ Api-Key: {api-key}
 ### Bearer token
 
 {% hint style="info" %}
-This feature is currently not available when using [External Login Providers.](../../umbraco-cloud/set-up/external-login-providers.md)
+This feature is currently not available when using [External Login Providers.](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers)
 {% endhint %}
 
 The endpoints implement OAuth 2.0.
