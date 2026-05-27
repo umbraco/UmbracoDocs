@@ -26,7 +26,7 @@ Auto-scaling is not available yet but is under consideration. However, we do off
 
 ### Can I set up a load-balanced site on Umbraco Cloud?
 
-No, load balancing is not currently supported.
+Yes. See the [Load Balancing](../../optimize-and-maintain-your-site/optimize-performance/load-balancing.md) article for requirements, scaling modes, and configuration.
 
 ### Can I migrate my site away from Umbraco Cloud?
 
