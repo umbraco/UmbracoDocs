@@ -6,7 +6,7 @@ description: >-
 
 # Configuration
 
-Most configuration for Umbraco Deploy is provided via dotnet configuration. This is most often stored in the `appsettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+Most configuration for Umbraco Deploy is provided via the dotnet configuration. This is most often stored in the `appsettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`. Umbraco Deploy configuration follows this pattern, i.e.:
 
