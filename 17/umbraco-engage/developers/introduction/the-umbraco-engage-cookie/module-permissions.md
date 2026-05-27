@@ -73,9 +73,9 @@ namespace YourNamespace
 ## Tracking a visitor's Initial Pageview
 
 {% hint style="warning" %}
-By changing the default module permissions to false a visitor is be tracked until they give their consent to the Analytics module. In that case, the module permission `AnalyticsIsAllowed` will be set to `true`.
+By changing the default module permissions to false a visitor will not be tracked until they give their consent to the Analytics module. In that case, the module permission `AnalyticsIsAllowed` will be set to `true`.
 
-Is the module permission set to true it is required to reload the current page as soon as the visitor has given consent. This needs to happen to track the current page visit the visitor has given consent on.
+If the module permission is set to true it is required to reload the current page as soon as the visitor has given consent. This needs to happen to track the current page visit the visitor has given consent on.
 
 If no reload is performed the visitor's referrer and/or campaign information will not be tracked.
 
