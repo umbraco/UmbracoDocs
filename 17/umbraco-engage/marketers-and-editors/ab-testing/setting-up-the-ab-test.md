@@ -34,7 +34,7 @@ When you start a new test you will have to specify the following:
 * Which testing project it should be part of.
 * Write a description/hypothesis.
 
-After that, you need to specify which goal you want to measure, as it is all about optimizing for this goal. Set the audience that you want to include in the test.
+After that, you need to specify which [Goal](../settings/setting-up-goals.md) you want to measure, as it is all about optimizing for this goal. For details on how to set up a new goal, see the [Goals](../settings/setting-up-goals.md#setting-up-a-new-goal) article. Set the audience that you want to include in the test.
 
 As a final step, you have to specify the type of test and set up the specific test. It is also possible to preview your variant from here.
 
