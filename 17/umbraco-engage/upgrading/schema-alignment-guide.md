@@ -99,8 +99,35 @@ This step is **required** before running the schema alignment script. Without it
 Run the `CompleteAlignSchema.sql` script against your database. This re-creates all foreign keys with `ON DELETE CASCADE` and re-enables any disabled or untrusted constraints. It also adds any missing indexes to align your schema with a clean install.
 
 {% hint style="warning" %}
-The script contains 6 numbered batches separated by `GO` statements (besides validation and completion steps). Ensure each batch has completed successfully by inspecting the returned/printed messages.
+The script contains 7 numbered batches separated by `GO` statements (besides validation and completion steps). Ensure each batch has completed successfully by inspecting the returned/printed messages.
 {% endhint %}
+
+The script is safe to re-run if a batch fails. The first failing batch surfaces the root-cause error and subsequent batches no-op cleanly — fix the cause, then re-run the script.
+
+##### Engage data in a separate database
+
+If your Engage analytics data lives in a **different database** from your Umbraco core tables, set the script's `separateDatabaseMode` flag before running it. Near the top of `CompleteAlignSchema.sql` you will find:
+
+```sql
+INSERT INTO ##EngageAlignConfig VALUES (0);  /* <<< Change to 1 for separate-database mode */
+```
+
+Change the `0` to `1`, then run the script against your **Engage** database.
+
+In separate-database mode the script:
+
+* Skips all `umbracoKeyValue` reads and writes.
+* Verifies (instead) that the Engage tables exist in the database it is connected to.
+* Prints, at the end, the SQL `UPDATE` statement you need to run manually against your **Umbraco** database to mark the migration as `Complete`.
+
+{% hint style="warning" %}
+By setting `separateDatabaseMode` to `1` you acknowledge that:
+
+* You have already run `EnsureDataConsistency.sql` (the previous step) against the Engage database.
+* The `Umbraco.Engage+DatabaseSchemaStatus` key in your Umbraco database currently has the value `Aligned` — which it does automatically after the Engage package upgrade. No manual change to that key is required before running this script.
+{% endhint %}
+
+Until you run the printed `UPDATE` statement against your Umbraco database, the Engage health check will continue to show the `Aligned` warning.
 {% endstep %}
 
 {% step %}
