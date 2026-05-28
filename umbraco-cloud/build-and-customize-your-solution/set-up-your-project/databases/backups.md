@@ -32,7 +32,7 @@ Only Project Administrators have access to the **Backups** page on Umbraco Cloud
 To create a backup follow the steps below:
 
 1. Open your Cloud project.
-2.  Go to **Backups** in the **Settings** menu.
+2.  Go to **Backups** in the **Configuration** menu.
 
     <figure><img src="../../../.gitbook/assets/image (45).png" alt="Backups on Cloud"><figcaption><p>Backups on Cloud</p></figcaption></figure>
 3.  Click **Create Backup.**
