@@ -16,6 +16,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
+
+* Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
+* Resolved personalizations migrated from v13 disappearing from the Personalisations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
+* Fixed the same Key/document-key conflation in A/B Testing.
+
 #### [17.2.1](https://www.nuget.org/packages/Umbraco.Engage/17.2.1) (May 19th 2026)
 
 * Resolved a thread-safety issue in the personalization visitor profile that could corrupt profile state under concurrent pageviews.
