@@ -237,7 +237,7 @@ Example:
 }
 ```
 
-`.Select(x => x.Content)` strips away the BlockListItem wrapper and returns just the IPublishedElement content data, discarding the settings.
+`.Select(x => x.Content)` strips away the BlockListItem wrapper and returns the IPublishedElement content data, discarding the settings.
 
 If using ModelsBuilder the example can be simplified:
 
