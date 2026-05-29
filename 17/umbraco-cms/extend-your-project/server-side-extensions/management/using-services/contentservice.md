@@ -61,6 +61,45 @@ demoProduct.SetCultureName("Mikrofon", "da"); // this will set the danish name
 
 For information on how to retrieve multilingual languages, see the [Retrieving languages](localizationservice.md) article.
 
+
+### Getting date values programmatically
+When creating content programmatically, you may need to read back date values stored on a content node. This could be to validate, transform, or pass them to another service. The `IContentService` returns date property values as raw JSON, which must be deserialized into a `DateTimeDto` before use.
+The following example retrieves a date property from an existing content node and converts it to a `DateOnly` value:
+```csharp
+using System.Text.Json;
+using Umbraco.Cms.Core.Services;
+using static Umbraco.Cms.Core.PropertyEditors.ValueConverters.DateTimeValueConverterBase;
+
+namespace Umbraco.Cms.Web.UI.Custom;
+public class GetDateValueDemo
+{
+	private readonly IContentService _contentService;
+
+	public GetDateValueDemo(IContentService contentService) => _contentService = contentService;
+
+	public void GetDate(Guid key)
+	{
+		var content = _contentService.GetById(key);
+
+		if (content is not null)
+		{
+			var rawValue = content.GetValue("myDateProperty");
+
+			if (string.IsNullOrEmpty(rawValue?.ToString()) is false)
+			{
+				var dto = JsonSerializer.Deserialize<DateTimeDto>(rawValue.ToString()!);
+
+				if (dto is not null)
+				{
+					var dateOnly = DateOnly.FromDateTime(dto.Date.Date);
+				}
+			}
+		}
+	}
+}
+```
+(generated with the help of Claude)
+
 ## Publishing content programmatically
 
 The `IContentService` is also used for publishing existing content. The following example shows how to publish a page and all its descendants.
@@ -100,38 +139,3 @@ The `PublishBranchFilter` option can include one or more of the following flags:
 - `All` - combines `IncludeUnpublished` and `ForceRepublish`.
 - For multilingual content, replace `"*"` with the array of cultures, for example, `new[] { "en-us", "da" }`.
 
-
-## Getting date values programmatically
-```csharp
-using System.Text.Json;
-using Umbraco.Cms.Core.Services;
-using static Umbraco.Cms.Core.PropertyEditors.ValueConverters.DateTimeValueConverterBase;
-
-namespace Umbraco.Cms.Web.UI.Custom;
-public class GetDateValueDemo
-{
-	private readonly IContentService _contentService;
-
-	public GetDateValueDemo(IContentService contentService) => _contentService = contentService;
-
-	public void GetDate(Guid key)
-	{
-		var content = _contentService.GetById(key);
-
-		if (content is not null)
-		{
-			var rawValue = content.GetValue("myDateProperty");
-
-			if (string.IsNullOrEmpty(rawValue?.ToString()) is false)
-			{
-				var dto = JsonSerializer.Deserialize<DateTimeDto>(rawValue.ToString()!);
-
-				if (dto is not null)
-				{
-					var dateOnly = DateOnly.FromDateTime(dto.Date.Date);
-				}
-			}
-		}
-	}
-}
-```
