@@ -497,9 +497,9 @@ Only content items updated later than the specified value will be returned when 
 The `createDate` and `updateDate` filters support both "greater than", "greater than or equal", "less than" and "less than or equal":
 
 * Use > for "greater than" filtering.
-* Use >: for "greater than or equal" filtering.
+* Use >= for "greater than or equal" filtering.
 * Use < for "less than" filtering.
-* Use <: for "less than or equal" filtering.
+* Use <= for "less than or equal" filtering.
 {% endhint %}
 
 Multiple filters can be applied to the same request in addition to other query parameters:
