@@ -44,6 +44,7 @@ When this happens, any logs stored on the previous instance's filesystem (access
  
 To ensure historical logs are preserved through any future infrastructure changes, you can configure an additional Serilog sink. The sink writes your structured logs to an external store.
 
+The Umbraco documentation includes guidance on [Logging to a different output](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/serilog#logging-to-a-different-output).
 A full list of available Serilog sinks is maintained at the [Serilog Provided Sinks](https://github.com/serilog/serilog/wiki/provided-sinks) page on GitHub.
 
 Once an external sink is configured, your logs will persist independently of any changes to the underlying infrastructure.
