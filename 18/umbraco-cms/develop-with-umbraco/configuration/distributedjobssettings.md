@@ -35,6 +35,10 @@ Specifies how long the server should wait after initial startup before beginning
 
 **Default:** `00:05:00` (5 minutes)
 
-Specifies the maximum time a distributed job can run before it is considered stale. Jobs that are currently being executed by one server are not picked up by other servers, preventing duplicate execution. However, if a job exceeds this time threshold, it is considered abandoned and can be picked up by another server for recovery.
+Adds a grace period on top of the job's own `Period` before a running job is considered stale.
 
-This setting is useful for handling scenarios where a server crashes or becomes unresponsive while processing a job. By setting an appropriate maximum execution time, the system can automatically recover and reassign stale jobs to healthy servers.
+A job that is marked as running in the database is normally skipped by other servers, which prevents duplicate execution. A job becomes eligible for recovery only when more than `Period + MaximumExecutionTime` has elapsed since `LastAttemptedRun`. The `Period` here is the job's own `Period` property — not the polling `Period` defined above.
+
+For example, a job with a 20-minute `Period` and the default 5-minute `MaximumExecutionTime` is recoverable 25 minutes after the last attempted start.
+
+`MaximumExecutionTime` only applies when a job's `finally` block never runs — for example when the server crashes or is forcibly killed mid-job. When a server shuts down gracefully and the job observes the cancellation token, the host clears the running flag and stamps `LastRun` as part of cleanup. The job is then eligible again on its normal cadence — `Period` after the cancellation moment — and `MaximumExecutionTime` is not used.
