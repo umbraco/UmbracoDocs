@@ -34,7 +34,7 @@ The dashboard includes emissions from the following Azure resource types:
 
 ### Shared resource attribution
 
-Some Azure resources are shared between several websites. To attribute emissions fairly, Umbraco Cloud divides the emissions of a shared resource across the websites that use it:
+Some Azure resources are shared between websites. Umbraco Cloud divides the emissions of a shared resource across the websites that use it:
 
 * Emissions from a SQL Elastic Pool are divided across the databases in the pool.
 * Emissions from a shared App Service Plan are divided across the websites on the plan.
