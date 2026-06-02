@@ -61,7 +61,7 @@ To publish the node with descendants, follow these steps:
 
 1. Navigate to the page you want to publish.
 2. Select the arrow next to the **Save and Publish** button.
-3.  Select **Publish with descendants**.
+3. Select **Publish with descendants**.
 
 ![Publish with descendants](../../.gitbook/assets/Publish-with-descendants-18.png)
 
@@ -90,7 +90,7 @@ To set up scheduled unpublishing, follow these steps:
 3. Select **Schedule**.
 4. In the **Scheduled Publishing** window, set the date and time in the **Unpublish at** field.
 
-![Schedule Unpublishing](../../.gitbook/assets/publish-options-18.png)
+![Schedule Unpublishing](../../.gitbook/assets/scheduled-publishing-18.png)
 
 5. Select **Schedule**.
 
@@ -102,23 +102,24 @@ To set up scheduled unpublishing, follow these steps:
 
 Compare Content allows previewing content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
 
-You can see the **Summary Information** and **Field Comparison** values to understand what will change if you proceed to transfer the content to a higher environment or try restoring content to the current environment.
+The **Summary Information** and **Field Comparison** values show what will change if you transfer the content or restore content to the current environment.
 
 To compare content between environments, follow these steps:
 
 1. Navigate to the page you want to compare.
 2. Select the arrow next to the **Save and Publish** button. Alternatively, you can click the **Actions** drop-down.
-3.  Select **Compare** to open the **Compare** window.
+3. Select **Compare** to open the **Compare** window.
 
-    ![Compare option](../../.gitbook/assets/Compare_option.png)
+![Compare option](../../.gitbook/assets/Compare_option.png)
+
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
 6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
 7. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
 8. Restore the content from the higher environment using the **Partial restore** option.
-9.  Click **Close** to continue editing the content node.
+9. Click **Close** to continue editing the content node.
 
-    ![Comparing Content](../../.gitbook/assets/Comparing_Content.png)
+![Comparing Content](../../.gitbook/assets/Comparing_Content.png)
 
 ## Transferring content
 
@@ -132,10 +133,12 @@ To transfer content between environments, follow these steps:
 
 1. Navigate to the page you want to transfer.
 2. Select the arrow next to the **Save and Publish** button.
-3.  Select **Transfer now**.
+3. Select **Transfer now**.
 
-    ![Transfer Option](../../.gitbook/assets/Transfernow_option_v14.png)
-4.  In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
+![Transfer Option](../../.gitbook/assets/Transfernow_option_v14.png)
 
-    ![Transfer Content](../../.gitbook/assets/Transfer_Content_v14.png)
+4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
+
+![Transfer Content](../../.gitbook/assets/Transfer_Content_v14.png)
+
 5. Click **Transfer now**.
