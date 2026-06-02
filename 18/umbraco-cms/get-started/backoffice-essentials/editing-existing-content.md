@@ -17,15 +17,15 @@ To edit existing content, follow these steps:
 
 ## View Page Layout
 
-By default, you can view Page layouts in two ways: in a List or in a Grid.
+By default, you can view Page layouts in two ways: in a List or in a Grid (default).
 
-### List
+### Grid
 
 When you [enable Collection](editing-existing-content.md#enabling-collection) on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a grid view within the main workspace area. For more information, see the [Collection](../../../model-your-content/property-editors/built-in-umbraco-property-editors/collection.md) article.
 
 ![Grid](../../.gitbook/assets/collection-grid-view-18.png)
 
-### Grid
+### List
 
 You can switch to a list view by clicking the layout icon in the top-right of the screen:
 

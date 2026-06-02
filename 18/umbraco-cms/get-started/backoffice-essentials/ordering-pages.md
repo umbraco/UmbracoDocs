@@ -11,10 +11,12 @@ You can sort pages in two ways:
 3. Click **...** next to the page you wish to sort.
 4.  Select **Sort children of**.
 
-    ![Sort Menu 1](../../../.gitbook/assets/Sort-menu-v14.png)
+![Sort Menu 1](../../.gitbook/assets/sort-menu-18.png)
+
 5.  A window appears on the right-side of the screen. Here, you can arrange the child nodes in the order you want by dragging them up or down.
 
-    ![Sort Option 1](../../../.gitbook/assets/Sort-options-v14.png)
+![Sort Option 1](../../.gitbook/assets/sort-options-18.png)
+
 6. Click **Save** and then **Close**.
 
 ## Option 2
@@ -24,6 +26,8 @@ You can sort pages in two ways:
 3. Click **Actions** in the top-right corner of the screen.
 4.  Select **Sort children of** from the **Actions** drop-down menu.
 
-    ![Actions Menu](../../../.gitbook/assets/Actions-menu-v14.png)
-5. A window appears on the right-side of the screen. Here, you can arrange the child nodes in the order you want by dragging them up or down.
-6. Click **Save** and then **Close**.
+![Actions Menu](../../.gitbook/assets/actions-menu-18.png)
+
+A window appears on the right-side of the screen. Here, you can arrange the child nodes in the order you want by dragging them up or down.
+
+5. Click **Save** and then **Close**.
