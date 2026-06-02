@@ -16,7 +16,7 @@ When you go to the backoffice for the first time, you're presented with the logi
 
 [Read more about the login screen](login.md).
 
-## [Section](../../../get-started/editors-manual/getting-started-with-umbraco/sections.md)
+## [Section](../../../get-started/backoffice-essentials/sections.md)
 
 A section in Umbraco is where you do specific tasks related to that section. For example Content, Settings and Users. You can navigate between the different sections of the backoffice by clicking the corresponding icon in the section menu.
 
@@ -24,7 +24,7 @@ _The **Section menu** is the horizontal menu located on the top of the backoffic
 
 ![Section](../../../.gitbook/assets/highlight-sections-v14.png)
 
-[Read more about the section menu](../../../get-started/editors-manual/getting-started-with-umbraco/sections.md).
+[Read more about the section menu](../../../get-started/backoffice-essentials/sections.md).
 
 ## [Trees](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/tree/)
 

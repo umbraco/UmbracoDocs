@@ -670,20 +670,20 @@ redirects:
     tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids: extend-your-project/tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids.md
     tutorials/creating-a-backoffice-api/access-policies: extend-your-project/tutorials/creating-a-backoffice-api/access-policies.md
     tutorials/extending-the-help-menu: extend-your-project/tutorials/extending-the-help-menu.md
-    tutorials/downloadable-content: get-started/editors-manual/downloadable-content/README.md
-    tutorials/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website.md
-    tutorials/editors-manual: get-started/editors-manual/README.md
-    tutorials/editors-manual/getting-started-with-umbraco: get-started/editors-manual/getting-started-with-umbraco/README.md
-    tutorials/editors-manual/getting-started-with-umbraco/logging-in-and-out: get-started/editors-manual/getting-started-with-umbraco/logging-in-and-out.md
-    tutorials/editors-manual/getting-started-with-umbraco/umbraco-interface: get-started/editors-manual/getting-started-with-umbraco/umbraco-interface.md
-    tutorials/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content: get-started/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content.md
-    tutorials/editors-manual/getting-started-with-umbraco/finding-content: get-started/editors-manual/getting-started-with-umbraco/finding-content.md
-    tutorials/editors-manual/getting-started-with-umbraco/editing-existing-content: get-started/editors-manual/getting-started-with-umbraco/editing-existing-content.md
-    tutorials/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/editors-manual/getting-started-with-umbraco/ordering-pages.md
-    tutorials/editors-manual/getting-started-with-umbraco/moving-a-page: get-started/editors-manual/getting-started-with-umbraco/moving-a-page.md
-    tutorials/editors-manual/getting-started-with-umbraco/copying-a-page: get-started/editors-manual/getting-started-with-umbraco/copying-a-page.md
-    tutorials/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages.md
-    tutorials/editors-manual/working-with-content: get-started/editors-manual/getting-started-with-umbraco/working-with-content.md
+    tutorials/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
+    tutorials/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
+    tutorials/editors-manual: get-started/backoffice-essentials/README.md
+    tutorials/editors-manual/getting-started-with-umbraco: get-started/backoffice-essentials/README.md
+    tutorials/editors-manual/getting-started-with-umbraco/logging-in-and-out: get-started/backoffice-essentials/logging-in-and-out.md
+    tutorials/editors-manual/getting-started-with-umbraco/umbraco-interface: get-started/backoffice-essentials/umbraco-interface.md
+    tutorials/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content: get-started/backoffice-essentials/creating-saving-and-publishing-content.md
+    tutorials/editors-manual/getting-started-with-umbraco/finding-content: get-started/backoffice-essentials/finding-content.md
+    tutorials/editors-manual/getting-started-with-umbraco/editing-existing-content: get-started/backoffice-essentials/editing-existing-content.md
+    tutorials/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/backoffice-essentials/ordering-pages.md
+    tutorials/editors-manual/getting-started-with-umbraco/moving-a-page: get-started/backoffice-essentials/moving-a-page.md
+    tutorials/editors-manual/getting-started-with-umbraco/copying-a-page: get-started/backoffice-essentials/copying-a-page.md
+    tutorials/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/backoffice-essentials/deleting-and-restoring-pages.md
+    tutorials/editors-manual/working-with-content: get-started/backoffice-essentials/working-with-content.md
     tutorials/editors-manual/version-management: manage-and-publish-content/publishing-and-workflow/version-management/README.md
     tutorials/editors-manual/version-management/comparing-versions: manage-and-publish-content/publishing-and-workflow/version-management/comparing-versions.md
     tutorials/editors-manual/version-management/rollback-to-a-previous-version: manage-and-publish-content/publishing-and-workflow/version-management/rollback-to-a-previous-version.md
@@ -691,11 +691,33 @@ redirects:
     tutorials/editors-manual/media-management/working-with-folders: manage-and-publish-content/media-and-assets/working-with-folders.md
     tutorials/editors-manual/media-management/working-with-images-and-files: manage-and-publish-content/media-and-assets/working-with-images-and-files.md
     tutorials/editors-manual/media-management/cropping-images: manage-and-publish-content/media-and-assets/cropping-images.md
-    tutorials/editors-manual/tips-and-tricks: get-started/editors-manual/tips-and-tricks/README.md
-    tutorials/editors-manual/tips-and-tricks/working-with-folders: get-started/editors-manual/tips-and-tricks/working-with-folders.md
-    tutorials/editors-manual/tips-and-tricks/audit-trail: get-started/editors-manual/tips-and-tricks/audit-trail.md
-    tutorials/editors-manual/tips-and-tricks/notifications: get-started/editors-manual/tips-and-tricks/notifications.md
-    tutorials/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view.md
-    tutorials/editors-manual/tips-and-tricks/session-timeout: get-started/editors-manual/tips-and-tricks/session-timeout.md
+    tutorials/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
+    tutorials/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/working-with-folders.md
+    tutorials/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
+    tutorials/editors-manual/tips-and-tricks/notifications: get-started/backoffice-essentials/tips-and-tricks/notifications.md
+    tutorials/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md
+    tutorials/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
+    get-started/editors-manual: get-started/backoffice-essentials/README.md
+    get-started/editors-manual/getting-started-with-umbraco: get-started/backoffice-essentials/README.md
+    get-started/editors-manual/getting-started-with-umbraco/logging-in-and-out: get-started/backoffice-essentials/logging-in-and-out.md
+    get-started/editors-manual/getting-started-with-umbraco/umbraco-interface: get-started/backoffice-essentials/umbraco-interface.md
+    get-started/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content: get-started/backoffice-essentials/creating-saving-and-publishing-content.md
+    get-started/editors-manual/getting-started-with-umbraco/finding-content: get-started/backoffice-essentials/finding-content.md
+    get-started/editors-manual/getting-started-with-umbraco/editing-existing-content: get-started/backoffice-essentials/editing-existing-content.md
+    get-started/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/backoffice-essentials/ordering-pages.md
+    get-started/editors-manual/getting-started-with-umbraco/moving-a-page: get-started/backoffice-essentials/moving-a-page.md
+    get-started/editors-manual/getting-started-with-umbraco/copying-a-page: get-started/backoffice-essentials/copying-a-page.md
+    get-started/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/backoffice-essentials/deleting-and-restoring-pages.md
+    get-started/editors-manual/getting-started-with-umbraco/sections: get-started/backoffice-essentials/sections.md
+    get-started/editors-manual/getting-started-with-umbraco/sidebar: get-started/backoffice-essentials/sidebar.md
+    get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-content.md
+    get-started/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
+    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/working-with-folders.md
+    get-started/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
+    get-started/editors-manual/tips-and-tricks/notifications: get-started/backoffice-essentials/tips-and-tricks/notifications.md
+    get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md
+    get-started/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
+    get-started/editors-manual/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
+    get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
     extend-your-project/server-side-extensions/custom-routing/adding-a-hub-with-signalr-and-umbraco: extend-your-project/server-side-extensions/custom-routing/signalr.md
     run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-load-balanced-environments: run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md
