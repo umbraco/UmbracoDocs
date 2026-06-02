@@ -8,6 +8,15 @@ description: >-
 
 The Umbraco Backoffice supports external login providers (OAuth) for performing authentication of your users. This could be any OpenIDConnect provider such as Entra ID/Azure Active Directory, Identity Server, Google, or Facebook.
 
+{% hint style="success" %}
+**Note for Umbraco Cloud users**
+
+Umbraco Cloud supports External Identity Providers, including Google Authentication.
+If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers) article in the Umbraco Cloud documentation.
+
+The following tutorial is intended only for non-Cloud (on-premises or self-hosted) projects.
+{% endhint %}
+
 In this tutorial, we will take you through the steps of setting up a Google login for the Umbraco CMS backoffice.
 
 ## What is a Google Login?

@@ -8,15 +8,6 @@ description: >-
 
 This tutorial takes you through configuring Microsoft Entra ID (Azure Active Directory/Azure AD) for the member login on your Umbraco CMS website.
 
-{% hint style="success" %}
-**Note for Umbraco Cloud users**
-
-Umbraco Cloud supports External Identity Providers, including Entra ID (formerly Azure AD).\
-If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers) article in the Umbraco Cloud documentation.
-
-On Umbraco Cloud, Entra ID is configured via settings rather than custom code. So, this tutorial is intended for non-Cloud (on-premises or self-hosted) projects.
-{% endhint %}
-
 ## Prerequisites
 
 * A project with a setup for Members.

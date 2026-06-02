@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### [17.1.5](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.5) (28th May 2026)
+* Fix payment form generation throwing "Order has changed and needs recalculating" exception when a customer is auto-assigned on payment start [#832](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/832)
+* Preserve an existing customer reference on the order when a member logs in (only auto-assign when no reference is set)
+* Surface `OrderCalculation` on `ShippingProviderContext` so realtime shipping providers can read in-progress totals during recalc [#850](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/850)
+* Fix store dashboard order counts and revenue not matching the Analytics page [#840](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/840)
+
 #### [17.1.4](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.4) (14th May 2026)
 * Added search notifications events for orders, carts and gift cards [#824](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/824), [#827](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/827)
 

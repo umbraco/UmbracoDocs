@@ -6,8 +6,7 @@ description: Learn the core workflows in the Umbraco backoffice.
 
 Whether you are an editor managing daily content or a developer configuring the system for the first time, understanding the Backoffice is essential. This section covers the fundamental operations of the Umbraco interface from initial login and content creation to advanced node management.
 
-* [Getting Started](getting-started-with-umbraco/) - log in, navigate the interface, and create your first content.
-* [Tips and Tricks](tips-and-tricks/) - audit trails, notifications, session timeout, and other useful backoffice features.
+Once you are familiar with the basics, the [Tips and Tricks](tips-and-tricks/) section covers audit trails, notifications, session timeout, and other useful backoffice features.    
 
 ## What this section covers
 
