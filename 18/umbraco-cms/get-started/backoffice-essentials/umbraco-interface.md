@@ -8,10 +8,12 @@ After logging in to an Umbraco project you will be presented with a dashboard co
 
 By default, there are two dashboards available:
 
-1. The **Getting Started** dashboard provides helpful information about Umbraco.
+1. The **Welcome to Umbraco** dashboard provides helpful information about Umbraco.
 2. The **Redirect URL Management** dashboard displays the original and redirected links of the published pages which are moved to a new location in your project.
 
-![The Dashboard](../../../.gitbook/assets/UI-dashboard.png)
+![The Dashboard](../../.gitbook/assets/UI-dashboard-18.png)
+
+This dashboard is part of the **Content** section. Each section is described further down the article.
 
 ### Search, Help, and Profile Settings
 
@@ -19,7 +21,7 @@ By default, there are two dashboards available:
 2. The **Help** icon provides different Help options such as Tours, Umbraco Learning Base YouTube videos, Umbraco Documentation, and your System Information.
 3. The **profile** icon allows you to edit your profile, change the password, and Logout from the application.
 
-![Search, help and profile](../../../.gitbook/assets/searchmenu.png)
+![Search, help and profile](../../.gitbook/assets/help-menus-18.png)
 
 ### The Sections Menu
 
@@ -27,6 +29,7 @@ The following sections are available in the backoffice:
 
 * **Content** - allows to manage your content.
 * **Media** - allows to manage images and other media files.
+* **Library** - 
 * **Settings** - allows to handle your meta data such as document types.
 * **Packages** - allows to manage and install packages.
 * **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../manage-and-publish-content/users-and-members/users/) article.
