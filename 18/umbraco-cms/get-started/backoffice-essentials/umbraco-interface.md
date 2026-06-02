@@ -29,17 +29,17 @@ The following sections are available in the backoffice:
 
 * **Content** - allows to manage your content.
 * **Media** - allows to manage images and other media files.
-* **Library** - 
-* **Settings** - allows to handle your meta data such as document types.
-* **Packages** - allows to manage and install packages.
+* **Library** - allows you to manage your reusable elements.
+* **Settings** - allows to handle your meta data such as Document Types.
+* **Packages** - allows to manage add-on packages.
 * **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../manage-and-publish-content/users-and-members/users/) article.
 * **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../manage-and-publish-content/users-and-members/members.md) article.
-* **Forms** - allows to create and manage your forms.
+* **Forms** - allows to create and manage your forms (only available if Umbraco Forms is installed).
 * **Translation** - allows to manage dictionary items.
 
-![The Sections Menu](../../../.gitbook/assets/The-Section-Menu-v14.png)
+![The Sections Menu](../../.gitbook/assets/the-section-menu-18.png)
 
-The menu list will differ depending on your permissions for the project. For example: if you are an editor, then you will only have access to **Content**, **Media**, and **Forms** as per the default settings.
+The menu list will differ depending on your permissions for the project. For example: if you are an editor, then you will only have access to **Content**, **Media**, **Library**, and **Forms** as per the default settings.
 
 ### The Section Tree
 
@@ -47,8 +47,8 @@ The section tree is different depending on the section you are in.
 
 In this example, you are looking at the content section. The section provides an overview of the nodes contained in the tree.
 
-![The Section Tree](../../../.gitbook/assets/The-Section-Tree-v14.png)
+![The Section Tree](../../.gitbook/assets/the-section-tree-18.png)
 
 The **Content** tab allows you to create content nodes and manage your content tree. When you hover over the sections, it is highlighted with a darker color indicating that you are hovering over it. A button with three dots will show up, left-click or click the + icon to view additional options.
 
-The **Recycle Bin** contains the deleted content and is available only in the **Content** and the **Media** section.
+The **Recycle Bin** contains the deleted content and is available only in the **Content**, **Library** and the **Media** section.
