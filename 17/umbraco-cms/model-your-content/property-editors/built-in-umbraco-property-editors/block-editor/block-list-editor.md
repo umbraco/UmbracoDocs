@@ -483,7 +483,7 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 
 By default, calling `SetValue()` with a new JSON structure overwrites all existing blocks. Use this approach instead if you need to preserve existing content.
 
-To append new blocks to an existing list without losing current content, read and deserialise the existing value first. Then append to those collections before saving.
+To append new blocks to an existing list without losing current content, read and deserialize the existing value first. Then append to those collections before saving.
 Update the `Import` method in your controller:
 
 ```csharp
@@ -577,7 +577,7 @@ public IActionResult Import([FromBody] ImportModel importModel)
 
 ### Using Settings Models
 
-If your Block Type has a Settings model configured, each block needs a `settingsUdi` referenced in both `layout` and `settingsData`. A Settings model is the optional second Element Type you can attach to a block. It is commonly used to let editors control things like background colour, padding, or visibility toggles separately from the block's content.
+If your Block Type has a Settings model configured, each block needs a `settingsUdi` referenced in both `layout` and `settingsData`. A Settings model is the optional second Element Type you can attach to a block. It is commonly used to let editors control things like background color, padding, or visibility toggles separately from the block's content.
 
 To use settings, fetch both Element Types and generate a separate UDI for each block's settings entry:
 
