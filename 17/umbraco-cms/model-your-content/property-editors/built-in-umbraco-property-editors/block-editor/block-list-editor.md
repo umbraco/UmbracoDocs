@@ -452,6 +452,7 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 
 3. Open your content node in the Backoffice.
 4. Check the `timelineItems` Block List property. You should see the imported blocks populated with your data.
+
 ![Block List created programmatically displayed in the Backoffice](../../../../.gitbook/assets/creating-block-list-programmatically.png)
 
 5. Create a Partial View for the `timelineItem` element type to render the imported blocks on the frontend at: `Views/Partials/BlockList/Components/timelineItem.cshtml`.
