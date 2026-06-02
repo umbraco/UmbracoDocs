@@ -64,7 +64,7 @@ For information on how to retrieve multilingual languages, see the [Retrieving l
 
 ### Getting date values programmatically
 
-When creating content programmatically, you may need to read back date values stored on a content node. This could be to validate, transform, or pass them to another service. The `IContentService` returns date property values as raw JSON, which must be deserialized into a `DateTimeDto` before use.
+When creating content programmatically, you may need to read back date values stored on a content node. This could be to validate, transform, or pass them to another service. The `IContentService` returns date property values as raw JSON, which must be deserialized into a `DateTimeDto` before use. 
 
 The following example retrieves a date property from an existing content node and converts it to a `DateOnly` value:
 
