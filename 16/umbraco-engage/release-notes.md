@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [16.3.3](https://www.nuget.org/packages/Umbraco.Engage/16.3.3) (June 2nd 2026)
+
+* Resolved pageviews and associated data not getting flushed to the database on loadbalanced (subscriber) setups.
+
 #### [16.3.2](https://www.nuget.org/packages/Umbraco.Engage/16.3.2) (May 22nd 2026)
 
 * Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
