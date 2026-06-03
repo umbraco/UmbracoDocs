@@ -114,3 +114,7 @@ The property editor handles date-only values. Time is set to 00:00:00 and offset
     // Save the change
     _contentService.Save(content);
     ```
+    
+### Getting values programmatically
+
+For an example on how to work with `DateOnly` property using `IContentService` see the [Getting date values programmatically](../../../../extend-your-project/server-side-extensions/management/using-services/contentservice.md#getting-date-values-programmatically) article.
