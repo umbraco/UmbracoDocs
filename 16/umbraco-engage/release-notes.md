@@ -16,6 +16,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [Engage Commerce 16.0.1](https://www.nuget.org/packages/Umbraco.Engage.Commerce/16.0.1) (June 3rd 2026)
+
+* Resolved **Swagger/OpenAPI** generation issues for the Commerce Management API by scoping operation and schema IDs to the Commerce namespace, preventing collisions in the shared OpenAPI document.
+* Fixed the ordering of segments in the Commerce **personalization segment** list.
+
 #### [16.3.3](https://www.nuget.org/packages/Umbraco.Engage/16.3.3) (June 2nd 2026)
 
 * Resolved pageviews and associated data not getting flushed to the database on load-balanced (subscriber) setups.
