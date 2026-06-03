@@ -20,11 +20,14 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 
 ### [17.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (June 4th 2026)
 * Better support for load balanced environments
-* Reworked front end exports for `@umbraco-forms/backoffice` NPM package
+* Refactored front end exports for `@umbraco-forms/backoffice` NPM package
+* Fix date day/month swap for non-US cultures in date fields [#1714](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1714) [#1731](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1731)
+* Set `VariationContext` to submitted culture when retrying a workflow [#1718](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1718)
+* Apply default date range filter on initial load [#1720](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1720)
 * Cache-bust front end assets to ensure users get the latest version after upgrade [#1722](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1722)
 * Fix error when saving a field made mandatory [#1725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1725)
 * Allow ordering form entries when using `IRecordReaderService` [#1726](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1726)
-* Fix subfolder created at root instead of selected parent [#1730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1730)
+* Fix subfolder being created at root instead of selected parent [#1730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1730)
 
 ### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (May 14th 2026)
 
