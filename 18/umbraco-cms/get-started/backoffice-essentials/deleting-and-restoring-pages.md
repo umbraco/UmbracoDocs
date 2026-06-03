@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to delete pages to the Recycle Bin and restore or permanently remove
+  them from your Umbraco project.
+---
+
 # Deleting and Restoring Pages
 
 If you have pages that are no longer required for your website, you can delete them. Upon deletion, the page is moved to the **Recycle Bin** and is not deleted permanently.
@@ -67,7 +73,7 @@ To empty the Recycle Bin:
 
 3. Click **OK**.
 
-Alternatively. click on the **...** when hovering the Recycle Bin, and select **Empty recycle bin...** from the menu.
+Alternatively, click on the **...** when hovering the Recycle Bin, and select **Empty recycle bin...** from the menu.
 
 ![Empty Recycle Bin menu](../../.gitbook/assets/empty-recycle-bin-menu-18.png)
 

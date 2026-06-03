@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to copy a page and its child pages to a different location in the
+  content tree.
+---
+
 # Copying a Page
 
 Re-use a page or a tree structure you have previously created by copying the parent page and its child pages to a different section within the site structure.

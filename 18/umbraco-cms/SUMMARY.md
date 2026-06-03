@@ -46,7 +46,7 @@
   * [Creating, Saving and Publishing Content Options](get-started/backoffice-essentials/creating-saving-and-publishing-content.md)
   * [Finding Content](get-started/backoffice-essentials/finding-content.md)
   * [Editing Existing Content](get-started/backoffice-essentials/editing-existing-content.md)
-  * [Sorting Pages](get-started/backoffice-essentials/ordering-pages.md)
+  * [Sorting Pages](get-started/backoffice-essentials/sorting-pages.md)
   * [Moving a Page](get-started/backoffice-essentials/moving-a-page.md)
   * [Copying a Page](get-started/backoffice-essentials/copying-a-page.md)
   * [Deleting and Restoring Pages](get-started/backoffice-essentials/deleting-and-restoring-pages.md)

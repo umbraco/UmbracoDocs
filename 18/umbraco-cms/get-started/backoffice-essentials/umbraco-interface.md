@@ -1,3 +1,9 @@
+---
+description: >-
+  Get an overview of the Umbraco backoffice interface, including the dashboard,
+  sections menu, and content tree.
+---
+
 # Umbraco Interface
 
 ## Initial View
@@ -27,15 +33,15 @@ This dashboard is part of the **Content** section. Each section is described fur
 
 The following sections are available in the backoffice:
 
-* **Content** - allows to manage your content.
-* **Media** - allows to manage images and other media files.
+* **Content** - allows you to manage your content.
+* **Media** - allows you to manage images and other media files.
 * **Library** - allows you to manage your reusable elements.
-* **Settings** - allows to handle your meta data such as Document Types.
-* **Packages** - allows to manage add-on packages.
-* **Users** - allows to manage the users on the project. To learn more about users, see the [Users](../../../manage-and-publish-content/users-and-members/users/) article.
-* **Members** - allows to handle the members of the project. If you want to learn more about Members, see the [Members](../../../manage-and-publish-content/users-and-members/members.md) article.
-* **Forms** - allows to create and manage your forms (only available if Umbraco Forms is installed).
-* **Translation** - allows to manage dictionary items.
+* **Settings** - allows you to handle your meta data such as Document Types.
+* **Packages** - allows you to manage add-on packages.
+* **Users** - allows you to manage the users on the project. To learn more about users, see the [Users](../../manage-and-publish-content/users-and-members/users/README.md) article.
+* **Members** - allows you to handle the members of the project. If you want to learn more about Members, see the [Members](../../manage-and-publish-content/users-and-members/members.md) article.
+* **Forms** - allows you to create and manage your forms (only available if Umbraco Forms is installed).
+* **Translation** - allows you to manage dictionary items.
 
 ![The Sections Menu](../../.gitbook/assets/the-section-menu-18.png)
 

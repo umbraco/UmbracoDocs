@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to find and edit existing content pages in the Umbraco backoffice.
+---
+
 # Editing Existing Content
 
 ## Content Within the Tree View
@@ -21,7 +26,7 @@ By default, you can view Page layouts in two ways: in a List or in a Grid (defau
 
 ### Grid
 
-When you [enable Collection](editing-existing-content.md#enabling-collection) on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a grid view within the main workspace area. For more information, see the [Collection](../../../model-your-content/property-editors/built-in-umbraco-property-editors/collection.md) article.
+When you enable Collection on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a grid view within the main workspace area. For more information, see the [Collection](../../model-your-content/property-editors/built-in-umbraco-property-editors/collection.md) article.
 
 ![Grid](../../.gitbook/assets/collection-grid-view-18.png)
 

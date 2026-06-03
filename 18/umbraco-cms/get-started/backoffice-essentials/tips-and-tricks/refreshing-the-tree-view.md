@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to manually reload the content tree to reflect changes made by other
+  editors.
+---
+
 # Refreshing the Tree View
 
 When editing content, the content tree will refresh itself when the content is saved.

@@ -16,4 +16,4 @@ In the example showcased above, new options are being added to a Data Type, with
 
 ## Customize
 
-The sidebar is a feature that comes out of the box with Umbraco. The feature can be customized, which enables you as a developer to improve the workflow for your editors.
+The Sidebar can be customized to improve the workflow for editors. For more information, see the [Extending Overview](../../extend-your-project/backoffice-extensions/extending-overview/README.md) article.

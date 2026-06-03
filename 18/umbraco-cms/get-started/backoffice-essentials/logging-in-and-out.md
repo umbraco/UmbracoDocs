@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to log in and out of the Umbraco backoffice.
+---
+
 # Logging In and Out
 
 ## Logging in

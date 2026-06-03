@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to use the Audit Trail to view the history of actions performed on
+  a content page.
+---
+
 # Audit Trail
 
 Within the **Info** content app for pages you can find the **Audit Trail** in the **History** section. Here, you can get a quick overview of the actions performed on that node, by whom, when and any additional comments.

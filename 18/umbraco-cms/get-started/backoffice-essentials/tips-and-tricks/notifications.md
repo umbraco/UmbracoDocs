@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to set up email notifications for actions performed on content items
+  in the Umbraco backoffice.
+---
+
 # Notifications
 
 You can set up notifications to receive an email when an action is performed on a given content item. To receive notifications, you need to add your email address to your user profile.

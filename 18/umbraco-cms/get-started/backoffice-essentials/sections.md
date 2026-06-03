@@ -24,13 +24,13 @@ Nodes in Umbraco can display the following content states:
 
 To create content, you must define it using Document Types.
 
-For more information, see the [Defining Content](../../../model-your-content/content-types-and-structure/data/defining-content/) article.
+For more information, see the [Defining Content](../../model-your-content/content-types-and-structure/data/defining-content/README.md) article.
 
 ## Media
 
 The Media section contains the media for the website. You can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing Media Types or define your own from the Settings section.
 
-For more information, see the [Creating Media](../../../model-your-content/content-types-and-structure/data/creating-media/) article.
+For more information, see the [Creating Media](../../model-your-content/content-types-and-structure/data/creating-media/README.md) article.
 
 ## Library
 
@@ -38,7 +38,7 @@ The Library section is a central editorial hub for reusable content. Elements ar
 
 By default, all user groups except Sensitive Data and Translators have access to the Library section.
 
-For more information, see the [Elements](../../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
+For more information, see the [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
 
 ## Settings
 
@@ -71,31 +71,31 @@ The Settings section consists of:
 
 The **Settings** section in the Umbraco backoffice has its own set of default dashboards.
 
-For more information, see the [Settings Dashboards](../../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
+For more information, see the [Settings Dashboards](../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
 
 ## Packages
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](../../../extend-your-project/packages/README.md) articles.
+For more information, see the [Packages](../../extend-your-project/packages/README.md) articles.
 
 ## Users
 
 The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
-For more information, see the [Users](../../../manage-and-publish-content/users-and-members/users/) article.
+For more information, see the [Users](../../manage-and-publish-content/users-and-members/users/README.md) article.
 
 ## Members
 
-The Members section allows to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
+The Members section allows you to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
 
-For more information, see the [Members](../../../manage-and-publish-content/users-and-members/members.md) article.
+For more information, see the [Members](../../manage-and-publish-content/users-and-members/members.md) article.
 
 ## Translation
 
 The Translation section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
-For more information, see the [Dictionary Items](../../../manage-and-publish-content/publishing-and-workflow/editorial-tools/dictionary-items.md) article.
+For more information, see the [Dictionary Items](../../manage-and-publish-content/publishing-and-workflow/editorial-tools/dictionary-items.md) article.
 
 ## Add-Ons
 
@@ -130,10 +130,10 @@ The Help section serves as a valuable resource hub in navigating and leveraging 
 
 ## Custom Sections
 
-Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/sections/section.md).
+Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/sections/section.md).
 
 ## Access based on User Group
 
 A User can access a particular section based on the User Group permissions.
 
-Learn more about how to configure the permissions in the article about [backoffice users](../../../manage-and-publish-content/users-and-members/users/).
+Learn more about how to configure the permissions in the article about [backoffice users](../../manage-and-publish-content/users-and-members/users/README.md).

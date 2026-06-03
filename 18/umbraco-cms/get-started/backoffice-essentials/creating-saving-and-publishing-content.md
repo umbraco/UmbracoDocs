@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to create, save, and publish content pages in the Umbraco backoffice,
+  including scheduling and unpublishing options.
+---
+
 # Creating, Saving and Publishing Content Options
 
 In this article, you get an overview of how to create and save pages. You will also learn more about how to publish and unpublish your content.
@@ -18,7 +24,7 @@ If the parent page allows sub-pages underneath it, follow these steps:
 
 ## Saving and Publishing Pages
 
-There are three different options for saving and publishing pages. The options vary depending on whether you’re still in the process of editing the page or your ready to publish your changes.
+There are three different options for saving and publishing pages. The options vary depending on whether you’re still in the process of editing the page or you’re ready to publish your changes.
 
 ![Save and Publish](../../.gitbook/assets/save-and-publish-18.png)
 
@@ -55,7 +61,7 @@ To set up scheduled publishing, follow these steps:
 
 #### 2: Publish with descendants
 
-The **Publish with descendants** button allows you to publish the current page and all the content linked to this page to the live site. Using this option, you can publish the current parent page and it's child nodes, previously published, and unpublished content items.
+The **Publish with descendants** button allows you to publish the current page and all the content linked to this page to the live site. Using this option, you can publish the current parent page and its child nodes, previously published, and unpublished content items.
 
 To publish the node with descendants, follow these steps:
 

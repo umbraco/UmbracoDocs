@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to move pages to a different location within the content tree.
+---
+
 # Moving a Page
 
 Move pages within the website through the tree view. Not all pages can be moved depending on your set-up or page permissions. If you need clarification, contact your system administrator.
