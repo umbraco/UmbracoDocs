@@ -1,5 +1,11 @@
 # External Services
 
+{% hint style="info" %}
+This page covers **your project's own outbound IP addresses** - the addresses your website sends traffic *from*. Share these with an external service so it can allowlist requests coming from your Cloud project.
+
+Looking for the IP addresses of Umbraco Cloud's own services so you can allowlist them in your firewall? See [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
+{% endhint %}
+
 In some cases, Umbraco Cloud might not be the only service you are working with. You might need to work with other services as well. This could be either internal or third-party services. In either case, it will be serviced externally to Umbraco Cloud.
 
 If an external service behind a firewall needs to communicate with your Umbraco Cloud project, allow Umbraco Cloud Server IPs to bypass the firewall.
@@ -52,6 +58,8 @@ If you need to use a CIDR Range for the IPs: `40.113.173.32/28`
 For projects on a Starter plan, you can see the current dynamic outbound IP addresses. The IP addresses for starter projects are dynamic and may change due to Azure or Umbraco optimizing resources.
 {% endhint %}
 
-## Complete IP Address Reference
+## Umbraco Cloud service IP addresses
 
-For a comprehensive list of all static outbound IP addresses used by Umbraco Cloud services across all regions, including both global and regional services, see [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
+The IP addresses above are your project's *own* outbound addresses. These are different from the addresses used by Umbraco Cloud's internal services that connect to your environment.
+
+If you need to allowlist those services in your firewall, see [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
