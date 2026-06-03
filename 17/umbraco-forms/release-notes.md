@@ -21,6 +21,7 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 ### [17.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (June 4th 2026)
 * Better support for load balanced environments
 * Refactored front end exports for `@umbraco-forms/backoffice` NPM package
+* Display download for prevalue source files in backoffice [#1581](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1581)
 * Fix date day/month swap for non-US cultures in date fields [#1714](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1714) [#1731](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1731)
 * Set `VariationContext` to submitted culture when retrying a workflow [#1718](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1718)
 * Apply default date range filter on initial load [#1720](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1720)
