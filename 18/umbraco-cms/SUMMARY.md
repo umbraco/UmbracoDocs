@@ -54,7 +54,7 @@
   * [Sidebar](get-started/backoffice-essentials/sidebar.md)
   * [Working with Rich Text Editor](get-started/backoffice-essentials/working-with-content.md)
   * [Tips & Tricks](get-started/backoffice-essentials/tips-and-tricks/README.md)
-    * [Refreshing the Tree View](get-started/backoffice-essentials/tips-and-tricks/working-with-folders.md)
+    * [Refreshing the Tree View](get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md)
     * [Audit Trail](get-started/backoffice-essentials/tips-and-tricks/audit-trail.md)
     * [Notifications](get-started/backoffice-essentials/tips-and-tricks/notifications.md)
     * [Preview Pane Responsive View](get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md)

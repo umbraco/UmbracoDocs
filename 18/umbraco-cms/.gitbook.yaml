@@ -196,7 +196,7 @@ redirects:
     get-started/editors-manual/getting-started-with-umbraco/sidebar: get-started/backoffice-essentials/sidebar.md
     get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-content.md
     get-started/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
-    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/working-with-folders.md
+    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md
     get-started/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
     get-started/editors-manual/tips-and-tricks/notifications: get-started/backoffice-essentials/tips-and-tricks/notifications.md
     get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md
