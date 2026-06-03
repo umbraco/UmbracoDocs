@@ -134,7 +134,7 @@ A default installation includes a small number of views inside the `blocklist` a
 
 Some packages leave files in the `App_Plugins` folder after the NuGet package is removed. These include custom dashboards, editors, and scripts that are not automatically deleted. Remove the relevant package folder from `App_Plugins` manually.
 
-Additionally, some packages install other NuGet packages as dependencies. For example, the Starter Kit also installs `Bergmania.OpenStreetMap`, which mightl still appear as installed in the Backoffice after the Starter Kit is removed. Check the **Installed** tab in the **Packages** section and remove any orphaned dependencies.
+Additionally, some packages install other NuGet packages as dependencies. For example, the Starter Kit also installs `Bergmania.OpenStreetMap`, which might still appear as installed in the Backoffice after the Starter Kit is removed. Check the **Installed** tab in the **Packages** section and remove any orphaned dependencies.
 </details>
 
 ## Consequences of removing packages
