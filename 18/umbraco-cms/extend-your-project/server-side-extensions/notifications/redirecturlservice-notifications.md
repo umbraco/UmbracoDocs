@@ -15,7 +15,7 @@ The service publishes four notifications. The "before" notifications are cancela
 | `RedirectUrlDeletingNotification` | Before a redirect is deleted | Yes |
 | `RedirectUrlDeletedNotification` | After a redirect is deleted | No |
 
-The entities in each notification are `IRedirectUrl` objects. Each one exposes the affected redirect's `Url`, `Culture`, `ContentId`, and `ContentKey`.
+The entities in each notification are `IRedirectUrl` objects. Each one exposes the `Url`, `Culture`, `ContentId`, and `ContentKey` of the affected redirect.
 
 ## Usage
 
@@ -82,7 +82,7 @@ public class PreventRedirectDeletionHandler : INotificationHandler<RedirectUrlDe
 {% endcode %}
 
 {% hint style="info" %}
-`CancelOperation` cancels the whole notification. When several redirects are deleted at once, canceling stops the deletion for all of them, not only the one that matched.
+`CancelOperation` cancels the whole notification. When more than one redirect is deleted at once, canceling stops the deletion for all of them, not only the one that matched.
 {% endhint %}
 
 ## Logging deleted redirects
