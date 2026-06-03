@@ -77,7 +77,7 @@ For more information, see the [Settings Dashboards](../../../model-your-content/
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](../../../extend-your-project/packages/README.md) article.
+For more information, see the [Packages](../../../extend-your-project/packages/README.md) articles.
 
 ## Users
 
@@ -91,9 +91,9 @@ The Members section allows to create and manage member profiles, set up member g
 
 For more information, see the [Members](../../../manage-and-publish-content/users-and-members/members.md) article.
 
-## Dictionary
+## Translation
 
-The Dictionary section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
+The Translation section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
 For more information, see the [Dictionary Items](../../../manage-and-publish-content/publishing-and-workflow/editorial-tools/dictionary-items.md) article.
 
@@ -119,7 +119,7 @@ For more information about extending the Umbraco platform through packages and i
 
 ## Help Section
 
-The Help section in Umbraco provides documentation and resources to assist in understanding and effectively using the Umbraco CMS. It typically includes the following in the _Getting Started_ Dashboard:
+The Help section in Umbraco provides documentation and resources to assist in understanding and effectively using the Umbraco CMS. It typically includes the following in the _Welcome to Umbraco_ Dashboard:
 
 * **Documentation**: Comprehensive guides, tutorials, and references covering different aspects of Umbraco.
 * **Community Forums**: Access to forums where you can ask questions, share knowledge, and seek assistance from other Umbraco community members.
