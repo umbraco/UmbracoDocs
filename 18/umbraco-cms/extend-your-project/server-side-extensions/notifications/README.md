@@ -246,6 +246,19 @@ The RelationService provides access to operations involving IRelation and IRelat
 
 <details>
 
+<summary><strong>RedirectUrlService</strong> Notifications</summary>
+
+The RedirectUrlService manages the redirect URLs Umbraco tracks when published content changes its URL. It publishes the following notifications.
+
+* [RedirectUrlSavingNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlSavingNotification.html)
+* [RedirectUrlSavedNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlSavedNotification.html)
+* [RedirectUrlDeletingNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlDeletingNotification.html)
+* [RedirectUrlDeletedNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlDeletedNotification.html)
+
+</details>
+
+<details>
+
 <summary><strong>UmbracoApplicationLifetime</strong> Notifications</summary>
 
 Represents an Umbraco application lifetime (starting, started, stopping, stopped) notification.
@@ -277,4 +290,5 @@ Below you can find some articles with some examples using Notifications.
 * [Hot vs. cold restarts](hot-vs-cold-restarts.md)
 * [MediaService Notifications](mediaservice-notifications.md)
 * [MemberService Notifications](memberservice-notifications.md)
+* [RedirectUrlService Notifications](redirecturlservice-notifications.md)
 * [Umbraco Application Lifetime Notifications](umbracoapplicationlifetime-notifications.md)
