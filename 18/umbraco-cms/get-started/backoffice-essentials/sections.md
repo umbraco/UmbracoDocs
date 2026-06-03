@@ -8,7 +8,7 @@ description: >-
 
 A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example, Content, Settings, and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu positioned at the top of the Backoffice.
 
-![The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.](../../../.gitbook/assets/highlight-sections-v14.png)
+![The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.](../../.gitbook/assets/highlight-sections-18.png)
 
 Below is a short overview of the default sections in Umbraco CMS:
 
@@ -19,8 +19,8 @@ The Content section contains the content nodes that make up the website. Content
 Nodes in Umbraco can display the following content states:
 
 * Grayed-out nodes are not published yet.
-* <img src="../../../.gitbook/assets/public-access-icon.png" alt="" data-size="line"> Nodes that are currently locked using the Public Access feature.
-* <img src="../../../.gitbook/assets/collection-icon.png" alt="" data-size="line"> Content nodes that contain a collection of nodes.
+* <img src="../../.gitbook/assets/public-access-icon.png" alt="" data-size="line"> Pages that are currently locked using the Public Access feature.
+* <img src="../../.gitbook/assets/collection-icon-18.png" alt="" data-size="line"> Pages that contain a collection of pages.
 
 To create content, you must define it using Document Types.
 
@@ -31,6 +31,14 @@ For more information, see the [Defining Content](../../../model-your-content/con
 The Media section contains the media for the website. You can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing Media Types or define your own from the Settings section.
 
 For more information, see the [Creating Media](../../../model-your-content/content-types-and-structure/data/creating-media/) article.
+
+## Library
+
+The Library section is a central editorial hub for reusable content. Elements are created and managed here, allowing you to define content once and reuse it across as many pages and documents as needed.
+
+By default, all user groups except Sensitive Data and Translators have access to the Library section.
+
+For more information, see the [Elements](../../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
 
 ## Settings
 
@@ -103,7 +111,7 @@ For example, you can start with core Umbraco features and later decide to integr
 
 When you add an add-on product to Umbraco, it appears in the Backoffice as a new section, seamlessly extending your content management capabilities.
 
-![Add-Ons Section](../../../.gitbook/assets/Add-ons.png)
+![Add-Ons Section](../../.gitbook/assets/Add-ons.png)
 
 If you wish to explore the unique features and use cases of Umbraco products, see the [Exploring the Umbraco Products](https://docs.umbraco.com/welcome/getting-started/exploring-the-umbraco-products) article.
 
