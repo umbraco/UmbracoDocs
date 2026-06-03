@@ -18,7 +18,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 #### [17.2.3](https://www.nuget.org/packages/Umbraco.Engage/17.2.3) (June 2nd 2026)
 
-* Resolved pageviews and associated data not getting flushed to the database on loadbalanced (subscriber) setups.
+* Resolved pageviews and associated data not getting flushed to the database on load-balanced (subscriber) setups.
 
 #### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
 
