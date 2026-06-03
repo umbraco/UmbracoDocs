@@ -87,7 +87,7 @@ public class PreventRedirectDeletionHandler : INotificationHandler<RedirectUrlDe
 
 ## Logging deleted redirects
 
-The "after" notifications cannot be canceled. Use them to react once an operation has completed, for example to write an audit log entry. The following example handles the `RedirectUrlDeletedNotification` and logs each deleted redirect through the `DeletedEntities` property.
+The "after" notifications cannot be canceled. Use them to react once an operation has completed, for example to write a log entry. The following example handles the `RedirectUrlDeletedNotification` and logs each deleted redirect through the `DeletedEntities` property.
 
 {% code title="LogDeletedRedirectsHandler.cs" %}
 ```csharp
@@ -107,7 +107,7 @@ public class LogDeletedRedirectsHandler : INotificationHandler<RedirectUrlDelete
     {
         foreach (var redirect in notification.DeletedEntities)
         {
-            // Keep an audit trail of which redirects were removed.
+            // Log which redirects were removed.
             _logger.LogInformation(
                 "Redirect for {Url} (culture: {Culture}) was deleted.",
                 redirect.Url,
