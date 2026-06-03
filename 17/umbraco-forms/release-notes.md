@@ -18,10 +18,18 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
-### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0-rc) (May 14th 2026)
+### [17.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (June 4th 2026)
+* Better support for load balanced environments
+* Reworked front end exports for `@umbraco-forms/backoffice` NPM package
+* Cache-bust front end assets to ensure users get the latest version after upgrade [#1722](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1722)
+* Fix error when saving a field made mandatory [#1725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1725)
+* Allow ordering form entries when using `IRecordReaderService` [#1726](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1726)
+* Fix subfolder created at root instead of selected parent [#1730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1730)
 
-* Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
+### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (May 14th 2026)
+
 * Fix `FormSavingNotification` message display on `CancelOperation` [#1487](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1487)
+* Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
 
 ### [17.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.2) (May 1st 2026)
 
