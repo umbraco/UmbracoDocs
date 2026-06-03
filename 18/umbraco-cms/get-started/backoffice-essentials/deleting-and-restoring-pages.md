@@ -12,14 +12,16 @@ To delete a page:
 2. Click **...** next to the page you wish to delete.
 3.  Select **Trash**.
 
-    ![Delete Menu 1](../../../.gitbook/assets/trash.png)
+![Delete Menu 1](../../.gitbook/assets/trash-18.png)
 
-    Alternatively, click **Actions** in the top-right corner of the screen and select **Trash**.
+Alternatively, click on the **...** next to the title field and select **Trash**.
 
-    ![Delete Menu 2](../../../.gitbook/assets/actions-trash-menu.png)
-4.  A window appears confirming if you want to delete the page.
+![Delete Menu 2](../../.gitbook/assets/actions-trash-menu-18.png)
 
-    ![Delete Warning](../../../.gitbook/assets/Delete-warning-v14.png)
+4. A window appears confirming if you want to delete the page.
+
+![Delete Warning](../../.gitbook/assets/Delete-warning-v14.png)
+
 5. Click **OK**.
 6. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -31,14 +33,14 @@ To restore deleted pages from the Recycle Bin:
 
 1.  Click **•••** next to the page in the Recycle Bin and select **Restore**.
 
-    ![Move Menu 1](../../../.gitbook/assets/Restore-menu-v14.png)
+![Move Menu 1](../../.gitbook/assets/restore-menu-18.png)
 
-    You can also click **Actions** in the top-right corner of the screen and select **Restore**.
+You can also click on the **...** next to the title field and select **Restore**.
 
-    ![Move Menu 2](../../../.gitbook/assets/action-restore-menu.png)
-2.  A window appears confirming if you want to restore the page.
+2. A window appears confirming if you want to restore the page.
 
-    ![Move Select Structure](../../../.gitbook/assets/restore-option.png)
+![Move Select Structure](../../.gitbook/assets/restore-option.png)
+
 3. Click **Restore**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -56,25 +58,35 @@ After deleting the pages from the **Recycle Bin**, you will **not** be able to r
 
 To empty the Recycle Bin:
 
-1.  Click **•••** next to the **Recycle Bin** and select **Empty recycle bin**.
+1. Select the **Recycle Bin** and select **Empty recycle bin** above the list.
 
-    ![Empty Recycle Bin](../../../.gitbook/assets/Empty-recycle-bin-v14.png)
-2.  A message appears confirming if you want to empty the recycle bin.
+![Empty Recycle Bin](../../.gitbook/assets/empty-recycle-bin-dashboard-18.png)
 
-    ![Empty Recycle Bin Warning](../../../.gitbook/assets/Empty-warning-v14.png)
+2. A message appears confirming if you want to empty the recycle bin.
+
+![Empty Recycle Bin Warning](../../.gitbook/assets/Empty-warning-v14.png)
+
 3. Click **OK**.
+
+Alternatively. click on the **...** when hovering the Recycle Bin, and select **Empty recycle bin...** from the menu.
+
+![Empty Recycle Bin menu](../../.gitbook/assets/empty-recycle-bin-menu-18.png)
 
 To delete individual pages from the Recycle Bin:
 
-1.  Click **•••** next to the page from the Recycle Bin and select **Delete**.
+1. Select the Recycle Bin to open the list of deleted items.
+2. Click on the trash bin icon next to the content you want to permanently delete.
+1. Click **•••** next to the page from the Recycle Bin and select **Delete**.
 
-    ![Delete single page](../../../.gitbook/assets/Delete-single-page-v14.png)
+![Delete single page](../../.gitbook/assets/Delete-single-page-v14.png)
 
-    You can also click **Actions** in the top-right corner of the screen and select **Delete**.
+You can also click **Actions** in the top-right corner of the screen and select **Delete**.
 
-    ![Delete single page option 2](../../../.gitbook/assets/actions-delete-menu.png)
-2.  A message appears confirming if you want to delete the page.
+![Delete single page option 2](../../.gitbook/assets/actions-delete-menu.png)
 
-    ![Delete Warning](../../../.gitbook/assets/Delete-single-page-warning-v14.png)
+2. A message appears confirming if you want to delete the page.
+
+![Delete Warning](../../.gitbook/assets/Delete-single-page-warning-v14.png)
+
 3. Click **OK**.
 4. A confirmation message appears. Click **OK** to dismiss the confirmation message.
