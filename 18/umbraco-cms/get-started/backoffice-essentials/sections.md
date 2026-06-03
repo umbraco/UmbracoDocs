@@ -87,7 +87,7 @@ For more information, see the [Users](../../manage-and-publish-content/users-and
 
 ## Members
 
-The Members section allows you to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
+The Members section allows you to create and manage member profiles and member groups.
 
 For more information, see the [Members](../../manage-and-publish-content/users-and-members/members.md) article.
 
