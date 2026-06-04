@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to log in and out of the Umbraco backoffice.
+---
+
 # Logging In and Out
 
 ## Logging in
@@ -12,7 +17,7 @@ To access the Umbraco Backoffice:
 The address at which you access Umbraco may vary so check with your system administrator.
 {% endhint %}
 
-![Login Screen](../../../.gitbook/assets/login-screen.png)
+![Login Screen](../../.gitbook/assets/login-screen.png)
 
 ## Logging Out
 
@@ -21,4 +26,4 @@ To log out of the Umbraco Backoffice:
 1. Select the profile picture in the top-right of the screen.
 2. Click **Logout**.
 
-![Logout Screen](../../../.gitbook/assets/log-out.png)
+![Logout Screen](../../.gitbook/assets/log-out-18.png)

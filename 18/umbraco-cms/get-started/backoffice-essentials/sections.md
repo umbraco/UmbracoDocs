@@ -8,7 +8,7 @@ description: >-
 
 A section in Umbraco is where you perform specific tasks related to a particular area of Umbraco. For example, Content, Settings, and Users are all sections. You can navigate between the different sections by clicking the corresponding icon in the section menu positioned at the top of the Backoffice.
 
-![The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.](../../../.gitbook/assets/highlight-sections-v14.png)
+![The Section menu is the horizontal menu located at the top of the Umbraco Backoffice.](../../.gitbook/assets/highlight-sections-18.png)
 
 Below is a short overview of the default sections in Umbraco CMS:
 
@@ -19,18 +19,26 @@ The Content section contains the content nodes that make up the website. Content
 Nodes in Umbraco can display the following content states:
 
 * Grayed-out nodes are not published yet.
-* <img src="../../../.gitbook/assets/public-access-icon.png" alt="" data-size="line"> Nodes that are currently locked using the Public Access feature.
-* <img src="../../../.gitbook/assets/collection-icon.png" alt="" data-size="line"> Content nodes that contain a collection of nodes.
+* <img src="../../.gitbook/assets/public-access-icon.png" alt="" data-size="line"> Pages that are currently locked using the Public Access feature.
+* <img src="../../.gitbook/assets/collection-icon-18.png" alt="" data-size="line"> Pages that contain a collection of pages.
 
 To create content, you must define it using Document Types.
 
-For more information, see the [Defining Content](../../../model-your-content/content-types-and-structure/data/defining-content/) article.
+For more information, see the [Defining Content](../../model-your-content/content-types-and-structure/data/defining-content/README.md) article.
 
 ## Media
 
 The Media section contains the media for the website. You can create folders and upload media files, such as images and PDFs. Additionally, you can customize the existing Media Types or define your own from the Settings section.
 
-For more information, see the [Creating Media](../../../model-your-content/content-types-and-structure/data/creating-media/) article.
+For more information, see the [Creating Media](../../model-your-content/content-types-and-structure/data/creating-media/README.md) article.
+
+## Library
+
+The Library section is a central editorial hub for reusable content. Elements are created and managed here, allowing you to define content once and reuse it across as many pages and documents as needed.
+
+By default, all user groups except **Sensitive Data** and **Translators** have access to the Library section.
+
+For more information, see the [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
 
 ## Settings
 
@@ -63,31 +71,31 @@ The Settings section consists of:
 
 The **Settings** section in the Umbraco backoffice has its own set of default dashboards.
 
-For more information, see the [Settings Dashboards](../../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
+For more information, see the [Settings Dashboards](../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
 
 ## Packages
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](../../../extend-your-project/packages/README.md) article.
+For more information, see the [Packages](../../extend-your-project/packages/README.md) article.
 
 ## Users
 
 The Users section allows administrators to manage user accounts, assign permissions, set user roles, and monitor user activity within the backoffice. It provides control over who can access and modify content, media, and settings in the CMS.
 
-For more information, see the [Users](../../../manage-and-publish-content/users-and-members/users/) article.
+For more information, see the [Users](../../manage-and-publish-content/users-and-members/users/README.md) article.
 
 ## Members
 
-The Members section allows to create and manage member profiles, set up member groups, and control Member's access to restricted content on the website.
+The Members section allows you to create and manage member profiles and member groups.
 
-For more information, see the [Members](../../../manage-and-publish-content/users-and-members/members.md) article.
+For more information, see the [Members](../../manage-and-publish-content/users-and-members/members.md) article.
 
-## Dictionary
+## Translation
 
-The Dictionary section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
+The Translation section is where you create and manage Dictionary Items. By managing these dictionary items, you can ensure consistent and efficient content translation and maintenance across different languages.
 
-For more information, see the [Dictionary Items](../../../manage-and-publish-content/publishing-and-workflow/editorial-tools/dictionary-items.md) article.
+For more information, see the [Dictionary Items](../../manage-and-publish-content/publishing-and-workflow/editorial-tools/dictionary-items.md) article.
 
 ## Add-Ons
 
@@ -103,7 +111,7 @@ For example, you can start with core Umbraco features and later decide to integr
 
 When you add an add-on product to Umbraco, it appears in the Backoffice as a new section, seamlessly extending your content management capabilities.
 
-![Add-Ons Section](../../../.gitbook/assets/Add-ons.png)
+![Add-Ons Section](../../.gitbook/assets/Add-ons.png)
 
 If you wish to explore the unique features and use cases of Umbraco products, see the [Exploring the Umbraco Products](https://docs.umbraco.com/welcome/getting-started/exploring-the-umbraco-products) article.
 
@@ -111,7 +119,7 @@ For more information about extending the Umbraco platform through packages and i
 
 ## Help Section
 
-The Help section in Umbraco provides documentation and resources to assist in understanding and effectively using the Umbraco CMS. It typically includes the following in the _Getting Started_ Dashboard:
+The Help section in Umbraco provides documentation and resources to assist in understanding and effectively using the Umbraco CMS. It typically includes the following in the _Welcome to Umbraco_ Dashboard:
 
 * **Documentation**: Comprehensive guides, tutorials, and references covering different aspects of Umbraco.
 * **Community Forums**: Access to forums where you can ask questions, share knowledge, and seek assistance from other Umbraco community members.
@@ -122,10 +130,10 @@ The Help section serves as a valuable resource hub in navigating and leveraging 
 
 ## Custom Sections
 
-Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/sections/section.md).
+Along with the default sections that come with Umbraco, you can create your own [Custom Sections](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/sections/section.md).
 
 ## Access based on User Group
 
 A User can access a particular section based on the User Group permissions.
 
-Learn more about how to configure the permissions in the article about [backoffice users](../../../manage-and-publish-content/users-and-members/users/).
+Learn more about how to configure the permissions in the article about [backoffice users](../../manage-and-publish-content/users-and-members/users/README.md).

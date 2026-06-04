@@ -1,10 +1,15 @@
+---
+description: >-
+  Learn how to find and edit existing content pages in the Umbraco backoffice.
+---
+
 # Editing Existing Content
 
 ## Content Within the Tree View
 
 When you are looking to edit content, locate the _**page**_ you want to edit in the Content tree on the left-side of the screen.
 
-![Viewing Pages in Content Section](../../../.gitbook/assets/View-page-v14.png)
+![Viewing Pages in Content Section](../../.gitbook/assets/view-page-18.png)
 
 To edit existing content, follow these steps:
 
@@ -17,33 +22,16 @@ To edit existing content, follow these steps:
 
 ## View Page Layout
 
-By default, you can view Page layouts in two ways: in a List or in a Grid.
-
-### List
-
-When you [enable Collection](editing-existing-content.md#enabling-collection) on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a list view within the main content area. For more information, see the [Collection](../../../model-your-content/property-editors/built-in-umbraco-property-editors/collection.md) article.
-
-![List](../../../.gitbook/assets/List-view-v14.png)
+By default, you can view Page layouts in two ways: in a List or in a Grid (default).
 
 ### Grid
 
-You can switch to the grid view by clicking the ![layout](../../../.gitbook/assets/layout.png) icon in the top-right of the screen:
+When you enable Collection on a page, its child pages are no longer shown as nested items in the content tree. Instead, the parent page appears as a single node in the tree. Selecting it displays all of its child pages in a grid view within the main workspace area. For more information, see the [Collection](../../model-your-content/property-editors/built-in-umbraco-property-editors/collection.md) article.
 
-![Grid](../../../.gitbook/assets/grid-view-v14.png)
+![Grid](../../.gitbook/assets/collection-grid-view-18.png)
 
-### Enabling Collection
+### List
 
-To enable Collection:
+You can switch to a list view by clicking the layout icon in the top-right of the screen:
 
-1. Go to **Settings**.
-2. Navigate to the Document Type you wish to configure as a Collection.
-3. Go to the **Structure** tab.
-4. Click **Configure as a Collection** in the Collections field.
-5. Select **List View - Content**.
-6. Click **Save**.
-
-![Configure as a Collection](../../../.gitbook/assets/configure-collection-v14.png)
-
-7. Click **Save**.
-
-Additionally, you can sort the list items by the **Name**, **Last Edited**, and **Updated By** columns in either ascending or descending order.
+![List](../../.gitbook/assets/collection-list-view-18.png)
