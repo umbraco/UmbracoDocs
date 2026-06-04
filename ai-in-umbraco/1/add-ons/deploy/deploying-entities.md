@@ -158,7 +158,7 @@ Standard agent `UserGroupPermissions` are keyed by user group GUID. Referenced u
 5. Enter details:
    - **Name:** "OpenAI Production"
    - **Alias:** "openai-production"
-   - **API Key:** `$OpenAI:ApiKey` (configuration reference)
+   - **API Key:** `$Umbraco:AI:Secrets:OpenAIApiKey` (configuration reference)
    - **Organization ID:** (optional)
 6. Click **Save**
 
@@ -176,7 +176,7 @@ Open the file and verify it contains the configuration reference, not the actual
 ```json
 {
   "Settings": {
-    "ApiKey": "$OpenAI:ApiKey"
+    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```
@@ -196,8 +196,12 @@ Before deploying, ensure the target environment has the configuration:
 **appsettings.Production.json:**
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-prod-xyz789..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-prod-xyz789..."
+      }
+    }
   }
 }
 ```
@@ -208,7 +212,7 @@ When you deploy to the target environment (via Umbraco Cloud, Azure DevOps, or o
 
 1. Umbraco Deploy detects the new deployment file
 2. Creates the Connection in the target environment
-3. Resolves `$OpenAI:ApiKey` from the target's `appsettings.json`
+3. Resolves `$Umbraco:AI:Secrets:OpenAIApiKey` from the target's `appsettings.json`
 4. Activates the Connection
 
 ## Step-by-Step: Deploying a Profile
@@ -259,8 +263,12 @@ Here's how the same configuration deploys to different environments:
 **appsettings.Development.json:**
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-dev-abc123..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-dev-abc123..."
+      }
+    }
   }
 }
 ```
@@ -270,8 +278,12 @@ Here's how the same configuration deploys to different environments:
 **appsettings.Staging.json:**
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-staging-def456..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-staging-def456..."
+      }
+    }
   }
 }
 ```
@@ -281,8 +293,12 @@ Here's how the same configuration deploys to different environments:
 **appsettings.Production.json:**
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-prod-xyz789..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-prod-xyz789..."
+      }
+    }
   }
 }
 ```
@@ -296,12 +312,12 @@ Here's how the same configuration deploys to different environments:
   "Alias": "openai-production",
   "ProviderId": "openai",
   "Settings": {
-    "ApiKey": "$OpenAI:ApiKey"
+    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```
 
-Each environment resolves `$OpenAI:ApiKey` from its own configuration, so the same deployment file works everywhere.
+Each environment resolves `$Umbraco:AI:Secrets:OpenAIApiKey` from its own configuration, so the same deployment file works everywhere.
 
 ## Deployment Order
 

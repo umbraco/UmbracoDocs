@@ -89,7 +89,7 @@ var connection = new AIConnection
     ProviderId = "openai",
     Settings = new
     {
-        ApiKey = "$OpenAI:ApiKey"  // Resolved from appsettings.json
+        ApiKey = "$Umbraco:AI:Secrets:OpenAIApiKey"  // Resolved from configuration
     }
 };
 ```
@@ -100,13 +100,19 @@ var connection = new AIConnection
 
 ```json
 {
-    "OpenAI": {
-        "ApiKey": "sk-actual-key-here"
+    "Umbraco": {
+        "AI": {
+            "Secrets": {
+                "OpenAIApiKey": "sk-actual-key-here"
+            }
+        }
     }
 }
 ```
 
 {% endcode %}
+
+References resolve from the `Umbraco:AI:Secrets` and `Umbraco:AI:Variables` sections by default. See [Configuration References](../configuration/ai-options.md#configuration-references).
 
 ## Creating a Connection
 
@@ -122,7 +128,7 @@ var connection = new AIConnection
     ProviderId = "openai",
     Settings = new
     {
-        ApiKey = "$OpenAI:ApiKey",
+        ApiKey = "$Umbraco:AI:Secrets:OpenAIApiKey",
         OrganizationId = "org-123"
     },
     IsActive = true

@@ -61,7 +61,7 @@ POST /umbraco/ai/management/api/v1/connections
 
 ### Settings with Configuration References
 
-Use `$` prefix to reference values from `appsettings.json`:
+Use `$` prefix to reference values from configuration. References resolve from the `Umbraco:AI:Secrets` and `Umbraco:AI:Variables` sections by default:
 
 {% code title="Request with Config Reference" %}
 
@@ -71,7 +71,7 @@ Use `$` prefix to reference values from `appsettings.json`:
     "name": "OpenAI Production",
     "providerId": "openai",
     "settings": {
-        "apiKey": "$OpenAI:ApiKey"
+        "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
     }
 }
 ```
@@ -203,7 +203,7 @@ const connection = await createConnection({
     name: "OpenAI Production",
     providerId: "openai",
     settings: {
-        apiKey: "$OpenAI:ApiKey",
+        apiKey: "$Umbraco:AI:Secrets:OpenAIApiKey",
     },
 });
 ```
