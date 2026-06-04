@@ -31,7 +31,7 @@ public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 }
 ```
 
-When you implement this class you get two methods added. One of them is `ExecuteAsync` which performs the execution of the workflow and the other is a method which validates the workflow settings, we will get back to these settings later on.
+When you implement this class you get two methods added. `ExecuteAsync` performs the execution of the workflow. `ValidateSettings` validates the workflow settings, which are covered later in this article.
 
 Any dependencies required that are registered with the dependency injection container can be provided via the constructor.
 
