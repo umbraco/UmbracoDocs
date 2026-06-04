@@ -7,7 +7,7 @@ description: >-
 # Static Outbound IP Addresses for Umbraco Cloud
 
 {% hint style="info" %}
-This page covers the IP addresses used by **Umbraco Cloud's own services** that connect to your environment. Allowlist these in your firewall so those services can keep reaching your site.
+This page covers the IP addresses used by **Umbraco Cloud's own services** that connect to your environment. Allowlist these in your firewall so Umbraco Cloud services can keep reaching your site.
 
 Looking for your project's own outbound IP addresses to share with an external service? See [External Services](README.md).
 {% endhint %}
