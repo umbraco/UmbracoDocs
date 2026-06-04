@@ -36,7 +36,7 @@ For more information, see the [Creating Media](../../model-your-content/content-
 
 The Library section is a central editorial hub for reusable content. Elements are created and managed here, allowing you to define content once and reuse it across as many pages and documents as needed.
 
-By default, all user groups except Sensitive Data and Translators have access to the Library section.
+By default, all user groups except **Sensitive Data** and **Translators** have access to the Library section.
 
 For more information, see the [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
 
@@ -77,7 +77,7 @@ For more information, see the [Settings Dashboards](../../model-your-content/con
 
 In this section, you can browse the different packages available for your Umbraco solution. You can also get an overview of all the packages you have installed or created.
 
-For more information, see the [Packages](../../extend-your-project/packages/README.md) articles.
+For more information, see the [Packages](../../extend-your-project/packages/README.md) article.
 
 ## Users
 
