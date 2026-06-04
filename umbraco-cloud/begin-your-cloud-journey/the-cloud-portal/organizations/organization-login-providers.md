@@ -271,7 +271,13 @@ Using the "Use Default Access Level" option, all users in your Login Provider wi
 
 ### User Mapping Claim Name
 
-This is used for the name of your provider's default or custom Role claim name. Use this if you want to override the one already entered in the Login Provider configuration.
+Your provider may assign users to specific roles (For example: Admin, Editor, Viewer).
+
+The User Group Claim Name is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user’s permissions.
+
+Example: If your provider sends roles in a claim named user_roles, you would set the User Group Claim Name to user_roles so the system can properly recognize user permissions.
+
+NOTE: If the field is left blank, the system will default to use http://schemas.microsoft.com/ws/2008/06/identity/claims/role as the claim name.
 
 ### Project User Mappings
 
