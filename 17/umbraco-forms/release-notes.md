@@ -31,7 +31,8 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 * Fix subfolder being created at root instead of selected parent [#1730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1730)
 
 ### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (May 14th 2026)
-
+* Widen page and group name inputs in Form designer [#1296](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1296)
+* Prevent field preview clipping [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297)
 * Fix `FormSavingNotification` message display on `CancelOperation` [#1487](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1487)
 * Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
 
