@@ -13,7 +13,7 @@ The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordRe
 ### GetApprovedRecordsFromPage
 
 ```csharp
-PagedResult<Record> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
+PagedModel<Record> GetApprovedRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
 Returns all records with the state set to approved from all Forms on the Umbraco page with the id = `pageId` .
@@ -21,46 +21,46 @@ Returns all records with the state set to approved from all Forms on the Umbraco
 ### GetApprovedRecordsFromFormOnPage
 
 ```csharp
-PagedResult<Record> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
+PagedModel<Record> GetApprovedRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
+Returns all records with the state set to approved from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedModel<Record>`.
 
 ### GetApprovedRecordsFromForm
 
 ```csharp
-PagedResult<Record> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
+PagedModel<Record> GetApprovedRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedResult<Record>`.
+Returns all records with the state set to approved from the Form with the ID = `formId` as a `PagedModel<Record>`.
 
 ### GetRecordsFromPage
 
 ```csharp
-PagedResult<Record> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
+PagedModel<Record> GetRecordsFromPage(int pageId, int pageNumber, int pageSize)
 ```
 
-Returns all records from all Forms on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
+Returns all records from all Forms on the Umbraco page with the id = `pageId` as a `PagedModel<Record>`.
 
 ### GetRecordsFromFormOnPage
 
 ```csharp
-PagedResult<Record> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
+PagedModel<Record> GetRecordsFromFormOnPage(int pageId, Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedResult<Record>`.
+Returns all records from the Form with the id = `formId` on the Umbraco page with the id = `pageId` as a `PagedModel<Record>`.
 
 ### GetRecordsFromForm
 
 ```csharp
-PagedResult<Record> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
+PagedModel<Record> GetRecordsFromForm(Guid formId, int pageNumber, int pageSize)
 ```
 
-Returns all records from the Form with the ID = formId as a `PagedResult<Record>`.
+Returns all records from the Form with the ID = formId as a `PagedModel<Record>`.
 
 ## The returned objects
 
-All of these methods will return an object of type `PagedResult<Record>` so you can iterate through the `Record` objects.
+All of these methods will return an object of type `PagedModel<Record>` so you can iterate through the `Record` objects.
 
 The properties available on a `Record` are:
 
@@ -86,9 +86,8 @@ This extension method handle multi value fields by comma separating the values. 
 Sample script that is outputting comments using a Form created with the default comment Form template.
 
 ```csharp
-@using Umbraco.Core;
-@using Umbraco.Cms.Core.Composing;
 @using Umbraco.Forms.Core.Extensions;
+@using Umbraco.Forms.Core.Services;
 @inject IRecordReaderService _recordReaderService;
 
 <ul id="comments">
@@ -133,8 +132,8 @@ Here is a sample code for retrieving a record in a view.
 	Record? record;
     string submittedEmail;
 
-	if (Guid.TryParse(TempData["UmbracoFormSubmitted"]?.ToString(), out Guid formId) &&
-	    Guid.TryParse(TempData["Forms_Current_Record_id"]?.ToString(), out Guid recordId))
+	if (Guid.TryParse(TempData["UmbracoFormSubmitted"]?.ToString(), out formId) &&
+	    Guid.TryParse(TempData["Forms_Current_Record_id"]?.ToString(), out recordId))
 	{
 
 		form = _formService.Get(formId);

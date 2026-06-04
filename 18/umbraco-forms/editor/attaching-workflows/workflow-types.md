@@ -28,9 +28,10 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 * Workflow Name
 * URL (required)
-* Method
-* XsltFile - used to transform the XML
-* Headers - map the needed files
+* Method - POST, GET, PUT or DELETE
+* XSLT File - used to transform the XML
+* Fields - map form fields to values that are sent as HTTP headers with the request
+* Default Element For Fields - choose whether the field caption or alias is used as the XML element name
 * User
 * Password
 
@@ -158,6 +159,7 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 * Method (required) - POST, GET, PUT or DELETE
 * Standard Fields - optionally include and map standard form information such as name and page URL
 * Fields - map the needed fields
+* Default Element For Fields - when no fields are mapped, choose whether the field caption or alias is used as the element name
 * User
 * Password
 
