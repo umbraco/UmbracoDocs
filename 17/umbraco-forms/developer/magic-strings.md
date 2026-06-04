@@ -1,10 +1,10 @@
 # Magic Strings
 
-Umbraco Forms has some magic strings that enable you to render values from various sources, such as session, cookies and Umbraco page fields.
+Umbraco Forms has some magic strings that enable you to render values from sources such as session, cookies, and Umbraco page fields.
 
 ## Where can I use magic strings?
 
-Magic strings can be used in form fields as a label, description or default value. As an example they can be used in default values in hidden fields - normally in the form of referral codes from a session, cookie or request item.
+Magic strings can be used in form fields as a label, description, or default value. For example, you can use them in default values in hidden fields. These are normally referral codes from a session, cookie, or request item.
 
 These values can also be used for properties and settings in workflows. This means you can use name and email fields from a form to create a personal 'Thank you' email.
 
@@ -27,7 +27,7 @@ You can use it for any available query string variable in the URL as well. If yo
 
 ### Dictionary Items
 
-For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`. When the form is rendered, the placeholder will be replaced by the value of the dictionary item identified by the key, according to the current language.
+For multi-lingual websites, rather than hard-coding labels like form field captions, a dictionary key can be entered as, for example, `#MyKey`. When the form is rendered, the placeholder is replaced by the value of the dictionary item. The item is identified by the key, according to the current language.
 
 In most cases, the field must contain only the magic string for the replacement to be carried out. This makes sense for translated values, as you will want the whole phrase replaced when, for example, using one for a field's placeholder.
 
@@ -37,7 +37,11 @@ We also translate dictionary keys found within the rich text field, which will b
 
 `[%SomeSessionOrCookieItem]` this allows you to display an item from the current `HttpContext.Session` with the key of 'SomeSessionOrCookieItem'. The session key can only contain alphanumeric chars and you cannot use dots for example. `[%Member.Firstname]` cannot be used, but `[%MemberFirstname]` can be used. You would have to fill these session keys yourself.
 
-If the item cannot be found in the collection of session keys, it will then try to find the item from the `HttpContext.Cookies` collection with the same key.
+If the item cannot be found in the collection of session keys, it will then look in the `HttpContext.Cookies` collection. The same key is used.
+
+{% hint style="warning" %}
+`HttpContext.Session` is per-server. In a load-balanced environment without sticky sessions or a shared session store, session values are not shared between nodes. When a later request is handled by a different node, a `[%SomeSessionOrCookieItem]` placeholder may resolve to empty. The cookie fallback is unaffected, as cookies travel with each request. If you need values that work reliably across nodes, use `[@SomeRequestItem]` for request, query, form, or header values. You can also use `[#myUmbracoField]` for Umbraco Page fields.
+{% endhint %}
 
 ### Umbraco Page field
 
@@ -51,7 +55,7 @@ Some extra variables are:
 
 ### Recursive Umbraco Page field
 
-`[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. So if the current page does not contain a value for this then it will request it from the parent up until the root or until it finds a value.
+`[$myRecursiveItem]` this allows you to parse the Umbraco Document Type property myRecursiveItem. If the current page does not contain a value, Umbraco Forms requests it from the parent. It continues up to the root or until it finds a value.
 
 ### Additional data
 
@@ -75,13 +79,13 @@ Some extra variables are:
 
 ### Member properties from a form submission
 
-`{member.FOO}` with the prefix of member, the same syntax will allow you to retrieve information about the submission if it was submitted by a logged-in member.
+`{member.FOO}` with the prefix of member, the same syntax retrieves information about the submission. The syntax works only if the submission was made by a logged-in member.
 
 ## Formatting magic strings
 
 Using a magic string such as in the examples above will output the values exactly as read from the source. It's possible to apply a format string to customize the output.
 
-The syntax follows that of AngularJS filters, i.e. `[<magic-string> | <formatFunction>: <arg1>: <arg2>]`.
+The syntax follows that of AngularJS filters: `[<magic-string> | <formatFunction>: <arg1>: <arg2>]`.
 
 For example, to truncate a string value read from an Umbraco page field with alias `title`, you would use:
 
@@ -121,4 +125,4 @@ The interface implements a single method, `ParsePlaceHolders`, that can be used 
 
 If parameters for the `Record` or `Form` are omitted, magic strings relating to these objects will be removed.
 
-There is also a public extension method `ParsePlaceHolders()` extending the `string` object in the `Umbraco.Forms.Core.Extensions` namespace, again available with some overloads allowing the provision of a `Form` or `Record` object if available.
+A public extension method `ParsePlaceHolders()` also extends the `string` object in the `Umbraco.Forms.Core.Extensions` namespace. The method has overloads that allow the provision of a `Form` or `Record` object.

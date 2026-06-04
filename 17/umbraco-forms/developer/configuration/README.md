@@ -376,6 +376,8 @@ When redirecting following a form submission, a `TempData` value is set that is 
 
 By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
+The setting also improves resilience in load-balanced environments. If the `TempData` value is not available on the node that handles the redirect, the querystring ensures the submission message is still displayed.
+
 ### CultureToUseWhenParsingDatesForBackOffice
 
 This setting has been added to help resolve an issue with multi-lingual setups.
