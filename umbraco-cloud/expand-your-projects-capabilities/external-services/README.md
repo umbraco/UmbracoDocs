@@ -60,6 +60,6 @@ For projects on a Starter plan, you can see the current dynamic outbound IP addr
 
 ## Umbraco Cloud service IP addresses
 
-The IP addresses above are your project's *own* outbound addresses. These are different from the addresses used by Umbraco Cloud's internal services that connect to your environment. These services include both global and regional services.
+The IP addresses above are your project's *own* outbound addresses. These are different from the addresses used by Umbraco Cloud's internal services that connect to your environment. The services include both global and regional services.
 
 If you need to allowlist those services in your firewall, see [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
