@@ -197,6 +197,10 @@ For example, if the roles claim is called `user_roles` in your provider, you set
 If the field is left blank, the system will default to use `http://schemas.microsoft.com/ws/2008/06/identity/claims/role` as the claim name.
 {% endhint %}
 
+{% hint style="info" %}
+This setting only applies to flexible, granular access control at the project level. It does not affect organization-level roles or permissions.
+{% endhint %}
+
 ## Signing in using the Login Provider
 
 When trying to access Umbraco Cloud Portal through `s1.umbraco.io`, you are greeted by an Umbraco ID sign-in screen.
