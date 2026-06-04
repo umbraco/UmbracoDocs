@@ -31,13 +31,14 @@ Document Type approval flow configuration has been decoupled from the workflow s
 
 Licensed feature modules (Content Reviews, Release Sets, Alternate Versions, Content Calendar) are now registered conditionally based on the license state. Previously all packages were registered eagerly regardless of license. Unlicensed features are no longer loaded into the extension registry, reducing unnecessary client-side overhead for unlicensed installations.
 
-#### Bug fixes
+#### Bug fixes and other changes
 
 * Fixes a bug where the content type ID was incorrectly accessed when generating email notifications, which could cause emails to fail or reference the wrong content type [#149](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/149)
 * Fixes a bug where variant-specific Document Type approval configuration was not displaying correctly when switching cultures.
 * Fixes a bug where submitting content for approval did not first validate the document, potentially allowing invalid content to enter a workflow.
 * Fixes a bug in the request-approval visibility condition where the button could appear or disappear incorrectly due to race conditions in context observation.
 * Adds UTC annotation in email date translations. This is a partial fix for [#149](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/149) while we investigate persisting user locales to allow localising datetime values in emails.
+* Adds validate and save before submitting for approval. This change will eliminate cases where a workflow process fails to publish due to invalid content, as the content is validated before submission. This is feature-parity with Workflow 13.
 
 ### [17.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) (May 22 2026)
  * Fixes lingering bugs related to approval group role display [#145](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/145)
