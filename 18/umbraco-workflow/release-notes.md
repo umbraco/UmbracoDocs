@@ -22,11 +22,11 @@ This section contains the release notes for Umbraco Workflow 18, including all c
 
 #### Element type workflow support
 
-Workflows can now be applied to element types, not just documents. This extends the same multi-stage approval workflow model to the new element content type introduced in Umbraco 18. Element folders are also supported, allowing workflow configuration inheritance down nested element folder hierarchies.
+Extends Workflows' multi-stage approval workflow model to the new element content type introduced in Umbraco 18. Element folders are also supported, allowing workflow configuration inheritance down nested element folder hierarchies.
 
 #### Workflow actions
 
-A new extensible action system allows configuring pre-approval and post-approval actions per document type. Actions execute automatically before or after a workflow completes, and can optionally block the workflow on failure.
+A new extensible action system allows configuring pre-approval and post-approval actions per Document Type. Actions execute automatically before or after a workflow completes, and can optionally block the workflow on failure.
 
 Developers can create custom actions by implementing `IWorkflowAction` or extending `WorkflowActionBase<TConfig>`, and register them via `WorkflowActionCollectionBuilder`. A built-in Webhook action ships as the first implementation, sending a POST request with workflow instance details to a configured URL.
 
@@ -40,7 +40,7 @@ This simplification enables element type support and provides a single API surfa
 
 #### Standalone settings workspaces
 
-Content Approvals, Content Reviews, and Release Sets settings have each been converted from tree nodes within a shared settings workspace to standalone workspaces with dedicated URL routes. The previous settings tree is replaced with a menu and sidebar pattern, providing a cleaner, more focused navigation experience.
+Content Approvals, Content Reviews, and Release Sets settings have been converted to standalone workspaces with dedicated URL routes. The previous settings tree is replaced with a menu and sidebar pattern, providing a cleaner, more focused navigation experience.
 
 #### Frontend performance
 
@@ -50,7 +50,7 @@ Content Approvals, Content Reviews, and Release Sets settings have each been con
 
 #### Backend modernization
 
-* Feature-slice namespace reorganization: models and view models previously in flat `Umbraco.Workflow.Core.Models`/`ViewModels` namespaces are now organized into feature-specific namespaces (e.g. `ContentApprovals`, `ApprovalGroups`, `Settings`).
+* Feature-slice namespace reorganization: models and view models previously in flat `Umbraco.Workflow.Core.Models`/`ViewModels` namespaces are now organized into feature-specific namespaces (for example, `ContentApprovals`, `ApprovalGroups`, `Settings`).
 * All previously `[Obsolete]` members from v17 have been removed.
 * Legacy migrations (pre-v17) removed. Fresh installs use a single `InitialCreate` migration.
 * SwaggerGen replaced with `Microsoft.AspNetCore.OpenApi`.

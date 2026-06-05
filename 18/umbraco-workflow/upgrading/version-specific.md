@@ -45,7 +45,10 @@ DTOs were also renamed from `Poco` to `Dto` suffix to remove the implied couplin
 
 The list below includes changes raising validation errors `CP0001`, `CP0002` and `CP0006` between versions 17.3.2 and 18.0.0-rc1.
 
-Of note are the removal of split config models in favor of unified `ConfigUpdateRequestModel`, the consolidation of `NodeId`/`ContentTypeId` into `EntityId` on permission models, and the removal of previously obsoleted members on `IWorkflowInstanceResolver`, `IEmailTemplateLocator`, and `IPropertyValueTransformer`.
+Noteable changes include:
+* removal of split config models in favor of unified `ConfigUpdateRequestModel`
+* consolidation of `NodeId`/`ContentTypeId` into `EntityId` on permission models
+* removal of previously obsoleted members on `IWorkflowInstanceResolver`, `IEmailTemplateLocator`, and `IPropertyValueTransformer`.
 
 #### Removed Types
 
