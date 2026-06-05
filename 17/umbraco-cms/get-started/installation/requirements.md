@@ -19,20 +19,20 @@ Below you can find the minimum requirements to run Umbraco on your machine:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.14 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2025.3.0.1 and higher
-  * [.NET Core CLI](install/install-umbraco-with-templates.md)
+  * [.NET Core CLI](install-umbraco-with-templates.md)
 * [SQL connection string (SQL Server)](../../develop-with-umbraco/configuration/connectionstringssettings.md)
 * [Node.js version 24.11.1](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 Umbraco can be installed with a SQLite or SQL Server database and configured with a [connection string](../../develop-with-umbraco/configuration/connectionstringssettings.md). For SQL Server, [support is aligned with Microsoft](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver17#lifecycle-dates) indicating a minimum supported version of SQL Server 2016.
 
 {% hint style="info" %}
-When using Visual Studio as your primary Integrated Development Environment (IDE) we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+When using Visual Studio as your primary Integrated Development Environment (IDE), we recommend [finding and downloading the Software Development Kits (SDKs) for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
 {% endhint %}
 
 {% hint style="info" %}
-Are you using Microsoft SQL as your data?\
-The Umbraco Data Access Layer (DAL) does not support case-sensitive naming.\
-When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`.\
+Are you using Microsoft SQL as your data?
+The Umbraco Data Access Layer (DAL) does not support case-sensitive naming.
+When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`.
 Learn more about [collation modes](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16) in the official Microsoft documentation.
 {% endhint %}
 
