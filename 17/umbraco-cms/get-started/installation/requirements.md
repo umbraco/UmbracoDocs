@@ -19,7 +19,7 @@ Below you can find the minimum requirements to run Umbraco on your machine:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.14 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2025.3.0.1 and higher
-  * [.NET Core CLI](install-umbraco-with-templates.md)
+  * [.NET Core CLI](install/install-umbraco-with-templates.md)
 * [SQL connection string (SQL Server)](../../develop-with-umbraco/configuration/connectionstringssettings.md)
 * [Node.js version 24.11.1](https://nodejs.org/en/download/prebuilt-installer) and higher
 
@@ -30,9 +30,9 @@ When using Visual Studio as your primary Integrated Development Environment (IDE
 {% endhint %}
 
 {% hint style="info" %}
-Are you using Microsoft SQL as your data?\
-The Umbraco Data Access Layer (DAL) does not support case-sensitive naming.\
-When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`.\
+Are you using Microsoft SQL as your data?
+The Umbraco Data Access Layer (DAL) does not support case-sensitive naming.
+When you use Microsoft SQL as your database, ensure that the database is created using a case-insensitive (CI) collation variant. For example, `SQL_Latin1_General_CP1_CI_AS`.
 Learn more about [collation modes](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16) in the official Microsoft documentation.
 {% endhint %}
 
@@ -59,7 +59,8 @@ You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to mana
 ### Other Recommendations
 
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site. This would typically be **NETWORK SERVICE**.
-* When hosting on Windows Server with IIS, ensure the WebSocket Protocol feature is installed. Umbraco's backoffice preview uses SignalR, which relies on WebSockets for real-time communication (such as live preview updates). Without it, SignalR will fall back to Server-Sent Events and may time out after ~30 seconds, showing a "Could not establish a connection to the server" warning in the preview window. You can install the WebSocket Protocol via **Server Manager → Add Roles and Features → Web Server (IIS) → **Web Server** → Application Development → WebSocket Protocol**.
+* For real-time backoffice features such as live preview, the web server must support WebSockets. SignalR, which Umbraco uses for these features, performs best with WebSocket support available, and without it may fall back to less reliable transports.
+* When hosting on Windows Server with IIS, ensure the WebSocket Protocol feature is installed via **Server Manager → Add Roles and Features → Web Server (IIS) → Web Server → Application Development → WebSocket Protocol**. Without it, SignalR may time out after ~30 seconds in the preview window, showing a `"Could not establish a connection to the server"` warning.
 
 ## Database Account Roles
 

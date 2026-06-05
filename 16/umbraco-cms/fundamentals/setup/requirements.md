@@ -58,7 +58,8 @@ You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to mana
 ### Other Recommendations
 
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site. This would typically be **NETWORK SERVICE**.
-* When hosting on Windows Server with IIS, ensure the WebSocket Protocol feature is installed. Umbraco's backoffice preview uses SignalR, which relies on WebSockets for real-time communication (such as live preview updates). Without it, SignalR will fall back to Server-Sent Events and may time out after ~30 seconds, showing a "Could not establish a connection to the server" warning in the preview window. You can install the WebSocket Protocol via **Server Manager → Add Roles and Features → Web Server (IIS) → **Web Server** → Application Development → WebSocket Protocol**.
+* For real-time backoffice features such as live preview, the web server must support WebSockets. SignalR, which Umbraco uses for these features, performs best with WebSocket support available, and without it may fall back to less reliable transports.
+* When hosting on Windows Server with IIS, ensure the WebSocket Protocol feature is installed via **Server Manager → Add Roles and Features → Web Server (IIS) → Web Server → Application Development → WebSocket Protocol**. Without it, SignalR may time out after ~30 seconds in the preview window, showing a `"Could not establish a connection to the server"` warning.
 
 ## Database Account Roles
 
