@@ -26,7 +26,7 @@ This section contains the release notes for Umbraco Deploy 18, including all cha
 ### [18.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 5th 2026)
 
 * Compatibility with Umbraco CMS 18.0.0-rc1.
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
+  * See full details of breaking changes under [Version Specific Upgrade Details](upgrades/version-specific.md).
 * Add support for transferring, restoring, importing, and exporting elements (publishable, versioned content items in the new Library section).
 * Migrate Nested Content (when `MaxItems = 1`) and single-block-mode Block List configurations to the new `Umbraco.SingleBlock` editor at import time.
 * Major UI/UX overhaul of the Deploy experience in the backoffice. See [Backoffice UX refresh](#backoffice-ux-refresh) below for details.
@@ -39,9 +39,9 @@ This section contains the release notes for Umbraco Deploy 18, including all cha
 
 Version 18 introduces a redesigned Deploy experience in the backoffice:
 
-* A new sidebar/workspace, launched from the environment name header app, replaces the transfer queue dashboard in the Content section. The workspace provides a single overview of the transfer and export queue, import and restore environment operations.
-* Redesigned transfer/queue, restore, compare and export modals with consistent styling, improved error surfacing, and a cleaner status and operation layout.
-* Refreshed status, schema and configuration views in the management dashboard
+* A new sidebar workspace, launched from the environment name header app, replaces the transfer queue dashboard in the Content section. The workspace provides a single overview of the transfer queue, export queue, import, and restore environment operations.
+* Redesigned transfer, queue, restore, compare, and export modals with consistent styling, improved error surfacing, and a cleaner status and operation layout.
+* Refreshed status, schema, and configuration views in the management dashboard.
 
 ## Legacy release notes
 

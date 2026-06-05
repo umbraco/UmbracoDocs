@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Deploy 17, including all cha
 
 ### [17.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0-rc1) (June 4th 2026)
 
-* Prevent `ARRAffinity` cookie loss on load-balanced targets by disabling `HttpClient` handler rotation. Long-running transfers/restores now stay routed to the same target instance.
+* Prevent `ARRAffinity` cookie loss on load-balanced targets by disabling `HttpClient` handler rotation. Long-running transfers and restores now stay routed to the same target instance.
 * Add a cluster-wide Deploy worker lock to prevent concurrent deploys across load-balanced backoffice instances.
 * Process Deploy disk triggers on a single load-balanced server instead of racing on every node.
 
