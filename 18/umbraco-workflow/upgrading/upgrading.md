@@ -8,6 +8,8 @@ If you are migrating from Plumber to Umbraco Workflow, see the [Migrate from Plu
 
 ## Get the latest version of Umbraco Workflow
 
+You must upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco Workflow 18, the closest long-term support version is Umbraco Workflow 17. Once the project is on version 17, you can move on to 18.
+
 To get the latest version of Umbraco Workflow, you can upgrade using either of the two options:
 
 * [NuGet](upgrading.md#nuget)
