@@ -95,6 +95,21 @@ ${ 1 + 2 }                                      // Expression evaluation/calcula
 
 Expressions can reference property aliases, perform calculations, concatenate strings, and more.
 
+### Accessing block settings
+
+When UFM is used in a Block editor label (Block Grid or Block List), the block's **content** properties are referenced directly by their alias, while the block's **settings** properties are exposed under the `$settings` object.
+
+This is available in both the `{= ... }` marker and the `${ ... }` expression syntax:
+
+```markdown
+{=$settings.subtitle}                          // Renders a settings property value
+${ $settings.hideFromMenu ? "Hidden" : "" }    // Conditional based on a settings property
+```
+
+{% hint style="info" %}
+Access to settings values via `$settings` is available from Umbraco 16.2. As the `{= ... }` marker only renders a value, use the `${ ... }` expression syntax when you need conditional logic based on a settings property.
+{% endhint %}
+
 ### Supported operations
 
 - Arithmetic (`+`, `-`, `*`, `/`)
