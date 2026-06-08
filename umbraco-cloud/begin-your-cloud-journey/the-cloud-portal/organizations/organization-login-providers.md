@@ -187,7 +187,7 @@ A common scenario for using a special metadata address is when working with Entr
 
 ### User Mapping Claim Name
 
-Your provider may assign users to specific roles. For example: Admin, Editor, Viewer.
+Your provider may assign users to specific roles. For example: Read and Write.
 
 The **User Mapping Claim Name** is the field in the authentication token (claim) that identifies these roles. The system reads this claim to determine a user's permissions.
 
@@ -195,9 +195,7 @@ For example, if the roles claim is called `user_roles` in your provider, you set
 
 {% hint style="info" %}
 If the field is left blank, the system will default to use `http://schemas.microsoft.com/ws/2008/06/identity/claims/role` as the claim name.
-{% endhint %}
 
-{% hint style="info" %}
 This setting only applies to flexible, granular access control at the project level. It does not affect organization-level roles or permissions.
 {% endhint %}
 
