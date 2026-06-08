@@ -163,10 +163,6 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 * User
 * Password
 
-{% hint style="warning" %}
-The **page URL** standard field is rendered as an absolute URL. This applies in a load-balanced, proxied, or multi-node environment. It also applies when this workflow runs outside a front-end request, such as re-running it from the backoffice. Set `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` to your site's public URL so the page URL resolves correctly on every node. See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings).
-{% endhint %}
-
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 
 The receiving endpoint extracts form fields and values using GET for querystrings and POST for form collections.
