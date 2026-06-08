@@ -49,7 +49,7 @@ Edge analytics data is only available when at least one hostname is selected.
 
 The overview section shows summary tiles for key metrics. Five application metric tiles are visible by default. Two edge metric tiles appear when hostnames are selected.
 
-<figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Six overview tiles: Failed Origin Requests, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Seven overview tiles: Failed Origin Requests, App Performance, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
 
 Each tile shows the headline value for its metric. Tiles may also display a warning or error indicator when usage approaches plan limits.
 
@@ -57,10 +57,14 @@ Each tile shows the headline value for its metric. Tiles may also display a warn
 
 #### Failed Origin Requests
 
-Displays the total count of HTTP 4xx and 5xx responses from the origin.
+Displays the total count of HTTP 4xx and 5xx responses from the origin (labelled "HTTP Status 4xx and 5xx" in the UI).
 
 * **Error indicator** appears when one or more HTTP 5xx (server error) responses occur.
 * **Warning indicator** appears when HTTP 4xx client errors exist, but there are no server errors.
+
+#### App Performance
+
+Displays the average response time in milliseconds across all requests.
 
 #### CPU Usage
 
@@ -127,11 +131,13 @@ The chart also shows [platform and CMS events](#platform-and-cms-events), making
 
 Below the chart, expandable sections show statistical sub-values for each active application metric. These give you the headline numbers behind the chart line: maximum, average, minimum, plan quota where applicable, and a percentage breakdown of HTTP status codes for Failed Origin Requests.
 
-<figure><img src="../../.gitbook/assets/tp-chart-subvalues-accordions.png" alt="Expandable sub-value sections for Failed Origin Requests, CPU Usage, Memory Usage, and App Service Plan CPU."><figcaption><p>Sub-value accordions below the chart.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-chart-subvalues-accordions.png" alt="Expandable sub-value sections for Failed Origin Requests, CPU Usage, Memory Usage, App Service Plan CPU, and App Performance."><figcaption><p>Sub-value accordions below the chart.</p></figcaption></figure>
 
 #### Metric-Specific Notes
 
 **Failed Origin Requests** — the sub-value section breaks down HTTP status codes (for example, 401, 403, 404, 406, 5xx) over the selected time range.
+
+**App Performance** — sub-values show maximum, average, and minimum response time in milliseconds.
 
 **CPU Usage** — for shared plans at 5-minute granularity, the sub-values show maximum CPU time, average CPU time, plan quota, and the maximum / average percentage of the consumed CPU compared to the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans). For dedicated plans, sub-values show CPU time in seconds without the quota comparison.
 
