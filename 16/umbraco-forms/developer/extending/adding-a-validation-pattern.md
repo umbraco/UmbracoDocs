@@ -26,7 +26,7 @@ The following example shows the implementation of a pattern for a United Kingdom
 
 ```csharp
 using Umbraco.Forms.Core.Interfaces;
-namespace Umbraco.Forms.TestSite.Business.ValidationPatterns
+namespace MyFormsExtensions.ValidationPatterns
 {
     public class UkPostCode : IValidationPattern
     {

@@ -113,3 +113,11 @@ To support this, we provide the following SQL scripts:
 
 * Revert database integrity schema changes for 8.7.0+ - [8.7.0-apply-keys-and-indexes\_revert](apply-keys.md#revert-application-of-keys-and-indexes)
 * Revert database integrity schema changes for 8.7.0+ (Forms in database tables) - [8.7.0-apply-keys-and-indexes-forms-in-db\_revert](forms-in-the-database-apply-keys.md#reverting-the-application-of-keys-and-indexes)
+
+## Analytics Processing Health Check
+
+Running this health check will verify that the daily summary processing for [Forms analytics](../../editor/analytics.md) is up to date.
+
+Analytics data is summarized once per day by a background task. The task runs on application startup and on a recurring schedule. If one or more dates have not been processed, analytics data may be incomplete. Queries may also fall back to slower live calculations.
+
+The health check reports a warning when unprocessed dates are found. The background processing task should resolve this automatically. If the warning persists, check the Umbraco log for errors during analytics processing.
