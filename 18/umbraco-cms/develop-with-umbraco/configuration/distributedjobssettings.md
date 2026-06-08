@@ -41,4 +41,4 @@ A job that is marked as running in the database is normally skipped by other ser
 
 For example, a job with a 20-minute `Period` and the default 5-minute `MaximumExecutionTime` is recoverable 25 minutes after the last attempted start.
 
-`MaximumExecutionTime` only applies when a job's `finally` block never runs — for example when the server crashes or is forcibly killed mid-job. When a server shuts down gracefully and the job observes the cancellation token, the host clears the running flag and stamps `LastRun` as part of cleanup. The job is then eligible again on its normal cadence — `Period` after the cancellation moment — and `MaximumExecutionTime` is not used.
+`MaximumExecutionTime` only applies when a job's `finally` block never runs — for example, when the server crashes or is forcibly killed mid-job. When a server shuts down gracefully, and the job observes the cancellation token, the host clears the running flag and stamps `LastRun` as part of the cleanup. The job is then eligible again on its normal cadence — `Period` after the cancellation moment — and `MaximumExecutionTime` is not used.
