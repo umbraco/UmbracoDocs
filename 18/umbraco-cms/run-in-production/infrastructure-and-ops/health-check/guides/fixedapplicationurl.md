@@ -1,6 +1,6 @@
 # Fixed Application Url
 
-_Checks that an application URL is available. This URL is used by features that need an absolute URL, such as password-reset and user-invitation emails sent from the backoffice._
+Checks that an application URL is available. This URL is used by features that need an absolute URL, such as password-reset and user-invitation emails sent from the backoffice.
 
 The check has three possible outcomes:
 
@@ -8,9 +8,9 @@ The check has three possible outcomes:
 | --- | --- |
 | `UmbracoApplicationUrl` is set | **Success** |
 | `UmbracoApplicationUrl` is not set, but `ApplicationUrlDetection` is `FirstRequest` or `EveryRequest` | **Warning** — the application URL is detected from incoming requests. Setting it explicitly is recommended. |
-| `UmbracoApplicationUrl` is not set **and** `ApplicationUrlDetection` is `None` | **Error** — no URL is configured and none will ever be detected. |
+| `UmbracoApplicationUrl` is not set **and** `ApplicationUrlDetection` is `None` | **Error** — no URL is configured, and none will ever be detected. |
 
-When the check returns an **Error**, no application URL is available and nothing will detect one. Features that require an absolute URL - such as password-reset and user-invitation emails - will not work until the configuration is corrected.
+When the check returns an **Error**, no application URL is available, and nothing will detect one. Features that require an absolute URL - such as password-reset and user-invitation emails - will not work until the configuration is corrected.
 
 ## How to fix this health check
 
@@ -20,11 +20,11 @@ There are two ways to resolve this health check. Setting the application URL exp
 
 Provide configuration on the following path: `Umbraco:CMS:WebRouting:UmbracoApplicationUrl`.
 
-This configuration can be setup in a configuration source of your choice. This guide shows how to set it up in one of the JSON file sources.
+This configuration can be set up in a configuration source of your choice. This guide shows how to set it up in one of the JSON file sources.
 
 #### Updating the JSON configuration
 
-The following JSON needs to be merged into one of your JSON sources. By default the following JSON sources are used: `appSettings.json` and `appSettings.<environment>.json`, e.g. `appSettings.Development.json` or `appSettings.Production.json`.
+The following JSON needs to be merged into one of your JSON sources. By default, the following JSON sources are used: `appSettings.json` and `appSettings.<environment>.json` (`appSettings.Development.json` or `appSettings.Production.json`).
 
 ```json
 {
@@ -53,7 +53,7 @@ One example that can be used in production
 ```
 
 {% hint style="info" %}
-If the site is hosted on Umbraco Cloud, changing the above configuration will have no effect. The site will always use the URL set in the\`umbraco-cloud.json\` file, which can not be changed.
+If the site is hosted on Umbraco Cloud, changing the above configuration will have no effect. The site will always use the URL set in the `umbraco-cloud.json` file, which can not be changed.
 {% endhint %}
 
 ### Option 2: Enable application URL detection
