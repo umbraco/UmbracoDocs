@@ -22,5 +22,5 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 
 * Initial release candidate for Umbraco v18. 
   - 3 startup notification handlers are now async (INotificationAsyncHandler); sync Handle removed — override HandleAsync instead.
-  - 7 public Swagger handler classes removed (CMS v18 dropped Swashbuckle); OpenAPI output is unchanged, customizsations move to the Microsoft transformer APIs.
+  - 7 public Swagger handler classes removed (CMS v18 dropped Swashbuckle); OpenAPI output is unchanged, customizations move to the Microsoft transformer APIs.
   - Obsolete Udi-based VariantEditorLayoutItem constructors removed.
