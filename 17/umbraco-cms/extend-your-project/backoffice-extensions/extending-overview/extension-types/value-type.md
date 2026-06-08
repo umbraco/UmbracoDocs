@@ -4,7 +4,7 @@ description: A guide to defining a custom Value Type in Umbraco.
 
 # Value Type
 
-In an extensible system, different parts of the codebase need to agree on what kind of data they are working with. A value type is the contract that makes this possible — a named string constant that identifies the kind of data a value holds. Define one and you get compile-time autocomplete and type checking wherever value type keys are accepted across the system. [Value Summary](value-summary/README.md) extensions are one example of where value types are used to match a value to the right renderer.
+In an extensible system, different parts of the codebase need to agree on what kind of data they are working with. A value type is the contract that makes this possible — a named string constant that identifies the kind of data a value holds. Define one, and you get compile-time autocomplete and type checking wherever value-type keys are accepted across the system. [Value Summary](value-summary/README.md) extensions are one example of where value types are used to match a value to the right renderer.
 
 ## Built-in types
 
