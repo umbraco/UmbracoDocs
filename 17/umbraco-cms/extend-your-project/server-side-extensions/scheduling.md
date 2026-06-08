@@ -183,7 +183,7 @@ public class CleanUpYourRoom : RecurringBackgroundJobBase
 
 ## Complex example
 
-The complex example builds on the previous one by injecting additional services. It includes a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. It also injects an `IOptionsMonitor` to allow the period to be updated while the server is running. Assigning the new value to `Period` raises `PeriodChanged` so the host reschedules. The `IOptionsMonitor.OnChange` registration is disposed via the base class's `Dispose(bool)` hook.
+The complex example builds on the previous one by injecting additional services. It includes a logger to log error messages, a profiler to capture timings, and an `IServerRoleAccessor` to log the current server role. It also injects an `IOptionsMonitor` to allow the period to be updated while the server is running. Assigning the new value to `Period` raises `PeriodChanged`, so the host reschedules. The `IOptionsMonitor.OnChange` registration is disposed via the base class's `Dispose(bool)` hook.
 
 ```csharp
 using System;
@@ -374,7 +374,7 @@ _trigger.TriggerExecution(NextExecutionStrategy.Reset);
 
 ### Manual-only jobs
 
-To create a job that only runs when triggered manually, pass `Timeout.InfiniteTimeSpan` to the base constructor and override `Delay` to the same value. The job is registered and a hosted service is created for it, but no automatic execution occurs.
+To create a job that only runs when triggered manually, pass `Timeout.InfiniteTimeSpan` to the base constructor and override `Delay` to the same value. The job is registered, and a hosted service is created for it, but no automatic execution occurs.
 
 ```csharp
 public MyJob()
@@ -399,7 +399,7 @@ The base class also implements `IDisposable` with a `protected virtual Dispose(b
 * MainDom - The `MainDom` lock ensures that only one instance of Umbraco is running at a time on a given machine. This ensures the integrity of certain files used by Umbraco. See [Host Synchronization](../../run-in-production/infrastructure-and-ops/server-setup/load-balancing/azure-web-apps.md#host-synchronization) for more details.
 * Runtime State - On a fresh install or when waiting for a database upgrade, Umbraco may not be fully up and running yet.
 
-When any of these checks fail, the execution is ignored and the loop waits for `IgnoredDelay` before re-evaluating.
+When any of these checks fail, the execution is ignored, and the loop waits for `IgnoredDelay` before re-evaluating.
 
 ## Notifications
 
@@ -407,19 +407,19 @@ The `RecurringBackgroundJobHostedService` publishes a number of notifications th
 
 The following notifications are available:
 
-* `RecurringBackgroundJobStartingNotification` - published before starting the recurring job
-* `RecurringBackgroundJobStartedNotification` - published after the recurring job has started
-* `RecurringBackgroundJobExecutingNotification` - published before running the job
-* `RecurringBackgroundJobIgnoredNotification` - published when the job is ignored (see `IgnoredDelay`)
-* `RecurringBackgroundJobExecutedNotification` - published after `RunJobAsync()` is called
-* `RecurringBackgroundJobCanceledNotification` - published when the job was cancelled due to application shutdown
-* `RecurringBackgroundJobFailedNotification` - published when an unhandled exception was thrown while running the job
-* `RecurringBackgroundJobStoppingNotification` - published before stopping the recurring job
-* `RecurringBackgroundJobStoppedNotification` - published after the recurring job has stopped
+* `RecurringBackgroundJobStartingNotification` - published before starting the recurring job.
+* `RecurringBackgroundJobStartedNotification` - published after the recurring job has started.
+* `RecurringBackgroundJobExecutingNotification` - published before running the job.
+* `RecurringBackgroundJobIgnoredNotification` - published when the job is ignored (see `IgnoredDelay`).
+* `RecurringBackgroundJobExecutedNotification` - published after `RunJobAsync()` is called.
+* `RecurringBackgroundJobCanceledNotification` - published when the job was cancelled due to application shutdown.
+* `RecurringBackgroundJobFailedNotification` - published when an unhandled exception was thrown while running the job.
+* `RecurringBackgroundJobStoppingNotification` - published before stopping the recurring job.
+* `RecurringBackgroundJobStoppedNotification` - published after the recurring job has stopped.
 
 ### Start/Stop
 
-The Starting/Started and Stopping/Stopped notification pairs are published when the `RecurringBackgroundJobHostedService` is started or stopped. The start event normally occurs soon after application start as part of the .NET WebHost startup process. Similarly, the stop event happens as part of application shutdown.
+The Starting/Started and Stopping/Stopped notification pairs are published when the `RecurringBackgroundJobHostedService` is started or stopped. The start event normally occurs soon after application start as part of the .NET WebHost startup process. Similarly, the stop event happens as part of the application shutdown.
 
 These notifications are there to support low-level debugging of background jobs to ensure they are starting and stopping correctly. Due to the timing of the notification, all handlers associated with these notifications should not depend on any Umbraco services, including database access.
 
