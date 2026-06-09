@@ -32,7 +32,10 @@ A Custom Collection View renders items produced by a [Collection](../collection.
 
 Implement the Collection View as a Lit element that extends `UmbCollectionViewElementBase`. The base class provides the collection items via `_items`, handles selection state, and exposes helper methods such as `_isSelectableItem` and `_isSelectedItem`. Override `render()` to define how the collection is displayed.
 
-Split the view into two elements: a view element that handles the layout and delegates item rendering to a dedicated item element.
+Split the view into two elements:
+
+* A **view element** that handles the overall layout.
+* An **item element** that handles rendering individual items delegated to it by the view element.
 
 {% code title="my-collection-view.ts" %}
 ```typescript
