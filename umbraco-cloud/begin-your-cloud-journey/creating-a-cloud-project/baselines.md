@@ -72,23 +72,24 @@ Each child project shows the **Last update (UTC)**. A child that has not been up
 
 Use the checkboxes to select which child projects you want to update. Click **Update selected** to push changes from the baseline to the child projects.
 
+Pushing changes from the baseline creates an entry in **Project history**. Each targeted child project also gets its own entry.
+
 ### Actions, sorting and filters
 
 Click a column header to sort the list by `Project name` or `Last update (UTC)`.
 
 The **Filter children** input field filters the list by project name.
 
-Use the action bar button with label "Select outdated (#)" to select all children where component versions are behind the baseline. Then click **Update selected** to push changes.
+Use the **Select outdated** button in the action bar to select all children where component versions are behind the baseline. Then click **Update selected** to push changes.
+
+### Outdated components
 
 A child project can show an indicator for components that are behind the baseline. Tracked components include Umbraco CMS, Deploy, Forms, Umbraco ID, `Umbraco.Cloud.Cms`, and more.
 
 <figure><img src="../../.gitbook/assets/baselines-components-behind.gif" alt="Baselines - Show components on child project which are behind the baseline"><figcaption><p>Show components on child project which are behind the baseline.</p></figcaption></figure>
+[Pushing Upgrades to a Child Project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
 
 ## Related articles
-
-{% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md" %}
-[Pushing upgrades to a Child Project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
-{% endcontent-ref %}
 
 {% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md" %}
 [Configuration files](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
