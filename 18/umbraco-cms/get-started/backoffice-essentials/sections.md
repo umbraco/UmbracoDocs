@@ -111,7 +111,7 @@ For example, you can start with core Umbraco features and later decide to integr
 
 When you add an add-on product to Umbraco, it appears in the Backoffice as a new section, seamlessly extending your content management capabilities.
 
-![Add-Ons Section](../../.gitbook/assets/Add-ons.png)
+![Add-Ons Section](../../.gitbook/assets/add-on-sections.png)
 
 If you wish to explore the unique features and use cases of Umbraco products, see the [Exploring the Umbraco Products](https://docs.umbraco.com/welcome/getting-started/exploring-the-umbraco-products) article.
 
