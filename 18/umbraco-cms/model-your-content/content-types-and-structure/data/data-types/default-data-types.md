@@ -6,8 +6,6 @@ description: Learn about the default data types in Umbraco.
 
 Here's a list of the default Data Types that come installed with Umbraco. There are plenty more that you can create based on the installed [Property Editors](../../../property-editors/).
 
-![Umbraco Data Type List](../../../../.gitbook/assets/default-data-types-9.png)
-
 ## Approved Color
 
 Adds a list of approved colors. The approved colors are added as hex values by using the color picker. Optionally, you can enable labels to give the colors different names.
