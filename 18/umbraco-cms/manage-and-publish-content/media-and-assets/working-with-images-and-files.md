@@ -60,7 +60,7 @@ To move Media Items within the Media section:
 1. Select the Media Item you want to move.
 2.  Click **...** next to the Media Item and click **Move to**.
 
-    ![Move media items](../../.gitbook/assets/move-images-v9.png)
+    ![Move media items](../../.gitbook/assets/move-images.png)
 3.  Choose the location where you want to move the Media Item to in the tree structure.
 
     ![Move Media.png](../../.gitbook/assets/Move-media-location.png)
