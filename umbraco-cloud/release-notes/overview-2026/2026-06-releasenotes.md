@@ -18,7 +18,7 @@ The action bar has a button to select all children where component versions are 
 
 The **Manage child projects** page has also been enhanced with more data:
 
-**Last update (UTC)** has been added for each child. If a child has not been updated within the last 5 baseline updates, it shows a generic message. [Cloud issue #148](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/148)
+**Last update (UTC)** has been added for each child. If a child has not been updated within the last 5 baseline updates, it shows a generic message. [Related GitHub issue  ](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/148)
 
 <figure><img src="../../.gitbook/assets/baselines-no-updates-back-five.png" alt="Baselines - Child was not updated in the last 5 updates"><figcaption><p>A child project that has not been updated within the last 5 baseline updates shows a generic message.</p></figcaption></figure>
 

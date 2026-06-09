@@ -60,22 +60,29 @@ If you do not see the content, reload the content tree once the restore is compl
 
 ## Manage child projects
 
-On a Baseline project, a **Baseline** label appears at the bottom of the left-side menu. Click it to open the **Manage child projects** page. You can also go to **Management** > **Baselines**.
+A **Baseline** label appears at the bottom of the left-side menu on a Baseline project. Click it to open the **Manage child projects** page. You can also go to **Management** > **Baselines**. The page lists all child projects connected to the baseline.
 
 <figure><img src="../../.gitbook/assets/baseline-manage-child-project.png" alt="Baselines - Manage child projects page"><figcaption><p>The Manage child projects page lists child projects connected to the baseline.</p></figcaption></figure>
 
-The page lists all child projects connected to the baseline. Use the filter to sort by `Project name` or `Last update (UTC)`. The action bar and column headers are sticky when you scroll through a long list.
-
-Each child project shows the **Last update (UTC)**. If a child has not been updated within the last 5 baseline updates, a generic message is shown instead.
+Each child project shows the **Last update (UTC)**. A child that has not been updated within the last 5 baseline updates shows a generic message instead.
 
 <figure><img src="../../.gitbook/assets/baselines-no-updates-back-five.png" alt="Baselines - Child was not updated in the last 5 updates"><figcaption><p>A child project that has not been updated within the last 5 baseline updates shows a generic message.</p></figcaption></figure>
+
+### Pushing changes from baseline to children
+
+Use the checkboxes to select which child projects you want to update. Click **Update selected** to push changes from the baseline to the child projects.
+
+### Actions, sorting and filters
+
+Click a column header to sort the list by `Project name` or `Last update (UTC)`.
+
+The **Filter children** input field filters the list by project name.
+
+Use the action bar button with label "Select outdated (#)" to select all children where component versions are behind the baseline. Then click **Update selected** to push changes.
 
 A child project can show an indicator for components that are behind the baseline. Tracked components include Umbraco CMS, Deploy, Forms, Umbraco ID, `Umbraco.Cloud.Cms`, and more.
 
 <figure><img src="../../.gitbook/assets/baselines-components-behind.gif" alt="Baselines - Show components on child project which are behind the baseline"><figcaption><p>Show components on child project which are behind the baseline.</p></figcaption></figure>
-
-Use the action bar button to select all children where component versions are behind the baseline. Then click **Update selected** to push changes.
-
 
 ## Related articles
 
