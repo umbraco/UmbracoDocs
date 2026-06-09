@@ -110,10 +110,6 @@ This is available in both the `{= ... }` marker and the `${ ... }` expression sy
 ${ $settings.hideFromMenu ? "Hidden" : "" }    // Conditional based on a settings property
 ```
 
-{% hint style="info" %}
-Access to settings values via `$settings` is available from Umbraco 16.2. As the `{= ... }` marker only renders a value, use the `${ ... }` expression syntax when you need conditional logic based on a settings property.
-{% endhint %}
-
 ### Supported operations
 
 * Arithmetic (`+`, `-`, `*`, `/`)
