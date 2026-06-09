@@ -1,4 +1,4 @@
----
+ ---
 description: >-
   Learn more about the Umbraco backoffice which is the admin side of your
   Umbraco website
@@ -22,7 +22,7 @@ A section in Umbraco is where you do specific tasks related to that section. For
 
 _The **Section menu** is the horizontal menu located on the top of the backoffice._
 
-![Section](../../../.gitbook/assets/highlight-sections-v14.png)
+![Section](../../../.gitbook/assets/highlight-sections-18.png)
 
 [Read more about the section menu](../../../get-started/backoffice-essentials/sections.md).
 
@@ -32,7 +32,7 @@ A tree is a hierarchical list of items related (and usually restricted) to a spe
 
 You can expand trees by clicking the side arrow ![Expand Node](../../../.gitbook/assets/expand-node-v14.png) to the left of the node.
 
-![Tree](../../../.gitbook/assets/highlight-tree-v14.png)
+![Tree](../../../.gitbook/assets/highlight-content-tree-18.png)
 
 [Read more about trees](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/tree/)
 
@@ -40,13 +40,13 @@ You can expand trees by clicking the side arrow ![Expand Node](../../../.gitbook
 
 A node is an item in a tree. Media section items appear as nodes in the Media tree, while pages and content are displayed in the Content tree, and so on.
 
-![Node](../../../.gitbook/assets/highlight-content-node-v14.png)
+![Node](../../../.gitbook/assets/highlight-content-node-18.png)
 
 ## [Dashboards](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/dashboard.md)
 
 A dashboard is the main view you are presented with when entering a section within the backoffice. It can be used to show valuable information to the users of the system.
 
-![Default dashboard in the Content section](../../../.gitbook/assets/highlight-dashboard-v14.png)
+![Default dashboard in the Content section](../../../.gitbook/assets/default-dashboard-content-18.png)
 
 [Read more about Dashboards](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/dashboard.md)
 
@@ -58,7 +58,7 @@ An editor is what you use to edit different items within the backoffice. There a
 
 Content is what you find in the Content section. Each item in the tree is called a **content node**. Each content node in the content tree consists of different fields, and each of them is defined by a Document Type.
 
-![Content](../../../.gitbook/assets/highlight-content-v14.png)
+![Content](../../../.gitbook/assets/highlight-content-18.png)
 
 [Read more about Content](../data/defining-content/)
 
@@ -66,19 +66,19 @@ Content is what you find in the Content section. Each item in the tree is called
 
 Document Types define the types of content nodes that backoffice users can create in the content tree. Each Document Type contains different properties. Each property has a specific Data Type for example text or number.
 
-![Document Types](../../../.gitbook/assets/document-types-v14.png)
+![Document Types](../../../.gitbook/assets/highlight-document-types-18.png)
 
 ### Properties
 
 Every Document Type has properties. These are the fields that the content editor is allowed to edit for the content node.
 
-![Document Type Properties](../../../.gitbook/assets/document-type-properties-v14.png)
+![Document Type Properties](../../../.gitbook/assets/document-type-properties-18.png)
 
 ### [Data Type](../data/data-types/)
 
 Each Document Type property has a Data Type that defines the type of input of that property. Data Types reference a Property Editor and are configured in the Umbraco backoffice in the Settings section. A Data Type can be something basic (text string, number, true/false) or more complex (multi-node tree picker, image cropper, etc).
 
-![Data Types](../../../.gitbook/assets/data-types-v14.png)
+![Data Types](../../../.gitbook/assets/data-types-in-settings-18.png)
 
 [Read more about Data Types](../data/data-types/)
 
@@ -94,7 +94,7 @@ A property editor is a view used by Data Types to insert content into Umbraco. A
 
 Media items are used to store assets like images and video within the Media section and can be referenced from your content.
 
-![Media](../../../.gitbook/assets/Media-v14.png)
+![Media](../../../.gitbook/assets/Media-18.png)
 
 [Read more about Media](../data/creating-media/)
 
@@ -104,13 +104,13 @@ Media Types are similar to Document Types in Umbraco, except they are specifical
 
 Umbraco includes the following default Media Types - **Article**, **Audio**, **File**, **Folder**, **Image**, **Vector Graphics (SVG)**, and **Video**.
 
-![Media Types](../../../.gitbook/assets/Media-Type-v14.png)
+![Media Types](../../../.gitbook/assets/create-media-options.png)
 
 ## [Members](../../../manage-and-publish-content/users-and-members/members.md)
 
 A member is someone who has access to signup, register, and login into your **public website** and is not to be confused with Users.
 
-![Members](../../../.gitbook/assets/Members-v14.png)
+![Members](../../../.gitbook/assets/Members-18.png)
 
 [Read more about Members](../../../manage-and-publish-content/users-and-members/members.md)
 
@@ -118,13 +118,13 @@ A member is someone who has access to signup, register, and login into your **pu
 
 Similar to a Document Type and a Media Type. You are able to define custom properties to store on a member such as Twitter username or website URL.
 
-![Member Types](../../../.gitbook/assets/Member-Types-v14.png)
+![Member Types](../../../.gitbook/assets/member-Type-18.png)
 
 ## [Templates](../../../develop-with-umbraco/templating-and-rendering/templates.md)
 
 A Template is where you define the HTML markup of your website and also where you output the data from your content nodes.
 
-![Templates](../../../.gitbook/assets/template-v14.png)
+![Templates](../../../.gitbook/assets/templating-18.png)
 
 [Read more about Templates](../../../develop-with-umbraco/templating-and-rendering/templates.md)
 
@@ -132,16 +132,16 @@ A Template is where you define the HTML markup of your website and also where yo
 
 A package is the Umbraco term for an add-on or plugin used to extend the core functionalities in Umbraco. The packages can be found on the [Umbraco Marketplace](https://marketplace.umbraco.com/), and the can also be browsed directly in the backoffice of the Umbraco CMS.
 
-![Packages](../../../.gitbook/assets/packages-v14.png)
+![Packages](../../../.gitbook/assets/packages-18.png)
 
 ## Users
 
 A user is someone who has access to the **Umbraco backoffice** and is not to be confused with Members. When Umbraco has been installed a user will automatically be generated with the login (email) and password entered during installation. Users can be created, edited, and managed in the User section.
 
-![Users](../../../.gitbook/assets/Users-v14.png)
+![Users](../../../.gitbook/assets/users-18.png)
 
 ## [Document Blueprints](document-blueprints.md)
 
 Document Blueprint provide a blueprint for content nodes based on an existing node.
 
-![Document Blueprint](../../../.gitbook/assets/document-blueprint-v16.png)
+![Document Blueprint](../../../.gitbook/assets/document-blueprint-18.png)
