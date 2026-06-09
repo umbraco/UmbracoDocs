@@ -42,7 +42,7 @@ You can create your own Member Types and add tabs, groups and properties as you 
 
 Go to the **Settings** section, click **...** next to **Member Types** and select **Create**. You will now be taken to the Member Type editor that is used to define and edit the Member Type. Name the new Member Type and click **Save**.
 
-![Member Type Editor](../../.gitbook/assets/member-type-composition.png)
+![Member Type Editor](../../.gitbook/assets/member-type-composition.PNG)
 
 Once created, the Member Type will have no properties, so you have the freedom to add your own properties or compositions.
 
@@ -52,7 +52,7 @@ When creating a Member Type you can assign compositions. Compositions allow you 
 
 For example on the member type that you have created, click on **Composition**. Then you can choose the existing **Member** type which then you will inherit its tabs, groups, and properties.
 
-<figure><img src="../../.gitbook/assets/member-type-composition-setting.png" alt=""><figcaption><p>Composition Member Type</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/member-type-composition-setting.PNG" alt=""><figcaption><p>Composition Member Type</p></figcaption></figure>
 
 The default **Member** type has a **Membership** group which includes `umbracoMemberComments` property along with the other default properties. The other properties can be seen only in the **Member** tab when creating a member.
 
