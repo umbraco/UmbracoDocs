@@ -89,7 +89,9 @@ To edit properties on a single media item, click the name of the item, which you
 
 ![Edit media item](../../../../.gitbook/assets/hover-over.png)
 
-From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](../../../../.gitbook/assets/switch-view-v14.png)
+From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.
+
+![Media Section - List view](../../../../.gitbook/assets/switch-view-v14.png)
 
 ## Using media items in the Content section
 
@@ -168,8 +170,9 @@ Next up, we will create a folder to hold the employee images. We could use the e
 5. Click **Configure as a Collection** under **Presentation.**
 6. Choose **List view - Media.**
 
-![Configure Collection](../../../../.gitbook/assets/configure-collection-v14.png)\
-7\. Click **Save**.
+![Configure Collection](../../../../.gitbook/assets/media-configure-media-list-collection.png)
+
+7. Click **Save**.
 
 The new folder is created under the Media Types folder. We also need to only allow the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
 
@@ -185,7 +188,10 @@ The new folder is created under the Media Types folder. We also need to only all
 
 1. Go to the **Media** section.
 2. Select **...** next to Media.
-3. Click **Create** > **Employee Images** folder.![Employee Images](../../../../.gitbook/assets/employee-images-folder.png)
+3. Click **Create** > **Employee Images** folder.
+
+![Employee Images](../../../../.gitbook/assets/employee-images-folder-18.png)
+
 4. Name it _Employee Images_.
 5. Click **Save**.
 
