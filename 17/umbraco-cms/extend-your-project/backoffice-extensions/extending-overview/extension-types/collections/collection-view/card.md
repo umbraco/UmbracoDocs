@@ -1,3 +1,7 @@
+---
+description: Learn how to register a Cards Collection View.
+---
+
 # Card Collection View
 
 When you want to display entities as cards within a collection, use the Card Collection View Kind. This will render a card-style grid layout. Each card renders a default layout with the entity's name and icon. You can further customize the card layout by registering a custom card collection item as needed.

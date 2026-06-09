@@ -1,3 +1,7 @@
+---
+description: Learn how to register a Table Collection View.
+---
+
 # Table Collection View
 
 When you want to display entities in a tabular layout within a collection, use the Table Collection View Kind. The table renders without a custom element — you only need to define which columns to show in the manifest.

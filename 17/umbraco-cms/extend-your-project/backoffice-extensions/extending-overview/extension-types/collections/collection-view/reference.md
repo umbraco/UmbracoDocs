@@ -1,3 +1,7 @@
+---
+description: Learn how to register a References Collection View.
+---
+
 # Reference Collection View
 
 When you want to display entities as a list of references within a collection, use the Reference Collection View Kind. This will render a basic list layout. Each item renders a default layout with the entity's name and icon. You can further customize the item layout by registering a custom Ref Collection Item when needed.

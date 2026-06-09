@@ -1,3 +1,7 @@
+---
+description: Learn how to register a custom Collection View.
+---
+
 # Custom Collection View
 
 When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
