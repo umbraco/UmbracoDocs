@@ -29,7 +29,7 @@ Follow these steps to create a new Dropdown Data Type:
 9. Add **options**.
 10. **Save** the Data Type once you have added the required configuration.
 
-![Dropdown List](../../../../.gitbook/assets/dropdown-data-type-sample.png)
+![Dropdown List](../../../../.gitbook/assets/dropdown-data-type-sample-18.png)
 
 {% hint style="info" %}
 **Data Type configuration**
