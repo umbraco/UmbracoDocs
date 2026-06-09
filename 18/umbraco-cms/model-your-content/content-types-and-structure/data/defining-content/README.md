@@ -25,10 +25,10 @@ A Document Type contains fieldsets (or groups) where you can apply rules about w
 A Document Type is created using the Document Type editor in the **Settings** section.
 
 * Go to the **Settings** section in the backoffice.
-* On the **Document Types** node click the menu icon (•••) to bring up the context menu.
+* On the **Document Types** node click the **+** to bring up the Create menu.
 * Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
 
-![CreateDoctype](../../../../.gitbook/assets/CreateDoctype.png)
+![CreateDoctype](../../../../.gitbook/assets/create-document-type-18.png)
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
 
@@ -58,9 +58,9 @@ To set an icon for the Document Type click the document icon in the top left cor
 
 This will allow this Document Type to be created as the first content in the **Content** section.
 
-* Go to the **Structure** tab
-* Tick the **Allow as root** toggle
-* Save the Document Type by clicking **save** in the bottom right corner.
+1. Go to the **Structure** tab
+2. Tick the **Allow as root** toggle
+3. Save the Document Type by clicking **save** in the bottom right corner.
 
 ![Allow as root](../../../../.gitbook/assets/docTypePermissions.png)
 
@@ -68,12 +68,15 @@ This will allow this Document Type to be created as the first content in the **C
 
 Now that we have the Document Type in place, we can create the content.
 
-* Go to the **Content section**
-* Click on the menu icon next to **Content**
-* Select the "`Home`" Document Type. We'll name it "`Home`"
-* Then click the **Save and Publish** button.
+1. Go to the **Content section**
+2. Click on **+** next to **Content**.
+3. Select the "`Home`" Document Type. Name it "`Home`"
 
-![Create homepage](../../../../.gitbook/assets/createHomepage.png)
+![Choose which Document to use for creating the content item](../../../../.gitbook/assets/select-doc-type.png)
+
+4. Click **Save and Publish**.
+
+![Create homepage](../../../../.gitbook/assets/create-homepage-18.png)
 
 As we haven't created our properties, all we can see on the "`Home`" node is the Properties tab. This tab contains the default properties that are available on all content nodes in Umbraco.
 
@@ -97,26 +100,22 @@ The editor determines what type of data the property will store and the input me
 
 Some editors require configuration where a configured editor is saved as a Data Type and can be reused for multiple properties and document types. These can be seen in the **Settings** section under **Data Types**.
 
-* Go to the **Settings section**
-* Expand **Document Types** by clicking the arrow to the left
-* Select the "`Home`" Document Type.
-
-{% hint style="info" %}
-**Keyboard Shortcuts**
-
-Keyboard shortcuts are available when you are working with the Document Type editor. To see which shortcuts are available, click **ALT + SHIFT + K**.
-{% endhint %}
+1. Go to the **Settings** section.
+2. Expand **Document Types** by clicking the arrow to the left.
+3. Select the "`Home`" Document Type.
 
 ### Adding groups
 
-Before we start adding properties to the Document Type we need to create a group to hold the property.
+It is recommended to sort the properties into groups, however this is not a requirement.
+
+Create a group to hold the first properties for the Home Document Type:
 
 * Click **Add group** and name the group "`Content`".
 
-<figure><img src="../../../../.gitbook/assets/image (5).png" alt="Creating groups"><figcaption><p>Creating groups</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/add-property-groups.png" alt="Creating groups"><figcaption><p>Creating groups</p></figcaption></figure>
 
 {% hint style="info" %}
-_If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**._
+If you have multiple groups and/or properties you can order them with drag and drop or by entering a numeric sort order value. This is done by clicking **Reorder**.
 {% endhint %}
 
 To convert a group to a tab, see the [Convert a group to a tab](adding-tabs.md#convert-a-group-to-a-tab) section in the [Using Tabs](adding-tabs.md) article.
@@ -125,11 +124,11 @@ To convert a group to a tab, see the [Convert a group to a tab](adding-tabs.md#c
 
 Now that we have created a group we can start adding properties. Let's add a Rich Text editor to the Content group.
 
-* Click the **Add property** link in the **Content** group. This opens the property settings dialog. Here you can set the metadata for each property (name, alias, description)
-* **Choose** which Data Type/property editor to use, and add validation if needed.
-* Give the property a **name.** The name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "`Body Text`".
+1. Click the **Add property** link in the **Content** group. This opens the property settings dialog. Here you can set the metadata for each property (name, alias, description)
+2. **Choose** which Property Editor to use, and add validation if needed.
+3. Give the property a **name**. The name will be shown to the editor to make it relevant and understandable. Notice the alias is automatically generated based on the name. We'll name this "`Body Text`".
 
-![Adding a property](../../../../.gitbook/assets/addproperty.png)
+![Adding a property](../../../../.gitbook/assets/add-property.png)
 
 #### Property Editors
 
@@ -137,10 +136,12 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 * To make it easier to find what you need use the **search field** to filter by typing "`Rich`". Filtering will display configured properties first (under **Available configurations**) and all available editors under that.
 * Select the **Rich Text editor** under **Create new**. This will let you configure the editor settings - the Rich Text editor for this property.
 
-![Choosing the Rich Text editor](../../../../.gitbook/assets/selectEditor.png)
+![Choosing the Rich Text editor](../../../../.gitbook/assets/select-property-editor-18.png)
 
 {% hint style="info" %}
-The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. Flor example: _Home - Body Text - Rich Text editor_.
+
+The name of the Data Type is based on the name of the Document Type, the name of the property, and the property editor. For example: _Home - Body Text - Rich Text editor_.
+
 {% endhint %}
 
 * Let's **rename** it to "`Basic Rich Text editor`" and only select the most necessary options.
@@ -246,7 +247,7 @@ This is *italic*
 </details>
 ```
 
-![Markdown description example](../../../../.gitbook/assets/md-description-v17.gif)
+![Markdown description example](../../../../.gitbook/assets/markdown-property-description.png)
 
 ## 5. Defining child nodes
 
@@ -281,13 +282,13 @@ Document Types are flexible and can be used for defining pieces of reusable cont
 
 ## 6. Exporting/Importing the Document Type
 
-You can also export document types from an already existing project/installation and import them into another project/installation.
+You can export Document Types from an already existing project/installation and import them into another project/installation.
 
 * Go to the **Settings** section
 * Click **...** next to the **Document type**
 * Select **Export**. When you click on the **Export** button, the Document Type is saved as a \*.udt file.
 
-![Exporting a Document Type](../../../../.gitbook/assets/export-document-type.png)
+![Exporting a Document Type](../../../../.gitbook/assets/export-document-type-18.png)
 
 To import a Document Type:
 
@@ -297,11 +298,14 @@ To import a Document Type:
 * Click on the **Import** button and browse to the Document Type you exported. The **Name** and **Alias** of the Document Type are displayed.
 * Click **Import** to complete the process.
 
-![Importing a Document Type](../../../../.gitbook/assets/import-document-type.png)
+![Importing a Document Type](../../../../.gitbook/assets/import-document-type-18.png)
 
 {% hint style="info" %}
-1. If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
-2. You cannot export/import document types on Umbraco Cloud.
+
+If your Document Type contains compositions or inherits from another Document Type, then you need to export/import the Composition/Document Type too.
+
+You cannot export/import Document Types on Umbraco Cloud.
+
 {% endhint %}
 
 ## More information
