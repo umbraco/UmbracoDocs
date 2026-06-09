@@ -62,7 +62,7 @@ It is possible to add more groups and more properties to each of the Member Type
 
 Member Groups define roles for your members that can be used for role-based protection. A member can be in multiple groups.
 
-![Creating a Member Group](../../.gitbook/assets/Member-group1.PNG)
+![Creating a Member Group](../../.gitbook/assets/Member-group.png)
 
 To create a new Member Group click the menu icon next to the **Member Groups** node in the Members section. Choose **Create**, name the group, and save the group.
 
@@ -70,7 +70,7 @@ To create a new Member Group click the menu icon next to the **Member Groups** n
 
 To assign a member to a specific group find the member you wish to assign and find the **Properties** group. Here you can see which groups the member is already part of. You can also add the member to more groups or remove the member from already assigned groups:
 
-![Assigning a Member Group](../../.gitbook/assets/assign-member-group1.PNG)
+![Assigning a Member Group](../../.gitbook/assets/assign-member-group.png)
 
 ## Technical
 
