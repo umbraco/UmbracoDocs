@@ -33,19 +33,17 @@ You can upload media in two different ways:
 
 From the **Media** section in the Umbraco backoffice, you can add new media items by following either of the approaches defined below:
 
-*   Use the **Create** dialog to create a new Media item in the Media section
-
+*  Use the **Create** dialog to create a new Media item in the Media section
     * The Media item will be created based on the type you choose.
     * Upload the image or file, give the Media item a name, and click **Save**.
 
-    <figure><img src="../../../../.gitbook/assets/image (12).png" alt="Upload Media - Create Button"><figcaption><p>Upload Media - Create Button</p></figcaption></figure>
-*   Use the Drag and drop feature to add your files to the Media section.
+![Upload Media - Create Button](../../../../.gitbook/assets/create-media-options-18.png)
 
+*  Use the Drag and drop feature to add your files to the Media section.
     * Umbraco will automatically detect the Media Type and create the Media item.
     * You can drop entire folder structures to recreate that same structure in the Media section.
 
-    <figure><img src="../../../../.gitbook/assets/image (13).png" alt="Upload Media - Media section"><figcaption><p>Upload Media - Media section</p></figcaption></figure>
-
+![Upload Media - Media section](../../../../.gitbook/assets/media-drag-upload-18.gif)
 ### Add media through the Content section
 
 New media items can be added to your site without interrupting the content creation flow. This can be done following either of the two approaches outlined below.
@@ -53,11 +51,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](../../../../.gitbook/assets/upload-images-from-content.gif)
+![Drag and drop images directly into the content](../../../../.gitbook/assets/media-content-drag-upload-18.gif)
 
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](../../../../.gitbook/assets/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](../../../../.gitbook/assets/media-content-upload-18.gif)
 
 ## Creating a folder
 
@@ -83,7 +81,7 @@ Learn more about each Media Type in [the article about default Media Types](defa
 
 The default view for the Media section is a card view that lets you preview the different files that have been uploaded.
 
-<figure><img src="../../../../.gitbook/assets/image (14).png" alt="Media Section - Cardview"><figcaption><p>Media Section - Cardview</p></figcaption></figure>
+![Default grid view in the Media section](../../../../.gitbook/assets/media-default-view.png)
 
 By selecting multiple media items it is possible to perform bulk operations like moving or deleting the items.
 
@@ -91,7 +89,9 @@ To edit properties on a single media item, click the name of the item, which you
 
 ![Edit media item](../../../../.gitbook/assets/hover-over.png)
 
-From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.![Media Section - List view](../../../../.gitbook/assets/switch-view-v14.png)
+From the top-right corner of the Media section, you can toggle between the list and grid view. There is also an option to search for the items in the Media section.
+
+![Media Section - List view](../../../../.gitbook/assets/switch-view-v14.png)
 
 ## Using media items in the Content section
 
@@ -170,8 +170,9 @@ Next up, we will create a folder to hold the employee images. We could use the e
 5. Click **Configure as a Collection** under **Presentation.**
 6. Choose **List view - Media.**
 
-![Configure Collection](../../../../.gitbook/assets/configure-collection-v14.png)\
-7\. Click **Save**.
+![Configure Collection](../../../../.gitbook/assets/media-configure-media-list-collection.png)
+
+7. Click **Save**.
 
 The new folder is created under the Media Types folder. We also need to only allow the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Structure** tab.
 
@@ -187,7 +188,10 @@ The new folder is created under the Media Types folder. We also need to only all
 
 1. Go to the **Media** section.
 2. Select **...** next to Media.
-3. Click **Create** > **Employee Images** folder.![Employee Images](../../../../.gitbook/assets/employee-images-folder.png)
+3. Click **Create** > **Employee Images** folder.
+
+![Employee Images](../../../../.gitbook/assets/employee-images-folder-18.png)
+
 4. Name it _Employee Images_.
 5. Click **Save**.
 
