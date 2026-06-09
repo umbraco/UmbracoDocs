@@ -13,7 +13,7 @@ To add a tab, follow these steps:
 1. Go to **Settings**.
 2.  Create or select a **Document Type/Media Type/Member Type** and click **Add tab**.
 
-    ![Add tab](../../../../.gitbook/assets/Add-tab.png.png)
+![Add tab](../../../../.gitbook/assets/add-tab-document-type-18.png)
 
 {% hint style="info" %}
 When adding the first tab, all existing groups are automatically added to the tab.
@@ -26,13 +26,15 @@ To reorder tabs, follow these steps:
 1. Go to **Settings**.
 2. Select a **Document Type/Media Type/Member Type**.
 3. Select **Reorder**.
-4.  You can drag the tab where you want, manually add a numeric value next to the tab name or use the arrows to set a value.
 
-    This is important when using compositions, as you want to always display a tab/group at a certain position by setting a manual numeric value.
+You can drag the tab where you want, manually add a numeric value next to the tab name or use the arrows to set a value.
 
-    ![Reorder tabs](../../../../.gitbook/assets/Reorder-tabs.gif)
-5. Select **I am done reordering**.
-6. Click **Save**.
+This is important when using compositions, as you want to always display a tab/group at a certain position by setting a manual numeric value.
+
+![Reorder tabs](../../../../.gitbook/assets/reorder-tabs-18.gif)
+
+4. Select **I am done reordering**.
+5. Click **Save**.
 
 ## Convert a group to a tab
 
@@ -61,4 +63,4 @@ To manage the **Generic** tab on a **Document Type/Media Type**:
 2. Click **Add tab** and enter the **Name** for the tab. All existing groups and properties are added to the tab.
 3.  Go to the **Document Type/Media Type**, the **Generic** tab will now be replaced by the tab from the composition.
 
-    ![Composition Add Tab](../../../../.gitbook/assets/Composition-add-tab.gif)
+![Composition Add Tab](../../../../.gitbook/assets/manage-generic-tab-18.gif)
