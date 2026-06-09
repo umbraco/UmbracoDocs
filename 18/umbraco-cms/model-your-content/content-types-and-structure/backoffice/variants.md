@@ -46,7 +46,7 @@ Now that there are two languages to vary the content with, it needs to be enable
 
 ![Allowing Variance on Document Types](../../../.gitbook/assets/allow-variance-on-doctype-18.png)
 
-All new properties on a Document Type were **Allow vary by culture** is enabled, will inheritently be variable by culture.
+All new properties on a Document Type were **Allow vary by culture** is enabled, will inherit the ability to be varied by culture.
 
 It is also possible to make the properties shared across cultures. This means that the value added to the default language, will also be applied to all other languages. 
 

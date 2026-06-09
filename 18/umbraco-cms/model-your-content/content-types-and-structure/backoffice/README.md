@@ -94,7 +94,7 @@ A property editor is a view used by Data Types to insert content into Umbraco. A
 
 Media items are used to store assets like images and video within the Media section and can be referenced from your content.
 
-![Media](../../../.gitbook/assets/Media-18.png)
+![Media](../../../.gitbook/assets/media-18.png)
 
 [Read more about Media](../data/creating-media/)
 
@@ -110,7 +110,7 @@ Umbraco includes the following default Media Types - **Article**, **Audio**, **F
 
 A member is someone who has access to signup, register, and login into your **public website** and is not to be confused with Users.
 
-![Members](../../../.gitbook/assets/Members-18.png)
+![Members](../../../.gitbook/assets/members-18.png)
 
 [Read more about Members](../../../manage-and-publish-content/users-and-members/members.md)
 
@@ -118,7 +118,7 @@ A member is someone who has access to signup, register, and login into your **pu
 
 Similar to a Document Type and a Media Type. You are able to define custom properties to store on a member such as Twitter username or website URL.
 
-![Member Types](../../../.gitbook/assets/member-Type-18.png)
+![Member Types](../../../.gitbook/assets/member-type-18.png)
 
 ## [Templates](../../../develop-with-umbraco/templating-and-rendering/templates.md)
 
