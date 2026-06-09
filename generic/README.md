@@ -19,6 +19,8 @@ layout:
     visible: false
   tags:
     visible: true
+  actions:
+    visible: true
 ---
 
 # Umbraco Documentation
@@ -47,7 +49,17 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 
 {% include ".gitbook/includes/dxp-products.md" %}
 
+
+
 ### Integrations & Extensions
+
+{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eAvcb24lmqdKvNUvRquG/" %}
+[AI in Umbraco](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eAvcb24lmqdKvNUvRquG/)
+{% endcontent-ref %}
+
+{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/UBKYuzx242FNSyaztYGS/" %}
+[Umbraco in AI](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/UBKYuzx242FNSyaztYGS/)
+{% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/" %}
 [Umbraco DXP](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/)
