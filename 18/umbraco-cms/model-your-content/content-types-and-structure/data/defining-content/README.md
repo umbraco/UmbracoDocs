@@ -28,7 +28,7 @@ A Document Type is created using the Document Type editor in the **Settings** se
 * On the **Document Types** node click the **+** to bring up the Create menu.
 * Here choose **Document Type with Template**. This will create a new Document Type with a template. The Template can be found under **Templates** in the **Settings** section which will be assigned as the default template for the Document Type.
 
-![CreateDoctype](../../../../.gitbook/assets/create-document-type-18.png)
+![Create Document Type](../../../../.gitbook/assets/create-document-type-18.png)
 
 You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
 
@@ -267,7 +267,7 @@ Before creating a Text Page in **Content** section, allow the Text Page Document
 
 * **Select** the "`Home`" Document Type
 * Go to the **Structure** group.
-* Click **Add child**
+* Click **Choose**
 * **Select** "`Text Page`".
 
 <figure><img src="../../../../.gitbook/assets/image (8).png" alt="Allow Child page"><figcaption><p>Allow Child page</p></figcaption></figure>

@@ -55,7 +55,7 @@ Converting a tab back into a group is not possible, as tabs can contain groups, 
 
 Once you start adding tabs, you might see a “Generic” tab appear. This is done to hold groups and properties that are not assigned to a tab. For example, a group of properties coming from a composition that has no tab. In order to display the groups and properties correctly and have a solid data structure, they will be displayed under the “Generic” tab.
 
-![Generic-tab](../../../../.gitbook/assets/Generic-tab.png)
+![Generic-tab](../../../../.gitbook/assets/generic-tab-18.png)
 
 To manage the **Generic** tab on a **Document Type/Media Type**:
 
