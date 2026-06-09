@@ -42,13 +42,17 @@ Now that there are two languages to vary the content with, it needs to be enable
 
 1. Go to the Document Type in the **structure** section.
 2. Open the **settings** page.
-3.  Toggle **Allow vary by culture**.
+3. Toggle **Allow vary by culture**.
 
-    <figure><img src="../../../.gitbook/assets/allow-variance2.png" alt=""><figcaption></figcaption></figure>
+![Allowing Variance on Document Types](../../../.gitbook/assets/allow-variance-on-doctype-18.png)
 
-To allow a property on the Document Type to be varied it will have to be enabled for the property:
+All new properties on a Document Type were **Allow vary by culture** is enabled, will inheritently be variable by culture.
 
-![Allowing Variance on properties](../../../.gitbook/assets/varying-properties.png)
+It is also possible to make the properties shared across cultures. This means that the value added to the default language, will also be applied to all other languages. 
+
+Set up property sharing, by enabling **Shared across cultures** in the Variation group when defining your properties:
+
+![Allowing Variance on properties](../../../.gitbook/assets/sharing-properties-18.png)
 
 ## Working with Language Variants on content
 
@@ -57,7 +61,7 @@ When you return to your content node you will notice two things:
 1. At the top of the Content tree there will now be a dropdown so you can show the Content tree in the language of your choice.
 2.  To the right of the content name there is now a dropdown where you can select a language. You can also open a split view so you can see two languages at once.
 
-    ![Allowing Variance on properties](../../../.gitbook/assets/Allowing-Variance-on-properties.png)
+![Allowing Variance on properties](../../../.gitbook/assets/working-with-variants-on-content-18.png)
 
 To read about how you render variant content in Templates, check out the [rendering content section](../../../develop-with-umbraco/templating-and-rendering/design/rendering-content.md).
 
@@ -72,17 +76,13 @@ The Info content app should now show specific URLs for your language variants.
 
 ## Control User Group permissions on language variants
 
-{% hint style="info" %}
-This feature is available from Umbraco version 10.2.
-{% endhint %}
-
 When you are working with a multilingual site you might want to control who can edit the different variations of the content on the website.
 
 This can be controlled on a User Group level. All default User Groups, except the Sensitive data group, have access to all languages out of the box.
 
 When "Allow access to all languages" is not checked, languages can be added and/or removed. This is to determine which variants the users in the user group have access to.
 
-![Assign access to all or individual languages on the User Group](../../../.gitbook/assets/Assign-Access-Languages.png)
+![Assign access to all or individual languages on the User Group](../../../.gitbook/assets/assign-access-language-18.png)
 
 {% hint style="info" %}
 Even though the language permissions have been set, a user will still be able to view and browse all the language variations. The permission setting will ensure that only the added languages are editable by users of the User Group.
@@ -90,6 +90,5 @@ Even though the language permissions have been set, a user will still be able to
 
 ## Related Links
 
-* [Umbraco 8: Language Variants (official blog post from Umbraco HQ)](https://umbraco.com/blog/umbraco-8-language-variants/)
 * [Language variations](../../../develop-with-umbraco/templating-and-rendering/language-variation.md)
 * [Render varied content in Templates](../../../develop-with-umbraco/templating-and-rendering/design/rendering-content.md)
