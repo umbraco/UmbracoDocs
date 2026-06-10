@@ -52,9 +52,9 @@ ${ previous.statusCode }
 | `stripHtml`           | Remove HTML tags from a string.                                                                                   |
 | `uppercase`           | Convert the value to uppercase.                                                                                   |
 | `lowercase`           | Convert the value to lowercase.                                                                                   |
-| `json`                | Serialise the value to JSON.                                                                                      |
+| `json`                | Serialize the value to JSON.                                                                                      |
 
-Filters are chainable using the `|` separator. Arguments are colon-separated, so an argument value must not contain a literal colon.
+Filters can be chained using the `|` separator. Arguments are colon-separated, so an argument value must not contain a literal colon.
 
 ## Where Bindings Work
 

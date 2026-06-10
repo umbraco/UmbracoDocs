@@ -35,7 +35,7 @@ Workspaces can be organized into workspace groups, which are folders in the tree
 
 ## Service-Account Permissions
 
-The workspace's service account is the security boundary for what its automations can see and do. Every built-in and add-on step type declares the Umbraco backoffice section it needs (for example, **content**, **media**, **commerce**). Some also enforce node- or resource-level access at runtime:
+The workspace service account is the security boundary for what its automations can see and do. Every built-in and add-on step type declares the Umbraco backoffice section it needs (for example, **content**, **media**, **commerce**). Some also enforce node- or resource-level access at runtime:
 
 | Layer                                                                       | What it gates                                                                   | Effect on the workspace                                                                                                                                                                           |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

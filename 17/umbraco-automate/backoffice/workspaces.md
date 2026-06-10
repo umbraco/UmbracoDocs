@@ -23,8 +23,8 @@ Open a workspace from the tree. The workspace editor has two tabs:
 
 | Tab          | Purpose                                                                          |
 | ------------ | -------------------------------------------------------------------------------- |
-| **Settings** | Configure the workspace's service account, user groups, and allowed connections. |
-| **Info**     | View the workspace's version history, ID, and alias.                             |
+| **Settings** | Configure the workspace service account, user groups, and allowed connections. |
+| **Info**     | View the workspace version history, ID, and alias.                             |
 
 ### Settings
 
@@ -48,7 +48,7 @@ Review the **Runs** tab after any service-account change.
 
 ## Workspace Groups
 
-Workspaces can be organised into **workspace groups** — folders in the tree. To create a workspace group, right-click the root of the tree and select **Create workspace group**. Workspace groups are organisational only; they do not affect access.
+Workspaces can be organized into **workspace groups** — folders in the tree. To create a workspace group, right-click the root of the tree and select **Create workspace group**. Workspace groups are organizational only; they do not affect access.
 
 ## Delete a Workspace
 

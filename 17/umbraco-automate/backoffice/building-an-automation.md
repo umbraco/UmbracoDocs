@@ -38,7 +38,7 @@ The new automation opens on the canvas with an empty trigger slot.
 3. Configure the trigger settings in the dialog.
 4. Click **Submit**.
 
-<figure><img src="../.gitbook/assets/trigger-picker.png" alt="The trigger picker categorised by group."><figcaption><p>Picking a trigger.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/trigger-picker.png" alt="The trigger picker categorized by group."><figcaption><p>Picking a trigger.</p></figcaption></figure>
 
 ### Add Steps
 

@@ -10,7 +10,7 @@ A custom trigger lets you start an automation from any event in your project. Th
 
 ## Settings Model
 
-A trigger usually has a settings POCO that defines the configuration UI. Each property is decorated with `[Field]`:
+A trigger usually has a settings Plain Old CLR Object (POCO) that defines the configuration UI. Each property is decorated with `[Field]`:
 
 {% code title="MyCustomTriggerSettings.cs" %}
 ```csharp
@@ -105,7 +105,7 @@ public sealed class MyCustomTrigger
 
 ## Declaring Section Requirements
 
-The `RequiredSections` array on the `[Trigger]` attribute tells Automate which Umbraco backoffice sections the workspace's service account must have access to.
+The `RequiredSections` array on the `[Trigger]` attribute tells Automate which Umbraco backoffice sections the workspace service account must have access to.
 
 Workspaces whose service account is missing any listed section don't see the trigger in the picker. Dispatch silently skips events for already-published automations until the section is restored.
 

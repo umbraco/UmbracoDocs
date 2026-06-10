@@ -8,7 +8,7 @@ A custom action adds a new unit of work to the action catalogue. Actions run as 
 
 ## Settings Model
 
-The settings POCO defines the configuration UI. Mark settings that can use [bindings](../concepts/bindings.md) with `SupportsBindings = true`.
+The settings Plain Old CLR Object (POCO) defines the configuration UI. Mark settings that can use [bindings](../concepts/bindings.md) with `SupportsBindings = true`.
 
 {% code title="GreetUserSettings.cs" %}
 ```csharp
@@ -81,7 +81,7 @@ public sealed class GreetUserAction : ActionBase<GreetUserSettings, GreetUserOut
 
 ### Declaring Section Requirements
 
-The `RequiredSections` array on the `[Action]` attribute tells Automate which Umbraco backoffice sections the workspace's service account must have access to.
+The `RequiredSections` array on the `[Action]` attribute tells Automate which Umbraco backoffice sections the workspace service account must have access to.
 
 The check is all-of: every listed section must be present. The action is hidden from the picker and rejected at publish. At runtime, it fails with an authentication error when the section is missing.
 
