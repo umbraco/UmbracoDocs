@@ -342,7 +342,9 @@ Instead, for jobs that should only run on a single server, you should implement 
 By default, each server polls for runnable jobs every 5 seconds, after an initial startup delay of 1 minute. The first execution of a given job happens at `startup + Delay + Period`, where `Period` is the job's own `Period` property. The polling interval and startup delay are both configurable in appsettings. See [Distributed jobs settings](../../develop-with-umbraco/configuration/distributedjobssettings.md) for the available options.
 
 {% hint style="info" %}
-The job's `Period` (how often the job itself runs) and the `DistributedJobs:Period` setting (how often the host polls the database) are two different values that share the same name.
+
+The job's `Period` (run frequency) and the `DistributedJobs:Period` setting (database polling frequency) are two different values sharing the same name.
+
 {% endhint %}
 
 ### Implementing a custom distributed background job
