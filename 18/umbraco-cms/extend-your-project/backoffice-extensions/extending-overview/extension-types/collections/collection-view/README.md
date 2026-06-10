@@ -18,6 +18,7 @@ Before creating a Collection View, make sure you are familiar with the [Extensio
 
 There are a couple of built-in Collection Views Kinds available in Umbraco, each suited for different display needs. You can also create custom Collection Views if the built-in options do not meet your requirements.
 
+- **[Table View](table.md)**: Displays entities in a table layout with configurable columns.
 - **[Card View](card.md)**: Displays entities as cards in a grid layout, suitable for visual content.
 - **[Reference View](reference.md)**: Displays entities in a list-style layout.
 - **[Custom View](custom.md)**: Create your own Collection View from scratch to meet specific requirements.
