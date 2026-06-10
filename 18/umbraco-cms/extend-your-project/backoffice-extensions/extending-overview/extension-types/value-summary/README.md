@@ -1,5 +1,7 @@
 ---
 description: A guide to creating a custom Value Summary in Umbraco. Use it to render a compact value presentation.
+tags:
+  - ai-generated-content
 ---
 
 # Value Summary

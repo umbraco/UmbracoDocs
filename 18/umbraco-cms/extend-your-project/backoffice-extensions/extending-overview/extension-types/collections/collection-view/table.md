@@ -1,5 +1,7 @@
 ---
 description: Learn how to register a Table Collection View.
+tags:
+  - ai-generated-content
 ---
 
 # Table Collection View

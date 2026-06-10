@@ -2,6 +2,8 @@
 description: >-
   Learn how to register a Collection extension and implement a Collection
   Repository to provide data for Collection Views.
+tags:
+  - ai-generated-content
 ---
 
 # Collection
