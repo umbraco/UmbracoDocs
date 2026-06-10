@@ -1,5 +1,7 @@
 ---
 description: A guide to defining a custom Value Type in Umbraco.
+tags:
+  - ai-generated-content
 ---
 
 # Value Type
