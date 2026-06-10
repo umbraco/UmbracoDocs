@@ -1,5 +1,7 @@
 ---
 description: A guide to adding a Value Summary to a custom Property Editor in Umbraco.
+tags:
+  - ai-generated-content
 ---
 
 # Property Editor Value Summary
