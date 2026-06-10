@@ -18,7 +18,7 @@ ${ <path> | <filter> }
 ${ <path> | <filter>:<arg> | <filter>:<arg> }
 ```
 
-Output property names are exposed to bindings in camelCase — `ContentName` on the trigger output becomes `${ trigger.contentName }`.
+Output property names are exposed to bindings in camelCase. For example, `ContentName` on the trigger output becomes `${trigger.contentName}`.
 
 ## Root Paths
 
