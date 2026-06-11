@@ -480,11 +480,17 @@ Instead, for jobs that should only run on a single server, implement an `IDistri
 
 `IDistributedBackgroundJob` is separate from `IRecurringBackgroundJob`. The job is tracked in the database to ensure that only a single server runs it at any given time. This also means you are not guaranteed which server runs the job, but you are guaranteed that only one server runs it.
 
-By default, distributed background jobs are checked every 5 seconds, with an initial delay of 1 minute after application startup. These settings can be changed via configuration. See [Distributed jobs settings](../../develop-with-umbraco/configuration/distributedjobssettings.md) for more information.
+By default, each server polls for runnable jobs every 5 seconds, after an initial startup delay of 1 minute. The first execution of a given job happens at `startup + Delay + Period`, where `Period` is the job's own `Period` property. The polling interval and startup delay are both configurable in appsettings. See [Distributed jobs settings](../../develop-with-umbraco/configuration/distributedjobssettings.md) for the available options.
+
+{% hint style="info" %}
+
+The job's `Period` (run frequency) and the `DistributedJobs:Period` setting (database polling frequency) are two different values sharing the same name.
+
+{% endhint %}
 
 ### Implementing a custom distributed background job
 
-To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. As with `IRecurringBackgroundJob`, dependency injection (DI) is available in the constructor.
+To implement a custom distributed background job, create a class that implements the `IDistributedBackgroundJob` interface. As with `IRecurringBackgroundJob`, dependency injection is available in the constructor.
 
 ```csharp
 using System;
@@ -495,9 +501,10 @@ using Umbraco.Cms.Infrastructure.BackgroundJobs;
 public class MyCustomBackgroundJob : IDistributedBackgroundJob
 {
     private readonly ILogger<MyCustomBackgroundJob> _logger;
-    public string Name => "MyCustomBackgroundJob";
 
-    public TimeSpan Period { get; private set; }
+    public string Name => nameof(MyCustomBackgroundJob);
+
+    public TimeSpan Period { get; }
 
     public MyCustomBackgroundJob(ILogger<MyCustomBackgroundJob> logger)
     {
@@ -505,20 +512,22 @@ public class MyCustomBackgroundJob : IDistributedBackgroundJob
         Period = TimeSpan.FromSeconds(20);
     }
 
-    public Task ExecuteAsync()
+    // Kept for backwards compatibility. Forward to the cancellation-aware overload.
+    public Task ExecuteAsync() => ExecuteAsync(CancellationToken.None);
+
+    public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        // Your custom background job logic here
         _logger.LogInformation("MyCustomBackgroundJob is executing.");
-        return Task.CompletedTask;
+        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
     }
 }
 ```
 
-It's required to give your job a unique name via the `Name` property. The name is used to track the job in the database.
+Give the job a unique `Name`. The name identifies the job's row in the database and must not collide with any other distributed job in the solution.
 
-The period is specified via the `Period` property, which controls how often the job should run. In this example, it runs every 20 seconds.
+The `Period` property controls how often the job runs. In the example above, the job runs every 20 seconds.
 
-It's not required to manually register the job in the database. However, you must register it with the dependency injection container so Umbraco can find it. This can be done with a composer or in `Program.cs`:
+You do not need to register the job in the database. You do need to register it in the dependency-injection container so Umbraco can discover it. Register it from a composer or in `Program.cs`:
 
 ```csharp
 public class MyComposer : IComposer
@@ -529,3 +538,27 @@ public class MyComposer : IComposer
     }
 }
 ```
+
+### Graceful shutdown
+
+`IDistributedBackgroundJob` exposes two overloads of `ExecuteAsync`:
+
+* `ExecuteAsync()` is kept for backwards compatibility.
+* `ExecuteAsync(CancellationToken cancellationToken)` receives a token that is triggered when the host begins shutting down.
+
+The host always calls the cancellation-aware overload. Jobs that pass the token to their async work (for example `Task.Delay`, `DbContext` queries, or `HttpClient` calls) can stop quickly and let the host shut down cleanly. When a job returns or throws — including via `OperationCanceledException` — the host clears the running flag in the database. This way other servers do not need to wait for the `MaximumExecutionTime` grace period before the job can run again.
+
+Jobs that ignore the token continue running until they finish. The host waits for them, which extends the shutdown time.
+
+{% hint style="info" %}
+The `ExecuteAsync(CancellationToken)` overload was added in Umbraco 17.5. Existing jobs that only override `ExecuteAsync()` continue to work through a default interface implementation, but cannot participate in graceful shutdown.
+{% endhint %}
+
+### How the database tracks the job
+
+Each distributed background job has a row in the database, keyed by `Name`, with two timestamps that drive scheduling:
+
+* `LastAttemptedRun` is stamped when a server picks the job up, before `ExecuteAsync` is called.
+* `LastRun` is stamped when `ExecuteAsync` returns — including when it throws or is cancelled — because the host stamps it from a `finally` block. The stamp is only skipped if the host process dies before the `finally` runs (for example, a hard crash or forced kill).
+
+A job is eligible to run when more than `Period` has elapsed since `LastRun`. A job that is already marked as running is skipped. The exception is when more than `Period + MaximumExecutionTime` has elapsed since `LastAttemptedRun`. In that case the job is considered stale and another server can pick it up. See [Distributed jobs settings](../../develop-with-umbraco/configuration/distributedjobssettings.md) for details on `MaximumExecutionTime`.
