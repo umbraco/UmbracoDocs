@@ -20,6 +20,28 @@ You now have a model that contains your Form fields which can be used in your em
 
 Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
 
+{% hint style="warning" %}
+**Absolute URLs in load-balanced or proxied environments**
+
+The example below builds an absolute domain from `Context.Request.Scheme` and `Context.Request.Host`. This relies on the incoming request's `Host` header, which is fine when an email is rendered during a normal front-end form submission. It can produce empty or incorrect links when the email is generated **outside** of that request. Examples include re-running a workflow from the backoffice, or running it from a background or scheduled job. On a different node, or behind a load balancer or reverse proxy, the `Host` header may not match your site's public address.
+
+From Umbraco 17, the `Host` header is no longer used to auto-detect the application URL by default. In load-balanced, proxied, or multi-node setups, set the application URL explicitly. This ensures absolute links - including the `FormPageUrl` exposed on the email model - resolve consistently on every node:
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "UmbracoApplicationUrl": "https://www.your-site.com/"
+      }
+    }
+  }
+}
+```
+
+See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings) for details. When you need the public site URL inside a template, prefer reading it from this configuration (or `IHostingEnvironment.ApplicationMainUrl`) rather than from `Context.Request.Host`.
+{% endhint %}
+
 ```csharp
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
@@ -177,6 +199,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 								{
 									"FieldType.Recaptcha2.cshtml",
 									"FieldType.Recaptcha3.cshtml",
+									"FieldType.RecaptchaEnterprise.cshtml",
 									"FieldType.RichText.cshtml",
 									"FieldType.Text.cshtml"
 								};

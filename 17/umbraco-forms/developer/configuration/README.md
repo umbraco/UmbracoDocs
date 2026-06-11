@@ -53,6 +53,7 @@ For illustration purposes, the following structure represents the full set of op
         "PreviousPageButtonLabel": "Previous",
         "SubmitButtonLabel": "Submit",
         "MessageOnSubmit": "Thank you",
+        "MessageOnSubmitIsHtml": false,
         "StoreRecordsLocally": true,
         "AutocompleteAttribute": "",
         "DaysToRetainSubmittedRecordsFor": 0,
@@ -89,7 +90,6 @@ For illustration purposes, the following structure represents the full set of op
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
       "EnableRecordingOfIpWithFormSubmission": false,
-      "UseSemanticFieldsetRendering": false,
       "DisableClientSideValidationDependencyCheck": false,
       "DisableRelationTracking": false,
       "TrackRenderedFormsStorageMethod": "HttpContextItems",
@@ -103,7 +103,7 @@ For illustration purposes, the following structure represents the full set of op
       }
     },
     "Security": {
-      "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx",
+      "DisallowedFileUploadExtensions": "config,exe,dll,asp,aspx,js",
       "AllowedFileUploadExtensions": "",
       "EnableAntiForgeryToken": true,
       "SavePlainTextPasswords": false,
@@ -310,6 +310,10 @@ These settings configure the default next, previous, and submit button labels. B
 
 This allows you to configure what text is displayed when a form is submitted and is not being redirected to a different content node. Defaults to `Thank you`.
 
+#### MessageOnSubmitIsHtml
+
+This setting needs to be a `true` or `false` value. When set to `true`, the message configured in `MessageOnSubmit` is rendered as HTML. Defaults to `false`.
+
 #### StoreRecordsLocally
 
 This setting needs to be a `True` or `False` value and will allow you to toggle if form submission data should be stored in the Umbraco Forms database tables. By default this is set to `True`.
@@ -376,6 +380,8 @@ When redirecting following a form submission, a `TempData` value is set that is 
 
 By setting the following value to True, a querystring value of `formSubmitted=<id of submitted form>`, will be used to indicate a form submitted on the previous request.
 
+The setting also improves resilience in load-balanced environments. If the `TempData` value is not available on the node that handles the redirect, the querystring ensures the submission message is still displayed.
+
 ### CultureToUseWhenParsingDatesForBackOffice
 
 This setting has been added to help resolve an issue with multi-lingual setups.
@@ -429,14 +435,6 @@ By default, the user's IP address is not recorded when a form is submitted and s
 To include this information in the saved data, set this value to `true`.
 
 If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
-
-### UseSemanticFieldsetRendering
-
-In Forms 12.1 amends were made to the default theme for Forms that improved accessibility. Specifically we provide the option to use alternative markup for rendering checkbox and radio button lists. These use the more semantically correct `fieldset` and `legend` elements, instead of the previously used `div` and `label`.
-
-Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme. As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
-
-In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
 
 ### DisableClientSideValidationDependencyCheck
 

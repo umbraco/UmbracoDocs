@@ -14,7 +14,7 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 ## Version Specific Upgrade Notes History
 
-Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 9.
+Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 10.
 
 
 ## Legacy version specific upgrade notes

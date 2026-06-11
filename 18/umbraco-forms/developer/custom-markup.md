@@ -43,20 +43,20 @@ The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` an
 Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 ```csharp
-@model Umbraco.Forms.Mvc.Models.FieldViewModel
-@using Umbraco.Forms.Mvc
-
-<input type="text"
-    name="@Model.Name"
-    id="@Model.Id"
-    class="@Html.GetFormFieldClass(Model.FieldTypeName) text"
-    value="@Model.ValueAsHtmlString"
-    maxlength="500"
-    @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
-    @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
-    @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
-    @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)"</text>}}
-/>
+@using Umbraco.Forms.Web
+@model Umbraco.Forms.Web.Models.FieldViewModel
+@{
+    var maxLength = Model.GetSettingValue<int>("MaximumLength", 255);
+    var fieldType = Model.GetSettingValue<string>("FieldType", "text");
+    var autocompleteAttribute = Model.GetSettingValue<string>("AutocompleteAttribute", string.Empty);
+}
+<input type="@fieldType" name="@Model.Name" id="@Model.Id" data-umb="@Model.Id" class="text @Html.GetFormFieldClass(Model.FieldTypeName)" value="@Model.ValueAsHtmlString" maxlength="@maxLength"
+       @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text>  }}
+       @{if (string.IsNullOrEmpty(autocompleteAttribute) == false) { <text> autocomplete="@autocompleteAttribute" </text>  }}
+       @{if (Model.Mandatory || Model.Validate) { <text> data-val="true" </text>  }}
+       @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" aria-required="true" </text>  }}
+       @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)" </text>  }}
+       aria-describedby="@(Model.Id)_validation@(!string.IsNullOrEmpty(Model.ToolTip) ? $" {Model.Id}_description" : "")"/>
 ```
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.

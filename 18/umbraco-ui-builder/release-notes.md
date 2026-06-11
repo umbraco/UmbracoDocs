@@ -17,3 +17,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
+
+#### 18.0.0-rc1 (04th Jun 2026)
+
+* Initial release candidate for Umbraco v18. 

@@ -28,9 +28,10 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 
 * Workflow Name
 * URL (required)
-* Method
-* XsltFile - used to transform the XML
-* Headers - map the needed files
+* Method - POST, GET, PUT or DELETE
+* XSLT File - used to transform the XML
+* Fields - map form fields to values that are sent as HTTP headers with the request
+* Default Element For Fields - choose whether the field caption or alias is used as the XML element name
 * User
 * Password
 
@@ -158,8 +159,13 @@ Sends the Form to a URL either as a HTTP POST or GET. The following configuratio
 * Method (required) - POST, GET, PUT or DELETE
 * Standard Fields - optionally include and map standard form information such as name and page URL
 * Fields - map the needed fields
+* Default Element For Fields - when no fields are mapped, choose whether the field caption or alias is used as the element name
 * User
 * Password
+
+{% hint style="warning" %}
+The **page URL** standard field is rendered as an absolute URL. This applies in a load-balanced, proxied, or multi-node environment. It also applies when this workflow runs outside a front-end request, such as re-running it from the backoffice. Set `Umbraco:CMS:WebRouting:UmbracoApplicationUrl` to your site's public URL so the page URL resolves correctly on every node. See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings).
+{% endhint %}
 
 When mapping fields, if any are selected, only those chosen will be sent in the request to the configured URL. If no fields are mapped, all will be sent.
 

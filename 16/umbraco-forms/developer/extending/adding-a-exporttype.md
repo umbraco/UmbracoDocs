@@ -6,12 +6,12 @@ Add a new class to your project and have it inherit from `Umbraco.Forms.Core.Exp
 
 ## Basic Example
 
-You can implement the method `public override string ExportRecords(RecordExportFilter filter)` in your export provider class. You need to return a string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would perform your logic to build up a comma-separated string in the `ExportRecords` method.
+You can implement the method `public override Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)` in your export provider class. You need to return the string you wish to write to a file. For example, you can generate a `.csv` (comma-separated values) file. You would implement your logic to build up a comma-separated string in the `ExportRecordsAsync` method.
 
 {% hint style="info" %}
-In the constructor of your provider, you will need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
+In the constructor of your provider, you need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
 
-The `Alias` is used to construct localization keys for the export type's label and description displayed in the backoffice. See [Localization](#localization) below for details.
+The `Alias` is used to construct localization keys for the export type label and description displayed in the backoffice. See [Localization](#localization) below for details.
 {% endhint %}
 
 `FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
@@ -22,7 +22,9 @@ In this example below we will create a single HTML file which takes all the subm
 
 ```csharp
 using System;
-using Umbraco.Cms.Core.Hosting;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Extensions;
 using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Models;
 using Umbraco.Forms.Core.Searchers;
@@ -36,10 +38,8 @@ namespace MyFormsExtensions
         private readonly IFormRecordSearcher _formRecordSearcher;
 
         public ExportToHtml(
-            IHostEnvironment hostEnvironment,
             IHttpContextAccessor httpContextAccessor,
             IFormRecordSearcher formRecordSearcher)
-            : base(hostEnvironment)
         {
             _httpContextAccessor = httpContextAccessor;
             _formRecordSearcher = formRecordSearcher;
@@ -52,11 +52,11 @@ namespace MyFormsExtensions
             Icon = "icon-article";
         }
 
-        public override string ExportRecords(RecordExportFilter filter)
+        public override async Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)
         {
             var view = "~/Views/Partials/Forms/Export/html-report.cshtml";
             EntrySearchResultCollection model = _formRecordSearcher.QueryDataBase(filter);
-            return ViewHelper.RenderPartialViewToString(_httpContextAccessor.GetRequiredHttpContext(), view, model);
+            return await ViewHelper.RenderPartialViewToString(_httpContextAccessor.GetRequiredHttpContext(), view, model);
         }
     }
 }
@@ -92,8 +92,8 @@ namespace MyFormsExtensions
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Forms.Core.Providers.Extensions;
-using Umbraco.Forms.TestSite.Business.ExportTypes;
 
 namespace MyFormsExtensions
 {
@@ -118,7 +118,7 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using Umbraco.Cms.Core.Hosting;
+using System.Threading.Tasks;
 using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Models;
 using Umbraco.Forms.Core.Searchers;
@@ -129,19 +129,16 @@ namespace MyFormsExtensions
     {
         private readonly IFormRecordSearcher _formRecordSearcher;
 
-        public ExportToTextFiles(
-            IHostingEnvironment hostingEnvironment,
-            IFormRecordSearcher formRecordSearcher)
-            : base(hostingEnvironment)
+        public ExportToTextFiles(IFormRecordSearcher formRecordSearcher)
         {
             _formRecordSearcher = formRecordSearcher;
 
-            this.Name = "Export as text files";
-            this.Description = "Export entries as text files inside a zip file";
-            this.Alias = "exportAsTextFiles";
-            this.Id = new Guid("171CABC9-2207-4575-83D5-2A77E824D5DB");
-            this.FileExtension = "zip";
-            this.Icon = "icon-zip";
+            Name = "Export as text files";
+            Description = "Export entries as text files inside a zip file";
+            Alias = "exportAsTextFiles";
+            Id = new Guid("171CABC9-2207-4575-83D5-2A77E824D5DB");
+            FileExtension = "zip";
+            Icon = "icon-zip";
         }
 
         /// <summary>
@@ -149,11 +146,12 @@ namespace MyFormsExtensions
         /// As this method is called from ExportToFile that we also override here & is expecting the file contents as a string to be written as a stream to a file
         /// Which would be OK if we were creating a CSV or a single based file that can have a simple string written as a string such as one large HTML report or XML file perhaps
         /// </summary>
-        public override string ExportRecords(RecordExportFilter filter) => throw new NotImplementedException();
+        public override Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter) => throw new NotImplementedException();
 
         /// <summary>
         /// This gives us greater control of the export process
         /// </summary>
+        /// <param name="formId">The form identifier.</param>
         /// <param name="filter">
         /// This filter contains the date range & other search parameters to limit the entries we are exporting
         /// </param>
@@ -162,22 +160,14 @@ namespace MyFormsExtensions
         /// So ensure that the zip of text files is saved at this location
         /// </param>
         /// <returns>The final file path to serve up as the export - this is unlikely to change through the export logic</returns>
-        public override string ExportToFile(RecordExportFilter filter, string filepath)
+        public override Task<string> ExportToFileAsync(Guid formId, RecordExportFilter filter, string filepath)
         {
             // Before Save - Check Path, Directory & Previous File export does not exist
             string pathToSaveZipFile = filepath;
 
-            // Check our path does not contain \\
-            // If not, use the filePath
-            if (filepath.Contains('\\') == false)
-            {
-                pathToSaveZipFile = HostingEnvironment.MapPathContentRoot(filepath);
-            }
-
-            // Get the directory (strip out \\ if it exists)
-            var dir = filepath.Substring(0, filepath.LastIndexOf('\\'));
+            // Get the directory
+            var dir = Path.GetDirectoryName(filepath);
             var tempFileDir = Path.Combine(dir, "text-files");
-
 
             // If the path does not end with our file extension, ensure it's added
             if (pathToSaveZipFile.EndsWith("." + FileExtension) == false)
@@ -202,7 +192,7 @@ namespace MyFormsExtensions
             EntrySearchResultCollection submissions = _formRecordSearcher.QueryDataBase(filter);
 
             // Get the schema objects to a list so we can get items using position index
-            var schemaItems = submissions.schema.ToList();
+            var schemaItems = submissions.Schema.ToList();
 
             // We will use this to store our contents of our file to save as a text file
             var fileContents = string.Empty;
@@ -240,7 +230,7 @@ namespace MyFormsExtensions
             }
 
             // Return the path where we saved the zip file containing the text files
-            return pathToSaveZipFile;
+            return Task.FromResult(pathToSaveZipFile);
         }
     }
 }

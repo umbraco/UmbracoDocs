@@ -217,4 +217,4 @@ As you are updating your template files and custom implementation, you should al
 
 Umbraco 8 contains a few changes regarding the Sections in the Umbraco Backoffice. Because of this, you should also check your User Groups and make sure they have access to the appropriate sections.
 
-Learn more about the Section in the [Sections article](../../editors-manual/getting-started-with-umbraco/sections.md)
+Learn more about the Section in the [Sections article](../../backoffice-essentials/sections.md)

@@ -36,7 +36,7 @@ PUT /umbraco/ai/management/api/v1/connections/{id}
     "name": "OpenAI Production (Updated)",
     "isActive": true,
     "settings": {
-        "apiKey": "$OpenAI:ApiKey",
+        "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey",
         "organization": "org-123"
     }
 }
@@ -120,7 +120,7 @@ curl -X PUT "https://your-site.com/umbraco/ai/management/api/v1/connections/3fa8
     "name": "OpenAI Production (Updated)",
     "isActive": true,
     "settings": {
-      "apiKey": "$OpenAI:ApiKey"
+      "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
     }
   }'
 ```

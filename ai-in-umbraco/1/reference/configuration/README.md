@@ -192,18 +192,22 @@ Thread directories whose files have not been modified within this period are cle
 
 ## Provider Credentials
 
-Store provider credentials in configuration and reference them in connections:
+Store provider credentials in configuration and reference them in connections. Place sensitive values under `Umbraco:AI:Secrets` and non-sensitive per-environment values under `Umbraco:AI:Variables`:
 
 {% code title="appsettings.json" %}
 
 ```json
 {
-    "OpenAI": {
-        "ApiKey": "sk-your-api-key-here"
-    },
-    "Azure": {
-        "ApiKey": "your-azure-key",
-        "Endpoint": "https://your-resource.openai.azure.com"
+    "Umbraco": {
+        "AI": {
+            "Secrets": {
+                "OpenAIApiKey": "sk-your-api-key-here",
+                "AzureApiKey": "your-azure-key"
+            },
+            "Variables": {
+                "AzureEndpoint": "https://your-resource.openai.azure.com"
+            }
+        }
     }
 }
 ```
@@ -212,8 +216,10 @@ Store provider credentials in configuration and reference them in connections:
 
 Reference these in connection settings using the `$` prefix:
 
-- `$OpenAI:ApiKey` - Resolves to the OpenAI API key
-- `$Azure:Endpoint` - Resolves to the Azure endpoint
+- `$Umbraco:AI:Secrets:OpenAIApiKey` - Resolves to the OpenAI API key
+- `$Umbraco:AI:Variables:AzureEndpoint` - Resolves to the Azure endpoint
+
+Secret values may only be referenced from fields marked as sensitive. To reference an existing section instead, add its prefix to `Umbraco:AI:AllowedConfigurationKeyPrefixes`. See [AIOptions](ai-options.md#configuration-references) for details.
 
 ## Environment-Specific Configuration
 

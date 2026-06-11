@@ -36,10 +36,10 @@ Fill in the connection details:
 | **Name**     | A display name for this connection          | "OpenAI Production"          |
 | **Alias**    | A unique identifier for programmatic access | "openai-prod"                |
 | **Provider** | The AI provider to use                      | "OpenAI"                     |
-| **API Key**  | Your provider API key                       | "sk-..." or "$OpenAI:ApiKey" |
+| **API Key**  | Your provider API key                       | "sk-..." or "$Umbraco:AI:Secrets:OpenAIApiKey" |
 
 {% hint style="info" %}
-Use a configuration reference like `$OpenAI:ApiKey` to read the API key from `appsettings.json` instead of storing it in the database.
+Use a configuration reference like `$Umbraco:AI:Secrets:OpenAIApiKey` to read the API key from configuration instead of storing it in the database. See [Configuration References](../concepts/connections.md#configuration-references) for how the referenced sections work.
 {% endhint %}
 
 ## Connection Properties

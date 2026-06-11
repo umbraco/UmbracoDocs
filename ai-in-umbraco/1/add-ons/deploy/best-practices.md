@@ -20,10 +20,10 @@ API Key: sk-prod-abc123def456...
 
 ✅ **Good:**
 ```
-API Key: $OpenAI:ApiKey
+API Key: $Umbraco:AI:Secrets:OpenAIApiKey
 ```
 
-Configuration references ensure secrets stay in configuration files, not in version control.
+Configuration references ensure secrets stay in configuration files, not in version control. References resolve from the `Umbraco:AI:Secrets` and `Umbraco:AI:Variables` sections by default - see [Configuration References](../../concepts/connections.md#configuration-references).
 
 ### 2. Separate Configuration by Environment
 
@@ -47,15 +47,7 @@ For production environments, use a secret management solution:
 - **Environment Variables** - For container deployments
 - **Kubernetes Secrets** - For Kubernetes deployments
 
-Example with Azure Key Vault:
-
-```json
-{
-  "OpenAI": {
-    "ApiKey": "$KeyVault:OpenAI:ApiKey"
-  }
-}
-```
+These providers surface their values through `IConfiguration`, so name the entries to land under the allow-listed `Umbraco:AI:Secrets` section. For example, an Azure Key Vault secret named `Umbraco--AI--Secrets--OpenAIApiKey` (Key Vault uses `--` as the section separator) can then be referenced from a connection as `$Umbraco:AI:Secrets:OpenAIApiKey`.
 
 ### 4. Review Deployment Files Before Committing
 
@@ -156,39 +148,55 @@ Feature branches allow peer review before deploying to production.
 
 ### 1. Group Related Settings
 
-Organize configuration by provider and environment:
+Keep sensitive values under `Umbraco:AI:Secrets` and non-sensitive values under `Umbraco:AI:Variables`:
 
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-dev-abc123...",
-    "Organization": "org-123"
-  },
-  "Anthropic": {
-    "ApiKey": "sk-ant-dev-xyz789..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-dev-abc123...",
+        "AnthropicApiKey": "sk-ant-dev-xyz789..."
+      },
+      "Variables": {
+        "OpenAIOrganization": "org-123"
+      }
+    }
   }
 }
 ```
 
 ### 2. Use Consistent Key Paths
 
-Use consistent configuration key paths across providers:
+Use consistent configuration key names across providers:
 
 ✅ **Good:**
 ```json
 {
-  "OpenAI": { "ApiKey": "..." },
-  "Anthropic": { "ApiKey": "..." },
-  "Google": { "ApiKey": "..." }
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "...",
+        "AnthropicApiKey": "...",
+        "GoogleApiKey": "..."
+      }
+    }
+  }
 }
 ```
 
 ❌ **Bad:**
 ```json
 {
-  "OpenAI": { "Key": "..." },
-  "Anthropic": { "ApiKey": "..." },
-  "Google": { "API_KEY": "..." }
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIKey": "...",
+        "AnthropicApiKey": "...",
+        "Google_API_KEY": "..."
+      }
+    }
+  }
 }
 ```
 
@@ -198,10 +206,13 @@ Add comments to configuration files (where supported):
 
 ```jsonc
 {
-  // OpenAI configuration
-  // Get API key from: https://platform.openai.com/api-keys
-  "OpenAI": {
-    "ApiKey": "$KeyVault:OpenAI:ApiKey"
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        // OpenAI API key. Get it from: https://platform.openai.com/api-keys
+        "OpenAIApiKey": "sk-..."
+      }
+    }
   }
 }
 ```
@@ -236,7 +247,7 @@ Maintain documentation of your AI configuration:
 ### OpenAI Production
 - **Purpose:** Production chat and embeddings
 - **Model:** gpt-4o
-- **Configuration:** `$OpenAI:ApiKey`
+- **Configuration:** `$Umbraco:AI:Secrets:OpenAIApiKey`
 
 ## Profiles
 
@@ -336,7 +347,7 @@ dotnet run --project ConfigTest
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
-var apiKey = builder.Configuration["OpenAI:ApiKey"];
+var apiKey = builder.Configuration["Umbraco:AI:Secrets:OpenAIApiKey"];
 Console.WriteLine($"OpenAI API Key: {apiKey}");
 ```
 
