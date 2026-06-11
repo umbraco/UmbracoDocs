@@ -1,6 +1,12 @@
+---
+description: Learn how to register a custom Collection View.
+---
+
 # Custom Collection View
 
 When the existing Collection View kinds do not meet your requirements, you can create a custom Collection View from scratch.
+
+A Custom Collection View renders items produced by a [Collection](../collection.md). The collection is responsible for fetching items through its [Collection Repository](../collection.md#collection-repository).
 
 ## Manifest
 
@@ -8,18 +14,18 @@ When the existing Collection View kinds do not meet your requirements, you can c
 ```json
 {
   "type": "collectionView",
-  "alias": "My.CollectionView.Alias",
-  "name": "My Collection View",
+  "alias": "My.CollectionView.Custom",
+  "name": "My Custom Collection View",
   "element": "/App_Plugins/my-collection-view/my-collection-view.js",
   "meta": {
-    "label": "Table",
+    "label": "My View",
     "icon": "icon-list",
-    "pathName": "table"
+    "pathName": "my-view"
   },
   "conditions": [
     {
       "alias": "Umb.Condition.CollectionAlias",
-      "match": "Umb.Collection.Document" // Collection alias to display this collection view for
+      "match": "My.Collection" // Collection alias to display this collection view for
     }
   ]
 }
@@ -28,127 +34,136 @@ When the existing Collection View kinds do not meet your requirements, you can c
 
 ## Implementation
 
-Implement your Collection View as a Lit element that extends `UmbLitElement`.
-This defines how a list of entities is rendered in your collection.
+Implement the Collection View as a Lit element that extends `UmbCollectionViewElementBase`. The base class provides the collection items via `_items`, handles selection state, and exposes helper methods such as `_isSelectableItem` and `_isSelectedItem`. Override `render()` to define how the collection is displayed.
+
+Split the view into two elements:
+
+* A **view element** that handles the overall layout.
+* An **item element** that handles rendering individual items delegated to it by the view element.
 
 {% code title="my-collection-view.ts" %}
 ```typescript
-import { css, customElement, html, state } from '@umbraco-cms/backoffice/external/lit';
-import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { UMB_DOCUMENT_COLLECTION_CONTEXT } from '@umbraco-cms/backoffice/document';
-import type { UmbDocumentCollectionItemModel } from '@umbraco-cms/backoffice/document';
-import type { UmbCollectionColumnConfiguration } from '@umbraco-cms/backoffice/collection';
+import { customElement, html, nothing } from '@umbraco-cms/backoffice/external/lit';
+import { UmbCollectionViewElementBase } from '@umbraco-cms/backoffice/collection';
+import type { UmbCollectionItemModel } from '@umbraco-cms/backoffice/collection';
+import './my-collection-view-item.element.js';
 
-@customElement('my-document-table-collection-view')
-export class MyDocumentTableCollectionViewElement extends UmbLitElement {
-
-    @state() private _columns: Array<{ name: string; alias: string; align?: string }> = [];
-    @state() private _items?: Array<UmbDocumentCollectionItemModel> = [];
-
-    constructor() {
-        super();
-
-        this.consumeContext(UMB_DOCUMENT_COLLECTION_CONTEXT, (collectionContext) => {
-            collectionContext?.setupView(this);
-
-            this.observe(collectionContext?.userDefinedProperties, (props) => {
-                this.#createColumns(props);
-            });
-
-            this.observe(collectionContext?.items, (items) => {
-                this._items = items;
-            });
-        });
-    }
-
-    #createColumns(userProps: Array<UmbCollectionColumnConfiguration> = []) {
-        const baseCols = [
-            { name: 'Name', alias: 'name' },
-            { name: 'State', alias: 'state' },
-        ];
-        const userCols = userProps.map((p) => ({
-            name: p.nameTemplate ?? p.alias,
-            alias: p.alias,
-        }));
-        this._columns = [...baseCols, ...userCols, { name: '', alias: 'entityActions', align: 'right' }];
-    }
+@customElement('my-collection-view')
+export class MyCollectionViewElement extends UmbCollectionViewElementBase {
 
     override render() {
-        if (this._items === undefined) return html`<p>Not found...</p>`;
+        if (this._loading) return nothing;
         return html`
-            <table>
-                <thead>
-                    <tr>
-                        ${this._columns.map((col) => html`<th style="text-align:${col.align ?? 'left'}">${col.name}</th>`)}
-                    </tr>
-                </thead>
-                <tbody>
-                    ${this._items.map(
-            (item) => html`
-                            <tr>
-                                ${this._columns.map((col) => {
-                switch (col.alias) {
-                    case 'name':
-                        return html`<td><a href="#">${item.name}</a></td>`;
-                    case 'state':
-                        return html`<td>${item.state}</td>`;
-                    case 'sortOrder':
-                        return html`<td>${item.sortOrder}</td>`;
-                    case 'updateDate':
-                        return html`<td>${item.updateDate}</td>`
-                    case 'creator':
-                        return html`<td>${item.creator}</td>`;
-                    case 'entityActions':
-                        return html`<td style="text-align:right;">⋮</td>`;
-                    default:
-                        const val = item.values.find((v) => v.alias === col.alias)?.value ?? '';
-                        return html`<td>${val}</td>`;
-                }
-            })}
-                            </tr>
-                        `
-        )}
-                </tbody>
-            </table>
+            <div>
+                ${this._items.map((item) => this.#renderItem(item))}
+            </div>
         `;
     }
 
-    static override styles = css`
-        :host {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-            font-family: sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th,
-        td {
-            padding: 6px 10px;
-            border: 1px solid #ddd;
-            white-space: nowrap;
-        }
-        th {
-            background: #f8f8f8;
-            font-weight: 600;
-        }
-        a {
-            color: var(--uui-color-interactive, #0366d6);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    `;
+    #renderItem(item: UmbCollectionItemModel) {
+        return html`
+            <my-collection-view-item
+                .item=${item}
+                .href=${item.unique ? this._itemHrefs.get(item.unique) : undefined}
+                ?selectable=${this._isSelectableItem(item)}
+                ?selected=${this._isSelectedItem(item.unique)}
+                ?selectOnly=${this._selectOnly}
+                @selected=${() => this._selectItem(item.unique)}
+                @deselected=${() => this._deselectItem(item.unique)}>
+            </my-collection-view-item>
+        `;
+    }
 }
 
-export default MyDocumentTableCollectionViewElement;
+export { MyCollectionViewElement as element };
 
 declare global {
     interface HTMLElementTagNameMap {
-        'my-document-table-collection-view': MyDocumentTableCollectionViewElement;
+        'my-collection-view': MyCollectionViewElement;
+    }
+}
+```
+{% endcode %}
+
+The item element receives the item model as a property and dispatches `UmbSelectedEvent` and `UmbDeselectedEvent` when the user interacts with the selection control. The base class on the parent view handles these events automatically.
+
+{% code title="my-collection-view-item.element.ts" %}
+```typescript
+import { UmbDeselectedEvent, UmbSelectedEvent } from '@umbraco-cms/backoffice/event';
+import { customElement, html, nothing, property } from '@umbraco-cms/backoffice/external/lit';
+import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
+import { UmbEntityContext } from '@umbraco-cms/backoffice/entity';
+import type { UmbCollectionItemModel } from '@umbraco-cms/backoffice/collection';
+
+@customElement('my-collection-view-item')
+export class MyCollectionViewItemElement extends UmbLitElement {
+
+    #item?: UmbCollectionItemModel;
+    #entityContext?: UmbEntityContext;
+
+    @property({ type: Object })
+    get item(): UmbCollectionItemModel | undefined {
+        return this.#item;
+    }
+    set item(value: UmbCollectionItemModel | undefined) {
+        const oldValue = this.#item;
+        this.#item = value;
+        if (value) {
+            this.#entityContext = new UmbEntityContext(this);
+            this.#entityContext.setEntityType(value.entityType);
+            this.#entityContext.setUnique(value.unique);
+        } else {
+            this.#entityContext?.destroy();
+            this.#entityContext = undefined;
+        }
+        this.requestUpdate('item', oldValue);
+    }
+
+    @property({ type: Boolean })
+    selectable = false;
+
+    @property({ type: Boolean })
+    selected = false;
+
+    @property({ type: Boolean })
+    selectOnly = false;
+
+    @property({ type: String })
+    href?: string;
+
+    override render() {
+        if (!this.item) return nothing;
+
+        return html`
+            <div>
+                ${this.selectable
+                    ? html`<input
+                            type="checkbox"
+                            .checked=${this.selected}
+                            @change=${() => this.selected ? this.#onDeselected() : this.#onSelected()}/>`
+                    : nothing}
+                ${this.href && !this.selectOnly
+                    ? html`<a href=${this.href}>${this.item.name}</a>`
+                    : html`<span>${this.item.name}</span>`}
+                <umb-entity-actions-bundle></umb-entity-actions-bundle>
+            </div>
+        `;
+    }
+
+    #onSelected() {
+        if (!this.item) return;
+        this.dispatchEvent(new UmbSelectedEvent(this.item.unique));
+    }
+
+    #onDeselected() {
+        if (!this.item) return;
+        this.dispatchEvent(new UmbDeselectedEvent(this.item.unique));
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'my-collection-view-item': MyCollectionViewItemElement;
     }
 }
 ```
@@ -159,7 +174,7 @@ declare global {
 Use the `match` property in your manifest to target a specific collection type.
 
 | **Match Value** | **Description** |
-|------------------|-----------------|
+|---|---|
 | `Umb.Collection.Document` | Targets the **Document** collection (content items). |
 | `Umb.Collection.Media` | Targets the **Media** collection (images, videos, files). |
 | `Umb.Collection.Member` | Targets the **Member** collection. |
