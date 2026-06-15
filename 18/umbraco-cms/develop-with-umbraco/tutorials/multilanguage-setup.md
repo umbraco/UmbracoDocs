@@ -65,25 +65,43 @@ To change the default language of a User:
 2. Select the user whose backoffice language you wish to change.
 3. Select the new language from the **UI Culture** drop-down list.
 
-![Changing the Default Backoffice Language of a User](../../.gitbook/assets/change-backoffice-language-v14.png)
+![Changing the Default Backoffice Language of a User](../../.gitbook/assets/change-backoffice-language.png)
 
 4. Click **Save**.
 
 ## Document Types
 
-For this tutorial, we will create the following document types:
+For this tutorial, let us create three Document Types. Each Document Type defines the properties that editors can fill in when creating content in the Umbraco backoffice.
 
-* Home Page
+### Home Page
 
-![Home Page](../../.gitbook/assets/home-page.png)
+| Property | Tab | Data Type |
+|---|---|---|
+| Page Title | Content | Textstring |
+| Body Text | Content | Rich Text Editor |
+| Header | Footer | Textstring |
+| Description | Footer | Textarea |
+| Address | Footer | Textstring |
 
-* Blogs
+### Blogs
 
-![Blogs](../../.gitbook/assets/Blogs.png)
+| Property | Tab | Data Type |
+|---|---|---|
+| How many posts should be shown? | Settings | Slider (0–100) |
+| Page Title | Content | Textstring |
+| Choose a layout | Content | Textstring |
 
-* Contact Us
+### Contact Us
 
-![Contact Us](../../.gitbook/assets/Contact-us.png)
+The contact page.
+
+| Property | Tab | Data Type |
+|---|---|---|
+| Page Title | Form | Textstring |
+| Address | Form | Rich Text Editor |
+| Contact Number | Form | Textarea |
+| Email | Form | Textstring |
+| Do you have a question? | Form | Form Picker |
 
 ## Enabling Language Variants on Document Types and Properties
 
@@ -93,7 +111,7 @@ To enable language variants on Document Types, follow these steps:
 2. Select **Contact Us** from the **Document Types** folder.
 3. Go to the **Settings** tab and toggle **Allow vary by culture**
 
-![Allow property editor Language Variants](../../.gitbook/assets/allow-varying-property-editor-v14.png)
+![Allow property editor Language Variants](../../.gitbook/assets/allow-varying-property-editor.png)
 
 4. Click **Save**.
 5. Go to the **Design** tab.
@@ -126,7 +144,7 @@ To add culture and hostnames, follow these steps:
 3. Select **Culture and Hostnames**.
 4. Add a domain for each hostname, like it's done here:
 
-![Culture and Hostnames](<../../.gitbook/assets/culture-and-hostnames-v14 (2).png>)
+![Culture and Hostnames](../../.gitbook/assets/culture-and-hostnames.png)
 
 5. Click **Save**.
 
@@ -187,7 +205,7 @@ To create dictionary items:
 4. Enter a **Name** for the dictionary item. Let's say **Address**.
 5. Enter the different language versions for the dictionary item.
 
-![Creating Dictionary Items](../../.gitbook/assets/add-dictionary-item-v14.png)
+![Creating Dictionary Items](../../.gitbook/assets/add-dictionary-item.png)
 
 6. Click **Save**.
 7. Similarly, we will add different language versions for the **Contact Number** field.
