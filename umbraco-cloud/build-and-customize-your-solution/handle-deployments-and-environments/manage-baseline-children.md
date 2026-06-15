@@ -4,7 +4,7 @@ description: Learn how to manage child projects connected to your Baseline, incl
 
 # Manage Baseline Children
 
-Use the **Manage child projects** page to push updates from your Baseline to connected child projects, monitor each child's update status, and break the connection when needed.
+Use the **Manage child projects** page to push updates from your Baseline to connected child projects, and monitor each child's update status. You can also break the connection when needed.
 
 The page is available on any project used as a baseline. Access it in multiple ways:
 
@@ -55,7 +55,7 @@ To remove the connection between a Baseline and a Child project, you need admin 
 Breaking the connection cannot be undone.
 {% endhint %}
 
-1. Navigate to the **Manage child projects** page
+1. Navigate to the **Manage child projects** page.
 2. Click the disconnect icon next to the Child project you want to disconnect.
 
 ![Disconnect icon](../../.gitbook/assets/baseline-child-list-item-disconnect.png)
