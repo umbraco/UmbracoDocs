@@ -16,7 +16,7 @@ The Razor view must inherit from FormsHtmlModel:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 ```
 
-You now have a model that contains your Form fields, which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia`, etc.
+You now have a model with your Form fields. This can be used in your email HTML markup, along with the UmbracoHelper methods like `Umbraco.TypedContent` and `Umbraco.TypedMedia`, and so on.
 
 Below is an example of an email template based on `Example-Template.cshtml` shipped with Umbraco Forms. Use this as a base for creating your own template.
 
