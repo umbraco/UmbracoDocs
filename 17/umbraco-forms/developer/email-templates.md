@@ -16,14 +16,14 @@ The Razor view must inherit from FormsHtmlModel:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 ```
 
-You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
+You now have a model that contains your Form fields, which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia`, etc.
 
 Below is an example of an email template based on `Example-Template.cshtml` shipped with Umbraco Forms. Use this as a base for creating your own template.
 
 ```csharp
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
-@using System.Net
+@using Microsoft.AspNetCore.Html
 @using Umbraco.Forms.Core.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
 @{
 	//This is an example email template where you can use Razor Views to send HTML emails
@@ -36,9 +36,9 @@ Below is an example of an email template based on `Example-Template.cshtml` ship
 	//@foreach (var color in Model.GetValues("checkboxField")){}
 
 
-	//Images need to be absolute - so fetching domain to prefix with images
-	var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
-	var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
+    //Images need to be absolute - so fetching domain to prefix with images
+    var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+    var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
 
 }
 <!DOCTYPE html>
@@ -179,6 +179,7 @@ Below is an example of an email template based on `Example-Template.cshtml` ship
 								{
 									"FieldType.Recaptcha2.cshtml",
 									"FieldType.Recaptcha3.cshtml",
+									"FieldType.RecaptchaEnterprise.cshtml",
 									"FieldType.RichText.cshtml",
 									"FieldType.Text.cshtml"
 								};
@@ -219,30 +220,33 @@ Below is an example of an email template based on `Example-Template.cshtml` ship
 											}
 											break;
 
-										default:
-											var values = field.GetValues();
-											if (values != null)
-											{
-												foreach (var value in values)
-												{
-													if (value != null)
-													{
+                                        default:
+                                            var values = field.GetValues();
+                                            if (values != null)
+                                            {
+                                                foreach (var value in values)
+                                                {
+                                                    if (value != null)
+                                                    {
 														if (value is string strValue)
 														{
-															@Html.Raw(WebUtility.HtmlEncode(strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps)).ReplaceLineEndings("<br/>"))
+															var captionedValue = strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps);
+															var encodedValue = System.Net.WebUtility.HtmlEncode(captionedValue);
+															var processedValue = encodedValue.ReplaceLineEndings("<br/>");
+															@Html.Raw(processedValue)
 														}
 														else
 														{
 															@value
 														}
 														<br />
-													}
-												}
-											}
-											break;
-									}
-								</p>
-							}
+                                                    }
+                                                }
+                                            }
+                                            break;
+                                    }
+                                </p>
+                            }
 
 						</td>
 					</tr>
