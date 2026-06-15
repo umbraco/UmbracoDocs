@@ -245,7 +245,7 @@ public class ConfigureProductIndexOptions : IConfigureNamedOptions<LuceneDirecto
 ```csharp
 using Examine;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Infrastructure.Examine
+using Umbraco.Cms.Infrastructure.Examine;
 
 namespace Umbraco.Docs.Samples.Web.CustomIndexing;
 
@@ -488,9 +488,15 @@ The order of these registrations matters. It is important to register your index
 
 #### Result
 
-![Custom product index](../../../.gitbook/assets/examine-management-product-index.png)
+To view the indexed fields for a result:
 
-![Product document](../../../.gitbook/assets/examine-management-product-document.png)
+1. Search for a term in the `ProductIndex` searcher. For example, _ball_ if you are using the Starter Kit.
+2. Locate a result in the results table.
+3. Click the value in the **Fields** column to expand the field details for that result.
+
+A panel opens on the right showing all indexed fields and their values for that document.
+
+![Custom product index](../../../.gitbook/assets/examine-management-product-index.png)
 
 ### A custom index for non-Umbraco data
 
