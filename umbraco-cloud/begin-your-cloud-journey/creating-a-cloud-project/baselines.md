@@ -58,7 +58,6 @@ When you've created the Child project, you can restore content from the Baseline
 
 If you do not see the content, reload the content tree once the restore is complete.
 
-
 ## Related articles
 
 {% content-ref url="../../build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md" %}
