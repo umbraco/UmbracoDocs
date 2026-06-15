@@ -84,6 +84,7 @@
       * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
       * [Blob Storage Backups](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/blob-storage-backups.md)
   * [Manage Environments](build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md)
+  * [Manage Baseline Children](build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Expand Your Project’s Capabilities
@@ -158,7 +159,6 @@
       * [Extraction error: "Type not found! "](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md)
     * [Cloud Errors](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/cloud-errors.md)
     * [Baseline Merge Conflicts](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/README.md)
-      * [Break Reference between Baseline and Child Project](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
       * [Handling configuration files](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
       * [Pushing Upgrades to a Child Project](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
 
