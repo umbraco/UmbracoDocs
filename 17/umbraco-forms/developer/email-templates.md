@@ -16,9 +16,9 @@ The Razor view must inherit from FormsHtmlModel:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 ```
 
-You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
+You now have a model with your Form fields. This can be used in your email HTML markup, along with the UmbracoHelper methods like `Umbraco.TypedContent` and `Umbraco.TypedMedia`, and so on.
 
-Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
+Below is an example of an email template based on `Example-Template.cshtml` shipped with Umbraco Forms. Use this as a base for creating your own template.
 
 {% hint style="warning" %}
 **Absolute URLs in load-balanced or proxied environments**
@@ -43,6 +43,8 @@ See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umb
 {% endhint %}
 
 ```csharp
+@using Microsoft.AspNetCore.Html
+@using Umbraco.Forms.Core.Extensions
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
 @{
@@ -56,9 +58,9 @@ See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umb
 	//@foreach (var color in Model.GetValues("checkboxField")){}
 
 
-	//Images need to be absolute - so fetching domain to prefix with images
-	var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
-	var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
+    //Images need to be absolute - so fetching domain to prefix with images
+    var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+    var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
 
 }
 <!DOCTYPE html>
@@ -240,24 +242,33 @@ See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umb
 											}
 											break;
 
-										default:
-											var values = field.GetValues();
-											if (values != null)
-											{
-												foreach (var value in values)
-												{
-													if (value != null)
-													{
-														@(value is string strValue ? strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps) : value)
-
+                                        default:
+                                            var values = field.GetValues();
+                                            if (values != null)
+                                            {
+                                                foreach (var value in values)
+                                                {
+                                                    if (value != null)
+                                                    {
+														if (value is string strValue)
+														{
+															var captionedValue = strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps);
+															var encodedValue = System.Net.WebUtility.HtmlEncode(captionedValue);
+															var processedValue = encodedValue.ReplaceLineEndings("<br/>");
+															@Html.Raw(processedValue)
+														}
+														else
+														{
+															@value
+														}
 														<br />
-													}
-												}
-											}
-											break;
-									}
-								</p>
-							}
+                                                    }
+                                                }
+                                            }
+                                            break;
+                                    }
+                                </p>
+                            }
 
 						</td>
 					</tr>
