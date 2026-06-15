@@ -37,6 +37,10 @@ A shorter period means scheduled content is published closer to its configured t
 
 Determines whether scheduled publishing runs are aligned to clock boundaries derived from `Period`, rather than drifting based on when the previous run completed.
 
+{% hint style="info" %}
+The default is `false` in Umbraco 17 and 18 to preserve the existing behaviour. It is due to change to `true` in Umbraco 19.
+{% endhint %}
+
 When `false` (the default), each run is scheduled relative to the completion of the previous run. This means the time of day at which publishing occurs gradually drifts forward.
 
 When `true`, runs are aligned to clock boundaries that are a multiple of `Period`. For example, with a `Period` of `00:00:10`, runs are aligned to the `:00`, `:10`, `:20`, `:30`, `:40`, and `:50` seconds of each minute. This makes the time at which scheduled content is published more predictable.
