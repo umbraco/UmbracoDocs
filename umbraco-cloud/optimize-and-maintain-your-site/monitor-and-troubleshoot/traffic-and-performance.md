@@ -102,10 +102,10 @@ Displays the total data transferred from your site through the edge. High values
 
 ## Interactive Chart
 
-Above the chart, a row of pills lets you choose which metrics to display. By default, three metrics are active. You can:
+The overview tiles at the top of the page double as a selector for the chart below. By default, one metric is active (Failed Origin Requests). You can:
 
-* Click a pill to remove that metric from the chart.
-* Click **Add metric** to add another metric to the chart.
+* Click a tile to add its metric to the chart.
+* Click an active tile again to remove that metric from the chart.
 * Display multiple metrics simultaneously on the same chart for comparison.
 
 Available metrics include:
@@ -198,6 +198,10 @@ You can also remove the reference to the `Umbraco.Cloud.Cms` package in the Umbr
 ## Traffic Breakdown Tables
 
 The breakdown tables provide detailed Cloudflare edge analytics, giving you visibility into how traffic flows through the edge network. The section appears when edge analytics are available (hostnames selected and a valid time range).
+
+Two tabs at the top of this section let you switch the table values between **Edge Requests** (count) and **Edge Data Traffic** (bytes transferred).
+
+<figure><img src="../../.gitbook/assets/tp-breakdown-tables-toggle.png" alt="Breakdown table data type section header with Edge Requests and Edge Data Traffic tabs, followed by the Response Characteristics tables."><figcaption><p>Switch the breakdown tables between Edge Requests and Edge Data Traffic.</p></figcaption></figure>
 
 Each table shows the top entries sorted by count or bytes.
 
