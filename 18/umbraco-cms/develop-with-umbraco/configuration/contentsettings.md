@@ -158,11 +158,11 @@ This setting is used when you're running Umbraco in virtual directories. Setting
 
 ### Sort children by field fires notifications
 
-This setting controls how sorting the children of a node by a field is persisted. Sorting by a field is available through the Management API, which can reorder a node's entire set of children in a single operation.
+Sorting by a field is available through the Management API, which can reorder a node's entire set of children in a single operation. This is an alternative mechanism to the per-item sort currently supported via the backoffice.
 
-By default (`false`), the children are reordered with a single set-based database update and a single branch cache refresh. A single audit entry is written, but no per-item save/sort notifications are fired. As a result, webhooks that depend on those notifications are not triggered. This keeps the operation efficient on nodes with many children.
+By default (`false`), the children are reordered in a performant "set-based" operation. A single audit entry is written, but no per-item save/sort notifications are fired. As a result, webhooks that depend on notifications are not triggered.
 
-Set this to `true` to restore per-item save/sort notifications (and the webhooks that depend on them). This routes the field sort through the standard per-item sort path, accepting the additional performance cost on nodes with many children.
+Set this to `true` to restore per-item save/sort notifications (and the webhooks that depend on them). This follows the per-item sort path, accepting the additional performance cost on nodes with many children.
 
 ### Show deprecated property editors
 
