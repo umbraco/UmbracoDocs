@@ -6,7 +6,7 @@ _Provides an overview of the available Examine functionality available directly 
 
 The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed, rebuild the indexes if there's a problem, and test keywords to see what results would be returned.
 
-![Examine Management within the Developer section](../../../.gitbook/assets/overview-examine-v14.png)
+![Examine Management within the Settings section](../../../.gitbook/assets/DeliveryAPIContentIndex.png)
 
 The Examine Management dashboard, accessible from within the Settings section, is split into two sections: Indexers and Searchers.
 
@@ -18,7 +18,7 @@ From the Indexers section, you can view details about each Examine index current
 
 This section displays properties of the selected index, including the number of stored documents and fields.
 
-![Rebuild Index within Examine Management](../../../.gitbook/assets/External-indexes-v14.png)
+![Rebuild Index within Examine Management](../../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png)
 
 Within the Indexers it displays the details for the index provider as well.
 
