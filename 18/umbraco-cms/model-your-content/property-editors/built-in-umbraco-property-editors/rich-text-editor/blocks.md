@@ -7,7 +7,7 @@ Blocks can be added to the Rich Text Editor when:
 * Available Blocks are specified as part of the Rich Text Editor Data Type configuration.
 * The **Insert Block** toolbar option is enabled in the Rich Text Editor.
 
-![RTE Insert Block Toolbar Button](../../../../.gitbook/assets/rte-blocks-toolbar-insert-button.png)
+![RTE Insert Block Toolbar Button](../../../../.gitbook/assets/rte-block-toolbar-insert-button-18.png)
 
 ## Configure Blocks
 
@@ -21,7 +21,7 @@ Blocks functionality can then be configured through the Rich Text Editor Data Ty
 4. Add the Element Types you want to make available as blocks.
 5. Configure each Block Type with the options described below.
 
-![RTE Blocks Data Type Configuration](../../../../.gitbook/assets/rte-blocks-datatype-configuration.png)
+![RTE Blocks Data Type Configuration](../../../../.gitbook/assets/rte-blocks-datatype-configuration-18.png)
 
 ### Editor Appearance
 
@@ -57,15 +57,17 @@ Control how blocks appear in the block picker:
 Editors can add blocks to rich text content using the **Insert Block** toolbar button:
 
 1. Position the cursor where you want to insert the block
-2.  Click the **Insert Block** button in the Rich Text Editor toolbar
+2. Click the **Insert Block** button in the Rich Text Editor toolbar
 
-    ![Adding Blocks to Content - Step 1](../../../../.gitbook/assets/rte-blocks-adding-to-content-1.png)
-3.  Select the desired Block from the available options
+![Adding Blocks to Content - Step 1](../../../../.gitbook/assets/rte-blocks-adding-to-content-1-18.png)
 
-    ![Adding Blocks to Content - Step 2](../../../../.gitbook/assets/rte-blocks-adding-to-content-2.png)
-4.  Configure the block content (and settings, if provided)
+3. Select the desired Block from the available options
 
-    ![Adding Blocks to Content - Step 3](../../../../.gitbook/assets/rte-blocks-adding-to-content-3.png)
+![Adding Blocks to Content - Step 2](../../../../.gitbook/assets/rte-blocks-adding-to-content-2-18.png)
+
+4. Configure the block content (and settings, if provided)
+
+![Adding Blocks to Content - Step 3](../../../../.gitbook/assets/rte-blocks-adding-to-content-3-18.png)
 
 The block appears in the editor as a structured element.
 
