@@ -15,28 +15,25 @@ Dictionary Items can be managed from the **Translation** section. Let's take a l
 To add a Dictionary Item:
 
 1. Go to the **Translation** section.
-2. Click on **Dictionary** in the **Translation** tree and select **Create**.
+2. Select **Create** in the dashboard, or click on **+** next to **Dictionary in the tree.
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
-4.  Enter the values for the different language versions.
+4. Enter the values for the different language versions.
 
-    <figure><img src="../../../.gitbook/assets/dictionary-item-values.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/dictionary-item-values-18.png" alt=""><figcaption></figcaption></figure>
+
 5. Click **Save**.
 
 ### Grouping Dictionary Items
 
 To group dictionary items:
 
-1. Go to the **Translation** section.
-2. Click on **Dictionary** in the **Translation** tree and select **Create**.
-3. Enter the **Name** for the dictionary item. Let's say _Contact_.
-4. Click **Create**.
-5. Click on **Contact** and select **Create**.
-6. Enter the **Name** of the item to be created under the **Contact** group.
-7. Click **Create**.
-8.  Enter the values for the different language versions.
+1. Hover the mouse over an existing item in the tree.
+2. Click on **+** to create a new dictionary item.
+3. Enter the values for the different language versions.
 
-    <figure><img src="../../../.gitbook/assets/display-dictionary-item.png" alt=""><figcaption></figcaption></figure>
-9. Click **Save**.
+<figure><img src="../../../.gitbook/assets/display-dictionary-item-18.png" alt=""><figcaption></figcaption></figure>
+
+4. Click **Save**.
 
 ## Editing Dictionary Items
 
@@ -87,7 +84,7 @@ In some cases, you might want to use the same Dictionary Items on multiple Umbra
 
 This will download a `.udt` file which you can use to import the Dictionary items on another Umbraco website.
 
-![Options menu with the Export feature](../../../.gitbook/assets/export.png)
+![Options menu with the Export feature](../../../.gitbook/assets/dictionary-items-export.png)
 
 ### Importing Dictionary Items
 
@@ -103,7 +100,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 The Dictionary Items have now been added to your website.
 
-![Review the Dictionary Items for import before confirming](../../../.gitbook/assets/import.png)
+![Review the Dictionary Items for import before confirming](../../../.gitbook/assets/dictionary-items-import.png)
 
 ## Using Dictionary Item in a Multilingual website
 
