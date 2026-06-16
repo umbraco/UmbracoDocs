@@ -47,6 +47,7 @@ The following snippet will give an overview of the keys and values in the conten
       },
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
+      "SortChildrenByFieldFiresNotifications": false,
       "ShowDeprecatedPropertyEditors": false,
       "ShowDomainWarnings": true,
       "ShowUnroutableContentWarnings": true,
@@ -159,6 +160,14 @@ This allows you to customize the preview badge being shown when you're previewin
 ### Resolve urls from text string
 
 This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links. However, this is required if Umbraco is running in a virtual directory.
+
+### Sort children by field fires notifications
+
+This setting controls how sorting the children of a node by a field is persisted. Sorting by a field is available through the Management API, which can reorder a node's entire set of children in a single operation.
+
+By default (`false`), the children are reordered with a single set-based database update and a single branch cache refresh. A single audit entry is written, but no per-item save/sort notifications are fired. As a result, webhooks that depend on those notifications are not triggered. This keeps the operation efficient on nodes with many children.
+
+Set this to `true` to restore per-item save/sort notifications (and the webhooks that depend on them). This routes the field sort through the standard per-item sort path, accepting the additional performance cost on nodes with many children.
 
 ### Show deprecated property editors
 
