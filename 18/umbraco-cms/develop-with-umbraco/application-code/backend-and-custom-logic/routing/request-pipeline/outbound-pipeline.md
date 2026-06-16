@@ -12,7 +12,7 @@ The **outbound pipeline** consists out of the following steps:
 
 To explain these steps, the following content tree is used as an example:
 
-![Content Tree](../../../../../.gitbook/assets/simple-content-tree-v14.png)
+![Content Tree](../../../../../.gitbook/assets/simple-content-tree.png)
 
 ## 1. Create segments
 
@@ -137,7 +137,7 @@ In the example, the "swibble" node receives the path `/our-products/swibble`. Us
 
 In a multi-site scenario, an internal path such as `/our-products/swibble-123xyz` could belong to any of the sites, or match multiple nodes across multiple sites. In this case, additional sites have their internal path prefixed by the node ID of their root node. Any content node with a hostname defines a new root for paths.
 
-![Path example](../../../../../.gitbook/assets/path-example-v14.png)
+![Path example](../../../../../.gitbook/assets/path-example.png)
 
 | Node         | Segment        | Internal Path                |
 | ------------ | -------------- | ---------------------------- |
@@ -423,11 +423,11 @@ public class RegisterCustomSiteDomainMapperComposer : IComposer
 
 Umbraco ships with a default `SiteDomainMapper` that supports grouping sets of domains together. In a multi-environment setup such as Umbraco Cloud, multiple domains may be configured for a single site. For example, live, staging, testing, and a backoffice domain. Each domain is set up as a **Culture and Hostname** entry inside Umbraco.
 
-![Culture and Hostnames multiple domains](../../../../../.gitbook/assets/culture-and-hostnames-v17.png)
+![Culture and Hostnames multiple domains](../../../../../.gitbook/assets/culture-and-hostnames.png)
 
 Without a `SiteDomainMapper`, editors see the full list of possible URLs for each content item across all configured domains:
 
-![All domains listed](../../../../../.gitbook/assets/no-sitedomainhelp-v17.png)
+![All domains listed](../../../../../.gitbook/assets/no-sitedomainhelp.png)
 
 This can lead to confusion. Clicking a staging URL may display content from a different environment or database.
 
