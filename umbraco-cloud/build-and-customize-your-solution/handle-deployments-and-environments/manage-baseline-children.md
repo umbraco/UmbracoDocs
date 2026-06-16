@@ -10,7 +10,7 @@ The page is available on any project used as a baseline. Access it in multiple w
 
 1. Go to the Baseline project in the Umbraco Cloud portal.
 2. Navigate to the **Manage child projects** page.
-   * Click the **Baseline** label at the bottom of the left-side menu.
+3. Click the **Baseline** label at the bottom of the left-side menu.
    * Alternatively, go to **Management** > **Baselines**.
 
 <figure><img src="../../.gitbook/assets/manage-child-projects.png" alt="The Baselines management page showing connected Child projects"><figcaption><p>Navigation showing how to navigate to the <strong>Manage child projects</strong> page.</p></figcaption></figure>
@@ -21,7 +21,7 @@ The page shows a list of projects that are based on the baseline.
 
 <figure><img src="../../.gitbook/assets/baseline-manage-child-project.png" alt="Baselines - Manage child projects page"><figcaption><p>The Manage child projects page lists child projects connected to the baseline.</p></figcaption></figure>
 
-Each child project shows the **Last update (UTC)**. A child that has not been updated within the last 5 baseline updates shows a generic message.
+Each child project shows the **Last update (UTC)**. A child project that has not been updated within the last 5 baseline updates shows a generic message.
 
 <figure><img src="../../.gitbook/assets/baselines-no-updates-back-five.png" alt="Baselines - Child was not updated in the last 5 updates"><figcaption><p>A child project that has not been updated within the last 5 baseline updates shows a generic message.</p></figcaption></figure>
 
@@ -33,7 +33,7 @@ Use the checkboxes to select which child projects you want to update. Click **Up
 
 Pushing changes from the baseline creates an entry in **Project history**. Each targeted child project also gets its own entry.
 
-### Actions, sorting and filters
+### Actions, sorting, and filters
 
 Click a column header to sort the list by `Project name` or `Last update (UTC)`.
 
@@ -60,11 +60,12 @@ Breaking the connection cannot be undone.
 
 ![Disconnect icon](../../.gitbook/assets/baseline-child-list-item-disconnect.png)
 
-   A confirmation window appears, showing the consequences of disconnecting.
+A confirmation window appears, showing the consequences of disconnecting.
+
 3. Enter the Child project name you wish to disconnect.
 4. Click **Disconnect**.
 
-   ![Break Baseline and child project](../../.gitbook/assets/break-reference.png)
+![Break Baseline and child project](../../.gitbook/assets/break-reference.png)
 
 ## Related articles
 
