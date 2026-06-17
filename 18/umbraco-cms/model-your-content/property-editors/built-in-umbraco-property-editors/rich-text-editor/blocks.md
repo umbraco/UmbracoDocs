@@ -56,16 +56,16 @@ Control how blocks appear in the block picker:
 
 Editors can add blocks to rich text content using the **Insert Block** toolbar button:
 
-1. Position the cursor where you want to insert the block
-2. Click the **Insert Block** button in the Rich Text Editor toolbar
+1. Position the cursor where you want to insert the block.
+2. Click the **Insert Block** button in the Rich Text Editor toolbar.
 
 ![Adding Blocks to Content - Step 1](../../../../.gitbook/assets/rte-blocks-adding-to-content-1-18.png)
 
-3. Select the desired Block from the available options
+3. Select the desired Block from the available options.
 
 ![Adding Blocks to Content - Step 2](../../../../.gitbook/assets/rte-blocks-adding-to-content-2-18.png)
 
-4. Configure the block content (and settings, if provided)
+4. Configure the block content (and settings, if provided).
 
 ![Adding Blocks to Content - Step 3](../../../../.gitbook/assets/rte-blocks-adding-to-content-3-18.png)
 
