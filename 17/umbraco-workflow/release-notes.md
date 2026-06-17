@@ -20,9 +20,9 @@ This section contains the release notes for Umbraco Workflow 17, including all c
 
 #### Approval configuration decoupled from settings
 
-Continuing the decoupling work started in 17.3.2, new-node approval flow and exclude-nodes configuration have been moved out of the settings save flow. Each configuration type now has its own dedicated API endpoints, repositories, and self-sufficient UI components. This completes the separation of all approval configuration from the global settings object.
+New-node approval flow and exclude-nodes configuration have been moved out of the settings save flow. Each configuration type now has its own dedicated API endpoints, repositories, and self-sufficient UI components. This completes the separation of all approval configuration from the global settings object.
 
-Workflow configuration on a content node is now readonly when the node has an active workflow, preventing changes to approval flows while a workflow is in progress.
+Workflow configuration on a content node is now readonly when the node has an active workflow. This prevents changes to configuration while a workflow is in progress.
 
 #### Bug fixes and other changes
 
