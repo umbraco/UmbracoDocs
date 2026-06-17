@@ -12,11 +12,11 @@ You can copy a page in two ways:
 2. Click **...** next to the page you wish to copy.
 3. Select **Duplicate to**.
 
-![Copy Menu 1](../../../.gitbook/assets/duplicate.png)
+![Copy Menu 1](../../.gitbook/assets/duplicate.png)
 
 A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
 
-![Copy Option 1](../../../.gitbook/assets/duplicate-options.png)
+![Copy Option 1](../../.gitbook/assets/duplicate-options.png)
 4. Toggle **Relate to original** button if you want to keep the links linked to the original page.
 5. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
 6. Click **Copy**.
@@ -28,7 +28,7 @@ A window appears on the right side of the screen. Here, you can choose where you
 3. Click **...** next to the title of the page.
 4. Select **Duplicate to**.
 
-![Actions Menu](../../../.gitbook/assets/actions-duplicate-menu.png)
+![Actions Menu](../../.gitbook/assets/actions-duplicate-menu.png)
 
 A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
 
