@@ -16,7 +16,24 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
-### [17.3.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.2) (June 2026)
+### [17.3.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.3) (June 17 2026)
+
+#### Approval configuration decoupled from settings
+
+New-node approval flow and exclude-nodes configuration have been moved out of the settings save flow. Each configuration type now has its own dedicated API endpoints, repositories, and self-sufficient UI components. This completes the separation of all approval configuration from the global settings object.
+
+Workflow configuration on a content node is now readonly when the node has an active workflow. This prevents changes to configuration while a workflow is in progress.
+
+#### Bug fixes and other changes
+
+* Fixes a bug where orphaned task approvals left over from an earlier migration could cause errors when querying workflow tasks. A new migration cleans up orphaned approval records, and the task query now guards against invalid approvals. [#147](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/147)
+* Fixes a bug where incorrectly created permissions columns were added to the database during the 17.3.1 migration. A new migration removes the obsolete columns. [#154](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/154)
+* Fixes a bug where a workflow task could show as pending for a user who had already approved, when the approval threshold was greater than one.
+* Fixes a bug where the request-approval action was not visible on new (unsaved) content nodes due to missing state in the visibility condition. [#148](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/148), [#153](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/153)
+* Fixes a race condition in the workflow context initialization that could cause approval group configuration to resolve before context data was available.
+* Broadens the content type selection for content reviews, allowing more Document Types to be eligible for review configuration. [#155](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/155)
+
+### [17.3.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.2) (June 4 2026)
 
 #### Document Type approval configuration decoupled from settings
 
