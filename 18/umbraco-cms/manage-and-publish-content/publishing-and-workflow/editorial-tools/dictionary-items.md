@@ -15,7 +15,7 @@ Dictionary Items can be managed from the **Translation** section. Let's take a l
 To add a Dictionary Item:
 
 1. Go to the **Translation** section.
-2. Select **Create** in the dashboard, or click on **+** next to **Dictionary in the tree.
+2. Select **Create** in the dashboard, or click on **+** next to **Dictionary** in the tree.
 3. Enter the **Name** for the dictionary item. Let's say _Welcome_.
 4. Enter the values for the different language versions.
 
