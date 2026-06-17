@@ -1,6 +1,5 @@
 ---
 description: Explore, build, launch, and maintain your projects with ease.
-coverY: 0
 ---
 
 # Welcome to Umbraco Cloud Documentation

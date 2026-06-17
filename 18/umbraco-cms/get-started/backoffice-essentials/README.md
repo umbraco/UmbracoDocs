@@ -10,8 +10,8 @@ Once you are familiar with the basics, the [Tips and Tricks](tips-and-tricks/) s
 
 ## What this section covers
 
-* **Content lifecycle** — create, save, preview, publish, and unpublish content
-* **Node management** — find, edit, sort, move, copy, delete, and restore pages
+* **Content lifecycle**: Create, save, preview, publish, and unpublish content
+* **Node management**: Find, edit, sort, move, copy, delete, and restore pages
 
 ## Related Resources
 
