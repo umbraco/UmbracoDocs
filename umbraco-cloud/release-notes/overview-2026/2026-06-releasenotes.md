@@ -3,6 +3,7 @@
 ## Key Takeaways
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on each child project, and the list has more filtering options.
+* **Umbraco.Cloud.Cms translations** - The backoffice UI in the `Umbraco.Cloud.Cms` package is now available in Danish, in addition to English. You can also add translations for other languages or override existing strings.
 
 ## Baseline enhancements
 
@@ -25,3 +26,11 @@ The **Manage child projects** page has also been enhanced with more data:
 A child project can have an indicator to show that it contains any components that are behind the baseline. Tracked components are: Umbraco CMS, Deploy, Forms, Umbraco ID, `Umbraco.Cloud.Cms` and more.
 
 <figure><img src="../../.gitbook/assets/baselines-components-behind.gif" alt="Baselines - Show components on child project which are behind the baseline"><figcaption><p>Show components on child project which are behind the baseline.</p></figcaption></figure>
+
+## Umbraco.Cloud.Cms translations
+
+The backoffice UI shipped with the `Umbraco.Cloud.Cms` package is now translated into Danish, alongside the existing English translations. The translations cover the Umbraco ID sign-in experience, session timeout messages, and profile management links in the backoffice.
+ 
+ %TODO add version%
+
+You can also add support for other languages or customize specific strings in your own Cloud project. See [Customizing Translations in Umbraco.Cloud.Cms](../../expand-your-projects-capabilities/cloud-extensions/customizing-translations.md) for details.
