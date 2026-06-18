@@ -60,7 +60,7 @@ Let us use the Swagger development tool to make requests to the Umbraco Content 
    * For the path parameter, enter `/` for the example piece of content we created at the root of our site - alternatively, specify the correct URL path to the content.
    * Set the **API-Key** parameter if your Umbraco application requires [Public Access](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#additional-configuration) this can be toggled with the configuration value `Umbraco:CMS:DeliveryAPI:PublicAccess`
 4. You should view the JSON result of the content node, including the default header value.
-5. Navigate to **Umbraco Engage Marketing API** from the definitions dropdown.
+5. Navigate to **Umbraco Engage API** from the definitions dropdown.
 6. Expand `/umbraco/engage/api/v1/analytics/pageview/trackpageview/client`:
    * Click **Try it out**.
    * Modify the JSON body, setting the URL to the page visited earlier. With the content delivery API above, leave the other property **referrerUrl** empty.
