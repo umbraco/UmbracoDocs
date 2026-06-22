@@ -7,6 +7,10 @@ description: >-
 
 The `Umbraco.Cloud.Cms` package includes backoffice translations for English and Danish. You can add translations for additional languages or override specific strings for existing languages.
 
+{% hint style="info" %}
+Localization in `Umbraco.Cloud.Cms` is available from version 17.1.4 and later.
+{% endhint %}
+
 ## Available translation keys
 
 All translations belong to the `umbracoIdentity` namespace. The table below lists every key and its default English value.

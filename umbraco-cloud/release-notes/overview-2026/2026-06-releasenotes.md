@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on each child project, and the list has more filtering options.
-* **Umbraco.Cloud.Cms translations** - The backoffice UI in the `Umbraco.Cloud.Cms` package is now available in Danish, in addition to English. You can also add translations for other languages or override existing strings.
+* **Umbraco.Cloud.Cms 17.1.4** - Enhancements to make cloud ready for Load Balancing. Danish localication for Umbraco Id backoffice UI added. Fix for a timing issue related to Umbraco ID sign-in screen.
 
 ## Baseline enhancements
 
@@ -27,10 +27,17 @@ A child project can have an indicator to show that it contains any components th
 
 <figure><img src="../../.gitbook/assets/baselines-components-behind.gif" alt="Baselines - Show components on child project which are behind the baseline"><figcaption><p>Show components on child project which are behind the baseline.</p></figcaption></figure>
 
-## Umbraco.Cloud.Cms translations
+## Umbraco.Cloud.Cms 17.1.4
+
+More enhancements to the Umbraco Cloud Load Balancing feature. 
+%% What more should we write? %%
 
 The backoffice UI shipped with the `Umbraco.Cloud.Cms` package is now translated into Danish, alongside the existing English translations. The translations cover the Umbraco ID sign-in experience, session timeout messages, and profile management links in the backoffice.
- 
- %TODO add version%
 
 You can also add support for other languages or customize specific strings in your own Cloud project. See [Customizing Translations in Umbraco.Cloud.Cms](../../expand-your-projects-capabilities/cloud-extensions/customizing-translations.md) for details.
+
+A change in Umbraco CMS 17.4 affected the timing of manifest registrations. This could cause the Umbraco ID auth provider not to be ready when visiting ```https://{cloudsite}.{region}.umbraco.io/umbraco```.
+The native Umbraco Login was shown instead of being redirected to Umbraco ID login.
+
+* Umbraco Cms 17.5 contains a fix (target release June 25th 2026). [Umbraco-CMS PR](https://github.com/umbraco/Umbraco-CMS/pull/23167)
+* The Umbraco.Cloud.Cms package has also changed how manifests are loaded. This is to make sure the Umbraco ID auth provider is loaded as early as possible. [Related GitHub issue](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/1053)

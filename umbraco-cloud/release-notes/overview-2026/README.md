@@ -7,7 +7,7 @@ description: Get an overview of the release notes for each month in 2026.
 ## [June 2026](2026-06-releasenotes.md)
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on child, and list has more filtering options.
-* **Umbraco.Cloud.Cms translations** - The backoffice UI in the `Umbraco.Cloud.Cms` package is now available in Danish, in addition to English. You can also add translations for other languages or override existing strings.
+* **Umbraco.Cloud.Cms 17.1.4** - Enhancements to make cloud ready for Load Balancing. Danish localication for Umbraco Id backoffice UI added. Fix for a timing issue related to Umbraco ID sign-in screen.
 
 ## [May 2026](2026-05-releasenotes.md)
 

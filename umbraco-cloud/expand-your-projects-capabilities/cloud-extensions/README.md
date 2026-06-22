@@ -4,4 +4,8 @@ Enhance your Umbraco Cloud projects with powerful built-in tools and custom pack
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="private-nuget-feed.md">Private NuGet Feed on Umbraco Cloud</a></td><td></td><td><a href="private-nuget-feed.md">private-nuget-feed.md</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Querying_and_Models.png">Documentations Icons_Umbraco_CMS_Reference_Querying_and_Models.png</a></td></tr><tr><td><a href="umbraco-forms-on-cloud.md">Umbraco Forms on Cloud</a></td><td></td><td><a href="umbraco-forms-on-cloud.md">umbraco-forms-on-cloud.md</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice.png">Documentations Icons_Umbraco_CMS_Fundamentals_Backoffice.png</a></td></tr></tbody></table>
 
-%%TODO add link to translation thing
+## Related articles
+
+{% content-ref url="./customizing-translations.md" %}
+[Customizing Translations in Umbraco.Cloud.Cms](./customizing-translations.md)
+{% endcontent-ref %}
