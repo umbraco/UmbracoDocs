@@ -266,6 +266,14 @@ If working with variants - fallback to a different language value - if perhaps t
 @(Model.Value(PublishedValueFallback, "pageTitle", "fr", fallback: Fallback.ToLanguage))
 ```
 
+### Fallback to Default Language
+
+If working with variants - fallback to the value from the default language - if the value hasn't been populated yet for the current language. Unlike `Fallback.ToLanguage`, this doesn't require a specific culture to be specified, as it always falls back to the site's default language:
+
+```csharp
+@(Model.Value(PublishedValueFallback, "pageTitle", fallback: Fallback.ToDefaultLanguage))
+```
+
 ### Combining the Fallback options
 
 Use Fallback.To() to 'combine' Fallback options.

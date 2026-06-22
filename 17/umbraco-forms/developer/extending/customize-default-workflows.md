@@ -27,11 +27,11 @@ Firstly, the custom workflow:
 ```csharp
 using System;
 using System.Collections.Generic;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Attributes;
 using Umbraco.Forms.Core.Enums;
-using Umbraco.Forms.Core.Persistence.Dtos;
 
 namespace MyNamespace
 {
@@ -64,10 +64,10 @@ namespace MyNamespace
             return exs;
         }
 
-        public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
+        public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context)
         {
-            _logger.LogInformation($"'{Message}' written at {DateTime.Now}");
-            return WorkflowExecutionStatus.Completed;
+            _logger.LogInformation("'{Message}' written at {Date}", Message, DateTime.Now);
+            return Task.FromResult(WorkflowExecutionStatus.Completed);
         }
     }
 }
@@ -150,7 +150,6 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 using Umbraco.Forms.Core.Providers;
-using Umbraco.Forms.Testsite.Business.Workflows;
 using Umbraco.Forms.Web.Behaviors;
 
 namespace MyNamespace

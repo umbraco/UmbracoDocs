@@ -204,3 +204,5 @@ redirects:
     get-started/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
     get-started/editors-manual/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
     get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
+    extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
+    extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md

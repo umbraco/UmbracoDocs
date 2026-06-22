@@ -18,7 +18,7 @@ To create or invite a User:
 2. Select **Create -> User**. Alternatively, click **Invite...**.
 3. Enter the **Name** and **Email** of the new user.
 4. Select which **User group** the new user should be added to.
-5. _\[Optional]_ Enter a **Message** for the invitation.
+5. _[Optional]_ Enter a **Message** for the invitation.
 6. Click **Create user** or **Send invite**.
 
 Once you have created the user, the new user will receive a system-generated password for their initial login. This password needs to be used to access the account.
@@ -31,7 +31,7 @@ Open a user’s profile from the **Users** section to update:
 * Email address of the user.
 * UI Culture (sets the backoffice language of the user account).
 * User Group (determines the scope of access in the backoffice).
-* Start nodes for both Content and Media sections to limit access.
+* Start nodes for **Content**, **Media**, and element **Library** sections to limit access.
 
 ## Managing Users
 
@@ -45,11 +45,17 @@ Use the **Status** filter to narrow down users based on their current state:
 
 * Active – Users who have logged in and are enabled.
 * Disabled – Users whose access has been explicitly turned off.
-* Locked out - User has been automatically blocked from logging in after too many failed login attempts.
-* Invited - User has been invited to access the Umbraco backoffice.
+* Locked out – User has been automatically blocked after too many failed login attempts.
+* Invited – User has been sent an invitation to access the backoffice.
 * Inactive – Users who haven't logged in or have been disabled.
 
-The **Groups** filter lets you view users based on the user groups they belong to. For example, Administrators, Editors, Sensitive data, Translators, and Writers.
+The **Groups** filter lets you view users based on the user groups they belong to. For example:
+
+* Administrators
+* Editors
+* Sensitive data
+* Translators
+* Writers
 
 Use **Order by** to sort users by:
 
@@ -61,13 +67,13 @@ Use **Order by** to sort users by:
 
 ### Layout Options
 
-Users are displayed in Grid format by default, showing:
+Users are displayed in Cards format by default, showing:
 
 * Initials, full name, and group membership.
 * Login status (for example, “Inactive” label).
 * Last login time (if applicable).
 
-Click the table/grid icon (top-right corner) to switch to a more compact, column-based layout.
+Click the Cards/Table icon (top-right corner) to switch to a more compact, table-based layout.
 
 ## Default User Groups
 
@@ -85,52 +91,40 @@ In previous versions of Umbraco, "Send to publish" was enabled for Writers. Sinc
 
 ## Creating a User Group
 
-You can also create your own custom User Groups and add properties and tabs as you would with Document Types and Member Types.
+You can also create your own custom User Groups to fit your specific access requirements.
 
 1. Go to the **Users** section.
 2. Select **User Groups**.
 3. Click **Create**.
 
-![User Groups Menu](../../../.gitbook/assets/user-groups-menu-v16.png)
+![User Groups Menu](../../../.gitbook/assets/user-groups-menu-v18.png)
 
 ### User Group Parameters
 
-![Create User Group](../../../.gitbook/assets/user-groups-v16.png)
-
-Enter the information about the User Group and settings for custom properties:
+Use the following settings to configure the User Group:
 
 * **Name**: The name of the User Group.
-* **Alias**: Used to reference the User Group in code - the alias will be auto-generated based on the name.
-* **Assign access**: Define which sections and languages the users will have access to. Also, if the users should have access to only some or all content and media.
-* **Default Permissions**: Select the default permissions granted to users of the User Group.
-* **Granular permissions**: Define a specific node the users in the group should have access to.
+* **Alias**: Used to reference the User Group in code. The alias will be auto-generated based on the name.
+* **Assign access**: Define which sections and languages users will have access to, and whether they should have access to some or all content and media.
 
-## User Permissions
+![Create User Group](../../../.gitbook/assets/user-groups-v18.png)
 
-Depending on which User Group a user is added to, each user has a set of permissions associated with their accounts. These permissions either enable or disable a user's ability to perform their associated function.
+* **Document permissions**: Select the document permissions granted to users of the User Group. Depending on which User Group a user is added to, each user has a set of permissions associated with their accounts. These permissions either enable or disable a user's ability to perform their associated function. Use **Granular permissions** to assign access to specific documents. This is useful when a User Group should only have limited access to a certain page on the website. Clicking **Add** opens a dialog where you can choose between documents from the Content section.
 
-The available user Permissions are defined under **Default Permissions** in the User group.
+![Document permissions](../../../.gitbook/assets/Document-permissions.png)
 
-![Default permissions](../../../.gitbook/assets/default-permissions-v16.png)
+* **Document Property Value permissions**: Configure read and write access to Document property values in the UI. Use **Granular permissions** to define both read and write permissions for individual properties on a Document Type. This is useful if a User Group should have limited access to edit the content on a specific type of document. Clicking **Add** opens a dialog where you select a Document Type, choose a Property, and set the read and write permissions.
 
-## Granular Permissions
+![Document Property Value permissions](../../../.gitbook/assets/Document-Property-Value-permissions.png)
 
-As an addition to the Default Permissions, it is also possible to add more granular permissions on a User Group level.
+* **Element Folder permissions**: Configure access to element folders, including the ability to read, create, update, and delete them. Use **Structure** permissions to control whether users can move element folders.
 
-![Granular permissions](../../../.gitbook/assets/granular-permissions.png)
+![Element Folder permissions](../../../.gitbook/assets/element-folder-permissions.png)
 
-With the **Documents** permission, you can define granular permissions on specific documents. This is useful when a User Group should only have limited access to a certain page on the website. Clicking **Add** opens a dialog where you can choose between documents from the Content section.
+* **Element permissions**: Configure access to elements, including the ability to read, create, update, delete, publish, and unpublish them. Use **Structure** permissions to control duplication and moving, **Administration** to control rollback, and **Granular permissions** to assign access to specific elements.
 
-With the **Document Property Values** permission, you can define both read and write permissions for individual properties on a Document Type. This is useful if a User Group should have limited access to edit the content on a specific type of document. Clicking **Add** opens a dialog where you select a Document Type, choose a Property, and, finally, set the read and write permissions.
+![Element permissions](../../../.gitbook/assets/element-permissions.png)
 
-### Setting User Permissions
-
-When a new user is created, you can set specific permissions for that user on different domains and subdomains. You can also set permissions on different User Groups, even for the default types.
-
-## Technical
-
-As a developer, you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
-
-## [Managing Forms Security](https://docs.umbraco.com/umbraco-forms/developer/security)
-
-Umbraco Forms has a backoffice security model integrated with Umbraco Users. You can manage the details in the **Users** section of the backoffice, within a tree named **Forms Security**.
+{% hint style="info" %}
+Umbraco Forms has a backoffice security model integrated with Umbraco Users. You can manage the details in the **Users** section of the backoffice, within a tree named **Forms Security**. For more information, see the [Managing Forms Security](https://docs.umbraco.com/umbraco-forms/developer/security) article.
+{% endhint %}

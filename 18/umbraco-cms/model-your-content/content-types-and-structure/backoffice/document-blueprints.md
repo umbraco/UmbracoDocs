@@ -19,12 +19,9 @@ Before using this method, make sure you have already [created some content](../d
 {% endhint %}
 
 1. Go to the **Content** section and select an existing content node.
-
-![Content-Menu](../../../.gitbook/assets/content-menu-DB.png)
-
 2. Click the **...** menu next to the node and choose **Create Document Blueprint**.
 
-![Action Button](../../../.gitbook/assets/action-menu-DB.png)
+![Action Button](../../../.gitbook/assets/action-menu-DB-18.png)
 
 3. Enter a **Name** for the new blueprint.
 
@@ -34,7 +31,7 @@ Before using this method, make sure you have already [created some content](../d
 
 The new blueprint will appear under the **Document Blueprints** folder in the **Settings** section.
 
-![New Document Blueprint](../../../.gitbook/assets/Find-Content-Template-DB.png)
+![New Document Blueprint](../../../.gitbook/assets/Find-Content-Template-DB-18.png)
 
 {% hint style="info" %}
 If you don’t see the new blueprint, try refreshing your browser.
@@ -46,11 +43,11 @@ If you don’t see the new blueprint, try refreshing your browser.
 2. Click the **...** menu next to the **Document Blueprints** tree.
 3. Select **Create...**.
 
-![Create Document Blueprint](../../../.gitbook/assets/Create-Content-Template-DB.png)
+![Create Document Blueprint](../../../.gitbook/assets/Create-Content-Template-DB-18.png)
 
 4. Choose the Document Type you want to base the blueprint on.
 
-![Select Content Type](../../../.gitbook/assets/Content-Type-DB.png)
+![Select Content Type](../../../.gitbook/assets/Content-Type-DB-18.png)
 
 {% hint style="warning" %}
 You can only create Document Blueprints from **Document Types** or **Document Types with Templates**.
@@ -71,25 +68,24 @@ To edit an existing document blueprint, follow these steps:
 4. Make your changes.
 5. Click **Save**.
 
-![Edit Document Blueprint](../../../.gitbook/assets/Edit-Content-Template-DB.png)
-
 ### Use a Document Blueprint
 
 Once you have created a document blueprint, you can use it to create new content nodes.
 
+{% hint style="info" %}
+Document Blueprints can only be selected when creating a new content node. They cannot be applied to existing content.
+{% endhint %}
+
 To use a document blueprint, follow these steps:
 
 1. Go to the **Content** section.
-2. Click the **...** menu next to the root node and select **Create**.
+2. Click **+** on the root node and select **Create**.
 
-![Create From Template](../../../.gitbook/assets/Create-From-Template-DB.png)
+![Create From Template](../../../.gitbook/assets/Create-From-Template-DB-18.png)
 
 3. Select the **Document Type** that has an associated blueprint.
-
-![Select the Document Type](../../../.gitbook/assets/select-doc-type-DB.png)
-
 4. Choose how to create the new content:
    * Use the Document Blueprint
    * Start with a blank node
 
-![Select Template](../../../.gitbook/assets/Select-Template-DB.png)
+![Select Template](../../../.gitbook/assets/Select-Template-DB-18.png)

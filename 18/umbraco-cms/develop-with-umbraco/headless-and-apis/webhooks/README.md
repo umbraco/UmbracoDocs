@@ -13,11 +13,11 @@ Webhooks provide real-time, event-driven communication within Umbraco. They enab
 
 To manage webhooks, navigate to **Settings > Webhooks** in the Umbraco backoffice.
 
-![Webhooks section](../../../.gitbook/assets/webhook-section-v14.png)
+![Webhooks section](../../../.gitbook/assets/webhook-section.png)
 
 To create a webhook, click **Create**. This opens the webhook creation screen where you can configure the necessary details.
 
-![Creating a webhook](../../../.gitbook/assets/create-webhook-v14.png)
+![Creating a webhook](../../../.gitbook/assets/create-webhook.png)
 
 ## Configuring a Webhook
 

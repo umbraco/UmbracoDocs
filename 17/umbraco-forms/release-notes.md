@@ -18,6 +18,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.2) (June 16th 2026)
+* Fix startup error when upgrading with the analytics tables migration still pending [#1736](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1736)
+
+### [17.4.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.1) (June 12th 2026)
+* Fix failed `PrevalueSource` migration for sites upgraded from Forms 17.0.0-17.0.3
+* Fix error when retrying a workflow [#1734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1734)
+
 ### [17.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (June 4th 2026)
 * Better support for load balanced environments
 * Refactored front end exports for `@umbraco-forms/backoffice` NPM package

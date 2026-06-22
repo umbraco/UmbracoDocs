@@ -4,6 +4,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 # Overview 2026
 
+## [June 2026](2026-06-releasenotes.md)
+
+* **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on child, and list has more filtering options.
+
 ## [May 2026](2026-05-releasenotes.md)
 
 * **Error pages** - Upload your own HTML error pages and assign them per hostname, so visitors see your own page instead of the default Umbraco Cloud error page when your site is temporarily unavailable.

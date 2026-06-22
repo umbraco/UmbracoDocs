@@ -32,12 +32,12 @@ At this point, multiple root nodes exist, each acting as a separate website. To 
 
 1. Go to the **Content** section.
 2. Click **...** next to the root node to assign the hostname.
-3.  Select **Culture and Hostnames**.
+3. Select **Culture and Hostnames**.
 
-    ![Culture and hostnames](../../.gitbook/assets/culturehostnames-v14.png)
+    ![Culture and hostnames](../../.gitbook/assets/culturehostnames.png)
 4. Click **Add new Domain** in the **Domains** section.
 5. Enter the domain in the **Domain** field.
-6.  Select the language from the **Language** drop-down list. For multilanguage setups, different hostnames can map to specific languages.
+6. Select the language from the **Language** drop-down list. For multilanguage setups, different hostnames can map to specific languages.
 
     ![Domain](../../.gitbook/assets/inherit-domain.png)
 7. Click **Save**.

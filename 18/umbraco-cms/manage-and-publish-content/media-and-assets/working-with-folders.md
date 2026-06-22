@@ -11,9 +11,9 @@ To create a folder:
 1. Go to the **Media** section.
 2. Click on **•••** next to Media.
 3. Click **Create**.
-4.  Select **Folder**.
+4. Select **Folder**.
 
-    ![Create Folder](../../.gitbook/assets/create-folder-v14.png)
+    ![Create Folder](../../.gitbook/assets/create-folder-v18.png)
 5. Enter a **Name** for your folder.
 6. Click **Save**.
 
@@ -25,13 +25,50 @@ Folders are only used for sorting media items within the media section. Folders 
 
 To edit an existing folder:
 
-1. Select the folder you want to edit from the **Media** tree.
+1. Select the folder you want to edit.
 2. Edit the title at the top of the page.
-3.  Click **Create** to add another media type.\
-    Alternatively, click on **Actions** > **Create**.
+3. Click **Save**.
 
-    ![Edit Folder](../../.gitbook/assets/Edit-folder-v14.png)
-4. Click **Save**.
+### Create an item under a Folder
+
+To create an item under a folder:
+
+1. Select the folder where you want to create an item.
+2. Click **Create** to add another media type. Alternatively, click on **...** next to the folder title -> **Create**.
+
+![Edit Folder](../../.gitbook/assets/create-item-in-folder.png)
+
+3. Select the media type you want to add.
+4. Enter the media details.
+5. Click Save.
+
+## Moving a Folder
+
+To move Folders within the Media section:
+
+1. Click **•••** next to the folder.
+2. Select **Move to...**.
+
+    ![Move Folder](../../.gitbook/assets/Move-Folder.png)
+3. Choose the location where you want to move the folder to in the tree structure.
+
+    ![Move Media.png](../../.gitbook/assets/Move-media-location.png)
+4. Click **Choose**.
+
+## Sorting the Contents of a Folder
+
+Media items in Umbraco are sorted in the tree view according to a predefined sort order. The item that has been created most recently is placed at the bottom of the tree structure.
+
+To sort the order of the items in a folder:
+
+1. Click **...** next to the folder you want to sort.
+2.  Select **Sort children**.
+
+    ![Sort Folder](../../.gitbook/assets/Sort-Folder.png)
+3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Created** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
+
+    ![Sort Items](../../.gitbook/assets/sort-items.png)
+4. Click **Sort.**
 
 ## Deleting a Folder
 
@@ -42,52 +79,25 @@ To delete a folder:
 1. Select the folder you want to delete.
 2.  Click **...** and select **Trash**.
 
-    ![Delete Folder](../../.gitbook/assets/Delete-folder-v14.png)
-3. Click **OK**.
+    ![Delete Folder](../../.gitbook/assets/Delete-folder.png)
+3. Click **Trash**.
 
 {% hint style="info" %}
 The contents of the folder are also moved to the Recycle Bin. You can restore items from the Recycle Bin in the same way as in the Content section.
 {% endhint %}
 
-## Restoring a Folder from the Recycle Bin
+### Restoring a Folder from the Recycle Bin
 
 The Recycle Bin is a separate tree structure within the Media tree. Clicking on the arrow next to the Recycle Bin will display its contents.
 
-![Recycle Bin](../../.gitbook/assets/mediaRecycle-v14.png)
+![Recycle Bin](../../.gitbook/assets/media-Recycle.png)
 
 To restore a Folder:
 
 1. Click **•••** next to the Folder.
-2.  Select **Restore**.
+2. Select **Restore**.
 
-    ![Restore Folder](../../.gitbook/assets/Restore-Folder-v14.png)
-3. Click **Restore**.
+    ![Restore Folder](../../.gitbook/assets/Restore-Folder.png)
 
-### Moving a Folder from the Recycle Bin
-
-To move Folders within the Media section:
-
-1. Click **•••** next to the folder.
-2.  Select **Move**.
-
-    ![Move Folder](../../.gitbook/assets/Move-Folder-v9.png)
-3.  Choose the location where you want to move the folder to in the tree structure.
-
-    ![Move Media.png](../../.gitbook/assets/Move-media-location-v9.png)
-4. Click **Move**.
-5. Click **OK** to dismiss the confirmation message.
-
-## Sorting the Contents of a Folder
-
-Media items in Umbraco are sorted in the tree view according to a predefined sort order. The item that has been created most recently is placed at the bottom of the tree structure.
-
-To sort the order of the items in a folder:
-
-1. Click **...** next to the folder you want to sort.
-2.  Select **Sort**.
-
-    ![Sort Folder](../../.gitbook/assets/Sort-Folder-v9.png)
-3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
-
-    ![Sort Items](../../.gitbook/assets/sort-items-v9.png)
-4. Click **Save.**
+3. Choose the location where you want to move the folder to in the tree structure.
+4. Click **Restore**.

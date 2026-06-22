@@ -23,6 +23,8 @@ In this example below we will create a single HTML file which takes all the subm
 ```csharp
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Extensions;
 using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Models;
 using Umbraco.Forms.Core.Searchers;
@@ -50,12 +52,11 @@ namespace MyFormsExtensions
             Icon = "icon-article";
         }
 
-        public override Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)
+        public override async Task<string> ExportRecordsAsync(Guid formId, RecordExportFilter filter)
         {
             var view = "~/Views/Partials/Forms/Export/html-report.cshtml";
             EntrySearchResultCollection model = _formRecordSearcher.QueryDataBase(filter);
-            return Task.FromResult(
-                ViewHelper.RenderPartialViewToString(_httpContextAccessor.GetRequiredHttpContext(), view, model));
+            return await ViewHelper.RenderPartialViewToString(_httpContextAccessor.GetRequiredHttpContext(), view, model);
         }
     }
 }
@@ -91,8 +92,8 @@ namespace MyFormsExtensions
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Forms.Core.Providers.Extensions;
-using Umbraco.Forms.TestSite.Business.ExportTypes;
 
 namespace MyFormsExtensions
 {
@@ -191,7 +192,7 @@ namespace MyFormsExtensions
             EntrySearchResultCollection submissions = _formRecordSearcher.QueryDataBase(filter);
 
             // Get the schema objects to a list so we can get items using position index
-            var schemaItems = submissions.schema.ToList();
+            var schemaItems = submissions.Schema.ToList();
 
             // We will use this to store our contents of our file to save as a text file
             var fileContents = string.Empty;

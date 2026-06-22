@@ -33,8 +33,6 @@ To create a partial view:
 
 By default, the partial views are saved in the `Views/Partials` folder in the solution.
 
-![Partial View folder in the project directory](../../../.gitbook/assets/partial-views-in-directory.png)
-
 ## Creating a Partial View from Snippet
 
 To create a partial view from the snippet:
@@ -42,7 +40,7 @@ To create a partial view from the snippet:
 1. Go to the **Settings** section in the Umbraco backoffice.
 2. Click **...** next to the **Partial Views** folder.
 3. Choose **Create**.
-4. Select **Empty partial view from snippet**.
+4. Select **Partial view from snippet**.
 5. Select the snippet you want to create a partial view for and enter a partial view name. The code snippet you selected is displayed in the backoffice editor.
 6. Click the **Save** button.
 
@@ -75,9 +73,7 @@ To create a folder:
 3. Choose **Create**.
 4. Select **Folder**.
 5. Enter a folder name.
-6. Click the **Create** button.
-
-<div align="center"><figure><img src="../../../.gitbook/assets/Created-folder.png" alt="Created folder"><figcaption><p>Created folder</p></figcaption></figure></div>
+6. Click the **Create folder** button.
 
 ## Rendering a Partial View
 

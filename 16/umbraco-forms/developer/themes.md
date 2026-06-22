@@ -136,7 +136,14 @@ Files which can be overridden:
 * Render.cshtml (overrides the entire form - usually not needed)
 * Form.cshtml (overrides the generation of the fields on the current page)
 * Script.cshtml (overrides the way files are included with the form)
+* ScrollToFormScript.cshtml (overrides the script used to scroll to the form after submission)
+* Submitted.cshtml (overrides the message shown when the form is submitted)
+* DatePicker.cshtml (overrides the date picker initialization script)
+* MultiPageFormPagingDetails.cshtml (overrides the paging details shown on multi-page forms)
+* MultiPageFormSummary.cshtml (overrides the summary shown on multi-page forms)
 * /Fieldtypes/FieldType.\*.cshtml (overrides a specific view for a field)
+* /Fieldtypes/FieldType.\*.ReadOnly.cshtml (overrides the read-only view for a field, used on multi-page form summaries)
+* /Fieldtypes/ReadOnly.cshtml (overrides the generic read-only view for fields)
 
 ## Helper Methods
 
@@ -145,7 +152,7 @@ Files which can be overridden:
 Sets the primary form theme stylesheet path. This overrides an already assigned stylesheet and will be rendered out when inserting the form into the page
 
 ```csharp
-Html.SetFormThemeCssFile(Model, "~/App_Plugins/UmbracoForms/Assets/Themes/Default/style.css")
+Html.SetFormThemeCssFile("~/App_Plugins/UmbracoForms/Assets/Themes/Default/style.css")
 ```
 
 ### AddFormThemeScriptFile

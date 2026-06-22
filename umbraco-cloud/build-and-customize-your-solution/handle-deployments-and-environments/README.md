@@ -16,6 +16,10 @@ This section covers working with environments, deployments, and CI/CD pipelines,
 [manage-environments.md](manage-environments.md)
 {% endcontent-ref %}
 
+{% content-ref url="manage-baseline-children.md" %}
+[manage-baseline-children.md](manage-baseline-children.md)
+{% endcontent-ref %}
+
 {% content-ref url="error-pages.md" %}
 [error-pages.md](error-pages.md)
 {% endcontent-ref %}
