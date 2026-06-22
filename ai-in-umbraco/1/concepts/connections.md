@@ -41,12 +41,19 @@ You can create and manage connections through the backoffice. See [Managing Conn
 
 ## Configuration References
 
-Connection settings support configuration references. Values starting with `$` are resolved from `appsettings.json` at runtime.
+Connection settings support configuration references. Values starting with `$` are resolved from configuration (`appsettings.json`, environment variables, Azure Key Vault, and so on) at runtime.
+
+References resolve from two dedicated configuration sections:
+
+- `Umbraco:AI:Secrets` - for sensitive values such as API keys. These can only be referenced from settings fields marked as sensitive (see [Provider Settings](../extending/providers/provider-settings.md)).
+- `Umbraco:AI:Variables` - for non-sensitive per-environment values such as endpoints, organization IDs, or feature flags.
+
+Place the values you want to reference under these sections, then point the setting at them with the `$` prefix:
 
 {% code title="Connection Settings" %}
 
 ```
-API Key: $OpenAI:ApiKey
+API Key: $Umbraco:AI:Secrets:OpenAIApiKey
 ```
 
 {% endcode %}
@@ -55,8 +62,12 @@ API Key: $OpenAI:ApiKey
 
 ```json
 {
-    "OpenAI": {
-        "ApiKey": "sk-your-actual-key"
+    "Umbraco": {
+        "AI": {
+            "Secrets": {
+                "OpenAIApiKey": "sk-your-actual-key"
+            }
+        }
     }
 }
 ```
@@ -68,6 +79,10 @@ Benefits of configuration references:
 - Sensitive values stay out of the database.
 - Different values per environment (dev/staging/prod)
 - Works with Azure Key Vault, environment variables, and more.
+
+{% hint style="info" %}
+To reference values that already live in another configuration section, add that section's prefix to `Umbraco:AI:AllowedConfigurationKeyPrefixes`. See [AIOptions](../reference/configuration/ai-options.md#configuration-references).
+{% endhint %}
 
 ## Accessing Connections in Code
 

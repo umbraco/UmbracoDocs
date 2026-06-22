@@ -31,6 +31,7 @@ redirects:
     reference/management/services/externalloginservice: reference/management/README.md
     reference/management/services/fileservice: reference/management/README.md
     reference/management/services/localizationservice: reference/management/README.md
+    reference/management/using-services/localizationservice: reference/management/README.md
     reference/management/services/macroservice: reference/management/README.md
     reference/management/services/membergroupservice: reference/management/README.md
     reference/management/services/memberservice: reference/management/README.md
@@ -160,3 +161,48 @@ redirects:
     customizing/extending-overview/foundation/repositories/repository-types/tree-repository.md: customizing/extending-overview/extension-types/tree/tree-repository.md
     customizing/extending-overview/extension-types/collections/collection-view.md: customizing/extending-overview/extension-types/collections/collection-view/README.md
     ai/developer-mcp/host-setup: ai/local-mcp-setup/README.md
+    implementation/learn-how-umbraco-works: README.md
+    implementation/data-persistence: develop-with-umbraco/application-code/backend-and-custom-logic/umbraco-services.md
+    implementation/nullable-reference-types: develop-with-umbraco/application-code/common-pitfalls.md
+    reference/plugins: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/plugins/creating-resolvers: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/plugins/finding-types: understand-umbraco-cms/product-and-releases/legacy-documentation/README.md
+    reference/templating/macros: develop-with-umbraco/templating-and-rendering/README.md
+    fundamentals/design/templates/basic-razor-syntax: develop-with-umbraco/templating-and-rendering/templates.md
+    fundamentals/design/templates/razor-cheatsheet: develop-with-umbraco/templating-and-rendering/templates.md
+    customizing/overview: extend-your-project/backoffice-extensions/README.md
+    extending/build-on-umbraco-functionality: extend-your-project/server-side-extensions/README.md
+    fundamentals/get-to-know-umbraco: README.md
+    reference/dive-into-the-code: develop-with-umbraco/application-code/README.md
+    reference/property-editor-uis: extend-your-project/backoffice-extensions/extending-overview/extension-types/property-editor-ui/property-editor-uis.md
+    reference/custom-swagger-api: extend-your-project/server-side-extensions/custom-backoffice-api.md
+    extend-your-project/server-side-extensions/custom-swagger-api: extend-your-project/server-side-extensions/custom-backoffice-api.md
+    tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md
+    extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-swagger-document: extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md
+    extend-your-project/server-side-extensions/custom-routing/adding-a-hub-with-signalr-and-umbraco: extend-your-project/server-side-extensions/custom-routing/signalr.md
+    run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-load-balanced-environments: run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md
+    get-started/editors-manual: get-started/backoffice-essentials/README.md
+    get-started/editors-manual/getting-started-with-umbraco: get-started/backoffice-essentials/README.md
+    get-started/editors-manual/getting-started-with-umbraco/logging-in-and-out: get-started/backoffice-essentials/logging-in-and-out.md
+    get-started/editors-manual/getting-started-with-umbraco/umbraco-interface: get-started/backoffice-essentials/umbraco-interface.md
+    get-started/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content: get-started/backoffice-essentials/creating-saving-and-publishing-content.md
+    get-started/editors-manual/getting-started-with-umbraco/finding-content: get-started/backoffice-essentials/finding-content.md
+    get-started/editors-manual/getting-started-with-umbraco/editing-existing-content: get-started/backoffice-essentials/editing-existing-content.md
+    get-started/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/backoffice-essentials/sorting-pages.md
+    get-started/backoffice-essentials/ordering-pages: get-started/backoffice-essentials/sorting-pages.md
+    get-started/editors-manual/getting-started-with-umbraco/moving-a-page: get-started/backoffice-essentials/moving-a-page.md
+    get-started/editors-manual/getting-started-with-umbraco/copying-a-page: get-started/backoffice-essentials/copying-a-page.md
+    get-started/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/backoffice-essentials/deleting-and-restoring-pages.md
+    get-started/editors-manual/getting-started-with-umbraco/sections: get-started/backoffice-essentials/sections.md
+    get-started/editors-manual/getting-started-with-umbraco/sidebar: get-started/backoffice-essentials/sidebar.md
+    get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-content.md
+    get-started/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
+    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md
+    get-started/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
+    get-started/editors-manual/tips-and-tricks/notifications: get-started/backoffice-essentials/tips-and-tricks/notifications.md
+    get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md
+    get-started/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
+    get-started/editors-manual/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
+    get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
+    extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
+    extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md

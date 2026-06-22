@@ -62,7 +62,7 @@ See [Installation](installation.md) for detailed setup instructions.
 
 Deploy automatically filters sensitive data like API keys to prevent secrets from being committed to version control.
 
-Use configuration references (e.g., `$OpenAI:ApiKey`) instead of hardcoded values to keep secrets safe. See [Configuration](configuration.md) for details.
+Use configuration references (e.g., `$Umbraco:AI:Secrets:OpenAIApiKey`) instead of hardcoded values to keep secrets safe. See [Configuration](configuration.md) for details.
 
 ### Dependency Resolution
 

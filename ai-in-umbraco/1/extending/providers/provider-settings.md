@@ -60,7 +60,7 @@ public class MyProviderSettings
 {
     [AIField(
         Label = "API Key",
-        Description = "Your API key. Supports config references like $MyProvider:ApiKey",
+        Description = "Your API key. Supports config references like $Umbraco:AI:Secrets:MyProviderApiKey",
         SortOrder = 1)]
     [Required]
     public required string ApiKey { get; set; }
@@ -128,17 +128,21 @@ Non-nullable properties without `[Required]` automatically have a required valid
 
 ## Configuration References
 
-Settings values starting with `$` are resolved from `appsettings.json`:
+Settings values starting with `$` are resolved from configuration. References resolve from the `Umbraco:AI:Secrets` section (sensitive values) and `Umbraco:AI:Variables` section (non-sensitive values) by default.
 
-**In the UI:** Enter `$MyProvider:ApiKey`
+**In the UI:** Enter `$Umbraco:AI:Secrets:MyProviderApiKey`
 
 **In appsettings.json:**
 {% code title="appsettings.json" %}
 
 ```json
 {
-    "MyProvider": {
-        "ApiKey": "sk-actual-key-here"
+    "Umbraco": {
+        "AI": {
+            "Secrets": {
+                "MyProviderApiKey": "sk-actual-key-here"
+            }
+        }
     }
 }
 ```
@@ -146,6 +150,10 @@ Settings values starting with `$` are resolved from `appsettings.json`:
 {% endcode %}
 
 This keeps secrets out of the database and supports environment-specific values.
+
+{% hint style="info" %}
+Values under `Umbraco:AI:Secrets` may only be referenced from fields marked `IsSensitive = true` (see [Sensitive Settings](#sensitive-settings)). Mark any field that should accept a secret reference as sensitive. To reference values from other configuration sections, add their prefix to `Umbraco:AI:AllowedConfigurationKeyPrefixes` - see [AIOptions](../../reference/configuration/ai-options.md#configuration-references).
+{% endhint %}
 
 ## Sensitive Settings
 

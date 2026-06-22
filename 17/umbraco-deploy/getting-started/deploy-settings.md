@@ -6,7 +6,7 @@ description: >-
 
 # Configuration
 
-Most configuration for Umbraco Deploy is provided via dotnet configuration. This is most often stored in the `appsettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
+Most configuration for Umbraco Deploy is provided via the dotnet configuration. This is most often stored in the `appsettings.json` file found at the root of your Umbraco website. If the configuration has been customized to use another source, then the same keys and values discussed in this article can be applied there.
 
 The convention for Umbraco configuration is to have package based options stored as a child structure below the `Umbraco` element, and as a sibling of `CMS`. Umbraco Deploy configuration follows this pattern, i.e.:
 
@@ -196,7 +196,7 @@ If encountering this issue, there are two batch settings that can be applied wit
 
 When Deploy transfers files between unconnected environments (like a non-public local environment), it falls back from fetching/downloading the files to uploading them. This is done in fixed-sized chunks, so multiple files can be combined in a single request or a large file into multiple requests. This setting can specify the size of these chunks **(in bytes)**.
 
-If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](../../umbraco-cms/reference/configuration/runtimesettings.md) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](../../umbraco-cms/reference/configuration/maximumuploadsizesettings.md) will result in file transfers failures.
+If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/runtimesettings) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/maximumuploadsizesettings) will result in file transfers failures.
 
 ### TransferFormsAsContent {#transfer-forms-data-as-content}
 

@@ -43,7 +43,7 @@ public class MyProviderSettings
 {
     [AIField(
         Label = "API Key",
-        Description = "Your MyProvider API key. Use $Config:Key for config reference.",
+        Description = "Your MyProvider API key. Use $Umbraco:AI:Secrets:MyProviderApiKey for a config reference.",
         IsSensitive = true,
         SortOrder = 1)]
     [Required]

@@ -142,7 +142,7 @@ var connection = new AIConnection
     Alias = "my-openai",
     Name = "My OpenAI Connection",
     ProviderId = "openai",
-    Settings = new { ApiKey = "$OpenAI:ApiKey" },
+    Settings = new { ApiKey = "$Umbraco:AI:Secrets:OpenAIApiKey" },
     IsActive = true
 };
 

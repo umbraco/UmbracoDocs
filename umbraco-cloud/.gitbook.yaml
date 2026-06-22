@@ -67,7 +67,8 @@ redirects:
     getting-started/team-workflow-on-cloud: build-and-customize-your-solution/set-up-your-project/project-settings/team-workflow-on-cloud.md
     security/web-application-firewall: build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md
     getting-started/baselines/baseline-merge-conflicts: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/README.md
-    getting-started/baselines/break-baseline: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md
+    getting-started/baselines/break-baseline: build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md
+    optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline: build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md
     getting-started/baselines/configuration-files: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md
     getting-started/baselines/upgrading-child-projects: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md
     set-up/project-settings/manage-hostnames/rewrites-on-cloud: go-live/manage-hostnames/rewrites-on-cloud.md
@@ -89,7 +90,7 @@ redirects:
     set-up/project-settings/manage-cdn-caching: optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md
     set-up/project-settings/usage/bandwidth: optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md
     getting-started/migrate-between-regions: optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md
-    set-up/project-settings/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    set-up/project-settings/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
     set-up/project-settings/hostname-monitoring: optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md
     set-up/project-settings/management-api-security: optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md
     set-up/media: build-and-customize-your-solution/handle-deployments-and-environments/media/README.md
@@ -128,7 +129,8 @@ redirects:
     monitor-and-troubleshoot/power-tools/manual-extractions: optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/manual-extractions.md
     project-overview/environments: begin-your-cloud-journey/project-features/environments.md
     setup/project-settings/dedicated-resources: build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md
-    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md
+    monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
+    optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance: optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md
     set-up/media/connect-to-azure-storage-explorer: build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md
     set-up/working-locally/working-with-visual-studio: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/legacy-umbraco-visual-studio-setup.md
     build-and-customize-your-solution/working-with-linux-macos: build-and-customize-your-solution/handle-deployments-and-environments/working-locally/README.md

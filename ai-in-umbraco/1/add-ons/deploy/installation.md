@@ -87,7 +87,7 @@ If deployment files aren't created when you save entities:
 
 If deployment files contain API keys or other sensitive data:
 
-1. Use configuration references instead of hardcoded values (e.g., `$OpenAI:ApiKey`)
+1. Use configuration references instead of hardcoded values (e.g., `$Umbraco:AI:Secrets:OpenAIApiKey`)
 2. Configure sensitive data filtering in `appsettings.json` (see [Configuration](configuration.md))
 
 ## Next Steps

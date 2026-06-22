@@ -34,6 +34,7 @@ APIs
 API's
 App_Code
 App_Plugins
+approvers
 appSetting
 appsetting
 appsettings
@@ -50,6 +51,8 @@ Axios
 autocomplete
 autocompletion
 autogenerate
+Automations
+automations
 Autoplay
 backend
 Backoffice
@@ -110,7 +113,9 @@ Codegarden
 collectionAction
 collectionConfig
 collectionView
+Colour
 colours
+coloured
 Commerce
 compareTo
 comparisonOperator
@@ -637,6 +642,7 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
+summarising
 subpage
 subpages
 subtree

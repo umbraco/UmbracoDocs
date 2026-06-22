@@ -37,6 +37,18 @@ To access logs through Kudu, see [Power tools (Kudu)](../power-tools/) article.
 
 Umbraco logs on Cloud work almost the same as on a [normal installation](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging/logging), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
 
+## Persisting Logs Externally
+
+Umbraco Cloud runs on Azure App Services. In some cases - such as when a project is migrated to dedicated hosting - the underlying Web App instance is replaced with a new one. 
+When this happens, any logs stored on the previous instance's filesystem (accessible via Kudu) are no longer available.
+ 
+To ensure historical logs are preserved through any future infrastructure changes, you can configure an additional Serilog sink. The sink writes your structured logs to an external store.
+
+The Umbraco documentation includes guidance on [Logging to a different output](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/serilog#logging-to-a-different-output).
+A full list of available Serilog sinks is maintained at the [Serilog Provided Sinks](https://github.com/serilog/serilog/wiki/provided-sinks) page on GitHub.
+
+Once an external sink is configured, your logs will persist independently of any changes to the underlying infrastructure.
+
 ## Deploy logs
 
 It is possible that a deployment failed so it is not the active deployment at the moment, there could be valuable information in the logs of this deployment. You can find out what the last attempted deploy was by going to your Kudu URL and adding `/api/deployments` to the URL (so for example `https://stage-mysite.scm.s1.umbraco.io/api/deployments`. This will give you some JSON data and the first entry here is the newest attempted deployment. You can also find some information in `~/site/wwwroot/umbraco/Deploy` if there are for example extraction errors.

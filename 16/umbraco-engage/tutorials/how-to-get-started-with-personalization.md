@@ -35,9 +35,9 @@ With the Persona groups and Personas in place, it is time to evaluate and score 
 
 1. Navigate to the **Content** section.
 2. Open a content item that you want to score.
-3. Select the **Personalization** content app.
+3. Select the **Personalization** workspace view.
 
-<figure><img src="../.gitbook/assets/enage-personalization-content-scoring (1).png" alt=""><figcaption><p>Score content for each Persona from the Personalization Content App on each content item.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/enage-personalization-content-scoring (1).png" alt=""><figcaption><p>Score content for each Persona from the Personalization Workspace View on each content item.</p></figcaption></figure>
 
 4. Go to **Content scoring**.
 5. Use the sliders to give the content a score of 1-10 for each persona.

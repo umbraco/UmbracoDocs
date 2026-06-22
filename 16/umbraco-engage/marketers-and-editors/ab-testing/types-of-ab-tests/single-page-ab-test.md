@@ -38,7 +38,7 @@ In the overview of the Document Type, you will see if properties can be segmente
 
 Sometimes you cannot adjust a specific property because it was not configured when Umbraco was set up. In those cases, you can use the CSS/JavaScript field to add a code-snippet to make these adjustments. The best way is to do it via property editing in the split view edit mode. You do not have to write any CSS or JavaScript code.
 
-To do this, go to **A/B Tests** Content App. Click **Edit** on the variant. This will give the editor a popup where CSS and JavaScript can be entered:
+To do this, go to **A/B Tests** Workspace View. Click **Edit** on the variant. This will give the editor a popup where CSS and JavaScript can be entered:
 
 <figure><img src="../../../.gitbook/assets/image (9) (1).png" alt="CSS/JavaScript popup"><figcaption><p>CSS/JavaScript popup</p></figcaption></figure>
 

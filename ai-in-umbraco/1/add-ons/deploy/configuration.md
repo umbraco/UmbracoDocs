@@ -12,7 +12,7 @@ Deploy support provides configuration options to control how sensitive data is h
 By default, Deploy:
 
 - **Excludes encrypted values** - Values starting with `ENC:` are not deployed
-- **Allows configuration references** - Values starting with `$` (e.g., `$OpenAI:ApiKey`) are deployed
+- **Allows configuration references** - Values starting with `$` (e.g., `$Umbraco:AI:Secrets:OpenAIApiKey`) are deployed
 - **Allows sensitive fields** - Fields marked as sensitive (via `[AIField(IsSensitive = true)]`) are treated like any other field and can be deployed
 
 Encrypted values stay safe while configuration references for sensitive fields are still deployed. To further restrict sensitive fields, enable `IgnoreSensitive` or list specific fields in `IgnoreSettings`.
@@ -55,7 +55,7 @@ When `true`, blocks encrypted values (starting with `ENC:`) from being deployed,
 
 | Value in Database | Deployed? |
 |-------------------|-----------|
-| `$OpenAI:ApiKey` | ✅ Yes (configuration reference) |
+| `$Umbraco:AI:Secrets:OpenAIApiKey` | ✅ Yes (configuration reference) |
 | `ENC:abc123...` | ❌ No (encrypted value) |
 | `https://api.openai.com` | ✅ Yes (plain value) |
 
@@ -77,7 +77,7 @@ For a field marked as sensitive (e.g., `ApiKey`):
 
 | Value in Database | Deployed? |
 |-------------------|-----------|
-| `$OpenAI:ApiKey` | ✅ Yes (configuration reference allowed) |
+| `$Umbraco:AI:Secrets:OpenAIApiKey` | ✅ Yes (configuration reference allowed) |
 | `ENC:abc123...` | ❌ No (blocked by IgnoreEncrypted) |
 | `sk-abc123...` | ✅ Yes (plain value allowed - not recommended) |
 
@@ -176,8 +176,12 @@ To safely deploy API keys and secrets, use configuration references:
 
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-dev-abc123..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-dev-abc123..."
+      }
+    }
   }
 }
 ```
@@ -188,8 +192,12 @@ To safely deploy API keys and secrets, use configuration references:
 
 ```json
 {
-  "OpenAI": {
-    "ApiKey": "sk-prod-xyz789..."
+  "Umbraco": {
+    "AI": {
+      "Secrets": {
+        "OpenAIApiKey": "sk-prod-xyz789..."
+      }
+    }
   }
 }
 ```
@@ -200,7 +208,7 @@ To safely deploy API keys and secrets, use configuration references:
 
 When creating a Connection in the backoffice, use `$` syntax:
 
-- **API Key field:** `$OpenAI:ApiKey`
+- **API Key field:** `$Umbraco:AI:Secrets:OpenAIApiKey`
 
 Deploy saves the reference in the deployment file. Each environment resolves the value from its own configuration.
 
@@ -211,7 +219,7 @@ Check the deployment file (`.uda`) to ensure it contains the reference, not the 
 ```json
 {
   "Settings": {
-    "ApiKey": "$OpenAI:ApiKey"
+    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```

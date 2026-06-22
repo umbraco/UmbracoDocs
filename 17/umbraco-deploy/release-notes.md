@@ -16,6 +16,36 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0-rc1) (June 4th 2026)
+
+* Prevent `ARRAffinity` cookie loss on load-balanced targets by disabling `HttpClient` handler rotation. Long-running transfers and restores now stay routed to the same target instance.
+* Add a cluster-wide Deploy worker lock to prevent concurrent deploys across load-balanced backoffice instances.
+* Process Deploy disk triggers on a single load-balanced server instead of racing on every node.
+
+### [17.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) (May 14th 2026)
+
+* All items from 17.1.0-rc1 and 17.1.0-rc2.
+
+### [17.1.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0-rc2) (May 11th 2026)
+
+* Refresh entity signs after a transfer completes and the queue is cleared.
+* Update the `@umbraco-deploy/backoffice` NPM package: prefix non-generated exported types with `Deploy`, add missing types, and fix `UmbExtensionConditionConfigMap` augmentations.
+
+### [17.1.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0-rc1) (May 6th 2026)
+
+* Add `@umbraco-deploy/backoffice` NPM package (see below for details).
+* Add entity signs for queued entities.
+* Add environment name header app, showing the current environment with its icon and a badge with the number of items in the transfer queue.
+* Add support for user group descriptions (introduced in Umbraco CMS 17.2).
+* Allow exporting all supported entity tree roots, including a fix for members. You can now transfer/restore/export all members when `AllowMembersDeploymentOperations` is not set to `None`.
+* Ensure compatibility with Umbraco CMS 17.4, which makes `IHostingEnvironment.ApplicationMainUrl` nullable at runtime ([umbraco/Umbraco-CMS#22307](https://github.com/umbraco/Umbraco-CMS/pull/22307)). Deploy now falls back to the current request's origin when the application URL is not configured.
+
+#### `@umbraco-deploy/backoffice` NPM package
+
+The new [`@umbraco-deploy/backoffice`](https://www.npmjs.com/package/@umbraco-deploy/backoffice) NPM package publishes Deploy's TypeScript type definitions so external packages can consume Deploy's extension points. The package exports extension manifest types (such as `ManifestDeployEntityActionRegistrar` and `ManifestDeployEntityTypeMapping`), entity action base classes, context tokens, conditions, and the referenced API and entity models.
+
+Add the package as a development dependency in your custom backoffice extension to get accurate type information when integrating with Deploy.
+
 ### [17.0.2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.2) (March 5th 2026)
 
 * Set create date on new documents/media/members [#259](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/259)
