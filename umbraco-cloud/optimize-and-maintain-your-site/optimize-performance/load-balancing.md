@@ -23,21 +23,26 @@ Enable load balancing when you need:
 
 Load balancing is **not** a multi-region failover and does not provide zero-downtime deployments. See [Deployments and restarts](#deployments-and-restarts) below.
 
-## Before you enable load balancing
+## Prerequisites
 
-Confirm your project meets these requirements before turning load balancing on.
+The Umbraco Cloud Portal checks these prerequisites automatically under `Project -> Configuration -> Load Balancing`. You cannot enable load balancing until every prerequisite passes.
 
-Load balancing requires:
-
-* Umbraco CMS **17.4.2 or higher**.
-* The project must run in [Umbraco Production Mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
-* `Umbraco:CMS:ModelsBuilder:ModelsMode` set to `Nothing` — see [ModelsBuilder Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
-* Pre-compiled views at build/publish time — see [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
-* A Cloud plan that supports load balancing — see [Cache Configuration by Cloud Plan](#cache-configuration-by-cloud-plan) below.
+| Prerequisite | What it is | How to meet it |
+| --- | --- | --- |
+| Plan supports dedicated servers | Load balancing runs on dedicated infrastructure, available from the **Standard Dedicated 2** plan and up. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
+| Environment alone on a dedicated server | Load balancing scales every site on the server. The environment must be the only one on its dedicated server. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
+| Umbraco CMS **17.4.2** or higher | The base Umbraco CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
+| Umbraco.Cloud.Cms **17.1.3** or higher | The Umbraco Cloud CMS package meets the minimum supported version. | [Product Dependencies](../manage-product-upgrades/product-upgrades/product-dependencies.md) |
+| Umbraco.Deploy.Cloud **17.1.0** or higher | The Umbraco Deploy Cloud package meets the minimum supported version. | [Manual Upgrade of Deploy](../manage-product-upgrades/product-upgrades/manual-upgrades/manual-upgrade-deploy.md) |
+| Runtime mode set to Production | `Umbraco:CMS:Runtime:Mode` is set to `Production`. | [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode) |
+| Hosting debug disabled | `Umbraco:CMS:Hosting:Debug` is set to `false`, as required in production. | [Hosting Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/hostingsettings) |
+| ModelsBuilder mode set to Nothing | `Umbraco:CMS:ModelsBuilder:ModelsMode` is set to `Nothing`, so models are pre-compiled. | [ModelsBuilder Settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings) |
 
 {% hint style="info" %}
-Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requirements at boot — an Umbraco app in Production mode that fails either check throws `BootFailedException`. They are listed separately so you can verify each one against your project before enabling Production mode.
+Production mode enforces the `ModelsMode = Nothing` and pre-compiled views requirements at boot. An Umbraco app in Production mode that fails either check throws `BootFailedException`.
 {% endhint %}
+
+The Portal also checks that your Razor views are pre-compiled. This check is a recommendation and does not block you from enabling load balancing. Make sure your `.csproj` does not set `<RazorCompileOnBuild>` or `<RazorCompileOnPublish>` to `false` — see [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode).
 
 ## Scaling modes
 
