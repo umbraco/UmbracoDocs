@@ -27,7 +27,7 @@ A child project can have an indicator to show that it contains any components th
 
 <figure><img src="../../.gitbook/assets/baselines-components-behind.gif" alt="Baselines - Show components on child project which are behind the baseline"><figcaption><p>Show components on child project which are behind the baseline.</p></figcaption></figure>
 
-## Umbraco.Cloud.Cms 17.1.4
+## Release Umbraco.Cloud.Cms v17.1.4
 
 Enhancements in `Umbraco.Cloud.Cms` to ensure a seamless setup for Load Balancing in Umbraco Cloud.
 
