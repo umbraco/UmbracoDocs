@@ -33,7 +33,7 @@ A workspace groups automations together and controls which user groups and conne
 ### Step 2: Create the Automation
 
 1. In the tree, expand your new workspace.
-2. Right-click the workspace and select **Create automation**.
+2. Select **Create automation** from the actions panel.
 3. Enter a name, for example `Log on publish`, and click **Create**.
 
 <figure><img src="../.gitbook/assets/create-automation-modal.png" alt="The create automation modal with a name field."><figcaption><p>Creating a new automation.</p></figcaption></figure>
