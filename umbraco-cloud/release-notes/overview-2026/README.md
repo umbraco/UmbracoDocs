@@ -7,7 +7,7 @@ description: Get an overview of the release notes for each month in 2026.
 ## [June 2026](2026-06-releasenotes.md)
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on child, and list has more filtering options.
-* **Release Umbraco.Cloud.Cms 17.1.4** - Enhancements to make cloud ready for Load Balancing. Danish localization for Umbraco ID backoffice UI added. Fix for a timing issue related to Umbraco ID sign-in screen.
+* **Release Umbraco.Cloud.Cms v17.1.4** - Enhancements for Load Balancing. Adds Danish localization for the Umbraco ID backoffice UI. Fix for a timing issue related to Umbraco ID sign-in screen.
 
 ## [May 2026](2026-05-releasenotes.md)
 
