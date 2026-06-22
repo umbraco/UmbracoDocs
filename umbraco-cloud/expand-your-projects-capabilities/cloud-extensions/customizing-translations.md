@@ -17,7 +17,7 @@ All translations belong to the `umbracoIdentity` namespace. The table below list
 
 | Key | Default (English) |
 |-----|-------------------|
-| `signIn` | Sign in with Umbraco Id |
+| `signIn` | Sign in with Umbraco ID |
 | `timedOut` | You have been signed out from {providerName}. |
 | `loggedOutBackoffice` | You have logged out of the Umbraco Backoffice. |
 | `sessionStillActive` | The session in {providerName} is still active. |
@@ -26,14 +26,14 @@ All translations belong to the `umbracoIdentity` namespace. The table below list
 | `clickHere` | click here |
 | `returnToPortal` | To return to the Umbraco Cloud Portal, |
 | `goToPortal` | Go to the Umbraco Cloud Portal |
-| `boxHeadlineUmbracoId` | Umbraco Id |
+| `boxHeadlineUmbracoId` | Umbraco ID |
 | `boxHeadlineExternalLoginProvider` | External Login Provider |
 | `providerLabel` | Provider: |
-| `versionLabel` | Umbraco Id: |
+| `versionLabel` | Umbraco ID: |
 | `localDevWarning` | Profile edit and password change, is not available when doing local development |
-| `editProfile` | Edit Umbraco Id Profile |
-| `changePassword` | Change Umbraco Id Password |
-| `userProfileAppLabel` | Umbraco Id |
+| `editProfile` | Edit Umbraco ID Profile |
+| `changePassword` | Change Umbraco ID Password |
+| `userProfileAppLabel` | Umbraco ID |
 
 Keys with `{providerName}` accept a string argument at runtime.
 
@@ -64,11 +64,11 @@ To add a new language, provide all the keys you want to translate. The backoffic
 ```javascript
 export default {
     umbracoIdentity: {
-        signIn: 'Mit Umbraco Id anmelden',
+        signIn: 'Mit Umbraco ID anmelden',
         loggedOutBackoffice: 'Sie wurden vom Umbraco Backoffice abgemeldet.',
         goToPortal: 'Zum Umbraco Cloud Portal',
-        editProfile: 'Umbraco Id-Profil bearbeiten',
-        changePassword: 'Umbraco Id-Passwort ändern',
+        editProfile: 'Umbraco ID-Profil bearbeiten',
+        changePassword: 'Umbraco ID-Passwort ändern',
     }
 };
 ```
