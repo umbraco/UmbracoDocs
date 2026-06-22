@@ -6,7 +6,7 @@ description: >-
 
 # Migrate from uMarketingSuite
 
-You cannot migrate directly from uMarketingSuite to Umbraco Engage 18. uMarketingSuite runs on Umbraco 13, so the move to Umbraco Engage 18 is done in two separate stages.
+You cannot migrate directly from uMarketingSuite to Umbraco Engage 18. Because uMarketingSuite runs on Umbraco 13, the move requires two separate stages.
 
 {% hint style="warning" %}
 Migrate from uMarketingSuite to Umbraco Engage **17** first. Only then upgrade from Umbraco Engage 17 to 18. Do not attempt to move from uMarketingSuite to Umbraco Engage 18 in a single step.
