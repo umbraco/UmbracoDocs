@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on each child project, and the list has more filtering options.
-* **Release Umbraco.Cloud.Cms v17.1.4** - Enhancements to make cloud ready for Load Balancing. Adds Danish localization for the Umbraco ID backoffice UI. Fix for a timing issue related to Umbraco ID sign-in screen.
+* **Release Umbraco.Cloud.Cms v17.2.0** - Enhancements to make cloud ready for Load Balancing. Adds Danish localization for the Umbraco ID backoffice UI. Fix for a timing issue related to Umbraco ID sign-in screen.
 
 ## Baseline enhancements
 
