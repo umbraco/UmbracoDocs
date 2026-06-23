@@ -9,7 +9,7 @@ description: >-
 
 This service provides access to all analytics-related information for the current request, and the segment information. When you need to execute custom code specifically tied to the personalization, you can use this service.
 
-To get started you need an instance of an`IAnalyticsStateProvider`, which can be resolved through Dependency Injection. For example consider the following case, where we use [route hijacking](https://docs.umbraco.com/umbraco-cms/v/13.latest-lts/reference/routing/custom-controllers) to execute custom code for our content type called "`Home`":
+To get started you need an instance of an`IAnalyticsStateProvider`, which can be resolved through Dependency Injection. For example consider the following case, where we use [route hijacking](https://docs.umbraco.com/umbraco-cms/reference/routing/custom-controllers) to execute custom code for our content type called "`Home`":
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;

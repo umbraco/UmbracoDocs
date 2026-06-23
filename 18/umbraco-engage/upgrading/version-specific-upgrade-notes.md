@@ -6,7 +6,7 @@ description: >-
 
 # Version specific Upgrade Notes
 
-This article provides specific upgrade instructions and breaking changes introduced when migrating from major version 13 of Umbraco Engage to version 17.
+This article provides specific upgrade instructions and breaking changes introduced when migrating to major version 18 of Umbraco Engage.
 
 {% hint style="info" %}
 When upgrading to a new minor or patch version, learn about the changes in the [Release Notes](../release-notes.md) article.
@@ -14,50 +14,26 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
-### 17.2.0 — Database Schema Alignment
+### 18.0.0 (Umbraco Engage v18 Launch)
 
-Engage 17.2.0 introduces a rewritten analytics data cleanup system and a database schema alignment. This is a **manual post-upgrade step** that requires running SQL scripts during a maintenance window.
+Engage 18 adds support for Umbraco CMS 18. The main upgrade consideration is that the database schema alignment introduced in 17.2.0 is now **required** before you can upgrade.
 
-See the [Schema Alignment Guide](schema-alignment-guide.md) for full details on the cleanup changes, configuration settings, and step-by-step post-upgrade instructions.
+#### Database Schema Alignment is now enforced
 
-### 17.0.0 (Umbraco Engage v17 Launch)
+In 17.2.0, the schema alignment ran as an automatic on-boot migration (`AlignSchema`). It was followed by a **manual** script (`CompleteAlignSchema.sql`) to run during a maintenance window. Running the manual script was strongly recommended but not enforced — Engage continued to run with the schema left in the intermediate `Aligned` state.
 
-With the introduction of Engage version 17, breaking changes have been introduced to accommodate the transition between multiple major versions of the core CMS.
+Starting with Engage 18, completing this alignment is **mandatory**. This guarantees data integrity and performance going forward. The foreign keys, indexes, and constraints added by the alignment can no longer be treated as optional. A guard at the head of the v18 migrations reads the `Umbraco.Engage+DatabaseSchemaStatus` value in the `umbracoKeyValue` table. It **blocks the upgrade** unless the alignment has been completed. When the upgrade is blocked, Engage throws an error at startup and the migration does not proceed. The error message states which state the database is in and what to do next:
 
-#### Database Changes
-
-Three database structure changes have been introduced in the transition from Engage v16 to v17. The first is the migration to userKeys instead of userIds. All references to Umbraco users in Engage tables have now been updated to use the unique key of that user instead.
-
-The same applies to all references to Umbraco user groups in Engage tables. They have also been updated to use the unique key of that user group instead.
-
-The last update involves a change to the `[umbracoEngageAbTestingAbTestVariant]` table, which now contains a new column `[redirectNodeKey]` , which contains a NodeKey used for Split URL A/B Tests.
-
-#### Regenerate Reporting Data
-
-After upgrading to Engage v17 from an older major version, you need to manually regenerate the reporting data to ensure Analytics works correctly.
-
-To regenerate the reporting data:
-
-1. Go to the **Settings** section in the Umbraco backoffice.
-2. Navigate to **Engage** > **Configuration**.
-3. Select the **Reporting** tab.
-4. Click the **Regenerate** button.
+| `DatabaseSchemaStatus` | Result | What to do |
+| --- | --- | --- |
+| `Complete` | Upgrade proceeds | No action needed. |
+| _(no value)_ | Upgrade proceeds | Fresh installs are unaffected. |
+| `Aligned` | **Upgrade blocked** | The automatic alignment ran, but `CompleteAlignSchema.sql` was never completed. Run it during a maintenance window, then retry the upgrade. |
+| `Pending` | **Upgrade blocked** | A previous run of `CompleteAlignSchema.sql` started but did not finish. The script cannot be re-run from this state — the partial state must be investigated and recovered manually. |
+| _(any other value)_ | **Upgrade blocked** | The schema is in an unexpected state. Expected `Complete` on existing installs, or no value on fresh installs. |
 
 {% hint style="warning" %}
-Until the reporting data is regenerated, Analytics dashboards may show incomplete or missing data.
+If you upgraded through 17.2.x but never completed the manual schema alignment, your installation is most likely in the `Aligned` state. You must complete the schema alignment **before** upgrading to Engage 18, otherwise Engage will not start.
 {% endhint %}
 
-#### Public Services
-
-Engage v17 introduces new overloads of public-facing service methods to allow the use of keys where previously numeric IDs were expected, resolving [issue #23](https://github.com/umbraco/Umbraco.Engage.Issues/issues/23). These overloads have been added to the following services:
-
-* IAbTestingVisitorService
-* IGoalService
-* IPersonaService
-* ICustomerJourneyService
-
-This means that these services work without the use of magic numbers that are environment-dependent, and instead allow for the use of a key that is shared between environments. This also marks the introduction of `Engage.Deploy` for Engage v17 to allow for the transferring of goals, personas, customer journeys, and A/B tests, adding even more use cases to these service changes.
-
-#### Nullability
-
-Engage v17 enables strict nullable reference types across all projects. This may cause compilation warnings/errors if you're extending or implementing Engage interfaces.&#x20;
+Follow the [Schema Alignment Guide](schema-alignment-guide.md) to complete the alignment. Once its steps are finished and the `DatabaseSchemaStatus` is `Complete`, the upgrade to Engage 18 proceeds normally.
