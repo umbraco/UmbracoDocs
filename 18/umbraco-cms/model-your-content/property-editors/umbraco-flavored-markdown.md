@@ -122,6 +122,7 @@ The following UFM components are available to use.
 | Label Value  | `{umbValue: headline}`                 |
 | Localize     | `{umbLocalize: general_name}`          |
 | Content Name | `{umbContentName: pickerAlias}`        |
+| Element Name | `{umbElementName: pickerAlias}`        |
 | Link Title   | `{umbLink: pickerAlias}`               |
 | Form Name    | `{umbFormName: formAlias}`             | 
 
@@ -150,6 +151,12 @@ The Content Name component will render the name of a content item, (either Docum
 The alias prefix is `umbContentName`. An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
 The Content Name component supports content-based pickers, such as the Document Picker, Content Picker (formerly known as Multinode Treepicker), and Member Picker. Support for the advanced Media Picker will be available in an upcoming Umbraco release.
+
+#### Element Name
+
+The Element Name component will render the name of an element from the value of a given Element Picker property editor. Multiple values will render the names as a comma-separated list.
+
+The alias prefix is `umbElementName`. An example of the syntax is `{umbElementName: pickerAlias}`, which would render the component as `<ufm-element-name alias="pickerAlias"></ufm-element-name>`.
 
 #### Link Title
 
