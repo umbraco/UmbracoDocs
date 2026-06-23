@@ -478,11 +478,11 @@ public class AddSiteComposer : ComponentComposer<SiteDomainMapperComponent>
 
 When an editor visits the backoffice, the **Links** panel filters the displayed URLs to only those in the same site group as the current domain. An editor visiting via `myproject-staging.euwest01.umbraco.io` sees only the staging URL:
 
-![Staging domain only](../../../../../.gitbook/assets/staging-only-staging-v17.png)
+![Staging domain only](../../../../../.gitbook/assets/staging-only-staging.png)
 
 An editor visiting via `myproject-dev.euwest01.umbraco.io` sees only the `dev` and `live` URLs:
 
-![Backoffice and production domains only](../../../../../.gitbook/assets/backoffice-see-prod-v17.png)
+![Backoffice and production domains only](../../../../../.gitbook/assets/backoffice-see-prod.png)
 
 {% hint style="info" %}
 This is a grouping, not a one-to-one mapping. Multiple URLs can be added to a group. In the example above, an editor visiting via `myproject.euwest01.umbraco.io` (the live domain) would also see `myproject-dev.euwest01.umbraco.io` listed, as both belong to the `dev` group.
