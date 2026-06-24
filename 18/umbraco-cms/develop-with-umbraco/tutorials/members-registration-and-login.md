@@ -59,7 +59,7 @@ The **Content Base** and **Navigation Base** Compositions are available once the
 
 5. Click **Save**.
 6. Go to the **Home** Document Type.
-7. Go to the **Structure** tab.
+7. Go to the **Structure** Workspace View.
 8. Choose the **Login** Document Type under **Allowed child node types**.
 
 ![Structure Setting](../../.gitbook/assets/structure-setting.png)
@@ -112,16 +112,18 @@ The **Content Base** and **Navigation Base** Compositions are available once the
 ```
 {% endcode %}
 
+3. Click **Save**.
+
 ## Create the Register/Login page
 
 1. Navigate to the **Content** section.
 2. Create a new page based on the **Login** Document Type Under the **Home** node:
 
-![Creating the Register/Login page](../../.gitbook/assets/v14-create-register-login-page.png)
+![Creating the Register/Login page](../../.gitbook/assets/create-register-login-page.png)
 
 3. Enter the details.
 4. Click **Save and publish**.
-5. Go to the **Info** tab.
+5. Go to the **Info** Workspace View.
 6. Click on the link under the **Links** section.
 
 The Login and Register functionality is rendered by the **Login** template:
@@ -134,7 +136,7 @@ You can now use the page to register new Members. Every registered person will s
 
 The "LoginStatus" partial view comes into play after registering as a new Member (or logging in as an existing Member). It will render a welcome message and a "log out" button:
 
-![Login status rendering](../../.gitbook/assets/v14-login-status.png)
+![Login status rendering](../../.gitbook/assets/login-status.png)
 
 {% hint style="info" %}
 In a real-life scenario, you probably don't want all this functionality on a single page. However, you can still use the partial views as a basis for your own implementation.
@@ -171,13 +173,14 @@ We can take this a bit further and specify which parts of our website should be 
 3. Give the group a name.
 4. Save the Member Group.
 
-![Naming the new member group](../../.gitbook/assets/v14-create-member-group-step-2.png)
+![Naming the new member group](../../.gitbook/assets/create-member-group-step-2.png)
 
-5. Navigate back to the created Member.
-6. Go to the **Info** tab and assign the newly created Member Group.
-7. Save the member:
+5. Navigate back to the created _Member_.
+6. Go to the **Info** Workspace View and assign the newly created Member Group.
+7. Click **Choose**.
+7. Save the member.
 
-![Assign the new Member group to the created Member](../../.gitbook/assets/v14-assign-member-group.png)
+![Assign the new Member group to the created Member](../../.gitbook/assets/assign-member-group-step3.png)
 
 Almost there!
 
@@ -185,7 +188,7 @@ Almost there!
 2. Create a new page that should only be visible to "Premium" members.
 3. Click the menu icon (•••) and select **Public Access**.
 
-![Restricting public access to content](../../.gitbook/assets/v16-restrict-content-access.png)
+![Restricting public access to content](../../.gitbook/assets/restrict-content-access.png)
 
 You will now have the option to restrict access to a specific member or a specific group. Choose **Group based protection**. In the dialog that follows, provide the following details:
 
@@ -193,7 +196,7 @@ You will now have the option to restrict access to a specific member or a specif
 * The page with the login form.
 * The page to display if the content page is inaccessible to the logged-in member.
 
-![Configuring public access for content](../../.gitbook/assets/v14-configure-public-access.png)
+![Configuring public access for content](../../.gitbook/assets/configure-public-access.png)
 
 {% hint style="info" %}
 It is recommended to have a dedicated page for the "No access" page - though you can use any page you have.
