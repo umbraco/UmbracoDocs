@@ -33,6 +33,7 @@ To use a Template on your content, you must first allow it on the content Docume
 1. Open the Document Type you want to use the template.
 2. Open the **Templates** Workspace View.
 3. Select your Template under the **Allowed Templates** section.
+4. Click **Choose**.
 
 ![Allowing template](../../.gitbook/assets/allow-template.png)
 
