@@ -292,6 +292,7 @@ hostnames
 Hotfix
 hotfix
 hotfixes
+HybridCache
 htmlAttributes
 htmlHelper
 HTTPContext
@@ -605,6 +606,7 @@ setBehavior
 shippingMethod
 signout
 signup
+SignalR
 Siroker
 siteName
 Sitename

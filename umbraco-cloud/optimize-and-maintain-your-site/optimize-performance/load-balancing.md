@@ -82,6 +82,15 @@ When you enable load balancing, Umbraco Cloud selects a Redis Stock Keeping Unit
 
 For the full list of available Redis SKUs and how to choose one, see [Cache Configuration](cache-configuration.md).
 
+## What Umbraco Cloud configures automatically
+
+When you enable load balancing, Umbraco Cloud configures everything needed to run your environment across multiple instances. You do not need to change `Program.cs` or add configuration code. The platform sets up:
+
+* **SignalR backplane** — real-time backoffice messages are distributed across all instances over Redis.
+* **Shared Data Protection keys** — the keys that protect login cookies, antiforgery tokens, and `TempData` are shared across all instances. Umbraco Cloud stores them on a replicated filesystem managed for the environment, so authentication and forms keep working on every instance.
+
+A shared Redis cache keeps cached content consistent across instances. For the cache that backs these features, and how to use Redis in your own code, see [Cache Configuration](cache-configuration.md).
+
 ## Performance and availability
 
 Load balancing changes how performance and availability behave in an Umbraco Cloud environment. Two behaviors stand out:

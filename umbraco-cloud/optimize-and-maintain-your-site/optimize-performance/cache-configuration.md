@@ -34,6 +34,15 @@ When you enable Cache, Umbraco Cloud provisions a managed Redis instance for you
 
 Umbraco CMS uses Microsoft's HybridCache for in-memory and distributed caching. See the [HybridCacheOptions reference](https://docs.umbraco.com/umbraco-cms/reference/configuration/cache-settings#hybridcacheoptions) for more details and for how to tune the cache.
 
+## What Umbraco Cloud configures automatically
+
+When you enable Cache, Umbraco Cloud wires Redis into your application for you. You do not need to change `Program.cs` or add any configuration code. The platform configures:
+
+* **Distributed cache** — Redis is registered as the application's `IDistributedCache`. Umbraco's HybridCache uses Redis as its second-level (L2) cache automatically. Cached content and media are shared across all instances.
+* **Session state** — ASP.NET Core session state uses the same registered distributed cache, so sessions are shared across instances.
+
+On load-balanced environments, Umbraco Cloud also configures a SignalR backplane and shared Data Protection keys. See [What Umbraco Cloud configures automatically](load-balancing.md#what-umbraco-cloud-configures-automatically) in the Load Balancing article.
+
 ## Available Redis SKUs
 
 ![Redis SKU selector on the environment settings page](../../.gitbook/assets/redis-sku-selector.png)
@@ -60,6 +69,46 @@ Pick a SKU that fits your working set — the active content, sessions, and back
 * You see frequent cache evictions on the current SKU.
 
 For pricing of each SKU, see the [Umbraco pricing page](https://umbraco.com/pricing/).
+
+## Using Redis in your own code
+
+You can use the same Redis instance for your own caching and cross-instance coordination. Umbraco Cloud registers a shared connection in the dependency injection container. Inject `IConnectionMultiplexer` into your services to work with Redis directly:
+
+{% code caption="ProductCacheService.cs" %}
+```csharp
+using StackExchange.Redis;
+
+namespace MyProject.Services;
+
+public class ProductCacheService
+{
+    private readonly IConnectionMultiplexer _redis;
+
+    public ProductCacheService(IConnectionMultiplexer redis) => _redis = redis;
+
+    public async Task CacheProductNameAsync(string sku, string name)
+    {
+        IDatabase database = _redis.GetDatabase();
+        await database.StringSetAsync($"product:{sku}", name);
+    }
+}
+```
+{% endcode %}
+
+If you need the connection string directly, read it from the environment variable `UMBRACO:CLOUD:REDIS:CONNECTIONSTRING`. The `Umbraco.Cloud.Cms` package exposes the same key as a constant:
+
+{% code caption="Program.cs" %}
+```csharp
+using Umbraco.Cloud.Cms;
+
+string? redisConnectionString = builder.Configuration
+    .GetValue<string>(Constants.EnvironmentVariables.CloudRedisConnectionString);
+```
+{% endcode %}
+
+{% hint style="info" %}
+Both the registered `IConnectionMultiplexer` and the connection string are only available when Cache is enabled on the environment. On an environment without Cache, `IConnectionMultiplexer` is not registered. A service that takes it as a required dependency fails to resolve. Guard for that case if the same code runs on environments where Cache may be disabled.
+{% endhint %}
 
 ## Related articles
 
