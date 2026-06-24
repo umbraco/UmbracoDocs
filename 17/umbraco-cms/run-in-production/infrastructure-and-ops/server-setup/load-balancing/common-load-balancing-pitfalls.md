@@ -16,9 +16,9 @@ On **Umbraco Cloud**, the surrounding setup is wired up for you when you enable 
 
 ## Write for round robin, not for sticky sessions
 
-Nearly every load-balancing surprise comes down to a single habit. You write code that assumes there's only ever one server. You also assume that whatever you put in memory or on disk stays there until next time you look. Once your code runs across several servers, neither assumption holds.
+Nearly every load-balancing surprise comes down to a single habit. You write code that assumes there's only ever one server. You also assume that whatever you put in memory or on disk stays there until next time you look. Once your code runs across multiple servers, neither assumption holds.
 
-To stay on the right side of the habit, **write your code as if every request could land on a different server**. In other words, assume a plain round-robin setup with no session affinity. The assumption is the safest one you can make. Code that works under round robin also works with sticky sessions. Code that depends on sticky sessions breaks the moment a request lands somewhere else. And requests will land elsewhere: servers recycle, deployments happen, and the load balancer rebalances traffic. Treat sticky sessions as a performance optimization you switch on later. Never treat sticky sessions as something your code leans on to be correct.
+To stay on the right side of the habit, **write your code as if every request could land on a different server**. In other words, assume a plain round-robin setup with no session affinity. The assumption is the safest one you can make. Code that works under round robin also works with sticky sessions. Code that depends on sticky sessions breaks the moment a request lands somewhere else. And requests will land elsewhere: servers recycle, deployments happen, and the load balancer moves traffic between servers. Treat sticky sessions as a performance optimization you switch on later. Never treat sticky sessions as something your code leans on to be correct.
 
 The rest of the article applies the principle to the places where the problem bites most often.
 
@@ -87,10 +87,10 @@ When you cache something that mirrors Umbraco content, don't lean on a time-to-l
 
 Sometimes one request depends on what happened in a previous one, such as a session, a multi-step form or wizard, or OAuth state. By default, the state lives in the memory of whichever server handled the first request. The next request might go somewhere else. Store session through `IDistributedCache` so every server can reach the state. Then apply the round-robin principle from the top of the article. Get the flow working without affinity first, then switch sticky sessions on if you want them for performance.
 
-The backoffice has its own considerations, notably SignalR for real-time updates. [Load Balancing the Backoffice](load-balancing-backoffice.md) covers them.
+The backoffice has its own considerations, such as SignalR for real-time updates. [Load Balancing the Backoffice](load-balancing-backoffice.md) covers them.
 
 {% hint style="info" %}
-Backoffice load balancing is available from **Umbraco 17**. The same applies to several APIs mentioned above, such as `IDistributedBackgroundJob` and `LoadBalanceIsolatedCaches()`. On earlier versions, load balancing assumes a single backoffice server and multiple front-end servers.
+Backoffice load balancing is available from **Umbraco 17**. The same applies to multiple APIs mentioned above, such as `IDistributedBackgroundJob` and `LoadBalanceIsolatedCaches()`. On earlier versions, load balancing assumes a single backoffice server and multiple front-end servers.
 {% endhint %}
 
 ## Related documentation
