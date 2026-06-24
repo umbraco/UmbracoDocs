@@ -177,11 +177,13 @@ Once registered, the Block will be represented by the given Web Component.
 
 The **Feature** block has an **Image** property that uses the Media Picker. A Media Picker value is an array of entries. Each entry has a `mediaKey` with the media GUID.
 
-Render the media with the `umb-media-thumbnail` component. Add the imports below, then read the `image` property in the `render` method.
+Render the media with the `umb-media-thumbnail` component. Add `nothing` to the existing Lit import from the previous example, add the new type import, then update the `render` method.
 
 {% code title="example-block-custom-view.ts" %}
 ```typescript
+// Add `nothing` to the existing Lit import (keep the other imports from the previous example):
 import { html, customElement, LitElement, property, css, nothing } from '@umbraco-cms/backoffice/external/lit';
+// Add this new import:
 import type { UmbMediaPickerPropertyValueEntry } from '@umbraco-cms/backoffice/media';
 
 // Update the render method from the previous example:

@@ -125,7 +125,7 @@ import { UmbImagingRepository } from '@umbraco-cms/backoffice/imaging';
 
 const repository = new UmbImagingRepository(this);
 const { data } = await repository.requestResizedItems([mediaKey], { width: 300, height: 300 });
-const url = data[0]?.url;
+const url = data?.[0]?.url;
 ```
 
 ### The original file URL
