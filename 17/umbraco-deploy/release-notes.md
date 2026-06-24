@@ -16,6 +16,15 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0) (June 24th 2026)
+
+* All items from 17.2.0-rc1 and 17.2.0-rc2.
+
+### [17.2.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0-rc2) (June 19th 2026)
+
+* Support the `Umbraco:CMS:SignalR:ClientShouldSkipNegotiation` setting introduced in Umbraco CMS 17.5. Older CMS 17 versions continue to use the negotiate round-trip as before.
+* Throw a clear error when the API key or secret is not configured on the environment.
+
 ### [17.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0-rc1) (June 4th 2026)
 
 * Prevent `ARRAffinity` cookie loss on load-balanced targets by disabling `HttpClient` handler rotation. Long-running transfers and restores now stay routed to the same target instance.
