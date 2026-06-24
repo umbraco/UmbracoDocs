@@ -36,7 +36,7 @@ Learn how to:
 
 To see the changes you've made go to the **Info** tab and click on the Link.
 
-![Link to view the frontend](../../../../.gitbook/assets/link-to-page_v14.png)
+![Link to view the frontend](../../../../.gitbook/assets/link-to-page.png)
 
 ## Summary
 

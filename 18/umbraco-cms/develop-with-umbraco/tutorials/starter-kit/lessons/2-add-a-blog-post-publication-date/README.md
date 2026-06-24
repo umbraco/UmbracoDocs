@@ -17,9 +17,9 @@ Learn how to:
 ## Steps - Part One
 
 1. In the **Settings** section, expand **Document Types**.
-2.  Click on _Blogpost_. This is the Document Type that defines the fields for this type of page.
+2. Click on _Blogpost_. This is the Document Type that defines the fields for this type of page.
 
-    ![Blogpost Document Type](../../../../../.gitbook/assets/Blogpost-Document-Type-v14.png)
+    ![Blogpost Document Type](../../../../../.gitbook/assets/Blogpost-Document-Type.png)
 3. The Document Type contains 2 groups: _Content_ and _Navigation & SEO_.
    * At the bottom of the _Content_ group select **Add property**.
    * This opens the **Property Editor** dialog window.
@@ -29,11 +29,11 @@ Learn how to:
 6. Select **Select Property Editor** to specify what type of data is being stored.
    * Select the **Date Picker** icon since we need a standard date.
 7. Enable the field in the validation section to make it mandatory.
-8.  Click **Add** to close the dialog and save the property.
+8. Click **Submit** to close the dialog and save the property.
 
-    ![Property settings](../../../../../.gitbook/assets/property-settings-v14.png)
-9. Select the **Reorder** option near the top-right of the window.
+    ![Property settings](../../../../../.gitbook/assets/property-settings.png)
+9. Select the **Reorder** option on the top-right of the window.
    * Drag the new property after _Page Title_.
    * A logical order to your properties will make things easier for your editors.
-10. Click **I am done reordering** near the top-right of the window.
+10. Click **I am done reordering** on the top-right of the window.
 11. Select **Save** the Document Type. A confirmation message appears confirming that the Document Type is saved.
