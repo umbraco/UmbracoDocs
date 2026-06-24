@@ -19,11 +19,11 @@ Follow this guide to build an automation that writes a message to the applicatio
 {% step %}
 ### Step 1: Create a Workspace
 
-The first time you open the **Automate** section, the dashboard shows a welcome panel because no workspaces exist yet.
+The first time you open the **Automation** section, the dashboard shows a welcome panel because no workspaces exist yet.
 
-1. Click **Create Workspace** on the welcome panel.
+1. Click **Create a Workspace** on the welcome panel.
 2. Enter a name, for example `Editorial`.
-3. On the **Settings** tab, pick a **Service Account** and at least one **User Group**.
+3. On the **Settings** tab, pick a **Service Account Key** and at least one **User Group**.
 4. Click **Save**.
 
 A workspace groups automations together and controls which user groups and connections have access.
