@@ -18,7 +18,7 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
-### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 24th 2026)
+### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 25th 2026)
 
 * Compatibility with Umbraco CMS 18.0.0.
 * Fix `umbracodeploy` trigger route URLs broken by the Umbraco 18 routing migration. POST endpoints under `/umbraco/umbracodeploy/...` now resolve correctly.
@@ -60,7 +60,7 @@ Version 18 introduces a redesigned Deploy experience in the backoffice:
 
 ## Umbraco.Deploy.Contrib
 
-### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-18.0.0) (June 24th 2026)
+### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-18.0.0) (June 25th 2026)
 
 * Compatibility with Umbraco 18.0.0 and Deploy 18.0.0.
 
