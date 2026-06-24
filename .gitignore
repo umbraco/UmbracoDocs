@@ -8,3 +8,5 @@
 settings.local.json
 .claude/eval-workspaces/
 node_modules/
+.memsearch/
+docs/plans/
