@@ -31,7 +31,7 @@ The Umbraco Cloud Portal checks these prerequisites automatically under `Project
 | --- | --- | --- |
 | Professional plan with a dedicated server | Load balancing runs on dedicated infrastructure, available from the **Professional Dedicated 1** plan and up. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
 | Environment alone on a dedicated server | Load balancing scales every site on the server. The environment must be the only one on its dedicated server. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
-| Umbraco CMS **17.4.2** or higher | The base Umbraco CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
+| Umbraco CMS **17.5.0** or higher | The base Umbraco CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
 | Umbraco.Cloud.Cms **17.2.0** or higher | The Umbraco Cloud CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
 | Umbraco.Deploy.Cloud **17.2.0** or higher | The Umbraco Deploy Cloud package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
 | Runtime mode set to Production | `Umbraco:CMS:Runtime:Mode` is set to `Production`. | [Runtime Modes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes#production-mode) |
