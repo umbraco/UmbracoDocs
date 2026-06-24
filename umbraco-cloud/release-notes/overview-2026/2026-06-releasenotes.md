@@ -31,7 +31,7 @@ A child project can have an indicator to show that it contains any components th
 
 The Sustainability Dashboard now reports CO2 emissions based on Microsoft's Azure Carbon Optimization data. The emissions are reported as carbon dioxide equivalent (CO2e) and cover Scope 1, Scope 2, and Scope 3. Coverage now extends beyond App Service to SQL Database, SQL Elastic Pool, Storage Account, and Key Vault. Emissions are reported per month, and a month's data becomes available a few weeks after the month ends.
 
-The dashboard also has a refreshed view. You can select a date range to report on, with the current year to date as the default. You can sort projects by emissions to find your highest-impact projects, expand a project to see its per-component breakdown, and download the report as a CSV file.
+The dashboard also has a refreshed view. You can select a date range to report on, with the current year to date as the default. You can sort projects by emissions to find your highest-impact projects. You can also expand a project to see its per-component breakdown and download the report as a CSV file.
 
 <figure><img src="../../.gitbook/assets/sustainability-dashboard-carbon-report.png" alt="The Carbon Emission Report showing cumulative CO2e, a selected date range, and a per-component breakdown for each project"><figcaption><p>The Sustainability Dashboard with the date range, per-component breakdown, and CSV export.</p></figcaption></figure>
 
