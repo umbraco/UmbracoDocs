@@ -33,7 +33,7 @@ Enhancements in `Umbraco.Cloud.Cms` to ensure a seamless setup for Load Balancin
 
 The backoffice UI shipped with the `Umbraco.Cloud.Cms` package is now translated into Danish, alongside the existing English translations. The translations cover the Umbraco ID sign-in experience, session timeout messages, and profile management links in the backoffice.
 
-You can also add support for other languages or customize specific strings in your own Cloud project. See [Customizing Translations in Umbraco.Cloud.Cms](../../expand-your-projects-capabilities/cloud-extensions/customizing-translations.md) for details.
+You can also add support for other languages or customize specific strings in your own Cloud project. See [Customizing Translations](../../expand-your-projects-capabilities/cloud-extensions/customizing-translations.md) for details.
 
 A change in Umbraco CMS 17.4 affected the timing of manifest registrations. The timing change could cause the Umbraco ID auth provider not to be ready when visiting `https://{cloudsite}.{region}.umbraco.io/umbraco`.
 The backoffice showed the native Umbraco Login instead of redirecting to the Umbraco ID login page.

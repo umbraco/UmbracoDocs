@@ -93,7 +93,7 @@
 * [Cloud Extensions](expand-your-projects-capabilities/cloud-extensions/README.md)
   * [Private NuGet Feed on Umbraco Cloud](expand-your-projects-capabilities/cloud-extensions/private-nuget-feed.md)
   * [Umbraco Forms on Cloud](expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
-  * [Customizing Translations in Umbraco.Cloud.Cms](expand-your-projects-capabilities/cloud-extensions/customizing-translations.md)
+  * [Customizing Translations](expand-your-projects-capabilities/cloud-extensions/customizing-translations.md)
 * [External Services](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
   * [Cloud Services Static IPs](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)

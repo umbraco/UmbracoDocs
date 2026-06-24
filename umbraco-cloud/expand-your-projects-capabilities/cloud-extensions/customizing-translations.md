@@ -1,14 +1,14 @@
 ---
 description: >-
-  Learn how to add translations for new languages or override existing strings in the Umbraco.Cloud.Cms backoffice UI.
+  Learn how to add translations for new languages or override existing strings in the Umbraco Cloud backoffice UI.
 ---
 
-# Customizing Translations in Umbraco.Cloud.Cms
+# Customizing Translations
 
-The `Umbraco.Cloud.Cms` package includes backoffice translations for English and Danish. You can add translations for additional languages or override specific strings for existing languages.
+Umbraco Cloud includes backoffice translations for English and Danish. You can add translations for additional languages or override specific strings for existing languages.
 
 {% hint style="info" %}
-Localization in `Umbraco.Cloud.Cms` is available from version 17.2.0 and later.
+Localization requires `Umbraco.Cloud.Cms` version 17.2.0 or later.
 {% endhint %}
 
 ## Available translation keys
@@ -39,9 +39,9 @@ Keys with `{providerName}` accept a string argument at runtime.
 
 ## Adding or overriding translations
 
-`Umbraco.Cloud.Cms` uses the same localization extension system as Umbraco CMS. See [Localization](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/extending-overview/extension-types/localization) in the CMS documentation for the full reference.
+Umbraco Cloud uses the same localization extension system as Umbraco CMS. See [Localization](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/extending-overview/extension-types/localization) in the CMS documentation for the full reference.
 
-Register a localization extension in your Cloud project's `App_Plugins` folder. You only need to include the keys you want to change. The package's default values apply to any keys you do not provide.
+Register a localization extension in your Cloud project's `App_Plugins` folder. You only need to include the keys you want to change. The default values apply to any keys you do not provide.
 
 ### 1. Create a translation file
 

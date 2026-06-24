@@ -7,5 +7,5 @@ Enhance your Umbraco Cloud projects with powerful built-in tools and custom pack
 ## Related articles
 
 {% content-ref url="customizing-translations.md" %}
-[Customizing Translations in Umbraco.Cloud.Cms](customizing-translations.md)
+[Customizing Translations](customizing-translations.md)
 {% endcontent-ref %}
