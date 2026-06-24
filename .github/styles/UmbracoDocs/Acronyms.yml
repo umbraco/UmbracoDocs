@@ -55,7 +55,6 @@ exceptions:
   - HAL      # Hypertext Application Language
   - HASH     # Cryptographic hash
   - HEX      # Hexadecimal
-  - HMAC     # Hash-based Message Authentication Code
   - HTML     # HyperText Markup Language
   - HTTP     # HyperText Transfer Protocol
   - HTTPS    # HyperText Transfer Protocol Secure

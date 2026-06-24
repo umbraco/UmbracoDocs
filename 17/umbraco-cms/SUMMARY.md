@@ -394,7 +394,6 @@
         * [Collection Repository](extend-your-project/backoffice-extensions/foundation/repositories/repository-types/collection-repository.md)
         * [Detail Repository](extend-your-project/backoffice-extensions/foundation/repositories/repository-types/detail-repository.md)
         * [Item Repository](extend-your-project/backoffice-extensions/foundation/repositories/repository-types/item-repository.md)
-    * [Working with Media](extend-your-project/backoffice-extensions/foundation/working-with-media.md)
     * [States](extend-your-project/backoffice-extensions/foundation/states.md)
     * [Routes](extend-your-project/backoffice-extensions/foundation/routes.md)
     * [Backoffice Localization](extend-your-project/backoffice-extensions/foundation/localization.md)

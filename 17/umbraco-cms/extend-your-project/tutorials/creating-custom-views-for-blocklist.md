@@ -115,7 +115,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
     override render() {
         return html`
             <h5>My Custom View</h5>
-            <p>Name: ${this.content?.featureName}</p>
+            <p>Headline: ${this.content?.headline}</p>
         `;
     }
 
@@ -172,35 +172,6 @@ Depending on the values, the custom view is applied to the following data types:
 Read about [extension-manifest](../backoffice-extensions/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
 Once registered, the Block will be represented by the given Web Component.
-
-### Displaying the block's media
-
-`umb-media-thumbnail` is available from Umbraco 17.6. In earlier 17.x releases, use the `umb-imaging-thumbnail` alias.
-
-The **Feature** block has an **Image** property that uses the Media Picker. A Media Picker value is an array of entries. Each entry has a `mediaKey` with the media GUID.
-
-Render the media with the `umb-media-thumbnail` component. Add the imports below, then read the `image` property in the `render` method.
-
-{% code title="example-block-custom-view.ts" %}
-```typescript
-import { html, customElement, LitElement, property, css, nothing } from '@umbraco-cms/backoffice/external/lit';
-import type { UmbMediaPickerPropertyValueEntry } from '@umbraco-cms/backoffice/media';
-
-// Update the render method from the previous example:
-override render() {
-    const image = (this.content?.image as Array<UmbMediaPickerPropertyValueEntry> | undefined)?.[0];
-
-    return html`
-        <h5>${this.content?.featureName}</h5>
-        ${image
-            ? html`<umb-media-thumbnail .unique=${image.mediaKey} .width=${150} .height=${150}></umb-media-thumbnail>`
-            : nothing}
-    `;
-}
-```
-{% endcode %}
-
-The `umb-media-thumbnail` component requests a cropped, HMAC-signed URL and renders the image. For other ways to display and fetch media, see [Working with Media](../backoffice-extensions/foundation/working-with-media.md).
 
 ### Adding Content to the Blocks
 
@@ -272,7 +243,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
         return html`
             <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
                 <h5>My Custom View</h5>
-                <p>Name: ${this.content?.featureName}</p>
+                <p>Headline: ${this.content?.headline}</p>
                 <p>Alignment: ${this.settings?.blockAlignment}</p>
             </div>
         `;
@@ -331,7 +302,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
             <a href=${this.config?.editContentPath ?? ''}>
                 <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
                     <h5>My Custom View</h5>
-                    <p>Name: ${this.content?.featureName}</p>
+                    <p>Headline: ${this.content?.headline}</p>
                     <p>Alignment: ${this.settings?.blockAlignment}</p>
                 </div>
             </a>
