@@ -18,6 +18,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - [Document Blueprint (`document-blueprint`)](#document-blueprint-document-blueprint)
 - [Document Version (`document-version`)](#document-version-document-version)
 - [Document Type (`document-type`)](#document-type-document-type)
+- [Element (`element`)](#element-element)
 - [Health (`health`)](#health-health)
 - [Imaging (`imaging`)](#imaging-imaging)
 - [Indexer (`indexer`)](#indexer-indexer)
@@ -59,7 +60,6 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `is-used-data-type` — Check if a Data Type is in use
 - `get-data-type` — Get a specific Data Type by ID
 - `get-data-type-configuration` — Get Data Type configuration
-- `get-data-type-property-editor-template` — Get property editor template
 - `get-data-types-by-id-array` — Get Data Types by IDs
 - `get-data-type-root` — Get root level Data Types
 - `get-data-type-children` — Get child Data Types
@@ -76,6 +76,11 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `delete-data-type-folder` — Delete a Data Type folder
 - `get-data-type-folder` — Get information about a Data Type folder
 - `update-data-type-folder` — Update a Data Type folder's details
+- `get-data-type-ancestors-batch` — Get ancestors for multiple Data Types
+- `get-data-type-batch` — Get multiple Data Types by IDs
+- `get-data-type-schema` — Get the JSON Schema for a Data Type
+- `get-data-type-schemas` — Get JSON Schemas for multiple Data Types
+- `get-data-type-tree-search` — Search Data Types for tree navigation
 
 ## Dictionary (`dictionary`)
 
@@ -134,11 +139,12 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-document-children` — Get child documents
 - `get-document-siblings` — Get sibling documents
 - `get-document-ancestors` — Get document ancestors
-- `get-document-property-value-template` — Get document property value template
 - `get-document-available-segment-options` — Get available segment options for a document
 - `get-item-document` — Get document item information
 - `delete-document-recycle-bin-item` — Delete a specific item from the recycle bin
 - `get-document-recycle-bin-siblings` — Get sibling items in recycle bin
+- `get-document-ancestors-batch` — Get ancestors for multiple documents
+- `get-document-type-schema` — Get the JSON Schema for a Document Type
 
 ## Document Blueprint (`document-blueprint`)
 
@@ -195,6 +201,59 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-document-type-ancestors` — Get Document Type ancestors
 - `get-document-type-children` — Get Document Type children
 - `get-document-type-siblings` — Get sibling Document Types
+- `get-document-type-allowed-parents` — Get the Document Types allowed as a parent
+- `get-document-type-ancestors-batch` — Get ancestors for multiple Document Types
+- `get-document-type-batch` — Get multiple Document Types by IDs
+- `get-document-type-tree-search` — Search Document Types for tree navigation
+
+## Element (`element`)
+
+- `copy-element` — Copy an element to a new location
+- `create-element` — Create a new element
+- `create-element-folder` — Create a folder for organizing elements
+- `delete-element` — Delete an element
+- `delete-element-folder` — Delete an element folder
+- `delete-element-folder-from-recycle-bin` — Permanently delete an element folder from the recycle bin
+- `delete-element-from-recycle-bin` — Permanently delete an element from the recycle bin
+- `empty-element-recycle-bin` — Empty the element recycle bin
+- `get-element-ancestors` — Get ancestor elements
+- `get-element-are-referenced` — Check if elements are referenced
+- `get-element-audit-log` — Get the audit log for an element
+- `get-element-by-id` — Get a specific element by ID
+- `get-element-by-id-referenced-by` — Get items that reference a specific element
+- `get-element-children` — Get child elements
+- `get-element-configuration` — Get element configuration
+- `get-element-folder` — Get information about an element folder
+- `get-element-folder-referenced-descendants` — Get descendant references for an element folder
+- `get-element-item-ancestors` — Get ancestors for multiple elements
+- `get-element-root` — Get root level elements
+- `get-element-siblings` — Get sibling elements
+- `get-element-version` — List element versions
+- `get-element-version-by-id` — Get a specific element version by ID
+- `get-item-element` — Get elements by IDs
+- `get-item-element-folder` — Get element folders by IDs
+- `get-recycle-bin-element-children` — Get child elements in the recycle bin
+- `get-recycle-bin-element-folder-original-parent` — Get the original parent of an element folder in the recycle bin
+- `get-recycle-bin-element-original-parent` — Get the original parent of an element in the recycle bin
+- `get-recycle-bin-element-referenced-by` — Get content that references deleted elements in the recycle bin
+- `get-recycle-bin-element-root` — Get root level elements in the recycle bin
+- `get-recycle-bin-element-siblings` — Get sibling elements in the recycle bin
+- `move-element` — Move an element to a different location
+- `move-element-folder` — Move an element folder to a different location
+- `move-element-folder-to-recycle-bin` — Move an element folder to the recycle bin
+- `move-element-to-recycle-bin` — Move an element to the recycle bin
+- `publish-element` — Publish an element
+- `restore-element-folder` — Restore an element folder from the recycle bin
+- `restore-element-from-recycle-bin` — Restore an element from the recycle bin
+- `rollback-element-version` — Roll back an element to a specific version
+- `search-element` — Search for elements
+- `set-element-version-prevent-cleanup` — Prevent cleanup for a specific element version
+- `unpublish-element` — Unpublish an element
+- `update-element` — Update an existing element
+- `update-element-folder` — Update an element folder
+- `update-element-properties` — Update property values on an element
+- `validate-element` — Validate an element before creating it
+- `validate-element-update` — Validate an element before updating it
 
 ## Health (`health`)
 
@@ -275,6 +334,8 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `validate-media-update` — Validate media update data
 - `get-media-recycle-bin-siblings` — Get sibling items in recycle bin
 - `delete-media-recycle-bin-item` — Delete a specific item from the recycle bin
+- `get-media-ancestors-batch` — Get ancestors for multiple media
+- `get-media-type-schema` — Get the JSON Schema for a media type
 
 ## Media Type (`media-type`)
 
@@ -300,7 +361,10 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-allowed-media-type` — Get allowed media types
 - `get-media-type-allowed-at-root` — Get types allowed at root
 - `get-media-type-allowed-children` — Get allowed child types
-- `get-media-type-composition-references` — Get composition references  
+- `get-media-type-composition-references` — Get composition references
+- `get-media-type-allowed-parents` — Get the media types allowed as a parent
+- `get-media-type-ancestors-batch` — Get ancestors for multiple media types
+- `get-media-type-batch` — Get multiple media types by IDs
 
 ## Member (`member`)
 
@@ -315,100 +379,103 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-member-by-id-referenced-descendants` — Get referenced descendants of member
 - `find-member` — Find members
 - `get-item-member-search` — Search for member items
-- `get-member-configuration` — Get member configuration
-- `get-members-by-id-array` — Get members by IDs  
+- `get-members-by-id-array` — Get members by IDs
+- `get-member-ancestors-batch` — Get ancestors for multiple members
+- `get-member-type-schema` — Get the JSON Schema for a member type
 
 ## Member Group (`member-group`)
 
 - `get-member-group` — Get member group
 - `get-member-group-by-id-array` — Get member groups by IDs
 - `get-all-member-groups` — Get all member groups
-- `create-member-group` — Create a new member group  
-- `update-member-group` — Update a member group  
-- `delete-member-group` — Delete a member group  
-- `get-member-group-root` — Get root member groups  
+- `create-member-group` — Create a new member group
+- `update-member-group` — Update a member group
+- `delete-member-group` — Delete a member group
+- `get-member-group-root` — Get root member groups
 
 ## Member Type (`member-type`)
 
 - `get-member-type` — Get member types with pagination
 - `get-member-type-by-id` — Get member type by ID
 - `create-member-type` — Create a new member type
-- `get-member-types-by-id-array` — Get member types by IDs  
-- `delete-member-type` — Delete a member type  
-- `update-member-type` — Update a member type  
-- `copy-member-type` — Copy a member type  
-- `get-member-type-available-compositions` — Get available compositions  
+- `get-member-types-by-id-array` — Get member types by IDs
+- `delete-member-type` — Delete a member type
+- `update-member-type` — Update a member type
+- `copy-member-type` — Copy a member type
+- `get-member-type-available-compositions` — Get available compositions
 - `get-member-type-composition-references` — Get composition references
 - `get-member-type-configuration` — Get member type configuration
 - `get-member-type-root` — Get root member types
 - `get-member-type-siblings` — Get sibling member types
-- `search-member-type-items` — Search for member type items  
+- `search-member-type-items` — Search for member type items
+- `get-member-type-ancestors-batch` — Get ancestors for multiple member types
+- `get-member-type-batch` — Get multiple member types by IDs
 
 ## Models Builder (`models-builder`)
 
-- `get-models-builder-dashboard` — Get Models Builder dashboard information  
-- `get-models-builder-status` — Get Models Builder status  
-- `post-models-builder-build` — Trigger Models Builder code generation  
+- `get-models-builder-dashboard` — Get Models Builder dashboard information
+- `get-models-builder-status` — Get Models Builder status
+- `post-models-builder-build` — Trigger Models Builder code generation
 
 ## Partial View (`partial-view`)
 
-- `get-partial-view-by-path` — Get partial view by path  
-- `get-partial-view-folder-by-path` — Get partial view folder by path  
-- `get-partial-view-snippet-by-id` — Get partial view snippet by ID  
-- `get-partial-view-snippet` — Get partial view snippet  
-- `create-partial-view` — Create a new partial view  
-- `create-partial-view-folder` — Create a partial view folder  
-- `update-partial-view` — Update a partial view  
-- `rename-partial-view` — Rename a partial view  
-- `delete-partial-view` — Delete a partial view  
-- `delete-partial-view-folder` — Delete a partial view folder  
-- `get-partial-view-root` — Get root partial views  
+- `get-partial-view-by-path` — Get partial view by path
+- `get-partial-view-folder-by-path` — Get partial view folder by path
+- `get-partial-view-snippet-by-id` — Get partial view snippet by ID
+- `get-partial-view-snippet` — Get partial view snippet
+- `create-partial-view` — Create a new partial view
+- `create-partial-view-folder` — Create a partial view folder
+- `update-partial-view` — Update a partial view
+- `rename-partial-view` — Rename a partial view
+- `delete-partial-view` — Delete a partial view
+- `delete-partial-view-folder` — Delete a partial view folder
+- `get-partial-view-root` — Get root partial views
 - `get-partial-view-children` — Get child partial views
 - `get-partial-view-siblings` — Get sibling partial views
 - `get-partial-view-ancestors` — Get partial view ancestors
-- `get-partial-view-search` — Search partial views  
+- `get-partial-view-search` — Search partial views
 
 ## Property Type (`property-type`)
 
-- `get-property-type-is-used` — Check if a property type is in use  
+- `get-property-type-is-used` — Check if a property type is in use
 
 ## Redirect (`redirect`)
 
-- `get-all-redirects` — Get all redirects  
-- `get-redirect-by-id` — Get redirect by ID  
-- `delete-redirect` — Delete a redirect  
-- `get-redirect-status` — Get redirect status  
-- `update-redirect-status` — Update redirect status  
+- `get-all-redirects` — Get all redirects
+- `get-redirect-by-id` — Get redirect by ID
+- `delete-redirect` — Delete a redirect
+- `get-redirect-status` — Get redirect status
+- `update-redirect-status` — Update redirect status
 
 ## Relation (`relation`)
 
-- `get-relation-by-relation-type-id` — Get relations by relation type ID  
+- `get-relation-by-relation-type-id` — Get relations by relation type ID
 
 ## Relation Type (`relation-type`)
 
-- `get-relation-type` — Get all relation types  
-- `get-relation-type-by-id` — Get relation type by ID  
+- `get-relation-type` — Get all relation types
+- `get-relation-type-by-id` — Get relation type by ID
 
 ## Script (`script`)
 
-- `get-script-by-path` — Get script by path  
-- `get-script-folder-by-path` — Get script folder by path  
-- `get-script-items` — Get script items  
-- `create-script` — Create a new script  
-- `create-script-folder` — Create a script folder  
-- `update-script` — Update a script  
-- `rename-script` — Rename a script  
-- `delete-script` — Delete a script  
-- `delete-script-folder` — Delete a script folder  
+- `get-script-by-path` — Get script by path
+- `get-script-folder-by-path` — Get script folder by path
+- `get-script-items` — Get script items
+- `create-script` — Create a new script
+- `create-script-folder` — Create a script folder
+- `update-script` — Update a script
+- `rename-script` — Rename a script
+- `delete-script` — Delete a script
+- `delete-script-folder` — Delete a script folder
 - `get-script-tree-root` — Get root script items
 - `get-script-tree-children` — Get child script items
 - `get-script-tree-siblings` — Get sibling script items
-- `get-script-tree-ancestors` — Get script ancestors  
+- `get-script-tree-ancestors` — Get script ancestors
 
 ## Searcher (`searcher`)
 
-- `get-searcher` — Get all searchers  
-- `get-searcher-by-searcher-name-query` — Query a specific searcher by name  
+- `get-searcher` — Get all searchers
+- `get-searcher-by-searcher-name-query` — Query a specific searcher by name
 
 ## Server (`server`)
 
@@ -416,34 +483,34 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-server-configuration` — Get server configuration
 - `get-server-information` — Get server information
 - `get-server-troubleshooting` — Get server troubleshooting data
-- `get-server-upgrade-check` — Check for server upgrades  
+- `get-server-upgrade-check` — Check for server upgrades
 
 ## Static File (`static-file`)
 
-- `get-static-files` — Get static files with filtering  
-- `get-static-file-root` — Get root static files  
-- `get-static-file-children` — Get child static files  
-- `get-static-file-ancestors` — Get static file ancestors  
+- `get-static-files` — Get static files with filtering
+- `get-static-file-root` — Get root static files
+- `get-static-file-children` — Get child static files
+- `get-static-file-ancestors` — Get static file ancestors
 
 ## Stylesheet (`stylesheet`)
 
-- `get-stylesheet-by-path` — Get stylesheet by path  
-- `get-stylesheet-folder-by-path` — Get stylesheet folder by path  
-- `create-stylesheet` — Create a new stylesheet  
-- `create-stylesheet-folder` — Create a stylesheet folder  
-- `update-stylesheet` — Update a stylesheet  
-- `rename-stylesheet` — Rename a stylesheet  
-- `delete-stylesheet` — Delete a stylesheet  
-- `delete-stylesheet-folder` — Delete a stylesheet folder  
-- `get-stylesheet-root` — Get root stylesheets  
+- `get-stylesheet-by-path` — Get stylesheet by path
+- `get-stylesheet-folder-by-path` — Get stylesheet folder by path
+- `create-stylesheet` — Create a new stylesheet
+- `create-stylesheet-folder` — Create a stylesheet folder
+- `update-stylesheet` — Update a stylesheet
+- `rename-stylesheet` — Rename a stylesheet
+- `delete-stylesheet` — Delete a stylesheet
+- `delete-stylesheet-folder` — Delete a stylesheet folder
+- `get-stylesheet-root` — Get root stylesheets
 - `get-stylesheet-children` — Get child stylesheets
 - `get-stylesheet-siblings` — Get sibling stylesheets
 - `get-stylesheet-ancestors` — Get stylesheet ancestors
-- `get-stylesheet-search` — Search stylesheets  
+- `get-stylesheet-search` — Search stylesheets
 
 ## Tag (`tag`)
 
-- `get-tags` — Get all tags  
+- `get-tags` — Get all tags
 
 ## Template (`template`)
 
@@ -459,32 +526,33 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-template-children` — Get child templates or template folders by parent ID
 - `get-template-siblings` — Get sibling templates
 - `get-template-root` — Get root template items
-- `get-template-search` — Search for templates by name  
+- `get-template-search` — Search for templates by name
+- `get-template-ancestors-batch` — Get ancestors for multiple templates
 
 ## Temporary File (`temporary-file`)
 
-- `create-temporary-file` — Create a temporary file  
-- `get-temporary-file` — Get a temporary file  
-- `delete-temporary-file` — Delete a temporary file  
-- `get-temporary-file-configuration` — Get temporary file configuration  
+- `create-temporary-file` — Create a temporary file
+- `get-temporary-file` — Get a temporary file
+- `delete-temporary-file` — Delete a temporary file
+- `get-temporary-file-configuration` — Get temporary file configuration
 
 ## User (`user`)
 
-- `get-user` — Get users with pagination  
-- `get-user-by-id` — Get user by ID  
-- `find-user` — Find users by search criteria  
-- `get-item-user` — Get user item information  
-- `get-user-current` — Get current authenticated user  
-- `get-user-configuration` — Get user configuration  
-- `get-user-current-configuration` — Get current user configuration  
-- `get-user-current-login-providers` — Get current user login providers  
-- `get-user-current-permissions` — Get current user permissions  
-- `get-user-current-permissions-document` — Get current user document permissions  
-- `get-user-current-permissions-media` — Get current user media permissions  
-- `get-user-by-id-calculate-start-nodes` — Calculate start nodes for a user  
-- `upload-user-avatar-by-id` — Upload avatar for a user  
-- `upload-user-current-avatar` — Upload avatar for current user  
-- `delete-user-avatar-by-id` — Delete user avatar  
+- `get-user` — Get users with pagination
+- `get-user-by-id` — Get user by ID
+- `find-user` — Find users by search criteria
+- `get-item-user` — Get user item information
+- `get-user-current` — Get current authenticated user
+- `get-user-configuration` — Get user configuration
+- `get-user-current-configuration` — Get current user configuration
+- `get-user-current-login-providers` — Get current user login providers
+- `get-user-current-permissions` — Get current user permissions
+- `get-user-current-permissions-document` — Get current user document permissions
+- `get-user-current-permissions-media` — Get current user media permissions
+- `get-user-by-id-calculate-start-nodes` — Calculate start nodes for a user
+- `upload-user-avatar-by-id` — Upload avatar for a user
+- `upload-user-current-avatar` — Upload avatar for current user
+- `delete-user-avatar-by-id` — Delete user avatar
 
 ## User Data (`user-data`)
 
@@ -492,27 +560,27 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `update-user-data` — Update user data value
 - `get-user-data` — Get all user data for current user
 - `get-user-data-by-id` — Get user data by key
-- `delete-user-data` — Delete user data by key  
+- `delete-user-data` — Delete user data by key
 
 ## User Group (`user-group`)
 
-- `get-user-group` — Get user group  
-- `get-user-group-by-id-array` — Get user groups by IDs  
-- `get-user-groups` — Get all user groups  
-- `get-filter-user-group` — Filter user groups  
-- `create-user-group` — Create a new user group  
-- `update-user-group` — Update a user group  
-- `delete-user-group` — Delete a user group  
-- `delete-user-groups` — Delete multiple user groups  
+- `get-user-group` — Get user group
+- `get-user-group-by-id-array` — Get user groups by IDs
+- `get-user-groups` — Get all user groups
+- `get-filter-user-group` — Filter user groups
+- `create-user-group` — Create a new user group
+- `update-user-group` — Update a user group
+- `delete-user-group` — Delete a user group
+- `delete-user-groups` — Delete multiple user groups
 
 ## Webhook (`webhook`)
 
 - `get-webhook` — Get webhooks with pagination
 - `get-webhook-item` — Get webhook item information
 - `get-webhook-by-id` — Get webhook by ID
-- `get-webhook-logs` — Get logs for a specific webhook  
-- `delete-webhook` — Delete a webhook  
-- `update-webhook` — Update a webhook  
-- `get-webhook-events` — Get webhook events  
-- `get-all-webhook-logs` — Get all webhook logs  
-- `create-webhook` — Create a new webhook  
+- `get-webhook-logs` — Get logs for a specific webhook
+- `delete-webhook` — Delete a webhook
+- `update-webhook` — Update a webhook
+- `get-webhook-events` — Get webhook events
+- `get-all-webhook-logs` — Get all webhook logs
+- `create-webhook` — Create a new webhook
