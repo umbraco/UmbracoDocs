@@ -1,84 +1,89 @@
 ---
-description: How to restore content in Umbraco Deploy using the deployment dashboard
+description: How to transfer content, media and forms between your environments.
 ---
 
-# Transferring Content, Media and Forms
+# Transfer Items
 
-Once all code and meta data is in sync between your environments, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
+Once all code and metadata are in sync between your environments, it's time to transfer your content and media. This is done from the Umbraco Backoffice.
 
-Content and media transfers are flexible which means you have complete control over which content nodes and/or media items you want to transfer. You can transfer it all in one go, a few at a time or transfer only a single node.
+Transfers are flexible, which means you have complete control over which items you want to transfer. You can transfer it all in one go, a few at a time, or transfer only a single item.
 
-Transferring content will overwrite any existing nodes on the target environment - content transfers will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
+Transferring items will overwrite the same item on the target environment if it already exists. A transfer will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source".
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from [Deploying Content](deploying-changes.md).
-
-## Step-by-step
-
-Let’s go through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to your development site.
-
-You want to transfer the whole site. You start from the `Home` node and choose to transfer everything under it:
-
-1. Click on the ellipsis next to the `Home` node in the Content tree.
-2. Choose "Do something else".
-3. There you get the choice of **Queue for transfer**.
-   * If you’re currently editing the Home page you could also use the Actions dropdown to find **Queue for transfer**.
-4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
-   * If you wish to transfer all your content at once, click **...** next to the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
-5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
-6.  Set the publish date and time if you want to change when the transferred content should be published.
-
-{% hint style="info" %}
-By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
+{% hint style="warning" %}
+Transfers will only work if you've **deployed all changes to your metadata beforehand**. Please refer to our documentation on [how to deploy metadata](deploying-changes.md) to learn more.
 {% endhint %}
 
-7. Click **Queue** to add the content item to the transfer queue.
+## Transfer Queue
 
-<figure><img src="../.gitbook/assets/image.png" alt="Queue for transfer window"><figcaption><p>Queue for transfer window</p></figcaption></figure>
+The first step when transferring items from your environment is to add them to the Transfer Queue. You can add items to the Transfer queue from the following sections:
 
-1. Go to the Deployment dashboard by clicking on the Content section header.
-   * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
-2. Confirm by clicking **Transfer to Development** and monitor the progress of the transfer.
+* Content from the **Content** section.
+* Elements from the **Library section**.
+* Media from the **Media** section.
+* Forms from the **Forms** section ([additional configuration is required](content-transfer.md#umbraco-forms)).
+* Members and Member Groups from the **Members** section ([additional configuration is required](content-transfer.md#transfer-members-and-member-groups)).
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Transfer queue"><figcaption><p>Transfer queue</p></figcaption></figure>
+Choose between two methods when adding items to the Transfer Queue:
 
-If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
+* **Option 1:** Add a specific item, specify variants, and include/exclude subitems.
+* **Option 2:** Add everything from a specific section (Content, Media, Library, or Forms).
 
-### Media items
+### Add items to the queue
 
-Media items are transferred the same way as content:
+The steps below take you through the options available when choosing **Option 1**:&#x20;
 
-1. Click **...** next to an item in the **Media** section.
-2. Choose **Queue for transfer**.
+1. Click on the ellipsis node next to **the root item** in the tree.
+   1. For **Option 2**, click on the ellipses next to the tree title (Content, Media, Elements, or Forms).
+2. Choose **Add to Transfer Queue**.
+3. Select the culture variants you want to add.
+   1. Only languages for which you have permission to access will be selectable.
+4. Choose to either publish the content directly after transferring or set a specific date and time.
+5. Choose whether or not to include any subitems.
 
-#### Restoring Media Between Environments
+<figure><img src="../.gitbook/assets/configure-transfer-full.png" alt="Queue for transfer window"><figcaption><p>Queue for transfer window</p></figcaption></figure>
 
-To synchronize a lower environment's media library with a higher one (for example, pulling Live media down to Staging), use the **Tree Restore** feature. This ensures that media metadata and the physical files are synchronized.
+6. Click **Submit** to add the content to the Transfer Queue.
 
-1. Log into the target environment (for example, _Staging_).
-2. Go to the **Media** section of the Umbraco backoffice.
-3. Click **...** next to the **Media** root node.
-4. Select **Tree restore...**.
-5. Select the source environment (for example, _Live_) from the **Restore this tree from** dropdown.
-6. Click **Restore from Live** and wait for the process to complete.
-7. Reload the Media tree to see the updated library.
+### Transfer queued items
 
-{% hint style="info" %}
-A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the Media section and Recycle Bin on the target environment. You could also use the [Import and Export](import-export.md) feature with a full media export from the source environment.
-{% endhint %}
+Once you have items in your Transfer Queue, a notification icon is added to the Environment name in the top-right corner. The number is increased depending on how many different items are queued.
 
-{% hint style="success" %}
-On Umbraco Cloud: Each environment uses a separate Azure Blob Storage container. During a restore, Umbraco Deploy handles the server-side copying of blobs between the unique storage containers of each environment. For more details ,see the [Media on Cloud](https://docs.umbraco.com/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/media) article.
-{% endhint %}
+1. Open the **Deploy Overview** by clicking on the **Environment name**.
 
-### Umbraco Forms
+<figure><img src="../.gitbook/assets/environment-name.png" alt=""><figcaption></figcaption></figure>
 
-In order for Deploy to handle Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in configuration is set to `true`. See details in the [Deploy Settings for Umbraco 9+](../getting-started/deploy-settings.md) article.
+2. Review the items added to the Transfer Queue.
+   1. You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
+   2. Hover an item to get the **Remove** option, or use the Refresh and Clear queue options found via the arrow at the bottom.
+3. Click **Transfer to \[Environment name]** to transfer the items to the next environment.
 
-Once the setting have been added to the source and target environment forms can be transferred the same way as content and media:
+<figure><img src="../.gitbook/assets/transfer-queue-options.png" alt="Transfer queue"><figcaption><p>Transfer queue</p></figcaption></figure>
 
-1. In the Forms section, click **...** next to the items you want to transfer and choose **Queue for transfer**.
-   * Or click **...** next to the Forms section to transfer all your Forms at once.
-2. Go to the Deployment dashboard in the Content section to see the items you've queued for transfer and to transfer your items.
+The transfer can take a few minutes, depending on the number of items being transferred to the next environment. You can follow the process from the Deploy Overview.
+
+When the transfer is done, close the Deploy Overview and verify that the items are now available on the next environment.
+
+## [Transfer Members and Member Groups](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent)
+
+To be able to transfer Members and Member groups, make sure that `AllowMembersDeploymentOperations` is configured to `transfer` and `TransferMemberGroupsAsContent` is set to `true`. This needs to be done in the `appSettings.json` file
+
+```json
+"Umbraco": {
+    "Deploy": {
+        "Settings": {
+            "AllowMembersDeploymentOperations": "Transfer",
+            "TransferMemberGroupsAsContent": true,
+        }
+    }
+  }
+```
+
+Once the settings have been configured, Members can be transferred as described [using steps above](content-transfer.md#add-items-to-the-transfer-queue).
+
+## Transfer Forms
+
+For Deploy to handle Umbraco Forms data as content, you will need to ensure that the `transferFormsAsContent` setting in the configuration is set to `true`. See details in the [Configuration](../getting-started/deploy-settings.md) article.
 
 {% hint style="info" %}
 This does not include entries submitted via the forms.
@@ -86,8 +91,8 @@ This does not include entries submitted via the forms.
 
 ## Schema Mismatches
 
-Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
+Sometimes, a content transfer might not be possible. For example, if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![Schema mismatch](../deployment-workflow/images/schema-mismatch.png)
+![Schema mismatch](../.gitbook/assets/schema-mismatch.png)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
