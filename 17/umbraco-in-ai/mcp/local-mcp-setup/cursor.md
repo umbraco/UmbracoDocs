@@ -23,7 +23,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx", 
-      "args": ["@umbraco-cms/mcp-dev@latest"],
+      "args": ["@umbraco-cms/mcp-dev@17.4.2"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
