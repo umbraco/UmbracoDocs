@@ -6,7 +6,7 @@ description: A guide to creating custom dashboards in Umbraco
 
 Each section of the Umbraco backoffice has its own set of default dashboards. Your own custom sections can show dashboards, and you can create your own custom dashboards for existing sections.
 
-<figure><img src="../../../../.gitbook/assets/getting-started-dashboard.jpg" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/welcome-dashboard.png" alt="The Getting Started dashboard in Umbraco"><figcaption><p>The Getting Started dashboard in Umbraco</p></figcaption></figure>
 
 The dashboard area of Umbraco is used to display an "editor" for the selected item in the tree. If no item is selected, then the default set of section dashboards is shown in the dashboard area.
 
@@ -22,6 +22,7 @@ The default sections in Umbraco are:
 | ----------------------- | ---------- |
 | Umb.Section.Content     | Content    |
 | Umb.Section.Media       | Media      |
+| Umb.Section.Library     | Elements   |
 | Umb.Section.Settings    | Settings   |
 | Umb.Section.Members     | Members    |
 | Umb.Section.Users       | Users      |
