@@ -16,6 +16,23 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 10.
 
+### License Validation Configuration
+
+When upgrading to Umbraco Forms 17 (alongside Umbraco CMS 17+), there is a strict requirement for the `UmbracoApplicationUrl` to be explicitly configured in your environment's `appsettings.json`. 
+
+Without this setting, backoffice license validation for Umbraco Forms will fail (often returning a "Pending" or `ResultIsNull` status) because the application URL is no longer auto-detected from the host header by default. 
+
+Ensure the following configuration is added and properly set for each environment:
+
+```json
+"Umbraco": {
+  "CMS": {
+    "WebRouting": {
+      "UmbracoApplicationUrl": "[https://your-site-url.com/](https://your-site-url.com/)"
+    }
+  }
+}
+```
 
 ## Legacy version specific upgrade notes
 
