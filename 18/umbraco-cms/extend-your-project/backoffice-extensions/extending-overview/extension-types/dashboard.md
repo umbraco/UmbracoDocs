@@ -204,6 +204,6 @@ The dashboard manifest can contain the following properties:
 ```
 {% endcode %}
 
-<figure><img src="../../../../.gitbook/assets/welcome-dashboard.jpg" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/custom-welcome-dashboard.png" alt="The Welcome Dashboard shown in the Content section"><figcaption><p>The Welcome Dashboard appears in the Content section</p></figcaption></figure>
 
 You can learn about [creating a custom dashboard](../../../tutorials/creating-a-custom-dashboard/) in the tutorials section. Here you will learn how to build the dashboard itself as a Web Component.

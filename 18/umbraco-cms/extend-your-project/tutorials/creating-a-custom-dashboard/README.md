@@ -200,7 +200,7 @@ export default defineConfig({
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see the new dashboard:
 
-<figure><img src="../../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/custom-welcome-dashboard.png" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 
