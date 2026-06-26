@@ -4,6 +4,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 # Overview 2026
 
+## [July 2026](2026-07-releasenotes.md)
+
+* **Sustainability Dashboard - Bandwidth emissions** - The dashboard now includes the CO2 from network egress as a new Bandwidth component, estimated from your sites' actual data transfer.
+
 ## [June 2026](2026-06-releasenotes.md)
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on child, and list has more filtering options.
