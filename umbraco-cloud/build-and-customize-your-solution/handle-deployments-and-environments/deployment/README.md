@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Cloud uses a deployment model based on Git, Kudu, and Umbraco Deploy to move changes between environments. This follows a left-to-right deployment approach. Changes start in the local or left-most environment and are deployed to the production/Live environment. This workflow is called the mainline.
 
-The mainline environments are used when building and deploying the initial website. Upgrades, both manual and automatic also go through the mainline environments.
+The mainline environments are used when building and deploying the initial website. Upgrades, both manual and automatic, also go through the mainline environments.
 
 Flexible environments can be used to work on features separate from the mainline. This is done without interfering with upgrades or other changes being worked on in the mainline.
 
@@ -23,32 +23,28 @@ Umbraco Cloud separates schema and content during deployment. Schema includes Do
 
 ### Types of Deployments
 
-| Schema Deployments                                                                                                                | Content and Media Transfers                                                                                                                                                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal. | Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Queue for Transfer** option. Once queued, use the **Deployment** Dashboard in the **Content** section to complete the transfer. |
+| Schema Deployments                                                                                                                | Content and Media Transfers                                                                                                                                                                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Schema is stored in a Git repository. These are **deployed** between environments using a Git client or the Umbraco Cloud Portal. | Content and Media items are not stored in the Git repository. They must be **transferred** directly from the Umbraco backoffice using the **Add to Transfer Queue** option. Once queued, use the **Deploy Overview** in the Umbraco Backoffice to complete the transfer. |
 
 Content editors do not need Umbraco Cloud Portal access. They can manage content through the backoffice, while developers handle schema deployments via Git.
 
-### Deploying Schema
+### Deploy Schema
 
-The source and target environments must be in sync before transferring content and media. Deploy schema first to ensure consistency.
+The source and target environments must be in sync before transferring content and media. Deploy the schema first to ensure consistency.
 
 * [Deploy changes from Local to Cloud](local-to-cloud.md)
 * [Deploy changes between Cloud environments](cloud-to-cloud.md)
 * [Umbraco Forms on Cloud](../../../expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
 
-### Transfer Content and Media
+### Transfer Items Between Environments
 
-Content and media move between environments through the Umbraco backoffice. Content can be transferred from Local to Development and restored from Live or Staging.
+Content, Media, and Forms move between environments through the Umbraco backoffice. Items are transferred from left to right and restored from right to left.
 
-* [Transfer Content and Media](content-transfer.md)
-* [Restore Content and Media](restoring-content/)
+* [Transfer Items](content-transfer.md)
+* [Restore Items](restoring-content.md)
 
-{% hint style="info" %}
-The transfer and restore process is the same for Local to Cloud and between Cloud environments.
-{% endhint %}
-
-## [Deploy Settings](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings)
+## [Deploy configuration](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings)
 
 All configuration for Umbraco Deploy is stored in the `appSettings.json` file found at the root of your Umbraco website.
 

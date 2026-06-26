@@ -18,6 +18,21 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
+### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 25th 2026)
+
+* Compatibility with Umbraco CMS 18.0.0.
+* Fix `umbracodeploy` trigger route URLs broken by the Umbraco 18 routing migration. POST endpoints under `/umbraco/umbracodeploy/...` now resolve correctly.
+* Register Deploy routes and SignalR hubs during the Upgrading runtime level.
+* Fix the partial restore progress display and restore the work completion view.
+* Fix the partial restore modal not auto-selecting the only available restore environment.
+* Disambiguate queue root items by entity type, so each tree's root can be queued independently.
+* Gate the **Open Umbraco Cloud project** action to Cloud projects only, and link directly to the project URL.
+
+### [18.0.0-rc3](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 19th 2026)
+
+* Compatibility with Umbraco CMS 18.0.0-rc3.
+* Throw a clear error when the API key or secret is not configured on the environment.
+
 ### [18.0.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.0) (June 5th 2026)
 
 * Compatibility with Umbraco CMS 18.0.0-rc2.
@@ -42,6 +57,16 @@ Version 18 introduces a redesigned Deploy experience in the backoffice:
 * A new sidebar workspace, launched from the environment name header app, replaces the transfer queue dashboard in the Content section. The workspace provides a single overview of the transfer queue, export queue, import, and restore environment operations.
 * Redesigned transfer, queue, restore, compare, and export modals with consistent styling, improved error surfacing, and a cleaner status and operation layout.
 * Refreshed status, schema, and configuration views in the management dashboard.
+
+## Umbraco.Deploy.Contrib
+
+### [18.0.0](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-18.0.0) (June 25th 2026)
+
+* Compatibility with Umbraco 18.0.0 and Deploy 18.0.0.
+
+### [18.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-18.0.0-rc1) (June 24th 2026)
+
+* Compatibility with Umbraco 18.0.0-rc3 and Deploy 18.0.0-rc3.
 
 ## Legacy release notes
 

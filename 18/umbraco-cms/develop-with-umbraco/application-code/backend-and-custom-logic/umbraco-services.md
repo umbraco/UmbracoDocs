@@ -38,7 +38,7 @@ Inside a Razor View template, you can make use of a service injection into a vie
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject IPublicAccessService PublicAccessService
 @{
-    Layout = "master.cshtml";
+    Layout = "layout.cshtml";
     bool isPageProtected = PublicAccessService.IsProtected(Model.Path);
 }
 @if (isPageProtected)
