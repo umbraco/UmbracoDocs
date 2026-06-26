@@ -29,6 +29,7 @@ The Umbraco Cloud Portal checks these prerequisites automatically under `Project
 
 | Prerequisite | What it is | Learn more |
 | --- | --- | --- |
+| Payment plan | Load balancing is only available on projects with an **Invoiced** payment plan. | [Payments](../../begin-your-cloud-journey/the-cloud-portal/payments.md) |
 | Professional plan with a dedicated server | Load balancing runs on dedicated infrastructure, available from the **Professional Dedicated 1** plan and up. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
 | Environment alone on a dedicated server | Load balancing scales every site on the server. The environment must be the only one on its dedicated server. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
 | Umbraco CMS **17.5.0** or higher | The base Umbraco CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
