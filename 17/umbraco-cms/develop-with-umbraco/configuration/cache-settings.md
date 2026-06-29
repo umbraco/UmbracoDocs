@@ -12,7 +12,7 @@ While most cache configurations are under the `Umbraco:CMS:Cache` settings node,
 
 ## HybridCacheOptions
 
-Umbraco's cache is implemented using Microsofts `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
+Umbraco's cache is implemented using Microsoft's `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
 
 ### MaximumPayLoadBytes
 
@@ -182,6 +182,43 @@ The same setting also controls the deferral of search re-indexing triggered by c
 
 {% hint style="info" %}
 The `ContentTypeRebuildMode` setting is available from Umbraco 17.4.
+{% endhint %}
+
+## Observing cache memory usage
+
+Umbraco keeps in-memory caches whose size grows with the content tree. On large sites these caches can be a significant source of memory usage.
+
+To help you diagnose memory pressure, Umbraco can log the approximate size of each of these caches:
+
+* The published content and media caches.
+* The document URL cache.
+* The document and media navigation trees.
+
+{% hint style="info" %}
+This observability is available from Umbraco 17.6.
+{% endhint %}
+
+A background job collects these figures every minute on all servers. For each cache it logs the approximate entry count and byte size. It also logs the process's managed heap size and working set.
+
+The job logs at the `Debug` level. It does nothing unless `Debug` logging is enabled for its category, so there is no overhead by default.
+
+To enable the reporting, set the log level for the job's category to `Debug`:
+
+```json
+"Serilog": {
+  "MinimumLevel": {
+    "Default": "Information",
+    "Override": {
+      "Umbraco.Cms.Infrastructure.BackgroundJobs.Jobs.MemoryCacheSizeReportingJob": "Debug"
+    }
+  }
+}
+```
+
+Within a minute, the cache size figures appear in the log output. For more on changing the log level for a namespace, see the [Serilog settings](serilog.md) article.
+
+{% hint style="info" %}
+The byte figures are approximations. Use them to spot trends and attribute memory usage between caches, not as exact heap measurements.
 {% endhint %}
 
 ## NuCache Settings
