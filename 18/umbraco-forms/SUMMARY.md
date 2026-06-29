@@ -47,6 +47,8 @@
 * [Working With Record Data](developer/working-with-data.md)
 * [Umbraco Forms in the Database](developer/forms-in-the-database.md)
 * [Extending](developer/extending/README.md)
+  * [Backoffice Extension Points](developer/extending/backoffice-extension-points.md)
+    * [Working with the Form Workspace Context](developer/extending/working-with-the-form-workspace-context.md)
   * [Adding A Type To The Provider Model](developer/extending/adding-a-type.md)
     * [Setting Types](developer/extending/setting-types.md)
   * [Adding A Field Type To Umbraco Forms](developer/extending/adding-a-fieldtype.md)
