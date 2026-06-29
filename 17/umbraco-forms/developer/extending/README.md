@@ -62,7 +62,7 @@ Read more about using Vite with Umbraco in the [Vite Package Setup](https://docs
 
 ### [Backoffice Extension Points](backoffice-extension-points.md)
 
-Forms exposes several backoffice extension points on top of the Umbraco CMS extension system. These include property editors, field previews, and setting value converters.
+Forms exposes backoffice extension points on top of the Umbraco CMS extension system. These include property editors, field previews, and setting value converters.
 
 ### [Working with the Form Workspace Context](working-with-the-form-workspace-context.md)
 
