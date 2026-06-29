@@ -28,6 +28,20 @@ Building a custom **backoffice** API? See [Custom Backoffice API](custom-backoff
 The [ASP.NET Core OpenAPI documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) covers OpenAPI configuration in depth.
 {% endhint %}
 
+{% hint style="warning" %}
+
+If you register OpenAPI documents from a class library — for example, an Umbraco package or extension — add the following property to the library's `.csproj`:
+
+```xml
+<PropertyGroup>
+  <InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.OpenApi.Generated</InterceptorsNamespaces>
+</PropertyGroup>
+```
+
+Without this property, the project fails to build with: `error CS9137: The 'interceptors' feature is not enabled in this compilation`.
+
+{% endhint %}
+
 To add a custom OpenAPI document, use `AddOpenApi` in `Program.cs` or a composer, then `AddOpenApiDocumentToUi` to add it to the OpenAPI UI dropdown.
 
 The following code sample creates an OpenAPI document called "My API v1" that includes only controllers from a specific namespace:

@@ -18,6 +18,7 @@ The following example can be a starting point for creating a secure custom API w
 ```csharp
 using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Api.Management.OpenApi;
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
 
 namespace Umbraco.Cms.Web.UI.Custom;
@@ -29,12 +30,22 @@ public class MyApiComposer : IComposer
             "my-api-v1",
             document => document
                 .WithTitle("My API v1")
-                .WithBackOfficeAuthentication());
+                .WithBackOfficeAuthentication()
+                .WithJsonOptions(Constants.JsonOptionsNames.BackOffice));
 }
 ```
 {% endcode %}
 
-`AddBackOfficeOpenApiDocument` registers a custom OpenAPI document with Umbraco's defaults applied. It includes any controller decorated with `[MapToApi("my-api-v1")]`, applies Umbraco's schema and operation ID conventions, and adds the document to the Swagger UI dropdown. `WithBackOfficeAuthentication()` enables OAuth2-based backoffice authorization in Swagger UI.
+`AddBackOfficeOpenApiDocument` registers a custom OpenAPI document with Umbraco's defaults applied:
+
+- It includes controllers whose `[MapToApi]` attribute value matches the document name.
+- It applies Umbraco's schema and operation ID conventions.
+- It adds the document to the Swagger UI dropdown.
+
+The builder methods configure additional behavior:
+
+- `WithBackOfficeAuthentication()` enables OAuth2-based backoffice authorization in Swagger UI.
+- `WithJsonOptions(Constants.JsonOptionsNames.BackOffice)` aligns schema generation with how the backoffice serializes responses at runtime.
 
 2. Create a new file `MyApiController.cs` with the following controller:
 
@@ -77,6 +88,8 @@ public class MyApiController : Controller
 }
 ```
 {% endcode %}
+
+`[JsonOptionsName(Constants.JsonOptionsNames.BackOffice)]` tells the controller to serialize responses using the backoffice JSON options. This must match the `WithJsonOptions` call in the composer so the OpenAPI schema reflects the actual serialization output.
 
 3. Run the project and navigate to `{yourdomain}/umbraco/openapi`.
 4. Choose the OpenAPI document created with the code above named **My API v1** from **Select a definition**.
