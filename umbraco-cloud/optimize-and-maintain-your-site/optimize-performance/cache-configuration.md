@@ -43,6 +43,12 @@ When you enable Cache, Umbraco Cloud wires Redis into your application for you. 
 
 On load-balanced environments, Umbraco Cloud also configures a SignalR backplane and shared Data Protection keys. See [What Umbraco Cloud configures automatically](load-balancing.md#what-umbraco-cloud-configures-automatically) in the Load Balancing article.
 
+## Prerequisites
+
+| Prerequisite | What it is | Learn more |
+| --- | --- | --- |
+| Payment plan | Cache is only available on projects with an **Invoiced** or **Credits** payment plan. | [Payments](../../begin-your-cloud-journey/the-cloud-portal/payments.md) |
+
 ## Available Redis SKUs
 
 ![Redis SKU selector on the environment settings page](../../.gitbook/assets/redis-sku-selector.png)
