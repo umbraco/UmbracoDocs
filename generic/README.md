@@ -54,11 +54,11 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 ### Integrations & Extensions
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/" %}
-[18.ai-in-umbraco.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
+[AI in Umbraco](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/" %}
-[18.umbraco-in-ai.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
+[Umbraco in AI](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/" %}
