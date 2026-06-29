@@ -13,9 +13,9 @@ This guide outlines the steps to set up a custom dashboard in Umbraco. Part one 
 
 ### What is a Dashboard?
 
-A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
+A Dashboard is a tab on the right-hand side of a section. For example, *the Welcome to Umbraco* or *Redirect URL Management* dashboard in the **Content** section:
 
-![Welcome dashboard](../../../.gitbook/assets/welcome-dashboard.png)
+![Dashboard](../../../.gitbook/assets/welcome-dashboard.png)
 
 #### Why provide a Custom Dashboard for your editors?
 
@@ -200,7 +200,7 @@ export default defineConfig({
 
 4. In the `welcome-dashboard` folder run `npm run build` and then run the project. Then in the content section of the Backoffice you will see the new dashboard:
 
-<figure><img src="../../../.gitbook/assets/spaces_G1Byxw7XfiZAj8zDMCTD_uploads_PtBQkEyVcGmoVx3ysAOJ_welcome.webp" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/custom-welcome-dashboard.png" alt=""><figcaption><p>First look of the dashboard</p></figcaption></figure>
 
 ## Going Further
 
