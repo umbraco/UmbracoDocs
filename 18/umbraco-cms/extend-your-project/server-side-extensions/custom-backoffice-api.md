@@ -12,6 +12,20 @@ Before proceeding, make sure to read the [Management API](../../develop-with-umb
 
 The following example can be a starting point for creating a secure custom API with automatic OpenAPI documentation. You can find other examples in the [API versioning and OpenAPI](api-versioning-and-openapi.md) article.
 
+{% hint style="warning" %}
+
+If you are building this in a class library, add the following property to the library's `.csproj`:
+
+```xml
+<PropertyGroup>
+  <InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.OpenApi.Generated</InterceptorsNamespaces>
+</PropertyGroup>
+```
+
+Without this property, the project fails to build with: `error CS9137: The 'interceptors' feature is not enabled in this compilation`.
+
+{% endhint %}
+
 1. Create a composer to register the OpenAPI document so that the new API shows in the OpenAPI documentation and Swagger UI:
 
 {% code title="MyApiComposer.cs" lineNumbers="true" %}
