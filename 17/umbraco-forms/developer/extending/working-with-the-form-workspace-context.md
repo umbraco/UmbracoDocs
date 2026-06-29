@@ -6,7 +6,7 @@ description: >-
 
 # Working with the Form Workspace Context
 
-When you build a backoffice extension for Umbraco Forms, you often need access to the form that is currently open. A common example is a [property editor](https://docs.umbraco.com/umbraco-cms/customizing/property-editors) that lets an editor map to or pick one of the form's fields.
+When you build a backoffice extension for Umbraco Forms, you often need access to the form that is currently open. A common example is a [property editor](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/property-editors) that lets an editor map to or pick one of the form's fields.
 
 Umbraco Forms exposes the open form through the **Form Workspace Context**. This article explains how to consume the context, how to read the form's structure, and how to register a property editor that uses it.
 
