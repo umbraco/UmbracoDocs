@@ -4,7 +4,7 @@ description: This guide will help you build automations with no coding required.
 
 # Getting Started for Editors
 
-Umbraco Automate is an event-driven automation engine that lives natively inside your CMS. Think of it like a personal assistant that watches your website for events (like "content is published") and then automatically performs actions (like "send a Slack message to the team").
+Umbraco Automate is an event-driven automation engine that lives natively inside your CMS. Think of it like a personal assistant. It watches your website for specific events, like publishing new content. Then, it automatically triggers actions, like sending a Slack message to your team.
 
 ## Before You Start
 
