@@ -19,12 +19,14 @@ Follow this guide to build an automation that writes a message to the applicatio
 {% step %}
 ### Step 1: Create a Workspace
 
-The first time you open the **Automate** section, the dashboard shows a welcome panel because no workspaces exist yet.
+The first time you open the **Automation** section, the dashboard shows a welcome panel because no workspaces exist yet.
 
-1. Click **Create Workspace** on the welcome panel.
+1. Click **Create a Workspace** on the welcome panel.
 2. Enter a name, for example `Editorial`.
-3. On the **Settings** tab, pick a **Service Account** and at least one **User Group**.
+3. Choose a **Service Account Key** and at least one **User Group**.
 4. Click **Save**.
+
+<figure><img src="../.gitbook/assets/create-first-workspace.png" alt="Create a Workspace."><figcaption><p>Creating a Workspace.</p></figcaption></figure>
 
 A workspace groups automations together and controls which user groups and connections have access.
 {% endstep %}
@@ -32,9 +34,10 @@ A workspace groups automations together and controls which user groups and conne
 {% step %}
 ### Step 2: Create the Automation
 
-1. In the tree, expand your new workspace.
-2. Select **Create automation** from the actions panel.
-3. Enter a name, for example `Log on publish`, and click **Create**.
+1. Go to the workspace under **Automations** in the tree.
+2. Click **+** > **Create automation**.
+3. Enter a name, for example `Log on publish`.
+4. Click **Save and publish**.
 
 <figure><img src="../.gitbook/assets/create-automation-modal.png" alt="The create automation modal with a name field."><figcaption><p>Creating a new automation.</p></figcaption></figure>
 
@@ -44,10 +47,10 @@ The new automation opens on the visual canvas with an empty trigger placeholder.
 {% step %}
 ### Step 3: Configure the Trigger
 
-1. Click the trigger placeholder.
-2. In the picker, select **Content Published**.
+1. Click the **+ ADD TRIGGER** placeholder.
+2. Select **Content Published** from the **Select Trigger** picker.
 3. Leave the content types field blank to match all content types.
-4. Click **Submit**.
+4. Click **Save**.
 
 <figure><img src="../.gitbook/assets/trigger-picker.png" alt="The trigger picker showing categories of available triggers."><figcaption><p>Picking a trigger from the catalogue.</p></figcaption></figure>
 {% endstep %}
@@ -56,9 +59,9 @@ The new automation opens on the visual canvas with an empty trigger placeholder.
 ### Step 4: Add an Action
 
 1. Click the **+** button below the trigger.
-2. In the picker, select **Log Message**.
+2. Select **Log Message** from the **Select Action** picker.
 3. Set the message to `Content "${ trigger.contentName }" was published.`
-4. Click **Submit**.
+4. Click **Save**.
 
 The `${ trigger.contentName }` placeholder is a binding. The binding is replaced at runtime with the name of the published content item.
 
@@ -78,11 +81,14 @@ Click **Save and Publish** in the workspace toolbar.
 {% step %}
 ### Step 6: Trigger the Automation
 
-1. Open the **Content** section.
+1. Go to the **Content** section.
 2. Publish any content item.
-3. Return to the **Automate** section and open the automation.
-4. Switch to the **Runs** tab to see the run record.
-5. Click on the **Log Message** step to inspect the resolved message and output data for the run.
+3. Go to the **Automation** section.
+4. Navigate to the **Runs** tab to see the run record.
+
+<figure><img src="../.gitbook/assets/trigger-automation.png" alt="View triggered automation"><figcaption><p>View triggered automation.</p></figcaption></figure>
+
+5. Click on the automation to inspect the resolved message and output data for the run.
 
 {% hint style="success" %}
 Your automation is working when the run appears in the **Runs** tab and the **Log Message** step shows the resolved message.
