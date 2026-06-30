@@ -60,6 +60,14 @@ This ensures that the Umbraco Backoffice packages are not bundled with your pack
 
 Read more about using Vite with Umbraco in the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article.
 
+### [Backoffice Extension Points](backoffice-extension-points.md)
+
+Forms exposes backoffice extension points on top of the Umbraco CMS extension system. These include property editors, field previews, and setting value converters.
+
+### [Working with the Form Workspace Context](working-with-the-form-workspace-context.md)
+
+When your extension needs access to the open form, consume the Form Workspace Context. This is the supported way to read a form's pages, fields, and other structure from a property editor or other backoffice element.
+
 ## Developing Custom Providers
 
 Although the Forms package comes with many fields, workflows and other built-in types, you can still create and develop your own if needed.

@@ -105,7 +105,7 @@ Although the details vary slightly, the general pattern is the same across all h
 {
   "umbraco-mcp": {
     "command": "npx",
-    "args": ["@umbraco-cms/mcp-dev@latest"],
+    "args": ["@umbraco-cms/mcp-dev@lts-17"],
     "env": {
       "NODE_TLS_REJECT_UNAUTHORIZED": "0",
       "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
@@ -162,7 +162,7 @@ If you prefer, you can also install it globally with:
 
 ```bash
 
-@umbraco-cms/mcp-dev@17
+@umbraco-cms/mcp-dev@lts-17
 
 ```
 
@@ -185,7 +185,7 @@ The Umbraco MCP Server is designed to work with specific major versions of Umbra
 | ------------------ | -------------------------- | ---------------------------------- |
 | 15.x.x             | alpha                      | @umbraco-mcp/umbraco-mcp-cms@alpha |
 | 16.x.x             | 16.x                       | @umbraco-cms/mcp-dev@16            |
-| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@17.1          |
+| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@lts-17         |
 
 ### Version Checking
 

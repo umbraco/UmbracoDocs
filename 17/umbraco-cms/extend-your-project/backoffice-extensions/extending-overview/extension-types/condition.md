@@ -165,7 +165,6 @@ export class MyExtensionCondition
         // enable extension after 10 seconds
         setTimeout(() => {
             this.permitted = true;
-            args.onChange();
         }, 10000);
     }
 }
@@ -183,6 +182,8 @@ The global declaration on the last five lines makes your Condition appear valid 
 The Condition then needs to be registered in the Extension Registry:
 
 ```typescript
+import { MyExtensionCondition } from "./MyExtensionCondition";
+
 export const manifest: UmbExtensionManifest = {
     type: "condition",
     name: "My Condition",
@@ -228,7 +229,6 @@ export class MyExtensionCondition
 
         if (args.config.match === "Yes") {
             this.permitted = true;
-            args.onChange();
         }
     }
 }

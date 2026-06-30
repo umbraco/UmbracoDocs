@@ -20,7 +20,7 @@ Installing Claude Code depends on your environment. For installation details, se
 1. Add the Umbraco MCP server using the Claude CLI:
 
 ```bash
-claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
+claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@lts-17
 ```
 
 2. Define configuration values directly using this pattern:
@@ -28,7 +28,7 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@latest
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@lts-17
 ```
 
 Replace the following values with your local connection details:
@@ -75,7 +75,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and
   "mcpServers": {
     "umbraco-mcp": {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@latest"],
+      "args": ["@umbraco-cms/mcp-dev@lts-17"],
     }
   }
 }
