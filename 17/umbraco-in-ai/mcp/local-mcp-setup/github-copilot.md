@@ -33,7 +33,7 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
   "servers": {
     "umbraco-mcp": {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@17.4.2"],
+      "args": ["@umbraco-cms/mcp-dev@lts-17"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
