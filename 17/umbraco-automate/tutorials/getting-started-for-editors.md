@@ -72,6 +72,10 @@ This automation creates a log entry every time something happens, useful for aud
 6. Click **Save**.
 7. Click **Save and Publish**.
 
+{% hint style="info" %}
+The logged message appears in Umbraco's application logs. To view it, go to **Settings** → **Log Viewer** in the backoffice. You can also see a summary in the Automation **Runs** history showing when the action completed.
+{% endhint %}
+
 #### Test it
 
 1. Publish any content.
@@ -102,6 +106,9 @@ When a content node is published, backoffice editors see an instant notification
 3. Click **Add trigger** and select **Content Published**.
 4. Click **+** to add an action and select **Notify Editor**.
 5. Enter a Content ID in the **Content Key** field.
+
+To find your content's ID, open the content item in the editor. The ID appears in the right panel under **Info** Workspace View.
+
 6. Enter a **Title**. For example: *Blog post published*.
 7. Enter a **Message**. For example: *A new blog post has been published and is now live on the site.*
 8. Select the **Severity** of the notification from the dropdown.
@@ -113,7 +120,7 @@ When a content node is published, backoffice editors see an instant notification
 
 #### Test it
 
-Publish any content. You'll see a notification appear in the backoffice
+Publish any content. You'll see a notification appear in the backoffice. Only editors who are currently logged into the backoffice will see the notification.
 
 ![Example of a Notify Editor automation in action](../.gitbook/assets/editor-notification.png)
 
@@ -139,7 +146,10 @@ When you click "Run Now," the automation searches for content and then pauses to
 2. Create a new automation called *Find Content & Request Approval*.
 3. Click **Add trigger** and select **Manual Trigger**.
 4. Click **+** to add an action and select **Find Content**.
-5. Fill the required details for the find content action.
+5. In the **Find Content** action, enter:
+
+    - **Name**. For example, "blog" to find all content with "blog" in the name.
+    - Optionally filter by **Content Type**.
 
 ![Example of Find Content action configured.](../.gitbook/assets/find-content-settings.png).
 
@@ -167,6 +177,8 @@ The automation finds content and pauses at the approval step.
 3. In the **Approvals** Workspace View, an approver can approve/reject to complete the workflow.
 
 ![Approval View](../.gitbook/assets/approve-workflow.png)
+
+If no one approves within the timeout period (if set), the automation stops waiting. You can see pending approvals in the **Approvals** workspace view.
 
 ## Common Questions & Troubleshooting
 
