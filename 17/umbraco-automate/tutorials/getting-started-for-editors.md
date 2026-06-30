@@ -10,17 +10,17 @@ Umbraco Automate is an event-driven automation engine that lives natively inside
 
 Your site administrator handles the primary infrastructure. Before you begin building, make sure they have:
 
-- **Assigned you to a Workspace** – Workspaces control who can view and edit specific automations.
-- **Configured Connections** – Connections are reusable sets of credentials for external services (like Slack or an email provider).  
+- **Assigned you to a Workspace**: Workspaces control who can view and edit specific automations.
+- **Configured Connections**: Connections are reusable sets of credentials for external services (like Slack or an email provider).  
 
 If you cannot access the Workspace or see your team's external services, ask your administrator to invite your user group to the workspace.
 
 ## Key Concepts
 
-- Trigger — The event that starts an automation. Examples: "When content is published", "When a form is submitted", "At a specific time each day".
-- Action — What happens after the trigger. Examples: "Send an email", "Post a message to Slack", "Publish another piece of content".
-- Automation — A visual workflow combining a single trigger and a sequence of actions.
-- Bindings: Placeholders using `${ ... }` syntax that pass dynamic information from a trigger or previous action step down to a later action.Example: Pulling a customer's name out of a form to personalize an email.
+- Trigger: The event that starts an automation. Examples: `When content is published`, `When a form is submitted`, `At a specific time each day`.
+- Action: What happens after the trigger. Examples: `Send an email`, `Post a message to Slack`, `Publish another piece of content`.
+- Automation: A visual workflow combining a single trigger and a sequence of actions.
+- Bindings: Placeholders using `${ ... }` syntax that pass dynamic information from a trigger or previous action step down to a later action. Example: Pulling a customer's name out of a form to personalize an email.
 
 ## Accessing Automation in the Backoffice
 
@@ -56,8 +56,8 @@ This automation creates a log entry every time something happens, useful for aud
 
 #### What you'll see
 
-- Trigger: "Content Published"
-- Action: "Log Message"
+- Trigger: `Content Published`
+- Action: `Log Message`
 
 #### Setup
 
@@ -67,7 +67,7 @@ This automation creates a log entry every time something happens, useful for aud
 4. Click **+** to add an action and select **Log Message**.
 5. Enter a **Message**. For example: *Content published by [user]*.
 
-![Example of a Log Message action configured.](../.gitbook/assets/workflow-log-event.png).
+![Example of a Log Message action configured.](../.gitbook/assets/workflow-log-event.png)
 
 6. Click **Save**.
 7. Click **Save and Publish**.
@@ -83,7 +83,7 @@ The logged message appears in Umbraco's application logs. To view it, go to **Se
 
 You'll see a list of every time it ran. Click on a run to expand it and see the logged message
 
-![Example of a Logged Message.](../.gitbook/assets/log-message.png).
+![Example of a Logged Message.](../.gitbook/assets/log-message.png)
 
 ### Workflow 2: Notify Editors when content is Published
 
@@ -96,8 +96,8 @@ When a content node is published, backoffice editors see an instant notification
 
 #### What you'll see
 
-- Trigger: "Content Published"
-- Action: "Notify Editor"
+- Trigger: `Content Published`
+- Action: `Notify Editor`
 
 #### Setup
 
@@ -113,7 +113,7 @@ To find your content's ID, open the content item in the editor. The ID appears i
 7. Enter a **Message**. For example: *A new blog post has been published and is now live on the site.*
 8. Select the **Severity** of the notification from the dropdown.
 
-![Example of a Notify Editor action configured.](../.gitbook/assets/workflow-notify-editor.png).
+![Example of a Notify Editor action configured.](../.gitbook/assets/workflow-notify-editor.png)
 
 6. Click **Save**.
 7. Click **Save and Publish**.
@@ -136,9 +136,9 @@ When you click "Run Now," the automation searches for content and then pauses to
 
 #### What you'll see
 
-- Trigger: "Manual Trigger"
-- Action: "Find Content"
-- Action: "Request Approval"
+- Trigger: `Manual Trigger`
+- Action: `Find Content`
+- Action: `Request Approval`
 
 #### Setup
 
@@ -151,13 +151,13 @@ When you click "Run Now," the automation searches for content and then pauses to
     - **Name**. For example, "blog" to find all content with "blog" in the name.
     - Optionally filter by **Content Type**.
 
-![Example of Find Content action configured.](../.gitbook/assets/find-content-settings.png).
+![Example of Find Content action configured.](../.gitbook/assets/find-content-settings.png)
 
 6. Click **Save**.
 7. Click **+** to add an action and select **Request Approval**.
 8. Enter a **Prompt**. For example: *Please review the content found and approve to continue.*.
 
-![Example of Request Approval action configured.](../.gitbook/assets/workflow-request-approval.png).
+![Example of Request Approval action configured.](../.gitbook/assets/workflow-request-approval.png)
 
 9. Click **Save**.
 10. Click **Save and Publish**.
@@ -166,13 +166,13 @@ When you click "Run Now," the automation searches for content and then pauses to
 
 1. Click **Run Now** next to the automation name.
 
-![Run now option to trigger automation manually](../.gitbook/assets/run-now-option.png).
+![Run now option to trigger automation manually](../.gitbook/assets/run-now-option.png)
 
 The automation finds content and pauses at the approval step.
 
 2. In the **Runs** Workspace View, you'll see "WaitingForInput" status.
 
-![Waiting for Approval stage](../.gitbook/assets/waiting-for-approval.png).
+![Waiting for Approval stage](../.gitbook/assets/waiting-for-approval.png)
 
 3. In the **Approvals** Workspace View, an approver can approve/reject to complete the workflow.
 
@@ -209,6 +209,6 @@ To revert to a previous version:
 
 - Try building an automation from the three workflows above.
 - Check the Runs history to make sure it worked.
-- Explore other [triggers](../concepts/triggers.md) and [actions](../concepts/actions.md).
+- Explore other [Triggers](../concepts/triggers.md) and [Actions](../concepts/actions.md).
 
 Happy automating!
