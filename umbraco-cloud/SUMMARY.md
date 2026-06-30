@@ -53,10 +53,9 @@
       * [Working with a Cloud database locally](build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md)
 * [Handle Deployments and Environments](build-and-customize-your-solution/handle-deployments-and-environments/README.md)
   * [Deployment](build-and-customize-your-solution/handle-deployments-and-environments/deployment/README.md)
-    * [Restoring Content](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/README.md)
-      * [Partial Restores](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/partial-restore.md)
-    * [Transferring Content, Media, Members, and Forms](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
-    * [Deploy Dashboard](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md)
+    * [Transfer Items](build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)
+    * [Restore Items](build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content.md)
+    * [Deploy Settings](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md)
     * [Deploying Changes](build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md)
     * [Deploying between environments](build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md)
     * [Deploying Deletions](build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploying-deletions.md)
@@ -84,6 +83,7 @@
       * [Connect and Upload Files Programmatically to Azure Blob Storage](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-programatically-to-azure-storage.md)
       * [Blob Storage Backups](build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/blob-storage-backups.md)
   * [Manage Environments](build-and-customize-your-solution/handle-deployments-and-environments/manage-environments.md)
+  * [Manage Baseline Children](build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md)
 * [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Expand Your Project’s Capabilities
@@ -92,6 +92,7 @@
 * [Cloud Extensions](expand-your-projects-capabilities/cloud-extensions/README.md)
   * [Private NuGet Feed on Umbraco Cloud](expand-your-projects-capabilities/cloud-extensions/private-nuget-feed.md)
   * [Umbraco Forms on Cloud](expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
+  * [Customizing Translations](expand-your-projects-capabilities/cloud-extensions/customizing-translations.md)
 * [External Services](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
   * [Cloud Services Static IPs](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)
@@ -158,7 +159,6 @@
       * [Extraction error: "Type not found! "](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/type-not-found.md)
     * [Cloud Errors](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/cloud-errors.md)
     * [Baseline Merge Conflicts](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/README.md)
-      * [Break Reference between Baseline and Child Project](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
       * [Handling configuration files](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md)
       * [Pushing Upgrades to a Child Project](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
 

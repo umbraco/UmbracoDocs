@@ -8,7 +8,7 @@ With Umbraco Deploy deletions are environment specific. This means that in order
 
 In this article you can read about the correct way of deleting files, schema and content when using Umbraco Deploy.
 
-When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases contain references to all  content, media, and schema files such as Document Types and Templates etc.
+When you are using Umbraco Deploy, you might have more than one environment - including a local clone of the project. These environments each have their own database. The databases contain references to all content, media, and schema files such as Document Types and Templates etc.
 
 Databases are environment-specific. When deploying between environments, Umbraco Deploy compares incoming schema files with database references using both _alias_ and _GUID_. If a mismatch occurs between the database references and deployed files, an error appears. Learn more in the [Troubleshooting section](../troubleshooting.md).
 
@@ -22,7 +22,7 @@ Let's say you've deleted a Document Type on your Development environment, and no
 
 Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
-![Changes ready for deployment](./images/deletions-of-doctype2.png)
+![Changes ready for deployment](../.gitbook/assets/deletions-of-doctype2.png)
 
 Commit the changes and push them to your repository and trigger a deployment to your environment.
 

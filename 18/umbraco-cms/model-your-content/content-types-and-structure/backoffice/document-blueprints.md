@@ -72,6 +72,10 @@ To edit an existing document blueprint, follow these steps:
 
 Once you have created a document blueprint, you can use it to create new content nodes.
 
+{% hint style="info" %}
+Document Blueprints can only be selected when creating a new content node. They cannot be applied to existing content.
+{% endhint %}
+
 To use a document blueprint, follow these steps:
 
 1. Go to the **Content** section.

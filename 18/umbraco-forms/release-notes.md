@@ -20,6 +20,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### 18.0.0 (June 25th 2026)
+* Update dependencies to 18.0.0
+* All items detailed under release candidates for 18.0.0.
+
+### 18.0.0-rc2 (June 18th 2026)
+
+* Update dependencies to 18.0.0-rc2
+
 ### 18.0.0-rc1 (June 4th 2026)
 
 * Update dependencies to 18.0.0-rc1

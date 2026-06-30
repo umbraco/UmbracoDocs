@@ -6,9 +6,9 @@
 
 `Returns: IEnumerable<IPublishedContent>`
 
-**Collection** displays a collection of categories when it is enabled on a Document Type with children.
+**Collection**/**List View** can be used on Document Types with children, to display those children as a collection in either a grid or a list.
 
-![Collection example](../../../.gitbook/assets/listview-v14.png)
+![Collection example](../../../.gitbook/assets/listview-18.png)
 
 ## Configure Collection
 

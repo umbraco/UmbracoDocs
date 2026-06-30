@@ -45,7 +45,7 @@ A 404 error occurs when a requested page cannot be found, usually due to deleted
 7. Add your custom markup and design for the error page in the template.
 8. Click **Save**.
 
-### \[Optional] Create a Container for Error Pages
+### [Optional] Create a Container for Error Pages
 
 You can create a _Page Not Found_ page directly in your content tree, or organize it within a container for error pages. Using a container allows for better content organization, especially if you plan to handle multiple status codes (for example, 404, 500, maintenance, and so on). Both options work as long as the page ID is referenced correctly in the `appsettings.json` file.
 

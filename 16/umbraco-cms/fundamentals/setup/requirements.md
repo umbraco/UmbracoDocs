@@ -55,9 +55,11 @@ _For more information, see the_ [_Host and deploy ASP.NET Core applications_](ht
 You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
 {% endhint %}
 
-### Other recommendation
+### Other Recommendations
 
 * Ability to set file permissions to include create/read/write (or better) for the user that "owns" the Application Pool for your site. This would typically be **NETWORK SERVICE**.
+* Umbraco's backoffice features such as preview and server events uses SignalR, which works best over **WebSockets** but will negotiate to **Server-Sent Events/Long Polling**. Some hosting setups buffer streamed responses, which can break the SSE fallback and surface as a "`Could not establish a connection to the server`" warning ~30s after opening preview.
+* To ensure the preferred WebSocket transport is available on Windows Server/IIS, install the **WebSocket Protocol feature**  via **Server Manager → Add Roles and Features → Web Server (IIS) → Web Server → Application Development → WebSocket Protocol**.
 
 ## Database Account Roles
 

@@ -5,6 +5,8 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
+    develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-1: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-1.md
+    develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-2: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-2.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/configuration: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
@@ -204,3 +206,5 @@ redirects:
     get-started/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
     get-started/editors-manual/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
     get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
+    extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
+    extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md

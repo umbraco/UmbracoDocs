@@ -90,7 +90,7 @@ Use the `NotificationContext`'s `peek` method here. It has two parameters `UmbNo
 
 If the input length is less or equal to the maxLength configuration, a notification is displayed when clicking on the Trim button.
 
-<figure><img src="../../../.gitbook/assets/nothing-to-trim.png" alt="A danger notification reading &#x27;Nothing to trim!&#x27; displayed in the Umbraco backoffice."><figcaption><p>Trim Button Notification</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/nothing-to-trim.png" alt="A danger notification reading Nothing to trim is displayed in the Umbraco backoffice."><figcaption><p>Trim Button Notification</p></figcaption></figure>
 
 ## Adding more logic to the context
 

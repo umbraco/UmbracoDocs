@@ -157,7 +157,7 @@ For a pipeline that uses PowerShell scripts, you will need the following files:
 |                   | `Start-Deployment.ps1`       |                        |
 |                   | `Test-DeploymentStatus.ps1`  |                        |
 
-#### Prepare the pipeline
+**Prepare the pipeline**
 
 1. Copy the `cloud.zipignore` file to the root of your repository.
 2. Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`.
@@ -182,7 +182,7 @@ For a pipeline that uses Bash scripts, you will need the following files:
 |                   | `start_deployment.sh`      |                        |
 |                   | `get_deployment_status.sh` |                        |
 
-#### Prepare the pipeline
+**Prepare the pipeline**
 
 1. Copy the `cloud.zipignore` file to the root of your repository.
 2. Make a copy of the `.gitignore` from your repository and call the copy `cloud.gitignore`.
