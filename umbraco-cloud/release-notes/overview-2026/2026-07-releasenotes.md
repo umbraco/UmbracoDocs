@@ -19,7 +19,7 @@ For more information, see the [Load Balancing documentation](https://docs.umbrac
 
 ## Dedicated Redis
 
-Dedicated Redis improves website performance by storing vital hot data. This offloads the cache burden from the CMS instance itself.
+Dedicated Redis can improve website performance significantly by storing vital hot data. This offloads the cache burden from the CMS instance itself.
 
 Dedicated Redis is required for Load Balancing, where it handles session storage across your instances. It is also available on its own, making it a perfect second-level cache for the CMS even when you are not load balancing.
 
