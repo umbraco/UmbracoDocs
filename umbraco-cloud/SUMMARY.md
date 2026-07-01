@@ -126,6 +126,8 @@
 * [Optimize Performance](optimize-and-maintain-your-site/optimize-performance/README.md)
   * [CDN Caching and Optimizations](optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
   * [Migrate between regions](optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md)
+  * [Load Balancing](optimize-and-maintain-your-site/optimize-performance/load-balancing.md)
+  * [Cache Configuration](optimize-and-maintain-your-site/optimize-performance/cache-configuration.md)
 * [Monitor and Troubleshoot](optimize-and-maintain-your-site/monitor-and-troubleshoot/README.md)
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
@@ -165,6 +167,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [July 2026](release-notes/overview-2026/2026-07-releasenotes.md)
   * [June 2026](release-notes/overview-2026/2026-06-releasenotes.md)
   * [May 2026](release-notes/overview-2026/2026-05-releasenotes.md)
   * [April 2026](release-notes/overview-2026/2026-04-releasenotes.md)
