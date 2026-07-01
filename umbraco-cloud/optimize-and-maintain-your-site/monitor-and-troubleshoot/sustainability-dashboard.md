@@ -11,26 +11,38 @@ The Sustainability Dashboard helps you monitor and reduce the environmental impa
 
 * **Monthly CO2 emission data**: The dashboard reports CO2 emissions per month. A month's data becomes available a few weeks after the month ends.
 * **Historical trends**: The dashboard tracks emissions over time, so you can review monthly and yearly trends.
-* **Per-component breakdown**: You can see which Azure resources contribute to your emissions.
+* **Per-component breakdown**: You can see which Azure resources and how much network usage contribute to your emissions.
 * **Comparative analysis**: You can compare emissions across your projects to find high-impact areas.
 * **Date range selection**: You can choose the period to report on. The dashboard defaults to the current year to date.
 * **CSV export**: You can download the emission report as a CSV file.
 
 ## CO2 emission calculation methodology
 
-The dashboard reports CO2 emissions based on Microsoft's reported emissions data from Azure Carbon Optimization. Microsoft reports the emissions for the Azure resources that host your websites. Umbraco Cloud attributes those emissions to your projects and environments.
+The dashboard reports two kinds of emissions. Most come from the Azure resources that host your websites, based on Microsoft's reported data from Azure Carbon Optimization. The dashboard also estimates the emissions from network egress, which is the data your sites transfer to visitors.
 
 The emissions are reported as carbon dioxide equivalent (CO2e). The data covers Scope 1, Scope 2, and Scope 3 emissions.
 
-### Covered resources
+### Covered Azure resources
 
-The dashboard includes emissions from the following Azure resource types:
+For Azure resources, Microsoft reports the emissions and Umbraco Cloud attributes them to your projects and environments. The dashboard includes the following Azure resource types:
 
 * App Service
 * SQL Database
 * SQL Elastic Pool
 * Storage Account
 * Key Vault
+
+### Network egress (Bandwidth)
+
+The dashboard reports the emissions from network egress as a **Bandwidth** component. This is the energy used to deliver your sites' data across the network to visitors. Microsoft does not report these emissions, so Umbraco Cloud estimates them from the volume of data your sites transfer.
+
+The estimate uses the network energy intensity from the [Sustainable Web Design Model](https://sustainablewebdesign.org/estimating-digital-emissions/): **0.059 kWh per GB** transferred. This is multiplied by a global average grid carbon intensity of **494 g CO2e per kWh**, sourced from [Ember's global electricity data](https://ember-energy.org/data/). The result is about **29 g CO2e per GB** transferred:
+
+`0.059 kWh/GB × 494 g CO2e/kWh ≈ 29 g CO2e/GB`
+
+Data served from the edge cache travels a shorter network path. Cached traffic is therefore counted at 30% of this rate. The dashboard sums the result across all of a project's traffic for the month.
+
+The Sustainable Web Design Model also covers data center and end-user device energy. The dashboard uses only the network segment. Data center energy is already counted in the Azure resources above, and end-user device energy is outside Umbraco Cloud's control.
 
 ### Shared resource attribution
 
@@ -44,10 +56,9 @@ These attributed values are approximations. Azure reports the emissions at the s
 
 ### What is not included
 
-The dashboard reports emissions from the Azure infrastructure that hosts your websites. It does not include:
+The dashboard reports emissions from the infrastructure and network that serve your websites. It does not include:
 
-* Network traffic and data transfer
-* Frontend or visitor-side impressions
+* End-user device energy, such as visitors' phones, tablets, and computers
 * Emissions from the Umbraco Cloud platform itself
 
 {% hint style="info" %}
