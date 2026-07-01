@@ -18,13 +18,13 @@ For more information, see the [Load Balancing documentation](https://docs.umbrac
 
 ## Dedicated Redis
 
-Dedicated Redis can significantly improve the performance of your website by storing vital hot data used by the CMS, offloading the cache burden from the CMS instance itself.
+Dedicated Redis improves website performance by storing vital hot data. This offloads the cache burden from the CMS instance itself.
 
 Dedicated Redis is required for Load Balancing, where it handles session storage across your instances. It is also available on its own, making it a perfect second-level cache for the CMS even when you are not load balancing.
 
 Depending on your project's needs, you can now choose from the following Redis plans:
 
-| Name | Size | High Availability | SLA |
+| Name | Size | High Availability | Service Level Agreement (SLA) |
 | :-- | :-- | :-- | :-- |
 | Extra Small | 0.5 GB | No | No |
 | Extra Small + | 0.5 GB | Yes | Yes |
@@ -48,6 +48,6 @@ We have updated our Dedicated Resource tiers. This is the first step toward prov
 | Medium | Professional | 4 | 16 GB |
 | Large | Professional | 8 | 32 GB |
 
-Size and pricing are now consistent across plans. Where two plans offer the same size, it is exactly the same resource, so there is no longer a difference between plans for an identical dedicated resource.
+Size and pricing are now consistent across plans. Where two plans offer the same size, they use exactly the same resource. There is no longer a difference between plans for an identical dedicated resource.
 
 For more information, see the [Dedicated Resources product page](https://umbraco.com/products/umbraco-cloud/dedicated-resources/).
