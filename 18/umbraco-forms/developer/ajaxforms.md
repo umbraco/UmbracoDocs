@@ -60,6 +60,7 @@ A successful request will return a 200 status code. An example response is as fo
 
 ```json
 {
+    "autocompleteAttribute": null,
     "disableDefaultStylesheet": false,
     "fieldIndicationType": "MarkMandatoryFields",
     "hideFieldValidation": false,
@@ -68,6 +69,7 @@ A successful request will return a 200 status code. An example response is as fo
     "messageOnSubmit": "Thanks for submitting the form",
     "name": "Simple Comment Form",
     "nextLabel": "Next",
+    "pageCaptionFormat": "Page {0}",
     "pages": [
         {
             "caption": "Your comment",
@@ -87,6 +89,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "[#message] from [#pageName]",
                                     "id": "25185934-9a61-491c-9610-83dfe774662c",
                                     "pattern": "",
@@ -116,6 +119,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "816fdf3b-a796-4677-a317-943a54bf9d55",
                                     "pattern": "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$",
@@ -145,6 +149,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "9d723100-ec34-412f-aaa5-516634d7c833",
                                     "pattern": "",
@@ -174,6 +179,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "30ff8f37-28d4-47df-f281-422b36c62e73",
                                     "pattern": "",
@@ -219,6 +225,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "a6e2e27f-097d-476a-edb9-4aa79449ab5c",
                                     "pattern": "",
@@ -257,6 +264,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "Please indicate if it's OK to store your data.",
                                     "id": "9f25acaf-4ac4-4105-9afe-eb0bb0c03b31",
                                     "pattern": "",
@@ -282,6 +290,7 @@ A successful request will return a 200 status code. An example response is as fo
                                         "logicType": "All",
                                         "rules": []
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "6ce0cf78-5102-47c1-85c6-9530d9e9c6a6",
                                     "pattern": "",
@@ -312,6 +321,7 @@ A successful request will return a 200 status code. An example response is as fo
                                             }
                                         ]
                                     },
+                                    "containsSensitiveData": false,
                                     "helpText": "",
                                     "id": "5b4100ed-cc5e-4113-943c-ee5a8f4e448d",
                                     "pattern": "",
@@ -339,14 +349,31 @@ A successful request will return a 200 status code. An example response is as fo
                     ],
                     "id": "d677b96f-488d-4052-b00d-fb852b35e9c5"
                 }
-            ]
+            ],
+            "id": "8f9a6b2c-1d3e-4f5a-9b8c-7d6e5f4a3b2c"
         }
     ],
+    "pagingDetailsFormat": "Page {0} of {1}",
     "previousLabel": "Previous",
+    "showPagingOnMultiPageFormsAtBottom": false,
+    "showPagingOnMultiPageFormsAtTop": false,
+    "showSummaryPageOnMultiPageForms": false,
     "showValidationSummary": false,
-    "submitLabel": "Submit"
+    "submitLabel": "Submit",
+    "summaryLabel": "Summary of Entry"
 }
 ```
+
+The response includes the following settings that support rendering multi-page forms and handling sensitive data:
+
+* `autocompleteAttribute`: The value applied to the rendered form's `autocomplete` attribute, or `null` when not set.
+* `pageCaptionFormat`: The format used for a page caption when a page does not define its own. `{0}` is replaced with the page number.
+* `pagingDetailsFormat`: The format used to display paging details. `{0}` is replaced with the current page number and `{1}` with the total number of pages.
+* `showPagingOnMultiPageFormsAtTop` and `showPagingOnMultiPageFormsAtBottom`: Indicate whether to display paging details above and below a multi-page form.
+* `showSummaryPageOnMultiPageForms`: Indicates whether a summary page is shown before submitting a multi-page form.
+* `summaryLabel`: The label used for the summary page.
+
+Each page includes an `id`, and each field includes a `containsSensitiveData` value indicating whether the field stores sensitive data.
 
 It's possible to define either a message displayed when a form is submitted, or a redirect to another website page.
 
