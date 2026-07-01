@@ -1,7 +1,6 @@
 ---
 description: >-
-  Common load-balancing pitfalls and anti-patterns to avoid in your code, so
-  your Umbraco site behaves correctly when it runs across multiple servers.
+  Common load-balancing pitfalls and anti-patterns to avoid in your code, so your Umbraco site behaves correctly when it runs across multiple servers.
 ---
 
 # Common Load-Balancing Pitfalls & Anti-Patterns
