@@ -4,6 +4,12 @@ description: Get an overview of the release notes for each month in 2026.
 
 # Overview 2026
 
+## [July 2026](2026-07-releasenotes.md)
+
+* **Load Balancing** - Distribute incoming traffic across multiple dedicated instances to handle higher load and keep your site running smoothly under pressure.
+* **Dedicated Redis** - A dedicated Redis cache that stores hot data for the CMS. Required for Load Balancing as session storage, and available on its own as a second-level cache.
+* **New Dedicated Resource tiers** - Updated Dedicated Resource tiers as a first step toward better options and more flexibility. Available sizes: Extra Small, Small, Medium, and Large.
+
 ## [June 2026](2026-06-releasenotes.md)
 
 * **Baseline enhancements** - The **Manage child projects** page loads faster. More data is shown on child, and list has more filtering options.
