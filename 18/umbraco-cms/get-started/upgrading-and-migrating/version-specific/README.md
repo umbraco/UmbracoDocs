@@ -53,6 +53,7 @@ The main changes you will need to migrate:
 - **Route and availability configuration** — `OpenApiRouteTemplatePipelineFilter` overrides are no longer supported. Use `PostConfigure<UmbracoOpenApiOptions>` instead. See [Route and availability](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#route-and-availability).
 - **Controlling which endpoints appear in your document** — `[MapToApi]` no longer auto-filters custom documents. Set `ShouldInclude` on each document. See [Controlling which endpoints appear in your document](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#controlling-which-endpoints-appear-in-your-document).
 - **OpenAPI spec version** — generated documents now use OpenAPI 3.1 instead of 3.0. Regenerated client SDKs may differ — verify your generator supports OpenAPI 3.1.
+- **Source generator compilation (class libraries)** — class library projects that register OpenAPI documents must add `<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.OpenApi.Generated</InterceptorsNamespaces>` to their `.csproj`. Without it, the build fails with "error CS9137: The 'interceptors' feature is not enabled." See [Adding your own OpenAPI documents](../../../extend-your-project/server-side-extensions/api-versioning-and-openapi.md#adding-your-own-openapi-documents).
 
 *OpenAPI URL changes*
 

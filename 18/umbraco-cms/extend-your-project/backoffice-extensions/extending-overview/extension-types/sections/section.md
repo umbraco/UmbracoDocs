@@ -16,16 +16,21 @@ Within the section, authors can add menus, section views, workspace views, or an
 
 Sections can be created by adding a definition in the extension's manifest file.
 
-{% code title="umbraco-package.json" %}
+{% code title="~/App_Plugins/MySection/umbraco-package.json" %}
 ```json
 {
- "type": "section",
- "alias": "My.Section",
- "name": "My Section",
- "meta": {
-  "label": "My.Section",
-  "pathname": "my-section"
- }
+  "name": "My.Section",
+  "extensions": [
+    {
+      "type": "section",
+      "alias": "My.Section",
+      "name": "My Section",
+      "meta": {
+        "label": "My.Section",
+        "pathname": "my-section"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
