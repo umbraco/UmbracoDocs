@@ -1,5 +1,5 @@
 ---
-description: Internal developer reference for custom Umbraco Automate extensions outlining implementation patterns, local conventions, and troubleshooting.
+description: Internal developer reference for custom Umbraco Automate extensions.
 ---
 
 # Technical Runbook: Extending Automate for Developers
@@ -242,8 +242,6 @@ public class ExternalApiConnection : IConnectionType
 
 ### Using the Connection in an Action
 
-{% details "ExternalApiAction.cs — full implementation" %}
-
 {% code title="ExternalApiAction.cs" %}
 
 ```csharp
@@ -339,9 +337,6 @@ public class ExternalApiActionConfiguration
 ```
 
 {% endcode %}
-
-{% enddetails %}
-
 {% endtab %}
 {% tab title="Registration" %}
 
@@ -422,46 +417,50 @@ Hot-reloading does not always pick up serialization attribute changes. Run `dotn
 
 ### 4. Debugging Tips
 
-{% details "My action doesn't appear in the canvas picker" %}
+<details>
+<summary>My action doesn't appear in the canvas picker</summary>
 
 1. Verify the `[Action]` attribute is present on your class.
 2. Verify your `IComposer.Compose()` calls `builder.AutomateActions().Add<YourAction>()`.
 3. Check that the project builds without errors.
 
-{% enddetails %}
+</details>
 
-{% details "Configuration values aren't persisting" %}
+<details>
+<summary>Configuration values aren't persisting</summary>
 
 1. Ensure all settable properties have `[DataMember]` attributes.
 2. Use `[Required]` for mandatory fields.
 3. Run `dotnet clean` before retesting.
 
-{% enddetails %}
+</details>
 
-{% details "\"Email sender is not configured\" error" %}
+<details>
+<summary>Email sender is not configured</summary>
 
 Check that SMTP is configured in your `appsettings.json` file. This is a known gotcha when core services handle email operations.
 
-{% enddetails %}
+</details>
 
-{% details "Step fails silently" %}
+<details>
+<summary>Step fails silently</summary>
 
 1. Review the **Runs** tab for the actual exception message.
 2. Check application logs (**Settings** > **Log Viewer**) for structured error details.
 3. Ensure you're throwing exceptions (not swallowing them) so the Circuit Breaker can retry.
 
-{% enddetails %}
+</details>
 
 ## Common Pitfalls
 
-### 1. Binding Names Are Case-Insensitive (But CamelCase in Practice)
+### Binding Names Are Case-Insensitive
 
 When exposing output properties from a step to be used downstream via bindings (`${trigger.propertyName}`), the standard convention maps C# PascalCase properties directly to CamelCase string keys.
 
 - C# Property: `public string OrderId { get; set; }`
 - UI Canvas Binding: `${trigger.orderId}`
 
-### 2. AppSettings Casing for SMTP Operations
+### AppSettings Casing for SMTP Operations
 
 If your custom action routes or triggers email notifications via the core infrastructure services, the runner relies on the core CMS settings dictionary.
 
@@ -472,25 +471,22 @@ SMTP credential settings are case-sensitive. Use `"Username"` (lowercase **n**),
 - Fails: `"Credentials": { "UserName": "..." }`
 - Succeeds: `"Credentials": { "Username": "..." }` (Note the lowercase **n**)
 
-### 3. Array Bindings Don't Work as Direct Canvas Conditions
+### Array Bindings Don't Work as Direct Canvas Conditions
 
 You cannot execute a direct equality condition on an array field inside the backoffice canvas rules manager.
 
 - Fails: `${trigger.cultures} equals en-US`
 - Workaround: Expose a helper property on your payload model explicitly for routing rules:
+`public string PrimaryCulture => Cultures?.FirstOrDefault() ?? "en-US";`
 
-```csharp
-public string PrimaryCulture => Cultures?.FirstOrDefault() ?? "en-US";
-```
+### Exception Handling & Retry Logic
 
-### 4. Exception Handling & Retry Logic
+- Silent failure (no retry): `return ActionResult.Fail("Error message");`
+- Retry again (Circuit Breaker handles it): `throw new InvalidOperationException("Error message");`
 
 {% hint style="warning" %}
 Do not return `ActionResult.Fail()` for transient errors. It marks the step as permanently failed and skips retry. Throw an exception instead to let the Circuit Breaker handle retries.
 {% endhint %}
-
-- Silent failure (no retry): `return ActionResult.Fail("Error message");`
-- Retryable (Circuit Breaker handles it): `throw new InvalidOperationException("Error message");`
 
 ## Best Practices Checklist
 
