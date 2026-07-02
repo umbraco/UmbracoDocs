@@ -12,7 +12,7 @@ While most cache configurations are under the `Umbraco:CMS:Cache` settings node,
 
 ## HybridCacheOptions
 
-Umbraco's cache is implemented using Microsofts `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
+Umbraco's cache is implemented using Microsoft's `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
 
 ### MaximumPayLoadBytes
 
@@ -149,6 +149,65 @@ Specifies the duration for which seeded cache entries should be kept in the cach
     }
   }
 }
+```
+
+## MaximumLocalCacheItems
+
+By default, the in-process (L0) published content cache is unbounded. The cache grows as content is requested. A full-tree operation can grow the cache to hold the entire tree. Examples include a Descendants query, a Delivery API crawl, sitemap generation, or a cache warm-up. On large sites this increases memory usage.
+
+The `MaximumLocalCacheItems` setting limits the number of converted items kept in the L0 cache. When set, the cache becomes bounded and scan-resistant. It retains frequently requested content, such as the home page. It evicts rarely accessed content. A one-off full-tree walk can no longer grow the cache without limit.
+
+The setting is configured separately for documents and media. The default value is `null` (unbounded), which preserves the previous behavior. Existing sites are unaffected unless the setting is applied.
+
+{% hint style="info" %}
+The `MaximumLocalCacheItems` setting is available from Umbraco 17.6.
+{% endhint %}
+
+### Installing the bounded cache package
+
+Bounding the cache requires the opt-in `Umbraco.Cms.PublishedCache.HybridCache.Bounded` package. The package replaces the default L0 cache with a bounded, scan-resistant [W-TinyLFU](https://github.com/bitfaster/BitFaster.Caching) implementation.
+
+Install the package from the folder that contains your `.csproj` file:
+
+```bash
+dotnet add package Umbraco.Cms.PublishedCache.HybridCache.Bounded
+```
+
+{% hint style="warning" %}
+If you configure a maximum without installing the package, the cache stays unbounded. A warning is logged at start-up.
+{% endhint %}
+
+### Configuring the maximum
+
+With the package installed, set the maximum number of items for documents and media:
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "Entry": {
+        "Document": {
+          "MaximumLocalCacheItems": 10000
+        },
+        "Media": {
+          "MaximumLocalCacheItems": 5000
+        }
+      }
+    }
+  }
+}
+```
+
+Keep the following in mind when configuring the maximum:
+
+* The value is read once when the cache is constructed at start-up. Changing the value requires an application restart.
+* Values below `3` are raised to `3`, which is the minimum the bounded cache supports.
+* Leave the setting unset on small sites. Set it on large sites that see memory pressure from full-tree scans.
+
+You can confirm the cache stays bounded through the [cache size debug logging](cache-settings.md#observing-cache-memory-usage). Once enabled, a log line reports the number of entries held in the L0 cache after browsing the site:
+
+```
+[20:48:46 DBG] In-memory cache size: Published content (converted, L0) = 10 entries (~46580 bytes)
 ```
 
 ## Content type rebuild mode
