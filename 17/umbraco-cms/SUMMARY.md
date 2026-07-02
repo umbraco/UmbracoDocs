@@ -275,6 +275,7 @@
   * [Plugins Settings](develop-with-umbraco/configuration/pluginssettings.md)
   * [Request Handler Settings](develop-with-umbraco/configuration/requesthandlersettings.md)
   * [Runtime Settings](develop-with-umbraco/configuration/runtimesettings.md)
+  * [Scheduled Publishing Settings](develop-with-umbraco/configuration/scheduledpublishingsettings.md)
   * [Security Settings](develop-with-umbraco/configuration/securitysettings.md)
   * [Serilog Settings](develop-with-umbraco/configuration/serilog.md)
   * [Type Finder Settings](develop-with-umbraco/configuration/typefindersettings.md)
