@@ -88,6 +88,53 @@ export class MyController extends UmbControllerBase {
 }
 ```
 
+## Type-safe localization keys
+
+{% hint style="info" %}
+Available from Umbraco 18.1.
+{% endhint %}
+
+The `localize.term()` and `localize.termOrDefault()` methods, and the `key` attribute on `<umb-localize>`, are typed against the canonical English dictionary that ships with the backoffice. Editors that support TypeScript (VS Code, WebStorm, Rider) autocomplete every known key as you type, and function-valued entries forward their parameter list so calls are checked at compile time:
+
+```typescript
+this.localize.term('user_languageNotFound', 'da-DK', 'da');
+// Error: Argument of type 'undefined' is not assignable to parameter of type 'string'.
+this.localize.term('user_languageNotFound', undefined, 'da');
+```
+
+The signature keeps an escape hatch so dynamic keys composed at runtime still work without a cast:
+
+```typescript
+const day = new Date().getDay();
+this.localize.term(`login_greeting${day}`); // still type-checks
+```
+
+### Adding plugin-specific keys
+
+Once you have [registered your localization extension](#registering-localization), you can teach the type system about your own keys by extending the global `UmbKnownLocalizationSet` interface from anywhere in your code (same pattern as `UmbExtensionManifestMap`):
+
+{% code title="types.d.ts" %}
+```typescript
+declare global {
+    interface UmbKnownLocalizationSet {
+        mypkg_anything: string;
+        mypkg_greeting: (name: string) => string;
+    }
+}
+
+export {};
+```
+{% endcode %}
+
+Once declared, the augmented keys participate in autocomplete and argument-type inference exactly like the built-in ones:
+
+```typescript
+this.localize.term('mypkg_anything');           // autocompletes alongside built-in keys
+this.localize.term('mypkg_greeting', 'Alice');  // 'Alice' checked against (name: string) => string
+```
+
+The type declaration is opt-in — plugins that skip it still work, because the `term()` signature accepts any string. You just lose autocomplete and argument-type checking on the plugin's own keys.
+
 ## Using arguments
 
 Sometimes you need to pass arguments to the localization to return different values based on the arguments. A localization value can be either a string or a function. Given a localization file like this, we can return different values based on the number of items:
