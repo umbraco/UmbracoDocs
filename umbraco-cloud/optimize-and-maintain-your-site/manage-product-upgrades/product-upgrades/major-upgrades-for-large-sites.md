@@ -1,9 +1,9 @@
 ---
 description: >-
-  This guide helps you choose the right upgrade path for your Live environment.
+  This guide helps you choose the upgrade path for your Live environment.
 ---
 
-# Major Upgrades for Large sites
+# Choosing the Upgrade Path for Large Sites
 
 Major upgrades differ from normal deployments. The first startup on the new version must often run database migrations, update content, rebuild caches, and refresh indexes.
 
