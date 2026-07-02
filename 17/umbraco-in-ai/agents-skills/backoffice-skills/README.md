@@ -15,20 +15,16 @@ Skills use the open [`SKILL.md`](https://agentskills.io/home) format. They load 
 
 ### Claude Code
 
-Add the marketplace for your Umbraco version, then install the plugins.
+Add the marketplace, then install the plugins.
 
 Add the marketplace:
 
 ```bash
-# Umbraco 17
 /plugin marketplace add https://github.com/umbraco/Umbraco-CMS-Backoffice-Skills.git#v17/main
-
-# Umbraco 18
-/plugin marketplace add https://github.com/umbraco/Umbraco-CMS-Backoffice-Skills.git#main
 ```
 
 {% hint style="info" %}
-The `#v17/main` and `#main` suffixes pin the marketplace to the branch that matches your Umbraco version. For Umbraco 18 you can also use the shorthand `/plugin marketplace add umbraco/Umbraco-CMS-Backoffice-Skills`, which tracks the repository's default branch (`main`). `/plugin marketplace update` follows the pinned branch, or the default branch when you use the shorthand.
+The `#v17/main` suffix pins the marketplace to the branch for this Umbraco version. `/plugin marketplace update` follows that branch.
 {% endhint %}
 
 Install the plugins:
