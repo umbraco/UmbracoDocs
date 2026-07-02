@@ -11,7 +11,7 @@ While many projects upgrade successfully on existing plans, larger or business-c
 
 To avoid surprises, it is recommended to plan the upgrade window carefully. Choose the upgrade path that matches the size and importance of the project.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This guide is about running the upgrade safely on the Live environment. It does not replace the standard upgrade steps. For updating packages, the .NET version, and your code to the new major, follow the [Major Upgrades](major-upgrades.md) guide and complete those steps locally first.
 {% endhint %}
 

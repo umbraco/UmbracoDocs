@@ -17,7 +17,7 @@ Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/get-star
 {% endhint %}
 
 {% hint style="warning" %}
-Planning to upgrade a busy or business-critical Live environment? To prevent downtime or performance issues during database migrations, review the [Major Upgrades for Large sites](major-upgrades-for-large-sites.md) article. This article helps you choose your deployment strategy, and then continue with the upgrade steps in this article.
+Planning to upgrade a busy or business-critical Live environment? To prevent downtime or performance issues during database migrations, review the [Choosing the Upgrade Path for Large Sites](major-upgrades-for-large-sites.md) article. This article helps you choose your deployment strategy, and then continue with the upgrade steps in this article.
 {% endhint %}
 
 ## Before you start the upgrade
@@ -41,7 +41,7 @@ When upgrading from an LTS version, you must start by looking at the versions be
 Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are LTS.
 
 {% hint style="info" %}
-Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
+Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) handy to avoid any surprises.
 {% endhint %}
 
 #### Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)
