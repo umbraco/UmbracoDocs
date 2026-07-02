@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 [**13.8.1**](https://www.nuget.org/packages/Umbraco.Engage/13.8.1) **(July 2nd 2026)**
 
-* Improved backoffice performance by adding caching to the Engage **document type** and **user group permissions**, including cross-server cache refreshing for load-balanced environments.
+* Improved backoffice performance by adding caching to the Engage **Document Type** and **User Group** permissions, including cross-server cache refreshing for load-balanced environments.
 * Optimized the **A/B Testing**, **Analytics**, and **Personalization** content apps to prevent unnecessary database calls when opening content in the backoffice.
 
 [**13.8.0**](https://www.nuget.org/packages/Umbraco.Engage/13.8.0) **(April 20th 2026)**
