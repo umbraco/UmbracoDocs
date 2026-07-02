@@ -66,3 +66,8 @@
 * [Create a Custom Trigger](extending/custom-trigger.md)
 * [Create a Custom Action](extending/custom-action.md)
 * [Create a Custom Connection Type](extending/custom-connection-type.md)
+
+## Tutorials
+
+* [Getting Started Guide for Editors](tutorials/getting-started-for-editors.md)
+* [Technical Runbook: Extending Automate for Developers](tutorials/technical-runbook-for-developer.md)
