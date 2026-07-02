@@ -22,13 +22,13 @@ Copy `McpOAuthComposer.cs` from the template into your Umbraco project. Update t
 
 The Composer registers the Worker as an `authorization_code` OAuth client with redirect URIs for `localhost:8787` and `localhost:8788`. Umbraco auto-discovers it via `IComposer`. No changes to `Program.cs` are needed for the OAuth client registration.
 
-See [Umbraco Setup](umbraco-setup.md) for the full Composer code.
+See [OAuth Client Registration](../../hosted-mcp-setup/oauth-composer.md) for the full Composer code.
 
 ## Step 2: Allow HTTP for Token Exchange
 
 The Cloudflare Workers runtime (`workerd`) cannot connect to HTTPS endpoints with self-signed certificates. You need to allow HTTP in your local Umbraco's OpenIdDict configuration.
 
-See [Umbraco Setup - Allow HTTP for Token Exchange](umbraco-setup.md#allow-http-for-token-exchange) for the `Program.cs` change.
+See [OAuth Client Registration - Allow HTTP for Token Exchange](../../hosted-mcp-setup/oauth-composer.md#allow-http-for-token-exchange) for the `Program.cs` change.
 
 ## Step 3: Configure the Worker
 

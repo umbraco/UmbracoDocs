@@ -56,7 +56,7 @@ The Umbraco OAuth client registration must include:
 - `PostLogoutRedirectUris` with the Worker's `/logout-callback` URL.
 - `OpenIddictConstants.Permissions.Endpoints.EndSession` permission.
 
-See [Umbraco Setup - Post-Logout Redirect URIs](umbraco-setup.md#post-logout-redirect-uris) for the full registration example.
+See [OAuth Client Registration - Post-Logout Redirect URIs](../../hosted-mcp-setup/oauth-composer.md#post-logout-redirect-uris) for the full registration example.
 
 ## Custom Server Name
 

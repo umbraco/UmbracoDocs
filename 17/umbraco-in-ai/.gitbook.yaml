@@ -6,3 +6,6 @@ root: ./
 
 redirects:
     concepts/context-enginerring: concepts/context-engineering.md
+    mcp/base-mcp/hosted-mcp/umbraco-setup: mcp/hosted-mcp-setup/oauth-composer.md
+    mcp/base-mcp/hosted-mcp/external-login-short-circuit: mcp/hosted-mcp-setup/external-login-short-circuit.md
+    mcp/hosted-mcp-setup/url-based-routing: mcp/base-mcp/hosted-mcp/url-based-routing.md

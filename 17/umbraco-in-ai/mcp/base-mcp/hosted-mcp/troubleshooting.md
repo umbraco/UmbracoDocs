@@ -17,7 +17,7 @@ description: Common errors and fixes for the Hosted MCP server.
 - For custom domains, ensure the custom domain callback is registered.
 - The URL must match exactly. No trailing slashes. Correct protocol.
 
-See [Umbraco Setup - Redirect URI Configuration](umbraco-setup.md#redirect-uri-configuration) for the full URI table.
+See [OAuth Client Registration - Redirect URI Configuration](../../hosted-mcp-setup/oauth-composer.md#redirect-uri-configuration) for the full URI table.
 
 ### "Token exchange failed" / TLS Errors in Local Dev
 
@@ -25,7 +25,7 @@ See [Umbraco Setup - Redirect URI Configuration](umbraco-setup.md#redirect-uri-c
 
 **Fix**: Two things are needed:
 
-1. **Disable OpenIdDict's HTTPS requirement** in your Umbraco `Program.cs` (dev only). See [Umbraco Setup - Allow HTTP for Token Exchange](umbraco-setup.md#allow-http-for-token-exchange) for the code.
+1. **Disable OpenIdDict's HTTPS requirement** in your Umbraco `Program.cs` (dev only). See [OAuth Client Registration - Allow HTTP for Token Exchange](../../hosted-mcp-setup/oauth-composer.md#allow-http-for-token-exchange) for the code.
 
 2. **Set `UMBRACO_SERVER_URL`** in `.dev.vars` to point at Umbraco's HTTP port. `UMBRACO_BASE_URL` (HTTPS) is used for browser redirects. `UMBRACO_SERVER_URL` (HTTP) is used for server-side token exchange.
 
