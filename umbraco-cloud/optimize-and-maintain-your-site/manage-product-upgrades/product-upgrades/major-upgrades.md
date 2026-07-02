@@ -16,6 +16,10 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
+{% hint style="warning" %}
+Planning to upgrade a busy or business-critical Live environment? To prevent downtime or performance issues during database migrations, review the [Major Upgrades for Large sites](major-upgrades-for-large-sites.md) article. This article helps you choose your deployment strategy, and then continue with the upgrade steps in this article.
+{% endhint %}
+
 ## Before you start the upgrade
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
