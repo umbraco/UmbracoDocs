@@ -52,7 +52,7 @@ Your solution may require some specific files to run, such as license files. You
 
 ## Preventing cold boots on container restarts
 
-Container hostnames are typically regenerated on every container start. Umbraco derives its machine identifier from the hostname by default, so each restart looks like a new server and rebuilds the Examine indexes and published content cache.
+Container hostnames are typically regenerated on every container start. Umbraco derives its machine identifier from the hostname by default. Each restart then looks like a new server, so Umbraco rebuilds the Examine indexes and published content cache.
 
 From Umbraco 17.6, set `Hosting:MachineIdentifier` to a stable, instance-unique value to prevent the rebuild. Use a StatefulSet ordinal, a node label, or any other string that does not change between restarts:
 
