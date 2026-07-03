@@ -1,9 +1,9 @@
 ---
 description: >-
-  This guide helps you choose the upgrade path for your Live environment.
+  Choose the right upgrade path and resource strategy to safely manage database migrations and prevent downtime on your production environment
 ---
 
-# Choosing the Upgrade Path for Large Sites
+# Planning Major Upgrades Safely for Live Environments
 
 Major upgrades differ from normal deployments. The first startup on the new version must often run database migrations, update content, rebuild caches, and refresh indexes.
 
@@ -12,19 +12,19 @@ While many projects upgrade successfully on existing plans, larger or business-c
 To avoid surprises, it is recommended to plan the upgrade window carefully. Choose the upgrade path that matches the size and importance of the project.
 
 {% hint style="warning" %}
-This guide is about running the upgrade safely on the Live environment. It does not replace the standard upgrade steps. For updating packages, the .NET version, and your code to the new major, follow the [Major Upgrades](major-upgrades.md) guide and complete those steps locally first.
+This guide focuses on running the upgrade safely on the Live environment. It does not replace the standard upgrade steps. You should review this guide *after* you have already followed the standard [Major Upgrades](major-upgrades.md) guide to update your packages, the .NET version, and your custom code locally. Once your upgraded codebase is tested and ready on your machine, use this article to plan your production deployment strategy.
 {% endhint %}
 
 ## Why Live Behaves Differently from Staging
 
 A major upgrade can be resource-intensive. When the upgraded code first boots, it runs database migrations and rebuilds caches and indexes. That work happens on top of whatever the site is already doing.
 
-- **Development/Staging Environments:** There is little or no public traffic, so almost all of the server's capacity is free for the upgrade. The migration completes comfortably.
+- **Development/Staging Environments:** There is typically little or no public traffic, meaning almost all of the server's capacity is dedicated to the upgrade. For most standard projects, the migration completes comfortably. However, because Staging environments often run on lower plan tiers with fewer dedicated resources, a large database or complex migration can still overload a Staging environment and cause it to fail, even without public traffic.
 - **Live Environments:** Real visitors are using the site when the upgrade starts. The environment is already handling normal production traffic, and the upgrade workload is added on top of that.
 
-Many projects complete this successfully. However, on larger or busier sites, the combined workload can overload the environment during the upgrade. Requests may start to queue, the migration may not complete cleanly, and the site can become unavailable.
+For many projects, this can still be completed successfully. But on larger, busier, or resource-constrained sites, the combined workload can push the environment beyond what it can comfortably process during the upgrade. Requests may start to queue, the migration may not complete cleanly, and the site can become unavailable.
 
-Consequently, an upgrade can pass on Staging but fail on Live. Even with identical content, the production environment faces entirely different conditions. The content is the same. The production conditions are not.
+This is why an upgrade can pass on Staging and still behave differently on Live, even with identical content. The production conditions and the underlying resource capacities are not.
 
 ![Server capacity on Staging versus Live during an upgrade](../../../.gitbook/assets/2-why-live-fails.png)
 
@@ -33,6 +33,8 @@ Consequently, an upgrade can pass on Staging but fail on Live. Even with identic
 Before upgrading Live, create an exact, already-upgraded copy on Staging. Ensure this copy includes both the database and your Azure Blob Storage media. This gives you a working reference environment on the new version before you touch Live.
 
 For many projects, Staging is mainly a validation and recovery safety net. This lets you confirm the upgraded site runs safely with Live content. It also gives you a known-good reference point if the Live upgrade encounters delays.
+
+Follow the instructions in the [Building the Copy](#building-the-copy) section below.
 
 ![Visitor traffic routing to Live during the upgrade, with Staging as a fallback if downtime exceeds plan.](../../../.gitbook/assets/4-safety-net-during-upgrade.png)
 
@@ -83,7 +85,7 @@ This path grants direct control over the database migration. Your upgraded local
 
 - **Emergency Recovery:** If a Live upgrade fails and the site goes down, use this path for recovery:
 
-  1. Take the Live environment offline.
+  1. Take the Live environment offline. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you a ready to push code to the Live environment, else the git remote will be offline.
   2. Restore from a clean backup if the database was left half-migrated.
   3. Complete the migration from your machine, then restart Live.
 
@@ -92,10 +94,10 @@ This path grants direct control over the database migration. Your upgraded local
 #### Step-by-Step Local Upgrade Execution
 
 1. Take the Live environment offline. This prevents outside processes from writing to the database or booting mid-migration.
-2. Back up the Live database. If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state.
+2. Back up the Live database. If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state. For more information, see the [Restore Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database) article.
 3. Open the **SQL connection details** for the **Live** environment in the Cloud Portal and **allowlist your IP address**. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) and [Working with a Cloud database locally](../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md) articles.
-4. On your machine, check out the exact codebase and version that is deployed to Live, and point its connection string at the Live database. Ensure to set the [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) in the `appsettings.json` file.
-5. Start the project so the upgrade installer runs the migrations against the Live database and completes them.
+4. Check on your machine the exact codebase and version that is deployed to Live, and point its connection string at the Live database. Ensure to set the [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) in the `appsettings.json` file.
+5. Start the local project so the upgrade installer runs the migrations against the Live database and completes them.
 6. Restart the Live environment. It will boot on the new version, automatically rebuild local indexes and caches, and verify site health.
 
 {% hint style="info" %}
@@ -121,29 +123,40 @@ If a local upgrade is too slow due to extensive content, let Cloud handle the mi
 
 - **Billing Note:** Scaling up changes your hosting plan and billing, so review pricing before switching. Once Live is verified on the new version, scale the plan back down. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) article.
 
-## Pre-Upgrade Optimization & Verification
+## Execution Summary: From Pre-Upgrade to Go-Live
 
-### Reduce Migration Work Before the Upgrade
+Ensure you have followed these phases to execute your deployment cleanly:
 
-Some major upgrades take longer because they change database schemas. Before upgrading Live, review and remove any old or unnecessary data.
+### Phase 1: Pre-Upgrade Optimization (Before Code Push)
+
+Before pushing any upgrade code to Live, optimize your database to reduce migration work and ensure the upgrade completes faster:
 
 - Delete old content versions.
 - Clear recycle bins.
 - Remove unused media.
-- Check for other project-specific data that is no longer needed.
+- Check for and remove other unnecessary project-specific data.
 
 Reducing the volume of data helps the upgrade complete faster and more predictably. Only remove data that you are sure is no longer needed, and make sure you have a backup before doing any cleanup.
 
-### Run the Upgrade and Verify Live
+### Phase 2: Deployment & Verification (During the Window)
 
-1. With Staging ready and an approach chosen, push the major upgrade to Live following the [Major Upgrades](major-upgrades.md) guide.
-2. If it completes successfully, verify the site on the new version and you are done.
-3. If it stalls, complete it with [Local Upgrade Option](#approach-2-run-a-controlled-local-migration-local-upgrade-option).
-4. If Live is unavailable for longer than you can accept, use your prepared fallback approach (either a maintenance page or your upgraded Staging copy).
+With your optimal migration path chosen and your Staging safety net ready, execute the deployment:
+
+1. Push the major upgrade to Live following the [Major Upgrades](major-upgrades.md) guide.
+2. **If it completes successfully:** Verify the site on the new major version to finish the upgrade.
+3. **If it stalls or fails:** Immediately transition to the [Local Upgrade Option](#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the schema migration from your machine..
+4. **If downtime exceeds limits:** Route traffic to your prepared fallback option (a maintenance page or your pre-upgraded Staging copy).
 
 {% hint style="info" %}
 Plan a content freeze during the migration window so editor changes are not lost while the upgrade runs. If you used dedicated resources, review the project’s ongoing resource needs once Live is verified; if the additional capacity was only needed for the upgrade, scale the project back to its previous plan.
 {% endhint %}
+
+### Phase 3: Post-Upgrade Wrap-Up (After Go-Live)
+
+Once Live is verified as healthy on the new version:
+
+1. **Scale Down Resources:** If you temporarily moved to dedicated resources for the upgrade window, scale the project back to its previous plan to manage ongoing billing.
+2. **Lift the Freeze:** Safely open the environment back up to your content editors.
 
 ## Self-Service Checklist
 
