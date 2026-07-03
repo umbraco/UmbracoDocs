@@ -65,40 +65,34 @@ For business-critical sites, the safer approach is often a planned maintenance w
 
 ## Completing the Migration: Choosing Your Path
 
-With your safety net in place, determine whether the Live upgrade can run on your existing Cloud plan, or if the migration needs extra control.
+With your safety net in place, determine whether the Live upgrade can run on your existing Cloud plan, or if the migration needs extra control. To avoid surprises, plan your upgrade window carefully and choose the path that matches the size and business importance of your project. Review these three supported approaches to decide which path to take before proceeding to the deployment steps:
 
 ![Comparing the Local Upgrade Option and Cloud Dedicated Upgrade Option for completing a migration.](../../../.gitbook/assets/3-two-ways-to-complete-migration.png)
 
+- [Approach 1: Run the upgrade on the existing Cloud plan](#approach-1-run-the-upgrade-on-the-existing-cloud-plan): Best for projects where the upgrade has been thoroughly tested, the migration dataset is expected to be manageable, and a standard planned upgrade window is acceptable.
+- [Approach 2: Run a controlled local migration (Local Upgrade Option)](#approach-2-run-a-controlled-local-migration-local-upgrade-option): Best for large databases or scenarios where you want to execute the database migration entirely separate from the Live application startup, or when a Cloud-side migration does not complete as expected. It isolates the compute load to your local machine.
+- [Approach 3: Use dedicated resources for the upgrade window (Cloud Upgrade Option)](#approach-3-use-dedicated-resources-for-the-upgrade-window-cloud-upgrade-option): Best for highly business-critical or high-traffic projects with extensive content datasets where scaling up to temporary dedicated upgrade capacity ensures the migration completes quickly and safely within the Cloud region.
+
 ### Approach 1: Run the upgrade on the existing Cloud plan
 
-Many projects can complete the major upgrade on their existing plan. Best for projects where:
-
-- The upgrade has already been tested.
-- The migration is expected to be manageable.
-- A planned upgrade window is acceptable.
+Many projects can complete the major upgrade successfully on their existing plan. Proceed with the standard approach outlined in the [Execution Summary](#execution-summary-from-pre-upgrade-to-go-live) at the end of this guide.
 
 ### Approach 2: Run a controlled local migration (Local Upgrade Option)
 
 This path grants direct control over the database migration. Your upgraded local project runs on your own machine while connected directly to the Live database.
 
-- **Best for:** When you want to separate the database migration from the Live application startup, or when a Cloud-side migration does not complete as expected.
-
-- **Emergency Recovery:** If a Live upgrade fails and the site goes down, use this path for recovery:
-
-  1. Take the Live environment offline. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you a ready to push code to the Live environment, else the git remote will be offline.
-  2. Restore from a clean backup if the database was left half-migrated.
-  3. Complete the migration from your machine, then restart Live.
-
 ![Finishing the migration from your local machine.](../../../.gitbook/assets/1-finishing-migration-from-local-machine.png)
+
+**Emergency Recovery:** If a Live upgrade has already failed and the site goes down, this is also your recovery path. Follow the execution steps below, ensuring you take the environment offline and restore from your clean backup before starting the local migration.
 
 #### Step-by-Step Local Upgrade Execution
 
-1. Take the Live environment offline. This prevents outside processes from writing to the database or booting mid-migration.
-2. Back up the Live database. If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state. For more information, see the [Restore Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database) article.
-3. Open the **SQL connection details** for the **Live** environment in the Cloud Portal and **allowlist your IP address**. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) and [Working with a Cloud database locally](../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md) articles.
-4. Check on your machine the exact codebase and version that is deployed to Live, and point its connection string at the Live database. Ensure to set the [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) in the `appsettings.json` file.
-5. Start the local project so the upgrade installer runs the migrations against the Live database and completes them.
-6. Restart the Live environment. It will boot on the new version, automatically rebuild local indexes and caches, and verify site health.
+1. **Take the Live environment offline:** This prevents outside processes from writing to the database or booting mid-migration. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you a ready to push code to the Live environment, else the git remote will be offline.
+2. **Back up and verify the Live database:** If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state. For more information, see the [Restore Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database) article.
+3. **Allowlist your IP address:** Open the **SQL connection details** in the Cloud Portal for the **Live** environment in the Cloud Portal and **allowlist your IP address**. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) and [Working with a Cloud database locally](../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md) articles.
+4. **Configure your connection string:** Check on your machine the exact codebase and version that is currently deployed to Live, and point its connection string at the Live database. Ensure you set an appropriate [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) inside your `appsettings.json` file.
+5. **Run the migration:** Start your local project. The core upgrade installer will boot and run all schema migrations directly against the Live database until complete.
+6. **Bring Live back online:** Restart your Live environment. It will boot up cleanly on the new version, automatically rebuild its local indexes and caches, and verify overall site health.
 
 {% hint style="info" %}
 Examine indexes and the local content cache are not stored in the database. The Cloud server will rebuild them automatically when it restarts, regardless of where the database migration was run.
@@ -115,13 +109,13 @@ Examine indexes and the local content cache are not stored in the database. The 
 
 ### Approach 3: Use dedicated resources for the upgrade window (Cloud Upgrade Option)
 
-If a local upgrade is too slow due to extensive content, let Cloud handle the migration using temporary dedicated capacity.
+If a local upgrade is too slow due to extensive content, let Cloud handle the migration by temporarily upgrading your hosting capacity.
 
-- **Best for:** Large sites with a lot of content or high-traffic projects where in-region speed is worth the temporary cost. Local Upgrade Option remains available as a fallback.
+#### Execution Steps
 
-- **How to execute:** From the **Management** menu in the Cloud Portal, move your project onto dedicated resources for the upgrade window. The migration then runs from Cloud infrastructure close to the database, avoiding the round-trip latency of running it from your own machine.
-
-- **Billing Note:** Scaling up changes your hosting plan and billing, so review pricing before switching. Once Live is verified on the new version, scale the plan back down. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) article.
+1. **Scale Up Capacity:** Before pushing the upgrade, navigate to the **Management** menu in the Cloud Portal and move your project onto dedicated resources. Note: Moving to dedicated resources changes your plan and billing, so review pricing before switching. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) article.
+2. **Deploy the Code:** Push the major upgrade to Live. The migration will run natively inside the Cloud region infrastructure, eliminating internet round-trip latency. (If anything fails to complete, the [Local Upgrade Option](#approach-2-run-a-controlled-local-migration-local-upgrade-option) remains available as an immediate fallback).
+3. Scale Down Capacity: Once Live is fully verified on the new major version, navigate back to the **Management** menu and scale the plan back down to its original tier to resume normal billing.
 
 ## Execution Summary: From Pre-Upgrade to Go-Live
 
