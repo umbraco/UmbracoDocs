@@ -323,7 +323,7 @@ It is highly recommended to go through everything in your Cloud environment. Thi
 **Check Point for Large, Busy, or Business-Critical Sites**
 Have you finished upgrading your packages and testing your code changes locally? **Before you deploy these changes to your Live environment**, review the [Planning Major Upgrades Safely for Live Environments](planning-major-upgrades-safely-on-live.md) guide.
 
-That guide will help you set up a Staging safety net and choose the right resource strategy (for example, dedicated resources or a controlled local migration) to prevent database migration downtime on production. Once your strategy is selected, return here to execute your deployment.
+That guide will help you set up a Staging safety net and choose the right resource strategy to prevent database migration downtime on production. Once your strategy is selected, return here to execute your deployment.
 
 {% endhint %}
 

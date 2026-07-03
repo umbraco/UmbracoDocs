@@ -14,7 +14,7 @@ To avoid surprises, it is recommended to plan the upgrade window carefully. Choo
 {% hint style="warning" %}
 This guide focuses on running the upgrade safely on the Live environment. It does not replace the standard upgrade steps. 
 
-You should review this guide **after** you have already followed the standard [Major Upgrades](major-upgrades.md) guide to update your packages, the .NET version, and your custom code locally.
+You should review this guide **after** you have already followed the standard [Major Upgrades](major-upgrades.md) guide.
 
 Once your upgraded codebase is tested and ready on your machine, use this article to plan your production deployment strategy.
 {% endhint %}
