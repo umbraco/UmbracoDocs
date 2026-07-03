@@ -232,6 +232,7 @@
 * [Overview](frontend/README.md)
 * [Chat Controller](frontend/chat-controller.md)
 * [Speech-to-Text Controller](frontend/speech-to-text-controller.md)
+* [Image Generation Controller](frontend/image-generation-controller.md)
 * [Embeddings Controller](frontend/embeddings-controller.md)
 * [Tool Controller](frontend/tool-controller.md)
 * [Chat Repository](frontend/chat-repository.md)
