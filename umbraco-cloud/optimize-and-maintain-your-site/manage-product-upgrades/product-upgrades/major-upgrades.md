@@ -13,7 +13,7 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 
 **Breaking Changes**
 
-Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
+Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
 ## Before you start the upgrade
@@ -37,7 +37,7 @@ When upgrading from an LTS version, you must start by looking at the versions be
 Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are LTS.
 
 {% hint style="info" %}
-Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
+Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) handy to avoid any surprises.
 {% endhint %}
 
 #### Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)
@@ -70,7 +70,7 @@ Always perform the database upgrade locally first, verify that the backoffice lo
 
 Before proceeding, you must determine whether the .NET Framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
 
-Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
+Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
 
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Configuration** -> **Advanced**.
@@ -125,7 +125,7 @@ Delete the `<PackageReference>` entries for these packages.
 
 If the folder is empty after deleting the files, you can safely remove the entire `Licenses` folder as well.
 
-*   _\[Optional]_ If using Deploy and Forms on Umbraco Cloud:
+*  _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
 
     1. Locate and open the `appsettings.json` file (and any environment-specific variants).
     2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
@@ -318,6 +318,14 @@ Remove the same files from the left-most environment. This should be done from t
 6. Test that everything works with the upgrade on the Cloud environment.
 
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
+
+{% hint style="warning" %}
+**Check Point for Large, Busy, or Business-Critical Sites**
+Have you finished upgrading your packages and testing your code changes locally? **Before you deploy these changes to your Live environment**, review the [Planning Major Upgrades Safely for Live Environments](planning-major-upgrades-safely-on-live.md) guide.
+
+That guide will help you set up a Staging safety net and choose the right resource strategy to prevent database migration downtime on production. Once your strategy is selected, return here to execute your deployment.
+
+{% endhint %}
 
 ## Step 5: Deploy the upgrade
 

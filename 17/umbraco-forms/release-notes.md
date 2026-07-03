@@ -18,6 +18,12 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.4.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.5) (July 2nd 2026)
+* Fix upgrade failure when `DisableRecordIndexing` is set to `true`
+
+### 17.4.4 (July 1st 2026)
+* Analytics: Fix intermittent startup failure caused by the historical data backfill
+
 ### [17.4.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.3) (June 30th 2026)
 * Added translations
 * Form Design: Fix field layout overflow in multi-column fieldsets [#1682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1682)

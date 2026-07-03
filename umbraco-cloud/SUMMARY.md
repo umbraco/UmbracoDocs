@@ -112,6 +112,7 @@
   * [Product Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md)
     * [Product Dependencies](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/product-dependencies.md)
     * [Major Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades.md)
+      * [Planning Major Upgrades Safely for Live Environments](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/planning-major-upgrades-safely-on-live.md)
     * [Minor and Patch Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
     * [Version Specific Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/README.md)
       * [Migrate from Umbraco 8 to the latest version](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
@@ -126,6 +127,8 @@
 * [Optimize Performance](optimize-and-maintain-your-site/optimize-performance/README.md)
   * [CDN Caching and Optimizations](optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
   * [Migrate between regions](optimize-and-maintain-your-site/optimize-performance/migrate-between-regions.md)
+  * [Load Balancing](optimize-and-maintain-your-site/optimize-performance/load-balancing.md)
+  * [Cache Configuration](optimize-and-maintain-your-site/optimize-performance/cache-configuration.md)
 * [Monitor and Troubleshoot](optimize-and-maintain-your-site/monitor-and-troubleshoot/README.md)
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
@@ -165,6 +168,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [July 2026](release-notes/overview-2026/2026-07-releasenotes.md)
   * [June 2026](release-notes/overview-2026/2026-06-releasenotes.md)
   * [May 2026](release-notes/overview-2026/2026-05-releasenotes.md)
   * [April 2026](release-notes/overview-2026/2026-04-releasenotes.md)
