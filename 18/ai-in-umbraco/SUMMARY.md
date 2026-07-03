@@ -224,6 +224,8 @@
   * [Get Provider](management-api/providers/get.md)
 * [Embeddings](management-api/embeddings/README.md)
   * [Generate](management-api/embeddings/generate.md)
+* [Image Generation](management-api/image-generation/README.md)
+  * [Generate Images](management-api/image-generation/generate-image.md)
 
 ## Frontend
 
