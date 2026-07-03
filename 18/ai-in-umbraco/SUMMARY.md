@@ -146,6 +146,7 @@
   * [Chat Capability](extending/providers/chat-capability.md)
   * [Embedding Capability](extending/providers/embedding-capability.md)
   * [Speech-to-Text Capability](extending/providers/speech-to-text-capability.md)
+  * [Image Generation Capability](extending/providers/image-generation-capability.md)
 * [Middleware](extending/middleware/README.md)
   * [Chat Middleware](extending/middleware/chat-middleware.md)
   * [Embedding Middleware](extending/middleware/embedding-middleware.md)
