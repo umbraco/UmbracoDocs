@@ -114,7 +114,7 @@ public class MyProvider : AIProviderBase<MyProviderSettings>
 
 ## Exposing a provider-native client (optional)
 
-To let consumers reach your provider's native client for masked outpainting (Tier 3), return an `IImageGenerator` that overrides `GetService` to resolve that client (as the OpenAI provider does with `OpenAIClient`). Wrap the M.E.AI adapter in a `DelegatingImageGenerator` and return your native client for its type in `GetService`.
+To let consumers reach your provider's native client for masked outpainting (Tier 3), return an `IImageGenerator` that overrides `GetService` to resolve that client. The OpenAI provider does this with `OpenAIClient`: wrap the `Microsoft.Extensions.AI` adapter in a `DelegatingImageGenerator` and return your native client for its type in `GetService`.
 
 ## Related
 

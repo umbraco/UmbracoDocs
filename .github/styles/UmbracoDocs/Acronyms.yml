@@ -50,6 +50,7 @@ exceptions:
   - GDPR     # General Data Protection Regulation
   - GET      # HTTP GET method
   - GIF      # Graphics Interchange Format
+  - GPT      # Generative Pre-trained Transformer
   - GUI      # Graphical user interface
   - GUID     # Globally Unique Identifier
   - HAL      # Hypertext Application Language

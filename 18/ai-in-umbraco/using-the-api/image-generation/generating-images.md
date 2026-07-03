@@ -72,7 +72,7 @@ Profile-level defaults (size, quality, style, output media type) come from `AIIm
 
 ## Validating models and sizes up front
 
-Different models support different sizes. Call `GetSupportedModelsAsync` to read the resolved model and its constraints before generating, so you can fail early with a clear message rather than getting a wrong-ratio result:
+Different models support different sizes. Call `GetSupportedModelsAsync` to read the resolved model and its constraints before generating. This lets you fail early with a clear message instead of getting a wrong-ratio result:
 
 {% code title="Validate.cs" %}
 

@@ -15,9 +15,9 @@ The Image Generation API produces images from text prompts and edits existing im
 
 Image Generation is gated behind a feature flag. Until it is enabled:
 
-- the capability is hidden from discovery and is **not selectable** in the profile editor,
-- profiles using it cannot be created, and
-- the Management API endpoint returns **404**.
+- The capability is hidden from discovery and is **not selectable** in the profile editor,
+- Profiles using it cannot be created, and
+- The Management API endpoint returns **404**.
 
 Enable it in `appsettings.json`:
 
