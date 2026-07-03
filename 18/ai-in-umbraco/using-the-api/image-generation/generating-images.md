@@ -51,6 +51,7 @@ Each item in `response.Contents` is a `DataContent` (inline bytes) or `UriConten
 
 ```csharp
 #pragma warning disable MEAI001 // ImageGenerationOptions is experimental in M.E.AI
+#pragma warning disable UMBRACOAI_IMAGEGEN
 
 var response = await _imageGenerationService.GenerateImagesAsync(
     img => img
@@ -79,7 +80,7 @@ Different models support different sizes. Call `GetSupportedModelsAsync` to read
 #pragma warning disable UMBRACOAI_IMAGEGEN
 
 var supported = await _imageGenerationService.GetSupportedModelsAsync(
-    img => img.WithAlias("hero-banner").WithProfile("marketing-images"));
+    img => img.WithProfile("marketing-images"));
 
 var boundModel = supported.Models.First(m => m.Model.ModelId == supported.ModelId);
 

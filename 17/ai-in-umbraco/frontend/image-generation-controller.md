@@ -75,7 +75,7 @@ interface UaiImageGenerationOptions {
     count?: number;
     /** Image size as "{width}x{height}" (e.g. "1024x1024"). */
     size?: string;
-    /** Response format: "url", "data", or "hosted". */
+    /** Response format: "url" (URI to the image), "data" (inline base64), or "hosted" (hosted resource identifier). */
     responseFormat?: string;
     /** Original images to edit (maskless edit). */
     originalImages?: UaiImageInput[];

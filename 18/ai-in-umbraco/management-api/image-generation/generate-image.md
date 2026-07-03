@@ -38,7 +38,7 @@ POST /umbraco/ai/management/api/v1/image-generation/generate
 | `profileIdOrAlias` | string | No | Profile ID or alias. Uses the default image-generation profile if omitted. |
 | `count` | int | No | Number of images to generate. |
 | `size` | string | No | Image size as `"{width}x{height}"` (for example, `"1024x1024"`). |
-| `responseFormat` | string | No | `"url"`, `"data"`, or `"hosted"`. |
+| `responseFormat` | string | No | How images are returned: `"url"` (a URI to the image), `"data"` (inline base64 data), or `"hosted"` (a hosted resource identifier to retrieve the image later). |
 | `originalImages` | array | No | Base64 images to edit (maskless edit). Each: `{ "data", "mediaType" }`. Masked outpainting is not exposed over REST. |
 
 ## Response

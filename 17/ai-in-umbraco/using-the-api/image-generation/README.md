@@ -102,7 +102,7 @@ All methods accept an `Action<AIImageGenerationBuilder>` to configure the reques
 
 | Method | Description |
 | --- | --- |
-| `.WithAlias(string alias)` | **Required.** Sets an alias for auditing and telemetry. |
+| `.WithAlias(string alias)` | Sets an alias for auditing and telemetry. Required for generation calls; optional for `GetSupportedModelsAsync` (a read-only metadata lookup that uses only the profile). |
 | `.WithProfile(Guid profileId)` | Selects a profile by ID. Uses the default image-generation profile if omitted. |
 | `.WithProfile(string profileAlias)` | Selects a profile by alias. |
 | `.WithImageGenerationOptions(ImageGenerationOptions options)` | Overrides profile defaults (size, count, response format). |
