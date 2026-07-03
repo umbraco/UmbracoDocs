@@ -16,10 +16,6 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
-{% hint style="warning" %}
-Planning to upgrade a busy or business-critical Live environment? To prevent downtime or performance issues during database migrations, review the [Choosing the Upgrade Path for Large Sites](major-upgrades-for-large-sites.md) article. This article helps you choose your deployment strategy, and then continue with the upgrade steps in this article.
-{% endhint %}
-
 ## Before you start the upgrade
 
 Before upgrading your Umbraco Cloud project to the latest major version, you must consider the version your project is already on. This will impact the upgrade flow you will be following.
@@ -129,7 +125,7 @@ Delete the `<PackageReference>` entries for these packages.
 
 If the folder is empty after deleting the files, you can safely remove the entire `Licenses` folder as well.
 
-*   _\[Optional]_ If using Deploy and Forms on Umbraco Cloud:
+*  _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
 
     1. Locate and open the `appsettings.json` file (and any environment-specific variants).
     2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
@@ -322,6 +318,14 @@ Remove the same files from the left-most environment. This should be done from t
 6. Test that everything works with the upgrade on the Cloud environment.
 
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
+
+{% hint style="warning" %}
+**Check Point for Large, Busy, or Business-Critical Sites**
+Have you finished upgrading your packages and testing your code changes locally? **Before you deploy these changes to your Live environment**, review the [Planning Major Upgrades Safely for Live Environments](planning-major-upgrades-safely-on-live.md) guide.
+
+That guide will help you set up a Staging safety net and choose the right resource strategy to prevent database migration downtime on production. Once your strategy is selected, return here to execute your deployment.
+
+{% endhint %}
 
 ## Step 5: Deploy the upgrade
 
