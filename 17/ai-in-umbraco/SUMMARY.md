@@ -100,6 +100,9 @@
   * [Generating Embeddings](using-the-api/embeddings/generating-embeddings.md)
   * [Batch Embeddings](using-the-api/embeddings/batch-embeddings.md)
 * [Speech-to-Text](using-the-api/speech-to-text.md)
+* [Image Generation](using-the-api/image-generation/README.md)
+  * [Generating Images](using-the-api/image-generation/generating-images.md)
+  * [Editing Images](using-the-api/image-generation/editing-images.md)
 * [Tools](using-the-api/tools/README.md)
   * [Using Tools](using-the-api/tools/using-tools.md)
 
