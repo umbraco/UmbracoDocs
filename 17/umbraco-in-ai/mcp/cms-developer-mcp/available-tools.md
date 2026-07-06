@@ -58,13 +58,17 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-references-data-type` — Get references to a Data Type
 - `is-used-data-type` — Check if a Data Type is in use
 - `get-data-type` — Get a specific Data Type by ID
+- `get-data-type-batch` — Get multiple Data Types in a single request
 - `get-data-type-configuration` — Get Data Type configuration
-- `get-data-type-property-editor-template` — Get property editor template
+- `get-data-type-schema` — Get the schema for a Data Type
+- `get-data-type-schemas` — Get schemas for multiple Data Types
 - `get-data-types-by-id-array` — Get Data Types by IDs
 - `get-data-type-root` — Get root level Data Types
 - `get-data-type-children` — Get child Data Types
 - `get-data-type-siblings` — Get sibling Data Types
 - `get-data-type-ancestors` — Get ancestor Data Types
+- `get-data-type-ancestors-batch` — Get ancestor Data Types for multiple items in a single request
+- `get-data-type-tree-search` — Search the Data Type tree
 - `get-all-data-types` — Get all Data Types
 - `delete-data-type` — Delete a Data Type
 - `create-data-type` — Create a new Data Type
@@ -134,7 +138,8 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-document-children` — Get child documents
 - `get-document-siblings` — Get sibling documents
 - `get-document-ancestors` — Get document ancestors
-- `get-document-property-value-template` — Get document property value template
+- `get-document-ancestors-batch` — Get document ancestors for multiple items in a single request
+- `get-document-type-schema` — Get the schema of a document's Document Type
 - `get-document-available-segment-options` — Get available segment options for a document
 - `get-item-document` — Get document item information
 - `delete-document-recycle-bin-item` — Delete a specific item from the recycle bin
@@ -169,6 +174,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 ## Document Type (`document-type`)
 
 - `get-document-type-by-id` — Get a Document Type by ID
+- `get-document-type-batch` — Get multiple Document Types in a single request
 - `get-document-type-configuration` — Get Document Type configuration
 - `get-document-type-blueprint` — Get Document Type blueprint
 - `get-document-types-by-id-array` — Get Document Types by IDs
@@ -183,6 +189,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-icons` — Get available icons
 - `get-document-type-allowed-at-root` — Get Document Types allowed at root
 - `get-document-type-allowed-children` — Get allowed child types
+- `get-document-type-allowed-parents` — Get Document Types allowed as parents
 - `get-all-document-types` — Get all Document Types
 - `search-document-type` — Search for Document Types
 - `validate-document-type` — Validate a Document Type update
@@ -193,8 +200,10 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `update-document-type-folder` — Update folder details
 - `get-document-type-root` — Get root Document Types
 - `get-document-type-ancestors` — Get Document Type ancestors
+- `get-document-type-ancestors-batch` — Get Document Type ancestors for multiple items in a single request
 - `get-document-type-children` — Get Document Type children
 - `get-document-type-siblings` — Get sibling Document Types
+- `get-document-type-tree-search` — Search the Document Type tree
 
 ## Health (`health`)
 
@@ -245,6 +254,8 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 
 - `get-media-by-id` — Get media by ID
 - `get-media-ancestors` — Get media ancestors
+- `get-media-ancestors-batch` — Get media ancestors for multiple items in a single request
+- `get-media-type-schema` — Get the schema of a media item's Media Type
 - `get-media-children` — Get media children
 - `get-media-root` — Get root media items
 - `create-media` — Create new media
@@ -288,9 +299,11 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `update-media-type` — Update a media type
 - `move-media-type` — Move a media type
 - `delete-media-type` — Delete a media type
+- `get-media-type-batch` — Get multiple media types in a single request
 - `get-media-type-root` — Get root media types
 - `get-media-type-children` — Get child media types
 - `get-media-type-ancestors` — Get ancestor media types
+- `get-media-type-ancestors-batch` — Get ancestor media types for multiple items in a single request
 - `get-media-type-siblings` — Get sibling media types
 - `get-media-type-folders` — Get media type folders
 - `get-item-media-type` — Get media type item information
@@ -300,11 +313,14 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-allowed-media-type` — Get allowed media types
 - `get-media-type-allowed-at-root` — Get types allowed at root
 - `get-media-type-allowed-children` — Get allowed child types
+- `get-media-type-allowed-parents` — Get Media Types allowed as parents
 - `get-media-type-composition-references` — Get composition references  
 
 ## Member (`member`)
 
 - `get-member` — Get member by ID
+- `get-member-ancestors-batch` — Get member ancestors for multiple items in a single request
+- `get-member-type-schema` — Get the schema of a member's Member Type
 - `create-member` — Create a new member
 - `validate-member` — Validate member creation data
 - `delete-member` — Delete a member
@@ -331,6 +347,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 ## Member Type (`member-type`)
 
 - `get-member-type` — Get member types with pagination
+- `get-member-type-batch` — Get multiple member types in a single request
 - `get-member-type-by-id` — Get member type by ID
 - `create-member-type` — Create a new member type
 - `get-member-types-by-id-array` — Get member types by IDs  
@@ -341,6 +358,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-member-type-composition-references` — Get composition references
 - `get-member-type-configuration` — Get member type configuration
 - `get-member-type-root` — Get root member types
+- `get-member-type-ancestors-batch` — Get member type ancestors for multiple items in a single request
 - `get-member-type-siblings` — Get sibling member types
 - `search-member-type-items` — Search for member type items  
 
@@ -456,6 +474,7 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `execute-template-query` — Execute template queries and return generated LINQ code
 - `get-template-query-settings` — Get schema for template queries (document types, properties, operators)
 - `get-template-ancestors` — Get ancestors of a template by ID
+- `get-template-ancestors-batch` — Get template ancestors for multiple items in a single request
 - `get-template-children` — Get child templates or template folders by parent ID
 - `get-template-siblings` — Get sibling templates
 - `get-template-root` — Get root template items
@@ -482,9 +501,11 @@ The names shown in parentheses, for example, `(document)` or `(data-type)` refer
 - `get-user-current-permissions-document` — Get current user document permissions  
 - `get-user-current-permissions-media` — Get current user media permissions  
 - `get-user-by-id-calculate-start-nodes` — Calculate start nodes for a user  
+- `update-user-current-profile` — Update the current user's profile  
 - `upload-user-avatar-by-id` — Upload avatar for a user  
 - `upload-user-current-avatar` — Upload avatar for current user  
 - `delete-user-avatar-by-id` — Delete user avatar  
+- `delete-user-current-avatar` — Delete the current user's avatar  
 
 ## User Data (`user-data`)
 
