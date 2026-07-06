@@ -1,5 +1,5 @@
 ---
-description: This guide will help you build automations with no coding required. Only drag, drop, and connect.
+description: Build powerful backoffice automations with no coding required, only drag, drop, and connect.
 ---
 
 # Getting Started for Editors
@@ -17,198 +17,143 @@ If you cannot access the Workspace or see your team's external services, ask you
 
 ## Key Concepts
 
-- Trigger: The event that starts an automation. Examples: `When content is published`, `When a form is submitted`, `At a specific time each day`.
-- Action: What happens after the trigger. Examples: `Send an email`, `Post a message to Slack`, `Publish another piece of content`.
-- Automation: A visual workflow combining a single trigger and a sequence of actions.
-- Bindings: Placeholders using `${ ... }` syntax that pass dynamic information from a trigger or previous action step down to a later action. Example: Pulling a customer's name out of a form to personalize an email.
+- **Trigger:** The specific event that starts an automation. Examples: `When content is published`, `When a form is submitted`, `At a specific time each day`.
+- **Action:** What happens automatically after a trigger executes Examples: `Send an email`, `Post a message to Slack`, `Publish another piece of content`.
+- **Logic Block:** Structural tools like `If`, `For Each` nodes that allow your workflow to branch down different paths based on rules you define.
+- **Bindings:** Dynamic placeholders using `${ ... }` syntax. They pass live data from a trigger (like a customer's name or form entry) down to later action steps in the workflow.
 
 ## Accessing Automation in the Backoffice
 
 1. Log into the Umbraco Backoffice.
-2. Locate **Automation** in the top bar.
+2. Locate and click **Automation** in the top navigation bar.
 
 ![Automation section in the Backoffice](../.gitbook/assets/automate-toolbar.png).
 
 ## Build Your First Automation
 
-Start with the [Create Your First Automation](../getting-started/first-automation.md) article, which walks you through:
+If you are brand new to the product, start with the [Create Your First Automation](../getting-started/first-automation.md) article, which walks you through:
 
 - Creating your first automation
 - Adding triggers and actions
 - Publishing and testing
 
-Once you're comfortable with the basics, continue to explore couple of workflows you can build.
+## Inspirational Blueprints (Real-World Use Cases)
 
-## Example Workflows
+The value of Umbraco Automate lies in its flexibility. The scenarios listed below are not the only workflows you can build, nor are you limited to these specific configurations. Think of them as inspirational blueprints. They show how you can mix and match basic triggers with advanced logic blocks, automated AI actions to handle your day-to-day operations.
 
-Now that you understand the basics, here are few common automations you can build:
+### Example 1: The Automated AI Multi-Language Translator
 
-### Workflow 1: Log Important Events
+This workflow uses an AI Agent to automatically translate new press releases into multiple languages, eliminating hours of manual copy-pasting.
 
-This automation creates a log entry every time something happens, useful for auditing and debugging.
-
-#### Why use this?
-
-- Track what happened and when.
-- Helpful for debugging if something goes wrong.
-- Creates an audit trail for compliance
-- Simplest automation to set up
-
-#### What you'll see
-
-- Trigger: `Content Published`
-- Action: `Log Message`
+- Trigger: `Content Published` (Filtered for the "Press Release" Document Type)
+- Action 1: `Run AI Agent` (Requires the `Umbraco.AI.Automate` add-on package)
+- Action 2: `Update Content Property` (Core)
 
 #### Setup
 
-1. Go to **Automation** in the Umbraco backoffice.
-2. Create a new automation called *Log Content Changes*.
-3. Click **Add trigger** and select **Content Published**.
-4. Click **+** to add an action and select **Log Message**.
-5. Enter a **Message**. For example: *Content published by [user]*.
+1. Click the empty trigger slot on the canvas, choose `Content Published` trigger from the picker. Filter it to your "Press Release" Document Type.
+2. Click the **+** button below the trigger and add a `Run AI` Agent action block. In its prompt text box, use a binding to pass your text: `Translate the following text into professional Spanish: ${trigger.bodyText}.`
+3. Click the next **+** button and attach an `Update Content Property` action step. Map the output variable from the AI step directly into your target language variant fields to save it instantly as a localized draft.
 
-![Example of a Log Message action configured.](../.gitbook/assets/workflow-log-event.png)
+### Example 2: VIP Lead Routing and Dynamic CRM Injection
 
-6. Click **Save**.
-7. Click **Save and Publish**.
+This workflow routes high-value form submissions to Slack for instant executive alerts, while sending standard inquiries to a default helpdesk.
+
+- Trigger: `Form Submitted` (Requires the `Umbraco.Forms.Automate` add-on package)
+- Logic Block: `If` (Control Flow)
+- Branch A (True): `Send Slack Message` (Requires the `Umbraco.Automate.Slack` add-on package)
+- Branch B (False): `Send Email` (Core)
+
+#### Setup
+
+1. Click the trigger slot, select `Form Submitted` and pick your "Request a Quote" form.
+2. Click the **+** button below the trigger and add an **If** control flow node.
+3. Add a condition rule to evaluate your form's budget field using a binding: `${trigger.estimatedBudget} is greater than 10000`.
+4. On the **True** Branch, add a `Send Slack Message` action targeting your `#vip-sales-alert-channel`. Type `${` to use autocomplete bindings to pull in the information.
+5. On the **False** Branch, add a standard `Send Email` action to drop the submission info into your default general helpdesk queue.
+
+### Example 3: Bulk Content Expiry & Archiving Audit
+
+This workflow operates entirely in the background while your team sleeps. It runs on a fixed weekly schedule, checks for expired marketing campaign pages, automatically unpublishes them, and moves them to an archive vault.
+
+- Trigger: `Scheduled Trigger` (Core)
+- Action: `Find Content` (Content)
+- Logic Block: `For Each` (Control Flow)
+- Action: `Unpublish Content` (Core)
+
+#### Setup
+
+1. Add a `Scheduled Trigger` to the top of your canvas. Configure it to run weekly by inputting a standard **Cron Expression** (for example, `0 6 * * 1` to run every Monday morning at 6:00 AM).
+2. Click the **(+)** button below the trigger block and select **Find Content** under the **Content** section.
+3. Drag a `For Each` control flow block beneath the query. This creates a visual loop block on your canvas that cycles through the items found in the previous step.
+4. Drag or add an **Unpublish Content** action block inside that visual loop container. This will safely turn off the live view for those expired pages one by one automatically.
+
+### Example 4: The Low Stock Slack Alert & Supplier Reorder
+
+This workflow monitors your storefront for inventory shifts, instantly alerting team members or suppliers if stock falls below a safe threshold.
+
+- Trigger: `Stock Changed` (Requires the `Umbraco.Commerce.Automate` add-on package)
+- Logic Block: `If` (Control Flow)
+- Branch A (True): `Send Slack Message` (Requires the `Umbraco.Automate.Slack` add-on package)
+
+#### Setup
+
+1. Add a `Stock Changed` from the picker and select your target store instance.
+2. Click the **(+)** button below the trigger and add an **If** logic block.
+3. In the condition settings panel, evaluate the stock output property: `${trigger.newStockLevel} is less than 5`.
+4. On the **True** branch, add a `Send Slack Message` action targeting your internal `#inventory-alerts` or supplier tracking channel. Use automated bindings to pull the item's info dynamically: `Critical low stock alert: ${trigger.productName} is down to ${trigger.newStockLevel} items left! Please evaluate a reorder`.
 
 {% hint style="info" %}
-The logged message appears in Umbraco's application logs. To view it, go to **Settings** → **Log Viewer** in the backoffice. You can also see a summary in the Automation **Runs** history showing when the action completed.
+Umbraco Commerce supports SQLite for testing, but it is not recommended to use it in a live environment. For more information, see the [Configure SQLite support article in the Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/how-to-guides/configure-sqlite-support).
 {% endhint %}
 
-#### Test it
+### Example 5: Personalization Booster & Account Management Flag
 
-1. Publish any content.
-2. Go to **Automation** > **Runs** to see the log entry.
+This workflow bridges customer behavioral analytics into direct sales action. When a visitor shifts to a target audience segment based on their browsing behavior, Automate instantly alerts their account executive.
 
-You'll see a list of every time it ran. Click on a run to expand it and see the logged message
+- Trigger: `Persona Scored` (Requires the `Umbraco.Engage.Automate` add-on package)
+- Logic Block: `If` (Control Flow)
+- Branch A (True): `Send Email` (Core)
 
-![Example of a Logged Message.](../.gitbook/assets/log-message.png)
+### Set up
 
-### Workflow 2: Notify Editors when content is Published
+1. Select the `Persona Scored` trigger from your canvas picker, which listens directly to the real-time behavioral telemetry running inside your CMS tracking layers.
+2. Connect an `If` logic block underneath the trigger node.
+3. Configure the rule condition to evaluate the primary audience alignment target: `${trigger.highestPersonaAlias} equals enterprise-buyer`.
+4. On the True branch, add a standard `Send Email` action block directed straight to your B2B account management team, passing along the visitor's anonymized tracking ID or form lookup payload so they can customize their next outreach strategy.
 
-When a content node is published, backoffice editors see an instant notification (toast message) alerting them that the content is live.
-
-#### Why use this?
-
-- Keep your team informed in real-time when important content goes live.
-- Everyone editing in Umbraco gets notified immediately.
-
-#### What you'll see
-
-- Trigger: `Content Published`
-- Action: `Notify Editor`
-
-#### Setup
-
-1. Go to **Automation** in the Umbraco backoffice.
-2. Create a new automation called *Notify Editor on Publish*.
-3. Click **Add trigger** and select **Content Published**.
-4. Click **+** to add an action and select **Notify Editor**.
-5. Enter a Content ID in the **Content Key** field.
-
-To find your content's ID, open the content item in the editor. The ID appears in the right panel under **Info** Workspace View.
-
-6. Enter a **Title**. For example: *Blog post published*.
-7. Enter a **Message**. For example: *A new blog post has been published and is now live on the site.*
-8. Select the **Severity** of the notification from the dropdown.
-
-![Example of a Notify Editor action configured.](../.gitbook/assets/workflow-notify-editor.png)
-
-6. Click **Save**.
-7. Click **Save and Publish**.
-
-#### Test it
-
-Publish any content. You'll see a notification appear in the backoffice. Only editors who are currently logged into the backoffice will see the notification.
-
-![Example of a Notify Editor automation in action](../.gitbook/assets/editor-notification.png)
-
-### Workflow 3: Find Content & Request Approval
-
-When you click "Run Now," the automation searches for content and then pauses to wait for someone to approve before continuing.
-
-#### Why use this?
-
-- Ensures important changes get reviewed before they happen
-- Creates an audit trail (you can see who approved and when)
-- Reduces mistakes on critical content
-
-#### What you'll see
-
-- Trigger: `Manual Trigger`
-- Action: `Find Content`
-- Action: `Request Approval`
-
-#### Setup
-
-1. Go to **Automation** in the Umbraco backoffice.
-2. Create a new automation called *Find Content & Request Approval*.
-3. Click **Add trigger** and select **Manual Trigger**.
-4. Click **+** to add an action and select **Find Content**.
-5. In the **Find Content** action, enter:
-
-    - **Name**. For example, "blog" to find all content with "blog" in the name.
-    - Optionally filter by **Content Type**.
-
-![Example of Find Content action configured.](../.gitbook/assets/find-content-settings.png)
-
-6. Click **Save**.
-7. Click **+** to add an action and select **Request Approval**.
-8. Enter a **Prompt**. For example: *Please review the content found and approve to continue.*.
-
-![Example of Request Approval action configured.](../.gitbook/assets/workflow-request-approval.png)
-
-9. Click **Save**.
-10. Click **Save and Publish**.
-
-#### Test it
-
-1. Click **Run Now** next to the automation name.
-
-![Run now option to trigger automation manually](../.gitbook/assets/run-now-option.png)
-
-The automation finds content and pauses at the approval step.
-
-2. In the **Runs** Workspace View, you'll see "WaitingForInput" status.
-
-![Waiting for Approval stage](../.gitbook/assets/waiting-for-approval.png)
-
-3. In the **Approvals** Workspace View, an approver can approve/reject to complete the workflow.
-
-![Approval View](../.gitbook/assets/approve-workflow.png)
-
-If no one approves within the timeout period (if set), the automation stops waiting. You can see pending approvals in the **Approvals** workspace view.
+{% hint style="info" %}
+Umbraco Engage does not support SQL CE and SQLite. For more information, see the [System Requirements in the Engage Documentation](https://docs.umbraco.com/umbraco-engage/installation/system-requirements).
+{% endhint %}
 
 ## Common Questions & Troubleshooting
 
-### How do I stop an automation?
+### How do I temporarily pause an automation?
 
-To disable a single automation:
+To stop an automation from running without deleting it:
 
-1. Go to the automation.
-2. Click **Unpublish**.
+1. Open your target workflow canvas.
+2. Click **Unpublish** in the footer menu.
+3. The automation status will change to *Draft* and will no longer listen for live events.
 
-It will no longer run automatically.
+### How do I edit a published automation?
 
-### What if I made a mistake?
+1. Open your workflow workspace.
+2. Alter the trigger parameters, conditions, or action configurations directly on the canvas grid.
+3. Click **Save and Publish** to instantly activate the changes.
 
-To edit a published automation:
+### Can I undo a mistake?
 
-1. Go to the automation.
-2. Edit the trigger or actions set up.
-3. Click **Save and Publish**.
+Yes. Umbraco Automate features native version control tracking. If a change breaks your workflow layout:
 
-To revert to a previous version:
-
-1. Go to the **Info** Workspace View.
+1. Navigate to the **Info** dashboard tab on the right side of the screen.
 2. Select **Compare**.
-3. Click **Rollback to version x**.
+3. Locate a successful prior timestamp and click **Rollback to version x**.
 
 ## Next Steps
 
-- Try building an automation from the three workflows above.
-- Check the Runs history to make sure it worked.
-- Explore other [Triggers](../concepts/triggers.md) and [Actions](../concepts/actions.md).
+- Choose one of the blueprints above and map it out on a test canvas.
+- Review your automation activity by clicking the **Runs** history dashboard tab.
+- Explore our comprehensive guides on available [Triggers](../concepts/triggers.md) and [Actions](../concepts/actions.md).
 
-Happy automating!
+Happy Automating!
