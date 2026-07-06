@@ -15,7 +15,7 @@ Add a reference to `umbracoEngage.analytics.ga4-bridge.min.js`:
 ```
 
 {% hint style="info" %}
-The following Google Analytics bridging script loading types are currently not supported: "async" or "defer".
+Includes support for "async" and "defer" keywords.
 {% endhint %}
 
 ### Excluded events

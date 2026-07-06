@@ -542,6 +542,7 @@
     * [File and Folder Permissions](run-in-production/infrastructure-and-ops/server-setup/permissions.md)
     * [Running Umbraco in Docker](run-in-production/infrastructure-and-ops/server-setup/running-umbraco-in-docker.md)
     * [Umbraco in Load Balanced Environments](run-in-production/infrastructure-and-ops/server-setup/load-balancing/README.md)
+      * [Common Load-Balancing Pitfalls & Anti-Patterns](run-in-production/infrastructure-and-ops/server-setup/load-balancing/common-load-balancing-pitfalls.md)
       * [Load Balancing Azure Web Apps](run-in-production/infrastructure-and-ops/server-setup/load-balancing/azure-web-apps.md)
       * [Load Balancing the Backoffice](run-in-production/infrastructure-and-ops/server-setup/load-balancing/load-balancing-backoffice.md)
       * [SignalR in Load Balanced Environments](run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md)

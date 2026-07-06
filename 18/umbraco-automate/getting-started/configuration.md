@@ -41,6 +41,10 @@ If you cannot edit the connection string (for example on Umbraco Cloud), tell Au
 ```
 {% endcode %}
 
+{% hint style="info" %}
+On Umbraco Cloud you will not find a `umbracoDbDSN` entry in `appsettings.json`. Umbraco generates the CMS connection string at runtime. Set `UseNamedConnectionString` to `umbracoDbDSN` and Automate resolves the generated connection string by name.
+{% endhint %}
+
 {% hint style="warning" %}
 Sharing the Umbraco database adds outbox, run history, and engine traffic to that database. Use a dedicated database where possible.
 {% endhint %}
