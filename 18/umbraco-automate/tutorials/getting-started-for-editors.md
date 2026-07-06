@@ -19,8 +19,8 @@ If you cannot access the Workspace or see your team's external services, ask you
 
 - **Trigger:** The specific event that starts an automation. Examples: `When content is published`, `When a form is submitted`, `At a specific time each day`.
 - **Action:** What happens automatically after a trigger executes Examples: `Send an email`, `Post a message to Slack`, `Publish another piece of content`.
-- **Logic Block:** Structural tools like `If`, `For Each` nodes that allow your workflow to branch down different paths based on rules you define.
-- **Bindings:** Dynamic placeholders using `${ ... }` syntax. They pass live data from a trigger (like a customer's name or form entry) down to later action steps in the workflow.
+- **Logic Block:** Structural tools like `If`, `For Each` nodes that allow your automation to branch down different paths based on rules you define.
+- **Bindings:** Dynamic placeholders using `${ ... }` syntax. They pass live data from a trigger (like a customer's name or form entry) down to later action steps in the automation.
 
 ## Accessing Automation in the Backoffice
 
@@ -39,11 +39,11 @@ If you are brand new to the product, start with the [Create Your First Automatio
 
 ## Inspirational Blueprints (Real-World Use Cases)
 
-The value of Umbraco Automate lies in its flexibility. The scenarios listed below are not the only workflows you can build, nor are you limited to these specific configurations. Think of them as inspirational blueprints. They show how you can mix and match basic triggers with advanced logic blocks, automated AI actions to handle your day-to-day operations.
+The value of Umbraco Automate lies in its flexibility. The scenarios listed below are not the only automations you can build, nor are you limited to these specific configurations. Think of them as inspirational blueprints. They show how you can mix and match basic triggers with advanced logic blocks, automated AI actions to handle your day-to-day operations.
 
 ### Example 1: The Automated AI Multi-Language Translator
 
-This workflow uses an AI Agent to automatically translate new press releases into multiple languages, eliminating hours of manual copy-pasting.
+This automation uses an AI Agent to automatically translate new press releases into multiple languages, eliminating hours of manual copy-pasting.
 
 - Trigger: `Content Published` (Filtered for the "Press Release" Document Type)
 - Action 1: `Run AI Agent` (Requires the `Umbraco.AI.Automate` add-on package)
@@ -57,7 +57,7 @@ This workflow uses an AI Agent to automatically translate new press releases int
 
 ### Example 2: VIP Lead Routing and Dynamic CRM Injection
 
-This workflow routes high-value form submissions to Slack for instant executive alerts, while sending standard inquiries to a default helpdesk.
+This automation routes high-value form submissions to Slack for instant executive alerts, while sending standard inquiries to a default helpdesk.
 
 - Trigger: `Form Submitted` (Requires the `Umbraco.Forms.Automate` add-on package)
 - Logic Block: `If` (Control Flow)
@@ -74,7 +74,7 @@ This workflow routes high-value form submissions to Slack for instant executive 
 
 ### Example 3: Bulk Content Expiry & Archiving Audit
 
-This workflow operates entirely in the background while your team sleeps. It runs on a fixed weekly schedule, checks for expired marketing campaign pages, automatically unpublishes them, and moves them to an archive vault.
+This automation operates entirely in the background while your team sleeps. It runs on a fixed weekly schedule, checks for expired marketing campaign pages, automatically unpublishes them, and moves them to an archive vault.
 
 - Trigger: `Scheduled Trigger` (Core)
 - Action: `Find Content` (Content)
@@ -90,7 +90,7 @@ This workflow operates entirely in the background while your team sleeps. It run
 
 ### Example 4: The Low Stock Slack Alert & Supplier Reorder
 
-This workflow monitors your storefront for inventory shifts, instantly alerting team members or suppliers if stock falls below a safe threshold.
+This automation monitors your storefront for inventory shifts, instantly alerting team members or suppliers if stock falls below a safe threshold.
 
 - Trigger: `Stock Changed` (Requires the `Umbraco.Commerce.Automate` add-on package)
 - Logic Block: `If` (Control Flow)
@@ -109,7 +109,7 @@ Umbraco Commerce supports SQLite for testing, but it is not recommended to use i
 
 ### Example 5: Personalization Booster & Account Management Flag
 
-This workflow bridges customer behavioral analytics into direct sales action. When a visitor shifts to a target audience segment based on their browsing behavior, Automate instantly alerts their account executive.
+This automation bridges customer behavioral analytics into direct sales action. When a visitor shifts to a target audience segment based on their browsing behavior, Automate instantly alerts their account executive.
 
 - Trigger: `Persona Scored` (Requires the `Umbraco.Engage.Automate` add-on package)
 - Logic Block: `If` (Control Flow)
@@ -132,19 +132,19 @@ Umbraco Engage does not support SQL CE and SQLite. For more information, see the
 
 To stop an automation from running without deleting it:
 
-1. Open your target workflow canvas.
+1. Open your target automation canvas.
 2. Click **Unpublish** in the footer menu.
 3. The automation status will change to *Draft* and will no longer listen for live events.
 
 ### How do I edit a published automation?
 
-1. Open your workflow workspace.
+1. Open your automation workspace.
 2. Alter the trigger parameters, conditions, or action configurations directly on the canvas grid.
 3. Click **Save and Publish** to instantly activate the changes.
 
 ### Can I undo a mistake?
 
-Yes. Umbraco Automate features native version control tracking. If a change breaks your workflow layout:
+Yes. Umbraco Automate features native version control tracking. If a change breaks your automation layout:
 
 1. Navigate to the **Info** dashboard tab on the right side of the screen.
 2. Select **Compare**.
