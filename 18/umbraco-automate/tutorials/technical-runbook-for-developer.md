@@ -8,13 +8,13 @@ This reference outlines local conventions, configuration structures, and impleme
 
 ## Case Study: The Architectural Goal
 
-To understand why custom extensions are necessary, consider a typical enterprise content ecosystem. While Umbraco Automate provides built-in assets for common tasks (like logging messages or sending generic emails), custom triggers and actions are required when you need to bridge your specific domain business logic with the automation canvas.
+To understand why custom extensions are necessary, consider a typical enterprise content ecosystem. Umbraco Automate provides built-in assets for common tasks like logging messages or sending generic emails. However, custom triggers and actions are required to bridge your specific domain business logic with the automation canvas.
 
 This guide showcases two distinct development patterns:
 
 - **[The Zero-Dependency Local Flow:](#blueprint-1-zero-dependency-local-testing-flow)** A testing suite used to verify that your custom fields, attributes, and backend schemas are registering properly in the backoffice UI without connecting to external networks.
 
-- **[The Production Integration Flow:](#blueprint-2-production-integration-flow-slackwebhook-variant)** A real-world blueprint modeling how an e-commerce ecosystem tracks paid invoices and securely dispatches structured payloads to external HTTP webhooks (such as Slack) while properly respecting engine timeouts, authorization constraints, deduplication, and retry circuit breakers.
+- **[The Production Integration Flow:](#blueprint-2-production-integration-flow-slackwebhook-variant)** A real-world blueprint modeling how an e-commerce ecosystem tracks paid invoices and securely dispatches structured payloads to external HTTP webhooks (such as Slack) while properly respecting engine timeouts, authorization constraints, and retry circuit breakers.
 
 ## Core Database & Architecture Layout
 
@@ -163,7 +163,7 @@ public sealed class LocalLogAction : ActionBase<LocalLogSettings>
 
 ## Blueprint 2: Production Integration Flow (Slack/Webhook Variant)
 
-This implementation demonstrates an advanced pattern: a custom business notification triggers a workflow, filters high-value orders via custom panel criteria, and dispatches an HTTP request payload over the network.
+This implementation shows an advanced automation flow. A custom business notification triggers the run, filters high-value orders, and sends an external HTTP payload.
 
 ### File 1: Domain Notification Model
 
@@ -462,7 +462,7 @@ dotnet run
 
 ### Frontend Manifest Clearing
 
-The modern backoffice frontend registry caches visual canvas block declarations aggressively. If your new groups, icons, or fields do not immediately display inside your canvas configuration side-panel, execute a **Hard Refresh** on your browser instance (`Ctrl + F5` or `Cmd + Shift + R`) while the terminal host is running.
+The modern backoffice frontend registry caches visual canvas block declarations aggressively. New groups, icons, or fields might not appear immediately inside the canvas side-panel. If this happens, execute a **Hard Refresh** on your browser (`Ctrl + F5` or `Cmd + Shift + R`) while the terminal host is running.
 
 ## Verify It's Working
 
