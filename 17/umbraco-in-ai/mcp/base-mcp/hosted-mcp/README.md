@@ -36,7 +36,7 @@ Each MCP request creates a fresh `McpServer` instance. No state is shared betwee
 
 - A [Cloudflare account](https://dash.cloudflare.com/sign-up)
 - The [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (`npm install -g wrangler`)
-- An Umbraco instance with Management API enabled
+- An Umbraco 17+ instance with Management API enabled
 - An OAuth client registered in the Umbraco instance (see [Umbraco Setup](deployment/umbraco-setup.md))
 
 ## Getting Set Up
