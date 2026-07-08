@@ -54,6 +54,6 @@ If you require to add addition domains to the license, [reach out the sales team
 
 Once you've purchased your license with the correct domains, you are ready to configure the license key on your Umbraco installation.
 
-The license key should be added to your configuration using product ID: `Umbraco.Commerce`.
+The license key should be added to your configuration using product ID: `Umbraco__Licenses__Products__Umbraco.Commerce`.
 
 For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/commercial-products/configure-licenses) article.
