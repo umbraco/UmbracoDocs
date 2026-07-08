@@ -16,6 +16,10 @@ To connect to a hosted Umbraco MCP server, you need:
 
 * **An Umbraco backoffice account** — you will authenticate using your existing Umbraco credentials through an OAuth flow.
 
+{% hint style="info" %}
+Hosting the MCP server yourself? See the [Hosted MCP Server](../base-mcp/hosted-mcp/README.md) documentation for how to set up and deploy it on Cloudflare Workers. Start with [Umbraco Setup](../base-mcp/hosted-mcp/umbraco-setup.md), then [Deployment](../base-mcp/hosted-mcp/deployment.md) or [Infrastructure as Code](../base-mcp/hosted-mcp/infrastructure-as-code.md).
+{% endhint %}
+
 ## Setup Guides
 
 Choose the guide for your AI environment:
