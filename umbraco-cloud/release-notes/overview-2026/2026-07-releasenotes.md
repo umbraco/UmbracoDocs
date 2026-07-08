@@ -72,7 +72,6 @@ When an environment restarts, recovers from an outage, or upgrades, Umbraco Clou
 
 Readiness is reported by the site itself through the readiness endpoint `GET /umbraco/api/health/ready`. Visitors see your custom error page if one is assigned, otherwise the default Umbraco Cloud maintenance page. Once the site reports ready, normal traffic resumes within roughly ten seconds.
 
-Readiness gating is active on Umbraco 13 sites with `Umbraco.Cloud.Cms` version 13.x.x or later, and on Umbraco 17.6 and later. On all other versions, behaviour is unchanged.
-<!-- TODO before publishing: replace 13.x.x with the Umbraco.Cloud.Cms release that ships the readiness endpoint (platform work item #69344). -->
+Readiness gating is active on Umbraco 13 sites with `Umbraco.Cloud.Cms` version 13.1.0 or later, and on Umbraco 17.6 and later. On all other versions, behaviour is unchanged.
 
 For supported versions and always-accessible paths, see the [Readiness Gating](../../build-and-customize-your-solution/handle-deployments-and-environments/readiness-gating.md) documentation.

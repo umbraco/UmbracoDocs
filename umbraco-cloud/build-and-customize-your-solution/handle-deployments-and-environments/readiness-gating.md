@@ -34,11 +34,9 @@ Readiness gating relies on the readiness endpoint being present on your site:
 
 | Your site                             | Readiness gating                                                                                                                     |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Umbraco 13 with Umbraco.Cloud.Cms     | Active with `Umbraco.Cloud.Cms` version 13.x.x or later, which ships the readiness endpoint.                                          |
+| Umbraco 13 with Umbraco.Cloud.Cms     | Active with `Umbraco.Cloud.Cms` version 13.1.0 or later, which ships the readiness endpoint.                                          |
 | Umbraco 17.6 and later                | Active. Umbraco ships the readiness endpoint natively. See [Health Probes](https://docs.umbraco.com/umbraco-cms/run-in-production/infrastructure-and-ops/server-setup/health-probes) in the CMS documentation. |
 | All other versions                    | Not active. The endpoint does not exist and behaviour is unchanged.                                                                    |
-
-<!-- TODO before publishing: replace 13.x.x with the Umbraco.Cloud.Cms release that ships the readiness endpoint (platform work item #69344). -->
 
 For versions without the endpoint, nothing changes and nothing breaks. Custom error pages work exactly as before, and there is nothing you need to do.
 
