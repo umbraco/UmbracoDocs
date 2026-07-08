@@ -296,6 +296,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `Method`
 * `XsltFile`
 * `Fields`
+* `DefaultElementForFields`
 * `Username`
 * `Password`
 
@@ -371,6 +372,9 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `ReplyToEmail`
 * `Subject`
 * `RazorViewFilePath`
+* `HeaderHtml`
+* `BodyHtml`
+* `FooterHtml`
 * `Attachment`
 
 </details>
@@ -409,6 +413,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `Method`
 * `StandardFields`
 * `Fields`
+* `DefaultElementForFields`
 * `Username`
 * `Password`
 

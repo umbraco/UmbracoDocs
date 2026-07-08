@@ -204,6 +204,10 @@ facets:
 ```
 {% endcode %}
 
+{% hint style="info" %}
+Ranges include the lower interval and exclude the upper. The example above translates into: Facets for _`releaseYear` between 1950 and 1959 (both inclusive) and between 1980 and 1989 (both inclusive)_.
+{% endhint %}
+
 ## Sorting search results
 
 All fields can be used for sorting (ordering) search results, and sorting can be performed across multiple fields in a single query.

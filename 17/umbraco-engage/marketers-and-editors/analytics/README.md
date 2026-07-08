@@ -14,4 +14,4 @@ In this section, you will find:
 * How different clients visiting your website are classified
 * How you can extend the data collection with your own custom data
 
-The **Analytics** section is accessible from the **Engage** section and as a content app on each node.
+The **Analytics** section is accessible from the **Engage** section and as a workspace view on each node.

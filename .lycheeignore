@@ -30,6 +30,9 @@
 # NIST FIPS and other static docs
 ^https://csrc\.nist\.gov/publications/PubsFIPS\.html#.*
 
+# Microsoft dotnet.microsoft.com returns 403 to all bots — verify manually when .NET versions change
+^https://dotnet\.microsoft\.com/.*$
+
 # Timeout-prone issue links
 ^https://issues\.umbraco\.org/issue/.*
 ^https://issues\.umbraco\.org/issues/.*

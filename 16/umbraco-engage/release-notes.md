@@ -16,6 +16,25 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 16, detailing all changes in this version.
 
+#### [Engage Commerce 16.0.1](https://www.nuget.org/packages/Umbraco.Engage.Commerce/16.0.1) (June 3rd 2026)
+
+* Resolved **Swagger/OpenAPI** generation issues for the Commerce Management API by scoping operation and schema IDs to the Commerce namespace, preventing collisions in the shared OpenAPI document.
+* Fixed the ordering of segments in the Commerce **personalization segment** list.
+
+#### [16.3.3](https://www.nuget.org/packages/Umbraco.Engage/16.3.3) (June 2nd 2026)
+
+* Resolved pageviews and associated data not getting flushed to the database on load-balanced (subscriber) setups.
+
+#### [16.3.2](https://www.nuget.org/packages/Umbraco.Engage/16.3.2) (May 22nd 2026)
+
+* Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
+* Resolved personalizations migrated from v13 disappearing from the Personalisations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
+* Fixed the same Key/document-key conflation in A/B Testing.
+
+#### [16.3.1](https://www.nuget.org/packages/Umbraco.Engage/16.3.1) (May 19th 2026)
+
+* Improved CPU efficiency by preventing recurring background jobs (pageview flushing and reporting star generation) from hot-looping when no work is available.
+
 #### [16.3.0](https://www.nuget.org/packages/Umbraco.Engage/16.3.0) (April 20th 2026)
 
 * Rewritten analytics data cleanup with improved scheduling and performance:

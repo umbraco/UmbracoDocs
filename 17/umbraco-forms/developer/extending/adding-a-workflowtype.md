@@ -5,15 +5,13 @@
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and have the ability to change data and state.
 
 ```csharp
-using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Umbraco.Forms.Core;
-using Umbraco.Forms.Core.Data.Storage;
 using Umbraco.Forms.Core.Enums;
 using Umbraco.Forms.Core.Persistence.Dtos;
-using Microsoft.Extensions.Logging;
-using Umbraco.Core.Composing;
 
 namespace MyFormsExtensions
 {

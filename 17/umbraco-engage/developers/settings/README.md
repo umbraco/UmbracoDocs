@@ -21,6 +21,6 @@ While most configurations and settings will be visible in the Umbraco backoffice
 
 ## **Permissions**
 
-Administrators can assign different permissions to control access to marketing and content apps, based on user roles or Document Types.
+Administrators can assign different permissions to control access to marketing and workspace views, based on user roles or Document Types.
 
 These settings allow users to manage and fine-tune their marketing efforts, ensuring data accuracy and access control.

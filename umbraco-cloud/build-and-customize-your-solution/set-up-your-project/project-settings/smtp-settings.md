@@ -101,6 +101,7 @@ To configure the SMTP service, enter the following details:
 * **From**: The default email address that will send out emails.
 * **Host**: The IP address or hostname for your SMTP service.
 * **Port**: The port number for your SMTP service.
+  * Use port 587 or 2525, as port 25 (default) gets blocked when [static outbound IP addresses are enabled](../../../expand-your-projects-capabilities/external-services/#enabling-static-outbound-ip-addresses).
 * **SecureSocketOptions**: Specifies the security used for the connection.
 * **Username**: Your SMTP service username.
 * **Password**: Your SMTP service password.

@@ -13,7 +13,7 @@ Make sure any packages you use are compatible with the latest version of Umbraco
 
 **Breaking Changes**
 
-Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
+Be aware of any [Breaking changes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) introduced in the latest version of Umbraco CMS to avoid issues during the upgrade.
 {% endhint %}
 
 ## Before you start the upgrade
@@ -37,7 +37,7 @@ When upgrading from an LTS version, you must start by looking at the versions be
 Refer to the [Long-term support and EOL article](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) to learn which versions are LTS.
 
 {% hint style="info" %}
-Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#breaking-changes) handy to avoid any surprises.
+Skipping upgrades to STS versions, like 11 and 12, means you will not receive warnings about obsolete features. We recommend keeping the [Breaking Changes documentation](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific#breaking-changes) handy to avoid any surprises.
 {% endhint %}
 
 #### Example: Upgrading from Umbraco 10 (LTS) to Umbraco 15 (STS)
@@ -57,7 +57,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 * A backup of your project database.
   * Directly from your environment. See the [Database backups](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) article,
   * Or clone down, restore the project, and back up the local database.
- 
+
 {% hint style="warning" %}
 **Do not perform major version upgrades directly in Umbraco Cloud.**
 
@@ -70,7 +70,7 @@ Always perform the database upgrade locally first, verify that the backoffice lo
 
 Before proceeding, you must determine whether the .NET Framework version needs to be updated for your project. If no changes to the .NET version are required, you can skip this step and proceed with Step 2.
 
-Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
+Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/upgrade-details#choose-the-correct-.net-version) section to identify whether a .NET version update is necessary for your upgrade.
 
 1. Go to the project in the Umbraco Cloud portal.
 2. Navigate to **Configuration** -> **Advanced**.
@@ -89,7 +89,7 @@ Refer to the [Choose the correct .NET version](https://docs.umbraco.com/umbraco-
 ## Step 3: Upgrade the project locally using Visual Studio
 
 1. Open the `csproj` file located in the `/src/UmbracoProject` folder.
-2. Determine if you need to update the .NET version based on the changes made in [Step 1](#step-1-enable-net):
+2. Determine if you need to update the .NET version based on the changes made in [Step 1](major-upgrades.md#step-1-enable-net):
    * **If the .NET version was updated:** Update the `<TargetFramework>` to match the version set in your Cloud environment.
    * **If the .NET version was not updated:** Skip this step.
 
@@ -112,9 +112,7 @@ Delete the `<PackageReference>` entries for these packages.
 
 {% tabs %}
 {% tab title="Umbraco 17" %}
-
 * Update the following packages:
-
   * `Umbraco.Forms.Deploy`
   * `Umbraco.Cms`
   * `Umbraco.Deploy.Cloud`
@@ -122,33 +120,31 @@ Delete the `<PackageReference>` entries for these packages.
   * `Umbraco.Forms`
   * `Umbraco.Cloud.Cms`
   * `Umbraco.Cloud.StorageProviders.AzureBlob`
-
 * Open the `Licenses` folder and delete all Umbraco-related `.lic` files.
 * Keep any `.lic` files needed for your third-party tools.
 
 If the folder is empty after deleting the files, you can safely remove the entire `Licenses` folder as well.
 
-* _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
-  1. Locate and open the `appsettings.json` file (and any environment-specific variants).
-  2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
+*  _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
 
-  ```json
-  {
-    "Umbraco": {
-      "Licenses": {
-        "Products": {
-          "Umbraco.Deploy": "UMBRACO-CLOUD",
-          "Umbraco.Forms": "UMBRACO-CLOUD"
+    1. Locate and open the `appsettings.json` file (and any environment-specific variants).
+    2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
+
+    ```json
+    {
+      "Umbraco": {
+        "Licenses": {
+          "Products": {
+            "Umbraco.Deploy": "UMBRACO-CLOUD",
+            "Umbraco.Forms": "UMBRACO-CLOUD"
+          }
         }
       }
     }
-  }
-  ```
-  
-  This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
+    ```
 
-* _[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
-
+    This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
+* _\[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
 {% endtab %}
 
 {% tab title="Umbraco 15 and 16" %}
@@ -225,15 +221,13 @@ Update all projects and packages in your solution to support the latest .NET.
 <figure><img src="../../../.gitbook/assets/Cloud-upgraded-version.png" alt=""><figcaption><p>Click on the Umbraco logo in the Umbraco backoffice to confirm the version number.</p></figcaption></figure>
 
 {% hint style="warning" %}
+If you receive a missing deploy license error after upgrading, even though the license is valid, it may be due to browser caching. Google Chrome has an aggressive caching that can interfere with license validation during startup. To resolve this:
 
-If you receive a missing deploy license error after upgrading, even though the license is valid, it may be due to browser caching. Google Chrome has an aggressive caching that can interfere with license validation during startup.
-To resolve this:
 1. Open Chrome's Developer Tools (F12).
 2. Right-click the reload button next to the address bar.
 3. Select **Empty cache and hard reload**.
 
-It is recommended to clear the cache and cookies thoroughly in all browsers you're using to access the Umbraco backoffice.
-This step can help resolve unexpected startup issues after the upgrade.
+It is recommended to clear the cache and cookies thoroughly in all browsers you're using to access the Umbraco backoffice. This step can help resolve unexpected startup issues after the upgrade.
 
 If the issue persists and your project has CDN Caching and Optimization enabled, cached responses may interfere with license validation. In this case, try purging the cache and reloading the site.
 {% endhint %}
@@ -325,6 +319,14 @@ Remove the same files from the left-most environment. This should be done from t
 
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
+{% hint style="warning" %}
+**Check Point for Large, Busy, or Business-Critical Sites**
+Have you finished upgrading your packages and testing your code changes locally? **Before you deploy these changes to your Live environment**, review the [Planning Major Upgrades Safely for Live Environments](planning-major-upgrades-safely-on-live.md) guide.
+
+That guide will help you set up a Staging safety net and choose the right resource strategy to prevent database migration downtime on production. Once your strategy is selected, return here to execute your deployment.
+
+{% endhint %}
+
 ## Step 5: Deploy the upgrade
 
 The next part is to deploy the upgrade through to the production environment.
@@ -349,7 +351,7 @@ The following steps involve setting a **content-freeze** period on the project. 
 2. Create a new environment from the production environment - call it Staging.
 3. Initiate **content-freeze**.
 4. Import content using either of the following approaches:
-   1. [Restore content and media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content/) directly from the backoffice.
+   1. [Restore content and media](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content.md) directly from the backoffice.
    2. Use the [Database Backup and Restore](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md) functionality in the Cloud Portal.
 5. Deploy the upgrade from the left-most environment.
 6. Verify and test all functionality on the upgraded environment.

@@ -77,10 +77,18 @@ To display blocks on the frontend, create Partial Views for each Block.
 Rich Text Editor blocks use a different view location than Block List blocks. RTE blocks are placed in `Views/Partials/RichText/Components/`, while Block List blocks use `Views/Partials/BlockList/Components/`.
 {% endhint %}
 
+### Prerequisites
+
+Before blocks render on the frontend, ensure your page template renders the RTE field. Without this, the page will appear blank with no error:
+
+```csharp
+@Model.Value("body")
+```
+
 ### File Structure
 
-* **Location**: `Views/Partials/RichText/Components/`.
-* **Naming**: Use the exact Element Type alias as the filename (e.g., `quoteBlock.cshtml` for alias `quoteBlock`).
+* **Location**: `Views/Partials/RichText/Components/`. The `Views/Partials/RichText/Components/` folder does not exist by default and must be created manually.
+* **Naming**: Use the exact Element Type alias as the filename (for example, `quoteBlock.cshtml` for alias `quoteBlock`).
 * **Model**: `Umbraco.Cms.Core.Models.Blocks.RichTextBlockItem`.
 
 The different folder structure ensures that RTE blocks and Block List blocks can have separate rendering implementations, even when using the same Element Types.

@@ -2,7 +2,7 @@
 
 _This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter_
 
-In this article, we will illustrate how to add a custom form field type using server-side and client-side components. We will use the example of rendering a "slider" field type that allows the user to select a number within a specific range of values.
+This article illustrates how to add a custom form field type using server-side and client-side components. The example used is rendering a "slider" field type that allows the user to select a number within a specific range of values.
 
 ## Server-side Field Type Definition
 
@@ -53,7 +53,7 @@ public class SliderFieldType : Core.FieldType
 }
 ```
 
-In the constructor or via overridden properties, we can specify details of the field type:
+In the constructor or via overridden properties, specify details of the field type:
 
 * `Id` - should be set to a unique GUID.
 * `Alias` - an internal alias for the field, used for localized translation keys.
@@ -78,7 +78,7 @@ In the constructor or via overridden properties, we can specify details of the f
 
 The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection, meaning the field type is considered configured and available for use.
 
-When the method returns one or more error messages, the field type will be shown as unavailable in the backoffice form builder until the issues are resolved. This is useful when your field type depends on external API keys or other application configuration settings.
+The field type will show as unavailable in the backoffice form builder if the method returns error messages. It remains locked until issues are resolved. This is useful when your field type depends on external API keys or other application configuration settings.
 
 ```csharp
 public override IEnumerable<string> GetConfigurationErrors()
@@ -91,6 +91,8 @@ public override IEnumerable<string> GetConfigurationErrors()
 ```
 
 You now need to register this new field as a dependency:
+
+{% code title="MyProject/Startup.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -109,9 +111,11 @@ public class Startup : IComposer
 }
 ```
 
+{% endcode %}
+
 ## Partial View
 
-We will start building the view for the default theme of the Form at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
+The view for the default theme is located at `Views\Partials\Forms\Themes\default\FieldTypes\FieldType.Slider.cshtml`.
 
 The file name for the partial view should match the value set on the `FieldTypeViewName` property.
 
@@ -200,7 +204,7 @@ All setting properties for the Forms provider types are marked as `virtual`, so 
 With Forms 14+, aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
 
 * The preview, displayed on the form definition editor.
-* The property editor UI used for editing the the submitted values via the backoffice.
+* The property editor UI used for editing the submitted values via the backoffice.
 * The property editor UI used for editing settings.
 * A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
 * Translations for setting labels and descriptions.
@@ -219,13 +223,37 @@ npm install -D @umbraco-forms/backoffice@x.x.x
 
 This will add a package to your devDependencies containing the TypeScript definitions for Umbraco Forms.
 
+The following structure shows the layout for all client-side components in this example:
+
+```cs
+/src
+  /field-preview
+    slider-preview.element.ts
+    manifests.ts
+  /field-editor
+    property-editor-ui-number.element.ts
+    manifests.ts
+  /setting-value-editor
+    property-editor-ui-color.element.ts
+    manifests.ts
+  /setting-value-converter
+    slider-setting-value-converter.api.ts
+    manifests.ts
+  /lang
+    en-us.ts
+    manifests.ts
+  index.ts
+```
+
 To display a name and description on a custom field, you need to register a JavaScript file as shown in the [Localization](https://docs.umbraco.com/umbraco-cms/customizing/foundation/localization) article.
 
 ### Field Preview
 
 The alias of the preview to use is defined on the field type via the `PreviewView` property.
 
-A preview for our slider, representing the selected setting values could look as follows:
+A preview for the slider representing the selected setting values looks as follows:
+
+{% code title="src/field-preview/slider-preview.element.ts" %}
 
 ```javascript
 import {
@@ -276,7 +304,11 @@ declare global {
 }
 ```
 
+{% endcode %}
+
 And it is registered via a manifest:
+
+{% code title="src/field-preview/manifests.ts" %}
 
 ```javascript
 import MyFieldPreviewSliderElement from './slider-preview.element.js';
@@ -292,11 +324,19 @@ const sliderPreviewManifest: ManifestFormsFieldPreview = {
 export const manifests = [sliderPreviewManifest];
 ```
 
+{% endcode %}
+
+{% hint style="info" %}
+The `alias` value in the manifest (`My.FieldPreview.Slider`) must exactly match the `PreviewView` property set in your C# field type class. This is how Umbraco knows which client-side component to use for the preview.
+{% endhint %}
+
 ### Field Editor
 
 Umbraco Forms supports editing of the entries submitted by website visitors via the backoffice. The property editor interface to use for this is defined in the field type's `EditView` property.
 
 If not using a built-in property editor, you can create your own. The following example shows how the numerical entries could be edited using an input control.
+
+{% code title="src/field-editor/property-editor-ui-number.element.ts" %}
 
 ```javascript
 import {
@@ -342,7 +382,11 @@ declare global {
 }
 ```
 
-Again, it's registered via a manifest.
+{% endcode %}
+
+The manifest registers the property editor UI using the alias defined in the field type's `EditView` property.
+
+{% code title="src/field-editor/manifests.ts" %}
 
 ```javascript
 const numberPropertyEditorManifest = {
@@ -358,11 +402,15 @@ const numberPropertyEditorManifest = {
 export const manifests = [numberPropertyEditorManifest];
 ```
 
+{% endcode %}
+
 ### Setting Value Editor
 
 Field type settings also use a property editor UI for editing the values in the backoffice. The one to use is defined via the `View` property on the `Setting` attribute.
 
-In our example we use a custom one, allowing the value for the background color to the field to be selected via an input control.
+In this example, a custom one is used, allowing the value for the background color of the field to be selected via an input control.
+
+{% code title="src/setting-value-editor/property-editor-ui-color.element.ts" %}
 
 ```javascript
 import {
@@ -416,7 +464,11 @@ declare global {
 }
 ```
 
-And register it via a manifest:
+{% endcode %}
+
+Register it via a manifest:
+
+{% code title="src/setting-value-editor/manifests.ts" %}
 
 ```javascript
 const colorPropertyEditorManifest = {
@@ -433,6 +485,8 @@ const colorPropertyEditorManifest = {
 export const manifests = [colorPropertyEditorManifest];
 ```
 
+{% endcode %}
+
 ### Setting Value Converter
 
 You may want to consider registering a settings value converter. This is another client-side component that is registered in a manifest. It converts between the setting value required for the editor and the value persisted with the form definition. A converter defines three methods:
@@ -441,7 +495,9 @@ You may want to consider registering a settings value converter. This is another
 * `getSettingValueForPersistence` - converts the editor value into the string needed for persistence
 * `getSettingPropertyConfig` - creates the configuration needed for the property editor
 
-The following code shows the structure for these converter elements.
+The following code shows the structure for these converter elements:
+
+{% code title="src/setting-value-converter/slider-setting-value-converter.api.ts" %}
 
 ```javascript
 import type { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
@@ -465,7 +521,11 @@ export class SliderSettingValueConverter
 }
 ```
 
+{% endcode %}
+
 It's registered as follows. The `propertyEditorUiAlias` matches with the property editor UI that requires the conversions.
+
+{% code title="src/setting-value-converter/manifests.ts" %}
 
 ```javascript
 import { SliderSettingValueConverter } from "./slider-setting-value-converter.api";
@@ -482,11 +542,15 @@ const sliderValueConverterManifest: ManifestFormsSettingValueConverterPreview = 
 export const manifests = [sliderValueConverterManifest];
 ```
 
+{% endcode %}
+
 ### Language Files
 
 Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used.
 
-The following example shows how this is created for the settings on our example field type:
+The following example shows how this is created for the settings on this example field type:
+
+{% code title="src/lang/en-us.ts" %}
 
 ```javascript
 import type { UmbLocalizationDictionary } from "@umbraco-cms/backoffice/localization-api";
@@ -509,6 +573,8 @@ export default {
 }
 ```
 
+{% endcode %}
+
 Each different type of extension for Forms uses a different root value:
 
 * Data sources - `formProviderDataSources`
@@ -519,6 +585,8 @@ Each different type of extension for Forms uses a different root value:
 * Workflows - `formProviderWorkflows`
 
 The language files are registered with:
+
+{% code title="src/lang/manifests.ts" %}
 
 ```javascript
 import type { ManifestLocalization } from '@umbraco-cms/backoffice/localization';
@@ -538,9 +606,13 @@ const localizationManifests: Array<ManifestLocalization> = [
 export const manifests = [...localizationManifests];
 ```
 
+{% endcode %}
+
 ### Registering the Components
 
 Finally, you will need an entry point to your client-side components that will register the manifests with Umbraco's extension registry. For example:
+
+{% code title="src/index.ts" %}
 
 ```javascript
 import { manifests as propertyEditorManifests } from "./property-editor/manifests.js";
@@ -559,3 +631,30 @@ export const onInit = async (host, extensionRegistry) => {
   extensionRegistry.registerMany(manifests);
 };
 ```
+
+{% endcode %}
+
+Ensure your `field-preview/manifests.ts` is imported and included in the `manifests` array here, otherwise the preview will not be registered.
+
+For Umbraco to discover this entry point, the compiled output must be referenced as a `backofficeEntryPoint` in your `umbraco-package.json` file, located in your `App_Plugins` folder:
+
+{% code title="App_Plugins/MyProject/umbraco-package.json" %}
+
+```json
+{
+  "name": "My.Forms.Extension",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "backofficeEntryPoint",
+      "alias": "My.Forms.EntryPoint",
+      "name": "My Forms Entry Point",
+      "js": "/App_Plugins/MyProject/dist/index.js"
+    }
+  ]
+}
+```
+
+{% endcode %}
+
+For more information on compiling your source files to the `dist` folder, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/extend-your-project/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.

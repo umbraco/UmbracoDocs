@@ -19,13 +19,15 @@ layout:
     visible: false
   tags:
     visible: true
+  actions:
+    visible: true
 ---
 
 # Umbraco Documentation
 
 Whether you're using Umbraco CMS, Umbraco Cloud, or Umbraco Heartcore, the documentation has you covered for all your needs.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/cms-logo.png">cms-logo.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cms">https://docs.umbraco.com/umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/umbraco_cloud_logo_blue.png">umbraco_cloud_logo_blue.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cloud">https://docs.umbraco.com/umbraco-cloud</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/cms-logo.png">cms-logo.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cms">https://docs.umbraco.com/umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/Logomark_Cloud.png">Logomark_Cloud.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cloud">https://docs.umbraco.com/umbraco-cloud</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Are you looking to get started?**
@@ -47,7 +49,17 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 
 {% include ".gitbook/includes/dxp-products.md" %}
 
+
+
 ### Integrations & Extensions
+
+{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/" %}
+[AI in Umbraco](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
+{% endcontent-ref %}
+
+{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/" %}
+[Umbraco in AI](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
+{% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/" %}
 [Umbraco DXP](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/)
