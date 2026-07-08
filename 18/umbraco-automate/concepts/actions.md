@@ -8,7 +8,7 @@ description: >-
 
 An action is a reusable unit of work. You add actions to an automation as steps and configure each step with its own settings.
 
-## **Available** Built-in Actions
+## Available Built-in Actions
 
 Use built-in actions to send data, update Umbraco entities, and control automation flow.
 
