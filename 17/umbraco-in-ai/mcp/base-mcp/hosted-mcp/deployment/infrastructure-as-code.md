@@ -108,9 +108,9 @@ variable "umbraco_base_url" {
 }
 
 variable "oauth_client_id" {
-  description = "OAuth client ID registered in Umbraco. Must match the Worker source."
+  description = "OAuth client ID registered in Umbraco. Must match the oauthClientId in the Worker's src/worker.ts."
   type        = string
-  default     = "umbraco-back-office-mcp"
+  default     = "umbraco-back-office-hosted-mcp"
 }
 
 variable "hostname" {

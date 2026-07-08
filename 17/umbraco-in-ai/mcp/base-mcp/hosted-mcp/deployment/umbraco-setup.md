@@ -21,11 +21,14 @@ The hosted MCP Worker must be registered as an **Authorization Code** OAuth clie
 Create a file in your Umbraco project (for example, `McpOAuthComposer.cs`):
 
 ```csharp
+using System.Globalization;
 using OpenIddict.Abstractions;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
+
+// Change this namespace to match your Umbraco project.
+namespace MyUmbracoProject;
 
 public class McpOAuthComposer : IComposer
 {
@@ -40,19 +43,43 @@ public class RegisterMcpClientHandler
     : INotificationAsyncHandler<UmbracoApplicationStartingNotification>
 {
     private readonly IOpenIddictApplicationManager _applicationManager;
+    private readonly IConfiguration _configuration;
 
-    public RegisterMcpClientHandler(IOpenIddictApplicationManager applicationManager)
+    public RegisterMcpClientHandler(
+        IOpenIddictApplicationManager applicationManager,
+        IConfiguration configuration)
     {
         _applicationManager = applicationManager;
+        _configuration = configuration;
     }
 
     public async Task HandleAsync(
         UmbracoApplicationStartingNotification notification,
         CancellationToken cancellationToken)
     {
-        const string clientId = "umbraco-back-office-mcp";
+        try
+        {
+            await RegisterClient(cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            // On first startup the database may not exist yet (for example, an
+            // unattended install). The client registers on the next restart
+            // once the database is ready.
+            Console.WriteLine($"[McpOAuthComposer] Skipped — {ex.GetType().Name}: {ex.Message}");
+        }
+    }
 
-        // Remove any existing registration so we can update it cleanly
+    private async Task RegisterClient(CancellationToken cancellationToken)
+    {
+        // Change this per MCP. Each hosted MCP defines its own OAuth client ID
+        // in its src/worker.ts (for example, "umbraco-cms-dev-mcp-hosted"). This
+        // value must match that ID and the Worker's UMBRACO_OAUTH_CLIENT_ID.
+        // To serve more than one MCP from this Umbraco, register each client ID
+        // separately (loop over a string[] of IDs, or add a handler per MCP).
+        const string clientId = "umbraco-back-office-hosted-mcp";
+
+        // Remove any existing registration so we can update it cleanly.
         var existing = await _applicationManager.FindByClientIdAsync(clientId, cancellationToken);
         if (existing is not null)
         {
@@ -68,14 +95,20 @@ public class RegisterMcpClientHandler
             {
                 // Production callback URL
                 new Uri("https://my-umbraco-mcp.workers.dev/callback"),
-                // Local development callback URL
+                // Local development callback URLs
                 new Uri("http://localhost:8787/callback"),
+                new Uri("http://localhost:8788/callback"),
+                new Uri("http://127.0.0.1:8787/callback"),
+                new Uri("http://127.0.0.1:8788/callback"),
             },
             // Required for "Log in as different user" (RP-Initiated Logout)
             PostLogoutRedirectUris =
             {
                 new Uri("https://my-umbraco-mcp.workers.dev/logout-callback"),
                 new Uri("http://localhost:8787/logout-callback"),
+                new Uri("http://localhost:8788/logout-callback"),
+                new Uri("http://127.0.0.1:8787/logout-callback"),
+                new Uri("http://127.0.0.1:8788/logout-callback"),
             },
             Permissions =
             {
@@ -86,19 +119,43 @@ public class RegisterMcpClientHandler
                 OpenIddictConstants.Permissions.GrantTypes.AuthorizationCode,
                 OpenIddictConstants.Permissions.GrantTypes.RefreshToken,
                 OpenIddictConstants.Permissions.ResponseTypes.Code,
+            },
+            // Umbraco's server-wide defaults produce a 5-minute access token and
+            // a 20-minute refresh window. This is too short for an MCP session
+            // that sits idle between tool calls, so override the lifetimes here.
+            Settings =
+            {
+                [OpenIddictConstants.Settings.TokenLifetimes.AccessToken]
+                    = TimeSpan.FromHours(1).ToString("c", CultureInfo.InvariantCulture),
+                [OpenIddictConstants.Settings.TokenLifetimes.RefreshToken]
+                    = TimeSpan.FromHours(8).ToString("c", CultureInfo.InvariantCulture),
             }
         };
+
+        // Add the Cloudflare Tunnel callback URL if configured (set by scripts/tunnels.sh).
+        var tunnelUrl = _configuration["MCP_TUNNEL_URL"];
+        if (!string.IsNullOrEmpty(tunnelUrl))
+        {
+            var baseUrl = tunnelUrl.TrimEnd('/');
+            descriptor.RedirectUris.Add(new Uri($"{baseUrl}/callback"));
+            descriptor.PostLogoutRedirectUris.Add(new Uri($"{baseUrl}/logout-callback"));
+        }
 
         await _applicationManager.CreateAsync(descriptor, cancellationToken);
     }
 }
 ```
 
+{% hint style="info" %}
+Each hosted MCP defines its own OAuth client ID in its `src/worker.ts` — for example, `umbraco-cms-dev-mcp-hosted` for the Developer MCP or `umbraco-cms-editor-mcp-hosted` for the Editor MCP. Use that same ID as the `clientId` above and as the Worker's `UMBRACO_OAUTH_CLIENT_ID`. All three must match. This is different from the `umbraco-back-office-mcp` API user used by the local stdio server.
+{% endhint %}
+
 ## How It Works
 
 - **Composer auto-discovery**: Umbraco discovers `McpOAuthComposer` via `IComposer`. No changes to `Program.cs` are needed.
 - **Runs on startup**: The `UmbracoApplicationStartingNotification` handler registers the client each time the application starts. This ensures the configuration is always up to date.
 - **Idempotent**: The handler deletes any existing registration before creating a new one. It is safe to restart.
+- **First-startup safe**: Registration is wrapped in a try/catch. On the first boot the database may not exist yet. The client registers on the next restart once the database is ready.
 
 ## Why Not the Backoffice UI?
 

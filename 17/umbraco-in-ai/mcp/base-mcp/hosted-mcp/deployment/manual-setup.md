@@ -71,8 +71,8 @@ export default createWorkerExport(provider, options);
 ```toml
 name = "my-umbraco-mcp"
 main = "dist/worker.js"
-compatibility_date = "2025-02-24"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat_v2"]
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
