@@ -8,7 +8,7 @@ description: >-
 
 This guide provisions the hosted MCP Worker with [OpenTofu](https://opentofu.org/) or Terraform. Terraform creates the Cloudflare resources and renders the Worker configuration. Wrangler then uploads the Worker code.
 
-The [Deployment](deployment.md) guide covers the imperative path, where you run `wrangler` commands by hand. Use Infrastructure as Code when you want a repeatable, version-controlled setup, or when you run more than one environment.
+The [Deployment](README.md) guide covers the imperative path, where you run `wrangler` commands by hand. Use Infrastructure as Code when you want a repeatable, version-controlled setup, or when you run more than one environment.
 
 {% hint style="info" %}
 The examples use the `tofu` command. Every command works with `terraform` as well. Set `TF_BIN=terraform` where the scripts read it.
@@ -250,7 +250,7 @@ output "worker_host" {
 {% endcode %}
 
 {% hint style="info" %}
-The only secret Terraform generates is `COOKIE_ENCRYPTION_KEY`. `UMBRACO_BASE_URL` and `UMBRACO_OAUTH_CLIENT_ID` are not secrets, so they render into `[vars]`. To keep them out of the config file, push them as secrets instead, as shown in the [Deployment](deployment.md) guide.
+The only secret Terraform generates is `COOKIE_ENCRYPTION_KEY`. `UMBRACO_BASE_URL` and `UMBRACO_OAUTH_CLIENT_ID` are not secrets, so they render into `[vars]`. To keep them out of the config file, push them as secrets instead, as shown in the [Deployment](README.md) guide.
 {% endhint %}
 
 ## Step 5: Provision the Infrastructure
@@ -354,7 +354,7 @@ To run the Worker on your machine, follow the [Local Development Setup](local-de
 
 ## Next Steps
 
-- [Deployment](deployment.md) — the imperative Wrangler path and monitoring.
-- [Architecture](architecture.md) — the auth flow and three-tier configuration.
+- [Deployment](README.md) — the imperative Wrangler path and monitoring.
+- [Architecture](../architecture.md) — the auth flow and three-tier configuration.
 - [Multi-Site Deployments](multi-site.md) — serve multiple Umbraco instances from one Worker.
-- [Security](security.md) — token isolation, consent, and CSRF protection.
+- [Security](../security.md) — token isolation, consent, and CSRF protection.

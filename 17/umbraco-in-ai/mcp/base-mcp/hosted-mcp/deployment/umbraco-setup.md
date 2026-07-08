@@ -150,7 +150,7 @@ See [Multi-Site Deployments](multi-site.md) for the full setup including redirec
 
 The Worker's `UMBRACO_OAUTH_CLIENT_ID` must match the `clientId` in the Composer above. No client secret is needed — the OAuth client is registered as a **public** client with PKCE.
 
-See [Deployment](deployment.md) for all required secrets and [Local Development Setup](local-dev-setup.md) for `.dev.vars` configuration.
+See [Deployment](README.md) for all required secrets and [Local Development Setup](local-dev-setup.md) for `.dev.vars` configuration.
 
 ## Redirect URI Configuration
 
@@ -193,4 +193,4 @@ You can register multiple redirect URIs in the Composer for different environmen
 
 **Fix**: Verify that `UMBRACO_OAUTH_CLIENT_ID` (in `.dev.vars` or Wrangler secrets) matches the `ClientId` in your `McpOAuthComposer.cs`. Check that the client is registered as `Public` (not `Confidential`). A public client uses PKCE and does not require a client secret.
 
-For Worker-specific errors (Durable Object bindings, SQLite migrations), see the [Troubleshooting](troubleshooting.md) guide.
+For Worker-specific errors (Durable Object bindings, SQLite migrations), see the [Troubleshooting](../troubleshooting.md) guide.

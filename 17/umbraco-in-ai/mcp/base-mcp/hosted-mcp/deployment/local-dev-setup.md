@@ -7,7 +7,7 @@ description: Step-by-step guide to running the Hosted MCP server locally with wr
 This guide walks you through running the hosted MCP server locally with `wrangler dev` and a local Umbraco instance.
 
 {% hint style="info" %}
-The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
+The [`create-umbraco-mcp-server`](../../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
 {% endhint %}
 
 ## Prerequisites

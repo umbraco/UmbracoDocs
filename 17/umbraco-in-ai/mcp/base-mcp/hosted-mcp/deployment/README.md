@@ -97,7 +97,7 @@ wrangler deploy --env production
 
 You can customize the consent screen with tool selection, branding, custom CSS, or a fully custom renderer.
 
-See the [Customization](customization.md) guide for all options and examples.
+See the [Customization](../customization.md) guide for all options and examples.
 
 ## Multi-Site Deployment
 

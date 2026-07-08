@@ -7,7 +7,7 @@ description: >-
 # Manual Setup
 
 {% hint style="info" %}
-The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI generates all of this for you. Use this page as a reference if you need to set up the Worker manually or understand what the generated code does.
+The [`create-umbraco-mcp-server`](../../create-umbraco-mcp-server/README.md) CLI generates all of this for you. Use this page as a reference if you need to set up the Worker manually or understand what the generated code does.
 {% endhint %}
 
 ## 1. Add the hosted package
@@ -122,4 +122,4 @@ wrangler deploy
 
 Your MCP server is now accessible at `https://my-umbraco-mcp.<your-subdomain>.workers.dev/`.
 
-For troubleshooting, see the [Troubleshooting](troubleshooting.md) guide.
+For troubleshooting, see the [Troubleshooting](../troubleshooting.md) guide.
