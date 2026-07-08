@@ -92,19 +92,20 @@ Read these articles in order:
 
 1. [Umbraco Setup](umbraco-setup.md) - Register the Worker as an OAuth client (one-time).
 2. [Deployment](deployment.md) - Deploy, set secrets, and verify the connection.
-3. [Manual Setup](manual-setup.md) - Worker entry point, wrangler.toml, and secrets (reference).
+3. [Infrastructure as Code](infrastructure-as-code.md) - Provision Workers with OpenTofu or Terraform.
+4. [Manual Setup](manual-setup.md) - Worker entry point, wrangler.toml, and secrets (reference).
 
 ### Guides
 
-4. [Customization](customization.md) - Consent screen tool selection, branding, and custom rendering.
-5. [Multi-Site Deployments](multi-site.md) - Serve multiple Umbraco instances from one Worker.
+5. [Customization](customization.md) - Consent screen tool selection, branding, and custom rendering.
+6. [Multi-Site Deployments](multi-site.md) - Serve multiple Umbraco instances from one Worker.
 
 ### Understanding the System
 
-6. [Architecture](architecture.md) - Auth flow, three-tier configuration, component diagram.
-7. [Security](security.md) - Token isolation, consent, CSRF protection, MCP spec compliance.
+7. [Architecture](architecture.md) - Auth flow, three-tier configuration, component diagram.
+8. [Security](security.md) - Token isolation, consent, CSRF protection, MCP spec compliance.
 
 ### Reference
 
-8. [API Reference](api-reference.md) - All exports, types, and interfaces.
-9. [Troubleshooting](troubleshooting.md) - Common errors and fixes.
+9. [API Reference](api-reference.md) - All exports, types, and interfaces.
+10. [Troubleshooting](troubleshooting.md) - Common errors and fixes.

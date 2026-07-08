@@ -22,6 +22,7 @@
     * [Architecture](mcp/base-mcp/hosted-mcp/architecture.md)
     * [Customization](mcp/base-mcp/hosted-mcp/customization.md)
     * [Deployment](mcp/base-mcp/hosted-mcp/deployment.md)
+    * [Infrastructure as Code](mcp/base-mcp/hosted-mcp/infrastructure-as-code.md)
     * [Local Development Setup](mcp/base-mcp/hosted-mcp/local-dev-setup.md)
     * [Manual Setup](mcp/base-mcp/hosted-mcp/manual-setup.md)
     * [Multi-Site Deployments](mcp/base-mcp/hosted-mcp/multi-site.md)
