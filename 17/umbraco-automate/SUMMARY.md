@@ -59,6 +59,13 @@
   * [Installation](add-ons/deploy/installation.md)
   * [Triggers](add-ons/deploy/triggers.md)
   * [Transfer Automations](add-ons/deploy/transferring-automations.md)
+* [Workflow](add-ons/workflow/README.md)
+  * [Installation](add-ons/workflow/installation.md)
+  * [Triggers](add-ons/workflow/triggers.md)
+* [UI Builder](add-ons/uibuilder/README.md)
+  * [Installation](add-ons/uibuilder/installation.md)
+  * [Triggers](add-ons/uibuilder/triggers.md)
+  * [Actions](add-ons/uibuilder/actions.md)
 
 ## Extending
 

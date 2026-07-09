@@ -1,6 +1,6 @@
 ---
 description: >-
-  Install the Umbraco.Forms.Automate add-on alongside Umbraco Forms.
+  Install the Umbraco.Workflow.Automate add-on alongside Umbraco Workflow.
 ---
 
 # Installation
@@ -8,17 +8,17 @@ description: >-
 ## Prerequisites
 
 * Umbraco Automate installed and configured
-* Umbraco Forms 18.0 or later installed
+* Umbraco Workflow installed and configured
 
 ## Install the Package
 
 {% code title=".NET CLI" %}
 ```bash
-dotnet add package Umbraco.Forms.Automate
+dotnet add package Umbraco.Workflow.Automate
 ```
 {% endcode %}
 
-Restart your Umbraco site. The Forms triggers and actions appear in the catalogue under the **Forms** group.
+Restart your Umbraco site. The Workflow triggers appear in the catalogue under the **Workflow** group.
 
 ## Next Steps
 

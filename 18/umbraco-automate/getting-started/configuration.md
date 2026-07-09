@@ -89,6 +89,80 @@ The defaults are suitable for most sites:
 | `Execution`  | Default step timeout, concurrent run limit, maximum automation chain depth, and maximum HTTP response body size. |
 | `Governance` | Audit log retention and sensitive data masking.                                 |
 
+## Configuration References
+
+A settings field can reference a configuration value at run time with a `$Key:Path` syntax, instead of storing the value directly:
+
+```
+$Umbraco:Automate:Secrets:SlackToken
+```
+
+This lets administrators keep credentials and per-environment values in configuration — `appsettings.json`, environment variables, Azure Key Vault, and so on — rather than in the automation database.
+
+### Allowed Key Prefixes
+
+Automations run under an elevated service account, so configuration resolution is **default-deny**: a key only resolves when it falls under one of `AllowedConfigurationKeyPrefixes`. Any other key fails to resolve.
+
+Two prefixes are allowed by default:
+
+| Prefix                        | Intended for                                                          |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| `Umbraco:Automate:Secrets`    | Sensitive values, such as API tokens.                                 |
+| `Umbraco:Automate:Variables`  | Non-sensitive per-environment values, such as base URLs or feature flags. |
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "Automate": {
+      "Secrets": {
+        "SlackToken": "xoxb-..."
+      },
+      "Variables": {
+        "BaseUrl": "https://example.com"
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+Reference these values from a setting field with `$Umbraco:Automate:Secrets:SlackToken` or `$Umbraco:Automate:Variables:BaseUrl`.
+
+To expose an existing configuration section to automations without copying its values, add its prefix to `AllowedConfigurationKeyPrefixes`:
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "Automate": {
+      "AllowedConfigurationKeyPrefixes": [
+        "Umbraco:Automate:Secrets",
+        "Umbraco:Automate:Variables",
+        "MyApp:ThirdPartyApi"
+      ]
+    }
+  }
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Everything under an added prefix becomes readable by anyone who can configure automation settings. Only add a prefix you are comfortable exposing to automation authors.
+{% endhint %}
+
+### Secret Key Prefixes
+
+Values under a prefix listed in `SecretConfigurationKeyPrefixes` (`Umbraco:Automate:Secrets` by default) can only be referenced from a settings field marked sensitive. See [Create a Custom Connection Type](../extending/custom-connection-type.md) for `IsSensitive`. Referencing a secret key from a non-sensitive field fails. A resolved secret can only land in a field the system already encrypts at rest and masks in run logs.
+
+`Umbraco:Automate:Variables` is deliberately left off `SecretConfigurationKeyPrefixes`, so non-secret values can be referenced from any field.
+
+Matching for both lists is segment-aware and case-insensitive: the prefix `Umbraco:Automate:Secrets` matches `Umbraco:Automate:Secrets:SlackToken` but not `Umbraco:Automate:SecretsBackup:X`.
+
+{% hint style="info" %}
+`AllowedConfigurationKeyPrefixes` and `SecretConfigurationKeyPrefixes` are configured in `appsettings.json` only — they are not editable from the backoffice.
+{% endhint %}
+
 ## Next Steps
 
 {% content-ref url="first-automation.md" %}
