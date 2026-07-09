@@ -66,10 +66,10 @@ Bandwidth appears in the per-component breakdown for each project and in the CSV
 
 For details on the calculation, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) documentation.
 
-## Release Umbraco.Cloud.Cms 13.1.0, 17.2.1 & 18.0.1
+## Release Umbraco.Cloud.Cms 13.1.0, 17.2.1, & 18.0.1
 
 New versions of the `Umbraco.Cloud.Cms` package are available: 13.1.0, 17.2.1, and 18.0.1.
 
-All three versions contain a fix for cases where the internal azurewebsites.net URL could get through the Umbraco Cloud proxy and reach visitors.
+All three versions contain a fix for cases where the internal `azurewebsites.net` URL could get through the Umbraco Cloud proxy and reach visitors.
 
 The 13.1.0 release also introduces .NET health checks that mirror the ones introduced in Umbraco 17.3. This backport enables the readiness gating feature on Umbraco 13 sites.
