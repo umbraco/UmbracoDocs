@@ -8,7 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [July 2026](2026-07-releasenotes.md)
 
-* [08/07] - **Release Umbraco.Cloud.Cms 13.1.0, 17.2.1 & 18.0.1** - Fixes cases where the internal azurewebsites.net URL could get through the Umbraco Cloud proxy. The 13.1.0 release also backports the .NET health checks from Umbraco 17.3, used by the readiness gating feature.
+* [08/07] - **Release Umbraco.Cloud.Cms 13.1.0, 17.2.1, & 18.0.1** - Fixes cases where the internal azurewebsites.net URL could get through the Umbraco Cloud proxy. The 13.1.0 release also backports the .NET health checks from Umbraco 17.3, used by the readiness gating feature.
 * [01/07] - **Load Balancing** - Distribute incoming traffic across multiple dedicated instances to handle higher load and keep your site running smoothly under pressure.
 * [01/07] - **Dedicated Redis** - A dedicated Redis cache that stores hot data for the CMS. Required for Load Balancing as session storage, and available on its own as a second-level cache.
 * [01/07] - **New Dedicated Resource tiers** - Updated Dedicated Resource tiers as a first step toward better options and more flexibility. Available sizes: Extra Small, Small, Medium, and Large.
