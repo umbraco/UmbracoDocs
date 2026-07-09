@@ -2,6 +2,7 @@
 
 ## Key Takeaways
 
+* **Readiness gating** - During restarts, outages, and upgrades, Umbraco Cloud now keeps showing the error page until your site reports that it is ready. This prevents queued traffic from overwhelming a site that is still warming up.
 * **Release Umbraco.Cloud.Cms 13.1.0, 17.2.1 & 18.0.1** - Fixes cases where the internal azurewebsites.net URL could get through the Umbraco Cloud proxy. The 13.1.0 release also backports the .NET health checks from Umbraco 17.3, used by the readiness gating feature.
 * **Load Balancing** - Distribute incoming traffic across multiple dedicated instances to handle higher load and keep your site running smoothly under pressure.
 * **Dedicated Redis** - A dedicated Redis cache that stores hot data for the CMS. Required for Load Balancing as session storage, and available on its own as a second-level cache.
@@ -65,6 +66,16 @@ Umbraco Cloud estimates these emissions from the volume of data your sites trans
 Bandwidth appears in the per-component breakdown for each project and in the CSV export. Like the other components, it is reported per month. A month's data becomes available a few weeks after the month ends.
 
 For details on the calculation, see the [Sustainability Dashboard](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) documentation.
+
+## Readiness gating
+
+When an environment restarts, recovers from an outage, or upgrades, Umbraco Cloud now holds back public traffic until the site reports that it is ready. Previously, all queued traffic was released at the first successful response. That could overwhelm a site that was still warming up and take it down again.
+
+Readiness is reported by the site itself through the readiness endpoint `GET /umbraco/api/health/ready`. Visitors see your custom error page if one is assigned, otherwise the default Umbraco Cloud maintenance page. Once the site reports ready, normal traffic resumes within roughly ten seconds.
+
+Readiness gating is active on Umbraco 13 sites with `Umbraco.Cloud.Cms` version 13.1.0 or later, and on Umbraco 17.6 and later. On all other versions, behaviour is unchanged.
+
+For supported versions and always-accessible paths, see the [Readiness Gating](../../build-and-customize-your-solution/handle-deployments-and-environments/readiness-gating.md) documentation.
 
 ## Release Umbraco.Cloud.Cms 13.1.0, 17.2.1 & 18.0.1
 
