@@ -34,7 +34,7 @@ To reject a Workflow task, click on the **Reject** button in the Action section.
 
 For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
 
-![Reject Workflow Tasks](<../.gitbook/assets/assign-rejected-task (1).png>)
+![Reject Workflow Tasks](../.gitbook/assets/assign-rejected-task.png)
 
 #### Cancel pending Workflow Tasks
 
@@ -74,7 +74,7 @@ Review the current Permissions for Approval Groups in the **Approval Groups** se
 
 ![Approval Groups Roles](../.gitbook/assets/approval-groups-roles-v14.png)
 
-Document type approval flows may contain conditional stages, such as including **Translators** in the workflow only when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](../workflow-section/workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](../workflow-section/workflow-settings.md) article.
+Document type approval flows may contain conditional stages, such as including **Translators** in the workflow only when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/workflow-section/workflow-settings.md#document-type-approval-flows) section in the [Workflow Settings](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/workflow-section/workflow-settings.md) article.
 
 Configuration cannot be modified when a content node is in a workflow process.
 
