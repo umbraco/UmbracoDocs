@@ -34,6 +34,7 @@ You can configure the **General** Settings from the **Content Approvals** menu i
 * **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
 * **Use workflow for unpublish** - Determines if unpublish actions require workflow approval. Set to true to display the **Action** option when submitting the content for approval.
 * **Extend permissions** - Determines if Umbraco Workflow should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
+* **Require publish for initiate** - Determines the minimum user permission for initiating a workflow process. The default (false) behaviour requires the user have permission to update the entity. When true, the user must have permission to publish the entity to be able to submit for workflow approval. This setting was added in 18.0.1, defaulting to the legacy behaviour (requiring update permission only).
 
 ### New Node Approval Flow
 
