@@ -27,7 +27,7 @@ If you cannot access the Workspace or see your team's external services, ask you
 1. Log into the Umbraco Backoffice.
 2. Locate and click **Automation** in the top navigation bar.
 
-![Automation section in the Backoffice](../.gitbook/assets/automate-toolbar.png).
+![Automation section in the Backoffice](../.gitbook/assets/automate-toolbar.png)
 
 ## Build Your First Automation
 
@@ -46,31 +46,46 @@ The value of Umbraco Automate lies in its flexibility. The scenarios listed belo
 This automation uses an AI Agent to automatically translate new press releases into multiple languages, eliminating hours of manual copy-pasting.
 
 - Trigger: `Content Published` (Filtered for the "Press Release" Document Type)
-- Action 1: `Run AI Agent` (Requires the `Umbraco.AI.Automate` add-on package)
-- Action 2: `Update Content Property` (Core)
+- Action 1: `Get Content` (Core). This step is required to explicitly fetch the page fields and make your text properties accessible to the next steps.
+- Action 2: `Run AI Agent` (Requires the `Umbraco.AI.Automate` add-on package)
+- Action 3: `Update Content Property` (Core)
 
 #### Setup
 
-1. Click the empty trigger slot on the canvas, choose `Content Published` trigger from the picker. Filter it to your "Press Release" Document Type.
-2. Click the **+** button below the trigger and add a `Run AI` Agent action block. In its prompt text box, use a binding to pass your text: `Translate the following text into professional Spanish: ${trigger.bodyText}.`
-3. Click the next **+** button and attach an `Update Content Property` action step. Map the output variable from the AI step directly into your target language variant fields to save it instantly as a localized draft.
+1. Navigate to the **Automation** section.
+2. Create an automation and name it **Press release Translation Pipeline**.
+3. Click the empty trigger block and select `Content Published` trigger from the picker.
+4. Filter it to your *Press Release* Document Type.
+5. Click the **+** button below the trigger and add the `Get Content` action block.
+6. Bind its key field dynamically: `${trigger.contentKey}`.
+7. Click **+** below the content fetch block and choose `Run AI Agent`.
+8. In the **Agent** field, select your pre-configured agent profile.
+9. In the **Message** field, click **Insert Binding** to open the **Insert Binding Expression** panel. Scroll down to the **Get Content** section, select `properties` (this inserts `${ steps.getContent.properties }`). Append a dot and your specific text field's code alias inside the brackets (for example, `.bodyText`).
+10. Click **+** and add an `Update Content Property` block. Populate its fields using your specific document schema setup:
+    1. **Content Key**: Select `${trigger.contentKey}` from the binding picker.
+    2. **Property Alias**: Type the alias of your destination field.
 
-### Example 2: VIP Lead Routing and Dynamic CRM Injection
+### Example 2: Milestone Submission Alerts and Routing
 
-This automation routes high-value form submissions to Slack for instant executive alerts, while sending standard inquiries to a default helpdesk.
+This automation routes form traffic to an alert channel once submission volume crosses a specific metric threshold, keeping standard initial entries managed separately.
 
 - Trigger: `Form Submitted` (Requires the `Umbraco.Forms.Automate` add-on package)
+- Action 1: `Export Form Entries`
 - Logic Block: `If` (Control Flow)
-- Branch A (True): `Send Slack Message` (Requires the `Umbraco.Automate.Slack` add-on package)
-- Branch B (False): `Send Email` (Core)
+    - Branch A (True):  `Send Slack Message` (Requires the `Umbraco.Automate.Slack` add-on package)
+    - Branch B (False): `Send Email` (Core)
 
 #### Setup
 
-1. Click the trigger slot, select `Form Submitted` and pick your "Request a Quote" form.
-2. Click the **+** button below the trigger and add an **If** control flow node.
-3. Add a condition rule to evaluate your form's budget field using a binding: `${trigger.estimatedBudget} is greater than 10000`.
-4. On the **True** Branch, add a `Send Slack Message` action targeting your `#vip-sales-alert-channel`. Type `${` to use autocomplete bindings to pull in the information.
-5. On the **False** Branch, add a standard `Send Email` action to drop the submission info into your default general helpdesk queue.
+1. Click the trigger slot. Select `Form Submitted` and choose your *Request a Quote* form.
+2. Click the **+** button below the trigger and add an **Export Form Entries** action block. Choose your *Request a Quote* form.
+3. Click **+** and add an **If** control flow block.
+4. Click **Add condition**. Select **<>** next to the **Left value** field to open the **Insert Binding Expression** panel.
+5. Navigate to the **Export Form Entries** section and select `totalCount`. This will insert `${ steps.exportEntries.totalCount }` into the **Left Value** field.
+6. Set the **Operator** dropdown selection to **Greater Than**.
+7. Type your target threshold (for example, `1000`) into the **Right Value** field.
+8. On the **True** Branch, add a `Send Slack Message` action targeting your designated alerts channel.
+9. On the **False** Branch, add a standard `Send Email` action block to route normal submission traffic to your default queue.
 
 ### Example 3: Bulk Content Expiry & Archiving Audit
 
@@ -98,10 +113,14 @@ This automation monitors your storefront for inventory shifts, instantly alertin
 
 #### Setup
 
-1. Add a `Stock Changed` from the picker and select your target store instance.
+1. Click the empty trigger slot and add a `Stock Changed` from the picker. Select your target store instance.
 2. Click the **(+)** button below the trigger and add an **If** logic block.
-3. In the condition settings panel, evaluate the stock output property: `${trigger.newStockLevel} is less than 5`.
-4. On the **True** branch, add a `Send Slack Message` action targeting your internal `#inventory-alerts` or supplier tracking channel. Use automated bindings to pull the item's info dynamically: `Critical low stock alert: ${trigger.productName} is down to ${trigger.newStockLevel} items left! Please evaluate a reorder`.
+3. Click Add condition. Click **<>** next to the Left value field to open the **Insert Binding Expression** panel.
+4. Under the **Stock Changed** section, select `newStock`. This inserts `${ trigger.newStock }` value into the Left value field.
+5. Set the **Operator** dropdown selection to **less than**.
+6. Type your minimum buffer threshold (for example, `5`) into the **Right Value** field.
+7. On the **True** branch, add a `Send Slack Message` action targeting your internal `#inventory-alerts` or supplier tracking channel.
+8. In the Message field, click the binding button (...) to pull in your trigger's available reference properties: `Critical low stock alert: Product reference ${trigger.productReference} has dropped below the safety threshold. Please evaluate a supplier reorder.`.
 
 {% hint style="info" %}
 Umbraco Commerce supports SQLite for testing, but it is not recommended to use it in a live environment. For more information, see the [Configure SQLite support article in the Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/how-to-guides/configure-sqlite-support).
@@ -109,18 +128,22 @@ Umbraco Commerce supports SQLite for testing, but it is not recommended to use i
 
 ### Example 5: Personalization Booster & Account Management Flag
 
-This automation bridges customer behavioral analytics into direct sales action. When a visitor shifts to a target audience segment based on their browsing behavior, Automate instantly alerts their account executive.
+This automation bridges backoffice marketing operations into direct sales action. When a visitor profile is manually advanced to a new stage in your customer journey funnel, Automate instantly loops in your account management team.
 
-- Trigger: `Persona Scored` (Requires the `Umbraco.Engage.Automate` add-on package)
+- Trigger: `Customer Journey Step Explicitly Assigned` (Requires the `Umbraco.Engage.Automate` add-on package)
 - Logic Block: `If` (Control Flow)
 - Branch A (True): `Send Email` (Core)
 
-### Set up
+#### Set up
 
-1. Select the `Persona Scored` trigger from your canvas picker, which listens directly to the real-time behavioral telemetry running inside your CMS tracking layers.
+1. Select the `Customer Journey Step Explicitly Assigned` trigger from your canvas picker.
 2. Connect an `If` logic block underneath the trigger node.
-3. Configure the rule condition to evaluate the primary audience alignment target: `${trigger.highestPersonaAlias} equals enterprise-buyer`.
-4. On the True branch, add a standard `Send Email` action block directed straight to your B2B account management team, passing along the visitor's anonymized tracking ID or form lookup payload so they can customize their next outreach strategy.
+3. Click Add condition. Click **<>** next to the Left value field to open the **Insert Binding Expression** panel.
+4. Under the **Customer Journey Step Explicitly Assigned** section, select `customerJourneyStepId`. This will insert: `${ trigger.customerJourneyStepId }`.
+5. Set the **Operator** dropdown selection to **greater than**.
+6. Type `0` into the **Right Value** input box.
+7. On the True branch, add a standard `Send Email` action block directed straight to your B2B account management team.
+8. Use the binding button (...) inside the email **Body** to pass along the visitor metadata: `Marketing Update: Visitor ID ${ trigger.visitorId } has been successfully advanced to your high-value tracking funnel step.`
 
 {% hint style="info" %}
 Umbraco Engage does not support SQL CE and SQLite. For more information, see the [System Requirements in the Engage Documentation](https://docs.umbraco.com/umbraco-engage/installation/system-requirements).
