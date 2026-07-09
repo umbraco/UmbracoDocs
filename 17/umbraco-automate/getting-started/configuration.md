@@ -68,7 +68,8 @@ The defaults are suitable for most sites:
       "Execution": {
         "DefaultTimeout": "00:05:00",
         "MaxConcurrentRuns": 10,
-        "MaxChainDepth": 5
+        "MaxChainDepth": 5,
+        "MaxHttpResponseBodyBytes": 10485760
       },
       "Governance": {
         "AuditLogEnabled": true,
@@ -85,7 +86,7 @@ The defaults are suitable for most sites:
 | ------------ | ------------------------------------------------------------------------------- |
 | `Enabled`    | Master switch for the automation engine.                                        |
 | `Webhook`    | Maximum payload size and per-automation rate limit for incoming webhooks.       |
-| `Execution`  | Default step timeout, concurrent run limit, and maximum automation chain depth. |
+| `Execution`  | Default step timeout, concurrent run limit, maximum automation chain depth, and maximum HTTP response body size. |
 | `Governance` | Audit log retention and sensitive data masking.                                 |
 
 ## Next Steps
