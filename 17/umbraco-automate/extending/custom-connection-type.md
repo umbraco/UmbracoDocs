@@ -30,12 +30,40 @@ public sealed class MyServiceConnectionSettings
 
     [Field(
         Label = "API key",
-        Description = "The API key issued by the service.",
+        Description = "The API key issued by the service. Supports config references like $Umbraco:Automate:Secrets:ApiKey.",
         IsSensitive = true)]
     public string ApiKey { get; set; } = string.Empty;
 }
 ```
 {% endcode %}
+
+## Configuration References
+
+Settings values starting with `$` are resolved from configuration. References resolve from `Umbraco:Automate:Secrets` (sensitive values) and `Umbraco:Automate:Variables` (non-sensitive values) by default.
+
+**In the UI:** enter `$Umbraco:Automate:Secrets:ApiKey`
+
+**In appsettings.json:**
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "Automate": {
+      "Secrets": {
+        "ApiKey": "the-actual-key"
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+This keeps secrets out of the database and supports environment-specific values.
+
+{% hint style="info" %}
+Values under `Umbraco:Automate:Secrets` may only be referenced from fields marked `IsSensitive = true`. To reference values from other configuration sections, add their prefix to `Umbraco:Automate:AllowedConfigurationKeyPrefixes` — see [Configuration](../getting-started/configuration.md#configuration-references).
+{% endhint %}
 
 ## Connection Type Class
 

@@ -16,7 +16,28 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
-### 18.0.0-rc1 (June 2026)
+### [18.0.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.1) (July 9 2026)
+
+#### Improvements to reminder email notifications
+* Emails correctly follow rejection target in rejected workflows [#154](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/154)
+* Reminders skip recycled content
+* Hardens cancel-on-delete paths that were potentially leaving active workflows after content deletion
+
+### Extends permissions for initiating approval workflows
+* Fallback permissions are considered when setting action state
+* Adds optional setting to require publish permission, or default to requiring update permission (legacy behaviour)
+
+### Bug fixes and other changes
+
+* Fixes a bug where the workspace view never loaded for segmented culture-invariant documents [#159](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/159)
+* Fixes a bug where Document Type content review configuration was not properly persisted [#158](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/158)
+* Fixes a bug where the `Lock active content` setting was not correctly applied [#161](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/161)
+
+### 18.0.0 (June 25 2026)
+
+* All changes from 18.0.0-rc1
+
+### 18.0.0-rc1 (June 4 2026)
 
 * Compatibility with Umbraco 18-rc.
 
