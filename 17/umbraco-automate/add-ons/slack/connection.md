@@ -10,10 +10,10 @@ Before an automation can post to Slack, you must create a **Slack** connection a
 
 ## Create the Connection
 
-1. Go to the **Automation** section in the backoffice.
-2. Go to **Connections** in the tree.
-3. Click **+**.
-4. Select **Slack** from the connection type picker.
+1. Open the **Automate** section in the backoffice.
+2. Switch to the **Settings** sidebar.
+3. Right-click **Connections** and select **Create connection**.
+4. Pick **Slack** from the connection type picker.
 5. Enter a name, for example `Team announcements`.
 6. Click **Authenticate**. A popup opens to the Slack authorization page.
 7. Pick the workspace and approve the requested scopes.
