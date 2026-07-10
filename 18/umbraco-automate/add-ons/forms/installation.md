@@ -8,7 +8,7 @@ description: >-
 ## Prerequisites
 
 * Umbraco Automate installed and configured
-* Umbraco Forms 17.3 or later installed
+* Umbraco Forms 18.0 or later installed
 
 ## Install the Package
 

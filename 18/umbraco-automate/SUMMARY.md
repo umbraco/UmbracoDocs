@@ -59,6 +59,13 @@
   * [Installation](add-ons/deploy/installation.md)
   * [Triggers](add-ons/deploy/triggers.md)
   * [Transfer Automations](add-ons/deploy/transferring-automations.md)
+* [Workflow](add-ons/workflow/README.md)
+  * [Installation](add-ons/workflow/installation.md)
+  * [Triggers](add-ons/workflow/triggers.md)
+* [UI Builder](add-ons/uibuilder/README.md)
+  * [Installation](add-ons/uibuilder/installation.md)
+  * [Triggers](add-ons/uibuilder/triggers.md)
+  * [Actions](add-ons/uibuilder/actions.md)
 
 ## Extending
 
@@ -66,3 +73,7 @@
 * [Create a Custom Trigger](extending/custom-trigger.md)
 * [Create a Custom Action](extending/custom-action.md)
 * [Create a Custom Connection Type](extending/custom-connection-type.md)
+
+## Tutorials
+
+* [Technical Runbook: Extending Automate for Developers](tutorials/technical-runbook-for-developer.md)
