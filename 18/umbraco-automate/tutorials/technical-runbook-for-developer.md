@@ -23,7 +23,7 @@ Visual automation workflows designed on the backoffice canvas read and query dat
 - **Core CMS Stores (`Umbraco.sqlite.db`):** Managed via `umbracoDbDSN`. This holds standard content pages, media assets, and member profiles.
 - **Automate Schemas & Run Trackers (`Umbraco.Automate.sqlite.db`):** Managed via `umbracoAutomateDbDSN`. This holds your visual canvas configurations, workspace permissions, and historical execution run trackers.
 
-![Database & Architecture Layout](../.gitbook/assets/automate-db-architecture.png).
+![Database & Architecture Layout](../.gitbook/assets/automate-db-architecture.png)
 
 ## Blueprint 1: Zero-Dependency Local Testing Flow
 
@@ -472,15 +472,15 @@ A completed run with no errors is not the same as a correct run. A step can repo
 
 Once refreshed, your custom trigger and action should appear under their configured `Group` in the respective pickers:
 
-![Trigger picker showing "Local Page Published Test" under the Testing group](../.gitbook/assets/testing-automation.png).
+![Trigger picker showing "Local Page Published Test" under the Testing group](../.gitbook/assets/testing-automation.png)
 
-![Action picker showing "Send Slack Notification" under the Integrations group](../.gitbook/assets/testing-automation-action.png).
+![Action picker showing "Send Slack Notification" under the Integrations group](../.gitbook/assets/testing-automation-action.png)
 
 ### Verify in Runs History
 
 Trigger a run, then go to **Settings** > **Log Viewer** and expand the completed run to inspect the actual step output, not only its status:
 
-![Search the Log Viewer for your action's actual output](../.gitbook/assets/log-viewer-details.png).
+![Search the Log Viewer for your action's actual output](../.gitbook/assets/log-viewer-details.png)
 
 ## Resources
 
