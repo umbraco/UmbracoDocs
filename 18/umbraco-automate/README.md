@@ -9,7 +9,7 @@ description: >-
 
 Umbraco Automate brings event-driven automation directly into Umbraco CMS. You build workflows on a visual canvas in the backoffice by combining triggers (events that start a flow) with actions (units of work). No external automation platform is needed.
 
-<figure><img src=".gitbook/assets/automation-canvas.png" alt="The Umbraco Automate canvas with a trigger and two actions connected."><figcaption><p>An automation built in the visual canvas editor.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/automation-canvas.png" alt="The Umbraco Automation canvas with a trigger and two actions connected."><figcaption><p>An automation built in the visual canvas editor.</p></figcaption></figure>
 
 ## Key Features
 
