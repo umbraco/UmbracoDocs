@@ -275,33 +275,47 @@ Sometimes you need to create or update Block List content via code, for example,
 
 ### Understanding the Block List JSON Format
 
-Block List data is stored as a JSON string with three top-level keys. Understanding this structure is essential before writing any import code.
+Block List data is stored as a JSON string. Understanding this structure is essential before writing any import code.
 
-* `layout`: Defines the visual order blocks appear in and links each block to its UDI (`umb://element/...`).
-* `contentData`: Holds the actual property values for each block. Every entry must include a `udi` matching an entry in the layout, and a `contentTypeKey` matching the GUID of the Element Type.
-* `settingsData`: Holds settings values if your Block Type has a Settings model configured. This key must always be present in the JSON, even when empty:
+* `layout`: Defines the order blocks appear in and links each block to its content through a `contentKey` (a GUID). If the block has a Settings model, the layout entry also holds a `settingsKey`.
+* `contentData`: Holds the property values for each block. Every entry must include a `key` matching a `contentKey` in the layout, a `contentTypeKey` matching the GUID of the Element Type, and a `values` array of `{ "alias", "value" }` pairs.
+* `settingsData`: Holds settings values if your Block Type has a Settings model configured. It follows the same shape as `contentData`.
+* `expose`: Lists which blocks are visible, per culture and segment. A block is only rendered if it has a matching `expose` entry. For invariant content, use `null` for both `culture` and `segment`.
+
+{% hint style="warning" %}
+Before Umbraco 14, Block List data used a different format: blocks were referenced by UDI (`umb://element/...`), property values were stored as flat keys, and there was no `expose` array. Umbraco 17 can still read that legacy format for existing content, but it is removed in Umbraco 18. Always write new content in the format shown below.
+{% endhint %}
 
 ```json
 {
   "layout": {
     "Umbraco.BlockList": [
-      { "contentUdi": "umb://element/abc123cd..." }
+      { "contentKey": "abc123cd-0000-0000-0000-000000000000" }
     ]
   },
   "contentData": [
     {
-      "udi": "umb://element/abc123cd...",
+      "key": "abc123cd-0000-0000-0000-000000000000",
       "contentTypeKey": "faeccfe7-ebea-4461-9caa-cc9e3541c969",
-      "myTextProperty": "Hello world"
+      "values": [
+        { "alias": "myTextProperty", "value": "Hello world" }
+      ]
     }
   ],
-  "settingsData": []
+  "settingsData": [],
+  "expose": [
+    { "contentKey": "abc123cd-0000-0000-0000-000000000000", "culture": null, "segment": null }
+  ]
 }
 ```
 
+{% hint style="info" %}
+You do not need to build this JSON by hand. Umbraco exposes strongly-typed models — `BlockListValue`, `BlockListLayoutItem`, `BlockItemData`, `BlockPropertyValue`, and `BlockItemVariation` — that serialize to exactly this structure through `IJsonSerializer`. The examples below use these models.
+{% endhint %}
+
 ### Creating a Block List Programmatically
 
-The following example shows how to build a Block List and save it to an existing content node. It assumes, you have:
+The following example shows how to build a Block List and save it to an existing content node. It assumes you have:
 
 * A Document Type with a Block List property aliased `timelineItems`.
 * An Element Type aliased `timelineItem` with two properties: `eventName` (Textstring Data Type) and `period` (Textstring Data Type).
@@ -312,9 +326,10 @@ Create a `TimelineImportController.cs` file in `MyProject/Controllers`.
 
 {% code title="TimelineImportController.cs" %}
 ```csharp
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models.Blocks;
+using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 
 [ApiController]
@@ -323,13 +338,16 @@ public class TimelineImportController : ControllerBase
 {
     private readonly IContentService _contentService;
     private readonly IContentTypeService _contentTypeService;
+    private readonly IJsonSerializer _jsonSerializer;
 
     public TimelineImportController(
         IContentService contentService,
-        IContentTypeService contentTypeService)
+        IContentTypeService contentTypeService,
+        IJsonSerializer jsonSerializer)
     {
         _contentService = contentService;
         _contentTypeService = contentTypeService;
+        _jsonSerializer = jsonSerializer;
     }
 
     [HttpPost("import")]
@@ -351,40 +369,38 @@ public class TimelineImportController : ControllerBase
             if (elementType == null)
                 return NotFound($"Element Type '{importModel.ElementTypeAlias}' not found.");
 
-            var layout = new List<Dictionary<string, string>>();
-            var contentData = new List<Dictionary<string, object>>();
-            var settingsData = new List<Dictionary<string, object>>();
+            var layout = new List<BlockListLayoutItem>();
+            var contentData = new List<BlockItemData>();
+            var expose = new List<BlockItemVariation>();
 
             foreach (var item in importModel.Items)
             {
-                // Generate a unique UDI for each block — never reuse or hardcode these
-                var contentUdi = Udi.Create("element", Guid.NewGuid()).ToString();
+                // Generate a unique key (GUID) for each block. Never reuse or hardcode these.
+                var contentKey = Guid.NewGuid();
 
-                layout.Add(new Dictionary<string, string>
+                layout.Add(new BlockListLayoutItem(contentKey));
+
+                contentData.Add(new BlockItemData(contentKey, elementType.Key, elementType.Alias)
                 {
-                    { "contentUdi", contentUdi }
+                    Values =
+                    {
+                        new BlockPropertyValue { Alias = "eventName", Value = item.Name },
+                        new BlockPropertyValue { Alias = "period", Value = $"{item.StartDate} - {item.EndDate}" }
+                    }
                 });
 
-                contentData.Add(new Dictionary<string, object>
-                {
-                    { "udi", contentUdi },
-                    { "contentTypeKey", elementType.Key.ToString() },
-                    { "eventName", item.Name },
-                    { "period", $"{item.StartDate} - {item.EndDate}" }
-                });
+                // A block is only rendered if it is exposed.
+                // Invariant content uses null for both culture and segment.
+                expose.Add(new BlockItemVariation(contentKey, culture: null, segment: null));
             }
 
-            var blockListValue = new
+            var blockListValue = new BlockListValue(layout)
             {
-                layout = new Dictionary<string, object>
-                {
-                    { "Umbraco.BlockList", layout }
-                },
-                contentData,
-                settingsData
+                ContentData = contentData,
+                Expose = expose
             };
 
-            page.SetValue(importModel.BlockListAlias, JsonSerializer.Serialize(blockListValue));
+            page.SetValue(importModel.BlockListAlias, _jsonSerializer.Serialize(blockListValue));
 
             // Calling Publish() alone without Save() first will not persist changes.
             _contentService.Save(page);
@@ -410,17 +426,17 @@ public class TimelineImportController : ControllerBase
 ```csharp
 public class ImportModel
 {
-    public string PageGuid { get; set; }
-    public string BlockListAlias { get; set; }
-    public string ElementTypeAlias { get; set; }
+    public string PageGuid { get; set; } = string.Empty;
+    public string BlockListAlias { get; set; } = string.Empty;
+    public string ElementTypeAlias { get; set; } = string.Empty;
     public List<TimelineItemModel> Items { get; set; } = new();
 }
 
 public class TimelineItemModel
 {
-    public string Name { get; set; }
-    public string StartDate { get; set; }
-    public string EndDate { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string StartDate { get; set; } = string.Empty;
+    public string EndDate { get; set; } = string.Empty;
 }
 ```
 {% endcode %}
@@ -441,6 +457,7 @@ With this body, substituting your actual GUID from the **Info** tab:
 {
   "pageGuid": "YOUR-GUID-FROM-INFO-TAB",
   "blockListAlias": "timelineItems",
+  "elementTypeAlias": "timelineItem",
   "items": [
     { "name": "Project launched", "startDate": "2021", "endDate": "2022" },
     { "name": "First release", "startDate": "2022", "endDate": "2023" }
@@ -507,60 +524,38 @@ public IActionResult Import([FromBody] ImportModel importModel)
         if (elementType == null)
             return NotFound($"Element Type '{importModel.ElementTypeAlias}' not found.");
 
-        // Read existing value and deserialise, or start fresh if property is empty
+        // Read the existing value and deserialise it, or start from an empty Block List.
         var existingJson = page.GetValue<string>(importModel.BlockListAlias);
+        var blockListValue = string.IsNullOrWhiteSpace(existingJson)
+            ? new BlockListValue()
+            : _jsonSerializer.Deserialize<BlockListValue>(existingJson) ?? new BlockListValue();
 
-        List<Dictionary<string, string>> layout;
-        List<Dictionary<string, object>> contentData;
-        List<Dictionary<string, object>> settingsData;
-
-        if (!string.IsNullOrWhiteSpace(existingJson))
-        {
-            var existing = JsonSerializer.Deserialize<JsonElement>(existingJson);
-            layout = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(
-                existing.GetProperty("layout").GetProperty("Umbraco.BlockList").GetRawText()) ?? new();
-            contentData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(
-                existing.GetProperty("contentData").GetRawText()) ?? new();
-            settingsData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(
-                existing.GetProperty("settingsData").GetRawText()) ?? new();
-        }
-        else
-        {
-            layout = new();
-            contentData = new();
-            settingsData = new();
-        }
+        // Copy the existing layout so new items can be appended to it.
+        var layout = blockListValue.GetLayouts()?.ToList() ?? new List<BlockListLayoutItem>();
 
         // Append new blocks to the existing collections
         foreach (var item in importModel.Items)
         {
-            var contentUdi = Udi.Create("element", Guid.NewGuid()).ToString();
+            var contentKey = Guid.NewGuid();
 
-            layout.Add(new Dictionary<string, string>
+            layout.Add(new BlockListLayoutItem(contentKey));
+
+            blockListValue.ContentData.Add(new BlockItemData(contentKey, elementType.Key, elementType.Alias)
             {
-                { "contentUdi", contentUdi }
+                Values =
+                {
+                    new BlockPropertyValue { Alias = "eventName", Value = item.Name },
+                    new BlockPropertyValue { Alias = "period", Value = $"{item.StartDate} - {item.EndDate}" }
+                }
             });
 
-            contentData.Add(new Dictionary<string, object>
-            {
-                { "udi", contentUdi },
-                { "contentTypeKey", elementType.Key.ToString() },
-                { "eventName", item.Name },
-                { "period", $"{item.StartDate} - {item.EndDate}" }
-            });
+            blockListValue.Expose.Add(new BlockItemVariation(contentKey, culture: null, segment: null));
         }
 
-        var blockListValue = new
-        {
-            layout = new Dictionary<string, object>
-            {
-                { "Umbraco.BlockList", layout }
-            },
-            contentData,
-            settingsData
-        };
+        // Write the updated layout back to the Block List.
+        blockListValue.Layout[Constants.PropertyEditors.Aliases.BlockList] = layout;
 
-        page.SetValue(importModel.BlockListAlias, JsonSerializer.Serialize(blockListValue));
+        page.SetValue(importModel.BlockListAlias, _jsonSerializer.Serialize(blockListValue));
         _contentService.Save(page);
         var publishResult = _contentService.Publish(page, ["*"]);
 
@@ -578,44 +573,45 @@ public IActionResult Import([FromBody] ImportModel importModel)
 
 ### Using Settings Models
 
-If your Block Type has a Settings model configured, each block needs a `settingsUdi` referenced in both `layout` and `settingsData`. A Settings model is the optional second Element Type you can attach to a block. It is commonly used to let editors control things like background color, padding, or visibility toggles separately from the block's content.
+If your Block Type has a Settings model configured, each block needs a `settingsKey` referenced in both `layout` and `settingsData`. A Settings model is the optional second Element Type you can attach to a block. It is commonly used to let editors control things like background color, padding, or visibility toggles separately from the block's content.
 
-To use settings, fetch both Element Types and generate a separate UDI for each block's settings entry:
+To use settings, fetch both Element Types and generate a separate key for each block's settings entry. Declare a `settingsData` list alongside the other collections and pass it when constructing the value: `new BlockListValue(layout) { ContentData = contentData, SettingsData = settingsData, Expose = expose }`.
 
 ```csharp
 var contentElementType = _contentTypeService.Get("timelineItem");
 var settingsElementType = _contentTypeService.Get("timelineItemSettings");
 
-var contentUdi  = Udi.Create("element", Guid.NewGuid()).ToString();
-var settingsUdi = Udi.Create("element", Guid.NewGuid()).ToString();
+var contentKey  = Guid.NewGuid();
+var settingsKey = Guid.NewGuid();
 
-// Layout entry must reference both UDIs
-layout.Add(new Dictionary<string, string>
+// Layout entry references both keys
+layout.Add(new BlockListLayoutItem(contentKey, settingsKey));
+
+// Content entry uses the content key and content Element Type
+contentData.Add(new BlockItemData(contentKey, contentElementType.Key, contentElementType.Alias)
 {
-    { "contentUdi",  contentUdi  },
-    { "settingsUdi", settingsUdi }
+    Values =
+    {
+        new BlockPropertyValue { Alias = "eventName", Value = "Project launched" },
+        new BlockPropertyValue { Alias = "period", Value = "2021 - 2022" }
+    }
 });
 
-// Content entry uses the content UDI and content Element Type key
-contentData.Add(new Dictionary<string, object>
+// Settings entry uses the settings key and settings Element Type
+settingsData.Add(new BlockItemData(settingsKey, settingsElementType.Key, settingsElementType.Alias)
 {
-    { "udi", contentUdi },
-    { "contentTypeKey", contentElementType.Key.ToString() },
-    { "eventName", "Project launched" },
-    { "period", "2021 - 2022" }
+    Values =
+    {
+        new BlockPropertyValue { Alias = "isHighlighted", Value = "1" }
+    }
 });
 
-// Settings entry uses the settings UDI and settings Element Type key
-settingsData.Add(new Dictionary<string, object>
-{
-    { "udi", settingsUdi },
-    { "contentTypeKey", settingsElementType.Key.ToString() },
-    { "isHighlighted", "1" }
-});
+// The block still needs an expose entry, which references the content key only
+expose.Add(new BlockItemVariation(contentKey, culture: null, segment: null));
 ```
 
 {% hint style="info" %}
-If your block type does not have a Settings model, `settingsData` must still be present in the JSON as an empty array. Omitting it entirely will cause the property editor to fail to parse the stored value.
+Settings do not need their own `expose` entry — `expose` only references a block's `contentKey`. If your block type has no Settings model, leave `SettingsData` empty (its default).
 {% endhint %}
 
 ### Handling Multilingual (Variant) Content
@@ -627,16 +623,21 @@ Ensure **Allow vary by culture** is enabled on your Document Type in the Setting
 ```csharp
 string targetCulture = "da-DK";
 
-// Read existing value for the correct culture
-var existingJson = page.GetValue(importModel.BlockListAlias, culture: targetCulture);
+// Read the existing value for the correct culture
+var existingJson = page.GetValue<string>(importModel.BlockListAlias, culture: targetCulture);
+var blockListValue = string.IsNullOrWhiteSpace(existingJson)
+    ? new BlockListValue()
+    : _jsonSerializer.Deserialize<BlockListValue>(existingJson) ?? new BlockListValue();
 
 // ... build or append blocks ...
+// For culture-variant blocks, each expose entry must use the target culture instead of null:
+// blockListValue.Expose.Add(new BlockItemVariation(contentKey, culture: targetCulture, segment: null));
 
-page.SetValue(importModel.BlockListAlias, JsonSerializer.Serialize(blockListValue), culture: targetCulture);
+page.SetValue(importModel.BlockListAlias, _jsonSerializer.Serialize(blockListValue), culture: targetCulture);
 _contentService.Save(page);
 _contentService.Publish(page, new[] { targetCulture });
 ```
 
 {% hint style="warning" %}
-Always pass the same culture string to both `GetValue()` and `SetValue()`. Omitting the culture from `GetValue()` reads the invariant slot, which is empty on a culture-variant property. causing existing blocks to be overwritten instead of appended.
+Always pass the same culture string to both `GetValue()` and `SetValue()`. Omitting the culture from `GetValue()` reads the invariant slot, which is empty on a culture-variant property, causing existing blocks to be overwritten instead of appended.
 {% endhint %}
