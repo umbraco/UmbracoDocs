@@ -12,7 +12,7 @@ While most cache configurations are under the `Umbraco:CMS:Cache` settings node,
 
 ## HybridCacheOptions
 
-Umbraco's cache is implemented using Microsofts `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
+Umbraco's cache is implemented using Microsoft's `HybridCache`, which also has its own settings. For more information [see the HybridCache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0#options).
 
 ### MaximumPayLoadBytes
 
@@ -153,7 +153,7 @@ Specifies the duration for which seeded cache entries should be kept in the cach
 
 ## Content type rebuild mode
 
-When you save a content type with structural changes, Umbraco rebuilds the database cache for every affected content item. Structural changes include removing a property, changing a property alias, or changing the variation mode.
+When you save a content type with structural changes, Umbraco rebuilds the database cache for every affected content item. Structural changes include removing a property, changing a property alias, or changing the variation mode. The stale cache rows are cleared in batches before being rebuilt; the batch size can be tuned with the [`ContentTypeRebuildDeleteBatchSize`](cache-settings.md#contenttyperebuilddeletebatchsize) setting.
 
 By default, this rebuild runs during the save operation and blocks it until every content item of the affected types has been re-serialized. On sites with many content items per type, or when multiple related content types are saved in succession, the save can be slow.
 
@@ -216,6 +216,26 @@ Specifying the `SqlPageSize` will change the size of the paged SQL queries. The 
    }
  }
 ```
+
+### ContentTypeRebuildDeleteBatchSize
+
+When a content type is saved with structural changes, the database cache rows for every affected content item are deleted and then rebuilt. The delete runs in batches rather than as a single unbounded `DELETE`.
+
+The `ContentTypeRebuildDeleteBatchSize` setting controls how many content items have their cache rows deleted per batch. The default value is 2000, which is also the maximum (the effective size is capped at the SQL parameter limit). Lower it if brief lock escalation on the `cmsContentNu` table during a rebuild is a concern.
+
+```json
+"Umbraco": {
+  "CMS": {
+    "NuCache": {
+      "ContentTypeRebuildDeleteBatchSize": 1000
+    }
+   }
+ }
+```
+
+{% hint style="info" %}
+The `ContentTypeRebuildDeleteBatchSize` setting is available from Umbraco 17.6.
+{% endhint %}
 
 ## NuCacheSerializerType
 
