@@ -6,7 +6,7 @@ The Content review settings allow for the configuration of email notifications, 
 
 You can configure the **General** Settings from the **Content reviews** tab in the **Settings** section. The following settings are available:
 
-![General settings](../images/content-reviews-general-settings-v14.png)
+![General settings](../.gitbook/assets/content-reviews-general-settings-v14.png)
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 * **Send notifications** - Enable this setting to send email notifications to approval groups when content requires review.
@@ -20,14 +20,14 @@ You can configure specific review groups to review designated content nodes or D
 
 Content review permissions can be set at the node or Document Type level, both of which take precedence over any existing Workflow permissions. Permissions are assigned to user roles or groups within each workflow stage. For example:
 
-* Internal Reviewers: Users assigned to roles like *Editors* or *Content Managers* may have permissions to review content during the Internal Review stage. They ensure content quality, compliance with standards, and provide feedback for improvements before the content is published.
+* Internal Reviewers: Users assigned to roles like _Editors_ or _Content Managers_ may have permissions to review content during the Internal Review stage. They ensure content quality, compliance with standards, and provide feedback for improvements before the content is published.
 * External Reviewers: External reviewers are users who are invited to participate in the content review process but do not have Backoffice access. Their main role is to provide feedback or suggest changes based on their expertise or stake in the content being published. This feedback is not managed by Workflow.
 
-![Content review permissions](../images/Content-review-permissions-v14.png)
+![Content review permissions](../.gitbook/assets/Content-review-permissions-v14.png)
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 
-![Workflow Content App - Configuration tab](../getting-started/images/content-approval-flow-v14.png)
+![Workflow Content App - Configuration tab](../.gitbook/assets/content-approval-flow-v14.png)
 
 ## Content Item and Document Type Reviews
 
@@ -51,22 +51,22 @@ To add a content item review, follow these steps:
 2. Go to the **Settings** tab in the **Content reviews** menu.
 3. Click **Add** in the **Content item reviews** section.
 
-![Content Item Reviews](../images/content-item-reviews-v14.png)
+![Content Item Reviews](../.gitbook/assets/content-item-reviews-v14.png)
 
 4. Select **Content node** to add to the Content item reviews section.
 
-![Select Content Node](../images/content-item-reviews-select-content-v14.png)
+![Select Content Node](../.gitbook/assets/content-item-reviews-select-content-v14.png)
 
 5. Select **Choose**.
 6. Select the **Language** from the drop-down.
-7. *[Optional]* Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
+7. _\[Optional]_ Enable **Exclude from Review** if you wish to exclude this content node from content review. If you enable this setting, skip to step 12.
 8. Enter the **Review period** in days.
 9. Click **Choose** to add the **Review Group**.
 10. Select an **approval group**.
 11. Select **Submit**.
-12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
+12. _\[Optional]_ Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-![Edit Content Item Review Settings](../images/Content-review-permissions-v14.png)
+![Edit Content Item Review Settings](../.gitbook/assets/Content-review-permissions-v14.png)
 
 13. Click Submit.
 14. Click **Save**.
@@ -83,22 +83,22 @@ To add a Document Type review, follow these steps:
 2. Go to the **Settings** tab in **Content reviews**.
 3. Click **Add** in the **Document-type reviews** section.
 
-![Document Type reviews](../images/document-type-reviews-v14.png)
+![Document Type reviews](../.gitbook/assets/document-type-reviews-v14.png)
 
 4. Select **Content type** to add to the Document-type reviews section.
 
-![Select Content Type](../images/document-type-reviews-select-content-v14.png)
+![Select Content Type](../.gitbook/assets/document-type-reviews-select-content-v14.png)
 
 5. Select **Choose**
 6. Select the **Language** from the drop-down.
-7. *[Optional*] Enable **Exclude from Review** if you wish to exclude this Document Type from content review. If you enable this setting, skip to step 12.
+7. _\[Optional_] Enable **Exclude from Review** if you wish to exclude this Document Type from content review. If you enable this setting, skip to step 12.
 8. Enter the **Review period** in days.
 9. Click **Choose** to add the **Review Group**.
 10. Select an **approval group**.
 11. Click Submit.
-12. *[Optional]* Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
+12. _\[Optional]_ Enter a user in the **External reviewers** field. For example: `john.doe@workflow.com`.
 
-![Add Document Type Review Settings](../images/document-type-review-settings-v13.png)
+![Add Document Type Review Settings](../.gitbook/assets/document-type-review-settings-v13.png)
 
 13. Click Submit.
 14. Click **Save Settings**.

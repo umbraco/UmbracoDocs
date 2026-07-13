@@ -10,7 +10,7 @@ Follow this guide to build an automation that writes a message to the applicatio
 
 * Umbraco Automate is installed and the database is configured.
 * An administrator user (workspace creation and connection management are admin-only).
-* Access to the **Automate** section in the backoffice.
+* Access to the **Automation** section in the backoffice.
 * At least one publishable content item.
 
 ## Build a publish-triggered automation
@@ -23,10 +23,8 @@ The first time you open the **Automation** section, the dashboard shows a welcom
 
 1. Click **Create a Workspace** on the welcome panel.
 2. Enter a name, for example `Editorial`.
-3. Choose a **Service Account Key** and at least one **User Group**.
+3. Pick a **Service Account Key** and at least one **User Group**.
 4. Click **Save**.
-
-<figure><img src="../.gitbook/assets/create-first-workspace.png" alt="Create a Workspace."><figcaption><p>Creating a Workspace.</p></figcaption></figure>
 
 A workspace groups automations together and controls which user groups and connections have access.
 {% endstep %}
@@ -34,9 +32,9 @@ A workspace groups automations together and controls which user groups and conne
 {% step %}
 ### Step 2: Create the Automation
 
-1. Go to the workspace under **Automations** in the tree.
-2. Click **+** > **Create automation**.
-3. Enter a name, for example `Log on publish`.
+1. In the tree, expand your new workspace.
+2. Click **+** > **Create** > **Automation** from the actions panel.
+3. Enter a name, for example `Log on publish`,.
 4. Click **Save and publish**.
 
 <figure><img src="../.gitbook/assets/create-automation-modal.png" alt="The create automation modal with a name field."><figcaption><p>Creating a new automation.</p></figcaption></figure>
@@ -47,9 +45,9 @@ The new automation opens on the visual canvas with an empty trigger placeholder.
 {% step %}
 ### Step 3: Configure the Trigger
 
-1. Click the **+ ADD TRIGGER** placeholder.
-2. Select **Content Published** from the **Select Trigger** picker.
-3. Leave the content types field blank to match all content types.
+1. Click **Add Trigger**.
+2. Select **Content Published** from the Trigger picker.
+3. Leave the **Content Types** field blank to match all content types.
 4. Click **Save**.
 
 <figure><img src="../.gitbook/assets/trigger-picker.png" alt="The trigger picker showing categories of available triggers."><figcaption><p>Picking a trigger from the catalogue.</p></figcaption></figure>
@@ -59,7 +57,7 @@ The new automation opens on the visual canvas with an empty trigger placeholder.
 ### Step 4: Add an Action
 
 1. Click the **+** button below the trigger.
-2. Select **Log Message** from the **Select Action** picker.
+2. Select **Log Message** from the Action picker.
 3. Set the message to `Content "${ trigger.contentName }" was published.`
 4. Click **Save**.
 

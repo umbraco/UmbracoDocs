@@ -10,10 +10,11 @@ A workspace groups related automations and controls which connections and users 
 
 ## Create a Workspace
 
-1. Open the **Automate** section.
-2. Right-click the root of the tree.
-3. Select **Create workspace**.
-4. Enter a name and click **Create**.
+1. Open the **Automation** section.
+2. Click **+** next to Workspaces.
+3. **Enter a name** for the Workspace.
+4. Choose the **Service Account Key** and **user Groups**.
+5. Click **Save**.
 
 <figure><img src="../.gitbook/assets/create-workspace.png" alt="The create workspace modal."><figcaption><p>Creating a workspace.</p></figcaption></figure>
 

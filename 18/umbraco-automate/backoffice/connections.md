@@ -10,20 +10,19 @@ A connection stores the credentials an action needs to talk to an external servi
 
 ## Where Connections Live
 
-Connections are managed from the **Settings** sidebar in the **Automate** section. The Settings sidebar is only visible to administrators.
+Connections are managed from the **Settings** sidebar in the **Automation** section. The Settings sidebar is only visible to administrators.
 
-<figure><img src="../.gitbook/assets/settings-sidebar.png" alt="The Automate section sidebar with the Automations tree on top and the Settings menu below."><figcaption><p>Connections live under the Settings menu in the Automate sidebar.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-sidebar.png" alt="The Automation section sidebar with the Automations tree on top and the Settings menu below."><figcaption><p>Connections live under the Settings menu in the Automation sidebar.</p></figcaption></figure>
 
 ## Create a Connection
 
-1. Open the **Automate** section.
-2. Switch to the **Settings** sidebar.
-3. Open **Connections** in the tree.
-4. Right-click the **Connections** root and select **Create connection**.
-5. Pick a connection type from the picker, for example **Slack**.
-6. Enter a name and configure the type-specific settings.
-7. Click **Test connection** to verify the credentials.
-8. Click **Save**.
+1. Open the **Automation** section.
+2. Go to **Connections** in the tree.
+3. Click **+**. The **Connection Type** picker opens.
+4. Pick a connection type from the picker, for example **Slack**.
+5. **Enter a name** and configure the type-specific settings.
+6. Click **Authenticate** to verify the credentials.
+7. Click **Save**.
 
 <figure><img src="../.gitbook/assets/create-connection.png" alt="The create connection modal with a connection type picker."><figcaption><p>Creating a connection.</p></figcaption></figure>
 
@@ -36,9 +35,9 @@ A connection only appears in an action's connection picker when its workspace ha
 3. Pick the connection from the connection picker.
 4. Save the workspace.
 
-## Test a Connection
+## Authenticate a Connection
 
-The **Test connection** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
+The **Authenticate** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
 
 A failed test shows the error message so you can correct the settings before saving. Connection types that do not implement a validator return a warning instead of a success.
 

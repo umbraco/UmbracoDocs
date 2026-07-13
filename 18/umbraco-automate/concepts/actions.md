@@ -8,7 +8,7 @@ description: >-
 
 An action is a reusable unit of work. You add actions to an automation as steps and configure each step with its own settings.
 
-## **Available** Built-in Actions
+## Available Built-in Actions
 
 Use built-in actions to send data, update Umbraco entities, and control automation flow.
 
@@ -59,6 +59,10 @@ ${ steps.callApi.responseBody }
 ```
 
 The step's alias (`callApi` in the example) is set in the step settings panel.
+
+{% hint style="warning" %}
+The HTTP Request action rejects responses larger than `Execution:MaxHttpResponseBodyBytes` (10 MB by default). The step fails with a terminal error that names the response size and the limit. Raise the limit in [Configuration](../getting-started/configuration.md) for larger payloads.
+{% endhint %}
 
 ## Step Behaviour
 

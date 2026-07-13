@@ -60,6 +60,10 @@ ${ steps.callApi.responseBody }
 
 The step's alias (`callApi` in the example) is set in the step settings panel.
 
+{% hint style="warning" %}
+The HTTP Request action rejects responses larger than `Execution:MaxHttpResponseBodyBytes` (10 MB by default). The step fails with a terminal error that names the response size and the limit. Raise the limit in [Configuration](../getting-started/configuration.md) for larger payloads.
+{% endhint %}
+
 ## Step Behaviour
 
 Each step has additional execution settings on the canvas:

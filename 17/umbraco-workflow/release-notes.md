@@ -16,6 +16,23 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.3.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.4) (July 9 2026)
+
+#### Improvements to reminder email notifications
+* Emails correctly follow rejection target in rejected workflows [#154](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/154)
+* Reminders skip recycled content
+* Hardens cancel-on-delete paths that were potentially leaving active workflows after content deletion
+
+### Extends permissions for initiating approval workflows
+* Fallback permissions are considered when setting action state
+* Adds optional setting to require publish permission, or default to requiring update permission (legacy behaviour)
+
+### Bug fixes and other changes
+
+* Fixes a bug where the workspace view never loaded for segmented culture-invariant documents [#159](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/159)
+* Fixes a bug where Document Type content review configuration was not properly persisted [#158](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/158)
+* Fixes a bug where the `Lock active content` setting was not correctly applied [#161](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/161)
+
 ### [17.3.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.3) (June 17 2026)
 
 #### Approval configuration decoupled from settings

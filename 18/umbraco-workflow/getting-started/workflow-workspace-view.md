@@ -34,7 +34,7 @@ To reject a Workflow task, click on the **Reject** button in the Action section.
 
 For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
 
-![Reject Workflow Tasks](<../.gitbook/assets/assign-rejected-task (1).png>)
+![Reject Workflow Tasks](../.gitbook/assets/assign-rejected-task.png)
 
 #### Cancel pending Workflow Tasks
 
@@ -54,7 +54,7 @@ For example, German variants can be approved by the German speakers group, while
 
 You can add different groups for different stages of content approval flow. Content Approval flow groups can be reordered via drag and drop. You can also apply the approval flow either for publish and unpublish workflows or only publish workflow.
 
-![Content approval flow](../.gitbook/assets/content-approval-flow-v14.png)
+![Content approval flow](<../.gitbook/assets/content-approval-flow-v14 (1).png>)
 
 #### Approval Flow Types
 
@@ -68,13 +68,13 @@ A given content node may have all three approval flow types applied but only one
 | **Document type approval flow** | Set in the **Settings** section. Applies to all content nodes of the selected Document Type unless overridden by a Content approval flow set directly on the node. Requires a license.       | Secondary |
 | **Inherited approval flow**     | Used when a content node has no Content approval flow set, nor a flow applied to its Document Type. Umbraco Workflow will traverse the content tree upwards to find a Content approval flow. | Lowest    |
 
-![Approval Flow Types](../.gitbook/assets/content-approval-flow-v14.png)
+![Approval Flow Types](<../.gitbook/assets/content-approval-flow-v14 (1).png>)
 
 Review the current Permissions for Approval Groups in the **Approval Groups** section for **Node-based approvals** and **Document type approvals** only. For more information see the [Roles](../workflow-section/approval-groups.md#roles) section in the [Approval Groups](../workflow-section/approval-groups.md) article.
 
 ![Approval Groups Roles](../.gitbook/assets/approval-groups-roles-v14.png)
 
-Document type approval flows may contain conditional stages, such as including **Translators** in the workflow only when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](./content-approval-settings.md#document-type-approval-flows) section in the [Workflow Settings](./content-approval-settings.md) article.
+Document type approval flows may contain conditional stages, such as including **Translators** in the workflow only when the **Description** property has changed. For more information on settings conditions in Document type approval flows, see the [Document type approval flows](content-approval-settings.md#document-type-approval-flows) section in the [Workflow Settings](content-approval-settings.md) article.
 
 Configuration cannot be modified when a content node is in a workflow process.
 

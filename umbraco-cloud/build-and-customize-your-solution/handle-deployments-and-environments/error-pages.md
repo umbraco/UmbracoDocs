@@ -12,6 +12,8 @@ The Error Pages feature lets you serve a custom HTML page to visitors when your 
 
 Error pages are shown when an environment is restarting. Most deployments require a restart, during which visitors may briefly see the error page.
 
+On supported versions, Umbraco Cloud keeps showing the error page until your site reports that it is ready. See the [Readiness Gating](readiness-gating.md) article for details.
+
 To handle error pages when the website is running, see the [Umbraco CMS tutorial: Custom Error Pages](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
 {% hint style="info" %}
