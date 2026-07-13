@@ -73,7 +73,7 @@ public class MyItemApiController : ManagementApiControllerBase
 
 The `RequireRole` approach shown above checks which user groups the current user belongs to. The approach does not check which backoffice sections the user can access.
 
-The built-in `SectionAccess` policies cover only Umbraco's own sections, such as Content and Media. There is no built-in policy for a custom section alias. To authorize against your own section, read the sections granted to the current user and compare them to the section you want to protect.
+The built-in `SectionAccess` policies cover only Umbraco's own sections, such as **Content** and **Media**. There is no built-in policy for a custom section alias. To authorize against your own section, read the sections granted to the current user and compare them to the section you want to protect.
 
 {% hint style="info" %}
 In Umbraco 18, the backoffice identity no longer carries the user's start nodes or allowed sections as claims. As a result, you cannot determine section access by inspecting the claims on the current user. Read the values from the user instead, as shown below. For background, see the [Umbraco 18 announcement](https://github.com/umbraco/Announcements/issues/18).
