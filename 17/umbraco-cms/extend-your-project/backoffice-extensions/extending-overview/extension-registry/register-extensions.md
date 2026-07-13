@@ -48,13 +48,16 @@ When writing the Umbraco Package Manifest, you can use the JSON schema located i
 ```
 {% endcode %}
 
-There are two additional, optional properties that can be useful:
+Two additional, optional properties are particularly useful:
 
 * `id` - a unique identifier of the package. If you are creating a NuGet package, use this value as the id.
-* `version` - the version of the package that is displayed in the backoffice in the overview of installed packages. This is also used for package migrations.
+* `version` - the version of the package that is displayed in the backoffice in the overview of installed packages. This is also used for package migrations. From Umbraco 17.6, the version is also used to cache bust the package's assets, as described in the [Umbraco Package](../../umbraco-package.md#cache-busting) article.
+
+You can find all available properties in the [Umbraco Package](../../umbraco-package.md#root-fields) article.
 
 This is an example of a full `umbraco-package.json` that registers two localization extensions:
 
+{% code title="umbraco-package.json" %}
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -83,6 +86,7 @@ This is an example of a full `umbraco-package.json` that registers two localizat
   ]
 }
 ```
+{% endcode %}
 
 ## Advanced Registration
 
