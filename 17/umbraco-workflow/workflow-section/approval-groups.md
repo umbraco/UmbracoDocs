@@ -75,7 +75,7 @@ The **Roles** tab provides an overview of the current workflow roles for the Gro
 * **Node-based approvals**: This workflow applies only to the specified node.
 * **Document-type approvals**: This workflow applies to all the nodes of a given Document Type.
 
-You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](workflow-settings.md) article.
+You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/workflow-section/workflow-settings.md) article.
 
 ![Approval group Roles](../.gitbook/assets/approval-groups-role-v14.png)
 
@@ -93,6 +93,6 @@ The History tab provides an overview of the workflow activity for the current gr
 
 You can also **Filter** the records based on the Document Type, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
-The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](../getting-started/workflow-content-app.md#active-workflow) sub-section.
+The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/workflow-content-app.md#active-workflow) sub-section.
 
 ![Details overlay](../.gitbook/assets/Workflow-Content-app-Details-overlay-v14.png)

@@ -115,12 +115,10 @@ Property descriptions support [Umbraco Flavored Markdown](../../../property-edit
 
 When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
-![Localized document creation dialog](../../../../.gitbook/assets/localization-document-editor-create.png)
-
 5. Create a new "Article" node:
 
 ![Localized document editing](../../../../.gitbook/assets/localization-document-editor-v15.png)
 
 6. When trying to save the node without adding the mandatory content, you will see a warning as expected:
 
-![Localized property validation](../../../../.gitbook/assets/localization-document-editor-validation.png)
+![Localized property validation](../../../../.gitbook/assets/localization-document-editor-validation-18.png)

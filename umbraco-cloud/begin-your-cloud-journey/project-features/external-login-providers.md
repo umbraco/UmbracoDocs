@@ -74,7 +74,7 @@ Locate and note down the following keys:
 * **Client Secret** - needs to be generated on the **Certificates & Secrets** page.
 
 {% hint style="info" %}
-#### Enterprise or custom setup
+**Enterprise or custom setup**
 
 If you're working with an enterprise or a custom setup, ensure the email claim is included in the ID token configuration.
 {% endhint %}

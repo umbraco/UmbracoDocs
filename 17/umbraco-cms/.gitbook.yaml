@@ -721,3 +721,5 @@ redirects:
     get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
     extend-your-project/server-side-extensions/custom-routing/adding-a-hub-with-signalr-and-umbraco: extend-your-project/server-side-extensions/custom-routing/signalr.md
     run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-load-balanced-environments: run-in-production/infrastructure-and-ops/server-setup/load-balancing/signalr-in-backoffice-load-balanced-environment.md
+    extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
+    extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md

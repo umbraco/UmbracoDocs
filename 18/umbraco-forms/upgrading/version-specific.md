@@ -6,7 +6,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This article provides specific upgrade documentation for migrating to Umbraco Forms version 17.
+This article provides specific upgrade documentation for migrating to Umbraco Forms version 18.
 
 {% hint style="info" %}
 If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../release-notes.md) article.
@@ -14,7 +14,7 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 ## Version Specific Upgrade Notes History
 
-Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 9.
+Version 18 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `18.0.0`. It runs on .NET 10.
 
 
 ## Legacy version specific upgrade notes

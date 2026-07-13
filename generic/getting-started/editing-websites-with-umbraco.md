@@ -16,8 +16,8 @@ You’ll also learn how to use features like translations, forms, and other pers
 
 The backoffice is where content editors manage websites in Umbraco. Here, you can create pages, add media, manage forms, and configure content settings.
 
-* [**Editors Manual**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual)**:** Step-by-step guidance for navigating and using the backoffice.
-* [**Managing Content:**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual/getting-started-with-umbraco) Learn the options for creating, editing, and publishing content.
-* [**Managing Media:**](https://docs.umbraco.com/umbraco-cms/tutorials/editors-manual/media-management) Discover how to upload, organize, and use images, videos, and documents.
-* [**Managing Forms:**](https://docs.umbraco.com/umbraco-forms/editor/creating-a-form) Explore how to create and manage forms for collecting data from users.
+* [**Backoffice Essentials**](https://docs.umbraco.com/umbraco-cms/get-started/backoffice-essentials)**:** Guidance for navigating and using the backoffice.
+* [**Managing Content:**](https://docs.umbraco.com/umbraco-cms/get-started/backoffice-essentials/creating-saving-and-publishing-content) Learn the options for creating, saving, and publishing content.
+* [**Managing Media:**](https://docs.umbraco.com/umbraco-cms/manage-and-publish-content/media-and-assets/working-with-images-and-files) Discover how to upload, organize, and use images, videos, and documents.
+* [**Managing Forms:**](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/templating-and-rendering/templating/mvc/forms) Explore how to create and manage forms for collecting data from users.
 

@@ -11,6 +11,7 @@ Dynamic settings can be applied and validated as shown in the [Validate type set
 ```csharp
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Umbraco.Forms.Core;
 using Umbraco.Forms.Core.Models;
 
@@ -25,8 +26,8 @@ namespace MyFormsExtensions
             Description = "Example prevalue source providing a fixed list of values.";
         }
 
-        public override List<PreValue> GetPreValues(Field field, Form form) =>
-            new List<PreValue>
+        public override Task<List<PreValue>> GetPreValuesAsync(Field? field, Form? form) =>
+            Task.FromResult(new List<PreValue>
             {
                 new PreValue
                 {
@@ -40,7 +41,7 @@ namespace MyFormsExtensions
                     Value = "item-two",
                     Caption = "Item Two"
                 }
-            };
+            });
 
         /// <inheritdoc/>
         public override List<Exception> ValidateSettings()
@@ -85,6 +86,7 @@ This example will take a user-provided Content Node and create a custom Prevalue
 ```csharp
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -100,7 +102,7 @@ namespace MyFormsExtensions
         [Umbraco.Forms.Core.Attributes.Setting(name: "Source Node",
             Alias = "SourceNodeId",
             Description = "Node holding the Options desired.",
-            View = "pickers.content")]
+            View = "Umb.PropertyEditorUi.ContentPicker.Source")]
         public string SourceNodeId { get; set; }
         public FormPrevaluesSourceNode(
             ILogger<FormPrevaluesSourceNode> logger
@@ -121,7 +123,7 @@ namespace MyFormsExtensions
         /// <param name="field"></param>
         /// <param name="form"></param>
         /// <returns>List of 'Umbraco.Forms.Core.Models.PreValue'</returns>
-        public override List<PreValue> GetPreValues(Field field, Form form)
+        public override Task<List<PreValue>> GetPreValuesAsync(Field? field, Form? form)
         {
             List<PreValue> result = new List<PreValue>();
             try
@@ -159,9 +161,9 @@ namespace MyFormsExtensions
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Unable to get options from FormPrevaluesSourceNode #{SourceNodeId}", ex);
+                _logger.LogError(ex, "Unable to get options from FormPrevaluesSourceNode #{SourceNodeId}", SourceNodeId);
             }
-            return result;
+            return Task.FromResult(result);
         }
         /// <summary>
         /// This is where any checks for Configuration validity are done.

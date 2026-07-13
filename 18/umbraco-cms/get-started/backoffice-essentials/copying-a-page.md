@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to copy a page and its child pages to a different location in the
+  content tree.
+---
+
 # Copying a Page
 
 Re-use a page or a tree structure you have previously created by copying the parent page and its child pages to a different section within the site structure.
@@ -10,30 +16,32 @@ You can copy a page in two ways:
 
 1. Go to **Content**.
 2. Click **...** next to the page you wish to copy.
-3.  Select **Duplicate to**.
+3. Select **Duplicate to**.
 
-    ![Copy Menu 1](../../../.gitbook/assets/duplicate.png)
-4.  A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
+![Copy Menu 1](../../.gitbook/assets/duplicate-18.png)
 
-    ![Copy Option 1](../../../.gitbook/assets/duplicate-options.png)
-5. Toggle **Relate to original** button if you want to keep the links linked to the original page.
-6. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
-7. Click **Duplicate**.
-8. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
+
+![Copy Option 1](../../.gitbook/assets/duplicate-options-18.png)
+
+4. Toggle **Relate to original** button if you want to keep the links linked to the original page.
+5. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
+6. Click **Copy**.
 
 ## Option 2
 
 1. Go to **Content**.
 2. Select the page you wish to copy.
-3. Click **Actions** in the top-right corner of the screen.
-4.  Select **Duplicate to** from the **Actions** drop-down menu.
+3. Click **...** next to the title of the page.
+4. Select **Duplicate to**.
 
-    ![Actions Menu](../../../.gitbook/assets/actions-duplicate-menu.png)
-5. A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
-6. Toggle **Relate to original** button if you want to keep the links linked to the original page.
-7. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
-8. Click **Copy**.
-9. A confirmation message appears. Click **OK** to dismiss the confirmation message.
+![Actions Menu](../../.gitbook/assets/actions-duplicate-menu-18.png)
+
+A window appears on the right side of the screen. Here, you can choose where you want to copy the page in the tree structure.
+
+5. Toggle **Relate to original** button if you want to keep the links linked to the original page.
+6. Toggle **Include descendants** if you want to copy the child pages alongside the parent page.
+7. Click **Copy**.
 
 {% hint style="info" %}
 When you select **Relate to original**, Umbraco will create a relationship between the original and copied page. This relationship can be used to programmatically link the pages - For example, linking two pages in a multilingual setup. This relationship **does not** sync the content between the original and copied page.

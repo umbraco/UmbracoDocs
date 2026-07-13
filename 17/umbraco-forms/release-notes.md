@@ -18,10 +18,44 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
-### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0-rc) (May 14th 2026)
+### [17.4.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.5) (July 2nd 2026)
+* Fix upgrade failure when `DisableRecordIndexing` is set to `true`
 
-* Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
+### 17.4.4 (July 1st 2026)
+* Analytics: Fix intermittent startup failure caused by the historical data backfill
+
+### [17.4.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.3) (June 30th 2026)
+* Added translations
+* Form Design: Fix field layout overflow in multi-column fieldsets [#1682](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1682)
+* Magic Strings: Resolve to field alias when captions collide [#1735](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1735)
+* Field Types: Make `text-with-field-picker` editor controls full width [#1740](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1740)
+* Workflows: Persist selected order when reordering workflow stages [#1741](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1741)
+* Form Entries: Fix infinite error loop on entry details after browser back [#1742](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1742)
+
+### [17.4.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.2) (June 16th 2026)
+* Fix startup error when upgrading with the analytics tables migration still pending [#1736](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1736)
+
+### [17.4.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.1) (June 12th 2026)
+* Fix failed `PrevalueSource` migration for sites upgraded from Forms 17.0.0-17.0.3
+* Fix error when retrying a workflow [#1734](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1734)
+
+### [17.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (June 4th 2026)
+* Better support for load balanced environments
+* Refactored front end exports for `@umbraco-forms/backoffice` NPM package
+* Display download for prevalue source files in backoffice [#1581](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1581)
+* Fix date day/month swap for non-US cultures in date fields [#1714](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1714) [#1731](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1731)
+* Set `VariationContext` to submitted culture when retrying a workflow [#1718](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1718)
+* Apply default date range filter on initial load [#1720](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1720)
+* Cache-bust front end assets to ensure users get the latest version after upgrade [#1722](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1722)
+* Fix error when saving a field made mandatory [#1725](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1725)
+* Allow ordering form entries when using `IRecordReaderService` [#1726](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1726)
+* Fix subfolder being created at root instead of selected parent [#1730](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1730)
+
+### [17.4.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.0) (May 14th 2026)
+* Widen page and group name inputs in Form designer [#1296](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1296)
+* Prevent field preview clipping [#1297](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1297)
 * Fix `FormSavingNotification` message display on `CancelOperation` [#1487](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1487)
+* Fix Analytics layout shift when reloading chart [#1689](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1689)
 
 ### [17.3.2](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.3.2) (May 1st 2026)
 

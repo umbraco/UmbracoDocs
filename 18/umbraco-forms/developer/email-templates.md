@@ -4,11 +4,11 @@ description: "Creating an email template for Umbraco Forms."
 
 # Email Templates
 
-We include a Workflow **Send email with template (Razor)** that allows you to pick a Razor view file that can be used to send out a _pretty HTML email_ for Form submissions.
+Forms include **Send email with template (Razor)** Workflow. This allows you to pick a Razor view file that can be used to send out a _pretty HTML email_ for Form submissions.
 
 ## Creating an Email Template
 
-If you wish to have one or more templates to choose from the **Send email with template (Razor)**, you will need to place all email templates into the `~/Views/Partials/Forms/Emails/` folder.
+To use custom templates with the **Send email with template (Razor)** workflow, place your files in the `~/Views/Partials/Forms/Emails/` folder. They will then appear as options in the dropdown menu.
 
 The Razor view must inherit from FormsHtmlModel:
 
@@ -16,11 +16,35 @@ The Razor view must inherit from FormsHtmlModel:
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 ```
 
-You now have a model that contains your Form fields which can be used in your email HTML markup, along with the UmbracoHelper methods such as `Umbraco.TypedContent` and `Umbraco.TypedMedia` etc.
+You now have a model with your Form fields. This can be used in your email HTML markup, along with the UmbracoHelper methods like `Umbraco.TypedContent` and `Umbraco.TypedMedia`, and so on.
 
-Below is an example of an email template from the `~/Views/Partials/Forms/Emails/` folder:
+Below is an example of an email template based on `Example-Template.cshtml` shipped with Umbraco Forms. Use this as a base for creating your own template.
+
+{% hint style="warning" %}
+**Absolute URLs in load-balanced or proxied environments**
+
+The example below builds an absolute domain from `Context.Request.Scheme` and `Context.Request.Host`. This relies on the incoming request's `Host` header, which is fine when an email is rendered during a normal front-end form submission. It can produce empty or incorrect links when the email is generated **outside** of that request. Examples include re-running a workflow from the backoffice, or running it from a background or scheduled job. On a different node, or behind a load balancer or reverse proxy, the `Host` header may not match your site's public address.
+
+From Umbraco 17, the `Host` header is no longer used to auto-detect the application URL by default. In load-balanced, proxied, or multi-node setups, set the application URL explicitly. This ensures absolute links - including the `FormPageUrl` exposed on the email model - resolve consistently on every node:
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "UmbracoApplicationUrl": "https://www.your-site.com/"
+      }
+    }
+  }
+}
+```
+
+See [Web Routing Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings) for details. When you need the public site URL inside a template, prefer reading it from this configuration (or `IHostingEnvironment.ApplicationMainUrl`) rather than from `Context.Request.Host`.
+{% endhint %}
 
 ```csharp
+@using Microsoft.AspNetCore.Html
+@using Umbraco.Forms.Core.Extensions
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Forms.Core.Models.FormsHtmlModel>
 
 @{
@@ -34,9 +58,9 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 	//@foreach (var color in Model.GetValues("checkboxField")){}
 
 
-	//Images need to be absolute - so fetching domain to prefix with images
-	var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
-	var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
+    //Images need to be absolute - so fetching domain to prefix with images
+    var siteDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+    var assetUrl = siteDomain + "/App_Plugins/UmbracoForms/assets/Email-Example";
 
 }
 <!DOCTYPE html>
@@ -177,6 +201,7 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 								{
 									"FieldType.Recaptcha2.cshtml",
 									"FieldType.Recaptcha3.cshtml",
+									"FieldType.RecaptchaEnterprise.cshtml",
 									"FieldType.RichText.cshtml",
 									"FieldType.Text.cshtml"
 								};
@@ -217,24 +242,33 @@ Below is an example of an email template from the `~/Views/Partials/Forms/Emails
 											}
 											break;
 
-										default:
-											var values = field.GetValues();
-											if (values != null)
-											{
-												foreach (var value in values)
-												{
-													if (value != null)
-													{
-														@(value is string strValue ? strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps) : value)
-
+                                        default:
+                                            var values = field.GetValues();
+                                            if (values != null)
+                                            {
+                                                foreach (var value in values)
+                                                {
+                                                    if (value != null)
+                                                    {
+														if (value is string strValue)
+														{
+															var captionedValue = strValue.ApplyPrevalueCaptions(field.Id, Model.PrevalueMaps);
+															var encodedValue = System.Net.WebUtility.HtmlEncode(captionedValue);
+															var processedValue = encodedValue.ReplaceLineEndings("<br/>");
+															@Html.Raw(processedValue)
+														}
+														else
+														{
+															@value
+														}
 														<br />
-													}
-												}
-											}
-											break;
-									}
-								</p>
-							}
+                                                    }
+                                                }
+                                            }
+                                            break;
+                                    }
+                                </p>
+                            }
 
 						</td>
 					</tr>

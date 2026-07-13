@@ -15,7 +15,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 1. Download and install the [Claude.ai desktop app](https://claude.ai/download).
 2. Go to **Settings** → **Developer** → **Edit Config** to edit the MCP settings,.
 
-![MCP Panel](<../../../umbraco-cms/.gitbook/assets/Claude Desktop.png>)
+![MCP Panel](<../../.gitbook/assets/Claude Desktop.png>)
 
 3. Open the JSON configuration file in your preferred text editor.
 4. Add the following snippet.
@@ -27,7 +27,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
     "umbraco-mcp": 
     {
       "command": "npx",
-      "args": ["@umbraco-cms/mcp-dev@latest"],
+      "args": ["@umbraco-cms/mcp-dev@lts-17"],
       "env": 
       {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",

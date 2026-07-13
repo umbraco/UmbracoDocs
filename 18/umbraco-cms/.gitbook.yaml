@@ -5,6 +5,8 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
+    develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-1: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-1.md
+    develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-2: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-2.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/configuration: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce/styles: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md
@@ -188,7 +190,8 @@ redirects:
     get-started/editors-manual/getting-started-with-umbraco/creating-saving-and-publishing-content: get-started/backoffice-essentials/creating-saving-and-publishing-content.md
     get-started/editors-manual/getting-started-with-umbraco/finding-content: get-started/backoffice-essentials/finding-content.md
     get-started/editors-manual/getting-started-with-umbraco/editing-existing-content: get-started/backoffice-essentials/editing-existing-content.md
-    get-started/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/backoffice-essentials/ordering-pages.md
+    get-started/editors-manual/getting-started-with-umbraco/ordering-pages: get-started/backoffice-essentials/sorting-pages.md
+    get-started/backoffice-essentials/ordering-pages: get-started/backoffice-essentials/sorting-pages.md
     get-started/editors-manual/getting-started-with-umbraco/moving-a-page: get-started/backoffice-essentials/moving-a-page.md
     get-started/editors-manual/getting-started-with-umbraco/copying-a-page: get-started/backoffice-essentials/copying-a-page.md
     get-started/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/backoffice-essentials/deleting-and-restoring-pages.md
@@ -196,10 +199,12 @@ redirects:
     get-started/editors-manual/getting-started-with-umbraco/sidebar: get-started/backoffice-essentials/sidebar.md
     get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-content.md
     get-started/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
-    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/working-with-folders.md
+    get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md
     get-started/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
     get-started/editors-manual/tips-and-tricks/notifications: get-started/backoffice-essentials/tips-and-tricks/notifications.md
     get-started/editors-manual/tips-and-tricks/preview-pane-responsive-view: get-started/backoffice-essentials/tips-and-tricks/preview-pane-responsive-view.md
     get-started/editors-manual/tips-and-tricks/session-timeout: get-started/backoffice-essentials/tips-and-tricks/session-timeout.md
     get-started/editors-manual/downloadable-content: get-started/backoffice-essentials/downloadable-content/README.md
     get-started/editors-manual/downloadable-content/youtube-create-a-simple-umbraco-website: get-started/backoffice-essentials/downloadable-content/youtube-create-a-simple-umbraco-website.md
+    extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
+    extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md

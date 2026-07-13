@@ -1,8 +1,0 @@
-root: ./
-
-​structure:
-    readme: README.md
-    summary: SUMMARY.md
-
-redirects:
-    marketers-and-editors/introduction/content-apps: marketers-and-editors/introduction/workspace-views.md

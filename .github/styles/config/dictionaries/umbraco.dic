@@ -34,6 +34,7 @@ APIs
 API's
 App_Code
 App_Plugins
+approvers
 appSetting
 appsetting
 appsettings
@@ -50,12 +51,18 @@ Axios
 autocomplete
 autocompletion
 autogenerate
+Automations
+automations
 Autoplay
 backend
 Backoffice
 Backoffice
 backoffice
 Backoffices
+backplane
+backport
+backported
+backports
 Beeceptor
 Behaviour
 behaviour
@@ -109,7 +116,9 @@ Codegarden
 collectionAction
 collectionConfig
 collectionView
+Colour
 colours
+coloured
 Commerce
 compareTo
 comparisonOperator
@@ -229,6 +238,7 @@ existingPrice
 extensionless
 extranets
 facelift
+failover
 featureName
 fieldset
 fieldsets
@@ -278,6 +288,7 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+helpdesk
 HMACs
 Homebrew
 hostname
@@ -285,6 +296,7 @@ hostnames
 Hotfix
 hotfix
 hotfixes
+HybridCache
 htmlAttributes
 htmlHelper
 HTTPContext
@@ -598,6 +610,7 @@ setBehavior
 shippingMethod
 signout
 signup
+SignalR
 Siroker
 siteName
 Sitename
@@ -635,6 +648,7 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
+summarising
 subpage
 subpages
 subtree
@@ -738,6 +752,7 @@ unpackaging
 Unprocessable
 Unpublish
 unpublish
+unpublishes
 unpublishing
 Unredeem
 unredeeming

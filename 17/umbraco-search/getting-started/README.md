@@ -204,6 +204,10 @@ facets:
 ```
 {% endcode %}
 
+{% hint style="info" %}
+Ranges include the lower interval and exclude the upper. The example above translates into: Facets for _`releaseYear` between 1950 and 1959 (both inclusive) and between 1980 and 1989 (both inclusive)_.
+{% endhint %}
+
 ## Sorting search results
 
 All fields can be used for sorting (ordering) search results, and sorting can be performed across multiple fields in a single query.
@@ -331,32 +335,6 @@ public class MySearchService(ISearcher searcher)
                 PrincipalId: principalId,
                 GroupIds: groupIds
             )
-        );
-    }
-}
-```
-{% endcode %}
-
-### Bypassing content protection in search queries
-
-Sometimes it's relevant to surface search results for protected content, regardless if a member is currently logged in. To this end you can pass `AccessContent.BypassProtection()` to the searcher:
-
-{% code title="MySearchService.cs" %}
-```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
-
-namespace My.Site.Services;
-
-public class MySearchService(ISearcher searcher)
-{
-    public async Task<SearchResult> SearchWithBypassForProtectedContent()
-    {
-        return await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
-            query: "pink",
-            accessContext: AccessContext.BypassProtection()
         );
     }
 }

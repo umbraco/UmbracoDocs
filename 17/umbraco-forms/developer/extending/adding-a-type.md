@@ -20,7 +20,7 @@ public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
         _logger = logger;
     }
 
-    public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context)
+    public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context)
     {
         throw new NotImplementedException();
     }
@@ -31,7 +31,7 @@ public class LogWorkflow : Umbraco.Forms.Core.WorkflowType
 }
 ```
 
-When you implement this class you get two methods added. One of them is Execute which performs the execution of the workflow and the other is a method which validates the workflow settings, we will get back to these settings later on.
+When you implement this class you get two methods added. `ExecuteAsync` performs the execution of the workflow. `ValidateSettings` validates the workflow settings, which are covered later in this article.
 
 Any dependencies required that are registered with the dependency injection container can be provided via the constructor.
 
@@ -61,7 +61,7 @@ Now that we have a basic class setup, we would like to pass setting items to the
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Log Header",
         Description = "Log item header",
-        View = "TextField")]
+        View = "Umb.PropertyEditorUi.TextBox")]
 public string LogHeader { get; set; }
 ```
 
@@ -72,12 +72,12 @@ With the attribute in place, the property value is set every time the class is i
 ```csharp
 [Umbraco.Forms.Core.Attributes.Setting("Document ID",
         Description = "Node the log entry belongs to",
-        View = "Pickers.Content")]
+        View = "Umb.PropertyEditorUi.ContentPicker.Source")]
 public string Document { get; set; }
 
-public override WorkflowExecutionStatus Execute(WorkflowExecutionContext context) {
+public override Task<WorkflowExecutionStatus> ExecuteAsync(WorkflowExecutionContext context) {
     _logger.LogInformation("Record submitted from: {IP}", context.Record.IP);
-    return WorkflowExecutionStatus.Completed;
+    return Task.FromResult(WorkflowExecutionStatus.Completed);
 }
 ```
 
@@ -168,7 +168,7 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
     // Added a new setting when we add our field to the form
     [Umbraco.Forms.Core.Attributes.Setting("Max length",
     Description = "Max length",
-    View = "TextField")]
+    View = "Umb.PropertyEditorUi.TextBox")]
     public string MaxNumberOfChars { get; set; }
 
     public TextareaWithCount()
@@ -180,9 +180,9 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
         this.Name = "Long Answer with Limit";
     }
 
-    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, List<string> errors)
+    public override IEnumerable<string> ValidateField(Form form, Field field, IEnumerable<object> postedValues, HttpContext context, IPlaceholderParsingService placeholderParsingService, IFieldTypeStorage fieldTypeStorage, List<string> errors)
     {
-        var baseValidation = base.ValidateField(form, field, postedValues, context, placeholderParsingService, errors);
+        var baseValidation = base.ValidateField(form, field, postedValues, context, placeholderParsingService, fieldTypeStorage, errors);
         var value = postedValues.FirstOrDefault();
 
         if (value != null && value.ToString().Length < int.Parse(MaxNumberOfChars))
@@ -199,7 +199,7 @@ public class TextareaWithCount : Umbraco.Forms.Core.Providers.FieldTypes.Textare
 }
 ```
 
-As discussed in the previous section, you must also register the extended field type within a composer.  You also need to create the the backoffice field type view.
+As discussed in the previous section, you must also register the extended field type within a composer.
 
 **Composer:**
 
@@ -213,10 +213,4 @@ public class UmbracoFormsCustomProvidersComposer : IComposer
 }
 ```
 
-**Backoffice View:**
-
-Add a new HTML file as per the name of the field class (e.g. `textareawithcount.html`) to `\wwwroot\App_Plugins\umbracoforms\Backoffice\Common\FieldTypes\` within your project. For this example, we can copy the original `textarea.html` file used by the standard 'Long Answer' field.
-
-The AngularJS client-side files are shipped with Umbraco Forms as part of a Razor Class Library. So you won't find these files on disk when you install the package.
-
-However if you do want to reference them you can view and extract them from the [`Umbraco.Forms.StaticAssets` NuGet package](https://nuget.info/packages/Umbraco.Forms.StaticAssets).
+If your custom field type requires a different presentation in the backoffice, you can register client-side components for it. For more information, see the [Adding A Field Type To Umbraco Forms](adding-a-fieldtype.md) article.

@@ -14,7 +14,7 @@ The page is made up of the following sections:
 
 * [Time range, environment, and hostname selectors](#time-range-environment-and-hostname-selectors)
 * [Performance overview tiles](#performance-overview-tiles)
-* [Dataset selector and chart](#dataset-selector-and-chart)
+* [Interactive chart](#interactive-chart)
 * [Traffic breakdown tables](#traffic-breakdown-tables)
 * [Edge data granularity](#edge-data-granularity)
 * [Edge data limitations](#edge-data-limitations)
@@ -47,17 +47,17 @@ Edge analytics data is only available when at least one hostname is selected.
 
 ## Performance Overview Tiles
 
-The overview section shows summary tiles for key metrics. There are up to six tiles in total. Four application metric tiles are always visible. Two-edge metric tiles appear when hostnames are selected.
+The overview section shows summary tiles for key metrics. Five application metric tiles are visible by default. Two edge metric tiles appear when hostnames are selected.
 
-![Performance overview tiles](../../.gitbook/assets/tp-performance-overview-tiles.png)
+<figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Seven overview tiles: Failed Origin Requests, App Performance, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
 
-Each tile includes relevant statistics and potentially a warning or an error indicator in case there is something you might want to consider.
+Each tile shows the headline value for its metric. Tiles may also display a warning or error indicator when usage approaches plan limits.
 
 ### Application Metric Tiles
 
-#### Failed Requests
+#### Failed Origin Requests
 
-Displays the total count of HTTP 4xx and 5xx responses.
+Displays the total count of HTTP 4xx and 5xx responses from the origin (labelled "HTTP Status 4xx and 5xx" in the UI).
 
 * **Error indicator** appears when one or more HTTP 5xx (server error) responses occur.
 * **Warning indicator** appears when HTTP 4xx client errors exist, but there are no server errors.
@@ -80,6 +80,10 @@ Displays private bytes (memory) consumed.
 * **Shared plans**: Shown as a percentage of your plan quota. An orange warning appears when maximum private bytes exceed **80%** of the plan quota within a 5-minute period. A red error appears when maximum private bytes exceed **100%**.
 * **Dedicated plans**: Shows average private bytes in MB.
 
+#### App Service Plan CPU
+
+Displays the average CPU utilization across the App Service Plan. This metric is most useful on dedicated plans, where the App Service Plan represents your actual capacity ceiling.
+
 {% hint style="info" %}
 CPU and Memory warning/error indicators only display for shared plans.
 {% endhint %}
@@ -88,93 +92,60 @@ CPU and Memory warning/error indicators only display for shared plans.
 
 These tiles appear when you have selected one or more hostnames in the hostname selector.
 
-#### Requests
+#### Edge Requests
 
 Displays the total number of HTTP requests hitting your site through Cloudflare's edge network.
 
-#### Data Transfer
+#### Edge Data Transfer
 
 Displays the total data transferred from your site through the edge. High values may indicate large media files or heavy traffic.
 
-## Dataset Selector and Chart
+## Interactive Chart
 
-### Dataset Selector
+The overview tiles at the top of the page double as a selector for the chart below. By default, one metric is active (Failed Origin Requests). You can:
 
-![Dataset selector](../../.gitbook/assets/tp-dataset-selector.png)
-
-Above the chart, a pill-based selector lets you choose which metrics to display. You can:
-
-* Click a pill to remove a metric from the chart.
-* Click **Add metric** to add additional metrics.
+* Click a tile to add its metric to the chart.
+* Click an active tile again to remove that metric from the chart.
 * Display multiple metrics simultaneously on the same chart for comparison.
 
 Available metrics include:
 
-* Four application metrics — Failed Requests, App Performance, CPU Usage, and Memory Usage.
-* Two edge metrics (when hostnames are selected) — Requests and Data Transfer.
+* Five application metrics — Failed Origin Requests, App Performance, CPU Usage, Memory Usage, and App Service Plan CPU.
+* Two edge metrics (when hostnames are selected) — Edge Requests and Edge Data Transfer.
 
 At least one metric must always be selected.
 
+The chart displays an interactive line graph of the selected metrics over the chosen time range. Each selected metric is drawn as its own line on a shared time axis with independent value axes on the sides.
+
+It supports the following interactions:
+
+* **Hover** anywhere on the chart to see a tooltip with the exact value of every active metric at that moment.
+* **Click a layer on the chart** (or its matching pill above the chart) to focus on that metric. The other layers fade so you can analyze the focused metric in isolation. Click the empty chart area to reset focus.
+* **Zoom and pan** using the chart toolbar (see [Chart Toolbar](#chart-toolbar)).
+
 The chart also shows [platform and CMS events](#platform-and-cms-events), making it convenient to see how different events impact performance.
 
-### Chart
+<figure><img src="../../.gitbook/assets/tp-chart-zoomed-interactive.png" alt="Chart zoomed to a narrow time range with a tooltip showing values at a hovered point and one metric focused."><figcaption><p>Hover tooltip and click-to-focus on a single metric.</p></figcaption></figure>
 
-The chart displays an interactive line graph of the selected metrics over the chosen time range.
+#### Sub-Value Accordions
 
-#### Failed Requests
+Below the chart, expandable sections show statistical sub-values for each active application metric. These give you the headline numbers behind the chart line: maximum, average, minimum, plan quota where applicable, and a percentage breakdown of HTTP status codes for Failed Origin Requests.
 
-The chart shows the breakdown of HTTP status codes for each data point with the selected granularity. Only responses indicating a client (4xx region) or server errors (5xx region) are shown.
+<figure><img src="../../.gitbook/assets/tp-chart-subvalues-accordions.png" alt="Expandable sub-value sections for Failed Origin Requests, CPU Usage, Memory Usage, App Service Plan CPU, and App Performance."><figcaption><p>Sub-value accordions below the chart.</p></figcaption></figure>
 
-![Failed requests](../../.gitbook/assets/tp-graph-failed-requests.png)
+#### Metric-Specific Notes
 
-In the statistics tiles under the graph, you will find the total instances of the status code in the time range.
+**Failed Origin Requests** — the sub-value section breaks down HTTP status codes (for example, 401, 403, 404, 406, 5xx) over the selected time range.
 
-#### App Performance
+**App Performance** — sub-values show maximum, average, and minimum response time in milliseconds.
 
-The chart shows the average response time during the selected time range. All requests to the Umbraco solution in the time periods with the length of the selected granularity count to the average response time.
+**CPU Usage** — for shared plans at 5-minute granularity, the sub-values show maximum CPU time, average CPU time, plan quota, and the maximum / average percentage of the consumed CPU compared to the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans). For dedicated plans, sub-values show CPU time in seconds without the quota comparison.
 
-![App performance](../../.gitbook/assets/tp-graph-app-performance.png)
+**Memory Usage** — for shared plans at 5-minute granularity, the sub-values compare allocated private bytes (MB) against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans). For dedicated plans, sub-values show maximum, average, and minimum private bytes without the quota comparison.
 
-The statistics tiles show the average, maximum, and minimum response for the shown data points.
+**App Service Plan CPU** — sub-values show maximum, average, and minimum CPU percentage across the App Service Plan.
 
-#### CPU Usage
-
-The chart depicts the CPU time consumed by the application in the selected time range with time periods equaling the selected granularity.
-
-Cloud projects with shared resources and a granularity of 5 minutes will display assigned CPU time in seconds, along with a comparison to [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
-
-For shared plans at 5-minute granularity, the statistics tiles show the following:
-
-* The maximum CPU time
-* The average CPU time
-* The plan quota
-* The maximum and average percentage of the consumed CPU in a 5-minute period compared to the plan quota.
-
-For Cloud projects on dedicated options, or shared plans at other granularities, you see the average assigned CPU time in seconds. The statistics panel displays the maximum, average, and minimum CPU time based on the selected granularity.
-
-#### Memory Usage
-
-The chart shows the memory usage in private bytes consumed by the application in the selected time range with time periods equaling the selected granularity.
-
-![CPU and memory usage](../../.gitbook/assets/tp-graph-cpu-and-memory-usage.png)
-
-Cloud projects utilizing shared resources with a granularity of 5 minutes will display the allocated private bytes in megabytes (MB). The chart also displays a comparison against the [plan quota](https://docs.umbraco.com/umbraco-cloud/getting-started/umbraco-cloud-plans).
-
-For Cloud projects with dedicated options, or shared plans at other granularities, you see the average assigned private bytes displayed in bytes. The statistics tiles below display the maximum, average, and minimum allocation of private bytes based on the selected granularity.
-
-#### Edge Requests
-
-The chart depicts the number of HTTP requests served through Cloudflare's edge network for the selected hostnames in the selected time range.
-
-The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page shows a more detailed view of edge traffic, broken down by status code, cache status, HTTP version, path, host, and data center.
-
-#### Edge Data Transfer
-
-The chart depicts the amount of data (in bytes) transferred through Cloudflare's edge network for the selected hostnames in the selected time range.
-
-![Edge requests and data transfer](../../.gitbook/assets/tp-graph-edge-requests-and-data-transfer.png)
-
-The [Traffic Breakdown Tables](#traffic-breakdown-tables) section below details edge data transfer, categorized by status code, cache status, HTTP version, path, host, and data center.
+**Edge Requests** and **Edge Data Transfer** — these series only appear when at least one hostname is selected. The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page provides a detailed view of edge traffic.
 
 #### Chart Toolbar
 
@@ -228,11 +199,11 @@ You can also remove the reference to the `Umbraco.Cloud.Cms` package in the Umbr
 
 The breakdown tables provide detailed Cloudflare edge analytics, giving you visibility into how traffic flows through the edge network. The section appears when edge analytics are available (hostnames selected and a valid time range).
 
-A toggle at the top of the section lets you switch between viewing data by **Edge Requests** (count) or **Edge Data Traffic** (bytes transferred).
+Two tabs at the top of this section let you switch the table values between **Edge Requests** (count) and **Edge Data Traffic** (bytes transferred).
 
-![Breakdown tables with toggle](../../.gitbook/assets/tp-breakdown-tables-and-toggle.png)
+<figure><img src="../../.gitbook/assets/tp-breakdown-tables-toggle.png" alt="Breakdown table data type section header with Edge Requests and Edge Data Traffic tabs, followed by the Response Characteristics tables."><figcaption><p>Switch the breakdown tables between Edge Requests and Edge Data Traffic.</p></figcaption></figure>
 
-Each table shows the top entries sorted by count or bytes. 
+Each table shows the top entries sorted by count or bytes.
 
 ### Response Characteristics
 

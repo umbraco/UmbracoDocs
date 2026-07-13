@@ -117,3 +117,7 @@ The property editor handles unspecified date and time values without time zone i
     // Save the change
     _contentService.Save(content);
     ```
+
+### Getting values programmatically
+
+For an example on how to work with a date property using `IContentService` see the [Getting date values programmatically](../../../../extend-your-project/server-side-extensions/management/using-services/contentservice.md#getting-date-values-programmatically) article.

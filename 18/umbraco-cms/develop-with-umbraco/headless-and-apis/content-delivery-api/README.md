@@ -61,11 +61,11 @@ Once the Content Delivery API is enabled, the next step is to rebuild the Delive
 3. Open the **Examine Management** dashboard.
 4. Click the **DeliveryAPIContentIndex**.
 
-<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Click the DeliveryAPIContentIndex on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Select the DeliveryApiContentIndex from the Indexers list to view its properties.</p></figcaption></figure>
 
 5. Scroll down and click the **Rebuild index** button.
 
-<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>Use the "Rebuild index" button in the DeliveryAPIContentIndex under Tools on the Examine Management dashboard in the Settings section.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>The index management screen where you can check index health and trigger a rebuild.</p></figcaption></figure>
 
 Once the index is rebuilt, the API can serve the latest content from the multiple-items endpoint.
 

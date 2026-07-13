@@ -67,7 +67,8 @@ redirects:
     getting-started/team-workflow-on-cloud: build-and-customize-your-solution/set-up-your-project/project-settings/team-workflow-on-cloud.md
     security/web-application-firewall: build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md
     getting-started/baselines/baseline-merge-conflicts: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/README.md
-    getting-started/baselines/break-baseline: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md
+    getting-started/baselines/break-baseline: build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md
+    optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline: build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md
     getting-started/baselines/configuration-files: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md
     getting-started/baselines/upgrading-child-projects: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md
     set-up/project-settings/manage-hostnames/rewrites-on-cloud: go-live/manage-hostnames/rewrites-on-cloud.md
@@ -146,3 +147,4 @@ redirects:
     build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbracocloudapi: build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/umbraco-cloud-api.md
     build-and-customize-your-solution/set-up-your-project/project-settings/upgrade-your-plan: build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md
     build-and-customize-your-solution/set-up-your-project/project-settings/proactive-auto-heal: build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md
+    optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/major-upgrades/major-upgrades-for-large-sites: optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/planning-major-upgrades-safely-on-live.md

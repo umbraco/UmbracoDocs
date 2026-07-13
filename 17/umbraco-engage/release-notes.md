@@ -16,6 +16,20 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.2.4](https://www.nuget.org/packages/Umbraco.Engage/17.2.4) (June 29th 2026)
+
+* Resolved preview issues for **multi-page A/B tests**, including stale previews caused by caching.
+* Restored the **CSS/JS** editor button for single-page A/B tests.
+* Fixed a node-key conflation in the A/B test **multi-variant picker**.
+* Improved the A/B test editing flow with prompts to save the test before previewing or modifying variants.
+* Resolved a `ChannelClosedException` that could occur when flushing visitor data during application shutdown.
+* Resolved an error occurring on the **Profiles** section on installations with an **Analytics** license.
+* Laid internal groundwork in preparation for upcoming **Umbraco.AI** support.
+
+#### [17.2.3](https://www.nuget.org/packages/Umbraco.Engage/17.2.3) (June 2nd 2026)
+
+* Resolved pageviews and associated data not getting flushed to the database on load-balanced (subscriber) setups.
+
 #### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
 
 * Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
