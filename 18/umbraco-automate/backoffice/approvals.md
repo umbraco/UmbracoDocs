@@ -6,7 +6,9 @@ description: >-
 
 # Use Approvals
 
-The **Request Approval** action pauses an automation and waits for a user to approve or reject before the run continues. Use it to add a human checkpoint to an automation — for example, before publishing AI-generated content.
+The **Request Approval** action pauses an automation and waits for a user to approve or reject before the run continues. Use it to add a human checkpoint to an automation, for example, before publishing AI-generated content.
+
+<figure><img src="../.gitbook/assets/request-approval-stage.png" alt="The request approval stage."><figcaption><p>Request approval stage</p></figcaption></figure>
 
 ## How It Works
 
@@ -30,6 +32,8 @@ A user can act on an approval if they are a member of a user group that the work
 ## Finding Pending Approvals
 
 The **Approvals** dashboard in the Automate section lists every approval awaiting a decision across the workspaces you can access. Click an approval to open the decision dialog.
+
+<figure><img src="../.gitbook/assets/automation-approvals-dashboard.png" alt="Approvals dashboard"><figcaption><p>Approvals dashboard</p></figcaption></figure>
 
 ## See Also
 

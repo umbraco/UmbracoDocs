@@ -25,9 +25,9 @@ Follow these steps to create, configure, and publish an automation.
 
 ### Create an Automation
 
-1. In the tree, right-click the workspace where the automation should live.
+1. In the tree, click **+** next to the workspace where the automation should live.
 2. Select **Create automation**.
-3. Enter a name and click **Create**.
+3. Enter a name and click **Save and publish**.
 
 The new automation opens on the canvas with an empty trigger slot.
 
