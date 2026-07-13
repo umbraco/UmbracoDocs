@@ -50,7 +50,7 @@ Each Block has a set of properties that are optional to configure. They are desc
 
 You can configure the properties in the group to customize the user experience for your content editors. This helps them to quickly identify and select the right blocks for their content.
 
-* **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavoured Markdown](../../umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
+* **Label** - Define a label for the appearance of the Block in the editor. The label uses [Umbraco Flavored Markdown](../../umbraco-flavored-markdown.md) to display values of properties. The label is also used for search in the **Add Block** dialog during content editing. If no label is defined, the block will not be searchable. The search does not fall back to the block’s name.
 * **Overlay editor size** - Set the size for the Content editor overlay for editing this block.
 
 ### Data Models
@@ -64,8 +64,8 @@ It is possible to use two separate Element Types for your Block Types. Its requi
 
 These properties refer to how the Block is presented in the Block catalogue, when editors choose which Blocks to use for their content.
 
-* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. Eg. `#424242`.
-* **Icon color** - Change the color of the Element Type icon. Eg. `#242424`.
+* **Background color** - Define a background color to be displayed beneath the icon or thumbnail. For example, `#424242`.
+* **Icon color** - Change the color of the Element Type icon. For example, `#242424`.
 * **Thumbnail** - Pick an image or SVG file to replace the icon of this Block in the catalogue.
 
 The thumbnails for the catalogue are displayed at a maximum height of 150px and will scale proportionally to maintain their original aspect ratio. Any standard image format (PNG, JPG, SVG) will work effectively.
