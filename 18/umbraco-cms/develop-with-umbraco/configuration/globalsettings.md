@@ -224,13 +224,15 @@ Key: `NoNodesViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/NoNode
 
 This setting specifies what view to render when there is no content on the site.
 
+Create your own view file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomNoNodes.cshtml`.
+
 ### Upgrading view path
 
 Key: `UpgradingViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/Upgrading.cshtml`)
 
 This setting specifies the view to render when an unattended upgrade is running in the background. Frontend and surface controller requests receive an HTTP 503 response with this view during the upgrade. See [Upgrade Unattended](../../get-started/upgrading-and-migrating/upgrade-unattended.md) for details on the upgrade process.
 
-To customize this view, create your own `.cshtml` file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomUpgrading.cshtml`. Editing the default file directly isn't recommended, as changes may be overwritten during upgrades.
+To customize this view, create your own `.cshtml` file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomUpgrading.cshtml`.
 
 ## SMTP settings
 
