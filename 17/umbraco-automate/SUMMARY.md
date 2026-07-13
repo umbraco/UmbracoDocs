@@ -77,3 +77,4 @@
 ## Tutorials
 
 * [Technical Runbook: Extending Automate for Developers](tutorials/technical-runbook-for-developer.md)
+* [Getting Started Guide for Editors](tutorials/getting-started-for-editors.md)

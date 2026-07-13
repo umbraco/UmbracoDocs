@@ -2,7 +2,7 @@
 description: Build powerful backoffice automations with no coding required, only drag, drop, and connect.
 ---
 
-# Getting Started for Editors
+# Getting Started Guide for Editors
 
 Umbraco Automate is an event-driven automation engine that lives natively inside your CMS. Think of it like a personal assistant. It watches your website for specific events, like publishing new content. Then, it automatically triggers actions, like sending a Slack message to your team.
 
