@@ -224,7 +224,7 @@ Key: `NoNodesViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/NoNode
 
 This setting specifies what view to render when there is no content on the site.
 
-Create your own view file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomNoNodes.cshtml`.
+To customize, create your own view file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomNoNodes.cshtml`.
 
 ### Upgrading view path
 
