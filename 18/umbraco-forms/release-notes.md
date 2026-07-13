@@ -20,6 +20,15 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.0.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.4) (July 13th 2026)
+* Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
+* Conditions: Fall back to the option value when a choice caption is empty [#1727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1727)
+* Field Types: Guard against empty prevalue captions and values [#1386](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1386)
+* Field Mapping: Align fields in the field mapping property editors [#1716](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1716)
+* Form Entries: Truncate long field values in the entries collection table [#1708](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1708)
+* Workflows: Record a failed workflow in the audit table so it can be retried [#1372](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1372)
+* Workflows: Prevent unintended auto-approval when a workflow changes a record's state [#1598](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1598)
+
 ### [18.0.3](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.3) (July 2nd 2026)
 * Fix upgrade failure when `DisableRecordIndexing` is set to `true`
 

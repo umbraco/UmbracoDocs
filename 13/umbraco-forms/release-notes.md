@@ -16,6 +16,13 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.7) (July 13th 2026)
+* Import: Fix error importing forms exported from Umbraco Forms 10 with string prevalues [#1405](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1405)
+* Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
+* Workflows: Enrich error detail when a Razor email template fails to render [#1571](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1571)
+* Workflows: Record a failed workflow in the audit table so it can be retried [#1372](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1372)
+* Workflows: Surface the exception on `WorkflowExecutionFailedNotification` [#1700](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1700)
+
 ### [13.9.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.6) (April 9th 2026)
 
 * Update "Umbraco Forms scheduled record deletion task" log message grammar [#1683](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1683)
