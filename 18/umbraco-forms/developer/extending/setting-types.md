@@ -26,6 +26,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Name                                           | Source | Description                                               | Used in                                       |
 | ---------------------------------------------- | ------ | --------------------------------------------------------- | --------------------------------------------- |
 | Umb.PropertyEditorUi.CheckBoxList              | CMS    | Uses multiple checkboxes for entry                        |                                               |
+| Umb.PropertyEditorUi.CodeEditor                | CMS    | Uses a code editor                                        |                                               |
 | Umb.PropertyEditorUi.ContentPicker.Source      | CMS    | Uses a content picker with the option for XPath entry     | The "Save as Umbraco node" workflow           |
 | Umb.PropertyEditorUi.DocumentPicker            | CMS    | Uses a content picker                                     |                                               |
 | Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selection from a list of options                 |                                               |
