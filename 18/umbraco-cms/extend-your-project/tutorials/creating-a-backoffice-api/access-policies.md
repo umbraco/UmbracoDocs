@@ -261,7 +261,12 @@ public class MyItemApiController : ManagementApiControllerBase
 
 ## Accessing user data previously held in claims
 
-The Umbraco 18 change removed three values from the backoffice identity: the allowed sections, the content start nodes, and the media start nodes. Each value is available from the `IUser` that you resolve from the current request.
+The Umbraco 18 change removed three values from the backoffice identity: 
+- The allowed sections, 
+- The content start nodes, and
+- The media start nodes. 
+
+Each value is available from the `IUser` that you resolve from the current request.
 
 | Value removed from the identity | How to read it from `IUser` |
 | --- | --- |
