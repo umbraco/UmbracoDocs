@@ -79,11 +79,15 @@ Click **Save and Publish** in the workspace toolbar.
 {% step %}
 ### Step 6: Trigger the Automation
 
-1. Open the **Content** section.
-2. Publish any content item.
-3. Go to the **Automation** section and open the automation.
-4. Navigate to the **Runs** tab to see the run record.
-5. Click on **Run** > **Log Message** step to inspect the resolved message and output data for the run.
+1. Go to the **Content** section.
+2. Open and **Save and Publish** any content item.
+3. Go to the **Automation** section.
+4. Open the automation.
+5. Navigate to the **Runs** tab to see the run record.
+6. Click on the most recent run record to view the details.
+7. Click on the **Log Message** step to inspect the resolved message and output data for the run.
+
+<figure><img src="../.gitbook/assets/trigger-automation.png" alt="View triggered automation"><figcaption><p>View triggered automation.</p></figcaption></figure>
 
 {% hint style="success" %}
 Your automation is working when the run appears in the **Runs** tab and the **Log Message** step shows the resolved message.
