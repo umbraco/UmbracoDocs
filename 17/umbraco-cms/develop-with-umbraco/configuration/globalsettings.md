@@ -230,6 +230,8 @@ Key: `UpgradingViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/Upgr
 
 This setting specifies the view to render when an unattended upgrade is running in the background. Frontend and surface controller requests receive an HTTP 503 response with this view during the upgrade. See [Upgrade Unattended](../../get-started/upgrading-and-migrating/upgrade-unattended.md) for details on the upgrade process.
 
+To customize this view, create your own `.cshtml` file at a location of your choosing, and set this key to that file's path, for example `~/Views/CustomUpgrading.cshtml`. Editing the default file directly isn't recommended, as changes may be overwritten during upgrades.
+
 ## SMTP settings
 
 By adding this settings to the appsettings.json you will be able to send out emails from your Umbraco installation. This could be notifications emails if you are using content workflow, or you are using Umbraco Forms you also need to specify SMTP settings to be able use the email workflows. The forgot password function from the backoffice also needs a SMTP server to send the email with the reset link.
