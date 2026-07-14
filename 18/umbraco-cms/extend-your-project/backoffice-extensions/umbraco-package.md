@@ -213,7 +213,7 @@ Use a bundler such as Vite to build your package. Bundlers add a content hash to
 
 ### Manage the version yourself
 
-You can also take control of the versioning yourself. There are two alternatives.
+You can also take control of the versioning yourself. There are two alternatives:
 
 #### Add your own query string
 
