@@ -185,11 +185,11 @@ The value is derived from the `version` field in your `umbraco-package.json` fil
 
 For example, with `"version": "1.2.3"` an asset URL is rendered as `/App_Plugins/MyPackage/dist/index.js?umb__rnd=1.2.3`.
 
-The host can configure a `Cachebuster` value as described in the [Plugins settings](../../develop-with-umbraco/configuration/pluginssettings.md) article. When set, a short hash of that value is appended to the version, for example `?umb__rnd=1.2.3-7bb8e1f`.
+The host can configure a `Cachebuster` value as described in the [Plugins settings](../../develop-with-umbraco/configuration/pluginssettings.md) article. When set, Umbraco appends a short hash of that value to the version (for example, `?umb__rnd=1.2.3-7bb8e1f`).
 
 ### The version is your cache key
 
-The cache-busting value works both ways. As long as the version is unchanged, browsers keep reusing the assets they already downloaded. When the version changes, all asset URLs change with it, and browsers fetch the new files. Bump the `version` field whenever the assets you ship change.
+The cache-busting value works both ways. When the version stays the same, browsers reuse the assets they already downloaded. When the version changes, browsers fetch the new files. Bump the `version` field whenever the assets you ship change.
 
 {% hint style="warning" %}
 If you change assets without bumping the version, the asset URLs stay the same. Browsers can then keep serving the old files from their cache. Treat a version bump as mandatory for every release that changes assets.
