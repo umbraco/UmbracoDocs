@@ -17,6 +17,64 @@ public string Message { get; set; }
 
 If not specified, the default `Umb.PropertyEditorUi.TextBox` is used.
 
+## How setting values are persisted
+
+Umbraco Forms stores every provider setting as a string. The server model is an `IDictionary<string, string>`. The `View` you choose is rendered using the standard Umbraco CMS property editor UI element:
+
+```html
+<umb-property property-editor-ui-alias="Umb.PropertyEditorUi.TextBox"></umb-property>
+```
+
+Some editors, such as the text box and text area, already store their value as a plain string. The stored value passes straight to the editor and back, so no conversion is needed.
+
+For editors whose value is not a plain string, such as numeric editors and pickers, a converter is needed. Without one, the raw string passes through unchanged. The value then fails to load into the editor, and can fail server-side validation when saving.
+
+## Setting value converters
+
+A `formsSettingValueConverter` is a client-side component registered against a property editor UI alias. It converts the stored string into the shape the editor expects when loading. It converts the editor value back into a string when saving.
+
+Forms ships converters for the following property editor UI aliases:
+
+| Property editor UI alias                       | Editor                       |
+| ---------------------------------------------- | ---------------------------- |
+| Umb.PropertyEditorUi.CheckBoxList              | Checkbox list                |
+| Umb.PropertyEditorUi.ContentPicker.Source      | Content picker with source   |
+| Umb.PropertyEditorUi.Decimal                   | Decimal                      |
+| Umb.PropertyEditorUi.Dropdown                  | Dropdown                     |
+| Umb.PropertyEditorUi.Integer                   | Numeric (integer)            |
+| Umb.PropertyEditorUi.MediaPicker               | Media picker                 |
+| Umb.PropertyEditorUi.MultipleTextString        | Multiple text strings        |
+| Umb.PropertyEditorUi.RadioButtonList           | Radio button list            |
+| Umb.PropertyEditorUi.Slider                    | Slider                       |
+| Umb.PropertyEditorUi.TinyMCE                   | Rich text (TinyMCE)          |
+| Umb.PropertyEditorUi.Tiptap                    | Rich text (Tiptap)           |
+| Umb.PropertyEditorUi.Toggle                    | Toggle                       |
+| Umb.PropertyEditorUi.UploadField               | Upload                       |
+| Forms.PropertyEditorUi.DocumentTypeFieldPicker | Document Type field picker   |
+
+These editors are tested to round-trip their values correctly when used as a setting `View`. Editors not in the list work only when their value is already a plain string.
+
+To use an editor that is not listed, register your own converter. Read the [Setting Value Converter](adding-a-fieldtype.md#setting-value-converter) section for the steps.
+
+### Pickers that store structured values
+
+Pickers that store structured values require a custom setting value converter to work. `Umb.PropertyEditorUi.MultiUrlPicker` is one example. Register a converter that maps the stored string to the picker's value and back.
+
+### Choosing the correct picker alias
+
+Use `Umb.PropertyEditorUi.DocumentPicker` to select a content node. `Umb.PropertyEditorUi.ContentPicker` is not a valid standalone alias and renders nothing.
+
+### Prevalues for numeric editors
+
+`PreValues` is a comma-delimited string. For the Slider, Integer, and Decimal editors, the convention is `min,max,step`:
+
+```csharp
+[Umbraco.Forms.Core.Attributes.Setting("Rating", View = "Umb.PropertyEditorUi.Slider", PreValues = "0.0,1.0,0.1,0.5")]
+public string Rating { get; set; }
+```
+
+The Slider also accepts a fourth value for the default. In the example above the default is `0.5`.
+
 ## Built-in setting types
 
 The following setting types are available and are used for the field, prevalue source and workflow types that ship with the package.
