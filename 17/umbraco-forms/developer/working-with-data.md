@@ -8,7 +8,7 @@ Umbraco Forms includes some helper methods that return records of a given Form, 
 
 ## Available Methods
 
-The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface. For performance reasons, all these methods are paged.
+The methods can be found by injecting the `Umbraco.Forms.Core.Services.IRecordReaderService` interface. These methods are paged, but each one returns the records for an entire Form or Umbraco page. To filter records on the server, use the `IFormRecordSearcher` interface instead. It is described in the [Querying records with a filter](#querying-records-with-a-filter) section below, and supports options such as a submission date range.
 
 ### GetApprovedRecordsFromPage
 
@@ -108,6 +108,69 @@ Sample script that is outputting comments using a Form created with the default 
     </li>
     }
 </ul>
+```
+
+## Querying records with a filter
+
+The `IRecordReaderService` methods above return all records for a Form or Umbraco page. When you need to query records with server-side filtering—for example, retrieving only the submissions created within a date range—inject the `Umbraco.Forms.Core.Searchers.IFormRecordSearcher` interface instead.
+
+This is the same database-level query used by the entries view in the backoffice. The filtering and paging are applied in the query sent to the database, so it does not load every record for the Form into memory.
+
+Describe the query by passing a `RecordFilter`. Its main properties are:
+
+```csharp
+int Skip                // Start index (defaults to 0).
+int Take                // Number of records to return (defaults to 20).
+string? MemberKey       // Only records submitted by this member.
+string SortBy           // Column to sort by: "created", "updated" or "state".
+RecordSorting SortOrder // Sort direction.
+DateTime StartDate      // Only records created on or after this date (UTC).
+DateTime EndDate        // Only records created on or before this date (UTC).
+string? Filter          // Free-text search across the record values.
+List<FormState> States  // Only records in these states. Leave empty to return all states.
+List<Guid> RecordIds    // Only records with these specific unique Ids.
+```
+
+`StartDate` and `EndDate` filter on the record's created date and are matched in UTC, so provide UTC values. Both dates are optional. If you leave `StartDate` unset, it defaults to a date far in the past. If you leave `EndDate` unset, it defaults to the current time. As a result, you can filter by only a start date or only an end date.
+
+The following example retrieves the records for a Form created in the last 24 hours:
+
+```csharp
+@using System.Linq
+@using Umbraco.Forms.Core.Models
+@using Umbraco.Forms.Core.Searchers
+@inject IFormRecordSearcher _formRecordSearcher
+
+@{
+    var formId = new Guid("a34e0692-6a46-45f2-8b70-4ee0a72e4b0d");
+
+    var filter = new RecordFilter
+    {
+        StartDate = DateTime.UtcNow.AddDays(-1),
+        Take = 100,
+    };
+
+    EntrySearchResultCollection results = _formRecordSearcher.QueryDataBase(formId, filter);
+}
+
+<p>@results.TotalNumberOfResults record(s) submitted in the last 24 hours.</p>
+
+<ul>
+    @foreach (EntrySearchResult entry in results.Results)
+    {
+        <li>@entry.Created.ToString("g") - @entry.State</li>
+    }
+</ul>
+```
+
+Each `EntrySearchResult` exposes the record metadata (`Id`, `UniqueId`, `State`, `Created`, `Updated`, and so on) together with a `Fields` collection. To read the value of a specific field, match the field's `Alias` in the returned `Schema` to its `Id`, then find the matching entry in `Fields`:
+
+```csharp
+string GetFieldValue(EntrySearchResultCollection results, EntrySearchResult entry, string alias)
+{
+    string? fieldId = results.Schema.FirstOrDefault(s => s.Alias == alias)?.Id;
+    return entry.Fields.FirstOrDefault(f => f.FieldId == fieldId)?.Value?.ToString() ?? string.Empty;
+}
 ```
 
 ## Loading a Record From a Submitted Form
