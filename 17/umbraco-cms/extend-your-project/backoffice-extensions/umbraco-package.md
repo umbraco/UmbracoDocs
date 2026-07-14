@@ -219,7 +219,7 @@ You can also take control of the versioning yourself. There are two alternatives
 
 Umbraco leaves URLs that already contain a query string untouched. You can therefore version an asset yourself:
 
-{% code title="umbraco-package.json" %}
+{% code title="umbraco-package.json (snippet)" %}
 ```json
 {
     "type": "propertyEditorUi",
