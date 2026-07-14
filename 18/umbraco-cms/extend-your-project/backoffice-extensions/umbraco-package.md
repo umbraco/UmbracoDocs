@@ -74,7 +74,7 @@ Allows you to specify a friendly name for your package that will be used for tel
 
 The version of your package, if this is not specified there will be no version-specific information for your package. This is used for telemetry and to help users understand what version of your package they are using. It is also used for package migrations. The version should follow the [Semantic Versioning](https://semver.org/) format.
 
-From Umbraco 18.1, the version also acts as the cache key for your package's `/App_Plugins` assets. Read more in the [Cache busting](#cache-busting) section.
+The version also acts as the cache key for your package's `/App_Plugins` assets. Read more in the [Cache busting](#cache-busting) section.
 
 ### Allow Telemetry
 

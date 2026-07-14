@@ -188,7 +188,7 @@ export default class MyElement extends LitElement {
 Learn more about the abilities of the manifest file in the [Umbraco Package Manifest](../umbraco-package.md) article.
 
 {% hint style="info" %}
-From Umbraco 18.1, the `version` field is used to cache bust your package's assets. Bump it whenever you release changed assets. The content-hashed chunks that Vite generates bust their own cache. Read more in the [Umbraco Package](../umbraco-package.md#cache-busting) article.
+Umbraco uses the `version` field to cache bust your package's assets. Bump it whenever you release changed assets. The content-hashed chunks that Vite generates bust their own cache. Read more in the [Umbraco Package](../umbraco-package.md#cache-busting) article.
 {% endhint %}
 
 #### Testing your package

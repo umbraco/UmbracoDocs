@@ -56,7 +56,7 @@ We consider it best practice to use at least TypeScript and some kind of build t
 This code sets up a basic package with a dashboard extension.
 
 {% hint style="info" %}
-The `version` field does more than describe your package. From Umbraco 18.1, Umbraco uses it to cache bust your package's assets. Bump it whenever the assets change. Read more in the [Umbraco Package](../backoffice-extensions/umbraco-package.md#cache-busting) article.
+The `version` field does more than describe your package. Umbraco uses it to cache bust your package's assets. Bump it whenever the assets change. Read more in the [Umbraco Package](../backoffice-extensions/umbraco-package.md#cache-busting) article.
 {% endhint %}
 
 {% hint style="info" %}
