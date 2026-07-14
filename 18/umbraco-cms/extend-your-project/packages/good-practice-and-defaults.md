@@ -18,7 +18,7 @@ Files in the `App_Plugins` folder will be publicly available on the website even
 
 Files in the `App_Plugins` folder should be considered immutable. This means that they are not something a user of your package is expected to change on their site.
 
-Set the `version` field in your `umbraco-package.json` file and bump it in every release. From Umbraco 18.1, Umbraco uses the version to cache bust your package's assets. If you release changed assets without bumping the version, browsers can keep serving the old files. Read more in the [Umbraco Package](../backoffice-extensions/umbraco-package.md#cache-busting) article.
+Set the `version` field in your `umbraco-package.json` file and bump it in every release. Read more about what the version is used for in the [Umbraco Package](../backoffice-extensions/umbraco-package.md#version) article.
 
 The default delivery method for files to the `App_Plugins` folder is via a `.targets` file within a package. This means when a website is built, the files in this folder are copied over from the NuGet cache. When this happens, any changes a user might have made to these files will be lost. Equally, if the user performs a `dotnet clean` on a solution, all files in the `App_Plugins` folder will be deleted.
 
