@@ -30,6 +30,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 0f296610-47f5-415d-8042-f4b8f2a51a4a | 16.4.0                | Migrates node pre-values to dynamic root.                                          |
 | d3c1e2f4-5b6a-4c7d-8e9f-0a1b2c3d4e5f | 16.4.0                | Updates the form picker property editor UI alias.                                  |
 | 59576376-b235-47a1-b495-1f795316ee04 | 17.0.0                | Migrates system dates to UTC.                                                      |
+| fb78edef-76c9-4cac-ab23-4ed1cec207b9 | 17.4.1                | Adds FieldPreValueSourceTypeId column; corrective step for 17.0.0-17.0.3 upgrades. |
 | 5e608c91-e910-42a5-8302-928b580ffd54 | 17.0.0                | Migrates node pre-values to dynamic root.                                          |
 | 67c4820d-d802-44dd-b146-5a1ba4c2b5f8 | 17.1.0                | Adds FieldPreValueSourceTypeId column to field pre-values.                         |
 | b375063a-8fcb-4096-b6e2-ff32ff322677 | 17.1.0                | Migrates node pre-values to dynamic root.                                          |
