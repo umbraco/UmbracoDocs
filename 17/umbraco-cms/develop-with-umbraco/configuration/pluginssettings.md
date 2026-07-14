@@ -31,7 +31,7 @@ This setting allows you to customize what file types plugins are allowed to use 
 ```
 {% endcode %}
 
-As you can see above, by default, markup, styles, scripts, source maps, images, fonts, configurations, and license type are included. If you were to, for example, remove the ".html" entry, then plugins would no longer be allowed to use HTML files.
+By default, plugins can serve markup, styles, scripts, source maps, images, fonts, configuration files, and license files. If you remove the `.html` entry, plugins cannot serve HTML files.
 
 ## Cachebuster
 
