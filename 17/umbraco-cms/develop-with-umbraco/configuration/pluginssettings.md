@@ -23,7 +23,8 @@ This setting allows you to customize what file types plugins are allowed to use 
         ".eot", ".ttf", ".woff", ".woff2",
         ".xml", ".json", ".config",
         ".lic",
-        ".map"]
+        ".map"
+      ]
     }
   }
 }
