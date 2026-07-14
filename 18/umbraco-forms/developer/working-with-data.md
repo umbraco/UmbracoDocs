@@ -112,7 +112,7 @@ Sample script that is outputting comments using a Form created with the default 
 
 ## Querying records with a filter
 
-The `IRecordReaderService` methods above return all records for a Form or Umbraco page. When you need to query records with server-side filtering—for example, retrieving only the submissions created within a date range—inject the `Umbraco.Forms.Core.Searchers.IFormRecordSearcher` interface instead.
+The `IRecordReaderService` methods above return all records for a Form or Umbraco page. When you need to query records with server-side filtering, for example, retrieving only the submissions created within a date range, inject the `Umbraco.Forms.Core.Searchers.IFormRecordSearcher` interface instead.
 
 This is the same database-level query used by the entries view in the backoffice. The filtering and paging are applied in the query sent to the database, so it does not load every record for the Form into memory.
 
