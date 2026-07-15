@@ -32,7 +32,7 @@ const servers: McpServerConfig[] = [
   {
     name: "cms",
     command: "npx",
-    args: ["-y", "@umbraco-cms/mcp-dev@17.1"],
+    args: ["-y", "@umbraco-cms/mcp-dev@latest"],
     // Environment variables from the parent process are inherited automatically.
     // Only specify env here to override or add variables.
     proxyTools: true,
