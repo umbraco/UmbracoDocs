@@ -74,6 +74,7 @@ exceptions:
   - LINK     # 
   - LINQ     # Language Integrated Query
   - LLM      # Large Language Model
+  - LTS      # Long-Term Support
   - MCP      # Mode Context Protocol
   - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
   - MDN      # Mozilla Developer Network
