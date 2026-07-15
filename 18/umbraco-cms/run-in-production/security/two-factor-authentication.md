@@ -861,8 +861,10 @@ We need to register the custom view using a composer. This can be done on the `I
 
 {% code title="TwoFactorConfiguration.cs" lineNumbers="true" %}
 ```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Web.BackOffice.Security;
+using Umbraco.Cms.Core.DependencyInjection;
 
 namespace My.Website;
 
