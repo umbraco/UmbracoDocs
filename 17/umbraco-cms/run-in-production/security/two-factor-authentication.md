@@ -701,7 +701,7 @@ To replace the default activation screen with the custom view, you need to regis
   "version": "1.0.0",
   "extensions": [
     {
-      "type": "mfaActivationProvider",
+      "type": "mfaLoginProvider",
       "alias": "UmbracoUserAppAuthenticator",
       "name": "UmbracoUserAppAuthenticator",
       "forProviderName": "UmbracoUserAppAuthenticator",
