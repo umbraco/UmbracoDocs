@@ -181,7 +181,7 @@ Although settings are persisted as strings, the property on your provider class 
 
 As well as `string`, the following types are supported, along with their nullable equivalents (such as `int?`):
 
-* Numeric types such as `int`, `long`, `decimal` and `double`
+* Numeric types such as `int`, `long`, `decimal`, and `double`
 * `bool`
 * `Guid`
 * Enumerations
