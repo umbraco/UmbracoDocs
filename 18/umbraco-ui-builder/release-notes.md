@@ -29,10 +29,10 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 * Fixed the MultipleChoice filter editor failing to render [#226](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/226)
 * Fixed the Entity Picker showing nothing when `maxItems` is set to 0 [#225](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/225)
 * Fixed repository save methods on new-entity insert with the NPoco backend (regression in 17.1.0) [#224](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/224)
-* Fixed a 403 `insufficient_access` error on the data-type endpoint for users without Content/Media section access [#218](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/218)
+* Fixed a 403 `insufficient_access` error on the Data Type endpoint for users without Content/Media section access [#218](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/218)
 * Fixed `FileActionResult` not showing an error notification when an exception occurs [#217](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/217)
 * Fixed the Entity Picker missing when the foreign key is non-nullable [#187](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/187)
-* Fixed the Import Action not working with a custom data type [#178](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/178)
+* Fixed the Import Action not working with a custom Data Type [#178](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/178)
 * Fixed Block List throwing an error on save [#123](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/123)
 
 ### **18.0.0** **(June 23rd 2026)**
