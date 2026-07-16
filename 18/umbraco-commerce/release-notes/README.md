@@ -27,8 +27,8 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 * Guard against a null content node in `StockPropertyValueConverter` (#848).
 * Fixed a crash in the variant picker when a variant has no price (#829).
 * Fixed a `NULL dateTimeUtc` error in the transaction activity migration (#831).
-* Preserve the original stack trace when `PollyExecutionStrategyBase` rethrows (#815).
-* Fixed `DateTime` settings deserialization failing on space-separated values.
+* Preserve the original stack trace on errors surfaced by `PollyExecutionStrategyBase` (#815).
+* Fixed `DateTime` settings failing to parse space-separated values.
 * Reset (rather than cancel) the transaction when a customer abandons checkout (#789).
 * Fixed order transaction, export authorization, and top-buyers analytics bugs.
 * Use the CMS scope in `StoreTelemetryRepository` to avoid querying CMS tables against the Commerce database.
@@ -37,7 +37,7 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 
 * Fixed a false-positive "transaction amount changed" exception in `BeginPaymentFormAsync`.
 * Fixed a `NullReferenceException` when using dynamic shipping with no product measurements or no store location.
-* Fixed a `NullReferenceException` when a dynamic shipping rate range provider alias is unresolvable.
+* Fixed a `NullReferenceException` when a dynamic shipping rate range provider alias cannot be resolved.
 
 #### 18.0.0 (23rd Jun 2026)
 
