@@ -34,6 +34,12 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 * Email: Surface the underlying error detail when a Razor email view fails to render [#1571](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1571)
 * Validation: Use the configured validation message for regular expression validation [#858](https://github.com/umbraco/Umbraco.Forms.Issues/issues/858)
 * Assets: Use the CMS cache buster so backoffice assets refresh after an upgrade [#1739](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1739)
+* Record Export: Make the CSV export delimiter configurable [#1541](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1541)
+* Delivery API: Return default field settings in the response when settings have not been edited [#1753](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1753)
+* Data Sources: Fix the form wizard assigning an unpersisted default prevalue source to foreign-key fields [#1751](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1751)
+* Field & Workflow Settings: Support typed setting values (`int`, `decimal`, `enum`, `Guid`) [#1717](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1717)
+* Form Design: Remove the top margin on the first form settings layout item [#1643](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1643)
+* Field & Workflow Settings: Keep the field editor open when settings validation fails
 
 ### [18.0.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.4) (July 13th 2026)
 * Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
