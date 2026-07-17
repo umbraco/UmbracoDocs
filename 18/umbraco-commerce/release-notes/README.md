@@ -18,6 +18,31 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.0.2 (15th Jul 2026)
+
+* Fixed cart conversion "Reached Checkout" and "Purchased" totals drifting for past periods (#835).
+* Fixed the product picker in the discount rule editor losing store context.
+* Tolerate legacy member group names in discount rule settings (#839).
+* Raise `CartAbandonedNotification` from the abandoned cart pipeline (#805).
+* Guard against a null content node in `StockPropertyValueConverter` (#848).
+* Fixed a crash in the variant picker when a variant has no price (#829).
+* Fixed a `NULL dateTimeUtc` error in the transaction activity migration (#831).
+* Preserve the original stack trace on errors surfaced by `PollyExecutionStrategyBase` (#815).
+* Fixed `DateTime` settings failing to parse space-separated values.
+* Reset (rather than cancel) the transaction when a customer abandons checkout (#789).
+* Fixed order transaction, export authorization, and top-buyers analytics bugs.
+* Use the CMS scope in `StoreTelemetryRepository` to avoid querying CMS tables against the Commerce database.
+
+#### 18.0.1 (08th Jul 2026)
+
+* Fixed a false-positive "transaction amount changed" exception in `BeginPaymentFormAsync`.
+* Fixed a `NullReferenceException` when using dynamic shipping with no product measurements or no store location.
+* Fixed a `NullReferenceException` when a dynamic shipping rate range provider alias cannot be resolved.
+
+#### 18.0.0 (23rd Jun 2026)
+
+* Final release for Umbraco v18. See 18.0.0-rc1 below for the breaking changes introduced in this major.
+
 #### 18.0.0-rc1 (05th Jun 2026)
 
 * Initial release candidate for Umbraco v18. 
