@@ -56,6 +56,19 @@ These editors are tested to round-trip their values correctly when used as a set
 
 To use an editor that is not listed, register your own converter. Read the [Setting Value Converter](adding-a-fieldtype.md#setting-value-converter) section for the steps.
 
+### Rich text settings
+
+For a rich text setting, use the `Forms.PropertyEditorUi.RichText` marker as the `View` rather than a specific editor alias:
+
+```csharp
+[Umbraco.Forms.Core.Attributes.Setting("Body text", View = "Forms.PropertyEditorUi.RichText")]
+public string BodyText { get; set; }
+```
+
+Forms resolves the marker at runtime to the property editor UI of the rich text Data Type configured in `Umbraco:Forms:FieldTypes:RichText:DataTypeId`. It falls back to the default Tiptap editor when the setting is absent. This lets a rich text setting honor a custom editor, such as TinyMCE, instead of being pinned to a single editor.
+
+Forms resolves the marker for field type and workflow type settings only.
+
 ### Pickers that store structured values
 
 Pickers that store structured values require a custom setting value converter to work. `Umb.PropertyEditorUi.MultiUrlPicker` is one example. Register a converter that maps the stored string to the picker's value and back.
@@ -95,7 +108,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.Slider                    | CMS    | Uses a slider for range input                             | The "reCAPTCHAv3" field type                  |
 | Umb.PropertyEditorUi.TextArea                  | CMS    | Uses a multiline textbox for entry                        |                                               |
 | Umb.PropertyEditorUi.TextBox                   | CMS    | Uses a single-line textbox for entry                      |                                               |
-| Umb.PropertyEditorUi.Tiptap                    | CMS    | Uses a rich text editor for input                         | The "Send email" workflows                    |
+| Umb.PropertyEditorUi.Tiptap                    | CMS    | Uses a rich text editor for input                         | The default editor for `Forms.PropertyEditorUi.RichText` |
 | Umb.PropertyEditorUi.Toggle                    | CMS    | Uses a single checkbox for entry                          |                                               |
 | Umb.PropertyEditorUi.UploadField               | CMS    | Used for selection of a file                              | The "Text file" prevalue source               |
 | Forms.PropertyEditorUi.DataTypePicker          | Forms  | Uses a datatype picker                                    | The "Umbraco prevalues" prevalue source       |
@@ -105,6 +118,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Forms.PropertyEditorUi.EmailTemplatePicker     | Forms  | Used for selection of an email template                   | The "Send email with Razor template" workflow |
 | Forms.PropertyEditorUi.FieldMapper             | Forms  | Used to map fields from a form to required aliases        | The "Send to URL" workflow                    |
 | Forms.PropertyEditorUi.Password                | Forms  | Uses password text box for entry                          |                                               |
+| Forms.PropertyEditorUi.RichText                | Forms  | Uses the rich text editor configured via `Umbraco:Forms:FieldTypes:RichText:DataTypeId` (Tiptap by default) | The "Rich text" field type and the "Send email with Razor template" workflow |
 | Forms.PropertyEditorUi.StandardFieldMapper     | Forms  | Used to map system fields from a form to required aliases | The "Send to URL" workflow                    |
 | Forms.PropertyEditorUi.TextWithFieldPicker     | Forms  | Uses a single-line textbox/form field list for entry      |                                               |
 
