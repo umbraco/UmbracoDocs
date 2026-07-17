@@ -40,7 +40,7 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 * Field & Workflow Settings: Support typed setting values (`int`, `decimal`, `enum`, `Guid`) [#1717](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1717)
 * Form Design: Remove the top margin on the first form settings layout item [#1643](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1643)
 * Field & Workflow Settings: Keep the field editor open when settings validation fails
-* Workflows: Resolve the rich text editor from the configured data type in the Send email (Razor) workflow [#1680](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1680)
+* Workflows: Resolve the rich text editor from the configured data type in the Send email (Razor) workflow [#1756](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1756)
 
 ### [18.0.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.4) (July 13th 2026)
 * Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
