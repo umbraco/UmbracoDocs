@@ -59,7 +59,7 @@ Add the Slack client credentials to `appsettings.json`:
 {% endcode %}
 
 {% hint style="warning" %}
-The `Scopes` array must match the bot token scopes you added to the Slack App in step 3. Missing a scope here means it won't be requested during authentication, even if it's enabled on the Slack App. The action will then fail with a scope-related error.
+The `Scopes` array must match the bot token scopes you added to the Slack App in [step 3 above](#create-a-slack-app). Missing a scope here means it won't be requested during authentication, even if it's enabled on the Slack App. The action will then fail with a scope-related error.
 {% endhint %}
 
 {% hint style="warning" %}
