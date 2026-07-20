@@ -86,7 +86,7 @@ In a `userEntryPoint` the current user data is guaranteed to be loaded when `onI
 
 ### Start and stop a service for the signed-in user
 
-Use the session boundaries to pair setup and teardown of anything that belongs to a specific user, such as a notification connection or an analytics identity:
+Use the session boundaries to pair setup and teardown of anything that belongs to a specific user, such as a notification connection or an analytics identity. `onUnload` is not passed the user, so if the teardown needs to know who is leaving, capture the identity in `onInit` and reuse it:
 
 {% code title="user.ts" %}
 ```typescript
@@ -95,23 +95,29 @@ import { UMB_CURRENT_USER_CONTEXT } from '@umbraco-cms/backoffice/current-user';
 import { MyNotificationService } from './my-notification-service.js';
 
 const notifications = new MyNotificationService();
+let sessionUserUnique: string | undefined;
 
 export const onInit: UmbEntryPointOnInit = async (host) => {
     const currentUserContext = await host.getContext(UMB_CURRENT_USER_CONTEXT);
-    const unique = currentUserContext?.getUnique();
-    if (unique) {
-        notifications.connect(unique);
+    sessionUserUnique = currentUserContext?.getUnique();
+    if (sessionUserUnique) {
+        notifications.connect(sessionUserUnique);
     }
 };
 
 export const onUnload: UmbEntryPointOnUnload = () => {
-    notifications.disconnect();
+    // sessionUserUnique still identifies the user this session belonged to.
+    notifications.disconnect(sessionUserUnique);
 };
 ```
 {% endcode %}
 
 {% hint style="info" %}
 `onInit` and `onUnload` are called once per session. If the session times out and someone signs in again, the pair runs again — potentially for a different user. Keeping setup and teardown symmetrical ensures nothing from the previous user's session leaks into the next.
+{% endhint %}
+
+{% hint style="info" %}
+Capturing the user in `onInit` (as above) is the reliable way to identify who a later `onUnload` is for, because it is fixed to the session the pair brackets. Reading `UMB_CURRENT_USER_CONTEXT` inside `onUnload` also still returns the departing user, but only as a side effect of the current user data not being cleared until the next sign-in — prefer the captured value when the identity matters.
 {% endhint %}
 
 ### Register extensions for specific users
