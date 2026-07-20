@@ -263,7 +263,7 @@ The built-in default value is:
 
 {% hint style="warning" %}
 
-Any values you set for `ImageFileTypes` in `appsettings.json` are **added to** these built-in defaults - they do not replace them.
+Any values you set for `ImageFileTypes` in `appsettings.json` are **added to** these built-in defaults. They do not replace them.
 
 This is due to how .NET binds collection-based configuration. The configured values are appended to the existing (default) contents, rather than replacing them. As a result, leaving a built-in type out of your configured list does not remove it.
 
