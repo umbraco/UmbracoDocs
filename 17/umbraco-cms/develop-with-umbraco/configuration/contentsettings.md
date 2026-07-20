@@ -27,7 +27,7 @@ The following snippet will give an overview of the keys and values in the conten
       "BackOfficeLogo": "../media/qyci4xti/logo.png",
       "HideBackOfficeLogo": false,
       "Imaging": {
-        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
         "AutoFillImageProperties": [
           {
             "Alias": "umbracoFile",
@@ -243,7 +243,7 @@ This section is used for managing how Umbraco handles images, allowed attributes
 
 ```json
 "Imaging": {
-  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
   "AutoFillImageProperties": {
     "Alias": "umbracoFile",
     "WidthFieldAlias": "umbracoWidth",
@@ -258,7 +258,39 @@ Let's break it down.
 
 ### Image file types
 
-This is a separated list of accepted image formats
+This is a list of the native image file extensions that Umbraco recognizes as images. It is used, for example, to determine whether an uploaded file needs format conversion, and to validate images uploaded as user avatars.
+
+The built-in default value is:
+
+```json
+"ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"]
+```
+
+{% hint style="warning" %}
+
+Any values you set for `ImageFileTypes` in `appsettings.json` are **added to** these built-in defaults - they do not replace them.
+
+This is due to how .NET binds collection-based configuration. The configured values are appended to the existing (default) contents, rather than replacing them. As a result, leaving a built-in type out of your configured list does not remove it.
+
+{% endhint %}
+
+To remove a built-in type, or to take full control of the list, configure the setting in code. There, the collection can be replaced or modified directly. Add the following to `Program.cs`:
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Configuration.Models;
+
+builder.Services.PostConfigure<ContentSettings>(settings =>
+{
+    // Replace the whole list with an explicit set:
+    settings.Imaging.ImageFileTypes = new HashSet<string> { "jpeg", "jpg", "png" };
+
+    // ...or remove a specific built-in type:
+    // settings.Imaging.ImageFileTypes.Remove("webp");
+});
+```
+
+`PostConfigure` runs after configuration has been bound, so it operates on the final (merged) collection and can both add and remove entries.
 
 ### Auto fill image properties
 
@@ -270,7 +302,7 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ```json
 "Imaging": {
-  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
   "AutoFillImageProperties": [
     {
       "Alias": "umbracoFile",
