@@ -4,7 +4,7 @@ description: Use block rules to keep unwanted traffic out of your Engage analyti
 
 # Block traffic
 
-Block traffic helps you keep your analytics clean. When people you do not want in your reports keep visiting the site, such as you and your team, an agency, or automated bots, their requests inflate your numbers. A block rule stops matching requests from being counted, so your reports reflect real visitors.
+Block traffic helps you keep your analytics clean. Visits you do not want in your reports, such as your own team, an agency, or automated bots, inflate your numbers. A block rule stops matching requests from being counted, so your reports reflect real visitors.
 
 This does **not** stop anyone from using your website. The page still loads normally. A blocked request is only left out of your Engage analytics.
 
@@ -33,7 +33,7 @@ Select **Create rule**, fill in the fields, and select **Save and close**:
 
 The new rule then appears in the overview.
 
-**Example, exclude your own visits:** set **Type** to *IP address*, **Condition** to *Equals*, and **Value** to your office IP address (your IT team can tell you the public one). Leave **Active** on and select **Save and close**. From then on, visits from that address stay out of your reports.
+**Example, exclude your own visits:** set **Type** to *IP address* and **Condition** to *Equals*. Put your office IP address in **Value** (your IT team can tell you the public one). Leave **Active** on and select **Save and close**. From then on, visits from that address stay out of your reports.
 
 <figure><img src="../../.gitbook/assets/Settings-BlockTraffic-CreateRule.png" alt="Creating a block rule with the name, description, type, condition and value fields"><figcaption><p>Creating a rule</p></figcaption></figure>
 
@@ -62,7 +62,7 @@ When you choose a **Type**, the **Condition** list updates to show only the opti
 
 Select a rule's name in the overview to open and edit it. To switch a rule off without deleting it, open it and turn **Active** off. To delete a rule, tick its checkbox in the overview and select **Delete**.
 
-**Active applies from the moment you switch it on.** Turning a rule on does not remove data that was already collected, and turning it off does not bring back visits that were left out while it was active.
+**Active applies from the moment you switch it on.** Turning a rule on does not remove data that was already collected. Turning it off does not bring back visits that were left out while it was active.
 
 ## What to expect
 
