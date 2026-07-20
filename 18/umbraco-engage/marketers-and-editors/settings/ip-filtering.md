@@ -39,7 +39,7 @@ The new rule then appears in the overview.
 
 ## Rule types
 
-* **IP address**: the visitor's IP address. Enter a single address (for example `203.0.113.10`) or a range that covers a whole network in CIDR notation (for example `203.0.113.0/24`). Ask your IT team if you are unsure which to use.
+* **IP address**: the visitor's IP address. Enter a single address (for example `203.0.113.10`) or a range that covers a whole network (for example `203.0.113.0/24`). Ask your IT team if you are unsure which to use.
 * **User agent**: the text a browser or bot sends to identify itself. Useful for keeping out automated clients.
 * **Country**: the country a visit comes from, based on the visitor's detected location. The **Location** report under Analytics shows the country values Engage records.
 
@@ -53,7 +53,7 @@ When you choose a **Type**, the **Condition** list updates to show only the opti
 | User agent | ✓ | ✓ | ✓ | ✓ |
 | Country | ✓ | ✓ | ✓ | ✓ |
 
-* **List**: matches when the value is one of several entries you add.
+* **List**: matches when the value is one of the entries you add.
 * **Equals**: matches when the value is exactly what you provide.
 * **Contains**: matches when the value contains the text you provide.
 * **Regular expression**: matches the value against a pattern. This is an advanced option; leave it to a developer if you are not familiar with regular expressions.
