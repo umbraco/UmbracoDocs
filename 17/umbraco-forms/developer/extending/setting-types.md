@@ -132,8 +132,84 @@ For example `Forms.PropertyEditorUi.TextWithFieldPicker`. This offers the option
 
 ![Text with field picker](../../.gitbook/assets/text-with-field-picker.png)
 
+## Setting properties
+
+Beyond `Name`, `Description`, and `View`, the `Setting` attribute supports other properties.
+
+```csharp
+[Setting("My Setting", Description = "Help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = true, DisplayOrder = 10)]
+public virtual string? MySetting { get; set; }
+```
+
+- `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
+
+- `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
+
+- `SupportsHtml` is a flag indicating whether the setting can contain HTML content. When set to `true` it will be treated as HTML content when the value is read from the Forms delivery API.
+
+- `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
+
+- `DisplayOrder` - controls the order settings appear in relative to each other in the backoffice.
+
+## Default values
+
+Default values for settings can be defined in code using one of two approaches.
+
+### Approach 1: Using a property initializer
+
+```csharp
+[Setting("Minimum")]
+public virtual string? Min { get; set; } = "1";
+```
+
+### Approach 2: Using the `DefaultValue` attribute property
+
+```csharp
+[Setting("Minimum", DefaultValue = "1")]
+public virtual string? Min { get; set; }
+```
+
+If both are provided, the `DefaultValue` attribute property takes precedence over the property initializer.
+
+These code-based defaults provide an alternative to [configuring default values via `appsettings.json`](../configuration/README.md#settingscustomization). If a value is configured in `appsettings.json`, it takes precedence over any code-based default.
+
+## Settings when inheriting
+
+When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
+
+All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
+
+```csharp
+[Setting("My Setting", Description = "My custom help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = true, DisplayOrder = 10)]
+public override string? MySetting { get; set; }
+```
+
+If you want to hide a setting in your derived class you can use the `IsHidden` property:
+
+```csharp
+[Setting("My Setting", IsHidden = true)]
+public override string? MySetting { get; set; }
+```
+
+## Translations
+
+Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used.
+
+Each different type of extension for Forms uses a different root value in the localization file:
+
+- Data sources - `formProviderDataSources`
+- Export types - `formProviderExportTypes`
+- Field types - `formProviderFieldTypes`
+- Prevalue sources - `formProviderPrevalueSources`
+- Recordset actions - `formRecordSetActions`
+- Workflows - `formProviderWorkflows`
+
+For a full worked example, including registering the language file, see the [Language Files](adding-a-fieldtype.md#language-files) section of the field type tutorial.
+
 ## Creating a setting type
 
-It's also possible to define your own setting type using a combination of server and client-side code.
+If none of the [built-in setting types](#built-in-setting-types) fit, you can register your own property editor UI to use as a `View`. This works the same way as for any other Umbraco property editor.
 
-Read how do this in the article on [adding a field type](adding-a-fieldtype.md#field-settings).
+Since Forms stores every setting as a string, you'll need a **setting value converter** if your editor's value isn't a plain string. See [How setting values are persisted](#how-setting-values-are-persisted).
+
+For a complete example, see the [Setting Value Editor](adding-a-fieldtype.md#setting-value-editor) and [Setting Value Converter](adding-a-fieldtype.md#setting-value-converter) sections of the field type tutorial. It builds a custom editor and converter, including manifests, registration, and what each converter method does.
