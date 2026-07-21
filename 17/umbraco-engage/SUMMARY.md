@@ -81,7 +81,7 @@
 * [Reporting](marketers-and-editors/reporting.md)
 * [Settings](marketers-and-editors/settings/README.md)
   * [Goals](marketers-and-editors/settings/setting-up-goals.md)
-  * [Block traffic](marketers-and-editors/settings/block-traffic.md)
+  * [Block Traffic](marketers-and-editors/settings/block-traffic.md)
   * [Configuration](marketers-and-editors/settings/the-configuration-file.md)
   * [Permissions](marketers-and-editors/settings/permissions.md)
 
