@@ -91,7 +91,7 @@ new AIKnowledgeSetItem
 
 Knowledge sets are auto-discovered via the `[AIKnowledgeSet]` attribute and the `IDiscoverable` interface. No manual registration is needed.
 
-To add a set that isn't auto-discovered, or to exclude one, use the collection builder in a Composer:
+To turn off a set shipped by another package, exclude it in a Composer:
 
 {% code title="KnowledgeSetComposer.cs" %}
 
@@ -105,13 +105,14 @@ public class KnowledgeSetComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
     {
         builder.AIKnowledgeSets()
-            .Add<ManuallyRegisteredKnowledgeSet>()
             .Exclude<ThirdPartyKnowledgeSet>();
     }
 }
 ```
 
 {% endcode %}
+
+The builder also exposes `.Add<T>()`, but you rarely need it. A decorated set is already registered by discovery. `.Add<T>()` only helps for the uncommon case of a set that implements `IAIKnowledgeSet` directly, without the `[AIKnowledgeSet]` attribute.
 
 ## Viewing Installed Knowledge Sets
 
