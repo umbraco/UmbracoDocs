@@ -12,9 +12,9 @@ The **Settings** section is designed to help you customize your Umbraco Engage e
 
 Learn how to set up goals to track key performance indicators, ensuring you can measure success effectively.
 
-## [IP Filtering](ip-filtering.md)
+## [Block traffic](block-traffic.md)
 
-Learn about IP Filtering to manage traffic and protect your analytics data.
+Learn how to use block rules to keep unwanted traffic out of your analytics.
 
 ## [The Configuration File](the-configuration-file.md)
 
