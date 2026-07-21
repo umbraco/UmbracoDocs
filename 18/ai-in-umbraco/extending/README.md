@@ -38,6 +38,10 @@ Umbraco.AI is designed to be extensible. You can add support for new AI provider
 <td>Create evaluators for domain-specific safety and compliance rules</td>
 </tr>
 <tr>
+<td><strong>Knowledge Sets</strong></td>
+<td>Ship background knowledge about your product that the AI can draw on</td>
+</tr>
+<tr>
 <td><strong>Notifications</strong></td>
 <td>Subscribe to entity lifecycle events for validation and automation</td>
 </tr>
@@ -71,6 +75,12 @@ Umbraco.AI is designed to be extensible. You can add support for new AI provider
 - You want to compose agents into sequential or parallel workflows
 - You need custom agent collaboration patterns
 
+### Create a Knowledge Set When
+
+- You ship a package and want the AI to understand your product
+- You want to provide background reference material without an end-user having to configure anything
+- You have content that the AI should draw on only when it is relevant
+
 ### Subscribe to Notifications When
 
 - You need to validate operations before they execute
@@ -103,6 +113,10 @@ graph TD
 
 {% content-ref url="../add-ons/agent/workflows.md" %}
 [Agent Workflows](../add-ons/agent/workflows.md)
+{% endcontent-ref %}
+
+{% content-ref url="knowledge-sets/README.md" %}
+[Knowledge Sets](knowledge-sets/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="notifications/README.md" %}
