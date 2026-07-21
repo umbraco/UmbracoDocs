@@ -105,8 +105,8 @@ public class KnowledgeSetComposer : IComposer
     public void Compose(IUmbracoBuilder builder)
     {
         builder.AIKnowledgeSets()
-            .Add<EngageKnowledgeSet>()
-            .Exclude<LegacyKnowledgeSet>();
+            .Add<ManuallyRegisteredKnowledgeSet>()
+            .Exclude<ThirdPartyKnowledgeSet>();
     }
 }
 ```
