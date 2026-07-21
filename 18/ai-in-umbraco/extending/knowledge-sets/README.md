@@ -5,7 +5,9 @@ description: >-
 
 # Knowledge Sets
 
-A knowledge set is a code-defined, package-embeddable collection of background knowledge about a subject — for example a product such as Umbraco Engage — that is surfaced to the AI. A package author ships knowledge by dropping a single decorated class into an assembly: it is discovered at startup, needs no configuration, and its content flows to the model on demand.
+A knowledge set is a collection of background knowledge about a subject — for example, a product such as Umbraco Engage. It is defined in code and shipped inside a package, so the AI can draw on it.
+
+A package author ships knowledge by dropping a single decorated class into an assembly. The set is discovered at startup, needs no configuration, and its content flows to the model on demand.
 
 Knowledge sets are the content complement to [Contexts](../../concepts/contexts.md): context resource types define the _shape_ of context, while knowledge sets provide ready-made _content_.
 
@@ -21,7 +23,7 @@ Each knowledge set:
 
 ## How It Works
 
-Installed knowledge sets flow through the same context resolution pipeline as contexts. For each request, the AI is shown a grouped list of the available items — each item's name and description act as a breadcrumb — and the model pulls an item's full markdown content only when it decides the item is relevant. Item content is produced lazily, so listing a set never loads its content.
+Installed knowledge sets flow through the same context resolution pipeline as contexts. For each request, the AI is shown a grouped list of the available items, where each item's name and description act as a breadcrumb. The model then pulls an item's full markdown content only when it decides the item is relevant. Item content is produced lazily, so listing a set never loads its content.
 
 ## Creating a Knowledge Set
 
@@ -60,7 +62,7 @@ That is the complete happy path. On startup the class is discovered, and its ite
 
 ### Loading Content Dynamically
 
-`FromContent` wraps a literal string. When an item's content needs to be built at request time — for example loaded from a service — set `GetContentAsync` directly instead. The producer is invoked lazily, only when the content is actually retrieved:
+`FromContent` wraps a literal string. When an item's content needs to be built at request time — for example loaded from a service — set `GetContentAsync` directly instead. The producer is invoked lazily, only when the content is retrieved:
 
 {% code title="Dynamic item" %}
 
@@ -80,7 +82,7 @@ new AIKnowledgeSetItem
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `Key` | `string` | Stable, URL-safe identity within the set (e.g. `"goals"`). Keep it stable across renames. |
+| `Key` | `string` | Stable, URL-safe identity within the set (for example `"goals"`). Keep it stable across renames. |
 | `Name` | `string` | Display name, shown in the backoffice. |
 | `Description` | `string?` | The breadcrumb the AI sees when the item is advertised — write it to help the model decide whether to retrieve the item. |
 | `GetContentAsync` | `Func<CancellationToken, Task<string>>` | Lazily produces the markdown content, injected as-is when retrieved. |
