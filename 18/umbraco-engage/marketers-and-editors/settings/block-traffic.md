@@ -2,7 +2,7 @@
 description: Use block rules to keep unwanted traffic out of your Engage analytics.
 ---
 
-# Block traffic
+# Block Traffic
 
 Block traffic helps you keep your analytics clean. Visits you do not want in your reports, such as your own team, an agency, or automated bots, inflate your numbers. A block rule stops matching requests from being counted, so your reports reflect real visitors.
 
