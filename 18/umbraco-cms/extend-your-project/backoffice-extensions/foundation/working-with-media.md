@@ -27,7 +27,7 @@ The following properties control the result:
 
 * `unique` — the media key (GUID).
 * `width` and `height` — the target size in pixels.
-* `mode` — the crop mode. Optional.
+* `mode` — _[Optional]_ the crop mode.
 * `format` — the output format. Optional, as the server picks the best format by default.
 * `loading` — `lazy` (the default) or `eager`.
 * `alt` and `icon` — the alt text and the fallback icon.
