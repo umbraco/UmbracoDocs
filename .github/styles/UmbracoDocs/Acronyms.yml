@@ -49,6 +49,7 @@ exceptions:
   - FTP      # File Transfer Protocol
   - GDPR     # General Data Protection Regulation
   - GET      # HTTP GET method
+  - GHSA     # GitHub Security Advisory
   - GIF      # Graphics Interchange Format
   - GUI      # Graphical user interface
   - GUID     # Globally Unique Identifier
