@@ -22,8 +22,8 @@ This section contains the release notes for Umbraco Deploy 18, including all cha
 
 * Update public access role rules when a member group is renamed during a deploy.
 * Map Deploy endpoints when booting during an unattended upgrade (`RuntimeLevel.Upgrading`).
-* Transfer invariant properties when deploying the default culture [#249](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/249)
-* Fix restore of trashed content leaving a stale recycle bin path and level [#267](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/267)
+* Transfer invariant properties when deploying the default culture [#249](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/249).
+* Fix restore of trashed content leaving a stale recycle bin path and level [#267](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/267).
 * Normalize document culture code casing on import to prevent duplicate culture variation rows [#271](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/271) [#280](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/280)
 * Improve condition lifecycle management, fixing the Deploy dashboard occasionally loading blank on init and refresh [#346](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/346)
 
