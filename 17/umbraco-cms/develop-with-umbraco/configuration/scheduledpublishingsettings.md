@@ -2,7 +2,7 @@
 description: "Information on the scheduled publishing settings section."
 ---
 
-# Scheduled publishing settings
+# Scheduled Publishing Settings
 
 The scheduled publishing settings control how often Umbraco checks for content scheduled to be published or unpublished. They also control whether those checks are aligned to clock boundaries.
 
