@@ -59,7 +59,7 @@ This setting determines how log events are enriched with a session identifier. T
 
 The available options are:
 
-- `SessionId` (default) - Enriches log events with the actual ASP.NET Core session id. This matches the historical behavior. Reading the session id forces the session to be loaded from its store, which is a blocking round-trip per request when the session is backed by an `IDistributedCache` (for example, on a load-balanced setup or when using a standalone L2 cache).
+- `SessionId` (default) - Enriches log events with the actual ASP.NET Core session ID. This matches the historical behavior. Reading the session ID forces the session to be loaded from its store, which is a blocking round-trip per request when the session is backed by an `IDistributedCache` (for example, on a load-balanced setup or when using a standalone L2 cache).
 - `CookieHash` - Enriches log events with a one-way hash of the session cookie value. This provides the same per-session correlation as `SessionId` without loading the session from its store, so it never incurs a distributed-cache round-trip.
 - `None` - Does not enrich log events with a session identifier.
 
