@@ -32,7 +32,7 @@ In some cases this yields a lot of fields in the index, which can lead to errors
 
 Elements from the Library can be embedded as block content in Block List and Block Grid editors. By default, the content of these Elements is not added to the search index of the documents that embed them.
 
-Set this to `true` to include that content in the index entry of the referencing document. This only applies to the external index used for front-end searches. The internal (back office) index is not affected.
+Set this to `true` to include that content in the index entry of the referencing document. This only applies to the external index used for front-end searches. The internal (backoffice) index is not affected.
 
 Rebuild your indexes after changing this setting for the change to take effect.
 
