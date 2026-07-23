@@ -248,7 +248,7 @@ The RelationService provides access to operations involving IRelation and IRelat
 
 <summary><strong>RedirectUrlService</strong> Notifications</summary>
 
-The RedirectUrlService manages the redirect URLs Umbraco tracks when published content changes its URL. It publishes the following notifications.
+The RedirectUrlService manages the redirect URLs Umbraco tracks when published content changes its URL. It publishes the following notifications:
 
 * [RedirectUrlSavingNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlSavingNotification.html)
 * [RedirectUrlSavedNotification](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Notifications.RedirectUrlSavedNotification.html)
