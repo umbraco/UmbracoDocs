@@ -88,7 +88,7 @@ Adding additional values to the Reserved URLs and Reserved Paths will overwrite 
 
 Key: `TimeOut` Type: `string` (default: `00:20:00`)
 
-Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.
+Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer. The value must not exceed 24 days, the maximum the backoffice timer supports. Larger values are rejected at startup. Use `KeepUserLoggedIn` for longer-lived sessions.
 
 {% hint style="info" %}
 Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks.
