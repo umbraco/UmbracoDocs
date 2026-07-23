@@ -45,13 +45,15 @@ The following snippet contains all the available options, with default values, a
       },
       "DatabaseServerRegistrar": {
         "WaitTimeBetweenCalls": "00:01:00",
-        "StaleServerTimeout": "00:02:00"
+        "StaleServerTimeout": "00:02:00",
+        "TouchTimeout": "00:01:00"
       },
       "DatabaseServerMessenger": {
         "MaxProcessingInstructionCount": 1000,
         "TimeToRetainInstructions": "2.00:00:00",
         "TimeBetweenSyncOperations": "00:00:05",
-        "TimeBetweenPruneOperations": "00:01:00"
+        "TimeBetweenPruneOperations": "00:01:00",
+        "SyncTimeout": "00:01:00"
       },
       "DistributedLockingMechanism": "",
       "DistributedLockingReadLockDefaultTimeout": "00:01:00",
@@ -298,6 +300,12 @@ Key: `DatabaseServerRegistrar.StaleServerTimeout` Type: `string` (default: `00:0
 
 Sets a value for the time span to wait before considering a server stale, after it has last been accessed.
 
+### Touch timeout
+
+Key: `DatabaseServerRegistrar.TouchTimeout` Type: `string` (default: `00:01:00`)
+
+Sets the maximum time to wait for a single server touch operation to complete. If the operation stalls, for example when blocked on a hung database connection, it is abandoned once this timeout elapses.
+
 ## Database server messenger
 
 It's unlikely that you will have change these settings, unless you're using a load balanced setup. These settings are all about how load balancing instructions from the database are processed and pruned.
@@ -325,6 +333,12 @@ Sets a value for the time to wait between each sync operation.
 Key: `DatabaseServerMessenger.TimeBetweenPruneOperations` Type: `string` (default: `00:01:00`)
 
 Sets a value for the time to wait between each prune operation.
+
+### Sync timeout
+
+Key: `DatabaseServerMessenger.SyncTimeout` Type: `string` (default: `00:01:00`)
+
+Sets the maximum time to wait for a single synchronization operation to complete. If the operation stalls, for example when blocked on a hung database connection, it is abandoned once this timeout elapses.
 
 ### Distributed Locking Mechanism
 
