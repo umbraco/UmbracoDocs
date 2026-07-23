@@ -162,6 +162,68 @@ Specifies the duration for which seeded cache entries should be kept in the cach
 }
 ```
 
+## MaximumLocalCacheItems
+
+By default, the in-process (L0) published content cache is unbounded. The cache grows as content is requested. A full-tree operation can grow the cache to hold the entire tree. Examples include a Descendants query, a Delivery API crawl, sitemap generation, or a cache warm-up. On large sites this increases memory usage.
+
+The `MaximumLocalCacheItems` setting limits the number of converted items kept in the L0 cache. When set, the cache becomes bounded and scan-resistant. It retains frequently requested content, such as the home page. It evicts rarely accessed content. A one-off full-tree walk can no longer grow the cache without limit.
+
+The setting is configured separately for documents, media, and elements. The default value is `null` (unbounded), which preserves the previous behavior. Existing sites are unaffected unless the setting is applied.
+
+{% hint style="info" %}
+The `MaximumLocalCacheItems` setting is available from Umbraco 18.1.
+{% endhint %}
+
+### Installing the bounded cache package
+
+Bounding the cache requires the opt-in `Umbraco.Cms.PublishedCache.HybridCache.Bounded` package. The package replaces the default L0 cache with a bounded, scan-resistant [W-TinyLFU](https://github.com/bitfaster/BitFaster.Caching) implementation.
+
+Install the package from the folder that contains your `.csproj` file:
+
+```bash
+dotnet add package Umbraco.Cms.PublishedCache.HybridCache.Bounded
+```
+
+{% hint style="warning" %}
+If you configure a maximum without installing the package, the cache stays unbounded. A warning is logged at start-up.
+{% endhint %}
+
+### Configuring the maximum
+
+With the package installed, set the maximum number of items for documents, media, and elements:
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Cache": {
+      "Entry": {
+        "Document": {
+          "MaximumLocalCacheItems": 10000
+        },
+        "Media": {
+          "MaximumLocalCacheItems": 5000
+        },
+        "Element": {
+          "MaximumLocalCacheItems": 5000
+        }
+      }
+    }
+  }
+}
+```
+
+Keep the following in mind when configuring the maximum:
+
+* The value is read once when the cache is constructed at start-up. Changing the value requires an application restart.
+* Values below `3` are raised to `3`, which is the minimum the bounded cache supports.
+* Leave the setting unset on small sites. Set it on large sites that see memory pressure from full-tree scans.
+
+You can confirm the cache stays bounded through the [cache size debug logging](cache-settings.md#observing-cache-memory-usage). Once enabled, a log line reports the number of entries held in the L0 cache after browsing the site:
+
+```
+[20:48:46 DBG] In-memory cache size: Published content (converted, L0) = 10 entries (~46580 bytes)
+```
+
 ## Content type rebuild mode
 
 When you save a content type with structural changes, Umbraco rebuilds the database cache for every affected content item. Structural changes include removing a property, changing a property alias, or changing the variation mode. The stale cache rows are cleared in batches before being rebuilt; the batch size can be tuned with the [`ContentTypeRebuildDeleteBatchSize`](cache-settings.md#contenttyperebuilddeletebatchsize) setting.
@@ -193,6 +255,39 @@ The same setting also controls the deferral of search re-indexing triggered by c
 
 {% hint style="info" %}
 The `ContentTypeRebuildMode` setting is available from Umbraco 17.4.
+{% endhint %}
+
+## Observing cache memory usage
+
+Umbraco keeps in-memory caches whose size grows with the content tree. On large sites these caches can be a significant source of memory usage.
+
+To help you diagnose memory pressure, Umbraco can log the approximate size of each of these caches:
+
+* The published content and media caches.
+* The document URL cache.
+* The document and media navigation trees.
+
+A background job collects these figures every minute on all servers. For each cache, it logs the approximate entry count and byte size. It also logs the process's managed heap size and working set.
+
+The job logs at the `Debug` level. It does nothing unless `Debug` logging is enabled for its category, so there is no overhead by default.
+
+To enable the reporting, set the log level for the job's category to `Debug`:
+
+```json
+"Serilog": {
+  "MinimumLevel": {
+    "Default": "Information",
+    "Override": {
+      "Umbraco.Cms.Infrastructure.BackgroundJobs.Jobs.MemoryCacheSizeReportingJob": "Debug"
+    }
+  }
+}
+```
+
+Within a minute, the cache size figures appear in the log output. For more on changing the log level for a namespace, see the [Serilog settings](serilog.md) article.
+
+{% hint style="info" %}
+The byte figures are approximations. Use them to spot trends and attribute memory usage between caches, not as exact heap measurements.
 {% endhint %}
 
 ## NuCache Settings
