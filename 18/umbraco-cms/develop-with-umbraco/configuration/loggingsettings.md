@@ -15,7 +15,8 @@ The following configuration is available in the Logging settings:
       "MaxLogAge": "2.00:00:00",
       "Directory": "~/CustomLogFileLocation",
       "FileNameFormat": "UmbracoTraceLog.{0}..json",
-      "FileNameFormatArguments": "MachineName"
+      "FileNameFormatArguments": "MachineName",
+      "SessionIdLogging": "SessionId"
     }
   }
 }
@@ -51,3 +52,15 @@ Other or additional arguments can be provided via the `FileNameFormatArguments` 
 So for example, to provide both supported arguments you would configure `MachineName,EnvironmentName`.
 
 The number of arguments provided should match the placeholders in the configured `FileNameFormat`.
+
+## SessionIdLogging
+
+This setting determines how log events are enriched with a session identifier. The identifier correlates the log entries produced while handling requests from the same session.
+
+The available options are:
+
+- `SessionId` (default) - Enriches log events with the actual ASP.NET Core session ID. This matches the historical behavior. Reading the session ID forces the session to be loaded from its store, which is a blocking round-trip per request when the session is backed by an `IDistributedCache` (for example, on a load-balanced setup or when using a standalone L2 cache).
+- `CookieHash` - Enriches log events with a one-way hash of the session cookie value. This provides the same per-session correlation as `SessionId` without loading the session from its store, so it never incurs a distributed-cache round-trip.
+- `None` - Does not enrich log events with a session identifier.
+
+If your session is backed by an `IDistributedCache`, consider setting this to `CookieHash` or `None`. This avoids the blocking session-store load that resolving the actual session id incurs on each request.
