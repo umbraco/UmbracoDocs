@@ -19,10 +19,10 @@ To create a Content Type Filter you use a class that implements the `IContentTyp
 
 There are two methods you can implement:
 
-* One for filtering the content types allowed at the content root
-* One for the content types allowed below a given parent node.
+* `FilterAllowedAtRootAsync` for the content types allowed at the content root.
+* `FilterAllowedChildrenAsync` for the content types allowed below a given parent node. The method receives the parent content type key and the parent content key, so you can filter based on the parent node.
 
-If you don't want to filter using one of the two approaches, you can return the provided collection unmodified.
+Each method has a default implementation that returns the provided collection unmodified. You only implement the methods relevant to your use case.
 
 ### Example Use Case
 
