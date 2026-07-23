@@ -104,3 +104,22 @@ Options:
 * `TimeBetweenPruneOperations` - The timespan to wait between each prune operation
 
 These setting would normally be applied to all environments as they are added to the global app settings. If you need these settings to be environment specific, we recommend using [environment specific `appSetting` files](../../../../develop-with-umbraco/configuration/README.md).
+
+## Custom machine identity providers
+
+Umbraco resolves the machine identifier through an ordered collection of `IMachineIdentityProvider` implementations. The first provider to return a non-null value wins.
+
+Three built-in providers cover configuration, Azure App Service, and `Environment.MachineName`, in that priority order.
+
+To customize identifier resolution, implement `IMachineIdentityProvider` and register it through `IUmbracoBuilder.MachineIdentityProviders()` in a [Composer](../../../../model-your-content/content-types-and-structure/composing.md). A custom provider can, for example, read a Kubernetes pod label or a custom environment variable. Return `null` from your provider to pass through to the next provider in the collection.
+
+```csharp
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.MachineIdentityProviders()
+            .Insert<CustomIdentityProvider>();
+}
+```
+
+To ensure your custom provider is used before the built-in providers, insert it at the start of the collection. You can also remove the built-in providers if you want to fully control identifier resolution.
