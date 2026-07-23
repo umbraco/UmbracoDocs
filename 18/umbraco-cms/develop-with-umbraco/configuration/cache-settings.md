@@ -267,7 +267,7 @@ To help you diagnose memory pressure, Umbraco can log the approximate size of ea
 * The document URL cache.
 * The document and media navigation trees.
 
-A background job collects these figures every minute on all servers. For each cache it logs the approximate entry count and byte size. It also logs the process's managed heap size and working set.
+A background job collects these figures every minute on all servers. For each cache, it logs the approximate entry count and byte size. It also logs the process's managed heap size and working set.
 
 The job logs at the `Debug` level. It does nothing unless `Debug` logging is enabled for its category, so there is no overhead by default.
 
