@@ -82,7 +82,9 @@ browsable
 buildable
 bundleId
 bundler
+bundlers
 cacheable
+Cachebuster
 camelCase
 camelcase
 cancellationToken
