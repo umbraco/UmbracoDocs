@@ -479,6 +479,7 @@
     * [Determining If an Entity Is New](extend-your-project/server-side-extensions/notifications/determining-new-entity.md)
     * [MediaService Notifications Example](extend-your-project/server-side-extensions/notifications/mediaservice-notifications.md)
     * [MemberService Notifications Example](extend-your-project/server-side-extensions/notifications/memberservice-notifications.md)
+    * [RedirectUrlService Notifications Example](extend-your-project/server-side-extensions/notifications/redirecturlservice-notifications.md)
     * [Umbraco Application Lifetime Notifications](extend-your-project/server-side-extensions/notifications/umbracoapplicationlifetime-notifications.md)
     * [Hot vs. Cold Restarts](extend-your-project/server-side-extensions/notifications/hot-vs-cold-restarts.md)
 * [Packages](extend-your-project/packages/README.md)
