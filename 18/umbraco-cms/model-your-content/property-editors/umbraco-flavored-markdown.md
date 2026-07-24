@@ -143,7 +143,16 @@ The Localize component will render a localization for a given term key.
 
 The alias prefix is `umbLocalize`. An example of the syntax is `{umbLocalize: general_name}`, which would render the component as `<ufm-localize alias="general_name"></ufm-localize>`.
 
-Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be used, e.g. `{#general_name}`.
+Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be used, for example, `{#general_name}`.
+
+{% hint style="info" %}
+Where does `umbLocalize` read from?
+`umbLocalize` resolves against Umbraco's backoffice UI localization system. See [Language Files & Localization](../../extend-your-project/server-side-extensions/language-files/README.md) for how this differs from server-side (.NET) localization.
+
+* To register your own custom term keys, register a [Localization extension](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/localization.md).
+
+* The rendered text depends on the current backoffice user's UI Culture (**Users** section), not the site's content languages.
+{% endhint %}
 
 #### Content Name
 
