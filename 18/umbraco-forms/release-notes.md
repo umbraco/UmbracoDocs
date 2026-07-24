@@ -20,6 +20,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.0.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.5) (July 22nd 2026)
+* Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
+
 ### [18.0.4](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.4) (July 13th 2026)
 * Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
 * Conditions: Fall back to the option value when a choice caption is empty [#1727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1727)
