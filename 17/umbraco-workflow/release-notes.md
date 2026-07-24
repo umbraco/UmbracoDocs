@@ -16,6 +16,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### 17.3.6 (July 24 2026)
+
+* Fixes a bug where teardown of a required context was not correctly guarded in a specific code path, leaving Workflow unresponsive.
+
 ### [17.3.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.5) (July 17 2026)
 
 * Ensures approval group language is unwrapped from JSON array when sending notifications to a group email [#162](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/162)
