@@ -22,7 +22,8 @@ public enum AICapability
 {
     Chat = 0,
     Embedding = 1,
-    SpeechToText = 4
+    SpeechToText = 4,
+    ImageGeneration = 5
 }
 ```
 
@@ -35,6 +36,7 @@ public enum AICapability
 | `Chat`         | 0   | Conversational AI / chat completions | Available |
 | `Embedding`    | 1   | Text to vector embeddings            | Available |
 | `SpeechToText` | 4   | Audio transcription and voice input  | Available |
+| `ImageGeneration` | 5   | Text-to-image and image editing      | Experimental |
 
 ## Usage
 
@@ -112,5 +114,6 @@ var embeddingConnections = await connectionService.GetConnectionsByCapabilityAsy
 
 ## Notes
 
-- `Chat`, `Embedding`, and `SpeechToText` are currently implemented
+- `Chat`, `Embedding`, and `SpeechToText` are generally available
+- `ImageGeneration` is experimental — hidden unless the `Umbraco:AI:Experimental:ImageGeneration` flag is enabled (see [Using the Image Generation API](../../using-the-api/image-generation/README.md))
 - Capability is set on profile creation and cannot be changed
