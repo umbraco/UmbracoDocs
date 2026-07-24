@@ -10,6 +10,10 @@ See [Local Development Setup](local-dev-setup.md) for the full guide to running 
 
 ## Production Deployment
 
+{% hint style="info" %}
+The steps below use the `wrangler` CLI directly. To provision the same resources with OpenTofu or Terraform, see [Infrastructure as Code](infrastructure-as-code.md).
+{% endhint %}
+
 ### 1. Create a KV namespace
 
 ```bash
@@ -93,7 +97,7 @@ wrangler deploy --env production
 
 You can customize the consent screen with tool selection, branding, custom CSS, or a fully custom renderer.
 
-See the [Customization](customization.md) guide for all options and examples.
+See the [Customization](../customization.md) guide for all options and examples.
 
 ## Multi-Site Deployment
 

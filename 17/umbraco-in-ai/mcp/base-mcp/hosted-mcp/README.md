@@ -36,14 +36,14 @@ Each MCP request creates a fresh `McpServer` instance. No state is shared betwee
 
 - A [Cloudflare account](https://dash.cloudflare.com/sign-up)
 - The [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (`npm install -g wrangler`)
-- An Umbraco instance with Management API enabled
-- An OAuth client registered in the Umbraco instance (see [Umbraco Setup](umbraco-setup.md))
+- An Umbraco 17+ instance with Management API enabled
+- An OAuth client registered in the Umbraco instance (see [Umbraco Setup](deployment/umbraco-setup.md))
 
 ## Getting Set Up
 
 The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI generates the Worker entry point, `wrangler.toml`, and deployment scripts for you. See the [Development Workflow](../create-umbraco-mcp-server/development-workflow.md) to get started.
 
-For manual setup or to understand what the generated code does, see [Manual Setup](manual-setup.md).
+For manual setup or to understand what the generated code does, see [Manual Setup](deployment/manual-setup.md).
 
 ## Routes
 
@@ -82,7 +82,7 @@ See [Architecture - Three-Tier Configuration](architecture.md#three-tier-configu
 
 A single Worker can serve multiple Umbraco instances. All sites share one MCP endpoint (`/`). Site selection happens during authorization via the consent screen's site picker.
 
-See [Multi-Site Deployments](multi-site.md) for setup instructions, route structure, and security details.
+See [Multi-Site Deployments](deployment/multi-site.md) for setup instructions, route structure, and security details.
 
 ## Documentation
 
@@ -90,14 +90,14 @@ See [Multi-Site Deployments](multi-site.md) for setup instructions, route struct
 
 Read these articles in order:
 
-1. [Umbraco Setup](umbraco-setup.md) - Register the Worker as an OAuth client (one-time).
-2. [Deployment](deployment.md) - Deploy, set secrets, and verify the connection.
-3. [Manual Setup](manual-setup.md) - Worker entry point, wrangler.toml, and secrets (reference).
+1. [Umbraco Setup](deployment/umbraco-setup.md) - Register the Worker as an OAuth client (one-time).
+2. [Deployment](deployment/README.md) - Deploy, set secrets, and verify the connection.
+3. [Manual Setup](deployment/manual-setup.md) - Worker entry point, wrangler.toml, and secrets (reference).
 
 ### Guides
 
 4. [Customization](customization.md) - Consent screen tool selection, branding, and custom rendering.
-5. [Multi-Site Deployments](multi-site.md) - Serve multiple Umbraco instances from one Worker.
+5. [Multi-Site Deployments](deployment/multi-site.md) - Serve multiple Umbraco instances from one Worker.
 
 ### Understanding the System
 
@@ -108,3 +108,4 @@ Read these articles in order:
 
 8. [API Reference](api-reference.md) - All exports, types, and interfaces.
 9. [Troubleshooting](troubleshooting.md) - Common errors and fixes.
+10. [Infrastructure as Code](deployment/infrastructure-as-code.md) - Provision Workers with OpenTofu or Terraform.

@@ -163,7 +163,7 @@ The merge rule is **intersection**: if the admin allows `[content, media]` and t
 
 ## Multi-Site Architecture
 
-A single Worker can serve multiple Umbraco instances. All sites share one MCP endpoint (`/`). Site selection happens during authorization via the consent form. See [Multi-Site Deployments](multi-site.md) for setup instructions.
+A single Worker can serve multiple Umbraco instances. All sites share one MCP endpoint (`/`). Site selection happens during authorization via the consent form. See [Multi-Site Deployments](deployment/multi-site.md) for setup instructions.
 
 ### Why a Single Endpoint?
 
