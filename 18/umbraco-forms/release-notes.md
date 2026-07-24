@@ -55,6 +55,17 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 
 * Update dependencies to 18.0.0-rc1
 
+## Umbraco.Forms.Deploy
+
+### 18.0.1 (July 24th 2026)
+
+* Fix Umbraco Forms artifact property mappings lost on transfer/restore, including *Show summary page* and related form settings [#331](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/331).
+* Fix deploy of `Form.MessageOnSubmitBlocks` and its block element type dependencies (Umbraco Forms 17.3.0 or later).
+
+### 18.0.0 (June 25th 2026)
+
+* Compatibility with Umbraco Forms 18 and Deploy 18.
+
 ## Legacy release notes
 
 You can find the release notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/12/umbraco-forms/release-notes.md) and [Umbraco Forms Package page](https://our.umbraco.com/packages/developer-tools/umbraco-forms/).
