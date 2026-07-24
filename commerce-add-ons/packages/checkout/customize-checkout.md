@@ -17,7 +17,19 @@ To do this follow these steps:
 1. Copy the equivalent [files and partials](https://github.com/umbraco/Umbraco.Commerce.Checkout/tree/main/src/Umbraco.Commerce.Checkout/Views/UmbracoCommerceCheckout).
 2. Add them to `Views/UmbracoCommerceCheckout` in your project directory. It might be necessary to create the folder first.
 3. Make a small text change to one of the Views to verify that the files are in use.
-4. Verify that the changes are carried out and displayed correctly.
+4. Rebuild and restart your site, then verify that the changes are carried out and displayed correctly.
+
+The Checkout package ships its Views precompiled. When you add a matching View to your project's `Views/UmbracoCommerceCheckout` folder, your copy takes precedence over the packaged one, letting you override a single step without having to redefine them all.
+
+{% hint style="info" %}
+**Umbraco 17 and later (including Umbraco 18): view changes require a rebuild**
+
+From Umbraco CMS 17 onwards, Razor runtime compilation is no longer enabled by default. It has been removed from the CMS core and moved to the optional [`Umbraco.Cms.DevelopmentMode.Backoffice`](https://docs.umbraco.com/umbraco-cms/reference/configuration/runtimesettings) package.
+
+Overriding Views still works, but your overrides are compiled into the site at **build time**. After adding or editing a View, you must **rebuild and restart** the site for the changes to appear - editing a `.cshtml` file and only refreshing the browser will have no effect.
+
+To restore the previous behavior, where View changes are picked up without a rebuild during local development, add the `Umbraco.Cms.DevelopmentMode.Backoffice` package to your project. For background, see the [Umbraco CMS version-specific upgrade notes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific).
+{% endhint %}
 
 You are now ready to start customizing the Checkout page to fit the design of your website.
 
