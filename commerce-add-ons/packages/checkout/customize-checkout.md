@@ -10,29 +10,29 @@ Umbraco Commerce Checkout is a free and open-source add-on package for Umbraco C
 
 ## How overriding works
 
-The Checkout package ships its Views **precompiled** into the package assembly. To change a View, you provide your own copy at the same path (`Views/UmbracoCommerceCheckout/...`). When your site **compiles that View at build time**, your copy takes precedence over the packaged one, letting you override a single step without redefining them all.
+The Checkout package ships its Views **precompiled** into the package assembly. To change a View, you provide your own copy at the same path under `Views/UmbracoCommerceCheckout`. For your copy to be used, **your site must also compile a View at that path at build time** - your compiled View then takes precedence over the package's precompiled one.
 
 {% hint style="warning" %}
-**Umbraco 17 and later: your site must compile Views at build time**
+**Umbraco 17 and later: dropping in a View is not enough on its own**
 
-New Umbraco projects use the `InMemoryAuto` Models Builder mode, which sets the following in the project's `.csproj`:
+New Umbraco projects are created in `BackofficeDevelopment` development mode, which sets the following in the project's `.csproj`:
 
 ```xml
 <RazorCompileOnBuild>false</RazorCompileOnBuild>
 <RazorCompileOnPublish>false</RazorCompileOnPublish>
 ```
 
-With these settings, Views you add under `Views/UmbracoCommerceCheckout` are **not compiled**, so the packaged (precompiled) Views keep being used and your changes never appear - even after a rebuild.
+With these settings your site does **not** compile the Views you add under `Views/UmbracoCommerceCheckout`, so the package's precompiled Views keep being used and your changes never appear - even after a rebuild.
 
-Razor **runtime compilation** does *not* help here: it does not override a package's precompiled Views, so installing `Umbraco.Cms.DevelopmentMode.Backoffice` will not make file-based overrides take effect either.
+Razor **runtime compilation** does not work around this. It compiles on-disk Views only at paths where no precompiled View exists (this is what lets you live-edit your own templates and partials). It does **not** displace a package's precompiled View, so installing `Umbraco.Cms.DevelopmentMode.Backoffice` does not make Checkout overrides take effect either.
 
-To use file-based overrides, your site must compile Views at build time:
+To use file-based overrides, your site must compile Views at **build time**:
 
-1. Switch Models Builder to a source-code mode (for example `SourceCodeAuto` or `SourceCodeManual`) - see [Models Builder settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
+1. Switch Models Builder to a source-code mode (`SourceCodeAuto` or `SourceCodeManual`) and generate your models - see [Models Builder settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings). Build-time Razor compilation is incompatible with the default `InMemoryAuto` mode, because in-memory models do not exist at build time.
 2. Remove `<RazorCompileOnBuild>false</RazorCompileOnBuild>` and `<RazorCompileOnPublish>false</RazorCompileOnPublish>` from your `.csproj` (or set them to `true`).
 3. Rebuild the site.
 
-For background on why runtime compilation was removed from the core in Umbraco 17, see the [Umbraco CMS version-specific upgrade notes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific).
+This is the same configuration Umbraco requires for [Production runtime mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes), so it also moves you toward a production-ready setup.
 {% endhint %}
 
 ## Setup
@@ -48,7 +48,9 @@ You are now ready to start customizing the Checkout page to fit the design of yo
 
 ## Alternative: use a Template
 
-If you would rather not change your build-time compilation settings, you can assign a **Template** to the checkout page in the backoffice and place your markup there. When a checkout page has a Template assigned, Checkout renders that Template instead of its built-in View. Templates are edited through the backoffice and do not depend on overriding the packaged Views.
+If you would rather not change your build-time compilation settings, you can assign a **Template** to the checkout page in the backoffice and place your markup there. A Template lives at its own View path with no precompiled View competing with it, so it renders (and live-edits) normally, and Checkout renders it instead of its built-in View.
+
+Note that a Template receives the checkout page's `IPublishedContent` as its model - not the view model the packaged Views use - so with this approach you build that step's markup yourself against the Umbraco Commerce APIs.
 
 ## Useful links
 
