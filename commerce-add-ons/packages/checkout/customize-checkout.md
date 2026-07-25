@@ -8,30 +8,47 @@ It is assumed that you already have an Umbraco website configured Umbraco Commer
 
 Umbraco Commerce Checkout is a free and open-source add-on package for Umbraco Commerce. It is possible to amend the default behavior to customize the checkout to your needs.
 
+## How overriding works
+
+The Checkout package ships its Views **precompiled** into the package assembly. To change a View, you provide your own copy at the same path (`Views/UmbracoCommerceCheckout/...`). When your site **compiles that View at build time**, your copy takes precedence over the packaged one, letting you override a single step without redefining them all.
+
+{% hint style="warning" %}
+**Umbraco 17 and later: your site must compile Views at build time**
+
+New Umbraco projects use the `InMemoryAuto` Models Builder mode, which sets the following in the project's `.csproj`:
+
+```xml
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
+
+With these settings, Views you add under `Views/UmbracoCommerceCheckout` are **not compiled**, so the packaged (precompiled) Views keep being used and your changes never appear - even after a rebuild.
+
+Razor **runtime compilation** does *not* help here: it does not override a package's precompiled Views, so installing `Umbraco.Cms.DevelopmentMode.Backoffice` will not make file-based overrides take effect either.
+
+To use file-based overrides, your site must compile Views at build time:
+
+1. Switch Models Builder to a source-code mode (for example `SourceCodeAuto` or `SourceCodeManual`) - see [Models Builder settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
+2. Remove `<RazorCompileOnBuild>false</RazorCompileOnBuild>` and `<RazorCompileOnPublish>false</RazorCompileOnPublish>` from your `.csproj` (or set them to `true`).
+3. Rebuild the site.
+
+For background on why runtime compilation was removed from the core in Umbraco 17, see the [Umbraco CMS version-specific upgrade notes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific).
+{% endhint %}
+
 ## Setup
 
-To allow customization you must first 'override' the existing files for the step required to be modified.
-
-To do this follow these steps:
+Once your site is configured to compile Views at build time (see the note above), follow these steps:
 
 1. Copy the equivalent [files and partials](https://github.com/umbraco/Umbraco.Commerce.Checkout/tree/main/src/Umbraco.Commerce.Checkout/Views/UmbracoCommerceCheckout).
 2. Add them to `Views/UmbracoCommerceCheckout` in your project directory. It might be necessary to create the folder first.
-3. Make a small text change to one of the Views to verify that the files are in use.
-4. Rebuild and restart your site, then verify that the changes are carried out and displayed correctly.
-
-The Checkout package ships its Views precompiled. When you add a matching View to your project's `Views/UmbracoCommerceCheckout` folder, your copy takes precedence over the packaged one, letting you override a single step without having to redefine them all.
-
-{% hint style="info" %}
-**Umbraco 17 and later (including Umbraco 18): view changes require a rebuild**
-
-From Umbraco CMS 17 onwards, Razor runtime compilation is no longer enabled by default. It has been removed from the CMS core and moved to the optional [`Umbraco.Cms.DevelopmentMode.Backoffice`](https://docs.umbraco.com/umbraco-cms/reference/configuration/runtimesettings) package.
-
-Overriding Views still works, but your overrides are compiled into the site at **build time**. After adding or editing a View, you must **rebuild and restart** the site for the changes to appear - editing a `.cshtml` file and only refreshing the browser will have no effect.
-
-To restore the previous behavior, where View changes are picked up without a rebuild during local development, add the `Umbraco.Cms.DevelopmentMode.Backoffice` package to your project. For background, see the [Umbraco CMS version-specific upgrade notes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific).
-{% endhint %}
+3. Make a small text change to one of the Views.
+4. Rebuild and restart your site, then verify that the change is displayed correctly.
 
 You are now ready to start customizing the Checkout page to fit the design of your website.
+
+## Alternative: use a Template
+
+If you would rather not change your build-time compilation settings, you can assign a **Template** to the checkout page in the backoffice and place your markup there. When a checkout page has a Template assigned, Checkout renders that Template instead of its built-in View. Templates are edited through the backoffice and do not depend on overriding the packaged Views.
 
 ## Useful links
 
