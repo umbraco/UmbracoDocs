@@ -217,11 +217,11 @@ This section allows you to define the password rules for members. This section i
 
 User authentication tokens are redacted from the server's authentication responses and put into secure cookies instead. This section lets you change the default settings for the generated token cookies.
 
-It is not recommended to change the `SameSite` setting, as it may result in lesser security for the backoffice users. The `SiteName` setting only changes the names of the cookies and does not weaken their security.
-
 ### Same site
 
 Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).
+
+It is not recommended to change this setting, as it may result in lesser security for the backoffice users.
 
 ### Site name
 
