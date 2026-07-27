@@ -18,6 +18,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.0.3 (27th Jul 2026)
+
+* Fixed a second order save being triggered while frozen prices were recalculating, which could cause a concurrency error.
+* Improved logging when an order calculation fails, so the underlying cause and order details are recorded.
+* Fixed the cart becoming unusable when an order line's product can no longer be found (#863).
+* Fixed creating a product picker data type failing with a "property editor not found" error.
+* Fixed product attribute and preset changes requiring the Settings section instead of the Commerce section.
+
 #### 18.0.2 (15th Jul 2026)
 
 * Fixed cart conversion "Reached Checkout" and "Purchased" totals drifting for past periods (#835).
