@@ -10,7 +10,7 @@ Umbraco Commerce Checkout is a free and open-source add-on package for Umbraco C
 
 ## Overriding the checkout Views
 
-Checkout's Views are precompiled into the package. To customize one, add your own copy at the same path under `Views/UmbracoCommerceCheckout`, and make sure your site compiles Views at build time so your copy is used instead of the packaged one.
+To customize one, add your copy to the same path under Views/UmbracoCommerceCheckout. Ensure your site compiles Views at build time so your copy is used instead of the packaged one.
 
 {% hint style="warning" %}
 New Umbraco projects (17+) are set up for backoffice development, which disables build-time View compilation:
