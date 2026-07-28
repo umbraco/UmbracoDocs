@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.2.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.5) **(July 27th 2026)**
+
+* Fixed collection names returning the singular name in place of the plural, affecting the section dashboard cards, grouped collection tabs, and Entity Picker configuration [#229](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/229)
+
 ### [**17.2.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.4) **(July 16th 2026)**
 
 * Fixed read-only fields displaying JSON as `[object Object]`; JSON values now render as formatted text [#222](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/222)
