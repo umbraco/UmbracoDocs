@@ -39,7 +39,9 @@ Once your site compiles Views at build time, override a checkout step as follows
 
 Instead of overriding the Views, you can assign a **Template** to the checkout page in the backoffice and place your markup there. Checkout will use the Template instead of its built-in View.
 
-With this approach the Template receives the checkout page's `IPublishedContent` as its model - not the view model the packaged Views use - so you build that step's markup yourself against the Umbraco Commerce APIs.
+With this approach, the Template receives the checkout page's IPublishedContent as its model—not the packaged Views' view model.
+
+You then build that step's markup yourself against the Umbraco Commerce APIs.
 
 ## Useful links
 
