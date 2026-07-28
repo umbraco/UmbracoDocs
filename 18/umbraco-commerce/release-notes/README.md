@@ -23,7 +23,7 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 * Fixed a second order save being triggered while frozen prices were recalculating, which could cause a concurrency error.
 * Improved logging when an order calculation fails, so the underlying cause and order details are recorded.
 * Fixed the cart becoming unusable when an order line's product can no longer be found (#863).
-* Fixed creating a product picker data type failing with a "property editor not found" error.
+* Fixed creating a product picker Data Type failing with a "property editor not found" error.
 * Fixed product attribute and preset changes requiring the Settings section instead of the Commerce section.
 
 #### 18.0.2 (15th Jul 2026)
