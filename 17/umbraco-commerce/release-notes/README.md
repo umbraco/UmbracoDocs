@@ -22,7 +22,7 @@ This section contains the release notes for Umbraco Commerce 17 including all ch
 * Fix a second order save being triggered while frozen prices were recalculating, which could cause a concurrency error
 * Improve logging when an order calculation fails, so the underlying cause and order details are recorded
 * Fix the cart becoming unusable when an order line's product can no longer be found [#863](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/863)
-* Fix creating a product picker data type failing with a "property editor not found" error
+* Fix creating a product picker Data Type failing with a "property editor not found" error
 * Fix product attribute and preset changes requiring the Settings section instead of the Commerce section
 
 #### [17.1.7](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.7) (15th Jul 2026)
