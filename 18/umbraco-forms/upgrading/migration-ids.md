@@ -41,3 +41,17 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | b8e2f4a1-3c5d-4e6f-9a7b-1d2e3f4a5b6c | 17.3.0                | Adds an index on UniqueId to the UFRecords table for analytics performance.        |
 | d4f5e6a7-8b9c-4d0e-1f2a-3b4c5d6e7f8a | 17.3.0                | Replaces the index on UFRecords with a covering index that includes UmbracoPageId. |
 | 33c9d3f4-7d41-46f7-a44d-5ed32f26448d | 17.4.0                | Rebuild the Examine records index so that existing records gain sortable fields.    |
+| 16f1cd91-d614-4e0b-844f-0a2434441d34 | 17.5.0                | Adds the UmbracoPageKey column to the Records table.                               |
+| b7d4e1a9-3c62-4f08-9a15-2e6d8f04c3b1 | 17.5.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
+| 3a03c625-3ddc-4eda-9bf3-cc88f112e9a9 | 17.5.0                | Rebuilds the Examine records index so records gain the page key field.             |
+| a1e7c9d3-5b42-4f18-9c6a-7e2d1751b0fa | 17.5.0                | Repairs forms with foreign-key fields pointing at the default provider sentinel.   |
+| 998ebd1d-1fef-431e-83b9-18db06eb7231 | 17.5.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
+| 9a013edc-579b-46b5-a85d-d9288e2e074e | 17.5.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
+| 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
+| 91ef4e6d-3fbd-40a2-b42c-77dc5b2791c4 | 18.1.0                | Adds the UmbracoPageKey column to the Records table.                               |
+| a4cc5acc-ee57-40e6-a0aa-73763e7ac444 | 18.1.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
+| 51948cde-a4fc-4889-b855-7a08ce5cbd6e | 18.1.0                | Rebuilds the Examine records index so records gain the page key field.             |
+| 5443d5b8-c237-4972-9d9e-6ae5adeac9cb | 18.1.0                | Repairs forms with foreign-key fields pointing at the default provider sentinel.   |
+| 35b3973a-5052-42d9-b6ea-ffccfee28886 | 18.1.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
+| bedc287a-42ae-4be0-8d11-6939ff61b7c1 | 18.1.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
+| 29a8d464-40e3-4fca-bf5f-85b3a5bc63d0 | 18.1.0                | Adds indexes on the Records table for member entry counts and analytics.           |
