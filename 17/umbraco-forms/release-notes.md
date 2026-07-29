@@ -41,6 +41,9 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 * Field & Workflow Settings: Keep the field editor open when settings validation fails
 * Workflows: Resolve the rich text editor from the configured data type in the Send email (Razor) workflow [#1756](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1756)
 
+### [17.4.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.7) (July 22nd 2026)
+* Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
+
 ### [17.4.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.6) (July 13th 2026)
 * Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
 * Conditions: Fall back to the option value when a choice caption is empty [#1727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1727)
@@ -332,6 +335,17 @@ This change also ensures that field types remain registered. This prevents issue
 ### 17.0.0-rc1 (October 30th 2025)
 
 * Update dependencies to 17.0.0-rc1
+
+## Umbraco.Forms.Deploy
+
+### 17.0.1 (July 24th 2026)
+
+* Fix Umbraco Forms artifact property mappings lost on transfer/restore, including *Show summary page* and related form settings [#331](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/331)
+* Fix deploy of `Form.MessageOnSubmitBlocks` and its block element type dependencies (Umbraco Forms 17.3.0 or later)
+
+### 17.0.0 (November 27th 2025)
+
+* Compatibility with Umbraco Forms 17 and Deploy 17
 
 ## Legacy release notes
 

@@ -15,7 +15,7 @@ These are some of the most common properties you would add to a **Document Type*
 To create a Document Type:
 
 1. Go to **Settings**.
-2.  Select **...** next to the **Document Types** in the **Settings** tree.
+2. Select **...** next to the **Document Types** in the **Settings** tree.
 
     ![Creating a Document Type](<../../.gitbook/assets/figure-7-creating-a-document-type-v8 (1).png>)
 3. Select **Document Type with Template**.

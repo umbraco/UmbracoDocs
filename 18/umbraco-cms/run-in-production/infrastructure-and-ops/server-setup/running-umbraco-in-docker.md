@@ -50,6 +50,27 @@ One solution is to use bind mounts. The ideal setup, though, is to store the med
 
 Your solution may require some specific files to run, such as license files. You will need to pass these files into the container at build time, or mount them externally.
 
+## Preventing cold boots on container restarts
+
+Container hostnames are typically regenerated on every container start. Umbraco derives its machine identifier from the hostname by default. Each restart then looks like a new server, so Umbraco rebuilds the Examine indexes and published content cache.
+
+From Umbraco 18.1, set `Hosting:MachineIdentifier` to a stable, instance-unique value to prevent the rebuild. Use a StatefulSet ordinal, a node label, or any other string that does not change between restarts:
+
+```yaml
+services:
+  umbraco:
+    environment:
+      - UMBRACO__CMS__HOSTING__MACHINEIDENTIFIER=umbraco-pod-1
+```
+
+See [Hosting Settings](../../../develop-with-umbraco/configuration/hostingsettings.md) for the full property reference.
+
+{% hint style="info" %}
+On Azure App Service, Umbraco derives the identifier from the `WEBSITE_INSTANCE_ID` environment variable instead, which is stable across container recycles. No configuration is needed there.
+{% endhint %}
+
+For advanced scenarios, implement `IMachineIdentityProvider` to read the stable identifier from wherever your infrastructure exposes it. Examples include an environment variable, a mounted file, or a metadata API. See [Advanced Techniques With Flexible Load Balancing](load-balancing/flexible-advanced.md#custom-machine-identity-providers) for details.
+
 ## HTTPS
 
 When running websites in Docker, it's common to do so behind a reverse proxy or load balancer. In these scenarios you will likely handle SSL termination at the reverse proxy. This means that Umbraco will not be aware of the SSL termination, and will complain about not using HTTPS.

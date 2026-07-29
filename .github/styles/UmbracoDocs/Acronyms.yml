@@ -49,12 +49,14 @@ exceptions:
   - FTP      # File Transfer Protocol
   - GDPR     # General Data Protection Regulation
   - GET      # HTTP GET method
+  - GHSA     # GitHub Security Advisory
   - GIF      # Graphics Interchange Format
   - GUI      # Graphical user interface
   - GUID     # Globally Unique Identifier
   - HAL      # Hypertext Application Language
   - HASH     # Cryptographic hash
   - HEX      # Hexadecimal
+  - HMAC     # Hash-based Message Authentication Code
   - HTML     # HyperText Markup Language
   - HTTP     # HyperText Transfer Protocol
   - HTTPS    # HyperText Transfer Protocol Secure
@@ -74,6 +76,7 @@ exceptions:
   - LINK     # 
   - LINQ     # Language Integrated Query
   - LLM      # Large Language Model
+  - LTS      # Long-Term Support
   - MCP      # Mode Context Protocol
   - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
   - MDN      # Mozilla Developer Network
