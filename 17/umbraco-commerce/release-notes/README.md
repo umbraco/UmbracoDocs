@@ -18,6 +18,9 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### [17.1.9](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.9) (29th Jul 2026)
+* Add logging to record why an order is moved to the error status, and when a payment is reset or redirected through a payment provider's cancel or error URL [#866](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/866)
+
 #### [17.1.8](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.8) (27th Jul 2026)
 * Fix a second order save being triggered while frozen prices were recalculating, which could cause a concurrency error
 * Improve logging when an order calculation fails, so the underlying cause and order details are recorded
