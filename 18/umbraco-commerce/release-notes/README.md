@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.0.4 (29th Jul 2026)
+
+* Added logging to record why an order is moved to the error status, and when a payment is reset or redirected through a payment provider's cancel or error URL (#866).
+
 #### 18.0.3 (27th Jul 2026)
 
 * Fixed a second order save being triggered while frozen prices were recalculating, which could cause a concurrency error.
