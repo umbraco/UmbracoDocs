@@ -28,7 +28,8 @@ DECLARE @TimeZone NVARCHAR(100) = 'Romance Standard Time'
 -- to UTC by the MigrateSystemDatesToUtc migration.
 DECLARE @UpgradeDate DATETIME = '2026-03-01'
 
--- The date you deployed 17.3.0 or later. Rows created on or after this date are already UTC.
+-- The date you first deployed a version of 17.3.0 or newer. Rows created on or after this date
+-- are already UTC. If you upgraded 17.2 to 17.3 and later to 17.4, use the 17.3 date.
 DECLARE @FixDate DATETIME = '2026-04-23'
 
 DECLARE @MarkerKey NVARCHAR(256) = 'Umbraco.Forms.UtcTimestampCorrection'

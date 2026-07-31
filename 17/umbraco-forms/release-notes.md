@@ -106,7 +106,7 @@ Take a database backup before you run it. Then set the three variables at the to
 
 * `@TimeZone`: your server's Windows time zone name.
 * `@UpgradeDate`: the date you first upgraded to v17.0.0. Rows created before this date were already converted to UTC.
-* `@FixDate`: the date you deployed v17.3.0 or later. Rows created on or after this date are already UTC and must not be shifted again.
+* `@FixDate`: the date you first deployed a version of v17.3.0 or newer. Rows created on or after this date are already UTC and must not be shifted again. If you upgraded from v17.2 to v17.3 and later to v17.4, use the v17.3 date.
 
 The script writes a marker to `umbracoKeyValue` when it completes. On a second run it reports the marker and exits without changing any rows.
 
