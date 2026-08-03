@@ -100,15 +100,25 @@ This release fixes the issue by:
 * Removing the legacy server-side timezone offset conversion in the entries list — the browser now handles UTC-to-local conversion consistently
 
 {% hint style="warning" %}
-Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data.
+Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data. It runs on SQL Server only.
 
-Before running it, set `@TimeZone` to your server's Windows timezone name. Set `@UpgradeDate` to the approximate date you first upgraded to v17.0.0. The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
+Take a database backup before you run it. Then set the three variables at the top of the script:
+
+* `@TimeZone`: your server's Windows time zone name.
+* `@UpgradeDate`: the date you first upgraded to v17.0.0. Rows created before this date were already converted to UTC.
+* `@FixDate`: the date you first deployed a version of v17.3.0 or newer. Rows created on or after this date are already UTC and must not be shifted again. If you upgraded from v17.2 to v17.3 and later to v17.4, use the v17.3 date.
+
+The script writes a marker to `umbracoKeyValue` when it completes. On a second run it reports the marker and exits without changing any rows.
+
+The script also clears the affected days from the analytics summary tables. The background task rebuilds those days from the corrected entries on the next application start. Confirm the rebuild under **Settings** > **Health Check** > **Forms** > **Analytics Processing**.
+
+The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
 
 The original `MigrateSystemDatesToUtc` migration contained a duplicate conversion for `UFPrevalueSource`. Created and Updated columns were converted twice. This has been fixed, but sites on v17.0–v17.2 may have double-converted PrevalueSource dates that require manual correction.
 {% endhint %}
 
 {% file src=".gitbook/assets/correct-utc-timestamps.sql" %}
-Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the timezone and cutoff date before running.
+Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the time zone and both cutoff dates before running.
 {% endfile %}
 
 #### Other
