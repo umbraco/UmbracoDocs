@@ -18,6 +18,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.4.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.7) (July 22nd 2026)
+* Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
+
 ### [17.4.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.6) (July 13th 2026)
 * Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
 * Conditions: Fall back to the option value when a choice caption is empty [#1727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1727)
@@ -97,15 +100,25 @@ This release fixes the issue by:
 * Removing the legacy server-side timezone offset conversion in the entries list — the browser now handles UTC-to-local conversion consistently
 
 {% hint style="warning" %}
-Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data.
+Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data. It runs on SQL Server only.
 
-Before running it, set `@TimeZone` to your server's Windows timezone name. Set `@UpgradeDate` to the approximate date you first upgraded to v17.0.0. The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
+Take a database backup before you run it. Then set the three variables at the top of the script:
+
+* `@TimeZone`: your server's Windows time zone name.
+* `@UpgradeDate`: the date you first upgraded to v17.0.0. Rows created before this date were already converted to UTC.
+* `@FixDate`: the date you first deployed a version of v17.3.0 or newer. Rows created on or after this date are already UTC and must not be shifted again. If you upgraded from v17.2 to v17.3 and later to v17.4, use the v17.3 date.
+
+The script writes a marker to `umbracoKeyValue` when it completes. On a second run it reports the marker and exits without changing any rows.
+
+The script also clears the affected days from the analytics summary tables. The background task rebuilds those days from the corrected entries on the next application start. Confirm the rebuild under **Settings** > **Health Check** > **Forms** > **Analytics Processing**.
+
+The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
 
 The original `MigrateSystemDatesToUtc` migration contained a duplicate conversion for `UFPrevalueSource`. Created and Updated columns were converted twice. This has been fixed, but sites on v17.0–v17.2 may have double-converted PrevalueSource dates that require manual correction.
 {% endhint %}
 
 {% file src=".gitbook/assets/correct-utc-timestamps.sql" %}
-Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the timezone and cutoff date before running.
+Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the time zone and both cutoff dates before running.
 {% endfile %}
 
 #### Other
@@ -309,6 +322,17 @@ This change also ensures that field types remain registered. This prevents issue
 ### 17.0.0-rc1 (October 30th 2025)
 
 * Update dependencies to 17.0.0-rc1
+
+## Umbraco.Forms.Deploy
+
+### 17.0.1 (July 24th 2026)
+
+* Fix Umbraco Forms artifact property mappings lost on transfer/restore, including *Show summary page* and related form settings [#331](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/331)
+* Fix deploy of `Form.MessageOnSubmitBlocks` and its block element type dependencies (Umbraco Forms 17.3.0 or later)
+
+### 17.0.0 (November 27th 2025)
+
+* Compatibility with Umbraco Forms 17 and Deploy 17
 
 ## Legacy release notes
 
