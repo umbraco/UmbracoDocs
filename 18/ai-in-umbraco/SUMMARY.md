@@ -100,6 +100,9 @@
   * [Generating Embeddings](using-the-api/embeddings/generating-embeddings.md)
   * [Batch Embeddings](using-the-api/embeddings/batch-embeddings.md)
 * [Speech-to-Text](using-the-api/speech-to-text.md)
+* [Image Generation](using-the-api/image-generation/README.md)
+  * [Generating Images](using-the-api/image-generation/generating-images.md)
+  * [Editing Images](using-the-api/image-generation/editing-images.md)
 * [Tools](using-the-api/tools/README.md)
   * [Using Tools](using-the-api/tools/using-tools.md)
 
@@ -143,6 +146,7 @@
   * [Chat Capability](extending/providers/chat-capability.md)
   * [Embedding Capability](extending/providers/embedding-capability.md)
   * [Speech-to-Text Capability](extending/providers/speech-to-text-capability.md)
+  * [Image Generation Capability](extending/providers/image-generation-capability.md)
 * [Middleware](extending/middleware/README.md)
   * [Chat Middleware](extending/middleware/chat-middleware.md)
   * [Embedding Middleware](extending/middleware/embedding-middleware.md)
@@ -220,12 +224,15 @@
   * [Get Provider](management-api/providers/get.md)
 * [Embeddings](management-api/embeddings/README.md)
   * [Generate](management-api/embeddings/generate.md)
+* [Image Generation](management-api/image-generation/README.md)
+  * [Generate Images](management-api/image-generation/generate-image.md)
 
 ## Frontend
 
 * [Overview](frontend/README.md)
 * [Chat Controller](frontend/chat-controller.md)
 * [Speech-to-Text Controller](frontend/speech-to-text-controller.md)
+* [Image Generation Controller](frontend/image-generation-controller.md)
 * [Embeddings Controller](frontend/embeddings-controller.md)
 * [Tool Controller](frontend/tool-controller.md)
 * [Chat Repository](frontend/chat-repository.md)
