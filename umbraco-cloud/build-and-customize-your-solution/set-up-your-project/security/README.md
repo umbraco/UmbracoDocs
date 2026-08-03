@@ -30,14 +30,14 @@ Learn more about how this in the [Manage Security](managing-transport-security.m
 
 Umbraco Cloud Websites support the following TLS ciphers in this order:
 
-* `TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA384`
-* `TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256`
-* `TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA`
-* `TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA`
-* `TLS\_DHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384`
-* `TLS\_DHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256`
-* `TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA`
-* `TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA`
+* `TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`
+* `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`
+* `TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA`
+* `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA`
+* `TLS_DHE_RSA_WITH_AES_256_GCM_SHA384`
+* `TLS_DHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_DHE_RSA_WITH_AES_256_CBC_SHA`
+* `TLS_DHE_RSA_WITH_AES_128_CBC_SHA`
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
@@ -62,35 +62,44 @@ You can add the header by modifying system.webServer/rewrite/outboundRules secti
  </outboundRules>
 ```
 
-Alternatively this can be done in Startup.cs inside of the **ConfigureServices** method with the following C#:
+This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example, `63072000 seconds` or `730 days` is two years.
+
+Alternatively this can be done in `Program.cs`:
+
+To use it only in production:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddUmbraco(_env, _config)
-                .AddBackOffice()
-                .AddWebsite()
-                .AddComposers()
-                .Build();
-
-            services.AddHsts(options =>
-            {
-                options.MaxAge = TimeSpan.FromDays(730);
-                options.IncludeSubDomains = true;
-                options.Preload = true;
-            });
-        }
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
 ```
 
-This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example 63072000 seconds or 730 days is two years.
+and then add the HSTS options:
+
+```csharp
+builder.Services.AddHsts(options =>
+{
+    options.Preload = true;
+    options.IncludeSubDomains = true;
+    options.MaxAge = TimeSpan.FromDays(60);
+    options.ExcludedHosts.Add("example.com");
+    options.ExcludedHosts.Add("www.example.com");
+});
+```
+
+In the above example, the browser is instructed to remember the policy for `60 days`.
+
+Full details of `UseHsts`, and additional configuration options, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-10.0&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
 
 ### TLS 1.2 by default in external services
 
-In order to integrate older external applications to access Umbraco Cloud Websites you might have to modify the TLS support in the .Net application.
+In order to integrate older external applications to access Umbraco Cloud Websites you might have to modify the TLS support in the .NET application.
 
-For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower then 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
+For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of web.config to find the version of the .NET Framework your application is using. .NET applications on .NET 4.7+ are using the OS specified TLS protocols. In Windows 8 & 10, Windows Server 2012 & 2016 TLS 1.2+ is used by default, therefore no actions necessary. .NET applications lower than 4.7 require updates to ensure they can communicate using TLS 1.2 by default.
 
-More information specifically from Microsoft about .Net applications and Transport Layer Security (TLS) support can be found [in Microsoft's official documentation](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
+More information specifically from Microsoft about .NET applications and Transport Layer Security (TLS) support can be found [in Microsoft's official documentation](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#audit-your-code-and-make-code-changes). For other application frameworks/languages we encourage to lookup their respective documentations.
 
 ### HTTP
 
@@ -108,18 +117,18 @@ Some scanning tools will report some other ports open due to Cloudflare's defaul
 
 Umbraco Cloud offers a multitude of features allowing you to block access to different resources.
 
-* Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud Websites for authenticated users only.
+* Basic Authentication allows access to the Backoffice & Frontend of Umbraco Cloud websites for authenticated users only.
 
 {% hint style="info" %}
 Basic authentication will not be available for projects running Umbraco 9. It is available from Umbraco Cloud version 10. The users are currently unable to exclude IP addresses for authentication using the allowlist feature.
 {% endhint %}
 
-* IP based list allowing access to Frontend & Backoffice
-* IP based list allowing access to website database
+* IP-based list allowing access to Frontend & Backoffice.
+* IP-based list allowing access to website database.
 
 ### Web Application Firewall (WAF)
 
-WAF is or can be enabled on the custom hostname(s) you add to your Umbraco Cloud project. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
+WAF is available and can be enabled on the custom hostname(s) you add to your Umbraco Cloud project. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
 
 ## Cookies and security
 
