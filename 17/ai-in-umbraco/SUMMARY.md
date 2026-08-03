@@ -150,6 +150,7 @@
 * [Custom Tools](extending/tools/README.md)
   * [Creating a Tool](extending/tools/creating-a-tool.md)
 * [Custom Guardrail Evaluators](extending/guardrails/README.md)
+* [Knowledge Sets](extending/knowledge-sets/README.md)
 * [Notifications](extending/notifications/README.md)
   * [Entity Lifecycle Notifications](extending/notifications/entity-notifications.md)
 
