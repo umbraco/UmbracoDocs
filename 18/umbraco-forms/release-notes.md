@@ -41,7 +41,7 @@ For more information, see the [Connecting Fields to Member Data](editor/creating
 * Workflows: Persist additional data set during workflow execution [#1603](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1603)
 * Workflows: Fix the workflow type label shown for a deleted workflow [#1713](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1713)
 * Workflows: Fix `IFeatureCollection has been disposed` when running workflows via `RecordService` [#1362](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1362)
-* Workflows: Resolve the rich text editor from the configured data type in the Send email (Razor) workflow [#1756](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1756)
+* Workflows: Resolve the rich text editor from the configured Data Type in the Send email (Razor) workflow [#1756](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1756)
 * Email: Respect the `DefaultEmailTemplate` provided by an email template collection [#1737](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1737)
 * Field Types: Fix the sensitive data toggle disappearing when enabled [#1415](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1415)
 * Field & Workflow Settings: Keep the field editor open when settings validation fails
@@ -49,10 +49,16 @@ For more information, see the [Connecting Fields to Member Data](editor/creating
 * Form Design: Remove the top margin on the first form settings layout item [#1643](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1643)
 * Form Permissions: Set the permissions for a new form from its creator, so copied and imported forms are set up correctly
 * Delivery API: Return default field settings in the response when settings have not been edited [#1753](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1753)
-* Data Sources: Fix the form wizard assigning an unpersisted default prevalue source to foreign-key fields [#1751](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1751)
+* Data Sources: Fix the form wizard assigning a default prevalue source that hasn't been saved yet to foreign-key fields [#1751](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1751)
 * Assets: Use the CMS cache buster so backoffice assets refresh after an upgrade [#1739](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1739)
 * Upgrades: Migrate legacy XPath root node settings in prevalue sources and the Save as Umbraco node workflow to dynamic root
 * Upgrades: Fix the prevalue source repair migration failing on SQL Server
+* Analytics: Group charts by the viewer's local time zone instead of UTC, so they match the entries list [#1759](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1759)
+* Workflows: Fix the Save as Umbraco node workflow parsing dates with the wrong culture, which could save the wrong date or fail the workflow [#1758](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1758)
+* Workflows: Trim form names when parsing the `IgnoreWorkFlowsOnEdit` setting, so a comma-separated list of form names matches correctly
+* Localization: Localize the delete confirmation dialog for pages, groups, fields, and workflows, and add German (de-de) [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
+* Backoffice Contexts: Normalize context-token alias strings to Forms + PascalCase [#1724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1724)
+* Field Types: Only lock the sensitive data toggle once its value has been saved, so it can still be turned back off before saving [#1762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1762)
 
 ### [18.0.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.5) (July 22nd 2026)
 * Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
