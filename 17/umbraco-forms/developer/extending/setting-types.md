@@ -102,7 +102,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.DocumentPicker            | CMS    | Uses a content picker                                     |                                               |
 | Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selection from a list of options                 |                                               |
 | Umb.PropertyEditorUi.Integer                   | CMS    | Uses numerical text box for entry                         |                                               |
-| Umb.PropertyEditorUi.MediaEntityPicker         | CMS    | Uses a media item picker for entry                        | The "Send email with XSLT template" workflow  |
+| Umb.PropertyEditorUi.MediaPicker               | CMS    | Uses a media item picker for entry                        | The "Send XSLT transformed email", "Post as XML", and "Save as an XML file" workflows |
 | Umb.PropertyEditorUi.MultipleTextString        | CMS    | Uses multiple text boxes for entry                        |                                               |
 | Umb.PropertyEditorUi.RadioButtonList           | CMS    | Uses multiple radio buttons for entry                     |                                               |
 | Umb.PropertyEditorUi.Slider                    | CMS    | Uses a slider for range input                             | The "reCAPTCHAv3" field type                  |
