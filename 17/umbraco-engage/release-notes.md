@@ -73,8 +73,8 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Editing a Single Page A/B test variant now opens the segment-scoped editor.
 * Fixed Split URL test page selection, matching test pages by node id rather than row key.
 * Fixed filter mutation and redraw flicker in the analytics UI.
-* The data retention card now reports only the cleanup tasks that actually ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
-* Fixed the startpage schema warning text not aligning with the warning message.
+* The data retention card now reports only the cleanup tasks that ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
+* Fixed the start-page schema warning text not aligning with the warning message.
 
 #### [17.2.4](https://www.nuget.org/packages/Umbraco.Engage/17.2.4) (June 29th 2026)
 
@@ -129,7 +129,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Page variant segment nullability fixes.
 * New `DeliveryApi.DisableVisitorCookie` configuration (default: `false`) — when `true`, suppresses the visitor cookie on headless API requests, requiring clients to use the `External-Visitor-Id` header instead. See [configuration](developers/settings/configuration.md) for details.
 * Optimized annotation fetching using EntityService for improved performance.
-* Fixed partial UTM (Urchin Tracking Module) data missing from Analytics Campaigns view.
+* Fixed partial Urchin Tracking Module (UTM) data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
 * Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and startpage data retention status.
 * Added support for soft-deleting segments with automatic background cleanup. Deleted segments are now gracefully removed from the system without affecting historical analytics data. An `IsDeleted` column has been added to the segments table. Any direct SQL queries against segment tables must filter on this column to exclude soft-deleted records.

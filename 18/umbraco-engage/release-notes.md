@@ -69,8 +69,8 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Added validation highlighting properties whose variance does not align with their Document Type's variance. This is a common cause of A/B test variants failing to save or serve.
 * The create-segment endpoints are now GUID-driven, removing the integer-to-GUID mapping previously performed in the API.
 * License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
-* The data retention card now reports only the cleanup tasks that actually ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
-* Fixed the startpage schema warning text not aligning with the warning message.
+* The data retention card now reports only the cleanup tasks that ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
+* Fixed the start-page schema warning text not aligning with the warning message.
 
 **Engage Copilot**
 
