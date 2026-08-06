@@ -182,6 +182,7 @@ dereferencing
 Deregister
 deregister
 deregistration
+deserialization
 deserialize
 deserialized
 deserializing
@@ -290,6 +291,7 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+heatmaps
 helpdesk
 HMACs
 Homebrew
@@ -500,6 +502,8 @@ personalizations
 Pikaday
 pipelineTasks
 Pluralsight
+populator
+populators
 postfixed
 Powershell
 powershell
@@ -650,7 +654,8 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
-summarising
+subnet
+subnets
 subpage
 subpages
 subtree
@@ -659,6 +664,7 @@ Subtrees
 subview
 subviews
 Subviews
+summarising
 svg
 SVGs
 symlinked
