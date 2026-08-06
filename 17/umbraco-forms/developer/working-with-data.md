@@ -4,7 +4,7 @@ description: "Developer documentation on working with Forms record data."
 
 # Working With Record Data
 
-Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
+Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using Razor.
 
 ## Available Methods
 
