@@ -87,7 +87,7 @@ To add a content node:
 11. Repeat steps 8 to 10 to create _Article 2_.
 12. Click **Save and Publish**.
 
-    ![Content Tree with Articles](../../../.gitbook/assets/figure-40-articles-created-v8.png)
+    ![Content Tree with Articles](../../../.gitbook/assets/figure-40-articles-created.png)
 
 ## Updating the Template
 
