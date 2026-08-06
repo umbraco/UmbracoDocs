@@ -93,7 +93,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 #### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
 
 * Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
-* Resolved personalizations migrated from v13 disappearing from the Personalisations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
+* Resolved personalizations migrated from v13 disappearing from the Personalizations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
 * Fixed the same Key/document-key conflation in A/B Testing.
 
 #### [17.2.1](https://www.nuget.org/packages/Umbraco.Engage/17.2.1) (May 19th 2026)
@@ -131,7 +131,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Optimized annotation fetching using EntityService for improved performance.
 * Fixed partial Urchin Tracking Module (UTM) data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
-* Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and startpage data retention status.
+* Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and start-page data retention status.
 * Added support for soft-deleting segments with automatic background cleanup. Deleted segments are now gracefully removed from the system without affecting historical analytics data. An `IsDeleted` column has been added to the segments table. Any direct SQL queries against segment tables must filter on this column to exclude soft-deleted records.
 * Added a Suspicious Activity overview in the backoffice, allowing you to identify and review visitors with unusual pageview patterns. Includes configurable pageview thresholds and the ability to provide feedback on flagged activity.
 * Enforced UTC date handling across the entire codebase, preventing timezone-related issues in analytics, A/B testing, and reporting.
