@@ -41,7 +41,7 @@ With this example, the syntax `{umbValue: headline}` would be processed and rend
 <ufm-label-value alias="headline"></ufm-label-value>
 ```
 
-The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../../extend-your-project/backoffice-extensions/foundation/context-api/).
+The internal working of the `ufm-label-value` component would then be able to access the property's value using the [Context API](../../extend-your-project/backoffice-extensions/foundation/context-api/README.md).
 
 ### Filters
 
@@ -189,17 +189,27 @@ The alias prefix is `umbFormName`. An example of the syntax is `{umbFormName: fo
 
 If you wish to develop your own custom UFM component, you can use the `ufmComponent` extension type:
 
+{% code title="umbraco-package.json" %}
+
 ```json
 {
-  type: 'ufmComponent',
-  alias: 'My.CustomUfmComponent',
-  name: 'My Custom UFM Component',
-  api: () => import('./components/my-custom.component.js'),
-  meta: {
-    alias: 'myCustom'
-  }
+  "name": "My.Package",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "ufmComponent",
+      "alias": "My.CustomUfmComponent",
+      "name": "My Custom UFM Component",
+      "api": "/App_Plugins/MyPackage/components/my-custom.component.js",
+      "meta": {
+        "alias": "myCustom"
+      }
+    }
+  ]
 }
 ```
+
+{% endcode %}
 
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
@@ -219,21 +229,96 @@ export { MyCustomUfmComponentApi as api };
 
 Using the `{myCustom: myCustomText}` syntax would render the following markup: `<ufm-custom-component text="myCustomText"></ufm-custom-component>`. Inside the `ufm-custom-component` component code, you can perform any logic to render your required markup.
 
+{% hint style="warning" %}
+**Accessing other property values from a custom component**
+
+A class extending `UmbUfmComponentBase` cannot call `consumeContext()` directly, its `render()` method has no access to the block or content context. If you need to access a different property's value, not the token's own text, use a two-part pattern instead:
+
+* `UmbUfmComponentBase` subclass renders a custom HTML tag,
+* And a separate companion element (extending `UmbUfmElementBase`) consumes context and performs the actual data lookup.
+{% endhint %}
+
+{% code title="my-custom.component.js" %}
+
+```js
+import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
+import './my-custom.element.js';
+
+export class MyCustomUfmComponentApi extends UmbUfmComponentBase {
+    render(token) {
+        if (!token.text) return;
+        const attributes = super.getAttributes(token.text);
+        return `<ufm-custom-component ${attributes}></ufm-custom-component>`;
+    }
+}
+export { MyCustomUfmComponentApi as api };
+```
+
+{% endcode %}
+
+The inherited `getAttributes()` helper is called via `super.`, not `this.`. Inside `render()`, `this` is not your component instance, it's rebound by the underlying Marked renderer. So `this.getAttributes(...)` will throw. `super.getAttributes(...)` resolves to the base class method regardless of what `this` is at call time.
+
+{% code title="my-custom.element.js" %}
+
+```js
+import { UMB_UFM_RENDER_CONTEXT } from '@umbraco-cms/backoffice/ufm';
+import { UmbUfmElementBase } from '@umbraco-cms/backoffice/ufm';
+import { html } from '@umbraco-cms/backoffice/external/lit';
+
+class MyCustomComponentElement extends UmbUfmElementBase {
+    static properties = { alias: { type: String } };
+
+    constructor() {
+        super();
+        this.consumeContext(UMB_UFM_RENDER_CONTEXT, (context) => {
+            this.observe(context?.value, (value) => {
+                if (this.alias !== undefined && value !== undefined && typeof value === 'object') {
+                    this.value = value[this.alias];
+                } else {
+                    this.value = value;
+                }
+            }, 'observeValue');
+        });
+    }
+
+    render() {
+        return html`<strong style="color: purple;">${this.value}</strong>`;
+    }
+}
+
+customElements.define('ufm-custom-component', MyCustomComponentElement);
+export default MyCustomComponentElement;
+```
+
+{% endcode %}
+
+Using the `{myCustom: headline}` syntax with this pattern would render the current value of the `headline` property, styled in purple. It is pulled live via `UMB_UFM_RENDER_CONTEXT` rather than from the token text itself.
+
 ### Custom UFM filters
 
 If you wish to develop custom UFM filter, you can use the `ufmFilter` extension type:
 
+{% code title="umbraco-package.json" %}
+
 ```json
 {
-  type: 'ufmFilter',
-  alias: 'My.UfmFilter.Reverse',
-  name: 'Reverse UFM Filter',
-  api: () => import('./reverse.filter.js'),
-  meta: {
-    alias: 'reverse'
-  }
+  "name": "My.Package",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "ufmFilter",
+      "alias": "My.UfmFilter.Reverse",
+      "name": "Reverse UFM Filter",
+      "api": "/App_Plugins/MyPackage/filters/reverse.filter.js",
+      "meta": {
+        "alias": "reverse"
+      }
+    }
+  ]
 }
 ```
+
+{% endcode %}
 
 The corresponding JavaScript/TypeScript API would contain a function to transform the value.
 
@@ -241,11 +326,10 @@ The corresponding JavaScript/TypeScript API would contain a function to transfor
 import { UmbUfmFilterBase } from '@umbraco-cms/backoffice/ufm';
 
 class UmbUfmReverseFilterApi extends UmbUfmFilterBase {
-	filter(str?: string) {
-		return str?.split("").reverse().join("");
-	}
+  filter(str) {
+    return str?.split("").reverse().join("");
+  }
 }
-
 export { UmbUfmReverseFilterApi as api };
 ```
 
