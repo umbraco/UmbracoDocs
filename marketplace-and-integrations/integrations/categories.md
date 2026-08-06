@@ -8,6 +8,10 @@ description: >-
 
 Umbraco HQ has developed and made available integrations with different SaaS (Software as a Service) providers. These are all open-source and add functionality to Umbraco CMS to support working with third-party services.
 
+{% hint style="info" %}
+Some integrations have been removed as they do not support Umbraco 17 and later versions. This includes Aprimo, CommerceTools, emerchantpay With Umbraco Forms, and inriver.
+{% endhint %}
+
 ## Analytics
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>CookieBot</strong></td><td><p>Provides a means of including the cookie policy banner and declaration available from Cookiebot.</p><p>This example can be used as a reference for creating a package "wrapper" around a script-based integration, allowing listing on the Umbraco Marketplace.</p></td><td><a href="cookiebot.md">cookiebot.md</a></td><td><a href="../.gitbook/assets/cookiebot.png">cookiebot.png</a></td></tr></tbody></table>
