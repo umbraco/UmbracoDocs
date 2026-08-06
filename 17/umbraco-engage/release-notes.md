@@ -44,22 +44,21 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 **Analytics and reporting**
 
+* Adds server-side paging to analytics report queries.
+* Fixed percentage-change values in the comparison view lining up with the wrong rows after sorting or paging.
 * Fixed segment reporting charts showing stale or empty data when switching segments, and the percentage toggle not redrawing.
 * Replaced a nested row scan with a hash lookup when merging analytics tables, resolving browser timeouts on large data sets.
 
 **Backoffice and platform**
 
 * Backoffice endpoints that touch the database are now gated when the Engage schema is unhealthy or migrations have failed. They return a `503 Service Unavailable` with a descriptive problem detail instead of throwing or returning nonsense. Configuration-only endpoints — including the main switch — stay reachable so Engage can be re-enabled.
-* Added `GetCustomerJourneyDescription` to `ICustomerJourneyService`, allowing the Engage Copilot to explain how a customer journey is scored. The description covers step rules, goal contributions, and the enforced participation and deviation thresholds.
 * Added validation highlighting properties whose variance does not align with their Document Type's variance. This is a common cause of A/B test variants failing to save or serve.
 * The create-segment endpoints are now GUID-driven, removing the integer-to-GUID mapping previously performed in the API.
-* License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
+* Bumped the **Umbraco.Licenses** dependency to 17.0.4. License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
 
 #### [17.3.1](https://www.nuget.org/packages/Umbraco.Engage/17.3.1) (July 24th 2026)
 
 * Added the ability to mark a visitor as a bot from the **Suspicious Activity** overview. The activity-type filter is shown only when more than one option is available.
-* Added Engage Copilot support for asking for an overview of how the site is doing.
-* Fixed Engage Copilot tool and scope labels showing raw localization keys in the backoffice.
 * Fixed a 404 when editing a personalized variant on an invariant document, and resolved previewing on invariant documents.
 
 #### [17.3.0](https://www.nuget.org/packages/Umbraco.Engage/17.3.0) (July 24th 2026)

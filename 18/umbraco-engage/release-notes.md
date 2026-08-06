@@ -54,6 +54,8 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 
 **Analytics and reporting**
 
+* Adds server-side paging to analytics report queries.
+* Fixed percentage-change values in the comparison view lining up with the wrong rows after sorting or paging.
 * Custom event fields (category, action, label) are widened to 1000 characters. They were previously truncated to 50 characters silently.
 * Fixed segment reporting charts showing stale or empty data when switching segments, and the percentage toggle not redrawing.
 * Replaced a nested row scan with a hash lookup when merging analytics tables, resolving browser timeouts on large data sets.
@@ -68,16 +70,9 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Fixed a `401` response on the Engage tab after a period of inactivity. The Engage backoffice client is now routed through the CMS `configureClient`.
 * Added validation highlighting properties whose variance does not align with their Document Type's variance. This is a common cause of A/B test variants failing to save or serve.
 * The create-segment endpoints are now GUID-driven, removing the integer-to-GUID mapping previously performed in the API.
-* License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
+* Bumped the **Umbraco.Licenses** dependency to 18.0.2. License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
 * The data retention card now reports only the cleanup tasks that ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
 * Fixed the start-page schema warning text not aligning with the warning message.
-
-**Engage Copilot**
-
-* Added `GetCustomerJourneyDescription` to `ICustomerJourneyService`, allowing the Copilot to explain how a customer journey is scored. The description covers step rules, goal contributions, and the enforced participation and deviation thresholds.
-* Added a persona describer and an A/B test summary service. The Copilot can now explain how a persona is scored and report on running tests.
-* Added support for asking the Copilot for an overview of how the site is doing.
-* Fixed Copilot tool and scope labels showing raw localization keys in the backoffice.
 
 #### [18.0.0](https://www.nuget.org/packages/Umbraco.Engage/18.0.0) (June 25th 2026)
 
