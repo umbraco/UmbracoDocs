@@ -38,6 +38,7 @@ approvers
 appSetting
 appsetting
 appsettings
+Aprimo
 ARRAffinity
 articleContent
 articlesTitle
@@ -122,6 +123,7 @@ Colour
 colours
 coloured
 Commerce
+CommerceTools
 compareTo
 comparisonOperator
 composable
@@ -208,6 +210,7 @@ EFCore
 elementName
 elementSelector
 emailTemplate
+emerchantpay
 endcode
 endembed
 endfile
@@ -343,6 +346,7 @@ inclusivity
 increaseBy
 initializer
 injectable
+inriver
 intalls
 intellisense
 Intellisense
@@ -610,6 +614,7 @@ serverless
 serverside
 setBehavior
 shippingMethod
+Shopify
 signout
 signup
 SignalR
