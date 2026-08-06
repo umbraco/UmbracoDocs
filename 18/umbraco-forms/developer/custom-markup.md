@@ -69,13 +69,13 @@ Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
 
-The attributes for the field's validation expression carry the message configured on the field. The same message is shown whichever validation method applies:
+The attributes for the field's validation expression carry the message configured on the field. The field shows that same message whichever validation method applies:
 
-* `data-val-regex` and `data-val-regex-pattern` are used by the client-side validation frameworks. The pattern is rendered encoded, so it must not be passed through `Html.Raw`.
-* `pattern` is the native browser validation attribute and is only rendered when the field has a validation expression.
-* `data-val-email` and `data-val-url` are only rendered for `email` and `url` input types that have a custom error message. Without them the validation framework falls back to its own built-in English message.
+* The client-side validation frameworks read `data-val-regex` and `data-val-regex-pattern`. The view encodes the pattern, so do not pass it through `Html.Raw`.
+* `pattern` is the native browser validation attribute. The view renders it only when the field has a validation expression.
+* The view renders `data-val-email` and `data-val-url` only for `email` and `url` input types with a custom error message. Without them, the validation framework falls back to its own built-in English message.
 
-If you have copied this view into a custom theme, apply the same changes to your copy. Otherwise the configured validation message is not used for the field's validation expression.
+If you have copied this view into a custom theme, apply the same changes to your copy. Otherwise the field's validation expression will not use the configured message.
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field. For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met. An ID needs to be added to text controls such as headings and paragraphs.
 
