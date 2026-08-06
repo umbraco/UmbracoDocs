@@ -163,65 +163,7 @@ Field settings will be managed in the backoffice by editors who will create form
 public virtual string? Min { get; set; } = "1";
 ```
 
-The property `Name` names the setting in the backoffice with the `Description` providing the help text. Both of these can be translated, as discussed in the backoffice components section below.
-
-The `View` property indicates a property editor UI used for editing the setting value. You can use a built-in property editor UI, one from a package, or a custom one registered with your solution. The default value if not provided is `Umb.PropertyEditorUi.TextBox`, which will use the standard Umbraco text box property editor UI.
-
-`SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
-
-`HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
-
-`SupportsHtml` is a flag indicating whether the setting can contain HTML content. When set to `true` it will be treated as HTML content when the value is read from the Forms delivery API.
-
-`IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
-
-### Setting property types
-
-Although settings are persisted as strings, the property on your provider class does not have to be typed as `string`. When the provider's settings are read, each stored value is converted to the property's declared type. This lets you use the most appropriate .NET type for a setting and removes the need to parse the value yourself.
-
-As well as `string`, the following types are supported, along with their nullable equivalents (such as `int?`):
-
-* Numeric types such as `int`, `long`, `decimal` and `double`
-* `bool`
-* `Guid`
-* Enumerations
-
-For example, a numeric setting edited with the `Umb.PropertyEditorUi.Integer` property editor UI can be declared directly as an `int?`:
-
-```csharp
-[Setting("Maximum length", Description = "The maximum number of characters accepted.", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 40)]
-public virtual int? MaxLength { get; set; }
-```
-
-When a setting has no stored value, the property is set based on its type. A nullable property is set to `null`. A non-nullable value type is set to its default, such as `0` or `false`. A `string` property preserves the empty string. Values are converted using the invariant culture.
-
-Make sure the property type matches the values produced by the chosen `View`. If a stored value can't be converted to the property type, the conversion falls back to `null` or the type's default rather than throwing. A `string` property accepts any value, so it's always a safe choice.
-
-Default values for settings can be defined in code using one of two approaches.
-
-Using a property initializer:
-
-```csharp
-[Setting("Minimum")]
-public virtual string? Min { get; set; } = "1";
-```
-
-Using the `DefaultValue` attribute property:
-
-```csharp
-[Setting("Minimum", DefaultValue = "1")]
-public virtual string? Min { get; set; }
-```
-
-If both are provided, the `DefaultValue` attribute property takes precedence over the property initializer.
-
-The property initializer approach also works with the typed setting properties described above. The type's own default value (such as `0` or `false`) is treated as "no default". To make one of those values the default, use the `DefaultValue` attribute property instead.
-
-These code-based defaults provide an alternative to [configuring default values via `appsettings.json`](../configuration/#settingscustomization). If a value is configured in `appsettings.json`, it takes precedence over any code-based default.
-
-When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
-
-All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
+Field settings work the same way as settings on any other provider type. See [Adding settings to a type](adding-a-type.md#adding-settings-to-a-type) for the underlying mechanism. See [Setting Types](setting-types.md) for the full list of built-in Views, all available `Setting` attribute properties, translations, default values, and inheritance behavior.
 
 ## Umbraco Backoffice Components
 
@@ -570,7 +512,7 @@ export const manifests = [sliderValueConverterManifest];
 
 ### Language Files
 
-Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used.
+Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used. See [Translations](setting-types.md#translations) for the root value to use for each provider type.
 
 The following example shows how this is created for the settings on this example field type:
 
@@ -598,15 +540,6 @@ export default {
 ```
 
 {% endcode %}
-
-Each different type of extension for Forms uses a different root value:
-
-* Data sources - `formProviderDataSources`
-* Export types - `formProviderExportTypes`
-* Field types - `formProviderFieldTypes`
-* Prevalue sources - `formProviderPrevalueSources`
-* Recordset actions - `formRecordSetActions`
-* Workflows - `formProviderWorkflows`
 
 The language files are registered with:
 

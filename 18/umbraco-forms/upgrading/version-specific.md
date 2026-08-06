@@ -16,6 +16,34 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 18 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `18.0.0`. It runs on .NET 10.
 
+### UTC date handling
+
+This fix was introduced in version 17.3.0. It affects you if you upgrade to version 18 from version 17.0, 17.1, or 17.2.
+
+Version 17.0.0 included a migration (`MigrateSystemDatesToUtc`) that converted existing system dates to UTC. The application code still wrote new records using `DateTime.Now`, which is local server time. This left inconsistent timestamps on form entries, workflow audit trails, and entity metadata. Version 17.3.0 corrected the code that writes those dates.
+
+{% hint style="warning" %}
+Data written between v17.0.0 and the fix may contain local server timestamps instead of UTC. Upgrading to version 18 does not correct that data. A SQL script is provided below to correct it. The script runs on SQL Server only.
+
+Take a database backup before you run it. Then set the three variables at the top of the script:
+
+* `@TimeZone`: your server's Windows time zone name.
+* `@UpgradeDate`: the date you first upgraded to v17.0.0. Rows created before this date were already converted to UTC.
+* `@FixDate`: the date you first deployed a version that includes the fix. That is v17.3.0 or newer, or any version 18 release. Rows created on or after this date are already UTC and must not be shifted again.
+
+The script writes a marker to `umbracoKeyValue` when it completes. On a second run it reports the marker and exits without changing any rows.
+
+The script also clears the affected days from the analytics summary tables. The background task rebuilds those days from the corrected entries on the next application start. Confirm the rebuild under **Settings** > **Health Check** > **Forms** > **Analytics Processing**.
+
+The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
+
+The original `MigrateSystemDatesToUtc` migration contained a duplicate conversion for `UFPrevalueSource`. The Created and Updated columns were converted twice. This has been fixed, but sites that ran v17.0 to v17.2 may have double-converted PrevalueSource dates that require manual correction.
+{% endhint %}
+
+{% file src="../.gitbook/assets/correct-utc-timestamps.sql" %}
+Corrects historical data written with local server time instead of UTC. Set the time zone and both cutoff dates before running.
+{% endfile %}
+
 ### Storage method for tracking rendered forms
 
 This change was introduced in version 14. It affects you if you upgrade directly from version 13 to version 18.

@@ -56,6 +56,19 @@ These editors are tested to round-trip their values correctly when used as a set
 
 To use an editor that is not listed, register your own converter. Read the [Setting Value Converter](adding-a-fieldtype.md#setting-value-converter) section for the steps.
 
+### Rich text settings
+
+For a rich text setting, use the `Forms.PropertyEditorUi.RichText` marker as the `View` rather than a specific editor alias:
+
+```csharp
+[Umbraco.Forms.Core.Attributes.Setting("Body text", View = "Forms.PropertyEditorUi.RichText")]
+public string BodyText { get; set; }
+```
+
+Forms resolves the marker at runtime to the property editor UI of the rich text Data Type configured in `Umbraco:Forms:FieldTypes:RichText:DataTypeId`. It falls back to the default Tiptap editor when the setting is absent. This lets a rich text setting honor a custom editor, such as TinyMCE, instead of being pinned to a single editor.
+
+Forms resolves the marker for field type and workflow type settings only.
+
 ### Pickers that store structured values
 
 Pickers that store structured values require a custom setting value converter to work. `Umb.PropertyEditorUi.MultiUrlPicker` is one example. Register a converter that maps the stored string to the picker's value and back.
@@ -89,13 +102,13 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.DocumentPicker            | CMS    | Uses a content picker                                     |                                               |
 | Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selection from a list of options                 |                                               |
 | Umb.PropertyEditorUi.Integer                   | CMS    | Uses numerical text box for entry                         |                                               |
-| Umb.PropertyEditorUi.MediaEntityPicker         | CMS    | Uses a media item picker for entry                        | The "Send email with XSLT template" workflow  |
+| Umb.PropertyEditorUi.MediaPicker               | CMS    | Uses a media item picker for entry                        | The "Send XSLT transformed email", "Post as XML", and "Save as an XML file" workflows |
 | Umb.PropertyEditorUi.MultipleTextString        | CMS    | Uses multiple text boxes for entry                        |                                               |
 | Umb.PropertyEditorUi.RadioButtonList           | CMS    | Uses multiple radio buttons for entry                     |                                               |
 | Umb.PropertyEditorUi.Slider                    | CMS    | Uses a slider for range input                             | The "reCAPTCHAv3" field type                  |
 | Umb.PropertyEditorUi.TextArea                  | CMS    | Uses a multiline textbox for entry                        |                                               |
 | Umb.PropertyEditorUi.TextBox                   | CMS    | Uses a single-line textbox for entry                      |                                               |
-| Umb.PropertyEditorUi.Tiptap                    | CMS    | Uses a rich text editor for input                         | The "Send email" workflows                    |
+| Umb.PropertyEditorUi.Tiptap                    | CMS    | Uses a rich text editor for input                         | The default editor for `Forms.PropertyEditorUi.RichText` |
 | Umb.PropertyEditorUi.Toggle                    | CMS    | Uses a single checkbox for entry                          |                                               |
 | Umb.PropertyEditorUi.UploadField               | CMS    | Used for selection of a file                              | The "Text file" prevalue source               |
 | Forms.PropertyEditorUi.DataTypePicker          | Forms  | Uses a datatype picker                                    | The "Umbraco prevalues" prevalue source       |
@@ -105,6 +118,7 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Forms.PropertyEditorUi.EmailTemplatePicker     | Forms  | Used for selection of an email template                   | The "Send email with Razor template" workflow |
 | Forms.PropertyEditorUi.FieldMapper             | Forms  | Used to map fields from a form to required aliases        | The "Send to URL" workflow                    |
 | Forms.PropertyEditorUi.Password                | Forms  | Uses password text box for entry                          |                                               |
+| Forms.PropertyEditorUi.RichText                | Forms  | Uses the rich text editor configured via `Umbraco:Forms:FieldTypes:RichText:DataTypeId` (Tiptap by default) | The "Rich text" field type and the "Send email with Razor template" workflow |
 | Forms.PropertyEditorUi.StandardFieldMapper     | Forms  | Used to map system fields from a form to required aliases | The "Send to URL" workflow                    |
 | Forms.PropertyEditorUi.TextWithFieldPicker     | Forms  | Uses a single-line textbox/form field list for entry      |                                               |
 
@@ -118,8 +132,108 @@ For example `Forms.PropertyEditorUi.TextWithFieldPicker`. This offers the option
 
 ![Text with field picker](../../.gitbook/assets/text-with-field-picker.png)
 
+## Setting properties
+
+Beyond `Name`, `Description`, and `View`, the `Setting` attribute supports other properties.
+
+```csharp
+[Setting("My Setting", Description = "Help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = true, DisplayOrder = 10)]
+public virtual string? MySetting { get; set; }
+```
+
+- `SupportsPlaceholders` is a flag indicating whether the setting can contain ["magic string" placeholders](../magic-strings.md) and controls whether they are parsed on rendering.
+
+- `HtmlEncodeReplacedPlaceholderValues` takes effect only if `SupportsPlaceholders` is `true`. It controls whether the replaced placeholder values should be HTML encoded (as is necessary for rendering within content from a rich text editor).
+
+- `SupportsHtml` is a flag indicating whether the setting can contain HTML content. When set to `true` it will be treated as HTML content when the value is read from the Forms delivery API.
+
+- `IsMandatory` if set to `true` will provide client-side validation in the backoffice to ensure the value is completed.
+
+- `DisplayOrder` - controls the order settings appear in relative to each other in the backoffice.
+
+## Setting property types
+
+Although settings are persisted as strings, the property on your provider class does not have to be typed as `string`. When the provider's settings are read, each stored value is converted to the property's declared type. This lets you use the most appropriate .NET type for a setting and removes the need to parse the value yourself.
+
+As well as `string`, the following types are supported, along with their nullable equivalents (such as `int?`):
+
+- Numeric types such as `int`, `long`, `decimal` and `double`
+- `bool`
+- `Guid`
+- Enumerations
+
+For example, a numeric setting edited with the `Umb.PropertyEditorUi.Integer` property editor UI can be declared directly as an `int?`:
+
+```csharp
+[Setting("Maximum length", Description = "The maximum number of characters accepted.", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 40)]
+public virtual int? MaxLength { get; set; }
+```
+
+When a setting has no stored value, the property is set based on its type. A nullable property is set to `null`. A non-nullable value type is set to its default, such as `0` or `false`. A `string` property preserves the empty string. Values are converted using the invariant culture.
+
+Make sure the property type matches the values produced by the chosen `View`. If a stored value can't be converted to the property type, the conversion falls back to `null` or the type's default rather than throwing. A `string` property accepts any value, so it's always a safe choice.
+
+## Default values
+
+Default values for settings can be defined in code using one of two approaches.
+
+### Approach 1: Using a property initializer
+
+```csharp
+[Setting("Minimum")]
+public virtual string? Min { get; set; } = "1";
+```
+
+### Approach 2: Using the `DefaultValue` attribute property
+
+```csharp
+[Setting("Minimum", DefaultValue = "1")]
+public virtual string? Min { get; set; }
+```
+
+If both are provided, the `DefaultValue` attribute property takes precedence over the property initializer.
+
+The property initializer approach also works with the [typed setting properties](#setting-property-types) described above. The type's own default value (such as `0` or `false`) is treated as "no default". To make one of those values the default, use the `DefaultValue` attribute property instead.
+
+These code-based defaults provide an alternative to [configuring default values via `appsettings.json`](../configuration/README.md#settingscustomization). If a value is configured in `appsettings.json`, it takes precedence over any code-based default.
+
+## Settings when inheriting
+
+When creating a field or other provider type, you might choose to inherit from an existing class. This could be if one of the types provided with Umbraco Forms almost meets your needs but you want to make some changes.
+
+All setting properties for the Forms provider types are marked as `virtual`, so you can override them and change the setting values:
+
+```csharp
+[Setting("My Setting", Description = "My custom help text for the setting", View = "Umb.PropertyEditorUi.TextBox", SupportsPlaceholders = true, DisplayOrder = 10)]
+public override string? MySetting { get; set; }
+```
+
+If you want to hide a setting in your derived class you can use the `IsHidden` property:
+
+```csharp
+[Setting("My Setting", IsHidden = true)]
+public override string? MySetting { get; set; }
+```
+
+## Translations
+
+Setting labels and descriptions can be translated via language files. If no client-side localization is provided, the values provided server-side in the `Setting` attribute's `Name` and `Description` properties will be used.
+
+Each different type of extension for Forms uses a different root value in the localization file:
+
+- Data sources - `formProviderDataSources`
+- Export types - `formProviderExportTypes`
+- Field types - `formProviderFieldTypes`
+- Prevalue sources - `formProviderPrevalueSources`
+- Recordset actions - `formRecordSetActions`
+- Workflows - `formProviderWorkflows`
+
+For a full worked example, including registering the language file, see the [Language Files](adding-a-fieldtype.md#language-files) section of the field type tutorial.
+
 ## Creating a setting type
 
-It's also possible to define your own setting type using a combination of server and client-side code.
+If none of the [built-in setting types](#built-in-setting-types) fit, you can register your own property editor UI to use as a `View`. This works the same way as for any other Umbraco property editor.
 
-Read how do this in the article on [adding a field type](adding-a-fieldtype.md#field-settings).
+Since Forms stores every setting as a string, you'll need a **setting value converter** if your editor's value isn't a plain string. See [How setting values are persisted](#how-setting-values-are-persisted).
+
+For a complete example, see the [Setting Value Editor](adding-a-fieldtype.md#setting-value-editor) and [Setting Value Converter](adding-a-fieldtype.md#setting-value-converter) sections of the field type tutorial. It builds a custom editor and converter, including manifests, registration, and what each converter method does.

@@ -8,18 +8,40 @@ It is assumed that you already have an Umbraco website configured Umbraco Commer
 
 Umbraco Commerce Checkout is a free and open-source add-on package for Umbraco Commerce. It is possible to amend the default behavior to customize the checkout to your needs.
 
-## Setup
+## Overriding the checkout Views
 
-To allow customization you must first 'override' the existing files for the step required to be modified.
+To customize one, add your copy to the same path under Views/UmbracoCommerceCheckout. Ensure your site compiles Views at build time so your copy is used instead of the packaged one.
 
-To do this follow these steps:
+{% hint style="warning" %}
+New Umbraco projects (17+) are set up for backoffice development, which disables build-time View compilation:
+
+```xml
+<RazorCompileOnBuild>false</RazorCompileOnBuild>
+<RazorCompileOnPublish>false</RazorCompileOnPublish>
+```
+
+While this is set, Views you add under `Views/UmbracoCommerceCheckout` are ignored and your changes will not appear. To enable overrides:
+
+1. Switch Models Builder to a source-code mode (`SourceCodeAuto` or `SourceCodeManual`) and generate your models. Build-time compilation is not compatible with the default `InMemoryAuto` mode - see [Models Builder settings](https://docs.umbraco.com/umbraco-cms/reference/configuration/modelsbuildersettings).
+2. Remove the `RazorCompileOnBuild` and `RazorCompileOnPublish` lines above (or set them to `true`).
+
+This matches the configuration Umbraco requires for [Production runtime mode](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/runtime-modes).
+{% endhint %}
+
+Once your site compiles Views at build time, override a checkout step as follows:
 
 1. Copy the equivalent [files and partials](https://github.com/umbraco/Umbraco.Commerce.Checkout/tree/main/src/Umbraco.Commerce.Checkout/Views/UmbracoCommerceCheckout).
 2. Add them to `Views/UmbracoCommerceCheckout` in your project directory. It might be necessary to create the folder first.
-3. Make a small text change to one of the Views to verify that the files are in use.
-4. Verify that the changes are carried out and displayed correctly.
+3. Make your changes.
+4. Rebuild and restart your site, then verify that the change is displayed correctly.
 
-You are now ready to start customizing the Checkout page to fit the design of your website.
+## Alternative: use a Template
+
+Instead of overriding the Views, you can assign a **Template** to the checkout page in the backoffice and place your markup there. Checkout will use the Template instead of its built-in View.
+
+With this approach, the Template receives the checkout page's IPublishedContent as its model—not the packaged Views' view model.
+
+You then build that step's markup yourself against the Umbraco Commerce APIs.
 
 ## Useful links
 

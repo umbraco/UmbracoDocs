@@ -13,8 +13,6 @@ The Umbraco project folder refers to the folder created during the [Umbraco inst
 4. Go to the **HomePage** template in the **Settings** section.
 5.  Make sure the stylesheet reference in the HTML is `/css/main.css`.
 
-    ![Stylesheet reference](images/stylesheet-reference.png)
-
 ## Stylesheet Reference
 
 Use the Developer Tools in Chrome/Firefox/Edge and refresh `http://localhost:xxxx.`

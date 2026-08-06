@@ -16,7 +16,8 @@ A full configuration with default values can be seen here:
       "LocalTempStorageLocation": "Default",
       "TemporaryFileUploadLocation"
       "Debug": false,
-      "SiteName"
+      "SiteName",
+      "MachineIdentifier"
     }
   }
 }
@@ -48,3 +49,14 @@ This setting allows you to run Umbraco in debug mode, by setting the value to tr
 ### Site name
 
 Gets or sets a value specifying the name of the site. The [IWebHostEnvironment.ApplicationName](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.ihostenvironment.applicationname?view=dotnet-plat-ext-6.0) is used if not specified
+
+### Machine identifier
+
+Set `MachineIdentifier` to a stable value that identifies this server instance. Umbraco uses the value to track cache synchronization state per server. The state determines whether a restart can resume from the last sync or must rebuild caches and indexes.
+
+Set this property in environments where the OS hostname is not stable across restarts, such as Docker or Kubernetes.
+
+{% hint style="info" %}
+`MachineIdentifier` is available from Umbraco 18.1.
+{% endhint %}
+

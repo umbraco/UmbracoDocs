@@ -9,7 +9,7 @@ description: >-
 With Umbraco Forms, it is possible to customize the output markup of a Form, which means you have complete control over what Forms will display.
 
 {% hint style="warning" %}
-We recommend using [Themes](themes.md) to customize your Forms. This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
+It is recommended to use [Themes](themes.md) to customize your Forms. This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
 {% endhint %}
 
 ## Customizing the Default Views
