@@ -2,7 +2,7 @@
 
 *This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and have the ability to change data and state.
+Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and has the ability to change data and state.
 
 ```csharp
 using System;
