@@ -1,6 +1,6 @@
 # Adding A Type To The Provider Model
 
-To add a new type, no matter if it's a workflow, field, data source, etc, there is a number of tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is, however, the same process for all types.
+To add a new type such as a workflow, field, or data source, there are tasks to perform to connect to the Forms provider model. This chapter walks through each step and describes how each part works. This chapter will reference the creation of a workflow type. It is, however, the same process for all types.
 
 ## Preparations
 
@@ -65,7 +65,7 @@ Now that we have a basic class setup, we would like to pass setting items to the
 public string LogHeader { get; set; }
 ```
 
-The Umbraco.Forms.Core.Attributes.Setting registers the property in Umbraco Forms and there will automatically be UI and storage generated for it. In the attribute, a name, description and the view to be rendered is defined.
+The `Umbraco.Forms.Core.Attributes.Setting` registers the property in Umbraco Forms and there will automatically be UI and storage generated for it. In the attribute, a name, description and the view to be rendered is defined.
 
 With the attribute in place, the property value is set every time the class is instantiated by Umbraco Forms. This means you can use the property in your code like this:
 

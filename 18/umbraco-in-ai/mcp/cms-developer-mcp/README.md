@@ -101,6 +101,12 @@ Each MCP-compatible host application has its own setup process. Below you can fi
 
 Although the details vary slightly, the general pattern is the same across all hosts:
 
+{% hint style="warning" %}
+**Match the package version to your Umbraco site.** The example below uses `@latest`, which installs the newest release of the MCP Server. This may be a later major version than the one your site runs.
+
+If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail. See [Version Compatibility](#version-compatibility) below for the full list of tags.
+{% endhint %}
+
 ```json
 {
   "umbraco-mcp": {
@@ -162,7 +168,7 @@ If you prefer, you can also install it globally with:
 
 ```bash
 
-@umbraco-cms/mcp-dev@17
+@umbraco-cms/mcp-dev@latest
 
 ```
 
@@ -185,7 +191,8 @@ The Umbraco MCP Server is designed to work with specific major versions of Umbra
 | ------------------ | -------------------------- | ---------------------------------- |
 | 15.x.x             | alpha                      | @umbraco-mcp/umbraco-mcp-cms@alpha |
 | 16.x.x             | 16.x                       | @umbraco-cms/mcp-dev@16            |
-| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@17.1          |
+| 17.x.x             | 17.x (LTS)                 | @umbraco-cms/mcp-dev@lts-17        |
+| 18.x.x             | 18.x                       | @umbraco-cms/mcp-dev@latest        |
 
 ### Version Checking
 

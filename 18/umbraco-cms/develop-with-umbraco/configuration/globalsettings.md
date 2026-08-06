@@ -45,13 +45,15 @@ The following snippet contains all the available options, with default values, a
       },
       "DatabaseServerRegistrar": {
         "WaitTimeBetweenCalls": "00:01:00",
-        "StaleServerTimeout": "00:02:00"
+        "StaleServerTimeout": "00:02:00",
+        "TouchTimeout": "00:01:00"
       },
       "DatabaseServerMessenger": {
         "MaxProcessingInstructionCount": 1000,
         "TimeToRetainInstructions": "2.00:00:00",
         "TimeBetweenSyncOperations": "00:00:05",
-        "TimeBetweenPruneOperations": "00:01:00"
+        "TimeBetweenPruneOperations": "00:01:00",
+        "SyncTimeout": "00:01:00"
       },
       "DistributedLockingMechanism": "",
       "DistributedLockingReadLockDefaultTimeout": "00:01:00",
@@ -86,7 +88,7 @@ Adding additional values to the Reserved URLs and Reserved Paths will overwrite 
 
 Key: `TimeOut` Type: `string` (default: `00:20:00`)
 
-Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer.
+Configure the session timeout to determine how much time without a request being made can pass before the user is required to log in again. The session timeout format needs to be set as `HH:MM:SS`. Any activity within the backoffice will reset the timer. The value must not exceed 24 days, the maximum the backoffice timer supports. Larger values are rejected at startup. Use `KeepUserLoggedIn` for longer-lived sessions.
 
 {% hint style="info" %}
 Long session timeouts raise data exposure and unauthorized access risks. Thus, it's vital to establish a reasonable timeout to mitigate security risks.
@@ -298,6 +300,12 @@ Key: `DatabaseServerRegistrar.StaleServerTimeout` Type: `string` (default: `00:0
 
 Sets a value for the time span to wait before considering a server stale, after it has last been accessed.
 
+### Touch timeout
+
+Key: `DatabaseServerRegistrar.TouchTimeout` Type: `string` (default: `00:01:00`)
+
+Sets the maximum time to wait for a single server touch operation to complete. If the operation stalls, for example when blocked on a hung database connection, it is abandoned once this timeout elapses.
+
 ## Database server messenger
 
 It's unlikely that you will have change these settings, unless you're using a load balanced setup. These settings are all about how load balancing instructions from the database are processed and pruned.
@@ -325,6 +333,12 @@ Sets a value for the time to wait between each sync operation.
 Key: `DatabaseServerMessenger.TimeBetweenPruneOperations` Type: `string` (default: `00:01:00`)
 
 Sets a value for the time to wait between each prune operation.
+
+### Sync timeout
+
+Key: `DatabaseServerMessenger.SyncTimeout` Type: `string` (default: `00:01:00`)
+
+Sets the maximum time to wait for a single synchronization operation to complete. If the operation stalls, for example when blocked on a hung database connection, it is abandoned once this timeout elapses.
 
 ### Distributed Locking Mechanism
 
