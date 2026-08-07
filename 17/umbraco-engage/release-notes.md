@@ -22,13 +22,14 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 * Previewing A/B test variants now goes through Umbraco's native preview segment switcher, bringing it in line with how personalizations are previewed. Every test type can now be previewed, including the benchmark (control) variant, as can ContentType-scoped and MultiPage personalizations.
 * The legacy `?EngagePreviewVariantId` and applied-personalization preview query string parameters have been removed, along with the endpoint that generated preview URLs from them. Any bookmarked or hand-built preview URLs relying on these parameters will no longer work.
-* Preview is now correctly unavailable for Split URL tests, which cannot be previewed in place.
+* The `HasSegmentedPropertyContentTypes` endpoint has been removed. The backoffice now receives the Document Type key directly instead of asking the server about property variance.
+* The A/B test variant picker now handles Umbraco variants that no longer exist, such as deleted or recycled pages. Preview is disabled for a test with no page variants or Document Types.
 * Fixed the preview segment selector disappearing after switching culture and never reappearing.
 * Fixed variant edit links silently losing their segment after any call made without one.
 * Fixed the erroneous "Document Type does not support segmentation" warning shown when selecting an A/B test variant.
 * Fixed the control group suppressing a personalized variant's CSS/JS in preview, even though the control group is deliberately ignored while previewing.
 * The heatmap variant selector now drives the preview with a real Umbraco segment instead of legacy query string parameters.
-* The heatmap preview session is no longer ended prematurely when switching variant.
+* The heatmap preview session is correctly managed within the heatmap screen element lifecycle.
 
 **Serving and content**
 
@@ -44,10 +45,12 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 **Analytics and reporting**
 
-* Adds server-side paging to analytics report queries.
-* Fixed percentage-change values in the comparison view lining up with the wrong rows after sorting or paging.
 * Fixed segment reporting charts showing stale or empty data when switching segments, and the percentage toggle not redrawing.
 * Replaced a nested row scan with a hash lookup when merging analytics tables, resolving browser timeouts on large data sets.
+
+**Customer journeys and scoring**
+
+* **Behaviour change**: the default minimum deviation for persona and customer journey scoring changed from 0 to 1. The value was previously written by hand at nine call sites and disagreed between them. It is applied when reading a group with no configured value, so no migration runs. A step that leads by no points no longer wins.
 
 **Backoffice and platform**
 
