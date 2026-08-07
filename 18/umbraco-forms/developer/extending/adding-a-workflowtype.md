@@ -94,6 +94,24 @@ The `Form` references the form the record is from and `FormState` provides its s
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
+## Configuration validation
+
+The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection. The workflow type is then considered configured and available for use.
+
+The workflow type shows as unavailable in the backoffice when the method returns error messages. It remains locked until the reported issues are resolved. This is useful when your workflow depends on external API keys or other application configuration settings.
+
+```csharp
+public override IEnumerable<string> GetConfigurationErrors()
+{
+    if (string.IsNullOrWhiteSpace(_apiKey))
+    {
+        yield return "TestWorkflow requires an API key to be configured in appsettings.json.";
+    }
+}
+```
+
+The `IsConfigured` property is derived from this method. It returns `true` when no configuration errors are reported.
+
 ## Registering the workflow type
 
 To use the new workflow type, you will need to register it as part of application startup.
