@@ -16,6 +16,68 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.4.0](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 2026)
+
+**Previewing**
+
+* Previewing A/B test variants now goes through Umbraco's native preview segment switcher, bringing it in line with how personalizations are previewed. Every test type can now be previewed, including the benchmark (control) variant, as can ContentType-scoped and MultiPage personalizations.
+* The legacy `?EngagePreviewVariantId` and applied-personalization preview query string parameters have been removed, along with the endpoint that generated preview URLs from them. Any bookmarked or hand-built preview URLs relying on these parameters will no longer work.
+* The `HasSegmentedPropertyContentTypes` endpoint has been removed. The backoffice now receives the Document Type key directly instead of asking the server about property variance.
+* The A/B test variant picker now handles Umbraco variants that no longer exist, such as deleted or recycled pages. Preview is disabled for a test with no page variants or Document Types.
+* Fixed the preview segment selector disappearing after switching culture and never reappearing.
+* Fixed variant edit links silently losing their segment after any call made without one.
+* Fixed the erroneous "Document Type does not support segmentation" warning shown when selecting an A/B test variant.
+* Fixed the control group suppressing a personalized variant's CSS/JS in preview, even though the control group is deliberately ignored while previewing.
+* The heatmap variant selector now drives the preview with a real Umbraco segment instead of legacy query string parameters.
+* The heatmap preview session is correctly managed within the heatmap screen element lifecycle.
+
+**Serving and content**
+
+* Invariant A/B tests and personalizations are now applied on culture-specific pages. Culture matching previously tested for `null` rather than an empty string, so invariant configurations were skipped entirely. A `NormalizeInvariantCultureToNull` migration rewrites `culture = ''` to `NULL` across four configuration tables during upgrade.
+  * **Behaviour change**: invariant A/B tests and personalizations that were previously inert will start serving variants after upgrading.
+* Fixed the A/B variant segment placeholder only being created under the default culture. This prevented variants for other cultures being authored or served on multilingual sites.
+* ContentType-scoped personalizations now appear on the Personalization tab. An integer ContentTypeId was being compared to a GUID, so they were never listed.
+* Applied personalizations with an unresolvable node key no longer render a dead edit link or vanish from the Personalization tab.
+* Document references in personalizations are no longer cached for the lifetime of the process. A deleted page now stops showing a dead link without needing a restart.
+* The segment is now written to the analytics page variant table, so segmented traffic is attributed correctly.
+* Fixed the Pageview goal picker storing a generated row identity instead of the Umbraco document key. This caused picked pages to show as "Not found" on reopen and the goal to never convert.
+  * **Action required**: Pageview goals saved on 17.2.4, 17.3.0 or 17.3.1 hold unrecoverable values and must have their pages re-picked after upgrading.
+
+**Analytics and reporting**
+
+* Fixed segment reporting charts showing stale or empty data when switching segments, and the percentage toggle not redrawing.
+* Replaced a nested row scan with a hash lookup when merging analytics tables, resolving browser timeouts on large data sets.
+
+**Customer journeys and scoring**
+
+* **Behaviour change**: the default minimum deviation for persona and customer journey scoring changed from 0 to 1. The value was previously written by hand at nine call sites and disagreed between them. It is applied when reading a group with no configured value, so no migration runs. A step that leads by no points no longer wins.
+
+**Backoffice and platform**
+
+* Backoffice endpoints that touch the database are now gated when the Engage schema is unhealthy or migrations have failed. They return a `503 Service Unavailable` with a descriptive problem detail instead of throwing or returning nonsense. Configuration-only endpoints — including the main switch — stay reachable so Engage can be re-enabled.
+* Added validation highlighting properties whose variance does not align with their Document Type's variance. This is a common cause of A/B test variants failing to save or serve.
+* The create-segment endpoints are now GUID-driven, removing the integer-to-GUID mapping previously performed in the API.
+* Bumped the **Umbraco.Licenses** dependency to 17.0.4. License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
+
+#### [17.3.1](https://www.nuget.org/packages/Umbraco.Engage/17.3.1) (July 24th 2026)
+
+* Added the ability to mark a visitor as a bot from the **Suspicious Activity** overview. The activity-type filter is shown only when more than one option is available.
+* Fixed a 404 when editing a personalized variant on an invariant document, and resolved previewing on invariant documents.
+
+#### [17.3.0](https://www.nuget.org/packages/Umbraco.Engage/17.3.0) (July 24th 2026)
+
+* Downgrading a license no longer leaves functionality running. A/B testing and personalization are now gated on their respective licenses in the request pipeline, on both the rendered and headless page-view paths.
+* Custom event fields (category, action, label) are widened to 1000 characters. They were previously truncated to 50 characters silently.
+* Fixed a `401` response on the Engage tab after a period of inactivity. The Engage backoffice client is now routed through the CMS `configureClient` on Umbraco CMS 17.3 and above.
+* Segment options in the backoffice are now filtered to the A/B tests and personalizations configured for the document being edited or previewed. The CMS preview segment switcher is replaced with a document-scoped version.
+* Fixed the A/B test preview button doing nothing, and prevented a previewing visitor from falling into A/B test buckets.
+* The Engage Cockpit is now suppressed while Umbraco's own preview is active.
+* Editing a Single Page A/B test variant now opens the segment-scoped editor.
+* Fixed Split URL test page selection, matching test pages by node id rather than row key.
+* Fixed filter mutation and redraw flicker in the analytics UI.
+* The data retention card now reports only the cleanup tasks that ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
+* Fixed the start-page schema warning text not aligning with the warning message.
+
 #### [17.2.4](https://www.nuget.org/packages/Umbraco.Engage/17.2.4) (June 29th 2026)
 
 * Resolved preview issues for **multi-page A/B tests**, including stale previews caused by caching.
@@ -33,7 +95,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 #### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
 
 * Resolved a unique-key collision that occurred when adding a second personalization to the same page ([Issue #66](https://github.com/umbraco/Umbraco.Engage.Issues/issues/66)).
-* Resolved personalizations migrated from v13 disappearing from the Personalisations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
+* Resolved personalizations migrated from v13 disappearing from the Personalizations tab ([Issue #67](https://github.com/umbraco/Umbraco.Engage.Issues/issues/67)).
 * Fixed the same Key/document-key conflation in A/B Testing.
 
 #### [17.2.1](https://www.nuget.org/packages/Umbraco.Engage/17.2.1) (May 19th 2026)
@@ -69,10 +131,10 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Page variant segment nullability fixes.
 * New `DeliveryApi.DisableVisitorCookie` configuration (default: `false`) — when `true`, suppresses the visitor cookie on headless API requests, requiring clients to use the `External-Visitor-Id` header instead. See [configuration](developers/settings/configuration.md) for details.
 * Optimized annotation fetching using EntityService for improved performance.
-* Fixed partial UTM (Urchin Tracking Module) data missing from Analytics Campaigns view.
+* Fixed partial Urchin Tracking Module (UTM) data missing from Analytics Campaigns view.
 * Fixed campaign group key management.
-* Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and startpage data retention status.
-* Added support for soft-deleting segments with automatic background cleanup. Deleted segments are now gracefully removed from the system without affecting historical analytics data. An `IsDeleted` column has been added to the segments table — any direct SQL queries against segment tables must filter on this column to exclude soft-deleted records.
+* Added a data cleanup log viewer in the backoffice, providing insight into cleanup job history, per-table statistics, and start-page data retention status.
+* Added support for soft-deleting segments with automatic background cleanup. Deleted segments are now gracefully removed from the system without affecting historical analytics data. An `IsDeleted` column has been added to the segments table. Any direct SQL queries against segment tables must filter on this column to exclude soft-deleted records.
 * Added a Suspicious Activity overview in the backoffice, allowing you to identify and review visitors with unusual pageview patterns. Includes configurable pageview thresholds and the ability to provide feedback on flagged activity.
 * Enforced UTC date handling across the entire codebase, preventing timezone-related issues in analytics, A/B testing, and reporting.
 * Fixed analytics POST requests being broken by trailing-slash URL rewrite rules.
@@ -111,7 +173,7 @@ See the [Schema Alignment Guide](upgrading/schema-alignment-guide.md) for detail
 
 #### [17.0.4](https://www.nuget.org/packages/Umbraco.Engage/17.0.4) (January 8th 2026)
 
-* Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one, preventing conflicts with sites that have their own YouTube player initialization.
+* Resolved an issue where the YouTube IFrame Player was being overridden when already initialized on the page. The analytics script now reuses an existing YT Player instance instead of creating a new one. This prevents conflicts with sites that have their own YouTube player initialization.
 * Resolved Swagger schema generation issues when used in combination with the Umbraco.DeliveryApiExtensions addon.
 * Resolved cookie retention when using the headless `/trackpageview/server` endpoint ([Issue #42](https://github.com/umbraco/Umbraco.Engage.Issues/issues/42)).
 * Resolved broken Pageview Goals migration when updating from Engage 13.x to 17.x ([Issue #43](https://github.com/umbraco/Umbraco.Engage.Issues/issues/43)).

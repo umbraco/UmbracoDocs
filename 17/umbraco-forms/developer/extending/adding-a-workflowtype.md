@@ -2,7 +2,7 @@
 
 *This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
 
-Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and have the ability to change data and state.
+Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and has the ability to change data and state.
 
 ```csharp
 using System;
@@ -93,6 +93,24 @@ IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
 The `Form` references the form the record is from and `FormState` provides its state (submitted or approved).
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
+
+## Configuration validation
+
+The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection. The workflow type is then considered configured and available for use.
+
+The workflow type shows as unavailable in the backoffice when the method returns error messages. It remains locked until the reported issues are resolved. This is useful when your workflow depends on external API keys or other application configuration settings.
+
+```csharp
+public override IEnumerable<string> GetConfigurationErrors()
+{
+    if (string.IsNullOrWhiteSpace(_apiKey))
+    {
+        yield return "TestWorkflow requires an API key to be configured in appsettings.json.";
+    }
+}
+```
+
+The `IsConfigured` property is derived from this method. It returns `true` when no configuration errors are reported.
 
 ## Registering the workflow type
 
