@@ -240,7 +240,7 @@ A class extending `UmbUfmComponentBase` cannot call `consumeContext()` directly,
 
 {% code title="my-custom.component.js" %}
 
-```js
+```ts
 import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
 import './my-custom.element.js';
 
@@ -260,7 +260,7 @@ The inherited `getAttributes()` helper is called via `super.`, not `this.`. Insi
 
 {% code title="my-custom.element.js" %}
 
-```js
+```ts
 import { UMB_UFM_RENDER_CONTEXT } from '@umbraco-cms/backoffice/ufm';
 import { UmbUfmElementBase } from '@umbraco-cms/backoffice/ufm';
 import { html } from '@umbraco-cms/backoffice/external/lit';

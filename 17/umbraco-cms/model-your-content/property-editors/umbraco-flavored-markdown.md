@@ -206,7 +206,7 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
 
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
-```js
+```ts
 import { Tokens } from '@umbraco-cms/backoffice/external/marked';
 import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
 
@@ -253,12 +253,12 @@ The inherited `getAttributes()` helper is called via `super.`, not `this.`. Insi
 
 {% code title="my-custom.element.js" %}
 
-```js
+```ts
 import { UMB_UFM_RENDER_CONTEXT } from '@umbraco-cms/backoffice/ufm';
 import { UmbUfmElementBase } from '@umbraco-cms/backoffice/ufm';
 import { html } from '@umbraco-cms/backoffice/external/lit';
 
-class MyCustomComponentElement extends UmbUfmElementBase {
+export default class MyCustomComponentElement extends UmbUfmElementBase {
     static properties = { alias: { type: String } };
 
     constructor() {
