@@ -4,7 +4,7 @@ description: "Developer documentation on working with Forms record data."
 
 # Working With Record Data
 
-Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using razor.
+Umbraco Forms includes some helper methods that return records of a given Form, which can be used to output records in your templates using Razor.
 
 ## Available Methods
 
@@ -72,10 +72,13 @@ DateTime Updated
 Guid Form
 string IP
 int UmbracoPageId
+Guid? UmbracoPageKey
 string MemberKey
 Guid UniqueId
 Dictionary<Guid, RecordField> RecordFields
 ```
+
+`UmbracoPageKey` is the GUID identifier of the page a form was submitted from. It is the preferred reference over the integer `UmbracoPageId`.
 
 In order to access custom Form fields, these are available in the `RecordFields` property. Furthermore there exists an extension method named `ValueAsString` on `Record` in `Umbraco.Forms.Core.Extensions`, such that you can get the value as string given the alias of the field.
 

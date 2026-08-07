@@ -129,6 +129,7 @@ exceptions:
   - URL      # Uniform Resource Locator
   - USB      # Universal Serial Bus
   - UTC      # Coordinated Universal Time
+  - UUI      # Umbraco UI Library
   - UUID     # Universally Unique Identifier
   - UWP      # Universal Windows Platform
   - UX       # User Experience

@@ -151,6 +151,28 @@ public virtual string? MySetting { get; set; }
 
 - `DisplayOrder` - controls the order settings appear in relative to each other in the backoffice.
 
+## Setting property types
+
+Although settings are persisted as strings, the property on your provider class does not have to be typed as `string`. When the provider's settings are read, each stored value is converted to the property's declared type. This lets you use the most appropriate .NET type for a setting and removes the need to parse the value yourself.
+
+As well as `string`, the following types are supported, along with their nullable equivalents (such as `int?`):
+
+- Numeric types such as `int`, `long`, `decimal`, and `double`
+- `bool`
+- `Guid`
+- Enumerations
+
+For example, a numeric setting edited with the `Umb.PropertyEditorUi.Integer` property editor UI can be declared directly as an `int?`:
+
+```csharp
+[Setting("Maximum length", Description = "The maximum number of characters accepted.", View = "Umb.PropertyEditorUi.Integer", DisplayOrder = 40)]
+public virtual int? MaxLength { get; set; }
+```
+
+When a setting has no stored value, the property is set based on its type. A nullable property is set to `null`. A non-nullable value type is set to its default, such as `0` or `false`. A `string` property preserves the empty string. Values are converted using the invariant culture.
+
+Make sure the property type matches the values produced by the chosen `View`. If a stored value can't be converted to the property type, the conversion falls back to `null` or the type's default rather than throwing. A `string` property accepts any value, so it's always a safe choice.
+
 ## Default values
 
 Default values for settings can be defined in code using one of two approaches.
@@ -170,6 +192,8 @@ public virtual string? Min { get; set; }
 ```
 
 If both are provided, the `DefaultValue` attribute property takes precedence over the property initializer.
+
+The property initializer approach also works with the [typed setting properties](#setting-property-types) described above. The type's own default value (such as `0` or `false`) is treated as "no default". To make one of those values the default, use the `DefaultValue` attribute property instead.
 
 These code-based defaults provide an alternative to [configuring default values via `appsettings.json`](../configuration/README.md#settingscustomization). If a value is configured in `appsettings.json`, it takes precedence over any code-based default.
 
