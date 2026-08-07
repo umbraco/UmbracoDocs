@@ -206,7 +206,7 @@ If you wish to develop your own custom UFM component, you can use the `ufmCompon
 
 The corresponding JavaScript/TypeScript API would contain a method to render the custom label/markup.
 
-```js
+```ts
 import { Tokens } from '@umbraco-cms/backoffice/external/marked';
 import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
 
