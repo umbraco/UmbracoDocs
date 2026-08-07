@@ -240,7 +240,7 @@ A class extending `UmbUfmComponentBase` cannot call `consumeContext()` directly,
 
 {% code title="my-custom.component.js" %}
 
-```js
+```ts
 import { UmbUfmComponentBase } from '@umbraco-cms/backoffice/ufm';
 import './my-custom.element.js';
 
