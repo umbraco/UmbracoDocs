@@ -258,7 +258,7 @@ import { UMB_UFM_RENDER_CONTEXT } from '@umbraco-cms/backoffice/ufm';
 import { UmbUfmElementBase } from '@umbraco-cms/backoffice/ufm';
 import { html } from '@umbraco-cms/backoffice/external/lit';
 
-class MyCustomComponentElement extends UmbUfmElementBase {
+export default class MyCustomComponentElement extends UmbUfmElementBase {
     static properties = { alias: { type: String } };
 
     constructor() {
