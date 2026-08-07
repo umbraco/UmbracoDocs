@@ -147,10 +147,10 @@ Similarly, for brevity and backwards-compatibility, the `#` marker prefix can be
 
 {% hint style="info" %}
 Where does `umbLocalize` read from?
+
 `umbLocalize` resolves against Umbraco's backoffice UI localization system. See [Language Files & Localization](../../extend-your-project/server-side-extensions/language-files/README.md) for how this differs from server-side (.NET) localization.
 
 * To register your own custom term keys, register a [Localization extension](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/localization.md).
-
 * The rendered text depends on the current backoffice user's UI Culture (**Users** section), not the site's content languages.
 {% endhint %}
 
