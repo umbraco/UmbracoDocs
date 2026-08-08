@@ -27,7 +27,7 @@
     * [Multi-Site Deployments](mcp/base-mcp/hosted-mcp/multi-site.md)
     * [Security](mcp/base-mcp/hosted-mcp/security.md)
     * [Troubleshooting](mcp/base-mcp/hosted-mcp/troubleshooting.md)
-    * [Umbraco Setup](mcp/base-mcp/hosted-mcp/umbraco-setup.md)
+    * [URL-Based Routing](mcp/base-mcp/hosted-mcp/url-based-routing.md)
   * [MCP Server SDK](mcp/base-mcp/sdk/README.md)
     * [API Helpers](mcp/base-mcp/sdk/api-helpers.md)
     * [CLI Reference](mcp/base-mcp/sdk/cli.md)
@@ -53,6 +53,9 @@
   * [Cursor](mcp/local-mcp-setup/cursor.md)
   * [GitHub Copilot](mcp/local-mcp-setup/github-copilot.md)
   * [OpenAI Codex Setup](mcp/local-mcp-setup/openai-codex.md)
+* [Hosted MCP Setup](mcp/hosted-mcp-setup/README.md)
+  * [OAuth Client Registration](mcp/hosted-mcp-setup/oauth-composer.md)
+  * [External Login Short Circuit](mcp/hosted-mcp-setup/external-login-short-circuit.md)
 
 ## Agent Skills
 

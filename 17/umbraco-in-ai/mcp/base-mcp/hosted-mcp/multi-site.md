@@ -88,7 +88,7 @@ RedirectUris =
 },
 ```
 
-See [Umbraco Setup](umbraco-setup.md) for the full Composer code.
+See [OAuth Client Registration](../../hosted-mcp-setup/oauth-composer.md) for the full Composer code.
 
 ### 3. Set Worker Secrets
 
