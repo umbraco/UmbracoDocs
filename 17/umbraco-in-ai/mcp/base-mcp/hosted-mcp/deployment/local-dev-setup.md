@@ -7,7 +7,7 @@ description: Step-by-step guide to running the Hosted MCP server locally with wr
 This guide walks you through running the hosted MCP server locally with `wrangler dev` and a local Umbraco instance.
 
 {% hint style="info" %}
-The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
+The [`create-umbraco-mcp-server`](../../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
 {% endhint %}
 
 ## Prerequisites
@@ -39,7 +39,7 @@ Create a `.dev.vars` file in your Worker project root:
 ```
 UMBRACO_BASE_URL=https://localhost:44391
 UMBRACO_SERVER_URL=http://localhost:56472
-UMBRACO_OAUTH_CLIENT_ID=umbraco-back-office-mcp
+UMBRACO_OAUTH_CLIENT_ID=umbraco-back-office-hosted-mcp
 COOKIE_ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 ```
 
@@ -61,8 +61,8 @@ Ensure your `wrangler.toml` has the standard bindings:
 ```toml
 name = "umbraco-cms-mcp"
 main = "src/worker.ts"
-compatibility_date = "2025-02-24"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat_v2"]
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
