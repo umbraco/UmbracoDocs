@@ -99,6 +99,8 @@ The CDN and Caching section lets you manage CDN Caching and Optimization setting
 * Set specific caching settings per hostname if different configurations are required for certain hostnames.
 * Purge Cache for individual hostnames or all of them.
 
+These settings apply to custom hostnames only. The default `*.{region}.umbraco.io` hostnames of the project cannot be cached in the CDN. For more information, see [CDN Caching and Optimizations](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md#custom-hostname-requirement).
+
 ![CDN & Caching](images/cdn-caching.png)
 
 ### [Hostnames](../../../go-live/manage-hostnames/)
