@@ -199,7 +199,7 @@ To delete the anchor:
 1. Select the anchor icon.
 2. Press your **Delete** key.
 
-<img src="../../../.gitbook/assets/Delete-an-anchor-v11.png" alt="Deleting an Anchor" data-size="original">
+<img src="../../../.gitbook/assets/Delete-an-anchor.png" alt="Deleting an Anchor" data-size="original">
 
 **Linking to an Anchor**
 
