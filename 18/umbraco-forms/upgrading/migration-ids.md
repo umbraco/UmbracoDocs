@@ -1,0 +1,59 @@
+---
+hidden: true
+---
+
+# Migration IDs
+
+A unique **migration ID** is generated for each Umbraco Forms upgrade that requires a migration. The migration IDs are all listed in this article.
+
+| Migration ID                         | Introduced In Version | Description                                                                        |
+|--------------------------------------|-----------------------|------------------------------------------------------------------------------------|
+| 7c7bc5ee-4c5b-42dc-9576-5ce6dfbddb8e | 10.0.0                | Installs Umbraco Forms.                                                            |
+| 9f7e6fe6-bbd5-4b2b-8820-e9e0e36cc74c | 10.1.0                | Adds Culture column to Records table.                                              |
+| 1a8f0d04-9396-40a2-9423-39fc9ae3828f | 10.1.0                | Adds a Record Workflow Audit table.                                                |
+| 6e692c5d-c670-4c34-af17-28d8dbf0dcd2 | 10.1.0                | Adds an ExecutionStage column to the Record Workflow Audit table.                  |
+| 5d84fee1-388c-4e5f-b98c-1e66947278f1 | 10.1.0                | No operation migration.                                                            |
+| 22df962a-ae26-4bdd-b8fd-0513a9c636bf | 10.5.2/12.1.2         | Ensures the presence of an index on the FolderKey column in the Forms table.       |
+| c3e657f6-3ae7-4ee9-b442-01702a41de9a | 12.2.0/13.0.0         | Adds a relation between content and forms.                                         |
+| e0290a40-91c9-4acb-a7ca-d312037078f2 | 12.2.0/13.0.0         | Adds a NodeId column to Forms table                                                |
+| 6f0eb771-6690-4b53-870a-f7dbb2785cac | 12.2.0/13.0.0         | Populates the NodeId column in the Forms table.                                    |
+| 44949e12-e4ef-42c0-949b-67286b946fe0 | 12.2.0/13.0.0         | No operation migration.                                                            |
+| 773ae769-00b7-4429-b7d5-de0fda0b4217 | 12.2.1/13.0.1         | Ensures the consistent key is used for the relation type between content and forms.|
+| 55d53d2e-f795-42fb-9e77-8edfc6eed4aa | 13.2.0                | Adds an AdditionalData column to the Records table.                                |
+| 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables.                      |
+| 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables.                          |
+| c74223ed-a554-4a14-a1f0-0477dce01ad6 | 14.0.0                | Updates the form picker property editor UI alias.                                  |
+| a5ffa9a7-ca77-4a7c-a1e4-f32e25cde758 | 14.1.0/15.0.0         | Same as 13.2.0 to allow upgrading 14.1 to 15.0.                                    |
+| db5ef50d-51d0-4f93-aae9-bd3df53a3bb1 | 14.2.0/15.0.0         | Same as 13.3.0 to allow upgrading 14.2 to 15.0.                                    |
+| 5b74ad79-3faa-4c08-bfba-472a860704e5 | 13.4.0/15.1.0/16.0.0  | Same as 13.4.0 to allow upgrading 13.4/15.1 to 16.0.                               |
+| 8f3c2d7e-6a1b-4e9f-9c8a-2d4e5f6a7b8c | 16.4.0                | Adds FieldPreValueSourceTypeId column to field pre-values.                         |
+| 0f296610-47f5-415d-8042-f4b8f2a51a4a | 16.4.0                | Migrates node pre-values to dynamic root.                                          |
+| d3c1e2f4-5b6a-4c7d-8e9f-0a1b2c3d4e5f | 16.4.0                | Updates the form picker property editor UI alias.                                  |
+| 59576376-b235-47a1-b495-1f795316ee04 | 17.0.0                | Migrates system dates to UTC.                                                      |
+| fb78edef-76c9-4cac-ab23-4ed1cec207b9 | 17.4.1                | Adds FieldPreValueSourceTypeId column; corrective step for 17.0.0-17.0.3 upgrades. |
+| 5e608c91-e910-42a5-8302-928b580ffd54 | 17.0.0                | Migrates node pre-values to dynamic root.                                          |
+| 67c4820d-d802-44dd-b146-5a1ba4c2b5f8 | 17.1.0                | Adds FieldPreValueSourceTypeId column to field pre-values.                         |
+| b375063a-8fcb-4096-b6e2-ff32ff322677 | 17.1.0                | Migrates node pre-values to dynamic root.                                          |
+| 3f4e5d6c-7b8a-4c9d-0e1f-2a3b4c5d6e7f | 17.1.0                | Updates the form picker property editor UI alias.                                  |
+| 6a094cba-aa2c-4254-aaff-ced3d09eccf3 | 17.3.0                | Adds pre-aggregated analytics tables.                                              |
+| a7b3c9d2-4e5f-6a1b-8c7d-9e0f1a2b3c4d | 17.3.0                | Adds an index on the Record table for form and created date.                       |
+| c3d4e5f6-7a8b-4c9d-0e1f-2a3b4c5d6e7f | 17.3.0                | Adds an index on the Workflow Audit table for executed date and status.            |
+| b8e2f4a1-3c5d-4e6f-9a7b-1d2e3f4a5b6c | 17.3.0                | Adds an index on UniqueId to the UFRecords table for analytics performance.        |
+| d4f5e6a7-8b9c-4d0e-1f2a-3b4c5d6e7f8a | 17.3.0                | Replaces the index on UFRecords with a covering index that includes UmbracoPageId. |
+| 33c9d3f4-7d41-46f7-a44d-5ed32f26448d | 17.4.0                | Rebuild the Examine records index so that existing records gain sortable fields.    |
+| 16f1cd91-d614-4e0b-844f-0a2434441d34 | 17.5.0                | Adds the UmbracoPageKey column to the Records table.                               |
+| b7d4e1a9-3c62-4f08-9a15-2e6d8f04c3b1 | 17.5.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
+| 3a03c625-3ddc-4eda-9bf3-cc88f112e9a9 | 17.5.0                | Rebuilds the Examine records index so records gain the page key field.             |
+| a1e7c9d3-5b42-4f18-9c6a-7e2d1751b0fa | 17.5.0                | Repairs forms with foreign-key fields pointing at the default provider sentinel.   |
+| 998ebd1d-1fef-431e-83b9-18db06eb7231 | 17.5.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
+| 9a013edc-579b-46b5-a85d-d9288e2e074e | 17.5.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
+| 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
+| 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
+| 91ef4e6d-3fbd-40a2-b42c-77dc5b2791c4 | 18.1.0                | Adds the UmbracoPageKey column to the Records table.                               |
+| a4cc5acc-ee57-40e6-a0aa-73763e7ac444 | 18.1.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
+| 51948cde-a4fc-4889-b855-7a08ce5cbd6e | 18.1.0                | Rebuilds the Examine records index so records gain the page key field.             |
+| 5443d5b8-c237-4972-9d9e-6ae5adeac9cb | 18.1.0                | Repairs forms with foreign-key fields pointing at the default provider sentinel.   |
+| 35b3973a-5052-42d9-b6ea-ffccfee28886 | 18.1.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
+| bedc287a-42ae-4be0-8d11-6939ff61b7c1 | 18.1.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
+| 29a8d464-40e3-4fca-bf5f-85b3a5bc63d0 | 18.1.0                | Adds indexes on the Records table for member entry counts and analytics.           |
+| 0f7a3c97-5367-4da7-aa13-44290ecd3bce | 18.1.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|

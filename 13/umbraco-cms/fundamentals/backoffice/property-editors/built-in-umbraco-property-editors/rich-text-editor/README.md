@@ -16,7 +16,6 @@ If your site is upgraded from an older version, follow the migration guides belo
 * [Migrate from version 4 to version 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/)
 * [Migrate from version 5 to version 6](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/)
 * [Migrate from version 6 to version 7](https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/)
-
 {% endhint %}
 
 ## [Configuration options](configuration.md)
@@ -37,11 +36,11 @@ Extend the functionality of the Rich Text Editor with plugins.
 
 ## Data Type Definition Example
 
-![Rich Text Editor - Data Type](../../built-in-property-editors/rich-text-editor/images/rte-datatype-v10.png)
+![Rich Text Editor - Data Type](../../../../../.gitbook/assets/rte-datatype-v10.png)
 
 ## Content Example
 
-![Rich Text Editor - Content](../../built-in-property-editors/rich-text-editor/images/rte-content-11.png)
+![Rich Text Editor - Content](../../../../../.gitbook/assets/rte-content-11.png)
 
 ## MVC View Example
 

@@ -35,11 +35,9 @@ The value for error pages can be:
 * A content item's integer ID (example: 1234)
 
 {% hint style="warning" %}
-
-The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../implementation/custom-routing/README.md#last-chance-icontentfinder).
+The current implementation of XPath is suboptimal, marked as obsolete, and scheduled for removal in Umbraco 14. The replacement for ContentXPath is [IContentLastChanceFinder](../implementation/custom-routing/#last-chance-icontentfinder).
 
 If you have implemented XPath in previous versions and upgraded to v13 you might encounter issues with XPath. This article will be updated when we have more details on how the article should be updated.
-
 {% endhint %}
 
 That is where the value you grabbed earlier comes in. Fill it out like so:
@@ -121,7 +119,7 @@ Sometimes you might experience issues with booting up your Umbraco project. This
 
 When there is an error during boot you will be presented with a generic error page.
 
-![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](images/BootFailedGeneric.png)
+![Boot Failed. Umbraco failed to boot, if you are the owner of the website please see the log file for more details.](<../.gitbook/assets/BootFailedGeneric (1).png>)
 
 In order to customize this error page it is recommend that you create a **new HTML file** using the name `BootFailed.html`. The file must be in a folder `config/errors` in the `wwwroot` on the Physical file system.
 
@@ -147,7 +145,7 @@ The following steps guides you through setting up a page for internal server err
 
 * Create a `~/controllers` folder in your Umbraco web project.
 * Create a file in this folder, called `ErrorController.cs`.
-* Add the following code to the file:
+*   Add the following code to the file:
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -176,7 +174,7 @@ The following steps guides you through setting up a page for internal server err
 **Namespace** replace \[YOUR\_PROJECT\_NAME] by the actual project name. In Visual Studio you can use _Sync Namespaces_ from the project context menu (in _Solution Explorer_ View).
 {% endhint %}
 
-* Add an entry in `appSettings.json` for the new route "Error" like so
+*   Add an entry in `appSettings.json` for the new route "Error" like so
 
     ```json
     "Umbraco": {
@@ -185,7 +183,6 @@ The following steps guides you through setting up a page for internal server err
         "ReservedPaths": "~/app_plugins/,~/install/,~/mini-profiler-resources/,~/umbraco/,~/error/",
         ...
     ```
-
 * Create the redirect pages from 1. step as regular content nodes in the backoffice. They should neither appear in navigation menus or sitemaps. In this example you would create under root node `Statuscodes` with a subnode `500`.
 * Update `Program.cs`
 
@@ -204,7 +201,7 @@ else
 ```
 
 {% hint style="info" %}
-To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.&#x20;
+To **test this locally**, in Visual Studio replace `app.UseDeveloperExceptionPage();` by `app.UseExceptionHandler("/error");`. Otherwise you will get the default error page with stack trace etc.
 {% endhint %}
 
 #### Trigger a 500 error
@@ -217,7 +214,7 @@ While upgrading Umbraco in the past it would redirect visitors of the website to
 
 To prevent this we have added a `maintenance page` that will be shown when visiting the website while Umbraco is in Upgrade runtime mode.
 
-![Maintenance page](images/maintenancePage.png)
+![Maintenance page](<../.gitbook/assets/maintenancePage (1).png>)
 
 It is possible to disable the maintenance page as most upgrades can be done without the website having to restart or go down.
 

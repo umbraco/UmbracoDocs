@@ -54,7 +54,7 @@ The followed method is called on the "PublishedContentRequest.PrepareRequest()" 
 
 #### HandleWildcardDomains()
 
-![](images/culture-and-hostnames.png)
+![](<../../../.gitbook/assets/culture-and-hostnames (2).png>)
 
 * Finds the deepest wildcard domain between
 * Domain root (or top)

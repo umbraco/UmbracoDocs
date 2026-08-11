@@ -1,35 +1,33 @@
-# Managing Team Members and Permissions
+# Manage Team Members and Permissions
 
-This article is about team members that are added via the **Invite User** button in the Umbraco Cloud Portal. If you are looking for more information about Users in the Backoffice, see [Users](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users). Users added through the backoffice do not have access to the Umbraco Cloud Portal.
+This article covers team members added to your project via the **Invite User** button in the **Edit Team** page. If you are looking for more information about Users in the Backoffice, see the [Users](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users) article. Users added through the backoffice do not have access to the Umbraco Cloud Portal.
 
-![Invite User](images/Invite-User-1.gif)
+Team members are automatically added as users in the Backoffice of all environments for the project. These users can clone the project locally and log in using the same credentials they use for Umbraco Cloud.
 
-Team members are users that you add to your project via the Invite User button in the Umbraco Cloud Portal. They are automatically added as users in the Backoffice of all environments for the project. These users can clone down the project locally and log in using the same credentials they use for Umbraco Cloud.
-
-![Add team member](images/add-team-member-v9-1.png)
+![Add team member](<../../../.gitbook/assets/invite_user (1).png>)
 
 When adding a user, the default permission is _Read_ for each environment. You can assign backoffice user groups to the user for each environment.
 
 ## Team Member User Permissions
 
-User Permissions for each environment can be set in the **Edit Team** page available from the **Settings** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the left-most mainline environment and Read access on the Live environment.
+User Permissions for each environment can be set in the **Edit Team** page from the **Overview** dropdown. User Permissions can be set per environment. For example, a user can have Write access on the left-most mainline environment and Read access on the Live environment.
 
-<figure><img src="images/Edit-Team.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/user-permission.png" alt=""><figcaption><p>Team Member User Permission</p></figcaption></figure>
 
 * **Admin**: Has access to everything on a project. An admin can delete a project and edit the team. An admin can deploy changes between environments in the Project Portal and has access to git, as well as the Power Tools Kudu.
-* **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffice. They are not able to deploy or change anything on the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.
+* **Read**: A team member with Read permissions can only view the project in the portal as well as the backoffice. They are unable to deploy or make changes to the project itself. They can clone down the project, but cannot push changes they have made locally. By default, they are added as an admin in the backoffice so they can make changes in the backoffice. If you want to change this, see Team Member Permissions in the Umbraco Backoffice below.
 * **Write**: A team member with Write permissions can do everything on a project except delete it and edit the team. A user with Write permissions can deploy changes between environments through the portal. They have access to the git repositories and can push local changes to the environment.
-* **No Access**: A team member with No access permissions cannot restart the environment, deploy changes between environments, check error logs or log files, or access Kudo in the Project Portal. They can view the project in the portal and access the backoffice.
+* **No Access**: A team member with no access permissions cannot restart the environment, deploy changes between environments, check error logs or log files, or access Kudo in the Project Portal. They can view the project in the portal and access the backoffice.
 
 ## Backoffice User Groups for Team Members
 
 You can view the user group memberships of the project’s backoffice users. Currently, you can manage the backoffice user groups of a user through the Umbraco backoffice. A backoffice user is only created once the user logs into the backoffice of the project for the first time.
 
-![Backoffice User Groups](images/Umbraco-Backoffice-User-Groups.png)
+![Backoffice User Groups](<../../../.gitbook/assets/Umbraco-Backoffice-User-Groups (1).png>)
 
 ## Team Members Pending Invitation
 
-Find invitation details in the **Member(s) who still needs to accept the project invitation** section of the **Edit Team** page. You have the following options:
+Find invitation details in the **Member(s) who still need to accept the project invitation** section of the **Edit Team** page. You have the following options:
 
 * View the team member's name and email.
 * See the expiration date of the invitation.
@@ -38,7 +36,15 @@ Find invitation details in the **Member(s) who still needs to accept the project
 * Resend the invitation.
 * Delete the invitation.
 
-![Team Members Pending Invitation](images/Pending-Project-Invites.png)
+![Team Members Pending Invitation](<../../../.gitbook/assets/Pending-Project-Invites (1).png>)
+
+## Removing Team Members
+
+When you remove a team member from a project, Umbraco Cloud disables and anonymizes the corresponding backoffice user across all environments. The name and email are replaced with anonymized values, and the user can no longer sign in.
+
+Audit history, content history, and any other records that reference the removed user are preserved. The history points to the anonymized user, so the audit trail stays intact without retaining personal data.
+
+Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for clearing personal data from a project for users who have signed in.
 
 ## [Technical Contacts](technical-contact.md)
 

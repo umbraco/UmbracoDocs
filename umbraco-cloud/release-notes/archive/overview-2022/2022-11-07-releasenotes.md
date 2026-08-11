@@ -10,13 +10,13 @@ Cloud highlights November 2022
 
 When "Dedicated resources" was launched in Umbraco Cloud, it was initially only for Professional plans. Since October, it has also been possible to add a dedicated option for **Starter** and **Standard** plans with the benefits included therein.
 
-![DedicatedStandard](../../images/DedicatedStarter.png)
+![DedicatedStandard](../../../.gitbook/assets/DedicatedStarter.png)
 
 ## Projects Dashboard Quick links
 
 When hovering an environment in the Projects Dashboard you will see a link to the **backoffice** and **front page** of that Umbraco Cloud Project. By pressing one of these links you are navigated to the specific page.
 
-![ProjectsDashboardHoverEnvironment](../../images/ProjectsDashboardHoverEnvironment.gif)
+![ProjectsDashboardHoverEnvironment](../../../.gitbook/assets/ProjectsDashboardHoverEnvironment.gif)
 
 {% hint style="info" %}
 Accessibility is a central consideration in realizing the Projects Dashboard, whereby it is possible to navigate between projects and links using only the keyboard.

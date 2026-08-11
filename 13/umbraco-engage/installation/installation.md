@@ -97,7 +97,7 @@ To capture events that happen on the clientside (frontend) of your website, you 
 ```
 
 {% hint style="info" %}
-The following client-side tracking script loading types are currently not supported: "async" or "defer".
+Support for the "async" and "defer" script loading types was added in Umbraco Engage 13.6.0.
 {% endhint %}
 
 ### Cockpit
@@ -129,7 +129,7 @@ Here are some optional extras you can do to improve your experience with Umbraco
 ```
 
 {% hint style="info" %}
-The following Google Analytics bridging or blocker script loading types are currently not supported: "async" or "defer".
+Support for the "async" and "defer" script loading types was added in Umbraco Engage 13.6.0.
 {% endhint %}
 
 ### Cookie consent

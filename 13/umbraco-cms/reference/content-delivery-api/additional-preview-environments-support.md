@@ -1,6 +1,7 @@
 ---
 description: >-
-  Configure custom preview URLs to provide editors with seamless access to external preview environments for the Content Delivery API data.
+  Configure custom preview URLs to provide editors with seamless access to
+  external preview environments for the Content Delivery API data.
 ---
 
 # Additional preview environments support
@@ -15,12 +16,11 @@ To get familiar with the preview functionality in the Delivery API, refer to the
 The support for configuring additional preview environments in the Delivery API was introduced in version 12.3.
 {% endhint %}
 
-
 ## Configuring custom preview URLs
 
 If your client libraries feature preview functionality, you can enable editors in Umbraco to navigate directly to their preferred preview environments. To achieve this, start by generating the necessary URLs for each environment you wish to allow for preview. These URLs need to trigger preview mode within your application, which will fetch and present draft content from the Delivery API.
 
-Once you have these preview URLs, you will need to register them through code in Umbraco. 
+Once you have these preview URLs, you will need to register them through code in Umbraco.
 
 Additionally, there are plans to simplify this process further. In an upcoming major version of Umbraco, a UI will be introduced, allowing you to configure these custom preview URLs directly from the backoffice.
 
@@ -100,9 +100,8 @@ public class AdditionalPreviewUrlsNotificationHandlerComposer : IComposer
 
 Now that we have set up additional preview URLs for the Delivery API data, you can access them from the Content section. When you open a content node, you will see new preview options for the external environments you have configured. Next to the regular "Save and preview" button, there is an arrow for the multiple URLs that have been added. Click it to see all the available preview URLs, as shown below:
 
-![Preview invariant content with Delivery API](images/preview-invariant-content.png)
+![Preview invariant content with Delivery API](../../.gitbook/assets/preview-invariant-content.png)
 
 Below is an example with variants, showcasing both the English and Danish versions of a content node.
 
-![Preview English variant with Delivery API](images/preview-variant-content-en.png)
-![Preview Danish variant with Delivery API](images/preview-variant-content-da.png)
+![Preview English variant with Delivery API](../../.gitbook/assets/preview-variant-content-en.png) ![Preview Danish variant with Delivery API](../../.gitbook/assets/preview-variant-content-da.png)

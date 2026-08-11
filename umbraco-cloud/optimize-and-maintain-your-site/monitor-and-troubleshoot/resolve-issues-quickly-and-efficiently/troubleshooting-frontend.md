@@ -2,7 +2,7 @@
 
 An error in the Frontend could look like this:
 
-<figure><img src="../../../../.gitbook/assets/frontend-error-500.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/frontend-error-500.png" alt=""><figcaption></figcaption></figure>
 
 The error above is a 500 error meaning that the server encountered an unexpected condition. This could be a code error in a Template file.
 

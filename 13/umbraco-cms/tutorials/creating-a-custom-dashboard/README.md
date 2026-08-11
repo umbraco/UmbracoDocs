@@ -8,7 +8,7 @@ description: A guide that shows you how you can create a custom dashboard in Umb
 
 A Dashboard is a tab on the right-hand side of a section eg. the Getting Started dashboard in the Content section:
 
-![Welcome dashboard](../images/whatisadashboard-v10.jpg)
+![Welcome dashboard](../../.gitbook/assets/whatisadashboard-v10.jpg)
 
 ### Why provide a Custom Dashboard for editors?
 
@@ -102,7 +102,7 @@ The `App_Plugins` version of the `Lang` directory is case-sensitive on Linux sys
 
 This is how our dashboard looks so far:
 
-<figure><img src="../images/welcomemessage-v8.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/welcomemessage-v8.PNG" alt=""><figcaption></figcaption></figure>
 
 We can apply the same workflow to elements inside the dashboard, not only the name/alias.
 
@@ -160,7 +160,7 @@ The XML for that specific key will look like this:
 
 The area and key aliases are combined and an underscore is added in between.
 
-![Dashboard with translation keys](../images/dashboard-untranslated-v10.png)
+![Dashboard with translation keys](../../.gitbook/assets/dashboard-untranslated-v10.png)
 
 {% hint style="info" %}
 If you don't see the brackets disappearing - you may need to restart the website.
@@ -190,9 +190,9 @@ To test it out, you can add another language XML file, like `da.xml` for the Dan
 
 The backoffice language can be changed in the Users section if you wish to test out the translations.
 
-![Changing backoffice language](../images/changing-languages-v10.png)
+![Changing backoffice language](../../.gitbook/assets/changing-languages-v10.png)
 
-![Dashboard in danish](../images/dashboard-translated-v10.png)
+![Dashboard in danish](../../.gitbook/assets/dashboard-translated-v10.png)
 
 ## Step 3: Adding style
 
@@ -240,7 +240,7 @@ Inside the package.manifest we add a bit of JSON to describe the dashboard's req
 
 The stylesheet will be loaded and applied to our dashboard. Add images and HTML markup as required.
 
-![Custom Dashboard Welcome Message With styles...](../images/welcomemessagewithstyles-v10.png)
+![Custom Dashboard Welcome Message With styles...](../../.gitbook/assets/welcomemessagewithstyles-v10.png)
 
 {% hint style="info" %}
 One caveat is that the `package.manifest` file is loaded into memory when Umbraco starts up. If you are adding a new stylesheet or JavaScript file you will need to start and stop your application for it to be loaded.
@@ -357,7 +357,7 @@ Notice you can use `console.log()` to write out to the browser console window wh
 ```
 {% endcode %}
 
-![Custom Dashboard Welcome Message With Current User's Name](../images/welcomemessagepersonalised-v10.png)
+![Custom Dashboard Welcome Message With Current User's Name](<../../.gitbook/assets/welcomemessagepersonalised-v10 (1).png>)
 
 ### Add a list of edited articles
 
@@ -561,7 +561,7 @@ Putting this together it will look like this:
 
 We now have a list of recently saved content and media on our Custom Dashboard:
 
-![We know what you edited last week...](../images/WeKnowWhatYouEditedLastWeek-v10.png)
+![We know what you edited last week...](../../.gitbook/assets/WeKnowWhatYouEditedLastWeek-v10.png)
 
 {% hint style="info" %}
 The URL `/umbraco/#/content/content/edit/1234` is the path to open up a particular entity (with id 1234) ready for editing.
@@ -590,7 +590,7 @@ To do this we add the following code to our view:
 
 `1065` is the `ID` of our blog section and `blogPost` is the alias of the type of document we want to create.
 
-![Handy shortcut buttons](../images/CreateNewBlogPost-v10.png)
+![Handy shortcut buttons](<../../.gitbook/assets/CreateNewBlogPost-v10 (1).png>)
 
 At this point we are done with the tutorial, your files should contain this:
 
@@ -718,7 +718,7 @@ At this point we are done with the tutorial, your files should contain this:
 
 </details>
 
-![Custom Dashboard extended with UI Library Card](<../images/extendedWithUiLibrary (1).png>)
+![Custom Dashboard extended with UI Library Card](../../.gitbook/assets/extendedWithUiLibrary.png)
 
 ## **Extending with Custom External Data**
 

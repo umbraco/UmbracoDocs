@@ -49,3 +49,27 @@ While there are no per-site limits for TCP connections, the total available TCP 
 These quotas are hard limits and cannot be exceeded for more than a 5-minute interval. If an application surpasses the CPU or memory limits defined by the plan quota, the app service hosting the application will automatically restart. If multiple restarts occur, we will relocate the application to a dedicated instance to prevent negative impacts on other tenants within the shared pool.
 
 For more details on pricing, plans, and features, visit the [Umbraco Cloud Pricing](https://umbraco.com/products/umbraco-cloud/pricing/) page.
+
+## Environment limits per plan
+
+Each Umbraco Cloud plan supports a specific number of included environments. You can add extra environments for an additional cost on Umbraco Cloud, but Heartcore does not support extra environments.
+
+### Umbraco Cloud environment limits
+
+| Plan | Included Environments | Maximum Environments |
+|------|--------|----------|
+| Starter | 1 | 2 |
+| Standard | 2 | 3 |
+| Professional | 3 | 4 |
+| Enterprise | 3 | 4 |
+
+### Heartcore environment limits
+
+| Plan | Included Environments |
+|------|----------|
+| Starter | 1 |
+| Standard | 2 |
+| Professional | 3 |
+| Enterprise | 3 |
+
+If your project has more environments than the target plan allows, downgrades are blocked until you remove environments.

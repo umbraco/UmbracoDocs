@@ -27,7 +27,6 @@ TinyMCE also has a number of [premium plugins](https://www.tiny.cloud/docs/tinym
 To enable plugins in the rich text editor, you need to add it to the `Plugins` array in the [configuration](../../../../../reference/configuration/richtexteditorsettings.md) of the rich text editor.
 
 {% code title="appsettings.json" %}
-
 ```json
 {
   "Umbraco": {
@@ -42,14 +41,9 @@ To enable plugins in the rich text editor, you need to add it to the `Plugins` a
   }
 }
 ```
-
 {% endcode %}
 
 The example above shows how to add the open-source [Word Count Plugin](https://www.tiny.cloud/docs/tinymce/6/wordcount/) to the rich text editor. The plugin is added to the `Plugins` array in the configuration. The plugin itself will be shown in the statusbar of the rich text editor, so the `statusbar` option is also added to the `CustomConfig` object.
-
-{% embed url="<https://www.youtube.com/watch?v=BhVeQL0Vq40>" %}
-Rich Text Editor: Adding Plugins
-{% endembed %}
 
 ## Adding a premium plugin
 
@@ -90,11 +84,10 @@ Load a custom plugin that gives you the ability to interact with the global `tin
 
 Here we are loading a custom plugin called `myrteplugin` and adding a button to the editor called `myrtebutton`. When the button is clicked, it will insert the text `Hello World!` into the editor.
 
-<figure><img src="images/my-rte-button-editor.jpg" alt="Rich text editor showing a custom button"><figcaption><p>The text "Hello World!" shows up after clicking the button</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/my-rte-button-editor.jpg" alt="Rich text editor showing a custom button"><figcaption><p>The text "Hello World!" shows up after clicking the button</p></figcaption></figure>
 
 {% tabs %}
 {% tab title="appsettings.json" %}
-
 ```json
   "Umbraco": {
     "CMS": {
@@ -113,11 +106,9 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
   }
 ```
-
 {% endtab %}
 
 {% tab title="App_Plugins/MyRtePlugin/plugin.js" %}
-
 ```js
 'use strict'
 ;(function () {
@@ -148,13 +139,12 @@ Here we are loading a custom plugin called `myrteplugin` and adding a button to 
     }
 })();
 ```
-
 {% endtab %}
 {% endtabs %}
 
 The button must be added to the toolbar in the rich text editor configuration.
 
-<figure><img src="images/my-rte-button.jpg" alt="Rich text editor configuration showing available options"><figcaption><p>Enable the button in the rich text editor configuration</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/my-rte-button.jpg" alt="Rich text editor configuration showing available options"><figcaption><p>Enable the button in the rich text editor configuration</p></figcaption></figure>
 
 You can go to any Document Type that uses the rich text editor and click the button to insert the text `Hello World!` after.
 

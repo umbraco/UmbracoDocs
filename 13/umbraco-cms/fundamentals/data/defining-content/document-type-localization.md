@@ -22,7 +22,7 @@ Everything in this article also applies to defining [Media Types](../creating-me
 
 ## Creating localizations
 
-User defined language files are created in `/config/lang` and must be named `{language}.user.xml`. For example:  `en-us.user.xml`.
+User defined language files are created in `/config/lang` and must be named `{language}.user.xml`. For example: `en-us.user.xml`.
 
 There are no specific requirements as to how localizations should be structured for use in Document Types. The following localizations have been used for the samples in this article:
 
@@ -74,23 +74,23 @@ The localizations are applied by using the syntax `#{area alias}_{key alias}`.
   * Enable to `Set this field as mandatory`.
   * Under validation add `#properties_title-message`.
 
-![Applying localization to a property](../images/localization-document-type-editor-validation.png)
+![Applying localization to a property](../../../.gitbook/assets/localization-document-type-editor-validation.png)
 
 * Add a **property** called `#properties_subTitle` with **alias** `subTitle`.
   * Set description to `#properties_subTitle-desc`.
   * Use a `TextString` editor.
 * Enable to `Allow as root` in the **Permissions** tab.
 
-![Applying localization to a Document Type](../images/localization-document-type-editor.png)
+![Applying localization to a Document Type](../../../.gitbook/assets/localization-document-type-editor.png)
 
-3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.&#x20;
+3. When creating and editing the content, you will see that the backoffice now uses the configured localizations.
 
-![Localized document creation dialog](../images/localization-document-editor-create.png)
+![Localized document creation dialog](../../../.gitbook/assets/localization-document-editor-create.png)
 
 4. Create a new "Article" content:
 
-![Localized document editing](../images/localization-document-editor.png)
+![Localized document editing](../../../.gitbook/assets/localization-document-editor.png)
 
 4. When trying to save the content without adding the mandatory content, you will see a warning as expected:
 
-![Localized property validation](../images/localization-document-editor-validation.png)
+![Localized property validation](../../../.gitbook/assets/localization-document-editor-validation.png)

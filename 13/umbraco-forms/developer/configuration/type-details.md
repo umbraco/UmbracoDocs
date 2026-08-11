@@ -186,6 +186,22 @@ The intention is to be able to make available details such as IDs, aliases and p
 
 <details>
 
+<summary>reCAPTCHA Enterprise</summary>
+
+**ID:** `1BAB78CB-52B1-495C-BBC2-A46540642828`
+
+**Alias:** `recaptchaEnterprise`
+
+**Settings:**
+
+* `ScoreThreshold`
+* `ErrorMessage`
+* `SaveScore`
+
+</details>
+
+<details>
+
 <summary>Rich Text</summary>
 
 **ID:** `1F8D45F8-76E6-4550-A0F5-9637B8454619`

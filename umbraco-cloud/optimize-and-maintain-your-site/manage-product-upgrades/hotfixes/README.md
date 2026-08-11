@@ -18,8 +18,8 @@ Following Umbraco Cloud's workflow, you should never make changes directly to th
 
 It is possible to apply specific changes to your Live environment without breaking Umbraco Cloud workflow. Here are two approaches:
 
-1. [Deploy hotfix with Git branching](#deploy-hotfix-with-git-branching)
-2. [Move files manually](#move-files-manually)
+1. [Deploy hotfix with Git branching](./#deploy-hotfix-with-git-branching)
+2. [Move files manually](./#move-files-manually)
 
 ## [Deploy hotfix with Git branching](using-git.md)
 
@@ -27,7 +27,7 @@ Clone the Development environment and use Git to push the selected changes to th
 
 For more information, see the [Apply hotfix by using Git](using-git.md) article.
 
-![Use Git](images/hotfix-using-git.gif)
+![Use Git](../../../.gitbook/assets/hotfix-using-git.gif)
 
 ## [Move files manually](move-files-manually.md)
 
@@ -35,4 +35,4 @@ Clone both your Development and Live environment to your local machine. Copy the
 
 For more information, see the [Apply hotfix by manually moving files](move-files-manually.md) article.
 
-![Manual move](images/hotfix-manual-move.gif)
+![Manual move](../../../.gitbook/assets/hotfix-manual-move.gif)

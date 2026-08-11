@@ -21,6 +21,10 @@ The steps to track & retrieve personalized content are as follows:
 _Without providing the_ `External-Visitor-Id` _header, each registered pageview will be considered as a new visitor._
 {% endhint %}
 
+{% hint style="info" %}
+If you want to bypass visitor-based segmentation and request a specific variant directly, use the [Forced-Segment header](forced-segment.md) instead.
+{% endhint %}
+
 5. Repeat these steps for each page visit for a new or existing visitor.
 
 By tracking visitor behavior, Engage determines if the user meets criteria for segmenting, A/B testing, or applying personalization. Subsequent requests to the Umbraco content API then deliver personalized content.

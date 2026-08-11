@@ -33,7 +33,7 @@ These files need to be created in the **app\_plugins** folder. If the **app\_plu
 5. Create a folder called **tours.**
 6. Add a new **JSON** file to the tours folder.
 
-![Umbraco Backoffice tour folder structure](<../.gitbook/assets/image (6).png>)
+![Umbraco Backoffice tour folder structure](<../.gitbook/assets/image (6) (1).png>)
 
 In the JSON file, we will add the **Tour Configuration Object** and the **Tour Step Object** in the following step.
 
@@ -107,11 +107,11 @@ To find the first `element`, follow the steps below:
 1. Go to the backoffice of your Umbraco project and log in.
 2. Right-click on Settings in the main navigation and inspect the element.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Inspecting the Settings navigation in the backoffice</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Inspecting the Settings navigation in the backoffice</p></figcaption></figure>
 
 3. Locate the `data-element` for the top navigation called `section-settings`.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Finding the data-element for the first tour step</p></figcaption></figure>
 
 4. Note down the `data-element`.
 
@@ -189,7 +189,7 @@ For this first step, we are not going to change anything else as we want the res
 
 Once we start the tour it will highlight the Settings tab in the navigation. It is then possible to click on Settings which will take us to the Settings section.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>How the first tour step looks like when running the backoffice tour.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>How the first tour step looks like when running the backoffice tour.</p></figcaption></figure>
 
 It's time to create the second step of our tour.
 
@@ -261,7 +261,7 @@ So far, this is how our tour looks:
 
 This is what the second step looks like in the backoffice when we run the tour:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>How the second tour step looks like when running the backoffice tour.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>How the second tour step looks like when running the backoffice tour.</p></figcaption></figure>
 
 So far so good. We have created two steps. Let's make a third step for our tour.
 
@@ -302,7 +302,7 @@ We still want to show a `"next"` button on the step, so we are not going to chan
 
 Once we run the tour, it will highlight the whole Settings dashboard to the right of the side navigation:
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>How the third tour step looks like when running the backoffice tour.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>How the third tour step looks like when running the backoffice tour.</p></figcaption></figure>
 
 We have now created our backoffice tour, which gives a short overview of the Settings section.
 

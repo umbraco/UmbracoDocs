@@ -8,7 +8,9 @@ We must optimize these **before uploading** them to our website. This results in
 
 ## Use the best File Format
 
-We can make use of better image formats. It could be AV1 Image File Format (AVIF) and WebP to see 50% and 26% smaller file sizes than JPEGs respectively. AVIF is less well supported than WebP so it’s important to use a `<picture>` tag to ensure compatibility. You can read more about this in the [Using Modern Image Formats: AVIF And WebP](https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/) article.
+Modern image formats can be utilized to achieve smaller file sizes without sacrificing quality. AV1 Image File Format (AVIF) and WebP consistently outperform legacy formats like JPEG and PNG.
+
+AVIF offers superior compression and is now widely supported by modern browsers. However, to ensure full coverage across all environments, it is still recommended to use the `<picture>` tag. This provides fallback (such as WebP or JPEG) where necessary. For more information, see the [Using Modern Image Formats: AVIF And WebP](https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/) article.
 
 The other benefit of using a `<picture>` tag is that we can denote which images to use based on screen size. This helps us to provide the most appropriate image to the user, avoiding unnecessary downloads of larger images.
 

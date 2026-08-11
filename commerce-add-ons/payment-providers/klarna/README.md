@@ -6,6 +6,10 @@ description: Getting Started with the Klarna payment provider for Umbraco Commer
 
 In this section, you will go through the key steps necessary to get started with the Klarna payment provider for Umbraco Commerce.
 
+{% hint style="info" %}
+The Klarna payment provider is now obsolete. You should use the Kustom payment provider instead.
+{% endhint %}
+
 Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
 
 {% hint style="info" %}

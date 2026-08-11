@@ -21,17 +21,13 @@ This article will give you a step-by-step on how to manually upgrade your Umbrac
 ## Get the latest version of Umbraco
 
 {% hint style="info" %}
-
 For Cloud projects using **legacy Umbraco versions (7 or 8)**, follow the specific steps outlined in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manual-upgrades-for-legacy-umbraco) section.
-
 {% endhint %}
 
 To get the latest version of Umbraco, follow these steps:
 
 1. Run the `dotnet add package Umbraco.Cms` command in the directory that contains your project files. If you want a specific version, run the `dotnet add package Umbraco.Cms --version <VERSION>` command.
-
 2. Run `dotnet restore` to install the package.
-
 3. Open your `.csproj` file and confirm that the `Umbraco.Cms` package reference shows the correct version.
 
 ```xml
@@ -42,7 +38,7 @@ To get the latest version of Umbraco, follow these steps:
 
 Alternatively, you can also update Umbraco via the `NuGet Package Manager` in Visual Studio:
 
-![NuGet Package Manager](images/Manage_packages.png)
+![NuGet Package Manager](../../../../.gitbook/assets/Manage_packages.png)
 
 <details>
 
@@ -182,7 +178,7 @@ After updating the NuGet packages, follow these steps to complete the upgrade. M
 * When the project spins up, you'll be prompted to log in to verify the upgrade
 * On the installation screen, you need to verify the upgrade:
 
-<figure><img src="images/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
 
 * Hit **Continue** - this will complete upgrading the database
 * The upgrade will finish up

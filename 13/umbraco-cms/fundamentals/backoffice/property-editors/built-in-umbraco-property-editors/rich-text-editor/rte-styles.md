@@ -2,7 +2,7 @@
 
 It is possible to define specific styles and fonts for the Rich Text Editor (RTE). Once you have defined the styles, and enabled them on the RTE Data Type, the styles can be accessed directly in the Content section.
 
-![Rich Text Editor Styles](../../built-in-property-editors/rich-text-editor/images/rte-styles.png)
+![Rich Text Editor Styles](../../../../../.gitbook/assets/rte-styles.png)
 
 ## Creating RTE Styles
 
@@ -17,13 +17,13 @@ This will generate an empty CSS file in your project.
 
 At this point, you can start adding specific styles, that your editors can then use in the Content section when creating and writing new content.
 
-![Add specific RTE styles](../../built-in-property-editors/rich-text-editor/images/rte-create-style.png)
+![Add specific RTE styles](../../../../../.gitbook/assets/rte-create-style.png)
 
 The image above is an example of how an RTE style can be configured. When working with these styles, the **Preview** feature will show you how the style will look when applied.
 
 Every style you add, will automatically be added to the CSS file. The file will be placed in the same location as the rest of your CSS files. It is possible to edit the file directly from the backoffice as well. Access it from the **Code** tab in the top-right corner.
 
-![Edit CSS file directly in the backoffice](../../built-in-property-editors/rich-text-editor/images/rte-code-tab.png)
+![Edit CSS file directly in the backoffice](../../../../../.gitbook/assets/rte-code-tab.png)
 
 ## Using RTE Styles
 
@@ -41,4 +41,4 @@ You can have as many different styles for your RTEs as you want. You might want 
 
 When configuring your RTE Data Types, you can select which stylesheets your content editors should be able to use.
 
-![Choose stylesheets on the Data Type](../../built-in-property-editors/rich-text-editor/images/rte-choose-stylesheet.png)
+![Choose stylesheets on the Data Type](../../../../../.gitbook/assets/rte-choose-stylesheet.png)

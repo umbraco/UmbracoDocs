@@ -50,10 +50,9 @@ Enabling the Managed Challenge presents an automatic CAPTCHA to all requests for
 
 ## Continent Managed Challenge
 
-Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s).
-Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live on a specific continent. By presenting a challenge to selected continents, you can block all malicious traffic from the continent while allowing humans to pass through.
+Selecting continent(s) in the list will present a managed challenge to all traffic from the continent(s). Continent-based managed challenge presents a challenge meant to only pass through the human users requesting the website from selected continents. A continent-based managed challenge is useful when a website's primary users live on a specific continent. By presenting a challenge to selected continents, you can block all malicious traffic from the continent while allowing humans to pass through.
 
-All continents are supported, as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_(network)) network.
+All continents are supported, as well as presenting a challenge to all requests from the [Tor](https://en.wikipedia.org/wiki/Tor_\(network\)) network.
 
 {% hint style="warning" %}
 Be aware that this will also block services you may want, such as Google's Search indexing bot.
@@ -81,10 +80,20 @@ If you want to have different security options for different custom hostnames, s
 
 ### Cipher Suite Management
 
-On the security page, it's possible to enable or disable the different cipher suites for your project.
+On the security page, you can enable or disable individual cipher suites for your project. This gives you full control over which encryption methods your project accepts.
 
-Enabling or disabling the different ciphers can be done under the minimum TLS version in the Ciphers drop-down:
+Each cipher suite is labeled with a security recommendation:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>Enable or disable Cipher Suites for your project.</p></figcaption></figure>
+* **Modern**: Highest security with Authenticated Encryption with Associated Data (AEAD). Recommended for maximum protection.
+* **Compatible**: Balanced security with broader client support.
+* **Legacy**: Basic security for outdated clients.
+
+New projects have legacy cipher suites disabled by default. Enable them only if you need to support older clients that cannot use modern encryption.
+
+For more details on cipher suite security levels, see [Cloudflare's cipher suite recommendations](https://developers.cloudflare.com/ssl/edge-certificates/additional-options/cipher-suites/recommendations/).
+
+You can manage cipher suites under the minimum TLS version in the Ciphers drop-down:
+
+<figure><img src="../../../.gitbook/assets/Managing Cipher Suites.png" alt=""><figcaption><p>Enable or disable Cipher Suites for your project.</p></figcaption></figure>
 
 Like the other Hostname Specific Settings, you can enable/disable specific ciphers for your custom hostname based on your needs.

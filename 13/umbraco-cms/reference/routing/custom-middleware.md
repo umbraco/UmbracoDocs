@@ -60,7 +60,7 @@ fetch('https://localhost:44331/echo2', {method: 'GET'}).then(result => result.te
 
 This should return the following:
 
-<figure><img src="../images/custom-middleware-cors-browser-example.png" alt=""><figcaption><p>Browser result image</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/custom-middleware-cors-browser-example.png" alt=""><figcaption><p>Browser result image</p></figcaption></figure>
 
 An additional bonus is that this doesn't require any changes in your `Program.cs` file. It also allows packages to enable Cross-Origin Resource Sharing (CORS) and configure their own policies.
 

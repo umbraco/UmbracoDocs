@@ -13,8 +13,6 @@ Real-time updates and a dynamic content loading feature ensure you're always inf
 
 Dive into a smoother, more productive experience with our latest enhancements and share your thoughts on these changes through our feedback portal. For a deeper look at these updates, explore our detailed release notes.
 
-![Umbraco Cloud Portal](../../overview-2024/images/new-cloud-portal.png)
-
 ## Long running activities
 
 The improved long-running activities UI in Umbraco Cloud now provides real-time progress tracking, giving users clear visibility into task completion. Enhanced notifications keep you informed without needing to manually check progress, saving time and reducing frustration.

@@ -5,3 +5,6 @@
 .vscode
 .idea
 .lycheecache
+settings.local.json
+.claude/eval-workspaces/
+node_modules/

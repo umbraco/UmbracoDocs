@@ -37,13 +37,13 @@ From the **Media** section in the Umbraco backoffice, you can add new media item
   * The Media item will be created based on the type you choose.
   * Upload the image or file, give the Media item a name, and click **Save**.
 
-![Upload Media - Create Button](images/v9-media-types-upload-media.png)
+![Upload Media - Create Button](<../../../.gitbook/assets/v9-media-types-upload-media (1).png>)
 
 * Use the Drag and drop feature to add your files to the Media section.
   * Umbraco will automatically detect the Media Type and create the Media item.
   * You can drop entire folder structures to recreate that same structure in the Media section.
 
-![Upload Media - Media section](images/v9-media-types-media-section.png)
+![Upload Media - Media section](<../../../.gitbook/assets/v9-media-types-media-section (1).png>)
 
 ### Add media through the Content section
 
@@ -52,11 +52,11 @@ New media items can be added to your site without interrupting the content creat
 * Drag and drop the image(s) from your file explorer directly into the Media Picker property on the Content page.
   * Images added this way is automatically added to the user's start node in the Media section of the Umbraco backoffice.
 
-![Drag and drop images directly into the content](images/upload-images-from-content.gif)
+![Drag and drop images directly into the content](<../../../.gitbook/assets/upload-images-from-content (1).gif>)
 
 * Select the "+" icon to open the "Select media" dialog where you can add images from your file explorer directly or using drag and drop.
 
-![Add images from the "Select media" dialog](images/add-image-from-dialog.gif)
+![Add images from the "Select media" dialog](<../../../.gitbook/assets/add-image-from-dialog (1).gif>)
 
 ## Creating a folder
 
@@ -82,19 +82,19 @@ Learn more about each Media Type in [the article about default Media Types](defa
 
 The default view for the Media section is a card view that lets you preview the different files that have been uploaded.
 
-![Media Section - Cardview](images/media-section-11.png)
+![Media Section - Cardview](../../../.gitbook/assets/media-section-11.png)
 
 By selecting multiple media items it is possible to perform bulk operations like moving or deleting the items.
 
 To edit properties on a single media item, click the name of the item, which you will see once you hover over the item.
 
-![Edit media item](images/hover-over.png)
+![Edit media item](<../../../.gitbook/assets/hover-over (1).png>)
 
 From the top-right corner of the Media section, you can toggle between list and grid view. There is also an option to search for the items in the Media section.
 
 You can switch to a list view by selecting the view toggle next to the search field and selecting the list view.
 
-![Media Section - List view](images/switch-view-11.png)
+![Media Section - List view](../../../.gitbook/assets/switch-view-11.png)
 
 ## Using media items in the Content section
 
@@ -120,7 +120,7 @@ A Media Type is created in the **Settings** section using the Media Type editor.
 
 You will now see the Media Type editor. It is similar to the editor used for creating Document Types.
 
-![Creating a Media Type](images/create-new-media-type_new.png)
+![Creating a Media Type](<../../../.gitbook/assets/create-new-media-type_new (1).png>)
 
 {% hint style="info" %}
 Having different folders for different Media Types makes it possible to restrict where media items can be created and added. Only allowing PDF uploads in a certain folder and employee images in another make it easier to keep the Media section organized.
@@ -153,13 +153,13 @@ Follow the steps outlined below to add the properties to the Media Type:
 6. Rename the editor _Employee Image Cropper_.
 7. Add two new crops called _Thumbnail_ (200px x 350px) and _wideThumbnail_ (350px x 200px).
 
-![Defining crops](images/new-data-type_new.png)
+![Defining crops](<../../../.gitbook/assets/new-data-type_new (1).png>)
 
 Name the remaining four properties _Width_, _Height_, _Size_, and _Type_, and give them the aliases as mentioned above. They should all use the **Label** editor.
 
 As mentioned before these properties will automatically be populated once an image has been uploaded.
 
-![Adding properties](images/finished-new-media-type_new.png)
+![Adding properties](<../../../.gitbook/assets/finished-new-media-type_new (1).png>)
 
 ## Defining a Media Type folder
 
@@ -171,7 +171,7 @@ Next up, we will create a folder to hold the employee images. We could use the e
 4. Navigate to the **List view** tab.
 5. Toggle the **Enable list view** option.
 
-![Enable List View](images/toggle-listview.png)
+![Enable List View](<../../../.gitbook/assets/toggle-listview (1).png>)
 
 The new folder should be allowed to be created in the root of the Media tree. We also need to allow only the Employee Image Media Type in our new folder. Both of these configurations can be set on the **Permissions** tab.
 
@@ -180,7 +180,7 @@ The new folder should be allowed to be created in the root of the Media tree. We
 3. Click **Add child** under **Employee Images**.
 4. Select **Employee Image**.
 
-![Permissions](images/select-child-nodes.png)
+![Permissions](<../../../.gitbook/assets/select-child-nodes (1).png>)
 
 ### Creating the folder and media items
 
@@ -190,7 +190,7 @@ The new folder should be allowed to be created in the root of the Media tree. We
 
 There are four options to add new media items to the folder, as you can see here:
 
-![Uploading Media](images/four-ways-of-uploading.png)
+![Uploading Media](<../../../.gitbook/assets/four-ways-of-uploading (1).png>)
 
 {% hint style="info" %}
 Uncheck the **Allow at root** option on the **Employee Images** Media Type to prevent the creation of multiple folders of this type. This will only disable the creation of new ones and not affect existing folders.
@@ -202,7 +202,7 @@ If you select an image that has been uploaded to the folder you will see the ful
 
 Moving the focal point circle on the image will update the crops to focus accordingly. You can also edit the individual crops by selecting them and moving the image or adjusting the slider to zoom.
 
-![Cropping images](images/crops-and-focal-point-geo.png)
+![Cropping images](../../../.gitbook/assets/crops-and-focal-point-geo.png)
 
 ## More information
 

@@ -24,10 +24,10 @@ If the IP address is not whitelisted, these domains will not be accessible.
 1. Go to **Management API Security** under the **Security** tab.
 2. **Enable IP Filtering** for Management API on the project.
 
-![Enable Management API IP Filtering](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/management_api_security.png)
+![Enable Management API IP Filtering](../../.gitbook/assets/management_api_security.png)
 
 3. Once enabled, add **IP Address** for users that need access to the Management API of your project.
 
-![Allow IPs for your Umbraco Cloud Project's back-end services](../../build-and-customize-your-solution/set-up-your-project/project-settings/images/management_api_security_allow_ip.png)
+![Allow IPs for your Umbraco Cloud Project's back-end services](../../.gitbook/assets/management_api_security_allow_ip.png)
 
 After **IP Filtering** has been enabled, users with IPs not added to the allowlist will be denied access to the Management API.

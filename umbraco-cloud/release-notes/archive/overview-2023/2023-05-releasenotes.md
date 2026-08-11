@@ -11,7 +11,7 @@
 
 Umbraco Cloud's "Availability and Performance" feature offers you a new option to monitor the health and performance of your cloud projects. Leveraging HTTPS status codes, response times, CPU time, and memory usage, you can proactively identify and address issues. This will in turn support you in delivering a seamless experience for the users of your cloud project.
 
-![FailedRequest](../../images/AP-1-FailedRequests-Com.png)
+![FailedRequest](../../../.gitbook/assets/AP-1-FailedRequests-Com.png)
 
 The page is initially shown for all project plans. More detailed visualization and tools intended for troubleshooting to be added in the future will be restricted to “Standard” and “Professional” project plans.
 
@@ -28,11 +28,11 @@ You might also find an error or warning indicator for each tile if there is some
 
 When selecting a specific topic the chart will be updated with specific data points in the selected time range and granularity. Cloud projects with **dedicated** options enabled, you'll for the CPU usage and memory usage find the average value for the CPU time and private bytes highlighted.
 
-![Demo-dedicated](../../images/AP-DemoDedicated.gif)
+![Demo-dedicated](../../../.gitbook/assets/AP-DemoDedicated.gif)
 
 Projects on **shared** plans and a selected granularity of 5 minutes, will find a comparison of the maximum CPU time compared to the shared plan quota. In case the live environment project has exceeded the plan quota that will be highlighted with an error indicator on CPU usage tile. The same is the case for memory usage, where the memory consumption of the environment is held up against the project’s plan quota.
 
-![Shared-multiple-warnings](../../images/AP-Shared-Multiple-warnings.png)
+![Shared-multiple-warnings](../../../.gitbook/assets/AP-Shared-Multiple-warnings.png)
 
 ## What the future will bring to the feature
 

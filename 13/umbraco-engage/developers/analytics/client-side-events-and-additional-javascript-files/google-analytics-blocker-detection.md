@@ -13,7 +13,7 @@ This is made possible by a JavaScript file that you can include before the closi
 ```
 
 {% hint style="info" %}
-The following Google Analytics blocker detection script loading types are currently not supported: "async" or "defer".
+Support for the "async" and "defer" script loading types was added in Umbraco Engage 13.6.0.
 {% endhint %}
 
 If you include the script one of the following events is sent:

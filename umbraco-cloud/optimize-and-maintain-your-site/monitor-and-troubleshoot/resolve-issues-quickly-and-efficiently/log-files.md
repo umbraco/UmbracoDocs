@@ -24,10 +24,10 @@ Video example.
 
 1.  Go to your project and click on the arrow next to the environment name.
 
-    <figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
 
-<figure><img src="images/logs-table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/logs-table.png" alt=""><figcaption></figcaption></figure>
 
 ### On Kudu
 
@@ -36,6 +36,18 @@ To access logs through Kudu, see [Power tools (Kudu)](../power-tools/) article.
 ## Umbraco logs
 
 Umbraco logs on Cloud work almost the same as on a [normal installation](https://docs.umbraco.com/umbraco-cms/fundamentals/code/debugging/logging), they are still found in the `~/site/wwwroot/umbraco/Logs/` folder. Umbraco Deploy also writes to the standard log files with events and errors. If there is an extraction error and you can't find any issues in your Umbraco log, try the Deploy log listed below.
+
+## Persisting Logs Externally
+
+Umbraco Cloud runs on Azure App Services. In some cases - such as when a project is migrated to dedicated hosting - the underlying Web App instance is replaced with a new one. 
+When this happens, any logs stored on the previous instance's filesystem (accessible via Kudu) are no longer available.
+ 
+To ensure historical logs are preserved through any future infrastructure changes, you can configure an additional Serilog sink. The sink writes your structured logs to an external store.
+
+The Umbraco documentation includes guidance on [Logging to a different output](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/serilog#logging-to-a-different-output).
+A full list of available Serilog sinks is maintained at the [Serilog Provided Sinks](https://github.com/serilog/serilog/wiki/provided-sinks) page on GitHub.
+
+Once an external sink is configured, your logs will persist independently of any changes to the underlying infrastructure.
 
 ## Deploy logs
 
@@ -86,5 +98,5 @@ Find more information about IIS Logging on [the Official Microsoft Documentation
 {% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.
 
-For more details on the different tiers, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
+For more details on the different plans, see the [Cloud Pricing plans](https://umbraco.com/umbraco-cloud-pricing/).
 {% endhint %}

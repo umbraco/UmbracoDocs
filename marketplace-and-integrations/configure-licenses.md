@@ -92,6 +92,8 @@ You can verify that your license is successfully installed by logging into your 
 2. Look for the **Licenses** dashboard.
 3. Verify the license status displayed on the dashboard.
 
+![The Content dashboard showing three published pages](.gitbook/assets/license-dashboard.png)
+
 The dashboard will show the status of all installed commercial product licenses.
 
 ## Configuring UmbracoApplicationUrl

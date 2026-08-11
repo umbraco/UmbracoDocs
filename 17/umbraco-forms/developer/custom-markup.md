@@ -9,7 +9,7 @@ description: >-
 With Umbraco Forms, it is possible to customize the output markup of a Form, which means you have complete control over what Forms will display.
 
 {% hint style="warning" %}
-We recommend using [Themes](themes.md) to customize your Forms. This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
+It is recommended to use [Themes](themes.md) to customize your Forms. This will ensure that nothing is overwritten when you upgrade Forms to a newer version.
 {% endhint %}
 
 ## Customizing the Default Views
@@ -43,23 +43,39 @@ The rest of the views start with FieldType, like `FieldType.Textfield.cshtml` an
 Contents of the `FieldType.Textfield.cshtml` view (from the default theme):
 
 ```csharp
-@model Umbraco.Forms.Mvc.Models.FieldViewModel
-@using Umbraco.Forms.Mvc
+@using Umbraco.Forms.Web
+@model Umbraco.Forms.Web.Models.FieldViewModel
+@{
+    var maxLength = Model.GetSettingValue<int>("MaximumLength", 255);
+    var fieldType = Model.GetSettingValue<string>("FieldType", "text");
+    var autocompleteAttribute = Model.GetSettingValue<string>("AutocompleteAttribute", string.Empty);
 
-<input type="text"
-    name="@Model.Name"
-    id="@Model.Id"
-    class="@Html.GetFormFieldClass(Model.FieldTypeName) text"
-    value="@Model.ValueAsHtmlString"
-    maxlength="500"
-    @{if(string.IsNullOrEmpty(Model.PlaceholderText) == false){<text>placeholder="@Model.PlaceholderText"</text>}}
-    @{if(Model.Mandatory || Model.Validate){<text>data-val="true"</text>}}
-    @{if (Model.Mandatory) {<text> data-val-required="@Model.RequiredErrorMessage"</text>}}
-    @{if (Model.Validate) {<text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Html.Raw(Model.Regex)"</text>}}
-/>
+    // "email" and "url" input types are automatically validated by the client-side validation frameworks using their
+    // own built-in (English) messages. When a custom error message is configured, emit the matching data-val attribute
+    // so that message is used for these validations instead. If no custom message is configured we leave it unset, so
+    // the framework's own default message is shown rather than an empty one.
+    var nativeValidationRule = (fieldType == "email" || fieldType == "url") && string.IsNullOrEmpty(Model.InvalidErrorMessage) == false ? fieldType : null;
+}
+<input type="@fieldType" name="@Model.Name" id="@Model.Id" data-umb="@Model.Id" class="text @Html.GetFormFieldClass(Model.FieldTypeName)" value="@Model.ValueAsHtmlString" maxlength="@maxLength"
+       @{if (string.IsNullOrEmpty(Model.PlaceholderText) == false) { <text> placeholder="@Model.PlaceholderText" </text>  }}
+       @{if (string.IsNullOrEmpty(autocompleteAttribute) == false) { <text> autocomplete="@autocompleteAttribute" </text>  }}
+       @{if (Model.Mandatory || Model.Validate || nativeValidationRule != null) { <text> data-val="true" </text>  }}
+       @{if (Model.Mandatory) { <text> data-val-required="@Model.RequiredErrorMessage" aria-required="true" </text>  }}
+       @{if (Model.Validate) { <text> data-val-regex="@Model.InvalidErrorMessage" data-val-regex-pattern="@Model.Regex" </text>  }}
+       @{if (string.IsNullOrEmpty(Model.Regex) == false) { <text> pattern="@Model.Regex" </text>  }}
+       @{if (nativeValidationRule != null) { <text> data-val-@(nativeValidationRule)="@Model.InvalidErrorMessage" </text>  }}
+       aria-describedby="@(Model.Id)_validation@(!string.IsNullOrEmpty(Model.ToolTip) ? $" {Model.Id}_description" : "")"/>
 ```
 
 Umbraco Forms uses ASP.NET Unobtrusive Validation which is why you see attributes like `data-val` and `data-val-required`.
+
+The attributes for the field's validation expression carry the message configured on the field. The field shows that same message whichever validation method applies:
+
+* The client-side validation frameworks read `data-val-regex` and `data-val-regex-pattern`. The view encodes the pattern, so do not pass it through `Html.Raw`.
+* `pattern` is the native browser validation attribute. The view renders it only when the field has a validation expression.
+* The view renders `data-val-email` and `data-val-url` only for `email` and `url` input types with a custom error message. Without them, the validation framework falls back to its own built-in English message.
+
+If you have copied this view into a custom theme, apply the same changes to your copy. Otherwise the field's validation expression will not use the configured message.
 
 This can be customized but it's important to keep the ID of the control to `@Model.Id` since that is used to match the value to the Form field. For fields that are conditionally hidden, without an ID of `@Model.Id` the control won't be shown when the conditions to show the field are met. An ID needs to be added to text controls such as headings and paragraphs.
 
@@ -79,7 +95,7 @@ It is also possible to customize the markup for a specific Form.
 
 You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the Form in the backoffice.)
 
-![Form GUID](images/form-guid.png)
+![Form GUID](../.gitbook/assets/form-guid.png)
 
 As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 

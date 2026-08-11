@@ -57,7 +57,7 @@ Using Typescript is mandatory when contributing to this repository, although it 
 
 #### New component
 
-You can create a new component and that way contribute to the UI library. But before you do that, go to the [packages](https://github.com/umbraco/Umbraco.UI/tree/main/packages) folder and check if it's not already there. You can also look at the [Components list](broken-reference) for an inspiration, where you can check what component is in what stage.
+You can create a new component and that way contribute to the UI library. But before you do that, go to the [packages](https://github.com/umbraco/Umbraco.UI/tree/main/packages) folder and check if it's not already there. You can also look at the [Components list](/broken/pages/9GWi8fKZxzScmR7bV3ap) for an inspiration, where you can check what component is in what stage.
 
 **Package anatomy**
 

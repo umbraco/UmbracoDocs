@@ -14,7 +14,7 @@ With this new feature, you can **enforce MFA for all members in your organizatio
 
 The organization-enforced method will **override any MFA setting that the member has registered**. And ensure that the user will have to use the specified MFA method when during his login session involving UmbracoID.
 
-![Cloud-artboard](../../images/MfaEnforcedOrganizationMethod.gif)
+![Cloud-artboard](../../../.gitbook/assets/MfaEnforcedOrganizationMethod.gif)
 
 This organization-enforced MFA feature is effective to set up and manage, helping protect your organization's data and resources in Umbraco Cloud. Enforcing MFA on all the members of your organization is a vital step in assuring your cloud projects and backoffice are secured from unauthorized access.
 
@@ -24,7 +24,7 @@ We are continuously migrating the pages of Umbraco Cloud Portal to a new front e
 
 The new flow has a **more modern and visually appealing design**, which makes it more engaging and user-friendly. It features a **step-by-step guide** that leads users through the process of creating a new project, ensuring that they don't miss any important details.
 
-![OrgMfaDisplay](../../images/ProjectCreationFlow.gif)
+![OrgMfaDisplay](../../../.gitbook/assets/ProjectCreationFlow.gif)
 
 You will start by selecting the preferred project type, then you choose your project plan, CMS version (for Umbraco Cloud), and region. Next, you only need to register a project name, and the cloud project will be ready for you within a few minutes.
 

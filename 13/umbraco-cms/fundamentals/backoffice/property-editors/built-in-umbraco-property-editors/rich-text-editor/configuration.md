@@ -2,17 +2,13 @@
 
 ## Configuration
 
-{% embed url="<https://www.youtube.com/watch?v=QRIWz9SotY4>" %}
-Rich Text Editor default implementation
-{% endembed %}
-
 In this article you can learn about the various ways you can configure the RTE.
 
 ### Toolbar
 
 You have full control over which options should be available on the RTE.
 
-![Toolbar: All options enabled](../../built-in-property-editors/rich-text-editor/images/toolbar-full-11.png)
+![Toolbar: All options enabled](../../../../../.gitbook/assets/toolbar-full-11.png)
 
 In the examble above, all 34 options have been enabled. The options include copy/paste buttons, font styles like bold and italics, bullet lists and options to embed videos and insert images.
 
@@ -40,13 +36,13 @@ The Rich Text Editor comes in two different modes: Classic and Inline.
 
 The default mode which displays the toolbar at the top.
 
-![RTE Mode: Classic](../../built-in-property-editors/rich-text-editor/images/rte-mode-classic-11.png)
+![RTE Mode: Classic](../../../../../.gitbook/assets/rte-mode-classic-11.png)
 
 #### Inline
 
 In this mode the toolbar is hidden, and only shows up when content in the editor is highlighted.
 
-![Rich Text Editor Inline mode](../../built-in-property-editors/rich-text-editor/images/inline-mode-new.png)
+![Rich Text Editor Inline mode](../../../../../.gitbook/assets/inline-mode-new.png)
 
 ### Blocks
 
@@ -81,8 +77,8 @@ The RTE can also accept advanced configuration through the `appSettings.json` fi
 * [Commands](https://www.tiny.cloud/docs/tinymce/latest/editor-command-identifiers/)
 * [Plugins](https://www.tiny.cloud/docs/tinymce/latest/plugins/)
 * [CustomConfig](https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/)
-* [ValidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid\_elements)
-* [InvalidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#invalid\_elements)
+* [ValidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid_elements)
+* [InvalidElements](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#invalid_elements)
 
 `CustomConfig` is slightly different from the rest as it extends the core config passed into TinyMCE.
 

@@ -12,7 +12,7 @@ We've listened to your feedback and are delighted to provide more flexibility an
 
 By default, the Live environment is positioned as the first environment, followed by Staging and Development environment. However, we understand that different users may have different workflows and preferences. Therefore, we have introduced the ability to customize the ordering to align with the “left-to-right” deployment model.
 
-![CustomizeEnvironmentOrdering](../../images/ProjectsDashboardEnvReorder.gif)
+![CustomizeEnvironmentOrdering](../../../.gitbook/assets/ProjectsDashboardEnvReorder.gif)
 
 Whether you prefer the default order or wish to switch to the "left-to-right" model, the choice is now in your hands.
 
@@ -20,7 +20,7 @@ Whether you prefer the default order or wish to switch to the "left-to-right" mo
 
 Great news! With the recent migration of the Certificates page to our new front-end tech stack, all project sub-pages have now been successfully converted. This transition marks an important milestone in our ongoing efforts to improve the overall user experience in the Umbraco Cloud Portal.
 
-![Certificates](../../images/Certificates.gif)
+![Certificates](../../../.gitbook/assets/Certificates.gif)
 
 With the completion of this migration, our team is now shifting its focus to further enhancing the user experience and navigation within Umbraco Cloud. We understand the importance of intuitive navigation and streamlined workflows in providing a seamless and enjoyable experience while working on your Umbraco Cloud projects.
 
@@ -36,7 +36,7 @@ Umbraco Cloud also offers you a hassle-free migration process for users who wish
 
 The Major Upgrade Guide outlines the necessary steps and best practices to successfully upgrade your projects from Umbraco 11 to Umbraco 12. The guide is designed to simplify the migration process, providing clear instructions and insights into any potential challenges you may encounter.
 
-![Umbraco12](../../images/Umbraco12.png)
+![Umbraco12](../../../.gitbook/assets/Umbraco12.png)
 
 For more information about the new great version 12 of Umbraco CMS, read this great [blog post](https://umbraco.com/blog/umbraco-12-release/).
 

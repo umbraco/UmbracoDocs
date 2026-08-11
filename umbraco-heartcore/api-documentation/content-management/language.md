@@ -26,7 +26,7 @@ Authentication is required for this API. You must supply a Bearer Token via an A
 
 ## Errors
 
-If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
+If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
 | Status Code | Error Code                     | Message                                                              |
 | ----------- | ------------------------------ | -------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ If an error occours you will receive a HTTP status code along with an API error 
 | 403         | Forbidden                      | You are not authorized to access the given resource.                 |
 | 404         | NotFound                       | Language with id '{id}' could not be found.                          |
 | 409         | LanguageForCultureAlreadyExist | The language '{isoCode}' already exists.                             |
-| 422         | ValidationFailed               | Validation error occured when trying to save or update the language. |
+| 422         | ValidationFailed               | Validation error occurred when trying to save or update the language. |
 | 500         | InternalServerError            | Internal server error.                                               |
 
 **JSON example**:
@@ -123,7 +123,7 @@ Gets all languages available for content creation.
 
 ## Get by ISO code
 
-Get a specific langauge by its ISO code.
+Get a specific language by its ISO code.
 
 **URL**: `/language/{id}`
 

@@ -9,7 +9,7 @@ The `RelationService` is pretty awesome as it allows you to create relations bet
 
 ## Getting the service
 
-```csharp
+````csharp
 using System.Web.Mvc;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
@@ -25,7 +25,7 @@ public class MyClass
  {
   _relationService_ = relationService;
  }
-```
+````
 
 ## Methods
 
@@ -137,9 +137,7 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or c
 
 Returns `IEnumerable<IRelation>`.
 
-{% hint style="info" %}
-Using this method will get you all relations regards of it being a child or parent relation.
-{% endhint %}
+\{% hint style="info" %\} Using this method will get you all relations regards of it being a child or parent relation. \{% endhint %\}
 
 ### GetByParentOrChildId(int id)
 
@@ -147,9 +145,7 @@ Gets a collection of `Umbraco.Core.Models.Relation` objects by their parent or c
 
 Returns `IEnumerable<IRelation>`.
 
-{% hint style="info" %}
-Using this method will get you all relations regards of it being a child or parent relation.
-{% endhint %}
+\{% hint style="info" %\} Using this method will get you all relations regards of it being a child or parent relation. \{% endhint %\}
 
 ### GetByRelationTypeAlias(string relationTypeAlias)
 
@@ -281,7 +277,9 @@ To perform the said task we need a component in which we can register to the `Co
 
 ([You can read more about composing Umbraco here](../../../implementation/composing.md))
 
-```csharp
+```
+
+csharp
 using System.Linq;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
@@ -355,7 +353,7 @@ public class RelationComposer : IUserComposer
 
 If I know `Save and Publish` my `Products` node I get the following result:
 
-![Relations](images/relations.PNG)
+![Relations](<../../../.gitbook/assets/relations (1).PNG>)
 
 Cool! Now let us try and fetch the data from an API.
 
@@ -419,10 +417,8 @@ public class Relation
 
 Browsing `/umbraco/api/relations/getbyrelationtypealias?alias=homesick` now returns the following:
 
-![Relations](images/relations-api.PNG)
+![Relations](<../../../.gitbook/assets/relations-api (1).PNG>)
 
 {% hint style="info" %}
-
 If you want to do something similar to this it is recommended that you wrap a caching layer around it, as the RelationService queries the database directly.
-
 {% endhint %}

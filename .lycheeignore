@@ -30,6 +30,9 @@
 # NIST FIPS and other static docs
 ^https://csrc\.nist\.gov/publications/PubsFIPS\.html#.*
 
+# Microsoft dotnet.microsoft.com returns 403 to all bots — verify manually when .NET versions change
+^https://dotnet\.microsoft\.com/.*$
+
 # Timeout-prone issue links
 ^https://issues\.umbraco\.org/issue/.*
 ^https://issues\.umbraco\.org/issues/.*
@@ -38,6 +41,10 @@
 ^https://help\.aprimo\.com/.*$
 ^https://www\.ipaddressguide\.com/.*$
 ^https://openai\.com/.*$
+
+# Action links
+
+^https://insiders\.vscode\.dev/redirect.*$
 
 # Ignore specific troubleshooting anchor as Lychee is stripping special characters and replacing spaces with hyphens
 ^file:///home/runner/work/UmbracoDocs/UmbracoDocs/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/troubleshooting.md#unable-to-determine-environment-by-its-environment-id

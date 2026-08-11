@@ -25,12 +25,11 @@ To get the latest version of Umbraco Deploy you will need to upgrade the site us
 If using Umbraco Forms in your installation, you should also update the `Umbraco.Deploy.Forms` package reference.
 
 1. Run the `dotnet add package Umbraco.Deploy.Cloud` command in the directory that contains your project files. If you want a specific package version, run these commands:
-  
-  - `dotnet add package Umbraco.Deploy.Cloud --version <VERSION>`
-  - `dotnet add package Umbraco.Deploy.Forms --version <VERSION>`
+
+* `dotnet add package Umbraco.Deploy.Cloud --version <VERSION>`
+* `dotnet add package Umbraco.Deploy.Forms --version <VERSION>`
 
 2. Run `dotnet restore` to install the packages.
-
 3. Open your `.csproj` file to make sure the package reference is updated:
 
 ```xml
@@ -42,7 +41,7 @@ If using Umbraco Forms in your installation, you should also update the `Umbraco
 
 Alternatively, you can also update Umbraco Deploy via the **NuGet Package Manager** in Visual studio:
 
-![NuGet Package Manager](images/Manage_packages.png)
+![NuGet Package Manager](../../../../.gitbook/assets/Manage_packages.png)
 
 Make sure that everything works on the local clone and that you can **run the project without any errors**.
 
@@ -55,12 +54,9 @@ Make sure that everything works on the local clone and that you can **run the pr
 1. Download **Storage Explorer** here: [https://azure.microsoft.com/en-us/products/storage/storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer) and install it.
 2. Click the **"Plug"** Button (Open Connect Dialog):\
    ![Click the "Plug" Button (Open Connect Dialog)](<../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
-
-3) Choose **"Blob container or directory"**:![](<../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
-
+3. Choose **"Blob container or directory"**:![](<../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
 4. Choose **"Anonymously"** when prompted on how you will connect to the blob container.![](<../../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png>)
-
-5) Enter `https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release` in the **Blob container or directory URL.**
+5. Enter `https://umbraconightlies.blob.core.windows.net/umbraco-deploy-release` in the **Blob container or directory URL.**
 
 <img src="../../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt="" data-size="original">
 

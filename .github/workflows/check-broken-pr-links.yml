@@ -102,6 +102,21 @@ jobs:
               next
             }
 
+            /Cannot find file/ {
+              # Print file header if this is the first error for this file
+              if (current_file != "" && has_errors == 0) {
+                print "\n**Broken links found in: " current_file "**" >> "lychee/comment.md"
+                has_errors = 1
+              }
+              
+              msg = $0
+              sub(/^Error: ERROR\] /, "", msg)
+              gsub("file:///home/runner/work/UmbracoDocs/UmbracoDocs/", "", msg)
+              gsub(/\|/, "\\|", msg)
+              print "\n🗒️ File not found → " msg "\n" >> "lychee/comment.md"
+              next
+            }
+
             /\[404\]/ {
               # Print file header if this is the first error for this file
               if (current_file != "" && has_errors == 0) {

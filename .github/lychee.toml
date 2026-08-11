@@ -44,8 +44,8 @@ accept = [
 # Don't check fragments/anchors - they cause false positives
 include_fragments = false
 
-# Only test links with the given schemes (e.g. https and http)
-scheme = ["https", "http"]
+# Only test links with the given schemes (for example, https and http)
+scheme = ["https", "http", "file"]
 
 # When links are available using HTTPS, treat HTTP links as errors.
 require_https = false

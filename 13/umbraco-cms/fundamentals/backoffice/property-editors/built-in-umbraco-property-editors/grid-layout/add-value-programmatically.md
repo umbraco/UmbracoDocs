@@ -4,7 +4,7 @@
 
 For this example, the default grid configuration has been used.
 
-![Grid configuration](../../built-in-property-editors/grid-layout/Images/Grid-configuration.jpg)
+![Grid configuration](<../../../../../.gitbook/assets/Grid-configuration (1).jpg>)
 
 ## Set value
 

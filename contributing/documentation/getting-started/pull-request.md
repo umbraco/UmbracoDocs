@@ -25,7 +25,7 @@ Following the approach is recommended for changes such as:
 * Changes that are confined to a single article.
 * Updating code snippets.
 
-<figure><img src="../../../generic/.gitbook/assets/image (1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt="Highlighting the GitHub Edit button"><figcaption><p>Highlighting the Edit on GitHub button.</p></figcaption></figure>
 
 1. Navigate to the article you want to edit.
 2. Select "Edit on GitHub" from the right side of the article.
@@ -62,7 +62,7 @@ If you do not have Git installed on your machine, follow [these instructions](ht
 2. Go to the [Umbraco Documentation repository](https://github.com/umbraco/UmbracoDocs/).
 3. Select **Fork** in the top-right corner to create a personal copy of the repository.
 
-![Creating a fork](../images/fork-repository-new.png)
+![Creating a fork](../../.gitbook/assets/fork-repository-new.png)
 
 Once the fork is created:
 
@@ -71,7 +71,7 @@ Once the fork is created:
 3. If you add a new article, update the `SUMMARY.md` file to include it in the documentation navigation.
 4. Sync your changes back to your fork.
 
-![Fork of documentation](../images/example-of-fork.png)
+![Fork of documentation](../../.gitbook/assets/example-of-fork.png)
 
 {% hint style="info" %}
 If you’ve had your fork for a while, sync it with the original repository before starting new changes. This process is called rebasing.
@@ -93,7 +93,7 @@ To sync via GitHub:
 
 * Use the **Sync fork** option when your fork is behind the original repository.
 
-<figure><img src="../images/sync-fork.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sync-fork.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Creating a PR
 
@@ -102,7 +102,7 @@ Once you have made changes and are happy with the result, you can create a PR.
 1. Navigate to the **Code** section of your fork.
 2. Select **Contribute** > **Open pull request**.
 
-![Highlight option to contribute directly from fork to original repository.](../images/contribute.png)
+![Highlight option to contribute directly from fork to original repository.](../../.gitbook/assets/contribute.png)
 
 3. Add a title and description explaining your changes.
 4. Select **Create pull request** to submit a PR to the original repository.

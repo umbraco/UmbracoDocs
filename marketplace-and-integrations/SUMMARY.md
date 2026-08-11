@@ -12,7 +12,7 @@
 * [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
 * [Configure Licenses](configure-licenses.md)
-* [Commercial Products, Relations and dependencies](commercial-product-dependencies.md)
+* [Commercial Products, Relations, and Dependencies](commercial-product-dependencies.md)
 
 ## Marketplace
 
@@ -31,15 +31,11 @@
 * [ActiveCampaign](integrations/activecampaign.md)
 * [ActiveCampaign with Umbraco Forms](integrations/activecampaign-with-umbraco-forms.md)
 * [Algolia](integrations/algolia.md)
-* [Aprimo](integrations/aprimo.md)
 * [CookieBot](integrations/cookiebot.md)
-* [CommerceTools](integrations/commercetools.md)
 * [Dynamics](integrations/dynamics.md)
-* [emerchantpay with Umbraco Forms](integrations/emerchantpay-with-umbraco-forms.md)
 * [Google Search Console](integrations/google-search-console.md)
 * [HubSpot](integrations/hubspot.md)
 * [HubSpot with Umbraco Forms](integrations/hubspot-with-umbraco-forms.md)
-* [inriver](integrations/inriver.md)
 * [Semrush](integrations/semrush.md)
 * [Shopify](integrations/shopify.md)
 * [Zapier](integrations/zapier.md)

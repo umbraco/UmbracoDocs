@@ -22,7 +22,7 @@ Authentication is required for this API. You must supply a Bearer Token via an A
 
 ## Errors
 
-If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
+If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
 | Status Code | Error Code           | Message                                                                  |
 | ----------- | -------------------- | ------------------------------------------------------------------------ |

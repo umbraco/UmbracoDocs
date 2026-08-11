@@ -12,11 +12,11 @@ It's possible to add a label to use with the color.
 
 ## Data Type Definition Example
 
-![Color Picker Data Type Definition](../built-in-property-editors/images/Color-Picker-DataType-v10.png)
+![Color Picker Data Type Definition](<../../../../.gitbook/assets/Color-Picker-DataType-v10 (1).png>)
 
 ## Content Example
 
-![Color Picker Content](../built-in-property-editors/images/Color-Picker-Content-v8.png)
+![Color Picker Content](<../../../../.gitbook/assets/Color-Picker-Content-v8 (1).png>)
 
 ## Example with Modelsbuilder
 

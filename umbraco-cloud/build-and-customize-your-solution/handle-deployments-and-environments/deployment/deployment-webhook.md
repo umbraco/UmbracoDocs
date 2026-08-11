@@ -12,7 +12,7 @@ There are many use cases for deployment webhooks such as providing a detailed au
 
 ## How to set up a webhook
 
-![Adding deployment webhook](images/Post-deployment-webhooks.gif)
+![Adding deployment webhook](../../../.gitbook/assets/Post-deployment-webhooks.gif)
 
 1. From the Umbraco Cloud Portal go to **Settings** -> **Webhooks**
 2. Select the environment to register a webhook.

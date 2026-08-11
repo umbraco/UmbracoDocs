@@ -11,7 +11,7 @@ In our ongoing effort to enhance your experience with Umbraco Cloud, we've intro
 
 We understand that managing security settings is a critical aspect of any cloud project, and our goal is to make this process as seamless as possible. With this latest update, you have the flexibility to tailor security settings to your specific needs, whether it's for an individual project or across multiple hostnames. By default, we've kept all cipher suites enabled, ensuring that you start with robust security measures in place
 
-![Disable Cipher Suites](../../images/DisableCipherSuites.gif)
+![Disable Cipher Suites](../../../.gitbook/assets/DisableCipherSuites.gif)
 
 The interface for this feature has been designed with simplicity in mind. You can adjust your security settings with a few clicks, saving time and effort for you to focus on the critical aspects of your work. This streamlined approach will enhance your overall efficiency and ease of use.
 
@@ -21,7 +21,7 @@ We are pleased to introduce an update to Umbraco Cloud, focusing on the efficien
 
 When an invitation expires, you'll on the “Pending Invites” page under your profile, see a "Request New Invitation" button. Clicking this button triggers an email to the original inviter, prompting them to take action. The email contains a link that redirects the inviter to the "Edit Team" page of the project, where they can issue a new invitation to replace the expired one.
 
-![Request New Project Invite](../../images/ResendProjectInvite.gif)
+![Request New Project Invite](../../../.gitbook/assets/ResendProjectInvite.gif)
 
 This new feature aims to reduce any friction caused by expired project invites, ensuring seamless and uninterrupted collaboration across teams and organizations in Umbraco Cloud.
 

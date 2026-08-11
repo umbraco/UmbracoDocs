@@ -1,7 +1,7 @@
 # Fixed Application Url
 
 _Check to make sure a fixed application URL is specified. This URL is for example used when sending emails from backoffice._\
-_If this is not specified in configuration, Umbraco gets the application URL from last host used to request the application_
+&#xNAN;_&#x49;f this is not specified in configuration, Umbraco gets the application URL from last host used to request the application_
 
 ## How to fix this health check
 

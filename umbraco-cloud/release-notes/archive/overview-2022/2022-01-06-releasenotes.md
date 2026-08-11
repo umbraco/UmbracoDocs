@@ -1,6 +1,6 @@
 # January 2022
 
-### [Break reference between baseline and child project](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
+### [Break reference between baseline and child project](/broken/pages/hipkM7IkzX5BbBnE4pr4)
 
 Umbraco Cloud Portal offers a powerful baseline-child relationship between projects, similar to a fork (forked repository) on GitHub. With this feature you can create a clone of an existing project while maintaining a connection between the two projects.
 

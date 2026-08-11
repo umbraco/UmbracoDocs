@@ -17,6 +17,20 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.5.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.4) (April 16 2026)
+* Replaced RazorLight with IRazorViewEngine and precompiled Razor views shipped in the StaticAssets library. Email templates are now standard partial views, making customization simpler and removing the third-party RazorLight dependency. [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
+
+### [13.5.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.3) (March 2 2026)
+* Fixes a bug where content scheduling via workflow approval could result in a key conflict exception, causing workflow initiation to fail [#132](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/132)
+* Fixes Document Type filtering in Content Review configuration. A Document Type should be considered valid if it is not an Element, and has at least one property [#131](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/131)
+
+### [13.5.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.2) (February 19 2026)
+* Ensures RazorLight is initialized with the correct context [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
+* Fixes a bug where fallback email templates were not being detected and assigned (if the requested culture template did not exist)[#128] (https://github.com/umbraco/Umbraco.Workflow.Issues/issues/128)
+
+### [13.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.1) (January 30 2025)
+* Ensures email templates render correctly when runtimeMode is set to 'Production' [#125](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/125)
+
 ### 13.5.0 (December 11 2025)
 * Updates all persistence operations to use scoped transactions.
 

@@ -1,0 +1,44 @@
+name: PR Welcome Comment
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Check org membership
+        id: check_member
+        uses: actions/github-script@v7
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.orgs.checkMembershipForUser({
+                org: umbraco,
+                username: context.paylod.pull_request.user.login
+              });
+              return true;
+            } catch {
+              return false;
+            }
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Post welcome comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs')
+            const body = fs.readFileSync('.github/workflows/ai-comment.md', 'utf8')
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            })

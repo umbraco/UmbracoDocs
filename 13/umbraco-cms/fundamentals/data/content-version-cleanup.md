@@ -6,14 +6,13 @@ A new version is created whenever you save and publish a content item in Umbraco
 
 The default cleanup policy will:
 
-* Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
-* 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
+* Not delete any versions created over the previous 7 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
+* 'Prune' versions 7 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
 * Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
 * Never delete any versions that are currently 'published'.
 * Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
 
 {% hint style="info" %}
-
 Based on the default cleanup policy, you can roll back content to the latest version saved on a particular day as long as it was
 
 * Created within the last 90 days, or
@@ -32,7 +31,7 @@ The feature can be configured in the `appSettings.json`:
         "ContentVersionCleanupPolicy": {
           "EnableCleanup": true,
           "KeepLatestVersionPerDayForDays": 90,
-          "KeepAllVersionsNewerThanDays": 4
+          "KeepAllVersionsNewerThanDays": 7
         }
       }
     }
@@ -50,7 +49,7 @@ It is worth noting that whilst we delete rows, we do not shrink database files o
 
 It is possible to override the global settings per Document Type in the backoffice to prevent unwanted cleanup. This can be managed in the "permissions" Content App for each Document Type.
 
-![Content Version Cleanup - Document Type overrides](images/per-doctype-override.png)
+![Content Version Cleanup - Document Type overrides](<../../.gitbook/assets/per-doctype-override (1).png>)
 
 ## Prevent cleanup of important versions
 
@@ -58,7 +57,7 @@ It is possible to mark important content versions as "prevent cleanup" to ensure
 
 1.  Open rollback modal.
 
-    <figure><img src="images/prevent-cleanup-part-1.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-1 (1).png" alt=""><figcaption></figcaption></figure>
 2.  Click **Prevent cleanup** button for each important version.
 
-    <figure><img src="images/prevent-cleanup-part-2.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/prevent-cleanup-part-2 (1).png" alt=""><figcaption></figcaption></figure>

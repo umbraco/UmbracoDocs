@@ -34,7 +34,7 @@ The lowest supported depth value is `0` and the highest is `5`.
 
 ## Errors
 
-If an error occours you will receive a HTTP status code along with an API error code and an error message in the response body.
+If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
 | Status Code | Error Code                 | Message                                                                                                                                                       |
 | ----------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |

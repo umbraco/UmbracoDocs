@@ -6,7 +6,7 @@ description: >-
 
 # Connect and Upload Files Programmatically to Azure Blob Storage
 
-In this article, we provide the steps to programmatically connect to your Umbraco Cloud Environments Azure Blob Storage containers and persist files programmatically. &#x20;
+In this article, we provide the steps to programmatically connect to your Umbraco Cloud Environments Azure Blob Storage containers and persist files programmatically.
 
 These files within the folder will only be available on Azure Storage and are not publicly visible in Umbraco CMS. The only exception is that the files that can be shared publicly via the `*.blob.core.windows.net` URL.
 
@@ -22,7 +22,7 @@ An alternative to this guide is to use the [Umbraco Storage Providers](https://g
 
 ## Getting the Azure Blob Storage credentials
 
-The first thing to do if you want to connect to the Azure Blob Storage container of your environment is the credentials.&#x20;
+The first thing to do if you want to connect to the Azure Blob Storage container of your environment is the credentials.
 
 To find the connection details for your environment's Blob Storage, follow the steps below:
 
@@ -42,7 +42,9 @@ Follow the steps below to get started connecting to Azure Blob Storage programma
 4. Run the project to complete the installation of the package.
 5. Add a new class called `BlobStorageService` which serves as a service that has a method to connect to Blob Storage:
 
-<pre class="language-csharp" data-title="BlobStorageService.cs" data-overflow="wrap" data-line-numbers><code class="lang-csharp">using Azure.Storage.Blobs;
+{% code title="BlobStorageService.cs" overflow="wrap" lineNumbers="true" %}
+```csharp
+using Azure.Storage.Blobs;
 
 namespace UmbracoProject
 {
@@ -53,11 +55,12 @@ namespace UmbracoProject
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
             return containerClient;
-<strong>
-</strong>        }
+
+        }
     }
 }
-</code></pre>
+```
+{% endcode %}
 
 6. Add a new class called `BlobStorageComposer` to inject the service:
 
@@ -170,7 +173,7 @@ You can also secure the values in **Secrets Management** in the project **Settin
 9. Visit the `{{yourProjectURL}}/umbraco/surface/BlobStorage/BlobUpdate` endpoint in the backoffice of your project to manually trigger the creation of the file to the Blob Storage.
 10. [Connect to your Blob Storage](connect-to-azure-storage-explorer.md) and there you will find the folder and file that has been created programmatically:
 
-<figure><img src="../images/blob-folder-created-programatically.png" alt="Blob folder created programmatically"><figcaption><p>Blob folder created programmatically</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/blob-folder-created-programatically.png" alt="Blob folder created programmatically"><figcaption><p>Blob folder created programmatically</p></figcaption></figure>
 
 Now that you are connected to Blob Storage programmatically, you can customize it to suit your upload needs.
 

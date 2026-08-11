@@ -2,7 +2,7 @@
 
 This error might pop up if your project's files were recently upgraded/updated to the latest version. Any deployment you try will end up failing instantly.
 
-![Deployment failed](images/deployment-failed.png)
+![Deployment failed](../../../../.gitbook/assets/deployment-failed.png)
 
 ## Cause
 
