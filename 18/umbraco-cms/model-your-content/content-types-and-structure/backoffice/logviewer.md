@@ -181,7 +181,7 @@ public class AzureTableLogsService : LogViewerServiceBase
     protected override string LoggerName => "AzureTableStorage";
 
     // Change this to what you think is sensible.
-    // As an example, check whether more than 5 days off logs are requested.
+    // As an example, check whether more than 5 days of logs are requested.
     public override Task<Attempt<bool, LogViewerOperationStatus>> CanViewLogsAsync(LogTimePeriod logTimePeriod)
     {
         return logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5)

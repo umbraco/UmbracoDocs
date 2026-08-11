@@ -61,7 +61,7 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
     {
     }
 
-    public override bool CanHandleLargeLogs => false;
+    public override bool CanHandleLargeLogs => true;
 
     public override bool CheckCanOpenLogs(LogTimePeriod logTimePeriod)
         => logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5);
