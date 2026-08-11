@@ -242,12 +242,11 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
 
 ```json
 {
-    "Name": "AzureTableStorage",
-    "Args": {
-        "storageTableName": "LogEventEntity",
-        "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
-        "connectionString": "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net"
-    }
+"Name": "AzureTableStorage",
+"Args": {
+    "storageTableName": "LogEventEntity",
+    "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+    "connectionString": "UseDevelopmentStorage=true"
 }
 ```
 

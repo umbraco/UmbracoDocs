@@ -12,19 +12,19 @@ Learn how to use the Log Viewer to read and understand logs for your Umbraco CMS
 
 ## Benefits
 
-Ever needed to find all log entries containing the same request ID? Or locate all logs where a property called `Duration` exceeds 1000ms?
+Ever needed to find all log entries containing the same request ID? Or locate all logs where a property called `Duration` exceeds `1000ms`?
 
 With structured logging and a query language, you can efficiently search and identify log items for specific scenarios. This helps in debugging and finding patterns in your logs, making it easier to resolve issues.
 
 ## Example Queries
 
-Here are some example queries to help you get started. For more details on the syntax, see the https://github.com/serilog/serilog-filters-expressions project.
+Here are some example queries to help you get started. For more details on the syntax, see the [serilog-filters-expressions](https://github.com/serilog/serilog-filters-expressions) project.
 
-**Find all logs that are from the namespace 'Umbraco.Core'**`StartsWith(SourceContext, 'Umbraco.Core')`
+- **Find all logs that are from the namespace 'Umbraco.Core'** `StartsWith(SourceContext, 'Umbraco.Core')`
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**`Has(Duration) and Duration > 1000`
+- **Find all logs that have the property 'Duration' and the duration is greater than 1000ms** `Has(Duration) and Duration > 1000`
 
-**Find all logs where the message has localhost in it with SQL like**`@Message like '%localhost%'`
+- **Find all logs where the message has localhost in it with SQL like** `@Message like '%localhost%'`
 
 ## Saved Searches
 
@@ -42,14 +42,15 @@ To fetch logs from Azure Table Storage, implement the `SerilogLogViewerSourceBas
 This implementation requires the `Azure.Data.Tables` NuGet package.
 {% endhint %}
 
+{% code title="AzureTableLogViewer.cs" %}
+
 ```csharp
 using Azure;
 using Azure.Data.Tables;
 using Serilog.Events;
 using Serilog.Formatting.Compact.Reader;
-using Serilog.Sinks.AzureTableStorage;
 using Umbraco.Cms.Core.Logging.Viewer;
-using ITableEntity = Azure.Data.Tables.ITableEntity;
+using Umbraco.Cms.Core.Models;
 
 namespace My.Website;
 
@@ -60,67 +61,79 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
     {
     }
 
-    public override bool CanHandleLargeLogs => true;
+    public override bool CanHandleLargeLogs => false;
 
-    // This method will not be called - as we have indicated that this 'CanHandleLargeLogs'
-    public override bool CheckCanOpenLogs(LogTimePeriod logTimePeriod) => throw new NotImplementedException();
+    public override bool CheckCanOpenLogs(LogTimePeriod logTimePeriod)
+        => logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5);
 
     protected override IReadOnlyList<LogEvent> GetLogs(LogTimePeriod logTimePeriod, ILogFilter filter, int skip, int take)
     {
-        //Replace ACCOUNT_NAME and KEY with your actual Azure Storage Account details. The "Logs" parameter refers to the table name where logs will be stored and retrieved from.
-        var client =
+        // This example uses a connection string compatible with the Azurite emulator
+        // https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite
+           var client =
             new TableClient(
-                "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net",
-                "Logs");
+                "UseDevelopmentStorage=true",
+                "LogEventEntity");
 
-        // Table storage does not support skip, only take, so the best we can do is to not fetch more entities than we need in total.
-        // See: https://learn.microsoft.com/en-us/rest/api/storageservices/writing-linq-queries-against-the-table-service#returning-the-top-n-entities for more info.
-        var requiredEntities = skip + take;
-        IEnumerable<AzureTableLogEntity> results = client.Query<AzureTableLogEntity>().Take(requiredEntities);
+        // Filter by timestamp to avoid retrieving all logs from the table, preventing memory and performance issues
+        IEnumerable<AzureTableLogEntity> results = client.Query<AzureTableLogEntity>(
+            entity => entity.Timestamp >= logTimePeriod.StartTime.Date &&
+                      entity.Timestamp <= logTimePeriod.EndTime.Date.AddDays(1).AddSeconds(-1));
 
-		return results
-			.Skip(skip)
-			.Take(take)
-			.Select(x => LogEventReader.ReadFromString(x.Data))
-            // Filter by timestamp to avoid retrieving all logs from the table, preventing memory and performance issues
-			.Where(evt => evt.Timestamp >= logTimePeriod.StartTime.Date &&
-				evt.Timestamp <= logTimePeriod.EndTime.Date.AddDays(1).AddSeconds(-1))
-			.Where(filter.TakeLogEvent)
-			.ToList();
+        return results
+            .Select(x => LogEventReader.ReadFromString(x.Data))
+            .Where(filter.TakeLogEvent)
+            .Skip(skip)
+            .Take(take)
+            .ToList();
     }
 
-    public override IReadOnlyList<SavedLogSearch>? GetSavedSearches()
+    public override IReadOnlyList<SavedLogSearch> GetSavedSearches()
     {
-        //This method is optional. If you store saved searches in Azure Table Storage, implement fetching logic here.
+        // This method is optional. If you store saved searches in Azure Table Storage, implement fetching logic here.
         return base.GetSavedSearches();
     }
 
-    public override IReadOnlyList<SavedLogSearch>? AddSavedSearch(string? name, string? query)
+    public override IReadOnlyList<SavedLogSearch> AddSavedSearch(string name, string query)
     {
-        //This method is optional. If you store saved searches in Azure Table Storage, implement adding logic here.
+        // This method is optional. If you store saved searches in Azure Table Storage, implement adding logic here.
         return base.AddSavedSearch(name, query);
     }
 
-    public override IReadOnlyList<SavedLogSearch>? DeleteSavedSearch(string? name, string? query)
+    public override IReadOnlyList<SavedLogSearch> DeleteSavedSearch(string name, string query)
     {
-        //This method is optional. If you store saved searches in Azure Table Storage, implement deleting logic here.
+        // This method is optional. If you store saved searches in Azure Table Storage, implement deleting logic here.
         return base.DeleteSavedSearch(name, query);
     }
-}
 
-public class AzureTableLogEntity : LogEventEntity, ITableEntity
-{
-    public DateTimeOffset? Timestamp { get; set; }
+    public class AzureTableLogEntity : ITableEntity
+    {
+        public required string Data { get; set; }
 
-    public ETag ETag { get; set; }
+        public required string PartitionKey { get; set; }
+
+        public required string RowKey { get; set; }
+
+        public DateTimeOffset? Timestamp { get; set; }
+
+        public ETag ETag { get; set; }
+    }
 }
 ```
 
+{% endcode %}
+
 Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco’s default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched and stored.
+
+{% hint style="warning" %}
+The connection string above must match the one used by the Serilog sink configured in [Configuring Logging to Azure Table Storage](#configuring-logging-to-azure-table-storage). If the two point at different storage accounts, this repository queries a table that was never written to. The Log Viewer then fails with an error stating the table does not exist. Read the connection string from configuration rather than hardcoding it, so both sides always agree.
+{% endhint %}
 
 ### Register implementation
 
 Umbraco needs to be made aware that there is a new implementation of an `ILogViewer` to register. We also need to replace the default JSON LogViewer that we ship in the core of Umbraco.
+
+{% code title="AzureTableLogsComposer.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -128,7 +141,7 @@ using Umbraco.Cms.Infrastructure.DependencyInjection;
 
 namespace My.Website;
 
-public class LogViewerSavedSearches : IComposer
+public class AzureTableLogsComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder) => builder.SetLogViewer<AzureTableLogViewer>();
 }
@@ -138,8 +151,8 @@ public class LogViewerSavedSearches : IComposer
 
 With the above two classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
-* Install `Serilog.Sinks.AzureTableStorage` from NuGet.
-* Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
+- Install `Serilog.Sinks.AzureTableStorage` from NuGet.
+- Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
 The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
 
@@ -147,9 +160,9 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
 {
 "Name": "AzureTableStorage",
 "Args": {
-  "storageTableName": "LogEventEntity",
-  "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
-  "connectionString": "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net"}
+    "storageTableName": "LogEventEntity",
+    "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+    "connectionString": "UseDevelopmentStorage=true"
 }
 ```
 
