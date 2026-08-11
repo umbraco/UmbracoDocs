@@ -158,13 +158,13 @@ Create a new implementation of `ILogViewerService`. Amongst other things, this i
 
 ```csharp
 using System.Collections.ObjectModel;
-using Umbraco.Cms.Core;                                // Attempt<,>
-using Umbraco.Cms.Core.Logging.Viewer;                 // LogTimePeriod
-using Umbraco.Cms.Core.Persistence.Repositories;       // ILogViewerQueryRepository
-using Umbraco.Cms.Core.Scoping;                        // ICoreScopeProvider
-using Umbraco.Cms.Core.Services;                       // LogViewerServiceBase, ILogViewerRepository
-using Umbraco.Cms.Core.Services.OperationStatus;       // LogViewerOperationStatus
-using LogLevel = Umbraco.Cms.Core.Logging.LogLevel;    // disambiguate from Microsoft.Extensions.Logging.LogLevel
+using Umbraco.Cms.Core;                                
+using Umbraco.Cms.Core.Logging.Viewer;                 
+using Umbraco.Cms.Core.Persistence.Repositories;      
+using Umbraco.Cms.Core.Scoping;                       
+using Umbraco.Cms.Core.Services;                       
+using Umbraco.Cms.Core.Services.OperationStatus;      
+using LogLevel = Umbraco.Cms.Core.Logging.LogLevel;   
 
 namespace My.Website;
 
