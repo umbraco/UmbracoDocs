@@ -32,6 +32,4 @@ This sends an event with the category "**Navigation**", the action "**Clicked**"
 Umbraco Engage also sends some built-in events automatically, such as Google Analytics blocker detection. See [Google Analytics Blocker Detection](google-analytics-blocker-detection.md) for an example of a built-in event using this same format.
 {% endhint %}
 
-You can track all these events in the Events report of the Analytics section.
-
 You can track all these events in the **Events** report of the **Analytics** section.
