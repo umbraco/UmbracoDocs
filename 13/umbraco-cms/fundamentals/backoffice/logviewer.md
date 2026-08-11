@@ -147,6 +147,8 @@ public class AzureTableLogsComposer : IComposer
 }
 ```
 
+{% endcode %}
+
 ### Configuring Logging to Azure Table Storage
 
 With the above two classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
@@ -155,6 +157,8 @@ With the above two classes, the setup is in place to view logs from an Azure Tab
 - Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
 The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
+
+{% code title="appsettings.json" %}
 
 ```json
 {
@@ -166,6 +170,8 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
     }
 }
 ```
+
+{% endcode %}
 
 This example uses the same Azurite-compatible connection string as the repository above, so the two stay in sync for local testing.
 
