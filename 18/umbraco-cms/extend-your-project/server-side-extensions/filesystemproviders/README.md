@@ -103,7 +103,7 @@ To achieve this, you must first create your own file system by implementing the 
 {% hint style="info" %}
 Implementing `IFileProviderFactory` allows Umbraco to compose your media file system into the webroot file provider during startup. It is mounted at the URL configured in `UmbracoMediaPath`.
 
-Image processing resolves media through that provider. A media file system without `IFileProviderFactory` serves images at their original size only.
+Without it, Umbraco cannot serve or process media from your file system through that path. Image processing resolves media only through the webroot file provider.
 {% endhint %}
 
 You then replace the media filesystem by composition using `IUmbracoBuilder.SetMediaFileSystem(...)` (as is demonstrated in the paragraphs above), but instead of returning a `PhysicalFileSystem`, you return your own file system implementation.
