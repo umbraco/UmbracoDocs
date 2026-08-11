@@ -247,10 +247,13 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
     "storageTableName": "LogEventEntity",
     "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
     "connectionString": "UseDevelopmentStorage=true"
+    }
 }
 ```
 
 {% endcode %}
+
+This example uses the same Azurite-compatible connection string as the repository above, so the two stay in sync for local testing. Replace it with your real Azure Storage connection string when deploying and update the repository's connection string to match.
 
 For more in-depth information about logging and how to configure it, see the [Logging](../../../develop-with-umbraco/testing-and-debugging/logging.md) article.
 

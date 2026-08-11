@@ -147,7 +147,7 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
 Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco's default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched.
 
 {% hint style="warning" %}
-The connection string above must match the one used by the Serilog sink configured in [Configuring Logging to Azure Table Storage](#configuring-logging-to-azure-table-storage). If the two point at different storage accounts, this repository queries a table that was never written to. The Log Viewer then fails with an error stating the table does not exist. Read the connection string from configuration rather than hardcoding it, so both sides always agree. 
+The connection string above must match the one used by the Serilog sink configured in [Configuring Logging to Azure Table Storage](#configuring-logging-to-azure-table-storage). If the two point at different storage accounts, this repository queries a table that was never written to. The Log Viewer then fails with an error stating the table does not exist. Read the connection string from configuration rather than hardcoding it, so both sides always agree.
 {% endhint %}
 
 ### Creating a custom log viewer service
@@ -247,10 +247,13 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
     "storageTableName": "LogEventEntity",
     "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
     "connectionString": "UseDevelopmentStorage=true"
+    }
 }
 ```
 
 {% endcode %}
+
+This example uses the same Azurite-compatible connection string as the repository above, so the two stay in sync for local testing. Replace it with your real Azure Storage connection string when deploying and update the repository's connection string to match.
 
 For more in-depth information about logging and how to configure it, see the [Logging](../../../develop-with-umbraco/testing-and-debugging/logging.md) article.
 

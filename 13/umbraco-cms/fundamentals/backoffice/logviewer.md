@@ -32,7 +32,7 @@ If you frequently use a custom query, you can save it for quick access. Type you
 
 ## Implementing Your Own Log Viewer
 
-Umbraco allows you to implement a customn `ILogViewer` to fetch logs from alternative sources, such as **Azure Table Storage**.
+Umbraco allows you to implement a custom `ILogViewer` to fetch logs from alternative sources, such as **Azure Table Storage**.
 
 ### Creating a Custom Log Viewer
 
@@ -70,7 +70,7 @@ public class AzureTableLogViewer : SerilogLogViewerSourceBase
     {
         // This example uses a connection string compatible with the Azurite emulator
         // https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite
-           var client =
+        var client =
             new TableClient(
                 "UseDevelopmentStorage=true",
                 "LogEventEntity");
@@ -163,8 +163,11 @@ The following sink needs to be added to the [`Serilog:WriteTo`](https://github.c
     "storageTableName": "LogEventEntity",
     "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
     "connectionString": "UseDevelopmentStorage=true"
+    }
 }
 ```
+
+This example uses the same Azurite-compatible connection string as the repository above, so the two stay in sync for local testing. Replace it with your real Azure Storage connection string when deploying and update the repository's connection string to match.
 
 For more in-depth information about logging and how to configure it, see the [Logging](../code/debugging/logging.md) article.
 
