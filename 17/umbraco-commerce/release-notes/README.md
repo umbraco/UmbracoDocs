@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### [17.1.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.12) (11th Aug 2026)
+* Fix email rendering crash when there's no active HTTP request [#872](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/872)
+* Fix cart cleanup timing out on stores with a large number of old carts [#874](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/874)
+
 #### [17.1.11](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.11) (7th Aug 2026)
 * Fix the Commerce section failing to load on CMS 17.6.0 [#868](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/868)
 
