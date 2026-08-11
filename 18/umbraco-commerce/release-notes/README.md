@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.0.5 (11th Aug 2026)
+
+* Fixed email rendering crash when there's no active HTTP request (#872).
+* Fixed cart cleanup timing out on stores with a large number of old carts (#874).
+
 #### 18.0.4 (29th Jul 2026)
 
 * Added logging to record why an order is moved to the error status, and when a payment is reset or redirected through a payment provider's cancel or error URL (#866).
