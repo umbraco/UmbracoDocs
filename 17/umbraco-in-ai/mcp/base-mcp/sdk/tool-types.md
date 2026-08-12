@@ -79,6 +79,7 @@ export type CmsToolsName = keyof CmsTools;
 A downstream MCP imports the registry to type its chained calls:
 
 ```typescript
+import { extractChainedResult } from "@umbraco-cms/mcp-server-sdk";
 import type {
   CmsTools,
   CmsToolsName,
@@ -88,11 +89,13 @@ async function callCms<N extends CmsToolsName>(
   name: N,
   args: CmsTools[N]["input"],
 ): Promise<CmsTools[N]["output"]> {
-  return mcpClientManager.callTool("cms", name, args) as Promise<
-    CmsTools[N]["output"]
-  >;
+  const result = await mcpClientManager.callTool("cms", name, args);
+  if (result.isError) throw new Error(extractChainedResult(result));
+  return extractChainedResult(result) as CmsTools[N]["output"];
 }
 ```
+
+`callTool()` returns the raw MCP envelope (`{ content, structuredContent?, isError? }`), not the tool's output directly. `extractChainedResult` unwraps it into the plain object the registry types describe. See [MCP Chaining](./mcp-chaining.md) for the same pattern applied inline in a tool handler.
 
 The TypeScript compiler now enforces:
 
