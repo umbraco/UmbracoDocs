@@ -61,7 +61,7 @@ Additional domains are intended for cases where multiple distinct domains point 
 
 Adding an additional domain to your license is a permanent add-on to the license; refunds are not available for additional domain purchases.
 
-If you require to add additional domains to the license, [reach out the sales team](https://umbraco.com/products/add-ons/forms/) with your request and they will manage this process.
+If you need to add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/forms/) with your request and they will manage this process.
 
 ### Reconfiguration of domains
 
