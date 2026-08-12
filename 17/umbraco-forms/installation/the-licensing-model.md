@@ -57,7 +57,7 @@ An additional domain is an add-on for an existing license. It extends coverage t
 
 Each additional domain follows the same coverage rules as the primary license domain. It includes all subdomains and the `.local` extension for the live domain, plus two development/testing domains with and without the `www` subdomain.
 
-Additional domains are intended for cases where multiple distinct domains point at the same installation. For example, when running separate regional or brand sites side by side. Because a single license covers only one production domain, each extra domain requires its own add-on. 
+Additional domains are intended for cases where multiple distinct domains point at the same installation. An example could be when running separate regional or brand sites side by side. Because a single license covers only one production domain, each extra domain requires its own add-on. 
 
 Adding an additional domain to your license is a permanent add-on to the license; refunds are not available for additional domain purchases.
 
