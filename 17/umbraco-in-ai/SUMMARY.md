@@ -28,6 +28,8 @@
       * [Manual Setup](mcp/base-mcp/hosted-mcp/deployment/manual-setup.md)
       * [Infrastructure as Code](mcp/base-mcp/hosted-mcp/deployment/infrastructure-as-code.md)
       * [Multi-Site Deployments](mcp/base-mcp/hosted-mcp/deployment/multi-site.md)
+      * [URL-Based Routing](mcp/base-mcp/hosted-mcp/deployment/url-based-routing.md)
+      * [External Login Short Circuit](mcp/base-mcp/hosted-mcp/deployment/external-login-short-circuit.md)
     * [Troubleshooting](mcp/base-mcp/hosted-mcp/troubleshooting.md)
   * [MCP Server SDK](mcp/base-mcp/sdk/README.md)
     * [API Helpers](mcp/base-mcp/sdk/api-helpers.md)

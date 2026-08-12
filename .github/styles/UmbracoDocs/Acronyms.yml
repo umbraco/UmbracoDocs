@@ -105,6 +105,7 @@ exceptions:
   - SDK      # Software Development Kit
   - SEO      # Search Engine Optimization
   - SHIFT    # Keyboard key
+  - SPA      # Single-Page Application
   - SPACE    # Keyboard key
   - SKU      # Stock Keeping Unit
   - SMTP     # Simple Mail Transfer Protocol
@@ -112,6 +113,7 @@ exceptions:
   - SSD      # Solid State Drive
   - SSE      # Server-Sent Events
   - SSL      # Secure Sockets Layer
+  - SSO      # Single Sign-On
   - SVG      # Scalable Vector Graphics
   - TCP      # Transmission Control Protocol
   - TEMP     # Temporary

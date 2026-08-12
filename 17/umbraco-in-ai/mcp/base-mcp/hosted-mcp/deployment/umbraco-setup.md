@@ -150,6 +150,42 @@ public class RegisterMcpClientHandler
 Each hosted MCP defines its own OAuth client ID in its `src/worker.ts` — for example, `umbraco-cms-dev-mcp-hosted` for the Developer MCP or `umbraco-cms-editor-mcp-hosted` for the Editor MCP. Use that same ID as the `clientId` above and as the Worker's `UMBRACO_OAUTH_CLIENT_ID`. All three must match. This is different from the `umbraco-back-office-mcp` API user used by the local stdio server.
 {% endhint %}
 
+## One Client ID Per Hosted MCP Worker
+
+If you connect more than one hosted MCP Worker to the same Umbraco instance, register each Worker as a separate OpenIddict client. Each client must have a unique `ClientId` and the redirect URIs that match its own callback URL.
+
+Sharing a single client ID across multiple Workers is not supported. The Worker uses the `clientId` to identify itself during the token exchange, and OpenIddict validates the redirect URI against the client's registered list.
+
+For example, if you run both the Developer MCP and the Editor MCP against the same Umbraco instance, register two clients:
+
+```csharp
+// Worker 1: Developer MCP
+new OpenIddictApplicationDescriptor
+{
+    ClientId = "umbraco-cms-dev-mcp-hosted",
+    RedirectUris =
+    {
+        new Uri("https://cms-dev-mcp.workers.dev/callback"),
+        new Uri("http://localhost:8787/callback"),
+    },
+    // ...permissions
+};
+
+// Worker 2: Editor MCP
+new OpenIddictApplicationDescriptor
+{
+    ClientId = "umbraco-cms-editor-mcp-hosted",
+    RedirectUris =
+    {
+        new Uri("https://cms-editor-mcp.workers.dev/callback"),
+        new Uri("http://localhost:8788/callback"),
+    },
+    // ...permissions
+};
+```
+
+Loop over a `string[]` of client IDs in `RegisterMcpClientHandler`, or register a separate notification handler per MCP. Each Worker reads its own `UMBRACO_OAUTH_CLIENT_ID` environment variable and uses that value at the token endpoint.
+
 ## How It Works
 
 - **Composer auto-discovery**: Umbraco discovers `McpOAuthComposer` via `IComposer`. No changes to `Program.cs` are needed.
@@ -202,6 +238,14 @@ If you do not need user switching, you can omit `PostLogoutRedirectUris` and the
 For multi-site deployments, each Umbraco instance needs its own OAuth client registered. Include the site ID in the callback path (for example, `/callback/prod`). Each site can use different OAuth client IDs. Register a separate Composer (or parameterize a single one) for each Umbraco instance.
 
 See [Multi-Site Deployments](multi-site.md) for the full setup including redirect URI examples.
+
+For URL-based routing across many Umbraco Cloud projects, see [URL-Based Routing](url-based-routing.md).
+
+## Umbraco Cloud Projects
+
+Umbraco Cloud projects need an extra composer in addition to `McpOAuthComposer`. The default cookie scheme redirects unauthenticated users to a local username and password form that does not work with Cloud SSO. The [External Login Short Circuit](external-login-short-circuit.md) composer routes the redirect through the Cloud identity provider.
+
+Self-hosted Umbraco instances do not need the short-circuit composer.
 
 ## Set Worker Secrets
 

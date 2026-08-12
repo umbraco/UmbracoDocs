@@ -103,7 +103,7 @@ See the [Customization](../customization.md) guide for all options and examples.
 
 A single Worker can serve multiple Umbraco instances. All sites share one MCP endpoint (`/`). Site selection happens during authorization via the consent screen.
 
-See [Multi-Site Deployments](multi-site.md) for full setup instructions, route structure, and security details.
+See [Multi-Site Deployments](multi-site.md) for full setup instructions, route structure, and security details. For Umbraco Cloud, [URL-Based Routing](url-based-routing.md) resolves the site from the connection URL instead, with no consent-screen picker.
 
 ## Custom Domain
 
