@@ -1,6 +1,6 @@
 # CDN Caching and Optimizations
 
-After [adding hostnames](../../go-live/manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or specific hostnames within your project.
+After [adding custom hostnames](../../go-live/manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or specific hostnames within your project. The default `*.{region}.umbraco.io` hostnames that come with the project cannot be cached, see [Custom hostname requirement](manage-cdn-caching.md#custom-hostname-requirement).
 
 The caching options relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user. This is the traffic of your website and assets from the webserver to the browser.
 
@@ -13,6 +13,24 @@ The options that are currently available are:
 ![Default Options](../../.gitbook/assets/CDN-caching-default.png)
 
 When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project so that the new hostnames will get the settings you have chosen. This means that when enabling caching in the default settings and adding a new hostname, caching is enabled for that new hostname.
+
+## Custom hostname requirement
+
+The CDN sits in front of your custom hostnames. This means that CDN Caching only applies to hostnames you have added to the environment yourself, for example `www.example.com`.
+
+The default hostnames that come with an Umbraco Cloud project are not enough to enable CDN Caching:
+
+* Default hostnames follow the `*.{region}.umbraco.io` pattern, such as `snoopy.euwest01.umbraco.io` for the Live environment and `dev-snoopy.euwest01.umbraco.io` for the Development environment.
+* Default hostnames are not listed under **Hostname-specific settings**, so you cannot configure caching for them.
+* Requests to a default hostname are served from the origin. Enabling **Enable Cache** or **Cache Everything** in the **Default settings** has no effect on those requests.
+
+The practical consequences are:
+
+* A project that has not gone live yet, and therefore only uses its default hostnames, gets no CDN Caching regardless of the settings on the page.
+* Testing caching behavior on a Development or Staging environment requires a custom hostname on that specific environment, for example a subdomain such as `test.example.com`. Settings are scoped per environment, so a custom hostname on the Live environment does not enable caching on Development or Staging.
+* Verifying whether a response was served from the CDN must be done through the custom hostname, not through the `umbraco.io` URL.
+
+To add a custom hostname, follow the steps in [Managing Hostnames](../../go-live/manage-hostnames/). Once the hostname is added and shows as **Protected**, it appears under **Hostname-specific settings** and inherits the caching options from **Default settings**.
 
 ## Caching Explained
 

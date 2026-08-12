@@ -86,6 +86,10 @@ Check with your DNS host or hostname registrar regarding configuration details f
 Adding hostname and configuring Content Delivery Network (CDN) and Cache
 {% endembed %}
 
+{% hint style="info" %}
+A custom hostname is required if you want to use CDN Caching. The default `*.{region}.umbraco.io` hostnames cannot be configured for caching. For more information, see [CDN Caching and Optimizations](../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md#custom-hostname-requirement).
+{% endhint %}
+
 To specify the hostname for each root node using a multisite setup, follow these steps:
 
 1. Go to the **Backoffice** of the project.
