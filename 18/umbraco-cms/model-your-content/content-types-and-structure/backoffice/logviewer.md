@@ -8,9 +8,7 @@ Umbraco ships with a built-in Log Viewer feature. This allows you to filter, vie
 
 ## Benefits
 
-Ever needed to find all log entries containing the same request ID? Or locate all logs where a property called `Duration` exceeds `1000ms`?
-
-With structured logging and a query language, you can efficiently search and identify log items for specific scenarios. This helps in debugging and finding patterns in your logs, making it easier to resolve issues.
+Umbraco's Log Viewer uses structured logging and a query language, so you can search for specific scenarios instead of scanning raw text. For example, finding every log entry tied to one request ID, or every entry where `Duration` exceeds `1000ms`. This makes debugging and pattern-spotting easier.
 
 ## Example Queries
 
@@ -233,8 +231,8 @@ public class AzureTableLogsComposer : IComposer
 
 With the above three classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
-- Install `Serilog.Sinks.AzureTableStorage` from NuGet.
-- Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
+1. Install `Serilog.Sinks.AzureTableStorage` from NuGet.
+2. Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
 The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
 
