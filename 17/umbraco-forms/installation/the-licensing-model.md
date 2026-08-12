@@ -53,6 +53,14 @@ You can look at the pricing, features, and purchase the license on the [Umbraco 
 
 ### Add additional domains
 
+An additional domain is an add-on for an existing license. It extends coverage to a second (or further) production environment on the same Umbraco installation.
+
+Each additional domain follows the same coverage rules as the primary license domain. It includes all subdomains and the `.local` extension for the live domain, plus two development/testing domains with and without the `www` subdomain.
+
+Additional domains are intended for cases where multiple distinct domains point at the same installation. For example, when running separate regional or brand sites side by side. Because a single license covers only one production domain, each extra domain requires its own add-on. 
+
+Adding an additional domain to your license is a permanent add-on to the license; refunds are not available for additional domain purchases.
+
 If you require to add additional domains to the license, [reach out the sales team](https://umbraco.com/products/add-ons/forms/) with your request and they will manage this process.
 
 ### Installing subscription license product key
