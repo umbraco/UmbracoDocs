@@ -18,6 +18,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.0 (12th Aug 2026)
+
+* Added customer management, including customer records, addresses, communication history, and statistics that stay in sync with orders automatically.
+* Added support for editing an order after it has been finalized and authorized, including changing line quantities, adding or removing lines, and reconciling discount and gift card codes.
+* Added partial capture support for payment providers, with the authorized and captured amount both shown in the transaction history.
+* Fixed a database migration failure when importing customer records from legacy orders that have no first or last name (#876).
+
 #### 18.0.5 (11th Aug 2026)
 
 * Fixed email rendering crash when there's no active HTTP request (#872).
