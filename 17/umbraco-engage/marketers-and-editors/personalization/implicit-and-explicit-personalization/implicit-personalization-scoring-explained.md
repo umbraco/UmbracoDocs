@@ -43,7 +43,7 @@ Setting up a deviation of at least 35 points between two personas the cockpit wi
 
 You can see that the "**Data and privacy officer**" still has 40 points and the marketer 30 points. Both have also reached the threshold of 25 points, but there is not a minimal deviation of 35 points. The Umbraco Engage algorithm waits for the deviation to reach the set threshold before assuming a persona. For example: the **Data & privacy officer** reaches 65 points (30 points of the marketer + a minimal deviation of 35 points).
 
-### Absolute vs. Percentage deviation
+### Absolute versus Percentage deviation
 
 Minimal deviation can be measured in two ways:
 
