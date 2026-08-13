@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.2.0 (12th Aug 2026)
+* Add customer management, including customer records, addresses, communication history, and statistics that sync automatically from orders
+* Add support for editing an order after it has been finalized and authorized, including changing line quantities, adding or removing lines, and reconciling discount and gift card codes
+* Add partial capture support for payment providers, with the authorized and captured amount both shown in the transaction history
+* Fix a database migration failure when importing customer records from legacy orders that have no first or last name [#876](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/876)
+
 #### [17.1.12](https://github.com/umbraco/Umbraco.Commerce.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.12) (11th Aug 2026)
 * Fix email rendering crash when there's no active HTTP request [#872](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/872)
 * Fix cart cleanup timing out on stores with a large number of old carts [#874](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/874)
