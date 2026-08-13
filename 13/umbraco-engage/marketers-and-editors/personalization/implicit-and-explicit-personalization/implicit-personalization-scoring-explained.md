@@ -42,3 +42,32 @@ Setting up a deviation of at least 35 points between two personas the cockpit wi
 ![Persona scoring showing minimal deviation and the algorithm waiting for the threshold to be reached](<../../../.gitbook/assets/engage-persona-scoring-with-minimal-deviation (1).png>)
 
 You can see that the "**Data and privacy officer**" still has 40 points and the marketer 30 points. Both have also reached the threshold of 25 points, but there is not a minimal deviation of 35 points. The Umbraco Engage algorithm waits for the deviation to reach the set threshold before assuming a persona. For example: the **Data & privacy officer** reaches 65 points (30 points of the marketer + a minimal deviation of 35 points).
+
+### Absolute vs. Percentage deviation
+
+Minimal deviation can be measured in two ways:
+
+**Absolute**
+When set to Absolute, the deviation is measured in points. For example, if the highest score is 40 and the next highest score is 35, the deviation is 5 points.
+
+**Absolute deviation table:**
+
+The table below uses the same Data & Privacy officer / Marketer example as above:
+
+| Data & Privacy officer | Marketer | Deviation | Minimal deviation: 10 points (Absolute) | Result |
+| --- | --- | --- | --- | --- |
+| 40 | 35 | 5 | 10 | Not activated. Gap too small |
+| 45 | 30 | 15 | 10 | Activated. Gap exceeds 10 points |
+
+**Percentage**
+When set to Percentage, the deviation is measured as a percentage of the second-highest score. This can be useful when you want the required gap between profiles to scale with the overall score.
+
+**Percentage deviation table:**
+
+The table below uses the same Data & Privacy officer / Marketer example as above:
+
+| Data & Privacy officer | Marketer | Deviation | Minimal deviation: 25% (Percentage) | Required gap | Result |
+| --- | --- | --- | --- | --- | --- |
+| 34 | 30 | 4 | 25% | 7.5 points (25% of 30) | Not activated — gap is only ~13% |
+| 40 | 30 | 10 | 25% | 7.5 points (25% of 30) | Activated — gap is ~33% |
+| 68 | 60 | 8 | 25% | 15 points (25% of 60) | Not activated — same 8-point gap that would pass at a lower score fails here |
