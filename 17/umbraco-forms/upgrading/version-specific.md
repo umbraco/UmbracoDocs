@@ -36,6 +36,25 @@ To resolve this, choose one of the following options:
 
 For the updated snippets and the tag helper, see the [Rendering Forms Scripts](../developer/rendering-scripts.md) article. For the configuration option, see the [Configuration](../developer/configuration/README.md#trackrenderedformsstoragemethod) article.
 
+### Forms API URL paths
+
+This change was introduced in version 14. It affects you if you upgrade directly from version 13 to version 17.
+
+The Forms API endpoints moved under a `delivery` path segment. Both the endpoint for requesting a form definition and the endpoint for submitting a form entry changed:
+
+| Endpoint | Version 13 | Version 14 onwards |
+| --- | --- | --- |
+| Request a form definition | `GET /umbraco/forms/api/v1/definitions/{id}` | `GET /umbraco/forms/delivery/api/v1/definitions/{id}` |
+| Submit a form entry | `POST /umbraco/forms/api/v1/entries/{id}` | `POST /umbraco/forms/delivery/api/v1/entries/{id}` |
+
+{% hint style="warning" %}
+Requests to the version 13 paths return a 404 status code. Client-side scripts that submit forms fail without a validation error, as the request never reaches the Forms API.
+{% endhint %}
+
+Update any code that calls these endpoints, including client-side scripts, server-to-server integrations, and generated API clients.
+
+For the current endpoint definitions, see the [Headless/AJAX Forms](../developer/ajaxforms.md) article.
+
 ## Legacy version specific upgrade notes
 
 You can find the version specific upgrade notes for versions out of support in the [Legacy documentation on GitHub](https://github.com/umbraco/UmbracoDocs/blob/umbraco-eol-versions/11/umbraco-forms/installation/version-specific.md).
