@@ -36,7 +36,7 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@latest
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" -- npx @umbraco-cms/mcp-dev@latest
 ```
 
 Replace the following values with your local connection details:
@@ -71,7 +71,7 @@ This is the referred project-level configuration for Claude Code. Creating a `.m
 UMBRACO_CLIENT_ID=umbraco-back-office-mcp
 UMBRACO_CLIENT_SECRET=1234567890
 UMBRACO_BASE_URL=http://localhost:123456
-UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
+UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type,template
 ```
 
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.

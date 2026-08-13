@@ -48,7 +48,7 @@ codex mcp add umbraco-mcp \
   --env UMBRACO_CLIENT_SECRET="your-secret" \
   --env UMBRACO_BASE_URL="https://your-domain.com" \
   --env NODE_TLS_REJECT_UNAUTHORIZED="0" \
-  --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" \
+  --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" \
   -- npx -y @umbraco-cms/mcp-dev@latest
 ```
 
