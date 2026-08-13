@@ -25,7 +25,7 @@ Follow these steps in order to grant a user access to sensitive data:
 3. Select the **Groups** menu in the top-right corner.
 4. Choose the **Sensitive data** group.
 
-![Sensitive data user group](../../.gitbook/assets/sensitive-data-user-group-v8.png)
+![Sensitive data user group](../../.gitbook/assets/sensitive-data-user-group.png)
 
 5. Click **Add** in the **Users** box on the right.
 6. Select the users you want to give access to the sensitive data.
