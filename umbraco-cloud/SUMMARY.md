@@ -169,6 +169,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [August 2026](release-notes/overview-2026/2026-08-releasenotes.md)
   * [July 2026](release-notes/overview-2026/2026-07-releasenotes.md)
   * [June 2026](release-notes/overview-2026/2026-06-releasenotes.md)
   * [May 2026](release-notes/overview-2026/2026-05-releasenotes.md)
