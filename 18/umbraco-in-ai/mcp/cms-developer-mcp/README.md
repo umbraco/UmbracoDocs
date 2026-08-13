@@ -124,9 +124,13 @@ If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use 
 
 ```
 
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](available-tools.md) for the full list of collections.
+{% endhint %}
+
 Add your Umbraco MCP configuration values (Client ID, Client Secret, and Umbraco URL) in the appropriate section of your host setup. Then restart the MCP Server or, in some cases, restart the host application.
 
-Once restarted, you’ll have access to the full suite of tools available through the Umbraco CMS Developer MCP Server.
+Once restarted, the MCP Server has access to the tool collections you configured.
 
 {% hint style="info" %}
 This Developer MCP Server requires `Node.js` version 22 or higher. Check your current `Node.js` version by running `node -v` in your terminal.

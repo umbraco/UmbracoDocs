@@ -44,6 +44,10 @@ See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility
 }
 ```
 
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
+
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
 
 ![MCP Panel Added](../../.gitbook/assets/Cursor-MCP-Added.png)

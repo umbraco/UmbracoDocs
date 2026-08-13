@@ -31,6 +31,10 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@lts-17
 claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" -- npx @umbraco-cms/mcp-dev@lts-17
 ```
 
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
+
 Replace the following values with your local connection details:
 
 - `UMBRACO_CLIENT_ID`

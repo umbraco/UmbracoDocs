@@ -41,6 +41,10 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 }
 ```
 
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
+
 5. Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
 6. Restart Claude to activate the new configuration.
 7. Open the logs and review the `mcp-server-umbraco-mcp.log` file if you encounter a connection error. This file contains details on how to resolve the issue.
