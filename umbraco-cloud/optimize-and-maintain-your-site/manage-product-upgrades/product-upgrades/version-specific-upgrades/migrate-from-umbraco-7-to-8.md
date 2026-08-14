@@ -25,7 +25,7 @@ It is no longer possible to create a new Umbraco 8 project directly in the Umbra
 You can find the full playlist here: [Migrate an Umbraco Cloud project from 7 to 8](https://www.youtube.com/playlist?list=PLgX62vUaGZsGceCXveMkprlDV5a3K94db)
 
 {% hint style="info" %}
-The video tutorial was recorded when Umbraco 8 projects could still be created directly in the Cloud portal. The overall migration steps still apply, but set up the Umbraco 8 project locally as described below, rather than by cloning a Cloud project.
+The video tutorial was recorded when Umbraco 8 projects could still be created directly in the Cloud portal. The overall migration steps still apply, but set up the Umbraco 8 project locally as described below.
 {% endhint %}
 
 ## Prerequisites

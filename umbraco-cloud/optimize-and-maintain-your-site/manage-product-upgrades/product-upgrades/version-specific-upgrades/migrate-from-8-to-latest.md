@@ -7,7 +7,7 @@ description: >-
 # Migrate from Umbraco 8 to Umbraco 10
 
 {% hint style="warning" %}
-It is currently not possible to upgrade directly from Umbraco 8 to the latest version. Umbraco Cloud also only allows new projects to be created on versions within their active [support phase](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/).
+It is currently not possible to upgrade directly from Umbraco 8 to the latest version. Umbraco Cloud only allows new projects to be created on versions within the active [support phase](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/).
 
 This guide covers upgrading from Umbraco 8 to Umbraco 10 locally, since Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. From there, continue upgrading locally using the [Major Upgrades](../major-upgrades.md) guide until the project reaches a version Umbraco Cloud can currently create a project on.
 {% endhint %}
@@ -81,6 +81,7 @@ You need to manually upgrade the view files and custom code implementation. For 
 ## Step 2: File Migration
 
 1. Copy the following files/folders from the Umbraco 8 project into the Umbraco 10 project folder:
+
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. Copy the `~/Media` folder from the Umbraco 8 project into the `wwwroot/media` folder of the Umbraco 10 project:
