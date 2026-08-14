@@ -17,6 +17,7 @@ It is no longer possible to create a new Umbraco 8 project directly in the Umbra
 * **Migrate and upgrade locally, then deploy:** Follow this guide to migrate the Umbraco 7 project to Umbraco 8 on a local setup. Once the site runs on Umbraco 8 locally, continue through the [upgrade path to a supported version locally](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest). Only then create the Umbraco Cloud project and deploy to it.
 
 * **Rebuild on a new version:** If you're rebuilding the site on a new version and only want to carry over content and schema, use the [Import/Export](https://docs.umbraco.com/umbraco-deploy/deployment-workflow/import-export/import-export-v7) guide. This only migrates entities that Deploy supports, so custom database tables and Umbraco Forms entries are not included, and only draft and published content versions carry over, not full version history.
+
 {% endhint %}
 
 ## Video tutorial

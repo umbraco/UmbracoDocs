@@ -80,7 +80,7 @@ You need to manually upgrade the view files and custom code implementation. For 
 
 ## Step 2: File Migration
 
-1. The following files/folders need to be copied from the Umbraco 8 project into the Umbraco 10 project folder:
+1. Copy the following files/folders from the Umbraco 8 project into the Umbraco 10 project folder:
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. Copy the `~/Media` folder from the Umbraco 8 project into the `wwwroot/media` folder of the Umbraco 10 project:
