@@ -40,7 +40,7 @@ To update templates with the new layout template, follow these steps:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Navigate to the **Homepage** template.
-4. Cut everything from the `<!DOCTYPE HTML>` (around line 8) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the layout template.
+4. Cut everything from the `<!DOCTYPE HTML>` (around line 8) to the end of the `</div>` tag (around line 44). It is the `header` and `navigation` of the site to the layout template.
 
     ![Header and navigation tags selected in the HomePage template](../../../.gitbook/assets/homepage-after-cutting-the-header.png)
 5. Click **Save**.
@@ -50,8 +50,11 @@ To update templates with the new layout template, follow these steps:
     ![Adding renderbody in the Layout template](../../../.gitbook/assets/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
-   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 109) to the end of the `</html>` tag (around line 123) and click **Save**.
-   * Go to the **Layout** template and paste this HTML markup after the `@RenderBody()` field.
+   * Go to the **Homepage** template.
+   * Cut everything from the `<!-- Footer -->` tag (around line 109) to the end of the `</html>` tag (around line 123).
+   * Click **Save**.
+   * Go to the **Layout** template.
+   * Paste this HTML markup after the `@RenderBody()` field.
 
        ![End of the Layout template](../../../.gitbook/assets/layout-template-complete.png)
 10. Click **Save**.

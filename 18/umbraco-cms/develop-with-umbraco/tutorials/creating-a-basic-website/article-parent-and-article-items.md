@@ -103,7 +103,7 @@ To update the **Articles Main** template, follow these steps:
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blog.html**.
 9. Paste the content into **Articles Main** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
+10. Remove everything from `<html>` (around line 9) to the closing `</div>` tag (around line 44). It is the `header` and `navigation` of the site already covered in the Layout template.
 11. Remove everything from the `<!-- Footer -->` tag (around line 85) to the end of the `</html>` tag (around line 132)
 12. Replace the static text within the `<h1>` tags (around line 14) with the `Model.Value` reference to _**articlesTitle**_.
 13. Replace the static text within the `<div>` tags (from line 25 to 31) with the `Model.Value` reference to _**articlesBodyText**_.
@@ -269,7 +269,7 @@ To update the **Articles Item** template, follow these steps:
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blogpost.html**.
 9. Paste the content into **Articles Item** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
+10. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44). It is the `header` and `navigation` of the site already covered in the Layout template.
 11. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
 12. Replace the static text within the `<h1>` tags (around line 14) with the `Model.Value` reference to _**articleTitle**_.
 13. Replace the static text within the `<div>` tags (from line 27 to 41) with the `Model.Value` reference to _**articleContent**_.
