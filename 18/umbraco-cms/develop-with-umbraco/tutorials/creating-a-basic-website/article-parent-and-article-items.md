@@ -13,7 +13,7 @@ To create **Articles Main** Document Type, follow these steps:
 3. Select **Create...**.
 4. Select **Document Type with Template**.
 5. Enter a **Name** for the **Document Type**. Let's call it _Articles Main_.
-6.  Let's add two fields with the following specifications:
+6. Add two fields with the following specifications:
 
     | Group | Field Name         | Alias            | Data Type        |
     | ----- | ------------------ | ---------------- | ---------------- |
@@ -30,7 +30,7 @@ To create **Articles Item** Document Type, follow these steps:
 3. Select **Create...**.
 4. Select **Document Type with Template**.
 5. Enter a **Name** for the **Document Type**. Let's call it _Articles Item_.
-6.  Let's add two fields with the following specifications:
+6. Add two fields with the following specifications:
 
     | Group   | Field Name      | Alias          | Data Type        |
     | ------- | --------------- | -------------- | ---------------- |
@@ -57,12 +57,10 @@ To update **Articles Main** Document Type permissions:
 2. Go to the **Structure** tab.
 3. Select **Choose** in the **Allowed child node types**.
 4. Select **Articles Item**.
-5.  Click **Choose**.
-
-    ![Adding child Node](../../../.gitbook/assets/adding-child-node.png)
-6. Click **Configure as a collection**.
+5. Click **Choose**.
+6. Click **Add collection**.
 7. Select **List View - Content**.
-8.  Click **Save**.
+8. Click **Save**.
 
     ![Enabling Collection](../../../.gitbook/assets/list-view-enabled.png)
 
@@ -74,20 +72,23 @@ To add a content node:
 2. Select **...** next to the **HomePage** node.
 3. Click **Create**.
 4. Select **Articles Main**.
-5. Enter the name for the article. We are going to call it _Articles_.
+5. Enter the name for the article. For example, _Articles_.
 6. Enter the content in the **Article Title** and **Article Body Text** fields.
-7.  Click **Save and Publish**. When you click on Save and Publish, you will notice an empty Collection is created.
+7. Click **Save and Publish**. When you click on Save and Publish, you will notice an empty Collection is created.
 
-    We still need to add the child nodes which will be displayed in the Collection making it easier to view them. You can create new nodes from this section.
+    The child nodes need to be added which will be displayed in the Collection making it easier to view them. You can create new nodes from this section.
 
-    \{% hint style="info" %\} If you do not see the Collection, try refreshing the page. \{% endhint %\}
+{% hint style="info" %}
+If you do not see the Collection, try refreshing the page.
+{% endhint %}
+
 8. Click **Create Articles Item**.
-9. Enter the name for the article. We are going to call it _Article 1_.
+9. Enter the name for the article. For example, _Article 1_.
 10. Enter the content in the **Article Title** and **Article Content** fields.
 11. Repeat steps 8 to 10 to create _Article 2_.
 12. Click **Save and Publish**.
 
-    ![Content Tree with Articles](../../../.gitbook/assets/figure-40-articles-created-v8.png)
+    ![Content Tree with Articles](../../../.gitbook/assets/articles-created.png)
 
 ## Updating the Template
 
@@ -102,37 +103,41 @@ To update the **Articles Main** template, follow these steps:
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blog.html**.
 9. Paste the content into **Articles Main** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
-11. Remove everything from the `<!-- Footer -->` tag (around line 83) to the end of the `</html>` tag (around line 130)
-12. Replace the static text within the `<h1>` tags (around line 12) with the Model.Value reference to _**articlesTitle**_.
-13. Replace the static text within the `<div>` tags (from line 23 to 29) with the Model.Value reference to _**articlesBodyText**_.
+10. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
+11. Remove everything from the `<!-- Footer -->` tag (around line 85) to the end of the `</html>` tag (around line 132)
+12. Replace the static text within the `<h1>` tags (around line 14) with the `Model.Value` reference to _**articlesTitle**_.
+13. Replace the static text within the `<div>` tags (from line 25 to 31) with the `Model.Value` reference to _**articlesBodyText**_.
 
     ![Articles Main Template](../../../.gitbook/assets/articles-main-template.png)
-14. Define a query for all articles below the `<h3>` tag (around line 30) of the `<!-- Latest blog posts -->` section.
+14. Define a query for all articles below the `<h3>` tag (around line 32) of the `<!-- Latest blog posts -->` section.
 
     ![Query Builder](../../../.gitbook/assets/query-builder.png)
-15. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, we are using the following parameters:
+15. You can set conditions to get specific articles or decide the order of the articles. For the purpose of this guide, use the following parameters:
 
-    ![Query parameters](../../../.gitbook/assets/query-parameters-v14.png)
+    ![Query parameters](../../../.gitbook/assets/query-parameters.png)
 16. If you've set the correct parameters, you will get a preview of the items being selected with the query.
 17. Click **Submit**.
 18. You will see a similar code snippet added to your template:
 
     ```html
-    @{ var selection =
-    Umbraco.Content(Guid.Parse("56aa9cc5-243b-4947-8fb1-37b209b97373"))
-    .ChildrenOfType("articlesItem") .Where(x => x.IsVisible())
-    .OrderByDescending(x => x.CreateDate); }
-    <ul>
-        @foreach (var item in selection) {
-        <li>
-            <a href="@item.Url()">@item.Name()</a>
-        </li>
-        }
-    </ul>
+	@{
+		var selection = Umbraco.Content(Guid.Parse("5e397435-102b-4c01-ae28-7d110856cc06"))
+		.ChildrenOfType("articlesItem")
+		.Where(x => x.IsVisible())
+		.OrderByDescending(x => x.CreateDate);
+	}
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<a href="@item.Url()">@item.Name()</a>
+			</li>
+		}
+	</ul>
     ```
+
 19. The above code will output a list of all the _**Article Items**_ as links using the name.
-20. We will modify the template a little, to add more information about the articles.
+20. Modify the template a little to add more information about the articles.
 21. Replace the `HTML` in the _foreach_ loop with this snippet:
 
     ```csharp
@@ -150,14 +155,17 @@ To update the **Articles Main** template, follow these steps:
 <summary>See the entire file: Articles Main</summary>
 
 {% code title="articlesMain.cshtml" lineNumbers="true" %}
+
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesMain>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "layout.cshtml";
 }
 
 <!DOCTYPE HTML>
+
 		
 		<!-- Jumbotron, w title -->
 		<div class="jumbotron text-center jumbotron-fluid">
@@ -181,22 +189,24 @@ To update the **Articles Main** template, follow these steps:
 			<div class="row section">
 				<div class="col-md-12">
 					<h3>Latest stories</h3>
+					
 					@{
-						var selection = Umbraco.Content(Guid.Parse("66da3501-23df-4129-aa79-d511064d6ab8"))
+						var selection = Umbraco.Content(Guid.Parse("5e397435-102b-4c01-ae28-7d110856cc06"))
 						.ChildrenOfType("articlesItem")
 						.Where(x => x.IsVisible())
 						.OrderByDescending(x => x.CreateDate);
 					}
-					
+					<ul>
 						@foreach (var item in selection)
 						{
 							<article class="special">
-							<div class="articledate" > @item.CreateDate </div>
-							<div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
-							<div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read @item.Name()..</a></div>
-						</article>
+								<div class="articledate" > @item.CreateDate </div>
+								<div class="articletitle"><a href="@item.Url()">@item.Name()</a></div>
+								<div class="articlepreview">@Html.Truncate(item.Value("articleContent").ToString(), 20, true)<a href="@item.Url()">Read @item.Name()..</a></div>
+							</article>
 						}
-			
+					</ul>
+
 				</div>
 			</div>
 
@@ -241,8 +251,9 @@ To update the **Articles Main** template, follow these steps:
 				</div>
 			</div>
 
-		</div>	
+		</div>
 ```
+
 {% endcode %}
 
 </details>
@@ -258,12 +269,12 @@ To update the **Articles Item** template, follow these steps:
 7. Open the **Custom Umbraco Template** folder.
 8. Copy the contents of **Blogpost.html**.
 9. Paste the content into **Articles Item** below the closing curly brace "}".
-10. Remove everything from the `<html>` (around line 8) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
-11. Remove everything from the `<!-- Footer -->` tag (around line 113) to the end of the `</html>` tag (around line 160)
-12. Replace the static text within the `<h1>` tags (around line 13) with the Model.Value reference to _**articleTitle**_.
-13. Replace the static text within the `<div>` tags (from line 25 to 39) with the Model.Value reference to _**articleContent**_.
+10. Remove everything from the `<html>` (around line 9) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site since it is already mentioned in the Layout template.
+11. Remove everything from the `<!-- Footer -->` tag (around line 114) to the end of the `</html>` tag (around line 161)
+12. Replace the static text within the `<h1>` tags (around line 14) with the `Model.Value` reference to _**articleTitle**_.
+13. Replace the static text within the `<div>` tags (from line 27 to 41) with the `Model.Value` reference to _**articleContent**_.
 
-    ![Articles Item Template](../../../.gitbook/assets/articles-item-template-v9.png)
+    ![Articles Item Template](../../../.gitbook/assets/articles-item-template.png)
 14. Click **Submit**.
 15. Click **Save**.
 
@@ -272,14 +283,17 @@ To update the **Articles Item** template, follow these steps:
 <summary>See the entire file: Articles Item</summary>
 
 {% code title="articlesItem.cshtml" lineNumbers="true" %}
+
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlesItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "layout.cshtml";
 }
 
 <!DOCTYPE HTML>
+
 		
 		<!-- Jumbotron, w title -->
 		<div class="jumbotron text-center jumbotron-fluid">
@@ -296,7 +310,9 @@ To update the **Articles Item** template, follow these steps:
 			<div class="container">
 				<div class="row section">
 					<div class="col-md-6">
-						@Model.Value("articleContent")
+						<div class="meta-author media p-3">
+							@Model.Value("articleContent")
+						</div>
 					</div>
 				</div>
 			</div>
@@ -368,12 +384,15 @@ To update the **Articles Item** template, follow these steps:
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
+		
+			
 ```
+
 {% endcode %}
 
 </details>
 
 Check your browser, you should now see something similar to the screen below.
 
-![Finished Articles section](../../../.gitbook/assets/article-main-frontend-v14.png)
+![Finished Articles section](../../../.gitbook/assets/article-main-frontend.png)

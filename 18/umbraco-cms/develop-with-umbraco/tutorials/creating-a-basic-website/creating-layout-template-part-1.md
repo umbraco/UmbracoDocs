@@ -1,6 +1,6 @@
 # Creating a Layout Template
 
-We've seen how to create a **Document Type** and its corresponding **Template**. If you want to create a website containing Home, News, and Contact Us pages, you will need to create a _**Document Type**_ with a corresponding **Template**.
+The previous articles covered how to create a **Document Type** and its corresponding **Template**. To build a site with Home, News, and Contact Us pages, create a _**Document Type**_ with a corresponding **Template** for each.
 
 You may end up copying the same HTML code into each of these templates, which can be time-consuming and repetitive. In such scenario, you might want to consider creating a new layout template.
 
@@ -8,11 +8,11 @@ To create a new layout template:
 
 1. Go to **Settings**.
 2. Select the **...** next to the **Templates** folder. Alternatively, click **+** to open a blank template.
-3. Click **Create**.\
+3. Click **Create**.
    A template opens up in the content editor.
-4.  Enter a **Name** for the layout template. Let's call it _Layout_.
+4. Enter a **Name** for the layout template. Let's call it _Layout_.
 
-    ![Layout Template](../../../.gitbook/assets/layout-template-v18.png)
+    ![Layout Template](../../../.gitbook/assets/layout-template.png)
 5. Click **Save**.
 
 ## Using the Layout Template
@@ -22,10 +22,10 @@ To use the layout template:
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Open the **Homepage** template.
-4. Select `Layout template: No layout`.\
+4. Select `Layout template: No layout`.
    The Layout template dialog opens on the right-side of the browser.
 5. Select the template called **Layout**.
-6.  Click **Choose**.\
+6. Click **Choose**.
     The Razor code section is updated from `Layout = null;` to `Layout = "Layout.cshtml";`
 
     ![Adding Layout Template to HomePage](../../../.gitbook/assets/homepage-has-layout-template.png)
@@ -33,32 +33,30 @@ To use the layout template:
 
 ## Updating Templates With the New Layout Template
 
-We now need to move the parts of our HTML template that are common across all templates into the _**Layout**_. It might be slightly different for different websites. You'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the layout.
+Let's move the parts of the HTML template that are common across all templates into the _**Layout**_. It might be slightly different for different websites. You'll need to consider if all pages contain a `<div id="main">` section so that you can update it in the layout.
 
 To update templates with the new layout template, follow these steps:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder from the **Templating** section.
 3. Navigate to the **Homepage** template.
-4.  Cut everything from the `<!DOCTYPE HTML>` (around line 7) to the end of the `</div>` tag (around line 43) which is the `header` and `navigation` of the site to the layout template.
+4. Cut everything from the `<!DOCTYPE HTML>` (around line 8) to the end of the `</div>` tag (around line 44) which is the `header` and `navigation` of the site to the layout template.
 
     ![Header and navigation tags selected in the HomePage template](../../../.gitbook/assets/homepage-after-cutting-the-header.png)
 5. Click **Save**.
-6.  Go to the **Layout** template and paste this HTML markup after the closing curly brace (around line 7).
-
-    ![Header and navigation tags added in the Layout template](../../../.gitbook/assets/layout-after-adding-the-header.png)
-7.  Add `@RenderBody()` at the end of the markup. This will tell Umbraco to insert the child template's content.
+6. Go to the **Layout** template and paste this HTML markup after the closing curly brace (around line 7).
+7. Add `@RenderBody()` at the end of the markup. This will tell Umbraco to insert the child template's content.
 
     ![Adding renderbody in the Layout template](../../../.gitbook/assets/adding-renderbody.png)
 8. Click **Save**.
 9. Repeat the same process for the footer content:
-   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 108) to the end of the `</html>` tag (around line 122) and click **Save**.
-   *   Go to the **Layout** template and paste this HTML markup after the `@RenderBody()` field we've added.
+   * Go to the **Homepage** template and cut everything from the `<!-- Footer -->` tag (around line 109) to the end of the `</html>` tag (around line 123) and click **Save**.
+   * Go to the **Layout** template and paste this HTML markup after the `@RenderBody()` field.
 
        ![End of the Layout template](../../../.gitbook/assets/layout-template-complete.png)
 10. Click **Save**.
 
-Now we've done a lot of work. When we refresh our localhost page, nothing has changed. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
+Now, a lot of work is done. Refresh the localhost page, nothing should change. If you have a compilation error you have perhaps mistyped **@RenderBody()**.
 
 If you are missing any content such as header or footer, ensure that the templates matches the following:
 
@@ -73,6 +71,7 @@ If you are missing any content such as header or footer, ensure that the templat
 @{
 	Layout = null;
 }
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -111,9 +110,9 @@ If you are missing any content such as header or footer, ensure that the templat
 			</nav>
 		</div>
 
-        @RenderBody()
+		@RenderBody()
 
-        <!-- Footer -->
+		<!-- Footer -->
 		<div class="container-fluid footer">
 			<div class="container">
 
@@ -127,7 +126,7 @@ If you are missing any content such as header or footer, ensure that the templat
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
 	</body>
-</html>	
+</html>
 ```
 {% endcode %}
 
@@ -140,7 +139,8 @@ If you are missing any content such as header or footer, ensure that the templat
 {% code title="homePage.cshtml" lineNumbers="true" %}
 ```csharp
 @using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "layout.cshtml";
 }
@@ -162,7 +162,7 @@ If you are missing any content such as header or footer, ensure that the templat
 			<div class="row section">
 				<div class="col-md-12">
 
-					@Model.Value("bodyText")
+				@Model.Value("bodyText")
 
 				</div>				
 			</div>

@@ -22,9 +22,9 @@ You now have the following snippet in your **Layout** Template:
 
 ```csharp
 @{
-var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-	.Children()
-	.Where(x => x.IsVisible());
+	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+    .Children()
+    .Where(x => x.IsVisible());
 }
 <ul>
 	@foreach (var item in selection)
@@ -44,24 +44,24 @@ The final result will look like this:
 
 ```csharp
 @{
-var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
 	.Children()
 	.Where(x => x.IsVisible());
-}
-<div class="container">
-	<nav class="navbar navbar-expand navbar-light">
-		<a class="navbar-brand font-weight-bold" href="/">UmbracoTV</a>
-		<!-- Links -->
-		<ul class="navbar-nav">
-			@foreach (var item in selection)
-			{
-				<li class="nav-item">
-					<a href="@item.Url()" class="nav-link">@item.Name()</a>
-				</li>
-			}
-		</ul>
-	</nav>
-</div>
+	}
+	<div class="container">
+		<nav class="navbar navbar-expand navbar-light">
+			<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>
+			<!-- Links -->
+				<ul class="navbar-nav">
+					@foreach (var item in selection)
+					{
+						<li class="nav-item">
+							<a href="@item.Url()" class="nav-link">@item.Name()</a>
+						</li>
+					}
+				</ul>
+		</nav>
+	</div>
 ```
 
 10. Click **Save**.
@@ -96,9 +96,9 @@ To add a basic hardcoded navigation, follow these steps:
 6. Click **Save**.
 
 {% hint style="info" %}
-The IsVisible() helper method
+**The `IsVisible()` helper method**
 
-If you add a checkbox property to a Document Type with an alias of umbracoNaviHide, the IsVisible() helper method can be used to exclude these from being shown in any collection.
+If you add a checkbox property to a Document Type with an `umbracoNaviHide` alias, the `IsVisible()` helper method can be used to exclude these from being shown in any collection.
 {% endhint %}
 
-Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as we've not created this page yet. We'll create the Articles page in the next chapter.
+Let's test the menu. You'll find that clicking on the Articles link throws an Umbraco error as this page is not yet created. Let's create the Articles page in the next chapter.
