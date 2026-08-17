@@ -45,7 +45,7 @@ You can see that the "**Data and privacy officer**" still has 40 points and the 
 
 ### Absolute versus Percentage deviation
 
-Minimal deviation can be measured in two ways:
+Minimal deviation can be measured in two ways: **Absolute** or **Percentage**. Learn more about each approach below.
 
 **Absolute**
 When set to Absolute, the deviation is measured in points. For example, if the highest score is 40 and the next highest score is 35, the deviation is 5 points.
