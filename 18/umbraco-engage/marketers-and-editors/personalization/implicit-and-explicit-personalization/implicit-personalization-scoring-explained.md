@@ -47,7 +47,8 @@ You can see that the "**Data and privacy officer**" still has 40 points and the 
 
 Minimal deviation can be measured in two ways: **Absolute** or **Percentage**. Learn more about each approach below.
 
-**Absolute**
+#### Absolute
+
 When set to Absolute, the deviation is measured in points. For example, if the highest score is 40 and the next highest score is 35, the deviation is 5 points.
 
 **Absolute deviation table:**
@@ -59,7 +60,8 @@ The table below uses the same Data & Privacy officer / Marketer example as above
 | 40 | 35 | 5 | 10 | Not activated. Gap too small |
 | 45 | 30 | 15 | 10 | Activated. Gap exceeds 10 points |
 
-**Percentage**
+#### Percentage
+
 When set to Percentage, the deviation is measured as a percentage of the second-highest score. This can be useful when you want the required gap between profiles to scale with the overall score.
 
 **Percentage deviation table:**
