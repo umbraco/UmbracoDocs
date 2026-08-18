@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.2.2 (17th Aug 2026)
+* Fix a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference [#878](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/878)
+* Fix data corruption from a discount migration that could invalidate member-group discount rules [#877](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/877)
+* Fix missing database indexes causing slow order and order line deletes on large stores [#879](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/879)
+* Fix missing price fields in the dynamic shipping rate range editor [#880](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/880)
+
 #### 17.2.0 (12th Aug 2026)
 * Add customer management, including customer records, addresses, communication history, and statistics that sync automatically from orders
 * Add support for editing an order after it has been finalized and authorized, including changing line quantities, adding or removing lines, and reconciling discount and gift card codes
