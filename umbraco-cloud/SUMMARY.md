@@ -116,8 +116,8 @@
       * [Planning Major Upgrades Safely for Live Environments](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/planning-major-upgrades-safely-on-live.md)
     * [Minor and Patch Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
     * [Version Specific Upgrades](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/README.md)
-      * [Migrate from Umbraco 8 to the latest version](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
-      * [Migrate from Umbraco 7 to Umbraco 8 on Umbraco Cloud](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
+      * [Migrate from Umbraco 8 to Umbraco 10](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-8-to-latest.md)
+      * [Migrate from Umbraco 7 to Umbraco 8 Locally](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/version-specific-upgrades/migrate-from-umbraco-7-to-8.md)
     * [Upgrade your projects manually](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/README.md)
       * [Manual upgrade of Umbraco CMS](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-cms-upgrade.md)
       * [Manual upgrade of Umbraco Deploy](optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/manual-upgrades/manual-upgrade-deploy.md)
@@ -169,6 +169,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [August 2026](release-notes/overview-2026/2026-08-releasenotes.md)
   * [July 2026](release-notes/overview-2026/2026-07-releasenotes.md)
   * [June 2026](release-notes/overview-2026/2026-06-releasenotes.md)
   * [May 2026](release-notes/overview-2026/2026-05-releasenotes.md)

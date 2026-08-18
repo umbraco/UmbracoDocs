@@ -6,6 +6,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [August 2026](2026-08-releasenotes.md)
+
+* [13/08] - **Release Umbraco.Cloud.Cms 13.1.1, 17.2.2, & 18.0.2** - Hides the internal azurewebsites.net URL in additional cases. Adds the routes used by Umbraco ID and external login providers to the ReservedUrls setting.
+
 ## [July 2026](2026-07-releasenotes.md)
 
 * [08/07] - **Readiness gating** - During restarts, outages, and upgrades, Umbraco Cloud now keeps showing the error page until your site reports that it is ready, so traffic no longer overwhelms a site that is still warming up.
