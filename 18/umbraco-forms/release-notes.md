@@ -20,6 +20,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.0) (August 20th 2026)
+
+The changes below are the ones made since `18.1.0-rc`. For everything else in this release, see the `18.1.0-rc` notes.
+
+* API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
+* Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
+* Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
+
 ### 18.0.6 (August 18th 2026)
 * Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
 * Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
