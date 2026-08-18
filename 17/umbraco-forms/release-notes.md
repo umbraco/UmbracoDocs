@@ -18,6 +18,16 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.4.8 (August 18th 2026)
+* Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+
+{% hint style="info" %}
+This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
+
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. On installations with many form entries, this rebuild can take some time to complete.
+{% endhint %}
+
 ### [17.5.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.5.0) (August 6th 2026)
 
 #### Member data
