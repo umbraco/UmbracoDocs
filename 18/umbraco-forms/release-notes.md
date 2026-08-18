@@ -29,11 +29,12 @@ The changes below are the ones made since `18.1.0-rc`. For everything else in th
 * API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
 * Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
 * Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
+* Records: Read record field values in batches and populate the Examine records index in groups of records, instead of one database query per field value and holding every record for a form in memory at once
 
 {% hint style="info" %}
 This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
 
-Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. On installations with many form entries, this rebuild can take some time to complete.
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. This release also reduces how long that rebuild takes, especially on installations with many form entries.
 {% endhint %}
 
 ### [18.1.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.0) (August 6th 2026)
