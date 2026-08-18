@@ -20,9 +20,15 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
-### 18.0.6 (August 18th 2026)
+### [18.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.0) (August 20th 2026)
+
+The changes below are the ones made since `18.1.0-rc`. For everything else in this release, see the `18.1.0-rc` notes.
+
 * Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
 * Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
+* Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
+* Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
 
 {% hint style="info" %}
 This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
@@ -69,6 +75,16 @@ For more information, see the [Connecting Fields to Member Data](editor/creating
 * Localization: Localize the delete confirmation dialog for pages, groups, fields, and workflows, and add German (de-de) [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
 * Backoffice Contexts: Normalize context-token alias strings to Forms + PascalCase [#1724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1724)
 * Field Types: Only lock the sensitive data toggle once its value has been saved, so it can still be turned back off before saving [#1762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1762)
+
+### 18.0.6 (August 18th 2026)
+* Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+
+{% hint style="info" %}
+This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
+
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. On installations with many form entries, this rebuild can take some time to complete.
+{% endhint %}
 
 ### [18.0.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.0.5) (July 22nd 2026)
 * Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
