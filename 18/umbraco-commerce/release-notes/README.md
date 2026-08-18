@@ -20,10 +20,10 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 
 #### 18.1.2 (17th Aug 2026)
 
-* Fixed a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference (#878).
-* Fixed data corruption from a discount migration that could invalidate member-group discount rules (#877).
-* Fixed missing database indexes causing slow order and order line deletes on large stores (#879).
-* Fixed missing price fields in the dynamic shipping rate range editor (#880).
+* Fixed a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference ([#878](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/878)).
+* Fixed data corruption from a discount migration that could invalidate member-group discount rules ([#877](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/877)).
+* Fixed missing database indexes causing slow order and order line deletes on large stores ([#879](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/879)).
+* Fixed missing price fields in the dynamic shipping rate range editor ([#880](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/880)).
 
 #### 18.1.0 (12th Aug 2026)
 
