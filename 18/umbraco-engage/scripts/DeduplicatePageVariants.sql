@@ -14,6 +14,10 @@
 -- distinct from NULL, which marks rows written before the served segment was
 -- recorded. The comparisons below must not collapse the two together: this
 -- script repoints pageviews and deletes rows, and cannot be undone.
+--
+-- NOTE: Traffic collected on 17.0, 17.1, or 16.0 to 16.2 also carries an empty
+-- segment, written before variant tracking existed. Those rows cannot be told
+-- apart from genuine original-variant rows, so this script groups them together.
 -- =============================================================================
 
 -- Step 1: Reassign pageviews from duplicate variants to the canonical variant
