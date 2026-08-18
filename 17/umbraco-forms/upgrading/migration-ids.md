@@ -41,6 +41,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | b8e2f4a1-3c5d-4e6f-9a7b-1d2e3f4a5b6c | 17.3.0                | Adds an index on UniqueId to the UFRecords table for analytics performance.        |
 | d4f5e6a7-8b9c-4d0e-1f2a-3b4c5d6e7f8a | 17.3.0                | Replaces the index on UFRecords with a covering index that includes UmbracoPageId. |
 | 33c9d3f4-7d41-46f7-a44d-5ed32f26448d | 17.4.0                | Rebuild the Examine records index so that existing records gain sortable fields.    |
+| 188009a1-e582-4971-aff7-87f7e4381bd0 | 17.4.8                | Rebuilds the Examine records index so values of sensitive fields are excluded.       |
 | 16f1cd91-d614-4e0b-844f-0a2434441d34 | 17.5.0                | Adds the UmbracoPageKey column to the Records table.                               |
 | b7d4e1a9-3c62-4f08-9a15-2e6d8f04c3b1 | 17.5.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
 | 3a03c625-3ddc-4eda-9bf3-cc88f112e9a9 | 17.5.0                | Rebuilds the Examine records index so records gain the page key field.             |

@@ -113,3 +113,34 @@ To mark questions as sensitive, follow these steps:
 6. Click **Save**.
 
 ![Sensitive Data on Field](images/sensitive-data-field.png)
+
+### What Sensitive Means for File Uploads
+
+A file uploaded to a field marked as sensitive is stored in the media folder like any other form upload. Users outside the Sensitive Data group cannot reach it:
+
+* The file cannot be downloaded from its URL.
+* The file is not included when you use the **Save All Uploaded Files (by entry)** export. The other files on the same entry are still included.
+* The **Save All Uploaded Files (in disk structure)** export is not available at all for a form that collects sensitive uploads.
+
+{% hint style="info" %}
+The stored file path records the form, but not the field the file came from. Umbraco Forms can identify the field only where it reads the form entries as well as the files. This is why the two exports behave differently.
+{% endhint %}
+
+Two consequences are worth knowing before you mark an upload field as sensitive:
+
+* If a form has both a sensitive upload field and an ordinary one, users outside the Sensitive Data group cannot download either file by URL. Use the by-entry export to retrieve the ordinary files.
+* The in-disk-structure export is refused for the whole form, not for individual files.
+
+If you need a form's ordinary attachments to stay available to a wider group of users, collect the sensitive uploads on a separate form.
+
+### Member Details on Form Entries
+
+Where a form is submitted by a logged-in member, the entries list shows a **Member** column with that member's name and email address.
+
+This column is always treated as sensitive data. Only users in the Sensitive Data group see it; everyone else sees the entry without it.
+
+{% hint style="info" %}
+This does not depend on any field setting. It applies to every form that members submit, even one with no fields marked as sensitive.
+{% endhint %}
+
+If you need a wider group of users to see which member submitted an entry, add them to the Sensitive Data group. There is no separate permission for the member column on its own.
