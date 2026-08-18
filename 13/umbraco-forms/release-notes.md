@@ -419,7 +419,7 @@ And there are a couple of further additions to improve the performance and acces
 ### 13.0.0 (December 14th 2023)
 
 * Compatibility with Umbraco 13
-  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
+  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md).
 
 ## Legacy release notes
 
