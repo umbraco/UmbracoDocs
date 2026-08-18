@@ -27,7 +27,8 @@ The changes below are the ones made since `17.5.0-rc`. For everything else in th
 * API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
 * Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
 * Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
-* Records: Read record field values in batches and populate the Examine records index in groups of records, instead of one database query per field value and holding every record for a form in memory at once
+* Records: Read record field values in batches, instead of one database query per field value
+* Records: Populate the Examine records index in groups of records, instead of holding every record for a form in memory at once
 
 {% hint style="info" %}
 This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
