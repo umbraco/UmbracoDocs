@@ -104,7 +104,7 @@ The website domain used for validating the license is determined from your Umbra
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine cannot reliably determine the domain to use for validation. In versions prior to 17.4, it would attempt to detect the domain from the HTTP request object, which could lead to errors when switching between domains. From version 17.4, auto-detection is disabled by default, so the `UmbracoApplicationUrl` must be set explicitly.
+If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine cannot reliably determine the domain to use for validation. In versions prior to 17.4, it would attempt to detect the domain from the HTTP request object. Detecting the domain from the HTTP request object could lead to errors when switching between domains. From version 17.4, auto-detection is disabled by default, so the `UmbracoApplicationUrl` must be set explicitly.
 
 ### How to Configure UmbracoApplicationUrl
 
