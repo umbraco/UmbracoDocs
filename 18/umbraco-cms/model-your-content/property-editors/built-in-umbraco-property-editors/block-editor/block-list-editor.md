@@ -42,11 +42,11 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](<../../../../.gitbook/assets/BlockListEditor_DataType_Blocks (2).png>)
+![Block List - Data Type Block Configuration](../../../../.gitbook/assets/BlockListEditor_DataType_Configuration.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
-### Editor Appearance
+### Block Appearance
 
 You can configure the properties in the group to customize the user experience for your content editors. This helps them to quickly identify and select the right blocks for their content.
 
@@ -78,15 +78,15 @@ Configuring the catalogue appearance improves the content editor experience. A w
 
 These properties are relevant when you work with custom views.
 
-* **Force hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
+* **Hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
 
 ## Editing Blocks
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
-![Block List - Create new](<../../../../.gitbook/assets/BlockListEditor_AddContent (2).png>)
+![Block List - Create new](../../../../.gitbook/assets/BlockListEditor_AddContent.png)
 
-Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
+Clicking the **Add content** button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
 ![Block List - Setup](../../../../.gitbook/assets/BlockListEditor_BlockPicker_simplesetup.png)
 
@@ -102,7 +102,7 @@ In default mode you will enter the editing overlay of that Block:
 
 ![Block List - Overlay editing](../../../../.gitbook/assets/BlockListEditor_EditingOverlay.png)
 
-In inline editing mode the new Blocks will expand to show its inline editor:
+In **inline editing mode**, the new Blocks will expand to show its inline editor:
 
 ![Block List - Inline editing](../../../../.gitbook/assets/BlockListEditor_InlineEditing.png)
 
