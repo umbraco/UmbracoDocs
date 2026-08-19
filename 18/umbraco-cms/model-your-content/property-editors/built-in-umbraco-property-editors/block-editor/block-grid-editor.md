@@ -103,7 +103,7 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 * **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks. Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
 
-When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well, and setting the requirements accordingly.
+When allowing a group of Blocks, you might want to require a specific amount for a certain Block of that group. This can be done by adding that Block Type to the list as well, and setting the requirements accordingly.
 
 ## Advanced properties
 
