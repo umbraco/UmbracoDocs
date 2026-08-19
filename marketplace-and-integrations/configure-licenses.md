@@ -104,7 +104,7 @@ The website domain used for validating the license is determined from your Umbra
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine cannot reliably determine the domain to use for validation. In versions prior to 17.4, it would attempt to detect the domain from the HTTP request object, which could lead to errors when switching between domains. From version 17.4, auto-detection is disabled by default, so the `UmbracoApplicationUrl` must be set explicitly.
 
 ### How to Configure UmbracoApplicationUrl
 
@@ -123,6 +123,36 @@ An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file:
 ```
 
 See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
+
+### Configuring ApplicationUrlDetection
+
+{% hint style="info" %}
+This setting is available from Umbraco CMS version 17.4.
+{% endhint %}
+
+From version 17.4, you can control how Umbraco detects the application URL from incoming HTTP requests using the `ApplicationUrlDetection` setting:
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "ApplicationUrlDetection": "None"
+      }
+    }
+  }
+}
+```
+
+The available values are:
+
+| Value | Behavior |
+|-------|----------|
+| `None` | *(Default)* Auto-detection is disabled. The URL must be set explicitly via `UmbracoApplicationUrl`. |
+| `FirstRequest` | The URL is set from the first incoming request and then locked against further changes. |
+| `EveryRequest` | Legacy behavior. The URL can be overwritten by any incoming Host header. |
+
+For most production environments, either leave this as `None` and configure `UmbracoApplicationUrl` explicitly, or use `FirstRequest`.
 
 ### Configuring UmbracoApplicationUrl on Umbraco Cloud
 
