@@ -6,15 +6,11 @@ description: >-
 
 # Example: A Marketer Agent
 
-[Installation](installation.md) walks through each piece mechanically. This page pulls
-them together into one working example — a Marketer Agent on Anthropic Claude, with the
-context and guardrail that make its answers noticeably better and safer, not only
-functional.
+[Installation](installation.md) walks through each piece mechanically. This page pulls them together into one working example — a Marketer Agent on Anthropic Claude. It adds the context and guardrail that make its answers noticeably better and safer, not only functional.
 
 ## Profile
 
-An [Engage Anthropic Chat Profile](installation.md#step-3-create-a-profile) on
-`claude-opus-4-7`.
+An [Engage Anthropic Chat Profile](installation.md#step-3-create-a-profile) on `claude-opus-4-7`.
 
 ## Instructions
 
@@ -30,11 +26,9 @@ practical marketing insight, not raw numbers.
 
 ## Context
 
-Two Context resources, both set to inject **Always** (every request), attached to the
-agent:
+Two Context resources, both set to inject **Always** (every request), attached to the agent:
 
-**Null Semantics Discipline** — a plain-text resource that stops the agent from
-misreading a missing measurement as a zero:
+**Null Semantics Discipline** — a plain-text resource that stops the agent from misreading a missing measurement as a zero:
 
 ```
 When a tool result has nullable boolean / numeric fields:
@@ -52,8 +46,7 @@ field is null:
 Apply this discipline across all Engage analytics tools.
 ```
 
-**Marketer register** — a **Brand Voice** context, a resource type with dedicated fields
-rather than free text:
+**Marketer register** — a **Brand Voice** context, a resource type with dedicated fields rather than free text:
 
 | Field | Value |
 |---|---|
@@ -62,16 +55,13 @@ rather than free text:
 
 ![The Marketer register Brand Voice context, with Tone and Target Audience filled in](.gitbook/assets/ai-context-marketer-register-check.png)
 
-Brand Voice also has **Style Guidelines** and **Patterns to Avoid** fields, left empty
-here — fill them in if you want tighter control over phrasing.
+Brand Voice also has **Style Guidelines** and **Patterns to Avoid** fields, left empty here. Fill them in if you want tighter control over phrasing.
 
 ![Both Always-injected context resources attached to the agent](.gitbook/assets/ai-context-engage-agent-context.png)
 
-Two more resources are attached with **On-Demand** injection instead of Always — rather
-than being added to every request, the model retrieves them itself via a tool call, only
-when the question calls for them:
+Two more resources are attached with **On-Demand** injection instead of Always. Rather than being added to every request, the model retrieves them itself via a tool call, only when the question calls for them:
 
-**UTM (Urchin Tracking Module) vocabulary**:
+**Urchin Tracking Module (UTM) vocabulary**:
 
 ```
 Umbraco Engage campaign tracking is based on UTM parameters. The standard UTM parameters are:
@@ -93,30 +83,18 @@ The campaign is generating traffic, but the available data is not enough to judg
 
 ![The Example answer context resource](.gitbook/assets/ai-context-example-answer.png)
 
-Always vs. On-Demand is a real trade-off. Always guarantees the agent has it in mind for
-every answer, at the cost of a few extra tokens on every request. On-Demand keeps
-requests smaller and only pulls the resource in when it's relevant — a reasonable
-default for reference material like a vocabulary list or a style example that most
-questions won't need.
+Always vs. On-Demand is a real trade-off. Always guarantees the agent has it in mind for every answer, at the cost of a few extra tokens on every request. On-Demand keeps requests smaller and only pulls the resource in when relevant — good for reference material like a vocabulary list or style example. Most questions won't need it.
 
 ## Guardrail
 
-The [Input PII Redaction](guardrails.md) guardrail redacts Personally Identifiable
-Information (PII) before it reaches the model, attached via the agent's **Governance**
-tab. Optional, but worth attaching to any agent marketers will paste real visitor data
-into.
+The [Input PII Redaction](guardrails.md) guardrail redacts Personally Identifiable Information (PII) before it reaches the model, attached via the agent's **Governance** tab. Optional, but worth attaching to any agent marketers will paste real visitor data into.
 
 ## Putting it together
 
 1. Create the profile and connection ([Installation](installation.md), Steps 2–3).
-2. Create the agent with the Instructions above ([Installation](installation.md),
-   Step 4), selecting that profile.
+2. Create the agent with the Instructions above ([Installation](installation.md), Step 4), selecting that profile.
 3. Attach the two Context resources under **Agent Behavior** on the Settings tab.
-4. Attach the Input PII Redaction guardrail under **Governance** > **Guardrails**
-   (see [Guardrails](guardrails.md)).
-5. Attach the agent to whichever surface(s) you want it available on
-   ([Installation](installation.md#step-5-make-the-agent-available-where-you-want-it)).
+4. Attach the Input PII Redaction guardrail under **Governance** > **Guardrails** (see [Guardrails](guardrails.md)).
+5. Attach the agent to whichever surface(s) you want it available on ([Installation](installation.md#step-5-make-the-agent-available-where-you-want-it)).
 
-None of this is required to get a working agent — a profile and a short set of
-Instructions is enough, as [Installation](installation.md) shows. This is what a more
-deliberately configured one looks like.
+None of this is required to get a working agent — a profile and a short set of Instructions is enough, as [Installation](installation.md) shows. This is what a more deliberately configured one looks like.

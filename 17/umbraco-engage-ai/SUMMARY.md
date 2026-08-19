@@ -5,7 +5,7 @@
 ## Getting Started
 
 * [Installation](installation.md)
-* [Toolset](tools.md)
+* [Tools](tools.md)
 
 ## Using Copilot
 

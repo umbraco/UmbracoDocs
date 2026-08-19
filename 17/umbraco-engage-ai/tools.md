@@ -2,12 +2,9 @@
 description: The full set of tools Engage.AI makes available to a Copilot agent.
 ---
 
-# Toolset
+# Tools
 
-Engage.AI ships 17 tools, grouped under a single read-only scope
-(`EngageReadScope`). An agent granted this scope can query Engage's campaigns,
-segments, goals, personas, customer journeys, performance figures, traffic, and A/B
-tests — it cannot create, edit, or delete anything in Engage.
+Engage.AI ships 17 tools, grouped under a single read-only scope (`EngageReadScope`). An agent granted this scope can query Engage's campaigns, segments, goals, personas, customer journeys, performance figures, traffic, and A/B tests. It cannot create, edit, or delete anything in Engage.
 
 | Tool | Category | Answers questions like |
 |---|---|---|
@@ -29,8 +26,4 @@ tests — it cannot create, edit, or delete anything in Engage.
 | `engage_explain_customer_journey` | Explain | "what happens at each stage of a customer journey, and how does a visitor move between them?" |
 | `engage_get_ab_tests` | A/B Testing | "should i end any of my running tests yet, or keep waiting for more data?" |
 
-The **Discovery** tools list what's configured. The **Performance** and **Traffic**
-tools report figures. The **Explain** tools answer "what does this mean and how is it
-scored" rather than only "what is it". All of them are available from either
-[Copilot Sidebar](copilot-sidebar.md) or [Copilot Workspace](copilot-workspace.md), once
-the agent has access to the `EngageReadScope` scope and is attached to that surface.
+The **Discovery** tools list what's configured. The **Performance** and **Traffic** tools report figures. The **Explain** tools answer "what does this mean and how is it scored" rather than only "what is it". All of them are available from either [Copilot Sidebar](copilot-sidebar.md) or [Copilot Workspace](copilot-workspace.md). The agent needs access to the `EngageReadScope` scope and must be attached to that surface.

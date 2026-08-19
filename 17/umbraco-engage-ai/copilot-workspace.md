@@ -6,39 +6,23 @@ description: >-
 
 # Copilot Workspace
 
-Copilot Workspace is a full-page alternative to the Copilot sidebar, under its own
-**Copilot** tab in the top navigation. The sidebar is ambient and tied to whatever page
-you're on. Workspace is a destination instead: it keeps a list of past conversations,
-lets you group them into **Projects**, and shows an explicit **Context** panel for the
-current conversation.
+Copilot Workspace is a full-page alternative to the Copilot sidebar, under its own **Copilot** tab in the top navigation. The sidebar is ambient and tied to whatever page you're on. Workspace is a destination instead. It keeps a list of past conversations and lets you group them into **Projects**. It also shows an explicit **Context** panel for the current conversation.
 
-The same agent and the same Engage.AI tools answer either way. Workspace doesn't add or
-remove tool capability — it changes how you get to the conversation, and how much space
-the answer has to work with.
+The same agent and the same Engage.AI tools answer either way. Workspace doesn't add or remove tool capability — it changes how you get to the conversation, and how much space the answer has to work with.
 
-![Copilot Workspace's conversation list and an "Engage.AI Project"](.gitbook/assets/04-copilot-workspace.png)
+![Copilot Workspace conversation list, with an "Engage.AI Project"](.gitbook/assets/04-copilot-workspace.png)
 
 {% hint style="warning" %}
-Copilot Workspace availability follows Umbraco.AI's own release schedule for the
-`Umbraco.AI.Agent.Copilot.Workspace` package, separate from Engage.AI's own release.
-Check the current Umbraco.AI release notes for Workspace's status before relying on it
-being available in your installation.
+Copilot Workspace availability follows Umbraco.AI's own release schedule for the `Umbraco.AI.Agent.Copilot.Workspace` package, separate from Engage.AI's own release. Check the current release notes for Umbraco.AI before relying on Copilot Workspace being available in your installation.
 {% endhint %}
 
 ## Making the agent available in Workspace
 
-Same mechanism as the sidebar (see [Installation](installation.md#step-5-make-the-agent-available-where-you-want-it)):
-open the agent's **Availability** tab and enable the **Copilot Workspace** surface. An
-agent that's only attached to the **Copilot** surface won't show up in Workspace's agent
-picker until you do this.
+Same mechanism as the sidebar (see [Installation](installation.md#step-5-make-the-agent-available-where-you-want-it)): open the agent's **Availability** tab and enable the **Copilot Workspace** surface. An agent that's only attached to the **Copilot** surface won't show up in the Workspace agent picker until you do this.
 
 ## Optional: a display-behavior context for tables and charts
 
-Workspace's full-width layout has room for more than a short sentence. Engage.AI doesn't
-format answers itself — that's entirely up to the agent's Instructions and any Context
-attached to it. You can attach a Context resource that tells the agent to take advantage
-of the extra space, for example one scoped to the Workspace surface with content along
-these lines:
+The full-width layout in Workspace has room for more than a short sentence. Engage.AI doesn't format answers itself — that's entirely up to the agent's Instructions and any Context attached to it. You can attach a Context resource that tells the agent to take advantage of the extra space. For example, one scoped to the Workspace surface with content along these lines:
 
 ```
 You are rendering answers in a full-width Copilot Workspace, not a narrow sidebar,
@@ -75,17 +59,14 @@ Style:
 ```
 
 {% hint style="info" %}
-This is an example of what's possible through Instructions and Context, not a behavior
-Engage.AI ships by default. Without a context like this attached, Workspace answers read
-the same as sidebar answers: plain text, and a Markdown table when the data fits.
+This is an example of what's possible through Instructions and Context, not a behavior Engage.AI ships by default. Without a context like this attached, Workspace answers read the same as sidebar answers: plain text, and a Markdown table when the data fits.
 {% endhint %}
 
 ![The Display Behavior context, scoped to the copilot-workspace surface](.gitbook/assets/ai-context-display-behavior.png)
 
 ## Example prompts
 
-The following ran with the display-behavior context above attached, against sample/demo
-data — treat the numbers as illustrative, not a preview of your own data.
+The following ran with the display-behavior context above attached, against sample/demo data — treat the numbers as illustrative, not a preview of your own data.
 
 **"show our personas grouped by their persona group, as a tree"**
 
@@ -93,8 +74,7 @@ data — treat the numbers as illustrative, not a preview of your own data.
 
 **"compare our top 5 pages this year across pageviews, sessions, and users"**
 
-A ranked table plus one ASCII bar chart per metric — three metrics per row means three
-charts, not one:
+A ranked table plus one ASCII bar chart per metric — three metrics per row means three charts, not one:
 
 ![A Markdown table and ASCII bar chart comparing top pages across three metrics, part 1](.gitbook/assets/workspace-example-2-compare-pages-a.png)
 
@@ -108,12 +88,6 @@ A single metric collapses back to one table and one chart:
 
 ## Limitations
 
-- **Markdown and plain text only.** Workspace (like the sidebar) can't render SVG, HTML,
-  canvas, or Mermaid. A context that asks for those produces raw, unrendered code instead
-  of a chart — ASCII tables, bar charts, and trees are the ceiling.
-- **No time-series breakdown.** Engage.AI's tools return totals, top-N, and per-entity
-  figures — a "pageviews per day" trend line isn't something these tools currently
-  produce, in either surface.
-- **Accuracy depends on Instructions/Context, not only the tools.** Tool results carry
-  the real numbers. A model can still combine or extrapolate them in prose unless told
-  not to — the accuracy rule in the example context above exists for that reason.
+- **Markdown and plain text only.** Workspace (like the sidebar) can't render SVG, HTML, canvas, or Mermaid. A context that asks for those produces raw code instead of a rendered chart — ASCII tables, bar charts, and trees are the ceiling.
+- **No time-series breakdown.** Engage.AI's tools return totals, top-N, and per-entity figures — a "pageviews per day" trend line isn't something these tools currently produce, in either surface.
+- **Accuracy depends on Instructions/Context, not only the tools.** Tool results carry the real numbers. A model can still combine or extrapolate them in prose unless told not to. The accuracy rule in the example context above exists for that reason.
