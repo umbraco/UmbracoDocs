@@ -78,7 +78,7 @@ Configuring the catalogue appearance improves the content editor experience. A w
 
 These properties are relevant when you work with custom views.
 
-* **Hide content editor** - If you made a custom view that enables you to edit the content part of a block and you are using default editing mode (not inline) you might want to hide the content-editor from the block editor overlay.
+* **Hide content editor** - If you made a custom view for editing a block's content, you might want to hide the content-editor from the block editor overlay. This applies when using default editing mode (not inline).
 
 ## Editing Blocks
 
