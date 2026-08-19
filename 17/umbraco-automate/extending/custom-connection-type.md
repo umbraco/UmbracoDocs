@@ -13,7 +13,7 @@ A custom connection type lets actions in your project share reusable credentials
 
 ## Settings Model
 
-Mark sensitive fields with `IsSensitive = true` so the value is encrypted at rest and masked in run logs.
+Mark sensitive fields with `IsSensitive = true`. The value is then encrypted at rest, masked in run logs, and shown behind a masked password input in the connection editor.
 
 {% code title="MyServiceConnectionSettings.cs" %}
 ```csharp

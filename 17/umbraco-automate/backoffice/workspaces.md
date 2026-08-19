@@ -46,6 +46,12 @@ Events the new account isn't authorized for are silently skipped at dispatch. Ac
 Review the **Runs** tab after any service-account change.
 {% endhint %}
 
+{% hint style="info" %}
+
+If a workspace was transferred from another environment (for example via Deploy), it may reference a user group that doesn't exist here. That group is dropped from **User Groups**. A warning tells you how many groups need to be added again.
+
+{% endhint %}
+
 ## Workspace Groups
 
 Workspaces can be organized into **workspace groups** — folders in the tree. To create a workspace group, right-click the root of the tree and select **Create workspace group**. Workspace groups are organizational only; they do not affect access.

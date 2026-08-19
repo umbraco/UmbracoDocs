@@ -13,7 +13,7 @@ Install the Deploy add-on on both the source and target environments. You can th
 | Entity | Transfers? | Notes |
 | ------ | ---------- | ----- |
 | **Workspace Group** | Yes | Folders that hold workspaces. |
-| **Workspace** | Yes | Includes service account reference but not member assignments. |
+| **Workspace** | Yes | Includes the service account and user group references, but not individual member assignments. A referenced user group that doesn't exist on the target is dropped, with a warning in the workspace editor telling you how many need to be added again. |
 | **Automation** | Yes | The published version of the automation, with all triggers, actions, and bindings. |
 | **Connection** | Yes (definition only) | The connection record is created on the target environment. Encrypted credential values are skipped by default — re-authenticate or fill them in on the target. |
 | **Run history** | No | Run records are environment-specific and never transfer. |

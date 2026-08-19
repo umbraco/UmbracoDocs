@@ -41,6 +41,8 @@ The **Authenticate** button calls the connection type's validator. For OAuth con
 
 A failed test shows the error message so you can correct the settings before saving. Connection types that do not implement a validator return a warning instead of a success.
 
+If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
+
 ## Use a Connection in an Action
 
 When you configure an action that requires a connection, the connection picker only shows connections of the matching type that the current workspace has allowed.
