@@ -26,6 +26,7 @@ The changes below are the ones made since `18.1.0-rc`. For everything else in th
 
 * Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
 * Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Upgrading: Fix a boot failure when upgrading directly from Forms 13.9.9 [#1772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1772)
 * API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
 * Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
 * Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
