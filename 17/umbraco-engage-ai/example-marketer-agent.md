@@ -91,7 +91,7 @@ Always vs. On-Demand is a real trade-off. Always guarantees the agent has it in 
 
 ### Workspace only: a display-behavior context
 
-The full-width layout in Copilot Workspace has room for more than a short sentence. Engage.AI doesn't format answers itself; that's entirely up to the agent's Instructions and any Context attached to it. A Context resource scoped to the Workspace surface can tell the agent to take advantage of the extra space:
+The full-width layout in Copilot Workspace has room for more than a short sentence. Umbraco Engage AI doesn't format answers itself; that's entirely up to the agent's Instructions and any Context attached to it. A Context resource scoped to the Workspace surface can tell the agent to take advantage of the extra space:
 
 ```
 You are rendering answers in a full-width Copilot Workspace, not a narrow sidebar,
@@ -137,7 +137,7 @@ Markdown and plain text are the ceiling on either surface. Neither can render SV
 
 ## Guardrail
 
-Engage.AI's tools only ever return aggregates and marketer-authored labels: campaign names, segment counts, performance figures. They can't return an individual visitor's Personally Identifiable Information (PII), so there's nothing to filter on the way *out*. The real risk sits on the way *in*. A marketer might paste something like "a visitor with email jane@example.com keeps abandoning cart" into the chat. Unless something stops it, that personal data gets sent straight to your AI provider.
+Umbraco Engage AI's tools only ever return aggregates and marketer-authored labels: campaign names, segment counts, performance figures. They can't return an individual visitor's Personally Identifiable Information (PII), so there's nothing to filter on the way *out*. The real risk sits on the way *in*. A marketer might paste something like "a visitor with email jane@example.com keeps abandoning cart" into the chat. Unless something stops it, that personal data gets sent straight to your AI provider.
 
 A **guardrail** can catch this before it happens. Guardrails are an Umbraco.AI feature. They evaluate a request against a set of rules and act (block, redact, and so on) when one matches. They apply to whichever agent they're attached to, on either Copilot surface.
 

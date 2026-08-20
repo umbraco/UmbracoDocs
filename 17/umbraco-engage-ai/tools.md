@@ -1,10 +1,10 @@
 ---
-description: The full set of tools Engage.AI makes available to a Copilot agent.
+description: The full set of tools Umbraco Engage AI makes available to a Copilot agent.
 ---
 
 # Tools
 
-Engage.AI ships these read-only tools, grouped under the **Engage Read** permission. An agent granted this permission can query Engage's campaigns, segments, goals, personas, customer journeys, performance figures, traffic, and A/B tests. It cannot create, edit, or delete anything in Engage.
+Umbraco Engage AI ships these read-only tools, grouped under the **Engage Read** permission. An agent granted this permission can query Engage's campaigns, segments, goals, personas, customer journeys, performance figures, traffic, and A/B tests. It cannot create, edit, or delete anything in Engage.
 
 | Tool | Category | Answers questions like |
 |---|---|---|

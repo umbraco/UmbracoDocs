@@ -1,5 +1,5 @@
 ---
-description: Install Engage.AI and set up an agent for the Copilot to use.
+description: Install Umbraco Engage AI and set up an agent for the Copilot to use.
 ---
 
 # Installation
