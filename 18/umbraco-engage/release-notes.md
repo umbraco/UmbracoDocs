@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 18, detailing all changes in this version.
 
+#### [18.1.0](https://www.nuget.org/packages/Umbraco.Engage/18.1.0) (August 20th 2026)
+
+* All changes from 18.1.0 release candidates
+
 #### [18.1.0-rc](https://www.nuget.org/packages/Umbraco.Engage/18.1.0) (August 7th 2026)
 
 **Upgrading**

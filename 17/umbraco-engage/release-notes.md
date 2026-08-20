@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.0.0](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 20th 2026)
+
+* All changes from 17.4.0 release candidates
+
 #### [17.4.0-rc](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 7th 2026)
 
 **Previewing**
