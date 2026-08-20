@@ -2,7 +2,16 @@
 
 ## Key Takeaways
 
+* **Custom error pages shown for stopped environments** - Custom error pages are now also shown while an environment is stopped, not only during restarts and deployments.
 * **Release Umbraco.Cloud.Cms 13.1.1, 17.2.2, & 18.0.2** - Hides the internal `azurewebsites.net` URL in additional cases. Adds the routes used by Umbraco ID and external login providers to the `ReservedUrls` setting.
+
+## Custom error pages shown for stopped environments
+
+Custom error pages assigned through the [Error Pages](../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature are now also shown while an environment is stopped.
+
+When the [Start and stop environments](2026-03-releasenotes.md#start-and-stop-environments) feature was released, stopped environments served the default Umbraco Cloud error page. This happened even when a custom error page was assigned to the hostname. Stopped environments now serve the assigned custom error page, matching the behavior during restarts and deployments.
+
+This also makes the two features work well together for planned maintenance. Upload a custom maintenance page, assign it to your hostnames, and stop the environment. Visitors then see your maintenance page until you start the environment again.
 
 ## Release Umbraco.Cloud.Cms 13.1.1, 17.2.2, & 18.0.2
 

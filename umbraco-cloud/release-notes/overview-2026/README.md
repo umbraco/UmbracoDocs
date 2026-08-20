@@ -8,6 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [August 2026](2026-08-releasenotes.md)
 
+* [20/08] - **Custom error pages shown for stopped environments** - Custom error pages are now also shown while an environment is stopped, not only during restarts and deployments.
 * [13/08] - **Release Umbraco.Cloud.Cms 13.1.1, 17.2.2, & 18.0.2** - Hides the internal azurewebsites.net URL in additional cases. Adds the routes used by Umbraco ID and external login providers to the ReservedUrls setting.
 
 ## [July 2026](2026-07-releasenotes.md)
