@@ -99,6 +99,6 @@ The History tab provides an overview of the workflow activity for the current gr
 
 You can also **Filter** the records based on the Document Type, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
-The **Detail** button at the end of the record displays an overlay with content similar to the [workflow detail dialog](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/workflow-detail-dialog).
+The **Detail** button at the end of the record displays an overlay with content similar to the [workflow detail dialog](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/workflow-detail-dialog.md).
 
 ![Details overlay](../.gitbook/assets/Workflow-Content-app-Details-overlay-v14.png)
