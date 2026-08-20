@@ -7,12 +7,7 @@
 * [Installation](installation.md)
 * [Tools](tools.md)
 
-## Using Copilot
+## Using Engage.AI
 
-* [Copilot Sidebar](copilot-sidebar.md)
-* [Copilot Workspace](copilot-workspace.md)
-
-## Configuration Examples
-
-* [Guardrails](guardrails.md)
+* [Asking Engage Questions](asking-engage-questions.md)
 * [Example: A Marketer Agent](example-marketer-agent.md)
