@@ -19,6 +19,7 @@
 
 * [Content Approval Settings](getting-started/content-approval-settings.md)
 * [Content Review Settings](getting-started/content-review-settings.md)
+* [Workflow Detail Dialog](getting-started/workflow-detail-dialog.md)
 * [Dashboards and Buttons](getting-started/dashboards-and-buttons.md)
 * [Submitting Content for Approval](getting-started/submitting-changes.md)
 * [Workspace View](getting-started/workflow-workspace-view.md)

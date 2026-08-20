@@ -9,7 +9,7 @@ description: >-
 External Approval is available in Workflow 17.4 and above. This feature requires a license. Learn more about [Workflow's licensing model](https://umbraco.com/products/umbraco-workflow).
 {% endhint %}
 
-External Approval allows editors to participate in workflow processes without accessing the Umbaco Backoffice. This allows content stakeholders to approve content changes without needing to know how to use Umbraco.
+External Approval allows editors to participate in workflow processes without accessing the Umbraco Backoffice. This allows content stakeholders to approve content changes without needing to know how to use Umbraco.
 
 There are two ways for an approval group member to action a pending task from the notification email, instead of logging in to the Backoffice:
 

@@ -1,44 +1,9 @@
 # Workspace View
 
-Umbraco Workflow adds a [Workspace View](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/workspaces/workspace-views) to all content nodes in the **Content** section where a workflow is enabled. The Workflow workspace view includes three sub-sections:
+Umbraco Workflow adds a [Workspace View](https://docs.umbraco.com/umbraco-cms/customizing/extending-overview/extension-types/workspaces/workspace-views) to all content nodes in the **Content** section where a workflow is enabled. The Workflow workspace view includes two sub-sections:
 
-* [Active Workflow](workflow-workspace-view.md#active-workflow)
 * [Configuration](workflow-workspace-view.md#configuration)
 * [History](workflow-workspace-view.md#history)
-
-## Active Workflow
-
-The Active workflow sub-section provides an interface for managing workflows for the current content node.
-
-When the current node is pending workflow approval, the **Active workflow** sub-section displays detailed information such as:
-
-* Option to [approve, reject, or cancel pending workflow tasks](workflow-workspace-view.md#approve-reject-or-cancel-pending-workflow-tasks).
-* View change description and track differences across pending and completed workflows.
-* View the group responsible for approving the pending workflow.
-* View pending language variant(s) workflow.
-* View the workflow activity (eg. pending approval/task approvals/rejects) for the current workflow process.
-
-![Active Workflow sub-section](../.gitbook/assets/Active-Workflow-detailed-info-v14.png)
-
-You can access Active Workflows from two places - the **Content** section and the **Workflow** section (depending on your user permission). Workflow Administrators (those users with access to the Workflow section) can access workflows assigned to a different group. In the **Workflow History**, these are noted as being performed by the admin.
-
-### Approve, Reject, or Cancel pending workflow tasks
-
-#### Approve Workflow Tasks
-
-To approve a Workflow task, click on the **Approve** button in the Action section.
-
-#### Reject Workflow Tasks
-
-To reject a Workflow task, click on the **Reject** button in the Action section. Depending on the approval stage, the reviewer can decide where to send the rejected task.
-
-For first-stage approvals, the rejected task is sent back to the original editor/author. For second-stage approvals and above, the reviewer can send the rejected task either to the original editor or any other previous workflow group.
-
-![Reject Workflow Tasks](../.gitbook/assets/assign-rejected-task.png)
-
-#### Cancel pending Workflow Tasks
-
-To cancel a pending Workflow task, click on the **Cancel** button in the Action section.
 
 ## Configuration
 
@@ -97,6 +62,6 @@ The History sub-section provides a chronological audit trail of workflow activit
 
 You can also **Filter** the records based on the information listed above. Additionally, you can adjust the total number of records displayed on a page.
 
-The **Detail** button at the end of the record displays an overlay with content similar to the Active workflow sub-section.
+The **Detail** button at the end of the record displays an overlay with content similar to the Workflow Detail dialog.
 
 ![Details overlay](../.gitbook/assets/Workflow-Content-app-Details-overlay-v14.png)
