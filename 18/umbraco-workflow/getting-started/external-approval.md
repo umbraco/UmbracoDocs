@@ -20,7 +20,7 @@ Both are optional, licensed features and are enabled independently, per approval
 
 ## External approval
 
-When External approval is enabled for a group, the notification email sent to a pending task's approvers includes a link to a standalone approval page. Opening the link:
+When External approval is enabled for a group, the notification email includes a link to a standalone approval page. Opening the link:
 
 * Signs the recipient in as the user the link was generated for, without a Backoffice login.
 * Shows a preview of the content change, alongside the task detail (workflow stage, comments, and any attachment).
@@ -41,7 +41,7 @@ The task is actioned automatically once the reply is processed, and the recipien
 
 Quoted history in the reply (previous message text, signatures added by common mail clients) is stripped automatically before the keyword is read.
 
-Email reply approval is only available for the single, active-task notification, not for the reminder digest email. A digest can bundle several unrelated tasks together and a plain reply cannot say which one it applies to.
+Email reply approval is only available for the single, active-task notification, not for the reminder digest email. A digest can bundle unrelated tasks together and a plain reply cannot say which one it applies to.
 
 ## Enabling the feature
 
