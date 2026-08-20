@@ -9,7 +9,7 @@
 
 Custom error pages assigned through the [Error Pages](../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature are now also shown while an environment is stopped.
 
-When the [Start and stop environments](2026-03-releasenotes.md#start-and-stop-environments) feature was released, stopped environments served the default Umbraco Cloud error page. This happened even when a custom error page was assigned to the hostname. Stopped environments now serve the assigned custom error page, matching the behavior during restarts and deployments.
+When the [Start and stop environments](2026-03-releasenotes.md#start-and-stop-environments) feature was released it did not use the Error Pages feature but instead used a standard platform error page that you could not change. This now ensures you can use a custom error page, matching the behavior during restarts and deployments.
 
 This also makes the two features work well together for planned maintenance. Upload a custom maintenance page, assign it to your hostnames, and stop the environment. Visitors then see your maintenance page until you start the environment again.
 
