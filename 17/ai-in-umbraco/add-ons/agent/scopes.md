@@ -7,7 +7,7 @@ description: >-
 
 Umbraco.AI has **two related but distinct** concepts for controlling where an agent appears:
 
-- **Surfaces** are categorisation tags that group agents by where they should be surfaced in the UI (for example, `copilot` agents shown in the Contextual Copilot chat sidebar, or `copilot-workspace` agents shown in Copilot Workspace). Surfaces are registered by add-on packages.
+- **Surfaces** are categorization tags that group agents by where they should be surfaced in the UI. Surfaces are registered by add-on packages. For example, the `copilot` surface groups agents shown in the Contextual Copilot chat sidebar, and `copilot-workspace` groups those shown in Copilot Workspace.
 - **Scopes** are availability rules applied to an individual agent that allow/deny the agent based on context (e.g., only in the `content` section, or never in `settings`).
 
 Surfaces and scopes work together: a Surface describes *which part of the UI* an agent belongs to, while a Scope describes *under what conditions* an agent may be used within that UI.

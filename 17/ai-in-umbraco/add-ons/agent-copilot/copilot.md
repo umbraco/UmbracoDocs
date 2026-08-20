@@ -8,7 +8,7 @@ description: >-
 Contextual Copilot is an AI-powered assistant that appears as a sidebar in the Umbraco backoffice. It provides conversational AI capabilities directly within your content editing workflow.
 
 {% hint style="info" %}
-In the backoffice itself, this sidebar is simply labeled **Copilot**. These docs use **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md), a separate add-on for broader, cross-site conversations. This is a documentation naming convention only, not a rename of the product or UI.
+In the backoffice itself, this sidebar is labeled **Copilot**. This documentation uses **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md), a separate add-on for broader, cross-site conversations. This is a documentation naming convention only, not a rename of the product or UI.
 {% endhint %}
 
 ## Accessing Contextual Copilot
@@ -27,9 +27,9 @@ The Contextual Copilot button only appears in sections where it's relevant (Cont
 
 ## Contextual Scope
 
-Contextual Copilot is intentionally scoped to the item you currently have open. It can read across your site for reference (for example searching other content for consistency), but it only makes changes to the item that is open in the editor.
+Contextual Copilot is intentionally scoped to the item you currently have open. It can read across your site for reference, for example to check other content for consistency. However, it only makes changes to the item currently open in the editor.
 
-Contextual Copilot **cannot** perform destructive, site-wide operations such as creating new pages, or publishing/deleting content or media it hasn't been asked to change as part of editing the current item. If you ask it to do something outside this scope, it explains the limitation and points you to the standard backoffice workflow instead:
+Contextual Copilot **cannot** perform destructive, site-wide operations. This includes creating new pages, or publishing or deleting content or media beyond what you've asked it to change. If you ask it to do something outside this scope, it explains the limitation and points you to the standard backoffice workflow instead:
 
 ![Contextual Copilot explaining it can only edit the currently open item, with steps to create a new page manually](../../.gitbook/assets/copilot-contextual-limit.png)
 
@@ -65,7 +65,9 @@ Agents can execute tools to interact with Umbraco:
 - Perform custom actions
 
 {% hint style="warning" %}
-Contextual Copilot always restricts destructive backend tools -- such as creating, publishing, or deleting content or media outside the open item -- regardless of the tool permissions granted to the agent. This is enforced by the Contextual Copilot surface itself, not by agent configuration, and cannot be overridden. See [Contextual Scope](#contextual-scope) above.
+
+Contextual Copilot always restricts destructive backend tools. This includes creating, publishing, or deleting content or media outside the open item. This restriction is enforced by the Contextual Copilot surface itself, not by agent configuration, and cannot be overridden. It applies regardless of the tool permissions granted to the agent. See [Contextual Scope](#contextual-scope) above.
+
 {% endhint %}
 
 ### Human-in-the-Loop Approval
@@ -82,7 +84,7 @@ Agents power Contextual Copilot's capabilities. Any agent in the **AI > Agents**
 
 ### Opting an agent into Contextual Copilot
 
-The Contextual Copilot package registers an agent surface via `CopilotAgentSurface` with `SurfaceId = "copilot"`. When editing an agent in the backoffice, tick **Copilot** in the **Surfaces** selection to expose it to the sidebar -- this is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it. Internally this adds `"copilot"` to the agent's `SurfaceIds` collection, and the sidebar loads agents filtered by that surface ID.
+The Contextual Copilot package registers an agent surface via `CopilotAgentSurface` with `SurfaceId = "copilot"`. When editing an agent in the backoffice, tick **Copilot** in the **Surfaces** selection to expose it to the sidebar. This is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it. Internally this adds `"copilot"` to the agent's `SurfaceIds` collection, and the sidebar loads agents filtered by that surface ID.
 
 If only one agent is associated with the Contextual Copilot surface, the sidebar uses it directly. If multiple agents are available, Contextual Copilot uses Auto mode to route each prompt (see below).
 

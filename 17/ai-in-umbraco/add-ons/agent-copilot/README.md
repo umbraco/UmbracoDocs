@@ -8,7 +8,7 @@ description: >-
 The Contextual Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice, scoped to the content or media item currently being edited. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
 
 {% hint style="info" %}
-In the Umbraco backoffice itself, this add-on's sidebar and its agent surface are both simply labeled **Copilot**. These docs use **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Where a step below tells you to tick or select an on-screen option, that option is exactly as labeled in the backoffice.
+In the Umbraco backoffice itself, this add-on's sidebar and its agent surface are both labeled **Copilot**. This documentation uses **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Where a step below tells you to tick or select an on-screen option, that option is exactly as labeled in the backoffice.
 {% endhint %}
 
 ## Installation
@@ -48,19 +48,19 @@ dotnet add package Umbraco.AI.Agent.Copilot
 
 ## Quick Start
 
-### 1. Install the Contextual Copilot Package
+### Step 1: Install the Contextual Copilot Package
 
 ```bash
 dotnet add package Umbraco.AI.Agent.Copilot
 ```
 
-### 2. Create an Agent for the Contextual Copilot Surface
+### Step 2: Create an Agent for the Contextual Copilot Surface
 
-In the backoffice, navigate to the **AI** section > **Agents** and create an agent. To make it available in the Contextual Copilot sidebar, tick **Copilot** in the agent's **Surfaces** selection -- this is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it.
+In the backoffice, navigate to the **AI** section > **Agents** and create an agent. To make it available in the Contextual Copilot sidebar, tick **Copilot** in the agent's **Surfaces** selection. This is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it.
 
 The Contextual Copilot surface is registered by `CopilotAgentSurface` with `SurfaceId = "copilot"`. At runtime the sidebar loads only agents whose `SurfaceIds` contains `"copilot"`. If more than one agent matches, Contextual Copilot uses Auto mode (see [Usage](copilot.md)) to route each prompt to the most relevant agent.
 
-### 3. Access Contextual Copilot
+### Step 3: Access Contextual Copilot
 
 The Contextual Copilot sidebar appears in sections that declare compatibility with it (Content and Media out of the box). Open a content or media item and click the floating **AI Assistant** button in the bottom-right corner of the workspace to toggle the sidebar.
 

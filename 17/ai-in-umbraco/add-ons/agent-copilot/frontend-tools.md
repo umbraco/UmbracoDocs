@@ -5,7 +5,7 @@ description: >-
 
 # Frontend Tools
 
-Frontend tools allow agents to execute actions directly in the browser. When the agent decides to call a tool, the Contextual Copilot UI runs your tool code locally and returns the result back to the agent, which then continues generating its response.
+Frontend tools allow agents to execute actions directly in the browser. When the agent decides to call a tool, the Contextual Copilot UI runs your tool code locally. It then returns the result to the agent, which continues generating its response.
 
 Frontend tools are registered as Umbraco backoffice extensions (manifests). You never wire up a dispatcher or event loop yourself — the Agent UI package provides the `UaiFrontendToolManager` and `UaiFrontendToolExecutor` services that discover your manifests, execute tools, and publish results back into the AG-UI stream.
 

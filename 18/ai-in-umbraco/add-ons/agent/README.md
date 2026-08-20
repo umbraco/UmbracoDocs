@@ -41,7 +41,7 @@ dotnet add package Umbraco.AI.Agent
 - **Management API** - RESTful API for agent operations
 
 {% hint style="info" %}
-For a chat sidebar with frontend tools and HITL approval, install the [Contextual Copilot](../agent-copilot/README.md) add-on alongside this package. For a full-section, persisted chat experience instead, install [Copilot Workspace](../copilot-workspace/README.md).
+For a chat sidebar with frontend tools and Human-in-the-Loop (HITL) approval, install the [Contextual Copilot](../agent-copilot/README.md) add-on alongside this package. For a full-section, persisted chat experience instead, install [Copilot Workspace](../copilot-workspace/README.md).
 {% endhint %}
 
 ## Quick Start
