@@ -57,7 +57,7 @@ If you want to use Staging as a temporary visitor-facing fallback, review the fu
 - Whether any of that data could be lost when traffic moves back to Live.
 
 {% hint style="info" %}
-For business-critical sites, the safer approach is often a planned maintenance window. During this window, you take Live offline and display a maintenance page to visitors. You can then safely complete and verify the major upgrade.
+For business-critical sites, the safer approach is often a planned maintenance window. During this window, you take Live offline and display a maintenance page to visitors. You can upload the maintenance page using the [Error Pages](../../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature. You can then safely complete and verify the major upgrade.
 {% endhint %}
 
 ### Building the Copy
@@ -96,7 +96,7 @@ This path grants direct control over the database migration. Your upgraded local
 
 #### Step-by-Step Local Upgrade Execution
 
-1. **Take the Live environment offline:** This prevents outside processes from writing to the database or booting mid-migration. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you are ready to push code to the Live environment, else the git remote will be offline.
+1. **Take the Live environment offline:** This prevents outside processes from writing to the database or booting mid-migration. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you are ready to push code to the Live environment, else the git remote will be offline. To control what visitors see while the environment is stopped, upload a custom maintenance page beforehand using the [Error Pages](../../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature. The environment displays the assigned page for as long as it is stopped.
 2. **Back up and verify the Live database:** If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state. For more information, see the [Restore Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database) article.
 3. **Allowlist your IP address:** Open the **SQL connection details** for the **Live** environment in the Cloud Portal and **allowlist your IP address**. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) and [Working with a Cloud database locally](../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md) articles.
 4. **Configure your connection string:** Check on your machine the exact codebase and version that is currently deployed to Live, and point its connection string at the Live database. Ensure you set an appropriate [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) inside your `appsettings.json` file.
