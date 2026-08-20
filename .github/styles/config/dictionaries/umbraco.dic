@@ -38,6 +38,7 @@ approvers
 appSetting
 appsetting
 appsettings
+Aprimo
 ARRAffinity
 articleContent
 articlesTitle
@@ -115,6 +116,7 @@ CMS's
 codebase
 codeblock
 Codegarden
+codegen
 collectionAction
 collectionConfig
 collectionView
@@ -122,6 +124,7 @@ Colour
 colours
 coloured
 Commerce
+CommerceTools
 compareTo
 comparisonOperator
 composable
@@ -182,6 +185,7 @@ dereferencing
 Deregister
 deregister
 deregistration
+deserialization
 deserialize
 deserialized
 deserializing
@@ -208,6 +212,7 @@ EFCore
 elementName
 elementSelector
 emailTemplate
+emerchantpay
 endcode
 endembed
 endfile
@@ -290,6 +295,7 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+heatmaps
 helpdesk
 HMACs
 Homebrew
@@ -343,6 +349,7 @@ inclusivity
 increaseBy
 initializer
 injectable
+inriver
 intalls
 intellisense
 Intellisense
@@ -396,6 +403,7 @@ masterpages
 Matryoshka
 maxLength
 Maxmind
+MCPs
 Mecanik
 memberGroups
 memberIds
@@ -500,6 +508,8 @@ personalizations
 Pikaday
 pipelineTasks
 Pluralsight
+populator
+populators
 postfixed
 Powershell
 powershell
@@ -610,6 +620,7 @@ serverless
 serverside
 setBehavior
 shippingMethod
+Shopify
 signout
 signup
 SignalR
@@ -650,7 +661,8 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
-summarising
+subnet
+subnets
 subpage
 subpages
 subtree
@@ -659,6 +671,7 @@ Subtrees
 subview
 subviews
 Subviews
+summarizing
 svg
 SVGs
 symlinked

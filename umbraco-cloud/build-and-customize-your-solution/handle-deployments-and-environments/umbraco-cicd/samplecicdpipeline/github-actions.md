@@ -131,6 +131,10 @@ This is how you can grant these permissions:
 
 <figure><img src="../../../../.gitbook/assets/github-workflow-permissions.png" alt=""><figcaption><p>GitHub Workflow permissions</p></figcaption></figure>
 
+{% hint style="info" %}
+If the **Read and write permissions** option is disabled, workflow permissions may be managed at the organization level. You can review or update this setting under **Organization Settings** → **Actions** → **General** → **Workflow permissions**.
+{% endhint %}
+
 ## Set up the GitHub Actions pipeline
 
 While working with the project on your local machine, follow these steps to prepare the pipeline, using the [samples from the repository](https://github.com/umbraco/Umbraco.Cloud.CICDFlow.Samples).

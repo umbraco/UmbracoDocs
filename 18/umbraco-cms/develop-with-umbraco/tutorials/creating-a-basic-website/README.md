@@ -9,7 +9,7 @@ This tutorial is based and tested on the latest version of **Umbraco 14**.
 
 This tutorial will guide you through building an Umbraco website step by step. It will show you how to take any website template, such as flat HTML, CSS, and JavaScript, and install it into a new Umbraco site. Then, you can connect the sections that require content management by Umbraco.
 
-We will not be using any starter kits in this tutorial. While these can be helpful, they do not offer a full understanding of the basics of Umbraco. Instead, we will focus on creating Document Types and Templates and how they work together to build pages.
+This tutorial does not use any starter kits. While these can be helpful, they do not offer a full understanding of the basics of Umbraco. Instead, the focus is on creating Document Types and Templates and how they work together to build pages.
 
 It is recommended that you work through the sub-sections in the following order.
 

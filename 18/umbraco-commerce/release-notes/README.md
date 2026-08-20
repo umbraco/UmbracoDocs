@@ -18,6 +18,25 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.2 (17th Aug 2026)
+
+* Fixed a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference ([#878](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/878)).
+* Fixed data corruption from a discount migration that could invalidate member-group discount rules ([#877](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/877)).
+* Fixed missing database indexes causing slow order and order line deletes on large stores ([#879](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/879)).
+* Fixed missing price fields in the dynamic shipping rate range editor ([#880](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/880)).
+
+#### 18.1.0 (12th Aug 2026)
+
+* Added customer management, including customer records, addresses, communication history, and statistics that stay in sync with orders automatically.
+* Added support for editing an order after it has been finalized and authorized, including changing line quantities, adding or removing lines, and reconciling discount and gift card codes.
+* Added partial capture support for payment providers, with the authorized and captured amount both shown in the transaction history.
+* Fixed a database migration failure when importing customer records from legacy orders that have no first or last name (#876).
+
+#### 18.0.5 (11th Aug 2026)
+
+* Fixed email rendering crash when there's no active HTTP request (#872).
+* Fixed cart cleanup timing out on stores with a large number of old carts (#874).
+
 #### 18.0.4 (29th Jul 2026)
 
 * Added logging to record why an order is moved to the error status, and when a payment is reset or redirected through a payment provider's cancel or error URL (#866).

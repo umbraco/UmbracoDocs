@@ -30,6 +30,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 0f296610-47f5-415d-8042-f4b8f2a51a4a | 16.4.0                | Migrates node pre-values to dynamic root.                                          |
 | d3c1e2f4-5b6a-4c7d-8e9f-0a1b2c3d4e5f | 16.4.0                | Updates the form picker property editor UI alias.                                  |
 | 59576376-b235-47a1-b495-1f795316ee04 | 17.0.0                | Migrates system dates to UTC.                                                      |
+| fb78edef-76c9-4cac-ab23-4ed1cec207b9 | 17.4.1                | Adds FieldPreValueSourceTypeId column; corrective step for 17.0.0-17.0.3 upgrades. |
 | 5e608c91-e910-42a5-8302-928b580ffd54 | 17.0.0                | Migrates node pre-values to dynamic root.                                          |
 | 67c4820d-d802-44dd-b146-5a1ba4c2b5f8 | 17.1.0                | Adds FieldPreValueSourceTypeId column to field pre-values.                         |
 | b375063a-8fcb-4096-b6e2-ff32ff322677 | 17.1.0                | Migrates node pre-values to dynamic root.                                          |
@@ -40,3 +41,12 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | b8e2f4a1-3c5d-4e6f-9a7b-1d2e3f4a5b6c | 17.3.0                | Adds an index on UniqueId to the UFRecords table for analytics performance.        |
 | d4f5e6a7-8b9c-4d0e-1f2a-3b4c5d6e7f8a | 17.3.0                | Replaces the index on UFRecords with a covering index that includes UmbracoPageId. |
 | 33c9d3f4-7d41-46f7-a44d-5ed32f26448d | 17.4.0                | Rebuild the Examine records index so that existing records gain sortable fields.    |
+| 188009a1-e582-4971-aff7-87f7e4381bd0 | 17.4.8                | Rebuilds the Examine records index so values of sensitive fields are excluded.       |
+| 16f1cd91-d614-4e0b-844f-0a2434441d34 | 17.5.0                | Adds the UmbracoPageKey column to the Records table.                               |
+| b7d4e1a9-3c62-4f08-9a15-2e6d8f04c3b1 | 17.5.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
+| 3a03c625-3ddc-4eda-9bf3-cc88f112e9a9 | 17.5.0                | Rebuilds the Examine records index so records gain the page key field.             |
+| a1e7c9d3-5b42-4f18-9c6a-7e2d1751b0fa | 17.5.0                | Repairs forms with foreign-key fields pointing at the default provider sentinel.   |
+| 998ebd1d-1fef-431e-83b9-18db06eb7231 | 17.5.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
+| 9a013edc-579b-46b5-a85d-d9288e2e074e | 17.5.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
+| 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
+| 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
