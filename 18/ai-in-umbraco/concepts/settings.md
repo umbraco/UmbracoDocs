@@ -90,7 +90,7 @@ var response = await _chatService.GetChatResponseAsync(
 
 ## Classifier Chat Profile
 
-The classifier chat profile is an optional setting that allows you to designate a cheaper or faster model for internal classification tasks. Currently, this is used by the Copilot's "Auto" agent mode to classify user prompts and route them to the best available agent.
+The classifier chat profile is an optional setting that allows you to designate a cheaper or faster model for internal classification tasks. Currently, this is used by the "Auto" agent mode in both Contextual Copilot and Copilot Workspace to classify user prompts and route them to the best available agent.
 
 ### Fallback Chain
 

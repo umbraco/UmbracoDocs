@@ -5,7 +5,7 @@ description: >-
 
 # Using Copilot Workspace
 
-Copilot Workspace is a full backoffice section for AI conversations, opened via the **Copilot** entry in the section rail. Unlike the [Copilot](../agent-copilot/copilot.md) sidebar, conversations here are not tied to a single content or media item -- they persist across sessions and can span whatever you need help with.
+Copilot Workspace is a full backoffice section for AI conversations, opened via the **Copilot** entry in the section rail. Unlike the [Contextual Copilot](../agent-copilot/copilot.md) sidebar, conversations here are not tied to a single content or media item -- they persist across sessions and can span whatever you need help with.
 
 ## The Workspace Layout
 
@@ -61,7 +61,7 @@ While chatting, the context panel on the right shows what's grounding the curren
 
 ## Backend Tools and Approvals
 
-Because Copilot Workspace isn't scoped to a single open item, agents on the `copilot-workspace` surface can be granted broader tool permissions than Copilot allows -- including backend tools that create, update, publish, or delete content and media anywhere on the site. Sensitive operations still go through [Human-in-the-Loop approval](../agent-copilot/copilot.md#human-in-the-loop-approval) before they run.
+Because Copilot Workspace isn't scoped to a single open item, agents on the `copilot-workspace` surface can be granted broader tool permissions than Contextual Copilot allows -- including backend tools that create, update, publish, or delete content and media anywhere on the site. Sensitive operations still go through [Human-in-the-Loop approval](../agent-copilot/copilot.md#human-in-the-loop-approval) before they run.
 
 {% hint style="warning" %}
 Review tool permissions carefully for agents used in Copilot Workspace -- see [Agent Tool Permissions](../agent/permissions.md) for how to scope destructive tools to the right agents and user groups.
@@ -71,10 +71,10 @@ Review tool permissions carefully for agents used in Copilot Workspace -- see [A
 
 Any agent in the **AI > Agents** backoffice section that is associated with the **Copilot Workspace** surface becomes available in the Workspace. Tick **Copilot Workspace** in the agent's **Surfaces** selection to opt it in.
 
-Unlike Copilot, where availability also depends on the current section and entity type, Copilot Workspace availability depends only on this surface opt-in -- an agent enabled here is available in every conversation and project. If no agent is enabled, the Workspace shows an empty state guiding you to enable one. If several are enabled, Copilot Workspace can auto-select the most relevant agent per prompt, the same way [Auto Mode](../agent-copilot/copilot.md#auto-mode-and-agent-routing) works for Copilot.
+Unlike Contextual Copilot, where availability also depends on the current section and entity type, Copilot Workspace availability depends only on this surface opt-in -- an agent enabled here is available in every conversation and project. If no agent is enabled, the Workspace shows an empty state guiding you to enable one. If several are enabled, Copilot Workspace can auto-select the most relevant agent per prompt, the same way [Auto Mode](../agent-copilot/copilot.md#auto-mode-and-agent-routing) works for Contextual Copilot.
 
 ## Related
 
-- [Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open
+- [Contextual Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open
 - [Agent Tool Permissions](../agent/permissions.md) - Scoping tool access, including destructive backend tools
 - [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines

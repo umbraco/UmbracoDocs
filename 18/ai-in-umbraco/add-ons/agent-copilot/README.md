@@ -1,19 +1,19 @@
 ---
 description: >-
-    Copilot chat UI add-on for AI agents with sidebar, tool execution, and Human In The Loop (HITL) support.
+    Contextual Copilot chat UI add-on for AI agents with sidebar, tool execution, and Human In The Loop (HITL) support.
 ---
 
-# Agent Copilot
+# Contextual Copilot
 
-The Agent Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice, scoped to the content or media item currently being edited. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
+The Contextual Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice, scoped to the content or media item currently being edited. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
 
 {% hint style="info" %}
-This documentation refers to this add-on's chat as **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Both ship under the same **Copilot** brand in the backoffice.
+In the Umbraco backoffice itself, this add-on's sidebar and its agent surface are both simply labeled **Copilot**. These docs use **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Where a step below tells you to tick or select an on-screen option, that option is exactly as labeled in the backoffice.
 {% endhint %}
 
 ## Installation
 
-Install the Copilot package — `Umbraco.AI.Agent.UI` and `Umbraco.AI.Agent` are pulled in transitively:
+Install the Contextual Copilot package — `Umbraco.AI.Agent.UI` and `Umbraco.AI.Agent` are pulled in transitively:
 
 {% code title="Package Manager Console" %}
 
@@ -34,7 +34,7 @@ dotnet add package Umbraco.AI.Agent.Copilot
 {% endcode %}
 
 {% hint style="info" %}
-`Umbraco.AI.Agent.Copilot` depends on `Umbraco.AI.Agent.UI`, which depends on `Umbraco.AI.Agent`. Installing Copilot installs all three packages.
+`Umbraco.AI.Agent.Copilot` depends on `Umbraco.AI.Agent.UI`, which depends on `Umbraco.AI.Agent`. Installing Contextual Copilot installs all three packages.
 {% endhint %}
 
 ## Features
@@ -48,21 +48,21 @@ dotnet add package Umbraco.AI.Agent.Copilot
 
 ## Quick Start
 
-### 1. Install the Copilot Package
+### 1. Install the Contextual Copilot Package
 
 ```bash
 dotnet add package Umbraco.AI.Agent.Copilot
 ```
 
-### 2. Create an Agent for the Copilot Surface
+### 2. Create an Agent for the Contextual Copilot Surface
 
-In the backoffice, navigate to the **AI** section > **Agents** and create an agent. To make it available in the Copilot sidebar, tick **Copilot** in the agent's **Surfaces** selection.
+In the backoffice, navigate to the **AI** section > **Agents** and create an agent. To make it available in the Contextual Copilot sidebar, tick **Copilot** in the agent's **Surfaces** selection -- this is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it.
 
-The Copilot surface is registered by `CopilotAgentSurface` with `SurfaceId = "copilot"`. At runtime the sidebar loads only agents whose `SurfaceIds` contains `"copilot"`. If more than one agent matches, the Copilot uses Auto mode (see [Copilot Usage](copilot.md)) to route each prompt to the most relevant agent.
+The Contextual Copilot surface is registered by `CopilotAgentSurface` with `SurfaceId = "copilot"`. At runtime the sidebar loads only agents whose `SurfaceIds` contains `"copilot"`. If more than one agent matches, Contextual Copilot uses Auto mode (see [Usage](copilot.md)) to route each prompt to the most relevant agent.
 
-### 3. Access the Copilot
+### 3. Access Contextual Copilot
 
-The Copilot sidebar appears in sections that declare compatibility with it (Content and Media out of the box). Open a content or media item and click the floating **AI Assistant** button in the bottom-right corner of the workspace to toggle the sidebar.
+The Contextual Copilot sidebar appears in sections that declare compatibility with it (Content and Media out of the box). Open a content or media item and click the floating **AI Assistant** button in the bottom-right corner of the workspace to toggle the sidebar.
 
 ## Package Architecture
 
@@ -83,7 +83,7 @@ The Copilot sidebar appears in sections that declare compatibility with it (Cont
                         │
 ┌───────────────────────────────────────────────────┐
 │            Umbraco.AI.Agent.Copilot                │
-│  (Sidebar, Copilot surface, example tools)         │
+│    (Sidebar, Contextual Copilot, example tools)    │
 └───────────────────────────────────────────────────┘
 ```
 
@@ -100,7 +100,7 @@ The Agent UI package provides:
 - Frontend tool manager and executor
 - HITL approval infrastructure and the `uaiAgentFrontendTool` / `uaiAgentToolRenderer` manifest types
 
-The Copilot package provides:
+The Contextual Copilot package provides:
 
 - Sidebar host and the floating trigger button shown in supported workspaces
 - The `copilot` agent surface (`CopilotAgentSurface`)
@@ -110,7 +110,7 @@ The Copilot package provides:
 
 | Section                             | Description                       |
 | ----------------------------------- | --------------------------------- |
-| [Copilot Usage](copilot.md)         | Using the chat interface          |
+| [Usage](copilot.md)                 | Using the chat interface          |
 | [Frontend Tools](frontend-tools.md) | Creating browser-executable tools |
 
 ## Related

@@ -9,7 +9,7 @@ The `UaiAgentClient` is a TypeScript client for building custom agent-driven use
 
 ## Overview
 
-`UaiAgentClient` is exported from the `@umbraco-ai/agent` package and serves as the foundation for building agent-based chat interfaces. It's the same client that powers the Agent Copilot sidebar.
+`UaiAgentClient` is exported from the `@umbraco-ai/agent` package and serves as the foundation for building agent-based chat interfaces. It's the same client that powers both the Contextual Copilot sidebar and Copilot Workspace.
 
 **Key features:**
 
@@ -361,6 +361,6 @@ interface UaiBinaryInputContent {
 
 ## Related
 
-- [Agent Copilot](../agent-copilot/README.md) - Reference implementation using UaiAgentClient
+- [Contextual Copilot](../agent-copilot/README.md) - Reference implementation using UaiAgentClient
 - [Streaming](streaming.md) - AG-UI protocol and event types
 - [Frontend Tools](../agent-copilot/frontend-tools.md) - Browser-executable tools

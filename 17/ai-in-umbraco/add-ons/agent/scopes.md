@@ -7,7 +7,7 @@ description: >-
 
 Umbraco.AI has **two related but distinct** concepts for controlling where an agent appears:
 
-- **Surfaces** are categorisation tags that group agents by where they should be surfaced in the UI (for example, "copilot" agents shown in the chat sidebar). Surfaces are registered by add-on packages.
+- **Surfaces** are categorisation tags that group agents by where they should be surfaced in the UI (for example, `copilot` agents shown in the Contextual Copilot chat sidebar, or `copilot-workspace` agents shown in Copilot Workspace). Surfaces are registered by add-on packages.
 - **Scopes** are availability rules applied to an individual agent that allow/deny the agent based on context (e.g., only in the `content` section, or never in `settings`).
 
 Surfaces and scopes work together: a Surface describes *which part of the UI* an agent belongs to, while a Scope describes *under what conditions* an agent may be used within that UI.
@@ -22,11 +22,12 @@ An agent with no `SurfaceIds` appears in general listings but is not returned wh
 
 ### Built-in Surfaces
 
-The **Agent Copilot** add-on registers the `copilot` surface, which identifies agents that should appear in the copilot chat sidebar.
+The **Contextual Copilot** add-on registers the `copilot` surface, which identifies agents that should appear in its chat sidebar. The **Copilot Workspace** add-on registers the `copilot-workspace` surface for its own, separate chat experience.
 
-| Surface ID | Package                  | Icon        | Description                                  |
-| ---------- | ------------------------ | ----------- | -------------------------------------------- |
-| `copilot`  | Umbraco.AI.Agent.Copilot | `icon-chat` | Agents available in the copilot chat sidebar |
+| Surface ID          | Package                            | Icon               | Description                                          |
+| -------------------- | ----------------------------------- | ------------------- | ----------------------------------------------------- |
+| `copilot`            | Umbraco.AI.Agent.Copilot            | `icon-chat`         | Agents available in the Contextual Copilot chat sidebar |
+| `copilot-workspace`  | Umbraco.AI.Agent.Copilot.Workspace   | `icon-chat`         | Agents available in Copilot Workspace                 |
 
 ### Assigning Surfaces to Agents
 
@@ -342,4 +343,5 @@ Scope = new AIAgentScope
 
 - [Agent Concepts](concepts.md) - Agent overview
 - [API: List Agents](api/list.md) - List endpoint with surface filtering
-- [Agent Copilot](../agent-copilot/README.md) - Copilot surface usage
+- [Contextual Copilot](../agent-copilot/README.md) - `copilot` surface usage
+- [Copilot Workspace](../copilot-workspace/README.md) - `copilot-workspace` surface usage

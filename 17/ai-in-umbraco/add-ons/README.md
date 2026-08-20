@@ -13,7 +13,7 @@ Umbraco.AI can be extended with add-on packages that provide specialized functio
 | ---------------------------------------- | -------------------------- | ------------------------------------------------------ |
 | [Prompt Management](prompt/README.md)    | `Umbraco.AI.Prompt`        | Create, manage, and execute reusable prompt templates  |
 | [Agent Runtime](agent/README.md)         | `Umbraco.AI.Agent`         | Configure and run AI agents with streaming responses   |
-| [Agent Copilot](agent-copilot/README.md) | `Umbraco.AI.Agent.Copilot` | Contextual chat sidebar, scoped to the open item (requires Agent) |
+| [Contextual Copilot](agent-copilot/README.md) | `Umbraco.AI.Agent.Copilot` | Contextual chat sidebar, scoped to the open item (requires Agent) |
 | [Copilot Workspace](copilot-workspace/README.md) | `Umbraco.AI.Agent.Copilot.Workspace` | Full-section chat with persisted conversations and projects (requires Agent) |
 | [Semantic Search](search/README.md)      | `Umbraco.AI.Search`        | AI-powered vector search for content and media         |
 | [Deploy Support](deploy/README.md)       | `Umbraco.AI.Deploy`        | Deploy AI configuration across environments            |
@@ -101,7 +101,7 @@ Add-ons that store data have their own database tables with a package-specific p
 | Search             | `UmbracoAISearch_`          |
 
 {% hint style="info" %}
-Agent Copilot and Deploy packages are integration-only packages with no database tables of their own. Copilot Workspace is the exception -- it stores conversations and projects under the `UmbracoAIConversations_` prefix.
+Contextual Copilot and Deploy packages are integration-only packages with no database tables of their own. Copilot Workspace is the exception -- it stores conversations and projects under the `UmbracoAIConversations_` prefix.
 {% endhint %}
 
 Migrations run automatically on application startup.
