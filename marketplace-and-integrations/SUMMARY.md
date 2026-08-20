@@ -1,16 +1,19 @@
 # Table of contents
 
 * [Umbraco DXP](README.md)
-* [Sustainability Best Practices](https://docs.umbraco.com/sustainability-best-practices/)
 
 ## Commercial products
 
+* [Umbraco Automate](https://docs.umbraco.com/umbraco-automate)
 * [Umbraco Commerce](https://docs.umbraco.com/umbraco-commerce)
 * [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy/)
 * [Umbraco Engage](https://docs.umbraco.com/umbraco-engage)
 * [Umbraco Forms](https://docs.umbraco.com/umbraco-forms/)
 * [Umbraco UI Builder](https://docs.umbraco.com/umbraco-ui-builder/)
 * [Umbraco Workflow](https://docs.umbraco.com/umbraco-workflow/)
+
+## Licensing and dependencies
+
 * [Configure Licenses](configure-licenses.md)
 * [Commercial Products, Relations, and Dependencies](commercial-product-dependencies.md)
 
