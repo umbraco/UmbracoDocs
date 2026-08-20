@@ -26,9 +26,15 @@ You can search for a specific group using the Search bar. Select a group from th
 
 The **Settings** tab consists of the following fields:
 
+* **Allow external approval:** Set to true to allow members of this group to action workflow tasks without logging in to the CMS. A secure link is included in the notification email. Requires a license. See [External Approval](../getting-started/external-approval.md) for more information.
+* **Allow approval by email reply:** Set to true to allow members of this group to approve or reject tasks. They do this by replying directly to the notification email. Requires a license. See [External Approval](../getting-started/external-approval.md) for more information.
 * **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
 * **Group Language:** Select a language variant for the email.
 * **Workflow Activity:** Provides a chart displaying an overview of the workflow activity such as approved, cancelled, rejected, or pending approvals for the current group.
+
+{% hint style="info" %}
+**Allow external approval** and **Allow approval by email reply** are not available for a group with a **Group Email** address set. Both features issue a link or reply address tied to a single, known individual, so they cannot be used with a shared mailbox.
+{% endhint %}
 
 ![Approval group Settings](../.gitbook/assets/Approval-group-settings-v14.png)
 

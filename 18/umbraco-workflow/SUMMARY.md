@@ -25,6 +25,7 @@
 * [Notifications](getting-started/notifications.md)
 * [Configuration](getting-started/configuration.md)
 * [Approval thresholds](getting-started/approval-thresholds.md)
+* [External Approval](getting-started/external-approval.md)
 * [History Cleanup](getting-started/history-cleanup.md)
 
 ## Workflow Section

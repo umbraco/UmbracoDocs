@@ -16,11 +16,17 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
-### 17.4.0 (August 20 2026)
+### [17.4.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0)  (August 20 2026)
 
 #### Adds approval by magic link and email reply
 
-Reviewers can now approve or reject a workflow task directly from the notification email. Task can be approved either by opening a secure, time-limited link without logging in to the backoffice, or by replying to the email with an approve or reject instruction. New health checks validate the action-by-email and external approval configuration.
+Reviewers can now approve or reject a workflow task directly from the notification email. 
+
+Tasks can be approved in two ways:
+* By opening a secure, time-limited link without logging in to the backoffice
+* By replying to the email with an approve or reject instruction
+
+New health checks validate the action-by-email and external approval configuration.
 
 This feature requires a license. Check the [External Approval](getting-started/external-approval.md) article for more information.
 

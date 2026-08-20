@@ -16,6 +16,42 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### [18.1.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.0)  (August 20 2026)
+
+#### Adds approval by magic link and email reply
+
+Reviewers can now approve or reject a workflow task directly from the notification email. 
+
+Tasks can be approved in two ways:
+* By opening a secure, time-limited link without logging in to the backoffice
+* By replying to the email with an approve or reject instruction
+
+New health checks validate the action-by-email and external approval configuration.
+
+This feature requires a license. Check the [External Approval](getting-started/external-approval.md) article for more information.
+
+#### Adds Date mode for content reviews
+
+Content review due dates can be set to a specific date instead of only a recurring period. When editing an existing configuration, the due date can be regenerated from the current date or from the content's last published date.
+
+#### Workflow actions moved to extensions
+
+Approve, reject, cancel, and resubmit actions, along with the preview, diff, and attachment buttons, are now implemented as extensions. This lays the groundwork for third-party actions to be registered alongside the built-in ones.
+
+#### Bug fixes and other changes
+
+* Fixes a SQL syntax error when loading approval groups under cultures whose negative sign is not the ASCII hyphen, such as `sv-SE` [#165](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/165)
+* Fixes errors when opening Settings > Workflow > Content approvals > Configuration on an unlicensed install, including a settings tree node incorrectly labeled `workflow_workflow` [#164](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/164)
+* Fixes advanced search so toggle properties can be searched and read-only label properties correctly show a search input [#163](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/163)
+* Fixes a bug where licensed settings values were reset to their defaults when saved from an unlicensed install
+* Fixes tooltip positioning in the Advanced Search dashboard
+* Fixes the reject dialog showing a "reject to group" option when rejecting at the first stage of a workflow
+* Fixes the workflow modal breaking when SignalR triggers a rebuild of its host element
+* Adds health checks for email notification configuration, action-by-email configuration, email template integrity, and external approval configuration
+* Localizes email templates at render time instead of maintaining a separate template per culture
+* Normalizes stored content review culture values for invariant content
+* Fixes orphaned data rows left behind when deleting an alternate version
+
 ### 18.0.3 (July 24 2026)
 
 * Fixes a bug where teardown of a required context was not correctly guarded in a specific code path, leaving Workflow unresponsive.
