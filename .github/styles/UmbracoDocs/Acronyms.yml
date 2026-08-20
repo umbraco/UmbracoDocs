@@ -63,6 +63,7 @@ exceptions:
   - IaaS     # Infrastructure as a Service
   - IDE      # Integrated Development Environment
   - IIS      # Internet Information Services
+  - IMAP     # Internet Message Access Protocol
   - INFO     # Information
   - ISO      # International Organization for Standardization
   - JPG      # Joint Photographic Experts Group
