@@ -61,7 +61,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 {% hint style="warning" %}
 **Do not perform major version upgrades directly in Umbraco Cloud.**
 
-Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
+Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures, which typically show up as a 503 or 500.30 error. These incomplete migrations are often difficult to diagnose.
 
 Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
 {% endhint %}
@@ -317,6 +317,14 @@ Remove the same files from the left-most environment. This should be done from t
 5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
 6. Test that everything works with the upgrade on the Cloud environment.
 
+{% hint style="warning" %}
+**If the environment fails to boot after this push (503 or 500.30 error)**
+
+Both errors usually mean the database migration did not complete in time. This can happen on any environment, not only Live, and is more likely on environments with a large or complex database.
+
+If this happens, follow the [Local Upgrade Option](planning-major-upgrades-safely-on-live.md#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the migration locally. Connect directly to the target environment's database instead of the Live environment's database.
+{% endhint %}
+
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
 {% hint style="warning" %}
@@ -331,6 +339,10 @@ That guide will help you set up a Staging safety net and choose the right resour
 
 The next part is to deploy the upgrade through to the production environment.
 
+{% hint style="info" %}
+Deploying the upgrade pushes your upgraded **codebase only**. It does not move, restore, or overwrite your database. The existing database for each environment stays in place, and schema migrations run automatically the first time the new code starts up on that environment. Content and media are only moved if you explicitly restore or import them, as described in the **With content freeze** steps below.
+{% endhint %}
+
 For major upgrades that include content migrations, the process can be extensive. This is especially true for sites with a large amount of content. In these cases, it is recommended to:
 
 * Initiate a content freeze to prevent changes during the migration.
@@ -338,8 +350,8 @@ For major upgrades that include content migrations, the process can be extensive
 
 You can choose between two approaches based on your needs:
 
-* "**With content freeze**" - involves a more detailed upgrade process but helps reduce downtime on your live website.
-* "**Without content freeze**" - provides a more straightforward process that may result in longer downtime on your live website.
+* **With content freeze** - involves a more detailed upgrade process but helps reduce downtime on your live website.
+* **Without content freeze** - provides a more straightforward process that may result in longer downtime on your live website.
 
 {% tabs %}
 {% tab title="With content freeze" %}
