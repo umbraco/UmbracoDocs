@@ -36,7 +36,7 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/default-document-types.md#element-type). These can be created beforehand or while setting up your Block Types.
+Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/document-type-options.md#element-type). These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
