@@ -25,7 +25,7 @@ Add `Umbraco.AI.Agent.Copilot.Workspace` too if you also want agents available f
 
 Restart your application to run the database migrations.
 
-Installing `Umbraco.Engage.AI` automatically registers the Engage section as Copilot-compatible and makes the Engage tools available to install. Granting an agent access to them is a separate step (Step 5).
+Installing `Umbraco.Engage.AI` automatically registers the Engage section as Copilot-compatible and makes the Engage tools available. Granting an agent access to them is a separate step (Step 5).
 
 ## Step 2: Create a connection
 
