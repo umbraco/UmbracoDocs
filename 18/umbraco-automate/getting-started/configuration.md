@@ -97,6 +97,12 @@ A settings field can reference a configuration value at run time with a `$Key:Pa
 $Umbraco:Automate:Secrets:SlackToken
 ```
 
+A reference can also be embedded inside a larger string, for example in an HTTP header value:
+
+```
+Bearer $Umbraco:Automate:Secrets:ApiToken
+```
+
 This lets administrators keep credentials and per-environment values in configuration — `appsettings.json`, environment variables, Azure Key Vault, and so on — rather than in the automation database.
 
 ### Allowed Key Prefixes
