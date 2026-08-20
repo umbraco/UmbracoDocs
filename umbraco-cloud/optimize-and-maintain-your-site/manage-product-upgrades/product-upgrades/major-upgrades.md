@@ -322,7 +322,7 @@ Remove the same files from the left-most environment. This should be done from t
 
 Both errors usually mean the database migration did not complete in time. This can happen on any environment, not only Live, and is more likely on environments with a large or complex database.
 
-If this happens, follow the [Local Upgrade Option](planning-major-upgrades-safely-on-live.md#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the migration locally. Connect directly to this environment's database instead of Live's.
+If this happens, follow the [Local Upgrade Option](planning-major-upgrades-safely-on-live.md#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the migration locally. Connect directly to the target environment's database instead of the Live environment's database.
 {% endhint %}
 
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
