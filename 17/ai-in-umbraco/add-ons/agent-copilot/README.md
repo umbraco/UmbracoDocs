@@ -5,7 +5,11 @@ description: >-
 
 # Agent Copilot
 
-The Agent Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
+The Agent Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice, scoped to the content or media item currently being edited. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
+
+{% hint style="info" %}
+This documentation refers to this add-on's chat as **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Both ship under the same **Copilot** brand in the backoffice.
+{% endhint %}
 
 ## Installation
 
@@ -58,7 +62,7 @@ The Copilot surface is registered by `CopilotAgentSurface` with `SurfaceId = "co
 
 ### 3. Access the Copilot
 
-The Copilot sidebar appears in sections that declare compatibility with it (Content and Media out of the box). Click the **AI Assistant** button in the backoffice header to toggle the sidebar.
+The Copilot sidebar appears in sections that declare compatibility with it (Content and Media out of the box). Open a content or media item and click the floating **AI Assistant** button in the bottom-right corner of the workspace to toggle the sidebar.
 
 ## Package Architecture
 
@@ -98,7 +102,7 @@ The Agent UI package provides:
 
 The Copilot package provides:
 
-- Sidebar host and backoffice header app
+- Sidebar host and the floating trigger button shown in supported workspaces
 - The `copilot` agent surface (`CopilotAgentSurface`)
 - Example frontend tools
 
@@ -111,6 +115,7 @@ The Copilot package provides:
 
 ## Related
 
+- [Copilot Workspace](../copilot-workspace/README.md) - Broader, cross-site AI conversations with persisted history and projects
 - [Agent Runtime](../agent/README.md) - Backend agent functionality
 - [Add-ons Overview](../README.md) - All add-on packages
 - [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines

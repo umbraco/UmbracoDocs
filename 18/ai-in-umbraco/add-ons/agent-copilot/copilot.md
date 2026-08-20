@@ -1,25 +1,39 @@
 ---
 description: >-
-    The AI Copilot provides an interactive assistant sidebar in the Umbraco backoffice.
+    The Copilot (Contextual Copilot) provides an interactive assistant sidebar in the Umbraco backoffice, scoped to the item you have open.
 ---
 
-# Copilot
+# Copilot (Contextual Copilot)
 
 The Copilot is an AI-powered assistant that appears as a sidebar in the Umbraco backoffice. It provides conversational AI capabilities directly within your content editing workflow.
 
+{% hint style="info" %}
+This documentation refers to this feature as **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md), a separate add-on for broader, cross-site conversations. In the backoffice itself, both experiences are simply branded **Copilot** -- this is a documentation naming convention only, not a rename of the product or UI.
+{% endhint %}
+
 ## Accessing the Copilot
 
-The Copilot is available in the **Content** and **Media** sections:
+The Copilot is available in the **Content** and **Media** sections. Open a document or media item and look for the floating **AI Assistant** button in the bottom-right corner of the editing workspace:
 
-1. Look for the **AI Assistant** button in the header
-2. Click to toggle the sidebar open/closed
+1. Open the content or media item you want help with
+2. Click the floating button to toggle the sidebar open/closed
 3. The button shows an active state when the sidebar is open
 
 {% hint style="info" %}
-The Copilot button only appears in sections where it's relevant (Content and Media).
+The Copilot button only appears in sections where it's relevant (Content and Media), and only once you have a document or media item open. It is not shown in the backoffice header -- it floats over the workspace of the item you're editing.
 {% endhint %}
 
 ![The AI Copilot sidebar showing a conversation in the Umbraco backoffice](../../.gitbook/assets/copilot-sidebar.png)
+
+## Contextual Scope
+
+The Copilot is intentionally scoped to the item you currently have open. It can read across your site for reference (for example searching other content for consistency), but it only makes changes to the item that is open in the editor.
+
+The Copilot **cannot** perform destructive, site-wide operations such as creating new pages, or publishing/deleting content or media it hasn't been asked to change as part of editing the current item. If you ask it to do something outside this scope, it explains the limitation and points you to the standard backoffice workflow instead:
+
+![The Copilot explaining it can only edit the currently open item, with steps to create a new page manually](../../.gitbook/assets/copilot-contextual-limit.png)
+
+For broader, multi-page or site-wide AI-assisted work -- including tasks that create or publish content across the site -- see [Copilot Workspace](../copilot-workspace/README.md).
 
 ## Features
 
@@ -50,9 +64,13 @@ Agents can execute tools to interact with Umbraco:
 - Navigate to related content
 - Perform custom actions
 
+{% hint style="warning" %}
+The Copilot always restricts destructive backend tools -- such as creating, publishing, or deleting content or media outside the open item -- regardless of the tool permissions granted to the agent. This is enforced by the Copilot surface itself, not by agent configuration, and cannot be overridden. See [Contextual Scope](#contextual-scope) above.
+{% endhint %}
+
 ### Human-in-the-Loop Approval
 
-For sensitive operations, the Copilot requests confirmation:
+For sensitive operations on the item you have open -- such as saving and publishing changes the Copilot has staged -- the Copilot requests confirmation before proceeding:
 
 The approval workflow ensures editors maintain control over content changes.
 
@@ -100,5 +118,6 @@ See [Settings](../../concepts/settings.md#classifier-chat-profile) for more deta
 
 ## Related
 
+- [Copilot Workspace](../copilot-workspace/README.md) - Broader, cross-site AI conversations with persisted history and projects
 - [Agent Runtime](../agent/README.md) - Backend agent functionality
 - [Frontend Tools](frontend-tools.md) - Custom tool integrations
