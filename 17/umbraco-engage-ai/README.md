@@ -22,8 +22,8 @@ With Engage.AI installed, the Engage section is registered as Copilot-compatible
 
 ## Key features
 
-- **Plain-language marketing questions.** "Which campaign is giving us the best return right now?" instead of a dashboard detour.
-- **Explains, not only reports.** Dedicated tools answer "what does this segment/goal/persona mean and how is it scored?" rather than only "what is it".
+- **Plain-language marketing questions.** Skip the dashboard: ask things like "Which campaign is giving us the best return right now?"
+- **Explains, not only reports.** Dedicated tools explain what a segment, goal, or persona means and how it's scored, rather than only naming what it is.
 - **Works from either Copilot surface.** The same agent and tools answer from the Copilot sidebar and from Copilot Workspace. See [Asking Engage Questions](asking-engage-questions.md).
 - **Configurable, not fixed.** The agent's Instructions, AI Profile (model), and any attached Context resources shape tone and behavior. None of the answer format is hardcoded into Engage.AI itself.
 

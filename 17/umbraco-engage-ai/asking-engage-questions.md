@@ -13,4 +13,4 @@ The following prompts ran against a demo Engage installation, using an agent wit
 - **"Which channels should I double down on?"** Top traffic sources.
 - **"Who are our visitor personas?"** Persona discovery.
 - **"Why would a visitor end up classified as a 'Window Shoppers'?"** Explains how a persona is scored.
-- **"Should I end any of my running tests yet, or keep waiting for more data?"** A/B test status. On a site with no test configured, this comes back with what to consider before launching one, rather than a "who's winning" readout.
+- **"Should I end any of my running tests yet, or keep waiting for more data?"** A/B test status. On a site with no test configured, this comes back with what to consider before launching one, rather than reporting who's winning.
