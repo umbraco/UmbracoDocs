@@ -59,10 +59,6 @@ You can now start and stop your Cloud environments directly from the project ove
 
 <figure><img src="../../.gitbook/assets/start-stop-environments.png" alt="Environment context menu showing Restart and Stop options"><figcaption><p>The environment context menu now includes options to stop and restart environments.</p></figcaption></figure>
 
-{% hint style="info" %}
-As of August 2026, custom error pages are also shown while an environment is stopped. See the [Error Pages](../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) article for how to upload and assign a custom page.
-{% endhint %}
-
 ## Release Umbraco.Cloud.Cms 17.1.0
 
 A release of Umbraco.Cloud.Cms has been created. This version does not contain any user-facing changes. It contains code preparing for the upcoming Load Balancing feature.
