@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.3 (21st Aug 2026)
+
+* Fixed a startup crash on large stores during the customer data migration ([#883](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/883)).
+* Fixed cart cleanup failing with a foreign key constraint error on large stores ([#874](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/874)).
+* Fixed payment provider callback URLs trusting a spoofable `X-Original-Host` header.
+
 #### 18.1.2 (17th Aug 2026)
 
 * Fixed a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference ([#878](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/878)).
