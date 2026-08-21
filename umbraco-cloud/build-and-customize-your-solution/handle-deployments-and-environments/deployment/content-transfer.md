@@ -16,52 +16,27 @@ Content and Media transfers will only work if you've deployed all changes to you
 
 ## Comparing Content between environments
 
-{% hint style="info" %}
-**Compare** content is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
-{% endhint %}
-
 Compare Content allows previewing content changes before transferring them to another environment. This is helpful to ensure that the correct updates are transferred when working with content in multiple environments.
 
-The **Summary Information** and **Field Comparison** values show what will change if you transfer the content or restore content to the current environment.
+**Summary Information** and **Field Comparison** values shows what will change when you transfer the content or restore content to the current environment.
 
 To compare content between environments, follow these steps:
 
 1. Navigate to the page you want to compare.
-2. Select the arrow next to the **Save and Publish** button. Alternatively, you can click the **Actions** drop-down.
+2. Select the **Actions** drop-down next to the Page Title field.
 3. Select **Compare** to open the **Compare** window.
 
-![Compare option](../../.gitbook/assets/Compare_option.png)
+![Compare option](../../../.gitbook/assets/transfer-items-compare-between-environments.png)
 
 4. **Choose the workspace** from the drop-down field.
 5. View the **Summary information**.
-6. In the **Field Comparison** table, view the differences between the versions in the two workspaces at the node level of each field.
-7. Proceed to transfer the content using the **Queue for transfer** or **Transfer now** options.
-8. Restore the content from the higher environment using the **Partial restore** option.
-9. Click **Close** to continue editing the content node.
+6. Use the **Field Comparison** table to view the differences between the versions of the content item.
+7. Proceed with either of the 3 available options:
+    * Transfer the content using the **Queue for transfer**.
+    * Do a **Partial Restore** the content from the next environment in the workflow using the **Partial restore** option.
+    * **Close** the window to continue editing the content node.
 
-![Comparing Content](../../.gitbook/assets/Comparing_Content.png)
-
-## Transferring content
-
-{% hint style="info" %}
-**Transfer now** is available in all Umbraco Cloud projects running the latest version of Umbraco Deploy for Umbraco versions 8 and 9.
-{% endhint %}
-
-You can transfer a specific content node directly to the higher environment without adding it to the **Queue for transfer**.
-
-To transfer content between environments, follow these steps:
-
-1. Navigate to the page you want to transfer.
-2. Select the arrow next to the **Save and Publish** button.
-3. Select **Transfer now**.
-
-![Transfer Option](../../.gitbook/assets/Transfernow_option_v14.png)
-
-4. In the **Transfer now** window, a message is displayed that you are about to transfer the content node directly to the higher environment, without adding it to the queue.
-
-![Transfer Content](../../.gitbook/assets/Transfer_Content_v14.png)
-
-5. Click **Transfer now**.
+![Comparing Content](../../../.gitbook/assets/transfer-items-compare-between-versions-summary.png)
 
 ## Transfer Queue
 
@@ -77,6 +52,8 @@ Choose between two methods when adding items to the Transfer Queue:
 
 * **Option 1:** Add a specific item, specify variants, and include/exclude subitems.
 * **Option 2:** Add everything from a specific section (Content, Media, Library, or Forms).
+
+Alternatively, you can also choose to transfer a single content item directly using the [**Transfer now**](#transfer-directly) option.
 
 ### Add items to the queue
 
@@ -112,6 +89,26 @@ Once you have items in your Transfer Queue, a notification icon is added to the 
 The transfer can take a few minutes, depending on the number of items being transferred to the next environment. You can follow the process from the Deploy Overview.
 
 When the transfer is done, close the Deploy Overview and verify that the items are now available on the next environment.
+
+### Transfer Directly
+
+You can transfer a specific content node directly to the higher environment without adding it to the **Queue for transfer**.
+
+To transfer content to the next environment in your workflow, follow these steps:
+
+1. Navigate to the page you want to transfer.
+2. Select the arrow next to the **Save and Publish** button.
+3. Select **Transfer now**.
+
+![Transfer Option](../../.gitbook/assets/Transfernow_option_v14.png)
+
+In the **Transfer now** window, a confirmation message is displayed. The message tells you which environment the item will be transferred to.
+
+![Transfer Content](../../.gitbook/assets/Transfer_Content_v14.png)
+
+4. Click **Transfer now**.
+
+The content item is now available on the next environment.
 
 ## [Transfer Members and Member Groups](https://docs.umbraco.com/umbraco-deploy/deploy-settings#allowmembersdeploymentoperations-and-transfermembergroupsascontent)
 
