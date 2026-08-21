@@ -100,13 +100,14 @@ To transfer content to the next environment in your workflow, follow these steps
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Transfer now**.
 
-![Transfer Option](../../.gitbook/assets/Transfernow_option_v14.png)
+![Transfer Option](../../../.gitbook/assets/transfer-items-transfer-now-button.png)
 
-In the **Transfer now** window, a confirmation message is displayed. The message tells you which environment the item will be transferred to.
+In the **Configure transfer** window, a confirmation message is displayed. The message tells you which environment the item will be transferred to.
 
-![Transfer Content](../../.gitbook/assets/Transfer_Content_v14.png)
+![Transfer Content](../../../.gitbook/assets/transfer-items-configure-transfer-window.png)
 
-4. Click **Transfer now**.
+4. Choose whether the content should be published directly or set a publication date.
+5. Click **Submit** to initiate the transfer.
 
 The content item is now available on the next environment.
 
