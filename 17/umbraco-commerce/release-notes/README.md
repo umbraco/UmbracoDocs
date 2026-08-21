@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 17 including all ch
 
 #### 17.2.3 (21st Aug 2026)
 * Fix a startup crash on large stores during the customer data migration [#883](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/883)
-* Fix cart cleanup failing with a foreign key constraint error on large stores [#874](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/874)
+* Fix cart cleanup failing with a foreign key constraint error on large stores [#882](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/882)
 * Fix payment provider callback URLs trusting a spoofable `X-Original-Host` header
 
 #### 17.2.2 (17th Aug 2026)
