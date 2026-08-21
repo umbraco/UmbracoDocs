@@ -1,12 +1,12 @@
 ---
 description: >-
-  On this page, you will find the default Document Types in Umbraco. If you want
-  to use these document types, you can create them in the Settings section.
+  Learn about the Document Type options available when you create a new
+  Document Type in Umbraco, and when to use each one.
 ---
 
-# Default Document Types
+# Document Type Options
 
-On this page, you will find the default Document Types in Umbraco. If you want to use these Document Types, you can create them in the Settings section.
+When you create a Document Type in the Settings section, you choose between four options. This article describes each option and when to use it.
 
 ![Create Document Type](../../../../.gitbook/assets/create-document-type-options.png)
 

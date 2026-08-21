@@ -68,7 +68,7 @@
 * [Content Types and Structure](model-your-content/content-types-and-structure/README.md)
   * [Data](model-your-content/content-types-and-structure/data/README.md)
     * [Defining Content](model-your-content/content-types-and-structure/data/defining-content/README.md)
-      * [Default Document Types](model-your-content/content-types-and-structure/data/defining-content/default-document-types.md)
+      * [Document Type Options](model-your-content/content-types-and-structure/data/defining-content/document-type-options.md)
       * [Document Type Localization](model-your-content/content-types-and-structure/data/defining-content/document-type-localization.md)
       * [Using Tabs](model-your-content/content-types-and-structure/data/defining-content/adding-tabs.md)
     * [Creating Media](model-your-content/content-types-and-structure/data/creating-media/README.md)
