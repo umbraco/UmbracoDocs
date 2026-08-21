@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.2.3 (21st Aug 2026)
+* Fix a startup crash on large stores during the customer data migration [#883](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/883)
+* Fix cart cleanup failing with a foreign key constraint error on large stores [#874](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/874)
+* Fix payment provider callback URLs trusting a spoofable `X-Original-Host` header
+
 #### 17.2.2 (17th Aug 2026)
 * Fix a backoffice crash when viewing an order linked to a customer by member key or another non-ID reference [#878](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/878)
 * Fix data corruption from a discount migration that could invalidate member-group discount rules [#877](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/877)
