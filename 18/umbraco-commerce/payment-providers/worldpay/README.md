@@ -19,4 +19,4 @@ Here are a few useful links to help you learn more about the Worldpay payment pr
 * [Payment provider source code](https://github.com/umbraco/Umbraco.Commerce.PaymentProviders.Worldpay)
 * [Payment provider issue tracker](https://github.com/umbraco/Umbraco.Commerce.Issues/issues)
 * [Worldpay documentation](https://developer.worldpay.com/docs/access-worldpay)
-* [Worldpay API reference](https://developer.worldpay.com/docs/access-worldpay/api/references)
+* [Worldpay API reference](https://docs.worldpay.com/access/apis)

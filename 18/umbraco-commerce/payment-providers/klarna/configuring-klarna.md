@@ -20,7 +20,7 @@ When working with Klarna, you'll need to sign up for a live and a developer acco
 
 ### Sign up for a developer account
 
-1. Click the **Log in** button in the navigation bar of [Klarna Docs](https://docs.klarna.com/resources/developer-tools/testing-payments/before-you-test/).
+1. Click the **Log in** button in the navigation bar of [Klarna Documentation](https://docs.klarna.com/).
 2. Select the region of your credentials (for example, _Europe_).
 3. Select the environment.
 4. Click **Sign up**.
