@@ -64,6 +64,11 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 If you have other packages like Umbraco Forms installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 {% endhint %}
 
+
+{% hint style="info" %}
+If you are using **Umbraco Forms**, you will need to convert your one-time off license (.lic file) to the subscription-based model (key-based license XXXXX-XXXXX-XXXXX-XXXXX). The same goes for **Umbraco Deploy**.
+{% endhint %}
+
 8. Make sure that your connection string has `TrustServerCertificate=True` to complete the upgrade successfully:
 
 {% code title="appsettings.json" %}
