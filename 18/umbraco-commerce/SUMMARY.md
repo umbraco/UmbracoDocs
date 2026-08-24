@@ -4,7 +4,7 @@
 * [Legacy Documentation](legacy-documentation.md)
 * [Release Notes](release-notes/README.md)
 
-## Commerce Add-ons
+## Add-ons
 
 * [Commerce Packages](packages/README.md)
   * [Cart](packages/cart/README.md)
