@@ -108,7 +108,7 @@ Nudge the cache in Chrome following these steps:
 
 All caches and cookies have now been cleared from your Google Chrome browser. Generally, it is a good thing to do occasionally.
 
-If you are using **Umbraco Forms**, from Umbraco 17+ you will need to convert your one-time off license to the subscription-based model. Same goes for **Umbraco Deploy**,
+If you are using **Umbraco Forms**, from Umbraco 17+ you will need to convert your one-time off license to the subscription-based model. Same goes for **Umbraco Deploy**
 
 ## Upgrade to a new Minor
 
