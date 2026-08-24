@@ -46,4 +46,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 998ebd1d-1fef-431e-83b9-18db06eb7231 | 17.5.0                | Migrates XPath node pre-value source settings to dynamic root.                     |
 | 9a013edc-579b-46b5-a85d-d9288e2e074e | 17.5.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
 | 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
-| 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
+| 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
