@@ -13,7 +13,7 @@ It is assumed that you already have one of the following setups:
 * A Umbraco Cloud site with Umbraco Commerce installed and configured.
 * A Umbraco CMS site configured with Umbraco Deploy and Umbraco Commerce installed and configured.
 
-If you are not at this stage yet, read the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+If you are not at this stage yet, read the [core Umbraco Commerce documentation](../../README.md) to learn how to get started.
 
 ## Useful links
 

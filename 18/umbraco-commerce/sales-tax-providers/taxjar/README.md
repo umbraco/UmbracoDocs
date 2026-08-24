@@ -12,7 +12,7 @@ The TaxJar sales tax provider adds functionality to calculate sales tax via [Tax
 
 This section guides you through the key steps necessary to get started with the TaxJar sales tax provider for Umbraco Commerce.
 
-Before starting, ensure that you have an Umbraco website configured and Umbraco Commerce installed. If not, refer to the [core Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+Before starting, ensure that you have an Umbraco website configured and Umbraco Commerce installed. If not, refer to the [core Umbraco Commerce documentation](../../README.md) to get started.
 
 
 ## Useful links

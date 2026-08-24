@@ -10,7 +10,7 @@ In this section, you will go through the key steps necessary to get started with
 The Klarna payment provider is now obsolete. You should use the Kustom payment provider instead.
 {% endhint %}
 
-Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](../../README.md) to get started.
 
 {% hint style="info" %}
 The Klarna payment provider uses Klarna's hosted payment page API. It requires you to sign an agreement with their Klarna Payments platform. If you are signed up for their Klarna Checkout platform, your credentials will not work for this provider.

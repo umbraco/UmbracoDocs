@@ -13,7 +13,7 @@ The Product Feeds package can be installed directly into your project's code bas
 Below you can find some steps on installing the package using NuGet and getting started with implementing the Product Feeds into your Umbraco Commerce store.
 
 1. Install the package from [NuGet](https://www.nuget.org/packages/Umbraco.Commerce.ProductFeeds/)
-2.  Locate where you [register the dependencies](https://docs.umbraco.com/umbraco-commerce/key-concepts/umbraco-commerce-builder#registering-dependencies) `IUmbracoBuilder.AddUmbracoCommerce()` and add a call to `IUmbracoCommerceBuilder.AddCommerceProductFeeds()` to add this plugin to your website.
+2.  Locate where you [register the dependencies](../../key-concepts/umbraco-commerce-builder.md#registering-dependencies) `IUmbracoBuilder.AddUmbracoCommerce()` and add a call to `IUmbracoCommerceBuilder.AddCommerceProductFeeds()` to add this plugin to your website.
 
     ```csharp
      umbracoBuilder.AddUmbracoCommerce(ucBuilder => {

@@ -10,7 +10,7 @@ The Opayo payment provider allows you to capture payments via the [Opayo](https:
 This page is a work in progress.
 {% endhint %}
 
-Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](../../README.md) to get started.
 
 ## Install Opayo
 

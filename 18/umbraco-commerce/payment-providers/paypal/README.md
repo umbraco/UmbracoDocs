@@ -6,7 +6,7 @@ description: Getting Started with the PayPal payment provider for Umbraco Commer
 
 The PayPal payment provider allows you to capture payments via the [PayPal](https://paypal.com) payment gateway. It is a fully featured payment provider allowing full control of the payment flow directly from the Umbraco Commerce backoffice.
 
-Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](../../README.md) to get started.
 
 ## Install PayPal
 

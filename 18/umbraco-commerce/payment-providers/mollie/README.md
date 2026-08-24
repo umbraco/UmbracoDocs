@@ -6,7 +6,7 @@ description: Getting Started with the Mollie (One Time) payment provider for Umb
 
 The Mollie payment provider enables payment capture via the [Mollie](https://mollie.com) payment gateway. It offers a fully featured solution, providing complete control over the payment flow directly from the Umbraco Commerce backoffice.
 
-Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](https://docs.umbraco.com/umbraco-commerce/) to get started.
+Before you begin, ensure that you have an Umbraco website set up and Umbraco Commerce installed. If not, see the [Umbraco Commerce Documentation](../../README.md) to get started.
 
 ## Install Mollie
 

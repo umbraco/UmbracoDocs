@@ -12,7 +12,7 @@ Umbraco Commerce Portal is a free and open-source add-on package for Umbraco Com
 
 This section guides you through the key steps necessary to get started with the Portal package for Umbraco Commerce.
 
-Before beginning, ensure you already have an Umbraco website configured, Umbraco Commerce installed, and a store set up. If you are not at this stage yet, see the [Umbraco Commerce documentation](https://docs.umbraco.com/umbraco-commerce/) to learn how to get started.
+Before beginning, ensure you already have an Umbraco website configured, Umbraco Commerce installed, and a store set up. If you are not at this stage yet, see the [Umbraco Commerce documentation](../../README.md) to learn how to get started.
 
 ## Useful links
 
