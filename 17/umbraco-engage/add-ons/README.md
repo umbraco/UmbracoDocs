@@ -12,7 +12,7 @@ Add-ons are NuGet packages that extend Umbraco Engage. Most add-ons connect Umbr
 
 | Add-on                  | What it adds                                                                                                      |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [Forms](forms.md)       | Tracking and analytics for Umbraco Forms: form reports, a submission goal type, and visitor profile insights.     |
+| [Forms](forms.md)       | Links Umbraco Forms submissions to visitors: a submission goal type and visitor profile insights.                 |
 | [Commerce](commerce.md) | Order tracking per visitor and shopping-based segment rules for Umbraco Commerce.                                 |
 | [Deploy](deploy.md)     | Transfers Umbraco Engage configuration items, like goals and A/B tests, between environments with Umbraco Deploy. |
 | [AI](ai.md)             | A marketing-focused Copilot that answers questions about your Umbraco Engage data in plain language.              |
