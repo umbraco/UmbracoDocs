@@ -19,7 +19,7 @@ The Forms add-on connects Umbraco Engage to [Umbraco Forms](https://docs.umbraco
 
 * Umbraco Engage is [installed](../installation/installation.md) and [licensed](../installation/licensing.md).
 * Umbraco Forms is installed with a valid license.
-* The [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) is added to your pages. Without it, a submission cannot be linked to a visitor.
+* The [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) is added to your pages. Submissions are linked to visitors without it, but the **Umbraco Forms Submission** goal only fires when the script is present.
 
 ## Install the package
 
