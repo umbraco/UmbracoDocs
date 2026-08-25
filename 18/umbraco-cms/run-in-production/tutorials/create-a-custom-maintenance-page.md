@@ -21,9 +21,10 @@ Learn more about our to configure unattended upgrades in the [Upgrade Unattended
 The following guide will take you through the steps to customize and brand the default maintenance page.
 
 1. Go to the root of your Umbraco project files.
-2. Create a new folder called `UmbracoWebsite`, and open it.
-3. Add a new file called `maintenance.cshtml`.
-4. Add your custom markup to the file.
+2. Navigate to the `umbraco` folder.
+3. Create a new folder called `UmbracoWebsite`, and open it.
+4. Add a new file called `maintenance.cshtml`.
+5. Add your custom markup to the file.
 
 {% hint style="warning" %}
 Keeping the Umbraco project in Upgrade mode for a longer time is not recommended. Most migrations can be executed while the website continues to work.
