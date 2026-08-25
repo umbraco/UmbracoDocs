@@ -88,6 +88,10 @@ Many projects can complete the major upgrade successfully on their existing plan
 
 ### Approach 2: Run a controlled local migration (Local Upgrade Option)
 
+{% hint style="info" %}
+These steps use Live environment as an example, but the same approach works for any environment. Substitute your target environment's name and connection details throughout.
+{% endhint %}
+
 This path grants direct control over the database migration. Your upgraded local project runs on your own machine while connected directly to the Live database.
 
 ![Finishing the migration from your local machine.](../../../.gitbook/assets/1-finishing-migration-from-local-machine.png)
@@ -96,12 +100,12 @@ This path grants direct control over the database migration. Your upgraded local
 
 #### Step-by-Step Local Upgrade Execution
 
-1. **Take the Live environment offline:** This prevents outside processes from writing to the database or booting mid-migration. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. It is important to start it again once you are ready to push code to the Live environment, else the git remote will be offline. To control what visitors see while the environment is stopped, upload a custom maintenance page beforehand using the [Error Pages](../../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature. The environment displays the assigned page for as long as it is stopped.
+1. **Take the Live environment offline:** This prevents outside processes from writing to the database or booting mid-migration. For more information, see the [Start and stop environments](../../../release-notes/overview-2026/2026-03-releasenotes.md#start-and-stop-environments) section. Remember to start it again once the local migration is complete. The environment must be running before you can push code to it. To control what visitors see while the environment is stopped, upload a custom maintenance page beforehand using the [Error Pages](../../../build-and-customize-your-solution/handle-deployments-and-environments/error-pages.md) feature. The environment displays the assigned page for as long as it is stopped.
 2. **Back up and verify the Live database:** If Cloud's migration attempt failed partway, restore from a clean backup first to ensure a known-good starting state. For more information, see the [Restore Database](../../../build-and-customize-your-solution/set-up-your-project/databases/backups.md#restore-database) article.
 3. **Allowlist your IP address:** Open the **SQL connection details** for the **Live** environment in the Cloud Portal and **allowlist your IP address**. For more information, see the [Project Settings](../../../build-and-customize-your-solution/set-up-your-project/project-settings/README.md) and [Working with a Cloud database locally](../../../build-and-customize-your-solution/set-up-your-project/databases/cloud-database/local-database.md) articles.
 4. **Configure your connection string:** Check on your machine the exact codebase and version that is currently deployed to Live, and point its connection string at the Live database. Ensure you set an appropriate [`Connection Timeout`](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection.connectiontimeout?) value in the [`ConnectionString`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring?) inside your `appsettings.json` file.
 5. **Run the migration:** Start your local project. The core upgrade installer will boot and run all schema migrations directly against the Live database until complete.
-6. **Bring Live back online:** Restart your Live environment. It will boot up cleanly on the new version, automatically rebuild its local indexes and caches, and verify overall site health.
+6. **Stop your local instance, then bring Live back online:** Once the backoffice loads successfully in your local project, stop your local instance. Then restart your Live environment. It will boot up cleanly on the new version, automatically rebuild its local indexes and caches, and verify overall site health.
 
 {% hint style="info" %}
 Examine indexes and the local content cache are not stored in the database. The Cloud server will rebuild them automatically when it restarts, regardless of where the database migration was run.
@@ -145,7 +149,7 @@ Reducing the volume of data helps the upgrade complete faster and more predictab
 
 With your optimal migration path chosen and your Staging safety net ready, execute the deployment:
 
-1. Push the major upgrade to Live following the [Major Upgrades](major-upgrades.md) guide.
+1. Push the major upgrade to Live following [Step 5: Deploy the upgrade](major-upgrades.md#step-5-deploy-the-upgrade) in the Major Upgrades guide.
 2. **If it completes successfully:** Verify the site on the new major version to finish the upgrade.
 3. **If it stalls or fails:** Immediately transition to the [Local Upgrade Option](#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the schema migration from your machine.
 4. **If downtime exceeds limits:** Route traffic to your prepared fallback option (a maintenance page or your pre-upgraded Staging copy).
