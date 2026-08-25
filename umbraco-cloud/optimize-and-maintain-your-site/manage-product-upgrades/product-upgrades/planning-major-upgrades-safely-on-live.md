@@ -149,7 +149,7 @@ Reducing the volume of data helps the upgrade complete faster and more predictab
 
 With your optimal migration path chosen and your Staging safety net ready, execute the deployment:
 
-1. Push the major upgrade to Live following [Step 5: Deploy the upgrade](major-upgrades.md#step-5-deploy-the-upgrade) in the [Major Upgrades](major-upgrades.md) guide.
+1. Push the major upgrade to Live following [Step 5: Deploy the upgrade](major-upgrades.md#step-5-deploy-the-upgrade) in the Major Upgrades guide.
 2. **If it completes successfully:** Verify the site on the new major version to finish the upgrade.
 3. **If it stalls or fails:** Immediately transition to the [Local Upgrade Option](#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the schema migration from your machine.
 4. **If downtime exceeds limits:** Route traffic to your prepared fallback option (a maintenance page or your pre-upgraded Staging copy).
