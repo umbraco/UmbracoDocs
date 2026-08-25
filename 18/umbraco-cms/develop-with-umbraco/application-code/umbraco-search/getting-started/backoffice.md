@@ -25,7 +25,7 @@ Click an index row to open its detail view. The detail view uses a two-column la
 * **Left column**: The search box for testing queries against the index.
 * **Right column**: The stats box showing the index alias, document count, and health status.
 
-Search providers can add additional boxes to either column. See [Extending the search backoffice](../extending/backoffice-extensions.md) for more information.
+Search providers can add additional boxes to either column. See [Extending the search backoffice](../extended-search/backoffice-extensions.md) for more information.
 
 ## Searching documents
 
