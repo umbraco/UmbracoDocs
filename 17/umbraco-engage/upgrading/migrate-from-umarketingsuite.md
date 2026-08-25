@@ -382,7 +382,7 @@ If you are using the uMarketingSuite.Headless package, applications that use the
 
 The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, refer to the Swagger documentation provided by Umbraco Engage.
 
-You can install the Umbraco Engage Headless add-on package using the following command:
+You can install the Umbraco Engage Headless package using the following command:
 
 ```bash
 dotnet add package Umbraco.Engage.Headless

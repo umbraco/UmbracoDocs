@@ -26,3 +26,7 @@ dotnet add package Umbraco.Engage.Forms
 ```
 
 See each add-on's page for prerequisites, installation steps, and verification.
+
+{% hint style="info" %}
+Looking for headless support? The [Headless](../developers/headless/README.md) package is documented in the Developers section.
+{% endhint %}
