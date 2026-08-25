@@ -14,6 +14,7 @@ The Forms add-on connects Umbraco Engage to [Umbraco Forms](https://docs.umbraco
 * An **Umbraco Forms Submission** goal type, so a form submission can count as a conversion.
 * An **Analytics - VisitorId** form field that links a submission to the visitor profile in Umbraco Engage.
 * A **Form Submissions** overview on the visitor profile, showing the forms submitted by that visitor.
+* Visitor identification: a visitor who submits a form becomes an [Identified Profile](../marketers-and-editors/profiling/README.md).
 
 ## Prerequisites
 

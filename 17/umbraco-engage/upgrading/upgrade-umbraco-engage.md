@@ -48,3 +48,6 @@ If you are using one or more of the below sub-packages, they also need to be upg
 | Umbraco.Engage.Forms          | A package that extends Umbraco Engage with Umbraco Forms.                                |
 | Umbraco.Engage.Headless       | A package that adds headless functionality to Umbraco Engage.                            |
 | Umbraco.Engage.Commerce       | A package that extends Umbraco Engage with Umbraco Commerce.                             |
+| Umbraco.Engage.Deploy         | A package that extends Umbraco Engage with Umbraco Deploy.                               |
+
+Learn more about the Forms, Commerce, and Deploy packages in the [Add-ons](../add-ons/README.md) section.

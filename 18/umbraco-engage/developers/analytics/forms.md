@@ -4,11 +4,11 @@ description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 
 # Extending forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license from Umbraco HQ. You also need to install the Umbraco Engage [Forms](../../add-ons/forms.md) add-on.
+To track Umbraco Forms interactions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license from Umbraco HQ. The analytics report on this page works without any add-on. The [Forms](../../add-ons/forms.md) add-on adds per-visitor submission tracking, a form submission goal type, and profile insights on top.
 
 ## Summary
 
-Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). No additional configuration is needed. The data is visualized in the backoffice in Engage > Analytics > Forms.
+Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). No additional configuration is needed. The data is visualized in the backoffice in **Engage** > **Analytics** > **Umbraco Forms**.
 
 {% hint style="info" %}
 Includes support for "async" and "defer" keywords.
@@ -26,10 +26,14 @@ The following is measured:
 
 ### Tracking a visitor Form submissions
 
+{% hint style="info" %}
+This feature requires the [Forms](../../add-ons/forms.md) add-on.
+{% endhint %}
+
 It is possible to track a specific visitor to your website and see if they have made any form submissions. To do so, follow these steps:
 
 1. Edit the Umbraco Form you wish to track visitors for and go to the **Design** view.
-2. Add a new field to your form called '`Analytics - VisitorId`\`.
+2. Add a new field to your form called **Analytics - VisitorId**.
 3. Give the new form field a name such as **Visitor ID**.
 4. Specify a URL in the settings of the field type called **Template**:
 
