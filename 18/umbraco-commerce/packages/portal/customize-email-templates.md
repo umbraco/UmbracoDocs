@@ -8,11 +8,11 @@ The Portal includes customizable email templates for account confirmation and pa
 
 ## Setup
 
-To allow customization you must first 'override' the existing template files for the step required to be modified. 
+To allow customization you must first 'override' the existing template files for the step required to be modified.
 
 To do this follow these steps:
 
-1. Copy the equivalent [templates](https://github.com/umbraco/Umbraco.Commerce.Portal/tree/main/src/Umbraco.Commerce.Portal/Views/Templates/Email). 
+1. Copy the equivalent [templates](https://github.com/umbraco/Umbraco.Commerce.Portal/tree/main/src/Umbraco.Commerce.Portal/Views/Templates/Email).
 2. Add them to `Views/UmbracoCommercePortal` in your project directory. It might be necessary to create the folder first.
 3. Make a small text change to one of the Views to verify that the files are in use.
 4. Verify that the changes are carried out and displayed correctly.
@@ -21,9 +21,9 @@ You are now ready to start customizing the Portal email templates to fit the des
 
 If you want to use your own email template views, ensure that they are using the `EmailModel`. Next, go to the `Templates | EmailTemplates` settings in your store. For each `Umbraco Commerce Portal` template, update the path to point to your custom view.
 
-![Overview of the store's email templates settings](../media/portal/ucp_email_templates.png)
+![Overview of the store's email templates settings](../../.gitbook/assets/ucp_email_templates.png)
 
-![Overview of the properties of an email template](../media/portal/ucp_email_template_details.png)
+![Overview of the properties of an email template](../../.gitbook/assets/ucp_email_template_details.png)
 
 ## Useful links
 

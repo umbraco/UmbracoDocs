@@ -10,8 +10,8 @@ Umbraco Commerce provides flexible options for customizing order numbers to meet
 
 Before implementing a custom solution, understand that Umbraco Commerce includes two built-in order number generators:
 
-- **CompactSortableOrderNumberGenerator** (Recommended) - Produces compact, time-sortable identifiers with high scalability and multi-node support
-- **DateHashOrderNumberGenerator** (Legacy) - Date-based format maintained for backward compatibility
+* **CompactSortableOrderNumberGenerator** (Recommended) - Produces compact, time-sortable identifiers with high scalability and multi-node support
+* **DateHashOrderNumberGenerator** (Legacy) - Date-based format maintained for backward compatibility
 
 For detailed information about these generators and how they work, see the [Order Number Generators](../key-concepts/order-number-generators.md) key concepts documentation.
 
@@ -30,18 +30,20 @@ await store.SetOrderNumberTemplateAsync("ORDER-{0}");
 ```
 
 **Examples:**
-- Template: `"ORDER-{0}"` + Generated: `"22345-67ABC"` = Final: `"ORDER-22345-67ABC"`
-- Template: `"SO-{0}-2025"` + Generated: `"12345"` = Final: `"SO-12345-2025"`
+
+* Template: `"ORDER-{0}"` + Generated: `"22345-67ABC"` = Final: `"ORDER-22345-67ABC"`
+* Template: `"SO-{0}-2025"` + Generated: `"12345"` = Final: `"SO-12345-2025"`
 
 This approach works with any generator and requires no custom code.
 
 ### 2. Using CompactSortableOrderNumberGenerator
 
 The `CompactSortableOrderNumberGenerator` handles most common requirements:
-- Compact format (10-11 characters)
-- Time-sortable
-- Multi-node safe
-- High-volume capable (1,024 orders/sec per node)
+
+* Compact format (10-11 characters)
+* Time-sortable
+* Multi-node safe
+* High-volume capable (1,024 orders/sec per node)
 
 If your store was upgraded from an earlier version and is using the legacy generator, you can explicitly switch to the recommended generator:
 
@@ -64,7 +66,6 @@ If the built-in generators don't meet your needs, you can create a custom implem
 Define a class that implements the `IOrderNumberGenerator` interface:
 
 {% code title="CustomOrderNumberGenerator.cs" %}
-
 ```csharp
 using System;
 using System.Threading;
@@ -104,7 +105,6 @@ public class CustomOrderNumberGenerator : IOrderNumberGenerator
     }
 }
 ```
-
 {% endcode %}
 
 ### Registering the Custom Implementation
@@ -112,11 +112,9 @@ public class CustomOrderNumberGenerator : IOrderNumberGenerator
 After creating your custom generator, register it in `Program.cs` to replace the default implementation:
 
 {% code title="Program.cs" %}
-
 ```csharp
 builder.Services.AddUnique<IOrderNumberGenerator, CustomOrderNumberGenerator>();
 ```
-
 {% endcode %}
 
 The `AddUnique` method ensures that your custom generator replaces the default `IOrderNumberGenerator`, overriding both the automatic selection system and the built-in generators. For more details on dependency injection, see the [Dependency Injection](../key-concepts/dependency-injection.md) article.
@@ -125,13 +123,13 @@ The `AddUnique` method ensures that your custom generator replaces the default `
 
 Before implementing a custom order number generator, be aware of the following:
 
-- **Performance Implications:** Sequential order numbers may require database access to ensure uniqueness, which can become a performance bottleneck under heavy load. The default Umbraco Commerce generator uses a timestamp and random seed based algorithm to create numbers in memory, avoiding database hits.
-- **Order Number Gaps:** In Umbraco Commerce, order numbers are generated before redirecting to the payment gateway. If a customer cancels or modifies their order after an order number has been assigned, a new number is generated for the subsequent attempt, leading to gaps in the sequence. This behavior can be problematic if sequential numbering is used for official records like VAT receipts, as such records typically require continuous sequences without gaps.
-- **Accounting Considerations:** Umbraco Commerce is not designed as an accounting platform. If strict sequential numbering is required for accounting purposes, it is recommended to integrate with a dedicated accounting system to handle such requirements.
+* **Performance Implications:** Sequential order numbers may require database access to ensure uniqueness, which can become a performance bottleneck under heavy load. The default Umbraco Commerce generator uses a timestamp and random seed based algorithm to create numbers in memory, avoiding database hits.
+* **Order Number Gaps:** In Umbraco Commerce, order numbers are generated before redirecting to the payment gateway. If a customer cancels or modifies their order after an order number has been assigned, a new number is generated for the subsequent attempt, leading to gaps in the sequence. This behavior can be problematic if sequential numbering is used for official records like VAT receipts, as such records typically require continuous sequences without gaps.
+* **Accounting Considerations:** Umbraco Commerce is not designed as an accounting platform. If strict sequential numbering is required for accounting purposes, it is recommended to integrate with a dedicated accounting system to handle such requirements.
 
 By understanding these factors, you can implement a custom order number generator that aligns with your specific requirements while maintaining optimal performance and compliance.
 
 ## Related Documentation
 
-- [Order Number Generators](../key-concepts/order-number-generators.md) - Detailed documentation about the built-in generators
-- [Dependency Injection](dependency-injection.md) - Learn more about registering services in Umbraco Commerce
+* [Order Number Generators](../key-concepts/order-number-generators.md) - Detailed documentation about the built-in generators
+* [Dependency Injection](https://github.com/umbraco/UmbracoDocs/blob/main/18/umbraco-commerce/how-to-guides/dependency-injection.md) - Learn more about registering services in Umbraco Commerce

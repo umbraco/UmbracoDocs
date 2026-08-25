@@ -10,11 +10,11 @@ description: >-
 
 If you haven't done so yet, head over to the [QuickPay portal](https://manage.quickpay.net/create-user) to register for a QuickPay account.
 
-![QuickPay Signup](../.gitbook/assets/quickpay_signup.png)
+![QuickPay Signup](../../.gitbook/assets/quickpay_signup.png)
 
 Or [login to the QuickPay portal](https://manage.quickpay.net/) if you already have an account.
 
-![The login form to the QuickPay portal.](../.gitbook/assets/quickpay_signin.png)
+![The login form to the QuickPay portal.](../../.gitbook/assets/quickpay_signin.png)
 
 ## Step 2: API Keys
 
@@ -33,7 +33,7 @@ You will need the following keys:
 * Agreement id
   * This is written below API user, Payment Window and your user account name
 
-![QuickPay Integration Keys](../.gitbook/assets/quickpay_portal.png)
+![QuickPay Integration Keys](../../.gitbook/assets/quickpay_portal.png)
 
 ## Step 3: Webhook
 
