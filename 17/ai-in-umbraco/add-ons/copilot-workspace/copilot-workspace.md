@@ -11,9 +11,9 @@ Copilot Workspace is a full backoffice section for AI conversations, opened via 
 
 Copilot Workspace uses a three-region layout:
 
-- **Sidebar** - Projects and recent conversations, with search
-- **Center** - The active chat
-- **Context panel** - Instructions, contexts, and resources grounding the current conversation (collapsible)
+- **Sidebar** - Projects and recent conversations, with search.
+- **Center** - The active chat.
+- **Context panel** - Instructions, contexts, and resources grounding the current conversation (collapsible).
 
 Before you open a conversation, the sidebar shows a launcher. Use it to start a new chat or pick up a recent one:
 
@@ -27,11 +27,11 @@ Use **New chat** to start an unsaved conversation, or **New chat in a project** 
 
 Each conversation in the sidebar supports the following actions via its **...** menu:
 
-- **Pin** / **Unpin** - Keep important conversations at the top
-- **Rename** - Give a conversation a custom title (conversations are auto-titled otherwise)
-- **Move to project...** - Attach or move a conversation to a project
-- **Archive** - Remove a conversation from the active list without deleting it
-- **Delete** - Permanently remove a conversation
+- **Pin** / **Unpin** - Keep important conversations at the top.
+- **Rename** - Give a conversation a custom title (conversations are auto-titled otherwise).
+- **Move to project...** - Attach or move a conversation to a project.
+- **Archive** - Remove a conversation from the active list without deleting it.
+- **Delete** - Permanently remove a conversation.
 
 ![The conversation actions menu, showing Pin, Rename, Move to project, Archive, and Delete](../../.gitbook/assets/copilot-workspace-conversation-actions.png)
 
@@ -45,9 +45,9 @@ Archiving hides a conversation from your active lists without deleting it. Archi
 
 A project groups related conversations under shared instructions and reusable context. Anything you attach to a project is inherited by every conversation inside it:
 
-- **Instructions** - Guidance applied to every conversation in the project (for example, "Talk like a pirate" or brand-specific tone rules)
-- **Contexts** - Existing [AI Contexts](../../concepts/contexts.md), such as brand voice guidelines
-- **Resources** - Attached content, files, or other resources, each with an injection mode (for example, **Always** included, or resolved on demand)
+- **Instructions** - Guidance applied to every conversation in the project (for example, "Talk like a pirate" or brand-specific tone rules).
+- **Contexts** - Existing [AI Contexts](../../concepts/contexts.md), such as brand voice guidelines.
+- **Resources** - Attached content, files, or other resources, each with an injection mode (for example, **Always** included, or resolved on demand).
 
 ![The project editor, showing Description, Instructions, Contexts, and Resources fields](../../.gitbook/assets/copilot-workspace-project.png)
 
