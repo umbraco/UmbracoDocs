@@ -322,6 +322,8 @@ Remove the same files from the left-most environment. This should be done from t
 
 Both errors usually mean the database migration did not complete in time. This can happen on any environment, not only Live, and is more likely on environments with a large or complex database.
 
+Check the Umbraco log for the specific underlying error before proceeding. This confirms whether it's a migration timeout or something else.
+
 If this happens, follow the [Local Upgrade Option](planning-major-upgrades-safely-on-live.md#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the migration locally. Connect directly to the target environment's database instead of the Live environment's database.
 {% endhint %}
 
