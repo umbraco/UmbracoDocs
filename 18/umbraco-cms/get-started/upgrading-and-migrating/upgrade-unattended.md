@@ -6,7 +6,7 @@ description: >-
 
 # Upgrade Unattended
 
-When upgrading your Umbraco project, you can enable the upgrade to run unattended. This means that you will not need to run through the installation wizard when upgrading.
+When upgrading your Umbraco project, it will run unattended as a default. This means that you do not need to run through the installation wizard when upgrading.
 
 {% hint style="info" %}
 Are you running a load-balanced setup with multiple servers and environments?
@@ -14,10 +14,12 @@ Are you running a load-balanced setup with multiple servers and environments?
 Check out the section about [Unattended upgrades in a load-balanced setup](upgrade-unattended.md#unattended-upgrades-in-a-load-balanced-setup).
 {% endhint %}
 
-## Enable the unattended upgrade feature
+## Disable the unattended upgrade feature
 
-1. Add the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key.
-2. Set the value of the key to `true`.
+To have more control over the upgrade process by running through the installation wizard, follow the steps below to disable unattended upgrades:
+
+1. Locate the `Umbraco:Cms:Unattended:UpgradeUnattended` configuration key in `appSettings.json` (or `appSettings.Development.json` when running locally/in development).
+2. Set the value of the key to `false`.
 
 {% code title="appsettings.json" %}
 ```json
@@ -25,7 +27,7 @@ Check out the section about [Unattended upgrades in a load-balanced setup](upgra
     "Umbraco": {
         "CMS": {
             "Unattended": {
-                "UpgradeUnattended": true
+                "UpgradeUnattended": false
             }
         }
     }
@@ -35,7 +37,7 @@ Check out the section about [Unattended upgrades in a load-balanced setup](upgra
 
 ## Run the upgrade
 
-With the correct configuration applied, the project will be upgraded on the next boot.
+With the correct configuration applied, you will be taken through the installation wizard on the next boot.
 
 ### Boot order
 
