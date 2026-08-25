@@ -15,23 +15,15 @@ Copilot Workspace complements [Contextual Copilot](../agent-copilot/copilot.md),
 
 Install the Copilot Workspace package -- `Umbraco.AI.Agent` is pulled in transitively:
 
-{% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Agent.Copilot.Workspace
 ```
 
-{% endcode %}
-
 Or via .NET CLI:
-
-{% code title="Terminal" %}
 
 ```bash
 dotnet add package Umbraco.AI.Agent.Copilot.Workspace
 ```
-
-{% endcode %}
 
 {% hint style="info" %}
 Copilot Workspace stores conversations and projects in its own database tables (migration prefix `UmbracoAIConversations_`). Contextual Copilot has no database of its own. Migrations run automatically on application startup.
@@ -39,12 +31,12 @@ Copilot Workspace stores conversations and projects in its own database tables (
 
 ## Features
 
-- **Persisted Conversations** - Durable, searchable chat history stored server-side
-- **Projects** - Group conversations under shared instructions and reusable context/resources
-- **Context Panel** - See and manage the instructions, contexts, and resources grounding the current conversation
-- **Archived Conversations** - Archive conversations instead of deleting them, with a read-only recycle bin
-- **Pin, Rename, Move** - Organize conversations, including moving them between projects
-- **AG-UI Integration** - Real-time streaming responses, reusing the same chat UI as Contextual Copilot
+- **Persisted Conversations** - Durable, searchable chat history stored server-side.
+- **Projects** - Group conversations under shared instructions and reusable context/resources.
+- **Context Panel** - See and manage the instructions, contexts, and resources grounding the current conversation.
+- **Archived Conversations** - Archive conversations instead of deleting them, with a read-only recycle bin.
+- **Pin, Rename, Move** - Organize conversations, including moving them between projects.
+- **AG-UI Integration** - Real-time streaming responses, reusing the same chat UI as Contextual Copilot.
 
 ## Quick Start
 
@@ -62,7 +54,7 @@ The Copilot Workspace surface is registered with `SurfaceId = "copilot-workspace
 
 ### Step 3: Access Copilot Workspace
 
-Copilot Workspace is its own backoffice section, labeled **Copilot** in the section rail. By default it's assigned to the **Administrators** user group -- grant other user groups access to the section if needed.
+Copilot Workspace is its own backoffice section, labeled **Copilot** in the section rail. By default, it's assigned to the **Administrators** user group — grant other user groups access to the section if needed.
 
 ## Package Architecture
 
@@ -85,20 +77,20 @@ Copilot Workspace is its own backoffice section, labeled **Copilot** in the sect
 └───────────────────────────────────────────────────────────┘
 ```
 
-Installing `Umbraco.AI.Agent.Copilot.Workspace` pulls in its `Umbraco.AI.Agent.Conversations.*` sub-packages transitively -- there is nothing extra to install for persistence to work.
+Installing `Umbraco.AI.Agent.Copilot.Workspace` pulls in its `Umbraco.AI.Agent.Conversations.*` sub-packages transitively — there is nothing extra to install for persistence to work.
 
 The Copilot Workspace package provides:
 
-- A standalone backoffice section (three regions: conversation/project sidebar, center chat, context panel)
-- The `copilot-workspace` agent surface
-- Projects (instructions, contexts, and resources shared across a project's conversations)
-- The `Conversations` persistence layer (conversation/message/project domain, repositories, and a `ChatHistoryProvider` bridge into the agent runtime)
+- A standalone backoffice section (three regions: conversation/project sidebar, center chat, context panel).
+- The `copilot-workspace` agent surface.
+- Projects (instructions, contexts, and resources shared across a project's conversations).
+- The `Conversations` persistence layer (conversation/message/project domain, repositories, and a `ChatHistoryProvider` bridge into the agent runtime).
 
 ## Documentation
 
 | Section                          | Description                                    |
 | --------------------------------- | ----------------------------------------------- |
-| [Usage](copilot-workspace.md)     | Conversations, projects, and the context panel |
+| [Usage](copilot-workspace.md)     | Conversations, projects, and the context panel. |
 
 ## Related
 
