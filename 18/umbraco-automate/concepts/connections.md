@@ -14,7 +14,7 @@ Without connections, every action that talks to an external service would need i
 
 * **Reuse** — multiple automations can share the same connection.
 * **Environment safety** — credentials are configured per environment and never travel with an exported automation.
-* **Security** — credentials are encrypted at rest and masked in run logs.
+* **Security** — credentials are encrypted at rest, masked in run logs, and hidden behind a masked input in the connection editor.
 
 ## Connection Types
 
@@ -35,7 +35,7 @@ Most connection types implement a validation step. Click **Test connection** in 
 
 ## Configuration References
 
-Connection settings support configuration references. Values starting with `$` are resolved from configuration (`appsettings.json`, environment variables, Azure Key Vault, and so on) at runtime.
+Connection settings support configuration references. A value starting with `$`, or a `$Key:Path` reference embedded inside a larger string (for example `Bearer $Umbraco:Automate:Secrets:Token`), is resolved from configuration at runtime. Configuration sources include `appsettings.json`, environment variables, and Azure Key Vault.
 
 References resolve from two dedicated configuration sections:
 

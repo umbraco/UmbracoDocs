@@ -23,10 +23,6 @@ When no workflow is active, the button state is determined by the current user's
 
 Umbraco Workflow overrides Umbraco's User/Group publishing permissions. If the user has permission to update the node, they will be able to initiate a workflow process on that node. Umbraco Workflow shifts Umbraco from a centrally administered publishing model (controlled by a site administrator) to a distributed model. In this model, editors publish content based on their responsibilities assigned during the workflows.
 
-In cases, where the content is already in a workflow, a notification is displayed at the top of the editor. Depending on the Workflow **Settings**, you can enable/disable editing access on a content node in a workflow.
-
-![Disabled content edits](../.gitbook/assets/blocked_content.png)
-
 For nodes where the workflow has been disabled, the default Umbraco options are displayed.
 
 ![Default Button](../.gitbook/assets/Default_Buttons.png)

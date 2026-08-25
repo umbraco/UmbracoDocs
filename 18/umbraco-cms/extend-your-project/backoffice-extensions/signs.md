@@ -66,7 +66,7 @@ export const manifests: UmbExtensionManifest = {
 
 When an Entity includes the `Umb.IsProtected` flag, this Sign appears next to it in the UI, indicating that the item is protected.
 
-![Screenshot of Recently Created sign](../../.gitbook/assets/protected-entity-sign.png)
+![Screenshot of protected sign](../../.gitbook/assets/protected-entity-sign.png)
 
 ### Example: Rendering an Entity Sign with Custom Logic
 

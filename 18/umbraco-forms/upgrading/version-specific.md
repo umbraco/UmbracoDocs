@@ -16,6 +16,16 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 18 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `18.0.0`. It runs on .NET 10.
 
+### Upgrading directly from Forms 13.9.9
+
+This fix was introduced in version 18.1.0. It affects you if you upgrade directly from Forms 13.9.9 to an earlier version 18 release.
+
+{% hint style="warning" %}
+Versions 18.0.0 to 18.0.6 do not recognize the migration state that the 13.9.9 security patch added. The upgrade fails at boot with `The migration plan "UmbracoForms" does not support migrating from state "6149738f-25bd-44ac-9c1d-d66bbe9d4e2b"`.
+{% endhint %}
+
+Upgrade to version 18.1.0 or later instead. See [issue #1772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1772) for details.
+
 ### UTC date handling
 
 This fix was introduced in version 17.3.0. It affects you if you upgrade to version 18 from version 17.0, 17.1, or 17.2.

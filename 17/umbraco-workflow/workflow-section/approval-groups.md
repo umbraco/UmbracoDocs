@@ -26,9 +26,15 @@ You can search for a specific group using the Search bar. Select a group from th
 
 The **Settings** tab consists of the following fields:
 
+* **Allow external approval:** Set to true to allow members of this group to action workflow tasks without logging in to the CMS. A secure link is included in the notification email. Requires a license. See [External Approval](../getting-started/external-approval.md) for more information.
+* **Allow approval by email reply:** Set to true to allow members of this group to approve or reject tasks. They do this by replying directly to the notification email. Requires a license. See [External Approval](../getting-started/external-approval.md) for more information.
 * **Group Email:** Workflow notifications are sent to a generic inbox (a group's email address) rather than the individual group members.
 * **Group Language:** Select a language variant for the email.
 * **Workflow Activity:** Provides a chart displaying an overview of the workflow activity such as approved, cancelled, rejected, or pending approvals for the current group.
+
+{% hint style="info" %}
+**Allow external approval** and **Allow approval by email reply** are not available for a group with a **Group Email** address set. Both features issue a link or reply address tied to a single, known individual, so they cannot be used with a shared mailbox.
+{% endhint %}
 
 ![Approval group Settings](../.gitbook/assets/Approval-group-settings-v14.png)
 
@@ -75,7 +81,7 @@ The **Roles** tab provides an overview of the current workflow roles for the Gro
 * **Node-based approvals**: This workflow applies only to the specified node.
 * **Document-type approvals**: This workflow applies to all the nodes of a given Document Type.
 
-You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Workflow Settings](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/workflow-section/workflow-settings.md) article.
+You can set these **Roles** in the Workflow **Settings** section. For more information, see the [Content approval settings](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/content-approval-settings.md) article.
 
 ![Approval group Roles](../.gitbook/assets/approval-groups-role-v14.png)
 
@@ -93,6 +99,6 @@ The History tab provides an overview of the workflow activity for the current gr
 
 You can also **Filter** the records based on the Document Type, Requested by, Created date, Completed date, Page Language, Workflow Type, and Workflow Status. Additionally, you can adjust the total number of records displayed on a page.
 
-The **Detail** button at the end of the record displays an overlay with content similar to the [Active workflow](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/workflow-content-app.md#active-workflow) sub-section.
+The **Detail** button at the end of the record displays an overlay with content similar to the [workflow detail dialog](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-workflow/getting-started/workflow-detail-dialog.md).
 
 ![Details overlay](../.gitbook/assets/Workflow-Content-app-Details-overlay-v14.png)

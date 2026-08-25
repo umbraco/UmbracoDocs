@@ -16,16 +16,12 @@ To set up the Block Grid property editor, follow these steps:
 
 1. Navigate to the **Settings** section in the Umbraco backoffice.
 2. Click **...** next to the **Data Types** folder.
-3. Select **Create** -> **New Data Type**.
+3. Select **Create** -> **Data Type**.
 4. Select **Block Grid** from the list of available property editors.
 
-You will see the configuration options for adding Block Types to the Grid as shown below.
+You will see the configuration options as shown below:
 
 ![Block Grid - Blocks Configuration](../../../../.gitbook/assets/BlockGridEditor_Configuration.png)
-
-You will also see the following additional configuration options.
-
-![Block Grid - Additional Data Type Configuration Options](../../../../.gitbook/assets/BlockGridEditor_Configuration-2.png)
 
 The Data Type editor allows you to configure the following properties:
 
@@ -34,12 +30,13 @@ The Data Type editor allows you to configure the following properties:
 * **Live editing mode** - Enabling this option will allow you to see the changes as you are editing them.
 * **Editor width** - Overwrites the width of the property editor. This field takes any valid CSS value for "max-width". For example: 100% or 800px.
 * **Create Button Label** - Overwrites the label on the Create button.
+* **Create modal size** - Controls the size of the overlay dialog that appears when an editor clicks to create or edit a block.
 * **Grid Columns** - Define the number of columns in your Block Grid. The default is 12 columns.
 * **Layout Stylesheet** - Replaces the built-in Layout Stylesheet. Additionally, you can retrieve the default layout stylesheet to use as a base for your own inspiration or for writing your own stylesheet.
 
 ## Setup Block Types
 
-Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/default-document-types.md#element-type). These can be created beforehand or while setting up your Block Types.
+Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/document-type-options.md#element-type). These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
@@ -106,9 +103,9 @@ To scale an Area, click and drag the scale-button in the bottom-right corner of 
 * **Number of blocks** - Determines the total number of Blocks in an Area.
 * **Allowed block types** - When this is empty, all Blocks with Permissions for creation in Areas, will be available. This can be overwritten by specifying the allowed Blocks. Define the types of Blocks or Groups of Blocks that are allowed. Additionally, you can also set how many Blocks of each type/group should be present.
 
-When allowing a Group of Blocks, you might want to require a specific amount for a certain Block of that Group. This can be done by adding that Block Type to the list as well, and setting the requirements accordingly.
+When allowing a group of Blocks, you might want to require a specific amount for a certain Block of that group. This can be done by adding that Block Type to the list as well, and setting the requirements accordingly.
 
-## Advanced
+## Advanced properties
 
 Advanced properties are also available for each Block, as shown below.
 
@@ -117,7 +114,7 @@ Advanced properties are also available for each Block, as shown below.
 ### Advanced
 
 * **Overlay editor size** - Sets the size for the Content editor overlay for editing this block.
-* **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
+* **Inline editing** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
 * **Hide content editor** - Hides the UI for editing the content in a Block Editor. This is only relevant if you made a custom view that provides the UI for editing of content.
 
 ### Custom View
@@ -172,7 +169,7 @@ Moving a Block from one Area to another is done in the same way. If a Block is n
 
 ## Scaling Blocks
 
-If a Block has multiple size options it can be scaled via the UI. This appears in the bottom left corner of the Block.
+If a Block has multiple size options it can be scaled via the UI. This appears in the bottom-right corner of the Block.
 
 The Block is resized using a click-and-drag feature. Moving the mouse will change the size to the size options closest to the mouse pointer.
 

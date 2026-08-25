@@ -10,7 +10,7 @@ Every execution of an automation produces a **run** record. Use the **Runs** vie
 
 1. Open the automation in the tree.
 2. Switch to the **Runs** tab.
-3. Scroll or page through the list of runs, most recent first.
+3. Scroll or page through the list of runs, most recent first. The list refreshes automatically as new runs start and finish.
 
 <figure><img src="../.gitbook/assets/runs-list.png" alt="The runs list showing recent executions of an automation."><figcaption><p>The runs list view.</p></figcaption></figure>
 
@@ -24,7 +24,7 @@ Click a run to open the run detail view. The canvas replays the automation with 
 | Blue   | Running                                                  |
 | Green  | Completed                                                |
 | Red    | Failed                                                   |
-| Yellow | Waiting for input (for example, an approval) or sleeping |
+| Yellow | Waiting for input (for example, an approval), sleeping, or Rejected (a human declined an approval — not a failure) |
 
 Click a step to open its data panel.
 

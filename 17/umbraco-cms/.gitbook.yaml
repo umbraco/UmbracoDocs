@@ -262,7 +262,7 @@ redirects:
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/user-picker: model-your-content/property-editors/built-in-umbraco-property-editors/user-picker.md
     fundamentals/data: model-your-content/content-types-and-structure/data/README.md
     fundamentals/data/defining-content: model-your-content/content-types-and-structure/data/defining-content/README.md
-    fundamentals/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/default-document-types.md
+    fundamentals/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/document-type-options.md
     fundamentals/data/defining-content/document-type-localization: model-your-content/content-types-and-structure/data/defining-content/document-type-localization.md
     fundamentals/data/adding-tabs: model-your-content/content-types-and-structure/data/defining-content/adding-tabs.md
     fundamentals/data/creating-media: model-your-content/content-types-and-structure/data/creating-media/README.md
@@ -724,3 +724,4 @@ redirects:
     extend-your-project/backoffice-extensions/utilities/modals/confirm-dialog: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/confirm-dialog.md
     extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md
     extend-your-project/backoffice-extensions/utilities/modals: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/README.md
+    model-your-content/content-types-and-structure/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/document-type-options.md

@@ -17,7 +17,7 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 | Trigger               | Fires when                                                                                                                                    |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Manual Trigger**    | A user runs the automation by hand from the backoffice.                                                                                       |
-| **Scheduled Trigger** | A Command Run On Notice (CRON) expression matches the current time.                                                                                                   |
+| **Scheduled Trigger** | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.  |
 | **Webhook**           | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). |
 
 ### Content
@@ -62,7 +62,12 @@ Add-on packages contribute additional triggers. See [Add-ons](../add-ons/) for t
 
 ## Trigger Output
 
-Every trigger produces output data that subsequent steps can bind to. For example, the **Content** **Published** trigger outputs the content name, key, content type alias, and culture.
+Every trigger produces output data that subsequent steps can bind to. For example, the **Content** **Published** trigger outputs the content name, key, content type alias, and culture. The **Scheduled Trigger** outputs the time it fired and the CRON expression that fired it:
+
+```
+${ trigger.firedAtUtc }
+${ trigger.cronExpression }
+```
 
 Use the binding picker in the step settings dialog to insert trigger output values into action settings:
 
