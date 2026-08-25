@@ -37,7 +37,7 @@ public static class UmbracoCommerceUmbracoBuilderExtensions
 
 If you have multiple currencies enabled but have not configured an exchange rate service, Umbraco Commerce will display a warning. This alert appears on the store dashboard and analytics section, indicating that the reported data may be inaccurate.
 
-![No Exchange Rate Service Provider Warning](../.gitbook/assets/no-exchange-rate-provider.png)
+![No Exchange Rate Service Provider Warning](<../.gitbook/assets/no-exchange-rate-provider (1).png>)
 
 ### Historic Orders
 

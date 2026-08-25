@@ -251,7 +251,7 @@ Without a defined scheme, the Property Editor UI will not display in Umbraco's b
 
 The Rule/Reward Label component should provide a user-friendly summary of its settings to display in the relevant Builder UI.
 
-![Discount Rule Labels](../.gitbook/assets/discount-rules.png)
+![Discount Rule Labels](<../.gitbook/assets/discount-rules (1).png>)
 
 ## Localization
 

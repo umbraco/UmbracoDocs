@@ -21,13 +21,13 @@ The payment links feature was introduced in Umbraco Commerce version 15.3.0
 5. Click on the **Save** button to save the cart.
 6. Click on the **Generate Payment Link** button to launch the payment link generator modal.
 
-![Generate Payment Link](../.gitbook/assets/generate-payment-link-button.png)
+![Generate Payment Link](<../.gitbook/assets/generate-payment-link-button (1).png>)
 
 7. Configure the payment link settings in the Payment Link Generator modal. You can set the following options:
    * **Validity Period**: The period in minutes for which the payment link will be valid.
    * **Landing Page URL**: The URL to which the customer will be directed when clicking on the payment link.
 
-![Payment Link Generator](../.gitbook/assets/generate-payment-link-modal.png)
+![Payment Link Generator](<../.gitbook/assets/generate-payment-link-modal (1).png>)
 
 8. Use one of the two options to send the payment link to the customer:
    * [**Copy to Clipboard**](payment-links.md#copy-to-clipboard)
@@ -37,19 +37,19 @@ The payment links feature was introduced in Umbraco Commerce version 15.3.0
 
 Clicking on the **Copy to Clipboard** button generates the payment link and then copies it to the clipboard. A notification will display to confirm the copy was successful. You can paste the link into an email or other communication form.
 
-![Copy to Clipboard Notification](../.gitbook/assets/payment-link-copied-to-clipboard.png)
+![Copy to Clipboard Notification](<../.gitbook/assets/payment-link-copied-to-clipboard (1).png>)
 
 ### Send via Email
 
 Clicking on the **Send via Email** button launches the Send Email modal. From here, you can select an email template and set the recipient's email address.
 
-![Email Template Selection](../.gitbook/assets/choose-payment-link-email-template.png)
+![Email Template Selection](<../.gitbook/assets/choose-payment-link-email-template (1).png>)
 
-![Recipient Configuration](../.gitbook/assets/send-payment-link-email.png)
+![Recipient Configuration](<../.gitbook/assets/send-payment-link-email (1).png>)
 
 Clicking the **Send** button will send the email to the recipient with the payment link.
 
-![Email Payment Link Example](../.gitbook/assets/email.png)
+![Email Payment Link Example](<../.gitbook/assets/email (1).png>)
 
 {% hint style="info" %}
 Umbraco Commerce includes a default email template for sending payment links. You can customize this template by going to the **Settings** section in the Umbraco backoffice and selecting the **Email Templates** menu item.
@@ -59,7 +59,7 @@ Umbraco Commerce includes a default email template for sending payment links. Yo
 
 When the customer receives the payment link, they can click on the link to open the cart in the store. The cart will be pre-filled with the products and quantities that were added when the payment link was generated.
 
-![Payment Link Populated Cart](../.gitbook/assets/checkout.png)
+![Payment Link Populated Cart](<../.gitbook/assets/checkout (1).png>)
 
 The customer can proceed to the checkout and complete the purchase as normal.
 

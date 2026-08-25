@@ -25,10 +25,10 @@ Before adding items to a cart, it is required that the Cart package is initializ
 
 The core initialization settings are shown in the table below.
 
-| Key | Description |
-| -- | -- |
-| `store` | The ID or alias of the store the cart should be associated with. |
-| `checkoutUrl` | The URL of the checkout page the cart should redirect to on checkout. |
+| Key                      | Description                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------- |
+| `store`                  | The ID or alias of the store the cart should be associated with.                        |
+| `checkoutUrl`            | The URL of the checkout page the cart should redirect to on checkout.                   |
 | `showPricesIncludingTax` | Define whether to show prices inclusive or exclusive of sales tax. Defaults to `false`. |
 
 Calling the `init` method will also automatically bind any UI elements configured using the following APIs.
@@ -50,25 +50,25 @@ The first step when defining an add-to-cart component is to add the `ucc-add-to-
 
 Along with the `ucc-add-to-cart` class, a series of data attributes provides information about the product being added to the cart. At a minimum, a `data-ucc-product-reference` is required, but the following table outlines all the available configuration options.
 
-| Key | Description |
-| -- | -- |
-| `data-ucc-product-reference` | The unique reference for the product being added. This is usually the Key of the product Umbraco node. |
-| `data-ucc-product-variant-reference` | The unique reference for a variant of the primary product being added. This is usually either a child variant node Key or the Key of a complex variant item from the Variants property editor.
-| `data-ucc-quantity` | The amount of the given product to be added. |
-| `data-ucc-property1-key` | The key of a property to set on the added order line. |
-| `data-ucc-property1-value` | The value of a property to set on the added order line. |
-| `data-ucc-bundle-reference` | A unique reference to use to mark this item as a bundle. |
-| `data-ucc-bundle-item1-product-reference` | The unique reference of a product to add as a bundle item. |
-| `data-ucc-bundle-item1-product-variant-reference` | The unique reference of a product variant to add as a bundle item. |
-| `data-ucc-bundle-item1-quantity` | The amount of the given product to add as a bundle item. |
-| `data-ucc-bundle-item1-property1-key` | The key of a property to set on the added bundle item. |
-| `data-ucc-bundle-item1-property1-value` | The value of a property to set on the added bundle item. |
+| Key                                               | Description                                                                                                                                                                                    |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-ucc-product-reference`                      | The unique reference for the product being added. This is usually the Key of the product Umbraco node.                                                                                         |
+| `data-ucc-product-variant-reference`              | The unique reference for a variant of the primary product being added. This is usually either a child variant node Key or the Key of a complex variant item from the Variants property editor. |
+| `data-ucc-quantity`                               | The amount of the given product to be added.                                                                                                                                                   |
+| `data-ucc-property1-key`                          | The key of a property to set on the added order line.                                                                                                                                          |
+| `data-ucc-property1-value`                        | The value of a property to set on the added order line.                                                                                                                                        |
+| `data-ucc-bundle-reference`                       | A unique reference to use to mark this item as a bundle.                                                                                                                                       |
+| `data-ucc-bundle-item1-product-reference`         | The unique reference of a product to add as a bundle item.                                                                                                                                     |
+| `data-ucc-bundle-item1-product-variant-reference` | The unique reference of a product variant to add as a bundle item.                                                                                                                             |
+| `data-ucc-bundle-item1-quantity`                  | The amount of the given product to add as a bundle item.                                                                                                                                       |
+| `data-ucc-bundle-item1-property1-key`             | The key of a property to set on the added bundle item.                                                                                                                                         |
+| `data-ucc-bundle-item1-property1-value`           | The value of a property to set on the added bundle item.                                                                                                                                       |
 
 Some attributes end with a number. This signifies that the attribute defines a collection and so multiple attributes can be defined with each distinct combination incrementing the number by `1`. It is important that these attributes start from `1` and must be sequential without gaps.
 
 With an add-to-cart button defined, clicking on the button will automatically add the product and open the cart for display.
 
-![Shopping cart modal.](../media/cart/cart.png)
+![Shopping cart modal.](<../../.gitbook/assets/cart (2).png>)
 
 ### Open Cart Button
 
@@ -264,7 +264,7 @@ UCC.addLocale('en', {
 
 Now, when the cart is displayed, the defined properties will be displayed using the localization value as their label.
 
-![Example property](../media/cart/property.png)
+![Example property](../../.gitbook/assets/property.png)
 
 ## Theming
 

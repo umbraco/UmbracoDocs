@@ -17,15 +17,15 @@ To create a product bundle, you need to create a primary product with multiple s
 1. Navigate to the Settings section in the Umbraco backoffice.
 2. Create a Document Type for your primary product.
 
-![Bundle Document Type](../.gitbook/assets/bundle-document-type.png)
+![Bundle Document Type](<../.gitbook/assets/bundle-document-type (1).png>)
 
 2. Create a Document Type for your sub-products.
 
-![Product Variant Details](../.gitbook/assets/product-variant-details.png)
+![Product Variant Details](<../.gitbook/assets/product-variant-details (1).png>)
 
 3. Update your primary product Document Type to allow child nodes of the sub-product type.
 
-![Product Variant Children](../.gitbook/assets/bundle-document-type-structure.png)
+![Product Variant Children](<../.gitbook/assets/bundle-document-type-structure (1).png>)
 
 ## Content Configuration
 
@@ -35,7 +35,7 @@ The bundle content tree will contain a bundle page with variant elements as chil
 2. Create a new product page with the primary product Document Type.
 3. Add variant elements as children.
 
-![Product Variant Children](../.gitbook/assets/product-variant-children.png)
+![Product Variant Children](<../.gitbook/assets/product-variant-children (1).png>)
 
 ## Frontend Configuration
 
@@ -83,7 +83,7 @@ Add the following to your product page template.
 ```
 {% endcode %}
 
-![Product with Bundle](../.gitbook/assets/product-bundles.png)
+![Product with Bundle](<../.gitbook/assets/product-bundles (1).png>)
 
 ## Add to Cart Updates
 
@@ -161,4 +161,4 @@ When a user adds a product including variants to the cart, the order is created 
 
 When an order includes a bundled product, the order editor will display the primary product and its sub-products as a composite order line.
 
-![Order Editor](<../.gitbook/assets/order-editor (1).png>)
+![Order Editor](<../.gitbook/assets/order-editor (1) (1).png>)

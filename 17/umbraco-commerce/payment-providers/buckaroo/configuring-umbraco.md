@@ -15,7 +15,7 @@ The following steps are all handled through the Umbraco backoffice.
 2. Select the **Create Payment Method** button to create a new payment method.
 3. Choose **Buckaroo One Time Payment** from the list of available payment providers.
 
-<figure><img src="../.gitbook/assets/create-new-payment-method.png" alt=""><figcaption><p>The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-new-payment-method.png" alt=""><figcaption><p>The "Create Payment Method" dialog in the Commerce section of the Umbraco CMS backoffice.</p></figcaption></figure>
 
 ## Step 2: Configure Payment Provider Settings
 

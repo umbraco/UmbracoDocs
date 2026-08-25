@@ -10,11 +10,11 @@ By default, Umbraco Commerce uses a single price for a product. However, in some
 
 1. Creating the Member Groups to use for the member-based pricing. In this example two member groups are created: _Platinum_ and _Gold_.
 
-![Member Groups](../.gitbook/assets/member-groups.png)
+![Member Groups](<../.gitbook/assets/member-groups (1).png>)
 
 2. Create one Member for each group:
 
-![Members](../.gitbook/assets/members.png)
+![Members](<../.gitbook/assets/members (1).png>)
 
 ## Property Editor Configuration
 
@@ -24,19 +24,19 @@ Next, you will create a new property editor for the member-based pricing. The in
 2. Use the default Umbraco Commerce `Price` property editor for the `Price` property.
 3. Use the in-built `Member Group Picker` property editor for the `Member Group` property.
 
-![Member Price Element](../.gitbook/assets/member-price-element.png)
+![Member Price Element](<../.gitbook/assets/member-price-element (1).png>)
 
 4. Open the **Product** Document Type.
 5. Add a new `Member Price` property using a new Block List Property editor configuration.
 6. Select the `Member Price` element type as the only allowed block type.
 
-![Member Price Block List Configuration](../.gitbook/assets/member-price-block-list.png)
+![Member Price Block List Configuration](<../.gitbook/assets/member-price-block-list (1).png>)
 
 7. Navigate to the Content section.
 8. Assign member-based pricing for any product you wish.
 9. Populate the `Member Price` field with the required Member Group and price combination.
 
-![Member Group Price](../.gitbook/assets/member-price-content.png)
+![Member Group Price](<../.gitbook/assets/member-price-content (1).png>)
 
 ## Product Adapter
 
@@ -131,12 +131,12 @@ With all this implemented, the product page will display the correct price based
 
 The expected result for the standard product page:
 
-![Default Product Page](../.gitbook/assets/default-product-page.png)
+![Default Product Page](<../.gitbook/assets/default-product-page (1).png>)
 
 The expected result for a _Gold_ Member:
 
-![Gold Product Page](../.gitbook/assets/gold-product-page.png)
+![Gold Product Page](<../.gitbook/assets/gold-product-page (1).png>)
 
 The expected result for a _Platinum_ Member:
 
-![Platinum Product Page](../.gitbook/assets/platinum-product-page.png)
+![Platinum Product Page](<../.gitbook/assets/platinum-product-page (1).png>)

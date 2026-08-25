@@ -6,7 +6,7 @@ description: Discount options in Umbraco Commerce.
 
 The discount system is a powerful and flexible way to apply different types of discounts to orders based on a wide range of conditions. Discounts can be configured to apply automatically or via a discount code, and can be targeted to specific products, categories, member groups, and more.
 
-![Discount Management Interface](../../.gitbook/assets/discount-editor.png)
+![Discount Management Interface](<../../.gitbook/assets/discount-editor (1).png>)
 
 ## Overview
 
@@ -22,7 +22,7 @@ The discount system consists of three main components:
 
 To create a new discount, navigate to the Commerce section in the Umbraco backoffice and select **Discounts** from the sidebar. Click the **Create** button to open the discount creation interface.
 
-![Create Discount Button](../../.gitbook/assets/discounts-create.png) ![New Discount Interface](../../.gitbook/assets/discounts-editor.png)
+![Create Discount Button](<../../.gitbook/assets/discounts-create (1).png>) ![New Discount Interface](<../../.gitbook/assets/discounts-editor (1).png>)
 
 ## Basic Configuration
 
@@ -41,7 +41,7 @@ The rules system determines when a discount should be applied. Rules can be sing
 
 The visual rule builder allows you to construct discount conditions using a drag-and-drop interface. Rules can be combined using logical operators to create sophisticated discount scenarios.
 
-![Rule Builder Interface](../../.gitbook/assets/discount-rules-config.png)
+![Rule Builder Interface](<../../.gitbook/assets/discount-rules-config (1).png>)
 
 ### Logical Operators
 
@@ -64,7 +64,7 @@ For detailed information about available rules and their configuration, see the 
 
 Rewards define what discount should be applied when rules are satisfied. The system supports different reward types for different discount scenarios.
 
-![Reward Builder Interface](../../.gitbook/assets/discount-rules-config.png)
+![Reward Builder Interface](<../../.gitbook/assets/discount-rules-config (1).png>)
 
 ### Reward Types
 
@@ -84,7 +84,7 @@ For detailed information about available rewards and their configuration, see th
 
 Discounts are processed in the order they appear in the discount list. This ordering can impact how multiple discounts interact with each other.
 
-![Discount Order List](../../.gitbook/assets/discounts-list.png)
+![Discount Order List](<../../.gitbook/assets/discounts-list (1).png>)
 
 ### Reordering Discounts
 
@@ -95,7 +95,7 @@ You can change the processing order by:
 3. Drag and drop discounts to reorder them.
 4. Click the **Sort** button to apply the new order.
 
-![Discount Sort Modal](../../.gitbook/assets/discounts-sort.png)
+![Discount Sort Modal](<../../.gitbook/assets/discounts-sort (1).png>)
 
 ### Best Practices for Ordering
 

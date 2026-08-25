@@ -4,7 +4,7 @@ description: >-
   implementation.
 ---
 
-# Install Sales Tax Providers
+# Install Sales Tax Provider
 
 When you need to install a payment provider into your Umbraco Commerce implementation it is done via NuGet.
 
@@ -29,15 +29,9 @@ Install-Package Umbraco.Commerce.SalesTaxProviders.PROVIDER
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce via the NuGet Package Manager](media/nuget-package-manager-gui-latest.png)
-
 ## Available Sales Tax Providers
 
-<table><thead><tr><th width="181">Sales Tax Provider</th><th>NuGet Package name</th></tr></thead><tbody>
-
-<tr><td>TaxJar</td><td><code>Umbraco.Commerce.SalesTaxProviders.TaxJar</code></td></tr>
-
-</tbody></table>
+<table><thead><tr><th width="181">Sales Tax Provider</th><th>NuGet Package name</th></tr></thead><tbody><tr><td>TaxJar</td><td><code>Umbraco.Commerce.SalesTaxProviders.TaxJar</code></td></tr></tbody></table>
 
 ## Upgrading
 
@@ -45,4 +39,4 @@ Alternatively, you can also find and install the NuGet package via the NuGet Pac
 Before upgrading, always backup your site and database.
 {% endhint %}
 
-Umbraco Commerce uses Umbraco Migrations to install all of its features.  To upgrade, install the latest version over the existing package. This process will add new features and update any missing components.
+Umbraco Commerce uses Umbraco Migrations to install all of its features. To upgrade, install the latest version over the existing package. This process will add new features and update any missing components.

@@ -40,7 +40,7 @@ Labels and descriptions for settings are controlled through [Localization](setti
 
 An example of a generated UI built from these properties would look something like this:
 
-![Discount Rule UI](../.gitbook/assets/discount_rule_ui.png)
+![Discount Rule UI](<../.gitbook/assets/discount_rule_ui (1).png>)
 
 ### Default Values
 

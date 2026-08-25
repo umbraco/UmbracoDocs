@@ -2,17 +2,17 @@
 description: This is the documentation for the Cart package for Umbraco Commerce.
 ---
 
-# Overview
+# Cart
 
 Umbraco Commerce Cart is a free and open-source add-on package for Umbraco Commerce. It provides a low-code solution for creating an instant shopping cart in your Umbraco Commerce stores.
 
 Umbraco Commerce Cart allows you to set up your shopping cart with minimal development costs.
 
-![A look at the Umbraco Commerce Cart UI](../media/cart/cart.png)
+![A look at the Umbraco Commerce Cart UI](<../../.gitbook/assets/cart (2).png>)
 
 In this section, you will learn the key steps necessary to get started with the Cart package for Umbraco Commerce.
 
-It is assumed that you already have an Umbraco website configured, Umbraco Commerce installed and a store set up. If you are not at this stage yet, read the [core Umbraco Commerce documentation](../../README.md) to learn how to get started.
+It is assumed that you already have an Umbraco website configured, Umbraco Commerce installed and a store set up. If you are not at this stage yet, read the [core Umbraco Commerce documentation](../../) to learn how to get started.
 
 ## Useful links
 

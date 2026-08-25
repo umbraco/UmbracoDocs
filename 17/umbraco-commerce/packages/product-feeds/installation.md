@@ -23,19 +23,19 @@ Below you can find some steps on installing the package using NuGet and getting 
 3. Open your store's setting page in the backoffice.
 4. Click on `Product Feed` section.
 
-![product feed list page](media/product-feed-list-page.png)
+![product feed list page](../../.gitbook/assets/product-feed-list-page.png)
 
 5. Click on `Create Product Feed` button and fill in the feed settings. Mandatory fields are marked with a red asterisk (\*). You can add more product data by adding new mappings in `Property And Node Mapping` section.
 
-![feed setting page](media/feed-setting-page.png)
+![feed setting page](../../.gitbook/assets/feed-setting-page.png)
 
 6. After saving the feed setting, a link to access the feed will show up under `Feed URL Segment` field and at the bottom of the page.
 
-![open feed link](media/open-feed-link.png)
+![open feed link](../../.gitbook/assets/open-feed-link.png)
 
 **Google Merchant Center Feed** sample:
 
-![google merchant center feed](media/google-merchant-center-feed.png)
+![google merchant center feed](../../.gitbook/assets/google-merchant-center-feed.png)
 
 ### Upgrading
 

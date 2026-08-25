@@ -18,7 +18,7 @@ PM> Install-Package Umbraco.Commerce.Deploy
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce Deploy via the NuGet Package Manager](../media/deploy/nuget\_package.png)
+![Installing Umbraco Commerce Deploy via the NuGet Package Manager](../../.gitbook/assets/nuget_package.png)
 
 ### Upgrading
 
