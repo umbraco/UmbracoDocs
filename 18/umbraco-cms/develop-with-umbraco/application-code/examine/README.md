@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Searching with Examine
 
 _Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be powerful and fast._

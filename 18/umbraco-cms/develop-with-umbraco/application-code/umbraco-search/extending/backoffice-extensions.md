@@ -4,7 +4,7 @@ description: >-
   routable modals
 ---
 
-# Extending the search backoffice
+# Search Backoffice
 
 This guide is for **extension developers** and **search provider developers** who want to add custom UI to the Umbraco Search backoffice.
 
@@ -42,7 +42,7 @@ The package declares `@umbraco-cms/backoffice` as a peer dependency. Install the
 
 ## Adding a detail box to the search workspace
 
-<figure><img src="../.gitbook/assets/searchIndexDetailBox.jpg" alt="Search index detail boxes"><figcaption><p>The marked areas illustrate locations of search index detail boxes.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/searchIndexDetailBox.jpg" alt="Search index detail boxes"><figcaption><p>The marked areas illustrate locations of search index detail boxes.</p></figcaption></figure>
 
 The index detail view uses an extension slot for composable UI. You can register a `searchIndexDetailBox` extension to add a custom box to any index's detail page.
 

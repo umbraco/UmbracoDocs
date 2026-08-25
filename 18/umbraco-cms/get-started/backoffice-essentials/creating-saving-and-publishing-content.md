@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to create, save, and publish content pages in the Umbraco backoffice,
-  including scheduling and unpublishing options.
+  Learn how to create, save, and publish content pages in the Umbraco
+  backoffice, including scheduling and unpublishing options.
 ---
 
 # Creating, Saving and Publishing Content Options
@@ -68,9 +68,6 @@ To publish the node with descendants, follow these steps:
 1. Navigate to the page you want to publish.
 2. Select the arrow next to the **Save and Publish** button.
 3. Select **Publish with descendants**.
-
-![Publish with descendants](../../.gitbook/assets/Publish-with-descendants-18.png)
-
 4. Toggle the option to **Include unpublished content items** if you wish to. This option includes all unpublished content items for the selected page and the descendant pages.
 
 #### 3: Unpublish

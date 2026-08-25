@@ -23,10 +23,10 @@ If a notification handler performs expensive operations, this can introduce a la
 The notification contains a `Fields` collection of fields aggregated from all the [content indexers](gathering-data-with-content-indexers.md). These fields can be manipulated by the notification handler.
 
 {% hint style="warning" %}
-Be careful if you change or remove any of the [system fields](../getting-started/system-fields.md), as this might corrupt the index.
+Be careful if you change or remove any of the [system fields](../system-fields.md), as this might corrupt the index.
 {% endhint %}
 
-In the following example, the content being indexed might contain a `length` field. This is a radio button list property, and thus it [produces keywords](../getting-started/built-in-property-editors.md) for filtering and faceting.
+In the following example, the content being indexed might contain a `length` field. This is a radio button list property, and thus it [produces keywords](../built-in-property-editors.md) for filtering and faceting.
 
 Keywords are not available for full-text querying by default. You can use a notification handler to amend this for the `length` field:
 
