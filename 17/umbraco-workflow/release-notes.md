@@ -16,6 +16,12 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.4.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.1)  (August 25 2026)
+
+* Fixes a bug where segments associated with a workflow process could be truncated [#170](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/170)
+* Fixes a 13-to-17 migration bug incorrectly referencing the `WorkflowUserGroups` table [#169](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/169)
+* Improves display of segments associated with a workflow process, handling documents with multiple segments. Segments are now mapped to their name, rather than displaying the alias only.
+
 ### [17.4.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0)  (August 20 2026)
 
 #### Adds approval by magic link and email reply
