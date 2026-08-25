@@ -30,15 +30,11 @@ Use the [table of available Shipping Providers](install-shipping-providers.md#av
 
 Alternatively, you can also find and install the NuGet package via the NuGet Package Manager.
 
-![Installing Umbraco Commerce via the NuGet Package Manager](media/nuget-package-manager-gui.png)
+![Installing Umbraco Commerce via the NuGet Package Manager](../.gitbook/assets/nuget-package-manager-gui.png)
 
 ## Available Shipping Providers
 
-<table><thead><tr><th width="181">Shipping Provider</th><th>NuGet Package name</th></tr></thead><tbody>
-<tr><td>DHL</td><td><code>Umbraco.Commerce.ShippingProviders.Dhl</code></td></tr>
-<tr><td>EasyPost</td><td><code>Umbraco.Commerce.ShippingProviders.EasyPost</code></td></tr>
-<tr><td>Shipmondo</td><td><code>Umbraco.Commerce.ShippingProviders.Shipmondo</code></td></tr>
-</tbody></table>
+<table><thead><tr><th width="181">Shipping Provider</th><th>NuGet Package name</th></tr></thead><tbody><tr><td>DHL</td><td><code>Umbraco.Commerce.ShippingProviders.Dhl</code></td></tr><tr><td>EasyPost</td><td><code>Umbraco.Commerce.ShippingProviders.EasyPost</code></td></tr><tr><td>Shipmondo</td><td><code>Umbraco.Commerce.ShippingProviders.Shipmondo</code></td></tr></tbody></table>
 
 ## Upgrading
 
