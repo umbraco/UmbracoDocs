@@ -59,12 +59,11 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 
     b. Click **Install** to upgrade your project.
 
-{% hint style="info" %}
-If you have other packages like Umbraco Forms installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
-{% endhint %}
 
 {% hint style="info" %}
-If you are using **Umbraco Forms**, you will need to convert your one-time off license (.lic file) to the subscription-based model (key-based license XXXXX-XXXXX-XXXXX-XXXXX). The same goes for **Umbraco Deploy**.
+If you have other packages like Umbraco Forms or Deploy installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
+
+You will also need to convert your one-time-off license (`.lic` file) to the subscription-based model (key-based license, `XXXXX-XXXXX-XXXXX-XXXXX`). Learn more about the different license models in the [DXP Overview documentation](https://docs.umbraco.com/umbraco-dxp/licensing-and-dependencies/configure-licenses).
 {% endhint %}
 
 8. Make sure that your connection string has `TrustServerCertificate=True` to complete the upgrade successfully:
