@@ -46,7 +46,7 @@ Build or restart your website afterwards.
 1. Edit a form and add a new question. The **Analytics - VisitorId** field type should be available.
 2. Go to **Engage** -> **Settings** and create a new goal. The **Umbraco Forms Submission** goal type should be available.
 
-![Umbraco Forms Submission option in Goal dropdown](../.gitbook/assets/engage-forms-goal-type.png)
+![Umbraco Forms submission option in the goal trigger dropdown](../.gitbook/assets/engage-forms-goal-trigger.png)
 
 If either option is missing, see [Verify your Engage installation](../installation/troubleshooting-installs.md).
 

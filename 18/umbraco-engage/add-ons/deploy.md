@@ -19,11 +19,7 @@ The add-on is available from Umbraco Engage version 17.
 Analytics data is not transferred between environments. Only configuration items such as goals, personas, customer journeys, and A/B tests are included in deployments.
 {% endhint %}
 
-<!-- SCREENSHOT NEEDED: Queueing an Engage item (for example a goal) for transfer in the Deploy dashboard -->
-
-{% hint style="warning" %}
-Screenshot placeholder: queueing an Umbraco Engage item for transfer with Umbraco Deploy.
-{% endhint %}
+![Queueing an Umbraco Engage goal for transfer with Umbraco Deploy](../.gitbook/assets/engage-deploy-queue-for-transfer.png)
 
 ## Prerequisites
 

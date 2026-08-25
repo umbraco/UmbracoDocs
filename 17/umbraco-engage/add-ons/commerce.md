@@ -17,17 +17,9 @@ The Commerce add-on connects Umbraco Engage to [Umbraco Commerce](https://docs.u
   * **Commerce - existing customer**: the visitor has completed an order, ever or within a chosen number of days.
 * [Cockpit](../getting-started/for-marketers-and-editors/cockpit.md) support for the Commerce segment rules.
 
-<!-- SCREENSHOT NEEDED: The Commerce view on a visitor profile in the Engage section, showing an order list -->
+![The Commerce view on a visitor profile, showing the visitor's orders](../.gitbook/assets/engage-commerce-profile-orders.png)
 
-{% hint style="warning" %}
-Screenshot placeholder: the Commerce view on a visitor profile, showing the visitor's orders.
-{% endhint %}
-
-<!-- SCREENSHOT NEEDED: The two Commerce segment rules in the segment rule picker -->
-
-{% hint style="warning" %}
-Screenshot placeholder: the Commerce segment rules in the segment rule picker.
-{% endhint %}
+![The Commerce segment rules in the segment parameter picker](../.gitbook/assets/engage-commerce-segment-rules.png)
 
 ## Prerequisites
 
