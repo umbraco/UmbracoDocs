@@ -131,6 +131,14 @@
   * [Forced-Segment header](developers/headless/forced-segment.md)
   * [Headless Example](developers/headless/headless-example.md)
 
+## Add-ons
+
+* [Overview](add-ons/README.md)
+* [Forms](add-ons/forms.md)
+* [Commerce](add-ons/commerce.md)
+* [Deploy](add-ons/deploy.md)
+* [AI](add-ons/ai.md)
+
 ## Security and Privacy
 
 * [Security and privacy](security-and-privacy/README.md)
