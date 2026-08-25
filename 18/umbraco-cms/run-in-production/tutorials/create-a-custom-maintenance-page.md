@@ -8,6 +8,12 @@ description: >-
 
 A maintenance page will be shown when an Umbraco project is running an upgrade. This prevents visitors from landing on an upgrade page or seeing content meant for project maintainers.
 
+{% hint style="info" %}
+The maintenance page will only show if the upgrade **is not** running unattended.
+
+Learn more about our to configure unattended upgrades in the [Upgrade Unattended](../../get-started/upgrading-and-migrating/upgrade-unattended.md) article.
+{% endhint %}
+
 ![The default maintenance page making site visitors aware of the state of the site.](../../.gitbook/assets/maintenancePage.png)
 
 ## Customize the maintenance page
