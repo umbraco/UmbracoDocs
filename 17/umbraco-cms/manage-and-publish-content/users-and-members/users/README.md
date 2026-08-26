@@ -56,6 +56,8 @@ The status panel below the profile photo also shows account details for referenc
 * User last updated
 * Id
 
+For the email-based self-service password reset flow, and what happens when a locked-out user resets their own password, see [Locking of Users and Password Reset](../../../run-in-production/security/password-reset.md).
+
 ## Managing Users
 
 When working with multiple users in Umbraco, the user screen provides tools to help you quickly locate and manage users using filters and layout options.
