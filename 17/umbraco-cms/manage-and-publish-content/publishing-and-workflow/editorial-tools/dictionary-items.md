@@ -89,11 +89,9 @@ The Dictionary Items have now been added to your website.
 
 A developer can reference a Dictionary Item from a template using its key. For example, the following renders the value of a Dictionary Item named _Welcome_:
 
-{% code title="index.cshtml" %}
 ```csharp
 @Umbraco.GetDictionaryValue("Welcome")
 ```
-{% endcode %}
 
 {% hint style="info" %}
 Adding Dictionary Items to templates is a development task. For the full set of options, including how to specify a fallback value, see [Fetching Dictionary Values](../../../develop-with-umbraco/templating-and-rendering/querying/umbracohelper.md#fetching-dictionary-values).
