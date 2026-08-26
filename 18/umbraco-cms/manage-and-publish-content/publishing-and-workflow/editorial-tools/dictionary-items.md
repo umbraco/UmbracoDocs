@@ -4,11 +4,9 @@ description: Creating Dictionary Items in Umbraco
 
 # Dictionary Items
 
-Depending on how your site is set up, not all content is edited through the **Content** section. There might be some text in your templates that needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key that is used to fetch the value of the Dictionary Item.
+There might be text on your site — like labels or static text — that isn't part of your content but still needs translation. Using Dictionary Items, you can store a value for each language. Dictionary Items have a unique key, which is the **Name** you give them. This key is used to reference the item elsewhere.
 
-Dictionary Items can be managed from the **Translation** section. Let's take a look at an example. In this example, we will translate "Welcome to Umbraco" from within the template and add it to the dictionary:
-
-<figure><img src="../../../.gitbook/assets/dictionary-item.png" alt=""><figcaption></figcaption></figure>
+Dictionary Items are managed from the **Translation** section.
 
 ## Adding a Dictionary Item
 
@@ -51,24 +49,6 @@ It will only be possible to edit the language(s) that the given user has access 
 Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../../users-and-members/users/README.md#creating-a-user-group) article.
 {% endhint %}
 
-## Fetching Dictionary Values in the Template
-
-To fetch dictionary values in the template, replace the text with the following snippet:
-
-```csharp
-@Umbraco.GetDictionaryValue("Welcome")
-```
-
-![Rendering dictionary item](../../../.gitbook/assets/rendering-dictionary-item.png)
-
-Alternatively, you can specify an `altText` which will be returned if the dictionary value is empty.
-
-```csharp
-@Umbraco.GetDictionaryValueOrDefault("Welcome", "Another amazing day in Umbraco")
-```
-
-![Rendering dictionary item](../../../.gitbook/assets/rendering-altvalue-dictionary-item.png)
-
 ## Importing and exporting Dictionary Items
 
 In some cases, you might want to use the same Dictionary Items on multiple Umbraco websites. For this, you can use the export and import functionality to quickly copy the items from one website to another.
@@ -108,7 +88,5 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 
 ## Related Links
 
-* [API reference for the DictionaryItem](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Models.DictionaryItem.html)
-* [ILanguageService API reference](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.ILanguageService.html)
-* [IDictionaryItemService API reference](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.IDictionaryItemService.html)
 * [Creating a Multilingual Site](../../../develop-with-umbraco/tutorials/multilanguage-setup.md)
+* [Fetching Dictionary Values in a Template](../../../develop-with-umbraco/templating-and-rendering/querying/umbracohelper.md#fetching-dictionary-values)
