@@ -299,7 +299,7 @@ To delete an image from the page:
 
 ## Tables
 
-![Inserting a Table](../../.gitbook/assets/Insert-a-table-v11.png)
+![Inserting a Table](../../.gitbook/assets/Insert-a-table.png)
 
 Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
