@@ -135,6 +135,4 @@ Follow these steps to do a Partial Restore of the updated content node:
 
 When the restore is done, reload the tree to see the changes.
 
-<mark style="background-color:$danger;">UPDATE IMAGE</mark>&#x20;
-
-![Partial restore](<../../../.gitbook/assets/partialRestore-onEnvWithContent (1).png>)
+![Partial restore](../../../.gitbook/assets/partialRestore-onEnvWithContent.png)
