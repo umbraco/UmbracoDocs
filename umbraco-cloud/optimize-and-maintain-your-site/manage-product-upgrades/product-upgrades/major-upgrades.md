@@ -112,30 +112,36 @@ Delete the `<PackageReference>` entries for these packages.
 
 {% tabs %}
 {% tab title="Umbraco 18" %}
-* Update the following packages:
-  * `Umbraco.Forms.Deploy`
-  * `Umbraco.Cms`
-  * `Umbraco.Deploy.Cloud`
-  * `Umbraco.Deploy.Contrib`
-  * `Umbraco.Forms`
-  * `Umbraco.Cloud.Cms`
-  * `Umbraco.Cloud.StorageProviders.AzureBlob`
+6. Update the all `Umbraco.` packages to the latest version 18.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Ensure all projects and packages in your solution is compatible with the latest .NET.
+{% endtab %}
 {% endtab %}
 {% tab title="Umbraco 17" %}
-* Update the following packages:
-  * `Umbraco.Forms.Deploy`
-  * `Umbraco.Cms`
-  * `Umbraco.Deploy.Cloud`
-  * `Umbraco.Deploy.Contrib`
-  * `Umbraco.Forms`
-  * `Umbraco.Cloud.Cms`
-  * `Umbraco.Cloud.StorageProviders.AzureBlob`
-* Open the `Licenses` folder and delete all Umbraco-related `.lic` files.
-* Keep any `.lic` files needed for your third-party tools.
+6. Update the all `Umbraco.` packages to the latest version 17.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Open the `Licenses` folder and delete all Umbraco-related `.lic` files.
+8. Keep any `.lic` files needed for your third-party tools.
 
 If the folder is empty after deleting the files, you can safely remove the entire `Licenses` folder as well.
 
-*  _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
+9. _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
 
     1. Locate and open the `appsettings.json` file (and any environment-specific variants).
     2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
@@ -154,66 +160,73 @@ If the folder is empty after deleting the files, you can safely remove the entir
     ```
 
     This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
-* _\[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
+10. _\[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
+11. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
 
 {% tab title="Umbraco 15 and 16" %}
-Update the following packages:
-
-* `Umbraco.Forms.Deploy`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
+6. Update the all `Umbraco.` packages to the latest version 15/16.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
 
 {% tab title="Umbraco 14" %}
-Update the following packages:
-
-* `Umbraco.Forms.Deploy`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.Identity.Cms`
-* `Umbraco.Cloud.Cms.PublicAccess`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
-* `Microsoft.Extensions.DependencyInjection.Abstractions`
+6. Update the all `Umbraco.` packages to the latest version 14.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
 {% endtab %}
 
 {% tab title="Umbraco 13" %}
 From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `Umbraco.Forms.Deploy` package.
 
-* Remove the `Umbraco.Deploy.Forms` package.
-* Update the following packages:
-  * `Umbraco.Cms`
-  * `Umbraco.Deploy.Cloud`
-  * `Umbraco.Deploy.Contrib`
-  * `Umbraco.Forms`
-  * `Umbraco.Cloud.Cms`
-  * `Umbraco.Cloud.Identity.Cms`
-  * `Umbraco.Cloud.Cms.PublicAccess`
-  * `Umbraco.Cloud.StorageProviders.AzureBlob`
-  * `Microsoft.Extensions.DependencyInjection.Abstractions`
-* Install the `Umbraco.Forms.Deploy` package.
+6. Remove the `Umbraco.Deploy.Forms` package.
+7. Update the all `Umbraco.` packages to the latest version 14.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
+8. Install the `Umbraco.Forms.Deploy` package.
 {% endtab %}
 
 {% tab title="Umbraco 10" %}
-Update the following packages:
-
-* `Umbraco.Deploy.Forms`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.Identity.Cms`
-* `Umbraco.Cloud.Cms.PublicAccess`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
-* `Microsoft.Extensions.DependencyInjection.Abstractions`
+6. Update the all `Umbraco.` packages to the latest version 14.
+  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Deploy.Forms`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
 {% endtab %}
 {% endtabs %}
 
