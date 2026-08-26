@@ -1,6 +1,6 @@
 ---
 description: >-
-  Gate trigger dispatch against your own permission model, stop automations
+  Gate trigger dispatch against your own permission model; stop automations
   from re-triggering each other, and wrap every action with custom
   cross-cutting logic.
 ---
@@ -157,7 +157,7 @@ Registration order sets the nesting order: middleware appended earlier wraps mid
 
 ## Registration
 
-`ITriggerDispatchAuthorizer` and `IActionMiddleware` implementations both need explicit registration on their collection builders — `AutomateTriggerDispatchAuthorizers()` and `AutomateActionMiddleware()`. `IAutomationOriginatedEventBehavior` needs no registration: implement it on a trigger settings class and Automate calls it directly during dispatch.
+`ITriggerDispatchAuthorizer` and `IActionMiddleware` implementations both need explicit registration on their collection builders — `AutomateTriggerDispatchAuthorizers()` and `AutomateActionMiddleware()`. `IAutomationOriginatedEventBehavior` needs no registration: implement it on a trigger settings class, and Automate calls it directly during dispatch.
 
 ## Verify
 
