@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.10) (August 27th 2026)
+* Records: Read record field values in batches, instead of one database query for each field value [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)
+* Records: Populate the Examine records index in groups of records, instead of holding every record for a form in memory at once [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)
+
+{% hint style="info" %}
+On installations with many form entries, the records index rebuild could fail to complete. This release reduces the number of database queries and the amount of memory that rebuild needs.
+{% endhint %}
+
 ### 13.9.9 (August 18th 2026)
 * Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
 * Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)

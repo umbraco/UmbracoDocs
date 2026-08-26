@@ -20,6 +20,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.1) (August 27th 2026)
+
+* Upgrading: Fix a boot failure when upgrading directly from Forms 17.5.0 [#1782](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1782)
+
+{% hint style="warning" %}
+If you run Forms 17.5.0, upgrade to 18.1.1 or later. Versions 18.0.0 to 18.1.0 do not recognize the migration state that Forms 17.5.0 ends on, and the upgrade fails at boot. For details, see the [Version Specific Upgrade Notes](upgrading/version-specific.md) article.
+{% endhint %}
+
 ### [18.1.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.0) (August 20th 2026)
 
 The changes below are the ones made since `18.1.0-rc`. For everything else in this release, see the `18.1.0-rc` notes.
