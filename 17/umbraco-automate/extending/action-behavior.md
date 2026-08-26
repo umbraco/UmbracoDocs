@@ -152,6 +152,8 @@ Replace the default only when a setting is conditionally sensitive in a way `IsS
 
 {% code title="MyProjectComposer.cs" %}
 ```csharp
+using Umbraco.Automate.Core.Automations.Transfer;
+
 builder.Services.AddSingleton<ISensitiveSettingsStripper, MyStripper>();
 ```
 {% endcode %}
