@@ -112,8 +112,8 @@ Delete the `<PackageReference>` entries for these packages.
 
 {% tabs %}
 {% tab title="Umbraco 18" %}
-6. Update the all `Umbraco.` packages to the latest version 18.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+6. Update the all `Umbraco.*` packages to the latest version 18.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Forms.Deploy`
     * `Umbraco.Cms`
@@ -127,7 +127,7 @@ Delete the `<PackageReference>` entries for these packages.
 {% endtab %}
 {% tab title="Umbraco 17" %}
 6. Update the all `Umbraco.` packages to the latest version 17.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Forms.Deploy`
     * `Umbraco.Cms`
@@ -166,7 +166,7 @@ If the folder is empty after deleting the files, you can safely remove the entir
 
 {% tab title="Umbraco 15 and 16" %}
 6. Update the all `Umbraco.` packages to the latest version 15/16.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Forms.Deploy`
     * `Umbraco.Cms`
@@ -180,7 +180,7 @@ If the folder is empty after deleting the files, you can safely remove the entir
 
 {% tab title="Umbraco 14" %}
 6. Update the all `Umbraco.` packages to the latest version 14.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Forms.Deploy`
     * `Umbraco.Cms`
@@ -199,7 +199,7 @@ From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `
 
 6. Remove the `Umbraco.Deploy.Forms` package.
 7. Update the all `Umbraco.` packages to the latest version 14.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Cms`
     * `Umbraco.Deploy.Cloud`
@@ -215,7 +215,7 @@ From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `
 
 {% tab title="Umbraco 10" %}
 6. Update the all `Umbraco.` packages to the latest version 14.
-  * This **does not** include `Umbraco.Community.` packages, as we cannot guarantee their compatibility.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Deploy.Forms`
     * `Umbraco.Cms`
