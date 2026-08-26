@@ -33,6 +33,29 @@ Open a user’s profile from the **Users** section to update:
 * User Group (determines the scope of access in the backoffice).
 * Start nodes for **Content**, **Media**, and element **Library** sections to limit access.
 
+### Managing User Access
+
+From a user's profile, use the **⋯** menu (top-right) to manage their account access:
+
+![Managing User Account Access](../../../.gitbook/assets/Managing-User-Account-Access.png)
+
+* **Delete...**: Permanently remove the user.
+* **Disable**: Manually disable the user's access to the backoffice.
+* **Unlock**: Available only when a user's status is **Locked out** (after repeated failed login attempts). Restores the user's ability to log in.
+* **Change your password**: Reset the password for this user.
+
+The status panel below the profile photo also shows account details for reference:
+
+* **Status** (Active, Disabled, Locked out, Invited, Inactive)
+* **Kind**
+* **Last login**
+* **Failed login attempts**
+* **Last lockout date**
+* **Password last changed**
+* **User created**
+* **User last updated**
+* **Id**
+
 ## Managing Users
 
 When working with multiple users in Umbraco, the user screen provides tools to help you quickly locate and manage users using filters and layout options.
@@ -80,10 +103,10 @@ Click the Cards/Table icon (top-right corner) to switch to a more compact, table
 By default, the User Groups available to new users are **Administrators**, **Editors**, **Sensitive Data**, **Translators,** and **Writers**.
 
 * **Administrators**: Can do anything when editing nodes in the content section (has all permissions).
-* **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has permissions to **Public Access**, **Rollback**, **Browse Node**, **Create Content Template**, **Delete**, **Create**, **Publish**, **Unpublish**, **Update**, **Copy**, **Move** and **Sort**).
+* **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has all **Document permissions** except **Culture and Hostnames**, and all **Document Property Value permissions**).
 * **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../run-in-production/security/sensitive-data-on-members.md) article.
-* **Translators**: These are used for translating your website. Translators are allowed to browse and update nodes as well as grant dashboard access. Translations of site pages must be reviewed by others before publication (has permissions to **Browse Node** and **Update**).
-* **Writers**: Allowed to browse nodes, create nodes, and save content. Not allowed to publish directly but has permissions to **Browse Node**, **Create**, and **Update**.
+* **Translators**: These are used for translating your website. Translators are allowed to read and update nodes, with read and write access to Document property values. Translations of site pages must be reviewed by others before publication (has limited **Document permissions** like **Read** and **Update** only with full **Document Property Value permissions**).
+* **Writers**: Allowed to read nodes, create nodes, receive notifications, and save content. Not allowed to publish directly but has limited **Document permissions** like **Read**, **Create**, **Notifications**, and **Update** with full **Document Property Value permissions**.
 
 {% hint style="info" %}
 In previous versions of Umbraco, "Send to publish" was enabled for Writers. Since Umbraco 16, approval processes can be configured using the official [Umbraco Workflow package](https://umbraco.com/products/add-ons/workflow/).
@@ -128,3 +151,11 @@ Use the following settings to configure the User Group:
 {% hint style="info" %}
 Umbraco Forms has a backoffice security model integrated with Umbraco Users. You can manage the details in the **Users** section of the backoffice, within a tree named **Forms Security**. For more information, see the [Managing Forms Security](https://docs.umbraco.com/umbraco-forms/developer/security) article.
 {% endhint %}
+
+## Technical
+
+As a developer, you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
+
+For the full set of properties available on a User, see the [IUser interface reference](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
+
+To manage users programmatically (for example, assigning a user to a User Group), see [Using the User Service](../../../extend-your-project/server-side-extensions/management/using-services/userservice.md) article.
