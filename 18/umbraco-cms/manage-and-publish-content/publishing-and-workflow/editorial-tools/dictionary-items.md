@@ -82,6 +82,20 @@ The Dictionary Items have now been added to your website.
 
 ![Review the Dictionary Items for import before confirming](../../../.gitbook/assets/dictionary-items-import.png)
 
+## Using Dictionary Items in Templates
+
+A developer can reference a Dictionary Item from a template using its key. For example, the following renders the value of a Dictionary Item named _Welcome_:
+
+{% code title="index.cshtml" %}
+```csharp
+@Umbraco.GetDictionaryValue("Welcome")
+```
+{% endcode %}
+
+{% hint style="info" %}
+Adding Dictionary Items to templates is a development task. For the full set of options, including how to specify a fallback value, see [Fetching Dictionary Values](../../../develop-with-umbraco/templating-and-rendering/querying/umbracohelper.md#fetching-dictionary-values).
+{% endhint %}
+
 ## Using Dictionary Item in a Multilingual website
 
 To use Dictionary Items in a multilingual website, see the [Creating a Multilingual Site](../../../develop-with-umbraco/tutorials/multilanguage-setup.md) article.
@@ -89,4 +103,3 @@ To use Dictionary Items in a multilingual website, see the [Creating a Multiling
 ## Related Links
 
 * [Creating a Multilingual Site](../../../develop-with-umbraco/tutorials/multilanguage-setup.md)
-* [Fetching Dictionary Values in a Template](../../../develop-with-umbraco/templating-and-rendering/querying/umbracohelper.md#fetching-dictionary-values)
