@@ -39,22 +39,22 @@ From a user's profile, use the **⋯** menu (top-right) to manage their account 
 
 ![Managing User Account Access](../../../.gitbook/assets/Managing-User-Account-Access.png)
 
-* **Delete...**: Permanently remove the user.
+* **Delete...** : Permanently remove the user.
 * **Disable**: Manually disable the user's access to the backoffice.
 * **Unlock**: Available only when a user's status is **Locked out** (after repeated failed login attempts). Restores the user's ability to log in.
 * **Change your password**: Reset the password for this user.
 
 The status panel below the profile photo also shows account details for reference:
 
-* **Status** (Active, Disabled, Locked out, Invited, Inactive)
-* **Kind**
-* **Last login**
-* **Failed login attempts**
-* **Last lockout date**
-* **Password last changed**
-* **User created**
-* **User last updated**
-* **Id**
+* Status (Active, Disabled, Locked out, Invited, Inactive)
+* Kind
+* Last login
+* Failed login attempts
+* Last lockout date
+* Password last changed
+* User created
+* User last updated
+* Id
 
 ## Managing Users
 
@@ -103,10 +103,16 @@ Click the Cards/Table icon (top-right corner) to switch to a more compact, table
 By default, the User Groups available to new users are **Administrators**, **Editors**, **Sensitive Data**, **Translators,** and **Writers**.
 
 * **Administrators**: Can do anything when editing nodes in the content section (has all permissions).
-* **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions (has all **Document permissions** except **Culture and Hostnames**, and all **Document Property Value permissions**).
+* **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions. Editors have the following permissions:
+  * All **Document permissions** except **Culture and Hostnames**
+  * All **Document Property Value permissions**
 * **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../run-in-production/security/sensitive-data-on-members.md) article.
-* **Translators**: These are used for translating your website. Translators are allowed to read and update nodes, with read and write access to Document property values. Translations of site pages must be reviewed by others before publication (has limited **Document permissions** like **Read** and **Update** only with full **Document Property Value permissions**).
-* **Writers**: Allowed to read nodes, create nodes, receive notifications, and save content. Not allowed to publish directly but has limited **Document permissions** like **Read**, **Create**, **Notifications**, and **Update** with full **Document Property Value permissions**.
+* **Translators**: These are used for translating your website. Translations of site pages must be reviewed by others before publication. Translators have the following permissions:
+  * **Document permissions** limited to **Read** and **Update**
+  * All **Document Property Value permissions**
+* **Writers**: Allowed to read nodes, create nodes, receive notifications, and save content. Not allowed to publish directly. Writers have the following permissions:
+  * **Document permissions** limited to **Read**, **Create**, **Notifications**, and **Update**
+  * All **Document Property Value permissions**
 
 {% hint style="info" %}
 In previous versions of Umbraco, "Send to publish" was enabled for Writers. Since Umbraco 16, approval processes can be configured using the official [Umbraco Workflow package](https://umbraco.com/products/add-ons/workflow/).
@@ -185,7 +191,7 @@ When a new user is created, you can set specific permissions for that user on di
 
 As a developer, you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
 
-For the full set of properties available on a User, see the [IUser interface reference](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
+For the full set of properties available on a User, see the [`IUser` interface reference](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
 
 To manage users programmatically (for example, assigning a user to a User Group), see [Using the User Service](../../../extend-your-project/server-side-extensions/management/using-services/userservice.md) article.
 
