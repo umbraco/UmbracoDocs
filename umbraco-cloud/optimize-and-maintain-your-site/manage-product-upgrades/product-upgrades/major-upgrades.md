@@ -111,6 +111,16 @@ Delete the `<PackageReference>` entries for these packages.
 5. Select the version you are updating to and follow the instructions:
 
 {% tabs %}
+{% tab title="Umbraco 18" %}
+* Update the following packages:
+  * `Umbraco.Forms.Deploy`
+  * `Umbraco.Cms`
+  * `Umbraco.Deploy.Cloud`
+  * `Umbraco.Deploy.Contrib`
+  * `Umbraco.Forms`
+  * `Umbraco.Cloud.Cms`
+  * `Umbraco.Cloud.StorageProviders.AzureBlob`
+{% endtab %}
 {% tab title="Umbraco 17" %}
 * Update the following packages:
   * `Umbraco.Forms.Deploy`
