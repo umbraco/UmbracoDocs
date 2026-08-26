@@ -32,12 +32,12 @@ public sealed class StoreScopedTriggerDispatchAuthorizer : ITriggerDispatchAutho
         // Return Success when this authorizer has nothing to say about the
         // given trigger or output — the dispatcher treats Success as "not
         // blocking", not "explicitly approved".
-        if (context.Output is not MyStoreScopedTriggerOutput output)
+        if (context.TypedOutput is not MyStoreScopedTriggerOutput output)
         {
             return Task.FromResult(AutomationAuthorizationResult.Success);
         }
 
-        var allowed = /* look up whether context.WorkspaceId may act on output.StoreId */ true;
+        var allowed = /* look up whether context.Automation.WorkspaceId may act on output.StoreId */ true;
 
         return Task.FromResult(allowed
             ? AutomationAuthorizationResult.Success
@@ -153,7 +153,7 @@ builder.AutomateActionMiddleware()
 ```
 {% endcode %}
 
-Registration order sets the nesting order: middleware appended earlier wraps middleware appended later. Placing custom middleware after the built-in error-handling middleware changes what it sees. Unhandled exceptions from the action already surface as a failed `ActionResult` by the time the middleware runs, rather than as a thrown exception.
+Registration order sets the nesting order: middleware appended earlier wraps middleware appended later, with the action itself innermost. Because `Append` always adds to the end of the list, custom middleware ends up inside the built-in error-handling middleware, not wrapping it. An unhandled exception from the action reaches custom middleware as a raw exception through its own call to `next`. Automate's error-handling middleware only converts it to a failed `ActionResult` afterward, once the exception has propagated back out past your middleware. Wrap your own call to `next` in a try/catch if your middleware needs to guarantee it always sees an `ActionResult`.
 
 ## Registration
 
