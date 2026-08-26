@@ -1,6 +1,5 @@
 ---
-description: >-
- Learn how to extend the plugin by adding a custom property value extractor.
+description: Learn how to extend the plugin by adding a custom property value extractor.
 ---
 
 # Extending the plugin
@@ -8,7 +7,8 @@ description: >-
 In this article, you can find an example of extending the plugin by adding a custom property value extractor.
 
 ## Add a custom property value extractor
-When a default property value extractor does not suit your need, you can create your own extractor to *extract* the property value yourself.
+
+When a default property value extractor does not suit your need, you can create your own extractor to _extract_ the property value yourself.
 
 For example, when a product's stock value is `0`, `Google Merchant Feed` desired value is `out_of_stock`. In that case, we have [`DefaultGoogleAvailabilityValueExtractor.cs`](https://github.com/umbraco/Umbraco.Commerce.ProductFeeds/blob/main/src/Umbraco.Commerce.ProductFeeds.Core/Features/PropertyValueExtractors/Implementations/DefaultGoogleAvailabilityValueExtractor.cs) to do the conversion from `0` to `out_of_stock`.
 
@@ -29,4 +29,4 @@ builder.MultipleValuePropertyExtractors()
 
 Afterwards, your extractor name should show up in the dropdown under `Property And Node Mapping` section.
 
-![property value extractor dropdown](./media/property-value-extractor-dropdown.png)
+![property value extractor dropdown](../../.gitbook/assets/property-value-extractor-dropdown.png)

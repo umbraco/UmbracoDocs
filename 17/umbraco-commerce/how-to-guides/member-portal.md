@@ -16,7 +16,7 @@ The first step in building a members portal is to create a Member Type for your 
 2. Click the **+** button next to the **Member Groups** heading in the navigation to create a new Member Type.
 3. Enter a name for the Member Group, such as `Customer`.
 
-![Customer Member Group](../.gitbook/assets/customer-member-group.png)
+![Customer Member Group](<../.gitbook/assets/customer-member-group (1).png>)
 
 4. Click the **Save** button to create the Member Group.
 
@@ -27,7 +27,7 @@ The first step in building a members portal is to create a Member Type for your 
 3. Click on the Member you want to assign to the `Customer` Member Group.
 4. Select the `Customer` Member Group in the **Member Group** property.
 
-![Example Customer](../.gitbook/assets/customer-assign-member-group.png)
+![Example Customer](<../.gitbook/assets/customer-assign-member-group (1).png>)
 
 5. Click the **Save** button to assign the Member to the `Customer` Member Group.
 
@@ -40,11 +40,11 @@ The next step in building a members portal is to create the pages and templates 
 1. Navigate to the **Settings** section of the backoffice.
 2. Create two new Document Types: `Customer Portal` and `Login`.
 
-![Customer Portal Document Types](../.gitbook/assets/document-types.png)
+![Customer Portal Document Types](<../.gitbook/assets/document-types (1).png>)
 
 3. Update your site root Document Type to include the `Customer Portal` and `Login` Document Types as child-pages.
 
-![Allowed Children Configuration](../.gitbook/assets/allowed-children.png)
+![Allowed Children Configuration](<../.gitbook/assets/allowed-children (1).png>)
 
 ### Content Setup
 
@@ -52,7 +52,7 @@ The next step in building a members portal is to create the pages and templates 
 2. Create a new page using the `Customer Portal` Document Type and name it `Customer Portal`.
 3. Create a new page using the `Login` Document Type and name it `Login`.
 
-![Customer Portal Content Structure](../.gitbook/assets/content-structure.png)
+![Customer Portal Content Structure](<../.gitbook/assets/content-structure (1).png>)
 
 4. Expand the context menu for the `Customer Portal` node by clicking the three dots.
 5. Click on the **Public Access** option.
@@ -60,7 +60,7 @@ The next step in building a members portal is to create the pages and templates 
 7. Select the `Customer` Member Group for the group option.
 8. Select the `Login` node for the login and error page options.
 
-![Public Access Configuration](../.gitbook/assets/public-access.png)
+![Public Access Configuration](<../.gitbook/assets/public-access (1).png>)
 
 9. Click **Save** to apply the public access settings.
 
@@ -100,7 +100,7 @@ The `UmbLoginController` class comes pre-installed with Umbraco. It handles the 
 
 On the frontend, customers can enter their username and password and click the **Login** button to access the members portal.
 
-![Login Page](../.gitbook/assets/login-page.png)
+![Login Page](<../.gitbook/assets/login-page (1).png>)
 
 ## Displaying Member Order History
 
@@ -152,7 +152,7 @@ else
 
 The `Customer Portal` page will now display a table of the member's order history, including the order number, date, and total price.
 
-![Order History](../.gitbook/assets/order-history.png)
+![Order History](<../.gitbook/assets/order-history (1).png>)
 
 ### Assigning Orders to a Customer
 
@@ -188,9 +188,9 @@ In your site header, add the following code to display the member login status:
 ```
 {% endcode %}
 
-![Logged Out Status](../.gitbook/assets/logged-out.png)
+![Logged Out Status](<../.gitbook/assets/logged-out (1).png>)
 
-![Logged In Status](../.gitbook/assets/logged-in.png)
+![Logged In Status](<../.gitbook/assets/logged-in (1).png>)
 
 ### Registering a Member
 
@@ -240,4 +240,4 @@ The `UmbRegisterController` class comes pre-installed with Umbraco. It handles t
 
 On the frontend, customers can enter their name, email address, and password to register as a member.
 
-![Register Page](../.gitbook/assets/register-page.png)
+![Register Page](<../.gitbook/assets/register-page (1).png>)

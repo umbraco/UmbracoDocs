@@ -14,7 +14,7 @@ Umbraco Commerce uses Umbraco nodes as its source of information. In order for U
 
 Umbraco Commerce includes default property editors that help manage and configure eCommerce functionalities within the Umbraco backoffice.
 
-![Built-in Property Editors](../.gitbook/assets/property-editors.png)
+![Built-in Property Editors](<../.gitbook/assets/property-editors (1).png>)
 
 The available property editors include:
 

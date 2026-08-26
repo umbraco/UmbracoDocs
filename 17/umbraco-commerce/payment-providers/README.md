@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn about the available integrations for implementing payment
-  providers in your Umbraco Commerce installation.
+  Learn about the available integrations for implementing payment providers in
+  your Umbraco Commerce installation.
 ---
 
-# What are Payment Providers?
+# Commerce Payment Providers
 
 Payment providers are essential for your Umbraco Commerce installation when you want to give users and customers the option to pay for your products.
 
@@ -12,7 +12,7 @@ By default, Umbraco Commerce includes the [Invoice](invoicing/) and [Zero](zero/
 
 ## Available integrations
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Klarna</strong></td><td><a href="klarna/">klarna</a></td></tr><tr><td align="center"><strong>Mollie</strong></td><td><a href="mollie/">mollie</a></td></tr><tr><td align="center"><strong>Nets</strong></td><td><a href="nets/">nets</a></td></tr><tr><td align="center"><strong>PayPal</strong></td><td><a href="paypal/">paypal</a></td></tr><tr><td align="center"><strong>QuickPay</strong></td><td><a href="quickpay/">quickpay</a></td></tr><tr><td align="center"><strong>Stripe</strong></td><td><a href="stripe/">stripe</a></td></tr><tr><td align="center"><strong>Opayo</strong></td><td><a href="opayo/">opayo</a></td></tr><tr><td align="center"><strong>Worldpay</strong></td><td><a href="worldpay/">worldpay</a></td></tr><tr><td align="center"><strong>Buckaroo</strong></td><td><a href="buckaroo/">buckaroo</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Klarna</strong></td><td><a href="klarna/">klarna</a></td></tr><tr><td align="center"><strong>Mollie</strong></td><td><a href="mollie/">mollie</a></td></tr><tr><td align="center"><strong>Nets</strong></td><td><a href="nets/">nets</a></td></tr><tr><td align="center"><strong>PayPal</strong></td><td><a href="paypal/">paypal</a></td></tr><tr><td align="center"><strong>QuickPay</strong></td><td><a href="quickpay/">quickpay</a></td></tr><tr><td align="center"><strong>Stripe</strong></td><td><a href="stripe/">stripe</a></td></tr><tr><td align="center"><strong>Opayo</strong></td><td><a href="opayo/">opayo</a></td></tr><tr><td align="center"><strong>Worldpay</strong></td><td><a href="worldpay/">worldpay</a></td></tr><tr><td align="center"><strong>Buckaroo</strong></td><td><a href="buckaroo/">buckaroo</a></td></tr><tr><td align="center"><strong>Kustom</strong></td><td><a href="kustom/">kustom</a></td></tr></tbody></table>
 
 ## Using These Docs
 

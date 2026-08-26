@@ -4,13 +4,13 @@ description: Learn how to configure Umbraco in order to start using the Checkout
 
 # Configure Umbraco
 
-After installing the Checkout package, a series of content nodes will be created for you on your site. These will control the checkout flow.&#x20;
+After installing the Checkout package, a series of content nodes will be created for you on your site. These will control the checkout flow.
 
 On the root of these nodes, you can configure a series of options to customize the checkout flow to your needs.
 
 ## Step 1: Configuring the Checkout flow
 
-![Overview of some of the different configuration options for customizing the Checkout flow.](../media/checkout/uc_checkout_portal_settings.png)
+![Overview of some of the different configuration options for customizing the Checkout flow.](../../.gitbook/assets/uc_checkout_portal_settings.png)
 
 {% hint style="info" %}
 In Umbraco Commerce 16.1.0, the logo and theme color options have been moved to the store **Settings** section for consistent theming across all add-ons.

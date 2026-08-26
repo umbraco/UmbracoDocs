@@ -16,11 +16,11 @@ This guide is not a direct follow-on from the [getting started tutorial](../tuto
 
 Add a new field on the product's frontend page, to capture the desired length we want to purchase.
 
-![Length Input](../.gitbook/assets/length-input.png)
+![Length Input](<../.gitbook/assets/length-input (1).png>)
 
 The selected length will reflect on the cart value.
 
-![Calculated Cart Values](../.gitbook/assets/cart-with-length.png)
+![Calculated Cart Values](<../.gitbook/assets/cart-with-length (1).png>)
 
 To provide the correct calculations for an order, the captured data will need to go through two different processes behind the scenes:
 
@@ -195,4 +195,4 @@ Create a new `umbraco-package.json` file in a folder in the `App_Plugins` direct
 
 The length property is now displayed in the order details in the Backoffice.
 
-![Order Details](../.gitbook/assets/order-editor-property.png)
+![Order Details](<../.gitbook/assets/order-editor-property (1).png>)

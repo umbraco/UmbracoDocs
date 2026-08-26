@@ -16,7 +16,7 @@ To create Invoicing as a payment method, follow these steps:
 2. Click **Create Payment Method**.
 3. Select **Invoicing** from the list of available payment providers.
 
-![Invoicing Payment method in Umbraco Backoffice](../.gitbook/assets/umbraco-create-payment-method-new.png)
+![Invoicing Payment method in Umbraco Backoffice](../../.gitbook/assets/umbraco-create-payment-method-new.png)
 
 4. **Enter a Name** for the payment method. For example: _Invoicing_.
 5. Enter a value for **SKU**.

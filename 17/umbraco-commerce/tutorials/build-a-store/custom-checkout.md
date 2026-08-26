@@ -63,7 +63,7 @@ To accommodate these steps, you must create a few new Document Types for each st
 
 1. Create Document Types for each of the steps above, adding only properties that make sense for your setup.
 
-![Checkout Steps](../../.gitbook/assets/checkout_structure.png)
+![Checkout Steps](<../../.gitbook/assets/checkout_structure (1).png>)
 
 ## Collecting Customer Information
 
@@ -237,7 +237,7 @@ public async Task<IActionResult> UpdateOrderInformation(UpdateOrderInformationDt
 
 The customer can fill out their details and proceed to the next step in the checkout flow.
 
-![Collecting Customer Information](../../.gitbook/assets/checkout_information.png)
+![Collecting Customer Information](<../../.gitbook/assets/checkout_information (1).png>)
 
 ## Selecting a Shipping Method
 
@@ -366,7 +366,7 @@ public async Task<IActionResult> UpdateOrderShippingMethod(UpdateOrderShippingMe
 
 The customer can select a shipping method and proceed to the next step in the checkout flow.
 
-![Selecting a Shipping Method](../../.gitbook/assets/checkout_shipping_method.png)
+![Selecting a Shipping Method](<../../.gitbook/assets/checkout_shipping_method (1).png>)
 
 ## Selecting a Payment Method
 
@@ -454,7 +454,7 @@ public async Task<IActionResult> UpdateOrderPaymentMethod(UpdateOrderPaymentMeth
 
 The customer can select a payment method and proceed to the next step in the checkout flow.
 
-![Selecting a Payment Method](../../.gitbook/assets/checkout_payment_method.png)
+![Selecting a Payment Method](<../../.gitbook/assets/checkout_payment_method (1).png>)
 
 ## Reviewing Order Details
 
@@ -495,7 +495,7 @@ It is within the `BeginPaymentFormAsync` method that an order number is assigned
 
 The customer can review their order details and proceed to the payment gateway.
 
-![Reviewing Order Details](../../.gitbook/assets/checkout_review.png)
+![Reviewing Order Details](<../../.gitbook/assets/checkout_review (1).png>)
 
 ## Capturing Payment
 
@@ -531,11 +531,11 @@ In the order confirmation, you must use `GetCurrentFinalizedOrderAsync` instead 
 
 The customer can view their order confirmation details.
 
-![Showing an Order Confirmation](../../.gitbook/assets/checkout_confirmation.png)
+![Showing an Order Confirmation](<../../.gitbook/assets/checkout_confirmation (1).png>)
 
 At this stage, the customer should receive an email confirmation of their order.
 
-![Order Confirmation Email](../../.gitbook/assets/order_confirmation_email.png)
+![Order Confirmation Email](<../../.gitbook/assets/order_confirmation_email (1).png>)
 
 Umbraco Commerce comes with a default order confirmation email template. This can be customized to suit your store's branding. See the [Customizing Templates](../../how-to-guides/customizing-templates.md) documentation for more information.
 
@@ -647,4 +647,4 @@ public async Task<IActionResult> RemoveDiscountOrGiftCardCode(DiscountOrGiftCard
 
 The customers can enter a discount or gift card code and apply it to their order.
 
-![Redeeming a Coupon / Gift Card](../../.gitbook/assets/discount.png)
+![Redeeming a Coupon / Gift Card](<../../.gitbook/assets/discount (1).png>)

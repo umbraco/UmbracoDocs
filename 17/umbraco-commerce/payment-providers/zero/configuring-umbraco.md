@@ -16,7 +16,7 @@ To create Zero as a payment method, follow these steps:
 2. Click **Create Payment Method**.
 3. Select **Zero Value** from the list of available payment providers.
 
-![Zero Payment Provider](../.gitbook/assets/zero-payment-provider-new.png)
+![Zero Payment Provider](../../.gitbook/assets/zero-payment-provider-new.png)
 
 4. **Enter a Name** for the payment method. For example: _Zero Payment_.
 5. Enter a value for **SKU**.

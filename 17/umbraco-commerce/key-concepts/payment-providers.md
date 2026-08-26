@@ -79,7 +79,7 @@ _\* denotes a required method implementation_.
 
 What follows is a generalized diagram in order to help in visualizing when each of these methods is called within a regular checkout flow.
 
-![Payment Provider Capture Workflow](../.gitbook/assets/payment_provider_capture_flow.png)
+![Payment Provider Capture Workflow](<../.gitbook/assets/payment_provider_capture_flow (1).png>)
 
 ### Payment Management
 
@@ -124,7 +124,7 @@ public override IEnumerable<TransactionMetaDataDefinition> TransactionMetaDataDe
 };
 ```
 
-![Transaction Meta Data](../.gitbook/assets/transaction_meta_data_dialog.png)
+![Transaction Meta Data](<../.gitbook/assets/transaction_meta_data_dialog (1).png>)
 
 Labels and descriptions for meta data fields are controlled through [Localization](payment-providers.md#localization) entries.
 
