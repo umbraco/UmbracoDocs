@@ -40,7 +40,7 @@ An optional profile for internal classification tasks such as agent routing. The
 
 When set, this profile is used by:
 
-- Agent routing in the Copilot's "Auto" mode (selecting the best agent for a user prompt)
+- Agent routing in "Auto" mode, in both Contextual Copilot and Copilot Workspace (selecting the best agent for a user prompt)
 
 If not set, the default chat profile is used instead.
 
@@ -67,7 +67,7 @@ The profile used for speech-to-text operations when no profile is explicitly spe
 When set, this profile is used by:
 
 - `IAISpeechToTextService.TranscribeAsync()` without a profile ID
-- The Copilot voice input button
+- The voice input button in Contextual Copilot and Copilot Workspace
 
 ## Configuring Settings
 

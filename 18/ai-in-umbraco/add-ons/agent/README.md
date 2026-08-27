@@ -41,7 +41,7 @@ dotnet add package Umbraco.AI.Agent
 - **Management API** - RESTful API for agent operations
 
 {% hint style="info" %}
-For the **Copilot chat sidebar** with frontend tools and HITL approval, install the [Agent Copilot](../agent-copilot/README.md) add-on alongside this package.
+For a chat sidebar with frontend tools and Human-in-the-Loop (HITL) approval, install the [Contextual Copilot](../agent-copilot/README.md) add-on alongside this package. For a full-section, persisted chat experience instead, install [Copilot Workspace](../copilot-workspace/README.md).
 {% endhint %}
 
 ## Quick Start
@@ -159,13 +159,20 @@ The Agent Runtime uses the AG-UI (Agent UI) protocol for streaming responses. Th
 | [API Reference](api/README.md)                     | Management API endpoints                 |
 | [Service Reference](reference/ai-agent-service.md) | IAIAgentService                          |
 
-For Copilot-specific features:
+For Contextual Copilot-specific features:
 
-| Section                                              | Description                     |
-| ---------------------------------------------------- | ------------------------------- |
-| [Copilot Overview](../agent-copilot/README.md)       | Chat sidebar and tool execution |
-| [Frontend Tools](../agent-copilot/frontend-tools.md) | Browser-executable tools        |
-| [Copilot Usage](../agent-copilot/copilot.md)         | Using the chat interface        |
+| Section                                              | Description                                |
+| ---------------------------------------------------- | ------------------------------------------- |
+| [Contextual Copilot](../agent-copilot/README.md)     | Contextual chat sidebar and tool execution |
+| [Frontend Tools](../agent-copilot/frontend-tools.md) | Browser-executable tools                    |
+| [Usage](../agent-copilot/copilot.md)                 | Using the chat interface                    |
+
+For Copilot Workspace-specific features:
+
+| Section                                                | Description                                    |
+| ------------------------------------------------------- | ----------------------------------------------- |
+| [Copilot Workspace](../copilot-workspace/README.md)     | Full-section chat, persisted conversations, and projects |
+| [Usage](../copilot-workspace/copilot-workspace.md)      | Conversations, projects, and the context panel |
 
 ## Related
 
