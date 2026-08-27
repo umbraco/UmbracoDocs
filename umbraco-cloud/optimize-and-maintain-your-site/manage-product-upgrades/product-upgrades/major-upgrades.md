@@ -124,7 +124,7 @@ Delete the `<PackageReference>` entries for these packages.
     * `Umbraco.Cloud.StorageProviders.AzureBlob`
 7. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
-{% endtab %}
+
 {% tab title="Umbraco 17" %}
 6. Update the all `Umbraco.*` packages to the latest version 17.
   * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
