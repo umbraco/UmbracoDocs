@@ -42,7 +42,15 @@ See the [Troubleshooting](../../installation/troubleshooting-installs.md) sectio
 
 ## Umbraco Cloud Compatibility
 
-Umbraco Engage is compatible with Umbraco Cloud (Standard, Professional, and Enterprise plans).
+Umbraco Engage collects, aggregates, analyzes, and stores all visitor data within your own Umbraco installation and database. This analytics processing runs in the same application as your website, so it adds load on top of normal site traffic.
+
+For optimal performance on Umbraco Cloud, we recommend running Umbraco Engage on a **project with dedicated resources**.
+
+Umbraco Engage is compatible with the following Umbraco Cloud plans:
+
+* Standard
+* Professional
+* Enterprise
 
 {% hint style="info" %}
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.

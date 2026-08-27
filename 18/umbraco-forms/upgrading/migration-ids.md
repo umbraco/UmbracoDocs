@@ -38,6 +38,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | b8e2f4a1-3c5d-4e6f-9a7b-1d2e3f4a5b6c | 17.3.0                | Adds an index on UniqueId to the UFRecords table for analytics performance.        |
 | d4f5e6a7-8b9c-4d0e-1f2a-3b4c5d6e7f8a | 17.3.0                | Replaces the index on UFRecords with a covering index that includes UmbracoPageId. |
 | 33c9d3f4-7d41-46f7-a44d-5ed32f26448d | 17.4.0                | Rebuild the Examine records index so that existing records gain sortable fields.   |
+| 188009a1-e582-4971-aff7-87f7e4381bd0 | 18.0.6                | Rebuilds the Examine records index so values of sensitive fields are excluded.     |
 | 16f1cd91-d614-4e0b-844f-0a2434441d34 | 17.5.0                | Adds the UmbracoPageKey column to the Records table.                               |
 | b7d4e1a9-3c62-4f08-9a15-2e6d8f04c3b1 | 17.5.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
 | 3a03c625-3ddc-4eda-9bf3-cc88f112e9a9 | 17.5.0                | Rebuilds the Examine records index so records gain the page key field.             |
@@ -46,8 +47,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 9a013edc-579b-46b5-a85d-d9288e2e074e | 17.5.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
 | 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
 | 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
-| 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Rebuild the records index.                                                          |
-| 188009a1-e582-4971-aff7-87f7e4381bd0 | 18.0.6                | Rebuilds the Examine records index so values of sensitive fields are excluded.     |
+| 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Rebuild the records index. Recognized on the version 18 chain from 18.1.1.         |
 | 91ef4e6d-3fbd-40a2-b42c-77dc5b2791c4 | 18.1.0                | Adds the UmbracoPageKey column to the Records table.                               |
 | a4cc5acc-ee57-40e6-a0aa-73763e7ac444 | 18.1.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
 | 51948cde-a4fc-4889-b855-7a08ce5cbd6e | 18.1.0                | Rebuilds the Examine records index so records gain the page key field.             |

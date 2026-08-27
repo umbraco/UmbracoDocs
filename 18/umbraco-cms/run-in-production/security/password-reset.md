@@ -22,6 +22,12 @@ If the user that is specified in the form does not exist, no e-mail will be sent
 
 If a user is locked out, it is possible to do a password reset. After the e-mail with the password reset link is followed, the user will still be locked out unless the user has specified the new password, in which case the user will automatically be unlocked.
 
+## Manually unlocking a user
+
+An administrator can also unlock a user directly from the backoffice, without waiting for the user to complete a password reset. Open the user's profile in the **Users** section, select the **⋯** menu, and choose **Unlock**. This option is only available when the user's status is **Locked out**.
+
+For more details on managing a user's account status, see [Managing User Access](../../manage-and-publish-content/users-and-members/users/README.md#managing-user-access).
+
 ## Reset admin user password
 
 If you lost the admin user password and you need to reset it, [check this article](reset-admin-password.md).
