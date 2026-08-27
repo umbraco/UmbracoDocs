@@ -125,7 +125,7 @@ Delete the `<PackageReference>` entries for these packages.
 7. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
 
-{% tab title="Umbraco 17" %}
+{% tab title="Umbraco 17 (LTS)" %}
 6. Update the all `Umbraco.*` packages to the latest version 17.
   * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
@@ -198,7 +198,7 @@ If the folder is empty after deleting the files, you can safely remove the entir
 From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `Umbraco.Forms.Deploy` package.
 
 6. Remove the `Umbraco.Deploy.Forms` package.
-7. Update the all `Umbraco.*` packages to the latest version 14.
+7. Update the all `Umbraco.*` packages to the latest version 13.
   * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Cms`
@@ -214,7 +214,7 @@ From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `
 {% endtab %}
 
 {% tab title="Umbraco 10" %}
-6. Update the all `Umbraco.*` packages to the latest version 14.
+6. Update the all `Umbraco.*` packages to the latest version 10.
   * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
   * Ensure the following default Cloud packages are upgraded:
     * `Umbraco.Deploy.Forms`
