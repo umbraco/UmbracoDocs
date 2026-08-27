@@ -194,7 +194,7 @@ If the folder is empty after deleting the files, you can safely remove the entir
     * `Microsoft.Extensions.DependencyInjection.Abstractions`
 {% endtab %}
 
-{% tab title="Umbraco 13" %}
+{% tab title="Umbraco 13 (LTS)" %}
 From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `Umbraco.Forms.Deploy` package.
 
 6. Remove the `Umbraco.Deploy.Forms` package.
