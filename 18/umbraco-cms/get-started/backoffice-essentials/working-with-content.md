@@ -134,7 +134,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-a-Page-v11.png" alt="Link to a Page in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-a-Page.png" alt="Link to a Page in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
