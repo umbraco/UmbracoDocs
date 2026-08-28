@@ -4,6 +4,13 @@
 * [Release Notes](release-notes.md)
 * [Support](support.md)
 
+## Add-ons
+
+* [Forms](add-ons/forms.md)
+* [Commerce](add-ons/commerce.md)
+* [Deploy](add-ons/deploy.md)
+* [AI](https://docs.umbraco.com/dxp-engage-ai)
+
 ## Installation
 
 * [System Requirements](getting-started/for-developers/system-requirements.md)
@@ -130,14 +137,6 @@
   * [Using the Engage API](developers/headless/using-the-marketing-api.md)
   * [Forced-Segment header](developers/headless/forced-segment.md)
   * [Headless Example](developers/headless/headless-example.md)
-
-## Add-ons
-
-* [Overview](add-ons/README.md)
-* [Forms](add-ons/forms.md)
-* [Commerce](add-ons/commerce.md)
-* [Deploy](add-ons/deploy.md)
-* [AI](add-ons/ai.md)
 
 ## Security and Privacy
 
