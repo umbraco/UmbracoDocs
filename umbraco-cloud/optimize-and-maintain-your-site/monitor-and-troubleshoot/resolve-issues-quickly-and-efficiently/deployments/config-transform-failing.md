@@ -8,16 +8,19 @@ Since Config Transforms are applied on every data extraction, the behavior will 
 
 ## How do I know I have this issue?
 
-This problem is a bit tricky to spot, as the only indicator is that changes you made on the source environment are not being applied - even though the deployment was complete (although when pushing from local you might get a warning message).
+This issue is subtle and the only indicator is that your source changes aren't applied despite a successful deployment. However, pushing locally might trigger a warning message.
 
 The environment overview on your project will most likely not mention anything, which means you will have to delve into KUDU.
 
 ## How to check for and resolve the issue
 
-1. Access [KUDU](../../power-tools/) on the environment where you expected to see your changes reflected
-2. Navigate to site > **deployments** folder in KUDU
-3. Find the latest deployment folder, either by date or by ID of the deployment (you can find the latest active deployment ID by opening the **active** file in the folder)
-4. If the deployment folder with the latest ID contains only two items (`log.log` and `status.xml`), that means something went wrong as we would normally see two more files - `commits.uc` and `manifest`
+1. Access [KUDU](../../power-tools/) on the environment where you expected to see your changes reflected.
+2. Open CMD under the Debug Console menu.
+3. Navigate to site > **deployments**.
+4. Find the latest deployment folder, either by date or by ID of the deployment (identify the latest active deployment ID by opening the **active** file).
+
+If the deployment folder with the latest ID contains only two items (`log.log` and `status.xml`), it means something went wrong. Normally, the folder contains two more files: `commits.uc` and `manifest`.
+
 5. Open the `log.log` file and look for anything mentioning `XmlTransform`.
 
 An example of a faulty config transform not being applied could look something like this:
@@ -57,10 +60,10 @@ An example of a faulty config transform not being applied could look something l
 	at OutcoldSolutions.ConfigTransformationTool.TransformationTask.Execute(String destinationFilePath&comma; Boolean forceParametersTask).
 ```
 
-1. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
-2. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
-3. Run a [Schema Deployment From Data File](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md#deploy-operations) to extract the schema that you previously deployed.
+6. Verify the Config Transform file mentioned in the error message and ensure the XML is valid.
+7. Update the Config Transform file as necessary on your local solution and deploy the change to the Cloud environments.
+8. Run a [Schema Deployment From Data File](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md#deploy-operations) to extract the schema that you previously deployed.
 
 {% hint style="info" %}
-To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/
+To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/.
 {% endhint %}
