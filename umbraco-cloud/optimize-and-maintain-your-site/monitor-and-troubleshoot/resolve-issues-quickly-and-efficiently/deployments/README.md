@@ -11,11 +11,11 @@ There are some common errors associated with both of these. Most of the time, it
 
 The most common [Deployment](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md) issues are listed below with guides on how to fix them:
 
-* [Collision Errors](structure-error.md)
-* [Dependency Exception](dependency-exceptions.md)
-* [Colliding Data Types](colliding-datatypes.md)
-* [Deployment Failed (with no error message)](deployment-failed.md)
-* [Changes not being applied](changes-not-being-applied.md)
+* [Collision Errors](structure-error.md).
+* [Dependency Exception](dependency-exceptions.md).
+* [Colliding Data Types](colliding-datatypes.md).
+* [Deployment Failed (with no error message)](deployment-failed.md).
+* [Extractiom Error: Config Transform Failing](config-transform-failing.md).
 
 The most common Content [Transfer](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)/[Restore](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content.md) issues are listed below:
 
