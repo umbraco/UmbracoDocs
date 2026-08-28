@@ -4,6 +4,13 @@
 * [Release Notes](release-notes.md)
 * [Support](support.md)
 
+## Add-ons
+
+* [Forms](add-ons/forms.md)
+* [Commerce](add-ons/commerce.md)
+* [Deploy](add-ons/deploy.md)
+* [AI](https://docs.umbraco.com/dxp-engage-ai)
+
 ## Installation
 
 * [System Requirements](getting-started/for-developers/system-requirements.md)

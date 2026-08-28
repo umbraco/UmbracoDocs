@@ -48,9 +48,9 @@ Go to a form and add a new question. Do you see this option?
 
 Go to **Engage** -> **Settings** -> **Create a new goal**. Do you see the following option called **Umbraco Forms Submission**?
 
-![Umbraco Forms Submission option in Goal dropdown](../.gitbook/assets/engage-forms-goal-type.png)
+![Umbraco Forms submission option in the goal trigger dropdown](../.gitbook/assets/engage-forms-goal-trigger.png)
 
-If you see both options, Umbraco Forms has been configured correctly. If not, ensure that your development team has installed the additional [Umbraco.Engage.Forms NuGet package](https://www.nuget.org/packages/Umbraco.Engage.Forms).
+If you see both options, the Forms add-on has been configured correctly. If not, ensure that your development team has installed the [Forms](../add-ons/forms.md) add-on.
 
 ### 6. Analytics
 

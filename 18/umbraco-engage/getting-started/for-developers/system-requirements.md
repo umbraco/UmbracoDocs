@@ -56,7 +56,7 @@ Your project must use one of these Umbraco Cloud plans on dedicated resources:
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.
 {% endhint %}
 
-Umbraco Deploy is supported for Umbraco Engage. Install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package to transfer Umbraco Engage configuration and analytics entities between environments. See the [Installation](../../installation/installation.md#umbraco-deploy) article for the full list of supported items and details.
+Umbraco Deploy is supported for Umbraco Engage. Install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package to transfer Umbraco Engage configuration items between environments. See the [Deploy](../../add-ons/deploy.md) add-on article for the full list of supported items and details.
 
 ## Frontend Development Requirements
 

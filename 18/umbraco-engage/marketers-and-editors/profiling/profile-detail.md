@@ -6,7 +6,7 @@ description: >-
 
 # Profile detail
 
-In the Profiles section, you can access specific visitor profiles, by clicking **Show profile**. It contains two sections: **Insights** and **Activity**.
+In the Profiles section, you can access specific visitor profiles, by clicking **Show profile**. It contains two sections: **Insights** and **Activity**. Add-ons can add more sections, such as **[Form Submissions](../../add-ons/forms.md)** and **[Commerce](../../add-ons/commerce.md)**.
 
 ## Insights
 
