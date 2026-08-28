@@ -6,7 +6,6 @@
 
 ## Add-ons
 
-* [Overview](add-ons/README.md)
 * [Forms](add-ons/forms.md)
 * [Commerce](add-ons/commerce.md)
 * [Deploy](add-ons/deploy.md)

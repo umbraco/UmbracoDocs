@@ -18,15 +18,15 @@ Add-ons are NuGet packages that extend Umbraco Engage. Most add-ons connect Umbr
 
 | Add-on                  | What it adds                                                                                                      |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [Forms](forms.md)       | Links Umbraco Forms submissions to visitors: a submission goal type and visitor profile insights.                 |
-| [Commerce](commerce.md) | Order tracking per visitor and shopping-based segment rules for Umbraco Commerce.                                 |
-| [Deploy](deploy.md)     | Transfers Umbraco Engage configuration items, like goals and A/B tests, between environments with Umbraco Deploy. |
+| [Forms](add-ons/forms.md)       | Links Umbraco Forms submissions to visitors: a submission goal type and visitor profile insights.                 |
+| [Commerce](add-ons/commerce.md) | Order tracking per visitor and shopping-based segment rules for Umbraco Commerce.                                 |
+| [Deploy](add-ons/deploy.md)     | Transfers Umbraco Engage configuration items, like goals and A/B tests, between environments with Umbraco Deploy. |
 | [AI](https://docs.umbraco.com/dxp-engage-ai)             | A marketing-focused Copilot that answers questions about your Umbraco Engage data in plain language.              |
 
 See each add-on's page for prerequisites, installation steps, and verification.
 
 {% hint style="info" %}
-Looking for headless support? The [Headless](../developers/headless/README.md) package is documented in the Developers section.
+Looking for headless support? The [Headless](developers/headless/README.md) package is documented in the Developers section.
 {% endhint %}
 
 ## Quick Links
