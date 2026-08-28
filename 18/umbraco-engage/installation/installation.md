@@ -67,7 +67,7 @@ It is recommended to consider the information detailed in the section below, to 
 
 ### Add-ons
 
-Umbraco Engage has add-ons that connect it to Umbraco Forms, Umbraco Commerce, Umbraco Deploy, and AI. Each add-on is a separate NuGet package. See the [Add-ons Overview](../add-ons/README.md) for what each add-on does and how to install it.
+Umbraco Engage has add-ons that connect it to Umbraco Forms, Umbraco Commerce, Umbraco Deploy, and AI. Each add-on is a separate NuGet package. See the [overview of available add-ons](../README.md#available-add-ons) to learn about their functionality and what they add to the product.
 
 ### Clientside tracking
 

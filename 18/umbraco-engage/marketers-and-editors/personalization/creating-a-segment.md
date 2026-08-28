@@ -41,7 +41,7 @@ By default, Umbraco Engage provides the following parameters:
 * Reached goals
 * Campaigns
 
-[Add-ons](../../add-ons/README.md) can add more parameters. For example, the [Commerce](../../add-ons/commerce.md) add-on adds two shopping-based parameters.
+Add-ons can add more parameters. For example, the [Commerce](../../add-ons/commerce.md) add-on adds two shopping-based parameters.
 
 By clicking on the tile you will set up a parameter for the segment. For example, you can implement a segment where you group all visitors that use Firefox **after 15:00** in one segment. To do that:
 

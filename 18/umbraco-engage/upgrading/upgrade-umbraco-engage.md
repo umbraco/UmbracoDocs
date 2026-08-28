@@ -45,9 +45,7 @@ If you are using one or more of the below sub-packages, they also need to be upg
 | Umbraco.Engage.Data           | The data connectivity layer for Engage.                                                  |
 | Umbraco.Engage.Common         | The shared utility library for Engage.                                                   |
 | Umbraco.Engage.StaticAssets   | The Static Assets library for Engage.                                                    |
-| Umbraco.Engage.Forms          | A package that extends Umbraco Engage with Umbraco Forms.                                |
+| Umbraco.Engage.Forms          | A package that extends Umbraco Engage with [Umbraco Forms](../add-ons/forms.md).         |
 | Umbraco.Engage.Headless       | A package that adds headless functionality to Umbraco Engage.                            |
-| Umbraco.Engage.Commerce       | A package that extends Umbraco Engage with Umbraco Commerce.                             |
-| Umbraco.Engage.Deploy         | A package that extends Umbraco Engage with Umbraco Deploy.                               |
-
-Learn more about the Forms, Commerce, and Deploy packages in the [Add-ons](../add-ons/README.md) section.
+| Umbraco.Engage.Commerce       | A package that extends Umbraco Engage with [Umbraco Commerce](../add-ons/commerce.md).   |
+| Umbraco.Engage.Deploy         | A package that extends Umbraco Engage with [Umbraco Deploy](../add-ons/deploy.md).       |

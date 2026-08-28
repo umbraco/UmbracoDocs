@@ -26,7 +26,7 @@ Add-ons are NuGet packages that extend Umbraco Engage. Most add-ons connect Umbr
 See each add-on's page for prerequisites, installation steps, and verification.
 
 {% hint style="info" %}
-Looking for headless support? The [Headless](../developers/headless/README.md) package is documented in the Developers section.
+Looking for headless support? The [Headless](developers/headless/README.md) package is documented in the Developers section.
 {% endhint %}
 
 ## Quick Links
