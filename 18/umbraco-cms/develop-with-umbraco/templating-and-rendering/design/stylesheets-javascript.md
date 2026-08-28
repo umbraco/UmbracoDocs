@@ -11,9 +11,11 @@ This article explains how to work with stylesheets and JavaScript and clarifies 
 {% hint style="warning" %}
 Managing stylesheets and JavaScript through the backoffice is not the recommended approach for most projects. The backoffice editor doesn't integrate with source control, build tooling, or local testing.
 
-Maintain these files locally in the `wwwroot/css` and `wwwroot/scripts` folders using your own IDE. Deploy them through your regular build and deployment process. For more information, see [Source Control](../../application-code/backend-and-custom-logic/source-control.md).
+Maintain these files in your project using your own IDE, and deploy them through your regular build and deployment process. For more information, see [Source Control](../../application-code/backend-and-custom-logic/source-control.md).
 
-Files you add or edit locally still appear in the backoffice. Click **...** next to the **Stylesheets** or **Scripts** folder and select **Reload children** to see the changes.
+Your site can serve stylesheets and JavaScript from anywhere under `wwwroot`, so these files don't have to sit in the folders shown below. The backoffice only lists the folders set by the `UmbracoCssPath` and `UmbracoScriptsPath` settings, which default to `wwwroot/css` and `wwwroot/scripts`. For more information, see [Global Settings](../../configuration/globalsettings.md).
+
+Files you add or edit in those folders still appear in the backoffice. Click **...** next to the **Stylesheets** or **Scripts** folder and select **Reload children** to see the changes.
 {% endhint %}
 
 ## Stylesheets in the Backoffice
@@ -38,7 +40,7 @@ To create a stylesheet:
 
 7. Click **Save**.
 
-The stylesheet is saved in the `wwwroot/css` folder of your project.
+The stylesheet is saved in the `wwwroot/css` folder of your project by default.
 
 ### Using stylesheets
 
@@ -78,7 +80,7 @@ To create JavaScript files:
 
 7. Click **Save**.
 
-The JavaScript is saved in the `wwwroot/scripts` folder of your project.
+The JavaScript is saved in the `wwwroot/scripts` folder of your project by default.
 
 ### Using JavaScript files
 
