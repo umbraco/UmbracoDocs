@@ -155,7 +155,6 @@
       * [Dependency Exception](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/dependency-exceptions.md)
       * [Merge Conflicts on Flexible Environments](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md)
       * [Troubleshooting deployments failing with no error message](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/deployment-failed.md)
-      * [Troubleshooting duplicate dictionary items](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/duplicate-dictionary-items.md)
       * [Path too long Exception](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/path-too-long-exception.md)
       * [Schema Mismatches](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md)
       * [How to resolve collision errors](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md)
