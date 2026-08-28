@@ -22,7 +22,7 @@ Umbraco Engage uses **columnstore indexes** for optimal query performance on ana
 ### SQL Server (On-Premises / Self-Hosted)
 
 * **SQL Server 2014 or higher** is required
-* Columnstore index support varies by edition - Enterprise Edition is recommended for older SQL Server versions
+* Columnstore index support varies by edition — Enterprise Edition is recommended for older SQL Server versions
 
 ### Azure SQL
 
@@ -44,13 +44,13 @@ See the [Troubleshooting](../../installation/troubleshooting-installs.md) sectio
 
 Umbraco Engage collects, aggregates, analyzes, and stores all visitor data within your own Umbraco installation and database. This analytics processing runs in the same application as your website, so it adds load on top of normal site traffic.
 
-For optimal performance on Umbraco Cloud, we recommend running Umbraco Engage on a **project with dedicated resources**.
+To run Umbraco Engage on Umbraco Cloud, [**dedicated resources are required**](https://umbraco.com/products/umbraco-cloud/umbraco-cloud-scaling/).
 
-Umbraco Engage is compatible with the following Umbraco Cloud plans:
+Your project must use one of these Umbraco Cloud plans on dedicated resources:
 
-* Standard
-* Professional
-* Enterprise
+* Standard with Dedicated resources&#x20;
+* Professional with Dedicated resources
+* Enterprise with Dedicated resources
 
 {% hint style="info" %}
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.
