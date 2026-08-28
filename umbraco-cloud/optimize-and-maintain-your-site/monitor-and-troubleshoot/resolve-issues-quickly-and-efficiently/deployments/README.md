@@ -14,16 +14,15 @@ The most common [Deployment](../../../../build-and-customize-your-solution/handl
 * [Collision Errors](structure-error.md).
 * [Dependency Exception](dependency-exceptions.md).
 * [Colliding Data Types](colliding-datatypes.md).
-* [Language Mismatch](language-mismatch.md).
 * [Deployment Failed (with no error message)](deployment-failed.md).
 * [Changes not being applied](config-transform-failing.md).
 
 The most common Content [Transfer](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)/[Restore](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content.md) issues are listed below:
 
-* [Schema mismatch](schema-mismatches.md).
+* [Schema mismatch](schema-mismatches.md)
 * [SQL Timeouts](https://docs.umbraco.com/umbraco-deploy/deploy-settings#timeout-settings).
-* [Dependency Exception](dependency-exceptions.md).
-* [Media path too long](path-too-long-exception.md).
+* [Dependency Exception](dependency-exceptions.md)
+* [Media path too long](path-too-long-exception.md)
 
 With the introduction of Flexible Environments, the chance of getting merge conflicts on Umbraco Cloud has increased. Read more about what to do in case of merge conflicts and how to avoid them.
 
