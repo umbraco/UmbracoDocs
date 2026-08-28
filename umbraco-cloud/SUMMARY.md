@@ -150,7 +150,7 @@
     * [The Umbraco Cloud Portal](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/troubleshooting-portal.md)
     * [Site Performance checklist](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/troubleshooting-siteperformance.md)
     * [Troubleshooting deployments](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/README.md)
-      * [Extraction error: Config transforms failing](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/changes-not-being-applied.md)
+      * [Extraction error: Config transforms failing](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/config-transform-failing.md)
       * [Extraction error: Data Type collisions](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/colliding-datatypes.md)
       * [Dependency Exception](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/dependency-exceptions.md)
       * [Merge Conflicts on Flexible Environments](optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md)
