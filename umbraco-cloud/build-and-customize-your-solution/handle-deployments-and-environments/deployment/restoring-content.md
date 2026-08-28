@@ -53,7 +53,7 @@ This option can be used on an empty environment or when you already have content
 
 3. Choose **Restore environment** from the menu.
 4. Use the dropdown to select the environment you want to restore from.
-5. Click **Restore from \[environment name]** to initiate the restore.
+5. Click **Restore from [environment name]** to initiate the restore.
 
 When completed, you will see your content reflected in the Content section and the media in the Media section.
 
@@ -63,7 +63,7 @@ In some cases, it might be necessary to refresh the browser window to see the re
 
 ## Tree Restore
 
-The Tree Restore option gives you the option to restore only a single tree, like just the content tree or just the Media tree.
+The Tree Restore option gives you the option to restore only a single tree, like only the content or Media tree.
 
 For example, if triggered from the content tree, only the content items will be restored. Only referenced (dependencies) elements, media, and forms will be included in the restore.
 
@@ -73,7 +73,7 @@ For example, if triggered from the content tree, only the content items will be 
 <figure><img src="../../../.gitbook/assets/partial-restore.png" alt=""><figcaption></figcaption></figure>
 
 3. Use the dropdown to select the environment you want to restore from.
-4. Click **Restore from \[environment name]** to initiate the restore.
+4. Click **Restore from [environment name]** to initiate the restore.
 
 When completed, click on the ellipses next to the tree title again and choose **Reload**.&#x20;
 
@@ -115,9 +115,7 @@ To see the restored content, **reload** the content tree: Click on the ellipses 
 Keep in mind that if you select an item with ancestors/parents, all the ancestors above it, required for the item to exist, are restored as well.
 {% endhint %}
 
-<mark style="background-color:$danger;">UPDATE GIF</mark>&#x20;
-
-![Partial restore on empty environment](../../../.gitbook/assets/partialRestore-onEmpty-v9.gif)
+![Partial restore on empty environment](../../../.gitbook/assets/partialRestore-onEmpty.gif)
 
 ### Environment with existing content or media
 
@@ -128,13 +126,11 @@ Imagine that you are working on your project locally. One of your content editor
 Follow these steps to do a Partial Restore of the updated content node:
 
 1. Click ellipses next to the item you want to restore.
-2. Choose **Partial Restore**_._
+2. Choose **Partial Restore**.
 3. Select the environment that you would like to restore content from.
 4. Choose whether to restore any available subitems.
 5. Click **Restore** to start restoring the items.
 
 When the restore is done, reload the tree to see the changes.
 
-<mark style="background-color:$danger;">UPDATE IMAGE</mark>&#x20;
-
-![Partial restore](<../../../.gitbook/assets/partialRestore-onEnvWithContent (1).png>)
+![Partial restore](../../../.gitbook/assets/partialRestore-onEnvWithContent.png)
