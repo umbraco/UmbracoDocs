@@ -24,7 +24,7 @@ Add a `.cshtml` file to the `Views/Partials` folder of your project using your o
 
 ## Partial Views in the Backoffice
 
-You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice. Use this to scaffold a file, then move ongoing edits to your project.
+You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice. The file is created in your project's `Views/Partials` folder, so you can continue editing it in your own IDE.
 
 ![Creating a new partial view](../../../.gitbook/assets/create-partial.png)
 
