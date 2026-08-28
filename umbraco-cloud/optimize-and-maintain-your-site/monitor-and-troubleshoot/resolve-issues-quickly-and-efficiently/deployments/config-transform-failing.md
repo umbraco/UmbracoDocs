@@ -65,5 +65,5 @@ An example of a faulty config transform not being applied could look something l
 8. Run a [Schema Deployment From Data File](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md#deploy-operations) to extract the schema that you previously deployed.
 
 {% hint style="info" %}
-To find errors in the config transform, you can use an xml validation tool like https://www.xmlvalidation.com/.
+To find errors in the config transform, you can use an xml validation tool like [XML Validation](https://www.xmlvalidation.com/).
 {% endhint %}
