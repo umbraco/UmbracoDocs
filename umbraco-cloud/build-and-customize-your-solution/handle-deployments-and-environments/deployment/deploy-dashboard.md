@@ -28,14 +28,14 @@ To access the Deploy settings in the Umbraco backoffice, follow these steps:
 5. Navigate to the **Settings** section in the Backoffice.
 
 {% tabs %}
-{% tab title="Deploy 18 and later" %}
+{% tab title="Version 18+" %}
 Locate the **Deploy** section in the **Settings** tree.
 
 ![Deploy settings in the Backoffice](../../../.gitbook/assets/deploy-settings-pages.png)
 
 {% endtab %}
 
-{% tab title="Deploy 17 and earlier" %}
+{% tab title="Earlier versions" %}
 Locate the **Deploy** dashboard.
 
 ![Deploy settings in the Backoffice](../../../.gitbook/assets/Deploy-settings-v17.png)
@@ -48,7 +48,7 @@ Locate the **Deploy** dashboard.
 Here you can see whether the latest deployment has been completed or failed. You can see the version of Umbraco Deploy you are running and the last time an operation was run.
 
 {% tabs %}
-{% tab title="Deploy 18 and later" %}
+{% tab title="Version 18+" %}
 
 **Status**, **Schema**, and **Configuration** are separate pages. You can access each page from the Deploy section in the Settings tree.
 
@@ -56,7 +56,7 @@ Here you can see whether the latest deployment has been completed or failed. You
 
 {% endtab %}
 
-{% tab title="Deploy 17 and earlier" %}
+{% tab title="Earlier versions" %}
 
 The Deploy dashboard contains information about the Deploy status, Deploy operations, Download Deploy artifacts, the Schema comparison table, and Configuration details.
 
@@ -95,14 +95,14 @@ This operation will set the cached artifact signatures for all entities within t
 After running an export, exported zip archives are stored temporarily on the environment. You can delete them from here once you no longer need them.
 
 {% tabs %}
-{% tab title="Deploy 18 and later" %}
+{% tab title="Version 18+" %}
 On the Status page, a **Delete export archives** card appears after at least one export archive exists. The card lists the current number of stored archives.
 
 ![Delete export archives card](../../../.gitbook/assets/delete-export-archives-v18.png)
 
 {% endtab %}
 
-{% tab title="Deploy 17 and earlier" %}
+{% tab title="Earlier versions" %}
 On the Deploy dashboard, a **Delete all exported ZIP archives** section appears after at least one export archive exists. The section shows the number of stored archives.
 
 ![Delete all exported ZIP archives section](../../../.gitbook/assets/delete-export-archives-v17.png)
@@ -115,7 +115,7 @@ On the Deploy dashboard, a **Delete all exported ZIP archives** section appears 
 On the Schema page, you get an overview of the state of the schema in your environment.
 
 {% tabs %}
-{% tab title="Deploy 18 and later" %}
+{% tab title="Version 18+" %}
 The first thing you'll see is a summary of the state of the schema. It'll show how many entities were found across how many entities, and it will also highlight if any items require attention.
 
 <figure><img src="../../../.gitbook/assets/schema-comparison-summary.png" alt=""><figcaption>Schema Comparison</figcaption></figure>
@@ -142,7 +142,7 @@ This will show the difference between entities stored in Umbraco and the `.uda` 
 
 {% endtab %}
 
-{% tab title="Deploy 17 and earlier" %}
+{% tab title="Earlier versions" %}
 
 The Schema comparison table is further down the Deploy dashboard. It shows a short description followed by **Jump to** quick-links per schema kind, and a **Hide up to date** toggle.
 
@@ -164,14 +164,14 @@ Each row has a **View details** dropdown with two actions: **Create file** and *
 ## Configuration
 
 {% tabs %}
-{% tab title="Deploy 18 and later" %}
+{% tab title="Version 18+" %}
 In the Configuration page, you can see how Deploy has been [configured](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings) for your environment. You get an overview of the configuration options, the current value(s), and notes that help you understand each of the settings. Updates need to be applied in the `appsettings.json` file.
 
 <figure><img src="../../../.gitbook/assets/deploy-settings-configuration.png" alt=""><figcaption><p>Example of Umbraco Deploy configuration.</p></figcaption></figure>
 
 {% endtab %}
 
-{% tab title="Deploy 17 and earlier" %}
+{% tab title="Earlier versions" %}
 
 The Configuration details table is further down the Deploy dashboard, below the Schema comparison table. It shows how Deploy has been [configured](https://docs.umbraco.com/umbraco-deploy/17.latest/getting-started/deploy-settings) for your environment. It displays a Setting options column, the Current value(s), and Notes with a Read more link for further detail on each setting. Updates need to be applied in the `appsettings.json` file.
 
