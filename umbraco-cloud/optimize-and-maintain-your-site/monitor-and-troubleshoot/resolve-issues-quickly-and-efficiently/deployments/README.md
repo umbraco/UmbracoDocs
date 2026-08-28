@@ -15,7 +15,7 @@ The most common [Deployment](../../../../build-and-customize-your-solution/handl
 * [Dependency Exception](dependency-exceptions.md).
 * [Colliding Data Types](colliding-datatypes.md).
 * [Deployment Failed (with no error message)](deployment-failed.md).
-* [Changes not being applied](config-transform-failing.md).
+* [Extractiom Error: Config Transform Failing](config-transform-failing.md).
 
 The most common Content [Transfer](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/content-transfer.md)/[Restore](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/restoring-content.md) issues are listed below:
 
