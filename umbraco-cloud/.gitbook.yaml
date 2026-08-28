@@ -109,8 +109,8 @@ redirects:
     troubleshooting/deployments/dependency-exceptions: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/dependency-exceptions.md
     troubleshooting/deployments/merge-conflicts-on-flexible-environments: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/merge-conflicts-on-flexible-environments.md
     troubleshooting/deployments/deployment-failed: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/deployment-failed.md
-    troubleshooting/deployments/duplicate-dictionary-items: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/duplicate-dictionary-items.md
-    troubleshooting/deployments/language-mismatch: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/language-mismatch.md
+    troubleshooting/deployments/duplicate-dictionary-items: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/README.md
+    troubleshooting/deployments/language-mismatch: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/README.md
     troubleshooting/deployments/path-too-long-exception: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/path-too-long-exception.md
     troubleshooting/deployments/schema-mismatches: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/schema-mismatches.md
     troubleshooting/deployments/structure-error: optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/structure-error.md
