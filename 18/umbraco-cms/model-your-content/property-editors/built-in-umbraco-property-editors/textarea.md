@@ -22,7 +22,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### With a character limit and rows limit
 
-![Textbox Content Example With Limits](../../../.gitbook/assets/Textarea-Content-Limit-v8.png)
+![Textbox Content Example With Limits](../../../.gitbook/assets/Textarea-Content-Limit.png)
 
 ## MVC View Example
 
