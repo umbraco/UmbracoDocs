@@ -76,14 +76,15 @@ To apply a format using the formatting buttons:
 
 ### Copying Content from Other Programs
 
-{% hint style="info" %}
-When you write content in another editor and copy it into a Rich Text Editor, you may encounter style issues on your website.
-{% endhint %}
 
 While pasting content, the original text styles are preserved which can lead to different font faces, sizes, and colors displaying on the website when viewed.
 
 {% hint style="info" %}
-To prevent formatting issues, we recommended pasting the content first into a markdown editor such as Notepad, then copying and pasting it into your Rich Text Editor.
+
+When you write content in another editor and copy it into a Rich Text Editor, you may encounter style issues on your website.
+
+To prevent formatting issues, start by pasting the content into a markdown editor such as Notepad. Then you can copy the _cleaned_ content into your Rich Text Editor.
+
 {% endhint %}
 
 ### Remove Formatting
