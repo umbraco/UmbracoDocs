@@ -299,17 +299,23 @@ To delete an image from the page:
 
 ## Tables
 
-![Inserting a Table](../../.gitbook/assets/Insert-a-table.png)
+![Inserting a Table](../../.gitbook/assets/rte-create-table.png)
 
 Tables are used to format information in a grid-based structure. When you insert a table, you select how many rows and columns the table should comprise of. Additionally, you can fill in some optional formatting properties. These values can be changed later, so it is not important to know exactly what your table will look like when you create it.
 
 ### Editing an Existing Table
 
-![Editing an Existing Table](../../.gitbook/assets/Editing-an-existing-table-v11.png)
+When you place the mouse courser within the table, you will see three dots either horizontally og vertically placed on the edges of the table. Click these to open configuration options for that specific row or column.
 
-To edit the table after creating it, click on the table. A pop-up appears with different table properties and options. Alternatively, you can click on the **Table** button in the Rich Text Editor toolbar.
+![Editing an Existing Table](../../.gitbook/assets/rte-edit-table.png)
 
-![Table Properties](../../.gitbook/assets/table-properties-v11.png)
+To edit the table properties after creating it follow these steps:
+
+1. Place the mouse courser in the table.
+2. Click on the **Table** button in the Rich Text Editor toolbar.
+3. Select **Table Properties**.
+
+![Table Properties](../../.gitbook/assets/rte-table-properties.png)
 
 Clicking on **Table Properties** gives you different options for modifying the table’s appearance. However, the developer of the website may have already created table styles for you so you may not need to adjust these settings.
 
