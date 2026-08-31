@@ -306,7 +306,7 @@ Tables are used to format information in a grid-based structure. When you insert
 
 ### Editing an Existing Table
 
-When you place the mouse courser within the table, you will see three dots either horizontally og vertically placed on the edges of the table. Click these to open configuration options for that specific row or column.
+When you place the mouse courser within the table, you will see three dots either horizontally or vertically placed on the edges of the table. Click these to open configuration options for that specific row or column.
 
 ![Editing an Existing Table](../../.gitbook/assets/rte-edit-table.png)
 
