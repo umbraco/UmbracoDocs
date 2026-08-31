@@ -1,4 +1,4 @@
-# Working with Rich Text Editor
+# Working with Rich Text Editors
 
 The Umbraco Rich Text Editor (RTE) is a field where you, as an editor, can be creative. You can select how much you want to do yourself. You can work on text content, format the text, or leave it the way it is. If you want to do more, you can insert images, create tables, or create links to other pages/documents.
 
