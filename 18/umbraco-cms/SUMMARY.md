@@ -52,7 +52,7 @@
   * [Deleting and Restoring Pages](get-started/backoffice-essentials/deleting-and-restoring-pages.md)
   * [Sections](get-started/backoffice-essentials/sections.md)
   * [Sidebar](get-started/backoffice-essentials/sidebar.md)
-  * [Working with Rich Text Editor](get-started/backoffice-essentials/working-with-content.md)
+  * [Working with Rich Text Editors](get-started/backoffice-essentials/working-with-rich-text-editors.md)
   * [Tips & Tricks](get-started/backoffice-essentials/tips-and-tricks/README.md)
     * [Refreshing the Tree View](get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md)
     * [Audit Trail](get-started/backoffice-essentials/tips-and-tricks/audit-trail.md)

@@ -110,7 +110,7 @@ redirects:
     reference/notifications/mediatypeservice-notifications: reference/notifications/README.md
     reference/notifications/membertypeservice-notifications: reference/notifications/README.md
     reference/notifications/relationservice-notifications: reference/notifications/README.md
-    tutorials/editors-manual/working-with-content/rich-text-editor: tutorials/editors-manual/working-with-content.md
+    tutorials/editors-manual/working-with-content/rich-text-editor: get-started/backoffice-essentials/working-with-rich-text-editors.md
     fundamentals/backoffice/content-templates: fundamentals/backoffice/document-blueprints.md
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
     reference/routing/umbraco-api-controllers/authorization: reference/routing/umbraco-api-controllers/README.md
@@ -197,7 +197,7 @@ redirects:
     get-started/editors-manual/getting-started-with-umbraco/deleting-and-restoring-pages: get-started/backoffice-essentials/deleting-and-restoring-pages.md
     get-started/editors-manual/getting-started-with-umbraco/sections: get-started/backoffice-essentials/sections.md
     get-started/editors-manual/getting-started-with-umbraco/sidebar: get-started/backoffice-essentials/sidebar.md
-    get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-content.md
+    get-started/editors-manual/getting-started-with-umbraco/working-with-content: get-started/backoffice-essentials/working-with-rich-text-editors.md
     get-started/editors-manual/tips-and-tricks: get-started/backoffice-essentials/tips-and-tricks/README.md
     get-started/editors-manual/tips-and-tricks/working-with-folders: get-started/backoffice-essentials/tips-and-tricks/refreshing-the-tree-view.md
     get-started/editors-manual/tips-and-tricks/audit-trail: get-started/backoffice-essentials/tips-and-tricks/audit-trail.md
@@ -210,3 +210,4 @@ redirects:
     extend-your-project/backoffice-extensions/utilities/sorting: extend-your-project/backoffice-extensions/sorting.md
     extend-your-project/backoffice-extensions/utilities/modals: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/README.md
     model-your-content/content-types-and-structure/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/document-type-options.md
+    get-started/backoffice-essentials/working-with-content: get-started/backoffice-essentials/working-with-rich-text-editors.md
