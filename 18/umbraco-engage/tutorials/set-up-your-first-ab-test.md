@@ -32,6 +32,10 @@ This tutorial does not cover defining a plan or what makes a project valid for t
 
 Once you have confirmed your website is eligible for testing and defined a clear hypothesis and objective, you are ready to set up the test.
 
+## Before you start
+
+Every test must belong to a project. If none exist yet, see [Create a project](../marketers-and-editors/ab-testing/setting-up-the-ab-test.md#create-a-project) before starting the test.
+
 ## Choose test type
 
 Umbraco Engage enables you to run different types of tests depending on your objective and goal for running the test.
@@ -94,7 +98,7 @@ The following steps guide you through configuring the different parts of the tes
 ### Step 1: Information
 
 1. Give the test a **Title**.
-2. Select which **Project** the test is a part of or create a new project.
+2. Select which **Project** the test is a part of.
 3. Give the test a **Description** ideally focused on the hypothesis the test is based on.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-setup-1.png" alt=""><figcaption></figcaption></figure>

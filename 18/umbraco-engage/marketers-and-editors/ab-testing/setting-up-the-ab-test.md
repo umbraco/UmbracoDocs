@@ -14,6 +14,19 @@ Starting A/B tests can be done in two ways:
 * Initiate a Single Page, Multiple Page, or Document Type test via the Workspace View on the specific page,
 * Initiate Multipage and Document Type tests via the Engage section.
 
+## Create a project
+
+Every test must belong to a project.
+
+To create a project:
+
+1. Go to **Engage** > **A/B Testing**.
+2. Click **Add new project**.
+3. Enter the **Name** and **Description** of the new project.
+4. Select **Save and close**.
+
+![Create a project](../../.gitbook/assets/create-new-project.png)
+
 ## Set up the test
 
 Open the Umbraco content tree and select the A/B Tests Workspace View on the page.
@@ -28,11 +41,13 @@ When you open the Workspace View you will have an overview of all the A/B tests 
 
 ## Configure the A/B test
 
-When you start a new test you will have to specify the following:
+A test must belong to a project. If none exist yet, go to **Engage** > **A/B Testing** and select **Add new project** before creating your first test. The **Part of project** field only lists existing projects. There's no option to create one inline.
 
-* The title of the test.
-* Which testing project it should be part of.
-* Write a description/hypothesis.
+When you start a new test, you will have to specify the following:
+
+* The Title of the test.
+* Part of project.
+* Description/hypothesis.
 
 After that, you need to specify which [Goal](../settings/setting-up-goals.md) you want to measure, as it is all about optimizing for this goal. For details on how to set up a new goal, see the [Goals](../settings/setting-up-goals.md#setting-up-a-new-goal) article. Set the audience that you want to include in the test.
 
