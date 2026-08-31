@@ -110,6 +110,7 @@ redirects:
     reference/notifications/mediatypeservice-notifications: reference/notifications/README.md
     reference/notifications/membertypeservice-notifications: reference/notifications/README.md
     reference/notifications/relationservice-notifications: reference/notifications/README.md
+    tutorials/editors-manual/working-with-content: get-started/backoffice-essentials/working-with-rich-text-editors.md
     tutorials/editors-manual/working-with-content/rich-text-editor: get-started/backoffice-essentials/working-with-rich-text-editors.md
     fundamentals/backoffice/content-templates: fundamentals/backoffice/document-blueprints.md
     reference/configuration/runtimeminificationsettings: reference/configuration/README.md
