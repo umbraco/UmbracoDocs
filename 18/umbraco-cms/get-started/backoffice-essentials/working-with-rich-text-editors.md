@@ -21,7 +21,7 @@ The Rich Text Editor is like any other word-processing program. You write the te
 
 To make your work easier, there are shortcut keys for certain editor functions. Use the following shortcut keys to carry out certain commands:
 
-| Windows/Linux                                     | MacOS                                            | Action                   |
+| Windows/Linux                                     | macOS                                            | Action                   |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------ |
 | <kbd>Ctrl</kbd> + <kbd>A</kbd>                    | <kbd>Cmd</kbd> + <kbd>A</kbd>                    | Select all               |
 | <kbd>Ctrl</kbd> + <kbd>B</kbd>                    | <kbd>Cmd</kbd> + <kbd>B</kbd>                    | Bold                     |
