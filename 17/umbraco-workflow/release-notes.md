@@ -16,6 +16,11 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### 17.4.2 (August 31 2026)
+
+* Fixes culture resolution for external approval using an invariant workflow on a culture-variant document.
+* Further improvements to segment display in the change description element.
+
 ### [17.4.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.1)  (August 25 2026)
 
 * Fixes a bug where segments associated with a workflow process could be truncated [#170](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/170)
