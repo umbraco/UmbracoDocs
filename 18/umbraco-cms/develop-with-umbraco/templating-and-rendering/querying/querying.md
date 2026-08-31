@@ -27,7 +27,7 @@ You can also retrieve content using the `Guid` Id. In the example "ca4249ed-2b23
 @Umbraco.Content(Guid.Parse("ca4249ed-2b23-4337-b522-63cabe5587d1"))
 ```
 
-You can also pass a [Udi](udi-identifiers.md) to retrieve the content.
+You can also pass a UDI to retrieve the content. For more information, see the [UDI Identifiers](udi-identifiers.md) article.
 
 ```csharp
 // to return the Umbraco.Core.Models.IPublishedContent
