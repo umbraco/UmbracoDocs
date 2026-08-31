@@ -138,6 +138,10 @@ Run the `DeduplicatePageVariants.sql` script against your database. This consoli
 {% hint style="info" %}
 This step is optional. The update on the pageviews table can take a while on large installations, so plan accordingly.
 {% endhint %}
+
+{% hint style="info" %}
+Engage began recording which variant was served in 17.4. Installations that collected traffic on 17.0, 17.1, or 16.0 to 16.2 also hold rows with an empty segment from before that change. Those rows look identical to genuine original-variant rows, so the script groups them together. Original-variant figures on those installations therefore include some traffic that predates variant tracking. Nothing can separate the two retrospectively. Figures for traffic collected on 17.4 and later are unaffected.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 

@@ -220,7 +220,7 @@ To delete the anchor:
 
 You can make images into clickable links in Umbraco:
 
-<img src="../../.gitbook/assets/Link-from-Image-v11.png" alt="Create a Link from an Image" data-size="original">
+<img src="../../.gitbook/assets/Link-from-Image.png" alt="Create a Link from an Image" data-size="original">
 
 1. Insert an image into the Rich Text Editor.
    * For more information, see the [Working with Images](working-with-content.md#working-with-images) section.

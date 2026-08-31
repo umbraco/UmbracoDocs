@@ -9,6 +9,15 @@
 -- NOTE: Run this during a maintenance window or low-traffic period.
 -- The UPDATE on umbracoEngageAnalyticsPageview can take a while on
 -- installations with a large number of pageviews.
+--
+-- NOTE: An empty segment is the default (original) variant, and is deliberately
+-- distinct from NULL, which marks rows written before the served segment was
+-- recorded. The comparisons below must not collapse the two together: this
+-- script repoints pageviews and deletes rows, and cannot be undone.
+--
+-- NOTE: Traffic collected on 17.0, 17.1, or 16.0 to 16.2 also carries an empty
+-- segment, written before variant tracking existed. Those rows cannot be told
+-- apart from genuine original-variant rows, so this script groups them together.
 -- =============================================================================
 
 -- Step 1: Reassign pageviews from duplicate variants to the canonical variant
@@ -29,7 +38,8 @@ INNER JOIN (
 ) canonical
     ON dupVariant.[nodeId] = canonical.[nodeId]
     AND dupVariant.[culture] = canonical.[culture]
-    AND ISNULL(dupVariant.[segment], '') = ISNULL(canonical.[segment], '')
+    AND (dupVariant.[segment] = canonical.[segment]
+         OR (dupVariant.[segment] IS NULL AND canonical.[segment] IS NULL))
     AND ISNULL(dupVariant.[contentTypeId], -1) = ISNULL(canonical.[contentTypeId], -1)
 WHERE dupVariant.[id] <> canonical.[id];
 
@@ -44,7 +54,8 @@ AND EXISTS (
     SELECT 1 FROM [umbracoEngageAnalyticsUmbracoPageVariant] canonical
     WHERE canonical.[nodeId] = v.[nodeId]
     AND canonical.[culture] = v.[culture]
-    AND ISNULL(canonical.[segment], '') = ISNULL(v.[segment], '')
+    AND (canonical.[segment] = v.[segment]
+         OR (canonical.[segment] IS NULL AND v.[segment] IS NULL))
     AND ISNULL(canonical.[contentTypeId], -1) = ISNULL(v.[contentTypeId], -1)
     AND canonical.[id] < v.[id]
 );
