@@ -243,7 +243,7 @@
     * [Quick-Start](develop-with-umbraco/application-code/examine/quick-start.md)
     * [Corrupt Indexes](develop-with-umbraco/application-code/examine/corrupt-indexes.md)
   * [Search](develop-with-umbraco/application-code/umbraco-search/README.md)
-    * [Installation](develop-with-umbraco/application-code/umbraco-search/installation/README.md)
+    * [Installation](develop-with-umbraco/application-code/umbraco-search/installation.md)
     * [Getting Started](develop-with-umbraco/application-code/umbraco-search/getting-started/README.md)
     * [The Examine Search Provider](develop-with-umbraco/application-code/umbraco-search/getting-started/examine-search-provider.md)
     * [The Backoffice](develop-with-umbraco/application-code/umbraco-search/getting-started/backoffice.md)
