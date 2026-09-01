@@ -86,4 +86,5 @@ Apply the following configuration with the appropriate algorithm - `DES` (the de
     "Licensing": {
       "LicenseEncodeAndDecodeAlgorithm": "DES|TripleDES|AES"
     },
+  }
 ```
