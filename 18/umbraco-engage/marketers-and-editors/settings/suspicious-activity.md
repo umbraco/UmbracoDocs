@@ -15,7 +15,7 @@ To access Suspicious Activity, go to **Engage > Settings > Suspicious Activity**
 The view lists visitors whose pageview count exceeds a configurable threshold (250 by default). For each visitor, you can see:
 
 * **Pageviews**: The visitor's total pageview count.
-* **Profile ID**: Links to the visitor's profile.
+* **Profile ID**: Links to the visitor's [Profile detail](../profiling/profile-detail.md) view
 * **IP Address**: The visitor's most recent IP address.
 * **User Agent**: The visitor's most recent user agent string.
 
