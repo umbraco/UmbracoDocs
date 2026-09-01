@@ -62,8 +62,8 @@ interface MetaSearchIndexDetailBox {
 ```
 {% endcode %}
 
-* `label` - The box heading. Supports localization keys (for example `#myPackage_myLabel`).
-* `column` - Which column to place the box in. Use `'left'` to place it in the main content column, or omit or use `'right'` to place it in the sidebar column.
+* `label` - The box heading. Supports localization keys (for example, `#myPackage_myLabel`).
+* `column` - Which column to place the box in. Use `'left'` to place it in the main content column, or omit it or use `'right'` to place it in the sidebar column.
 
 ### Registering a detail box manifest
 
