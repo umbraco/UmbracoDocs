@@ -16,7 +16,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
-#### [17.0.0](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 20th 2026)
+#### [17.4.0](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 20th 2026)
 
 * All changes from 17.4.0 release candidates
 
@@ -144,7 +144,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Fixed analytics POST requests being broken by trailing-slash URL rewrite rules.
 * Fixed campaign graph not updating correctly when switching between campaigns.
 * Replaced the IP Filters system with a new **Traffic Filters** system. Traffic Filters extend filtering beyond IP addresses to include user agent, URL, and custom rule matching with conditions such as Contains, Equals, List, and Regex. IP list filters support CIDR subnet notation. A compiled regex cache with configurable timeout prevents ReDoS attacks. Existing IP filter configurations will need to be migrated to the new Traffic Filter format.
-* Renamed the headless Marketing API to **Engage API**. 
+* Renamed the headless Marketing API to **Engage API**.
 * Added `EngageDataCleanupProcessors()` extension method for registering [custom data cleanup processors](developers/analytics/extending-analytics/custom-data-cleanup-processors.md).
 
 See the [Schema Alignment Guide](upgrading/schema-alignment-guide.md) for detailed post-upgrade steps and script downloads.
