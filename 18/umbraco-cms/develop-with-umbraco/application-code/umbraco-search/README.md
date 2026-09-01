@@ -7,14 +7,6 @@ description: >-
 
 # Search
 
-{% hint style="info" icon="square-check" %}
-**To-do list**
-
-* [ ] What should the title of the section be?
-* [ ] Verify all links
-* [ ] Get rid of (?) the Installation article
-{% endhint %}
-
 Search helps you build appealing search experiences for your website users, without requiring in-depth knowledge of the underlying search technology.
 
 You can also power both the backoffice content search and the [Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).

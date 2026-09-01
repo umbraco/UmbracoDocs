@@ -1,12 +1,15 @@
 ---
 hidden: true
+description: Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be powerful and fast.
 ---
 
 # Searching with Examine
 
-_Examine uses Lucene as its search and index engine. Searching using Examine with Lucene can be powerful and fast._
+{% hint style="info" %}
+As of version 19, [Umbraco Search](../umbraco-search/README.md) has become a part of Umbraco CMS , effectively replacing Examine.
 
-## What is Examine?
+Examine will remain available until version XX.
+{% endhint %}
 
 The Examine documentation is found here [https://shazwazza.github.io/Examine/](https://shazwazza.github.io/Examine/) and the source code repository for Examine is here [https://github.com/Shazwazza/Examine](https://github.com/Shazwazza/Examine).
 
