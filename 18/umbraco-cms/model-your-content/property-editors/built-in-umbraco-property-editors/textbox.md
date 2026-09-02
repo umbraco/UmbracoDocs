@@ -24,7 +24,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ### With a character limit
 
-![Textbox Content Example Without a Character Limit](../../../.gitbook/assets/Textbox-Content-Limit-v8.png)
+![Textbox Content Example Without a Character Limit](../../../.gitbook/assets/Textbox-Content-Limit.png)
 
 ## MVC View Example
 
