@@ -6,11 +6,15 @@ description: Configure a single Cloudflare Worker to serve multiple Umbraco inst
 
 A single Cloudflare Worker can serve multiple Umbraco instances. This is useful when you have separate environments (production, staging) or multiple tenants sharing one MCP server.
 
+{% hint style="info" %}
+Connecting many Umbraco Cloud projects instead? [URL-Based Routing](url-based-routing.md) resolves the site from the connection URL and skips the consent-screen site picker.
+{% endhint %}
+
 ## How It Works
 
 All sites share one MCP endpoint (`/`). Site selection happens during authorization. The consent screen shows a **site picker** where the user chooses which Umbraco instance to connect to.
 
-The multi-site flow adds two extra steps to the standard OAuth flow (see [Architecture - Auth Flow](architecture.md#auth-flow) for the full sequence):
+The multi-site flow adds two extra steps to the standard OAuth flow (see [Architecture - Auth Flow](../architecture.md#auth-flow) for the full sequence):
 
 1. The consent screen includes a **site picker** (radio buttons). The user selects which Umbraco instance to authorize against.
 2. The callback URL includes the site ID (`/callback/:siteId`) so the Worker knows which site's credentials to use for token exchange.
