@@ -56,3 +56,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | bedc287a-42ae-4be0-8d11-6939ff61b7c1 | 18.1.0                | Migrates the Save as Umbraco node workflow root node setting to dynamic root.      |
 | 29a8d464-40e3-4fca-bf5f-85b3a5bc63d0 | 18.1.0                | Adds indexes on the Records table for member entry counts and analytics.           |
 | 0f7a3c97-5367-4da7-aa13-44290ecd3bce | 18.1.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
+| 0c07728b-48a6-460b-bd56-3ad32fd4a2b5 | 18.1.0                | Rebuilds the records index.                                                         |
