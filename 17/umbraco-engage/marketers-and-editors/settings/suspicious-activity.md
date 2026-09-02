@@ -12,7 +12,7 @@ Suspicious Activity surfaces visitors whose traffic pattern doesn't look human, 
 
 To access Suspicious Activity, go to **Engage > Settings > Suspicious Activity**.
 
-The view lists visitors whose pageview count exceeds a configurable threshold (250 by default). For each visitor, you can see:
+The view lists visitors whose pageview count reaches or exceeds a configurable threshold (250 by default). For each visitor, you can see:
 
 * **Pageviews**: The visitor's total pageview count.
 * **Profile ID**: Links to the visitor's [Profile detail](../profiling/profile-detail.md) view.
@@ -22,7 +22,7 @@ The view lists visitors whose pageview count exceeds a configurable threshold (2
 The built-in **Anonymous Visitor** is excluded from this list.
 
 {% hint style="info" %}
-This view reads from Engage's reporting data. If you don't see visitors you expect, the reporting job may not have run yet. You can trigger it manually from **Settings** > **Configuration** > **Reporting** > **Regenerate**.
+This view reads from Engage's reporting data. If you don't see visitors you expect, the reporting job may not have run yet. You can trigger it manually from the Umbraco **Settings** section, under **Configuration** > **Reporting** > **Regenerate reporting data**.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/suspicious-activity-overview.png" alt=""><figcaption></figcaption></figure>
@@ -33,7 +33,7 @@ Use the **Filter by type** dropdown to filter the list:
 
 * **All**: Every visitor over the threshold.
 * **Real visitors**: Visitors still classified as a person.
-* **Bots & excluded**: Visitors marked as a bot.
+* **Bots & excluded**: Visitors marked as a bot, plus visitors Engage detected automatically as a monitor or spam. Those rows have no toggle icon.
 
 ## Marking a visitor as a bot
 
@@ -43,6 +43,8 @@ If a visitor's traffic looks automated, mark them as a bot directly from the tab
 2. Select the bot icon at the end of the row.
 
 The icon's tooltip reflects the visitor's current state. **Mark as bot** if they're currently classified as a person, or **Revert to person** if they're already marked as a bot. Selecting it toggles between the two.
+
+Marking a visitor as a bot only changes the visitor's type. It does not delete any data and it does not create a Block Traffic rule. The visitor's pageviews are left out of the reports after the next nightly reporting run.
 
 <figure><img src="../../.gitbook/assets/suspicious-activity-mark-bot.png" alt=""><figcaption></figcaption></figure>
 
@@ -75,5 +77,5 @@ To change the value, set it in `appsettings.json`:
 ```
 
 {% hint style="warning" %}
-Like other Engage settings, this change requires a website restart to take effect.
+This change requires a website restart to take effect.
 {% endhint %}
