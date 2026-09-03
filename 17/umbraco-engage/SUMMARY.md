@@ -90,6 +90,7 @@
 * [Settings](marketers-and-editors/settings/README.md)
   * [Goals](marketers-and-editors/settings/setting-up-goals.md)
   * [Block Traffic](marketers-and-editors/settings/block-traffic.md)
+  * [Suspicious Activity](marketers-and-editors/settings/suspicious-activity.md)
   * [Configuration](marketers-and-editors/settings/the-configuration-file.md)
   * [Permissions](marketers-and-editors/settings/permissions.md)
 

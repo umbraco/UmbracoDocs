@@ -22,7 +22,7 @@ Open the Engage section and go to **Settings** > **Block traffic**. The overview
 
 ## Deciding what to block
 
-The **Suspicious Activity** view, next to Block traffic in Settings, surfaces requests that behave differently from normal visitors, such as automated browsers. Use that view to spot candidates worth turning into a block rule.
+The **[Suspicious Activity](suspicious-activity.md)** view, next to **Block traffic** in **Settings**, surfaces requests that behave differently from normal visitors, such as automated browsers. Use that view to spot candidates worth turning into a block rule.
 
 ## Creating a rule
 
@@ -81,4 +81,4 @@ Select a rule's name in the overview to open and edit it. To switch a rule off w
 
 ## What to expect
 
-Blocked requests do not appear in your reports, so you will not see them there. To check a rule is doing its job, make sure it is **Active** and that the **Value** is correct. The **Suspicious Activity** view is a good place to see what is still coming through.
+Blocked requests do not appear in your reports, so you will not see them there. To check a rule is doing its job, make sure it is **Active** and that the **Value** is correct. The **[Suspicious Activity](suspicious-activity.md)** view is a good place to see what is still coming through.
