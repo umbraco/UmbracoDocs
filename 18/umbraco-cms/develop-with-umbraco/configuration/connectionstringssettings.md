@@ -78,15 +78,13 @@ The global settings are applied by rewriting the connection string. Every consum
 
 ### Deprecated: connect timeout used as the command timeout
 
-In Umbraco 18.2 and earlier, the connect timeout in the connection string was also used as the command timeout. A `Command Timeout` keyword in the connection string had no effect.
-
-From Umbraco 18.3, `Command Timeout` is honored. The old behavior is kept as a fallback that applies only when no command timeout is configured, so existing sites are unaffected. Where the fallback applies, Umbraco logs a warning once at startup.
+Where the connection string sets a connect timeout and no command timeout, Umbraco also uses the connect timeout as the command timeout. This behavior is deprecated. Where it applies, Umbraco logs a warning once at startup.
 
 {% hint style="warning" %}
-The fallback is removed in Umbraco 19. A site that relies on it gets the provider default of 30 seconds instead.
+This fallback is removed in Umbraco 19. A site that relies on it then gets the provider default of 30 seconds instead.
 {% endhint %}
 
-To stop relying on the fallback, do one of the following:
+To prepare, do one of the following:
 
 * Add `Command Timeout` to the connection string.
 * Configure the `Umbraco:CMS:Global:DatabaseCommandTimeout` setting.
