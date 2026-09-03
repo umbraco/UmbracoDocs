@@ -67,7 +67,7 @@ Add-on packages contribute additional triggers. See [Add-ons](../add-ons/) for t
 Open the automation's context menu (the three dots next to it in the tree) and select **Run now**. The automation starts immediately, without waiting for its trigger to fire naturally. The option only appears when the automation's trigger supports it.
 
 * **Manual Trigger** and **Scheduled Trigger** always support **Run now**.
-* **Webhook** also supports it. Since there's no real HTTP request to replay, **Run now** starts the automation using the trigger's saved **Test request body** and **Test request headers** instead. See [Finding the Webhook URL](#finding-the-webhook-url) below. Authentication and the allowed-method check are skipped for on-demand runs, since nothing is calling the webhook endpoint.
+* **Webhook** also supports it, using the trigger's saved **Test request body** and **Test request headers** instead of a real HTTP request. See [Finding the Webhook URL](#finding-the-webhook-url) below. Authentication and the allowed-method check are skipped for on-demand runs, since nothing is calling the webhook endpoint.
 * Content, Media, Member, and User triggers don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
 * Add-on and custom triggers can opt in to **Run now** individually. If the option isn't in the context menu, the automation's trigger doesn't support it.
 
