@@ -21,6 +21,8 @@ The URLs can point to **internal**, **external**, or **media** items.
 
 ![Multi Url Picker Content](../../../.gitbook/assets/Multi-Url-Picker-Content.png)
 
+The list of links can be sorted using drag-and-drop.
+
 ## MVC View Example
 
 ### Without Models Builder
