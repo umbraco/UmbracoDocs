@@ -184,10 +184,6 @@ When set, this value takes precedence over a command timeout in the connection s
 
 For the full order in which the command timeout is resolved, see [Database timeouts](connectionstringssettings.md#database-timeouts).
 
-{% hint style="info" %}
-The `DatabaseCommandTimeout` setting is available from Umbraco 17.8.
-{% endhint %}
-
 ### Database connect timeout
 
 Key: `DatabaseConnectTimeout` Type: `string` (default: not set)
@@ -197,10 +193,6 @@ Sets the maximum time to wait when opening a connection to the database. The for
 When set, this value takes precedence over a connect timeout in the connection string. When it is not set, the connection string value applies, or the database provider's default.
 
 SQLite has no connect timeout. If you configure this setting on a site running SQLite, Umbraco logs an information message at startup and the setting has no effect.
-
-{% hint style="info" %}
-The `DatabaseConnectTimeout` setting is available from Umbraco 17.8.
-{% endhint %}
 
 ### Main dom lock
 
