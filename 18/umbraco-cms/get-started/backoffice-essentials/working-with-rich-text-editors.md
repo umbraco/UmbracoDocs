@@ -257,7 +257,7 @@ Many administrators set up a media library containing images that editors can us
 
 <summary>Inserting an Image from the Media Library</summary>
 
-<img src="../../.gitbook/assets/Inserting-Image-from-the-Media-Library-v11.png" alt="Inserting an Image from the Media Library" data-size="original">
+<img src="../../.gitbook/assets/Inserting-Image-from-the-Media-Library.png" alt="Inserting an Image from the Media Library" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.
