@@ -15,7 +15,7 @@ The automation editor has four tabs:
 | **Design**        | The visual canvas where you build the automation.                 |
 | **Runs**          | The list of recent executions of the automation.                  |
 | **Notifications** | Per-automation failure notification settings.                     |
-| **Info**          | Version history, automation metadata, and the **Enabled** toggle. |
+| **Info**          | Version history, automation metadata, the **Enabled** toggle, and (for automations using the Webhook trigger) the webhook URL. |
 
 <figure><img src="../.gitbook/assets/automation-canvas.png" alt="The automation canvas on the Design tab with a trigger and connected steps."><figcaption><p>The automation editor on the Design tab.</p></figcaption></figure>
 
@@ -25,9 +25,9 @@ Follow these steps to create, configure, and publish an automation.
 
 ### Create an Automation
 
-1. In the tree, right-click the workspace where the automation should live.
+1. In the tree, click **+** next to the workspace where the automation should live.
 2. Select **Create automation**.
-3. Enter a name and click **Create**.
+3. Enter a name and click **Save and publish**.
 
 The new automation opens on the canvas with an empty trigger slot.
 
@@ -74,13 +74,23 @@ The automation toolbar has a split button:
 A draft automation does not respond to triggers. The automation only goes live after the first **Save and Publish**.
 {% endhint %}
 
+{% hint style="warning" %}
+
+If any steps on the canvas aren't connected to the trigger, Automate shows a warning naming them when you save or publish. Disconnected steps are never run, but the warning doesn't block saving. Reconnect or remove them once you see it.
+
+{% endhint %}
+
+## Run an Automation On Demand
+
+For triggers that support it (Manual, Scheduled, and Webhook), open the automation's context menu (the three dots next to it in the tree). Select **Run now** to start the automation immediately. See [Running a Trigger On Demand](../concepts/triggers.md#running-a-trigger-on-demand) for the full list of supported triggers and webhook-specific behavior.
+
 ## Disable an Automation
 
 To stop an automation from responding to triggers without losing its published state, open the **Info** tab and toggle the **Enabled** switch off. Toggle it back on to resume.
 
 ## Delete an Automation
 
-Right-click an automation in the tree and select **Delete**. Deleting an automation deletes its run history.
+Open the automation's context menu (the three dots next to it in the tree) and select **Delete**. Deleting an automation deletes its run history.
 
 ## See Also
 
