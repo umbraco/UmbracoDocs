@@ -27,6 +27,8 @@ The following snippet contains all the available options, with default values, a
       "InstallMissingDatabase": false,
       "DisableElectionForSingleServer": false,
       "DatabaseFactoryServerVersion": "SqlServer.V2019",
+      "DatabaseCommandTimeout": "00:05:00",
+      "DatabaseConnectTimeout": "00:00:30",
       "MainDomLock": "FileSystemMainDomLock",
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
@@ -171,6 +173,34 @@ Key: `DatabaseFactoryServerVersion` Type: `bool` (default: `false`)
 This is not a setting that commonly needs to be configured.
 
 This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`.
+
+### Database command timeout
+
+Key: `DatabaseCommandTimeout` Type: `string` (default: not set)
+
+Sets the maximum time a single database command can run before it is canceled. The format is `HH:MM:SS`. Use `00:00:00` for no limit.
+
+When set, this value takes precedence over a command timeout in the connection string. When it is not set, the connection string value applies, or the database provider's default of 30 seconds.
+
+For the full order in which the command timeout is resolved, see [Database timeouts](connectionstringssettings.md#database-timeouts).
+
+{% hint style="info" %}
+The `DatabaseCommandTimeout` setting is available from Umbraco 18.3.
+{% endhint %}
+
+### Database connect timeout
+
+Key: `DatabaseConnectTimeout` Type: `string` (default: not set)
+
+Sets the maximum time to wait when opening a connection to the database. The format is `HH:MM:SS`.
+
+When set, this value takes precedence over a connect timeout in the connection string. When it is not set, the connection string value applies, or the database provider's default.
+
+SQLite has no connect timeout. If you configure this setting on a site running SQLite, Umbraco logs an information message at startup and the setting has no effect.
+
+{% hint style="info" %}
+The `DatabaseConnectTimeout` setting is available from Umbraco 18.3.
+{% endhint %}
 
 ### Main dom lock
 
