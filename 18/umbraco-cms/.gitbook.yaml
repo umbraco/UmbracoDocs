@@ -5,6 +5,7 @@ root: ./
     summary: SUMMARY.md
 
 redirects:
+    run-in-production/security/security-hardening: run-in-production/security/lock-access-to-umbraco-folder.md
     develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-1: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-1.md
     develop-with-umbraco/tutorials/creating-a-basic-website/creating-master-template-part-2: develop-with-umbraco/tutorials/creating-a-basic-website/creating-layout-template-part-2.md
     fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor-tinymce: fundamentals/backoffice/property-editors/built-in-umbraco-property-editors/rich-text-editor/README.md

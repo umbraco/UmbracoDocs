@@ -527,7 +527,7 @@
   * [Lightweight External Members](run-in-production/security/lightweight-external-members.md)
   * [Locking of Users and Password Reset](run-in-production/security/password-reset.md)
   * [Reset Admin Password](run-in-production/security/reset-admin-password.md)
-  * [Umbraco Security Hardening](run-in-production/security/security-hardening.md)
+  * [Lock Down Access to the Umbraco Folder (IIS)](run-in-production/security/lock-access-to-umbraco-folder.md)
   * [Umbraco Security Settings](run-in-production/security/security-settings.md)
   * [Sensitive Data](run-in-production/security/sensitive-data-on-members.md)
   * [Sanitizing the Rich Text Editor](run-in-production/security/serverside-sanitizing.md)
