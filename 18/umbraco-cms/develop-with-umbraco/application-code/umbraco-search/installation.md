@@ -4,6 +4,10 @@ description: Installing Umbraco Search into your Umbraco CMS
 
 # Installation
 
+{% hint style="danger" icon="trash-can" %}
+Candidate for deletion?
+{% endhint %}
+
 Learn how to install Umbraco Search into your Umbraco CMS.
 
 ## Requirements

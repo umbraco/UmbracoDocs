@@ -66,7 +66,7 @@ Umbraco Search automatically detects property value handlers, so you do not need
 
 ## Replacing the default property value handlers
 
-[This list](../getting-started/built-in-property-editors.md) shows how the default Umbraco property editors transform their values to index data.
+[This list](../built-in-property-editors.md) shows how the default Umbraco property editors transform their values to index data.
 
 You can change this by replacing the default property value handlers you require to work differently.
 
