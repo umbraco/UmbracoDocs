@@ -18,7 +18,7 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Manual Trigger**    | A user runs the automation by hand from the backoffice.                                                                                       |
 | **Scheduled Trigger** | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.  |
-| **Webhook**           | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run by hand with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
+| **Webhook**           | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run manually with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
 
 ### Content
 
