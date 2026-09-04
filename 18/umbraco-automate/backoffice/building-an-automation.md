@@ -15,7 +15,7 @@ The automation editor has four tabs:
 | **Design**        | The visual canvas where you build the automation.                 |
 | **Runs**          | The list of recent executions of the automation.                  |
 | **Notifications** | Per-automation failure notification settings.                     |
-| **Info**          | Version history, automation metadata, and the **Enabled** toggle. |
+| **Info**          | Version history, automation metadata, the **Enabled** toggle, and the webhook URL (for automations using the Webhook trigger). |
 
 <figure><img src="../.gitbook/assets/automation-canvas.png" alt="The automation canvas on the Design tab with a trigger and connected steps."><figcaption><p>The automation editor on the Design tab.</p></figcaption></figure>
 
@@ -71,8 +71,18 @@ The automation toolbar has a split button:
 <figure><img src="../.gitbook/assets/save-publish-split.png" alt="The Save and Publish split button."><figcaption><p>The save and publish split button.</p></figcaption></figure>
 
 {% hint style="info" %}
-A draft automation does not respond to triggers. The automation only goes live after the first **Save and Publish**.
+A draft automation does not respond to triggers. The automation only goes live after the first **Save and publish**.
 {% endhint %}
+
+{% hint style="warning" %}
+
+If any steps on the canvas aren't connected to the trigger, Automate shows a warning naming them when you save or publish. Disconnected steps are never run, but the warning doesn't block saving. Reconnect or remove them once you see it.
+
+{% endhint %}
+
+## Run an Automation On Demand
+
+For triggers that support it (Manual, Scheduled, and Webhook), open the automation's context menu (the three dots next to it in the tree). Select **Run now** to start the automation immediately. See [Running a Trigger On Demand](../concepts/triggers.md#running-a-trigger-on-demand) for the full list of supported triggers and webhook-specific behavior.
 
 ## Disable an Automation
 
@@ -80,7 +90,7 @@ To stop an automation from responding to triggers without losing its published s
 
 ## Delete an Automation
 
-Right-click an automation in the tree and select **Delete**. Deleting an automation deletes its run history.
+Open the automation's context menu (the three dots next to it in the tree) and select **Delete**. Deleting an automation deletes its run history.
 
 ## See Also
 

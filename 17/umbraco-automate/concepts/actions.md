@@ -23,6 +23,7 @@ Use built-in actions to send data, update Umbraco entities, and control automati
 | **Set Variable**     | Output a named value that downstream steps can bind to.                        |
 | **Notify Editor**    | Send a realtime toast to any backoffice user currently editing a content item. |
 | **Request Approval** | Suspend the run and wait for a user to approve or reject.                      |
+| **Run Script**       | Run a short JavaScript snippet in a sandbox to transform or compute data, with optional outbound `fetch` support and a configurable output schema for downstream bindings. |
 
 ### Content
 
@@ -37,9 +38,12 @@ Use built-in actions to send data, update Umbraco entities, and control automati
 
 ### Media
 
-| Action                    | Purpose                                        |
-| ------------------------- | ---------------------------------------------- |
-| **Update Media Property** | Write a single property value on a media item. |
+| Action                     | Purpose                                                              |
+| --------------------------- | ---------------------------------------------------------------------- |
+| **Get Media**               | Fetch a media item and expose its properties for downstream steps. |
+| **Find Media**              | Find media items by name, optionally filtered by media type.       |
+| **Get Media Property**      | Read a single property value from a media item.                    |
+| **Update Media Property**   | Write a single property value on a media item.                     |
 
 Add-on packages contribute additional actions. See [Add-ons](../add-ons/) for the catalogue.
 
@@ -58,21 +62,35 @@ ${ steps.callApi.statusCode }
 ${ steps.callApi.responseBody }
 ```
 
-The step's alias (`callApi` in the example) is set in the step settings panel.
+Each step has a **Name** (its label on the canvas) and an **Alias** (`callApi` in the example). See [Step Behaviour](#step-behaviour) below for both.
 
 {% hint style="warning" %}
 The HTTP Request action rejects responses larger than `Execution:MaxHttpResponseBodyBytes` (10 MB by default). The step fails with a terminal error that names the response size and the limit. Raise the limit in [Configuration](../getting-started/configuration.md) for larger payloads.
 {% endhint %}
 
+{% hint style="warning" %}
+
+The Run Script action runs in a JavaScript sandbox with a 5 MB memory cap and a 15-second total execution timeout by default. Configure both via `Scripting:*` settings. See [Configuration](../getting-started/configuration.md).
+
+Outbound `fetch` calls are blocked by default. Enable them tenant-wide (`Scripting:FetchEnabled`) and per step (**Allow fetch**) to use them. `fetch` blocks requests to localhost, private, link-local, and cloud metadata addresses to prevent Server-Side Request Forgery (SSRF).
+
+{% endhint %}
+
 ## Step Behaviour
 
-Each step has additional execution settings on the canvas:
+Each step has additional settings on the canvas:
 
-| Setting            | Description                                                                                                                                          |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Error behavior** | What to do when the step fails: **Retry**, **Suspend** the run for manual intervention, **Terminate** the run, or **Compensate** before terminating. |
-| **Max retries**    | When the error behavior is **Retry**, how many times the step retries before giving up.                                                              |
-| **Retry interval** | When the error behavior is **Retry**, how long to wait between retries.                                                                              |
+| Setting             | Description                                                                                                                                          |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Name**            | The step's display label on the canvas.                                                                                                              |
+| **Alias**           | The identifier used to reference the step's output in bindings, for example `${ steps.callApi.responseBody }`. Automate suggests one automatically when you add the step; edit it any time before publishing.                |
+| **Error behavior**  | What to do when the step fails: **Retry**, **Suspend** the run for manual intervention, **Terminate** the run, or **Compensate** before terminating. |
+| **Max retries**     | When the error behavior is **Retry**, how many times the step retries before giving up.                                                              |
+| **Retry interval**  | When the error behavior is **Retry**, how long to wait between retries.                                                                              |
+
+{% hint style="info" %}
+An alias must start with a letter and contain only letters and numbers, and must be unique within the automation. Renaming a step's **Name** after it's been added does not change its **Alias**: the two are independent once set. Publishing fails if any binding elsewhere in the automation still references an alias that no longer exists.
+{% endhint %}
 
 The engine-wide default step timeout is controlled by the `Execution:DefaultTimeout` setting. See [Configuration](../getting-started/configuration.md).
 
