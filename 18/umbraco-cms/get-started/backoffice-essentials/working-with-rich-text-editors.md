@@ -186,7 +186,7 @@ An anchor allows you to create internal page links that enable users to navigate
 
 **Creating an Anchor**
 
-<img src="../../.gitbook/assets/Creating-an-anchor-v11.png" alt="Creating an Anchor" data-size="original">
+<img src="../../.gitbook/assets/Creating-an-anchor.png" alt="Creating an Anchor" data-size="original">
 
 1. Click the editor cursor where you wish to create the anchor.
 2. Click the **Anchor Button** which will launch the Anchor creation dialog.
