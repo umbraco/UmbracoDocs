@@ -120,6 +120,27 @@ The check is all-of: the service account must have every listed section. Omit th
 
 See [Service-Account Permissions](../concepts/workspaces.md#service-account-permissions) for the runtime effects.
 
+## Supporting Run Now
+
+Editors can start an automation on demand from the backoffice, without waiting for its trigger to fire naturally, using **Run now**. A trigger opts into this by implementing `ISupportsManualRun`:
+
+```csharp
+public interface ISupportsManualRun
+{
+    ManualRunOutput CreateManualRunOutput(object? settings);
+}
+```
+
+`CreateManualRunOutput` returns one of three things:
+
+* `ManualRunOutput.None` — the trigger needs no payload, so the automation just starts.
+* `ManualRunOutput.From(data)` — stand-in output built from the trigger's own saved settings, used in place of the payload the real event would carry.
+* `ManualRunOutput.Invalid(reason)` — the saved settings can't produce a payload. Automate refuses the run and shows `reason` to the author, instead of starting it with data they didn't mean.
+
+`MyCustomTrigger` above is a case for **not** implementing this interface. Its output carries a real content node from `ContentSavedNotification`, and a fake node would mislead any step that reads it. Implement `ISupportsManualRun` only when the trigger's own settings can convincingly stand in for the real event, such as a webhook trigger with a saved test payload. See [Trigger from a Webhook](schedule-and-webhook-triggers.md#supporting-run-now) for a worked example.
+
+Automate reports which triggers support this on their catalogue entry, which is what makes **Run now** appear in the backoffice for the trigger. See [Running a Trigger On Demand](../concepts/triggers.md#running-a-trigger-on-demand) for the editor-facing behavior.
+
 ## Registration
 
 No manual registration is required. The trigger is discovered at startup by its `[Trigger]` attribute and the base class.
