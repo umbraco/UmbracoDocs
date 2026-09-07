@@ -28,7 +28,7 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**18.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.4) **(July 29th 2026)**
 
-* Fixed custom repository save errors not showing a notification in the back office [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
+* Fixed custom repository save errors not showing a notification in the backoffice [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
 
 ### [**18.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.3) **(July 27th 2026)**
 
