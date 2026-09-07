@@ -18,6 +18,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.2.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.8) **(September 7th 2026)**
+
+* Fixed action notifications failing with an error when they contained non-ASCII characters such as å, æ, or ø [#232](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/232)
+
+### [**17.2.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.7) **(August 17th 2026)**
+
+* Fixed a collection configured with `MakeReadOnly()` still being selectable [#231](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/231)
+
+### [**17.2.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.6) **(July 29th 2026)**
+
+* Fixed custom repository save errors not showing a notification in the back office [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
+
 ### [**17.2.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.5) **(July 27th 2026)**
 
 * Fixed collection names returning the singular name in place of the plural, affecting the section dashboard cards, grouped collection tabs, and Entity Picker configuration [#229](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/229)
