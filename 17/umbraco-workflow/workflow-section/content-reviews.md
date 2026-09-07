@@ -22,7 +22,7 @@ The Content Reviews Dashboard provides an overview of the expired content. The d
 
 ![Content Reviews Dashboard](../.gitbook/assets/Content-review-dashboard-v14.png)
 
-Selecting a content node takes you to the content node in the **Content** section, where you can see the Content review banner. The Content review banner is displayed only when the node has passed its review date. Also, the review banner is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](../getting-started/content-review-settings.md#content-review-permissions) section
+Selecting a content node takes you to the content node in the **Content** section, where you can see the Content review dialog. The Content review dialog is displayed only when the node has passed its review date. Also, the review dialog is displayed only to users assigned as reviewers for the node. For more information, see the [Content Reviews Permissions](../getting-started/content-review-settings.md#content-review-permissions) section
 
 ![Content Review Message Banner](../.gitbook/assets/content-review-message-banner-v14.png)
 

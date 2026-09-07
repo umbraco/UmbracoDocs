@@ -10,7 +10,7 @@ You can configure the **General** Settings from the **Content reviews** tab in t
 
 * **Enable content reviews** - Enable this setting if you wish to remind users to review their content. By default, this option is disabled.
 * **Send notifications** - Enable this setting to send email notifications to approval groups when content requires review.
-* **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the default Review period value. If disabled, content must be explicitly reviewed via the review banner displayed on the content item.
+* **Treat saving as a review?** - Enable this setting to reset the review date when content is saved. Saving a content node recalculates the review date, using the review period assigned to the content node, its Document Type, or the default Review period value. If disabled, content must be explicitly reviewed via the review dialog displayed on the content item.
 * **Review period (days)** - The default number of days between content reviews.
 * **Reminder threshold (days)** - Determines how many days before the review date the Workflow should notify editors of required reviews. By default, the number of days is set to 1.
 
