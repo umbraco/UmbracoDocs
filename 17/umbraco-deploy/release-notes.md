@@ -16,7 +16,7 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
-### [17.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0-rc1) (September 4th 2026)
+### [17.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 4th 2026)
 
 * Register dependencies for rich text local links in the `{localLink:<guid>}` format, so linked documents and media are transferred with the content [#348](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/348).
 * Start the operations on the Deploy dashboard from the Management API, fixing operations that could remain pending indefinitely and reporting the progress of every operation.
