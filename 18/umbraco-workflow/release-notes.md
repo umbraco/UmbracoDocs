@@ -16,6 +16,21 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### [18.2.0-rc1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0-rc1) (September 7 2026)
+
+* Fixes "View differences" on a workflow task returning an unhelpful error instead of a licensing message when Workflow is unlicensed [#176](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/176)
+* Restructures the backoffice frontend build into per-feature packages:
+  * Fixes asset caching not invalidating after an upgrade [#172](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/172) 
+  * Fixes Workflow tab intermittently failing to render [#175](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/175)
+* Fixes group approval emails missing content when the group has no language set [#173](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/173)
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168): 
+  * Empty value inputs for config-driven property editors
+  * Invariant properties incorrectly treated as empty when cultures are selected
+  * ContentPicker/MultiNodeTreePicker searches returning unrelated results
+* Adds a "Clear selection" action and a loading indicator to the Advanced Search dashboard [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168)
+* Fixes due-date save and permission gaps in document-editor content reviews
+* Enforces mandatory workflow comments server-side on approve/reject, closing a gap in the external approval and email reply channels
+
 ### 18.1.2 (August 31 2026)
 
 * Fixes culture resolution for external approval using an invariant workflow on a culture-variant document.
