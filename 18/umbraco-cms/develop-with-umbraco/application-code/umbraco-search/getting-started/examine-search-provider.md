@@ -89,7 +89,7 @@ Certain Umbraco properties yield different textual relevance values. The Examine
 * `SearcherOptions.BoostFactorTextR2` to control the relevance of the second-highest relevance text (for example, H2 tags).
 * `SearcherOptions.BoostFactorTextR3` to control the relevance of the third-highest relevance text (for example, H3 tags).
 
-See also the [built-in property editors](built-in-property-editors.md) article.
+See also the [built-in property editors](../built-in-property-editors.md) article.
 
 ### Facet result behavior
 

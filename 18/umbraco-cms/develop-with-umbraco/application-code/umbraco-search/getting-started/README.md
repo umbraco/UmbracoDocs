@@ -1,7 +1,3 @@
----
-description: Getting started on searching with Umbraco Search
----
-
 # Getting Started
 
 The fundamental purpose of Umbraco Search is to build a search experience. The `ISearcher` interface is your main entry point for searching.
