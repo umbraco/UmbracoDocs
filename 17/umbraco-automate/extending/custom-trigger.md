@@ -133,11 +133,11 @@ public interface ISupportsManualRun
 
 `CreateManualRunOutput` returns one of three things:
 
-* `ManualRunOutput.None` — the trigger needs no payload, so the automation just starts.
+* `ManualRunOutput.None` — the trigger needs no payload, so the automation starts.
 * `ManualRunOutput.From(data)` — stand-in output built from the trigger's own saved settings, used in place of the payload the real event would carry.
 * `ManualRunOutput.Invalid(reason)` — the saved settings can't produce a payload. Automate refuses the run and shows `reason` to the author, instead of starting it with data they didn't mean.
 
-`MyCustomTrigger` above is a case for **not** implementing this interface. Its output carries a real content node from `ContentSavedNotification`, and a fake node would mislead any step that reads it. Implement `ISupportsManualRun` only when the trigger's own settings can convincingly stand in for the real event, such as a webhook trigger with a saved test payload. See [Trigger from a Webhook](schedule-and-webhook-triggers.md#supporting-run-now) for a worked example.
+`MyCustomTrigger` above is a case for **not** implementing this interface. Its output carries a real content node from `ContentSavedNotification`, and a fake node would mislead any step that reads it. Implement `ISupportsManualRun` only when the trigger's own settings can stand in for the real event, like a webhook trigger with a saved test payload. See [Trigger from a Webhook](schedule-and-webhook-triggers.md#supporting-run-now) for a worked example.
 
 Automate reports which triggers support this on their catalogue entry, which is what makes **Run now** appear in the backoffice for the trigger. See [Running a Trigger On Demand](../concepts/triggers.md#running-a-trigger-on-demand) for the editor-facing behavior.
 
