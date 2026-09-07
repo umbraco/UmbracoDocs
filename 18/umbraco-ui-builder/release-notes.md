@@ -18,6 +18,18 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**18.0.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.6) **(September 7th 2026)**
+
+* Fixed action notifications failing with an error when they contained non-ASCII characters such as å, æ, or ø [#232](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/232)
+
+### [**18.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.5) **(August 17th 2026)**
+
+* Fixed a collection configured with `MakeReadOnly()` still being selectable [#231](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/231)
+
+### [**18.0.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.4) **(July 29th 2026)**
+
+* Fixed custom repository save errors not showing a notification in the back office [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
+
 ### [**18.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.3) **(July 27th 2026)**
 
 * Fixed the collection workspace heading showing the internal collection alias instead of the configured collection name [#229](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/229)
