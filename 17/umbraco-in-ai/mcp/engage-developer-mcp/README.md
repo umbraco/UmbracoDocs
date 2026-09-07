@@ -111,3 +111,4 @@ Once your MCP Server is configured and connected, explore these guides to get th
 * [Available Tools](available-tools.md) - Complete reference of all available tool collections and the tools within them.
 * [Configuration Options](configuration.md) - Modes, slices, and CMS MCP server chaining.
 * [Excluded Tools](excluded-tools.md) - Endpoints intentionally not exposed as tools, and why.
+* [CLI Usage](cli-usage.md) - Run the server as a CLI tool, including the Claude Code plugin.
