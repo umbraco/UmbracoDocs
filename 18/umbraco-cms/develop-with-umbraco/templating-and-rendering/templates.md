@@ -6,7 +6,19 @@ description: Templating in Umbraco builds on the concept of Razor Views from ASP
 
 Templates are the files that control the look and feel of the frontend of your Umbraco websites. Building on the concept of MVC Razor Views, template files enable you to structure your websites using HTML, CSS, and JavaScript. When tied to a Document Type, templates are used to render your Umbraco content on the frontend.
 
-You can manage and work with your templates directly from the Settings section in the Umbraco backoffice. Each Template can also be found as a `cshtml` file in the `Views` folder in your project directory.
+Each Template is a `cshtml` file in the `Views` folder of your project directory. You can also manage Templates from the Settings section in the Umbraco backoffice.
+
+{% hint style="warning" %}
+Generating a Template alongside a new Document Type is a good way to scaffold a starting point. Managing Templates through the backoffice beyond that isn't the recommended approach for most projects.
+
+The backoffice editor doesn't integrate with source control or local build tooling. The editor also gives you no IntelliSense or type checking against your models. Mistakes surface when the page renders instead of while you work.
+
+Editing Templates in the backoffice is blocked entirely when the site runs in `Production` runtime mode. For more information, see [Runtime Modes](../../run-in-production/runtime-modes.md).
+
+In other runtime modes, changes take effect immediately only with the Razor runtime compilation package installed. Without the package, you must rebuild and restart the site. For details, see ["InMemoryAuto models builder and Razor runtime compilation have moved into their own package"](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17) in the Version-specific upgrades guide.
+
+Maintain Templates locally as `.cshtml` files in the `Views` folder using your own IDE. For more information, see [Source Control](../application-code/backend-and-custom-logic/source-control.md).
+{% endhint %}
 
 ## Creating Templates
 
@@ -25,6 +37,12 @@ In some cases, you might want to create independent Templates that don't have a 
 You will now see the default template markup in the backoffice template editor.
 
 ![Created template](../../.gitbook/assets/create-template.png)
+
+{% hint style="info" %}
+Templates are registered in the Umbraco database, so adding a `.cshtml` file to the `Views` folder does not create one on its own.
+
+If the file already exists, create the Template using the file name as the alias. Umbraco picks up the existing file content instead of overwriting it.
+{% endhint %}
 
 ## Allowing a Template on a Document Type
 
@@ -75,7 +93,7 @@ Alternatively, you can manually change the value of the `Layout` variable in the
 The updated markup will look something like the snippet below and the Template is now referred to as a _Child Template_:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = "MainView.cshtml";
 }
@@ -87,7 +105,7 @@ When a page that uses a Template with a Layout Template defined is rendered, the
 The code from the Template replaces the `@RenderBody()` tag in the Layout Template. Following the examples above, the final HTML will look like the code in the snippet below:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -106,16 +124,9 @@ Template Sections give you added flexibility when building your templates. Use t
 
 If a Child Template needs to add code to the `<head>` tag a Section must be defined and then used in the Layout Template. This is made possible by [Named Sections](https://www.youtube.com/watch?v=lrnJwglbGUA).
 
-The following steps will guide you through defining and using a Named Section:
+### Using code
 
-1. Open your Template.
-2. Select the **Sections** option.
-3. Choose **Define a named section**.
-4. Give the section a name and click **Submit**.
-
-![Define a named section by giving it a name](../../.gitbook/assets/defined-named-section.png)
-
-The following code will be added to your Template:
+Define a named section in your Template:
 
 ```csharp
 @section SectionName {
@@ -123,19 +134,16 @@ The following code will be added to your Template:
 }
 ```
 
-5. Add your code between the curly brackets.
-6. Save the changes.
-7. Open the Layout Template.
-8. Choose a spot for the section and set the cursor there.
-9. Select the **Sections** option.
-10. Choose **Render a named section**.
-11. Enter the name of the section you want to add.
-12. Click **Submit**.
+Add your code between the curly brackets, then render the section in your Layout Template:
+
+```csharp
+@RenderSection("SectionName", false)
+```
 
 For instance, if you want to be able to add HTML to your `<head>` tags, you would add the tag there:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
 }
@@ -151,7 +159,29 @@ For instance, if you want to be able to add HTML to your `<head>` tags, you woul
 </html>
 ```
 
-You can decide whether a section should be mandatory or not. Making a section mandatory means that any template using the Layout Template is required to have the section defined.
+### Using the backoffice
+
+The **Sections** dialog writes the same `@section` and `@RenderSection()` code for you:
+
+1. Open your Template.
+2. Select the **Sections** option.
+3. Choose **Define a named section**.
+4. Give the section a name and click **Submit**.
+
+![Define a named section by giving it a name](../../.gitbook/assets/defined-named-section.png)
+
+5. Add your code between the curly brackets.
+6. Save the changes.
+7. Open the Layout Template.
+8. Choose a spot for the section and set the cursor there.
+9. Select the **Sections** option.
+10. Choose **Render a named section**.
+11. Enter the name of the section you want to add.
+12. Click **Submit**.
+
+### Making a section mandatory
+
+Making a section mandatory means that any template using the Layout Template is required to have the section defined.
 
 {% hint style="info" %}
 Keep in mind that whenever a mandatory named section is missing, it will result in errors on your website.
@@ -159,7 +189,7 @@ Keep in mind that whenever a mandatory named section is missing, it will result 
 
 To make the section mandatory, you have two options:
 
-* Add `true` to the code tag: `@RenderSection("SectionName", true)`.
+* Pass `true` as the second argument: `@RenderSection("SectionName", true)`.
 * Check the **Section is mandatory** field when using the **Sections** dialog in the backoffice.
 
 ![Create partial](../../.gitbook/assets/render-named-section-mandatory.png)
@@ -168,26 +198,27 @@ To make the section mandatory, you have two options:
 
 Another way to reuse HTML is to use partial views - which are small reusable views that can be injected into another view.
 
-Like templates, you can create a partial view, by clicking **...** next to the **Partial Views** folder and selecting **Create**. You can then either create an empty partial view or a partial view from a snippet.
+Like Templates, a partial view is a `.cshtml` file in your project, stored in the `Views/Partials` folder. You can also create one from the **Partial Views** folder in the backoffice. For more information, see [Partial Views](design/partial-views.md).
 
 ![Create partial](../../.gitbook/assets/create-partial.png)
 
-The created partial view can now be injected into any template by using the `@Html.Partial()` method like so:
+The partial view can be injected into any template using the `<partial>` tag helper, like so:
 
 ```csharp
-@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = "MainView.cshtml";
 }
 
 <h1>My new page</h1>
-@Html.Partial("a-new-view")
+<partial name="~/Views/Partials/a-new-view.cshtml" />
 ```
 
 ### Related Articles
 
 * [Working with MVC](templating/mvc/README.md)
 * [Rendering content](design/rendering-content.md)
+* [Partial Views](design/partial-views.md)
 
 ### Tutorials
 
