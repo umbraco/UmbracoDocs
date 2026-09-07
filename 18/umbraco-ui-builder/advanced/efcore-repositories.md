@@ -38,6 +38,10 @@ The NPoco-based repository remains the default when the feature flag is not set 
 
 When using EF Core, your entity models use standard data annotation attributes from `System.ComponentModel.DataAnnotations` and `System.ComponentModel.DataAnnotations.Schema` instead of NPoco attributes.
 
+{% hint style="info" %}
+Umbraco UI Builder does not create or migrate the EF Core tables for you. Provision the database schema through your own deployment or migration process before the collections are used. This requirement applies to every environment, including load-balanced setups where all nodes share a single database.
+{% endhint %}
+
 ### Defining Entity Models
 
 ```csharp
