@@ -38,7 +38,7 @@ To export all the entries from your Form:
 2. Navigate to the Form **Entries** you wish to export.
 3.  Click **Export**.
 
-    ![Export Entries](../.gitbook/assets/Export-v14.png)
+    ![Export Entries](../.gitbook/assets/Export.png)
 4.  The Export dialog opens. Choose a format such as **Excel File** to export the Form records to.
 
     ![Export dialog](../.gitbook/assets/ExportAllDialog-v14.png)
