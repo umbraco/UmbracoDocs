@@ -10,16 +10,22 @@ This article explains how to lock down the `/umbraco/` folder to specific IP add
 
 To follow these steps, you must have [IIS URL Rewrite](../../develop-with-umbraco/application-code/backend-and-custom-logic/routing/iisrewriterules.md) installed on your server.
 
-Locking down `/umbraco/` will also block API and Surface controllers, the Delivery API, and the Management API. The steps below exclude these paths before restricting the rest.
+Locking down `/umbraco/` will also block API and Surface controllers and the Delivery API. The steps below exclude these paths before restricting the rest.
 
 1. Add the following rule to your `IISRewrite.config` to exclude paths that should remain publicly accessible:
 
 ```xml
 <rule name="Ignore" stopProcessing="true">
-    <match url="^(?:umbraco/api|umbraco/surface|umbraco/delivery|umbraco/management)/" />
+    <match url="^(?:umbraco/api|umbraco/surface|umbraco/delivery)/" />
     <action type="None" />
 </rule>
 ```
+
+{% hint style="info" %}
+Some packages and add-ons expose paths under `/umbraco/` that must also remain publicly accessible. For example, [Umbraco Engage requires `/umbraco/engage/*`](https://docs.umbraco.com/umbraco-engage/security-and-privacy/security-and-privacy#security-settings) to be excluded.
+
+Check the documentation for any installed packages to identify paths that need to be added to the exclusion rule.
+{% endhint %}
 
 2. Note your allowed IP addresses as a pipe-separated regular expression. For example, `213.3.10.8` and `88.4.43.108` becomes `213.3.10.8|88.4.43.108`.
 
