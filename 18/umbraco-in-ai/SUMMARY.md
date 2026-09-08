@@ -43,7 +43,7 @@
   * [Configuration Options](mcp/cms-developer-mcp/configuration.md)
   * [Excluded Tools](mcp/cms-developer-mcp/excluded-tools.md)
   * [Use Cases](mcp/cms-developer-mcp/scenarios.md)
-  * [CLI Usage](mcp/cms-developer-mcp/cli-usage.md)
+  * [Skills & CLI](mcp/cms-developer-mcp/skills-and-cli.md)
   * [Best Practice](mcp/cms-developer-mcp/best-practice/README.md)
     * [Creating Media](mcp/cms-developer-mcp/best-practice/creating-media.md)
     * [Example Instructions File](mcp/cms-developer-mcp/best-practice/example-instructions.md)
