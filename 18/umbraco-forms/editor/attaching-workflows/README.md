@@ -30,7 +30,7 @@ Attaching Workflows to Umbraco Forms
 
 At the bottom of your Form, a default workflow is already attached to the Form, as well as an option to configure the workflows.
 
-![Button](../../.gitbook/assets/configure-workflows-v14.png)
+![Button](../../.gitbook/assets/configure-workflows.png)
 
 Clicking **Configure workflow** will give you the option to configure existing workflows, as well as setup new ones.
 
