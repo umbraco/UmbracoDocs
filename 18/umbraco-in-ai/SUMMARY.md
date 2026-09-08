@@ -38,7 +38,7 @@
     * [Testing and Evals](mcp/base-mcp/sdk/testing.md)
     * [Tool Authoring](mcp/base-mcp/sdk/tool-authoring.md)
     * [Tool Filtering](mcp/base-mcp/sdk/tool-filtering.md)
-* [Developer Model Context Protocol (MCP) Server](mcp/cms-developer-mcp/README.md)
+* [CMS Developer MCP Server](mcp/cms-developer-mcp/README.md)
   * [Available Tools](mcp/cms-developer-mcp/available-tools.md)
   * [Configuration Options](mcp/cms-developer-mcp/configuration.md)
   * [Excluded Tools](mcp/cms-developer-mcp/excluded-tools.md)
