@@ -22,7 +22,7 @@ By default, the list is filtered to show entries only from the past month. If yo
 
 Click **Entry details** on each record in the list to open the full set of information recorded for the form entry. Clicking on the entry record displays the **Clear** and **Delete** buttons.
 
-![Filter](../.gitbook/assets/entry-details-v14.png)
+![Filter](../.gitbook/assets/entry-details.png)
 
 ### Editing the Entries
 
@@ -55,7 +55,7 @@ For a deeper understanding of form submission trends, workflow performance, and 
 
 When selecting entries, it is possible to execute different actions. To select an entry, click anywhere on the entry.
 
-![Record bulk actions](../.gitbook/assets/entry-details-v14.png)
+![Record bulk actions](../.gitbook/assets/entry-details.png)
 
 Select at least 1 record to see the available actions. By default, there are 2 possible actions:
 
