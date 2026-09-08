@@ -2,7 +2,7 @@
 
 To view the Entries for each Form, go to the Form and click on the **Entries** tab.
 
-![Tree](../.gitbook/assets/tree-v14.png)
+![Tree](../.gitbook/assets/tree.png)
 
 ## Video overview
 
@@ -14,7 +14,7 @@ Watch this video to learn how to manage entries submitted via Umbraco Forms.
 
 When accessing the Entries viewer, you will be able to see all the entries submitted via the Form.
 
-![Entries viewer](../.gitbook/assets/tree-v14.png)
+![Entries viewer](../.gitbook/assets/tree.png)
 
 ### Viewing the Entries
 
