@@ -52,7 +52,7 @@
   * [Available Tools](mcp/engage-developer-mcp/available-tools.md)
   * [Configuration Options](mcp/engage-developer-mcp/configuration.md)
   * [Excluded Tools](mcp/engage-developer-mcp/excluded-tools.md)
-  * [CLI Usage](mcp/engage-developer-mcp/cli-usage.md)
+  * [Skills & CLI](mcp/engage-developer-mcp/skills-and-cli.md)
 * [Local MCP Setup](mcp/local-mcp-setup/README.md)
   * [Claude Code Setup](mcp/local-mcp-setup/claude-code.md)
   * [Claude Desktop](mcp/local-mcp-setup/claude-desktop.md)
