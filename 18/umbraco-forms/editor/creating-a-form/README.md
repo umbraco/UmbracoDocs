@@ -8,7 +8,7 @@ You can manage the Forms in the **Forms** section of the Umbraco backoffice. You
 
 If you cannot see the **Forms** section, ask an Administrator to grant you access from the **Users** section.
 
-![Forms Section](../../.gitbook/assets/FormsSectionV14.png)
+![Forms Section](../../.gitbook/assets/FormsSection.png)
 
 ## Creating a new Form
 
