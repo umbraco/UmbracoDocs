@@ -16,6 +16,17 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 4th 2026)
+
+* Register dependencies for rich text local links in the `{localLink:<guid>}` format, so linked documents and media are transferred with the content [#348](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/348).
+* Start the operations on the Deploy dashboard from the Management API, fixing operations that could remain pending indefinitely and reporting the progress of every operation.
+* Report the cause of unexplained 403 errors returned by the environment API. Redirects are no longer followed when calling a remote environment, because a redirect strips the authorization header.
+* Reduce the memory used while setting cached signatures, using the new `ExpandRangePageSize` and `SetSignaturesBatchSize` settings.
+* Apply Deploy configuration changes without restarting the site. Invalid configuration no longer prevents the site from starting.
+* Run start-up operations while the license validation result is still unknown, so triggers like `deploy-on-start` are no longer skipped on newly created environments.
+* Load the Deploy backoffice code on demand, reducing the amount loaded on every backoffice page.
+* Remove the Umbraco Cloud project **Trial expires in...** message from the Deploy dashboard, because it does not reflect the state of your Deploy license. The trial status of a Cloud project is available in the Umbraco Cloud portal.
+
 ### [17.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.1) (July 21st 2026)
 
 * Update public access role rules when a member group is renamed during a deploy.
