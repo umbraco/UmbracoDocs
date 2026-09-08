@@ -18,6 +18,16 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.4 (7th Sep 2026)
+
+* Fixed analytics dashboard widgets overlapping when the browser window is resized ([#884](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/884)).
+* Fixed custom cart filters registered via `WithCartAdvancedFilters()` being silently ignored ([#885](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/885)).
+* Fixed order cleanup failing on SQL Server with a "too many parameters" error on large stores ([#887](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/887)).
+* Fixed a crash on the first request after an unattended upgrade ([#888](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/888)).
+* Fixed a SQLite migration failure when upgrading a store with existing customer data ([#889](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/889)).
+* Fixed discount rule and reward provider setting descriptions not showing in the backoffice ([#890](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/890)).
+* Fixed the Variants tab not appearing when the Variants Editor property is inherited through a Content Type Composition ([#891](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/891)).
+
 #### 18.1.3 (21st Aug 2026)
 
 * Fixed a startup crash on large stores during the customer data migration ([#883](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/883)).
