@@ -27,7 +27,7 @@ Some packages and add-ons expose paths under `/umbraco/` that must also remain p
 Check the documentation for any installed packages to identify paths that need to be added to the exclusion rule.
 {% endhint %}
 
-2. Note your allowed IP addresses as a pipe-separated regular expression. For example, `213.3.10.8` and `88.4.43.108` becomes `213.3.10.8|88.4.43.108`.
+2. Note your allowed IP addresses as a pipe-separated regular expression. For example, `213.3.10.8` and `88.4.43.108` becomes `^(213\.3\.10\.8|88\.4\.43\.108)$`.
 
 3. Add the following rule to your `IISRewrite.config` to block all other IP addresses:
 
@@ -35,7 +35,7 @@ Check the documentation for any installed packages to identify paths that need t
 <rule name="Allowed IPs" stopProcessing="true">
     <match url="^(?:umbraco)(?:/|$)" />
     <conditions>
-        <add input="{REMOTE_ADDR}" negate="true" pattern="213.3.10.8|88.4.43.108" />
+        <add input="{REMOTE_ADDR}" negate="true" pattern="^(213\.3\.10\.8|88\.4\.43\.108)$" />
     </conditions>
     <action type="AbortRequest" />
 </rule>
