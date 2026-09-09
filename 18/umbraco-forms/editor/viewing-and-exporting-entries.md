@@ -39,7 +39,7 @@ To export all the entries from your Form:
 3.  Click **Export**.
 
     ![Export Entries](../.gitbook/assets/Export.png)
-4.  The Export dialog opens. Choose a format such as **Excel File** to export the Form records to.
+4.  The Export dialog opens. Choose a format, such as **CSV File (submitted values)**, to export the Form records to.
 
     ![Export dialog](../.gitbook/assets/ExportAllDialog.png)
 5. Click **Export**.
