@@ -74,7 +74,7 @@ The most common hierarchy levels to which the contexts can be registered are:
 * `Notification context`: used for displaying notifications in the backoffice. This context is consumable in elements anywhere in the DOM tree.
 * `Current user context`: has information about the currently logged in user. This context is consumable anywhere in the DOM tree.
 
-**Section contexts** are available in the context of a section. That is everything in the backoffice except the menubar. Examples of section contexts:
+**Section contexts** are available in the context of a section. That is everything in the backoffice except the menu bar. Examples of section contexts:
 
 * `Section context`: provides information about the section, like path, alias, and label.
 * `Sidebar menu section context`: holds information about the sidebar menu, like which menu is currently selected.
@@ -84,3 +84,7 @@ The most common hierarchy levels to which the contexts can be registered are:
 * `Workspace context`: holds information about the current entity being edited in the workspace. This holds minimal information about an entity and the entity type. There are specific workspace contexts per entity type. For instance, the `Document workspace context` for documents and `Media workspace context` for media.
 
 **Property contexts** are contexts that work at the property level. They can work on one or more property editors. An example is the clipboard functionality where blocks can be copied and pasted between block grids and block lists. Because these contexts are scoped at the property level, they are typically not consumed directly.
+
+{% hint style="info" %}
+For the full list of available contexts including all properties, methods, and inherited members, see the [Backoffice UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/). For example, the [Notification context's full member list](https://apidocs.umbraco.com/v17/ui-api/modules/packages_core_notification.html).
+{% endhint %}

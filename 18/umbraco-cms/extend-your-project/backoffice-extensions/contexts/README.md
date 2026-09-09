@@ -9,6 +9,10 @@ description: >-
 
 The following section describes a specific Context. It is recommended to learn the Context API first. [Read more about the Context API here](../foundation/context-api/).
 
+{% hint style="info" %}
+This article covers the most commonly used contexts. For the complete list with full member details, see the [Backoffice UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/).
+{% endhint %}
+
 ## Common Contexts
 
 ### Current User Context
