@@ -33,7 +33,7 @@ To create a Form, follow these steps:
 11. Click **Submit** to add the field to the form.
 12. Click **Save**.
 
-Similary, you can add other fields to the form.
+You can also add other fields to the form.
 
 ![Create new Form](../../.gitbook/assets/creating-new-form.png)
 
@@ -73,7 +73,7 @@ To change the order of fields:
 
 #### Form Pages
 
-Forms can be grouped into pages. When rendered, each page will be presented one at a time to the user. They will need to complete the first page before moving onto the second and can navigate back and forth between pages.
+Forms can be grouped into pages. When rendered, each page will be presented one at a time to the user. They must complete the first page before moving to the second and can navigate back and forth between pages.
 
 To add a new page at the start or end of the form, use the buttons in the top right corner of the editing view.
 
@@ -91,7 +91,7 @@ New groups are added via the **Add new group** button.
 
 ## Form Columns
 
-The last level of structure are columns that can be created within a group. To set the number of columns, click the **cog** icon next to the Group Name. You can now add or move fields to the new columns created.
+The last level of structure is columns that can be created within a group. To set the number of columns, click the **cog** icon next to the Group Name. You can now add or move fields to the new columns created.
 
 ![Form Columns](../../.gitbook/assets/edit-group-columns-v17.png)
 
@@ -146,7 +146,7 @@ The page you choose should have a _Form Picker_ Data Type which you can add in t
 
 3. Click **Choose** and select the Form you want to insert.
 
-You will be able to select from the full list of forms. If available on your installation, you can select using a folder based view, which can be quicker to navigate when many forms have been prepared.
+You will be able to select from the full list of forms. If available on your installation, you can select using a folder-based view, which can be quicker to navigate when many forms have been prepared.
 
 ![Content page add macro](../../.gitbook/assets/ContentPageAddForm-v17.png)
 
