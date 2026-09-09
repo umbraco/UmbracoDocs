@@ -14,85 +14,89 @@ Learn how to clone your Umbraco Cloud project and work with it locally.
 
 ## Tools
 
-We recommend using the following tools to work with a local clone of your Umbraco Cloud project:
+It is recommended to use one of the following tools to work with a local clone of your Umbraco Cloud project:
 
 * Git needs to be installed on your computer to clone down the project and push your changes up to Cloud.
-  * We recommend using one of the following git-clients if you are new to Git:
+  * Use a command line tool (Git Bash or the terminal) or one of these Git GUI clients:
     * [Fork](https://git-fork.com/)
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [GitKraken](https://www.gitkraken.com/)
-* [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider) - for running the project on your local machine.
+* An IDE like [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider), for running the project on your local machine.
+* The [.NET SDK version that matches your projects](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) Umbraco CMS version.
 
 {% hint style="info" %}
+
 In the root of your local project, you'll find a _README_ file with details about the project structure and build process on Umbraco Cloud.
+
 {% endhint %}
 
 ## Cloning an Umbraco Cloud Project
 
 To clone an Umbraco Cloud project, follow these steps:
 
-1. Open the project you wish to clone in the Umbraco Cloud Portal.
-2. Click on the arrow next to the **Development** environment.
-3. Select **Clone project**.
+1. Click **Clone** on the environment you want to work with locally.
 
-<div align="center"><figure><img src="../../../.gitbook/assets/image (12).png" alt="Clone project option"><figcaption><p>Clone project option</p></figcaption></figure></div>
+<div align="center"><figure><img src="../../../.gitbook/assets/work-locally-clone-env.png" alt="Clone project option"><figcaption><p>Click "Clone" on a Cloud environment to copy the clone URL.</p></figcaption></figure></div>
 
-4. **Copy** the clone URL to copy the Development environment's git repository endpoint.
+The clone URL is now in your clipboard.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt="Copy the clone URL"><figcaption><p>Copy the clone URL</p></figcaption></figure>
+4. Paste the clone URL into your preferred Git Client.
 
-5. Use your favorite Git client to clone down the project. In this guide, we will use **Git Bash**.
-6. Type the following command in the **Git Bash** terminal:
+If you are using a command line tool, use the following command:
 
-```cs
+```bash
 git clone <Git clone URL>
 ```
 
-The `<Git clone URL>` should be the URL you copied from the Cloud Development environment.
+{% hint style="info" %}
 
-<figure><img src="../../../.gitbook/assets/git-bash-terminal.png" alt=""><figcaption></figcaption></figure>
+If this is the first time your cloning a Cloud project to your machine, you will be prompted to login using Umbraco ID.
 
-7. Press **Enter**.
+{% endhint %}
 
-Once the project has been cloned, you will get a folder with files for your Umbraco Cloud project. Now, you have a copy of your Umbraco Cloud Development environment that you can run locally.
+Once the project has been cloned, you have a folder with files for your Umbraco Cloud project. This is a copy of your Umbraco Cloud Development environment that you can run locally.
 
-![Cloned Project](../../../.gitbook/assets/cloned-project.png)
+The screenshot below shows the project folder structure of a default Cloud environment.
+
+![Cloned Project](../../../.gitbook/assets/work-locally-project-folder.png)
 
 ## Running the site Locally
 
-To run your Umbraco Cloud project locally, you will need to [install the latest .NET SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
+Use a command line tool of your choice for the following steps. You can also refer to the `Readme` file in the project folder.
 
-With dotnet installed, run the following commands in a terminal application of your choice. You can also refer to the `Readme` file in the project folder.
+1. Open the command line tool in the newly cloned project folder.
+2. Run the following command:
 
-1. Navigate to the newly created project folder.
-2. Run the following commands:
-
-```cs
+```bash
 cd src/UmbracoProject
 ```
 
-1. Build and run the project:
+3. Build and run the project:
 
-```cs
+```bash
 dotnet build
 dotnet run
 ```
 
 The terminal output will show the application starting up and will include localhost URLs which you can use to browse to your local Umbraco site.
 
-![Terminal Output](../../../.gitbook/assets/terminal-output.png)
+![Terminal Output](../../../.gitbook/assets/work-locally-terminal-output.png)
 
 {% hint style="info" %}
-We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
 
-```cs
+It is recommended to set up a developer certificate and run the website under HTTPS.
+
+If you haven't a developer certificate already, run the following command:
+
+```bash
 dotnet dev-certs https --trust
 ```
+
 {% endhint %}
 
 The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the cloned environment has Umbraco Deploy metadata files, they are automatically extracted with the option to restore content from Cloud to the local installation.
 
-![clone dialog](../../../.gitbook/assets/restorecontent.jpg)
+![clone dialog](../../../.gitbook/assets/work-locally-restore-screen.png)
 
 Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
 
@@ -130,7 +134,7 @@ If you want to add a solution file for your Cloud project, you can do it either:
 
 Using the terminal of your choice, navigate to the root of the git repository of your Umbraco Cloud project and enter the following command:
 
-```cs
+```bash
 dotnet new sln --name <MyAwesomeSolution>
 ```
 
@@ -166,7 +170,7 @@ If you want to add additional projects to your solution, you can do it either th
 
 Run the following commands to add additional projects to your solution:
 
-```cs
+```bash
 dotnet new classlib --name MyAwesomeProject.Web --output src/MyAwesomeProject.Web
 dotnet sln add .\src\MyAwesomeProject.Code\MyAwesomeProject.Code.csproj
 dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
