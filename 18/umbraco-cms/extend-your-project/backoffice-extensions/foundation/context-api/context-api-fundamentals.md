@@ -86,5 +86,5 @@ The most common hierarchy levels to which the contexts can be registered are:
 **Property contexts** are contexts that work at the property level. They can work on one or more property editors. An example is the clipboard functionality where blocks can be copied and pasted between block grids and block lists. Because these contexts are scoped at the property level, they are typically not consumed directly.
 
 {% hint style="info" %}
-For the full list of available contexts including all properties, methods, and inherited members, see the [Backoffice UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/). For example, the [Notification context's full member list](https://apidocs.umbraco.com/v18/ui-api/modules/packages_core_notification.html).
+For the full list of available contexts including all properties, methods, and inherited members, see the [Backoffice UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/). For example, see the [Notification context's full member list](https://apidocs.umbraco.com/v18/ui-api/modules/packages_core_notification.html).
 {% endhint %}
