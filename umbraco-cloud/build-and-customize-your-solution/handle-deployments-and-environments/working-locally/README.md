@@ -14,7 +14,7 @@ Learn how to clone your Umbraco Cloud project and work with it locally.
 
 ## Tools
 
-It is recommended to use one of the following tools to work with a local clone of your Umbraco Cloud project:
+You need the following tools to work with a local clone of your Umbraco Cloud project:
 
 * Git needs to be installed on your computer to clone down the project and push your changes up to Cloud.
   * Use a command line tool (Git Bash or the terminal) or one of these Git GUI clients:
@@ -40,7 +40,7 @@ To clone an Umbraco Cloud project, follow these steps:
 
 The clone URL is now in your clipboard.
 
-4. Paste the clone URL into your preferred Git Client.
+2. Paste the clone URL into your preferred Git Client.
 
 If you are using a command line tool, use the following command:
 
@@ -50,7 +50,7 @@ git clone <Git clone URL>
 
 {% hint style="info" %}
 
-If this is the first time your cloning a Cloud project to your machine, you will be prompted to login using Umbraco ID.
+If this is the first time you're cloning a Cloud project to your machine, you will be prompted to login using Umbraco ID.
 
 {% endhint %}
 
@@ -84,9 +84,9 @@ The terminal output will show the application starting up and will include local
 
 {% hint style="info" %}
 
-It is recommended to set up a developer certificate and run the website under HTTPS.
+Set up a developer certificate and run the website under HTTPS.
 
-If you haven't a developer certificate already, run the following command:
+If you don't have a developer certificate already, run the following command:
 
 ```bash
 dotnet dev-certs https --trust
@@ -115,7 +115,7 @@ If you have more than "a few" media items, see our recommendations for working w
 
 ### Adding a Solution File to your Cloud Project
 
-To collaborate effectively around a Cloud project, it is recommended to have a solution file. This allows for adding additional .NET projects to your solution.
+Add a solution file to collaborate effectively on a Cloud project. This allows for adding additional .NET projects to your solution.
 
 To add a solution file to your repository, you can do it using either of the following tools:
 
@@ -176,7 +176,7 @@ The next step is to add your Cloud project's .NET project to the solution.
 
 {% hint style="info" %}
 
-When creating new .NET projects alongside the default .NET project (`UmbracoProject.csproj`), it is recommended to add the projects to the `src` folder in the git repository.
+When creating new .NET projects alongside the default .NET project (`UmbracoProject.csproj`), add them to the `src` folder in the git repository.
 
 {% endhint %}
 
