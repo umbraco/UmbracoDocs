@@ -10,6 +10,8 @@ description: Instructions on installing Umbraco on various platforms using vario
 Ensure your environment meets the [System Requirements](requirements.md). You must have the latest [.NET SDK](https://dotnet.microsoft.com/download) installed and a compatible database ready.
 {% endhint %}
 
+## Install the Template
+
 1. Open your command line.
 2. Install the Umbraco templates:
 
