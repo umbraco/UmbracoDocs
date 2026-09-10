@@ -71,7 +71,7 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 ### Importing Dictionary Items
 
-Import never overwrites an existing translation value. This applies even if the value has been cleared to blank in the backoffice, since a cleared field still counts as an existing translation record.
+Importing dictionary items never overwrites an existing translation value. This applies even if the value has been cleared to blank in the backoffice, since a cleared field still counts as an existing translation record.
 
 Import only adds a translation for a language that has never had one set for that item. Items with no matching key (GUID) in the target site are created as new.
 
