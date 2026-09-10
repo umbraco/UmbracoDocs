@@ -10,6 +10,8 @@ The databases are environment specific. During deployment across environments, U
 
 The workflow described above does not recognize deletions of content and schema from the database. You'll need to delete the content and/or schema on all your environments to fully complete the deletion.
 
+For schema, Umbraco Deploy can remove the database entries that no longer have a corresponding `.uda` file. Cleaning is an explicit operation or an opt-in setting, so nothing is deleted without a decision on each environment. See [Cleaning schema](#cleaning-schema) for details.
+
 The main reason not to delete schema and content on deployments is that it could lead to an unrecoverable loss of data.
 
 Here's an example of what can happen when a Document Type is deleted and deployed:
@@ -38,6 +40,8 @@ Once the deployment is completed, the following changes has taken place:
 The reason for the Document Type to still be there is, that the associated `.uda` file is deleted. The Document Type still exists in the database.
 
 To delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the backoffice of all the environments and no `.uda` file exist, it is fully removed.
+
+Instead of deleting the Document Type in the backoffice, you can [clean the schema](#cleaning-schema) on the Live environment. Deploy then deletes the Document Type, because its `.uda` file no longer exists.
 
 If you save your Document Type during the process, a new `.uda` file is generated. This can recreate your deleted Document Type when deploying changes between environments.
 
@@ -69,6 +73,8 @@ All files are deleted in the next environment upon deployment.
 
 Deletions of content and media won't be detected during deployments. You must manually delete them on each environment where removal is desired.
 
+To reduce the risk of accidental deletions, restrict the delete permission for the relevant user groups using [granular Document permissions](https://docs.umbraco.com/umbraco-cms/manage-and-publish-content/users-and-members/users#granular-permissions).
+
 ### Deleting Backoffice Languages
 
 | Deleted                     | Not Deleted                                                                                        |
@@ -77,3 +83,18 @@ Deletions of content and media won't be detected during deployments. You must ma
 |                             | The language will still be visible in the Backoffice/Content dashboard (for multilingual content). |
 
 Deleting the language in the backoffice on the target environment will ensure the environments are in sync.
+
+## Cleaning schema
+
+Schema deletions leave database entries behind, as described above. Umbraco Deploy 13.4 and later can remove these entries for you. Deploy compares the schema in the database with the `.uda` files on disk and deletes the items without a matching file. Cleaning applies to all schema types managed by Deploy, including Templates and Languages.
+
+You can clean the schema in two ways:
+
+* **Manually**: Run the **Verify schema** operation from the [Deploy Settings](deploy-dashboard.md#verify-schema) on the environment you want to clean. With Umbraco Deploy 18 and later, the operation is on the **Status** page and the **Schema** page shows which items are missing a file. In earlier versions, both are on the Deploy dashboard.
+* **Automatically**: Set the [`PostDeploySchemaOperation`](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#post-deploy-schema-operation) setting to `CleanSchema`. Deploy then cleans the schema after every schema deployment to that environment.
+
+{% hint style="warning" %}
+Cleaning the schema deletes items. Deleting a Document Type also deletes all content using that type, with no option to roll back. Only configure `CleanSchema` on environments where this is acceptable, such as local or Development environments. On Live, run the operation manually after checking the schema comparison.
+{% endhint %}
+
+Cleaning the schema does not affect content and media. Those deletions must still be made manually on each environment.
