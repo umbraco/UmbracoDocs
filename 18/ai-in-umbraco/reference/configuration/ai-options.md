@@ -32,6 +32,7 @@ public class AIOptions
     public string? DefaultEmbeddingProfileAlias { get; set; }
     public string? ClassifierChatProfileAlias { get; set; }
     public string? DefaultSpeechToTextProfileAlias { get; set; }
+    public string? DefaultImageGenerationProfileAlias { get; set; }
 
     public IList<string> AllowedConfigurationKeyPrefixes { get; set; } = new List<string>
     {
@@ -56,6 +57,7 @@ public class AIOptions
 | `DefaultEmbeddingProfileAlias`    | `string?` | Fallback default profile alias for embeddings           |
 | `ClassifierChatProfileAlias`      | `string?` | Fallback profile alias for classification tasks         |
 | `DefaultSpeechToTextProfileAlias` | `string?` | Fallback default profile alias for speech-to-text       |
+| `DefaultImageGenerationProfileAlias` | `string?` | Fallback default profile alias for image generation (experimental) |
 | `AllowedConfigurationKeyPrefixes` | `IList<string>` | Configuration sections that settings may resolve via `$` references. Defaults to `Umbraco:AI:Secrets` and `Umbraco:AI:Variables` |
 | `SecretConfigurationKeyPrefixes`  | `IList<string>` | The subset of allowed prefixes treated as secret. Values under these may only be referenced from sensitive fields. Defaults to `Umbraco:AI:Secrets` |
 
@@ -77,6 +79,30 @@ public class AIOptions
 ```
 
 {% endcode %}
+
+## Experimental Features
+
+Experimental capabilities are hidden and inert until enabled under the `Umbraco:AI:Experimental` section. Each flag defaults to `false`.
+
+{% code title="appsettings.json" %}
+
+```json
+{
+    "Umbraco": {
+        "AI": {
+            "Experimental": {
+                "ImageGeneration": true
+            }
+        }
+    }
+}
+```
+
+{% endcode %}
+
+| Flag | Default | Description |
+| --- | --- | --- |
+| `ImageGeneration` | `false` | Enables the [Image Generation](../../using-the-api/image-generation/README.md) capability. When off, the capability is hidden from discovery, not selectable in the profile editor, and its REST endpoint returns 404. |
 
 ## Configuration References
 
