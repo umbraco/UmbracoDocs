@@ -521,7 +521,7 @@ export default class My2faActivationElement extends UmbLitElement {
         }
         const { data: _data } = await tryExecute(
             this,
-            UserService.getUserCurrent2FaByProviderName({ providerName: this.providerName }),
+            UserService.getUserCurrent2FaByProviderName({ path: { providerName: this.providerName } }),
         );
         const data = _data;
         if (!data) {
