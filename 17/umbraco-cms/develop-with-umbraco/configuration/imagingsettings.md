@@ -106,6 +106,8 @@ It is recommended to add this key.
 
 A health check is available under _Settings > Health Checks_ that verifies the existence of the configured key and warns if it is absent.
 
+To render media from a backoffice extension without building signed URLs by hand, see [Working with Media](../../extend-your-project/backoffice-extensions/foundation/working-with-media.md).
+
 ### Key length
 
 The `HMACSecretKey` should be a secure, random key. For most use cases, a 64-byte (512-bit) key is recommended. If you are using `HMACSHA384` or `HMACSHA512`, you may want to use a longer key (for example: 128 bytes).
