@@ -54,7 +54,7 @@ public class MemberAuthenticationSurfaceController : SurfaceController
 
 Finds a member by their ID
 
-```
+```csharp
 @{
     var memberById = await _memberManager.FindByIdAsync("1234");
     // Do stuff with the member, for instance checking if email is confirmed
@@ -62,11 +62,11 @@ Finds a member by their ID
 }
 ```
 
-If we want to find a member by `Udi` or `Guid` we need to to inject `IIdKeyMap` service:
+To find a member by `Udi` or `Guid`, inject `IIdKeyMap` service:
 
 **Find member by `Udi`**
 
-```
+```csharp
 var memberUdiAttempt = _idKeyMap.GetIdForUdi(nodeUdi);
 if (memberUdiAttempt.Success)
 {
@@ -77,8 +77,8 @@ if (memberUdiAttempt.Success)
 
 **Find member by `Guid`**
 
-```
-var memberKeyAttempt = _idKeyMap.GetIdForKey(nodeKey);
+```csharp
+var memberKeyAttempt = _idKeyMap.GetIdForKey(nodeKey, UmbracoObjectTypes.Member);
 if (memberKeyAttempt.Success)
 {
    var memberId = memberKeyAttempt.Result;
@@ -90,7 +90,7 @@ if (memberKeyAttempt.Success)
 
 Finds a member by their email.
 
-```
+```csharp
 @{
     var memberById = await _memberManager.FindByEmailAsync("test@member.com");
     // Do stuff with the member, for instance checking if email is confirmed
@@ -102,7 +102,7 @@ Finds a member by their email.
 
 Finds a member by their login name.
 
-```
+```csharp
 @{
     var memberById = await _memberManager.FindByNameAsync("TestLoginName");
     // Do stuff with the member, for instance checking if email is confirmed
@@ -114,7 +114,7 @@ Finds a member by their login name.
 
 By default `IMemberManager` returns members as `MemberIdentityUser`. This method allows you to convert a `MemberIndentityUser` into `IPublishedContent`:
 
-```
+```csharp
 @{
     MemberIdentityUser memberById = await _memberManager.FindByEmailAsync("test@member.com");
     IPublishedContent memberAsContent = _memberManager.AsPublishedMember(memberById);
@@ -125,7 +125,7 @@ By default `IMemberManager` returns members as `MemberIdentityUser`. This method
 
 Returns the currently logged in member if there is one, else returns null value.
 
-```
+```csharp
 @{
     var currentMember = await _memberManager.GetCurrentMemberAsync();
 }
@@ -144,7 +144,7 @@ else
 
 Returns the user id of a user
 
-```
+```csharp
 @{
  var userId = await _memberManager.GetUserIdAsync(user);
 }
@@ -154,7 +154,7 @@ Returns the user id of a user
 
 Checks if a member is logged in.
 
-```
+```csharp
 @if (_memberManager.IsLoggedIn())
 {
     <p>A member is logged in</p>
@@ -169,7 +169,7 @@ else
 
 Checks if the current member is authorized for content protected by types, groups or specific members. For instance, you can use this method to check if the current logged in member is authorized. This is particularly useful for pages only available to the VIP member group, like so:
 
-```
+```csharp
 @{
     var memberIsAuthorized = await _memberManager.IsMemberAuthorizedAsync(allowGroups: new []{"VIP"});
 }
@@ -218,7 +218,7 @@ Returns a `Task<bool>` specifying if the currently logged in member has access t
 
 Validates that a user's credentials are correct without logging them in.
 
-```
+```csharp
 @{
  var isValidCredentials = await _memberManager.ValidateCredentialsAsync(userName, password);
 }
