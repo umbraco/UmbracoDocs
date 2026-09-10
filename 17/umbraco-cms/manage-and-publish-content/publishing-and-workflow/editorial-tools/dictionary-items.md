@@ -77,7 +77,7 @@ Importing adds a translation for a language that has never had one set for that 
 
 **Example:** If _Welcome_ already has an English value on the target site, importing a `.udt` with a different English value for _Welcome_ will not change it. If _Welcome_ has never had a Danish value, importing a Danish value for it will add one.
 
-To import dictionary items:
+To import dictionary items follow these steps:
 
 1. Go to the **Translation** section in the Umbraco backoffice.
 2. Click **...** next to the **Dictionary** tree.
