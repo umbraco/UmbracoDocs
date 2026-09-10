@@ -16,7 +16,6 @@
 
 * [Installation](get-started/installation/README.md)
   * [Requirements](get-started/installation/requirements.md)
-  * [Install Using .NET CLI](get-started/installation/install-umbraco-with-templates.md)
   * [Install Using Visual Studio](get-started/installation/visual-studio.md)
   * [Install Using Visual Studio Code](get-started/installation/install-umbraco-with-vs-code.md)
   * [Running Umbraco on Linux/macOS](get-started/installation/running-umbraco-on-linux-macos.md)
