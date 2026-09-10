@@ -71,6 +71,14 @@ This will download a `.udt` file which you can use to import the Dictionary item
 
 ### Importing Dictionary Items
 
+Import never overwrites an existing translation value. This applies even if the value has been cleared to blank in the backoffice, since a cleared field still counts as an existing translation record.
+
+Import only adds a translation for a language that has never had one set for that item. Items with no matching key (GUID) in the target site are created as new.
+
+**Example:** If _Welcome_ already has an English value on the target site, importing a `.udt` with a different English value for _Welcome_ will not change it. If _Welcome_ has never had a Danish value, importing a Danish value for it will add one.
+
+To import dictionary items:
+
 1. Go to the **Translation** section in the Umbraco backoffice.
 2. Click **...** next to the **Dictionary** tree.
 3. Select **Import...**.
