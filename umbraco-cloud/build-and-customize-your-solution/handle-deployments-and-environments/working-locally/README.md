@@ -6,11 +6,9 @@ description: >-
 
 # Working with a Local Clone
 
-## Video Tutorial
-
-{% embed url="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" %}
-Learn how to clone your Umbraco Cloud project and work with it locally.
-{% endembed %}
+{% hint style="info" %}
+This article covers the initial clone of an Umbraco Cloud project and the first-time local setup. The cloned repository uses a SQLite database provided by Umbraco Cloud.
+{% endhint %}
 
 ## Tools
 
@@ -29,6 +27,12 @@ You need the following tools to work with a local clone of your Umbraco Cloud pr
 In the root of your local repository, you'll find a `README` file with details about the project structure and build process on Umbraco Cloud.
 
 {% endhint %}
+
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" %}
+Learn how to clone your Umbraco Cloud project and work with it locally.
+{% endembed %}
 
 ## Cloning an Umbraco Cloud Project
 
