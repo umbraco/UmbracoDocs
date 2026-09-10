@@ -2,9 +2,9 @@
 
 ## Key Takeaways
 
-* **Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity 13.2.9** - Remove obsolete endpoints related to Umbraco Id
+* **Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity.Cms 13.2.9** - Remove obsolete endpoints related to Umbraco Id
 
-## Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity 13.2.9
+## Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity.Cms 13.2.9
 
 New versions of the `Umbraco.Cloud.Cms` package are available: 17.2.3, and 18.0.3.
 
