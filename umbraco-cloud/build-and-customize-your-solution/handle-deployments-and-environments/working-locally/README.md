@@ -20,7 +20,7 @@ You need the following tools to work with a local clone of your Umbraco Cloud pr
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [GitKraken](https://www.gitkraken.com/)
 * An IDE like [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider), for running the project on your local machine.
-* The [.NET SDK version that matches your projects](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) Umbraco CMS version.
+* The proper [local setup for running Umbraco CMS](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements).
 
 {% hint style="info" %}
 
