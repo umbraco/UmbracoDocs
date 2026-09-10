@@ -24,7 +24,7 @@ You need the following tools to work with a local clone of your Umbraco Cloud pr
 
 {% hint style="info" %}
 
-In the root of your local repository, you'll find a `README` file with details about the project structure and build process on Umbraco Cloud.
+In the root of your local repository, you'll find a `Readme.md` file with details about the project structure and build process on Umbraco Cloud.
 
 {% endhint %}
 
@@ -66,7 +66,7 @@ The screenshot below shows the project folder structure of a default Cloud envir
 
 ## Running the site Locally
 
-Use a command line tool of your choice for the following steps. You can also refer to the `README.md` file found in the repository.
+Use a command line tool of your choice for the following steps. You can also refer to the `Readme.md` file found in the repository.
 
 1. Open the command line tool in the newly cloned repository.
 2. Run the following command:
