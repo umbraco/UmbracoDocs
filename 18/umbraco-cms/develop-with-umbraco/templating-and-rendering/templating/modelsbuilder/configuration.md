@@ -40,10 +40,10 @@ It is recommended to generate models in your development environment only and ch
 
 ## Models Builder Dashboard
 
-Models Builder ships with a dashboard in the __Settings__ section of Umbraco's backoffice. The dashboard displays:
+Models Builder ships with a dashboard in the __Settings__ section of Umbraco's backoffice. The dashboard does three things:
 
-* Details on how Models Builder is configured
-* Provides a way to generate models (in `SourceCodeManual` or `SourceCodeAuto` mode)
-* Reports the last error (if any) that would have prevented models from being properly generated
+* Details on how Models Builder is configured.
+* Provides a way to generate models (in `SourceCodeManual` or `SourceCodeAuto` mode).
+* Reports the last error (if any) that would have prevented models from being properly generated.
 
 ![Models Builder Dashboard](../../../../.gitbook/assets/ModelsBuilderDashboard.png)
