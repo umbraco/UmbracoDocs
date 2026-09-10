@@ -19,7 +19,7 @@ The following configuration option can be set in the application settings (in th
 
 ## Example Configuration
 
-The example below shows an example configuration using the SourceCodeManual mode.
+The example below shows an example configuration using the `SourceCodeManual` mode.
 
 ```json
 {
@@ -40,10 +40,10 @@ It is recommended to generate models in your development environment only and ch
 
 ## Models Builder Dashboard
 
-Models Builder ships with a dashboard in the _Settings_ section of Umbraco's backoffice. The dashboard does three things:
+Models Builder ships with a dashboard in the __Settings__ section of Umbraco's backoffice. The dashboard displays:
 
 * Details on how Models Builder is configured
-* Provides a way to generate models (in SourceCodeManual mode only)
+* Provides a way to generate models (in `SourceCodeManual` or `SourceCodeAuto` mode)
 * Reports the last error (if any) that would have prevented models from being properly generated
 
-![Models Builder Dashboard](../../../../.gitbook/assets/ModelsBuilderDashboard-v14.png)
+![Models Builder Dashboard](../../../../.gitbook/assets/ModelsBuilderDashboard.png)
