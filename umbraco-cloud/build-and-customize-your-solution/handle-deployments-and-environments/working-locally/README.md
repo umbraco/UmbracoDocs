@@ -147,14 +147,8 @@ dotnet sln add src/UmbracoProject/UmbracoProject.csproj
 #### Using Visual Studio
 
 1. Open the `UmbracoProject.csproj` project in Visual Studio.
-2. Click on the solution:
-
-![Visual studio solution](../../../.gitbook/assets/solution-VS.png)
-
-3. Save the solution file using the **Save as** option:
-
-![save file as](../../../.gitbook/assets/save-as.png)
-
+2. Select the solution in the Explorer.
+3. Save the solution file using the **Save as** option.
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
 {% hint style="info" %}
@@ -202,21 +196,11 @@ dotnet sln add ./src/MyAdditionalProject.Web/MyAdditionalProject.Web.csproj
 #### Visual Studio
 
 1. Open the `UmbracoProject.csproj` project in Visual Studio.
-2. Click on the solution:
-
-<div align="center"><img src="../../../.gitbook/assets/solution-VS.png" alt="Solution"></div>
-
+2. Select the solution in the Explorer
 3. Right-click the solution and choose **Add > New Project...**.
-
-<div align="center"><img src="../../../.gitbook/assets/add-new.png" alt="add new project"></div>
-
-4. Add a class library using the latest .NET SDK to your solution:
-
-<div align="left"><img src="../../../.gitbook/assets/class-library.png" alt="Class library"></div>
+4. Add a class library to your solution using the latest .NET SDK.
 
 Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer.
-
-![New project added](../../../.gitbook/assets/new-project.png)
 
 #### Rider
 
