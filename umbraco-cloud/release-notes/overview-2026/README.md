@@ -6,6 +6,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [September 2026](2026-09-releasenotes.md)
+
+* [15/09] - **Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity.Cms 13.2.9** - Remove obsolete endpoints related to Umbraco Id
+  
 ## [August 2026](2026-08-releasenotes.md)
 
 * [20/08] - **Custom error pages shown for stopped environments** - Custom error pages are now also shown while an environment is stopped, not only during restarts and deployments.
