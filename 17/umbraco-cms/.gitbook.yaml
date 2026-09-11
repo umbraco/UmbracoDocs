@@ -171,6 +171,7 @@ redirects:
     fundamentals/setup: get-started/installation/README.md
     fundamentals/setup/requirements: get-started/installation/requirements.md
     fundamentals/setup/install: get-started/installation/README.md
+    fundamentals/setup/install/install-umbraco-with-templates: get-started/installation/README.md
     fundamentals/setup/install/visual-studio: get-started/installation/visual-studio.md
     fundamentals/setup/install/install-umbraco-with-vs-code: get-started/installation/install-umbraco-with-vs-code.md
     fundamentals/setup/install/running-umbraco-on-linux-macos: get-started/installation/running-umbraco-on-linux-macos.md
