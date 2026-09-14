@@ -7,6 +7,7 @@
 * [Overview](getting-started/README.md)
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
+* [Load Balancing](getting-started/load-balancing.md)
 * [Create Your First Automation](getting-started/first-automation.md)
 
 ## Concepts

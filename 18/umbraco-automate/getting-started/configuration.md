@@ -66,6 +66,7 @@ The defaults are suitable for most sites:
         "RateLimitPerMinute": 100
       },
       "Execution": {
+        "Mode": "SchedulerOnly",
         "DefaultTimeout": "00:05:00",
         "MaxConcurrentRuns": 10,
         "MaxChainDepth": 5,
@@ -86,7 +87,7 @@ The defaults are suitable for most sites:
 | ------------ | ------------------------------------------------------------------------------- |
 | `Enabled`    | Master switch for the automation engine.                                        |
 | `Webhook`    | Maximum payload size and per-automation rate limit for incoming webhooks.       |
-| `Execution`  | Default step timeout, concurrent run limit, maximum automation chain depth, and maximum HTTP response body size. |
+| `Execution`  | Which nodes run automations, default step timeout, concurrent run limit, maximum automation chain depth, and maximum HTTP response body size. See [Load Balancing](load-balancing.md) for `Mode`. |
 | `Governance` | Audit log retention and sensitive data masking.                                 |
 
 ## Configuration References
