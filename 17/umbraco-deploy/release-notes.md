@@ -16,6 +16,17 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.3.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 11th 2026)
+
+* Keep property types that are not in a property group when deploying changes to document, media, and member types. Previously, deploying a changed type deleted the content stored in those properties. This affected all Deploy versions since 14.0 and became visible with Umbraco CMS 17.2.0 after [umbraco/Umbraco-CMS#21585](https://github.com/umbraco/Umbraco-CMS/pull/21585).
+* Interpret the release date in the **Queue for transfer** dialog in the editor's time zone instead of the server's time zone [#350](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/350). The compare dialog also shows scheduled publish and unpublish dates in the editor's local time.
+* Reject bearer tokens with a timestamp outside the [`SessionTimeout`](getting-started/deploy-settings.md#timeout-settings) setting (20 minutes by default). Environment clocks must be roughly in sync. Every request uses a new token, so long-running operations are not affected.
+* Authenticate environment API requests with an ASP.NET Core authentication scheme instead of middleware. Packages that register endpoints early in the request pipeline no longer cause every environment request to fail with a 403 error. Authentication failures now return a 401 status code instead of a 500.
+* Keep the relations returned by a remote environment when updating or reviewing a manifest, so restores from a remote environment create relations again.
+* Show the schema mismatch details instead of a "Could not retrieve artifact" error when an artifact does not exist in the remote environment.
+* Fail a transfer or restore when a file is missing on the source environment, instead of creating the item without its file when the target pulls the files. The error message lists all missing files.
+* Add OpenAPI documents for the Deploy Environment API and Deploy Schema API to the Swagger UI at `/umbraco/swagger`, next to the Deploy Management API. The Extract and StatusReport (`umbracodeploy`) routes are documented in lowercase. The URLs stay case-insensitive.
+
 ### [17.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 4th 2026)
 
 * Register dependencies for rich text local links in the `{localLink:<guid>}` format, so linked documents and media are transferred with the content [#348](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/348).
