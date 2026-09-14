@@ -31,7 +31,7 @@ Enables searching dictionary items by their **translation values** in addition t
 
 When set to `false` (default), only dictionary keys are searched.
 
-When set to `true`, both dictionary keys and translation values are searched. Values use substring matching, allowing editors to find dictionary items by their translated content.
+When set to `true`, both dictionary keys and translation values are searched. Values use partial string matching, allowing editors to find dictionary items by their translated content.
 
 {% hint style="info" %}
 This feature is **disabled by default** to preserve backward compatibility and performance. It is recommended to enable the setting only when your editors need to search by translation values.
