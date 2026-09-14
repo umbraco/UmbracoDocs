@@ -10,6 +10,14 @@ description: "Host setup for OpenAI Codex"
 The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
 {% endhint %}
 
+{% hint style="warning" %}
+**Match the package version to your Umbraco site.** The examples on this page use `@latest`, which installs the newest release of the MCP Server. This may be a later major version than the one your site runs.
+
+If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail.
+
+See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
+{% endhint %}
+
 ## Getting started
 
 Option A: Install via npm:
@@ -40,9 +48,13 @@ codex mcp add umbraco-mcp \
   --env UMBRACO_CLIENT_SECRET="your-secret" \
   --env UMBRACO_BASE_URL="https://your-domain.com" \
   --env NODE_TLS_REJECT_UNAUTHORIZED="0" \
-  --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" \
+  --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" \
   -- npx -y @umbraco-cms/mcp-dev@latest
 ```
+
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
 
 Replace the following values with your local connection details:
 

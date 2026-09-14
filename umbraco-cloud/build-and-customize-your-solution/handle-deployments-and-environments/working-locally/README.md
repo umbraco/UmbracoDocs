@@ -6,112 +6,112 @@ description: >-
 
 # Working with a Local Clone
 
+{% hint style="info" %}
+This article covers the initial clone of an Umbraco Cloud project and the first-time local setup. The cloned repository uses a SQLite database provided by Umbraco Cloud.
+{% endhint %}
+
+## Tools
+
+You need the following tools to work with a local clone of your Umbraco Cloud project:
+
+* Git needs to be installed on your computer to clone down the project and push your changes up to Cloud.
+  * Use a command line tool (Git Bash or the terminal) or one of these Git GUI clients:
+    * [Fork](https://git-fork.com/)
+    * [SourceTree](https://www.sourcetreeapp.com/)
+    * [GitKraken](https://www.gitkraken.com/)
+* An IDE like [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider), for running the project on your local machine.
+* The proper [local setup for running Umbraco CMS](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements).
+
+{% hint style="info" %}
+
+In the root of your local repository, you'll find a `Readme.md` file with details about the project structure and build process on Umbraco Cloud.
+
+{% endhint %}
+
 ## Video Tutorial
 
 {% embed url="https://www.youtube.com/embed/ZDuD9cl-iUc?rel=0" %}
 Learn how to clone your Umbraco Cloud project and work with it locally.
 {% endembed %}
 
-## Tools
-
-We recommend using the following tools to work with a local clone of your Umbraco Cloud project:
-
-* Git needs to be installed on your computer to clone down the project and push your changes up to Cloud.
-  * We recommend using one of the following git-clients if you are new to Git:
-    * [Fork](https://git-fork.com/)
-    * [SourceTree](https://www.sourcetreeapp.com/)
-    * [GitKraken](https://www.gitkraken.com/)
-* [Microsoft Visual Studio](https://www.visualstudio.com/) or [JetBrains Rider](https://www.jetbrains.com/rider) - for running the project on your local machine.
-
-{% hint style="info" %}
-In the root of your local project, you'll find a _README_ file with details about the project structure and build process on Umbraco Cloud.
-{% endhint %}
-
 ## Cloning an Umbraco Cloud Project
 
 To clone an Umbraco Cloud project, follow these steps:
 
-1. Open the project you wish to clone in the Umbraco Cloud Portal.
-2. Click on the arrow next to the **Development** environment.
-3. Select **Clone project**.
+1. Click **Clone** on the environment you want to work with locally.
 
-<div align="center"><figure><img src="../../../.gitbook/assets/image (12).png" alt="Clone project option"><figcaption><p>Clone project option</p></figcaption></figure></div>
+<div align="center"><figure><img src="../../../.gitbook/assets/work-locally-clone-env.png" alt="Clone project option"><figcaption><p>Click "Clone" on a Cloud environment to copy the clone URL.</p></figcaption></figure></div>
 
-4. **Copy** the clone URL to copy the Development environment's git repository endpoint.
+The clone URL is now in your clipboard.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt="Copy the clone URL"><figcaption><p>Copy the clone URL</p></figcaption></figure>
+2. Paste the clone URL into your preferred Git Client.
 
-5. Use your favorite Git client to clone down the project. In this guide, we will use **Git Bash**.
-6. Type the following command in the **Git Bash** terminal:
+If you are using a command line tool, use the following command:
 
-```cs
+```bash
 git clone <Git clone URL>
 ```
 
-The `<Git clone URL>` should be the URL you copied from the Cloud Development environment.
+{% hint style="info" %}
 
-<figure><img src="../../../.gitbook/assets/git-bash-terminal.png" alt=""><figcaption></figcaption></figure>
+If this is the first time you're cloning a Cloud project to your machine, you will be prompted to login using Umbraco ID.
 
-7. Press **Enter**.
+{% endhint %}
 
-Once the project has been cloned, you will get a folder with files for your Umbraco Cloud project. Now, you have a copy of your Umbraco Cloud Development environment that you can run locally.
+Once the repository has been cloned, you have a folder with files for your Umbraco Cloud project. This is your local repository containing everything you need to work locally with your Cloud project.
 
-![Cloned Project](../../../.gitbook/assets/cloned-project.png)
+The screenshot below shows the project folder structure of a default Cloud environment.
+
+![Cloned Project](../../../.gitbook/assets/work-locally-project-folder.png)
 
 ## Running the site Locally
 
-To run your Umbraco Cloud project locally, you will need to [install the latest .NET SDK](https://dotnet.microsoft.com/download) (if you do not have this already).
+Use a command line tool of your choice for the following steps. You can also refer to the `Readme.md` file found in the repository.
 
-With dotnet installed, run the following commands in a terminal application of your choice. You can also refer to the `Readme` file in the project folder.
+1. Open the command line tool in the newly cloned repository.
+2. Run the following command:
 
-1. Navigate to the newly created project folder.
-2. Run the following commands:
-
-```cs
+```bash
 cd src/UmbracoProject
 ```
 
-1. Build and run the project:
+3. Build and run the project:
 
-```cs
+```bash
 dotnet build
 dotnet run
 ```
 
 The terminal output will show the application starting up and will include localhost URLs which you can use to browse to your local Umbraco site.
 
-![Terminal Output](../../../.gitbook/assets/terminal-output.png)
+![Terminal Output](../../../.gitbook/assets/work-locally-terminal-output.png)
 
 {% hint style="info" %}
-We recommend setting up a developer certificate and running the website under HTTPS. If you haven't configured one already, run the following command:
 
-```cs
+Set up a developer certificate and run the website under HTTPS.
+
+If you don't have a developer certificate already, run the following command:
+
+```bash
 dotnet dev-certs https --trust
 ```
+
 {% endhint %}
 
-The first time the project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the cloned environment has Umbraco Deploy metadata files, they are automatically extracted with the option to restore content from Cloud to the local installation.
+The first time the Cloud project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the cloned environment has Umbraco Deploy metadata files, they are automatically extracted with the option to restore content from Cloud to the local installation.
 
-![clone dialog](../../../.gitbook/assets/restorecontent.jpg)
+![clone dialog](../../../.gitbook/assets/work-locally-restore-screen.png)
 
 Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
 
-## Working with Visual Studio
+## Solution files and multiple .NET projects
 
-When working locally, we recommend using Visual Studio but you can use any other development tool of your choice.
+When working locally, you can use whichever IDE you prefer. Refer back to the [Tools](#tools) section for recommendations.
 
-Once the project has been cloned down, you will get a folder with files for your Umbraco Cloud project.
+1. Locate the `UmbracoProject.csproj` file in the repository.
+2. Open it in your preferred IDE to start working locally with your Cloud project.
 
-<figure><img src="../../../.gitbook/assets/V9-files.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
-
-1. Navigate to `src/UmbracoProject`. Here, you will find the files for your Umbraco installation.
-
-<figure><img src="../../../.gitbook/assets/V9-project-file.png" alt="Umbraco files"><figcaption><p>Umbraco files</p></figcaption></figure>
-
-2. Open the `UmbracoProject.csproj` file in Visual Studio.
-3. Build and run your solution in Visual Studio.
-
-You can create content, add media, and create your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment/) documentation.
+You can create content, add media, and write your custom code. When you're ready to deploy your changes make sure to have a look at the [deployments](../deployment/) documentation.
 
 {% hint style="info" %}
 If you have more than "a few" media items, see our recommendations for working with [Media on Umbraco Cloud](../media/).
@@ -119,83 +119,103 @@ If you have more than "a few" media items, see our recommendations for working w
 
 ### Adding a Solution File to your Cloud Project
 
-To collaborate effectively in an Umbraco Cloud project, ensure you have a solution file in Visual Studio. This allows for adding additional projects.
+Add a solution file to collaborate effectively on a Cloud project. This allows for adding additional .NET projects to your solution.
 
-If you want to add a solution file for your Cloud project, you can do it either:
+To add a solution file to your repository, you can do it using either of the following tools:
 
-* [Using the Command Line](./#using-the-command-line)
-* [Using Visual Studio](./#using-visual-studio)
+* [The Command Line](./#using-the-command-line)
+* [Visual Studio](./#using-visual-studio)
+* [Rider](./#using-rider)
 
 #### Using the Command Line
 
-Using the terminal of your choice, navigate to the root of the git repository of your Umbraco Cloud project and enter the following command:
+Use a command line tool to follow these steps:
 
-```cs
+1. Navigate to the root of your repository.
+2. Create the solution file using the following command:
+
+```bash
 dotnet new sln --name <MyAwesomeSolution>
+```
+
+3. Add your `UmbracoProject.csproj` file to the solution:
+
+```bash
+dotnet sln add src/UmbracoProject/UmbracoProject.csproj
 ```
 
 #### Using Visual Studio
 
 1. Open the `UmbracoProject.csproj` project in Visual Studio.
-2. Click on the solution:
-
-![Visual studio solution](../../../.gitbook/assets/solution-VS.png)
-
-3. Save the solution file using the **Save as** option:
-
-![save file as](../../../.gitbook/assets/save-as.png)
-
+2. Select the solution in the Explorer.
+3. Save the solution file using the **Save as** option.
 4. Provide a **File name** to create the solution file in the folder that you specified.
 
 {% hint style="info" %}
-When creating a solution file, we recommend placing it at the root of the git repository.
+When creating a solution file, place it at the root of the git repository.
 {% endhint %}
 
-### Adding Additional Projects to Your Solution
+#### Using Rider
+
+1. Open Rider.
+2. Click on **New Solution**.
+3. Select the **Empty Solution** template.
+4. Give the solution a name, and ensure it's saved at the root of your repository.
+5. Ensure that Rider does not create a directory for the solution.
+6. Click **Create**.
+
+The next step is to add your Cloud project's .NET project to the solution.
+
+7. Right-click the solution in the Explorer pane.
+8. Select **Add > Existing project...**.
+9. Locate and open the `UmbracoProject.csproj` file in your repository.
+
+### Adding Additional .NET Projects to Your Solution
 
 {% hint style="info" %}
-When creating new projects alongside the default Umbraco project, we recommend adding the projects to the `src` folder in the git repository.
+
+When creating new .NET projects alongside the default .NET project (`UmbracoProject.csproj`), add them to the `src` folder in the git repository.
+
 {% endhint %}
 
-If you want to add additional projects to your solution, you can do it either through the:
+To add additional .NET projects to your solution, you can do it using either of the following tools:
 
-* [Command Line](./#command-line)
+* [Command Line](./#command-line-1)
 * [Visual Studio](./#visual-studio)
+* [Rider](./#rider)
 
 #### Command Line
 
-Run the following commands to add additional projects to your solution:
+Run the following commands to add additional .NET projects to your solution:
 
-```cs
-dotnet new classlib --name MyAwesomeProject.Web --output src/MyAwesomeProject.Web
-dotnet sln add .\src\MyAwesomeProject.Code\MyAwesomeProject.Code.csproj
-dotnet sln add .\src\MyAwesomeProject.Web\MyAwesomeProject.Web.csproj
+```bash
+dotnet new classlib --name MyAdditionalProject.Web --output src/MyAdditionalProject.Web
+dotnet sln add ./src/MyAdditionalProject.Web/MyAdditionalProject.Web.csproj
 ```
 
 #### Visual Studio
 
-1. Open the `UmbracoProject.csproj` project in Visual studio.
-2. Click on the solution:
-
-<div align="center"><img src="../../../.gitbook/assets/solution-VS.png" alt="Solution"></div>
-
-3. Right-click the solution and choose `Add` -> `New Project...`
-
-<div align="center"><img src="../../../.gitbook/assets/add-new.png" alt="add new project"></div>
-
-1. Add a class library using the latest .NET SDK to your project:
-
-<div align="left"><img src="../../../.gitbook/assets/class-library.png" alt="Class library"></div>
+1. Open the `UmbracoProject.csproj` project in Visual Studio.
+2. Select the solution in the Explorer
+3. Right-click the solution and choose **Add > New Project...**.
+4. Add a class library to your solution using the latest .NET SDK.
 
 Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer.
 
-![New project added](../../../.gitbook/assets/new-project.png)
+#### Rider
+
+1. Open the solution in Rider.
+2. In the **Explorer** pane, right-click the solution.
+3. Select **Add** > **New Project...**.
+4. Choose **Class Library** as the project type and configure the project name.
+5. Set the location to the `src/` folder in your repository.
+6. Click **Create**.
 
 ## Renaming the Project Files and Folders
 
 To rename your Umbraco Cloud project files and folder, do the following:
 
-1. Navigate to the `.umbraco` file at the root of the project and view the following:
+1. Navigate to the `.umbraco` file at the root of the repository and view the following:
 
 ```csharp
 [project]
@@ -203,11 +223,12 @@ base = "src/UmbracoProject"
 csproj = "UmbracoProject.csproj"
 ```
 
-The `base` property provides the folder location which contains the application and the `csproj` property is the name of the .csproj file.
+The `base` property provides the folder location which contains the application and the `csproj` property is the name of the `.csproj` file.
 
 1. Rename the `UmbracoProject` directory and `.csproj` file.
-2. Update the `.umbraco` file with the new name and any C# code namespaces reflecting the name of your project.
-3. Additionally, if you prefer to organize your code, you can add additional Class Library projects that are referenced by the Umbraco application .csproj file.
+2. Update the `.umbraco` file with the new name and any C# code namespaces reflecting the name of your .NET project.
+3. Add additional Class Library projects that are referenced by the Umbraco application `.csproj` file if you prefer to organize your code.
+4. Clear the `bin` and `obj` folders in your repository to prevent any build errors.
 
 For example: Rename `UmbracoProject.csproj` to `MyAwesomeProject.Web.csproj` and have one or more additional class library projects such as `MyAwesomeProject.Code.csproj`
 
@@ -218,59 +239,5 @@ csproj = "MyAwesomeProject.Web.csproj"
 ```
 
 {% hint style="info" %}
-It's a good practice to update the namespaces in the `Program.cs`, `Startup.cs`, and `_ViewImports.cshtml` files to ensure consistent naming throughout your project. After making these updates, be sure to clear the `bin` and `obj` folders locally to prevent any build errors. Once you have completed these steps, commit your changes and push them to the cloud.
+It's a good practice to update the namespaces in the `Program.cs` and `_ViewImports.cshtml` files to ensure consistent naming throughout your solution.
 {% endhint %}
-
-If you've built and run the project locally, update your local Git repository to reflect any changes made. When a Cloud project first runs, a Git hook is created. It triggers a schema update via Umbraco Deploy when changes are pulled from an upstream environment.
-
-The file you'll need to update is `post-merge` within `.git/hooks/` in your cloned environment files. It can be opened with a text editor. You can either delete the file so it will be recreated with the new path or update it. The default contents are shown below and can be updated to reflect the new path to the `umbraco/Deploy` folder.
-
-```
-#!/bin/sh
-echo > src/UmbracoProject/umbraco/Deploy/deploy
-```
-
-## Working with Linux/macOS
-
-You can work locally with your Umbraco Cloud site without needing a Windows machine or a local web server installed. This enables users on macOS or Linux-based operating systems to use their preferred editor to modify code in their Umbraco Cloud site.
-
-### The Solution
-
-1.  On the Umbraco Cloud portal, go to your project and clone the site using your favorite Git client.
-
-    <figure><img src="../../../.gitbook/assets/image (15).png" alt="Clone project down"><figcaption><p>Clone project down</p></figcaption></figure>
-2.  Configure a SQL Server connection string using `ConnectionStrings` in `appsettings.json` or `appsettings.Development.json` (the `launchSettings.json` configures the local instance to run as 'Development'):
-
-    ```json
-    "ConnectionStrings": {
-        "umbracoDbDSN": ""
-    }
-    ```
-3.  Configure the local instance to install unattended by adding the following settings to `appsettings.Development.json`:
-
-    ```json
-    {
-    "Umbraco": {
-        "CMS": {
-        "Unattended": {
-            "InstallUnattended": true,
-            "UnattendedUserName": "",
-            "UnattendedUserEmail": "",
-            "UnattendedUserPassword": ""
-        }
-        }
-    }
-    }
-    ```
-
-{% hint style="info" %}
-The `UnattendedUserName`, `UnattendedUserEmail`, and `UnattendedUserPassword` are optional. They are only required if you want to create a local backoffice user. You can alternatively use your Umbraco ID to sign in.
-{% endhint %}
-
-4.  In your terminal, navigate to the `src/UmbracoProject` folder and run the following commands to start the project:
-
-    ```
-    dotnet build
-    dotnet run
-    ```
-5. When running the site for the first time, the database schema will be inserted automatically into the database (with `"InstallUnattended": true` in `appsettings.Development.json`), so the site will start up ready for use.

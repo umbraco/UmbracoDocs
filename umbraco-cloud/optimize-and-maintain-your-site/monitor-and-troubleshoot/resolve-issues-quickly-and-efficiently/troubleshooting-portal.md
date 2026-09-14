@@ -23,7 +23,6 @@ The first thing to check is what type of error it is, you can do so by clicking 
 We have some guides on how to fix the most common errors below:
 
 * [Some artifacts collide on unique identifiers](deployments/structure-error.md)
-* [Duplicate dictionary](deployments/duplicate-dictionary-items.md)
 * [Baseline merge issues](baseline-merge-conflicts/)
 * [Colliding Data Types](deployments/colliding-datatypes.md)
 * [Type not found](deployments/type-not-found.md)

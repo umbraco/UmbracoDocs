@@ -14,11 +14,13 @@ Each run records enough data to trace what happened from trigger to final outcom
 
 | Field              | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
-| **Status**         | Pending, Running, Completed, Failed, Suspended, or Cancelled.                  |
+| **Status**         | Pending, Running, Completed, Failed, Suspended, Cancelled, or Rejected.        |
 | **Initiator**      | Who or what started the run — a user, an event handler, a webhook, a schedule. |
 | **Trigger output** | The data emitted by the trigger.                                               |
 | **Steps**          | For each step: status, input, output, error, duration, retry count.            |
 | **Version**        | Which published version of the automation was used.                            |
+
+A run's status is **Rejected**, not **Failed**, when it ends because a human declined a [Request Approval](../backoffice/approvals.md) step and nothing else went wrong. It is a terminal status, but not an error — the automation ran exactly as designed.
 
 ## Run Detail View
 

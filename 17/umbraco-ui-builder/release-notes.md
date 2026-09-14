@@ -18,6 +18,46 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.2.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.9) **(September 14th 2026)**
+
+* Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233)
+* Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234)
+* Fixed updating existing Related Collections relations through the Entity Picker not working [#235](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/235)
+* Fixed the save notification not using a custom name format set with `SetNameFormat` [#236](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/236)
+
+### [**17.2.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.8) **(September 7th 2026)**
+
+* Fixed action notifications failing with an error when they contained non-ASCII characters such as å, æ, or ø [#232](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/232)
+
+### [**17.2.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.7) **(August 17th 2026)**
+
+* Fixed a collection configured with `MakeReadOnly()` still being selectable [#231](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/231)
+
+### [**17.2.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.6) **(July 29th 2026)**
+
+* Fixed custom repository save errors not showing a notification in the backoffice [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
+
+### [**17.2.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.5) **(July 27th 2026)**
+
+* Fixed collection names returning the singular name in place of the plural, affecting the section dashboard cards, grouped collection tabs, and Entity Picker configuration [#229](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/229)
+
+### [**17.2.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.4) **(July 16th 2026)**
+
+* Fixed read-only fields displaying JSON as `[object Object]`; JSON values now render as formatted text [#222](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/222)
+
+### [**17.2.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.3) **(July 13th 2026)**
+
+* Fixed the editor modal not closing when the entity being edited is deleted [#228](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/228)
+* Fixed the summary dashboard showing incorrect totals [#227](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/227)
+* Fixed the MultipleChoice filter editor failing to render [#226](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/226)
+* Fixed the Entity Picker showing nothing when `maxItems` is set to 0 [#225](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/225)
+* Fixed repository save methods on new-entity insert with the NPoco backend (regression in 17.1.0) [#224](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/224)
+* Fixed a 403 `insufficient_access` error on the Data Type endpoint for users without Content/Media section access [#218](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/218)
+* Fixed `FileActionResult` not showing an error notification when an exception occurs [#217](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/217)
+* Fixed the Entity Picker missing when the foreign key is non-nullable [#187](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/187)
+* Fixed the Import Action not working with a custom Data Type [#178](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/178)
+* Fixed Block List throwing an error on save [#123](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/123)
+
 ### [**17.2.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.2) **(May 1st 2026)**
 
 * Fixed issue with section dashboard collections [#221](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/221)

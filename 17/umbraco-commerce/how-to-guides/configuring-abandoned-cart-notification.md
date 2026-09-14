@@ -20,7 +20,7 @@ The abandoned cart recurring background job automatically sends reminder emails 
 6. Enter the landing page URL where customers will be redirected when they click the links in the abandoned cart email.
 7. Click the **Save** button to apply your changes.
 
-![store notification settings](../.gitbook/assets/store-notification-settings.png)
+![store notification settings](<../.gitbook/assets/store-notification-settings (1).png>)
 
 The advanced settings can be configured in the `appsettings.json` file:
 
@@ -66,4 +66,4 @@ A new webhook called Cart Abandoned has been added. It is triggered when the Aba
 
 The widget shows how many notified abandoned carts are recovered through completed purchases, reflecting your store’s abandoned cart conversion rate.
 
-![Abandoned cart conversion rates widget](../.gitbook/assets/abandoned-cart-conversion-rates-widget.png)
+![Abandoned cart conversion rates widget](<../.gitbook/assets/abandoned-cart-conversion-rates-widget (1).png>)

@@ -10,7 +10,7 @@ This tutorial covers the process of setting up an Umbraco Commerce store in Umbr
 
 This tutorial will be based around the official **Blendid Demo Store** solution, a fictional tea supplier web store. The source code for which can be found on [GitHub](https://github.com/umbraco/Umbraco.Commerce.DemoStore).
 
-![Blendid Store Homepage](../../.gitbook/assets/homepage.png)
+![Blendid Store Homepage](<../../.gitbook/assets/homepage (1).png>)
 
 {% hint style="info" %}
 This tutorial assumes that you already have the relevant site structure and content views in place for your store. The tutorial will focus on adding the commerce functionality to your existing site.

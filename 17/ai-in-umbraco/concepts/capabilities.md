@@ -69,7 +69,7 @@ The Speech-to-Text capability transcribes audio into text:
 - Audio file transcription
 - Real-time streaming transcription
 - Language detection and hints
-- Voice input for the Copilot
+- Voice input for Contextual Copilot and Copilot Workspace
 
 {% code title="Example.cs" %}
 

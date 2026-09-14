@@ -92,6 +92,14 @@ The quickest way to get to your logs is using the following URL template and rep
 
 You can also find this in the KUDU console by clicking **Advanced Tools** > **Log Stream** on the Web App in the Azure Portal.
 
+## Preventing cold boots on container restarts
+
+On Azure App Service on Linux, the container hostname changes on every container recycle. In earlier versions, Umbraco derived its machine identifier from the hostname and rebuilt its Examine indexes and published content cache on every restart.
+
+From Umbraco 18.1, Umbraco reads the `WEBSITE_INSTANCE_ID` environment variable instead. The environment variable stays stable across container recycles and is unique per instance, so no configuration is needed.
+
+To take full control of the identifier, set `Hosting:MachineIdentifier` explicitly with a value that is unique per instance. See [Hosting Settings](../../../develop-with-umbraco/configuration/hostingsettings.md) for the full property reference.
+
 ## Web App secret management
 
 Consult the [Azure Key Vault documentation](../../security/key-vault.md) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.

@@ -13,8 +13,25 @@ The **Request Approval** action pauses an automation and waits for a user to app
 1. The automation reaches a **Request Approval** step.
 2. The run is suspended and an approval entry is created with the configured prompt.
 3. A user with access to the workspace opens the approval and chooses **Approve** or **Reject**.
-4. On **Approve**, the run resumes from the next step. The approver's user key and any comment are recorded on the step output.
-5. On **Reject**, the approval step fails. The run's configured error behavior on that step then decides whether to retry, suspend, terminate, or compensate.
+4. The step finishes and the run follows whichever branch matches the decision.
+
+A rejection is not an error. The **Request Approval** node has two outgoing handles on the canvas — **Approved** and **Rejected**. Send each outcome down a different path, the same way you would with an **If** node. See [Control Flow](../concepts/control-flow.md).
+
+If a run finishes on the Rejected path, its status is **Rejected**, a separate status from **Failed**. Nothing went wrong — a person said no.
+
+## Using the Decision in Later Steps
+
+The step's output is available to any step that runs after it:
+
+| Field                 | Description                                                     |
+| --------------------- | ----------------------------------------------------------------- |
+| `approved`            | `true` or `false`. Use this to branch, for example `${ steps.approval.approved }`. |
+| `outcome`             | The decision as text: `Approved` or `Rejected`.                 |
+| `comment`             | The optional note the approver left.                            |
+| `approvedByUserKey`   | The user key of whoever made the decision.                      |
+| `decisionUtc`         | The date and time the decision was made.                        |
+
+See [Bindings](../concepts/bindings.md) for the full binding syntax.
 
 ## Request Approval Settings
 
@@ -35,4 +52,5 @@ The **Approvals** dashboard in the Automate section lists every approval awaitin
 
 * [Build an Automation](building-an-automation.md)
 * [Manage Workspaces](workspaces.md)
+* [Control Flow](../concepts/control-flow.md)
 * [Bindings](../concepts/bindings.md)

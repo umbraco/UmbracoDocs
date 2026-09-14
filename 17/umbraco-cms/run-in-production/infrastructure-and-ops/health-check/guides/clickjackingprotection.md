@@ -26,10 +26,22 @@ app.UseXfo(options => options.SameOrigin());
 
 Avoid third-party library dependency by using custom middleware added to the request pipeline.
 
+The strongly typed `XFrameOptions` property can be used to set the header:
+
+```csharp
+app.Use(async (context, next) => 
+{ 
+    context.Response.Headers.XFrameOptions = "SAMEORIGIN"; 
+    await next(); 
+});
+```
+
+Alternatively, the header can be set using the string indexer:
+
 ```csharp
 app.Use(async (context, next) =>
 {
-    context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
+    context.Response.Headers["X-Frame-Options"] = "SAMEORIGIN";
     await next();
 });
 ```

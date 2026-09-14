@@ -6,8 +6,15 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [August 2026](2026-08-releasenotes.md)
+
+* [20/08] - **Custom error pages shown for stopped environments** - Custom error pages are now also shown while an environment is stopped, not only during restarts and deployments.
+* [13/08] - **Release Umbraco.Cloud.Cms 13.1.1, 17.2.2, & 18.0.2** - Hides the internal azurewebsites.net URL in additional cases. Adds the routes used by Umbraco ID and external login providers to the ReservedUrls setting.
+
 ## [July 2026](2026-07-releasenotes.md)
 
+* [08/07] - **Readiness gating** - During restarts, outages, and upgrades, Umbraco Cloud now keeps showing the error page until your site reports that it is ready, so traffic no longer overwhelms a site that is still warming up.
+* [08/07] - **Release Umbraco.Cloud.Cms 13.1.0, 17.2.1, & 18.0.1** - Fixes cases where the internal azurewebsites.net URL could get through the Umbraco Cloud proxy. The 13.1.0 release also backports the .NET health checks from Umbraco 17.3, used by the readiness gating feature.
 * [01/07] - **Load Balancing** - Distribute incoming traffic across multiple dedicated instances to handle higher load and keep your site running smoothly under pressure.
 * [01/07] - **Dedicated Redis** - A dedicated Redis cache that stores hot data for the CMS. Required for Load Balancing as session storage, and available on its own as a second-level cache.
 * [01/07] - **New Dedicated Resource tiers** - Updated Dedicated Resource tiers as a first step toward better options and more flexibility. Available sizes: Extra Small, Small, Medium, and Large.

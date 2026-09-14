@@ -10,26 +10,26 @@ Dynamic rate shipping in Umbraco Commerce allows you to define a series of range
 
 1.  Go to **Settings** > **Stores** > {Your Store} > **Shipping Methods**.
 
-    ![Shipping Methods](../../.gitbook/assets/shipping-methods-list-view.png)
+    ![Shipping Methods](<../../.gitbook/assets/shipping-methods-list-view (1).png>)
 2. Click **Create Shipping Method**.
 3.  Choose **Basic** as the shipping provider.
 
-    ![Choose Shipping Provider](../../.gitbook/assets/shipping-provider-modal.png)
+    ![Choose Shipping Provider](<../../.gitbook/assets/shipping-provider-modal (1).png>)
 4.  Choose **Dynamic** as the calculation mode option.
 
-    ![Choose Shipping Calculation Mode](../../.gitbook/assets/shipping-provider-config-modal.png)
+    ![Choose Shipping Calculation Mode](<../../.gitbook/assets/shipping-provider-config-modal (1).png>)
 5.  Enter the **Shipping Method Name**, **Alias**, **SKU**, and optional **Tax Rate**.
 
-    ![Shipping Method Details](../../.gitbook/assets/shipping-method-general-settings.png)
+    ![Shipping Method Details](<../../.gitbook/assets/shipping-method-general-settings (1).png>)
 6. Choose the range unit to base the rates upon.
 7.  Click **Add Range** to define each range.
 
-    ![Shipping Method Rates](../../.gitbook/assets/shipping-method-dynamic-rates.png)
+    ![Shipping Method Rates](<../../.gitbook/assets/shipping-method-dynamic-rates (1).png>)
 8. Enter the **From** and **To** value of the range.
 9.  Enter the rate details from the available rate options leaving blank any option you do not wish to apply.
 
-    ![Shipping Method Rate](../../.gitbook/assets/shipping-method-dynamic-rate-editor.png)
+    ![Shipping Method Rate](<../../.gitbook/assets/shipping-method-dynamic-rate-editor (1).png>)
 10. Select the countries in this shipping method should be allowed in.
 
-    ![Shipping Method Allowed Countries](../../.gitbook/assets/shipping-method-countries.png)
+    ![Shipping Method Allowed Countries](<../../.gitbook/assets/shipping-method-countries (1).png>)
 11. Click **Save**.

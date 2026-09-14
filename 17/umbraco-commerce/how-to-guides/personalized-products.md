@@ -20,7 +20,7 @@ This guide is not a direct follow-on from the [getting started tutorial](../tuto
 
 On the frontend, add a text area to the product page where the customer can enter their message.
 
-![Customer Message Field](../.gitbook/assets/observations-collapsed.png)
+![Customer Message Field](<../.gitbook/assets/observations-collapsed (1).png>)
 
 ## Saving the Message as an Order Line Property
 
@@ -116,4 +116,4 @@ Create a new `umbraco-package.json` file in a folder in the `App_Plugins` direct
 
 The property is displayed in the Backoffice order editor.
 
-![Backoffice Order Line Property](../.gitbook/assets/order-line-property.png)
+![Backoffice Order Line Property](<../.gitbook/assets/order-line-property (1).png>)

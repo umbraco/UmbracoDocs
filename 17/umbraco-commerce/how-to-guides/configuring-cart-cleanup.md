@@ -48,4 +48,4 @@ The configuration supports the followin keys.
 
 When enabling the cart cleanup service, it's important to know that this can affect the cart conversion rates widget in the analytics section. If the widget is configured to show a time period that exceeds the cleanup policies time frame then a warning will be displayed.
 
-![Cart Conversion Rate date range exceeds the cart cleanup policy configuration warning](../.gitbook/assets/cart-conversion-rates-warning.png)
+![Cart Conversion Rate date range exceeds the cart cleanup policy configuration warning](<../.gitbook/assets/cart-conversion-rates-warning (1).png>)

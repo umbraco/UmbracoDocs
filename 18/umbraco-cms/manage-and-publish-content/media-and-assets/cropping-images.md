@@ -13,7 +13,7 @@ To manually alter the pre-defined crops:
 1. Select one of the crops - you will see an enlarged version of the crop.
 2.  Drag the image around and zoom in or out until you have the desired result.
 
-    ![Editing a pre-defined crop](../../.gitbook/assets/preset-crops-v9.png)
+    ![Editing a pre-defined crop](../../.gitbook/assets/preset-crops.png)
 3. Once you are happy with your changes, click **Done** to save the changes.
 4. If you wish to reset the crop to default view, click **Reset crop**.
 5. Once you have finished editing the crops, click **Save and close**.

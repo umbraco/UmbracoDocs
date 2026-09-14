@@ -18,6 +18,88 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.5.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.5.0) (August 20th 2026)
+
+The changes below are the ones made since `17.5.0-rc`. For everything else in this release, see the `17.5.0-rc` notes.
+
+* Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Upgrading: Fix a boot failure when upgrading directly from Forms 13.9.9 [#1772](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1772)
+* API: Return problem details from the management API, so the real error message appears in the backoffice instead of `Unknown error`
+* Localization: Sync the Czech, Danish, Spanish, French, Italian, Dutch, and Polish translation files with the current English keys
+* Localization: Correct the Danish translations, including the term used for prevalue captions and the email-related labels
+* Records: Read record field values in batches, instead of one database query per field value
+* Records: Populate the Examine records index in groups of records, instead of holding every record for a form in memory at once
+
+{% hint style="info" %}
+This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
+
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. This release also reduces how long that rebuild takes, especially on installations with many form entries.
+{% endhint %}
+
+### [17.5.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.5.0) (August 6th 2026)
+
+#### Member data
+
+You can now connect form fields to member properties. A field mapped to a member property is pre-filled for the logged-in member, either as an editable field or a hidden one. Each member's form activity appears on a Forms tab in the Member editor. The analytics overview and per-form tables report the number of unique members who submitted a form.
+
+For more information, see the [Connecting Fields to Member Data](editor/creating-a-form/connecting-fields-to-member-data.md), [Member Form Submissions](editor/member-form-submissions.md), and [Analytics](editor/analytics.md) articles.
+
+#### Other
+
+* Records: Store the submission page as a GUID (`UmbracoPageKey`), the preferred reference over the integer `UmbracoPageId` [#1719](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1719)
+* Headless: Expose additional form settings in the Delivery API definition response [#1439](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1439)
+* Record Export: Make the CSV export delimiter configurable [#1541](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1541)
+* Workflows: Add `GetConfigurationErrors()` support for workflow types [#1709](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1709)
+* Workflows: Populate the `Exception` property on `WorkflowExecutionFailedNotification` [#1700](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1700)
+* Field & Workflow Settings: Add setting value converters so property editor UIs persist values correctly [#1569](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1569)
+* Field & Workflow Settings: Support typed setting values (`int`, `decimal`, `enum`, `Guid`) [#1717](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1717)
+* Email: Surface the underlying error detail when a Razor email view fails to render [#1571](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1571)
+* Workflows: Persist additional data set during workflow execution [#1603](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1603)
+* Workflows: Fix the workflow type label shown for a deleted workflow [#1713](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1713)
+* Workflows: Fix `IFeatureCollection has been disposed` when running workflows via `RecordService` [#1362](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1362)
+* Workflows: Resolve the rich text editor from the configured Data Type in the Send email (Razor) workflow [#1756](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1756)
+* Email: Respect the `DefaultEmailTemplate` provided by an email template collection [#1737](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1737)
+* Field Types: Fix the sensitive data toggle disappearing when enabled [#1415](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1415)
+* Field & Workflow Settings: Keep the field editor open when settings validation fails
+* Validation: Use the configured validation message for regular expression validation [#858](https://github.com/umbraco/Umbraco.Forms.Issues/issues/858)
+* Form Design: Remove the top margin on the first form settings layout item [#1643](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1643)
+* Form Design: Restore the saving spinner when saving a form [#1744](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1744)
+* Form Permissions: Set the permissions for a new form from its creator, so copied and imported forms are set up correctly
+* Delivery API: Return default field settings in the response when settings have not been edited [#1753](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1753)
+* Data Sources: Fix the form wizard assigning a default prevalue source that hasn't been saved yet to foreign-key fields [#1751](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1751)
+* Assets: Use the CMS cache buster so backoffice assets refresh after an upgrade [#1739](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1739)
+* Upgrades: Migrate legacy XPath root node settings in prevalue sources and the Save as Umbraco node workflow to dynamic root
+* Upgrades: Fix the prevalue source repair migration failing on SQL Server
+* Analytics: Group charts by the viewer's local time zone instead of UTC, so they match the entries list [#1759](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1759)
+* Workflows: Fix the Save as Umbraco node workflow parsing dates with the wrong culture, which could save the wrong date or fail the workflow [#1758](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1758)
+* Workflows: Trim form names when parsing the `IgnoreWorkFlowsOnEdit` setting, so a comma-separated list of form names matches correctly
+* Localization: Localize the delete confirmation dialog for pages, groups, fields, and workflows, and add German (de-de) [#1442](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1442)
+* Backoffice Contexts: Normalize context-token alias strings to Forms + PascalCase [#1724](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1724)
+* Field Types: Only lock the sensitive data toggle once its value has been saved, so it can still be turned back off before saving [#1762](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1762)
+
+### 17.4.8 (August 18th 2026)
+* Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+
+{% hint style="info" %}
+This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
+
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. On installations with many form entries, this rebuild can take some time to complete.
+{% endhint %}
+
+### [17.4.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.7) (July 22nd 2026)
+* Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
+
+### [17.4.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.6) (July 13th 2026)
+* Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
+* Conditions: Fall back to the option value when a choice caption is empty [#1727](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1727)
+* Field Types: Guard against empty prevalue captions and values [#1386](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1386)
+* Field Mapping: Align fields in the field mapping property editors [#1716](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1716)
+* Form Entries: Truncate long field values in the entries collection table [#1708](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1708)
+* Workflows: Record a failed workflow in the audit table so it can be retried [#1372](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1372)
+* Workflows: Prevent unintended auto-approval when a workflow changes a record's state [#1598](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1598)
+
 ### [17.4.5](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.4.5) (July 2nd 2026)
 * Fix upgrade failure when `DisableRecordIndexing` is set to `true`
 
@@ -88,15 +170,25 @@ This release fixes the issue by:
 * Removing the legacy server-side timezone offset conversion in the entries list — the browser now handles UTC-to-local conversion consistently
 
 {% hint style="warning" %}
-Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data.
+Data written between v17.0.0 and this release may contain local server timestamps instead of UTC. A SQL script is provided below to correct historical data. It runs on SQL Server only.
 
-Before running it, set `@TimeZone` to your server's Windows timezone name. Set `@UpgradeDate` to the approximate date you first upgraded to v17.0.0. The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
+Take a database backup before you run it. Then set the three variables at the top of the script:
+
+* `@TimeZone`: your server's Windows time zone name.
+* `@UpgradeDate`: the date you first upgraded to v17.0.0. Rows created before this date were already converted to UTC.
+* `@FixDate`: the date you first deployed a version of v17.3.0 or newer. Rows created on or after this date are already UTC and must not be shifted again. If you upgraded from v17.2 to v17.3 and later to v17.4, use the v17.3 date.
+
+The script writes a marker to `umbracoKeyValue` when it completes. On a second run it reports the marker and exits without changing any rows.
+
+The script also clears the affected days from the analytics summary tables. The background task rebuilds those days from the corrected entries on the next application start. Confirm the rebuild under **Settings** > **Health Check** > **Forms** > **Analytics Processing**.
+
+The script excludes the `UFRecordDataDateTime` table, as those values represent user-entered dates that should not be shifted.
 
 The original `MigrateSystemDatesToUtc` migration contained a duplicate conversion for `UFPrevalueSource`. Created and Updated columns were converted twice. This has been fixed, but sites on v17.0–v17.2 may have double-converted PrevalueSource dates that require manual correction.
 {% endhint %}
 
 {% file src=".gitbook/assets/correct-utc-timestamps.sql" %}
-Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the timezone and cutoff date before running.
+Corrects historical data written with local server time instead of UTC between v17.0.0 and v17.3.0. Set the time zone and both cutoff dates before running.
 {% endfile %}
 
 #### Other
@@ -300,6 +392,17 @@ This change also ensures that field types remain registered. This prevents issue
 ### 17.0.0-rc1 (October 30th 2025)
 
 * Update dependencies to 17.0.0-rc1
+
+## Umbraco.Forms.Deploy
+
+### 17.0.1 (July 24th 2026)
+
+* Fix Umbraco Forms artifact property mappings lost on transfer/restore, including *Show summary page* and related form settings [#331](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/331)
+* Fix deploy of `Form.MessageOnSubmitBlocks` and its block element type dependencies (Umbraco Forms 17.3.0 or later)
+
+### 17.0.0 (November 27th 2025)
+
+* Compatibility with Umbraco Forms 17 and Deploy 17
 
 ## Legacy release notes
 

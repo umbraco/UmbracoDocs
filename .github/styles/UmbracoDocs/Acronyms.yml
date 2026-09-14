@@ -26,6 +26,7 @@ exceptions:
   - CDN      # Content Delivery Network
   - CI       # Continuous Integration
   - CLI      # Command Line Interface
+  - CLR      # Common Language Runtime
   - CNAME    # 
   - CMD      # Command (Windows shell)
   - CMS      # Content Management System
@@ -49,18 +50,21 @@ exceptions:
   - FTP      # File Transfer Protocol
   - GDPR     # General Data Protection Regulation
   - GET      # HTTP GET method
+  - GHSA     # GitHub Security Advisory
   - GIF      # Graphics Interchange Format
   - GUI      # Graphical user interface
   - GUID     # Globally Unique Identifier
   - HAL      # Hypertext Application Language
   - HASH     # Cryptographic hash
   - HEX      # Hexadecimal
+  - HMAC     # Hash-based Message Authentication Code
   - HTML     # HyperText Markup Language
   - HTTP     # HyperText Transfer Protocol
   - HTTPS    # HyperText Transfer Protocol Secure
   - IaaS     # Infrastructure as a Service
   - IDE      # Integrated Development Environment
   - IIS      # Internet Information Services
+  - IMAP     # Internet Message Access Protocol
   - INFO     # Information
   - ISO      # International Organization for Standardization
   - JPG      # Joint Photographic Experts Group
@@ -74,6 +78,7 @@ exceptions:
   - LINK     # 
   - LINQ     # Language Integrated Query
   - LLM      # Large Language Model
+  - LTS      # Long-Term Support
   - MCP      # Mode Context Protocol
   - MIT      # Open-source software license developed at the Massachusetts Institute of Technology (MIT)
   - MDN      # Mozilla Developer Network
@@ -128,6 +133,7 @@ exceptions:
   - URL      # Uniform Resource Locator
   - USB      # Universal Serial Bus
   - UTC      # Coordinated Universal Time
+  - UUI      # Umbraco UI Library
   - UUID     # Universally Unique Identifier
   - UWP      # Universal Windows Platform
   - UX       # User Experience

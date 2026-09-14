@@ -10,7 +10,7 @@ Available from Umbraco Commerce 15.1.0
 
 Order Line Actions allow you to display buttons against each order line of a cart/order enabling you to perform custom actions per order line.
 
-![Custom Order Line Action](../../.gitbook/assets/order-line-action.png)
+![Custom Order Line Action](<../../.gitbook/assets/order-line-action (1).png>)
 
 ## Registering an Order Line Action
 

@@ -6,3 +6,4 @@ root: ./
 
 redirects:
     marketers-and-editors/introduction/content-apps: marketers-and-editors/introduction/workspace-views.md
+    marketers-and-editors/settings/ip-filtering: marketers-and-editors/settings/block-traffic.md

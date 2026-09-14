@@ -4,13 +4,13 @@ description: >-
   versions.
 ---
 
-# Product and releases
+# Product and Releases
 
 Use this section to follow Umbraco releases and plan your next step.
 
 Find the latest release information, test upcoming versions, or browse older documentation.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Release Notes</td><td><a href="https://releases.umbraco.com/all-releases/">https://releases.umbraco.com/all-releases/</a></td></tr><tr><td>Legacy Documentation</td><td><a href="legacy-documentation/">legacy-documentation</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Release Notes</td><td><a href="https://releases.umbraco.com/all-releases/">https://releases.umbraco.com/all-releases/</a></td></tr><tr><td>Legacy Documentation</td><td><a href="legacy-documentation.md">legacy-documentation.md</a></td></tr></tbody></table>
 
 ## In this section
 

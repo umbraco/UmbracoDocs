@@ -18,3 +18,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 55d53d2e-f795-42fb-9e77-8edfc6eed4aa | 13.2.0                | Adds an AdditionalData column to the Records table.                                 |
 | 1fff8b7b-48e7-450a-80b1-7df628508b27 | 13.3.0                | Adds delete entries permissions field to the security tables.                       |
 | 7e170195-cab7-48ca-98c7-bbcbd5cfda95 | 13.4.0                | Adds created and updated by columns to the entity tables.                           |
+| 6149738f-25bd-44ac-9c1d-d66bbe9d4e2b | 13.9.9                | Rebuilds the Examine records index so values of sensitive fields are excluded.      |

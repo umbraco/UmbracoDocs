@@ -18,6 +18,7 @@ Create a new MCP server project with the [Create Umbraco MCP Server](../create-u
 | [API Helpers](./api-helpers.md) | API call helpers, HTTP client, ProblemDetails handling |
 | [Tool Filtering](./tool-filtering.md) | Modes, slices, collections, configuration flow |
 | [MCP Chaining](./mcp-chaining.md) | Proxying, delegation, and composite tool patterns |
+| [Tool Types Codegen](./tool-types.md) | Generate per-tool TypeScript types for downstream chained MCPs |
 | [Configuration](./configuration.md) | Server config, env vars, CLI flags, custom fields |
 | [Constants](./constants.md) | Well-known Umbraco IDs reference |
 | [Testing and Evals](./testing.md) | Unit testing, snapshot helpers, LLM eval framework |

@@ -4,6 +4,13 @@
 * [Release Notes](release-notes.md)
 * [Support](support.md)
 
+## Add-ons
+
+* [Forms](add-ons/forms.md)
+* [Commerce](add-ons/commerce.md)
+* [Deploy](add-ons/deploy.md)
+* [AI](https://docs.umbraco.com/dxp-engage-ai)
+
 ## Installation
 
 * [System Requirements](getting-started/for-developers/system-requirements.md)
@@ -72,6 +79,7 @@
     * [Setting up the customer journey](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md)
     * [Personas](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md)
     * [Implicit Personalization scoring explained](marketers-and-editors/personalization/implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md)
+    * [Persona and customer journey group settings](marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md)
     * [Content Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md)
     * [Campaign Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md)
     * [Referral Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md)
@@ -81,7 +89,8 @@
 * [Reporting](marketers-and-editors/reporting.md)
 * [Settings](marketers-and-editors/settings/README.md)
   * [Goals](marketers-and-editors/settings/setting-up-goals.md)
-  * [IP Filtering](marketers-and-editors/settings/ip-filtering.md)
+  * [Block Traffic](marketers-and-editors/settings/block-traffic.md)
+  * [Suspicious Activity](marketers-and-editors/settings/suspicious-activity.md)
   * [Configuration](marketers-and-editors/settings/the-configuration-file.md)
   * [Permissions](marketers-and-editors/settings/permissions.md)
 

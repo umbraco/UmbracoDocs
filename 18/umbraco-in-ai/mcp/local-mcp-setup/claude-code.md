@@ -10,6 +10,14 @@ description: "Host set up for Claude Code"
 The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Replace the package name if you are using a different Umbraco MCP server.
 {% endhint %}
 
+{% hint style="warning" %}
+**Match the package version to your Umbraco site.** The examples on this page use `@latest`, which installs the newest release of the MCP Server. This may be a later major version than the one your site runs.
+
+If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail.
+
+See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
+{% endhint %}
+
 ## Getting started
 
 Installing Claude Code depends on your environment. For installation details, see the [Claude Code Quickstart Guide](https://code.claude.com/docs/en/quickstart).
@@ -28,7 +36,7 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type" -- npx @umbraco-cms/mcp-dev@latest
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" -- npx @umbraco-cms/mcp-dev@latest
 ```
 
 Replace the following values with your local connection details:
@@ -63,10 +71,14 @@ This is the referred project-level configuration for Claude Code. Creating a `.m
 UMBRACO_CLIENT_ID=umbraco-back-office-mcp
 UMBRACO_CLIENT_SECRET=1234567890
 UMBRACO_BASE_URL=http://localhost:123456
-UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type
+UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type,template
 ```
 
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
+
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
 
 #### Example `.mcp.json` file
 

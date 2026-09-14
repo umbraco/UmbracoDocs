@@ -11,7 +11,7 @@ The benefit of using Visual Studio Code is that it is super quick to get up and 
 
 ## Creating your Umbraco project
 
-Follow the [Install using .NET CLI](install-umbraco-with-templates.md) article to create your project folder.
+Follow the [Install using .NET CLI](/broken/pages/Dksuk4APBTbLNXEdboGE) article to create your project folder.
 
 ## Configure Visual Studio Code to run the Umbraco project
 

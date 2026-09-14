@@ -24,7 +24,7 @@ The table displays an overview of the profiles per month.
 
 As long as there is no data of a visitor, this profile is called "Unidentified". If a visitor [does not give consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md) to be identified, they remain "Unidentified".
 
-However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco Form, they become an "Identified Profile." For example: If you see a visitor name in the Profiles table it is because the visitor has logged in as a member.
+However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco Form (requires the [Forms](../../add-ons/forms.md) add-on), they become an "Identified Profile." For example: If you see a visitor name in the Profiles table it is because the visitor has logged in as a member.
 
 ## Profiles Overview
 

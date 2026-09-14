@@ -17,14 +17,14 @@ As of now, only templates under the **Cart**, **Order**, **Gift Card**, and **Di
 3. Navigate to the _Email Templates_ section.
 4. Open the template you want to test.
 
-![Email Template Details screen in Umbraco backoffice](../.gitbook/assets/0.email-template-details.png)
+![Email Template Details screen in Umbraco backoffice](<../.gitbook/assets/0.email-template-details (1).png>)
 
 5. Click the _Send Test Email_ button.
 6. Fill in the fields in the modal, and **make sure that the recipient is a test email address**.
 
-![The "Send Test Email" modal](../.gitbook/assets/1.send-test-email-modal.png)
+![The "Send Test Email" modal](<../.gitbook/assets/1.send-test-email-modal (1).png>)
 
-![Order entity picker in the "Send test email" modal](../.gitbook/assets/2.order-entity-picker.png)
+![Order entity picker in the "Send test email" modal](<../.gitbook/assets/2.order-entity-picker (1).png>)
 
 7. Click the _Send_ button.
 

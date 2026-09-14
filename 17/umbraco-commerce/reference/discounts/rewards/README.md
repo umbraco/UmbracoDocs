@@ -6,7 +6,7 @@ description: Discount reward options in Umbraco Commerce.
 
 Discount rewards define what discount should be applied when discount rules are satisfied. The reward system supports discounts such as percentage reductions, product-specific offers, and free shipping promotions.
 
-![Discount Rewards Overview](../../../.gitbook/assets/discount-rewards-config.png)
+![Discount Rewards Overview](<../../../.gitbook/assets/discount-rewards-config (1).png>)
 
 ## How Rewards Work
 
@@ -51,7 +51,7 @@ Applies discounts to different aspects of the overall order amount, including su
   * When **Percentage** is selected:
     * **Percentage** - Define the discount percentage for percentage based adjustments
 
-![Order Amount Reward Configuration](../../../.gitbook/assets/order-amount-reward-config.png) ![Order Percentage Reward Configuration](../../../.gitbook/assets/order-percentage-reward-config.png)
+![Order Amount Reward Configuration](<../../../.gitbook/assets/order-amount-reward-config (1).png>) ![Order Percentage Reward Configuration](<../../../.gitbook/assets/order-percentage-reward-config (1).png>)
 
 **Price Types:**
 
@@ -81,7 +81,7 @@ Applies discounts to specific order lines based on different criteria such as pr
   * When **Percentage** is selected:
     * **Percentage** - Define the discount percentage for percentage based adjustments
 
-![Order Line Amount Reward Configuration](../../../.gitbook/assets/order-line-amount-reward-config.png) ![Order Line Percentage Reward Configuration](../../../.gitbook/assets/order-line-percentage-reward-config.png)
+![Order Line Amount Reward Configuration](<../../../.gitbook/assets/order-line-amount-reward-config (1).png>) ![Order Line Percentage Reward Configuration](<../../../.gitbook/assets/order-line-percentage-reward-config (1).png>)
 
 **Price Types:**
 
@@ -111,7 +111,7 @@ Applies discounts to specific order lines containing particular products. This r
   * When **Percentage** is selected:
     * **Percentage** - Define the discount percentage for percentage based adjustments
 
-![Order Line Product Reward Configuration](../../../.gitbook/assets/order-line-product-amount-reward-config.png) ![Order Line Product Percentage Reward Configuration](../../../.gitbook/assets/order-line-product-percentage-reward-config.png)
+![Order Line Product Reward Configuration](<../../../.gitbook/assets/order-line-product-amount-reward-config (1).png>) ![Order Line Product Percentage Reward Configuration](<../../../.gitbook/assets/order-line-product-percentage-reward-config (1).png>)
 
 **Use Cases:**
 

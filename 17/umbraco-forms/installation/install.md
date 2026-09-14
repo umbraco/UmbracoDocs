@@ -43,7 +43,7 @@ dotnet add package Umbraco.Forms
 
 Once the installation is complete and the site is running, you will see a **Forms** section in the Umbraco backoffice similar to the screen below:
 
-![Create form](../.gitbook/assets/start-with-forms-v14.png)
+![Create form](../.gitbook/assets/start-with-forms.png)
 
 The next step is to [configure the license](the-licensing-model.md).
 

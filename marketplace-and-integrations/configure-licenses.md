@@ -104,7 +104,7 @@ The website domain used for validating the license is determined from your Umbra
 
 If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
 
-If you have different domains for your frontend and backend, then it's advised that you configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine will try and work out the domain to validate from the HTTP request object. This can lead to errors when switching between domains.
+If you have different domains for your frontend and backend, configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine cannot reliably determine the domain to validate. Earlier versions of Umbraco would attempt to detect the domain from the incoming request. That behavior became an optional configuration after 17.4.
 
 ### How to Configure UmbracoApplicationUrl
 
@@ -123,6 +123,16 @@ An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file:
 ```
 
 See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
+
+### Configuring ApplicationUrlDetection
+
+{% hint style="info" %}
+This setting is available from Umbraco CMS version 17.4.
+{% endhint %}
+
+You can control how Umbraco detects the application URL from incoming HTTP requests using the `ApplicationUrlDetection` setting:
+
+Learn more about this setting in the [Webrouting Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings#application-url-detection) article in the CMS documentation.
 
 ### Configuring UmbracoApplicationUrl on Umbraco Cloud
 

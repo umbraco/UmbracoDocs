@@ -137,3 +137,4 @@ See [Version History](versioning.md) for more information.
 - [Profiles](profiles.md) - Use contexts with AI profiles
 - [Version History](versioning.md) - Track context changes over time
 - [Managing Contexts](../backoffice/managing-contexts.md) - Backoffice guide
+- [Knowledge Sets](../extending/knowledge-sets/README.md) - Ship background knowledge from a package in code

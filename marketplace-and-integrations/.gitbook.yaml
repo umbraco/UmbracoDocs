@@ -3,3 +3,9 @@ root: ./
 ​structure:  
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    integrations/aprimo: integrations/categories.md
+    integrations/commercetools: integrations/categories.md
+    integrations/emerchantpay-with-umbraco-forms: integrations/categories.md
+    integrations/inriver: integrations/categories.md

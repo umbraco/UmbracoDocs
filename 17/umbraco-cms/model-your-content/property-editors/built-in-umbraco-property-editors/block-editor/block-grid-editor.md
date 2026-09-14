@@ -39,7 +39,7 @@ The Data Type editor allows you to configure the following properties:
 
 ## Setup Block Types
 
-Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/default-document-types.md#element-type). These can be created beforehand or while setting up your Block Types.
+Block Types are based on [**Element Types**](../../../content-types-and-structure/data/defining-content/document-type-options.md#element-type). These can be created beforehand or while setting up your Block Types.
 
 Once you have added an Element Type as a Block Type on your Block Grid Data Type you have the option to configure it.
 
@@ -738,7 +738,7 @@ public class BlockGridLayoutItem
 ```
 {% endcode %}
 
-9. By injecting [ContentService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v16/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
+9. By injecting [ContentService](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Services.ContentService.html) and [ContentTypeService](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html) into an API controller, we can transform the raw data into Block Grid JSON. It can then be saved to the target content item. Create a class called **BlockGridTestController.cs** containing the following:
 
 {% code title="BlockGridTestController.cs" lineNumbers="true" %}
 ```csharp

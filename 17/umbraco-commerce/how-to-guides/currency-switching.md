@@ -16,20 +16,20 @@ In this guide, it is assumed that each country has a single currency. If your st
 
 1. Define the countries and currencies you want to support, in the Umbraco backoffice.
 
-![Countries](../.gitbook/assets/store-countries.png)
+![Countries](<../.gitbook/assets/store-countries (1).png>)
 
-![Currencies](../.gitbook/assets/store-currencies.png)
+![Currencies](<../.gitbook/assets/store-currencies (1).png>)
 
 2. Navigate to the Content section.
 3. Populate the product prices for each currency.
 
-![Product Prices](../.gitbook/assets/product-prices.png)
+![Product Prices](<../.gitbook/assets/product-prices (1).png>)
 
 ## Create a Currency Switcher Component
 
 A partial view is used on the frontend to allow users to toggle between existing currencies.
 
-![Currency Switcher](../.gitbook/assets/country-switch.png)
+![Currency Switcher](<../.gitbook/assets/country-switch (1).png>)
 
 This is done by creating a `CurerrencySwitcher.cshtml` partial with the following implementation:
 
@@ -66,11 +66,9 @@ This is done by creating a `CurerrencySwitcher.cshtml` partial with the followin
 This can then be placed in your sites base template by adding the following:
 
 {% code title="Layout.cshtml" %}
-
 ```csharp
 @(await Html.PartialAsync("CurerrencySwitcher"))
 ```
-
 {% endcode %}
 
 ## Handle Switching Currencies
@@ -80,8 +78,7 @@ Switching the culture is handled by a Surface controller.
 Create a new Surface controller called `CultureSurfaceController` and add the following code:
 
 {% code title="CultureSurfaceController.cs" %}
-
-````csharp
+```csharp
 public class CultureSurfaceController : SurfaceController
 {
     private readonly IUmbracoCommerceApi _commerceApi;
@@ -129,21 +126,18 @@ public class CultureSurfaceController : SurfaceController
         return RedirectToCurrentUmbracoPage();
     }
 }
-````
-
+```
 {% endcode %}
 
 The `ChangeCountryDto` class binds the country ISO code from the form.
 
 {% code title="ChangeCountryDto.cs" %}
-
-````csharp
+```csharp
 public class ChangeCountryDto
 {
     public string CountryIsoCode { get; set; }
 }
-````
-
+```
 {% endcode %}
 
 ## Result
@@ -152,6 +146,6 @@ With the currency switcher implemented, users can switch between countries/curre
 
 The changes are reflected on the product details pages.
 
-![product-gb](../.gitbook/assets/product-gb.png)
+![product-gb](<../.gitbook/assets/product-gb (1).png>)
 
-![product-dk](../.gitbook/assets/product-dk.png)
+![product-dk](<../.gitbook/assets/product-dk (1).png>)

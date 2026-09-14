@@ -4,7 +4,7 @@ description: Learn how data from Umbraco Forms is tracked with Umbraco Engage.
 
 # Forms
 
-To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. You also need to install the Umbraco Engage [Forms Add-on package from Nuget](https://www.nuget.org/packages/Umbraco.Engage.Forms).
+To track Umbraco Forms interactions, you need to install [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) with a valid license. The analytics report on this page works without any add-on. The [Forms](../../add-ons/forms.md) add-on adds per-visitor submission tracking, a form submission goal type, and profile insights on top.
 
 ## Summary
 
@@ -50,6 +50,10 @@ Finally, drill down to a specific field to see which type of error was triggered
 
 ### Tracking a visitor Form submissions
 
+{% hint style="info" %}
+This feature requires the [Forms](../../add-ons/forms.md) add-on.
+{% endhint %}
+
 It is possible to track a specific visitor to your website and see if they have made any form submissions. To do so, follow these steps:
 
 1. Edit the Umbraco Form you wish to track visitors for and go to the **Design** view.
@@ -67,4 +71,4 @@ The URL above is a link to your website, including a visitor ID. By using a URL 
 
 ## Disable Umbraco Forms tracking
 
-By adding the `umbraco-engage-no-tracking` attribute you can disable Umbraco Forms tracking on the form or field level. The attribute needs to be added to either the form tag or to a field tag (like input, select, or textarea).
+By adding the `engage-no-tracking` attribute you can disable Umbraco Forms tracking on the form or field level. The attribute needs to be added to either the form tag or to a field tag (like input, select, or textarea).

@@ -2,7 +2,7 @@
 description: Get started with the Umbraco CMS Developer Model Context Protocol (MCP).
 ---
 
-# Developer Model Context Protocol (MCP) Server
+# CMS Developer MCP Server
 
 The Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
 
@@ -101,6 +101,12 @@ Each MCP-compatible host application has its own setup process. Below you can fi
 
 Although the details vary slightly, the general pattern is the same across all hosts:
 
+{% hint style="warning" %}
+**Match the package version to your Umbraco site.** The example below uses `@latest`, which installs the newest release of the MCP Server. This may be a later major version than the one your site runs.
+
+If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail. See [Version Compatibility](#version-compatibility) below for the full list of tags.
+{% endhint %}
+
 ```json
 {
   "umbraco-mcp": {
@@ -111,16 +117,20 @@ Although the details vary slightly, the general pattern is the same across all h
       "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
       "UMBRACO_CLIENT_SECRET": "1234567890",
       "UMBRACO_BASE_URL": "https://localhost:12345",
-      "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
+      "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type,template"
     }
   }
 }
 
 ```
 
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](available-tools.md) for the full list of collections.
+{% endhint %}
+
 Add your Umbraco MCP configuration values (Client ID, Client Secret, and Umbraco URL) in the appropriate section of your host setup. Then restart the MCP Server or, in some cases, restart the host application.
 
-Once restarted, you’ll have access to the full suite of tools available through the Umbraco CMS Developer MCP Server.
+Once restarted, the MCP Server has access to the tool collections you configured.
 
 {% hint style="info" %}
 This Developer MCP Server requires `Node.js` version 22 or higher. Check your current `Node.js` version by running `node -v` in your terminal.
@@ -162,7 +172,7 @@ If you prefer, you can also install it globally with:
 
 ```bash
 
-@umbraco-cms/mcp-dev@17
+@umbraco-cms/mcp-dev@latest
 
 ```
 
@@ -185,7 +195,8 @@ The Umbraco MCP Server is designed to work with specific major versions of Umbra
 | ------------------ | -------------------------- | ---------------------------------- |
 | 15.x.x             | alpha                      | @umbraco-mcp/umbraco-mcp-cms@alpha |
 | 16.x.x             | 16.x                       | @umbraco-cms/mcp-dev@16            |
-| 17.x.x             | 17.x                       | @umbraco-cms/mcp-dev@17.1          |
+| 17.x.x             | 17.x (LTS)                 | @umbraco-cms/mcp-dev@lts-17        |
+| 18.x.x             | 18.x                       | @umbraco-cms/mcp-dev@latest        |
 
 ### Version Checking
 

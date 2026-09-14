@@ -26,7 +26,7 @@ There are built-in property value converters, which means you don't need to worr
 
 ### CSV tags
 
-![CSV tags example](../../../.gitbook/assets/Csv-example-v8.png)
+![CSV tags example](../../../.gitbook/assets/Csv-example.png)
 
 ### JSON tags
 

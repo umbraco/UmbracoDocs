@@ -95,6 +95,7 @@ For illustration purposes, the following structure represents the full set of op
       "TrackRenderedFormsStorageMethod": "HttpContextItems",
       "EnableMultiPageFormSettings": true,
       "EnableAdvancedValidationRules": false,
+      "CsvExportDelimiter": ",",
       "AnalyticsProcessing": {
         "Enabled": true,
         "FirstRunTime": "",
@@ -471,6 +472,12 @@ This setting determines whether [advanced form validation rules](../../editor/cr
 By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
 To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
+
+### CsvExportDelimiter
+
+This setting controls the delimiter used when exporting form entries to a CSV file. The default value is a comma (`,`).
+
+Set the value to a different delimiter, such as a semicolon (`;`), to match the format expected by the application used to open the file. If the value is empty, the export falls back to a comma.
 
 ## Analytics processing configuration
 

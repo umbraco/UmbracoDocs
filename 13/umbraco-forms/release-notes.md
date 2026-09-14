@@ -16,6 +16,34 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### [13.9.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.10) (August 27th 2026)
+* Records: Read record field values in batches, instead of one database query for each field value [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)
+* Records: Populate the Examine records index in groups of records, instead of holding every record for a form in memory at once [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)
+
+{% hint style="info" %}
+On installations with many form entries, the records index rebuild could fail to complete. This release reduces the number of database queries and the amount of memory that rebuild needs.
+{% endhint %}
+
+### 13.9.9 (August 18th 2026)
+* Prevent backoffice users without access to sensitive data from reading the values and uploaded files of fields marked as sensitive [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+* Withhold the details of the member who submitted an entry from backoffice users without access to sensitive data [GHSA-p6vj-8vxc-mf5c](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-p6vj-8vxc-mf5c)
+
+{% hint style="info" %}
+This release changes who can download the files uploaded to a form that collects sensitive data. For details, see the [Sensitive Data](developer/security.md#what-sensitive-means-for-file-uploads) section of the Security article.
+
+Upgrading rebuilds the Examine records index. Values captured before the upgrade are re-indexed without the data from fields marked as sensitive. On installations with many form entries, this rebuild can take some time to complete.
+{% endhint %}
+
+### [13.9.8](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.8) (July 22nd 2026)
+* Enforce server-side validation of the form step to prevent bypassing page validation and CAPTCHA on submission [GHSA-fv48-47xr-hwfj](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-fv48-47xr-hwfj)
+
+### [13.9.7](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.7) (July 13th 2026)
+* Import: Fix error importing forms exported from Umbraco Forms 10 with string prevalues [#1405](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1405)
+* Conditions: Apply page button conditions to the visible submit button [#1705](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1705)
+* Workflows: Enrich error detail when a Razor email template fails to render [#1571](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1571)
+* Workflows: Record a failed workflow in the audit table so it can be retried [#1372](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1372)
+* Workflows: Surface the exception on `WorkflowExecutionFailedNotification` [#1700](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1700)
+
 ### [13.9.6](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.6) (April 9th 2026)
 
 * Update "Umbraco Forms scheduled record deletion task" log message grammar [#1683](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1683)
@@ -399,7 +427,7 @@ And there are a couple of further additions to improve the performance and acces
 ### 13.0.0 (December 14th 2023)
 
 * Compatibility with Umbraco 13
-  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md#version-13).
+  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md).
 
 ## Legacy release notes
 

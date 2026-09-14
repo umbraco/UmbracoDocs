@@ -27,7 +27,7 @@ The following snippet will give an overview of the keys and values in the conten
       "BackOfficeLogo": "../media/qyci4xti/logo.png",
       "HideBackOfficeLogo": false,
       "Imaging": {
-        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+        "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
         "AutoFillImageProperties": [
           {
             "Alias": "umbracoFile",
@@ -47,6 +47,7 @@ The following snippet will give an overview of the keys and values in the conten
       },
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
+      "SortChildrenByFieldFiresNotifications": false,
       "ShowDeprecatedPropertyEditors": false,
       "ShowDomainWarnings": true,
       "ShowUnroutableContentWarnings": true,
@@ -160,6 +161,14 @@ This allows you to customize the preview badge being shown when you're previewin
 
 This setting is used when you're running Umbraco in virtual directories. Setting this to true can increase render time for pages with a large number of links. However, this is required if Umbraco is running in a virtual directory.
 
+### Sort children by field fires notifications
+
+Sorting by a field is available through the Management API, which can reorder a node's entire set of children in a single operation. This is an alternative mechanism to the per-item sort currently supported via the backoffice.
+
+By default (`false`), the children are reordered in a performant "set-based" operation. A single audit entry is written, but no per-item save/sort notifications are fired. As a result, webhooks that depend on notifications are not triggered.
+
+Set this to `true` to restore per-item save/sort notifications (and the webhooks that depend on them). This follows the per-item sort path, accepting the additional performance cost on nodes with many children.
+
 ### Show deprecated property editors
 
 This setting is used for controlling whether or not the Data Types marked as obsolete should be visible in the dropdown when creating new Data Types.
@@ -243,7 +252,7 @@ This section is used for managing how Umbraco handles images, allowed attributes
 
 ```json
 "Imaging": {
-  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
   "AutoFillImageProperties": {
     "Alias": "umbracoFile",
     "WidthFieldAlias": "umbracoWidth",
@@ -258,7 +267,39 @@ Let's break it down.
 
 ### Image file types
 
-This is a separated list of accepted image formats
+This is a list of the native image file extensions that Umbraco recognizes as images. It is used, for example, to determine whether an uploaded file needs format conversion, and to validate images uploaded as user avatars.
+
+The built-in default value is:
+
+```json
+"ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"]
+```
+
+{% hint style="warning" %}
+
+Any values you set for `ImageFileTypes` in `appsettings.json` are **added to** these built-in defaults. They do not replace them.
+
+This is due to how .NET binds collection-based configuration. The configured values are appended to the existing (default) contents, rather than replacing them. As a result, leaving a built-in type out of your configured list does not remove it.
+
+{% endhint %}
+
+To remove a built-in type, or to take full control of the list, configure the setting in code. There, the collection can be replaced or modified directly. Add the following to `Program.cs`:
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Configuration.Models;
+
+builder.Services.PostConfigure<ContentSettings>(settings =>
+{
+    // Replace the whole list with an explicit set:
+    settings.Imaging.ImageFileTypes = new HashSet<string> { "jpeg", "jpg", "png" };
+
+    // ...or remove a specific built-in type:
+    // settings.Imaging.ImageFileTypes.Remove("webp");
+});
+```
+
+`PostConfigure` runs after configuration has been bound, so it operates on the final (merged) collection and can both add and remove entries.
 
 ### Auto fill image properties
 
@@ -270,7 +311,7 @@ If you need to create a custom Media Type to handle images you need to add anoth
 
 ```json
 "Imaging": {
-  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif"],
+  "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
   "AutoFillImageProperties": [
     {
       "Alias": "umbracoFile",

@@ -54,6 +54,7 @@ import { extensionRegistry } from '@umbraco-cms/extension-registry';
 
 const manifest = {
     type: 'entityAction',
+    kind: 'default',
     alias: 'My.EntityAction',
     name: 'My Entity Action',
     weight: 10,

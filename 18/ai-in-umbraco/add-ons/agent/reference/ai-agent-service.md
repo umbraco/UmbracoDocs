@@ -313,7 +313,7 @@ Streams a persisted agent execution using `Microsoft.Extensions.AI` types.
 
 ### StreamAgentAGUIAsync
 
-Streams a persisted agent execution as AG-UI events for use with the AG-UI protocol (Copilot sidebar, custom AG-UI clients).
+Streams a persisted agent execution as AG-UI events for use with the AG-UI protocol (Contextual Copilot, Copilot Workspace, custom AG-UI clients).
 
 | Parameter           | Type                              | Description                                             |
 | ------------------- | --------------------------------- | ------------------------------------------------------- |

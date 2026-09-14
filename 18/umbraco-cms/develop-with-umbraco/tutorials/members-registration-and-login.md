@@ -16,7 +16,7 @@ By the end of this tutorial, you will learn how to:
 
 ## Prerequisites
 
-1. Install the latest [dotnet templates](../../get-started/installation/install-umbraco-with-templates.md): `dotnet new install Umbraco.Templates`.
+1. Install the latest [dotnet templates](/broken/pages/P2G798v8rRzd9Cq7gaLx): `dotnet new install Umbraco.Templates`.
 2. Install the Umbraco Starter Kit: `dotnet add package Umbraco.TheStarterKit`
 3. Run the project: `dotnet run`
 4. Complete the installer and login to the backoffice.
@@ -178,7 +178,7 @@ We can take this a bit further and specify which parts of our website should be 
 5. Navigate back to the created _Member_.
 6. Go to the **Info** Workspace View and assign the newly created Member Group.
 7. Click **Choose**.
-7. Save the member.
+8. Save the member.
 
 ![Assign the new Member group to the created Member](../../.gitbook/assets/assign-member-group-step3.png)
 

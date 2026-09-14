@@ -49,6 +49,7 @@ The `umbraco-package` accepts these fields:
     "version": "",
     "allowTelemetry": true,
     "allowPublicAccess": false,
+    "allowCacheBusting": true,
     "importmap": {
         "imports": {
             "": ""
@@ -73,6 +74,8 @@ Allows you to specify a friendly name for your package that will be used for tel
 
 The version of your package, if this is not specified there will be no version-specific information for your package. This is used for telemetry and to help users understand what version of your package they are using. It is also used for package migrations. The version should follow the [Semantic Versioning](https://semver.org/) format.
 
+The version also acts as the cache key for your package's `/App_Plugins` assets. Read more in the [Cache busting](#cache-busting) section.
+
 ### Allow Telemetry
 
 With this field, you can control the telemetry of this package, this will provide Umbraco with the knowledge of how many installations use this package.
@@ -86,6 +89,12 @@ Also known as: `allowPackageTelemetry`
 This field is used to allow public access to the package. If set to `true`, the package will be available for anonymous usage, for example on the login screen. If set to `false`, the package will only be available to logged-in users.
 
 The default is `false`.
+
+### Allow Cache Busting
+
+This field controls whether Umbraco appends a cache-busting query string to the package's `/App_Plugins` assets. Set it to `false` to opt out. Read more in the [Cache busting](#cache-busting) section.
+
+The default is `true`.
 
 ### Importmap
 
@@ -160,6 +169,153 @@ Common aliases include:
 * `Umb.Condition.UserPermission.Document`.
 
 For a full list and details, see the [Extension Conditions](extending-overview/extension-types/condition.md) article.
+
+## Cache busting
+
+{% hint style="info" %}
+Automatic cache busting for package assets is available from Umbraco 18.1.
+{% endhint %}
+
+Browsers cache the assets that your package serves from `/App_Plugins`. Without cache busting, users can keep running old JavaScript and CSS after you ship an update. To prevent this, Umbraco appends a cache-busting query string to your package's asset URLs.
+
+The value is derived from the `version` field in your `umbraco-package.json` file. Umbraco appends it as `?umb__rnd={value}` to:
+
+* Import map entries pointing to `/App_Plugins` in the server-rendered import map.
+* Asset URLs of your registered extensions, for example `element` and `js` paths. The Backoffice appends the value when the extensions are loaded. This also covers the login screen and the preview pane.
+
+For example, with `"version": "1.2.3"` an asset URL is rendered as `/App_Plugins/MyPackage/dist/index.js?umb__rnd=1.2.3`.
+
+The host can configure a `Cachebuster` value as described in the [Plugins settings](../../develop-with-umbraco/configuration/pluginssettings.md) article. When set, Umbraco appends a short hash of that value to the version (for example, `?umb__rnd=1.2.3-7bb8e1f`).
+
+### The version is your cache key
+
+The cache-busting value works both ways. When the version stays the same, browsers reuse the assets they already downloaded. When the version changes, browsers fetch the new files. Bump the `version` field whenever the assets you ship change.
+
+{% hint style="warning" %}
+If you change assets without bumping the version, the asset URLs stay the same. Browsers can then keep serving the old files from their cache. Treat a version bump as mandatory for every release that changes assets.
+{% endhint %}
+
+If your package has no `version`, the cache-busting value falls back to a hash of the host's `Cachebuster` value. That hash only changes when the host changes the setting, described in the [Plugins settings](../../develop-with-umbraco/configuration/pluginssettings.md) article. If neither is set, no query string is appended at all. Set a version to control cache busting yourself.
+
+### What is not stamped
+
+Umbraco leaves these URLs untouched:
+
+* URLs that already contain a query string. You manage the caching of these yourself.
+* URLs outside `/App_Plugins`, for example absolute URLs to a Content Delivery Network (CDN).
+* Bare module specifiers, for example `@umbraco-cms/backoffice/extension-api`.
+
+### Bundle your assets
+
+The cache buster covers the entry points that you declare in your manifest and import map. Files that those entry points import at runtime, for example code-split chunks, are requested without the query string.
+
+Use a bundler such as Vite to build your package. Bundlers add a content hash to the file names of generated chunks by default. A content-hashed file name changes whenever the file content changes, so those files bust their own cache.
+
+### Manage the version yourself
+
+You can also take control of the versioning yourself. There are two alternatives:
+
+#### Add your own query string
+
+Umbraco leaves URLs that already contain a query string untouched. You can therefore version an asset yourself:
+
+{% code title="umbraco-package.json (snippet)" %}
+```json
+{
+    "type": "propertyEditorUi",
+    "alias": "My.PropertyEditorUi",
+    "name": "My Property Editor UI",
+    "element": "/App_Plugins/MyPackage/dist/my-editor.js?v=1.2.3"
+}
+```
+{% endcode %}
+
+You take over the responsibility with this approach. Remember to update the value whenever the file changes.
+
+#### Read the version from your assembly
+
+You can provide the package manifest from code instead of a `umbraco-package.json` file. Implement the `IPackageManifestReader` interface and read the version from your assembly. This keeps the manifest version in sync with your NuGet package version on every release.
+
+{% code title="MyPackageManifestReader.cs" %}
+```csharp
+using Umbraco.Cms.Core.Manifest;
+using Umbraco.Cms.Infrastructure.Manifest;
+
+namespace MyPackage;
+
+public class MyPackageManifestReader : IPackageManifestReader
+{
+    public Task<IEnumerable<PackageManifest>> ReadPackageManifestsAsync()
+    {
+        var version = typeof(MyPackageManifestReader).Assembly.GetName().Version?.ToString(3) ?? "0.0.0";
+
+        PackageManifest manifest = new()
+        {
+            Id = "My.Package",
+            Name = "My Package",
+            Version = version,
+            Extensions =
+            [
+                new Dictionary<string, object>
+                {
+                    ["type"] = "propertyEditorUi",
+                    ["alias"] = "My.PropertyEditorUi",
+                    ["name"] = "My Property Editor UI",
+                    ["element"] = "/App_Plugins/MyPackage/dist/my-editor.js",
+                },
+            ],
+        };
+
+        return Task.FromResult<IEnumerable<PackageManifest>>([manifest]);
+    }
+}
+```
+{% endcode %}
+
+Register the reader in a composer:
+
+{% code title="MyPackageComposer.cs" %}
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Infrastructure.Manifest;
+
+namespace MyPackage;
+
+public class MyPackageComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddSingleton<IPackageManifestReader, MyPackageManifestReader>();
+    }
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+The manifest reader replaces the `umbraco-package.json` file. Remove the file from your package to avoid registering the extensions twice.
+{% endhint %}
+
+### Opting out
+
+Set `allowCacheBusting` to `false` in your `umbraco-package.json` file to opt out of the automatic stamping:
+
+{% code title="umbraco-package.json" %}
+```json
+{
+    "name": "My Package",
+    "version": "1.2.3",
+    "allowCacheBusting": false
+}
+```
+{% endcode %}
+
+Omitting the `version` field also stops the version-based cache busting. This is not recommended, as the version is also used for package migrations and telemetry. Keep in mind that the host's `Cachebuster` value is still applied when set.
+
+{% hint style="warning" %}
+The legacy `%CACHE_BUSTER%` token still resolves to Umbraco's global cache-busting hash. That hash only changes when Umbraco itself is updated. The token is deprecated and is scheduled for removal in Umbraco 20. Rely on the automatic stamping instead.
+{% endhint %}
 
 ## Package Manifest IntelliSense
 

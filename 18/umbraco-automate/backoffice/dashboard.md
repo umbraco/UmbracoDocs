@@ -6,9 +6,9 @@ description: >-
 
 # Use the Dashboard
 
-The dashboard is the landing page of the **Automate** section. Use it to get an at-a-glance view of automation activity across all workspaces you can access.
+The dashboard is the landing page of the **Automation** section. Use it to get an at-a-glance view of automation activity across all workspaces you can access.
 
-<figure><img src="../.gitbook/assets/dashboard.png" alt="The Automate dashboard with status cards and a recent activity list."><figcaption><p>The Automate dashboard.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/dashboard.png" alt="The Automation dashboard with status cards and a recent activity list."><figcaption><p>The Automation dashboard.</p></figcaption></figure>
 
 ## Status Cards
 
@@ -28,7 +28,7 @@ Below the cards, the **Recent Activity** list shows the most recent runs across 
 
 ## First-Run Welcome
 
-When you open Automate for the first time and no automations exist, the dashboard shows a welcome panel that links straight to creating a workspace.
+When you open Automation for the first time and no automations exist, the dashboard shows a welcome panel that links straight to creating a workspace.
 
 ## See Also
 

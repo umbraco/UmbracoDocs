@@ -72,6 +72,7 @@
     * [Setting up the customer journey](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md)
     * [Personas](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md)
     * [Implicit Personalization scoring explained](marketers-and-editors/personalization/implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md)
+    * [Persona and customer journey group settings](marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md)
     * [Content Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md)
     * [Campaign Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md)
     * [Referral Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md)

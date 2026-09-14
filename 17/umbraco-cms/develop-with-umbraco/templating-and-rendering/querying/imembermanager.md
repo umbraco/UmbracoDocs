@@ -72,7 +72,7 @@ var member = await _memberManager.FindByIdAsync("1234");
 var emailConfirmed = member is not null && member.EmailConfirmed;
 ```
 
-If we want to find a member by `Udi` or `Guid` we need to inject `IIdKeyMap` service:
+To find a member by `Udi` or `Guid`, inject `IIdKeyMap` service:
 
 #### Find member by `Udi`
 

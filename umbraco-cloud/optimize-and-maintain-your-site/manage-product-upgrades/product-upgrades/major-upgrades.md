@@ -61,7 +61,7 @@ Look for the "**Upgrade from/to Umbraco xx"** boxes. These boxes contain importa
 {% hint style="warning" %}
 **Do not perform major version upgrades directly in Umbraco Cloud.**
 
-Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures and 503 errors. These incomplete migrations are often difficult to diagnose.
+Major upgrades involve significant database migrations that should be run locally, where you have full visibility into the migration process. Running major migrations directly on the Cloud can cause boot failures, which typically show up as a 503 or 500.30 error. These incomplete migrations are often difficult to diagnose.
 
 Always perform the database upgrade locally first, verify that the backoffice loads successfully, and then deploy the upgraded project to Cloud. Follow the steps below for the recommended approach.
 {% endhint %}
@@ -111,21 +111,37 @@ Delete the `<PackageReference>` entries for these packages.
 5. Select the version you are updating to and follow the instructions:
 
 {% tabs %}
-{% tab title="Umbraco 17" %}
-* Update the following packages:
-  * `Umbraco.Forms.Deploy`
-  * `Umbraco.Cms`
-  * `Umbraco.Deploy.Cloud`
-  * `Umbraco.Deploy.Contrib`
-  * `Umbraco.Forms`
-  * `Umbraco.Cloud.Cms`
-  * `Umbraco.Cloud.StorageProviders.AzureBlob`
-* Open the `Licenses` folder and delete all Umbraco-related `.lic` files.
-* Keep any `.lic` files needed for your third-party tools.
+{% tab title="Umbraco 18" %}
+6. Update the all `Umbraco.*` packages to the latest version 18.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Ensure all projects and packages in your solution is compatible with the latest .NET.
+{% endtab %}
+
+{% tab title="Umbraco 17 (LTS)" %}
+6. Update the all `Umbraco.*` packages to the latest version 17.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Open the `Licenses` folder and delete all Umbraco-related `.lic` files.
+8. Keep any `.lic` files needed for your third-party tools.
 
 If the folder is empty after deleting the files, you can safely remove the entire `Licenses` folder as well.
 
-*  _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
+9. _[Optional]_ If using Deploy and Forms on Umbraco Cloud:
 
     1. Locate and open the `appsettings.json` file (and any environment-specific variants).
     2. Add the following section to `Umbraco:Licenses:Products:<ProductName>`:
@@ -144,66 +160,73 @@ If the folder is empty after deleting the files, you can safely remove the entir
     ```
 
     This ensures the built-in Umbraco Cloud licenses are recognized after upgrading. Without these values, you may encounter license validation errors even though your project is on Umbraco Cloud.
-* _\[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
+10. _\[Optional]_ If you use `InMemoryAuto` models builder, or rely on Razor runtime compilation for editing templates via the backoffice, reference the `Umbraco.Cms.DevelopmentMode.Backoffice` package. For more information, see the [Breaking Changes](https://docs.umbraco.com/umbraco-cms/17.latest/fundamentals/setup/upgrading/version-specific#umbraco-17) article.
+11. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
 
 {% tab title="Umbraco 15 and 16" %}
-Update the following packages:
-
-* `Umbraco.Forms.Deploy`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
+6. Update the all `Umbraco.*` packages to the latest version 15/16.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+7. Ensure all projects and packages in your solution is compatible with the latest .NET.
 {% endtab %}
 
 {% tab title="Umbraco 14" %}
-Update the following packages:
-
-* `Umbraco.Forms.Deploy`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.Identity.Cms`
-* `Umbraco.Cloud.Cms.PublicAccess`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
-* `Microsoft.Extensions.DependencyInjection.Abstractions`
+6. Update the all `Umbraco.*` packages to the latest version 14.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Forms.Deploy`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
 {% endtab %}
 
-{% tab title="Umbraco 13" %}
+{% tab title="Umbraco 13 (LTS)" %}
 From Umbraco 13, the `Umbraco.Deploy.Forms` package has been replaced with the `Umbraco.Forms.Deploy` package.
 
-* Remove the `Umbraco.Deploy.Forms` package.
-* Update the following packages:
-  * `Umbraco.Cms`
-  * `Umbraco.Deploy.Cloud`
-  * `Umbraco.Deploy.Contrib`
-  * `Umbraco.Forms`
-  * `Umbraco.Cloud.Cms`
-  * `Umbraco.Cloud.Identity.Cms`
-  * `Umbraco.Cloud.Cms.PublicAccess`
-  * `Umbraco.Cloud.StorageProviders.AzureBlob`
-  * `Microsoft.Extensions.DependencyInjection.Abstractions`
-* Install the `Umbraco.Forms.Deploy` package.
+6. Remove the `Umbraco.Deploy.Forms` package.
+7. Update the all `Umbraco.*` packages to the latest version 13.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
+8. Install the `Umbraco.Forms.Deploy` package.
 {% endtab %}
 
 {% tab title="Umbraco 10" %}
-Update the following packages:
-
-* `Umbraco.Deploy.Forms`
-* `Umbraco.Cms`
-* `Umbraco.Deploy.Cloud`
-* `Umbraco.Deploy.Contrib`
-* `Umbraco.Forms`
-* `Umbraco.Cloud.Cms`
-* `Umbraco.Cloud.Identity.Cms`
-* `Umbraco.Cloud.Cms.PublicAccess`
-* `Umbraco.Cloud.StorageProviders.AzureBlob`
-* `Microsoft.Extensions.DependencyInjection.Abstractions`
+6. Update the all `Umbraco.*` packages to the latest version 10.
+  * `Umbraco.Community.*` packages may also need updating, though we cannot guarantee their compatibility.
+  * Ensure the following default Cloud packages are upgraded:
+    * `Umbraco.Deploy.Forms`
+    * `Umbraco.Cms`
+    * `Umbraco.Deploy.Cloud`
+    * `Umbraco.Deploy.Contrib`
+    * `Umbraco.Forms`
+    * `Umbraco.Cloud.Cms`
+    * `Umbraco.Cloud.Identity.Cms`
+    * `Umbraco.Cloud.Cms.PublicAccess`
+    * `Umbraco.Cloud.StorageProviders.AzureBlob`
+    * `Microsoft.Extensions.DependencyInjection.Abstractions`
 {% endtab %}
 {% endtabs %}
 
@@ -213,7 +236,7 @@ Update all projects and packages in your solution to support the latest .NET.
 
 ## Step 4: Finishing the Upgrade
 
-1. Enable the [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-unattended) feature.
+1. Ensure that [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-unattended) are enabled.
 2. Run the **project locally**.
 3. Log in to the Umbraco backoffice to **verify the upgrade** has happened.
    * If you cannot login locally via Umbraco ID and URL shows `/umbraco/authorizeupgrade?redir=` then this is because of the Unattended Upgrades setting. It must be set to `true` and deployed to the environment before the upgrade.
@@ -317,6 +340,16 @@ Remove the same files from the left-most environment. This should be done from t
 5. Push the changes to the Cloud environment. See the [Deploying from local to your environments](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
 6. Test that everything works with the upgrade on the Cloud environment.
 
+{% hint style="warning" %}
+**If the environment fails to boot after this push (503 or 500.30 error)**
+
+Both errors usually mean the database migration did not complete in time. This can happen on any environment, not only Live, and is more likely on environments with a large or complex database.
+
+Check the Umbraco log for the specific underlying error before proceeding. This confirms whether it's a migration timeout or something else.
+
+If this happens, follow the [Local Upgrade Option](planning-major-upgrades-safely-on-live.md#approach-2-run-a-controlled-local-migration-local-upgrade-option) to complete the migration locally. Connect directly to the target environment's database instead of the Live environment's database.
+{% endhint %}
+
 It is highly recommended to go through everything in your Cloud environment. This can help you identify any potential errors after the upgrade, and ensure that you are not deploying any issues onto your production environment.
 
 {% hint style="warning" %}
@@ -331,6 +364,10 @@ That guide will help you set up a Staging safety net and choose the right resour
 
 The next part is to deploy the upgrade through to the production environment.
 
+{% hint style="info" %}
+Deploying the upgrade pushes your upgraded **codebase only**. It does not move, restore, or overwrite your database. The existing database for each environment stays in place, and schema migrations run automatically the first time the new code starts up on that environment. Content and media are only moved if you explicitly restore or import them, as described in the **With content freeze** steps below.
+{% endhint %}
+
 For major upgrades that include content migrations, the process can be extensive. This is especially true for sites with a large amount of content. In these cases, it is recommended to:
 
 * Initiate a content freeze to prevent changes during the migration.
@@ -338,8 +375,8 @@ For major upgrades that include content migrations, the process can be extensive
 
 You can choose between two approaches based on your needs:
 
-* "**With content freeze**" - involves a more detailed upgrade process but helps reduce downtime on your live website.
-* "**Without content freeze**" - provides a more straightforward process that may result in longer downtime on your live website.
+* **With content freeze** - involves a more detailed upgrade process but helps reduce downtime on your live website.
+* **Without content freeze** - provides a more straightforward process that may result in longer downtime on your live website.
 
 {% tabs %}
 {% tab title="With content freeze" %}

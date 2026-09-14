@@ -9,7 +9,7 @@ The chat capability enables conversational AI features. Implement it by extendin
 
 ## Base Class
 
-{% code title="AIChatCapabilityBase<TSettings>" %}
+{% code title="AIChatCapabilityBase.cs" %}
 
 ```csharp
 public abstract class AIChatCapabilityBase<TSettings>(IAIProvider provider)
@@ -70,7 +70,7 @@ public class MyChatCapability : AIChatCapabilityBase<MyProviderSettings>
 
 The `IChatClient` interface from Microsoft.Extensions.AI:
 
-{% code title="IChatClient Interface" %}
+{% code title="IChatClient.cs" %}
 
 ```csharp
 public interface IChatClient : IDisposable
@@ -98,6 +98,7 @@ public interface IChatClient : IDisposable
 {% code title="MyChatClient.cs" %}
 
 ```csharp
+using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Microsoft.Extensions.AI;
@@ -120,7 +121,7 @@ public class MyChatClient : IChatClient
     public ChatClientMetadata Metadata => new(
         providerName: "MyProvider",
         providerUri: new Uri("https://myprovider.com"),
-        modelId: _modelId);
+        defaultModelId: _modelId);
 
     public async Task<ChatResponse> GetResponseAsync(
         IEnumerable<ChatMessage> messages,
@@ -189,11 +190,7 @@ public class MyChatClient : IChatClient
             var chunk = JsonSerializer.Deserialize<StreamChunk>(data);
             if (chunk?.Choices[0].Delta.Content is { } content)
             {
-                yield return new ChatResponseUpdate
-                {
-                    Role = ChatRole.Assistant,
-                    Text = content
-                };
+                yield return new ChatResponseUpdate(ChatRole.Assistant, content);
             }
 
             if (chunk?.Choices[0].FinishReason is { } reason)
@@ -283,15 +280,18 @@ internal class DeltaContent
 
 {% endcode %}
 
-## Using Existing M.E.AI Clients
+## Using Existing `M.E.AI` Clients
 
-If your AI service already has a Microsoft.Extensions.AI (M.E.AI) client, use it directly:
+If your AI service already has a Microsoft.Extensions.AI (`M.E.AI`) client, use it directly:
 
-{% code title="Using Existing Client" %}
+{% code title="MyOpenAICompatibleCapability.cs" %}
 
 ```csharp
+using System.ClientModel;
 using Microsoft.Extensions.AI;
 using OpenAI;
+using Umbraco.AI.Core.Models;
+using Umbraco.AI.Core.Providers;
 
 public class MyOpenAICompatibleCapability : AIChatCapabilityBase<MyProviderSettings>
 {
@@ -300,12 +300,12 @@ public class MyOpenAICompatibleCapability : AIChatCapabilityBase<MyProviderSetti
     protected override IChatClient CreateClient(MyProviderSettings settings, string? modelId)
     {
         // Use the OpenAI client with a custom endpoint
-        var client = new OpenAIClient(new ApiKeyCredential(settings.ApiKey), new OpenAIClientOptions
+        var client = new OpenAIClient(new ApiKeyCredential(settings.ApiKey!), new OpenAIClientOptions
         {
             Endpoint = new Uri(settings.BaseUrl!)
         });
 
-        return client.AsChatClient(modelId ?? "gpt-4o");
+        return client.GetChatClient(modelId ?? "gpt-4o").AsIChatClient();
     }
 
     protected override Task<IReadOnlyList<AIModelDescriptor>> GetModelsAsync(
@@ -328,7 +328,7 @@ public class MyOpenAICompatibleCapability : AIChatCapabilityBase<MyProviderSetti
 
 Profile settings and request options are merged into `ChatOptions`:
 
-{% code title="Using ChatOptions" %}
+{% code title="MyChatClient.cs" %}
 
 ```csharp
 protected override IChatClient CreateClient(MyProviderSettings settings, string? modelId)

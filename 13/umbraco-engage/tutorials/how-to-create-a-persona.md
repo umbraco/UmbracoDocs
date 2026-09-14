@@ -48,7 +48,7 @@ To create your Personas in Umbraco Engage, follow the steps below:
 
 <figure><img src="../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-7. Click **Add Persona**.
+8. Click **Add Persona**.
 
 You have now set up your personas and can score your [content](../marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md), [campaigns](../marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md), and [referrals](../marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md) against these personas.
 
@@ -56,13 +56,4 @@ You have now set up your personas and can score your [content](../marketers-and-
 
 If you want to tweak the working of the persona scoring in-depth, you can go to the advanced settings of a persona group.
 
-Here you have the option to set different parameters:
-
-* **Threshold value**. This threshold value needs to be reached before a persona can become active. In this case, a persona needs to have 25 points at least before a visitor can be this persona.
-* **The minimal deviation**. This setting specifies the minimal deviation between the persona with the highest and second-highest scores. This can be specified in an absolute value or a percentage.
-* **The minimal deviation percentage**. The percentage specifies the minimum difference between the highest and second-highest scores before a Persona becomes active. In this case, the difference between the first and second persona should be at least 25%.
-* **The absolute value deviation**. The absolute value specifies the minimum difference between the highest and second-highest scores before a persona becomes active.
-* **The expiration type**. Specify whether the implicit persona scoring expires. This can be set to 'never' when it does not expire or can be set to a number of days or sessions.
-* **The maximum points to score**. Specify the maximum number of points that can be scored per persona per item.
-
-By adjusting these settings, you can tweak the performance of the Umbraco Engage algorithm.
+These settings are shared between persona groups and customer journey groups. See [Persona and customer journey group settings](../marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md) for details on each setting and how to fine-tune them.

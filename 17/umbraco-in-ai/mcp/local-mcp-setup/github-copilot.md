@@ -14,7 +14,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 
 ### Install MCP Server via Button
 
-[![Install in Visual Studio Code](https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square\&label=Install%20Server\&color=0098FF)](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22umbraco-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40umbraco-cms%2Fmcp-dev%4017%22%5D%2C%22env%22%3A%7B%22NODE_TLS_REJECT_UNAUTHORIZED%22%3A%220%22%2C%22UMBRACO_CLIENT_ID%22%3A%22%3CAPI%20user%20name%3E%22%2C%22UMBRACO_CLIENT_SECRET%22%3A%22%3CAPI%20client%20secert%3E%22%2C%22UMBRACO_BASE_URL%22%3A%22https%3A%2F%2F%3Cdomain%3E%22%2C%22UMBRACO_INCLUDE_TOOL_COLLECTIONS%22%3A%22document%2Cmedia%2Cdocument-type%2Cdata-type%22%7D%7D)
+[![Install in Visual Studio Code](https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square\&label=Install%20Server\&color=0098FF)](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22umbraco-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40umbraco-cms%2Fmcp-dev%4017%22%5D%2C%22env%22%3A%7B%22NODE_TLS_REJECT_UNAUTHORIZED%22%3A%220%22%2C%22UMBRACO_CLIENT_ID%22%3A%22%3CAPI%20user%20name%3E%22%2C%22UMBRACO_CLIENT_SECRET%22%3A%22%3CAPI%20client%20secert%3E%22%2C%22UMBRACO_BASE_URL%22%3A%22https%3A%2F%2F%3Cdomain%3E%22%2C%22UMBRACO_INCLUDE_TOOL_COLLECTIONS%22%3A%22document%2Cmedia%2Cdocument-type%2Cdata-type%2Ctemplate%22%7D%7D)
 
 **Requirements:** Visual Studio Code 1.101+ with GitHub Copilot Chat extension installed.
 
@@ -39,7 +39,7 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
         "UMBRACO_CLIENT_ID": "umbraco-back-office-mcp",
         "UMBRACO_CLIENT_SECRET": "1234567890",
         "UMBRACO_BASE_URL": "https://localhost:12345",
-        "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type"
+        "UMBRACO_INCLUDE_TOOL_COLLECTIONS": "document,media,document-type,data-type,template"
       },
       "type": "stdio"
     }
@@ -47,6 +47,10 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
   "inputs": []
 }
 ```
+
+{% hint style="info" %}
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+{% endhint %}
 
 {% hint style="info" %}
 Restarting the MCP Server applies any configuration or tool changes immediately without needing to reinstall or re-add the server.

@@ -56,7 +56,7 @@ Engage v17 introduces new overloads of public-facing service methods to allow th
 * IPersonaService
 * ICustomerJourneyService
 
-This means that these services work without the use of magic numbers that are environment-dependent, and instead allow for the use of a key that is shared between environments. This also marks the introduction of `Engage.Deploy` for Engage v17 to allow for the transferring of goals, personas, customer journeys, and A/B tests, adding even more use cases to these service changes.
+This means that these services work without the use of magic numbers that are environment-dependent, and instead allow for the use of a key that is shared between environments. This also marks the introduction of the [Deploy](../add-ons/deploy.md) add-on (`Umbraco.Engage.Deploy`) for Engage v17. It allows for the transferring of goals, personas, customer journeys, and A/B tests, adding even more use cases to these service changes.
 
 #### Nullability
 

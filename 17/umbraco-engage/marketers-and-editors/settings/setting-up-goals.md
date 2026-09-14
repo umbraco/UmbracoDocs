@@ -39,7 +39,7 @@ You can specify how the goal will be triggered:
 
       Category: **GA 4 Bridging**
       Action: **\<your action>**
-* Via an Umbraco Forms submission
+* Via an Umbraco Forms submission (requires the [Forms](../../add-ons/forms.md) add-on)
 * Via some custom code
 
 <figure><img src="../../.gitbook/assets/settings-create-goal-v16.png" alt=""><figcaption><p>Create a new goal</p></figcaption></figure>

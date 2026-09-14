@@ -5,7 +5,7 @@ description: >-
 
 # Getting Started with Agents
 
-This guide walks you through creating your first AI agent and using it via the Copilot sidebar.
+This guide walks you through creating your first AI agent and using it via the Contextual Copilot sidebar.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ Install-Package Umbraco.AI.Agent.Copilot
 Restart your application to run database migrations.
 
 {% hint style="info" %}
-The Agent Copilot package provides the sidebar UI. Without it, agents can only be used programmatically.
+The Contextual Copilot package provides the sidebar UI. Without it, agents can only be used programmatically.
 {% endhint %}
 
 ## Step 2: Create an Agent
@@ -63,22 +63,22 @@ Guidelines:
 ```
 
 4. Set the **Scope** to **Content** so the agent appears in the Content section
-5. Set the **Surface** to **Copilot**
+5. Set the **Surface** to **Copilot** -- this is the Contextual Copilot surface, as distinct from the **Copilot Workspace** option next to it
 6. Click **Save**
 
 ## Step 3: Use the Agent
 
 1. Navigate to the **Content** section
 2. Open a content item
-3. Click the **AI Assistant** button in the header to open the Copilot sidebar
+3. Click the floating **AI Assistant** button in the bottom-right corner of the workspace to open the Contextual Copilot sidebar
 4. The Writing Assistant agent is available in the agent selector
 5. Start a conversation — try "Help me improve this page title"
 
-See [Agent Copilot](../agent-copilot/copilot.md) for details on using the Copilot sidebar.
+See [Contextual Copilot Usage](../agent-copilot/copilot.md) for details on using the sidebar.
 
 ## Next Steps
 
 - [Instructions](instructions.md) — Write better agent instructions
 - [Scopes](scopes.md) — Control where agents appear
 - [Permissions](permissions.md) — Configure tool access
-- [Agent Copilot](../agent-copilot/README.md) — Copilot sidebar features
+- [Contextual Copilot](../agent-copilot/README.md) — Sidebar features

@@ -10,10 +10,10 @@ You can move a page in two ways:
 2. Click **...** next to the page you wish to move.
 3.  Select **Move to**.
 
-    ![Move Menu 1](../../../.gitbook/assets/Move-menu-v14.png)
+    ![Move Menu 1](../../.gitbook/assets/Move-menu-v14.png)
 4.  A window appears on the right side of the screen. Here, you can choose where you want to move the page in the tree structure.
 
-    ![Move Option 1](../../../.gitbook/assets/Move-options-v14.png)
+    ![Move Option 1](../../.gitbook/assets/Move-options-v14.png)
 5. Click **Move**.
 6. A confirmation message appears. Click **OK** to dismiss the confirmation message.
 
@@ -24,7 +24,7 @@ You can move a page in two ways:
 3. Click **Actions** in the top-right corner of the screen.
 4.  Select **Move to** from the **Actions** drop-down menu.
 
-    ![Actions Menu](../../../.gitbook/assets/move-actions-menu.png)
+    ![Actions Menu](../../.gitbook/assets/move-actions-menu.png)
 5. A window appears on the right side of the screen. Here, you can choose where you want to move the page in the tree structure.
 6. Click **Move**.
 7. A confirmation message appears. Click **OK** to dismiss the confirmation message.

@@ -10,10 +10,11 @@ A workspace groups related automations and controls which connections and users 
 
 ## Create a Workspace
 
-1. Open the **Automate** section.
-2. Right-click the root of the tree.
-3. Select **Create workspace**.
-4. Enter a name and click **Create**.
+1. Open the **Automation** section.
+2. Click **+** next to Workspaces.
+3. **Enter a name** for the Workspace.
+4. Choose the **Service Account Key** and **user Groups**.
+5. Click **Save**.
 
 <figure><img src="../.gitbook/assets/create-workspace.png" alt="The create workspace modal."><figcaption><p>Creating a workspace.</p></figcaption></figure>
 
@@ -44,6 +45,12 @@ Changing the service account on a workspace with published automations can take 
 Events the new account isn't authorized for are silently skipped at dispatch. Actions that need permissions it doesn't have fail with an authentication error.
 
 Review the **Runs** tab after any service-account change.
+{% endhint %}
+
+{% hint style="info" %}
+
+If a workspace was transferred from another environment (for example via Deploy), it may reference a user group that doesn't exist here. That group is dropped from **User Groups**. A warning tells you how many groups need to be added again.
+
 {% endhint %}
 
 ## Workspace Groups

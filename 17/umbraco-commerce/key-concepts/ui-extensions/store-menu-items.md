@@ -6,7 +6,7 @@ description: Store Menu Item UI Extension for Umbraco Commerce
 
 Store Menu Items allow you to display custom menu items inside a Store tree, either in the Settings or Commerce sections.
 
-![Store Menu](../../.gitbook/assets/store-menu.png)
+![Store Menu](<../../.gitbook/assets/store-menu (1).png>)
 
 ## Registering a Store Menu Item
 

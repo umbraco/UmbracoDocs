@@ -6,3 +6,4 @@ root: ./
 
 redirects:
     concepts/context-enginerring: concepts/context-engineering.md
+    mcp/cms-developer-mcp/cli-usage: mcp/cms-developer-mcp/skills-and-cli.md

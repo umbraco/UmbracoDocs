@@ -13,6 +13,7 @@ addon
 agentic
 ajax
 allowlist
+allowlisting
 altTemplate
 amet
 Amongst
@@ -38,6 +39,7 @@ approvers
 appSetting
 appsetting
 appsettings
+Aprimo
 ARRAffinity
 articleContent
 articlesTitle
@@ -46,11 +48,13 @@ assignDomain
 async
 Auditability
 authorizer
+authorizers
 authProvider
 Axios
 autocomplete
 autocompletion
 autogenerate
+Automate's
 Automations
 automations
 Autoplay
@@ -60,6 +64,9 @@ Backoffice
 backoffice
 Backoffices
 backplane
+backport
+backported
+backports
 Beeceptor
 Behaviour
 behaviour
@@ -79,7 +86,9 @@ browsable
 buildable
 bundleId
 bundler
+bundlers
 cacheable
+Cachebuster
 camelCase
 camelcase
 cancellationToken
@@ -110,6 +119,7 @@ CMS's
 codebase
 codeblock
 Codegarden
+codegen
 collectionAction
 collectionConfig
 collectionView
@@ -117,6 +127,7 @@ Colour
 colours
 coloured
 Commerce
+CommerceTools
 compareTo
 comparisonOperator
 composable
@@ -177,6 +188,7 @@ dereferencing
 Deregister
 deregister
 deregistration
+deserialization
 deserialize
 deserialized
 deserializing
@@ -203,6 +215,7 @@ EFCore
 elementName
 elementSelector
 emailTemplate
+emerchantpay
 endcode
 endembed
 endfile
@@ -285,6 +298,7 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+heatmaps
 helpdesk
 HMACs
 Homebrew
@@ -338,6 +352,7 @@ inclusivity
 increaseBy
 initializer
 injectable
+inriver
 intalls
 intellisense
 Intellisense
@@ -391,6 +406,7 @@ masterpages
 Matryoshka
 maxLength
 Maxmind
+MCPs
 Mecanik
 memberGroups
 memberIds
@@ -495,6 +511,8 @@ personalizations
 Pikaday
 pipelineTasks
 Pluralsight
+populator
+populators
 postfixed
 Powershell
 powershell
@@ -605,6 +623,7 @@ serverless
 serverside
 setBehavior
 shippingMethod
+Shopify
 signout
 signup
 SignalR
@@ -645,7 +664,8 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
-summarising
+subnet
+subnets
 subpage
 subpages
 subtree
@@ -654,6 +674,7 @@ Subtrees
 subview
 subviews
 Subviews
+summarizing
 svg
 SVGs
 symlinked
@@ -698,6 +719,7 @@ tiptapExtension
 TKey
 TModel
 todays
+tooltip
 topbar
 topmenu
 totalRecords
@@ -742,6 +764,7 @@ uncategorized
 uncheck
 Uncomment
 underperforming
+unencrypted
 unfinalized
 Unintuitive
 unioned

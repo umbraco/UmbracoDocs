@@ -22,7 +22,7 @@ Umbraco Engage uses **columnstore indexes** for optimal query performance on ana
 ### SQL Server (On-Premises / Self-Hosted)
 
 * **SQL Server 2014 or higher** is required
-* Columnstore index support varies by edition - Enterprise Edition is recommended for older SQL Server versions
+* Columnstore index support varies by edition — Enterprise Edition is recommended for older SQL Server versions
 
 ### Azure SQL
 
@@ -42,13 +42,21 @@ See the [Troubleshooting](../../installation/troubleshooting-installs.md) sectio
 
 ## Umbraco Cloud Compatibility
 
-Umbraco Engage is compatible with Umbraco Cloud (Standard, Professional, and Enterprise plans).
+Umbraco Engage collects, aggregates, analyzes, and stores all visitor data within your own Umbraco installation and database. This analytics processing runs in the same application as your website, so it adds load on top of normal site traffic.
+
+To run Umbraco Engage on Umbraco Cloud, [**dedicated resources are required**](https://umbraco.com/products/umbraco-cloud/umbraco-cloud-scaling/).
+
+Your project must use one of these Umbraco Cloud plans on dedicated resources:
+
+* Standard with Dedicated resources&#x20;
+* Professional with Dedicated resources
+* Enterprise with Dedicated resources
 
 {% hint style="info" %}
 If you want to run an Umbraco Cloud site locally, point the connection string to a (local) SQL Server database. SQLite is not supported.
 {% endhint %}
 
-Umbraco Deploy is supported for Umbraco Engage. Install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package to transfer Umbraco Engage configuration and analytics entities between environments. See the [Installation](../../installation/installation.md#umbraco-deploy) article for the full list of supported items and details.
+Umbraco Deploy is supported for Umbraco Engage. Install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package to transfer Umbraco Engage configuration items between environments. See the [Deploy](../../add-ons/deploy.md) add-on article for the full list of supported items and details.
 
 ## Frontend Development Requirements
 
