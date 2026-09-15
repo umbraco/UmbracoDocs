@@ -49,6 +49,8 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 The default model is `kimi-k3`. Moonshot doesn't document an embeddings endpoint, so this provider supports Chat only.
 {% endhint %}
 
+![Moonshot AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/moonshot-create-connection.png)
+
 ## Related
 
 - [Providers Overview](README.md)

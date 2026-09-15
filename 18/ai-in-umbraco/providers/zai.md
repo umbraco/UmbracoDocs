@@ -49,6 +49,8 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 Z.AI's global API doesn't offer an embeddings endpoint, so this provider supports Chat only.
 {% endhint %}
 
+![Z.AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/zai-create-connection.png)
+
 ## Related
 
 - [Providers Overview](README.md)

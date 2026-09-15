@@ -53,6 +53,8 @@ OpenRouter model IDs include the originating vendor, for example `openai/gpt-4o`
 This provider supports Chat only. OpenRouter's provider routing and fallback options, reasoning-effort settings, and embeddings aren't available yet.
 {% endhint %}
 
+![OpenRouter connection detail showing API Key and Endpoint fields](../.gitbook/assets/openrouter-create-connection.png)
+
 ## Related
 
 - [Providers Overview](README.md)

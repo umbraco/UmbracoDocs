@@ -53,6 +53,8 @@ Model Studio also serves a China (Beijing) region. To use it, set **Endpoint** t
 The default model is `qwen-plus` for chat and `text-embedding-v4` for embeddings. Model Studio's catalog also includes other vendors' models behind the same endpoint; this provider only surfaces Qwen models.
 {% endhint %}
 
+![Alibaba Cloud Model Studio connection detail showing API Key and Endpoint fields](../.gitbook/assets/alibaba-create-connection.png)
+
 ## Related
 
 - [Providers Overview](README.md)
