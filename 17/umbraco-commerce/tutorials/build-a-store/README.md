@@ -10,7 +10,7 @@ This tutorial covers the process of setting up an Umbraco Commerce store in Umbr
 
 This tutorial will be based around the official **Blendid Demo Store** solution, a fictional tea supplier web store. The source code for which can be found on [GitHub](https://github.com/umbraco/Umbraco.Commerce.DemoStore).
 
-![Blendid Store Homepage](<../../.gitbook/assets/homepage (1).png>)
+![Blendid Store Homepage](../../.gitbook/assets/homepage.png)
 
 {% hint style="info" %}
 This tutorial assumes that you already have the relevant site structure and content views in place for your store. The tutorial will focus on adding the commerce functionality to your existing site.
@@ -22,20 +22,20 @@ This tutorial assumes that you already have the relevant site structure and cont
 [installation.md](installation.md)
 {% endcontent-ref %}
 
-{% content-ref url="create-store.md" %}
-[create-store.md](create-store.md)
+{% content-ref url="create-store/" %}
+[create-store](create-store/)
 {% endcontent-ref %}
 
 {% content-ref url="create-product.md" %}
 [create-product.md](create-product.md)
 {% endcontent-ref %}
 
-{% content-ref url="cart.md" %}
-[cart.md](cart.md)
+{% content-ref url="cart/" %}
+[cart](cart/)
 {% endcontent-ref %}
 
-{% content-ref url="checkout.md" %}
-[checkout.md](checkout.md)
+{% content-ref url="checkout/" %}
+[checkout](checkout/)
 {% endcontent-ref %}
 
 {% content-ref url="permissions.md" %}

@@ -16,20 +16,20 @@ In this guide, it is assumed that each country has a single currency. If your st
 
 1. Define the countries and currencies you want to support, in the Umbraco backoffice.
 
-![Countries](<../.gitbook/assets/store-countries (1).png>)
+![Countries](../.gitbook/assets/store-countries.png)
 
-![Currencies](<../.gitbook/assets/store-currencies (1).png>)
+![Currencies](../.gitbook/assets/store-currencies.png)
 
 2. Navigate to the Content section.
 3. Populate the product prices for each currency.
 
-![Product Prices](<../.gitbook/assets/product-prices (1).png>)
+![Product Prices](../.gitbook/assets/product-prices.png)
 
 ## Create a Currency Switcher Component
 
 A partial view is used on the frontend to allow users to toggle between existing currencies.
 
-![Currency Switcher](<../.gitbook/assets/country-switch (1).png>)
+![Currency Switcher](../.gitbook/assets/country-switch.png)
 
 This is done by creating a `CurerrencySwitcher.cshtml` partial with the following implementation:
 
@@ -146,6 +146,6 @@ With the currency switcher implemented, users can switch between countries/curre
 
 The changes are reflected on the product details pages.
 
-![product-gb](<../.gitbook/assets/product-gb (1).png>)
+![product-gb](../.gitbook/assets/product-gb.png)
 
-![product-dk](<../.gitbook/assets/product-dk (1).png>)
+![product-dk](../.gitbook/assets/product-dk.png)
