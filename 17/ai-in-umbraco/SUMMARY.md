@@ -4,14 +4,14 @@
 
 ## Getting Started
 
-* [Overview](getting-started/README.md)
+* [Overview](getting-started/getting-started.md)
 * [Installation](getting-started/installation.md)
 * [The First Connection](getting-started/first-connection.md)
 * [The First Profile](getting-started/first-profile.md)
 
 ## Concepts
 
-* [Core Concepts](concepts/README.md)
+* [Core Concepts](concepts/concepts.md)
 * [Providers](concepts/providers.md)
 * [Connections](concepts/connections.md)
 * [Profiles](concepts/profiles.md)
@@ -26,7 +26,7 @@
 
 ## Providers
 
-* [Overview](providers/README.md)
+* [Overview](providers/providers.md)
 * [OpenAI](providers/openai.md)
 * [Anthropic](providers/anthropic.md)
 * [Google Gemini](providers/google.md)
@@ -35,7 +35,7 @@
 
 ## Add-ons
 
-* [Overview](add-ons/README.md)
+* [Overview](add-ons/add-ons.md)
 * [Prompt Management](add-ons/prompt/README.md)
   * [Concepts](add-ons/prompt/concepts.md)
   * [Getting Started](add-ons/prompt/getting-started.md)
@@ -50,8 +50,8 @@
     * [Delete](add-ons/prompt/api/delete.md)
     * [Execute](add-ons/prompt/api/execute.md)
     * [Check Alias Exists](add-ons/prompt/api/alias-exists.md)
-  * [Reference](add-ons/prompt/reference/ai-prompt-service.md)
-    * [AIPrompt](add-ons/prompt/reference/ai-prompt.md)
+  * [Reference](add-ons/prompt/ai-prompt-service/README.md)
+    * [AIPrompt](add-ons/prompt/ai-prompt-service/ai-prompt.md)
 * [Agent Runtime](add-ons/agent/README.md)
   * [Concepts](add-ons/agent/concepts.md)
   * [Getting Started](add-ons/agent/getting-started.md)
@@ -60,7 +60,6 @@
   * [Scopes](add-ons/agent/scopes.md)
   * [Permissions](add-ons/agent/permissions.md)
   * [Streaming](add-ons/agent/streaming.md)
-
   * [Frontend Client](add-ons/agent/frontend-client.md)
   * [Frontend Tools](add-ons/agent/frontend-tools.md)
   * [API](add-ons/agent/api/README.md)
@@ -72,9 +71,9 @@
     * [Run](add-ons/agent/api/run.md)
     * [Stream](add-ons/agent/api/stream.md)
     * [Stream (AG-UI)](add-ons/agent/api/stream-agui.md)
-  * [Reference](add-ons/agent/reference/ai-agent-service.md)
-    * [AIAgent](add-ons/agent/reference/ai-agent.md)
-    * [UaiAgentRepository](add-ons/agent/reference/uai-agent-repository.md)
+  * [Reference](add-ons/agent/ai-agent-service/README.md)
+    * [AIAgent](add-ons/agent/ai-agent-service/ai-agent.md)
+    * [UaiAgentRepository](add-ons/agent/ai-agent-service/uai-agent-repository.md)
 * [Semantic Search](add-ons/search/README.md)
   * [Concepts](add-ons/search/concepts.md)
   * [Custom Vector Store](add-ons/search/custom-vector-store.md)
@@ -91,7 +90,7 @@
 
 ## Using the API
 
-* [Overview](using-the-api/README.md)
+* [Overview](using-the-api/using-the-api.md)
 * [Chat](using-the-api/chat/README.md)
   * [Basic Chat](using-the-api/chat/basic-chat.md)
   * [Streaming](using-the-api/chat/streaming.md)
@@ -107,7 +106,7 @@
 
 ## Backoffice
 
-* [Overview](backoffice/README.md)
+* [Overview](backoffice/backoffice.md)
 * [Managing Connections](backoffice/managing-connections.md)
 * [Managing Profiles](backoffice/managing-profiles.md)
 * [Managing Contexts](backoffice/managing-contexts.md)
@@ -119,26 +118,26 @@
 
 ## Testing and Evaluation
 
-* [Overview](tests/README.md)
-* [Concepts](tests/concepts.md)
-* [Getting Started](tests/getting-started.md)
-* [Graders](tests/graders.md)
-* [Variations](tests/variations.md)
-* [API](tests/api/README.md)
-    * [List](tests/api/list.md)
-    * [Get](tests/api/get.md)
-    * [Create](tests/api/create.md)
-    * [Update](tests/api/update.md)
-    * [Delete](tests/api/delete.md)
-    * [Run](tests/api/run.md)
-    * [Run Batch](tests/api/run-batch.md)
-    * [Run by Tags](tests/api/run-by-tags.md)
-    * [List Runs](tests/api/runs.md)
-    * [Compare](tests/api/compare.md)
+* [Overview](testing-and-evaluation/tests.md)
+* [Concepts](testing-and-evaluation/concepts.md)
+* [Getting Started](testing-and-evaluation/getting-started.md)
+* [Graders](testing-and-evaluation/graders.md)
+* [Variations](testing-and-evaluation/variations.md)
+* [API](testing-and-evaluation/api/README.md)
+  * [List](testing-and-evaluation/api/list.md)
+  * [Get](testing-and-evaluation/api/get.md)
+  * [Create](testing-and-evaluation/api/create.md)
+  * [Update](testing-and-evaluation/api/update.md)
+  * [Delete](testing-and-evaluation/api/delete.md)
+  * [Run](testing-and-evaluation/api/run.md)
+  * [Run Batch](testing-and-evaluation/api/run-batch.md)
+  * [Run by Tags](testing-and-evaluation/api/run-by-tags.md)
+  * [List Runs](testing-and-evaluation/api/runs.md)
+  * [Compare](testing-and-evaluation/api/compare.md)
 
 ## Extending
 
-* [Overview](extending/README.md)
+* [Overview](extending/extending.md)
 * [Custom Providers](extending/providers/README.md)
   * [Creating a Provider](extending/providers/creating-a-provider.md)
   * [Provider Settings](extending/providers/provider-settings.md)
@@ -151,15 +150,15 @@
   * [Middleware Ordering](extending/middleware/middleware-ordering.md)
 * [Custom Tools](extending/tools/README.md)
   * [Creating a Tool](extending/tools/creating-a-tool.md)
-* [Custom Guardrail Evaluators](extending/guardrails/README.md)
-* [Knowledge Sets](extending/knowledge-sets/README.md)
+* [Custom Guardrail Evaluators](extending/guardrails.md)
+* [Knowledge Sets](extending/knowledge-sets.md)
 * [Notifications](extending/notifications/README.md)
   * [Entity Lifecycle Notifications](extending/notifications/entity-notifications.md)
 
 ## Management API
 
-* [Overview](management-api/README.md)
-  * [Authentication](management-api/authentication.md)
+* [Overview](management-api/management-api/README.md)
+  * [Authentication](management-api/management-api/authentication.md)
 * [Chat](management-api/chat/README.md)
   * [Complete](management-api/chat/complete.md)
 * [Connections](management-api/connections/README.md)
@@ -226,7 +225,7 @@
 
 ## Frontend
 
-* [Overview](frontend/README.md)
+* [Overview](frontend/frontend.md)
 * [Chat Controller](frontend/chat-controller.md)
 * [Speech-to-Text Controller](frontend/speech-to-text-controller.md)
 * [Embeddings Controller](frontend/embeddings-controller.md)
@@ -236,7 +235,7 @@
 
 ## Reference
 
-* [Overview](reference/README.md)
+* [Overview](reference/reference.md)
 * [Services](reference/services/README.md)
   * [IAIChatService](reference/services/ai-chat-service.md)
   * [IAIProfileService](reference/services/ai-profile-service.md)

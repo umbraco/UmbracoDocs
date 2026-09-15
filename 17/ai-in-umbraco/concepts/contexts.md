@@ -1,6 +1,7 @@
 ---
 description: >-
-    Contexts define brand voice, guidelines, and additional content that get injected into AI operations.
+  Contexts define brand voice, guidelines, and additional content that get
+  injected into AI operations.
 ---
 
 # Contexts
@@ -28,7 +29,7 @@ Each context contains one or more resources. A resource represents a piece of co
 | `Name`           | Display name for the resource                   |
 | `Description`    | Optional description                            |
 | `SortOrder`      | Controls injection order                        |
-| `Settings`       | Type-specific settings                           |
+| `Settings`       | Type-specific settings                          |
 | `InjectionMode`  | When the resource is injected                   |
 
 ### Injection Modes
@@ -45,7 +46,6 @@ Resources can be injected based on different conditions:
 ### Getting a Context
 
 {% code title="Example.cs" %}
-
 ```csharp
 public class ContextExample
 {
@@ -62,13 +62,11 @@ public class ContextExample
     }
 }
 ```
-
 {% endcode %}
 
 ### Creating a Context
 
 {% code title="Example.cs" %}
-
 ```csharp
 using Umbraco.AI.Core.Contexts.ResourceTypes.BuiltIn;
 
@@ -97,7 +95,6 @@ public async Task<AIContext> CreateContext()
     return await _contextService.SaveContextAsync(context);
 }
 ```
-
 {% endcode %}
 
 ## How Context Injection Works
@@ -126,15 +123,15 @@ For programmatic context management, see the [IAIContextService](../reference/se
 
 Contexts support version history. Every time you save a context, a new version is created. You can:
 
-- View the version history.
-- Compare different versions.
-- Roll back to a previous version.
+* View the version history.
+* Compare different versions.
+* Roll back to a previous version.
 
 See [Version History](versioning.md) for more information.
 
 ## Related
 
-- [Profiles](profiles.md) - Use contexts with AI profiles
-- [Version History](versioning.md) - Track context changes over time
-- [Managing Contexts](../backoffice/managing-contexts.md) - Backoffice guide
-- [Knowledge Sets](../extending/knowledge-sets/README.md) - Ship background knowledge from a package in code
+* [Profiles](profiles.md) - Use contexts with AI profiles
+* [Version History](versioning.md) - Track context changes over time
+* [Managing Contexts](../backoffice/managing-contexts.md) - Backoffice guide
+* [Knowledge Sets](../extending/knowledge-sets.md) - Ship background knowledge from a package in code

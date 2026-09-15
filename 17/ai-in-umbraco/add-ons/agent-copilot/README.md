@@ -1,6 +1,7 @@
 ---
 description: >-
-    Contextual Copilot chat UI add-on for AI agents with sidebar, tool execution, and Human In The Loop (HITL) support.
+  Contextual Copilot chat UI add-on for AI agents with sidebar, tool execution,
+  and Human In The Loop (HITL) support.
 ---
 
 # Contextual Copilot
@@ -8,7 +9,7 @@ description: >-
 The Contextual Copilot add-on (`Umbraco.AI.Agent.Copilot`) provides an interactive AI assistant sidebar in the Umbraco backoffice, scoped to the content or media item currently being edited. It depends on `Umbraco.AI.Agent.UI` (shared chat components), which in turn depends on the Agent Runtime (`Umbraco.AI.Agent`).
 
 {% hint style="info" %}
-In the Umbraco backoffice itself, this add-on's sidebar and its agent surface are both labeled **Copilot**. This documentation uses **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Where a step below tells you to tick or select an on-screen option, that option is exactly as labeled in the backoffice.
+In the Umbraco backoffice itself, this add-on's sidebar and its agent surface are both labeled **Copilot**. This documentation uses **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/) (`Umbraco.AI.Agent.Copilot.Workspace`), a separate add-on for broader, persisted, cross-site conversations. Where a step below tells you to tick or select an on-screen option, that option is exactly as labeled in the backoffice.
 {% endhint %}
 
 ## Installation
@@ -16,21 +17,17 @@ In the Umbraco backoffice itself, this add-on's sidebar and its agent surface ar
 Install the Contextual Copilot package — `Umbraco.AI.Agent.UI` and `Umbraco.AI.Agent` are pulled in transitively:
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Agent.Copilot
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Agent.Copilot
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -39,12 +36,12 @@ dotnet add package Umbraco.AI.Agent.Copilot
 
 ## Features
 
-- **Sidebar Chat UI** - Conversational interface in the backoffice
-- **Content Awareness** - Understands current editing context
-- **Tool Execution** - Frontend tools execute in the browser
-- **HITL Approval** - Human-in-the-loop confirmation for actions
-- **AG-UI Integration** - Real-time streaming responses
-- **Entity Selector** - Target specific content items
+* **Sidebar Chat UI** - Conversational interface in the backoffice
+* **Content Awareness** - Understands current editing context
+* **Tool Execution** - Frontend tools execute in the browser
+* **HITL Approval** - Human-in-the-loop confirmation for actions
+* **AG-UI Integration** - Real-time streaming responses
+* **Entity Selector** - Target specific content items
 
 ## Quick Start
 
@@ -89,22 +86,22 @@ The Contextual Copilot sidebar appears in sections that declare compatibility wi
 
 The Agent package provides:
 
-- Agent CRUD operations
-- AG-UI streaming endpoints (`StreamAgentAGUIAsync`)
-- Backend tool execution
-- Management API
+* Agent CRUD operations
+* AG-UI streaming endpoints (`StreamAgentAGUIAsync`)
+* Backend tool execution
+* Management API
 
 The Agent UI package provides:
 
-- Shared chat element (`<uai-chat>`)
-- Frontend tool manager and executor
-- HITL approval infrastructure and the `uaiAgentFrontendTool` / `uaiAgentToolRenderer` manifest types
+* Shared chat element (`<uai-chat>`)
+* Frontend tool manager and executor
+* HITL approval infrastructure and the `uaiAgentFrontendTool` / `uaiAgentToolRenderer` manifest types
 
 The Contextual Copilot package provides:
 
-- Sidebar host and the floating trigger button shown in supported workspaces
-- The `copilot` agent surface (`CopilotAgentSurface`)
-- Example frontend tools
+* Sidebar host and the floating trigger button shown in supported workspaces
+* The `copilot` agent surface (`CopilotAgentSurface`)
+* Example frontend tools
 
 ## Documentation
 
@@ -115,7 +112,7 @@ The Contextual Copilot package provides:
 
 ## Related
 
-- [Copilot Workspace](../copilot-workspace/README.md) - Broader, cross-site AI conversations with persisted history and projects
-- [Agent Runtime](../agent/README.md) - Backend agent functionality
-- [Add-ons Overview](../README.md) - All add-on packages
-- [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
+* [Copilot Workspace](../copilot-workspace/) - Broader, cross-site AI conversations with persisted history and projects
+* [Agent Runtime](../agent/) - Backend agent functionality
+* [Add-ons Overview](../add-ons.md) - All add-on packages
+* [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines

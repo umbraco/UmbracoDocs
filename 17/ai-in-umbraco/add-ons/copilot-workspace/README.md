@@ -1,6 +1,7 @@
 ---
 description: >-
-    Copilot Workspace add-on: a full backoffice section for broad, cross-site AI conversations with persisted history and projects.
+  Copilot Workspace add-on: a full backoffice section for broad, cross-site AI
+  conversations with persisted history and projects.
 ---
 
 # Copilot Workspace
@@ -31,12 +32,12 @@ Copilot Workspace stores conversations and projects in its own database tables (
 
 ## Features
 
-- **Persisted Conversations** - Durable, searchable chat history stored server-side.
-- **Projects** - Group conversations under shared instructions and reusable context/resources.
-- **Context Panel** - See and manage the instructions, contexts, and resources grounding the current conversation.
-- **Archived Conversations** - Archive conversations instead of deleting them, with a read-only recycle bin.
-- **Pin, Rename, Move** - Organize conversations, including moving them between projects.
-- **AG-UI Integration** - Real-time streaming responses, reusing the same chat UI as Contextual Copilot.
+* **Persisted Conversations** - Durable, searchable chat history stored server-side.
+* **Projects** - Group conversations under shared instructions and reusable context/resources.
+* **Context Panel** - See and manage the instructions, contexts, and resources grounding the current conversation.
+* **Archived Conversations** - Archive conversations instead of deleting them, with a read-only recycle bin.
+* **Pin, Rename, Move** - Organize conversations, including moving them between projects.
+* **AG-UI Integration** - Real-time streaming responses, reusing the same chat UI as Contextual Copilot.
 
 ## Quick Start
 
@@ -81,20 +82,20 @@ Installing `Umbraco.AI.Agent.Copilot.Workspace` pulls in its `Umbraco.AI.Agent.C
 
 The Copilot Workspace package provides:
 
-- A standalone backoffice section (three regions: conversation/project sidebar, center chat, context panel).
-- The `copilot-workspace` agent surface.
-- Projects (instructions, contexts, and resources shared across a project's conversations).
-- The `Conversations` persistence layer (conversation/message/project domain, repositories, and a `ChatHistoryProvider` bridge into the agent runtime).
+* A standalone backoffice section (three regions: conversation/project sidebar, center chat, context panel).
+* The `copilot-workspace` agent surface.
+* Projects (instructions, contexts, and resources shared across a project's conversations).
+* The `Conversations` persistence layer (conversation/message/project domain, repositories, and a `ChatHistoryProvider` bridge into the agent runtime).
 
 ## Documentation
 
-| Section                          | Description                                    |
-| --------------------------------- | ----------------------------------------------- |
-| [Usage](copilot-workspace.md)     | Conversations, projects, and the context panel |
+| Section                       | Description                                    |
+| ----------------------------- | ---------------------------------------------- |
+| [Usage](copilot-workspace.md) | Conversations, projects, and the context panel |
 
 ## Related
 
-- [Contextual Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open
-- [Agent Runtime](../agent/README.md) - Backend agent functionality
-- [Add-ons Overview](../README.md) - All add-on packages
-- [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
+* [Contextual Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open
+* [Agent Runtime](../agent/) - Backend agent functionality
+* [Add-ons Overview](../add-ons.md) - All add-on packages
+* [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines

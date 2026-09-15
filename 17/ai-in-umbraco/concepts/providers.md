@@ -1,6 +1,5 @@
 ---
-description: >-
-    Providers are installable plugins that connect Umbraco.AI to AI services.
+description: Providers are installable plugins that connect Umbraco.AI to AI services.
 ---
 
 # Providers
@@ -26,16 +25,16 @@ Providers are discovered automatically when you install their NuGet package. The
 
 ## Available Providers
 
-| Provider             | Package                       | Capabilities    |
-| -------------------- | ----------------------------- | --------------- |
+| Provider             | Package                       | Capabilities                    |
+| -------------------- | ----------------------------- | ------------------------------- |
 | OpenAI               | `Umbraco.AI.OpenAI`           | Chat, Embedding, Speech-to-Text |
-| Anthropic            | `Umbraco.AI.Anthropic`        | Chat            |
-| Google Gemini        | `Umbraco.AI.Google`           | Chat            |
-| Amazon Bedrock       | `Umbraco.AI.Amazon`           | Chat, Embedding |
-| Microsoft AI Foundry | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding |
+| Anthropic            | `Umbraco.AI.Anthropic`        | Chat                            |
+| Google Gemini        | `Umbraco.AI.Google`           | Chat                            |
+| Amazon Bedrock       | `Umbraco.AI.Amazon`           | Chat, Embedding                 |
+| Microsoft AI Foundry | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding                 |
 
 {% hint style="info" %}
-For detailed configuration instructions for each provider, see the [Providers](../providers/README.md) section. You can also create custom providers.
+For detailed configuration instructions for each provider, see the [Providers](../providers/providers.md) section. You can also create custom providers.
 {% endhint %}
 
 ## Provider Discovery
@@ -43,7 +42,6 @@ For detailed configuration instructions for each provider, see the [Providers](.
 Providers are discovered at application startup through assembly scanning. Any class with the `[AIProvider]` attribute that implements `IAIProvider` is automatically registered.
 
 {% code title="OpenAIProvider.cs" %}
-
 ```csharp
 [AIProvider("openai", "OpenAI")]
 public class OpenAIProvider : AIProviderBase<OpenAIProviderSettings>
@@ -56,7 +54,6 @@ public class OpenAIProvider : AIProviderBase<OpenAIProviderSettings>
     }
 }
 ```
-
 {% endcode %}
 
 ## Provider Settings
@@ -72,7 +69,6 @@ Each provider defines its own settings class. Common settings include:
 Settings are defined using the `[AIField]` attribute:
 
 {% code title="OpenAIProviderSettings.cs" %}
-
 ```csharp
 using System.ComponentModel.DataAnnotations;
 
@@ -86,16 +82,15 @@ public class OpenAIProviderSettings
     public string? OrganizationId { get; set; }
 }
 ```
-
 {% endcode %}
 
 ## Provider Capabilities
 
 A provider can support multiple capabilities:
 
-- **Chat** - Conversational AI and text generation
-- **Embedding** - Vector embeddings for semantic search
-- **Speech-to-Text** - Audio transcription and voice input
+* **Chat** - Conversational AI and text generation
+* **Embedding** - Vector embeddings for semantic search
+* **Speech-to-Text** - Audio transcription and voice input
 
 Each capability is implemented as a separate class and registered in the provider constructor.
 
@@ -106,7 +101,6 @@ You rarely need to interact with providers directly. The service layer handles p
 If you need to access provider information:
 
 {% code title="Example.cs" %}
-
 ```csharp
 public class ProviderInfo
 {
@@ -123,18 +117,17 @@ public class ProviderInfo
     }
 }
 ```
-
 {% endcode %}
 
 ## Creating Custom Providers
 
 You can create providers for AI services not yet supported. See:
 
-{% content-ref url="../extending/providers/README.md" %}
-[Custom Providers](../extending/providers/README.md)
+{% content-ref url="../extending/providers/" %}
+[providers](../extending/providers/)
 {% endcontent-ref %}
 
 ## Related
 
-- [Connections](connections.md) - Store credentials for a provider
-- [Capabilities](capabilities.md) - The operations a provider supports
+* [Connections](connections.md) - Store credentials for a provider
+* [Capabilities](capabilities.md) - The operations a provider supports

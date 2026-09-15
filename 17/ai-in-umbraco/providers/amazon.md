@@ -1,6 +1,7 @@
 ---
 description: >-
-    Configure Amazon Bedrock as an AI provider for chat and embedding capabilities.
+  Configure Amazon Bedrock as an AI provider for chat and embedding
+  capabilities.
 ---
 
 # Amazon Bedrock
@@ -10,21 +11,17 @@ Amazon Bedrock provides access to multiple AI models from Amazon, Anthropic, Met
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Amazon
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Amazon
 ```
-
 {% endcode %}
 
 ## Connection Settings
@@ -45,7 +42,7 @@ dotnet add package Umbraco.AI.Amazon
 5. Copy the Access Key ID and Secret Access Key
 
 {% hint style="warning" %}
-Use Identity Access Management (IAM) roles with least-privilege permissions. Attach the policy shown in [Required IAM Policy](#required-iam-policy) to the user or role.
+Use Identity Access Management (IAM) roles with least-privilege permissions. Attach the policy shown in [Required IAM Policy](amazon.md#required-iam-policy) to the user or role.
 {% endhint %}
 
 ### Required IAM Policy
@@ -53,7 +50,6 @@ Use Identity Access Management (IAM) roles with least-privilege permissions. Att
 The IAM principal needs permission to invoke Bedrock models and to subscribe to Amazon Web Services (AWS) Marketplace products. The Marketplace actions are used by Bedrock to auto-enable foundation models on first use.
 
 {% code title="bedrock-policy.json" %}
-
 ```json
 {
     "Version": "2012-10-17",
@@ -78,7 +74,6 @@ The IAM principal needs permission to invoke Bedrock models and to subscribe to 
     ]
 }
 ```
-
 {% endcode %}
 
 The AWS managed policy [AmazonBedrockFullAccess](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonBedrockFullAccess.html) covers all of these actions if you prefer to attach a managed policy.
@@ -103,5 +98,5 @@ GovCloud accounts in `us-gov-west-1` still use the **Model access** page in the 
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+* [Providers Overview](providers.md)
+* [Managing Connections](../backoffice/managing-connections.md)
