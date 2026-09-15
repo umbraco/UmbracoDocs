@@ -25,7 +25,7 @@ Content review permissions can be set at the node or Document Type level, both o
 
 The current permissions for a content node are displayed in the **Workflow** content app on the **Configuration** tab.
 
-![Workflow Content App - Configuration tab](<../.gitbook/assets/content-approval-flow-v14 (1).png>)
+![Workflow Content App - Configuration tab](../.gitbook/assets/content-approval-flow-v14.png)
 
 ## Content Item and Document Type Reviews
 
