@@ -12,13 +12,13 @@ In this article, we will show the different sections on the Deploy dashboard and
 
 Here, you can check whether the latest deployment was successful or failed. You can also see the version of Umbraco Deploy in use and the timestamp of the last operation.
 
-![Umbraco Deploy status](images/deploy-dashboard.png)
+![Umbraco Deploy status](../.gitbook/assets/deploy-dashboard.png)
 
 ## Deploy Operations
 
 With the Deploy operations, you can run different operations in Umbraco Deploy.
 
-![Deploy operations](images/deploy-operations.png)
+![Deploy operations](../.gitbook/assets/deploy-operations.png)
 
 Below you can read what each operation will do when run through the dashboard.
 
@@ -48,11 +48,7 @@ Running this operation will download a zip file with all the Deploy artifacts re
 
 This operation is useful if you want to move to another Umbraco instance and migrate the data with you.
 
-<div align="left">
-
-<figure><img src="../.gitbook/assets/image (9).png" alt="Donwload the Deploy artifacts"><figcaption><p>Download the Deploy artifacts</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../.gitbook/assets/image (9).png" alt="Donwload the Deploy artifacts"><figcaption><p>Download the Deploy artifacts</p></figcaption></figure></div>
 
 ## Configuration Details
 

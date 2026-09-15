@@ -117,7 +117,7 @@ Our recommended approach is to leave this setting as `Default` and use source co
 
 However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
-### ExcludedEntityTypes {#excludedentitytypes}
+### ExcludedEntityTypes <a href="#excludedentitytypes" id="excludedentitytypes"></a>
 
 This setting allows you to exclude a certain type of entity from being deployed. This is **not** recommended to set, but sometimes there may be issues with the way a custom media fileprovider works with your site and you will need to set it for media files. Here is an example:
 
@@ -156,7 +156,7 @@ Here is an example of how the setting can look:
 },
 ```
 
-### Timeout settings {#timeout-settings}
+### Timeout settings <a href="#timeout-settings" id="timeout-settings"></a>
 
 Umbraco Deploy has a few built-in timeouts, which on larger sites might need to be modified. You will usually see these timeouts in the backoffice with an exception mentioning a timeout. It will be as part of a full restore or a full deployment of an entire site. In the normal workflow, you should never hit these timeouts.
 
@@ -181,7 +181,7 @@ This setting defaults to 5 minutes.
 
 All of these times are configured using [standard timespan format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings).
 
-### Batch settings {#batch-settings}
+### Batch settings <a href="#batch-settings" id="batch-settings"></a>
 
 Even with appropriate settings of the above timeouts, Deploy's backoffice transfer operations can hit a hard limit imposed by the hosting environment. For Azure, this is around 4 minutes. This will typically only be reached if deploying a considerable amount of items in one go. For example, a media folder with thousands of items can reach this limit.
 
@@ -198,7 +198,7 @@ When Deploy transfers files between unconnected environments (like a non-public 
 
 If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestLength` setting](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/runtimesettings) is lower (CMS setting is configured in kilobytes). Setting a value higher than the CMS `MaxRequestLength` (multiplied by 1024) will cause a validation error. Similarly, configuring a value higher than the [server or infrastructure limits](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/maximumuploadsizesettings) will result in file transfers failures.
 
-### TransferFormsAsContent {#transfer-forms-data-as-content}
+### TransferFormsAsContent <a href="#transfer-forms-data-as-content" id="transfer-forms-data-as-content"></a>
 
 In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
 
@@ -206,13 +206,13 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
 
-### TransferDictionaryAsContent {#transfer-dictionary-items-as-content}
+### TransferDictionaryAsContent <a href="#transfer-dictionary-items-as-content" id="transfer-dictionary-items-as-content"></a>
 
 In a similar way, Deploy can be configured to allow for backoffice transfers of dictionary items instead of using files serialized to disk, by setting `TransferDictionaryAsContent` as `true`.
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
-### IgnoreMissingLanguagesForDictionaryItems {#ignore-missing-languages-for-dictionary-items}
+### IgnoreMissingLanguagesForDictionaryItems <a href="#ignore-missing-languages-for-dictionary-items" id="ignore-missing-languages-for-dictionary-items"></a>
 
 When deploying dictionary items, an exception will be thrown if a translation is provided for a language that doesn't exist in the target environment.
 
@@ -222,7 +222,7 @@ If you have deleted languages that have already existing translations, you may w
 
 When this is in place a translation for a language that doesn't exist in the target environment will be ignored. A warning message will be output to the log.
 
-### SetEmptyDictionaryItemsOnTransfer {#set-empty-dictionary-items-on-transfer}
+### SetEmptyDictionaryItemsOnTransfer <a href="#set-empty-dictionary-items-on-transfer" id="set-empty-dictionary-items-on-transfer"></a>
 
 When deploying dictionary items, Umbraco Deploy follows the approach used for all content, emptying values that are transferred and set.
 
@@ -230,7 +230,7 @@ If you transfer a dictionary item with an empty translation to another environme
 
 Set this value to `false` to not overwrite already populated values with empty strings.
 
-### AllowMembersDeploymentOperations and TransferMemberGroupsAsContent {#transfer-members}
+### AllowMembersDeploymentOperations and TransferMemberGroupsAsContent <a href="#transfer-members" id="transfer-members"></a>
 
 It's also possible to transfer members and member groups via the backoffice between environments. This is disabled by default as a deliberate decision to make use of the feature needs to be taken, as for most installations it will make sense to have member data created and managed only in production. There are obvious potential privacy concerns to consider too. However, if being able to deploy and restore this information between environments makes sense for the specific workflow of your project, it's a supported scenario.
 
@@ -247,19 +247,19 @@ With `TransferMemberGroupsAsContent` set to `true`, member groups can also be tr
 
 Please see the note above under _TransferFormsAsContent_ on the topic of removing any existing serialized files having changed this value to `true`.
 
-### ExportMemberGroups {#exporting-member-groups}
+### ExportMemberGroups <a href="#exporting-member-groups" id="exporting-member-groups"></a>
 
 This setting is to be defined and set to `false` only if you are using an external membership provider for your members. You will not want to export Member Groups that would no longer be managed by Umbraco but by an external membership provider.
 
 Setting `ExportMemberGroups` to `false` will no longer export Member Groups to .uda files on disk. The default for this setting is `true`, as most sites use Umbraco's built-in membership provider and thus will want the membership groups exported.
 
-### ExportUserGroups {#exporting-user-groups}
+### ExportUserGroups <a href="#exporting-user-groups" id="exporting-user-groups"></a>
 
 By default, user groups are not exported as schema items unless this is enabled via this configuration. When enabled, user groups can be deployed as schema files between environments. This ensures the name, alias, icon, and permissions (including allowed sections, languages, start content and media) are kept in sync.
 
 Users still need to be assigned to a group, but changes to existing groups can result in giving more permissions to the assigned users. Consider the potential security implications and disable the setting again after the required groups are deployed between environments.
 
-### AllowIgnoreDependenciesOperations {#allow-ignore-dependencies}
+### AllowIgnoreDependenciesOperations <a href="#allow-ignore-dependencies" id="allow-ignore-dependencies"></a>
 
 When restoring/transferring content or other items, Deploy will ensure any dependencies that don't exist on the target environment are included in the operation.
 
@@ -274,7 +274,7 @@ You can configure which operations are allowed to ignore dependencies when these
 * `Transfer` - dependencies can only be ignored when transferring upstream environments
 * `All` - dependencies can be ignored when restoring from and transferring to upstream environments
 
-### IgnoreBrokenDependenciesBehavior {#ignore-broken-dependencies}
+### IgnoreBrokenDependenciesBehavior <a href="#ignore-broken-dependencies" id="ignore-broken-dependencies"></a>
 
 When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.
 
@@ -299,7 +299,7 @@ When configuring for Deploy 9, an additional `IgnoreBrokenDependencies` setting 
 "IgnoreBrokenDependenciesBehavior": "Restore",
 ```
 
-### Memory cache reload {#memory-cache-reload}
+### Memory cache reload <a href="#memory-cache-reload" id="memory-cache-reload"></a>
 
 Some customers have reported intermittent issues related to Umbraco's memory cache following deployments, which are resolved by a manual reload of the cache via the _Settings > Published Status > Caches_ dashboard. If you are running into such issues and are able to accommodate a cache clear after deployment, this workaround can be automated via the following setting:
 
@@ -309,7 +309,7 @@ Some customers have reported intermittent issues related to Umbraco's memory cac
 
 By upgrading to the most recent available version of the CMS major you are running, you'll be able to benefit from the latest bug fixes and optimizations in this area. That should be your first option if encountering cache related issues. Failing that, or if a CMS upgrade is not an option, then this workaround can be considered.
 
-### Deployment of culture & hostnames settings {#deployment-of-culture--hostnames-settings}
+### Deployment of culture & hostnames settings <a href="#deployment-of-culture--hostnames-settings" id="deployment-of-culture--hostnames-settings"></a>
 
 Culture and hostname settings, defined per content item for culture invariant content, are not deployed between environments by default. They can be opted into via configuration.
 
@@ -325,7 +325,7 @@ To enable this, set the configuration value as appropriate for the types of doma
 
 Combinations of settings can be applied, e.g. `Hostname,AbsolutePath`.
 
-### Deployment of public access settings {#deployment-of-public-access-settings}
+### Deployment of public access settings <a href="#deployment-of-public-access-settings" id="deployment-of-public-access-settings"></a>
 
 When deploying content items, public access rules based on member groups are transferred. You can amend this behavior using this setting.
 
@@ -340,7 +340,7 @@ When deploying content items, public access rules based on member groups are tra
 
 `AddOrUpdate` is the default setting used if no value is configured.
 
-### Deployment of webhooks {#deployment-of-webhooks}
+### Deployment of webhooks <a href="#deployment-of-webhooks" id="deployment-of-webhooks"></a>
 
 Webhooks may be considered environment specific or schema information that you would like to synchronize between environments. As such, by default, Umbraco Deploy does not include webhooks in schema deployment operations.
 
@@ -353,7 +353,7 @@ If you would like you include them you can adjust this setting:
 * `None` - webhooks are not deployed and are expected to be managed independently in each environment
 * `All` - webhooks included in schema deployments
 
-### Deployment of trashed content {#deployment-of-trashed-content}
+### Deployment of trashed content <a href="#deployment-of-trashed-content" id="deployment-of-trashed-content"></a>
 
 Specifies options for handling trashed content (documents, media and members) on export or import:
 
@@ -368,10 +368,9 @@ You can amend this behavior using this setting:
 * `Import` - trashed content will be processed and moved to the recycle bin on import
 * `All` - trashed content will be included in an export, processed and moved to the recycle bin on import
 
-### PostDeploySchemaOperation {#post-deploy-schema-operation}
+### PostDeploySchemaOperation <a href="#post-deploy-schema-operation" id="post-deploy-schema-operation"></a>
 
-After the schema is deployed from the files on disk, the current environment might still have items that don't have corresponding files on disk.
-You can automatically perform an operation after a schema deployment to align this:
+After the schema is deployed from the files on disk, the current environment might still have items that don't have corresponding files on disk. You can automatically perform an operation after a schema deployment to align this:
 
 * `None` - no operation is performed
 * `CleanSchema` - items that don't have a corresponding file on disk will be deleted
@@ -391,7 +390,7 @@ If you would prefer to use SQL Server LocalDb when it's available on your local 
 "PreferLocalDbConnectionString": true
 ```
 
-### MediaFileChecksumCalculationMethod {#media-file-checksum-calculation-method}
+### MediaFileChecksumCalculationMethod <a href="#media-file-checksum-calculation-method" id="media-file-checksum-calculation-method"></a>
 
 Deploy will do comparisons between the entities in different environments to determine if they match and decide whether to include them in the operation. By default, for media files, a check is made on a portion of the initial bytes of the file.
 
@@ -401,7 +400,7 @@ If a lot of files need to be checked, this can be slow, and a faster option is a
 
 To use this method, set the value to `Metadata`.
 
-### NumberOfSignaturesToUseAllRelationCache {#number-of-signatures-to-use-all-relation-cache}
+### NumberOfSignaturesToUseAllRelationCache <a href="#number-of-signatures-to-use-all-relation-cache" id="number-of-signatures-to-use-all-relation-cache"></a>
 
 When reviewing a set of items for a deployment operation, Deploy will retrieve and include relations. It does this either via single database lookups, or by bringing all relations into memory in one step, and retrieving them from there.
 
@@ -409,13 +408,13 @@ For small deployment operations, the former is the more optimal approach. It get
 
 The cut-off before switching methods is set by this configuration value, and it defaults to an operation size of `100` items.
 
-### ContinueOnMediaFilePathTooLongException {#ignore-media-file-path-too-long-exception}
+### ContinueOnMediaFilePathTooLongException <a href="#ignore-media-file-path-too-long-exception" id="ignore-media-file-path-too-long-exception"></a>
 
 When restoring between different media systems exceptions can occur due to file paths. They can happen between a local file system and a remote system based on blob storage. What is accepted on one system may be rejected on another as the file path is too long. Normally this will only happen for files with particularly long names.
 
 If you are happy to continue without throwing exceptions in these instances you can set this value to `true`. For example, this may make sense if restoring to a local or development environment. If this is done such files will be skipped, and although the media item will exist there will be no associated file.
 
-### SuppressCacheRefresherNotifications {#suppress-cache-refresher-notifications}
+### SuppressCacheRefresherNotifications <a href="#suppress-cache-refresher-notifications" id="suppress-cache-refresher-notifications"></a>
 
 When a Deploy operation completes, cache refresher notifications are fired. These are used to update Umbraco's cache and search index.
 
@@ -423,7 +422,7 @@ In production this setting shouldn't be changed from it's default value of `fals
 
 If attempting a one-off, large transfer operation, before a site is live, you could set this value to `true`. That would omit the firing and handling of these notifications and remove their performance overhead. Following which you would need to ensure to rebuild the cache and search index manually via the backoffice _Settings_ dashboards.
 
-### ResolveUserInTargetEnvironment {#resolve-user-in-target-environment}
+### ResolveUserInTargetEnvironment <a href="#resolve-user-in-target-environment" id="resolve-user-in-target-environment"></a>
 
 With this setting assigned a value of `true`, Umbraco Deploy will attempt to resolve users when transfers are made to new environments.
 
@@ -431,7 +430,7 @@ Users and user groups are maintained separately in different environments, so it
 
 When the setting is set to `false`, or a matching account isn't found, the audit records will be associated with the super-user administrator account.
 
-### Suspensions {#suspensions}
+### Suspensions <a href="#suspensions" id="suspensions"></a>
 
 Deploy operations suspend scheduled publishing, Examine indexing, document cache and/or signature database update events by default. You can amend this behavior for all supported or specific operations using these settings.
 
@@ -483,15 +482,15 @@ internal sealed class DeploySuspensionsComposer : IComposer
 }
 ```
 
-### HideConfigurationDetails {#hide-configuration-details}
+### HideConfigurationDetails <a href="#hide-configuration-details" id="hide-configuration-details"></a>
 
 If set to `true` the configuration details shown on the setting's dashboard will be hidden.
 
-### HideVersionDetails {#hide-version-details}
+### HideVersionDetails <a href="#hide-version-details" id="hide-version-details"></a>
 
 If set to `true` the version details shown on the setting's dashboard will be hidden.
 
-### ValidateDependenciesOnImport {#validate-dependencies-on-import}
+### ValidateDependenciesOnImport <a href="#validate-dependencies-on-import" id="validate-dependencies-on-import"></a>
 
 A default notification handler for the `ValidateArtifactImportNotification` is registered by Deploy that:
 
@@ -500,9 +499,9 @@ A default notification handler for the `ValidateArtifactImportNotification` is r
 
 To avoid this handler from being registered, you can set this setting to `false`.
 
-### Import on startup {#import-on-startup}
+### Import on startup <a href="#import-on-startup" id="import-on-startup"></a>
 
-Deploy can [import content and/or schema previously exported from another Umbraco installation on start-up](../deployment-workflow/import-on-startup.md). Change the `Umbraco:Deploy:ImportOnStartup` settings to customize it. This is directly below the `Deploy` section and not nested below `Settings`:
+Deploy can [import content and/or schema previously exported from another Umbraco installation on start-up](../deployment-workflow/import-export/import-on-startup.md). Change the `Umbraco:Deploy:ImportOnStartup` settings to customize it. This is directly below the `Deploy` section and not nested below `Settings`:
 
 * `Enabled` - this feature is enabled by default, but can be disabled (for example, to prevent importing on specific environments).
 * `Files` - the files that are imported on start-up (relative to the project content root, defaults to `umbraco\Deploy\import-on-startup.zip`), which are checked individually (files that do not exist are skipped and a warning will be logged).
