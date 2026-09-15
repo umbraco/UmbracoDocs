@@ -53,37 +53,17 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 
 ### Integrations & Extensions
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/" %}
-[18.ai-in-umbraco.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
-{% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/" %}
-[18.umbraco-in-ai.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
-{% endcontent-ref %}
-
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/" %}
 [Umbraco DXP](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/)
-{% endcontent-ref %}
-
-{% content-ref url="/broken/spaces/4kB9Trqs7XbQsP80vWVA" %}
-[Broken link](/broken/spaces/4kB9Trqs7XbQsP80vWVA)
-{% endcontent-ref %}
-
-{% content-ref url="/broken/spaces/O8zV7PYqNxSkuGGGYa3P" %}
-[Broken link](/broken/spaces/O8zV7PYqNxSkuGGGYa3P)
-{% endcontent-ref %}
-
-{% content-ref url="/broken/spaces/HKthAwBJOkU2Xzt1IHX4" %}
-[Broken link](/broken/spaces/HKthAwBJOkU2Xzt1IHX4)
-{% endcontent-ref %}
-
-{% content-ref url="/broken/spaces/FW5BR4euWkgLSfJs4O4r" %}
-[Broken link](/broken/spaces/FW5BR4euWkgLSfJs4O4r)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/" %}
 [Sustainability Best Practices](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
 {% endcontent-ref %}
+
+## Umbraco & AI
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>AI in Umbraco</td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/">18.ai-in-umbraco.latest</a></td></tr><tr><td>Umbraco in AI</td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/">18.umbraco-in-ai.latest</a></td></tr></tbody></table>
 
 ## Contributing
 
