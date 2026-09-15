@@ -103,8 +103,7 @@ Stay on `SchedulerOnly` unless automation throughput is a measured bottleneck. I
 
 Move to `Distributed` when a single node cannot keep up with the volume of automation work. All nodes must point to the same Automate database.
 
-## Next Steps
+## See Also
 
-{% content-ref url="first-automation.md" %}
-[first-automation.md](first-automation.md)
-{% endcontent-ref %}
+* [Configuration](../getting-started/configuration.md) for the full `Execution` settings block.
+* [Transfer Automations](../add-ons/deploy/transferring-automations.md) for moving automations between environments with the Deploy add-on.
