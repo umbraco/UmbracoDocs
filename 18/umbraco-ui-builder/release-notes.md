@@ -18,13 +18,6 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
-### [**18.0.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.7) **(September 14th 2026)**
-
-* Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233)
-* Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234)
-* Fixed updating existing Related Collections relations through the Entity Picker not working [#235](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/235)
-* Fixed the save notification not using a custom name format set with `SetNameFormat` [#236](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/236)
-
 ### [**18.0.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.6) **(September 7th 2026)**
 
 * Fixed action notifications failing with an error when they contained non-ASCII characters such as å, æ, or ø [#232](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/232)
@@ -65,4 +58,4 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### 18.0.0-rc1 (June 4th 2026)
 
-* Initial release candidate for Umbraco v18. 
+* Initial release candidate for Umbraco v18.
