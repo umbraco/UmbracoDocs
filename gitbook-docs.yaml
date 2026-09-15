@@ -245,19 +245,19 @@ site:
               path: 18.latest
               default: true
               content:
-                directory: ./umbraco-ui-builder/18.latest
+                directory: ./18/umbraco-ui-builder
             - type: space
               key: space-12
               title: 17.latest (LTS)
               path: 17.latest
               content:
-                directory: ./umbraco-ui-builder/17.latest
+                directory: ./17/umbraco-ui-builder
             - type: space
               key: space-13
               title: 13.latest (LTS)
               path: 13.latest
               content:
-                directory: ./umbraco-ui-builder/13.latest
+                directory: ./13/umbraco-ui-builder
         - type: section
           key: section-9
           title: Workflow
@@ -271,19 +271,19 @@ site:
               path: 18.latest
               default: true
               content:
-                directory: ./umbraco-workflow/18.latest
+                directory: ./18/umbraco-workflow
             - type: space
               key: space-14
               title: 17.latest (LTS)
               path: 17.latest
               content:
-                directory: ./umbraco-workflow/17.latest
+                directory: ./17/umbraco-workflow
             - type: space
               key: space-15
               title: 13.latest (LTS)
               path: 13.latest
               content:
-                directory: ./umbraco-workflow/13.latest
+                directory: ./13/umbraco-workflow
         - type: section
           key: section-17
           title: Search
