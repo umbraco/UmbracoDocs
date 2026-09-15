@@ -33,6 +33,10 @@ Providers are discovered automatically when you install their NuGet package. The
 | Google Gemini        | `Umbraco.AI.Google`           | Chat            |
 | Amazon Bedrock       | `Umbraco.AI.Amazon`           | Chat, Embedding |
 | Microsoft AI Foundry | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding |
+| Alibaba Cloud Model Studio | `Umbraco.AI.Alibaba`    | Chat, Embedding |
+| Moonshot AI          | `Umbraco.AI.Moonshot`         | Chat            |
+| OpenRouter           | `Umbraco.AI.OpenRouter`       | Chat            |
+| Z.AI                 | `Umbraco.AI.ZAI`              | Chat            |
 
 {% hint style="info" %}
 For detailed configuration instructions for each provider, see the [Providers](../providers/README.md) section. You can also create custom providers.
