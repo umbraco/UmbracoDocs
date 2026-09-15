@@ -57,9 +57,9 @@
 
 ## Agent Skills
 
-* [Backoffice Skills](agents-skills/backoffice-skills/README.md)
-  * [Overview](agents-skills/backoffice-skills/backoffice-skills.md)
-  * [How It Works](agents-skills/backoffice-skills/how-it-works.md)
-  * [Quickstart](agents-skills/backoffice-skills/quickstart.md)
-  * [Testing Skills](agents-skills/backoffice-skills/testing-skills.md)
-  * [Tips for Best Results](agents-skills/backoffice-skills/tips.md)
+* [Backoffice Skills](agent-skills/backoffice-skills/README.md)
+  * [Overview](agent-skills/backoffice-skills/backoffice-skills.md)
+  * [How It Works](agent-skills/backoffice-skills/how-it-works.md)
+  * [Quickstart](agent-skills/backoffice-skills/quickstart.md)
+  * [Testing Skills](agent-skills/backoffice-skills/testing-skills.md)
+  * [Tips for Best Results](agent-skills/backoffice-skills/tips.md)
