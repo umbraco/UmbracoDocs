@@ -2,7 +2,7 @@
 
 An error in the Cloud Portal often looks like this:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt="Error on cloud"><figcaption><p>Error on cloud</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt="Error on cloud"><figcaption><p>Error on cloud</p></figcaption></figure>
 
 Errors in the Cloud Portal are shown as a colored indicator of an environment. An environment can have three colors:
 

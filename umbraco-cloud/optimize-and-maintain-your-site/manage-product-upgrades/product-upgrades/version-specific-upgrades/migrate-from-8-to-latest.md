@@ -1,7 +1,7 @@
 ---
 description: >-
-  This article provides steps on how to migrate a project from Umbraco
-  8 to Umbraco 10.
+  This article provides steps on how to migrate a project from Umbraco 8 to
+  Umbraco 10.
 ---
 
 # Migrate from Umbraco 8 to Umbraco 10
@@ -9,7 +9,7 @@ description: >-
 {% hint style="warning" %}
 It is currently not possible to upgrade directly from Umbraco 8 to the latest version. Umbraco Cloud only allows new projects to be created on versions within the active [support phase](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/).
 
-This guide covers upgrading from Umbraco 8 to Umbraco 10 locally, since Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. From there, continue upgrading locally using the [Major Upgrades](../major-upgrades.md) guide until the project reaches a version Umbraco Cloud can currently create a project on.
+This guide covers upgrading from Umbraco 8 to Umbraco 10 locally, since Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. From there, continue upgrading locally using the [Major Upgrades](../major-upgrades/) guide until the project reaches a version Umbraco Cloud can currently create a project on.
 {% endhint %}
 
 Since the underlying framework going from Umbraco 8 to Umbraco 10 has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
@@ -63,7 +63,7 @@ If you use Umbraco Forms, make sure to have [`StoreUmbracoFormsInDbset`](https:/
 ```
 
 {% hint style="info" %}
-You can add the 'umbracoDbDSN_ProviderName' attribute to set the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
+You can add the 'umbracoDbDSN\_ProviderName' attribute to set the .NET Framework data provider name for the DataSource control's connection. For more information on the data providers included in the .Net Framework, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.sqldatasource.providername?#remarks).
 {% endhint %}
 
 6. Enable [Unattended Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading#enable-the-unattended-upgrade-feature) to authorize the database upgrade.
@@ -75,13 +75,12 @@ You can add the 'umbracoDbDSN_ProviderName' attribute to set the .NET Framework 
 {% hint style="success" %}
 This is **only content migration** and the database will be migrated.
 
-You need to manually upgrade the view files and custom code implementation. For more information, see [Step 3](#step-3-custom-code-in-umbraco-10) of this guide.
+You need to manually upgrade the view files and custom code implementation. For more information, see [Step 3](migrate-from-8-to-latest.md#step-3-custom-code-in-umbraco-10) of this guide.
 {% endhint %}
 
 ## Step 2: File Migration
 
 1. Copy the following files/folders from the Umbraco 8 project into the Umbraco 10 project folder:
-
    * `~/Views` - **Do not** overwrite the default Macro and Partial View Macro files unless changes have been made to these.
    * Any files/folders related to Stylesheets and JavaScript.
 2. Copy the `~/Media` folder from the Umbraco 8 project into the `wwwroot/media` folder of the Umbraco 10 project:
@@ -117,11 +116,11 @@ Depending on the extent of the project and the amount of custom code and impleme
 
 At this point, the project runs on Umbraco 10 locally. Umbraco 10 is no longer a supported version, and Umbraco Cloud only allows new projects to be created on versions within their active support phase.
 
-Continue upgrading the project locally, one major version at a time. Follow the [Major Upgrades](../major-upgrades.md) guide, until it reaches a version Umbraco Cloud can currently create a project on. See the [Long-Term Support and End-of-Life page](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) for which versions are currently available.
+Continue upgrading the project locally, one major version at a time. Follow the [Major Upgrades](../major-upgrades/) guide, until it reaches a version Umbraco Cloud can currently create a project on. See the [Long-Term Support and End-of-Life page](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) for which versions are currently available.
 
 ## Related Information
 
-* [Major Upgrades](../major-upgrades.md)
+* [Major Upgrades](../major-upgrades/)
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Forms on Umbraco Cloud](../../../../expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
 * [Working locally with Umbraco Cloud](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/)

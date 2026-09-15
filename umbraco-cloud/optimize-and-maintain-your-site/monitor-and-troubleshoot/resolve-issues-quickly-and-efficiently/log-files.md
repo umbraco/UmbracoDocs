@@ -24,7 +24,7 @@ Video example.
 
 1.  Go to your project and click on the arrow next to the environment name.
 
-    <figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
 
 <figure><img src="../../../.gitbook/assets/logs-table.png" alt=""><figcaption></figcaption></figure>
@@ -39,13 +39,11 @@ Umbraco logs on Cloud work almost the same as on a [normal installation](https:/
 
 ## Persisting Logs Externally
 
-Umbraco Cloud runs on Azure App Services. In some cases - such as when a project is migrated to dedicated hosting - the underlying Web App instance is replaced with a new one. 
-When this happens, any logs stored on the previous instance's filesystem (accessible via Kudu) are no longer available.
- 
+Umbraco Cloud runs on Azure App Services. In some cases - such as when a project is migrated to dedicated hosting - the underlying Web App instance is replaced with a new one. When this happens, any logs stored on the previous instance's filesystem (accessible via Kudu) are no longer available.
+
 To ensure historical logs are preserved through any future infrastructure changes, you can configure an additional Serilog sink. The sink writes your structured logs to an external store.
 
-The Umbraco documentation includes guidance on [Logging to a different output](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/serilog#logging-to-a-different-output).
-A full list of available Serilog sinks is maintained at the [Serilog Provided Sinks](https://github.com/serilog/serilog/wiki/provided-sinks) page on GitHub.
+The Umbraco documentation includes guidance on [Logging to a different output](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/serilog#logging-to-a-different-output). A full list of available Serilog sinks is maintained at the [Serilog Provided Sinks](https://github.com/serilog/serilog/wiki/provided-sinks) page on GitHub.
 
 Once an external sink is configured, your logs will persist independently of any changes to the underlying infrastructure.
 

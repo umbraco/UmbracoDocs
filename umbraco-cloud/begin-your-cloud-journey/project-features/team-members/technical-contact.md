@@ -14,11 +14,11 @@ When you create a **New Project**, the user used to create the project will auto
 2. Go to **Edit Team** in the Overview menu tab.
 3. Click **Add Technical Contact** in the **Technical Contacts** section.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption><p>Add Technical contact</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Add Technical contact</p></figcaption></figure>
 
 4. Enter the **Name**, **Email**, and **Telephone Number** in the **Add New Technical Contact** window.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 5. Click **Confirm**.
 

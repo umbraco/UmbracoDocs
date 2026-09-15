@@ -18,7 +18,7 @@ The first step in moving to a dedicated resource is to access your project in th
 * Find and select the project that you want to move to dedicated resources.
 * Select _Dedicated Resources_ from the Management menu:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt="Dedicated resources"><figcaption><p>Dedicated resources</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt="Dedicated resources"><figcaption><p>Dedicated resources</p></figcaption></figure>
 
 * There are currently three dedicated options to choose from for the Professional plan and two dedicated options for the Standard plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
 
@@ -70,6 +70,5 @@ All environments that have been selected to be moved, will be moved simultaneous
 ### Will the live environment be unavailable while the Project is moved?
 
 There will always be an active live environment that continues to serve requests and be online during the move operation. When the moved live environment is ready and responding to requests, the hostnames will be switched to point to the moved environment.
-
 
 If you have any other questions regarding dedicated resource, feel free to reach out to [Umbraco Support](mailto:contact@umbraco.com).

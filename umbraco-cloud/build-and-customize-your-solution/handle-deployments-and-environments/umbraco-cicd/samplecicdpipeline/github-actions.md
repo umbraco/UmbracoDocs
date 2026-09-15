@@ -77,7 +77,7 @@ You will also need the target environment alias. The [Getting environment aliase
 2. Go to the repository in GitHub, and navigate to the Settings section.
 3. Expand Secrets and Variables in the left-hand menu titled `Security` and select `Actions`.
 
-<figure><img src="../../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
 
 4. Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
 5. Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.

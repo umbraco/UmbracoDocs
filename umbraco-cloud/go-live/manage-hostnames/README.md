@@ -34,7 +34,7 @@ To add and manage your hostnames on Umbraco Cloud, follow the steps below:
 3. Click on **Hostnames** in the menu.
 4. Click **Add new hostname** to add a new hostname.
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt="Manage hostnames"><figcaption><p>Manage hostnames</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt="Manage hostnames"><figcaption><p>Manage hostnames</p></figcaption></figure>
 
 Ensure that the hostname you are binding to your Umbraco Cloud environment has a DNS entry that resolves to the Umbraco Cloud service. The DNS settings can either use a **CNAME** or an **A & AAAA** record:
 

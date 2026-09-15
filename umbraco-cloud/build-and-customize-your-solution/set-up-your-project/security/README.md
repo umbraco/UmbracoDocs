@@ -41,7 +41,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
 ### HTTP Strict Transport Security (HSTS)
 
@@ -91,7 +91,7 @@ builder.Services.AddHsts(options =>
 
 In the above example, the browser is instructed to remember the policy for `60 days`.
 
-Full details of `UseHsts`, and additional configuration options, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-10.0&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
+Full details of `UseHsts`, and additional configuration options, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-10.0\&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
 
 ### TLS 1.2 by default in external services
 
