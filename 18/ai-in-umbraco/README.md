@@ -22,32 +22,32 @@ description: >-
 
 New to Umbraco.AI? Start here:
 
-{% content-ref url="getting-started/" %}
-[getting-started](getting-started/)
+{% content-ref url="getting-started/getting-started.md" %}
+[getting-started.md](getting-started/getting-started.md)
 {% endcontent-ref %}
 
 ## Core Concepts
 
 Understand how Umbraco.AI is structured:
 
-{% content-ref url="concepts/" %}
-[concepts](concepts/)
+{% content-ref url="concepts/concepts.md" %}
+[concepts.md](concepts/concepts.md)
 {% endcontent-ref %}
 
 ## Using the API
 
 Learn how to use AI services in your code:
 
-{% content-ref url="using-the-api/" %}
-[using-the-api](using-the-api/)
+{% content-ref url="using-the-api/using-the-api.md" %}
+[using-the-api.md](using-the-api/using-the-api.md)
 {% endcontent-ref %}
 
 ## Extending
 
 Create custom providers, middleware, and tools:
 
-{% content-ref url="extending/" %}
-[extending](extending/)
+{% content-ref url="extending/extending.md" %}
+[extending.md](extending/extending.md)
 {% endcontent-ref %}
 
 ## Quick Example
