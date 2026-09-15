@@ -1,6 +1,6 @@
 ---
 description: >-
-  How Umbraco Automate runs automations across multiple nodes, and what that
+  How Umbraco Automate runs automations across multiple nodes and what that
   means for your custom triggers and actions.
 ---
 

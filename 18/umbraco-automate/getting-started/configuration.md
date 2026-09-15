@@ -6,7 +6,7 @@ description: >-
 
 # Configuration
 
-Umbraco Automate stores its data (automations, runs, connections, workspaces) in a database. By default the package looks for a dedicated connection string, but you can point it at the main Umbraco database instead.
+Umbraco Automate stores its data (automations, runs, connections, workspaces) in a database. By default, the package looks for a dedicated connection string, but you can point it at the main Umbraco database instead.
 
 ## Configure the Database Connection
 
