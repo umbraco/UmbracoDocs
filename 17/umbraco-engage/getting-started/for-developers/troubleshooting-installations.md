@@ -63,4 +63,4 @@ The columnstore indexes are created and can be used in a lower tier.
 
 SQL Server 2014 or higher is required. Columnstore index support varies by SQL Server version and edition. If you encounter issues, consider upgrading to a newer SQL Server version or using Enterprise Edition.
 
-See [System Requirements](system-requirements.md) for the full list of supported database configurations.
+See [System Requirements](../../installation/system-requirements.md) for the full list of supported database configurations.
