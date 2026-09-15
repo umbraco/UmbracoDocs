@@ -1,6 +1,6 @@
 # Adding An Export Type To Umbraco Forms
 
-_This builds on the "_[_adding a type to the provider model_](adding-a-type.md)_" chapter._
+_This builds on the "_[_adding a type to the provider model_](adding-a-type/)_" chapter._
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.ExportType`. You have two options when implementing the class, as shown in the following examples.
 
@@ -11,7 +11,7 @@ You can implement the method `public override Task<string> ExportRecordsAsync(Gu
 {% hint style="info" %}
 In the constructor of your provider, you need to set the following properties: `Alias`, `FileExtension`, and `Icon`.
 
-The `Alias` is used to construct localization keys for the export type label and description displayed in the backoffice. See [Localization](#localization) below for details.
+The `Alias` is used to construct localization keys for the export type label and description displayed in the backoffice. See [Localization](adding-a-exporttype.md#localization) below for details.
 {% endhint %}
 
 `FileExtension` is the extension such as `zip`, `txt` or `csv` of the file you will be generating and serving from the file system.
