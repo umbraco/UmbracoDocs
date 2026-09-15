@@ -1,12 +1,12 @@
 ---
 description: >-
-  How Umbraco Automate runs automations across multiple nodes, and what that
+  How Umbraco Automate runs automations across multiple nodes and what that
   means for your custom triggers and actions.
 ---
 
 # Load Balancing
 
-Umbraco Automate supports load balanced environments out of the box. The engine decides which node runs an automation. Your custom triggers and actions do not need their own server-role checks.
+Umbraco Automate supports load-balanced environments out of the box. The engine decides which node runs an automation. Your custom triggers and actions do not need their own server-role checks.
 
 ## What Each Node Does
 
@@ -67,7 +67,7 @@ Retries also happen when an action throws. See [Actions](../concepts/actions.md)
 
 ## Server Role Election
 
-Automate relies on the Umbraco server role to pick the scheduling publisher. If Umbraco cannot determine its application URL, the server registration job does not run and every node stays on the `Unknown` role.
+Automate relies on the Umbraco server role to pick the scheduling publisher. If Umbraco cannot determine its application URL, the server registration job does not run, and every node stays on the `Unknown` role.
 
 In the default `SchedulerOnly` mode, no node is eligible in that state. Trigger events are written to the outbox and stay pending, and scheduled triggers never fire.
 
@@ -101,7 +101,7 @@ For more information on server roles, see the [Umbraco in Load Balanced Environm
 
 Stay on `SchedulerOnly` unless automation throughput is a measured bottleneck. It keeps execution on one node, which makes runs easier to trace in logs.
 
-Move to `Distributed` when a single node cannot keep up with the volume of automation work. All nodes must point at the same Automate database.
+Move to `Distributed` when a single node cannot keep up with the volume of automation work. All nodes must point to the same Automate database.
 
 ## Next Steps
 
