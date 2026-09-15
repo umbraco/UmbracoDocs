@@ -14,11 +14,11 @@ We then have a number of variables defined, that are used in the build configura
 
 Most tasks in the pipeline are standard steps that will be used in any .NET web application release, such as the first steps:
 
-\#1 Install of the NuGet tooling,
+1. Install of the NuGet tooling,
 
-\#2 Restore of NuGet dependencies,
+2. Restore of NuGet dependencies,
 
-\#3 And the project build.
+3. And the project build.
 
 Additional steps can be added as required, for example for running automated tests.
 
@@ -30,14 +30,27 @@ Firstly a web deployment (#4), takes the packaged build artifact and deploys it,
 
 The final step (#5) is Umbraco Deploy specific - to call a function defined in the PowerShell script and trigger the extraction. Replace `ApiSecret` with `ApiKey` if you're using the deprecated API key setting instead.
 
-{% hint style="info" %} 
-The Microsoft docs contain useful information, if you are unsure of how to set secrets for your pipeline:
+{% hint style="info" %}
+The Microsoft documentation contain useful information, if you are unsure of how to set secrets for your pipeline:
+
 * [Set secret variables](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash)
 
 * [Protecting secrets in Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/security/secrets?view=azure-devops)
 {% endhint %}
 
 ## Full Example
+
+Before running the pipeline, ensure `TriggerDeploy.ps1` and your Umbraco Deploy license file are included in the build output. Add the following to your `.csproj` file:
+
+```xml
+<ItemGroup>
+<Content Include="umbraco/Licenses/umbracoDeploy.lic" CopyToOutputDirectory="Always"/>
+<Content Include="TriggerDeploy.ps1" CopyToOutputDirectory="Always"/>
+</ItemGroup>
+```
+
+This ensures both files are copied to the build output directory during the build step, making them available for the deployment step.
+
 
 ```yaml
 trigger:
@@ -103,3 +116,7 @@ steps:
     filePath: '$(umbracoDeployTriggerDeploy)'
     arguments: '-InformationAction:Continue -Action TriggerWithStatus -ApiSecret $(deployApiSecret) -BaseUrl $(deployBaseUrl) -Reason $(umbracoDeployReason) -Verbose'
 ```
+
+{% hint style="info" %}
+This is only an example of how you can set up the CI/CD pipeline for Umbraco Deploy. It is possible to set it up in a way that works for you and your preferred workflow.
+{% endhint %}
