@@ -12,8 +12,8 @@
 
 ## Upgrading
 
-* [Upgrading Umbraco Deploy](upgrades/README.md)
-* [Version Specific Upgrade Details](upgrades/version-specific.md)
+* [Upgrading Umbraco Deploy](upgrading/upgrades.md)
+* [Version Specific Upgrade Details](upgrading/version-specific.md)
 
 ## Getting Started
 
@@ -26,12 +26,12 @@
 
 ## Deployment Workflow
 
-* [Deployment](deployment-workflow/README.md)
+* [Deployment](deployment-workflow/deployment-workflow.md)
 * [Transferring Content, Media and Forms](deployment-workflow/content-transfer.md)
-* [Import and Export](deployment-workflow/import-export.md)
-  * [Import and Export with Migrations](deployment-workflow/import-with-migrations.md)
-  * [Import and Export from version 7](deployment-workflow/import-export-v7.md)
-  * [Import on startup](deployment-workflow/import-on-startup.md)
+* [Import and Export](deployment-workflow/import-export/README.md)
+  * [Import and Export with Migrations](deployment-workflow/import-export/import-with-migrations.md)
+  * [Import and Export from version 7](deployment-workflow/import-export/import-export-v7.md)
+  * [Import on startup](deployment-workflow/import-export/import-on-startup.md)
 * [Deploying Changes](deployment-workflow/deploying-changes.md)
 * [Deploying deletions](deployment-workflow/deploying-deletions.md)
 * [Restoring content](deployment-workflow/restoring-content/README.md)
