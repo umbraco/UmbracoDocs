@@ -49,7 +49,14 @@ Before running the pipeline, ensure `TriggerDeploy.ps1` and your Umbraco Deploy 
 </ItemGroup>
 ```
 
-This ensures both files are copied to the build output directory during the build step, making them available for the deployment step.
+This ensures both files are copied to the build output directory during the build step (#3), making them available for the deployment step (#5).
+
+{% hint style="info" %}
+
+`TriggerDeploy.ps1` is copied into your project directory (next to the `.csproj` file) by Umbraco Deploy. It's copied automatically whenever the file is missing or has changed in a new Deploy version.
+
+The `umbracoDeployTriggerDeploy` variable in this example assumes a specific repository layout. A solution folder containing a same-named project subfolder. If your project structure differs, update this variable to match the actual location of `TriggerDeploy.ps1` in your repository.
+{% endhint %}
 
 ```yaml
 trigger:
