@@ -8,7 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [September 2026](2026-09-releasenotes.md)
 
-* [15/09] - **Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity.Cms 13.2.9** - Remove obsolete endpoints related to Umbraco Id
+* [15/09] - **Release Umbraco.Cloud.Cms 17.2.3 & 18.0.3 and Umbraco.Cloud.Identity.Cms 13.2.9** - Remove obsolete endpoints related to Umbraco Id.
   
 ## [August 2026](2026-08-releasenotes.md)
 
