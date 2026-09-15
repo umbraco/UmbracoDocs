@@ -34,6 +34,8 @@ dotnet add package Umbraco.AI.Moonshot
 | API Key  | Yes      | Your Moonshot API key from [platform.kimi.ai](https://platform.kimi.ai/)       |
 | Endpoint | No       | Custom endpoint URL (defaults to `https://api.moonshot.ai/v1`)                 |
 
+![Moonshot AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/moonshot-create-connection.png)
+
 ### Getting an API Key
 
 1. Sign up at [platform.kimi.ai](https://platform.kimi.ai/)
@@ -48,8 +50,6 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 {% hint style="info" %}
 The default model is `kimi-k3`. Moonshot doesn't document an embeddings endpoint, so this provider supports Chat only.
 {% endhint %}
-
-![Moonshot AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/moonshot-create-connection.png)
 
 ## Related
 

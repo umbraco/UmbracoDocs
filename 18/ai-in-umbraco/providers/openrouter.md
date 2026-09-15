@@ -34,6 +34,8 @@ dotnet add package Umbraco.AI.OpenRouter
 | API Key  | Yes      | Your OpenRouter API key from [openrouter.ai/keys](https://openrouter.ai/keys) |
 | Endpoint | No       | Custom endpoint URL (defaults to `https://openrouter.ai/api/v1`)       |
 
+![OpenRouter connection detail showing API Key and Endpoint fields](../.gitbook/assets/openrouter-create-connection.png)
+
 ### Getting an API Key
 
 1. Sign up at [openrouter.ai](https://openrouter.ai/)
@@ -52,8 +54,6 @@ OpenRouter model IDs include the originating vendor, for example `openai/gpt-4o`
 {% hint style="info" %}
 This provider supports Chat only. OpenRouter's provider routing and fallback options, reasoning-effort settings, and embeddings aren't available yet.
 {% endhint %}
-
-![OpenRouter connection detail showing API Key and Endpoint fields](../.gitbook/assets/openrouter-create-connection.png)
 
 ## Related
 

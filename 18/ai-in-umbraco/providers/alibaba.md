@@ -34,6 +34,8 @@ dotnet add package Umbraco.AI.Alibaba
 | API Key  | Yes      | Your Alibaba Cloud Model Studio API key from [bailian.console.alibabacloud.com](https://bailian.console.alibabacloud.com/) |
 | Endpoint | No       | Custom endpoint URL (defaults to `https://dashscope-intl.aliyuncs.com/compatible-mode/v1`, the international region)     |
 
+![Alibaba Cloud Model Studio connection detail showing API Key and Endpoint fields](../.gitbook/assets/alibaba-create-connection.png)
+
 ### Getting an API Key
 
 1. Sign up at [bailian.console.alibabacloud.com](https://bailian.console.alibabacloud.com/)
@@ -52,8 +54,6 @@ Model Studio also serves a China (Beijing) region. To use it, set **Endpoint** t
 {% hint style="info" %}
 The default model is `qwen-plus` for chat and `text-embedding-v4` for embeddings. Model Studio's catalog also includes other vendors' models behind the same endpoint; this provider only surfaces Qwen models.
 {% endhint %}
-
-![Alibaba Cloud Model Studio connection detail showing API Key and Endpoint fields](../.gitbook/assets/alibaba-create-connection.png)
 
 ## Related
 

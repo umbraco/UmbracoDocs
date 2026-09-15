@@ -34,6 +34,8 @@ dotnet add package Umbraco.AI.ZAI
 | API Key  | Yes      | Your Z.AI API key from [z.ai/model-api](https://z.ai/model-api)      |
 | Endpoint | No       | Custom endpoint URL (defaults to `https://api.z.ai/api/paas/v4`)     |
 
+![Z.AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/zai-create-connection.png)
+
 ### Getting an API Key
 
 1. Sign up at [z.ai/model-api](https://z.ai/model-api)
@@ -48,8 +50,6 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 {% hint style="info" %}
 Z.AI's global API doesn't offer an embeddings endpoint, so this provider supports Chat only.
 {% endhint %}
-
-![Z.AI connection detail showing API Key and Endpoint fields](../.gitbook/assets/zai-create-connection.png)
 
 ## Related
 
