@@ -10,7 +10,7 @@ Context Apps in Umbraco UI Builder function similarly to Workspace Views (previo
 
 ## Defining a Context App
 
-You can define a context app by calling one of the `AddContextApp` methods on a [`WithTreeConfigBuilder`](trees.md#extending-an-existing-tree) instance.
+You can define a context app by calling one of the `AddContextApp` methods on a [`WithTreeConfigBuilder`](trees/#extending-an-existing-tree) instance.
 
 ### Using the `AddContextApp()` Method
 

@@ -73,8 +73,8 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**17.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) **(March 5th 2026)**
 
-* Added support for [EF Core](./advanced/efcore-repositories.md) data access
-* [Async](./advanced/async-apis.md) APIs 
+* Added support for [EF Core](advanced/efcore-repositories.md) data access
+* [Async](advanced/async-apis.md) APIs
 
 ### [**17.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.5) **(February 27th 2026)**
 
@@ -118,7 +118,6 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 * Compatibility update for Umbraco 17.0.0-rc1
 
-
 ## Legacy Release Notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on GitHub](../../17/umbraco-ui-builder/changelog-archive/changelog.md).

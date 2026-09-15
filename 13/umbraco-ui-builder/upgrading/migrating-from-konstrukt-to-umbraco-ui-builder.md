@@ -14,14 +14,14 @@ These changes will dictate the steps to take in the process of migrating to Umbr
 
 ### Project, Package, and Namespace changes
 
-| Konstrukt                       | Umbraco UI Builder                      |
-| ------------------------------- | --------------------------------------- |
-| Konstrukt.Core                  | Umbraco.UIBuilder.Core                  |
-| Konstrukt.Infrastructure        | Umbraco.UIBuilder.Infrastructure        |
-| Konstrukt.Web                   | Umbraco.UIBuilder.Web                   |
-| Konstrukt.Web.UI                | Umbraco.UIBuilder.Web.StaticAssets      |
-| Konstrukt.Startup               | Umbraco.UIBuilder.Startup               |
-| Konstrukt                       | Umbraco.UIBuilder                       |
+| Konstrukt                | Umbraco UI Builder                 |
+| ------------------------ | ---------------------------------- |
+| Konstrukt.Core           | Umbraco.UIBuilder.Core             |
+| Konstrukt.Infrastructure | Umbraco.UIBuilder.Infrastructure   |
+| Konstrukt.Web            | Umbraco.UIBuilder.Web              |
+| Konstrukt.Web.UI         | Umbraco.UIBuilder.Web.StaticAssets |
+| Konstrukt.Startup        | Umbraco.UIBuilder.Startup          |
+| Konstrukt                | Umbraco.UIBuilder                  |
 
 <details>
 
@@ -78,12 +78,11 @@ dotnet add package Umbraco.UIBuilder
 
 ## Step 2: Update namespaces and entity names
 
-Based on the [Key Changes](./#key-changes) outlined above update all Konstrukt references to the new Umbraco UI Builder alternatives. Ensure you update any Views/Partials that also reference these.
+Based on the [Key Changes](https://github.com/umbraco/UmbracoDocs/blob/main/13/umbraco-ui-builder/upgrading/README.md#key-changes) outlined above update all Konstrukt references to the new Umbraco UI Builder alternatives. Ensure you update any Views/Partials that also reference these.
 
 ## Step 3: Update your configuration
 
-If all your configuration is in a single statement, it would be a case of swapping `AddKonstrukt` to `AddUIBuilder`. If you broke your configuration into multiple steps, or are using `Action` or `Card` classes, you will need to update the config builder/base classes. Those classes need to be updated to their UI Builder alternative names as detailed in [Key Changes](./#key-changes).
-
+If all your configuration is in a single statement, it would be a case of swapping `AddKonstrukt` to `AddUIBuilder`. If you broke your configuration into multiple steps, or are using `Action` or `Card` classes, you will need to update the config builder/base classes. Those classes need to be updated to their UI Builder alternative names as detailed in [Key Changes](https://github.com/umbraco/UmbracoDocs/blob/main/13/umbraco-ui-builder/upgrading/README.md#key-changes).
 
 ```csharp
 builder.CreateUmbracoBuilder()
