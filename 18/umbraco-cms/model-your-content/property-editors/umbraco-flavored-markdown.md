@@ -111,6 +111,31 @@ Expressions can reference property aliases, perform calculations, concatenate st
 
 All expressions are evaluated in a sandbox. Only safe operations and methods are allowed. Access to global objects, external APIs, or unsafe functions will be blocked. To extend expressions with your own functions, it is recommended to use the piped UFM Filter syntax.
 
+## UFM for Block Labels
+
+Block Labels can use UFM, this is a easy way for authors to get an indication of the content without providing Block Custom Views. [Read about building a Custom View for Blocks here](../../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/block-custom-view.md)
+
+
+**Block with multiple fields examples**
+
+In UFM you can compose the Block Label of your interest.
+The following example shows how the value two properties can be presented in the Block Label:
+
+```markdown
+Teaser: {= title | truncate: 28 } ${ image ? '(With image)' : ''}
+```
+
+
+**Block with optional fields examples**
+
+Let´s say you have a Block with a Rich Text Editor and sometimes a Title, because the title is optional it is not ideal only to present that in the Block Label.
+
+The following example, shows the `title` when it has a value, if not it falls back to the value of the `rte`. For this use the expressions (`${ ... }`) syntax
+
+```markdown
+${ title || rte | stripHtml | truncate: 38}
+```
+
 ## UFM components
 
 ### Available UFM components
