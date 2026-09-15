@@ -1,6 +1,9 @@
 ---
-description: Learn how to manage script placement for Umbraco Forms by controlling where and how forms are presented on a webpage.
+description: >-
+  Learn how to manage script placement for Umbraco Forms by controlling where
+  and how forms are presented on a webpage.
 ---
+
 # Rendering Forms Scripts
 
 Forms output some JavaScript which is by default rendered right below the markup.
@@ -39,7 +42,7 @@ If you have changed the configuration value `TrackRenderedFormsStorageMethod` to
 }
 ```
 
-Read more about this configuration option in the [configuration ](./configuration/README.md#TrackRenderedFormsStorageMethod) article.
+Read more about this configuration option in the [configuration ](configuration/#TrackRenderedFormsStorageMethod)article.
 
 If you prefer to use a tag helper, that's an option too.
 
@@ -65,7 +68,7 @@ To enable `ExcludeScripts`:
 
 *   Using the **Insert Form with Theme** macro:
 
-    ![Exclude scripts](images/exclude-scripts-v9.png)
+    ![Exclude scripts](../.gitbook/assets/exclude-scripts-v9.png)
 *   While inserting Forms **directly** in your template:
 
     ```csharp
