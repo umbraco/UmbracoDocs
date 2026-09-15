@@ -9,7 +9,7 @@
 **Block List** is a list editing property editor, using [Element Types](../../../content-types-and-structure/data/defining-content/document-type-options.md#element-type) to define the list item schema.
 
 {% hint style="info" %}
-The single-mode Block List migration now runs by default when upgrading to v18. If you have custom property editors that nest Block List values, you must implement and register `ITypedSingleBlockListProcessor` before upgrading. See the [Single block migration](../../../../get-started/upgrading-and-migrating/version-specific/single-block-migration.md) article for details.
+The single-mode Block List migration now runs by default when upgrading to v18. If you have custom property editors that nest Block List values, you must implement and register `ITypedSingleBlockListProcessor` before upgrading. See the [Single block migration](../../../../get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md) article for details.
 {% endhint %}
 
 ## Configure Block List
@@ -475,6 +475,7 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 5. Create a Partial View for the `timelineItem` element type to render the imported blocks on the frontend at: `Views/Partials/BlockList/Components/timelineItem.cshtml`.
 
 **Example partial:**
+
 {% code title="timelineItem.cshtml" %}
 ```cshtml
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
@@ -495,14 +496,13 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 @Html.GetBlockListHtml(Model, "timelineItems")
 ```
 
-7. Browse to your page on the frontend (for example, `https://localhost:{port}`)  and you should see each imported block rendered.
+7. Browse to your page on the frontend (for example, `https://localhost:{port}`) and you should see each imported block rendered.
 
 ### Appending to an Existing Block List
 
 By default, calling `SetValue()` with a new JSON structure overwrites all existing blocks. Use this approach instead if you need to preserve existing content.
 
-To append new blocks to an existing list without losing current content, read and deserialize the existing value first. Then append to those collections before saving.
-Update the `Import` method in your controller:
+To append new blocks to an existing list without losing current content, read and deserialize the existing value first. Then append to those collections before saving. Update the `Import` method in your controller:
 
 ```csharp
 [HttpPost("import")]
@@ -616,7 +616,7 @@ Settings do not need their own `expose` entry — `expose` only references a blo
 
 ### Handling Multilingual (Variant) Content
 
-If your site uses multiple languages and your Document Type is configured to vary by culture, pass the target culture string to `SetValue()` and `GetValue()`. 
+If your site uses multiple languages and your Document Type is configured to vary by culture, pass the target culture string to `SetValue()` and `GetValue()`.
 
 Ensure **Allow vary by culture** is enabled on your Document Type in the Settings tab. The Block List property's **Variation** ("Shared across cultures") should be disabled. The **Variation** option on the Block List property editor only appears once the Document Type is set to vary by culture.
 
