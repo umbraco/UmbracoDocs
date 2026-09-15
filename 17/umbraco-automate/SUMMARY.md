@@ -4,14 +4,14 @@
 
 ## Getting Started
 
-* [Overview](getting-started/README.md)
+* [Overview](getting-started/getting-started.md)
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
 * [Create Your First Automation](getting-started/first-automation.md)
 
 ## Concepts
 
-* [Core Concepts](concepts/README.md)
+* [Core Concepts](concepts/concepts.md)
 * [Workspaces](concepts/workspaces.md)
 * [Automations](concepts/automations.md)
 * [Triggers](concepts/triggers.md)
@@ -24,7 +24,7 @@
 
 ## Backoffice
 
-* [Overview](backoffice/README.md)
+* [Overview](backoffice/backoffice.md)
 * [Use the Dashboard](backoffice/dashboard.md)
 * [Manage Workspaces](backoffice/workspaces.md)
 * [Build an Automation](backoffice/building-an-automation.md)
@@ -34,7 +34,7 @@
 
 ## Add-ons
 
-* [Overview](add-ons/README.md)
+* [Overview](add-ons/add-ons.md)
 * [Slack](add-ons/slack/README.md)
   * [Installation](add-ons/slack/installation.md)
   * [Create a Slack Connection](add-ons/slack/connection.md)
@@ -69,7 +69,7 @@
 
 ## Extending
 
-* [Overview](extending/README.md)
+* [Overview](extending/extending.md)
 * [Create a Custom Trigger](extending/custom-trigger.md)
 * [Create a Custom Action](extending/custom-action.md)
 * [Create a Custom Connection Type](extending/custom-connection-type.md)
