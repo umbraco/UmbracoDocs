@@ -14,8 +14,8 @@
 
 ## Licensing and dependencies
 
-* [Configure Licenses](configure-licenses.md)
-* [Commercial Products, Relations, and Dependencies](commercial-product-dependencies.md)
+* [Configure Licenses](licensing-and-dependencies/configure-licenses.md)
+* [Commercial Products, Relations, and Dependencies](licensing-and-dependencies/commercial-product-dependencies.md)
 
 ## Marketplace
 
