@@ -21,6 +21,8 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 ---
 
 # Umbraco Documentation
@@ -49,36 +51,34 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 
 {% include ".gitbook/includes/dxp-products.md" %}
 
-
-
 ### Integrations & Extensions
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/" %}
-[AI in Umbraco](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
+[18.ai-in-umbraco.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/" %}
-[Umbraco in AI](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
+[18.umbraco-in-ai.latest](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/" %}
 [Umbraco DXP](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/" %}
-[Commerce Packages](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/)
+{% content-ref url="/broken/spaces/4kB9Trqs7XbQsP80vWVA" %}
+[Broken link](/broken/spaces/4kB9Trqs7XbQsP80vWVA)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/" %}
-[Commerce Payment Providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/)
+{% content-ref url="/broken/spaces/O8zV7PYqNxSkuGGGYa3P" %}
+[Broken link](/broken/spaces/O8zV7PYqNxSkuGGGYa3P)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/HKthAwBJOkU2Xzt1IHX4/" %}
-[Sales Tax Providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/HKthAwBJOkU2Xzt1IHX4/)
+{% content-ref url="/broken/spaces/HKthAwBJOkU2Xzt1IHX4" %}
+[Broken link](/broken/spaces/HKthAwBJOkU2Xzt1IHX4)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FW5BR4euWkgLSfJs4O4r/" %}
-[Commerce Shipping providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FW5BR4euWkgLSfJs4O4r/)
+{% content-ref url="/broken/spaces/FW5BR4euWkgLSfJs4O4r" %}
+[Broken link](/broken/spaces/FW5BR4euWkgLSfJs4O4r)
 {% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/" %}
