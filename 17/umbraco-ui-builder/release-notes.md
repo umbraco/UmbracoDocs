@@ -18,7 +18,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
-### [**17.2.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.9) **(September 14th 2026)** 
+### [**17.2.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.9) **(September 14th 2026)**
 
 * Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233).
 * Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234).
