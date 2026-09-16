@@ -22,7 +22,7 @@ Umbraco Engage will run on Umbraco Cloud Standard, but for optimal performance, 
 
 Due to the wide variety of cloud providers, we recommend using the appropriate supplier tools to determine the exact sizing. For the non-cloud recommendations below, use the sizing as input.
 
-### **Microsoft Azure**
+### Microsoft Azure
 
 For Azure SQL, use at least a S3 instance with 100 Data Transport Utility (DTU).
 
@@ -34,6 +34,10 @@ Umbraco Engage depends on features that aren’t available in the lower tiers an
 * **500.000 page views per month or less:** Database: CPU 4, 8-16 GB RAM, 100GB SSD disk
 * **1.000.000 page views per month or less:** Database: CPU 8, 16-32 GB RAM, 250GB SSD disk
 * **1.000.000 page views per month or more:** [Contact our Expert Services](mailto:support@umbraco.com) team to discuss the infrastructure requirements.
+
+Disk usage is affected by how much data is retained. Lower retention with fewer personalizations, A/B tests, and pageviews may allow smaller resources than the recommendations below. See [Retention periods of data](../../security-and-privacy/retention-periods-of-data.md) for details.
+
+Deleting retained data reduces the amount of data stored, but doesn't automatically shrink the database on disk. Database maintenance is required to release freed space back to the filesystem.
 
 {% hint style="info" %}
 Above you will find general recommendations on which infrastructure parameters to use. While these should work well for most cases, you may need to adjust the infrastructure parameters to suit your page view processing workload. Large or heavily trafficked websites may have higher requirements. If you expect high page view peaks it is recommended to scale to a tier higher than normal.
