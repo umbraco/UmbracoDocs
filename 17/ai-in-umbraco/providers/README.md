@@ -19,7 +19,7 @@ Umbraco.AI supports multiple AI providers through installable NuGet packages. Ea
 | [Alibaba Cloud Model Studio](alibaba.md)     | `Umbraco.AI.Alibaba`          | Chat, Embedding | Qwen models                      |
 | [Moonshot AI](moonshot.md)                   | `Umbraco.AI.Moonshot`         | Chat            | Kimi models                      |
 | [OpenRouter](openrouter.md)                  | `Umbraco.AI.OpenRouter`       | Chat            | One key, many vendors            |
-| [Z.AI](zai.md)                               | `Umbraco.AI.ZAI`              | Chat            | General Learning Model (GLM)                       |
+| [Z.AI](zai.md)                               | `Umbraco.AI.ZAI`              | Chat            | General Language Model (GLM)                       |
 
 ## Choosing a Provider
 
