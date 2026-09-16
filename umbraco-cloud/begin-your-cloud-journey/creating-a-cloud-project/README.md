@@ -78,7 +78,7 @@ Once a project is created, you can get an overview of it from the Umbraco Cloud 
 2. Select your Project from the **Projects** dashboard.
 3. Click on **Overview** from the left side menu.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
 
 The **Overview** menu consists of:
 
@@ -86,7 +86,7 @@ The **Overview** menu consists of:
 * A place to manage the [**Team**](../project-features/team-members/) that has access to your project.
 * A page that gives a **Summary** of your project, like when it was created, that plan, and more.
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
 
 ## Different ways to start an Umbraco Cloud project
 

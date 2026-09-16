@@ -12,16 +12,15 @@ To understand why custom extensions are necessary, consider a typical enterprise
 
 This guide showcases two distinct development patterns:
 
-- **[The Zero-Dependency Local Flow:](#blueprint-1-zero-dependency-local-testing-flow)** A testing suite used to verify that your custom fields, attributes, and backend schemas are registering properly in the backoffice UI without connecting to external networks.
-
-- **[The Production Integration Flow:](#blueprint-2-production-integration-flow-slackwebhook-variant)** A real-world blueprint modeling how an e-commerce ecosystem tracks paid invoices and securely dispatches structured payloads to external HTTP webhooks (such as Slack) while properly respecting engine timeouts, authorization constraints, and retry circuit breakers.
+* [**The Zero-Dependency Local Flow:**](technical-runbook-for-developer.md#blueprint-1-zero-dependency-local-testing-flow) A testing suite used to verify that your custom fields, attributes, and backend schemas are registering properly in the backoffice UI without connecting to external networks.
+* [**The Production Integration Flow:**](technical-runbook-for-developer.md#blueprint-2-production-integration-flow-slackwebhook-variant) A real-world blueprint modeling how an e-commerce ecosystem tracks paid invoices and securely dispatches structured payloads to external HTTP webhooks (such as Slack) while properly respecting engine timeouts, authorization constraints, and retry circuit breakers.
 
 ## Core Database & Architecture Layout
 
 Visual automation workflows designed on the backoffice canvas read and query data across two separate database files to keep your primary website fast and responsive:
 
-- **Core CMS Stores (`Umbraco.sqlite.db`):** Managed via `umbracoDbDSN`. This holds standard content pages, media assets, and member profiles.
-- **Automate Schemas & Run Trackers (`Umbraco.Automate.sqlite.db`):** Managed via `umbracoAutomateDbDSN`. This holds your visual canvas configurations, workspace permissions, and historical execution run trackers.
+* **Core CMS Stores (`Umbraco.sqlite.db`):** Managed via `umbracoDbDSN`. This holds standard content pages, media assets, and member profiles.
+* **Automate Schemas & Run Trackers (`Umbraco.Automate.sqlite.db`):** Managed via `umbracoAutomateDbDSN`. This holds your visual canvas configurations, workspace permissions, and historical execution run trackers.
 
 ![Database & Architecture Layout](../.gitbook/assets/automate-db-architecture.png)
 
@@ -31,11 +30,10 @@ Use this blueprint to verify your local workspace installation or troubleshoot c
 
 ### File 1: Custom Trigger
 
-- File Name: `LocalPagePublishedTrigger.cs`
-- Directory Location: `MyProject/Automate/Triggers/`
+* File Name: `LocalPagePublishedTrigger.cs`
+* Directory Location: `MyProject/Automate/Triggers/`
 
 {% code title="LocalPagePublishedTrigger.cs" %}
-
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -91,16 +89,14 @@ public sealed class LocalPagePublishedTrigger(TriggerInfrastructure infrastructu
     }
 }
 ```
-
 {% endcode %}
 
 ### File 2: Custom Action
 
-- File Name: `LocalLogAction.cs`
-- Directory Location: `MyProject/Automate/Actions/`
+* File Name: `LocalLogAction.cs`
+* Directory Location: `MyProject/Automate/Actions/`
 
 {% code title="LocalLogAction.cs" %}
-
 ```csharp
 using System;
 using System.Threading;
@@ -158,7 +154,6 @@ public sealed class LocalLogAction : ActionBase<LocalLogSettings>
     }
 }
 ```
-
 {% endcode %}
 
 ## Blueprint 2: Production Integration Flow (Slack/Webhook Variant)
@@ -167,11 +162,10 @@ This implementation shows an advanced automation flow. A custom business notific
 
 ### File 1: Domain Notification Model
 
-- File Name: `OrderPaidNotification.cs`
-- Directory Location: `MyProject/Automate/Triggers/`
+* File Name: `OrderPaidNotification.cs`
+* Directory Location: `MyProject/Automate/Triggers/`
 
 {% code title="OrderPaidNotification.cs" %}
-
 ```csharp
 using System;
 using Umbraco.Cms.Core.Notifications;
@@ -185,16 +179,14 @@ public sealed class OrderPaidNotification(Guid invoiceKey, string customerEmail,
     public decimal TotalAmount { get; } = totalAmount;
 }
 ```
-
 {% endcode %}
 
 ### File 2: Custom Trigger
 
-- File Name: `OrderPaidTrigger.cs`
-- Directory Location: `MyProject/Automate/Triggers/`
+* File Name: `OrderPaidTrigger.cs`
+* Directory Location: `MyProject/Automate/Triggers/`
 
 {% code title="OrderPaidTrigger.cs" %}
-
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -249,16 +241,14 @@ public sealed class OrderPaidTrigger(TriggerInfrastructure infrastructure)
         => settings is not { OnlyHighValue: true } || output.TotalAmount >= 500.00m;
 }
 ```
-
 {% endcode %}
 
 ### File 3: Custom Action
 
-- File Name: `SlackNotificationAction.cs`
-- Directory Location: `MyProject/Automate/Actions/`
+* File Name: `SlackNotificationAction.cs`
+* Directory Location: `MyProject/Automate/Actions/`
 
 {% code title="SlackNotificationAction.cs" %}
-
 ```csharp
 using System;
 using System.Net.Http;
@@ -344,7 +334,6 @@ public sealed class SlackNotificationAction : ActionBase<SlackActionSettings>
     }
 }
 ```
-
 {% endcode %}
 
 ### Local Testing Tip: Simulating the Domain Event
@@ -353,11 +342,10 @@ To test this blueprint locally without setting up a real checkout flow or billin
 
 #### File 4: The Mock Event Simulation Interceptor
 
-- File Name: `OrderPaidSimulator.cs`
-- Directory Location: `MyProject/Automate/Triggers/`
+* File Name: `OrderPaidSimulator.cs`
+* Directory Location: `MyProject/Automate/Triggers/`
 
 {% code title="OrderPaidSimulator.cs" %}
-
 ```csharp
 using System;
 using System.Threading;
@@ -397,7 +385,6 @@ public class OrderPaidSimulator : INotificationAsyncHandler<ContentPublishedNoti
     }
 }
 ```
-
 {% endcode %}
 
 {% hint style="warning" %}
@@ -408,11 +395,10 @@ Remember to register your temporary testing simulator inside a standard `ICompos
 
 #### File 5: Registration Composer
 
-- File Name: `AutomateRegistrationComposer.cs`
-- Directory Location: `MyProject/` (Root Project Directory)
+* File Name: `AutomateRegistrationComposer.cs`
+* Directory Location: `MyProject/` (Root Project Directory)
 
 {% code title="AutomateRegistrationComposer.cs" %}
-
 ```csharp
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -430,7 +416,6 @@ public class AutomateRegistrationComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 ## Code Integration & Testing Tips
@@ -484,7 +469,7 @@ Trigger a run, then go to **Settings** > **Log Viewer** and expand the completed
 
 ## Resources
 
-- [Core Concepts](../concepts/README.md)
-- [Extension Points Overview](../extending/README.md)
-- [Review Runs](../backoffice/runs.md)
-- [GitHub Repository](https://github.com/umbraco/Umbraco.Automate)
+* [Core Concepts](../concepts/concepts.md)
+* [Extension Points Overview](../extending/extending.md)
+* [Review Runs](../backoffice/runs.md)
+* [GitHub Repository](https://github.com/umbraco/Umbraco.Automate)

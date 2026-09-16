@@ -4,7 +4,7 @@
 
 A new level of flexibility has arrived in Umbraco Cloud—Database Import. You can now import your database into any environment within your project, whether from an existing site or a local development setup.
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt="Upload database to Umbraco Cloud."><figcaption><p>Upload database to Umbraco Cloud.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51).png" alt="Upload database to Umbraco Cloud."><figcaption><p>Upload database to Umbraco Cloud.</p></figcaption></figure>
 
 With this feature, migrating your project’s data has never been easier. Instead of relying on complex and time-consuming methods to move databases between systems, you can upload your database directly to your Umbraco Cloud environment. This streamlines the process, helping you avoid the manual steps that can slow down migrations.
 
@@ -16,7 +16,7 @@ Umbraco Cloud has made managing your project’s data even easier with the new D
 
 Whether you need to roll back to a previous version or recover from an issue, restoring your database is now a seamless process. This eliminates the need for complicated recovery steps and gives you peace of mind, knowing you can quickly revert to a stable state when necessary.
 
-<figure><img src="../../../.gitbook/assets/image (89).png" alt="Restore Backup to environment."><figcaption><p>Restore Backup to environment.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt="Restore Backup to environment."><figcaption><p>Restore Backup to environment.</p></figcaption></figure>
 
 The Database Restore feature also allows you to tailor each environment with the exact data you need. Whether you are prepping for a staging deployment or testing in a development environment, you can restore the relevant database to match the specific requirements. This ensures that your team is always working with the right data at the right time.
 
@@ -24,7 +24,7 @@ The Database Restore feature also allows you to tailor each environment with the
 
 The Performance and Availability page in Umbraco Cloud now provides even more transparency with the addition of Boot Status insights. You can now see whether an environment experienced a **hot** or **cold** boot, giving you a clearer picture of your site’s performance.
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt="Hot and cold boot."><figcaption><p>Hot and cold boot.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53).png" alt="Hot and cold boot."><figcaption><p>Hot and cold boot.</p></figcaption></figure>
 
 A **cold** **boot** occurs when the application is starting from scratch, which generally takes a bit longer as all dependencies need to be reloaded. On the other hand, a **hot** **boot** happens when the application is restarted but retains cached data, making the process faster.
 

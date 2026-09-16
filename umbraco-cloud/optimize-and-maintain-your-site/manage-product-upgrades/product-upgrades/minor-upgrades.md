@@ -17,7 +17,7 @@ To enable automatic minor upgrades, follow these steps:
 1. Go to your Umbraco Cloud project.
 2.  Navigate to **Configuration** -> **Automatic Upgrades**.
 
-    <figure><img src="../../../.gitbook/assets/image (47).png" alt="Settings Umbraco Cloud"><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (24).png" alt="Settings Umbraco Cloud"><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
 3.  Enable **Automatic Minor Upgrades**.
 
     <figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>

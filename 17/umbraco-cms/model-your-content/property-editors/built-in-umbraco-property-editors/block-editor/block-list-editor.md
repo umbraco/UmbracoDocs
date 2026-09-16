@@ -42,7 +42,7 @@ Block Types are **Element Types** which need to be created before you can start 
 
 Once you have added an element type as a Block Type on your Data Type you will have the option to configure it further.
 
-![Block List - Data Type Block Configuration](<../../../../.gitbook/assets/BlockListEditor_DataType_Blocks (2).png>)
+![Block List - Data Type Block Configuration](../../../../.gitbook/assets/BlockListEditor_DataType_Blocks.png)
 
 Each Block has a set of properties that are optional to configure. They are described below.
 
@@ -84,7 +84,7 @@ These properties are relevant when you work with custom views.
 
 When viewing a **Block List** editor in the Content section for the first time, you will be presented with the option to add content.
 
-![Block List - Create new](<../../../../.gitbook/assets/BlockListEditor_AddContent (2).png>)
+![Block List - Create new](../../../../.gitbook/assets/BlockListEditor_AddContent.png)
 
 Clicking the "Create new" button brings up the Block Catalogue. If you only have a single block configured, this button will display "Add {block type name}".
 
@@ -475,6 +475,7 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 5. Create a Partial View for the `timelineItem` element type to render the imported blocks on the frontend at: `Views/Partials/BlockList/Components/timelineItem.cshtml`.
 
 **Example partial:**
+
 {% code title="timelineItem.cshtml" %}
 ```cshtml
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
@@ -495,14 +496,13 @@ You can use Postman, Bruno, or the browser's fetch console to make the call. If 
 @Html.GetBlockListHtml(Model, "timelineItems")
 ```
 
-7. Browse to your page on the frontend (for example, `https://localhost:{port}`)  and you should see each imported block rendered.
+7. Browse to your page on the frontend (for example, `https://localhost:{port}`) and you should see each imported block rendered.
 
 ### Appending to an Existing Block List
 
 By default, calling `SetValue()` with a new JSON structure overwrites all existing blocks. Use this approach instead if you need to preserve existing content.
 
-To append new blocks to an existing list without losing current content, read and deserialize the existing value first. Then append to those collections before saving.
-Update the `Import` method in your controller:
+To append new blocks to an existing list without losing current content, read and deserialize the existing value first. Then append to those collections before saving. Update the `Import` method in your controller:
 
 ```csharp
 [HttpPost("import")]
@@ -616,7 +616,7 @@ Settings do not need their own `expose` entry — `expose` only references a blo
 
 ### Handling Multilingual (Variant) Content
 
-If your site uses multiple languages and your Document Type is configured to vary by culture, pass the target culture string to `SetValue()` and `GetValue()`. 
+If your site uses multiple languages and your Document Type is configured to vary by culture, pass the target culture string to `SetValue()` and `GetValue()`.
 
 Ensure **Allow vary by culture** is enabled on your Document Type in the Settings tab. The Block List property's **Variation** ("Shared across cultures") should be disabled. The **Variation** option on the Block List property editor only appears once the Document Type is set to vary by culture.
 

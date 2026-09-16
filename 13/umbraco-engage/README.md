@@ -10,7 +10,7 @@ Umbraco Engage is a marketing suite that helps marketers and developers create p
 
 Explore the top features and learn more about Umbraco Engage on [Umbraco.com](https://umbraco.com/products/add-ons/engage/).
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Install Umbraco Engage</strong></td><td>Ready to dive in? Check the installation guide to get started.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Install (1).png">Documentations Icons_Umbraco_CMS_Install (1).png</a></td><td><a href="installation/installation.md">installation.md</a></td></tr><tr><td><strong>Getting Started</strong></td><td>Get an overview and learn how to set up Umbraco Engage.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started (1).png">Documentations Icons_Umbraco_Cloud_Getting_Started (1).png</a></td><td><a href="getting-started/">getting-started</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find detailed step-by-step guides for personalization, analytics, A/B testing, and more.</td><td><a href=".gitbook/assets/Documentations_Icons_Umbraco_CMS_Tutorials (1).png">Documentations_Icons_Umbraco_CMS_Tutorials (1).png</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Install Umbraco Engage</strong></td><td>Ready to dive in? Check the installation guide to get started.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Install (1).png">Documentations Icons_Umbraco_CMS_Install (1).png</a></td><td><a href="installation/installation.md">installation.md</a></td></tr><tr><td><strong>Getting Started</strong></td><td>Get an overview and learn how to set up Umbraco Engage.</td><td><a href=".gitbook/assets/Documentations Icons_Umbraco_Cloud_Getting_Started (1).png">Documentations Icons_Umbraco_Cloud_Getting_Started (1).png</a></td><td><a href="getting-started/getting-started.md">getting-started.md</a></td></tr><tr><td><strong>Tutorials</strong></td><td>Find detailed step-by-step guides for personalization, analytics, A/B testing, and more.</td><td><a href=".gitbook/assets/Documentations_Icons_Umbraco_CMS_Tutorials (1).png">Documentations_Icons_Umbraco_CMS_Tutorials (1).png</a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
 
 ## Quick Links
 
@@ -18,8 +18,8 @@ Explore the top features and learn more about Umbraco Engage on [Umbraco.com](ht
 [configuration.md](developers/settings/configuration.md)
 {% endcontent-ref %}
 
-{% content-ref url="security-and-privacy/" %}
-[security-and-privacy](security-and-privacy/)
+{% content-ref url="security-and-privacy/security-and-privacy.md" %}
+[security-and-privacy.md](security-and-privacy/security-and-privacy.md)
 {% endcontent-ref %}
 
 ### Umbraco Training

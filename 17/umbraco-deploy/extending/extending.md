@@ -2,7 +2,7 @@
 description: How to extend Umbraco Deploy to synchronize custom data.
 ---
 
-# Extending
+# Extend Deploy
 
 Umbraco Deploy supports the deployment of CMS schema information and definitions from the HQ's Forms package, along with managed content and media. Additionally, it can be extended by package or custom solution developers. This allows the deployment of custom data, such as that stored in your own database tables.
 
@@ -385,7 +385,7 @@ Connectors do not need to be registered. The fact that they inherit from particu
 
 ### Custom Entity Types
 
-If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](#disk-based-transfers) section below.
+If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](extending.md#disk-based-transfers) section below.
 
 ### Disk-Based Transfers
 
@@ -590,13 +590,13 @@ The `RegisterTransferEntityType` method on the `ITransferEntityService` takes th
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
 * A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-[guid]" or "store-[guid]".
+* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-\[guid]" or "store-\[guid]".
 * An optional `RemoteTreeDetail` parameter that adds support for implementing Deploy's "partial restore" feature.
 
 {% hint style="info" %}
 The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
-Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrades/version-specific.md) for an example.
+Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrading/version-specific.md) for an example.
 {% endhint %}
 
 The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
@@ -638,7 +638,7 @@ Umbraco Deploy provides the `ExternalEntityTreeController` to serve the external
 
 Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifact in the database for each environment. The signature is a string-based, hashed representation of the serialized artifact. When an update is made to an entity, this signature value should be refreshed.
 
-When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
+When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](extending.md#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
 
 If you only need to refresh signatures without writing disk artifacts, you can set `HandleDiskArtifacts = false`. An example of this could be for content entities that are transferred via the backoffice rather than disk:
 

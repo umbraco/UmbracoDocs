@@ -46,7 +46,7 @@ To edit a dictionary item, follow these steps:
 {% hint style="info" %}
 It will only be possible to edit the language(s) that the given user has access to. The value of the remaining languages will be _read-only_.
 
-Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../../users-and-members/users/README.md#creating-a-user-group) article.
+Which language a user has access to is determined by the "Language permissions" set on the User Group. Learn more about this feature in the [Users](../../users-and-members/users/#creating-a-user-group) article.
 {% endhint %}
 
 ## Importing and exporting Dictionary Items
@@ -67,14 +67,6 @@ This will download a `.udt` file which you can use to import the Dictionary item
 ![Options menu with the Export feature](../../../.gitbook/assets/dictionary-items-export.png)
 
 ### Importing Dictionary Items
-
-Importing adds a translation for a language that has never had one set for that item. Items with no matching key (GUID) in the target site are created as new.
-
-Importing dictionary items never overwrites an existing translation value. This applies even if the value has been cleared to blank in the backoffice, since a cleared field still counts as an existing translation record.
-
-**Example:** If _Welcome_ already has an English value on the target site, importing a `.udt` with a different English value for _Welcome_ will not change it. If _Welcome_ has never had a Danish value, importing a Danish value for it will add one.
-
-To import dictionary items, follow these steps:
 
 1. Go to the **Translation** section in the Umbraco backoffice.
 2. Click **...** next to the **Dictionary** tree.

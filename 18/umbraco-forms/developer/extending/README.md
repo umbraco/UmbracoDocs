@@ -5,6 +5,7 @@ Umbraco Forms functionality can be extended in different ways.
 For front-end extensions, specifically via theming, see the [Themes](../themes.md) section.
 
 ## Extending the Backoffice
+
 Umbraco Forms publishes an NPM package called `@umbraco-forms/backoffice` that holds typings and other niceties to build extensions.
 
 {% hint style="warning" %}
@@ -60,11 +61,11 @@ This ensures that the Umbraco Backoffice packages are not bundled with your pack
 
 Read more about using Vite with Umbraco in the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/vite-package-setup) article.
 
-### [Backoffice Extension Points](backoffice-extension-points.md)
+### [Backoffice Extension Points](backoffice-extension-points/)
 
 Forms exposes backoffice extension points on top of the Umbraco CMS extension system. These include property editors, field previews, and setting value converters.
 
-### [Working with the Form Workspace Context](working-with-the-form-workspace-context.md)
+### [Working with the Form Workspace Context](backoffice-extension-points/working-with-the-form-workspace-context.md)
 
 When your extension needs access to the open form, consume the Form Workspace Context. This is the supported way to read a form's pages, fields, and other structure from a property editor or other backoffice element.
 
@@ -72,7 +73,7 @@ When your extension needs access to the open form, consume the Form Workspace Co
 
 Although the Forms package comes with many fields, workflows and other built-in types, you can still create and develop your own if needed.
 
-### [Provider model](adding-a-type.md)
+### [Provider model](adding-a-type/)
 
 Many features of Forms use a provider model, which makes it quicker to add new parts to the application.
 
@@ -80,7 +81,7 @@ The model uses the notion that everything must have a type to exist. The type de
 
 It is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types, and Workflow Types.
 
-### [Field types](adding-a-fieldtype.md)
+### [Field types](adding-a-fieldtype/)
 
 A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET Razor partial view and is able to return a list of values when the form is saved.
 
@@ -90,7 +91,7 @@ The concept of provider settings, common to the field and other types, is also d
 
 A data source type enables Umbraco Forms to connect to a custom source of data. A data source consists of any kind of storage if it is possible to return a list of fields Umbraco Forms can map values to. For example: a Database data source can return a list of columns Forms can send data to. This enables Umbraco Forms to map a form to a data source. A data source type is responsible for connecting Forms to external storage.
 
-### [Prevalue Source Types](adding-a-prevaluesourcetype.md)
+### [Prevalue Source Types](adding-a-prevaluesourcetype/)
 
 A prevalue source type connects to 3rd party storage to retrieve values. These values are used on fields supporting prevalues. The source fetches the collection of values.
 

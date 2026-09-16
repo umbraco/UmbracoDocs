@@ -24,7 +24,7 @@ This section contains the release notes for Umbraco UI Builder 13 including all 
 
 #### [**13.2.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.3) **(April 4th 2025)**
 
-* Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144) and introduced new [Entity Identifier Converters](./collections/entity-identifier-converters.md).
+* Removed global registration of `UDI` converters [#144](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/144) and introduced new [Entity Identifier Converters](collections/entity-identifier-converters.md).
 
 #### [**13.2.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.2.2) **(March 21st 2025)**
 
@@ -76,6 +76,7 @@ You can read more about this in the [searchable properties](searching/searchable
 * Allow renaming the heading of the implicit `Name` column by calling the `SetNameProperty` method overload.
 
 You can read more about this in [the basics](collections/the-basics.md) article.
+
 * Use `CsvHelper` library with the built in `ExportEntityAction`.
 * Update `CsvHelper` version dependency.
 
@@ -103,14 +104,13 @@ You can read more about this in the [related collections](collections/related-co
 
 This feature addresses a **one-to-many** relationship context. Having a parent collection with child sub-collections, one might need to retrieve the child collections only, without fetching the details of the parent.
 
-You can read more about this in the [retrieve child collections](collections/retrieve-child-collections.md) article.
+You can read more about this in the [retrieve child collections](collections/child-collections/retrieve-child-collections.md) article.
 
 * Implementation of a `UdiConverter`
 
 This update addresses the configuration of collections that use as foreign key a reference to an Umbraco entity. If the FK type is `Integer`, the persisted value defaults to 0. This is because the UDI value of the entity cannot be converted from `String` to `Int`. Based on the UDI value, we are retrieving and persisting the `Id` of the Umbraco entity.
 
 A use case can be found in the [GitHub issue #86](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/86).
-
 
 #### [**13.0.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.3) **(February 20th 2024)**
 
@@ -136,4 +136,4 @@ A use case can be found in the [GitHub issue #86](https://github.com/umbraco/Umb
 
 ## Legacy release notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on GitHub](https://github.com/umbraco/UmbracoDocs/blob/main/13/umbraco-ui-builder/changelog-archive/changelog.md).

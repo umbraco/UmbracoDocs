@@ -9,9 +9,9 @@ We follow semver in terms of versioning, which means you can be sure that existi
 {% hint style="info" %}
 For API calls, it's advisable **to employ the `api-version` header to indicate the API version you intend to use**. If no version is specified the latest version of the API will be used.
 
-Learn more about which versions of the API is available as well as what version each endpoint uses in the[ Umbraco Heartcore API Documentation.](api-documentation/)
+Learn more about which versions of the API is available as well as what version each endpoint uses in the[ Umbraco Heartcore API Documentation.](api-documentation/api-documentation/)
 {% endhint %}
 
-When using our [Client Libraries](client-libraries/), the `api-version` is handled as part of the library and generally not something you need to worry about.
+When using our [Client Libraries](client-libraries/client-libraries.md), the `api-version` is handled as part of the library and generally not something you need to worry about.
 
 Be aware that the client library releases will have certain features available. The Forms API is unavailable in the initial release (1.0) of the .NET Core client library, for instance. This was made available in the 1.1 version of the client library.

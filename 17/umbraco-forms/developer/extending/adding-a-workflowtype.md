@@ -1,6 +1,6 @@
-# Adding a workflow type to Umbraco Forms
+# Adding A Workflow Type To Umbraco Forms
 
-*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
+_This builds on the "_[_adding a type to the provider model_](adding-a-type/)_" chapter_
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and has the ability to change data and state.
 
@@ -66,9 +66,9 @@ namespace MyFormsExtensions
 
 ### Record information
 
-The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
+The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`. This parameter contains all information related to the workflow.
 
-The `Record` contains all data and metadata submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
+The `Record` contains all data and metadata submitted by the form. As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
 
 ```csharp
 RecordField? recordField = context.Record.GetRecordFieldByAlias("myalias");

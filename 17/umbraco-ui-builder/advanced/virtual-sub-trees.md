@@ -10,7 +10,7 @@ Virtual subtrees inject an Umbraco UI Builder tree structure into another Umbrac
 
 ## Defining Virtual SubTrees
 
-Use the `AddVirtualSubTree` methods of a [WithTreeConfigBuilder](../areas/trees.md#extending-an-existing-tree) instance to define a virtual subtree.
+Use the `AddVirtualSubTree` methods of a [WithTreeConfigBuilder](../areas/trees/#extending-an-existing-tree) instance to define a virtual subtree.
 
 ### Using the `AddVirtualSubTree()` Method
 
@@ -133,11 +133,11 @@ treeNode => treeNode.alias == "settings"
 
 ## Configuring a Virtual SubTree
 
-Virtual subtrees use the `Tree` config builder API including support for folders and collections. There is an exception when adding collections to a subtree where you will have an additional foreign key expression parameter to define. The foreign key expression links the entities of the collection to the parent node of the subtree. For more information, see the [Trees](../areas/trees.md) article.
+Virtual subtrees use the `Tree` config builder API including support for folders and collections. There is an exception when adding collections to a subtree where you will have an additional foreign key expression parameter to define. The foreign key expression links the entities of the collection to the parent node of the subtree. For more information, see the [Trees](../areas/trees/) article.
 
 ## Inject Virtual Subtrees into Third-Party Trees
 
-Out of the box, Umbraco UI Builder supports injecting subtrees into the core content, media, members, and member group trees. It also includes third-party support for [Umbraco Commerce](../../umbraco-commerce/) settings and commerce trees. To inject into additional trees, implement an `ITreeHelper` to extract necessary data. The tree helper consists of a tree alias for which the tree helper is. It includes methods to correctly identify the full parent path, a unique ID for a given node ID, and to resolve the actual entity ID. The entity ID should be used for the foreign key collection values.
+Out of the box, Umbraco UI Builder supports injecting subtrees into the core content, media, members, and member group trees. It also includes third-party support for [Umbraco Commerce](https://github.com/umbraco/UmbracoDocs/blob/main/17/umbraco-commerce/README.md) settings and commerce trees. To inject into additional trees, implement an `ITreeHelper` to extract necessary data. The tree helper consists of a tree alias for which the tree helper is. It includes methods to correctly identify the full parent path, a unique ID for a given node ID, and to resolve the actual entity ID. The entity ID should be used for the foreign key collection values.
 
 ```csharp
 public interface ITreeHelper

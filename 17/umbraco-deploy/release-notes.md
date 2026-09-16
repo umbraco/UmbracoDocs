@@ -1,15 +1,17 @@
 ---
-description: Get an overview of the things changed and fixed in each version of Umbraco Deploy.
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Deploy.
 ---
 
-# Release Notes
+# Release notes
 
 In this section, we have summarized the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the details.
 
 If there are any breaking changes or other issues to be aware of when upgrading, they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find the details about the breaking changes in the [version-specific updates](upgrades/version-specific.md) article.
+If you are upgrading to a new major version, you can find the details about the breaking changes in the [version-specific updates](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
@@ -118,7 +120,7 @@ Add the package as a development dependency in your custom backoffice extension 
 ### [17.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (October 30th 2025)
 
 * Compatibility with Umbraco 17.0.0-rc1.
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 
 ## Umbraco.Deploy.Contrib
 

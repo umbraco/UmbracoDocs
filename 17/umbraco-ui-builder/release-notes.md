@@ -20,10 +20,10 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**17.2.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.9) **(September 14th 2026)**
 
-* Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233)
-* Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234)
-* Fixed updating existing Related Collections relations through the Entity Picker not working [#235](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/235)
-* Fixed the save notification not using a custom name format set with `SetNameFormat` [#236](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/236)
+* Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233).
+* Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234).
+* Fixed updating existing Related Collections relations through the Entity Picker not working [#235](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/235).
+* Fixed the save notification not using a custom name format set with `SetNameFormat` [#236](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/236).
 
 ### [**17.2.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.8) **(September 7th 2026)**
 
@@ -73,8 +73,8 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**17.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) **(March 5th 2026)**
 
-* Added support for [EF Core](./advanced/efcore-repositories.md) data access
-* [Async](./advanced/async-apis.md) APIs 
+* Added support for [EF Core](advanced/efcore-repositories.md) data access
+* [Async](advanced/async-apis.md) APIs
 
 ### [**17.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.5) **(February 27th 2026)**
 
@@ -118,7 +118,6 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 * Compatibility update for Umbraco 17.0.0-rc1
 
-
 ## Legacy Release Notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on GitHub](../../17/umbraco-ui-builder/changelog-archive/changelog.md).

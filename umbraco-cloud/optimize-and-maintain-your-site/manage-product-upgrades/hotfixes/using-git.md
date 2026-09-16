@@ -47,7 +47,7 @@ Before you push the newly created branch to Umbraco Cloud we need to change the 
 
 1. Find the clone URL for the Live environment in the Umbraco Cloud Portal.
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
 
 1.  In GitKraken add a **new remote**, by clicking the **+** next to _Remote_.
 

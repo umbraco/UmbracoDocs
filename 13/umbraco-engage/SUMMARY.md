@@ -6,7 +6,7 @@
 
 ## Installation
 
-* [System Requirements](getting-started/for-developers/system-requirements.md)
+* [System Requirements](installation/system-requirements.md)
 * [Installation](installation/installation.md)
 * [Licensing](installation/licensing.md)
 * [Verify your Engage installation](installation/troubleshooting-installs.md)
@@ -20,7 +20,7 @@
 
 ## Getting Started
 
-* [Getting Started](getting-started/README.md)
+* [Getting Started](getting-started/getting-started.md)
 * [For Marketers and Editors](getting-started/for-marketers-and-editors/README.md)
   * [Cockpit](getting-started/for-marketers-and-editors/cockpit.md)
   * [Marketing Resources](getting-started/for-marketers-and-editors/marketing-resources.md)
@@ -132,7 +132,7 @@
 
 ## Security and Privacy
 
-* [Security and privacy](security-and-privacy/README.md)
+* [Security and privacy](security-and-privacy/security-and-privacy.md)
 * [Retention periods of data](security-and-privacy/retention-periods-of-data.md)
 * [Anonymization](security-and-privacy/anonymization.md)
 * [GDPR & EU regulation](security-and-privacy/gdpr/README.md)
@@ -141,7 +141,7 @@
 
 ## Tutorials
 
-* [Overview](tutorials/README.md)
+* [Overview](tutorials/tutorials.md)
 * [How to Get Started with Personalization](tutorials/how-to-get-started-with-personalization.md)
 * [How to Create a Persona](tutorials/how-to-create-a-persona.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)

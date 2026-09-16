@@ -10,7 +10,7 @@ The databases are environment specific. During deployment across environments, U
 
 The workflow described above does not recognize deletions of content and schema from the database. You'll need to delete the content and/or schema on all your environments to fully complete the deletion.
 
-For schema, Umbraco Deploy can remove the database entries that no longer have a corresponding `.uda` file. Cleaning is an explicit operation or an opt-in setting, so nothing is deleted without a decision on each environment. See [Cleaning schema](#cleaning-schema) for details.
+For schema, Umbraco Deploy can remove the database entries that no longer have a corresponding `.uda` file. Cleaning is an explicit operation or an opt-in setting, so nothing is deleted without a decision on each environment. See [Cleaning schema](deploying-deletions.md#cleaning-schema) for details.
 
 The main reason not to delete schema and content on deployments is that it could lead to an unrecoverable loss of data.
 
@@ -28,7 +28,7 @@ The following example will build in the scenario outlined above, calling the lef
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
 
 Following the **Activity log** in the browser, you'll notice that the `.uda` file for the Document Type gets deleted. Additionally, other files with changes are copied to the Live environment.
 
@@ -41,7 +41,7 @@ The reason for the Document Type to still be there is, that the associated `.uda
 
 To delete the Document Type from your entire project, you need to delete it from the backoffice of the other environments. When the Document Type has been deleted from the backoffice of all the environments and no `.uda` file exist, it is fully removed.
 
-Instead of deleting the Document Type in the backoffice, you can [clean the schema](#cleaning-schema) on the Live environment. Deploy then deletes the Document Type, because its `.uda` file no longer exists.
+Instead of deleting the Document Type in the backoffice, you can [clean the schema](deploying-deletions.md#cleaning-schema) on the Live environment. Deploy then deletes the Document Type, because its `.uda` file no longer exists.
 
 If you save your Document Type during the process, a new `.uda` file is generated. This can recreate your deleted Document Type when deploying changes between environments.
 

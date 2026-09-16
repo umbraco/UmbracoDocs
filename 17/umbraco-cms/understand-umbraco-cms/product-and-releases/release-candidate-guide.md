@@ -72,7 +72,7 @@ The blog post will mention if there are any specific features or workflows that 
 
 Here is a list of all the new or updated articles in this version.
 
-* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific/#umbraco-17)
+* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific.md#umbraco-17)
 * [Date Time Property Editor](../../model-your-content/property-editors/built-in-umbraco-property-editors/date-time-editor/)
 * [`UnattendedTelemetryLevel` Setting](/broken/pages/Dksuk4APBTbLNXEdboGE) and [`UnattendedTelemetryLevel` in Unattended Install](../../get-started/installation/unattended-install.md)
 * [`UnattendedTelemetryLevel` in the Configuration article](../../develop-with-umbraco/configuration/unattendedsettings.md#unattended-telemetry-level)
