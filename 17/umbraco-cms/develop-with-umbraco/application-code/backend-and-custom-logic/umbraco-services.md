@@ -117,7 +117,7 @@ When you're creating your own class, in order to make use of the dependency inje
 
 There are different ways that you can achieve the same outcome:
 
-Register directly into the **Program.cs** class.
+Register directly into **Program.cs**.
 
 ```csharp
 builder.CreateUmbracoBuilder()
@@ -159,9 +159,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 ```
 
-When creating Umbraco packages you don't have access to the Startup class, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
-
-If you don't have access to the Startup class
+When creating Umbraco packages you don't have access to `Program.cs`, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
 
 ```csharp
 public class CustomComposer : IComposer
@@ -173,15 +171,19 @@ public class CustomComposer : IComposer
 }
 ```
 
-Then your custom class eg. `CustomNewsArticleService` can take advantage of the same injection to access services eg:
+Then your custom class, `CustomNewsArticleService`, can take advantage of the same injection to access services:
 
 ```csharp
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Infrastructure.Services.Implement;
 
@@ -190,20 +192,35 @@ public class CustomNewsArticleService: ICustomNewsArticleService
     private readonly IMediaService _mediaService;
     private readonly ILogger<CustomNewsArticleService> _logger;
     private readonly IUmbracoContextFactory _contextFactory;
+    private readonly IDocumentNavigationQueryService _documentNavigationQueryService;
 
-    public CustomNewsArticleService(ILogger<CustomNewsArticleService> logger, IUmbracoContextFactory contextFactory, IMediaService mediaService)
+    public CustomNewsArticleService(
+        ILogger<CustomNewsArticleService> logger,
+        IUmbracoContextFactory contextFactory,
+        IMediaService mediaService,
+        IDocumentNavigationQueryService documentNavigationQueryService)
     {
         _logger = logger;
         _contextFactory = contextFactory;
         _mediaService = mediaService;
+        _documentNavigationQueryService = documentNavigationQueryService;
     }
 
     public void DoSomethingWithNewsArticles()
     {
         using (var contextReference = _contextFactory.EnsureUmbracoContext())
         {
-            IPublishedContentCache contentCache = contextReference.UmbracoContext.Content;
-            IPublishedContent newsSection = contentCache.GetAtRoot().FirstOrDefault().Children().FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+            IPublishedContentCache? contentCache = contextReference.UmbracoContext.Content;
+
+            if (_documentNavigationQueryService.TryGetRootKeys(out IEnumerable<Guid> rootKeys) is false)
+            {
+                _logger.LogDebug("News Section Not Found");
+                return;
+            }
+
+            IPublishedContent? root = rootKeys.Select(key => contentCache.GetById(key)).WhereNotNull().FirstOrDefault();
+            IPublishedContent? newsSection = root?.Children().FirstOrDefault(f => f.ContentType.Alias == "newsSection");
+
             if (newsSection == null)
             {
                 _logger.LogDebug("News Section Not Found");
