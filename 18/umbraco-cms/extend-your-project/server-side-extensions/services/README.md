@@ -7,19 +7,21 @@ description: >-
 
 # Services and Helpers
 
-Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when extending or implementing an Umbraco site.
+Umbraco has a range of 'Core' Services and Helpers that act as a 'gateway' to Umbraco data and functionality to use when building Umbraco sites.
 
-The general rule of thumb is that management Services provide access to allow the modification of Umbraco data (and therefore aren't optimized for displaying data). Helpers on the other hand provide access to readonly data with performance of displaying data taken into consideration.
+The general rule of thumb is that management Services provide access to allow the modification of Umbraco data. The services are not optimized for displaying data. Helpers on the other hand provide access to readonly data with performance of displaying data taken into consideration.
 
 {% hint style="warning" %}
 
-Although there is a management Service named the `IContentService` - only use this to modify content - do not use the `IContentService` in a View/Template to pull back data to display, this will make requests to the database and be slow - here instead inject the `IPublishedContentQueryAccessor` interface and get the `IPublishedContentQuery` that operate against a cache of published content items, and are significantly quicker.
+Avoid using `IContentService` in Views or Templates to fetch data; it queries the database and slows performance. Use it only for modifying content.
+
+To display data faster, inject `IPublishedContentQueryAccessor` to access the `IPublishedContentQuery` cache.
 
 {% endhint %}
 
 The management Services and Helpers are all registered with Umbraco's underlying DI framework. This article aims to show examples of gaining access to utilize these resources in multiple different scenarios. There are subtle differences to be aware of depending on what part of Umbraco is being extended.
 
-This article will also suggest how to follow a similar pattern to encapsulate custom 'site specific' implementation logic, in similar services and helpers, registered with the underlying DI contain. This would be to avoid repetition and promote consistency and readability within an Umbraco site solution.
+This article suggests using a similar pattern to encapsulate custom, site-specific logic in services and helpers registered with the underlying DI container. This would be to avoid repetition and promote consistency and readability within an Umbraco site solution.
 
 ## Accessing Management Services and Helpers in a Template/View
 
@@ -42,6 +44,14 @@ Inside a view/template or partial view, access is also provided by the DI framew
     IPublishedContent publishedContentItem = Umbraco.Content(123);
 }
 ```
+
+{% hint style="warning" %}
+
+Avoid using `IContentService` in Views or Templates to fetch data; it queries the database and slows performance. Use it only for modifying content.
+
+To display data faster, inject `IPublishedContentQueryAccessor` to access the `IPublishedContentQuery` cache.
+
+{% endhint %}
 
 ## Accessing Core Services and Helpers in a Controller
 
@@ -636,7 +646,7 @@ You can generate this controller in Visual Studio by using either ctrl + . or al
 
 #### Using the SiteService inside a View
 
-If strictly following the paradigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances, where the custom implementation logic shared is very 'View' specific. Custom logic for constructing 'Alternative Text' for images or different crop URLs for images can be neatly handled in a custom Helper/Service without having to create a hijacked MVC route for the request and build a complex ViewModel. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
+If strictly following the paradigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances, where the custom implementation logic shared is very 'View' specific. Some custom logic is purely about how something displays in a specific view — for example, generating alt text for an image, or picking the right image URL for a responsive `srcset`. For cases like these, a custom Helper or Service called directly from the view is often simpler than hijacking the route to build a custom controller and ViewModel just to pass the same data down. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
 
 To access the service directly from the view you would need to use the Razor `@inject` keyword to get a reference to the concrete implementation of the service registered with DI:
 
