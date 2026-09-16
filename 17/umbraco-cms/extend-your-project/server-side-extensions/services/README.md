@@ -186,10 +186,12 @@ public class HandleUnPublishingEventComposer : IComposer
 public class HandleUnPublishingHandler : INotificationHandler<ContentUnpublishedNotification>
 {
     private readonly IUmbracoContextFactory _umbracoContextFactory;
+    private readonly ICustomFourTenService _customFourTenService; // Your own custom service for persisting 410 URLs
 
-    public HandleUnPublishingHandler(IUmbracoContextFactory umbracoContextFactory)
+    public HandleUnPublishingHandler(IUmbracoContextFactory umbracoContextFactory, ICustomFourTenService customFourTenService)
     {
         _umbracoContextFactory = umbracoContextFactory;
+        _customFourTenService = customFourTenService;
     }
 
     public void Handle(ContentUnpublishedNotification notification)
@@ -229,38 +231,82 @@ When fetching multiple content items by ID, using `UmbracoContext.Content` is li
 
 #### Accessing the Published Content Cache from a Content Finder / UrlProvider
 
-Inside a ContentFinder access to the content cache is possible by injecting `IUmbracoContextAccessor` into the constructor and provided via the PublishedRequest object:
+Inside a custom `IContentFinder` implementation, access to the content cache is possible by injecting `IUmbracoContextAccessor` into the constructor, provided via the `PublishedRequest` object:
 
 ```csharp
-public Task<bool> TryFindContent(IPublishedRequestBuilder request)
-{
-    if (!UmbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
-    {
-        return false;
-    }
-    var someContent = umbracoContext.Content.GetById(1234);
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Web;
 
-    // ...
+public class MyContentFinder : IContentFinder
+{
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+    public MyContentFinder(IUmbracoContextAccessor umbracoContextAccessor)
+    {
+        _umbracoContextAccessor = umbracoContextAccessor;
+    }
+
+    public Task<bool> TryFindContent(IPublishedRequestBuilder request)
+    {
+        if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
+        {
+            return Task.FromResult(false);
+        }
+
+        var someContent = umbracoContext.Content.GetById(1234);
+
+        // ...
+        return Task.FromResult(true);
+    }
 }
 ```
 
-And inside an `IPublishedUrlProvider` injection of `IUmbracoContextAccessor` into the constructor is also possible.
+You can also inject `IUmbracoContextAccessor` into the constructor of a custom `IUrlProvider` implementation:
 
 ```csharp
-private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Cms.Core.Web;
 
-public MyCustomUrlProvider(IUmbracoContextAccessor umbracoContextAccessor)
+public class MyCustomUrlProvider : IUrlProvider
 {
-    _umbracoContextAccessor = umbracoContextAccessor ?? throw new ArgumentNullException(nameof(umbracoContextAccessor));
+    private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+    public MyCustomUrlProvider(IUmbracoContextAccessor umbracoContextAccessor)
+    {
+        _umbracoContextAccessor = umbracoContextAccessor ?? throw new ArgumentNullException(nameof(umbracoContextAccessor));
+    }
+
+    public string Alias => "myCustom";
+
+    public UrlInfo? GetUrl(IPublishedContent content, UrlMode mode, string? culture, Uri current)
+    {
+        var umbracoContext = _umbracoContextAccessor.GetRequiredUmbracoContext();
+        var someContent = umbracoContext.Content.GetById(1234);
+
+        // ...
+        return null;
+    }
+
+    public IEnumerable<UrlInfo> GetOtherUrls(int id, Uri current) => [];
+
+    public Task<UrlInfo?> GetPreviewUrlAsync(IContent content, string? culture, string? segment) => Task.FromResult<UrlInfo?>(null);
 }
+```
 
-public override UrlInfo GetUrl(IPublishedContent content, UrlMode mode = UrlMode.Default, string culture = null, Uri current = null)
+Register the custom provider with Umbraco's underlying DI container using an `IComposer`:
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+
+public class MyCustomUrlProviderComposer : IComposer
 {
-
-    var umbracoContext = _umbracoContextAccessor.GetRequiredUmbracoContext();
-    var someContent = umbracoContext.Content.GetById(1234);
-
-    // ...
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.AddUrlProvider<MyCustomUrlProvider>();
+    }
 }
 ```
 
@@ -420,6 +466,18 @@ public class SiteService : ISiteService
 }
 ```
 
+{% hint style="warning" %}
+This implementation injects `IPublishedContentQuery`, which is scoped to the current HTTP request. Register `SiteService` as `Scoped` (or `Transient`), not `Singleton`:
+
+```csharp
+builder.Services.AddScoped<ISiteService, SiteService>();
+```
+
+Registering it as a `Singleton`, as shown in the earlier registration example, causes Umbraco to fail on startup with an error similar to:
+
+`Cannot consume scoped service 'Umbraco.Cms.Core.IPublishedContentQuery' from singleton 'Umbraco9.Services.ISiteService'.`
+{% endhint %}
+
 **2 - The service can be used within or outside of a web request**
 
 In order to replicate `ContentAtRoot` outside of a web request, you can inject `IDocumentNavigationQueryService` (or `IMediaNavigationQueryService` for media). This service provides access to an in-memory store of unique keys for all root nodes within the Umbraco Content or Media trees.
@@ -481,6 +539,12 @@ public class SiteService : ISiteService
 
 The second approach can seem 'different' or more complex at first glance, but it is the syntax and method names that are slightly different... it enables the registering of the service in Singleton Scope, and its use outside of controllers and views.
 
+This implementation only depends on `IUmbracoContextFactory` and `IDocumentNavigationQueryService`, both of which are safe to resolve from a Singleton:
+
+```csharp
+builder.Services.AddSingleton<ISiteService, SiteService>();
+```
+
 {% hint style="info" %}
 Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`. This can happen if your service interacts with third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
 
@@ -495,9 +559,8 @@ If you need to know whether the UmbracoContext has been obtained from an existin
 
 ```csharp
 using System.Linq;
-using Umbraco.Core.Models.PublishedContent;
-using Umbraco.Web;
-using Umbraco.Web.PublishedCache;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Web;
 
 namespace Umbraco9.Services;
 
@@ -594,7 +657,6 @@ Sometimes you might want to request, for example "/sitemap.xml" from your server
 
 ```csharp
 ...
-WebApplication app = builder.Build();
 builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     options.HandleAsServerSideRequest = httpRequest =>
@@ -602,12 +664,14 @@ builder.Services.Configure<UmbracoRequestOptions>(options =>
         return httpRequest.Path.StartsWithSegments("/sitemap.xml");
     };
 });
+
+WebApplication app = builder.Build();
 ```
 
 **For multiple routes:**
 
 ```csharp
-services.Configure<UmbracoRequestOptions>(options =>
+builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     string[] allowList = new[] {"/sitemap.xml", "robots.txt", ...};
     options.HandleAsServerSideRequest = httpRequest =>
