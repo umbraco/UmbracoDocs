@@ -20,6 +20,48 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.2.0) (September 17th 2026)
+
+#### Form versions
+
+A version of a form is now saved every time the form is saved, including its workflows. The Rollback action on a form lists the saved versions, shows what each one contains, and rolls the form back to the one you pick. A rollback is saved as a version of its own, so it can be undone the same way.
+
+Pin a version to keep it. Pinned versions, and the most recent version of a form, are never removed.
+
+Removing older versions is opt-in and set up in configuration. For more information, see the [FormVersionCleanup](developer/configuration/README.md#formversioncleanup) section of the Configuration article.
+
+#### Other
+
+* Records: Add create and delete endpoints to the Management API
+* Field Types: Add a Decimal storage type for field values, so decimals keep their fractional part instead of being stored as whole numbers [#1515](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1515)
+* Form Entries: Show a record's additional data in the entry details [#1602](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1602)
+* Date Fields: Format date field values in the record's own culture in the entries grid, exports, and workflow output [#1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773)
+* Data Sources: Fix foreign key detection for SQL database data sources [#1768](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1768)
+* Data Sources: Render the data source type settings on the initial workspace load [#1770](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1770)
+* Providers: Handle unregistered provider types without failing the provider listings [#1769](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1769)
+* Forms Dashboard: Fix incorrect pagination when searching forms [#1776](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1776)
+* Delivery API: Resolve local links in the message shown on submit [#1227](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1227)
+* Delivery API: Return rich text as JSON when `RichTextOutputAsJson` is enabled [#1779](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1779)
+* File Upload: Fix the page reload when pressing Enter to add an allowed file type [#1780](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1780)
+* File Upload: Fix the alignment and sizing of the allowed file type buttons [#1780](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1780)
+* Field Previews: Fix the alignment of preview list items [#1635](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1635)
+* Form Copy: Remap field ids in workflow conditions when copying a form [#1784](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1784)
+* Permissions: Check the edit permission, not the view permission, before allowing an entry to be edited
+
+{% hint style="warning" %}
+The Post to URL, Post as XML, and Save as File workflows now send date field values in the ISO 8601 format.
+
+For example, a date is sent as `2027-09-22T19:33:00`. These workflows previously used the format of whichever culture the server ran under. Update any integration that parses these values.
+
+Date field values shown to people now follow the culture the entry was submitted with. The entries grid, the exports, the email and Slack workflows, and the Save as Umbraco Node workflow are affected.
+{% endhint %}
+
+{% hint style="info" %}
+Form versions are kept indefinitely. Removing old versions is opt-in, so an upgrade never removes form history on its own.
+
+To start removing them, set `Enabled` to `true` under `Umbraco:Forms:Options:FormVersionCleanup`, and set `KeepLatestVersions`, `KeepVersionsNewerThanDays`, or both. The most recent version of a form and any pinned version are always kept.
+{% endhint %}
+
 ### [18.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.1) (August 27th 2026)
 
 * Upgrading: Fix a boot failure when upgrading directly from Forms 17.5.0 [#1782](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1782)
