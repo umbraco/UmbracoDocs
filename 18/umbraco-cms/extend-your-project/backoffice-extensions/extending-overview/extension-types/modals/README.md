@@ -80,24 +80,22 @@ export class MyElement extends UmbElementMixin(LitElement) {
 }
 ```
 
-In this case, the modal token from the previous example is used. It accepts a key as input data and returns the new key if the modal is submitted.
+In this case, the modal token from the previous example, `MY_MODAL_TOKEN`, is reused. It accepts and returns the `myData` field defined on the token's value type.
 
 ```typescript
-const modalContext = this.#modalManagerContext?.open(this, MY_SOMETHING_PICKER_MODAL, {
+const modalContext = this.#modalManagerContext?.open(this, MY_MODAL_TOKEN, {
     value: {
-        key: this.selectedKey,
+        myData: this.selectedValue,
     },
 });
 
 modalContext
     ?.onSubmit()
     .then((value) => {
-        this.selectedKey = value.key;
+        this.selectedValue = value.myData;
     })
     .catch(() => undefined);
 ```
-
-[See the implementing a Confirm Dialog for an example.](confirm-dialog.md)
 
 ### Modal Route Registration
 
