@@ -161,9 +161,9 @@ See documentation on [Composing](../../../model-your-content/content-types-and-s
 
 Injecting types that are based on an HTTP Request such as `UmbracoHelper` into classes that are not based on an HTTP Request will trigger an error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
 
-In this example, when a page is unpublished, instead of a 404 occurring for the content when the URL is requested in the future, we might want to serve a 410 'page gone' status code instead. We handle the Unpublishing notification of the ContentService, access the Published Content Cache, determine it's 'published URL' and then store for later use in any 'serving the 410' mechanism.
+Instead of returning a 404 when a user requests an unpublished page, you can serve a 410 "Page Gone" status code. Subscribe to the `ContentService` unpublishing notification, check the published content cache for its URL, and store it to serve a 410 status later.
 
-An [IContentFinder](../../../develop-with-umbraco/application-code/backend-and-custom-logic/routing/request-pipeline/icontentfinder.md) could be placed in the ContentFinder ordered collection, right before a 404 is served. This could be done to lookup the incoming request against the stored location of 410 URLs, and serve the 410 status request code if a match is found for the previously published item.
+An [IContentFinder](../../../develop-with-umbraco/application-code/backend-and-custom-logic/routing/request-pipeline/icontentfinder.md) could be placed in the ContentFinder ordered collection, right before a 404 is served. This checks the request against stored 410 URLs and serves a 410 status code if a match is found.
 
 ```csharp
 using System;
@@ -320,9 +320,9 @@ It is still possible to inject services into IContentFinder's. IContentFinders a
 
 ## Customizing Services and Helpers
 
-When implementing an Umbraco site, it is likely to have to execute similar code that accesses or operates on Umbraco data, in multiple places, perhaps using the core management Services or Umbraco Helpers.
+When implementing an Umbraco site, you often reuse code that operates on data via core management Services or Umbraco Helpers.
 
-For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. Repeating this kind of logic in multiple places, Views, Partial Views / Controllers etc, is possible, but it's generally considered good practice to consolidate this logic into a single place.
+For example; Getting a list of the latest News Articles, or building a link to the site's News Section or Contact Us page. Repeating this kind of logic in multiple places like Views, Partial Views and Controllers, is possible. It is, however, considered good practice to consolidate this logic into a single place.
 
 ### Extension methods
 
@@ -348,13 +348,13 @@ public static class PublishedContentQueryExtensions
 }
 ```
 
-Anywhere there is reference to the `UmbracoHelper` or `IPublishedContentQuery` and a reference is added to the namespace the extension belongs to, it is possible to call the method by writing `_publishedContentQuery.GetNewsSection()`.
+When calling an extension method that includes the namespace for `UmbracoHelper` or `IPublishedContentQuery`, invoke it directly using `_publishedContentQuery.GetNewsSection()`.
 
 ### Custom Services and Helpers
 
-Another option, is to make use of the underlying DI framework, and create custom Services and Helpers, that in turn can have the 'core' management Services and Umbraco Helpers injected into them.
+Another option, is to make use of the underlying DI framework, and create custom Services and Helpers. These can in turn have the 'core' management Services and Umbraco Helpers injected into them.
 
-This approach enables the grouping together of similar methods within a suitably named service, and promotes the possibility of testing this custom logic outside of Controllers and Views.
+This approach enables the grouping together of similar methods within a suitably named service. It also promotes the possibility of testing this custom logic outside of Controllers and Views.
 
 {% hint style="warning" %}
 Depending on where the custom service will be utilized, we will dictate the best practice approach to accessing the 'Published Content Cache'. If it is 100% guaranteed that the service will only be called from a place with an UmbracoContext, like a controller or view, then it is safe to inject `IPublishedContentQuery` etc for simplicity. However if the custom service is called in a location without UmbracoContext (like an notification handler) it will fail. Therefore the approach of accessing the Published Content Cache via injecting IUmbracoContextFactory and calling `EnsureUmbracoContext()` will provide consistency across any custom services no matter where they are utilized.
