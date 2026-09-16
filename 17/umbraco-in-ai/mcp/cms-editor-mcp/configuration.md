@@ -20,17 +20,23 @@ The Editor MCP ships with the following modes:
 | ----------------- | ------------------------------------------------ | ---------------------------------------------------- |
 | `content`         | `content`, `publishing`, `versioning`            | Content editing, publishing, and version history.    |
 | `media`           | `media`, `media-management`                      | Browse, upload, and organize media.                  |
+| `library`         | `element`                                        | Browse, view, and manage reusable Library elements (Umbraco 18 Library section). |
 | `blueprints`      | `blueprint`                                      | Page blueprints and templates.                       |
 | `translation`     | `language`, `translation`, `dictionary`           | Multi-language content and dictionary management.    |
 | `tags`            | `tag`                                            | Tag browsing and filtering.                          |
-| `content-health`  | `content-health`, `content-reporting`            | Content quality auditing and lifecycle reporting.    |
+| `content-health`  | `content-health`                                 | Per-page content auditing and SEO analysis.          |
 | `site-structure`  | `site-structure`                                 | Site architecture analysis.                          |
-| `relationships`   | `relationships`                                  | Inbound references, outbound links, and relationship mapping. |
-| `media-health`    | `media-health`                                   | Media library health analysis.                       |
 | `bulk-operations` | `bulk-operations`                                | Batch content operations (max 10 pages per call).    |
 | `members`         | `member`, `member-group`, `member-reporting`     | Member management and reporting.                     |
 | `scheduling`      | `scheduling`                                     | Scheduled content publishing.                        |
 | `redirects`       | `redirect`                                       | URL redirect management.                             |
+| `relationships`   | `relationships`                                  | Inbound references, outbound links, and relationship mapping. |
+| `public-access`   | `public-access`                                  | Restrict content pages to members of specific groups (member-gated content). |
+| `notifications`   | `notifications`                                  | Manage per-user email notification subscriptions on content pages (hosted-only). |
+| `recycle-bin`     | `recycle-bin`                                    | List the content or media recycle bin and permanently delete items or empty the bin (irreversible). |
+| `account`         | `account`                                        | Identify which Umbraco backoffice user the MCP server is authenticated as. |
+
+The `content-reporting` and `media-health` collections are not currently mapped to a mode. Enable them directly with `UMBRACO_INCLUDE_TOOL_COLLECTIONS=content-reporting,media-health`.
 
 ### Available Slices
 
@@ -80,7 +86,8 @@ UMBRACO_READONLY=true
 Enable only reporting and auditing tools:
 
 ```
-UMBRACO_TOOL_MODES=content-health,site-structure,media-health
+UMBRACO_TOOL_MODES=content-health,site-structure
+UMBRACO_INCLUDE_TOOL_COLLECTIONS=content-reporting,media-health
 ```
 
 #### Exclude destructive operations
