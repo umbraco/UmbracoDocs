@@ -52,7 +52,6 @@ exceptions:
   - GET      # HTTP GET method
   - GHSA     # GitHub Security Advisory
   - GIF      # Graphics Interchange Format
-  - GLM      # General Language Model (Zhipu AI / Z.AI model family)
   - GUI      # Graphical user interface
   - GUID     # Globally Unique Identifier
   - HAL      # Hypertext Application Language
