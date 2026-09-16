@@ -51,6 +51,8 @@ Umbraco reserves the right to patch critical vulnerabilities. This ensures the U
 
 When a newer version of a product is available for your project, an **Upgrade available** banner is shown in the Cloud Portal. The banner appears on the left-most mainline environment card. Project administrators select **Get started** on the banner to review and start the upgrade.
 
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Live environment card showing 5 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
+
 The banner offers any higher minor or patch version within the major version your project runs. Major version upgrades are never offered by the banner. See the [Major Upgrades](major-upgrades/README.md) article for how to upgrade to a new major version.
 
 The following products are upgraded through the banner:
@@ -70,6 +72,8 @@ The upgrade is applied to the left-most mainline environment only. Test the upgr
 {% hint style="warning" %}
 Projects with a single Live environment can also upgrade from the banner. As there is no other environment to test on, the upgrade is applied directly to Live. The site restarts during the upgrade. The confirmation dialog warns about the restart and links to the version-specific upgrade notes.
 {% endhint %}
+
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-dialog-single-environment.png" alt="Confirmation dialog listing five packages with current and target versions, and a warning that the site restarts"><figcaption><p>The confirmation dialog on a single-environment project</p></figcaption></figure>
 
 The banner is independent of the **Automatic Minor Upgrades** and **Automatic Patch Upgrades** settings. Selecting **Get started** is an explicit action, and the upgrade runs even when automatic upgrades are disabled.
 
