@@ -97,15 +97,15 @@ public class BlogPostController : RenderController
 
 ## Accessing core Services and Helpers when there is no 'UmbracoContext'
 
-Controllers and Views can access an `IUmbracoContext` by injecting the `IUmbracoContextAccessor`, however this is not always the case 'everywhere in Umbraco', for example common extension points: Components,ContentFinders or Custom C# Classes.
+Controllers and Views can access an `IUmbracoContext` by injecting the `IUmbracoContextAccessor`. This is, however, not always the case. The following common extension points are exceptions: Components, ContentFinders or Custom C# Classes.
 
 {% hint style="warning" %}
-IUmbracoContext, UmbracoHelper, IPublishedContentQuery - are all based on an HttpRequest - their lifetime is controlled by an HttpRequest. So if you are not operating within an actual request, you cannot inject these parameters and if you try to ... Umbraco will report an error on startup.
+`IUmbracoContext`, `UmbracoHelper`, and `IPublishedContentQuery` are all scoped to the current `HttpRequest`. Injecting one into a class resolved outside a request — like a Singleton service — makes Umbraco report an error at startup.
 {% endhint %}
 
 ### Injecting Services into a Component
 
-It's possible to inject management Services that do not rely on the `UmbracoContext` into the constructor of a component. This example shows injecting the `IMediaService` in a Notification Handler to create a corresponding Media Folder for every 'landing page' that is saved in the Content Section, by subscribing to the 'Content Saved' notification.
+It's possible to inject management Services that do not rely on the `UmbracoContext` into the constructor of a component. This example demonstrates injecting `IMediaService` into a notification handler to auto-create a media folder when saving a landing page.
 
 ```csharp
 using System.Linq;
@@ -159,7 +159,7 @@ See documentation on [Composing](../../../model-your-content/content-types-and-s
 
 ### Accessing Published Content outside of a HTTP Request
 
-Trying to inject types that are based on an HTTP Request such as `UmbracoHelper` or `IPublishedContentQuery` into classes that are not based on an HTTP Request will trigger an error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
+Injecting types that are based on an HTTP Request such as `UmbracoHelper` into classes that are not based on an HTTP Request will trigger an error. However, there is a technique that allows the querying of the Umbraco Published Content, using the `UmbracoContextFactory` and calling `EnsureUmbracoContext()`.
 
 In this example, when a page is unpublished, instead of a 404 occurring for the content when the URL is requested in the future, we might want to serve a 410 'page gone' status code instead. We handle the Unpublishing notification of the ContentService, access the Published Content Cache, determine it's 'published URL' and then store for later use in any 'serving the 410' mechanism.
 
