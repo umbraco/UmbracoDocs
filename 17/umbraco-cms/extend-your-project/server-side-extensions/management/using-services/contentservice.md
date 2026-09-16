@@ -48,6 +48,11 @@ public class PublishContentDemo
 }
 ```
 
+The `parentId`, node name, and property values above are hardcoded to keep the example short. In a real implementation:
+
+- `parentId` would typically come from configuration (`IOptions<T>`), a route or query parameter, or a lookup via `IContentService`
+- The name/property values would come from user input or another service.
+
 {% hint style="info" %}
 Always call `Save()` before `Publish()`, as publishing without saving first will not persist the changes.
 {% endhint %}
