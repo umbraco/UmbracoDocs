@@ -1,15 +1,16 @@
-# Service APIs
+---
+description: Use Umbraco's service APIs to create, update, and delete core entities stored in the database from your custom code.
+---
 
-_Whenever you need to modify an entity that Umbraco stores in the database, there are service APIs available to help you. This means that you can create, update and delete any of the core Umbraco entities directly from your custom code._
+# Accessing the Umbraco services
 
-## Accessing the Umbraco services
+Services are typically defined using interfaces. Umbraco has them in the `Umbraco.Cms.Core.Services` namespace, while the specific implementations can be found under the `Umbraco.Cms.Core.Services.Implement` namespace. To use the service APIs you must first access them. Owing to the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This is achieved via injecting the specific service you require - the service type or an interface.
 
-Services are typically defined using interfaces. Umbraco has them in the `Umbraco.Cms.Core.Services` namespace, while the specific implementations can be found under the `Umbraco.Cms.Core.Services.Implement` namespace. To use the service APIs you must first access them. Owing to the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This can be achieved via injecting the specific service you require - the service type or an interface.
-
-### Access via a Controller
+## Access via a Controller
 
 If you are accessing Umbraco services inside your own controller class, you can add the Umbraco services that you need as constructor parameters. An instance of every service will be provided at runtime from the service container. By saving each one to a local field, you can make use of them within the scope of your class:
 
+{% code title="CustomController.cs" %}
 ```csharp
 public class CustomController
 {
@@ -28,11 +29,13 @@ public class CustomController
     }
 }
 ```
+{% endcode %}
 
-### Access via a Razor View Template
+## Access via a Razor View Template
 
 Inside a Razor View template, you can make use of a service injection into a view using the `@inject` directive. It works similarly to adding a property to the view, and populating the property using DI:
 
+{% code title="MyView.cshtml" %}
 ```csharp
 @using Umbraco.Cms.Core.Services
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
@@ -46,13 +49,15 @@ Inside a Razor View template, you can make use of a service injection into a vie
     <h1>Secret Page - shhshshsh!</h1>
 }
 ```
+{% endcode %}
 
-### Access in a Custom Class via dependency injection
+## Access in a Custom Class via dependency injection
 
-If we wish to subscribe to notifications on one of the services, we'd create a Composer C# class, where you will add a custom `NotificationHandler`. In this custom `NotificationHandler` we would inject the service we need into the public constructor of the class and Umbraco's. The underlying dependency injection framework will do the rest.
+If you want to subscribe to notifications on one of the services, create a Composer C# class and add a custom `NotificationHandler`. In the `NotificationHandler`, inject the service you need into the public constructor. The underlying dependency injection framework will do the rest.
 
-In this example we will wire up to the ContentService 'Saved' event. We will create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore we will need the MediaService available to create the new folder.
+In this example, you will wire up to the ContentService 'Saved' event. You will create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore you will need the MediaService available to create the new folder.
 
+{% code title="CustomComposer.cs" %}
 ```csharp
 public class CustomComposer : IComposer
 {
@@ -62,7 +67,9 @@ public class CustomComposer : IComposer
     }
 }
 ```
+{% endcode %}
 
+{% code title="CustomNotificationHandler.cs" %}
 ```csharp
 using System.Linq;
 using Umbraco.Cms.Core;
@@ -97,7 +104,7 @@ public class CustomNotificationHandler : INotificationHandler<ContentSavedNotifi
             // if this is a new landing page create a folder for associated media in the media section
             if (contentItem.ContentType.Alias == "landingPage")
             {
-                // we have injected in the mediaService in the constructor for the component see above.
+                // the mediaService is injected in the constructor for the component see above.
                 bool hasExistingFolder = _mediaService.GetByLevel(1).Any(f => f.Name == contentItem.Name);
                 if (!hasExistingFolder)
                 {
@@ -110,8 +117,9 @@ public class CustomNotificationHandler : INotificationHandler<ContentSavedNotifi
     }
 }
 ```
+{% endcode %}
 
-#### Custom Class example
+### Custom Class example
 
 When you're creating your own class, in order to make use of the dependency injection framework, you need register the `ICustomNewsArticleService` service with the type `CustomNewsArticleService`. The `AddScoped()` method registers the service with the lifetime of a single request.
 
@@ -119,6 +127,7 @@ There are different ways that you can achieve the same outcome:
 
 Register directly into **Program.cs**.
 
+{% code title="Program.cs" %}
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -129,9 +138,11 @@ builder.CreateUmbracoBuilder()
 
 builder.Services.AddScoped<ICustomNewsArticleService, CustomNewsArticleService>();
 ```
+{% endcode %}
 
-Another approach is to create an extension method to `IUmbracoBuilder` and add it to the startup pipeline.
+Another approach is to create an extension method on `IUmbracoBuilder` and call it from `Program.cs`.
 
+{% code title="UmbracoBuilderServiceExtensions.cs" %}
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -148,7 +159,9 @@ public static class UmbracoBuilderServiceExtensions
     }
 }
 ```
+{% endcode %}
 
+{% code title="Program.cs" %}
 ```csharp
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -158,9 +171,11 @@ builder.CreateUmbracoBuilder()
     .AddCustomServices()
     .Build();
 ```
+{% endcode %}
 
 When creating Umbraco packages you don't have access to `Program.cs`, therefore it's recommended to use a `IComposer` instead. A Composer gives you access to the `IUmbracoBuilder`.
 
+{% code title="CustomComposer.cs" %}
 ```csharp
 public class CustomComposer : IComposer
 {
@@ -170,9 +185,11 @@ public class CustomComposer : IComposer
     }
 }
 ```
+{% endcode %}
 
 Then your custom class, `CustomNewsArticleService`, can take advantage of the same injection to access services:
 
+{% code title="CustomNewsArticleService.cs" %}
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -230,8 +247,9 @@ public class CustomNewsArticleService: ICustomNewsArticleService
     }
 }
 ```
+{% endcode %}
 
-### More information
+## More information
 
 * [Services in Umbraco](../../../extend-your-project/server-side-extensions/management/)
 * [Umbraco Notifications reference](../../../extend-your-project/server-side-extensions/notifications/)
