@@ -81,10 +81,9 @@ The banner is independent of the **Automatic Minor Upgrades** and **Automatic Pa
 
 A newer version can exist on NuGet without being offered by the banner. The banner only offers versions that meet the following conditions:
 
-* The project runs Umbraco 9 or higher.
-* The release is marked as ready for upgrade on Umbraco Cloud and has not been withdrawn.
-* The release was created within the last 365 days.
-* The scheduled ready time of the release has passed.
+* The project runs on a supported Umbraco version.
+* The release has been marked ready on Umbraco Cloud.
+* The release was created within the last year.
 
 The banner is hidden while an upgrade is in progress, and for up to three hours after an upgrade stops reporting progress. Umbraco Heartcore projects and baseline child projects do not see the banner.
 
