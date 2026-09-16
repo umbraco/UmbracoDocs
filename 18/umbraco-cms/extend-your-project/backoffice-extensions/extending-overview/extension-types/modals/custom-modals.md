@@ -144,4 +144,4 @@ declare global {
 }
 </code></pre>
 
-The Promise of `umbOpenModal` is caught if it gets rejected. This is because if the Model gets closed without submission, the Promise is rejected. YThis can be used to carry out a certain action if the modal is cancelled. In this case, `undefined` is returned when the Modal is cancelled (rejected).
+The Promise of `umbOpenModal` is caught if it gets rejected. This is because if the Model gets closed without submission, the Promise is rejected. This can be used to carry out a certain action if the modal is cancelled. In this case, `undefined` is returned when the Modal is cancelled (rejected).

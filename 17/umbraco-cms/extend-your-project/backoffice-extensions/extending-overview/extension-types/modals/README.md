@@ -46,9 +46,13 @@ declare global {
 }
 </code></pre>
 
+{% hint style="info" %}
+`MY_MODAL_TOKEN` is a Modal Token, a typed constant that identifies the modal. See [Create a modal token](custom-modals.md#create-a-modal-token) for how to define one.
+{% endhint %}
+
 The Promise returned by `umbOpenModal` is handled for potential rejection. This occurs when the Model is closed without submitting. Use this behavior to carry out a certain action if the modal is cancelled. In this case, `undefined` is returned when the Modal is cancelled (rejected).
 
-See the [Confirm Modal article](../../../utilities/modals/confirm-dialog.md) for an example.
+See the [Confirm Modal article](confirm-dialog.md) for an example.
 
 ### Directly open via the Modal Manager Context
 
@@ -93,7 +97,7 @@ modalContext
     .catch(() => undefined);
 ```
 
-[See the implementing a Confirm Dialog for an example.](../../../utilities/modals/confirm-dialog.md)
+[See the implementing a Confirm Dialog for an example.](confirm-dialog.md)
 
 ### Modal Route Registration
 
