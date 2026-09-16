@@ -32,6 +32,10 @@
 * [Google Gemini](providers/google.md)
 * [Amazon Bedrock](providers/amazon.md)
 * [Microsoft AI Foundry](providers/microsoft-foundry.md)
+* [Alibaba Cloud Model Studio](providers/alibaba.md)
+* [Moonshot AI](providers/moonshot.md)
+* [OpenRouter](providers/openrouter.md)
+* [Z.AI](providers/zai.md)
 
 ## Add-ons
 
