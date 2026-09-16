@@ -38,10 +38,10 @@ dotnet add package Umbraco.AI.ZAI
 
 ### Getting an API Key
 
-1. Sign up at [z.ai/model-api](https://z.ai/model-api)
-2. Navigate to **API Keys**
-3. Create a new key
-4. Copy the key (it won't be shown again)
+1. Sign up at [z.ai/model-api](https://z.ai/model-api).
+2. Navigate to **API Keys**.
+3. Create a new key.
+4. Copy the key (it won't be shown again).
 
 {% hint style="warning" %}
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
@@ -53,5 +53,5 @@ Z.AI's global API doesn't offer an embeddings endpoint, so this provider support
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+- [Providers Overview](README.md).
+- [Managing Connections](../backoffice/managing-connections.md).

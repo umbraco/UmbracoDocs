@@ -38,10 +38,10 @@ dotnet add package Umbraco.AI.Alibaba
 
 ### Getting an API Key
 
-1. Sign up at [bailian.console.alibabacloud.com](https://bailian.console.alibabacloud.com/)
-2. Navigate to **API Key Management**
-3. Create a new API key
-4. Copy the key (it won't be shown again)
+1. Sign up at [bailian.console.alibabacloud.com](https://bailian.console.alibabacloud.com/).
+2. Navigate to **API Key Management**.
+3. Create a new API key.
+4. Copy the key (it won't be shown again).
 
 {% hint style="warning" %}
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
@@ -57,5 +57,5 @@ The default model is `qwen-plus` for chat and `text-embedding-v4` for embeddings
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+- [Providers Overview](README.md).
+- [Managing Connections](../backoffice/managing-connections.md).

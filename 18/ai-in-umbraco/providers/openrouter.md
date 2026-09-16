@@ -38,10 +38,10 @@ dotnet add package Umbraco.AI.OpenRouter
 
 ### Getting an API Key
 
-1. Sign up at [openrouter.ai](https://openrouter.ai/)
-2. Navigate to **Keys**
-3. Create a new key
-4. Copy the key (it won't be shown again)
+1. Sign up at [openrouter.ai](https://openrouter.ai/).
+2. Navigate to **Keys**.
+3. Create a new key.
+4. Copy the key (it won't be shown again).
 
 {% hint style="warning" %}
 Keep your API key secure. Never commit it to source control or expose it in client-side code.
@@ -57,5 +57,5 @@ This provider supports Chat only. OpenRouter's provider routing and fallback opt
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+- [Providers Overview](README.md).
+- [Managing Connections](../backoffice/managing-connections.md).
