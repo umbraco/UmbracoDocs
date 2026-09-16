@@ -1,11 +1,11 @@
 ---
 description: >-
-    Configure Z.AI as an AI provider for GLM chat models.
+    Configure Z.AI as an AI provider for General Language Model (GLM).
 ---
 
 # Z.AI
 
-Z.AI provides access to the General Language Model (GLM) family, supporting the Chat capability.
+Z.AI provides access to the GLM family, supporting the Chat capability.
 
 ## Installation
 
