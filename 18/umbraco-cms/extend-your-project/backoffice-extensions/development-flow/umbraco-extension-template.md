@@ -16,11 +16,11 @@ Umbraco provides a .NET template to help you get started with building extension
 To install the Umbraco extension template, run the following command in your terminal:
 
 ```bash
-dotnet new install Umbraco.Templates::17.1.0
+dotnet new install Umbraco.Templates@18.1.1
 ```
 
 {% hint style="info" %}
-The numbers at the end, `x.x.x` determines the specific version. It is important to match this with the version of the project you're creating the extension project in.
+The numbers at the end, `xx.x.x` determines the specific version. It is important to match this with the version of the project you're creating the extension project in.
 {% endhint %}
 
 This command installs both the `umbraco` and `umbraco-extension` templates, which you can use to create new Umbraco and Umbraco extension projects. If a new Umbraco project has previously been created using `dotnet new umbraco`, the templates may already be installed.
@@ -52,7 +52,7 @@ After setup, the dashboard appears in the main **Content** section of the Backof
 By default, the Umbraco Extensions project has a reference to the latest version of Umbraco. Specify your preferred Umbraco version for the Extensions template by using the `--version` flag:
 
 ```bash
-dotnet new umbraco-extension --version 17.1.0 -n MyExtension -ex
+dotnet new umbraco-extension --version 18.1.1 -n MyExtension -ex
 ```
 
 ### Add the Extension to an Umbraco Project
