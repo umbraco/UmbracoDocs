@@ -16,7 +16,9 @@ By default, all Umbraco Cloud projects are automatically upgraded when we releas
 
 When a new _minor_ version (like 8.**8**) is released, the upgrade is applied to the Umbraco Cloud engine, and **not to the individual projects**. The same goes for the release of new major versions (like **10**.0).
 
-For minor and major versions, there will be an option on your left-most mainline environment to apply the upgrade. The Umbraco Cloud engine will take care of the entire process, and you only need to ensure everything works when upgrade is complete.
+For minor and patch versions, an **Upgrade available** banner is shown on your left-most mainline environment when a newer version is offered. The Umbraco Cloud engine takes care of the entire process, and you only need to verify that everything works when the upgrade is complete. See the [Upgrade from the Cloud Portal](../minor-upgrades.md#upgrade-from-the-cloud-portal) section for details.
+
+Major versions are not offered through the banner. See the [Major Upgrades](../major-upgrades/README.md) article for how to upgrade to a new major version.
 
 It is recommended to use the automatic and _semi-automatic_ upgrade options provided to you as part of your Umbraco Cloud project. It's also possible to upgrade your Umbraco Cloud project manually. This can be done with both patches and minor and major versions.
 
