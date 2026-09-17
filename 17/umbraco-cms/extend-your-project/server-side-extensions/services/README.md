@@ -357,10 +357,11 @@ Another option, is to make use of the underlying DI framework, and create custom
 This approach enables the grouping together of similar methods within a suitably named service. It also promotes the possibility of testing this custom logic outside of Controllers and Views.
 
 {% hint style="warning" %}
-Depending on where the custom service will be utilized, we will dictate the best practice approach to accessing the 'Published Content Cache'. If it is 100% guaranteed that the service will only be called from a place with an UmbracoContext, like a controller or view, then it is safe to inject `IPublishedContentQuery` etc for simplicity. However if the custom service is called in a location without UmbracoContext (like an notification handler) it will fail. Therefore the approach of accessing the Published Content Cache via injecting IUmbracoContextFactory and calling `EnsureUmbracoContext()` will provide consistency across any custom services no matter where they are utilized.
+Depending on where the custom service will be utilized, we will dictate the best practice approach to accessing the 'Published Content Cache'. If it is guaranteed that the service will only be called from with an UmbracoContext, like a controller, it is safe to inject `IPublishedContentQuery`. However if the custom service is called in a location without UmbracoContext (like an notification handler) it will fail. The approach of accessing the Published Content Cache via injecting `IUmbracoContextFactory` and calling `EnsureUmbracoContext()` will provide consistency across any custom services no matter where they are utilized.
+
 {% endhint %}
 
-In this example, we create a custom service, that's responsible for finding key pages within a site, like the News Section or the Contact Us page. These methods will commonly be called in different places throughout the site, and it's great to encapsulate the logic to retrieve them in a single place - we'll call this service `SiteService`.
+In this example, we create a custom service, that's responsible for finding key pages within a site. This could be pages like the News Section or the Contact Us page. These methods will commonly be called in different places throughout the site, and you'll encapsulate the logic to retrieve them in a single place. This service will be called `SiteService`.
 
 Create an interface to define the service:
 
@@ -420,7 +421,7 @@ public class RegisterSiteServiceComposer : IComposer
 
 #### Lifetimes
 
-**"Transient"** services can be injected into "Transient" and below ⤵. (i.e. "Transient" services can be injected anywhere)
+**"Transient"** services can be injected into "Transient" and below ⤵. In other words, "Transient" services can be injected anywhere.
 
 * "Transient" means that anytime this type is needed a brand new instance of this type will be created.
 
@@ -436,7 +437,7 @@ public class RegisterSiteServiceComposer : IComposer
 
 **1 - The service will ONLY be used during a request like in a Controller or View**
 
-You can avoid repeating common implementation logic in multiple controllers and views. This is done by consolidating these implementations into a custom service. If you are very familiar with IPublishedContentQuery injecting this into the custom service is straight forward, but the caveat is you can only use this service in a controller/view.
+You can avoid repeating common implementation logic in multiple controllers and views. This is done by consolidating these implementations into a custom service. If you are familiar with `IPublishedContentQuery`, injecting this into the custom service is straight forward. The only caveat is you can only use this service in a controller/view.
 
 For example, locating the 'special' pages in the site using the familiar syntax of the `IPublishedContentQuery`:
 
@@ -550,7 +551,7 @@ builder.Services.AddSingleton<ISiteService, SiteService>();
 ```
 
 {% hint style="info" %}
-Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`. This can happen if your service interacts with third party code that also depends on an `IUmbracoContextFactory` instance (e.g. an Umbraco package).
+Occasionally, you may face a situation where Umbraco fails to boot, due to a circular dependency on `IUmbracoContextFactory`. This can happen if your service interacts with third party code that also depends on an `IUmbracoContextFactory` instance (like an Umbraco package).
 
 See the [Circular Dependencies](circular-dependencies.md) article for an example on how to get around this.
 {% endhint %}
@@ -559,7 +560,7 @@ See the [Circular Dependencies](circular-dependencies.md) article for an example
 
 The `IUmbracoContextFactory` will obtain an `UmbracoContext` by first checking to see if one exists on the current thread using the `IUmbracoContextAccessor`. This is a singleton that can be injected anywhere and whose function is to provide access to the current UmbracoContext. On a 'non request' thread the IUmbracoContextAccessor's TryGetUmbracoContext method will return false and the IUmbracoContextFactory will create a new instance of the UmbracoContext.
 
-If you need to know whether the UmbracoContext has been obtained from an existing thread, or whether it has been freshly created, you can 'inject' `IUmbracoContextAccessor` yourself. This will check if the UmbracoContext is null using the TryGetUmbracoContext method, indicating whether you are in a 'non request' thread or not. You will still need to inject and use an IUmbracoContextFactory if you subsequently want to obtain an UmbracoContext in a non-request thread.
+To identify whether the UmbracoContext has been obtained from an existing thread, or whether it has been freshly created, you can 'inject' `IUmbracoContextAccessor` yourself. This will check if the UmbracoContext is null using the TryGetUmbracoContext method, indicating whether you are in a 'non request' thread or not. You will still need to inject and use an IUmbracoContextFactory if you subsequently want to obtain an UmbracoContext in a non-request thread.
 
 ```csharp
 using System.Linq;
@@ -586,7 +587,7 @@ NB: With the `IUmbracoContextAccessor` and `IUmbracoContextFactory` you should n
 
 #### Using the custom SiteService inside a Controller
 
-Because we've registered the SiteService with Umbraco's underlying DI framework we can inject the service into our controller's constructor, in the same way as 'core' Services and Helpers.
+Because the SiteService is registered with Umbraco's underlying DI framework you can inject the service into your controller's constructor. This is done in the same way as 'core' Services and Helpers.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -635,9 +636,9 @@ You can generate this `ctor` in Visual Studio by using either ctrl + . or alt + 
 
 #### Using the SiteService inside a View
 
-If strictly following the paradigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is still a very common approach. There are circumstances, where the custom implementation logic shared is very 'View' specific. Some custom logic is purely about how something displays in a specific view — for example, generating alt text for an image, or picking the right image URL for a responsive `srcset`. For cases like these, a custom Helper or Service called directly from the view is often simpler than hijacking the route to build a custom controller and ViewModel just to pass the same data down. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
+If strictly following the paradigm of MVC, calling custom Services from Views might feel like an anti-pattern. However there isn't necessarily one single 'best practice' approach to working with Umbraco. A lot depends on circumstance, expertise and pragmatism. Allowing Umbraco to handle the flow of incoming requests to a particular page + template, and writing implementation logic in Views/Templates, is  a common approach. There are circumstances, where the custom implementation logic shared is 'View' specific. Some custom logic is purely about how something displays in a specific view. For example, generating alt text for an image, or picking the right image URL for a responsive `srcset`. A custom Helper or Service called directly from the view is often simpler than hijacking the route with a custom controller and ViewModel. Custom Services called from Views, can help separate the concerns, even if the 'plumbing' isn't pure MVC.
 
-To access the service directly from the view you would need to use the Razor `@inject` keyword to get a reference to the concrete implementation of the service registered with DI:
+To access the service directly from a view, use the Razor `@inject` directive to reference its registered implementation from DI:
 
 ```csharp
 @using MyProject.Services
