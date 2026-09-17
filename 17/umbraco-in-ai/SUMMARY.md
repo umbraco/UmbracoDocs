@@ -51,7 +51,7 @@
   * [Best Practice](mcp/cms-developer-mcp/best-practice/README.md)
     * [Creating Media](mcp/cms-developer-mcp/best-practice/creating-media.md)
     * [Example Instructions File](mcp/cms-developer-mcp/best-practice/example-instructions.md)
-* [Editor Model Context Protocol (MCP) Server](mcp/cms-editor-mcp/README.md)
+* [CMS Editor MCP Server](mcp/cms-editor-mcp/README.md)
   * [Available Tools](mcp/cms-editor-mcp/available-tools.md)
   * [Configuration Options](mcp/cms-editor-mcp/configuration.md)
   * [Use Cases](mcp/cms-editor-mcp/scenarios.md)

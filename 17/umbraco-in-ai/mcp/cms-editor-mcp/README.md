@@ -2,7 +2,7 @@
 description: Get started with the Umbraco CMS Editor Model Context Protocol (MCP).
 ---
 
-# Editor Model Context Protocol (MCP) Server
+# CMS Editor MCP Server
 
 The Editor [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) gives content editors and managers a natural, conversational way to work with Umbraco. It allows you to use AI assistants to manage content, media, translations, and more, without needing developer tools or technical setup.
 
