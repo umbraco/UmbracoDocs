@@ -151,7 +151,7 @@ To render an image that scales down to fit a maximum width, while keeping its or
 }
 ```
 
-This resizes the image so it never exceeds 800 pixels wide. The height is calculated automatically to preserve the original proportions, so the image is not stretched, cropped, or padded.
+This resizes the image so it never exceeds the specified `width` value (800 pixels in this example). The height is calculated automatically to preserve the original proportions, so the image is not stretched, cropped, or padded.
 
 ### More information
 
