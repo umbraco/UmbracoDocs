@@ -134,11 +134,24 @@ When working with the Image Cropper for an image the `GetCropUrl` extension meth
 
 This example assumes that you have set up a crop called **square** on your Image Cropper Data Type.
 
-If you want the original, uncropped image, you can ignore the GetCropUrl extension method and use one of the previously discussed approaches as shown below.
+If you want the original, uncropped image, you can ignore the `GetCropUrl` extension method and use one of the previously discussed approaches as shown below.
 
 ```csharp
 <img src="@mediaItemToCrop.Url()" />
 ```
+
+### Rendering an image with a maximum width
+
+To render an image that scales down to fit a maximum width, while keeping its original aspect ratio, pass only the `width` parameter to `GetCropUrl`. Leave `height` and `cropAlias` unset.
+
+```csharp
+@if (mediaItemToCrop != null)
+{
+    <img src="@mediaItemToCrop.GetCropUrl(width: 800)" alt="@mediaItemToCrop.Name" />
+}
+```
+
+This resizes the image so it never exceeds 800 pixels wide. The height is calculated automatically to preserve the original proportions, so the image is not stretched, cropped, or padded.
 
 ### More information
 
