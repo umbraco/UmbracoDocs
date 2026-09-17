@@ -13,7 +13,6 @@ This document provides practical examples of how to use the Editor MCP for commo
 - [Media Management](#media-management)
 - [Translation and Localization](#translation-and-localization)
 - [Content Health and SEO](#content-health-and-seo)
-- [Content Reporting](#content-reporting)
 - [Site Structure Analysis](#site-structure-analysis)
 - [Content Relationships](#content-relationships)
 - [Bulk Operations](#bulk-operations)
@@ -50,18 +49,6 @@ This document provides practical examples of how to use the Editor MCP for commo
      **Required Tool Collections:** `content`
 
 2. **Content Review and Cleanup**
-   - Find draft pages that may have been forgotten
-
-     **Example Prompt:** "Find all unpublished pages under the Blog section"
-
-     **Required Tool Collections:** `content-reporting`
-
-   - Review recent editorial activity
-
-     **Example Prompt:** "Show me all pages changed in the last 3 days"
-
-     **Required Tool Collections:** `content-reporting`
-
    - Find pages with missing or empty fields
 
      **Example Prompt:** "Check all pages under Products for empty fields"
@@ -164,65 +151,37 @@ This document provides practical examples of how to use the Editor MCP for commo
 
      **Required Tool Collections:** `dictionary`
 
-9. **Translation Coverage Reporting**
-   - Get a translation coverage overview
-
-     **Example Prompt:** "Show me the translation coverage matrix for all pages under the Products section"
-
-     **Required Tool Collections:** `content-reporting`
-
 ## Content Health and SEO
 
-10. **SEO Auditing**
-    - Audit a page's SEO health
+9. **SEO Auditing**
+   - Audit a page's SEO health
 
-      **Example Prompt:** "Run an SEO audit on the Homepage"
+     **Example Prompt:** "Run an SEO audit on the Homepage"
 
-      **Required Tool Collections:** `content-health`
+     **Required Tool Collections:** `content-health`
 
-    - Check meta descriptions against actual content
+   - Check meta descriptions against actual content
 
-      **Example Prompt:** "Check if the About Us page meta description matches the page content"
+     **Example Prompt:** "Check if the About Us page meta description matches the page content"
 
-      **Required Tool Collections:** `content-health`
+     **Required Tool Collections:** `content-health`
 
-    - Find images missing alt text
+   - Find images missing alt text
 
-      **Example Prompt:** "Find all images in the media library that are missing alt text"
+     **Example Prompt:** "Find all images in the media library that are missing alt text"
 
-      **Required Tool Collections:** `content-health`
+     **Required Tool Collections:** `content-health`
 
-11. **Content Quality**
+10. **Content Quality**
     - Find thin content pages
 
       **Example Prompt:** "Find all pages with fewer than 50 words of content"
 
       **Required Tool Collections:** `content-health`
 
-    - Identify stale content
-
-      **Example Prompt:** "Show me all pages that haven't been updated in over a year"
-
-      **Required Tool Collections:** `content-reporting`
-
-## Content Reporting
-
-12. **Content Analytics**
-    - See a breakdown of content by Document Type
-
-      **Example Prompt:** "How many pages do we have of each Document Type?"
-
-      **Required Tool Collections:** `content-reporting`
-
-    - Review recently changed content
-
-      **Example Prompt:** "What pages were changed this week?"
-
-     **Required Tool Collections:** `content-reporting`
-
 ## Site Structure Analysis
 
-13. **Site Architecture**
+11. **Site Architecture**
     - Get a site tree overview
 
       **Example Prompt:** "Show me the site tree structure with page counts per level"
@@ -237,7 +196,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Content Relationships
 
-14. **Understanding Content Dependencies**
+12. **Understanding Content Dependencies**
     - Find orphan pages with no inbound references
 
       **Example Prompt:** "Find pages that aren't referenced by any other page"
@@ -264,7 +223,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Bulk Operations
 
-14. **Batch Publishing**
+13. **Batch Publishing**
     - Publish multiple pages at once
 
       **Example Prompt:** "Publish these 5 blog posts that are ready to go live"
@@ -277,7 +236,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
       **Required Tool Collections:** `bulk-operations`
 
-15. **Batch Content Updates**
+14. **Batch Content Updates**
     - Update a property on multiple pages
 
       **Example Prompt:** "Set the `showBanner` property to false on all Event pages"
@@ -298,7 +257,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Member Management
 
-16. **Managing Members**
+15. **Managing Members**
     - Search for and review member profiles
 
       **Example Prompt:** "Find the member with email john@example.com and show me their full profile"
@@ -317,7 +276,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
       **Required Tool Collections:** `member-reporting`
 
-17. **Member Reporting**
+16. **Member Reporting**
     - Get member count breakdowns
 
       **Example Prompt:** "How many members do we have in each member group?"
@@ -326,7 +285,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Scheduling
 
-18. **Content Scheduling**
+17. **Content Scheduling**
     - Schedule a page for future publishing
 
       **Example Prompt:** "Schedule the New Year Sale page to publish on January 1st at midnight"
@@ -347,7 +306,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Redirects
 
-19. **URL Redirect Management**
+18. **URL Redirect Management**
     - Review existing redirects
 
       **Example Prompt:** "List all URL redirects on the site"
@@ -368,7 +327,7 @@ This document provides practical examples of how to use the Editor MCP for commo
 
 ## Blueprints and Templates
 
-20. **Working with Blueprints**
+19. **Working with Blueprints**
     - List available page blueprints
 
       **Example Prompt:** "What page blueprints are available?"

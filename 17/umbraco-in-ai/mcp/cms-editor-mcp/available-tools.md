@@ -15,15 +15,12 @@ The names shown in parentheses, for example, `(content)` or `(media)` refer to t
 - [Version History (`versioning`)](#version-history-versioning)
 - [Media (`media`)](#media-media)
 - [Media Management (`media-management`)](#media-management-media-management)
-- [Library Elements (`element`)](#library-elements-element)
 - [Blueprints (`blueprint`)](#blueprints-blueprint)
 - [Languages (`language`)](#languages-language)
 - [Translation (`translation`)](#translation-translation)
 - [Dictionary (`dictionary`)](#dictionary-dictionary)
 - [Tags (`tag`)](#tags-tag)
 - [Content Health (`content-health`)](#content-health-content-health)
-- [Content Reporting (`content-reporting`)](#content-reporting-content-reporting)
-- [Media Health (`media-health`)](#media-health-media-health)
 - [Site Structure (`site-structure`)](#site-structure-site-structure)
 - [Bulk Operations (`bulk-operations`)](#bulk-operations-bulk-operations)
 - [Members (`member`)](#members-member)
@@ -107,23 +104,6 @@ Upload, organize, delete, and restore media items.
 - `edit-media` — Update properties on a media item — commonly used to set alt text (for example, `altText` on the default Image media type) or rename an item. Call `get-media-type` first to discover valid property aliases.
 - `sort-media-children` — Reorder child media items under a folder (or at the media root) by specifying their new sort-order values. Use `list-media-children` to discover the current order first.
 
-## Library Elements (`element`)
-
-Browse, view, edit (including blocks), publish, and organize reusable Library elements. Elements are the document-like reusable content items that live in the Library section (Umbraco 18 only).
-
-- `search-elements` — Search for Library elements by name. Returns matching elements with their names and IDs. Use `get-element` with an ID from the results to retrieve an element's full details.
-- `list-element-children` — Browse the Library tree — list the folders and elements under a folder, or the Library root when no `parentId` is given. Use this to navigate the Library, then `get-element` to see an element's details.
-- `get-element` — Get the full details of a Library element — its element type, all property values, and culture variants. Use this after `search-elements` or `list-element-children`, and before `edit-element` to discover valid property aliases.
-- `inspect-element-blocks` — Inspect the block structure of a Library element. Shows each block's type, unique key, and property values inside the element's BlockList, BlockGrid, or Rich Text properties. Use this to find the `propertyAlias` and `contentKey` that `edit-element-block` needs. Library elements only — for blocks on a content page use `inspect-blocks` instead.
-- `create-element` — Create a new Library element as a draft — it is not published automatically. Pass `name`, `elementTypeId`, an optional parent folder `parentId`, and at most a few initial values. Follow up with `edit-element` for property updates, and publish separately with `publish-element`.
-- `create-and-publish-element` — Create a new Library element and publish it in one atomic operation — mirrors clicking **Save and publish** (instead of **Save**) on the element create screen. If the element type requires properties this doesn't set, or values fail validation, the whole operation fails and no element is created — use `create-element` followed by `publish-element` instead when you need to build up content across multiple calls before publishing.
-- `create-element-folder` — Create a folder in the Library to organize elements. Folders are the primary way the Library tree is structured; the returned ID can be used as `parentId` in `list-element-children` or `create-element`.
-- `edit-element` — Update property values on a Library element. Changes are saved but not published — publish separately with `publish-element`. Call `get-element` first to discover valid property aliases. To change a property inside a block on the element, use `inspect-element-blocks` then `edit-element-block` instead.
-- `edit-element-block` — Update properties within a specific block (BlockList, BlockGrid, or Rich Text block) on a Library element. Use `inspect-element-blocks` first to find the `propertyAlias` and `contentKey`. Changes are saved but not published — publish separately with `publish-element`.
-- `publish-element` — Publish a Library element to make its current draft live. Edit the element first with `edit-element` if it needs changes. Use `unpublish-element` to take it back offline.
-- `unpublish-element` — Unpublish a Library element, taking it offline. The element still exists as a draft. You will be asked to confirm before unpublishing.
-- `delete-element` — Move a Library element to the recycle bin. It can be restored later. You will be asked to confirm before deleting.
-
 ## Blueprints (`blueprint`)
 
 List, view, and create page blueprints.
@@ -173,22 +153,6 @@ Content quality auditing and SEO analysis.
 
 - `audit-page-seo` — Audit a page's SEO health. Returns title, meta description, headings, images with alt-text status, and word count. Includes flags for quick scanning and raw data for detailed analysis.
 - `audit-page-content` — Retrieve a page's body text alongside its meta description for alignment analysis. Use to identify where the meta description does not reflect the actual content.
-
-## Content Reporting (`content-reporting`)
-
-Content lifecycle, freshness, and translation reporting.
-
-- `report-stale-content` — Find pages not updated within a given number of days. Default threshold is 180 days. Returns pages sorted by staleness. Use with analytics data to find high-traffic stale pages.
-- `report-unpublished` — Find pages that are in draft state or have been unpublished. Useful for identifying content that may have been forgotten or needs review before publishing.
-- `report-recently-changed` — Find pages changed within a recent time period. Default is the last 7 days. Returns pages sorted by most recently changed. Useful for reviewing recent editorial activity.
-- `report-content-by-type` — Breakdown of content pages by Document Type. Shows how many pages use each type with example pages. Data maps naturally to pie or bar charts. Scans up to 500 pages.
-- `report-translation-coverage` — Translation coverage matrix showing which pages have which language variants. Includes per-language summary statistics. Data maps naturally to a grid/matrix visualization.
-
-## Media Health (`media-health`)
-
-Media library health and usage analysis.
-
-- `report-large-media` — Find media files above a size threshold. Default is 1MB (1024KB). Large files slow page loads and waste bandwidth. Returns file size and dimensions where available.
 
 ## Site Structure (`site-structure`)
 
