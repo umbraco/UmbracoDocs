@@ -18,6 +18,10 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 17th 2026)
+
+* All items from 17.3.0-rc1 and 17.3.0-rc2.
+
 ### [17.3.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 11th 2026)
 
 * Keep property types that are not in a property group when deploying changes to document, media, and member types. Previously, deploying a changed type deleted the content stored in those properties. The data loss affected all Deploy versions since 14.0 and became visible with Umbraco CMS 17.2.0 after [umbraco/Umbraco-CMS#21585](https://github.com/umbraco/Umbraco-CMS/pull/21585).
