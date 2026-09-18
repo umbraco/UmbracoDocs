@@ -9,7 +9,7 @@
 
 The **Upgrade available** banner on the left-most environment card in the Cloud Portal has been extended. Project administrators use the banner to upgrade a project on demand, independent of the automatic upgrade settings.
 
-<figure><img src="../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Live environment card showing 5 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Dev environment card showing 6 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
 
 The following has changed:
 
@@ -18,7 +18,7 @@ The following has changed:
 * **Single-environment projects can upgrade.** Projects with only a Live environment were previously asked to add an environment first. Live is now upgraded directly. The confirmation dialog warns that the site restarts during the upgrade and links to the version-specific upgrade notes.
 * **Pending changes no longer block the upgrade.** The upgrade commit is added on top of the pending changes on the environment and is included in the next deployment.
 
-<figure><img src="../../.gitbook/assets/cloud-upgrade-available-dialog-single-environment.png" alt="Confirmation dialog listing five packages with current and target versions, and a warning that the site restarts"><figcaption><p>The confirmation dialog on a single-environment project</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cloud-upgrade-available-dialog.png" alt="Confirmation dialog listing six packages with current and target versions, and the three steps of the upgrade"><figcaption><p>The confirmation dialog listing the packages to upgrade</p></figcaption></figure>
 
 Major version upgrades are still not offered by the banner. On projects with more than one environment, the banner still upgrades the left-most mainline environment only. You test the upgrade there and deploy onward yourself.
 

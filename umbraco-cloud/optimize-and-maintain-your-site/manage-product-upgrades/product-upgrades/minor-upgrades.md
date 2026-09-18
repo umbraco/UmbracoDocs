@@ -51,7 +51,7 @@ Umbraco reserves the right to patch critical vulnerabilities. This ensures the U
 
 When a newer version of a product is available for your project, an **Upgrade available** banner is shown in the Cloud Portal. The banner appears on the left-most mainline environment card. Project administrators select **Get started** on the banner to review and start the upgrade.
 
-<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Live environment card showing 5 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Dev environment card showing 6 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
 
 The banner offers any higher minor or patch version within the major version your project runs. Major version upgrades are never offered by the banner. See the [Major Upgrades](major-upgrades/README.md) article for how to upgrade to a new major version.
 
@@ -67,13 +67,13 @@ The following products are upgraded through the banner:
 
 All eligible products are upgraded in a single run. The banner names one or two products, or shows a package count when more are available. The confirmation dialog lists every package with its current and target version.
 
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-dialog.png" alt="Confirmation dialog listing six packages with current and target versions, and the three steps of the upgrade"><figcaption><p>The confirmation dialog listing the packages to upgrade</p></figcaption></figure>
+
 The upgrade is applied to the left-most mainline environment only. Test the upgrade there, and then deploy the changes to the next environments yourself. Pending changes between environments do not block the upgrade. The upgrade commit is added on top of the pending changes and is included in the next deployment.
 
 {% hint style="warning" %}
 Projects with a single Live environment can also upgrade from the banner. As there is no other environment to test on, the upgrade is applied directly to Live. The site restarts during the upgrade. The confirmation dialog warns about the restart and links to the version-specific upgrade notes.
 {% endhint %}
-
-<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-dialog-single-environment.png" alt="Confirmation dialog listing five packages with current and target versions, and a warning that the site restarts"><figcaption><p>The confirmation dialog on a single-environment project</p></figcaption></figure>
 
 The banner is independent of the **Automatic Minor Upgrades** and **Automatic Patch Upgrades** settings. Selecting **Get started** is an explicit action, and the upgrade runs even when automatic upgrades are disabled.
 
