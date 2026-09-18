@@ -236,6 +236,23 @@ namespace MyFormsExtensions
 }
 ```
 
+## Date values
+
+The CSV and Excel export types both inherit from `CsvExportTypeBase`. A date value is written using the culture the entry was submitted with. The writer's own culture stays invariant, so delimiters and number formats do not vary between entries.
+
+To control the date format yourself, register a `DateTime` converter by overriding `ConfigureContext`. Forms then leaves every date value to your converter:
+
+```csharp
+using CsvHelper;
+
+protected override void ConfigureContext(CsvContext context)
+{
+    context.TypeConverterCache.AddConverter<DateTime>(new MyDateTimeConverter());
+}
+```
+
+To change the writer itself, such as the delimiter it uses, override `GetWriterConfiguration`.
+
 ## Localization
 
 The backoffice uses localization keys to display the label and description for each export type. These keys are based on the `Alias` property set in the constructor:

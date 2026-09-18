@@ -110,6 +110,14 @@ The format strings used for formatting dates and numbers are the standard or cus
 
 Further magic string format functions can be [created in code](extending/adding-a-magic-string-format-function.md) for use in forms.
 
+### Dates in magic strings
+
+A date field's value is formatted for whoever reads it. A workflow that writes for a person uses the culture the entry was submitted with. The Send Email and Slack workflows work this way. A workflow that writes for another system uses the ISO 8601 format. The Post as XML and Send Form to URL workflows work this way.
+
+The `date` filter parses the value again before it applies your format string. An ISO 8601 value parses reliably. A value formatted in a culture other than the server's culture may not parse, and is then returned unchanged.
+
+A custom workflow type sets its own default by overriding `PlaceholderDateFormat`. For details, see the [Adding a workflow type](extending/adding-a-workflowtype.md#date-values) article.
+
 ## How can I parse these values elsewhere in my C# code or Razor Views?
 
 A service implemented by the `IPlaceholderParsingService` interface is available for use in custom code or views. It's found in the `Umbraco.Forms.Core.Services` namespace.
