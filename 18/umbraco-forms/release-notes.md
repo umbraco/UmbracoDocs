@@ -20,6 +20,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### 18.1.2 (September 17th 2026)
+* Require a dedicated user group permission for the Forms Security area, so that backoffice users cannot grant themselves Forms permissions [GHSA-8jv5-237g-mfj9](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-8jv5-237g-mfj9)
+* Umbraco Licenses dependency updated to 18.0.3
+
+{% hint style="warning" %}
+Access to the Forms Security area now depends on a new **Security** permission. You grant it on the **Permissions** tab of a user group. The upgrade grants the permission to the built-in **Administrators** group only. Any other user group that manages Forms security must be granted the permission again by an administrator.
+{% endhint %}
+
 ### [18.1.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.1.1) (August 27th 2026)
 
 * Upgrading: Fix a boot failure when upgrading directly from Forms 17.5.0 [#1782](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1782)

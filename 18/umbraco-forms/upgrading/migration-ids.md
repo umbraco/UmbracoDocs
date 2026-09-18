@@ -48,6 +48,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
 | 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
 | 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Rebuild the records index. Recognized on the version 18 chain from 18.1.1.         |
+| 507bebee-b579-4764-aae8-44c1f40e65a8 | 17.5.1                | Grants the Forms Security permission on the version 17 chain. Recognized on the version 18 chain from 18.1.2. |
 | 91ef4e6d-3fbd-40a2-b42c-77dc5b2791c4 | 18.1.0                | Adds the UmbracoPageKey column to the Records table.                               |
 | a4cc5acc-ee57-40e6-a0aa-73763e7ac444 | 18.1.0                | Populates UmbracoPageKey from the existing UmbracoPageId values.                   |
 | 51948cde-a4fc-4889-b855-7a08ce5cbd6e | 18.1.0                | Rebuilds the Examine records index so records gain the page key field.             |
@@ -57,3 +58,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 29a8d464-40e3-4fca-bf5f-85b3a5bc63d0 | 18.1.0                | Adds indexes on the Records table for member entry counts and analytics.           |
 | 0f7a3c97-5367-4da7-aa13-44290ecd3bce | 18.1.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
 | 0c07728b-48a6-460b-bd56-3ad32fd4a2b5 | 18.1.0                | Rebuilds the records index.                                                         |
+| a1adc8e1-93d1-472a-9417-896f599c9638 | 18.1.2                | Grants the Forms Security permission to the Administrators user group.              |

@@ -48,3 +48,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 2b63c684-8d61-43ec-842f-e5af2205c28d | 17.5.0                | Adds indexes on the Records table for member entry counts and analytics.           |
 | 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
 | 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Rebuild the records index.                                                         |
+| 507bebee-b579-4764-aae8-44c1f40e65a8 | 17.5.1                | Grants the Forms Security permission to the Administrators user group.             |
