@@ -46,14 +46,9 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
      **Example Prompt:** "Show me all pages under the Products section."
 
-2. **Content Review and Cleanup**
-   - Find pages with missing or empty fields
-
-     **Example Prompt:** "Check all pages under Products for empty fields."
-
 ## Publishing Workflows
 
-3. **Single and Multi-page Publishing**
+2. **Single and Multi-page Publishing**
    - Publish a page and all its children
 
      **Example Prompt:** "Publish the Summer Campaign page and all its child pages."
@@ -62,7 +57,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
      **Example Prompt:** "The Winter Sale ended yesterday — unpublish the landing page."
 
-4. **Version Management**
+3. **Version Management**
    - Review version history before publishing
 
      **Example Prompt:** "Show me the version history of the Pricing page."
@@ -73,7 +68,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Media Management
 
-5. **Browsing and Organizing Media**
+4. **Browsing and Organizing Media**
    - Search for specific media items
 
      **Example Prompt:** "Find the team photo uploaded last month."
@@ -86,7 +81,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
      **Example Prompt:** "Move all the product images from the Temp folder to the Product Photos folder."
 
-6. **Media Uploads**
+5. **Media Uploads**
    - Upload files from a shared source
 
      **Example Prompt:** "The photographer shared this week's product shots in our Google Drive folder — upload them to the Logos media folder with sensible names."
@@ -97,7 +92,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Translation and Localization
 
-7. **Managing Language Variants**
+6. **Managing Language Variants**
    - Create a new language variant for a page
 
      **Example Prompt:** "Create a Danish variant of the About Us page."
@@ -110,7 +105,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
      **Example Prompt:** "Which pages under Products don't have a French variant yet?"
 
-8. **Dictionary Management**
+7. **Dictionary Management**
    - Manage UI labels and static text translations
 
      **Example Prompt:** "Add a dictionary item `Buttons.ReadMore` with English 'Read More' and Danish 'Læs Mere'."
@@ -121,7 +116,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Content Health and SEO
 
-9. **SEO Auditing**
+8. **SEO Auditing**
    - Audit a page's SEO health
 
      **Example Prompt:** "Run an SEO audit on the Homepage."
@@ -130,33 +125,20 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
      **Example Prompt:** "Does the About Us page meta description still match what's on the page?"
 
-   - Find images missing alt text
-
-     **Example Prompt:** "Find all images in the media library that are missing alt text."
-
-10. **Content Quality**
-    - Find thin content pages
-
-      **Example Prompt:** "Find all pages with fewer than 50 words of content."
-
 ## Site Structure Analysis
 
-11. **Site Architecture**
-    - Get a site tree overview
+9. **Site Architecture**
+   - Get a site tree overview
 
-      **Example Prompt:** "Show me the site tree structure with page counts per level."
+     **Example Prompt:** "Show me the site tree structure with page counts per level."
 
-    - Find deeply nested pages
+   - Find deeply nested pages
 
-      **Example Prompt:** "Visitors say they can't find some pages — find anything more than 4 levels deep in the site tree."
+     **Example Prompt:** "Visitors say they can't find some pages — find anything more than 4 levels deep in the site tree."
 
 ## Content Relationships
 
-12. **Understanding Content Dependencies**
-    - Find orphan pages with no inbound references
-
-      **Example Prompt:** "Find pages that aren't referenced by any other page."
-
+10. **Understanding Content Dependencies**
     - Check what references a page before deleting it
 
       **Example Prompt:** "I want to delete the Legacy Products page — show me what still links to it first."
@@ -171,7 +153,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Bulk Operations
 
-13. **Batch Publishing**
+11. **Batch Publishing**
     - Publish multiple pages at once
 
       **Example Prompt:** "Publish these 5 blog posts that are ready to go live."
@@ -180,7 +162,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
       **Example Prompt:** "Schedule all the Christmas campaign pages to publish on December 1st at 9am."
 
-14. **Batch Content Updates**
+12. **Batch Content Updates**
     - Update a property on multiple pages from a list
 
       **Example Prompt:** "Marketing sent this spreadsheet of Event pages — turn off `showBanner` for every page on the list."
@@ -195,7 +177,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Member Management
 
-15. **Managing Members**
+13. **Managing Members**
     - Search for and review member profiles
 
       **Example Prompt:** "Find the member with email john@example.com and show me their full profile."
@@ -208,21 +190,17 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
       **Example Prompt:** "Show me members who haven't logged in for over 6 months."
 
-16. **Member Reporting**
+14. **Member Reporting**
     - Get member count breakdowns
 
       **Example Prompt:** "How many members do we have in each member group?"
 
 ## Scheduling
 
-17. **Content Scheduling**
+15. **Content Scheduling**
     - Schedule a page for future publishing
 
       **Example Prompt:** "Schedule the New Year Sale page to publish on January 1st at midnight."
-
-    - Review scheduled content
-
-      **Example Prompt:** "What pages are currently scheduled to be published?"
 
     - Cancel a scheduled publish
 
@@ -230,7 +208,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Redirects
 
-18. **URL Redirect Management**
+16. **URL Redirect Management**
     - Review existing redirects
 
       **Example Prompt:** "List all URL redirects on the site."
@@ -245,7 +223,7 @@ Some of the prompts below show this pattern. It works with whichever other tools
 
 ## Blueprints and Templates
 
-19. **Working with Blueprints**
+17. **Working with Blueprints**
     - List available page blueprints
 
       **Example Prompt:** "What page blueprints are available?"
