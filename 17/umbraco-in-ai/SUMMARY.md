@@ -55,8 +55,6 @@
   * [Available Tools](mcp/cms-editor-mcp/available-tools.md)
   * [Configuration Options](mcp/cms-editor-mcp/configuration.md)
   * [Use Cases](mcp/cms-editor-mcp/scenarios.md)
-  * [Best Practice](mcp/cms-editor-mcp/best-practice/README.md)
-    * [Example Instructions File](mcp/cms-editor-mcp/best-practice/example-instructions.md)
 * [Hosted MCP Setup](mcp/hosted-mcp-setup/README.md)
   * [Claude Code](mcp/hosted-mcp-setup/claude-code.md)
   * [Claude Desktop](mcp/hosted-mcp-setup/claude-desktop.md)

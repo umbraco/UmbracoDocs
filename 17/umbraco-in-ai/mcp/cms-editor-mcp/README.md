@@ -124,4 +124,3 @@ Once your MCP Server is configured and connected, explore these guides to get th
 * [Available Tools](available-tools.md) - Complete reference of all available tools and collections.
 * [Configuration Options](configuration.md) - How to control which tools are enabled using modes, slices, and collections.
 * [Use Cases](scenarios.md) - Real-world examples and use cases for editorial workflows.
-* [Best Practices](best-practice/) - Tips for effective MCP usage.
