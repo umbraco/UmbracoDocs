@@ -20,6 +20,34 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 
 ### [17.6.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.6.0) (September 17th 2026)
 
+#### Form versions
+
+A version of a form is now saved every time the form is saved, including its workflows. The Rollback action on a form lists the saved versions, shows what each one contains, and rolls the form back to the one you pick. A rollback is saved as a version of its own, so it can be undone the same way.
+
+Pin a version to keep it. Pinned versions, and the most recent version of a form, are never removed.
+
+Removing older versions is opt-in and set up in configuration. For the settings, see the [FormVersionCleanup](developer/configuration/README.md#formversioncleanup) section of the Configuration article.
+
+For more information, see the [Rollback to a Previous Version](editor/managing-forms/rollback-to-a-previous-version.md) article.
+
+#### Recycle bin
+
+Deleting a form or a folder now moves it to a recycle bin, instead of removing it straight away. Deleting a folder moves everything inside it as well.
+
+A form in the recycle bin no longer renders on your website, and the Forms API returns a "not found" response for it. Restore the form to bring it back, along with the folder it came from.
+
+Nothing is removed from the database until you delete it from the bin. Deleting it there removes the form with its entries, workflows, stored versions, and user permissions.
+
+For more information, see the [Recycle Bin](editor/managing-forms/recycle-bin.md) article.
+
+#### Form history
+
+The **Info** tab of a form now lists each change made to the form. An entry records when the form was created, saved, moved to the recycle bin, restored, rolled back, or deleted.
+
+For more information, see the [Form History](editor/managing-forms/form-history.md) article.
+
+#### Other
+
 * Field Types: Add a Decimal storage type for field values, so decimals keep their fractional part instead of being stored as whole numbers [#1515](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1515)
 * Form Entries: Show a record's additional data in the entry details [#1602](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1602)
 * Date Fields: Format date field values in the record's own culture in the entries grid, exports, and workflow output [#1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773)
