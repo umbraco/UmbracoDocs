@@ -228,7 +228,7 @@
       * [URL Redirect Management](develop-with-umbraco/application-code/backend-and-custom-logic/routing/url-tracking.md)
     * [Subscribing to Notifications](develop-with-umbraco/application-code/backend-and-custom-logic/subscribing-to-notifications.md)
     * [Inversion of Control / Dependency Injection](develop-with-umbraco/application-code/backend-and-custom-logic/using-ioc.md)
-    * [Service APIs](develop-with-umbraco/application-code/backend-and-custom-logic/umbraco-services.md)
+    * [Accessing the Umbraco Services](develop-with-umbraco/application-code/backend-and-custom-logic/umbraco-services.md)
     * [Creating Forms](develop-with-umbraco/application-code/backend-and-custom-logic/creating-forms.md)
     * [Source Control](develop-with-umbraco/application-code/backend-and-custom-logic/source-control.md)
   * [Common Pitfalls & Anti-Patterns](develop-with-umbraco/application-code/common-pitfalls.md)
