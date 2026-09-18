@@ -16,6 +16,47 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.5.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.5.0-rc1) (September 18th 2026)
+
+**Analytics and reporting**
+
+* Report tables, charts and the comparison view now page and search on the server instead of loading the whole report into the browser. Large reports open faster, and search now filters the entire report rather than only the rows already loaded.
+* Column totals and each cell's "% of total" are now computed by the server against the whole report. These values stay accurate while paging or searching, instead of reflecting only the loaded page.
+* Fixed installations with report-data generation disabled sometimes serving realtime results instead of reporting results. One case returned a 500 error on the backoffice start page.
+* Fixed the "% change" column in comparison mode showing the wrong row's value after paging, searching, or sorting ([Issue #91](https://github.com/umbraco/Umbraco.Engage.Issues/issues/91)).
+* Fixed the Location report's country-to-city drill-down throwing an error, and fixed drill-down tables (including Goals) not reloading correctly when moving between levels ([Issue #96](https://github.com/umbraco/Umbraco.Engage.Issues/issues/96)).
+* Fixed a SQL syntax error that made the "Applied segment insights" report fail on every request.
+* Fixed incorrect goal-completion and applied-segment reporting caused by stale references to columns removed in earlier key-column migrations.
+* Hardened comparison-mode paging against malformed requests, such as an omitted paging block or a large page number. These could previously return rows in the wrong order or cause a server error.
+
+**Analytics: visual redesign**
+
+* The chart and its data table are now combined into a single pane instead of two separate boxes.
+* Annotations moved out of the chart into a compact popover in the pane header. The popover shows a bookmark icon, a count, and a list for creating or deleting annotations inline. Annotation markers are now pinned directly on the chart.
+* Line/area and bar charts have been restyled to match the updated design. Fixed a memory leak where a chart's underlying Chart.js instance was not released when navigating away from a screen.
+* Data tables have been restyled with a mini bar indicator per metric cell, colour-coded visitor-type rows, clearer "no results" messaging, and an improved loading state.
+* Pagination footers now stay visible even when all rows fit on one page, showing a "1–10 of 14" style range. Fixed two-row breakdown tables, for example New and Returning visitors, show no footer.
+
+**Heatmaps**
+
+* Fixed heatmap rendering on invariant documents that have a defined culture/hostname, which previously requested heatmap data using the wrong culture ([Issue #97](https://github.com/umbraco/Umbraco.Engage.Issues/issues/97)).
+
+**A/B testing and personalization**
+
+* Added inline creation for Goals, Segments, and Projects, directly from their picker in the A/B test and personalization editors. A new goal, segment, or project can be created without leaving the workspace being edited.
+* Deleting or stopping an A/B test, removing a single variant, or deleting a personalization now removes only the content it created. It no longer risks affecting unrelated content on other pages. A one-off migration cleans up any orphaned content left behind by earlier versions ([Issue #93](https://github.com/umbraco/Umbraco.Engage.Issues/issues/93)).
+* Added the ability to copy a winning A/B test variant to the default (published) content. This can be done directly from the "select winner" dialog, with options to publish or save. The winner-selection and scoring-overview dialogs have also been streamlined.
+* Fixed a rare cause of pageviews silently failing to record, caused by an A/B test variant iterator being re-evaluated outside its original request context.
+* Restored a guard, lost between v13 and v17, that blocks deleting a segment still referenced by a personalization. It shows a dialog listing the personalizations using it ([Issue #106](https://github.com/umbraco/Umbraco.Engage.Issues/issues/106)).
+* Fixed the Segments list "Applied" column always showing 0, caused by comparing the segment's GUID against a numeric ID that could never match. Segment usage is now counted correctly ([Issue #105](https://github.com/umbraco/Umbraco.Engage.Issues/issues/105)).
+
+**Backoffice and platform**
+
+* Fixed the Engage section crashing when duplicate user-group permission rows existed in the database; duplicate rows are also now prevented going forward.
+* Fixed the Analytics and Profiles tabs sometimes being absent from the Engage section navigation on newer Umbraco CMS versions, with no error shown. The cause was a duplicate script load triggered by Umbraco CMS asset cache-busting ([Issue #101](https://github.com/umbraco/Umbraco.Engage.Issues/issues/101)). This also fixes the Suspicious Activity Profile ID panel hanging indefinitely on load, a symptom of the same issue ([Issue #104](https://github.com/umbraco/Umbraco.Engage.Issues/issues/104)).
+* Added `Analytics:DataCollection:RequireAnalyticsPermissionForMemberTracking` (default `false`). When enabled, a pageview from a visitor without analytics consent is still recorded, but without their member identity attached.
+* Fixed a migration that could silently record itself as completed even when it failed part-way through. This could leave a site stuck on an old schema after a failed upgrade. Two related legacy-format migrations were also tightened, so a genuine database error is no longer mistaken for "not applicable" and ignored.
+
 #### [17.4.0](https://www.nuget.org/packages/Umbraco.Engage/17.4.0) (August 20th 2026)
 
 * All changes from 17.4.0 release candidates
