@@ -43,6 +43,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 **A/B testing and personalization**
 
+* Added inline creation for Goals, Segments, and Projects, directly from their picker in the A/B test and personalization editors. A new goal, segment, or project can be created without leaving the workspace being edited.
 * Deleting or stopping an A/B test, removing a single variant, or deleting a personalization now removes only the content it created. It no longer risks affecting unrelated content on other pages. A one-off migration cleans up any orphaned content left behind by earlier versions ([Issue #93](https://github.com/umbraco/Umbraco.Engage.Issues/issues/93)).
 * Added the ability to copy a winning A/B test variant to the default (published) content. This can be done directly from the "select winner" dialog, with options to publish or save. The winner-selection and scoring-overview dialogs have also been streamlined.
 * Fixed a rare cause of pageviews silently failing to record, caused by an A/B test variant iterator being re-evaluated outside its original request context.
