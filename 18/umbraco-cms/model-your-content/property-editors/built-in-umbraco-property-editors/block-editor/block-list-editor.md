@@ -29,7 +29,7 @@ The Data Type editor allows you to configure the following properties:
 * **Live editing mode** - Enabling this will make editing of a block happening directly to the document model, making changes appear as you type.
 * **Inline editing mode** - Enabling this will change editing experience to inline, meaning that editing the data of blocks happens at sight as accordions.
 * **Property editor width** - Overwrite the width of the property editor. This field takes any valid css value for "max-width".
-* **Create modal size**- Controls the size of the overlay dialog that appears when an editor clicks to create or edit a block.
+* **Create modal size**- Controls the size of the Block Catalogue dialog shown when an editor clicks "Create new" to choose a block type. It does not affect the block's content-editing overlay (for either creating or editing a block's content). The overlay's size is set per Block Type via **Overlay editor size**.
 * **Single block mode** - When enabled, the Block List is restricted to a single block and the property returns a `BlockListItem<>` instead of `BlockListModel`
 
 {% hint style="warning" %}

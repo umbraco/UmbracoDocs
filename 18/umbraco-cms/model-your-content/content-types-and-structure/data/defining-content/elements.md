@@ -8,6 +8,10 @@ Instead of replicating the same content on a per-page basis, Elements allow you 
 
 Elements are ideal for call-to-action blocks, banners, and other shared content that appears across multiple pages.
 
+{% hint style="info" %}
+Elements hold one piece of content that's shared and centrally updated everywhere it's referenced. If you instead need editors to compose different content per page from a set of block types, use the [Block List Editor](../../../property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md) instead.
+{% endhint %}
+
 ## Library
 
 Elements are managed from the Library section in the Umbraco Backoffice.
