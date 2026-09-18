@@ -4,7 +4,7 @@ description: Use Umbraco's service APIs to create, update, and delete core entit
 
 # Accessing the Umbraco services
 
-Services are defined using interfaces within the `Umbraco.Cms.Core.Services` namespace. To use the service APIs you must first access them. Via the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This is achieved via injecting the specific service interface you require in the constructor of your class.
+Services are defined using interfaces within the `Umbraco.Cms.Core.Services` namespace. To use the service APIs, you must first access them. Via the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This is achieved via injecting the specific service interface you require in the constructor of your class.
 
 ## Access via a Controller
 
@@ -55,7 +55,7 @@ Inside a Razor View template, you can make use of a service injection into a vie
 
 If you want to subscribe to notifications on one of the services, create a Composer C# class and add a custom `NotificationHandler`. In the `NotificationHandler`, inject the service you need into the public constructor. The underlying dependency injection framework will do the rest.
 
-In this example, you will wire up to the ContentService 'Saved' event. You will create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore you will need the MediaService available to create the new folder.
+In this example, you will wire up to the ContentService 'Saved' event. You will create a new folder in the Media section whenever a new LandingPage is created in the content section to store associated media. Therefore, you will need the MediaService available to create the new folder.
 
 {% code title="CustomComposer.cs" %}
 ```csharp
