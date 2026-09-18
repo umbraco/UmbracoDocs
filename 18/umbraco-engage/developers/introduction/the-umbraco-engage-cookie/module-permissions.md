@@ -70,6 +70,80 @@ namespace YourNamespace
 ```
 {% endcode %}
 
+## Member tracking when analytics is denied
+
+When `AnalyticsIsAllowed` returns false, Engage treats the visitor as the built-in Anonymous visitor. Engage still records the pageview. Only the visitor attribution changes.
+
+By default, a pageview from a logged-in member still carries that member's key when analytics is denied. The row is written either way. Denying analytics changes the visitor, not the member key.
+
+Engage provides an opt-in setting to change this behaviour. When you enable it, Engage attaches the member key only to requests where analytics is allowed.
+
+### RequireAnalyticsPermissionForMemberTracking
+
+The `RequireAnalyticsPermissionForMemberTracking` setting lives under `Engage:Analytics:DataCollection` and defaults to `false`. The setting and the rule for using it are documented on the configuration interface:
+
+{% code overflow="wrap" %}
+```csharp
+/// <summary>
+/// When enabled, an Umbraco member key is attached to a pageview only for requests where
+/// <c>IModulePermissions.AnalyticsIsAllowed</c> returns true. Requests without analytics
+/// permission are still tracked, but as an anonymous visitor with no member key.
+/// </summary>
+/// <remarks>
+/// Analytics consent must be decided from the request itself, for example a cookie banner,
+/// and never from who is logged in. On a regular page request the analytics permission is
+/// evaluated before authentication, while the visitor is still anonymous, so an
+/// <c>IModulePermissions</c> implementation whose answer depends on the authenticated member
+/// is an unsupported way to implement the interface. Headless collection requests do not
+/// take that path and are evaluated against the tracking context their endpoint constructs.
+/// Replacing the built-in raw pageview extractor bypasses this setting.
+/// </remarks>
+bool RequireAnalyticsPermissionForMemberTracking => false;
+```
+{% endcode %}
+
+To enable the setting, add it to your `appsettings.json`:
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Engage": {
+    "Analytics": {
+      "DataCollection": {
+        "RequireAnalyticsPermissionForMemberTracking": true
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+### Clearing member keys from existing pageviews
+
+The setting applies going forward. It stops new pageviews from carrying a member key when analytics is denied. It does not change rows that Engage recorded before you enabled the setting.
+
+To remove member keys from pageviews already collected, run the following script against your database during a maintenance window.
+
+{% code title="ClearMemberKeys.sql" %}
+```sql
+-- Clears the Umbraco member key from pageviews already collected.
+-- Back up your database first. This change cannot be undone.
+-- Scope the WHERE clause yourself before running (see the notes below).
+UPDATE umbracoEngageAnalyticsPageview
+SET umbracoMemberKey = NULL
+WHERE umbracoMemberKey IS NOT NULL;
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Review these points before you run the script:
+
+* The script clears **every** stored member key. Engage does not store the per-request analytics outcome on the pageview, so the data cannot tell a member who consented from one who declined.
+* To clear only the members who declined, scope the `WHERE` clause yourself. Filter by member key, or by a date range from before your consent solution went live.
+* The member key is the only source of member identity on a pageview. Clearing it also removes those members from the **Profiles** view in the backoffice.
+* This change cannot be undone. Make sure you have a backup.
+{% endhint %}
+
 ## Tracking a visitor's Initial Pageview
 
 {% hint style="warning" %}
