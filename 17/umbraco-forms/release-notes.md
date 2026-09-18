@@ -39,6 +39,8 @@ The Post to URL, Post as XML, and Save as File workflows now send date field val
 For example, a date is sent as `2027-09-22T19:33:00`. These workflows previously used the format of whichever culture the server ran under. Update any integration that parses these values.
 
 Date field values shown to people now follow the culture the entry was submitted with. The entries grid, the exports, the email and Slack workflows, and the Save as Umbraco Node workflow are affected.
+
+For the full list of what changed and what to check, see the [Version Specific Upgrade Notes](upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
 {% endhint %}
 
 ### 17.5.1 (September 17th 2026)

@@ -22,16 +22,6 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 
 ### [18.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.2.0) (September 17th 2026)
 
-#### Form versions
-
-A version of a form is now saved every time the form is saved, including its workflows. The Rollback action on a form lists the saved versions, shows what each one contains, and rolls the form back to the one you pick. A rollback is saved as a version of its own, so it can be undone the same way.
-
-Pin a version to keep it. Pinned versions, and the most recent version of a form, are never removed.
-
-Removing older versions is opt-in and set up in configuration. For more information, see the [FormVersionCleanup](developer/configuration/README.md#formversioncleanup) section of the Configuration article.
-
-#### Other
-
 * Records: Add create and delete endpoints to the Management API
 * Field Types: Add a Decimal storage type for field values, so decimals keep their fractional part instead of being stored as whole numbers [#1515](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1515)
 * Form Entries: Show a record's additional data in the entry details [#1602](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1602)
@@ -54,6 +44,8 @@ The Post to URL, Post as XML, and Save as File workflows now send date field val
 For example, a date is sent as `2027-09-22T19:33:00`. These workflows previously used the format of whichever culture the server ran under. Update any integration that parses these values.
 
 Date field values shown to people now follow the culture the entry was submitted with. The entries grid, the exports, the email and Slack workflows, and the Save as Umbraco Node workflow are affected.
+
+For the full list of what changed and what to check, see the [Version Specific Upgrade Notes](upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
 {% endhint %}
 
 {% hint style="info" %}
