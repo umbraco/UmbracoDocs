@@ -4,7 +4,7 @@ description: Use Umbraco's service APIs to create, update, and delete core entit
 
 # Accessing the Umbraco services
 
-Services are typically defined using interfaces. Umbraco has them in the `Umbraco.Cms.Core.Services` namespace, while the specific implementations can be found under the `Umbraco.Cms.Core.Services.Implement` namespace. To use the service APIs you must first access them. Owing to the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This is achieved via injecting the specific service you require - the service type or an interface.
+Services are defined using interfaces within the `Umbraco.Cms.Core.Services` namespace. To use the service APIs you must first access them. Via the built-in dependency injection (DI) in ASP.NET Core, configured services are made available throughout Umbraco's codebase. This is achieved via injecting the specific service interface you require in the constructor of your class.
 
 ## Access via a Controller
 
