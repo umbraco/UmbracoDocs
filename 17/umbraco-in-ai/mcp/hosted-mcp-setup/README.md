@@ -6,32 +6,66 @@ description: Set up hosted Umbraco MCP servers in your AI environment.
 
 This section explains how to connect to a hosted Umbraco MCP server from different AI environments. Unlike the [local MCP setup](../local-mcp-setup/), a hosted MCP server runs as a remote service that you connect to via a URL. Authentication is handled through an OAuth login flow using your Umbraco backoffice credentials.
 
-## Before You Start
+## Two Ways to Connect
 
-To connect to a hosted Umbraco MCP server, you need:
+The setup guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
 
-* **Your MCP URL** — provided by your hosting environment:
-  * **Umbraco Cloud**: Find the URL in the admin area of your Cloud project.
-  * **Agency or self-hosted**: Your hosting provider will supply the URL.
-
-* **An Umbraco backoffice account** — you will authenticate using your existing Umbraco credentials through an OAuth flow.
+* **Local apps that connect out** — Claude Desktop, Claude Code, Cursor, and GitHub Copilot (via Visual Studio Code) run on your machine. You point them at your hosted MCP URL through a config file or CLI command.
+* **Web-hosted platforms with their own connector UI** — ChatGPT and Claude.ai run in the browser and already act as a hosted service themselves. You add the MCP server as a connector through their own settings, not a local file.
 
 {% hint style="info" %}
-Hosting the MCP server yourself? See the [Hosted MCP Server](../base-mcp/hosted-mcp/README.md) documentation for how to set up and deploy it on Cloudflare Workers. Start with [Umbraco Setup](../base-mcp/hosted-mcp/deployment/umbraco-setup.md), then [Deployment](../base-mcp/hosted-mcp/deployment/README.md) or [Infrastructure as Code](../base-mcp/hosted-mcp/deployment/infrastructure-as-code.md).
+Connector UIs on web-hosted platforms change often. The guides for ChatGPT and Claude.ai describe the concept and link to the vendor's current documentation. They don't promise an exact, unchanging menu path.
 {% endhint %}
+
+## Finding Your MCP URL
+
+Every hosted Umbraco MCP URL follows the same shape:
+
+```
+https://{product}.{mcp-type}.{major}.mcp.umbraco.ai/at/{alias}.{region}/
+```
+
+* `{product}` — `cms` today.
+* `{mcp-type}` — `editor` or `developer`.
+* `{major}` — the Umbraco major version your site runs, `17` or `18`.
+* `{alias}.{region}` — your Umbraco Cloud project's alias and region, the same pair that makes up your project's own domain (`{alias}.{region}.umbraco.io`).
+
+| MCP server | Umbraco 17 | Umbraco 18 |
+| ---------- | ---------- | ---------- |
+| Editor     | `cms.editor.17.mcp.umbraco.ai`     | `cms.editor.18.mcp.umbraco.ai`     |
+| Developer  | `cms.developer.17.mcp.umbraco.ai`  | `cms.developer.18.mcp.umbraco.ai`  |
+
+For example, a project with alias `my-project` in region `euwest01`, running Umbraco 17, connects its Editor MCP client to:
+
+```
+https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/
+```
+
+* **Umbraco Cloud**: Find your project's full MCP URL in the admin area of your Cloud project — you don't need to build it by hand.
+* **Agency or self-hosted**: Your hosting provider will supply the URL for their own deployment.
+
+{% hint style="info" %}
+Hosting the MCP server yourself? See the [Hosted MCP Server](../base-mcp/hosted-mcp/README.md) documentation for how to set up and deploy it on Cloudflare Workers. See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind the `/at/{alias}.{region}/` URL shape. Start with [Umbraco Setup](../base-mcp/hosted-mcp/deployment/umbraco-setup.md), then [Deployment](../base-mcp/hosted-mcp/deployment/README.md) or [Infrastructure as Code](../base-mcp/hosted-mcp/deployment/infrastructure-as-code.md).
+{% endhint %}
+
+You need an Umbraco backoffice account too — you authenticate using your existing Umbraco credentials through an OAuth flow.
 
 ## Setup Guides
 
-Choose the guide for your AI environment:
+### Local Apps
 
 * [Claude Desktop](claude-desktop.md)
-* [ChatGPT](chatgpt.md)
 * [Claude Code](claude-code.md)
 * [Cursor](cursor.md)
 * [GitHub Copilot](github-copilot.md)
 
+### Web-Hosted Platforms
+
+* [ChatGPT](chatgpt.md)
+* [Claude.ai](claude-ai.md)
+
 {% hint style="info" %}
-The examples below use the Editor MCP Server. The same connection method applies to any hosted Umbraco MCP server.
+The examples below use the Editor MCP Server. The same connection method applies to any hosted Umbraco MCP server. Swap in the Developer MCP hostname from the table above if that's what you're connecting to.
 {% endhint %}
 
 ## How Authentication Works

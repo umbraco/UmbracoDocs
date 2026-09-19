@@ -21,7 +21,7 @@ The examples below use the Editor MCP Server. Replace the URL if you are using a
 5. Enter your hosted MCP URL:
 
 ```
-https://your-editor-mcp-url.example.com/sse
+https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/
 ```
 
 6. Enter a name for the server (for example, `umbraco-editor-mcp`).
@@ -34,15 +34,15 @@ You can also add the server to your Visual Studio Code `.vscode/mcp.json` file:
 {
   "servers": {
     "umbraco-editor-mcp": {
-      "type": "sse",
-      "url": "https://your-editor-mcp-url.example.com/sse"
+      "type": "http",
+      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/"
     }
   }
 }
 ```
 
 {% hint style="warning" %}
-Replace the URL with the actual URL provided by your hosting environment.
+Replace `https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/` with your own MCP URL. See [Finding Your MCP URL](README.md#finding-your-mcp-url) for how it's built.
 {% endhint %}
 
 ## Authentication

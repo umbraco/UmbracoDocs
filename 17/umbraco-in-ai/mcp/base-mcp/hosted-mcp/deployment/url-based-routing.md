@@ -26,7 +26,7 @@ URL-based routing is the right shape for Umbraco Cloud because each Cloud projec
 https://<worker-host>/at/<project-alias>/
 ```
 
-- `<project-alias>` is the project's Cloud alias verbatim. The `dev-` prefix on development environments works without extra configuration.
+- `<project-alias>` is the project's Cloud alias verbatim, or the alias with the region embedded as `<alias>.<region>` (for example `my-project.euwest01`). The `dev-` prefix on development environments works without extra configuration.
 - The `/at/` prefix is a fixed namespace marker. The marker avoids collisions with reserved OAuth routes (`/authorize`, `/token`, `/.well-known/*`).
 
 Examples:
@@ -35,6 +35,7 @@ Examples:
 https://mcp.example.com/at/hosted-mcp-worker-test/
 https://mcp.example.com/at/cloud-setup-training-pjw/
 https://mcp.example.com/at/dev-hosted-mcp-worker-test/
+https://mcp.example.com/at/my-project.euwest01/
 ```
 
 The MCP client URL is the only difference between projects. The consent flow, the discovery document, and the OAuth dance are shared across all projects.
@@ -71,7 +72,7 @@ const options = {
   allSliceNames,
   siteRouting: umbracoCloudSiteRouting({
     oauthClientId: "umbraco-mcp-cms-hosted",
-    // region: "euwest01",  // or set env.UMBRACO_CLOUD_REGION
+    // region: "euwest01",  // fallback only — used when the alias doesn't embed a region
   }),
 };
 ```
@@ -79,7 +80,7 @@ const options = {
 
 The preset takes care of:
 
-- URL composition: `https://{alias}.{region}.umbraco.io`.
+- URL composition: `https://{alias}.{region}.umbraco.io`. If the incoming `<project-alias>` already embeds a region (matched by `/\.[a-z]+\d{2}$/`, for example `my-project.euwest01`), that value is used as-is and the `region` option/env var is ignored. Otherwise the `region` option, then `env.UMBRACO_CLOUD_REGION`, then `"euwest01"` are tried in that order.
 - Project validation through a `HEAD /umbraco` probe with a five-second timeout.
 - Per-isolate caching of resolved sites (60 seconds OK, 30 seconds miss, 10 seconds error).
 - PKCE-only authentication. No client secret is required unless you set `resolveOauthClientSecret`.
@@ -143,6 +144,8 @@ Each project's OpenIddict client must list the following redirect URIs:
 |-------------|--------------|
 | Local development | `http://127.0.0.1:8787/callback/<alias>` |
 | Production Worker | `https://<worker-host>/callback/<alias>` |
+
+`<alias>` here is always the bare Cloud alias, even when the MCP connection URL uses the region-embedded form (`<alias>.<region>`). The Cloud project's own OAuth client registration only knows its bare alias. `umbracoCloudSiteRouting` strips the region back off before using it as the callback path.
 
 ## Authentication Flow
 

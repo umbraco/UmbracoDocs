@@ -19,7 +19,7 @@ The examples below use the Editor MCP Server. Replace the URL if you are using a
 5. Enter a name (for example, `umbraco-editor-mcp`) and your hosted MCP URL:
 
 ```
-https://your-editor-mcp-url.example.com/sse
+https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/
 ```
 
 6. Save the configuration. A browser window will open for you to authenticate using your Umbraco backoffice credentials.
@@ -33,14 +33,14 @@ You can also add the server manually to your Cursor MCP configuration file:
   "mcpServers": {
     "umbraco-editor-mcp": {
       "type": "url",
-      "url": "https://your-editor-mcp-url.example.com/sse"
+      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/"
     }
   }
 }
 ```
 
 {% hint style="warning" %}
-Replace the URL with the actual URL provided by your hosting environment.
+Replace `https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/` with your own MCP URL. See [Finding Your MCP URL](README.md#finding-your-mcp-url) for how it's built.
 {% endhint %}
 
 ## Verifying the Connection

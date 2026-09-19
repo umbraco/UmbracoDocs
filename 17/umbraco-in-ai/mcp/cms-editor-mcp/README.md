@@ -90,26 +90,31 @@ The tools available to you depend on your Umbraco user permissions. If your acco
 
 ### Host Setup
 
-Each MCP-compatible host application has its own setup process. Below you can find dedicated setup guides for the main environments:
+Each MCP-compatible host application has its own setup process, and it falls into one of two patterns:
+
+* **Local apps** — Claude Desktop, Claude Code, Cursor, and GitHub Copilot run on your machine. You provide the Editor MCP URL in a config file or CLI command:
+
+  ```json
+  {
+    "umbraco-editor-mcp": {
+      "type": "url",
+      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/"
+    }
+  }
+  ```
+
+  Once configured, restart your host application. You will be prompted to authenticate via your Umbraco login.
+
+* **Web-hosted platforms** — ChatGPT and Claude.ai run in the browser. You add the Editor MCP as a connector through their own settings instead of a config file.
+
+See [Finding Your MCP URL](../hosted-mcp-setup/README.md#finding-your-mcp-url) for how your Cloud project's actual URL is built.
 
 * [Claude Desktop](../hosted-mcp-setup/claude-desktop.md)
 * [Claude Code](../hosted-mcp-setup/claude-code.md)
-* [GitHub Copilot](../hosted-mcp-setup/github-copilot.md)
 * [Cursor](../hosted-mcp-setup/cursor.md)
+* [GitHub Copilot](../hosted-mcp-setup/github-copilot.md)
 * [ChatGPT](../hosted-mcp-setup/chatgpt.md)
-
-The general pattern is the same across all hosts. You provide the Editor MCP URL in your host's MCP configuration:
-
-```json
-{
-  "umbraco-editor-mcp": {
-    "type": "url",
-    "url": "https://your-editor-mcp-url.example.com/sse"
-  }
-}
-```
-
-Your hosting provider will supply the exact URL. Once configured, restart your host application. You will be prompted to authenticate via your Umbraco login.
+* [Claude.ai](../hosted-mcp-setup/claude-ai.md)
 
 ### Choosing Your Tools
 

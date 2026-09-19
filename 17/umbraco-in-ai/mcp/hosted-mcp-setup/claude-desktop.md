@@ -21,7 +21,7 @@ The examples below use the Editor MCP Server. Replace the URL if you are using a
   "mcpServers": {
     "umbraco-editor-mcp": {
       "type": "url",
-      "url": "https://your-editor-mcp-url.example.com/sse"
+      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/"
     }
   }
 }
@@ -31,7 +31,7 @@ The examples below use the Editor MCP Server. Replace the URL if you are using a
 5. When you first use an Umbraco tool, a browser window will open for you to log in to Umbraco using your backoffice credentials.
 
 {% hint style="warning" %}
-Replace `https://your-editor-mcp-url.example.com/sse` with the actual URL provided by your hosting environment.
+Replace `https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/` with your own MCP URL. See [Finding Your MCP URL](README.md#finding-your-mcp-url) for how it's built.
 {% endhint %}
 
 ## Verifying the Connection
