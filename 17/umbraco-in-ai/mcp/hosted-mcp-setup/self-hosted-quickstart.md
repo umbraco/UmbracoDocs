@@ -39,6 +39,10 @@ binding = "OAUTH_KV"
 id = "YOUR_KV_NAMESPACE_ID"
 ```
 
+{% hint style="warning" %}
+Only replace `YOUR_KV_NAMESPACE_ID`. Leave `binding = "OAUTH_KV"` exactly as it is — the Worker code reads this KV namespace as `env.OAUTH_KV`, so renaming the binding breaks token storage.
+{% endhint %}
+
 ## 3. Set Secrets
 
 ```bash
