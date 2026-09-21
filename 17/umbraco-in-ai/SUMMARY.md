@@ -57,6 +57,7 @@
   * [Use Cases](mcp/cms-editor-mcp/scenarios.md)
 * [Hosted MCP Setup](mcp/hosted-mcp-setup/README.md)
   * [Setting Up Hosted MCP for Your Site](mcp/hosted-mcp-setup/site-setup.md)
+  * [Self-Hosted Quick Start](mcp/hosted-mcp-setup/self-hosted-quickstart.md)
   * [Claude Code](mcp/hosted-mcp-setup/claude-code.md)
   * [Claude Desktop](mcp/hosted-mcp-setup/claude-desktop.md)
   * [Cursor](mcp/hosted-mcp-setup/cursor.md)
