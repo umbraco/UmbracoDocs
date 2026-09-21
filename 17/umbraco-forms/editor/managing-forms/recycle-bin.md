@@ -10,11 +10,13 @@ Deleting a form or a folder moves it to the recycle bin. Nothing is removed from
 
 The **Recycle Bin** sits below the form tree in the **Forms** section.
 
+![The Recycle Bin in the Forms section, listing the trashed forms.](../../.gitbook/assets/recycle-bin.png)
+
 ## Move a form or folder to the recycle bin
 
 1. Go to the **Forms** section.
 2. Select the form or folder you want to delete.
-3. Open the **Actions** menu and select **Delete**.
+3. Open the **Actions** menu and select **Trash**.
 4. Confirm the move.
 
 Deleting a folder moves the folder and everything inside it to the recycle bin.
@@ -33,7 +35,9 @@ The entries submitted to a form are kept while the form is in the recycle bin.
 2. Open the **Recycle Bin**.
 3. Select the form or folder you want to restore.
 4. Open the **Actions** menu and select **Restore**.
-5. A panel opens, naming the item and the folder it returns to. Select **Restore**.
+5.  A panel opens, naming the item and the folder it returns to. Select **Restore**.
+
+    ![The Restore panel, showing which folder the form returns to.](../../.gitbook/assets/recycle-bin-restore.png)
 
 The item returns to the folder it was deleted from. If that folder is itself still in the recycle bin, the item returns to the root of the **Forms** tree instead.
 
@@ -47,7 +51,7 @@ If another form or folder in the destination already uses the same name, Umbraco
 4. Open the **Actions** menu and select **Delete**.
 5. Confirm the deletion.
 
-To remove everything in the bin at once, open the **Actions** menu on the **Recycle Bin** itself and select **Empty Recycle Bin**.
+To remove everything in the bin at once, open the **Recycle Bin** and select **Empty recycle bin**.
 
 {% hint style="danger" %}
 Deleting a form from the recycle bin cannot be undone. The form is removed along with its entries, its workflows, its stored versions, and its user permissions.

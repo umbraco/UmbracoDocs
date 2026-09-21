@@ -29,19 +29,19 @@ The version list loads a page of versions at a time. Select **Load more** to fet
 
 A form takes its name from the version you roll back to. If another form in the same folder already uses that name, Umbraco Forms adds a suffix to keep the names unique.
 
-## Pin a version
+## Keep a version
 
-Pin a version to keep it. A pinned version is never removed by version cleanup.
+Each version in the list has a **Prevent clean up** button. A version kept this way is never removed by version cleanup.
 
 1. Open the Rollback window for the form.
-2. Select the pin next to the version you want to keep.
+2. Select **Prevent clean up** next to the version you want to keep.
 
-Select the pin again to unpin the version.
+Select the button again to let the version be cleaned up.
 
 ## Version cleanup
 
 Every version of a form is kept until you set up cleanup. Cleanup is opt-in, so upgrading Umbraco Forms never removes the history of a form on its own.
 
-The most recent version of a form is always kept, as is any pinned version.
+The most recent version of a form is always kept, as is any version set to prevent clean up.
 
 For details, see the [FormVersionCleanup](../../developer/configuration/README.md#formversioncleanup) section of the Configuration article.

@@ -14,7 +14,7 @@ The **Recycle Bin** sits below the form tree in the **Forms** section.
 
 1. Go to the **Forms** section.
 2. Select the form or folder you want to delete.
-3. Open the **Actions** menu and select **Delete**.
+3. Open the **Actions** menu and select **Trash**.
 4. Confirm the move.
 
 Deleting a folder moves the folder and everything inside it to the recycle bin.
@@ -47,7 +47,7 @@ If another form or folder in the destination already uses the same name, Umbraco
 4. Open the **Actions** menu and select **Delete**.
 5. Confirm the deletion.
 
-To remove everything in the bin at once, open the **Actions** menu on the **Recycle Bin** itself and select **Empty Recycle Bin**.
+To remove everything in the bin at once, open the **Recycle Bin** and select **Empty recycle bin**.
 
 {% hint style="danger" %}
 Deleting a form from the recycle bin cannot be undone. The form is removed along with its entries, its workflows, its stored versions, and its user permissions.

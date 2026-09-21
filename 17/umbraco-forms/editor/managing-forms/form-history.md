@@ -16,6 +16,8 @@ Umbraco Forms records each change made to a form. The record is kept for the lif
 
 The **History** section lists each change, newest first. Each entry shows the date, the user who made the change, and what the change was.
 
+![The History section on a form's Info tab, listing save, rollback, trash, and restore entries.](../../.gitbook/assets/form-history.png)
+
 A form that has not changed since it was created shows no entries.
 
 ## Types of change
