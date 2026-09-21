@@ -6,6 +6,12 @@ description: Set up hosted Umbraco MCP servers in your AI environment.
 
 This section explains how to connect to a hosted Umbraco MCP server from different AI environments. Unlike the [local MCP setup](../local-mcp-setup/), a hosted MCP server runs as a remote service that you connect to via a URL. Authentication is handled through an OAuth login flow using your Umbraco backoffice credentials.
 
+Getting connected has three steps:
+
+1. **Enable hosted MCP on your site** — a one-time setup step, different for a self-hosted site versus Umbraco Cloud. See [Setting Up Hosted MCP for Your Site](site-setup.md).
+2. **Find your MCP URL** — see below.
+3. **Connect your AI client** — see the setup guides below.
+
 ## Two Ways to Connect
 
 The setup guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
@@ -45,7 +51,7 @@ https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/
 * **Agency or self-hosted**: Your hosting provider will supply the URL for their own deployment.
 
 {% hint style="info" %}
-Hosting the MCP server yourself? See the [Hosted MCP Server](../base-mcp/hosted-mcp/README.md) documentation for how to set up and deploy it on Cloudflare Workers. See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind the `/at/{alias}.{region}/` URL shape. Start with [Umbraco Setup](../base-mcp/hosted-mcp/deployment/umbraco-setup.md), then [Deployment](../base-mcp/hosted-mcp/deployment/README.md) or [Infrastructure as Code](../base-mcp/hosted-mcp/deployment/infrastructure-as-code.md).
+Hosting the MCP server yourself? Start with [Setting Up Hosted MCP for Your Site](site-setup.md). See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind the `/at/{alias}.{region}/` URL shape used on Umbraco Cloud.
 {% endhint %}
 
 You need an Umbraco backoffice account too — you authenticate using your existing Umbraco credentials through an OAuth flow.

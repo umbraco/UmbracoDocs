@@ -74,11 +74,11 @@ The Editor MCP Server is a hosted service. How you connect depends on where your
 
 #### Umbraco Cloud
 
-If your site is hosted on Umbraco Cloud, you can find your Editor MCP URL in the admin area of your Cloud project. Use this URL when configuring your MCP client.
+If your site is hosted on Umbraco Cloud, you can find your Editor MCP URL in the admin area of your Cloud project. Use this URL when configuring your MCP client. Cloud projects register for hosted MCP automatically once the [`Umbraco.Mcp.HostedAuth`](../hosted-mcp-setup/site-setup.md) package is installed — no configuration needed on your side.
 
 #### Agency or Self-Hosted
 
-If your site is hosted by an agency or on your own infrastructure, your hosting provider will supply you with the Editor MCP URL.
+If your site is hosted by an agency or on your own infrastructure, your hosting provider will supply you with the Editor MCP URL. If you're setting this up yourself, see [Setting Up Hosted MCP for Your Site](../hosted-mcp-setup/site-setup.md) for the self-hosted setup steps.
 
 ### Authentication
 

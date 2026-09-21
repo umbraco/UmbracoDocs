@@ -56,6 +56,7 @@
   * [Configuration Options](mcp/cms-editor-mcp/configuration.md)
   * [Use Cases](mcp/cms-editor-mcp/scenarios.md)
 * [Hosted MCP Setup](mcp/hosted-mcp-setup/README.md)
+  * [Setting Up Hosted MCP for Your Site](mcp/hosted-mcp-setup/site-setup.md)
   * [Claude Code](mcp/hosted-mcp-setup/claude-code.md)
   * [Claude Desktop](mcp/hosted-mcp-setup/claude-desktop.md)
   * [Cursor](mcp/hosted-mcp-setup/cursor.md)
