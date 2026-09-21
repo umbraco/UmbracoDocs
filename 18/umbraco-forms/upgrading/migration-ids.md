@@ -62,8 +62,8 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 5d89ab1c-2520-425e-8d0d-fb0f646a5767 | 17.6.0                | Adds the Decimal field data table. Recognized on the version 18 chain from 18.2.0. |
 | 120e7573-399a-45c5-bfef-0df7267fed89 | 17.6.0                | Adds Trashed columns to the forms and folders tables for the recycle bin. Recognized on the version 18 chain from 18.2.0. |
 | 6f51e776-22b5-45ab-ba15-1884965cd4cf | 17.6.0                | Creates the form versions table. Recognized on the version 18 chain from 18.2.0. |
-| 91f8163e-99b6-4e78-b4cb-573f8493fd3c | 17.6.0                | Backfills a baseline audit log entry for each existing form. Recognized on the version 18 chain from 18.2.0. |
+| 91f8163e-99b6-4e78-b4cb-573f8493fd3c | 17.6.0                | Adds a baseline audit log entry for each existing form. Recognized on the version 18 chain from 18.2.0. |
 | 2fdc9d2c-51cf-4aa2-91c3-9fca5ab3bdb0 | 18.2.0                | Adds the Decimal field data table.                                                 |
 | 7c6dccd5-7764-4f99-8da3-cc9e92ad7c4f | 18.2.0                | Adds Trashed columns to the forms and folders tables for the recycle bin.          |
 | 5daf0e20-45f3-4963-a024-d4f5ab4570b1 | 18.2.0                | Creates the form versions table.                                                   |
-| c1d9f4a7-2b63-4e1a-8f50-9a7c3d2e6b14 | 18.2.0                | Backfills a baseline audit log entry for each existing form.                       |
+| c1d9f4a7-2b63-4e1a-8f50-9a7c3d2e6b14 | 18.2.0                | Adds a baseline audit log entry for each existing form.                       |

@@ -52,4 +52,4 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 5d89ab1c-2520-425e-8d0d-fb0f646a5767 | 17.6.0                | Adds the Decimal field data table.                                                 |
 | 120e7573-399a-45c5-bfef-0df7267fed89 | 17.6.0                | Adds Trashed columns to the forms and folders tables for the recycle bin.          |
 | 6f51e776-22b5-45ab-ba15-1884965cd4cf | 17.6.0                | Creates the form versions table.                                                   |
-| 91f8163e-99b6-4e78-b4cb-573f8493fd3c | 17.6.0                | Backfills a baseline audit log entry for each existing form.                       |
+| 91f8163e-99b6-4e78-b4cb-573f8493fd3c | 17.6.0                | Adds a baseline audit log entry for each existing form.                       |
