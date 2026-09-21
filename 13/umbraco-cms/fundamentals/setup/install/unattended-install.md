@@ -42,16 +42,20 @@ The 'umbracoDbDSN\_ProviderName' attribute sets the .NET Framework data provider
 
 A value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
 
-It is recommended that you make use of the values shown below for the `Cache`, `Foreign Keys` and `Pooling` keywords on your connection string.
+It is recommended that you make use of the values shown below for the `Foreign Keys` and `Pooling` keywords on your connection string.
 
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
 ```
+
+{% hint style="warning" %}
+Do not add `Cache=Shared` to a SQLite connection string. Shared cache causes `database table is locked` errors on the write-ahead logging databases that Umbraco creates. For more information, see the [Connection strings settings](../../../reference/configuration/connectionstringssettings.md) article.
+{% endhint %}
 
 ## Enable the unattended installs feature
 
