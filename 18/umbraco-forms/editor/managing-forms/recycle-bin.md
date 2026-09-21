@@ -10,6 +10,8 @@ Deleting a form or a folder moves it to the recycle bin. Nothing is removed from
 
 The **Recycle Bin** sits below the form tree in the **Forms** section.
 
+![The Recycle Bin in the Forms section, listing the trashed forms.](../../.gitbook/assets/recycle-bin.png)
+
 ## Move a form or folder to the recycle bin
 
 1. Go to the **Forms** section.
@@ -33,7 +35,9 @@ The entries submitted to a form are kept while the form is in the recycle bin.
 2. Open the **Recycle Bin**.
 3. Select the form or folder you want to restore.
 4. Open the **Actions** menu and select **Restore**.
-5. A panel opens, naming the item and the folder it returns to. Select **Restore**.
+5.  A panel opens, naming the item and the folder it returns to. Select **Restore**.
+
+    ![The Restore panel, showing which folder the form returns to.](../../.gitbook/assets/recycle-bin-restore.png)
 
 The item returns to the folder it was deleted from. If that folder is itself still in the recycle bin, the item returns to the root of the **Forms** tree instead.
 
