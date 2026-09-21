@@ -179,15 +179,24 @@ When an AI operation executes, the guardrail middleware resolves all applicable 
 
 During streaming responses:
 
-- **Code-based** evaluators (Contains, Regex Match) hold back a trailing window of the response (100 characters) instead of releasing text to the caller the instant it arrives. Every time new text is generated, the whole held-back window is re-checked, so a pattern split across two provider chunks is still caught before any of it is released.
-  - **Block** throws before any of the held-back text is released, so flagged content never reaches the caller.
-  - **Redact** replaces matches with `[REDACTED]` inside the held-back window before it's released, so it works during streaming the same way it does for a non-streamed response.
-  - A match longer than the 100-character window can still leak partially — this is an inherent limit of scanning a live stream rather than a completed response, not something a rule's `Action` controls.
-- **Model-based** evaluators (LLM Safety Judge) still run only after the stream completes, on the full aggregated response. A **Block** or **Redact** action on a model-based post-generate rule cannot prevent already-streamed content from reaching the caller — it can only fail the request after the fact. If you need a guarantee for streaming responses, use a code-based evaluator for that rule.
-- **Pre-generate Redact** rules work normally during streaming (redaction happens before the stream starts).
+- **Code-based** evaluators (Contains, Regex Match) hold back a trailing 100-character window of the response. They don't release text to the caller the instant it arrives.
+  - Each new chunk re-checks the whole held-back window. This catches a pattern split across two provider chunks before any of it is released.
+  - **Block** throws before the held-back text is released. Flagged content never reaches the caller.
+  - **Redact** replaces matches with `[REDACTED]` inside the window before release. It works the same way it does for a non-streamed response.
+  - A match longer than the window can still leak partially. This is an inherent limit of scanning a live stream instead of a completed response. A rule's `Action` doesn't control this.
+- **Model-based** evaluators (LLM Safety Judge) still run only after the stream completes. They evaluate the full aggregated response.
+  - A **Block** or **Redact** action on a model-based post-generate rule can't stop already-streamed content. It can only fail the request afterwards.
+  - Use a code-based evaluator instead if you need a guarantee during streaming.
+- **Pre-generate Redact** rules work normally during streaming. Redaction happens before the stream starts.
 
 {% hint style="warning" %}
-Holding back text for code-based evaluation adds a small, variable delay to streaming responses that have a post-generate code-based rule configured — a chat profile with no guardrails, or only pre-generate rules, or only model-based post-generate rules, streams exactly as fast as before. For a fast-streaming model this delay is generally imperceptible (a few hundred milliseconds); for a slow model it can be closer to a second. It's most noticeable in two situations: a short pause before the very first characters of the response appear, and a response shorter than the 100-character window, which arrives as a single chunk instead of streaming token-by-token. This is a deliberate trade-off — the alternative is a guardrail that silently has no effect on streamed responses.
+
+Holding back text for code-based evaluation adds a small delay to streaming responses. This only applies to a profile with a post-generate code-based rule configured. A profile with no guardrails, only pre-generate rules, or only model-based post-generate rules streams exactly as fast as before.
+
+The delay is usually imperceptible for a fast-streaming model. For a slow model, it can be closer to a second. It's most noticeable in two situations. First, at the start of the response. Second, for a response shorter than the 100-character window, which arrives as one chunk instead of streaming.
+
+This is a deliberate trade-off. The alternative is a guardrail with no effect on streamed responses.
+
 {% endhint %}
 
 ### Handling Blocked Content
