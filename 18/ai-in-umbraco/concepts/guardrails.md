@@ -179,11 +179,16 @@ When an AI operation executes, the guardrail middleware resolves all applicable 
 
 During streaming responses:
 
-- **Code-based** evaluators run on chunks as they arrive, using a sliding buffer to catch patterns split across chunk boundaries.
-- **Model-based** evaluators run after the stream completes on the full aggregated response.
-- If a code-based evaluator flags content during streaming, the stream is stopped immediately.
+- **Code-based** evaluators (Contains, Regex Match) hold back a trailing window of the response (100 characters) instead of releasing text to the caller the instant it arrives. Every time new text is generated, the whole held-back window is re-checked, so a pattern split across two provider chunks is still caught before any of it is released.
+  - **Block** throws before any of the held-back text is released, so flagged content never reaches the caller.
+  - **Redact** replaces matches with `[REDACTED]` inside the held-back window before it's released, so it works during streaming the same way it does for a non-streamed response.
+  - A match longer than the 100-character window can still leak partially — this is an inherent limit of scanning a live stream rather than a completed response, not something a rule's `Action` controls.
+- **Model-based** evaluators (LLM Safety Judge) still run only after the stream completes, on the full aggregated response. A **Block** or **Redact** action on a model-based post-generate rule cannot prevent already-streamed content from reaching the caller — it can only fail the request after the fact. If you need a guarantee for streaming responses, use a code-based evaluator for that rule.
 - **Pre-generate Redact** rules work normally during streaming (redaction happens before the stream starts).
-- **Post-generate Redact** rules degrade to Warn during streaming, because chunks have already been yielded to the caller and cannot be retroactively modified.
+
+{% hint style="warning" %}
+Holding back text for code-based evaluation adds a small, variable delay to streaming responses that have a post-generate code-based rule configured — a chat profile with no guardrails, or only pre-generate rules, or only model-based post-generate rules, streams exactly as fast as before. For a fast-streaming model this delay is generally imperceptible (a few hundred milliseconds); for a slow model it can be closer to a second. It's most noticeable in two situations: a short pause before the very first characters of the response appear, and a response shorter than the 100-character window, which arrives as a single chunk instead of streaming token-by-token. This is a deliberate trade-off — the alternative is a guardrail that silently has no effect on streamed responses.
+{% endhint %}
 
 ### Handling Blocked Content
 
