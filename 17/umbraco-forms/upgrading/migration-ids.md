@@ -49,3 +49,7 @@ A unique **migration ID** is generated for each Umbraco Forms upgrade that requi
 | 7c1f5a86-2e4b-4d93-8f07-6b25a9c41de8 | 17.5.0                | Adds hour-level breakdowns to the analytics daily summary table for local time zones.|
 | 0625d467-f048-4b5b-aa38-3d42fbfa8cd3 | 17.5.0                | Rebuild the records index.                                                         |
 | 507bebee-b579-4764-aae8-44c1f40e65a8 | 17.5.1                | Grants the Forms Security permission to the Administrators user group.             |
+| 5d89ab1c-2520-425e-8d0d-fb0f646a5767 | 17.6.0                | Adds the Decimal field data table.                                                 |
+| 120e7573-399a-45c5-bfef-0df7267fed89 | 17.6.0                | Adds Trashed columns to the forms and folders tables for the recycle bin.          |
+| 6f51e776-22b5-45ab-ba15-1884965cd4cf | 17.6.0                | Creates the form versions table.                                                   |
+| 91f8163e-99b6-4e78-b4cb-573f8493fd3c | 17.6.0                | Backfills a baseline audit log entry for each existing form.                       |
