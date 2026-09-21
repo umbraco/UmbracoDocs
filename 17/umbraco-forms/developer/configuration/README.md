@@ -87,14 +87,6 @@ For illustration purposes, the following structure represents the full set of op
         "FirstRunTime": "",
         "Period": "1.00:00:00"
       },
-      "FormVersionCleanup": {
-        "Enabled": false,
-        "KeepLatestVersions": 0,
-        "KeepVersionsNewerThanDays": 0,
-        "MaxVersionsToDeletePerRun": 50000,
-        "FirstRunTime": "",
-        "Period": "1.00:00:00"
-      },
       "DisableRecordIndexing": false,
       "EnableFormsApi": false,
       "EnableRecordingOfIpWithFormSubmission": false,
@@ -428,46 +420,6 @@ This setting configures when the record deletion process will run for the first 
 #### Period
 
 Defines how often the record deletion process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours. Shorter or longer periods can be set using different datetime strings.
-
-### FormVersionCleanup
-
-Umbraco Forms stores a version of a form each time it is saved, so an earlier version can be restored. Cleanup of these stored versions runs as a background task, which can be customized with the following settings.
-
-The most recent version of a form is always kept, as is any version pinned in the backoffice.
-
-#### Enabled
-
-By default this value is `false` and no versions are removed. Cleanup is opt-in, so an upgrade never removes form history on its own.
-
-Set it to `true` to enable the background task.
-
-Being enabled is not enough on its own for versions to be removed. At least one of `KeepLatestVersions` and `KeepVersionsNewerThanDays` also needs to be set.
-
-#### KeepLatestVersions
-
-The number of recent versions to keep for each form. The default value is `0`, which keeps every version.
-
-For example, a value of `10` keeps the ten most recent versions of each form and makes the older ones eligible for cleanup.
-
-#### KeepVersionsNewerThanDays
-
-The number of days a version is kept before it becomes eligible for cleanup. The default value is `0`, which means the age of a version is not considered.
-
-For example, a value of `30` means only versions created more than 30 days ago are removed.
-
-#### MaxVersionsToDeletePerRun
-
-The maximum number of versions removed in a single run. The default value is `50000`. A value of `0` means there is no limit.
-
-Versions are removed in batches, and anything still eligible when the limit is reached is removed on the next run.
-
-#### FirstRunTime
-
-This setting configures when the version cleanup process will run for the first time. If the value is not configured, the process will run 3 minutes after the website starts. The value is specified as a string in crontab format. For example, a value of `"0 4 * * *"` schedules the operation to start at 04:00.
-
-#### Period
-
-Defines how often the version cleanup process will run. The default value is `1.00:00:00` which is equivalent to once every 24 hours. Shorter or longer periods can be set using different datetime strings.
 
 ### DisableRecordIndexing
 
