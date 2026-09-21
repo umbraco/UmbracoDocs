@@ -502,7 +502,6 @@
     * [Using Umbraco UI Library in the Dashboard](extend-your-project/tutorials/creating-a-custom-dashboard/extending-the-dashboard-using-umbraco-ui-library.md)
   * [Creating Custom Database Tables with Entity Framework](extend-your-project/tutorials/getting-started-with-entity-framework-core.md)
   * [Custom Views for Block List](extend-your-project/tutorials/creating-custom-views-for-blocklist.md)
-  * [Connecting Umbraco Forms and Zapier](extend-your-project/tutorials/connecting-umbraco-forms-and-zapier.md)
   * [Creating a Backoffice API](extend-your-project/tutorials/creating-a-backoffice-api/README.md)
     * [Documenting Your Controllers](extend-your-project/tutorials/creating-a-backoffice-api/documenting-your-controllers.md)
     * [Adding a Custom OpenAPI Document](extend-your-project/tutorials/creating-a-backoffice-api/adding-a-custom-openapi-document.md)
