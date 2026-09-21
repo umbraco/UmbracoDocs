@@ -16,8 +16,8 @@ Getting connected has three steps:
 
 The setup guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
 
-* **Local apps that connect out** — Claude Desktop, Claude Code, Cursor, and GitHub Copilot (via Visual Studio Code) run on your machine. You point them at your hosted MCP URL through a config file or CLI command.
-* **Web-hosted platforms with their own settings UI** — ChatGPT and Claude.ai run in the browser and already act as a hosted service themselves. You add the MCP server through their own settings (ChatGPT calls this a plugin, Claude.ai a connector), not a local file.
+* **Local apps that connect out** — [Claude Desktop](claude-desktop.md), [Claude Code](claude-code.md), [Cursor](cursor.md), and [GitHub Copilot](github-copilot.md) (via Visual Studio Code) run on your machine. You point them at your hosted MCP URL through a config file or CLI command.
+* **Web-hosted platforms with their own settings UI** — [ChatGPT](chatgpt.md) and [Claude.ai](claude-ai.md) run in the browser and already act as a hosted service themselves. You add the MCP server through their own settings (ChatGPT calls this a plugin, Claude.ai a connector), not a local file.
 
 {% hint style="info" %}
 These settings UIs change often. The guides for ChatGPT and Claude.ai describe the concept and link to the vendor's current documentation. They don't promise an exact, unchanging menu path.
@@ -25,7 +25,11 @@ These settings UIs change often. The guides for ChatGPT and Claude.ai describe t
 
 ## Finding Your MCP URL
 
-Every hosted Umbraco MCP URL follows the same shape:
+The URL you connect to depends on how your site is hosted.
+
+### Umbraco Cloud
+
+Every project on Umbraco Cloud is reachable through Umbraco's own shared hosted infrastructure, at a URL of this shape:
 
 ```
 https://{product}.{mcp-type}.{major}.mcp.umbraco.ai/at/{alias}.{region}/mcp
@@ -47,12 +51,15 @@ For example, a project with alias `my-project` in region `euwest01`, running Umb
 https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp
 ```
 
-* **Umbraco Cloud**: Find your project's full MCP URL in the admin area of your Cloud project — you don't need to build it by hand.
-* **Agency or self-hosted**: Your hosting provider will supply the URL for their own deployment.
+Find your project's full MCP URL in the admin area of your Cloud project — you don't need to build it by hand.
 
 {% hint style="info" %}
-Hosting the MCP server yourself? Start with [Setting Up Hosted MCP for Your Site](site-setup.md). See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind the `/at/{alias}.{region}/mcp` URL shape used on Umbraco Cloud.
+See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind this URL shape.
 {% endhint %}
+
+### Agency or Self-Hosted
+
+A self-hosted deployment doesn't use the `{alias}.{region}` shape above — that's specific to Umbraco's own Cloud infrastructure. Your URL is your own Worker's domain, ending in `/mcp` (for example `https://mcp.example.com/mcp`). Your hosting provider will supply the exact URL, or see [Setting Up Hosted MCP for Your Site](site-setup.md) if you're setting it up yourself.
 
 You need an Umbraco backoffice account too — you authenticate using your existing Umbraco credentials through an OAuth flow.
 

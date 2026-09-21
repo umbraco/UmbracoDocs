@@ -1,38 +1,55 @@
 ---
 description: >-
-  Add the Umbraco Cloud short-circuit composer so cold-start MCP authentication
-  redirects to the Cloud SSO provider instead of the local login form.
+  Short-circuit cold-start MCP authentication so it redirects to your external
+  SSO provider instead of dead-ending on the local login form. Umbraco Cloud is
+  used as the worked example.
 ---
 
 # External Login Short Circuit
 
-This composer is required for hosted MCP servers that connect to **Umbraco Cloud** projects. It fixes the cold-start authentication flow. Unauthenticated users are routed to the Cloud SSO provider (`identity.umbraco.com`) rather than the local username and password form.
+This composer fixes a cold-start authentication problem. It affects any Umbraco backoffice that signs users in through an external SSO provider, not only Umbraco Cloud.
+
+Umbraco Cloud is used below as the worked example (`identity.umbraco.com`), because it's the most common case. If your backoffice uses a different external identity provider, the same technique applies — adapt the code to your provider's scheme name.
 
 {% hint style="info" %}
-Self-hosted Umbraco instances do not need this composer. Skip this page if your project is not running on Umbraco Cloud.
+If your backoffice only ever uses local Umbraco username/password login, you don't need this composer. The standalone login form already works for that case.
+{% endhint %}
+
+{% hint style="info" %}
+Deploying a pre-built Editor or Developer MCP on Umbraco Cloud? [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) applies this short-circuit for you automatically — no composer needed. The manual approach below is for building a custom MCP server, or for a non-Cloud SSO provider the package doesn't know about.
 {% endhint %}
 
 ## The Problem
 
-When an unauthenticated browser hits the Management API OAuth authorize endpoint, the backoffice cookie scheme redirects to `/umbraco/login`. That URL is served by the standalone Umbraco Login app, which does not render external authentication providers.
+The standalone Umbraco login page (`/umbraco/login`) only renders the local username/password form — it doesn't render external providers. A hosted MCP client's first authorization request hits this page unauthenticated. A user signing in via external SSO gets stuck on a form they can't use.
 
-A first-time MCP user lands on a local username and password form they cannot complete with their Cloud credentials. The authentication flow dead-ends before reaching the Cloud SSO provider.
+```mermaid
+sequenceDiagram
+    participant Client as MCP Client
+    participant Umbraco
+    participant IdP as External SSO Provider
 
-## How the Composer Fixes It
+    Client->>Umbraco: GET authorize (unauthenticated)
+    Umbraco->>Client: Redirect to /umbraco/login
+    Note over Client,Umbraco: Local form only — dead end for SSO users
 
-The composer intercepts the redirect and bounces the user back to the same OAuth authorize URL with `identity_provider=Umbraco.UmbracoId` appended.
+    rect rgba(0,150,0,0.08)
+    Note over Umbraco: With the short-circuit composer
+    Client->>Umbraco: GET authorize (unauthenticated)
+    Umbraco->>Client: Redirect to authorize?identity_provider=...
+    Client->>Umbraco: GET authorize?identity_provider=...
+    Umbraco->>IdP: Challenge external login
+    IdP->>Umbraco: Callback with external claims
+    Umbraco->>Umbraco: Sign in via AuthorizeExternal (sets backoffice cookie)
+    Umbraco->>Client: Authorization code
+    end
+```
 
-That second request routes through `BackOfficeController.AuthorizeExternal`, which:
-
-1. Configures the OIDC challenge with the original authorize URL as the return target.
-2. Calls `BackOfficeSignInManager.ExternalLoginSignInAsync` after the `/umbraco-signin-oidc` callback fires, converting the external claims into a backoffice cookie sign-in.
-3. Completes the OAuth flow by issuing an authorization code.
-
-Challenging the OIDC scheme directly skips the controller path and the backoffice cookie never gets set, which causes an authentication loop. Going via `AuthorizeExternal` matches the path the single-page application uses for its working `/umbraco` flow.
+The composer intercepts the dead-end redirect and bounces the user back to the same authorize URL with `identity_provider=<your-scheme>` appended (`Umbraco.UmbracoId` for Cloud). That second request routes through `BackOfficeController.AuthorizeExternal`, which challenges the external provider, converts the resulting claims into a backoffice cookie sign-in, and completes the OAuth flow. Challenging the provider directly (skipping `AuthorizeExternal`) never sets that cookie and causes an authentication loop instead.
 
 ## Add the Composer
 
-Create a file in your Umbraco Cloud project (for example, `McpExternalLoginShortCircuitComposer.cs`):
+Create a file in your Umbraco project (for example, `McpExternalLoginShortCircuitComposer.cs`). The example below targets Umbraco Cloud's `Umbraco.UmbracoId` scheme — replace `ExternalLoginScheme` with your own provider's scheme name if you're not on Cloud.
 
 {% code title="McpExternalLoginShortCircuitComposer.cs" %}
 ```csharp
@@ -138,15 +155,15 @@ Other unauthenticated requests fall through to the previous `OnRedirectToLogin` 
 
 ### Cold-start authentication lands on the local username and password form
 
-**Cause**: The composer is not registered, or `Umbraco.Cloud.Cms` is not installed in the project.
+**Cause**: The composer is not registered, or (on Cloud) `Umbraco.Cloud.Cms` is not installed in the project.
 
-**Fix**: Confirm the composer file is present in the project and the project references `Umbraco.Cloud.Cms`. Restart the project and try again.
+**Fix**: Confirm the composer file is present in the project and, on Cloud, that the project references `Umbraco.Cloud.Cms`. Restart the project and try again.
 
-### Authentication loops between the project authorize endpoint and `identity.umbraco.com`
+### Authentication loops between the project's authorize endpoint and the external provider
 
 **Cause**: The OIDC callback is not converting the external sign-in to a backoffice cookie. The composer might be challenging the OIDC scheme directly instead of routing through `AuthorizeExternal`.
 
-**Fix**: Confirm the composer appends `identity_provider=Umbraco.UmbracoId` to the redirect URL. Direct OIDC challenges bypass the cookie sign-in and cause the loop.
+**Fix**: Confirm the composer appends `identity_provider=<your-scheme>` to the redirect URL. Direct OIDC challenges bypass the cookie sign-in and cause the loop.
 
 ## Related Articles
 

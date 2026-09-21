@@ -6,8 +6,8 @@ description: Register the Hosted MCP Worker as an OAuth client in your Umbraco i
 
 The Umbraco instance needs the hosted MCP server registered as an OAuth client. This is a one-time setup per Umbraco instance.
 
-{% hint style="info" %}
-Deploying one of Umbraco's pre-built Editor or Developer MCP servers rather than a fully custom MCP server built on this SDK? Use the [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) package instead — it registers the OAuth client automatically and covers both self-hosted and Umbraco Cloud. The manual Composer below is for custom MCP servers built directly on this SDK.
+{% hint style="warning" %}
+This manual Composer approach is superseded for most people by the [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) package, which registers the OAuth client automatically — no C# to write. Use the package if you're deploying one of Umbraco's pre-built Editor or Developer MCP servers, self-hosted or on Umbraco Cloud. Only follow the manual steps below if you're building a fully custom MCP server directly on this SDK.
 {% endhint %}
 
 ## Prerequisites

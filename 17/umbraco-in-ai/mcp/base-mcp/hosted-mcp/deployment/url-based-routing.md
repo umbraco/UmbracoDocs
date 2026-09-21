@@ -6,9 +6,13 @@ description: >-
 
 # URL-Based Routing
 
-URL-based routing lets a single hosted MCP Worker serve many Umbraco projects. MCP clients connect to a per-project URL (`https://<worker-host>/at/<project-alias>/`) and the Worker resolves each project on demand. There is no site picker on the consent screen and no per-project Worker deployment.
+URL-based routing lets a single hosted MCP Worker serve many Umbraco projects. MCP clients connect to a per-project URL (`https://<worker-host>/at/<project-alias>/mcp`) and the Worker resolves each project on demand. There is no site picker on the consent screen and no per-project Worker deployment.
 
 This is the recommended pattern for Umbraco Cloud, where every project has a known alias.
+
+{% hint style="info" %}
+Deploying one of Umbraco's pre-built Editor or Developer MCP servers? This routing is already built into those Workers. [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) handles the Cloud project's side of it — see [Setting Up Hosted MCP for Your Site](../../../hosted-mcp-setup/site-setup.md) instead of this page. The rest of this page is a reference for building a custom MCP server with the same routing.
+{% endhint %}
 
 ## How It Compares to Other Patterns
 
@@ -23,7 +27,7 @@ URL-based routing is the right shape for Umbraco Cloud because each Cloud projec
 ## URL Shape
 
 ```
-https://<worker-host>/at/<project-alias>/
+https://<worker-host>/at/<project-alias>/mcp
 ```
 
 - `<project-alias>` is the project's Cloud alias verbatim, or the alias with the region embedded as `<alias>.<region>` (for example `my-project.euwest01`). The `dev-` prefix on development environments works without extra configuration.
@@ -32,10 +36,10 @@ https://<worker-host>/at/<project-alias>/
 Examples:
 
 ```
-https://mcp.example.com/at/hosted-mcp-worker-test/
-https://mcp.example.com/at/cloud-setup-training-pjw/
-https://mcp.example.com/at/dev-hosted-mcp-worker-test/
-https://mcp.example.com/at/my-project.euwest01/
+https://mcp.example.com/at/hosted-mcp-worker-test/mcp
+https://mcp.example.com/at/cloud-setup-training-pjw/mcp
+https://mcp.example.com/at/dev-hosted-mcp-worker-test/mcp
+https://mcp.example.com/at/my-project.euwest01/mcp
 ```
 
 The MCP client URL is the only difference between projects. The consent flow, the discovery document, and the OAuth dance are shared across all projects.
@@ -52,8 +56,8 @@ The MCP client URL is the only difference between projects. The consent flow, th
 Three things to know:
 
 1. **The Worker validates per-project access tokens.** The token's `aud` claim binds to `<worker-host>/at/<alias>` (per RFC 8707). `OAuthProvider`'s built-in audience check enforces the binding.
-2. **The Worker rewrites `/at/<alias>/` to `/mcp` internally.** The rewrite happens after the audience check, so token validation still passes.
-3. **Each Cloud project must opt in.** Two composers are required (see [Cloud Project Setup](#cloud-project-setup) below).
+2. **The Worker rewrites any `/at/<alias>/...` path to `/mcp` internally.** The rewrite matches on the `/at/` prefix alone, so `/at/<alias>/mcp` and `/at/<alias>/` resolve identically. This page documents the `/mcp`-suffixed form for consistency with the rest of the documentation. The rewrite happens after the audience check, so token validation still passes.
+3. **Each Cloud project must opt in.** Two composers are required (see [Cloud Project Setup](#cloud-project-setup) below) — or install [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md), which does both automatically.
 
 ## Worker Configuration
 
@@ -117,7 +121,7 @@ const provider = new OAuthProvider({
 
 ## Cloud Project Setup
 
-Each Umbraco Cloud project participating in URL-based routing needs three things:
+Each Umbraco Cloud project participating in URL-based routing needs three things. [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) automates all three for a pre-built Editor or Developer MCP. The steps below are for a custom MCP server, or to understand what the package does.
 
 ### 1. The OAuth Composer
 

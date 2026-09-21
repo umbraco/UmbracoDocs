@@ -6,21 +6,17 @@ description: Get started with the Umbraco CMS Editor Model Context Protocol (MCP
 
 The Editor [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) gives content editors and managers a natural, conversational way to work with Umbraco. It allows you to use AI assistants to manage content, media, translations, and more, without needing developer tools or technical setup.
 
-This MCP Server is a hosted service that connects your AI environment to your Umbraco instance. It works with MCP-compatible tools such as Claude Desktop, Cursor, GitHub Copilot, and others.
-
 {% hint style="info" %}
 Think of it as giving your AI assistant a secure, structured way to help you manage your Umbraco site.
 {% endhint %}
 
 ## How It Works
 
-The Editor MCP Server runs as a hosted service, not as a local application. You connect to it using a URL provided by your hosting provider. When you connect, you authenticate using your Umbraco backoffice credentials through an OAuth login flow.
+The Editor MCP works best hosted, in a Cloud-to-Cloud setup. Umbraco Cloud already runs the shared hosted infrastructure, so there's no server to deploy. It works equally well hosted and connected to a self-hosted or agency Umbraco instance. It can also run locally via stdio, the same way as the [Developer MCP Server](../cms-developer-mcp/). This documentation focuses on the hosted setup, since that's the path most editors use.
 
-[MCP clients](../../concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](../../concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or Windsurf. These clients connect to the server. When you interact with your chat-based environment, the client communicates with the MCP Server using the Model Context Protocol (MCP).
+However you connect, the MCP Server talks directly to Umbraco through the Management API, authenticating as your own Umbraco backoffice user. The tools available to you are determined by your Umbraco user permissions. If you can do it in the backoffice, you can do it through the Editor MCP.
 
-Learn more about [Model Context Protocol (MCP)](../../concepts/model-context-protocol.md).
-
-The MCP Server talks directly to Umbraco through the Management API. The tools available to you are determined by your Umbraco user permissions. If you can do it in the backoffice, you can do it through the Editor MCP.
+[MCP clients](../../concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](../../concepts/model-context-protocol.md#host-applications) such as Claude Desktop, Cursor, or ChatGPT. Learn more about [Model Context Protocol (MCP)](../../concepts/model-context-protocol.md).
 
 {% hint style="info" %}
 The Editor MCP Server acts as a bridge between your Umbraco instance and your AI assistant. Your permissions in Umbraco determine what actions the AI can perform on your behalf.
@@ -63,58 +59,19 @@ Unlike the [Developer MCP Server](../cms-developer-mcp/), the Editor MCP focuses
 * [**And many more**](scenarios.md)
 
 {% hint style="info" %}
-The Editor MCP is built for safe, everyday use. All write operations require confirmation before they execute. Destructive actions are flagged before you approve them.
+The Editor MCP is built for safe, everyday use, and write operations are designed to be confirmed before they execute. Whether that confirmation happens depends on your AI host. Most hosts prompt for approval, and are getting better at recognizing destructive actions specifically. ChatGPT, for example, checks for tools that delete data and asks before running them. Check your host's own settings if you want to be sure every write is confirmed.
 {% endhint %}
 
 ## Getting Started
 
-### Connecting to the Editor MCP
+Connecting to the Editor MCP has two parts. First, get your site set up for hosted MCP — a one-time step. Then connect your AI client to it.
 
-The Editor MCP Server is a hosted service. How you connect depends on where your Umbraco site is hosted.
-
-#### Umbraco Cloud
-
-If your site is hosted on Umbraco Cloud, you can find your Editor MCP URL in the admin area of your Cloud project. Use this URL when configuring your MCP client. Cloud projects register for hosted MCP automatically once the [`Umbraco.Mcp.HostedAuth`](../hosted-mcp-setup/site-setup.md) package is installed — no configuration needed on your side.
-
-#### Agency or Self-Hosted
-
-If your site is hosted by an agency or on your own infrastructure, your hosting provider will supply you with the Editor MCP URL. If you're setting this up yourself, see [Setting Up Hosted MCP for Your Site](../hosted-mcp-setup/site-setup.md) for the self-hosted setup steps.
-
-### Authentication
-
-When you connect for the first time, you will be taken through an OAuth login flow. You log in using your Umbraco backoffice credentials. The MCP Server then operates with the same permissions as your Umbraco user account.
+* [Setting Up Hosted MCP for Your Site](../hosted-mcp-setup/site-setup.md) — covers both Umbraco Cloud (zero configuration) and self-hosted/agency sites. Self-hosting from scratch? See the [Self-Hosted Quick Start](../hosted-mcp-setup/self-hosted-quickstart.md) for the fastest path.
+* [Hosted MCP Setup](../hosted-mcp-setup/README.md) — find your MCP URL and connect your AI client, whether it's a local app (Claude Desktop, Claude Code, Cursor, GitHub Copilot) or a web-hosted platform (ChatGPT, Claude.ai).
 
 {% hint style="warning" %}
 The tools available to you depend on your Umbraco user permissions. If your account does not have access to certain sections of the backoffice, those tools will not be available through the MCP.
 {% endhint %}
-
-### Host Setup
-
-Each MCP-compatible host application has its own setup process, and it falls into one of two patterns:
-
-* **Local apps** — Claude Desktop, Claude Code, Cursor, and GitHub Copilot run on your machine. You provide the Editor MCP URL in a config file or CLI command:
-
-  ```json
-  {
-    "umbraco-editor-mcp": {
-      "type": "url",
-      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp"
-    }
-  }
-  ```
-
-  Once configured, restart your host application. You will be prompted to authenticate via your Umbraco login.
-
-* **Web-hosted platforms** — ChatGPT and Claude.ai run in the browser. You add the Editor MCP as a connector through their own settings instead of a config file.
-
-See [Finding Your MCP URL](../hosted-mcp-setup/README.md#finding-your-mcp-url) for how your Cloud project's actual URL is built.
-
-* [Claude Desktop](../hosted-mcp-setup/claude-desktop.md)
-* [Claude Code](../hosted-mcp-setup/claude-code.md)
-* [Cursor](../hosted-mcp-setup/cursor.md)
-* [GitHub Copilot](../hosted-mcp-setup/github-copilot.md)
-* [ChatGPT](../hosted-mcp-setup/chatgpt.md)
-* [Claude.ai](../hosted-mcp-setup/claude-ai.md)
 
 ### Choosing Your Tools
 

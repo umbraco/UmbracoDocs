@@ -10,6 +10,10 @@ A single Cloudflare Worker can serve multiple Umbraco instances. This is useful 
 Connecting many Umbraco Cloud projects instead? [URL-Based Routing](url-based-routing.md) resolves the site from the connection URL and skips the consent-screen site picker.
 {% endhint %}
 
+{% hint style="warning" %}
+`Umbraco.Mcp.HostedAuth` does not cover this pattern. Its self-hosted mode only ever registers a plain `{origin}/callback` (no site-ID segment). It can't drive the site-ID-suffixed callback (`/callback/:siteId`) this consent-picker flow needs. The manual OAuth Composer registration in step 2 below is still required if you want one shared Worker with a site picker. If you don't need that — for example, one Worker per Umbraco instance — install the package normally on each instance instead. This page doesn't apply in that case.
+{% endhint %}
+
 ## How It Works
 
 All sites share one MCP endpoint (`/`). Site selection happens during authorization. The consent screen shows a **site picker** where the user chooses which Umbraco instance to connect to.
