@@ -4,7 +4,7 @@ description: Learn how to Index and search data that does not originate from Umb
 
 # Using other sources
 
-Umbraco Search is built for handling Umbraco content (documents, media, and members). However, it is entirely possible to use Umbraco Search for other kinds of data as well.
+The search functionality in Umbraco CMS is built for handling Umbraco content (documents, media, and members). However, it is entirely possible to use it for other kinds of data as well.
 
 This article explores how to index and search for bespoke data.
 
@@ -14,7 +14,7 @@ If your site does not own the data, please consider whether your site should rea
 
 ## You are in control
 
-Umbraco Search does not perform any active handling for custom indexes; you are in complete control.
+No active handling is performed for custom indexes; you are in complete control.
 
 It's your responsibility to create the index and to keep it up to date with changes.
 
@@ -22,7 +22,7 @@ If you need management UI for index maintenance (for example, rebuilding the ind
 
 ## Example: A collection of books
 
-The following example illustrates how to use Umbraco Search with a `Book` entity, which looks like this:
+The following example illustrates how to use search with a `Book` entity, which looks like this:
 
 {% code title="Book.cs" %}
 ```csharp
@@ -54,7 +54,7 @@ public interface IBookService
 
 ### The `IIndexer`
 
-You can inject the `IIndexer` from Umbraco Search into your services to perform index maintenance:
+You can inject the `IIndexer` into your services to perform index maintenance:
 
 {% code title="BookIndexService.cs" %}
 ```csharp
@@ -109,26 +109,6 @@ internal sealed class BookIndexService(IIndexer indexer, IBookService bookServic
 ```
 {% endcode %}
 
-{% hint style="info" %}
-The default search provider for Umbraco Search is powered by Examine. It requires you to register a Lucene index for the new entity in a composer:
-
-```csharp
-using Examine;
-using Examine.Lucene.Providers;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Infrastructure.Examine;
-
-namespace My.Services;
-
-public class MyComposer : IComposer
-{
-    public void Compose(IUmbracoBuilder builder)
-        => builder.Services.AddExamineLuceneIndex<LuceneIndex, ConfigurationEnabledDirectoryFactory>("My_Books", _ => { });
-}
-```
-
-Also, keep in mind that additional field-level configuration may be needed to suit your search requirements. See the [Examine search provider](../getting-started/examine-search-provider.md) documentation for details.
-{% endhint %}
 
 ### The `ISearcher`
 

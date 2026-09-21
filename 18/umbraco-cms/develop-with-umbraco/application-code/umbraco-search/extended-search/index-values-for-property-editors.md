@@ -1,6 +1,6 @@
 ---
 description: >-
-  How to provide index values for Umbraco Search, and how to replace the
+  How to provide index values for search, and how to replace the
   built-in values
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 In the world of search, a full-text searchable string behaves a lot differently than a keyword for filtering. Integer and decimal values also have their own special traits, and dates add yet another layer of complexity.
 
-To understand the intent of the Umbraco property editor values, Umbraco Search employs a concept called _property value handlers_.
+To understand the intent of the Umbraco property editor values, search uses a concept called _property value handlers_.
 
 ## The property value handler
 
@@ -61,7 +61,7 @@ The property value handler can produce multiple index fields. Each index field c
 For example, a complex property editor might yield an index value with data in both the `Texts` and `Integers` collections.
 
 {% hint style="info" %}
-Umbraco Search automatically detects property value handlers, so you do not need to register them explicitly.
+Property value handlers are automatically detected, so you do not need to register them explicitly.
 {% endhint %}
 
 ## Replacing the default property value handlers

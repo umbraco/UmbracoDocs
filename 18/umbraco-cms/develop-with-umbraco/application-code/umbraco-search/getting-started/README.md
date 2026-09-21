@@ -1,18 +1,18 @@
 # Getting Started
 
-The fundamental purpose of Umbraco Search is to build a search experience. The `ISearcher` interface is your main entry point for searching.
+The fundamental purpose of the search feature is to build a search experience. The `ISearcher` interface is your main entry point for searching.
 
 `ISearcher` features multiple different approaches to search, all of which you can combine into single queries. Each of these is described below.
 
 ## Indexed values
 
-Umbraco Search indexes all relevant content properties alongside system fields like the content ID (key), name, type, and so on.
+All relevant content properties are indexed alongside system fields like the content ID (key), name, type, and so on.
 
 An overview of the indexed system fields is found in the [system fields](system-fields.md) article.
 
-## Property editor data in Umbraco Search
+## Property Editor Data
 
-Different [Umbraco property editors](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors) yield different index value types; some yield searchable `Text`, some yield filterable `Keyword`, and some yield numeric or date field types. This is important to keep in mind when searching with Umbraco Search, because the way property values are indexed directly affects the search results.
+Different [Umbraco property editors](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors) yield different index value types; some yield searchable `Text`, some yield filterable `Keyword`, and some yield numeric or date field types. This is important to keep in mind when searching, because the way property values are indexed directly affects the search results.
 
 A list of the built-in Umbraco property editors and their corresponding index value types can be found in the [built-in property editors](built-in-property-editors.md) article.
 
@@ -41,7 +41,7 @@ public class MySearchService(ISearcher searcher)
 
 ## Search by filtering
 
-Multiple filters can be applied in a single query, and multiple values can be defined for each filter. Umbraco Search performs an `AND` search between filters, and an `OR` search between filter values.
+Multiple filters can be applied in a single query, and multiple values can be defined for each filter. The search performs an `AND` between filters, and an `OR` between filter values.
 
 When applying filters, you must pay attention to the expected index value types of the fields targeted for filtering. Mismatched combinations of filters and value types will most likely yield zero results.
 
@@ -80,7 +80,7 @@ public class MySearchService(ISearcher searcher)
 ```
 {% endcode %}
 
-Filters can be negated, in which case Umbraco Search will perform an `AND NOT`:
+Filters can be negated, in which case the search will perform an `AND NOT`:
 
 {% code title="MySearchService.cs" %}
 ```csharp
@@ -138,7 +138,7 @@ Ranges include the lower interval and exclude the upper. The example above trans
 
 ## Facets in search results
 
-Umbraco Search can create facets for fields indexed as a type `Keyword`, `Integer`, `Decimal` or `DateTimeOffset`.
+Facets can be created for fields indexed as a type `Keyword`, `Integer`, `Decimal` or `DateTimeOffset`.
 
 You must pay attention to the expected field value type when defining facets. Mismatched combinations of facets and value types will most likely yield zero facet results.
 
@@ -271,7 +271,7 @@ public class MySearchService(ISearcher searcher)
 
 ## Searching specific content variations
 
-By default, Umbraco Search will search only for invariant content. Use `culture` and/or `segment` to include within specific content variations.
+By default, only invariant content is searched. Use `culture` and/or `segment` to include within specific content variations.
 
 {% hint style="info" %}
 Invariant content will automatically be included in the search result when searching for variant content.
@@ -305,7 +305,7 @@ Use the `AccessContext` to include protected content (that is, content with publ
 The `AccessContext` requires the ID (key) of the currently logged-in [member](https://docs.umbraco.com/umbraco-cms/fundamentals/data/members), and accepts an optional collection of group IDs.
 
 {% hint style="info" %}
-Umbraco Search has no knowledge of members. If public access rules are defined based on member groups, make sure to pass the group IDs alongside the member ID in `AccessContext`.
+The search feature has no knowledge of members. If public access rules are defined based on member groups, make sure to pass the group IDs alongside the member ID in `AccessContext`.
 {% endhint %}
 
 {% code title="MySearchService.cs" %}

@@ -5,7 +5,7 @@ description: >-
 
 # Extending the Examine search provider
 
-The Examine search provider is built with extensibility in mind. It provides extensibility points for indexing and searching custom data formats that go beyond the standard Umbraco Search data format.
+The Examine search provider is built with extensibility in mind. It provides extensibility points for indexing and searching custom data formats that go beyond the standard search data format.
 
 This is useful when you need to:
 

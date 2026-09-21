@@ -6,7 +6,7 @@ description: >-
 
 # Search Backoffice
 
-This guide is for **extension developers** and **search provider developers** who want to add custom UI to the Umbraco Search backoffice.
+This guide is for **extension developers** and **search provider developers** who want to add custom UI to the search in the backoffice.
 
 ## Installing the TypeScript types
 
@@ -16,13 +16,6 @@ Umbraco Search ships its TypeScript types as a types-only npm package, `@umbraco
 npm install --save-dev @umbraco-cms/search
 ```
 
-{% hint style="info" %}
-While Umbraco Search is in prerelease, install from the `next` dist-tag:
-
-```bash
-npm install --save-dev @umbraco-cms/search@next
-```
-{% endhint %}
 
 The package exposes two entry points that mirror the runtime bundles loaded by the backoffice:
 
@@ -162,7 +155,7 @@ See the [official Umbraco documentation](https://docs.umbraco.com/umbraco-cms/cu
 
 ### Search entity types
 
-Umbraco Search defines two entity types for entity actions:
+Two entity types are defined for entity actions:
 
 | Entity type       | Constant                          | Used for                                          |
 | ----------------- | --------------------------------- | ------------------------------------------------- |
@@ -332,7 +325,7 @@ export class MyAnalyticsViewElement extends UmbLitElement {
 
 ## Routable modals
 
-For provider developers who need deep-linkable modals (for example, viewing detailed document information), Umbraco Search supports a routable modal pattern. This uses a non-visual `searchIndexDetailBox` as a route registration host, combined with an entity action that provides navigable URLs.
+For provider developers who need deep-linkable modals (for example, viewing detailed document information), A routable modal pattern is supported for this purpose. This uses a non-visual `searchIndexDetailBox` as a route registration host, combined with an entity action that provides navigable URLs.
 
 ### The three pieces
 

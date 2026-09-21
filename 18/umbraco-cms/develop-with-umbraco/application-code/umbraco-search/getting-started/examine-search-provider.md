@@ -4,7 +4,7 @@ description: How to configure the Examine search provider
 
 # The Examine Search Provider
 
-Umbraco Search uses a provider-based approach to the underlying search technology. The default search provider is powered by [Examine](https://github.com/Shazwazza/Examine).
+The search feature uses a provider-based approach to the underlying search technology. The default search provider is powered by [Examine](https://github.com/Shazwazza/Examine).
 
 In this article, you'll learn how to configure the Examine search provider to produce the results you're expecting.
 
@@ -111,13 +111,7 @@ The Examine search provider limits the number of resulting facet values within a
 
 ## Optimizing server resources
 
-The default Examine indexes from Umbraco CMS are no longer in use, if Umbraco Search powers all things search - that is:
-
-* Frontend search.
-* Backoffice search.
-* The Delivery API (if applicable on your site).
-
-However, Umbraco CMS continues to keep them up-to-date with content changes. Since this is a waste of server resources, the default Examine indexes can be explicitly disabled by means of composition:
+The default Examine indexes from Umbraco CMS are no longer needed, as the search feature now handles all search functionality. However, Umbraco CMS continues to keep them up-to-date with content changes. Since this is a waste of server resources, the default Examine indexes can be explicitly disabled by means of composition:
 
 {% code title="DisableDefaultIndexesComposer.cs" %}
 ```csharp

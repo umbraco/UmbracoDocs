@@ -121,12 +121,12 @@ public class MyIndexDocumentCacheFlusher
 {% endcode %}
 
 {% hint style="warning" %}
-Flushing the entire index data cache comes with a high cost. Without the cache, Umbraco Search must rebuild everything from scratch in the next indexing cycle. Please use this with caution.
+Flushing the entire index data cache comes with a high cost. Without the cache, everything must be rebuilt from scratch in the next indexing cycle. Please use this with caution.
 {% endhint %}
 
 ## Rebuilding an index
 
-You can either trigger an index rebuild manually from the [Umbraco Search backoffice](../getting-started/backoffice.md), or trigger it programmatically with the `IDistributedContentIndexRebuilder`:
+You can either trigger an index rebuild manually from the [Search section in the backoffice](../getting-started/backoffice.md), or trigger it programmatically with the `IDistributedContentIndexRebuilder`:
 
 {% code title="MyIndexRebuilder.cs" %}
 ```csharp

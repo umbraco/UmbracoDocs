@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  A list of the system fields included by Umbraco Search in all content indexes
+  A list of the system fields included in all content indexes
 hidden: true
 ---
 

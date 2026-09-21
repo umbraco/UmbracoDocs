@@ -1,5 +1,5 @@
 ---
-title: Umbraco Search Documentation
+title: Search Documentation
 description: >-
   Developer documentation on how to build with and extend the search
   functionality in Umbraco.
@@ -23,7 +23,7 @@ You can also power both the backoffice content search and the [Content Delivery 
 <tbody>
 <tr>
 <td><strong>Getting Started</strong></td>
-<td>Learn how to build with Umbraco Search.</td>
+<td>Learn how to get started with search.</td>
 <td><a href=".gitbook/assets/Documentations Icons_Umbraco_Commerce_Get_Started.png">Documentations Icons_Umbraco_Commerce_Get_Started.png</a></td>
 <td><a href="getting-started/">getting-started</a></td>
 </tr>

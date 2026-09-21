@@ -1,10 +1,10 @@
 ---
-description: A guide for interacting with Umbraco Search in the Umbraco backoffice
+description: A guide for interacting with the search functionality in the Umbraco backoffice
 ---
 
 # The Backoffice
 
-Umbraco Search adds a Search section to the Umbraco backoffice, providing tools for inspecting and managing search indexes.
+The Search section in the Umbraco backoffice provides tools for inspecting and managing search indexes.
 
 ## Accessing the Search section
 

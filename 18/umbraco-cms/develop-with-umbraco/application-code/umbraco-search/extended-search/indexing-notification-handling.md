@@ -1,12 +1,11 @@
 ---
 description: >-
-  Describes the notification system of Umbraco Search and how to interact with
-  it as a developer
+  Describes the indexing notification system and how to interact with it as a developer
 ---
 
 # Indexing Notification Handling
 
-Before content is pushed to any content index, Umbraco Search fires the `ContentIndexingNotification`. This notification lets you manipulate the data going into an index, or entirely prevent it from being indexed.
+Before content is pushed to any content index, `ContentIndexingNotification` is fired. This notification lets you manipulate the data going into an index, or entirely prevent it from being indexed.
 
 ## Keep it lightweight
 
