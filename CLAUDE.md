@@ -19,16 +19,6 @@ Documentation is organized by version number (e.g., `14/`, `15/`, `16/`, `17/`) 
 
 When creating or editing documentation content, use the `umbraco-docs-content` skill for detailed style rules, article templates, markdown conventions, and code sample guidelines.
 
-Style rules enforced by Vale (`.vale.ini`, `.github/styles/UmbracoDocs/*.yml`) and `.github/pull_request_template.md`, always apply:
-
-- No sentence over 25 words (`SentenceLength.yml`). Split long sentences instead of using semicolons or extra clauses.
-- Avoid opinionated/exaggerating words, for example "very", "just", "simply", "obviously" (`Editorializing.yml` has the full list).
-- Avoid passive voice and first-person language ("we", "I") per the PR template checklist.
-- Use "for example" instead of "e.g.", "that is" instead of "i.e." (`Terms.yml`).
-- List items start with a capital letter (`ListStart.yml`); headings never end in punctuation (`HeadingsPunctuation.yml`).
-- Undefined 3-5 letter acronyms need a definition nearby unless already in `Acronyms.yml`'s exception list.
-- Match casing in `UmbracoTerms.yml`/`Names.yml`/`Brands.yml`, for example "Umbraco CMS", "backoffice", "GitHub", "JavaScript".
-
 ## PR Process (always apply)
 
 - Structure the PR body after `.github/pull_request_template.md`. `gh pr create --body` does not apply this template, so match its sections manually.
