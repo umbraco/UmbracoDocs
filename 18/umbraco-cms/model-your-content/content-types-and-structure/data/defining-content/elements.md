@@ -67,4 +67,8 @@ Once you have created the elements in the Library section, they can be reference
 
 You can add elements to your content in the Content section using an Element Picker. This needs to be added as a property on the Document Type. Read the [Element Picker](../../../property-editors/built-in-umbraco-property-editors/element-picker.md) article to learn more about how to use and configure it.
 
+{% hint style="info" %}
+Elements and Blocks (used by the Block List and Block Grid editors) don't mix within the same property. A Block List or Block Grid always stores its block content inline. It cannot be configured so that a block type is either inline content or a reference to a Library Element. To combine both approaches on one page, add an Element Picker property and a Block List/Block Grid property separately.
+{% endhint %}
+
 Making changes to an Element in the Library section, will update all instances of the content throughout the project.
