@@ -472,6 +472,5 @@
 * [Multisite Setup](tutorials/multisite-setup.md)
 * [Member Registration and Login](tutorials/members-registration-and-login.md)
 * [Custom Views for Block List](tutorials/creating-custom-views-for-blocklist.md)
-* [Connecting Umbraco Forms and Zapier](tutorials/connecting-umbraco-forms-and-zapier.md)
 * [Creating an XML Sitemap](tutorials/creating-an-xml-site-map.md)
 * [Implementing Custom Error Pages](tutorials/custom-error-page.md)

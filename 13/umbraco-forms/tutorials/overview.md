@@ -6,4 +6,8 @@ In this section, you can find a set of different tutorials to use when creating 
 
 ### [Creating a Contact Form](creating-a-contact-form.md)
 
-Learn how to create a Contact Form and add it to your website.
+Learn how to configure a Document Type, build a Contact Form, and add it to a content page on your website.
+
+### [Connecting Umbraco Forms and Zapier](connecting-umbraco-forms-and-zapier.md)
+
+Walk through creating a Zapier webhook trigger and using a form workflow to send entries to other apps.
