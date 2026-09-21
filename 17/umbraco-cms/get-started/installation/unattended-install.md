@@ -40,7 +40,7 @@ The 'umbracoDbDSN\_ProviderName' attribute sets the .NET Framework data provider
 
 ### SQLite Example in appsettings.json
 
-A value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
+A value is configured for the key `umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.Sqlite` ADO.NET provider.
 
 It is recommended that you make use of the values shown below for the `Foreign Keys` and `Pooling` keywords on your connection string.
 

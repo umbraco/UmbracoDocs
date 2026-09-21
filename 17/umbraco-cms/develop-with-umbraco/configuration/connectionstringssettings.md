@@ -23,7 +23,7 @@ Do not use shared cache (`Cache=Shared`) in a SQLite connection string. Umbraco 
 From Umbraco 17.8, `Cache=Shared` is removed from the connection string on startup and the removal is logged. Remove the keyword from `appsettings.json` to stop this correction from running on every startup.
 {% endhint %}
 
-The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
+The connection string shown here is an SQLite connection string that connects to the database file `Umbraco.sqlite.db` in the `/umbraco/Data` folder.
 
 Umbraco currently supports using either a Microsoft SQL Server or a SQLite database. Both of these options will have different connection strings. For more information about the specific connection strings, see:
 
