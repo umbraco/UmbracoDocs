@@ -6,7 +6,16 @@ The Umbraco content tree view allows you to navigate web pages through a logical
 
 To search across all the content, files, or folders in Umbraco, click the Magnifier icon in the top-right of the screen. Alternatively, you can use the keyboard shortcut **CTRL + SPACE** to access the **Search** bar.
 
-Using the search bar, you can enter a search term to search across most content and settings data in the backoffice. This includes Document Types, Data Types, Members, Member Types, Dictionary items, Templates, and more. The exact set of tabs depends on your version and installed packages, such as Umbraco Forms.
+Using the search bar, you can enter a search term to search across most content and settings data in the backoffice. This includes:
+
+- Document Types
+- Data Types
+- Members
+- Member Types
+- Dictionary Items
+- Templates, and more.
+
+The exact set of tabs depends on your version and installed packages, such as Umbraco Forms.
 
 ![search.jpg](../../.gitbook/assets/search-bar.png)
 
