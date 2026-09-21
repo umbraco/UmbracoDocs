@@ -16,18 +16,18 @@ Anthropic updates the Connectors UI from time to time, so exact menu names and s
 
 ## Creating a Connector
 
-1. Open Claude.ai and go to its Connectors settings.
+1. Open Claude.ai and go to **Settings** > **Customize** > **Connectors**.
 2. Add a custom connector.
 3. Enter your hosted MCP URL:
 
 ```
-https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/
+https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp
 ```
 
 4. Save the connector. A browser window opens for you to authenticate using your Umbraco backoffice credentials.
 
 {% hint style="warning" %}
-Replace `https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/` with your own MCP URL. See [Finding Your MCP URL](README.md#finding-your-mcp-url) for how it's built.
+Replace `https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp` with your own MCP URL. See [Finding Your MCP URL](README.md#finding-your-mcp-url) for how it's built.
 {% endhint %}
 
 ## Verifying the Connection

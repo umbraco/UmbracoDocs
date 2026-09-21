@@ -6,6 +6,10 @@ description: Deploy the pre-built Editor MCP server to your own Cloudflare accou
 
 This guide deploys Umbraco's pre-built Editor MCP server to your own Cloudflare account and connects it to your Umbraco site. It's the fastest path to a working self-hosted Editor MCP — no custom server code required.
 
+{% hint style="info" %}
+The same steps work for the [Developer MCP](../cms-developer-mcp/README.md) — clone [`umbraco/Umbraco-CMS-MCP-Dev`](https://github.com/umbraco/Umbraco-CMS-MCP-Dev) instead in step 1 and use a different `ClientId` in step 5. This guide uses the Editor MCP as the running example.
+{% endhint %}
+
 ## Prerequisites
 
 * Node.js 22+

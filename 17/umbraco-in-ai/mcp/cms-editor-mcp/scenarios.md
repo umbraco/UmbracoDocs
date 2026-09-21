@@ -6,7 +6,7 @@ description: Common use cases for the Editor MCP
 
 This document provides practical examples of how to use the Editor MCP for common Umbraco editorial tasks. Each scenario includes an example prompt that demonstrates how to accomplish a real-world operation through conversation.
 
-Your AI assistant is often connected to more than the Editor MCP in the same conversation. It might also have access to Google Drive, Slack, or a shared folder, for example.
+Your AI assistant is often connected to more than the Editor MCP, or connector, in the same conversation. It might also have access to Google Drive, Slack, or a shared folder, for example.
 
 Combining these lets you turn a meeting transcript into a draft blog post. It also lets you pull photos from a shared folder into the media library. Or turn a spreadsheet of page names into a bulk update, without leaving the chat.
 

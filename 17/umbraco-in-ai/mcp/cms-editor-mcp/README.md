@@ -98,7 +98,7 @@ Each MCP-compatible host application has its own setup process, and it falls int
   {
     "umbraco-editor-mcp": {
       "type": "url",
-      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/"
+      "url": "https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp"
     }
   }
   ```
