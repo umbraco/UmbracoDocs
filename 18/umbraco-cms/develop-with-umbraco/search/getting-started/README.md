@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to query, filter, sort, and paginate search results using the ISearcher interface.
+---
+
 # Getting Started
 
 The fundamental purpose of the search feature is to build a search experience. The `ISearcher` interface is your main entry point for searching.
@@ -8,13 +13,13 @@ The fundamental purpose of the search feature is to build a search experience. T
 
 All relevant content properties are indexed alongside system fields like the content ID (key), name, type, and so on.
 
-An overview of the indexed system fields is found in the [system fields](system-fields.md) article.
+An overview of the indexed system fields is found in the [system fields](../system-fields.md) article.
 
 ## Property Editor Data
 
 Different [Umbraco property editors](https://docs.umbraco.com/umbraco-cms/fundamentals/backoffice/property-editors/built-in-umbraco-property-editors) yield different index value types; some yield searchable `Text`, some yield filterable `Keyword`, and some yield numeric or date field types. This is important to keep in mind when searching, because the way property values are indexed directly affects the search results.
 
-A list of the built-in Umbraco property editors and their corresponding index value types can be found in the [built-in property editors](built-in-property-editors.md) article.
+A list of the built-in Umbraco property editors and their corresponding index value types can be found in the [built-in property editors](../built-in-property-editors.md) article.
 
 ## Search by query (full text search)
 
@@ -222,7 +227,7 @@ public class MySearchService(ISearcher searcher)
         => await searcher.SearchAsync(
             indexAlias: Constants.IndexAliases.PublishedContent,
             query: "pink",
-            // sort the search results by "releaseYear" decsending, then by "genre" ascending
+            // sort the search results by "releaseYear" descending, then by "genre" ascending
             sorters:
             [
                 new IntegerSorter(

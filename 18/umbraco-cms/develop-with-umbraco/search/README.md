@@ -31,7 +31,7 @@ You can also power both the backoffice content search and the [Content Delivery 
 <td><strong>Extending</strong></td>
 <td>Extension points to tailor your search experiences.</td>
 <td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Searching.png">Documentations Icons_Umbraco_CMS_Reference_Searching.png</a></td>
-<td><a href="extending-search/examine-search-provider.md">examine-search-provider.md</a></td>
+<td><a href="extending-search/">extending-search</a></td>
 </tr>
 </tbody>
 </table>
