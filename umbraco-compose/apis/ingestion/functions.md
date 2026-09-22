@@ -91,11 +91,11 @@ The headers object supports the following methods:
 
 | Method       | Description                                                        |
 | ------------ | ------------------------------------------------------------------ |
-| `get(name)`  | Returns the value of the header, or `null` if it is not present    |
-| `has(name)`  | Returns `true` when the header is present                          |
-| `keys()`     | Returns the names of all available headers                         |
-| `values()`   | Returns the values of all available headers                        |
-| `entries()`  | Returns all available headers as name and value pairs              |
+| `get(name)`  | Returns the value of the header, or `null` if it is not present.    |
+| `has(name)`  | Returns `true` when the header is present.                          |
+| `keys()`     | Returns the names of all available headers.                         |
+| `values()`   | Returns the values of all available headers.                        |
+| `entries()`  | Returns all available headers as name and value pairs.              |
 
 ### Unavailable Headers
 
@@ -145,10 +145,10 @@ The second argument to `fetch` configures the request. The following options are
 
 | Option     | Description                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------ |
-| `method`   | The HTTP method to use. Defaults to `GET`                                                              |
-| `body`     | The request body, as a string                                                                          |
-| `headers`  | The headers to send with the request                                                                   |
-| `redirect` | Set to `follow` to follow redirects, or `manual` to return the redirect response. Defaults to `follow` |
+| `method`   | The HTTP method to use. Defaults to `GET`.                                                              |
+| `body`     | The request body, as a string.                                                                          |
+| `headers`  | The headers to send with the request.                                                                   |
+| `redirect` | Set to `follow` to follow redirects, or `manual` to return the redirect response. Defaults to `follow`. |
 
 Headers can be given as an object, as an array of name and value pairs, or as a `Headers` object:
 
@@ -171,13 +171,13 @@ The response returned by `fetch` supports the following properties and methods:
 
 | Member         | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
-| `ok`           | `true` when the response has a success status code                      |
-| `status`       | The HTTP status code                                                    |
-| `statusText`   | The reason phrase of the response                                       |
-| `url`          | The URL that was requested                                              |
-| `headers`      | The response headers, which support the same methods as request headers |
-| `json()`       | Returns a promise resolving to the body parsed as JSON                  |
-| `text()`       | Returns a promise resolving to the body as a string                     |
+| `ok`           | `true` when the response has a success status code.                      |
+| `status`       | The HTTP status code.                                                    |
+| `statusText`   | The reason phrase of the response.                                       |
+| `url`          | The URL that was requested.                                              |
+| `headers`      | The response headers, which support the same methods as request headers. |
+| `json()`       | Returns a promise resolving to the body parsed as JSON.                  |
+| `text()`       | Returns a promise resolving to the body as a string.                     |
 
 The body can only be read once. Calling `json()` or `text()` a second time throws an error. Response headers are read-only.
 
