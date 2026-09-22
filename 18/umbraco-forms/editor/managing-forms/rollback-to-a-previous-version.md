@@ -15,9 +15,11 @@ Umbraco Forms stores a version of a form each time the form is saved. The workfl
 3.  Open the **Actions** menu and select **Rollback**.
 
     ![The Actions menu for a form, with the Rollback and Trash options.](../../.gitbook/assets/form-actions-menu.png)
-4. The Rollback window opens. The stored versions are listed with the newest first. The version the form currently uses is marked **Current version**.
-5. Select a version to see what it holds.
-6. Select **Rollback**.
+
+The Rollback window opens. The stored versions are listed with the newest first. The version the form currently uses is marked **Current version**.
+
+4. Select a version to see what it holds.
+5. Select **Rollback**.
 
 ![The Rollback window, with the version list on the left and the selected version's definition on the right.](../../.gitbook/assets/form-rollback.png)
 
