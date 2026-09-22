@@ -66,6 +66,10 @@ npx wrangler secret put COOKIE_ENCRYPTION_KEY
 No client secret is needed. The OAuth client registered by `Umbraco.Mcp.HostedAuth` in step 5 is a **public** client using PKCE.
 {% endhint %}
 
+{% hint style="info" %}
+This guide connects one Worker to one Umbraco site (`UMBRACO_BASE_URL` above). Want one Worker to serve multiple Umbraco instances instead? See [Multi-Site Deployments](../base-mcp/hosted-mcp/deployment/multi-site.md).
+{% endhint %}
+
 ## 4. Deploy
 
 ```bash
