@@ -397,7 +397,7 @@ Taking an example of a website globalization culture code setting of "en-US" (an
 
 If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
 
-This setting applies to the record data copy used for fast look-up. Where a strongly typed date value is available, Forms reads that instead, and no parsing is needed. For how a date value is then formatted for each destination, see the [Version Specific Upgrade Notes](../../upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
+This setting applies to the record data copy used for fast lookup. Where a strongly typed date value is available, Forms reads the typed value directly and no parsing is needed. For how a date value is then formatted for each destination, see the [Version Specific Upgrade Notes](../../upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
 
 ### TriggerConditionsCheckOn
 
