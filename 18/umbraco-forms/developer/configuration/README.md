@@ -397,6 +397,8 @@ Taking an example of a website globalization culture code setting of "en-US" (an
 
 If no value is set, and no culture value was stored alongside the form entry, the culture based on the language associated with the current backoffice user will be used.
 
+This setting applies to the record data copy used for fast lookup. Where a strongly typed date value is available, Forms reads the typed value directly and no parsing is needed. For how a date value is then formatted for each destination, see the [Version Specific Upgrade Notes](../../upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
+
 ### TriggerConditionsCheckOn
 
 This configuration setting provides control over the client-side event used to trigger conditions. The `change` event is the default used if this setting is empty. It can also be set to a value of `input`. The main difference seen here relates to text fields, with the "input" event firing on each key press, and the "change" only when the field loses focus.

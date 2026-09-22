@@ -50,6 +50,8 @@ Text fields accept any property because every member value resolves to text. Fie
 
 A custom field type that stores a whole number accepts whole number and decimal member properties.
 
+A field type that stores a decimal accepts decimal member properties only.
+
 ## Behaviour
 
 When a field is linked, choose how it behaves for a logged-in member:

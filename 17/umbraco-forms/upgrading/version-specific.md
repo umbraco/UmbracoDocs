@@ -16,6 +16,34 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 10.
 
+### Date formats in workflows and exports
+
+This change was introduced in version 17.6.0. It affects you if you upgrade from an earlier version 17 release.
+
+A date value used to be written using whichever culture happened to be active. That was often not the culture the entry was submitted with. A month-first date such as `07/05/2027` could then be read back as the wrong day: 7 May instead of 5 July. Date values are now formatted for whoever reads them.
+
+Every example in the table is the same submitted value: 5 July 2027 at 14:03, from an entry submitted in `en-GB` on a server running `en-US`.
+
+| Destination | Before | From 17.6.0 |
+| --- | --- | --- |
+| Entries list and entry details | The stored, month-first string for a custom date field: `07/05/2027 14:03` | The culture the entry was submitted with: `05/07/2027 14:03` |
+| CSV and Excel export | Month-first, whatever the entry's culture: `07/05/2027 14:03` | The culture the entry was submitted with: `05/07/2027 14:03` |
+| Send Email, Send Email with Template, Slack | The server's culture when the workflow ran: `7/5/2027 2:03 PM` | The culture the entry was submitted with: `05/07/2027 14:03` |
+| Post as XML, Send Form to URL | The server's culture when the workflow ran: `7/5/2027 2:03 PM` | ISO 8601: `2027-07-05T14:03:00` |
+| Save as an XML file, Send XSLT Transformed Email | The server's culture when the workflow ran: `7/5/2027 2:03 PM` | ISO 8601: `2027-07-05T14:03:00` |
+| Save as Umbraco Content Node | A formatted string, parsed back to a date: stored as 7 May 2027 | The date value itself, with no round trip: stored as 5 July 2027 |
+
+{% hint style="warning" %}
+Check any system that reads a date from one of these workflows. A receiving endpoint or an XSLT file that expects the old format needs updating. The `created` and `updated` elements in the record XML now also carry a `Z` suffix, marking them as UTC.
+{% endhint %}
+
+Two further points to be aware of:
+
+* An export of a form with entries in more than one culture holds more than one date format in the same column.
+* The Save as Umbraco Content Node workflow now stores a day-first date correctly. A date of `05/07/2027` from an `en-GB` entry is saved as 5 July, not 7 May.
+
+See [issue #1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773) for details.
+
 ### Upgrading directly from Forms 13.9.9
 
 This fix was introduced in version 17.5.0. It affects you if you upgrade directly from Forms 13.9.9 to an earlier version 17 release.
