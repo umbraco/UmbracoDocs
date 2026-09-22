@@ -8,7 +8,7 @@ This section explains how to set up and connect to a hosted Umbraco MCP server f
 
 Getting connected has three steps:
 
-1. **Enable hosted MCP on your site** — a one-time setup step, different for a self-hosted site versus Umbraco Cloud. See [Setting Up Hosted MCP for Your Site](site-setup.md).
+1. **Enable hosted MCP on your site** — a one-time setup step. Install [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth), which works for both Umbraco Cloud and self-hosted sites, with a small configuration difference between the two. See [Setting Up Hosted MCP for Your Site](site-setup.md), or the package's own README for full configuration details.
 2. **Find your MCP URL** — see below.
 3. **Connect your AI client** — see [Local Apps](local-apps.md) or [Web-Hosted Platforms](web-hosted-platforms.md), depending on where your AI client runs.
 
@@ -39,8 +39,6 @@ For example, a project with alias `my-project` in region `euwest01`, running Umb
 ```
 https://cms.editor.17.mcp.umbraco.ai/at/my-project.euwest01/mcp
 ```
-
-Find your project's full MCP URL in the admin area of your Cloud project — you don't need to build it by hand.
 
 {% hint style="info" %}
 See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) for the full mechanics behind this URL shape.

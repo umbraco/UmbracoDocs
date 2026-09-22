@@ -6,7 +6,7 @@ description: Enable hosted MCP support on your Umbraco site, self-hosted or on U
 
 Before an AI client can connect to a hosted Umbraco MCP server, your Umbraco site needs to support it. This means registering the MCP Worker as an OAuth client so it can drive your backoffice login flow.
 
-The [`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) package does this automatically — no hand-written OAuth client registration needed. Install it and it configures itself on Umbraco Cloud. Self-hosted, it picks up a small config block instead.
+The [`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) package does this automatically — no hand-written OAuth client registration needed. It works the same way whether your site is on Umbraco Cloud or self-hosted. Install it, and it configures itself on Umbraco Cloud, or picks up a small config block when self-hosted. See the [package README](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) for the full configuration reference.
 
 {% hint style="info" %}
 `Umbraco.Mcp.HostedAuth` is versioned to match your Umbraco major — `17.x` for Umbraco 17. It's currently prerelease-only on NuGet, so pass `--prerelease` when installing it.
@@ -24,7 +24,7 @@ Umbraco Cloud already runs the shared MCP Worker infrastructure at `mcp.umbraco.
 
 2. Deploy. That's it — no configuration is required.
 
-The package detects that your project has an `umbraco-cloud.json` file (every Cloud project does) and registers itself in **Cloud mode** automatically. On startup it checks which Umbraco products are installed. CMS is always present, and Commerce, Engage, or Workflow are picked up if their package is installed. It then registers an editor and developer OAuth client for each product it finds.
+The package detects that your project has an `umbraco-cloud.json` file (every Cloud project does) and registers itself in **Cloud mode** automatically. It registers an editor and developer OAuth client for each product it finds.
 
 Your site is then reachable at the URLs in [Finding Your MCP URL](README.md#finding-your-mcp-url) — no further setup needed on your side.
 
