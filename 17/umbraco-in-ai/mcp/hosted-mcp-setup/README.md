@@ -1,10 +1,10 @@
 ---
-description: Set up hosted Umbraco MCP servers in your AI environment.
+description: Set up and connect to hosted Umbraco MCP servers in your AI environment.
 ---
 
 # Hosted MCP Setup
 
-This section explains how to connect to a hosted Umbraco MCP server from different AI environments. Unlike the [local MCP setup](../local-mcp-setup/), a hosted MCP server runs as a remote service that you connect to via a URL. Authentication is handled through an OAuth login flow using your Umbraco backoffice credentials.
+This section explains how to set up and connect to a hosted Umbraco MCP server from different AI environments. Unlike the [local MCP setup](../local-mcp-setup/), a hosted MCP server runs as a remote service that you connect to via a URL. Authentication is handled through an OAuth login flow using your Umbraco backoffice credentials.
 
 Getting connected has three steps:
 
