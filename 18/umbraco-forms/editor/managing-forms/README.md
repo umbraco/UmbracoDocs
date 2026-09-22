@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Forms keeps a record of what happens to a form. Each save is stored as a version. Each change is listed in the form's history. A deleted form is held in the recycle bin until you remove it.
 
-In this section, you will find information on how to work with that history:
+This section covers how to work with the form's history:
 
 - [Form History](form-history.md)
 
