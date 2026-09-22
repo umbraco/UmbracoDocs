@@ -77,7 +77,7 @@ To add properties to your Document Type, follow these steps:
 
     ![Adding a property](../../../.gitbook/assets/creating-our-pagetitle-property.png)
 7. Click **Select Property Editor**.
-8. Select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
+8. Select the Data Type of your choice. Add _text_ in the search box and select the **Textstring** Data Type.
 
     ![Selecting a Data Type](../../../.gitbook/assets/selecting-textstring-data-type.png)
 9. Click **Submit**.

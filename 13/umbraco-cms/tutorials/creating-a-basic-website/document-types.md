@@ -63,7 +63,7 @@ To add properties to your Document Type, follow these steps:
 5. Enter a **Description**. For example: _The main title of the page (Welcome to Widgets Ltd.)_.
 
     ![Adding a property](../../.gitbook/assets/figure-11-creating-our-pagetitle-property-v11.png)
-6. Select **Select Editor** and select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
+6. Click **Select Editor** and select the Data Type of your choice. Add _text_ in the search box and select the **Textstring** Data Type.
 
     ![Selecting a Data Type](../../.gitbook/assets/figure-11a-selecting-textstring-data-type-v11.png)
 7. Click **Submit**.
