@@ -628,7 +628,7 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/reference/content-de
 
 ### Rich text as JSON
 
-The Content Delivery API has a `RichTextOutputAsJson` setting. The setting returns rich text as structured JSON instead of HTML markup:
+The Content Delivery API has a [`RichTextOutputAsJson` setting](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/headless-and-apis/content-delivery-api#additional-configuration). The setting returns rich text as structured JSON instead of HTML markup:
 
 ```json
 "Umbraco": {
