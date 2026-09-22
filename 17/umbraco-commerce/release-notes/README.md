@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.2.5 (22nd Sep 2026)
+* Fix a SQLite connection setting that combined shared-cache mode with write-ahead logging, which could cause "database table is locked" errors
+* Fix shipping rate tables showing a stray blank or plus symbol for empty rate entries
+
 #### 17.2.4 (7th Sep 2026)
 * Fix analytics dashboard widgets overlapping when the browser window is resized [#884](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/884)
 * Fix custom cart filters registered via `WithCartAdvancedFilters()` being silently ignored [#885](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/885)
