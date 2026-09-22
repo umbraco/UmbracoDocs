@@ -11,7 +11,11 @@ Connecting many Umbraco Cloud projects instead? [URL-Based Routing](url-based-ro
 {% endhint %}
 
 {% hint style="warning" %}
-`Umbraco.Mcp.HostedAuth` does not cover this pattern. Its self-hosted mode only ever registers a plain `{origin}/callback` (no site-ID segment). It can't drive the site-ID-suffixed callback (`/callback/:siteId`) this consent-picker flow needs. The manual OAuth Composer registration in step 2 below is still required if you want one shared Worker with a site picker. If you don't need that — for example, one Worker per Umbraco instance — install the package normally on each instance instead. This page doesn't apply in that case.
+`Umbraco.Mcp.HostedAuth` does support registering multiple Workers on one self-hosted Umbraco instance — list each one under `HostedMcp:Clients`.
+
+What it doesn't support is *this specific pattern*: one Worker serving many *different* Umbraco instances through a consent-screen site picker. That needs a callback path suffixed with the site ID (`/callback/:siteId`), and the package's self-hosted mode only ever registers a plain `{origin}/callback`. If you need the site-picker pattern, the manual OAuth Composer registration in step 2 below is still required.
+
+If each Worker only ever talks to one Umbraco instance — the common case — install the package normally on that instance instead. This page doesn't apply.
 {% endhint %}
 
 ## How It Works
