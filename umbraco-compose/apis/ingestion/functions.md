@@ -11,7 +11,7 @@ The primary ingestion endpoint accepts content with a standardized payload. To c
 
 For applications that support firing webhooks, there is another option. Ingestion functions allow you to define how an incoming webhook request should be transformed to something Umbraco Compose can store.
 
-Ingestion functions are JavaScript snippets that have access to the request body of the webhook from your source application.
+Ingestion functions are JavaScript snippets that have access to the request body and headers of the webhook from your source application.
 
 ## Function Basics
 
@@ -55,12 +55,133 @@ export default function(body) {
             data: {
                 // 3. Only store relevant props.
                 name: product.name,
-                sku: product.sku
+                sku: product.sku,
                 description: product.description
             }
         }));
 }
 ```
+
+## Accessing Request Headers
+
+The default export receives the headers of the incoming request as its second parameter. Use them to read information that the source system sends outside the request body.
+
+```js
+export default function(body, headers) {
+    if (headers.get('content-language') !== 'en-GB') {
+        return [];
+    }
+
+    return body.map(product => ({
+        action: 'upsert',
+        id: product.productKey,
+        type: 'product',
+        data: {
+            name: product.name,
+            sku: product.sku,
+            description: product.description
+        }
+    }));
+}
+```
+
+Header names are case-insensitive. When a header is sent more than once, `get()` returns the values joined by a comma and a space.
+
+The headers object supports the following methods:
+
+| Method       | Description                                                        |
+| ------------ | ------------------------------------------------------------------ |
+| `get(name)`  | Returns the value of the header, or `null` if it is not present    |
+| `has(name)`  | Returns `true` when the header is present                          |
+| `keys()`     | Returns the names of all available headers                         |
+| `values()`   | Returns the values of all available headers                        |
+| `entries()`  | Returns all available headers as name and value pairs              |
+
+### Unavailable Headers
+
+Some headers are removed before your function runs and are never available:
+
+* `Accept`
+* `Accept-Encoding`
+* `Authorization`
+* `Connection`
+* `Host`
+* Various routing and proxy control-related headers.
+
+## Making HTTP Requests
+
+Functions can call external services using `fetch`, a minimal implementation of the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Use it to enrich an incoming payload with data that the source system does not include.
+
+`fetch` returns a promise, so your function must be declared as `async`.
+
+```js
+export default async function(body) {
+    const response = await fetch(`https://api.example.org/products/${body.productKey}`);
+
+    if (!response.ok) {
+        return [];
+    }
+
+    const product = await response.json();
+
+    return [{
+        action: 'upsert',
+        id: product.id,
+        type: 'product',
+        data: {
+            name: product.name,
+            sku: product.sku,
+            description: product.description
+        }
+    }];
+}
+```
+
+Only `http` and `https` URLs are supported.
+
+### Request Options
+
+The second argument to `fetch` configures the request. The following options are supported:
+
+| Option     | Description                                                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------ |
+| `method`   | The HTTP method to use. Defaults to `GET`                                                              |
+| `body`     | The request body, as a string                                                                          |
+| `headers`  | The headers to send with the request                                                                   |
+| `redirect` | Set to `follow` to follow redirects, or `manual` to return the redirect response. Defaults to `follow` |
+
+Headers can be given as an object, as an array of name and value pairs, or as a `Headers` object:
+
+```js
+export default async function(body) {
+    const headers = new Headers();
+    headers.append('Api-Key', 'your-api-key');
+
+    const response = await fetch('https://api.example.org/products',
+        headers,
+        body: JSON.stringify({ skus: body.map(product => product.sku) }));
+
+    // Map response & return here...
+}
+```
+
+### Working With the Response
+
+The response returned by `fetch` supports the following properties and methods:
+
+| Member         | Description                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| `ok`           | `true` when the response has a success status code                      |
+| `status`       | The HTTP status code                                                    |
+| `statusText`   | The reason phrase of the response                                       |
+| `url`          | The URL that was requested                                              |
+| `headers`      | The response headers, which support the same methods as request headers |
+| `json()`       | Returns a promise resolving to the body parsed as JSON                  |
+| `text()`       | Returns a promise resolving to the body as a string                     |
+
+The body can only be read once. Calling `json()` or `text()` a second time throws an error. Response headers are read-only.
+
+Methods not listed here are not implemented and will throw an error when called.
 
 ## Creating a Function
 
@@ -73,7 +194,7 @@ To create a new function, you need to send a `POST` request to an endpoint on th
 The endpoint looks like the one below, where you've replaced `{projectAlias}` and `{environmentAlias}` with values matching your project.
 
 ```http
-[https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
+https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
 ```
 
 {% hint style="info" %}
@@ -84,7 +205,7 @@ Ingestion functions can be managed using the [Management Api](https://apidocs.um
 {
     "ingestionFunctionAlias": "products-from-webshop",
     "description": "maps products from webshop",
-    "script": "export default function(body){if(!Array.isArray(body)){return[]}return body.filter(product=>product.tags.includes('public')).map(product=>({action:'upsert',id:product.productKey,type:'product',data:{name:product.name,sku:product.sku description:product.description}}));"
+    "script": "export default function(body){if(!Array.isArray(body)){return[]}return body.filter(product=>product.tags.includes('public')).map(product=>({action:'upsert',id:product.productKey,type:'product',data:{name:product.name,sku:product.sku,description:product.description}}));}"
 }
 ```
 
