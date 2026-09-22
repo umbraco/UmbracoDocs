@@ -40,7 +40,7 @@ Each component has few entries in the sidebar:
 
     <figure><img src="../../.gitbook/assets/Docs_tab.png" alt=""><figcaption></figcaption></figure>
 
-2. `Default`- Open a dedicated view with a live preview and a Controls panel on the right, where you can change a component's properties and see the result update immediately.
+2. `Default`- Open a dedicated view with a live preview and a Controls panel on the right. Change a component's properties there to see the result update immediately.
 
     <figure><img src="../../.gitbook/assets/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
 
