@@ -10,18 +10,7 @@ Getting connected has three steps:
 
 1. **Enable hosted MCP on your site** — a one-time setup step, different for a self-hosted site versus Umbraco Cloud. See [Setting Up Hosted MCP for Your Site](site-setup.md).
 2. **Find your MCP URL** — see below.
-3. **Connect your AI client** — see the setup guides below.
-
-## Two Ways to Connect
-
-The setup guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
-
-* **Local apps that connect out** — [Claude Desktop](claude-desktop.md), [Claude Code](claude-code.md), [Cursor](cursor.md), and [GitHub Copilot](github-copilot.md) (via Visual Studio Code) run on your machine. You point them at your hosted MCP URL through a config file or CLI command.
-* **Web-hosted platforms with their own settings UI** — [ChatGPT](chatgpt.md) and [Claude.ai](claude-ai.md) run in the browser and already act as a hosted service themselves. You add the MCP server through their own settings (ChatGPT calls this a plugin, Claude.ai a connector), not a local file.
-
-{% hint style="info" %}
-These settings UIs change often. The guides for ChatGPT and Claude.ai describe the concept and link to the vendor's current documentation. They don't promise an exact, unchanging menu path.
-{% endhint %}
+3. **Connect your AI client** — see [Local Apps](local-apps.md) or [Web-Hosted Platforms](web-hosted-platforms.md), depending on where your AI client runs.
 
 ## Finding Your MCP URL
 
@@ -65,21 +54,10 @@ You need an Umbraco backoffice account too — you authenticate using your exist
 
 ## Setup Guides
 
-### Local Apps
+The guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
 
-* [Claude Desktop](claude-desktop.md)
-* [Claude Code](claude-code.md)
-* [Cursor](cursor.md)
-* [GitHub Copilot](github-copilot.md)
-
-### Web-Hosted Platforms
-
-* [ChatGPT](chatgpt.md)
-* [Claude.ai](claude-ai.md)
-
-{% hint style="info" %}
-The examples below use the Editor MCP Server. The same connection method applies to any hosted Umbraco MCP server. Swap in the Developer MCP hostname from the table above if that's what you're connecting to.
-{% endhint %}
+* [Local Apps](local-apps.md) — Claude Code, Claude Desktop, Cursor, and GitHub Copilot run on your machine and connect out to your hosted MCP URL.
+* [Web-Hosted Platforms](web-hosted-platforms.md) — ChatGPT and Claude.ai run in the browser and add the MCP server through their own settings.
 
 ## How Authentication Works
 
