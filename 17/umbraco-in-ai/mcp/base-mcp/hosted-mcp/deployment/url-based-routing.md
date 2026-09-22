@@ -151,6 +151,8 @@ Each project's OpenIddict client must list the following redirect URIs:
 
 `<alias>` here is always the bare Cloud alias, even when the MCP connection URL uses the region-embedded form (`<alias>.<region>`). The Cloud project's own OAuth client registration only knows its bare alias. `umbracoCloudSiteRouting` strips the region back off before using it as the callback path.
 
+Adding a new Cloud project only ever needs these three things done on the project itself — the Worker requires no changes. `umbracoCloudSiteRouting` resolves new aliases on demand the first time a client connects.
+
 ## Authentication Flow
 
 The first time an MCP client connects to `/at/<alias>/`:
@@ -167,16 +169,6 @@ The first time an MCP client connects to `/at/<alias>/`:
 10. The MCP client retries `/at/<alias>/` with the access token. The audience matches, the request is rewritten to `/mcp`, and the tools list is returned.
 
 The `siteId` reaches per-request server creation through `props.consentChoices.siteId`. `createPerRequestServer` calls `siteRouting.resolveSite` to look up the project's `baseUrl` for outbound API calls.
-
-## Adding a New Cloud Project
-
-Three steps, all on the project. The Worker requires no changes:
-
-1. Add the OAuth composer and the external login short-circuit composer.
-2. Register the standard OAuth client ID (for example, `umbraco-mcp-cms-hosted`) in OpenIddict.
-3. Register `<worker-host>/callback/<alias>` and `http://127.0.0.1:8787/callback/<alias>` as allowed redirect URIs.
-
-`umbracoCloudSiteRouting` resolves new aliases on demand the first time a client connects.
 
 ## Non-Cloud Usage
 
@@ -224,7 +216,8 @@ Audience validation works the same way for self-hosted projects.
 
 ## Related Articles
 
-- [Umbraco Setup](umbraco-setup.md) — register the OAuth client.
-- [External Login Short Circuit](external-login-short-circuit.md) — required Cloud-only composer.
+- [Umbraco Cloud Quick Start](../../../hosted-mcp-setup/cloud-quickstart.md) — deploying a pre-built Editor or Developer MCP? Start here instead.
+- [Umbraco Setup](umbraco-setup.md) — the manual OAuth Composer, for custom MCP servers.
+- [External Login Short Circuit](external-login-short-circuit.md) — the manual Cloud SSO composer, for custom MCP servers.
 - [Multi-Site Deployments](multi-site.md) — alternative pattern that uses a consent-screen site picker.
 - [Architecture](../architecture.md) — three-tier configuration and component diagram.
