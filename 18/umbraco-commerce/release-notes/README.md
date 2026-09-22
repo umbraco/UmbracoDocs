@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.5 (22nd Sep 2026)
+
+* Fixed a SQLite connection setting that combined shared-cache mode with write-ahead logging, which could cause "database table is locked" errors.
+* Fixed shipping rate tables showing a stray blank or plus symbol for empty rate entries.
+
 #### 18.1.4 (7th Sep 2026)
 
 * Fixed analytics dashboard widgets overlapping when the browser window is resized ([#884](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/884)).
