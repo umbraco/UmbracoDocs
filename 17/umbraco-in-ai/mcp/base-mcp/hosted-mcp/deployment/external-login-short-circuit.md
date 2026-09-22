@@ -16,7 +16,7 @@ If your backoffice only ever uses local Umbraco username/password login, you don
 {% endhint %}
 
 {% hint style="info" %}
-Deploying a pre-built Editor or Developer MCP on Umbraco Cloud? [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) applies this short-circuit for you automatically — no composer needed. The manual approach below is for building a custom MCP server, or for a non-Cloud SSO provider the package doesn't know about.
+Deploying a pre-built Editor or Developer MCP on Umbraco Cloud? [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/cloud-quickstart.md) applies this short-circuit for you automatically — no composer needed. The manual approach below is for building a custom MCP server, or for a non-Cloud SSO provider the package doesn't know about.
 {% endhint %}
 
 ## The Problem

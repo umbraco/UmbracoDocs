@@ -11,7 +11,7 @@ The [`create-umbraco-mcp-server`](../../create-umbraco-mcp-server/README.md) CLI
 {% endhint %}
 
 {% hint style="warning" %}
-Running one of Umbraco's pre-built Editor or Developer MCP servers locally, rather than a custom MCP server? [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) registers the local `wrangler dev` callback automatically (`IncludeLocalhostCallback`, on by default) — you don't need Step 1 below. The manual Composer is for custom MCP servers built directly on this SDK.
+Running one of Umbraco's pre-built Editor or Developer MCP servers locally, rather than a custom MCP server? [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) registers the local `wrangler dev` callback automatically (`IncludeLocalhostCallback`, on by default) — you don't need Step 1 below. The manual Composer is for custom MCP servers built directly on this SDK.
 {% endhint %}
 
 ## Prerequisites

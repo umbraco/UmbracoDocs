@@ -8,7 +8,7 @@ This section explains how to set up and connect to a hosted Umbraco MCP server f
 
 Getting connected has three steps:
 
-1. **Enable hosted MCP on your site** — a one-time setup step. Install [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth), which works for both Umbraco Cloud and self-hosted sites, with a small configuration difference between the two. See [Setting Up Hosted MCP for Your Site](site-setup.md), or the package's own README for full configuration details.
+1. **Enable hosted MCP on your site** — a one-time setup step. Both paths install [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth), with a small configuration difference between them. See the [Umbraco Cloud Quick Start](cloud-quickstart.md) or [Self-Hosted Quick Start](self-hosted-quickstart.md), depending on how your site is hosted.
 2. **Find your MCP URL** — see below.
 3. **Connect your AI client** — see [Local Apps](local-apps.md) or [Web-Hosted Platforms](web-hosted-platforms.md), depending on where your AI client runs.
 
@@ -46,7 +46,7 @@ See [URL-Based Routing](../base-mcp/hosted-mcp/deployment/url-based-routing.md) 
 
 ### Agency or Self-Hosted
 
-A self-hosted deployment doesn't use the `{alias}.{region}` shape above — that's specific to Umbraco's own Cloud infrastructure. Your URL is your own Worker's domain, ending in `/mcp` (for example `https://mcp.example.com/mcp`). Your hosting provider will supply the exact URL, or see [Setting Up Hosted MCP for Your Site](site-setup.md) if you're setting it up yourself.
+A self-hosted deployment doesn't use the `{alias}.{region}` shape above — that's specific to Umbraco's own Cloud infrastructure. Your URL is your own Worker's domain, ending in `/mcp` (for example `https://mcp.example.com/mcp`). Your hosting provider will supply the exact URL, or see the [Self-Hosted Quick Start](self-hosted-quickstart.md) if you're setting it up yourself.
 
 You need an Umbraco backoffice account too — you authenticate using your existing Umbraco credentials through an OAuth flow.
 

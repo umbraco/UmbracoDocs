@@ -11,7 +11,7 @@ URL-based routing lets a single hosted MCP Worker serve many Umbraco projects. M
 This is the recommended pattern for Umbraco Cloud, where every project has a known alias.
 
 {% hint style="info" %}
-Deploying one of Umbraco's pre-built Editor or Developer MCP servers? This routing is already built into those Workers. [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) handles the Cloud project's side of it — see [Setting Up Hosted MCP for Your Site](../../../hosted-mcp-setup/site-setup.md) instead of this page. The rest of this page is a reference for building a custom MCP server with the same routing.
+Deploying one of Umbraco's pre-built Editor or Developer MCP servers? This routing is already built into those Workers. [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) handles the Cloud project's side of it — see the [Umbraco Cloud Quick Start](../../../hosted-mcp-setup/cloud-quickstart.md) instead of this page. The rest of this page is a reference for building a custom MCP server with the same routing.
 {% endhint %}
 
 ## How It Compares to Other Patterns
@@ -57,7 +57,7 @@ Three things to know:
 
 1. **The Worker validates per-project access tokens.** The token's `aud` claim binds to `<worker-host>/at/<alias>` (per RFC 8707). `OAuthProvider`'s built-in audience check enforces the binding.
 2. **The Worker rewrites any `/at/<alias>/...` path to `/mcp` internally.** The rewrite matches on the `/at/` prefix alone, so `/at/<alias>/mcp` and `/at/<alias>/` resolve identically. This page documents the `/mcp`-suffixed form for consistency with the rest of the documentation. The rewrite happens after the audience check, so token validation still passes.
-3. **Each Cloud project must opt in.** Two composers are required (see [Cloud Project Setup](#cloud-project-setup) below) — or install [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md), which does both automatically.
+3. **Each Cloud project must opt in.** Two composers are required (see [Cloud Project Setup](#cloud-project-setup) below) — or install [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/cloud-quickstart.md), which does both automatically.
 
 ## Worker Configuration
 
@@ -121,7 +121,7 @@ const provider = new OAuthProvider({
 
 ## Cloud Project Setup
 
-Each Umbraco Cloud project participating in URL-based routing needs three things. [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/site-setup.md) automates all three for a pre-built Editor or Developer MCP. The steps below are for a custom MCP server, or to understand what the package does.
+Each Umbraco Cloud project participating in URL-based routing needs three things. [`Umbraco.Mcp.HostedAuth`](../../../hosted-mcp-setup/cloud-quickstart.md) automates all three for a pre-built Editor or Developer MCP. The steps below are for a custom MCP server, or to understand what the package does.
 
 ### 1. The OAuth Composer
 
