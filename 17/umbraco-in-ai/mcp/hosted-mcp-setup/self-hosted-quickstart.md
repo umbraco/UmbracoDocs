@@ -1,13 +1,15 @@
 ---
-description: Deploy the pre-built Editor MCP server to your own Cloudflare account, step by step.
+description: Deploy any Umbraco MCP server — pre-built or your own — to your own Cloudflare account, step by step.
 ---
 
 # Self-Hosted Quick Start
 
-This guide deploys Umbraco's pre-built Editor MCP server to your own Cloudflare account and connects it to your Umbraco site. It's the fastest path to a working self-hosted Editor MCP — no custom server code required.
+This guide deploys an Umbraco MCP server to your own Cloudflare account and connects it to your Umbraco site. It works for any Umbraco MCP Worker — a pre-built Editor or Developer MCP server, or a custom server you've built yourself.
+
+It uses the Editor MCP as the running example.
 
 {% hint style="info" %}
-The same steps work for the [Developer MCP](../cms-developer-mcp/README.md) — clone [`umbraco/Umbraco-CMS-MCP-Dev`](https://github.com/umbraco/Umbraco-CMS-MCP-Dev) instead in step 1 and use a different `ClientId` in step 5. This guide uses the Editor MCP as the running example.
+Deploying the Developer MCP instead? Clone [`umbraco/Umbraco-CMS-MCP-Dev`](https://github.com/umbraco/Umbraco-CMS-MCP-Dev) in step 1 and use a different `ClientId` in step 5. Deploying your own custom MCP server? Clone your own repository in step 1 instead — everything else here still applies.
 {% endhint %}
 
 ## Prerequisites
@@ -19,7 +21,7 @@ The same steps work for the [Developer MCP](../cms-developer-mcp/README.md) — 
 
 ## 1. Get the Source
 
-Clone the Editor MCP repository and install its dependencies:
+Clone the Editor MCP repository and install its dependencies. Deploying a different server? Clone that repository instead — see the hint above.
 
 ```bash
 git clone https://github.com/umbraco/Umbraco-CMS-MCP-Editor.git
