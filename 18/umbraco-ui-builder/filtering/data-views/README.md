@@ -48,8 +48,16 @@ collectionConfig.AddDataView("Status", "Active", p => p.IsActive);
 
 Enables the `All` option for data views in the collection. The method can take an empty string, which will display the CMS localized `All` value, plain text, or a localized string.
 
+By default, the `All` option is not selected initially if other data views are also defined, in this case the first `AddDataView()` view is selected instead. Set `isDefault` to `true` to make `All` the initially selected view.
+
 #### Method Syntax
 
 ```cs
-collectionConfig.AddAllDataView(string? label)
+collectionConfig.AddAllDataView(string? label, bool isDefault = false)
+```
+
+#### Example
+
+```csharp
+collectionConfig.AddAllDataView("All", isDefault: true);
 ```
