@@ -9,7 +9,7 @@ Before an AI client can connect to a hosted Umbraco MCP server, your Umbraco sit
 The [`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) package does this automatically — no hand-written OAuth client registration needed. Install it and it configures itself on Umbraco Cloud. Self-hosted, it picks up a small config block instead.
 
 {% hint style="info" %}
-`Umbraco.Mcp.HostedAuth` is versioned to match your Umbraco major — `17.x` for Umbraco 17.
+`Umbraco.Mcp.HostedAuth` is versioned to match your Umbraco major — `17.x` for Umbraco 17. It's currently prerelease-only on NuGet, so pass `--prerelease` when installing it.
 {% endhint %}
 
 ## Umbraco Cloud
@@ -19,7 +19,7 @@ Umbraco Cloud already runs the shared MCP Worker infrastructure at `mcp.umbraco.
 1. Install the package:
 
    ```bash
-   dotnet add package Umbraco.Mcp.HostedAuth
+   dotnet add package Umbraco.Mcp.HostedAuth --prerelease
    ```
 
 2. Deploy. That's it — no configuration is required.
