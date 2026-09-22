@@ -18,7 +18,7 @@ The **History** section lists each change, newest first. Each entry shows the da
 
 ![The History section on a form's Info tab, listing save, rollback, trash, and restore entries.](../../.gitbook/assets/form-history.png)
 
-A form that has not changed since it was created shows no entries.
+A form that has not changed since it was created shows only that it was created.
 
 ## Types of change
 
