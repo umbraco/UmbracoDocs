@@ -44,7 +44,7 @@ Search, browse, and manage content pages.
 - `list-children` — List content pages in the site tree. Shows child pages under a parent, or root-level pages if no parent is specified.
 - `list-document-types` — List available Document Types that can be used to create new pages. Returns the ID, alias, and name of each type. Returns up to 50 by default — use `nextCursor` from the response to fetch more.
 - `get-document-type` — Get the full schema for a Document Type, including the list of editable properties (alias, name, description). Use before `edit-page` or `save-and-publish` to discover which property aliases can be set.
-- `inspect-blocks` — Inspect the block structure of a content page. Shows each block's type, unique key, and property values. Use this before `edit-block` to understand how content is structured.
+- `inspect-blocks` — Inspect the block structure of a content page. Shows each block's type, unique key, and property values. Use this before `edit-block` to understand how content is structured. Content pages only — for blocks on a Library element use `inspect-element-blocks` instead.
 - `report-page-references` — List all items that reference a content page — for example, other pages with content pickers, rich-text links, or multi-node-tree-picker values pointing at it. Use before `delete-page` to understand the impact.
 - `compare-draft-to-published` — Show what has changed between a page's current draft and its live published version, as a per-property diff. Use to review pending changes before publishing. Block-based properties are summarized — use `inspect-blocks` for detail.
 - `list-page-templates` — List the templates a page can use. Returns the current template, the Document Type's default template, and every allowed template with `isDefault`/`isCurrent` flags. Use before `set-page-template`.
@@ -56,7 +56,7 @@ Search, browse, and manage content pages.
 - `add-blockgrid-block` — Add a new block to a BlockGrid property on a page. Supports `rowSpan`/`columnSpan` and inserting into a named area on a parent block. Use `inspect-blocks` first to find the property alias and a sample content type key. Changes are saved as a draft, not published.
 - `add-rte-block` — Add a new block inside a Rich Text property on a page. Inserts the `umb-rte-block` tag in the markup and adds the matching content/settings entries. Use `inspect-blocks` first to find the property alias and a sample content type key. Changes are saved as a draft, not published.
 - `edit-page` — Update specific fields on a content page. Changes are saved but not published. Call `get-page` first to discover valid property aliases.
-- `edit-block` — Update properties within a specific block (BlockList, BlockGrid, or Rich Text block). Use `inspect-blocks` first to find the property alias and content key.
+- `edit-block` — Update properties within a specific block (BlockList, BlockGrid, or Rich Text block). Use `inspect-blocks` first to find the property alias and content key. Content pages only — for a block on a Library element use `inspect-element-blocks` then `edit-element-block` instead.
 - `rename-page` — Rename a content page (updates the variant name). Changes are saved but not published. For variant-aware pages, pass the culture to rename only that variant. You will be asked to confirm before renaming.
 - `sort-children` — Reorder child pages under a parent (or at the content root) by specifying their new sort-order values. Use `list-children` to discover the current order first.
 - `set-page-template` — Switch the template (rendering layout) of a page. Pass a `templateId` from the Document Type's allowed templates, or `null` to clear back to the default. Changes are saved but not published — the live page keeps the old template until you publish.
@@ -213,7 +213,7 @@ Manage member groups for organizing members.
 
 Member analytics and reporting.
 
-- `report-member-count` — Returns a breakdown of member counts by type and group. Analyses up to 500 members — results may be incomplete on larger sites.
+- `report-member-count` — Returns a breakdown of member counts by type and group. The total and per-group counts are exact server-reported totals; the per-type breakdown is computed from a sample of up to 500 members and may be lower than the true count on larger sites.
 - `report-members-by-group` — List members belonging to a specific group. Use `list-member-groups` to find valid group names.
 - `report-member-activity` — Find members who have not logged in within a given number of days. Default threshold is 90 days. Members who have never logged in are always included. Analyses up to 500 members.
 
