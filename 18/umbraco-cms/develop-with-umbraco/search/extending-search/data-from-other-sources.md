@@ -109,6 +109,9 @@ internal sealed class BookIndexService(IIndexer indexer, IBookService bookServic
 ```
 {% endcode %}
 
+{% hint style="info" %}
+By default, search is [powered by Examine](../getting-started/examine-search-provider.md). It requires you to register a Lucene index for the new entity in a composer.
+{% endhint %}
 
 ### The `ISearcher`
 
