@@ -7,14 +7,18 @@ description: Step-by-step guide to running the Hosted MCP server locally with wr
 This guide walks you through running the hosted MCP server locally with `wrangler dev` and a local Umbraco instance.
 
 {% hint style="info" %}
-The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
+The [`create-umbraco-mcp-server`](../../create-umbraco-mcp-server/README.md) CLI handles all of this setup automatically. Use this page as a reference for understanding the configuration or troubleshooting issues.
+{% endhint %}
+
+{% hint style="warning" %}
+Running one of Umbraco's pre-built Editor or Developer MCP servers locally, rather than a custom MCP server? [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) registers the local `wrangler dev` callback automatically (`IncludeLocalhostCallback`, on by default) — you don't need Step 1 below. The manual Composer is for custom MCP servers built directly on this SDK.
 {% endhint %}
 
 ## Prerequisites
 
 - Node.js 22+
 - .NET 10 SDK (for the Umbraco instance)
-- A local Umbraco 17+ instance with Management API enabled
+- A local Umbraco 18+ instance with Management API enabled
 
 ## Step 1: Register the OAuth Client
 
@@ -39,7 +43,7 @@ Create a `.dev.vars` file in your Worker project root:
 ```
 UMBRACO_BASE_URL=https://localhost:44391
 UMBRACO_SERVER_URL=http://localhost:56472
-UMBRACO_OAUTH_CLIENT_ID=umbraco-back-office-mcp
+UMBRACO_OAUTH_CLIENT_ID=umbraco-back-office-hosted-mcp
 COOKIE_ENCRYPTION_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 ```
 
@@ -61,8 +65,8 @@ Ensure your `wrangler.toml` has the standard bindings:
 ```toml
 name = "umbraco-cms-mcp"
 main = "src/worker.ts"
-compatibility_date = "2025-02-24"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat_v2"]
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"

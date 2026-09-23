@@ -6,11 +6,23 @@ description: Configure a single Cloudflare Worker to serve multiple Umbraco inst
 
 A single Cloudflare Worker can serve multiple Umbraco instances. This is useful when you have separate environments (production, staging) or multiple tenants sharing one MCP server.
 
+{% hint style="info" %}
+Connecting many Umbraco Cloud projects instead? [URL-Based Routing](url-based-routing.md) resolves the site from the connection URL and skips the consent-screen site picker.
+{% endhint %}
+
+{% hint style="warning" %}
+`Umbraco.Mcp.HostedAuth` does support registering multiple Workers on one self-hosted Umbraco instance — list each one under `HostedMcp:Clients`.
+
+What it doesn't support is *this specific pattern*: one Worker serving many *different* Umbraco instances through a consent-screen site picker. That needs a callback path suffixed with the site ID (`/callback/:siteId`), and the package's self-hosted mode only ever registers a plain `{origin}/callback`. If you need the site-picker pattern, the manual OAuth Composer registration in step 2 below is still required.
+
+If each Worker only ever talks to one Umbraco instance — the common case — install the package normally on that instance instead. This page doesn't apply.
+{% endhint %}
+
 ## How It Works
 
 All sites share one MCP endpoint (`/`). Site selection happens during authorization. The consent screen shows a **site picker** where the user chooses which Umbraco instance to connect to.
 
-The multi-site flow adds two extra steps to the standard OAuth flow (see [Architecture - Auth Flow](architecture.md#auth-flow) for the full sequence):
+The multi-site flow adds two extra steps to the standard OAuth flow (see [Architecture - Auth Flow](../architecture.md#auth-flow) for the full sequence):
 
 1. The consent screen includes a **site picker** (radio buttons). The user selects which Umbraco instance to authorize against.
 2. The callback URL includes the site ID (`/callback/:siteId`) so the Worker knows which site's credentials to use for token exchange.
