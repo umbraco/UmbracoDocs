@@ -360,6 +360,7 @@ IProfiler
 IPs
 IRelation
 IScope
+ISearcher
 IService
 ISettings
 isFrozen
