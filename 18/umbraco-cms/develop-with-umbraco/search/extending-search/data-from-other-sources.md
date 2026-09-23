@@ -59,15 +59,15 @@ You can inject the `IIndexer` into your services to perform index maintenance:
 {% code title="BookIndexService.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Services;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.Services;
 
 internal sealed class BookIndexService(IIndexer indexer, IBookService bookService)
 {
     private string IndexAlias => "My_Books";
-    
+
     public async Task RebuildIndexAsync()
     {
         // Fetch all books from the person service.
@@ -110,7 +110,24 @@ internal sealed class BookIndexService(IIndexer indexer, IBookService bookServic
 {% endcode %}
 
 {% hint style="info" %}
-By default, search is [powered by Examine](../getting-started/examine-search-provider.md). It requires you to register a Lucene index for the new entity in a composer.
+By default, search is powered by Examine. It requires you to register a Lucene index for the new entity in a composer:
+
+```csharp
+using Examine;
+using Examine.Lucene.Providers;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Search.Provider.Examine.Lucene;
+
+namespace My.Services;
+
+public class MyComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.AddExamineLuceneIndex<LuceneIndex, ConfigurationEnabledDirectoryFactory>("My_Books", _ => { });
+}
+```
+
+Also, keep in mind that additional field-level configuration may be needed to suit your search requirements. See the [Examine search provider](../getting-started/examine-search-provider.md) documentation for details.
 {% endhint %}
 
 ### The `ISearcher`
@@ -121,9 +138,9 @@ To search the index, inject the `ISearcher` in your search services:
 ```csharp
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Searching.Filtering;
-using Umbraco.Cms.Search.Core.Models.Searching.Sorting;
-using Umbraco.Cms.Search.Core.Services;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying.Filtering;
+using Umbraco.Cms.Core.Search.Querying.Sorting;
 
 namespace My.Site.Services;
 

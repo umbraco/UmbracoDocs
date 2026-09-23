@@ -22,7 +22,7 @@ The `IndexValue` record holds the data to be indexed. Create a specialized imple
 
 {% code title="CustomIndexValue.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Indexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.Search.Custom;
 
@@ -44,7 +44,7 @@ Extend the `Indexer` class to handle your custom `IndexValue` type by:
 ```csharp
 using Examine;
 using Microsoft.Extensions.Options;
-using Umbraco.Cms.Search.Core.Models.Indexing;
+using Umbraco.Cms.Core.Search.Indexing;
 using Umbraco.Cms.Search.Provider.Examine.Configuration;
 using Umbraco.Cms.Search.Provider.Examine.Helpers;
 using Umbraco.Cms.Search.Provider.Examine.Services;
@@ -53,8 +53,8 @@ namespace My.Site.Search.Custom;
 
 public class CustomIndexer : Indexer
 {
-    public CustomIndexer(IExamineManager examineManager, IOptions<FieldOptions> fieldOptions)
-        : base(examineManager, fieldOptions)
+    public CustomIndexer(IExamineManager examineManager, IOptions<FieldOptions> fieldOptions, IActiveIndexManager activeIndexManager)
+        : base(examineManager, fieldOptions, activeIndexManager)
     {
     }
 
@@ -106,7 +106,7 @@ Create a custom filter record that extends `Filter` to enable filtering by your 
 
 {% code title="GuidFilter.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching.Filtering;
+using Umbraco.Cms.Core.Search.Querying.Filtering;
 
 namespace My.Site.Search.Custom;
 
@@ -124,7 +124,7 @@ Extend the `Searcher` class to handle your custom filter. Override the `AddCusto
 using Examine;
 using Examine.Search;
 using Microsoft.Extensions.Options;
-using Umbraco.Cms.Search.Core.Models.Searching.Filtering;
+using Umbraco.Cms.Core.Search.Querying.Filtering;
 using Umbraco.Cms.Search.Provider.Examine.Configuration;
 using Umbraco.Cms.Search.Provider.Examine.Helpers;
 using Umbraco.Cms.Search.Provider.Examine.Services;
@@ -133,8 +133,8 @@ namespace My.Site.Search.Custom;
 
 public class CustomSearcher : Searcher
 {
-    public CustomSearcher(IExamineManager examineManager, IOptions<SearcherOptions> searcherOptions)
-        : base(examineManager, searcherOptions)
+    public CustomSearcher(IExamineManager examineManager, IOptions<SearcherOptions> searcherOptions, IActiveIndexManager activeIndexManager)
+        : base(examineManager, searcherOptions, activeIndexManager)
     {
     }
 
@@ -171,8 +171,7 @@ Implement an [`IContentIndexer`](gathering-data-with-content-indexers.md) to hoo
 {% code title="MyDataContentIndexer.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 using My.Site.Services;
 
 namespace My.Site.Search.Custom;
@@ -228,8 +227,8 @@ Register your custom `Indexer`, `Searcher` and `IContentIndexer` in a composer:
 {% code title="CustomSearchComposer.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Search.Core.Services;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Indexing;
 using Umbraco.Cms.Search.Provider.Examine.Services;
 
 namespace My.Site.DependencyInjection;
@@ -259,9 +258,10 @@ With all of this in place, you can search using your custom filter:
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
+using My.Site.Search.Custom;
 
 namespace My.Site.Services;
 

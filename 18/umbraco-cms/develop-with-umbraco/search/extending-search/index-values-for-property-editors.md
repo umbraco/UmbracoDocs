@@ -21,15 +21,14 @@ The property value handler is created by implementing the `IPropertyValueHandler
 {% code title="MyPropertyEditorPropertyValueHandler.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.PropertyValueHandlers;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.PropertyValueHandlers;
 
 public class MyPropertyEditorPropertyValueHandler : IPropertyValueHandler
 {
-    public bool CanHandle(string propertyEditorAlias)
-        => propertyEditorAlias is "My.PropertyEditor";
+    public bool CanHandle(IPropertyType propertyType)
+        => propertyType.PropertyEditorAlias is "My.PropertyEditor";
 
     public IEnumerable<IndexField> GetIndexFields(
         IProperty property,
@@ -75,15 +74,14 @@ The following example makes the radio button list produce _both_ searchable `Tex
 {% code title="MyRadioButtonListPropertyValueHandler.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.PropertyValueHandlers;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.PropertyValueHandlers;
 
 public class MyRadioButtonListPropertyValueHandler : IPropertyValueHandler
 {
-    public bool CanHandle(string propertyEditorAlias)
-        => propertyEditorAlias is Umbraco.Cms.Core.Constants.PropertyEditors.Aliases.RadioButtonList;
+    public bool CanHandle(IPropertyType propertyType)
+        => propertyType.PropertyEditorAlias is Umbraco.Cms.Core.Constants.PropertyEditors.Aliases.RadioButtonList;
 
     public IEnumerable<IndexField> GetIndexFields(
         IProperty property,

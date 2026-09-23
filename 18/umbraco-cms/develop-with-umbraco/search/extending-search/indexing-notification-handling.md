@@ -32,8 +32,8 @@ Keywords are not available for full-text querying by default. You can use a noti
 {% code title="MakeLengthSearchableNotificationHandler.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Notifications;
+using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.NotificationHandlers;
 
@@ -55,16 +55,11 @@ public class MakeLengthSearchableNotificationHandler
         notification.Fields = notification.Fields
             .Except([field])
             .Union([
-                new IndexField(
-                    field.FieldName,
-                    new IndexValue
-                    {
-                        Keywords = field.Value.Keywords,
-                        Texts = field.Value.Keywords
-                    },
-                    field.Culture,
-                    field.Segment
-                )
+                field with { Value = new IndexValue
+                {
+                    Keywords = field.Value.Keywords,
+                    Texts = field.Value.Keywords
+                } }
             ])
             .ToArray();
     }
@@ -84,9 +79,9 @@ Cancelling the notification will prevent content from being added to the target 
 
 {% code title="OmitSettingsFromPublishedContentIndexNotificationHandler.cs" %}
 ```csharp
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Search.Core;
-using Umbraco.Cms.Search.Core.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace My.Site.NotificationHandlers;
 
@@ -107,7 +102,7 @@ public class OmitSettingsFromPublishedContentIndexNotificationHandler
         // Find the system field for content type ID.
         var contentTypeIdField = notification
             .Fields
-            .FirstOrDefault(field => field.FieldName == Constants.FieldNames.ContentTypeId);
+            .FirstOrDefault(field => field.FieldName == Constants.IndexFieldNames.ContentTypeId);
 
         // Grab the content type ID from the keywords collection.
         var contentTypeId = contentTypeIdField?.Value.Keywords?.FirstOrDefault();

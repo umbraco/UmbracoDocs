@@ -34,9 +34,8 @@ The following example demonstrates how this could be used to refresh all content
 
 {% code title="MyIndexRefresher.cs" %}
 ```csharp
+using Umbraco.Cms.Core.Search.Indexing;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
 
 namespace My.Site.Services;
 
@@ -67,7 +66,7 @@ public class MyIndexRefresher
         do
         {
             // Fetch the next page of content items for content type {contentTypeId}.
-            var content = _contentService.GetPagedOfType(contentTypeId, currentPage++, pageSize, out totalRecords, filter: null);
+            var content = _contentService.GetPagedOfType(contentTypeId, currentPage++, pageSize, out totalRecords, filter: null!);
  
             // Propagate an index refresh command for the content across all instances.
             var contentState = published ? ContentState.Published : ContentState.Draft;
@@ -91,7 +90,7 @@ The `IIndexDocumentService` lets you manage the contents of the index data cache
 
 {% code title="MyIndexDocumentCacheFlusher.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.Services;
 
@@ -130,7 +129,7 @@ You can either trigger an index rebuild manually from the [Search section in the
 
 {% code title="MyIndexRebuilder.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.Services;
 

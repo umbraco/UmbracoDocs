@@ -21,8 +21,7 @@ The following example appends extra index data for all content items being index
 ```csharp
 using My.Site.Services;
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.ContentIndexing;
 
@@ -72,7 +71,7 @@ You'll also need a composer to register the content indexer:
 ```csharp
 using My.Site.ContentIndexing;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.DependencyInjection;
 

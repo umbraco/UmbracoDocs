@@ -22,8 +22,7 @@ Here's a code sample to show the usage of the service:
 {% code title="MyContentReindexer.cs" %}
 ```csharp
 using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Search.Core.Models.Indexing;
-using Umbraco.Cms.Search.Core.Services.ContentIndexing;
+using Umbraco.Cms.Core.Search.Indexing;
 
 namespace My.Site.Indexing;
 

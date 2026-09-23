@@ -26,10 +26,10 @@ System fields can be used like any other fields for searching. The system field 
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Models.Searching.Filtering;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
+using Umbraco.Cms.Core.Search.Querying.Filtering;
 
 namespace My.Site.Services;
 
@@ -42,7 +42,7 @@ public class MySearchService(ISearcher searcher)
             filters:
             [
                 new TextFilter(
-                    FieldName: Constants.FieldNames.Name,
+                    FieldName: Constants.IndexFieldNames.Name,
                     Values: ["pink"],
                     Negate: false
                 )

@@ -27,9 +27,9 @@ Searching by query yields results where one or more fields are indexed as `Text`
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core;
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 
 namespace My.Site.Services;
 
@@ -54,10 +54,10 @@ For example, use a `TextFilter` when filtering `Text` value types, and a `Keywor
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core;
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Models.Searching.Filtering;
-using Umbraco.Cms.Search.Core.Services;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
+using Umbraco.Cms.Core.Search.Querying.Filtering;
 
 namespace My.Site.Services;
 
@@ -149,10 +149,10 @@ You must pay attention to the expected field value type when defining facets. Mi
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core;
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Models.Searching.Faceting;
-using Umbraco.Cms.Search.Core.Services;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
+using Umbraco.Cms.Core.Search.Querying.Faceting;
 
 namespace My.Site.Services;
 
@@ -214,10 +214,9 @@ Sorting by field is also tied explicitly to the field value type. Mismatched com
 {% code title="MySearchService.cs" %}
 ```csharp
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Models.Searching.Sorting;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
+using Umbraco.Cms.Core.Search.Querying.Sorting;
 
 namespace My.Site.Services;
 
@@ -254,9 +253,9 @@ Search results are paginated by using `skip` and `take`.
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 
 namespace My.Site.Services;
 
@@ -284,9 +283,9 @@ Invariant content will automatically be included in the search result when searc
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 
 namespace My.Site.Services;
 
@@ -315,17 +314,16 @@ The search feature has no knowledge of members. If public access rules are defin
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 
 namespace My.Site.Services;
 
 public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchProtectedContent(Guid principalId, Guid[]? groupIds)
-    {
-        return await searcher.SearchAsync(
+        => await searcher.SearchAsync(
             indexAlias: Constants.IndexAliases.PublishedContent,
             query: "pink",
             accessContext: new AccessContext(
@@ -333,7 +331,6 @@ public class MySearchService(ISearcher searcher)
                 GroupIds: groupIds
             )
         );
-    }
 }
 ```
 {% endcode %}
