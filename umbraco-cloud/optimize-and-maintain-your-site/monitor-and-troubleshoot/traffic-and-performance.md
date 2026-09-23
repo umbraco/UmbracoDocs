@@ -35,7 +35,7 @@ You can change the time range to a predefined interval or define a specific star
 
 ### Environment
 
-Use the environment dropdown to select which environment (for example, Live, Staging, or Development) to view metrics for.
+Use the environment dropdown to select which environment (for example, Live, Staging, or the left-most environment) to view metrics for.
 
 ### Hostname Selector
 

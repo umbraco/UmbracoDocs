@@ -33,7 +33,7 @@ For more information, see the [Project Settings](../../build-and-customize-your-
 
 Umbraco Cloud includes an integrated CI/CD pipeline that automates the deployment of your site whenever you push changes to Git. This means:
 
-* Each commit triggers a build and deployment to your project’s environments (Development, Staging, Production).
+* Each commit triggers a build and deployment to your project’s environments (left-most, Staging, Production).
 * Deployments are fast, reliable, and consistent, reducing manual errors.
 * You can promote changes through environments, ensuring quality control before going live.
 

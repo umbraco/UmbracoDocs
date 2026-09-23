@@ -6,7 +6,7 @@ Let's say you have a project named `Snoopy`. The default hostnames will be:
 
 * **Umbraco Cloud Portal** - `www.s1.umbraco.io/project/snoopy`
 * **Live site** - `snoopy.euwest01.umbraco.io`
-* **Development environment** - `dev-snoopy.euwest01.umbraco.io`
+* **Left-most environment** - `dev-snoopy.euwest01.umbraco.io`
 * **Staging environment** - `stage-snoopy.euwest01.umbraco.io`
 
 The hostnames contain the region on which your project is hosted. The options available when choosing a region for your Umbraco project are:
@@ -17,7 +17,7 @@ The hostnames contain the region on which your project is hosted. The options av
 * Australian East (aueast01)
 * Canada Central (cacent01)
 
-To access the backoffice, add `/umbraco` at the end of the Live, Development, or Staging URL.
+To access the backoffice, add `/umbraco` at the end of the Live, left-most, or Staging URL.
 
 ## Limitations
 
