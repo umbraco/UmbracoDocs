@@ -7,3 +7,8 @@ structure:
 redirects:
     concepts/context-enginerring: concepts/context-engineering.md
     mcp/cms-developer-mcp/cli-usage: mcp/cms-developer-mcp/skills-and-cli.md
+    mcp/base-mcp/hosted-mcp/deployment: mcp/base-mcp/hosted-mcp/deployment/README.md
+    mcp/base-mcp/hosted-mcp/local-dev-setup: mcp/base-mcp/hosted-mcp/deployment/local-dev-setup.md
+    mcp/base-mcp/hosted-mcp/manual-setup: mcp/base-mcp/hosted-mcp/deployment/manual-setup.md
+    mcp/base-mcp/hosted-mcp/multi-site: mcp/base-mcp/hosted-mcp/deployment/multi-site.md
+    mcp/base-mcp/hosted-mcp/umbraco-setup: mcp/base-mcp/hosted-mcp/deployment/umbraco-setup.md
