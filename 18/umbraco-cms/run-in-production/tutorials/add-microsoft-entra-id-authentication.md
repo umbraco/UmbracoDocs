@@ -82,10 +82,11 @@ public static class MemberAuthenticationExtensions
 
 {% hint style="warning" %}
 Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from the Step 1.
+
 Don't commit the client secret to source control. Read it from configuration instead, for example user secrets during development.
 {% endhint %}
 
-2. If you registered a single-tenant app in Step 1, add the tenant-specific endpoints inside `options`:
+2. *[Optional]* If you registered a single-tenant app in Step 1, add the tenant-specific endpoints inside `options`:
 
 ```csharp
 options.AuthorizationEndpoint = "https://login.microsoftonline.com/YOURTENANTID/oauth2/v2.0/authorize";
@@ -224,9 +225,9 @@ public static class MemberAuthenticationExtensions
 
 {% endcode %}
 
-If you added the single-tenant endpoints in Step 3, keep them in `options`.
+3. *[Optional]* If you added the single-tenant endpoints in Step 3, keep them in `options`.
 
-3. Rebuild and sign in again.
+4. Rebuild and sign in again.
 
 On the first sign-in, Umbraco creates a new Member or links an existing Member with the same email. Later sign-ins use that link.
 
