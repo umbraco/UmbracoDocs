@@ -94,6 +94,37 @@ The `Form` references the form the record is from and `FormState` provides its s
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
 
+## Date values
+
+A record field that stores a date is formatted for whoever reads it. `ValuesAsString` has an overload that takes a `RecordFieldDateFormat` and, optionally, a culture:
+
+```csharp
+using Umbraco.Forms.Core.Enums;
+
+// Formatted for a person, using the culture the entry was submitted with.
+var forDisplay = recordField.ValuesAsString(false, RecordFieldDateFormat.Culture, context.Record.Culture);
+
+// Formatted for another system, as ISO 8601.
+var forOtherSystem = recordField.ValuesAsString(false, RecordFieldDateFormat.Iso);
+```
+
+The options are:
+
+| Option | Output |
+| --- | --- |
+| `Invariant` | Month-first, matching how the value is stored in the record data. This is the default. |
+| `Culture` | Formatted with the supplied culture, for a person to read. |
+| `Iso` | ISO 8601, for another system to read. |
+
+Magic strings in your workflow's own settings are formatted the same way. Override `PlaceholderDateFormat` to choose the format:
+
+```csharp
+/// <inheritdoc/>
+protected override RecordFieldDateFormat PlaceholderDateFormat => RecordFieldDateFormat.Culture;
+```
+
+Use `Culture` when a person reads the setting, such as an email body. Use `Iso` when another system reads it, such as a webhook URL. The default is `Invariant`, which keeps the behavior of earlier versions.
+
 ## Configuration validation
 
 The `GetConfigurationErrors` method can be overridden to report when required configuration is missing. By default it returns an empty collection. The workflow type is then considered configured and available for use.

@@ -35,6 +35,8 @@ Used to post the Form as an XML to a specified URL. The following configuration 
 * User
 * Password
 
+Date values in the XML are written in the ISO 8601 format. The receiving system reads them without having to guess the format.
+
 ## **Save as an XML file**
 
 ![Save as XML](../../.gitbook/assets/save-as-an-xml-file-v14.png)
@@ -51,6 +53,8 @@ The path needs to point to a folder, not a file name. The files are then stored 
 {% hint style="info" %}
 When storing the files within the `wwwroot` or `App_Plugins` folders, the files will be publicly available by default.
 {% endhint %}
+
+Date values in the saved file are written in the ISO 8601 format.
 
 ## **Save as Umbraco Content Node**
 
@@ -71,6 +75,8 @@ The following configuration can be set:
 * Workflow Name
 * Publish - choose whether to publish the node on submission
 * Where to save - choose a section in the content tree where this new node should be added
+
+A form field that stores a date is mapped to a date property as a date value. A day-first date such as `05/07/2027` from an `en-GB` entry is saved as 5 July.
 
 ## **Send Email**
 
@@ -126,6 +132,8 @@ If that is not set, the [Content Settings](https://docs.umbraco.com/umbraco-cms/
 
 The fallback behavior also applies to the other email workflows.
 
+A date value in the email uses the culture the entry was submitted with.
+
 ## **Send Email with Template (Razor)**
 
 ![Send email with template](../../.gitbook/assets/send-email-razor-v14.png)
@@ -147,6 +155,8 @@ The following configuration can be set:
 * SenderEmail
 * Reply To Email
 * Subject of the email (required)
+
+A date value in the email uses the culture the entry was submitted with.
 
 ## **Send Form to URL**
 
@@ -210,6 +220,8 @@ namespace RequestSaver.Controllers
 }
 ```
 
+Date values in the request are sent in the ISO 8601 format. The standard **created** and **updated** fields carry a `Z` suffix, marking them as UTC.
+
 ## **Send XSLT Transformed Email**
 
 ![Send XSLT Email](../../.gitbook/assets/xslt-email-v14.png)
@@ -225,6 +237,8 @@ Sends the result of the Form to an email address with full control over the emai
 * Reply To Email
 * Subject of the email (required)
 
+The XML passed to the XSLT file holds date values in the ISO 8601 format.
+
 ## **Slack**
 
 ![Send to Slack](../../.gitbook/assets/email-slack-v14.png)
@@ -233,3 +247,5 @@ Allows to post the Form data to a specific channel on Slack. The following confi
 
 * Workflow Name
 * Webhook URL (required)
+
+A date value in the message uses the culture the entry was submitted with.

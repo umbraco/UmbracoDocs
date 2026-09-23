@@ -18,6 +18,13 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**18.0.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.8) **(September 21st 2026)**
+
+* Fixed a filterable property's description not showing in the backoffice when set with `SetDescription()` [#239](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/239).
+* Fixed the save and create notifications showing the wrong or missing name for collections configured with `SetNameFormat()` [#240](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/240), [#241](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/241).
+* Added an `isDefault` option to `AddAllDataView()` so it can be used as the default data view [#238](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/238).
+* Fixed a child collection failing to load when it was the only collection in a group added with `AddChildCollectionGroup()` [#242](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/242).
+
 ### [**18.0.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.7) **(September 14th 2026)**
 
 * Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233).

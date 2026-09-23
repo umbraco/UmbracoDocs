@@ -1,12 +1,12 @@
 # Creating Your First Template
 
-Umbraco creates a corresponding template when you select the **Document Type with Template** option when creating a Document Type.
+Umbraco creates a corresponding template when you select the **Document Type with Template** option when creating a Document Type. A Document Type defines your content's structure, while a Template defines how that content is rendered on the front end. See [Document Type Options](../../../model-your-content/content-types-and-structure/data/defining-content/document-type-options.md) for a full breakdown of when to use each option.
 
 To edit the template:
 
 1. Go to **Settings**.
 2. Expand the **Templates** folder in the **Templating** section of the tree. You should see a template titled _**HomePage**_.
-3.  Open the template. It will contain a little bit of _**Razor code**_.
+3. Open the template. It will contain a little bit of _**Razor code**_.
 
     ![Home Page Template](<../../.gitbook/assets/figure-13-empty-homepage-template-v9 (1).png>)
 4. Leaving the code that's there (if you don't understand it, don't worry), let's copy our template code in.
@@ -25,14 +25,14 @@ Our third and final stage to creating our first page in Umbraco, is to create a 
 To add a content node:
 
 1. Go to **Content**.
-2.  Select **...** next to the **Content** headline in the tree. Select **HomePage**.
+2. Select **...** next to the **Content** headline in the tree. Select **HomePage**.
 
     * If you cannot see the content node, check that **Settings > Document Types > HomePage > Permissions tab > Allow at root** is checked. The Home Page opens in the content editor.
 
     ![Home Page Content Node](<../../.gitbook/assets/figure-15-create-a-homepage-v8 (1).png>)
 3. Enter the name for the content node. We are going to call this _Homepage_.
    * The name will show up in the node list and will be used to create a URL for the page. Try to keep it short but descriptive.
-4.  Enter the following details:
+4. Enter the following details:
 
     | Name        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -189,7 +189,6 @@ The same applies to a local clone of an Umbraco Cloud project. Umbraco Cloud set
 To resolve the pending status, set `UmbracoApplicationUrl` to the URL you use to browse the local site. Add the setting to `appsettings.Development.json`, so that it applies only when you run the site locally:
 
 {% code title="appsettings.Development.json" %}
-
 ```json
 {
   "Umbraco": {
@@ -201,7 +200,6 @@ To resolve the pending status, set `UmbracoApplicationUrl` to the URL you use to
   }
 }
 ```
-
 {% endcode %}
 
 Replace the port with the one shown in your terminal output or in `Properties/launchSettings.json`. Restart the site, or select **Validate** on the **Licenses** dashboard.
@@ -209,6 +207,28 @@ Replace the port with the one shown in your terminal output or in `Properties/la
 As an alternative, set `ApplicationUrlDetection` to `FirstRequest` in `appsettings.Development.json`. Umbraco then detects the URL from the first request to the site. See [Configuring ApplicationUrlDetection](#configuring-applicationurldetection) for the security implications.
 
 Commercial product licenses usually include `localhost` as a valid domain. For the domains covered by your license, see the licensing article for your product under [Product-Specific License Information](#product-specific-license-information).
+
+## Local Development and License Validation
+
+From Umbraco CMS version 17.4 onwards, the default value for `ApplicationUrlDetection` was changed to None for security reasons. Because Umbraco no longer auto-detects the domain from incoming HTTP requests, your commercial licenses may fail to validate in your local environment and appear as invalid in the backoffice.
+
+To resolve this, explicitly configure the `UmbracoApplicationUrl` in your `appsettings.Local.json` file to match your local development URL.
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "UmbracoApplicationUrl": "https://localhost:{port}/"
+      }
+    }
+  }
+}
+```
+
+{% hint style="info" %}
+Alternative for Local Development: If your team uses varying localhost ports, you can instead set the `Umbraco:CMS:WebRouting:ApplicationUrlDetection` to `FirstRequest` or `EveryRequest` in your `appsettings.{name}.json`. Do not enable this in production environments. 
+{% endhint %}
 
 ## Validating a License Without an Outgoing Internet Connection
 

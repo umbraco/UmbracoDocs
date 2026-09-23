@@ -2,7 +2,7 @@
 
 Umbraco Forms is a commercial product. You can run Umbraco Forms unrestricted locally without the need for a license. Running Umbraco Forms in the public domain will require a valid license.
 
-Version 16 supports both the one-off purchase and (in 16.1+) subscription license. 
+Version 16 supports both the one-off purchase and (in 16.1+) subscription license.
 
 ## How does it work?
 
@@ -51,27 +51,29 @@ This is an add-on domain for existing licenses. Refunds will not be given for th
 
 You can look at the pricing, features, and purchase the license on the [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) page.
 
-### Add additional domains
-
-An additional domain is an add-on for an existing license. It extends coverage to a second (or further) production environment on the same Umbraco installation.
-
-Each additional domain follows the same coverage rules as the primary license domain. It includes all subdomains and the `.local` extension for the live domain, plus two development/testing domains with and without the `www` subdomain.
-
-Additional domains are intended for cases where multiple distinct domains point at the same installation. An example could be when running separate regional or brand sites side by side. Because a single license covers only one production domain, each extra domain requires its own add-on. 
-
-Adding an additional domain to your license is a permanent add-on to the license; refunds are not available for additional domain purchases.
-
-If you need to add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/forms/) with your request and they will manage this process.
-
 ### Installing subscription license product key
 
 Once you've purchased your subscription license with the correct domains, you are ready to configure the license key on your Umbraco installation.
 
 The license key should be added to your configuration using product ID: `Umbraco.Forms`.
 
+{% hint style="success" icon="key" %}
 For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/commercial-products/configure-licenses) article.
+{% endhint %}
 
-#### Federal Information Processing Standards (FIPS) Compliant Environments
+### Add additional domains
+
+An additional domain is an add-on for an existing license. It extends coverage to a second (or further) production environment on the same Umbraco installation.
+
+Each additional domain follows the same coverage rules as the primary license domain. It includes all subdomains and the `.local` extension for the live domain, plus two development/testing domains with and without the `www` subdomain.
+
+Additional domains are intended for cases where multiple distinct domains point at the same installation. An example could be when running separate regional or brand sites side by side. Because a single license covers only one production domain, each extra domain requires its own add-on.
+
+Adding an additional domain to your license is a permanent add-on to the license; refunds are not available for additional domain purchases.
+
+If you need to add additional domains to your license, [reach out to the sales team](https://umbraco.com/products/add-ons/forms/) with your request and they will manage this process.
+
+### Federal Information Processing Standards (FIPS) Compliant Environments
 
 The algorithm used to decrypt Forms licenses is not supported on locked down FIPS compliant environments, such as those used in the defense industry.
 
