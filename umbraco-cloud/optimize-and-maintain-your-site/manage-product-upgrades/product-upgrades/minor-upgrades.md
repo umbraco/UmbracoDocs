@@ -28,7 +28,7 @@ With automatic upgrades enabled, all products on Umbraco Cloud will automaticall
 If you create a new project on Umbraco Cloud automatic upgrades are enabled by default.
 
 {% hint style="info" %}
-A secondary mainline environment is not required for automatic upgrades or for upgrades started from the Cloud Portal. It is highly recommended, as it lets you test an upgrade before it reaches Live. Without a second environment, upgrades are applied directly to Live.
+Use a secondary mainline environment to test upgrades before sending them to Live. While automatic upgrades and upgrades started from the Cloud Portal do not require a second environment, omitting one means upgrades apply directly to Live.
 {% endhint %}
 
 A secondary mainline environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
