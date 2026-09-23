@@ -102,7 +102,7 @@ You can do this by querying content relative to your current page in template vi
 
 You can use the Query Builder in the template editor to build more advanced queries. ![Query button](../../../.gitbook/assets/button-v8.png)
 
-![Query helper](../../../.gitbook/assets/query-v9.png)
+![Query helper](../../../.gitbook/assets/query.png)
 
 ### More information
 
