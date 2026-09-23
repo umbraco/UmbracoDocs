@@ -14,12 +14,18 @@ Think of it as giving your AI assistant a safe, structured way to help you manag
 
 The CMS Editor MCP works best hosted, in a Cloud-to-Cloud setup. Umbraco Cloud already runs the shared hosted infrastructure, so there's no server to deploy. It works equally well hosted and connected to a self-hosted or agency Umbraco instance. It can also run locally via stdio, the same way as the [Developer MCP Server](../cms-developer-mcp/). This documentation focuses on the hosted setup, since that's how we expect most users to use it.
 
-However you connect, the MCP Server talks directly to Umbraco through the Management API, authenticating as your own Umbraco backoffice user. The tools available to you are determined by your Umbraco user permissions. If you can do it in the backoffice, you can do it through the CMS Editor MCP.
+However you connect, the MCP Server talks directly to Umbraco through the Management API.
+
+When hosted, it authenticates as your own Umbraco backoffice user through OAuth, and the tools available to you are determined by your own permissions.
+
+If you can do it in the backoffice, you can do it through the CMS Editor MCP.
+
+Running locally via stdio, it authenticates as a fixed Umbraco API user instead. Tool availability then depends on that user's permissions, not yours personally.
 
 [MCP clients](../../concepts/model-context-protocol.md#mcp-clients) are implemented inside compatible [host applications](../../concepts/model-context-protocol.md#host-applications) such as Claude Desktop, GitHub Copilot, or ChatGPT. Learn more about [Model Context Protocol (MCP)](../../concepts/model-context-protocol.md).
 
 {% hint style="info" %}
-The Editor MCP Server acts as a bridge between your Umbraco instance and your AI assistant. Your permissions in Umbraco determine what actions the AI can perform on your behalf.
+The Editor MCP Server acts as a bridge between your Umbraco instance and your AI assistant. When hosted, your own permissions in Umbraco determine what actions the AI can perform on your behalf. Running locally via stdio, it's the connected API user's permissions instead.
 {% endhint %}
 
 ## Intended Audience
