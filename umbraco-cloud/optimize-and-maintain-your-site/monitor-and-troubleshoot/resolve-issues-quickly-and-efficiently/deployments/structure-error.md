@@ -22,8 +22,6 @@ You can run into an error like this on all of your Cloud environments. Sometimes
 
 This guide uses an example where two files are colliding across two environments: a left-most environment and the Live environment.
 
-For clarity, the left-most environment will be referred to as the Development environment throughout the guide.
-
 ## Table of content
 
 * [Video tutorial](structure-error.md#video-tutorial)
@@ -32,7 +30,7 @@ For clarity, the left-most environment will be referred to as the Development en
 * [Getting your environments in sync](structure-error.md#getting-your-environments-in-sync)
 
 {% hint style="info" %}
-When you have two or more Cloud environments, it is recommended that you only work with schema on local, Development, or flexible environments.
+When you have two or more Cloud environments, it is recommended that you only work with schema on local, left-most, or flexible environments.
 {% endhint %}
 
 ## Video tutorial
@@ -111,7 +109,7 @@ You now know which `.uda` file you want.
 We strongly recommend that you resolve this locally since this will ensure that the changes you make are added to your Git repositories. Otherwise, you may end up having the same problem next time you deploy.
 {% endhint %}
 
-1. Clone down the Development environment to your local machine.
+1. Clone down the left-most environment to your local machine.
 2. Run the project locally and verify that you get the same extraction error as on your Cloud environments (Look for a `deploy-failed` marker in your local `/deploy` folder).
    * When you run the project, you should see an error message in the browser once the site starts to build.
 3. Remove the wrong `.uda` file (It's the one we did not find in the live environment before) from the `/deploy/revision` folder - you will not be able to see the Document Type in the backoffice because of the failed extraction.
@@ -125,14 +123,14 @@ We strongly recommend that you resolve this locally since this will ensure that 
 
 ## Getting your environments in sync
 
-Before pushing the changes to the Development environment, you need to access the backoffice of the Development environment and remove the Document Type from there.
+Before pushing the changes to the left-most environment, you need to access the backoffice of the left-most environment and remove the Document Type from there.
 
-Commit and push the changes from your local clone to the Development environment, using your local Git client.
+Commit and push the changes from your local clone to the left-most environment, using your local Git client.
 
-When the push from local to the Development environment has been completed, refresh the Umbraco Cloud portal and you will see that the Development environment is now green, which means that the extraction error has been resolved.
+When the push from local to the left-most environment has been completed, refresh the Umbraco Cloud portal and you will see that the left-most environment is now green, which means that the extraction error has been resolved.
 
-### Does your Development Environment still have the red indicator?
+### Does your left-most environment still have the red indicator?
 
 Sometimes you might need to run another schema deployment on your Cloud environment after deploying to turn your environment green. To do this, follow the steps described in the [schema deployment guide](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/deploy-dashboard.md).
 
-The final step is to deploy the pending changes from Development to your Live environment, to ensure everything is in sync.
+The final step is to deploy the pending changes from the left-most environment to your Live environment, to ensure everything is in sync.

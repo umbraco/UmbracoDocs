@@ -6,9 +6,7 @@ description: >-
 
 # Environment Naming and Appsettings
 
-The name you give an Umbraco Cloud environment also becomes the value of its `DOTNET_ENVIRONMENT` variable. This value decides which `appsettings.{Name}.json` file the environment loads. Most names are safe to use this way.
-
-Naming an environment `Development` has side effects worth knowing before you create or rename one.
+The name you give an Umbraco Cloud environment also becomes the value of its `DOTNET_ENVIRONMENT` variable. This value decides which `appsettings.{Name}.json` file the environment loads. Most names are safe to use this way. Naming an environment `Development` has side effects worth knowing before you create or rename one.
 
 ## How the Environment Name Affects Configuration
 
@@ -32,7 +30,7 @@ The resulting issues tend to show up later, and they can look unrelated to the c
 * Local development breaks after someone edits `appsettings.Development.json` for the cloud environment.
 
 {% hint style="warning" %}
-Umbraco Cloud's left-most mainline environment is often called the Development environment, as described in the [Environments](../../../begin-your-cloud-journey/project-features/environments.md) article. Naming that environment literally `Development` is a common choice, and it then triggers the behavior described above.
+Naming the [left-most mainline environment](../../../begin-your-cloud-journey/project-features/environments.md) `Development` is a common choice on Umbraco Cloud projects, and it then triggers the behavior described above.
 {% endhint %}
 
 ## File Name Casing on Linux

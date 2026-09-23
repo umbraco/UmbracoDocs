@@ -20,14 +20,14 @@ The CDN sits in front of your custom hostnames. This means that CDN Caching only
 
 The default hostnames that come with an Umbraco Cloud project are not enough to enable CDN Caching:
 
-* Default hostnames follow the `*.{region}.umbraco.io` pattern, such as `snoopy.euwest01.umbraco.io` for the Live environment and `dev-snoopy.euwest01.umbraco.io` for the Development environment.
+* Default hostnames follow the `*.{region}.umbraco.io` pattern, such as `snoopy.euwest01.umbraco.io` for the Live environment and `dev-snoopy.euwest01.umbraco.io` for the left-most environment.
 * Default hostnames are not listed under **Hostname-specific settings**, so you cannot configure caching for them.
 * Requests to a default hostname are served from the origin. Enabling **Enable Cache** or **Cache Everything** in the **Default settings** has no effect on those requests.
 
 The practical consequences are:
 
 * A project that has not gone live yet, and therefore only uses its default hostnames, gets no CDN Caching regardless of the settings on the page.
-* Testing caching behavior on a Development or Staging environment requires a custom hostname on that specific environment, for example a subdomain such as `test.example.com`. Settings are scoped per environment, so a custom hostname on the Live environment does not enable caching on Development or Staging.
+* Testing caching behavior on the left-most or a Staging environment requires a custom hostname on that specific environment, for example a subdomain such as `test.example.com`. Settings are scoped per environment, so a custom hostname on the Live environment does not enable caching on the left-most or Staging environment.
 * Verifying whether a response was served from the CDN must be done through the custom hostname, not through the `umbraco.io` URL.
 
 To add a custom hostname, follow the steps in [Managing Hostnames](../../go-live/manage-hostnames/). Once the hostname is added and shows as **Protected**, it appears under **Hostname-specific settings** and inherits the caching options from **Default settings**.

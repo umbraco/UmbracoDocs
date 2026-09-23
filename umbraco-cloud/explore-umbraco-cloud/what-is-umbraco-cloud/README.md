@@ -15,7 +15,7 @@ When you are ready to show your work to the world, Umbraco Cloud provides a safe
 ## Why Use Umbraco Cloud?
 
 * Fully managed hosting: Hosted on Microsoft Azure with automatic backups, global Content Delivery Network (CDN), HTTPS, and scaling built in.
-* Out-of-the-box DevOps: Use Git-based workflows, built-in CI/CD, and structured environments (Development, Staging, Live) to deliver with confidence.
+* Out-of-the-box DevOps: Use Git-based workflows, built-in CI/CD, and structured environments (left-most, Staging, Live) to deliver with confidence.
 * Seamless collaboration: Invite team members, manage access, and deploy content and code with ease, all from Cloud Portal.
 * Security and reliability: Backed by secure infrastructure, automated Transport Layer Security (TLS), point-in-time restores, and Cloudflare protection for performance and safety.
 * Built for growth: Start small and scale as needed, with flexible environments, external integrations, and support for custom workflows and packages.

@@ -132,7 +132,7 @@ Once the project is set up:
 
 1. Select **Configure environments**.
 2. Add a new **mainline environment**.
-   * Throughout this guide, this mainline environment will be referred to as the **Development environment**.
+   * Throughout this guide, this mainline environment is referred to as the **left-most environment**.
 
 Having more than one environment on your project, will enable you to start over with the migration process should it be needed.
 
@@ -158,7 +158,7 @@ The Umbraco Cloud project is now ready for the next step where the two projects 
 
 To continue the migration the next step is to clone down the Umbraco Cloud environment to merge it with the Umbraco CMS project.
 
-Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down the Development environment on the project.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down the left-most environment on the project.
 
 {% hint style="info" %}
 Do not run the project after cloning it down.
@@ -234,7 +234,7 @@ All media on Umbraco Cloud projects are stored in a dedicated Azure Blob Storage
 We recommend following the [Copy blobs between Azure accounts](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy) guide in the official Microsoft Documentation.
 {% endhint %}
 
-Follow the guide in the [Connect to Azure Storage Explorer](../../build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the Development environment.
+Follow the guide in the [Connect to Azure Storage Explorer](../../build-and-customize-your-solution/handle-deployments-and-environments/media/azure-blob-storage/connect-to-azure-storage-explorer.md) article to access the Azure Blob Storage container connected to the left-most environment.
 
 1. Locate the media files for your Umbraco CMS project.
 2. Copy the `~/wwwroot/media` folder into the Azure Storage Explorer.
@@ -247,11 +247,11 @@ The Umbraco CMS project has now been migrated to an Umbraco Cloud project.
 
 ## Verify the migration
 
-Verifying the migration by cloning the Development environment to your local machine is recommended.
+Verifying the migration by cloning the left-most environment to your local machine is recommended.
 
 This needs to be **a new clone**. The clone used throughout the migration steps can be deleted.
 
-Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **Development environment** locally.
+Follow the steps outlined in the [Working with a Local Clone](../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/#cloning-an-umbraco-cloud-project) article to clone down, restore, and run the **left-most environment** locally.
 
 {% hint style="info" %}
 You might need to do a **Workspace restore** from the **Media** section in the Umbraco backoffice to restore the media files.
@@ -263,7 +263,7 @@ The Umbraco CMS project has now been migrated onto Umbraco Cloud.
 
 ### [Deploy the migration to the Live environment](../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md)
 
-Following this guide, the Umbraco CMS project has been migrated to the Umbraco Cloud Development environment. For the migration to be complete, it should be deployed to the Umbraco Cloud Live environment.
+Following this guide, the Umbraco CMS project has been migrated to the left-most environment on Umbraco Cloud. For the migration to be complete, it should be deployed to the Umbraco Cloud Live environment.
 
 ### [Publish the website](../../go-live/manage-hostnames/)
 
