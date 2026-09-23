@@ -8,6 +8,7 @@ Both minor and patch upgrades can be managed from the **Configuration** -> **Aut
 
 * [Automatic Minor Upgrades](minor-upgrades.md#automatic-minor-upgrades)
 * [Automatic Patch Upgrades](minor-upgrades.md#automatic-patch-upgrades)
+* [Upgrade from the Cloud Portal](minor-upgrades.md#upgrade-from-the-cloud-portal)
 * [Manual Upgrades](minor-upgrades.md#manual-upgrades)
 
 ## Automatic Minor Upgrades
@@ -27,7 +28,7 @@ With automatic upgrades enabled, all products on Umbraco Cloud will automaticall
 If you create a new project on Umbraco Cloud automatic upgrades are enabled by default.
 
 {% hint style="info" %}
-For projects where automatic minor upgrades are enabled, having a secondary mainline environment is not required. However, it is highly recommended to facilitate a smoother and more controlled upgrade experience. In cases where manual upgrades are necessary, an additional environment becomes essential.
+Use a secondary mainline environment to test upgrades before sending them to Live. While automatic upgrades and upgrades started from the Cloud Portal do not require a second environment, omitting one means upgrades apply directly to Live.
 {% endhint %}
 
 A secondary mainline environment is included in all Umbraco Cloud plans, except Starter. Find pricing details for Umbraco Cloud Starter plans on our [website](https://umbraco.com/products/umbraco-cloud/pricing).
@@ -46,11 +47,51 @@ When you disable automated patch upgrades, you are responsible for keeping your 
 Umbraco reserves the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
 {% endhint %}
 
+## Upgrade from the Cloud Portal
+
+When a newer version of a product is available for your project, an **Upgrade available** banner is shown in the Cloud Portal. The banner appears on the left-most mainline environment card. Project administrators select **Get started** on the banner to review and start the upgrade.
+
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Dev environment card showing 6 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
+
+The banner offers any higher minor or patch version within the major version your project runs. Major version upgrades are never offered by the banner. See the [Major Upgrades](major-upgrades/README.md) article for how to upgrade to a new major version.
+
+The following products are upgraded through the banner:
+
+* Umbraco CMS
+* Umbraco Forms
+* Umbraco Deploy
+* Umbraco Deploy Contrib
+* Umbraco Cloud CMS
+* Umbraco ID
+* Azure Blob Storage provider
+
+All eligible products are upgraded in a single run. The banner names one or two products, or shows a package count when more are available. The confirmation dialog lists every package with its current and target version.
+
+<figure><img src="../../../.gitbook/assets/cloud-upgrade-available-dialog.png" alt="Confirmation dialog listing six packages with current and target versions, and the three steps of the upgrade"><figcaption><p>The confirmation dialog listing the packages to upgrade</p></figcaption></figure>
+
+The upgrade is applied to the left-most mainline environment only. Test the upgrade there, and then deploy the changes to the next environments yourself. Pending changes between environments do not block the upgrade. The upgrade commit is added on top of the pending changes and is included in the next deployment.
+
+{% hint style="warning" %}
+Projects with a single Live environment can also upgrade from the banner. As there is no other environment to test on, the upgrade is applied directly to Live. The site restarts during the upgrade. The confirmation dialog warns about the restart and links to the version-specific upgrade notes.
+{% endhint %}
+
+The banner is independent of the **Automatic Minor Upgrades** and **Automatic Patch Upgrades** settings. Selecting **Get started** is an explicit action, and the upgrade runs even when automatic upgrades are disabled.
+
+### When a version is not offered
+
+A newer version can exist on NuGet without being offered by the banner. The banner only offers versions that meet the following conditions:
+
+* The project runs on a supported Umbraco version.
+* The release has been marked ready on Umbraco Cloud.
+* The release was created within the last year.
+
+The banner is hidden while an upgrade is in progress, and for up to three hours after an upgrade stops reporting progress. Umbraco Heartcore projects and baseline child projects do not see the banner.
+
 ## Manual Upgrades
 
 A manual upgrade involves a more hands-on approach, where the upgrade process is initiated and controlled by the user or development team. This allows for greater flexibility and oversight, enabling teams to test and adapt the upgrade to their specific needs and configurations. A manual upgrade provides an opportunity to thoroughly test the new version in a controlled environment before applying it to live production environments. This ensures compatibility and minimizes disruptions.
 
-For more information about manual minor upgrades, see the [Manual upgrade of Umbraco CMS](manual-upgrades/manual-cms-upgrade.md) article.
+For more information about manual upgrades, see the [Manual upgrade of Umbraco CMS](manual-upgrades/manual-cms-upgrade.md) article.
 
 ## Troubleshooting Automated Minor Upgrades
 
