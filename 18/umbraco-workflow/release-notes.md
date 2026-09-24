@@ -16,6 +16,48 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### 18.2.0 (September 24 2026)
+
+{% hint style="warning" %}
+Umbraco Workflow 18.2.0 requires Umbraco CMS 18.2.0 or later.
+{% endhint %}
+
+The changes below are in addition to those in the release candidates. For everything else in this release, see the `18.2.0-rc` notes.
+
+#### Adds the Content Calendar dashboard
+
+A Content Calendar dashboard is now available in the Content section. It shows scheduled content, Release Sets, and Release Set items by month or week, with links through to each Release Set.
+
+Access is controlled by the new **Read Content Calendar** user permission, which must be granted to user groups that need the dashboard.
+
+#### Bug fixes and other changes
+
+* Fixes items and tasks being left behind when a Release Set is deleted
+* Fixes documents that vary by segment only being treated as culture-variant when initiating a workflow
+* Returns an accurate error when no workflow is initiated because every requested culture already has an active workflow. Error notifications now show the server's message.
+
+### 18.2.0-rc4 (September 18 2026)
+
+* Fixes the document Publish and Unpublish entity actions skipping Workflow's visibility rules, which could make them available to users who should request approval instead
+* Fixes the content calendar week view showing the wrong days after navigating across a month boundary
+* Fixes publishing a release set with "Complete all items" updating the set status before its items and tasks
+
+### 18.2.0-rc3 (September 11 2026)
+
+* Replaces the `humanize` dependency with the backoffice's native duration localization in the workflow activity chart
+
+### 18.2.0-rc2 (September 10 2026)
+
+* Fixes inherited approval group members falling out of sync when a CMS user is saved or a user group is deleted
+* Fixes reminder emails using server local time instead of UTC when calculating the reminder threshold
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168):
+  * Toggle (boolean) properties and other config-driven editors not receiving their data type configuration
+  * Searches by data type or property editor ignoring properties excluded from the search
+  * Searches built only from filters returning an error instead of results
+  * Block List and Block Grid properties now search their raw value through a text input
+  * Results now use a stable, relevance-based order
+* Adds pagination to the Advanced Search results table
+
 ### [18.2.0-rc1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0-rc1) (September 7 2026)
 
 * Fixes "View differences" on a workflow task returning an unhelpful error instead of a licensing message when Workflow is unlicensed [#176](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/176)
