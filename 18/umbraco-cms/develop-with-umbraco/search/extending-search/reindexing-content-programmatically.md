@@ -5,7 +5,7 @@ description: >-
 
 # Reindexing content programmatically
 
-If you ever need to trigger the reindexing of content manually, you should use the [`IDistributedContentIndexRefresher`](https://github.com/umbraco/Umbraco.Cms.Search/blob/main/src/Umbraco.Cms.Search.Core/Services/ContentIndexing/IDistributedContentIndexRefresher.cs) service.
+If you ever need to trigger the reindexing of content manually, you should use the [`IDistributedContentIndexRefresher`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/Search/Indexing/IDistributedContentIndexRefresher.cs) service.
 
 As the name implies, this service ensures that the content reindexing happens correctly across all instances in a load balanced setup. This is important, because some search providers (including the [default provider](../getting-started/examine-search-provider.md)) explicitly depend on this behavior.
 

@@ -22,7 +22,7 @@ The following fields are explicitly indexed for all content.
 | `Umb_Tags`          | `Keyword`        | Accumulated collection of tags from all properties contained in the content. |
 | `Umb_UpdateDate`    | `DateTimeOffset` | The last update date of the content.                                         |
 
-System fields can be used like any other fields for searching. The system field names are defined in [`Constants.FieldNames`](https://github.com/umbraco/Umbraco.Cms.Search/blob/main/src/Umbraco.Cms.Search.Core/Constants.cs).
+System fields can be used like any other fields for searching. The system field names are defined in [`Constants.IndexFieldNames`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/Constants-Indexes.cs).
 
 {% code title="MySearchService.cs" %}
 ```csharp

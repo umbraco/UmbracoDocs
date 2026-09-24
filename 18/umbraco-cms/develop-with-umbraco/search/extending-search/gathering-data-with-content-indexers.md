@@ -8,8 +8,8 @@ When content changes, data is gathered for indexing using _content indexers_.
 
 A content indexer is an implementation of `IContentIndexer`. There are two built-in content indexers:
 
-* The [`SystemFieldsContentIndexer`](https://github.com/umbraco/Umbraco.Cms.Search/blob/main/src/Umbraco.Cms.Search.Core/Services/ContentIndexing/Indexers/SystemFieldsContentIndexer.cs) gathers all [system fields](../system-fields.md).
-* The [`PropertyValueFieldsContentIndexer`](https://github.com/umbraco/Umbraco.Cms.Search/blob/main/src/Umbraco.Cms.Search.Core/Services/ContentIndexing/Indexers/PropertyValueFieldsContentIndexer.cs) gathers all property values using the [property value handlers](index-values-for-property-editors.md).
+* The [`SystemFieldsContentIndexer`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Search.Core/Services/ContentIndexing/Indexers/SystemFieldsContentIndexer.cs) gathers all [system fields](../system-fields.md).
+* The [`PropertyValueFieldsContentIndexer`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Cms.Search.Core/Services/ContentIndexing/Indexers/PropertyValueFieldsContentIndexer.cs) gathers all property values using the [property value handlers](index-values-for-property-editors.md).
 
 You can add additional content indexers if you need extra data indexed per content item.
 
