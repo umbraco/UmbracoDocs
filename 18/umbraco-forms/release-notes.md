@@ -82,6 +82,10 @@ Form versions are kept indefinitely. Removing old versions is opt-in, so an upgr
 To start removing them, set `Enabled` to `true` under `Umbraco:Forms:Options:FormVersionCleanup`, and set `KeepLatestVersions`, `KeepVersionsNewerThanDays`, or both. The most recent version of a form and any pinned version are always kept.
 {% endhint %}
 
+### 18.1.3 (September 24th 2026)
+* Show form names as plain text in the **Move** and **Copy workflows** dialogs, so that a name containing HTML can no longer run script in the backoffice [GHSA-r7qp-475g-rwpg](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-r7qp-475g-rwpg)
+* Upgrading: Grant the Forms **Security** permission to the **Administrators** group without rolling back the upgrade. Sites stuck in the `Upgrading` state after installing 18.1.2 complete the upgrade on the next start.
+
 ### 18.1.2 (September 17th 2026)
 * Require a dedicated user group permission for the Forms Security area, so that backoffice users cannot grant themselves Forms permissions [GHSA-8jv5-237g-mfj9](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-8jv5-237g-mfj9)
 * Umbraco Licenses dependency updated to 18.0.3
