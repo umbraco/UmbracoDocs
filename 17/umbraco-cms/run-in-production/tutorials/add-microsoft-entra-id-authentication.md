@@ -70,7 +70,7 @@ dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount
 ```
 
 {% hint style="warning" %}
-The code samples below use placeholder values for the `ClientId` and `ClientSecret`. Don't commit the client secret to source control. Read it from configuration instead, for example user secrets during development.
+The code samples below use placeholder values for the `ClientId` and `ClientSecret`. Don't commit the client secret to source control. Read it from configuration instead, for example use secrets during development.
 {% endhint %}
 
 ## Members
@@ -115,9 +115,11 @@ public static class MemberAuthenticationExtensions
 
 {% endcode %}
 
-2. Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from [Step 1](#step-1-register-the-app-in-entra-id). For a single-tenant app, also add the endpoints from [Single-tenant apps](#single-tenant-apps) inside `options`.
+2. Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from [Step 1](#step-1-register-the-app-in-entra-id). 
 
-3. Register the extension in `Program.cs`:
+3. *[Optional]* For a single-tenant app, also add the endpoints from [Single-tenant apps](#single-tenant-apps) inside `options`.
+
+4. Register the extension in `Program.cs`:
 
 {% code title="Program.cs" lineNumbers="true" %}
 
@@ -134,14 +136,16 @@ builder.CreateUmbracoBuilder()
 
 {% endcode %}
 
-4. Build the project.
-5. Run the site.
+5. Build the project.
+6. Run the site.
 
 ![Entra ID Member Login Screen](../../.gitbook/assets/AD_Login_Members.png)
 
 If your Member login view is based on the **Login** partial view snippet, a **Sign in with Microsoft** button appears under **Or using external providers**. Selecting it redirects to Microsoft and back to your site.
 
-At this point, the login form shows a message explaining the provider isn't linked yet. This is expected. The sign-in succeeded, but no Member is linked to the Microsoft account yet. Step 4 fixes this. If Microsoft shows an error instead, see [Troubleshooting](#troubleshooting).
+At this point, the login form shows a message explaining the provider isn't linked yet. This is expected. The sign-in succeeded, but no Member is linked to the Microsoft account yet. Step 4 fixes this. 
+
+If Microsoft shows an error instead, see [Troubleshooting](#troubleshooting).
 
 ### Step 4: Add Member auto-linking
 
@@ -335,11 +339,13 @@ public class EntraIdBackOfficeAuthenticationOptions : IConfigureNamedOptions<Mic
 
 {% endcode %}
 
-3. Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from [Step 1](#step-1-register-the-app-in-entra-id). For a single-tenant app, also add the endpoints from [Single-tenant apps](#single-tenant-apps) inside `Configure(MicrosoftAccountOptions options)`.
+3. Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from [Step 1](#step-1-register-the-app-in-entra-id). 
+
+4. *[Optional]* For a single-tenant app, also add the endpoints from [Single-tenant apps](#single-tenant-apps) inside `Configure(MicrosoftAccountOptions options)`.
 
 `SetDefaultErrorEventHandling` sends sign-in errors back to the Backoffice login screen instead of an unhandled error page.
 
-4. Create `EntraIdBackOfficeExternalLoginComposer.cs`:
+5. Create `EntraIdBackOfficeExternalLoginComposer.cs`:
 
 {% code title="EntraIdBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
 
@@ -428,8 +434,10 @@ Umbraco discovers composers automatically, so no change to `Program.cs` is neede
 
 {% endcode %}
 
-* `forProviderName` must be `Umbraco.` followed by the scheme name from the options class.
-* `allowPublicAccess` must be `true`. The login screen loads before anyone is signed in, so it can only use public manifests.
+In the above code:
+
+  * `forProviderName` must be `Umbraco.` followed by the scheme name from the options class.
+  * `allowPublicAccess` must be `true`. The login screen loads before anyone is signed in, so it can only use public manifests.
 
 2. Build and run the site.
 
@@ -437,7 +445,9 @@ Umbraco discovers composers automatically, so no change to `Program.cs` is neede
 
 A **Sign in with Microsoft Entra ID** button appears on the Backoffice login screen. Selecting it redirects to Microsoft and back.
 
-At this point, sign-in succeeds at Microsoft, but Umbraco shows an error because no User is linked to the Microsoft account. This is expected. Step 5 fixes this. If Microsoft shows an error instead, see [Troubleshooting](#troubleshooting).
+At this point, sign-in succeeds at Microsoft, but Umbraco shows an error because no User is linked to the Microsoft account. This is expected. Step 5 fixes this.
+
+If Microsoft shows an error instead, see [Troubleshooting](#troubleshooting).
 
 ### Step 5: Add User auto-linking
 
@@ -492,9 +502,9 @@ public class EntraIdBackOfficeExternalLoginProviderOptions : IConfigureNamedOpti
 
 The settings mean:
 
-* `defaultUserGroups`: the aliases of the User Groups new Users are added to. `editor` is the alias of the default Editors group. These groups only apply when a User is created.
-* `defaultCulture: null`: new Users get the default Backoffice language.
-* `allowManualLinking: true`: Users can still link or unlink their Microsoft account from their user profile.
+  * `defaultUserGroups`: the aliases of the User Groups new Users are added to. `editor` is the alias of the default Editors group. These groups only apply when a User is created.
+  * `defaultCulture: null`: new Users get the default Backoffice language.
+  * `allowManualLinking: true`: Users can still link or unlink their Microsoft account from their user profile.
 
 2. Rebuild and sign in again.
 
