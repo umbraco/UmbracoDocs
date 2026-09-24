@@ -72,7 +72,7 @@ For the full list of what changed and what to check, see the [Version Specific U
 {% endhint %}
 
 ### 17.5.2 (September 24th 2026)
-* Show form names as plain text in the **Move** and **Copy workflows** dialogs, so that a name containing HTML can no longer run script in the backoffice [GHSA-r7qp-475g-rwpg](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-r7qp-475g-rwpg)
+* Show form names as plain text in the **Move** and **Copy workflows** dialogs, so HTML in a name can't run as script [GHSA-r7qp-475g-rwpg](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-r7qp-475g-rwpg)
 * Upgrading: Grant the Forms **Security** permission to the **Administrators** group without rolling back the upgrade. Sites stuck in the `Upgrading` state after installing 17.5.1 complete the upgrade on the next start.
 
 ### 17.5.1 (September 17th 2026)
