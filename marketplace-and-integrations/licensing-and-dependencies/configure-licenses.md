@@ -178,11 +178,11 @@ builder.Services.Configure<WebRoutingSettings>(o => o.UmbracoApplicationUrl = "<
 
 In practice, you may want to make this configuration more flexible. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Program.cs` file.
 
-Umbraco Cloud sets this value on the Cloud environments only. A local clone of your Cloud project does not receive it. For local clones, see [Configuring the Application URL for Local Development](#configuring-the-application-url-for-local-development).
+Umbraco Cloud sets this value on the Cloud environments only. A local clone of your Cloud project does not receive it. For local clones, see [Local Development and License Validation](#local-development-and-license-validation).
 
-### Configuring the Application URL for Local Development
+## Local Development and License Validation
 
-From Umbraco CMS 17.4, a local site has no application URL unless you configure one. New projects do not set `UmbracoApplicationUrl`, and request-based detection is disabled by default. License validation therefore does not run, and the **Licenses** dashboard shows **Validation pending** for each product.
+From Umbraco CMS 17.4, the default value for `ApplicationUrlDetection` is `None` for security reasons. Umbraco no longer detects the application URL from incoming HTTP requests, and new projects do not set `UmbracoApplicationUrl`. A local site therefore has no application URL unless you configure one. License validation does not run, and the **Licenses** dashboard shows **Validation pending** for each product.
 
 The same applies to a local clone of an Umbraco Cloud project. Umbraco Cloud sets the application URL on the Cloud environments only.
 
@@ -204,31 +204,11 @@ To resolve the pending status, set `UmbracoApplicationUrl` to the URL you use to
 
 Replace the port with the one shown in your terminal output or in `Properties/launchSettings.json`. Restart the site, or select **Validate** on the **Licenses** dashboard.
 
-As an alternative, set `ApplicationUrlDetection` to `FirstRequest` in `appsettings.Development.json`. Umbraco then detects the URL from the first request to the site. See [Configuring ApplicationUrlDetection](#configuring-applicationurldetection) for the security implications.
+{% hint style="info" %}
+If your team uses varying localhost ports, you can instead set `ApplicationUrlDetection` to `FirstRequest` in `appsettings.Development.json`. Umbraco then detects the URL from the first request to the site. Do not enable request-based detection in production environments. See [Configuring ApplicationUrlDetection](#configuring-applicationurldetection) for the security implications.
+{% endhint %}
 
 Commercial product licenses usually include `localhost` as a valid domain. For the domains covered by your license, see the licensing article for your product under [Product-Specific License Information](#product-specific-license-information).
-
-## Local Development and License Validation
-
-From Umbraco CMS version 17.4 onwards, the default value for `ApplicationUrlDetection` was changed to None for security reasons. Because Umbraco no longer auto-detects the domain from incoming HTTP requests, your commercial licenses may fail to validate in your local environment and appear as invalid in the backoffice.
-
-To resolve this, explicitly configure the `UmbracoApplicationUrl` in your `appsettings.Local.json` file to match your local development URL.
-
-```json
-{
-  "Umbraco": {
-    "CMS": {
-      "WebRouting": {
-        "UmbracoApplicationUrl": "https://localhost:{port}/"
-      }
-    }
-  }
-}
-```
-
-{% hint style="info" %}
-Alternative for Local Development: If your team uses varying localhost ports, you can instead set the `Umbraco:CMS:WebRouting:ApplicationUrlDetection` to `FirstRequest` or `EveryRequest` in your `appsettings.{name}.json`. Do not enable this in production environments. 
-{% endhint %}
 
 ## Validating a License Without an Outgoing Internet Connection
 
@@ -322,7 +302,7 @@ Common causes are:
 
 To resolve the issue:
 
-1. Set `UmbracoApplicationUrl` as described in [How to Configure UmbracoApplicationUrl](#how-to-configure-umbracoapplicationurl). For local sites, see [Configuring the Application URL for Local Development](#configuring-the-application-url-for-local-development).
+1. Set `UmbracoApplicationUrl` as described in [How to Configure UmbracoApplicationUrl](#how-to-configure-umbracoapplicationurl). For local sites, see [Local Development and License Validation](#local-development-and-license-validation).
 2. Restart the site, or select **Validate** on the **Licenses** dashboard.
 3. Confirm that the **Application URL used in validation request** field now shows your URL.
 
