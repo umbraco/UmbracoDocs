@@ -18,6 +18,11 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
+### [18.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.1) (September 24th 2026)
+
+* Skip property values for a culture or segment the property type no longer varies by, fixing `Variation "<culture>,<segment>" is not supported by the property type` during transfers and restores [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8).
+* Encode item and environment names shown in the restore and schema comparison dialogs, and in the progress log.
+
 ### [18.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.0) (September 17th 2026)
 
 * All items from 18.1.0-rc1 and 18.1.0-rc2.
