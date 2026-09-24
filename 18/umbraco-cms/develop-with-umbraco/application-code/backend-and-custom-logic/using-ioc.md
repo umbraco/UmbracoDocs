@@ -210,7 +210,7 @@ Once you have registered the dependencies inject them into your project where ne
 If you need to inject your service into a controller or another service, you will do so through the class.
 
 {% code title="FooController.cs" %}
-```none
+```csharp
 using IOCDocs.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -317,19 +317,8 @@ public class MyCustomScopedService
             return null;
         }
 
-        public IEnumerable<IPublishedContent> GetContentAtRoot()
-        {
-            // Try and get the Umbraco helper
-            var success = _umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
-            if (success is false)
-            {
-                // Failed to get UmbracoHelper, probably because it was accessed outside of a scoped/transient service.
-                return null;
-            }
-
-            // We got Umbraco helper, now we can do something with it.
-            return umbracoHelper.ContentAtRoot();
-        }
+        // We got Umbraco helper, now we can do something with it.
+        return umbracoHelper.ContentAtRoot();
     }
 }
 ```
