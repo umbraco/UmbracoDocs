@@ -8,7 +8,7 @@ In this article, you can read about how to move your Umbraco Cloud project to de
 
 Before you decide to move your Umbraco Cloud project, you need to consider a few things:
 
-* Umbraco Cloud offers dedicated resources for Standard and Professional plans. You can choose between two dedicated options for a Standard plan project and three dedicated options for a Professional plan project.
+* Umbraco Cloud offers dedicated resources on the Starter, Standard, Professional, and Enterprise plans. The dedicated options available depend on your plan. For the current options and prices per plan, see the [Umbraco Cloud scaling](https://umbraco.com/products/umbraco-cloud/umbraco-cloud-scaling/) page.
 * Moving from a shared resource to a dedicated resource will change the outgoing IP of the project. If your solution has an external service that requires whitelisting the outgoing IP, we advise you to enable the static outbound IP feature for your project and share that static outbound IP address with the third party. The static outbound IP address will not change when moving from a shared resource to a dedicated resource. For more info on static lease, visit the documentation for [external services](../../../expand-your-projects-capabilities/external-services/).
 
 ## How to move from shared to dedicated
@@ -20,7 +20,7 @@ The first step in moving to a dedicated resource is to access your project in th
 
 <figure><img src="../../../.gitbook/assets/image (10).png" alt="Dedicated resources"><figcaption><p>Dedicated resources</p></figcaption></figure>
 
-* There are currently three dedicated options to choose from for the Professional plan and two dedicated options for the Standard plan. For each of the dedicated options, you will find its name, the memory and CPU cores, and the price per month.
+* Choose from the dedicated options available on your plan. For each dedicated option, you will find its name, the memory and CPU cores, and the price per month.
 
 <figure><img src="../../../.gitbook/assets/Dedicated_Options_Standard.png" alt="Dedicated plan options for Standard plan"><figcaption><p>Dedicated plan options (Standard plan)</p></figcaption></figure>
 
@@ -32,9 +32,7 @@ Are you moving your Cloud project to a dedicated resource in the middle of the m
 
 ## Moving to a higher or lower dedicated server
 
-When on a Dedicated plan, you can scale the dedicated server up to a higher plan or scale down to a lower plan. On a Standard plan, you can scale up from Standard Dedicated 1 to Standard Dedicated 2, and scale down back to Standard Dedicated 1 again.
-
-On a Professional plan with Pro dedicated 1, you can scale it up to Pro dedicated 2 or 3. Similarly, you can scale down from higher to lower plans.
+When on dedicated resources, you can scale the dedicated server up or down between the dedicated options available on your plan. For the options available on each plan, see the [Umbraco Cloud scaling](https://umbraco.com/products/umbraco-cloud/umbraco-cloud-scaling/) page.
 
 Once it has been scaled, the environment will do a [Cold Boot](https://docs.umbraco.com/umbraco-cms/reference/notifications/hot-vs-cold-restarts?q=cold+boot#cold-start), which will restart the environment.
 
