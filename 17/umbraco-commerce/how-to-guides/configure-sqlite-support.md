@@ -34,12 +34,16 @@ After configuring Umbraco CMS with SQLite, Umbraco Commerce will automatically u
 {
     ...
     "ConnectionStrings": {
-        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+        "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Foreign Keys=True;Pooling=True",
         "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite",
-        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True;Cache=Shared",
+        "umbracoCommerceDbDSN": "Data Source=|DataDirectory|/Umbraco.Commerce.sqlite.db;Mode=ReadWrite;Foreign Keys=True;Pooling=True",
         "umbracoCommerceDbDSN_ProviderName": "Microsoft.Data.Sqlite"
     },
     ...
 }
 
 ```
+
+{% hint style="warning" %}
+Do not use shared cache (`Cache=Shared`) in a SQLite connection string. Umbraco Commerce creates its SQLite databases in [write-ahead logging mode](https://sqlite.org/wal.html), where readers and writers do not block each other. [Shared cache](https://sqlite.org/sharedcache.html) instead uses table-level locking. A connection that cannot get a table lock fails with `database table is locked` instead of waiting.
+{% endhint %}
