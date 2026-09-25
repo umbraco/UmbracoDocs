@@ -104,6 +104,10 @@ The first time the Cloud project is run locally, you will see the **Restore from
 
 Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
 
+{% hint style="info" %}
+Umbraco Cloud sets the application URL for each Cloud environment. A local clone does not receive this value. From Umbraco CMS 17.4, Umbraco does not detect the application URL from incoming requests by default. Licenses for commercial products, such as Umbraco Forms, can therefore show **Validation pending** on your local site. To configure the application URL locally, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/licensing-and-dependencies/configure-licenses#local-development-and-license-validation) article.
+{% endhint %}
+
 ## Solution files and multiple .NET projects
 
 When working locally, you can use whichever IDE you prefer. Refer back to the [Tools](#tools) section for recommendations.

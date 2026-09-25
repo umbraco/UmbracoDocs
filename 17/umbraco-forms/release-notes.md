@@ -71,6 +71,10 @@ Date field values shown to people now follow the culture the entry was submitted
 For the full list of what changed and what to check, see the [Version Specific Upgrade Notes](upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
 {% endhint %}
 
+### 17.5.2 (September 24th 2026)
+* Show form names as plain text in the **Move** and **Copy workflows** dialogs, so HTML in a name can't run as script [GHSA-r7qp-475g-rwpg](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-r7qp-475g-rwpg)
+* Upgrading: Grant the Forms **Security** permission to the **Administrators** group without rolling back the upgrade. Sites stuck in the `Upgrading` state after installing 17.5.1 complete the upgrade on the next start.
+
 ### 17.5.1 (September 17th 2026)
 * Require a dedicated user group permission for the Forms Security area, so that backoffice users cannot grant themselves Forms permissions [GHSA-8jv5-237g-mfj9](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-8jv5-237g-mfj9)
 * Umbraco Licenses dependency updated to 17.0.5
