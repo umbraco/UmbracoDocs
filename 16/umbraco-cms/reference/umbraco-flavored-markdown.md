@@ -95,8 +95,6 @@ ${ 1 + 2 }                                      // Expression evaluation/calcula
 
 Expressions can reference property aliases, perform calculations, concatenate strings, and more.
 
-### Accessing block settings
-
 ### Supported operations
 
 - Arithmetic (`+`, `-`, `*`, `/`)
