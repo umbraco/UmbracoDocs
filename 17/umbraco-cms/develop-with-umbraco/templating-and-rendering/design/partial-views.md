@@ -6,9 +6,19 @@ description: Information on working with partial views in Umbraco
 
 A Partial View (`.cshtml` file) is a regular view that can be used multiple times throughout your site. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu, and so on. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
 
+{% hint style="warning" %}
+Creating a partial view from a snippet in the backoffice is a good way to scaffold a starting point. Managing partial views through the backoffice beyond that isn't the recommended approach for most projects.
+
+Maintain partial views as `.cshtml` files in the `Views/Partials` folder using an IDE. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
+{% endhint %}
+
+## Creating a Partial View Locally
+
+Add a `.cshtml` file to the `Views/Partials` folder of your project. The file name becomes the partial view name.
+
 ## Partial Views in the Backoffice
 
-You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice.
+You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice. The file is created in your project's `Views/Partials` folder, so you can continue editing it in an IDE.
 
 ![Creating a new partial view](../../../.gitbook/assets/create-partial.png)
 
@@ -18,7 +28,7 @@ In the **Create** menu, there are three options available:
 * Partial view from snippet
 * Folder... (for keeping the partial views organized)
 
-## Creating a Partial View
+### Creating an Empty Partial View
 
 To create a partial view:
 
@@ -35,7 +45,7 @@ By default, the partial views are saved in the `Views/Partials` folder in the so
 
 ![Partial View folder in the project directory](../../../.gitbook/assets/partial-views-in-directory.png)
 
-## Creating a Partial View from Snippet
+### Creating a Partial View from Snippet
 
 To create a partial view from the snippet:
 
@@ -66,7 +76,7 @@ Umbraco provides the following partial view snippets:
 * Register Member - Displays a Member registration form. It will only display the properties marked as **Member can edit** on the **Info** tab of the Member Type.
 * Site Map - Displays a list of links of all the visible pages of the site using the `Traverse()` method to select and display the markup and links as nested unordered HTML lists.
 
-## Creating a Folder
+### Creating a Folder
 
 To create a folder:
 

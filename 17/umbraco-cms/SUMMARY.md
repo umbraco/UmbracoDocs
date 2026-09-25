@@ -150,6 +150,7 @@
 
 * [Templating and Rendering](develop-with-umbraco/templating-and-rendering/README.md)
   * [Working with Templates](develop-with-umbraco/templating-and-rendering/templates.md)
+  * [Managing Views and Assets](develop-with-umbraco/templating-and-rendering/managing-views-and-assets.md)
   * [Design](develop-with-umbraco/templating-and-rendering/design/README.md)
     * [Rendering Content](develop-with-umbraco/templating-and-rendering/design/rendering-content.md)
     * [Rendering Media](develop-with-umbraco/templating-and-rendering/design/rendering-media.md)
