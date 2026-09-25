@@ -1,8 +1,13 @@
 -- =============================================================================
 -- Umbraco Engage: Clean up orphaned data for all foreign key constraints and enable/check them
 -- =============================================================================
-UPDATE t SET t.[projectId] = NULL FROM [umbracoEngageAbTestingAbTest] t WHERE t.[projectId] IS NOT NULL AND NOT EXISTS (SELECT 1 FROM [umbracoEngageAbTestingAbTestProject] r WHERE r.[id] = t.[projectId]);
-UPDATE t SET t.[goalId] = NULL FROM [umbracoEngageAbTestingAbTest] t WHERE t.[goalId] IS NOT NULL AND NOT EXISTS (SELECT 1 FROM [umbracoEngageSettingsGoal] r WHERE r.[id] = t.[goalId]);
+-- projectId/goalId were replaced by projectKey/goalKey (with a trusted FK created at migration time) in Engage 17.5.0.
+-- Column names are checked via COL_LENGTH and run through EXEC because a plain UPDATE referencing a dropped column
+-- fails to bind even inside an untaken IF branch once the column no longer exists.
+IF COL_LENGTH('umbracoEngageAbTestingAbTest', 'projectId') IS NOT NULL
+    EXEC('UPDATE t SET t.[projectId] = NULL FROM [umbracoEngageAbTestingAbTest] t WHERE t.[projectId] IS NOT NULL AND NOT EXISTS (SELECT 1 FROM [umbracoEngageAbTestingAbTestProject] r WHERE r.[id] = t.[projectId])');
+IF COL_LENGTH('umbracoEngageAbTestingAbTest', 'goalId') IS NOT NULL
+    EXEC('UPDATE t SET t.[goalId] = NULL FROM [umbracoEngageAbTestingAbTest] t WHERE t.[goalId] IS NOT NULL AND NOT EXISTS (SELECT 1 FROM [umbracoEngageSettingsGoal] r WHERE r.[id] = t.[goalId])');
 DELETE t FROM [umbracoEngageAbTestingAbTestContentType] t WHERE NOT EXISTS (SELECT 1 FROM [umbracoEngageAbTestingAbTest] r WHERE r.[id] = t.[abTestId]);
 DELETE t FROM [umbracoEngageAbTestingAbTestUmbracoPageVariant] t WHERE NOT EXISTS (SELECT 1 FROM [umbracoEngageAbTestingAbTest] r WHERE r.[id] = t.[abTestId]);
 DELETE t FROM [umbracoEngageAbTestingAbTestVariant] t WHERE NOT EXISTS (SELECT 1 FROM [umbracoEngageAbTestingAbTest] r WHERE r.[id] = t.[abTestId]);
