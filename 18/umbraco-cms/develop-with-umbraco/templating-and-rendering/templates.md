@@ -9,15 +9,9 @@ Templates are the files that control the look and feel of the frontend of your U
 Each Template is a `cshtml` file in the `Views` folder of your project directory. You can also manage Templates from the Settings section in the Umbraco backoffice.
 
 {% hint style="warning" %}
-Generating a Template alongside a new Document Type is a good way to scaffold a starting point. Managing Templates through the backoffice beyond that isn't the recommended approach for most projects.
+Generating a template alongside a new Document Type is a good way to scaffold a starting point. Managing templates through the backoffice beyond that isn't the recommended approach for most projects.
 
-The backoffice editor doesn't integrate with source control or local build tooling. The editor also gives you no IntelliSense or type checking against your models. Mistakes surface when the page renders instead of while you work.
-
-Editing Templates in the backoffice is blocked entirely when the site runs in `Production` runtime mode. For more information, see [Runtime Modes](../../run-in-production/runtime-modes.md).
-
-In other runtime modes, changes take effect immediately only with the Razor runtime compilation package installed. Without the package, you must rebuild and restart the site. For details, see ["InMemoryAuto models builder and Razor runtime compilation have moved into their own package"](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17) in the Version-specific upgrades guide.
-
-Maintain Templates locally as `.cshtml` files in the `Views` folder using your own IDE. For more information, see [Source Control](../application-code/backend-and-custom-logic/source-control.md).
+Maintain templates as `.cshtml` files in the `Views` folder using an IDE. For more information, see [Managing Views and Assets](managing-views-and-assets.md).
 {% endhint %}
 
 ## Creating Templates

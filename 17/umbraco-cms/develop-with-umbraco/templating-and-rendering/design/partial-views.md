@@ -9,22 +9,16 @@ A Partial View (`.cshtml` file) is a regular view that can be used multiple time
 {% hint style="warning" %}
 Creating a partial view from a snippet in the backoffice is a good way to scaffold a starting point. Managing partial views through the backoffice beyond that isn't the recommended approach for most projects.
 
-The backoffice editor doesn't integrate with source control or local build tooling. The editor also gives you no IntelliSense or type checking against your models. Mistakes surface when the page renders instead of while you work.
-
-Creating, editing, renaming, and deleting partial views in the backoffice is blocked entirely when the site runs in `Production` runtime mode. For more information, see [Runtime Modes](../../../run-in-production/runtime-modes.md).
-
-In other runtime modes, changes take effect immediately only with the Razor runtime compilation package installed. Without the package, you must rebuild and restart the site. For details, see ["InMemoryAuto models builder and Razor runtime compilation have moved into their own package"](../../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17) in the Version-specific upgrades guide.
-
-Maintain partial views locally as `.cshtml` files in the `Views/Partials` folder using your own IDE. For more information, see [Source Control](../../application-code/backend-and-custom-logic/source-control.md).
+Maintain partial views as `.cshtml` files in the `Views/Partials` folder using an IDE. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
 {% endhint %}
 
 ## Creating a Partial View Locally
 
-Add a `.cshtml` file to the `Views/Partials` folder of your project using your own IDE. The file name becomes the partial view name.
+Add a `.cshtml` file to the `Views/Partials` folder of your project. The file name becomes the partial view name.
 
 ## Partial Views in the Backoffice
 
-You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice. The file is created in your project's `Views/Partials` folder, so you can continue editing it in your own IDE.
+You can create and edit partial views from the **Partial Views** folder in the **Settings** section of the Backoffice. The file is created in your project's `Views/Partials` folder, so you can continue editing it in an IDE.
 
 ![Creating a new partial view](../../../.gitbook/assets/create-partial.png)
 

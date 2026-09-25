@@ -9,13 +9,7 @@ Stylesheets and JavaScript files control the appearance and behavior of your web
 This article explains how to work with stylesheets and JavaScript and clarifies how styling works with the Rich Text Editor (RTE) Data Type.
 
 {% hint style="warning" %}
-Managing stylesheets and JavaScript through the backoffice is not the recommended approach for most projects. The backoffice editor doesn't integrate with source control, build tooling, or local testing.
-
-Maintain these files in your project using your own IDE, and deploy them through your regular build and deployment process. For more information, see [Source Control](../../application-code/backend-and-custom-logic/source-control.md).
-
-Your site can serve stylesheets and JavaScript from anywhere under `wwwroot`, so these files don't have to sit in the folders shown below. The backoffice only lists the folders set by the `UmbracoCssPath` and `UmbracoScriptsPath` settings, which default to `wwwroot/css` and `wwwroot/scripts`. For more information, see [Global Settings](../../configuration/globalsettings.md).
-
-Files you add or edit in those folders still appear in the backoffice. Click **...** next to the **Stylesheets** or **Scripts** folder and select **Reload children** to see the changes.
+Managing stylesheets and JavaScript through the backoffice isn't the recommended approach for most projects. Maintain these files in your project using an IDE. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
 {% endhint %}
 
 ## Stylesheets in the Backoffice
