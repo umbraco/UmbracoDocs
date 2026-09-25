@@ -29,10 +29,6 @@ The resulting issues tend to show up later, and they can look unrelated to the c
 * Error pages with full stack traces appear on a cloud hostname.
 * Local development breaks after someone edits `appsettings.Development.json` for the cloud environment.
 
-{% hint style="warning" %}
-Naming the [left-most mainline environment](../../../begin-your-cloud-journey/project-features/environments.md) `Development` is a common choice on Umbraco Cloud projects, and it then triggers the behavior described above.
-{% endhint %}
-
 ## File Name Casing on Linux
 
 Environment name checks in code, such as `env.IsDevelopment()` and `env.IsEnvironment("...")`, aren't case sensitive. The lookup of the `appsettings.{env}.json` file, however, happens on the file system. Umbraco Cloud environments run on Linux, where file lookups are case sensitive.
@@ -66,8 +62,12 @@ Keep the cloud environment named `Development`, and give local development a new
 ```
 {% endcode %}
 
+.NET project templates generate `ASPNETCORE_ENVIRONMENT` in `launchSettings.json`. Both `ASPNETCORE_ENVIRONMENT` and `DOTNET_ENVIRONMENT` work for ASP.NET Core apps. If both are set, `ASPNETCORE_ENVIRONMENT` takes precedence.
+
+4. Update any code that checks `env.IsDevelopment()` to also check `env.IsEnvironment("Local")`.
+
 {% hint style="info" %}
-The name `Local` is not `Development`, so `env.IsDevelopment()` now returns `false` on your machine. Update any code that checks `env.IsDevelopment()` to also check `env.IsEnvironment("Local")`, or to use a combined check. This applies to the developer exception page, detailed errors, and ModelsBuilder source code mode.
+The name `Local` is not `Development`, so `env.IsDevelopment()` returns `false` on your machine after this change.
 {% endhint %}
 
 ### Option B: Override the Variable on the Cloud Environment
@@ -93,4 +93,6 @@ Check the following before you create or rename an environment:
 
 ## Supported Umbraco Versions
 
-This article covers ASP.NET Core configuration behavior: the `DOTNET_ENVIRONMENT` variable and `appsettings.{Name}.json` files. That behavior applies to Umbraco 9 and later. Umbraco Cloud also hosts Umbraco 7 and 8 projects, which run on .NET Framework instead of ASP.NET Core, so this guidance doesn't apply to them.
+This article covers ASP.NET Core configuration behavior: the `DOTNET_ENVIRONMENT` variable and `appsettings.{Name}.json` files. That behavior applies to Umbraco 9 and later.
+
+Umbraco Cloud also hosts Umbraco 7 and 8 projects. These projects run on .NET Framework instead of ASP.NET Core, so this guidance doesn't apply to them.
