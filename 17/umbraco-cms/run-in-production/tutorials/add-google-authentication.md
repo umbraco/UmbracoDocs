@@ -332,7 +332,7 @@ If Google shows an error instead of completing sign-in, check the error:
 
 * **`Error 400: redirect_uri_mismatch`**: the redirect URI your app sent doesn't exactly match one registered in Google Cloud Console. Compare the **Authorized redirect URIs** entry against `CallbackPath` character-for-character, including scheme, port, and no extra or missing slashes.
 * **`Error 403: org_internal`** ("can only be used within its organization"): the app's Audience is set to **Internal**, and the signing-in account is outside that organization. Either sign in with an account from the organization, or change Audience to **External** in **Google Auth Platform > Audience**.
-* **`Error 400: access_denied`** ("This app's request is invalid" or similar) while credentials are otherwise correct: the app is in **Testing** status and the account isn't in the test-user list.
+* **`Error 400: access_denied`** ("This app's request is invalid" or similar) while credentials are otherwise correct. The app is in **Testing** status and the account isn't in the test-user list.
 
 ## Related Links
 
