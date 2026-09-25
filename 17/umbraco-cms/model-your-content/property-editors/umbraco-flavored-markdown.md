@@ -103,10 +103,10 @@ Expressions can reference property aliases, perform calculations, concatenate st
 
 When UFM is used in a Block editor label (Block Grid or Block List), the block's **content** properties are referenced directly by their alias, while the block's **settings** properties are exposed under the `$settings` object.
 
-This is available in both the `{= ... }` marker and the `${ ... }` expression syntax:
+Settings values are only available in the `${ ... }` expression syntax:
 
 ```markdown
-{=$settings.subtitle}                          // Renders a settings property value
+${ $settings.subtitle }                          // Renders a settings property value
 ${ $settings.hideFromMenu ? "Hidden" : "" }    // Conditional based on a settings property
 ```
 

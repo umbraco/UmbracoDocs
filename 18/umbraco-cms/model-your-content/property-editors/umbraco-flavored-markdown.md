@@ -76,7 +76,6 @@ The following UFM filters are available to use.
 Starting from version 16.4, both the kebab-case (for example, `strip-html`, `title-case`,and `word-limit`) and the camelCase syntax (for example, `stripHtml`, `titleCase`, and `wordLimit`) are supported.
 
 The kebab-case syntax is scheduled for removal in version 18, so it’s recommended to begin using the camelCase syntax going forward.
-{% endhint %}
 
 ## UFM Expressions (JavaScript-like syntax)
 
@@ -103,10 +102,10 @@ Expressions can reference property aliases, perform calculations, concatenate st
 
 When UFM is used in a Block editor label (Block Grid or Block List), the block's **content** properties are referenced directly by their alias, while the block's **settings** properties are exposed under the `$settings` object.
 
-This is available in both the `{= ... }` marker and the `${ ... }` expression syntax:
+Settings values are only available in the `${ ... }` expression syntax:
 
 ```markdown
-{=$settings.subtitle}                          // Renders a settings property value
+${ $settings.subtitle }                           // Renders a settings property value
 ${ $settings.hideFromMenu ? "Hidden" : "" }    // Conditional based on a settings property
 ```
 
