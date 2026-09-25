@@ -565,6 +565,6 @@
   * [Database Availability Checks](run-in-production/infrastructure-and-ops/database-availability.md)
   * [Distributed Locks](run-in-production/infrastructure-and-ops/distributed-locks.md)
 * [Tutorials](run-in-production/tutorials/README.md)
-  * [Add Microsoft Entra ID Authentication (Members)](run-in-production/tutorials/add-microsoft-entra-id-authentication.md)
+  * [Add Microsoft Entra ID Authentication](run-in-production/tutorials/add-microsoft-entra-id-authentication.md)
   * [Add Google Authentication (Users)](run-in-production/tutorials/add-google-authentication.md)
   * [Create a Custom Maintenance Page](run-in-production/tutorials/create-a-custom-maintenance-page.md)
