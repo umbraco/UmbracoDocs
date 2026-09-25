@@ -24,7 +24,7 @@ Once your upgraded codebase is tested and ready on your machine, use this articl
 
 A major upgrade can be resource-intensive. When the upgraded code first boots, it runs database migrations and rebuilds caches and indexes. That work happens on top of whatever the site is already doing.
 
-* **Development/Staging Environments:** There is typically little or no public traffic, meaning almost all of the server's capacity is dedicated to the upgrade. For most standard projects, the migration completes comfortably. However, because Staging environments often run on lower plan tiers with fewer dedicated resources, a large database or complex migration can still overload a Staging environment and cause it to fail, even without public traffic.
+* **Staging Environments:** There is typically little or no public traffic, meaning almost all of the server's capacity is dedicated to the upgrade. For most standard projects, the migration completes comfortably. However, because Staging environments often run on lower plan tiers with fewer dedicated resources, a large database or complex migration can still overload a Staging environment and cause it to fail, even without public traffic.
 * **Live Environments:** Real visitors are using the site when the upgrade starts. The environment is already handling normal production traffic, and the upgrade workload is added on top of that.
 
 For many projects, this can still be completed successfully. But on larger, busier, or resource-constrained sites, the combined workload can push the environment beyond what it can comfortably process during the upgrade. Requests may start to queue, the migration may not complete cleanly, and the site can become unavailable.

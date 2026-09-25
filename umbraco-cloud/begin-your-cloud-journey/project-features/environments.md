@@ -20,7 +20,7 @@ The image below shows a Cloud setup including two mainline environments and one 
 
 A mainline environment serves as the root deployment pipeline, responsible for managing code and content flow. Each mainline environment is a part of the [left-to-right deployment workflow](../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/).
 
-The **left-most mainline environment** is where you can connect to your local machine using Git. This environment is often called the Development environment.
+The **left-most mainline environment** is where you can connect to your local machine using Git.
 
 The **right-most mainline environment** is your live website, often called the Live or Production environment.
 

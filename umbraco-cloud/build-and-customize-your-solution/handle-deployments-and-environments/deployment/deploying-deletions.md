@@ -24,9 +24,9 @@ In the scenario described above, there is no option to roll back because the Doc
 
 ## Example scenario
 
-The following example will build in the scenario outlined above, calling the left-most mainline environment the **Development** environment. In addition to the deletion, additional changes that have been made will also be deployed.
+The following example builds on the scenario outlined above, using the left-most mainline environment. In addition to the deletion, additional changes that have been made will also be deployed.
 
-Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
+Before you deploy the changes, the left-most environment will show that the following changes are ready to be deployed:
 
 <figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
 
@@ -35,7 +35,7 @@ Following the **Activity log** in the browser, you'll notice that the `.uda` fil
 Once the deployment is completed, the following changes has taken place:
 
 * The template is correctly updated.
-* The Document Type you deleted on the Development environment is still present in the backoffice on the Live environment.
+* The Document Type you deleted on the left-most environment is still present in the backoffice on the Live environment.
 
 The reason for the Document Type to still be there is, that the associated `.uda` file is deleted. The Document Type still exists in the database.
 
@@ -94,7 +94,7 @@ You can clean the schema in two ways:
 * **Automatically**: Set the [`PostDeploySchemaOperation`](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#post-deploy-schema-operation) setting to `CleanSchema`. Deploy then cleans the schema after every schema deployment to that environment.
 
 {% hint style="warning" %}
-Cleaning the schema deletes items. Deleting a Document Type also deletes all content using that type, with no option to roll back. Only configure `CleanSchema` on environments where this is acceptable, such as local or Development environments. On Live, run the operation manually after checking the schema comparison.
+Cleaning the schema deletes items. Deleting a Document Type also deletes all content using that type, with no option to roll back. Only configure `CleanSchema` on environments where this is acceptable, such as local or left-most environments. On Live, run the operation manually after checking the schema comparison.
 {% endhint %}
 
 Cleaning the schema does not affect content and media. Those deletions must still be made manually on each environment.
