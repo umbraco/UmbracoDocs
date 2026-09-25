@@ -37,6 +37,14 @@ umb://stylesheet/style.css
 umb://language/en-US
 ```
 
+## Where you encounter UDIs
+
+You do not usually create a UDI yourself. It shows up in stored property values that reference another entity:
+
+* The Content Picker and Multi Node Tree Picker property editors store their raw database value as a UDI. For multiple selections, the value is a comma-separated list of UDIs. If you read the stored value, for example with `IContent.GetValue<string>()`, you get the UDI string.
+
+Use `UdiParser.TryParse()` to read the value. See [Convert between UDIs and GUIDs](#convert-between-udis-and-guids).
+
 ## Query content with a UDI
 
 `IPublishedContentQuery` accepts UDIs directly through the `Content(Udi)` and `Media(Udi)` overloads. You do not need to convert a UDI to a GUID first.
