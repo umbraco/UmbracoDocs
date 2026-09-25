@@ -114,11 +114,25 @@ Previously before v9, it was required to specify the **backoffice** path as this
 Controls how Umbraco determines the application URL when `UmbracoApplicationUrl` has not been set explicitly. Available options are:
 
 * `None` (default): No auto-detection takes place. The application URL must be set explicitly via `UmbracoApplicationUrl`. Operations that require it (such as user invitations and password resets) will fail with a `400 Bad Request` response indicating that the application URL is not configured.
-* `FirstRequest`: The application URL is set from the first HTTP request received by the server, after which it is locked. Subsequent requests with different `Host` headers are ignored.
-* `EveryRequest`: The application URL is set from the first HTTP request and can be overwritten by every subsequent request.
+* `FirstRequest`: The application URL is set from the first HTTP request received by the server. Requests for other hosts do not change the URL once set. Only a request for a more useful public address replaces the URL, as described below.
+* `EveryRequest`: The application URL is set from the first HTTP request and updated by every subsequent request for a new URL. A loopback address or a downgrade from HTTPS to HTTP never replaces the current URL.
+
+{% hint style="info" %}
+The replacement rules below apply from Umbraco CMS version 17.8. In earlier versions, `FirstRequest` keeps whatever URL the first request presents. `EveryRequest` accepts any new URL.
+{% endhint %}
+
+With `FirstRequest`, the URL is replaced in two cases only:
+
+* A request for a non-loopback host replaces a loopback URL such as `http://localhost:5000`. A loopback URL is typically set by a warm-up request or health probe that arrives before the first visitor.
+* An HTTPS request for the same host and path replaces an HTTP URL.
+
+With `EveryRequest`, a new URL is ignored in two cases:
+
+* A loopback address never replaces a non-loopback URL.
+* An HTTP address never replaces an HTTPS URL.
 
 {% hint style="warning" %}
-In environments where Umbraco is not behind a reverse proxy that validates the `Host` header, allowing auto-detection (`FirstRequest` or `EveryRequest`) can enable a forged `Host` header to influence the URL used in email notifications. Explicitly configuring `UmbracoApplicationUrl` is the recommended approach.
+With `FirstRequest` or `EveryRequest`, the `Host` header of incoming requests decides the URL used in email notifications. A forged `Host` header can influence that URL when Umbraco is not behind a reverse proxy that validates the header. Restrict the accepted hosts by setting `AllowedHosts` in `appsettings.json` to your hostnames instead of `*`. ASP.NET Core then rejects requests for any other host before they reach Umbraco. For details, see the [Host filtering](https://learn.microsoft.com/aspnet/core/fundamentals/servers/kestrel/host-filtering) article in the Microsoft documentation. Explicitly configuring `UmbracoApplicationUrl` remains the recommended approach for production.
 {% endhint %}
 
 `UmbracoApplicationUrl` always takes precedence over the value derived through `ApplicationUrlDetection`.
