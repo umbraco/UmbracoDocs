@@ -466,7 +466,7 @@ Key points:
 * The element renders `nothing`. The element exists only to register the modal route.
 * The route builder is a **module-level variable**, so the entity action can import the builder directly.
 * `addAdditionalPath()` takes a **single string** that combines all parameters, for example `':documentUnique/:culture'`. A second call overwrites the first.
-* `disconnectedCallback()` clears the route builder when the element is removed.
+* `disconnectedCallback()` clears the route builder when the element disconnects from the page.
 
 #### 2. Modal manifest
 
@@ -496,7 +496,7 @@ export const manifests: Array<UmbExtensionManifest> = [
 ```
 {% endcode %}
 
-The route provider is registered as a `searchIndexDetailBox`, so it loads inside the detail view. The detail view gives the route provider access to the workspace context.
+Registering the route provider as a `searchIndexDetailBox` makes it load inside the detail view. The detail view gives the route provider access to the workspace context.
 
 #### 3. Entity action with `getHref()`
 
