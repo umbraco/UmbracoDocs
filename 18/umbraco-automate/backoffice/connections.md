@@ -21,8 +21,9 @@ Connections are managed from the **Settings** sidebar in the **Automation** sect
 3. Click **+**. The **Connection Type** picker opens.
 4. Pick a connection type from the picker, for example **Slack**.
 5. **Enter a name** and configure the type-specific settings.
-6. Click **Authenticate** to verify the credentials.
+6. For OAuth connection types such as Slack, click **Authenticate** and sign in with the provider.
 7. Click **Save**.
+8. Click **Test connection** to verify the credentials.
 
 <figure><img src="../.gitbook/assets/create-connection.png" alt="The create connection modal with a connection type picker."><figcaption><p>Creating a connection.</p></figcaption></figure>
 
@@ -35,11 +36,13 @@ A connection only appears in an action's connection picker when its workspace ha
 3. Pick the connection from the connection picker.
 4. Save the workspace.
 
-## Authenticate a Connection
+## Test a Connection
 
-The **Authenticate** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
+The **Test connection** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
 
-A failed test shows the error message so you can correct the settings before saving. Connection types that do not implement a validator return a warning instead of a success.
+The button appears once the connection is saved. If the connection has unsaved changes, **Test connection** saves them first and then runs the test. If the form has validation errors, a warning asks you to fix them and save the connection. The test runs only after a successful save.
+
+A failed test shows the error message so you can correct the settings. Connection types that do not implement a validator return a warning instead of a success.
 
 If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
 

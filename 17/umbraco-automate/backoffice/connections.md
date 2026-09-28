@@ -22,8 +22,8 @@ Connections are managed from the **Settings** sidebar in the **Automate** sectio
 4. Right-click the **Connections** root and select **Create connection**.
 5. Pick a connection type from the picker, for example **Slack**.
 6. Enter a name and configure the type-specific settings.
-7. Click **Test connection** to verify the credentials.
-8. Click **Save**.
+7. Click **Save**.
+8. Click **Test connection** to verify the credentials.
 
 <figure><img src="../.gitbook/assets/create-connection.png" alt="The create connection modal with a connection type picker."><figcaption><p>Creating a connection.</p></figcaption></figure>
 
@@ -40,7 +40,9 @@ A connection only appears in an action's connection picker when its workspace ha
 
 The **Test connection** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
 
-A failed test shows the error message so you can correct the settings before saving. Connection types that do not implement a validator return a warning instead of a success.
+The button appears once the connection is saved. If the connection has unsaved changes, **Test connection** saves them first and then runs the test. If the form has validation errors, a warning asks you to fix them and save the connection. The test runs only after a successful save.
+
+A failed test shows the error message so you can correct the settings. Connection types that do not implement a validator return a warning instead of a success.
 
 ## Use a Connection in an Action
 

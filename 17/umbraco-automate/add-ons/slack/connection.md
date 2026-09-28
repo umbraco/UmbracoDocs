@@ -17,8 +17,8 @@ Before an automation can post to Slack, you must create a **Slack** connection a
 5. Enter a name, for example `Team announcements`.
 6. Click **Authenticate**. A popup opens to the Slack authorization page.
 7. Pick the workspace and approve the requested scopes.
-8. After the popup closes, click **Test connection** to confirm the access token works.
-9. Click **Save**.
+8. After the popup closes, click **Save**.
+9. Click **Test connection** to confirm the access token works.
 
 If Slack hasn't been set up on this server yet (no client ID or secret configured in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add.
 
