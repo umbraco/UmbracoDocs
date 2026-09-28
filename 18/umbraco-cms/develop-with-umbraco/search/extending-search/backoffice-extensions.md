@@ -24,7 +24,7 @@ import {
 ```
 {% endcode %}
 
-The `searchIndexDetailBox` extension type and the provider name condition are part of the global types of the backoffice. TypeScript recognizes both in your manifests without any extra declarations.
+The `searchIndexDetailBox` extension type and the provider name condition are part of the global types of the backoffice. TypeScript recognizes both in your manifests when your `tsconfig.json` includes `@umbraco-cms/backoffice/extension-types` in `compilerOptions.types`. The extension template sets this up for you.
 
 The backoffice serves the JavaScript for these imports at runtime. For how your package resolves them, see the [Vite Package Setup](../../../extend-your-project/backoffice-extensions/development-flow/vite-package-setup.md) article.
 
@@ -53,7 +53,7 @@ interface MetaSearchIndexDetailBox {
 ```
 {% endcode %}
 
-* `label` - The box heading. Supports localization keys, for example `#myPackage_myLabel`.
+* `label` - The box heading. Supports localization keys, for example `#myPackage_myLabel`. The backoffice does not render the label for you. The box element renders it, typically as the `headline` of its `uui-box`.
 * `column` - The column to place the box in. Use `'left'` for the main content column. Omit the property or use `'right'` to place the box in the sidebar.
 
 ### Registering a detail box manifest
@@ -78,19 +78,23 @@ export const manifests: Array<UmbExtensionManifest> = [
 
 ### Creating the box element
 
-The element consumes the search workspace context to read the index it belongs to:
+The backoffice passes the manifest to the element as its `manifest` property. The element reads the label from it and consumes the search workspace context to read the index it belongs to:
 
 {% code title="my-custom-box.element.ts" %}
 ```typescript
 import {
   UMB_SEARCH_WORKSPACE_CONTEXT,
+  type ManifestSearchIndexDetailBox,
   type UmbHealthStatusModel,
 } from '@umbraco-cms/backoffice/search-management';
-import { customElement, html, state } from '@umbraco-cms/backoffice/external/lit';
+import { customElement, html, property, state } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('my-custom-box')
 export class MyCustomBoxElement extends UmbLitElement {
+  @property({ type: Object, attribute: false })
+  public manifest?: ManifestSearchIndexDetailBox;
+
   @state()
   private _documentCount?: number;
 
@@ -114,8 +118,13 @@ export class MyCustomBoxElement extends UmbLitElement {
   }
 
   override render() {
+    // Resolves localization keys such as #myPackage_myLabel
+    const headline = this.manifest?.meta?.label
+      ? this.localize.string(this.manifest.meta.label)
+      : (this.manifest?.name ?? '');
+
     return html`
-      <uui-box>
+      <uui-box headline=${headline}>
         <p>Documents: ${this._documentCount ?? '-'}</p>
         <p>Health: ${this._healthStatus ?? '-'}</p>
       </uui-box>
@@ -137,17 +146,17 @@ declare global {
 
 The `UMB_SEARCH_WORKSPACE_CONTEXT` provides the following observables and methods:
 
-| Property / Method             | Type       | Description                                                       |
-| ----------------------------- | ---------- | ----------------------------------------------------------------- |
-| `documentCount`               | Observable | Number of documents in the index.                                 |
-| `healthStatus`                | Observable | Current health status of the index.                               |
-| `providerName`                | Observable | Name of the search provider that owns the index.                  |
-| `state`                       | Observable | UI state of the index: `'idle'`, `'loading'`, or `'error'`.       |
-| `selectedCulture`             | Observable | Culture currently selected in the search box.                     |
-| `getUnique()`                 | Method     | Returns the index alias.                                          |
-| `getSelectedCulture()`        | Method     | Returns the selected culture.                                     |
-| `setSelectedCulture(culture)` | Method     | Sets the selected culture.                                        |
-| `setState(state)`             | Method     | Sets the UI state, for example while an operation is in progress. |
+| Property / Method             | Type       | Description                                                                       |
+| ----------------------------- | ---------- | --------------------------------------------------------------------------------- |
+| `documentCount`               | Observable | Number of documents in the index.                                                 |
+| `healthStatus`                | Observable | Current health status of the index.                                               |
+| `providerName`                | Observable | Name of the search provider that owns the index.                                  |
+| `state`                       | Observable | UI state of the index: `'idle'`, `'loading'`, or `'error'`.                       |
+| `selectedCulture`             | Observable | Culture currently selected in the search box.                                     |
+| `getUnique()`                 | Method     | Returns the index alias.                                                          |
+| `getSelectedCulture()`        | Method     | Returns the selected culture.                                                     |
+| `setSelectedCulture(culture)` | Method     | Sets the selected culture.                                                        |
+| `setState(state)`             | Method     | Sets the UI state. The index information box shows `'loading'` as **Rebuilding**. |
 
 ### Two-column layout
 
@@ -265,7 +274,7 @@ export class MySearchDocumentEntityAction extends UmbEntityActionBase<never> {
     const indexAlias = workspaceContext?.getUnique();
     const culture = workspaceContext?.getSelectedCulture();
 
-    console.log(`Running my action on ${documentUnique} in ${indexAlias} (${culture ?? 'invariant'})`);
+    // Run your operation on documentUnique, indexAlias, and culture here
   }
 }
 
