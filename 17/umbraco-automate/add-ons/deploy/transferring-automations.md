@@ -15,7 +15,7 @@ Install the Deploy add-on on both the source and target environments. You can th
 | **Workspace Group** | Yes | Folders that hold workspaces. |
 | **Workspace** | Yes | Includes the service account and user group references, but not individual member assignments. An unresolved user group is dropped with a warning. See [Manage Workspaces](../../backoffice/workspaces.md). |
 | **Automation** | Yes | The published version of the automation, with all triggers, actions, and bindings. |
-| **Connection** | Yes (definition only) | The connection record is created on the target environment. Encrypted credential values are skipped by default — re-authenticate or fill them in on the target. |
+| **Connection** | Yes (definition only) | The connection record is created on the target environment. Encrypted credential values are skipped by default — re-authenticate or fill them in on the target. OAuth authentications never transfer. |
 | **Run history** | No | Run records are environment-specific and never transfer. |
 
 ## How Connections Are Handled
@@ -25,6 +25,7 @@ Steps in an automation reference connections by ID. During Deploy export, IDs ar
 * If the connection exists in the target environment with the same alias, the import succeeds.
 * If the connection is missing, the import fails with a clear error rather than waiting until runtime.
 * Sensitive values (anything prefixed with `ENC:`) are not transferred by default. You re-authenticate or re-enter the credential on the target.
+* OAuth authentications, such as the Slack account a connection signed in with, never transfer. When a transfer updates an existing connection, the target keeps its own authentication. A connection that a transfer creates arrives unauthenticated. Authenticate it on each environment. See [Authenticate an OAuth Connection](../../backoffice/connections.md#authenticate-an-oauth-connection).
 
 See [Installation](installation.md) for the configuration that controls this behaviour.
 
