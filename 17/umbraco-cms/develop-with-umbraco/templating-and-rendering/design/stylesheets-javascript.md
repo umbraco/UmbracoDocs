@@ -8,8 +8,8 @@ Stylesheets and JavaScript files control the appearance and behavior of your web
 
 This article explains how to work with stylesheets and JavaScript and clarifies how styling works with the Rich Text Editor (RTE) Data Type.
 
-{% hint style="warning" %}
-Managing stylesheets and JavaScript through the backoffice isn't the recommended approach for most projects. Maintain these files in your project using an IDE. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
+{% hint style="info" %}
+The backoffice works well for quick changes to stylesheets and JavaScript during local development. For ongoing work, maintain these files in your project using an IDE, and keep them in source control. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
 {% endhint %}
 
 ## Stylesheets in the Backoffice

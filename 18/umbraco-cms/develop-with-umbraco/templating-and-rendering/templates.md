@@ -8,10 +8,8 @@ Templates are the files that control the look and feel of the frontend of your U
 
 Each Template is a `cshtml` file in the `Views` folder of your project directory. You can also manage Templates from the Settings section in the Umbraco backoffice.
 
-{% hint style="warning" %}
-Generating a template alongside a new Document Type is a good way to scaffold a starting point. Managing templates through the backoffice beyond that isn't the recommended approach for most projects.
-
-Maintain templates as `.cshtml` files in the `Views` folder using an IDE. For more information, see [Managing Views and Assets](managing-views-and-assets.md).
+{% hint style="info" %}
+Generating a template alongside a new Document Type and making quick changes during local development work well in the backoffice. For ongoing work, maintain templates as `.cshtml` files in the `Views` folder using an IDE, and keep them in source control. For more information, see [Managing Views and Assets](managing-views-and-assets.md).
 {% endhint %}
 
 ## Creating Templates

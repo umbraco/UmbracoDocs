@@ -6,10 +6,8 @@ description: Information on working with partial views in Umbraco
 
 A Partial View (`.cshtml` file) is a regular view that can be used multiple times throughout your site. A Partial View is used to break up large markup files into smaller components such as header, footer, navigation menu, and so on. It helps to reduce the duplication of code. A partial view renders a view within the parent view.
 
-{% hint style="warning" %}
-Creating a partial view from a snippet in the backoffice is a good way to scaffold a starting point. Managing partial views through the backoffice beyond that isn't the recommended approach for most projects.
-
-Maintain partial views as `.cshtml` files in the `Views/Partials` folder using an IDE. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
+{% hint style="info" %}
+Creating a partial view from a snippet and making quick changes during local development work well in the backoffice. For ongoing work, maintain partial views as `.cshtml` files in the `Views/Partials` folder using an IDE, and keep them in source control. For more information, see [Managing Views and Assets](../managing-views-and-assets.md).
 {% endhint %}
 
 ## Creating a Partial View Locally
