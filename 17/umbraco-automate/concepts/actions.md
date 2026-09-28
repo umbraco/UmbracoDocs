@@ -79,6 +79,41 @@ A script can only make outbound `fetch` calls when both of these are on:
 To restrict which hosts scripts can call, list them in `Scripting:FetchAllowedHosts`. When the list is empty, any public host is allowed. `fetch` blocks requests to localhost, private, link-local, and cloud metadata addresses to prevent Server-Side Request Forgery (SSRF).
 {% endhint %}
 
+## Run Script Data
+
+A Run Script step exports a default function. The function receives a `data` argument and returns the step's output.
+
+`data` holds the values a binding can reach, at the same paths. If a binding would use `${ steps.getMedia.properties.umbracoBytes }`, the script reads `data.steps.getMedia.properties.umbracoBytes`.
+
+| Binding                              | Script                                                           |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| `${ trigger.<path> }`                | `data.trigger.<path>`                                            |
+| `${ steps.<alias>.<path> }`          | `data.steps.<alias>.<path>`                                      |
+| `${ previous.<path> }`               | `data.previous.<path>`. Not present for the first step.          |
+| `${ loop.item }` / `${ loop.index }` | `data.loop.item` / `data.loop.index`. Inside a **For Each** only. |
+
+{% code title="Run Script" %}
+```javascript
+export default function (data) {
+    const bytes = data.steps.getMedia.properties.umbracoBytes;
+    return {
+        name: data.trigger.contentName.toUpperCase(),
+        sizeKb: Math.round(bytes / 1024)
+    };
+}
+```
+{% endcode %}
+
+Keep the following in mind when you read from `data`:
+
+* Property names in a script are case-sensitive, unlike bindings. Match the casing of each alias and property exactly.
+* A step without an alias appears under its ID, for example `data.steps['<id>']`.
+* Only steps that already ran are present. A step on a branch that did not run is missing, so guard optional paths, for example `data.steps.maybe?.result`.
+* Automate does not resolve `${ ... }` bindings inside the script body. Read the values from `data` instead.
+* `data` is a copy. Changing it has no effect on later steps. Return any values that later steps need.
+
+The returned value becomes the step's `result` output. Downstream steps bind to it with `${ steps.<alias>.result }`.
+
 ## Step Behaviour
 
 Each step has additional settings on the canvas:
