@@ -105,15 +105,21 @@ export class MyCustomBoxElement extends UmbLitElement {
     super();
 
     this.consumeContext(UMB_SEARCH_WORKSPACE_CONTEXT, (context) => {
-      if (!context) return;
-
       // Observe the index values so the box updates when they change
-      this.observe(context.documentCount, (count) => {
-        this._documentCount = count;
-      });
-      this.observe(context.healthStatus, (status) => {
-        this._healthStatus = status;
-      });
+      this.observe(
+        context?.documentCount,
+        (count) => {
+          this._documentCount = count;
+        },
+        'observeDocumentCount',
+      );
+      this.observe(
+        context?.healthStatus,
+        (status) => {
+          this._healthStatus = status;
+        },
+        'observeHealthStatus',
+      );
     });
   }
 
@@ -141,6 +147,8 @@ declare global {
 }
 ```
 {% endcode %}
+
+The element does not check that the context exists. `observe` accepts an undefined observable, calls the callback with `undefined`, and removes the observer registered under the given alias.
 
 ### Workspace context properties
 
