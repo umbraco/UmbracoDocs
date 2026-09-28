@@ -97,6 +97,10 @@ The **Automation Execution Eligibility** health check reports whether the curren
 
 For more information on server roles, see the [Umbraco in Load Balanced Environments](https://docs.umbraco.com/umbraco-cms/run-in-production/infrastructure-and-ops/server-setup/load-balancing) article in the Umbraco CMS documentation.
 
+## Share the Data Protection Keys
+
+After an OAuth sign-in, such as for a Slack connection, Automate protects the result with ASP.NET Core Data Protection. The node that completes the sign-in and the node that saves the connection can differ. All nodes must share the same Data Protection key ring, as Umbraco CMS already requires for load-balanced sites. Otherwise, saving a connection after signing in can fail.
+
 ## Choosing a Mode
 
 Stay on `SchedulerOnly` unless automation throughput is a measured bottleneck. It keeps execution on one node, which makes runs easier to trace in logs.

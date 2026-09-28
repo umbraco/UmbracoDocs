@@ -42,6 +42,12 @@ OAuth connection types, such as Slack, have an **Authenticate** button. It opens
 
 If the browser blocks the popup, the editor shows a warning with a **Continue in this tab** button. The button reads **Save and continue in this tab** when the connection is new or has unsaved changes, and saves the connection first. Select it to sign in with the provider in the same browser tab. After signing in, you return to the connection with the authentication applied. Click **Save** to keep it.
 
+Keep the following in mind when you authenticate a connection:
+
+* Save the connection within 15 minutes of signing in. After that, saving fails with a message asking you to authenticate again.
+* Each authentication belongs to one connection. To use the same provider account in another connection, authenticate again from that connection.
+* Automate removes authentications that were never saved to a connection after 24 hours.
+
 If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
 
 ## Test a Connection
