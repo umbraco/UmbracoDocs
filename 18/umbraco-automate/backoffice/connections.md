@@ -36,6 +36,14 @@ A connection only appears in an action's connection picker when its workspace ha
 3. Pick the connection from the connection picker.
 4. Save the workspace.
 
+## Authenticate an OAuth Connection
+
+OAuth connection types, such as Slack, have an **Authenticate** button. It opens the provider's sign-in page in a popup window. After you sign in, the connection editor shows the connection as connected. Save the connection to keep the new authentication.
+
+If the browser blocks the popup, the editor shows a warning with a **Continue in this tab** button. The button reads **Save and continue in this tab** when the connection is new or has unsaved changes, and saves the connection first. Select it to sign in with the provider in the same browser tab. After signing in, you return to the connection with the authentication applied. Click **Save** to keep it.
+
+If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
+
 ## Test a Connection
 
 The **Test connection** button calls the connection type's validator. For OAuth connections, this confirms the access token is still valid and can reach the provider's API. For credential-based connections, it attempts a real call.
@@ -43,8 +51,6 @@ The **Test connection** button calls the connection type's validator. For OAuth 
 The button appears once the connection is saved. If the connection has unsaved changes, **Test connection** saves them first and then runs the test. If the form has validation errors, a warning asks you to fix them and save the connection. The test runs only after a successful save.
 
 A failed test shows the error message so you can correct the settings. Connection types that do not implement a validator return a warning instead of a success.
-
-If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
 
 ## Use a Connection in an Action
 

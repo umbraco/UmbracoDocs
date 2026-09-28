@@ -20,6 +20,12 @@ Before an automation can post to Slack, you must create a **Slack** connection a
 8. After the popup closes, click **Save**.
 9. Click **Test connection** to confirm the access token works.
 
+{% hint style="info" %}
+
+If the browser blocks the Slack popup, select **Continue in this tab** to sign in within the same tab. See [Authenticate an OAuth Connection](../../backoffice/connections.md#authenticate-an-oauth-connection).
+
+{% endhint %}
+
 If Slack hasn't been set up on this server yet (no client ID or secret configured in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add.
 
 ## Allow the Connection in a Workspace
