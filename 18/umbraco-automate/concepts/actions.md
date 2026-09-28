@@ -71,7 +71,12 @@ The HTTP Request action rejects responses larger than `Execution:MaxHttpResponse
 {% hint style="warning" %}
 The Run Script action runs in a JavaScript sandbox with a 5 MB memory cap and a 15-second total execution timeout by default. Configure both via `Scripting:*` settings. See [Configuration](../getting-started/configuration.md).
 
-Outbound `fetch` calls are blocked by default. Enable them tenant-wide (`Scripting:FetchEnabled`) and per step (**Allow fetch**) to use them. `fetch` blocks requests to localhost, private, link-local, and cloud metadata addresses to prevent Server-Side Request Forgery (SSRF).
+A script can only make outbound `fetch` calls when both of these are on:
+
+* **Allow fetch** on the step. This is off for new Run Script steps, so turn it on for each step that needs `fetch`. Existing steps keep the value they were saved with.
+* `Scripting:FetchEnabled` for the whole site. This is `true` by default. Set it to `false` to turn off `fetch` for every Run Script step.
+
+To restrict which hosts scripts can call, list them in `Scripting:FetchAllowedHosts`. When the list is empty, any public host is allowed. `fetch` blocks requests to localhost, private, link-local, and cloud metadata addresses to prevent Server-Side Request Forgery (SSRF).
 {% endhint %}
 
 ## Step Behaviour
