@@ -64,13 +64,11 @@ Before you can create the credentials, you need to configure your consent screen
 3. Fill in the required information:
    * App name
    * User support email
-4. Choose the **Audience** that fits your setup.
-5. Click **Next**.
-6. Enter **Contact Information**.
-7. Click **Next**.
-8. Select **I agree to the Google API Services: User Data Policy.** if you agree.
-9. Click **Continue**.
-10. Click **Create**.
+4. Choose the **Audience** that fits your setup, then select **Next**.
+5. Enter your email address under **Contact Information**, then select **Next**.
+6. Check the **I agree to the Google API Services: User Data Policy** checkbox.
+7. **Continue** to the next step.
+8. Select **Create**.
 
 ### Create credentials
 
