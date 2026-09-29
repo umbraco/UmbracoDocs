@@ -29,26 +29,26 @@ To create your Personas in Umbraco Engage, follow the steps below:
 
 4. Click **Add persona group**.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona-group.png" alt=""><figcaption>Add persona group</figcaption></figure>
 
 5. Add the details for the **Persona Group.**
    1. Add a **Title.**
    2. Add a **Description.**
    3. Set the[ Advanced settings](how-to-create-a-persona.md#advanced-persona-group-parameters) to fit your needs.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona-group-advanced-settings.png" alt=""><figcaption>Add persona group - Advanced Settings</figcaption></figure>
 
-6. Click **Create persona group**.
+6. Click **Save**.
 7. Click **Add persona** to add a new Persona.
-   1. Add a **Title/Name** to the Persona.
+   1. Add a **Title** to the Persona.
    2. Add a **description** of the Persona.
    3. Select a **Color** for the Persona.
    4. Select an **image** for the Persona
-      * You can upload your own image or use one of the default ones.
+      * Click **Choose** to pick one of the default persona images, or select **Upload** in the media picker to add your own.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona.png" alt=""><figcaption>Add persona</figcaption></figure>
 
-8. Click **Add Persona**.
+8. Click **Save**.
 
 You have now set up your personas and can score your [content](../marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md), [campaigns](../marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md), and [referrals](../marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md) against these personas.
 
