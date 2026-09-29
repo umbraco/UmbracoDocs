@@ -14,7 +14,7 @@ If your project contains a Staging environment, deployments will be made from De
 
 ## Deployment Approach
 
-Umbraco Deploy uses a two-part deployment approach that keeps meta data (Document types, templates, etc) and content (Content nodes and Media) as separate parts of a deployment. To distinguish between the two types of deployments, the term _transfer_ is used for content and media deployments and the term _deploy_ for meta data deployments.
+Umbraco Deploy uses a two-part deployment approach. This approach keeps meta data (Document types, templates, and so on) separate from content (Content nodes and Media). The term _transfer_ refers to content and media deployments. The term _deploy_ refers to meta data deployments.
 
 In summary:
 

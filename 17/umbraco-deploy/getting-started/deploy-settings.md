@@ -107,13 +107,13 @@ The `ApiKey` is a random string (of at least 10 characters) set to the same valu
 
 ### Edition
 
-The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how most customers are expected to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how most customers are expected to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These files are checked into source control. They are used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically when using Umbraco Cloud.
 
 Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
 
 It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
 
-The recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+The recommended approach is to leave this setting as `Default`. Use source control and a deployment pipeline to keep structural changes to Umbraco aligned with the code and template updates that use them.
 
 However, some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 

@@ -161,7 +161,7 @@ These implementations make use of the following conventions to migrate the data:
       - `headline` - the default 'Textstring', falling back to the first `Umbraco.TextBox` editor.
       - `macro` and `embed` grid editors are converted into rich text editors.
       - `quote` or any other - use falling back to the first `Umbraco.TextArea` editor.
-    - The block label is also updated for the built-in grid editors, ensuring a nice preview is available (the What You See Is What You Get (WYSIWYG) style previews are incompatible between these editors, so the custom views are not migrated);
+    - The block label is also updated for the built-in grid editors to show a preview. Custom views are not migrated, as What You See Is What You Get (WYSIWYG) previews differ between editors;
   - Grid settings config and styles are migrated to a new element type with a random alias, prefixed with `gridSettings_` (this can be customized by overriding `MigrateGridSettings()`). This is because the migration only has context about the Data Type configuration (not the actual Data Type) and multiple Data Type can potentially use the same configuration (for config and styles), so there's no predictable way to create a unique alias. The migrated settings element type will have the property types added for the config and styles:
     - Each config setting is migrated to a property with an alias based on the key, prefixed with `setting_` and added below a 'Settings' property group;
     - Similarly, each style is migrated to a property with an alias based on the key, prefixed with `style_` and added below a 'Styles' property group;

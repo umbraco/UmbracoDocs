@@ -79,7 +79,7 @@ When Umbraco has been installed in a repository, continue to install and configu
 
 ## Source Control Configuration
 
-After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when deploying.
+After the Umbraco files have been committed, add the following lines to the .gitignore so they are not picked up by Git when deploying.
 
 ```
 **/media/*
@@ -262,7 +262,7 @@ The URL configured for each environment should be the root URL for the website a
 
 #### Validating Source Control
 
-Once the configuration has been set up with the correct information, make sure that the source control is including the files in the `/umbraco/Deploy` folder of the Umbraco project.
+Once the configuration has the correct information, verify that source control includes the files in the `/umbraco/Deploy` folder of the Umbraco project.
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
