@@ -21,7 +21,7 @@ This section contains the release notes for Umbraco Workflow 17, including all c
 * Tightens lock-active-content setting. When active, content will now be locked at submit, rather than after the first approval. This ensures the comment added at submit always aligns with the content being approved [#180](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/180)
 * Normalizes approval group languages when migrating from v13 [#181](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/181)
 * Fixes broken collection layout in latest Firefox [#182](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/182)
-* Decouples Workflow administrators from the CMS Administrator user group. Workflow administrators can now be assigned from the Workflow settings. A migration populates this setting with the membership of the CMS Administrators group, ensuring no behavioural change [#183](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/183)
+* Decouples Workflow administrators from the CMS Administrator user group. Workflow administrators can now be assigned from the Workflow settings. A migration populates this setting with the membership of the CMS Administrators group [#183](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/183)
 
 ### 17.5.0 (September 24 2026)
 
