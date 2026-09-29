@@ -73,7 +73,7 @@ These ingredients can be implicitly scored, explicitly scored, or a combination.
 6. Give the segment a title/name and add a description.
 7. Decide whether the segment will be temporary or not.
 8. Adjust the size of the control group under the **Advanced settings** if relevant.
-9. Click **Add segment** when you are done.
+9. Click **Submit** when you are done.
 
 As soon as you set up a segment, data collection will start. You can create and set up more segments depending on your target audiences.
 
