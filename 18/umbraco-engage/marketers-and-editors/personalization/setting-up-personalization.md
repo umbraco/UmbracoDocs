@@ -66,4 +66,4 @@ Here, you can specify to which pages or Document Types you want to apply the per
 
 ![Setting up Personalization](../../.gitbook/assets/engage-apply-personalization-to-multiple-pages-v16.png)
 
-With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. You can add CSS `JavaScript` via the button "**Include CSS/JavaScript**". The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.
+With multiple pages and Document Types you can either add in some additional `CSS` or `JavaScript` code or personalize the experience via code. Add the code in the **Custom code - CSS** and **Custom code - JavaScript** sections. The `CSS` and `JavaScript` will automatically be added to the pages where the segment applies.

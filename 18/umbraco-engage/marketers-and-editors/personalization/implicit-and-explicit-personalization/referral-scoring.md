@@ -15,7 +15,7 @@ description: >-
 
 ![Create referral group.](../../../.gitbook/assets/engage-personalization-referral-scoring-add-new-v16.png)
 
-4. Click **Save and close**
+4. Click **Submit**
 5. Go to the **Unscored referrals** tab
 6. Click **Assign**.
 

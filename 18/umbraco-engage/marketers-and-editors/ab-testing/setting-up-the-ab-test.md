@@ -23,7 +23,7 @@ To create a project:
 1. Go to **Engage** > **A/B Testing**.
 2. Click **Add new project**.
 3. Enter the **Name** and **Description** of the new project.
-4. Select **Save and close**.
+4. Select **Submit**.
 
 ![Create a project](../../.gitbook/assets/create-new-project.png)
 
@@ -35,13 +35,13 @@ Open the Umbraco content tree and select the A/B Tests Workspace View on the pag
 
 Make sure that you have access to the Workspace View. [These permissions can be specified](../settings/permissions.md) per Document Types or User Groups.
 
-When you open the Workspace View you will have an overview of all the A/B tests that are running or finished. You also have the option to **Create a new test**.
+When you open the Workspace View you will have an overview of all the A/B tests that are running or finished. You also have the option to **Create new test**.
 
 ![Use the A/B Tests Workspace View to get an overview of running tests and create new ones.](../../.gitbook/assets/engage-a-b-test-content-app-overview-v16.png)
 
 ## Configure the A/B test
 
-A test must belong to a project. If none exist yet, go to **Engage** > **A/B Testing** and select **Add new project** before creating your first test. The **Part of project** field only lists existing projects. There's no option to create one inline.
+A test must belong to a project. Select an existing project with **Choose** in the **Part of project** field. To create a new project without leaving the test, select **+** next to **Choose**.
 
 When you start a new test, you will have to specify the following:
 

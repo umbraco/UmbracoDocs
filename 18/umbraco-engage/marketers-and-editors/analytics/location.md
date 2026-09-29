@@ -8,7 +8,7 @@ description: Learn about what localization data is tracked and how you can view 
 Locations are not visible out of the box. You need to add a location provider which can be set up by a development team.
 {% endhint %}
 
-The localization information is displayed under the Location tab in the Analytics section of the Umbraco Engage dashboard:
+The localization information is displayed under the **Locations** tab in the **Analytics** section of Umbraco Engage:
 
 ![Location tab, located under the Analytics section](../../.gitbook/assets/Locations-tab-v16.png)
 

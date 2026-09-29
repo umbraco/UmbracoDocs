@@ -50,7 +50,7 @@ First, you need to create one or more campaign groups. Campaign groups allow gro
 
 You can create a group for a set of personas for example and assign scores to the group. Next, you can assign different campaigns to that group and every visitor who comes to the website via that campaign. They then get the points that are referred to the campaign group.
 
-You can add a new campaign group by clicking "**Add new group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that, you can specify specific points for this group:
+You can add a new campaign group by clicking "**Add campaign group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that, you can specify specific points for this group:
 
 ![Create new campaign group.](../../../.gitbook/assets/Create-new-campaign-group.png)
 
