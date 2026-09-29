@@ -19,7 +19,7 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 
 #### 18.1.6 (28th Sep 2026)
 
-* Added notification events for when a Commerce customer is created, updated, or saved, so you can hook into customer changes — for example, to automatically create a linked Umbraco member.
+* Added notification events for when a Commerce customer is created, updated, or saved, so you can hook into customer changes. For example, to automatically create a linked Umbraco member.
 
 #### 18.1.5 (22nd Sep 2026)
 
