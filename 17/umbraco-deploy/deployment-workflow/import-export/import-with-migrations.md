@@ -4,15 +4,15 @@ description: How to import content and schema while migrating them into newer al
 
 # Import with migrations
 
-As well as importing the content and schema directly, we also provide support for modifying the items as part of the process.
+As well as importing the content and schema directly, support is also provided for modifying the items as part of the process.
 
 For example, you may have taken an export from an Umbraco 8 site, and are looking to import it into a newer major version. In this situation, most content and schema will carry over without issue. However, you may have some items that are no longer compatible. Usually this is due to a property editor - either a built-in Umbraco one or one provided by a package. These may no longer be available in the new version.
 
-Often though there is a similar replacement. Using Deploy's import feature we can transform the exported content for the obsolete property into that used by the new one during the import. The migration to a content set compatible with the new versions can then be completed.
+Often though there is a similar replacement. Using Deploy's import feature, you can transform the exported content for the obsolete property into that used by the new one during the import. The migration to a content set compatible with the new versions can then be completed.
 
-For example, we can migrate from a Nested Content property in Umbraco 8 to a Block List in Umbraco 13.
+For example, you can migrate from a Nested Content property in Umbraco 8 to a Block List in Umbraco 13.
 
-We provide the necessary migration hooks for this to happen, divided into two types - **artifact migrators** and **property migrators**.
+The necessary migration hooks are provided for this to happen, divided into two types - **artifact migrators** and **property migrators**.
 
 ## Artifact migrators
 
@@ -28,7 +28,7 @@ Implementations to handle common migrations of Data Types from obsoleted propert
 - `ReplaceGridDataTypeArtifactMigrator` - migrates a Data Type based on the legacy Grid layout into the Block Grid
 - `ReplaceUnknownEditorDataTypeArtifactMigrator` - replaces any unknown editor alias with a label
 
-We've also made available base implementations that you can use to build your own migrations. You may need to handle the transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
+Base implementations are also made available that you can use to build your own migrations. You may need to handle the transfer of information between other obsolete and replacement property editors that you have in your Umbraco application.
 
 - `ArtifactMigratorBase<TArtifact>` - migrates the artifact of the specified type
 - `DataTypeArtifactMigratorBase` - migrates Data Type artifacts
@@ -40,7 +40,7 @@ We've also made available base implementations that you can use to build your ow
 
 Property migrators work to transform the content property data itself. They are used in the Deploy content connectors (documents, media and members) when the property editor is changed during an import:
 
-Again we have an interface:
+Again, there is an interface:
 
 - `IPropertyTypeMigrator`
 
@@ -63,7 +63,7 @@ Property editor changes are determined by comparing the `PropertyEditorAliases` 
 
 Migrators will run if you have registered them, so you can enable only the ones needed for your solution.
 
-You can do this via a composer, as in the following example. Here we register two of the migrators shipped with Umbraco Deploy:
+You can do this via a composer, as in the following example. This registers two of the migrators shipped with Umbraco Deploy:
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -118,13 +118,13 @@ When an import is started, the following happens:
 
 Umbraco Deploy ships with migrators to handle the conversion of core property editors as they have changed, been removed or replaced between versions.
 
-Open source migrators may be built by HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v17/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
+Open source migrators may be built by Umbraco HQ or the community for property editors found in community packages. They will be made available for [use](https://www.nuget.org/packages/Umbraco.Deploy.Contrib) and [review](https://github.com/umbraco/Umbraco.Deploy.Contrib/tree/v17/dev/src/Umbraco.Deploy.Contrib/Migrators) via the `Umbraco.Deploy.Contrib` package.
 
 ### Grid to Block Grid
 
 The Grid editor introduced in Umbraco 7 has been removed from Umbraco 14. Its functionality is replaced with the Block Grid.
 
-With Deploy migrators we have support for migrating Data Type configuration and property data between these property editors.
+With Deploy migrators, there is support for migrating Data Type configuration and property data between these property editors.
 
 Deploy adds the `ReplaceGridDataTypeArtifactMigrator` and `GridPropertyTypeMigrator` migrators by default, so using a custom migrator requires replacing the default ones:
 
@@ -161,7 +161,7 @@ These implementations make use of the following conventions to migrate the data:
       - `headline` - the default 'Textstring', falling back to the first `Umbraco.TextBox` editor.
       - `macro` and `embed` grid editors are converted into rich text editors.
       - `quote` or any other - use falling back to the first `Umbraco.TextArea` editor.
-    - The block label is also updated for the built-in grid editors, ensuring a nice preview is available (the WYSIWYG style previews are incompatible between these editors, so the custom views are not migrated);
+    - The block label is also updated for the built-in grid editors, ensuring a nice preview is available (the What You See Is What You Get (WYSIWYG) style previews are incompatible between these editors, so the custom views are not migrated);
   - Grid settings config and styles are migrated to a new element type with a random alias, prefixed with `gridSettings_` (this can be customized by overriding `MigrateGridSettings()`). This is because the migration only has context about the Data Type configuration (not the actual Data Type) and multiple Data Type can potentially use the same configuration (for config and styles), so there's no predictable way to create a unique alias. The migrated settings element type will have the property types added for the config and styles:
     - Each config setting is migrated to a property with an alias based on the key, prefixed with `setting_` and added below a 'Settings' property group;
     - Similarly, each style is migrated to a property with an alias based on the key, prefixed with `style_` and added below a 'Styles' property group;
@@ -182,7 +182,7 @@ These implementations make use of the following conventions to migrate the data:
     - `Umbraco.MediaPicker3` - removes `url('` from the beginning and `')` from the end of the value (commonly used as a modifier and added to the stored value), before trying to get the media item by a path.
     - All other values are returned as-is.
 
-Given the flexibility of the grid editor and Block Grid you may want to take further control over the migration. You can do that by creating your own migrator classes, that make use of our provided base classes. You would then register your own migrators instead of the ones shipped with Umbraco Deploy in your composer.
+Given the flexibility of the grid editor and Block Grid you may want to take further control over the migration. You can do that by creating your own migrator classes, that make use of the provided base classes. You would then register your own migrators instead of the ones shipped with Umbraco Deploy in your composer.
 
 The base classes provide the following functionality. Methods you should look to override to amend the default behavior have been noted above.
 
@@ -240,7 +240,7 @@ The artifact migrator adds the default DocTypeGridEditor configuration (with ali
 
 [Matryoshka](https://our.umbraco.com/packages/backoffice-extensions/matryoshka-tabs-for-umbraco-8/) was an Umbraco package that added tab support for document types in Umbraco. The feature was subsequently added to the product itself.
 
-We provide a migrator for this package in `Umbraco.Deploy.Contrib`.
+A migrator for this package is provided in `Umbraco.Deploy.Contrib`.
 
 This adds support for migrating Matryoshka Group Separators into native property groups. It removes the Matryoshka Data Types during import and migrates the document, media and member types. Native property groups are also changed into tabs, similarly to how they were displayed with Matryoshka installed.
 
@@ -264,9 +264,9 @@ internal sealed class DeployMigratorsComposer : IComposer
 
 As described above, the nested content to block list migration will occur register the corresponding migrator with your application.
 
-To help write your own migrations, we share the source code of an example that ships with Umbraco Deploy. This migration converts Nested Content to Block List.
+To help write your own migrations, the source code of an example that ships with Umbraco Deploy is shared here. This migration converts Nested Content to Block List.
 
-First we have the artifact migrator that handles the conversion of the configuration stored with a datatype:
+First, here is the artifact migrator that handles the conversion of the configuration stored with a datatype:
 
 <details>
 <summary><code>ReplaceNestedContentDataTypeArtifactMigrator.cs</code> (migrate Nested Content Data Type to Block List)</summary>
@@ -359,7 +359,7 @@ public class ReplaceNestedContentDataTypeArtifactMigrator : ReplaceDataTypeArtif
 
 </details>
 
-And secondly we have the property migrator that handles restructuring the content property data:
+And secondly, here is the property migrator that handles restructuring the content property data:
 
 <details>
 <summary><code>NestedContentPropertyTypeMigrator.cs</code> (migrate Nested Content property data to Block List)</summary>

@@ -107,15 +107,15 @@ The `ApiKey` is a random string (of at least 10 characters) set to the same valu
 
 ### Edition
 
-The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how we expect most customers to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
+The default value for this setting is `Default`, which configures Umbraco Deploy to work according to how most customers are expected to use the product. Umbraco schema, such as Document and Data Types, are serialized to disk as `.uda` files in save operations. These are checked into source control and used to update the schema in the upstream environments via a trigger from your CI/CD pipeline, or automatically if using Umbraco Cloud.
 
 Items managed by editors - content, media and optionally forms, dictionary items and members - are deployed between environments using the transfer and restore options available in the backoffice.
 
 It is possible to use this method for all Umbraco data, by setting the value of this setting to `BackOfficeOnly`. With this in place, all data, including what is typically considered as schema, are available for transfer via the backoffice.
 
-Our recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
+The recommended approach is to leave this setting as `Default` and use source control and a deployment pipeline to ensure that structural changes to Umbraco are always aligned with the code and template amends that use them.
 
-However, we are aware that some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
+However, some customers prefer the option to use the backoffice for all data transfers. If that is the case, the `BackOfficeOnly` setting will allow this.
 
 ### ExcludedEntityTypes <a href="#excludedentitytypes" id="excludedentitytypes"></a>
 
@@ -515,7 +515,7 @@ Deploy can [import content and/or schema previously exported from another Umbrac
 
 ### Webhook Events
 
-Umbraco Deploy can optionally register events that you can use with Umbraco webhooks. You can add them via code, for which we provide an extension method. The following example shows how you can use this within a composer.
+Umbraco Deploy can optionally register events that you can use with Umbraco webhooks. You can add them via code, using the extension method provided for this purpose. The following example shows how you can use this within a composer.
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
