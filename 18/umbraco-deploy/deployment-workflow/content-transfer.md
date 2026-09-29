@@ -95,4 +95,4 @@ Sometimes, a content transfer might not be possible. For example, if you add a n
 
 ![Schema mismatch](../.gitbook/assets/schema-mismatch.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to the article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
+This type of issue can occur when transferring content. See the article about [Schema Mismatch errors](../troubleshooting.md) to resolve schema mismatches.
