@@ -17,6 +17,7 @@ A full configuration with all default values can be seen here:
       "AllowPasswordReset": true,
       "AuthCookieName": "UMB_UCONTEXT",
       "AuthCookieDomain": "",
+      "AuthCookieSameSite": "Strict",
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
       "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
@@ -47,11 +48,7 @@ A full configuration with all default values can be seen here:
       "UserDefaultFailedLoginDurationInMilliseconds": 1000,
       "UserMinimumFailedLoginDurationInMilliseconds": 250,
       "PasswordResetEmailExpiry": "01:00:00",
-      "UserInviteEmailExpiry": "3.00:00:00",
-      "BackOfficeTokenCookie": {
-        "SameSite": "Strict",
-        "SiteName": ""
-      }
+      "UserInviteEmailExpiry": "3.00:00:00"
     }
   }
 }
@@ -75,13 +72,28 @@ This feature allows users to reset their passwords if they have forgotten them. 
 
 ### Auth cookie name
 
-The authentication cookie which is set in the browser when a backoffice user logs in, and defaults to `UMB_UCONTEXT`.
+The name of the authentication cookie that Umbraco sets in the browser when a backoffice user logs in. The default is `UMB_UCONTEXT`.
 
-Set this to a unique value per site when you run more than one Umbraco site on the same hostname. This includes sites running on `localhost` during local development. See [Site name](#site-name) for the full set of settings needed.
+The authentication cookie holds the backoffice session. The browser sends it with every request the backoffice makes to the server.
+
+Set this to a unique value per site when you run more than one Umbraco site on the same hostname. This includes sites running on `localhost` during local development. See [Run more than one site on the same hostname](#run-more-than-one-site-on-the-same-hostname) for an example.
 
 ### Auth cookie domain
 
 The authentication cookie which is set in the browser when a backoffice user logs in is automatically set to the current domain.
+
+### Auth cookie SameSite
+
+Key: `AuthCookieSameSite`
+Type: `string` (default: `"Strict"`)
+
+Sets the `SameSite` attribute of the authentication cookie. Valid values are "Strict" (default), "Lax", "None", and "Unspecified".
+
+Keep the default in production. The `SameSite` attribute stops cross-site requests from carrying the authentication cookie. The Management API has no antiforgery tokens, so the attribute is its protection against cross-site request forgery.
+
+Only set the value to "None" when the backoffice runs on a different origin than the Umbraco server. For example, when you develop against a local dev server configured as the [BackOffice Host](#backoffice-host). Browsers accept a `SameSite=None` cookie only with the `Secure` attribute, which requires HTTPS. If a proxy terminates HTTPS in front of Umbraco, also set `UseHttps` to `true` in the [global settings](globalsettings.md).
+
+Umbraco logs a warning at startup when the value is "None" outside the `Development` environment. Umbraco does not replace an unrecognized value with the default. It reports a configuration error instead.
 
 ### Username is email
 
@@ -213,52 +225,30 @@ Options are:
 
 This section allows you to define the password rules for members. This section is identical to the one for users.
 
-## Backoffice token cookie settings
+## Run more than one site on the same hostname
 
-User authentication tokens are redacted from the server's authentication responses and put into secure cookies instead. This section lets you change the default settings for the generated token cookies.
+Browsers scope cookies to the hostname and ignore the port number. Two sites running on `https://localhost:44301` and `https://localhost:44302` share the same cookies. With the default settings, both sites use the `UMB_UCONTEXT` authentication cookie. Signing in to one site then signs you out of the other.
 
-### Same site
+Configure a unique [auth cookie name](#auth-cookie-name) for each site to stay signed in to both sites at the same time:
 
-Sets the `SameSite` configuration for the token cookies. Valid values are "Unspecified", "None", "Lax", and "Strict" (default).
-
-It is not recommended to change this setting, as it may result in lesser security for the backoffice users.
-
-### Site name
-
-The `SiteName` configuration appends a suffix to the names of the backoffice token cookies, so that each site can have its own cookies.
-
-Use this when you run more than one Umbraco site on the same hostname. Browser cookies are scoped to the hostname and ignore the port number, so two sites running on `https://localhost:44301` and `https://localhost:44302` share the same cookies. Signing in to one site then signs you out of the other. Unique cookie names allow for signing in to more than one backoffice simultaneously.
-
-The value is appended to the cookie names exactly as written, so include any separator you want yourself. It must be valid in a cookie name, so avoid spaces and the characters `=`, `;`, and `,`.
-
-| `SiteName`     | Resulting cookie names                                                                    |
-| -------------- | ----------------------------------------------------------------------------------------- |
-| `""` (default) | `__Host-umbAccessToken`, `__Host-umbRefreshToken`, `__Host-umbPkceCode`                   |
-| `"-siteA"`     | `__Host-umbAccessToken-siteA`, `__Host-umbRefreshToken-siteA`, `__Host-umbPkceCode-siteA` |
-
-Sites running over plain HTTP do not get the `__Host-` prefix on the cookie names.
-
-#### Configuration example
-
-`SiteName` only covers the token cookies. The backoffice authentication cookie is shared between the sites as well, so also configure a unique [auth cookie name](#auth-cookie-name) for each site. Without it, a site signs you out again the next time it needs to re-authenticate the user. This happens after the session expires, or when signing in with an external login provider.
-
-Configure both settings, using values that are unique to each site:
-
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
   "CMS": {
     "Security": {
-      "AuthCookieName": "UMB_UCONTEXT_SITEA",
-      "BackOfficeTokenCookie": {
-        "SiteName": "-siteA"
-      }
+      "AuthCookieName": "UMB_UCONTEXT_SITEA"
     }
   }
 }
 ```
+{% endcode %}
+
+The value must be valid in a cookie name, so avoid spaces and the characters `=`, `;`, and `,`.
 
 As an alternative to configuring cookie names, give each site its own hostname. For example, map `sitea.localtest.me` and `siteb.localtest.me` to your local sites.
 
 {% hint style="info" %}
-This setting is not related to the `SiteName` setting in the [hosting settings](hostingsettings.md). That setting names the site in the hosting environment and has no effect on cookies.
+Umbraco 17 and 18 also stored the backoffice tokens in cookies, configured in a `BackOfficeTokenCookie` section. Umbraco 19 authenticates the backoffice with the authentication cookie alone, and removes the token cookies along with that section.
+
+Umbraco ignores the section and logs a warning at startup while it is present. Replace `BackOfficeTokenCookie:SiteName` with a unique `AuthCookieName`, and `BackOfficeTokenCookie:SameSite` with `AuthCookieSameSite`.
 {% endhint %}
