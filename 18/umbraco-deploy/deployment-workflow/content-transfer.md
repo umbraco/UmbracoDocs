@@ -11,7 +11,7 @@ Transfers are flexible, which means you have complete control over which items y
 Transferring items will overwrite the same item on the target environment if it already exists. A transfer will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source".
 
 {% hint style="warning" %}
-Transfers will only work if you've **deployed all changes to your metadata beforehand**. Please refer to our documentation on [how to deploy metadata](deploying-changes.md) to learn more.
+Transfers will only work if you've **deployed all changes to your metadata beforehand**. Please refer to the documentation on [how to deploy metadata](deploying-changes.md) to learn more.
 {% endhint %}
 
 ## Transfer Queue
@@ -95,4 +95,4 @@ Sometimes, a content transfer might not be possible. For example, if you add a n
 
 ![Schema mismatch](../.gitbook/assets/schema-mismatch.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
+If you are seeing this type of issue when trying to transfer content, head over to the article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
