@@ -83,7 +83,7 @@ A script can only make outbound `fetch` calls when both of these are on:
 
 To restrict which hosts scripts can call, list them in `Scripting:FetchAllowedHosts`. When the list is empty, `fetch` can call any public host. `fetch` follows the same destination rules as the HTTP Request action. See [Outbound Requests](../getting-started/configuration.md#outbound-requests).
 
-When a `fetch` request fails, the promise rejects with a short error message, for example `http request was blocked` or `fetch failed: connection refused`. Automate writes the full details to the server log.
+When a `fetch` request fails, the promise rejects with a short error message, for example, `http request was blocked` or `fetch failed: connection refused`. Automate writes the full details to the server log.
 
 {% endhint %}
 

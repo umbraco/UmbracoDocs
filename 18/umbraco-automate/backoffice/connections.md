@@ -38,7 +38,7 @@ A connection only appears in an action's connection picker when its workspace ha
 
 ## Authenticate an OAuth Connection
 
-OAuth connection types, such as Slack, have an **Authenticate** button. It opens the provider's sign-in page in a popup window. After you sign in, the connection editor shows the connection as connected. Save the connection to keep the new authentication.
+OAuth connection types, such as Slack, have an **Authenticate** button. It opens the provider's sign-in page in a pop-up window. After you sign in, the connection editor shows the connection as connected. Save the connection to keep the new authentication.
 
 If the browser blocks the popup, the editor shows a warning with a **Continue in this tab** button. The button reads **Save and continue in this tab** when the connection is new or has unsaved changes, and saves the connection first. Select it to sign in with the provider in the same browser tab. After signing in, you return to the connection with the authentication applied. Click **Save** to keep it.
 
