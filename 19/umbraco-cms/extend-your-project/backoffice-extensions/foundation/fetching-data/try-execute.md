@@ -4,7 +4,7 @@ description:: Learn how to execute requests in the Backoffice.
 
 # Executing Requests
 
-Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and automatically refreshes the token if it has expired. If the session has expired, it prompts the user to log in again.
+Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and shows a notification when a request fails. If the session has expired, the Umbraco HTTP Client opens the login dialog.
 
 {% hint style="info" %}
 You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/functions/packages_core_resources.tryExecute.html) class.
@@ -35,7 +35,7 @@ The `tryExecute` function takes the context of the current class or element as t
 The above example requires a host element illustrated by the use of `this`. This is typically a custom element that extends the `UmbLitElement` class.
 {% endhint %}
 
-It is recommended to always use the `tryExecute` function to wrap HTTP requests. It simplifies error handling, manages token expiration, and ensures a consistent user experience in the Backoffice.
+It is recommended to always use the `tryExecute` function to wrap HTTP requests. It simplifies error handling and ensures a consistent user experience in the Backoffice.
 
 ### Disabling Notifications
 

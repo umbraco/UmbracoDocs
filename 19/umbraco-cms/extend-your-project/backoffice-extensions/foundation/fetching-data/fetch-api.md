@@ -47,27 +47,21 @@ When using the Fetch API, you need to manually handle errors and authentication.
 
 ## Authentication
 
-When making requests to the Umbraco API controllers, you may need to include an authorization token in the request headers. This is especially important when making requests to endpoints that require authentication.
+The backoffice session is an HTTP-only authentication cookie. Set `credentials: 'include'` on the request so the browser sends the cookie along. Scripts in the browser cannot read the cookie, and there is no token to add to the request headers.
 
-The Fetch API does not automatically include authentication tokens in requests. Add the authentication token to the request headers manually. The recommended approach in the Backoffice is to use the **UMB\_AUTH\_CONTEXT**. This context provides tools to manage authentication tokens and ensures that your requests are properly authenticated.
+### Example: Making an authenticated request
 
-### Example: Using `UMB_AUTH_CONTEXT` for Authentication
-
-The following example demonstrates how to use `UMB_AUTH_CONTEXT` to retrieve the latest token and make an authenticated request:
+The following example gets the URL of the Umbraco server from `UMB_SERVER_CONTEXT`. The URL matters when the backoffice runs on a different origin than the server, such as a local dev server.
 
 ```javascript
-import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { UMB_SERVER_CONTEXT } from '@umbraco-cms/backoffice/server';
 
-async function fetchData(host, endpoint) {
-  const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-  const token = await authContext?.getLatestToken();
+async function fetchData(host, path) {
+  const serverContext = await host.getContext(UMB_SERVER_CONTEXT);
+  const serverUrl = serverContext?.getServerUrl() ?? '';
 
-  const response = await fetch(endpoint, {
+  const response = await fetch(`${serverUrl}${path}`, {
     credentials: 'include',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
   });
 
   if (!response.ok) {
@@ -83,22 +77,21 @@ console.log(data);
 ```
 
 {% hint style="warning" %}
-When using the Fetch API with `UMB_AUTH_CONTEXT`, you need to handle token expiration errors manually. If the token is expired, the request will return a 401 error. You will need to refresh the token or prompt the user to log in again.
+Requests made with the Fetch API do not pass through the interceptors of the backoffice:
+
+* A 401 response does not open the login dialog, so handle the response yourself.
+* The backoffice does not register the request as activity. The server renews the session, but the backoffice can show the session timeout warning earlier than needed.
+
+Use the [Umbraco HTTP Client](http-client.md) when you need the backoffice to handle these cases.
 {% endhint %}
 
-Why Use **UMB\_AUTH\_CONTEXT**?
-
-* Simplifies Token Management: Automatically retrieves and refreshes tokens when needed.
-* Aligns with Best Practices: Ensures your requests are authenticated in a way that integrates seamlessly with the Backoffice.
-* Reduces Errors: Avoids common pitfalls like expired tokens or incorrect headers.
-
 {% hint style="info" %}
-The **UMB\_AUTH\_CONTEXT** is only available in the Backoffice. For external applications, you will need to manage tokens manually or use an API user. Read more about API users in the [API Users](../../../../manage-and-publish-content/users-and-members/users/api-users.md) article.
+The authentication cookie only exists in the backoffice. External applications authenticate with an API user instead. Read more about API users in the [API Users](../../../../manage-and-publish-content/users-and-members/users/api-users.md) article.
 {% endhint %}
 
 ## Management API Controllers
 
-The Fetch API can also be used to make requests to the Management API controllers. The Management API is a set of RESTful APIs that allow you to interact with Umbraco programmatically. You can use the Fetch API to make requests to the Management API controllers like you would with any other API. The Management API controllers are located in the `/umbraco/api/management` namespace. You can use the Fetch API to make requests to these controllers like you would with any other API.
+The Fetch API can also be used to make requests to the Management API controllers. The Management API is a set of REST APIs that allow you to interact with Umbraco programmatically. You can use the Fetch API to make requests to the Management API controllers like you would with any other API. The Management API controllers are located in the `/umbraco/api/management` namespace. You can use the Fetch API to make requests to these controllers like you would with any other API.
 
 ### API User
 
@@ -106,47 +99,48 @@ You can create an API user in Umbraco to authenticate requests to the Management
 
 You can read more about this concept in the [API Users](../../../../manage-and-publish-content/users-and-members/users/api-users.md) article.
 
-### Backoffice Token
+### Current backoffice user
 
-The Fetch API can also be used to make requests to the Management API using a Backoffice token. This is useful for making requests from custom components that are running in the Backoffice. The concept is similar to the API Users, but the Backoffice token represents the current user in the Backoffice. You will share the access policies of the current user, so you can use the token to make requests on behalf of the current user.
+The Fetch API can also call the Management API as the current backoffice user. This is useful for custom components that run in the backoffice. The concept is similar to API Users, but the requests share the access policies of the current user.
 
-To use the Backoffice access token, you will have to consume the **UMB\_AUTH\_CONTEXT** context. You can use the `getLatestToken()` method to get the current access token.
-
-It is rather tiresome to manually add the token to each request. Therefore, you can wrap the Fetch API in a custom function that automatically adds the token to the request headers:
+Set `credentials: 'include'` on each request so the browser sends the authentication cookie. You can wrap the Fetch API in a custom function to avoid repeating the options on every request:
 
 ```typescript
-import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { UMB_SERVER_CONTEXT } from '@umbraco-cms/backoffice/server';
 import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
 
 /**
- * Make an authorized request to any Backoffice API.
+ * Make a request to any Backoffice API as the current user.
  * @param host A reference to the host element that can request a context.
- * @param url The URL to request.
+ * @param path The path to request, relative to the Umbraco server.
  * @param method The HTTP method to use.
  * @param body The body to send with the request (if any).
  * @returns The response from the request as JSON.
  */
-async function makeRequest(host: UmbClassInterface, url: string, method = 'GET', body?: any) {
-  const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-  const token = await authContext?.getLatestToken();
-  const response = await fetch(url, {
+async function makeRequest(host: UmbClassInterface, path: string, method = 'GET', body?: unknown) {
+  const serverContext = await host.getContext(UMB_SERVER_CONTEXT);
+  const response = await fetch(`${serverContext?.getServerUrl() ?? ''}${path}`, {
     method,
     credentials: 'include',
     body: body ? JSON.stringify(body) : undefined,
     headers: {
-      'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
   });
+
+  if (!response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+
   return response.json();
 }
 ```
 
-The above example illustrates the process of making a request to the Management API. The function does not handle errors or responses, so you will need to add that logic yourself. If the token has expired, you will get a 401 error back.
+The function throws an error when the response is not successful, so `tryExecute` can report it. Add any other response handling you need yourself.
 
 ## Executing the request
 
-Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v18/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
+Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v18/ui-api/functions/packages_core_resources.tryExecute.html) function. This function handles any errors that occur during the request and shows a notification when a request fails. A Fetch API request does not pass through the interceptors of the backoffice, so `tryExecute` does not open the login dialog for it.
 
 **Example:**
 
@@ -173,4 +167,4 @@ You can read more about the `tryExecute` function in this article:
 
 The Fetch API is a powerful and flexible way to make network requests in JavaScript. It is available in all modern browsers and is the recommended way to make network requests in JavaScript. The Fetch API can be used in Umbraco to make network requests to the server. It can also be used to make requests to the Management API controllers. You can use the Fetch API to make requests to any endpoint in the Management API. You can also use it to handle responses in a variety of formats. This is useful if you only need to make a few requests.
 
-However, if you have a lot of requests to make, you might want to consider an alternative approach. You could use a library like [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate a TypeScript client. The library requires an OpenAPI definition and allows you to make requests to the Management API without having to manually write the requests yourself. The generated client will only need the token once. This can save you a lot of time and effort when working with the Management API. The Umbraco Backoffice itself is running with this library and even exports its internal HTTP client. You can read more about this in the [HTTP Client](http-client.md) article.
+However, if you have a lot of requests to make, you might want to consider an alternative approach. You could use a library like [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate a TypeScript client. The library requires an OpenAPI definition and allows you to make requests to the Management API without having to manually write the requests yourself. You configure the generated client once, and it handles authentication for every request. This can save you a lot of time and effort when working with the Management API. The Umbraco Backoffice itself is running with this library and even exports its internal HTTP client. You can read more about this in the [HTTP Client](http-client.md) article.

@@ -44,11 +44,11 @@ The Umbraco HTTP Client is a wrapper around the Fetch API that provides a more c
 
 ## Handle Requests
 
-Once you have chosen a method to fetch data, the next step is to handle the execution of requests. This includes managing errors, refreshing tokens, and ensuring proper authentication.
+Once you have chosen a method to fetch data, the next step is to handle the execution of requests. This includes managing errors and handling an expired session.
 
 ## [Executing Requests](try-execute.md)
 
-After fetching data, the next step is to execute the request. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
+After fetching data, the next step is to execute the request. You can use the `tryExecute` function to handle errors.
 
 ## Advanced Topics
 
