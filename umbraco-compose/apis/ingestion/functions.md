@@ -28,7 +28,7 @@ https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{e
 ```
 
 {% hint style="info" %}
-Ingestion functions can be managed using the [Management Api](https://apidocs.umbracocompose.com#tag/ingestionfunctions).
+Ingestion functions can be managed using the [Management API](https://apidocs.umbracocompose.com#tag/ingestionfunctions).
 {% endhint %}
 
 ```json
