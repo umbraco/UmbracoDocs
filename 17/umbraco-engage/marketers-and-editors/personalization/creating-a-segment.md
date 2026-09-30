@@ -20,7 +20,7 @@ To create a new segment, follow these steps:
 
 1. Navigate to the segment builder section.
 2. Click **Add new segment**.
-3. Give the new segment a **Name** and a short **Description**.
+3. Give the new segment a **Title** and a short **Description**.
 4. Select a segment type:
    * **Core segments** are the fundamental building blocks of your personalization strategy
    * **Temporary segments** are segments **with an end date**. If some sort of campaign is running and you want to overrule existing segments you can create a temporary segment. To do this you need to specify an end date
@@ -36,8 +36,12 @@ By default, Umbraco Engage provides the following parameters:
 * Browser
 * Device type
 * Time of day
+* Location
 * Number of sessions
+* Visited pages
 * Logged in members
+* Registered members
+* Event triggered
 * Reached goals
 * Campaigns
 
@@ -56,11 +60,11 @@ You will see all browsers that have visited the website. So if you're missing a 
 
 <div align="left"><figure><img src="../../.gitbook/assets/personalization-segments-applied-parameters-v16.png" alt="Applied parameters."><figcaption><p>Applied parameters.</p></figcaption></figure></div>
 
-4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **Until** empty.
+4. Add a parameter for **Time of day** to select all visitors after "**15:00**". Enter **15:00** in **From** and leave **To** empty.
 
 <figure><img src="../../.gitbook/assets/Personalization-add-new-segment-time-v16.png" alt="Time of day."><figcaption><p>Time of day.</p></figcaption></figure>
 
-5. Save this parameter and add the segment.
+5. Select **Save parameter**, and then select **Submit** to add the segment.
 
 We have now created a first segment and you will find that segment in the overview of your segments:
 
@@ -68,7 +72,7 @@ We have now created a first segment and you will find that segment in the overvi
 
 ## Editing and Deleting Segments
 
-You can edit or delete segments using the icons next to each segment in the overview. Segments can only be deleted if there is no personalization applied to the segment. The third column shows how often the segment is used:
+You can edit or delete segments using the icons next to each segment in the overview. Segments can only be deleted if there is no personalization applied to the segment. The **Applied** column shows how often the segment is used:
 
 <figure><img src="../../.gitbook/assets/image (2) (3).png" alt="Applied segments.Used segments."><figcaption><p>Used segments.</p></figcaption></figure>
 
@@ -80,7 +84,7 @@ If you try to delete this segment, a popup notifies that personalization is appl
 
 <div align="left"><figure><img src="../../.gitbook/assets/image (4) (3).png" alt="Deletion popup"><figcaption><p>Deletion popup.</p></figcaption></figure></div>
 
-The popup shows which pages the personalization is applied and you can click directly on these pages.
+The popup lists the personalizations that use the segment. Select the edit icon next to a personalization to open it.
 
 ## Ordering Segments
 

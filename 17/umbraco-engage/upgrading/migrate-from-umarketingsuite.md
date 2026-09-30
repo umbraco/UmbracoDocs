@@ -323,9 +323,9 @@ Umbraco Engage will automatically convert cookies previously set by uMarketingSu
 With the migration complete, there are a few more steps to ensure everything continues to work as expected.
 
 1. Validate the new license:
-   * Go to Settings -> Licenses in the backoffice and click **Validate**.
+   * Go to **Settings** > **Licenses** in the backoffice and click **Validate**.
 2. Generate the reporting data:
-   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Go to **Settings** > **Engage** > **Configuration** in the backoffice.
    * Select the Reporting tab.
    * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 3. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
@@ -343,9 +343,9 @@ Repeat the steps below for each environment that needs to be migrated.
 5. Deploy the updated code from the migrated local environment.
 6. Start the site.
 7. Validate the new license, if this has not happened already:
-   * Go to Settings -> Licenses in the backoffice and click **Validate**.
+   * Go to **Settings** > **Licenses** in the backoffice and click **Validate**.
 8. Generate the reporting data
-   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Go to **Settings** > **Engage** > **Configuration** in the backoffice.
    * Select the Reporting tab.
    * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
