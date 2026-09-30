@@ -40,7 +40,7 @@ https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_med
 
 Now that you've created URLs for campaigns they will automatically be tracked by Umbraco Engage and you can score them for implicit personalization purposes.
 
-Navigating to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
+Navigating to **Personalization** > **Campaign Scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
 ![Scoring your campaign](../../../.gitbook/assets/engage-personalization-campaign-scoring-v16.png)
 

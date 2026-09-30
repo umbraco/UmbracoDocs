@@ -6,7 +6,7 @@ description: >-
 
 # Referral Scoring
 
-1. Go to **Engage** -> **Personalization** -> **Referral Scoring**.
+1. Go to **Engage** > **Personalization** > **Referral Scoring**.
 2. Click **Add referral group**.
 
 ![Create referral group.](../../../.gitbook/assets/engage-personalization-referral-scoring-v16.png)
