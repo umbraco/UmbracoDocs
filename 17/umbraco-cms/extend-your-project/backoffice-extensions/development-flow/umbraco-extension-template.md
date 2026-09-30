@@ -97,7 +97,7 @@ This command compiles the TypeScript files and copies them over to the `wwwroot`
 
 ### Fix an ERESOLVE Error From npm install
 
-Extensions created from the Umbraco 17.3 to 17.7.0 templates can fail to install on Umbraco 17.7.0 or later, with an error like this:
+Extensions created from the Umbraco 17.0 to 17.7.0 templates can fail to install on Umbraco 17.7.0 or later, with an error like this:
 
 ```text
 npm error ERESOLVE unable to resolve dependency tree
@@ -120,12 +120,19 @@ From Umbraco 17.7.0, `@umbraco-cms/backoffice` requires `@hey-api/openapi-ts` 0.
     {% endcode %}
 
 4. In `scripts/generate-openapi.js`, remove the `@hey-api/client-fetch` plugin entry that sets `runtimeConfigPath: '../hey-api'`. The next `npm run generate-client` then creates the client without it.
-5. Check that `src/entrypoints/entrypoint.ts` calls `configureClient()` in `onInit`. Extensions created from the 17.3 template need to add the call:
+5. Check that `src/entrypoints/entrypoint.ts` calls `configureClient()` in `onInit`. Extensions created from the 17.3 template need to add the call. Add the two imports, make `onInit` async, and rename its `_host` parameter to `host`:
 
     {% code title="src/entrypoints/entrypoint.ts" %}
     ```typescript
-    const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-    authContext?.configureClient(client);
+    import { UMB_AUTH_CONTEXT } from "@umbraco-cms/backoffice/auth";
+    import { client } from "../api/client.gen.js";
+
+    export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
+      const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+      authContext?.configureClient(client);
+
+      console.log("Hello from my extension 🎉");
+    };
     ```
     {% endcode %}
 
