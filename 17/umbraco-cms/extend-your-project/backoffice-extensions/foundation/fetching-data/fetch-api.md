@@ -162,17 +162,21 @@ import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
 
 export async function createAxiosClient(host: UmbClassInterface) {
   const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-  const config = authContext?.getOpenApiConfiguration();
+  if (!authContext) {
+    throw new Error('UMB_AUTH_CONTEXT is not available, so the Axios client cannot be configured');
+  }
+
+  const config = authContext.getOpenApiConfiguration();
 
   const instance = axios.create({
-    baseURL: config?.base,
+    baseURL: config.base,
     // Send the authentication cookies, also when the Backoffice runs on another origin
-    withCredentials: config?.credentials === 'include',
+    withCredentials: config.credentials === 'include',
   });
 
   // Ask for the token on every request, so each request gets the latest one
   instance.interceptors.request.use(async (request) => {
-    const token = await config?.token();
+    const token = await config.token();
     if (token) {
       request.headers.Authorization = `Bearer ${token}`;
     }

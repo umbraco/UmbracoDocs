@@ -39,7 +39,9 @@ Your generated client needs the correct base URL, credentials, and authenticatio
 * Sets `baseUrl` to the URL of the Umbraco server.
 * Sets `credentials: 'include'`, so the browser sends the authentication cookies with every request.
 * Sets the `auth` callback, which supplies the access token for requests that carry `security` metadata. See [How security metadata works](#how-security-metadata-works).
-* Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They also show notifications for failed requests.
+* Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
+
+To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.
