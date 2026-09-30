@@ -80,6 +80,12 @@ The `client` export comes from the `client.gen.ts` file that `@hey-api/openapi-t
 
 ### Using `runtimeConfigPath` (Umbraco 17.3 and earlier)
 
+{% hint style="warning" %}
+
+From Umbraco 17.7, this setup fails to build when your client was generated with an older version of `@hey-api/openapi-ts`. The `umbHttpClient` in 17.7 is generated with version 0.99, and its configuration no longer matches the types of the older client. Switch to `configureClient()` when you upgrade. The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) article lists the steps.
+
+{% endhint %}
+
 To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags.
 
 1. Create `openapi-ts.config.ts` in your project root:
