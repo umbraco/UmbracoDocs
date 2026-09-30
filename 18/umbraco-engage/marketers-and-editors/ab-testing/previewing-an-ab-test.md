@@ -10,7 +10,7 @@ There are different ways to preview your A/B Test variants.
 
 ## During the setup of your new A/B Test
 
-When setting up a new A/B Test, you can open the preview of a variant by selecting **Preview** next to it in the overview of variants:
+You can preview a variant while setting up a new A/B Test. Select **Preview** next to the variant in the overview of variants:
 
 ![Open the preview of your variant by clicking on the preview button in the overview of variants when setting up the test.](../../.gitbook/assets/engage-ab-preview-v16-1.png)
 
