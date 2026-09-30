@@ -115,7 +115,7 @@ To personalize content, segmentation needs to be allowed on the Document Types a
 4. **Save** the Document Types.
 5. Access the **Design** view for the same Document Type.
 6. Select the property where segmentation should be allowed.
-7. Turn on **Shared across segments** under **Variation**.
+7. Turn off **Shared across segments** under **Variation**.
 8. **Submit** the changes.
 9. Repeat steps 6-8 for each property that should allow segmentation.
 10. **Save** the Document Type.
