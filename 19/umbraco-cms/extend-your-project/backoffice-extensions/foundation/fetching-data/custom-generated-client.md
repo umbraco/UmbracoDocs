@@ -38,7 +38,9 @@ Your generated client needs the URL of the Umbraco server, and it must send the 
 
 * Sets `baseUrl` to the URL of the Umbraco server.
 * Sets `credentials: 'include'`, so the browser sends the authentication cookie with every request.
-* Adds the default response interceptors of the backoffice. They open the login dialog when the session has expired and show notifications for failed requests. They also count successful requests as activity for the session timeout.
+* Adds the default response interceptors of the backoffice. They open the login dialog when the session has expired, and count successful requests as activity for the session timeout. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
+
+To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md).
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.

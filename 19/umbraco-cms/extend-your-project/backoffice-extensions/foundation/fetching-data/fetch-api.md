@@ -152,9 +152,12 @@ import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
 
 export async function createAxiosClient(host: UmbClassInterface) {
   const serverContext = await host.getContext(UMB_SERVER_CONTEXT);
+  if (!serverContext) {
+    throw new Error('UMB_SERVER_CONTEXT is not available, so the Axios client cannot be configured');
+  }
 
   return axios.create({
-    baseURL: serverContext?.getServerUrl(),
+    baseURL: serverContext.getServerUrl(),
     // Send the authentication cookie, also when the Backoffice runs on another origin
     withCredentials: true,
   });
