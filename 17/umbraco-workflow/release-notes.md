@@ -16,6 +16,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.5.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.2) (September 30 2026)
+
+* Ensures entity bulk actions are included in Workflow's action-visibility condition [#184](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/184)
+
 ### [17.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.1) (September 29 2026)
 
 * Tightens `lock-active-content` setting. When active, content will now be locked at submit, rather than after the first approval. This ensures the comment added at submit always aligns with the content being approved [#180](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/180)
