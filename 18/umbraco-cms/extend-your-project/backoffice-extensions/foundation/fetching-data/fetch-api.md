@@ -144,6 +144,50 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
 
 The above example illustrates the process of making a request to the Management API. The function does not handle errors or responses, so you will need to add that logic yourself. If the token has expired, you will get a 401 error back.
 
+## Other HTTP libraries
+
+You can also use another HTTP library, such as [Axios](https://axios-http.com/), instead of the Fetch API. The `getOpenApiConfiguration()` method on the **UMB\_AUTH\_CONTEXT** returns what the library needs to talk to the Management API:
+
+* `base`: the URL of the Umbraco server.
+* `credentials`: set to `'include'`, so the browser sends the authentication cookies.
+* `token()`: a function that returns the latest access token.
+
+The following example creates an Axios instance with these values:
+
+{% code title="src/api/axios-client.ts" %}
+```typescript
+import axios from 'axios';
+import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
+
+export async function createAxiosClient(host: UmbClassInterface) {
+  const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+  const config = authContext?.getOpenApiConfiguration();
+
+  const instance = axios.create({
+    baseURL: config?.base,
+    // Send the authentication cookies, also when the Backoffice runs on another origin
+    withCredentials: config?.credentials === 'include',
+  });
+
+  // Ask for the token on every request, so each request gets the latest one
+  instance.interceptors.request.use(async (request) => {
+    const token = await config?.token();
+    if (token) {
+      request.headers.Authorization = `Bearer ${token}`;
+    }
+    return request;
+  });
+
+  return instance;
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Requests made with another HTTP library do not pass through the interceptors of the Backoffice. A 401 response does not prompt the user to log in again, so handle the response yourself. Use the [Umbraco HTTP Client](http-client.md) when you need the Backoffice to handle it.
+{% endhint %}
+
 ## Executing the request
 
 Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v18/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.

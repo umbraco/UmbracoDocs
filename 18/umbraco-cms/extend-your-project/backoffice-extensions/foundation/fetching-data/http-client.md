@@ -29,6 +29,26 @@ The `security` array tells the client to invoke the `auth` callback, which provi
 You can also pass `umbHttpClient` as the `client` parameter to any generated SDK function. This lets the generated function use the backoffice's HTTP client (with its authentication) instead of its own. See [Custom Generated Client](custom-generated-client.md) for details.
 {% endhint %}
 
+## Sending data
+
+To send data, pass it as the `body`. The client serializes the body as JSON and sets the `Content-Type` header for you:
+
+```javascript
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
+const { data, error } = await umbHttpClient.post({
+	url: '/umbraco/myextension/api/v1/items',
+	body: { name: 'My item' },
+	security: [{ scheme: 'bearer', type: 'http' }],
+});
+
+if (error) {
+	console.error('The item could not be created:', error);
+}
+```
+
+The same applies to `put` and `patch`. The `security` array is needed here too, because the call does not come from a generated SDK function.
+
 ## Using the Umbraco HTTP Client
 
 The Umbraco HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles request and response parsing, error handling, and retries. The Umbraco HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
