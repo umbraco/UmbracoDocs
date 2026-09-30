@@ -4,7 +4,7 @@ description: Learn how to implement an IP to location provider.
 
 # Capture location data
 
-The localization information is displayed under the **Location** tab in the **Analytics** section of the Umbraco Engage dashboard.
+The localization information is displayed under the **Locations** tab in the **Analytics** section of the Umbraco Engage dashboard.
 
 Umbraco Engage Analytics natively supports storing and reporting localization information for incoming traffic. Localization refers to identifying the (physical) origin of an incoming request. Web requests from a visitor's browser do not contain location information. This means that you must implement this.
 
