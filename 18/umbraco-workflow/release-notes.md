@@ -16,7 +16,7 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
-### [18.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F12.2.2) (September 30 2026)
+### [18.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.2) (September 30 2026)
 
 * Ensures entity bulk actions are included in Workflow's action-visibility condition [#184](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/184)
 
