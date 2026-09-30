@@ -138,6 +138,36 @@ async function makeRequest(host: UmbClassInterface, path: string, method = 'GET'
 
 The function throws an error when the response is not successful, so `tryExecute` can report it. Add any other response handling you need yourself.
 
+## Other HTTP libraries
+
+You can also use another HTTP library, such as [Axios](https://axios-http.com/), instead of the Fetch API. Configure it the same way: use the URL of the Umbraco server as the base URL, and send the authentication cookie with every request. There is no token to add.
+
+The following example creates an Axios instance for the Backoffice:
+
+{% code title="src/api/axios-client.ts" %}
+```typescript
+import axios from 'axios';
+import { UMB_SERVER_CONTEXT } from '@umbraco-cms/backoffice/server';
+import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
+
+export async function createAxiosClient(host: UmbClassInterface) {
+  const serverContext = await host.getContext(UMB_SERVER_CONTEXT);
+
+  return axios.create({
+    baseURL: serverContext?.getServerUrl(),
+    // Send the authentication cookie, also when the Backoffice runs on another origin
+    withCredentials: true,
+  });
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+In Umbraco 17 and 18, `getOpenApiConfiguration()` on the **UMB\_AUTH\_CONTEXT** also supplied a `token()` for the `Authorization` header. In Umbraco 19, `token()` returns `undefined` and logs a deprecation warning, so remove the header.
+{% endhint %}
+
+Like Fetch API requests, requests made with another HTTP library do not pass through the interceptors of the Backoffice. Use the [Umbraco HTTP Client](http-client.md) when you need the Backoffice to handle an expired session.
+
 ## Executing the request
 
 Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v18/ui-api/functions/packages_core_resources.tryExecute.html) function. This function handles any errors that occur during the request and shows a notification when a request fails. A Fetch API request does not pass through the interceptors of the backoffice, so `tryExecute` does not open the login dialog for it.
