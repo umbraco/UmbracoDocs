@@ -13,11 +13,37 @@ For applications that support firing webhooks, there is another option. Ingestio
 
 Ingestion functions are JavaScript snippets that have access to the request body and headers of the webhook from your source application.
 
+## Creating a Function
+
+Ingestion functions are scoped to a specific environment on a project.
+
+You therefore need a project with an [Environment](../../content-orchestration/environments.md) to create a function.
+
+To create a new function, you need to send a `POST` request to an endpoint on the Management API.
+
+The endpoint looks like the one below, where you've replaced `{projectAlias}` and `{environmentAlias}` with values matching your project.
+
+```http
+https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
+```
+
+{% hint style="info" %}
+Ingestion functions can be managed using the [Management Api](https://apidocs.umbracocompose.com#tag/ingestionfunctions).
+{% endhint %}
+
+```json
+{
+    "ingestionFunctionAlias": "products-from-webshop",
+    "description": "maps products from webshop",
+    "script": "export default function(body){if(!Array.isArray(body)){return[]}return body.filter(product=>product.tags.includes('public')).map(product=>({action:'upsert',id:product.productKey,type:'product',data:{name:product.name,sku:product.sku,description:product.description}}));}"
+}
+```
+
 ## Function Basics
 
 Your function should be defined as the default export of a JavaScript module. It should return an array of objects containing the mapped content and the ingestion actions that Umbraco Compose should take on the content.
 
-An empty map function that will take no actions looks like the following:
+An empty function that will take no actions looks like the following:
 
 ```javascript
 export default function(body) {
@@ -62,6 +88,25 @@ export default function(body) {
 }
 ```
 
+## Working With the Request Body
+
+The first argument to an ingestion function contains the JSON body of the request used to invoke the function.
+
+### Request Body Arrays
+
+Array properties of the request body are actually _array-like_. They will behave like arrays by having the Array prototype, but they are not arrays. This includes nested properties, and also the body itself if you send an array.
+
+This means that they will:
+* Support typical Array prototype functions such as `map`, `filter`, `indexOf`, etc.
+* Be iterable using `for` and `for...in` loops.
+* Be indexable using square brackets (`[someIndex]`).
+
+However, _array-like_ properties on the body will return `false` from `Array.isArray(arrayLike)`.
+
+If you need to check whether a body property has _array-like_ behaviour, you should check for the Array prototype using `body.someProperty instanceof Array`. This will return true for _array-likes_.
+
+Arrays you create inside your function script are normal Javascript arrays.
+
 ## Accessing Request Headers
 
 The default export receives the headers of the incoming request as its second parameter. Use them to read information that the source system sends outside the request body.
@@ -89,8 +134,8 @@ Header names are case-insensitive. When a header is sent more than once, `get()`
 
 The headers object supports the following methods:
 
-| Method       | Description                                                        |
-| ------------ | ------------------------------------------------------------------ |
+| Method       | Description                                                         |
+| ------------ | ------------------------------------------------------------------- |
 | `get(name)`  | Returns the value of the header, or `null` if it is not present.    |
 | `has(name)`  | Returns `true` when the header is present.                          |
 | `keys()`     | Returns the names of all available headers.                         |
@@ -143,8 +188,8 @@ Only `http` and `https` URLs are supported.
 
 The second argument to `fetch` configures the request. The following options are supported:
 
-| Option     | Description                                                                                            |
-| ---------- | ------------------------------------------------------------------------------------------------------ |
+| Option     | Description                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------------- |
 | `method`   | The HTTP method to use. Defaults to `GET`.                                                              |
 | `body`     | The request body, as a string.                                                                          |
 | `headers`  | The headers to send with the request.                                                                   |
@@ -165,12 +210,12 @@ export default async function(body) {
 }
 ```
 
-### Working With the Response
+### Fetch Response
 
 The response returned by `fetch` supports the following properties and methods:
 
-| Member         | Description                                                             |
-| -------------- | ----------------------------------------------------------------------- |
+| Member         | Description                                                              |
+| -------------- | ------------------------------------------------------------------------ |
 | `ok`           | `true` when the response has a success status code.                      |
 | `status`       | The HTTP status code.                                                    |
 | `statusText`   | The reason phrase of the response.                                       |
@@ -183,31 +228,6 @@ The body can only be read once. Calling `json()` or `text()` a second time throw
 
 Methods not listed here are not implemented and will throw an error when called.
 
-## Creating a Function
-
-Ingestion functions are scoped to a specific environment on a project.
-
-You therefore need a project with an [Environment](../../content-orchestration/environments.md) to create a function.
-
-To create a new function, you need to send a `POST` request to an endpoint on the Management API.
-
-The endpoint looks like the one below, where you've replaced `{projectAlias}` and `{environmentAlias}` with values matching your project.
-
-```http
-https://management.umbracocompose.com/v1/projects/{projectAlias}/environments/{environmentAlias}/functions/ingestion
-```
-
-{% hint style="info" %}
-Ingestion functions can be managed using the [Management Api](https://apidocs.umbracocompose.com#tag/ingestionfunctions).
-{% endhint %}
-
-```json
-{
-    "ingestionFunctionAlias": "products-from-webshop",
-    "description": "maps products from webshop",
-    "script": "export default function(body){if(!Array.isArray(body)){return[]}return body.filter(product=>product.tags.includes('public')).map(product=>({action:'upsert',id:product.productKey,type:'product',data:{name:product.name,sku:product.sku,description:product.description}}));}"
-}
-```
 
 ## Invoking a Function
 
