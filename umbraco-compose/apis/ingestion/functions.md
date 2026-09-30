@@ -97,7 +97,7 @@ The first argument to an ingestion function contains the JSON body of the reques
 Array properties of the request body are actually _array-like_. They will behave like arrays by having the Array prototype, but they are not arrays. This includes nested properties, and also the body itself if you send an array.
 
 This means that they will:
-* Support typical Array prototype functions such as `map`, `filter`, `indexOf`, etc.
+* Support typical Array prototype functions such as `map`, `filter`, `indexOf`, and so on.
 * Be iterable using `for` and `for...in` loops.
 * Be indexable using square brackets (`[someIndex]`).
 
@@ -105,7 +105,7 @@ However, _array-like_ properties on the body will return `false` from `Array.isA
 
 If you need to check whether a body property has _array-like_ behaviour, you should check for the Array prototype using `body.someProperty instanceof Array`. This will return true for _array-likes_.
 
-Arrays you create inside your function script are normal Javascript arrays.
+Arrays you create inside your function script are normal JavaScript arrays.
 
 ## Accessing Request Headers
 
