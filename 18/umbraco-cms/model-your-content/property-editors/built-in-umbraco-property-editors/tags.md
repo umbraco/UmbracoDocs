@@ -30,7 +30,7 @@ There are built-in property value converters, which means you don't need to worr
 
 ### JSON tags
 
-![JSON tags example](../../../.gitbook/assets/Json-example-v8.png)
+![JSON tags example](../../../.gitbook/assets/Json-example.png)
 
 ### Tags typeahead
 
