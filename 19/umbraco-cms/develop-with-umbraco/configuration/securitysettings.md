@@ -22,6 +22,7 @@ A full configuration with all default values can be seen here:
       "MemberRequireUniqueEmail": true,
       "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
       "BackOfficeHost": "http://your-domain.com",
+      "CallbackPathName": "/umbraco",
       "UserPassword": {
         "RequiredLength": 10,
         "RequireNonLetterOrDigit": false,
@@ -110,6 +111,37 @@ Defines the allowed characters for a username.
 ### BackOffice Host
 
 Use this setting to override the Backoffice host URL. This is useful when the Backoffice client runs from a different origin than the Umbraco server. For example, in proxied, cloud-hosted setups, or when developing locally using Vite or another dev server.
+
+When the Backoffice client runs on a separate host, also configure the [callback path name](#callback-path-name) and the [auth cookie SameSite](#auth-cookie-samesite) setting. The following example runs the client on a local Vite dev server:
+
+{% code title="appsettings.Development.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Security": {
+      "BackOfficeHost": "http://localhost:5173",
+      "CallbackPathName": "/",
+      "AuthCookieSameSite": "None"
+    }
+  }
+}
+```
+{% endcode %}
+
+### Callback path name
+
+Key: `CallbackPathName`
+Type: `string`
+
+The path where Umbraco serves the Backoffice client. The default is `/umbraco`. Umbraco sends users to this path after they log in, unless they were on their way to another page in the Backoffice. Umbraco also derives the logout path (`/umbraco/logout`) and the error path (`/umbraco/error`) from it.
+
+When you configure a [BackOffice Host](#backoffice-host), Umbraco appends the path to that host. Change the value when the client runs at another path on that host. For example, set it to `/` when a dev server serves the client at its root.
+
+{% hint style="info" %}
+`CallbackPathName` replaces the `AuthorizeCallbackPathName`, `AuthorizeCallbackLogoutPathName`, and `AuthorizeCallbackErrorPathName` settings from earlier versions. The old settings were full paths to individual routes, such as the OAuth callback at `/umbraco/oauth_complete`. `CallbackPathName` is the path of the Backoffice itself, so set the new value instead of renaming the old keys.
+
+Umbraco ignores the old keys and logs a warning at startup while they are present.
+{% endhint %}
 
 ### User default lockout time
 
