@@ -32,4 +32,4 @@ In the Segment Personalization section, you can see how much of the incoming tra
 
 ### Goal Performance
 
-You can also get an overview of how the goals you have configured are performing. The table in the Goal Performance section compares the goal performance between the control group and the personalized group.
+You can also get an overview of how the goals you have configured are performing. The table in the **All goals** section compares the goal performance between the control group and the personalized group.
