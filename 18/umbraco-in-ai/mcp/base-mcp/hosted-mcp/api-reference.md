@@ -34,7 +34,7 @@ description: Complete API reference for the @umbraco-cms/mcp-hosted package incl
 | `MCP_AGENT` | Durable Object | Yes | Stateful MCP session (name must match `McpAgent.serve()` binding). |
 | `OAUTH_PROVIDER` | -- | Auto | Injected by `@cloudflare/workers-oauth-provider` at runtime. |
 
-See [Deployment](deployment.md) for setup instructions. See [Architecture - How Tiers Combine](architecture.md#how-tiers-combine) for how env vars interact with site and user config.
+See [Deployment](deployment/README.md) for setup instructions. See [Architecture - How Tiers Combine](architecture.md#how-tiers-combine) for how env vars interact with site and user config.
 
 ## Worker Entry Helpers
 
@@ -165,7 +165,7 @@ Renders the per-client consent screen HTML. When `toolConfig` is provided, inclu
 
 ### SiteConfig
 
-Configuration for a single Umbraco site in a multi-site deployment. See [Multi-Site Deployments](multi-site.md) for setup instructions.
+Configuration for a single Umbraco site in a multi-site deployment. See [Multi-Site Deployments](deployment/multi-site.md) for setup instructions.
 
 ```typescript
 interface SiteConfig {

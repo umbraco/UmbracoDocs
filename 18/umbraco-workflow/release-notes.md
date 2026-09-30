@@ -16,6 +16,74 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### [18.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.2) (September 30 2026)
+
+* Ensures entity bulk actions are included in Workflow's action-visibility condition [#184](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/184)
+
+### [18.2.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.1) (September 29 2026)
+
+* Tightens `lock-active-content` setting. When active, content will now be locked at submit, rather than after the first approval. This ensures the comment added at submit always aligns with the content being approved [#180](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/180)
+* Normalizes approval group languages when migrating from v13 [#181](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/181)
+* Fixes broken collection layout in latest Firefox [#182](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/182)
+* Decouples Workflow administrators from the CMS Administrator user group. Workflow administrators can now be assigned from the Workflow settings. A migration populates this setting with the membership of the CMS Administrators group [#183](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/183)
+
+### 18.2.0 (September 24 2026)
+
+{% hint style="warning" %}
+Umbraco Workflow 18.2.0 requires Umbraco CMS 18.2.0 or later.
+{% endhint %}
+
+The changes below are in addition to those in the release candidates. For everything else in this release, see the `18.2.0-rc` notes.
+
+#### Adds the Content Calendar dashboard
+
+A Content Calendar dashboard is now available in the Content section. It shows scheduled content, Release Sets, and Release Set items by month or week, with links through to each Release Set.
+
+Access is controlled by the new **Read Content Calendar** user permission, which must be granted to user groups that need the dashboard.
+
+#### Bug fixes and other changes
+
+* Fixes items and tasks being left behind when a Release Set is deleted
+* Fixes documents that vary by segment only being treated as culture-variant when initiating a workflow
+* Returns an accurate error when no workflow is initiated because every requested culture already has an active workflow. Error notifications now show the server's message.
+
+### 18.2.0-rc4 (September 18 2026)
+
+* Fixes the document Publish and Unpublish entity actions skipping Workflow's visibility rules, which could make them available to users who should request approval instead
+* Fixes the content calendar week view showing the wrong days after navigating across a month boundary
+* Fixes publishing a release set with "Complete all items" updating the set status before its items and tasks
+
+### 18.2.0-rc3 (September 11 2026)
+
+* Replaces the `humanize` dependency with the backoffice's native duration localization in the workflow activity chart
+
+### 18.2.0-rc2 (September 10 2026)
+
+* Fixes inherited approval group members falling out of sync when a CMS user is saved or a user group is deleted
+* Fixes reminder emails using server local time instead of UTC when calculating the reminder threshold
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168):
+  * Toggle (boolean) properties and other config-driven editors not receiving their data type configuration
+  * Searches by data type or property editor ignoring properties excluded from the search
+  * Searches built only from filters returning an error instead of results
+  * Block List and Block Grid properties now search their raw value through a text input
+  * Results now use a stable, relevance-based order
+* Adds pagination to the Advanced Search results table
+
+### [18.2.0-rc1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0-rc1) (September 7 2026)
+
+* Fixes "View differences" on a workflow task returning an unhelpful error instead of a licensing message when Workflow is unlicensed [#176](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/176)
+* Restructures the backoffice frontend build into per-feature packages:
+  * Fixes asset caching not invalidating after an upgrade [#172](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/172) 
+  * Fixes Workflow tab intermittently failing to render [#175](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/175)
+* Fixes group approval emails missing content when the group has no language set [#173](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/173)
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168): 
+  * Empty value inputs for config-driven property editors
+  * Invariant properties incorrectly treated as empty when cultures are selected
+  * ContentPicker/MultiNodeTreePicker searches returning unrelated results
+* Adds a "Clear selection" action and a loading indicator to the Advanced Search dashboard [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168)
+* Fixes due-date save and permission gaps in document-editor content reviews
+* Enforces mandatory workflow comments server-side on approve/reject, closing a gap in the external approval and email reply channels
+
 ### 18.1.2 (August 31 2026)
 
 * Fixes culture resolution for external approval using an invariant workflow on a culture-variant document.

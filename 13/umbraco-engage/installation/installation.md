@@ -12,7 +12,7 @@ This article covers two ways to install Umbraco Engage:
 * [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
-Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco Engage.
+Check [the requirements](system-requirements.md) before you start installing Umbraco Engage.
 {% endhint %}
 
 ## Installation via NuGet

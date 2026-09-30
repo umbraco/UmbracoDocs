@@ -38,7 +38,7 @@ In addition to transferring content via the backoffice, it is possible to move b
 
 As this process requires less inter-environment communication, it's possible to transfer much larger amounts of content without running into the hard platform limits.
 
-[Read more about the import/export feature here](deployment-workflow/import-export.md).
+[Read more about the import/export feature here](deployment-workflow/import-export/).
 
 ### Review timeouts
 
@@ -108,10 +108,6 @@ This can lead to situations where Deploy continues to process a file it consider
 
 To resolve this situation, following an upgrade, it is good practice to re-save the `.uda` files in the "left-most" environment. This will usually be the local one, or if not using that, the Development environment. You can do this via the _Export Schema To Data Files_ operation available on the _Settings > Deploy_ dashboard:
 
-<div align="left" data-full-width="false">
-
-<figure><img src=".gitbook/assets/image (13).png" alt="Export schema"><figcaption><p>Export schema</p></figcaption></figure>
-
-</div>
+<div align="left" data-full-width="false"><figure><img src=".gitbook/assets/image (13).png" alt="Export schema"><figcaption><p>Export schema</p></figcaption></figure></div>
 
 The updated files should be committed to source control and deployed to upstream environments.

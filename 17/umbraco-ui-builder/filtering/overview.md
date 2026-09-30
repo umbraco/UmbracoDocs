@@ -14,8 +14,8 @@ Choose a filtering method from the list below to find out more.
 [global-filters.md](global-filters.md)
 {% endcontent-ref %}
 
-{% content-ref url="data-views.md" %}
-[data-views.md](data-views.md)
+{% content-ref url="data-views/" %}
+[data-views](data-views/)
 {% endcontent-ref %}
 
 {% content-ref url="filterable-properties.md" %}

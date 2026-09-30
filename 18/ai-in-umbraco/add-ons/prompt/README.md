@@ -1,6 +1,5 @@
 ---
-description: >-
-    Prompt Management add-on for creating and executing reusable prompt templates.
+description: Prompt Management add-on for creating and executing reusable prompt templates.
 ---
 
 # Prompt Management
@@ -10,32 +9,28 @@ The Prompt Management add-on (`Umbraco.AI.Prompt`) enables you to create, manage
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Prompt
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Prompt
 ```
-
 {% endcode %}
 
 ## Features
 
-- **Prompt Templates** - Create reusable prompts with variable placeholders
-- **Variable Interpolation** - Use `{{variable}}` syntax for dynamic content
-- **Profile Association** - Link prompts to specific AI profiles
-- **Context Injection** - Include AI Contexts for brand voice
-- **Scoping** - Control where each prompt can be used using allow and deny rules
-- **Version History** - Track changes with full rollback support
-- **Backoffice Management** - Full UI for creating and managing prompts
+* **Prompt Templates** - Create reusable prompts with variable placeholders
+* **Variable Interpolation** - Use `{{variable}}` syntax for dynamic content
+* **Profile Association** - Link prompts to specific AI profiles
+* **Context Injection** - Include AI Contexts for brand voice
+* **Scoping** - Control where each prompt can be used using allow and deny rules
+* **Version History** - Track changes with full rollback support
+* **Backoffice Management** - Full UI for creating and managing prompts
 
 ## Quick Start
 
@@ -43,19 +38,18 @@ dotnet add package Umbraco.AI.Prompt
 
 In the backoffice, navigate to the **AI** section > **Prompts** and create a new prompt:
 
-| Field        | Value                                                                |
-| ------------ | -------------------------------------------------------------------- |
-| Alias        | `summarize-article`                                                       |
-| Name         | Summarize Article                                                         |
-| Instructions | `Summarize the following article in 3 bullet points:\n\n{{bodyText}}`     |
-| Profile      | (select your chat profile)                                                |
+| Field        | Value                                                                 |
+| ------------ | --------------------------------------------------------------------- |
+| Alias        | `summarize-article`                                                   |
+| Name         | Summarize Article                                                     |
+| Instructions | `Summarize the following article in 3 bullet points:\n\n{{bodyText}}` |
+| Profile      | (select your chat profile)                                            |
 
 ### 2. Execute the Prompt
 
 Template variables like `{{content}}` resolve from the target entity's property values. Execute the prompt against the document you want to summarize:
 
 {% code title="ArticleSummarizer.cs" %}
-
 ```csharp
 public class ArticleSummarizer
 {
@@ -84,7 +78,6 @@ public class ArticleSummarizer
     }
 }
 ```
-
 {% endcode %}
 
 ## Template Syntax
@@ -127,17 +120,17 @@ Requirements:
 
 ## Documentation
 
-| Section                                             | Description                          |
-| --------------------------------------------------- | ------------------------------------ |
-| [Concepts](concepts.md)                             | Prompt templates, variables, scoping |
-| [Getting Started](getting-started.md)               | Step-by-step setup guide             |
-| [Template Syntax](template-syntax.md)               | Variable interpolation details       |
-| [Scoping](scoping.md)                               | Allow and deny rules for prompts     |
-| [API Reference](api/README.md)                      | Management API endpoints             |
-| [Service Reference](reference/ai-prompt-service.md) | IAIPromptService                     |
+| Section                                 | Description                          |
+| --------------------------------------- | ------------------------------------ |
+| [Concepts](concepts.md)                 | Prompt templates, variables, scoping |
+| [Getting Started](getting-started.md)   | Step-by-step setup guide             |
+| [Template Syntax](template-syntax.md)   | Variable interpolation details       |
+| [Scoping](scoping.md)                   | Allow and deny rules for prompts     |
+| [API Reference](api/)                   | Management API endpoints             |
+| [Service Reference](ai-prompt-service/) | IAIPromptService                     |
 
 ## Related
 
-- [Add-ons Overview](../README.md) - All add-on packages
-- [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
-- [Profiles](../../concepts/profiles.md) - AI configuration
+* [Add-ons Overview](../add-ons.md) - All add-on packages
+* [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
+* [Profiles](../../concepts/profiles.md) - AI configuration

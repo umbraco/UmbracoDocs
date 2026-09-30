@@ -171,7 +171,7 @@ redirects:
     fundamentals/setup: get-started/installation/README.md
     fundamentals/setup/requirements: get-started/installation/requirements.md
     fundamentals/setup/install: get-started/installation/README.md
-    fundamentals/setup/install/install-umbraco-with-templates: get-started/installation/install-umbraco-with-templates.md
+    fundamentals/setup/install/install-umbraco-with-templates: get-started/installation/README.md
     fundamentals/setup/install/visual-studio: get-started/installation/visual-studio.md
     fundamentals/setup/install/install-umbraco-with-vs-code: get-started/installation/install-umbraco-with-vs-code.md
     fundamentals/setup/install/running-umbraco-on-linux-macos: get-started/installation/running-umbraco-on-linux-macos.md
@@ -726,3 +726,4 @@ redirects:
     extend-your-project/backoffice-extensions/utilities/modals: extend-your-project/backoffice-extensions/extending-overview/extension-types/modals/README.md
     model-your-content/content-types-and-structure/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/document-type-options.md
     get-started/backoffice-essentials/working-with-content: get-started/backoffice-essentials/working-with-rich-text-editors.md
+    get-started/installation/install-umbraco-with-templates: get-started/installation/README.md

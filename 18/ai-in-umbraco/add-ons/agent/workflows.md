@@ -1,9 +1,8 @@
 ---
-description: >-
-    Create custom workflows for orchestrated agents.
+description: Create custom workflows for orchestrated agents.
 ---
 
-# Agent Workflows
+# Workflows
 
 Workflows are code-based extension points that define how orchestrated agents compose multiple sub-agents into a pipeline. Each workflow is a C# class that builds a Microsoft Agents Framework (MAF) `Workflow` from an agent definition and optional settings.
 
@@ -28,7 +27,6 @@ graph TD
 Create a class that extends `AIAgentWorkflowBase` and apply the `[AIAgentWorkflow]` attribute:
 
 {% code title="SimpleSequentialWorkflow.cs" %}
-
 ```csharp
 using System.Text.Json;
 using Microsoft.Agents.AI;
@@ -84,7 +82,6 @@ public class ResearchAndSummarizeWorkflow : AIAgentWorkflowBase
     }
 }
 ```
-
 {% endcode %}
 
 The workflow is automatically discovered and registered at startup.
@@ -102,7 +99,6 @@ In the backoffice, create a new agent:
 Or via code:
 
 {% code title="CreateOrchestratedAgent.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -118,7 +114,6 @@ var agent = new AIAgent
 
 await _agentService.SaveAgentAsync(agent);
 ```
-
 {% endcode %}
 
 ## Workflows with Settings
@@ -128,7 +123,6 @@ Workflows can declare typed settings that are configurable in the backoffice. De
 ### Step 1: Define the Settings Class
 
 {% code title="WriteAndEditSettings.cs" %}
-
 ```csharp
 using Umbraco.AI.Core.EditableModels;
 
@@ -143,7 +137,6 @@ public class WriteAndEditSettings
     public string EditingFocus { get; set; } = "clarity and conciseness";
 }
 ```
-
 {% endcode %}
 
 ### Step 2: Create a Typed Workflow
@@ -151,7 +144,6 @@ public class WriteAndEditSettings
 Extend `AIAgentWorkflowBase<TSettings>` to receive strongly-typed settings:
 
 {% code title="WriteAndEditWorkflow.cs" %}
-
 ```csharp
 [AIAgentWorkflow("write-and-edit", "Write and Edit",
     Description = "A sequential pipeline: a writer drafts content, then an editor refines it.")]
@@ -197,7 +189,6 @@ public class WriteAndEditWorkflow : AIAgentWorkflowBase<WriteAndEditSettings>
     }
 }
 ```
-
 {% endcode %}
 
 The `[AIField]` attributes on the settings class generate a dynamic form in the backoffice, allowing editors to configure the workflow without touching code.
@@ -205,7 +196,6 @@ The `[AIField]` attributes on the settings class generate a dynamic form in the 
 ### Step 3: Create Agent with Settings
 
 {% code title="CreateAgentWithWorkflowSettings.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -224,12 +214,11 @@ var agent = new AIAgent
     IsActive = true
 };
 ```
-
 {% endcode %}
 
 ## Related
 
-- [Agent Concepts](concepts.md) - Agent types overview
-- [Getting Started](getting-started.md) - Creating your first agent
-- [API Create](api/create.md) - Creating agents via API
-- [AIAgent Reference](reference/ai-agent.md) - Model reference
+* [Agent Concepts](concepts.md) - Agent types overview
+* [Getting Started](getting-started.md) - Creating your first agent
+* [API Create](api/create.md) - Creating agents via API
+* [AIAgent Reference](ai-agent-service/ai-agent.md) - Model reference

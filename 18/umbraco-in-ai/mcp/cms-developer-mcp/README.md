@@ -2,7 +2,7 @@
 description: Get started with the Umbraco CMS Developer Model Context Protocol (MCP).
 ---
 
-# Developer Model Context Protocol (MCP) Server
+# CMS Developer MCP Server
 
 The Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) makes it straightforward for developers to connect AI tools with Umbraco. It allows you to harness large language models (LLMs) to perform almost any task that can be achieved within the Umbraco backoffice. This includes generating and editing content, managing media, automating workflows, and assisting with complex development tasks.
 

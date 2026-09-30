@@ -12,7 +12,7 @@ This article covers two ways to install Umbraco Engage:
 * [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
-Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco Engage.
+Check [the requirements](system-requirements.md) before you start installing Umbraco Engage.
 {% endhint %}
 
 ## Installation via NuGet
@@ -67,7 +67,7 @@ It is recommended to consider the information detailed in the section below, to 
 
 ### Add-ons
 
-Umbraco Engage has add-ons that connect it to Umbraco Forms, Umbraco Commerce, Umbraco Deploy, and AI. Each add-on is a separate NuGet package. See the [overview of available add-ons](../README.md#available-add-ons) to learn about their functionality and what they add to the product.
+Umbraco Engage has add-ons that connect it to Umbraco Forms, Umbraco Commerce, Umbraco Deploy, and AI. Each add-on is a separate NuGet package. See the [overview of available add-ons](../#available-add-ons) to learn about their functionality and what they add to the product.
 
 ### Clientside tracking
 
@@ -85,7 +85,7 @@ Includes support for "async" and "defer" keywords.
 
 The Cockpit is a tool to help with testing segments and diagnosing the data that Umbraco Engage collects. It can be viewed on the front end of your website, only if you are logged into Umbraco as well.
 
-As of Umbraco Engage 16, the cockpit is automatically installed.&#x20;
+As of Umbraco Engage 16, the cockpit is automatically installed.
 
 {% hint style="info" %}
 Automatic injection can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to **false**.

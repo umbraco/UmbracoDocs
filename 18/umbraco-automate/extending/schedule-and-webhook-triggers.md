@@ -123,6 +123,62 @@ public sealed class OrderPaidTrigger
 
 A webhook trigger receives its payload through Automate's webhook endpoint. Map the posted body to trigger output the same way a notification-based trigger maps a notification — see [Create a Custom Trigger](custom-trigger.md) for the `MapEvent` and `CanHandle` pattern.
 
+### Supporting Run Now
+
+A webhook is a natural fit for [Run now](custom-trigger.md#supporting-run-now), since a saved test payload can stand in for the real HTTP request. Add settings to hold that test payload, and implement `ISupportsManualRun` to build output from them:
+
+{% code title="OrderPaidTriggerSettings.cs" %}
+```csharp
+namespace MyProject.Automate;
+
+public sealed class OrderPaidTriggerSettings
+{
+    [Field(Label = "Test Order Reference", Description = "Used by Run now instead of a real webhook call.")]
+    public string? TestOrderReference { get; set; }
+
+    [Field(Label = "Test Amount Paid")]
+    public decimal TestAmountPaid { get; set; }
+}
+```
+{% endcode %}
+
+{% code title="OrderPaidTrigger.cs" %}
+```csharp
+using Umbraco.Automate.Core.Triggers;
+
+namespace MyProject.Automate;
+
+[Trigger("myProject.orderPaid", "Order Paid",
+    Description = "Fires when the payment provider posts a paid webhook.",
+    Group = "My Project",
+    Icon = "icon-coins")]
+public sealed class OrderPaidTrigger
+    : WebhookTriggerBase<OrderPaidTriggerSettings, OrderPaidTriggerOutput>, ISupportsManualRun
+{
+    public OrderPaidTrigger(TriggerInfrastructure infrastructure)
+        : base(infrastructure)
+    {
+    }
+
+    public ManualRunOutput CreateManualRunOutput(object? settings)
+    {
+        var typedSettings = settings as OrderPaidTriggerSettings;
+
+        if (string.IsNullOrWhiteSpace(typedSettings?.TestOrderReference))
+        {
+            return ManualRunOutput.Invalid("Set a test order reference in the trigger's settings first.");
+        }
+
+        return ManualRunOutput.From(new Dictionary<string, object?>
+        {
+            ["orderReference"] = typedSettings.TestOrderReference,
+            ["amountPaid"] = typedSettings.TestAmountPaid,
+        });
+    }
+}
+```
+{% endcode %}
+
 ### Verifying the Request Came From Your Vendor
 
 An inbound webhook URL is public. Verify the request before trusting its payload by implementing `IWebhookAuthenticator`, or by inheriting the convenience base class `WebhookAuthenticatorBase<TSettings>`. It reads discovery metadata from a `[WebhookAuthenticator]` attribute and derives the settings schema from `TSettings` automatically.

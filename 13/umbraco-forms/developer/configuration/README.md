@@ -178,7 +178,7 @@ Similarly, the provided form templates available from the form creation dialog c
 
 ### FormElementHtmlIdPrefix
 
-By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global\_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, the attribute values can be prefixed with the value provided in this configuration element.
+By default the value of HTML `id` attribute rendered for fieldsets and fields using the default theme is the GUID associated with the form element. Although [this is valid](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id), some browsers, particularly Safari, may report issues with this if the identifier begins with a number. To avoid such issues, the attribute values can be prefixed with the value provided in this configuration element.
 
 For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fieldset and field `id` attribute.
 
@@ -186,7 +186,7 @@ For example, providing a value of `"f_"` will apply a prefix of "f\_" to each fi
 
 Forms allows you to configure default values and visibility for field, workflow, data source, and prevalue source settings. Default values can be set in two ways:
 
-1. **In code** - by using the `DefaultValue` property on the [`Setting` attribute](../extending/adding-a-fieldtype.md#field-settings), or a property initializer, when defining custom or extended provider types.
+1. **In code** - by using the `DefaultValue` property on the [`Setting` attribute](../extending/adding-a-fieldtype/#field-settings), or a property initializer, when defining custom or extended provider types.
 2. **In configuration** - by using the `SettingsCustomization` section, which takes precedence over code-based defaults.
 
 Without any configuration, the default behavior when a new field or workflow is added to a form is for each setting to be empty. The values are then completed by the editor. All settings defined on the type are displayed for entry.
@@ -425,14 +425,13 @@ Set this value to `true` to enable the Forms API supporting headless and AJAX fo
 
 By default, the user's IP address is not recorded when a form is submitted and stored in the `UFRecords` database table.
 
-To include this information in the saved data, set this value to `true`.
-If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
+To include this information in the saved data, set this value to `true`. If recording IPs and your site is behind a proxy, load balancer or CDN, we recommend using [ASP.NET's forwarded headers middleware](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-7.0) to ensure the correct value for the client IP is resolved.
 
 ### UseSemanticFieldsetRendering
 
 In Forms 12.1 amends were made to the default theme for Forms that improved accessibility. Specifically we provide the option to use alternative markup for rendering checkbox and radio button lists. These use the more semantically correct `fieldset` and `legend` elements, instead of the previously used `div` and `label`.
 
-Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme.  As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
+Although this semantic markup is preferred, it could be a presentational breaking change for those styling the default theme. As such we have made this markup improvement optional. You can opt into using it by setting this configuration value to `true`.
 
 In Umbraco 13 this configuration option will be removed and the semantic rendering made the only option.
 
@@ -474,7 +473,7 @@ To make the feature available to editors set the value to `true`.
 
 This setting determines whether [advanced form validation rules](../../editor/creating-a-form/form-advanced.md) are available to editors.
 
-By default, the value is `false`.  This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
+By default, the value is `false`. This is partly because the feature is only considered for "power users", comfortable with crafting rules using the required JSON syntax. And partly as validating the rules on the client requires an additional front-end dependency.
 
 To make the feature available to editors and include the dependency when using `@Html.RenderUmbracoFormDependencies(Url)`, set the value to `true`.
 

@@ -1,6 +1,5 @@
 ---
-description: >-
-    Create your first AI connection to start using AI services in Umbraco.
+description: Create your first AI connection to start using AI services in Umbraco.
 ---
 
 # The First Connection
@@ -9,8 +8,8 @@ A connection stores the credentials and settings needed to communicate with an A
 
 ## Prerequisites
 
-- Umbraco.AI and a provider package installed
-- An API key from your AI provider
+* Umbraco.AI and a provider package installed
+* An API key from your AI provider
 
 ## Create a Connection
 
@@ -25,17 +24,17 @@ A connection stores the credentials and settings needed to communicate with an A
 If you don't see the AI section, ensure your user group has access to it. See the [Installation](installation.md#verify-installation) guide for details on granting section access.
 {% endhint %}
 
-![The Create Connection form with provider settings](../.gitbook/assets/backoffice-create-connection-form.png)
+![The Create Connection form with provider settings](../.gitbook/assets/openai-create-connection.png)
 
 ## Configure the Connection
 
 Fill in the connection details:
 
-| Field        | Description                                 | Example                      |
-| ------------ | ------------------------------------------- | ---------------------------- |
-| **Name**     | A display name for this connection          | "OpenAI Production"          |
-| **Alias**    | A unique identifier for programmatic access | "openai-prod"                |
-| **Provider** | The AI provider to use                      | "OpenAI"                     |
+| Field        | Description                                 | Example                                        |
+| ------------ | ------------------------------------------- | ---------------------------------------------- |
+| **Name**     | A display name for this connection          | "OpenAI Production"                            |
+| **Alias**    | A unique identifier for programmatic access | "openai-prod"                                  |
+| **Provider** | The AI provider to use                      | "OpenAI"                                       |
 | **API Key**  | Your provider API key                       | "sk-..." or "$Umbraco:AI:Secrets:OpenAIApiKey" |
 
 {% hint style="info" %}
@@ -60,12 +59,12 @@ Each connection has the following properties:
 
 You can create multiple connections to:
 
-- Separate development and production environments
-- Use different API keys for different teams or projects
-- Connect to multiple AI providers
+* Separate development and production environments
+* Use different API keys for different teams or projects
+* Connect to multiple AI providers
 
 ## Next Steps
 
 {% content-ref url="first-profile.md" %}
-[Your First Profile](first-profile.md)
+[first-profile.md](first-profile.md)
 {% endcontent-ref %}

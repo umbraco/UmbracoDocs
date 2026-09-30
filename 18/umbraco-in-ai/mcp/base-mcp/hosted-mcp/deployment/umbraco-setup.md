@@ -1,0 +1,301 @@
+---
+description: Register the Hosted MCP Worker as an OAuth client in your Umbraco instance.
+---
+
+# Umbraco Setup
+
+The Umbraco instance needs the hosted MCP server registered as an OAuth client. This is a one-time setup per Umbraco instance.
+
+{% hint style="warning" %}
+Deploying one of Umbraco's pre-built Editor or Developer MCP servers? Use the [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) package instead — it registers the OAuth client automatically, no C# to write. See the [Umbraco Cloud Quick Start](../../../hosted-mcp-setup/cloud-quickstart.md) or [Self-Hosted Quick Start](../../../hosted-mcp-setup/self-hosted-quickstart.md). The manual steps below are for building a fully custom MCP server directly on this SDK.
+{% endhint %}
+
+## Prerequisites
+
+- Umbraco 18+ with Management API enabled
+- Admin access to the Umbraco project source code
+- The hosted MCP server's callback URL (for example, `https://my-umbraco-mcp.workers.dev/callback`)
+
+## Register the OAuth Client
+
+The hosted MCP Worker must be registered as an **Authorization Code** OAuth client in Umbraco's OpenIdDict. This cannot be done through the backoffice UI (which supports only client credentials grants). Instead, register the client in C# code using an Umbraco Composer.
+
+### Add the Composer
+
+Create a file in your Umbraco project (for example, `McpOAuthComposer.cs`):
+
+```csharp
+using System.Globalization;
+using OpenIddict.Abstractions;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
+
+// Change this namespace to match your Umbraco project.
+namespace MyUmbracoProject;
+
+public class McpOAuthComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.AddNotificationAsyncHandler<UmbracoApplicationStartingNotification,
+            RegisterMcpClientHandler>();
+    }
+}
+
+public class RegisterMcpClientHandler
+    : INotificationAsyncHandler<UmbracoApplicationStartingNotification>
+{
+    private readonly IOpenIddictApplicationManager _applicationManager;
+    private readonly IConfiguration _configuration;
+
+    public RegisterMcpClientHandler(
+        IOpenIddictApplicationManager applicationManager,
+        IConfiguration configuration)
+    {
+        _applicationManager = applicationManager;
+        _configuration = configuration;
+    }
+
+    public async Task HandleAsync(
+        UmbracoApplicationStartingNotification notification,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await RegisterClient(cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            // On first startup the database may not exist yet (for example, an
+            // unattended install). The client registers on the next restart
+            // once the database is ready.
+            Console.WriteLine($"[McpOAuthComposer] Skipped — {ex.GetType().Name}: {ex.Message}");
+        }
+    }
+
+    private async Task RegisterClient(CancellationToken cancellationToken)
+    {
+        // Change this per MCP. Each hosted MCP defines its own OAuth client ID
+        // in its src/worker.ts (for example, "umbraco-cms-dev-mcp-hosted"). This
+        // value must match that ID and the Worker's UMBRACO_OAUTH_CLIENT_ID.
+        // To serve more than one MCP from this Umbraco, register each client ID
+        // separately (loop over a string[] of IDs, or add a handler per MCP).
+        const string clientId = "umbraco-back-office-hosted-mcp";
+
+        // Remove any existing registration so we can update it cleanly.
+        var existing = await _applicationManager.FindByClientIdAsync(clientId, cancellationToken);
+        if (existing is not null)
+        {
+            await _applicationManager.DeleteAsync(existing, cancellationToken);
+        }
+
+        var descriptor = new OpenIddictApplicationDescriptor
+        {
+            ClientId = clientId,
+            ClientType = OpenIddictConstants.ClientTypes.Public,
+            DisplayName = "Umbraco MCP Server",
+            RedirectUris =
+            {
+                // Production callback URL
+                new Uri("https://my-umbraco-mcp.workers.dev/callback"),
+                // Local development callback URLs
+                new Uri("http://localhost:8787/callback"),
+                new Uri("http://localhost:8788/callback"),
+                new Uri("http://127.0.0.1:8787/callback"),
+                new Uri("http://127.0.0.1:8788/callback"),
+            },
+            // Required for "Log in as different user" (RP-Initiated Logout)
+            PostLogoutRedirectUris =
+            {
+                new Uri("https://my-umbraco-mcp.workers.dev/logout-callback"),
+                new Uri("http://localhost:8787/logout-callback"),
+                new Uri("http://localhost:8788/logout-callback"),
+                new Uri("http://127.0.0.1:8787/logout-callback"),
+                new Uri("http://127.0.0.1:8788/logout-callback"),
+            },
+            Permissions =
+            {
+                OpenIddictConstants.Permissions.Endpoints.Authorization,
+                OpenIddictConstants.Permissions.Endpoints.Token,
+                OpenIddictConstants.Permissions.Endpoints.Revocation,
+                OpenIddictConstants.Permissions.Endpoints.EndSession,
+                OpenIddictConstants.Permissions.GrantTypes.AuthorizationCode,
+                OpenIddictConstants.Permissions.GrantTypes.RefreshToken,
+                OpenIddictConstants.Permissions.ResponseTypes.Code,
+            },
+            // Umbraco's server-wide defaults produce a 5-minute access token and
+            // a 20-minute refresh window. This is too short for an MCP session
+            // that sits idle between tool calls, so override the lifetimes here.
+            Settings =
+            {
+                [OpenIddictConstants.Settings.TokenLifetimes.AccessToken]
+                    = TimeSpan.FromHours(1).ToString("c", CultureInfo.InvariantCulture),
+                [OpenIddictConstants.Settings.TokenLifetimes.RefreshToken]
+                    = TimeSpan.FromHours(8).ToString("c", CultureInfo.InvariantCulture),
+            }
+        };
+
+        // Add the Cloudflare Tunnel callback URL if configured (set by scripts/tunnels.sh).
+        var tunnelUrl = _configuration["MCP_TUNNEL_URL"];
+        if (!string.IsNullOrEmpty(tunnelUrl))
+        {
+            var baseUrl = tunnelUrl.TrimEnd('/');
+            descriptor.RedirectUris.Add(new Uri($"{baseUrl}/callback"));
+            descriptor.PostLogoutRedirectUris.Add(new Uri($"{baseUrl}/logout-callback"));
+        }
+
+        await _applicationManager.CreateAsync(descriptor, cancellationToken);
+    }
+}
+```
+
+{% hint style="info" %}
+Each hosted MCP defines its own OAuth client ID in its `src/worker.ts` — for example, `umbraco-cms-dev-mcp-hosted` for the Developer MCP or `umbraco-cms-editor-mcp-hosted` for the Editor MCP. Use that same ID as the `clientId` above and as the Worker's `UMBRACO_OAUTH_CLIENT_ID`. All three must match. This is different from the `umbraco-back-office-mcp` API user used by the local stdio server.
+{% endhint %}
+
+## One Client ID Per Hosted MCP Worker
+
+If you connect more than one hosted MCP Worker to the same Umbraco instance, register each Worker as a separate OpenIddict client. Each client must have a unique `ClientId` and the redirect URIs that match its own callback URL.
+
+Sharing a single client ID across multiple Workers is not supported. The Worker uses the `clientId` to identify itself during the token exchange, and OpenIddict validates the redirect URI against the client's registered list.
+
+For example, if you run both the Developer MCP and the Editor MCP against the same Umbraco instance, register two clients:
+
+```csharp
+// Worker 1: Developer MCP
+new OpenIddictApplicationDescriptor
+{
+    ClientId = "umbraco-cms-dev-mcp-hosted",
+    RedirectUris =
+    {
+        new Uri("https://cms-dev-mcp.workers.dev/callback"),
+        new Uri("http://localhost:8787/callback"),
+    },
+    // ...permissions
+};
+
+// Worker 2: Editor MCP
+new OpenIddictApplicationDescriptor
+{
+    ClientId = "umbraco-cms-editor-mcp-hosted",
+    RedirectUris =
+    {
+        new Uri("https://cms-editor-mcp.workers.dev/callback"),
+        new Uri("http://localhost:8788/callback"),
+    },
+    // ...permissions
+};
+```
+
+Loop over a `string[]` of client IDs in `RegisterMcpClientHandler`, or register a separate notification handler per MCP. Each Worker reads its own `UMBRACO_OAUTH_CLIENT_ID` environment variable and uses that value at the token endpoint.
+
+## How It Works
+
+- **Composer auto-discovery**: Umbraco discovers `McpOAuthComposer` via `IComposer`. No changes to `Program.cs` are needed.
+- **Runs on startup**: The `UmbracoApplicationStartingNotification` handler registers the client each time the application starts. This ensures the configuration is always up to date.
+- **Idempotent**: The handler deletes any existing registration before creating a new one. It is safe to restart.
+- **First-startup safe**: Registration is wrapped in a try/catch. On the first boot the database may not exist yet. The client registers on the next restart once the database is ready.
+
+## Why Not the Backoffice UI?
+
+The backoffice Settings > Users page creates **API users** that use the **client credentials** grant type. These are designed for server-to-server authentication (for example, the stdio MCP server).
+
+The hosted MCP server requires the **authorization code** grant type because end users authenticate interactively through Umbraco's backoffice login. This grant type requires a redirect URI and a **public** client type (PKCE-only, no client secret). Neither is configurable through the backoffice UI.
+
+## Allow HTTP for Token Exchange
+
+The Cloudflare Workers runtime (`workerd`) cannot connect to HTTPS endpoints with self-signed certificates. For local development, allow HTTP in your Umbraco OpenIdDict configuration.
+
+Add this to your `Program.cs` **after** the Umbraco builder and **before** `app.Build()`:
+
+```csharp
+using OpenIddict.Server.AspNetCore;
+
+// ... existing Umbraco builder code ...
+
+// Allow HTTP for local dev so Cloudflare Workers (workerd) can reach
+// Umbraco's token endpoint without needing to trust a self-signed cert.
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.Configure<OpenIddictServerAspNetCoreOptions>(options =>
+    {
+        options.DisableTransportSecurityRequirement = true;
+    });
+}
+
+WebApplication app = builder.Build();
+```
+
+{% hint style="warning" %}
+This is gated behind `IsDevelopment()` so it applies only when `ASPNETCORE_ENVIRONMENT=Development`. Never disable transport security in production.
+{% endhint %}
+
+## Post-Logout Redirect URIs
+
+The `PostLogoutRedirectUris` and `Endpoints.EndSession` permission are required for the "Log in as different user" feature (`showReauthButton: true` in the Worker). This uses OpenID Connect RP-Initiated Logout to clear Umbraco's session cookie before starting a fresh authorization.
+
+If you do not need user switching, you can omit `PostLogoutRedirectUris` and the `Endpoints.EndSession` permission.
+
+## Multi-Site Setup
+
+For multi-site deployments, each Umbraco instance needs its own OAuth client registered. Include the site ID in the callback path (for example, `/callback/prod`). Each site can use different OAuth client IDs. Register a separate Composer (or parameterize a single one) for each Umbraco instance.
+
+See [Multi-Site Deployments](multi-site.md) for the full setup including redirect URI examples.
+
+For URL-based routing across many Umbraco Cloud projects, see [URL-Based Routing](url-based-routing.md).
+
+## Umbraco Cloud Projects
+
+Umbraco Cloud projects need an extra composer in addition to `McpOAuthComposer`. The default cookie scheme redirects unauthenticated users to a local username and password form that does not work with Cloud SSO. The [External Login Short Circuit](external-login-short-circuit.md) composer routes the redirect through the Cloud identity provider.
+
+Self-hosted Umbraco instances do not need the short-circuit composer.
+
+## Set Worker Secrets
+
+The Worker's `UMBRACO_OAUTH_CLIENT_ID` must match the `clientId` in the Composer above. No client secret is needed — the OAuth client is registered as a **public** client with PKCE.
+
+See [Deployment](README.md) for all required secrets and [Local Development Setup](local-dev-setup.md) for `.dev.vars` configuration.
+
+## Redirect URI Configuration
+
+The redirect URI registered in the Composer must match the Worker's callback URL exactly:
+
+| Environment | Redirect URI |
+|-------------|-------------|
+| Production | `https://my-umbraco-mcp.workers.dev/callback` |
+| Production (multi-site) | `https://my-umbraco-mcp.workers.dev/callback/:siteId` |
+| Custom domain | `https://mcp.example.com/callback` |
+| Local dev | `http://localhost:8787/callback` |
+
+You can register multiple redirect URIs in the Composer for different environments.
+
+## Verifying the Setup
+
+1. Restart the Umbraco instance (so the Composer runs).
+2. Start the Worker: `npx wrangler dev --port 8787`.
+3. Visit `http://localhost:8787`. You should see the landing page.
+4. Use the MCP Inspector in Direct mode with `http://localhost:8787/`.
+5. The Inspector should trigger the OAuth flow: consent screen, then Umbraco login, then connected.
+
+## Troubleshooting
+
+### "The specified `redirect_uri` is not valid" (OpenIdDict ID2043)
+
+**Cause**: The callback URL sent by the Worker does not match any URI in the Composer's `RedirectUris`.
+
+**Fix**: Ensure `http://localhost:8787/callback` is listed for local dev. For multi-site, ensure `/callback/:siteId` is registered for each site. The URL must match exactly with no trailing slashes and the correct protocol.
+
+### "Token exchange failed" / TLS errors in local dev
+
+**Cause**: The Worker (`workerd`) cannot connect to Umbraco over HTTPS with a self-signed certificate.
+
+**Fix**: Disable OpenIdDict's transport security requirement in dev mode and set `UMBRACO_SERVER_URL` to Umbraco's HTTP port. See [Local Development Setup](local-dev-setup.md) for the full walkthrough.
+
+### `invalid_client` on token exchange
+
+**Cause**: The OAuth client ID in the Worker does not match the Composer registration, or the client type is wrong.
+
+**Fix**: Verify that `UMBRACO_OAUTH_CLIENT_ID` (in `.dev.vars` or Wrangler secrets) matches the `ClientId` in your `McpOAuthComposer.cs`. Check that the client is registered as `Public` (not `Confidential`). A public client uses PKCE and does not require a client secret.
+
+For Worker-specific errors (Durable Object bindings, SQLite migrations), see the [Troubleshooting](../troubleshooting.md) guide.

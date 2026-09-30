@@ -25,7 +25,7 @@ You want to transfer the whole site. You start from the `Home` node and choose t
 4. Choose if you want to include all pages under the chosen page or only transfer the chosen node.
    * If you wish to transfer all your content at once, click **...** next to the Content tree where you will also find **Queue for transfer** - this will queue all your content for transfer.
 5. Select the language versions that you want to queue for transfer. Only languages for which you have permission to access will be selectable.
-6.  Set the publish date and time if you want to change when the transferred content should be published.
+6. Set the publish date and time if you want to change when the transferred content should be published.
 
 {% hint style="info" %}
 By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.
@@ -63,7 +63,7 @@ To synchronize a lower environment's media library with a higher one (for exampl
 7. Reload the Media tree to see the updated library.
 
 {% hint style="info" %}
-A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the Media section and Recycle Bin on the target environment. You could also use the [Import and Export](import-export.md) feature with a full media export from the source environment.
+A Tree Restore of media will overwrite any media items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the Media section and Recycle Bin on the target environment. You could also use the [Import and Export](import-export/) feature with a full media export from the source environment.
 {% endhint %}
 
 {% hint style="success" %}
@@ -88,6 +88,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![Schema mismatch](../deployment-workflow/images/schema-mismatch.png)
+![Schema mismatch](../.gitbook/assets/schema-mismatch.png)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.

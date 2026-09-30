@@ -1,6 +1,7 @@
 ---
 description: >-
-    Agent Runtime add-on for configuring and running AI agents with streaming responses.
+  Agent Runtime add-on for configuring and running AI agents with streaming
+  responses.
 ---
 
 # Agent Runtime
@@ -10,38 +11,34 @@ The Agent Runtime add-on (`Umbraco.AI.Agent`) enables you to configure and run A
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Agent
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Agent
 ```
-
 {% endcode %}
 
 ## Features
 
-- **Standard Agents** - Configure reusable AI agents with instructions and tool permissions
-- **Orchestrated Agents** - Compose multiple agents into workflow pipelines
-- **Custom Workflows** - Extensible workflow system for multi-agent orchestration
-- **AG-UI Protocol** - Stream responses using the AG-UI event protocol
-- **Profile Association** - Link agents to specific AI profiles
-- **Context Injection** - Include AI Contexts for brand voice (standard agents)
-- **Scopes** - Categorize agents for specific purposes (e.g., copilot)
-- **Version History** - Track changes with full rollback support
-- **Backoffice Management** - Full UI for managing agents
-- **Management API** - RESTful API for agent operations
+* **Standard Agents** - Configure reusable AI agents with instructions and tool permissions
+* **Orchestrated Agents** - Compose multiple agents into workflow pipelines
+* **Custom Workflows** - Extensible workflow system for multi-agent orchestration
+* **AG-UI Protocol** - Stream responses using the AG-UI event protocol
+* **Profile Association** - Link agents to specific AI profiles
+* **Context Injection** - Include AI Contexts for brand voice (standard agents)
+* **Scopes** - Categorize agents for specific purposes (e.g., copilot)
+* **Version History** - Track changes with full rollback support
+* **Backoffice Management** - Full UI for managing agents
+* **Management API** - RESTful API for agent operations
 
 {% hint style="info" %}
-For a chat sidebar with frontend tools and Human-in-the-Loop (HITL) approval, install the [Contextual Copilot](../agent-copilot/README.md) add-on alongside this package. For a full-section, persisted chat experience instead, install [Copilot Workspace](../copilot-workspace/README.md).
+For a chat sidebar with frontend tools and Human-in-the-Loop (HITL) approval, install the [Contextual Copilot](../agent-copilot/) add-on alongside this package. For a full-section, persisted chat experience instead, install [Copilot Workspace](../copilot-workspace/).
 {% endhint %}
 
 ## Quick Start
@@ -60,7 +57,6 @@ In the backoffice, navigate to the **AI** section > **Agents** and create a new 
 ### 2. Run the Agent
 
 {% code title="AgentRunner.cs" %}
-
 ```csharp
 public class AgentRunner
 {
@@ -106,13 +102,11 @@ public class AgentRunner
     }
 }
 ```
-
 {% endcode %}
 
 ### 3. Consume in Frontend
 
 {% code title="agent-event-listener.ts" %}
-
 ```typescript
 // AG-UI events arrive as a single SSE `data:` line each. The event type is
 // embedded in the JSON payload as the `type` property.
@@ -132,50 +126,49 @@ eventSource.addEventListener("message", (e) => {
     }
 });
 ```
-
 {% endcode %}
 
 ## AG-UI Protocol
 
 The Agent Runtime uses the AG-UI (Agent UI) protocol for streaming responses. The protocol defines event types for:
 
-- **Lifecycle events** - `RUN_STARTED`, `RUN_FINISHED`, `RUN_ERROR`
-- **Text streaming** - `TEXT_MESSAGE_START`, `TEXT_MESSAGE_CONTENT`, `TEXT_MESSAGE_END`
-- **Tool calls** - `TOOL_CALL_START`, `TOOL_CALL_ARGS`, `TOOL_CALL_END`
-- **State updates** - `STATE_SNAPSHOT`, `STATE_DELTA`
+* **Lifecycle events** - `RUN_STARTED`, `RUN_FINISHED`, `RUN_ERROR`
+* **Text streaming** - `TEXT_MESSAGE_START`, `TEXT_MESSAGE_CONTENT`, `TEXT_MESSAGE_END`
+* **Tool calls** - `TOOL_CALL_START`, `TOOL_CALL_ARGS`, `TOOL_CALL_END`
+* **State updates** - `STATE_SNAPSHOT`, `STATE_DELTA`
 
 ## Documentation
 
-| Section                                            | Description                              |
-| -------------------------------------------------- | ---------------------------------------- |
-| [Concepts](concepts.md)                            | Agent types, architecture, AG-UI protocol |
-| [Getting Started](getting-started.md)              | Step-by-step setup guide                 |
-| [Instructions](instructions.md)                    | Standard agent instruction configuration |
-| [Workflows](workflows.md)                          | Orchestrated agent workflows             |
-| [Scopes](scopes.md)                                | Categorizing agents with scopes          |
-| [Permissions](permissions.md)                      | Tool permissions and user group overrides |
-| [Streaming](streaming.md)                          | SSE streaming and event handling         |
-| [Frontend Client](frontend-client.md)              | UaiAgentClient for custom agent UIs      |
-| [API Reference](api/README.md)                     | Management API endpoints                 |
-| [Service Reference](reference/ai-agent-service.md) | IAIAgentService                          |
+| Section                                | Description                               |
+| -------------------------------------- | ----------------------------------------- |
+| [Concepts](concepts.md)                | Agent types, architecture, AG-UI protocol |
+| [Getting Started](getting-started.md)  | Step-by-step setup guide                  |
+| [Instructions](instructions.md)        | Standard agent instruction configuration  |
+| [Workflows](workflows.md)              | Orchestrated agent workflows              |
+| [Scopes](scopes.md)                    | Categorizing agents with scopes           |
+| [Permissions](permissions.md)          | Tool permissions and user group overrides |
+| [Streaming](streaming.md)              | SSE streaming and event handling          |
+| [Frontend Client](frontend-client.md)  | UaiAgentClient for custom agent UIs       |
+| [API Reference](api/)                  | Management API endpoints                  |
+| [Service Reference](ai-agent-service/) | IAIAgentService                           |
 
 For Contextual Copilot-specific features:
 
 | Section                                              | Description                                |
-| ---------------------------------------------------- | ------------------------------------------- |
-| [Contextual Copilot](../agent-copilot/README.md)     | Contextual chat sidebar and tool execution |
-| [Frontend Tools](../agent-copilot/frontend-tools.md) | Browser-executable tools                    |
-| [Usage](../agent-copilot/copilot.md)                 | Using the chat interface                    |
+| ---------------------------------------------------- | ------------------------------------------ |
+| [Contextual Copilot](../agent-copilot/)              | Contextual chat sidebar and tool execution |
+| [Frontend Tools](../agent-copilot/frontend-tools.md) | Browser-executable tools                   |
+| [Usage](../agent-copilot/copilot.md)                 | Using the chat interface                   |
 
 For Copilot Workspace-specific features:
 
-| Section                                                | Description                                    |
-| ------------------------------------------------------- | ----------------------------------------------- |
-| [Copilot Workspace](../copilot-workspace/README.md)     | Full-section chat, persisted conversations, and projects |
-| [Usage](../copilot-workspace/copilot-workspace.md)      | Conversations, projects, and the context panel |
+| Section                                            | Description                                              |
+| -------------------------------------------------- | -------------------------------------------------------- |
+| [Copilot Workspace](../copilot-workspace/)         | Full-section chat, persisted conversations, and projects |
+| [Usage](../copilot-workspace/copilot-workspace.md) | Conversations, projects, and the context panel           |
 
 ## Related
 
-- [Add-ons Overview](../README.md) - All add-on packages
-- [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
-- [Profiles](../../concepts/profiles.md) - AI configuration
+* [Add-ons Overview](../add-ons.md) - All add-on packages
+* [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines
+* [Profiles](../../concepts/profiles.md) - AI configuration

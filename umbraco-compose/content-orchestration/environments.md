@@ -12,7 +12,7 @@ Environments are used to set up deployment workflows, roll out features, or keep
 A **production** environment is automatically created along with your project.
 {% endhint %}
 
-Create and manage existing environments using the [_/environments_ endpoints](https://apidocs.umbracocompose.com/#tag/environments) in the Management API.
+Create and manage existing environments using the [_/environments_ endpoints](https://apidocs.umbracocompose.com/#tag/environments) in the Management API or directly from the Compose project.
 
 Resources of the following types can be created in an environment:
 

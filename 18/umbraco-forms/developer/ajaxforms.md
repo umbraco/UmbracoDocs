@@ -626,6 +626,27 @@ With [expanded output](https://docs.umbraco.com/umbraco-cms/reference/content-de
 }
 ```
 
+### Rich text as JSON
+
+The Content Delivery API has a [`RichTextOutputAsJson` setting](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/headless-and-apis/content-delivery-api#additional-configuration). The setting returns rich text as structured JSON instead of HTML markup:
+
+```json
+"Umbraco": {
+  "CMS": {
+    "DeliveryApi": {
+      "RichTextOutputAsJson": true
+    }
+  }
+}
+```
+
+When the setting is enabled, the Forms API adds matching properties to its own responses:
+
+* `messageOnSubmitRichText` on the form definition and on the submission response. The property holds the structured version of `messageOnSubmit`. Forms sets the property only when `messageOnSubmitIsHtml` is `true`.
+* `settingsRichText` on a field. The property holds the structured version of any field setting that supports HTML, keyed by setting alias.
+
+The existing `messageOnSubmit` and `settings` properties always return the HTML markup, whether or not the setting is enabled.
+
 ## Dynamic Form injection
 
 For dynamic Form injection on a page, such as in a modal dialog, there's a specific JavaScript event and API method. This allows reinitializing Umbraco Forms for the new content.

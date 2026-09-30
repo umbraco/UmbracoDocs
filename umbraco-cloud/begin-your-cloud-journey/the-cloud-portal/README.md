@@ -34,11 +34,11 @@ Collapse Groups allows you to collapse the groups on the project dashboard. You 
 
 To get a better overview of your projects, it is possible to sort your projects into **Groups**. This can be done by clicking the **Edit Groups** button on the top right side of the Umbraco Cloud Portal.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt="Edit Groups"><figcaption><p>Edit Groups</p></figcaption></figure>
 
 After clicking on **Edit Groups**, you can create new groups to categorize your projects and create a better overview for yourself.
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt="Create Group"><figcaption><p>Create Group</p></figcaption></figure>
 
 ![Create Group](../../.gitbook/assets/add-group.png)
 
@@ -71,7 +71,7 @@ When you click on the User Profile link, you will find the following options:
 
 Managing your projects has been simplified with Umbraco Cloud. By navigating to a specific project, you can quickly view the environments within your project.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Project Overview</p></figcaption></figure>
 
 * **Project Name:** includes options to **Create environments** or **Invite User**.
 * **Environment Name:** offers options to **Restart** the environment, view **History**, **Logs**, **Error Logs**, **Clone project**, **Delete** project.

@@ -18,6 +18,38 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.3.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) **(September 28th 2026)**
+
+* Added a Collection Picker property editor, so you can pick one of your registered collections as a field value. See the [Collection Picker discussion](https://github.com/umbraco/Umbraco.UIBuilder.Issues/discussions/245).
+* Fixed the sticky bulk-action bar not staying pinned to the bottom of a child or related collection [#244](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/244).
+* Fixed an entity's own edit tab showing a generic "Content" label and icon instead of the collection's own name and icon [#243](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/243).
+
+### [**17.2.10**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.10) **(September 21st 2026)**
+
+* Fixed a filterable property's description not showing in the backoffice when set with `SetDescription()` [#239](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/239).
+* Fixed the save and create notifications showing the wrong or missing name for collections configured with `SetNameFormat()` [#240](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/240), [#241](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/241).
+* Added an `isDefault` option to `AddAllDataView()` so it can be used as the default data view [#238](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/238).
+* Fixed a child collection failing to load when it was the only collection in a group added with `AddChildCollectionGroup()` [#242](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/242).
+
+### [**17.2.9**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.9) **(September 14th 2026)**
+
+* Fixed picked entities not showing as selected in the Entity Picker for Related Collections fields [#233](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/233).
+* Fixed removing existing Related Collections relations not working [#234](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/234).
+* Fixed updating existing Related Collections relations through the Entity Picker not working [#235](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/235).
+* Fixed the save notification not using a custom name format set with `SetNameFormat` [#236](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/236).
+
+### [**17.2.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.8) **(September 7th 2026)**
+
+* Fixed action notifications failing with an error when they contained non-ASCII characters such as å, æ, or ø [#232](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/232)
+
+### [**17.2.7**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.7) **(August 17th 2026)**
+
+* Fixed a collection configured with `MakeReadOnly()` still being selectable [#231](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/231)
+
+### [**17.2.6**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.6) **(July 29th 2026)**
+
+* Fixed custom repository save errors not showing a notification in the backoffice [#230](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/230)
+
 ### [**17.2.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.5) **(July 27th 2026)**
 
 * Fixed collection names returning the singular name in place of the plural, affecting the section dashboard cards, grouped collection tabs, and Entity Picker configuration [#229](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/229)
@@ -54,8 +86,8 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 ### [**17.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.1.0) **(March 5th 2026)**
 
-* Added support for [EF Core](./advanced/efcore-repositories.md) data access
-* [Async](./advanced/async-apis.md) APIs 
+* Added support for [EF Core](advanced/efcore-repositories.md) data access
+* [Async](advanced/async-apis.md) APIs
 
 ### [**17.0.5**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.5) **(February 27th 2026)**
 
@@ -99,7 +131,6 @@ Below are the release notes for Umbraco UI Builder, detailing all changes in thi
 
 * Compatibility update for Umbraco 17.0.0-rc1
 
-
 ## Legacy Release Notes
 
-You can find the release notes for **Konstrukt** in the [Change log file on GitHub](changelog-archive/changelog.md).
+You can find the release notes for **Konstrukt** in the [Change log file on GitHub](../../17/umbraco-ui-builder/changelog-archive/changelog.md).

@@ -325,4 +325,4 @@ There are other options available for modifying cells, rows, and columns such as
 
 The Rich Text Editor in Umbraco can be configured in many different ways.
 
-For more information, see the [Rich Text Editor Configuration](../../../model-your-content/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md) article.
+For more information, see the [Rich Text Editor Configuration](../../model-your-content/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md) article.

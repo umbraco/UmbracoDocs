@@ -1,6 +1,5 @@
 ---
-description: >-
-    Configure Anthropic as an AI provider for Claude models.
+description: Configure Anthropic as an AI provider for Claude models.
 ---
 
 # Anthropic
@@ -10,21 +9,17 @@ Anthropic provides access to Claude models, supporting the Chat capability.
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Anthropic
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Anthropic
 ```
-
 {% endcode %}
 
 ## Connection Settings
@@ -49,5 +44,5 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+* [Providers Overview](providers.md)
+* [Managing Connections](../backoffice/managing-connections.md)

@@ -1,9 +1,10 @@
 ---
 description: >-
-    Configure tool permissions for agents using scopes, explicit tool lists, and user group overrides.
+  Configure tool permissions for agents using scopes, explicit tool lists, and
+  user group overrides.
 ---
 
-# Agent Tool Permissions
+# Permissions
 
 Agent tool permissions control which frontend tools a **standard agent** can execute. This system provides fine-grained security to ensure agents only access appropriate functionality.
 
@@ -35,15 +36,15 @@ Tool scopes categorize frontend tools by their purpose and security requirements
 
 Umbraco.AI provides built-in scopes for common tool categories:
 
-| Scope ID        | Icon             | Destructive | Description                                         |
-| --------------- | ---------------- | ----------- | --------------------------------------------------- |
-| `content-read`  | `icon-article`   | No          | Read operations on content items                    |
-| `content-write` | `icon-article`   | **Yes**     | Create, update, or delete content                   |
-| `media-read`    | `icon-picture`   | No          | Read operations on media items                      |
-| `media-write`   | `icon-picture`   | **Yes**     | Upload, update, or delete media                     |
-| `search`        | `icon-search`    | No          | Search content, media, and Umbraco resources        |
-| `navigation`    | `icon-navigation`| No          | Access current page info and context resources      |
-| `web`           | `icon-globe`     | No          | Fetch external web pages and content                |
+| Scope ID        | Icon              | Destructive | Description                                    |
+| --------------- | ----------------- | ----------- | ---------------------------------------------- |
+| `content-read`  | `icon-article`    | No          | Read operations on content items               |
+| `content-write` | `icon-article`    | **Yes**     | Create, update, or delete content              |
+| `media-read`    | `icon-picture`    | No          | Read operations on media items                 |
+| `media-write`   | `icon-picture`    | **Yes**     | Upload, update, or delete media                |
+| `search`        | `icon-search`     | No          | Search content, media, and Umbraco resources   |
+| `navigation`    | `icon-navigation` | No          | Access current page info and context resources |
+| `web`           | `icon-globe`      | No          | Fetch external web pages and content           |
 
 {% hint style="warning" %}
 **Destructive scopes** include tools that can modify or delete data. Exercise caution when granting these permissions.
@@ -54,7 +55,6 @@ Umbraco.AI provides built-in scopes for common tool categories:
 Scope permissions are defined on `AIStandardAgentConfig` (accessed via `AIAgent.Config`). They can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithToolScopes.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -69,7 +69,6 @@ var agent = new AIAgent
 
 await _agentService.SaveAgentAsync(agent);
 ```
-
 {% endcode %}
 
 ## Explicit Tool Permissions
@@ -80,16 +79,15 @@ For fine-grained control, you can grant access to specific tools by their ID, re
 
 Use explicit tool permissions when you need to:
 
-- Grant access to a single tool from a scope without enabling the entire scope
-- Create custom combinations of tools for specialized agents
-- Supplement scope-based permissions with individual tools
+* Grant access to a single tool from a scope without enabling the entire scope
+* Create custom combinations of tools for specialized agents
+* Supplement scope-based permissions with individual tools
 
 ### Configuring Explicit Tool Permissions
 
 Explicit tool permissions can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithExplicitTools.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -108,7 +106,6 @@ var agent = new AIAgent
 
 await _agentService.SaveAgentAsync(agent);
 ```
-
 {% endcode %}
 
 ## Combining Scopes and Explicit Permissions
@@ -116,7 +113,6 @@ await _agentService.SaveAgentAsync(agent);
 An agent can use both scope-based and explicit permissions together. A tool is allowed if **either** condition is met:
 
 {% code title="HybridPermissionsAgent.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -132,12 +128,12 @@ var agent = new AIAgent
     }
 };
 ```
-
 {% endcode %}
 
 In this example, the agent can:
-- Execute **all tools** in the `content-read` scope
-- Execute the `get_umbraco_media_item` tool specifically
+
+* Execute **all tools** in the `content-read` scope
+* Execute the `get_umbraco_media_item` tool specifically
 
 ## User Group Permission Overrides
 
@@ -145,9 +141,9 @@ User group overrides allow you to customize an agent's tool permissions for spec
 
 ### Use Cases
 
-- **Content Editors** - Allow `content-write` scope for editors in addition to the base permissions
-- **Administrators** - Grant broader access to admin users while restricting others via deny rules
-- **Department-Specific** - Customize tools based on organizational structure
+* **Content Editors** - Allow `content-write` scope for editors in addition to the base permissions
+* **Administrators** - Grant broader access to admin users while restricting others via deny rules
+* **Department-Specific** - Customize tools based on organizational structure
 
 ### How Overrides Work
 
@@ -168,7 +164,6 @@ User group overrides are **additive and subtractive**, not replacement:
 User group overrides can be configured in the **Governance** tab of the agent workspace in the backoffice, or via code:
 
 {% code title="AgentWithUserGroupOverrides.cs" %}
-
 ```csharp
 var agent = new AIAgent
 {
@@ -200,19 +195,18 @@ var agent = new AIAgent
 
 await _agentService.SaveAgentAsync(agent);
 ```
-
 {% endcode %}
 
 ### User Group Permission Properties
 
 The `AIAgentUserGroupPermissions` model has four collections:
 
-| Property               | Type                    | Description                                                                          |
-| ---------------------- | ----------------------- | ------------------------------------------------------------------------------------ |
-| `AllowedToolIds`       | `IReadOnlyList<string>` | Tool IDs added to the allowed set for this user group.                               |
-| `AllowedToolScopeIds`  | `IReadOnlyList<string>` | Tool scope IDs added to the allowed set for this user group.                         |
-| `DeniedToolIds`        | `IReadOnlyList<string>` | Tool IDs removed from the allowed set. Takes precedence over allow rules.            |
-| `DeniedToolScopeIds`   | `IReadOnlyList<string>` | Tool scope IDs removed from the allowed set. Takes precedence over allow rules.      |
+| Property              | Type                    | Description                                                                     |
+| --------------------- | ----------------------- | ------------------------------------------------------------------------------- |
+| `AllowedToolIds`      | `IReadOnlyList<string>` | Tool IDs added to the allowed set for this user group.                          |
+| `AllowedToolScopeIds` | `IReadOnlyList<string>` | Tool scope IDs added to the allowed set for this user group.                    |
+| `DeniedToolIds`       | `IReadOnlyList<string>` | Tool IDs removed from the allowed set. Takes precedence over allow rules.       |
+| `DeniedToolScopeIds`  | `IReadOnlyList<string>` | Tool scope IDs removed from the allowed set. Takes precedence over allow rules. |
 
 ### Permission Resolution Flow
 
@@ -239,7 +233,6 @@ When a user runs an agent, permissions are resolved in this order:
 Frontend tools define their scope and destructiveness using the `ManifestUaiAgentTool` interface:
 
 {% code title="create-content-tool-manifest.ts" %}
-
 ```typescript
 const manifest: ManifestUaiAgentTool = {
     type: "uaiAgentTool",
@@ -263,14 +256,13 @@ const manifest: ManifestUaiAgentTool = {
     api: () => import("./create-content.api.js")
 };
 ```
-
 {% endcode %}
 
 ### Tool Metadata Properties
 
-| Property        | Type      | Description                                                      |
-| --------------- | --------- | ---------------------------------------------------------------- |
-| `scope`         | `string?` | Tool scope ID for permission grouping (e.g., "content-write")    |
+| Property        | Type      | Description                                                         |
+| --------------- | --------- | ------------------------------------------------------------------- |
+| `scope`         | `string?` | Tool scope ID for permission grouping (e.g., "content-write")       |
 | `isDestructive` | `boolean` | Whether tool performs destructive operations (create/update/delete) |
 
 This metadata flows from frontend to backend for permission filtering:
@@ -292,7 +284,6 @@ Agent Runtime (filters by permissions)
 ### Check if a Tool is Allowed
 
 {% code title="CheckToolPermission.cs" %}
-
 ```csharp
 public class MyService
 {
@@ -319,13 +310,11 @@ public class MyService
     }
 }
 ```
-
 {% endcode %}
 
 ### Get All Allowed Tools
 
 {% code title="GetAllowedTools.cs" %}
-
 ```csharp
 public async Task<IReadOnlyList<string>> GetAllowedToolsAsync(
     Guid agentId,
@@ -340,7 +329,6 @@ public async Task<IReadOnlyList<string>> GetAllowedToolsAsync(
         cancellationToken);
 }
 ```
-
 {% endcode %}
 
 ## Permission Filtering at Runtime
@@ -362,7 +350,7 @@ Avoid granting all scopes by default -- instead, grant only the specific scopes 
 
 ## Related
 
-- [Agent Surfaces](scopes.md) - Categorizing agents by surface (different from tool scopes)
-- [Frontend Tools](../agent-copilot/frontend-tools.md) - Creating custom frontend tools
-- [Getting Started](getting-started.md) - Agent setup guide
-- [API Reference](reference/ai-agent-service.md) - IAIAgentService methods
+* [Agent Surfaces](scopes.md) - Categorizing agents by surface (different from tool scopes)
+* [Frontend Tools](../agent-copilot/frontend-tools.md) - Creating custom frontend tools
+* [Getting Started](getting-started.md) - Agent setup guide
+* [API Reference](ai-agent-service/) - IAIAgentService methods

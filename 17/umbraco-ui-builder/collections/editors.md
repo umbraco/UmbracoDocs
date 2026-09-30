@@ -6,7 +6,7 @@ description: Configuring the editor of a collection in Umbraco UI Builder.
 
 An editor is the user interface used to edit an entity. It consists of tabs and property editors.
 
-![A collection editor](<../.gitbook/assets/people-editor (1).png>)
+![A collection editor](../.gitbook/assets/people-editor.png)
 
 ## Configuring an Editor
 

@@ -29,6 +29,8 @@ When creating or modifying documentation, follow this checklist:
 3. **Add to SUMMARY.md** if this is a new article
 4. **Add redirects** to `.gitbook.yaml` if moving/renaming/deleting
 5. **Add images** to the first `.gitbook/assets` directory found when looking up in the file structure from where the article is.
+6. **Follow the PR process** — structure the PR body after `.github/pull_request_template.md`. `gh pr create --body` does not apply this template, so match its sections manually. Only check contributor checklist items that have been verified.
+7. **Disclose AI use, if applicable** — for AI-generated or AI-assisted content, note this in the PR description, apply the `ai-generated` label, and keep the PR within 10 article files. Mirrored version folders (e.g. `17/` and `18/`) count as separate files. See the [AI Contribution Guidelines](https://docs.umbraco.com/contributing/documentation/ai-guidelines).
 
 ## Style Guide Summary
 

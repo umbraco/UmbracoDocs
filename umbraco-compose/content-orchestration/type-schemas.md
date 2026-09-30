@@ -249,6 +249,7 @@ The following delivery properties are available:
 | `expose`        | Determines whether the property is exposed by GraphQL or remains internal to the platform. Set this to `false` to prevent the property from being returned from GraphQL. Defaults to `true`. |
 | `fieldName`     | Allows you to override the name of the property in GraphQL. Defaults to the name of the property.                                                                                            |
 | `refCollection` | Controls which collection from which referenced content will be retrieved. Defaults to the current collection if not specified.                                                              |
+| `bidirectional` | Adds a reverse field to the referenced Type Schema in GraphQL that can be used to query related objects of the source (this) type.                                                           |
 
 ## Further Reading
 

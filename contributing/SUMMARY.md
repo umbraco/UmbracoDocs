@@ -4,7 +4,7 @@
 
 ## Hacktoberfest 2024
 
-* [Contributing to Hacktoberfest](hacktoberfest/contributing.md)
+* [Contributing to Hacktoberfest](hacktoberfest-2024/contributing.md)
 
 ## Documentation
 
@@ -22,12 +22,12 @@
 
 ## Umbraco-CMS
 
-* [How to contribute](umbraco-cms/contributing.md)
-  * [Before you start](umbraco-cms/before-you-start.md)
-  * [Finding your first issue: Up for grabs](umbraco-cms/first-issue.md)
-  * [Building the codebase](umbraco-cms/build.md)
-  * [Unwanted changes](umbraco-cms/unwanted-changes.md)
-  * [Other ways to contribute](umbraco-cms/other-ways-to-contribute.md)
+* [How to contribute](umbraco-cms/contributing/README.md)
+  * [Before you start](umbraco-cms/contributing/before-you-start.md)
+  * [Finding your first issue: Up for grabs](umbraco-cms/contributing/first-issue.md)
+  * [Building the codebase](umbraco-cms/contributing/build.md)
+  * [Unwanted changes](umbraco-cms/contributing/unwanted-changes.md)
+  * [Other ways to contribute](umbraco-cms/contributing/other-ways-to-contribute.md)
 * [Umbraco-CMS on GitHub](https://github.com/umbraco/Umbraco-CMS)
 
 ## UI Library

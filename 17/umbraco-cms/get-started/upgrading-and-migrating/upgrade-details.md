@@ -59,7 +59,6 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
 
     b. Click **Install** to upgrade your project.
 
-
 {% hint style="info" %}
 If you have other packages like Umbraco Forms or Deploy installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
 
@@ -141,10 +140,10 @@ The steps outlined in this article apply to Umbraco version 10 and later version
 
 Are you upgrading to a minor version for Umbraco 6, 7, or 8? You can find the appropriate guide below:
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
-[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](find-your-upgrade-path/minor-upgrades-for-umbraco-8.md)
 {% endcontent-ref %}
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
-[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](find-your-upgrade-path/minor-upgrades-for-umbraco-7.md)
 {% endcontent-ref %}

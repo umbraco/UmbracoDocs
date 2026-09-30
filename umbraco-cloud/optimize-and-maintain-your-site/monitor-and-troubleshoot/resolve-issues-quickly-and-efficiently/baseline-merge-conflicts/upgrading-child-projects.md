@@ -1,6 +1,7 @@
 ---
 description: >-
-  Learn how to push upgrades from a Baseline project to its Child projects, for both minor and major version upgrades.
+  Learn how to push upgrades from a Baseline project to its Child projects, for
+  both minor and major version upgrades.
 ---
 
 # Pushing Upgrades to a Child Project
@@ -17,26 +18,22 @@ From here, you can see all Child projects connected to this Baseline project, an
 
 Before pushing upgrades to Child projects, run the upgrade on the Baseline project itself.
 
-Follow the upgrade guides for [Minor](../../../manage-product-upgrades/product-upgrades/minor-upgrades.md) and/or [Major](../../../manage-product-upgrades/product-upgrades/major-upgrades.md) upgrade notes to upgrade your Baseline project.
+Follow the upgrade guides for [Minor](../../../manage-product-upgrades/product-upgrades/minor-upgrades.md) and/or [Major](../../../manage-product-upgrades/product-upgrades/major-upgrades/) upgrade notes to upgrade your Baseline project.
 
 Once the upgrade has been verified on the Baseline project, follow the steps in the sections below to push the upgrade to the Child projects.
 
 {% hint style="info" %}
-
 Set up a Development environment on your Child projects before deploying updates.
 
 A Development environment gives you a place to test and verify that everything deployed correctly.
 
 Once you are happy with the Development environment, deploy it to the Live environment.
-
 {% endhint %}
 
 ## Upgrading Child Projects to a New Major Version
 
 {% hint style="info" %}
-
 If you completed version-specific steps when upgrading the Baseline project, apply those same steps to the Child projects before pushing the upgrade.
-
 {% endhint %}
 
 1. Go to the Child projects you are upgrading.

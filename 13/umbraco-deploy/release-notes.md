@@ -9,7 +9,7 @@ In this section we have summarised the changes to Umbraco Deploy and [Deploy Con
 If there are any breaking changes or other issues to be aware of when upgrading they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version you can find the details about the breaking changes in the [version specific updates](upgrades/version-specific.md) article.
+If you are upgrading to a new major version you can find the details about the breaking changes in the [version specific updates](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
@@ -35,7 +35,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 
 ### [13.4.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.4.1) (September 5th 2025)
 
-* Fix parsing root UDI range when custom `tryParseEntityIdFromNodeId` is used when [registering a transfer entity type](./extending/extending.md#backoffice-integrated-transfers)
+* Fix parsing root UDI range when custom `tryParseEntityIdFromNodeId` is used when [registering a transfer entity type](extending/extending.md#backoffice-integrated-transfers)
 * Fix updating restore descriptions when the selected workspace is changed
 * Set default row span in block area configuration when migrating to Block Grid editor [#270](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/270#issuecomment-3068861453)
 
@@ -178,7 +178,7 @@ This section contains the release notes for Umbraco Deploy 13 including all chan
 ### [13.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.0.0) (November 6th 2023)
 
 * Compatibility with Umbraco 13:
-  * See full details of breaking changes under the [version specific upgrade guide](upgrades/version-specific.md).
+  * See full details of breaking changes under the [version specific upgrade guide](upgrading/version-specific.md).
   * Update Richtext value connector to handle references in blocks.
 
 ## Umbraco.Deploy.Contrib

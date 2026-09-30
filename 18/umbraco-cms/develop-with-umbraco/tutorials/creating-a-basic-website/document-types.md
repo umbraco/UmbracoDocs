@@ -102,3 +102,5 @@ To add properties to your Document Type, follow these steps:
 ![Home Page with Properties](../../../.gitbook/assets/homepage-document-type-with-properties.png)
 
 Your first **Document Type** is now created. Umbraco takes the data from an instance of the _**Document Type**_ (also called _**Content Node**_). This data is then merged with a _**Template**_ – let's create our template next.
+
+A Document Type defines your content's structure, while a Template defines how that content is rendered on the front end. See [Document Type Options](../../../model-your-content/content-types-and-structure/data/defining-content/document-type-options.md) for a full breakdown of when to use each option.

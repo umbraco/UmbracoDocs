@@ -1,6 +1,6 @@
 # Preview
 
-In this article you will get an overview of the Preview functionality in Umbraco Heartcore and how to use it with our[ Client Libraries](../client-libraries/).
+In this article you will get an overview of the Preview functionality in Umbraco Heartcore and how to use it with our[ Client Libraries](../client-libraries/client-libraries.md).
 
 ## Prerequisites
 

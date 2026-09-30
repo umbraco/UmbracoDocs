@@ -16,11 +16,11 @@ Umbraco provides a .NET template to help you get started with building extension
 To install the Umbraco extension template, run the following command in your terminal:
 
 ```bash
-dotnet new install Umbraco.Templates::17.1.0
+dotnet new install Umbraco.Templates@18.1.1
 ```
 
 {% hint style="info" %}
-The numbers at the end, `x.x.x` determines the specific version. It is important to match this with the version of the project you're creating the extension project in.
+The numbers at the end, `xx.x.x` determines the specific version. It is important to match this with the version of the project you're creating the extension project in.
 {% endhint %}
 
 This command installs both the `umbraco` and `umbraco-extension` templates, which you can use to create new Umbraco and Umbraco extension projects. If a new Umbraco project has previously been created using `dotnet new umbraco`, the templates may already be installed.
@@ -52,7 +52,7 @@ After setup, the dashboard appears in the main **Content** section of the Backof
 By default, the Umbraco Extensions project has a reference to the latest version of Umbraco. Specify your preferred Umbraco version for the Extensions template by using the `--version` flag:
 
 ```bash
-dotnet new umbraco-extension --version 17.1.0 -n MyExtension -ex
+dotnet new umbraco-extension --version 18.1.1 -n MyExtension -ex
 ```
 
 ### Add the Extension to an Umbraco Project
@@ -94,6 +94,27 @@ npm run watch
 {% endhint %}
 
 This command compiles the TypeScript files and copies them over to the `wwwroot` output folder. Once complete, run the Umbraco project to view the extension in action.
+
+### Fix an ERESOLVE Error From npm install
+
+Extensions created using Umbraco 18.0.0 to 18.2.0 templates can fail to install on Umbraco 18.2.0 or later, with an error like this:
+
+```text
+npm error ERESOLVE unable to resolve dependency tree
+npm error Found: @hey-api/openapi-ts@0.97.3
+npm error peer @hey-api/openapi-ts@">=0.99.0 <1.0.0" from @umbraco-cms/backoffice@18.2.0
+```
+
+From Umbraco 18.2.0, `@umbraco-cms/backoffice` requires `@hey-api/openapi-ts` 0.99 or later. 
+
+To resolve the error:
+
+1. In the `Client` folder, update the `@hey-api/openapi-ts` version in `package.json` to `^0.99.0`.
+2. Run `npm install` again.
+
+{% hint style="warning" %}
+Do not use `npm install --legacy-peer-deps` to get past the error. It skips all peer dependencies, including `lit`, and the build then fails with errors such as `Module '"@umbraco-cms/backoffice/external/lit"' has no exported member 'LitElement'`.
+{% endhint %}
 
 ## Publish the Project
 

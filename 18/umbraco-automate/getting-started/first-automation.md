@@ -99,12 +99,12 @@ Your automation is working when the run appears in the **Runs** tab and the **Lo
 
 Read **Core Concepts** to understand workspaces, bindings, and connections.
 
-{% content-ref url="../concepts/" %}
-[concepts](../concepts/)
+{% content-ref url="../concepts/concepts.md" %}
+[concepts.md](../concepts/concepts.md)
 {% endcontent-ref %}
 
 Then explore **Add-ons** to add triggers and actions for Slack, Forms, Commerce, and more.
 
-{% content-ref url="../add-ons/" %}
-[add-ons](../add-ons/)
+{% content-ref url="../add-ons/add-ons.md" %}
+[add-ons.md](../add-ons/add-ons.md)
 {% endcontent-ref %}

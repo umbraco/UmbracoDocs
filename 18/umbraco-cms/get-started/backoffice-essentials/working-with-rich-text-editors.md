@@ -135,7 +135,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-a-Page-v11.png" alt="Link to a Page in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-a-Page.png" alt="Link to a Page in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -326,4 +326,4 @@ There are other options available for modifying cells, rows, and columns such as
 
 The Rich Text Editor in Umbraco can be configured in many different ways.
 
-For more information, see the [Rich Text Editor Configuration](../../../model-your-content/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md) article.
+For more information, see the [Rich Text Editor Configuration](../../model-your-content/property-editors/built-in-umbraco-property-editors/rich-text-editor/configuration.md) article.

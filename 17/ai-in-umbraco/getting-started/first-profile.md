@@ -1,6 +1,7 @@
 ---
 description: >-
-    Create a profile to configure how AI requests are made and use it in your code.
+  Create a profile to configure how AI requests are made and use it in your
+  code.
 ---
 
 # The First Profile
@@ -9,7 +10,7 @@ A profile combines a connection with model settings for a specific use case. Pro
 
 ## Prerequisites
 
-- At least one connection created
+* At least one connection created
 
 ## Create a Profile
 
@@ -64,7 +65,6 @@ See [Managing Settings](../backoffice/managing-settings.md) for more details on 
 ### Using the Default Profile
 
 {% code title="ContentController.cs" %}
-
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.AI;
@@ -98,7 +98,6 @@ public class ContentController : Controller
     }
 }
 ```
-
 {% endcode %}
 
 ### Using a Specific Profile
@@ -106,7 +105,6 @@ public class ContentController : Controller
 To use a specific profile, pass its alias (or ID) to `WithProfile`:
 
 {% code title="ContentController.cs" %}
-
 ```csharp
 public async Task<IActionResult> GenerateSummary([FromBody] string content)
 {
@@ -122,7 +120,6 @@ public async Task<IActionResult> GenerateSummary([FromBody] string content)
     return Ok(response.Text);
 }
 ```
-
 {% endcode %}
 
 ## Understanding Profile Resolution
@@ -149,12 +146,12 @@ Create different profiles for different use cases:
 
 Learn more about using the chat API:
 
-{% content-ref url="../using-the-api/chat/README.md" %}
-[Chat](../using-the-api/chat/README.md)
+{% content-ref url="../using-the-api/chat/" %}
+[chat](../using-the-api/chat/)
 {% endcontent-ref %}
 
 Or explore the core concepts:
 
-{% content-ref url="../concepts/README.md" %}
-[Core Concepts](../concepts/README.md)
+{% content-ref url="../concepts/concepts.md" %}
+[concepts.md](../concepts/concepts.md)
 {% endcontent-ref %}

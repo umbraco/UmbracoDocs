@@ -11,7 +11,7 @@ tags:
 The Platform Configuration section in the Umbraco Cloud Portal lets you manage environment-level settings that affect how your application runs on Azure App Service. You can control the following settings:
 
 * **Proactive Auto-Heal**: Automatically restart an environment when the platform detects unhealthy resource usage.
-* **Always On**: Keep your application loaded at all times so it does not unload after periods of inactivity.
+* **Always On**: Keep your application loaded at all times so it does not unload after 20 minutes without any incoming requests.
 
 Changes to either setting cause the environment to restart and take effect only after you confirm them.
 
@@ -53,11 +53,11 @@ You do not need to take any action. The setting is applied automatically during 
 
 ## Always On
 
-Always On keeps your application loaded, so it does not unload after periods of inactivity. Without Always On, an idle application is unloaded to free resources. The next incoming request then has to wait for the application to start again.
+Always On keeps your application loaded, so it does not unload after 20 minutes without any incoming requests. Without Always On, an idle application is unloaded to free resources. The next incoming request then has to wait for the application to start again.
 
 Keeping the application loaded removes this warm-up delay and helps ensure consistent response times.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Changing the Always On toggle is only available for environments on a **Dedicated** plan. Environments on Shared plans use the default value for Always On. This restriction exists for sustainability reasons. Keeping idle applications loaded consumes resources that could otherwise be released on shared infrastructure.
 {% endhint %}
 
@@ -66,7 +66,7 @@ Changing the Always On toggle is only available for environments on a **Dedicate
 If you downgrade an environment from a **Dedicated** plan to a **Shared** plan, the Always On setting reverts to its default value:
 
 * **Production environments**: Always On is enabled (`true`) by default.
-* **Feature environments**: Always On is disabled (`false`) by default.
+* **Development/Pre-Production environments**: Always On is disabled (`false`) by default.
 
 You do not need to take any action. The default is applied automatically as part of the downgrade process.
 

@@ -249,7 +249,7 @@ When true, Workflow will send email notifications to approval groups, with a dig
 
 #### PublishIsReview (bool)
 
-When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed via the review banner rendered at the top of the editor.
+When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed..
 
 For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property read-only. The configuration would look like this:
 

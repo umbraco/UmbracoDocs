@@ -18,7 +18,7 @@ This documentation is intended for **developers** with a basic understanding of 
 
 If you are new to Umbraco UI Builder, it is recommended to start with the [Getting Started](getting-started/requirements.md) section. This section covers system requirements and installation instructions.
 
-Once you have Umbraco UI Builder installed, explore the [Guides](guides/creating-your-first-integration.md) section. This section provides a quick-start example on configuring Umbraco UI Builder.
+Once you have Umbraco UI Builder installed, explore the [Guides](how-to-guides/creating-your-first-integration.md) section. This section provides a quick-start example on configuring Umbraco UI Builder.
 
 Use the main menu to explore features in detail and navigate directly to topics of interest.
 

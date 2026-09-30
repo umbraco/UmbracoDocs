@@ -1,6 +1,6 @@
-# Adding a workflow type to Umbraco Forms
+# Adding A Workflow Type To Umbraco Forms
 
-*This builds on the "[adding a type to the provider model](adding-a-type.md)" chapter*
+_This builds on the "_[_adding a type to the provider model_](adding-a-type/)_" chapter_
 
 Add a new class to your project and have it inherit from `Umbraco.Forms.Core.WorkflowType`, and implement the class. For this sample, we will focus on the execute method. This method processes the current record (the data submitted by the form) and has the ability to change data and state.
 
@@ -66,9 +66,9 @@ namespace MyFormsExtensions
 
 ### Record information
 
-The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`.  This parameter contains all information related to the workflow.
+The `ExecuteAsync()` method gets a `WorkflowExecutionContext` which has properties for the related `Form`, `Record`, and `FormState`. This parameter contains all information related to the workflow.
 
-The `Record` contains all data and metadata submitted by the form.  As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
+The `Record` contains all data and metadata submitted by the form. As shown in the example above, you can iterate over all `RecordField` values in the form. You can also retrieve a specific record field by alias using the following method:
 
 ```csharp
 RecordField? recordField = context.Record.GetRecordFieldByAlias("myalias");
@@ -93,6 +93,37 @@ IEnumerable<string> selectedPrevalues = recordField.GetSelectedPrevalues();
 The `Form` references the form the record is from and `FormState` provides its state (submitted or approved).
 
 Other context, such as the current `HttpContext`, if needed can be passed as constructor parameters (for example: the `HttpContext` can be accessed by injecting `IHttpContextAccessor`).
+
+## Date values
+
+A record field that stores a date is formatted for whoever reads it. `ValuesAsString` has an overload that takes a `RecordFieldDateFormat` and, optionally, a culture:
+
+```csharp
+using Umbraco.Forms.Core.Enums;
+
+// Formatted for a person, using the culture the entry was submitted with.
+var forDisplay = recordField.ValuesAsString(false, RecordFieldDateFormat.Culture, context.Record.Culture);
+
+// Formatted for another system, as ISO 8601.
+var forOtherSystem = recordField.ValuesAsString(false, RecordFieldDateFormat.Iso);
+```
+
+The options are:
+
+| Option | Output |
+| --- | --- |
+| `Invariant` | Month-first, matching how the value is stored in the record data. This is the default. |
+| `Culture` | Formatted with the supplied culture, for a person to read. |
+| `Iso` | ISO 8601, for another system to read. |
+
+Magic strings in your workflow's own settings are formatted the same way. Override `PlaceholderDateFormat` to choose the format:
+
+```csharp
+/// <inheritdoc/>
+protected override RecordFieldDateFormat PlaceholderDateFormat => RecordFieldDateFormat.Culture;
+```
+
+Use `Culture` when a person reads the setting, such as an email body. Use `Iso` when another system reads it, such as a webhook URL. The default is `Invariant`, which keeps the behavior of earlier versions.
 
 ## Configuration validation
 

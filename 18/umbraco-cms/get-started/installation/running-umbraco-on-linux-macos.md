@@ -1,8 +1,10 @@
 ---
-description: "Since Umbraco 9 it has been possible to run Umbraco CMS natively on Linux or macOS High Sierra 10.13 and newer."
+description: >-
+  Since Umbraco 9 it has been possible to run Umbraco CMS natively on Linux or
+  macOS High Sierra 10.13 and newer.
 ---
 
-# Running Umbraco on Linux or macOS
+# Running Umbraco on Linux/macOS
 
 With Umbraco CMS on .NET Core, Linux and macOS is natively supported with SQLite as the database.
 
@@ -14,14 +16,14 @@ To get started with Umbraco CMS first have a look at the [requirements for runni
 
 Once you've made sure you meet the requirements it is time to install the Umbraco Templates on your system.
 
-To do this follow the [Install using .NET CLI](install-umbraco-with-templates.md#install-the-template) guide.
+To do this follow the [Install using .NET CLI](/broken/pages/P2G798v8rRzd9Cq7gaLx#install-the-template) guide.
 
 With the templates installed on your system, it is now possible to create Umbraco projects.
 
 To create a project, there are two options:
 
-- Continue creating projects using the .NET CLI.
-- Create new projects using Visual Studio (only macOS).
+* Continue creating projects using the .NET CLI.
+* Create new projects using Visual Studio (only macOS).
 
 To create new projects using Visual Studio, you can use the [Install using Visual Studio](visual-studio.md) guide.
 

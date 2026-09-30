@@ -1,4 +1,3 @@
----
 description: >-
   Get an overview of the things changed and fixed in each version of Umbraco
   Commerce.
@@ -17,6 +16,22 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
+
+#### 17.2.6 (28th Sep 2026)
+* Add notification events for when a Commerce customer is created, updated, or saved, so you can hook into customer changes. For example, to automatically create a linked Umbraco member.
+
+#### 17.2.5 (22nd Sep 2026)
+* Fix a SQLite connection setting that combined shared-cache mode with write-ahead logging, which could cause "database table is locked" errors
+* Fix shipping rate tables showing a stray blank or plus symbol for empty rate entries
+
+#### 17.2.4 (7th Sep 2026)
+* Fix analytics dashboard widgets overlapping when the browser window is resized [#884](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/884)
+* Fix custom cart filters registered via `WithCartAdvancedFilters()` being silently ignored [#885](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/885)
+* Fix order cleanup failing on SQL Server with a "too many parameters" error on large stores [#887](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/887)
+* Fix a crash on the first request after an unattended upgrade [#888](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/888)
+* Fix a SQLite migration failure when upgrading a store with existing customer data [#889](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/889)
+* Fix discount rule and reward provider setting descriptions not showing in the backoffice [#890](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/890)
+* Fix the Variants tab not appearing when the Variants Editor property is inherited through a Content Type Composition [#891](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/891)
 
 #### 17.2.3 (21st Aug 2026)
 * Fix a startup crash on large stores during the customer data migration [#883](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/883)

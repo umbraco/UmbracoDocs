@@ -1,5 +1,7 @@
 ---
-description: Controlling the visibility of actions in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: >-
+  Controlling the visibility of actions in Umbraco UI Builder, the backoffice UI
+  builder for Umbraco.
 ---
 
 # Action Visibility
@@ -10,7 +12,7 @@ By default actions are not visible in the UI and you must expressly define when 
 
 To define the default visibility of an action at the action level you can do this by overriding the `IsVisible` method of the `Action<>` base class.
 
-````csharp
+```csharp
 // Example
 public class MyAction : Action<ActionResult>
 {
@@ -22,49 +24,49 @@ public class MyAction : Action<ActionResult>
     }
     ...
 }
-````
+```
 
-The `IsVisible` method is passed a `ActionVisibilityContext` which you should use to decide whether the action should display, returning `true` if it should, or `false` if it should not. For more information check the [Action visibility context](#action-visibility-context).
+The `IsVisible` method is passed a `ActionVisibilityContext` which you should use to decide whether the action should display, returning `true` if it should, or `false` if it should not. For more information check the [Action visibility context](action-visibility.md#action-visibility-context).
 
 ## Overriding an actions visibility
 
 Overriding an actions visibility is controlled via the [collections](../collections/overview.md) configuration.
 
-### **AddAction&lt;TMenuActionType&gt;(Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction\<TMenuActionType>(Lambda actionConfig = null) : CollectionConfigBuilder\<TEntityType>**
 
 Adds an action of the given type to the collection with the given visibility.
 
-````csharp
+```csharp
 // Example
 collectionConfig.AddAction<ExportMenuAction>(actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
-````
+```
 
-### **AddAction(Type actionType, Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction(Type actionType, Lambda actionConfig = null) : CollectionConfigBuilder\<TEntityType>**
 
 Adds an action of the given type to the collection with the given visibility.
 
-````csharp
+```csharp
 // Example
 collectionConfig.AddAction(typeof(ExportMenuAction), actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
-````
+```
 
-### **AddAction(IAction action, Lambda actionConfig = null) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddAction(IAction action, Lambda actionConfig = null) : CollectionConfigBuilder\<TEntityType>**
 
 Adds the given action to the collection with the given visibility.
 
-````csharp
+```csharp
 // Example
 collectionConfig.AddAction(action, actionConfig => actionConfig
     .SetVisibility(x => x.ActionType == ActionType.Bulk 
         || x.ActionType == ActionType.Row)
 );
-````
+```
 
 ## Action visibility context
 
@@ -78,31 +80,31 @@ The action type property is an enum property that define which area of the UI it
 
 The `ContainerMenu` action type determines that the action will be displayed in both the tree of the collection and its list view actions menu.
 
-![Container Menu](../images/container_actions_menu.png)
+![Container Menu](../.gitbook/assets/container_actions_menu.png)
 
 #### EntityMenu
 
 The `EntityMenu` action type determines that the action will be displayed in the actions menu of a collection editor UI.
 
-![Entity Menu](../images/entity_actions_menu.png)
+![Entity Menu](../.gitbook/assets/entity_actions_menu.png)
 
 #### Bulk
 
 The `Bulk` action type determines that the action will be displayed in the collection list view bulk actions menu.
 
-![Bulk Actions](../images/bulk_actions_menu.png)
+![Bulk Actions](../.gitbook/assets/bulk_actions_menu.png)
 
 #### Row
 
 The `Row` action type determines that the action will be displayed in the collection list view action row menu.
 
-![Row Actions](../images/row_actions_menu.png)
+![Row Actions](../.gitbook/assets/row_actions_menu.png)
 
 #### Save
 
 The `Save` action type determines that the action will be displayed as a sub button in an entity editors save button. All `Save` action types trigger a save before the action is executed and so to convey this, all `Save` action type button labels are prefixed `Save & [Action Name]`
 
-![Save Actions](../images/save_actions_menu.png)
+![Save Actions](../.gitbook/assets/save_actions_menu.png)
 
 ### UserGroups
 

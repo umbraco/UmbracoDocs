@@ -6,7 +6,7 @@ description: Describes how to upgrade existing installations to new versions.
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
-If you are new to upgrades, be sure to read the [upgrade introduction article](./README.md) first.
+If you are new to upgrades, be sure to read the [upgrade introduction article](./) first.
 
 * [Upgrade to a new Major](upgrade-details.md#upgrade-to-a-new-major)
 * [Upgrade to a new Minor](upgrade-details.md#upgrade-to-a-new-minor)
@@ -141,10 +141,10 @@ The steps outlined in this article apply to Umbraco version 10 and later version
 
 Are you upgrading to a minor version for Umbraco 6, 7, or 8? You can find the appropriate guide below:
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
-[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](find-your-upgrade-path/minor-upgrades-for-umbraco-8.md)
 {% endcontent-ref %}
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
-[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](find-your-upgrade-path/minor-upgrades-for-umbraco-7.md)
 {% endcontent-ref %}

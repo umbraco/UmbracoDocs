@@ -17,9 +17,11 @@ To create a Document Type:
 1. Go to **Settings**.
 2. Click **...** next to the **Document Types**.
 3. Select **Create...**
-4.  Select **Document Type with Template**.
+4. Select **Document Type with Template**.
 
-    \{% hint style="info" %\} **Folders** can help you organize your **Document Types**. \{% endhint %\}
+    {% hint style="info" %}
+    **Folders** can help you organize your **Document Types**.
+    {% endhint %}
 
 ![Creating a Document Type with Template](../../../.gitbook/assets/creating-a-document-type.png)
 
@@ -38,7 +40,7 @@ With the help of icons, you can identify different Document Types in the **Conte
 To add an icon:
 
 1. Open the Document Type. For example: _HomePage_.
-2.  Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
+2. Click the icon placeholder to the left of the Document Type name. This opens the **Select Icon** dialog on the right side of the screen.
 
     ![Selecting an icon](../../../.gitbook/assets/selecting-an-icon.png)
 3. Browse the icon list and select the icon of your choice.
@@ -50,7 +52,7 @@ To add an icon:
 To create a Document Type at the root of the **Content Tree**:
 
 1. Go to the **Structure** tab.
-2.  Toggle the **Allow at root** button.
+2. Toggle the **Allow at root** button.
 
     ![Allow Document Type as root](../../../.gitbook/assets/allow-document-type-as-root.png)
 
@@ -66,16 +68,16 @@ To add properties to your Document Type, follow these steps:
 
 1. Go to the **Design** tab.
 2. Click **Add Group**.
-3.  Enter a Name for the group. For this tutorial, we will call it _Content_.
+3. Enter a Name for the group. For this tutorial, we will call it _Content_.
 
     ![Adding a Group](../../../.gitbook/assets/add-group-document-type.png)
 4. Click **Add property**. The **Add property** dialog opens.
 5. Enter a **Name**. For example: _Page Title_.
-6.  Enter a **Description**. For example: _The main title of the page (Welcome to Widgets Ltd.)_.
+6. Enter a **Description**. For example: _The main title of the page (Welcome to Widgets Ltd.)_.
 
     ![Adding a property](../../../.gitbook/assets/creating-our-pagetitle-property.png)
 7. Click **Select Property Editor**.
-8.  Select the Data Type of your choice. We'll add _text_ in the search box and select the **Textstring** Data Type.
+8. Select the Data Type of your choice. Add _text_ in the search box and select the **Textstring** Data Type.
 
     ![Selecting a Data Type](../../../.gitbook/assets/selecting-textstring-data-type.png)
 9. Click **Submit**.
@@ -100,3 +102,5 @@ To add properties to your Document Type, follow these steps:
 ![Home Page with Properties](../../../.gitbook/assets/homepage-document-type-with-properties.png)
 
 We’ve now created our first **Document Type**. Umbraco takes the data from an instance of the _**Document Type**_ (also called _**Content Node**_). This data is then merged with a _**Template**_ – let's create our template next.
+
+A Document Type defines your content's structure, while a Template defines how that content is rendered on the front end. See [Document Type Options](../../../model-your-content/content-types-and-structure/data/defining-content/document-type-options.md) for a full breakdown of when to use each option.

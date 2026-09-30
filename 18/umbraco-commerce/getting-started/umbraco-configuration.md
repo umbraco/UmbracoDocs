@@ -42,4 +42,4 @@ Once created and assigned, you should be able to refresh the backoffice and see 
 
 For more information on gaining [access to the store](../tutorials/build-a-store/permissions.md).
 
-Further information on [store configuration](../tutorials/build-a-store/configure-store.md).
+Further information on [store configuration](../tutorials/build-a-store/create-store/configure-store.md).

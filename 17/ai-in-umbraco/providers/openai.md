@@ -1,6 +1,7 @@
 ---
 description: >-
-    Configure OpenAI as an AI provider for chat, embedding, and speech-to-text capabilities.
+  Configure OpenAI as an AI provider for chat, embedding, and speech-to-text
+  capabilities.
 ---
 
 # OpenAI
@@ -10,21 +11,17 @@ OpenAI provides access to GPT and text-embedding models, supporting Chat, Embedd
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.OpenAI
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.OpenAI
 ```
-
 {% endcode %}
 
 ## Connection Settings
@@ -50,11 +47,8 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 OpenAI models are also available through Azure OpenAI Service. To use Azure:
 
-1. Set the **Endpoint** to your Azure OpenAI resource URL:
-   `https://{resource-name}.openai.azure.com/`
-
+1. Set the **Endpoint** to your Azure OpenAI resource URL: `https://{resource-name}.openai.azure.com/`
 2. Use your Azure API key instead of an OpenAI key
-
 3. Model names may differ (deployment names vs model names)
 
 {% hint style="info" %}
@@ -65,5 +59,5 @@ Azure OpenAI provides data residency, enterprise compliance, and integration wit
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+* [Providers Overview](providers.md)
+* [Managing Connections](../backoffice/managing-connections.md)

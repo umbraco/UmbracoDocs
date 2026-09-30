@@ -8,7 +8,7 @@ description: >-
 
 Backoffice extensions often need to show or resolve a media item. You usually start with a media key, which is a GUID. From the key you either render the image or fetch the media data.
 
-Reach for the ready-made components and repositories rather than building URLs by hand. They handle authentication, HMAC-signed URLs, lazy loading, and caching for you.
+Reach for the ready-made components and repositories rather than building URLs by hand. They handle authentication, HMAC-signed URLs, lazy loading, and caching for you. For server-side configuration of the signing key, see [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md).
 
 ## Displaying a media item
 

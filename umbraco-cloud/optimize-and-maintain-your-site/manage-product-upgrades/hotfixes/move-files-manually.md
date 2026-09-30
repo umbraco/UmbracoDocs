@@ -40,7 +40,7 @@ For the sake of simplicity here's an explanation of the names I'll be using in t
 
     * The _clone URL_ for the Live environment can be found in the Umbraco Cloud Portal:
 
-    <figure><img src="../../../.gitbook/assets/image (43).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (21).png" alt="Live Clone URL"><figcaption><p>Live Clone URL</p></figcaption></figure>
 
     ![Clone Project](../../../.gitbook/assets/live-clone-URL_v10.png)
 2. Locate the files from the Development repository that you want to move to Live.

@@ -1,6 +1,7 @@
 ---
 description: >-
-    Configure Microsoft AI Foundry as an AI provider for chat and embedding capabilities.
+  Configure Microsoft AI Foundry as an AI provider for chat and embedding
+  capabilities.
 ---
 
 # Microsoft AI Foundry
@@ -10,21 +11,17 @@ Microsoft AI Foundry (formerly Azure AI Studio) provides a unified endpoint for 
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.MicrosoftFoundry
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.MicrosoftFoundry
 ```
-
 {% endcode %}
 
 ## Connection Settings
@@ -33,18 +30,18 @@ The provider supports two authentication methods: **Entra ID** (recommended) and
 
 ### Entra ID Authentication (Recommended)
 
-| Setting        | Required | Description                                              |
-| -------------- | -------- | -------------------------------------------------------- |
-| Endpoint       | Yes      | Your AI Foundry endpoint URL                             |
-| Project Name   | No       | AI Foundry project name (enables deployed model listing) |
-| Tenant ID      | No       | Microsoft Entra ID tenant ID                             |
-| Client ID      | No       | Service principal application (client) ID                |
-| Client Secret  | No       | Service principal secret                                 |
+| Setting       | Required | Description                                              |
+| ------------- | -------- | -------------------------------------------------------- |
+| Endpoint      | Yes      | Your AI Foundry endpoint URL                             |
+| Project Name  | No       | AI Foundry project name (enables deployed model listing) |
+| Tenant ID     | No       | Microsoft Entra ID tenant ID                             |
+| Client ID     | No       | Service principal application (client) ID                |
+| Client Secret | No       | Service principal secret                                 |
 
 Entra ID supports two modes:
 
-- **Service Principal** - Provide Tenant ID, Client ID, and Client Secret for explicit credentials
-- **Managed Identity** - Provide only Tenant ID (or leave all Microsoft Entra ID fields empty) to use `DefaultAzureCredential`. This supports managed identities, Azure CLI, and other automatic credential sources
+* **Service Principal** - Provide Tenant ID, Client ID, and Client Secret for explicit credentials
+* **Managed Identity** - Provide only Tenant ID (or leave all Microsoft Entra ID fields empty) to use `DefaultAzureCredential`. This supports managed identities, Azure CLI, and other automatic credential sources
 
 {% hint style="info" %}
 When using Microsoft Entra ID with a Project Name, the model picker shows only models deployed in your project. It does not display the full catalog.
@@ -59,9 +56,9 @@ When using Microsoft Entra ID with a Project Name, the model picker shows only m
 
 ### Advanced Settings
 
-| Setting            | Required | Description                                                                                                          |
-| ------------------ | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| Use Responses API  | No       | When enabled, uses the OpenAI Responses API instead of Chat Completions. Only available in certain Azure regions.    |
+| Setting           | Required | Description                                                                                                       |
+| ----------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| Use Responses API | No       | When enabled, uses the OpenAI Responses API instead of Chat Completions. Only available in certain Azure regions. |
 
 ### Getting Your Credentials
 
@@ -89,5 +86,5 @@ Keep credentials secure. Never commit API keys or client secrets to source contr
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+* [Providers Overview](providers.md)
+* [Managing Connections](../backoffice/managing-connections.md)

@@ -8,6 +8,10 @@ Instead of replicating the same content on a per-page basis, Elements allow you 
 
 Elements are ideal for call-to-action blocks, banners, and other shared content that appears across multiple pages.
 
+{% hint style="info" %}
+Elements hold one piece of content that's shared and centrally updated everywhere it's referenced. If you instead need editors to compose different content per page from a set of block types, use the [Block List Editor](../../../property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md) instead.
+{% endhint %}
+
 ## Library
 
 Elements are managed from the Library section in the Umbraco Backoffice.
@@ -62,5 +66,9 @@ Once you have created the elements in the Library section, they can be reference
 ![Element Type Structure tab with Allow in Library toggled](../../../../.gitbook/assets/element-added-to-content.png)
 
 You can add elements to your content in the Content section using an Element Picker. This needs to be added as a property on the Document Type. Read the [Element Picker](../../../property-editors/built-in-umbraco-property-editors/element-picker.md) article to learn more about how to use and configure it.
+
+{% hint style="info" %}
+Elements and Blocks (used by the Block List and Block Grid editors) don't mix within the same property. A Block List or Block Grid always stores its block content inline. It cannot be configured so that a block type is either inline content or a reference to a Library Element. To combine both approaches on one page, add an Element Picker property and a Block List/Block Grid property separately.
+{% endhint %}
 
 Making changes to an Element in the Library section, will update all instances of the content throughout the project.

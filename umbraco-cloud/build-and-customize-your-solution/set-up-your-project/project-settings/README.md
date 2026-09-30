@@ -25,7 +25,7 @@ The Team section allows you to:
 * Manage backoffice user groups and [Technical contacts](../../../begin-your-cloud-journey/project-features/team-members/technical-contact.md) for your project.
 * Monitor pending project invitations.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary
 

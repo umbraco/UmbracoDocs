@@ -16,6 +16,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
+### 13.9.11 (September 17th 2026)
+* Restrict the Forms Security area to administrators, so that other backoffice users cannot grant themselves Forms permissions [GHSA-8jv5-237g-mfj9](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-8jv5-237g-mfj9)
+* Umbraco Licenses dependency updated to 13.3.5
+
+{% hint style="warning" %}
+The Forms Security area is now available to administrators only. Other users no longer see the Security node, and requests to its endpoints are rejected. Version 13 has no permission for this area that you can grant to a user group. Check whether non-administrators manage Forms security on your installation before you upgrade.
+{% endhint %}
+
 ### [13.9.10](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F13.9.10) (August 27th 2026)
 * Records: Read record field values in batches, instead of one database query for each field value [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)
 * Records: Populate the Examine records index in groups of records, instead of holding every record for a form in memory at once [#1774](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1774)

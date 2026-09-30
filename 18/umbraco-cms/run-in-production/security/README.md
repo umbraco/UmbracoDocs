@@ -19,7 +19,7 @@ Umbraco supports a range of security features for both the backoffice and front-
 
 * [SSL/HTTPS](ssl-https.md) - configure your Umbraco site to use HTTPS.
 * [Security Settings](security-settings.md) - configure password and security settings in Umbraco.
-* [Security Hardening](security-hardening.md) - harden your Umbraco installation against common threats.
+* [Lock Down Access to the Umbraco Folder (IIS)](lock-access-to-umbraco-folder.md) - restrict access to the Umbraco folder by allowlisting IP addresses.
 * [API Rate Limiting](api-rate-limiting.md) - apply rate limiting to Umbraco using ASP.NET Core's built-in middleware.
 * [Azure Key Vault](key-vault.md) - store and retrieve secrets using Azure Key Vault.
 * [Cookies](cookies.md) - understand the cookies required for accessing the Umbraco backoffice.

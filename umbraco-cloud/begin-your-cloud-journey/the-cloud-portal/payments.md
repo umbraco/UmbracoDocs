@@ -10,7 +10,7 @@ In this article, you will be able to find information on the following:
 
 To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Organization".
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption><p>manage subscriptions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>manage subscriptions</p></figcaption></figure>
 
 You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
 
@@ -24,7 +24,7 @@ On this page, you can see the credit cards you have already added or you can add
 
 Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
 
 ## Changing and removing payment methods
 

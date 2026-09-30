@@ -1,24 +1,26 @@
 ---
-description: Configuring **many-to-many** relationships in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: >-
+  Configuring **many-to-many** relationships in Umbraco UI Builder, the
+  backoffice UI builder for Umbraco.
 ---
 
 # Related Collections
 
 Related collections add support for editing **many-to-many** relationships with UI Builder. These are found when multiple entities from one collection are associated with multiple entities from another. They are modeled in a database via two tables related to a junction table.
 
-A classic example is with `Students` and `Courses`.  Each course has many students, and each student takes many courses.
+A classic example is with `Students` and `Courses`. Each course has many students, and each student takes many courses.
 
-![Child Collection](../images/related_collections_child.png)
+![Child Collection](../.gitbook/assets/related_collections_child.png)
 
-![Parent Collection](../images/related_collections_parent.png)
+![Parent Collection](../.gitbook/assets/related_collections_parent.png)
 
-![Entity Picker](../images/related_collections_entity_picker.png)
+![Entity Picker](../.gitbook/assets/related_collections_entity_picker.png)
 
 ## Collections Representation
 
 A representation of your collections would look like this:
 
-![Related Collections Diagram](../images/related_collections_diagram.png)
+![Related Collections Diagram](../.gitbook/assets/related_collections_diagram.png)
 
 And the entities would be represented using the following Models:
 
@@ -68,6 +70,7 @@ public class StudentCourse
 ## Defining a related collection
 
 You can get started with related collection through a two step process:
+
 1. Add collection definition
 2. Add related collection entity picker and definition
 
@@ -75,7 +78,7 @@ You can get started with related collection through a two step process:
 
 Define a related collection by calling the `AddRelatedCollection` method on a given collection config builder instance.
 
-### **AddRelatedCollection&lt;TEntityType, TRelatedEntityType, TJunctionEntityType&gt;(Expression&lt;Func&lt;TRelatedEntityType, object&gt;&gt; idPropertyExpression, string nameSingular, string namePlural, Action&lt;RelationConfigBuilder&lt;TBuilder, TEntity, TRelatedEntityType, TJunctionEntityType&gt;&gt; relationConfig)**
+### **AddRelatedCollection\<TEntityType, TRelatedEntityType, TJunctionEntityType>(Expression\<Func\<TRelatedEntityType, object>> idPropertyExpression, string nameSingular, string namePlural, Action\<RelationConfigBuilder\<TBuilder, TEntity, TRelatedEntityType, TJunctionEntityType>> relationConfig)**
 
 Adds a related collection to the current collection with the given names, descriptions, and default icons. A property accessor expression is required for the entity ID field of the entity. The relation configuration will define the junction entity by specifying the references to parent and child entities.
 
@@ -92,7 +95,7 @@ collectionConfig.AddRelatedCollection<Student, Course, StudentCourse>(x => x.Id,
 
 Define the child collection entity picker by calling the `AddRelatedCollectionPickerField` method on the parent collection fieldset config.
 
-### **AddRelatedCollectionPickerField&lt;TValueType&gt;(string alias, string dataTypeName, string label)**
+### **AddRelatedCollectionPickerField\<TValueType>(string alias, string dataTypeName, string label)**
 
 Adds an entity picker with the specified Data Type name to the editor of the parent collection.
 
@@ -117,7 +120,7 @@ collectionConfig.Editor(editorConfig =>
 
 ## Defining repository methods
 
-### **IEnumerable<StudentCourse> GetRelationsByParentIdImpl<StudentCourse>(int parentId, string relationAlias)**
+### **IEnumerable GetRelationsByParentIdImpl(int parentId, string relationAlias)**
 
 Retrieves the related collections based on the ID of the parent entity.
 
@@ -135,7 +138,7 @@ Retrieves the related collections based on the ID of the parent entity.
 }
 ```
 
-### **StudentCourse SaveRelationImpl<StudentCourse>(StudentCourse entity)**
+### **StudentCourse SaveRelationImpl(StudentCourse entity)**
 
 Adds a new related collection to the current parent entity.
 
@@ -159,4 +162,3 @@ Adds a new related collection to the current parent entity.
     return entity;
 }
 ```
-
