@@ -11,7 +11,7 @@ There are two main ways to fetch data through HTTP in the Umbraco Backoffice:
 * [Fetch API](./#fetch-api)
 * [Umbraco HTTP Client](./#umbraco-http-client).
 
-The Fetch API is a modern way to make network requests in JavaScript, while the Umbraco HTTP client is a wrapper around it, providing a more convenient interface.
+The Fetch API is a modern way to make network requests in JavaScript. The Umbraco HTTP client is a wrapper around it with a more convenient interface.
 
 For most scenarios, the Umbraco HTTP Client is recommended because it:
 
@@ -54,7 +54,7 @@ After fetching data, the next step is to execute the request. You can use the `t
 
 ### [Custom Generated Client](custom-generated-client.md)
 
-For advanced scenarios, you can generate a custom client for your API using tools like [@hey-api/openapi-ts](https://github.com/hey-api/openapi-ts). This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
+For advanced scenarios, you can generate a custom client for your API using tools like [`@hey-api/openapi-ts`](https://github.com/hey-api/openapi-ts). This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
 
 ### [Repositories](../repositories/README.md)
 Repositories provide a structured way to manage data operations in the Backoffice. They abstract the data access layer, allowing for easier maintenance and scalability.
