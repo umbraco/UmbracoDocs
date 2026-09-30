@@ -188,6 +188,8 @@ public class DeleteItemTool : AIToolBase<DeleteArgs>
 }
 ```
 
+Destructive tools ask the editor for approval by default. For a destructive tool whose changes editors can undo themselves, such as saving a draft, set `RequiresApproval = false`. See [Destructive Tools and Approval](creating-a-tool.md#destructive-tools-and-approval).
+
 ## In This Section
 
 {% content-ref url="creating-a-tool.md" %}
