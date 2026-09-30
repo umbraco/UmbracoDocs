@@ -97,7 +97,7 @@ This command compiles the TypeScript files and copies them over to the `wwwroot`
 
 ### Fix an ERESOLVE Error From npm install
 
-Extensions created from the Umbraco 17.0 to 17.7.0 templates can fail to install on Umbraco 17.7.0 or later, with an error like this:
+Extensions created using Umbraco 17.0.0 to 17.7.0 templates can fail to install on Umbraco 17.7.0 or later, with an error like this:
 
 ```text
 npm error ERESOLVE unable to resolve dependency tree

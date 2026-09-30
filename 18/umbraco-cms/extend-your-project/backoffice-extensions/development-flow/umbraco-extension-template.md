@@ -97,7 +97,7 @@ This command compiles the TypeScript files and copies them over to the `wwwroot`
 
 ### Fix an ERESOLVE Error From npm install
 
-Extensions created from the Umbraco 18.0 to 18.2.0 templates can fail to install on Umbraco 18.2.0 or later, with an error like this:
+Extensions created using Umbraco 18.0.0 to 18.2.0 templates can fail to install on Umbraco 18.2.0 or later, with an error like this:
 
 ```text
 npm error ERESOLVE unable to resolve dependency tree
@@ -105,7 +105,12 @@ npm error Found: @hey-api/openapi-ts@0.97.3
 npm error peer @hey-api/openapi-ts@">=0.99.0 <1.0.0" from @umbraco-cms/backoffice@18.2.0
 ```
 
-From Umbraco 18.2.0, `@umbraco-cms/backoffice` requires `@hey-api/openapi-ts` 0.99 or later. In the `Client` folder, change the `@hey-api/openapi-ts` version in `package.json` to `^0.99.0` and run `npm install` again.
+From Umbraco 18.2.0, `@umbraco-cms/backoffice` requires `@hey-api/openapi-ts` 0.99 or later. 
+
+To resolve the error:
+
+1. In the `Client` folder, update the `@hey-api/openapi-ts` version in `package.json` to `^0.99.0`.
+2. Run `npm install` again.
 
 {% hint style="warning" %}
 Do not use `npm install --legacy-peer-deps` to get past the error. It skips all peer dependencies, including `lit`, and the build then fails with errors such as `Module '"@umbraco-cms/backoffice/external/lit"' has no exported member 'LitElement'`.
