@@ -128,9 +128,9 @@ Teaser: {= title | truncate: 28 } ${ image ? '(With image)' : ''}
 
 **Block with optional fields examples**
 
-Let´s say you have a Block with a Rich Text Editor and sometimes a Title, because the title is optional it is not ideal only to present that in the Block Label.
+Consider a Block with a Rich Text Editor and sometimes a Title. Since the title is optional, it is not ideal to present it only in the Block Label.
 
-The following example, shows the `title` when it has a value, if not it falls back to the value of the `rte`. For this use the expressions (`${ ... }`) syntax
+The following example shows the `title` when it has a value. If it doesn't have a value, it falls back to the `rte` value. In this case, use the expression (`${ ... }`) syntax.
 
 ```markdown
 ${ title || rte | stripHtml | truncate: 38}
