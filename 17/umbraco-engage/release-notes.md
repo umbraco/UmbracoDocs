@@ -16,6 +16,27 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.5.0](https://www.nuget.org/packages/Umbraco.Engage/17.5.0) (October 1st 2026)
+
+**Analytics and reporting**
+
+* Fixed the "contains" and "does not contain" filter operators in analytics queries, which generated invalid SQL and failed. "Contains" and "does not contain" are now rejected on visitor type, where a text search cannot match. "Does not contain" now includes rows with no value, and a blank filter value is treated as no filter.
+* Combining the Users metric with a page or segment dimension now returns a validation error (HTTP 400) instead of a server error (HTTP 500). Filtering the Users metric by one is also rejected. Users are counted per visitor per day and carry no page or segment.
+* Fixed comparison-mode tables and charts showing empty cells when the current period has no data.
+
+**Analytics: visual redesign**
+
+* Comparison mode has been restyled. Table cells show a bar for the previous value and a delta chip (new, flat, up or down). Each total in the strip carries a delta chip. Charts draw the comparison period as a dashed line with a gain/loss band between the two lines. Stacked bar charts show the previous period as a grey total. Chart tooltips show the previous period and its delta.
+* Chart legends now label each series by its type or dimension instead of repeating the date range. Tooltip rows are named by series, and the value tooltip sits beside the hovered marker. In comparison mode, series colors now match the colored dots in the table.
+* Annotation tooltips now appear only when the pointer is over the annotation marker, instead of whenever it is near on the time axis.
+* The panel header and toolbar are more compact, with field labels hidden and a "Show rows" label on the page-size control. Table headers, the totals strip, and row links have been restyled.
+
+**A/B testing and personalization**
+
+* Deleting a segment that is still used by a personalization is now also blocked when the deletion arrives through Umbraco Deploy. The error names the personalizations that use the segment.
+
+* All changes from 17.5.0 release candidates
+
 #### [17.5.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.5.0-rc1) (September 18th 2026)
 
 **Analytics and reporting**

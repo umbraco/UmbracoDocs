@@ -11,7 +11,7 @@ Persona Groups and Customer Journey Groups share the same scoring settings. Thes
 - How long scores are retained, and
 - How many points can be assigned when configuring scoring.
 
-You can find these settings in the **Advanced** settings of a Persona group or Customer journey group.
+You can find these settings under **Advanced settings** of a Persona group or Customer journey group.
 
 ## Group settings
 
