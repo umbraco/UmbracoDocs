@@ -1,5 +1,5 @@
 ---
-description:: Learn how to execute requests in the Backoffice.
+description: Learn how to execute requests in the Backoffice.
 ---
 
 # Executing Requests
@@ -42,23 +42,35 @@ It is recommended to always use the `tryExecute` function to wrap HTTP requests.
 The `tryExecute` function will automatically show error bubbles if a request fails. There may be valid cases where you want to handle errors yourself. This could, for instance, be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
 
 ```javascript
-tryExecute(this, request, {
+const request = umbHttpClient.get({
+    url: '/umbraco/management/api/v1/server/status'
+});
+
+const { data, error } = await tryExecute(this, request, {
     disableNotifications: true,
 });
 ```
 
 ### Cancelling Requests
 
-The `tryExecute` function also supports cancelling requests. This is useful in scenarios where a request is taking too long, or the user navigates away from the page before the request completes. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. You can use it directly with tryExecute:
+Cancelling a request is useful when it takes too long, or when the user navigates away from the page before it completes. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. Pass its signal to the request, and `tryExecute` returns the cancellation as an error:
 
 ```javascript
 const abortController = new AbortController();
 
-// Cancel the request before starting it for illustration purposes
+const request = umbHttpClient.get({
+    url: '/umbraco/management/api/v1/server/status',
+    signal: abortController.signal,
+});
+
+// Cancel the request for illustration purposes
 abortController.abort();
 
-tryExecute(this, request, {
+const { error } = await tryExecute(this, request, {
     disableNotifications: true,
-    abortSignal: abortController.signal,
 });
 ```
+
+{% hint style="info" %}
+The `abortSignal` option of `tryExecute` only cancels a request whose promise has a `cancel()` method. Requests made with the Umbraco HTTP Client or the Fetch API do not have one, so pass the signal to the request itself.
+{% endhint %}
