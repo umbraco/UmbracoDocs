@@ -16,7 +16,7 @@ Umbraco provides a .NET template to help you get started with building extension
 To install the Umbraco extension template, run the following command in your terminal:
 
 ```bash
-dotnet new install Umbraco.Templates@18.1.1
+dotnet new install Umbraco.Templates@18.2.0
 ```
 
 {% hint style="info" %}
