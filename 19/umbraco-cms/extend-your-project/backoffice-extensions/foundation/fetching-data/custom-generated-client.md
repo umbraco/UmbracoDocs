@@ -40,11 +40,30 @@ Your generated client needs the URL of the Umbraco server, and it must send the 
 * Sets `credentials: 'include'`, so the browser sends the authentication cookie with every request.
 * Adds the default response interceptors of the backoffice. They open the login dialog when the session has expired, and count successful requests as activity for the session timeout. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
 
-To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md).
-
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.
 {% endhint %}
+
+To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md). A generated client returns failed requests in an `error` property instead of throwing, and `tryExecute` only reports requests that throw. `configureClient()` does not change that. To make your client throw, set `throwOnError` on the `@hey-api/client-fetch` plugin in an `openapi-ts.config.ts` file:
+
+```typescript
+import { defineConfig } from '@hey-api/openapi-ts';
+
+export default defineConfig({
+    input: 'https://example.com/openapi.json',
+    output: './my-client',
+    plugins: [
+        {
+            name: '@hey-api/client-fetch',
+            throwOnError: true,
+        },
+        '@hey-api/typescript',
+        '@hey-api/sdk',
+    ],
+});
+```
+
+You can also pass `throwOnError: true` to a single SDK function, for example `getMyControllerAction({ throwOnError: true })`.
 
 ### Using `configureClient()` (recommended)
 

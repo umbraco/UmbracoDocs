@@ -37,9 +37,21 @@ The above example requires a host element illustrated by the use of `this`. This
 
 It is recommended to always use the `tryExecute` function to wrap HTTP requests. It simplifies error handling and ensures a consistent user experience in the Backoffice.
 
+### When Notifications Are Shown
+
+The `tryExecute` function shows a notification when the request throws an error:
+
+* The Umbraco HTTP Client throws for error responses.
+* A client you generate yourself returns error responses in an `error` property instead. Pass `throwOnError: true` to its SDK functions, as described in the [Custom Generated Client](custom-generated-client.md) article.
+* A Fetch API request does not throw for error responses, so throw an error yourself when the response is not successful. The [Fetch API](fetch-api.md) article shows how.
+
+Error responses with status 401, 403 or 404 from the Umbraco HTTP Client or a generated client do not show a notification. Check the returned `error`, and handle these responses in your code.
+
+The notification shows the `title` and `detail` of the problem details in the response body. The body must contain `type`, `title` and `status`, or the notification shows a generic message instead. In a controller, `Problem()` returns such a body.
+
 ### Disabling Notifications
 
-The `tryExecute` function will automatically show error bubbles if a request fails. There may be valid cases where you want to handle errors yourself. This could, for instance, be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
+The `tryExecute` function shows a notification when a request fails. There may be valid cases where you want to handle errors yourself. This could, for instance, be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
 
 ```javascript
 const request = umbHttpClient.get({

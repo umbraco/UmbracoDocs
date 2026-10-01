@@ -144,7 +144,7 @@ You can also use another HTTP library, such as [Axios](https://axios-http.com/),
 
 The following example creates an Axios instance for the Backoffice:
 
-{% code title="src/api/axios-client.ts" %}
+{% code title="src/axios-client.ts" %}
 ```typescript
 import axios from 'axios';
 import { UMB_SERVER_CONTEXT } from '@umbraco-cms/backoffice/server';
