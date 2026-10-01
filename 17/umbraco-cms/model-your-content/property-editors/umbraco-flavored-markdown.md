@@ -118,8 +118,8 @@ Block Labels can use UFM to give authors an indication of the content without pr
 
 **Block with multiple fields examples**
 
-In UFM you can compose the Block Label of your interest.
-The following example shows how the value two properties can be presented in the Block Label:
+In UFM, you can compose the Block Label of your interest.
+The following example shows how the values of two properties can be presented in the Block Label:
 
 ```markdown
 Teaser: {= title | truncate: 28 } ${ image ? '(With image)' : ''}
