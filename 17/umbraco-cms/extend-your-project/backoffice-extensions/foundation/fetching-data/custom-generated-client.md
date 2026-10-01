@@ -47,6 +47,7 @@ The [Umbraco Extension Template](../../development-flow/umbraco-extension-templa
 
 To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md). A generated client returns failed requests in an `error` property instead of throwing, and `tryExecute` only reports requests that throw. `configureClient()` does not change that. To make your client throw, set `throwOnError` on the `@hey-api/client-fetch` plugin in an `openapi-ts.config.ts` file:
 
+{% code title="openapi-ts.config.ts" %}
 ```typescript
 import { defineConfig } from '@hey-api/openapi-ts';
 
@@ -63,6 +64,7 @@ export default defineConfig({
     ],
 });
 ```
+{% endcode %}
 
 You can also pass `throwOnError: true` to a single SDK function, for example `getMyControllerAction({ throwOnError: true })`.
 

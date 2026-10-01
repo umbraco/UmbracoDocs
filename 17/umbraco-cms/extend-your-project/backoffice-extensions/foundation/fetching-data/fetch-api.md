@@ -147,7 +147,7 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
 }
 ```
 
-The above example illustrates the process of making a request to the Management API. The function throws an error when the response is not successful, so `tryExecute` can report it. Add any other response handling you need yourself. If the token has expired, you will get a 401 error back.
+The above example illustrates the process of making a request to the Management API. The function throws an error when the response is not successful, so `tryExecute` can report it. Add any other response handling you need yourself. `getLatestToken()` refreshes an expired token before the request, so you only get a 401 response when the session can no longer be refreshed.
 
 ## Other HTTP libraries
 
