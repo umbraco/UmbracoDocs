@@ -47,6 +47,8 @@ The `tryExecute` function shows a notification when the request throws an error:
 
 Error responses with status 401, 403 or 404 from the Umbraco HTTP Client or a generated client do not show a notification. Check the returned `error`, and handle these responses in your code.
 
+Cancelled requests do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status, because the server sends its own notification for those.
+
 The notification shows the `title` and `detail` of the problem details in the response body. The body must contain `type`, `title` and `status`, or the notification shows a generic message instead. In a controller, `Problem()` returns such a body.
 
 ### Disabling Notifications
