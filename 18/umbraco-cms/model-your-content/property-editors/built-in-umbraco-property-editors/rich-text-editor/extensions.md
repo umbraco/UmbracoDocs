@@ -12,7 +12,14 @@ Using the same extension points, this article will show you how to add a custom 
 
 ## Native Tiptap extensions
 
-Tiptap has a library of supported native extensions. You can find a list of these extensions on the [Tiptap website](https://tiptap.dev/docs/editor/extensions/overview). While many of these are open source, there are also [pro extensions](https://tiptap.dev/docs/guides/pro-extensions) available for commercial subscriptions.
+Tiptap has a library of native extensions. You can find a list of these extensions on the [Tiptap website](https://tiptap.dev/docs/editor/extensions/overview).
+
+In the Vite package setup, a native extension is bundled together with its own copy of Tiptap and ProseMirror. Many extensions work this way, but some cannot be used with the Rich Text Editor:
+
+* Extensions that depend on ProseMirror internals, for example decorations, can break the editor. Separate copies of ProseMirror cannot recognize each other.
+* Extensions whose data cannot be stored as HTML markup, because the Rich Text Editor stores its value as markup.
+
+For these extensions, build your own property editor UI. The [Creating a Property Editor](../../../../extend-your-project/tutorials/creating-a-property-editor/README.md) tutorial shows how. A custom property editor gives you control over the editor configuration and the stored value.
 
 ### Tiptap extension types
 
