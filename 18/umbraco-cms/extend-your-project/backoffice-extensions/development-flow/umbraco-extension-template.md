@@ -49,7 +49,7 @@ The `-ex` flag indicates that you want to include examples of how to use the ext
 
 After setup, the dashboard appears in the main **Content** section of the Backoffice.
 
-By default, the Umbraco Extensions project has a reference to the latest version of Umbraco. Specify your preferred Umbraco version for the Extensions template by using the `--version` flag:
+By default, the Umbraco Extensions project references the same Umbraco version as the templates you installed. To reference another version, for example the version of an existing Umbraco project, use the `--version` flag:
 
 ```bash
 dotnet new umbraco-extension --version 18.1.1 -n MyExtension -ex
