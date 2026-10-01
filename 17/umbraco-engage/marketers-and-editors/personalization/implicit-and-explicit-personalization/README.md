@@ -20,9 +20,9 @@ In the [segment builder](../creating-a-segment.md), you can use these implicit p
 
 By clicking personas you will see an overview of all the personas that you have set up within your installation.
 
-In our case, we see the persona groups **Profiles** and **Companies** and the personas **Data & Privacy Officer**, **Developer**, **Marketer**, **Agency**, **Company** and **Umbraco HQ**. If we want to create a segment for all personas that are **Data & Privacy officer** add that persona as a parameter to the segment.
+In the example below, the persona group **Visitor roles** contains the persona **Developer**. To create a segment for all visitors matching the **Developer** persona, add that persona as a parameter to the segment.
 
-![Creating a segment for the 'Data & Privacy Officer' persona in Umbraco Engage.](../../../.gitbook/assets/engage-personalization-persona-segment.png)
+![Creating a segment for the 'Developer' persona in Umbraco Engage.](../../../.gitbook/assets/engage-personalization-persona-segment.png)
 
 From now on you can use this segment to personalize the experience of your visitors.
 
