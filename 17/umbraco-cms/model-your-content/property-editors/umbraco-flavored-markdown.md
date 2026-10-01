@@ -113,7 +113,7 @@ All expressions are evaluated in a sandbox. Only safe operations and methods are
 
 ## UFM for Block Labels
 
-Block Labels can use UFM, this is a easy way for authors to get an indication of the content without providing Block Custom Views. [Read about building a Custom View for Blocks here](../../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/block-custom-view.md)
+Block Labels can use UFM to give authors an indication of the content without providing Block Custom Views. [Read about building a Custom View for Blocks here](../../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/block-custom-view.md).
 
 
 **Block with multiple fields examples**
