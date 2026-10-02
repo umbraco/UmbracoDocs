@@ -79,6 +79,8 @@
 * [Create a Custom Trigger](extending/custom-trigger.md)
 * [Create a Custom Action](extending/custom-action.md)
 * [Create a Custom Connection Type](extending/custom-connection-type.md)
+* [Create a Custom OAuth Connection Type](extending/custom-oauth-connection-type.md)
+* [Create a Custom Notification Channel](extending/custom-notification-channel.md)
 * [Schedule and Webhook Triggers](extending/schedule-and-webhook-triggers.md)
 * [Control What Runs](extending/controlling-execution.md)
 * [Additional Action Behavior](extending/action-behavior.md)
