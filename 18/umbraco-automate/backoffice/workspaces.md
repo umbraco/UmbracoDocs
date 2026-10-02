@@ -51,10 +51,6 @@ Review the **Runs** tab after any service-account change.
 
 A workspace saved before this rule existed may have a regular backoffice user as its service account. Its automations keep running. The next save of the workspace is refused until you choose an API user. Create one in the **Users** section if you don't have one.
 
-{% endhint %}
-
-{% hint style="info" %}
-
 If a workspace was transferred from another environment (for example via Deploy), it may reference a user group that doesn't exist here. That group is dropped from **User Groups**. A warning tells you how many groups need to be added again.
 
 {% endhint %}
