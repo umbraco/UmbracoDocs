@@ -18,7 +18,7 @@ This article uses GitHub as the example. For the basics shared with every connec
 
 ## Prerequisites
 
-Add the `Umbraco.Automate.OpenIddict` package to your project. It brings in the OpenIddict client and its [web providers](https://github.com/openiddict/openiddict-client-web-integration), the credential storage, and the OAuth property editor.
+Add the `Umbraco.Automate.OpenIddict` package to your project. It brings in the OpenIddict client and its [web providers](https://github.com/openiddict/openiddict-core/tree/dev/src/OpenIddict.Client.WebIntegration), the credential storage, and the OAuth property editor.
 
 {% code title=".NET CLI" %}
 ```bash
