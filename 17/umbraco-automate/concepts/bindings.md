@@ -60,6 +60,6 @@ Filters can be chained using the `|` separator. Arguments are colon-separated, s
 
 ## Where Bindings Work
 
-A setting supports bindings when the underlying setting model marks the field with `SupportsBindings = true`. The settings editor surfaces a binding picker on those fields. The picker lists every binding source available at that point: the trigger output and the output of every preceding step.
+A setting supports bindings when the underlying setting model marks the field with `SupportsBindings = true`. The settings editor surfaces a binding picker on those fields. The picker lists every binding source available at that point: the trigger output and the output of every preceding step. Steps are listed in the order they run, earliest first. Each entry shows the value's type and a short description of what it contains. When a value has a fixed set of options, the picker lists them.
 
 <figure><img src="../.gitbook/assets/binding-picker.png" alt="The binding picker showing trigger and step output options."><figcaption><p>The binding picker in an action setting.</p></figcaption></figure>
