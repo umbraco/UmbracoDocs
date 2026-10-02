@@ -64,13 +64,6 @@ public interface IAIAgentService
         IEnumerable<Guid>? userGroupIds = null,
         CancellationToken cancellationToken = default);
 
-    [Obsolete("Use IAIAgentSelectionService.SelectAgentAsync. Will be removed in v20")]
-    Task<AIAgent?> SelectAgentForPromptAsync(
-        string userPrompt,
-        string surfaceId,
-        AgentAvailabilityContext context,
-        CancellationToken cancellationToken = default);
-
     Task<AgentResponse> RunAgentAsync(
         Guid agentId,
         IEnumerable<ChatMessage> messages,
@@ -258,34 +251,7 @@ Validates that a specific tool call is permitted for the agent.
 
 **Returns**: `true` if the tool is allowed, otherwise `false`.
 
-## Selection and execution
-
-### SelectAgentForPromptAsync
-
-{% hint style="warning" %}
-This method is obsolete and will be removed in v20. Use `IAIAgentSelectionService.SelectAgentAsync` instead. It runs the pluggable selector chain, sees the full conversation, and returns why an agent was picked. See [Agent Selection](../../../extending/agent-selection.md).
-{% endhint %}
-
-Selects the best agent for a user prompt from agents available in the given surface and context. It now runs the same selector chain as `IAIAgentSelectionService`, with the user prompt as the only message, and returns the selected agent.
-
-| Parameter           | Type                       | Description                              |
-| ------------------- | -------------------------- | ---------------------------------------- |
-| `userPrompt`        | `string`                   | The user's message                       |
-| `surfaceId`         | `string`                   | The surface to search (e.g., `"copilot"`) |
-| `context`           | `AgentAvailabilityContext` | Context for scope-based filtering        |
-| `cancellationToken` | `CancellationToken`        | Cancellation token                       |
-
-**Returns**: The selected agent, or `null` if no agents are available.
-
-**Behavior**:
-
-- Returns `null` if no active agents are available on the surface for the context.
-- Returns the single agent directly if only one is available (no selector runs).
-- Otherwise runs the registered selectors in order. The default `LLMAgentSelector` uses the **classifier chat profile** (falls back to default chat profile).
-- Falls back to the first available agent if no selector picks one, including when classification fails.
-- Publishes `AIAgentSelectedNotification` for every pick.
-
-See [Settings](../../../concepts/settings.md#classifier-chat-profile) for configuring the classifier profile.
+## Execution methods
 
 ### RunAgentAsync (persisted agent, by ID)
 
