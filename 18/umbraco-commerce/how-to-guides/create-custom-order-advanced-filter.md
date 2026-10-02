@@ -103,7 +103,3 @@ The order list shows only the orders that use the given payment method.
 ![The order list filtered by payment method](images/custom-order-advanced-filter/filtered-order-list.png)
 
 To count the orders for a specific week, also set **Placed On or After** and **Placed On or Before** in the **Advanced Filters** panel.
-
-{% hint style="info" %}
-The **Advanced Filters** panel requires access to the **Commerce** section. If you add the Commerce section to a user group, the users in that group must log out and log in again. Until they do, the panel shows an error.
-{% endhint %}
