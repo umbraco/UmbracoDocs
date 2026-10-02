@@ -12,22 +12,22 @@ If you've never worked with cherry-picking before, we recommend that using a Git
 
 ## The scenario
 
-You have an Umbraco Cloud project with two environments, Development and Live.
+You have an Umbraco Cloud project with two environments, the left-most environment and Live.
 
-You have been working on building the site on a local clone of the Development environment. Now you want to send some but not all changes to the Live environment.
+You have been working on building the site on a local clone of the left-most environment. Now you want to send some but not all changes to the Live environment.
 
-A set of commits have been pushed from your local clone to the Development environment. Out of these commits, you only need the changes from two of the commits in the Live environment for now.
+A set of commits have been pushed from your local clone to the left-most environment. Out of these commits, you only need the changes from two of the commits in the Live environment for now.
 
 ![Commits](../../../.gitbook/assets/commits-for-cherry.png)
 
 ## Apply selected changes to the Live environment
 
-Here are the steps to follow to apply selected changes to the Live environment without deploying from Development to Live.
+Here are the steps to follow to apply selected changes to the Live environment without deploying from the left-most environment to Live.
 
 ### Branching and Cherry-picking
 
-1. Open your local clone of the Development repository in GitKraken (or your preferred Git client).
-2. Make sure that the changes you push directly to your Live environment are already pushed to the Development environment. This will ensure that your environments are kept in sync.
+1. Open your local clone of the left-most environment's repository in GitKraken (or your preferred Git client).
+2. Make sure that the changes you push directly to your Live environment are already pushed to the left-most environment. This will ensure that your environments are kept in sync.
 3. Choose the commit where you want to create a new branch.
    *   This branch should be created in an earlier commit that is corresponding to the state of the Live environment (before the changes you've made locally have been committed).
 
@@ -43,7 +43,7 @@ Here are the steps to follow to apply selected changes to the Live environment w
 
 ### Push to Live
 
-Before you push the newly created branch to Umbraco Cloud we need to change the _remote destination_. If you hit _Push_ now, the branch would be pushed to the Development environment. You need to add the Live environment as a _new remote_.
+Before you push the newly created branch to Umbraco Cloud we need to change the _remote destination_. If you hit _Push_ now, the branch would be pushed to the left-most environment. You need to add the Live environment as a _new remote_.
 
 1. Find the clone URL for the Live environment in the Umbraco Cloud Portal.
 
@@ -69,9 +69,9 @@ When changes are pushed directly to a Live environment and you have more than on
 
 Find a guide on how to extract the files in the [Manual Extraction](../../monitor-and-troubleshoot/power-tools/manual-extractions.md) article.
 
-You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the Development repository before pushing it to the Development environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
+You have now applied a hotfix to the Live environment. Make sure that you merge and remove the branch you've created on the left-most environment's repository before pushing it to the left-most environment on Cloud. You can always create a new branch if you need to apply another hotfix to the Live environment.
 
-When you are ready to build on your Development environment, follow the [normal workflow of the Cloud](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/) to deploy the changes to the Live environment.
+When you are ready to build on your left-most environment, follow the [normal workflow of the Cloud](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/) to deploy the changes to the Live environment.
 
 ## Important notes
 

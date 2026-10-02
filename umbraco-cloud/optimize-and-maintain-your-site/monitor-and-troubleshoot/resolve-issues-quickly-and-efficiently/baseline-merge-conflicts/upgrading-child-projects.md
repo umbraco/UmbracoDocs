@@ -23,11 +23,11 @@ Follow the upgrade guides for [Minor](../../../manage-product-upgrades/product-u
 Once the upgrade has been verified on the Baseline project, follow the steps in the sections below to push the upgrade to the Child projects.
 
 {% hint style="info" %}
-Set up a Development environment on your Child projects before deploying updates.
+Set up a left-most environment on your Child projects before deploying updates.
 
-A Development environment gives you a place to test and verify that everything deployed correctly.
+A left-most environment gives you a place to test and verify that everything deployed correctly.
 
-Once you are happy with the Development environment, deploy it to the Live environment.
+Once you are happy with the left-most environment, deploy it to the Live environment.
 {% endhint %}
 
 ## Upgrading Child Projects to a New Major Version
