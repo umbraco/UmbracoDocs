@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Umbraco Automate](README.md)
+* [Release Notes](release-notes.md)
 
 ## Getting Started
 
