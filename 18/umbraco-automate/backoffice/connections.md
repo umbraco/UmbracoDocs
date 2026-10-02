@@ -18,10 +18,10 @@ Connections are managed from the **Settings** sidebar in the **Automation** sect
 
 1. Open the **Automation** section.
 2. Go to **Connections** in the tree.
-3. Click **+**. The **Connection Type** picker opens.
+3. Click **+**, or select **Connections** and click **Create** above the list. The **Connection Type** picker opens.
 4. Pick a connection type from the picker, for example **Slack**.
-5. **Enter a name** and configure the type-specific settings.
-6. For OAuth connection types such as Slack, click **Authenticate** and sign in with the provider.
+5. Enter a name and configure the type-specific settings.
+6. For OAuth connection types such as Slack, click **Authenticate with <provider>**, for example **Authenticate with Slack**, and sign in with the provider.
 7. Click **Save**.
 8. Click **Test connection** to verify the credentials.
 
@@ -29,7 +29,7 @@ Connections are managed from the **Settings** sidebar in the **Automation** sect
 
 ## Allow a Connection in a Workspace
 
-A connection only appears in an action's connection picker when its workspace has explicitly allowed it.
+A connection only appears in an action's connection picker when its workspace has explicitly allowed it. Until the workspace allows a connection of the right type, the action picker shows actions that need one as unavailable. The action is greyed out, with a message naming the connection type it needs. You can find it by search, but you cannot select it.
 
 1. Open the workspace that needs the connection.
 2. On the **Settings** tab, find the **Allowed Connections** field.
@@ -38,9 +38,9 @@ A connection only appears in an action's connection picker when its workspace ha
 
 ## Authenticate an OAuth Connection
 
-OAuth connection types, such as Slack, have an **Authenticate** button. It opens the provider's sign-in page in a pop-up window. After you sign in, the connection editor shows the connection as connected. Save the connection to keep the new authentication.
+OAuth connection types, such as Slack, have an **Authenticate with <provider>** button, for example **Authenticate with Slack**. It opens the provider's sign-in page in a pop-up window. After you sign in, the connection editor shows the connection as connected. Save the connection to keep the new authentication.
 
-If the browser blocks the popup, the editor shows a warning with a **Continue in this tab** button. The button reads **Save and continue in this tab** when the connection is new or has unsaved changes, and saves the connection first. Select it to sign in with the provider in the same browser tab. After signing in, you return to the connection with the authentication applied. Click **Save** to keep it.
+If the browser blocks the pop-up, the editor shows a warning with a **Continue in this tab** button. The button reads **Save and continue in this tab** when the connection is new or has unsaved changes, and saves the connection first. Select it to sign in with the provider in the same browser tab. After signing in, you return to the connection with the authentication applied. Click **Save** to keep it.
 
 Keep the following in mind when you authenticate a connection:
 
@@ -48,7 +48,7 @@ Keep the following in mind when you authenticate a connection:
 * Each authentication belongs to one connection. To use the same provider account in another connection, authenticate again from that connection.
 * Automate removes authentications that were never saved to a connection after 24 hours.
 
-If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
+If an OAuth provider hasn't been set up yet (no client ID or secret in `appsettings.json`), the **Authenticate with <provider>** button is disabled. A warning explains what an administrator needs to add, with a link to the provider's setup instructions where available.
 
 ## Test a Connection
 
