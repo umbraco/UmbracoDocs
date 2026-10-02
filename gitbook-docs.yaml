@@ -1,7 +1,6 @@
 $schema: https://api.gitbook.com/gitbook-docs.yaml
-version: 1
 site:
-  title: Umbraco Documentation
+  title: Umbraco Legacy Documentation
   structure:
     - type: space
       key: space-getting-started
