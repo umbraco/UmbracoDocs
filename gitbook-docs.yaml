@@ -1,0 +1,66 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+version: 1
+site:
+  title: Umbraco Documentation
+  structure:
+    - type: space
+      key: space-getting-started
+      title: Getting Started
+      path: getting-started
+      default: true
+      content:
+        directory: ./Getting-Started
+    - type: space
+      key: space-fundamentals
+      title: Fundamentals
+      path: fundamentals
+      content:
+        directory: ./Fundamentals
+    - type: space
+      key: space-implementation
+      title: Implementation
+      path: implementation
+      content:
+        directory: ./Implementation
+    - type: space
+      key: space-extending
+      title: Extending
+      path: extending
+      content:
+        directory: ./Extending
+    - type: space
+      key: space-reference
+      title: Reference
+      path: reference
+      content:
+        directory: ./Reference
+    - type: space
+      key: space-tutorials
+      title: Tutorials
+      path: tutorials
+      content:
+        directory: ./Tutorials
+    - type: space
+      key: space-add-ons
+      title: Add-ons
+      path: add-ons
+      content:
+        directory: ./Add-ons
+    - type: space
+      key: space-development-guidelines
+      title: Development Guidelines
+      path: development-guidelines
+      content:
+        directory: ./Development-Guidelines
+    - type: space
+      key: space-cheatsheets
+      title: Cheatsheets
+      path: cheatsheets
+      content:
+        directory: ./Cheatsheets
+    - type: space
+      key: space-contribute
+      title: Contribute
+      path: contribute
+      content:
+        directory: ./Contribute
