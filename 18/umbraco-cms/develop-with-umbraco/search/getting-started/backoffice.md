@@ -8,49 +8,57 @@ The Search section in the Umbraco backoffice provides tools for inspecting and m
 
 ## Accessing the Search section
 
-The Search section is available to users with access to the Settings section in the Umbraco backoffice. You'll find it under **Settings > Search**.
+The Search section is available to users with access to the Settings section. Go to **Settings** and select **Search** under **Advanced** in the sidebar.
 
 ## Index overview
 
-The root view displays a table of all registered search indexes. Each row shows:
+The overview lists all registered search indexes in a table:
 
-<table><thead><tr><th width="261.390625">Column</th><th>Description</th></tr></thead><tbody><tr><td><strong>Alias</strong></td><td>The index alias (for example <code>Umb_PublishedContent</code>, <code>Umb_Content</code>, <code>Umb_Media</code>, <code>Umb_Members</code>)</td></tr><tr><td><strong>Health</strong></td><td>The current health status of the index</td></tr><tr><td><strong>Documents</strong></td><td>The number of documents currently in the index</td></tr></tbody></table>
+| Column             | Description                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ |
+| **Alias**          | The index alias, for example `Umb_PublishedContent`, `Umb_Content`, `Umb_Media`, or `Umb_Members`.           |
+| **Health status**  | The current health status of the index.                                                                      |
+| **Document count** | The number of documents in the index. An index without documents shows **Empty**.                            |
 
-Each row also has an entity action dropdown for per-index operations like rebuilding.
+Select an alias to open the detail view of the index. Each row also holds the actions for that index, such as **Rebuild**. Use **Refresh** above the table to reload the list of indexes.
 
 ## Index detail view
 
-Click an index row to open its detail view. The detail view uses a two-column layout with extensible boxes:
+The detail view uses a two-column layout with extensible boxes:
 
-* **Left column**: The search box for testing queries against the index.
-* **Right column**: The stats box showing the index alias, document count, and health status.
+* **Left column**: The **Search** box, for testing queries against the index.
+* **Right column**: The **Index information** box, showing the alias, provider, document count, and health status of the index.
 
-Search providers can add additional boxes to either column. See [Extending the search backoffice](../extending-search/backoffice-extensions.md) for more information.
+Search providers can add boxes to either column. For more information, see the [Search Backoffice](../extending-search/backoffice-extensions.md) article.
 
 ## Searching documents
 
-The search box allows you to test queries directly against an index:
+The Search box lets you test queries directly against an index:
 
-1. Enter a full-text search query in the input field.
-2. Results appear in a table showing document ID, name, object type, and relevance score.
-3. Use pagination controls at the bottom to navigate through results.
+1. Enter a full-text search query in the input field. Results update as you type.
+2. Press **Enter** or select **Search** to run the search straight away.
+3. Use the pagination controls below the results to move between pages.
+
+{% hint style="info" %}
+Search is only available when the health status of the index is **Healthy**. For any other status, the Search box shows **Search unavailable** together with the current status.
+{% endhint %}
+
+The query, the current page, and the selected culture are all reflected in the URL. You can bookmark or share a search to return to the same results.
 
 ### Culture selection
 
-For multilingual sites, a set of culture tabs appears above the search box. Selecting a culture filters the search to include documents in that culture (invariant content is always included). The selected culture is reflected in the URL for bookmarking.
+On a site with more than one language, a **Culture** dropdown appears next to the search input. Selecting a culture filters the search to include documents in that culture. Invariant content is always included.
 
 ### Search results table
 
 Each result row displays:
 
-| Column          | Description                                               |
-| --------------- | --------------------------------------------------------- |
-| **Document ID** | The content key (clickable link to open the content item) |
-| **Name**        | The document name                                         |
-| **Object type** | The content type (for example "Document", "Media")        |
-| **Score**       | The relevance score for the search query                  |
+| Column   | Description                                                                                             |
+| -------- | ------------------------------------------------------------------------------------------------------- |
+| **Name** | The name of the item, with its key underneath. Select the name to open the item in a modal.             |
+| **Type** | The entity type of the item, for example `document`, `media`, or `member`.                              |
 
-An entity action dropdown on each row provides per-document actions. The available actions depend on which search providers are installed. For example, the Examine provider adds a "Show Fields" action.
+Each row also holds the actions available for the document. The available actions depend on the search providers that the site uses. For example, the Examine provider adds a **Show Fields** action.
 
 ## Index health status
 
@@ -59,19 +67,26 @@ Each index reports a health status:
 | Status         | Meaning                                          |
 | -------------- | ------------------------------------------------ |
 | **Healthy**    | The index is operational and up to date          |
-| **Rebuilding** | The index is currently being rebuilt             |
+| **Rebuilding** | A rebuild of the index is in progress            |
 | **Empty**      | The index contains no documents                  |
 | **Corrupted**  | The index is in a bad state and needs rebuilding |
+| **Unknown**    | No health status is available for the index      |
 
 ## Rebuilding an index
 
 To rebuild an index:
 
-1. **From the collection view**: Click the entity action dropdown on the index row and select "Rebuild Index".
-2. **From the detail view**: Click the entity action dropdown in the workspace header and select "Rebuild Index".
+1. Select **Rebuild** on the row of the index in the overview, or in the actions menu of the detail view.
+2. Confirm the rebuild in the **Rebuild index** dialog.
+
+{% hint style="warning" %}
+A rebuild recreates the index from scratch. Searching the index may return incomplete results until the rebuild finishes.
+{% endhint %}
 
 During a rebuild:
 
-* The detail view shows a loading indicator.
-* The collection view shows a "Rebuilding" health status for the index.
-* When the rebuild completes, the server sends a notification via SignalR, and the UI updates automatically.
+* A notification confirms that the index is rebuilding in the background.
+* The overview shows a progress bar in place of the health status of the index.
+* The **Index information** box shows **Rebuilding**, together with a loading indicator.
+
+When the rebuild completes, the server notifies the backoffice. The UI updates automatically, and a **Rebuild completed** notification appears.
