@@ -62,12 +62,12 @@ Add-on packages contribute additional triggers. See [Add-ons](../add-ons/add-ons
 
 ## Running a Trigger On Demand
 
-Open the automation's context menu (the three dots next to it in the tree) and select **Run now**. The automation starts immediately, without waiting for its trigger to fire naturally. The option only appears when the automation's trigger supports it.
+Open the automation's context menu (the three dots next to it in the tree) and select **Run now**. The automation starts immediately, without waiting for its trigger to fire naturally. The option only appears when the automation is published and its trigger supports it.
 
 * **Manual Trigger** and **Scheduled Trigger** always support **Run now**.
 * **Webhook** also supports it, using the trigger's saved **Test request body** and **Test request headers** instead of a real HTTP request. See [Finding the Webhook URL](triggers.md#finding-the-webhook-url) below. Authentication and the allowed-method check are skipped for on-demand runs, since nothing is calling the webhook endpoint.
 * Content, Media, Member, and User triggers don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
-* Add-on and custom triggers can opt in to **Run now** individually. If the option isn't in the context menu, the automation's trigger doesn't support it. See [Supporting Run Now](../extending/custom-trigger.md#supporting-run-now) to add it to your own trigger.
+* Add-on and custom triggers can opt in to **Run now** individually. If the option isn't in the context menu of a published automation, its trigger doesn't support it. See [Supporting Run Now](../extending/custom-trigger.md#supporting-run-now) to add it to your own trigger.
 
 ## Finding the Webhook URL
 
@@ -77,6 +77,24 @@ Once an automation using the Webhook trigger has been saved, its webhook URL app
 * The Webhook trigger's own settings panel, alongside the **Test request body** and **Test request headers** fields used by **Run now** (above).
 
 The URL has the form `{host}/automate/webhook/{automationId}`. The host reflects the site's configured `WebRouting:UmbracoApplicationUrl` setting, not the address in your browser. Behind a load balancer or reverse proxy, the URL uses the configured public host instead of an internal one.
+
+## Webhook Requests
+
+Automate checks the request size first, then authenticates the caller, before it reveals anything about the automation. The endpoint answers with these status codes:
+
+| Status | When |
+| --- | --- |
+| **202 Accepted** | The request passed every check, and the run is queued. |
+| **401 Unauthorized** | Authentication failed, or no automation with a Webhook trigger has this ID. |
+| **405 Method Not Allowed** | The caller is authenticated, but the trigger doesn't accept this HTTP method. |
+| **409 Conflict** | The caller is authenticated, but the automation isn't published. |
+| **413 Payload Too Large** | The body is larger than `Webhook:MaxPayloadBytes`. |
+| **422 Unprocessable Entity** | The request declares a JSON content type, but the body isn't valid JSON. |
+| **429 Too Many Requests** | The automation is over its webhook rate limit. |
+
+The body reaches `${ trigger.body }` as sent, including form-encoded bodies and bodies sent without a `Content-Length`.
+
+The credential a caller sends is never stored with the run or passed to steps. **Plain Secret** removes the `X-Webhook-Secret` header and the `secret` query parameter from `${ trigger.headers }` and `${ trigger.query }`. **HMAC** removes the `X-Webhook-Signature` header.
 
 ## Trigger Output
 
