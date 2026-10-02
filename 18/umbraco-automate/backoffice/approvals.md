@@ -13,9 +13,11 @@ The **Request Approval** action pauses an automation and waits for a user to app
 ## How It Works
 
 1. The automation reaches a **Request Approval** step.
-2. The run is suspended and an approval entry is created with the configured prompt.
+2. The run's status changes to **Suspended**, and an approval entry is created with the configured prompt. Notification channels that report suspended runs send a notification.
 3. A user with access to the workspace opens the approval and chooses **Approve** or **Reject**.
-4. The step finishes and the run follows whichever branch matches the decision.
+4. The run goes back to **Running**, the step finishes, and the run follows whichever branch matches the decision.
+
+A run waiting for an approval can't be resumed from the run view. It continues once the approval is decided.
 
 A rejection is not an error. The **Request Approval** node has two outgoing handles on the canvas — **Approved** and **Rejected**. Send each outcome down a different path, the same way you would with an **If** node. See [Control Flow](../concepts/control-flow.md).
 
@@ -48,7 +50,7 @@ A user can act on an approval if they are a member of a user group that the work
 
 ## Finding Pending Approvals
 
-The **Approvals** dashboard in the Automate section lists every approval awaiting a decision across the workspaces you can access. Click an approval to open the decision dialog.
+The **Approvals** dashboard in the Automation section lists every approval awaiting a decision across the workspaces you can access. Click an approval to open the decision dialog.
 
 <figure><img src="../.gitbook/assets/automation-approvals-dashboard.png" alt="Approvals dashboard"><figcaption><p>Approvals dashboard</p></figcaption></figure>
 

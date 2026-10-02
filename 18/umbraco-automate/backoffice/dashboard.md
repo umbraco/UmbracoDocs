@@ -28,7 +28,7 @@ Below the cards, the **Recent Activity** list shows the most recent runs across 
 
 ## First-Run Welcome
 
-When you open Automation for the first time and no automations exist, the dashboard shows a welcome panel that links straight to creating a workspace.
+When no automations exist yet, the dashboard shows a welcome panel. The panel links straight to creating a workspace.
 
 ## See Also
 
