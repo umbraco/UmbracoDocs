@@ -51,6 +51,10 @@ To add a step:
 
 Repeat to chain more steps.
 
+Clicking **+** on an output that is already connected inserts the new step between that output and the step it connects to. Automate keeps the existing connection. The same applies when you drag from a connected output onto an empty part of the canvas. On the **Body** handle of a **Parallel** node, **+** adds a new branch instead.
+
+Automate places new steps so that they do not overlap existing steps.
+
 ### Use Bindings
 
 Any setting that supports bindings shows a binding picker icon. Click the icon to insert a `${ ... }` placeholder that resolves to data from the trigger or a previous step at runtime. See [Bindings](../concepts/bindings.md) for the syntax.
@@ -76,7 +80,7 @@ A draft automation does not respond to triggers. The automation only goes live a
 
 {% hint style="warning" %}
 
-If any steps on the canvas aren't connected to the trigger, Automate shows a warning naming them when you save or publish. Disconnected steps are never run, but the warning doesn't block saving. Reconnect or remove them once you see it.
+If any steps on the canvas aren't connected to the trigger, Automate shows a warning naming them when you save or publish. Disconnected steps are never run, but the warning doesn't block saving. The canvas shows these steps faded, with a dashed outline. Reconnect or remove them once you see it.
 
 {% endhint %}
 
