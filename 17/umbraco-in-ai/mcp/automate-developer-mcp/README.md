@@ -4,13 +4,13 @@ description: Get started with the Umbraco Automate Developer Model Context Proto
 
 # Automate Developer MCP Server
 
-The Automate Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) connects AI tools with Umbraco Automate. It gives large language models (LLMs) access to Automate's capabilities for building, running, and monitoring automations. This includes building and publishing automations, managing connections and workspaces, inspecting and controlling runs, handling approvals, and rolling back to earlier versions.
-
-Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. The server talks directly to the Umbraco Automate Management API, the same API layer that powers the Automate section of the backoffice.
-
 {% hint style="info" %}
 The Automate Developer MCP Server is in beta. Tools and configuration options can change between releases.
 {% endhint %}
+
+The Automate Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) connects AI tools with Umbraco Automate. It gives large language models (LLMs) access to Automate's capabilities for building, running, and monitoring automations. This includes building and publishing automations, managing connections and workspaces, inspecting and controlling runs, handling approvals, and rolling back to earlier versions.
+
+Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. The server talks directly to the Umbraco Automate Management API, the same API layer that powers the Automate section of the backoffice.
 
 {% hint style="info" %}
 The Automate Developer MCP Server automatically chains to the [CMS Developer MCP Server](../cms-developer-mcp/README.md), proxying its tools with a `cms--` prefix.
