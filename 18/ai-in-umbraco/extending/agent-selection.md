@@ -79,7 +79,7 @@ public sealed class MediaSectionAgentSelector : IAIAgentSelector
 `SelectorId` and `Reason` are stored as-is in the agent run's audit log. They are also sent to the browser in the `agent_selected` event. Keep them short and free of personal or sensitive data.
 {% endhint %}
 
-Selectors are resolved from dependency injection, so you can inject any registered service into the constructor.
+Selectors are resolved from dependency injection as singletons. Inject singleton services into the constructor. To use a scoped service, inject `IServiceScopeFactory` and create a scope inside `SelectAgentAsync`.
 
 ## Registering and Ordering Selectors
 
@@ -118,13 +118,15 @@ The `AIAgentSelectionRequest` exposes everything known about the request:
 | Property | Type | Description |
 |----------|------|-------------|
 | `CandidateAgents` | `IReadOnlyList<AIAgent>` | Active, scope-available agents. Selectors can only return one of these. |
-| `Messages` | `IReadOnlyList<ChatMessage>` | The full conversation, including history and attachments. |
+| `Messages` | `IReadOnlyList<ChatMessage>` | The messages sent with the request, including attachments. Contextual Copilot sends the full conversation. Copilot Workspace sends only the current turn. |
 | `AvailabilityContext` | `AgentAvailabilityContext` | The `Surface`, `Section`, and `EntityType` the request came from. |
 | `ContextItems` | `IReadOnlyList<AIRequestContextItem>` | All raw context items the frontend sent, such as the entity key. |
 | `SurfaceId` | `string` | The surface the request was made from, for example `copilot`. |
 | `UserGroupIds` | `IReadOnlyList<Guid>` | The current user's group IDs. Empty when there is no current user. |
 | `FrontendTools` | `IReadOnlyList<AIFrontendTool>` | Tools the frontend offered for the request. |
 | `PreviousAgent` | `AIAgent?` | The agent picked on the previous turn, if it is still a candidate. |
+
+In Copilot Workspace, `ContextItems` is empty and `AvailabilityContext` only sets `Surface`.
 
 ## Built-in Selectors
 
@@ -195,6 +197,54 @@ Selected does not mean ran. `AIAgentExecutingNotification` is published afterwar
 {% endhint %}
 
 For handler examples, see [Entity Lifecycle Notifications](notifications/entity-notifications.md#agent-selection-notifications).
+
+## Migrating from SelectAgentForPromptAsync
+
+`IAIAgentService.SelectAgentForPromptAsync` is obsolete and will be removed in v20. It now runs the same selector chain and returns only the selected agent.
+
+Use `IAIAgentSelectionService.SelectAgentAsync` instead. Pass the same values in an `AIAgentSelectionInput`, with the prompt as a user message. The method returns an `AIAgentSelectionResult`, so read the agent from its `Agent` property:
+
+{% code title="AgentPicker.cs" %}
+
+```csharp
+using Microsoft.Extensions.AI;
+using Umbraco.AI.Agent.Core.Agents;
+using Umbraco.AI.Agent.Core.Agents.Selection;
+
+namespace MyProject.AI;
+
+public class AgentPicker
+{
+    private readonly IAIAgentSelectionService _agentSelectionService;
+
+    public AgentPicker(IAIAgentSelectionService agentSelectionService)
+        => _agentSelectionService = agentSelectionService;
+
+    public async Task<AIAgent?> PickAgentAsync(
+        string userPrompt,
+        string surfaceId,
+        AgentAvailabilityContext context,
+        CancellationToken cancellationToken)
+    {
+        // Before: agentService.SelectAgentForPromptAsync(userPrompt, surfaceId, context, cancellationToken)
+        AIAgentSelectionResult? result = await _agentSelectionService.SelectAgentAsync(
+            new AIAgentSelectionInput
+            {
+                SurfaceId = surfaceId,
+                AvailabilityContext = context,
+                Messages = [new ChatMessage(ChatRole.User, userPrompt)],
+                ContextItems = [],
+            },
+            cancellationToken);
+
+        return result?.Agent;
+    }
+}
+```
+
+{% endcode %}
+
+The result is `null` only when there are no candidates. The result also carries the `SelectorId` and `Reason`.
 
 ## Audit Log Metadata
 
