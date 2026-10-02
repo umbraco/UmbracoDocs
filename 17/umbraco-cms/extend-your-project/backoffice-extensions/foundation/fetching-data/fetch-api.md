@@ -138,11 +138,16 @@ async function makeRequest(host: UmbClassInterface, url: string, method = 'GET',
       'Content-Type': 'application/json',
     },
   });
+
+  if (!response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+
   return response.json();
 }
 ```
 
-The above example illustrates the process of making a request to the Management API. The function does not handle errors or responses, so you will need to add that logic yourself. If the token has expired, you will get a 401 error back.
+The above example illustrates the process of making a request to the Management API. The function throws an error when the response is not successful, so `tryExecute` can report it. Add any other response handling you need yourself. `getLatestToken()` refreshes an expired token before the request, so you only get a 401 response when the session can no longer be refreshed.
 
 ## Other HTTP libraries
 
@@ -154,7 +159,7 @@ You can also use another HTTP library, such as [Axios](https://axios-http.com/),
 
 The following example creates an Axios instance with these values:
 
-{% code title="src/api/axios-client.ts" %}
+{% code title="src/axios-client.ts" %}
 ```typescript
 import axios from 'axios';
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
@@ -194,7 +199,7 @@ Requests made with another HTTP library do not pass through the interceptors of 
 
 ## Executing the request
 
-Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_auth.UmbAuthContext.html#tryexecute) function. This function will handle any errors that occur during the request and will automatically refresh the token if it is expired. If the session is expired, the function will also make sure the user logs in again.
+Regardless of method, you can execute the fetch requests through Umbraco's [tryExecute](https://apidocs.umbraco.com/v17/ui-api/functions/packages_core_resources.tryExecute.html) function. This function handles any errors that occur during the request and shows a notification when a request fails. A Fetch API request does not pass through the interceptors of the Backoffice. For that reason, `tryExecute` cannot refresh its token or prompt the user to log in again.
 
 **Example:**
 
