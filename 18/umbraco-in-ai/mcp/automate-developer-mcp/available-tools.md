@@ -1,12 +1,12 @@
 ---
-description: List of tools that are enabled in the Automate Developer MCP
+description: List of tools that are enabled in the Automate Developer MCP.
 ---
 
 # Available Tools
 
 This document lists all available tools grouped according to the categories defined in the **Umbraco Automate Management API**. Every endpoint in the Automate Management API is covered by at least one tool, so no endpoints are excluded.
 
-The names shown in parentheses, for example, `(automations)` or `(runs)` refer to the **Tool Collection names**, which are used for configuration via environment variables: `UMBRACO_INCLUDE_TOOL_COLLECTIONS` or `UMBRACO_EXCLUDE_TOOL_COLLECTIONS`.
+The names shown in parentheses, for example, `(automations)` or `(runs)`, refer to the **Tool Collection names**, which are used for configuration via environment variables: `UMBRACO_INCLUDE_TOOL_COLLECTIONS` or `UMBRACO_EXCLUDE_TOOL_COLLECTIONS`.
 
 This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/README.md), whose tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`). See [Configuration Options](configuration.md#cms-mcp-server-chaining) for details. Those chained tools are documented on the [CMS Available Tools](../cms-developer-mcp/available-tools.md) page and are not repeated here.
 
