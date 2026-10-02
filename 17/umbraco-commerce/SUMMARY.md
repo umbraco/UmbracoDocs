@@ -158,6 +158,7 @@
 * [Sending Payment Links to Customers](how-to-guides/payment-links.md)
 * [Create an Order via Code](how-to-guides/create-order-via-code.md)
 * [Show Discounted Prices on Product Pages](how-to-guides/show-discounted-prices.md)
+* [Create a Custom Order Advanced Filter](how-to-guides/create-custom-order-advanced-filter.md)
 
 ## Key Concepts
 
