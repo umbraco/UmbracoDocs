@@ -14,7 +14,7 @@ The following examples show how to generate a client from an OpenAPI specificati
 
 ## Generate your own client
 
-The generated client provides a convenient way to make requests to the specified API with type-safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
+The generated client provides a convenient way to make requests to the specified API with type safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
 
 To get started, install the generator using the following command:
 
@@ -41,11 +41,32 @@ Your generated client needs the correct base URL, credentials, and authenticatio
 * Sets the `auth` callback, which supplies the access token for requests that carry `security` metadata. See [How security metadata works](#how-security-metadata-works).
 * Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
 
-To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md).
-
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.
 {% endhint %}
+
+To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md). A generated client returns failed requests in an `error` property instead of throwing, and `tryExecute` only reports requests that throw. `configureClient()` does not change that. To make your client throw, set `throwOnError` on the `@hey-api/client-fetch` plugin in an `openapi-ts.config.ts` file:
+
+{% code title="openapi-ts.config.ts" %}
+```typescript
+import { defineConfig } from '@hey-api/openapi-ts';
+
+export default defineConfig({
+    input: 'https://example.com/openapi.json',
+    output: './my-client',
+    plugins: [
+        {
+            name: '@hey-api/client-fetch',
+            throwOnError: true,
+        },
+        '@hey-api/typescript',
+        '@hey-api/sdk',
+    ],
+});
+```
+{% endcode %}
+
+You can also pass `throwOnError: true` to a single SDK function, for example `getMyControllerAction({ throwOnError: true })`.
 
 ### Using `configureClient()` (recommended)
 

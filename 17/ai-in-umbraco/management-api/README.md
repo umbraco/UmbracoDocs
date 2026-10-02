@@ -83,6 +83,7 @@ The API uses URL-based versioning. The current version is `v1`.
 | ------ | ----------------------------------------- | -------------------- |
 | GET    | `/umbraco/ai/management/api/v1/settings`  | Get current settings |
 | PUT    | `/umbraco/ai/management/api/v1/settings`  | Update settings      |
+| GET    | `/umbraco/ai/management/api/v1/settings/disclosure` | Get the AI disclosure notice setting |
 
 ### Version History
 

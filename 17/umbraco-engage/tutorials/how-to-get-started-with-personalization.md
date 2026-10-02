@@ -73,7 +73,7 @@ These ingredients can be implicitly scored, explicitly scored, or a combination.
 6. Give the segment a title/name and add a description.
 7. Decide whether the segment will be temporary or not.
 8. Adjust the size of the control group under the **Advanced settings** if relevant.
-9. Click **Add segment** when you are done.
+9. Click **Submit** when you are done.
 
 As soon as you set up a segment, data collection will start. You can create and set up more segments depending on your target audiences.
 
@@ -110,12 +110,12 @@ Only content that uses Document Types which allows property segmentation can be 
 To personalize content, segmentation needs to be allowed on the Document Types and properties used to create it. Follow the steps below to allow segmentation.
 
 1. Open the Document Type that needs to allow segmentation.
-2. Access the **Permissions** view.
-3. Check the **Allow segmentation** option.
+2. Access the **Settings** view.
+3. Turn on **Vary by segment** under **Allow segmentation**.
 4. **Save** the Document Types.
 5. Access the **Design** view for the same Document Type.
-6. Click on ⚙️ next to the property where segmentation should be allowed.
-7. Check the **Allow segmentation** option.
+6. Select the property where segmentation should be allowed.
+7. Turn off **Shared across segments** under **Variation**.
 8. **Submit** the changes.
 9. Repeat steps 6-8 for each property that should allow segmentation.
 10. **Save** the Document Type.
@@ -123,28 +123,26 @@ To personalize content, segmentation needs to be allowed on the Document Types a
 </details>
 
 1. Navigate to the content item you want to personalize.
-2. Open the **Personalization** dashboard.
+2. Open the **Personalization** workspace view.
 
-<figure><img src="../.gitbook/assets/engage-personalization-create-variants.png" alt=""><figcaption><p>Create personalized versions of content items from the Personalization dashboard.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/engage-personalization-create-variants.png" alt=""><figcaption><p>Create personalized versions of content items from the Personalization workspace view.</p></figcaption></figure>
 
-3. Select **Add personalized variant** to get started with the personalization.
+3. Select **Create personalized variant** to get started with the personalization.
 4. Select the **Segment** you want to target with this new variant.
 5. Give the variant a **Name**.
 6. Add a **Description**.
 
 <figure><img src="../.gitbook/assets/engage-personalization-add-new-variant.png" alt=""><figcaption><p>To add a new personalization variant you need to select a segment and add a name and a description.</p></figcaption></figure>
 
-7. Click on **Add new variant** to start editing the variant.
-
-The content opens in a split-view format when all configuration required for the new variant is added. You can add content to the variant while seeing what is currently available by default.
+7. Click **Submit**.
+8. Select the name of the new variant on its card. The content opens in a split-view format. You can add content to the variant while seeing what is currently available by default.
 
 Only fields allowed for segmentation can be edited in the variant. Fields not configured for segmentation will use the values from the default content. When you leave a field blank on the variant, it automatically uses the values from the default content.
 
 <figure><img src="../.gitbook/assets/engage-personalization-split-view.png" alt=""><figcaption><p>Use the split-view to personalize the fields in the variant that has been configured for segmentation.</p></figcaption></figure>
 
-8. Add content for the new variant.
-9. Select **Save and publish...** when you are done editing.
-10. Select the variants you want to publish and click **Save and publish**.
+9. Add content for the new variant.
+10. Select **Save and publish** when you are done editing.
 
 The first personalized variant of your content has now been published. Your visitors will now start getting personalized content when visiting your website.
 
@@ -160,13 +158,13 @@ After setting up a personalized variant of a content item, you can add custom CS
 
 1. Navigate to the content item with the variant you want to edit.
 2. Open the **Personalization** view.
-3. Select **Edit** on the variant you want to make changes to.
-4. Click on the **Edit variant** button below the Page Title.
+3. Select the **Edit** (pencil) icon on the variant you want to make changes to.
+4. Expand **Custom code - CSS** or **Custom code - JavaScript**.
 5. Add your custom CSS and/or JavaScript.
 
 <figure><img src="../.gitbook/assets/engage-personalization-add-custom-code-to-variant.png" alt=""><figcaption><p>Edit the variant to add custom CSS and/or JavaScript to the variant.</p></figcaption></figure>
 
-6. **Save and close** to persist the changes.
+6. Select **Submit** to persist the changes.
 7. **Save and publish** the content item.
 
 ### Configure the status of a variant
@@ -175,11 +173,10 @@ In some cases, you might want to change the status of a variant. Follow the step
 
 1. Navigate to the content item with the variant you want to edit.
 2. Open the **Personalization** view.
-3. Select **Edit** on the variant you want to edit.
-4. Click on the **Edit variant** button below the Page Title.
-5. Use the toggle at the bottom of the pop-up to change the variant status.
+3. Select the **Edit** (pencil) icon on the variant you want to edit.
+4. Use the **Active** toggle to change the variant status.
 
 <figure><img src="../.gitbook/assets/engage-personalization-variant-status.png" alt=""><figcaption><p>Edit the variant to toggle the status in case you want to make a variant active/inactive.</p></figcaption></figure>
 
-6. **Save and close** to persist the changes.
-7. **Save and publish** the content item.
+5. Select **Submit** to persist the changes.
+6. **Save and publish** the content item.

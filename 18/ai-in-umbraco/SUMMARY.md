@@ -196,6 +196,7 @@
 * [Settings](management-api/settings/README.md)
   * [Get Settings](management-api/settings/get.md)
   * [Update Settings](management-api/settings/update.md)
+  * [Get Disclosure Settings](management-api/settings/disclosure.md)
 * [Versions](management-api/versions/README.md)
   * [Supported Types](management-api/versions/supported-types.md)
   * [Get History](management-api/versions/history.md)

@@ -55,6 +55,19 @@ Contextual Copilot understands your current editing context:
 - Content type information
 - Media items and relationships
 
+When the open item is a media item with a supported file, Contextual Copilot also reads the file's content. This means you can ask about a document without copying its text into the chat. Supported file types:
+
+| File type     | Extensions                 |
+| ------------- | -------------------------- |
+| Plain text    | `.txt`, `.md`, `.csv`      |
+| Office files  | `.docx`, `.xlsx`, `.pptx`  |
+
+Other files, such as PDFs, only share the media item's name and properties. Audio files are not transcribed as context, so opening one never triggers a paid transcription. Extracted text is capped at 100,000 characters.
+
+### AI-Generated Notice
+
+After the first message in a conversation, the chat shows the notice "Responses are AI-generated and may be inaccurate." The same notice appears in [Copilot Workspace](../copilot-workspace/README.md) conversations. Administrators control whether it is always shown, dismissible, or hidden with the [AI Disclosure Notice](../../backoffice/managing-settings.md#ai-disclosure-notice) setting.
+
 ### Tool Execution
 
 Agents can execute tools to interact with Umbraco:

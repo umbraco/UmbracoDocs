@@ -11,7 +11,7 @@ The Forms add-on connects Umbraco Engage to [Umbraco Forms](https://docs.umbraco
 ## What it adds
 
 * Tracking of Umbraco Forms submissions per visitor, stored with the visitor profile.
-* An **Umbraco Forms Submission** goal type, so a form submission can count as a conversion.
+* An **Umbraco Forms submission** goal type, so a form submission can count as a conversion.
 * An **Analytics - VisitorId** form field that links a submission to the visitor profile in Umbraco Engage.
 * A **Form Submissions** overview on the visitor profile, showing the forms submitted by that visitor.
 * Visitor identification: a visitor who submits a form becomes an [Identified Profile](../marketers-and-editors/profiling/README.md).
@@ -20,7 +20,7 @@ The Forms add-on connects Umbraco Engage to [Umbraco Forms](https://docs.umbraco
 
 * Umbraco Engage is [installed](../installation/installation.md) and [licensed](../installation/licensing.md).
 * Umbraco Forms is installed with a valid license.
-* The [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) is added to your pages. Submissions are linked to visitors without it, but the **Umbraco Forms Submission** goal only fires when the script is present.
+* The [clientside tracking script](../developers/analytics/client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md) is added to your pages. Submissions are linked to visitors without it, but the **Umbraco Forms submission** goal only fires when the script is present.
 
 ## Install the package
 
@@ -45,7 +45,7 @@ Build or restart your website afterwards.
 ## Verify the installation
 
 1. Edit a form and add a new question. The **Analytics - VisitorId** field type should be available.
-2. Go to **Engage** -> **Settings** and create a new goal. The **Umbraco Forms Submission** goal type should be available.
+2. Go to **Engage** > **Settings** > **Goals** and select **Create goal**. The **Umbraco Forms submission** option should be available in the **Trigger** dropdown.
 
 ![Umbraco Forms submission option in the goal trigger dropdown](../.gitbook/assets/engage-forms-goal-trigger.png)
 

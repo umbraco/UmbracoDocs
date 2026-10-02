@@ -53,7 +53,7 @@ The same applies to `put` and `patch`. The `security` array is needed here too, 
 
 The Umbraco HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles request and response parsing, error handling, and retries. The Umbraco HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
 
-The recommended way to use the Umbraco HTTP Client is with the `tryExecute` function. This function handles any errors that occur during the request and automatically refreshes the token if it has expired. If the session has expired, it prompts the user to log in again.
+The recommended way to use the Umbraco HTTP Client is with the `tryExecute` function. This function handles any errors that occur during the request and shows a notification when a request fails. Responses with status 401, 403 or 404 do not show a notification, so check the returned `error` for those. The Umbraco HTTP Client refreshes an expired token, and prompts the user to log in again when the session has expired.
 
 You can read more about the `tryExecute` function in this article:
 
