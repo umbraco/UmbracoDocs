@@ -71,6 +71,21 @@ On Azure App Service, Umbraco derives the identifier from the `WEBSITE_INSTANCE_
 
 For advanced scenarios, implement `IMachineIdentityProvider` to read the stable identifier from wherever your infrastructure exposes it. Examples include an environment variable, a mounted file, or a metadata API. See [Advanced Techniques With Flexible Load Balancing](load-balancing/flexible-advanced.md#custom-machine-identity-providers) for details.
 
+## Memory limits
+
+Containers usually run with a hard memory limit. Image processing is the largest source of memory spikes in an Umbraco site, because each request decodes a full-resolution source image. Under load, a page of thumbnails can exhaust the limit and the container is killed.
+
+You can bound the memory used for image processing. The bounds are derived from the container limit and are disabled by default:
+
+```yaml
+services:
+  umbraco:
+    environment:
+      - UMBRACO__CMS__IMAGING__MEMORY__ENABLED=true
+```
+
+See [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md#memory) for the full property reference.
+
 ## HTTPS
 
 When running websites in Docker, it's common to do so behind a reverse proxy or load balancer. In these scenarios you will likely handle SSL termination at the reverse proxy. This means that Umbraco will not be aware of the SSL termination, and will complain about not using HTTPS.
