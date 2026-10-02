@@ -4,13 +4,13 @@ description: Get started with the Umbraco Forms Developer Model Context Protocol
 
 # Forms Developer MCP Server
 
-The Forms Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) connects AI tools with Umbraco Forms. It gives large language models (LLMs) access to Forms' authoring, data, and reporting capabilities. This includes building and editing forms, managing data sources and prevalue sources, working with submitted entries, and querying submission analytics.
-
-Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. The server talks directly to the Umbraco Forms Management API, the same API layer that powers the Forms section of the backoffice.
-
 {% hint style="info" %}
 The Forms Developer MCP Server is in beta. Tools and configuration options can change between releases.
 {% endhint %}
+
+The Forms Developer [MCP Server](../../concepts/model-context-protocol.md#mcp-servers) connects AI tools with Umbraco Forms. It gives large language models (LLMs) access to Forms' authoring, data, and reporting capabilities. This includes building and editing forms, managing data sources and prevalue sources, working with submitted entries, and querying submission analytics.
+
+Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. The server talks directly to the Umbraco Forms Management API, the same API layer that powers the Forms section of the backoffice.
 
 {% hint style="info" %}
 The Forms Developer MCP Server automatically chains to the [CMS Developer MCP Server](../cms-developer-mcp/README.md), proxying its tools with a `cms--` prefix.
