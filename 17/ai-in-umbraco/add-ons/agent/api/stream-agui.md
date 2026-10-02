@@ -84,6 +84,16 @@ The request body follows the AG-UI `RunAgentInput` shape:
 
 AG-UI message `role` values are: `user`, `assistant`, `system`, `tool`, or `developer`.
 
+#### Forwarded Properties
+
+`forwardedProps` accepts the following optional property:
+
+| Property          | Type   | Description |
+| ----------------- | ------ | ----------- |
+| `previousAgentId` | string | The ID of the agent picked on the previous turn. Only read when `agentIdOrAlias` is `auto`. |
+
+The server treats `previousAgentId` as an untrusted hint. A value that is missing, not a GUID, or not an active, in-scope agent is ignored. It never causes an error response. Agent selectors receive the resolved agent as `PreviousAgent`. For more information, see [Agent Selection](../../../extending/agent-selection.md).
+
 ## Response
 
 The endpoint returns `Content-Type: text/event-stream`. Each event is emitted as a single SSE `data:` line containing the JSON-serialized event, followed by a blank line. There is no `event:` line - the event type is embedded in the JSON payload as a `type` discriminator:
@@ -135,8 +145,18 @@ Event type values are UPPER\_SNAKE\_CASE and match the official AG-UI specificat
 When `agentIdOrAlias` is `auto`, the stream is prepended with a `CUSTOM` event named `agent_selected` describing which agent was chosen:
 
 ```
-data: {"type":"CUSTOM","name":"agent_selected","value":{"agentId":"3fa85f64-...","agentName":"Content Assistant","agentAlias":"content-assistant"}}
+data: {"type":"CUSTOM","name":"agent_selected","value":{"agentId":"3fa85f64-...","agentName":"Content Assistant","agentAlias":"content-assistant","selectorId":"llm"}}
 ```
+
+| Field        | Type   | Description |
+| ------------ | ------ | ----------- |
+| `agentId`    | string | The selected agent's ID |
+| `agentName`  | string | The selected agent's name |
+| `agentAlias` | string | The selected agent's alias |
+| `selectorId` | string | The selector that picked the agent: `llm`, `sticky`, `only-candidate`, `fallback`, or a custom selector's ID |
+| `reason`     | string | The selector's explanation for the pick. Omitted when the selector gave no reason. |
+
+To keep track of the previous pick, send the `agentId` back as `forwardedProps.previousAgentId` on the next request.
 
 ### Error Responses
 

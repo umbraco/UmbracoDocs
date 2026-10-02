@@ -156,6 +156,7 @@
   * [Creating a Tool](extending/tools/creating-a-tool.md)
 * [Custom Guardrail Evaluators](extending/guardrails.md)
 * [Knowledge Sets](extending/knowledge-sets.md)
+* [Agent Selection](extending/agent-selection.md)
 * [Notifications](extending/notifications/README.md)
   * [Entity Lifecycle Notifications](extending/notifications/entity-notifications.md)
 
