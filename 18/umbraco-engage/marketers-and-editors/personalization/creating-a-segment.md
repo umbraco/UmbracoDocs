@@ -50,7 +50,7 @@ Add-ons can add more parameters. For example, the [Commerce](../../add-ons/comme
 By clicking on the tile you will set up a parameter for the segment. For example, you can implement a segment where you group all visitors that use Firefox **after 15:00** in one segment. To do that:
 
 1. Create a new segment with the name **My first segment**.
-2. Click the **Browser** tile and **include** all visitors using the browser **Firefox**.
+2. Click the **Browser** tile and **include** all visitors using the browser.
 
 <figure><img src="../../.gitbook/assets/Personalization-add-new-segment-browser-v16.png" alt="Add new segment."><figcaption><p>Add new segment.</p></figcaption></figure>
 
