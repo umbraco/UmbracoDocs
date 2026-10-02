@@ -175,6 +175,21 @@ HTTP-level errors are returned as problem details (not as SSE). Errors that occu
 
 {% endcode %}
 
+When the AG-UI context declares a surface, a named agent must be available on it. The agent must be active, list that surface in its `SurfaceIds`, and pass the agent's scope rules. Otherwise the request fails before streaming starts. Requests without a surface skip this check.
+
+{% code title="404 Not Found (agent not available on the surface)" %}
+
+```json
+{
+    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    "title": "AIAgent not available in this context",
+    "status": 404,
+    "detail": "Agent 'content-assistant' is not available in the 'copilot' surface for the current context."
+}
+```
+
+{% endcode %}
+
 {% code title="400 Bad Request (auto mode without surface)" %}
 
 ```json
