@@ -85,7 +85,7 @@ The filter needs the ID of the payment method to filter on.
 3. Select the payment method.
 4. Copy the **Id** from the **Info** panel.
 
-![The payment method ID in the Info panel](images/custom-order-advanced-filter/payment-method-id.png)
+![The payment method ID in the Info panel](../.gitbook/assets/payment-method-id.png)
 
 To filter the order list:
 
@@ -94,12 +94,12 @@ To filter the order list:
 3. Select the filter icon next to **Payment Status**.
 4. Enter the ID in **Payment method ID**.
 
-![The Payment method ID filter in the Advanced Filters panel](images/custom-order-advanced-filter/advanced-filters-panel.png)
+![The Payment method ID filter in the Advanced Filters panel](../.gitbook/assets/advanced-filters-panel.png)
 
 5. Select **Apply**.
 
 The order list shows only the orders that use the given payment method.
 
-![The order list filtered by payment method](images/custom-order-advanced-filter/filtered-order-list.png)
+![The order list filtered by payment method](../.gitbook/assets/filtered-order-list.png)
 
 To count the orders for a specific week, also set **Placed On or After** and **Placed On or Before** in the **Advanced Filters** panel.
