@@ -32,6 +32,8 @@ Output property names are exposed to bindings in camelCase. For example, `Conten
 
 Paths support nested dictionaries, array indexes (`items[0]`), and dictionary keys (`headers["Content-Type"]`). A `length` or `count` segment on a list resolves to the list size.
 
+A Run Script step reads the same values from its `data` argument, using the same paths. See [Run Script Data](actions.md#run-script-data).
+
 ## Examples
 
 ```
