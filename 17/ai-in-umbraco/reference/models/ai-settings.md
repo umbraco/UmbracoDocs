@@ -37,6 +37,9 @@ public class AISettings : IAIAuditableEntity
     [AISetting]
     public Guid? ClassifierChatProfileId { get; set; }
 
+    [AISetting]
+    public AIDisclosureNoticeMode DisclosureNoticeMode { get; set; } = AIDisclosureNoticeMode.Always;
+
     // Audit properties
     public DateTime DateCreated { get; internal set; }
     public DateTime DateModified { get; internal set; }
@@ -56,6 +59,7 @@ public class AISettings : IAIAuditableEntity
 | `DefaultEmbeddingProfileId`    | `Guid?`    | Default profile for embedding operations      |
 | `DefaultSpeechToTextProfileId` | `Guid?`    | Default profile for speech-to-text operations |
 | `ClassifierChatProfileId`      | `Guid?`    | Optional profile for classification tasks (falls back to default chat) |
+| `DisclosureNoticeMode`         | `AIDisclosureNoticeMode` | How the AI-generated notice is shown: `Always` (default), `Dismissible`, or `Off` |
 | `DateCreated`               | `DateTime` | When settings were first created         |
 | `DateModified`              | `DateTime` | When settings were last modified         |
 | `CreatedByUserId`           | `Guid?`    | User who created                         |
