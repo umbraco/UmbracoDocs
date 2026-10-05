@@ -28,7 +28,7 @@ For more information on how to handle content transfer/restores on Umbraco Cloud
 
 ## Upgrades
 
-Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/). New patch and minor versions of Umbraco Forms are applied automatically in your project's [maintenance windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#maintenance-windows).
+Umbraco Forms is part of the [auto-upgrades on Umbraco Cloud](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/). New patch and minor versions of Umbraco Forms are applied automatically in your project's [upgrade windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows).
 
 To avoid having the auto-upgrades overwrite any of your custom settings, we strongly encourage that you use [config transforms](../../build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) when you need custom configuration. Additionally, use [Themes](https://docs.umbraco.com/umbraco-forms/developer/themes) when you need to customize your forms.
 

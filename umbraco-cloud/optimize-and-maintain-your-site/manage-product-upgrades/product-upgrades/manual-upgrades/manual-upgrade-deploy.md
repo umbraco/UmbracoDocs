@@ -6,7 +6,7 @@ description: >-
 
 # Manual upgrade of Umbraco Deploy
 
-Deploy on Cloud is automatically upgraded with patch and minor releases during your project's [maintenance windows](../minor-upgrades.md#maintenance-windows). You can also upgrade Deploy from the **Upgrade available** banner in the Cloud Portal.
+Deploy on Cloud is automatically upgraded with patch and minor releases during your project's [upgrade windows](../minor-upgrades.md#upgrade-windows). You can also upgrade Deploy from the **Upgrade available** banner in the Cloud Portal.
 
 In rare cases, Deploy might not be on the latest patch or minor and you will need to upgrade Deploy manually.
 
