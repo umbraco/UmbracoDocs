@@ -176,16 +176,17 @@ angular.module("umbraco").controller("MyItemsDashboardController", function (
     }
 
     vm.addItem = function () {
+        var value = vm.newValue;
         umbRequestHelper.resourcePromise(
-            $http.post("backoffice/api/MyItemApi/CreateItem?value=" + encodeURIComponent(vm.newValue)),
+            $http.post("backoffice/api/MyItemApi/CreateItem?value=" + encodeURIComponent(value)),
             "Failed to add the item")
-            .then(function () {
+            .then(function (item) {
+                vm.items.push(item);
                 return localizationService.localize("myItems_itemAdded");
             })
             .then(function (headline) {
-                notificationsService.success(headline, vm.newValue);
+                notificationsService.success(headline, value);
                 vm.newValue = "";
-                loadItems();
             });
     };
 
@@ -201,7 +202,9 @@ angular.module("umbraco").controller("MyItemsDashboardController", function (
                     umbRequestHelper.resourcePromise(
                         $http.delete("backoffice/api/MyItemApi/DeleteItem?id=" + item.Id),
                         "Failed to delete the item")
-                        .then(loadItems);
+                        .then(function () {
+                            vm.items.splice(vm.items.indexOf(item), 1);
+                        });
                     overlayService.close();
                 }
             });
@@ -287,7 +290,7 @@ export class MyItemsDashboardElement extends UmbLitElement {
 
   async #loadItems() {
     this._loading = true;
-    const { data } = await tryExecute(
+    const { data, error } = await tryExecute(
       this,
       umbHttpClient.get<{ 200: MyItemPage }>({
         url: ITEMS_URL,
@@ -295,30 +298,36 @@ export class MyItemsDashboardElement extends UmbLitElement {
         security: [{ scheme: "bearer", type: "http" }],
       }),
     );
-    this._items = data?.items ?? [];
     this._loading = false;
+    // Keep the current items if the request fails. tryExecute notifies for every error except 401, 403 and 404.
+    if (error || !data) return;
+    this._items = data.items;
   }
 
   async #addItem() {
-    const { error } = await tryExecute(
+    const value = this._newValue;
+    const { data: id, error } = await tryExecute(
       this,
-      umbHttpClient.post({
+      umbHttpClient.post<{ 201: string }>({
         url: ITEMS_URL,
-        query: { value: this._newValue },
+        query: { value },
         security: [{ scheme: "bearer", type: "http" }],
       }),
     );
     // tryExecute has already shown a notification for the failed request
     if (error) return;
 
+    // For a created item, the Umbraco HTTP Client returns the ID from the Umb-Generated-Resource header as data.
+    // Assign a new array, so Lit renders the list again.
+    if (id) this._items = [...this._items, { id, value }];
+
     this.#notificationContext?.peek("positive", {
       data: {
         headline: this.localize.term("myItems_itemAdded"),
-        message: this._newValue,
+        message: value,
       },
     });
     this._newValue = "";
-    this.#loadItems();
   }
 
   async #deleteItem(item: MyItem) {
@@ -341,7 +350,7 @@ export class MyItemsDashboardElement extends UmbLitElement {
         security: [{ scheme: "bearer", type: "http" }],
       }),
     );
-    if (!error) this.#loadItems();
+    if (!error) this._items = this._items.filter((existing) => existing.id !== item.id);
   }
 
   override render() {
