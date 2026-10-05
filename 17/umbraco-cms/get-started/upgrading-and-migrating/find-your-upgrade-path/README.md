@@ -35,6 +35,8 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 
 Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Backoffice Extensions](../../../extend-your-project/backoffice-extensions/) documentation.
 
+To map your AngularJS code to the new backoffice, see the [Migrate Backoffice Extensions from AngularJS](migrate-backoffice-extensions-from-angularjs.md) article.
+
 **Deprecated property editors**
 
 **Nested Content** and **Grid Layout** have been removed. We recommend rebuilding it using Block Grid for the grid layout and either Block Grid or Block List for Nested Content.

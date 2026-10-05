@@ -4,6 +4,10 @@ description: Learn how to request data when extending the Backoffice.
 
 # Fetching Data
 
+{% hint style="info" %}
+Coming from `$http` in Umbraco 13? The Umbraco HTTP Client replaces `$http`, and `tryExecute` replaces `umbRequestHelper.resourcePromise`. For more AngularJS equivalents, see the [Migrate Backoffice Extensions from AngularJS](../../../../get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-backoffice-extensions-from-angularjs.md) article.
+{% endhint %}
+
 ## Fetch Data Through HTTP
 
 There are two main ways to fetch data through HTTP in the Umbraco Backoffice:
@@ -20,7 +24,7 @@ For most scenarios, the Umbraco HTTP Client is recommended because it:
 * Simplifies request and response parsing.
 * Integrates seamlessly with the Backoffice.
 
-The Fetch API is an alternative for simpler use cases.
+Use the Fetch API only if you cannot use the Umbraco HTTP Client.
 
 The following table provides a comparison of the two options:
 
@@ -30,7 +34,7 @@ The following table provides a comparison of the two options:
 | Error Handling       | Manual                    | Built-in                              |
 | Type Safety          | No                        | Yes                                   |
 | Request Cancellation | Yes (via AbortController) | Yes (via AbortController)             |
-| Recommended Use Case | Common requests           | Complex or frequent requests          |
+| Recommended Use Case | When you cannot use the HTTP Client | All requests to Umbraco APIs  |
 
 After selecting a method, refer to the sections below for implementation details and guidance on handling the received data.
 
