@@ -166,7 +166,7 @@ sectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
 
 ## Extending Existing Sections
 
-You can extend existing sections by adding Umbraco UI Builder trees and dashboards, context apps, and virtual subtrees. This can be done by calling the `WithSection` method on the root-level `UIBuilderConfigBuilder` instance.
+You can extend existing sections by adding Umbraco UI Builder trees, dashboards, and context apps. This can be done by calling the `WithSection` method on the root-level `UIBuilderConfigBuilder` instance.
 
 ### Extending an Existing Section with `WithSection()`
 
