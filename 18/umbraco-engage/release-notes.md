@@ -16,6 +16,31 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 18, detailing all changes in this version.
 
+#### [18.2.0](https://www.nuget.org/packages/Umbraco.Engage/18.2.0) (October 1st 2026)
+
+**Analytics and reporting**
+
+* Report tables, charts and the comparison view now page and search on the server instead of loading the whole report into the browser. Large reports open faster, and search now filters the entire report rather than only the rows already loaded.
+* Column totals and each cell's "% of total" are now computed by the server against the whole report. These values stay accurate while paging or searching, instead of reflecting only the loaded page.
+* Fixed the "contains" and "does not contain" filter operators in analytics queries, which generated invalid SQL and failed. "Contains" and "does not contain" are now rejected on visitor type, where a text search cannot match. "Does not contain" now includes rows with no value, and a blank filter value is treated as no filter.
+* Combining the Users metric with a page or segment dimension now returns a validation error (HTTP 400) instead of a server error (HTTP 500). Filtering the Users metric by one is also rejected. Users are counted per visitor per day and carry no page or segment.
+
+**Analytics: visual redesign**
+
+* The chart and its data table are now combined into a single pane instead of two separate boxes.
+* Annotations moved out of the chart into a compact popover in the pane header. The popover shows a bookmark icon, a count, and a list for creating or deleting annotations inline. Annotation markers are now pinned directly on the chart, and their tooltips appear only when the pointer is over the marker.
+* Line/area and bar charts have been restyled to match the updated design. Legends label each series by its type or dimension instead of repeating the date range. Tooltip rows are named by series, and the value tooltip sits beside the hovered marker.
+* Data tables have been restyled with a mini bar indicator per metric cell, colour-coded visitor-type rows, clearer "no results" messaging, and an improved loading state. Table headers, the totals strip, and row links have also been restyled.
+* Comparison mode has been restyled. Table cells show a bar for the previous value and a delta chip (new, flat, up or down). Each total in the strip carries a delta chip. Charts draw the comparison period as a dashed line with a gain/loss band between the two lines. Stacked bar charts show the previous period as a grey total. Series colors match the colored dots in the table.
+* Pagination footers now stay visible even when all rows fit on one page, showing a "1–10 of 14" style range. Two-row breakdown tables, for example New and Returning visitors, show no footer.
+* The panel header and toolbar are more compact, with field labels hidden and a "Show rows" label on the page-size control.
+
+**A/B testing and personalization**
+
+* Deleting a segment that is still used by a personalization is now also blocked when the deletion arrives through Umbraco Deploy. The error names the personalizations that use the segment.
+
+* All changes from 18.2.0 release candidates
+
 #### [18.2.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/18.2.0-rc1) (September 18th 2026)
 
 **Analytics and reporting**

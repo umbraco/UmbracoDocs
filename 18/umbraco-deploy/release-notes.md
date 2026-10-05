@@ -6,7 +6,7 @@ description: >-
 
 # Release notes
 
-In this section, we have summarized the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the details.
+This section summarizes the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. The individual issues are also linked from the details.
 
 If there are any breaking changes or other issues to be aware of when upgrading, they are also noted here.
 
@@ -17,6 +17,11 @@ If you are upgrading to a new major version, you can find the details about the 
 ## Release history
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
+
+### [18.1.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.1) (September 24th 2026)
+
+* Skip property values for a culture or segment the property type no longer varies by, fixing `Variation "<culture>,<segment>" is not supported by the property type` during transfers and restores [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8).
+* Encode item and environment names shown in the restore and schema comparison dialogs, and in the progress log.
 
 ### [18.1.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.0) (September 17th 2026)
 

@@ -9,7 +9,7 @@ description: >-
 An automation is a workflow you build in the backoffice. Every automation has:
 
 * Exactly one trigger: the event that starts the workflow.
-* Zero or more step&#x73;**:** actions and control-flow nodes that run in sequence.
+* Zero or more steps**:** actions and control-flow nodes that run in sequence.
 * A draft version and an optional published version.
 
 ## Anatomy of an Automation

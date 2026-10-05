@@ -18,6 +18,35 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.6.0-rc2 (October 2nd 2026)
+
+The changes below are the ones made since `17.6.0-rc`. For everything else in this release, see the `17.6.0-rc` notes.
+
+* Form Design: Warn when a form was changed by someone else since you opened it, instead of overwriting their changes on save
+* Workflows: Reject a form save when a mandatory workflow setting is empty or contains only whitespace
+* Workflows: Require the **Email Template** setting of the **Send email with template (Razor)** workflow [#1790](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1790)
+* Rollback: Show the form's workflows in the version preview, and include them when comparing versions
+* Rollback: Mask secret workflow settings in the version preview
+* Form History: Record an entry when a form is created
+* Delivery API: Return a 400 or 415 status code, instead of a 500, for entry submissions that can't be processed
+* Themes: Fix conditions when the same form is rendered more than once on a page [#1799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1799)
+* Data Retention: Delete records scheduled for removal in batches, so a large backlog no longer fails to delete [#1796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1796)
+* Prevalue Sources: Read the options of the Umbraco Documents source from the published content cache, to speed up forms that use it [#1791](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1791)
+* Notifications: Show the message from a notification handler that cancels a form save [#1785](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1785)
+* Form Submission: Fix submitting a form on a page whose URL has a `model` query string parameter [#1793](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1793)
+* Form Entries: Show a loading indicator while entries load [#1789](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1789)
+* Field Design: Reject a field name or alias that contains only whitespace [#1788](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1788)
+* Form Design: Show the invalid state for a form name that contains only whitespace
+* Form Design: Open the field type picker directly when changing the answer type of a field [#1778](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1778)
+* Form Design: Show condition summaries next to the page, group, or field they belong to [#1787](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1787)
+* Form Design: Use the same drag handle and reorder icons as the CMS [#1792](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1792)
+
+{% hint style="warning" %}
+A form that already has an empty mandatory workflow setting can't be saved until that setting is filled in. The error message names the workflow. Loading the form isn't affected.
+
+A Management API client can send the `concurrencyToken` returned by `GET /form/{id}` with `PUT /form/{id}`. If the form was saved since, the update is rejected with a 409 "Conflict" status code. A request without the token still overwrites the form, as before.
+{% endhint %}
+
 ### [17.6.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.6.0) (September 17th 2026)
 
 #### Form versions
@@ -70,6 +99,10 @@ Date field values shown to people now follow the culture the entry was submitted
 
 For the full list of what changed and what to check, see the [Version Specific Upgrade Notes](upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
 {% endhint %}
+
+### 17.5.2 (September 24th 2026)
+* Show form names as plain text in the **Move** and **Copy workflows** dialogs, so HTML in a name can't run as script [GHSA-r7qp-475g-rwpg](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-r7qp-475g-rwpg)
+* Upgrading: Grant the Forms **Security** permission to the **Administrators** group without rolling back the upgrade. Sites stuck in the `Upgrading` state after installing 17.5.1 complete the upgrade on the next start.
 
 ### 17.5.1 (September 17th 2026)
 * Require a dedicated user group permission for the Forms Security area, so that backoffice users cannot grant themselves Forms permissions [GHSA-8jv5-237g-mfj9](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-8jv5-237g-mfj9)

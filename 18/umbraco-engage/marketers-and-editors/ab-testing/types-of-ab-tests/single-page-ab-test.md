@@ -12,7 +12,7 @@ When you select the Single-Page test type you can create two or more variants.
 
 <figure><img src="../../../.gitbook/assets/ABTest-SinglePage-TestSetup-v16.png" alt="Set up test"><figcaption><p>Set up test</p></figcaption></figure>
 
-The first variant is always the original content and the published page. Variant B is the first variant that can be created and with the button '**Add a variant**' more alternatives can be added. More variants mean that a test should run for longer to become reliable.
+The first variant is always the original content and the published page. Variant B is the first variant that can be created and with the **Add** button more alternatives can be added. More variants mean that a test should run for longer to become reliable.
 
 ## Split view editing
 
@@ -38,7 +38,7 @@ In the overview of the Document Type, you will see if properties can be segmente
 
 Sometimes you cannot adjust a specific property because it was not configured when Umbraco was set up. In those cases, you can use the CSS/JavaScript field to add a code-snippet to make these adjustments. The best way is to do it via property editing in the split view edit mode. You do not have to write any CSS or JavaScript code.
 
-To do this, go to **A/B Tests** Workspace View. Click **Edit** on the variant. This will give the editor a popup where CSS and JavaScript can be entered:
+To do this, go to the **A/B Tests** Workspace View and open the test. Select **CSS / JS** on the variant. This opens the **Edit variant** dialog, where CSS and JavaScript can be entered:
 
 <figure><img src="../../../.gitbook/assets/image (9).png" alt="CSS/JavaScript popup"><figcaption><p>CSS/JavaScript popup</p></figcaption></figure>
 
@@ -46,7 +46,7 @@ To do this, go to **A/B Tests** Workspace View. Click **Edit** on the variant. T
 
 These lines of code will automatically be inserted at the bottom of the page.
 
-You can check if your code works by clicking **Preview**.
+You can check if your code works by selecting **Preview** next to the variant.
 
 Once the variant is set up, click **Save** to finish the A/B Test.
 

@@ -40,7 +40,7 @@ https://www.umarketingsuite.com/pricing/?utm_source=newsletter-july-2021&utm_med
 
 Now that you've created URLs for campaigns they will automatically be tracked by Umbraco Engage and you can score them for implicit personalization purposes.
 
-Navigating to **Personalization** -> **Campaign scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
+Navigating to **Personalization** > **Campaign Scoring** you will see all the campaign groups, the campaigns you already scored, and the campaigns that need scoring.
 
 ![Scoring your campaign](../../../.gitbook/assets/engage-personalization-campaign-scoring-v16.png)
 
@@ -50,7 +50,7 @@ First, you need to create one or more campaign groups. Campaign groups allow gro
 
 You can create a group for a set of personas for example and assign scores to the group. Next, you can assign different campaigns to that group and every visitor who comes to the website via that campaign. They then get the points that are referred to the campaign group.
 
-You can add a new campaign group by clicking "**Add new group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that, you can specify specific points for this group:
+You can add a new campaign group by clicking "**Add campaign group**". This will open up a popup where you can specify the name of the campaign group and a short description. After that, you can specify specific points for this group:
 
 ![Create new campaign group.](../../../.gitbook/assets/Create-new-campaign-group.png)
 

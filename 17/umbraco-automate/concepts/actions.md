@@ -65,14 +65,62 @@ ${ steps.callApi.responseBody }
 Each step has a **Name** (its label on the canvas) and an **Alias** (`callApi` in the example). See [Step Behaviour](actions.md#step-behaviour) below for both.
 
 {% hint style="warning" %}
+
 The HTTP Request action rejects responses larger than `Execution:MaxHttpResponseBodyBytes` (10 MB by default). The step fails with a terminal error that names the response size and the limit. Raise the limit in [Configuration](../getting-started/configuration.md) for larger payloads.
+
+The HTTP Request action only calls public destinations. See [Outbound Requests](../getting-started/configuration.md#outbound-requests) for the address categories Automate refuses and how it handles proxies.
+
 {% endhint %}
 
 {% hint style="warning" %}
+
 The Run Script action runs in a JavaScript sandbox with a 5 MB memory cap and a 15-second total execution timeout by default. Configure both via `Scripting:*` settings. See [Configuration](../getting-started/configuration.md).
 
-Outbound `fetch` calls are blocked by default. Enable them tenant-wide (`Scripting:FetchEnabled`) and per step (**Allow fetch**) to use them. `fetch` blocks requests to localhost, private, link-local, and cloud metadata addresses to prevent Server-Side Request Forgery (SSRF).
+A script can only make outbound `fetch` calls when both of these are on:
+
+* **Allow fetch** on the step. This is off for new Run Script steps, so turn it on for each step that needs `fetch`. Existing steps keep the value they were saved with.
+* `Scripting:FetchEnabled` for the whole site. This is `true` by default. Set it to `false` to turn off `fetch` for every Run Script step.
+
+To restrict which hosts scripts can call, list them in `Scripting:FetchAllowedHosts`. When the list is empty, `fetch` can call any public host. `fetch` follows the same destination rules as the HTTP Request action. See [Outbound Requests](../getting-started/configuration.md#outbound-requests).
+
+When a `fetch` request fails, the promise rejects with a short error message, for example, `http request was blocked` or `fetch failed: connection refused`. Automate writes the full details to the server log.
+
 {% endhint %}
+
+## Run Script Data
+
+A Run Script step exports a default function. The function receives a `data` argument and returns the step's output.
+
+`data` holds the values a binding can reach, at the same paths. If a binding would use `${ steps.getMedia.properties.umbracoBytes }`, the script reads `data.steps.getMedia.properties.umbracoBytes`.
+
+| Binding                              | Script                                                           |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| `${ trigger.<path> }`                | `data.trigger.<path>`                                            |
+| `${ steps.<alias>.<path> }`          | `data.steps.<alias>.<path>`                                      |
+| `${ previous.<path> }`               | `data.previous.<path>`. Not present for the first step.          |
+| `${ loop.item }` / `${ loop.index }` | `data.loop.item` / `data.loop.index`. Inside a **For Each** only. |
+
+{% code title="Run Script" %}
+```javascript
+export default function (data) {
+    const bytes = data.steps.getMedia.properties.umbracoBytes;
+    return {
+        name: data.trigger.contentName.toUpperCase(),
+        sizeKb: Math.round(bytes / 1024)
+    };
+}
+```
+{% endcode %}
+
+Keep the following in mind when you read from `data`:
+
+* Property names in a script are case-sensitive, unlike bindings. Match the casing of each alias and property exactly.
+* A step without an alias appears under its ID, for example `data.steps['<id>']`.
+* Only steps that already ran are present. A step on a branch that did not run is missing, so guard optional paths, for example `data.steps.maybe?.result`.
+* Automate does not resolve `${ ... }` bindings inside the script body. Read the values from `data` instead.
+* `data` is a copy. Changing it has no effect on later steps. Return any values that later steps need.
+
+The returned value becomes the step's `result` output. Downstream steps bind to it with `${ steps.<alias>.result }`.
 
 ## Step Behaviour
 

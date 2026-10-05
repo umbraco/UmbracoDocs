@@ -61,6 +61,23 @@ The license key should be added to your configuration using product ID: `Umbraco
 For detailed instructions on how to install and configure your license, including version-specific examples and additional configuration options, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/commercial-products/configure-licenses) article.
 {% endhint %}
 
+### Reconfigure domains on a subscription license
+
+You can request to replace or reconfigure domains on a subscription-based license free of charge. This includes replacing temporary hostnames when your site goes live.
+
+The free changes apply as long as you stay within the included allowance:
+
+* 1 production domain
+* 2 development/testing domains
+
+To update your domains, visit the [Umbraco Forms](https://umbraco.com/products/add-ons/forms/) page or contact [Umbraco Support](mailto:support@umbraco.com).
+
+If you need more domains than your license includes, you can purchase additional domains. For more information, see [Add additional domains](#add-additional-domains).
+
+{% hint style="info" %}
+This policy applies to subscription-based licenses only. For one-off licenses, payment is required to make changes to existing domains.
+{% endhint %}
+
 ### Add additional domains
 
 An additional domain is an add-on for an existing license. It extends coverage to a second (or further) production environment on the same Umbraco installation.

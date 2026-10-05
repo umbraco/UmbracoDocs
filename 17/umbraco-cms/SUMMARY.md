@@ -150,6 +150,7 @@
 
 * [Templating and Rendering](develop-with-umbraco/templating-and-rendering/README.md)
   * [Working with Templates](develop-with-umbraco/templating-and-rendering/templates.md)
+  * [Managing Views and Assets](develop-with-umbraco/templating-and-rendering/managing-views-and-assets.md)
   * [Design](develop-with-umbraco/templating-and-rendering/design/README.md)
     * [Rendering Content](develop-with-umbraco/templating-and-rendering/design/rendering-content.md)
     * [Rendering Media](develop-with-umbraco/templating-and-rendering/design/rendering-media.md)
@@ -565,6 +566,6 @@
   * [Database Availability Checks](run-in-production/infrastructure-and-ops/database-availability.md)
   * [Distributed Locks](run-in-production/infrastructure-and-ops/distributed-locks.md)
 * [Tutorials](run-in-production/tutorials/README.md)
-  * [Add Microsoft Entra ID Authentication (Members)](run-in-production/tutorials/add-microsoft-entra-id-authentication.md)
+  * [Add Microsoft Entra ID Authentication](run-in-production/tutorials/add-microsoft-entra-id-authentication.md)
   * [Add Google Authentication (Users)](run-in-production/tutorials/add-google-authentication.md)
   * [Create a Custom Maintenance Page](run-in-production/tutorials/create-a-custom-maintenance-page.md)

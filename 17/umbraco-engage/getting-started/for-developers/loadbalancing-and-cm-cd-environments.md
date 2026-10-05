@@ -18,7 +18,7 @@ As of Umbraco Engage 17, you can open the Cockpit directly from the Umbraco back
 
 1. Log in to the Umbraco backoffice on your CM server.
 2. Navigate to the **Engage** section.
-3. Click the **Open Cockpit** button in the dashboard.
+3. Click the **Open Cockpit** button in the top-right corner of the **Engage** section.
 4. Select the domain you want to view.
 
 The Cockpit opens in a new tab, already authenticated.

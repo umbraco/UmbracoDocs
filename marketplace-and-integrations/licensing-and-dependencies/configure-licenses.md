@@ -87,23 +87,29 @@ You can verify that your license is successfully installed by logging into your 
 2. Look for the **Licenses** dashboard.
 3. Verify the license status displayed on the dashboard.
 
-![The Content dashboard showing three published pages](../.gitbook/assets/license-dashboard.png)
+![The Licenses dashboard showing the status of installed commercial product licenses](../.gitbook/assets/license-dashboard.png)
 
 The dashboard will show the status of all installed commercial product licenses.
 
+For each product, the dashboard also shows the **Application URL used in validation request**. An empty value means that Umbraco cannot determine its application URL. License validation cannot complete without this URL. See [Troubleshooting License Validation](#troubleshooting-license-validation).
+
 ## Configuring UmbracoApplicationUrl
 
-The website domain used for validating the license is determined from your Umbraco instance. To ensure the correct one is used, you can configure the `UmbracoApplicationUrl`.
+License validation sends the domain of your site to the Umbraco license validation service. Umbraco takes this domain from the application URL of your Umbraco instance. To make sure the correct domain is used, configure the `UmbracoApplicationUrl` setting.
 
 ### When to Configure UmbracoApplicationUrl
 
-If you are running on a single domain for both your frontend and backend environments, it's not necessary to configure a `UmbracoApplicationUrl`.
+From Umbraco CMS 17.4, configure `UmbracoApplicationUrl` on every site that runs a commercial product. Umbraco no longer detects the application URL from incoming requests by default. Without an explicit value, the licensing engine has no domain to validate. Validation does not run, and the license status stays pending.
 
-If you have different domains for your frontend and backend, configure an `UmbracoApplicationUrl` set to your backoffice URL. This helps the licensing engine know which URL should be used for validation checks. Without this configuration setting, the licensing engine cannot reliably determine the domain to validate. Earlier versions of Umbraco would attempt to detect the domain from the incoming request. That behavior became an optional configuration after 17.4.
+On Umbraco CMS 17.3 and earlier, Umbraco detects the application URL from the incoming request. You only need to configure `UmbracoApplicationUrl` when your frontend and backoffice use different domains. In that case, set the value to your backoffice URL.
+
+Setting `UmbracoApplicationUrl` explicitly is the recommended approach for all environments, including local development. You can also re-enable request-based detection, as described in [Configuring ApplicationUrlDetection](#configuring-applicationurldetection).
 
 ### How to Configure UmbracoApplicationUrl
 
 An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file:
+
+{% code title="appsettings.json" %}
 
 ```json
 {
@@ -117,7 +123,9 @@ An `UmbracoApplicationUrl` can be configured in your `appsettings.json` file:
 }
 ```
 
-See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/health-check/guides/fixedapplicationurl) documentation for more details about this setting.
+{% endcode %}
+
+The value must contain the scheme (`http` or `https`) and the complete hostname. For more details, see the [Fixed Application Url](https://docs.umbraco.com/umbraco-cms/run-in-production/infrastructure-and-ops/health-check/guides/fixedapplicationurl) article in the CMS documentation.
 
 ### Configuring ApplicationUrlDetection
 
@@ -125,9 +133,33 @@ See the [Fixed Application URL](https://docs.umbraco.com/umbraco-cms/extending/h
 This setting is available from Umbraco CMS version 17.4.
 {% endhint %}
 
-You can control how Umbraco detects the application URL from incoming HTTP requests using the `ApplicationUrlDetection` setting:
+The `ApplicationUrlDetection` setting controls how Umbraco detects the application URL from incoming HTTP requests. The setting applies only when `UmbracoApplicationUrl` is not set. The available values are `None`, `FirstRequest`, and `EveryRequest`.
 
-Learn more about this setting in the [Webrouting Settings](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings#application-url-detection) article in the CMS documentation.
+The default value is `None`, which disables detection. With the default value, the licensing engine has no domain to validate, and the license status stays pending.
+
+To detect the application URL from the first request instead, set the value to `FirstRequest`:
+
+{% code title="appsettings.json" %}
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "ApplicationUrlDetection": "FirstRequest"
+      }
+    }
+  }
+}
+```
+
+{% endcode %}
+
+{% hint style="warning" %}
+Allowing auto-detection can enable a forged `Host` header to influence the URL that Umbraco uses. The risk applies when Umbraco is not behind a reverse proxy that validates the `Host` header. Explicitly configuring `UmbracoApplicationUrl` is the recommended approach.
+{% endhint %}
+
+For a description of each value, see the [Web routing](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/configuration/webroutingsettings#application-url-detection) article in the CMS documentation.
 
 ### Configuring UmbracoApplicationUrl on Umbraco Cloud
 
@@ -146,28 +178,37 @@ builder.Services.Configure<WebRoutingSettings>(o => o.UmbracoApplicationUrl = "<
 
 In practice, you may want to make this configuration more flexible. You can read the value from another configuration key, removing the need to hard-code it and have it set as appropriate in different environments. You can also move this code into a composer or an extension method if you prefer not to clutter up the `Program.cs` file.
 
+Umbraco Cloud sets this value on the Cloud environments only. A local clone of your Cloud project does not receive it. For local clones, see [Local Development and License Validation](#local-development-and-license-validation).
+
 ## Local Development and License Validation
 
-From Umbraco CMS version 17.4 onwards, the default value for `ApplicationUrlDetection` was changed to None for security reasons. Because Umbraco no longer auto-detects the domain from incoming HTTP requests, your commercial licenses may fail to validate in your local environment and appear as invalid in the backoffice.
+From Umbraco CMS 17.4, the default value for `ApplicationUrlDetection` is `None` for security reasons. Umbraco no longer detects the application URL from incoming HTTP requests, and new projects do not set `UmbracoApplicationUrl`. A local site therefore has no application URL unless you configure one. License validation does not run, and the **Licenses** dashboard shows **Validation pending** for each product.
 
-To resolve this, explicitly configure the `UmbracoApplicationUrl` in your `appsettings.Local.json` file to match your local development URL.
+The same applies to a local clone of an Umbraco Cloud project. Umbraco Cloud sets the application URL on the Cloud environments only.
 
+To resolve the pending status, set `UmbracoApplicationUrl` to the URL you use to browse the local site. Add the setting to `appsettings.Development.json`, so that it applies only when you run the site locally:
+
+{% code title="appsettings.Development.json" %}
 ```json
 {
   "Umbraco": {
     "CMS": {
       "WebRouting": {
-        "UmbracoApplicationUrl": "https://localhost:{port}/"
+        "UmbracoApplicationUrl": "https://localhost:44339/"
       }
     }
   }
 }
 ```
+{% endcode %}
+
+Replace the port with the one shown in your terminal output or in `Properties/launchSettings.json`. Restart the site, or select **Validate** on the **Licenses** dashboard.
 
 {% hint style="info" %}
-Alternative for Local Development: If your team uses varying localhost ports, you can instead set the `Umbraco:CMS:WebRouting:ApplicationUrlDetection` to `FirstRequest` or `EveryRequest` in your `appsettings.{name}.json`. Do not enable this in production environments. 
+If your team uses varying localhost ports, you can instead set `ApplicationUrlDetection` to `FirstRequest` in `appsettings.Development.json`. Umbraco then detects the URL from the first request to the site. Do not enable request-based detection in production environments. See [Configuring ApplicationUrlDetection](#configuring-applicationurldetection) for the security implications.
 {% endhint %}
 
+Commercial product licenses usually include `localhost` as a valid domain. For the domains covered by your license, see the licensing article for your product under [Product-Specific License Information](#product-specific-license-information).
 
 ## Validating a License Without an Outgoing Internet Connection
 
@@ -241,3 +282,32 @@ POST http://<your umbraco environment>/umbraco/licenses/validatedLicense/relay?p
 A header with a key of `X-AUTH-KEY` and the value of the authorization key you have configured should be provided.
 
 This will trigger the same processes that occur when the normal scheduled validation completes ensuring your product is considered licensed.
+
+## Troubleshooting License Validation
+
+Use this section when a license does not validate, even though the license key is correct.
+
+### License Status Shows Validation Pending
+
+The **Licenses** dashboard shows **Validation pending** for a product, and the status does not change after a restart. The **Application URL used in validation request** field is empty.
+
+The pending status means that Umbraco does not know its own application URL. License validation needs this URL to determine which domain to validate. Without it, no validation request is sent.
+
+Umbraco logs a warning at startup when no application URL is available. The warning starts with `Application URL auto-detection is disabled and no explicit URL is configured`.
+
+Common causes are:
+
+* You run Umbraco CMS 17.4 or later without an explicit `UmbracoApplicationUrl`, and `ApplicationUrlDetection` has the default value `None`.
+* You run a local site, or a local clone of an Umbraco Cloud project. Neither setup sets the application URL for you.
+
+To resolve the issue:
+
+1. Set `UmbracoApplicationUrl` as described in [How to Configure UmbracoApplicationUrl](#how-to-configure-umbracoapplicationurl). For local sites, see [Local Development and License Validation](#local-development-and-license-validation).
+2. Restart the site, or select **Validate** on the **Licenses** dashboard.
+3. Confirm that the **Application URL used in validation request** field now shows your URL.
+
+You can also run the [Fixed Application Url](https://docs.umbraco.com/umbraco-cms/run-in-production/infrastructure-and-ops/health-check/guides/fixedapplicationurl) health check. From Umbraco CMS 17.5, the check reports an error when no application URL is configured and detection is disabled.
+
+### Validation Fails Without an Outgoing Internet Connection
+
+If your environment blocks outgoing HTTP requests, see [Validating a License Without an Outgoing Internet Connection](#validating-a-license-without-an-outgoing-internet-connection).

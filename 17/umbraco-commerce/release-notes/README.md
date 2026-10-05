@@ -1,4 +1,3 @@
----
 description: >-
   Get an overview of the things changed and fixed in each version of Umbraco
   Commerce.
@@ -17,6 +16,9 @@ If you are upgrading to a new major version, check the breaking changes in the [
 ## Release History
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
+
+#### 17.2.6 (28th Sep 2026)
+* Add notification events for when a Commerce customer is created, updated, or saved, so you can hook into customer changes. For example, to automatically create a linked Umbraco member.
 
 #### 17.2.5 (22nd Sep 2026)
 * Fix a SQLite connection setting that combined shared-cache mode with write-ahead logging, which could cause "database table is locked" errors

@@ -28,10 +28,14 @@ Providers are discovered automatically when you install their NuGet package. The
 | Provider             | Package                       | Capabilities                    |
 | -------------------- | ----------------------------- | ------------------------------- |
 | OpenAI               | `Umbraco.AI.OpenAI`           | Chat, Embedding, Speech-to-Text |
-| Anthropic            | `Umbraco.AI.Anthropic`        | Chat                            |
-| Google Gemini        | `Umbraco.AI.Google`           | Chat                            |
-| Amazon Bedrock       | `Umbraco.AI.Amazon`           | Chat, Embedding                 |
-| Microsoft AI Foundry | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding                 |
+| Anthropic            | `Umbraco.AI.Anthropic`        | Chat            |
+| Google Gemini        | `Umbraco.AI.Google`           | Chat            |
+| Amazon Bedrock       | `Umbraco.AI.Amazon`           | Chat, Embedding |
+| Microsoft AI Foundry | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding |
+| Alibaba Cloud Model Studio | `Umbraco.AI.Alibaba`    | Chat, Embedding |
+| Moonshot AI          | `Umbraco.AI.Moonshot`         | Chat            |
+| OpenRouter           | `Umbraco.AI.OpenRouter`       | Chat            |
+| Z.AI                 | `Umbraco.AI.ZAI`              | Chat            |
 
 {% hint style="info" %}
 For detailed configuration instructions for each provider, see the [Providers](../providers/providers.md) section. You can also create custom providers.

@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**18.1.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.0) **(September 28th 2026)**
+
+* Added a Collection Picker property editor, so you can pick one of your registered collections as a field value. See the [Collection Picker discussion](https://github.com/umbraco/Umbraco.UIBuilder.Issues/discussions/245).
+* Fixed the sticky bulk-action bar not staying pinned to the bottom of a child or related collection [#244](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/244).
+* Fixed an entity's own edit tab showing a generic "Content" label and icon instead of the collection's own name and icon [#243](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/243).
+
 ### [**18.0.8**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.0.8) **(September 21st 2026)**
 
 * Fixed a filterable property's description not showing in the backoffice when set with `SetDescription()` [#239](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/239).

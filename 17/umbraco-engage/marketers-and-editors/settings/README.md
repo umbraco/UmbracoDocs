@@ -8,6 +8,8 @@ description: >-
 
 The **Settings** section is designed to help you customize your Umbraco Engage environment to achieve optimal performance and security.
 
+Goals, Block traffic, and Suspicious Activity are on the **Settings** tab of the **Engage** section. Configuration and Permissions are in the Umbraco **Settings** section, under **Engage** > **Configuration**.
+
 ## [Setting Up Goals](setting-up-goals.md)
 
 Learn how to set up goals to track key performance indicators, ensuring you can measure success effectively.
@@ -15,6 +17,10 @@ Learn how to set up goals to track key performance indicators, ensuring you can 
 ## [Block Traffic](block-traffic.md)
 
 Learn how to use block rules to keep unwanted traffic out of your analytics.
+
+## [Suspicious Activity](suspicious-activity.md)
+
+Learn how to review visitors with unusually high pageview counts and mark them as bots.
 
 ## [The Configuration File](the-configuration-file.md)
 

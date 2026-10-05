@@ -99,6 +99,17 @@ ${ 1 + 2 }                                      // Expression evaluation/calcula
 
 Expressions can reference property aliases, perform calculations, concatenate strings, and more.
 
+### Accessing block settings
+
+When UFM is used in a Block editor label (Block Grid or Block List), the block's **content** properties are referenced directly by their alias, while the block's **settings** properties are exposed under the `$settings` object.
+
+Settings values are only available in the `${ ... }` expression syntax:
+
+```markdown
+${ $settings.subtitle }                          // Renders a settings property value
+${ $settings.hideFromMenu ? "Hidden" : "" }    // Conditional based on a settings property
+```
+
 ### Supported operations
 
 * Arithmetic (`+`, `-`, `*`, `/`)
@@ -110,6 +121,31 @@ Expressions can reference property aliases, perform calculations, concatenate st
 ### Sandboxed evaluation
 
 All expressions are evaluated in a sandbox. Only safe operations and methods are allowed. Access to global objects, external APIs, or unsafe functions will be blocked. To extend expressions with your own functions, it is recommended to use the piped UFM Filter syntax.
+
+## UFM for Block Labels
+
+Block Labels can use UFM to give authors an indication of the content without providing Block Custom Views. [Read about building a Custom View for Blocks here](../../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/block-custom-view.md).
+
+
+**Block with multiple fields examples**
+
+In UFM, you can compose the Block Label of your interest.
+The following example shows how the values of two properties can be presented in the Block Label:
+
+```markdown
+Teaser: {= title | truncate: 28 } ${ image ? '(With image)' : ''}
+```
+
+
+**Block with optional fields examples**
+
+Consider a Block with a Rich Text Editor and sometimes a Title. Since the title is optional, it is not ideal to present it only in the Block Label.
+
+The following example shows the `title` when it has a value. If it doesn't have a value, it falls back to the `rte` value. In this case, use the expression (`${ ... }`) syntax.
+
+```markdown
+${ title || rte | stripHtml | truncate: 38}
+```
 
 ## UFM components
 

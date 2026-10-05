@@ -70,7 +70,8 @@ The defaults are suitable for most sites:
         "DefaultTimeout": "00:05:00",
         "MaxConcurrentRuns": 10,
         "MaxChainDepth": 5,
-        "MaxHttpResponseBodyBytes": 10485760
+        "MaxHttpResponseBodyBytes": 10485760,
+        "AllowOutboundHttpProxy": true
       },
       "Governance": {
         "AuditLogEnabled": true,
@@ -87,8 +88,44 @@ The defaults are suitable for most sites:
 | ------------ | ------------------------------------------------------------------------------- |
 | `Enabled`    | Master switch for the automation engine.                                        |
 | `Webhook`    | Maximum payload size and per-automation rate limit for incoming webhooks.       |
-| `Execution`  | Which nodes run automations, default step timeout, concurrent run limit, maximum automation chain depth, and maximum HTTP response body size. See [Load Balancing](../run-in-production/load-balancing.md) for `Mode`. |
+| `Execution`  | Which nodes run automations, default step timeout, concurrent run limit, maximum automation chain depth, maximum HTTP response body size, and outbound proxy use. See [Outbound Requests](#outbound-requests). See [Load Balancing](../run-in-production/load-balancing.md) for `Mode`. |
 | `Governance` | Audit log retention and sensitive data masking.                                 |
+
+### Outbound Requests
+
+Automations send outbound HTTP requests from the **HTTP Request** action, Run Script `fetch` calls, media file downloads, and webhook failure notifications. Automate only sends these requests to public destinations. It refuses requests to the following address categories:
+
+* Localhost, private, link-local, and unique local addresses.
+* Shared address space used by internet service providers.
+* Reserved, benchmarking, documentation, broadcast, and group (`multicast`) ranges.
+* Cloud platform and metadata service addresses.
+* The IPv6 equivalents of these categories.
+
+Automate checks an IPv4 address embedded in an IPv6 address against the IPv4 rules. Public destinations reached that way keep working.
+
+By default, outbound requests use the proxy configured for the system or environment, for example through `HTTP_PROXY` or `HTTPS_PROXY`. When a request goes through a proxy, Automate resolves the destination host and checks it before sending the request. It repeats the check for every redirect.
+
+To ignore any proxy and always connect directly, set `Execution:AllowOutboundHttpProxy` to `false`:
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "Automate": {
+      "Execution": {
+        "AllowOutboundHttpProxy": false
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+
+A proxy looks up the destination host again on its own. Configure the proxy to deny access to internal networks as well.
+
+{% endhint %}
 
 ## Configuration References
 

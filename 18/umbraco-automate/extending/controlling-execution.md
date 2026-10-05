@@ -62,6 +62,8 @@ Authorizers run in registration order. The first result with `Authorized = false
 
 An action that publishes content can itself raise the notification a **Content Published** trigger listens for. Left unchecked, that lets one automation's actions start another automation, which can start another, and so on.
 
+The **Start Automation** action starts its target directly, so the target's trigger settings are not consulted. The action blocks cycles and enforces `Execution:MaxChainDepth` itself. See [Start Another Automation](../concepts/actions.md#start-another-automation).
+
 Trigger settings that implement `IAutomationOriginatedEventBehavior` control this per trigger. Automate consults it whenever an incoming event was itself caused by an automation run:
 
 ```csharp
@@ -107,7 +109,7 @@ public sealed class MyCustomTriggerSettings : IAutomationOriginatedEventBehavior
 
 `IActionMiddleware` wraps action execution the way ASP.NET Core middleware wraps a request. Each registered middleware can inspect or modify the context before calling the action, react to the result afterwards, or short-circuit entirely.
 
-Automate's own audit trail, error handling, and settings validation are all built as middleware. Add your own for logging, metrics, or a cross-cutting policy that every action should honor.
+Automate's own audit trail, error handling, and settings validation are all built as middleware. Add your own for logging, metrics, or a cross-cutting policy that every action should honor. Middleware can write run log entries through `context.LogInfo` and the other log methods. See [Writing Run Log Entries](custom-action.md#writing-run-log-entries).
 
 {% code title="StepTimingMiddleware.cs" %}
 ```csharp

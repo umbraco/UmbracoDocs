@@ -30,7 +30,7 @@ The Umbraco Cloud Portal checks these prerequisites automatically under `Project
 | Prerequisite | What it is | Learn more |
 | --- | --- | --- |
 | Payment plan | Load balancing is only available on projects with an **Invoiced** or **Credits** payment plan. | [Payments](../../begin-your-cloud-journey/the-cloud-portal/payments.md) |
-| Professional plan with a dedicated server | Load balancing runs on dedicated infrastructure, available from the **Professional Dedicated 1** plan and up. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
+| Professional or Enterprise plan with a dedicated server | Load balancing runs on dedicated infrastructure. It is available on all dedicated options on the **Professional** and **Enterprise** plans. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
 | Environment alone on a dedicated server | Load balancing scales every site on the server. The environment must be the only one on its dedicated server. | [Dedicated Resources](../../build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md) |
 | Umbraco CMS **17.5.0** or higher | The base Umbraco CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
 | Umbraco.Cloud.Cms **17.2.0** or higher | The Umbraco Cloud CMS package meets the minimum supported version. | [Minor Upgrades](../manage-product-upgrades/product-upgrades/minor-upgrades.md) |
@@ -67,7 +67,7 @@ Load-balanced environments currently have sticky sessions enabled. Each visitor 
 
 ## Cache Configuration by Cloud Plan
 
-Load balancing is available on **Professional** plans with a dedicated server, from **Professional Dedicated 1** and up. It is not available on Starter, Standard, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
+Load balancing is available on **Professional** and **Enterprise** plans with a dedicated server, on all dedicated options. It is not available on Starter, Standard, or shared Professional plans. If you need load balancing on a smaller plan, contact Umbraco Support to discuss upgrade paths.
 
 Each load-balanced environment runs against a managed Redis instance. Redis acts as the SignalR backplane and the distributed cache that keeps state consistent across all running instances. If the environment does not already have Cache enabled, Umbraco Cloud provisions a managed Redis cache as part of enabling load balancing — see [Cache Configuration](cache-configuration.md).
 
@@ -75,11 +75,9 @@ Umbraco CMS uses Microsoft's HybridCache for its distributed cache. See the [Hyb
 
 When you enable load balancing, Umbraco Cloud selects a Redis Stock Keeping Unit (SKU) automatically based on your plan. All eligible plans include High Availability (HA) and a Service Level Agreement (SLA) on the Redis instance.
 
-| Plan            | Default Redis SKU | High Availability |
-| --------------- | ----------------- | ----------------- |
-| Pro Dedicated 1 | Small+            | ✅                 |
-| Pro Dedicated 2 | Small+            | ✅                 |
-| Pro Dedicated 3 | Small+            | ✅                 |
+| Plan                                              | Default Redis SKU | High Availability |
+| ------------------------------------------------- | ----------------- | ----------------- |
+| Professional or Enterprise (any dedicated option) | Small+            | ✅                 |
 
 For the full list of available Redis SKUs and how to choose one, see [Cache Configuration](cache-configuration.md).
 

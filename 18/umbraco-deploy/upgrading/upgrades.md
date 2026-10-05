@@ -4,7 +4,7 @@ description: How to upgrade Umbraco Deploy
 
 # Upgrading
 
-As with all of our products, it is always recommended to run the latest version of Umbraco Deploy.
+As with all Umbraco products, it is always recommended to run the latest version of Umbraco Deploy.
 
 On the Umbraco Deploy page in the [Packages page](https://our.umbraco.com/packages/developer-tools/umbraco-deploy/) you can see what the latest version is, as well as read the changelog.
 

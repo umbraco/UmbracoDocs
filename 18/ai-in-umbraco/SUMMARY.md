@@ -32,6 +32,10 @@
 * [Google Gemini](providers/google.md)
 * [Amazon Bedrock](providers/amazon.md)
 * [Microsoft AI Foundry](providers/microsoft-foundry.md)
+* [Alibaba Cloud Model Studio](providers/alibaba.md)
+* [Moonshot AI](providers/moonshot.md)
+* [OpenRouter](providers/openrouter.md)
+* [Z.AI](providers/zai.md)
 
 ## Add-ons
 
@@ -192,6 +196,7 @@
 * [Settings](management-api/settings/README.md)
   * [Get Settings](management-api/settings/get.md)
   * [Update Settings](management-api/settings/update.md)
+  * [Get Disclosure Settings](management-api/settings/disclosure.md)
 * [Versions](management-api/versions/README.md)
   * [Supported Types](management-api/versions/supported-types.md)
   * [Get History](management-api/versions/history.md)

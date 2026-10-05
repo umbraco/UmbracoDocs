@@ -1,6 +1,6 @@
 ---
 description: >-
-  In this article, we will cover the steps in order for you to install and
+  This article covers the steps to install and
   configure Umbraco Deploy on a new or existing website.
 ---
 
@@ -24,16 +24,16 @@ This section covers cover how to install and set up Umbraco Deploy on a new webs
 
 **Set up the Git repository and Umbraco project**
 
-The first step to get Umbraco Deploy up and running is to set up a GitHub repository. This will store the source code and serve as our environment for setting up a CI/CD pipeline, following the GitHub Actions example.
+The first step to get Umbraco Deploy up and running is to set up a GitHub repository. This will store the source code and serve as your environment for setting up a CI/CD pipeline, following the GitHub Actions example.
 
 1. Using the Visual Studio template, set up a GitHub repository with a .gitignore file.
 2. Clone down the repository to your local machine.
 3. Create a new Umbraco project.
 4. Run the project.
 5. Choose to use a custom SQL connection string pointing to your local database.
-6. Commit the files so they are ready to be pushed up once we have set up the build server.
+6. Commit the files so they are ready to be pushed up once you have set up the build server.
 
-When Umbraco has been installed in a repository, we can continue to install and configure Umbraco Deploy in the project.
+When Umbraco has been installed in a repository, you can continue to install and configure Umbraco Deploy in the project.
 
 </details>
 
@@ -43,7 +43,7 @@ When Umbraco has been installed in a repository, we can continue to install and 
 
 This section covers the steps to install Umbraco deploy on your already existing website with content.
 
-Additionally, it covers how to generate the UDA files based on your production website's database.
+Additionally, it covers how to generate the Umbraco Deploy Artifact (UDA) files based on your production website's database.
 
 ### Requirement
 
@@ -73,13 +73,13 @@ The next step to get Umbraco Deploy up and running is to set up a repository and
 6. Commit the files so they are ready to be pushed up once you have set up the build server.
 7. Run the project.
 
-When Umbraco has been installed in a repository, we can continue to install and configure Umbraco Deploy in the project.
+When Umbraco has been installed in a repository, you can continue to install and configure Umbraco Deploy in the project.
 
 </details>
 
 ## Source Control Configuration
 
-After the Umbraco files have been committed add the following lines to the .gitignore so that they will not be picked up by Git when we are deploying.
+After the Umbraco files have been committed, add the following lines to the .gitignore so they are not picked up by Git when deploying.
 
 ```
 **/media/*
@@ -96,7 +96,7 @@ Make sure that the updates to the .gitignore file are also committed.
 
 ## Installing and Configuring Umbraco Deploy
 
-When Umbraco has been installed in a repository, we can install Umbraco Deploy in the project.
+When Umbraco has been installed in a repository, you can install Umbraco Deploy in the project.
 
 To install Umbraco Deploy, run `dotnet add package Umbraco.Deploy.OnPrem` from the command line or `Install-Package Umbraco.Deploy.OnPrem` from the package manager console in Visual Studio.
 
@@ -138,7 +138,7 @@ $secret = [byte[]]::new(64); [System.Security.Cryptography.RandomNumberGenerator
 This same Deploy API secret must be used on each environment for the website.
 
 {% hint style="info" %}
-We strongly recommend generating different secrets for different websites/projects.
+It is strongly recommended to generate different secrets for different websites/projects.
 {% endhint %}
 
 The key should be applied in `appsettings.json`:
@@ -188,7 +188,7 @@ $secret = [byte[]]::new(32); [System.Security.Cryptography.RandomNumberGenerator
 This same Deploy API key must be used on each environment for the website.
 
 {% hint style="info" %}
-We strongly recommend generating different keys for different websites/projects.
+It is strongly recommended to generate different keys for different websites/projects.
 {% endhint %}
 
 The key should be applied in `appsettings.json`:
@@ -262,17 +262,17 @@ The URL configured for each environment should be the root URL for the website a
 
 #### Validating Source Control
 
-Once the configuration has been set up with the correct information we can now go ahead and make sure that the source control is including our files in the `/umbraco/Deploy` folder of our Umbraco project.
+Once the configuration has the correct information, verify that source control includes the files in the `/umbraco/Deploy` folder of your Umbraco project.
 
 This can be done by going to the `/umbraco/Deploy/Revision` folder of the project and create a test `.uda` file, and then check in either your Git GUI or in the command line and verify whether the test file is being tracked.
 
 ![Test UDA file](../.gitbook/assets/test-UDA.png)
 
-We can see that the file has been created and it is being tracked by Git and we can go ahead and delete the test file.
+The file has been created and is being tracked by Git. Go ahead and delete the test file.
 
-Now that Umbraco Deploy has been installed on the project, we can go ahead and commit the files to the repository.
+Now that Umbraco Deploy has been installed on the project, go ahead and commit the files to the repository.
 
-**Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to our repository.
+**Do not push the files up yet** as a CI/CD build server will first need to be set up and connected to your repository.
 
 #### Include your Umbraco Deploy license file
 
