@@ -21,6 +21,10 @@ Proactive Auto-Heal is an Azure App Service feature that automatically monitors 
 
 Proactive Auto-Heal is **enabled by default** on all Umbraco Cloud projects and helps ensure your site remains available without manual intervention.
 
+{% hint style="info" %}
+To be notified when an environment is restarted automatically, set up an Autoheal alert rule. For more information, see the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md#autoheal) article.
+{% endhint %}
+
 ### When Proactive Auto-Heal is triggered
 
 Proactive Auto-Heal monitors your environment and triggers a restart depending on the following factors:
