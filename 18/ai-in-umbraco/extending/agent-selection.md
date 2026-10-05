@@ -19,7 +19,7 @@ Each Auto request goes through the following steps:
 4. Otherwise, the registered selectors run in order. The first selector that returns a candidate wins, and later selectors do not run.
 5. If no selector picks an agent, the first candidate is used.
 
-The built-in `LLMAgentSelector` is the only selector registered by default. It asks a chat model to pick an agent based on each agent's name and description.
+The built-in `LLMAgentSelector` is the only selector registered by default. The selector asks a chat model to pick an agent based on each agent's name and description.
 
 ## Safety Guarantees
 
@@ -200,7 +200,7 @@ For handler examples, see [Entity Lifecycle Notifications](notifications/entity-
 
 ## Migrating from SelectAgentForPromptAsync
 
-`IAIAgentService.SelectAgentForPromptAsync` is obsolete and will be removed in v20. It now runs the same selector chain and returns only the selected agent.
+`IAIAgentService.SelectAgentForPromptAsync` is obsolete and will be removed in v20. The obsolete method now runs the same selector chain and returns only the selected agent.
 
 Use `IAIAgentSelectionService.SelectAgentAsync` instead. Pass the same values in an `AIAgentSelectionInput`, with the prompt as a user message. The method returns an `AIAgentSelectionResult`, so read the agent from its `Agent` property:
 

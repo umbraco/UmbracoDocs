@@ -190,7 +190,7 @@ public class ProfileSavedHandler : INotificationAsyncHandler<AIProfileSavedNotif
 
 **Namespace:** `Umbraco.AI.Agent.Core.Agents`
 
-Published after [Auto mode](../agent-selection.md) picks an agent, and before the agent run starts. Every Auto pick publishes exactly one notification, including picks with the `only-candidate` and `fallback` selector IDs. The notification is not published for requests that name an agent explicitly.
+Published after Auto mode picks an agent, and before the agent run starts. Every Auto pick publishes exactly one notification, including picks with the `only-candidate` and `fallback` selector IDs. The notification is not published for requests that name an agent explicitly. For details on Auto mode, see [Agent Selection](../agent-selection.md).
 
 **Properties:**
 - `Selection` (AIAgentSelectionResult) - The picked `Agent`, the `SelectorId`, and the optional `Reason`
