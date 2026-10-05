@@ -78,7 +78,7 @@ Selecting several windows does not lead to several upgrades. Each release is app
 
 1. Go to your Umbraco Cloud project.
 2. Navigate to **Configuration** -> **Automatic Upgrades**.
-3. Select the windows where automatic upgrades are allowed to start under **Upgrade maintenance windows**.
+3. Select the windows where automatic upgrades are allowed to start under **Upgrade windows**.
    * Use **Show times in** to switch between UTC and your local time. The UTC times are the times the schedule uses.
 4. Select **Save**.
 
@@ -90,7 +90,7 @@ The picker shades each window by how busy the platform currently is, from quiet 
 
 Many projects share the same upgrade windows. Umbraco Cloud cannot always start every queued upgrade before a window closes. An upgrade that cannot start in time is cancelled with the following reason:
 
-> The upgrade could not be started within your maintenance window because the platform was at capacity. It will be attempted again in your next maintenance window.
+> The upgrade could not be started within your upgrade window because the platform was at capacity. It will be attempted again in your next upgrade window.
 
 The cancelled upgrade is shown on the [Project History](../../monitor-and-troubleshoot/project-history.md) page as an **Automatic upgrade** with the status **Cancelled**.
 
