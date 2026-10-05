@@ -3,3 +3,7 @@ root: ./
 ​structure:
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    advanced/virtual-sub-trees: upgrading/version-specific.md
+    
