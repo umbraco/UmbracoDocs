@@ -44,6 +44,16 @@ Two further points to be aware of:
 
 See [issue #1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773) for details.
 
+### Upgrading directly from Forms 17.6.0
+
+This affects you if you upgrade directly from Forms 17.6.0 to a version 18 release earlier than 18.2.0.
+
+{% hint style="warning" %}
+Version 18 releases before 18.2.0 do not recognize the migration state that Forms 17.6.0 ends on. The upgrade fails at boot with `The migration plan "UmbracoForms" does not support migrating from state "91f8163e-99b6-4e78-b4cb-573f8493fd3c"`.
+{% endhint %}
+
+Upgrade to version 18.2.0 or later instead.
+
 ### Upgrading directly from Forms 17.5.0
 
 This fix was introduced in version 18.1.1. It affects you if you upgrade directly from Forms 17.5.0 to an earlier version 18 release.
