@@ -121,7 +121,7 @@ Always be helpful and concise.
 
 When multiple agents are available on a surface, Contextual Copilot uses "Auto" mode to select an agent for each user message. [Copilot Workspace](../copilot-workspace/README.md) uses the same Auto mode mechanism for its own surface.
 
-Auto mode first filters the agents to those that are active and in scope for the current context. It then runs a chain of agent selectors in order until one picks an agent:
+Auto mode first filters the agents to those that are active and in scope for the current context. Auto mode then runs a chain of agent selectors in order until one picks an agent:
 
 - **LLM selector (default):** sends the user's message to a classifier model, which picks an agent based on each agent's name and description.
 - **Sticky selector (opt-in):** keeps the previous turn's agent for the rest of the conversation.

@@ -92,7 +92,7 @@ AG-UI message `role` values are: `user`, `assistant`, `system`, `tool`, or `deve
 | ----------------- | ------ | ----------- |
 | `previousAgentId` | string | The ID of the agent picked on the previous turn. Only read when `agentIdOrAlias` is `auto`. |
 
-The server treats `previousAgentId` as an untrusted hint. A value that is missing, not a GUID, or not an active, in-scope agent is ignored. It never causes an error response. Agent selectors receive the resolved agent as `PreviousAgent`. For more information, see [Agent Selection](../../../extending/agent-selection.md).
+The server treats `previousAgentId` as an untrusted hint. A value that is missing, not a GUID, or not an active, in-scope agent is ignored. An ignored value never causes an error response. Agent selectors receive the resolved agent as `PreviousAgent`. For more information, see [Agent Selection](../../../extending/agent-selection.md).
 
 ## Response
 
