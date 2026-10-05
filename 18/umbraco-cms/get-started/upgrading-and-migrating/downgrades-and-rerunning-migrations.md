@@ -73,11 +73,11 @@ Again you need to manipulate the migration state stored in the database.
 
 You can update these values to an earlier state, and on start-up Umbraco will recognize that it's not at the latest. It will re-run the migrations from the earlier state to the current one.
 
-For example, let's say you are running 16.2, and want to re-run the core migrations for 15 and 16. Here you would set the core migration state to the latest one from 14, via:
+For example, you are running 18.1 and want to re-run the core migrations for 18. Set the core migration state to the latest one from Umbraco 17:
 
 ```sql
 update umbracoKeyValue
-set value = '{EEF792FC-318C-4921-9859-51EBF07A53A3}'
+set value = '{3A1A8047-74AE-491A-B2C4-0BAE4A1289EC}'
 where [key] = 'Umbraco.Core.Upgrader.State+Umbraco.Core'
 ```
 

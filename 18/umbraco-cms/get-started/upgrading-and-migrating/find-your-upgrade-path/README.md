@@ -10,7 +10,21 @@ Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the gui
 
 <details>
 
-<summary>13.latest to the latest version</summary>
+<summary>17.latest to the latest version</summary>
+
+Upgrade from Umbraco 17 to Umbraco 18 with the steps in the [Upgrade Your Project](../upgrade-details.md#upgrade-to-a-new-major) article. Before you upgrade, review the Umbraco 18 changes in the [Breaking Changes Overview](../version-specific.md).
+
+Umbraco 18 can't upgrade from versions older than 16.4. Upgrade a project on an older version to Umbraco 17 first.
+
+</details>
+
+<details>
+
+<summary>13.latest to 17.latest</summary>
+
+{% hint style="info" %}
+Umbraco 18 can't upgrade from Umbraco 13. Upgrade to Umbraco 17, the latest Long-term Support (LTS) version, and then follow the steps for 17.latest to the latest version.
+{% endhint %}
 
 **Update \_ViewImports.cshtml file**
 
