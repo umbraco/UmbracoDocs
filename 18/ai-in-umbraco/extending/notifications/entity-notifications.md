@@ -22,7 +22,7 @@ Umbraco.AI publishes notifications for all entity lifecycle operations. Subscrib
 | **AIChat** (Inline) | - | - | ✅ |
 | **AISpeechToText** (Inline) | - | - | ✅ |
 | **AIEmbedding** (Inline) | - | - | ✅ |
-| **AITool** | - | - | ✅ |
+| **`AITool`** | - | - | ✅ |
 
 `AIAgent` also publishes `AIAgentSelectedNotification` when Auto mode picks an agent. For details, see [Agent Selection Notifications](#agent-selection-notifications).
 
@@ -311,7 +311,7 @@ Published around each tool call the model makes through the chat pipeline. These
 
 | Notification | Cancelable | Key Properties |
 |---|---|---|
-| `AIToolExecutingNotification` | Yes | `ToolName` (string), `Function` (AIFunction), `Tool` (IAITool?), `CallId` (string), `Arguments` (IReadOnlyDictionary\<string, object?\>), `RuntimeContext` (AIRuntimeContext?), `Messages`, `Cancel` |
+| `AIToolExecutingNotification` | Yes | `ToolName` (string), `Function` (`AIFunction`), `Tool` (`IAITool?`), `CallId` (string), `Arguments` (`IReadOnlyDictionary<string, object?>`), `RuntimeContext` (`AIRuntimeContext?`), `Messages`, `Cancel` |
 | `AIToolExecutedNotification` | No | `ToolName`, `Function`, `Tool`, `CallId`, `Arguments`, `RuntimeContext`, `Duration` (TimeSpan), `IsSuccess` (bool), `Result` (object?), `Exception` (Exception?), `Messages` |
 
 `ToolName` is the tool ID for Umbraco tools. `Tool` is `null` when the function is not an Umbraco `IAITool`, for example a frontend tool.
