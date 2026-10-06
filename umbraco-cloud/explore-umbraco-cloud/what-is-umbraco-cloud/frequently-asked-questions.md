@@ -1016,7 +1016,7 @@ Other reasons for missing the upgrade:
 * No upgrade window has passed since the release was made available, or no windows are selected for the project.
 * The platform was at capacity, and the upgrade could not start before the window closed. The Project History page shows the upgrade as **Cancelled**. The upgrade is attempted again in your next window, if the window starts within 7 days of the release.
 * Another upgrade was running on the project when the window started.
-* The automatic upgrade to the same release has failed before.
+* The automatic upgrade to the same release has failed at a previous attempt.
 * A failed test after applying the auto-upgrade, which compares environment states before and after the upgrade. If discrepancies are found, the environment is rolled back.
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
