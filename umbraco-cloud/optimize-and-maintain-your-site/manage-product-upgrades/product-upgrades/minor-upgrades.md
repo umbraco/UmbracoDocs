@@ -78,13 +78,13 @@ Selecting several windows does not lead to several upgrades. Each release is app
 
 1. Go to your Umbraco Cloud project.
 2. Navigate to **Configuration** -> **Automatic Upgrades**.
-3. Select the windows where automatic upgrades are allowed to start under **Upgrade windows**.
-   * Use **Show times in** to switch between UTC and your local time. The UTC times are the times the schedule uses.
+3. Select the windows where automatic upgrades are allowed to start under **Upgrade Windows**.
+   * Use **Show upgrade windows in** to switch between UTC and your local time. The UTC times are the times the schedule uses.
 4. Select **Save**.
 
-<figure><img src="../../../.gitbook/assets/automatic-upgrade-windows.png" alt="Picker for upgrade windows showing a weekly grid of 4-hour windows in UTC, with selected windows checked and windows shaded from quiet to peak"><figcaption><p>Selecting upgrade windows for automatic upgrades</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/automatic-upgrade-windows.png" alt="Picker for upgrade windows showing a weekly grid of 4-hour windows in local time, with selected windows checked and windows shaded from quiet to very busy"><figcaption><p>Selecting upgrade windows for automatic upgrades</p></figcaption></figure>
 
-The picker shades each window by how busy the platform currently is, from quiet to peak. Selecting quieter windows lowers the risk of an upgrade being postponed.
+The picker shades each window by how popular it is with other projects in your region, from quiet to very busy. Selecting quieter windows lowers the risk of an upgrade being postponed.
 
 ### When an Upgrade Is Postponed
 
