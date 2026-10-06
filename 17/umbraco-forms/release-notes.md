@@ -48,7 +48,23 @@ For more information, see the [Form History](editor/managing-forms/form-history.
 
 #### Other
 
+The changes below are the ones made since `17.6.0-rc2`:
+
+* Recycle Bin: Only users with access to the root of the forms tree, without start folders, can use the recycle bin
+* Recycle Bin: Don't empty the recycle bin, or permanently delete a folder, when it would delete a form the user has been denied access to
+* Recycle Bin: Don't permanently delete a folder that is, or contains, a start folder for a user or user group. The message names who to assign a different start folder to first
+* Recycle Bin: Don't create, move, copy or import a form or folder into a folder that's in the recycle bin
+* Recycle Bin: Keep a form in the recycle bin when it's saved from a designer that was open before it was trashed
+* Rollback: Keep the form's current retention and "Store records" settings when rolling back to an earlier version
+* File Upload: Delete a form's uploaded files when the form is permanently deleted
+* Data Retention: Apply scheduled record deletion to forms in the recycle bin
 * All items detailed under release candidates for 17.6.0.
+
+{% hint style="warning" %}
+The recycle bin is now only available to users without Forms start folders, matching how the CMS recycle bin works. A user restricted to start folders can still move forms and folders to the recycle bin, but an administrator restores, empties or permanently deletes them.
+
+A folder that is, or contains, a start folder for a user or user group can't be permanently deleted. Give them a different start folder in the **Security** section first.
+{% endhint %}
 
 ### 17.6.0-rc2 (October 2nd 2026)
 
