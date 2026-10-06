@@ -26,13 +26,13 @@ This article maps those concepts and ports a small dashboard as an example. For 
 | `$scope.$watch`                               | `willUpdate()` with its changed properties, or `this.observe()`.    |
 | `$scope.$on('$destroy')`                      | `disconnectedCallback()`                                           |
 | Injected services                             | Contexts that you consume with `consumeContext()`.                  |
-| `$http.get` and `$http.post`                  | `umbHttpClient.get` and `umbHttpClient.post`                       |
+| `$http.get` and `$http.post`                  | `umbHttpClient.get` and `umbHttpClient.post`.                       |
 | `umbRequestHelper.resourcePromise`            | `tryExecute`                                                       |
 | `Umbraco.Sys.ServerVariables`                 | A `config` endpoint on your own API controller.                     |
 | `$q` and `$timeout`                           | `Promise`, `async` and `await`, and `setTimeout`.                   |
 | `umb-box`, `umb-button`, and other directives | `uui-box`, `uui-button`, and other Umbraco UI Library components.   |
 | `<localize>` and `localizationService`        | `<umb-localize>` and `this.localize.term()`                        |
-| `Lang/*.xml` files                            | `localization` extensions                                          |
+| `Lang/*.xml` files                            | `localization` extensions.                                          |
 | Content Apps                                  | Workspace Views                                                    |
 | Content App `show` rules                      | Workspace View `conditions`, such as `Umb.Condition.WorkspaceContentTypeAlias`. |
 | Tree menu items from `MenuRenderingNotification` | `entityAction` extensions                                       |
@@ -423,10 +423,10 @@ Lit templates are JavaScript template literals. The following table maps the Ang
 | ---------------------------- | --------------------------------------------------------- |
 | `{{ vm.name }}`              | `${this.name}`                                            |
 | `ng-if`                      | A conditional expression, or the `when()` directive.       |
-| `ng-repeat`                  | The `repeat()` directive, or `Array.map()`                |
+| `ng-repeat`                  | The `repeat()` directive, or `Array.map()`.                |
 | `ng-click="vm.save()"`       | `@click=${this.save}`                                     |
 | `ng-model="vm.name"`         | `.value=${this.name}` and an `@input` event listener.      |
-| `ng-class`                   | The `classMap()` directive                                |
+| `ng-class`                   | The `classMap()` directive.                                |
 | `ng-show="vm.visible"`       | `?hidden=${!this.visible}`, or a conditional expression.   |
 | `ng-hide="vm.hidden"`        | `?hidden=${this.hidden}`, or a conditional expression.     |
 | `ng-disabled`                | `?disabled=${...}`                                        |
@@ -533,7 +533,7 @@ The differences from `$http` are:
 * **Types**: The type argument maps the status code to the response type, so `data` has the right type.
 * **Parameters**: Pass query string parameters in `query`, and a request body in `body`.
 
-Responses with status 401, 403, or 404 do not show a notification. Check the returned `error`, and handle these responses in your code. For the full rules, see the [Executing Requests](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/try-execute.md) article.
+Responses with status 401, 403, or 404 do not show a notification. Check the returned `error` and handle these responses in your code. For the full rules, see the [Executing Requests](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/try-execute.md) article.
 
 If your API has an OpenAPI document, you can generate a typed client instead. The Umbraco Extension Template sets up a generated client for you. For details, see the [Custom Generated Client](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/custom-generated-client.md) article.
 
@@ -543,11 +543,55 @@ Use the Fetch API only if you cannot use the Umbraco HTTP Client. With the Fetch
 
 ### Replace Server Variables
 
-In Umbraco 13, a `ServerVariablesParsingNotification` handler adds values to the global `Umbraco.Sys.ServerVariables` object. Server variables do not exist in Umbraco 14 and later. The notification class still exists, but Umbraco no longer publishes it, so a handler for it never runs.
+In Umbraco 13, a `ServerVariablesParsingNotification` handler adds values to the global `Umbraco.Sys.ServerVariables` object. Umbraco 14 and later have no server variables.
 
 Before you move a value over, check whether your extension needs it. Often the client can work without values from the server.
 
-If your extension needs a value from the server, add a `config` endpoint to your API controller. Call it with the Umbraco HTTP Client, as the dashboard example does. The endpoint returns only the values your extension needs, instead of adding them to a global object on every backoffice page. Only signed-in backoffice users can call it by default, and you can restrict it further with the [Access policies](../../../extend-your-project/tutorials/creating-a-backoffice-api/access-policies.md) of the Management API.
+If your extension needs a value from the server, return it from a `config` endpoint on your API controller. The endpoint returns only the values your extension needs, instead of adding them to a global object on every backoffice page. Only signed-in backoffice users can call it by default, and you can restrict it further with the [Access policies](../../../extend-your-project/tutorials/creating-a-backoffice-api/access-policies.md) of the Management API.
+
+The following controller returns how many items the dashboard shows. It reads the value from the `MyItems:PageSize` setting in `appsettings.json`:
+
+{% code title="MyItemsConfigApiController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Umbraco.Cms.Api.Management.Controllers;
+using Umbraco.Cms.Api.Management.Routing;
+
+namespace UmbracoDocs.Samples;
+
+[VersionedApiBackOfficeRoute("my/config")]
+[ApiExplorerSettings(GroupName = "My item API")]
+public class MyItemsConfigApiController : ManagementApiControllerBase
+{
+    private readonly IConfiguration _configuration;
+
+    public MyItemsConfigApiController(IConfiguration configuration)
+        => _configuration = configuration;
+
+    [HttpGet]
+    public IActionResult GetConfig()
+        => Ok(new MyItemsConfig(_configuration.GetValue("MyItems:PageSize", 20)));
+}
+
+public record MyItemsConfig(int PageSize);
+```
+{% endcode %}
+
+The element reads the value with the Umbraco HTTP Client. The Management API returns camelCase property names, so `PageSize` becomes `pageSize`:
+
+{% code title="my-items-dashboard.element.ts" %}
+```typescript
+const { data: config } = await tryExecute(
+  this,
+  umbHttpClient.get<{ 200: { pageSize: number } }>({
+    url: "/umbraco/management/api/v1/my/config",
+    security: [{ scheme: "bearer", type: "http" }],
+  }),
+);
+const pageSize = config?.pageSize ?? 20;
+```
+{% endcode %}
 
 ## Promises and Timers
 
