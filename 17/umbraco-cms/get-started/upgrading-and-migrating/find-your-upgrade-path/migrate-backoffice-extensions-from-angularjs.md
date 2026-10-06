@@ -19,22 +19,22 @@ This article maps those concepts and ports a small dashboard as an example. For 
 | Umbraco 13 (AngularJS)                        | Umbraco 14 and later                                               |
 | --------------------------------------------- | ------------------------------------------------------------------ |
 | `package.manifest`                            | `umbraco-package.json`                                             |
-| `javascript` array in the manifest            | The `element`, `js`, or `api` property of each extension           |
-| `css` array in the manifest                   | The `static styles` of each element                                |
-| Controller and HTML view                      | A Web Component, usually a Lit element                             |
-| `$scope` and `vm` properties                  | Class properties with the `@state()` decorator                     |
-| `$scope.$watch`                               | `willUpdate()` with its changed properties, or `this.observe()`    |
+| `javascript` array in the manifest            | The `element`, `js`, or `api` property of each extension.           |
+| `css` array in the manifest                   | The `static styles` of each element.                                |
+| Controller and HTML view                      | A Web Component, usually a Lit element.                             |
+| `$scope` and `vm` properties                  | Class properties with the `@state()` decorator.                     |
+| `$scope.$watch`                               | `willUpdate()` with its changed properties, or `this.observe()`.    |
 | `$scope.$on('$destroy')`                      | `disconnectedCallback()`                                           |
-| Injected services                             | Contexts that you consume with `consumeContext()`                  |
-| `$http.get` and `$http.post`                  | `umbHttpClient.get` and `umbHttpClient.post`                       |
+| Injected services                             | Contexts that you consume with `consumeContext()`.                  |
+| `$http.get` and `$http.post`                  | `umbHttpClient.get` and `umbHttpClient.post`.                       |
 | `umbRequestHelper.resourcePromise`            | `tryExecute`                                                       |
-| `Umbraco.Sys.ServerVariables`                 | A `config` endpoint on your own API controller                     |
-| `$q` and `$timeout`                           | `Promise`, `async` and `await`, and `setTimeout`                   |
-| `umb-box`, `umb-button`, and other directives | `uui-box`, `uui-button`, and other Umbraco UI Library components   |
+| `Umbraco.Sys.ServerVariables`                 | A `config` endpoint on your own API controller.                     |
+| `$q` and `$timeout`                           | `Promise`, `async` and `await`, and `setTimeout`.                   |
+| `umb-box`, `umb-button`, and other directives | `uui-box`, `uui-button`, and other Umbraco UI Library components.   |
 | `<localize>` and `localizationService`        | `<umb-localize>` and `this.localize.term()`                        |
-| `Lang/*.xml` files                            | `localization` extensions                                          |
+| `Lang/*.xml` files                            | `localization` extensions.                                          |
 | Content Apps                                  | Workspace Views                                                    |
-| Content App `show` rules                      | Workspace View `conditions`, such as `Umb.Condition.WorkspaceContentTypeAlias` |
+| Content App `show` rules                      | Workspace View `conditions`, such as `Umb.Condition.WorkspaceContentTypeAlias`. |
 | Tree menu items from `MenuRenderingNotification` | `entityAction` extensions                                       |
 | `UmbracoAuthorizedApiController`              | `ManagementApiControllerBase`                                      |
 
@@ -50,7 +50,7 @@ The [Umbraco Extension Template](../../../extend-your-project/backoffice-extensi
 
 ## Register the Extension
 
-In Umbraco 13, a `package.manifest` file listed dashboards and the JavaScript files to load:
+In Umbraco 13, a `package.manifest` file lists dashboards and the JavaScript files to load:
 
 {% code title="App_Plugins/MyItems/package.manifest" %}
 ```json
@@ -422,13 +422,13 @@ Lit templates are JavaScript template literals. The following table maps the Ang
 | AngularJS                    | Lit                                                       |
 | ---------------------------- | --------------------------------------------------------- |
 | `{{ vm.name }}`              | `${this.name}`                                            |
-| `ng-if`                      | A conditional expression, or the `when()` directive       |
-| `ng-repeat`                  | The `repeat()` directive, or `Array.map()`                |
+| `ng-if`                      | A conditional expression, or the `when()` directive.       |
+| `ng-repeat`                  | The `repeat()` directive, or `Array.map()`.                |
 | `ng-click="vm.save()"`       | `@click=${this.save}`                                     |
-| `ng-model="vm.name"`         | `.value=${this.name}` and an `@input` event listener      |
-| `ng-class`                   | The `classMap()` directive                                |
-| `ng-show="vm.visible"`       | `?hidden=${!this.visible}`, or a conditional expression   |
-| `ng-hide="vm.hidden"`        | `?hidden=${this.hidden}`, or a conditional expression     |
+| `ng-model="vm.name"`         | `.value=${this.name}` and an `@input` event listener.      |
+| `ng-class`                   | The `classMap()` directive.                                |
+| `ng-show="vm.visible"`       | `?hidden=${!this.visible}`, or a conditional expression.   |
+| `ng-hide="vm.hidden"`        | `?hidden=${this.hidden}`, or a conditional expression.     |
 | `ng-disabled`                | `?disabled=${...}`                                        |
 
 The prefix on a binding decides what it sets. A `.` sets a property, a `?` toggles a Boolean attribute, and an `@` adds an event listener. Lit has no two-way binding, so you listen for `input` events and update the state yourself.
@@ -441,15 +441,15 @@ AngularJS injected services into a controller by parameter name. In the new back
 
 | Umbraco 13 service                | Umbraco 14 and later                                          |
 | --------------------------------- | ------------------------------------------------------------- |
-| `notificationsService`            | `UMB_NOTIFICATION_CONTEXT` and its `peek()` method            |
-| `userService.getCurrentUser()`    | `UMB_CURRENT_USER_CONTEXT` and its `currentUser` observable   |
-| `localizationService.localize()`  | `this.localize.term()` on the element                         |
+| `notificationsService`            | `UMB_NOTIFICATION_CONTEXT` and its `peek()` method.            |
+| `userService.getCurrentUser()`    | `UMB_CURRENT_USER_CONTEXT` and its `currentUser` observable.   |
+| `localizationService.localize()`  | `this.localize.term()` on the element.                         |
 | `overlayService.confirmDelete()`  | `umbConfirmModal()`                                           |
-| `editorService.open()`            | `umbOpenModal()` with a modal token                           |
-| `editorService.contentPicker()`   | `umbOpenModal()` with `UMB_DOCUMENT_PICKER_MODAL`             |
-| `editorService.mediaPicker()`     | `umbOpenModal()` with `UMB_MEDIA_PICKER_MODAL`                |
-| `editorState.current`             | The workspace context, for example `UMB_DOCUMENT_WORKSPACE_CONTEXT` |
-| `assetsService.loadJs()`          | An `import` statement                                         |
+| `editorService.open()`            | `umbOpenModal()` with a modal token.                           |
+| `editorService.contentPicker()`   | `umbOpenModal()` with `UMB_DOCUMENT_PICKER_MODAL`.             |
+| `editorService.mediaPicker()`     | `umbOpenModal()` with `UMB_MEDIA_PICKER_MODAL`.                |
+| `editorState.current`             | The workspace context, for example `UMB_DOCUMENT_WORKSPACE_CONTEXT`. |
+| `assetsService.loadJs()`          | An `import` statement.                                         |
 
 A few of these work differently:
 
@@ -529,11 +529,11 @@ The differences from `$http` are:
 * **Property names**: The Management API returns camelCase property names. `UmbracoAuthorizedApiController` returned the C# names, so `data.Items` becomes `data.items`.
 * **Authentication**: `$http` sent the backoffice cookie. The Management API uses access tokens instead. The `security` array tells the Umbraco HTTP Client to add the token of the current user.
 * **Sessions**: The Umbraco HTTP Client refreshes an expired token. When the session has expired, it asks the user to log in again.
-* **Errors**: `resourcePromise` showed a notification only for server errors, and passed other failures to your rejection handler. `tryExecute` returns an object with `data` and `error` instead of a rejected promise. When the request fails, it shows a notification with the title and detail from the problem details in the response.
+* **Errors**: `resourcePromise` shows a notification only for server errors, and passes other failures to your rejection handler. `tryExecute` returns an object with `data` and `error` instead of a rejected promise. When the request fails, it shows a notification with the title and detail from the problem details in the response.
 * **Types**: The type argument maps the status code to the response type, so `data` has the right type.
 * **Parameters**: Pass query string parameters in `query`, and a request body in `body`.
 
-Responses with status 401, 403, or 404 do not show a notification. Check the returned `error`, and handle these responses in your code. For the full rules, see the [Executing Requests](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/try-execute.md) article.
+Responses with status 401, 403, or 404 do not show a notification. Check the returned `error` and handle these responses in your code. For the full rules, see the [Executing Requests](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/try-execute.md) article.
 
 If your API has an OpenAPI document, you can generate a typed client instead. The Umbraco Extension Template sets up a generated client for you. For details, see the [Custom Generated Client](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/custom-generated-client.md) article.
 
