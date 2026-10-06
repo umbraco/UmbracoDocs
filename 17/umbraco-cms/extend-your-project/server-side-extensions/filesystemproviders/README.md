@@ -153,7 +153,7 @@ There is an increased possibility of generating colliding paths if creating medi
 
 Umbraco ships two further schemes in the `Umbraco.Cms.Core.IO.MediaPathSchemes` namespace. `TwoGuidsMediaPathScheme` places files under a folder per item key and property key. `CombinedGuidsMediaPathScheme` combines both keys into a single folder name.
 
-### Implementing IMediaPathScheme
+### Implementing `IMediaPathScheme`
 
 You can create your own logic for the path by implementing `IMediaPathScheme` from the `Umbraco.Cms.Core.IO` namespace. The interface has the following members.
 
