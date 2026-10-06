@@ -215,6 +215,14 @@ public sealed class StripeWebhookAuthenticator
 
 Set `RequiresBody` to `false` when a scheme validates against headers alone. Automate skips reading the request body before calling `Validate`. Callers get a fast 401 response for unauthorized requests on large payloads instead of waiting on a body read that gets discarded anyway.
 
+Override `CredentialHeaderNames` and `CredentialQueryParameterNames` to list the headers and query parameters that carry your credential. Automate leaves them out of the trigger output, so the credential is never stored with a run or passed to steps. List a body signature too, unless your scheme rejects replayed requests. A stored signature and body would otherwise make a request that still passes.
+
+{% code title="StripeWebhookAuthenticator.cs" %}
+```csharp
+public override IReadOnlyCollection<string> CredentialHeaderNames => ["Stripe-Signature"];
+```
+{% endcode %}
+
 Unlike triggers and actions, webhook authenticators are not auto-discovered from the `[WebhookAuthenticator]` attribute alone. Register each one explicitly:
 
 {% code title="MyProjectComposer.cs" %}

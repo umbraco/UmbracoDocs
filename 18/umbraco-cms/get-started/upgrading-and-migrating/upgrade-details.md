@@ -16,7 +16,9 @@ If you are new to upgrades, be sure to read the [upgrade introduction article](.
 
 You can upgrade to a new major version of Umbraco CMS directly by using NuGet.
 
-You must upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13. Once the project is on Umbraco 13, you can move on to Umbraco 14.
+You must upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 13, the closest long-term support version is Umbraco 17. Once the project is on Umbraco 17, you can move on to Umbraco 18.
+
+Umbraco 18 can't upgrade from versions older than 16.4, so a project on Umbraco 13 must upgrade to Umbraco 17 first.
 
 {% hint style="warning" %}
 Switching to a new major version of Umbraco CMS also means switching to a new .NET version. Ensure that any packages used on your site are compatible with this version before upgrading.

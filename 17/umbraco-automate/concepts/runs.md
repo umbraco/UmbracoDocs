@@ -17,22 +17,34 @@ Each run records enough data to trace what happened from trigger to final outcom
 | **Status**         | Pending, Running, Completed, Failed, Suspended, Cancelled, or Rejected.        |
 | **Initiator**      | Who or what started the run — a user, an event handler, a webhook, a schedule. |
 | **Trigger output** | The data emitted by the trigger.                                               |
-| **Steps**          | For each step: status, input, output, error, duration, retry count.            |
+| **Steps**          | For each step: status, input, output, log entries, error, duration, retry count. |
 | **Version**        | Which published version of the automation was used.                            |
 
 A run's status is **Rejected**, not **Failed**, when it ends because a human declined a [Request Approval](../backoffice/approvals.md) step and nothing else went wrong. It is a terminal status, but not an error — the automation ran exactly as designed.
 
 ## Run Detail View
 
-Open a run from the **Runs** view on the automation. The run detail page replays the automation on the canvas with each step coloured by status. Click a step to view the resolved settings and output for that run.
+Open a run from the **Runs** view on the automation. The run detail view lists the trigger and each step that ran. Expand a step to see its input, output, and log entries for that run. See [Reviewing Runs](../backoffice/runs.md).
 
 ## Versioning and Runs
 
 A run always completes on the version of the automation that was live when the run started. Publishing a new version does not affect runs that are already in progress.
 
+## Runs Interrupted by a Restart
+
+If Umbraco stops while a step is running, Automate marks the run as **Failed** when that node starts again. It also stops the run's workflow, so the interrupted step is not run a second time on restart. A step that calls an external service, sends an email, or uses AI credits is therefore not repeated.
+
+If the site stopped abruptly, automations can take up to `WorkflowLock:LeaseDuration` (30 seconds by default) to start running again. Automate waits for the stopped process's locks to expire first. A clean shutdown releases them straight away.
+
+Runs that were waiting when the site stopped are not affected. For example, a run waiting on a **Delay** or a [Request Approval](../backoffice/approvals.md) step continues as normal.
+
+To run the automation again, use **Replay** on the failed run. See [Reviewing Runs](../backoffice/runs.md).
+
+In a load-balanced setup, Automate leaves alone any run whose step another node is executing at that moment. See [Restarting a Node](../run-in-production/load-balancing.md#restarting-a-node).
+
 ## Retention
 
-Run data is retained according to the `AuditLogRetentionDays` setting. See [Configuration](../getting-started/configuration.md) for details.
+Automate deletes runs older than `RunCleanup:RetentionDays` (90 by default). It also keeps at most `RunCleanup:MaxRunsPerAutomation` runs per automation (1,000 by default). See [Run Cleanup](../getting-started/configuration.md#run-cleanup).
 
 ## See Also
 
