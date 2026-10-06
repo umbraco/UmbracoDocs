@@ -1029,7 +1029,7 @@ Pending commits do not stop the auto-upgrade.
 
 ### Is it OK to do manual upgrades?
 
-Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. If you need to upgrade before your next upgrade window or if an automatic upgrade failed, you can perform a manual update. However, you will need to run the upgrade installer manually on each environment, including live.
+Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. If you need to upgrade before your next upgrade window or if an automatic upgrade failed, you can perform a manual update. However, you will need to make sure the upgrade is deployed across all your environments yourself.
 
 ### Will customized files be overwritten during upgrades?
 
