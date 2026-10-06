@@ -44,6 +44,18 @@ Two further points to be aware of:
 
 See [issue #1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773) for details.
 
+### Upgrading to 18.2.0 from Forms 17.5.x or earlier, or from 18.0.x
+
+This fix was introduced in version 18.2.1. It affects you if you upgrade to 18.2.0 from Forms 17.5.x or earlier, or from any 18.0.x release.
+
+{% hint style="warning" %}
+A database migration in 18.2.0 reads a column before a later migration adds it. The upgrade fails at boot with `no such column: UFForms.Trashed` on SQLite, or `Invalid column name 'Trashed'` on SQL Server.
+{% endhint %}
+
+Upgrading from Forms 17.6.0 or from an 18.1.x release is not affected.
+
+Upgrade to version 18.2.1 or later instead. If an upgrade to 18.2.0 has already failed, install 18.2.1 or later and start the site again. The upgrade continues from the step that failed.
+
 ### Upgrading directly from Forms 17.6.0
 
 This affects you if you upgrade directly from Forms 17.6.0 to a version 18 release earlier than 18.2.0.
