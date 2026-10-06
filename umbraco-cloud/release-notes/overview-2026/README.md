@@ -6,6 +6,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [October 2026](2026-10-releasenotes.md)
+
+* [06/10] - **Upgrade windows for automatic upgrades** - Choose the 4-hour upgrade windows in which automatic minor and patch upgrades can start. The default schedule is Tuesday from 08:00 to 20:00 UTC.
+
 ## [September 2026](2026-09-releasenotes.md)
 
 * [23/09] - **Upgrade available banner enhancements** - The **Upgrade available** banner now offers patch upgrades as well as minors, upgrades every eligible package in one go, and works on single-environment projects. Pending changes between environments no longer block an upgrade.
