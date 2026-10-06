@@ -7,7 +7,9 @@ description: >-
 # Migrate content to Umbraco 15
 
 {% hint style="warning" %}
-Umbraco 18 doesn't include this content migration. It runs when you upgrade to Umbraco 15, 16, or 17. Complete the upgrade to Umbraco 17 before you upgrade to Umbraco 18. The options in this article apply to that upgrade to Umbraco 17.
+The options in this article apply to the upgrade to Umbraco versions 15 to 17.
+
+Umbraco 18 doesn't include this content migration. Complete the upgrade to Umbraco 17 before you upgrade to Umbraco 18.
 {% endhint %}
 
 Umbraco 15 changes the internal data format of all [Block Editors](../../../model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/).
