@@ -3,7 +3,7 @@
 ## Key Takeaways
 
 * **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
-* **Leftover global.json no longer breaks deployments** - The temporary `global.json` file written during a deployment is now removed when a build fails or the deployment is interrupted.
+* **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 
 ## Automatic NuGet cache cleanup
 
@@ -15,9 +15,9 @@ Umbraco Cloud now cleans up the NuGet cache 15 minutes after each completed depl
 * **The newest version of build-only packages is kept.** These are packages used during the build, such as analyzers and SDK packs.
 * **All other versions are removed.**
 
-## Leftover global.json no longer breaks deployments
+## Leftover `global.json` no longer breaks deployments
 
-During a Git deployment, Umbraco Cloud writes a temporary `global.json` file to the repository on the environment. The file selects a .NET SDK that can build your project, and was removed again after a successful build.
+During a Git deployment, Umbraco Cloud writes a temporary `global.json` file to the repository in the environment. The file selects a .NET SDK that can build your project and is removed again after a successful build.
 
 When a build failed, or the deployment was interrupted, the file was left behind. The leftover `global.json` could then cause the next deployment to fail.
 
