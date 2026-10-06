@@ -52,7 +52,7 @@ Umbraco reserves the right to patch critical vulnerabilities, also outside of yo
 
 ## Upgrade Windows
 
-Automatic minor and patch upgrades follow a weekly schedule made up of upgrade windows. An automatic upgrade only starts inside one of the upgrade windows selected for your project.
+Automatic minor and patch upgrades follow a weekly schedule made up of upgrade windows. An upgrade window is the period in which an automatic upgrade can start. It is not a period in which the upgrade must finish.
 
 * The week is split into 42 windows of 4 hours each.
 * Each day has six windows, starting at 00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 UTC.
@@ -66,11 +66,17 @@ Upgrade windows are defined in UTC and do not move with daylight saving time. Fo
 
 ### What Happens in an Upgrade Window
 
-At the start of each window, Umbraco Cloud checks the projects that have the window in their schedule. A project is queued for an upgrade when a release is available that the project can take.
+At the start of each window, Umbraco Cloud checks the projects that have the window in their schedule. A project is queued for an upgrade when a release is available that the project can take. Queued upgrades start as platform capacity allows, so an upgrade can start at any point during the window.
 
-The upgrade runs through the mainline environments from left to right, for example Development, Staging, and then Live. Environments that already run the release, or a later version, are skipped. The upgrade is shown as an **Automatic upgrade** on the [Project History](../../monitor-and-troubleshoot/project-history.md) page.
+The upgrade runs through the mainline environments one at a time, from left to right, for example Development, Staging, and then Live. Environments that already run the release, or a later version, are skipped. The upgrade is shown as an **Automatic upgrade** on the [Project History](../../monitor-and-troubleshoot/project-history.md) page.
 
-An upgrade window controls when an upgrade starts, not when it finishes. Once the upgrade has started on the first environment, it continues through the remaining environments. The upgrade can finish after the window has closed, especially on projects with several environments.
+The upgrade window only applies to the start of the upgrade on the first environment. Each following environment is upgraded when the previous one is done, even after the window has closed. An upgrade that starts late in a window can upgrade Staging and Live after the window has ended.
+
+{% hint style="info" %}
+For example, a project with Development, Staging, and Live environments has the window from 08:00 to 12:00 UTC selected. The upgrade starts on Development at 11:50 UTC. Staging is then upgraded at around 12:00 UTC and Live at around 12:10 UTC, after the window has closed.
+{% endhint %}
+
+When you select your windows, allow for your Live environment to be upgraded shortly after the end of a window.
 
 Selecting several windows does not lead to several upgrades. Each release is applied once, and extra windows give Umbraco Cloud more opportunities to start the upgrade.
 

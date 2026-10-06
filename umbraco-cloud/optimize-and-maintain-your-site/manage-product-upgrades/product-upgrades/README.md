@@ -13,7 +13,7 @@ By default, automatic upgrades occur for patch and minor updates, while major up
 
 ## When do upgrades happen?
 
-Automatic upgrades start in your project's upgrade windows. An upgrade window is a 4-hour period in the week where automatic upgrades are allowed to start.
+Automatic upgrades start in your project's upgrade windows. An upgrade window is a 4-hour period in the week where automatic upgrades are allowed to start. An upgrade that starts late in a window can finish after the window has closed.
 
 * The default schedule is **Tuesday from 08:00 to 20:00 UTC**.
 * You can select the windows that suit your project from the Cloud Portal. See the [Upgrade Windows](minor-upgrades.md#upgrade-windows) section.
@@ -43,7 +43,7 @@ Before a live upgrade is rolled out on Umbraco Cloud:
 
 This describes how a Umbraco Cloud project is auto-upgraded:
 
-* The upgrade starts at the beginning of one of the project's upgrade windows
+* The upgrade starts during one of the project's upgrade windows. The window only limits when the upgrade can start, so later environments can be upgraded after the window has closed
 * The upgrade payload will have been created for the specific product(s) being upgraded
 * The payload is a set of files (such as DLLs, and other ASP.NET website files)
 * The upgrader will verify that the home page of all the environments in the mainline environment is healthy, meaning they don’t return an HTTP status error. If all environments are ok, it will proceed.
