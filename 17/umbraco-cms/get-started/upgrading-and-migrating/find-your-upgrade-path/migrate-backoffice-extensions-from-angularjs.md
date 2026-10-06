@@ -152,7 +152,7 @@ With the Umbraco Extension Template, you register the same manifest objects in T
 
 ## Rebuild the Controller and View as an Element
 
-In Umbraco 13, an AngularJS controller held the state and the logic:
+In Umbraco 13, an AngularJS controller holds the state and the logic:
 
 {% code title="App_Plugins/MyItems/dashboard.controller.js" %}
 ```javascript
@@ -437,7 +437,7 @@ Import the directives from `@umbraco-cms/backoffice/external/lit`. For more abou
 
 ## Replace Services with Contexts
 
-AngularJS injected services into a controller by parameter name. In the new backoffice, an element asks for a context with `consumeContext()`. The callback runs when the context is available.
+AngularJS injects services into a controller by parameter name. In the new backoffice, an element asks for a context with `consumeContext()`. The callback runs when the context is available.
 
 | Umbraco 13 service                | Umbraco 14 and later                                          |
 | --------------------------------- | ------------------------------------------------------------- |
@@ -495,7 +495,7 @@ For more about contexts, see the [Context API](../../../extend-your-project/back
 
 ## Call Your API Controller
 
-In Umbraco 13, you called an API controller with `$http`, and `umbRequestHelper.resourcePromise` unwrapped the response:
+In Umbraco 13, you call an API controller with `$http`, and `umbRequestHelper.resourcePromise` unwraps the response:
 
 {% code title="App_Plugins/MyItems/dashboard.controller.js" %}
 ```javascript
@@ -543,15 +543,59 @@ Use the Fetch API only if you cannot use the Umbraco HTTP Client. With the Fetch
 
 ### Replace Server Variables
 
-In Umbraco 13, a `ServerVariablesParsingNotification` handler added values to the global `Umbraco.Sys.ServerVariables` object. Server variables do not exist in Umbraco 14 and later. The notification class still exists, but Umbraco no longer publishes it, so a handler for it never runs.
+In Umbraco 13, a `ServerVariablesParsingNotification` handler adds values to the global `Umbraco.Sys.ServerVariables` object. Umbraco 14 and later have no server variables.
 
 Before you move a value over, check whether your extension needs it. Often the client can work without values from the server.
 
-If your extension needs a value from the server, add a `config` endpoint to your API controller. Call it with the Umbraco HTTP Client, as the dashboard example does. The endpoint returns only the values your extension needs, instead of adding them to a global object on every backoffice page. Only signed-in backoffice users can call it by default, and you can restrict it further with the [Access policies](../../../extend-your-project/tutorials/creating-a-backoffice-api/access-policies.md) of the Management API.
+If your extension needs a value from the server, return it from a `config` endpoint on your API controller. The endpoint returns only the values your extension needs, instead of adding them to a global object on every backoffice page. Only signed-in backoffice users can call it by default, and you can restrict it further with the [Access policies](../../../extend-your-project/tutorials/creating-a-backoffice-api/access-policies.md) of the Management API.
+
+The following controller returns how many items the dashboard shows. It reads the value from the `MyItems:PageSize` setting in `appsettings.json`:
+
+{% code title="MyItemsConfigApiController.cs" %}
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Umbraco.Cms.Api.Management.Controllers;
+using Umbraco.Cms.Api.Management.Routing;
+
+namespace UmbracoDocs.Samples;
+
+[VersionedApiBackOfficeRoute("my/config")]
+[ApiExplorerSettings(GroupName = "My item API")]
+public class MyItemsConfigApiController : ManagementApiControllerBase
+{
+    private readonly IConfiguration _configuration;
+
+    public MyItemsConfigApiController(IConfiguration configuration)
+        => _configuration = configuration;
+
+    [HttpGet]
+    public IActionResult GetConfig()
+        => Ok(new MyItemsConfig(_configuration.GetValue("MyItems:PageSize", 20)));
+}
+
+public record MyItemsConfig(int PageSize);
+```
+{% endcode %}
+
+The element reads the value with the Umbraco HTTP Client. The Management API returns camelCase property names, so `PageSize` becomes `pageSize`:
+
+{% code title="my-items-dashboard.element.ts" %}
+```typescript
+const { data: config } = await tryExecute(
+  this,
+  umbHttpClient.get<{ 200: { pageSize: number } }>({
+    url: "/umbraco/management/api/v1/my/config",
+    security: [{ scheme: "bearer", type: "http" }],
+  }),
+);
+const pageSize = config?.pageSize ?? 20;
+```
+{% endcode %}
 
 ## Promises and Timers
 
-AngularJS wrapped promises and timers in `$q` and `$timeout`, so that the view updated afterward. The new backoffice uses the standard JavaScript APIs:
+AngularJS wraps promises and timers in `$q` and `$timeout`, so that the view is updated afterward. The new backoffice uses the standard JavaScript APIs:
 
 | AngularJS        | Umbraco 14 and later    |
 | ---------------- | ----------------------- |
