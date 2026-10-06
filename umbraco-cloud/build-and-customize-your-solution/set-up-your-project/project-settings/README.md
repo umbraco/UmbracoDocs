@@ -91,7 +91,7 @@ The Automatic Upgrades section handles minor and patch upgrades for the Umbraco 
 
 You can manage whether your site is automatically upgraded with the latest patch and minor version(s) of Umbraco CMS, Forms, and Deploy.
 
-You can also select the upgrade windows where automatic upgrades are allowed to start. The default schedule is Tuesday from 08:00 to 20:00 UTC. For more information, see the [Upgrade Windows](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section.
+You can also select the upgrade windows where automatic upgrades are allowed to start. For the default schedule and how to change it, see the [Upgrade Windows](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section.
 
 For information about opting out of automated upgrades, see the [Product Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) article.
 

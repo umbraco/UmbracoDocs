@@ -15,8 +15,7 @@ By default, automatic upgrades occur for patch and minor updates, while major up
 
 Automatic upgrades start in your project's upgrade windows. An upgrade window is a 4-hour period in the week where automatic upgrades are allowed to start. An upgrade that starts late in a window can finish after the window has closed.
 
-* The default schedule is **Tuesday from 08:00 to 20:00 UTC**.
-* You can select the windows that suit your project from the Cloud Portal. See the [Upgrade Windows](minor-upgrades.md#upgrade-windows) section.
+* Each project starts with a default schedule. You can select the windows that suit your project from the Cloud Portal. See the [Upgrade Windows](minor-upgrades.md#upgrade-windows) section for the default schedule and how to change it.
 * A product upgrade is made available for automatic upgrades when:
   * A fix needs to be shipped due to a critical issue in any product
   * A new version of Umbraco CMS is ready for release

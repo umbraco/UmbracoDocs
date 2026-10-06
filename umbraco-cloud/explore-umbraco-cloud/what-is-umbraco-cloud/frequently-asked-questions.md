@@ -985,7 +985,7 @@ All supported versions of Umbraco CMS are available on Umbraco Cloud. The [Long-
 
 ### When is Umbraco upgraded in different projects?
 
-Automatic upgrades start in the upgrade windows selected for each project. The default schedule is Tuesday from 08:00 to 20:00 UTC. See the [Upgrade Windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section for how to change the schedule.
+Automatic upgrades start in the upgrade windows selected for each project. Each project starts with a default schedule. See the [Upgrade Windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section for the default schedule and how to change it.
 
 ### How do automated upgrades work?
 
