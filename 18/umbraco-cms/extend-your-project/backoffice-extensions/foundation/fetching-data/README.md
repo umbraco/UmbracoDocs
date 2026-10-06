@@ -8,57 +8,34 @@ description: Learn how to request data when extending the Backoffice.
 Coming from `$http` in Umbraco 13? The Umbraco HTTP Client replaces `$http`, and `tryExecute` replaces `umbRequestHelper.resourcePromise`. For more AngularJS equivalents, see the [Migrate Backoffice Extensions from AngularJS](../../../../get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-backoffice-extensions-from-angularjs.md) article.
 {% endhint %}
 
-## Fetch Data Through HTTP
+## Choose How to Fetch Data
 
-There are two main ways to fetch data through HTTP in the Umbraco Backoffice:
+Your extension can request data from Umbraco, from your own API controllers, and from third-party APIs. Choose the option that fits the API you call:
 
-* [Fetch API](./#fetch-api)
-* [Umbraco HTTP Client](./#umbraco-http-client).
+| Option | Use it for | What you get |
+| ------ | ---------- | ------------ |
+| [Umbraco HTTP Client](http-client.md) | The Management API, and direct calls to your own API controllers. | Authentication, the login prompt when the session expires, error handling, and notifications. |
+| [Custom Generated Client](custom-generated-client.md) | Your own API controllers. | A typed function for each endpoint, with the same handling as the Umbraco HTTP Client. The Umbraco Extension Template sets it up for you. |
+| [Fetch API](fetch-api.md) | Third-party APIs. | A plain request. You handle authentication and errors yourself. |
 
-The Fetch API is a modern way to make network requests in JavaScript, while the Umbraco HTTP client is a wrapper around it, providing a more convenient interface.
-
-For most scenarios, the Umbraco HTTP Client is recommended because it:
-
-* Automatically handles authentication and error handling.
-* Provides type safety for requests and responses.
-* Simplifies request and response parsing.
-* Integrates seamlessly with the Backoffice.
-
-Use the Fetch API only if you cannot use the Umbraco HTTP Client.
-
-The following table provides a comparison of the two options:
-
-| Feature              | [Fetch API](fetch-api.md) | [Umbraco HTTP Client](http-client.md) |
-| -------------------- | ------------------------- | ------------------------------------- |
-| Authentication       | Manual                    | Automatic                             |
-| Error Handling       | Manual                    | Built-in                              |
-| Type Safety          | No                        | Yes                                   |
-| Request Cancellation | Yes (via AbortController) | Yes (via AbortController)             |
-| Recommended Use Case | When you cannot use the HTTP Client | All requests to Umbraco APIs  |
-
-After selecting a method, refer to the sections below for implementation details and guidance on handling the received data.
-
-### [Fetch API](fetch-api.md)
-
-The Fetch API is a modern way to make network requests in JavaScript. It provides a more powerful and flexible feature set than the older XMLHttpRequest.
+Wrap requests to Umbraco and to your own API in [`tryExecute`](try-execute.md), which shows a notification when a request fails.
 
 ### [Umbraco HTTP Client](http-client.md)
 
-The Umbraco HTTP Client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles request and response parsing, error handling, and retries.
-
-## Handle Requests
-
-Once you have chosen a method to fetch data, the next step is to handle the execution of requests. This includes managing errors, refreshing tokens, and ensuring proper authentication.
-
-## [Executing Requests](try-execute.md)
-
-After fetching data, the next step is to execute the request. You can use the `tryExecute` function to handle errors and refresh the token if it is expired.
-
-## Advanced Topics
+The Umbraco HTTP Client, `umbHttpClient`, is the client the backoffice uses for its own requests. It adds the access token of the current user. When the session expires, it asks the user to log in again. The [Umbraco HTTP Client](http-client.md) article lists what it handles.
 
 ### [Custom Generated Client](custom-generated-client.md)
 
-For advanced scenarios, you can generate a custom client for your API using tools like [@hey-api/openapi-ts](https://github.com/hey-api/openapi-ts). This approach is ideal when working with custom API controllers or when you need type-safe, reusable client code.
+A generated client gives you a typed function for each endpoint of your API. The [`@hey-api/openapi-ts`](https://github.com/hey-api/openapi-ts) library generates it from the OpenAPI document of your API. Configure it with `configureClient()`, and it handles requests like the Umbraco HTTP Client.
 
-### [Repositories](../repositories/README.md)
+### [Fetch API](fetch-api.md)
+
+Use the Fetch API for third-party APIs, and when you cannot use the Umbraco HTTP Client. The Umbraco HTTP Client treats a 401 response as an expired backoffice session, so it doesn't suit a third-party API. A request with the Fetch API doesn't get the token, the error handling, or the notifications of the backoffice.
+
+## [Executing Requests](try-execute.md)
+
+The `tryExecute` function runs a request, and shows a notification when the request fails. It returns the data or the error, so you don't need a `try...catch` block.
+
+## [Repositories](../repositories/README.md)
+
 Repositories provide a structured way to manage data operations in the Backoffice. They abstract the data access layer, allowing for easier maintenance and scalability.
