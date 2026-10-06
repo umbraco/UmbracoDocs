@@ -9,7 +9,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 ## [October 2026](2026-10-releasenotes.md)
 
 * [02/10] - **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
-* [02/10] - **Leftover global.json no longer breaks deployments** - The temporary `global.json` file written during a deployment is now removed when a build fails or the deployment is interrupted.
+* [02/10] - **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 
 ## [September 2026](2026-09-releasenotes.md)
 
