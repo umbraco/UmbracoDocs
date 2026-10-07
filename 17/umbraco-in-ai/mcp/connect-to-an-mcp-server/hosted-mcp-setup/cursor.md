@@ -53,5 +53,5 @@ Search for all content pages
 
 ## Next Steps
 
-* [Available Tools](../cms-editor-mcp/available-tools.md) — see what tools you can use.
-* [Configuration Options](../cms-editor-mcp/configuration.md) — learn how to control which tools are enabled.
+* [Available Tools](../../mcp-servers/cms-editor-mcp/available-tools.md) — see what tools you can use.
+* [Configuration Options](../../mcp-servers/cms-editor-mcp/configuration.md) — learn how to control which tools are enabled.

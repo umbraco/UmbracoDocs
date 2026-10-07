@@ -15,7 +15,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 
 If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail.
 
-See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
+See [Version Compatibility](../../mcp-servers/cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
 {% endhint %}
 
 ## Getting started
@@ -57,11 +57,11 @@ Once you’ve added your MCP Server and updated the JSON configuration, restarti
 ```
 
 {% hint style="info" %}
-`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
 {% hint style="info" %}
 Restarting the MCP Server applies any configuration or tool changes immediately without needing to reinstall or re-add the server.
 {% endhint %}
 
-[Choose which tools or tool collections](../cms-developer-mcp/available-tools.md) you want to enable for your first task.
+[Choose which tools or tool collections](../../mcp-servers/cms-developer-mcp/available-tools.md) you want to enable for your first task.
