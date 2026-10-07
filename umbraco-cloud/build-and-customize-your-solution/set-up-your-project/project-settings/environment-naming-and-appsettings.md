@@ -17,7 +17,7 @@ Umbraco Cloud sets the environment variable `DOTNET_ENVIRONMENT` to the environm
 Naming an environment `QA`, for example, applies `appsettings.QA.json` if that file exists in your project.
 
 {% hint style="info" %}
-Umbraco Cloud only sets `DOTNET_ENVIRONMENT`. On projects using `WebApplication`, the default from Umbraco 14, it takes precedence over `ASPNETCORE_ENVIRONMENT`. On upgraded projects that keep the older hosting model, `ASPNETCORE_ENVIRONMENT` takes precedence.
+Umbraco Cloud only sets `DOTNET_ENVIRONMENT`. On projects using `WebApplication`, the default from ASP.NET Core 7.0 (Umbraco 14), it takes precedence over `ASPNETCORE_ENVIRONMENT`. On upgraded projects that keep the older hosting model, `ASPNETCORE_ENVIRONMENT` takes precedence.
 {% endhint %}
 
 ## Why the Name Development Is Different
