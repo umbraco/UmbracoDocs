@@ -10,7 +10,21 @@ Are you looking to upgrade an Umbraco Cloud project from 9 to 10? Follow the gui
 
 <details>
 
-<summary>13.latest to the latest version</summary>
+<summary>17.latest to the latest version</summary>
+
+Upgrade from Umbraco 17 to Umbraco 18 with the steps in the [Upgrade Your Project](../upgrade-details.md#upgrade-to-a-new-major) article. Before you upgrade, review the Umbraco 18 changes in the [Breaking Changes Overview](../version-specific.md).
+
+Umbraco 18 can't upgrade from versions older than 16.4. Upgrade a project on an older version to Umbraco 17 first.
+
+</details>
+
+<details>
+
+<summary>13.latest to 17.latest</summary>
+
+{% hint style="info" %}
+Umbraco 18 can't upgrade from Umbraco 13. Upgrade to Umbraco 17, the latest Long-term Support (LTS) version, and then follow the steps for 17.latest to the latest version.
+{% endhint %}
 
 **Update \_ViewImports.cshtml file**
 
@@ -34,6 +48,8 @@ Remove `u.UseInstallerEndpoints();` from the `program.cs` file to avoid issues w
 **Update code using Angular JS**
 
 Angular JS has been removed in Umbraco 14. If you have extended your Umbraco project using Angular JS, it must be updated. for more information read the [Backoffice Extensions](../../../extend-your-project/backoffice-extensions/) documentation.
+
+To map your AngularJS code to the new backoffice, see the [Migrate Backoffice Extensions from AngularJS](migrate-backoffice-extensions-from-angularjs.md) article.
 
 **Deprecated property editors**
 
@@ -86,7 +102,7 @@ There is no official migration path from SQL CE to another database engine.
 The following options may suit your needs:
 
 * Follow a community guide to migrate from a SQL CE database to SQL Server, like the [article by Jan Reilink](https://www.saotn.org/convert-sqlce-database-to-sql-server/)
-* Setup a new database for v10 and use [uSync](https://jumoo.co.uk/usync/) to transfer document types and content across.
+* Setup a new database for v10 and use [uSync](https://marketplace.umbraco.com/package/usync) to transfer document types and content across.
 * Setup a new database for v10 and use a premium tool such as [redgate SQL Data Compare](https://www.red-gate.com/products/sql-development/sql-data-compare/) to copy database contents across.
 * Setup a new database for v10 and use a premium tool such as [Umbraco Deploy](https://umbraco.com/products/umbraco-deploy) to transfer document types and content across.
 
@@ -396,7 +412,7 @@ Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to
 
 <summary>7.4.0 to 7.6.0</summary>
 
-Find a list of all the breaking changes below and [a list of the items is also available on the tracker](http://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
+Find a list of all the breaking changes below and [a list of the items is also available on the tracker](https://issues.umbraco.org/issues/U4?q=Due+in+version%3A+7.6.0+Backwards+compatible%3F%3A+No+)
 
 The three most important things to note are:
 
@@ -468,7 +484,7 @@ The property editors for pickers for content, media, members, and related links 
 
 New sites will have the obsolete pickers filtered out from the list of available property editors, but they can be enabled by a configuration flag.
 
-**Rich Text Editor (RTE) Images attributes (**[**U4-6228**](https://issues.umbraco.org/issue/U4-6228)**,** [**U4-6595**](http://issues.umbraco.org/issue/U4-6595)**)**
+**Rich Text Editor (RTE) Images attributes (**[**U4-6228**](https://issues.umbraco.org/issue/U4-6228)**,** [**U4-6595**](https://issues.umbraco.org/issue/U4-6595)**)**
 
 For a long time, we had a `rel` attribute on an `<img>` tag when inserted into the RTE. This is invalid HTML markup. We worked around this by stripping this attribute using a Property Editor Value converter. Some developers relied on this attribute so we didn't change it to a "data-id" attribute which would have been valid. In 7.6 we are not storing integer IDs in these attributes. Instead of storing UDI values so with this change we no longer use `rel` or `data-id` and instead there will be a "data-udi" attribute. This change should affect only a small amount of people that were previously relying on the values from the "rel" attribute.
 
@@ -542,7 +558,7 @@ For manual upgrades:
 * Copy the new folder `~/App_Plugins/ModelsBuilder` into the site
 * Do not forget to merge `~/Config/trees.config` and `~/Config/Dashboard.config` - they contain new and updated entries that are required to be there
   * If you forget `trees.config` you will either not be able to browse the Developer section or you will be logged out immediately when trying to go to the developer section
-* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](http://issues.umbraco.org/issue/U4-8031)
+* You may experience an error saying `Invalid object name 'umbracoUser'` - this can be fixed by [clearing your cookies on localhost](https://issues.umbraco.org/issue/U4-8031)
 
 Follow the [**upgrade guide for Umbraco 7**](minor-upgrades-for-umbraco-7.md) to complete the upgrade.
 

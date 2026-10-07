@@ -30,6 +30,7 @@
     * [Upgrade from Umbraco 8 to the Latest Version](get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-from-8-to-latest.md)
     * [Migrate Content to Umbraco 15](get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-content-to-umbraco-15.md)
     * [Migrate Custom Property Editors to Umbraco Version 14 and Later](get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-custom-property-editors-to-umbraco-14.md)
+    * [Migrate Backoffice Extensions from AngularJS](get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-backoffice-extensions-from-angularjs.md)
     * [Migrate Content to Umbraco 8](get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-content-to-umbraco-8.md)
     * [Minor Upgrades for Umbraco 8](get-started/upgrading-and-migrating/find-your-upgrade-path/minor-upgrades-for-umbraco-8.md)
     * [Upgrade to Umbraco 7](get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-to-umbraco-7.md)

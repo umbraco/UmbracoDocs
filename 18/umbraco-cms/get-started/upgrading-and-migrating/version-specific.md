@@ -16,6 +16,10 @@ Use the [general upgrade guide](upgrade-details.md) to complete the upgrade of y
 
 Before running the upgrade, consider the following:
 
+### Upgrade to Umbraco 17 first
+
+Umbraco 18 can only upgrade from Umbraco 16.4 or later, because it no longer includes the migrations from Umbraco 13 to 17. Upgrade your project to Umbraco 17, the latest Long-term Support (LTS) version, before you upgrade to Umbraco 18.
+
 ### Empty the media recycle bin
 
 In Umbraco 18, the `EnableMediaRecycleBinProtection` setting defaults to `true`. With this enabled, media files moved to the recycle bin are renamed with a `.deleted` suffix (and renamed back on restore). Emptying the media recycle bin before upgrading avoids any uncertainty around the state of files already in the bin from prior versions.

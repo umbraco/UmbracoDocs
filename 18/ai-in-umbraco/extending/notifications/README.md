@@ -26,6 +26,7 @@ All entity operations publish notifications following Umbraco CMS patterns:
 | **Rolled Back** | After version rollback | ❌ No | Audit logging, notifications |
 | **Executing** | Before execution starts | ✅ Yes | Rate limiting, authorization, resource checks |
 | **Executed** | After execution completes | ❌ No | Usage tracking, performance metrics, billing |
+| **Selected** | After Auto mode picks an agent | ❌ No | Observing and auditing agent selection |
 
 ## Entities with Notifications
 
@@ -40,6 +41,7 @@ All entity operations publish notifications following Umbraco CMS patterns:
 - **AIChat** (Inline) - Executing/Executed
 - **AISpeechToText** (Inline) - Executing/Executed
 - **AIEmbedding** (Inline) - Executing/Executed
+- **`AITool`** - Executing/Executed (published around each tool call the model makes)
 
 ### Prompt Add-on (Umbraco.AI.Prompt)
 
@@ -47,7 +49,7 @@ All entity operations publish notifications following Umbraco CMS patterns:
 
 ### Agent Add-on (Umbraco.AI.Agent)
 
-- **AIAgent** - Save/Delete/Executing/Executed
+- **`AIAgent`** - Save/Delete/Executing/Executed/Selected
 
 ## Quick Example
 

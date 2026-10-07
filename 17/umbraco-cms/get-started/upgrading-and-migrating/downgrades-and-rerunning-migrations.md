@@ -49,7 +49,7 @@ select value from umbracoKeyValue where [key] = 'Umbraco.Core.Upgrader.State+Umb
 
 You then need to find the latest state for the version of Umbraco you want to downgrade to.
 
-To find the earlier states you have to look in the source code, specifically [here for the pre-migrations](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPremigrationPlan.cs) and [here for the core ones](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs).
+To find the earlier states you have to look in the source code, specifically [here for the pre-migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPremigrationPlan.cs) and [here for the core ones](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs).
 
 Each migration is commented with the version it was added, so you can read off the latest one for the version you wish to run.
 
