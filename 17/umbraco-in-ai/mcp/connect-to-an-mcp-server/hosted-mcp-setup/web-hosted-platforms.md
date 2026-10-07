@@ -21,5 +21,5 @@ The examples in these guides use the Editor MCP Server. The same connection meth
 
 Once connected, explore the tools available to you:
 
-* [Available Tools](../cms-editor-mcp/available-tools.md) — complete reference of all Editor MCP tools.
-* [Configuration Options](../cms-editor-mcp/configuration.md) — how to control which tools are enabled.
+* [Available Tools](../../mcp-servers/cms-editor-mcp/available-tools.md) — complete reference of all Editor MCP tools.
+* [Configuration Options](../../mcp-servers/cms-editor-mcp/configuration.md) — how to control which tools are enabled.

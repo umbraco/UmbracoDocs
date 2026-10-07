@@ -46,5 +46,5 @@ If the connection is working, you will see results from your Umbraco instance.
 
 ## Next Steps
 
-* [Available Tools](../cms-editor-mcp/available-tools.md) — see what tools you can use.
-* [Configuration Options](../cms-editor-mcp/configuration.md) — learn how to control which tools are enabled.
+* [Available Tools](../../mcp-servers/cms-editor-mcp/available-tools.md) — see what tools you can use.
+* [Configuration Options](../../mcp-servers/cms-editor-mcp/configuration.md) — learn how to control which tools are enabled.

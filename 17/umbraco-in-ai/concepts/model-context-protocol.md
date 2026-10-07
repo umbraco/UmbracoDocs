@@ -93,7 +93,7 @@ Example use cases include:
 - **Schema scaffolding** – Generate or manage Document Types and Data Types directly from a prompt.
 - **Maintenance** – Reorganize into folders, standardize naming conventions or tidy up accumulated technical debt.
 - **Reporting** – Extract and analyze content patterns, audit site structure, or generate usage reports across your entire site.
-- [**Plus many, many more**](../mcp/cms-developer-mcp/scenarios.md)
+- [**Plus many, many more**](../mcp/mcp-servers/cms-developer-mcp/scenarios.md)
 
 This represents a fundamental shift in how you build with Umbraco.
 

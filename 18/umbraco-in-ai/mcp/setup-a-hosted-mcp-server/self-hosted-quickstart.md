@@ -67,7 +67,7 @@ No client secret is needed. The OAuth client registered by `Umbraco.Mcp.HostedAu
 {% endhint %}
 
 {% hint style="info" %}
-This guide connects one Worker to one Umbraco site (`UMBRACO_BASE_URL` above). Want one Worker to serve multiple Umbraco instances instead? See [Multi-Site Deployments](../base-mcp/hosted-mcp/deployment/multi-site.md).
+This guide connects one Worker to one Umbraco site (`UMBRACO_BASE_URL` above). Want one Worker to serve multiple Umbraco instances instead? See [Multi-Site Deployments](../custom-mcp-server/hosted-mcp/deployment/multi-site.md).
 {% endhint %}
 
 ## 4. Deploy
@@ -106,18 +106,18 @@ Restart Umbraco. The package detects there's no `umbraco-cloud.json` file and re
 ## 6. Verify the Connection
 
 1. Visit your Worker's URL in a browser — you should see the landing page.
-2. Connect an MCP client using that URL — see the [Setup Guides](README.md#setup-guides).
+2. Connect an MCP client using that URL — see the [Setup Guides](../connect-to-an-mcp-server/hosted-mcp-setup/README.md#setup-guides).
 3. The client should trigger the OAuth flow: consent screen, then Umbraco login, then connected.
 
 ## Beyond the Quick Start
 
 This guide covers the imperative `wrangler` path to a single environment. For a custom domain, multiple environments, tool filtering, or a repeatable Infrastructure as Code setup, see:
 
-* [Deployment](../base-mcp/hosted-mcp/deployment/README.md) — custom domains, environment-specific config, monitoring.
-* [Infrastructure as Code](../base-mcp/hosted-mcp/deployment/infrastructure-as-code.md) — provision with OpenTofu or Terraform.
+* [Deployment](../custom-mcp-server/hosted-mcp/deployment/README.md) — custom domains, environment-specific config, monitoring.
+* [Infrastructure as Code](../custom-mcp-server/hosted-mcp/deployment/infrastructure-as-code.md) — provision with OpenTofu or Terraform.
 
 These guides describe building a custom MCP server from the SDK, but the same Worker mechanics — KV, secrets, deployment — apply here too.
 
 ## Troubleshooting
 
-See [Hosted MCP Troubleshooting](../base-mcp/hosted-mcp/troubleshooting.md) for common connection and deployment errors.
+See [Hosted MCP Troubleshooting](../custom-mcp-server/hosted-mcp/troubleshooting.md) for common connection and deployment errors.

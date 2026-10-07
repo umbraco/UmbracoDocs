@@ -69,7 +69,7 @@ UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type,template
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
 
 {% hint style="info" %}
-`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
 #### Example `.mcp.json` file
@@ -85,7 +85,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and
 }
 ```
 
-For details on `.env` format and supported configuration keys, see the [Configuration guide](../cms-developer-mcp/configuration.md).
+For details on `.env` format and supported configuration keys, see the [Configuration guide](../../mcp-servers/cms-developer-mcp/configuration.md).
 
 {% hint style="warning" %}
 Never commit live credentials to source control. Always use environment variables or a `.env` file.
