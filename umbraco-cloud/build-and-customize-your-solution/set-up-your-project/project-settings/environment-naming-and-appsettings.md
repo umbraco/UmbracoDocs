@@ -29,9 +29,9 @@ The resulting issues tend to show up later, and they can look unrelated to the c
 * Error pages with full stack traces appear on a cloud hostname.
 * Local development breaks after someone edits `appsettings.Development.json` for the cloud environment.
 
-## File Name Casing on Linux
+## File Name Casing
 
-Environment name checks in code, such as `env.IsDevelopment()` and `env.IsEnvironment("...")`, aren't case sensitive. The lookup of the `appsettings.{env}.json` file, however, happens on the file system. Umbraco Cloud environments run on Linux, where file lookups are case sensitive.
+Environment name checks in code, such as `env.IsDevelopment()` and `env.IsEnvironment("...")`, aren't case sensitive. The lookup of the `appsettings.{env}.json` file, however, happens on the file system.
 
 Match the casing of your environment name to the casing of the appsettings file name exactly. An environment named `development`, in lowercase, doesn't load `appsettings.Development.json`.
 
