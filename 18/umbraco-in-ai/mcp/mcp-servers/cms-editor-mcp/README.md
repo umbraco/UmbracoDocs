@@ -78,7 +78,7 @@ Connecting to the Editor MCP has two parts. First, get your site set up for host
 
 * [Umbraco Cloud Quick Start](../../connect-to-an-mcp-server/hosted-mcp-setup/cloud-quickstart.md) — zero configuration for Umbraco Cloud projects.
 * [Self-Hosted Quick Start](../../connect-to-an-mcp-server/hosted-mcp-setup/self-hosted-quickstart.md) — deploying your own Worker for a self-hosted or agency site.
-* [Hosted MCP Setup](../../connect-to-an-mcp-server/hosted-mcp-setup/README.md) — find your MCP URL and connect your AI client, whether it's a local app (Claude Desktop, Claude Code, Cursor, GitHub Copilot) or a web-hosted platform (ChatGPT, Claude.ai).
+* [Hosted MCP Setup](../../connect-to-an-mcp-server/hosted-mcp-setup/README.md) — find your MCP URL and connect your AI client, whether it's a local app or a web-hosted platform.
 
 {% hint style="warning" %}
 The tools available to you depend on your Umbraco user permissions. If your account does not have access to certain sections of the backoffice, those tools will not be available through the MCP.
