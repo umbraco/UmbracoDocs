@@ -44,9 +44,9 @@ Two further points to be aware of:
 
 See [issue #1773](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1773) for details.
 
-### Upgrading to 17.6.0 from Forms 17.4.x or earlier
+### Upgrading to 17.6.0 from Forms 13, or from 17.4.x or earlier
 
-This fix was introduced in version 17.6.1. It affects you if you upgrade to 17.6.0 from Forms 17.4.x or earlier.
+This fix was introduced in version 17.6.1. It affects you if you upgrade to 17.6.0, or one of its release candidates, from Forms 17.4.x or earlier. This includes upgrading directly from Forms 13.
 
 {% hint style="warning" %}
 A database migration in 17.6.0 reads a column before a later migration adds it. The upgrade fails at boot with `no such column: UFForms.Trashed` on SQLite, or `Invalid column name 'Trashed'` on SQL Server.
@@ -54,7 +54,7 @@ A database migration in 17.6.0 reads a column before a later migration adds it. 
 
 Upgrading from a 17.5.x release is not affected.
 
-Upgrade to version 17.6.1 or later instead. If an upgrade to 17.6.0 has already failed, install 17.6.1 or later and start the site again. The upgrade continues from the step that failed.
+Upgrade to version 17.6.1 or later instead. If an upgrade to 17.6.0 or one of its release candidates has already failed, install 17.6.1 or later and start the site again. The upgrade continues from the step that failed.
 
 ### Upgrading directly from Forms 13.9.9
 
