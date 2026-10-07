@@ -76,8 +76,8 @@ The Editor MCP is built for safe, everyday use, and write operations are designe
 
 Connecting to the Editor MCP has two parts. First, get your site set up for hosted MCP — a one-time step. Then connect your AI client to it.
 
-* [Umbraco Cloud Quick Start](../../connect-to-an-mcp-server/hosted-mcp-setup/cloud-quickstart.md) — zero configuration for Umbraco Cloud projects.
-* [Self-Hosted Quick Start](../../connect-to-an-mcp-server/hosted-mcp-setup/self-hosted-quickstart.md) — deploying your own Worker for a self-hosted or agency site.
+* [Umbraco Cloud Quick Start](../../setup-a-hosted-mcp-server/cloud-quickstart.md) — zero configuration for Umbraco Cloud projects.
+* [Self-Hosted Quick Start](../../setup-a-hosted-mcp-server/self-hosted-quickstart.md) — deploying your own Worker for a self-hosted or agency site.
 * [Hosted MCP Setup](../../connect-to-an-mcp-server/hosted-mcp-setup/README.md) — find your MCP URL and connect your AI client, whether it's a local app or a web-hosted platform.
 
 {% hint style="warning" %}

@@ -12,3 +12,5 @@ redirects:
     mcp/base-mcp/hosted-mcp/manual-setup: mcp/custom-mcp-server/hosted-mcp/deployment/manual-setup.md
     mcp/base-mcp/hosted-mcp/multi-site: mcp/custom-mcp-server/hosted-mcp/deployment/multi-site.md
     mcp/base-mcp/hosted-mcp/umbraco-setup: mcp/custom-mcp-server/hosted-mcp/deployment/umbraco-setup.md
+    mcp/connect-to-an-mcp-server/hosted-mcp-setup/cloud-quickstart: mcp/setup-a-hosted-mcp-server/cloud-quickstart.md
+    mcp/connect-to-an-mcp-server/hosted-mcp-setup/self-hosted-quickstart: mcp/setup-a-hosted-mcp-server/self-hosted-quickstart.md
