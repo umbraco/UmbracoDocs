@@ -18,6 +18,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.6.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.6.1) (October 7th 2026)
+* Migrations: Fix boot failure (`UFForms.Trashed`) when upgrading to 17.6.0 from an earlier release. See the [Version Specific Upgrade Notes](upgrading/version-specific.md) article for details
+
 ### [17.6.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.6.0) (October 6th 2026)
 
 #### Form versions
