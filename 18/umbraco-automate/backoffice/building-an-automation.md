@@ -55,7 +55,15 @@ Clicking **+** on an output that is already connected inserts the new step betwe
 
 Automate places new steps so that they do not overlap existing steps.
 
-To add a step between two connected steps, hover the connection and click the **Insert action** (+) button. When you insert a control flow step, the step that followed connects to the output that continues the flow. That is **Done** for **For Each**, **While**, and **Parallel**, and **True** for **If**. For **Switch**, it is the first case, or **default** when there are no cases. For **Request Approval**, it is **Approved**. Automate moves the downstream steps down to make room.
+To add a step between two connected steps:
+
+1. Hover the connection.
+2. Click the **Insert action** (+) button.
+3. Pick an action or a control flow node.
+4. Configure its settings.
+5. Click **Save**.
+
+When you insert a control flow step, the step that followed connects to the output that continues the flow. That is **Done** for **For Each**, **While**, and **Parallel**, and **True** for **If**. For **Switch**, it is the first case, or **default** when there are no cases. For **Request Approval**, it is **Approved**. Automate moves the downstream steps down to make room.
 
 ### Use Bindings
 
