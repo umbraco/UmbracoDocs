@@ -101,7 +101,7 @@ The defaults are suitable for most sites:
 
 {% hint style="info" %}
 
-`Umbraco:Automate:Enabled` and the `Umbraco:Automate:Governance` section are obsolete. They never had any effect, and are scheduled for removal in Umbraco Automate 19. Remove them from your configuration:
+`Umbraco:Automate:Enabled` and the `Umbraco:Automate:Governance` section are obsolete. They never had any effect, and are scheduled for removal in Umbraco Automate 19. Remove them from your configuration. What they covered now works like this:
 
 * To control who can use automations, grant or remove access to the **Automation** section.
 * Sensitive values are always masked, and runs are always recorded.

@@ -21,7 +21,7 @@ Connections are managed from the **Settings** sidebar in the **Automation** sect
 3. Click **+**, or select **Connections** and click **Create** above the list. The **Connection Type** picker opens.
 4. Pick a connection type from the picker, for example **Slack**.
 5. Enter a name and configure the type-specific settings.
-6. For OAuth connection types such as Slack, click **Authenticate with <provider>**, for example **Authenticate with Slack**, and sign in with the provider.
+6. Click **Authenticate with <provider>**, for example, **Authenticate with Slack**, and sign in with the provider. This step only applies to OAuth connection types such as Slack.
 7. Click **Save**.
 8. Click **Test connection** to verify the credentials.
 
