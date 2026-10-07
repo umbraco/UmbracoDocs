@@ -29,7 +29,7 @@ Both modes use the same tool collections. No code changes are required.
 
 ## Getting Set Up
 
-**Deploying one of Umbraco's pre-built Editor or Developer MCP servers?** See the [Self-Hosted Quick Start](../../hosted-mcp-setup/self-hosted-quickstart.md) instead — it's a shorter, more direct path than what follows on this page.
+**Deploying one of Umbraco's pre-built Editor or Developer MCP servers?** See the [Self-Hosted Quick Start](../../setup-a-hosted-mcp-server/self-hosted-quickstart.md) instead — it's a shorter, more direct path than what follows on this page.
 
 **Building a custom MCP server on this SDK?** The [`create-umbraco-mcp-server`](../create-umbraco-mcp-server/README.md) CLI generates the Worker entry point, `wrangler.toml`, and deployment scripts for you. See the [Development Workflow](../create-umbraco-mcp-server/development-workflow.md) to get started, or [Manual Setup](deployment/manual-setup.md) to understand what the generated code does.
 

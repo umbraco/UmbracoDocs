@@ -13,8 +13,6 @@
 
 * [Connect to an MCP Server](mcp/connect-to-an-mcp-server/README.md)
   * [Hosted MCP Setup](mcp/connect-to-an-mcp-server/hosted-mcp-setup/README.md)
-    * [Umbraco Cloud Quick Start](mcp/connect-to-an-mcp-server/hosted-mcp-setup/cloud-quickstart.md)
-    * [Self-Hosted Quick Start](mcp/connect-to-an-mcp-server/hosted-mcp-setup/self-hosted-quickstart.md)
     * [Hosted Connections](mcp/connect-to-an-mcp-server/hosted-mcp-setup/web-hosted-platforms.md)
       * [Claude.ai](mcp/connect-to-an-mcp-server/hosted-mcp-setup/claude-ai.md)
       * [ChatGPT](mcp/connect-to-an-mcp-server/hosted-mcp-setup/chatgpt.md)
@@ -29,6 +27,9 @@
     * [Cursor](mcp/connect-to-an-mcp-server/local-mcp-setup/cursor.md)
     * [GitHub Copilot](mcp/connect-to-an-mcp-server/local-mcp-setup/github-copilot.md)
     * [OpenAI Codex Setup](mcp/connect-to-an-mcp-server/local-mcp-setup/openai-codex.md)
+* [Set Up a Hosted MCP Server](mcp/setup-a-hosted-mcp-server/README.md)
+  * [Umbraco Cloud Quick Start](mcp/setup-a-hosted-mcp-server/cloud-quickstart.md)
+  * [Self-Hosted Quick Start](mcp/setup-a-hosted-mcp-server/self-hosted-quickstart.md)
 * [MCP Servers](mcp/mcp-servers/README.md)
   * [CMS Developer MCP Server](mcp/mcp-servers/cms-developer-mcp/README.md)
     * [Available Tools](mcp/mcp-servers/cms-developer-mcp/available-tools.md)
