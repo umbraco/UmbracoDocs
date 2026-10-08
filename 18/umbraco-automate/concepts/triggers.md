@@ -56,6 +56,8 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 
 {% hint style="info" %}
 Each content and media trigger has a batch variant (for example, Content Batch Published). The batch trigger fires once per save or publish operation with all affected items as a single collection. Use it when you want one automation run to process the whole batch.
+
+The batch only includes items that the service account of the workspace can browse. When none remain, the run is skipped. See [Service-Account Permissions](workspaces.md#service-account-permissions).
 {% endhint %}
 
 Add-on packages contribute additional triggers. See [Add-ons](../add-ons/add-ons.md) for the catalogue.

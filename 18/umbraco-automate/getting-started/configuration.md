@@ -96,7 +96,7 @@ The defaults are suitable for most sites:
 | `Webhook`    | Maximum payload size and per-automation rate limit for incoming webhooks.       |
 | `Execution`  | Which nodes run automations (`Mode`, see [Load Balancing](../run-in-production/load-balancing.md)) and the default step timeout. The concurrent run limit and poll interval, see [Engine Concurrency and Polling](#engine-concurrency-and-polling). The maximum automation chain depth, which the **Start Automation** action also enforces. Size limits for HTTP response bodies and media file downloads, and whether outbound requests use a proxy, see [Outbound Requests](#outbound-requests). The lowest step log level recorded (`Debug`, `Info`, `Warning`, or `Error`), and how many entries each step keeps. |
 | `RateLimiting` | How many runs each automation can start per minute, and how many can run at once. When a trigger fires for an automation that is over a limit, Automate skips that automation and logs a warning. Other automations on the same event still run. Suspended runs, such as runs waiting for an approval, don't count towards the limit on runs at once. |
-| `WorkflowLock` | How long a node holds the lock on a run it is executing, and how often it renews it. See [Load Balancing](../run-in-production/load-balancing.md#restarting-a-node). |
+| `WorkflowLock` | How long a node holds the lock on a run it is executing, and how often it renews it. `RenewalInterval` must be shorter than `LeaseDuration`, or the site fails to start. See [Load Balancing](../run-in-production/load-balancing.md#restarting-a-node). |
 | `Scripting`, `RunCleanup`, `VersionCleanup`, `ScheduledTrigger`, `CircuitBreaker`, `Outbox` | Described in their own sections below. |
 
 {% hint style="info" %}
