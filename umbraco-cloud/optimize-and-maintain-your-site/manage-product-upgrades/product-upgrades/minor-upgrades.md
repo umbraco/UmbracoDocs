@@ -1,13 +1,16 @@
 ---
-description: This article explains how Minor and Patch upgrades work in Umbraco Cloud.
+description: >-
+  This article explains how Minor and Patch upgrades work in Umbraco Cloud, and
+  how upgrade windows control when automatic upgrades start.
 ---
 
 # Minor and Patch Upgrades
 
-Both minor and patch upgrades can be managed from the **Configuration** -> **Automatic Upgrades** page in the Cloud Portal.
+Both minor and patch upgrades can be managed from the **Configuration** -> **Automatic Upgrades** page in the Cloud Portal. The same page controls the upgrade windows where automatic upgrades are allowed to start.
 
 * [Automatic Minor Upgrades](minor-upgrades.md#automatic-minor-upgrades)
 * [Automatic Patch Upgrades](minor-upgrades.md#automatic-patch-upgrades)
+* [Upgrade Windows](minor-upgrades.md#upgrade-windows)
 * [Upgrade from the Cloud Portal](minor-upgrades.md#upgrade-from-the-cloud-portal)
 * [Manual Upgrades](minor-upgrades.md#manual-upgrades)
 
@@ -23,7 +26,7 @@ To enable automatic minor upgrades, follow these steps:
 
     <figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
 
-With automatic upgrades enabled, all products on Umbraco Cloud will automatically be upgraded. This includes Umbraco CMS, Umbraco Forms, and Umbraco Deploy. Your project does not need to be running the latest minor version for automatic upgrades to work. The project will be upgraded to the latest minor version when it is released.
+With automatic upgrades enabled, all products on Umbraco Cloud will automatically be upgraded. This includes Umbraco CMS, Umbraco Forms, and Umbraco Deploy. Your project does not need to be running the latest minor version for automatic upgrades to work. The project is upgraded to the latest minor version in one of its [upgrade windows](#upgrade-windows) after the release is available.
 
 If you create a new project on Umbraco Cloud automatic upgrades are enabled by default.
 
@@ -35,7 +38,7 @@ A secondary mainline environment is included in all Umbraco Cloud plans, except 
 
 ## Automatic Patch Upgrades
 
-By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released. This includes security patches and ensures all sites run the most stable and secure versions.
+By default, all Umbraco Cloud projects are automatically upgraded to new patch versions during their [upgrade windows](#upgrade-windows). This includes security patches and ensures all sites run the most stable and secure versions.
 
 You can toggle **Automatic Patch Upgrades** on or off from the same **Configuration** -> **Automatic Upgrades** page.
 
@@ -44,8 +47,84 @@ When you disable automated patch upgrades, you are responsible for keeping your 
 {% endhint %}
 
 {% hint style="warning" %}
-Umbraco reserves the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
+Umbraco reserves the right to patch critical vulnerabilities, also outside of your upgrade windows and when automatic upgrades are disabled. This ensures the Umbraco Cloud platform remains stable and secure.
 {% endhint %}
+
+## Upgrade Windows
+
+Automatic minor and patch upgrades follow a weekly schedule made up of upgrade windows. An upgrade window is the period in which an automatic upgrade can start. It is not a period in which the upgrade must finish.
+
+* The week is split into 42 windows of 4 hours each.
+* Each day has six windows, starting at 00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 UTC.
+* You can select as many windows as you need.
+* The default schedule is Tuesday from 08:00 to 20:00 UTC. The default covers the Tuesday windows starting at 08:00, 12:00, and 16:00 UTC.
+* If no windows are selected, automatic upgrades do not run for the project.
+
+{% hint style="info" %}
+Upgrade windows are defined in UTC and do not move with daylight saving time. For example, the 08:00 UTC window starts at 10:00 Central European Summer Time (CEST) and at 09:00 Central European Time (CET).
+{% endhint %}
+
+### What Happens in an Upgrade Window
+
+At the start of each window, Umbraco Cloud checks the projects that have the window in their schedule. A project is queued for an upgrade when a release is available that the project can take. Queued upgrades start as platform capacity allows, so an upgrade can start at any point during the window.
+
+The upgrade runs through the mainline environments one at a time, from left to right, for example Development, Staging, and then Live. Environments that already run the release, or a later version, are skipped. The upgrade is shown as an **Automatic upgrade** on the [Project History](../../monitor-and-troubleshoot/project-history.md) page.
+
+The upgrade window only applies to the start of the upgrade on the first environment. Each following environment is upgraded when the previous one is done, even after the window has closed. An upgrade that starts late in a window can upgrade Staging and Live after the window has ended.
+
+{% hint style="info" %}
+For example, a project with Development, Staging, and Live environments has the window from 08:00 to 12:00 UTC selected. The upgrade starts on Development at 11:50 UTC. Staging is then upgraded at around 12:00 UTC and Live at around 12:10 UTC, after the window has closed.
+{% endhint %}
+
+When you select your windows, allow for your Live environment to be upgraded shortly after the end of a window.
+
+Selecting several windows does not lead to several upgrades. Each release is applied once, and extra windows give Umbraco Cloud more opportunities to start the upgrade.
+
+### Change the Upgrade Windows
+
+1. Go to your Umbraco Cloud project.
+2. Navigate to **Configuration** -> **Automatic Upgrades**.
+3. Select the windows where automatic upgrades are allowed to start under **Upgrade Windows**.
+   * Use **Show upgrade windows in** to switch between UTC and your local time. The UTC times are the times the schedule uses.
+4. Select **Save**.
+
+<figure><img src="../../../.gitbook/assets/automatic-upgrade-windows.png" alt="Picker for upgrade windows showing a weekly grid of 4-hour windows in local time, with selected windows checked and windows shaded from quiet to very busy"><figcaption><p>Selecting upgrade windows for automatic upgrades</p></figcaption></figure>
+
+The picker shades each window by how popular it is with other projects in your region, from quiet to very busy. Selecting quieter windows lowers the risk of an upgrade being postponed.
+
+### When an Upgrade Is Postponed
+
+Many projects share the same upgrade windows. Umbraco Cloud cannot always start every queued upgrade before a window closes. An upgrade that cannot start in time is cancelled with the following reason:
+
+> The upgrade could not be started within your upgrade window because the platform was at capacity. It will be attempted again in your next upgrade window.
+
+The cancelled upgrade is shown on the [Project History](../../monitor-and-troubleshoot/project-history.md) page as an **Automatic upgrade** with the status **Cancelled**.
+
+<figure><img src="../../../.gitbook/assets/project-history-cancelled-automatic-upgrade.png" alt="Project History showing a cancelled automatic upgrade followed by a completed automatic upgrade"><figcaption><p>A cancelled and a completed automatic upgrade on the Project History page</p></figcaption></figure>
+
+Select **See more** to view the reason and the product versions of the cancelled upgrade.
+
+<figure><img src="../../../.gitbook/assets/automatic-upgrade-details-cancelled.png" alt="Automatic Upgrade Details page for a cancelled upgrade, showing the reason, product versions, and timestamps"><figcaption><p>Details of an automatic upgrade cancelled because the platform was at capacity</p></figcaption></figure>
+
+A release is considered for automatic upgrades for 7 days after it is made available. Within those 7 days, a cancelled upgrade is attempted again in the next window in your schedule.
+
+If your schedule contains a single window, the release gets a single attempt. After a cancelled upgrade, your project is upgraded automatically with the next release. To upgrade before then, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
+
+Selecting more than one window gives each release more attempts and lowers the risk of a missed upgrade.
+
+### When a Project Is Not Upgraded
+
+A project is upgraded in its upgrade window when all of the following conditions are met:
+
+* The matching setting is enabled. Patch releases require **Automatic Patch Upgrades**, and minor releases require **Automatic Minor Upgrades**.
+* The release was made available within the last 7 days.
+* No other upgrade is running on the project. Otherwise, the project is checked again in its next window.
+* The release has not been attempted on the project before. After a failed automatic upgrade, the next automatic attempt comes with a newer release.
+* No environment has been upgraded to the release, or a later version, outside of the automatic upgrade. In that case, the release is skipped and the project waits for a newer release.
+
+To retry a failed automatic upgrade without waiting for a newer release, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
+
+Umbraco Heartcore projects do not use upgrade windows.
 
 ## Upgrade from the Cloud Portal
 
@@ -75,7 +154,7 @@ The upgrade is applied to the left-most mainline environment only. Test the upgr
 Projects with a single Live environment can also upgrade from the banner. As there is no other environment to test on, the upgrade is applied directly to Live. The site restarts during the upgrade. The confirmation dialog warns about the restart and links to the version-specific upgrade notes.
 {% endhint %}
 
-The banner is independent of the **Automatic Minor Upgrades** and **Automatic Patch Upgrades** settings. Selecting **Get started** is an explicit action, and the upgrade runs even when automatic upgrades are disabled.
+The banner is independent of the **Automatic Minor Upgrades** and **Automatic Patch Upgrades** settings and of your upgrade windows. Selecting **Get started** is an explicit action. The upgrade runs even when automatic upgrades are disabled or no upgrade window is open.
 
 ### When a version is not offered
 

@@ -13,15 +13,15 @@ By default, automatic upgrades occur for patch and minor updates, while major up
 
 ## When do upgrades happen?
 
-* The status page will include all important rollout information: [**https://status.umbraco.io/**](https://status.umbraco.io/)
-* We will release product updates only on **Tuesday**
-* The decision to roll out an upgrade will be made no later than the **Thursday** prior and the status page will be updated accordingly
-* A product upgrade will be rolled out if:
+Automatic upgrades start in your project's upgrade windows. An upgrade window is a 4-hour period in the week where automatic upgrades are allowed to start. An upgrade that starts late in a window can finish after the window has closed.
+
+* Each project starts with a default schedule. You can select the windows that suit your project from the Cloud Portal. See the [Upgrade Windows](minor-upgrades.md#upgrade-windows) section for the default schedule and how to change it.
+* A product upgrade is made available for automatic upgrades when:
   * A fix needs to be shipped due to a critical issue in any product
   * A new version of Umbraco CMS is ready for release
   * A new version of Deploy is ready for release
   * A new version of Forms is ready for release
-* Umbraco Cloud reserves the right to roll out an emergency product fix to fix a critical issue at any time
+* Umbraco Cloud reserves the right to roll out a critical security fix at any time, outside of your upgrade windows. These security upgrades are announced on the status page: [**https://status.umbraco.io/**](https://status.umbraco.io/)
 
 {% hint style="info" %}
 
@@ -36,12 +36,13 @@ Before a live upgrade is rolled out on Umbraco Cloud:
 * Release notes, special upgrade instructions and/or blog posts are published when necessary
 * Update Umbraco Cloud’s site creation engine with the new version so that all new sites are built with the latest version
 * Run the auto-upgrader on Umbraco Cloud on a subset of internal test sites to verify there are no issues
-* Run the auto-upgrader on all Umbraco Cloud sites
+* Make the release available for automatic upgrades. Each project is then upgraded in one of its upgrade windows
 
 ## The process of auto-upgrading a Umbraco Cloud project
 
 This describes how a Umbraco Cloud project is auto-upgraded:
 
+* The upgrade starts during one of the project's upgrade windows. The window only limits when the upgrade can start, so later environments can be upgraded after the window has closed
 * The upgrade payload will have been created for the specific product(s) being upgraded
 * The payload is a set of files (such as DLLs, and other ASP.NET website files)
 * The upgrader will verify that the home page of all the environments in the mainline environment is healthy, meaning they don’t return an HTTP status error. If all environments are ok, it will proceed.
@@ -55,10 +56,6 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 * When the left-most environment is upgraded successfully, the upgrader will continue this same process for the next environment in the chain.
 
 {% hint style="info" %} Changes for patches might appear on left-most environment, even if they have already been applied to Live. The environments will not be synchronized during the upgrade process. This is because synchronization risks pushing other apparent changes from one environment to another. Those changes will need to be deployed. Once that has been done, the environments will be in sync again. {% endhint %}
-
-## How do baseline updates work?
-
-The upgrade process for patch and minor versions is the same for projects with child projects created off them. The difference is that we always upgrade the baseline as the first project, and afterward we upgrade the child projects. This ensures that any updates done from the baseline will also send the upgrade to the children.
 
 ## What is a breaking change?
 
@@ -74,22 +71,24 @@ Yes. You can enable or disable automatic minor and/or patch upgrades from the Cl
 2. Navigate to **Configuration** -> **Automatic Upgrades**.
 3. Toggle **Automatic Minor Upgrades** or **Automatic Patch Upgrades** on or off.
 
+To keep automatic upgrades but control when they start, change your [upgrade windows](minor-upgrades.md#upgrade-windows) instead.
+
 ### Minor Upgrades
 
 New projects have automatic minor upgrades enabled by default. When disabled, you are responsible for upgrading to new minor versions manually. See the [Minor Upgrades](minor-upgrades.md) article for details.
 
 ### Patch Upgrades
 
-By default, all Umbraco Cloud projects are automatically upgraded when new patch versions are released, including security patches. This ensures all sites run the most stable and secure versions of our products.
+By default, all Umbraco Cloud projects are automatically upgraded to new patch versions during their upgrade windows, including security patches. This ensures all sites run the most stable and secure versions of our products.
 
-If your project requires full control over the timing of upgrades, you can disable automated patch upgrades.
+If your project requires full control over when patches are applied, you can disable automated patch upgrades.
 
 {% hint style="danger" %}
 When you disable automated patch upgrades, you are responsible for keeping your project up to date. Falling behind on patches may affect your eligibility for support and can expose your project to known security vulnerabilities.
 {% endhint %}
 
 {% hint style="warning" %}
-We reserve the right to patch critical vulnerabilities. This ensures the Umbraco Cloud platform remains stable and secure.
+We reserve the right to patch critical vulnerabilities, also outside of your upgrade windows and when automatic upgrades are disabled. This ensures the Umbraco Cloud platform remains stable and secure.
 {% endhint %}
 
 ## Related Information

@@ -985,13 +985,27 @@ All supported versions of Umbraco CMS are available on Umbraco Cloud. The [Long-
 
 ### When is Umbraco upgraded in different projects?
 
-Upgrade occurs the first Tuesday after a new patch version of Umbraco CMS, Forms, or Deploy has been released.
+Automatic upgrades start in the upgrade windows selected for each project. Each project starts with a default schedule. See the [Upgrade Windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section for the default schedule and how to change it.
 
 ### How do automated upgrades work?
 
-Cloud projects are automatically upgraded to the latest patch and minor version of Umbraco CMS, Forms, and Deploy. Each new patch version is first tested with a test suite, then on 10 test sites. If successful, the upgrade is rolled out in batches of 100 customer accounts.
+Cloud projects are automatically upgraded to the latest patch and minor version of Umbraco CMS, Forms, and Deploy. Each new version is first tested with a test suite, then on internal test sites. If successful, the release is made available for automatic upgrades. Each project is then upgraded in one of its upgrade windows.
 
-[Read more about upgrades](https://docs.umbraco.com/umbraco-cloud/product-upgrades/product-upgrades)
+For more details, see the [Product Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md) article.
+
+### Will my site be down for the whole upgrade window?
+
+No. An upgrade window only controls when an upgrade is allowed to start. The time an upgrade takes does not depend on the window.
+
+Your environments are upgraded one at a time. If the upgrade starts late in the window, Staging and Live can be upgraded shortly after the window has closed. See the [What Happens in an Upgrade Window](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#what-happens-in-an-upgrade-window) section.
+
+### Will I get several upgrades if I select several upgrade windows?
+
+No. Each release is applied once. Selecting more windows gives Umbraco Cloud more opportunities to start the upgrade.
+
+### Can I choose an upgrade window in my own time zone?
+
+Upgrade windows are fixed in UTC. Select the UTC windows that cover the local hours you want.
 
 ### Why didn’t my project receive the auto-upgrade?
 
@@ -999,6 +1013,10 @@ Auto-upgrades are rolled out after verifying that all environments respond witho
 
 Other reasons for missing the upgrade:
 
+* No upgrade window has passed since the release was made available, or no windows are selected for the project.
+* The platform was at capacity, and the upgrade could not start before the window closed. The Project History page shows the upgrade as **Cancelled**. The upgrade is attempted again in your next window, if the window starts within 7 days of the release.
+* Another upgrade was running on the project when the window started.
+* The automatic upgrade to the same release has failed at a previous attempt.
 * A failed test after applying the auto-upgrade, which compares environment states before and after the upgrade. If discrepancies are found, the environment is rolled back.
 * Active deployments during the upgrade attempt.
 * Environments running different minor versions, such as one environment on 15.0.x and another on 15.1.x.
@@ -1011,7 +1029,7 @@ Pending commits do not stop the auto-upgrade.
 
 ### Is it OK to do manual upgrades?
 
-Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. If you need to upgrade before the scheduled service upgrade or if an automatic upgrade failed, you can perform a manual update. However, you will need to run the upgrade installer manually on each environment, including live.
+Yes, manual upgrades are fine, such as upgrading from 15.1.1 to 15.1.2 locally. If you need to upgrade before your next upgrade window or if an automatic upgrade failed, you can perform a manual update. However, you will need to make sure the upgrade is deployed across all your environments yourself.
 
 ### Will customized files be overwritten during upgrades?
 
@@ -1019,7 +1037,7 @@ Any default Umbraco files may be overwritten during upgrades. This usually affec
 
 ### Can I opt out of automated upgrades?
 
-Yes. Both Minor and Patch upgrades can be toggled on or off in the Cloud Portal under **Configuration** -> **Automatic Upgrades**. See the [Product Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md#can-i-opt-out-of-automated-upgrades) article for full details.
+Yes. Both Minor and Patch upgrades can be toggled on or off in the Cloud Portal under **Configuration** -> **Automatic Upgrades**. The same page lets you choose the upgrade windows where automatic upgrades are allowed to start. See the [Product Upgrades](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/README.md#can-i-opt-out-of-automated-upgrades) article for full details.
 
 ## Testing
 

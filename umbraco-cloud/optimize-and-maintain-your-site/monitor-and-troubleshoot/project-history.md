@@ -32,7 +32,7 @@ For each activity, you can see the following information:
 * Who started the activity
 * When the activity was started
 * When the activity ended
-* The status of the activity (In Progress, Completed, or Failed)
+* The status of the activity (In Progress, Completed, Failed, or Cancelled)
 
 You can copy the activity ID to your clipboard using the clipboard icon on each entry. This is useful when contacting support.
 
@@ -43,6 +43,8 @@ For deployments, CI/CD flow deployments, pull/push changes, and upgrades, clicki
 For upgrades, clicking **See more** redirects to an Upgrade Details page where you can see details about how the upgrade went.
 
 <figure><img src="../../.gitbook/assets/project-history-automatic-upgrades-details.png" alt="Upgrade details"><figcaption><p>Upgrade details</p></figcaption></figure>
+
+An automatic upgrade that could not start within your upgrade window is shown with the status **Cancelled**. For information about when the upgrade is attempted again, see the [When an Upgrade Is Postponed](../manage-product-upgrades/product-upgrades/minor-upgrades.md#when-an-upgrade-is-postponed) section.
 
 Click **See activity** to view a dialog showing the stages and tasks for environment changes, plan updates, resource moves, or database restores.
 
