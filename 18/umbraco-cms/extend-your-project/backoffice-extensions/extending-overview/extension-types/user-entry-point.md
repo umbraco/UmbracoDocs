@@ -1,7 +1,6 @@
 ---
 description: >-
-  The User Entry Point extension type is used to run JavaScript code when a
-  user session starts and ends.
+  The User Entry Point extension type is used to run JavaScript code when a user session starts and ends.
 ---
 
 # User Entry Point
