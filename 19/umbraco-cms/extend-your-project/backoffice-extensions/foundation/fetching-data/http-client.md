@@ -53,7 +53,7 @@ The Umbraco HTTP client is a wrapper around the Fetch API that provides a more c
 
 The recommended way to use the Umbraco HTTP Client is with the `tryExecute` function. This function handles any errors that occur during the request and shows a notification when a request fails. Responses with status 401, 403 or 404 do not show a notification, so check the returned `error` for those.
 
-If the session has expired, the Umbraco HTTP Client opens the login dialog. Once the user logs in again, the client retries `GET` requests. Other requests fail, and the user gets a notification asking them to try again.
+If the session has expired, the Umbraco HTTP Client opens the login dialog. Once the user logs in again, the client retries `GET` requests. Other requests fail, and the user gets a notification asking them to try again. For your own API controllers, the server should answer an expired session with a 401 response. Read more in [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
 
 You can read more about the `tryExecute` function in this article:
 

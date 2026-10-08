@@ -79,7 +79,7 @@ console.log(data);
 {% hint style="warning" %}
 Requests made with the Fetch API do not pass through the interceptors of the backoffice:
 
-* A 401 response does not open the login dialog, so handle the response yourself.
+* A 401 response does not open the login dialog, so handle the response yourself. If your controller does not have the `[ApiController]` attribute, the server redirects to the login page instead. The Fetch API follows the redirect, and the response is the HTML of the login page with status 200. Read more in [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
 * The backoffice does not register the request as activity. The server renews the session, but the backoffice can show the session timeout warning earlier than needed.
 
 Use the [Umbraco HTTP Client](http-client.md) when you need the backoffice to handle these cases.

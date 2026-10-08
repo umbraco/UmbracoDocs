@@ -126,6 +126,14 @@ The cookie also authenticates your own API controllers when they use the backoff
 In Umbraco 17 and 18, the client sent a bearer token that it got from the `auth` callback. Umbraco 19 removes `getLatestToken()` from the `UMB_AUTH_CONTEXT`, and `configureClient()` no longer sets an `auth` callback. Remove any code that adds an `Authorization` header to backoffice requests.
 {% endhint %}
 
+### Expired sessions in your own controllers
+
+When the session has expired, the server answers a request to an API controller with a 401 response. The interceptors of the backoffice then open the login dialog. For your own controllers, the server answers with a 401 when the controller has the `[ApiController]` attribute. Controllers that inherit from `ManagementApiControllerBase` already have it, and so does the base controller in the Umbraco Extension Template. Without the attribute, the server redirects the request to the login page instead.
+
+{% hint style="info" %}
+The redirect is what you want for endpoints that people open directly in the browser rather than call from the backoffice. Examples are a link to a file download or a page that is shared by URL. Leave out `[ApiController]` on those controllers. To keep the redirect for a single action in an `[ApiController]` controller, add the `[AllowCookieRedirect]` attribute from `Microsoft.AspNetCore.Http` to the action.
+{% endhint %}
+
 ### Security requirements in the OpenAPI document
 
 Generated SDK functions can include `security` metadata from your OpenAPI document. The backoffice does not use the metadata, so you do not need to pass `security` when you call `umbHttpClient` directly.
