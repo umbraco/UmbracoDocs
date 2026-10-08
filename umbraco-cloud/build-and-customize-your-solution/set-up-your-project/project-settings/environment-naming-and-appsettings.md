@@ -40,7 +40,9 @@ An environment that runs as `Development` shows the developer exception page and
 
 ## File Name Casing
 
-Use the same casing in the environment name and the appsettings file name. For example, name the environment `Development` to match `appsettings.Development.json`, not `development`.
+The appsettings file name must match `DOTNET_ENVIRONMENT` exactly, including casing. Umbraco Cloud sets this to the environment's lowercase alias. For example, an environment named `UAT` uses `appsettings.uat.json`. Live always uses `appsettings.Production.json`.
+
+To confirm or override the value, go to [Project Settings](README.md#advanced) > **Advanced**.
 
 ## Two Ways to Keep the Name Development
 
