@@ -208,13 +208,17 @@ Each step has additional settings on the canvas:
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Name**           | The step's display label on the canvas.                                                                                                                                                                       |
 | **Alias**          | The identifier used to reference the step's output in bindings, for example `${ steps.callApi.responseBody }`. Automate suggests one automatically when you add the step, adding a number if another step already uses it, for example `tellTeam2`. Edit it any time before publishing. |
-| **Error behavior** | What to do when the step fails: **Retry**, **Suspend** the run for manual intervention, **Terminate** the run, or **Compensate** before terminating.                                                          |
-| **Max retries**    | When the error behavior is **Retry**, how many times the step retries before giving up.                                                                                                                       |
+| **Error behavior** | What to do when the step fails: **Retry** the step, **Suspend** the run for manual intervention, or **Terminate** the run. A step set to **Retry** stops the run when retrying can't fix the error, or after its last retry. |
+| **Max retries**    | When the error behavior is **Retry**, how many times the step retries before the run stops.                                                                                                                   |
 | **Retry interval** | When the error behavior is **Retry**, how long to wait between retries.                                                                                                                                       |
 
 {% hint style="info" %}
 An alias must start with a letter and contain only letters and numbers, and must be unique within the automation. Renaming a step's **Name** after it's been added does not change its **Alias**: the two are independent once set. Publishing fails if any binding elsewhere in the automation still references an alias that no longer exists.
 {% endhint %}
+
+A step that already uses the **Compensate** error behavior shows **Compensate (legacy)**. Automate has no compensation steps to run, so **Compensate** stops the run without rolling anything back.
+
+If a step's action is no longer installed, the step fails when it runs. This happens when the package that provides the action is removed or the action is disabled. The error names the missing action, and the step's error behavior applies. A step set to **Retry** isn't retried, because the action won't come back between attempts.
 
 The engine-wide default step timeout is controlled by the `Execution:DefaultTimeout` setting. See [Configuration](../getting-started/configuration.md).
 

@@ -69,13 +69,14 @@ Retries also happen when an action throws. See [Actions](../concepts/actions.md)
 
 When a node starts, it marks runs that were interrupted mid-step as **Failed**. See [Runs Interrupted by a Restart](../concepts/runs.md#runs-interrupted-by-a-restart). Every node runs this check except nodes in the `Subscriber` role. That includes nodes still in the `Unknown` role before server role election.
 
-The check leaves alone any run whose step another node is executing. A node holds a lock on each run while it executes a step, and renews it until the step finishes. If the check finds a held lock, it waits up to `WorkflowLock:LeaseDuration` for locks left by a stopped process to expire. Automations on that node start running once the check completes.
+Each node that executes automations records a heartbeat in the Automate database every `WorkflowLock:RenewalInterval`. A node that shuts down cleanly removes its heartbeat. When the check finds heartbeats from other nodes, it watches them for up to `WorkflowLock:LeaseDuration`.
+
+If another node is still live, the check leaves every run in progress alone. The live node carries on with runs that are between steps, waiting to retry a step, or waiting to be picked up. The check only marks runs as **Failed** when no other node is live. That is the case on a single-node site, or when every node restarts at once. Automations on the starting node begin running once the check completes.
 
 Keep the following in mind:
 
 * Keep node clocks in sync, for example with Network Time Protocol (NTP). Each node compares lock expiry times with its own clock. A clock that is ahead by more than `LeaseDuration` minus `RenewalInterval` (about 20 seconds by default) treats live locks as expired.
-* Keep `WorkflowLock:RenewalInterval` well below `WorkflowLock:LeaseDuration`.
-* A run holds no lock while it waits to be picked up, sits between steps, or waits to retry a step. Restarting another node at that moment can still mark the run as **Failed**. Restart nodes one at a time, when the site is quiet.
+* `WorkflowLock:RenewalInterval` must be shorter than `WorkflowLock:LeaseDuration`, and both must be greater than zero. Otherwise, the site fails to start.
 * In `Distributed` mode, another node can pick up a step from a node that stopped once its lock expires. That step then runs again, so write actions that can run twice (see above).
 
 ## Server Role Election

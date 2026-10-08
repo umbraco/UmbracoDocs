@@ -34,13 +34,13 @@ A run always completes on the version of the automation that was live when the r
 
 If Umbraco stops while a step is running, Automate marks the run as **Failed** when that node starts again. It also stops the run's workflow, so the interrupted step is not run a second time on restart. A step that calls an external service, sends an email, or uses AI credits is therefore not repeated.
 
-If the site stopped abruptly, automations can take up to `WorkflowLock:LeaseDuration` (30 seconds by default) to start running again. Automate waits for the stopped process's locks to expire first. A clean shutdown releases them straight away.
+If the site stopped abruptly, automations can take up to `WorkflowLock:LeaseDuration` (30 seconds by default) to start running again. Automate first checks whether any other node is still running. A clean shutdown lets the site start straight away.
 
-Runs that were waiting when the site stopped are not affected. For example, a run waiting on a **Delay** or a [Request Approval](../backoffice/approvals.md) step continues as normal.
+Runs that were waiting when the site stopped are not affected. For example, a run waiting on a **Delay** or a [Request Approval](../backoffice/approvals.md) step continues as normal. The same applies when an approval was decided shortly before the site stopped. The run continues down the path that was chosen.
 
 To run the automation again, use **Replay** on the failed run. See [Reviewing Runs](../backoffice/runs.md).
 
-In a load-balanced setup, Automate leaves alone any run whose step another node is executing at that moment. See [Restarting a Node](../run-in-production/load-balancing.md#restarting-a-node).
+In a load-balanced setup, Automate leaves every run in progress alone while another node is still running. See [Restarting a Node](../run-in-production/load-balancing.md#restarting-a-node).
 
 ## Retention
 
