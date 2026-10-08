@@ -372,6 +372,7 @@
           * [Card View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/card.md)
           * [Reference View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/reference.md)
           * [Custom View](extend-your-project/backoffice-extensions/extending-overview/extension-types/collections/collection-view/custom.md)
+      * [User Entry Point](extend-your-project/backoffice-extensions/extending-overview/extension-types/user-entry-point.md)
       * [Value Summary](extend-your-project/backoffice-extensions/extending-overview/extension-types/value-summary.md)
       * [Value Type](extend-your-project/backoffice-extensions/extending-overview/extension-types/value-type.md)
     * [Extension Conditions](extend-your-project/backoffice-extensions/extending-overview/extension-conditions.md)
