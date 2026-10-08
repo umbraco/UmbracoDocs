@@ -6,43 +6,89 @@ On the Usage page, you will find an overview that displays your usage and evalua
 
 ## Usage overview
 
-The overview shows the bandwidth of the project for the current month, the media storage size, and the number of custom domains added to the project. It is also possible to see the bandwidth history for the previous six months.
+The top of the page shows your plan and when the plan figures were last collected. The **This month** summary indicates how many limits your project respects and highlights resources that are close to or over their limit.
 
-In this overview, you will find the usage limitations for your Umbraco Cloud project as well as the plan that the project is on.
+<figure><img src="../../../.gitbook/assets/usage-overview-october-2026.png" alt="Usage summary showing all three limits respected and gauges for bandwidth, media storage, and custom domains."><figcaption><p>The Usage overview with sample data.</p></figcaption></figure>
 
-![Usage on Cloud](../../../.gitbook/assets/Daily-Usage-Bandwidth-Trend-October-2025.png)
+### Counted against your plan
 
-The Bandwidth Trend graph provides a rolling 31-day view of your project’s bandwidth usage. It allows you to monitor daily bandwidth usage patterns and see how changes to your site affect data consumption.
+The three gauges show the amount used, the available limit, and how much is left or over the limit:
 
-The usage shown is for the Live environment of your project as it is the usage in this environment that is measured against the plan usage limits. For _media storage,_ it is the size of all files in the blob storage including the cache that is considered.
+| Metric | What it measures |
+| --- | --- |
+| Bandwidth | Data transferred from your Live environment to visitors during the current month, including responses served from the edge cache. |
+| Media storage | The size of all files in the Live environment's blob storage, including cached media. |
+| Custom domains | The number of custom domains added to your Live environment. |
 
-## Bandwidth Top 10's
+The page marks a resource as close to its limit from 85% usage. When usage exceeds a limit, the gauge shows the excess and a **Change plan** link. A resource without a plan limit is labelled **No limit on your plan**.
 
-You will find a couple of top 10 for the bandwidth in the project's live environment.
+### Bandwidth forecast
 
-### Top 10 - Bandwidth Usage Paths
+When enough daily bandwidth data is available, the summary estimates bandwidth usage by the end of the month. It uses the average daily usage from up to the last seven recorded days and adds the projected remaining usage to the collected monthly total.
 
-The first is displaying the 10 resources that are contributing the most to the total bandwidth of your project. Each resource is represented by its path together with the number of requests and its total contribution of bandwidth.
+If this estimate exceeds the bandwidth limit, the summary also shows approximately when the available bandwidth will run out. The projection assumes traffic continues at the recent rate; it is an estimate, not a measured monthly total.
 
-<figure><img src="../../../.gitbook/assets/Top10BandwidthPaths2.png" alt=""><figcaption></figcaption></figure>
+Read [Bandwidth](bandwidth.md) for more information about how usage is measured and how to reduce it.
 
-### Top 10 - Bandwidth Usage Referrers
+## Bandwidth history and repository size
 
-The second displays the top 10 HTTP Referrers causing the most bandwidth. A referer is an optional HTTP header field identifying the address of the web page from which the resource was requested. It is the bandwidth generated from these resource requests that counts in the monthly usage limit of the project.
+The bandwidth chart has two views:
 
-![top 10 bandwidth](../../../.gitbook/assets/Top10BandwidthReferer2.png)
+* **31 days** shows daily bandwidth usage over a rolling 31-day period.
+* **12 months** shows monthly totals for the available history within the last 12 months.
+
+Hover over the chart to see usage for a date or month. In the monthly view, a plan-limit line is shown when the limit is within the chart's comparison range.
+
+<figure><img src="../../../.gitbook/assets/usage-bandwidth-history-october-2026.png" alt="Monthly bandwidth chart with the 12 months view selected, a plan-limit line, and repository size below the chart."><figcaption><p>Monthly bandwidth history and repository size with sample data.</p></figcaption></figure>
+
+Below the chart, **Repository** shows the latest collected Git repository size in MB and an indication of its health. Repository size is separate from bandwidth usage. A large repository can slow cloning and deployment. Use **How to reduce it** to open the [Repositories in a Cloud Project](../../../explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md#how-to-reduce-your-repository-size) guide.
+
+## Media storage and bandwidth sources
+
+<figure><img src="../../../.gitbook/assets/usage-details-october-2026.png" alt="Media storage listing the largest files alongside bandwidth sources grouped by HTTP referrer."><figcaption><p>Media storage and bandwidth sources with sample data.</p></figcaption></figure>
+
+### Media storage
+
+The media list loads automatically and shows the three largest files first. Select **Show all … files** to expand the list of up to 50 media files in your Live environment.
+
+Each row shows the file name, folder, file type, and size. Select a file name to open the file. When multiple categories are present, the breakdown above the list shows their share of the size of the listed files. Select a category, such as **Images** or **Video**, to filter the list; select it again to clear the filter.
+
+The breakdown covers the largest files returned by the list, rather than all files in blob storage. The media storage gauge includes the complete storage size, including cached media.
+
+### Bandwidth sources
+
+Use **By path** and **By source** to investigate what contributes most to bandwidth usage in the current month. Each row shows a path or source, its request count, and the bandwidth generated by those requests.
+
+* **By path** lists the top 10 resource paths in your Live environment. The first three appear initially. Select **Show all 10**, then **Show top 50**, to load up to 50 paths when more are available.
+* **By source** lists the top 10 HTTP referrers. Select **Show all …** to expand the list. A referrer is an optional HTTP header identifying the page from which a resource was requested. **None (Direct)** indicates that no referrer was provided.
 
 {% hint style="info" %}
-Be aware that any third party services will also consume bandwidth. For example, an uptime service implementation can increase bandwidth usage as it pings the website more frequently.
+
+Third-party services also consume bandwidth. For example, an uptime service can increase usage by requesting your website frequently.
+
 {% endhint %}
 
-## Top 50 - Media Files
+## Collected for insight
 
-It is also possible to see the top 50 media files on your live environment.
+The **Collected for insight** section shows additional metrics for your Live environment:
 
-The list shows the name of the file, its path, size, and type (whether it is a jpeg or a png file).
+| Metric | What it measures |
+| --- | --- |
+| Database size | The size of the environment's database. |
+| Disk usage | The environment's file system usage, separate from media blob storage. |
+| Content nodes | The number of content nodes reported by the environment's Umbraco backoffice. |
 
-![top 50 media files](../../../.gitbook/assets/Top-50-media.png)
+These cards provide insight into growth and are separate from the three gauges counted against your plan. Each card shows the latest available value and its month. When history is available, it also shows the change since the previous recorded month and up to six months of history.
+
+<figure><img src="../../../.gitbook/assets/usage-insight-october-2026.png" alt="Database size, disk usage, and content node cards with monthly changes and six months of history."><figcaption><p>Additional metrics collected for insight, shown with sample data.</p></figcaption></figure>
+
+The small history charts are scaled to the available values, rather than starting at zero. Use the displayed values and changes to assess growth.
+
+## Data availability
+
+Usage figures are collected periodically. Check **Plan figures collected** at the top of the page and the **as of** month on the insight cards when interpreting the data.
+
+New projects may show **No usage collected yet** until the first collection completes. History can be shorter than the selected range, and individual metrics may show **Not collected for this project yet**. If a section cannot load, use its retry control when available.
 
 ## Usage limits
 
