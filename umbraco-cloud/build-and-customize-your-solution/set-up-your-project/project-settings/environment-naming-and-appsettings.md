@@ -12,7 +12,7 @@ Umbraco Cloud sets each environment's `DOTNET_ENVIRONMENT` value based on its na
 
 ASP.NET Core loads `appsettings.json` first, then layers `appsettings.{DOTNET_ENVIRONMENT}.json` on top of it. The values in the second file win wherever the two overlap.
 
-Umbraco Cloud sets the environment variable `DOTNET_ENVIRONMENT` to the environment's alias. The alias is a sanitized version of the environment name, for example with spaces replaced by dashes. Live is the exception and always uses `Production`, even after a rename. You can view or override the value under [Project Settings](README.md#advanced) > Advanced.
+Umbraco Cloud sets the environment variable `DOTNET_ENVIRONMENT` to the environment's alias. The alias is a lowercase version of the environment name with spaces replaced by dashes. Live is the exception and always uses `Production`, even after a rename. You can view or override the value under [Project Settings](README.md#advanced) > Advanced.
 
 Naming an environment `QA`, for example, applies `appsettings.QA.json` if that file exists in your project.
 
