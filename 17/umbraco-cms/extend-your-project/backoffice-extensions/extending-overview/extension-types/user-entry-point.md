@@ -116,6 +116,10 @@ export const onUnload: UmbEntryPointOnUnload = () => {
 {% endhint %}
 
 {% hint style="info" %}
+Each browser tab runs its own copy of the module, so every open tab calls `onInit` and `onUnload`. When the user signs out in one tab, all tabs call `onUnload` before they leave the page. Closing or reloading a tab does not call `onUnload`. If your server keeps state for each user, do not rely on `onUnload` to clean it up. Keep that state in storage that all servers share.
+{% endhint %}
+
+{% hint style="info" %}
 Capturing the user in `onInit`, as above, is the reliable way to know who a later `onUnload` is for. The captured value belongs to the session that the pair brackets. Reading `UMB_CURRENT_USER_CONTEXT` inside `onUnload` also returns the departing user. That only works because the current user data is not cleared until the next sign-in. Prefer the captured value when the identity matters.
 {% endhint %}
 
