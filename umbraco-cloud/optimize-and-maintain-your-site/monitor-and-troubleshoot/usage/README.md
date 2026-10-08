@@ -8,11 +8,11 @@ On the Usage page, you will find an overview that displays your usage and evalua
 
 The top of the page shows your plan and when the plan figures were last collected. The **This month** summary indicates how many limits your project respects and highlights resources that are close to or over their limit.
 
-<figure><img src="../../../.gitbook/assets/usage-overview-october-2026.png" alt="Usage summary showing all three limits respected and gauges for bandwidth, media storage, and custom domains."><figcaption><p>The Usage overview with sample data.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/usage-overview-october-2026.png" alt="Usage summary showing all three limits respected and usage indicators for bandwidth, media storage, and custom domains."><figcaption><p>The Usage overview with sample data.</p></figcaption></figure>
 
 ### Counted against your plan
 
-The three gauges show the amount used, the available limit, and how much is left or over the limit:
+The three usage indicators show the amount used, the available limit, and how much is left or over the limit:
 
 | Metric | What it measures |
 | --- | --- |
@@ -20,7 +20,7 @@ The three gauges show the amount used, the available limit, and how much is left
 | Media storage | The size of all files in the Live environment's blob storage, including cached media. |
 | Custom domains | The number of custom domains added to your Live environment. |
 
-The page marks a resource as close to its limit from 85% usage. When usage exceeds a limit, the gauge shows the excess and a **Change plan** link. A resource without a plan limit is labelled **No limit on your plan**.
+The page marks a resource as close to its limit from 85% usage. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labelled **No limit on your plan**.
 
 ### Bandwidth forecast
 
@@ -53,7 +53,7 @@ The media list loads automatically and shows the three largest files first. Sele
 
 Each row shows the file name, folder, file type, and size. Select a file name to open the file. When multiple categories are present, the breakdown above the list shows their share of the size of the listed files. Select a category, such as **Images** or **Video**, to filter the list; select it again to clear the filter.
 
-The breakdown covers the largest files returned by the list, rather than all files in blob storage. The media storage gauge includes the complete storage size, including cached media.
+The breakdown covers the largest files returned by the list, rather than all files in blob storage. The media storage usage indicator includes the complete storage size, including cached media.
 
 ### Bandwidth sources
 
@@ -63,9 +63,7 @@ Use **By path** and **By source** to investigate what contributes most to bandwi
 * **By source** lists the top 10 HTTP referrers. Select **Show all …** to expand the list. A referrer is an optional HTTP header identifying the page from which a resource was requested. **None (Direct)** indicates that no referrer was provided.
 
 {% hint style="info" %}
-
-Third-party services also consume bandwidth. For example, an uptime service can increase usage by requesting your website frequently.
-
+Be aware that any third party services will also consume bandwidth. For example, an uptime service implementation can increase bandwidth usage as it pings the website more frequently.
 {% endhint %}
 
 ## Collected for insight
@@ -78,11 +76,11 @@ The **Collected for insight** section shows additional metrics for your Live env
 | Disk usage | The environment's file system usage, separate from media blob storage. |
 | Content nodes | The number of content nodes reported by the environment's Umbraco backoffice. |
 
-These cards provide insight into growth and are separate from the three gauges counted against your plan. Each card shows the latest available value and its month. When history is available, it also shows the change since the previous recorded month and up to six months of history.
+These cards provide insight into growth and are separate from the three usage indicators counted against your plan. Each card shows the latest available value and its month. When history is available, it also shows the change since the previous recorded month and up to six months of history.
 
 <figure><img src="../../../.gitbook/assets/usage-insight-october-2026.png" alt="Database size, disk usage, and content node cards with monthly changes and six months of history."><figcaption><p>Additional metrics collected for insight, shown with sample data.</p></figcaption></figure>
 
-The small history charts are scaled to the available values, rather than starting at zero. Use the displayed values and changes to assess growth.
+Use the displayed values and changes to assess growth over time.
 
 ## Data availability
 
