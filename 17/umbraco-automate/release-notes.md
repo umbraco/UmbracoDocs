@@ -14,6 +14,33 @@ If there are any breaking changes or other issues to be aware of when upgrading,
 
 This section contains the release notes for Umbraco Automate 17, including all changes for this version.
 
+### [17.5.1](https://github.com/umbraco/Umbraco.Automate/compare/Umbraco.Automate@17.5.0...Umbraco.Automate@17.5.1) (October 8th 2026)
+
+{% hint style="warning" %}
+
+This release changes how some failures are handled. Review these points before upgrading:
+
+* **A step that can't succeed now stops the run.** A step set to **Retry** stops the run when its error can't be fixed by retrying, or when it has used all its retries. The run ends as **Failed**. Before, the run carried on, and steps connected to the failed step's unlabeled output still ran [#454](https://github.com/umbraco/Umbraco.Automate/pull/454).
+* **A step whose action is no longer installed fails the run.** This happens when the package that provides the action is removed or the action is disabled. The step fails with an error that names the missing action. Before, the step was skipped, and later steps ran without its output [#477](https://github.com/umbraco/Umbraco.Automate/pull/477).
+* **Publishing checks every step's settings.** A step with an empty required setting can no longer be published. That includes steps saved through the Management API or an import. Creating, importing, or rolling back an invalid automation returns a 422 response that lists the errors [#474](https://github.com/umbraco/Umbraco.Automate/pull/474).
+* **Notify Editor needs content access.** The service account of the workspace needs the Content section and Browse permission on the target item. Without access to the item, the step fails [#450](https://github.com/umbraco/Umbraco.Automate/pull/450).
+* **Batch content and media triggers check node access.** Items the service account can't browse are left out of the batch. When none remain, the run is skipped [#452](https://github.com/umbraco/Umbraco.Automate/pull/452).
+
+{% endhint %}
+
+#### Restarts and recovery
+
+Automate no longer marks a run as failed on restart while another node is still running. Each node now records a heartbeat in a new `umbracoAutomateWorkflowNodeHeartbeat` table, which Automate creates on startup. A starting node only fails interrupted runs when no other node is live. Startup now fails when `WorkflowLock:RenewalInterval` is not shorter than `WorkflowLock:LeaseDuration` [#469](https://github.com/umbraco/Umbraco.Automate/pull/469). For more information, see [Restarting a Node](run-in-production/load-balancing.md#restarting-a-node).
+
+An approval whose decision was saved shortly before the site stopped now continues down the path that was chosen [#465](https://github.com/umbraco/Umbraco.Automate/pull/465) [#472](https://github.com/umbraco/Umbraco.Automate/pull/472).
+
+#### Other
+
+* Steps: Hide the **Compensate** error behavior, which never rolled anything back. Steps that already use it show **Compensate (legacy)** and behave as before [#456](https://github.com/umbraco/Umbraco.Automate/pull/456).
+* Steps: Evaluate binding defaults, such as `${ trigger.formId }`, for steps saved without any settings [#468](https://github.com/umbraco/Umbraco.Automate/pull/468).
+* Settings: Show binding syntax such as `${ trigger.yourKey }` in field descriptions, instead of removing it [#473](https://github.com/umbraco/Umbraco.Automate/pull/473).
+* Backoffice: Validate the automation editor before **Save and publish**, so an empty name is highlighted instead of returning a server error [#466](https://github.com/umbraco/Umbraco.Automate/pull/466).
+
 ### [17.5.0](https://github.com/umbraco/Umbraco.Automate/compare/Umbraco.Automate@17.4.0...Umbraco.Automate@17.5.0) (October 1st 2026)
 
 {% hint style="warning" %}
