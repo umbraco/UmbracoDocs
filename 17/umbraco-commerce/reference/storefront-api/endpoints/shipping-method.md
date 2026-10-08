@@ -2,10 +2,10 @@
 
 The Shipping Method API endpoints allow fetching supported shipping methods from a store.
 
-{% openapi src="/broken/files/78gbCIN61lMlplqhVvdQ" path="/umbraco/commerce/storefront/api/v1/shippingmethods" method="get" %}
-[Broken link](/broken/files/78gbCIN61lMlplqhVvdQ)
+{% openapi src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/shippingmethods" method="get" %}
+[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
 {% endopenapi %}
 
-{% openapi src="/broken/files/78gbCIN61lMlplqhVvdQ" path="/umbraco/commerce/storefront/api/v1/shippingmethod/{idOrAlias}" method="get" %}
-[Broken link](/broken/files/78gbCIN61lMlplqhVvdQ)
+{% openapi src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/shippingmethod/{idOrAlias}" method="get" %}
+[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
 {% endopenapi %}

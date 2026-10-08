@@ -2,9 +2,9 @@
 description: How to extend Umbraco Deploy to synchronize custom data.
 ---
 
-# Extending
+# Extend Deploy
 
-Umbraco Deploy supports the deployment of CMS schema information and definitions from the HQ's Forms package, along with managed content and media. Additionally, it can be extended by package or custom solution developers. This allows the deployment of custom data, such as that stored in your own database tables.
+Umbraco Deploy supports the deployment of CMS schema information and definitions from Umbraco HQ's Forms package, along with managed content and media. Additionally, it can be extended by package or custom solution developers. This allows the deployment of custom data, such as that stored in your own database tables.
 
 As a package or solution developer, you can hook into the disk-based serialization and deployment. It is similar to that used for Umbraco Document Types and Data Types. It's also possible to provide the ability for editors to deploy custom data via the Backoffice. In the same way that Umbraco content and media can be queued for transfer and restored.
 
@@ -14,7 +14,7 @@ As a package or solution developer, you can hook into the disk-based serializati
 
 _Entities_ are what you may be looking to transfer between two websites using Deploy. Within Umbraco, they are for example the Document Types, Data Types and Documents (content). In a custom solution or a package, there may be representations of some other data that's being stored separately from Umbraco schema or content. These can still be managed in the Backoffice using custom trees and editors.
 
-For the purposes of subsequent code samples, we'll consider an example entity as a Plain Old Class Object (POCO) with a few properties.
+For the purposes of subsequent code samples, consider an example entity as a Plain Old Class Object (POCO) with a few properties.
 
 {% hint style="info" %}
 The entity has no dependency on Umbraco or Umbraco Deploy; it can be constructed and managed however makes sense for the package or solution. The only requirement is that it has an ID that will be consistent across the environments (normally a Guid) and a name.
@@ -251,7 +251,7 @@ public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, Gui
 }
 ```
 
-Provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root UDI:
+Provide a `GetUdi()` extension method to generate the appropriate identifier for a specific ID, and ensure it's not an open/root Unique Document Identifier (UDI):
 
 ```csharp
 public static GuidUdi GetUdi(this Example entity)
@@ -267,7 +267,7 @@ Umbraco entities often have dependencies on one another, this may also be the ca
 
 If the dependent entity is also deployable, it will be included in the transfer. Or if not, the deployment will be blocked and the reason presented to the user.
 
-In the following illustrative example, if deploying a representation of a "Person", we ensure their "Department" dependency is added. This will indicate that it must exist to allow the transfer. We can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
+In the following illustrative example, if deploying a representation of a "Person", ensure their "Department" dependency is added. This will indicate that it must exist to allow the transfer. You can also use `ArtifactDependencyMode.Match` to ensure the dependent entity not only exists but also matches in all properties.
 
 ```csharp
 private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDependency> dependencies)
@@ -288,11 +288,11 @@ private PersonArtifact Map(GuidUdi udi, Person person, ICollection<ArtifactDepen
 
 ### Value Connectors
 
-As well as dependencies at the level of entities, we can also have dependencies in the property values as well. In Umbraco, an example of this is the multi-node tree picker property editor. It contains references to other content items, that should also be deployed along with the content that hosts the property itself.
+As well as dependencies at the level of entities, there can also be dependencies in the property values as well. In Umbraco, an example of this is the multi-node tree picker property editor. It contains references to other content items, that should also be deployed along with the content that hosts the property itself.
 
 Value connectors are used to track these dependencies and can also be used to transform property data as it is moved between environments.
 
-The following illustrative example considers a property editor that stores the integer ID of a media item. The integer ID of a media item is not consistent between environments, so we'll need to transform it. And we also want to ensure that the related media item itself is transferred as well as the integer ID reference.
+The following illustrative example considers a property editor that stores the integer ID of a media item. The integer ID of a media item is not consistent between environments, so it needs to be transformed. The related media item itself should also be transferred, as well as the integer ID reference.
 
 ```csharp
 using Umbraco.Cms.Core;
@@ -385,7 +385,7 @@ Connectors do not need to be registered. The fact that they inherit from particu
 
 ### Custom Entity Types
 
-If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](#disk-based-transfers) section below.
+If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](extending.md#disk-based-transfers) section below.
 
 ### Disk-Based Transfers
 
@@ -523,13 +523,13 @@ The entity type name is used to look up a localized display name via the `deploy
 
 ### Backoffice Integrated Transfers
 
-If the optimal deployment workflow for your entity is to have editors control the deployment operations, the transfer entity service should be used. This would be instead of registering with the disk entity service. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, we also need to be able to handle the situation where multiple entity types are managed within a single tree.
+If the optimal deployment workflow for your entity is to have editors control the deployment operations, the transfer entity service should be used. This would be instead of registering with the disk entity service. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, you also need to be able to handle the situation where multiple entity types are managed within a single tree.
 
 An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
 
 There's also a code sample, demonstrated in the video linked above, available at [GitHub](https://github.com/AndyButland/RaceData).
 
-The following code shows the registration of an entity for Backoffice deployment, where we have the simplest case of a single tree for the entity. Registration should be done in an `UmbracoApplicationStartingNotification` handler:
+The following code shows the registration of an entity for Backoffice deployment, for the simplest case of a single tree for the entity. Registration should be done in an `UmbracoApplicationStartingNotification` handler:
 
 ```csharp
 using Microsoft.AspNetCore.Http;
@@ -590,13 +590,13 @@ The `RegisterTransferEntityType` method on the `ITransferEntityService` takes th
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
 * A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-[guid]" or "store-[guid]".
+* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-\[guid]" or "store-\[guid]".
 * An optional `RemoteTreeDetail` parameter that adds support for implementing Deploy's "partial restore" feature.
 
 {% hint style="info" %}
 The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
-Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrades/version-specific.md) for an example.
+Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrading/version-specific.md) for an example.
 {% endhint %}
 
 The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
@@ -638,7 +638,7 @@ Umbraco Deploy provides the `ExternalEntityTreeController` to serve the external
 
 Umbraco Deploy improves the efficiency of transfers by caching signatures of each artifact in the database for each environment. The signature is a string-based, hashed representation of the serialized artifact. When an update is made to an entity, this signature value should be refreshed.
 
-When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
+When using the `EntitySavedDeployRefresherNotificationAsyncHandlerBase` as shown in the [Disk Based Transfers](extending.md#disk-based-transfers) section above, signature refreshing is handled automatically when `HandleSignatures` is set to `true` (the default).
 
 If you only need to refresh signatures without writing disk artifacts, you can set `HandleDiskArtifacts = false`. An example of this could be for content entities that are transferred via the backoffice rather than disk:
 

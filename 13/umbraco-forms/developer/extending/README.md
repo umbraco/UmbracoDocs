@@ -8,7 +8,7 @@ For front-end extensions, specifically via theming, see the [Themes](../themes.m
 
 Although the Forms package comes with many fields, workflows and other built-in types, you can still create and develop your own if needed.
 
-### [Provider model](adding-a-type.md)
+### [Provider model](adding-a-type/)
 
 Many features of Forms use a provider model, which makes it quicker to add new parts to the application.
 
@@ -16,7 +16,7 @@ The model uses the notion that everything must have a type to exist. The type de
 
 It is possible to add new Field types, Data Source Types, Prevalue Source Types, Export Types, and Workflow Types.
 
-### [Field types](adding-a-fieldtype.md)
+### [Field types](adding-a-fieldtype/)
 
 A field type handles rendering of the UI for a field in a form. It renders a standard ASP.NET Razor partial view and is able to return a list of values when the form is saved.
 

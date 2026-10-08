@@ -25,7 +25,7 @@ The Team section allows you to:
 * Manage backoffice user groups and [Technical contacts](../../../begin-your-cloud-journey/project-features/team-members/technical-contact.md) for your project.
 * Monitor pending project invitations.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary
 
@@ -45,7 +45,7 @@ In the Project History section, you can view a list of high-level activities for
 
 Hostname monitoring allows you to track the availability and response times of your websites. You can configure monitors for multiple hostnames, set check frequency and locations, and view historical ping results. This helps ensure optimal website performance and alerts you to potential downtime or performance issues.
 
-### [Availability & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/availability-performance.md)
+### [Traffic & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
 
 You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution.
 
@@ -102,6 +102,8 @@ The CDN and Caching section lets you manage CDN Caching and Optimization setting
 * Modify the default settings that apply to all hostnames added to the project.
 * Set specific caching settings per hostname if different configurations are required for certain hostnames.
 * Purge Cache for individual hostnames or all of them.
+
+These settings apply to custom hostnames only. The default `*.{region}.umbraco.io` hostnames of the project cannot be cached in the CDN. For more information, see [CDN Caching and Optimizations](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md#custom-hostname-requirement).
 
 ![CDN & Caching](../../../.gitbook/assets/cdn-caching.png)
 

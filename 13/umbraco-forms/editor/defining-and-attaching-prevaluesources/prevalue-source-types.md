@@ -5,22 +5,19 @@ There are some default prevalue source types that can be used.
 Here is a quick overview of them:
 
 * **Get values from textfile**
-
   * Upload a textfile that contains the prevalues. Each prevalue should have its own line in the file. Once the file has been uploaded, you can find it in `~/wwwroot/App_Data/UmbracoForms/Data/PreValueTextFiles/{GUID}` where the `{GUID}`is replaced with the pre-value ID.
 * **Umbraco Documents**
-
   * Allows to use content nodes from a specific source as prevalues. You can define the root node by either
-
   * Choosing a node directly from the Content tree or
   * Using XPath
 
 Additional settings can be applied:
 
-  * Select which **Value field** should be used for the value of the prevalue.
-  * Select **Use current page as root** instead of choosing a specific root node. _The preview is not available when this setting is enabled._
-  * Select a specific **Document type**, if the selected root node contains a different Document Type.
-  * Select **List all Descendants** of the selected root node to list all levels of descendants.
-  * Select **Order by** from the drop-down list to display how the prevalue list should be ordered.
+* Select which **Value field** should be used for the value of the prevalue.
+* Select **Use current page as root** instead of choosing a specific root node. _The preview is not available when this setting is enabled._
+* Select a specific **Document type**, if the selected root node contains a different Document Type.
+* Select **List all Descendants** of the selected root node to list all levels of descendants.
+* Select **Order by** from the drop-down list to display how the prevalue list should be ordered.
 * **SQL Database**
   * Connect to a OleDB compatible database table and construct a prevalue source from it. Once selected, it will be editable from the Forms interface.
   * The following configurations need to be set:
@@ -35,4 +32,4 @@ Additional settings can be applied:
 
 In the example below, the prevalue collection from a Data Type called `Home - Font - Radio button` is used:
 
-![Data Type prevalues](images/datatype-prevalues.png)
+![Data Type prevalues](../../.gitbook/assets/datatype-prevalues.png)

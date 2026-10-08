@@ -43,11 +43,11 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 
 2. Select the **Blob container** in the first prompt.
 
-<figure><img src="../../../../.gitbook/assets/image (84).png" alt="Select blob container"><figcaption><p>Blob container</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image.png" alt="Select blob container"><figcaption><p>Blob container</p></figcaption></figure>
 
 3. Select **Shared Access Signature (SAS) URL** in the second prompt.
 
-<figure><img src="../../../../.gitbook/assets/image (85).png" alt="Shared Access Signature (SAS) URL"><figcaption><p>Shared Access Signature (SAS) URL</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt="Shared Access Signature (SAS) URL"><figcaption><p>Shared Access Signature (SAS) URL</p></figcaption></figure>
 
 4. Input the information you have gathered earlier in the following format `[Endpoint][ContainerName][SharedAccessSignature]`, in the URI field. See below for an example.
 
@@ -55,7 +55,7 @@ Let's use the information you have gathered, and connect Azure Storage Explorer 
 https://ucmediastoragewelive.blob.core.windows.net/92f27eee-eb18-445e-b9e4-c7a98bd209c0?sv=2019-07-07&sr=c&si=umbraco&sig=U92YZXOdzhp7JFLzj6MH%2BeugDgEelgzpB56o1XfD1%2BU%3D&spr=https
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (86).png" alt="Attach with SAS URI"><figcaption><p>Attach with SAS URI</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt="Attach with SAS URI"><figcaption><p>Attach with SAS URI</p></figcaption></figure>
 
 5. Ensure that the credentials are correctly set in the **Connection Summary** prompt.
 6. Select **Connect**.

@@ -9,7 +9,6 @@
 * **Start and stop environments** - You can now start and stop your Cloud environments directly from the project overview, giving you more control over your hosting resources.
 * **Release Umbraco.Cloud.Cms 17.1.0** - Preparation for the upcoming Load Balancing feature.
 * **Proactive Auto-Heal toggle for Dedicated plans** - Projects on a Dedicated plan can now disable Proactive Auto-Heal. This prevents automatic restarts during high-resource workloads such as content imports, index rebuilds, and schema migrations.
-* **Downgrade plan Support** - The "Change plan" feature now supports both upgrades and downgrades for all admin users with self-service plan changes, including environment limit validation and downgrade warnings.
 
 ## Show Windows event logs on the log page
 
@@ -73,17 +72,3 @@ Projects on a Dedicated plan can now disable Proactive Auto-Heal from the **Conf
 With this release, Dedicated plan customers have full control over whether Proactive Auto-Heal is active on their project. If the project is downgraded from a Dedicated plan to a Shared plan, Proactive Auto-Heal is automatically re-enabled.
 
 For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md) documentation.
-
-## Downgrade plan Support
-
-The "Upgrade project" feature has been renamed to "Change plan" and now supports both upgrades and downgrades. All admin users can change plans via the Cloud Portal with a self-service flow.
-
-The flow validates project state before allowing downgrades:
-
-* **Environment limits** — If your project exceeds the target plan's environment limit, the downgrade is blocked. You must remove environments first.
-* **Dedicated resources** — If downgrading from dedicated to shared hosting, you receive a warning that dedicated resources will be switched to shared hosting.
-* **Extra environment costs** — If your project has paid extra environments, you see a warning about ongoing costs for those extra environments.
-
-Downgrades take effect immediately with no refund for the remaining month. From the next billing period, you are charged at the new plan's rate.
-
-For full details, see the [Change Plan](../../build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md) documentation.

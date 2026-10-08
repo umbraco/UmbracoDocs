@@ -10,10 +10,10 @@ This article showcases how to fetch content and media from your Umbraco Heartcor
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en) (version 10 or above) installed on your machine. You can verify the version by running `node -v` in your terminal.
-- Access to an Umbraco Heartcore project.
-- An API key generated from your Heartcore project. For more information, see the [Backoffice Users and API Keys](../getting-started/backoffice-users-and-api-keys.md) article.
-- Basic familiarity with terminal commands and Node.js.
+* [Node.js](https://nodejs.org/en) (version 10 or above) installed on your machine. You can verify the version by running `node -v` in your terminal.
+* Access to an Umbraco Heartcore project.
+* An API key generated from your Heartcore project. For more information, see the [Backoffice Users and API Keys](../getting-started/backoffice-users-and-api-keys.md) article.
+* Basic familiarity with terminal commands and Node.js.
 
 ## Step 1: Create Content and Media in Your Heartcore Project
 
@@ -38,9 +38,8 @@ npm init -y
 
 There are two ways to install the Umbraco Headless Client Library:
 
-- Clone or download the [Umbraco.Headless.Client.NodeJs](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) client library from GitHub, or
-
-- Run the following command in your terminal:
+* Clone or download the [Umbraco.Headless.Client.NodeJs](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs) client library from GitHub, or
+* Run the following command in your terminal:
 
 ```bash
 npm install @umbraco/headless-client
@@ -118,8 +117,8 @@ client.delivery.content.byId(contentId);
 
 In the above examples:
 
-- Use `root()` to fetch all content or media from the root level.
-- Use `children()` or `ancestors()` to navigate the hierarchy and retrieve related content or media items. You can also fetch specific items directly by their ID or URL.
+* Use `root()` to fetch all content or media from the root level.
+* Use `children()` or `ancestors()` to navigate the hierarchy and retrieve related content or media items. You can also fetch specific items directly by their ID or URL.
 
 For a full list of available methods, visit the [Content Delivery API sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-delivery).
 
@@ -135,13 +134,13 @@ client.management.contentType.all()
 
 In the above examples:
 
-- Use `create()` to add new content.
-- Use `all()` to fetch all available content types.
+* Use `create()` to add new content.
+* Use `all()` to fetch all available content types.
 
 For a full list of available methods, visit the [Content Management API sample repository on GitHub](https://github.com/umbraco/Umbraco.Headless.Client.NodeJs#content-management).
 
 ## References
 
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Umbraco Heartcore API Documentation](../api-documentation/README.md)
-- [Create an Umbraco Heartcore project](../getting-started/creating-a-heartcore-project.md)
+* [Node.js Documentation](https://nodejs.org/en/docs/)
+* [Umbraco Heartcore API Documentation](../api-documentation/api-documentation/)
+* [Create an Umbraco Heartcore project](../getting-started/creating-a-heartcore-project.md)

@@ -23,7 +23,7 @@ User Permissions for each environment can be set in the **Edit Team** page from 
 
 You can view the user group memberships of the project’s backoffice users. Currently, you can manage the backoffice user groups of a user through the Umbraco backoffice. A backoffice user is only created once the user logs into the backoffice of the project for the first time.
 
-![Backoffice User Groups](<../../../.gitbook/assets/Umbraco-Backoffice-User-Groups (1).png>)
+![Backoffice User Groups](../../../.gitbook/assets/Umbraco-Backoffice-User-Groups.png)
 
 ## Team Members Pending Invitation
 
@@ -36,7 +36,15 @@ Find invitation details in the **Member(s) who still need to accept the project 
 * Resend the invitation.
 * Delete the invitation.
 
-![Team Members Pending Invitation](<../../../.gitbook/assets/Pending-Project-Invites (1).png>)
+![Team Members Pending Invitation](../../../.gitbook/assets/Pending-Project-Invites.png)
+
+## Removing Team Members
+
+When you remove a team member from a project, Umbraco Cloud disables and anonymizes the corresponding backoffice user across all environments. The name and email are replaced with anonymized values, and the user can no longer sign in.
+
+Audit history, content history, and any other records that reference the removed user are preserved. The history points to the anonymized user, so the audit trail stays intact without retaining personal data.
+
+Umbraco does not allow the deletion of a backoffice user who has logged in at least once. Anonymization is the supported method for clearing personal data from a project for users who have signed in.
 
 ## [Technical Contacts](technical-contact.md)
 

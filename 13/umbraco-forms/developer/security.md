@@ -31,7 +31,7 @@ If a single start folder is selected, that will act as the root of the tree view
 
 If more than one start folder is selected, they will appear underneath the root of the tree view of forms. The user will have access to only those folders and their descendant folders and forms.
 
-![Start folders](images/user-start-folders.png)
+![Start folders](../.gitbook/assets/user-start-folders.png)
 
 ## User group based permissions
 
@@ -73,7 +73,7 @@ In introducing the user group based permissions, we've taken care to ensure a mi
 * The effective permissions for each user will now be derived from their user groups.
 * If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
 
-![User group permissions](images/user-group-permissions.png)
+![User group permissions](../.gitbook/assets/user-group-permissions.png)
 
 ## Handling Sensitive Data in Umbraco Forms
 
@@ -92,7 +92,7 @@ To allow users to view and handle sensitive data in Umbraco Forms, you must assi
 5. Click **Submit**.
 6. Click **Save**.
 
-![Assigning Users to the Sensitive Data Group](images/assign-sensitive-data-to-user.png)
+![Assigning Users to the Sensitive Data Group](../.gitbook/assets/assign-sensitive-data-to-user.png)
 
 ### Marking Questions in Forms as Sensitive
 
@@ -107,9 +107,40 @@ To mark questions as sensitive, follow these steps:
 3. Click on the cogwheel icon next to the form field you want to secure.
 4. Enable the **Sensitive data** setting for the field.
 
-![Mark Question as Sensitive](images/mark-field-as-sensitive.png)
+![Mark Question as Sensitive](../.gitbook/assets/mark-field-as-sensitive.png)
 
 5. Click **Submit**.
 6. Click **Save**.
 
-![Sensitive Data on Field](images/sensitive-data-field.png)
+![Sensitive Data on Field](../.gitbook/assets/sensitive-data-field.png)
+
+### What Sensitive Means for File Uploads
+
+A file uploaded to a field marked as sensitive is stored in the media folder like any other form upload. Users outside the Sensitive Data group cannot reach it:
+
+* The file cannot be downloaded from its URL.
+* The file is not included when you use the **Save All Uploaded Files (by entry)** export. The other files on the same entry are still included.
+* The **Save All Uploaded Files (in disk structure)** export is not available at all for a form that collects sensitive uploads.
+
+{% hint style="info" %}
+The stored file path records the form, but not the field the file came from. Umbraco Forms can identify the field only where it reads the form entries as well as the files. This is why the two exports behave differently.
+{% endhint %}
+
+Two consequences are worth knowing before you mark an upload field as sensitive:
+
+* If a form has both a sensitive upload field and an ordinary one, users outside the Sensitive Data group cannot download either file by URL. Use the by-entry export to retrieve the ordinary files.
+* The in-disk-structure export is refused for the whole form, not for individual files.
+
+If you need a form's ordinary attachments to stay available to a wider group of users, collect the sensitive uploads on a separate form.
+
+### Member Details on Form Entries
+
+Where a form is submitted by a logged-in member, the entries list shows a **Member** column with that member's name and email address.
+
+This column is always treated as sensitive data. Only users in the Sensitive Data group see it; everyone else sees the entry without it.
+
+{% hint style="info" %}
+This does not depend on any field setting. It applies to every form that members submit, even one with no fields marked as sensitive.
+{% endhint %}
+
+If you need a wider group of users to see which member submitted an entry, add them to the Sensitive Data group. There is no separate permission for the member column on its own.

@@ -67,7 +67,7 @@ Before running the UaaS.cmd tool you will need the **git clone URL** for your Um
 * Go to the Project in the Portal
 * Copy the URL from "How to connect my machine"
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt="Clone down Umbraco Cloud project"><figcaption><p>Clone down Umbraco Cloud project</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt="Clone down Umbraco Cloud project"><figcaption><p>Clone down Umbraco Cloud project</p></figcaption></figure>
 
 Running the UaaS.cmd tool will download the latest Visual Studio generator (waasp.exe) and prompt you to enter the clone URL for your Project. Then enter the "Namespace", which will be the name of the Visual Studio solution and thus the namespace for the solution as well.
 

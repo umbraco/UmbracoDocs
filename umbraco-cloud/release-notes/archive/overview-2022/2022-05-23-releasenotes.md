@@ -22,7 +22,7 @@ For more information and tips and tricks for handling caching, minification, and
 
 The organization pages have received a facelift and are now based on the Umbraco UI Library web components. In the updated overview, you will find the organization information, members, pending invites, projects of your organization, and the access rights granted to members of the organization
 
-![Members](../../../.gitbook/assets/members.png)
+![Members](../../../.gitbook/assets/Members.png)
 
 We have also added a new flow for inviting a user to an organization, where the user must accept an invitation before the user becomes a member. You already know this flow from inviting a user to a cloud project.
 

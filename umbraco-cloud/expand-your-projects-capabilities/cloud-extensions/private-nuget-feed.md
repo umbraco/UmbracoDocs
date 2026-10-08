@@ -49,10 +49,10 @@ To add the private feed to your Cloud project, follow the steps below:
 2. Add your MyGet credentials as a Shared Secret.
 3. Clone down your Umbraco Cloud project.
 4. Open the project locally and build/spin up the site.
-5. Go to your `NuGet.config` file in the root of your project.
+5. Go to your `NuGet.Config` file in the root of your project.
 6. Add the below configuration to the file:
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <packageSources>
@@ -81,3 +81,68 @@ In the above code example, you can see that we are using the Key: "`MYGET_PASSWO
 Congratulations, you've successfully set up a private NuGet feed with Umbraco Cloud using the cloud secrets management feature!
 
 You can now use this feed to host and manage your own internal libraries or proprietary software. If you want to learn more about NuGet and how to use it, check out the official [NuGet documentation](https://learn.microsoft.com/en-us/nuget/).
+
+## Hints to use Azure DevOps private feeds
+
+For Azure DevOps feeds, it is recommended to use Personal Access Tokens (PAT). The PAT must have at a minimum the "Packaging (Read)" permission to consume packages from the feed.
+
+{% hint style="info" %}
+PAT-tokens in Azure DevOps have an expiration date. Make sure to update your secret when you rotate your tokens.
+{% endhint %}
+
+Below is an example `NuGet.Config` configured for an Azure DevOps private feed:
+
+{% code title="NuGet.Config" %}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    <add key="Team_Internal" value="https://pkgs.dev.azure.com/AwesomeOrganization/_packaging/Team_Internal/nuget/v3/index.json" />
+  </packageSources>
+
+  <packageSourceCredentials>
+    <Team_Internal>
+      <add key="Username" value="placeholder" />
+      <add key="ClearTextPassword" value="%TEAM_INTERNAL_PAT_TOKEN%" />
+    </Team_Internal>
+  </packageSourceCredentials>
+
+  <packageSourceMapping>
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+    <packageSource key="Team_Internal" >
+      <package pattern="AwesomeOrganizationPackagePrefix*" />
+    </packageSource>
+  </packageSourceMapping>
+  
+</configuration>
+```
+{% endcode %}
+
+### Troubleshooting
+
+If you experience any errors with restores on Umbraco Cloud and private NuGet feeds, there are a couple of things to consider:
+
+* Make sure passwords, API keys, or PAT-tokens are correct.
+* Secret values may have changed, but have not been updated in Secrets Management.
+* In MyGet, the username is not an email address but the account username associated with the API key.
+* PAT-tokens in Azure DevOps can expire - check if the value needs to be rotated. Remember to update the secret in the Cloud Portal.
+* PAT-tokens in Azure DevOps need to have the right kind of permission. Make sure it has the 'Read' permission on 'Packaging'.
+
+### Test the connection to a private feed locally
+
+It is a good idea to validate the connection to a feed locally before using it on Cloud.
+
+It is usually easier to troubleshoot if there are connection issues or problems with credentials.
+
+You need to update the `NuGet.Config` file by replacing any placeholder values with valid credentials.
+
+{% hint style="info" %}
+Do not commit the `NuGet.Config` file with credentials in plain text.
+{% endhint %}
+
+Run the command: `dotnet restore --force --no-cache -v detailed`.
+
+If there are any errors, start by going through the troubleshooting section above.

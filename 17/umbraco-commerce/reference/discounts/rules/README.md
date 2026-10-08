@@ -6,7 +6,7 @@ description: Discount rule options in Umbraco Commerce.
 
 Discount rules define the conditions that must be met for a discount to be applied to an order. The rule system in Umbraco Commerce is highly flexible, allowing you to create single-condition rules or complex multi-layered logic structures.
 
-![Discount Rules Overview](../../../.gitbook/assets/discount-rules-config.png)
+![Discount Rules Overview](<../../../.gitbook/assets/discount-rules-config (1).png>)
 
 ## How Rules Work
 
@@ -23,7 +23,7 @@ The Group rule acts as a container for other rules, allowing you to combine mult
 * **Match Type** - Choose between `ALL`, `ANY`, or `FUNNEL` logic
 * **Child Rules** - Add one or more rules to the group
 
-![Group Rule Configuration](../../../.gitbook/assets/group-discount-type.png)
+![Group Rule Configuration](<../../../.gitbook/assets/group-discount-type (1).png>)
 
 **Match Types:**
 
@@ -48,7 +48,7 @@ Checks if the order's billing or shipping country matches specific countries.
 * **Country** - Select a country to match against
 * **Country Source** - Choose between billing or shipping address
 
-![Country Rule Configuration](../../../.gitbook/assets/country-discount-type-config.png)
+![Country Rule Configuration](<../../../.gitbook/assets/country-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -66,7 +66,7 @@ Verifies if the customer belongs to specific member groups in Umbraco.
 * **Member Groups** - Select one or more member groups
 * **Match Type** - Customer must be in `ANY` or `ALL` selected groups
 
-![Member Group Rule Configuration](../../../.gitbook/assets/member-group-discount-type-config.png)
+![Member Group Rule Configuration](<../../../.gitbook/assets/member-group-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -86,7 +86,7 @@ Compares the total order value against specified amounts.
 * **Amounts** - The values per currency to compare against
 * **Amounts Include Tax** - Whether the above amounts include tax (defaults to the stores tax setting)
 
-![Order Amount Rule Configuration](../../../.gitbook/assets/order-amount-discount-type-config.png)
+![Order Amount Rule Configuration](<../../../.gitbook/assets/order-amount-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -107,7 +107,7 @@ Evaluates the total value of specific order lines that match certain criteria.
 * **Amounts Include Tax** - Whether the above amounts include tax (defaults to the stores tax setting)
 * **Accumulative** - Whether to sum matching lines or evaluate individually
 
-![Order Line Amount Rule Configuration](../../../.gitbook/assets/order-line-amount-discount-type-config.png)
+![Order Line Amount Rule Configuration](<../../../.gitbook/assets/order-line-amount-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -123,7 +123,7 @@ Checks if specific products are present in the order lines.
 
 * **Product** - The product to match against (search by name or SKU)
 
-![Order Line Product Rule Configuration](../../../.gitbook/assets/order-line-product-discount-type-config.png)
+![Order Line Product Rule Configuration](<../../../.gitbook/assets/order-line-product-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -139,7 +139,7 @@ Evaluates whether products from specific categories are in the order.
 
 * **Category** - The category to match against
 
-![Order Line Product Category Rule Configuration](../../../.gitbook/assets/order-line-product-category-discount-type-config.png)
+![Order Line Product Category Rule Configuration](<../../../.gitbook/assets/order-line-product-category-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -155,7 +155,7 @@ Checks if products from specific sections of the website are in the order.
 
 * **Section** - The section of the website under which a product must be organized
 
-![Order Line Product Section Rule Configuration](../../../.gitbook/assets/order-line-product-section-discount-type-config.png)
+![Order Line Product Section Rule Configuration](<../../../.gitbook/assets/order-line-product-section-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -174,7 +174,7 @@ Compares the quantity of specific order lines against target values.
 * **Quantity** - The quantity to compare against
 * **Accumulative** - Whether to sum matching lines or evaluate individually
 
-![Order Line Quantity Rule Configuration](../../../.gitbook/assets/order-line-quantity-discount-type-config.png)
+![Order Line Quantity Rule Configuration](<../../../.gitbook/assets/order-line-quantity-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -191,7 +191,7 @@ Verifies if a specific payment method is being used for the order.
 
 * **Payment Method** - Select the payment method to match against
 
-![Payment Method Rule Configuration](../../../.gitbook/assets/payment-method-discount-type-config.png)
+![Payment Method Rule Configuration](<../../../.gitbook/assets/payment-method-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -208,7 +208,7 @@ Checks if a specific shipping method is selected for the order.
 
 * **Shipping Method** - Select the shipping method to match against
 
-![Shipping Method Rule Configuration](../../../.gitbook/assets/shipping-method-discount-type-config.png)
+![Shipping Method Rule Configuration](<../../../.gitbook/assets/shipping-method-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -228,7 +228,7 @@ Evaluates custom properties on orders or order lines against specified values.
 * **Comparison Operator** - Equals, contains, greater than, etc.
 * **Property Value** - The value to compare against
 
-![Property Rule Configuration](../../../.gitbook/assets/property-discount-type-config.png)
+![Property Rule Configuration](<../../../.gitbook/assets/property-discount-type-config (1).png>)
 
 **Use Cases:**
 
@@ -249,7 +249,7 @@ All child rules within the group must be satisfied for the group to pass. This c
   * Member Group Rule: "VIP Members"
   * Order Amount Rule: Greater than £100
 
-![All Logic Example](../../../.gitbook/assets/group-discount-type-all-config.png)
+![All Logic Example](<../../../.gitbook/assets/group-discount-type-all-config (1).png>)
 
 ### `ANY` Logic
 
@@ -261,7 +261,7 @@ At least one child rule within the group must be satisfied for the group to pass
   * Member Group Rule: "Students"
   * Member Group Rule: "Senior Citizens"
 
-![Any Logic Example](../../../.gitbook/assets/group-discount-type-any-config.png)
+![Any Logic Example](<../../../.gitbook/assets/group-discount-type-any-config (1).png>)
 
 ### `FUNNEL` Logic
 
@@ -275,7 +275,7 @@ Rules are applied sequentially, with order lines that match the first rule being
 
 The funnel logic first identifies orders with accessories, then checks if the quantity of those accessories exceeds 2 to apply the discount.
 
-![Funnel Logic Example](../../../.gitbook/assets/group-discount-type-funnel-config.png)
+![Funnel Logic Example](<../../../.gitbook/assets/group-discount-type-funnel-config (1).png>)
 
 ## Rule Blocking Options
 
@@ -286,7 +286,7 @@ Rules can include blocking conditions to prevent discount stacking and ensure ce
 * **Block further discounts from being applied** - Prevent other discounts from applying if this one is used
 * **Block discount if discounts already apply** - Don't apply this discount if others are already active
 
-![Rule Blocking Options](../../../.gitbook/assets/discount-rule-blocking-options.png)
+![Rule Blocking Options](<../../../.gitbook/assets/discount-rule-blocking-options (1).png>)
 
 **Use Cases:**
 

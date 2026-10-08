@@ -129,7 +129,7 @@ public async Task<IActionResult> AddToCart(AddToCartDto postModel)
 
 On the front end, when the user clicks the "Add to Basket" button, the product will be added to the cart.
 
-![Add to Cart Success](../../.gitbook/assets/product_page_with_notification.png)
+![Add to Cart Success](<../../.gitbook/assets/product_page_with_notification (1).png>)
 
 ### Showing a Cart Count
 
@@ -293,7 +293,7 @@ You can create a new view that lists the items in the cart and allows the user t
 3. Access the frontend of the website.
 4. Navigate to the cart page to view the items in the cart.
 
-![Cart Page](../../.gitbook/assets/cart.png)
+![Cart Page](<../../.gitbook/assets/cart (1).png>)
 
 ## Updating a Cart Item
 

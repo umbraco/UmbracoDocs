@@ -12,7 +12,9 @@ Addon
 addon
 agentic
 ajax
+alibaba
 allowlist
+allowlisting
 altTemplate
 amet
 Amongst
@@ -34,9 +36,11 @@ APIs
 API's
 App_Code
 App_Plugins
+approvers
 appSetting
 appsetting
 appsettings
+Aprimo
 ARRAffinity
 articleContent
 articlesTitle
@@ -45,17 +49,25 @@ assignDomain
 async
 Auditability
 authorizer
+authorizers
 authProvider
 Axios
 autocomplete
 autocompletion
 autogenerate
+Automate's
+Automations
+automations
 Autoplay
 backend
 Backoffice
 Backoffice
 backoffice
 Backoffices
+backplane
+backport
+backported
+backports
 Beeceptor
 Behaviour
 behaviour
@@ -75,7 +87,9 @@ browsable
 buildable
 bundleId
 bundler
+bundlers
 cacheable
+Cachebuster
 camelCase
 camelcase
 cancellationToken
@@ -106,11 +120,15 @@ CMS's
 codebase
 codeblock
 Codegarden
+codegen
 collectionAction
 collectionConfig
 collectionView
+Colour
 colours
+coloured
 Commerce
+CommerceTools
 compareTo
 comparisonOperator
 composable
@@ -171,6 +189,7 @@ dereferencing
 Deregister
 deregister
 deregistration
+deserialization
 deserialize
 deserialized
 deserializing
@@ -197,6 +216,7 @@ EFCore
 elementName
 elementSelector
 emailTemplate
+emerchantpay
 endcode
 endembed
 endfile
@@ -229,6 +249,7 @@ existingPrice
 extensionless
 extranets
 facelift
+failover
 featureName
 fieldset
 fieldsets
@@ -278,6 +299,8 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+heatmaps
+helpdesk
 HMACs
 Homebrew
 hostname
@@ -285,6 +308,7 @@ hostnames
 Hotfix
 hotfix
 hotfixes
+HybridCache
 htmlAttributes
 htmlHelper
 HTTPContext
@@ -329,6 +353,7 @@ inclusivity
 increaseBy
 initializer
 injectable
+inriver
 intalls
 intellisense
 Intellisense
@@ -357,6 +382,7 @@ jQuery
 keyComparer
 keySelector
 Kickstarter
+kimi
 Konstrukt
 Koomen
 KPIs
@@ -382,6 +408,7 @@ masterpages
 Matryoshka
 maxLength
 Maxmind
+MCPs
 Mecanik
 memberGroups
 memberIds
@@ -486,6 +513,8 @@ personalizations
 Pikaday
 pipelineTasks
 Pluralsight
+populator
+populators
 postfixed
 Powershell
 powershell
@@ -529,6 +558,7 @@ queueing
 quicklink
 Quickstart
 quickstart
+qwen
 Radiobox
 Radiobutton
 radiobuttons
@@ -596,8 +626,10 @@ serverless
 serverside
 setBehavior
 shippingMethod
+Shopify
 signout
 signup
+SignalR
 Siroker
 siteName
 Sitename
@@ -635,6 +667,8 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
+subnet
+subnets
 subpage
 subpages
 subtree
@@ -643,6 +677,7 @@ Subtrees
 subview
 subviews
 Subviews
+summarizing
 svg
 SVGs
 symlinked
@@ -687,6 +722,8 @@ tiptapExtension
 TKey
 TModel
 todays
+tooltip
+tooltips
 topbar
 topmenu
 totalRecords
@@ -731,6 +768,7 @@ uncategorized
 uncheck
 Uncomment
 underperforming
+unencrypted
 unfinalized
 Unintuitive
 unioned
@@ -738,6 +776,7 @@ unpackaging
 Unprocessable
 Unpublish
 unpublish
+unpublishes
 unpublishing
 Unredeem
 unredeeming

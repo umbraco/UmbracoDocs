@@ -104,7 +104,7 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 
 In the **Payment Methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt="Payment methods"><figcaption><p>Payment methods</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt="Payment methods"><figcaption><p>Payment methods</p></figcaption></figure>
 
 ### Payment History
 

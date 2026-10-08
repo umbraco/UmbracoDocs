@@ -13,7 +13,7 @@ You can add the Umbraco Engage Analytics JavaScript file to your website by plac
 ```
 
 {% hint style="info" %}
-The following client-side tracking script loading types are currently not supported: "async" or "defer".
+Support for the "async" and "defer" script loading types was added in Umbraco Engage 13.6.0.
 {% endhint %}
 
 When this file is included, Umbraco Engage sends the following data to the server before the visitor navigates to another page:

@@ -2,7 +2,7 @@
 
 To view the Entries for each Form, go to the Form and click on the **Entries** tab.
 
-![Tree](../.gitbook/assets/tree-v14.png)
+![Tree](../.gitbook/assets/tree.png)
 
 ## Video overview
 
@@ -14,7 +14,7 @@ Watch this video to learn how to manage entries submitted via Umbraco Forms.
 
 When accessing the Entries viewer, you will be able to see all the entries submitted via the Form.
 
-![Entries viewer](../.gitbook/assets/tree-v14.png)
+![Entries viewer](../.gitbook/assets/tree.png)
 
 ### Viewing the Entries
 
@@ -45,7 +45,9 @@ To export all the entries from your Form:
 5. Click **Export**.
 6. Click **Save**.
 
-If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
+If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organized by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
+
+Date values in an export follow the culture the entry was submitted with. An entry submitted on a Danish site exports its dates in Danish format, whatever language you use in the backoffice. A form with entries from more than one culture therefore holds more than one date format in the same column.
 
 ## Analytics
 

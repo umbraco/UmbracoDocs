@@ -1,0 +1,148 @@
+---
+description: >-
+    Contextual Copilot provides an interactive assistant sidebar in the Umbraco backoffice, scoped to the item you have open.
+---
+
+# Contextual Copilot
+
+Contextual Copilot is an AI-powered assistant that appears as a sidebar in the Umbraco backoffice. It provides conversational AI capabilities directly within your content editing workflow.
+
+{% hint style="info" %}
+In the backoffice itself, this sidebar is labeled **Copilot**. This documentation uses **Contextual Copilot** to distinguish it from [Copilot Workspace](../copilot-workspace/README.md), a separate add-on for broader, cross-site conversations. This is a documentation naming convention only, not a rename of the product or UI.
+{% endhint %}
+
+## Accessing Contextual Copilot
+
+Contextual Copilot is available in the **Content** and **Media** sections. Open a document or media item and look for the floating **AI Assistant** button in the bottom-right corner of the editing workspace:
+
+1. Open the content or media item you want help with
+2. Click the floating button to toggle the sidebar open/closed
+3. The button shows an active state when the sidebar is open
+
+{% hint style="info" %}
+The Contextual Copilot button only appears in sections where it's relevant (Content and Media), and only once you have a document or media item open. It is not shown in the backoffice header -- it floats over the workspace of the item you're editing.
+{% endhint %}
+
+![The Contextual Copilot sidebar showing a conversation in the Umbraco backoffice](../../.gitbook/assets/copilot-sidebar.png)
+
+## Contextual Scope
+
+Contextual Copilot is intentionally scoped to the item you currently have open. It can read across your site for reference, for example to check other content for consistency. However, it only makes changes to the item currently open in the editor.
+
+Contextual Copilot **cannot** perform destructive, site-wide operations. This includes creating new pages, or publishing or deleting content or media beyond what you've asked it to change. If you ask it to do something outside this scope, it explains the limitation and points you to the standard backoffice workflow instead:
+
+![Contextual Copilot explaining it can only edit the currently open item, with steps to create a new page manually](../../.gitbook/assets/copilot-contextual-limit.png)
+
+For broader, multi-page or site-wide AI-assisted work -- including tasks that create or publish content across the site -- see [Copilot Workspace](../copilot-workspace/README.md).
+
+## Features
+
+### Conversational Interface
+
+Chat naturally with the AI assistant:
+
+- Ask questions about your content
+- Request suggestions and improvements
+- Get help with writing tasks
+- Multi-turn conversations maintain context
+
+### Content Awareness
+
+Contextual Copilot understands your current editing context:
+
+- Current content item being edited
+- Property values and structure
+- Content type information
+- Media items and relationships
+
+When the open item is a media item with a supported file, Contextual Copilot also reads the file's content. This means you can ask about a document without copying its text into the chat. Supported file types:
+
+| File type     | Extensions                 |
+| ------------- | -------------------------- |
+| Plain text    | `.txt`, `.md`, `.csv`      |
+| Office files  | `.docx`, `.xlsx`, `.pptx`  |
+
+Other files, such as PDFs, only share the media item's name and properties. Audio files are not transcribed as context, so opening one never triggers a paid transcription. Extracted text is capped at 100,000 characters.
+
+### AI-Generated Notice
+
+After the first message in a conversation, the chat shows the notice "Responses are AI-generated and may be inaccurate." The same notice appears in [Copilot Workspace](../copilot-workspace/README.md) conversations. Administrators control whether it is always shown, dismissible, or hidden with the [AI Disclosure Notice](../../backoffice/managing-settings.md#ai-disclosure-notice) setting.
+
+### Tool Execution
+
+Agents can execute tools to interact with Umbraco:
+
+- Read property values
+- Update content fields
+- Navigate to related content
+- Perform custom actions
+
+{% hint style="warning" %}
+
+Contextual Copilot always restricts destructive backend tools. This includes creating, publishing, or deleting content or media outside the open item. This restriction is enforced by the Contextual Copilot surface itself, not by agent configuration, and cannot be overridden. It applies regardless of the tool permissions granted to the agent. See [Contextual Scope](#contextual-scope) above.
+
+{% endhint %}
+
+### Human-in-the-Loop Approval
+
+For sensitive operations on the item you have open -- such as saving and publishing changes Contextual Copilot has staged -- it requests confirmation before proceeding:
+
+The approval workflow ensures editors maintain control over content changes.
+
+![The Human-in-the-Loop approval dialog with Approve and Deny buttons](../../.gitbook/assets/copilot-hitl-approval.png)
+
+## Configuring Contextual Copilot Agents
+
+Agents power Contextual Copilot's capabilities. Any agent in the **AI > Agents** backoffice section that is associated with the **Copilot** surface becomes available inside the sidebar.
+
+### Opting an agent into Contextual Copilot
+
+The Contextual Copilot package registers an agent surface via `CopilotAgentSurface` with `SurfaceId = "copilot"`. When editing an agent in the backoffice, tick **Copilot** in the **Surfaces** selection to expose it to the sidebar. This is the option registered by the Contextual Copilot add-on, as distinct from the **Copilot Workspace** option next to it. Internally this adds `"copilot"` to the agent's `SurfaceIds` collection, and the sidebar loads agents filtered by that surface ID.
+
+If only one agent is associated with the Contextual Copilot surface, the sidebar uses it directly. If multiple agents are available, Contextual Copilot uses Auto mode to route each prompt (see below).
+
+### Agent Instructions
+
+Configure agent instructions for Contextual Copilot behavior:
+
+```
+You are an AI assistant helping editors create content in Umbraco.
+
+Your capabilities:
+- Suggest improvements to content
+- Help with writing and editing
+- Answer questions about the current page
+- Update properties when asked
+
+Always be helpful and concise.
+```
+
+## Auto Mode and Agent Routing
+
+When multiple agents are available on a surface, Contextual Copilot uses "Auto" mode to select an agent for each user message. [Copilot Workspace](../copilot-workspace/README.md) uses the same Auto mode mechanism for its own surface.
+
+Auto mode first filters the agents to those that are active and in scope for the current context. Auto mode then runs a chain of agent selectors in order until one picks an agent:
+
+- **LLM selector (default):** sends the user's message to a classifier model, which picks an agent based on each agent's name and description.
+- **Sticky selector (opt-in):** keeps the previous turn's agent for the rest of the conversation.
+- **Custom selectors:** your own rules, registered in code before or after the built-in selector.
+
+If only one agent is available, it is used without running any selector. If no selector picks an agent, the first available agent is used.
+
+For details on writing selectors and enabling the sticky selector, see [Agent Selection](../../extending/agent-selection.md).
+
+### Classifier Profile
+
+By default, the LLM selector's classifier uses the default chat profile, which may be a powerful (and expensive) model. Since classification only returns a single GUID, you can configure a cheaper or faster model specifically for this task:
+
+1. Navigate to the **AI** section > **Settings**
+2. Set the **Classifier Chat Profile** to a lightweight model (e.g., GPT-4o Mini, Claude Haiku)
+3. Save
+
+See [Settings](../../concepts/settings.md#classifier-chat-profile) for more details on the fallback chain.
+
+## Related
+
+- [Copilot Workspace](../copilot-workspace/README.md) - Broader, cross-site AI conversations with persisted history and projects
+- [Agent Runtime](../agent/README.md) - Backend agent functionality
+- [Frontend Tools](frontend-tools.md) - Custom tool integrations

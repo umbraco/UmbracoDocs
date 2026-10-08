@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.3.3
+
+* Removed the upper version limit on some Microsoft.Extensions packages that was blocking builds needing a newer Azure.Identity
+
 #### 13.3.0
 
 * Added order cache optimization

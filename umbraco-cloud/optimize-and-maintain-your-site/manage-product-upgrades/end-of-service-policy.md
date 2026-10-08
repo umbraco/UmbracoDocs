@@ -73,7 +73,6 @@ By defining a clear process and timeline, every customer and partner can plan up
 | Version       | Release date           | Release Type | End-of-Life           | End of XLTS           | End-of-Service (Umbraco Cloud) |
 |---------------|------------------------|--------------|-----------------------|-----------------------|--------------------------------|
 | **Umbraco 17** | **November 27, 2025** | **LTS**      | **November 27, 2028** | **November 27, 2030** | **November 27, 2031**          |
-| Umbraco 16    | June 12, 2025          | STS          | June 12, 2026         | *LTS Only*            | December 14, 2029              |
 | **Umbraco 13** | **December 14, 2023** | **LTS**      | **December 14, 2026** | **December 14, 2028** | **December 14, 2029**          |
 
 
@@ -91,6 +90,7 @@ By defining a clear process and timeline, every customer and partner can plan up
 
 | Version        | Release date          | Release Type | End-of-Life            | End of XLTS           | End-of-Service (Umbraco Cloud) |
 |----------------|-----------------------|--------------|------------------------|-----------------------|--------------------------------|
+| Umbraco 16     | June 12, 2025         | STS          | June 12, 2026          | *LTS Only*            | December 14, 2029              |
 | Umbraco 15     | November 14, 2024     | STS          | November 14, 2025      | *LTS Only*            | December 14, 2029              |
 | Umbraco 14     | May 30, 2024          | STS          | May 30, 2025           | *LTS Only*            | December 14, 2029              |
 | Umbraco 12     | June 29, 2023         | STS          | June 29, 2024          | *LTS Only*            | June 16, 2028                  |

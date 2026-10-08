@@ -21,7 +21,7 @@ Azure Blob Storage is an external storage system, that the Umbraco Cloud service
 
 When cloning a Cloud environment to your local machine, run a content restore from the backoffice. This will retrieve a copy of all the media files from the Azure Blob Storage container connected to that environment.
 
-You can learn more about how this works in the [Restoring content](../deployment/restoring-content/) article.
+You can learn more about how this works in the [Restoring content](../deployment/restoring-content.md) article.
 
 Adding new media files to your local clone automatically uploads to the Azure Blob Storage container connected to the environment you are deploying to.
 
@@ -44,11 +44,9 @@ Instead, you will find a `project.assets.json` file in the `obj` folder. This fi
 In some cases, you might want to connect to your Azure Blob Storage container for the environments on your Umbraco Cloud project. This could be to clean up unwanted media files or to download the current contents of the library.
 
 {% hint style="info" %}
-
 Instead of connecting to Azure Blob Storage, you can clone your Cloud environment locally to access the files.
 
 You should only use the following approach when you do not have the option to clone down the environment to your local machine.
-
 {% endhint %}
 
 To do this, you need to know some details about the connection between the environment and the Azure Blob Storage containers. Below are the steps you need to follow, to locate the necessary variables:

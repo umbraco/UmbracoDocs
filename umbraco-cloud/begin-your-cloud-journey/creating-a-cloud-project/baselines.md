@@ -60,8 +60,12 @@ If you do not see the content, reload the content tree once the restore is compl
 
 ## Related articles
 
+{% content-ref url="../../build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md" %}
+[Manage Baseline Children](../../build-and-customize-your-solution/handle-deployments-and-environments/manage-baseline-children.md)
+{% endcontent-ref %}
+
 {% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md" %}
-[Pushing upgrades to a Child Project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
+[Pushing Upgrades to a Child Project](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/upgrading-child-projects.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/configuration-files.md" %}
@@ -70,8 +74,4 @@ If you do not see the content, reload the content tree once the restore is compl
 
 {% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/" %}
 [Baseline Merge Conflicts](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/)
-{% endcontent-ref %}
-
-{% content-ref url="../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md" %}
-[Break the baseline reference](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/baseline-merge-conflicts/break-baseline.md)
 {% endcontent-ref %}

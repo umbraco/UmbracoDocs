@@ -12,7 +12,7 @@ Since the latest version of uMarketingSuite runs on Umbraco 13, upgrading to Umb
 1. **Migrate from uMarketingSuite to Umbraco Engage** (while still on Umbraco 13).
 2. **Upgrade Umbraco CMS and Umbraco Engage** from version 13 to version 17.
 
-**Important:** This migration guide does **not** cover the upgrade process from Umbraco 13 to 17. For guidance on upgrading Umbraco CMS, see the [Version Specific Upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/version-specific#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
+**Important:** This guide covers step 1. For step 2, see the [Find Your Upgrade Path](https://docs.umbraco.com/umbraco-cms/17.latest/get-started/upgrading-and-migrating/find-your-upgrade-path#id-13.latest-to-the-latest-version) article in the Umbraco CMS Documentation.
 {% endhint %}
 
 Migrating directly from uMarketingSuite on Umbraco 13 to Umbraco Engage on Umbraco 17 is technically possible. However, it is recommended to split the process:
@@ -323,9 +323,9 @@ Umbraco Engage will automatically convert cookies previously set by uMarketingSu
 With the migration complete, there are a few more steps to ensure everything continues to work as expected.
 
 1. Validate the new license:
-   * Go to Settings -> Licenses in the backoffice and click **Validate**.
+   * Go to **Settings** > **Licenses** in the backoffice and click **Validate**.
 2. Generate the reporting data:
-   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Go to **Settings** > **Engage** > **Configuration** in the backoffice.
    * Select the Reporting tab.
    * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 3. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
@@ -343,9 +343,9 @@ Repeat the steps below for each environment that needs to be migrated.
 5. Deploy the updated code from the migrated local environment.
 6. Start the site.
 7. Validate the new license, if this has not happened already:
-   * Go to Settings -> Licenses in the backoffice and click **Validate**.
+   * Go to **Settings** > **Licenses** in the backoffice and click **Validate**.
 8. Generate the reporting data
-   * Go to Settings -> Engage -> Configuration in the backoffice.
+   * Go to **Settings** > **Engage** > **Configuration** in the backoffice.
    * Select the Reporting tab.
    * Click the Regenerate button. Depending on the number of page views in the database, this could take a while.
 9. Use the [Troubleshooting Installs](../installation/troubleshooting-installs.md) guide to verify that everything works as expected.
@@ -382,7 +382,7 @@ If you are using the uMarketingSuite.Headless package, applications that use the
 
 The v1 Engage APIs (v13.0.0 of Umbraco Engage) maintain the same functionality as the v1 uMarketingSuite APIs. For more details on the API, refer to the Swagger documentation provided by Umbraco Engage.
 
-You can install the Umbraco Engage Headless add-on package using the following command:
+You can install the Umbraco Engage Headless package using the following command:
 
 ```bash
 dotnet add package Umbraco.Engage.Headless

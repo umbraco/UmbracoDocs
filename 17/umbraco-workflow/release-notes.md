@@ -16,6 +16,207 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 17, including all changes for this version.
 
+### [17.5.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.2) (September 30 2026)
+
+* Ensures entity bulk actions are included in Workflow's action-visibility condition [#184](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/184)
+
+### [17.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.1) (September 29 2026)
+
+* Tightens `lock-active-content` setting. When active, content will now be locked at submit, rather than after the first approval. This ensures the comment added at submit always aligns with the content being approved [#180](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/180)
+* Normalizes approval group languages when migrating from v13 [#181](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/181)
+* Fixes broken collection layout in latest Firefox [#182](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/182)
+* Decouples Workflow administrators from the CMS Administrator user group. Workflow administrators can now be assigned from the Workflow settings. A migration populates this setting with the membership of the CMS Administrators group [#183](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/183)
+
+### 17.5.0 (September 24 2026)
+
+{% hint style="warning" %}
+Umbraco Workflow 17.5.0 requires Umbraco CMS 17.7.0 or later.
+{% endhint %}
+
+The changes below are in addition to those in the release candidates. For everything else in this release, see the `17.5.0-rc` notes.
+
+#### Adds the Content Calendar dashboard
+
+A Content Calendar dashboard is now available in the Content section. It shows scheduled content, Release Sets, and Release Set items by month or week, with links through to each Release Set.
+
+Access is controlled by the new **Read Content Calendar** user permission, which must be granted to user groups that need the dashboard.
+
+#### Bug fixes and other changes
+
+* Fixes items and tasks being left behind when a Release Set is deleted
+* Fixes documents that vary by segment only being treated as culture-variant when initiating a workflow
+* Returns an accurate error when no workflow is initiated because every requested culture already has an active workflow. Error notifications now show the server's message.
+* Fixes the "Unable to initiate workflow" notification showing an empty variant list for invariant content
+* Updates MailKit to 4.17.0
+
+### 17.5.0-rc4 (September 18 2026)
+
+* Fixes the document Publish and Unpublish entity actions skipping Workflow's visibility rules, which could make them available to users who should request approval instead
+
+### 17.5.0-rc3 (September 11 2026)
+
+* Replaces the `humanize` dependency with the backoffice's native duration localization in the workflow activity chart
+
+### 17.5.0-rc2 (September 10 2026)
+
+* Fixes inherited approval group members falling out of sync when a CMS user is saved or a user group is deleted
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168):
+  * Toggle (boolean) properties and other config-driven editors not receiving their data type configuration
+  * Searches by data type or property editor ignoring properties excluded from the search
+  * Searches built only from filters returning an error instead of results
+  * Block List and Block Grid properties now search their raw value through a text input
+  * Results now use a stable, relevance-based order
+* Adds pagination to the Advanced Search results table
+
+### [17.5.0-rc1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.0-rc1) (September 7 2026)
+
+* Fixes "View differences" on a workflow task returning an unhelpful error instead of a licensing message when Workflow is unlicensed [#176](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/176)
+* Restructures the backoffice frontend build into per-feature packages:
+  * Fixes asset caching not invalidating after an upgrade [#172](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/172) 
+  * Fixes Workflow tab intermittently failing to render [#175](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/175)
+* Fixes group approval emails missing content when the group has no language set [#173](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/173)
+* Fixes several Advanced Search issues [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168): 
+  * Empty value inputs for config-driven property editors
+  * Invariant properties incorrectly treated as empty when cultures are selected
+  * ContentPicker/MultiNodeTreePicker searches returning unrelated results
+* Adds a "Clear selection" action and a loading indicator to the Advanced Search dashboard [#168](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/168)
+* Fixes due-date save and permission gaps in document-editor content reviews
+* Enforces mandatory workflow comments server-side on approve/reject, closing a gap in the external approval and email reply channels
+
+### 17.4.2 (August 31 2026)
+
+* Fixes culture resolution for external approval using an invariant workflow on a culture-variant document.
+* Further improvements to segment display in the change description element.
+
+### [17.4.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.1)  (August 25 2026)
+
+* Fixes a bug where segments associated with a workflow process could be truncated [#170](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/170)
+* Fixes a 13-to-17 migration bug incorrectly referencing the `WorkflowUserGroups` table [#169](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/169)
+* Improves display of segments associated with a workflow process, handling documents with multiple segments. Segments are now mapped to their name, rather than displaying the alias only.
+
+### [17.4.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0)  (August 20 2026)
+
+#### Adds approval by magic link and email reply
+
+Reviewers can now approve or reject a workflow task directly from the notification email. 
+
+Tasks can be approved in two ways:
+* By opening a secure, time-limited link without logging in to the backoffice
+* By replying to the email with an approve or reject instruction
+
+New health checks validate the action-by-email and external approval configuration.
+
+This feature requires a license. Check the [External Approval](getting-started/external-approval.md) article for more information.
+
+#### Adds Date mode for content reviews
+
+Content review due dates can be set to a specific date instead of only a recurring period. When editing an existing configuration, the due date can be regenerated from the current date or from the content's last published date.
+
+#### Workflow actions moved to extensions
+
+Approve, reject, cancel, and resubmit actions, along with the preview, diff, and attachment buttons, are now implemented as extensions. This lays the groundwork for third-party actions to be registered alongside the built-in ones.
+
+#### Bug fixes and other changes
+
+* Fixes a SQL syntax error when loading approval groups under cultures whose negative sign is not the ASCII hyphen, such as `sv-SE` [#165](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/165)
+* Fixes errors when opening Settings > Workflow > Content approvals > Configuration on an unlicensed install, including a settings tree node incorrectly labeled `workflow_workflow` [#164](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/164)
+* Fixes advanced search so toggle properties can be searched and read-only label properties correctly show a search input [#163](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/163)
+* Fixes a bug where licensed settings values were reset to their defaults when saved from an unlicensed install
+* Fixes tooltip positioning in the Advanced Search dashboard
+* Fixes the reject dialog showing a "reject to group" option when rejecting at the first stage of a workflow
+* Fixes the workflow modal breaking when SignalR triggers a rebuild of its host element
+* Adds health checks for email notification configuration, action-by-email configuration, email template integrity, and external approval configuration
+* Localizes email templates at render time instead of maintaining a separate template per culture
+* Normalizes stored content review culture values for invariant content
+* Fixes orphaned data rows left behind when deleting an alternate version
+
+### 17.3.6 (July 24 2026)
+
+* Fixes a bug where teardown of a required context was not correctly guarded in a specific code path, leaving Workflow unresponsive.
+
+### [17.3.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.5) (July 17 2026)
+
+* Ensures approval group language is unwrapped from JSON array when sending notifications to a group email [#162](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/162)
+
+### [17.3.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.4) (July 9 2026)
+
+#### Improvements to reminder email notifications
+* Emails correctly follow rejection target in rejected workflows [#154](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/154)
+* Reminders skip recycled content
+* Hardens cancel-on-delete paths that were potentially leaving active workflows after content deletion
+
+### Extends permissions for initiating approval workflows
+* Fallback permissions are considered when setting action state
+* Adds optional setting to require publish permission, or default to requiring update permission (legacy behaviour)
+
+### Bug fixes and other changes
+
+* Fixes a bug where the workspace view never loaded for segmented culture-invariant documents [#159](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/159)
+* Fixes a bug where Document Type content review configuration was not properly persisted [#158](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/158)
+* Fixes a bug where the `Lock active content` setting was not correctly applied [#161](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/161)
+
+### [17.3.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.3) (June 17 2026)
+
+#### Approval configuration decoupled from settings
+
+New-node approval flow and exclude-nodes configuration have been moved out of the settings save flow. Each configuration type now has its own dedicated API endpoints, repositories, and self-sufficient UI components. This completes the separation of all approval configuration from the global settings object.
+
+Workflow configuration on a content node is now readonly when the node has an active workflow. This prevents changes to configuration while a workflow is in progress.
+
+#### Bug fixes and other changes
+
+* Fixes a bug where orphaned task approvals left over from an earlier migration could cause errors when querying workflow tasks. A new migration cleans up orphaned approval records, and the task query now guards against invalid approvals. [#147](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/147)
+* Fixes a bug where incorrectly created permissions columns were added to the database during the 17.3.1 migration. A new migration removes the obsolete columns. [#154](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/154)
+* Fixes a bug where a workflow task could show as pending for a user who had already approved, when the approval threshold was greater than one.
+* Fixes a bug where the request-approval action was not visible on new (unsaved) content nodes due to missing state in the visibility condition. [#148](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/148), [#153](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/153)
+* Fixes a race condition in the workflow context initialization that could cause approval group configuration to resolve before context data was available.
+* Broadens the content type selection for content reviews, allowing more Document Types to be eligible for review configuration. [#155](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/155)
+
+### [17.3.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.2) (June 4 2026)
+
+#### Document Type approval configuration decoupled from settings
+
+Document Type approval flow configuration has been decoupled from the workflow settings save flow. The configuration component is now self-sufficient, fetching and saving its own data via a dedicated repository and API endpoints. This means:
+
+* Document Type approval flows are managed independently, without saving the entire settings object.
+* New API endpoints for reading, updating, and deleting Document Type configuration (`GET`, `PUT`, `DELETE`).
+* Document Type approval flows can also be managed directly from the approval group roles view, opening a dedicated modal for the selected group's Document Type assignments.
+* A Document Type picker is used to select the type before the flow modal opens, replacing the previous inline type selector.
+
+#### Conditional frontend package registration
+
+Licensed feature modules (Content Reviews, Release Sets, Alternate Versions, Content Calendar) are now registered conditionally based on the license state. Previously all packages were registered eagerly regardless of license. Unlicensed features are no longer loaded into the extension registry, reducing unnecessary client-side overhead for unlicensed installations.
+
+#### Bug fixes and other changes
+
+* Fixes a bug where the content type ID was incorrectly accessed when generating email notifications, which could cause emails to fail or reference the wrong content type [#149](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/149)
+* Fixes a bug where variant-specific Document Type approval configuration was not displaying correctly when switching cultures.
+* Fixes a bug where submitting content for approval did not first validate the document, potentially allowing invalid content to enter a workflow.
+* Fixes a bug in the request-approval visibility condition where the button could appear or disappear incorrectly due to race conditions in context observation.
+* Adds UTC annotation in email date translations. This is a partial fix for [#149](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/149) while we investigate persisting user locales to allow localizing datetime values in emails.
+* Adds validate and save before submitting for approval. This change will eliminate cases where a workflow process fails to publish due to invalid content, as the content is validated before submission. This is feature-parity with Workflow 13.
+
+### [17.3.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) (May 22 2026)
+ * Fixes lingering bugs related to approval group role display [#145](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/145)
+ * Improvements to invariant permission handling and display.
+ * Embeds implementations (avoiding lazy-loading) in the core package to generated fewer chunks. This in turn reduces the number of files downloaded when the Backoffice loads.
+
+### [17.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (May 14 2026)
+
+* Adds support for additional preview environments via custom URL providers [#130](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/130)
+* Adds CSV exports for content approval and content review activity 
+* Adds a UI property for enabling/disabling Alternate Versions
+* Adds cross-cutting cache management between Group and Permission repositories
+* Restores `View differences` button in workflow detail overlay [#139](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/139)
+* Fixes a bug where scheduled workflows were treated as UTC, but not generated as such. This change also updates Workflow's date pickers to use Umbraco's `DateTimeWithTimeZonePicker` editor [#138](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/138)
+* Fixes a bug where the node name was not always shown in the request-approval dialog [#140](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/140)
+* Improves interactivity in variant picker, increasing the click target to the entire ref-node element [#142](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/142)
+* Fixes a bug where excluded nodes were not falling back to the user's default workspace actions [#143](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/143)
+* Fixes a bug related to NPoco's handling of multiple properties decorated with `[Reference]` attribute in a FetchOneToMany query [#145](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/145) 
+* Fixes a migration bug where int-to-guid mapping dictionary may throw with a key collision [#144](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/144)
+* Fixes a potential foreign key constraint violation when assigning permissions in a migration
+* General improvements in @umbraco-workflow/backoffice NPM package
+
 ### [17.2.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0) (April 16 2026)
 
 * All changes from 17.2.0 release candidates

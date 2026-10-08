@@ -45,7 +45,7 @@ Using config transforms to remove and/or add sections to config files is current
 {% endhint %}
 
 {% hint style="warning" %}
-Be aware that a misconfigured config transform may [block Data Extraction on your project](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/changes-not-being-applied.md).
+Be aware that a misconfigured config transform may [block Data Extraction on your project](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/resolve-issues-quickly-and-efficiently/deployments/config-tranform-failing.md).
 {% endhint %}
 
 ## Syntax and testing

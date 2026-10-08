@@ -90,7 +90,7 @@ For a pipeline that uses PowerShell scripts, you will need the following files:
 
 | Root (/)          | powershell/                  | powershell/azuredevops/      |
 | ----------------- | ---------------------------- | ---------------------------- |
-| `cloud.zipignore` | `Get-LatestDeployment.ps1`   | `azure-release-pipeline.yml` |
+| `cloud.zipignore` | `Get-LatestDeployment.ps1`   | `azure-release-pipeline.yaml` |
 |                   | `Get-ChangesById.ps1`        | `cloud-sync.yml`             |
 |                   | `Apply-Patch.ps1`            | `cloud-artifact.yml`         |
 |                   | `Add-DeploymentArtifact.ps1` | `cloud-deployment.yml`       |
@@ -115,7 +115,7 @@ For a pipeline that uses Bash scripts, you will need the following files:
 
 | Root (/)          | bash/                      | bash/azuredevops/            |
 | ----------------- | -------------------------- | ---------------------------- |
-| `cloud.zipignore` | `get_latest_deployment.sh` | `azure-release-pipeline.yml` |
+| `cloud.zipignore` | `get_latest_deployment.sh` | `azure-release-pipeline.yaml` |
 |                   | `get_changes_by_id.sh`     | `cloud-sync.yml`             |
 |                   | `apply-patch.sh`           | `cloud-artifact.yml`         |
 |                   | `upload_artifact.sh`       | `cloud-deployment.yml`       |

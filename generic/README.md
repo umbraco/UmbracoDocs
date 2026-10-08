@@ -19,13 +19,17 @@ layout:
     visible: false
   tags:
     visible: true
+  actions:
+    visible: true
+  anchors:
+    visible: true
 ---
 
 # Umbraco Documentation
 
 Whether you're using Umbraco CMS, Umbraco Cloud, or Umbraco Heartcore, the documentation has you covered for all your needs.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/cms-logo.png">cms-logo.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cms">https://docs.umbraco.com/umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td><a href=".gitbook/assets/umbraco_cloud_logo_blue.png">umbraco_cloud_logo_blue.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cloud">https://docs.umbraco.com/umbraco-cloud</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Umbraco CMS</strong></td><td>Everything you need to know when building your Umbraco website.</td><td></td><td><a href=".gitbook/assets/cms-logo.png">cms-logo.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cms">https://docs.umbraco.com/umbraco-cms</a></td></tr><tr><td><strong>Umbraco Cloud</strong></td><td>Learn how to get started with your Umbraco Cloud project.</td><td></td><td data-object-fit="contain"><a href=".gitbook/assets/Logomark_Cloud.png">Logomark_Cloud.png</a></td><td><a href="https://docs.umbraco.com/umbraco-cloud">https://docs.umbraco.com/umbraco-cloud</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Are you looking to get started?**
@@ -53,25 +57,13 @@ If you're unsure which product suits your needs, check out the [Exploring the Um
 [Umbraco DXP](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/eCauR3aomRsx2gdckuDO/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/" %}
-[Commerce Packages](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/4kB9Trqs7XbQsP80vWVA/)
-{% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/" %}
-[Commerce Payment Providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/O8zV7PYqNxSkuGGGYa3P/)
-{% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/HKthAwBJOkU2Xzt1IHX4/" %}
-[Sales Tax Providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/HKthAwBJOkU2Xzt1IHX4/)
-{% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FW5BR4euWkgLSfJs4O4r/" %}
-[Commerce Shipping providers](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/FW5BR4euWkgLSfJs4O4r/)
-{% endcontent-ref %}
-
 {% content-ref url="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/" %}
 [Sustainability Best Practices](https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/ZOU4fHcVxqYnC8V1dry6/)
 {% endcontent-ref %}
+
+## Umbraco & AI
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>AI in Umbraco</td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/CHKT9bQhbR3swAdBvil4/">18.ai-in-umbraco.latest</a></td></tr><tr><td>Umbraco in AI</td><td><a href="https://app.gitbook.com/o/vHdmkfI8smZW50A5yIZD/s/mlRZp8gL4dvE9MukxCip/">18.umbraco-in-ai.latest</a></td></tr></tbody></table>
 
 ## Contributing
 

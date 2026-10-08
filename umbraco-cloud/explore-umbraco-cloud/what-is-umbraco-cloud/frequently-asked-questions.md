@@ -26,7 +26,7 @@ Auto-scaling is not available yet but is under consideration. However, we do off
 
 ### Can I set up a load-balanced site on Umbraco Cloud?
 
-No, load balancing is not currently supported.
+Yes. See the [Load Balancing](../../optimize-and-maintain-your-site/optimize-performance/load-balancing.md) article for requirements, scaling modes, and configuration.
 
 ### Can I migrate my site away from Umbraco Cloud?
 
@@ -943,10 +943,10 @@ Quotas for different Umbraco Cloud plans can be found in the [Umbraco Cloud Plan
 
 Each plan also has hostname limitations, which are listed in the [pricing details](https://umbraco.com/umbraco-cloud-pricing/). Most Cloud sites operate within these limits, but solutions are available for those requiring additional resources.
 
-Website usage and performance can be monitored through the [Usage](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/usage) and the [Availability & Performance](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/availability-performance) pages.
+Website usage and performance can be monitored through the [Usage](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/usage) and the [Traffic & Performance](https://docs.umbraco.com/umbraco-cloud/optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance) pages.
 
 * The 'Usage' page provides details on bandwidth consumption.
-* The 'Availability & Performance' page allows monitoring of CPU and memory usage.
+* The 'Traffic & Performance' page allows monitoring of CPU and memory usage.
 
 {% hint style="info" %}
 For questions about resource usage, contact the support team.

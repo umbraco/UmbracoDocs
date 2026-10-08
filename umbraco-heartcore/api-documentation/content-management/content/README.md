@@ -40,14 +40,14 @@ In addition to the specific permissions listed under each endpoint, all requests
 
 If an error occurs you will receive a HTTP status code along with an API error code and an error message in the response body.
 
-| Status Code | Error Code          | Message                                                                  |
-| ----------- | ------------------- | ------------------------------------------------------------------------ |
-| 400         | BadRequest          | Body cannot be empty.                                                    |
-| 401         | Unauthorized        | Authorization has been denied for this request.                          |
-| 403         | Forbidden           | You are not authorized to access the given resource.                     |
-| 404         | NotFound            | Content with id '{id}' could not be found.                               |
+| Status Code | Error Code          | Message                                                                   |
+| ----------- | ------------------- | ------------------------------------------------------------------------- |
+| 400         | BadRequest          | Body cannot be empty.                                                     |
+| 401         | Unauthorized        | Authorization has been denied for this request.                           |
+| 403         | Forbidden           | You are not authorized to access the given resource.                      |
+| 404         | NotFound            | Content with id '{id}' could not be found.                                |
 | 422         | ValidationFailed    | Validation error occurred when trying to save or update the content item. |
-| 500         | InternalServerError | Internal server error.                                                   |
+| 500         | InternalServerError | Internal server error.                                                    |
 
 **JSON example**:
 
@@ -541,7 +541,7 @@ In this example only one language exists, so the properties are marked with `$in
 
 {% hint style="info" %}
 If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
-{% endhint %}  
+{% endhint %}
 
 ```json
 {
@@ -770,7 +770,7 @@ In this example only one language exists, so the properties are marked with `$in
 
 {% hint style="info" %}
 If a property uses a multinode treepicker editor, the value should be a comma-separated list of Umbraco UDI Identifiers. In the example below, the UDI Identifiers are referencing content items. To learn more see the [UDI Identifiers](https://docs.umbraco.com/umbraco-cms/reference/querying/udi-identifiers) documentation.
-{% endhint %} 
+{% endhint %}
 
 ```json
 {

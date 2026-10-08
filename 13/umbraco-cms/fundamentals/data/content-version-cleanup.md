@@ -6,8 +6,8 @@ A new version is created whenever you save and publish a content item in Umbraco
 
 The default cleanup policy will:
 
-* Not delete any versions created over the previous 4 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
-* 'Prune' versions 4 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
+* Not delete any versions created over the previous 7 days. The recent version history is preserved. See the `KeepAllVersionsNewerThanDays` setting.
+* 'Prune' versions 7 days after they are created. The last version of a content item saved on a particular day will be kept but earlier versions from that day will be deleted.
 * Delete all versions older than 90 days. See the `KeepLatestVersionPerDayForDays` setting.
 * Never delete any versions that are currently 'published'.
 * Never delete any specific versions marked as 'Prevent Cleanup' in the Backoffice version history.
@@ -31,7 +31,7 @@ The feature can be configured in the `appSettings.json`:
         "ContentVersionCleanupPolicy": {
           "EnableCleanup": true,
           "KeepLatestVersionPerDayForDays": 90,
-          "KeepAllVersionsNewerThanDays": 4
+          "KeepAllVersionsNewerThanDays": 7
         }
       }
     }

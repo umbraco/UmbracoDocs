@@ -1,0 +1,415 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Umbraco Documentation
+  structure:
+    - type: section
+      key: section-1
+      title: Docs Overview
+      path: welcome
+      description: ""
+      icon: file-lines
+      default: true
+      children:
+        - type: space
+          key: space-1
+          title: Generic
+          path: generic
+          default: true
+          content:
+            directory: ./generic
+    - type: section
+      key: section-2
+      title: CMS
+      path: umbraco-cms
+      description: ""
+      icon: folder-grid
+      children:
+        - type: space
+          key: space-25
+          title: 18.latest
+          path: 18.latest
+          default: true
+          content:
+            directory: ./18/umbraco-cms
+        - type: space
+          key: space-2
+          title: 17.latest (LTS)
+          path: 17.latest
+          content:
+            directory: ./17/umbraco-cms
+        - type: space
+          key: space-3
+          title: 13.latest (LTS)
+          path: 13.latest
+          content:
+            directory: ./13/umbraco-cms
+    - type: section-group
+      key: section-group-3
+      title: Cloud Services
+      children:
+        - type: section
+          key: section-3
+          title: Cloud
+          path: umbraco-cloud
+          description: ""
+          icon: cloud
+          children:
+            - type: space
+              key: space-4
+              title: Umbraco Cloud
+              path: umbraco-cloud
+              default: true
+              content:
+                directory: ./umbraco-cloud
+        - type: section
+          key: section-14
+          title: Compose
+          path: umbraco-compose
+          description: ""
+          icon: arrow-right
+          children:
+            - type: space
+              key: space-21
+              title: Umbraco Compose
+              path: umbraco-compose
+              default: true
+              content:
+                directory: ./umbraco-compose
+        - type: section
+          key: section-4
+          title: Heartcore
+          path: umbraco-heartcore
+          description: ""
+          icon: heart
+          children:
+            - type: space
+              key: space-5
+              title: Umbraco Heartcore
+              path: umbraco-heartcore
+              default: true
+              content:
+                directory: ./umbraco-heartcore
+    - type: section-group
+      key: section-group-1
+      title: Digital Experience Products (DXP)
+      icon: puzzle
+      children:
+        - type: section
+          key: section-10
+          title: DXP Overview
+          path: umbraco-dxp
+          description: ""
+          icon: clipboard-question
+          children:
+            - type: space
+              key: space-16
+              title: Umbraco DXP
+              path: umbraco-dxp
+              default: true
+              content:
+                directory: ./marketplace-and-integrations
+        - type: section
+          key: section-18
+          title: Automate
+          path: umbraco-automate
+          description: ""
+          icon: robot
+          children:
+            - type: space
+              key: space-35
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-automate
+            - type: space
+              key: space-32
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-automate
+        - type: section
+          key: section-11
+          title: Commerce
+          path: umbraco-commerce
+          description: ""
+          icon: basket-shopping-simple
+          children:
+            - type: space
+              key: space-29
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-commerce
+            - type: space
+              key: space-17
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-commerce
+            - type: space
+              key: space-18
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-commerce
+        - type: section
+          key: section-5
+          title: Deploy
+          path: umbraco-deploy
+          description: ""
+          icon: arrow-up-to-dotted-line
+          children:
+            - type: space
+              key: space-31
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-deploy
+            - type: space
+              key: space-6
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-deploy
+            - type: space
+              key: space-7
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-deploy
+        - type: section
+          key: section-6
+          title: Engage
+          path: umbraco-engage
+          description: ""
+          icon: handshake-angle
+          children:
+            - type: space
+              key: space-30
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-engage
+            - type: space
+              key: space-8
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-engage
+            - type: space
+              key: space-9
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-engage
+        - type: section
+          key: section-7
+          title: Forms
+          path: umbraco-forms
+          description: ""
+          icon: memo-circle-check
+          children:
+            - type: space
+              key: space-26
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-forms
+            - type: space
+              key: space-10
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-forms
+            - type: space
+              key: space-11
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-forms
+        - type: section
+          key: section-8
+          title: UI Builder
+          path: umbraco-ui-builder
+          description: ""
+          icon: browser
+          children:
+            - type: space
+              key: space-28
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-ui-builder
+            - type: space
+              key: space-12
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-ui-builder
+            - type: space
+              key: space-13
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-ui-builder
+        - type: section
+          key: section-9
+          title: Workflow
+          path: umbraco-workflow
+          description: ""
+          icon: list-check
+          children:
+            - type: space
+              key: space-27
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-workflow
+            - type: space
+              key: space-14
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-workflow
+            - type: space
+              key: space-15
+              title: 13.latest (LTS)
+              path: 13.latest
+              content:
+                directory: ./13/umbraco-workflow
+        - type: section
+          key: section-17
+          title: Search
+          path: umbraco-search
+          description: ""
+          icon: magnifying-glass
+          children:
+            - type: space
+              key: space-24
+              title: 17.search.latest (LTS)
+              path: 17.search.latest-lts
+              default: true
+              content:
+                directory: ./17/umbraco-search
+        - type: section-group
+          key: section-group-5
+          title: AI Add-ons
+          icon: hexagon-nodes
+          children:
+            - type: section
+              key: section-19
+              title: Engage AI
+              path: dxp-engage-ai
+              description: ""
+              icon: handshake-angle
+              children:
+                - type: space
+                  key: space-36
+                  title: Engage AI
+                  path: engage-ai
+                  default: true
+                  content:
+                    directory: ./17/umbraco-engage-ai
+    - type: section-group
+      key: section-group-2
+      title: Community & Project
+      icon: user-group
+      children:
+        - type: section
+          key: section-13
+          title: Contributing
+          path: contributing
+          description: ""
+          icon: hand-holding-seedling
+          children:
+            - type: space
+              key: space-20
+              title: Contributing
+              path: contributing
+              default: true
+              content:
+                directory: ./contributing
+        - type: section
+          key: section-12
+          title: Sustainability
+          path: sustainability-best-practices
+          description: ""
+          icon: rotate
+          children:
+            - type: space
+              key: space-19
+              title: Sustainability Best Practices
+              path: sustainability-best-practices
+              default: true
+              content:
+                directory: ./sustainability-best-practices
+    - type: section-group
+      key: section-group-4
+      title: AI
+      icon: brain-circuit
+      children:
+        - type: section
+          key: section-15
+          title: Umbraco in AI
+          path: umbraco-in-ai
+          description: ""
+          icon: mcp
+          children:
+            - type: space
+              key: space-33
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/umbraco-in-ai
+            - type: space
+              key: space-22
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/umbraco-in-ai
+        - type: section
+          key: section-16
+          title: AI in Umbraco
+          path: ai-in-umbraco
+          description: ""
+          icon: message
+          children:
+            - type: space
+              key: space-34
+              title: 18.latest
+              path: 18.latest
+              default: true
+              content:
+                directory: ./18/ai-in-umbraco
+            - type: space
+              key: space-23
+              title: 17.latest (LTS)
+              path: 17.latest
+              content:
+                directory: ./17/ai-in-umbraco
+        - type: section-group
+          key: section-group-6
+          title: DXP Add-ons
+          children:
+            - type: section
+              key: section-20
+              title: Engage AI
+              path: engage-ai
+              description: ""
+              icon: handshake-angle
+              children:
+                - type: space
+                  key: space-37
+                  title: Engage AI
+                  path: engage-ai
+                  default: true
+                  content:
+                    directory: ./17/umbraco-engage-ai
