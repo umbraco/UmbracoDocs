@@ -26,7 +26,7 @@ The following file types are cached as static assets through the CDN:
 
 If you want to disable caching on certain types of static assets, you can use a 'no-cache' cache-control header. This will be respected by the caching strategy in the CDN. You can utilize an outbound rewrite rule to add such a cache-control header to the request.
 
-The following example adds a cache-control header with 'no-cache' as the value when the requested Url contains a PDF file:
+The following example adds a cache-control header with 'no-cache' as the value when the requested URL contains a PDF file:
 
 ```xml
 <rewrite>
@@ -61,6 +61,47 @@ When using Cache TTL, the Editor's expectations of when the webpage is refreshed
 {% hint style="warning" %}
 We recommend using Cache Everything with caution.
 {% endhint %}
+
+### Pages that are not cached
+
+Cache Everything respects the `Cache-Control` header sent by your website. A page is not cached, and is always loaded from the origin, when its response contains any of these directives:
+
+* `private`
+* `no-cache`
+* `no-store`
+
+You can see this in the `uc-cache-status` response header, which shows `BYPASS` for these pages. A cached page shows `MISS` the first time it is requested and `HIT` after that.
+
+{% hint style="info" %}
+Check `uc-cache-status` with a regular `GET` request, for example from the browser's developer tools. `HEAD` requests, such as `curl -I`, are not served from the cache.
+{% endhint %}
+
+#### Umbraco 8
+
+Umbraco 8 sends `Cache-Control: private` on webpages by default. This means webpages on Umbraco 8 projects are not cached when Cache Everything is enabled, even though static assets are.
+
+To cache a page, set the cache-control header to `public` in its template:
+
+```csharp
+@{
+    Response.Cache.SetCacheability(HttpCacheability.Public);
+}
+```
+
+{% hint style="warning" %}
+Only mark pages as `public` when they are the same for every visitor. Do not use this on pages that show member-specific or logged-in content. One visitor's version of the page could be served to others.
+{% endhint %}
+
+### How long pages are cached
+
+When a page is cached, the CDN uses the first of these that is available:
+
+1. `s-maxage` from the `Cache-Control` header.
+2. `max-age` from the `Cache-Control` header.
+3. The `Expires` header.
+4. The **Cache TTL** setting for the hostname.
+
+The result is never lower than the minimum Cache TTL for your plan (see [Plan specific features](manage-cdn-caching.md#plan-specific-features)). A shorter `max-age` is raised to that minimum.
 
 ## Purge Caching
 
