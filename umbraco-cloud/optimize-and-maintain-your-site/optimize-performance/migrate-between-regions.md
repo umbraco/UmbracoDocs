@@ -6,7 +6,7 @@ description: >-
 
 # Migrate between regions
 
-Creating a project on Umbraco Cloud, you can choose to host the project in different regions: East US, West EU, South UK, or East Australia.
+Creating a project on Umbraco Cloud, you can choose to host the project in different regions: East US, West EU, South UK, East Australia, Central Canada, or Central Sweden.
 
 In some cases, you might want to migrate your project(s) from one region to another. This article will outline the steps to do this.
 
