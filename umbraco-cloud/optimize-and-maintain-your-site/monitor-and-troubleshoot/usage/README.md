@@ -30,7 +30,7 @@ Active bandwidth and media storage plan extensions increase the displayed limits
 
 ### Bandwidth forecast
 
-For projects with a bandwidth limit, the summary estimates bandwidth usage by the end of the month once at least three days of daily bandwidth data are available. It uses the average daily usage from up to the last seven recorded days and adds the projected remaining usage to the collected monthly total.
+For projects with a bandwidth limit, the summary estimates end-of-month usage after at least three days of daily data become available. The forecast takes the average daily usage from up to the last seven recorded days. The projected remaining usage is then added to the collected monthly total.
 
 If this estimate exceeds the bandwidth limit, the summary also shows approximately when the available bandwidth will run out. The projection assumes traffic continues at the recent rate; it is an estimate, not a measured monthly total.
 
