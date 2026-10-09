@@ -94,7 +94,7 @@ Use the displayed values and changes to assess growth over time.
 
 ## Data availability
 
-Usage figures are collected periodically. Check **Plan figures collected** at the top of the page and the **as of** month on the insight cards when interpreting the data.
+Usage figures are collected daily. Check **Plan figures collected** at the top of the page and the **as of** month on the insight cards when interpreting the data.
 
 New projects may show **No usage collected yet** until the first collection completes. History can be shorter than the selected range, and individual metrics may show **Not collected for this project yet**. If a section cannot load, use its retry control when available.
 
