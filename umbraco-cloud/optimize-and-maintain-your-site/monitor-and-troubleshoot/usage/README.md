@@ -20,7 +20,7 @@ The three usage indicators show the amount used, the available limit, and how mu
 | Media storage | The size of all files in the Live environment's blob storage, including cached media. |
 | Custom domains | The number of custom domains added to your Live environment. |
 
-Bandwidth is measured from the data sent at the edge to visitors. Responses served from the edge cache still count towards the monthly total, even when the request does not reach the origin server.
+Bandwidth is measured from the data sent from the edge to visitors. Responses served from the edge cache still count toward the monthly total, even when the request does not reach the origin server.
 
 The page marks a resource as close to its limit from 85% usage. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labelled **No limit on your plan**.
 
