@@ -52,6 +52,8 @@ The static outbound IP ranges vary per region. Below are the values per region i
 4.147.161.240/28
 ```
 
+<!-- TODO: Add the Canada Central (cacent01) and Sweden Central (secent01) outbound IP ranges. -->
+
 If you need to use a CIDR Range for the IPs: `40.113.173.32/28`
 
 {% hint style="info" %}
