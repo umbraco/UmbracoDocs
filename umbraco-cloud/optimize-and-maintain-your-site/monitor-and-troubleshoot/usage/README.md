@@ -22,7 +22,7 @@ The three usage indicators show the amount used, the available limit, and how mu
 
 Bandwidth is measured from the data sent from the edge to visitors. Responses served from the edge cache still count toward the monthly total, even when the request does not reach the origin server.
 
-The page marks a resource as close to its limit at 85% usage. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labeled **No limit on your plan**.
+The Usage page marks a resource as close to its limit at 85% usage. This visual indicator is separate from the portal warning banners and email notifications, which start at 90% for bandwidth and media storage. These notifications apply when a higher plan is available. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labeled **No limit on your plan**.
 
 Active bandwidth and media storage plan extensions increase the displayed limits. When an active extension applies, the corresponding usage indicator shows **+X GB bought**. Select this label to expand the list of active and scheduled extensions.
 
@@ -102,10 +102,10 @@ New projects may show **No usage collected yet** until the first collection comp
 
 You can see the Usage limits and prices for the different plans on Umbraco Cloud on our [website](https://umbraco.com/umbraco-cloud-pricing/) or when [changing your plan](../../../build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md).
 
-You can always upgrade your project to a higher plan if you have reached the limit of what you are allowed on your project. You can **Upgrade the Plan** from the **Management** tab on your project.
+When you reach a usage limit, you can upgrade your project if a higher plan is available. Select **Management > Change Plan** to review the available plans.
 
 {% hint style="warning" %}
-When one of the limits reaches 90%, you’ll see a warning banner in the portal and an email is sent to the project owner and the technical contact(s) of the project, notifying you that you’re getting close to your limit(s).
+If a higher plan is available, a portal warning banner appears when bandwidth or media storage reaches 90% of its limit. An email also notifies the project owner and technical contacts.
 
 <img src="../../../.gitbook/assets/warnings_usage.png" alt="USage Warning" data-size="original">
 {% endhint %}
