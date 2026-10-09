@@ -34,7 +34,7 @@ For projects with a bandwidth limit, the summary estimates end-of-month usage af
 
 If this estimate exceeds the bandwidth limit, the summary also shows approximately when the available bandwidth will run out. The projection assumes traffic continues at the recent rate; it is an estimate, not a measured monthly total.
 
-If the current monthly usage already exceeds the bandwidth limit, the summary shows how much the limit has been exceeded, for example **Already over by 5 GB this month**, instead of a forecast.
+If monthly usage already exceeds the limit, the summary shows how much it is over, like **Already over by 5 GB this month**, instead of a forecast.
 
 <figure><img src="../../../.gitbook/assets/usage-bandwidth-over-limit-october-2026.png" alt="Usage summary showing Already over by 5 GB this month and 55 GB used against a 50 GB bandwidth limit."><figcaption><p>Bandwidth summary when the monthly limit has been exceeded</p></figcaption></figure>
 
