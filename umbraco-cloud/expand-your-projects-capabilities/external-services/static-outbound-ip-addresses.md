@@ -43,7 +43,10 @@ Below are the static outbound IP address ranges for regions:
 20.220.219.208/28
 ```
 
-<!-- TODO: Add the Sweden Central (secent01) service IP range. -->
+**Sweden**
+```
+20.240.239.160/28
+```
 
 **United Kingdom**
 ```
