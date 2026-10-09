@@ -14,7 +14,7 @@ By default, Umbraco registers all services: the backoffice, website rendering, a
 
 The following configurations are supported:
 
-<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="105" data-type="checkbox">AddCore()</th><th width="160" data-type="checkbox">AddBackOfficeSignIn()</th><th width="145" data-type="checkbox">AddBackOffice()</th><th width="125" data-type="checkbox">AddWebsite()</th><th width="145" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website + Basic Auth</td><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="139.5625">Configuration</th><th width="105" data-type="checkbox">AddCore()</th><th width="160" data-type="checkbox">AddBackOfficeSignIn()</th><th width="145" data-type="checkbox">AddBackOffice()</th><th width="125" data-type="checkbox">AddWebsite()</th><th width="145" data-type="checkbox">AddDeliveryApi()</th></tr></thead><tbody><tr><td>Full (default)</td><td>false</td><td>false</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Backoffice + Delivery API</td><td>false</td><td>false</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Website + Delivery API</td><td>true</td><td>false</td><td>false</td><td>true</td><td>true</td></tr><tr><td>Website + Basic Auth</td><td>true</td><td>true</td><td>false</td><td>true</td><td>false</td></tr><tr><td>Website Only</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td><p>Delivery API</p><p>Only</p></td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
 
 The key distinctions between the registration methods are:
 
@@ -31,6 +31,7 @@ The key distinctions between the registration methods are:
 ### Configuration use cases
 
 * **Full (default)**: Traditional Umbraco with all features enabled.
+* **Backoffice + Delivery API**: Headless setups with content editing in the backoffice and an external frontend, without Umbraco website rendering.
 * **Website + Delivery API**: Front-end servers serving both rendered pages and headless content.
 * **Website + Basic Auth**: Front-end servers with basic authentication using backoffice credentials, but no backoffice UI.
 * **Website Only**: Front-end servers serving only rendered pages.
@@ -76,6 +77,44 @@ await app.RunAsync();
 {% hint style="info" %}
 Endpoint registration is order-dependent. `UseBackOfficeEndpoints()` must be registered before `UseWebsiteEndpoints`. If they are mistakenly registered in the opposite order, the site installation won't start.
 {% endhint %}
+
+## Backoffice + Delivery API (no website)
+
+{% hint style="info" %}
+This configuration requires Umbraco 17.8 or later.
+{% endhint %}
+
+Use the backoffice to manage content and the Content Delivery API to serve content to an external frontend.
+
+Umbraco does not render Razor pages in this configuration. Implement preview in your external frontend rather than relying on Umbraco's built-in website preview.
+
+{% code title="Program.cs" %}
+```csharp
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.CreateUmbracoBuilder()
+    .AddBackOffice()
+    .AddDeliveryApi()
+    .AddComposers()
+    .Build();
+
+WebApplication app = builder.Build();
+
+await app.BootUmbracoAsync();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseBackOfficeEndpoints();
+    });
+
+await app.RunAsync();
+```
+{% endcode %}
 
 ## Website + Delivery API (no backoffice)
 
