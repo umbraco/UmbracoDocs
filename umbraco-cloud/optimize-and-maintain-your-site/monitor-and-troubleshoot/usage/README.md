@@ -2,7 +2,7 @@
 
 In the Umbraco Cloud Settings menu, you can find a page called _Usage_.
 
-On the Usage page, you will find an overview that displays your usage and evaluates it against the plan limitations of your project. On the page, you will also find the top 10 for the bandwidth usage of your project. This can give you important insight into where you can optimize resource management.
+On the Usage page, you can see how your project's usage compares to the limits of your plan. The page also shows bandwidth history, the largest media files, what drives bandwidth usage, and additional metrics such as database size.
 
 ## Usage overview
 
