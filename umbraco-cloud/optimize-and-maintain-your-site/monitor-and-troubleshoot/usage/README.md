@@ -22,7 +22,7 @@ The three usage indicators show the amount used, the available limit, and how mu
 
 Bandwidth is measured from the data sent from the edge to visitors. Responses served from the edge cache still count toward the monthly total, even when the request does not reach the origin server.
 
-The page marks a resource as close to its limit from 85% usage. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labelled **No limit on your plan**.
+The page marks a resource as close to its limit at 85% usage. When usage exceeds a limit, the usage indicator shows the excess and a **Change plan** link. A resource without a plan limit is labeled **No limit on your plan**.
 
 Active bandwidth and media storage plan extensions increase the displayed limits. When an active extension applies, the corresponding usage indicator shows **+X GB bought**. Select this label to expand the list of active and scheduled extensions.
 
