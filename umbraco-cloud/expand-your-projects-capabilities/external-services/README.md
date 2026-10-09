@@ -54,8 +54,6 @@ The static outbound IP ranges vary per region. Below are the values per region i
 
 <!-- TODO: Add the Canada Central (cacent01) and Sweden Central (secent01) outbound IP ranges. -->
 
-If you need to use a CIDR Range for the IPs: `40.113.173.32/28`
-
 {% hint style="info" %}
 For projects on a Starter plan, you can see the current dynamic outbound IP addresses. The IP addresses for starter projects are dynamic and may change due to Azure or Umbraco optimizing resources.
 {% endhint %}
