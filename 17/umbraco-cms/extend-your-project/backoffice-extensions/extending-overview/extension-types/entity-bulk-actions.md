@@ -54,7 +54,7 @@ import {
 } from "@umbraco-cms/backoffice/entity-bulk-action";
 import { UmbControllerHostElement } from "@umbraco-cms/backoffice/controller-api";
 
-export class MyBulkEntityAction extends UmbEntityBulkActionBase<never> {
+export class MyEntityBulkAction extends UmbEntityBulkActionBase<never> {
     constructor(
         host: UmbControllerHostElement,
         args: UmbEntityBulkActionArgs<never>,

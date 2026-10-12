@@ -146,7 +146,7 @@ export class MyServerServicesHeaderAppElement extends UmbHeaderAppButtonElement 
   }
 }
 
-{ MyServerServicesHeaderAppElement as element };
+export { MyServerServicesHeaderAppElement as element };
 ```
 {% endcode %}
 {% endtab %}

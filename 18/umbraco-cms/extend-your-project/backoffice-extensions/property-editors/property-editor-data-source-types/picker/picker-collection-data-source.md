@@ -26,13 +26,13 @@ interface ExampleCollectionItemModel extends UmbCollectionItemModel {
 	isPickable: boolean;
 }
 
-export class MyCustomPickerCollectionPropertyEditorDataSource
+export class ExampleCustomPickerCollectionPropertyEditorDataSource
 	extends UmbControllerBase
 	implements UmbPickerCollectionDataSource<ExampleCollectionItemModel>, UmbPickerSearchableDataSource
 {
 	collectionPickableFilter = (item: ExampleCollectionItemModel) => item.isPickable;
 
-	async requestCollection(args: UmbCollectionFilterModel) {
+	async requestCollection(_args: UmbCollectionFilterModel) {
 		const data = {
 			items: customItems,
 			total: customItems.length,

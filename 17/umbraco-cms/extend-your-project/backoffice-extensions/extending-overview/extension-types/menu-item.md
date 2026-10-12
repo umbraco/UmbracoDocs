@@ -114,9 +114,9 @@ Use a link menu item to navigate to another location, typically external URLs.
 
 {% code title="menu-item.ts" %}
 ```typescript
-import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
+import type { ManifestMenuItemLinkKind } from '@umbraco-cms/backoffice/menu';
 
-export const menuItemManifest: ManifestMenuItem = {
+export const menuItemManifest: ManifestMenuItemLinkKind = {
     type: 'menuItem',
     kind: 'link',
     alias: 'My.MenuItem.ExternalLink',
@@ -138,9 +138,9 @@ Developers can use an action menu item when they want to execute custom logic th
 
 {% code title="menu-item.ts" %}
 ```typescript
-import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
+import type { ManifestMenuItemActionKind } from '@umbraco-cms/backoffice/menu';
 
-export const menuItemManifest: ManifestMenuItem = {
+export const menuItemManifest: ManifestMenuItemActionKind = {
     type: 'menuItem',
     kind: 'action',
     alias: 'My.MenuItem.Action',
@@ -155,7 +155,7 @@ export const menuItemManifest: ManifestMenuItem = {
 ```
 {% endcode %}
 
-{% code title="menu-item.api.ts" %}
+{% code title="my-action-menu-item.api.ts" %}
 ```typescript
 import { UmbMenuItemActionApiBase } from '@umbraco-cms/backoffice/menu';
 
@@ -175,13 +175,13 @@ export { MyActionMenuItemApi as api };
 
 ### Tree
 
-Use a tree menu item to show a submenu based on a tree structure. Any existing, registered Tree Repositories can be referenced by its extension alias (`treeAlias` property) in the Menu Item manifest. This will render a fully functional tree-based menu.
+Use a tree menu item to show a nested menu based on a tree structure. Any existing, registered Tree can be referenced by its extension alias (`treeAlias` property) in the Menu Item manifest. This will render a fully functional tree-based menu.
 
 {% code title="menu-item.ts" %}
 ```typescript
-import type { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
+import type { ManifestMenuItemTreeKind } from '@umbraco-cms/backoffice/tree';
 
-export const menuItemManifest: ManifestMenuItem = {
+export const menuItemManifest: ManifestMenuItemTreeKind = {
     type: 'menuItem',
     kind: 'tree',
     alias: 'My.MenuItem.Tree',
@@ -189,7 +189,7 @@ export const menuItemManifest: ManifestMenuItem = {
     meta: {
         label: 'My Tree Menu Item',
         icon: 'icon-hammer',
-        treeAlias: 'My.Repository.Tree',
+        treeAlias: 'My.Tree',
         menus: ["My.Menu"],
     },
 };
@@ -238,6 +238,8 @@ To render custom menu items, developers can use the [Umbraco UI Menu Item compon
 
 Custom elements can fetch data and render menu items using markup like the example above. Storing fetched results in a `@state()` property ensures the component re-renders whenever the value changes.
 
+The example below calls your API through a client generated with `@hey-api/openapi-ts`. The entry point connects that client to the backoffice authentication, as described in [Custom Generated Client](../../foundation/fetching-data/custom-generated-client.md).
+
 {% tabs %}
 {% tab title="my-menu/menu-items.ts" %}
 {% code title="menu-items.ts" overflow="wrap" lineNumbers="true" %}
@@ -245,7 +247,8 @@ Custom elements can fetch data and render menu items using markup like the examp
 import type { UmbMenuItemElement } from '@umbraco-cms/backoffice/menu';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { html, TemplateResult, customElement, state } from '@umbraco-cms/backoffice/external/lit';
-import { MyMenuItemResponseModel, MyMenuResource } from '../../../api';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
+import { getMyMenuItems, type MyMenuItemResponseModel } from '../api/index.js';
 
 @customElement('my-menu-item')
 class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
@@ -264,14 +267,14 @@ class MyMenuItems extends UmbLitElement implements UmbMenuItemElement {
 
     // Fetch initial items
     async fetchInitialItems() {
-        try {
-            this._loading = true;
-            this._items = ((await MyMenuResource.getMenuApiV1()).items); // Fetch root-level items
-        } catch (e) {
+        this._loading = true;
+        const { data, error } = await tryExecute(this, getMyMenuItems()); // Fetch root-level items
+        if (error || !data) {
             this._error = 'Error fetching items';
-        } finally {
-            this._loading = false;
+        } else {
+            this._items = data.items;
         }
+        this._loading = false;
     }
 
     // Render items
@@ -333,7 +336,7 @@ export const MyMenuItemManifest: ManifestMenuItem = {
 ```
 
 {% hint style="info" %}
-**Note:** Extension authors can use the `kind` property to define the type of menu item. Supported values include `tree` and `list`.
+**Note:** Extension authors can use the `kind` property to define the type of menu item. The built-in kinds are `link`, `action`, and `tree`.
 {% endhint %}
 {% endtab %}
 
@@ -342,11 +345,17 @@ export const MyMenuItemManifest: ManifestMenuItem = {
 import type {
     UmbEntryPointOnInit,
 } from "@umbraco-cms/backoffice/extension-api";
+import { UMB_AUTH_CONTEXT } from "@umbraco-cms/backoffice/auth";
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
+import { client } from "../api/client.gen.js";
 import { MyMenuItemManifest } from "./../my-menu/manifests.ts";
 
-export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
     console.log("Hello from my extension 🎉");
+
+    // Connect the generated API client to the backoffice authentication
+    const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+    authContext?.configureClient(client);
 
     umbExtensionsRegistry.register(MyMenuItemManifest);
 };
