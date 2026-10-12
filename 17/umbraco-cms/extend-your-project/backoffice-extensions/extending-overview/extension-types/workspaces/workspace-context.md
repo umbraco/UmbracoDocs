@@ -18,7 +18,7 @@ Workspace Contexts provide:
 
 ## Manifest
 
-{% code caption="manifest.ts" %}
+{% code title="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceContext',
@@ -39,7 +39,7 @@ Workspace Contexts provide:
 
 Create a workspace context by extending `UmbContextBase` and providing a unique context token. Add this to your project to enable shared state management between workspace extensions:
 
-{% code caption="counter-workspace-context.ts" %}
+{% code title="counter-workspace-context.ts" %}
 ```typescript
 import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
@@ -71,12 +71,14 @@ export const api = WorkspaceContextCounter;
 
 A Context Token is used to consume or get a Context. Read more about [Context Consumption here](../../../foundation/context-api/consume-a-context.md).
 
+{% code title="counter-workspace-context.ts" %}
 ```typescript
 export const EXAMPLE_COUNTER_CONTEXT = new UmbContextToken<WorkspaceContextCounter>(
 	'UmbWorkspaceContext', // Ensures workspace scoping
 	'example.workspaceContext.counter',   // Must match manifest alias
 );
 ```
+{% endcode %}
 
 When declaring a Workspace Context, always use `'UmbWorkspaceContext'` as the first parameter in your Context Token to ensure proper context isolation.
 
@@ -86,19 +88,22 @@ When declaring a Workspace Context, always use `'UmbWorkspaceContext'` as the fi
 
 The following example shows how to call the increment method from a Workspace Action API.
 
+{% code title="incrementor-workspace-action.ts" %}
 ```typescript
 export class MyIncreaseCounterWorkspaceAction extends UmbWorkspaceActionBase {
 	override async execute() {
 		const context = await this.getContext(EXAMPLE_COUNTER_CONTEXT);
-		context.increment();
+		context?.increment();
 	}
 }
 ```
+{% endcode %}
 
 ### Workspace View
 
 The following example shows how a Workspace View Element can consume a context.
 
+{% code title="counter-workspace-view.ts" %}
 ```typescript
 export class MyWorkspaceView extends UmbElementMixin(LitElement) {
 
@@ -108,10 +113,11 @@ export class MyWorkspaceView extends UmbElementMixin(LitElement) {
 	constructor() {
 		super();
 		this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (context) => {
-			this.observe(context.counter, (count) => this._count = count);
+			this.observe(context?.counter, (count) => this._count = count);
 		});
 	}
 	
 	// A render using _count
 }
 ```
+{% endcode %}
