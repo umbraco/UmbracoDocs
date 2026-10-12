@@ -115,7 +115,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
             UMB_DOCUMENT_WORKSPACE_CONTEXT,
             async (context) => {
             
-                // Observe the specific property of the Content Type, to retrieve the unique.
+                // Observe the specific property of the Content Type to retrieve the unique.
                 this.observe(await context?.structure.propertyStructureByAlias('myNoneWritableProperty'), (property) => {
                     if(property) {
                         // Create a guard rule:
