@@ -67,20 +67,45 @@ const { data, error } = await tryExecute(this, request, {
 
 ### Cancelling Requests
 
-Cancelling a request is useful when it takes too long, or when the user navigates away from the page before it completes. You can cancel a request by using the [AbortController API](https://developer.mozilla.org/en-US/docs/Web/API/AbortController). The `AbortController` API is a built-in API in modern browsers that allows you to cancel requests. Pass its signal to the request, and `tryExecute` returns the cancellation as an error:
+Cancel a request when you no longer need its result, for example when the user navigates away or the request takes too long.
+
+Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away:
 
 ```javascript
+import { tryExecute, UmbCancelError } from '@umbraco-cms/backoffice/resources';
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
 const abortController = new AbortController();
+const signal = abortController.signal;
 
-const request = umbHttpClient.get({
+const execution = tryExecute(this, umbHttpClient.get({
     url: '/umbraco/management/api/v1/server/status',
-    signal: abortController.signal,
-});
+    signal,
+}), { abortSignal: signal });
 
-// Cancel the request for illustration purposes
+// Cancel the request, for example when the user navigates away
 abortController.abort();
 
-const { error } = await tryExecute(this, request, {
-    disableNotifications: true,
-});
+const { data, error } = await execution;
+
+if (UmbCancelError.isUmbCancelError(error)) {
+    // The request was cancelled, so there is nothing to handle
+} else if (error) {
+    console.error('There was a problem with the fetch operation:', error);
+} else {
+    console.log(data); // Do something with the data
+}
+```
+
+When the signal aborts, the returned `error` is an `UmbCancelError`, and `tryExecute` does not show a notification. Use `UmbCancelError.isUmbCancelError()` to tell a cancellation apart from a failed request.
+
+To cancel a request that takes too long, create the signal with [AbortSignal.timeout()](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/timeout_static). The signal aborts after the given number of milliseconds:
+
+```javascript
+const signal = AbortSignal.timeout(5000);
+
+const { data, error } = await tryExecute(this, umbHttpClient.get({
+    url: '/umbraco/management/api/v1/server/status',
+    signal,
+}), { abortSignal: signal });
 ```
