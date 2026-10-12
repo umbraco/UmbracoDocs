@@ -14,6 +14,7 @@ You can read the technical documentation for the `tryExecute` function in the [U
 
 Here is an example of how to use the `tryExecute` function with the Umbraco HTTP client:
 
+{% code title="my-element.ts" %}
 ```javascript
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
@@ -28,6 +29,7 @@ if (error) {
     console.log(data); // Do something with the data
 }
 ```
+{% endcode %}
 
 The `tryExecute` function takes the context of the current class or element as the first argument and the request as the second argument. Therefore, the above example can be used in any class or element that extends from either the [UmbController](https://apidocs.umbraco.com/v17/ui-api/interfaces/libs_controller-api.UmbController.html) or [UmbLitElement](https://apidocs.umbraco.com/v17/ui-api/classes/packages_core_lit-element.UmbLitElement.html) classes.
 
@@ -55,6 +57,7 @@ The notification shows the `title` and `detail` of the problem details in the re
 
 The `tryExecute` function shows a notification when a request fails. There may be valid cases where you want to handle errors yourself. This could, for instance, be if you want to show a custom error message. You can disable the notifications by passing the `disableNotifications` option to the `tryExecute` function:
 
+{% code title="my-element.ts" %}
 ```javascript
 const request = umbHttpClient.get({
     url: '/umbraco/management/api/v1/server/status'
@@ -64,6 +67,7 @@ const { data, error } = await tryExecute(this, request, {
     disableNotifications: true,
 });
 ```
+{% endcode %}
 
 ### Cancelling Requests
 
@@ -71,6 +75,7 @@ Cancel a request when you no longer need its result, for example when the user n
 
 Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away:
 
+{% code title="my-element.ts" %}
 ```javascript
 import { tryExecute, UmbCancelError } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
@@ -96,11 +101,13 @@ if (UmbCancelError.isUmbCancelError(error)) {
     console.log(data); // Do something with the data
 }
 ```
+{% endcode %}
 
 When the signal aborts, the returned `error` is an `UmbCancelError`, and `tryExecute` does not show a notification. Use `UmbCancelError.isUmbCancelError()` to tell a cancellation apart from a failed request.
 
 To cancel a request that takes too long, create the signal with [AbortSignal.timeout()](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/timeout_static). The signal aborts after the given number of milliseconds:
 
+{% code title="my-element.ts" %}
 ```javascript
 const signal = AbortSignal.timeout(5000);
 
@@ -109,3 +116,4 @@ const { data, error } = await tryExecute(this, umbHttpClient.get({
     signal,
 }), { abortSignal: signal });
 ```
+{% endcode %}
