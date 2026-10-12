@@ -6,7 +6,7 @@ description: >-
 
 # Backoffice Notifications
 
-Notifications are short messages that appear on top of the backoffice. They are also known as toasts. Use them to confirm that an action succeeded, or to tell the user about a problem.
+Notifications are short messages that appear over the backoffice UI. They are also known as toasts. Use them to confirm that an action succeeded, or to tell the user about a problem.
 
 The Notification Context shows the notifications. The context is global, so you can consume it from any element or controller in the backoffice.
 
@@ -73,7 +73,7 @@ The context has two methods that show a notification:
 * `peek()` shows a notification that closes after six seconds. Set the `duration` option to change the time.
 * `stay()` shows a notification that stays open until the user or your code closes it.
 
-Every notification has a close button. Hovering over or focusing a notification pauses the timer.
+Every notification has a close button. Hovering over or focusing a notification pauses the timers of all notifications.
 
 Use `stay()` for a message that the user must act on. You can also use it to show the progress of a task, and close it from code when the task ends.
 
@@ -105,7 +105,7 @@ export class MyProductImportController extends UmbControllerBase {
 
     progress?.close();
 
-    // tryExecute has already shown a notification for the failed request
+    // For most failed requests, tryExecute has already shown a notification
     if (error) return;
 
     notificationContext?.peek("positive", {
@@ -134,85 +134,16 @@ The first argument of `peek()` and `stay()` sets the color of the notification:
 The options object takes these properties:
 
 * `data`: The content of the notification. See the [Notification Data](#notification-data) section.
-* `duration`: The time in milliseconds before a `peek()` notification closes. Set it to `null` to keep the notification open. `stay()` ignores this option.
-* `elementName`: The name of a custom element that renders the notification instead of the default layout. The element gets the `data` and `notificationHandler` properties.
+* `duration`: The time in milliseconds before a `peek()` notification closes. Set `duration` to `null` to keep the notification open. `stay()` ignores this option.
+* `elementName`: The name of a custom element that renders the notification instead of the default layout. The element gets the `data` and `notificationHandler` properties. Screen readers announce `data.message`, so include a `message` in `data`.
 
 ### Notification Data
 
 The default layout reads these properties from `data`:
 
 * `headline`: An optional title.
-* `message`: The text of the notification. The message renders as plain text, so HTML markup shows as text. Line breaks (`\n`) are kept. Screen readers announce the message.
+* `message`: The text of the notification. The message renders as plain text, so HTML markup shows as text. Line breaks (`\n`) are kept. Screen readers announce the message, not the headline.
 * `htmlMessage`: An optional message with HTML. See the [Render HTML in a Notification](#render-html-in-a-notification) section.
-
-## Show an Error
-
-The `umbPeekError` function shows a notification for an error. The notification is `danger` unless you set `color`. Besides `headline` and `message`, the function takes these properties:
-
-* `detail`: Text below the message. Text longer than 250 characters moves to a dialog, which the user opens with a button.
-* `errors`: Validation errors, keyed by field name. The user opens the errors in a dialog with a button.
-
-The following controller handles the error of a request itself, and shows it with `umbPeekError`:
-
-{% code title="my-product-validation.controller.ts" %}
-```typescript
-import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
-import { umbHttpClient } from "@umbraco-cms/backoffice/http-client";
-import { umbPeekError } from "@umbraco-cms/backoffice/notification";
-import { tryExecute, UmbApiError } from "@umbraco-cms/backoffice/resources";
-
-export class MyProductValidationController extends UmbControllerBase {
-  async validate() {
-    const { error } = await tryExecute(
-      this,
-      umbHttpClient.post({
-        url: "/umbraco/management/api/v1/my/products/validate",
-        security: [{ scheme: "bearer", type: "http" }],
-      }),
-      { disableNotifications: true },
-    );
-
-    if (!error || !UmbApiError.isUmbApiError(error)) return;
-
-    umbPeekError(this, {
-      headline: "The products are not valid",
-      message: error.problemDetails.title,
-      detail: error.problemDetails.detail,
-      errors: error.problemDetails.errors,
-    });
-  }
-}
-```
-{% endcode %}
-
-## Notifications From Server Responses
-
-The backoffice shows notifications for server responses in two cases: when a request fails, and when the server sends event messages.
-
-### Failed Requests
-
-`tryExecute` shows a notification when a request fails. The notification shows the title and detail of the problem details in the response. Some responses show no notification, such as responses with status 401, 403, or 404. For the full rules, see the [Executing Requests](fetching-data/try-execute.md) article.
-
-To handle the error yourself, pass `disableNotifications: true` to `tryExecute`. You can then show your own notification, for example with `umbPeekError`.
-
-### Event Messages
-
-On the server, notification handlers can add event messages, for example when they cancel an operation. For an example, see the [ContentService Notifications](../../server-side-extensions/notifications/contentservice-notifications.md) article.
-
-Controllers that inherit from `ManagementApiControllerBase` return these messages in the `Umb-Notifications` response header. The header is not added to responses for `GET` requests.
-
-The Umbraco HTTP Client shows a notification for each message. The category of the message is the headline, and the type sets the color:
-
-| Event message type  | Color      |
-| ------------------- | ---------- |
-| `Error`             | `danger`   |
-| `Warning`           | `warning`  |
-| `Success`           | `positive` |
-| `Info` or `Default` | `default`  |
-
-The client shows these notifications for every response, also when `tryExecute` has `disableNotifications` set. A generated client shows them too when you configure it as described in the [Custom Generated Client](fetching-data/custom-generated-client.md) article. A request with the Fetch API does not show them.
-
-An event message can contain HTML, such as a link. The backoffice sanitizes the HTML and renders it. Encode values that users control before you add them to a message, for example with `WebUtility.HtmlEncode()`.
 
 ## Render HTML in a Notification
 
@@ -227,7 +158,7 @@ The `htmlMessage` property takes a string or a Lit `TemplateResult`:
 * A string is sanitized before it renders. Sanitizing removes scripts and event handlers.
 * A `TemplateResult` renders as is. Lit renders the values in its bindings as text, not as HTML.
 
-Keep `message` set to the same text without markup. Screen readers announce `message`, not `htmlMessage`. `umbPeekError` takes `htmlMessage` as well.
+Keep `message` set to the same text without markup. Screen readers announce `message`, not `htmlMessage`. The `umbPeekError` function takes `htmlMessage` as well. See the [Show an Error](#show-an-error) section.
 
 {% code title="my-product-notification.controller.ts" %}
 ```typescript
@@ -268,6 +199,77 @@ Do not add values that users control to an HTML string. Sanitizing removes scrip
 
 Lit does not check URLs in bindings. Do not bind a URL that users control to an `href` or `src` attribute.
 {% endhint %}
+
+[Event messages](#event-messages) from the server can contain HTML as well, such as a link. The backoffice sanitizes the HTML and renders it. Encode values that users control before you add them to a message, for example with `WebUtility.HtmlEncode()`.
+
+## Show an Error
+
+The `umbPeekError` function shows a notification for an error. The notification is `danger` unless you set `color`. Besides `headline` and `message`, the function takes these properties:
+
+* `detail`: Text below the message. Long text moves to a dialog, which the user opens with a button.
+* `errors`: Validation errors, keyed by field name. The user opens the errors in a dialog with a button.
+
+To show your own headline, handle the error of a request yourself and show it with `umbPeekError`:
+
+{% code title="my-product-validation.controller.ts" %}
+```typescript
+import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
+import { umbHttpClient } from "@umbraco-cms/backoffice/http-client";
+import { umbPeekError } from "@umbraco-cms/backoffice/notification";
+import { tryExecute, UmbApiError } from "@umbraco-cms/backoffice/resources";
+
+export class MyProductValidationController extends UmbControllerBase {
+  async validate() {
+    const { error } = await tryExecute(
+      this,
+      umbHttpClient.post({
+        url: "/umbraco/management/api/v1/my/products/validate",
+        security: [{ scheme: "bearer", type: "http" }],
+      }),
+      { disableNotifications: true },
+    );
+
+    if (!error || !UmbApiError.isUmbApiError(error)) return;
+
+    umbPeekError(this, {
+      headline: "The products are not valid",
+      message: error.problemDetails.title,
+      detail: error.problemDetails.detail,
+      errors: error.problemDetails.errors,
+    });
+  }
+}
+```
+{% endcode %}
+
+## Notifications From Server Responses
+
+The backoffice shows notifications for server responses in two cases: when a request fails, and when the server sends event messages.
+
+### Failed Requests
+
+`tryExecute` shows a notification when a request fails. The notification shows the title and detail of the problem details in the response. Some failed requests show no notification. For the full rules, see the [Executing Requests](fetching-data/try-execute.md) article.
+
+To handle the error yourself, pass `disableNotifications: true` to `tryExecute`. You can then show your own notification, for example with `umbPeekError`.
+
+### Event Messages
+
+On the server, notification handlers can add event messages, for example when they cancel an operation. For an example, see the [ContentService Notifications](../../server-side-extensions/notifications/contentservice-notifications.md) article.
+
+Controllers that inherit from `ManagementApiControllerBase` return these messages in the `Umb-Notifications` response header. To add the header to another controller, apply the `[AppendEventMessages]` attribute from the `Umbraco.Cms.Api.Management.Filters` namespace. The header is not added to responses for `GET` requests.
+
+The Umbraco HTTP Client shows a notification for each message. The category of the message is the headline, and the type sets the color:
+
+| Event message type  | Color      |
+| ------------------- | ---------- |
+| `Error`             | `danger`   |
+| `Warning`           | `warning`  |
+| `Success`           | `positive` |
+| `Info` or `Default` | `default`  |
+
+The client shows these notifications for every response, also when `tryExecute` has `disableNotifications` set. A generated client shows them too when you configure it as described in the [Custom Generated Client](fetching-data/custom-generated-client.md) article. A request with the Fetch API does not show them.
+
+To add HTML to an event message, see the [Render HTML in a Notification](#render-html-in-a-notification) section.
 
 ## Further Reading
 
