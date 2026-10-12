@@ -12,6 +12,7 @@ Extension authors can register an entity bulk action to appear in the collection
 
 Entity Bulk Action extensions can be included by importing a subclass of `UmbEntityBulkActionBase` to the `api` property. Placement within the backoffice can be controlled using the conditions property.
 
+{% code title="index.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 import { MyEntityBulkAction } from './entity-bulk-action';
@@ -36,6 +37,7 @@ const manifest = {
 
 umbExtensionsRegistry.register(manifest);
 ```
+{% endcode %}
 
 ## The Entity Bulk Action Class <a href="#the-entity-bulk-action-class" id="the-entity-bulk-action-class"></a>
 
@@ -47,6 +49,7 @@ When the action is completed, an event on the host element will be dispatched to
 This code sample demonstrates overriding the constructor, which could be helpful in certain circumstances, such as consuming contexts. Extension authors can safely omit the constructor if no such need exists.
 {% endhint %}
 
+{% code title="entity-bulk-action.ts" %}
 ```typescript
 import {
     UmbEntityBulkActionBase,
@@ -80,3 +83,4 @@ export class MyEntityBulkAction extends UmbEntityBulkActionBase<never> {
     }
 }
 ```
+{% endcode %}

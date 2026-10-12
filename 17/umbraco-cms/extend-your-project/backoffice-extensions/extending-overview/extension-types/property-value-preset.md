@@ -14,6 +14,7 @@ Before creating a Property Value Preset, it is recommended to read about the [Ex
 
 The following Manifest declares a preset for the `TextBox` Property Editors:
 
+{% code title="manifests.ts" %}
 ```typescript
 export const manifest = {
     type: 'propertyValuePreset',
@@ -24,6 +25,7 @@ export const manifest = {
     forPropertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox'
 }
 ```
+{% endcode %}
 
 ### Key Properties
 

@@ -200,6 +200,7 @@ export const menuItemManifest: ManifestMenuItemTreeKind = {
 
 To display tree items at the root level without a parent folder node, add `hideTreeRoot: true` to the menu item's meta:
 
+{% code title="menu-item.ts" %}
 ```typescript
 {
     type: 'menuItem',
@@ -212,6 +213,7 @@ To display tree items at the root level without a parent folder node, add `hideT
     },
 }
 ```
+{% endcode %}
 
 {% hint style="info" %}
 The `hideTreeRoot` property must be set on the menuItem manifest, not the tree manifest.
@@ -227,12 +229,14 @@ To render custom menu items, developers can use the [Umbraco UI Menu Item compon
 
 `<uui-menu-item>` elements accept a `has-children` boolean attribute, which shows a caret icon to indicate nested items. When using Lit, you can bind this with the `?` directive, for example: `?has-children=${boolVariable}`.
 
+{% code title="menu-items.ts" %}
 ```html
 <uui-menu-item label="Menu Item 1" has-children>
     <uui-menu-item label="Nested Menu Item 1"></uui-menu-item>
     <uui-menu-item label="Nested Menu Item 2"></uui-menu-item>
 </uui-menu-item>
 ```
+{% endcode %}
 
 ### Custom menu item element example
 
@@ -320,6 +324,7 @@ declare global {
 {% endtab %}
 
 {% tab title="my-menu/manifests.ts" %}
+{% code title="my-menu/manifests.ts" %}
 ```typescript
 import type { ManifestMenuItem } from "@umbraco-cms/backoffice/menu";
 
@@ -334,6 +339,7 @@ export const MyMenuItemManifest: ManifestMenuItem = {
   },
 };
 ```
+{% endcode %}
 
 {% hint style="info" %}
 **Note:** Extension authors can use the `kind` property to define the type of menu item. The built-in kinds are `link`, `action`, and `tree`.
@@ -341,6 +347,7 @@ export const MyMenuItemManifest: ManifestMenuItem = {
 {% endtab %}
 
 {% tab title="entrypoints/entrypoints.ts" %}
+{% code title="entrypoints/entrypoints.ts" %}
 ```typescript
 import type {
     UmbEntryPointOnInit,
@@ -360,6 +367,7 @@ export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
     umbExtensionsRegistry.register(MyMenuItemManifest);
 };
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

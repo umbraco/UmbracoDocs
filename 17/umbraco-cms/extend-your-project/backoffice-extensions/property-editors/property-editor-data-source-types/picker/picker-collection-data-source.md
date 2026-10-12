@@ -2,6 +2,7 @@
 
 The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/modules/packages_core_picker-data-source.html)
 
+{% code title="types.ts" %}
 ```typescript
 interface UmbPickerPropertyEditorCollectionDataSource {
   requestCollection();
@@ -11,8 +12,10 @@ interface UmbPickerPropertyEditorCollectionDataSource {
   getConfig?();
 }
 ```
+{% endcode %}
 
 ### Example
+{% code title="my-picker-data-source.ts" %}
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import type { UmbCollectionFilterModel, UmbCollectionItemModel } from '@umbraco-cms/backoffice/collection';
@@ -86,3 +89,4 @@ const customItems: Array<ExampleCollectionItemModel> = [
 ];
 
 ```
+{% endcode %}
