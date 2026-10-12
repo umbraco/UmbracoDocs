@@ -357,6 +357,7 @@
         * [Tree Repository](extend-your-project/backoffice-extensions/extending-overview/extension-types/tree/tree-repository.md)
         * [Tree Models](extend-your-project/backoffice-extensions/extending-overview/extension-types/tree/tree-models.md)
         * [Trees & Workspaces](extend-your-project/backoffice-extensions/extending-overview/extension-types/tree/trees-and-workspaces.md)
+      * [User Entry Point](extend-your-project/backoffice-extensions/extending-overview/extension-types/user-entry-point.md)
       * [Value Summary](extend-your-project/backoffice-extensions/extending-overview/extension-types/value-summary.md)
       * [Value Type](extend-your-project/backoffice-extensions/extending-overview/extension-types/value-type.md)
       * [Workspaces](extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/README.md)

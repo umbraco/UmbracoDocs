@@ -9,7 +9,7 @@ description: >-
 This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words, this can be used as an entry point for a package.
 
 {% hint style="info" %}
-See [App Entry Point](app-entry-point.md) if you are looking for an Extension that runs before the user is logged in.
+See [App Entry Point](app-entry-point.md) if you are looking for an Extension that runs before the user is logged in. See [User Entry Point](user-entry-point.md) if your code depends on the signed-in user, or must run again each time a user signs in.
 {% endhint %}
 
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.

@@ -9,7 +9,7 @@ description: >-
 This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. Additionally, the code will also run on the login screen.
 
 {% hint style="info" %}
-See [Backoffice Entry Point](backoffice-entry-point.md) if you are looking for an Extension that runs when the user is logged in.
+See [Backoffice Entry Point](backoffice-entry-point.md) if you are looking for an Extension that runs when the user is logged in. See [User Entry Point](user-entry-point.md) if your code depends on the signed-in user.
 {% endhint %}
 
 It performs the same function as the `backofficeEntryPoint` extension type, but the difference is that this runs before the user is logged in. Use this to initiate things before the user is logged in or to provide things for the Login screen.
