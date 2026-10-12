@@ -169,14 +169,6 @@ const { data } = await umbHttpClient.get({
 
 See [Umbraco HTTP Client](http-client.md) for more details.
 
-## Fetch API
-
-If you only have a few requests, you can also use the `fetch` function directly. Read more about that here:
-
-{% content-ref url="fetch-api.md" %}
-[fetch-api.md](fetch-api.md)
-{% endcontent-ref %}
-
 ## Further reading
 
 - [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)

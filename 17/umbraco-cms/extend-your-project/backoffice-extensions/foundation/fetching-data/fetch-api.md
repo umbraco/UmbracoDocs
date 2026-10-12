@@ -124,10 +124,10 @@ Wrap the request in `tryExecute`, which shows a notification when the request th
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { makeRequest } from './make-request.js';
 
-const response = await tryExecute(this, makeRequest(this, '/umbraco/management/api/v1/user/current'));
+const { data, error } = await tryExecute(this, makeRequest(this, '/umbraco/management/api/v1/user/current'));
 
-if (!response.error) {
-  console.log(response); // The JSON from the server
+if (!error) {
+  console.log(data); // The JSON from the server
 }
 ```
 {% endcode %}
