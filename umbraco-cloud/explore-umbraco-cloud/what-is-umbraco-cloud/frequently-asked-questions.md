@@ -999,6 +999,9 @@ No. An upgrade window only controls when an upgrade is allowed to start. The tim
 
 Your environments are upgraded one at a time. If the upgrade starts late in the window, Staging and Live can be upgraded shortly after the window has closed. See the [What Happens in an Upgrade Window](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#what-happens-in-an-upgrade-window) section.
 
+Once an environment upgrades it will apply the new versions and then restart, so each environment will have a short restart period it will be down for.
+Additionally, for minor versions there may be migrations running after the restart that will extend the period the site is unusable.
+
 ### Will I get several upgrades if I select several upgrade windows?
 
 No. Each release is applied once. Selecting more windows gives Umbraco Cloud more opportunities to start the upgrade.
