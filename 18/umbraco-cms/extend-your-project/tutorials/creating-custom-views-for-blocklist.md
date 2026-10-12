@@ -145,6 +145,7 @@ This is a TypeScript file. It is recommended to follow the documentation on comp
 
 Now that you have created a Web Component, register it to show up on the block:
 
+{% code title="manifests.ts" %}
 ```typescript
 {
     type: 'blockEditorCustomView',
@@ -155,15 +156,18 @@ Now that you have created a Web Component, register it to show up on the block:
     forBlockEditor: 'block-list',
 }
 ```
+{% endcode %}
 
 The `forContentTypeAlias` value is the alias of the block's Element Type, not the alias of the Document Type. The **Feature** Element Type created earlier has the `feature` alias.
 
 While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, they also accept arrays. They can therefore be used to declare a custom view for multiple blocks and block editors. The code snippet below shows an example of such an array:
 
+{% code title="manifests.ts" %}
 ```typescript
     forContentTypeAlias: ['feature', 'hero'],
     forBlockEditor: ['block-list', 'block-grid', 'block-rte'],
 ```
+{% endcode %}
 
 Depending on the values, the custom view is applied to the following data types:
 

@@ -20,6 +20,7 @@ Before creating a Property Action, make sure you are familiar with the [Extensio
 
 Here is how you can register a new Property Action:
 
+{% code title="index.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 const manifest =
@@ -39,11 +40,13 @@ const manifest =
 
 umbExtensionsRegistry.register(manifest);
 ```
+{% endcode %}
 
 ### Creating the Property Action Class
 
 Every Property Action needs a class that defines what happens when the action is executed. You can extend the `UmbPropertyActionBase` class for this.
 
+{% code title="my-property-action.api.ts" %}
 ```typescript
 import { UmbPropertyActionBase } from '@umbraco-cms/backoffice/property-action';
 import { UMB_PROPERTY_CONTEXT } from '@umbraco-cms/backoffice/property';
@@ -60,3 +63,4 @@ export class MyPropertyAction extends UmbPropertyActionBase {
 }
 export { MyPropertyAction as api };
 ```
+{% endcode %}

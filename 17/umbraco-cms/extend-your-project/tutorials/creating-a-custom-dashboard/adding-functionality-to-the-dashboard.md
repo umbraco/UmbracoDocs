@@ -213,12 +213,14 @@ private async _getPagedUserData() {
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array:
 
+{% code title="welcome-dashboard.element.ts" %}
 ```typescript
 private async _getPagedUserData() {
     const { data } = await this.#userRepository.requestCollection();
     this._userData = data?.items ?? [];
 }
 ```
+{% endcode %}
 
 ## Render the Data
 
