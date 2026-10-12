@@ -20,6 +20,7 @@ You can see an example of this pattern in the [Extension Type Workspace Context]
 
 The example below demonstrates the basics of working with a State and observing its changes:
 
+{% code title="my-element.ts" %}
 ```
 const myState = new UmbStringState('the initial value');
 const myObservable = myState.asObservable();
@@ -30,12 +31,14 @@ this.observe(myObservable, (value) => {
 
 myState.setValue('updated value');
 ```
+{% endcode %}
 
 This example will result in the following logs:
 
-<pre><code><strong>> 'the initial value'
-</strong>> 'updated value'
-</code></pre>
+```
+> 'the initial value'
+> 'updated value'
+```
 
 ## State Types
 
@@ -62,26 +65,30 @@ The example below creates a State and exposes the entire value via an Observable
 
 The second argument of an Array State is a method that returns the unique value of an entry. In an array of strings, each entry is its own unique value.
 
-<pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
+{% code title="my-element.ts" %}
+```typescript
+import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 
-<strong>...
-</strong>
-<strong>this.#selectionState = new UmbArrayState&#x3C;string>(['item1', 'item2'], (entry) => entry);
-</strong>this.selection = this.#selectionState.asObservable();
+...
 
-<strong>this.observe(
-</strong>	this.selection,
+this.#selectionState = new UmbArrayState<string>(['item1', 'item2'], (entry) => entry);
+this.selection = this.#selectionState.asObservable();
+
+this.observe(
+	this.selection,
     (selection) => {
         // This call will be executed initially and on each state change.
         console.log(selection)
     }
 );
-</code></pre>
+```
+{% endcode %}
 
 This will result in the following log:
 
-<pre><code><strong>> ['item1', 'item2']
-</strong></code></pre>
+```
+> ['item1', 'item2']
+```
 
 ### Change the value of a State
 
@@ -89,18 +96,22 @@ The value of a state can be changed via the `setValue` method. This replaces the
 
 The following example shows how to change the value of the state to hold `item2` and `item3`. As this builds on the previous example, it means that `item1` is no longer part of the value of this state:
 
-<pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
+{% code title="my-element.ts" %}
+```typescript
+import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 
-<strong>...
-</strong>
+...
+
 this.#selectionState.setValue(['item2', 'item3']);
 
-</code></pre>
+```
+{% endcode %}
 
 This will result in the following log, in addition to the one above:
 
-<pre><code><strong>> ['item2', 'item3']
-</strong></code></pre>
+```
+> ['item2', 'item3']
+```
 
 ### Observe part of a State value
 
@@ -108,6 +119,7 @@ The `asObservablePart` method creates an Observable that provides a scoped or tr
 
 The following example provides an observable for the first selected item in the selection:&#x20;
 
+{% code title="my-element.ts" %}
 ```typescript
 
 this.firstSelected = this.#selectionState.asObservablePart(data => data?.[0]);
@@ -120,11 +132,13 @@ this.observe(
     }
 );
 ```
+{% endcode %}
 
 In the above example, the `asObservablePart` mapping function will be executed whenever the State changes. If the method's result differs from before, it will trigger an update to its observers.
 
 The following example computes the length&#x20;
 
+{% code title="my-element.ts" %}
 ```typescript
 this.selectionLength = this.#selectionState.asObservablePart(data => data.length);
 
@@ -136,6 +150,7 @@ this.observe(
     }
 );
 ```
+{% endcode %}
 
 As in the previous example, the mapper will be triggered whenever the State values change. But observers of this Observable will only be notified if the outcome value differs.
 
@@ -143,6 +158,7 @@ As in the previous example, the mapper will be triggered whenever the State valu
 
 The example below revisits the earlier scenario to see how an Observable Part is triggered in relation to the value of the state.
 
+{% code title="my-element.ts" %}
 ```
 const myState = new UmbStringState('four');
 const myObservable = myState.asObservable();
@@ -158,14 +174,16 @@ this.observe(myObservablePart, (value) => {
 myState.setValue('five');
 myState.setValue('six');// note that it contains only three letters
 ```
+{% endcode %}
 
 This example will result in the following logs:
 
-<pre><code><strong>> value: 'four'
-</strong>> length: 4
+```
+> value: 'four'
+> length: 4
 > value: 'five'
 > value: 'six'
 > length: 3
-</code></pre>
+```
 
 The `length` observation was triggered when the length differed.

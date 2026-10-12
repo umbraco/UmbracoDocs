@@ -36,6 +36,7 @@ If the needed data isn’t available in a context, use a repository to request t
 
 In the example below, we instantiate the `UmbDocumentItemRepository` directly in a custom element to request Document Item data by its unique key.
 
+{% code title="my-element.ts" %}
 ```typescript
 import { LitElement} from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -54,9 +55,11 @@ class MyElement extends UmbElementMixin(LitElement) {
   ...
 }
 ```
+{% endcode %}
 
 Alternatively, you can instantiate the repository in a [controller](../umbraco-controller/) or [context](../context-api/), store the data in a [state](../states.md), and then observe that state in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
 
+{% code title="my-controller.ts" %}
 ```typescript
 import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
@@ -84,6 +87,7 @@ export class MyController extends UmbControllerBase {
   }
 }
 ```
+{% endcode %}
 
 ### Register a custom Repository <a href="#register-a-custom-repository" id="register-a-custom-repository"></a>
 
@@ -97,6 +101,7 @@ Some of the common repository interfaces are:
 
 See the example below of how to register a custom repository:
 
+{% code title="my-entity-tree.repository.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
 import { UmbRepositoryBase } from "@umbraco-cms/backoffice/repository";
@@ -115,3 +120,4 @@ const repositoryManifest = {
 
 umbExtensionsRegistry.register(repositoryManifest);
 ```
+{% endcode %}
