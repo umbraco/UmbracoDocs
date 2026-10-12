@@ -83,7 +83,11 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 
 If a user signs in again after a timeout, `onInit` runs again. The new session may belong to a different user.
 
-Each browser tab runs its own copy of the module. Every open tab calls `onInit`, and reloading a tab calls `onInit` again. Closing or reloading a tab does not call `onUnload`. Do not rely on `onUnload` to clean up state on the server. Let that state expire on its own.
+Each browser tab runs its own copy of the module. A tab loads the module once and reuses it for every session, so module-level variables keep their values. Reset them in `onUnload`.
+
+Every open tab calls `onInit`, and reloading a tab calls `onInit` again. Signing out in one tab ends the session in every tab, and each tab calls `onUnload` before it navigates away. Each tab times out on its own timer and then shows a sign-in overlay. Signing in at the overlay in one tab signs in every open tab, and each tab calls `onInit` once.
+
+Closing or reloading a tab does not call `onUnload`. Do not rely on `onUnload` to clean up state on the server. Let that state expire on its own.
 
 {% hint style="warning" %}
 When `onUnload` runs, the session has already ended. Do not call Umbraco's APIs from `onUnload`. On sign-out the page navigates away right after `onUnload`. After a timeout, the request fails or waits for the next sign-in. Keep the cleanup synchronous and local, such as closing a connection.
@@ -139,6 +143,8 @@ export const onUnload: UmbEntryPointOnUnload = () => {
 
 Keep setup and cleanup symmetrical, so nothing from one user's session leaks into the next. Use the identity captured in `onInit`. Do not read the Current User Context in `onUnload`.
 
+Each open tab runs `onInit`, so each tab opens its own connection.
+
 ### Register extensions for specific users
 
 Register extensions based on who is signed in, and unregister them again when the session ends. This way the next session starts from a clean slate, even if it belongs to a different user:
@@ -180,17 +186,19 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 
 The session can end while the access request is still running. The `session` counter makes sure that a late response does not register the dashboard in a later session.
 
+Each tab has its own extension registry, so every open tab runs the access check and registers the dashboard once.
+
 {% hint style="info" %}
 For checks that a built-in condition covers, such as `Umb.Condition.CurrentUser.IsAdmin` or `Umb.Condition.CurrentUser.GroupId`, add the condition to the extension's manifest instead. See [Extension Conditions](condition.md#current-user).
 {% endhint %}
 
 ### React to changes during the session
 
-`onInit` runs once per session. It does **not** run again when the user's data changes. The Current User Context updates when the user changes their profile or language, or edits their own user or one of their groups. Changes made elsewhere arrive at the next sign-in or reload. Observe the Current User Context for anything long-lived:
+`onInit` runs once per session. It does **not** run again when the user's data changes. In the same tab, the Current User Context updates when the user saves changes to their own user or one of their user groups. Examples are changes to their name or UI language. Changes made anywhere else, including in another tab, arrive at the next sign-in or reload. Observe the Current User Context for anything long-lived:
 
 {% code title="user.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
 import { UMB_CURRENT_USER_CONTEXT } from '@umbraco-cms/backoffice/current-user';
 
 const ALLOWED_SECTIONS_OBSERVER = 'My.UserEntryPoint.AllowedSections';
@@ -201,10 +209,14 @@ export const onInit: UmbEntryPointOnInit = async (host) => {
         // Runs immediately and again every time the user's allowed sections change
     }, ALLOWED_SECTIONS_OBSERVER);
 };
+
+export const onUnload: UmbEntryPointOnUnload = (host) => {
+    host.removeUmbControllerByAlias(ALLOWED_SECTIONS_OBSERVER);
+};
 ```
 {% endcode %}
 
-Give the observer an alias, as the third argument of `observe`. When `onInit` runs again in a new session, `observe` replaces the observer that has the same alias instead of adding a second one.
+Because the observer has an alias, the next `onInit` replaces it instead of adding a second one. Remove it in `onUnload` as well, so its callback does not run once more with the next session's user before `onInit` has run.
 
 ## Type IntelliSense
 
