@@ -25,6 +25,7 @@ The first example uses Lit and that is the way Umbraco builds their elements. If
 
 {% tabs %}
 {% tab title="Lit element" %}
+{% code title="example-element.js" %}
 ```javascript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { html } from '@umbraco-cms/backoffice/external/lit';
@@ -68,8 +69,10 @@ export default class ExampleElement extends UmbLitElement {
 // Register the custom element
 customElements.define('example-element', ExampleElement);
 ```
+{% endcode %}
 {% endtab %}
 {% tab title="HTML element" %}
+{% code title="example-element.js" %}
 ```javascript
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -121,6 +124,7 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
 // Register the custom element
 customElements.define('example-element', ExampleElement);
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -138,6 +142,7 @@ The first example uses Lit and that is the way Umbraco builds their elements. If
 
 {% tabs %}
 {% tab title="Lit element" %}
+{% code title="example-element.js" %}
 ```javascript
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
@@ -169,8 +174,10 @@ export default class ExampleElement extends UmbLitElement {
 // Register the custom element
 customElements.define('example-element', ExampleElement);
 ```
+{% endcode %}
 {% endtab %}
 {% tab title="HTML element" %}
+{% code title="example-element.js" %}
 ```javascript
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
@@ -202,6 +209,7 @@ export default class ExampleElement extends UmbElementMixin(HTMLElement) {
 // Register the custom element
 customElements.define('example-element', ExampleElement);
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -213,6 +221,7 @@ For these non-UI classes, extend `UmbControllerBase` to gain the same context co
 ### Get as one-time reference
 This example creates an example service that can show a notification in the backoffice of Umbraco based on the given text.
 
+{% code title="example-service.js" %}
 ```javascript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
@@ -239,10 +248,12 @@ export default class ExampleService extends UmbControllerBase {
     }
 }
 ```
+{% endcode %}
 
 ### Get as a subscription
 This example consumes the document workspace context and saves it to a variable to be used later.
 
+{% code title="example-service.js" %}
 ```javascript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
@@ -268,6 +279,7 @@ export class ExampleService extends UmbControllerBase {
     }
 }
 ```
+{% endcode %}
 
 ## Manual context control
 In rare cases, you may need complete manual control over context consumption. This means not extending `UmbControllerBase` or using element mixins. This is typically necessary when:
@@ -284,6 +296,8 @@ For these scenarios, use `UmbContextConsumer` directly. This low-level API gives
 
 ### Get as one-time reference
 To create the one-time reference, you don't provide a callback when calling the UmbContextConsumer. This makes it destroy itself when going out of scope.
+
+{% code title="notification-service.js" %}
 ```javascript
 import { UmbContextConsumer } from '@umbraco-cms/backoffice/context-api';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
@@ -329,10 +343,12 @@ export class NotificationService {
     }
 }
 ```
+{% endcode %}
 
 ### Get as a subscription
 In contrast to the one-time reference, a callback is provided. This makes it a subscription. You need to disconnect and destroy the context consumer yourself. This example creates a custom `DocumentService` that consumes the Document Workspace Context.
 
+{% code title="document-service.js" %}
 ```javascript
 import { UmbContextConsumer } from '@umbraco-cms/backoffice/context-api';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
@@ -377,9 +393,11 @@ export class DocumentService {
     }
 }
 ```
+{% endcode %}
 
 To use this service, the host element must call the lifecycle methods:
 
+{% code title="my-element.js" %}
 ```javascript
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { DocumentService } from './document-service.js';
@@ -405,3 +423,4 @@ export default class MyElement extends UmbLitElement {
     }
 }
 ```
+{% endcode %}
