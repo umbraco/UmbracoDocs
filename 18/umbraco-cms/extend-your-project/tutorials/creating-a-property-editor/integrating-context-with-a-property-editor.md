@@ -20,7 +20,7 @@ This part covers:
 
 {% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
-import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, UmbNotificationDefaultData} from '@umbraco-cms/backoffice/notification';
+import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext, type UmbNotificationDefaultData } from '@umbraco-cms/backoffice/notification';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ With the notification context in place, update the `#onTrimText` method.
 
 Check whether the input length is less than or equal to the `maxChars` value. If so, a notification is shown to indicate there is nothing to trim.
 
-Use the `NotificationContext`'s `peek` method here. It has two parameters `UmbNotificationColor` and an `UmbNotificationDefaultData` object.
+Use the `NotificationContext`'s `peek` method here. The method has two parameters: an `UmbNotificationColor` and an `UmbNotificationOptions` object. Pass an `UmbNotificationDefaultData` object in the `data` property of the options. The `message` property is required.
 
 1. Add the `#onTextTrim()`method above the `render()` method:
 
@@ -111,7 +111,7 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL,} from '@umbraco-cms/backo
 2. Update the notification import to remove the `UmbNotificationContext` type, which is no longer needed:
 
 ```typescript
-import { UMB_NOTIFICATION_CONTEXT, UmbNotificationDefaultData } from '@umbraco-cms/backoffice/notification';
+import { UMB_NOTIFICATION_CONTEXT, type UmbNotificationDefaultData } from '@umbraco-cms/backoffice/notification';
 ```
 
 3. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT`and the `UMB_CONFIRM_MODAL.`
@@ -146,7 +146,7 @@ constructor() {
         {
             data: {
                 headline: `Trim text`,
-                content: `Do you want to trim the text to "${trimmed}"?`,
+                content: html`Do you want to trim the text to "${trimmed}"?`,
                 color: "danger",
                 confirmLabel: "Trim",
             }
@@ -164,6 +164,8 @@ constructor() {
 }
 ```
 {% endcode %}
+
+The `content` of the confirm modal is a Lit `html` template, so Lit escapes the `trimmed` value. The confirm modal renders a string `content` as HTML, so never interpolate user input into a string.
 
 <details>
 
@@ -256,7 +258,7 @@ export default class MySuggestionsPropertyEditorUIElement
 		const modalHandler = this.#modalManagerContext?.open(this, UMB_CONFIRM_MODAL, {
 			data: {
 				headline: `Trim text`,
-				content: `Do you want to trim the text to "${trimmed}"?`,
+				content: html`Do you want to trim the text to "${trimmed}"?`,
 				color: 'danger',
 				confirmLabel: 'Trim',
 			},
@@ -572,7 +574,7 @@ export default class MySuggestionsPropertyEditorUIElement
 		const modalHandler = this.#modalManagerContext?.open(this, UMB_CONFIRM_MODAL, {
 			data: {
 				headline: `Trim text`,
-				content: `Do you want to trim the text to "${trimmed}"?`,
+				content: html`Do you want to trim the text to "${trimmed}"?`,
 				color: 'danger',
 				confirmLabel: 'Trim',
 			},
