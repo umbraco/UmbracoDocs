@@ -190,7 +190,7 @@ For checks that a built-in condition covers, such as `Umb.Condition.CurrentUser.
 
 {% code title="user.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
 import { UMB_CURRENT_USER_CONTEXT } from '@umbraco-cms/backoffice/current-user';
 
 const ALLOWED_SECTIONS_OBSERVER = 'My.UserEntryPoint.AllowedSections';
@@ -201,14 +201,10 @@ export const onInit: UmbEntryPointOnInit = async (host) => {
         // Runs immediately and again every time the user's allowed sections change
     }, ALLOWED_SECTIONS_OBSERVER);
 };
-
-export const onUnload: UmbEntryPointOnUnload = (host) => {
-    host.removeUmbControllerByAlias(ALLOWED_SECTIONS_OBSERVER);
-};
 ```
 {% endcode %}
 
-The host outlives the session. Remove the observer in `onUnload`, so the observer does not keep running into the next session.
+Give the observer an alias, as the third argument of `observe`. When `onInit` runs again in a new session, `observe` replaces the observer that has the same alias instead of adding a second one.
 
 ## Type IntelliSense
 
