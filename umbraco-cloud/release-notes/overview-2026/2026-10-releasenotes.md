@@ -8,7 +8,8 @@
 
 ## Sweden Region Available
 
-Umbraco Cloud now has a Sweden region, allowing you to host your projects in Sweden.\
+Umbraco Cloud now has a Sweden region, allowing you to host your projects in Sweden.
+
 This is particularly beneficial for organizations with data residency requirements or those looking to enhance performance for users in the Nordics.
 
 ## Automatic NuGet cache cleanup
