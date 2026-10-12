@@ -49,9 +49,10 @@ Global Context extensions are registered using a `umbraco-package.json` manifest
 
 First, create a context token. This is how other parts of your extension will reference the context.
 
-{% code title="src/my-context.ts" %}
+{% code title="src/my-context.context-token.ts" %}
 ```typescript
 import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
+import type { MyGlobalContext } from './my-context.context.js';
 
 export interface MyGlobalContextInterface {
     getCurrentUser(): Promise<string>;
@@ -67,20 +68,21 @@ export const MY_GLOBAL_CONTEXT = new UmbContextToken<MyGlobalContext>(
 
 {% hint style="info" %}
 When defining the context token, use the context class rather than the interface as the generic type. For example: `UmbContextToken<MyGlobalContext>` instead of `UmbContextToken<MyGlobalContextInterface>`.
-{% endhint %}%}
+{% endhint %}
 
 {% hint style="info" %}
 The string passed into the `contextAlias` parameter does not need to match the alias registered in the manifest.
-{% endhint %}%}
+{% endhint %}
 
 ### 2. Implement the Context Class
 
 Next, implement the context class.
 
-{% code title="src/my-context.ts" %}
+{% code title="src/my-context.context.ts" %}
 ```typescript
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
-import { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+import { MY_GLOBAL_CONTEXT, type MyGlobalContextInterface } from './my-context.context-token.js';
 
 export class MyGlobalContext
     extends UmbContextBase
@@ -125,8 +127,8 @@ import {
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import {
     MY_GLOBAL_CONTEXT,
-    MyGlobalContextInterface,
-} from "./service-status-context.ts";
+    type MyGlobalContextInterface,
+} from "./my-context.context-token.js";
 
 @customElement("my-custom-dashboard")
 export class MyCustomDashboard extends UmbElementMixin(LitElement) {
@@ -151,7 +153,7 @@ export class MyCustomDashboard extends UmbElementMixin(LitElement) {
         console.log(`Welcome back, ${user}!`);
     }
 
-    render() {
+    override render() {
         return html`
       <uui-button @click=${this.#handleClick} look="primary">
         Check User
