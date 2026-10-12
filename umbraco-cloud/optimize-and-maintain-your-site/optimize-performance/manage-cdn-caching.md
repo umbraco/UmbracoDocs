@@ -76,6 +76,8 @@ When a webpage is cached, it will be stripped of any cookies that are otherwise 
 
 When using Cache TTL, the Editor's expectations of when the webpage is refreshed is matched with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours. Then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, they will have to wait at least two hours until they can see the changes on the website.
 
+If the page sends its own `Cache-Control` or `Expires` header, that value is used instead. See [How long pages are cached](manage-cdn-caching.md#how-long-pages-are-cached).
+
 {% hint style="warning" %}
 We recommend using Cache Everything with caution.
 {% endhint %}
@@ -98,13 +100,15 @@ Check `uc-cache-status` with a regular `GET` request, for example from the brows
 
 Umbraco 8 sends `Cache-Control: private` on webpages by default. This means webpages on Umbraco 8 projects are not cached when Cache Everything is enabled, even though static assets are.
 
-To cache a page, set the cache-control header to `public` in its template:
+To cache a page, set the `Cache-Control` header to `public` in its template:
 
-```csharp
+{% code title="Views/MyTemplate.cshtml" %}
+```cshtml
 @{
     Response.Cache.SetCacheability(HttpCacheability.Public);
 }
 ```
+{% endcode %}
 
 {% hint style="warning" %}
 Only mark pages as `public` when they are the same for every visitor. Do not use this on pages that show member-specific or logged-in content. One visitor's version of the page could be served to others.
