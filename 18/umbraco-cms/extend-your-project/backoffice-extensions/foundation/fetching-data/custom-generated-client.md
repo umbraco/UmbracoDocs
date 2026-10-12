@@ -4,17 +4,13 @@ description: Learn how to create a custom-generated client with TypeScript types
 
 # Custom Generated Client
 
-Umbraco uses [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate its HTTP client for the OpenAPI specification of the Management API. It is available through the `@umbraco-cms/backoffice/http-client` package.
+A generated client gives you a typed function for each endpoint of your own API. The [`@hey-api/openapi-ts`](https://heyapi.dev/openapi-ts/get-started) library generates it from the OpenAPI document of your API. Umbraco generates the [Umbraco HTTP Client](http-client.md), `umbHttpClient`, with the same library.
 
-{% content-ref url="http-client.md" %}
-[http-client.md](http-client.md)
-{% endcontent-ref %}
+Configure your client with `configureClient()`, as described in [Connecting to the Management API](#connecting-to-the-management-api). Your client then handles authentication and responses like `umbHttpClient`.
 
-The following examples show how to generate a client from an OpenAPI specification and how to use it in the project. Below, the `@hey-api/openapi-ts` library is used, but the same principles apply to any other library that generates a TypeScript client.
+Generate a client when you call many endpoints of your own API and want types for them. For the Management API, and for a few direct calls to your own API, use `umbHttpClient`.
 
 ## Generate your own client
-
-The generated client provides a convenient way to make requests to the specified API with type-safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
 
 To get started, install the generator using the following command:
 
