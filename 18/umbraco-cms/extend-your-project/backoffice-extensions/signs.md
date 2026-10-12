@@ -94,7 +94,7 @@ export const manifests: UmbExtensionManifest = {
 ```
 {% endcode %}
 
-The `icon` kind provides the label of the Sign. The `element` property replaces the icon with your own element.
+The `icon` kind provides the label of the Sign. The `element` property replaces the icon with your custom element.
 
 And in `recently-created-sign.element.ts`:
 
