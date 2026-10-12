@@ -41,4 +41,4 @@ Some advanced features (like spawning reviewer agents or entering plan mode) wor
 
 ## Skills and MCP
 
-Skills and the [Model Context Protocol (MCP)](../mcp/base-mcp/README.md) are complementary. Skills provide **knowledge** — they teach the agent how to write correct code. MCP provides **capability** — it gives the agent tools to interact with a running Umbraco instance. An agent might use a skill to learn how to build a dashboard, and use MCP tools to create the content types it needs.
+Skills and the [Model Context Protocol (MCP)](../mcp/custom-mcp-server/README.md) are complementary. Skills provide **knowledge** — they teach the agent how to write correct code. MCP provides **capability** — it gives the agent tools to interact with a running Umbraco instance. An agent might use a skill to learn how to build a dashboard, and use MCP tools to create the content types it needs.

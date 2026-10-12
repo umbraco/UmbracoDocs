@@ -45,7 +45,7 @@ codex mcp add umbraco-mcp \
 ```
 
 {% hint style="info" %}
-`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
 Replace the following values with your local connection details:

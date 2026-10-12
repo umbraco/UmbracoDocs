@@ -2,9 +2,16 @@
 
 ## Key Takeaways
 
+* **Sweden Region Available** - Umbraco Cloud now has a Sweden region.
 * **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
 * **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 * **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
+
+## Sweden Region Available
+
+Umbraco Cloud now has a Sweden region, allowing you to host your projects in Sweden.
+
+This is particularly beneficial for organizations with data residency requirements or those looking to enhance performance for users in the Nordics.
 
 ## Automatic NuGet cache cleanup
 

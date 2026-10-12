@@ -30,7 +30,7 @@ Use it with a query to interact with Umbraco Engage directly from Claude Code:
 /umb-engage-dev-cli what goals are set up for the homepage
 ```
 
-For the full reference of CLI flags, runtime modes, introspection commands, and input sanitization, see the [CLI Reference](../base-mcp/sdk/cli.md).
+For the full reference of CLI flags, runtime modes, introspection commands, and input sanitization, see the [CLI Reference](../../custom-mcp-server/sdk/cli.md).
 
 ## `umb-engage-mcp-setup`
 
@@ -39,7 +39,7 @@ Guide for installing and configuring the Engage Developer MCP Server as a live M
 Use it when you want Claude Code to walk you through connecting the server for the first time, or to troubleshoot an existing connection. It points to the same official setup guides as this documentation site:
 
 * [Getting Started](README.md)
-* [Local MCP Setup](../local-mcp-setup/README.md)
+* [Local MCP Setup](../../connect-to-an-mcp-server/local-mcp-setup/README.md)
 * [Configuration Options](configuration.md)
 
 ## `umb-engage-content-recipes`

@@ -15,7 +15,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 
 If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail.
 
-See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
+See [Version Compatibility](../../mcp-servers/cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
 {% endhint %}
 
 ## Getting started
@@ -23,7 +23,7 @@ See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility
 1. Download and install the [Claude.ai desktop app](https://claude.ai/download).
 2. Go to **Settings** → **Developer** → **Edit Config** to edit the MCP settings,.
 
-![MCP Panel](<../../.gitbook/assets/Claude Desktop.png>)
+![MCP Panel](<../../../.gitbook/assets/Claude Desktop.png>)
 
 3. Open the JSON configuration file in your preferred text editor.
 4. Add the following snippet.
@@ -50,7 +50,7 @@ See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility
 ```
 
 {% hint style="info" %}
-`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
 5. Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
@@ -61,7 +61,7 @@ See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility
 A paid version of Claude.ai will have a higher token limit and can run more complex prompts.
 {% endhint %}
 
-8. [Choose the tools or tool collections](../cms-developer-mcp/available-tools.md) to enable your first task.
+8. [Choose the tools or tool collections](../../mcp-servers/cms-developer-mcp/available-tools.md) to enable your first task.
 
 You will need to restart Claude Desktop every time you make a change to the tools you are using.
 

@@ -116,7 +116,7 @@ import { createPerRequestServer, type CreateServerOptions } from "@umbraco-cms/m
 const server = await createPerRequestServer(serverOptions, env, authProps);
 ```
 
-Use this inside the `McpAgent.init()` method to create a per-request server scoped to the authenticated user. See [Architecture - Per-Request Server Creation](architecture.md#per-request-server-creation) for the internal steps.
+Use this inside the `McpAgent.init()` method to create a per-request server scoped to the authenticated user. See [Architecture - Component Architecture](architecture.md#component-architecture) for the internal steps.
 
 ### mergeConsentChoices(envConfig, choices?)
 

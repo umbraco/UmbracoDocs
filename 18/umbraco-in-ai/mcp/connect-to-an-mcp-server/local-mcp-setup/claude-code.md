@@ -15,7 +15,7 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 
 If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use the `@lts-17` tag instead, for example `@umbraco-cms/mcp-dev@lts-17`. A version mismatch causes the first tool request to fail.
 
-See [Version Compatibility](../cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
+See [Version Compatibility](../../mcp-servers/cms-developer-mcp/README.md#version-compatibility) for the full list of tags.
 {% endhint %}
 
 ## Getting started
@@ -77,7 +77,7 @@ UMBRACO_INCLUDE_TOOL_COLLECTIONS=document,media,document-type,data-type,template
 Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and `UMBRACO_INCLUDE_TOOL_COLLECTIONS` values with your local connection details.
 
 {% hint style="info" %}
-`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../cms-developer-mcp/available-tools.md) for the full list of collections.
+`UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
 #### Example `.mcp.json` file
@@ -93,7 +93,7 @@ Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, `UMBRACO_BASE_URL` and
 }
 ```
 
-For details on `.env` format and supported configuration keys, see the [Configuration guide](../cms-developer-mcp/configuration.md).
+For details on `.env` format and supported configuration keys, see the [Configuration guide](../../mcp-servers/cms-developer-mcp/configuration.md).
 
 {% hint style="warning" %}
 Never commit live credentials to source control. Always use environment variables or a `.env` file.

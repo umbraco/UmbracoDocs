@@ -4,9 +4,9 @@ description: Configuration options for the Automate Developer MCP server
 
 # Configuration Options
 
-The Automate Developer MCP Server uses the same configuration fields as any Umbraco MCP server built on the Base MCP SDK. For authentication, environment variables, CLI arguments, precedence rules, and all built-in fields, see the [SDK Configuration reference](../base-mcp/sdk/configuration.md).
+The Automate Developer MCP Server uses the same configuration fields as any Umbraco MCP server built on the Base MCP SDK. For authentication, environment variables, CLI arguments, precedence rules, and all built-in fields, see the [SDK Configuration reference](../../custom-mcp-server/sdk/configuration.md).
 
-For a complete reference of CLI flags, runtime modes (readonly and dry-run), introspection commands, and input sanitization, see the [CLI Reference](../base-mcp/sdk/cli.md).
+For a complete reference of CLI flags, runtime modes (readonly and dry-run), introspection commands, and input sanitization, see the [CLI Reference](../../custom-mcp-server/sdk/cli.md).
 
 This page lists the specific tool modes and slices that the Automate Developer MCP ships with. It also covers the connection and chaining fields it adds on top of the SDK defaults.
 
@@ -35,7 +35,7 @@ Set `UMBRACO_EXPECTED_MAJOR` only when you deliberately connect to a different U
 
 ## Tool Filtering
 
-The Automate Developer MCP Server uses the SDK [tool filtering system](../base-mcp/sdk/tool-filtering.md) to control which tools are registered. Filtering is built around three concepts: **modes**, **collections**, and **slices**. See the SDK documentation for how these compose and the available configuration keys.
+The Automate Developer MCP Server uses the SDK [tool filtering system](../../custom-mcp-server/sdk/tool-filtering.md) to control which tools are registered. Filtering is built around three concepts: **modes**, **collections**, and **slices**. See the SDK documentation for how these compose and the available configuration keys.
 
 ### Available Modes
 

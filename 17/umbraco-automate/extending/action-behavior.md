@@ -212,7 +212,8 @@ Keep the following in mind:
 
 * Settings reach both methods with configuration references resolved. `${ }` bindings are still unresolved text, so skip format checks on a bound value.
 * Declare a setting that is only required at publish as nullable, such as `string?`. A non-nullable string is required by default, and that rule runs whenever Automate resolves the settings.
-* Only actions are validated. Automate ignores these interfaces on other step types.
+* Only actions are validated through these interfaces. Automate ignores them on other step types.
+* Automate also checks every step's settings against the rules on its settings type when an automation is published, such as a required field. That check covers actions and control flows. A value that holds a `${ }` binding or a configuration reference counts as provided, because its final value is only known when the step runs.
 
 ## Secrets Stripped on Export
 
