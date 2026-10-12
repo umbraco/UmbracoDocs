@@ -61,6 +61,10 @@ Automatic minor and patch upgrades follow a weekly schedule made up of upgrade w
 * If no windows are selected, automatic upgrades do not run for the project.
 
 {% hint style="info" %}
+To retry a failed automatic upgrade without waiting for a newer release, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
+{% endhint %}
+
+{% hint style="info" %}
 Upgrade windows are defined in UTC and do not move with daylight saving time. For example, the 08:00 UTC window starts at 10:00 Central European Summer Time (CEST) and at 09:00 Central European Time (CET).
 {% endhint %}
 
@@ -121,8 +125,6 @@ A project is upgraded in its upgrade window when all of the following conditions
 * No other upgrade is running on the project. Otherwise, the project is checked again in its next window.
 * The release has not been attempted on the project before. After a failed automatic upgrade, the next automatic attempt comes with a newer release.
 * No environment has been upgraded to the release, or a later version, outside of the automatic upgrade. In that case, the release is skipped and the project waits for a newer release.
-
-To retry a failed automatic upgrade without waiting for a newer release, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
 
 Umbraco Heartcore projects do not use upgrade windows.
 
