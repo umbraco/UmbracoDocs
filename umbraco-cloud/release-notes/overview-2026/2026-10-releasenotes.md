@@ -3,6 +3,7 @@
 ## Key Takeaways
 
 * **Upgrade windows for automatic upgrades** - Choose the 4-hour upgrade windows in which automatic minor and patch upgrades can start. The default schedule is Tuesday from 08:00 to 20:00 UTC.
+* **Sweden Region Available** - Umbraco Cloud now has a Sweden region.
 * **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
 * **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 
@@ -23,6 +24,12 @@ Selecting several windows does not lead to several upgrades. Each release is app
 The **Upgrade available** banner is not affected by upgrade windows. Umbraco Cloud can still roll out critical security fixes outside of your upgrade windows.
 
 See the [Upgrade Windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section for details.
+
+## Sweden Region Available
+
+Umbraco Cloud now has a Sweden region, allowing you to host your projects in Sweden.
+
+This is particularly beneficial for organizations with data residency requirements or those looking to enhance performance for users in the Nordics.
 
 ## Automatic NuGet cache cleanup
 
