@@ -16,17 +16,17 @@ class MyController extends UmbControllerBase {
 	override hostConnected() {
 		super.hostConnected();
 		// Your code for when the controller is connected.
-		console.log('Your controller's Host element has been connected.')
+		console.log("Your controller's Host element has been connected.")
 	}
 	override hostDisconnected() {
 		super.hostDisconnected();
 		// Your code for when the controller is disconnected.
-		console.log('Your controller's Host element got disconnected.')
+		console.log("Your controller's Host element got disconnected.")
 	}
 	override destroy() {
 		super.destroy();
 		// Your code for when this controller gets destroyed.
-		console.log('Your controller's are getting destroyed, it will never be reconnected. Use this callback to end all the opperations of this controller')
+		console.log('Your controller is getting destroyed, it will never be reconnected. Use this callback to end all the operations of this controller')
 	}
 }
 ```

@@ -46,7 +46,7 @@ class MyElement extends UmbElementMixin(LitElement) {
   ...
   #documentItemRepository = new UmbDocumentItemRepository(this);
 
-  firstUpdated() {
+  override async firstUpdated() {
     const { data, error } = await this.#documentItemRepository.requestItems(['some-unique-key', 'another-unique-key']);
     console.log('Response', data, error);
     // Render data in the element
@@ -60,11 +60,13 @@ Alternatively, you can instantiate the repository in a [controller](../umbraco-c
 ```typescript
 import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
+import type { UmbDocumentItemModel } from '@umbraco-cms/backoffice/document';
 
 export class MyController extends UmbControllerBase {
 
-  #items = new UmbArrayState<DocumentItemModel>([]);
+  #items = new UmbArrayState<UmbDocumentItemModel>([], (item) => item.unique);
   items = this.#items.asObservable();
 
   #documentItemRepository = new UmbDocumentItemRepository(this);

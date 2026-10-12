@@ -21,7 +21,7 @@ You can see an example of this pattern in the [Extension Type Workspace Context]
 The example below demonstrates the basics of working with a State and observing its changes:
 
 ```
-const myState = UmbStringState('the initial value');
+const myState = new UmbStringState('the initial value');
 const myObservable = myState.asObservable();
 
 this.observe(myObservable, (value) => {
@@ -60,11 +60,13 @@ The Umbraco Element or Controllers provides the ability to observe an Observable
 
 The example below creates a State and exposes the entire value via an Observable, which can then be observed.
 
+The second argument of an Array State is a method that returns the unique value of an entry. In an array of strings, each entry is its own unique value.
+
 <pre class="language-typescript"><code class="lang-typescript">import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 
 <strong>...
 </strong>
-<strong>this.#selectionState = UmbArrayState&#x3C;string>(['item1', 'item2']);
+<strong>this.#selectionState = new UmbArrayState&#x3C;string>(['item1', 'item2'], (entry) => entry);
 </strong>this.selection = this.#selectionState.asObservable();
 
 <strong>this.observe(
@@ -142,7 +144,7 @@ As in the previous example, the mapper will be triggered whenever the State valu
 The example below revisits the earlier scenario to see how an Observable Part is triggered in relation to the value of the state.
 
 ```
-const myState = UmbStringState('four');
+const myState = new UmbStringState('four');
 const myObservable = myState.asObservable();
 const myObservablePart = myState.asObservablePart((value) => value.length);
 
