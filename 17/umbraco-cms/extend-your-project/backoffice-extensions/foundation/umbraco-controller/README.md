@@ -36,7 +36,7 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 </strong>export class MyOwnControllerImplementation extends UmbControllerBase {
 
     #secondsAlive = 0;
-    #timer?: ReturnType&#x3C;typeof setInterval>;
+    #timer?: ReturnType<typeof setInterval>;
 
     constructor(host: UmbControllerHost) {
         // Parse the host to the base class, this will trigger the registration.
