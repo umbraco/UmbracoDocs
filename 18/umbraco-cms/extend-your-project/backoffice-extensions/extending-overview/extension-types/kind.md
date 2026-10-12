@@ -86,13 +86,15 @@ Start by defining and registering a new Kind extension. Select a unique name for
 
 {% code title="kinds/manifests.ts" %}
 ```typescript
+import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
+
 export const welcomeHeaderAppMessage: UmbExtensionManifestKind = {
     type: "kind",
     alias: "Umb.Kind.HeaderAppMessage", // Unique alias for the Kind
     matchType: "headerApp", // Applies to Header App extensions
     matchKind: "welcomeHeaderAppMessage", // Defines the Kind alias
     manifest: {
-        // Add default properties for the 'button' Kind
+        // Add default properties for the 'welcomeHeaderAppMessage' Kind
         elementName: "welcome-header-app-message",
     },
 };
@@ -166,7 +168,7 @@ export const wednesdayWelcomeMessageHeaderAppInstance = {
     kind: "welcomeHeaderAppMessage",
     name: "Wednesday Message Header App",
     alias: "My.HeaderApp.WednesdayMessage",
-    element: () => import("./header-app-message.ts"),
+    element: () => import("./welcome-header-app-message.ts"),
     meta: {
         message: "Happy wonderful Wednesday",
     },
@@ -177,7 +179,7 @@ export const thursdayWelcomeMessageHeaderAppInstance = {
     kind: "welcomeHeaderAppMessage",
     name: "Thursday Message Header App",
     alias: "My.HeaderApp.ThursdayMessage",
-    element: () => import("./header-app-message.ts"),
+    element: () => import("./welcome-header-app-message.ts"),
     meta: {
         message: "Happy thunderous Thursday",
     },
@@ -188,7 +190,7 @@ export const fridayWelcomeMessageHeaderAppInstance = {
     kind: "welcomeHeaderAppMessage",
     name: "Friday Message Header App",
     alias: "My.HeaderApp.FridayMessage",
-    element: () => import("./header-app-message.ts"),
+    element: () => import("./welcome-header-app-message.ts"),
     meta: {
         message: "Happy funky Friday",
     },
@@ -198,7 +200,7 @@ export const fridayWelcomeMessageHeaderAppInstance = {
 
 ### Register the Derived Extension
 
-Use any standard practice to register the derived extension, in this case `thursdayWelcomeMessageHeaderAppInstance` is registered dynamically in an entrypoint.
+Use any standard practice to register the Kind and the derived extension. A derived extension only inherits the properties of a registered Kind. In this case, an entry point registers `welcomeHeaderAppMessage` and `thursdayWelcomeMessageHeaderAppInstance` dynamically.
 
 {% code title="entrypoints/entrypoints.ts" %}
 ```typescript
@@ -208,12 +210,14 @@ import type {
 } from "@umbraco-cms/backoffice/extension-api";
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
 import {
+    welcomeHeaderAppMessage,
     thursdayWelcomeMessageHeaderAppInstance,
 } from "../kinds/manifests";
 
 export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
     console.log("Hello from my extension 🎉");
     
+    umbExtensionsRegistry.register(welcomeHeaderAppMessage);
     umbExtensionsRegistry.register(thursdayWelcomeMessageHeaderAppInstance);
 };
 

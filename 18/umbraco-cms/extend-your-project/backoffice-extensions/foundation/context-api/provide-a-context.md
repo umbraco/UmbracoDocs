@@ -12,6 +12,8 @@ The recommended approach is to base your Context API on the `UmbContextBase` cla
 
 ```typescript
 import { UmbContextBase } from '@umbraco-cms/backoffice/class-api';
+import { UmbContextToken } from '@umbraco-cms/backoffice/context-api';
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
 export class MyCustomContext extends UmbContextBase {
 	constructor(host: UmbControllerHost) {
@@ -29,11 +31,13 @@ For a practical implementation example, see the [Extension Type Workspace Contex
 You can provide a Context API from any Umbraco Element or Umbraco Controller:
 
 ```typescript
-this.provideContext('myContextAlias', new MyContextApi());
+this.provideContext('myContextAlias', new MyContextApi(this));
 ```
 
 Or provide it from a Controller using a `host` reference to the Controller Host (Umbraco Element/Controller):
 
 ```typescript
-new UmbContextProviderController(host, 'myContextAlias', new MyContextApi());
+import { UmbContextProviderController } from '@umbraco-cms/backoffice/context-api';
+
+new UmbContextProviderController(host, 'myContextAlias', new MyContextApi(host));
 ```

@@ -56,12 +56,12 @@ In some situations, you need the localization as a variable that can be parsed. 
 When using an [**Umbraco Element**](umbraco-element.md)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { customElement, html } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 
-export default class MyElement extends UmbElementMixin(LitElement) {
-    render() {
+@customElement("my-element")
+export default class MyElement extends UmbLitElement {
+    override render() {
         return html`<uui-button .label=${this.localize.term('general_close')}>
         </uui-button>`;
     }
@@ -79,11 +79,11 @@ import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-api';
 
 export class MyController extends UmbControllerBase {
-    // Create a new instance of the controller and attach it to the element
+    // Create a new instance of the controller and attach it to this controller
     #localize = new UmbLocalizationController(this);
 
-    render() {
-        return html` <uui-button .label=${this.#localize.term('general_close')}></uui-button> `;
+    getCloseLabel() {
+        return this.#localize.term('general_close');
     }
 }
 ```
