@@ -37,6 +37,7 @@ Properties:
 * `matchKind` is 'button', serving as the Kind's alias.
 * The `manifest` holds default properties, like `elementName`, for inheritance.
 
+{% code title="manifests.ts" %}
 ```typescript
 import type { UmbExtensionManifestKind } from "@umbraco-cms/backoffice/extension-registry";
 
@@ -51,6 +52,7 @@ export const customHeaderAppButton: UmbExtensionManifestKind = {
 	},
 };
 ```
+{% endcode %}
 
 ## Using the Kind in Other Extensions
 
@@ -58,6 +60,7 @@ Use a Kind by setting the `type` and `kind` properties. The extension then autom
 
 ### Example: Header App Extension Using the Button Kind
 
+{% code title="manifests.ts" %}
 ```typescript
 const manifest = {
 	type: 'headerApp', // Extension type
@@ -71,6 +74,7 @@ const manifest = {
   },
 };
 ```
+{% endcode %}
 
 Here, the extension uses `kind: 'button'` to inherit `elementName`. It also adds custom metadata to further customize behavior or appearance.
 
