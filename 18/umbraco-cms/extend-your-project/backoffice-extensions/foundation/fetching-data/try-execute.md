@@ -49,7 +49,7 @@ The `tryExecute` function shows a notification when the request throws an error:
 
 Error responses with status 401, 403 or 404 from the Umbraco HTTP Client or a generated client do not show a notification. Check the returned `error`, and handle these responses in your code.
 
-Cancelled requests do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status, because the server sends its own notification for those.
+Requests that you cancel with the `abortSignal` option, as described in [Cancelling Requests](#cancelling-requests), do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status. The server usually sends its own notification for those.
 
 The notification shows the `title` and `detail` of the problem details in the response body. The body must contain `type`, `title` and `status`, or the notification shows a generic message instead. In a controller, `Problem()` returns such a body.
 
@@ -72,12 +72,12 @@ const { data, error } = await tryExecute(this, request, {
 ### Cancelling Requests
 
 {% hint style="info" %}
-Cancelling requests with `abortSignal` is available from Umbraco 18.3.
+Cancelling requests with `abortSignal` is available from Umbraco 18.3. In earlier 18.x releases, pass the signal to the request only and set `disableNotifications: true`. The returned `error` is then an `UmbApiError`, so check `signal.aborted` to tell a cancellation apart.
 {% endhint %}
 
 Cancel a request when you no longer need its result, for example when the user navigates away or the request takes too long.
 
-Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away:
+Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away with an `UmbCancelError`:
 
 {% code title="my-element.ts" %}
 ```typescript
@@ -97,17 +97,17 @@ abortController.abort();
 
 const { data, error } = await execution;
 
-if (UmbCancelError.isUmbCancelError(error)) {
-    // The request was cancelled, so there is nothing to handle
-} else if (error) {
-    console.error('There was a problem with the fetch operation:', error);
-} else {
+if (!error) {
     console.log(data); // Do something with the data
+} else if (UmbCancelError.isUmbCancelError(error)) {
+    // The request was cancelled, so there is nothing to handle
+} else {
+    console.error('There was a problem with the fetch operation:', error);
 }
 ```
 {% endcode %}
 
-When the signal aborts, the returned `error` is an `UmbCancelError`, and `tryExecute` does not show a notification. Use `UmbCancelError.isUmbCancelError()` to tell a cancellation apart from a failed request.
+When the signal aborts before the request completes, the returned `error` is an `UmbCancelError`, and `tryExecute` does not show a notification. When `error` is set, use `UmbCancelError.isUmbCancelError()` to tell a cancellation apart from a failed request.
 
 To cancel a request that takes too long, create the signal with [AbortSignal.timeout()](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/timeout_static). The signal aborts after the given number of milliseconds:
 
@@ -121,3 +121,5 @@ const { data, error } = await tryExecute(this, umbHttpClient.get({
 }), { abortSignal: signal });
 ```
 {% endcode %}
+
+Pass the signal to the `abortSignal` option here too, so a timeout returns an `UmbCancelError` like any other cancellation.
