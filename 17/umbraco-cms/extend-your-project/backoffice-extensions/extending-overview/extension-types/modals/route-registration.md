@@ -9,6 +9,7 @@ description: >-
 
 A modal can be registered via the `UmbModalRouteRegistrationController`. The registration accepts a modal token (or extension alias).
 
+{% code title="my-element.ts" %}
 ```ts
 this.myModalRegistration = new UmbModalRouteRegistrationController(
     this,
@@ -21,6 +22,7 @@ this.myModalRegistration = new UmbModalRouteRegistrationController(
         this._modalRouteBuilder = routeBuilder;
     });
 ```
+{% endcode %}
 
 The registration holds an instance of its `UmbModalContext` when the modal is active. The modal registration accepts 4 different callbacks:
 
@@ -42,6 +44,7 @@ The registration holds an instance of its `UmbModalContext` when the modal is ac
 
 When configuring a routed modal from a Property Editor, it's important to be aware of some facts. Those facts are that the Property Editor shares the same URL path as other Property Editors. This means we need to ensure the registration is unique so it doesn't collide with other Property Editors. To do so we will make use of the Property Alias and the Variant ID.
 
+{% code title="my-property-editor-ui.element.ts" %}
 ```ts
 
 
@@ -113,14 +116,17 @@ When configuring a routed modal from a Property Editor, it's important to be awa
 		`;
 	}
 ```
+{% endcode %}
 
 **Generate the URL to a Modal Route Registration**
 
 The Modal registration has an option to retrieve a URL Builder. This is a function that can be used to generate a URL to a modal:
 
+{% code title="my-element.ts" %}
 ```ts
 const modalLink = _myUrlBuilder?.({ alias: "my-input-alias" });
 ```
+{% endcode %}
 
 The `modalLink` from above could look like this: `/umbraco/section/my/location/modal/our-modal-somethingpicker/my-input-alias`
 

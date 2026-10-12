@@ -27,6 +27,7 @@ Workspace Views provide:
 
 ## Manifest
 
+{% code title="manifests.ts" %}
 ```typescript
 {
   type: 'workspaceView',
@@ -47,6 +48,7 @@ Workspace Views provide:
   ],
 }
 ```
+{% endcode %}
 
 ### Key Properties
 
@@ -60,6 +62,7 @@ Workspace Views provide:
 
 Implement your workspace view as a Lit element that extends `UmbElementMixin`. This creates a tab-based interface that users can navigate to within the workspace:
 
+{% code title="counter-workspace-view.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
@@ -117,6 +120,7 @@ declare global {
   }
 }
 ```
+{% endcode %}
 
 ## Conditions
 
@@ -148,6 +152,7 @@ Explore the full list of registered conditions in the Umbraco Backoffice by navi
 
 To show a workspace view only for a specific Document Type (for example, "Blog Post"), use `Umb.Condition.WorkspaceContentTypeAlias`:
 
+{% code title="manifests.ts" %}
 ```typescript
 conditions: [
   {
@@ -160,6 +165,7 @@ conditions: [
   },
 ],
 ```
+{% endcode %}
 
 #### Custom Conditions
 
@@ -183,6 +189,7 @@ If the built-in conditions don't meet your needs, you can create your own by imp
 
 Views can consume multiple workspace contexts:
 
+{% code title="my-workspace-view.ts" %}
 ```typescript
 import { UMB_ENTITY_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/workspace';
 import { UMB_VALIDATION_CONTEXT } from '@umbraco-cms/backoffice/validation';
@@ -204,11 +211,13 @@ constructor() {
   });
 }
 ```
+{% endcode %}
 
 ## Common Patterns
 
 ### Entity Information View
 
+{% code title="entity-info-view.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -242,9 +251,11 @@ export class EntityInfoView extends UmbElementMixin(LitElement) {
   }
 }
 ```
+{% endcode %}
 
 ### Interactive Configuration View
 
+{% code title="config-view.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -286,9 +297,11 @@ export class ConfigView extends UmbElementMixin(LitElement) {
   }
 }
 ```
+{% endcode %}
 
 ### Analytics Dashboard View
 
+{% code title="analytics-view.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -334,6 +347,7 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
   }
 }
 ```
+{% endcode %}
 
 ## Best Practices
 

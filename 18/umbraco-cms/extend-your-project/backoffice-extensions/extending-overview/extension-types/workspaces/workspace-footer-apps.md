@@ -21,7 +21,7 @@ Footer apps appear at the bottom of workspaces and are ideal for displaying stat
 
 ## Manifest
 
-{% code caption="manifest.ts" %}
+{% code title="manifest.ts" %}
 ```typescript
 {
 	type: 'workspaceFooterApp',
@@ -48,7 +48,7 @@ Footer apps appear at the bottom of workspaces and are ideal for displaying stat
 
 Implement your workspace footer app as a Lit element that extends `UmbElementMixin`. This provides access to workspace contexts and reactive state management:
 
-{% code caption="counter-status-footer-app.element.ts" %}
+{% code title="counter-status-footer-app.element.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -98,6 +98,8 @@ declare global {
 ## Common Patterns
 
 ### Status Indicators
+
+{% code title="entity-status-footer-app.element.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -137,8 +139,11 @@ export class EntityStatusFooterApp extends UmbElementMixin(LitElement) {
 	}
 }
 ```
+{% endcode %}
 
 ### Live Counters
+
+{% code title="word-count-footer-app.element.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -168,8 +173,11 @@ export class WordCountFooterApp extends UmbElementMixin(LitElement) {
 	}
 }
 ```
+{% endcode %}
 
 ### Validation Summary
+
+{% code title="validation-footer-app.element.ts" %}
 ```typescript
 import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
@@ -202,6 +210,7 @@ export class ValidationFooterApp extends UmbElementMixin(LitElement) {
 	}
 }
 ```
+{% endcode %}
 
 ## Best Practices
 
