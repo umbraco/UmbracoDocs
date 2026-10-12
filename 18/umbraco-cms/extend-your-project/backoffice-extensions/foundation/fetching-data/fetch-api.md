@@ -119,6 +119,7 @@ A request made with another HTTP library has the same gaps as a request made wit
 
 Wrap the request in `tryExecute`, which shows a notification when the request throws. In an element that extends `UmbLitElement`:
 
+{% code title="my-element.ts" %}
 ```typescript
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { makeRequest } from './make-request.js';
@@ -129,5 +130,6 @@ if (!response.error) {
   console.log(response); // The JSON from the server
 }
 ```
+{% endcode %}
 
 For more information about `tryExecute`, see the [Executing Requests](try-execute.md) article.

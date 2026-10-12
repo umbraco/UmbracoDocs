@@ -97,6 +97,7 @@ Copying the configuration of `umbHttpClient` into your client copies settings bu
 
 If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
 
+{% code title="my-element.ts" %}
 ```javascript
 import { getMyControllerAction } from './my-client';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
@@ -110,6 +111,7 @@ if (data) {
     console.log('Data:', data);
 }
 ```
+{% endcode %}
 
 The example above uses the backoffice HTTP client directly instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
@@ -135,6 +137,7 @@ If you expose a separate API with its own OpenAPI document, security requirement
 
 Call it on the `OpenApiOptions` passed into `AddOpenApi`:
 
+{% code title="MyExtensionApiComposer.cs" %}
 ```csharp
 using Umbraco.Cms.Api.Management.OpenApi;
 
@@ -145,6 +148,7 @@ builder.Services.AddOpenApi("myextension", options =>
     options.AddBackofficeSecurityRequirements();
 });
 ```
+{% endcode %}
 
 No `AddSecurityDefinition` call is needed — `AddBackofficeSecurityRequirements()` adds it. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
 
@@ -154,12 +158,14 @@ For a complete walkthrough of setting up a custom API, see [Creating a Backoffic
 
 When calling `umbHttpClient` directly — without a generated SDK function — there is no spec to derive security metadata from. Pass it explicitly on each call:
 
+{% code title="my-element.ts" %}
 ```typescript
 const { data } = await umbHttpClient.get({
     url: '/umbraco/myextension/api/v1/endpoint',
     security: [{ type: 'http', scheme: 'bearer' }],
 });
 ```
+{% endcode %}
 
 See [Umbraco HTTP Client](http-client.md) for more details.
 

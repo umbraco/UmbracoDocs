@@ -101,6 +101,7 @@ To pass plugin options like `runtimeConfigPath`, create a config file instead of
 
 1. Create `openapi-ts.config.ts` in your project root:
 
+{% code title="openapi-ts.config.ts" %}
 ```typescript
 import { defineConfig } from '@hey-api/openapi-ts';
 
@@ -119,6 +120,7 @@ export default defineConfig({
     ],
 });
 ```
+{% endcode %}
 
 2. Run the generator, which will pick up the config file automatically:
 
@@ -128,6 +130,7 @@ npx openapi-ts
 
 3. Create a `src/hey-api.ts` file and add the following:
 
+{% code title="src/hey-api.ts" %}
 ```typescript
 import type { CreateClientConfig } from './api/client.gen';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
@@ -137,6 +140,7 @@ export const createClientConfig: CreateClientConfig = (config) => ({
     ...umbHttpClient.getConfig(),
 });
 ```
+{% endcode %}
 
 This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
 
@@ -146,6 +150,7 @@ When the generator runs, the generated `client.gen.ts` will automatically import
 
 If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
 
+{% code title="my-element.ts" %}
 ```javascript
 import { getMyControllerAction } from './my-client';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
@@ -159,6 +164,7 @@ if (data) {
     console.log('Data:', data);
 }
 ```
+{% endcode %}
 
 The example above uses the backoffice HTTP client directly instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
@@ -182,6 +188,7 @@ When hey-api generates your client from that spec, it resolves the scheme and em
 
 If you expose a separate API with its own Swagger document, security requirements are not added automatically. You must apply them to each operation in your OpenAPI specification, for example via an operation filter. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
 
+{% code title="MyExtensionSecurityRequirementsOperationFilter.cs" %}
 ```csharp
 using Umbraco.Cms.Api.Management.OpenApi;
 
@@ -191,12 +198,15 @@ internal sealed class MyExtensionSecurityRequirementsOperationFilter : BackOffic
     protected override string ApiName => "myextension";
 }
 ```
+{% endcode %}
 
 Register it in your SwaggerGen configuration:
 
+{% code title="MyExtensionApiComposer.cs" %}
 ```csharp
 swaggerGenOptions.OperationFilter<MyExtensionSecurityRequirementsOperationFilter>();
 ```
+{% endcode %}
 
 No `AddSecurityDefinition` call is needed — Umbraco already registers the required Bearer security scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
 
@@ -206,12 +216,14 @@ For a full walkthrough of setting up a custom API, see [Creating a Backoffice AP
 
 When calling `umbHttpClient` directly — without a generated SDK function — there is no spec to derive security metadata from. Pass it explicitly on each call:
 
+{% code title="my-element.ts" %}
 ```typescript
 const { data } = await umbHttpClient.get({
     url: '/umbraco/myextension/api/v1/endpoint',
     security: [{ type: 'http', scheme: 'bearer' }],
 });
 ```
+{% endcode %}
 
 See [Umbraco HTTP Client](http-client.md) for more details.
 
