@@ -26,8 +26,8 @@ class MyController extends UmbControllerBase {
 	}
 	override destroy() {
 		super.destroy();
-		// Your code for when this controller gets destroyed.
-		console.log('Your controller is getting destroyed, it will never be reconnected. Use this callback to end all the operations of this controller')
+		// Your code for when this controller gets destroyed. It will never be reconnected, so end all the operations of this controller here.
+		console.log('Your controller has been destroyed.')
 	}
 }
 ```

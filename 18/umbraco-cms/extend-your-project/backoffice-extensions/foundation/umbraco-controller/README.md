@@ -41,7 +41,7 @@ export class MyOwnControllerImplementation extends UmbControllerBase {
     #timer?: ReturnType<typeof setInterval>;
 
     constructor(host: UmbControllerHost) {
-        // Parse the host to the base class, this will trigger the registration.
+        // Pass the host to the base class, this will trigger the registration.
         super(host);
     }
     
@@ -59,7 +59,7 @@ export class MyOwnControllerImplementation extends UmbControllerBase {
     
     #onInterval = () => {
         this.#secondsAlive++;
-        console.log(`My own controller have been connected in ${this.#secondsAlive} seconds.`);
+        console.log(`My own controller has been connected for ${this.#secondsAlive} seconds.`);
     }
 
     override destroy(): void {
@@ -71,7 +71,7 @@ export class MyOwnControllerImplementation extends UmbControllerBase {
 ```
 {% endcode %}
 
-If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. The class must implement the `UmbController` interface. Manual deregistration is required in this case.
+If you prefer not to extend `UmbControllerBase`, you can register a class as a controller yourself, as shown in the following example. The class must implement the `UmbController` interface, and its `destroy()` method must remove it from the host with `removeUmbController()`. Such a class does not host other controllers or provide `getHostElement()`.
 
 {% code title="my-own-controller-implementation.ts" %}
 ```typescript

@@ -18,7 +18,7 @@ This abstraction ensures that consumers don’t need to worry about how to acces
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
-A repository must be instantiated where it is used. It should take an [UmbController](../umbraco-controller/) as part of the constructor. This ensures that any contexts consumed in the repository are scoped correctly.
+A repository must be instantiated where it is used. Its constructor takes a host, such as an [Umbraco Element](../umbraco-element.md) or an [Umbraco Controller](../umbraco-controller/). This ensures that any contexts consumed in the repository are scoped correctly.
 
 A repository can be initialized directly from an element, but will often be instantiated in a [context](../context-api/), like the Workspace Context.
 
@@ -38,7 +38,7 @@ In the example below, we instantiate the `UmbDocumentItemRepository` directly in
 
 {% code title="my-element.ts" %}
 ```typescript
-import { LitElement} from '@umbraco-cms/backoffice/external/lit';
+import { LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
 

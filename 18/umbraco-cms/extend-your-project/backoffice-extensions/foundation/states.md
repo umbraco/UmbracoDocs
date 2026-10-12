@@ -22,6 +22,8 @@ The example below demonstrates the basics of working with a State and observing 
 
 {% code title="my-element.ts" %}
 ```typescript
+import { UmbStringState } from '@umbraco-cms/backoffice/observable-api';
+
 const myState = new UmbStringState('the initial value');
 const myObservable = myState.asObservable();
 
@@ -59,7 +61,7 @@ Observations are the act of reading the value of a State and reacting to future 
 
 ### Observe
 
-The Umbraco Element or Controllers provides the ability to observe an Observable. This example shows how you can observe the value of a State with these.
+Umbraco Elements and Controllers provide the ability to observe an Observable. This example shows how you can observe the value of a State with these.
 
 The example below creates a State and exposes the entire value via an Observable, which can then be observed.
 
@@ -117,7 +119,7 @@ This will result in the following log, in addition to the one above:
 
 The `asObservablePart` method creates an Observable that provides a scoped or transformed outcome based on the State.
 
-The following example provides an observable for the first selected item in the selection:&#x20;
+The following example provides an observable for the first selected item in the selection:
 
 {% code title="my-element.ts" %}
 ```typescript
@@ -136,7 +138,7 @@ this.observe(
 
 In the above example, the `asObservablePart` mapping function will be executed whenever the State changes. If the method's result differs from before, it will trigger an update to its observers.
 
-The following example computes the length&#x20;
+The following example computes the length of the selection:
 
 {% code title="my-element.ts" %}
 ```typescript
@@ -160,6 +162,8 @@ The example below revisits the earlier scenario to see how an Observable Part is
 
 {% code title="my-element.ts" %}
 ```typescript
+import { UmbStringState } from '@umbraco-cms/backoffice/observable-api';
+
 const myState = new UmbStringState('four');
 const myObservable = myState.asObservable();
 const myObservablePart = myState.asObservablePart((value) => value.length);
