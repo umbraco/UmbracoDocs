@@ -90,7 +90,7 @@ Selecting several windows does not lead to several upgrades. Each release is app
 
 <figure><img src="../../../.gitbook/assets/automatic-upgrade-windows.png" alt="Picker for upgrade windows showing a weekly grid of 4-hour windows in local time, with selected windows checked and windows shaded from quiet to very busy"><figcaption><p>Selecting upgrade windows for automatic upgrades</p></figcaption></figure>
 
-The picker shades each window by how popular it is with other projects in your region, from quiet to very busy. Selecting quieter windows lowers the risk of an upgrade being postponed.
+The picker shades each window by how popular it is with other projects in your hosting region, from quiet to very busy. Selecting quieter windows lowers the risk of an upgrade being postponed.
 
 ### When an Upgrade Is Postponed
 
