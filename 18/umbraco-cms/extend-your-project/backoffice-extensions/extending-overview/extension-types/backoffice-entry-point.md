@@ -40,7 +40,7 @@ All examples are in TypeScript, but you can use JavaScript as well. Make sure to
 
 {% code title="index.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
 
 /**
  * Perform any initialization logic when the Backoffice starts
@@ -68,11 +68,12 @@ The `onUnload` function is optional and can be used to perform cleanup logic whe
 
 {% code title="index.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
 
 const manifest: UmbExtensionManifest = {
     type: '', // type of extension
     alias: '', // unique alias for the extension
+    name: '', // human-readable name of the extension
     elementName: '', // unique name of the custom element
     js: '', // path to the javascript resource
     meta: {
@@ -87,7 +88,7 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 
 export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Unregister the extension (optional)
-    extensionRegistry.unregister(manifest);
+    extensionRegistry.unregister(manifest.alias);
 }
 ```
 {% endcode %}
