@@ -45,9 +45,9 @@ The `tryExecute` function shows a notification when the request throws an error:
 
 * The Umbraco HTTP Client throws for error responses.
 * A client you generate yourself returns error responses in an `error` property instead. Make it throw with the `throwOnError` option, as described in the [Custom Generated Client](custom-generated-client.md) article.
-* A Fetch API request does not throw for error responses, so throw an error yourself when the response is not successful. The [Fetch API](fetch-api.md) article shows how.
+* A Fetch API request does not throw for error responses. Throw an `UmbApiError` with the HTTP status yourself, as the [Fetch API](fetch-api.md) article shows. A plain `Error` shows a notification, whatever the status.
 
-Error responses with status 401, 403 or 404 from the Umbraco HTTP Client or a generated client do not show a notification. Check the returned `error`, and handle these responses in your code.
+Error responses with status 401, 403 or 404 do not show a notification. The rule covers the Umbraco HTTP Client, a generated client, and any request that throws an `UmbApiError` with the status. Check the returned `error`, and handle these responses in your code.
 
 Requests that you cancel with the `abortSignal` option, as described in [Cancelling Requests](#cancelling-requests), do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status. The server usually sends its own notification for those.
 
