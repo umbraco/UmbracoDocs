@@ -42,7 +42,7 @@ Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
 ```typescript
 import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-import type { UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
+import type { UmbTreeChildrenOfRequestArgs, UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
 
 const staticItems = [
   {
@@ -84,14 +84,15 @@ export class MyStaticTreeRepository
 
   async requestTreeRootItems() {
     const items = staticItems.filter((item) => item.parent.unique === null);
-    return { data: { items, total: items.length } };
+    // Static data is not paged, so no items come before or after the returned items.
+    return { data: { items, total: items.length, totalBefore: 0, totalAfter: 0 } };
   }
 
-  async requestTreeItemsOf(args) {
+  async requestTreeItemsOf(args: UmbTreeChildrenOfRequestArgs) {
     const items = staticItems.filter(
       (item) => item.parent.unique === args.parent.unique
     );
-    return { data: { items, total: items.length } };
+    return { data: { items, total: items.length, totalBefore: 0, totalAfter: 0 } };
   }
 
   async requestTreeItemAncestors() {

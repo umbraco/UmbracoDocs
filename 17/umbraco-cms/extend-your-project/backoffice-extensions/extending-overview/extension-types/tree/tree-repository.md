@@ -42,7 +42,7 @@ Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
 ```typescript
 import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-import type { UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
+import type { UmbTreeChildrenOfRequestArgs, UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
 
 const staticItems = [
   {
@@ -87,7 +87,7 @@ export class MyStaticTreeRepository
     return { data: { items, total: items.length } };
   }
 
-  async requestTreeItemsOf(args) {
+  async requestTreeItemsOf(args: UmbTreeChildrenOfRequestArgs) {
     const items = staticItems.filter(
       (item) => item.parent.unique === args.parent.unique
     );

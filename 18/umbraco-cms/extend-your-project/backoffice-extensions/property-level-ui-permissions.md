@@ -65,7 +65,6 @@ The following example adds code for the Workspace Context to set up a single rul
 import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbControllerHost } from "@umbraco-cms/backoffice/controller-api";
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from "@umbraco-cms/backoffice/document";
-import { UmbVariantId } from "@umbraco-cms/backoffice/variant";
 
 export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerBase {
     constructor(host: UmbControllerHost) {
@@ -106,7 +105,6 @@ The following example adds code to retrieve the `unique` value for a given prope
 import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbControllerHost } from "@umbraco-cms/backoffice/controller-api";
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from "@umbraco-cms/backoffice/document";
-import { UmbVariantId } from "@umbraco-cms/backoffice/variant";
 
 export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerBase {
     constructor(host: UmbControllerHost) {
@@ -130,7 +128,7 @@ export class MyDocumentPropertyPermissionWorkspaceContext extends UmbControllerB
                             }
                         }
                         // Add the rule to the write guard
-                        context.propertyWriteGuard.addRule(rule);
+                        context?.propertyWriteGuard.addRule(rule);
                     }
                 });
             }
@@ -152,7 +150,7 @@ The following example shows how you can make your rule very specific by targetin
 
 {% code title="WorkspaceContext.ts" %}
 ```typescript
-import type { UmbVariantId } from '@umbraco-cms/backoffice/variant';
+import { UmbVariantId } from '@umbraco-cms/backoffice/variant';
 
 ...
 
@@ -163,8 +161,8 @@ import type { UmbVariantId } from '@umbraco-cms/backoffice/variant';
             message: "The property is not writable because of my custom restriction.",
             propertyType: {
                 unique: property.unique
-            }
-            variantId: UmbVariantId.CreateFromPartial({culture: 'en-US'});
+            },
+            variantId: UmbVariantId.CreateFromPartial({culture: 'en-US'}),
             
 ...
 ```

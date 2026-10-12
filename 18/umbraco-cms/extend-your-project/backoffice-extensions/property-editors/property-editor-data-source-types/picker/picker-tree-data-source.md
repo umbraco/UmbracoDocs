@@ -56,6 +56,8 @@ export class ExampleCustomPickerTreePropertyEditorDataSource
 		const data = {
 			items: rootItems,
 			total: rootItems.length,
+			totalBefore: 0,
+			totalAfter: 0,
 		};
 
 		return { data };
@@ -69,6 +71,8 @@ export class ExampleCustomPickerTreePropertyEditorDataSource
 		const data = {
 			items: items,
 			total: items.length,
+			totalBefore: 0,
+			totalAfter: 0,
 		};
 
 		return { data };

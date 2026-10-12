@@ -247,6 +247,6 @@ With all that in place, the configuration can look like shown below:
             alias: "My.Condition.CustomName",
             match: "Yes",
         },
-    ];
+    ],
 }
 ```
