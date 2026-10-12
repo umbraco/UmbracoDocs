@@ -119,7 +119,7 @@ The Umbraco HTTP Client handles these responses for you:
 * **Created items**: The client returns the ID from the `Umb-Generated-Resource` header as `data`.
 
 {% hint style="info" %}
-A generated client handles the same responses when you configure it with `configureClient()`. You can also pass `umbHttpClient` as the `client` option of a generated SDK function. See the [Custom Generated Client](custom-generated-client.md) article.
+A generated client handles the same responses when you configure it with `configureClient()`. To show a notification from `tryExecute` when a request fails, also set `throwOnError`. Instead of configuring your client, you can pass `umbHttpClient` as the `client` option of a generated SDK function. See the [Custom Generated Client](custom-generated-client.md) article.
 {% endhint %}
 
 ## Further reading
