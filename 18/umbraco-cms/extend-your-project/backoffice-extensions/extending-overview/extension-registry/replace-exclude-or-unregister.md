@@ -51,9 +51,9 @@ Currently, it is not possible to un-exclude extensions once excluded.
 The following JavaScript code hides the `Save and Preview` button from the Document Workspace.
 
 ```typescript
-import { UmbExtensionRegistry } from '@umbraco-cms/backoffice/extension-api';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
-UmbExtensionRegistry.exclude('Umb.WorkspaceAction.Document.SaveAndPreview');
+umbExtensionsRegistry.exclude('Umb.WorkspaceAction.Document.SaveAndPreview');
 ```
 
 When and where you execute this code depends on your situation. In many cases, it makes sense to execute this on boot, using the [entry point approach](../extension-types/backoffice-entry-point.md).

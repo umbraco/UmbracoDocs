@@ -45,13 +45,12 @@ If you like to use an icon, set `kind` to `"icon"` , and provide both `meta.icon
 ### Example: Rendering an Entity Sign from a Server Flag
 
 ```typescript
-import type { UmbExtensionManifest } from "@umbraco-cms/backoffice/extension-registry";
 import { UMB_DOCUMENT_ENTITY_TYPE } from "@umbraco-cms/backoffice/document";
 
 export const manifests: UmbExtensionManifest = {
     type: "entitySign",
     kind: "icon",
-    alias: "Umb.EntitySign.Document.IsProtected",
+    alias: "My.EntitySign.Document.IsProtected",
     name: "Is Protected Document Entity Sign",
     forEntityTypes: [UMB_DOCUMENT_ENTITY_TYPE], // Where it can appear
     forEntityFlags: ["Umb.IsProtected"], // <---Binding part-When it should appear
@@ -73,7 +72,6 @@ When an Entity includes the `Umb.IsProtected` flag, this Sign appears next to it
 The following Sign appears next to any document created within the past week. This Sign isn’t controlled by server flags.
 
 ```typescript
-import type { UmbExtensionManifest } from "@umbraco-cms/backoffice/extension-registry";
 import { UMB_DOCUMENT_ENTITY_TYPE } from "@umbraco-cms/backoffice/document";
 
 export const manifests: UmbExtensionManifest = {
@@ -90,19 +88,26 @@ export const manifests: UmbExtensionManifest = {
 };
 ```
 
+The `icon` kind provides the label of the Sign. The `element` property replaces the icon with your own element.
+
 And in `recently-created-sign.element.ts`:
 
 ```typescript
+import type { UmbDocumentTreeItemModel } from "@umbraco-cms/backoffice/document";
+import { customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { UMB_TREE_ITEM_CONTEXT } from "@umbraco-cms/backoffice/tree";
+
 @customElement("umb-recently-created-sign")
 export class UmbRecentlyCreatedSignElement extends UmbLitElement {
     @state() private _createDate?: string;
 
-    override connectedCallback(): void {
-        super.connectedCallback();
-        this.consumeContext(UMB_TREE_ITEM_CONTEXT, (ctx) => {
-            const item = ctx?.getTreeItem?.() ?? (ctx as any).item;
-            this._createDate = item?.createDate;
-            this.requestUpdate();
+    constructor() {
+        super();
+        this.consumeContext(UMB_TREE_ITEM_CONTEXT, (context) => {
+            this.observe(context?.treeItem, (item) => {
+                this._createDate = (item as UmbDocumentTreeItemModel | undefined)?.createDate;
+            });
         });
     }
 
@@ -114,6 +119,14 @@ export class UmbRecentlyCreatedSignElement extends UmbLitElement {
         return created > weekAgo ? html`<div>New</div>` : null;
     }
 }
+
+export { UmbRecentlyCreatedSignElement as element };
 ```
+
+{% hint style="info" %}
+Signs render next to the icon of tree items. The element reads the document from the tree item context, `UMB_TREE_ITEM_CONTEXT`.
+
+The element only controls what renders next to the icon. The Sign still applies to every document, so its label appears when you hover over the icon of any document. To limit which entities get the Sign, use [Extension Conditions](extending-overview/extension-conditions.md).
+{% endhint %}
 
 ![Screenshot of Recently Created sign](../../.gitbook/assets/custom-entity-sign.png)
