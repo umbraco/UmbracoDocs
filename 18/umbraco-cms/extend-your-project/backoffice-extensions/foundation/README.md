@@ -66,7 +66,7 @@ Learn how to bind and use the validation system when working with Form Controls 
 
 Show notifications to the user, and learn which notifications the backoffice shows for server responses.
 
-### [Sorting](../sorting.md)
+### [Sorting](../property-editors/sorting.md)
 
 Create a UI that users can sort via drag and drop functionality.
 
