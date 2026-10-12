@@ -167,7 +167,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to an Email Address in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-Email-Address.png" alt="Link to an Email Address in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
