@@ -151,7 +151,7 @@ When the generator runs, the generated `client.gen.ts` will automatically import
 If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
 
 {% code title="my-element.ts" %}
-```javascript
+```typescript
 import { getMyControllerAction } from './my-client';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
