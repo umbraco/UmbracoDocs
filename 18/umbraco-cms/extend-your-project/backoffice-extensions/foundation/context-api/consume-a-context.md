@@ -124,6 +124,8 @@ customElements.define('example-element', ExampleElement);
 {% endtab %}
 {% endtabs %}
 
+For more about `peek()` and the other notification options, see the [Backoffice Notifications](../notifications.md) article.
+
 ### Get as a subscription
 When you are dealing with a subscription, it is good practice to consume the context in the constructor for the following reasons:
 

@@ -399,6 +399,7 @@
     * [Routes](extend-your-project/backoffice-extensions/foundation/routes.md)
     * [Backoffice Localization](extend-your-project/backoffice-extensions/foundation/localization.md)
     * [Integrate Validation](extend-your-project/backoffice-extensions/foundation/integrate-validation.md)
+    * [Backoffice Notifications](extend-your-project/backoffice-extensions/foundation/notifications.md)
   * [Contexts](extend-your-project/backoffice-extensions/contexts/README.md)
     * [Property Dataset Context](extend-your-project/backoffice-extensions/contexts/property-dataset-context.md)
   * [Property Level UI Permissions](extend-your-project/backoffice-extensions/property-level-ui-permissions.md)

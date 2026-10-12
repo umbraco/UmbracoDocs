@@ -62,6 +62,10 @@ Discover how to manage and use Backoffice UI localization files to translate you
 
 Learn how to bind and use the validation system when working with Form Controls and custom Property Editors.
 
+### [Notifications](notifications.md)
+
+Show notifications to the user, and learn which notifications the backoffice shows for server responses.
+
 ### [Sorting](../utilities/sorting.md)
 
 Create a UI that users can sort via drag and drop functionality.
