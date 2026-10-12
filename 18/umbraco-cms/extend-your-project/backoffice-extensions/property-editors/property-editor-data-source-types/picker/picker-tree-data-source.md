@@ -3,6 +3,7 @@
 The interface below is simplified for clarity and omits return types and arguments. See full interfaces in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/modules/packages_core_picker-data-source.html)
 
 
+{% code title="types.ts" %}
 ```typescript
 interface UmbPickerPropertyEditorCollectionDataSource {
   requestTreeRoot();
@@ -15,9 +16,11 @@ interface UmbPickerPropertyEditorCollectionDataSource {
   getConfig?();
 }
 ```
+{% endcode %}
 
 
 ### Example
+{% code title="example-custom-picker-tree-data-source.ts" %}
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import type {
@@ -158,3 +161,4 @@ const customItems: Array<UmbTreeItemModel> = [
 	},
 ];
 ```
+{% endcode %}

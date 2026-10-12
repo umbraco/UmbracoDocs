@@ -8,6 +8,7 @@ The repository is referenced by your Tree Manifest via `meta.repositoryAlias`.
 
 The `UmbTreeRepository` interface defines the methods your repository must implement:
 
+{% code title="tree-repository.interface.ts" %}
 ```typescript
 interface UmbTreeRepository {
   requestTreeRoot();
@@ -16,6 +17,7 @@ interface UmbTreeRepository {
   requestTreeItemAncestors();
 }
 ```
+{% endcode %}
 
 See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
 
@@ -23,6 +25,7 @@ See the full interface in the [UI API Documentation](https://apidocs.umbraco.com
 
 Register the Repository in your Manifest:
 
+{% code title="manifests.ts" %}
 ```typescript
 {
   type: 'repository',
@@ -31,6 +34,7 @@ Register the Repository in your Manifest:
   api: () => import('./my-tree.repository.js'),
 }
 ```
+{% endcode %}
 
 ## Implementing a Tree Repository
 
