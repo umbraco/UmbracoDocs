@@ -114,7 +114,7 @@ const { data: id, error } = await tryExecute(
 The Umbraco HTTP Client handles these responses for you:
 
 * **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again.
-* **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification.
+* **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification, except for 401, 403 and 404 responses. See [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
 * **Server notifications**: The client shows the notifications that the server sends in the `Umb-Notifications` header.
 * **Created items**: The client returns the ID from the `Umb-Generated-Resource` header as `data`.
 
