@@ -57,7 +57,7 @@ export class MyPropertyAction extends UmbPropertyActionBase {
     const propertyContext = await this.getContext(UMB_PROPERTY_CONTEXT);
 
     // Here it's possible to modify the property or perform other actions.  In this case, setting a value.
-    propertyContext.setValue("Default text here");
+    propertyContext?.setValue("Default text here");
   }
 }
 export { MyPropertyAction as api };

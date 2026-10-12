@@ -90,7 +90,7 @@ The following example shows how to call the increment method from a Workspace Ac
 export class MyIncreaseCounterWorkspaceAction extends UmbWorkspaceActionBase {
 	override async execute() {
 		const context = await this.getContext(EXAMPLE_COUNTER_CONTEXT);
-		context.increment();
+		context?.increment();
 	}
 }
 ```
@@ -108,7 +108,7 @@ export class MyWorkspaceView extends UmbElementMixin(LitElement) {
 	constructor() {
 		super();
 		this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (context) => {
-			this.observe(context.counter, (count) => this._count = count);
+			this.observe(context?.counter, (count) => this._count = count);
 		});
 	}
 	

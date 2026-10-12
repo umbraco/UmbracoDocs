@@ -132,8 +132,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
     }
 
     //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }
@@ -306,8 +306,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
     }
 
     //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }

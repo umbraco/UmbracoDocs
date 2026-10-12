@@ -148,18 +148,20 @@ Now that you have created a Web Component, register it to show up on the block:
 ```typescript
 {
     type: 'blockEditorCustomView',
-    alias: 'Example.blockEditorCustomView.Product',
-    name: 'Example Block Editor Custom View for Product Block of Block List Editors',
+    alias: 'Example.blockEditorCustomView.Feature',
+    name: 'Example Block Editor Custom View for Feature Block of Block List Editors',
     element: () => import('./example-block-custom-view.js'),
-    forContentTypeAlias: 'product',
+    forContentTypeAlias: 'feature',
     forBlockEditor: 'block-list',
 }
 ```
 
+The `forContentTypeAlias` value is the alias of the block's Element Type, not the alias of the Document Type. The **Feature** Element Type created earlier has the `feature` alias.
+
 While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, they also accept arrays. They can therefore be used to declare a custom view for multiple blocks and block editors. The code snippet below shows an example of such an array:
 
 ```typescript
-    forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
+    forContentTypeAlias: ['feature', 'hero'],
     forBlockEditor: ['block-list', 'block-grid', 'block-rte'],
 ```
 
@@ -313,7 +315,7 @@ You can make editing block content faster by making it possible to click anywher
 ```typescript
 import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import type { UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/block-custom-view';
+import type { UmbBlockEditorCustomViewConfiguration, UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/block-custom-view';
 import type { UmbBlockDataType } from '@umbraco-cms/backoffice/block';
 
 @customElement('example-block-custom-view')
