@@ -61,15 +61,10 @@ export class ExampleCounterStatusFooterAppElement extends UmbElementMixin(LitEle
 
 	constructor() {
 		super();
-		this.#observeCounter();
-	}
-
-	async #observeCounter() {
-		const context = await this.getContext(EXAMPLE_COUNTER_CONTEXT);
-		if (!context) return;
-		
-		this.observe(context.counter, (counter: number) => {
-			this._counter = counter;
+		this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (context) => {
+			this.observe(context?.counter, (counter) => {
+				this._counter = counter ?? 0;
+			});
 		});
 	}
 
@@ -104,6 +99,11 @@ declare global {
 
 ### Status Indicators
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+// Your own workspace context, which exposes a `status` observable:
+import { MY_ENTITY_STATUS_CONTEXT } from './my-entity-status.context.js';
+
 @customElement('entity-status-footer-app')
 export class EntityStatusFooterApp extends UmbElementMixin(LitElement) {
 	@state()
@@ -111,9 +111,9 @@ export class EntityStatusFooterApp extends UmbElementMixin(LitElement) {
 
 	constructor() {
 		super();
-		this.consumeContext(ENTITY_CONTEXT, (context) => {
-			this.observe(context.status, (status) => {
-				this.status = status;
+		this.consumeContext(MY_ENTITY_STATUS_CONTEXT, (context) => {
+			this.observe(context?.status, (status) => {
+				this.status = status ?? 'loading';
 			});
 		});
 	}
@@ -140,6 +140,10 @@ export class EntityStatusFooterApp extends UmbElementMixin(LitElement) {
 
 ### Live Counters
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
+
 @customElement('word-count-footer-app')
 export class WordCountFooterApp extends UmbElementMixin(LitElement) {
 	@state()
@@ -147,9 +151,10 @@ export class WordCountFooterApp extends UmbElementMixin(LitElement) {
 
 	constructor() {
 		super();
-		this.consumeContext(CONTENT_CONTEXT, (context) => {
-			this.observe(context.content, (content) => {
-				this.wordCount = this.#countWords(content);
+		this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, async (context) => {
+			// Observe the value of an invariant Textarea property with the alias 'summary':
+			this.observe(await context?.propertyValueByAlias<string>('summary'), (content) => {
+				this.wordCount = this.#countWords(content ?? '');
 			});
 		});
 	}
@@ -166,33 +171,32 @@ export class WordCountFooterApp extends UmbElementMixin(LitElement) {
 
 ### Validation Summary
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_VALIDATION_CONTEXT } from '@umbraco-cms/backoffice/validation';
+
 @customElement('validation-footer-app')
 export class ValidationFooterApp extends UmbElementMixin(LitElement) {
 	@state()
 	private errorCount = 0;
 
-	@state() 
-	private warningCount = 0;
-
 	constructor() {
 		super();
-		this.consumeContext(VALIDATION_CONTEXT, (context) => {
-			this.observe(context.errors, (errors) => {
-				this.errorCount = errors.filter(e => e.severity === 'error').length;
-				this.warningCount = errors.filter(e => e.severity === 'warning').length;
+		this.consumeContext(UMB_VALIDATION_CONTEXT, (context) => {
+			this.observe(context?.messages.messages, (messages) => {
+				this.errorCount = messages?.length ?? 0;
 			});
 		});
 	}
 
 	override render() {
-		if (this.errorCount === 0 && this.warningCount === 0) {
+		if (this.errorCount === 0) {
 			return html`<span class="valid">✓ Valid</span>`;
 		}
 
 		return html`
 			<div class="validation-summary">
-				${this.errorCount > 0 ? html`<span class="errors">${this.errorCount} errors</span>` : ''}
-				${this.warningCount > 0 ? html`<span class="warnings">${this.warningCount} warnings</span>` : ''}
+				<span class="errors">${this.errorCount} errors</span>
 			</div>
 		`;
 	}

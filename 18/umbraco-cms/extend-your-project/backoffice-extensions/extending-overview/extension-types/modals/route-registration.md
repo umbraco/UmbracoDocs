@@ -15,16 +15,16 @@ this.myModalRegistration = new UmbModalRouteRegistrationController(
     UMB_LINK_PICKER_MODAL
 )
     .onSubmit((submitData) => {
-        console.log("Modal submitted with data".submitData);
+        console.log("Modal submitted with data", submitData);
     })
     .observeRouteBuilder((routeBuilder) => {
         this._modalRouteBuilder = routeBuilder;
     });
 ```
 
-The registration holds an instance of its `UmbModalHandler` when the modal is active. The modal registration accepts 4 different callbacks:
+The registration holds an instance of its `UmbModalContext` when the modal is active. The modal registration accepts 4 different callbacks:
 
-* `onSetup` - called when the modal is opened
+* `onSetup` - called when the modal is opened. Return an object with `data`, `value`, and optional `modal` configuration, or `false` to reject the modal
 * `onSubmit` - called when the modal is submitted
 * `onReject` - called when the modal is rejected
 * `observeRouteBuilder` - called when the modal route changes. Use the given route builder to build a route to open the modal
@@ -65,6 +65,7 @@ When configuring a routed modal from a Property Editor, it's important to be awa
 	constructor() {
 		super();
 
+		// MY_MODAL_TOKEN is your own modal token. Its data is `{ index: number | null }`, and its value is `{ name: string }`.
 		this.myModalRegistration = new UmbModalRouteRegistrationController(
 			this,
 			MY_MODAL_TOKEN
@@ -87,23 +88,24 @@ When configuring a routed modal from a Property Editor, it's important to be awa
 				index = null;
 			}
 
+			// The modal receives the data, and the value is the initial value of the modal:
 			return {
-				index: index,
-				itemData: {
-					name: data?.name
-				},
+				data: { index: index },
+				value: { name: data?.name ?? '' },
 			};
 		})
-		.onSubmit((submitData) => {
-			if (!submitData) return;
-			this._items[submitData.index] = submitData.itemData;
+		.onSubmit((value, data) => {
+			if (!value) return;
+			// A new pick has no index, so add it to the end:
+			const index = data?.index ?? this._items.length;
+			this._items[index] = value;
 		})
 		.observeRouteBuilder((routeBuilder) => {
 			this._modalRouteBuilder = routeBuilder;
 		});
 	}
 
-	render() {
+	override render() {
 		return html`
 			${this._items?.map((item, index) =>
 				html`<uui-button look="placeholder" label="Edit item ${index}" .href=${this._modalRouteBuilder?.({ index })}>Add</uui-button>`
@@ -120,8 +122,8 @@ The Modal registration has an option to retrieve a URL Builder. This is a functi
 const modalLink = _myUrlBuilder?.({ alias: "my-input-alias" });
 ```
 
-The `modalLink` from above could look like this: `/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-input-alias`
+The `modalLink` from above could look like this: `/umbraco/section/my/location/modal/our-modal-somethingpicker/my-input-alias`
 
 Notice the Property Editor registration will add the property alias and variant ID to the URL, so it becomes:
 
-`/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-property-alias/en-us/my-input-alias`
+`/umbraco/section/my/location/modal/our-modal-somethingpicker/my-property-alias/en-us/my-input-alias`
