@@ -16,6 +16,7 @@ You can do this by defining the `overwrites` property in your [Extension Manifes
 
 This example overrides the `save and preview` button with an external "preview" button (single overwrite):
 
+{% code title="manifests.ts" %}
 ```typescript
 const manifest = {
     type: 'workspaceAction',
@@ -25,9 +26,11 @@ const manifest = {
     ...
 };
 ```
+{% endcode %}
 
 This example overrides both the `save and preview` button as well as the `save` button with an external "preview" button (multiple overwrite):
 
+{% code title="manifests.ts" %}
 ```typescript
 const manifest = {
     type: 'workspaceAction',
@@ -37,6 +40,7 @@ const manifest = {
     ...
 };
 ```
+{% endcode %}
 
 If your extension has conditions, the overwritten extensions will only be hidden when your extension is displayed. This means that the overwrites only have an effect if all the conditions are permitted and the extensions are displayed at the same spot.
 
@@ -50,11 +54,13 @@ Currently, it is not possible to un-exclude extensions once excluded.
 
 The following JavaScript code hides the `Save and Preview` button from the Document Workspace.
 
+{% code title="index.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 umbExtensionsRegistry.exclude('Umb.WorkspaceAction.Document.SaveAndPreview');
 ```
+{% endcode %}
 
 When and where you execute this code depends on your situation. In many cases, it makes sense to execute this on boot, using the [entry point approach](../extension-types/backoffice-entry-point.md).
 
@@ -64,10 +70,12 @@ You can also choose to unregister an extension. You should only use this on exte
 
 In other cases, you can use the `overwrites` or `exclude` option. The difference with the `exclude` approach is that unregistering removes the extension from the Extension Registry. This allows you to re-register extensions with the same alias.
 
+{% code title="index.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 umbExtensionsRegistry.unregister('My.WorkspaceAction.AutoFillWithUnicorns');
 ```
+{% endcode %}
 
 When and where you execute this code depends on your situation. In many cases, it makes sense to execute this on boot, using the [entry point approach](../extension-types/backoffice-entry-point.md).

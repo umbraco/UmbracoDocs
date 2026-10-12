@@ -26,11 +26,13 @@ A Flag can be the determinant for a Sign by declaring the `forEntityFlags` as pa
 
 Example:
 
+{% code title="umbraco-package.json" %}
 ```json
 ...
 forEntityFlags: "Umb.ScheduledForPublish",
 ...
 ```
+{% endcode %}
 
 Using this binding allows the server to determine which signs are present in the response via the registered collection of [Flag Providers](../server-side-extensions/flag-providers.md).
 
@@ -44,6 +46,7 @@ If you like to use an icon, set `kind` to `"icon"` , and provide both `meta.icon
 
 ### Example: Rendering an Entity Sign from a Server Flag
 
+{% code title="manifests.ts" %}
 ```typescript
 import { UMB_DOCUMENT_ENTITY_TYPE } from "@umbraco-cms/backoffice/document";
 
@@ -62,6 +65,7 @@ export const manifests: UmbExtensionManifest = {
     },
 };
 ```
+{% endcode %}
 
 When an Entity includes the `Umb.IsProtected` flag, this Sign appears next to it in the UI, indicating that the item is protected.
 
@@ -71,6 +75,7 @@ When an Entity includes the `Umb.IsProtected` flag, this Sign appears next to it
 
 The following Sign appears next to any document created within the past week. This Sign isn’t controlled by server flags.
 
+{% code title="manifests.ts" %}
 ```typescript
 import { UMB_DOCUMENT_ENTITY_TYPE } from "@umbraco-cms/backoffice/document";
 
@@ -87,11 +92,13 @@ export const manifests: UmbExtensionManifest = {
     },
 };
 ```
+{% endcode %}
 
 The `icon` kind provides the label of the Sign. The `element` property replaces the icon with your own element.
 
 And in `recently-created-sign.element.ts`:
 
+{% code title="recently-created-sign.element.ts" %}
 ```typescript
 import type { UmbDocumentTreeItemModel } from "@umbraco-cms/backoffice/document";
 import { customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
@@ -122,6 +129,7 @@ export class UmbRecentlyCreatedSignElement extends UmbLitElement {
 
 export { UmbRecentlyCreatedSignElement as element };
 ```
+{% endcode %}
 
 {% hint style="info" %}
 Signs render next to the icon of tree items. The element reads the document from the tree item context, `UMB_TREE_ITEM_CONTEXT`.
