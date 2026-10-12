@@ -71,6 +71,10 @@ const { data, error } = await tryExecute(this, request, {
 
 ### Cancelling Requests
 
+{% hint style="info" %}
+Cancelling requests with `abortSignal` is available from Umbraco 18.3.
+{% endhint %}
+
 Cancel a request when you no longer need its result, for example when the user navigates away or the request takes too long.
 
 Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away:
