@@ -4,6 +4,7 @@
 
 * **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
 * **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
+* **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
 
 ## Automatic NuGet cache cleanup
 
@@ -25,3 +26,16 @@ The temporary `global.json` file is now removed in both cases:
 
 * **Failed builds** - The repository on the environment is cleaned up when the build fails, the same way as after a successful build.
 * **Interrupted deployments** - Umbraco Cloud checks the repository once the deployment has finished and removes a leftover `global.json` file.
+
+## Updated Usage overview
+
+The **Usage** page in the Cloud Portal has been updated to help you monitor resource usage and understand your plan limits.
+
+The updated page includes:
+
+* **Bandwidth forecasts** - See estimated bandwidth usage by the end of the month and when you may reach your limit.
+* **Expanded bandwidth history** - Switch between 31 days of daily usage and up to 12 months of monthly totals.
+* **Additional metrics** - View database size, disk usage, and content node history, alongside the latest Git repository size.
+* **Plan extensions** - Bandwidth and media storage limits include active extensions. Expand **+X GB bought** to see active and scheduled extensions.
+
+See the [Usage documentation](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md) for the full overview.
