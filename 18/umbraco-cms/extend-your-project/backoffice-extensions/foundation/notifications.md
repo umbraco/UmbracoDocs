@@ -216,6 +216,10 @@ An event message can contain HTML, such as a link. The backoffice sanitizes the 
 
 ## Render HTML in a Notification
 
+{% hint style="info" %}
+`htmlMessage` is available from Umbraco 18.1.
+{% endhint %}
+
 The `message` property always renders as plain text. To render HTML, set `htmlMessage` as well. The notification then shows `htmlMessage` instead of `message`.
 
 The `htmlMessage` property takes a string or a Lit `TemplateResult`:
