@@ -112,6 +112,12 @@ Follow these steps to perform a partial restore to get only the parts you need:
 To see the restored content, reload the content tree. Click the ellipses next to the tree title, then choose _Reload_.
 
 {% hint style="info" %}
+The dialog shows the items in the selected environment, including items that don't exist in your current environment. Use the search field to find an item by name. Members also match on username and email.
+
+You can partially restore members, member groups, and dictionary items from their trees in the same way. Members require the [`AllowMembersDeploymentOperations`](../getting-started/deploy-settings.md#transfer-members) setting to allow restores. Member groups and dictionary items require the `TransferMemberGroupsAsContent` and [`TransferDictionaryAsContent`](../getting-started/deploy-settings.md#transfer-dictionary-items-as-content) settings.
+{% endhint %}
+
+{% hint style="info" %}
 Keep in mind that if you select an item with ancestors/parents, all the ancestors above it, required for the item to exist, are restored as well.
 {% endhint %}
 
