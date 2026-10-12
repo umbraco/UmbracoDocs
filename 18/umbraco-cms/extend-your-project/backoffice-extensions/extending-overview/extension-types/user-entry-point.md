@@ -5,7 +5,7 @@ description: >-
 
 # User Entry Point
 
-This manifest declares a single JavaScript file that runs when a user session starts. The `onInit` function is only called once the user has been authorized **and** the current user data has been loaded. This means you can rely on the Current User Context being populated. Properties like the allowed sections are never `undefined`.
+The User Entry Point manifest declares a single JavaScript file that runs when a user session starts. The `onInit` function is only called once the user has been authorized **and** the current user data has been loaded. This means you can rely on the Current User Context being populated. Properties like the allowed sections are never `undefined`.
 
 {% hint style="info" %}
 See [Backoffice Entry Point](backoffice-entry-point.md) if your code does not depend on the signed-in user. See [App Entry Point](app-entry-point.md) if it must run before the user is logged in.
@@ -111,16 +111,10 @@ export const onUnload: UmbEntryPointOnUnload = () => {
 ```
 {% endcode %}
 
-{% hint style="info" %}
-`onInit` and `onUnload` are called once per session. If the session times out and someone signs in again, the pair runs again, potentially for a different user. Keeping setup and cleanup symmetrical ensures nothing from the previous user's session leaks into the next.
-{% endhint %}
+`onInit` and `onUnload` run once per session, so keep setup and cleanup symmetrical. That way nothing from one user's session leaks into the next. Capture the user in `onInit`, as above, to know who a later `onUnload` is for. `UMB_CURRENT_USER_CONTEXT` also returns the departing user inside `onUnload`, but only because Umbraco keeps the current user data until the next sign-in. Prefer the captured value when the identity matters.
 
 {% hint style="info" %}
 Each browser tab runs its own copy of the module, so every open tab calls `onInit` and `onUnload`. When the user signs out in one tab, all tabs call `onUnload` before they leave the page. Closing or reloading a tab does not call `onUnload`. If your server keeps state for each user, do not rely on `onUnload` to clean it up. Keep that state in storage that all servers share.
-{% endhint %}
-
-{% hint style="info" %}
-Capturing the user in `onInit`, as above, is the reliable way to know who a later `onUnload` is for. The captured value belongs to the session that the pair brackets. Reading `UMB_CURRENT_USER_CONTEXT` inside `onUnload` also returns the departing user. That only works because the current user data is not cleared until the next sign-in. Prefer the captured value when the identity matters.
 {% endhint %}
 
 ### Register extensions for specific users
