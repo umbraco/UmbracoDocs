@@ -24,7 +24,7 @@ A repository can be initialized directly from an element, but will often be inst
 
 The data flow when using a repository can be illustrated as follows:
 
-```
+```text
 (Data Source) -> Repository -> (Controller/Context) -> Element
 ```
 

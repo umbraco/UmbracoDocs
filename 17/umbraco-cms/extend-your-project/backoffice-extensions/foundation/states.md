@@ -21,7 +21,7 @@ You can see an example of this pattern in the [Extension Type Workspace Context]
 The example below demonstrates the basics of working with a State and observing its changes:
 
 {% code title="my-element.ts" %}
-```
+```typescript
 const myState = new UmbStringState('the initial value');
 const myObservable = myState.asObservable();
 
@@ -35,7 +35,7 @@ myState.setValue('updated value');
 
 This example will result in the following logs:
 
-```
+```text
 > 'the initial value'
 > 'updated value'
 ```
@@ -86,7 +86,7 @@ this.observe(
 
 This will result in the following log:
 
-```
+```text
 > ['item1', 'item2']
 ```
 
@@ -109,7 +109,7 @@ this.#selectionState.setValue(['item2', 'item3']);
 
 This will result in the following log, in addition to the one above:
 
-```
+```text
 > ['item2', 'item3']
 ```
 
@@ -159,7 +159,7 @@ As in the previous example, the mapper will be triggered whenever the State valu
 The example below revisits the earlier scenario to see how an Observable Part is triggered in relation to the value of the state.
 
 {% code title="my-element.ts" %}
-```
+```typescript
 const myState = new UmbStringState('four');
 const myObservable = myState.asObservable();
 const myObservablePart = myState.asObservablePart((value) => value.length);
@@ -178,7 +178,7 @@ myState.setValue('six');// note that it contains only three letters
 
 This example will result in the following logs:
 
-```
+```text
 > value: 'four'
 > length: 4
 > value: 'five'

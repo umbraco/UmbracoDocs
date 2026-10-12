@@ -74,7 +74,7 @@ export class MyOwnControllerImplementation extends UmbControllerBase {
 If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. The class must implement the `UmbController` interface. Manual deregistration is required in this case.
 
 {% code title="my-own-controller-implementation.ts" %}
-```
+```typescript
 import type { UmbController, UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 
 export class MyOwnControllerImplementation implements UmbController {
