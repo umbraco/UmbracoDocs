@@ -157,22 +157,28 @@ const manifest: UmbExtensionManifest = {
     conditions: [{ alias: 'Umb.Condition.SectionAlias', match: 'Umb.Section.Content' }],
 };
 
+let session = 0;
+
 export const onInit: UmbEntryPointOnInit = async (host, extensionRegistry) => {
+    const thisSession = ++session;
     // Your own endpoint decides, based on the signed-in user, whether they have access
     const { response } = await umbHttpClient.get({
         url: '/umbraco/my-reports/api/v1/access',
         security: [{ scheme: 'bearer', type: 'http' }],
     });
-    if (response?.ok) {
+    if (thisSession === session && response?.ok) {
         extensionRegistry.register(manifest);
     }
 };
 
 export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
+    session++;
     extensionRegistry.unregister(manifest.alias);
 };
 ```
 {% endcode %}
+
+The session can end while the access request is still running. The `session` counter makes sure that a late response does not register the dashboard in a later session.
 
 {% hint style="info" %}
 For checks that a built-in condition covers, such as `Umb.Condition.CurrentUser.IsAdmin` or `Umb.Condition.CurrentUser.GroupId`, add the condition to the extension's manifest instead. See [Extension Conditions](condition.md#current-user).
