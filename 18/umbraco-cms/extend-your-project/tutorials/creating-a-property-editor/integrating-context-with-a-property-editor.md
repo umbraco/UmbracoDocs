@@ -110,9 +110,11 @@ import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONFIRM_MODAL,} from '@umbraco-cms/backo
 
 2. Update the notification import to remove the `UmbNotificationContext` type, which is no longer needed:
 
+{% code title="suggestions-property-editor-ui.element.ts" %}
 ```typescript
 import { UMB_NOTIFICATION_CONTEXT, type UmbNotificationDefaultData } from '@umbraco-cms/backoffice/notification';
 ```
+{% endcode %}
 
 3. Update the constructor to consume the `UMB_MODAL_MANAGER_CONTEXT`and the `UMB_CONFIRM_MODAL.`
 
