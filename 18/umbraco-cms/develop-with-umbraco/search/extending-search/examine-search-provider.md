@@ -44,7 +44,6 @@ Extend the `Indexer` class to handle your custom `IndexValue` type by:
 ```csharp
 using Examine;
 using Microsoft.Extensions.Options;
-using Umbraco.Cms.Core.Search.Indexing;
 using Umbraco.Cms.Search.Provider.Examine.Configuration;
 using Umbraco.Cms.Search.Provider.Examine.Helpers;
 using Umbraco.Cms.Search.Provider.Examine.Services;
@@ -269,7 +268,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchByMyDataAsync(Guid id)
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             filters: [new GuidFilter("myDataField", [id], Negate: false)]
         );
 }

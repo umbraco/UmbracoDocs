@@ -94,7 +94,7 @@ public class OmitSettingsFromPublishedContentIndexNotificationHandler
     public void Handle(ContentIndexingNotification notification)
     {
         // This notification handler only deals with the published content index.
-        if (notification.IndexAlias is not Constants.IndexAliases.PublishedContent)
+        if (notification.IndexAlias is not Constants.Search.IndexAliases.PublishedContent)
         {
             return;
         }
@@ -102,7 +102,7 @@ public class OmitSettingsFromPublishedContentIndexNotificationHandler
         // Find the system field for content type ID.
         var contentTypeIdField = notification
             .Fields
-            .FirstOrDefault(field => field.FieldName == Constants.IndexFieldNames.ContentTypeId);
+            .FirstOrDefault(field => field.FieldName == Constants.Search.FieldNames.ContentTypeId);
 
         // Grab the content type ID from the keywords collection.
         var contentTypeId = contentTypeIdField?.Value.Keywords?.FirstOrDefault();

@@ -37,7 +37,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchByQueryAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "pink"
         );
 }
@@ -65,7 +65,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> FilterByKeywordAndIntegerAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             // "genre" must be either "rock" or "pop", and "releaseYear" must be either 1984, 1985 or 1986
             filters:
             [
@@ -160,7 +160,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> FacetByKeywordAndIntegerAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             // include facets for "genre" and "releaseYear" in the search result
             facets:
             [
@@ -224,7 +224,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SortByKeywordAndIntegerAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "pink",
             // sort the search results by "releaseYear" descending, then by "genre" ascending
             sorters:
@@ -263,7 +263,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchWithPaginationAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "pink",
             // skip the first 20 results and return the next 10 results
             skip: 20,
@@ -293,7 +293,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchSpecificCultureAndSegmentAsync()
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "rosa",
             culture: "es-ES",
             segment: "rock-n-rollers"
@@ -324,7 +324,7 @@ public class MySearchService(ISearcher searcher)
 {
     public async Task<SearchResult> SearchProtectedContent(Guid principalId, Guid[]? groupIds)
         => await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "pink",
             accessContext: new AccessContext(
                 PrincipalId: principalId,
@@ -341,9 +341,9 @@ Sometimes it's relevant to surface search results for protected content, regardl
 
 {% code title="MySearchService.cs" %}
 ```csharp
-using Umbraco.Cms.Search.Core.Models.Searching;
-using Umbraco.Cms.Search.Core.Services;
-using Constants = Umbraco.Cms.Search.Core.Constants;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 
 namespace My.Site.Services;
 
@@ -352,7 +352,7 @@ public class MySearchService(ISearcher searcher)
     public async Task<SearchResult> SearchWithBypassForProtectedContent()
     {
         return await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             query: "pink",
             accessContext: AccessContext.BypassProtection()
         );

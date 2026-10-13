@@ -22,7 +22,7 @@ The following fields are explicitly indexed for all content.
 | `Umb_Tags`          | `Keyword`        | Accumulated collection of tags from all properties contained in the content. |
 | `Umb_UpdateDate`    | `DateTimeOffset` | The last update date of the content.                                         |
 
-System fields can be used like any other fields for searching. The system field names are defined in [`Constants.IndexFieldNames`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/Constants-Indexes.cs).
+System fields can be used like any other fields for searching. The system field names are defined in [`Constants.Search.FieldNames`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/Constants-Search.cs).
 
 {% code title="MySearchService.cs" %}
 ```csharp
@@ -38,11 +38,11 @@ public class MySearchService(ISearcher searcher)
     public async Task<SearchResult> FilterByNameAsync()
     {
         return await searcher.SearchAsync(
-            indexAlias: Constants.IndexAliases.PublishedContent,
+            indexAlias: Constants.Search.IndexAliases.PublishedContent,
             filters:
             [
                 new TextFilter(
-                    FieldName: Constants.IndexFieldNames.Name,
+                    FieldName: Constants.Search.FieldNames.Name,
                     Values: ["pink"],
                     Negate: false
                 )
