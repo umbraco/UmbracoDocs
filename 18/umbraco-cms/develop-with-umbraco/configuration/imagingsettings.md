@@ -6,6 +6,8 @@ description: Information on the imaging settings section
 
 The imaging settings section lets you configure the cache and resize settings for processed images on your project (using [ImageSharp.Web](https://docs.sixlabors.com/articles/imagesharp.web/) as default implementation). If you need to configure allowed image file types or auto fill image properties, you want to use [content settings](contentsettings.md) instead.
 
+To learn how Umbraco connects to ImageSharp, and how to switch to ImageSharp 2, see the [Image Processing](../application-code/backend-and-custom-logic/image-processing.md) article.
+
 All these settings contain default values, so nothing needs to be explicitly configured. A complete settings section for imaging can be seen here with all the default values:
 
 ```json
@@ -91,6 +93,10 @@ Specifies the key used to secure image requests by generating an HMAC. This ensu
 To enable it, you need to set a secure random key. This key should be kept secret and not shared publicly. The key can be set through the `IOptions` pattern, or you can insert a base64 encoded key in the `appsettings.json` file. The key should ideally be 64 bytes long.
 
 The key must be the same across all environments (development, staging, production) to ensure that image requests work for content published across environments.
+
+{% hint style="info" %}
+The `Umbraco.Cms.Imaging.ImageSharp2` package does not support HMAC request authorization and ignores this setting. For more information, see the [Image Processing](../application-code/backend-and-custom-logic/image-processing.md#switching-to-imagesharp-2) article.
+{% endhint %}
 
 ### New installs
 
