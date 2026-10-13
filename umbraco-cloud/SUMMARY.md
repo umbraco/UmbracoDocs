@@ -37,6 +37,7 @@
   * [Project Settings](build-and-customize-your-solution/set-up-your-project/project-settings/README.md)
     * [Public Access](build-and-customize-your-solution/set-up-your-project/project-settings/public-access.md)
     * [Config Transforms](build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md)
+    * [Environment Naming and Appsettings](build-and-customize-your-solution/set-up-your-project/project-settings/environment-naming-and-appsettings.md)
     * [Best Practice for Working in Teams](build-and-customize-your-solution/set-up-your-project/project-settings/team-workflow-on-cloud.md)
     * [Dedicated Resources](build-and-customize-your-solution/set-up-your-project/project-settings/dedicated-resources.md)
     * [Change your Plan](build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md)
@@ -167,6 +168,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [October 2026](release-notes/overview-2026/2026-10-releasenotes.md)
   * [September 2026](release-notes/overview-2026/2026-09-releasenotes.md)
   * [August 2026](release-notes/overview-2026/2026-08-releasenotes.md)
   * [July 2026](release-notes/overview-2026/2026-07-releasenotes.md)

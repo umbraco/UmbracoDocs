@@ -10,7 +10,7 @@ Goals are important in Umbraco Engage. Without goals you cannot determine whethe
 
 A/B Testing and/or Personalization is never the goal. The goal is to increase your goals which can be achieved by personalization or A/B testing.
 
-In the Goals menu, you can set up goals and specify their value.
+To manage goals, go to the **Engage** section and select **Settings** > **Goals**. Here you can set up goals and specify their value.
 
 You have a complete overview of all of the goals that are currently set:
 
@@ -20,7 +20,7 @@ From this page, you can edit existing goals or set up new goals.
 
 ## Setting up a new goal
 
-When you click on **Create new goal** you can set up a new goal. You have to give it a name and an optional goal value.
+When you select **Create goal**, you can set up a new goal. You have to give it a name and an optional goal value.
 
 You can specify whether it is a micro or macro goal.
 

@@ -7,7 +7,7 @@ description: >-
 
 # Import and Export
 
-## What is import and export?
+## What Import and Export Is
 
 The import and export feature of Umbraco Deploy allows you to transfer content and schema between Umbraco environments. A `.zip` file is exported from one environment and imported into another to update its Umbraco data.
 
@@ -22,7 +22,7 @@ It is recommended to use these approaches for day-to-day editorial and developer
 
 Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
 
-As import and export is a two-step process, it doesn't require inter-environment communication. This allows us to process much larger batches of information without running into hard limits imposed by Cloud hosting platforms.
+As import and export is a two-step process, it doesn't require inter-environment communication. This allows much larger batches of information to be processed without running into hard limits imposed by Cloud hosting platforms.
 
 Hooks are also provided to allow for migrations of artifacts (such as data types) and property data when importing. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
 
@@ -133,7 +133,7 @@ Deploy contains base classes and implementations to handle common migrations tha
 
 ### Migrating from Umbraco 7
 
-The import and export feature is not available in Deploy 2 for Umbraco 7. We have though released a package to allow creating an export. This needs to be done in code and requires additional legacy migrators to be able to import into a newer version. This is explained in [Migrating from Umbraco 7](import-export-v7.md).
+The import and export feature is not available in Deploy 2 for Umbraco 7. However, a package has been released to allow creating an export. This needs to be done in code and requires additional legacy migrators to be able to import into a newer version. This is explained in [Migrating from Umbraco 7](import-export-v7.md).
 
 ## Service details (programmatically importing and exporting)
 

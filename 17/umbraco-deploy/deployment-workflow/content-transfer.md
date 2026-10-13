@@ -10,11 +10,11 @@ Content and media transfers are flexible which means you have complete control o
 
 Transferring content will overwrite any existing nodes on the target environment - content transfers will transfer the items that you select in the "source" environment to the "target" environment exactly the same as it was in the "source". This means that if you have some content on the target environment already, this will be replaced by the new content from the source environment.
 
-**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to our documentation on how to deploy meta data from [Deploying Content](deploying-changes.md).
+**Important**: Content and Media transfers will only work if you've deployed all changes to your meta data before hand. Please refer to the documentation on how to deploy meta data from [Deploying Content](deploying-changes.md).
 
 ## Step-by-step
 
-Let’s go through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to your development site.
+This section walks through a content transfer step by step. Imagine you’ve finished working on new content for your project locally and you are ready to transfer the changes to your development site.
 
 You want to transfer the whole site. You start from the `Home` node and choose to transfer everything under it:
 
@@ -90,4 +90,4 @@ Sometimes a content transfer might not be possible. For example if you add a new
 
 ![Schema mismatch](../.gitbook/assets/schema-mismatch.png)
 
-If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
+This type of issue can occur when transferring content. See the article about [Schema Mismatch errors](../troubleshooting.md) to resolve schema mismatches.

@@ -1,12 +1,12 @@
 ---
 description: >-
-  With the Deploy Dashboard, we have made it possible to get an overview of your
+  The Deploy Dashboard makes it possible to get an overview of your
   Umbraco Deploy installation and perform Deploy operations.
 ---
 
 # Deploy Dashboard
 
-In this article, we will show the different sections on the Deploy dashboard and how they can be used.
+This article shows the different sections on the Deploy dashboard and how they can be used.
 
 ## Deploy Status
 

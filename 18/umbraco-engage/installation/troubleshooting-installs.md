@@ -46,7 +46,7 @@ Go to a form and add a new question. Do you see this option?
 
 ![Analytics Visitor ID field in Forms](../.gitbook/assets/engage-analytics-form-field.png)
 
-Go to **Engage** -> **Settings** -> **Create a new goal**. Do you see the following option called **Umbraco Forms Submission**?
+Go to **Engage** > **Settings** > **Goals** and select **Create goal**. Open the **Trigger** dropdown. Do you see the following option called **Umbraco Forms submission**?
 
 ![Umbraco Forms submission option in the goal trigger dropdown](../.gitbook/assets/engage-forms-goal-trigger.png)
 
@@ -74,7 +74,7 @@ Once set up, you will see analytics for countries like this below:
 
 Confirm that the IP of your company/office building has been set to be excluded from Umbraco Engage. This is done to ensure it is excluded from tracking and reporting, along with anyone else who is a content editor of the website.
 
-You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure it is in the list of IPs by navigating to **Engage** -> **Settings** -> **IP Filters**.
+You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure a rule with the **IP address** type exists for it. Go to **Engage** > **Settings** > **Block traffic** to check.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 

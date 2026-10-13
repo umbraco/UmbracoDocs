@@ -132,6 +132,7 @@ With **autolinking**, if a visitor uses **Sign in with Microsoft** and their ema
 2. Create a new static extension class called `MemberAuthenticationExtensions.cs`.
 
 {% code title="MemberAuthenticationExtensions.cs" lineNumbers="true" %}
+
 ```csharp
 namespace MyApp;
 
@@ -142,39 +143,34 @@ public static class MemberAuthenticationExtensions
         builder.Services.ConfigureOptions<EntraIDB2CMembersExternalLoginProviderOptions>();
         builder.AddMemberExternalLogins(logins =>
         {
-            builder.Services.ConfigureOptions<EntraIDB2CMembersExternalLoginProviderOptions>();
-            builder.AddMemberExternalLogins(logins =>
-            {
-                logins.AddMemberLogin(
-                    membersAuthenticationBuilder =>
-                    {
-                        membersAuthenticationBuilder.AddMicrosoftAccount(
+            logins.AddMemberLogin(
+                membersAuthenticationBuilder =>
+                {
+                    membersAuthenticationBuilder.AddMicrosoftAccount(
 
-                            // The scheme must be set with this method to work for the external login.
-                            membersAuthenticationBuilder.SchemeForMembers(EntraIDB2CMembersExternalLoginProviderOptions.SchemeName),
-                            options =>
-                            {
-                                // Callbackpath: Represents the URL to which the browser should be redirected to.
-                                // This needs to be unique.
-                                // In order to have Umbraco members auto-linked, use "/umbraco-b2c-members-signin"                                
-                                options.CallbackPath = "/umbraco-b2c-members-signin";
+                        // The scheme must be set with this method to work for the external login.
+                        membersAuthenticationBuilder.SchemeForMembers(EntraIDB2CMembersExternalLoginProviderOptions.SchemeName),
+                        options =>
+                        {
+                            // Callbackpath: Represents the URL to which the browser should be redirected to.
+                            // This needs to be unique.
+                            // In order to have Umbraco members auto-linked, use "/umbraco-b2c-members-signin"
+                            options.CallbackPath = "/umbraco-b2c-members-signin";
 
-                                //Obtained from the ENTRA ID B2C WEB APP
-                                options.ClientId = "YOURCLIENTID";
-                                //Obtained from the ENTRA ID B2C WEB APP
-                                options.ClientSecret = "YOURCLIENTSECRET";
+                            //Obtained from the ENTRA ID B2C WEB APP
+                            options.ClientId = "YOURCLIENTID";
+                            //Obtained from the ENTRA ID B2C WEB APP
+                            options.ClientSecret = "YOURCLIENTSECRET";
 
-                                // If you are using single-tenant app registration (e.g. for an intranet site), you must specify the Token Endpoint and Authorization Endpoint:
-                                //options.TokenEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token";
-                                //options.AuthorizationEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize";    
+                            // If you are using single-tenant app registration (e.g. for an intranet site), you must specify the Token Endpoint and Authorization Endpoint:
+                            //options.TokenEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token";
+                            //options.AuthorizationEndpoint = $"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize";
 
-                                options.SaveTokens = true;
-                            });
-                    });
-            });
+                            options.SaveTokens = true;
+                        });
+                });
         });
         return builder;
-        });
     }
 }
 ```

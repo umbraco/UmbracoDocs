@@ -69,10 +69,31 @@ When set, this profile is used by:
 - `IAISpeechToTextService.TranscribeAsync()` without a profile ID
 - The voice input button in Contextual Copilot and Copilot Workspace
 
+### AI Disclosure Notice
+
+Controls the notice that tells users a response is AI-generated. The notice reads "Responses are AI-generated and may be inaccurate." and appears in:
+
+- The chat in Contextual Copilot and Copilot Workspace, after the first message in a conversation.
+- The prompt preview, once a prompt response has loaded.
+
+| Option      | Behavior                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------ |
+| Always      | The notice is always shown. This is the default.                                                 |
+| Dismissible | The notice shows a **Dismiss** button. Once dismissed, it stays hidden in that browser.          |
+| Off         | The notice is never shown.                                                                       |
+
+With **Dismissible**, each location is dismissed separately. Hiding the notice in the chat does not hide it in the prompt preview. The dismissal is stored in a cookie in the user's browser for one year, so it applies per browser rather than per user account.
+
+{% hint style="warning" %}
+You may be legally required to tell people when content is AI-generated, for example under the EU AI Act. Check which rules apply to your organization before choosing **Dismissible** or **Off**.
+{% endhint %}
+
+The setting is found in the **Transparency** group on the Settings page.
+
 ## Configuring Settings
 
 1. Navigate to the **AI** section > **Settings**.
-2. Select the desired profiles via the pickers.
+2. Select the desired profiles via the pickers, and choose an AI Disclosure Notice option.
 3. Click **Save**.
 
 ## Settings Precedence

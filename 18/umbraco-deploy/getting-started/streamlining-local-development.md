@@ -1,6 +1,6 @@
 # Streamlining Local Development
 
-In this section we discuss some additional steps you can carry out to streamline your local development workflow.
+This section discusses some additional steps you can carry out to streamline your local development workflow.
 
 ## Creating Git Hooks
 
@@ -8,7 +8,7 @@ Working in a team, it's common for developers to pull code from source control t
 
 They can do this by starting up the website, navigating to the _Settings > Deploy_ dashboard and triggering a data extraction.
 
-We can automate this step using a [git hook](https://www.atlassian.com/git/tutorials/git-hooks).
+You can automate this step using a [git hook](https://www.atlassian.com/git/tutorials/git-hooks).
 
 When working with Umbraco Cloud, this step is configured automatically for you when you clone and run your project the first time. If working with Umbraco Deploy On-Premise, you can set it up yourself.
 
@@ -16,7 +16,7 @@ The process works by using the marker file Umbraco Deploy uses to trigger an upd
 
 If a file named `deploy-on-start` is found in the `/umbraco/Deploy` folder, an update will run automatically when the site starts up.
 
-Therefore, if we ensure that the file is created every time the source code is pulled from the remote repository, we can automate the update.
+Therefore, if the file is created every time the source code is pulled from the remote repository, the update can be automated.
 
 To do this, carry out the following steps:
 

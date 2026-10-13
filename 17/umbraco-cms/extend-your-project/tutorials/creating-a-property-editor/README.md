@@ -6,19 +6,19 @@ description: A guide to creating a property editor in Umbraco.
 
 ## Overview
 
-This guide covers setting up a Property Editor and registering it as a Data Type in Umbraco
+This guide covers setting up a Property Editor and registering it as a Data Type in Umbraco.
 
 The steps covered in part one are:
 
-* [Setting up a Plugin](./#setting-up-a-plugin)
-* [Creating a Web Component](./#creating-a-web-component)
-* [Registering the Data Type in Umbraco](./#registering-the-data-type-in-umbraco)
-* [Adding styling and setting up events in Web Components](./#adding-styling-and-setting-up-events-in-the-web-components)
-* [Setup Event Logic](./#setup-event-logic)
+* [Setting up a Plugin](#setting-up-a-plugin)
+* [Creating a Web Component](#creating-a-web-component)
+* [Registering the Data Type in Umbraco](#registering-the-data-type-in-umbraco)
+* [Adding styling and setting up events in Web Components](#adding-styling-and-setting-up-events-in-the-web-components)
+* [Set up Event Logic](#set-up-event-logic)
 
 This tutorial uses TypeScript and Lit. Make sure your package is already [set up before continuing](../../backoffice-extensions/development-flow/vite-package-setup.md).
 
-o set up an extension using TypeScript and Lit, see the [Creating your first extension](../creating-your-first-extension.md) article.
+To set up an extension using TypeScript and Lit, see the [Creating your first extension](../creating-your-first-extension.md) article.
 
 ### Resources
 
@@ -32,17 +32,17 @@ This tutorial will not go in-depth on how TypeScript and Lit work. To learn abou
 By the end of this tutorial, you will have a Suggestions Data Type, registered in the backoffice, and assigned to a Document Type. This Data Type can create and suggest values.
 
 {% hint style="info" %}
-At the end of the final step, a dropdown displaying the entire `suggestions-property-editor-ui.element.ts` and `umbraco-package.json` files is available.
+At the end of the final step, a dropdown displaying the entire `suggestions-property-editor-ui.element.ts` file is available.
 {% endhint %}
 
 ## Setting up a plugin
 
-1. Follow the [Vite Package Setup](../../backoffice-extensions/development-flow/vite-package-setup.md) by creating a new project folder called "`suggestions`" in `App_Plugins`.
+1. Follow the [Vite Package Setup](../../backoffice-extensions/development-flow/vite-package-setup.md) and use `suggestions` as the project name instead of `client`. Create the project in the root of your Umbraco project, next to the `App_Plugins` folder.
 2. Create a manifest file to define and configure the property editor using either JSON or TypeScript.
 
 {% tabs %}
 {% tab title="JSON Manifest" %}
-Create a manifest file named `umbraco-package.json` at the root of the `suggestions` folder, and add the following code:
+Create a manifest file named `umbraco-package.json` in the `public` folder of the `suggestions` project. Vite copies it to `App_Plugins/suggestions` when building.
 
 {% code title="umbraco-package.json" %}
 ```json
@@ -55,7 +55,7 @@ Create a manifest file named `umbraco-package.json` at the root of the `suggesti
             "type": "propertyEditorUi",
             "alias": "My.PropertyEditorUi.Suggestions",
             "name": "My Suggestions Property Editor UI",
-            "element": "/App_Plugins/Suggestions/dist/suggestions.js",
+            "element": "/App_Plugins/suggestions/suggestions.js",
             "elementName": "my-suggestions-property-editor-ui",
             "meta": {
                 "label": "Suggestions",
@@ -73,7 +73,7 @@ Create a manifest file named `umbraco-package.json` at the root of the `suggesti
 
 Extension authors define the property editor UI manifest, then register it dynamically during runtime using a [Backoffice Entry Point](../../backoffice-extensions/extending-overview/extension-types/backoffice-entry-point.md) extension.
 
-Create a manifest file named `manifests.ts` and add the following code:
+Create a manifest file named `manifests.ts` in the `src` folder and add the following code:
 
 {% code title="manifests.ts" %}
 ```typescript
@@ -96,6 +96,44 @@ export const propertyEditorUiManifest: ManifestPropertyEditorUi[] = [
 ];
 ```
 {% endcode %}
+
+Create an entry point file named `entrypoint.ts` in the `src` folder to register the manifest:
+
+{% code title="entrypoint.ts" %}
+
+```typescript
+import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import { propertyEditorUiManifest } from './manifests.js';
+
+export const onInit: UmbEntryPointOnInit = (_host, extensionRegistry) => {
+    extensionRegistry.registerMany(propertyEditorUiManifest);
+};
+```
+
+{% endcode %}
+
+Umbraco still needs an `umbraco-package.json` file to load the entry point. Create it in the `public` folder:
+
+{% code title="umbraco-package.json" %}
+
+```json
+{
+    "$schema": "../../umbraco-package-schema.json",
+    "name": "My.AwesomePackage",
+    "version": "0.1.0",
+    "extensions": [
+        {
+            "type": "backofficeEntryPoint",
+            "alias": "My.EntryPoint.Suggestions",
+            "name": "My Suggestions Entry Point",
+            "js": "/App_Plugins/suggestions/suggestions.js"
+        }
+    ]
+}
+```
+
+{% endcode %}
+
 {% endtab %}
 {% endtabs %}
 
@@ -139,34 +177,35 @@ declare global {
 ```
 {% endcode %}
 
-3. In the `vite.config.ts` file, replace the following:
-
-* `entry` to the newly created `.ts` file.
-* `outDir: 'dist'` so the output lands in `App_Plugins/suggestions/dist/`.
+3. Replace the contents of the `vite.config.ts` file with the following code:
 
 {% code title="vite.config.ts" lineNumbers="true" %}
 
 ```typescript
-	import { defineConfig } from "vite";
-	
-	export default defineConfig({
-	    build: {
-	        lib: {
-				entry: "src/suggestions-property-editor-ui.element.ts", // your web component source file
-				formats: ["es"],
-				fileName: "suggestions",
-	        },
-	        outDir: "dist", // all compiled files will be placed here
-	        emptyOutDir: true,
-	        sourcemap: true,
-	        rollupOptions: {
-				external: [/^@umbraco-cms\/.*/], // ignore the Umbraco Backoffice package in the build
-	        },
-	    },
-	    base: "/App_Plugins/client/", // the base path of the app in the browser (used for assets)
-	});
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  build: {
+    lib: {
+      entry: "src/suggestions-property-editor-ui.element.ts", // your web component source file
+      formats: ["es"],
+      fileName: "suggestions",
+    },
+    outDir: "../App_Plugins/suggestions", // the compiled files land in the site's `App_Plugins` folder.
+    emptyOutDir: true,
+    sourcemap: true,
+    rollupOptions: {
+      external: [/^@umbraco-cms\/.*/], // ignore the Umbraco Backoffice package in the build
+    },
+  },
+  base: "/App_Plugins/suggestions/", // the base path of the app in the browser (used for assets)
+});
 ```
 {% endcode %}
+
+{% hint style="info" %}
+If you used the TypeScript manifest, set `entry` to `src/entrypoint.ts` instead. Vite bundles the element automatically because the manifest imports it.
+{% endhint %}
 
 The basic parts of the editor are now in place:
 
@@ -175,7 +214,7 @@ The basic parts of the editor are now in place:
 
 4. Run the build. In your terminal, go to the `suggestions` folder and run:
 
-```cs
+```bash
 npm run build
 ```
 
@@ -344,7 +383,7 @@ declare global {
 
 4. Run the build. In your terminal, go to the `suggestions` folder and run:
 
-```cs
+```bash
 npm run build
 ```
 
@@ -356,9 +395,9 @@ It should now look something like this:
 
 Next, set up the event logic.
 
-## Setup Event Logic
+## Set up Event Logic
 
-### Setup Input Field
+### Set up Input Field
 
 Start with the input field. When typing something in the input field, the property editor's value should change to the input field's current value.
 
@@ -554,7 +593,7 @@ declare global {
 
 4. Run the build. In your terminal, go to the `suggestions` folder and run:
 
-```cs
+```bash
 npm run build
 ```
 
@@ -565,7 +604,7 @@ npm run build
 
 When saving or publishing, the value of the Data Type is automatically synced to the current content object and sent to the server.
 
-To learn more, visit the [Property Editors](../../backoffice-extensions/property-editors/composition/) page.
+To learn more, visit the [Property Editors](../../backoffice-extensions/property-editors/composition/README.md) page.
 
 ## Going further
 

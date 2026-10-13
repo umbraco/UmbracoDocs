@@ -156,6 +156,7 @@
   * [Creating a Tool](extending/tools/creating-a-tool.md)
 * [Custom Guardrail Evaluators](extending/guardrails.md)
 * [Knowledge Sets](extending/knowledge-sets.md)
+* [Agent Selection](extending/agent-selection.md)
 * [Notifications](extending/notifications/README.md)
   * [Entity Lifecycle Notifications](extending/notifications/entity-notifications.md)
 
@@ -196,6 +197,7 @@
 * [Settings](management-api/settings/README.md)
   * [Get Settings](management-api/settings/get.md)
   * [Update Settings](management-api/settings/update.md)
+  * [Get Disclosure Settings](management-api/settings/disclosure.md)
 * [Versions](management-api/versions/README.md)
   * [Supported Types](management-api/versions/supported-types.md)
   * [Get History](management-api/versions/history.md)

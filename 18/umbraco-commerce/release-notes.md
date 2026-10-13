@@ -18,6 +18,22 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.7 (5th Oct 2026)
+
+* Fixed payment status refreshing when opening orders. Status changes and extra details from the provider now display correctly. ([#898](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/898)).
+* Fixed Capture and Cancel Payment being available while an order has unsaved changes, which could charge the saved total instead of the edited one ([#897](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/897)).
+* Fixed setting order exchange rates failing on SQL Server with a "too many parameters" error on large stores ([#887](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/887)).
+* Fixed SQL Server "too many parameters" errors on large stores when deleting customer tags, loading customer statistics, or bulk looking up customers.
+
+#### 18.1.6 (28th Sep 2026)
+
+* Added notification events for when a Commerce customer is created, updated, or saved, so you can hook into customer changes. For example, to automatically create a linked Umbraco member.
+
+#### 18.1.5 (22nd Sep 2026)
+
+* Fixed a SQLite connection setting that combined shared-cache mode with write-ahead logging, which could cause "database table is locked" errors.
+* Fixed shipping rate tables showing a stray blank or plus symbol for empty rate entries.
+
 #### 18.1.4 (7th Sep 2026)
 
 * Fixed analytics dashboard widgets overlapping when the browser window is resized ([#884](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/884)).

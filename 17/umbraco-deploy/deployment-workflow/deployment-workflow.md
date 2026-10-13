@@ -14,7 +14,7 @@ If your project contains a Staging environment, deployments will be made from De
 
 ## Deployment Approach
 
-Umbraco Deploy uses a two-part deployment approach where we keep meta data (Document types, templates, etc) and content (Content nodes and Media) as separate parts of a deployment. In order to be able to distinguish between the two types of deployments we use the term _transfer_ for content and media deployments and the term _deploy_ for meta data deployments.
+Umbraco Deploy uses a two-part deployment approach. This approach keeps meta data (Document types, templates, and so on) separate from content (Content nodes and Media). The term _transfer_ refers to content and media deployments. The term _deploy_ refers to meta data deployments.
 
 In summary:
 
@@ -48,15 +48,15 @@ Another approach for transferring content and schema between environments is to 
 
 That .zip file can then be uploaded into a new environment, where it will be validated and then processed to update Umbraco.
 
-As part of the import process, we provide hooks to allow for migrations of the imported artifacts (like data types) and property data. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
+As part of the import process, hooks are provided to allow for migrations of the imported artifacts (like data types) and property data. This should allow you to migrate your Umbraco data from one Umbraco major version to a newer one.
 
-We recommend using the content and media backoffice transfer options for day-to-day editorial activities. Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
+It is recommended to use the content and media backoffice transfer options for day-to-day editorial activities. Import and export is intended more for larger transfer options, project upgrades, or one-off tasks when setting up new environments.
 
 Read more about the [import and export](import-export/) feature.
 
 ## Deploy Dashboard
 
-In Umbraco Deploy we have included a Deploy Dashboard in the Settings section of the Umbraco backoffice to make it easier to run operations like schema deployment from data files and extract schema to data files.
+Umbraco Deploy includes a Deploy Dashboard in the Settings section of the Umbraco backoffice to make it easier to run operations like schema deployment from data files and extract schema to data files.
 
 When running the `extract schema to data files` operation, Umbraco Deploy will run an `echo > deploy-export` in the data folder of your project which is used to generate UDA files based on the schema in your database.
 

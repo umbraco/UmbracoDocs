@@ -1,14 +1,14 @@
 ---
 description: >-
-  Use the Automate section in the Umbraco backoffice to manage workspaces, build
+  Use the Automation section in the Umbraco backoffice to manage workspaces, build
   automations, configure connections, and review runs.
 ---
 
 # Overview
 
-The **Automate** section in the Umbraco backoffice is where you work day-to-day with Umbraco Automate. Use it to organize workspaces, build and publish automations, manage credentials, and investigate runs.
+The **Automation** section in the Umbraco backoffice is where you work day-to-day with Umbraco Automate. Use it to organize workspaces, build and publish automations, manage credentials, and investigate runs.
 
-<figure><img src="../.gitbook/assets/automate-section-overview.png" alt="The Automate section with the dashboard open and the tree on the left."><figcaption><p>The Automate section in the backoffice.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/automate-section-overview.png" alt="The Automation section with the dashboard open and the tree on the left."><figcaption><p>The Automation section in the backoffice.</p></figcaption></figure>
 
 ## Layout
 

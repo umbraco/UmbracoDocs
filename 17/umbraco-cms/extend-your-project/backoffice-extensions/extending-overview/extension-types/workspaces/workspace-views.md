@@ -27,6 +27,7 @@ Workspace Views provide:
 
 ## Manifest
 
+{% code title="manifests.ts" %}
 ```typescript
 {
   type: 'workspaceView',
@@ -47,6 +48,7 @@ Workspace Views provide:
   ],
 }
 ```
+{% endcode %}
 
 ### Key Properties
 
@@ -60,6 +62,7 @@ Workspace Views provide:
 
 Implement your workspace view as a Lit element that extends `UmbElementMixin`. This creates a tab-based interface that users can navigate to within the workspace:
 
+{% code title="counter-workspace-view.ts" %}
 ```typescript
 import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
@@ -117,6 +120,7 @@ declare global {
   }
 }
 ```
+{% endcode %}
 
 ## Conditions
 
@@ -148,6 +152,7 @@ Explore the full list of registered conditions in the Umbraco Backoffice by navi
 
 To show a workspace view only for a specific Document Type (for example, "Blog Post"), use `Umb.Condition.WorkspaceContentTypeAlias`:
 
+{% code title="manifests.ts" %}
 ```typescript
 conditions: [
   {
@@ -160,6 +165,7 @@ conditions: [
   },
 ],
 ```
+{% endcode %}
 
 #### Custom Conditions
 
@@ -183,62 +189,98 @@ If the built-in conditions don't meet your needs, you can create your own by imp
 
 Views can consume multiple workspace contexts:
 
+{% code title="my-workspace-view.ts" %}
 ```typescript
+import { UMB_ENTITY_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/workspace';
+import { UMB_VALIDATION_CONTEXT } from '@umbraco-cms/backoffice/validation';
+
 constructor() {
   super();
   
   // Consume multiple contexts
-  this.consumeContext(ENTITY_CONTEXT, (context) => {
-  this.observe(context.entity, (entity) => this.requestUpdate());
+  this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, (context) => {
+  this.observe(context?.unique, (unique) => {
+    this._unique = unique;
+  });
   });
   
-  this.consumeContext(VALIDATION_CONTEXT, (context) => {
-  this.observe(context.errors, (errors) => this.requestUpdate());
+  this.consumeContext(UMB_VALIDATION_CONTEXT, (context) => {
+  this.observe(context?.messages.messages, (messages) => {
+    this._validationMessageCount = messages?.length ?? 0;
+  });
   });
 }
 ```
+{% endcode %}
 
 ## Common Patterns
 
 ### Entity Information View
 
+{% code title="entity-info-view.ts" %}
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_DOCUMENT_PROPERTY_DATASET_CONTEXT, type UmbDocumentVariantModel } from '@umbraco-cms/backoffice/document';
+
 @customElement('entity-info-view')
 export class EntityInfoView extends UmbElementMixin(LitElement) {
-  #entityContext?: EntityWorkspaceContext;
+  @state()
+  private _variant?: UmbDocumentVariantModel;
 
   constructor() {
   super();
-  this.consumeContext(ENTITY_CONTEXT, (context) => {
-    this.#entityContext = context;
+  this.consumeContext(UMB_DOCUMENT_PROPERTY_DATASET_CONTEXT, (context) => {
+    this.observe(context?.currentVariant, (variant) => {
+    this._variant = variant;
+    });
   });
   }
 
   override render() {
-  const entity = this.#entityContext?.getCurrentEntity();
-  
   return html`
     <uui-box headline="Entity Information">
     <dl>
       <dt>Name</dt>
-      <dd>${entity?.name}</dd>
+      <dd>${this._variant?.name}</dd>
       <dt>Created</dt>
-      <dd>${entity?.createDate}</dd>
+      <dd>${this._variant?.createDate}</dd>
     </dl>
     </uui-box>
   `;
   }
 }
 ```
+{% endcode %}
 
 ### Interactive Configuration View
 
+{% code title="config-view.ts" %}
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import type { UUIToggleElement } from '@umbraco-cms/backoffice/external/uui';
+// Your own workspace context, which exposes an `isEnabled` observable and an `updateConfig()` method:
+import { MY_CONFIG_WORKSPACE_CONTEXT } from './my-config-workspace.context.js';
+
 @customElement('config-view')
 export class ConfigView extends UmbElementMixin(LitElement) {
-  #configContext?: ConfigWorkspaceContext;
+  #configContext?: typeof MY_CONFIG_WORKSPACE_CONTEXT.TYPE;
 
-  #handleConfigChange(property: string, value: any) {
+  @state()
+  private _isEnabled = false;
+
+  constructor() {
+  super();
+  this.consumeContext(MY_CONFIG_WORKSPACE_CONTEXT, (context) => {
+    this.#configContext = context;
+    this.observe(context?.isEnabled, (isEnabled) => {
+    this._isEnabled = isEnabled ?? false;
+    });
+  });
+  }
+
+  #handleConfigChange(property: string, value: unknown) {
   this.#configContext?.updateConfig(property, value);
   }
 
@@ -246,8 +288,8 @@ export class ConfigView extends UmbElementMixin(LitElement) {
   return html`
     <uui-box headline="Configuration">
     <uui-toggle 
-      .checked=${this.#configContext?.isEnabled}
-      @change=${(e) => this.#handleConfigChange('enabled', e.target.checked)}>
+      .checked=${this._isEnabled}
+      @change=${(e: Event) => this.#handleConfigChange('enabled', (e.target as UUIToggleElement).checked)}>
       Enable Feature
     </uui-toggle>
     </uui-box>
@@ -255,10 +297,18 @@ export class ConfigView extends UmbElementMixin(LitElement) {
   }
 }
 ```
+{% endcode %}
 
 ### Analytics Dashboard View
 
+{% code title="analytics-view.ts" %}
 ```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_ENTITY_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/workspace';
+// Your own context, which requests the analytics data from your API:
+import { MY_ANALYTICS_CONTEXT, type AnalyticsData } from './my-analytics.context.js';
+
 @customElement('analytics-view')
 export class AnalyticsView extends UmbElementMixin(LitElement) {
   @state()
@@ -266,15 +316,17 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
 
   constructor() {
   super();
-  this.#loadAnalytics();
+  this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, (context) => {
+    this.observe(context?.unique, (unique) => {
+    if (unique) this.#loadAnalytics(unique);
+    });
+  });
   }
 
-  async #loadAnalytics() {
-  const entityContext = await this.getContext(ENTITY_CONTEXT);
-  const entityId = entityContext.getEntityId();
-  
-  const analyticsService = await this.getContext(ANALYTICS_SERVICE);
-  this.analytics = await analyticsService.getAnalytics(entityId);
+  async #loadAnalytics(unique: string) {
+  const analyticsContext = await this.getContext(MY_ANALYTICS_CONTEXT);
+  if (!analyticsContext) return;
+  this.analytics = await analyticsContext.getAnalytics(unique);
   }
 
   override render() {
@@ -295,6 +347,7 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
   }
 }
 ```
+{% endcode %}
 
 ## Best Practices
 

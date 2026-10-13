@@ -6,6 +6,12 @@ description: >-
 
 # Migrate content to Umbraco 15
 
+{% hint style="warning" %}
+The options in this article apply to the upgrade to Umbraco versions 15 to 17.
+
+Umbraco 18 doesn't include this content migration. Complete the upgrade to Umbraco 17 before you upgrade to Umbraco 18.
+{% endhint %}
+
 Umbraco 15 changes the internal data format of all [Block Editors](../../../model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/).
 
 If you maintain a large Umbraco site with extensive Block Editor usage, the upgrade to Umbraco 15+ might require a long-running content migration. For the duration of the migration, your site will be unresponsive and unable to serve requests.
@@ -82,9 +88,9 @@ Subsequently, you are responsible for performing the content migration yourself.
 
 Custom code is required to perform the content migration. You can find inspiration in the core migrations:
 
-* [`ConvertBlockListEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockListEditorProperties.cs) for Block List properties.
-* [`ConvertBlockGridEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockGridEditorProperties.cs) for Block Grid properties.
-* [`ConvertRichTextEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertRichTextEditorProperties.cs) for Rich Text Editor properties.
+* [`ConvertBlockListEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockListEditorProperties.cs) for Block List properties.
+* [`ConvertBlockGridEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertBlockGridEditorProperties.cs) for Block Grid properties.
+* [`ConvertRichTextEditorProperties`](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertRichTextEditorProperties.cs) for Rich Text Editor properties.
 
 {% hint style="warning" %}
 This custom code should not run while editors are working in the Umbraco backoffice.

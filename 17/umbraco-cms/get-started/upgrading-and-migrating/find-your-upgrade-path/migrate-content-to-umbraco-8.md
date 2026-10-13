@@ -59,7 +59,7 @@ The migration will transform the data stored in third party editors as well. How
 
 When migrating content from Umbraco 7 to Umbraco 8, the Data Type 'pre-value' structure has changed. In Umbraco 8, the term 'pre-values' no longer exists and is instead referred to as `property editor configuration`.
 
-In Umbraco 8, property editor configuration is a strongly typed object. There are plenty of examples in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Web/PropertyEditors/ContentPickerConfiguration.cs).
+In Umbraco 8, property editor configuration is a strongly typed object. There are plenty of examples in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/blob/release-8.18.15/src/Umbraco.Web/PropertyEditors/ContentPickerConfiguration.cs).
 
 This configuration is stored differently in Umbraco 8 than it was in Umbraco 7. In Umbraco 7, each pre-value property was stored as a different row in a different database table. In Umbraco 8 this is simplified and property editor configuration is stored as the JSON serialized version of the strongly typed configuration object.
 
@@ -71,9 +71,9 @@ There are 3 options that a developer can choose to do to work around this automa
 
 This option requires you to create a custom C# migrator for each of your custom property editors that store custom configuration data. It will also require that you implement these migrators before you run the Umbraco 8 content migration.
 
-To do this, you will create an implementation of `IPreValueMigrator` or inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes/DefaultPreValueMigrator.cs).
+To do this, you will create an implementation of `IPreValueMigrator` or inherit from the base class [`DefaultPreValueMigrator`](https://github.com/umbraco/Umbraco-CMS/blob/release-8.18.15/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes/DefaultPreValueMigrator.cs).
 
-There are plenty of examples of this in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes).
+There are plenty of examples of this in the [Umbraco-CMS codebase](https://github.com/umbraco/Umbraco-CMS/tree/release-8.18.15/src/Umbraco.Core/Migrations/Upgrade/V_8_0_0/DataTypes).
 
 You will then need to register them in a composer:
 

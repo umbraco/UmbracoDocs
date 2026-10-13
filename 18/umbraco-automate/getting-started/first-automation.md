@@ -23,7 +23,7 @@ The first time you open the **Automation** section, the dashboard shows a welcom
 
 1. Click **Create a Workspace** on the welcome panel.
 2. Enter a name, for example `Editorial`.
-3. Pick a **Service Account Key** and at least one **User Group**.
+3. Pick a **Service Account Key** and at least one **User Group**. The service account must be an API user. If you don't have one, create it in the **Users** section first.
 4. Click **Save**.
 
 A workspace groups automations together and controls which user groups and connections have access.
@@ -34,8 +34,8 @@ A workspace groups automations together and controls which user groups and conne
 
 1. In the tree, expand your new workspace.
 2. Click **+** > **Create** > **Automation** from the actions panel.
-3. Enter a name, for example `Log on publish`,.
-4. Click **Save and publish**.
+3. Enter a name, for example `Log on publish`.
+4. Click **Save**.
 
 <figure><img src="../.gitbook/assets/create-automation-modal.png" alt="The create automation modal with a name field."><figcaption><p>Creating a new automation.</p></figcaption></figure>
 
@@ -45,7 +45,7 @@ The new automation opens on the visual canvas with an empty trigger placeholder.
 {% step %}
 ### Step 3: Configure the Trigger
 
-1. Click **Add Trigger**.
+1. Click **Add trigger** on the canvas.
 2. Select **Content Published** from the Trigger picker.
 3. Leave the **Content Types** field blank to match all content types.
 4. Click **Save**.
@@ -85,7 +85,7 @@ Click **Save and Publish** in the workspace toolbar.
 4. Open the automation.
 5. Navigate to the **Runs** tab to see the run record.
 6. Click on the most recent run record to view the details.
-7. Click on the **Log Message** step to inspect the resolved message and output data for the run.
+7. Click the **Log Message** step to expand it. The **Input** tab shows the resolved message, and the **Output** tab shows the data the step produced.
 
 <figure><img src="../.gitbook/assets/trigger-automation.png" alt="View triggered automation"><figcaption><p>View triggered automation.</p></figcaption></figure>
 

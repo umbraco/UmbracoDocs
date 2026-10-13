@@ -7,7 +7,7 @@ description: >-
 
 # Import and Export
 
-## What is Import and Export?
+## What Import and Export Is
 
 The Import and Export feature of Umbraco Deploy allows you to transfer content and schema between Umbraco environments. A `.zip` file is exported from one environment and imported into another to update its Umbraco data.
 

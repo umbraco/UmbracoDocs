@@ -43,6 +43,11 @@ Below are the static outbound IP address ranges for regions:
 20.220.219.208/28
 ```
 
+**Sweden**
+```
+20.240.239.160/28
+```
+
 **United Kingdom**
 ```
 20.68.233.144/28

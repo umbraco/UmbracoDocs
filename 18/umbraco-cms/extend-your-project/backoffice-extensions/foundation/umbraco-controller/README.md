@@ -30,25 +30,28 @@ Additionally, Umbraco Controllers implement a `getHostElement()` method, which e
 
 A Controller should register itself with a given host. This is handled automatically when extending the `UmbControllerBase` class. The following example demonstrates a controller implementation:
 
-<pre><code>import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+{% code title="my-own-controller-implementation.ts" %}
+```typescript
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
-<strong>
-</strong>export class MyOwnControllerImplementation extends UmbControllerBase {
+
+export class MyOwnControllerImplementation extends UmbControllerBase {
 
     #secondsAlive = 0;
+    #timer?: ReturnType<typeof setInterval>;
 
     constructor(host: UmbControllerHost) {
-        // Parse the host to the base class, this will trigger the registration.
+        // Pass the host to the base class, this will trigger the registration.
         super(host);
     }
     
-    hostConnected() {
+    override hostConnected() {
         // It's important to call the super method when overriding a method of the base class.
         super.hostConnected();
         this.#timer = setInterval(this.#onInterval, 1000)
     }
     
-    hostDisconnected() {
+    override hostDisconnected() {
         // It's important to call the super method when overriding a method of the base class.
         super.hostDisconnected();
         clearInterval(this.#timer);
@@ -56,7 +59,7 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
     
     #onInterval = () => {
         this.#secondsAlive++;
-        console.log(`My own controller have been connected in ${this.#secondsAlive} seconds.`);
+        console.log(`My own controller has been connected for ${this.#secondsAlive} seconds.`);
     }
 
     override destroy(): void {
@@ -65,22 +68,33 @@ import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
         // We do not need to stop the timer in the Destroy method, because the hostDisconnected method is also called if connected and destroyed.
     }
 }
-</code></pre>
-
-If you don't like to extend the `UmbControllerBase`, then you can register a class as a controller as shown in the following example. Note that manual deregistration is required in this case.
-
 ```
-export class MyOwnControllerImplementation {
+{% endcode %}
 
+If you prefer not to extend `UmbControllerBase`, you can register a class as a controller yourself, as shown in the following example. The class must implement the `UmbController` interface, and its `destroy()` method must remove it from the host with `removeUmbController()`. Such a class does not host other controllers or provide `getHostElement()`.
+
+{% code title="my-own-controller-implementation.ts" %}
+```typescript
+import type { UmbController, UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+
+export class MyOwnControllerImplementation implements UmbController {
+
+    // A unique alias ensures the host registers each instance separately.
+    readonly controllerAlias = Symbol();
     #host: UmbControllerHost;
 
     constructor(host: UmbControllerHost) {
         this.#host = host;
         this.#host.addUmbController(this);
     }
+
+    hostConnected(): void {}
+
+    hostDisconnected(): void {}
     
-    override destroy(): void {
+    destroy(): void {
         this.#host.removeUmbController(this);
     }
 }
 ```
+{% endcode %}

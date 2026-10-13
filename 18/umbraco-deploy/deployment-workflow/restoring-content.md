@@ -63,7 +63,7 @@ In some cases, it might be necessary to refresh the browser window to see the re
 
 ## Tree Restore
 
-Tree Restore lets you restore a single tree, like just the content tree or just the Media tree.
+Tree Restore lets you restore a single tree, like the content tree or the Media tree.
 
 For example, if triggered from the content tree, only the content items will be restored. Only referenced (dependencies) elements, media, and forms will be included in the restore.
 

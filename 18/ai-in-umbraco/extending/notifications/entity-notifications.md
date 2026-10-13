@@ -22,6 +22,9 @@ Umbraco.AI publishes notifications for all entity lifecycle operations. Subscrib
 | **AIChat** (Inline) | - | - | ✅ |
 | **AISpeechToText** (Inline) | - | - | ✅ |
 | **AIEmbedding** (Inline) | - | - | ✅ |
+| **`AITool`** | - | - | ✅ |
+
+`AIAgent` also publishes `AIAgentSelectedNotification` when Auto mode picks an agent. For details, see [Agent Selection Notifications](#agent-selection-notifications).
 
 ## AIProfile Notifications
 
@@ -179,6 +182,60 @@ public class ProfileSavedHandler : INotificationAsyncHandler<AIProfileSavedNotif
 | `AIAgentDeletedNotification` | No | `EntityId` (Guid), `Messages` |
 | `AIAgentExecutingNotification` | Yes | `Agent` (AIAgent), `ChatMessages` (IReadOnlyList\<ChatMessage\>), `Messages`, `Cancel` |
 | `AIAgentExecutedNotification` | No | `Agent` (AIAgent), `ChatMessages` (IReadOnlyList\<ChatMessage\>), `Duration` (TimeSpan), `IsSuccess` (bool), `Messages` |
+| `AIAgentSelectedNotification` | No | `Selection` (AIAgentSelectionResult), `Request` (AIAgentSelectionRequest), `Messages` |
+
+## Agent Selection Notifications
+
+### AIAgentSelectedNotification (Non-Cancelable)
+
+**Namespace:** `Umbraco.AI.Agent.Core.Agents`
+
+Published after Auto mode picks an agent, and before the agent run starts. Every Auto pick publishes exactly one notification, including picks with the `only-candidate` and `fallback` selector IDs. The notification is not published for requests that name an agent explicitly. For details on Auto mode, see [Agent Selection](../agent-selection.md).
+
+**Properties:**
+- `Selection` (AIAgentSelectionResult) - The picked `Agent`, the `SelectorId`, and the optional `Reason`
+- `Request` (AIAgentSelectionRequest) - The request exactly as the selectors saw it
+- `Messages` (EventMessages) - Event messages from the selection
+
+{% hint style="info" %}
+Selected does not mean ran. `AIAgentExecutingNotification` is published afterwards and can still cancel the run.
+{% endhint %}
+
+**Example:**
+
+{% code title="AgentSelectedHandler.cs" %}
+
+```csharp
+using Microsoft.Extensions.Logging;
+using Umbraco.AI.Agent.Core.Agents;
+using Umbraco.AI.Agent.Core.Agents.Selection;
+using Umbraco.Cms.Core.Events;
+
+namespace MyProject.AI;
+
+public class AgentSelectedHandler : INotificationAsyncHandler<AIAgentSelectedNotification>
+{
+    private readonly ILogger<AgentSelectedHandler> _logger;
+
+    public AgentSelectedHandler(ILogger<AgentSelectedHandler> logger) => _logger = logger;
+
+    public Task HandleAsync(AIAgentSelectedNotification notification, CancellationToken ct)
+    {
+        // Track how often no selector could decide
+        if (notification.Selection.SelectorId == AIAgentSelectorIds.Fallback)
+        {
+            _logger.LogInformation(
+                "No selector picked an agent on surface {SurfaceId}. Used {AgentAlias}.",
+                notification.Request.SurfaceId,
+                notification.Selection.Agent.Alias);
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
+
+{% endcode %}
 
 ## AIGuardrail Notifications
 
@@ -245,6 +302,68 @@ The `AITestRollingBackNotification` and `AITestRolledBackNotification` expose on
 |---|---|---|
 | `AIEmbeddingExecutingNotification` | Yes | `EmbeddingId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Messages`, `Cancel` |
 | `AIEmbeddingExecutedNotification` | No | `EmbeddingId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Duration` (TimeSpan), `IsSuccess` (bool), `Messages` |
+
+## Tool Execution Notifications
+
+**Namespace:** `Umbraco.AI.Core.Tools`
+
+Published around each tool call the model makes through the chat pipeline. These notifications cover inline chat, agents, prompts, and Automate.
+
+| Notification | Cancelable | Key Properties |
+|---|---|---|
+| `AIToolExecutingNotification` | Yes | `ToolName` (string), `Function` (`AIFunction`), `Tool` (`IAITool?`), `CallId` (string), `Arguments` (`IReadOnlyDictionary<string, object?>`), `RuntimeContext` (`AIRuntimeContext?`), `Messages`, `Cancel` |
+| `AIToolExecutedNotification` | No | `ToolName`, `Function`, `Tool`, `CallId`, `Arguments`, `RuntimeContext`, `Duration` (TimeSpan), `IsSuccess` (bool), `Result` (object?), `Exception` (Exception?), `Messages` |
+
+`ToolName` is the tool ID for Umbraco tools. `Tool` is `null` when the function is not an Umbraco `IAITool`, for example a frontend tool.
+
+When each notification is published:
+
+- **Backend tools** publish `AIToolExecutingNotification` before the tool runs and `AIToolExecutedNotification` after it runs. `AIToolExecutedNotification` is also published when the tool throws, with `IsSuccess` set to `false` and the `Exception` set.
+- **Frontend tools** publish `AIToolExecutingNotification` only, before the call is handed to the browser. The result arrives in a later request.
+- **Tools that need approval** publish `AIToolExecutingNotification` when the approved tool runs, so a handler can still block the tool at that point.
+- **Tools denied by an approval policy** publish neither notification, because the tool never runs.
+
+### Blocking a Tool Call
+
+Set `Cancel = true` in an `AIToolExecutingNotification` handler to block the call. The tool does not run, and `AIToolExecutedNotification` is not published. Instead of failing the run, the model receives a tool result saying the call was blocked. The run then continues.
+
+{% hint style="warning" %}
+Messages you add to `Messages` are included in the blocked tool result as the reason. The reason is **sent to the model**, so keep it free of sensitive details.
+{% endhint %}
+
+The following handler blocks the built-in `fetch_webpage` tool for sites that do not allow outbound web requests:
+
+{% code title="BlockWebFetchHandler.cs" %}
+
+```csharp
+using Umbraco.AI.Core.Tools;
+using Umbraco.Cms.Core.Events;
+
+namespace MyProject.AI;
+
+public class BlockWebFetchHandler : INotificationAsyncHandler<AIToolExecutingNotification>
+{
+    public Task HandleAsync(AIToolExecutingNotification notification, CancellationToken ct)
+    {
+        if (notification.ToolName == "fetch_webpage")
+        {
+            notification.Cancel = true;
+
+            // This message is sent to the model as the reason for the block
+            notification.Messages.Add(new EventMessage(
+                "Policy",
+                "Fetching web pages is disabled on this site.",
+                EventMessageType.Error));
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
+
+{% endcode %}
+
+The model receives the following tool result: `The 'fetch_webpage' tool was blocked and was not run. Reason: Fetching web pages is disabled on this site.`
 
 ## Base Notification Classes
 

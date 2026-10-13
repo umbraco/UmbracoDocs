@@ -31,7 +31,7 @@ Connections are stored globally but their use is scoped by workspace. Each works
 
 ## Validation
 
-Most connection types implement a validation step. Click **Test connection** in the connection editor to check the credentials work before saving.
+Most connection types implement a validation step. After saving a connection, click **Test connection** in the connection editor to check that the credentials work.
 
 ## Configuration References
 

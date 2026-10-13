@@ -34,7 +34,7 @@ Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenti
 
 Umbraco Deploy On-Premises also ships with a Powershell script, that when executed will call the endpoint, which will write the file, and which will trigger the extraction.
 
-So while it may be possible to have the CI/CD step directly write the file or call the endpoint, so long as the build used supports running Powershell scripts this is the method we’d recommend, as it has some necessary error checking and retry logic built-in.
+It may be possible to have the CI/CD step directly write the file or call the endpoint. However, using the provided Powershell script is the recommended method, as long as the build supports running Powershell scripts. This method includes necessary error checking and retry logic.
 
 ## [Setting up CI/CD pipeline with GitHub Actions](ci-cd-github-actions.md)
 

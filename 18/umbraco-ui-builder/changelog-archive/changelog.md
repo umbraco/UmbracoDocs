@@ -107,7 +107,7 @@ description: Changelog for Konstrukt, the backoffice UI builder for Umbraco.
 **Date:** 2022-07-06  
 **Description:** Minor release with additional features and bug fixes
 
-- Added [Virtual Sub Trees](../advanced/virtual-sub-trees.md) support
+- Added Virtual Sub Trees support
 - Fixed save/delete notification events being passed the wrong model
 - Fixed bug where connection strings with no provider cause an error
 

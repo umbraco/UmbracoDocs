@@ -16,7 +16,7 @@ Umbraco provides a .NET template to help you get started with building extension
 To install the Umbraco extension template, run the following command in your terminal:
 
 ```bash
-dotnet new install Umbraco.Templates::17.1.0
+dotnet new install Umbraco.Templates@17.7.0
 ```
 
 {% hint style="info" %}
@@ -49,7 +49,7 @@ The `-ex` flag indicates that you want to include examples of how to use the ext
 
 After setup, the dashboard appears in the main **Content** section of the Backoffice.
 
-By default, the Umbraco Extensions project has a reference to the latest version of Umbraco. Specify your preferred Umbraco version for the Extensions template by using the `--version` flag:
+By default, the Umbraco Extensions project references the same Umbraco version as the templates you installed. Templates before version 17.3.0 reference the latest stable Umbraco version instead, which can be a newer major version. To reference another version, for example the version of an existing Umbraco project, use the `--version` flag:
 
 ```bash
 dotnet new umbraco-extension --version 17.1.0 -n MyExtension -ex
@@ -94,6 +94,51 @@ npm run watch
 {% endhint %}
 
 This command compiles the TypeScript files and copies them over to the `wwwroot` output folder. Once complete, run the Umbraco project to view the extension in action.
+
+### Fix an ERESOLVE Error From npm install
+
+Extensions created using Umbraco 17.0.0 to 17.7.0 templates can fail to install on Umbraco 17.7.0 or later, with an error like this:
+
+```text
+npm error ERESOLVE unable to resolve dependency tree
+npm error Found: @hey-api/openapi-ts@0.85.2
+npm error peer @hey-api/openapi-ts@">=0.99.0 <1.0.0" from @umbraco-cms/backoffice@17.7.0
+```
+
+From Umbraco 17.7.0, `@umbraco-cms/backoffice` requires `@hey-api/openapi-ts` 0.99 or later. Update the extension to match by running these steps in the `Client` folder:
+
+1. In `package.json`, change the `@hey-api/openapi-ts` version to `^0.99.0` and run `npm install`.
+2. Delete `src/hey-api.ts`. If the project has no such file, skip the remaining steps.
+3. In `src/api/client.gen.ts`, remove the `import { createClientConfig } from '../hey-api';` line. Then create the client without `createClientConfig()`, and keep your own `baseUrl`:
+
+    {% code title="src/api/client.gen.ts" %}
+    ```typescript
+    export const client = createClient(createConfig<ClientOptions2>({
+        baseUrl: 'https://localhost:44339'
+    }));
+    ```
+    {% endcode %}
+
+4. In `scripts/generate-openapi.js`, remove the `@hey-api/client-fetch` plugin entry that sets `runtimeConfigPath: '../hey-api'`. The next `npm run generate-client` then creates the client without it.
+5. Check that `src/entrypoints/entrypoint.ts` calls `configureClient()` in `onInit`. Extensions created from the 17.3 template need to add the call. Add the two imports, make `onInit` async, and rename its `_host` parameter to `host`:
+
+    {% code title="src/entrypoints/entrypoint.ts" %}
+    ```typescript
+    import { UMB_AUTH_CONTEXT } from "@umbraco-cms/backoffice/auth";
+    import { client } from "../api/client.gen.js";
+
+    export const onInit: UmbEntryPointOnInit = async (host, _extensionRegistry) => {
+      const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+      authContext?.configureClient(client);
+
+      console.log("Hello from my extension 🎉");
+    };
+    ```
+    {% endcode %}
+
+{% hint style="warning" %}
+Do not use `npm install --legacy-peer-deps` to get past the error. It skips all peer dependencies, including `lit`, and the build then fails with errors such as `Module '"@umbraco-cms/backoffice/external/lit"' has no exported member 'LitElement'`.
+{% endhint %}
 
 ## Publish the Project
 

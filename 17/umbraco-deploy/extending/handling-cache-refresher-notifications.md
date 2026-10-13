@@ -11,7 +11,7 @@ When you deploy content or other Umbraco data between environments, some notific
 
 For example, you may handle a `ContentPublishedNotification` to apply some custom logic when a content item is published. This code will run in a normal CMS publish operation. However, when deploying a content item into another environment and triggering it's publishing there, the notification will not be issued. And the custom logic in the notification handler will not run.
 
-This behavior is deliberate and done for performance and reliability reasons. A normal save and publish operation by an editor operates on one item at a time. With deployments, we may have many, and publishing these notifications may lead to at best slow operations, and at worst inconsistent data.
+This behavior is deliberate and done for performance and reliability reasons. A normal save and publish operation by an editor operates on one item at a time. With deployments, there may be many, and publishing these notifications may lead to at best slow operations, and at worst inconsistent data.
 
 The notification will also already be published on the environment where the actual operation was carried out. So repeating this with each content transfer might also result in unwanted behavior.
 
@@ -78,7 +78,7 @@ public class ContentCacheRefresherNotificationHandler : INotificationHandler<Con
                 return;
             }
 
-            // Do something with the content item. Here we'll just log some details.
+            // Do something with the content item. Log some details here.
             _logger.LogInformation(
                 "ContentCacheRefresherNotification handled for type {MessageType} and id {Id}. " +
                 "Key: {Key}, Name: {Name}",
@@ -91,7 +91,7 @@ public class ContentCacheRefresherNotificationHandler : INotificationHandler<Con
 }
 ```
 
-The second example is similar, but handles an update to a dictionary item. With this one we get a parameter that consists of the item's ID. Again we can retrieve it and carry out some further processing.
+The second example is similar, but handles an update to a dictionary item. With this one, you get a parameter that consists of the item's ID. You can again retrieve it and carry out further processing.
 
 ```csharp
 using Umbraco.Cms.Core.Events;
@@ -135,7 +135,7 @@ public class DictionaryCacheRefresherNotificationHandler : INotificationHandler<
             return;
         }
 
-        // Do something with the dictionary item. Here we'll just log some details.
+        // Do something with the dictionary item. Log some details here.
         _logger.LogInformation(
             "DictionaryCacheRefresherNotification handled for type {MessageType} and id {Id}. " +
             "Key: {Key}, Default Value: {DefaultValue}",

@@ -64,12 +64,12 @@ Only content that uses Document Types configured for segmentation can be used fo
 To set up A/B testing on your content, segmentation must be configured on the Document Types and properties used. Follow the steps below to allow segmentation.
 
 1. Open the Document Type that needs to allow segmentation.
-2. Access the **Permissions** view.
-3. Check the **Allow segmentation** option.
+2. Access the **Settings** view.
+3. Turn on **Vary by segment** under **Allow segmentation**.
 4. **Save** the Document Types.
 5. Access the **Design** view for the same Document Type.
-6. Click on ⚙️ next to the property where segmentation should be allowed.
-7. Check the **Allow segmentation** option.
+6. Select the property where segmentation should be allowed.
+7. Turn off **Shared across segments** under **Variation**.
 8. **Submit** the changes.
 9. Repeat steps 6-8 for each property that should allow segmentation.
 10. **Save** the Document Type.
@@ -84,48 +84,46 @@ The following steps will take you through the initial setup of the test. Use the
 
 1. Navigate to the content item where you want to set up an A/B test.
 2. Open the **A/B Tests** view.
-3. Click on **Start a test**.
+3. Click on **Create new test**.
 
 ### Set up a test from the Engage section
 
 * Navigate to the **A/B Testing** dashboard in the Engage section.
-* Click on **Start new test**.
+* Click on **Add new test**.
 
 ## Configure the test
 
 The following steps guide you through configuring the different parts of the test.
 
-### Step 1: Information
+### Information
 
-1. Give the test a **Title**.
-2. Select which **Project** the test is a part of.
-3. Give the test a **Description** ideally focused on the hypothesis the test is based on.
+1. Enter the **Title of this test**.
+2. Under **Part of project**, select **Choose** to pick an existing project. Select **+** to create a new one.
+3. Enter a **Description / hypothesis**, ideally focused on the hypothesis the test is based on.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-setup-1.png" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Setup Test
+### Settings
 
-1. Select which **Test Type** should be used.
-   1. Single Page: No more configuration required.
-   2. Multiple Pages: Select the pages to be used in the test.
-   3. Document Type: Select the Document Type for the test.
-   4. Split URL: Select the pages to be used for the test.
-2. Decide if visitors are assigned to the test when visiting the specific test page or any page on the website.
-3. Give the new variant a name.
-   * You can edit the variants at a later point.
-
-<figure><img src="../.gitbook/assets/engage-a-b-test-setup-2.png" alt=""><figcaption></figcaption></figure>
-
-### Step 3: Settings
-
-1. Select or create a **conversion goal** for the test.
-2. Set the **Audience percentage**.
-3. Change the Expected conversion rate under **Advanced settings** if relevant.
-4. **Save** the test.
+1. Under **Select a conversion goal**, select **Choose** to pick a goal. Select **+** to create a new one.
+2. Use **Set audience percentage** to decide how many visitors take part in the test.
+3. Change the **Expected conversion change** under **Advanced settings** if relevant.
+4. Select **Save**. The **Test setup** section becomes available once the test is saved.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-setup-3.png" alt=""><figcaption></figcaption></figure>
 
-4. Select **Next step** to get an overview of the test.
+### Test setup
+
+1. Choose the test type in **Select test type**.
+   1. Single page: Available from the Content section only. No more configuration required.
+   2. Multi page: Select the pages to use with **Choose** under **Select multiple pages**.
+   3. Content type: Select the Document Types to use under **Select document types**.
+   4. Split URL: Available from the Engage section only. Select the pages to use with **Choose** under **Select multiple pages**.
+2. Give the new variant a name under **Add variants**. Select **Add** to add more variants.
+   * You can edit the variants at a later point.
+3. Select **Save**.
+
+<figure><img src="../.gitbook/assets/engage-a-b-test-setup-2.png" alt=""><figcaption></figcaption></figure>
 
 With all the configurations in place, editing the variants added to the test is next.
 
@@ -148,7 +146,7 @@ You can now edit the content item in split view. Only fields that have been conf
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom.png" alt=""><figcaption></figcaption></figure>
 
-1. **Preview** the changes before publishing.
+1. Select **Save and preview** to preview the changes before publishing.
 2. **Save and publish** the content variant.
 
 ### Add custom code
@@ -158,33 +156,32 @@ You can now edit the content item in split view. Only fields that have been conf
 1. Navigate to the content item in the Content section.
 2. Open the **A/B Tests** view.
 3. Select the test.
-4. Click on **Edit** next to the variant you want to make changes to.
-5. Click on the **Edit variant** button below the Page Title.
+4. Select **CSS / JS** next to the variant you want to make changes to.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content-customcode.png" alt=""><figcaption></figcaption></figure>
 
-6. Add an optional description to the variant.
-7. Add custom CSS and JavaScript.
+5. Add an optional description to the variant.
+6. Expand **CSS** or **JavaScript** under **Custom code** and add your code.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom.png" alt=""><figcaption></figcaption></figure>
 
-8. **Preview** the changes.
-9. **Save** the changes.
+7. Select **Save**.
+8. Select **Preview** next to the variant to check the changes.
 {% endtab %}
 
 {% tab title="All other tests" %}
 1. Access the test from the **A/B Testing** dashboard in the Engage section.
-2. Click on **Edit** next to the variant you want to make changes to.
+2. Select **CSS / JS** next to the variant you want to make changes to.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-content (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Add an optional description to the variant.
-4. Add custom CSS and JavaScript.
+4. Expand **CSS** or **JavaScript** under **Custom code** and add your code.
 
 <figure><img src="../.gitbook/assets/engage-a-b-test-edit-variant-custom.png" alt=""><figcaption></figcaption></figure>
 
-5. **Preview** the changes.
-6. **Save** the changes.
+5. Select **Save**.
+6. Select **Preview** next to the variant to check the changes.
 {% endtab %}
 {% endtabs %}
 
@@ -193,7 +190,7 @@ You can now edit the content item in split view. Only fields that have been conf
 You have now set up all the variants and the test is ready to be started.
 
 1. Open the test in the Engage section.
-2. **Schedule** a date for the test to start or **Start the test** right away.
+2. Select **Schedule test** to pick a start date, or **Start test** to start right away.
 
 ## Next steps
 

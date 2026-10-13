@@ -4,13 +4,13 @@ description: "Steps and examples on how to setup a build and deployment pipeline
 
 # Azure DevOps
 
-In this section, we provide a full example of how Umbraco Deploy running on Umbraco 9 and above can be utilized. This can be used as a part of a build and deployment pipeline using Azure DevOps. You can use this directly or adapt it for your needs.
+This section provides a full example of how Umbraco Deploy running on Umbraco 9 and above can be utilized. This can be used as a part of a build and deployment pipeline using Azure DevOps. You can use this directly or adapt it for your needs.
 
 ## Discussion on the Provided Example
 
-We have defined a single stage build and deployment pipeline, configured in YAML format. While not as visually intuitive as a drag-and-drop task list, it provides the advantage of source control management.
+The example defines a single stage build and deployment pipeline, configured in YAML format. While not as visually intuitive as a drag-and-drop task list, it provides the advantage of source control management.
 
-We then have a number of variables defined, that are used in the build configuration below. By using variables we have the ability to modify the script for use on other web applications. Some values are set in the script, and some via Azure DevOps variables or secrets.
+A number of variables are then defined, that are used in the build configuration below. By using variables, you have the ability to modify the script for use on other web applications. Some values are set in the script, and some via Azure DevOps variables or secrets.
 
 Most tasks in the pipeline are standard steps that will be used in any .NET web application release, such as the first steps:
 

@@ -14,7 +14,7 @@ To do this navigate to a node in Umbraco and open the workspace view "**Personal
 
 You can navigate to the tab "**Content scoring**" to score this Umbraco page. Writing your content for a specific set of personas you can assign a score that will be added to this persona or customer journey step.
 
-Set up the score and save the scoring.
+Set up the score and select **Save Scoring**.
 
 In the example below, the persona "**Developer**" will get **10 points** and the "**Product Manager**" will get **5 points** when they read this Umbraco node.
 

@@ -484,7 +484,7 @@ To customize the 2FA activation screen, you need to create a JavaScript module. 
 import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
 import { css, html } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { isApiError, tryExecute } from '@umbraco-cms/backoffice/resources';
+import { tryExecute, UmbApiError } from '@umbraco-cms/backoffice/resources';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
@@ -605,7 +605,7 @@ export default class My2faActivationElement extends UmbLitElement {
     /**
      * Show a peek notification with a message.
      * @param message {String} The message to show.
-     * @param color {"positive" | "danger" | undefined} The color of the notification.
+     * @param [color] {"positive" | "warning" | "danger"} The color of the notification.
      */
     peek(message, color) {
         this.notificationContext.peek(color ?? 'positive', {
@@ -643,8 +643,8 @@ export default class My2faActivationElement extends UmbLitElement {
             this.close();
         } else {
             this._buttonState = 'failed';
-            if (isApiError(error)) {
-                if (error.body?.operationStatus === 'InvalidCode') {
+            if (UmbApiError.isUmbApiError(error)) {
+                if (error.problemDetails.operationStatus === 'InvalidCode') {
                     codeField?.setCustomValidity(this.localize.term('user_2faInvalidCode'));
                     codeField?.focus();
                 } else {

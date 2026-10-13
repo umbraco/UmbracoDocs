@@ -930,7 +930,7 @@ public class PropertyValueDto
 
 If you want the conversion to happen automatically as you upgrade, you can define a [custom migration](https://docs.umbraco.com/umbraco-cms/extending/database)
 
-For an example that takes into account RTE values inside of block properties, have a look at our [local links migration](https://github.com/umbraco/Umbraco-CMS/blob/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertLocalLinks.cs) and its related [processors](https://github.com/umbraco/Umbraco-CMS/tree/release/15.3/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/LocalLinks)
+For an example that takes into account RTE values inside of block properties, have a look at our [local links migration](https://github.com/umbraco/Umbraco-CMS/blob/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/ConvertLocalLinks.cs) and its related [processors](https://github.com/umbraco/Umbraco-CMS/tree/release-17.7.0/src/Umbraco.Infrastructure/Migrations/Upgrade/V_15_0_0/LocalLinks)
 
 The proposed conversion logic should be adaptable to the system used in the local links migration.
 

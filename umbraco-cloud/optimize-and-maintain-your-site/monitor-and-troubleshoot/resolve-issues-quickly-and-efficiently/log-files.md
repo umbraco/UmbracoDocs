@@ -89,9 +89,11 @@ After enabling or disabling IIS logging for the environment, the site will reboo
 
 There is a rolling size limit on the log files of 100 MB. This means that once the limit is reached, the oldest log files will be overwritten by new ones.
 
+{% hint style="info" %}
 The IIS logging will be automatically turned off after 12 hours, also triggering a site reboot. Longer than 12h is not possible due to possible performance degradation.
 
 Find more information about IIS Logging on [the Official Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+{% endhint %}
 
 {% hint style="info" %}
 IIS Logging is only available if your project is on a Professional plan.

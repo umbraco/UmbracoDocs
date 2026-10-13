@@ -20,7 +20,7 @@ The main reason Umbraco Deploy does not delete schema and content on deployments
 
 ## Example scenario
 
-Let's say you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment.
+Suppose you've deleted a Document Type on your Development environment, and now you want to deploy this deletion to the production environment.
 
 Before you deploy the changes, in Git it will show that the following changes are ready to be committed and deployed:
 
@@ -40,7 +40,7 @@ Instead of deleting the Document Type in the backoffice, you can [clean the sche
 
 You should however keep in mind that if you at any point during the process, save your Document Type again, a UDA file will be regenerated and when you start deploying changes between environments, this will likely end up recreating your deleted Document Type.
 
-## Which deletions are deployed?
+## Deletions That Are Deployed
 
 Every **file** that's deleted, will also be deleted on the next environment when you deploy. However, there are some differences depending on what you have deleted.
 

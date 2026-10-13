@@ -58,4 +58,4 @@ In the Umbraco CMS Developer MCP (Model Context Protocol), context engineering i
 Think of context engineering as the art of precision storytelling. Every piece of information you include should help the model stay on track and deliver value.
 {% endhint %}
 
-Your choice of enabled tools directly shapes the quality of your context. By managing which tools and tool collections are active, you control how much information is sent to the model. This improves both performance and response reliability. For more information, see the [Tool Collections](../mcp/cms-developer-mcp/available-tools.md) article.
+Your choice of enabled tools directly shapes the quality of your context. By managing which tools and tool collections are active, you control how much information is sent to the model. This improves both performance and response reliability. For more information, see the [Tool Collections](../mcp/mcp-servers/cms-developer-mcp/available-tools.md) article.

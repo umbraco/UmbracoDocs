@@ -65,7 +65,7 @@ You do not normally need to spend much time formatting text because Umbraco take
 
 ### Formatting Buttons
 
-![Formatting Buttons](../../.gitbook/assets/Formatting-Buttons-v11.png)
+![Formatting Buttons](../../.gitbook/assets/Formatting-Buttons.png)
 
 The most familiar way to control formatting is by using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
 
@@ -167,7 +167,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to an Email Address in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-Email-Address.png" alt="Link to an Email Address in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.

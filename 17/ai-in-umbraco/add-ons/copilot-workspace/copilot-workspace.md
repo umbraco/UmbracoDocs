@@ -61,7 +61,18 @@ While chatting, the context panel on the right shows what's grounding the curren
 
 ## Backend Tools and Approvals
 
-Copilot Workspace isn't scoped to a single open item. Its agents on the `copilot-workspace` surface can be granted broader tool permissions than Contextual Copilot allows. This includes backend tools that create, update, publish, or delete content and media anywhere on the site. Sensitive operations still go through [Human-in-the-Loop approval](../agent-copilot/copilot.md#human-in-the-loop-approval) before they run.
+Copilot Workspace isn't scoped to a single open item. Its agents on the `copilot-workspace` surface can be granted broader tool permissions than Contextual Copilot allows. This includes backend tools that create, update, publish, or delete content and media anywhere on the site.
+
+Copilot Workspace only stops to ask for approval when a change is something editors can't undo themselves:
+
+| Tier                   | What happens                                                                  | Built-in tools |
+| ---------------------- | ----------------------------------------------------------------------------- | -------------- |
+| Runs without asking    | Saves a draft. Version history can roll it back, so the agent doesn't stop.   | `create_umbraco_content`, `update_umbraco_content`, `set_umbraco_content_value`, `clear_umbraco_content_value`, `add_umbraco_content_item`, `remove_umbraco_content_item`, `move_umbraco_content_item`, `create_umbraco_media`, `update_umbraco_media` |
+| Asks for approval once | Changes what the public sees, or removes an item. The editor approves or denies the named action. | `publish_umbraco_content`, `unpublish_umbraco_content`, `delete_umbraco_content`, `delete_umbraco_media` |
+
+The approval message names the item, for example "Publish 'Home', making it live." Delete tools move items to the recycle bin.
+
+Tools only run if the agent is allowed to use them. Both tiers belong to the destructive `content-write` and `media-write` scopes, so an agent needs those scopes (or the specific tools) granted first. Custom tools choose their tier with the [`RequiresApproval`](../../extending/tools/creating-a-tool.md#step-3-configure-the-aitool-attribute) setting.
 
 {% hint style="warning" %}
 

@@ -22,7 +22,7 @@ The following are measured:
 
 ## The Report
 
-The **Forms** tab in the **Analytics** section holds all data gathered about your forms.
+The **Umbraco Forms** tab in the **Analytics** section holds all data gathered about your forms.
 
 ![Forms tab in the Analytics section](../../.gitbook/assets/engage-analytics-forms.png)
 

@@ -14,7 +14,7 @@ If your project contains a Staging environment, deployments will be made from De
 
 ## Deployment Approach
 
-Umbraco Deploy uses a two-part deployment approach where we keep metadata (Document types, templates, etc) and content (Content and Media) as separate parts of a deployment. In order to be able to distinguish between the two types of deployments, we use the term _transfer_ for content and media deployments and the term _deploy_ for metadata deployments.
+Umbraco Deploy uses a two-part deployment approach. This approach keeps metadata (Document types, templates, and so on) separate from content (Content and Media). The term _transfer_ refers to content and media deployments. The term _deploy_ refers to metadata deployments.
 
 In summary:
 
@@ -46,6 +46,6 @@ Read more about the [import and export](import-export/) feature.
 
 ## Deploy Settings
 
-In Umbraco Deploy, we have included a collection of Deploy-specific pages in the Settings section. These enable you to run operations such as schema deployment from data files and schema extraction to data files.
+Umbraco Deploy includes a collection of Deploy-specific pages in the Settings section. These enable you to run operations such as schema deployment from data files and schema extraction to data files.
 
 Learn more about the different options in the [Deploy Settings article](deploy-dashboard.md).

@@ -106,7 +106,6 @@ public class GetDateValueDemo
 	}
 }
 ```
-_(generated with the help of Claude)_
 
 ## Publishing content programmatically
 

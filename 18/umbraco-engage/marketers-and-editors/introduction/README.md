@@ -28,4 +28,4 @@ The Profiling section helps track visitor sessions, manage profiles, and differe
 
 ## [Settings](../settings/)
 
-The Settings section provides insights on excluding the traffic from specific IP addresses, setting up and implementing goals, and much more.
+The Settings section covers setting up goals, blocking unwanted traffic, and managing the Engage configuration and permissions.

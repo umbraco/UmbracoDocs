@@ -4,7 +4,7 @@ Umbraco Deploy is a commercial product. You will need a **valid license** to use
 
 A license for Umbraco Deploy is included when hosting on Umbraco Cloud.
 
-## How does it work?
+## How It Works
 
 Licenses are sold per Umbraco installation. This means one license covers a single Umbraco database and its associated web project.
 
@@ -28,7 +28,7 @@ For a license configured for `mysite.com`, with development domains `devdomain.c
 Only one license per Umbraco installation is allowed.
 {% endhint %}
 
-## What does a license cover?
+## What a License Covers
 
 There are a few differences as to what the licenses cover:
 
