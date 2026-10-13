@@ -4,72 +4,122 @@ description: Learn more about working with the Umbraco HTTP Client.
 
 # Umbraco HTTP Client
 
-The Umbraco Backoffice includes a built-in HTTP client commonly referred to as the Umbraco HTTP Client for making network requests. It is generated using `@hey-api/openapi-ts` around the OpenAPI specification and is available through the `@umbraco-cms/backoffice/http-client` package.
+The Umbraco HTTP Client, `umbHttpClient`, is the HTTP client the backoffice uses for its own requests. Use it to call the Management API and your own API controllers. Import it from the `@umbraco-cms/backoffice/http-client` package.
 
-**Example:**
+The client is generated with `@hey-api/openapi-ts` and wraps the Fetch API.
 
-```javascript
-import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+## Make a Request
 
-const { data } = await umbHttpClient.get({
-	url: '/umbraco/myextension/api/v1/endpoint',
-});
+Wrap the request in `tryExecute`. The following element lists the items from the API in the [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md) tutorial:
 
-if (data) {
-	console.log('Data:', data);
+{% code title="my-items.element.ts" %}
+```typescript
+import { customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
+import { umbHttpClient } from "@umbraco-cms/backoffice/http-client";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+import { tryExecute } from "@umbraco-cms/backoffice/resources";
+
+interface MyItem {
+  id: string;
+  value: string;
 }
+
+interface MyItemPage {
+  items: Array<MyItem>;
+  total: number;
+}
+
+@customElement("my-items")
+export class MyItemsElement extends UmbLitElement {
+  @state()
+  private _items: Array<MyItem> = [];
+
+  constructor() {
+    super();
+    this.#loadItems();
+  }
+
+  async #loadItems() {
+    const { data, error } = await tryExecute(
+      this,
+      umbHttpClient.get<{ 200: MyItemPage }>({
+        url: "/umbraco/management/api/v1/my/item",
+        query: { skip: 0, take: 10 },
+      }),
+    );
+    if (error || !data) return;
+    this._items = data.items;
+  }
+
+  override render() {
+    return html`<ul>
+      ${this._items.map((item) => html`<li>${item.value}</li>`)}
+    </ul>`;
+  }
+}
+
+export default MyItemsElement;
 ```
+{% endcode %}
 
-The above example shows how to use the Umbraco HTTP client to make a GET request. The `umbHttpClient` object provides methods for making requests, including `get`, `post`, `put`, and `delete`. Each method accepts an options object with the URL, headers, and body of the request.
+The request takes these options:
 
-The client sends the backoffice authentication cookie with every request, so the request needs no authentication options. The session lives in an HTTP-only cookie, and there is no token to add to the request.
+* `url`: the path of the endpoint, starting with `/umbraco`.
+* `query`: the query string parameters.
+
+The request needs no authentication options. The client sends the authentication cookie of the current user with every request.
+
+The type argument maps the status code to the type of `data`, so `data.items` has the right type.
+
+`tryExecute` returns `data` when the request succeeds, and `error` when it fails. It also shows a notification for most failed requests. For the details, see the [Executing Requests](try-execute.md) article.
+
+## Send Data
+
+To send data, pass it as `body`. The client serializes the body as JSON and sets the `Content-Type` header:
+
+{% code title="my-items.element.ts" %}
+```typescript
+const { error } = await tryExecute(
+  this,
+  umbHttpClient.post({
+    url: "/umbraco/myextension/api/v1/items",
+    body: { name: "My item" },
+  }),
+);
+```
+{% endcode %}
+
+The `put`, `patch`, and `delete` methods take the same options.
+
+## Get the ID of a Created Item
+
+When a Management API controller creates an item with `CreatedAtId()`, the response has an empty body. The ID of the new item is in the `Umb-Generated-Resource` header. The Umbraco HTTP Client returns that ID as `data`:
+
+{% code title="my-items.element.ts" %}
+```typescript
+const { data: id, error } = await tryExecute(
+  this,
+  umbHttpClient.post<{ 201: string }>({
+    url: "/umbraco/management/api/v1/my/item",
+    query: { value: "New item" },
+  }),
+);
+```
+{% endcode %}
+
+## What the Client Handles
+
+The Umbraco HTTP Client handles these responses for you:
+
+* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. For your own API controllers, the server answers with a 401 response only when the controller has the `[ApiController]` attribute. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Session activity**: The client counts successful requests as activity for the session timeout.
+* **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification, except for 401, 403 and 404 responses. See [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
+* **Server notifications**: The client shows the notifications that the server sends in the `Umb-Notifications` header.
+* **Created items**: The client returns the ID from the `Umb-Generated-Resource` header as `data`.
 
 {% hint style="info" %}
-You can also pass `umbHttpClient` as the `client` parameter to any generated SDK function. The generated function then uses the HTTP client of the backoffice instead of its own. See [Custom Generated Client](custom-generated-client.md) for details.
+A generated client handles the same responses when you configure it with `configureClient()`. To show a notification from `tryExecute` when a request fails, also set `throwOnError`. Instead of configuring your client, you can pass `umbHttpClient` as the `client` option of a generated SDK function. See the [Custom Generated Client](custom-generated-client.md) article.
 {% endhint %}
-
-## Sending data
-
-To send data, pass it as the `body`. The client serializes the body as JSON and sets the `Content-Type` header for you:
-
-```javascript
-import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
-
-const { data, error } = await umbHttpClient.post({
-	url: '/umbraco/myextension/api/v1/items',
-	body: { name: 'My item' },
-});
-
-if (error) {
-	console.error('The item could not be created:', error);
-}
-```
-
-The same applies to `put` and `patch`.
-
-## Using the Umbraco HTTP Client
-
-The Umbraco HTTP client is a wrapper around the Fetch API that provides a more convenient way to make network requests. It handles request and response parsing, error handling, and retries. The Umbraco HTTP client is available through the `@umbraco-cms/backoffice/http-client` package, which is included in the Umbraco Backoffice. You can use it to make requests to any endpoint in the Management API or to any other API.
-
-The recommended way to use the Umbraco HTTP Client is with the `tryExecute` function. This function handles any errors that occur during the request and shows a notification when a request fails. Responses with status 401, 403 or 404 do not show a notification, so check the returned `error` for those.
-
-If the session has expired, the Umbraco HTTP Client opens the login dialog. Once the user logs in again, the client retries `GET` requests. Other requests fail, and the user gets a notification asking them to try again. For your own API controllers, the server should answer an expired session with a 401 response. Read more in [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
-
-You can read more about the `tryExecute` function in this article:
-
-{% content-ref url="try-execute.md" %}
-[try-execute.md](try-execute.md)
-{% endcontent-ref %}
-
-## Generating a Custom Client
-
-You can also generate your own client using the `@hey-api/openapi-ts` library. This library allows you to generate a TypeScript client from an OpenAPI specification. Configure the generated client with `configureClient()` to handle authentication and errors the same way as the Umbraco HTTP Client.
-
-Read more about generating your own client here:
-
-{% content-ref url="custom-generated-client.md" %}
-[custom-generated-client.md](custom-generated-client.md)
-{% endcontent-ref %}
 
 ## Further reading
 

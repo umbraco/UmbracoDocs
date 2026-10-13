@@ -92,9 +92,9 @@ Sets the `SameSite` attribute of the authentication cookie. Valid values are "St
 
 Keep the default in production. The `SameSite` attribute stops cross-site requests from carrying the authentication cookie. The Management API has no antiforgery tokens, so the attribute is its protection against cross-site request forgery.
 
-Only set the value to "None" when the backoffice runs on a different origin than the Umbraco server. For example, when you develop against a local dev server configured as the [BackOffice Host](#backoffice-host). Browsers accept a `SameSite=None` cookie only with the `Secure` attribute, which requires HTTPS. If a proxy terminates HTTPS in front of Umbraco, also set `UseHttps` to `true` in the [global settings](globalsettings.md).
+Only set the value to "None" when the backoffice runs on a different origin than the Umbraco server. For example, when you develop against a local dev server configured as the [BackOffice Host](#backoffice-host). Browsers accept a `SameSite=None` cookie only with the `Secure` attribute, which requires HTTPS. If a proxy terminates HTTPS in front of Umbraco, make sure `UseHttps` is `true` in the [global settings](globalsettings.md).
 
-Umbraco logs a warning at startup when the value is "None" outside the `Development` environment. Umbraco does not replace an unrecognized value with the default. It reports a configuration error instead.
+Umbraco logs a warning at startup when the value is "None" outside the `Development` environment, or while `UseHttps` is `false`. Umbraco does not replace an unrecognized value with the default. It reports a configuration error instead.
 
 ### Username is email
 
