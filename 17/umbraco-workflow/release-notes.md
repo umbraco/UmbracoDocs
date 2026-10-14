@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Workflow 17, including all c
 
 #### Adds separate Request publish and Request unpublish actions
 
-The **Request approval** button in the document workspace is now labelled **Request publish**. When **Use workflow for unpublish** is enabled, a **Request unpublish** option is available from the button's menu [#185](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/185).
+The **Request approval** button in the document workspace is now labeled **Request publish**. When **Use workflow for unpublish** is enabled, a **Request unpublish** option is available from the button's menu [#185](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/185).
 
 The request dialog no longer includes the **Action** option. The dialog headline shows the requested action and the document name. The **Publish on** date is hidden for unpublish requests.
 
