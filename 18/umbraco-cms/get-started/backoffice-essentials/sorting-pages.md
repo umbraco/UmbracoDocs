@@ -49,7 +49,7 @@ You can also click the **Name** or **Created** column header to order the rows b
 
 ### Sort by field
 
-Use **Sort by field** when the order follows a value on the pages themselves, such as an alphabetical list or a news section with the newest article first. The sort runs on the server and covers every child node, including any not yet loaded into the window. This makes it the better option for parent nodes with many children.
+Use **Sort by field** when the order follows a value on the pages themselves. This could be an alphabetical list or a news section with the newest article first. The sort runs on the server and covers every child node, including any not yet loaded into the window. This makes it the better option for parent nodes with many children.
 
 1. Select a field to sort by: **Name**, **Created**, or **Last edited**.
 2. Select a direction: **Ascending** or **Descending**.
