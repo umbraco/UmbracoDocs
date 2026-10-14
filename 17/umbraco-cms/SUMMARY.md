@@ -36,7 +36,6 @@
     * [Upgrade to Umbraco 7](get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-to-umbraco-7.md)
     * [Minor Upgrades for Umbraco 7](get-started/upgrading-and-migrating/find-your-upgrade-path/minor-upgrades-for-umbraco-7.md)
     * [Migrating Macros](get-started/upgrading-and-migrating/find-your-upgrade-path/migrating-macros.md)
-    * [Single Block Migration for Umbraco 18](get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md)
   * [Upgrade Unattended](get-started/upgrading-and-migrating/upgrade-unattended.md)
   * [Downgrades and Re-Running Migrations](get-started/upgrading-and-migrating/downgrades-and-rerunning-migrations.md)
 * [Backoffice Essentials](get-started/backoffice-essentials/README.md)

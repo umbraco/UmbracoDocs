@@ -26,14 +26,6 @@ In Umbraco 18, the `EnableMediaRecycleBinProtection` setting defaults to `true`.
 
 For details, see the entry on `EnableMediaRecycleBinProtection` further down.
 
-### Implement `ITypedSingleBlockListProcessor` for custom block-list nesting property editors
-
-The single-mode block list migration was added in Umbraco 17 but disabled by default. It now runs automatically during the upgrade to Umbraco 18.
-
-If your site has custom property editors that nest block list values, you must implement and register an `ITypedSingleBlockListProcessor` before upgrading. Without this, nested data in those property values will not be migrated and will remain in the old format.
-
-For details, see the [Single block migration](find-your-upgrade-path/single-block-migration.md) article.
-
 ## Breaking changes
 
 <details>
@@ -292,12 +284,6 @@ The Hey Red Markdown library is deprecated, and the corresponding implementation
 **EF Core type names: `EfCore` renamed to `EFCore`**
 
 EF Core code constructs in `Umbraco.Cms.Persistence.EFCore` have been renamed to use the all-uppercase `EF` acronym. For example, `EfCoreScope` is now `EFCoreScope`, `IEfCoreScopeProvider` is now `IEFCoreScopeProvider`, and `EfCoreMigrationExecutor` is now `EFCoreMigrationExecutor`. Code that referenced these types directly must be updated to the new casing.
-
-**Block list "single mode" migrated to the single block editor**
-
-Umbraco 17 shipped a migration to convert "single" mode block list Data Types to the new single block property editor, but kept it disabled. It now runs by default in Umbraco 18.
-
-Standard block list Data Types are migrated automatically and require no action. Sites with custom property editors that nest block list values must implement `ITypedSingleBlockListProcessor` so their nested data is migrated correctly.
 
 **`ConfigureSecurityStampOptions` service registration removed**
 
