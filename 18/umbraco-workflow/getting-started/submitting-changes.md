@@ -16,7 +16,7 @@ Before Umbraco Workflow 18.2.4, unpublish requests were made by selecting the **
 
 ![Buttons](../.gitbook/assets/Buttons.png)
 
-Both options open the request approval overlay. The overlay headline shows the requested action and the document name:
+Both options open the request approval overlay. The overlay headline shows the requested action and the document or element name:
 
 ![Request approval overlay](../.gitbook/assets/approval-request-overlay-detailed-v14.png)
 
