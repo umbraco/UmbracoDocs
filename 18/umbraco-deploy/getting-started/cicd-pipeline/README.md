@@ -32,9 +32,36 @@ Behind the scenes what happens here is a marker file being written to disk - in 
 
 Umbraco Deploy also provides an HTTPS endpoint that can be called by an authenticated request. This will write the marker file, which will trigger the extraction.
 
+When [`DiskMode`](../deploy-settings.md#disk-mode) is set to `ReadOnly`, Deploy doesn't write or monitor marker files.
+
 Umbraco Deploy On-Premises also ships with a Powershell script, that when executed will call the endpoint, which will write the file, and which will trigger the extraction.
 
 It may be possible to have the CI/CD step directly write the file or call the endpoint. However, using the provided Powershell script is the recommended method, as long as the build supports running Powershell scripts. This method includes necessary error checking and retry logic.
+
+## Deploying the schema on startup
+
+Instead of triggering the extraction as the last step of the pipeline, Deploy can deploy the schema when the site starts. Set [`DiskMode`](../deploy-settings.md#disk-mode) to `ReadOnly` and [`StartupOperations`](../deploy-settings.md#startup-operations) to `DeploySchema`:
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "Deploy": {
+      "Settings": {
+        "DiskMode": "ReadOnly",
+        "StartupOperations": "DeploySchema"
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+The schema from the `.uda` files in the deployed build is then deployed every time the site starts. This includes restarts and new instances when scaling out. Unchanged schema items are skipped, because their checksums match.
+
+With `ReadOnly`, Deploy doesn't write to disk, so the `.uda` files in the build remain the only source of schema. This setup suits pipelines that deploy a published build or a container image.
+
+You can still run the PowerShell script to wait for the schema deployment to complete. With `ReadOnly`, the endpoint reports the schema deployment that's running or completed on startup, instead of starting another one.
 
 ## [Setting up CI/CD pipeline with GitHub Actions](ci-cd-github-actions.md)
 

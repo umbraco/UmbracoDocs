@@ -50,3 +50,7 @@ When pulling new commits, it is a good idea to see if any of these commits conta
 The local site should be running when you do this. The deploy marker will change to `deploy-progress` while updating the site and to `deploy-complete` when done. If there are any conflicts/errors you will see a `deploy-failed` marker instead, which contains an error message with a description of what went wrong.
 
 Another way is to use the Deploy Dashboard in the Settings section of the Umbraco backoffice. Here you can see the status of ongoing or completed deployment processes. The status will show whether an operation has been triggered and whether it is in progress, has completed or has failed. The dashboard will show the status based on the marker files on the disk, for example, `deploy-progress`. From the Deploy Dashboard it is also possible to trigger processes. Learn more about this dashboard in the [Deployment](deployment-workflow.md#deploy-dashboard)article.
+
+{% hint style="info" %}
+When [`DiskMode`](../getting-started/deploy-settings.md#disk-mode) is set to `ReadOnly`, Deploy doesn't process marker files or write status files. Use the [Deploy Dashboard](deploy-dashboard.md) to see the status of the last operation instead.
+{% endhint %}
