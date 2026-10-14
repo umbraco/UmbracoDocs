@@ -9,6 +9,6 @@ description: >-
 This feature was removed in Umbraco 18.4 and no longer applies.
 {% endhint %}
 
-This article described a migration that converted Block List Data Types configured in "single" mode, including their (nested) property data, to the Single Block property editor.
+This article described a migration that converted Block List Data Types configured in "single" mode to the Single Block property editor.
 
 You do not need to run this migration or implement `ITypedSingleBlockListProcessor` for custom property editors.
