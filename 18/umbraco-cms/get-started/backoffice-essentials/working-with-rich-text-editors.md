@@ -119,7 +119,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
-<img src="../../.gitbook/assets/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
+<img src="../../.gitbook/assets/Link-to-an-external-Page.png" alt="Link to a Page on another Website" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
