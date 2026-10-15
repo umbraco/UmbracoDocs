@@ -64,6 +64,8 @@ We bundle this package with Umbraco and you can therefore take full advantage of
 
 To learn how Umbraco connects to ImageSharp, see the [Image Processing](../../../develop-with-umbraco/application-code/backend-and-custom-logic/image-processing.md) article. The article also covers switching to ImageSharp 2 and when a direct ImageSharp reference needs a license key.
 
+The cache, resize, and memory settings for processed images are configured in [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md).
+
 ## Sample code
 
 The Image Cropper comes with an API to generate crop URLs. You can also access the raw data directly as a dynamic object.
