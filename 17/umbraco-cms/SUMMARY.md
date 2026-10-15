@@ -231,6 +231,7 @@
     * [Accessing the Umbraco Services](develop-with-umbraco/application-code/backend-and-custom-logic/umbraco-services.md)
     * [Creating Forms](develop-with-umbraco/application-code/backend-and-custom-logic/creating-forms.md)
     * [Source Control](develop-with-umbraco/application-code/backend-and-custom-logic/source-control.md)
+    * [Image Processing](develop-with-umbraco/application-code/backend-and-custom-logic/image-processing.md)
   * [Common Pitfalls & Anti-Patterns](develop-with-umbraco/application-code/common-pitfalls.md)
   * [Searching with Examine](develop-with-umbraco/application-code/examine/README.md)
     * [Examine Management](develop-with-umbraco/application-code/examine/examine-management.md)
