@@ -4,7 +4,7 @@ description: Information on the imaging settings section
 
 # Imaging settings
 
-The imaging settings section lets you configure the cache and resize settings for processed images on your project (using [ImageSharp.Web](https://docs.sixlabors.com/articles/imagesharp.web/) as default implementation). If you need to configure allowed image file types or auto fill image properties, you want to use [content settings](contentsettings.md) instead.
+The imaging settings section lets you configure the cache, resize, and memory settings for processed images on your project (using [ImageSharp.Web](https://docs.sixlabors.com/articles/imagesharp.web/) as default implementation). If you need to configure allowed image file types or auto fill image properties, you want to use [content settings](contentsettings.md) instead.
 
 All these settings contain default values, so nothing needs to be explicitly configured. A complete settings section for imaging can be seen here with all the default values:
 
@@ -22,6 +22,12 @@ All these settings contain default values, so nothing needs to be explicitly con
       "Resize": {
         "MaxWidth": 5000,
         "MaxHeight": 5000
+      },
+      "Memory": {
+        "Enabled": false,
+        "MaximumPoolSizeMegabytes": 0,
+        "MaximumConcurrentProcessing": 0,
+        "MaximumDecodedImageMegabytes": 0
       },
       "HMACSecretKey": ""
     }
@@ -83,6 +89,82 @@ public class ConfigureImageSharpMiddlewareOptionsComposer : IComposer
         });
 }
 ```
+
+## Memory
+
+Contains configuration for the memory used while processing images.
+
+Image processing decodes the full-resolution source image into memory before resizing it. A page of distinct thumbnails decodes every source at the same time. Peak memory use is therefore the number of concurrent requests multiplied by the size of a decoded source. On a host with a hard memory limit, that peak can exhaust the limit and the process is killed. Containers and small App Service plans are typical examples.
+
+When enabled, Umbraco applies three bounds to the image processing library:
+
+* A cap on the memory pool the library keeps between requests.
+* A limit on how many images are processed at the same time.
+* A ceiling on the size of a single decoded image.
+
+Each bound is derived from the memory available to the process. The derived bounds apply only when less than 4 GB is available. On a host with more memory, the image processing library keeps its own defaults. A bound you set explicitly applies on any host, whatever the available memory.
+
+The feature is disabled by default. Enable it on hosts with a memory limit:
+
+{% code caption="appsettings.json" %}
+
+```json
+"Umbraco": {
+  "CMS": {
+    "Imaging": {
+      "Memory": {
+        "Enabled": true
+      }
+    }
+  }
+}
+```
+
+{% endcode %}
+
+### Enabled
+
+Turns memory management on or off. Defaults to `false`, which leaves the memory behavior of the image processing library untouched.
+
+### Maximum pool size megabytes
+
+Caps the memory pool the image processing library retains between requests. Defaults to `0`, which derives a value between 16 MB and 64 MB from the available memory.
+
+### Maximum concurrent processing
+
+Limits how many images are processed at the same time. Defaults to `0`, which derives a value from the available memory, capped at the processor count.
+
+Requests beyond the limit wait for a place. A request that waits for 30 seconds without getting one is turned away. The response is `503 Service Unavailable` with a `Retry-After` header, and a warning is logged. Cached images are served without waiting.
+
+### Maximum decoded image megabytes
+
+Caps the size of the largest buffer allocated while decoding a single image. Defaults to `0`, which derives a value between 256 MB and 1024 MB from the available memory.
+
+A request for an image that needs more than the ceiling fails, and Umbraco logs a warning that names the setting. Either raise the value or reduce the size of the source image. The ceiling applies to the source decode and is unrelated to the `Resize` settings, which limit the output dimensions.
+
+### How available memory is determined
+
+Umbraco reads the memory available to the process from the .NET garbage collector (GC), which respects a container memory limit. On hosts where the process shares a machine with other applications, the reported value can be larger than your share. Set the `DOTNET_GCHeapHardLimit` environment variable to the memory you want image processing to respect. The value is written in hexadecimal bytes. For example, `0x70000000` limits the process to 1792 MB.
+
+The same environment variable lets you test the bounds on a development machine with plenty of memory.
+
+### Monitoring
+
+Each bound reports itself when the site starts. The log entries are written at the `Information` level and name the resolved values:
+
+```
+Capped the image processing memory pool at 56 MB, with 1792 MB available to the process.
+Capped a single decoded image at 448 MB, with 1792 MB available to the process.
+Bounded concurrent image processing to 2, with 1792 MB and 2 processors available to the process.
+```
+
+When the feature is disabled on a host where the bounds would engage, a single entry names the setting to turn on:
+
+```
+Imaging memory management is disabled, so the imaging library's own memory behavior stands. 1792 MB is available to the process, below the 4096 MB at which it would bound the memory the library uses. Set Umbraco:CMS:Imaging:Memory:Enabled to true to enable it.
+```
+
+When the bounds engage, memory use stays flat under load. Memory pressure is therefore no longer a sign that the site needs more capacity. Watch for `503` responses on image requests and the "Turned away an image processing request" warning instead. Both mean that demand for image processing exceeds what the host can serve. A larger host, or a Content Delivery Network (CDN) in front of the site, is the remedy.
 
 ## Hash-based Message Authentication Code (HMAC) secret key
 

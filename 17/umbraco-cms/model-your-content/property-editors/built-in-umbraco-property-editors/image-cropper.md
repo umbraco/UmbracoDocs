@@ -62,6 +62,8 @@ The editor can fit the crop to the image to ensure that the image is presented a
 
 We bundle this package with Umbraco and you can therefore take full advantage of all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
 
+The cache, resize, and memory settings for processed images are configured in [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md).
+
 ## Sample code
 
 The Image Cropper comes with an API to generate crop URLs. You can also access the raw data directly as a dynamic object.
