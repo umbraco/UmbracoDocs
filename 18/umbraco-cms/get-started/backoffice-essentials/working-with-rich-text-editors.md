@@ -204,7 +204,7 @@ To delete the anchor:
 
 **Linking to an Anchor**
 
-<img src="../../.gitbook/assets/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
+<img src="../../.gitbook/assets/Linking-to-Anchor.png" alt="Linking to an anchor" data-size="original">
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
