@@ -413,16 +413,3 @@ site:
                   default: true
                   content:
                     directory: ./17/umbraco-engage-ai
-    - type: section
-      key: section-21
-      title: CMS 19 Test
-      path: cms-19-test
-      children:
-        - type: space
-          key: space-38
-          title: CMS 19 Test
-          path: cms-19-test
-          default: true
-          draft: true
-          content:
-            directory: ./19/umbraco-cms
