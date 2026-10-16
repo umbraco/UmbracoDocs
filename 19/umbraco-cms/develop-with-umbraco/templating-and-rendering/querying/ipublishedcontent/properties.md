@@ -12,11 +12,11 @@ Common Examples
 
 @* gets the Creation date, and formats it to a short date *@
 @Model.CreateDate.ToString("D")
+```
 
 {% hint style="info" %}
 The `Parent` and `Children` navigation properties were removed from `IPublishedContent` in Umbraco 18. In Razor views use the `Parent()` and `Children()` extension methods instead. See the [Version-specific upgrades](../../../../get-started/upgrading-and-migrating/version-specific/README.md) article for details.
 {% endhint %}
-```
 
 ### .Id
 

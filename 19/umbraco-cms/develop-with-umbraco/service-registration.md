@@ -80,10 +80,6 @@ Endpoint registration is order-dependent. `UseBackOfficeEndpoints()` must be reg
 
 ## Backoffice + Delivery API (no website)
 
-{% hint style="info" %}
-This configuration requires Umbraco 18.3 or later.
-{% endhint %}
-
 Use the backoffice to manage content and the Content Delivery API to serve content to an external frontend.
 
 Umbraco does not render Razor pages in this configuration. Implement preview in your external frontend rather than relying on Umbraco's built-in website preview.

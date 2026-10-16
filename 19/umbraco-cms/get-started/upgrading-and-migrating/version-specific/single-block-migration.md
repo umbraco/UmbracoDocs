@@ -15,7 +15,7 @@ Umbraco ships with a migration to:
 * Update all block list Data Types that have been properly configured in "single" mode.
 * Update all (nested) property data that uses this Data Type.
 
-The migration was added in Umbraco 17 but disabled. It now runs by default during the upgrade to Umbraco 18.
+The migration was added in Umbraco 17 but disabled. It now runs by default during the upgrade to Umbraco 18 and later versions.
 
 ## Pre-running the migration
 

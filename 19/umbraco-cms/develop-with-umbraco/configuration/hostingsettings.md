@@ -55,8 +55,3 @@ Gets or sets a value specifying the name of the site. The [IWebHostEnvironment.A
 Set `MachineIdentifier` to a stable value that identifies this server instance. Umbraco uses the value to track cache synchronization state per server. The state determines whether a restart can resume from the last sync or must rebuild caches and indexes.
 
 Set this property in environments where the OS hostname is not stable across restarts, such as Docker or Kubernetes.
-
-{% hint style="info" %}
-`MachineIdentifier` is available from Umbraco 18.1.
-{% endhint %}
-

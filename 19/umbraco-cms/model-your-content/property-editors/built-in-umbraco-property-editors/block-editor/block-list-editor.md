@@ -9,7 +9,7 @@
 **Block List** is a list editing property editor, using [Element Types](../../../content-types-and-structure/data/defining-content/document-type-options.md#element-type) to define the list item schema.
 
 {% hint style="info" %}
-The single-mode Block List migration now runs by default when upgrading to v18. If you have custom property editors that nest Block List values, you must implement and register `ITypedSingleBlockListProcessor` before upgrading. See the [Single block migration](../../../../get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md) article for details.
+The single-mode Block List migration now runs by default when upgrading to v18 or later versions. If you have custom property editors that nest Block List values, you must implement and register `ITypedSingleBlockListProcessor` before upgrading. See the [Single block migration](../../../../get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md) article for details.
 {% endhint %}
 
 ## Configure Block List

@@ -172,10 +172,6 @@ For a full list and details, see the [Extension Conditions](extending-overview/e
 
 ## Cache busting
 
-{% hint style="info" %}
-Automatic cache busting for package assets is available from Umbraco 18.1.
-{% endhint %}
-
 Browsers cache the assets that your package serves from `/App_Plugins`. Without cache busting, users can keep running old JavaScript and CSS after you ship an update. To prevent this, Umbraco appends a cache-busting query string to your package's asset URLs.
 
 The value is derived from the `version` field in your `umbraco-package.json` file. Umbraco appends it as `?umb__rnd={value}` to:

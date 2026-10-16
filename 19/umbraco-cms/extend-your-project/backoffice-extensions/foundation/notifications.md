@@ -147,10 +147,6 @@ The default layout reads these properties from `data`:
 
 ## Render HTML in a Notification
 
-{% hint style="info" %}
-`htmlMessage`, and HTML in event messages, are available from Umbraco 18.1.
-{% endhint %}
-
 The `message` property always renders as plain text. To render HTML, set `htmlMessage` as well. The notification then shows `htmlMessage` instead of `message`.
 
 The `htmlMessage` property takes a string or a Lit `TemplateResult`:

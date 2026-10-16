@@ -54,7 +54,7 @@ Your solution may require some specific files to run, such as license files. You
 
 Container hostnames are typically regenerated on every container start. Umbraco derives its machine identifier from the hostname by default. Each restart then looks like a new server, so Umbraco rebuilds the Examine indexes and published content cache.
 
-From Umbraco 18.1, set `Hosting:MachineIdentifier` to a stable, instance-unique value to prevent the rebuild. Use a StatefulSet ordinal, a node label, or any other string that does not change between restarts:
+`Hosting:MachineIdentifier` is set to a stable, instance-unique value to prevent the rebuild. Use a StatefulSet ordinal, a node label, or any other string that does not change between restarts:
 
 ```yaml
 services:

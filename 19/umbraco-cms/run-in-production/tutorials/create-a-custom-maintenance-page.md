@@ -25,10 +25,6 @@ The following guide will take you through the steps to customize and brand the d
 
 There are two ways to do this. Configuring a view path is recommended. The view then lives alongside the rest of your views, and a mistake in the path is reported instead of being ignored.
 
-{% hint style="info" %}
-Both approaches require Umbraco 18.3 or later. In earlier versions, the default maintenance page could not be replaced.
-{% endhint %}
-
 ### Configure your own view
 
 1. Add a new file to your project, for example `Views/Maintenance.cshtml`.

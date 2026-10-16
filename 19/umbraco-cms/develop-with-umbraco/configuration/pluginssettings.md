@@ -35,10 +35,6 @@ By default, plugins can serve markup, styles, scripts, source maps, images, font
 
 ## Cachebuster
 
-{% hint style="info" %}
-The `Cachebuster` setting is available from Umbraco 18.1.
-{% endhint %}
-
 This setting lets you force browsers to re-fetch all package assets served from `/App_Plugins`. It is empty by default and has no effect until you set it.
 
 Set it to a value that changes with each deployment, for example a build number or a git commit hash:

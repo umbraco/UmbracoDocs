@@ -71,10 +71,6 @@ const { data, error } = await tryExecute(this, request, {
 
 ### Cancelling Requests
 
-{% hint style="info" %}
-Cancelling requests with `abortSignal` is available from Umbraco 18.3. In earlier 18.x releases, pass the signal to the request only and set `disableNotifications: true`. The returned `error` is then an `UmbApiError`, so check `signal.aborted` to tell a cancellation apart.
-{% endhint %}
-
 Cancel a request when you no longer need its result, for example when the user navigates away or the request takes too long.
 
 Create an [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and pass its signal to both the request and the `abortSignal` option of `tryExecute`. The signal on the request stops the network request. The `abortSignal` option makes `tryExecute` return straight away with an `UmbCancelError`:

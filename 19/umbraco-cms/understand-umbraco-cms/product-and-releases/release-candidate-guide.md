@@ -25,16 +25,16 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Prerequisites
 
-* The latest [.NET SDK 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
+* The latest [.NET SDK 11.0](https://dotnet.microsoft.com/en-us/download/dotnet/11.0).
 
 ### Install a Pre-Release Version
 
-The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/18.0.0-beta).
+The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/19.0.0-beta).
 
 1. Install the Umbraco dotnet template for the beta.
 
 ```cmd
-dotnet new install Umbraco.Templates::18.0.0-rc3
+dotnet new install Umbraco.Templates::19.0.0-beta
 ```
 
 2. Create a new Umbraco project.
@@ -66,13 +66,11 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 
 Here is a list of all the new or updated articles in this version.
 
-* [Version Specific Updates: Breaking Changes](../../get-started/upgrading-and-migrating/version-specific.md)
-* [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md)
-* [Element Picker](../../model-your-content/property-editors/built-in-umbraco-property-editors/element-picker.md)
+* 
 
 ### Removed articles
 
-* ILocalizationServices
+* Coming soon
 
 ### Updated articles
 
