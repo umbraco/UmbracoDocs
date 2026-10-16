@@ -425,4 +425,4 @@ site:
           default: true
           draft: true
           content:
-            directory: ./cms-19-test
+            directory: ./19/umbraco-cms
