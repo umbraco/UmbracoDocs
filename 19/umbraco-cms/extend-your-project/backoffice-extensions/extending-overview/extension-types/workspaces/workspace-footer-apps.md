@@ -1,0 +1,230 @@
+---
+description: >-
+  Learn how to create workspace footer apps that provide persistent status information and contextual data in workspace environments.
+---
+
+# Workspace Footer App
+
+Workspace Footer Apps provide persistent status information and contextual data in the workspace footer area. They offer a non-intrusive way to display important information that remains visible while users work with workspace content.
+
+## Purpose
+
+Footer Apps provide:
+- **Persistent status** information visible while editing
+- **Contextual data** related to the current entity
+- **Non-intrusive monitoring** without taking up the main workspace space
+- **Real-time updates** through workspace context integration
+
+{% hint style="info" %}
+Footer apps appear at the bottom of workspaces and are ideal for displaying status indicators, counters, and contextual information.
+{% endhint %}
+
+## Manifest
+
+{% code title="manifest.ts" %}
+```typescript
+{
+	type: 'workspaceFooterApp',
+	alias: 'example.workspaceFooterApp.counterStatus',
+	name: 'Counter Status Footer App',
+	element: () => import('./counter-status-footer-app.element.js'),
+	weight: 900,
+	conditions: [
+		{
+			alias: UMB_WORKSPACE_CONDITION_ALIAS,
+			match: 'Umb.Workspace.Document',
+		},
+	],
+}
+```
+{% endcode %}
+
+### Key Properties
+- **`element`** - Points to the Lit element implementation
+- **`weight`** - Controls positioning within footer area
+- **`conditions`** - Determines workspace availability
+
+## Implementation
+
+Implement your workspace footer app as a Lit element that extends `UmbElementMixin`. This provides access to workspace contexts and reactive state management:
+
+{% code title="counter-status-footer-app.element.ts" %}
+```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { EXAMPLE_COUNTER_CONTEXT } from './counter-workspace-context.js';
+
+@customElement('example-counter-status-footer-app')
+export class ExampleCounterStatusFooterAppElement extends UmbElementMixin(LitElement) {
+	@state()
+	private _counter = 0;
+
+	constructor() {
+		super();
+		this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (context) => {
+			this.observe(context?.counter, (counter) => {
+				this._counter = counter ?? 0;
+			});
+		});
+	}
+
+	override render() {
+		return html`<span>Counter: ${this._counter}</span>`;
+	}
+}
+
+export default ExampleCounterStatusFooterAppElement;
+
+declare global {
+	interface HTMLElementTagNameMap {
+		'example-counter-status-footer-app': ExampleCounterStatusFooterAppElement;
+	}
+}
+```
+{% endcode %}
+
+## Footer App Lifecycle
+
+### Initialization
+- Footer apps initialize when the workspace loads
+- Context consumption happens during construction
+- Apps persist for the workspace lifetime
+
+### Updates
+- Use `observe()` for reactive updates from workspace contexts
+- Apps update automatically when observed state changes
+- Efficient rendering keeps footer responsive
+
+## Common Patterns
+
+### Status Indicators
+
+{% code title="entity-status-footer-app.element.ts" %}
+```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+// Your own workspace context, which exposes a `status` observable:
+import { MY_ENTITY_STATUS_CONTEXT } from './my-entity-status.context.js';
+
+@customElement('entity-status-footer-app')
+export class EntityStatusFooterApp extends UmbElementMixin(LitElement) {
+	@state()
+	private status = 'loading';
+
+	constructor() {
+		super();
+		this.consumeContext(MY_ENTITY_STATUS_CONTEXT, (context) => {
+			this.observe(context?.status, (status) => {
+				this.status = status ?? 'loading';
+			});
+		});
+	}
+
+	override render() {
+		return html`
+			<div class="status-indicator">
+				<uui-icon name="icon-${this.#getStatusIcon()}"></uui-icon>
+				<span>${this.status}</span>
+			</div>
+		`;
+	}
+
+	#getStatusIcon() {
+		switch (this.status) {
+			case 'saved': return 'check';
+			case 'draft': return 'edit';
+			case 'error': return 'alert';
+			default: return 'hourglass';
+		}
+	}
+}
+```
+{% endcode %}
+
+### Live Counters
+
+{% code title="word-count-footer-app.element.ts" %}
+```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document';
+
+@customElement('word-count-footer-app')
+export class WordCountFooterApp extends UmbElementMixin(LitElement) {
+	@state()
+	private wordCount = 0;
+
+	constructor() {
+		super();
+		this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, async (context) => {
+			// Observe the value of an invariant Textarea property with the alias 'summary':
+			this.observe(await context?.propertyValueByAlias<string>('summary'), (content) => {
+				this.wordCount = this.#countWords(content ?? '');
+			});
+		});
+	}
+
+	#countWords(content: string): number {
+		return content.trim().split(/\s+/).filter(word => word.length > 0).length;
+	}
+
+	override render() {
+		return html`<span>${this.wordCount} words</span>`;
+	}
+}
+```
+{% endcode %}
+
+### Validation Summary
+
+{% code title="validation-footer-app.element.ts" %}
+```typescript
+import { customElement, html, state, LitElement } from '@umbraco-cms/backoffice/external/lit';
+import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
+import { UMB_VALIDATION_CONTEXT } from '@umbraco-cms/backoffice/validation';
+
+@customElement('validation-footer-app')
+export class ValidationFooterApp extends UmbElementMixin(LitElement) {
+	@state()
+	private errorCount = 0;
+
+	constructor() {
+		super();
+		this.consumeContext(UMB_VALIDATION_CONTEXT, (context) => {
+			this.observe(context?.messages.messages, (messages) => {
+				this.errorCount = messages?.length ?? 0;
+			});
+		});
+	}
+
+	override render() {
+		if (this.errorCount === 0) {
+			return html`<span class="valid">✓ Valid</span>`;
+		}
+
+		return html`
+			<div class="validation-summary">
+				<span class="errors">${this.errorCount} errors</span>
+			</div>
+		`;
+	}
+}
+```
+{% endcode %}
+
+## Best Practices
+
+### Performance
+Keep footer apps lightweight for responsive workspace interaction.
+
+### Information Density
+Display only essential information. Footer space is limited.
+
+### Context Dependencies
+Always check that the context is available before accessing its properties.
+
+### Responsive Design
+Ensure footer apps work across different workspace sizes.
+
+### Visual Consistency
+Use Umbraco's design system for consistent styling.
