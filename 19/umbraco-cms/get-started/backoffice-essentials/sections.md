@@ -36,9 +36,11 @@ For more information, see the [Creating Media](../../model-your-content/content-
 
 The Library section is a central editorial hub for reusable content. Elements are created and managed here, allowing you to define content once and reuse it across as many pages and documents as needed.
 
+Document Blueprints are also managed in the Library section. Access to them is configured separately from access to the section.
+
 By default, all user groups except **Sensitive Data** and **Translators** have access to the Library section.
 
-For more information, see the [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md) article.
+For more information, see the [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md) and [Document Blueprints](../../model-your-content/content-types-and-structure/backoffice/document-blueprints.md) articles.
 
 ## Settings
 
@@ -53,7 +55,6 @@ The Settings section consists of:
 * Member Types
 * Data Types
 * Languages
-* Document Blueprints
 
 **Templating**
 
