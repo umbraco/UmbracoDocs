@@ -22,13 +22,13 @@ Search helps you build appealing search experiences for your website users, with
 <tr>
 <td><strong>Getting Started</strong></td>
 <td>Learn how to get started with search.</td>
-<td><a href=".gitbook/assets/Documentations Icons_Umbraco_Commerce_Get_Started.png">Documentations Icons_Umbraco_Commerce_Get_Started.png</a></td>
+<td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Commerce_Get_Started.png">Documentations Icons_Umbraco_Commerce_Get_Started.png</a></td>
 <td><a href="getting-started/">getting-started</a></td>
 </tr>
 <tr>
 <td><strong>Extending</strong></td>
 <td>Extension points to tailor your search experiences.</td>
-<td><a href=".gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Searching.png">Documentations Icons_Umbraco_CMS_Reference_Searching.png</a></td>
+<td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_CMS_Reference_Searching.png">Documentations Icons_Umbraco_CMS_Reference_Searching.png</a></td>
 <td><a href="extending-search/">extending-search</a></td>
 </tr>
 </tbody>

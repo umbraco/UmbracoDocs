@@ -30,7 +30,7 @@ The backoffice serves the JavaScript for these imports at runtime. For how your 
 
 ## Adding a detail box to the search workspace
 
-<figure><img src="../.gitbook/assets/searchIndexDetailBox.jpg" alt="The details view of a search index, with the search box and the index information box highlighted"><figcaption><p>The marked areas show where search index detail boxes render.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/searchIndexDetailBox.jpg" alt="The details view of a search index, with the search box and the index information box highlighted"><figcaption><p>The marked areas show where search index detail boxes render.</p></figcaption></figure>
 
 The index detail view uses an extension slot for composable UI. Register a `searchIndexDetailBox` extension to add a custom box to the detail page of any index.
 
