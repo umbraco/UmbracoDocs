@@ -14,7 +14,7 @@ These endpoints are infrastructure-level HTTP probes used by orchestrators and l
 
 ## Overview
 
-Umbraco builds on this middleware and exposes two health probe endpoints that reflect the current runtime state. These endpoints are available in Umbraco 17.3 and later.
+Umbraco builds on this middleware and exposes two health probe endpoints that reflect the current runtime state.
 
 ## Endpoints
 

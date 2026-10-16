@@ -170,10 +170,6 @@ The `MaximumLocalCacheItems` setting limits the number of converted items kept i
 
 The setting is configured separately for documents, media, and elements. The default value is `null` (unbounded), which preserves the previous behavior. Existing sites are unaffected unless the setting is applied.
 
-{% hint style="info" %}
-The `MaximumLocalCacheItems` setting is available from Umbraco 18.1.
-{% endhint %}
-
 ### Installing the bounded cache package
 
 Bounding the cache requires the opt-in `Umbraco.Cms.PublishedCache.HybridCache.Bounded` package. The package replaces the default L0 cache with a bounded, scan-resistant [W-TinyLFU](https://github.com/bitfaster/BitFaster.Caching) implementation.
@@ -252,10 +248,6 @@ When `Deferred` is set, the content cache is still evicted immediately during th
 If multiple content types are saved in quick succession, the affected content type IDs are accumulated and processed together in a single batch. This avoids overlapping rebuild work between related types.
 
 The same setting also controls the deferral of search re-indexing triggered by content type changes.
-
-{% hint style="info" %}
-The `ContentTypeRebuildMode` setting is available from Umbraco 17.4.
-{% endhint %}
 
 ## Observing cache memory usage
 
@@ -338,10 +330,6 @@ The `ContentTypeRebuildDeleteBatchSize` setting controls how many content items 
    }
  }
 ```
-
-{% hint style="info" %}
-The `ContentTypeRebuildDeleteBatchSize` setting is available from Umbraco 18.1.
-{% endhint %}
 
 ## NuCacheSerializerType
 

@@ -18,7 +18,7 @@ Before running the upgrade, consider the following:
 
 ### Upgrade to Umbraco 17 first
 
-Umbraco 18 can only upgrade from Umbraco 16.4 or later, because it no longer includes the migrations from Umbraco 13 to 17. Upgrade your project to Umbraco 17, the latest Long-term Support (LTS) version, before you upgrade to Umbraco 18.
+From version 18 Umbraco can only upgrade from Umbraco 16.4 or later, because it no longer includes the migrations from Umbraco 13 to 17. Upgrade your project to Umbraco 17, the latest Long-term Support (LTS) version, before you upgrade to Umbraco 19.
 
 ### Empty the media recycle bin
 
@@ -35,6 +35,14 @@ If your site has custom property editors that nest block list values, you must i
 For details, see the [Single block migration](find-your-upgrade-path/single-block-migration.md) article.
 
 ## Breaking changes
+
+<details>
+
+<summary>Umbraco 19</summary>
+
+**Place breaking changes here.**
+
+</details>
 
 <details>
 

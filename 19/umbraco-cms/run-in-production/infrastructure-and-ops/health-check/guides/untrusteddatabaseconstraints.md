@@ -19,7 +19,7 @@ Untrusted constraints are a problem for two reasons:
 1. **The query optimizer cannot use them.** SQL Server relies on trusted constraints for join elimination, cardinality estimation, and index selection. Untrusted constraints force the optimizer to assume the worst case, resulting in slower queries. This is particularly visible on sites with large content trees.
 2. **Data integrity is not guaranteed.** Because SQL Server has not verified existing rows, orphaned or invalid rows may be present in the database even though the constraint is (nominally) active.
 
-Umbraco includes an upgrade-time migration (`RetrustForeignKeyAndCheckConstraints`, v17.3) that tries to re-trust all untrusted constraints on Umbraco tables automatically. If existing data violates a constraint, the migration cannot re-trust it. In that case, it logs a warning and moves on, leaving the issue for manual resolution. This health check surfaces that state.
+Umbraco includes an upgrade-time migration (`RetrustForeignKeyAndCheckConstraints`) that tries to re-trust all untrusted constraints on Umbraco tables automatically. If existing data violates a constraint, the migration cannot re-trust it. In that case, it logs a warning and moves on, leaving the issue for manual resolution. This health check surfaces that state.
 
 ## How to fix this health check
 

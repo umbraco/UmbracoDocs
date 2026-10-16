@@ -5,10 +5,6 @@ description: >-
 
 # User Entry Point
 
-{% hint style="info" %}
-The User Entry Point is available from Umbraco 18.2.
-{% endhint %}
-
 The User Entry Point manifest declares a single JavaScript file that runs when a user session starts. The `onInit` function is only called once the user has been authorized **and** the current user data has been loaded. This means you can rely on the Current User Context being populated. Properties like the allowed sections are never `undefined`.
 
 {% hint style="info" %}

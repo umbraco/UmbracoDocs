@@ -367,7 +367,3 @@ builder.Services.AddUmbracoDbContext<BlogContext>(
 {% hint style="info" %}
 When `shareUmbracoConnection` is `false`, the custom `DbContext` has its own connection and transaction. Completing an Umbraco scope does not commit writes made through your EF Core scope (and vice versa). You still use `IEFCoreScopeProvider<T>` and `IEFCoreScope<T>` the same way as before — the scope manages the separate connection on your behalf.
 {% endhint %}
-
-{% hint style="info" %}
-The `shareUmbracoConnection` parameter was added in Umbraco 17.4. Calls to `AddUmbracoDbContext<T>` without it are marked as obsolete and scheduled for removal in Umbraco 19.
-{% endhint %}
