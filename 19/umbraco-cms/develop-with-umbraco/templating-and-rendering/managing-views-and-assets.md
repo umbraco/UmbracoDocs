@@ -30,7 +30,7 @@ Templates and partial views contain C# code, but the backoffice editor doesn't w
 The runtime mode of your site also affects backoffice editing:
 
 * In `Production` runtime mode, creating, editing, renaming, and deleting templates and partial views in the backoffice is blocked entirely. For more information, see [Runtime Modes](../../run-in-production/runtime-modes.md).
-* Outside `Production`, backoffice changes take effect immediately only in `BackofficeDevelopment` mode (the default) with the `Umbraco.Cms.DevelopmentMode.Backoffice` package installed. Otherwise, you must rebuild and restart the site. For details, see ["InMemoryAuto models builder and Razor runtime compilation have moved into their own package"](../../get-started/upgrading-and-migrating/version-specific/README.md#umbraco-17) in the Version-specific upgrades guide.
+* Outside `Production`, backoffice changes take effect immediately only in `BackofficeDevelopment` mode (the default) with the `Umbraco.Cms.DevelopmentMode.Backoffice` package installed. Otherwise, you must rebuild and restart the site. For details, see ["InMemoryAuto models builder and Razor runtime compilation have moved into their own package"](../../get-started/upgrading-and-migrating/version-specific.md#umbraco-17) in the Version-specific upgrades guide.
 
 ## Where the Files Live
 
