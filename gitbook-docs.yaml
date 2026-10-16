@@ -49,7 +49,7 @@ site:
           path: 19.latest
           draft: true
           content:
-            directory: ./umbraco-cms/19.latest
+            directory: ./19/umbraco-cms
     - type: section-group
       key: section-group-3
       title: Cloud Services
