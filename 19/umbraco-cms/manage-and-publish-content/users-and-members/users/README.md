@@ -31,7 +31,7 @@ Open a user’s profile from the **Users** section to update:
 * Email address of the user.
 * UI Culture (sets the backoffice language of the user account).
 * User Group (determines the scope of access in the backoffice).
-* Start nodes for **Content**, **Media**, and element **Library** sections to limit access.
+* Start nodes for **Content**, **Media**, **Elements**, and **Document Blueprints** (limit which items the user can access).
 
 ### Managing User Access
 
@@ -110,6 +110,7 @@ By default, the User Groups available to new users are **Administrators**, **Edi
   * All **Document Property Value permissions**
   * All **Element Folder permissions**
   * All **Element permissions**
+  * Access to all **Document Blueprints** (on new installs)
 * **Sensitive data**: Any users added to this User group will have access to view any data marked as sensitive. Learn more about this feature in the [Sensitive Data](../../../run-in-production/security/sensitive-data-on-members.md) article.
 * **Translators**: These are used for translating your website. Translations of site pages must be reviewed by others before publication. Translators have the following permissions:
   * **Document permissions** limited to **Read** and **Update**
@@ -142,7 +143,7 @@ Use the following settings to configure the User Group:
 
 * **Name**: The name of the User Group.
 * **Alias**: Used to reference the User Group in code. The alias will be auto-generated based on the name.
-* **Assign access**: Define which sections and languages users will have access to, and whether they should have access to some or all content and media.
+* **Assign access**: Define which sections and languages users can access, and which content, media, elements, and Document Blueprints they can access.
 
 ![Create User Group](../../../.gitbook/assets/user-groups-v18.png)
 

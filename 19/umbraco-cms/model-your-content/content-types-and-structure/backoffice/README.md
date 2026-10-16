@@ -142,6 +142,6 @@ A user is someone who has access to the **Umbraco backoffice** and is not to be 
 
 ## [Document Blueprints](document-blueprints.md)
 
-Document Blueprint provide a blueprint for content nodes based on an existing node.
+Document Blueprints are preconfigured content that editors can use as a starting point for new content.
 
-![Document Blueprint](../../../.gitbook/assets/document-blueprint-18.png)
+![Document Blueprint](../../../.gitbook/assets/document-blueprint-19.png)

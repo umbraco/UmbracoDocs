@@ -17,11 +17,12 @@ This is possible using Content Type Filters.
 
 To create a Content Type Filter you use a class that implements the `IContentTypeFilter` interface (found in the `Umbraco.Cms.Core.Services.Filters` namespace).
 
-There are three methods you can implement:
+There are four methods you can implement:
 
 * `FilterAllowedAtRootAsync` for the content types allowed at the content root.
 * `FilterAllowedChildrenAsync` for the content types allowed below a given parent node. The method receives the parent content type key and the parent content key, so you can filter based on the parent node.
 * `FilterAllowedInLibraryAsync` for the content types allowed when creating Elements in the library. The method receives the parent container key, which is `null` at the library root or the key of the folder the Element is created within. You can filter based on where in the library the Element is being created.
+* `FilterAllowedForBlueprintsAsync` for the content types allowed as the basis for a [Document Blueprint](../../model-your-content/content-types-and-structure/backoffice/document-blueprints.md). The method receives the parent folder key, which is `null` at the Document Blueprints root. You can filter based on where the Document Blueprint is being created or moved to.
 
 Each method has a default implementation that returns the provided collection unmodified. You only implement the methods relevant to your use case.
 
