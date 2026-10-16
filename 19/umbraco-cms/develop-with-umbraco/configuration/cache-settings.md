@@ -249,10 +249,6 @@ If multiple content types are saved in quick succession, the affected content ty
 
 The same setting also controls the deferral of search re-indexing triggered by content type changes.
 
-{% hint style="info" %}
-The `ContentTypeRebuildMode` setting is available from Umbraco 17.4.
-{% endhint %}
-
 ## Observing cache memory usage
 
 Umbraco keeps in-memory caches whose size grows with the content tree. On large sites these caches can be a significant source of memory usage.

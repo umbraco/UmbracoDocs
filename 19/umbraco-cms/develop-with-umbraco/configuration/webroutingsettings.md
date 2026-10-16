@@ -118,7 +118,7 @@ Controls how Umbraco determines the application URL when `UmbracoApplicationUrl`
 * `EveryRequest`: The application URL is set from the first HTTP request and updated by every subsequent request for a new URL. A loopback address or a downgrade from HTTPS to HTTP never replaces the current URL.
 
 {% hint style="info" %}
-The replacement rules below apply from Umbraco CMS version 17.8. In earlier versions, `FirstRequest` keeps whatever URL the first request presents. `EveryRequest` accepts any new URL.
+In earlier versions (17.8 and older), `FirstRequest` keeps whatever URL the first request presents. `EveryRequest` accepts any new URL.
 {% endhint %}
 
 With `FirstRequest`, the URL is replaced in two cases only:

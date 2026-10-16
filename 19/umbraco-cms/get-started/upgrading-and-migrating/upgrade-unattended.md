@@ -40,7 +40,7 @@ With the correct configuration applied, the project will be upgraded on the next
 ### Boot order
 
 {% hint style="info" %}
-The behavior described below applies to Umbraco 17.3 and later. In earlier versions, migrations ran synchronously before the web server started accepting requests.
+In earlier versions (17.3 and older), migrations ran synchronously before the web server started accepting requests.
 {% endhint %}
 
 When the application starts, migrations run in a background service after the web server begins listening. During the migration the RuntimeLevel is `Upgrading`. The web server is reachable during this time, serving health probe responses and maintenance pages.

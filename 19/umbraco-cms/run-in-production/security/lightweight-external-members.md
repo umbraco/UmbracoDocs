@@ -10,10 +10,6 @@ Lightweight external members are a storage option for members whose identity liv
 
 You opt in on a per-provider basis by setting `ExternalOnly = true` on the auto-link options. The rest of the Member authentication setup stays the same. See [External login providers](external-login-providers.md) for how to wire up the provider itself.
 
-{% hint style="info" %}
-Lightweight external members were added in Umbraco 17.4. Existing content-based members are not affected, and the two kinds can coexist on the same site.
-{% endhint %}
-
 ## Background
 
 A standard Umbraco member is a content entity. Saving a member writes rows across multiple tables, creates a new content version, and triggers a search re-index. The model is flexible and fits scenarios where you manage member profiles from the backoffice.
