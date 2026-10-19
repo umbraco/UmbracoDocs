@@ -98,7 +98,7 @@ Keep the default in production. The `SameSite` attribute stops cross-site reques
 
 Only set the value to "None" when the backoffice runs on a different origin than the Umbraco server. For example, when you develop against a local dev server configured as the [BackOffice Host](#backoffice-host). Browsers accept a `SameSite=None` cookie only with the `Secure` attribute, which requires HTTPS. If a proxy terminates HTTPS in front of Umbraco, make sure `UseHttps` is `true` in the [global settings](globalsettings.md).
 
-Umbraco logs a warning at startup when the value is "None" outside the `Development` environment, or while `UseHttps` is `false`. Umbraco does not replace an unrecognized value with the default. It reports a configuration error instead.
+Umbraco logs a warning at startup when the value is "None" outside the `Development` environment, or while `UseHttps` is `false`. Umbraco does not replace an unrecognized value with the default. It reports a configuration error at startup, and the site does not start.
 
 ### Username is email
 
