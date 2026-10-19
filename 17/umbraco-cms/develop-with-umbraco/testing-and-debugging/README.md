@@ -58,7 +58,7 @@ To display the profiler on the front end of your site:
 * Sign in to the backoffice as a user who has access to the **Settings** section.
 * Add `?umbDebug=true` to the request query string.
 
-Instead of the query string, you can activate the profiler in either of these ways:
+Instead of the query string, you can activate the profiler in either of the ways described below. Keep in mind that `Debug: true` and a signed-in Settings user are still required.
 
 * Use the **Activate the profiler by default** toggle on the **Profiling** dashboard in the **Settings** section. The toggle sets a cookie, so it only works when the backoffice and website share the same domain. For more information, see the [Settings Dashboards](../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
 * Send an `X-UMB-DEBUG: true` header with the request. Use this option for cross-site setups.
@@ -66,7 +66,7 @@ Instead of the query string, you can activate the profiler in either of these wa
 The profiler is displayed on pages rendered by Razor views. For other requests, such as calls to the Content Delivery API, view the stored results at `/umbraco/profiler/results-index`. Only backoffice users with access to the **Settings** section can view these results.
 
 {% hint style="info" %}
-The results list relies on an inline script. If your site uses a Content Security Policy that blocks inline scripts, the list is displayed empty. For more information, see the [Content Security Policy (CSP)](../../run-in-production/infrastructure-and-ops/health-check/guides/contentsecuritypolicy.md) article.
+The results list relies on an inline script. If your site uses a Content Security Policy that blocks inline scripts, the list is empty. For more information, see the [Content Security Policy (CSP)](../../run-in-production/infrastructure-and-ops/health-check/guides/contentsecuritypolicy.md) article.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/v8-miniprofiler-view.png" alt=""><figcaption></figcaption></figure>
@@ -85,7 +85,7 @@ and any underlying SQL Statements that are being executed for a part of the exec
 
 Umbraco profiles SQL queries and the time spent locating views. The first profiled request after the site starts also includes the startup timings.
 
-The time spent rendering a partial view is not recorded as a separate step. It is included in the timing of the view that renders the partial.
+Umbraco includes the render time of a partial view in the timing of its parent view.
 
 For each SQL query, the MiniProfiler shows a stack trace of the code that executed it. When partial views, view components, or services run asynchronously, this stack trace is less useful. It shows framework and compiler-generated methods rather than your own code, so you can't tell which partial view ran the query.
 
