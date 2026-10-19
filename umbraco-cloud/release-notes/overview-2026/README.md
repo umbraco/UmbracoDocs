@@ -8,6 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [October 2026](2026-10-releasenotes.md)
 
+* [16/10] - **Hosting resources overview** - A new **Resources** page lists every hosting resource in your project, with its environment, region, state, and tier.
 * [12/10] - **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
 * [09/10] - **Sweden Region Available** - Umbraco Cloud now has a Sweden region.
 * [02/10] - **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
