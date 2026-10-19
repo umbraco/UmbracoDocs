@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 17 including all changes for this version.
 
+#### 17.2.8 (19th Oct 2026)
+
+* Fixed an expired or invalid payment link causing an endless redirect loop. The link now redirects once and shows the error [#902](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/902)
+* Fixed the actions menu ("...") showing on screens that have no actions, such as the Orders list, where it opened an empty menu [#900](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/900)
+
 #### 17.2.7 (5th Oct 2026)
 
 * Fixed payment status refreshing when opening orders. Status changes and extra details from the provider now display correctly [#898](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/898)
