@@ -109,7 +109,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 ## Links
 
-![Link Button](../../.gitbook/assets/Link-Button-v11.png)
+![Link Button](../../.gitbook/assets/Link-Button.png)
 
 The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
