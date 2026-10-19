@@ -20,6 +20,8 @@ This article maps those concepts and ports a small dashboard as an example. For 
 | --------------------------------------------- | ------------------------------------------------------------------ |
 | `package.manifest`                            | `umbraco-package.json`                                             |
 | `javascript` array in the manifest            | The `element`, `js`, or `api` property of each extension.           |
+| `angular.module("umbraco").run()` in a manifest JavaScript file | A [Backoffice Entry Point](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/backoffice-entry-point.md) with an `onInit` export. |
+| `eventsService.on("app.authenticated")`      | A [User Entry Point](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/user-entry-point.md). Its `onInit` runs each time a user signs in, and `onUnload` runs when the session ends. |
 | `css` array in the manifest                   | The `static styles` of each element.                                |
 | Controller and HTML view                      | A Web Component, usually a Lit element.                             |
 | `$scope` and `vm` properties                  | Class properties with the `@state()` decorator.                     |
@@ -623,6 +625,7 @@ To build a property editor step by step, follow the [Creating a Property Editor]
 
 * [Umbraco Extension Template](../../../extend-your-project/backoffice-extensions/development-flow/umbraco-extension-template.md)
 * [Fetching Data](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/README.md)
+* [User Entry Point](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/user-entry-point.md)
 * [UI Library](../../../extend-your-project/backoffice-extensions/ui-library.md)
 * [Workspace Views](../../../extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-views.md)
 * [Porting old Umbraco API Controllers](../../../develop-with-umbraco/application-code/backend-and-custom-logic/routing/umbraco-api-controllers/porting-old-umbraco-apis.md)

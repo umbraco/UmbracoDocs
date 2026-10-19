@@ -109,7 +109,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 ## Links
 
-![Link Button](../../.gitbook/assets/Link-Button-v11.png)
+![Link Button](../../.gitbook/assets/Link-Button.png)
 
 The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
@@ -119,7 +119,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
-<img src="../../.gitbook/assets/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
+<img src="../../.gitbook/assets/Link-to-an-external-Page.png" alt="Link to a Page on another Website" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -150,7 +150,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Media File in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-Media-File-v11.png" alt="Link to a Media File in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-Media-File.png" alt="Link to a Media File in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -204,7 +204,7 @@ To delete the anchor:
 
 **Linking to an Anchor**
 
-<img src="../../.gitbook/assets/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
+<img src="../../.gitbook/assets/Linking-to-Anchor.png" alt="Linking to an anchor" data-size="original">
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.

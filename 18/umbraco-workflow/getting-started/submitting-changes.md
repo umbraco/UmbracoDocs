@@ -8,9 +8,15 @@ When requesting workflow approval for content changes, editors must provide addi
 
 To submit the content changes, click the **Request publish** button in the editor footer.
 
+To submit an unpublish request, select **Request unpublish** from the **Request publish** button menu. The option is available when **Use workflow for unpublish** is enabled.
+
+{% hint style="info" %}
+Before Umbraco Workflow 18.2.4, unpublish requests were made by selecting the **Action** option in the request approval overlay.
+{% endhint %}
+
 ![Buttons](../.gitbook/assets/Buttons.png)
 
-The button opens the request approval overlay:
+Both options open the request approval overlay. The overlay headline shows the requested action and the document or element name:
 
 ![Request approval overlay](../.gitbook/assets/approval-request-overlay-detailed-v14.png)
 
@@ -19,9 +25,8 @@ Depending on the Document Type and Workflow settings, the overlay will provide i
 | Fields                   | Description                                                              | Visibility Conditions                                                                                                                                                       |
 | ------------------------ | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Describe the changes** | A field for adding comments to describe the changes made to the content. | Always visible.                                                                                                                                                             |
-| **Action**               | Allows to choose the workflow type - either Publish or Unpublish.        | Visible only when **Use Workflow for unpublish** is set to true. To enable this setting, go to **Workflow** > **Settings** > **Use Workflow for unpublish**.                |
 | **Attachment**           | Upload media or files attachment.                                        | Visible only when **Allow attachments** is set to true.                                                                                                                     |
-| **Publish on**           | A date picker for scheduling the content's publishing date.              | Editable only when **Allow scheduling** is set to true and the workflow type is **Publish**. It is not possible to schedule a **Publish on** date in an Unpublish workflow. |
+| **Publish on**           | A date picker for scheduling the content's publishing date.              | Visible only when **Allow scheduling** is set to true. Hidden for unpublish requests.                                                                                       |
 | **Unpublish on**         | A date picker for scheduling the content's unpublishing date.            | Visible only when **Allow scheduling** is set to true.                                                                                                                      |
 | **Variants**             | Allows selection of language variants to publish.                        | Visible only for variant content.                                                                                                                                           |
 

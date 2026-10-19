@@ -16,6 +16,34 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### [18.2.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.4) (October 13 2026)
+
+#### Adds separate Request publish and Request unpublish actions
+
+The **Request approval** button in the document and element workspaces is now labeled **Request publish**. When **Use workflow for unpublish** is enabled, a **Request unpublish** option is available from the button's menu [#185](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/185).
+
+The request dialog no longer includes the **Action** option. The dialog headline shows the requested action and the document or element name. The **Publish on** date is hidden for unpublish requests.
+
+Other changes to the request actions:
+
+* Adds an **Unpublish** option to the **Request publish** menu for users who can't access the CMS **Save and publish** button. The option is shown when **Use workflow for unpublish** is disabled.
+* Requesting an unpublish requires the publish permission when **Require publish for initiate** is enabled. This matches the rule for requesting a publish.
+* Fixes the workspace **Unpublish** action ignoring Workflow's visibility rules when **Use workflow for unpublish** is enabled.
+* Hides **Request publish** for documents and elements in the recycle bin.
+* Preselects the current variant in the request dialog, and marks variants that are already in a workflow.
+
+#### Bug fixes and other changes
+
+* Fixes documents without a default language variant being unable to be sent for approval. A variant now only needs to exist to be submitted, matching the CMS publish rules. When only one variant can be submitted, it is preselected [#194](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/194)
+* Allows the author or a Workflow administrator to cancel an approved workflow while its scheduled publish is pending. Cancelling the workflow clears the scheduled release [#188](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/188)
+* Hides the **Rollback** action on documents and elements while Workflow locks them. This prevents publishing a version that hasn't been approved [#187](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/187)
+* Fixes the empty scheduling section in the approval history details [#190](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/190)
+* Reloads the document or element after a workflow is started, actioned, or unlocked. The reload is skipped when there are unsaved changes.
+
+### [18.2.3](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.3) (October 9 2026)
+
+* Fixes approval group configuration failing under cultures that use a non-ASCII minus sign, such as Swedish [#186](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/186)
+
 ### [18.2.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.2) (September 30 2026)
 
 * Ensures entity bulk actions are included in Workflow's action-visibility condition [#184](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/184)

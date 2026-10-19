@@ -364,6 +364,7 @@ IProfiler
 IPs
 IRelation
 IScope
+ISearcher
 IService
 ISettings
 isFrozen
@@ -401,6 +402,7 @@ logfiles
 loginName
 logviewer
 lookups
+loopback
 Lucene
 Lucene's
 Lucide
@@ -667,6 +669,7 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
+subitems
 subnet
 subnets
 subpage
