@@ -153,6 +153,8 @@ builder.Services.AddOpenApi("myextension", options =>
 
 The method registers the security scheme and adds the requirement to each operation, skipping any operation marked with `[AllowAnonymous]`.
 
+If you register the document with `AddBackOfficeOpenApiDocument()`, as the Umbraco Extension Template does, call `WithBackOfficeAuthentication()` on the document instead. It calls `AddBackofficeSecurityRequirements()` for you.
+
 For a complete walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md), [Custom Backoffice API](../../../server-side-extensions/custom-backoffice-api.md), and [API versioning and OpenAPI](../../../server-side-extensions/api-versioning-and-openapi.md).
 
 ## Further reading

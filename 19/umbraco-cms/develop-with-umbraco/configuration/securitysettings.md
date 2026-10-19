@@ -8,6 +8,7 @@ The options in the security section allow you to configure all things security, 
 
 A full configuration with all default values can be seen here:
 
+{% code title="appsettings.json" %}
 ```json
 "Umbraco": {
   "CMS": {
@@ -21,6 +22,8 @@ A full configuration with all default values can be seen here:
       "UsernameIsEmail": true,
       "MemberRequireUniqueEmail": true,
       "AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\",
+      "UserBypassTwoFactorForExternalLogins": true,
+      "MemberBypassTwoFactorForExternalLogins": true,
       "BackOfficeHost": "http://your-domain.com",
       "CallbackPathName": "/umbraco",
       "UserPassword": {
@@ -54,6 +57,7 @@ A full configuration with all default values can be seen here:
   }
 }
 ```
+{% endcode %}
 
 ## Root level settings
 
@@ -153,7 +157,7 @@ The default lockout time for users is 30 days (43200 minutes).
 
 Use this setting to configure how long time a Member is locked out of the Umbraco website when a lockout occurs. The setting accepts an integer which defines the lockout in minutes.
 
-The default lockout time for users is 30 days (43200 minutes).
+The default lockout time for members is 30 days (43200 minutes).
 
 ### Allow concurrent logins
 
@@ -180,21 +184,25 @@ Controls concurrent login behavior for members only. When `null`, the value fall
 
 Allow concurrent logins for members but not backoffice users:
 
+{% code title="appsettings.json" %}
 ```json
 "Security": {
   "AllowConcurrentLogins": false,
   "MemberAllowConcurrentLogins": true
 }
 ```
+{% endcode %}
 
 Disable concurrent logins for backoffice users while keeping them enabled globally:
 
+{% code title="appsettings.json" %}
 ```json
 "Security": {
   "AllowConcurrentLogins": true,
   "UserAllowConcurrentLogins": false
 }
 ```
+{% endcode %}
 
 ### User login duration
 
