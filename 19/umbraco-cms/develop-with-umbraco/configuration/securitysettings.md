@@ -176,10 +176,6 @@ Type: `bool?` (default: `null`)
 
 Controls concurrent login behavior for members only. When `null`, the value falls back to `AllowConcurrentLogins`. Set to `true` or `false` to override the global setting for members.
 
-{% hint style="info" %}
-`UserAllowConcurrentLogins` and `MemberAllowConcurrentLogins` are available from Umbraco 17.3.
-{% endhint %}
-
 #### Configuration examples
 
 Allow concurrent logins for members but not backoffice users:

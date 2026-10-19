@@ -125,7 +125,6 @@ export class MyFetchEntityAction extends UmbEntityActionBase<never> {
 			this,
 			umbHttpClient.get({
 				url: `/umbraco/management/api/v1/my/item/${this.args.unique}`,
-				security: [{ scheme: 'bearer', type: 'http' }],
 			}),
 		);
 

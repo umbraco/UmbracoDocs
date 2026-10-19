@@ -215,7 +215,7 @@ Template options:
 The project runs on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0\&tabs=windows#kestrel) and is assigned a free available port. Check the terminal output after `dotnet run` for the exact URL.
 
 {% hint style="info" %}
-Cookies are shared between sites on `localhost`, no matter which port each site runs on. To sign in to more than one local backoffice at a time, give each site unique cookie names. See [Site name](../../develop-with-umbraco/configuration/securitysettings.md#site-name) in the security settings article.
+Cookies are shared between sites on `localhost`, no matter which port each site runs on. To sign in to more than one local backoffice at a time, give each site a unique authentication cookie name. See [Run more than one site on the same hostname](../../develop-with-umbraco/configuration/securitysettings.md#run-more-than-one-site-on-the-same-hostname) in the security settings article.
 {% endhint %}
 
 </details>

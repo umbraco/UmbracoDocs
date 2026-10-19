@@ -174,7 +174,6 @@ export const onInit: UmbEntryPointOnInit = async (host, extensionRegistry) => {
     // Your own endpoint decides, based on the signed-in user, whether they have access
     const { response } = await umbHttpClient.get({
         url: '/umbraco/my-reports/api/v1/access',
-        security: [{ scheme: 'bearer', type: 'http' }],
     });
     if (thisSession === session && response?.ok) {
         extensionRegistry.register(manifest);
