@@ -297,7 +297,6 @@ export class MyItemsDashboardElement extends UmbLitElement {
       umbHttpClient.get<{ 200: MyItemPage }>({
         url: ITEMS_URL,
         query: { take: 20 },
-        security: [{ scheme: "bearer", type: "http" }],
       }),
     );
     this._loading = false;
@@ -313,7 +312,6 @@ export class MyItemsDashboardElement extends UmbLitElement {
       umbHttpClient.post<{ 201: string }>({
         url: ITEMS_URL,
         query: { value },
-        security: [{ scheme: "bearer", type: "http" }],
       }),
     );
     // tryExecute has already shown a notification for the failed request
@@ -349,7 +347,6 @@ export class MyItemsDashboardElement extends UmbLitElement {
       this,
       umbHttpClient.delete({
         url: `${ITEMS_URL}/${item.id}`,
-        security: [{ scheme: "bearer", type: "http" }],
       }),
     );
     if (!error) this._items = this._items.filter((existing) => existing.id !== item.id);
@@ -519,7 +516,6 @@ const { data } = await tryExecute(
   umbHttpClient.get<{ 200: MyItemPage }>({
     url: "/umbraco/management/api/v1/my/item",
     query: { take: 20 },
-    security: [{ scheme: "bearer", type: "http" }],
   }),
 );
 ```
@@ -529,8 +525,8 @@ The differences from `$http` are:
 
 * **URLs**: The route of the controller and the HTTP method replace the action name in the URL, and IDs move into the path. Write the full path, starting with `/umbraco`.
 * **Property names**: The Management API returns camelCase property names. `UmbracoAuthorizedApiController` returned the C# names, so `data.Items` becomes `data.items`.
-* **Authentication**: `$http` sent the backoffice cookie. The Management API uses access tokens instead. The `security` array tells the Umbraco HTTP Client to add the token of the current user.
-* **Sessions**: The Umbraco HTTP Client refreshes an expired token. When the session has expired, it asks the user to log in again.
+* **Authentication**: Like `$http`, the Umbraco HTTP Client sends the authentication cookie of the current user. The request needs no authentication options.
+* **Sessions**: When the session has expired, the Umbraco HTTP Client asks the user to log in again.
 * **Errors**: `resourcePromise` shows a notification only for server errors, and passes other failures to your rejection handler. `tryExecute` returns an object with `data` and `error` instead of a rejected promise. When the request fails, it shows a notification with the title and detail from the problem details in the response.
 * **Types**: The type argument maps the status code to the response type, so `data` has the right type.
 * **Parameters**: Pass query string parameters in `query`, and a request body in `body`.
@@ -540,7 +536,7 @@ Responses with status 401, 403, or 404 do not show a notification. Check the ret
 If your API has an OpenAPI document, you can generate a typed client instead. The Umbraco Extension Template sets up a generated client for you. For details, see the [Custom Generated Client](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/custom-generated-client.md) article.
 
 {% hint style="info" %}
-Use the Fetch API only if you cannot use the Umbraco HTTP Client. With the Fetch API, you add the token and handle errors yourself. See the [Fetch API](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/fetch-api.md) article.
+Use the Fetch API only if you cannot use the Umbraco HTTP Client. With the Fetch API, you send the authentication cookie and handle errors yourself. See the [Fetch API](../../../extend-your-project/backoffice-extensions/foundation/fetching-data/fetch-api.md) article.
 {% endhint %}
 
 ### Replace Server Variables
@@ -588,7 +584,6 @@ const { data: config } = await tryExecute(
   this,
   umbHttpClient.get<{ 200: { pageSize: number } }>({
     url: "/umbraco/management/api/v1/my/config",
-    security: [{ scheme: "bearer", type: "http" }],
   }),
 );
 const pageSize = config?.pageSize ?? 20;

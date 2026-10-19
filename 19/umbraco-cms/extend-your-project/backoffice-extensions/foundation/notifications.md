@@ -99,7 +99,6 @@ export class MyProductImportController extends UmbControllerBase {
       this,
       umbHttpClient.post({
         url: "/umbraco/management/api/v1/my/products/import",
-        security: [{ scheme: "bearer", type: "http" }],
       }),
     );
 
@@ -220,7 +219,6 @@ export class MyProductValidationController extends UmbControllerBase {
       this,
       umbHttpClient.post({
         url: "/umbraco/management/api/v1/my/products/validate",
-        security: [{ scheme: "bearer", type: "http" }],
       }),
       { disableNotifications: true },
     );
