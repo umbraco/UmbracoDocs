@@ -12,7 +12,7 @@ Document Blueprints were previously called Content Templates.
 
 A Document Blueprint allows editors to preconfigure a content node. It serves as a reusable starting point when creating new content.
 
-Document Blueprints are managed in the **Library** section. To work with them, a user needs access to the **Library** section and a Document Blueprint start node. For more information, see the [Access to Document Blueprints](#access-to-document-blueprints) section.
+Document Blueprints are managed in the **Library** section. To work with them, a user needs access to the **Library** section and access to Document Blueprints (all or a start node). For more information, see the [Access to Document Blueprints](#access-to-document-blueprints) section.
 
 ### Method 1 – Create a Document Blueprint from the Content Section
 
@@ -98,7 +98,7 @@ To use a Document Blueprint, follow these steps:
 Access to Document Blueprints is configured on User Groups and Users, in the same way as for documents, media, and elements.
 
 * **Allow access to all document blueprints**: The user can manage every Document Blueprint and folder.
-* **Document blueprint start node**: The user can only manage the Document Blueprints within the selected folder. A User Group has one start node, while a User can have more than one. Folders above a start node are shown but cannot be used.
+* **Document blueprint start node**: The user can only manage the Document Blueprints within the selected folder. A User Group has one start node, while a User can have more than one. Folders above a start node are shown but cannot be selected.
 
 Within their start node, a user can create, edit, move, and delete Document Blueprints and folders. A user without any Document Blueprint access does not see the **Document Blueprints** tree.
 
@@ -110,6 +110,6 @@ For more information, see the [Users](../../../manage-and-publish-content/users-
 
 ## Restricting the Document Types for Document Blueprints
 
-Implementors and package creators can limit which Document Types are offered when creating a Document Blueprint. Use the `FilterAllowedForBlueprintsAsync` method of a Content Type Filter.
+As an implementer or package creator, you can limit which Document Types appear when you create a Document Blueprint. Use the `FilterAllowedForBlueprintsAsync` method of a Content Type Filter.
 
 For more information, see the [Filtering Allowed Content Types](../../../extend-your-project/server-side-extensions/content-type-filters.md) article.
