@@ -30,12 +30,11 @@ To learn more about OpenAPI and how to define your API specification, visit the 
 
 ## Connecting to Umbraco
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to your API on the Umbraco server. Call `configureClient()` on the `UMB_AUTH_CONTEXT` to set up all three. The method:
+Your generated client needs the URL of the Umbraco server, and it must send the authentication cookie of the backoffice. Call `configureClient()` on the `UMB_AUTH_CONTEXT` to set up both. The method:
 
 * Sets `baseUrl` to the URL of the Umbraco server.
-* Sets `credentials: 'include'`, so the browser sends the authentication cookies with every request.
-* Sets the `auth` callback, which supplies the access token for requests that carry `security` metadata. See [How security metadata works](#how-security-metadata-works).
-* Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
+* Sets `credentials: 'include'`, so the browser sends the authentication cookie with every request. See [Authentication](#authentication).
+* Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They count successful requests as activity for the session timeout. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
 
 {% hint style="info" %}
 The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.
@@ -81,7 +80,7 @@ export const onInit: UmbEntryPointOnInit = async (host) => {
     return;
   }
 
-  // Sets the base URL, credentials, and auth callback, and adds the default interceptors
+  // Sets the base URL and credentials, and adds the default interceptors
   authContext.configureClient(client);
 };
 ```
@@ -115,27 +114,29 @@ if (data) {
 
 The example above uses the backoffice HTTP client directly instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
-## How security metadata works
+## Authentication
 
-The `auth` callback on `umbHttpClient` only fires when a request carries `security` metadata. Here is how that metadata flows from your API to the generated client:
+The backoffice session is an HTTP-only authentication cookie. The browser sends the cookie with every request that uses `credentials: 'include'`, and scripts in the browser cannot read it. There is no access token to request, attach to a request, or refresh.
 
-1. Each operation in your OpenAPI spec has an optional `security` field listing the security schemes it requires. Example: `[{ "Backoffice-User": [] }]`.
-2. Those scheme names are defined in `components.securitySchemes`, where their type (OAuth2, HTTP Bearer, and so on) is declared.
-3. When hey-api generates your client, it reads both and resolves them into its own runtime shape - `security: [{ type: 'http', scheme: 'bearer' }]` - emitted directly into each generated SDK function.
+The cookie also authenticates your own API controllers when they use the backoffice authorization policies. For an example, see [Custom Backoffice API](../../../server-side-extensions/custom-backoffice-api.md).
 
-The resolved shape is what `umbHttpClient` checks before invoking the `auth` callback.
+{% hint style="info" %}
+In Umbraco 17 and 18, the client sent a bearer token that it got from the `auth` callback. Umbraco 19 removes `getLatestToken()` from the `UMB_AUTH_CONTEXT`, and `configureClient()` no longer sets an `auth` callback. Remove any code that adds an `Authorization` header to backoffice requests.
+{% endhint %}
 
-### Management API (automatic)
+### Expired sessions in your own controllers
 
-If your controllers are part of the Umbraco Management API — tagged with `[MapToApi("management")]` — Umbraco writes the `operation.security` requirement into the OpenAPI spec automatically. This is done by an `IOpenApiOperationTransformer` registered as part of the Management API configuration. It inspects each operation at document generation time. If the operation is marked `[AllowAnonymous]` (either on the action or the controller), the transformer explicitly clears its security. Otherwise, it adds a security requirement referencing the globally registered `"Backoffice-User"` scheme.
+When the session has expired, the server answers a request to an API controller with a 401 response. The interceptors of the backoffice then prompt the user to log in again. For your own controllers, the server answers with a 401 when the controller has the `[ApiController]` attribute. Controllers that inherit from `ManagementApiControllerBase` already have it, and so does the base controller in the Umbraco Extension Template. Without the attribute, the server redirects the request to the login page instead.
 
-When hey-api generates your client from that spec, it resolves the scheme and emits the runtime security metadata into each SDK function. No extra setup needed.
+{% hint style="info" %}
+The redirect is what you want for endpoints that people open directly in the browser rather than call from the backoffice. Examples are a link to a file download or a page that is shared by URL. Leave out `[ApiController]` on those controllers. To keep the redirect for a single action in an `[ApiController]` controller, add the `[AllowCookieRedirect]` attribute from `Microsoft.AspNetCore.Http` to the action.
+{% endhint %}
 
-### Custom separate API
+### Security requirements in the OpenAPI document
 
-If you expose a separate API with its own OpenAPI document, security requirements are not added automatically. The Management API ships an `AddBackofficeSecurityRequirements()` extension method that registers both the document-level Bearer scheme and the per-operation requirement (skipping any operation marked with `[AllowAnonymous]`).
+Generated SDK functions can include `security` metadata from your OpenAPI document. The backoffice does not use the metadata, so you do not need to pass `security` when you call `umbHttpClient` directly.
 
-Call it on the `OpenApiOptions` passed into `AddOpenApi`:
+The security requirements still matter to Swagger UI and to [API Users](../../../../manage-and-publish-content/users-and-members/users/api-users.md), which authenticate with access tokens. Umbraco adds the requirements to the Management API automatically. If you expose a separate API with its own OpenAPI document, call `AddBackofficeSecurityRequirements()` on the `OpenApiOptions` passed into `AddOpenApi`:
 
 {% code title="MyExtensionApiComposer.cs" %}
 ```csharp
@@ -150,26 +151,11 @@ builder.Services.AddOpenApi("myextension", options =>
 ```
 {% endcode %}
 
-No `AddSecurityDefinition` call is needed — `AddBackofficeSecurityRequirements()` adds it. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
+The method registers the security scheme and adds the requirement to each operation, skipping any operation marked with `[AllowAnonymous]`.
+
+If you register the document with `AddBackOfficeOpenApiDocument()`, as the Umbraco Extension Template does, call `WithBackOfficeAuthentication()` on the document instead. It calls `AddBackofficeSecurityRequirements()` for you.
 
 For a complete walkthrough of setting up a custom API, see [Creating a Backoffice API](../../../tutorials/creating-a-backoffice-api/README.md), [Custom Backoffice API](../../../server-side-extensions/custom-backoffice-api.md), and [API versioning and OpenAPI](../../../server-side-extensions/api-versioning-and-openapi.md).
-
-### Direct calls without a generated client
-
-When calling `umbHttpClient` directly — without a generated SDK function — there is no spec to derive security metadata from. Pass it explicitly on each call:
-
-{% code title="my-element.ts" %}
-```typescript
-import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
-
-const { data } = await umbHttpClient.get({
-    url: '/umbraco/myextension/api/v1/endpoint',
-    security: [{ type: 'http', scheme: 'bearer' }],
-});
-```
-{% endcode %}
-
-See [Umbraco HTTP Client](http-client.md) for more details.
 
 ## Further reading
 

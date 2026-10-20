@@ -22,7 +22,7 @@ Wrap requests to Umbraco and to your own API in [`tryExecute`](try-execute.md), 
 
 ### [Umbraco HTTP Client](http-client.md)
 
-The Umbraco HTTP Client, `umbHttpClient`, is the client the backoffice uses for its own requests. It adds the access token of the current user. When the session expires, it asks the user to log in again. The [Umbraco HTTP Client](http-client.md) article lists what it handles.
+The Umbraco HTTP Client, `umbHttpClient`, is the client the backoffice uses for its own requests. It sends the authentication cookie of the current user. When the session expires, it asks the user to log in again. The [Umbraco HTTP Client](http-client.md) article lists what it handles.
 
 ### [Custom Generated Client](custom-generated-client.md)
 
@@ -30,7 +30,7 @@ A generated client gives you a typed function for each endpoint of your API. The
 
 ### [Fetch API](fetch-api.md)
 
-Use the Fetch API for third-party APIs, and when you cannot use the Umbraco HTTP Client. The Umbraco HTTP Client treats a 401 response as an expired backoffice session, so it doesn't suit a third-party API. A request with the Fetch API doesn't get the token, the error handling, or the notifications of the backoffice.
+Use the Fetch API for third-party APIs, and when you cannot use the Umbraco HTTP Client. The Umbraco HTTP Client treats a 401 response as an expired backoffice session, so it doesn't suit a third-party API. A request with the Fetch API doesn't get the login prompt, the error handling, or the notifications of the backoffice.
 
 ## [Executing Requests](try-execute.md)
 

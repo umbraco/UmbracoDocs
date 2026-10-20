@@ -4,7 +4,7 @@ description: Learn how to execute requests in the Backoffice.
 
 # Executing Requests
 
-Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and shows a notification when a request fails. The Umbraco HTTP Client refreshes an expired token, and prompts the user to log in again when the session has expired.
+Requests can be made using the Fetch API or the Umbraco HTTP client. The Backoffice also provides a `tryExecute` function that you can use to execute requests. This function handles any errors that occur during the request and shows a notification when a request fails. The Umbraco HTTP Client prompts the user to log in again when the session has expired.
 
 {% hint style="info" %}
 You can read the technical documentation for the `tryExecute` function in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui-api/functions/packages_core_resources.tryExecute.html) class.
@@ -49,7 +49,7 @@ The `tryExecute` function shows a notification when the request throws an error:
 
 Error responses with status 401, 403 or 404 do not show a notification. The rule covers the Umbraco HTTP Client, a generated client, and any request that throws an `UmbApiError` with the status. Check the returned `error`, and handle these responses in your code.
 
-Requests that you cancel with the `abortSignal` option, as described in [Cancelling Requests](#cancelling-requests), do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status. The server usually sends its own notification for those.
+Requests that you cancel with the `abortSignal` option, as described in [Cancelling Requests](#cancelling-requests), do not show a notification either. Neither do error responses with the `CancelledByNotification` operation status, when the client has shown the event messages from the server instead. See [Event Messages](../notifications.md#event-messages).
 
 The notification shows the `title` and `detail` of the problem details in the response body. The body must contain `type`, `title` and `status`, or the notification shows a generic message instead. In a controller, `Problem()` returns such a body.
 
@@ -118,4 +118,4 @@ const { data, error } = await tryExecute(this, umbHttpClient.get({
 ```
 {% endcode %}
 
-Pass the signal to the `abortSignal` option here too, so a timeout returns an `UmbCancelError` like any other cancellation.
+A timeout returns an `UmbCancelError` like any other cancellation, and `tryExecute` does not show a notification.

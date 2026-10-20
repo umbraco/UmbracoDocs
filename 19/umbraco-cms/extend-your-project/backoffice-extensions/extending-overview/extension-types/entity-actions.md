@@ -110,7 +110,7 @@ export { MyEntityAction as api };
 The `execute()` method is flexible and allows developers to perform nearly any task on an entity. Developers can perform network requests with the [Umbraco HTTP Client](../../foundation/fetching-data/http-client.md), or access a repository. The following example gets an item from the API in the [Creating a backoffice API](../../../tutorials/creating-a-backoffice-api/README.md) tutorial.
 
 {% hint style="info" %}
-The [Executing Requests](../../foundation/fetching-data/) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
+The [Fetching Data](../../foundation/fetching-data/) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
 {% endhint %}
 
 {% code title="entity-action/my-fetch-entity-action.ts" %}
@@ -125,7 +125,6 @@ export class MyFetchEntityAction extends UmbEntityActionBase<never> {
 			this,
 			umbHttpClient.get({
 				url: `/umbraco/management/api/v1/my/item/${this.args.unique}`,
-				security: [{ scheme: 'bearer', type: 'http' }],
 			}),
 		);
 
@@ -198,7 +197,7 @@ Each permission has a set of verbs that will be checked against on both the clie
 | F                        | Umb.Document.Read                |
 | A                        | Umb.Document.Update              |
 | D                        | Umb.Document.Delete              |
-| I                        | Umb.Document.CreateBlueprint     |
+| ï                        | Umb.Document.CreateBlueprint     |
 | N                        | Umb.Document.Notifications       |
 | U                        | Umb.Document.Publish             |
 | R                        | Umb.Document.Permissions         |

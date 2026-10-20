@@ -45,7 +45,6 @@ export class MyItemsElement extends UmbLitElement {
       umbHttpClient.get<{ 200: MyItemPage }>({
         url: "/umbraco/management/api/v1/my/item",
         query: { skip: 0, take: 10 },
-        security: [{ scheme: "bearer", type: "http" }],
       }),
     );
     if (error || !data) return;
@@ -67,7 +66,8 @@ The request takes these options:
 
 * `url`: the path of the endpoint, starting with `/umbraco`.
 * `query`: the query string parameters.
-* `security`: tells the client to add the access token of the current user. Generated SDK functions include this metadata. Direct calls, like the one above, must pass it.
+
+The request needs no authentication options. The client sends the authentication cookie of the current user with every request.
 
 The type argument maps the status code to the type of `data`, so `data.items` has the right type.
 
@@ -84,7 +84,6 @@ const { error } = await tryExecute(
   umbHttpClient.post({
     url: "/umbraco/myextension/api/v1/items",
     body: { name: "My item" },
-    security: [{ scheme: "bearer", type: "http" }],
   }),
 );
 ```
@@ -103,7 +102,6 @@ const { data: id, error } = await tryExecute(
   umbHttpClient.post<{ 201: string }>({
     url: "/umbraco/management/api/v1/my/item",
     query: { value: "New item" },
-    security: [{ scheme: "bearer", type: "http" }],
   }),
 );
 ```
@@ -113,7 +111,8 @@ const { data: id, error } = await tryExecute(
 
 The Umbraco HTTP Client handles these responses for you:
 
-* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again.
+* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. For your own API controllers, the server answers with a 401 response only when the controller has the `[ApiController]` attribute. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Session activity**: The client counts successful requests as activity for the session timeout.
 * **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification, except for 401, 403 and 404 responses. See [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
 * **Server notifications**: The client shows the notifications that the server sends in the `Umb-Notifications` header.
 * **Created items**: The client returns the ID from the `Umb-Generated-Resource` header as `data`.

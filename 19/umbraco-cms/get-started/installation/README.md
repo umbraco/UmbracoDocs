@@ -101,7 +101,7 @@ Umbraco Docker Compose       umbraco-compose                            Web/CMS/
 
 Run `dotnet new umbraco -h` to see all available options:
 
-```
+```text
 Umbraco Project (C#)
 Author: Umbraco HQ
 Description: An empty Umbraco project ready to get started.
@@ -126,9 +126,9 @@ Template options:
                                                Latest  The latest umbraco release
                                                LTS     The most recent long term supported version
                                              Default: Latest
-   -pm, --package-management <choice>         Choose how to manage NuGet package versions
+  -pm, --package-management <choice>         Choose how to manage NuGet package versions
                                              Type: choice
-                                               Central     Use Directory.Packages.props (recommended for new projects)
+                                               Central     Use Directory.Packages.props (recommended for new standalone projects)
                                                PerProject  Use versions in .csproj (recommended when adding to existing projects)
                                              Default: Central
   --use-https-redirect                       Adds code to Startup.cs to redirect HTTP to HTTPS and enables the UseHttps setting.
@@ -170,8 +170,12 @@ Template options:
   --password <password>                      Used to specify the password of the default admin user when using unattended install on
                                              development (stored as plain text).
                                              Type: string
-  --telemetry-level <telemetry-level>        Used to specify the level of telemetry the installation will report (Minimal, Basic or Detailed).
-                                             Type: string
+  --telemetry-level <choice>                 Specifies the level of telemetry information the installation will report.
+                                             Type: choice
+                                               Minimal   Minimal information
+                                               Basic     Basic information
+                                               Detailed  Detailed information
+                                             Default: Detailed
   --no-nodes-view-path <no-nodes-view-path>  Path to a custom view presented with the Umbraco installation contains no published
                                              content.
                                              Type: string
@@ -212,10 +216,10 @@ Template options:
 
 <summary>About the port and local cookies</summary>
 
-The project runs on the [Kestrel server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0\&tabs=windows#kestrel) and is assigned a free available port. Check the terminal output after `dotnet run` for the exact URL.
+The project runs on the [Kestrel server](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) and is assigned a free available port. Check the terminal output after `dotnet run` for the exact URL.
 
 {% hint style="info" %}
-Cookies are shared between sites on `localhost`, no matter which port each site runs on. To sign in to more than one local backoffice at a time, give each site unique cookie names. See [Site name](../../develop-with-umbraco/configuration/securitysettings.md#site-name) in the security settings article.
+Cookies are shared between sites on `localhost`, no matter which port each site runs on. To sign in to more than one local backoffice at a time, give each site a unique authentication cookie name. See [Run more than one site on the same hostname](../../develop-with-umbraco/configuration/securitysettings.md#run-more-than-one-site-on-the-same-hostname) in the security settings article.
 {% endhint %}
 
 </details>
