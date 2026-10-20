@@ -112,6 +112,20 @@ By default Umbraco will not allow creation of more than one member account with 
 
 Defines the allowed characters for a username.
 
+### User bypass two-factor for external logins
+
+Key: `UserBypassTwoFactorForExternalLogins`
+Type: `bool` (default: `true`)
+
+When `true`, a backoffice user who signs in with an [external login provider](../../run-in-production/security/external-login-providers.md) is not asked for Umbraco's [two-factor authentication](../../run-in-production/security/two-factor-authentication.md). Umbraco relies on the external provider instead, including any two-factor check the provider enforces. Set it to `false` to also ask users who have two-factor authentication enabled in Umbraco for their code after an external login.
+
+### Member bypass two-factor for external logins
+
+Key: `MemberBypassTwoFactorForExternalLogins`
+Type: `bool` (default: `true`)
+
+The same setting for members who sign in to the website with an external login provider. Members who sign in through the Delivery API with an external login provider always skip Umbraco's two-factor authentication, regardless of this setting.
+
 ### BackOffice Host
 
 Use this setting to override the Backoffice host URL. This is useful when the Backoffice client runs from a different origin than the Umbraco server. For example, in proxied, cloud-hosted setups, or when developing locally using Vite or another dev server.
