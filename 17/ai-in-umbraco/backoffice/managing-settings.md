@@ -71,6 +71,23 @@ When set, this profile is used by:
 - `IAISpeechToTextService.TranscribeAsync()` without a profile ID
 - The voice input button in Contextual Copilot and Copilot Workspace
 
+### Default Image Generation Profile
+
+The profile used for image generation when no profile is explicitly specified.
+
+{% hint style="warning" %}
+Image Generation is experimental. This setting is only shown when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
+{% endhint %}
+
+| Field                            | Description                                     |
+| -------------------------------- | ----------------------------------------------- |
+| Default Image Generation Profile | Select from available Image Generation profiles |
+
+When set, this profile is used by:
+
+- `IAIImageGenerationService.GenerateImagesAsync()` without a profile
+- The Image Generation Management API and `UaiImageGenerationController` without a `profileIdOrAlias`
+
 ### Default Decision Profile
 
 The profile used for decisions when no profile is explicitly specified.

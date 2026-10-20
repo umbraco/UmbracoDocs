@@ -9,7 +9,7 @@ description: >-
 Image Generation is **experimental**. The API surface may change between releases. It is disabled by default — see [Enabling image generation](#enabling-image-generation) below.
 {% endhint %}
 
-The Image Generation API produces images from text prompts and edits existing images. It is a thin layer over [Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/)'s `IImageGenerator`, adding Umbraco profiles, connections, guardrails, and observability (auditing, telemetry, usage tracking).
+The Image Generation API produces images from text prompts and edits existing images. It is a thin layer over [Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/)'s `IImageGenerator`, adding Umbraco profiles, connections, and observability (auditing, telemetry, usage tracking).
 
 ## Enabling image generation
 
@@ -47,7 +47,7 @@ The C# API surface is annotated with the `UMBRACOAI_IMAGEGEN` diagnostic. Becaus
 
 {% endcode %}
 
-Once enabled, restart the site. A **Default Image Generation Profile** setting appears under **Settings > AI > Settings**, and Image Generation becomes selectable when creating a profile.
+Once enabled, restart the site. A **Default Image Generation Profile** setting appears under **AI** > **Settings**, and Image Generation becomes selectable when creating a profile.
 
 ## What you can do
 
@@ -107,8 +107,6 @@ All methods accept an `Action<AIImageGenerationBuilder>` to configure the reques
 | `.WithProfile(string profileAlias)` | Selects a profile by alias. |
 | `.WithImageGenerationOptions(ImageGenerationOptions options)` | Overrides profile defaults (size, count, response format). |
 | `.WithOriginalImages(IEnumerable<AIContent> images)` | Supplies images to edit (maskless edit — Tier 2). |
-| `.WithGuardrails(params string[] aliases)` | Adds guardrails on top of the profile's (additive). |
-| `.SetGuardrails(params string[] aliases)` | Replaces the profile's guardrails. |
 | `.WithContextItems(IEnumerable<AIRequestContextItem> items)` | Attaches context items to the request. |
 
 ## Setting up image generation

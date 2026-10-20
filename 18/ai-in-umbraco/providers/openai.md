@@ -6,7 +6,7 @@ description: >-
 
 # OpenAI
 
-OpenAI provides access to GPT, text-embedding, and image models, supporting Chat, Embedding, Speech-to-Text, and Image Generation capabilities. Image Generation is experimental — see [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
+OpenAI provides access to GPT, text-embedding, and image models, supporting Chat, Embedding, Speech-to-Text, and Image Generation capabilities. Image Generation is experimental. See [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
 
 ## Installation
 

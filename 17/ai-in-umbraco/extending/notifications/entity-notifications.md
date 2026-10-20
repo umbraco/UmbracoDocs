@@ -22,6 +22,7 @@ Umbraco.AI publishes notifications for all entity lifecycle operations. Subscrib
 | **AIChat** (Inline) | - | - | ✅ |
 | **AISpeechToText** (Inline) | - | - | ✅ |
 | **AIEmbedding** (Inline) | - | - | ✅ |
+| **AIImageGeneration** (Inline, experimental) | - | - | ✅ |
 | **`AITool`** | - | - | ✅ |
 
 `AIAgent` also publishes `AIAgentSelectedNotification` when Auto mode picks an agent. For details, see [Agent Selection Notifications](#agent-selection-notifications).
@@ -302,6 +303,17 @@ The `AITestRollingBackNotification` and `AITestRolledBackNotification` expose on
 |---|---|---|
 | `AIEmbeddingExecutingNotification` | Yes | `EmbeddingId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Messages`, `Cancel` |
 | `AIEmbeddingExecutedNotification` | No | `EmbeddingId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Duration` (TimeSpan), `IsSuccess` (bool), `Messages` |
+
+## Inline Image Generation Notifications
+
+**Namespace:** `Umbraco.AI.Core.ImageGeneration`
+
+Published around each `IAIImageGenerationService.GenerateImagesAsync()` call. Image Generation is experimental. See [Image Generation](../../using-the-api/image-generation/README.md).
+
+| Notification | Cancelable | Key Properties |
+|---|---|---|
+| `AIImageGenerationExecutingNotification` | Yes | `GenerationId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Messages`, `Cancel` |
+| `AIImageGenerationExecutedNotification` | No | `GenerationId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Duration` (TimeSpan), `IsSuccess` (bool), `Messages` |
 
 ## Tool Execution Notifications
 

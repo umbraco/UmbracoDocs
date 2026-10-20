@@ -21,7 +21,7 @@ Supply one or more original images alongside the prompt. The model transforms th
 using Microsoft.Extensions.AI;
 using Umbraco.AI.Core.ImageGeneration;
 
-public async Task<IReadOnlyList<AIContent>> AddSnow(byte[] originalPng)
+public async Task<IList<AIContent>> AddSnow(byte[] originalPng)
 {
     var original = new DataContent(originalPng, "image/png");
 
@@ -65,7 +65,7 @@ var imageClient = openAiClient!.GetImageClient("gpt-image-1");
 {% endcode %}
 
 {% hint style="warning" %}
-`GetService` is OpenAI/Azure-OpenAI specific — other providers will not return an `OpenAIClient`. Raw calls made this way **bypass the usage and audit middleware**. To keep them visible in analytics and audit, wrap them in `InvokeWithTrackingAsync` (below).
+Resolving `OpenAIClient` through `GetService` is OpenAI specific — other providers will not return one. Raw calls made this way **bypass the usage and audit middleware**. To keep them visible in analytics and audit, wrap them in `InvokeWithTrackingAsync` (below).
 {% endhint %}
 
 ## Keeping raw calls tracked

@@ -30,7 +30,7 @@ public class HeroBanner
         _imageGenerationService = imageGenerationService;
     }
 
-    public async Task<IReadOnlyList<AIContent>> Generate()
+    public async Task<IList<AIContent>> Generate()
     {
         var response = await _imageGenerationService.GenerateImagesAsync(
             img => img.WithAlias("hero-banner"),
@@ -53,6 +53,9 @@ Each item in `response.Contents` is a `DataContent` (inline bytes) or `UriConten
 #pragma warning disable MEAI001 // ImageGenerationOptions is experimental in M.E.AI
 #pragma warning disable UMBRACOAI_IMAGEGEN
 
+using System.Drawing;
+using Microsoft.Extensions.AI;
+
 var response = await _imageGenerationService.GenerateImagesAsync(
     img => img
         .WithAlias("product-shot")
@@ -68,7 +71,7 @@ var response = await _imageGenerationService.GenerateImagesAsync(
 
 {% endcode %}
 
-Profile-level defaults (size, quality, style, output media type) come from `AIImageGenerationProfileSettings`; options passed to the builder override them per call.
+Profile-level defaults (size and output media type) come from `AIImageGenerationProfileSettings`. Options passed to the builder override them per call. Quality and style are not core settings. The OpenAI provider adds them to the profile as provider-specific settings.
 
 ## Validating models and sizes up front
 
@@ -98,7 +101,7 @@ Constraint metadata keys include `image.supportedSizes`, `image.maxEdge`, `image
 
 ## Observability
 
-`GenerateImagesAsync` runs through the full middleware pipeline — usage tracking, audit entries, guardrails, and telemetry — and publishes `AIImageGenerationExecutingNotification` / `AIImageGenerationExecutedNotification`. Every call requires an alias (`.WithAlias(...)`) so it can be attributed in analytics and audit logs.
+`GenerateImagesAsync` runs through the full middleware pipeline — usage tracking, audit entries, and telemetry — and publishes `AIImageGenerationExecutingNotification` / `AIImageGenerationExecutedNotification`. Every generation call requires an alias (`.WithAlias(...)`) so it can be attributed in analytics and audit logs.
 
 ## Related
 
