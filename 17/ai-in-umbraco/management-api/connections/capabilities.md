@@ -14,6 +14,7 @@ Get information about available AI capabilities across all connections.
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities`                  | List all available capabilities                  |
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities/{capability}`     | Get connections that support a capability        |
 | GET    | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/capabilities` | Get capabilities supported by a specific connection |
+| GET    | `/umbraco/ai/management/api/v1/capabilities/enabled`                      | List capabilities enabled on this install        |
 
 ## List All Capabilities
 
@@ -133,12 +134,52 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/connections/open
 
 {% endcode %}
 
+## List Enabled Capabilities
+
+Returns the capabilities enabled on this install, whether or not any connection supports them. Use it to check whether an experimental capability is switched on.
+
+### Endpoint
+
+```
+GET /umbraco/ai/management/api/v1/capabilities/enabled
+```
+
+### Response (200 OK)
+
+{% code title="Response" %}
+
+```json
+["Chat", "Embedding", "SpeechToText", "Decision"]
+```
+
+{% endcode %}
+
+The response is a plain JSON array of capability names:
+
+- Generally available capabilities are always included.
+- An experimental capability, such as `Decision`, is only included when its feature flag is enabled.
+- Reserved values that have no implementation are never included.
+
+The endpoint requires access to the AI section, like the other capability endpoints.
+
+### Example
+
+{% code title="cURL" %}
+
+```bash
+curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/capabilities/enabled" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+{% endcode %}
+
 ## Available Capabilities
 
 | Capability  | Description                           |
 | ----------- | ------------------------------------- |
 | `Chat`      | Conversational AI and text generation |
 | `Embedding` | Vector embeddings for semantic search |
+| `Decision`  | Typed yes/no, pick-one, and score answers (experimental) |
 
 ## Use Cases
 

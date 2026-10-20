@@ -41,6 +41,7 @@ The API uses URL-based versioning. The current version is `v1`.
 | POST   | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/test`   | Test a connection             |
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities`                 | List available capabilities   |
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities/{capability}`    | Get connections by capability |
+| GET    | `/umbraco/ai/management/api/v1/capabilities/enabled`                     | List capabilities enabled on this install |
 | GET    | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/models` | Get available models          |
 
 ### Profile Management
@@ -139,6 +140,14 @@ The API uses URL-based versioning. The current version is `v1`.
 | ------ | --------------------------------------------------- | ------------------- |
 | POST   | `/umbraco/ai/management/api/v1/embeddings/generate` | Generate embeddings |
 
+### Decision Operations (Experimental)
+
+Returns 404 unless the `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+
+| Method | Endpoint                                      | Description                                  |
+| ------ | --------------------------------------------- | -------------------------------------------- |
+| POST   | `/umbraco/ai/management/api/v1/decision/ask`  | [Ask a decision](../decision/ask-decision.md) |
+
 ## IdOrAlias Pattern
 
 Many endpoints accept an `IdOrAlias` parameter, which can be either:
@@ -230,4 +239,8 @@ Response includes total count:
 
 {% content-ref url="../embeddings/" %}
 [embeddings](../embeddings/)
+{% endcontent-ref %}
+
+{% content-ref url="../decision/" %}
+[decision](../decision/)
 {% endcontent-ref %}
