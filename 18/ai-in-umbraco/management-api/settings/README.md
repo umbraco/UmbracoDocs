@@ -31,6 +31,7 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "classifierChatProfileId": null,
     "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
@@ -46,6 +47,7 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
 | `defaultEmbeddingProfileId` | GUID     | Default profile for embedding operations |
 | `classifierChatProfileId`   | GUID     | Optional profile for classification tasks |
 | `defaultSpeechToTextProfileId` | GUID  | Default profile for speech-to-text operations |
+| `defaultImageGenerationProfileId` | GUID  | Default profile for image generation (experimental) |
 | `defaultDecisionProfileId`  | GUID     | Default profile for decisions (experimental) |
 | `disclosureNoticeMode`      | string   | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
