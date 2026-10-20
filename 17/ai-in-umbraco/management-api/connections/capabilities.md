@@ -12,7 +12,7 @@ Get information about available AI capabilities across all connections.
 | Method | Endpoint                                                                  | Description                                      |
 | ------ | ------------------------------------------------------------------------- | ------------------------------------------------ |
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities`                  | List all available capabilities                  |
-| GET    | `/umbraco/ai/management/api/v1/connections/capabilities/{capability}`     | Get connections that support a capability        |
+| GET    | `/umbraco/ai/management/api/v1/connections?capability={capability}`       | Get connections that support a capability        |
 | GET    | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/capabilities` | Get capabilities supported by a specific connection |
 | GET    | `/umbraco/ai/management/api/v1/capabilities/enabled`                      | List capabilities enabled on this install        |
 
@@ -29,14 +29,12 @@ GET /umbraco/ai/management/api/v1/connections/capabilities
 {% code title="Response" %}
 
 ```json
-{
-    "items": ["Chat", "Embedding"]
-}
+["Chat", "Embedding"]
 ```
 
 {% endcode %}
 
-This returns capabilities that are available from at least one configured connection.
+The response is a plain JSON array of the capabilities that at least one configured connection supports. Experimental capabilities that are not enabled are left out.
 
 ### Example
 
@@ -53,15 +51,21 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/connections/capa
 
 ### Endpoint
 
+Use the `capability` query parameter on the [List Connections](list.md) endpoint.
+
 ```
-GET /umbraco/ai/management/api/v1/connections/capabilities/{capability}
+GET /umbraco/ai/management/api/v1/connections?capability={capability}
 ```
 
-### Path Parameters
+### Query Parameters
 
-| Parameter    | Type   | Description                       |
-| ------------ | ------ | --------------------------------- |
-| `capability` | string | Capability name (Chat, Embedding) |
+| Parameter    | Type   | Description                                                  |
+| ------------ | ------ | ------------------------------------------------------------ |
+| `capability` | string | Capability name, such as `Chat` or `Embedding`. Not case-sensitive. |
+
+The `filter`, `providerId`, `skip`, and `take` parameters from [List Connections](list.md) still apply.
+
+If the value is not a known capability name, the filter is ignored and all connections are returned. If the capability is experimental and not enabled, the list is empty.
 
 ### Response (200 OK)
 
@@ -69,16 +73,19 @@ GET /umbraco/ai/management/api/v1/connections/capabilities/{capability}
 
 ```json
 {
+    "total": 1,
     "items": [
         {
             "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "alias": "openai-prod",
             "name": "OpenAI Production",
             "providerId": "openai",
-            "isActive": true
+            "isActive": true,
+            "dateCreated": "2024-01-15T10:30:00Z",
+            "dateModified": "2024-01-20T14:45:00Z",
+            "version": 2
         }
-    ],
-    "total": 1
+    ]
 }
 ```
 
@@ -89,7 +96,7 @@ GET /umbraco/ai/management/api/v1/connections/capabilities/{capability}
 {% code title="cURL" %}
 
 ```bash
-curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/connections/capabilities/Chat" \
+curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/connections?capability=Chat" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -114,14 +121,12 @@ GET /umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/capabilities
 {% code title="Response" %}
 
 ```json
-{
-    "items": ["Chat", "Embedding"]
-}
+["Chat", "Embedding"]
 ```
 
 {% endcode %}
 
-This returns the capabilities supported by the specified connection's provider.
+The response is a plain JSON array of the capabilities that the connection's provider supports. Experimental capabilities that are not enabled are left out. If the connection does not exist, the endpoint returns `404 Not Found`.
 
 ### Example
 
@@ -189,7 +194,7 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/capabilities/ena
 
 ```javascript
 async function canCreateChatProfile() {
-    const response = await fetch("/umbraco/ai/management/api/v1/connections/capabilities/Chat", {
+    const response = await fetch("/umbraco/ai/management/api/v1/connections?capability=Chat", {
         credentials: "include",
     });
 
@@ -208,8 +213,7 @@ async function canCreateChatProfile() {
 async function getAvailableCapabilities() {
     const response = await fetch("/umbraco/ai/management/api/v1/connections/capabilities", { credentials: "include" });
 
-    const { items } = await response.json();
-    return items;
+    return await response.json();
 }
 
 // Usage

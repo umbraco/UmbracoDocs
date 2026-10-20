@@ -189,9 +189,9 @@ Capabilities are defined by interfaces in `Umbraco.AI.Core`:
 ```csharp
 public interface IAIChatCapability : IAICapability
 {
-    Task<IChatClient> CreateChatClientAsync(
-        object settings,
-        AIProfile profile,
+    Task<IChatClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -203,9 +203,9 @@ public interface IAIChatCapability : IAICapability
 ```csharp
 public interface IAIEmbeddingCapability : IAICapability
 {
-    Task<IEmbeddingGenerator<string, Embedding<float>>> CreateEmbeddingGeneratorAsync(
-        object settings,
-        AIProfile profile,
+    Task<IEmbeddingGenerator<string, Embedding<float>>> CreateGeneratorAsync(
+        object? settings,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -217,9 +217,9 @@ public interface IAIEmbeddingCapability : IAICapability
 ```csharp
 public interface IAISpeechToTextCapability : IAICapability
 {
-    Task<ISpeechToTextClient> CreateSpeechToTextClientAsync(
-        object settings,
-        AIProfile profile,
+    Task<ISpeechToTextClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
