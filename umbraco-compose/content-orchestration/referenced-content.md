@@ -113,9 +113,68 @@ References don't need to go both directions. If you only wish to use the relatio
 For example, if your application never needs to show a list of all articles by an author, then you might choose to omit the articles property (and therefore reference) from an author.
 {% endhint %}
 
+## Automatic Bidirectional References
+
+References normally only exist on the type schema that defines them. In the article and author example, an article knows its author. An author has no way back to its articles unless you also define and ingest data in the reverse direction.
+
+It is also possible to automatically generate a reference in the other direction by setting the `bidirectional` delivery property.
+
+```json
+{
+    "$schema": "https://umbracocompose.com/v1/schema",
+    "allOf": [
+        { "$ref": "https://umbracocompose.com/v1/node" }
+    ],
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "author": {
+            "type": "object",
+            "$ref": "author",
+            "$delivery": {
+                "bidirectional": true
+            }
+        }
+    }
+}
+```
+
+When `bidirectional` is enabled, in GraphQL the destination type will contain a generated property that returns all the source content that points at it.
+
+The reverse field is named after the type that defines the reference, followed by the name of the reference property. In the example above, the `Author` type gains an `articleAuthor` field.
+
+```graphql
+query {
+  content {
+    items {
+      ... on Author {
+        name
+        articleAuthor {
+          items {
+            ... on Article {
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+The reverse field is a paginated connection returning 10 items per page by default. It accepts a `variant` argument for retrieving the referencing content in a specific variant.
+
+{% hint style="info" %}
+Automatic bidirectional references work for both many-to-one (object) and many-to-many (array) references.
+
+However, for many-to-many references the destination type must be a concrete type schema, not an interface.
+{% endhint %}
+
+
 ## Retrieval
 
-Retrieving referenced content instances via GraphQL can be done with a fragment. It is up to your query to handle any possible referenced types.
+Single item references resolve to the strongly-typed referenced content item. Array references resolve to a paginated connection, where the referenced items are returned under an `items` field. Use a fragment when querying these.
 
 For the article/author scenario, a sample GraphQL query might look like the following.
 
@@ -126,9 +185,15 @@ query {
       ... on Article {
         title
         author {
+          name
+        }
+      }
+      ... on Author {
+        name
+        articles {
           items {
-            ... on Author {
-              name
+            ... on Article {
+              title
             }
           }
         }
@@ -136,5 +201,4 @@ query {
     }
   }
 }
-
 ```

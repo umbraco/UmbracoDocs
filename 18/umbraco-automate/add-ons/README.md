@@ -18,6 +18,8 @@ Add-ons are NuGet packages that add new triggers and actions to Umbraco Automate
 | [Commerce](commerce/) | Triggers and actions for orders, payments, stock, discounts, and gift cards.                                                           |
 | [Engage](engage/)     | Triggers for A/B tests, segments, personas, and customer journeys. Actions for goals, persona scoring, and journey scoring.            |
 | [Deploy](deploy/)     | Deploy lifecycle triggers, plus Umbraco Deploy support for transferring automations, workspaces, and connections between environments. |
+| [Workflow](workflow/) | Triggers for the content approval lifecycle, task assignment, workflow emails, and content reviews.                                    |
+| [UI Builder](uibuilder/) | Triggers for entity changes in UI Builder collections. Actions for creating and deleting entities.                                 |
 
 ## Installing an Add-on
 

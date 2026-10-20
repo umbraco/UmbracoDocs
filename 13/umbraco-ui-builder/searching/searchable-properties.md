@@ -1,5 +1,7 @@
 ---
-description: Configuring searchable properties in Umbraco UI Builder, the backoffice UI builder for Umbraco.
+description: >-
+  Configuring searchable properties in Umbraco UI Builder, the backoffice UI
+  builder for Umbraco.
 ---
 
 # Searchable Properties
@@ -8,27 +10,27 @@ Searchable properties allow you to define any `String` based properties on a mod
 
 You can also use any `String` based property of nested objects of a model, as long as the parent object is not null.
 
-![Search](../images/search.png)
+![Search](../.gitbook/assets/search.png)
 
 ## Defining searchable properties
 
-### **AddSearchableProperty(Lambda searchablePropertyExpression) : CollectionConfigBuilder&lt;TEntityType&gt;**
+### **AddSearchableProperty(Lambda searchablePropertyExpression) : CollectionConfigBuilder\<TEntityType>**
 
 Adds the given property to the searchable properties collection.
 
-````csharp
+```csharp
 // Example
 collectionConfig.AddSearchableProperty(p => p.FirstName);
 collectionConfig.AddSearchableProperty(p => p.Address.Street);
-````
+```
 
 ## Search Expression Pattern
 
-Up to version 13.1.6, the search was performed using the `StartsWith` method call.
+Up to version 13.1.6, the search was performed using the `StartsWith` method call.\
 From 13.1.6 and up, search operations can be performed using the `Contains` method call.
 
-````csharp
+```csharp
 // Example
 collectionConfig.AddSearchableProperty(p => p.FirstName); // will search for keywords that start with.
 collectionConfig.AddSearchableProperty(p => p.FirstName, SearchExpressionPattern.Contains); // will search for keywords that are contained.
-````
+```

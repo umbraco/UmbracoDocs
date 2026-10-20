@@ -1,5 +1,7 @@
 ---
-description: "How-tos and best practices for working with the Umbraco backoffice as a content editor."
+description: >-
+  How-tos and best practices for working with the Umbraco backoffice as a
+  content editor.
 ---
 
 # Editor's Manual
@@ -8,7 +10,7 @@ The editor’s manual is a detailed user guide aimed at Umbraco editors for step
 
 ## Introduction
 
-Umbraco is an information platform that allows you to quickly publish information onto a website without the need for any prior knowledge of web page editing. It is designed to be  powerful and flexible enough to enable user's full control of their website content.
+Umbraco is an information platform that allows you to quickly publish information onto a website without the need for any prior knowledge of web page editing. It is designed to be powerful and flexible enough to enable user's full control of their website content.
 
 No special skills are required to create, publish, and manage web pages and related content with Umbraco. Any prior web page editing experience you may have might prove useful in terms of understanding what you want your website to do. Anything you can do using HTML can also be done in Umbraco.
 
@@ -22,7 +24,7 @@ Happy editing!
 
 Showing you the ropes on getting started with Umbraco. A walkthrough on how to log in, create and publish content, working with pages.
 
-## [Working With Rich Text Editor](working-with-content/)
+## [Working With Rich Text Editor](working-with-content.md)
 
 How to use the Rich Text Editor.
 

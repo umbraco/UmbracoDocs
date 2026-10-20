@@ -9,12 +9,12 @@ description: >-
 An automation is a workflow you build in the backoffice. Every automation has:
 
 * Exactly one trigger: the event that starts the workflow.
-* Zero or more step&#x73;**:** actions and control-flow nodes that run in sequence.
+* Zero or more steps**:** actions and control-flow nodes that run in sequence.
 * A draft version and an optional published version.
 
 ## Anatomy of an Automation
 
-<figure><img src="../.gitbook/assets/automation-anatomy.png" alt="An automation on the canvas with a trigger, two actions, and an If branch."><figcaption><p>An automation made up of a trigger and several steps.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/automation-canvas.png" alt="An automation on the canvas with a trigger, two actions, and an If branch."><figcaption><p>An automation made up of a trigger and several steps.</p></figcaption></figure>
 
 | Part                    | Purpose                                                                          |
 | ----------------------- | -------------------------------------------------------------------------------- |

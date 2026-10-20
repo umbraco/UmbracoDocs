@@ -60,6 +60,12 @@ public class PersonRepository : Repository<Person, int> {
 
 \{% hint style="info" %\} `Impl` methods have public alternatives without the suffix. Separate implementation methods ensure repositories trigger Umbraco UI Builder events, whether actions originate from the UI or not. \{% endhint %\}
 
+{% hint style="warning" %}
+
+When running in a load-balanced or multi-node environment, a custom repository must read and write through a shared, centralized data store. Backing a repository with in-memory collections or the local file system causes data to diverge between nodes. Use the shared site database, a distributed cache, or an external service that all nodes can reach.
+
+{% endhint %}
+
 ## Changing the Repository Implementation of a Collection
 
 ### Using the `SetRepositoryType()` Method

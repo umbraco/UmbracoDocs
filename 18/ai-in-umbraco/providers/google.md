@@ -1,6 +1,5 @@
 ---
-description: >-
-    Configure Google Gemini as an AI provider for chat capabilities.
+description: Configure Google Gemini as an AI provider for chat capabilities.
 ---
 
 # Google Gemini
@@ -10,21 +9,17 @@ Google Gemini provides access to Google's Gemini models, supporting the Chat cap
 ## Installation
 
 {% code title="Package Manager Console" %}
-
 ```powershell
 Install-Package Umbraco.AI.Google
 ```
-
 {% endcode %}
 
 Or via .NET CLI:
 
 {% code title="Terminal" %}
-
 ```bash
 dotnet add package Umbraco.AI.Google
 ```
-
 {% endcode %}
 
 ## Connection Settings
@@ -49,5 +44,5 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ## Related
 
-- [Providers Overview](README.md)
-- [Managing Connections](../backoffice/managing-connections.md)
+* [Providers Overview](providers.md)
+* [Managing Connections](../backoffice/managing-connections.md)

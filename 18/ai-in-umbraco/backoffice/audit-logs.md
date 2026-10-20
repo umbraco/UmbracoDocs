@@ -7,6 +7,10 @@ description: >-
 
 Every AI operation (chat completion, embedding generation) is logged with detailed information about the request, response, timing, and outcome. Use audit logs for monitoring, debugging, and compliance.
 
+{% hint style="info" %}
+Audit logs are stored in the `umbracoAIAuditLog` database table.
+{% endhint %}
+
 ## Accessing Audit Logs
 
 1. Navigate to the **AI** section in the main navigation.

@@ -1,17 +1,18 @@
 # Table of contents
 
 * [Umbraco Automate](README.md)
+* [Release Notes](release-notes.md)
 
 ## Getting Started
 
-* [Overview](getting-started/README.md)
+* [Overview](getting-started/getting-started.md)
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
 * [Create Your First Automation](getting-started/first-automation.md)
 
 ## Concepts
 
-* [Core Concepts](concepts/README.md)
+* [Core Concepts](concepts/concepts.md)
 * [Workspaces](concepts/workspaces.md)
 * [Automations](concepts/automations.md)
 * [Triggers](concepts/triggers.md)
@@ -24,7 +25,7 @@
 
 ## Backoffice
 
-* [Overview](backoffice/README.md)
+* [Overview](backoffice/backoffice.md)
 * [Use the Dashboard](backoffice/dashboard.md)
 * [Manage Workspaces](backoffice/workspaces.md)
 * [Build an Automation](backoffice/building-an-automation.md)
@@ -32,9 +33,14 @@
 * [Review Runs](backoffice/runs.md)
 * [Use Approvals](backoffice/approvals.md)
 
+## Run in Production
+
+* [Overview](run-in-production/README.md)
+* [Load Balancing](run-in-production/load-balancing.md)
+
 ## Add-ons
 
-* [Overview](add-ons/README.md)
+* [Overview](add-ons/add-ons.md)
 * [Slack](add-ons/slack/README.md)
   * [Installation](add-ons/slack/installation.md)
   * [Create a Slack Connection](add-ons/slack/connection.md)
@@ -59,10 +65,27 @@
   * [Installation](add-ons/deploy/installation.md)
   * [Triggers](add-ons/deploy/triggers.md)
   * [Transfer Automations](add-ons/deploy/transferring-automations.md)
+* [Workflow](add-ons/workflow/README.md)
+  * [Installation](add-ons/workflow/installation.md)
+  * [Triggers](add-ons/workflow/triggers.md)
+* [UI Builder](add-ons/uibuilder/README.md)
+  * [Installation](add-ons/uibuilder/installation.md)
+  * [Triggers](add-ons/uibuilder/triggers.md)
+  * [Actions](add-ons/uibuilder/actions.md)
 
 ## Extending
 
-* [Overview](extending/README.md)
+* [Overview](extending/extending.md)
 * [Create a Custom Trigger](extending/custom-trigger.md)
 * [Create a Custom Action](extending/custom-action.md)
 * [Create a Custom Connection Type](extending/custom-connection-type.md)
+* [Create a Custom OAuth Connection Type](extending/custom-oauth-connection-type.md)
+* [Create a Custom Notification Channel](extending/custom-notification-channel.md)
+* [Schedule and Webhook Triggers](extending/schedule-and-webhook-triggers.md)
+* [Control What Runs](extending/controlling-execution.md)
+* [Additional Action Behavior](extending/action-behavior.md)
+
+## Tutorials
+
+* [Getting Started Guide for Editors](tutorials/getting-started-for-editors.md)
+* [Technical Runbook: Extending Automate for Developers](tutorials/technical-runbook-for-developer.md)

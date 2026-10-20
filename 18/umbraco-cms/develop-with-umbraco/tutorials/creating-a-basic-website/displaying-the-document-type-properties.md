@@ -1,6 +1,6 @@
 # Displaying the Document Type Properties
 
-You might have noticed that the content we've added to the homepage is not being displayed. We need to wire up the Data Type properties to the template.
+You might have noticed that the content added to the homepage is not being displayed. The next step is to wire up the Data Type properties to the template.
 
 Let’s look at our template and identify where the content should be displayed.
 
@@ -14,28 +14,29 @@ To set the Document Type properties:
 
 1. Go to **Settings**.
 2. Open the **Homepage** template.
-3.  Scroll down to the `<!-- Jumbotron, w title -->` section (around line 45) and highlight the text `“Welcome - UmbracoTV”` (around line 48).
+3. Scroll down to the `<!-- Jumbotron, w title -->` section (around line 46) and highlight the text `“Welcome - UmbracoTV”` (around line 49).
 
     ![Replace page Title value](../../../.gitbook/assets/replace-hardcoded-text-with-umbraco-page-field.png)
 4. Click **Insert** and select **Value**.
-5. Select **Document Type** from the **Choose field** dropdown list.
-6. Select **HomePage**.
-7. Click **Choose**.
-8.  Select **pageTitle** field from the **HomePage** dropdown list.
+5. Click **Submit**.
+6. Select **Document Type** from the **Choose field** dropdown list.
+7. Select **HomePage**.
+8. Click **Choose**.
+9. Select **pageTitle** field from the **HomePage** dropdown list.
 
     ![Page Title field](../../../.gitbook/assets/umbraco-page-field.png)
-9. Click **Submit**.
-10. Go to the content between the `<div class="container">` tags (around line 60 to 77):
-11. Highlight the content as shown in the figure.
+10. Click **Submit**.
+11. Go to the content between the `<div class="container">` tags (around line 61 to 78):
+12. Highlight the content as shown in the figure.
 
     ![Replace Body Text value](../../../.gitbook/assets/replace-bodytext-with-page-field.png)
-12. Repeat steps 4 to 9 to insert the **bodyText** field.
-13. Go to the content between the `<div class="container-fluid footer">` tag (around line 148 to 181):
-14. Highlight the content between the `<div class="container">` tags.
+13. Repeat steps 4 to 9 to insert the **bodyText** field.
+14. Go to the content between the `<div class="container-fluid footer">` tag (around line 149 to 182):
+15. Highlight the content between the `<div class="container">` tags.
 
     ![Replace Footer Text value](../../../.gitbook/assets/footer-text.png)
-15. Repeat steps 4 to 9 to insert the **footerText** field.
-16. Click **Save**.
+16. Repeat steps 4 to 9 to insert the **footerText** field.
+17. Click **Save**.
 
 Reload your homepage to view the content. You should see something similar like the image below:
 

@@ -13,7 +13,7 @@ This is made possible by a JavaScript file that you can include before the closi
 ```
 
 {% hint style="info" %}
-The following Google Analytics blocker detection script loading types are currently not supported: "async" or "defer".
+Includes support for "async" and "defer" keywords.
 {% endhint %}
 
 If you include the script one of the following events is sent:

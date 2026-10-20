@@ -27,7 +27,7 @@ So, let’s get those contribution hats on!
 
 Discover where you can make an impact and start contributing.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="documentation/getting-started/">getting-started</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="umbraco-cms/contributing.md">contributing.md</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="ui-library/contributing.md">contributing.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Documentation</strong></td><td><a href="documentation/getting-started/">getting-started</a></td></tr><tr><td align="center"><strong>Umbraco-CMS</strong></td><td><a href="umbraco-cms/contributing/">contributing</a></td></tr><tr><td align="center"><strong>UI Library</strong></td><td><a href="ui-library/contributing.md">contributing.md</a></td></tr></tbody></table>
 
 ### Documentation
 
@@ -43,7 +43,7 @@ There are plenty of [up-for-grabs issues](https://github.com/umbraco/Umbraco-CMS
 
 We're also happy for you to work on translations or other problems you might know of that are not on the issue tracker yet.
 
-Head on over to [the contributing guide for Umbraco-CMS](umbraco-cms/contributing.md) for the full details.
+Head on over to [the contributing guide for Umbraco-CMS](umbraco-cms/contributing/) for the full details.
 
 ### UI Library
 

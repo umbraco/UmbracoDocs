@@ -1,6 +1,5 @@
 ---
-description: >-
-    Create and manage AI provider connections in the Umbraco backoffice.
+description: Create and manage AI provider connections in the Umbraco backoffice.
 ---
 
 # Managing Connections
@@ -31,16 +30,16 @@ Connections store the credentials needed to communicate with AI providers. Manag
 
 ![The Select AI Provider dialog](../.gitbook/assets/backoffice-create-connection-modal.png)
 
-![The Create Connection form with provider settings](../.gitbook/assets/backoffice-create-connection-form.png)
+![The Create Connection form with provider settings](../.gitbook/assets/openai-create-connection.png)
 
 ### OpenAI Provider Settings
 
 When using the OpenAI provider:
 
-| Setting             | Description                                               | Required |
-| ------------------- | --------------------------------------------------------- | -------- |
-| **API Key**         | Your OpenAI API key                                       | Yes      |
-| **Organization ID** | Organization ID (if applicable)                           | No       |
+| Setting             | Description                                                                | Required |
+| ------------------- | -------------------------------------------------------------------------- | -------- |
+| **API Key**         | Your OpenAI API key                                                        | Yes      |
+| **Organization ID** | Organization ID (if applicable)                                            | No       |
 | **Base URL**        | Override the default OpenAI endpoint (for proxies or compatible providers) | No       |
 
 ## Using Configuration References
@@ -50,7 +49,6 @@ Instead of storing API keys directly in the database, use configuration referenc
 1. Add your API key to `appsettings.json` under the `Umbraco:AI:Secrets` section:
 
 {% code title="appsettings.json" %}
-
 ```json
 {
     "Umbraco": {
@@ -62,7 +60,6 @@ Instead of storing API keys directly in the database, use configuration referenc
     }
 }
 ```
-
 {% endcode %}
 
 2. In the connection settings, enter `$Umbraco:AI:Secrets:OpenAIApiKey` as the API Key value.
@@ -97,14 +94,14 @@ Deleting a connection will break any profiles that depend on it. Consider deacti
 
 Use the **Active** toggle to enable or disable a connection:
 
-- **Active** - Connection is available for use.
-- **Inactive** - Connection is disabled; profiles using it will fail.
+* **Active** - Connection is available for use.
+* **Inactive** - Connection is disabled; profiles using it will fail.
 
 This is useful for:
 
-- Temporarily disabling a connection without deleting it
-- Rotating API keys (create new connection, disable old one)
-- Testing failover scenarios
+* Temporarily disabling a connection without deleting it
+* Rotating API keys (create new connection, disable old one)
+* Testing failover scenarios
 
 ## Best Practices
 
@@ -115,5 +112,5 @@ This is useful for:
 
 ## Related
 
-- [Managing Profiles](managing-profiles.md) - Create profiles using connections
-- [Connections Concept](../concepts/connections.md) - Deeper explanation of connections
+* [Managing Profiles](managing-profiles.md) - Create profiles using connections
+* [Connections Concept](../concepts/connections.md) - Deeper explanation of connections

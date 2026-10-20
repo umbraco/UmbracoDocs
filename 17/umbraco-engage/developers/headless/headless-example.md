@@ -12,7 +12,7 @@ This article shows how to use the Umbraco Engage Headless API with Umbraco Conte
 
 1. Go to the **Engage** > **Personalization** section.
 2. Navigate to the **Segments** tab.
-3. Click **Add new Segment**.
+3. Click **Add new segment**.
    * Give the segment a name. For example: _Morning People_.
    * And a description such as _For people who like to visit us in the morning_.
    * Set the segment type to **Core** as this is not temporary and is tied to an end date for a campaign.
@@ -29,15 +29,15 @@ For more information, see the [Personalization](../personalization/) documentati
 3. Enable **Allow Segmentation** under **Settings**.
 4. Save the Document Type.
 5. Add a new property, such as a **Header**, using a **Textstring** property editor.
-   * Ensure **Shared across segments** is enabled for this property.
+   * Ensure **Shared across segments** is turned off for this property, so it can vary per segment.
 6. Create a piece of content using this new Document Type to query and request it using the Umbraco Content Delivery API
    * For this example, create this piece of content at the root.
 
 ### Creating Personalized Content
 
 1. Open the created content and go to **Personalization**.
-2. Click **Add personalized variant**.
-3. Set the following in the **Add a new variant** dialog:
+2. Click **Create personalized variant**.
+3. Set the following in the **Create personalized variant** panel:
    * Choose the segment **Morning People** we added earlier.
    * Give it a name and a meaningful description such as **Home Page for Morning People**.
 

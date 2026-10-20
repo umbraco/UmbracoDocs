@@ -8,7 +8,7 @@ A collection configuration in Umbraco UI Builder defines how collections are str
 
 ## Defining a Collection
 
-A collection is defined using the `AddCollection` method on a [`Tree`](../areas/trees.md) or parent [`Folder`](../areas/folders.md) configuration instance.
+A collection is defined using the `AddCollection` method on a [`Tree`](../areas/trees/) or parent [`Folder`](../areas/trees/folders.md) configuration instance.
 
 ### Using the `AddCollection()` Method
 
@@ -22,11 +22,11 @@ AddCollection<TEntityType>(Lambda idFieldExpression, string nameSingular, string
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", collectionConfig => {
     ...
 });
-````
+```
 
 ### Using the `AddCollection()` Method with Icons
 
@@ -40,11 +40,11 @@ AddCollection<TEntityType>(Lambda idFieldExpression, string nameSingular, string
 
 #### Example
 
-````csharp
+```csharp
 folderConfig.AddCollection<Person>(p => p.Id, "Person", "People", "A collection of people", "icon-umb-users", "icon-umb-users", collectionConfig => {
     ...
 });
-````
+```
 
 ## Changing a Collection Alias
 
@@ -62,9 +62,9 @@ SetAlias(string alias) : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetAlias("person");
-````
+```
 
 ## Changing a Collection Icon Color
 
@@ -80,13 +80,13 @@ SetIconColor(string color) : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetIconColor("blue");
-````
+```
 
 ## Defining an Entity Name
 
-In Umbraco, every entity is expected to have a name property. To ensure the Umbraco UI Builder knows which property to use, you must specify it. 
+In Umbraco, every entity is expected to have a name property. To ensure the Umbraco UI Builder knows which property to use, you must specify it.
 
 If the entity lacks a dedicated name property, you can define how to construct a name using other properties. This is done using either the `SetNameProperty` or `SetNameFormat` methods on a `Collection` config builder instance.
 
@@ -102,9 +102,9 @@ SetNameProperty(Lambda namePropertyExpression) : CollectionConfigBuilder<TEntity
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetNameProperty(p => p.Name);
-````
+```
 
 ### Using the `SetNameProperty()` Method with Custom Heading
 
@@ -122,9 +122,9 @@ SetNameProperty(Lambda namePropertyExpression, string heading) : CollectionConfi
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetNameProperty(p => p.Name, "Person Name");
-````
+```
 
 ### Using the `SetNameFormat()` Method
 
@@ -140,9 +140,9 @@ SetNameFormat(Lambda nameFormatExpression) : CollectionConfigBuilder<TEntityType
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetNameFormat(p => $"{p.FirstName} {p.LastName}");
-````
+```
 
 ## Defining a Default Sort Order
 
@@ -158,9 +158,9 @@ SetSortProperty(Lambda sortPropertyExpression) : CollectionConfigBuilder<TEntity
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetSortProperty(p => p.FirstName);
-````
+```
 
 ### Using the `SetSortProperty()` Method with Sort Direction
 
@@ -174,9 +174,9 @@ SetSortProperty(Lambda sortPropertyExpression, SortDirection sortDirection) : Co
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetSortProperty(p => p.FirstName, SortDirection.Descending);
-````
+```
 
 ## Defining Time Stamp Properties
 
@@ -192,9 +192,9 @@ SetDateCreatedProperty(Lambda dateCreatedProperty) : CollectionConfigBuilder<TEn
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetDateCreatedProperty(p => p.DateCreated);
-````
+```
 
 ### Using the `SetDateModifiedProperty` Method
 
@@ -208,9 +208,9 @@ SetDateModifiedProperty(Lambda dateCreatedProperty) : CollectionConfigBuilder<TE
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetDateModifiedProperty(p => p.DateModified);
-````
+```
 
 ## Configuring Soft Deletes
 
@@ -230,9 +230,9 @@ SetDeletedProperty(Lambda deletedPropertyExpression) : CollectionConfigBuilder<T
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetDeletedProperty(p => p.Deleted);
-````
+```
 
 ## Disabling Create, Update, or Delete Features
 
@@ -248,9 +248,9 @@ DisableCreate() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableCreate();
-````
+```
 
 ### Using the `DisableCreate()` Method with Conditions
 
@@ -264,9 +264,9 @@ DisableCreate(Predicate<CollectionPermissionContext> disableExpression) : Collec
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableCreate(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
-````
+```
 
 ### Using the `DisableUpdate()` Method
 
@@ -280,9 +280,9 @@ DisableUpdate() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableUpdate();
-````
+```
 
 ### Using the `DisableUpdate()` Method with Conditions
 
@@ -296,13 +296,13 @@ DisableUpdate(Predicate<CollectionPermissionContext> disableExpression) : Collec
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableUpdate(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
-````
+```
 
 ### Using the `DisableDelete()` Method
 
-Disables the option to delete entities within the current collection. This is useful when data needs to be retained and visible. For more information, see the [Configuring Soft Deletes](#configuring-soft-deletes) section.
+Disables the option to delete entities within the current collection. This is useful when data needs to be retained and visible. For more information, see the [Configuring Soft Deletes](the-basics.md#configuring-soft-deletes) section.
 
 #### Method Syntax
 
@@ -312,13 +312,13 @@ DisableDelete() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableDelete();
-````
+```
 
 ### Using the `DisableDelete()` Method with Conditions
 
-Disables the option to delete entities within the current collection if the specified runtime predicate evaluates to true. This is useful when data needs to be retained and visible. For more information, see the [Configuring Soft Deletes](#configuring-soft-deletes) section.
+Disables the option to delete entities within the current collection if the specified runtime predicate evaluates to true. This is useful when data needs to be retained and visible. For more information, see the [Configuring Soft Deletes](the-basics.md#configuring-soft-deletes) section.
 
 #### Method Syntax
 
@@ -328,9 +328,9 @@ DisableDelete(Predicate<CollectionPermissionContext> disableExpression) : Collec
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.DisableDelete(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
-````
+```
 
 ### Using the `MakeReadOnly()` Method
 
@@ -344,9 +344,9 @@ MakeReadOnly() : CollectionConfigBuilder<TEntityType>
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.MakeReadOnly();
-````
+```
 
 ### Using the `MakeReadOnly()` Method with Conditions
 
@@ -360,9 +360,9 @@ MakeReadOnly(Predicate<CollectionPermissionContext> disableExpression) : Collect
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.MakeReadOnly(ctx => ctx.UserGroups.Any(x => x.Alias == "editor"));
-````
+```
 
 ## Setting Collection Visibility
 
@@ -378,9 +378,9 @@ SetVisibility(Predicate<CollectionVisibilityContext> visibilityExpression) : Col
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetVisibility(ctx => ctx.UserRoles.Any(x => x.Alias == "editor"));
-````
+```
 
 ## Changing a Collection Connection String
 
@@ -398,6 +398,6 @@ SetConnectionString(string connectionStringName) : CollectionConfigBuilder<TEnti
 
 #### Example
 
-````csharp
+```csharp
 collectionConfig.SetConnectionString("myConnectionStringName");
-````
+```

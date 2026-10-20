@@ -1,6 +1,5 @@
 ---
-description: >-
-    Create and manage AI guardrails in the Umbraco backoffice.
+description: Create and manage AI guardrails in the Umbraco backoffice.
 ---
 
 # Managing Guardrails
@@ -35,13 +34,13 @@ Guardrails contain one or more rules. Each rule references a registered evaluato
 1. In the guardrail editor, click **Add Rule**.
 2. Configure the rule:
 
-| Field       | Description                                                    |
-| ----------- | -------------------------------------------------------------- |
-| Evaluator   | The evaluator to use (Contains, Regex Match, or LLM Safety Judge) |
-| Name        | Display name for the rule                                      |
-| Phase       | When to evaluate: Pre-Generate or Post-Generate                |
-| Action      | What to do when flagged: Block, Warn, or Redact                |
-| Config      | Evaluator-specific settings                                    |
+| Field     | Description                                                       |
+| --------- | ----------------------------------------------------------------- |
+| Evaluator | The evaluator to use (Contains, Regex Match, or LLM Safety Judge) |
+| Name      | Display name for the rule                                         |
+| Phase     | When to evaluate: Pre-Generate or Post-Generate                   |
+| Action    | What to do when flagged: Block, Warn, or Redact                   |
+| Config    | Evaluator-specific settings                                       |
 
 3. Click **Add**.
 
@@ -51,10 +50,10 @@ Guardrails contain one or more rules. Each rule references a registered evaluato
 
 ### Evaluation Phases
 
-| Phase            | Description                                              |
-| ---------------- | -------------------------------------------------------- |
-| **Pre-Generate** | Evaluates user input before sending to the AI provider.   |
-| **Post-Generate**| Evaluates the AI response before returning to the user.   |
+| Phase             | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| **Pre-Generate**  | Evaluates user input before sending to the AI provider. |
+| **Post-Generate** | Evaluates the AI response before returning to the user. |
 
 {% hint style="info" %}
 Use Pre-Generate rules to prevent sensitive data (like PII) from being sent to AI providers. Use Post-Generate rules to validate AI responses meet your quality and safety standards.
@@ -62,42 +61,43 @@ Use Pre-Generate rules to prevent sensitive data (like PII) from being sent to A
 
 ### Actions
 
-| Action     | Description                                                                      |
-| ---------- | -------------------------------------------------------------------------------- |
-| **Block**  | Stops processing and returns an error to the caller.                              |
-| **Warn**   | Allows the content through unchanged and logs a warning.                          |
+| Action     | Description                                                                          |
+| ---------- | ------------------------------------------------------------------------------------ |
+| **Block**  | Stops processing and returns an error to the caller.                                 |
+| **Warn**   | Allows the content through unchanged and logs a warning.                             |
 | **Redact** | Replaces flagged content with `[REDACTED]` before it reaches the AI model or caller. |
 
 {% hint style="info" %}
-The Redact option is only available for code-based evaluators (Contains, Regex Match) that can identify specific text positions. The LLM Safety Judge evaluator does not support redaction because it evaluates content holistically.
+The Redact option is only available for code-based evaluators (Contains, Regex Match) that can identify specific text positions. The LLM Safety Judge and Decision Safety Judge evaluators do not support redaction because they evaluate content holistically.
 {% endhint %}
 
 ### Available Evaluators
 
-| Evaluator            | ID          | Type        | Description                                                                 | Supports Redact |
-| -------------------- | ----------- | ----------- | --------------------------------------------------------------------------- | --------------- |
-| **Contains**         | `contains`  | Code-based  | Flags content containing a specific substring.                               | Yes             |
-| **Regex Match**      | `regex`     | Code-based  | Flags content matching a regular expression pattern.                         | Yes             |
-| **LLM Safety Judge** | `llm-judge` | Model-based | Uses an AI model to evaluate content for safety, misinformation, and compliance. | No          |
+| Evaluator            | ID          | Type        | Description                                                                      | Supports Redact |
+| -------------------- | ----------- | ----------- | -------------------------------------------------------------------------------- | --------------- |
+| **Contains**         | `contains`  | Code-based  | Flags content containing a specific substring.                                   | Yes             |
+| **Regex Match**      | `regex`     | Code-based  | Flags content matching a regular expression pattern.                             | Yes             |
+| **LLM Safety Judge** | `llm-judge` | Model-based | Uses an AI model to evaluate content for safety, misinformation, and compliance. | No              |
+| **Decision Safety Judge** | `decision-judge` | Model-based | Asks a Decision profile a yes/no question about whether content is safe (experimental). | No |
 
 #### Contains Evaluator
 
 Searches for a substring in the content. Useful for blocking competitor brand mentions, prohibited terms, or specific phrases.
 
-| Setting          | Description                              |
-| ---------------- | ---------------------------------------- |
-| Search Pattern   | The substring to find in the content     |
-| Ignore Case      | Case-insensitive search (default: on)    |
+| Setting        | Description                           |
+| -------------- | ------------------------------------- |
+| Search Pattern | The substring to find in the content  |
+| Ignore Case    | Case-insensitive search (default: on) |
 
 #### Regex Match Evaluator
 
 Matches content against a regular expression. Useful for detecting patterns like email addresses, phone numbers, Social Security Numbers (SSNs), or profanity patterns.
 
-| Setting       | Description                                                     |
-| ------------- | --------------------------------------------------------------- |
-| Regex Pattern | Regular expression to match against content                     |
-| Ignore Case   | Case-insensitive matching (default: on)                         |
-| Multiline     | Enable multiline mode where `^` and `$` match line boundaries  |
+| Setting       | Description                                                   |
+| ------------- | ------------------------------------------------------------- |
+| Regex Pattern | Regular expression to match against content                   |
+| Ignore Case   | Case-insensitive matching (default: on)                       |
+| Multiline     | Enable multiline mode where `^` and `$` match line boundaries |
 
 {% hint style="info" %}
 Regex evaluation has a 5-second timeout to prevent catastrophic backtracking.
@@ -107,14 +107,46 @@ Regex evaluation has a 5-second timeout to prevent catastrophic backtracking.
 
 Uses an AI model to evaluate content against custom criteria. Returns a safety score between 0 and 1. Content is flagged when the score falls below the configured threshold.
 
-| Setting              | Description                                                              |
-| -------------------- | ------------------------------------------------------------------------ |
-| Judge Profile ID     | AI profile to use for evaluation (leave empty for default)               |
-| Evaluation Criteria  | What aspects to evaluate (safety, compliance, brand voice, etc.)         |
-| Safety Threshold     | Content is flagged if the safety score is below this value (0-1, default: 0.7). |
+| Setting             | Description                                                                     |
+| ------------------- | ------------------------------------------------------------------------------- |
+| Judge Profile ID    | AI profile to use for evaluation (leave empty for default)                      |
+| Evaluation Criteria | What aspects to evaluate (safety, compliance, brand voice, etc.)                |
+| Safety Threshold    | Content is flagged if the safety score is below this value (0-1, default: 0.7). |
+
+#### Decision Safety Judge Evaluator
+
+{% hint style="warning" %}
+The Decision Safety Judge is **experimental**. It uses the [Decision](../using-the-api/decision/README.md) capability, and is only listed when the `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+{% endhint %}
+
+Asks a Decision profile a yes/no question: is this content safe and compliant, based on your criteria? The answer comes back as a probability between 0 and 1. Content is flagged when the probability falls below the Safety Threshold.
+
+| Setting             | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| Profile             | Decision profile to use for evaluation. Only Decision profiles are listed. Leave empty to use the default Decision profile. |
+| Evaluation Criteria | What aspects to evaluate for safety and compliance.                                  |
+| Safety Threshold    | Content is flagged if the safety probability is below this value (0-1, default: 0.7). |
+
+The Decision Safety Judge is model-based. During streaming, it runs after the full response is available. It only flags content and cannot redact.
+
+When content is flagged, the rule reason shows the probability and threshold, for example: `Safety probability 0.04 below threshold 0.70`.
+
+The evaluator does not fall back to the LLM Safety Judge. Instead, it fails safe and flags the content with a reason in these cases:
+
+* The Decision feature flag is turned off.
+* No profile is selected and no default Decision profile is configured.
+* The call to the Decision profile fails.
+
+{% hint style="danger" %}
+If you turn the `Umbraco:AI:Experimental:Decision` flag off, rules that use the Decision Safety Judge stay in place and fail safe. A rule with the **Block** action then blocks every response on that guardrail. Remove or change these rules before you turn the flag off.
+{% endhint %}
 
 {% hint style="info" %}
-Code-based evaluators (Contains, Regex Match) run instantly using pattern matching. The LLM Safety Judge calls an AI model for nuanced evaluation and takes longer. You can also [create custom evaluators](../extending/guardrails/README.md).
+The content being evaluated is sent to the provider behind the Decision profile, such as [TypeSafe AI](../providers/typesafe.md). This provider can be different from the one that runs your chat model.
+{% endhint %}
+
+{% hint style="info" %}
+Code-based evaluators (Contains, Regex Match) run instantly using pattern matching. The LLM Safety Judge and Decision Safety Judge call an AI model for nuanced evaluation and take longer. You can also [create custom evaluators](../extending/guardrails.md).
 {% endhint %}
 
 ### Reordering Rules
@@ -158,17 +190,15 @@ A typical content safety guardrail might include:
 **Rules**:
 
 1. **Block competitor mentions** (Pre-Generate, Redact)
-    - Evaluator: Contains
-    - Search Pattern: competitor brand name
-    - Redacts competitor mentions before sending to the AI provider.
-
+   * Evaluator: Contains
+   * Search Pattern: competitor brand name
+   * Redacts competitor mentions before sending to the AI provider.
 2. **Block profanity** (Pre-Generate, Block)
-    - Evaluator: Regex Match
-    - Pattern matching for prohibited language patterns
-
+   * Evaluator: Regex Match
+   * Pattern matching for prohibited language patterns
 3. **LLM content safety check** (Post-Generate, Warn)
-    - Evaluator: LLM Safety Judge
-    - Evaluates response quality and safety against custom criteria.
+   * Evaluator: LLM Safety Judge
+   * Evaluates response quality and safety against custom criteria.
 
 ## Example: PII Redaction Guardrail
 
@@ -179,19 +209,17 @@ A guardrail that strips sensitive data instead of blocking:
 **Rules**:
 
 1. **Redact email addresses** (Pre-Generate, Redact)
-    - Evaluator: Regex Match
-    - Pattern: `[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`
-    - Replaces email addresses with `[REDACTED]` before sending to the AI provider.
-
+   * Evaluator: Regex Match
+   * Pattern: `[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`
+   * Replaces email addresses with `[REDACTED]` before sending to the AI provider.
 2. **Redact phone numbers** (Pre-Generate, Redact)
-    - Evaluator: Regex Match
-    - Pattern: `\b\d{3}[-.]?\d{3}[-.]?\d{4}\b`
-    - Replaces phone numbers with `[REDACTED]`.
-
+   * Evaluator: Regex Match
+   * Pattern: `\b\d{3}[-.]?\d{3}[-.]?\d{4}\b`
+   * Replaces phone numbers with `[REDACTED]`.
 3. **Block SSN patterns** (Pre-Generate, Block)
-    - Evaluator: Regex Match
-    - Pattern: `\b\d{3}-\d{2}-\d{4}\b`
-    - Blocks requests containing Social Security Number patterns.
+   * Evaluator: Regex Match
+   * Pattern: `\b\d{3}-\d{2}-\d{4}\b`
+   * Blocks requests containing Social Security Number patterns.
 
 {% hint style="warning" %}
 Post-generate Redact rules do not work during streaming responses. When streaming, post-generate Redact rules degrade to Warn because chunks have already been sent to the caller and cannot be retroactively modified. Pre-generate Redact rules work normally in both streaming and non-streaming scenarios.
@@ -201,9 +229,9 @@ Post-generate Redact rules do not work during streaming responses. When streamin
 
 Guardrails are assigned via the **Governance** tab on profiles, prompts, and agents:
 
-- **Profiles** - Open a chat profile and go to the **Governance** tab to assign guardrails.
-- **Prompts** - Open a prompt and go to the **Governance** tab to assign guardrails (requires Prompt add-on).
-- **Agents** - Open an agent and go to the **Governance** tab to assign guardrails (requires Agent add-on).
+* **Profiles** - Open a chat profile and go to the **Governance** tab to assign guardrails.
+* **Prompts** - Open a prompt and go to the **Governance** tab to assign guardrails (requires Prompt add-on).
+* **Agents** - Open an agent and go to the **Governance** tab to assign guardrails (requires Agent add-on).
 
 When multiple sources assign guardrails (e.g., both a profile and an agent), all guardrails are combined and deduplicated at runtime.
 
@@ -249,5 +277,5 @@ See [Version History](version-history.md) for information on viewing and restori
 
 ## Related
 
-- [Guardrails Concept](../concepts/guardrails.md) - Understanding guardrails
-- [Version History](version-history.md) - Tracking changes
+* [Guardrails Concept](../concepts/guardrails.md) - Understanding guardrails
+* [Version History](version-history.md) - Tracking changes

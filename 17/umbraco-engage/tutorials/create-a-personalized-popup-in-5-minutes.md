@@ -6,7 +6,7 @@ description: >-
 
 # Create a Personalized Popup in 5 minutes
 
-In this tutorial, you will learn how to create and customize a popup using Umbraco Engage. We will walk you through creating a target segment, applying personalization, and setting up the popup with pre-defined templates.
+In this tutorial, you will learn how to create and customize a popup using Umbraco Engage. The tutorial walks you through creating a target segment, applying personalization, and setting up the popup with pre-defined templates.
 
 Popups are powerful for capturing attention, promoting special offers, and encouraging visitors to take action. With a timed popup, you can boost and increase engagement on your website.
 
@@ -18,25 +18,25 @@ To create a segment, follow these steps:
 
 1. Login to Umbraco.
 2. Go to the **Engage** section.
-3. Select **Personalization** **->** **Segments**.
+3. Select **Personalization** > **Segments**.
 4. Click on **Add new segment**.
 
 <figure><img src="../.gitbook/assets/engage-tutorials-personalizaed-popup.png" alt=""><figcaption><p>Add New Segment</p></figcaption></figure>
 
 5. Enter the **Title** in the Add new segment overlay. For example: _Popup targeted audience._
 6. Provide a **Description**. For example: _Targeting visitors who haven't seen our popup._
-7. Select **Temporary** as the **Segment Type**_._
-8. Set the **End Time** to a date, ideally sometime in the future.
+7. Select **Temporary** as the **Segment type**.
+8. Set the **End time** to a date, ideally sometime in the future.
 
 <figure><img src="../.gitbook/assets/Add-new-segment-overlay.png" alt=""><figcaption><p>Add new Segment Overlay</p></figcaption></figure>
 
-9. Select **Number of sessions** in **Choose a parameter** tab.
-10. Change _Exactly_ to **More than** in the **Applied parameters** field and set the number of sessions to **0**.
+9. Select **Number of sessions** under **Choose a parameter**.
+10. Change the **Operator** from _Exactly_ to **More than**, and set **Count** to **0**.
 
 <figure><img src="../.gitbook/assets/Number-of-sessions.png" alt=""><figcaption><p>Number of Sessions parameter</p></figcaption></figure>
 
 11. Click **Save parameter.**
-12. Click **Add segment**.
+12. Click **Submit**.
 
 You have now created a segment targeting all visitors with more than 0 sessions.
 
@@ -49,24 +49,24 @@ To target the segment with a popup, follow these steps:
 
 <figure><img src="../.gitbook/assets/engage-tutorials-personalized-popup.png" alt=""><figcaption><p><strong>Apply new personalization</strong></p></figcaption></figure>
 
-3. Enter a **Title**. For example: _A popup to inform visitors._
+3. Enter a **Name**. For example: _A popup to inform visitors._
 4. Provide a **Description.** For example: _This popup will grab visitors' attention with our great offer!_
 
 <figure><img src="../.gitbook/assets/Personalization-screen.png" alt=""><figcaption><p>Personalization screen</p></figcaption></figure>
 
-5. Choose **Multiple Pages** from the **Select personalization type** drop-down list\*\*.\*\*
-6. Click **Add** in **Select multiple pages.**
+5. Choose **Multi page** from the **Personalization type** drop-down list.
+6. Click **Choose** under **Select pages**.
 7. Use the Umbraco page picker to pick one or more pages.
-8. Click **Submit**.
-9. Click on **Select segment.**
+8. Click **Choose**.
+9. Click **Choose** under **Select segment**.
 10. Select **Popup targeted audience** which is the segment created in [Step 1: Create a Segment](create-a-personalized-popup-in-5-minutes.md#step-1-create-a-segment).
-11. Click **Save**.
+11. Click **Choose**.
 
 ## Step 3: Set Up the Popup
 
 To include the popup template, follow these steps:
 
-1. Click **Include CSS/JavaScript** in **Add/Edit code.**
+1. Expand **Custom code - CSS** and **Custom code - JavaScript**.
 
 <figure><img src="../.gitbook/assets/include-css-javascript.png" alt=""><figcaption><p>Stylesheet selection</p></figcaption></figure>
 
@@ -74,11 +74,9 @@ To include the popup template, follow these steps:
 
 <figure><img src="../.gitbook/assets/stylesheet-fields.png" alt=""><figcaption><p>Add stylesheet to fields</p></figcaption></figure>
 
-3. Click **Save and close**.
-
 <figure><img src="../.gitbook/assets/setup-personalization-screen.png" alt=""><figcaption></figcaption></figure>
 
-4. Click **Save & Start**.
+3. Click **Submit**. The personalization is saved and set to active.
 
 Go to your website and visit the page(s) where you applied the popup personalization. The popup will appear.
 
@@ -90,11 +88,10 @@ If the popup does not appear, check the **flush rate setting** in the `/config/u
 
 To update the popup content, follow these steps:
 
-1. Navigate to **Engage -> Personalization -> Applied Personalization**.
+1. Navigate to **Engage** > **Personalization** > **Applied Personalization**.
 2. Click the **Edit** icon next to your popup.
-3. Scroll down to the HTML/JavaScript code section.
-4. Click **Edit** to update the content.
-5. Click **Save and close**.
-6. Click **Update & Start**.
+3. Scroll down to **Custom code - CSS** and **Custom code - JavaScript**.
+4. Expand the section and update the code.
+5. Click **Submit**.
 
 You have now created and customized your first popup, and it is up and running.

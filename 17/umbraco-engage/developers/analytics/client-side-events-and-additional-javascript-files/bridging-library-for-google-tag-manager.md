@@ -13,5 +13,5 @@ To include the file add the following code before the closing `body` tag in your
 ```
 
 {% hint style="info" %}
-The "async" or "defer" Google Analytics bridging script loading types are currently not supported.
+Includes support for "async" and "defer" keywords.
 {% endhint %}

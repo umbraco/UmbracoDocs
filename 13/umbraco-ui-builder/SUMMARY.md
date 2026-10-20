@@ -24,15 +24,15 @@
 
 ## How-to Guides
 
-* [Creating your first integration](guides/creating-your-first-integration.md)
+* [Creating your first integration](how-to-guides/creating-your-first-integration.md)
 
 ## Areas
 
 * [Overview](areas/overview.md)
-* [Sections](areas/sections.md)
-  * [Summary Dashboards](areas/summary-dashboards.md)
-* [Trees](areas/trees.md)
-  * [Folders](areas/folders.md)
+* [Sections](areas/sections/README.md)
+  * [Summary Dashboards](areas/sections/summary-dashboards.md)
+* [Trees](areas/trees/README.md)
+  * [Folders](areas/trees/folders.md)
 * [Dashboards](areas/dashboards.md)
 * [Context Apps](areas/context-apps.md)
 
@@ -40,12 +40,12 @@
 
 * [Overview](collections/overview.md)
 * [The Basics](collections/the-basics.md)
-* [List Views](collections/list-views.md)
-  * [Field Views](collections/field-views.md)
+* [List Views](collections/list-views/README.md)
+  * [Field Views](collections/list-views/field-views.md)
 * [Editors](collections/editors.md)
-* [Child Collections](collections/child-collections.md)
-  * [Child Collection Groups](collections/child-collection-groups.md)
-  * [Retrieve Child Collections](collections/retrieve-child-collections.md)
+* [Child Collections](collections/child-collections/README.md)
+  * [Child Collection Groups](collections/child-collections/child-collection-groups.md)
+  * [Retrieve Child Collections](collections/child-collections/retrieve-child-collections.md)
 * [Related Collections](collections/related-collections.md)
 * [Entity Identifier Converters](collections/entity-identifier-converters.md)
 
@@ -58,8 +58,8 @@
 
 * [Overview](filtering/overview.md)
 * [Global Filters](filtering/global-filters.md)
-* [Data Views](filtering/data-views.md)
-  * [Data Views Builders](filtering/data-views-builders.md)
+* [Data Views](filtering/data-views/README.md)
+  * [Data Views Builders](filtering/data-views/data-views-builders.md)
 * [Filterable Properties](filtering/filterable-properties.md)
 
 ## Actions

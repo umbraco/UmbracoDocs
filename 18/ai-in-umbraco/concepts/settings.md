@@ -16,6 +16,8 @@ AI Settings provide a central place to configure system-wide defaults for Umbrac
 | `DefaultEmbeddingProfileId`      | The profile used when no profile is specified for embedding operations      |
 | `DefaultSpeechToTextProfileId`   | The profile used when no profile is specified for speech-to-text operations |
 | `ClassifierChatProfileId`        | Optional profile for internal classification tasks (e.g., agent routing). Falls back to default chat profile |
+| `DefaultDecisionProfileId`       | The profile used when no profile is specified for decisions (experimental). Also used by Auto agent mode when Decision is enabled |
+| `DisclosureNoticeMode`           | How the backoffice shows the notice that tells users a response is AI-generated: `Always` (default), `Dismissible`, or `Off` |
 
 {% hint style="info" %}
 Settings are a singleton entity - there is only one settings record for the entire application.
@@ -90,7 +92,7 @@ var response = await _chatService.GetChatResponseAsync(
 
 ## Classifier Chat Profile
 
-The classifier chat profile is an optional setting that allows you to designate a cheaper or faster model for internal classification tasks. Currently, this is used by the Copilot's "Auto" agent mode to classify user prompts and route them to the best available agent.
+The classifier chat profile is an optional setting that allows you to designate a cheaper or faster model for internal classification tasks. Currently, this is used by the "Auto" agent mode in both Contextual Copilot and Copilot Workspace. It classifies user prompts and routes them to the best available agent.
 
 ### Fallback Chain
 
@@ -101,6 +103,24 @@ When the classifier profile is requested:
 3. **Default chat profile** — Falls back to the standard default chat profile
 
 The fallback chain means you only need to configure the classifier profile if you want to use a different (typically cheaper) model for classification. If not set, the default chat profile is used automatically.
+
+### Decision-Based Routing
+
+When the experimental [Decision](../using-the-api/decision/README.md) capability is enabled and a default Decision profile is set, Auto mode asks the Decision profile to pick the agent first. The classifier chat profile is only used when that is not possible. See [Auto Mode](../add-ons/agent-copilot/copilot.md#auto-mode-and-agent-routing).
+
+## AI Disclosure Notice
+
+`DisclosureNoticeMode` controls the "Responses are AI-generated and may be inaccurate." notice shown in the Contextual Copilot and Copilot Workspace chat, and in the prompt preview. It uses the `AIDisclosureNoticeMode` enum:
+
+| Value         | Behavior                                                                            |
+| ------------- | ----------------------------------------------------------------------------------- |
+| `Always`      | The notice is always shown (default). Missing or unknown values also fall back to this. |
+| `Dismissible` | The notice can be dismissed. Each location (chat, prompt) is dismissed separately, per browser. |
+| `Off`         | The notice is never shown.                                                          |
+
+Unlike the profile settings, this setting has no `appsettings.json` fallback. When deploying with [Umbraco Deploy](../add-ons/deploy/README.md), the mode travels with the settings. Artifacts created before this setting existed keep the target environment's value.
+
+See [Managing Settings](../backoffice/managing-settings.md#ai-disclosure-notice) for how each option behaves in the backoffice.
 
 ## Configuration File Fallback
 
@@ -115,6 +135,7 @@ For advanced scenarios like Continuous Integration/Continuous Deployment (CI/CD)
             "DefaultChatProfileAlias": "content-writer",
             "DefaultEmbeddingProfileAlias": "embeddings",
             "DefaultSpeechToTextProfileAlias": "transcription",
+            "DefaultDecisionProfileAlias": "moderation",
             "ClassifierChatProfileAlias": "fast-classifier"
         }
     }
@@ -138,8 +159,9 @@ You can configure settings through the backoffice. See [Managing Settings](../ba
 {% code title="Management API endpoints" %}
 
 ```http
-GET /umbraco/management/api/v1/ai/settings
-PUT /umbraco/management/api/v1/ai/settings
+GET /umbraco/ai/management/api/v1/settings
+PUT /umbraco/ai/management/api/v1/settings
+GET /umbraco/ai/management/api/v1/settings/disclosure
 ```
 
 {% endcode %}

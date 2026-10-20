@@ -1,6 +1,6 @@
 # CDN Caching and Optimizations
 
-After [adding hostnames](../../go-live/manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or specific hostnames within your project.
+After [adding custom hostnames](../../go-live/manage-hostnames/) to your project, it's possible to configure Content Delivery Network (CDN) Caching. This can be done for all or specific hostnames within your project. The default `*.{region}.umbraco.io` hostnames that come with the project cannot be cached, see [Custom hostname requirement](manage-cdn-caching.md#custom-hostname-requirement).
 
 The caching options relate to the traffic that goes through your hostname from the origin (Umbraco Cloud) to the end-user. This is the traffic of your website and assets from the webserver to the browser.
 
@@ -14,6 +14,24 @@ The options that are currently available are:
 
 When a new hostname is added to a Project, the default settings will be applied. However, you can change the default settings for your project so that the new hostnames will get the settings you have chosen. This means that when enabling caching in the default settings and adding a new hostname, caching is enabled for that new hostname.
 
+## Custom hostname requirement
+
+The CDN sits in front of your custom hostnames. This means that CDN Caching only applies to hostnames you have added to the environment yourself, for example `www.example.com`.
+
+The default hostnames that come with an Umbraco Cloud project are not enough to enable CDN Caching:
+
+* Default hostnames follow the `*.{region}.umbraco.io` pattern, such as `snoopy.euwest01.umbraco.io` for the Live environment and `dev-snoopy.euwest01.umbraco.io` for the Development environment.
+* Default hostnames are not listed under **Hostname-specific settings**, so you cannot configure caching for them.
+* Requests to a default hostname are served from the origin. Enabling **Enable Cache** or **Cache Everything** in the **Default settings** has no effect on those requests.
+
+The practical consequences are:
+
+* A project that has not gone live yet, and therefore only uses its default hostnames, gets no CDN Caching regardless of the settings on the page.
+* Testing caching behavior on a Development or Staging environment requires a custom hostname on that specific environment, for example a subdomain such as `test.example.com`. Settings are scoped per environment, so a custom hostname on the Live environment does not enable caching on Development or Staging.
+* Verifying whether a response was served from the CDN must be done through the custom hostname, not through the `umbraco.io` URL.
+
+To add a custom hostname, follow the steps in [Managing Hostnames](../../go-live/manage-hostnames/). Once the hostname is added and shows as **Protected**, it appears under **Hostname-specific settings** and inherits the caching options from **Default settings**.
+
 ## Caching Explained
 
 When caching is enabled on your project static assets like CSS and images are cached in the Content Delivery Network (CDN) used by Umbraco Cloud. How assets are cached is up to you, as you can control it through 'cache-control headers'.
@@ -26,7 +44,7 @@ The following file types are cached as static assets through the CDN:
 
 If you want to disable caching on certain types of static assets, you can use a 'no-cache' cache-control header. This will be respected by the caching strategy in the CDN. You can utilize an outbound rewrite rule to add such a cache-control header to the request.
 
-The following example adds a cache-control header with 'no-cache' as the value when the requested Url contains a PDF file:
+The following example adds a cache-control header with 'no-cache' as the value when the requested URL contains a PDF file:
 
 ```xml
 <rewrite>
@@ -58,9 +76,54 @@ When a webpage is cached, it will be stripped of any cookies that are otherwise 
 
 When using Cache TTL, the Editor's expectations of when the webpage is refreshed is matched with a new version loaded from the origin. As an example, choosing a Cache TTL of 2 hours means that the webpage will be served from the cache for 2 hours. Then it will be refreshed with a copy from the origin. If Editors make changes every 30 minutes, they will have to wait at least two hours until they can see the changes on the website.
 
+If the page sends its own `Cache-Control` or `Expires` header, that value is used instead. See [How long pages are cached](manage-cdn-caching.md#how-long-pages-are-cached).
+
 {% hint style="warning" %}
 We recommend using Cache Everything with caution.
 {% endhint %}
+
+### Pages that are not cached
+
+Cache Everything respects the `Cache-Control` header sent by your website. A page is not cached, and is always loaded from the origin, when its response contains any of these directives:
+
+* `private`
+* `no-cache`
+* `no-store`
+
+You can see this in the `uc-cache-status` response header, which shows `BYPASS` for these pages. A cached page shows `MISS` the first time it is requested and `HIT` after that.
+
+{% hint style="info" %}
+Check `uc-cache-status` with a regular `GET` request, for example from the browser's developer tools. `HEAD` requests, such as `curl -I`, are not served from the cache.
+{% endhint %}
+
+#### Umbraco 8
+
+Umbraco 8 sends `Cache-Control: private` on webpages by default. This means webpages on Umbraco 8 projects are not cached when Cache Everything is enabled, even though static assets are.
+
+To cache a page, set the `Cache-Control` header to `public` in its template:
+
+{% code title="Views/MyTemplate.cshtml" %}
+```cshtml
+@{
+    Response.Cache.SetCacheability(HttpCacheability.Public);
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Only mark pages as `public` when they are the same for every visitor. Do not use this on pages that show member-specific or logged-in content. One visitor's version of the page could be served to others.
+{% endhint %}
+
+### How long pages are cached
+
+When a page is cached, the CDN uses the first of these that is available:
+
+1. `s-maxage` from the `Cache-Control` header.
+2. `max-age` from the `Cache-Control` header.
+3. The `Expires` header.
+4. The **Cache TTL** setting for the hostname.
+
+The result is never lower than the minimum Cache TTL for your plan (see [Plan specific features](manage-cdn-caching.md#plan-specific-features)). A shorter `max-age` is raised to that minimum.
 
 ## Purge Caching
 

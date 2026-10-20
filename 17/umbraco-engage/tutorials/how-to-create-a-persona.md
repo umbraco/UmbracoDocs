@@ -27,28 +27,28 @@ To create your Personas in Umbraco Engage, follow the steps below:
 
 <figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona.png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
 
-4. Click **Add New Persona Group**.
+4. Click **Add persona group**.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona-group.png" alt=""><figcaption>Add persona group</figcaption></figure>
 
 5. Add the details for the **Persona Group.**
    1. Add a **Title.**
    2. Add a **Description.**
    3. Set the[ Advanced settings](how-to-create-a-persona.md#advanced-persona-group-parameters) to fit your needs.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona-group-advanced-settings.png" alt=""><figcaption>Add persona group - Advanced Settings</figcaption></figure>
 
-6. Click **Create persona group**.
+6. Click **Save**.
 7. Click **Add persona** to add a new Persona.
-   1. Add a **Title/Name** to the Persona.
+   1. Add a **Title** to the Persona.
    2. Add a **description** of the Persona.
    3. Select a **Color** for the Persona.
    4. Select an **image** for the Persona
-      * You can upload your own image or use one of the default ones.
+      * Click **Choose** to pick one of the default persona images, or select **Upload** in the media picker to add your own.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Add-persona.png" alt=""><figcaption>Add persona</figcaption></figure>
 
-7. Click **Add Persona**.
+8. Click **Save**.
 
 You have now set up your personas and can score your [content](../marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md), [campaigns](../marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md), and [referrals](../marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md) against these personas.
 
@@ -56,13 +56,4 @@ You have now set up your personas and can score your [content](../marketers-and-
 
 If you want to tweak the working of the persona scoring in-depth, you can go to the advanced settings of a persona group.
 
-Here you have the option to set different parameters:
-
-* **Threshold value**. This threshold value needs to be reached before a persona can become active. In this case, a persona needs to have 25 points at least before a visitor can be this persona.
-* **The minimal deviation**. This setting specifies the minimal deviation between the persona with the highest and second-highest scores. This can be specified in an absolute value or a percentage.
-* **The minimal deviation percentage**. The percentage specifies the minimum difference between the highest and second-highest scores before a Persona becomes active. In this case, the difference between the first and second persona should be at least 25%.
-* **The absolute value deviation**. The absolute value specifies the minimum difference between the highest and second-highest scores before a persona becomes active.
-* **The expiration type**. Specify whether the implicit persona scoring expires. This can be set to 'never' when it does not expire or can be set to a number of days or sessions.
-* **The maximum points to score**. Specify the maximum number of points that can be scored per persona per item.
-
-By adjusting these settings, you can tweak the performance of the Umbraco Engage algorithm.
+These settings are shared between persona groups and customer journey groups. See [Persona and customer journey group settings](../marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md) for details on each setting and how to fine-tune them.

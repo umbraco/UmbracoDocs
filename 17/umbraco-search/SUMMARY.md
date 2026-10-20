@@ -4,13 +4,13 @@
 
 ## Installation
 
-* [Installation](installation/README.md)
+* [Installation](installation/installation.md)
 
 ## Getting Started
 
-* [Getting Started](getting-started/README.md)
-  * [Indexed values of built-in property editors](getting-started/built-in-property-editors.md)
-  * [System fields in content indexes](getting-started/system-fields.md)
+* [Getting Started](getting-started/getting-started/README.md)
+  * [Indexed values of built-in property editors](getting-started/getting-started/built-in-property-editors.md)
+  * [System fields in content indexes](getting-started/getting-started/system-fields.md)
 * [The Examine Search Provider](getting-started/examine-search-provider.md)
 * [The Backoffice](getting-started/backoffice.md)
 

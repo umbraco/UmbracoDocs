@@ -111,7 +111,7 @@ You can create a new Umbraco Cloud project in one of the two ways:
 * Create a new Umbraco Cloud project from the Umbraco Cloud Portal.
   * Follow the setup instructions detailed below.
 
-<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Use the "Create project" option in the Umbraco Cloud Portal to create a new Umbraco Cloud project.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption><p>Use the "Create project" option in the Umbraco Cloud Portal to create a new Umbraco Cloud project.</p></figcaption></figure>
 
 ### Create a new project
 
@@ -203,17 +203,17 @@ The next step in the migration is to generate data files needed to synchronize w
 
 1. Access the backoffice of the local Cloud clone using **Umbraco ID**.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Use the Umbraco ID signin option when accessing the backoffice on a clone Cloud environment.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption><p>Use the Umbraco ID signin option when accessing the backoffice on a clone Cloud environment.</p></figcaption></figure>
 
 2. Navigate to the **Deploy** dashboard in the **Settings** section.
 3. Locate the **Export Schema to Data Files** in the Deploy Operation section.
 4. Click **Export Schema** to initiate the export.
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption><p>Use the "Export schema" option to generate Data Files based on schema in the database.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption><p>Use the "Export schema" option to generate Data Files based on schema in the database.</p></figcaption></figure>
 
 5. Use the **Deploy Status** section at the top to determine when the export is complete.
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption><p>The Deploy Status section showing a status of "Last deployment operation completed".</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption><p>The Deploy Status section showing a status of "Last deployment operation completed".</p></figcaption></figure>
 
 6. Stop the project.
 7. Add and commit the changes through Git.
@@ -239,7 +239,7 @@ Follow the guide in the [Connect to Azure Storage Explorer](../../build-and-cust
 1. Locate the media files for your Umbraco CMS project.
 2. Copy the `~/wwwroot/media` folder into the Azure Storage Explorer.
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption><p>Media folder added to the "media" folder using Azure Storage Explorer.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption><p>Media folder added to the "media" folder using Azure Storage Explorer.</p></figcaption></figure>
 
 3. Reload the front end and backoffice of the Umbraco Cloud project to verify that the images have been added correctly.
 

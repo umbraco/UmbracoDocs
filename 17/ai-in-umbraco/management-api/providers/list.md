@@ -64,6 +64,9 @@ Possible capability values:
 | ------------ | ------------------------------------ |
 | `Chat`       | Conversational AI / chat completions |
 | `Embedding`  | Text to vector embeddings            |
+| `Decision`   | Typed yes/no, pick-one, and score answers (experimental) |
+
+Experimental capabilities are only listed when their feature flag is enabled. A provider whose capabilities are all disabled is left out of the response. For example, [TypeSafe AI](../../providers/typesafe.md) is only listed when the `Umbraco:AI:Experimental:Decision` flag is on.
 
 ## Example
 

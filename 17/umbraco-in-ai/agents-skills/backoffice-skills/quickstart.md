@@ -8,6 +8,12 @@ description: >-
 
 Use the quickstart skill to set up your development environment, then follow the Plan, Build, Validate workflow to create extensions.
 
+{% hint style="info" %}
+The `umbraco-cms-backoffice-skills` plugin must be installed before you can use the skills referenced in this guide.
+
+Learn more in the [Backoffice Skills](./#installation) article.
+{% endhint %}
+
 ## Setup
 
 The `umbraco-quickstart` skill handles the full setup for you. It creates an Umbraco instance and extension project, registers the extension, and guides you through the development workflow:
@@ -24,7 +30,7 @@ The `umbraco-quickstart` skill handles the full setup for you. It creates an Umb
 ```
 
 {% hint style="info" %}
-The `/` syntax is for Claude Code. In other editors, describe the task in natural language and the agent loads the skill automatically.
+The `/` syntax used above is for Claude Code. In other editors, describe the task in natural language and the agent loads the skill automatically.
 {% endhint %}
 
 ## The **Plan**, **Build**, **Validate** Workflow
@@ -87,7 +93,7 @@ git clone https://github.com/umbraco/Umbraco.UI.git
 /add-dir /path/to/Umbraco.UI/packages/uui
 ```
 
-For more information, see [Tips for Best Results](tips.md) article. &#x20;
+For more information, see [Tips for Best Results](tips.md) article.
 
 ## Next Steps
 

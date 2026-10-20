@@ -13,7 +13,8 @@ Umbraco.AI can be extended with add-on packages that provide specialized functio
 | ---------------------------------------- | -------------------------- | ------------------------------------------------------ |
 | [Prompt Management](prompt/README.md)    | `Umbraco.AI.Prompt`        | Create, manage, and execute reusable prompt templates  |
 | [Agent Runtime](agent/README.md)         | `Umbraco.AI.Agent`         | Configure and run AI agents with streaming responses   |
-| [Agent Copilot](agent-copilot/README.md) | `Umbraco.AI.Agent.Copilot` | Chat sidebar UI for agent interaction (requires Agent) |
+| [Contextual Copilot](agent-copilot/README.md) | `Umbraco.AI.Agent.Copilot` | Contextual chat sidebar, scoped to the open item (requires Agent) |
+| [Copilot Workspace](copilot-workspace/README.md) | `Umbraco.AI.Agent.Copilot.Workspace` | Full-section chat with persisted conversations and projects (requires Agent) |
 | [Semantic Search](search/README.md)      | `Umbraco.AI.Search`        | AI-powered vector search for content and media         |
 | [Deploy Support](deploy/README.md)       | `Umbraco.AI.Deploy`        | Deploy AI configuration across environments            |
 
@@ -22,33 +23,35 @@ Umbraco.AI can be extended with add-on packages that provide specialized functio
 Add-ons depend on the core `Umbraco.AI` package and extend its capabilities:
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                      Your Application                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                  ┌──────────────────────────┐   │
-│                                  │ Umbraco.AI.Agent.Copilot │   │
-│                                  │     (Chat UI Add-on)     │   │
-│                                  └────────────┬─────────────┘   │
-│                                               │                 │
-│   ┌───────────────────┐      ┌────────────────▼───────────┐     │
-│   │ Umbraco.AI.Prompt │      │     Umbraco.AI.Agent       │     │
-│   │   (Prompt Mgmt)   │      │     (Agent Runtime)        │     │
-│   └────────┬──────────┘      └─────────────┬──────────────┘     │
-│            │                               │                    │
-│            └───────────────┬───────────────┘                    │
-│                            │                                    │
-│                  ┌─────────▼─────────┐                          │
-│                  │    Umbraco.AI     │                          │
-│                  │      (Core)       │                          │
-│                  └─────────┬─────────┘                          │
-│                            │                                    │
-│           ┌────────────────┼───────────────┐                    │
-│           │                │               │                    │
-│      ┌────▼─────┐    ┌─────▼─────┐    ┌────▼─────┐              │
-│      │ OpenAI   │    │ Anthropic │    │ Google   │  ...        │
-│      │ Provider │    │ Provider  │    │ Provider │              │
-│      └──────────┘    └───────────┘    └──────────┘              │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                            Your Application                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│              ┌──────────────────────────┐  ┌───────────────────────┐   │
+│              │ Umbraco.AI.Agent.Copilot │  │ ...Copilot.Workspace  │   │
+│              │  (Contextual Chat UI)    │  │ (Persisted, cross-site)│   │
+│              └────────────┬─────────────┘  └────────────┬───────────┘   │
+│                           │                              │               │
+│                           └──────────────┬───────────────┘               │
+│                                          │                               │
+│   ┌───────────────────┐      ┌───────────▼────────────────┐             │
+│   │ Umbraco.AI.Prompt │      │     Umbraco.AI.Agent       │             │
+│   │   (Prompt Mgmt)   │      │     (Agent Runtime)        │             │
+│   └────────┬──────────┘      └─────────────┬──────────────┘             │
+│            │                               │                            │
+│            └───────────────┬───────────────┘                            │
+│                            │                                            │
+│                  ┌─────────▼─────────┐                                  │
+│                  │    Umbraco.AI     │                                  │
+│                  │      (Core)       │                                  │
+│                  └─────────┬─────────┘                                  │
+│                            │                                            │
+│           ┌────────────────┼───────────────┐                            │
+│           │                │               │                            │
+│      ┌────▼─────┐    ┌─────▼─────┐    ┌────▼─────┐                      │
+│      │ OpenAI   │    │ Anthropic │    │ Google   │  ...                │
+│      │ Provider │    │ Provider  │    │ Provider │                      │
+│      └──────────┘    └───────────┘    └──────────┘                      │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Installing Add-ons
@@ -90,14 +93,15 @@ All add-ons share these features from the core package:
 
 Add-ons that store data have their own database tables with a package-specific prefix:
 
-| Add-on | Migration Prefix   |
-| ------ | ------------------ |
-| Prompt | `UmbracoAIPrompt_` |
-| Agent  | `UmbracoAIAgent_`  |
-| Search | `UmbracoAISearch_` |
+| Add-on             | Migration Prefix           |
+| ------------------ | --------------------------- |
+| Prompt             | `UmbracoAIPrompt_`          |
+| Agent              | `UmbracoAIAgent_`           |
+| Copilot Workspace  | `UmbracoAIConversations_`   |
+| Search             | `UmbracoAISearch_`          |
 
 {% hint style="info" %}
-Agent Copilot and Deploy packages are integration-only packages with no database tables.
+Contextual Copilot and Deploy packages are integration-only packages with no database tables of their own. Copilot Workspace is the exception -- it stores conversations and projects under the `UmbracoAIConversations_` prefix.
 {% endhint %}
 
 Migrations run automatically on application startup.

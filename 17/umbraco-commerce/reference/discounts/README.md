@@ -58,7 +58,7 @@ Rules can include blocking conditions to prevent discount stacking:
 * **Block Further Discounts** - Prevent other discounts from applying if this one is used
 * **Block if Other Discounts Apply** - Don't apply this discount if others are already active
 
-For detailed information about available rules and their configuration, see the [Rules Reference](rules/).
+For detailed information about available rules and their configuration, see the [Rules Reference](rules.md).
 
 ## Rewards System
 
@@ -78,7 +78,7 @@ Most rewards support multiple discount methods:
 * **Percentage** - Apply a percentage discount (e.g., 10% off)
 * **Fixed Amount** - Apply a fixed monetary discount (e.g., $5 off)
 
-For detailed information about available rewards and their configuration, see the [Rewards Reference](rewards/).
+For detailed information about available rewards and their configuration, see the [Rewards Reference](rewards.md).
 
 ## Discount Ordering and Priority
 

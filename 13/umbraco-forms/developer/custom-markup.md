@@ -79,7 +79,7 @@ It is also possible to customize the markup for a specific Form.
 
 You will need to create folder using the ID of the Form: `~\Views\Partials\Forms\{FormId}` (find the id of the Form in the URL when you are viewing the Form in the backoffice.)
 
-![Form GUID](images/form-guid.png)
+![Form GUID](../.gitbook/assets/form-guid.png)
 
 As an example if your Form ID is 0d3e6b2d-db8a-43e5-8f28-36241d712487 then you can overwrite the Form view by adding the `Form.cshtml` file to the directory. Start by copying the default one and then making your custom changes: `~\Views\Partials\Forms\0d3e6b2d-db8a-43e5-8f28-36241d712487\Form.cshtml`.
 

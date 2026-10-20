@@ -34,13 +34,13 @@ The cleanup schedule is configured under `Engage:Analytics:DataCleanup` in your 
 ```
 {% endcode %}
 
-| Setting | Description | Default |
-| --- | --- | --- |
-| `Enabled` | Whether the data cleanup process runs at all. | `true` |
-| `FirstRunTime` | Optional crontab expression to schedule the first cleanup run. When set, the calculated delay must still be at least `StartupDelay`. | `null` |
-| `StartupDelay` | Minimum time after application startup before the first cleanup run. Used directly as the delay when `FirstRunTime` is not set. | `00:05:00` (5 minutes) |
-| `Interval` | Interval between cleanup runs. | `1.00:00:00` (24 hours) |
-| `CommandTimeout` | Database command timeout in seconds. | `1200` (20 minutes) |
+| Setting          | Description                                                                                                                          | Default                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| `Enabled`        | Whether the data cleanup process runs at all.                                                                                        | `true`                  |
+| `FirstRunTime`   | Optional crontab expression to schedule the first cleanup run. When set, the calculated delay must still be at least `StartupDelay`. | `null`                  |
+| `StartupDelay`   | Minimum time after application startup before the first cleanup run. Used directly as the delay when `FirstRunTime` is not set.      | `00:05:00` (5 minutes)  |
+| `Interval`       | Interval between cleanup runs.                                                                                                       | `1.00:00:00` (24 hours) |
+| `CommandTimeout` | Database command timeout in seconds.                                                                                                 | `1200` (20 minutes)     |
 
 {% hint style="info" %}
 The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and no longer used.
@@ -104,7 +104,7 @@ The script contains 7 numbered batches separated by `GO` statements (besides val
 
 The script is safe to re-run if a batch fails. The first failing batch surfaces the root-cause error and subsequent batches no-op cleanly — fix the cause, then re-run the script.
 
-##### Engage data in a separate database
+**Engage data in a separate database**
 
 If your Engage analytics data lives in a **different database** from your Umbraco core tables, set the script's `separateDatabaseMode` flag before running it. Near the top of `CompleteAlignSchema.sql` you will find:
 
@@ -138,6 +138,10 @@ Run the `DeduplicatePageVariants.sql` script against your database. This consoli
 {% hint style="info" %}
 This step is optional. The update on the pageviews table can take a while on large installations, so plan accordingly.
 {% endhint %}
+
+{% hint style="info" %}
+Engage began recording which variant was served in 17.4. Installations that collected traffic on 17.0, 17.1, or 16.0 to 16.2 also hold rows with an empty segment from before that change. Those rows look identical to genuine original-variant rows, so the script groups them together. Original-variant figures on those installations therefore include some traffic that predates variant tracking. Nothing can separate the two retrospectively. Figures for traffic collected on 17.4 and later are unaffected.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 
@@ -150,18 +154,18 @@ Two new Engage health checks are available in the Umbraco Health Check dashboard
 
 ### Downloading the scripts
 
-{% file src="../scripts/GetDeleteAnalyticsDataAfterDays.sql" %}
+{% file src="../.gitbook/assets/GetDeleteAnalyticsDataAfterDays.sql" %}
 Recommends a safe initial `DeleteAnalyticsDataAfterDays` value based on your data.
 {% endfile %}
 
-{% file src="../scripts/EnsureDataConsistency.sql" %}
+{% file src="../.gitbook/assets/EnsureDataConsistency.sql" %}
 Run during a maintenance window **before** `CompleteAlignSchema.sql` to clean up orphaned data and verify all foreign key constraints.
 {% endfile %}
 
-{% file src="../scripts/CompleteAlignSchema.sql" %}
+{% file src="../.gitbook/assets/CompleteAlignSchema.sql" %}
 Run during a maintenance window **after** `EnsureDataConsistency.sql` to add missing foreign keys, indexes, and constraints.
 {% endfile %}
 
-{% file src="../scripts/DeduplicatePageVariants.sql" %}
+{% file src="../.gitbook/assets/DeduplicatePageVariants.sql" %}
 Consolidates duplicate page variant rows and reassigns pageviews. Run during a maintenance window as the update on the pageviews table can take a while on large installations.
 {% endfile %}

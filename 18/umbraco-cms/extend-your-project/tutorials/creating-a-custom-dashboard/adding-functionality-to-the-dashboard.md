@@ -47,8 +47,8 @@ constructor() {
     });
 }
 
-private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-    this.observe(instance.currentUser, (currentUser) => {
+private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+    this.observe(instance?.currentUser, (currentUser) => {
         this._currentUser = currentUser;
     });
 }
@@ -56,6 +56,8 @@ private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE
 ...
 ```
 {% endcode %}
+
+The callback receives `undefined` when the context is not available, for example when the dashboard is removed from the page. The `?.` operator handles that case, and `observe` stops observing when it receives `undefined`.
 
 {% hint style="info" %}
 The entire `welcome-dashboard.element.ts` file is available for reference at the end of the step to confirm your placement for code snippets.
@@ -115,8 +117,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
         });
     }
 
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }
@@ -211,12 +213,14 @@ private async _getPagedUserData() {
 
 The method `requestCollection` returns a promise, so let's `await` the data and save the data in our array:
 
+{% code title="welcome-dashboard.element.ts" %}
 ```typescript
 private async _getPagedUserData() {
     const { data } = await this.#userRepository.requestCollection();
     this._userData = data?.items ?? [];
 }
 ```
+{% endcode %}
 
 ## Render the Data
 
@@ -319,8 +323,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
         this._getPagedUserData();
     }
 
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }

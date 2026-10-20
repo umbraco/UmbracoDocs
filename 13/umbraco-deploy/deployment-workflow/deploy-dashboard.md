@@ -26,6 +26,10 @@ Below you can read what each operation will do when run through the dashboard.
 
 Running this operation will update the Umbraco Schema based on the information in the `.uda` files on disk.
 
+### Verify and Clean Schema
+
+This operation deletes schema from your current environment if it does not have a matching UDA file. It manually deletes each item in the Schema Comparison overview with an exclamation mark in the 'File Exists' column.
+
 ### Export Schema To Data Files
 
 Running this operation will extract the schema from Umbraco and output it to the `.uda` files on disk.

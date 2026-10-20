@@ -138,6 +138,7 @@ Conditions specific to the Block workspace (used by Block List, Block Grid and s
 
 You can make your own Conditions by creating a class that implements the `UmbExtensionCondition` interface.
 
+{% code title="MyExtensionCondition.ts" %}
 ```typescript
 import {
     UmbConditionConfigBase,
@@ -165,7 +166,6 @@ export class MyExtensionCondition
         // enable extension after 10 seconds
         setTimeout(() => {
             this.permitted = true;
-            args.onChange();
         }, 10000);
     }
 }
@@ -177,12 +177,16 @@ declare global {
     }
 }
 ```
+{% endcode %}
 
 The global declaration on the last five lines makes your Condition appear valid for manifests using the type `UmbExtensionManifest`. Also, the Condition Config Type alias should match the alias given when registering the condition below.
 
 The Condition then needs to be registered in the Extension Registry:
 
+{% code title="manifests.ts" %}
 ```typescript
+import { MyExtensionCondition } from "./MyExtensionCondition";
+
 export const manifest: UmbExtensionManifest = {
     type: "condition",
     name: "My Condition",
@@ -190,9 +194,11 @@ export const manifest: UmbExtensionManifest = {
     api: MyExtensionCondition,
 };
 ```
+{% endcode %}
 
 Finally, you can make use of your condition in any manifests:
 
+{% code title="workspace-action/manifests.ts" %}
 ```typescript
 export const manifest: UmbExtensionManifest = {
     type: "workspaceAction",
@@ -210,9 +216,11 @@ export const manifest: UmbExtensionManifest = {
     ],
 };
 ```
+{% endcode %}
 
 As shown in the code above, the configuration property `match` isn't used for our condition. We can do this by replacing the timeout with some other check:
 
+{% code title="MyExtensionCondition.ts" %}
 ```typescript
 // ...
 
@@ -228,16 +236,17 @@ export class MyExtensionCondition
 
         if (args.config.match === "Yes") {
             this.permitted = true;
-            args.onChange();
         }
     }
 }
 
 // ...
 ```
+{% endcode %}
 
 With all that in place, the configuration can look like shown below:
 
+{% code title="workspace-action/manifests.ts" %}
 ```typescript
 {
     // ...
@@ -247,6 +256,7 @@ With all that in place, the configuration can look like shown below:
             alias: "My.Condition.CustomName",
             match: "Yes",
         },
-    ];
+    ],
 }
 ```
+{% endcode %}

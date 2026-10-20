@@ -17,7 +17,7 @@ There are three options for restoring content:
 3. [Partial Restore](restoring-content.md#partial-restore)
 
 {% hint style="info" %}
-Restoring content, media, and forms will overwrite any items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the relevant sections, including the Recycle Bins, on the target environment. You can also use the [Import and Export](import-export.md) feature with a full export from the source environment.
+Restoring content, media, and forms will overwrite any items on the target that also exist in the source. However, it will not delete items that exist on the target but are missing from the source. This is a safety feature to prevent accidental data loss. To achieve a true mirror and remove orphaned items, manually empty the relevant sections, including the Recycle Bins, on the target environment. You can also use the [Import and Export](import-export/) feature with a full export from the source environment.
 {% endhint %}
 
 ## Restore Environment
@@ -63,7 +63,7 @@ In some cases, it might be necessary to refresh the browser window to see the re
 
 ## Tree Restore
 
-Tree Restore lets you restore a single tree, like just the content tree or just the Media tree.
+Tree Restore lets you restore a single tree, like the content tree or the Media tree.
 
 For example, if triggered from the content tree, only the content items will be restored. Only referenced (dependencies) elements, media, and forms will be included in the restore.
 
@@ -75,7 +75,7 @@ For example, if triggered from the content tree, only the content items will be 
 3. Use the dropdown to select the environment you want to restore from.
 4. Click **Restore from \[environment name]** to initiate the restore.
 
-When completed, click on the ellipses next to the tree title again and choose **Reload**.&#x20;
+When completed, click on the ellipses next to the tree title again and choose **Reload**.
 
 ## Partial Restore
 
@@ -112,6 +112,10 @@ Follow these steps to perform a partial restore to get only the parts you need:
 To see the restored content, reload the content tree. Click the ellipses next to the tree title, then choose _Reload_.
 
 {% hint style="info" %}
+The dialog shows the items in the selected environment, including items that don't exist in your current environment. Use the search field to find an item by name. Members also match on username and email.
+
+You can partially restore members, member groups, and dictionary items from their trees in the same way. Members require the [`AllowMembersDeploymentOperations`](../getting-started/deploy-settings.md#transfer-members) setting to allow restores. Member groups and dictionary items require the `TransferMemberGroupsAsContent` and [`TransferDictionaryAsContent`](../getting-started/deploy-settings.md#transfer-dictionary-items-as-content) settings.
+
 Keep in mind that if you select an item with ancestors/parents, all the ancestors above it, required for the item to exist, are restored as well.
 {% endhint %}
 

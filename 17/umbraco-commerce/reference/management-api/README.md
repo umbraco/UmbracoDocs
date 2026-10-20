@@ -16,7 +16,7 @@ Umbraco Commerce ships with Swagger to document the Management API. Swagger and 
 
 The Swagger documentation allows you to select a definition and go to either Umbraco Commerce Management API or Umbraco Commerce Storefront API.
 
-![Umbraco Commerce Management API documentation in Swagger](../../.gitbook/assets/umbraco-commerce-management-api.png)
+![Umbraco Commerce Management API documentation in Swagger](<../../.gitbook/assets/umbraco-commerce-management-api (1).png>)
 
 In the Swagger Umbraco Management API, you can find a collection of available endpoints in this version of Umbraco.
 

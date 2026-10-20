@@ -174,14 +174,15 @@ Create a profile with the **Speech-to-Text** capability. Supported models includ
 | `gpt-4o-transcribe`     | Higher accuracy transcription        |
 | `gpt-4o-mini-transcribe`| Cost-effective transcription         |
 
-## Copilot Voice Input
+## Voice Input in Contextual Copilot and Copilot Workspace
 
-The Agent Copilot includes a built-in voice input button. When a Speech-to-Text profile is configured, a microphone button appears in the Copilot chat input. Click it to record and transcribe audio into text.
+Both Contextual Copilot and Copilot Workspace include a built-in voice input button, since they share the same chat input component. When a Speech-to-Text profile is configured, a microphone button appears in the chat input. Click it to record and transcribe audio into text.
 
-See [Copilot Usage](../add-ons/agent-copilot/copilot.md) for more details.
+See [Contextual Copilot Usage](../add-ons/agent-copilot/copilot.md) or [Copilot Workspace Usage](../add-ons/copilot-workspace/copilot-workspace.md) for more details.
 
 ## Related
 
 - [Capabilities](../concepts/capabilities.md) - Available capability types
 - [OpenAI Provider](../providers/openai.md) - Provider with Speech-to-Text support
-- [Copilot Usage](../add-ons/agent-copilot/copilot.md) - Voice input in the Copilot
+- [Contextual Copilot Usage](../add-ons/agent-copilot/copilot.md) - Voice input in Contextual Copilot
+- [Copilot Workspace Usage](../add-ons/copilot-workspace/copilot-workspace.md) - Voice input in Copilot Workspace

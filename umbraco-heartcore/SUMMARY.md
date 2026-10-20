@@ -1,7 +1,7 @@
 # Table of contents
 
 * [What is Umbraco Heartcore?](README.md)
-  * [Compare with Umbraco CMS](compare-with-umbraco-cms.md)
+  * [Compare with Umbraco CMS](readme/compare-with-umbraco-cms.md)
 * [Versions and updates](versions-and-updates.md)
 
 ## Getting Started
@@ -22,8 +22,8 @@
 
 ## API Documentation
 
-* [API Documentation](api-documentation/README.md)
-  * [Rate Limits](api-documentation/rate-limits.md)
+* [API Documentation](api-documentation/api-documentation/README.md)
+  * [Rate Limits](api-documentation/api-documentation/rate-limits.md)
 * [Content Delivery](api-documentation/content-delivery/README.md)
   * [Content](api-documentation/content-delivery/content.md)
   * [Media](api-documentation/content-delivery/media.md)
@@ -52,7 +52,7 @@
 
 ## Client Libraries
 
-* [Client Libraries](client-libraries/README.md)
+* [Client Libraries](client-libraries/client-libraries.md)
 * [.NET Core Console Application](client-libraries/dot-net-console.md)
 * [Node.js Client library](client-libraries/node-js.md)
 * [.NET Client library](client-libraries/dot-net-core/README.md)

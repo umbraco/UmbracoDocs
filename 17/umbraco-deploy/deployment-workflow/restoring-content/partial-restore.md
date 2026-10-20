@@ -34,10 +34,14 @@ Follow these steps to perform a partial restore to get only the parts you need:
 9. To see the restored content, _reload_ the content tree - Click **...** next to the Content tree to find this option.
 
 {% hint style="info" %}
+The dialog shows the items in the selected environment, including items that don't exist in your current environment. Use the search field to find an item by name. Members also match on username and email.
+
+You can partially restore media, members, member groups, and dictionary items from their trees in the same way. Members require the [`AllowMembersDeploymentOperations`](../../getting-started/deploy-settings.md#transfer-members) setting to allow restores. Member groups and dictionary items require the `TransferMemberGroupsAsContent` and [`TransferDictionaryAsContent`](../../getting-started/deploy-settings.md#transfer-dictionary-items-as-content) settings.
+
 Keep in mind if you select a content node deeper down the tree, all the parents above it, required for the node to exist, will be restored as well.
 {% endhint %}
 
-![Partial restore on empty environment](images/partialRestore-onEmpty-v9.gif)
+![Partial restore on empty environment](../../.gitbook/assets/partialRestore-onEmpty-v9.gif)
 
 Partial Restores on empty environments are especially helpful when you have a large amount of content and media and do not necessarily need it all for the task you need to do.
 
@@ -57,4 +61,4 @@ Imagine that you are working with your Umbraco project locally. One of your cont
 6. Start the restore by clicking _Restore_
 7. When the restore is done, reload the content tree to see the changes
 
-![Partial restore](images/partialRestore-onEnvWithContent.png)
+![Partial restore](../../.gitbook/assets/partialRestore-onEnvWithContent.png)

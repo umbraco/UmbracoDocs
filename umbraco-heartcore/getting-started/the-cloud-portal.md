@@ -28,13 +28,13 @@ When you are done, you can go back to the project overview.
 
 In the top-left corner, you will find the **invite member** option. This will allow you to quickly invite new team members to your project from a modal that pops up. This makes it very fast to invite new team members.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt="Invite Team Member Modal."><figcaption><p>Invite Team Member Modal.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt="Invite Team Member Modal."><figcaption><p>Invite Team Member Modal.</p></figcaption></figure>
 
 ## Settings
 
 In the left side menu, you can find the different settings and configurations available for your Heartcore project.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt="Project Menu Overview."><figcaption><p>Project Menu Overview.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt="Project Menu Overview."><figcaption><p>Project Menu Overview.</p></figcaption></figure>
 
 ### Edit Team
 

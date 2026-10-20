@@ -66,11 +66,9 @@ This is done by creating a `CurerrencySwitcher.cshtml` partial with the followin
 This can then be placed in your sites base template by adding the following:
 
 {% code title="Layout.cshtml" %}
-
 ```csharp
 @(await Html.PartialAsync("CurerrencySwitcher"))
 ```
-
 {% endcode %}
 
 ## Handle Switching Currencies
@@ -80,8 +78,7 @@ Switching the culture is handled by a Surface controller.
 Create a new Surface controller called `CultureSurfaceController` and add the following code:
 
 {% code title="CultureSurfaceController.cs" %}
-
-````csharp
+```csharp
 public class CultureSurfaceController : SurfaceController
 {
     private readonly IUmbracoCommerceApi _commerceApi;
@@ -129,21 +126,18 @@ public class CultureSurfaceController : SurfaceController
         return RedirectToCurrentUmbracoPage();
     }
 }
-````
-
+```
 {% endcode %}
 
 The `ChangeCountryDto` class binds the country ISO code from the form.
 
 {% code title="ChangeCountryDto.cs" %}
-
-````csharp
+```csharp
 public class ChangeCountryDto
 {
     public string CountryIsoCode { get; set; }
 }
-````
-
+```
 {% endcode %}
 
 ## Result

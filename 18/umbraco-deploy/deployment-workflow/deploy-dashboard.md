@@ -6,7 +6,7 @@ description: >-
 
 # Deploy Settings
 
-In this article, we will show the different sections under Deploy in the Settings section and how they can be used.
+This article shows the different sections under Deploy in the Settings section and how they can be used.
 
 ## Status
 

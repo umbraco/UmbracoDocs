@@ -289,6 +289,8 @@ Define your route as before, specifying the correct client type route:
 You will need to configure your route request options within your **Program.cs** class. For single routes:
 
 ```csharp
+using Umbraco.Cms.Web.Common.Routing;
+
 builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");
@@ -316,15 +318,21 @@ builder.Services.Configure<UmbracoRequestOptions>(options =>
 });
 ```
 
-In your **FindContent** method you should still be able to access and use **IUmbracoContextAccessor** through standard DI:
+In your **FindContent** method you should still be able to access and use **IUmbracoContextAccessor** through standard DI. To find a root content item, combine it with `IDocumentNavigationQueryService`:
 
-```
+```csharp
 public IPublishedContent? FindContent(ActionExecutingContext actionExecutingContext)
 {
-    IUmbracoContext context = _umbracoContextAccessor.GetRequiredUmbracoContext();
-    IPublishedContent? content = context.Content?.GetAtRoot().FirstOrDefault();
+    if (_umbracoContextAccessor.TryGetUmbracoContext(out IUmbracoContext? context)
+        && _documentNavigationQueryService.TryGetRootKeys(out IEnumerable<Guid> rootKeys))
+    {
+        return rootKeys
+            .Select(key => context.Content?.GetById(key))
+            .WhereNotNull()
+            .FirstOrDefault();
+    }
 
-    return content;
+    return null;
 }
 ```
 

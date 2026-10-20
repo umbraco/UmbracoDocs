@@ -30,7 +30,7 @@ A Document Type is created using the Document Type editor in the **Settings** se
 
 ![Create Document Type](../../../../.gitbook/assets/create-document-type-18.png)
 
-You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Default Document Types](default-document-types.md) section.
+You can also choose to create a **Document Type** without a template and create **Folders** to organize your Document Types. Other options are to create Compositions and Element types, which you can read more about in the [Document Type Options](document-type-options.md) section.
 
 ## 2. Defining the root node
 

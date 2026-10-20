@@ -16,7 +16,11 @@ The Management API is a replacement for the backoffice controllers that lacked R
 
 ### OpenAPI Documentation
 
-Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management API. The OpenAPI document and Swagger UI are both available at `{yourdomain}/umbraco/openapi`, and both are disabled in production environments for security reasons.
+Umbraco uses [Microsoft.AspNetCore.OpenApi](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview) to document the Management API. The OpenAPI document and Swagger UI are both available at `{yourdomain}/umbraco/openapi.`
+
+{% hint style="info" %}
+Both are disabled in production environments for security reasons. If you get no response at `{yourdomain}/umbraco/openapi`, confirm you're testing against a non-production environment.
+{% endhint %}
 
 The OpenAPI documentation allows you to select a definition and go to either Umbraco Management API or Content Delivery API. If you are extending the Management API with your own controllers, you can also create custom documentation for these. See [Custom Backoffice API](../../../extend-your-project/server-side-extensions/custom-backoffice-api.md) and [Creating a backoffice API](../../../extend-your-project/tutorials/creating-a-backoffice-api/) articles for details.
 

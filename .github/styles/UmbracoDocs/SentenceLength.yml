@@ -8,4 +8,4 @@ link: https://docs.umbraco.com/contributing/documentation/style-guide#avoid-long
 scope: sentence
 level: warning
 max: 25
-token: \b(\w+)\b
+token: \b\w+(?:[.-]\w+)*\b

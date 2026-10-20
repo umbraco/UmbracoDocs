@@ -6,7 +6,7 @@ description: >-
 
 # Profiling
 
-The **Profiles** section offers an overview of all the visitors that visited your website. To access the profiles section, navigate to **Engage** -> **Profiles**.
+The **Profiles** section offers an overview of all the visitors that visited your website. To access the profiles section, navigate to **Engage** > **Profiles**.
 
 ![Profiles section](../../.gitbook/assets/Profiles-v16.png)
 
@@ -16,15 +16,15 @@ This section provides an overview of all visitors:
 
 At the top, the total number of visitors that visited your website is displayed. You can also see how many visitors are identified versus unidentified.
 
-The graph shows the number of new identified visitors over the last 30 days.
+The **New profiles (last 30 days)** chart shows how many profiles were added in the last 30 days. The **Profile growth (last 365 days)** graph shows how the number of profiles has grown over the past year.
 
-The table displays an overview of the profiles per month.
+The table lists the individual profiles.
 
 ## Identified versus Unidentified Profiles
 
 As long as there is no data of a visitor, this profile is called "Unidentified". If a visitor [does not give consent](../../developers/introduction/the-umbraco-engage-cookie/module-permissions.md) to be identified, they remain "Unidentified".
 
-However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco Form, they become an "Identified Profile." For example: If you see a visitor name in the Profiles table it is because the visitor has logged in as a member.
+However, once a visitor logs in (via Umbraco's Members section) or submits an Umbraco Form (requires the [Forms](../../add-ons/forms.md) add-on), they become an "Identified Profile." For example: If you see a visitor name in the Profiles table it is because the visitor has logged in as a member.
 
 ## Profiles Overview
 
@@ -50,11 +50,11 @@ It is possible to filter the profiles table by clicking the **Filter** button.
 
 You can filter by:
 
-* Unidentified or Identified profiles
-* Profiles with high potential
-* Profiles with more than X conversions
-* Profiles with more than X total value achieved by triggered goals
-* Specific date ranges
+* Excluding unidentified or identified profiles
+* Excluding high-potential profiles
+* A minimum number of completed goals
+* A minimum goal value
+* The period the profiles were active
 * Segment
 * Member name
 

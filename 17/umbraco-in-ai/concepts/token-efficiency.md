@@ -24,7 +24,7 @@ Claude Code applies this pattern with its MCP tool search feature. The agent que
 
 If your platform does not support active context management, you **must manually engineer** the context to get the most efficient session. You do this through environment variables when starting the MCP server, choosing which tools are exposed to the agent.
 
-The environment variables are the same across all Umbraco MCP servers. See [Tool Filtering](../mcp/base-mcp/sdk/tool-filtering.md) for the full list of filtering options.
+The environment variables are the same across all Umbraco MCP servers. See [Tool Filtering](../mcp/custom-mcp-server/sdk/tool-filtering.md) for the full list of filtering options.
 
 {% hint style="warning" %}
 If your platform does not manage context and you do not filter tools, token usage grows quickly. Costs rise and subscription limits are reached sooner.

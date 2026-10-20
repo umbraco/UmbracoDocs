@@ -64,11 +64,16 @@ In the above query, no filter type has been supplied, so GraphQL will default to
 
 </details>
 
-For example, to retrieve all products priced at $10 or more, use the following query:
+
+
+## Filtering by Type
+
+You can filter results to include only content items with a specific type schema. You can do that by specifying an object with an empty property named after your type. For example, to select all content items of type `product` from the `content` collection, you might use the following query:
 
 ```graphql
 query {
-    products (where: { price_gte: 10 }) {
+    content (where: { product: {}})
+    {
         items {
             ... on Product {
                 # Selected fields
@@ -78,14 +83,13 @@ query {
 }
 ```
 
-## Filtering by Type
+## Filtering by Property
 
-You can filter results to include only content items with a specific type schema. You can do that by specifying only the type schema name as the value of a where clause. For example, to select all content items of type `product` from the `content` collection, you might use the following query:
+You can filter by some property value of a type by first specifying the type, then the property on which to filter. For example, to retrieve all products priced at $10 or more, you might use the following query:
 
 ```graphql
 query {
-    content (where: product)
-    {
+    products (where: { product: { price_gte: 10 }}) {
         items {
             ... on Product {
                 # Selected fields
@@ -102,8 +106,10 @@ You can filter on properties of a nested object. This is done by passing a likew
 ```graphql
 query {
     articles (where: {
-        author: {
-            name_any: ["John", "Jane"]
+        article: {
+            author: {
+                name_any: ["John", "Jane"]
+            }
         }
     })
     {
@@ -124,8 +130,8 @@ Queries can also combine or invert filters using boolean operators.
 query {
     authors (where: {
         AND: [
-            { firstName: "John" },
-            { lastName: "Doe" }
+            { author: { firstName: "John" }},
+            { author: { lastName: "Doe" }}
         ]
     })
     {

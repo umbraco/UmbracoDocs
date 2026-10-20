@@ -6,25 +6,19 @@ description: Information on using the Umbraco log viewer
 
 Umbraco ships with a built-in Log Viewer feature. This allows you to filter, view log entries, perform complex search queries, and analyze logs for debugging. You can find the Log viewer in the **Settings** section of the Umbraco backoffice.
 
-{% embed url="https://youtu.be/PDqIRVygAQ4?t=102" %}
-Learn how to use the Log Viewer to read and understand logs for your Umbraco CMS website.
-{% endembed %}
-
 ## Benefits
 
-Ever needed to find all log entries containing the same request ID? Or locate all logs where a property called `Duration` exceeds 1000ms?
-
-With structured logging and a query language, you can efficiently search and identify log items for specific scenarios. This helps in debugging and finding patterns in your logs, making it easier to resolve issues.
+Umbraco's Log Viewer uses structured logging and a query language, so you can search for specific scenarios instead of scanning raw text. For example, finding every log entry tied to one request ID, or every entry where `Duration` exceeds `1000ms`. This makes debugging and pattern-spotting easier.
 
 ## Example Queries
 
-Here are some example queries to help you get started. For more details on the syntax, see the https://github.com/serilog/serilog-filters-expressions project.
+Here are some example queries to help you get started. For more details on the syntax, see the [serilog-filters-expressions](https://github.com/serilog/serilog-filters-expressions) project.
 
-**Find all logs that are from the namespace 'Umbraco.Core'**`StartsWith(SourceContext, 'Umbraco.Core')`
+- **Find all logs that are from the namespace 'Umbraco.Core'** `StartsWith(SourceContext, 'Umbraco.Core')`
 
-**Find all logs that have the property 'Duration' and the duration is greater than 1000ms**`Has(Duration) and Duration > 1000`
+- **Find all logs that have the property 'Duration' and the duration is greater than 1000ms** `Has(Duration) and Duration > 1000`
 
-**Find all logs where the message has localhost in it with SQL like**`@Message like '%localhost%'`
+- **Find all logs where the message has localhost in it with SQL like** `@Message like '%localhost%'`
 
 ## Saved Searches
 
@@ -42,6 +36,8 @@ To fetch logs from Azure Table Storage, extend the `LogViewerRepositoryBase` cla
 This implementation requires the `Azure.Data.Tables` NuGet package.
 {% endhint %}
 
+{% code title="AzureTableLogsRepository.cs" %}
+
 ```csharp
 using Azure;
 using Azure.Data.Tables;
@@ -53,6 +49,7 @@ using Umbraco.Cms.Core.Serialization;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Logging.Serilog;
 using Umbraco.Cms.Infrastructure.Services.Implement;
+using LogLevel = Umbraco.Cms.Core.Logging.LogLevel;
 
 namespace My.Website;
 
@@ -87,7 +84,7 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
         return filteredData.Select(x => new LogEntry
         {
             Timestamp = x.Timestamp,
-            Level = Enum.Parse<Core.Logging.LogLevel>(x.Level.ToString()),
+            Level = Enum.Parse<LogLevel>(x.Level.ToString()),
             MessageTemplateText = x.MessageTemplate.Text,
             Exception = x.Exception?.ToString(),
             Properties = MapLogMessageProperties(x.Properties),
@@ -143,13 +140,32 @@ public class AzureTableLogsRepository : LogViewerRepositoryBase
 }
 ```
 
+{% endcode %}
+
 Azure Table Storage requires entities to implement the `ITableEntity` interface. Since Umbraco's default log entity does not implement this, a custom entity (`AzureTableLogEntity`) must be created to ensure logs are correctly fetched.
+
+{% hint style="warning" %}
+The connection string above must match the one used by the Serilog sink configured in [Configuring Logging to Azure Table Storage](#configuring-logging-to-azure-table-storage). If the two point at different storage accounts, this repository queries a table that was never written to. The Log Viewer then fails with an error stating the table does not exist. Read the connection string from configuration rather than hardcoding it, so both sides always agree.
+{% endhint %}
 
 ### Creating a custom log viewer service
 
-The next thing to do is create a new implementation of `ILogViewerService`. Amongst other things, this is responsible for figuring out whether a provided log query is allowed. Again a base class is available.
+Create a new implementation of `ILogViewerService`. Amongst other things, this is responsible for figuring out whether a provided log query is allowed. Again a base class is available.
+
+{% code title="AzureTableLogsService.cs" %}
 
 ```csharp
+using System.Collections.ObjectModel;
+using Umbraco.Cms.Core;                                
+using Umbraco.Cms.Core.Logging.Viewer;                 
+using Umbraco.Cms.Core.Persistence.Repositories;      
+using Umbraco.Cms.Core.Scoping;                       
+using Umbraco.Cms.Core.Services;                       
+using Umbraco.Cms.Core.Services.OperationStatus;      
+using LogLevel = Umbraco.Cms.Core.Logging.LogLevel;   
+
+namespace My.Website;
+
 public class AzureTableLogsService : LogViewerServiceBase
 {
     public AzureTableLogsService(
@@ -160,8 +176,10 @@ public class AzureTableLogsService : LogViewerServiceBase
     {
     }
 
+    protected override string LoggerName => "AzureTableStorage";
+
     // Change this to what you think is sensible.
-    // As an example, check whether more than 5 days off logs are requested.
+    // As an example, check whether more than 5 days of logs are requested.
     public override Task<Attempt<bool, LogViewerOperationStatus>> CanViewLogsAsync(LogTimePeriod logTimePeriod)
     {
         return logTimePeriod.EndTime - logTimePeriod.StartTime < TimeSpan.FromDays(5)
@@ -182,9 +200,13 @@ public class AzureTableLogsService : LogViewerServiceBase
 }
 ```
 
+{% endcode %}
+
 ### Register implementations
 
 Umbraco needs to be made aware that there is a new implementation of an `ILogViewerRepository` and an `ILogViewerService`. These need to replace the default ones that are shipped with Umbraco.
+
+{% code title="AzureTableLogsComposer.cs" %}
 
 ```csharp
 using Umbraco.Cms.Core.Composing;
@@ -194,35 +216,44 @@ using Umbraco.Cms.Core.Services;
 namespace My.Website;
 
 public class AzureTableLogsComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
     {
-        public void Compose(IUmbracoBuilder builder)
-        {
-            builder.Services.AddUnique<ILogViewerRepository, AzureTableLogsRepository>();
-            builder.Services.AddUnique<ILogViewerService, AzureTableLogsService>();
-        }
+        builder.Services.AddUnique<ILogViewerRepository, AzureTableLogsRepository>();
+        builder.Services.AddUnique<ILogViewerService, AzureTableLogsService>();
     }
 }
 ```
+
+{% endcode %}
 
 ### Configuring Logging to Azure Table Storage
 
 With the above three classes, the setup is in place to view logs from an Azure Table. However, logs are not yet persisted into the Azure Table Storage account. To enable persistence, configure the Serilog logging pipeline to store logs in Azure Table Storage.
 
-* Install `Serilog.Sinks.AzureTableStorage` from NuGet.
-* Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
+1. Install `Serilog.Sinks.AzureTableStorage` from NuGet.
+2. Add a new sink to `appsettings.json` with credentials to persist logs to Azure.
 
 The following sink needs to be added to the [`Serilog:WriteTo`](https://github.com/serilog/serilog-sinks-azuretablestorage#json-configuration) array.
 
+{% code title="appsettings.json" %}
+
 ```json
 {
-    "Name": "AzureTableStorage",
-    "Args": {
-        "storageTableName": "LogEventEntity",
-        "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
-        "connectionString": "DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net"
+"Name": "AzureTableStorage",
+"Args": {
+    "storageTableName": "LogEventEntity",
+    "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+    "connectionString": "UseDevelopmentStorage=true"
     }
 }
 ```
+
+{% endcode %}
+
+This example uses the same Azurite-compatible connection string as the repository above, so the two stay in sync for local testing.
+
+Replace it with your real Azure Storage connection string when deploying, for example: `DefaultEndpointsProtocol=https;AccountName=ACCOUNT_NAME;AccountKey=KEY;EndpointSuffix=core.windows.net`. Update the repository's connection string to match.
 
 For more in-depth information about logging and how to configure it, see the [Logging](../../../develop-with-umbraco/testing-and-debugging/logging.md) article.
 

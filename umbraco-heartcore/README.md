@@ -2,14 +2,14 @@
 
 Umbraco Heartcore is a headless Software As A Service (SAAS) offered by Umbraco. The service enables you to create and manage content and media in the Umbraco backoffice and make it available to any platforms, devices, channels and so forth.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting started</strong></td><td>Get started working with Umbraco Heartcore</td><td><a href=".gitbook/assets/headless (1).png">headless (1).png</a></td><td><a href="api-documentation/content-delivery/content.md">content.md</a></td></tr><tr><td><strong>Umbraco Heartcore APIs</strong></td><td>See the different APIs available in Umbraco Heartcore</td><td><a href=".gitbook/assets/code (1) (1) (1).png">code (1) (1) (1).png</a></td><td><a href="api-documentation/">api-documentation</a></td></tr><tr><td><strong>Client libraries</strong></td><td>Test out your Umbraco Heartcore project with the pre-made client libraries</td><td><a href=".gitbook/assets/devices (1).png">devices (1).png</a></td><td><a href="client-libraries/">client-libraries</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting started</strong></td><td>Get started working with Umbraco Heartcore</td><td><a href=".gitbook/assets/headless (1).png">headless (1).png</a></td><td><a href="api-documentation/content-delivery/content.md">content.md</a></td></tr><tr><td><strong>Umbraco Heartcore APIs</strong></td><td>See the different APIs available in Umbraco Heartcore</td><td><a href=".gitbook/assets/code (1) (1) (1).png">code (1) (1) (1).png</a></td><td><a href="api-documentation/api-documentation/">api-documentation</a></td></tr><tr><td><strong>Client libraries</strong></td><td>Test out your Umbraco Heartcore project with the pre-made client libraries</td><td><a href=".gitbook/assets/devices (1).png">devices (1).png</a></td><td><a href="client-libraries/client-libraries.md">client-libraries.md</a></td></tr></tbody></table>
 
 {% embed url="https://www.youtube.com/embed/Rujaw1VWUaQ?rel=0" %}
 How to create a Heartcore Trial
 {% endembed %}
 
-{% content-ref url="api-documentation/" %}
-[api-documentation](api-documentation/)
+{% content-ref url="api-documentation/api-documentation/" %}
+[api-documentation](api-documentation/api-documentation/)
 {% endcontent-ref %}
 
 {% content-ref url="api-documentation/graphql/" %}
@@ -34,11 +34,11 @@ In this section, you will find documentation on how to work with Umbraco Heartco
 
 It includes REST API documentation, the basics of how to get started, and how to work with the available Client Libraries. Please note that Umbraco Heartcore is a specific type of project only available via Umbraco Cloud.
 
-## [API Documentation for the Umbraco Heartcore REST API endpoints](api-documentation/)
+## [API Documentation for the Umbraco Heartcore REST API endpoints](api-documentation/api-documentation/)
 
 Reference documentation for the APIs available, as well as details about common HTTP headers, versioning, REST Standard, and how to work with authentication and authorization.
 
-* [Authentication and Authorization](api-documentation/#authentication-and-authorization)
+* [Authentication and Authorization](api-documentation/api-documentation/#authentication-and-authorization)
 * [Content Delivery API](api-documentation/content-delivery/)
 * [Content Management API](api-documentation/content-management/)
 

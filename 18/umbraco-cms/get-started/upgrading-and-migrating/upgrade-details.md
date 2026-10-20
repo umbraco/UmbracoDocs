@@ -6,7 +6,7 @@ description: Describes how to upgrade existing installations to new versions.
 
 In this article, you will find everything you need to upgrade your Umbraco CMS project.
 
-If you are new to upgrades, be sure to read the [upgrade introduction article](./README.md) first.
+If you are new to upgrades, be sure to read the [upgrade introduction article](./) first.
 
 * [Upgrade to a new Major](upgrade-details.md#upgrade-to-a-new-major)
 * [Upgrade to a new Minor](upgrade-details.md#upgrade-to-a-new-minor)
@@ -16,7 +16,9 @@ If you are new to upgrades, be sure to read the [upgrade introduction article](.
 
 You can upgrade to a new major version of Umbraco CMS directly by using NuGet.
 
-You must upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 10, the closest long-term support version is Umbraco 13. Once the project is on Umbraco 13, you can move on to Umbraco 14.
+You must upgrade to the closest [Long-term Support (LTS) major](https://umbraco.com/products/knowledge-center/long-term-support-and-end-of-life/) version before upgrading to the latest version. For Umbraco 13, the closest long-term support version is Umbraco 17. Once the project is on Umbraco 17, you can move on to Umbraco 18.
+
+Umbraco 18 can't upgrade from versions older than 16.4, so a project on Umbraco 13 must upgrade to Umbraco 17 first.
 
 {% hint style="warning" %}
 Switching to a new major version of Umbraco CMS also means switching to a new .NET version. Ensure that any packages used on your site are compatible with this version before upgrading.
@@ -61,7 +63,9 @@ It's recommended that you upgrade the site offline and test the upgrade fully be
     b. Click **Install** to upgrade your project.
 
 {% hint style="info" %}
-If you have other packages like Umbraco Forms installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
+If you have other packages like Umbraco Forms or Deploy installed, upgrade them before upgrading **Umbraco.CMS**. Consult the [version-specific upgrade notes for Umbraco Forms](https://docs.umbraco.com/umbraco-forms/upgrading/version-specific) if relevant.
+
+You will also need to convert your one-time-off license (`.lic` file) to the subscription-based model (key-based license, `XXXXX-XXXXX-XXXXX-XXXXX`). Learn more about the different license models in the [DXP Overview documentation](https://docs.umbraco.com/umbraco-dxp/licensing-and-dependencies/configure-licenses).
 {% endhint %}
 
 8. Make sure that your connection string has `TrustServerCertificate=True` to complete the upgrade successfully:
@@ -139,10 +143,10 @@ The steps outlined in this article apply to Umbraco version 10 and later version
 
 Are you upgrading to a minor version for Umbraco 6, 7, or 8? You can find the appropriate guide below:
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-8.md" %}
-[minor-upgrades-for-umbraco-8.md](version-specific/minor-upgrades-for-umbraco-8.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-8.md" %}
+[minor-upgrades-for-umbraco-8.md](find-your-upgrade-path/minor-upgrades-for-umbraco-8.md)
 {% endcontent-ref %}
 
-{% content-ref url="version-specific/minor-upgrades-for-umbraco-7.md" %}
-[minor-upgrades-for-umbraco-7.md](version-specific/minor-upgrades-for-umbraco-7.md)
+{% content-ref url="find-your-upgrade-path/minor-upgrades-for-umbraco-7.md" %}
+[minor-upgrades-for-umbraco-7.md](find-your-upgrade-path/minor-upgrades-for-umbraco-7.md)
 {% endcontent-ref %}

@@ -115,7 +115,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
     override render() {
         return html`
             <h5>My Custom View</h5>
-            <p>Headline: ${this.content?.headline}</p>
+            <p>Name: ${this.content?.featureName}</p>
         `;
     }
 
@@ -145,23 +145,29 @@ This is a TypeScript file. It is recommended to follow the documentation on comp
 
 Now that you have created a Web Component, register it to show up on the block:
 
+{% code title="manifests.ts" %}
 ```typescript
 {
     type: 'blockEditorCustomView',
-    alias: 'Example.blockEditorCustomView.Product',
-    name: 'Example Block Editor Custom View for Product Block of Block List Editors',
+    alias: 'Example.blockEditorCustomView.Feature',
+    name: 'Example Block Editor Custom View for Feature Block of Block List Editors',
     element: () => import('./example-block-custom-view.js'),
-    forContentTypeAlias: 'product',
+    forContentTypeAlias: 'feature',
     forBlockEditor: 'block-list',
 }
 ```
+{% endcode %}
+
+The `forContentTypeAlias` value is the alias of the block's Element Type, not the alias of the Document Type. The **Feature** Element Type created earlier has the `feature` alias.
 
 While the `forContentTypeAlias` and `forBlockEditor` parameters are optional, they also accept arrays. They can therefore be used to declare a custom view for multiple blocks and block editors. The code snippet below shows an example of such an array:
 
+{% code title="manifests.ts" %}
 ```typescript
-    forContentTypeAlias: ['product', 'anotherContentTypeAlias'],
+    forContentTypeAlias: ['feature', 'hero'],
     forBlockEditor: ['block-list', 'block-grid', 'block-rte'],
 ```
+{% endcode %}
 
 Depending on the values, the custom view is applied to the following data types:
 
@@ -172,6 +178,37 @@ Depending on the values, the custom view is applied to the following data types:
 Read about [extension-manifest](../backoffice-extensions/extending-overview/extension-registry/extension-manifest.md) to learn how to register an Extension Manifest.
 
 Once registered, the Block will be represented by the given Web Component.
+
+### Displaying the block's media
+
+`umb-media-thumbnail` is available from Umbraco 17.6. In earlier 17.x releases, use the `umb-imaging-thumbnail` alias.
+
+The **Feature** block has an **Image** property that uses the Media Picker. A Media Picker value is an array of entries. Each entry has a `mediaKey` with the media GUID.
+
+Render the media with the `umb-media-thumbnail` component. Add `nothing` to the existing Lit import from the previous example, add the new type import, then update the `render` method.
+
+{% code title="example-block-custom-view.ts" %}
+```typescript
+// Add `nothing` to the existing Lit import (keep the other imports from the previous example):
+import { html, customElement, LitElement, property, css, nothing } from '@umbraco-cms/backoffice/external/lit';
+// Add this new import:
+import type { UmbMediaPickerPropertyValueEntry } from '@umbraco-cms/backoffice/media';
+
+// Update the render method from the previous example:
+override render() {
+    const image = (this.content?.image as Array<UmbMediaPickerPropertyValueEntry> | undefined)?.[0];
+
+    return html`
+        <h5>${this.content?.featureName}</h5>
+        ${image
+            ? html`<umb-media-thumbnail .unique=${image.mediaKey} .width=${150} .height=${150}></umb-media-thumbnail>`
+            : nothing}
+    `;
+}
+```
+{% endcode %}
+
+The `umb-media-thumbnail` component requests a cropped, HMAC-signed URL and renders the image. For other ways to display and fetch media, see [Working with Media](../backoffice-extensions/foundation/working-with-media.md).
 
 ### Adding Content to the Blocks
 
@@ -243,7 +280,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
         return html`
             <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
                 <h5>My Custom View</h5>
-                <p>Headline: ${this.content?.headline}</p>
+                <p>Name: ${this.content?.featureName}</p>
                 <p>Alignment: ${this.settings?.blockAlignment}</p>
             </div>
         `;
@@ -282,7 +319,7 @@ You can make editing block content faster by making it possible to click anywher
 ```typescript
 import { html, customElement, LitElement, property, css } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
-import type { UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/block-custom-view';
+import type { UmbBlockEditorCustomViewConfiguration, UmbBlockEditorCustomViewElement } from '@umbraco-cms/backoffice/block-custom-view';
 import type { UmbBlockDataType } from '@umbraco-cms/backoffice/block';
 
 @customElement('example-block-custom-view')
@@ -302,7 +339,7 @@ export class ExampleBlockCustomView extends UmbElementMixin(LitElement) implemen
             <a href=${this.config?.editContentPath ?? ''}>
                 <div class="${this.settings?.blockAlignment ? 'align-' + this.settings?.blockAlignment : undefined}">
                     <h5>My Custom View</h5>
-                    <p>Headline: ${this.content?.headline}</p>
+                    <p>Name: ${this.content?.featureName}</p>
                     <p>Alignment: ${this.settings?.blockAlignment}</p>
                 </div>
             </a>

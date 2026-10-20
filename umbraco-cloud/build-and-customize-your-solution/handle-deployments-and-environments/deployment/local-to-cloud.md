@@ -26,18 +26,18 @@ Once you have created some Documents and Data types, follow the steps below to d
 1. Go to your Git UI.
 2. Check for local changes in your UI.
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48).png" alt="Local changes in Git UI."><figcaption><p>Local changes in Git UI.</p></figcaption></figure>
 
 3. Prepare changes, so they are ready to be committed.
 4. Write a commit subject
 5. Write a description of the commit.
 6. Commit the files.
 
-<div align="right" data-full-width="false"><figure><img src="../../../.gitbook/assets/image (82).png" alt="Ready the files for commit."><figcaption><p>Ready the files for commit.</p></figcaption></figure></div>
+<div align="right" data-full-width="false"><figure><img src="../../../.gitbook/assets/image (49).png" alt="Ready the files for commit."><figcaption><p>Ready the files for commit.</p></figcaption></figure></div>
 
 4. Push the files to your cloud project in the UI.
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt="Push changes to Umbraco Cloud."><figcaption><p>Push changes to Umbraco Cloud.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50).png" alt="Push changes to Umbraco Cloud."><figcaption><p>Push changes to Umbraco Cloud.</p></figcaption></figure>
 
 The deployment will kick in and the new Documents and Data Types you have created locally are now automatically created on the remote environment.
 

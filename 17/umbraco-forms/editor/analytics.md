@@ -65,11 +65,13 @@ Use the **Group by** control to change how the data is aggregated in the time-se
 
 ## Overview Table
 
-The overview table lists all forms you have access to with summary statistics for the selected date range. This includes entry counts, workflow counts, workflow errors, and source pages.
+The overview table lists all forms you have access to with summary statistics for the selected date range. This includes entry counts, workflow counts, workflow errors, source pages, and unique members.
 
 ![Analytics overview table showing all forms with entry counts and statistics](../.gitbook/assets/analytics-overview-table.png)
 
 Click a form name to navigate to its detailed analytics view.
+
+The overview also shows a **Unique members** total across all your forms. See [Unique Members](#unique-members).
 
 ## Analytics Widgets
 
@@ -98,6 +100,20 @@ A time-series chart showing form submissions broken down by the page where the f
 Below the chart, a table lists each source page with its name, URL, and entry count.
 
 ![Origins chart and table showing submissions by source page](../.gitbook/assets/analytics-form-origins-table.png)
+
+## Unique Members
+
+{% hint style="info" %}
+This metric is available from Umbraco Forms 17.5 and 18.1.
+{% endhint %}
+
+The **Unique members** metric counts the distinct logged-in members who submitted a form in the selected date range. It appears on the analytics overview as a total across all your forms, and on each form's detailed view.
+
+![The Unique members total and per-form column on the analytics overview](../.gitbook/assets/analytics-unique-members.png)
+
+A member who submits the same form more than once is counted once. Anonymous submissions are never counted. Entries from members who have since been deleted are still counted.
+
+The metric shows `0` when there are no member submissions in the range. It is never blank.
 
 ## Data Processing
 

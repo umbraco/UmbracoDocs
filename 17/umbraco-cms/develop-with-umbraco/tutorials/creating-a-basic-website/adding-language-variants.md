@@ -27,7 +27,7 @@ To enable language variants on Document Types, follow these steps:
 2. Select **HomePage** from the **Document Types** folder.
 3.  Go to the **Settings** tab and toggle **Allow vary by culture**
 
-    ![Enable Vary by Culture](../../../.gitbook/assets/enable-vary-by-culture.png)
+    ![Allow vary by culture](../../../.gitbook/assets/enable-vary-by-culture.png)
 4. Click **Save**.
 5. Go to the **Design** tab.
 6. Click on the Data Type of the **Page Title** and disable **Shared across cultures**.

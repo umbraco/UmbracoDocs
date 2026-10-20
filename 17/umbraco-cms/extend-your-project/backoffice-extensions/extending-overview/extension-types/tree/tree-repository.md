@@ -8,6 +8,7 @@ The repository is referenced by your Tree Manifest via `meta.repositoryAlias`.
 
 The `UmbTreeRepository` interface defines the methods your repository must implement:
 
+{% code title="tree-repository.interface.ts" %}
 ```typescript
 interface UmbTreeRepository {
   requestTreeRoot();
@@ -16,6 +17,7 @@ interface UmbTreeRepository {
   requestTreeItemAncestors();
 }
 ```
+{% endcode %}
 
 See the full interface in the [UI API Documentation](https://apidocs.umbraco.com/v17/ui-api/interfaces/packages_core_tree.UmbTreeRepository.html).
 
@@ -23,6 +25,7 @@ See the full interface in the [UI API Documentation](https://apidocs.umbraco.com
 
 Register the Repository in your Manifest:
 
+{% code title="manifests.ts" %}
 ```typescript
 {
   type: 'repository',
@@ -31,6 +34,7 @@ Register the Repository in your Manifest:
   api: () => import('./my-tree.repository.js'),
 }
 ```
+{% endcode %}
 
 ## Implementing a Tree Repository
 
@@ -42,7 +46,7 @@ Extend `UmbControllerBase` and implement the `UmbTreeRepository` interface.
 ```typescript
 import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 import type { UmbApi } from "@umbraco-cms/backoffice/extension-api";
-import type { UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
+import type { UmbTreeChildrenOfRequestArgs, UmbTreeRepository } from "@umbraco-cms/backoffice/tree";
 
 const staticItems = [
   {
@@ -87,7 +91,7 @@ export class MyStaticTreeRepository
     return { data: { items, total: items.length } };
   }
 
-  async requestTreeItemsOf(args) {
+  async requestTreeItemsOf(args: UmbTreeChildrenOfRequestArgs) {
     const items = staticItems.filter(
       (item) => item.parent.unique === args.parent.unique
     );

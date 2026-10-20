@@ -1,6 +1,6 @@
 # Storing Prevalue Text Files With IPreValueTextFileStorage
 
-Umbraco Forms contains a built-in `Get value from textfile` [Prevalue Source Type](extending/adding-a-prevaluesourcetype.md) that stores the uploaded text file into the physical file system (by default in `umbraco\Data\UmbracoForms\PreValueTextFiles`).
+Umbraco Forms contains a built-in `Get value from textfile` [Prevalue Source Type](extending/adding-a-prevaluesourcetype/) that stores the uploaded text file into the physical file system (by default in `umbraco\Data\UmbracoForms\PreValueTextFiles`).
 
 You can replace the default implementation by writing your own `IPreValueTextFileStorage` and registering that using e.g. `builder.Services.AddUnique<IPreValueTextFileStorage, CustomPreValueTextFileStorage>()` (in `Program.cs` or a composer).
 

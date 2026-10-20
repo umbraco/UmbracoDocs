@@ -249,7 +249,7 @@ You can use the Umbraco Heartcore REST API endpoints to fetch this content to wh
 
 ### Test with the provided samples
 
-We've built a few client libraries with samples that you can use for testing. You can find them in the [Client Libraries section](../client-libraries/)
+We've built a few client libraries with samples that you can use for testing. You can find them in the [Client Libraries section](../client-libraries/client-libraries.md)
 
 ### Testing with the API Browser
 

@@ -11,7 +11,7 @@ To track Umbraco Forms submissions, you need to install [Umbraco Forms](https://
 Umbraco Engage measures interactions with Umbraco Forms on your website automatically if you include the Umbraco Engage [analytics JavaScript file](client-side-events-and-additional-javascript-files/additional-measurements-with-the-analytics-scripts.md). No additional configuration is needed. The data is visualized in the backoffice in Engage > Analytics > Forms.
 
 {% hint style="info" %}
-The following Umbraco Forms script loading types are currently not supported: "async" or "defer".
+Support for the "async" and "defer" script loading types was added in Umbraco Engage 13.6.0.
 {% endhint %}
 
 The following is measured:

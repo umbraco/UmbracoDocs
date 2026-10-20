@@ -26,11 +26,11 @@ There are built-in property value converters, which means you don't need to worr
 
 ### CSV tags
 
-![CSV tags example](../../../.gitbook/assets/Csv-example-v8.png)
+![CSV tags example](../../../.gitbook/assets/Csv-example.png)
 
 ### JSON tags
 
-![JSON tags example](../../../.gitbook/assets/Json-example-v8.png)
+![JSON tags example](../../../.gitbook/assets/Json-example.png)
 
 ### Tags typeahead
 

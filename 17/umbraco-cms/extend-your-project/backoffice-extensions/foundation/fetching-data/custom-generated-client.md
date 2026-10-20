@@ -4,17 +4,13 @@ description: Learn how to create a custom-generated client with TypeScript types
 
 # Custom Generated Client
 
-Umbraco uses [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started) to generate its HTTP client for the OpenAPI specification of the Management API. It is available through the `@umbraco-cms/backoffice/http-client` package.
+A generated client gives you a typed function for each endpoint of your own API. The [`@hey-api/openapi-ts`](https://heyapi.dev/openapi-ts/get-started) library generates the client from the OpenAPI document of your API. Umbraco generates the [Umbraco HTTP Client](http-client.md), `umbHttpClient`, with the same library.
 
-{% content-ref url="http-client.md" %}
-[http-client.md](http-client.md)
-{% endcontent-ref %}
+Configure your client with `configureClient()`, as described in [Connecting to Umbraco](#connecting-to-umbraco). Your client then handles authentication and the login prompt like `umbHttpClient`. To show a notification from `tryExecute` when a request fails, also set `throwOnError`, as described in the same section.
 
-The following examples show how to generate a client from an OpenAPI specification and how to use it in the project. Below, the `@hey-api/openapi-ts` library is used, but the same principles apply to any other library that generates a TypeScript client.
+Generate a client when you call many endpoints of your own API and want types for them. For the Management API, and for a few direct calls to your own API, use `umbHttpClient`.
 
 ## Generate your own client
-
-The generated client provides a convenient way to make requests to the specified API with type-safety without having to manually write the requests yourself. Consider generating a client to save time and reduce effort when working with custom API controllers.
 
 To get started, install the generator using the following command:
 
@@ -25,27 +21,87 @@ npm install @hey-api/openapi-ts
 Then, use the `openapi-ts` command to generate a client from your OpenAPI specification:
 
 ```bash
-npx openapi-ts --input https://example.com/openapi.json --output ./my-client
+npx openapi-ts --input https://example.com/openapi.json --output src/api
 ```
 
-This will generate a TypeScript client in the `./my-client` folder. Import the generated client into your project to make requests to the Management API.
+The command generates a TypeScript client in the `src/api` folder. Import the generated client into your project to make requests to your API.
 
 To learn more about OpenAPI and how to define your API specification, visit the [OpenAPI Documentation](https://swagger.io/specification/).
 
-## Connecting to the Management API
+## Connecting to Umbraco
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. The recommended approach uses hey-api's `runtimeConfigPath` to inherit these settings automatically from the built-in backoffice HTTP client (`umbHttpClient`).
+Your generated client needs the correct base URL, credentials, and authentication to talk to your API on the Umbraco server. Call `configureClient()` on the `UMB_AUTH_CONTEXT` to set up all three. The method:
+
+* Sets `baseUrl` to the URL of the Umbraco server.
+* Sets `credentials: 'include'`, so the browser sends the authentication cookies with every request.
+* Sets the `auth` callback, which supplies the access token for requests that carry `security` metadata. See [How security metadata works](#how-security-metadata-works).
+* Adds the default response interceptors of the backoffice. When a request gets a 401 response, they prompt the user to log in again and then retry `GET` requests. They also turn error responses into problem details, and show the notifications the server sends in the `Umb-Notifications` header.
 
 {% hint style="info" %}
-The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box — no additional configuration needed.
+The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) already includes this setup. If you scaffolded your extension with `dotnet new umbraco-extension`, authentication works out of the box.
 {% endhint %}
 
-### Using `runtimeConfigPath` (Recommended)
+To show a notification when a request fails, wrap the request in [`tryExecute`](try-execute.md). A generated client returns failed requests in an `error` property instead of throwing, and `tryExecute` only reports requests that throw. `configureClient()` does not change that. To make your client throw, set `throwOnError` on the `@hey-api/client-fetch` plugin in an `openapi-ts.config.ts` file:
+
+{% code title="openapi-ts.config.ts" %}
+```typescript
+import { defineConfig } from '@hey-api/openapi-ts';
+
+export default defineConfig({
+    input: 'https://example.com/openapi.json',
+    output: 'src/api',
+    plugins: [
+        {
+            name: '@hey-api/client-fetch',
+            throwOnError: true,
+        },
+        '@hey-api/typescript',
+        '@hey-api/sdk',
+    ],
+});
+```
+{% endcode %}
+
+You can also pass `throwOnError: true` to a single SDK function, for example `getMyControllerAction({ throwOnError: true })`.
+
+### Using `configureClient()` (recommended)
+
+Call `configureClient()` from the `onInit` function of a [Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md). An entry point runs once when the backoffice starts, which makes it the place to configure the client.
+
+{% code title="src/entrypoints/entrypoint.ts" %}
+```typescript
+import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { client } from '../api/client.gen.js';
+
+export const onInit: UmbEntryPointOnInit = async (host) => {
+  const authContext = await host.getContext(UMB_AUTH_CONTEXT);
+  if (!authContext) {
+    console.warn('UMB_AUTH_CONTEXT is not available, so the API client is not configured');
+    return;
+  }
+
+  // Sets the base URL, credentials, and auth callback, and adds the default interceptors
+  authContext.configureClient(client);
+};
+```
+{% endcode %}
+
+The `client` export comes from the `client.gen.ts` file that `@hey-api/openapi-ts` generates next to your SDK functions. `configureClient()` accepts any client generated by `@hey-api/openapi-ts`. Calling the method again for the same client has no effect.
+
+### Using `runtimeConfigPath` (Umbraco 17.3 and earlier)
+
+{% hint style="warning" %}
+
+Use this setup only on Umbraco 17.3 and earlier, where `configureClient()` does not accept a client generated by your extension. It copies settings but not interceptors, so a 401 response fails instead of prompting the user to log in again. From Umbraco 17.7, it also fails to build with a client generated by an older `@hey-api/openapi-ts`. Switch to `configureClient()` when you upgrade. The [Umbraco Extension Template](../../development-flow/umbraco-extension-template.md) article lists the steps.
+
+{% endhint %}
 
 To pass plugin options like `runtimeConfigPath`, create a config file instead of using CLI flags.
 
 1. Create `openapi-ts.config.ts` in your project root:
 
+{% code title="openapi-ts.config.ts" %}
 ```typescript
 import { defineConfig } from '@hey-api/openapi-ts';
 
@@ -64,6 +120,7 @@ export default defineConfig({
     ],
 });
 ```
+{% endcode %}
 
 2. Run the generator, which will pick up the config file automatically:
 
@@ -73,6 +130,7 @@ npx openapi-ts
 
 3. Create a `src/hey-api.ts` file and add the following:
 
+{% code title="src/hey-api.ts" %}
 ```typescript
 import type { CreateClientConfig } from './api/client.gen';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
@@ -82,6 +140,7 @@ export const createClientConfig: CreateClientConfig = (config) => ({
     ...umbHttpClient.getConfig(),
 });
 ```
+{% endcode %}
 
 This copies `baseUrl`, `credentials`, `auth`, and `headers` from the backoffice HTTP client into your generated client at initialization time. Extensions load after the backoffice is fully configured, so all values are available.
 
@@ -89,10 +148,11 @@ When the generator runs, the generated `client.gen.ts` will automatically import
 
 ### Passing `umbHttpClient` directly
 
-If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
+If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call. In an element that extends `UmbLitElement`:
 
-```javascript
-import { getMyControllerAction } from './my-client';
+{% code title="my-element.ts" %}
+```typescript
+import { getMyControllerAction } from './api/index.js';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
@@ -104,6 +164,7 @@ if (data) {
     console.log('Data:', data);
 }
 ```
+{% endcode %}
 
 The example above uses the backoffice HTTP client directly instead of the generated client. The `umbHttpClient` already has authentication and the correct base URL configured.
 
@@ -127,6 +188,7 @@ When hey-api generates your client from that spec, it resolves the scheme and em
 
 If you expose a separate API with its own Swagger document, security requirements are not added automatically. You must apply them to each operation in your OpenAPI specification, for example via an operation filter. Umbraco provides `BackOfficeSecurityRequirementsOperationFilterBase` as a public base class you can subclass:
 
+{% code title="MyExtensionSecurityRequirementsOperationFilter.cs" %}
 ```csharp
 using Umbraco.Cms.Api.Management.OpenApi;
 
@@ -136,12 +198,15 @@ internal sealed class MyExtensionSecurityRequirementsOperationFilter : BackOffic
     protected override string ApiName => "myextension";
 }
 ```
+{% endcode %}
 
 Register it in your SwaggerGen configuration:
 
+{% code title="MyExtensionApiComposer.cs" %}
 ```csharp
 swaggerGenOptions.OperationFilter<MyExtensionSecurityRequirementsOperationFilter>();
 ```
+{% endcode %}
 
 No `AddSecurityDefinition` call is needed — Umbraco already registers the required Bearer security scheme globally, and the base filter references it automatically. Once in place, hey-api will generate SDK functions with the correct `security` metadata.
 
@@ -151,22 +216,18 @@ For a full walkthrough of setting up a custom API, see [Creating a Backoffice AP
 
 When calling `umbHttpClient` directly — without a generated SDK function — there is no spec to derive security metadata from. Pass it explicitly on each call:
 
+{% code title="my-element.ts" %}
 ```typescript
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
 const { data } = await umbHttpClient.get({
     url: '/umbraco/myextension/api/v1/endpoint',
     security: [{ type: 'http', scheme: 'bearer' }],
 });
 ```
+{% endcode %}
 
 See [Umbraco HTTP Client](http-client.md) for more details.
-
-## Fetch API
-
-If you only have a few requests, you can also use the `fetch` function directly. Read more about that here:
-
-{% content-ref url="fetch-api.md" %}
-[fetch-api.md](fetch-api.md)
-{% endcontent-ref %}
 
 ## Further reading
 

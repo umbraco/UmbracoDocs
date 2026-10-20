@@ -36,7 +36,15 @@ If you select **Stop and complete now** the A/B Test is stopped and you can sele
 
 </div>
 
-You can always pick one of the variants or **My test did not result in a winner**. After you confirm your selected winner the overview will show the picked winner:
+Completing the test removes all variants and their content from the page. Select the winning variant and then **Confirm**, or select **End without a winner**.
+
+For a Single page test, also choose what happens to the winner's content:
+
+* **Replace the page content and publish**
+* **Replace the page content and save as draft**
+* **Keep the page as it is**
+
+After you confirm, the test is listed as **Completed**, with the winning variant marked:
 
 <div align="left">
 
@@ -44,6 +52,6 @@ You can always pick one of the variants or **My test did not result in a winner*
 
 </div>
 
-The overview of the A/B tests will also not show that the A/B Test is stopped and a winner was selected:
+The overview of the A/B tests will also show that the A/B Test is stopped and a winner was selected:
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt="Completed A/B Test"><figcaption><p>Completed A/B Test</p></figcaption></figure>

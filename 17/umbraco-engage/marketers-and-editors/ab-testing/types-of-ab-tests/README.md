@@ -6,7 +6,7 @@ description: >-
 
 # Types of A/B Tests
 
-Three different types of A/B tests are available:
+Four different types of A/B tests are available:
 
 * [Single-page tests](single-page-ab-test.md) to test a specific page within Umbraco.
 * A way to test [multiple pages](multiple-pages-test.md) at the same time.

@@ -23,8 +23,13 @@ In the example below, a new page is programmatically created using the content s
 
     // Save and publish the child item
     ContentService.SaveAndPublish(demoproduct);
-    ```
 }
+```
+
+The `parentId`, node name, and property values above are hardcoded to keep the example short. In a real implementation:
+
+- `parentId` would typically come from configuration (`IOptions<T>`), a route or query parameter, or a lookup via `IContentService`
+- The name/property values would come from user input or another service.
 
 In a multilanguage setup, it is necessary to set the name of the content item for a specified culture:
 

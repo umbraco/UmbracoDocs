@@ -18,13 +18,13 @@ This abstraction ensures that consumers don’t need to worry about how to acces
 
 ### Data flow with a repository <a href="#data-flow-with-a-repository" id="data-flow-with-a-repository"></a>
 
-A repository must be instantiated where it is used. It should take an [UmbController](../umbraco-controller/) as part of the constructor. This ensures that any contexts consumed in the repository are scoped correctly.
+A repository must be instantiated where it is used. Its constructor takes a host, such as an [Umbraco Element](../umbraco-element.md) or an [Umbraco Controller](../umbraco-controller/). This ensures that any contexts consumed in the repository are scoped correctly.
 
 A repository can be initialized directly from an element, but will often be instantiated in a [context](../context-api/), like the Workspace Context.
 
 The data flow when using a repository can be illustrated as follows:
 
-```
+```text
 (Data Source) -> Repository -> (Controller/Context) -> Element
 ```
 
@@ -36,8 +36,9 @@ If the needed data isn’t available in a context, use a repository to request t
 
 In the example below, we instantiate the `UmbDocumentItemRepository` directly in a custom element to request Document Item data by its unique key.
 
+{% code title="my-element.ts" %}
 ```typescript
-import { LitElement} from '@umbraco-cms/backoffice/external/lit';
+import { LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
 
@@ -46,7 +47,7 @@ class MyElement extends UmbElementMixin(LitElement) {
   ...
   #documentItemRepository = new UmbDocumentItemRepository(this);
 
-  firstUpdated() {
+  override async firstUpdated() {
     const { data, error } = await this.#documentItemRepository.requestItems(['some-unique-key', 'another-unique-key']);
     console.log('Response', data, error);
     // Render data in the element
@@ -54,17 +55,21 @@ class MyElement extends UmbElementMixin(LitElement) {
   ...
 }
 ```
+{% endcode %}
 
 Alternatively, you can instantiate the repository in a [controller](../umbraco-controller/) or [context](../context-api/), store the data in a [state](../states.md), and then observe that state in your element. This is often the preferred approach as it allows for better separation of concerns and reusability across different components.
 
+{% code title="my-controller.ts" %}
 ```typescript
 import { UmbArrayState } from '@umbraco-cms/backoffice/observable-api';
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 import { UmbDocumentItemRepository } from '@umbraco-cms/backoffice/document';
+import type { UmbDocumentItemModel } from '@umbraco-cms/backoffice/document';
 
 export class MyController extends UmbControllerBase {
 
-  #items = new UmbArrayState<DocumentItemModel>([]);
+  #items = new UmbArrayState<UmbDocumentItemModel>([], (item) => item.unique);
   items = this.#items.asObservable();
 
   #documentItemRepository = new UmbDocumentItemRepository(this);
@@ -82,6 +87,7 @@ export class MyController extends UmbControllerBase {
   }
 }
 ```
+{% endcode %}
 
 ### Register a custom Repository <a href="#register-a-custom-repository" id="register-a-custom-repository"></a>
 
@@ -95,6 +101,7 @@ Some of the common repository interfaces are:
 
 See the example below of how to register a custom repository:
 
+{% code title="my-entity-tree.repository.ts" %}
 ```typescript
 import { umbExtensionsRegistry } from "@umbraco-cms/backoffice/extension-registry";
 import { UmbRepositoryBase } from "@umbraco-cms/backoffice/repository";
@@ -113,3 +120,4 @@ const repositoryManifest = {
 
 umbExtensionsRegistry.register(repositoryManifest);
 ```
+{% endcode %}

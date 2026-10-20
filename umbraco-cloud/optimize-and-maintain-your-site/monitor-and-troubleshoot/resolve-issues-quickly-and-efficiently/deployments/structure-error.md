@@ -16,11 +16,7 @@ Collisions for unique identifier "home":
 
 The error means that two (or more) `.uda` files have been created for the same entity. The `.uda` files contain schema data for each of your entities. For example, Document Types, Templates, Macros, Dictionary Items, Data types, and so on. For a full list of these entities, see [What are UDA files?](../../power-tools/generating-uda-files.md#what-are-uda-files).
 
-In this example, there are two `.uda` files that share the same alias which leads to a conflict: it is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
-
-{% hint style="info" %}
-If the collision error involves Dictionary Items, use this guide instead: [Troubleshooting duplicate dictionary items](duplicate-dictionary-items.md)
-{% endhint %}
+In this example, two `.uda` files share the same alias which leads to a conflict. It is impossible for Deploy to know which of the files to use, so it gives up and sends an error back.
 
 You can run into an error like this on all of your Cloud environments. Sometimes you might also run into it on a local clone of your project.
 

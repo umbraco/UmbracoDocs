@@ -23,3 +23,7 @@ This section covers working with environments, deployments, and CI/CD pipelines,
 {% content-ref url="error-pages.md" %}
 [error-pages.md](error-pages.md)
 {% endcontent-ref %}
+
+{% content-ref url="readiness-gating.md" %}
+[readiness-gating.md](readiness-gating.md)
+{% endcontent-ref %}

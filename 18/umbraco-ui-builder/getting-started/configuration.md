@@ -1,5 +1,7 @@
 ---
-description: Learn how to configure Umbraco UI Builder in your project using two different approaches.
+description: >-
+  Learn how to configure Umbraco UI Builder in your project using two different
+  approaches.
 ---
 
 # Configuration
@@ -55,6 +57,6 @@ builder.CreateUmbracoBuilder()
 
 ## Example Configuration
 
-For a complete sample configuration, see the [Creating your First Integration](../guides/creating-your-first-integration.md) article.
+For a complete sample configuration, see the [Creating your First Integration](../how-to-guides/creating-your-first-integration.md) article.
 
 The `AddUIBuilder` method accepts a delegate function, allowing you to configure your solution using fluent APIs.

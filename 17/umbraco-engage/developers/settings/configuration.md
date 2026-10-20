@@ -28,6 +28,7 @@ The default configuration will look like this:
       },
       "DataCollection": {
         "AnonymizeIPAddress": true,
+        "RequireAnalyticsPermissionForMemberTracking": false,
         "FlushRateInRecords": 100,
         "FlushIntervalInSeconds": 30,
         "InternalSiteSearch": {
@@ -114,6 +115,12 @@ The default configuration will look like this:
 * `CommandTimeout`: Database command timeout in seconds (default: 1200 = 20 minutes).
 
 The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and no longer used.
+{% endhint %}
+
+{% hint style="info" %}
+**RequireAnalyticsPermissionForMemberTracking:** When set to `true`, Engage attaches an Umbraco member key to a pageview only when `AnalyticsIsAllowed` returns true for the request. Requests without analytics permission are tracked as an anonymous visitor with no member key. The default is `false`.
+
+For the full behaviour and a script for clearing member keys from existing data, see [Module Permissions](../introduction/the-umbraco-engage-cookie/module-permissions.md).
 {% endhint %}
 
 All these settings are also visualized in Umbraco Engage. This overview can be found in the **Settings** section under **Engage** -> **Configuration**.

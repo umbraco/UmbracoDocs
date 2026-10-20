@@ -484,7 +484,7 @@ To customize the 2FA activation screen, you need to create a JavaScript module. 
 import { UserService } from '@umbraco-cms/backoffice/external/backend-api';
 import { css, html } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { isApiError, tryExecute } from '@umbraco-cms/backoffice/resources';
+import { tryExecute, UmbApiError } from '@umbraco-cms/backoffice/resources';
 import { UMB_NOTIFICATION_CONTEXT } from '@umbraco-cms/backoffice/notification';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 
@@ -521,7 +521,7 @@ export default class My2faActivationElement extends UmbLitElement {
         }
         const { data: _data } = await tryExecute(
             this,
-            UserService.getUserCurrent2FaByProviderName({ providerName: this.providerName }),
+            UserService.getUserCurrent2FaByProviderName({ path: { providerName: this.providerName } }),
         );
         const data = _data;
         if (!data) {
@@ -605,7 +605,7 @@ export default class My2faActivationElement extends UmbLitElement {
     /**
      * Show a peek notification with a message.
      * @param message {String} The message to show.
-     * @param color {"positive" | "danger" | undefined} The color of the notification.
+     * @param [color] {"positive" | "warning" | "danger"} The color of the notification.
      */
     peek(message, color) {
         this.notificationContext.peek(color ?? 'positive', {
@@ -643,8 +643,8 @@ export default class My2faActivationElement extends UmbLitElement {
             this.close();
         } else {
             this._buttonState = 'failed';
-            if (isApiError(error)) {
-                if (error.body?.operationStatus === 'InvalidCode') {
+            if (UmbApiError.isUmbApiError(error)) {
+                if (error.problemDetails.operationStatus === 'InvalidCode') {
                     codeField?.setCustomValidity(this.localize.term('user_2faInvalidCode'));
                     codeField?.focus();
                 } else {
@@ -701,7 +701,7 @@ To replace the default activation screen with the custom view, you need to regis
   "version": "1.0.0",
   "extensions": [
     {
-      "type": "mfaActivationProvider",
+      "type": "mfaLoginProvider",
       "alias": "UmbracoUserAppAuthenticator",
       "name": "UmbracoUserAppAuthenticator",
       "forProviderName": "UmbracoUserAppAuthenticator",
@@ -861,8 +861,10 @@ We need to register the custom view using a composer. This can be done on the `I
 
 {% code title="TwoFactorConfiguration.cs" lineNumbers="true" %}
 ```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Web.BackOffice.Security;
+using Umbraco.Cms.Core.DependencyInjection;
 
 namespace My.Website;
 

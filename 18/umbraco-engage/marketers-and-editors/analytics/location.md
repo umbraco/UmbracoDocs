@@ -8,11 +8,11 @@ description: Learn about what localization data is tracked and how you can view 
 Locations are not visible out of the box. You need to add a location provider which can be set up by a development team.
 {% endhint %}
 
-The localization information is displayed under the Location tab in the Analytics section of the Umbraco Engage dashboard:
+The localization information is displayed under the **Locations** tab in the **Analytics** section of Umbraco Engage:
 
 ![Location tab, located under the Analytics section](../../.gitbook/assets/Locations-tab-v16.png)
 
-The graph contains all sessions started within the given time, similar to the "**New and returning visitors**" tab. This information is not location-bound and the graph is always displayed, even if no localization information is available.
+The graph contains all sessions started within the given time, similar to the "**Visitors**" tab. This information is not location-bound and the graph is always displayed, even if no localization information is available.
 
 Underneath the graph, is the table containing session and pageview information based on country.
 

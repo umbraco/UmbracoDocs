@@ -55,7 +55,7 @@ When you first set up Umbraco Commerce, it comes with predefined order statuses 
 
 Payment Methods define the payment options available in the store. By default, Umbraco Commerce includes basic providers like **Invoicing** and **Zero Value** to get started.
 
-Umbraco Commerce also supports the integration of different third-party payment gateways. For more information, see the [Umbraco Commerce Payment Providers Documentation](../../../../commerce-add-ons/payment-providers/).
+Umbraco Commerce also supports the integration of different third-party payment gateways. For more information, see the [Umbraco Commerce Payment Providers Documentation](https://github.com/umbraco/UmbracoDocs/blob/main/commerce-add-ons/payment-providers/README.md).
 
 ### Steps to set up a payment method
 
@@ -73,7 +73,7 @@ Umbraco Commerce also supports the integration of different third-party payment 
 
 Shipping methods determine how customers receive their orders. Setting up shipping methods effectively is crucial, as it impacts customer satisfaction, fulfillment costs, and overall operational efficiency.
 
-By default, Umbraco Commerce comes with the basic Pickup option. For more information on the integration for different providers, see the [Umbraco Commerce Shipping providers Documentation](../../../../commerce-add-ons/shipping-providers/).
+By default, Umbraco Commerce comes with the basic Pickup option. For more information on the integration for different providers, see the [Umbraco Commerce Shipping providers Documentation](https://github.com/umbraco/UmbracoDocs/blob/main/commerce-add-ons/shipping-providers/README.md).
 
 ### Steps to create a shipping method
 

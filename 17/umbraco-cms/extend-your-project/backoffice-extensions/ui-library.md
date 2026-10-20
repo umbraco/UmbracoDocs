@@ -32,14 +32,17 @@ You can also modify the custom properties in the stylesheet to see how the compo
 
 ### Getting Started with the UI Library
 
-The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library. The Storybook contains two tabs:
+The [Storybook](https://uui.umbraco.com/) is the starting point for working with the Umbraco UI Library. Components are grouped by category in the sidebar, and the search box at the top finds a component by name in a couple of keystrokes.
 
-1.  Canvas - The Canvas tab allows to use the interactive controls.
+Each component has few entries in the sidebar:
 
-    <figure><img src="../../.gitbook/assets/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
-2.  Documentation - Here, you can find code examples for all the stories and use them in your markup. You can look it up by tag name or head to the project repository, where, in the packages folder, you will find all the component packages with all the necessary scripts and examples in the readme files.
+1. `Docs` - Shows a live preview, a full property table with descriptions, and a code sample you can copy directly into your markup. If the preview ever appears empty, the code sample still shows correct usage.
 
     <figure><img src="../../.gitbook/assets/Docs_tab.png" alt=""><figcaption></figcaption></figure>
+
+2. `Default`- Open a dedicated view with a live preview and a Controls panel on the right. Change a component's properties there to see the result update immediately.
+
+    <figure><img src="../../.gitbook/assets/Canvas_tab.png" alt=""><figcaption></figcaption></figure>
 
 ### Import UI Library Components
 

@@ -18,7 +18,7 @@ This guide will use code samples to add a "**Day of week**" segment parameter wh
 
 You can download the following code files to your project to add the parameter directly to your solution.
 
-{% file src="../../.gitbook/assets/day-of-the-week-segment-parameter (1).zip" %}
+{% file src="../../.gitbook/assets/day-of-the-week-segment-parameter.zip" %}
 
 ## 1. C# Definition
 

@@ -1,20 +1,82 @@
 ---
-description: Get an overview of the things changed and fixed in each version of Umbraco Deploy.
+description: >-
+  Get an overview of the things changed and fixed in each version of Umbraco
+  Deploy.
 ---
 
-# Release Notes
+# Release notes
 
-In this section, we have summarized the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. We also link to the individual issues themselves from the details.
+This section summarizes the changes to Umbraco Deploy and [Deploy Contrib](https://github.com/umbraco/Umbraco.Deploy.Contrib) released in each version. Each version is presented with a link to the [Deploy issue tracker](https://github.com/umbraco/Umbraco.Deploy.Issues/issues) showing a list of issues resolved in the release. The individual issues are also linked from the details.
 
 If there are any breaking changes or other issues to be aware of when upgrading, they are also noted here.
 
 {% hint style="info" %}
-If you are upgrading to a new major version, you can find the details about the breaking changes in the [version-specific updates](upgrades/version-specific.md) article.
+If you are upgrading to a new major version, you can find the details about the breaking changes in the [version-specific updates](upgrading/version-specific.md) article.
 {% endhint %}
 
 ## Release history
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
+
+### [17.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 13th 2026)
+
+* Pick any item from the remote environment in the **Partial Restore** dialog, including members. Items that don't exist on the local environment are included too ([discussion #321](https://github.com/umbraco/Umbraco.Deploy.Issues/discussions/321)). The picker pages through the remote tree and you can search it by name. Members also match on username and email. A remote environment running an older Deploy version returns the items as before.
+  * Service connectors in packages can provide this tree by implementing the new [`ITreeServiceConnector`](extending/extending.md#partial-restore-of-remote-items) interface. The `RemoteTreeDetail` parameter used to register a remote tree is obsolete and will be removed in Deploy 19.
+* Create redirects for moved and renamed documents on the receiving environment when transferring or restoring them [#354](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/354). Redirects had not been created on the receiving environment since Deploy 15.
+* Restore a trashed document or media item without its trashed descendants when running Umbraco CMS 17.7.0 or later. The descendants stay in the recycle bin until they are transferred or restored themselves [#267](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/267). Earlier CMS versions still restore the whole trashed subtree ([umbraco/Umbraco-CMS#23417](https://github.com/umbraco/Umbraco-CMS/issues/23417)).
+* Add the [`DiskMode`](getting-started/deploy-settings.md#disk-mode) setting with the values `ReadWrite` (default) and `ReadOnly`. Use `ReadOnly` when the deployed build is the only source of schema, for example in CI/CD pipelines or containers. Deploy then doesn't write to its folder on disk.
+* Add the [`StartupOperations`](getting-started/deploy-settings.md#startup-operations) setting to run schema operations in the background after startup, without a trigger file. The flags are `None` (default), `DeploySchema`, and `CleanSchema`.
+* Use the environment alias as the type of an Umbraco Cloud environment: `dev`, `stage`, `live`, or the alias of a flexible environment. Previously, the types were `development`, `staging`, and `live`. Update any code that checks `ICurrentEnvironmentInfo.Type`. The backoffice now labels environments by their name.
+* Queue a schema deployment requested through `extract/start` after the one already running on the server, instead of skipping it. The changed schema files are now always deployed. On load-balanced environments, the status report returns `Unknown` instead of an error for a deployment running on another server.
+* Report a cancelled deployment operation as failed instead of completed, for example when the environment shuts down. A new operation clears the `deploy-failed` status of the previous one when it starts.
+* Export the schema on the first boot after an unattended install of Umbraco Deploy Cloud when there are no schema files to import. The schema created by the install, such as the default Data Types, now gets `.uda` files.
+* Restore the separate **Schema files** checkbox in the import dialog. Clearing the **Schema** checkbox now excludes schema from the import.
+* Fix the 500 error when exporting a single dictionary item with `TransferDictionaryAsContent` enabled.
+* Add the [`BaselineUrl`](getting-started/deploy-settings.md#baseline-settings) setting to configure the Baseline project. The setting replaces the Umbraco Cloud-only `Upstream` project setting, which is now obsolete. On-Premises installations offer the Baseline workspace on the first configured workspace.
+* Add the [`BaselineApiSecret` and `ChildApiSecrets`](getting-started/deploy-settings.md#baseline-settings) settings. A Child project signs its requests to the Baseline project with its Baseline secret. The Baseline project accepts the secret of each Child project on the endpoints used by a restore. Without a Baseline secret, the Child project uses its project secret and logs a warning.
+* Match environment URLs on their scheme, host, port, and path segments. Only ping back and pull files from hosts of a configured workspace. A source environment whose application URL isn't a configured workspace URL pushes its files to the target instead.
+* Reject transfers to the Baseline workspace. The Baseline project is only available for restores.
+
+### [17.3.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) (September 24th 2026)
+
+* Fix the site failing to start with `ArgumentException: An item with the same key has already been added` when another package, such as Umbraco.AI or Umbraco.Automate, already maps the same types in the Swagger options.
+* Skip property values for a culture or segment the property type no longer varies by, fixing `Variation "<culture>,<segment>" is not supported by the property type` during transfers and restores [#8](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/8).
+* Encode item and environment names shown in the queue, export, restore and schema comparison dialogs, and in the progress log.
+
+### [17.3.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 17th 2026)
+
+* All items from 17.3.0-rc1 and 17.3.0-rc2.
+
+### [17.3.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 11th 2026)
+
+* Keep property types that are not in a property group when deploying changes to document, media, and member types. Previously, deploying a changed type deleted the content stored in those properties. The data loss affected all Deploy versions since 14.0 and became visible with Umbraco CMS 17.2.0 after [umbraco/Umbraco-CMS#21585](https://github.com/umbraco/Umbraco-CMS/pull/21585).
+* Interpret the release date in the **Queue for transfer** dialog in the editor's time zone instead of the server's time zone [#350](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/350). The transfer queue dashboard and the compare dialog show schedule dates in the editor's local time. Items queued before the upgrade were stored in the source server's local time and are read as UTC after upgrading. Their release date shifts unless the source server runs in UTC.
+* Reject bearer tokens with a timestamp outside the [`SessionTimeout`](getting-started/deploy-settings.md#timeout-settings) setting (20 minutes by default). Environment clocks must be roughly in sync. Every request uses a new token, so long-running operations are not affected.
+* Authenticate environment API requests with an ASP.NET Core authentication scheme instead of middleware. Packages that register endpoints early in the request pipeline no longer cause every environment request to fail with a 403 error. Authentication failures now return a 401 status code instead of a 500.
+* Keep the relations returned by a remote environment when updating or reviewing a manifest, so restores from a remote environment create relations again.
+* Show the schema mismatch details instead of a "Could not retrieve artifact" error when an artifact does not exist in the remote environment.
+* Fail a transfer or restore when a file is missing on the source environment. Previously, the target created the item without its file when it pulled the files from the source. The error message lists all missing files.
+* Add OpenAPI documents for the Deploy Environment API and Deploy Schema API to the Swagger UI at `/umbraco/swagger`, next to the Deploy Management API. The `umbracodeploy/extract` and `umbracodeploy/statusreport` routes are documented in lowercase. The URLs stay case-insensitive.
+
+### [17.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) (September 4th 2026)
+
+* Register dependencies for rich text local links in the `{localLink:<guid>}` format, so linked documents and media are transferred with the content [#348](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/348).
+* Start the operations on the Deploy dashboard from the Management API, fixing operations that could remain pending indefinitely and reporting the progress of every operation.
+* Report the cause of unexplained 403 errors returned by the environment API. Redirects are no longer followed when calling a remote environment, because a redirect strips the authorization header.
+* Reduce the memory used while setting cached signatures, using the new `ExpandRangePageSize` and `SetSignaturesBatchSize` settings.
+* Apply Deploy configuration changes without restarting the site. Invalid configuration no longer prevents the site from starting.
+* Run start-up operations while the license validation result is still unknown, so triggers like `deploy-on-start` are no longer skipped on newly created environments.
+* Load the Deploy backoffice code on demand, reducing the amount loaded on every backoffice page.
+* Remove the Umbraco Cloud project **Trial expires in...** message from the Deploy dashboard, because it does not reflect the state of your Deploy license. The trial status of a Cloud project is available in the Umbraco Cloud portal.
+
+### [17.2.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.1) (July 21st 2026)
+
+* Update public access role rules when a member group is renamed during a deploy.
+* Map Deploy endpoints when booting during an unattended upgrade (`RuntimeLevel.Upgrading`).
+* Transfer invariant properties when deploying the default culture [#249](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/249).
+* Fix restore of trashed content leaving a stale recycle bin path and level [#267](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/267).
+* Normalize document culture code casing on import to prevent duplicate culture variation rows [#271](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/271) [#280](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/280).
+* Improve condition lifecycle management, fixing the Deploy dashboard occasionally loading blank on init and refresh [#346](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/346).
 
 ### [17.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.2.0) (June 25th 2026)
 
@@ -87,7 +149,7 @@ Add the package as a development dependency in your custom backoffice extension 
 ### [17.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.0.0) (October 30th 2025)
 
 * Compatibility with Umbraco 17.0.0-rc1.
-  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrades/version-specific.md).
+  * See full details of breaking changes under the [Version-specific Upgrade Guide](upgrading/version-specific.md).
 
 ## Umbraco.Deploy.Contrib
 

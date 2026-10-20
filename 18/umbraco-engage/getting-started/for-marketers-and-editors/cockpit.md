@@ -30,7 +30,7 @@ If your website runs separately from the backoffice (a CM/CD setup), you may not
 In this case, you can open the Cockpit from the Umbraco backoffice:
 
 1. Go to the **Engage** section in the backoffice.
-2. Click the **Open Cockpit** button on the dashboard.
+2. Click the **Open Cockpit** button in the top-right corner of the **Engage** section.
 3. Select the domain you want to view, and the Cockpit opens in a new browser tab.
 
 Your Cockpit session stays active for 30 minutes. After that, click the Open Cockpit button again to continue.

@@ -8,7 +8,7 @@ description: >-
 
 This section covers topics such as an introduction to the platform, its components, personalization, reporting, and more.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="../analytics/">Analytics</a></td><td><a href="../analytics/">analytics</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Setup.png">Documentations Icons_Umbraco_Deploy_Setup.png</a></td></tr><tr><td><a href="../ab-testing/">A/B Testing</a></td><td><a href="../ab-testing/">ab-testing</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Deployment_Workflow (1).png">Documentations Icons_Umbraco_Deploy_Deployment_Workflow (1).png</a></td></tr><tr><td><a href="../personalization/">Personalization</a></td><td><a href="../personalization/">personalization</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Workflow_Section_Overview.png">Documentations Icons_Umbraco_Workflow_Section_Overview.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="../analytics/">Analytics</a></td><td><a href="../analytics/">analytics</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Setup.png">Documentations Icons_Umbraco_Deploy_Setup.png</a></td></tr><tr><td><a href="../ab-testing/">A/B Testing</a></td><td><a href="../ab-testing/">ab-testing</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Deploy_Deployment_Workflow.png">Documentations Icons_Umbraco_Deploy_Deployment_Workflow.png</a></td></tr><tr><td><a href="../personalization/">Personalization</a></td><td><a href="../personalization/">personalization</a></td><td><a href="../../.gitbook/assets/Documentations Icons_Umbraco_Workflow_Section_Overview.png">Documentations Icons_Umbraco_Workflow_Section_Overview.png</a></td></tr></tbody></table>
 
 ## [The Umbraco Engage Section](the-umbraco-engage-section.md)
 
@@ -28,4 +28,4 @@ The Profiling section helps track visitor sessions, manage profiles, and differe
 
 ## [Settings](../settings/)
 
-The Settings section provides insights on excluding the traffic from specific IP addresses, setting up and implementing goals, and much more.
+The Settings section covers setting up goals, blocking unwanted traffic, and managing the Engage configuration and permissions.

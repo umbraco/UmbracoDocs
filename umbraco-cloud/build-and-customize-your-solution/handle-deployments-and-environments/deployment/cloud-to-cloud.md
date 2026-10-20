@@ -12,11 +12,11 @@ Changes made in your Cloud environments will appear in the Umbraco Cloud portal.
 
 To deploy metadata changes from one Cloud environment to another, click the **Deploy changes** button on the environment where the changes were made.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 The deployment starts, and you can follow the progress in the **Overview** section of your project.
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt="Deployment in progress"><figcaption><p>Deployment in progress</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19).png" alt="Deployment in progress"><figcaption><p>Deployment in progress</p></figcaption></figure>
 
 Once complete, the changes are deployed to the next Cloud environment in the deployment flow. If you have additional environments, repeat this process to deploy the changes through each environment.
 

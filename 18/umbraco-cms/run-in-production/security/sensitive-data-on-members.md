@@ -55,4 +55,4 @@ Follow the steps below to mark data as sensitive.
 
 When the **Is sensitive data** option is enabled, the value and data in the property will only be visible to the users with access to sensitive data.
 
-![Update member type](../../.gitbook/assets/update-member-type-v8.png)
+![Update member type](../../.gitbook/assets/update-member-type.png)

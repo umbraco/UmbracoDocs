@@ -18,18 +18,18 @@ For Umbraco 9 and previous, it's straightforward to copy the files you need from
 
 You can obtain the latest version of the Forms default theme from the following links:
 
-* [13.0.0](./files/umbraco-forms-default-theme-13.0.0.zip)
-* [13.0.1](./files/umbraco-forms-default-theme-13.0.1.zip)
-* [13.1.2](./files/umbraco-forms-default-theme-13.1.2.zip)
-* [13.2.0](./files/umbraco-forms-default-theme-13.2.0.zip)
-* [13.2.2](./files/umbraco-forms-default-theme-13.2.2.zip)
-* [13.2.4](./files/umbraco-forms-default-theme-13.2.4.zip)
-* [13.3.0](./files/umbraco-forms-default-theme-13.3.0.zip)
-* [13.5.0](./files/umbraco-forms-default-theme-13.5.0.zip)
-* [13.7.0](./files/umbraco-forms-default-theme-13.7.0.zip)
-* [13.8.0](./files/umbraco-forms-default-theme-13.8.0.zip)
-* [13.9.0](./files/umbraco-forms-default-theme-13.9.0.zip)
-* [13.9.1](./files/umbraco-forms-default-theme-13.9.1.zip)
+* [13.0.0](files/umbraco-forms-default-theme-13.0.0.zip)
+* [13.0.1](files/umbraco-forms-default-theme-13.0.1.zip)
+* [13.1.2](files/umbraco-forms-default-theme-13.1.2.zip)
+* [13.2.0](files/umbraco-forms-default-theme-13.2.0.zip)
+* [13.2.2](files/umbraco-forms-default-theme-13.2.2.zip)
+* [13.2.4](files/umbraco-forms-default-theme-13.2.4.zip)
+* [13.3.0](files/umbraco-forms-default-theme-13.3.0.zip)
+* [13.5.0](files/umbraco-forms-default-theme-13.5.0.zip)
+* [13.7.0](files/umbraco-forms-default-theme-13.7.0.zip)
+* [13.8.0](files/umbraco-forms-default-theme-13.8.0.zip)
+* [13.9.0](files/umbraco-forms-default-theme-13.9.0.zip)
+* [13.9.1](files/umbraco-forms-default-theme-13.9.1.zip)
 
 You should use the theme available for the highest version that's less or equal to the version of Forms you have installed. For example, when using Umbraco Forms 13.4.0, and no file for that version is available use version 13.3.0 instead.
 
@@ -50,7 +50,8 @@ From Forms 13.3 it is possible to do this for custom themes.
 1. Create a new Razor Class Library project to hold the theme.
 2. Create the necessary Partial Views for your theme within `Views\Partials\Forms\Themes\<my-custom-theme>`.
 3. Provide the names of the files in your theme via an implementation of `ITheme`.
-  * For example, if only overriding a single file, your class would look like the code snippet below:
+
+* For example, if only overriding a single file, your class would look like the code snippet below:
 
 ```csharp
 using Umbraco.Forms.Core.Interfaces;
@@ -113,7 +114,7 @@ public class MyComposer : IComposer
 }
 ```
 
-##### Removing the Default Email Template
+**Removing the Default Email Template**
 
 If providing custom email templates, you may want to remove the one provided with Forms. You can do that via the same `EmailTemplates` collection.
 
@@ -132,7 +133,7 @@ public class MyComposer : IComposer
 
 To use a theme with a Form use the "Insert Form" macro where you will be presented with the options of the form you wish to insert along with an option to pick a theme. This displays the list of theme folders found at `Views/Partials/Forms/Themes`.
 
-![Choosing and using a theme](images/select-a-theme.png)
+![Choosing and using a theme](../.gitbook/assets/select-a-theme.png)
 
 When you are rendering your form directly in your template, you need to specify your theme by filling out the `FormTheme` attribute:
 

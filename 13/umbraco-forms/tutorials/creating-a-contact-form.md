@@ -23,21 +23,21 @@ To create a Composition, follow these steps:
 1. Go to **Settings** in the Umbraco Backoffice.
 2. Expand the **Document Types** folder in the **Settings** tree.
 3. Select **...** next to the **Compositions** folder.
-4. Click **Composition**.  
+4. Click **Composition**.
 
-![Creating a Composition](images/creating-a-composition.png)
+![Creating a Composition](../.gitbook/assets/creating-a-composition.png)
 
 5. Enter a **Name** for the **Composition**- let's call it _Title Box_.
 6. Add the following fields with the respective specifications:
 
 | Group     | Field Name | Alias    | Data Type  |
-|-----------|------------|----------|------------|
+| --------- | ---------- | -------- | ---------- |
 | Title Box | Title      | title    | Textstring |
 | Title Box | Subtitle   | subtitle | Textarea   |
 
 7. **Save** Composition.
 
-![Add Composition Properties](images/composition-properties.png)
+![Add Composition Properties](../.gitbook/assets/composition-properties.png)
 
 ### Creating a Contact Us Document Type with Template
 
@@ -47,7 +47,7 @@ To create a **Contact Us** Document Type, follow these steps:
 
 1. Go to **Settings** in the Umbraco Backoffice.
 2. Select **...** next to the **Document Types** folder.
-3. Select **Document Type with Template**.  
+3. Select **Document Type with Template**.
 4. Enter a **Name** for the **Document Type**- let's call it _Contact Us_.
 5. Select **Compositions** in the top-right corner.
 6. Make sure the **Title Box** Composition is checked.
@@ -55,13 +55,13 @@ To create a **Contact Us** Document Type, follow these steps:
 8. Add the following fields with the respective specifications:
 
 | Group   | Field Name   | Alias       | Data Type       |
-|---------|--------------|-------------|-----------------|
+| ------- | ------------ | ----------- | --------------- |
 | Form    | Contact Form | contactForm | Richtext Editor |
 | Content | Body Text    | bodyText    | Richtext Editor |
 
 9. **Save** the Document Type.
 
-![Contact Us Document Type Properties](images/contact-us-doc-type-properties.png)
+![Contact Us Document Type Properties](../.gitbook/assets/contact-us-doc-type-properties.png)
 
 ### Updating the Document Type Permission
 
@@ -74,7 +74,7 @@ To update the **Contact Us** Document Type permissions, follow these steps:
 3. Select **Add child** in the **Allowed child node types** section.
 4. Select the **Contact Us** page.
 
-![Update Home Page Document Type Properties](images/update-doc-type-permissions.png)
+![Update Home Page Document Type Properties](../.gitbook/assets/update-doc-type-permissions.png)
 
 5. **Submit** the changes.
 6. **Save** the Document Type.
@@ -91,7 +91,7 @@ To add the content node, follow these steps:
 4. Enter the name for the content node. let's call it _Contact Us_.
 5. Enter a **Title**, **Subtitle**, and **Body Text** value. These can always be updated at a later point.
 
-![Enter values in Contact Us Content node](images/fill-contact-us-node.png)
+![Enter values in Contact Us Content node](../.gitbook/assets/fill-contact-us-node.png)
 
 6. **Save** or **Save and Publish** the content node.
 
@@ -105,40 +105,40 @@ To create a form, follow these steps:
 2. Click **...** next to the Forms folder.
 3. Choose the **Empty Form** option.
 4. Enter a **Name** for the Form- let's call it _Contact Us_.
-5. _[Optional]_ Enter a **Group Name** for the Data Consent query - let's call it _Data Consent_.
+5. _\[Optional]_ Enter a **Group Name** for the Data Consent query - let's call it _Data Consent_.
 6. **Add new group** - let's call it _Information_.
 7. Select **Add Question** to add a new field.
 8. Enter the following details:
 
-| Field Name         | Value                |
-| ------------------ | -------------------- |
-| Enter question     | **Name**                 |
-| Alias              | fullName             |
-| Choose answer type | Short answer         |
-| Field Type         | text                 |
-| Mandatory          | Yes                  |
+| Field Name         | Value        |
+| ------------------ | ------------ |
+| Enter question     | **Name**     |
+| Alias              | fullName     |
+| Choose answer type | Short answer |
+| Field Type         | text         |
+| Mandatory          | Yes          |
 
 9. **Submit** the changes.
 10. Repeat **steps 7-9** to add the following fields:
 
-| Field Name         | Value                |
-| ------------------ | -------------------- |
-| Enter question     | **Company Name**         |
-| Choose answer type | Short answer         |
+| Field Name         | Value            |
+| ------------------ | ---------------- |
+| Enter question     | **Company Name** |
+| Choose answer type | Short answer     |
 
-| Field Name         | Value                      |
-|--------------------|----------------------------|
+| Field Name         | Value                          |
+| ------------------ | ------------------------------ |
 | Enter question     | **How should we contact you?** |
-| Choose answer type | Single choice              |
-| Prevalues Items    | phone, email               |
-| Mandatory          | Yes                        |
+| Choose answer type | Single choice                  |
+| Prevalues Items    | phone, email                   |
+| Mandatory          | Yes                            |
 
-| Field Name         | Value                      |
-|--------------------|----------------------------|
-| Enter question     | **Enter your phone number**    |
-| Choose answer type | Short answer               |
-| Field Type         | tel                        |
-| Validation         | Validate as a number       |
+| Field Name         | Value                       |
+| ------------------ | --------------------------- |
+| Enter question     | **Enter your phone number** |
+| Choose answer type | Short answer                |
+| Field Type         | tel                         |
+| Validation         | Validate as a number        |
 
 11. Select **Enable Conditions** on the _Enter your phone number_ field.
 12. Click **Add Condition**.
@@ -148,8 +148,8 @@ To create a form, follow these steps:
 16. Repeat **steps 7-9** to add the following field:
 
 | Field Name         | Value                        |
-|--------------------|------------------------------|
-| Enter question     | **Enter your email address**     |
+| ------------------ | ---------------------------- |
+| Enter question     | **Enter your email address** |
 | Choose answer type | Short answer                 |
 | Field Type         | email                        |
 | Validation         | Validate as an email address |
@@ -162,26 +162,26 @@ To create a form, follow these steps:
 22. Repeat **steps 7-9** to add the following field:
 
 | Field Name         | Value                                                    |
-|--------------------|----------------------------------------------------------|
-| Enter question     | **What is your role?**                                       |
+| ------------------ | -------------------------------------------------------- |
+| Enter question     | **What is your role?**                                   |
 | Choose answer type | Dropdown                                                 |
 | Prevalues Items    | manager, developer, tester, writer, marketing specialist |
 
-| Field Name                     | Value                    |
-|--------------------------------|--------------------------|
-| Enter question                 | **Attachments (if any)**     |
-| Choose answer type             | File upload              |
-| Predefined allowed file types  | pdf, png, jpg, gif, txt  |
+| Field Name                    | Value                    |
+| ----------------------------- | ------------------------ |
+| Enter question                | **Attachments (if any)** |
+| Choose answer type            | File upload              |
+| Predefined allowed file types | pdf, png, jpg, gif, txt  |
 
-| Field Name         | Value               |
-|--------------------|---------------------|
-| Enter question     | **Are you a Robot?**    |
-| Choose answer type | reCAPTCHAv2         |
-| Theme              | light               |
-| Size               | normal              |
-| Mandatory          | Yes                 |
+| Field Name         | Value                |
+| ------------------ | -------------------- |
+| Enter question     | **Are you a Robot?** |
+| Choose answer type | reCAPTCHAv2          |
+| Theme              | light                |
+| Size               | normal               |
+| Mandatory          | Yes                  |
 
-![Add questions](images/contact-us-form-add-questions.png)
+![Add questions](../.gitbook/assets/contact-us-form-add-questions.png)
 
 23. Select the **Reorder** option.
 24. Drag the **Data consent** group below the **Information** group.
@@ -234,7 +234,7 @@ To add the Contact Form to the Content Node, follow these steps:
 7. Select **Add** in the **Theme** field.
 8. Choose the **default** theme.
 
-![Adding the Contact Us Form](images/select-form.png)
+![Adding the Contact Us Form](../.gitbook/assets/select-form.png)
 
 9. **Submit** the changes.
 10. **Save** or **Save and Publish** the content node.
@@ -247,7 +247,7 @@ In the next couple of steps, we will add some additional configuration required 
 
 When you inserted the form in the previous step, you will notice an error message in the reCAPTCHA field. You need to update the configuration to include a value in the `appsettings.json` file.
 
-To configure the reCAPTCHA value, see the [reCAPTCHA configuration](../developer/configuration/README.md#recaptcha-v2-field-type-configuration) article.
+To configure the reCAPTCHA value, see the [reCAPTCHA configuration](../developer/configuration/#recaptcha-v2-field-type-configuration) article.
 
 ### Configuring Simple Mail Transfer Protocol (SMTP)
 

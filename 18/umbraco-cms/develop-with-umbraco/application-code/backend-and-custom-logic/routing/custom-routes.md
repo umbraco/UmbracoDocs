@@ -289,6 +289,8 @@ Define your route as before, specifying the correct client type route:
 You will need to configure your route request options within your **Program.cs** class. For single routes:
 
 ```csharp
+using Umbraco.Cms.Web.Common.Routing;
+
 builder.Services.Configure<UmbracoRequestOptions>(options =>
 {
     options.HandleAsServerSideRequest = httpRequest => httpRequest.Path.StartsWithSegments("/sitemap.xml");

@@ -6,9 +6,9 @@ To access the Form Settings:
 
 1. Navigate to the **Forms** section.
 2. Open a Form you wish to customize.
-3. Click **Settings** in the top-right corner of the screen.
+3.  Click **Settings** in the top-right corner of the screen.
 
-    ![Form settings dialog](images/FormSettings.png)
+    ![Form settings dialog](../../.gitbook/assets/FormSettings.png)
 
 ## Settings Options
 
@@ -20,25 +20,25 @@ By default, all submitted records are saved in the database. This option allows 
 
 Disabling this option will prevent database records from being stored, but any file uploads made as part of the form submission will still be retained. If you do not want the files to be stored, ensure that any process or method used to process, move, or copy them to a different location also removes the file.
 
-![Form settings Store Records](images/Store-Records.png)
+![Form settings Store Records](../../.gitbook/assets/Store-Records.png)
 
 ### Captions
 
 Customize the labels of the **Submit**, **Next**, and **Previous** buttons used in your Form.
 
-![Form settings stylesheet](images/FormSettingsCaptions-v9.png)
+![Form settings stylesheet](../../.gitbook/assets/FormSettingsCaptions-v9.png)
 
 ### Styling
 
 Set a stylesheet to give your Form custom styling. You have an option to disable the default styling. Enabling the **Disable default stylesheet** option will prevent a default stylesheet to be added to the pages where the Form is placed.
 
-![Form settings stylesheet](images/FormSettingsStyling.png)
+![Form settings stylesheet](../../.gitbook/assets/FormSettingsStyling.png)
 
 ### Validation
 
 Define a message that is displayed when a field is mandatory, when a value is not supplied, or when the value is invalid.
 
-![Form settings validation](images/FormSettingsValidation.png)
+![Form settings validation](../../.gitbook/assets/FormSettingsValidation.png)
 
 The following Validations are available:
 
@@ -55,31 +55,31 @@ The following Validations are available:
 
 The autocomplete setting for the overall form can be changed from the default of "None" to "On" or "Off". Setting this explicitly will control how the browser offers automatic prompts to the user when completing the form.
 
-<figure><img src="images/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/FormSettingsAutocomplete.png" alt=""><figcaption><p>Form Settings Autocomplete</p></figcaption></figure>
 
 ### Multi-page forms
 
 The settings available in this section allow you to customize how multi-page forms are presented to site visitors.
 
-<figure><img src="images/multi-page-forms.png" alt=""><figcaption><p>Multi-Page Form Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/multi-page-forms.png" alt=""><figcaption><p>Multi-Page Form Settings</p></figcaption></figure>
 
-| Option                           | Description                                                                                                                                                                                                     |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Paging display**               | Select whether paging information is displayed at the top and/or bottom of the form.                                                                                                                            |
-| **Paging display format**        | Provide a format string for the paging details. By default `Page {0} of {1}` is used which will be replaced as, for example, `Page 1 of 4`.                                                                     |
-| **Page caption format**          | Provide a format string for rendering the page captions. By default `Page {0}` is used which will be replaced as, for example, `Page 1`. If a caption for the page has been provided, it will be used instead.  |
-| **Show summary page**            | Select whether a summary page is displayed at the end of multi-page forms, where a user can review their entry before submitting.                                                                               |
-| **Summary heading**              | Provide the heading for the summary page.                                                                                                                                                                       |
+| Option                    | Description                                                                                                                                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Paging display**        | Select whether paging information is displayed at the top and/or bottom of the form.                                                                                                                           |
+| **Paging display format** | Provide a format string for the paging details. By default `Page {0} of {1}` is used which will be replaced as, for example, `Page 1 of 4`.                                                                    |
+| **Page caption format**   | Provide a format string for rendering the page captions. By default `Page {0}` is used which will be replaced as, for example, `Page 1`. If a caption for the page has been provided, it will be used instead. |
+| **Show summary page**     | Select whether a summary page is displayed at the end of multi-page forms, where a user can review their entry before submitting.                                                                              |
+| **Summary heading**       | Provide the heading for the summary page.                                                                                                                                                                      |
 
 {% hint style="info" %}
-These options will only be available if [the feature is configured for display](../../developer/configuration/README.md#enablemultipageformsettings).
+These options will only be available if [the feature is configured for display](../../developer/configuration/#enablemultipageformsettings).
 {% endhint %}
 
 ### Moderation
 
 Enabling this feature allows the moderator to manage the approval status of a form. This can be used in a number of scenarios. For example, if the form submission will be publicly shown, you can control which are published.
 
-![Form settings Moderation](images/FormSettingsModeration.png)
+![Form settings Moderation](../../.gitbook/assets/FormSettingsModeration.png)
 
 ### Fields displayed
 
@@ -87,7 +87,7 @@ By default, a constant set of fields are displayed when form entries are shown i
 
 To customize this, turn off the "Display default fields" option and select the ones you wish to display.
 
-<figure><img src="../../../../13/umbraco-forms/.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/FormSettingsFieldsDisplayed.png" alt=""><figcaption><p>Forms Settings Fields Displayed</p></figcaption></figure>
 
 ### Data retentions
 
@@ -95,4 +95,4 @@ To help protect site visitor privacy, rules can be configured in this section fo
 
 A background service that carries out the actual removal of records needs to be [enabled in configuration](../../developer/configuration/#scheduledrecorddeletion). If that is not running, a notification will be displayed.
 
-![Form settings Date Retentions](images/FormSettingsDataRetention.png)
+![Form settings Date Retentions](../../.gitbook/assets/FormSettingsDataRetention.png)

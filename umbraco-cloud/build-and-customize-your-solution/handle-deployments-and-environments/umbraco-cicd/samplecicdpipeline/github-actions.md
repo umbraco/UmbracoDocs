@@ -77,7 +77,7 @@ You will also need the target environment alias. The [Getting environment aliase
 2. Go to the repository in GitHub, and navigate to the Settings section.
 3. Expand Secrets and Variables in the left-hand menu titled `Security` and select `Actions`.
 
-<figure><img src="../../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Security and Actions menu GitHub</p></figcaption></figure>
 
 4. Create a `repository secret` called `UMBRACO_CLOUD_API_KEY` with the `API Key` value from the Umbraco Portal.
 5. Create another `repository secret` with the name `PROJECT_ID` and the `Project ID` value from the Umbraco Portal.
@@ -130,6 +130,10 @@ This is how you can grant these permissions:
 6. Click save.
 
 <figure><img src="../../../../.gitbook/assets/github-workflow-permissions.png" alt=""><figcaption><p>GitHub Workflow permissions</p></figcaption></figure>
+
+{% hint style="info" %}
+If the **Read and write permissions** option is disabled, workflow permissions may be managed at the organization level. You can review or update this setting under **Organization Settings** → **Actions** → **General** → **Workflow permissions**.
+{% endhint %}
 
 ## Set up the GitHub Actions pipeline
 

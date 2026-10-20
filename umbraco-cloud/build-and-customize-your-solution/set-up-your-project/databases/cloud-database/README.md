@@ -9,11 +9,11 @@ description: >-
 
 ## Connecting to your Cloud database locally
 
-Umbraco Cloud automatically overrides whatever is in the `umbracoDbDsn` connection string in the `web.config` or  `appSettings.json` when the site is running on Cloud.&#x20;
+Umbraco Cloud automatically overrides whatever is in the `umbracoDbDsn` connection string in the `web.config` or `appSettings.json` when the site is running on Cloud.
 
 Any connection string named `umbracoDbDsn` will only be used when you run the site locally (cloned). In rare cases, you might need the database timeout increased on Cloud, for that, you'll need to reach out to support for assistance.
 
-For security, your database on Umbraco Cloud is running behind a firewall. You'll need to open the firewall for the relevant IPs to connect to the database. This can be a single IP, a list of IPs, or even an IP range.&#x20;
+For security, your database on Umbraco Cloud is running behind a firewall. You'll need to open the firewall for the relevant IPs to connect to the database. This can be a single IP, a list of IPs, or even an IP range.
 
 To open the firewall to a specific IP follow the steps below:
 
@@ -26,9 +26,7 @@ To open the firewall to a specific IP follow the steps below:
 
 If you don't see the **SQL Azure firewall**, it's due to permissions and you'll need to contact the projects administrator.
 
-<figure><img src="../../../../.gitbook/assets/image (93).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
-
-
+<figure><img src="../../../../.gitbook/assets/image (54).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
 
 The IP can also be added by clicking "**Add now"**. It'll automatically add your current IP address and save the settings. It might take up to five minutes for the firewall to be open for your IP.
 

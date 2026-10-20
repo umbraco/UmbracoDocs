@@ -51,20 +51,32 @@ When creating a `PhysicalFileSystem` it takes some dependencies like `IIOHelper`
 
 The `rootPath` is where your media will be stored on the disk. Since netcore by default stores files in the `wwwroot`, we must put our desired folder somewhere within `wwwroot` to ensure that we use `hostingEnvironment.MapPathWebRoot(~/CustomMediaFolder)`. The `~` will be mapped to your `wwwroot` folder, so the final `rootPath` will be `your/project/path/wwwroot/CustomMediaFolder`. The `~` is therefore important.
 
-The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important.
-
-In the code sample above, the `rootUrl` must map to the the same physical location as `rootPath`, which again must be placed under `wwwroot`. If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
-
 The `rootUrl` is the base URL that your media files will be served from. In this case, your image URL could look something like `mysite.com/CustomMediaFolder/MyAwesomePicture.png`. Again the `~` is important. With the code sample above, the `rootUrl` must map to the same physical location as `rootPath`, otherwise, you will get 404's for your images.
 
-If you want to store the media files outside of `wwwroot` there is an extra step involved; you need to instruct netcore to include static files from a different physical location.
+### Storing media outside the webroot
 
-In the `Program.cs` file, register a new static file location like so:
+A custom media file system is not the right tool for storing media on a physical or network path outside `wwwroot`. Use the `UmbracoMediaPhysicalRootPath` setting instead:
+
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "Global": {
+        "UmbracoMediaPath": "~/media",
+        "UmbracoMediaPhysicalRootPath": "C:\\storage\\umbracoMedia"
+      }
+    }
+  }
+}
+```
+
+Umbraco builds a `PhysicalFileSystem` from these settings, exactly as in the sample above. It also composes the folder into the webroot file provider for you. This keeps both static file serving and image processing working. See [FileSystemProviders Configuration](../../reference/configuration/filesystemproviders.md) for details.
+
+{% hint style="warning" %}
+**Do not register the media folder as an additional static file provider.** A pattern sometimes used for this scenario is to add a `PhysicalFileProvider` for the media folder in `Program.cs`:
 
 ```csharp
-...
-WebApplication app = builder.Build();
-
+// Do not do this - it silently disables image resizing.
 app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(Path.Combine("C:", "storage", "umbracoMedia")),
@@ -72,40 +84,27 @@ app.UseStaticFiles(new StaticFileOptions
     });
 ```
 
-The PhysicalFileProvider takes a single parameter, the **`RootPath`**. This is the rooted filesystem path using directory separator chars and not ending with a directory separator, eg: `c:\storage\umbracoMedia` or `\\server\path`. The safest way to achieve this is using `Path.Combine`.
+There are two problems with this:
 
-You also have to specify the **`RequestPath`**. This is the relative URL where the media will be served using URL separator chars and not ending with a separator, eg: `/CustomPath` or `/Media`.
+* Umbraco registers the ImageSharp middleware inside `app.UseUmbraco()`. A static file middleware registered before that call handles the request first and ignores the querystring, so `?width=500` returns the full-size original.
+* ImageSharp resolves images only through the webroot file provider. Files served from a separate `PhysicalFileProvider` are invisible to it, so resizing still does not work even if the registration is moved after `app.UseUmbraco()`.
 
-Now you can use your newly registered static file location as if it was `wwwroot`. Notice how you no longer need to use `hostingEnvironment.MapPathWebRoot(folderLocation)`, since you're no longer trying to map the location to somewhere within `wwwroot`, but instead use your newly registered static file location.
+Every image is then served at its original size, including backoffice thumbnails. To check whether a site is affected, request an image with and without a resizing querystring. `?width=50` must return a smaller response than the same URL without the querystring.
+{% endhint %}
 
-```csharp
-public void Compose(IUmbracoBuilder builder)
-{
-    builder.SetMediaFileSystem((factory) =>
-    {
-        IHostingEnvironment hostingEnvironment = factory.GetRequiredService<IHostingEnvironment>();
-        var rootPath = Path.Combine("C:", "storage", "umbracoMedia");
-        var rootUrl = hostingEnvironment.ToAbsolute("/CustomPath");
-
-        return new PhysicalFileSystem(
-            factory.GetRequiredService<IIOHelper>(),
-            hostingEnvironment,
-            factory.GetRequiredService<ILogger<PhysicalFileSystem>>(),
-            rootPath,
-            rootUrl);
-    });
-}
-```
-
-This is almost the same as when registering a location within the `wwwroot` folder. The only difference is that `rootPath` is now set to the path we gave the `PhysicalFileProvider` and the `rootUrl` is the same as we set as the `RequestPath` in the `StaticFileOption`.
-
-Our media is now stored in `C:\storage\umbracoMedia`, and is served from the base URL `/CustomPath`, so an image URL will look something like `mysite.com/CustomPath/MyAwesomePicture.png`.
+Reserve a custom media file system for storage that is genuinely of a different kind, such as Azure Blob Storage or Amazon S3.
 
 ### Creating a custom file system
 
 You can replace `PhysicalFileSystem` with a custom file system implementation - eg. if you want your media files stored on Amazon S3 or elsewhere outside your site.
 
 To achieve this, you must first create your own file system by implementing the interfaces `IFileSystem` and `IFileProviderFactory` (the interfaces that are implemented by `PhysicalFileSystem`).
+
+{% hint style="info" %}
+Implementing `IFileProviderFactory` allows Umbraco to compose your media file system into the webroot file provider during startup. It is mounted at the URL configured in `UmbracoMediaPath`.
+
+Without it, Umbraco cannot serve or process media from your file system through that path. Image processing resolves media only through the webroot file provider.
+{% endhint %}
 
 You then replace the media filesystem by composition using `IUmbracoBuilder.SetMediaFileSystem(...)` (as is demonstrated in the paragraphs above), but instead of returning a `PhysicalFileSystem`, you return your own file system implementation.
 

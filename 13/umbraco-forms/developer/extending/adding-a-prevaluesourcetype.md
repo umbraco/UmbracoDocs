@@ -1,12 +1,12 @@
 # Adding A Prevalue Source Type To Umbraco Forms
 
-_This builds on the "_[_Adding a type to the provider model_](adding-a-type.md)_" article_
+_This builds on the "_[_Adding a type to the provider model_](adding-a-type/)_" article_
 
 Add a new class to your project - inherit it from `Umbraco.Forms.Core.FieldPreValueSourceType` and implement the class.
 
 The following example shows an illustrative custom prevalue source type that returns a hard-coded list of values. It can be extended for your needs via injection of services via the constructor. (See additional example at the bottom.)
 
-Dynamic settings can be applied and validated as shown in the [Validate type settings with ValidateSettings()](adding-a-type.md#validate-type-settings-with-validatesettings) article.
+Dynamic settings can be applied and validated as shown in the [Validate type settings with ValidateSettings()](adding-a-type/#validate-type-settings-with-validatesettings) article.
 
 ```csharp
 using System;

@@ -12,7 +12,7 @@ This article covers two ways to install Umbraco Engage:
 * [Via a terminal](installation.md#installing-using-the-terminal).
 
 {% hint style="info" %}
-Check [the requirements](../getting-started/for-developers/system-requirements.md) before you start installing Umbraco Engage.
+Check [the requirements](system-requirements.md) before you start installing Umbraco Engage.
 {% endhint %}
 
 ## Installation via NuGet
@@ -65,45 +65,9 @@ The next step is to [configure a license](licensing.md).
 
 It is recommended to consider the information detailed in the section below, to get the best out of Umbraco Engage.
 
-### Umbraco Forms
+### Add-ons
 
-If you have installed **Umbraco Forms** as well and want to automatically track submissions of Umbraco Forms. Install the package [Umbraco.Engage.Forms](https://www.nuget.org/packages/Umbraco.Engage.Forms) via NuGet or using your preferred approach as above.
-
-{% tabs %}
-{% tab title="Visual Studio Package Manager" %}
-```
-PM> install package Umbraco.Engage.Forms
-```
-{% endtab %}
-
-{% tab title="Console" %}
-```console
-dotnet add package Umbraco.Engage.Forms
-```
-{% endtab %}
-{% endtabs %}
-
-### Umbraco Deploy
-
-If you are using **Umbraco Deploy** and want to transfer Engage configuration items between environments, install the [Umbraco.Engage.Deploy](https://www.nuget.org/packages/Umbraco.Engage.Deploy) package. These items include goals, personas, customer journeys, and A/B tests.
-
-{% tabs %}
-{% tab title="Visual Studio Package Manager" %}
-```
-PM> install-package Umbraco.Engage.Deploy
-```
-{% endtab %}
-
-{% tab title="Console" %}
-```console
-dotnet add package Umbraco.Engage.Deploy
-```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-Analytics data is not transferred between environments. Only configuration items such as goals, personas, customer journeys, and A/B tests are included in deployments.
-{% endhint %}
+Umbraco Engage has add-ons that connect it to Umbraco Forms, Umbraco Commerce, Umbraco Deploy, and AI. Each add-on is a separate NuGet package. See the [overview of available add-ons](../#available-add-ons) to learn about their functionality and what they add to the product.
 
 ### Clientside tracking
 
@@ -114,14 +78,14 @@ To capture events that happen on the clientside (frontend) of your website, you 
 ```
 
 {% hint style="info" %}
-The following client-side tracking script loading types are currently not supported: "async" or "defer".
+Includes support for "async" and "defer" keywords.
 {% endhint %}
 
 ### Cockpit
 
 The Cockpit is a tool to help with testing segments and diagnosing the data that Umbraco Engage collects. It can be viewed on the front end of your website, only if you are logged into Umbraco as well.
 
-As of Umbraco Engage 16, the cockpit is automatically installed.&#x20;
+As of Umbraco Engage 16, the cockpit is automatically installed.
 
 {% hint style="info" %}
 Automatic injection can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to **false**.
@@ -146,7 +110,7 @@ Here are some optional extras you can do to improve your experience with Umbraco
 ```
 
 {% hint style="info" %}
-The following Google Analytics bridging or blocker script loading types are currently not supported: "async" or "defer".
+Includes support for "async" and "defer" keywords.
 {% endhint %}
 
 ### Cookie consent
@@ -170,7 +134,7 @@ When you visit your site locally for the first time, Umbraco Engage will begin t
 To generate reporting data manually on your local installation, follow these steps:
 
 1. Go to the **Settings** section.
-2. Navigate to **Engage** -> **Configuration**.
+2. Navigate to **Engage** > **Configuration**.
 3. Select the **Reporting** tab.
 4. Click the red **Regenerate** button.
 

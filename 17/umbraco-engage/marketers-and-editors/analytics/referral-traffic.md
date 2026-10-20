@@ -6,7 +6,7 @@ description: >-
 
 # Referral Traffic
 
-In the **Analytics - Referrers** tab, you can view all visits to your site that originated from external sources.
+In the **Referrals** tab of the **Analytics** section, you can view all visits to your site that originated from external sources.
 
 ![Referral Traffic tab in Analytics section](../../.gitbook/assets/Analytics-referrals-v16.png)
 

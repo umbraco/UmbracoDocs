@@ -22,20 +22,20 @@ This tutorial assumes that you already have the relevant site structure and cont
 [installation.md](installation.md)
 {% endcontent-ref %}
 
-{% content-ref url="create-store.md" %}
-[create-store.md](create-store.md)
+{% content-ref url="create-store/" %}
+[create-store](create-store/)
 {% endcontent-ref %}
 
 {% content-ref url="create-product.md" %}
 [create-product.md](create-product.md)
 {% endcontent-ref %}
 
-{% content-ref url="cart.md" %}
-[cart.md](cart.md)
+{% content-ref url="cart/" %}
+[cart](cart/)
 {% endcontent-ref %}
 
-{% content-ref url="checkout.md" %}
-[checkout.md](checkout.md)
+{% content-ref url="checkout/" %}
+[checkout](checkout/)
 {% endcontent-ref %}
 
 {% content-ref url="permissions.md" %}

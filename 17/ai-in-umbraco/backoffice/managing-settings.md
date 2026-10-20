@@ -40,9 +40,11 @@ An optional profile for internal classification tasks such as agent routing. The
 
 When set, this profile is used by:
 
-- Agent routing in the Copilot's "Auto" mode (selecting the best agent for a user prompt)
+- Agent routing in "Auto" mode, in both Contextual Copilot and Copilot Workspace (selecting the best agent for a user prompt)
 
 If not set, the default chat profile is used instead.
+
+When the experimental Decision capability is enabled and a Default Decision Profile is set, Auto mode tries Decision first. The classifier chat profile is then used only as a fallback.
 
 ### Default Embedding Profile
 
@@ -67,12 +69,52 @@ The profile used for speech-to-text operations when no profile is explicitly spe
 When set, this profile is used by:
 
 - `IAISpeechToTextService.TranscribeAsync()` without a profile ID
-- The Copilot voice input button
+- The voice input button in Contextual Copilot and Copilot Workspace
+
+### Default Decision Profile
+
+The profile used for decisions when no profile is explicitly specified.
+
+{% hint style="warning" %}
+Decision is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Decision](../using-the-api/decision/README.md#enabling-decision).
+{% endhint %}
+
+| Field                    | Description                             |
+| ------------------------ | --------------------------------------- |
+| Default Decision Profile | Select from available Decision profiles |
+
+When set, this profile is used by:
+
+- `IAIDecisionService.AskAsync()` without a profile
+- The Decision Management API and `UaiDecisionController` without a `profileIdOrAlias`
+- The Ask Yes/No, Ask Pick-One, Ask Score, and Ask Questions Umbraco Automate actions without a profile
+- Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
+
+### AI Disclosure Notice
+
+Controls the notice that tells users a response is AI-generated. The notice reads "Responses are AI-generated and may be inaccurate." and appears in:
+
+- The chat in Contextual Copilot and Copilot Workspace, after the first message in a conversation.
+- The prompt preview, once a prompt response has loaded.
+
+| Option      | Behavior                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------ |
+| Always      | The notice is always shown. This is the default.                                                 |
+| Dismissible | The notice shows a **Dismiss** button. Once dismissed, it stays hidden in that browser.          |
+| Off         | The notice is never shown.                                                                       |
+
+With **Dismissible**, each location is dismissed separately. Hiding the notice in the chat does not hide it in the prompt preview. The dismissal is stored in a cookie in the user's browser for one year, so it applies per browser rather than per user account.
+
+{% hint style="warning" %}
+You may be legally required to tell people when content is AI-generated, for example under the EU AI Act. Check which rules apply to your organization before choosing **Dismissible** or **Off**.
+{% endhint %}
+
+The setting is found in the **Transparency** group on the Settings page.
 
 ## Configuring Settings
 
 1. Navigate to the **AI** section > **Settings**.
-2. Select the desired profiles via the pickers.
+2. Select the desired profiles via the pickers, and choose an AI Disclosure Notice option.
 3. Click **Save**.
 
 ## Settings Precedence

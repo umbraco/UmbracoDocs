@@ -1,6 +1,8 @@
 # Load Balancing Azure Web Apps
 
-Ensure you read the [Load Balancing overview](./) and general [Azure Web Apps](../azure-web-apps.md) documentation before you begin - you will need to ensure that your ASP.NET Core & logging configurations are correct.
+Ensure you read the [Load Balancing overview](./) and general [Azure Web Apps](../azure-web-apps.md) documentation before you begin. You will need to ensure that your ASP.NET Core & logging configurations are correct.
+
+This article describes the dedicated backoffice server setup, where the backoffice runs as a single instance. From Umbraco 17, you can instead load balance the backoffice alongside your front-end servers. See [Load Balancing the Backoffice](load-balancing-backoffice.md) article for that approach.
 
 ## Azure Requirements
 
@@ -11,7 +13,7 @@ Ensure you read the [Load Balancing overview](./) and general [Azure Web Apps](.
 
 The setup above will allow for the proper scaling of the Administrative and Public web apps.
 
-The App Service plan with the Administrative web app should only be scaled up. The reason for this is that the web app needs to stay as a single instance.
+The App Service plan with the Administrative web app should only be scaled up. In this setup, the web app needs to stay as a single instance.
 
 The App Service plan with the Public web app can be scaled both out and up.
 
@@ -109,14 +111,16 @@ Ensure all Azure resources are in the same region to avoid connection lag.
 
 ## Scaling
 
-**Do not scale your backoffice administrative environment** this is not supported and can cause issues.
+**Do not scale your backoffice administrative environment in this setup** as this is not supported and can cause issues.
 
 The public-facing subscriber Azure Web Apps can be manually or automatically scaled up or down and is supported by Umbraco's load balancing.
 
+To scale the backoffice itself, use [Load Balancing the Backoffice](load-balancing-backoffice.md) instead.
+
 ## Deployment considerations
 
-Since you have 2 x web apps, when you deploy you will need to deploy to both places - There are various automation techniques you can use to simplify the process. That is outside the scope of this article.
+Since you have 2 x web apps, when you deploy you will need to deploy to both places. There are different automation techniques you can use to simplify the process. That is outside the scope of this article.
 
 {% hint style="info" %}
-This also means that you should not be editing templates or views on a live server as SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
+This also means that you should not be editing templates or views on a live server. SchedulingPublisher and Subscriber environments do not share the same file system. Changes should be made in a development environment and then pushed to each live environment.
 {% endhint %}

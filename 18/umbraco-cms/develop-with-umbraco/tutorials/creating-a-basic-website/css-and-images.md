@@ -17,7 +17,7 @@ The Umbraco project folder refers to the folder created during the [Umbraco inst
 
 ## Stylesheet Reference
 
-Use the Developer Tools in Chrome/Firefox/Edge and refresh `http://localhost:xxxx.`
+Use the Developer Tools in Chrome/Firefox/Edge and refresh the frontend: `http://localhost:xxxx.`
 
 * Check the **Network** tab to confirm no CSS or image files are missing.
 * If you see any errors, double-check for typos and confirm the folders are placed correctly inside the **wwwroot** folder of your Umbraco project.

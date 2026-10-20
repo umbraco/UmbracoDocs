@@ -12,7 +12,9 @@ Addon
 addon
 agentic
 ajax
+alibaba
 allowlist
+allowlisting
 altTemplate
 amet
 Amongst
@@ -38,6 +40,7 @@ approvers
 appSetting
 appsetting
 appsettings
+Aprimo
 ARRAffinity
 articleContent
 articlesTitle
@@ -46,11 +49,13 @@ assignDomain
 async
 Auditability
 authorizer
+authorizers
 authProvider
 Axios
 autocomplete
 autocompletion
 autogenerate
+Automate's
 Automations
 automations
 Autoplay
@@ -60,6 +65,9 @@ Backoffice
 backoffice
 Backoffices
 backplane
+backport
+backported
+backports
 Beeceptor
 Behaviour
 behaviour
@@ -79,7 +87,9 @@ browsable
 buildable
 bundleId
 bundler
+bundlers
 cacheable
+Cachebuster
 camelCase
 camelcase
 cancellationToken
@@ -110,6 +120,7 @@ CMS's
 codebase
 codeblock
 Codegarden
+codegen
 collectionAction
 collectionConfig
 collectionView
@@ -117,6 +128,7 @@ Colour
 colours
 coloured
 Commerce
+CommerceTools
 compareTo
 comparisonOperator
 composable
@@ -177,6 +189,7 @@ dereferencing
 Deregister
 deregister
 deregistration
+deserialization
 deserialize
 deserialized
 deserializing
@@ -203,6 +216,7 @@ EFCore
 elementName
 elementSelector
 emailTemplate
+emerchantpay
 endcode
 endembed
 endfile
@@ -285,6 +299,8 @@ Healthchecks
 Heartcore
 Heatmap
 heatmap
+heatmaps
+helpdesk
 HMACs
 Homebrew
 hostname
@@ -337,6 +353,7 @@ inclusivity
 increaseBy
 initializer
 injectable
+inriver
 intalls
 intellisense
 Intellisense
@@ -347,6 +364,7 @@ IProfiler
 IPs
 IRelation
 IScope
+ISearcher
 IService
 ISettings
 isFrozen
@@ -359,12 +377,14 @@ IVisitable
 IVisitor
 JAMStack
 Javascript
+Jev
 javascript
 Jetbrains
 jQuery
 keyComparer
 keySelector
 Kickstarter
+kimi
 Konstrukt
 Koomen
 KPIs
@@ -383,6 +403,7 @@ logfiles
 loginName
 logviewer
 lookups
+loopback
 Lucene
 Lucene's
 Lucide
@@ -391,6 +412,7 @@ masterpages
 Matryoshka
 maxLength
 Maxmind
+MCPs
 Mecanik
 memberGroups
 memberIds
@@ -496,6 +518,8 @@ personalizations
 Pikaday
 pipelineTasks
 Pluralsight
+populator
+populators
 postfixed
 Powershell
 powershell
@@ -539,6 +563,7 @@ queueing
 quicklink
 Quickstart
 quickstart
+qwen
 Radiobox
 Radiobutton
 radiobuttons
@@ -606,6 +631,7 @@ serverless
 serverside
 setBehavior
 shippingMethod
+Shopify
 signout
 signup
 SignalR
@@ -646,7 +672,9 @@ stylesheets
 Stylesheets
 subfolder
 subfolders
-summarising
+subitems
+subnet
+subnets
 subpage
 subpages
 subtree
@@ -655,6 +683,7 @@ Subtrees
 subview
 subviews
 Subviews
+summarizing
 svg
 SVGs
 symlinked
@@ -699,6 +728,8 @@ tiptapExtension
 TKey
 TModel
 todays
+tooltip
+tooltips
 topbar
 topmenu
 totalRecords
@@ -743,6 +774,7 @@ uncategorized
 uncheck
 Uncomment
 underperforming
+unencrypted
 unfinalized
 Unintuitive
 unioned
@@ -750,6 +782,7 @@ unpackaging
 Unprocessable
 Unpublish
 unpublish
+unpublishes
 unpublishing
 Unredeem
 unredeeming

@@ -22,6 +22,12 @@ Anytime a document is published and its corresponding _url segment_ changes, Umb
 
 Umbraco registers a new content finder, `ContentFinderByRedirectUrl`, which runs as a normal content finder after the other content finders. It looks for the incoming URL in the database table and, if found, computes the URL of the target document and returns a "301 Redirect". These redirects are considered "permanent". It's good to note that we explicitly set `no-cache` headers on these redirects so that when they change, browsers update the URL immediately. They are a "true" 301, however, and search engines will accept them as such.
 
+## Notifications
+
+The creation and deletion of redirects publish notifications that you can handle. You can use them to log redirect changes or to cancel the creation or deletion of specific redirects.
+
+For handler examples, see the [RedirectUrlService Notifications](../../../../extend-your-project/server-side-extensions/notifications/redirecturlservice-notifications.md) article.
+
 ## Enable / Disable / Configure
 
 The 301 Redirect Management feature is enabled by default.

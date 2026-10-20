@@ -4,9 +4,16 @@
 * [Release Notes](release-notes.md)
 * [Support](support.md)
 
+## Add-ons
+
+* [Forms](add-ons/forms.md)
+* [Commerce](add-ons/commerce.md)
+* [Deploy](add-ons/deploy.md)
+* [AI](https://docs.umbraco.com/dxp-engage-ai)
+
 ## Installation
 
-* [System Requirements](getting-started/for-developers/system-requirements.md)
+* [System Requirements](installation/system-requirements.md)
 * [Installation](installation/installation.md)
 * [Licensing](installation/licensing.md)
 * [Verify your Engage installation](installation/troubleshooting-installs.md)
@@ -20,7 +27,7 @@
 
 ## Getting Started
 
-* [Getting Started](getting-started/README.md)
+* [Getting Started](getting-started/getting-started.md)
 * [For Marketers and Editors](getting-started/for-marketers-and-editors/README.md)
   * [Cockpit](getting-started/for-marketers-and-editors/cockpit.md)
   * [Marketing Resources](getting-started/for-marketers-and-editors/marketing-resources.md)
@@ -72,6 +79,7 @@
     * [Setting up the customer journey](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-the-customer-journey.md)
     * [Personas](marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md)
     * [Implicit Personalization scoring explained](marketers-and-editors/personalization/implicit-and-explicit-personalization/implicit-personalization-scoring-explained.md)
+    * [Persona and customer journey group settings](marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md)
     * [Content Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md)
     * [Campaign Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md)
     * [Referral Scoring](marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md)
@@ -81,7 +89,8 @@
 * [Reporting](marketers-and-editors/reporting.md)
 * [Settings](marketers-and-editors/settings/README.md)
   * [Goals](marketers-and-editors/settings/setting-up-goals.md)
-  * [IP Filtering](marketers-and-editors/settings/ip-filtering.md)
+  * [Block Traffic](marketers-and-editors/settings/block-traffic.md)
+  * [Suspicious Activity](marketers-and-editors/settings/suspicious-activity.md)
   * [Configuration](marketers-and-editors/settings/the-configuration-file.md)
   * [Permissions](marketers-and-editors/settings/permissions.md)
 
@@ -132,7 +141,7 @@
 
 ## Security and Privacy
 
-* [Security and privacy](security-and-privacy/README.md)
+* [Security and privacy](security-and-privacy/security-and-privacy.md)
 * [Retention periods of data](security-and-privacy/retention-periods-of-data.md)
 * [Anonymization](security-and-privacy/anonymization.md)
 * [GDPR & EU regulation](security-and-privacy/gdpr/README.md)
@@ -141,7 +150,7 @@
 
 ## Tutorials
 
-* [Overview](tutorials/README.md)
+* [Overview](tutorials/tutorials.md)
 * [How to Get Started with Personalization](tutorials/how-to-get-started-with-personalization.md)
 * [How to Create a Persona](tutorials/how-to-create-a-persona.md)
 * [Create a Personalized Popup in 5 minutes](tutorials/create-a-personalized-popup-in-5-minutes.md)

@@ -2,6 +2,6 @@
 
 The Customer API endpoints allow fetching all orders associated with a customer.
 
-{% openapi src="/broken/files/78gbCIN61lMlplqhVvdQ" path="/umbraco/commerce/storefront/api/v1/customer/{customerReferenceOrEmail}/orders" method="get" %}
-[Broken link](/broken/files/78gbCIN61lMlplqhVvdQ)
+{% openapi src="../../../.gitbook/assets/storefront_swagger.json" path="/umbraco/commerce/storefront/api/v1/customer/{customerReferenceOrEmail}/orders" method="get" %}
+[storefront_swagger.json](../../../.gitbook/assets/storefront_swagger.json)
 {% endopenapi %}

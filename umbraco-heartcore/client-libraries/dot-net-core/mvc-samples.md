@@ -178,5 +178,5 @@ HTML is used to build the general structure of the article, while we use Razor t
 
 * [Overview of ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2)
 * [Tutorial: Get started with ASP.NET Core MVC](https://docs.microsoft.com/en-gb/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-2.2\&tabs=visual-studio)
-* [API Documentation for Umbraco Heartcore](../../api-documentation/)
+* [API Documentation for Umbraco Heartcore](../../api-documentation/api-documentation/)
 * [Create an Umbraco Heartcore project](../../getting-started/creating-a-heartcore-project.md)

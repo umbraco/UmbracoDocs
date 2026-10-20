@@ -2,7 +2,7 @@
 
 This issue will present itself as an extraction error on your target environment for a deploy.
 
-<figure><img src="../../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 The extraction error happens with two Document Types where one of them have been allowed as a child node type for the other Document Type.
 
