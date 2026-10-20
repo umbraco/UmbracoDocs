@@ -21,8 +21,8 @@ PUT /umbraco/ai/management/api/v1/settings
 {
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
+    "defaultSpeechToTextProfileId": null,
     "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
@@ -34,10 +34,10 @@ PUT /umbraco/ai/management/api/v1/settings
 
 | Property                         | Type | Required | Description                                   |
 | -------------------------------- | ---- | -------- | --------------------------------------------- |
-| `defaultChatProfileId`           | guid | No       | Default profile for chat operations           |
-| `defaultEmbeddingProfileId`      | guid | No       | Default profile for embedding operations      |
-| `defaultSpeechToTextProfileId`   | guid | No       | Default profile for speech-to-text operations |
-| `classifierChatProfileId`        | guid | No       | Optional profile for classification tasks     |
+| `defaultChatProfileId`           | GUID | No       | Default profile for chat operations           |
+| `defaultEmbeddingProfileId`      | GUID | No       | Default profile for embedding operations      |
+| `classifierChatProfileId`        | GUID | No       | Optional profile for classification tasks     |
+| `defaultSpeechToTextProfileId`   | GUID | No       | Default profile for speech-to-text operations |
 | `defaultDecisionProfileId`       | GUID | No       | Default profile for decisions (experimental)  |
 | `disclosureNoticeMode`           | string | No     | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
@@ -57,16 +57,12 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
 
 ```json
 {
-    "id": "672bf83c-97e0-4d04-9d33-23fc2e5ebe42",
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
+    "defaultSpeechToTextProfileId": null,
     "defaultDecisionProfileId": null,
-    "disclosureNoticeMode": "Always",
-    "dateCreated": "2024-01-01T00:00:00Z",
-    "dateModified": "2024-01-25T09:15:00Z",
-    "modifiedByUserId": "user-guid"
+    "disclosureNoticeMode": "Always"
 }
 ```
 
