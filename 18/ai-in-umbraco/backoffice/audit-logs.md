@@ -149,6 +149,7 @@ Configure audit log options in `appsettings.json`:
             "AuditLog": {
                 "Enabled": true,
                 "RetentionDays": 14,
+                "StaleRunningTimeoutMinutes": 60,
                 "PersistPrompts": true,
                 "PersistResponses": true,
                 "PersistFailureDetails": true,
@@ -167,12 +168,21 @@ Configure audit log options in `appsettings.json`:
 | ---------------------- | ------- | ------------------------------------------------ |
 | `Enabled`              | `true`  | Whether audit logging is enabled                 |
 | `RetentionDays`        | `14`    | Number of days to retain logs before cleanup      |
+| `StaleRunningTimeoutMinutes` | `60` | Minutes a log can stay **Running** before cleanup marks it as **Failed**. `0` turns this off |
 | `PersistPrompts`       | `true`  | Store prompt snapshots in logs                   |
 | `PersistResponses`     | `true`  | Store response snapshots in logs                 |
 | `PersistFailureDetails`| `true`  | Store failure details in logs                    |
 | `RedactionPatterns`    | `[]`    | Regex patterns for redacting sensitive content   |
 | `MaxToolArgumentsLength` | `1000` | Maximum characters kept from each tool call's arguments. `0` keeps them in full |
 | `MaxToolResultLength`  | `4000`  | Maximum characters kept from each tool result. `0` keeps it in full |
+
+### Interrupted Operations
+
+An operation can stay **Running** forever if the application stops mid-call. Cleanup marks these logs as **Failed** once they are older than `StaleRunningTimeoutMinutes`.
+
+The error message says that the operation was assumed to be interrupted. The end time stays empty, because when the operation stopped is unknown.
+
+Automatic cleanup runs every hour, starting five minutes after the application starts. The **Cleanup** toolbar action runs the same check.
 
 ## Tool Content in Snapshots
 
