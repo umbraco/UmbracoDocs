@@ -87,7 +87,7 @@ When set, this profile is used by:
 
 - `IAIDecisionService.AskAsync()` without a profile
 - The Decision Management API and `UaiDecisionController` without a `profileIdOrAlias`
-- The Ask Yes/No, Ask Pick-One, and Ask Score Umbraco Automate actions without a profile
+- The Ask Yes/No, Ask Pick-One, Ask Score, and Ask Questions Umbraco Automate actions without a profile
 - Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
 
 ### AI Disclosure Notice

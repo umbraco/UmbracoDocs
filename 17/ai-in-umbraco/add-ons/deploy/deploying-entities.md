@@ -96,6 +96,7 @@ data/Revision/umbraco-ai-settings__ai-settings_abcd1234.uda
 
 **Dependencies:**
 - Any referenced profiles are deployed first
+- A reference to a profile that is missing on the target, or whose capability doesn't match the setting, is left empty. The import does not fail.
 
 ### Prompts (Requires Umbraco.AI.Prompt.Deploy)
 

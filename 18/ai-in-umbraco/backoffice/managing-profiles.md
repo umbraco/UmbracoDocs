@@ -11,7 +11,7 @@ Profiles combine a connection with model settings for specific use cases. Create
 
 1. Navigate to the **AI** section > **Profiles**.
 2. The profile list shows all configured profiles.
-3. Use filters to find profiles by capability (Chat, Embedding, Speech-to-Text, and Decision when enabled).
+3. Use the filter field to search profiles by name. The **Capability** column shows each profile's capability, such as Chat, Embedding, Speech-to-Text, or Decision when enabled.
 4. Click a profile to view or edit its details.
 
 ![The profiles list showing the Default Chat profile](../.gitbook/assets/backoffice-profiles-list.png)

@@ -28,7 +28,7 @@ public sealed record AIDecisionOption(string Key, string? Description = null);
 
 {% endcode %}
 
-- `Key` is the value returned when the option is chosen. Keys must be unique and not empty. Keys are compared case-sensitively.
+- `Key` is the value returned when the option is chosen. Keys must be unique and not empty. Keys are compared exactly, including case.
 - `Description` explains what the key means. Add one when the key alone is not clear, such as an ID.
 
 Pass the content to judge as the `state` argument of `AskAsync`, or as the request's `State`. Questions also have an optional `Id`. See [Requests, Questions, and Answers](README.md#requests-questions-and-answers).

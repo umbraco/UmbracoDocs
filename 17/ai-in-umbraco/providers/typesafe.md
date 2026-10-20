@@ -70,14 +70,14 @@ The provider sends each Decision request to TypeSafe AI as one HTTP call, howeve
 - The request's state is sent as the content to judge. When there is no state, the first question's instructions are sent instead, because TypeSafe AI requires one.
 - Every question is sent in the same call, keyed by its question ID. The answers come back under the same IDs.
 - A yes/no question is answered with the probability of "yes".
-- Pick-one and score questions are answered with a choice or score, a confidence, and a probability for each option or level. Score probabilities are keyed by level index. Options or levels that TypeSafe AI leaves out are filled in with a probability of 0.
+- Pick-one and score questions are answered with a choice or score, a confidence when reported, and a probability for each option or level. Score probabilities are keyed by level index. Options or levels that TypeSafe AI leaves out are filled in with a probability of 0.
 - Token usage is recorded once for the call.
 
 This means [asking multiple questions at once](../using-the-api/decision/README.md#asking-multiple-questions-at-once) costs a single request to TypeSafe AI. The provider sets no limit on the number of questions in a request.
 
 ## Test Connection
 
-TypeSafe AI has no models endpoint to check. Instead, **Test connection** sends one small, authenticated yes/no question to TypeSafe AI:
+TypeSafe AI has no models endpoint to check. Instead, **Test Connection** sends one small, authenticated yes/no question to TypeSafe AI:
 
 - A valid key passes the test.
 - An invalid key, or any other error, fails the test.

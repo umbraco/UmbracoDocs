@@ -70,7 +70,7 @@ The three single-question actions share these settings:
 | **Context** | No | The content to judge against the instructions, such as a content item's text. Supports bindings. |
 | **Profile** | No | The Umbraco.AI Decision profile to use. Leave empty to use the default Decision profile. |
 
-A step fails with a validation error when the settings are invalid or no Decision profile can be resolved. Provider errors, such as an invalid API key, fail the step with the provider's message.
+A step fails with a validation error when the settings are invalid or no Decision profile can be resolved. Provider errors, such as an invalid API key, fail the step with the provider's message. A step set to **Retry** stops the run without retrying when the API key is rejected or the request is invalid. Rate limits and network errors are retried.
 
 ### Ask Yes/No
 
@@ -141,7 +141,7 @@ Each question has:
 | **Instructions** | Yes | What to decide. |
 | **True criteria**, **False criteria** | No | Yes/no only. What counts as "yes" and "no", beyond the instructions. |
 | **Threshold** | No | Yes/no only. The minimum probability, from 0.0 to 1.0, counted as "yes". Defaults to 0.5. |
-| **Options** | Yes | Pick-one only. Between 2 and 255 rows, using the same key and description editor as **Ask Pick-One**. |
+| **Options** | Yes | Pick-one only. Between 2 and 255 rows, each with a unique **Key** and an optional **Value** that describes the option. |
 | **Levels** | Yes | Score only. The level labels, lowest first. Between 2 and 10 entries. |
 
 The fields inside a question do not support bindings. Use **Context** to pass content from earlier steps. If you need to bind the question text itself, use one of the single-question actions instead.

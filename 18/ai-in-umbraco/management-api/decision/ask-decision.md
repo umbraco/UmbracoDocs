@@ -83,11 +83,11 @@ The `state` property holds the content being judged. The `question` object is po
 | `profileIdOrAlias` | string | No | Profile ID or alias. Uses the default Decision profile if omitted. |
 | `state` | string | No | The content being judged, such as a comment or a page body. |
 | `question` | object | Yes | The question to ask. |
-| `question.$type` | string | Yes | `"binary"`, `"choice"`, or `"score"`. |
+| `question.$type` | string | Yes | `"binary"`, `"choice"`, or `"score"`. Must be the first property of `question`. |
 | `question.instructions` | string | Yes | What to decide. Must not be empty. |
 | `question.trueCriteria` | string | No | Binary only. What counts as "yes". |
 | `question.falseCriteria` | string | No | Binary only. What counts as "no". |
-| `question.options` | array | Choice only | 2 to 255 options. Each has a unique, non-empty `key` and an optional `description`. |
+| `question.options` | array | Choice only | 2 to 255 options. Each has a unique, non-empty `key` and an optional `description`. Keys are compared exactly, including case. |
 | `question.levels` | array | Score only | 2 to 10 levels, lowest first. Each has a non-empty `description`. |
 
 ## Response
@@ -171,8 +171,8 @@ The response `$type` matches the question's `$type`. `confidence` is left out wh
 | `score` | number | Score | A 0-based, fractional index into `levels`. |
 | `confidence` | number | Choice, Score | The provider's own confidence in the answer, from 0.0 to 1.0. Left out when the provider does not report one. |
 | `probabilities` | object | Choice, Score | The estimated probability for every option or level. Choice probabilities are keyed by option `key`. Score probabilities are keyed by level index, from `"0"` for the lowest level. |
-| `modelId` | string | All | The model that produced the answer, when known. |
-| `usage` | object | All | Token usage (`inputTokens`, `outputTokens`, `totalTokens`), when reported. |
+| `modelId` | string | All | The model that produced the answer. `null` when unknown. |
+| `usage` | object | All | Token usage (`inputTokens`, `outputTokens`, `totalTokens`). `null` when the provider does not report usage. |
 
 ## Status Codes
 
@@ -184,7 +184,7 @@ The response `$type` matches the question's `$type`. `confidence` is left out wh
 
 A `400` response returns `ProblemDetails` in these cases:
 
-- The request body is missing required properties, or `$type` is missing or unknown.
+- The request body is missing required properties, or `$type` is missing, unknown, or not the first property of `question`.
 - `instructions` is empty.
 - A choice question has fewer than 2 or more than 255 options, or an option key is empty or duplicated.
 - A score question has fewer than 2 or more than 10 levels, or a level is empty.

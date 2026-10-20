@@ -82,7 +82,7 @@ Every question has these common properties:
 | Property | Type | Required | Description |
 | --- | --- | --- | --- |
 | `Instructions` | `string` | Yes | What to decide. Must not be empty. |
-| `Id` | `string?` | See description | Identifies the question, and keys its answer in the response. Required and unique within the request when you ask multiple questions. Optional when you ask one question with `AskAsync`, which assigns an ID for you. |
+| `Id` | `string?` | See description | Identifies the question, and keys its answer in the response. Required and unique within the request when you use `GetDecisionResponseAsync`, even for one question. Optional with `AskAsync`, which assigns an ID for you. |
 
 The response has these properties:
 
@@ -375,7 +375,7 @@ The service checks the request before it contacts any provider. It also checks t
 | Exception | When |
 | --- | --- |
 | `ArgumentException` | The request is invalid. For example, it has no questions, or a question `Id` is empty or used twice. Also thrown when `Instructions` is empty, or there are too few or too many options or levels. |
-| `InvalidOperationException` | No profile has the given ID, the profile is not a Decision profile, or no default Decision profile is configured. Also thrown when the builder has no alias, or a notification handler cancels the call. |
+| `InvalidOperationException` | No profile has the given ID or alias, the profile is not a Decision profile, or no default Decision profile is configured. Also thrown when the builder has no alias, or a notification handler cancels the call. |
 | `AIProviderException` | The provider call failed, for example because of an invalid API key or rate limiting. Also thrown when the provider's answers do not match the questions. For example, an answer is missing, or the probabilities do not add up to 1. The call is recorded as failed. |
 
 ## Setting Up Decision

@@ -269,7 +269,7 @@ Asks a Decision profile a yes/no question: does the test output meet your criter
 
 | Config Property      | Type   | Default   | Description                                                            |
 | -------------------- | ------ | --------- | ---------------------------------------------------------------------- |
-| `ProfileId`          | guid   | null      | Decision profile to use. Only Decision profiles are listed. Leave empty to use the default Decision profile. |
+| `ProfileId`          | GUID   | null      | Decision profile to use. Only Decision profiles are listed. Leave empty to use the default Decision profile. |
 | `EvaluationCriteria` | string | (default) | What aspects to evaluate                                               |
 | `PassThreshold`      | double | 0.7       | Minimum score to pass (0 to 1)                                         |
 
@@ -298,8 +298,8 @@ The grader does not fall back to the `llm-judge` grader. Instead, it fails with 
 - No profile is set and no default Decision profile is configured.
 - The call to the Decision profile fails.
 
-{% hint style="warning" %}
-`Negate: true` also inverts these failures. A negated Decision Judge passes when Decision is turned off or the call fails. The `llm-judge` grader behaves the same way when its call fails.
+{% hint style="info" %}
+`Negate: true` does not invert these failures. They count as errors, so the grader fails whether or not you negate it. The `llm-judge` grader works the same way when its call fails.
 {% endhint %}
 
 {% hint style="info" %}

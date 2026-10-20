@@ -123,6 +123,7 @@ When multiple agents are available on a surface, Contextual Copilot uses "Auto" 
 
 Auto mode first filters the agents to those that are active and in scope for the current context. Auto mode then runs a chain of agent selectors in order until one picks an agent:
 
+- **Decision selector (default, experimental):** asks a Decision profile to pick the agent. Runs first, and only when Decision is set up. See [Decision-Based Routing](#decision-based-routing).
 - **LLM selector (default):** sends the user's message to a classifier model, which picks an agent based on each agent's name and description.
 - **Sticky selector (opt-in):** keeps the previous turn's agent for the rest of the conversation.
 - **Custom selectors:** your own rules, registered in code before or after the built-in selector.
@@ -145,7 +146,7 @@ See [Settings](../../concepts/settings.md#classifier-chat-profile) for more deta
 
 When the experimental [Decision](../../using-the-api/decision/README.md) capability is enabled, Auto mode can pick the agent with a Decision profile instead of a chat model. Decision returns one of the agent IDs directly, so no text needs to be parsed.
 
-Auto mode uses Decision when all of these are true:
+By default, the Decision selector runs before the LLM selector. It picks the agent when all of these are true:
 
 - The `Umbraco:AI:Experimental:Decision` feature flag is enabled.
 - A **Default Decision Profile** is set under **AI** > **Settings**.
@@ -153,7 +154,9 @@ Auto mode uses Decision when all of these are true:
 
 Auto mode asks the default Decision profile one pick-one question. The options are the available agents, described by each agent's name and description. The user's message is the content to judge. The chosen agent is used as-is, with no confidence threshold.
 
-If Decision is not available, or the call fails, Auto mode falls back to the classifier chat profile described above. It also falls back when Decision returns an unknown agent. The failure is logged, and the user sees no error.
+If Decision is not available, or the call fails, Auto mode falls back to the next selector. By default, that is the LLM selector and its classifier chat profile. It also falls back when Decision returns an unknown agent. A failed call is logged as a warning, and the user sees no error.
+
+If a selector earlier in the chain picks an agent, such as the opt-in sticky selector, Decision is not asked.
 
 ## Related
 

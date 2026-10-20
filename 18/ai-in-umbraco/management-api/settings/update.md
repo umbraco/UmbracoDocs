@@ -74,20 +74,23 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
 
 ### Validation Error
 
+Each profile property that is not `null` is checked. The profile must exist and have the capability that matches the property. The first property that fails returns `400 Bad Request`, and nothing is saved.
+
 {% code title="400 Bad Request" %}
 
 ```json
 {
-    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-    "title": "Bad Request",
+    "type": "Error",
+    "title": "Invalid settings",
     "status": 400,
-    "errors": {
-        "defaultChatProfileId": ["Profile not found or does not support Chat capability"]
-    }
+    "detail": "DefaultDecisionProfileId must reference a profile with the Decision capability, but the specified profile has the Chat capability.",
+    "operationStatus": "InvalidSettings"
 }
 ```
 
 {% endcode %}
+
+If the profile does not exist, `detail` reads `<PropertyName> references a profile that does not exist.`
 
 ## Examples
 
@@ -121,6 +124,6 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 
 ## Notes
 
-- The specified profiles must exist and have the correct capability (Chat, Embedding, or Speech-to-Text)
+- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, and `defaultDecisionProfileId` expects a Decision profile
 - Settings changes take effect immediately for new requests
 - `defaultDecisionProfileId` is stored whether or not the experimental Decision flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value

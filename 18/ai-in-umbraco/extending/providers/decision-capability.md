@@ -268,7 +268,7 @@ public class MyProvider : AIProviderBase<MyProviderSettings>
 
 ## Test Connection
 
-The backoffice **Test connection** button calls your capability's `GetModelsAsync`. Any exception it throws is treated as a failed test. If your service has no models endpoint, you can send a small, cheap request from `GetModelsAsync` to check the credentials. The [TypeSafe AI provider](../../providers/typesafe.md#test-connection) does this.
+The backoffice **Test Connection** button calls `GetModelsAsync` on your provider's first registered capability. Any exception it throws is treated as a failed test. If your service has no models endpoint, you can send a small, cheap request from `GetModelsAsync` to check the credentials. The [TypeSafe AI provider](../../providers/typesafe.md#test-connection) does this.
 
 ## Related
 
