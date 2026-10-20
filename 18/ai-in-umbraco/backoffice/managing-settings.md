@@ -44,6 +44,8 @@ When set, this profile is used by:
 
 If not set, the default chat profile is used instead.
 
+When the experimental Decision capability is enabled and a Default Decision Profile is set, Auto mode tries Decision first. The classifier chat profile is then used only as a fallback.
+
 ### Default Embedding Profile
 
 The profile used for embedding operations when no profile is explicitly specified.
@@ -68,6 +70,25 @@ When set, this profile is used by:
 
 - `IAISpeechToTextService.TranscribeAsync()` without a profile ID
 - The voice input button in Contextual Copilot and Copilot Workspace
+
+### Default Decision Profile
+
+The profile used for decisions when no profile is explicitly specified.
+
+{% hint style="warning" %}
+Decision is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Decision](../using-the-api/decision/README.md#enabling-decision).
+{% endhint %}
+
+| Field                    | Description                             |
+| ------------------------ | --------------------------------------- |
+| Default Decision Profile | Select from available Decision profiles |
+
+When set, this profile is used by:
+
+- `IAIDecisionService.AskAsync()` without a profile
+- The Decision Management API and `UaiDecisionController` without a `profileIdOrAlias`
+- The Ask Yes/No, Ask Pick-One, and Ask Score Umbraco Automate actions without a profile
+- Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
 
 ### AI Disclosure Notice
 

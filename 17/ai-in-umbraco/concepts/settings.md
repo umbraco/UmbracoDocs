@@ -16,6 +16,7 @@ AI Settings provide a central place to configure system-wide defaults for Umbrac
 | `DefaultEmbeddingProfileId`      | The profile used when no profile is specified for embedding operations      |
 | `DefaultSpeechToTextProfileId`   | The profile used when no profile is specified for speech-to-text operations |
 | `ClassifierChatProfileId`        | Optional profile for internal classification tasks (e.g., agent routing). Falls back to default chat profile |
+| `DefaultDecisionProfileId`       | The profile used when no profile is specified for decisions (experimental). Also used by Auto agent mode when Decision is enabled |
 | `DisclosureNoticeMode`           | How the backoffice shows the notice that tells users a response is AI-generated: `Always` (default), `Dismissible`, or `Off` |
 
 {% hint style="info" %}
@@ -103,6 +104,10 @@ When the classifier profile is requested:
 
 The fallback chain means you only need to configure the classifier profile if you want to use a different (typically cheaper) model for classification. If not set, the default chat profile is used automatically.
 
+### Decision-Based Routing
+
+When the experimental [Decision](../using-the-api/decision/README.md) capability is enabled and a default Decision profile is set, Auto mode asks the Decision profile to pick the agent first. The classifier chat profile is only used when that is not possible. See [Auto Mode](../add-ons/agent-copilot/copilot.md#auto-mode-and-agent-routing).
+
 ## AI Disclosure Notice
 
 `DisclosureNoticeMode` controls the "Responses are AI-generated and may be inaccurate." notice shown in the Contextual Copilot and Copilot Workspace chat, and in the prompt preview. It uses the `AIDisclosureNoticeMode` enum:
@@ -130,6 +135,7 @@ For advanced scenarios like Continuous Integration/Continuous Deployment (CI/CD)
             "DefaultChatProfileAlias": "content-writer",
             "DefaultEmbeddingProfileAlias": "embeddings",
             "DefaultSpeechToTextProfileAlias": "transcription",
+            "DefaultDecisionProfileAlias": "moderation",
             "ClassifierChatProfileAlias": "fast-classifier"
         }
     }

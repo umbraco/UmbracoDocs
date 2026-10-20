@@ -23,6 +23,7 @@ PUT /umbraco/ai/management/api/v1/settings
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
+    "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
 ```
@@ -37,6 +38,7 @@ PUT /umbraco/ai/management/api/v1/settings
 | `defaultEmbeddingProfileId`      | guid | No       | Default profile for embedding operations      |
 | `defaultSpeechToTextProfileId`   | guid | No       | Default profile for speech-to-text operations |
 | `classifierChatProfileId`        | guid | No       | Optional profile for classification tasks     |
+| `defaultDecisionProfileId`       | GUID | No       | Default profile for decisions (experimental)  |
 | `disclosureNoticeMode`           | string | No     | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
 {% hint style="info" %}
@@ -60,6 +62,7 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
+    "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always",
     "dateCreated": "2024-01-01T00:00:00Z",
     "dateModified": "2024-01-25T09:15:00Z",
@@ -120,3 +123,4 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 
 - The specified profiles must exist and have the correct capability (Chat, Embedding, or Speech-to-Text)
 - Settings changes take effect immediately for new requests
+- `defaultDecisionProfileId` is stored whether or not the experimental Decision flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value

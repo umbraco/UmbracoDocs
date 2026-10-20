@@ -141,6 +141,20 @@ By default, the LLM selector's classifier uses the default chat profile, which m
 
 See [Settings](../../concepts/settings.md#classifier-chat-profile) for more details on the fallback chain.
 
+### Decision-Based Routing
+
+When the experimental [Decision](../../using-the-api/decision/README.md) capability is enabled, Auto mode can pick the agent with a Decision profile instead of a chat model. Decision returns one of the agent IDs directly, so no text needs to be parsed.
+
+Auto mode uses Decision when all of these are true:
+
+- The `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+- A **Default Decision Profile** is set under **AI** > **Settings**.
+- Between 2 and 255 agents are available.
+
+Auto mode asks the default Decision profile one pick-one question. The options are the available agents, described by each agent's name and description. The user's message is the content to judge. The chosen agent is used as-is, with no confidence threshold.
+
+If Decision is not available, or the call fails, Auto mode falls back to the classifier chat profile described above. It also falls back when Decision returns an unknown agent. The failure is logged, and the user sees no error.
+
 ## Related
 
 - [Copilot Workspace](../copilot-workspace/README.md) - Broader, cross-site AI conversations with persisted history and projects

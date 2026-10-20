@@ -46,7 +46,7 @@ data/Revision/umbraco-ai-profile__chat-assistant_abcd1234.uda
 
 **Contains:**
 - Profile name and alias
-- Capability (Chat, Embedding, or SpeechToText)
+- Capability (Chat, Embedding, SpeechToText, or the experimental Decision)
 - Model provider ID and model ID
 - Capability-specific settings
 - Connection reference (UDI)
@@ -92,6 +92,7 @@ data/Revision/umbraco-ai-settings__ai-settings_abcd1234.uda
 - Default chat profile reference (optional)
 - Default embedding profile reference (optional)
 - Classifier chat profile reference (optional)
+- Default Decision profile reference (optional, experimental)
 
 **Dependencies:**
 - Any referenced profiles are deployed first
