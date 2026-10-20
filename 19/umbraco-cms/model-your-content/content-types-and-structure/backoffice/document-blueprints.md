@@ -91,7 +91,7 @@ To use a Document Blueprint, follow these steps:
    * Use the Document Blueprint
    * Start with a blank node
 
-![Select Template](../../../.gitbook/assets/Select-Template-DB-18.png)
+![Select Template](../../../.gitbook/assets/Select-Template-DB-19.png)
 
 ## Access to Document Blueprints
 

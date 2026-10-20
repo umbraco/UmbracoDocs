@@ -145,7 +145,7 @@ Use the following settings to configure the User Group:
 * **Alias**: Used to reference the User Group in code. The alias will be auto-generated based on the name.
 * **Assign access**: Define which sections and languages users can access, and which content, media, elements, and Document Blueprints they can access.
 
-![Create User Group](../../../.gitbook/assets/user-groups-v18.png)
+![Create User Group](../../../.gitbook/assets/user-groups-v19.png)
 
 * **Document permissions**: Select the document permissions granted to users of the User Group. Depending on which User Group a user is added to, each user has a set of permissions associated with their accounts. These permissions either enable or disable a user's ability to perform their associated function. Use **Granular permissions** to assign access to specific documents. This is useful when a User Group should only have limited access to a certain page on the website. Clicking **Add** opens a dialog where you can choose between documents from the Content section.
 
