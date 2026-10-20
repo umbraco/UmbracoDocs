@@ -312,8 +312,8 @@ Published around each `IAIImageGenerationService.GenerateImagesAsync()` call. Im
 
 | Notification | Cancelable | Key Properties |
 |---|---|---|
-| `AIImageGenerationExecutingNotification` | Yes | `GenerationId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Messages`, `Cancel` |
-| `AIImageGenerationExecutedNotification` | No | `GenerationId` (Guid), `Alias` (string), `Name` (string), `ProfileId` (Guid?), `Duration` (TimeSpan), `IsSuccess` (bool), `Messages` |
+| `AIImageGenerationExecutingNotification` | Yes | `GenerationId` (`Guid`), `Alias` (`string`), `Name` (`string`), `ProfileId` (`Guid?`), `Messages`, `Cancel` |
+| `AIImageGenerationExecutedNotification` | No | `GenerationId` (`Guid`), `Alias` (`string`), `Name` (`string`), `ProfileId` (`Guid?`), `Duration` (`TimeSpan`), `IsSuccess` (`bool`), `Messages` |
 
 ## Tool Execution Notifications
 
