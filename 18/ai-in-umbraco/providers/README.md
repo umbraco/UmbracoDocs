@@ -11,7 +11,7 @@ Umbraco.AI supports multiple AI providers through installable NuGet packages. Ea
 
 | Provider                                     | Package                       | Capabilities    | Best For                         |
 | -------------------------------------------- | ----------------------------- | --------------- | -------------------------------- |
-| [OpenAI](openai.md)                          | `Umbraco.AI.OpenAI`           | Chat, Embedding, Speech-to-Text | General purpose, most models     |
+| [OpenAI](openai.md)                          | `Umbraco.AI.OpenAI`           | Chat, Embedding, Speech-to-Text, Image Generation (experimental) | General purpose, most models     |
 | [Anthropic](anthropic.md)                    | `Umbraco.AI.Anthropic`        | Chat            | Claude models, long context      |
 | [Google Gemini](google.md)                   | `Umbraco.AI.Google`           | Chat            | Gemini models, multimodal        |
 | [Amazon Bedrock](amazon.md)                  | `Umbraco.AI.Amazon`           | Chat, Embedding | AWS integration, multiple models |
@@ -33,6 +33,7 @@ Consider these factors when selecting a provider:
 | Chat           | Yes    | Yes       | Yes    | Yes    | Yes        | Yes     | Yes      | Yes        | Yes  | No          |
 | Embedding      | Yes    | No        | No     | Yes    | Yes        | Yes     | No       | No         | No   | No          |
 | Speech-to-Text | Yes    | No        | No     | No     | No         | No      | No       | No         | No   | No          |
+| Image Generation (experimental) | Yes | No | No | No     | No         | No      | No       | No         | No   | No          |
 | Decision (experimental) | No | No | No     | No     | No         | No      | No       | No         | No   | Yes         |
 
 ### Use Case Fit

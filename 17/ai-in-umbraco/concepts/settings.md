@@ -15,6 +15,7 @@ AI Settings provide a central place to configure system-wide defaults for Umbrac
 | `DefaultChatProfileId`           | The profile used when no profile is specified for chat operations           |
 | `DefaultEmbeddingProfileId`      | The profile used when no profile is specified for embedding operations      |
 | `DefaultSpeechToTextProfileId`   | The profile used when no profile is specified for speech-to-text operations |
+| `DefaultImageGenerationProfileId` | The profile used when no profile is specified for image generation (experimental) |
 | `ClassifierChatProfileId`        | Optional profile for internal classification tasks (e.g., agent routing). Falls back to default chat profile |
 | `DefaultDecisionProfileId`       | The profile used when no profile is specified for decisions (experimental). Also used by Auto agent mode when Decision is enabled |
 | `DisclosureNoticeMode`           | How the backoffice shows the notice that tells users a response is AI-generated: `Always` (default), `Dismissible`, or `Off` |
@@ -135,6 +136,7 @@ For advanced scenarios like Continuous Integration/Continuous Deployment (CI/CD)
             "DefaultChatProfileAlias": "content-writer",
             "DefaultEmbeddingProfileAlias": "embeddings",
             "DefaultSpeechToTextProfileAlias": "transcription",
+            "DefaultImageGenerationProfileAlias": "hero-images",
             "DefaultDecisionProfileAlias": "moderation",
             "ClassifierChatProfileAlias": "fast-classifier"
         }

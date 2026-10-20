@@ -41,6 +41,7 @@ All entity operations publish notifications following Umbraco CMS patterns:
 - **AIChat** (Inline) - Executing/Executed
 - **AISpeechToText** (Inline) - Executing/Executed
 - **AIEmbedding** (Inline) - Executing/Executed
+- **AIImageGeneration** (Inline, experimental) - Executing/Executed
 - **`AITool`** - Executing/Executed (published around each tool call the model makes)
 
 ### Prompt Add-on (Umbraco.AI.Prompt)

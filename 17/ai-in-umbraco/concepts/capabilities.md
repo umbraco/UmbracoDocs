@@ -14,6 +14,7 @@ A capability represents a type of AI operation. Providers implement capabilities
 | **Chat**            | Conversational AI, text generation, completions | `IChatClient`                                   |
 | **Embedding**       | Vector embeddings for semantic search           | `IEmbeddingGenerator<string, Embedding<float>>` |
 | **Speech-to-Text**  | Audio transcription and voice input             | `ISpeechToTextClient`                           |
+| **Image Generation** | Text-to-image generation and image editing (experimental) | `IImageGenerator` |
 | **Decision**        | Typed yes/no, pick-one, and score answers (experimental) | None. Uses the Umbraco AI `IAIDecisionClient` |
 
 ## Chat Capability
@@ -84,6 +85,33 @@ var response = await _sttService.TranscribeAsync(
 
 {% endcode %}
 
+## Image Generation Capability
+
+{% hint style="warning" %}
+Image Generation is **experimental**. It is hidden unless the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled, and the C# API surface carries the `UMBRACOAI_IMAGEGEN` diagnostic, which consumers must suppress. See [Using the Image Generation API](../using-the-api/image-generation/README.md) for how to enable it.
+{% endhint %}
+
+The Image Generation capability produces images from text prompts:
+
+- Text-to-image generation
+- Maskless image editing (transform supplied images)
+- Provider-native masked outpainting via an escape hatch
+- Per-model size and capability constraints
+
+{% code title="Example.cs" %}
+
+```csharp
+#pragma warning disable UMBRACOAI_IMAGEGEN
+
+var response = await _imageGenerationService.GenerateImagesAsync(
+    img => img.WithAlias("hero-banner"),
+    "A serene mountain landscape at dawn");
+
+// response.Contents contains the generated image content
+```
+
+{% endcode %}
+
 ## Decision Capability
 
 {% hint style="warning" %}
@@ -139,6 +167,12 @@ Speech-to-Text Profile
     ├── Model: whisper-1
     └── Settings: AISpeechToTextProfileSettings
 
+Image Generation Profile
+    ├── Capability: ImageGeneration
+    ├── Connection: OpenAI Prod
+    ├── Model: gpt-image-1
+    └── Settings: AIImageGenerationProfileSettings
+
 Decision Profile
     ├── Capability: Decision
     ├── Connection: TypeSafe AI
@@ -168,6 +202,11 @@ if (provider.HasCapability<IAIEmbeddingCapability>())
 if (provider.HasCapability<IAISpeechToTextCapability>())
 {
     // Provider supports speech-to-text
+}
+
+if (provider.HasCapability<IAIImageGeneratorCapability>())
+{
+    // Provider supports image generation
 }
 
 if (provider.HasCapability<IAIDecisionCapability>())
@@ -248,4 +287,5 @@ public interface IAIDecisionCapability : IAICapability
 - [Chat API](../using-the-api/chat/README.md) - Use the Chat capability
 - [Embeddings API](../using-the-api/embeddings/README.md) - Use the Embedding capability
 - [Speech-to-Text API](../using-the-api/speech-to-text.md) - Use the Speech-to-Text capability
+- [Image Generation API](../using-the-api/image-generation/README.md) - Use the Image Generation capability
 - [Decision API](../using-the-api/decision/README.md) - Use the Decision capability (experimental)
