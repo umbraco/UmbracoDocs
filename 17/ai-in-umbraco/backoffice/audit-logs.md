@@ -130,13 +130,11 @@ Deleting audit logs is permanent. Consider your compliance requirements before d
 
 ## Cleanup
 
-To remove old logs:
+Logs older than `RetentionDays` are removed by automatic cleanup. Automatic cleanup runs every hour, starting five minutes after the application starts. It's skipped when `Enabled` is `false`.
 
-1. Click **Cleanup** in the toolbar.
-2. Specify how old logs should be (e.g., 90 days).
-3. Confirm the cleanup.
+To run cleanup straight away, call the [Cleanup Audit Logs](../management-api/audit-logs/cleanup.md) endpoint.
 
-### Automatic Cleanup
+### Configuration
 
 Configure audit log options in `appsettings.json`:
 
@@ -182,7 +180,7 @@ An operation can stay **Running** forever if the application stops mid-call. Cle
 
 The error message says that the operation was assumed to be interrupted. The end time stays empty, because when the operation stopped is unknown.
 
-Automatic cleanup runs every hour, starting five minutes after the application starts. The **Cleanup** toolbar action runs the same check.
+Both automatic cleanup and the cleanup endpoint run this check.
 
 ## Tool Content in Snapshots
 

@@ -5,7 +5,7 @@ description: >-
 
 # Cleanup Audit Logs
 
-Removes audit log entries older than the configured retention period.
+Removes audit log entries older than the configured retention period. It also marks logs that have stayed **Running** for longer than `StaleRunningTimeoutMinutes` as **Failed**.
 
 ## Request
 
@@ -69,6 +69,6 @@ Configure default retention in `appsettings.json`:
 | `RetentionDays` | `14`    | Days to retain audit logs before cleanup     |
 
 {% hint style="info" %}
-When `Enabled` is `true`, cleanup runs automatically on a background schedule. Manual cleanup via this endpoint is useful for immediate cleanup or to override the retention period. See [Audit Logs](../../backoffice/audit-logs.md) for the complete list of audit log configuration options.
+When `Enabled` is `true`, cleanup runs automatically every hour. Use this endpoint to run cleanup straight away. See [Audit Logs](../../backoffice/audit-logs.md) for the complete list of audit log configuration options.
 {% endhint %}
 
