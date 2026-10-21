@@ -1,10 +1,10 @@
 ---
 description: >-
-  Umbraco Cloud services access external applications with static outbound IP addresses.
-  This enables you to allowlist Cloud services in IP-based firewalls.
+  The static IP ranges Umbraco Cloud's own services use when connecting to your
+  systems. Allowlist them to let Cloud services through IP-based firewalls.
 ---
 
-# Static Outbound IP Addresses for Umbraco Cloud
+# Umbraco Cloud Service IP Addresses
 
 {% hint style="info" %}
 This page covers the IP addresses used by **Umbraco Cloud's own services** that connect to your environment. Allowlist these in your firewall to enable Umbraco Cloud services to keep reaching your site.

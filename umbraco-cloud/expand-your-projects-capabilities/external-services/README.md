@@ -1,4 +1,8 @@
-# External Services
+---
+description: Find your Umbraco Cloud project’s outbound IP addresses. Share them with external services, like APIs or SMTP servers, so they allow your site’s traffic.
+---
+
+# External Services and Outbound IP Addresses
 
 {% hint style="info" %}
 This page covers **your project's own outbound IP addresses** - the addresses your website sends traffic *from*. Share these with an external service to allowlist requests coming from your Cloud project.
