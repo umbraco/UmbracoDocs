@@ -332,6 +332,12 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `Extension`
 * `XsltFile`
 
+From Umbraco Forms 18.2.2, the `Extension` setting can't be the extension of an executable or server-parsed file. The following extensions are rejected, whatever the site's configuration: `ashx`, `aspx`, `ascx`, `config`, `cshtml`, `vbhtml`, `asmx`, `air`, `axd`, and `xamlx`. These are the default disallowed upload file extensions in Umbraco CMS.
+
+The value is normalized before the check. Casing, trailing dots and spaces, and multi-part values are taken into account. For example, `CSHTML`, `cshtml.`, and `txt.cshtml` are all treated as `cshtml`. A value containing a path separator or a character that isn't valid in a file name is rejected.
+
+The setting is checked when the workflow runs, after any placeholders in the setting are resolved. If the value is rejected, the workflow fails without writing the file.
+
 </details>
 
 <details>
@@ -376,6 +382,8 @@ The intention is to be able to make available details such as IDs, aliases and p
 * `BodyHtml`
 * `FooterHtml`
 * `Attachment`
+
+From Umbraco Forms 18.2.2, the `RazorViewFilePath` setting must point to a `.cshtml` file in the `Forms/Emails` folder under `Views/Partials`. A path outside that folder, or a path containing `..`, is rejected. The setting is checked when the workflow runs. If the value is rejected, the workflow fails without sending the email. For more information, see the [Email Templates](../email-templates.md) article.
 
 </details>
 

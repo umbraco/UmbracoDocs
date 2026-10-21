@@ -18,6 +18,22 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### 17.6.2 (TODO: release date)
+* Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
+* Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
+* Permissions: Show analytics and the forms list to users with the **View Entries** permission, and hide the actions they can't use [#1802](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1802)
+* Upgrading: Fix a boot failure when upgrading to 17.6 on a site where the user who created or last edited a form has since been deleted
+* Entries: Validate omitted mandatory fields when creating an entry through the Management API [#1806](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1806)
+* Sidebar Navigation: Load users in pages, so installations with many users don't freeze when opening the Forms section [#1807](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1807)
+* Entries: Show entries on first load when the default **All** state filter is selected [#1808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1808)
+* Submit Message: Keep rich text formatting and line breaks in the submit message editor [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804) [#1800](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1800)
+* Submit Message: Treat an empty GUID as no **Go to page** on submit [#1801](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1801)
+* Field Settings: Move the group picker into the field's main settings [#1781](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1781)
+
+{% hint style="warning" %}
+Entry exports are now stored for the user who generated them, and only that user can download them. Exports generated before the upgrade can no longer be downloaded, so generate them again. For details of the access checks, see the [Security](developer/security.md#access-to-forms-entries-and-exports) article.
+{% endhint %}
+
 ### 17.6.1 (October 7th 2026)
 * Migrations: Fix boot failure (`UFForms.Trashed`) when upgrading to 17.6.0 from an earlier release. See the [Version Specific Upgrade Notes](upgrading/version-specific.md) article for details
 
