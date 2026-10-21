@@ -1,8 +1,12 @@
 # Usage
 
-In the Umbraco Cloud Settings menu, you can find a page called _Usage_.
+To open the Usage page, go to **Insights > Usage** on your project in the Umbraco Cloud Portal.
+
+<figure><img src="../../../.gitbook/assets/usage-insights-menu.png" alt="Umbraco Cloud Portal side menu with Insights expanded and Usage selected."><figcaption><p>Usage in the Insights menu</p></figcaption></figure>
 
 On the Usage page, you can see how your project's usage compares to the limits of your plan. The page also shows bandwidth history, the largest media files, what drives bandwidth usage, and additional metrics such as database size.
+
+<figure><img src="../../../.gitbook/assets/usage-page-overview.png" alt="The Usage page showing the monthly summary, the usage indicators counted against the plan, bandwidth history, media storage, bandwidth sources, and metrics collected for insight."><figcaption><p>The Usage page</p></figcaption></figure>
 
 ## Usage overview
 
