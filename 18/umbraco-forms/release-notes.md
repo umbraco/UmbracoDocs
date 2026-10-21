@@ -23,6 +23,8 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 ### 18.2.2 (TODO: release date)
 * Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
 * Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
+* Permissions: Show analytics and the forms list to users with the **View Entries** permission, and hide the actions they can't use [#1802](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1802)
+* Upgrading: Fix a boot failure when upgrading to 18.2 on a site where the user who created or last edited a form has since been deleted
 * OpenAPI: Fix the Forms Delivery API document failing when a discriminator mapping names a missing schema [#1805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1805)
 * Entries: Validate omitted mandatory fields when creating an entry through the Management API [#1806](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1806)
 * Sidebar Navigation: Load users in pages, so installations with many users don't freeze when opening the Forms section [#1807](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1807)

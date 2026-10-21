@@ -336,7 +336,7 @@ From Umbraco Forms 17.6.2, the `Extension` setting can't be the extension of an 
 
 The value is normalized before the check. Casing, trailing dots and spaces, and multi-part values are taken into account. For example, `CSHTML`, `cshtml.`, and `txt.cshtml` are all treated as `cshtml`. A value containing a path separator or a character that isn't valid in a file name is rejected.
 
-The setting is checked when the workflow runs, after any placeholders in the setting are resolved. If the value is rejected, the workflow fails without writing the file.
+The setting is checked when you save the form. It's checked again when the workflow runs, after any placeholders in the setting are resolved. If the value is rejected when you save the form, the form isn't saved and the error names the workflow. If the value is rejected when the workflow runs, the workflow fails without writing the file.
 
 </details>
 
@@ -383,7 +383,7 @@ The setting is checked when the workflow runs, after any placeholders in the set
 * `FooterHtml`
 * `Attachment`
 
-From Umbraco Forms 17.6.2, the `RazorViewFilePath` setting must point to a `.cshtml` file in the `Forms/Emails` folder under `Views/Partials`. A path outside that folder, or a path containing `..`, is rejected. The setting is checked when the workflow runs. If the value is rejected, the workflow fails without sending the email. For more information, see the [Email Templates](../email-templates.md) article.
+From Umbraco Forms 17.6.2, the `RazorViewFilePath` setting must point to a `.cshtml` file in the `Forms/Emails` folder under `Views/Partials`. A path outside that folder, or a path containing `..`, is rejected. The setting is checked when you save the form, and again when the workflow runs. If the value is rejected when you save the form, the form isn't saved and the error names the workflow. If the value is rejected when the workflow runs, the workflow fails without sending the email. For more information, see the [Email Templates](../email-templates.md) article.
 
 </details>
 
