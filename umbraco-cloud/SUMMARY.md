@@ -97,7 +97,7 @@
   * [Customizing Translations](expand-your-projects-capabilities/cloud-extensions/customizing-translations.md)
 * [External Services and Outbound IP Addresses](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
-  * [Umbraco Cloud Service IP Addresses](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)
+  * [Umbraco Cloud Service IP Addresses](expand-your-projects-capabilities/external-services/cloud-service-ip-addresses.md)
 
 ## Go Live
 

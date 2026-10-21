@@ -94,4 +94,4 @@ We reserve the right to patch critical vulnerabilities. This ensures the Umbraco
 
 ## Related Information
 
-If your Cloud website uses IP filtering on the origin, ensure the correct IP addresses are allowlisted to maintain connectivity during upgrades. See [Static Outbound IP Addresses for Umbraco Cloud](../../../expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md) for more details.
+If your Cloud website uses IP filtering on the origin, ensure the correct IP addresses are allowlisted to maintain connectivity during upgrades. See [Umbraco Cloud Service IP Addresses](../../../expand-your-projects-capabilities/external-services/cloud-service-ip-addresses.md) for more details.
