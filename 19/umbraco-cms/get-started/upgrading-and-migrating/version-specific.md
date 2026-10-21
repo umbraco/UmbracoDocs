@@ -40,7 +40,15 @@ For details, see the [Single block migration](find-your-upgrade-path/single-bloc
 
 <summary>Umbraco 19</summary>
 
-**Place breaking changes here.**
+**Document Blueprints moved to the Library section**
+
+Document Blueprints are now managed in the **Library** section instead of the **Settings** section. Access to them is configured per User Group and User, with a Document Blueprint start node. For more information, see the [Document Blueprints](../../model-your-content/content-types-and-structure/backoffice/document-blueprints.md) article.
+
+During the upgrade, User Groups with access to the Settings section are granted access to the Library section and to all Document Blueprints.
+
+Recommended actions:
+- Review your User Groups after the upgrade, and grant access to any other group that needs it.
+- Review any custom code or extensions that work with Users, User Groups, Document Types, or Document Blueprints.
 
 </details>
 
