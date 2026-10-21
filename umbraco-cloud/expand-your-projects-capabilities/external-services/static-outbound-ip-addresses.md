@@ -12,7 +12,7 @@ This page covers the IP addresses used by **Umbraco Cloud's own services** that 
 Are you looking for your project's own outbound IP addresses to share with an external service? See [External Services](README.md).
 {% endhint %}
 
-Umbraco Cloud services access external applications using static outbound IP addresses. This enables you to allowlist Cloud services in IP-based firewalls. This is particularly useful if you wish to control access to your website based on IP addresses.
+The IPs listed in this article are used when Umbraco Cloud’s services connect to your projects. They are not your project’s IPs.
 
 ## Allowlisting IP Addresses
 
