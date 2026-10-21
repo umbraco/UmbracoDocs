@@ -23,6 +23,7 @@ PUT /umbraco/ai/management/api/v1/settings
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "classifierChatProfileId": null,
     "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
@@ -38,6 +39,7 @@ PUT /umbraco/ai/management/api/v1/settings
 | `defaultEmbeddingProfileId`      | GUID | No       | Default profile for embedding operations      |
 | `classifierChatProfileId`        | GUID | No       | Optional profile for classification tasks     |
 | `defaultSpeechToTextProfileId`   | GUID | No       | Default profile for speech-to-text operations |
+| `defaultImageGenerationProfileId` | GUID | No       | Default profile for image generation (experimental) |
 | `defaultDecisionProfileId`       | GUID | No       | Default profile for decisions (experimental)  |
 | `disclosureNoticeMode`           | string | No     | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
@@ -61,6 +63,7 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
     "classifierChatProfileId": null,
     "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
@@ -120,6 +123,7 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 
 ## Notes
 
-- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, and `defaultDecisionProfileId` expects a Decision profile
+- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, `defaultImageGenerationProfileId` expects an Image Generation profile, and `defaultDecisionProfileId` expects a Decision profile
 - Settings changes take effect immediately for new requests
+- `defaultImageGenerationProfileId` is stored whether or not the experimental Image Generation flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value
 - `defaultDecisionProfileId` is stored whether or not the experimental Decision flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value
