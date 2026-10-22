@@ -31,7 +31,10 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 * Entries: Show entries on first load when the default **All** state filter is selected [#1808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1808)
 * Submit Message: Treat an empty GUID as no **Go to page** on submit [#1801](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1801)
 * Submit Message: Keep rich text formatting and line breaks in the submit message editor [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804) [#1800](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1800)
+* Workflows: Keep a form's workflows and submit message when the workflow settings open before the form has loaded [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804)
 * Field Settings: Move the group picker into the field's main settings [#1781](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1781)
+* Copy Form: Keep references to other fields in field settings when copying a form [#1810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1810)
+* Date Picker: Keep the selected date when going back a page in a multi-page form, instead of swapping the day and month [#1811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1811)
 
 {% hint style="warning" %}
 Entry exports are now stored for the user who generated them, and only that user can download them. Exports generated before the upgrade can no longer be downloaded, so generate them again. For details of the access checks, see the [Security](developer/security.md#access-to-forms-entries-and-exports) article.
