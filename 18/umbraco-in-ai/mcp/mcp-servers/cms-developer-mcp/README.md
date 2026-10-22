@@ -124,6 +124,10 @@ If your site is on the current Long-Term Support (LTS) release, Umbraco 17, use 
 
 ```
 
+{% hint style="warning" %}
+`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](../../connect-to-an-mcp-server/local-mcp-setup/tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+{% endhint %}
+
 {% hint style="info" %}
 `UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](available-tools.md) for the full list of collections.
 {% endhint %}
