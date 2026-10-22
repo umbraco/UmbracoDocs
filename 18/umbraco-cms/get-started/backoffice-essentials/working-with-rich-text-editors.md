@@ -38,7 +38,7 @@ Only a few keyboard shortcuts are listed here. For a detailed list of available 
 
 ## View Source Code
 
-![View Source Code](../../.gitbook/assets/view-source-code-v11.png)
+![View Source Code](../../.gitbook/assets/view-source-code.png)
 
 If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want.
 
