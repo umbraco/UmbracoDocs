@@ -366,7 +366,7 @@ The default imaging package, `Umbraco.Cms.Imaging.ImageSharp`, now uses ImageSha
 
 ### Other breaking changes
 
-The full details of breaking changes can be found from [this list of labelled PRs](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/19.0.0).
+The full details of breaking changes can be found from [this list of labelled pull requests](https://github.com/umbraco/Umbraco-CMS/pulls?q=is:pr+label:category/breaking+is:closed+label:release/19.0.0).
 
 </details>
 
