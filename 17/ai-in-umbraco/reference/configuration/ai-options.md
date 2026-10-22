@@ -34,6 +34,7 @@ public class AIOptions
     public string? DefaultSpeechToTextProfileAlias { get; set; }
     public string? DefaultImageGenerationProfileAlias { get; set; }
     public string? DefaultDecisionProfileAlias { get; set; }
+    public string? DefaultExtractionProfileAlias { get; set; }
 
     public IList<string> AllowedConfigurationKeyPrefixes { get; set; } = new List<string>
     {
@@ -60,6 +61,7 @@ public class AIOptions
 | `DefaultSpeechToTextProfileAlias` | `string?` | Fallback default profile alias for speech-to-text       |
 | `DefaultImageGenerationProfileAlias` | `string?` | Fallback default profile alias for image generation (experimental) |
 | `DefaultDecisionProfileAlias`     | `string?` | Fallback default profile alias for decisions (experimental) |
+| `DefaultExtractionProfileAlias`   | `string?` | Fallback default profile alias for extraction (experimental) |
 | `AllowedConfigurationKeyPrefixes` | `IList<string>` | Configuration sections that settings may resolve via `$` references. Defaults to `Umbraco:AI:Secrets` and `Umbraco:AI:Variables` |
 | `SecretConfigurationKeyPrefixes`  | `IList<string>` | The subset of allowed prefixes treated as secret. Values under these may only be referenced from sensitive fields. Defaults to `Umbraco:AI:Secrets` |
 
@@ -94,7 +96,8 @@ Experimental capabilities are hidden and inert until you enable them under the `
         "AI": {
             "Experimental": {
                 "ImageGeneration": true,
-                "Decision": true
+                "Decision": true,
+                "Extraction": true
             }
         }
     }
@@ -107,6 +110,7 @@ Experimental capabilities are hidden and inert until you enable them under the `
 | --- | --- | --- |
 | `ImageGeneration` | `false` | Enables the [Image Generation](../../using-the-api/image-generation/README.md) capability. When off, the capability is hidden from discovery, not selectable in the profile editor, and its REST endpoint returns 404. |
 | `Decision` | `false` | Enables the [Decision](../../using-the-api/decision/README.md) capability. When off, the capability is hidden from discovery and not selectable in the profile editor. Its Management API endpoint returns 404. |
+| `Extraction` | `false` | Enables the [Extraction](../../using-the-api/extraction/README.md) capability. When off, the capability is hidden from discovery and not selectable in the profile editor. Its Management API endpoint returns 404, and `IAIExtractionService` throws. |
 
 ## Configuration References
 

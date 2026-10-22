@@ -180,6 +180,80 @@ A missing, duplicated, or invalid alias, or any invalid question, fails the step
 | **Threshold**, **Options**, **Levels**, **Profile** | No |
 | **Questions** (Ask Questions), including every field inside a question | No |
 
+## Extract Values
+
+{% hint style="warning" %}
+Extract Values uses Umbraco.AI's experimental [Extraction](https://docs.umbraco.com/ai-in-umbraco/using-the-api/extraction) capability. It only appears in the action picker when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled at startup. If the flag is turned off later without a restart, the step fails with a validation error and no provider is called.
+{% endhint %}
+
+Alias: `umbracoAI.extractValues`. Read typed values, such as an order number, an amount, or a date, out of a piece of text. Each run makes one call to the Extraction profile, however many fields the step has. Each value becomes a step output that later steps can bind to.
+
+### Settings
+
+| Setting | Required | Description |
+| --- | --- | --- |
+| **Fields** | Yes | The values to extract. Between 1 and 20. |
+| **Content** | Yes | The text to extract the values from, such as an email body. Supports [bindings](../../concepts/bindings.md). |
+| **Reference date** | No | The date that relative dates in the content, such as "tomorrow", are resolved against. An ISO date, such as `2026-10-20`, or an ISO date and time. Supports bindings. Leave empty to use today's date (UTC). |
+| **Profile** | No | The Umbraco.AI Extraction profile to use. Leave empty to use the default Extraction profile. |
+
+To add a field, select **Add field** and pick a type: **Text**, **Number**, **Date**, **Time**, **Date and time**, **Duration**, or **List**. Then fill in the field and save it. Select a field in the list to edit it, or remove it from the list.
+
+Each field has:
+
+| Field | Required | Description |
+| --- | --- | --- |
+| **Alias** | Yes | The name of the field's output. Must be unique within the step, start with a letter or `_`, and contain only letters, digits, and `_`. Up to 64 characters. |
+| **Instructions** | Yes | What the value is. Be specific, for example "The total amount the customer paid, including VAT". |
+| **Decimal places** | No | Number and Duration only. Rounds the value, from 0 to 6. |
+| **Whole number** | No | Number and Duration only. Only accept whole numbers. |
+| **Unit** | See description | Number: optional. The unit or currency, such as `EUR` or `kg`, which helps the model pick the right number. Duration: required. The unit the duration is measured in, from **Seconds** to **Years**. |
+| **Item type** | No | List only. What each item is: **Text** (default), **Number**, or **Date**. |
+
+The fields inside a field definition do not support bindings. Use **Content** to pass text from earlier steps.
+
+### Outputs
+
+The output has one entry per field, named by its alias. Every entry is always there, even when the value was not found, so later steps can rely on it:
+
+| Output field | Type | Description |
+| --- | --- | --- |
+| `value` | Depends on the field | The extracted value, or empty when it was not found. Text, Date, Time, and Date and time values are strings. Number and Duration values are numbers. List values are an array of strings. |
+| `found` | Boolean | `true` when the value was found in the content. |
+| `confidence` | Number | The model's confidence in the value, from 0.0 to 1.0. Empty when the provider does not report one. |
+
+Dates use `yyyy-MM-dd`, and times use `HH:mm:ss`. A Duration value is in the unit the field asked for.
+
+For example, a step with the alias `extract` and a field with the alias `orderId` produces `${ steps.extract.orderId.value }`, `${ steps.extract.orderId.found }`, and `${ steps.extract.orderId.confidence }`. The binding picker lists each alias and its fields once the fields are configured.
+
+A missing, duplicated, or invalid alias, empty content, or any invalid field fails the step with a validation error before any provider is called. Provider errors, such as an invalid API token, fail the step with the provider's message. A step set to **Retry** stops the run without retrying when the API token is rejected or the request is invalid. Rate limits and network errors are retried.
+
+### Example: Triage a Support Ticket
+
+This automation reads a support email that arrives through a webhook, and only continues when the email names an order.
+
+1. Add a **Webhook** trigger. The ticket text arrives as `${ trigger.body }`.
+2. Add an **Extract Values** step with the alias `extract`:
+    - **Content**: `${ trigger.body }`
+    - **Fields**:
+
+    | Type | Alias | Instructions | Options |
+    | --- | --- | --- | --- |
+    | Text | `orderId` | The order number | |
+    | Number | `amount` | The amount the customer paid | **Unit**: `DKK`, **Decimal places**: 2 |
+    | Date | `deliveredOn` | The date the order was delivered | |
+    | List | `damagedProducts` | Every product the customer says arrived damaged | **Item type**: Text |
+
+3. Add an **If** node that checks `${ steps.extract.orderId.found }` equals `true`.
+4. On the true branch, add the steps that handle the ticket, for example a **Send Email** to the support team. Bind the extracted values in its body, such as `${ steps.extract.orderId.value }` and `${ steps.extract.damagedProducts.value }`.
+5. On the false branch, add a step that asks the customer for their order number.
+
+Given the ticket "Order A-88412 arrived on 3 October. I paid 701,10 kr, but the mug and the teapot were broken.", the step outputs `orderId` `"A-88412"`, `amount` `701.1`, `deliveredOn` `"2026-10-03"`, and `damagedProducts` `["mug", "teapot"]`, each with `found` set to `true`.
+
+{% hint style="info" %}
+Branch on `found` to check whether a value was extracted. It is always `true` or `false`, whatever the type of value.
+{% endhint %}
+
 {% hint style="info" %}
 Open the step in the canvas to see each action's settings and output fields.
 {% endhint %}
