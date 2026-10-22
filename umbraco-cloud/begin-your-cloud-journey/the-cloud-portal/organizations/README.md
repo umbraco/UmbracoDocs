@@ -118,6 +118,12 @@ In the **Payment History** section, you can see the payment history for your org
 
 The Sustainability Dashboard is designed to help users monitor and improve the environmental impact of their websites on Umbraco Cloud. For more information, see the [Sustainability Dashboard](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md) article.
 
+### Alerting & Notifications
+
+<!-- TODO: confirm that Alerting & Notifications is placed under Insights in the organization menu -->
+
+Organization admins can create alert rules that cover all projects in the organization, or a selection of projects. Alerts are sent by email or webhook for events such as failed deployments, upgrades, and DDoS attacks. For more information, see the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md) article.
+
 ## Login Providers
 
 <figure><img src="../../../.gitbook/assets/org-menu-login-providers.png" alt="Login Providers section"><figcaption><p>Insights section</p></figcaption></figure>
