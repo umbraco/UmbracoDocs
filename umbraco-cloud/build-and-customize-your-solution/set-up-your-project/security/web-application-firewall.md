@@ -6,7 +6,7 @@ description: >-
 
 # Web Application Firewall
 
-A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate common attacks. This could be attacks like cross-site scripting (XSS), SQL injection, and file inclusion.[ ](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
+A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. By acting as a shield between the web application and potential threats, it helps mitigate common attacks. This could be attacks like cross-site scripting (XSS), SQL injection, and file inclusion.
 
 ## Umbraco Cloud WAF
 
