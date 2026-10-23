@@ -17,6 +17,8 @@ Umbraco Cloud uses [Cloudflare’s Managed Rulesets](https://developers.cloudfla
 
 WAF is enabled by default on each custom hostname. It is not available for the internal Cloud hostnames.
 
+WAF has been enabled by default since November 2024. Environments created before then may have WAF turned off. Check the WAF setting under **Transport Security** and [enable WAF on your custom hostnames](web-application-firewall.md#enable-waf-on-custom-hostnames) if needed.
+
 ## Impact on your website
 
 ### **Performance**
