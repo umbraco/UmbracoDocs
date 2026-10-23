@@ -89,7 +89,7 @@ To prevent formatting issues, start by pasting the content into a markdown edito
 
 ### Remove Formatting
 
-![Remove Format Button](../../.gitbook/assets/Remove-Format-v11.png)
+![Remove Format Button](../../.gitbook/assets/Remove-Format.png)
 
 If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule.
 
