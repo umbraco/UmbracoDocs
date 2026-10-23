@@ -112,7 +112,7 @@ The same setup pattern applies here, using the Forms server's package instead of
 {% endcode %}
 
 {% hint style="warning" %}
-`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. The setting turns off certificate verification for the whole process. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`, and remove it for a remote site. See [TLS Certificates](../../connect-to-an-mcp-server/local-mcp-setup/tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. The setting turns off certificate verification for the whole process. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](../../connect-to-an-mcp-server/local-mcp-setup/tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
 {% endhint %}
 
 Restart your MCP client after saving the configuration.

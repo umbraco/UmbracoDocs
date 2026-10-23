@@ -37,7 +37,11 @@ Any other hostname counts as remote. This includes names that point to your own 
 If the MCP server stops starting after you change `UMBRACO_BASE_URL`, check whether `NODE_TLS_REJECT_UNAUTHORIZED` is still set. The error appears in your MCP client's log for the server.
 
 {% hint style="info" %}
-The check applies to Umbraco MCP servers built on version `1.0.0-beta.47` or later of the MCP Server SDK. For the Developer MCP Server, that's version 18.1.10 or later.
+The check applies to Umbraco MCP servers built on version `1.0.0-beta.47` or later of the MCP Server SDK. These package versions include it:
+
+* Developer MCP Server: 18.1.10
+* Forms MCP Server: 18.2.1-beta.3
+* Automate MCP Server: 18.0.0-beta.4
 {% endhint %}
 
 ## Connect to a Remote Umbraco
