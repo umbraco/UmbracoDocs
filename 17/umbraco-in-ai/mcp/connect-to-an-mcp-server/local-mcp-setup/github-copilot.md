@@ -14,9 +14,13 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 
 ### Install MCP Server via Button
 
-[![Install in Visual Studio Code](https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square\&label=Install%20Server\&color=0098FF)](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22umbraco-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40umbraco-cms%2Fmcp-dev%4017%22%5D%2C%22env%22%3A%7B%22NODE_TLS_REJECT_UNAUTHORIZED%22%3A%220%22%2C%22UMBRACO_CLIENT_ID%22%3A%22%3CAPI%20user%20name%3E%22%2C%22UMBRACO_CLIENT_SECRET%22%3A%22%3CAPI%20client%20secert%3E%22%2C%22UMBRACO_BASE_URL%22%3A%22https%3A%2F%2F%3Cdomain%3E%22%2C%22UMBRACO_INCLUDE_TOOL_COLLECTIONS%22%3A%22document%2Cmedia%2Cdocument-type%2Cdata-type%2Ctemplate%22%7D%7D)
+[![Install in Visual Studio Code](https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square\&label=Install%20Server\&color=0098FF)](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22umbraco-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40umbraco-cms%2Fmcp-dev%40lts-17%22%5D%2C%22env%22%3A%7B%22NODE_TLS_REJECT_UNAUTHORIZED%22%3A%220%22%2C%22UMBRACO_CLIENT_ID%22%3A%22%3CAPI%20user%20name%3E%22%2C%22UMBRACO_CLIENT_SECRET%22%3A%22%3CAPI%20client%20secret%3E%22%2C%22UMBRACO_BASE_URL%22%3A%22https%3A%2F%2Flocalhost%3A%3Cport%3E%22%2C%22UMBRACO_INCLUDE_TOOL_COLLECTIONS%22%3A%22document%2Cmedia%2Cdocument-type%2Cdata-type%2Ctemplate%22%7D%7D)
 
 **Requirements:** Visual Studio Code 1.101+ with GitHub Copilot Chat extension installed.
+
+{% hint style="warning" %}
+The install button and the configuration on this page set `NODE_TLS_REJECT_UNAUTHORIZED` to `0`. This setting lets the MCP server accept the self-signed certificate of a local Umbraco. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+{% endhint %}
 
 ### Manual Installation
 
