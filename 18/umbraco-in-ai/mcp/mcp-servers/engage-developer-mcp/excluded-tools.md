@@ -9,9 +9,9 @@ Certain Umbraco Engage Management API endpoints are intentionally not exposed as
 ## Excluded Groups Summary
 
 - **Cockpit (2 endpoints)** - Cookie and page-context lookups used by Engage's in-browser Cockpit overlay, not meaningful outside that front-end UI flow
-- **Cockpit Auth (2 endpoints)** - Domain allow-listing and token issuance for the Cockpit overlay's cross-domain authentication; issuing auth tokens through an AI agent bypasses the normal authentication flow
+- **Cockpit Auth (2 endpoints)** - Domain allow-listing and token issuance for the Cockpit overlay's cross-domain authentication. Issuing auth tokens through an AI agent bypasses the normal authentication flow
 - **Data Generation (1 endpoint)** - Logs for Engage's synthetic demo-data generator, a developer/demo-only feature
-- **Front-end Tracking (4 endpoints)** - Public, unauthenticated visitor-tracking beacon endpoints called by the Engage client-side tracking script embedded on published pages, not part of the management API surface
+- **Front-end Tracking (4 endpoints)** - Public, unauthenticated beacon endpoints that the Engage tracking script calls from published pages. They are not part of the management API surface
 
 ## Ignored Endpoints
 

@@ -57,7 +57,7 @@ The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage 
 - `get-ab-test-page` — List all A/B tests that target a given Umbraco content page
 - `get-ab-test-view-model` — Get a single A/B test
 - `post-ab-test` — Create a new A/B test in Draft status against a real content page, comparing an implicit Original benchmark variant to one named second variant
-- `post-ab-test-runtime-indication` — Estimate how long an A/B test would need to run to reach statistical significance, given participation rate, minimum detectable effect, expected daily visitors, baseline conversion rate, and variant count
+- `post-ab-test-runtime-indication` — Estimate how long an A/B test needs to run to reach statistical significance. The estimate uses the participation rate, minimum detectable effect, expected daily visitors, baseline conversion rate, and variant count
 - `post-ab-test-segment` — Record which A/B test variant segment a visitor falls into, by writing an empty segment-varying property value onto the target content page
 - `post-ab-test-start` — Start, schedule, or reschedule a not-yet-stopped A/B test by setting its start time
 - `post-ab-test-stop` — Stop or mark complete an existing, already-started A/B test
