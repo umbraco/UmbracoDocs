@@ -18,6 +18,19 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.9 (26th Oct 2026)
+
+* Fixed authorized orders being recalculated with the current discounts every time they were loaded or saved. An order placed with a discount that has since ended could no longer be saved. Discounts are now only recalculated when the order itself is edited ([#904](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/904)).
+* Fixed the Orders, Carts and Customers lists, and other store lists such as Gift Cards, losing their filters, search and page size after opening an item and going back ([#903](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/903), [#768](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/768)).
+* Fixed adjusted product prices being cached across currencies, languages and regions, so one region could show another region's price ([#905](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/905)).
+* Fixed signed-in members being able to share a cached adjusted price, including member group discounts.
+* Fixed culture-varying product properties being empty on unpublished products ([#906](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/906)).
+* Fixed the Orders list showing no orders at all when one order had no order status or payment method.
+* Fixed the Customers list not showing the selected saved search after going back to it.
+* Fixed Ctrl, Cmd or Shift-click on list links so items open in a new tab or window.
+* Fixed shipping region change events reporting the previous country instead of the previous region.
+* Fixed customer spend, lifetime value and average order value statistics, store summaries, refund rate, repeat customer and top buyer figures, and the total on the Customers dashboard.
+
 #### 18.1.8 (19th Oct 2026)
 
 * Fixed an expired or invalid payment link causing an endless redirect loop. The link now redirects once and shows the error ([#902](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/902)).
