@@ -47,6 +47,18 @@ Nobody is watching an automation run, so nothing can be approved mid-run. **Tool
 
 This setting only narrows what the agent may do. The agent must also be allowed the tools in Umbraco.AI, for example through the `content-write` scope. Saved automations without this setting run as **Read only**.
 
+### Service account access
+
+The agent's tools act as the service account of the automation's workspace. They can only read and change what that account could in the backoffice. Its sections, start nodes, and permissions all apply:
+
+| To let the agent | The service account needs |
+| ---------------- | ------------------------- |
+| Read full content, or create and edit content | The Content section |
+| Create and edit media | The Media section |
+| List or search content and media, or read media | Any section that shows the content or media tree, such as Content or Media |
+
+Start nodes and permissions are checked on top of the section. For example, the agent can't read or change content outside the account's content start nodes. When the account lacks access, the tool tells the agent so and doesn't return or change the item. Search results the account can't see are left out.
+
 ## Transcribe Audio
 
 Alias: `umbracoAI.transcribeAudio`. Transcribe an audio file using Umbraco.AI's speech-to-text capability. The Umbraco.AI profile used by the action must use a provider that supports speech-to-text.
