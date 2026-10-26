@@ -141,7 +141,6 @@ The `HtmlEmailModel` contains the following fields:
 | WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish, respectively.                                 |
 | ReleaseDate   | DateTime                  | If a scheduled release date exists for the workflow, it is found here.                                            |
 | ExpireDate    | DateTime                  | If a scheduled expiry date exists for the workflow, it is found here.                                             |
-| ScheduledDate | string                    | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                     |
 | CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense. |
 | Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                     |
@@ -153,6 +152,7 @@ The `HtmlEmailBase` contains the following fields:
 | SiteUrl      | string         | The public URL of your site.                                                                         |
 | NodeName     | string         | The name of the node from the current workflow.                                                      |
 | Type         | string         | The workflow type, including the scheduled date (if exists).                                         |
+| ScheduledDate | string         | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type. |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                        |
 | Email        | string         | The user's email address or a group address (if a group email is being sent).                        |
