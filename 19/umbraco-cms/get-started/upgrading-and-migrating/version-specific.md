@@ -216,16 +216,23 @@ The upgrade grants the new permission so that existing user groups keep the acce
 * If `AllowEditInvariantFromNonDefault` was `true`, every user group gets the permission.
 * Otherwise, Administrators and groups with access to all languages or the default language get the permission.
 
-New user groups start without the permission. Review your [User Groups](../../manage-and-publish-content/users-and-members/users/README.md) after the upgrade. The permission applies to both Documents and Elements.
+New user groups start without the permission. Review the **Allow editing shared content** option on your [User Groups](../../manage-and-publish-content/users-and-members/users/README.md#user-group-parameters) after the upgrade. The permission applies to both Documents and Elements. Language access now also applies to Elements in the Library section, not only to Documents.
+
+Scheduled publishing follows the same rule. A schedule stores whether the user who created it had the permission. When the schedule runs, shared property changes are only published if that user had the permission.
 
 Changes for developers:
 
 * `CreateUserGroupRequestModel` and `UpdateUserGroupRequestModel` in the Management API require the new `hasAccessToInvariantForVariant` property. Requests without it are rejected with a `400 Bad Request`.
-* Publishing now requires an existing user for access checks. Passing the ID of a user that doesn't exist throws an exception.
-* `ICultureImpactFactory`, `CultureImpact`, `PublishableContentServiceBase` and `ContentEditingServiceBase` have changed signatures. The `isDefault` parameter on `ICultureImpactFactory.ImpactExplicit` keeps its type but now means `includeInvariantForVariant`.
+* Publishing now requires an existing user for access checks. Passing the ID of a user that doesn't exist, such as `Constants.Security.UnknownUserId`, throws an exception.
+* `ICultureImpactFactory`, `CultureImpact`, `CultureImpactFactory`, `PublishableContentServiceBase` and `ContentEditingServiceBase` have changed signatures. The `isDefault` parameter on `ICultureImpactFactory.ImpactExplicit` keeps its type but now means `includeInvariantForVariant`.
+* Overrides of `PublishableContentServiceBase.CommitContentChanges` must add the new `bool? includeInvariantForVariant` parameter.
+* The `ContentSchedule` constructors and `ContentScheduleCollection.AddOrUpdate` take a new `bool? includeInvariantForVariant` parameter. `ContentSchedule.Equals` now compares it.
 * In the backoffice client, `UMB_LANGUAGE_ACCESS_WORKSPACE_CONTEXT` and the `allowEditInvariantFromNonDefault` configuration property have been removed. Read `hasAccessToInvariantForVariant` on the current user instead.
+* The `Umb.WorkspaceContext.Document.AllowEditInvariantFromNonDefault` and `Umb.WorkspaceContext.DocumentBlock.AllowEditInvariantFromNonDefault` manifests have been removed. Remove any references to these aliases.
+* Custom implementations of the `UmbContentWorkspaceContext` interface must add `nameWriteGuard`, `isWritableVariant()` and `getIsWritableVariant()`. Classes extending `UmbContentDetailWorkspaceContextBase` already have them.
+* `UmbCurrentUserModel` and `UmbUserGroupDetailModel` have a new required `hasAccessToInvariantForVariant` property.
 
-See [#24022](https://github.com/umbraco/Umbraco-CMS/pull/24022).
+See [#24022](https://github.com/umbraco/Umbraco-CMS/pull/24022) and [#24314](https://github.com/umbraco/Umbraco-CMS/pull/24314).
 
 ### Segment removed from content variant models
 
@@ -240,8 +247,12 @@ Changes for integrations and extensions:
 * The `SegmentSettings.AllowCreation` setting and the matching `allowNonExistingSegmentsCreation` property in the Management API have been removed.
 * The backoffice client no longer includes `UmbDocumentSegmentRepository`. Segment options now come from workspace context extensions, so you can replace or add segment providers. See the `workspace-variant-segments` example in the Umbraco CMS repository.
 * `variantOptions` and `languages` on `UmbContentDetailWorkspaceContextBase` can be `undefined` while loading.
+* The `Cultures` property has been removed from the `Segment` model, the Management API segment response model, and `UmbSegmentModel` in the backoffice client. Segments can no longer be limited to specific cultures, so every segment is offered for every language.
+* `ISegmentService.GetPagedSegmentsForDocumentAsync()` has been removed, along with the `/document/{id}/available-segment-options` Management API endpoint. These were temporary workarounds introduced in Umbraco 17.
 
-See [#23060](https://github.com/umbraco/Umbraco-CMS/pull/23060) and [#24222](https://github.com/umbraco/Umbraco-CMS/pull/24222).
+Elements can now vary by segment, both in the Library and in block editors.
+
+See [#23060](https://github.com/umbraco/Umbraco-CMS/pull/23060), [#24104](https://github.com/umbraco/Umbraco-CMS/pull/24104) and [#24222](https://github.com/umbraco/Umbraco-CMS/pull/24222).
 
 ### Reusable content in block editors
 
@@ -299,6 +310,7 @@ In code, `CoreDebugSettings` is renamed to `DebugSettings`. Update any `IOptions
 The following Management API endpoints have been removed:
 
 * `GET /umbraco/management/api/v1/help`. There is no replacement.
+* `GET /umbraco/management/api/v1/document/{id}/available-segment-options`. Use the segment collection endpoint instead. See [Segment removed from content variant models](#segment-removed-from-content-variant-models).
 * `GET /umbraco/management/api/v1/server/upgrade-check`. There is no replacement.
 * `POST /umbraco/management/api/v1/redirect-management/status`. Use the `Umbraco:CMS:WebRouting:DisableRedirectUrlTracking` setting instead. The endpoint had no effect from Umbraco 17.6 and 18.1.
 
