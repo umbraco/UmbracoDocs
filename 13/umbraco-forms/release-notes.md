@@ -16,9 +16,9 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
-### 13.9.12 (TODO: release date)
-* Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
-* Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations <!-- TODO: link GHSA-6mm6-h9v6-mjmp / GHSA-56r2-v3fp-wj6h once the advisories are published -->
+### 13.9.12 (October 27th 2026)
+* Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
+* Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
 
 {% hint style="warning" %}
 Entry exports are now stored for the user who generated them, and only that user can download them. Exports generated before the upgrade can no longer be downloaded, so generate them again. For details of the access checks, see the [Security](developer/security.md#access-to-forms-entries-and-exports) article.
