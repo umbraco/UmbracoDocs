@@ -141,6 +141,7 @@ The `ContentApprovalEmailModel` contains the following fields:
 | WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish, respectively.                                  |
 | ReleaseDate   | DateTime                  | If a scheduled release date exists for the workflow, it is found here.                                            |
 | ExpireDate    | DateTime                  | If a scheduled expiry date exists for the workflow, it is found here.                                             |
+| ScheduledDate | string                    | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                     |
 | CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense. |
 | Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                     |
@@ -205,6 +206,8 @@ To get a copy of the templates to customize, go to **Content Approvals** > **Not
 
 Text in the templates is localized when the email is rendered, in the recipient's language, using `@Model.Localize("key")`. One template serves every language.
 
+Dates and times in the emails are shown in the recipient's time zone. Workflow records a user's time zone from their browser each time they load the backoffice, so it reflects where they last used it. Emails sent to a group address, and to users with no recorded time zone, use the server's time zone.
+
 ## Customizing an Email Template
 
 Razor templates must be compiled before they can render. The shipped templates are compiled into the Workflow package, and your copy replaces one only if something compiles it. Which copy is used depends on the site's runtime mode:
@@ -228,7 +231,7 @@ Templates customized for Workflow 17 do not compile in Workflow 18, because the 
 
 1. In your local environment, select **Install email templates** to copy the templates to `~/Views/Partials/workflow/email/`.
 2. Edit the templates you want to change.
-3. Add only the templates you changed to source control. Every template in your project is compiled into your site and replaces the shipped version, including a copy you have not changed. That copy is only brought up to date when you run the update from the Email Templates health check.
+3. Add only the templates you changed to source control. Every template in your project is compiled into your site and replaces the shipped version, including a copy you have not changed. Workflow does not update that copy when you upgrade, so it keeps rendering the version it was copied from.
 4. Make sure views are compiled at build time by removing the following properties from your `.csproj` file:
 
     ```xml
@@ -239,12 +242,12 @@ Templates customized for Workflow 17 do not compile in Workflow 18, because the 
     This is already required for `Production` mode, and is not compatible with the `InMemoryAuto` Models Builder mode. For more information, see the [Runtime Modes](https://docs.umbraco.com/umbraco-cms/run-in-production/runtime-modes) article.
 5. Build, publish, and deploy the site.
 
-To confirm which templates are in use, go to **Settings** > **Health Check** > **Workflow** > **Email Templates**. The check lists customized templates and reports whether each one is the version being rendered.
+If a template on disk does not compile, Workflow renders the version shipped in the package instead and logs the error. To find templates that fail to compile, go to **Settings** > **Health Check** > **Workflow** > **Email Templates**. The check reports each failing template with the compiler message. It also reports culture-specific templates.
 
 {% hint style="info" %}
-Upgrading Workflow does not update the templates on disk. After upgrading, go to **Settings** > **Health Check** > **Workflow** > **Email Templates**. If it reports templates from an earlier release, select **Update email templates** to replace them with the current versions. The update is not available in `Production` mode.
+Upgrading Workflow does not update the templates on disk. A copy installed by an earlier release keeps rendering as it is.
 
-Workflow never overwrites a customized template. To update one, delete your copy locally and select **Install email templates** to get the current version. Then reapply your changes.
+Workflow never overwrites a template on disk. To get the current version of a template, delete your copy locally and select **Install email templates**. Then reapply any changes.
 {% endhint %}
 
 ### Culture-Specific Templates
