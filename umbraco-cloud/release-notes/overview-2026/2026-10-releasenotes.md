@@ -7,6 +7,7 @@
 * **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 * **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
 * **Hosting resources overview** - A new **Resources** page lists every hosting resource in your project, with its environment, region, state, and tier.
+* **Signed-in account shown in the user menu** - The user menu in the Cloud Portal now shows which account you are signed in with.
 
 ## Sweden Region Available
 
@@ -65,3 +66,9 @@ For each resource, the page shows:
 * **Tier** - The plan or tier of the resource, where relevant. For example, Shared Standard.
 
 You can filter the list by resource type and by environment.
+
+## Signed-in account shown in the user menu
+
+The user menu in the top bar of the Cloud Portal now starts with a **Signed in as** block. The block shows the name, email, and avatar of the account you are signed in with.
+
+If you have more than one Umbraco Cloud account, you can see which one you are using without opening your profile.
