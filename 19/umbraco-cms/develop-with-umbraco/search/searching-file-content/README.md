@@ -7,8 +7,8 @@ description: >-
 
 File content is not indexed for search in Umbraco by default. There are two main reasons for that:
 
-1. It can be a very CPU and memory intensive task, which could slow down your entire site.
-2. Umbraco can only support a very limited number of file formats out of the box.
+1. It can be a CPU and memory intensive task, which could slow down your entire site.
+2. Umbraco can only support a limited number of file formats out of the box.
 
 If you need to search file content, we have created a file-to-text indexing package. It is free, open source, and can be installed as an optional add-on.
 
