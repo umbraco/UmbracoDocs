@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.10 (27th Oct 2026)
+
+* Fixed partially refunded orders being marked as fully refunded when opened in the backoffice. This happened when the payment provider reported a partial refund as a full refund. Orders already affected go back to Partially Refunded when opened again after updating the payment provider ([#908](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/908)).
+* Fixed the Stock Forecast showing one day too few days remaining, and sales per day reading low across a clock change ([#907](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/907)).
+
 #### 18.1.9 (26th Oct 2026)
 
 * Fixed authorized orders being recalculated with the current discounts every time they were loaded or saved. An order placed with a discount that has since ended could no longer be saved. Discounts are now only recalculated when the order itself is edited ([#904](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/904)).
