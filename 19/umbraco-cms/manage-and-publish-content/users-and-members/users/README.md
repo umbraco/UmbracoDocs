@@ -144,6 +144,7 @@ Use the following settings to configure the User Group:
 * **Name**: The name of the User Group.
 * **Alias**: Used to reference the User Group in code. The alias will be auto-generated based on the name.
 * **Assign access**: Define which sections and languages users can access, and which content, media, elements, and Document Blueprints they can access.
+  * **Allow editing shared content**: Allow users to edit and publish shared (invariant) properties on content that varies by culture. Without this permission, users can only edit properties that vary by culture, in the languages they have access to. The permission doesn't apply to content that is invariant. It applies to both Documents and Elements, including scheduled publishing.
 
 ![Create User Group](../../../.gitbook/assets/user-groups-v19.png)
 
