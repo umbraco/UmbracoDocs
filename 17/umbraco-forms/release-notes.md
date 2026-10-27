@@ -19,10 +19,10 @@ If you are upgrading to a new major version, you can find information about the 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
 ### 17.6.2 (October 27th 2026)
-* Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
+* Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
 * Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
 * Permissions: Show analytics and the forms list to users with the **View Entries** permission, and hide the actions they can't use [#1802](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1802)
-* Upgrading: Fix a boot failure when upgrading to 17.6 on a site where the user who created or last edited a form has since been deleted
+* Upgrading: Fix a boot failure when upgrading to 17.6 if a form's creator or last editor has since been deleted
 * Entries: Validate omitted mandatory fields when creating an entry through the Management API [#1806](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1806)
 * Sidebar Navigation: Load users in pages, so installations with many users don't freeze when opening the Forms section [#1807](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1807)
 * Entries: Show entries on first load when the default **All** state filter is selected [#1808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1808)

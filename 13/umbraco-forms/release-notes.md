@@ -17,7 +17,7 @@ If you are upgrading to a new major version, you can find information about the 
 This section contains the release notes for Umbraco Forms 13 including all changes for this version.
 
 ### 13.9.12 (October 27th 2026)
-* Restrict the file extensions the **Save as an XML file** workflow can write, and the template paths the **Send email with template (Razor)** workflow can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
+* Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
 * Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
 
 {% hint style="warning" %}
