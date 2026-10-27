@@ -57,6 +57,10 @@ This describes how a Umbraco Cloud project is auto-upgraded:
 
 {% hint style="info" %} Changes for patches might appear on left-most environment, even if they have already been applied to Live. The environments will not be synchronized during the upgrade process. This is because synchronization risks pushing other apparent changes from one environment to another. Those changes will need to be deployed. Once that has been done, the environments will be in sync again. {% endhint %}
 
+## How do baseline updates work?
+
+Baseline and Baseline Child projects are treated like any standard Cloud project when it comes to automatic upgrades. [Upgrade windows](minor-upgrades.md#upgrade-windows) must be set on each project.
+
 ## What is a breaking change?
 
 It is important that developers understand what is considered a breaking change in Umbraco products. In most cases, an auto-upgrade will not have any breaking changes and we strive to ensure this is the case. However, in some rare cases, developers may be using Umbraco's internal code not intended for public consumption. In some releases, that code may change. It is important for developers to understand the risks of using Umbraco code that is not considered a breaking change when it is updated. This may directly affect a site that is auto-upgraded.
