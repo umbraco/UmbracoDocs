@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**17.3.1**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) **(October 26th 2026)**
+
+* Fixed the browser tab title not showing the collection name when viewing a repository or collection [#246](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/246).
+
 ### [**17.3.0**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.0) **(September 28th 2026)**
 
 * Added a Collection Picker property editor, so you can pick one of your registered collections as a field value. See the [Collection Picker discussion](https://github.com/umbraco/Umbraco.UIBuilder.Issues/discussions/245).

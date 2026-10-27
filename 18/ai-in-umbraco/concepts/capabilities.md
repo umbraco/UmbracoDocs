@@ -14,6 +14,8 @@ A capability represents a type of AI operation. Providers implement capabilities
 | **Chat**            | Conversational AI, text generation, completions | `IChatClient`                                   |
 | **Embedding**       | Vector embeddings for semantic search           | `IEmbeddingGenerator<string, Embedding<float>>` |
 | **Speech-to-Text**  | Audio transcription and voice input             | `ISpeechToTextClient`                           |
+| **Image Generation** | Text-to-image generation and image editing (experimental) | `IImageGenerator` |
+| **Decision**        | Typed yes/no, pick-one, and score answers (experimental) | None. Uses the Umbraco AI `IAIDecisionClient` |
 
 ## Chat Capability
 
@@ -83,6 +85,62 @@ var response = await _sttService.TranscribeAsync(
 
 {% endcode %}
 
+## Image Generation Capability
+
+{% hint style="warning" %}
+Image Generation is **experimental**. It is hidden unless the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled, and the C# API surface carries the `UMBRACOAI_IMAGEGEN` diagnostic, which consumers must suppress. See [Using the Image Generation API](../using-the-api/image-generation/README.md) for how to enable it.
+{% endhint %}
+
+The Image Generation capability produces images from text prompts:
+
+- Text-to-image generation
+- Maskless image editing (transform supplied images)
+- Provider-native masked outpainting via an escape hatch
+- Per-model size and capability constraints
+
+{% code title="Example.cs" %}
+
+```csharp
+#pragma warning disable UMBRACOAI_IMAGEGEN
+
+var response = await _imageGenerationService.GenerateImagesAsync(
+    img => img.WithAlias("hero-banner"),
+    "A serene mountain landscape at dawn");
+
+// response.Contents contains the generated image content
+```
+
+{% endcode %}
+
+## Decision Capability
+
+{% hint style="warning" %}
+Decision is **experimental**. It is hidden unless the `Umbraco:AI:Experimental:Decision` feature flag is enabled. The C# API surface carries the `UMBRACOAI_DECISION` diagnostic, which consumers must suppress. See [Decision](../using-the-api/decision/README.md) for how to enable it.
+{% endhint %}
+
+The Decision capability answers a typed question instead of returning free text:
+
+- Yes/no questions, answered with a probability
+- Pick-one questions, answered with the key of one of 2 to 255 options
+- Score questions, answered against 2 to 10 labelled levels
+
+Microsoft.Extensions.AI has no abstraction for this kind of model. Decision uses the Umbraco AI `IAIDecisionClient` interface instead.
+
+{% code title="Example.cs" %}
+
+```csharp
+#pragma warning disable UMBRACOAI_DECISION
+
+var response = await _decisionService.AskAsync(
+    new AIBinaryDecisionQuestion { Instructions = "Is this comment spam?" },
+    commentText);
+
+// response.Answer.TrueProbability is the chance of "yes"; IsTrue() applies a 0.5 threshold
+bool isSpam = response.Answer.IsTrue();
+```
+
+{% endcode %}
+
 ## Capability and Profile Relationship
 
 Each profile is configured for exactly one capability. This ensures type safety and appropriate settings:
@@ -108,6 +166,18 @@ Speech-to-Text Profile
     ├── Connection: OpenAI Prod
     ├── Model: whisper-1
     └── Settings: AISpeechToTextProfileSettings
+
+Image Generation Profile
+    ├── Capability: ImageGeneration
+    ├── Connection: OpenAI Prod
+    ├── Model: gpt-image-1
+    └── Settings: AIImageGenerationProfileSettings
+
+Decision Profile
+    ├── Capability: Decision
+    ├── Connection: TypeSafe AI
+    ├── Model: jev-latest
+    └── Settings: AIDecisionProfileSettings (no settings today)
 ```
 
 ## Checking Provider Capabilities
@@ -133,9 +203,21 @@ if (provider.HasCapability<IAISpeechToTextCapability>())
 {
     // Provider supports speech-to-text
 }
+
+if (provider.HasCapability<IAIImageGeneratorCapability>())
+{
+    // Provider supports image generation
+}
+
+if (provider.HasCapability<IAIDecisionCapability>())
+{
+    // Provider supports decisions (experimental, needs UMBRACOAI_DECISION suppressed)
+}
 ```
 
 {% endcode %}
+
+Experimental capabilities can be switched off for a whole install. To find the capabilities enabled on the current install, call the `GET /umbraco/ai/management/api/v1/capabilities/enabled` endpoint. See [List Capabilities](../management-api/connections/capabilities.md#list-enabled-capabilities).
 
 ## Capability Interfaces
 
@@ -146,9 +228,9 @@ Capabilities are defined by interfaces in `Umbraco.AI.Core`:
 ```csharp
 public interface IAIChatCapability : IAICapability
 {
-    Task<IChatClient> CreateChatClientAsync(
-        object settings,
-        AIProfile profile,
+    Task<IChatClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -160,9 +242,9 @@ public interface IAIChatCapability : IAICapability
 ```csharp
 public interface IAIEmbeddingCapability : IAICapability
 {
-    Task<IEmbeddingGenerator<string, Embedding<float>>> CreateEmbeddingGeneratorAsync(
-        object settings,
-        AIProfile profile,
+    Task<IEmbeddingGenerator<string, Embedding<float>>> CreateGeneratorAsync(
+        object? settings,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -174,9 +256,24 @@ public interface IAIEmbeddingCapability : IAICapability
 ```csharp
 public interface IAISpeechToTextCapability : IAICapability
 {
-    Task<ISpeechToTextClient> CreateSpeechToTextClientAsync(
-        object settings,
-        AIProfile profile,
+    Task<ISpeechToTextClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
+        CancellationToken cancellationToken = default);
+}
+```
+
+{% endcode %}
+
+{% code title="IAIDecisionCapability.cs" %}
+
+```csharp
+[Experimental("UMBRACOAI_DECISION")]
+public interface IAIDecisionCapability : IAICapability
+{
+    Task<IAIDecisionClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
         CancellationToken cancellationToken = default);
 }
 ```
@@ -190,3 +287,5 @@ public interface IAISpeechToTextCapability : IAICapability
 - [Chat API](../using-the-api/chat/README.md) - Use the Chat capability
 - [Embeddings API](../using-the-api/embeddings/README.md) - Use the Embedding capability
 - [Speech-to-Text API](../using-the-api/speech-to-text.md) - Use the Speech-to-Text capability
+- [Image Generation API](../using-the-api/image-generation/README.md) - Use the Image Generation capability
+- [Decision API](../using-the-api/decision/README.md) - Use the Decision capability (experimental)

@@ -27,14 +27,13 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
 
 ```json
 {
-    "id": "672bf83c-97e0-4d04-9d33-23fc2e5ebe42",
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "disclosureNoticeMode": "Always",
-    "dateCreated": "2024-01-01T00:00:00Z",
-    "dateModified": "2024-01-20T14:45:00Z",
-    "createdByUserId": null,
-    "modifiedByUserId": "user-guid"
+    "classifierChatProfileId": null,
+    "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
+    "defaultDecisionProfileId": null,
+    "disclosureNoticeMode": "Always"
 }
 ```
 
@@ -44,16 +43,16 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
 
 | Property                    | Type     | Description                              |
 | --------------------------- | -------- | ---------------------------------------- |
-| `id`                        | guid     | Fixed settings identifier                |
-| `defaultChatProfileId`      | guid     | Default profile for chat operations      |
-| `defaultEmbeddingProfileId` | guid     | Default profile for embedding operations |
+| `defaultChatProfileId`      | GUID     | Default profile for chat operations      |
+| `defaultEmbeddingProfileId` | GUID     | Default profile for embedding operations |
+| `classifierChatProfileId`   | GUID     | Optional profile for classification tasks |
+| `defaultSpeechToTextProfileId` | GUID  | Default profile for speech-to-text operations |
+| `defaultImageGenerationProfileId` | GUID  | Default profile for image generation (experimental) |
+| `defaultDecisionProfileId`  | GUID     | Default profile for decisions (experimental) |
 | `disclosureNoticeMode`      | string   | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
-| `dateCreated`               | datetime | When settings were first created         |
-| `dateModified`              | datetime | When settings were last modified         |
-| `modifiedByUserId`          | guid     | User who last modified settings          |
 
 {% hint style="info" %}
-Settings use a fixed ID. There is always exactly one settings record.
+There is always exactly one settings record.
 {% endhint %}
 
 ## Related

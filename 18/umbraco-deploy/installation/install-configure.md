@@ -260,6 +260,19 @@ Or by running the following PowerShell command:
 
 The URL configured for each environment should be the root URL for the website and needs to be accessible by the other environments over **HTTPS**.
 
+#### Restoring from a Baseline project
+
+A Baseline project is a project that you create other projects from, for example a starter site. These other projects are called Child projects. A Child project can restore content from the Baseline project, but can't transfer to it.
+
+To restore from a Baseline project:
+
+1. Configure the [`BaselineUrl` and `BaselineApiSecret`](../getting-started/deploy-settings.md#baseline-settings) settings on the Child project.
+2. Add the `BaselineApiSecret` of the Child project to the [`ChildApiSecrets`](../getting-started/deploy-settings.md#baseline-settings) setting on the Baseline project environment.
+
+The Baseline is then available as an environment to restore from. Deploy offers it on the first environment configured in _Workspaces_ and when running locally.
+
+To get schema changes from the Baseline project, merge them into the source control repository of the Child project. Then deploy them like any other schema change.
+
 #### Validating Source Control
 
 Once the configuration has the correct information, verify that source control includes the files in the `/umbraco/Deploy` folder of your Umbraco project.

@@ -92,6 +92,10 @@ The `section` extension type is used to place top-level navigation items within 
 
 The `tree` extension type is used to create a hierarchical structure composed of nodes, such as documents, media extensions, or toolbar extensions.
 
+### [User Entry Point](user-entry-point.md)
+
+The `userEntryPoint` extension type is used to execute JavaScript when a user session starts. It only runs once the user is authorized and the current user data is loaded, and it unloads when the session ends.
+
 ### [Workspaces](workspaces/)
 
 The `workspace` extension type provides functionality that operates within specific workspace environments, such as document editing, media management, or member editing.
@@ -168,6 +172,7 @@ These are the current types of UI Extensions:
 | treeItem                   | A tree item that can be added to the tree.                                                                                                                                                                                                                                                                                 |
 | tree                       | A tree that can be added to a section.                                                                                                                                                                                                                                                                                     |
 | ufmComponent               | This type of component is a formatter that can be added to the [Umbraco Flavoured Markdown](../../../../model-your-content/property-editors/umbraco-flavored-markdown.md), which is used in property descriptions and advanced labels.                                                                                     |
+| userEntryPoint             | A user entry point is a JavaScript module that runs when a user session starts and the current user data is loaded. It is unloaded when the session ends. Read more about [User Entry Points](user-entry-point.md).                                                                                                 |
 | userProfileApp             | A user profile app is a component that can be added to the current user view.                                                                                                                                                                                                                                              |
 
 **Collections**

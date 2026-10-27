@@ -27,6 +27,7 @@
     * [Cursor](mcp/connect-to-an-mcp-server/local-mcp-setup/cursor.md)
     * [GitHub Copilot](mcp/connect-to-an-mcp-server/local-mcp-setup/github-copilot.md)
     * [OpenAI Codex Setup](mcp/connect-to-an-mcp-server/local-mcp-setup/openai-codex.md)
+    * [TLS Certificates](mcp/connect-to-an-mcp-server/local-mcp-setup/tls-certificates.md)
 * [Set Up a Hosted MCP Server](mcp/setup-a-hosted-mcp-server/README.md)
   * [Umbraco Cloud Quick Start](mcp/setup-a-hosted-mcp-server/cloud-quickstart.md)
   * [Self-Hosted Quick Start](mcp/setup-a-hosted-mcp-server/self-hosted-quickstart.md)

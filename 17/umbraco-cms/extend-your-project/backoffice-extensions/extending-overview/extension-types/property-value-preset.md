@@ -14,6 +14,7 @@ Before creating a Property Value Preset, it is recommended to read about the [Ex
 
 The following Manifest declares a preset for the `TextBox` Property Editors:
 
+{% code title="manifests.ts" %}
 ```typescript
 export const manifest = {
     type: 'propertyValuePreset',
@@ -24,6 +25,7 @@ export const manifest = {
     forPropertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox'
 }
 ```
+{% endcode %}
 
 ### Key Properties
 
@@ -34,12 +36,12 @@ export const manifest = {
 
 A Property Preset Value API could look like this:
 
-{% code title="my-property-value-preset.js" %}
+{% code title="my-property-value-preset.ts" %}
 ```typescript
 import type { UmbPropertyValuePreset } from '@umbraco-cms/backoffice/property';
 import type { UmbPropertyEditorConfig } from '@umbraco-cms/backoffice/property-editor';
 export class MyPropertyValuePresetApi implements UmbPropertyValuePreset<string, UmbPropertyEditorConfig> {
-	async processValue(value: undefined | string, config: UmbPropertyEditorConfig) {
+	async processValue(value: undefined | string, _config: UmbPropertyEditorConfig) {
 		return value ? value : 'Hello there';
 	}
 
@@ -71,17 +73,17 @@ The `processValue` method takes four arguments:
 - `UmbPropertyTypePresetModelTypeModel` - The type arguments, which contains details such as whether the property is mandatory, and how it varies by culture and segment.
 - `UmbPropertyValuePresetApiCallArgs` - The call arguments, which contains details about the property and document.
 
-The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'preset state' configuration that is used as the value of the Toggle.
+The following example is the built-in Property Value Preset for the Umbraco Toggle. The Toggle Data Type has a 'Preset value' configuration that is used as the value of the Toggle.
 
-{% code title="my-property-value-preset.js" %}
+{% code title="my-property-value-preset.ts" %}
 ```typescript
 import type { UmbPropertyValuePreset, UmbPropertyValuePresetApiCallArgs, UmbPropertyTypePresetModelTypeModel } from '@umbraco-cms/backoffice/property';
 import type { UmbPropertyEditorConfig } from '@umbraco-cms/backoffice/property-editor';
 export class UmbTrueFalsePropertyValuePreset
-	implements UmbPropertyValuePreset<UmbTogglePropertyEditorUiValue, UmbPropertyEditorConfig>
+	implements UmbPropertyValuePreset<boolean, UmbPropertyEditorConfig>
 {
-	async processValue(value: undefined | UmbTogglePropertyEditorUiValue, config: UmbPropertyEditorConfig, typeArgs: UmbPropertyTypePresetModelTypeModel, callArgs: UmbPropertyValuePresetApiCallArgs) {
-		const initialState = (config.find((x) => x.alias === 'presetState')?.value as boolean | undefined) ?? false;
+	async processValue(value: undefined | boolean, config: UmbPropertyEditorConfig, _typeArgs: UmbPropertyTypePresetModelTypeModel, _callArgs: UmbPropertyValuePresetApiCallArgs) {
+		const initialState = (config.find((x) => x.alias === 'default')?.value as boolean | undefined) ?? false;
 		return value !== undefined ? value : initialState;
 	}
 

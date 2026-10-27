@@ -113,7 +113,7 @@ When you import a form definition, Umbraco uses the JSON structure to recreate t
 
 Using the **Import Form Definition** option, you can manage your forms without having to recreate them.
 
-![Import a Form](../../.gitbook/assets/import-form-v17.png)
+![Import a Form](../../.gitbook/assets/import-form.png)
 
 ## Organizing Forms in Folders
 

@@ -61,13 +61,18 @@ Rules specify what happens when content is flagged:
 
 ## Built-in Evaluators
 
-Umbraco.AI ships with three evaluators:
+Umbraco.AI ships with these evaluators:
 
 | Evaluator        | ID          | Type       | Redact | Description                                                       |
 | ---------------- | ----------- | ---------- | ------ | ----------------------------------------------------------------- |
 | Contains         | `contains`  | Code-based | Yes    | Flags content containing a specific substring. Config: `SearchPattern`, `IgnoreCase` |
 | Regex Match      | `regex`     | Code-based | Yes    | Flags content matching a regular expression pattern. Config: `Pattern`, `IgnoreCase`, `Multiline` |
 | LLM Safety Judge | `llm-judge` | Model-based| No     | Uses an AI model to evaluate content against configurable criteria. Config: `ProfileId`, `EvaluationCriteria`, `SafetyThreshold` |
+| Decision Safety Judge | `decision-judge` | Model-based | No | Asks a Decision profile whether content is safe by configurable criteria (experimental). Config: `ProfileId`, `EvaluationCriteria`, `SafetyThreshold` |
+
+{% hint style="warning" %}
+The Decision Safety Judge is **experimental**. It is only listed when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. If you turn the flag off, saved rules that use it fail safe and flag every response. See [Decision Safety Judge Evaluator](../backoffice/managing-guardrails.md#decision-safety-judge-evaluator) for details.
+{% endhint %}
 
 ### Evaluator Types
 

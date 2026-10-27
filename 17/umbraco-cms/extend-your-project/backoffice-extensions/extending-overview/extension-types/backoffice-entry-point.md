@@ -9,7 +9,7 @@ description: >-
 This manifest declares a single JavaScript file that will be loaded and run when the Backoffice starts. In other words, this can be used as an entry point for a package.
 
 {% hint style="info" %}
-See [App Entry Point](app-entry-point.md) if you are looking for an Extension that runs before the user is logged in.
+See [App Entry Point](app-entry-point.md) if you are looking for an Extension that runs before the user is logged in. See [User Entry Point](user-entry-point.md) if your code depends on the signed-in user, or must run again each time a user signs in.
 {% endhint %}
 
 The `backofficeEntryPoint` extension is also the way to go if you want to load in external libraries such as jQuery, Angular, React, etc. You can use the `backofficeEntryPoint` to load the external libraries to be shared by all your extensions. Additionally, **global CSS files** can also be used in the `backofficeEntryPoint` extension.
@@ -40,7 +40,7 @@ All examples are in TypeScript, but you can use JavaScript as well. Make sure to
 
 {% code title="index.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
 
 /**
  * Perform any initialization logic when the Backoffice starts
@@ -68,11 +68,12 @@ The `onUnload` function is optional and can be used to perform cleanup logic whe
 
 {% code title="index.ts" %}
 ```typescript
-import type { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
+import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/backoffice/extension-api';
 
 const manifest: UmbExtensionManifest = {
     type: '', // type of extension
     alias: '', // unique alias for the extension
+    name: '', // human-readable name of the extension
     elementName: '', // unique name of the custom element
     js: '', // path to the javascript resource
     meta: {
@@ -87,7 +88,7 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 
 export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Unregister the extension (optional)
-    extensionRegistry.unregister(manifest);
+    extensionRegistry.unregister(manifest.alias);
 }
 ```
 {% endcode %}

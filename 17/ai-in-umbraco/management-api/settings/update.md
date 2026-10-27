@@ -21,8 +21,10 @@ PUT /umbraco/ai/management/api/v1/settings
 {
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
+    "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
+    "defaultDecisionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
 ```
@@ -33,10 +35,12 @@ PUT /umbraco/ai/management/api/v1/settings
 
 | Property                         | Type | Required | Description                                   |
 | -------------------------------- | ---- | -------- | --------------------------------------------- |
-| `defaultChatProfileId`           | guid | No       | Default profile for chat operations           |
-| `defaultEmbeddingProfileId`      | guid | No       | Default profile for embedding operations      |
-| `defaultSpeechToTextProfileId`   | guid | No       | Default profile for speech-to-text operations |
-| `classifierChatProfileId`        | guid | No       | Optional profile for classification tasks     |
+| `defaultChatProfileId`           | GUID | No       | Default profile for chat operations           |
+| `defaultEmbeddingProfileId`      | GUID | No       | Default profile for embedding operations      |
+| `classifierChatProfileId`        | GUID | No       | Optional profile for classification tasks     |
+| `defaultSpeechToTextProfileId`   | GUID | No       | Default profile for speech-to-text operations |
+| `defaultImageGenerationProfileId` | GUID | No       | Default profile for image generation (experimental) |
+| `defaultDecisionProfileId`       | GUID | No       | Default profile for decisions (experimental)  |
 | `disclosureNoticeMode`           | string | No     | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
 {% hint style="info" %}
@@ -55,15 +59,13 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
 
 ```json
 {
-    "id": "672bf83c-97e0-4d04-9d33-23fc2e5ebe42",
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
-    "disclosureNoticeMode": "Always",
-    "dateCreated": "2024-01-01T00:00:00Z",
-    "dateModified": "2024-01-25T09:15:00Z",
-    "modifiedByUserId": "user-guid"
+    "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
+    "defaultDecisionProfileId": null,
+    "disclosureNoticeMode": "Always"
 }
 ```
 
@@ -71,20 +73,23 @@ The request replaces all settings. If `disclosureNoticeMode` is missing or not a
 
 ### Validation Error
 
+Each profile property that is not `null` is checked. The profile must exist and have the capability that matches the property. The first property that fails returns `400 Bad Request`, and nothing is saved.
+
 {% code title="400 Bad Request" %}
 
 ```json
 {
-    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-    "title": "Bad Request",
+    "type": "Error",
+    "title": "Invalid settings",
     "status": 400,
-    "errors": {
-        "defaultChatProfileId": ["Profile not found or does not support Chat capability"]
-    }
+    "detail": "DefaultDecisionProfileId must reference a profile with the Decision capability, but the specified profile has the Chat capability.",
+    "operationStatus": "InvalidSettings"
 }
 ```
 
 {% endcode %}
+
+If the profile does not exist, `detail` reads `<PropertyName> references a profile that does not exist.`
 
 ## Examples
 
@@ -118,5 +123,7 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 
 ## Notes
 
-- The specified profiles must exist and have the correct capability (Chat, Embedding, or Speech-to-Text)
+- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, `defaultImageGenerationProfileId` expects an Image Generation profile, and `defaultDecisionProfileId` expects a Decision profile
 - Settings changes take effect immediately for new requests
+- `defaultImageGenerationProfileId` is stored whether or not the experimental Image Generation flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value
+- `defaultDecisionProfileId` is stored whether or not the experimental Decision flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value

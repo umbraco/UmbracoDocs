@@ -1,12 +1,12 @@
 ---
 description: >-
-  Configure OpenAI as an AI provider for chat, embedding, and speech-to-text
-  capabilities.
+  Configure OpenAI as an AI provider for chat, embedding, speech-to-text, and
+  image generation capabilities.
 ---
 
 # OpenAI
 
-OpenAI provides access to GPT and text-embedding models, supporting Chat, Embedding, and Speech-to-Text capabilities.
+OpenAI provides access to GPT, text-embedding, and image models, supporting Chat, Embedding, Speech-to-Text, and Image Generation capabilities. Image Generation is experimental. See [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
 
 ## Installation
 
@@ -61,3 +61,4 @@ Azure OpenAI provides data residency, enterprise compliance, and integration wit
 
 * [Providers Overview](providers.md)
 * [Managing Connections](../backoffice/managing-connections.md)
+* [Image Generation API](../using-the-api/image-generation/README.md) - Generate images with OpenAI

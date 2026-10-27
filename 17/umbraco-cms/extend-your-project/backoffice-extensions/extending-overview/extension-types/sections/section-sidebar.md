@@ -137,9 +137,9 @@ These should be registered via a [Backoffice Entry Point](../backoffice-entry-po
 
 {% code title="manifests.ts" %}
 ```ts
-import type { ManifestSectionSidebarAppMenu } from '@umbraco-cms/backoffice/menu';
+import type { ManifestSectionSidebarAppMenuKind } from '@umbraco-cms/backoffice/menu';
 
-export const manifest: ManifestSectionSidebarAppMenu = {
+export const manifest: ManifestSectionSidebarAppMenuKind = {
     type: 'sectionSidebarApp',
     kind: 'menu',
     alias: 'My.SectionSidebarApp.MyMenu',
@@ -223,13 +223,7 @@ Menu sidebar apps can coordinate navigation between subviews in the section exte
 These should be registered via a Backoffice Entry Point.
 
 {% code title="manifests.ts" %}
-```
-```
-{% endcode %}
-
 ```ts
-import type { UmbExtensionManifest } from '@umbraco-cms/backoffice/extension-api';
-
 export const manifests: UmbExtensionManifest[] = [
     {
         type: 'menuItem',
@@ -252,6 +246,7 @@ export const manifests: UmbExtensionManifest[] = [
     }
 ];
 ```
+{% endcode %}
 
 Menu items and workspaces are linked by matching `entityType` values.
 

@@ -7,10 +7,11 @@ Types can be declared for re-useability/maintainability or to open up for other 
 
 A Manifest Type is declared via a TypeScript Interface, like shown below:
 
+{% code title="types.ts" %}
 ```typescript
 import type { ManifestBase } from '@umbraco-cms/backoffice/extension-api';
 
-export interface ManifestPreviewAppProvider extends ManifestBase {
+export interface MyExtensionManifestType extends ManifestBase {
     type: 'myPrefixedExtensionType';
 }
 
@@ -21,3 +22,4 @@ declare global {
     }
 }
 ```
+{% endcode %}
