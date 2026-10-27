@@ -46,6 +46,8 @@ To export all the entries from your Form:
 
 If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
 
+From Umbraco Forms 13.9.12, exporting entries requires the _View entries_ permission and access to the form. An export can only be downloaded by the user who generated it. For details, see the [Security](../developer/security.md#access-to-forms-entries-and-exports) article.
+
 ## Record Actions
 
 When selecting entries, it is possible to execute Actions. To select an entry, click anywhere on the entry.
