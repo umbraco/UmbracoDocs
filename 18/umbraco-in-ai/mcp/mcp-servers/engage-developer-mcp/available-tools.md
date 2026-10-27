@@ -51,11 +51,11 @@ The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage 
 ## A/B Test (`ab-test`)
 
 - `delete-ab-test` — Delete an A/B test
-- `get-ab-test` — Get a single A/B test
+- `get-ab-test` — Get a single A/B test by its numeric id
 - `get-ab-test-all` — List every A/B test in the site
 - `get-ab-test-empty` — Get a blank draft A/B test template for the given test type
 - `get-ab-test-page` — List all A/B tests that target a given Umbraco content page
-- `get-ab-test-view-model` — Get a single A/B test
+- `get-ab-test-view-model` — Get a single A/B test by its `unique` GUID
 - `post-ab-test` — Create a new A/B test in Draft status against a real content page, comparing an implicit Original benchmark variant to one named second variant
 - `post-ab-test-runtime-indication` — Estimate how long an A/B test needs to run to reach statistical significance. The estimate uses the participation rate, minimum detectable effect, expected daily visitors, baseline conversion rate, and variant count
 - `post-ab-test-segment` — Record which A/B test variant segment a visitor falls into, by writing an empty segment-varying property value onto the target content page
@@ -94,10 +94,10 @@ The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage 
 ## Annotations (`annotations`)
 
 - `delete-annotations` — Delete an annotation
-- `get-annotations-all` — List analytics annotations
+- `get-annotations-all` — List analytics annotations across the whole site within a date range
 - `get-annotations-empty` — Get a blank annotation template with default field values
 - `get-annotations-global` — List global analytics annotations
-- `get-annotations-page` — List analytics annotations
+- `get-annotations-page` — List analytics annotations attached to a specific content page
 - `post-annotations` — Create a new analytics annotation
 
 ## Applied Personalization (`applied-personalization`)
@@ -238,9 +238,9 @@ The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage 
 
 ## Reporting (`reporting`)
 
-- `get-reporting` — List goal-personalization performance rows
+- `get-reporting` — List goal-personalization performance rows for a segment, passing the segment id as a query parameter
 - `get-reporting-generation-status` — Check the status of Engage's reporting-table generation job
-- `get-reporting-goal-personalization-performance-by-segment-id` — List goal-personalization performance rows
+- `get-reporting-goal-personalization-performance-by-segment-id` — List goal-personalization performance rows for a segment, passing the segment id in the URL path
 - `get-reporting-segment-sessions-personalization-by-segment-id` — Get session-count buckets for a segment's personalization view
 - `get-reporting-segment-sessions-potential-by-segment-id` — Get session-count buckets for a segment's potential view
 - `post-reporting-generation-start` — Start an asynchronous reporting-table generation job
