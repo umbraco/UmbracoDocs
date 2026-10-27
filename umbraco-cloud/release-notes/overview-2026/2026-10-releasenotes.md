@@ -69,6 +69,6 @@ You can filter the list by resource type and by environment.
 
 ## Signed-in account shown in the user menu
 
-The user menu in the top bar of the Cloud Portal now starts with a **Signed in as** block. The block shows the name, email, and avatar of the account you are signed in with.
+The user menu in the top bar of the Cloud Portal now starts with a **Signed in as** block. The block shows the name and email of the account you are signed in with.
 
 If you have more than one Umbraco Cloud account, you can see which one you are using without opening your profile.
