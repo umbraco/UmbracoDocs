@@ -1017,7 +1017,7 @@ Auto-upgrades are rolled out after verifying that all environments respond witho
 Other reasons for missing the upgrade:
 
 * No upgrade window has passed since the release was made available, or no windows are selected for the project.
-* The platform was at capacity, and the upgrade could not start before the window closed. The Project History page shows the upgrade as **Cancelled**. The upgrade is attempted again in your next window, if the window starts within 7 days of the release.
+* The platform was at capacity, and the upgrade could not start before the window closed. The Project History page shows the upgrade as **Cancelled**. The upgrade is attempted again in your next window, if the window starts within 7 days after the release was made available.
 * Another upgrade was running on the project when the window started.
 * The automatic upgrade to the same release has failed at a previous attempt.
 * A failed test after applying the auto-upgrade, which compares environment states before and after the upgrade. If discrepancies are found, the environment is rolled back.

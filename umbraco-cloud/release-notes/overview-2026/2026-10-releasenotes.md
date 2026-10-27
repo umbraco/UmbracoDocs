@@ -19,7 +19,7 @@ Automatic minor and patch upgrades now follow a weekly schedule of upgrade windo
 * **Tuesday by default.** The default schedule is Tuesday from 08:00 to 20:00 UTC. If no windows are selected, automatic upgrades do not run for the project.
 * **Defined in UTC.** Windows do not move with daylight saving time. The picker can also show the windows in your local time.
 * **The window limits when an upgrade starts.** Environments are upgraded one at a time. An upgrade that starts late in a window can upgrade Staging and Live after the window has closed.
-* **Postponed upgrades are retried.** If the platform is at capacity, the upgrade is shown as **Cancelled** on the Project History page. It is attempted again in your next window within 7 days of the release.
+* **Postponed upgrades are retried.** If the platform is at capacity, the upgrade is shown as **Cancelled** on the Project History page. It is attempted again in your next window, if that window starts within 7 days after the release was made available.
 
 Selecting several windows does not lead to several upgrades. Each release is applied once, and extra windows give the upgrade more opportunities to start.
 
