@@ -16,6 +16,34 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 18 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `18.0.0`. It runs on .NET 10.
 
+### Forms Delivery API OpenAPI document
+
+This change was introduced in version 18.3.0. It affects you if you generate a client from the Forms Delivery API OpenAPI document.
+
+The Forms Delivery API OpenAPI document (`/umbraco/openapi/forms-delivery.json`) has changed. A client generated from the new document no longer has an `ApiContentRouteModel` type. `IApiContentRouteModel` keeps its name and now has the route's properties, and `IApiContentStartItemModel` is a plain object. The API responses themselves are unchanged. Regenerate your client and update any code that used `ApiContentRouteModel`.
+
+### Data Consent field in custom themes
+
+This change was introduced in version 18.3.0. It affects you if a custom theme overrides `FieldType.DataConsent.cshtml`.
+
+The Data Consent field has a new optional **Consent details** setting for formatted text shown under the checkbox. The **Accept Copy** setting is now labelled **Consent text**. Its `acceptCopy` alias is unchanged, so stored forms and code keep working.
+
+A custom theme that overrides `FieldType.DataConsent.cshtml` doesn't show the consent details. Update the view to match the default theme. The default theme renders the details in an element with the ID `{field ID}_consentdetails`. It also adds that ID to the `aria-describedby` attribute of the checkbox. The updated view is in the 18.3.0 default theme files, linked from the [Themes](../developer/themes.md) article.
+
+### Placeholder values in HTML settings
+
+This change was introduced in version 18.3.0. It affects you if you use placeholders in settings that hold HTML.
+
+Placeholder values are encoded more strictly in settings that HTML-encode them. These include **Consent details**, the Rich Text field's text, and the Razor email header, body, and footer. A value starting with a script URL scheme is prefixed with `unsafe:`. The placeholder delimiters `[`, `]`, `{`, and `}` in a value are encoded too.
+
+### Content Security Policy nonce on Forms scripts
+
+This change was introduced in version 18.3.0. It affects every site.
+
+Forms script tags now carry a `nonce` attribute. Browsers ignore it on a page without a Content Security Policy. A nonce you already pass to the Forms script helpers is kept. To render no nonce, register an `ICspNonceService` that returns `null`.
+
+External script and stylesheet URLs are now rendered as registered. Forms no longer adds its version to them.
+
 ### Date formats in workflows and exports
 
 This change was introduced in version 18.2.0. It affects you if you upgrade from an earlier version 18 release. It also affects you if you upgrade to version 18 from version 17.5.0 or earlier.

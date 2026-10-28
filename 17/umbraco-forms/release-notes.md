@@ -36,11 +36,11 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 * Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
 
 {% hint style="warning" %}
-The **Accept Copy** setting of the Data Consent field is now labelled **Consent text**. Its `acceptCopy` alias is unchanged, so stored forms and code keep working. A custom theme that overrides `FieldType.DataConsent.cshtml` won't show the consent details until its view is updated to match the default theme.
+This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
 
-Placeholder values are encoded more strictly in settings that HTML-encode them. These include **Consent details**, the Rich Text field's text, and the Razor email header, body, and footer. A value starting with a script URL scheme is prefixed with `unsafe:`. The placeholder delimiters `[`, `]`, `{`, and `}` in a value are encoded too.
-
-Forms script tags now carry a `nonce` attribute on every site. Browsers ignore it on a page without a Content Security Policy. A nonce you already pass to the Forms script helpers is kept. To render no nonce, register an `ICspNonceService` that returns `null`.
+* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
+* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
+* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
 {% endhint %}
 
 ### 17.6.2 (October 27th 2026)
