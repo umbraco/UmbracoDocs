@@ -29,6 +29,8 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 * Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
 * Form Import: Keep a form's original creator and creation date when importing over an existing form
 * Copy Form: Require a name for the copied form
+* Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name
+* Recycle Bin: Return an error when restoring a form or folder that isn't in the recycle bin, instead of renaming it
 * Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
 * Themes: Encode the page captions and summary caption shown in the multi-page paging details
 * Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
