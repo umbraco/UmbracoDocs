@@ -20,6 +20,31 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
+
+* Data Consent: Add an optional **Consent details** rich text setting, shown under the checkbox, for formatted text and links such as a privacy policy [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508)
+* Themes: Add the request's Content Security Policy (CSP) nonce to the script tags Forms renders, including the reCAPTCHA v2 script [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554)
+* Themes: Render external script and stylesheet URLs as registered, without adding the Forms version to them [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554)
+* Recycle Bin: Publish notifications when forms and folders are moved to the recycle bin or restored, and refresh the cache on all servers [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803)
+* OpenAPI: Describe content routes in the Forms Delivery API document as the endpoints send them, so generated clients get the real properties
+* Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
+* Form Import: Keep a form's original creator and creation date when importing over an existing form
+* Copy Form: Require a name for the copied form
+* Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
+* Themes: Encode the page captions and summary caption shown in the multi-page paging details
+* Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
+
+{% hint style="warning" %}
+The Forms Delivery API OpenAPI document (`/umbraco/openapi/forms-delivery.json`) has changed. A client generated from the new document no longer has an `ApiContentRouteModel` type. `IApiContentRouteModel` keeps its name and now has the route's properties, and `IApiContentStartItemModel` is a plain object. The API responses themselves are unchanged. Regenerate your client and update any code that used `ApiContentRouteModel`.
+
+The **Accept Copy** setting of the Data Consent field is now labelled **Consent text**. Its `acceptCopy` alias is unchanged, so stored forms and code keep working. A custom theme that overrides `FieldType.DataConsent.cshtml` won't show the consent details until its view is updated to match the default theme.
+
+Placeholder values are encoded more strictly in settings that HTML-encode them. These include **Consent details**, the Rich Text field's text, and the Razor email header, body, and footer. A value starting with a script URL scheme is prefixed with `unsafe:`. The placeholder delimiters `[`, `]`, `{`, and `}` in a value are encoded too.
+
+Forms script tags now carry a `nonce` attribute on every site. Browsers ignore it on a page without a Content Security Policy. A nonce you already pass to the Forms script helpers is kept. To render no nonce, register an `ICspNonceService` that returns `null`.
+{% endhint %}
+
 ### 18.2.2 (October 27th 2026)
 * Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
 * Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
