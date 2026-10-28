@@ -25,7 +25,7 @@ By default, the following Field Types are available:
 *   **Multiple Choice**: Displays a list of items with a checkbox for each item where the user can select multiple options.
 
     ![Checkboxlist](../../../.gitbook/assets/multiplechoice-v14.png)
-*   **Data Consent**: A field for the purpose of asking for data consent. By default, this field is added to all new Forms.
+*   **Data Consent**: A field for the purpose of asking for data consent. By default, this field is added to all new Forms. The **Consent text** setting holds the text next to the checkbox. From Umbraco Forms 18.3.0, the optional **Consent details** setting holds formatted text and links shown under the checkbox, such as a link to your privacy policy. See [HTML in rich text settings](#html-in-rich-text-settings).
 
     ![Data Consent](../../../.gitbook/assets/dataconsent-v14.png)
 *   **Dropdown**: Displays a list of items in a drop-down box where the user can select a single option.
@@ -37,7 +37,7 @@ By default, the following Field Types are available:
 *   **Title and Description**: Displays a read-only title and description for a set of form fields.
 
     ![Title and description](../../../.gitbook/assets/titleanddescription-v14.png)
-*   **Rich Text**: Displays read-only formatted text that can be used to provide additional information and links within a form.
+*   **Rich Text**: Displays read-only formatted text that can be used to provide additional information and links within a form. See [HTML in rich text settings](#html-in-rich-text-settings).
 
     ![Rich text](../../../.gitbook/assets/richtext-v14.png)
 *   **Hidden**: A hidden field allows developers to include data that cannot be seen or modified by users when a Form is submitted.
@@ -50,3 +50,11 @@ By default, the following Field Types are available:
 
     ![reCAPTCHA v3](../../../.gitbook/assets/recaptcha3-v14.png)
 * [Recaptcha Enterprise with Score](recaptcha-enterprise.md): This field returns a score for each request without user interaction. The score is based on user interactions with the site and enables you to take an appropriate action for your site based on the score.
+
+## HTML in rich text settings
+
+The **Consent details** setting of the Data Consent field and the **Rich text** setting of the Rich Text field hold HTML. That HTML is stored and rendered as entered. The default theme outputs it unchanged, and the Delivery API returns it unchanged.
+
+When a form is saved, Forms passes these settings, and a submit message written in HTML, through the Umbraco `IHtmlSanitizer`. The default implementation in Umbraco CMS returns the HTML unchanged. To remove unsafe markup, register your own `IHtmlSanitizer`. You might do this if, for example, less-trusted users can edit forms. For more information, see the [Sanitizing the Rich Text Editor](https://docs.umbraco.com/umbraco-cms/run-in-production/security/serverside-sanitizing) article.
+
+Placeholder values supplied by visitors, such as `[@name]`, are HTML-encoded when they're inserted into these settings.
