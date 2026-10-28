@@ -13,15 +13,15 @@ The Umbraco UI works in all modern browsers:
 
 Below you can find the minimum requirements to run Umbraco on your machine:
 
-* [.NET 10.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
-* One of the [.NET 10 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md)
+* [.NET 11.0 and higher](https://dotnet.microsoft.com/en-us/download/dotnet/11.0)
+* One of the [.NET 11 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/11.0/supported-os.md)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.14 or higher.
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2026 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2025.3.0.1 and higher
   * [.NET Core CLI](/broken/pages/P2G798v8rRzd9Cq7gaLx)
 * [SQL connection string (SQL Server)](../../develop-with-umbraco/configuration/connectionstringssettings.md)
-* [Node.js version 24.11.1](https://nodejs.org/en/download/prebuilt-installer) and higher
+* [Node.js version 24.13](https://nodejs.org/en/download/prebuilt-installer) and higher
 
 Umbraco can be installed with a SQLite or SQL Server database and configured with a [connection string](../../develop-with-umbraco/configuration/connectionstringssettings.md). For SQL Server, [support is aligned with Microsoft](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver17#lifecycle-dates), indicating a minimum supported version of SQL Server 2016.
 
@@ -39,7 +39,7 @@ Are you using Microsoft SQL as your data? The Umbraco Data Access Layer (DAL) do
 
 As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, we would recommend that you ensure you are on the latest and supported Microsoft versions to run and host Umbraco CMS:
 
-* [Windows Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70#supported-releases)
+* [Windows Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-releases)
 * [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
 * [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
@@ -47,7 +47,7 @@ As Umbraco releases are aligned to the .NET release cadence, it's also aligned w
 * [SQL Server Supported releases](https://learn.microsoft.com/en-us/sql/sql-server/end-of-support/sql-server-end-of-support-overview?view=sql-server-ver16#lifecycle-dates)
 * [SQLite](https://www.sqlite.org/index.html)
 
-_For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/?view=aspnetcore-7.0) _article in the Microsoft documentation._
+_For more information, see the_ [_Host and deploy ASP.NET Core applications_](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/) _article in the Microsoft documentation._
 
 {% hint style="success" %}
 You can use [Umbraco Cloud](https://umbraco.com/products/umbraco-cloud/) to manage the hosting infrastructure. All Umbraco Cloud plans are hosted on Microsoft Azure, which gives your site a proven and solid foundation.
