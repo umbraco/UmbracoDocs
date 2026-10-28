@@ -167,6 +167,62 @@ When a form or folder is _moved_ there is no specific service event. However, in
 
 If a folder is being moved, the key within the `State` dictionary is `"MovedFromParentId"`.
 
+### Recycle bin notifications
+
+{% hint style="info" %}
+This feature is available from Umbraco Forms 17.7.0, which is currently a release candidate.
+{% endhint %}
+
+From Umbraco Forms 17.7.0, moving a form or folder to the recycle bin publishes notifications. So does restoring one. The notifications are in the `Umbraco.Forms.Core.Services.Notifications` namespace.
+
+| Operation | Before (cancelable) | After |
+| --- | --- | --- |
+| Form moved to the recycle bin | `FormMovingToRecycleBinNotification` | `FormMovedToRecycleBinNotification` |
+| Form restored | `FormRestoringNotification` | `FormRestoredNotification` |
+| Folder moved to the recycle bin | `FolderMovingToRecycleBinNotification` | `FolderMovedToRecycleBinNotification` |
+| Folder restored | `FolderRestoringNotification` | `FolderRestoredNotification` |
+
+The recycle bin notifications derive from the Umbraco CMS `MovingToRecycleBinNotification<T>` and `MovedToRecycleBinNotification<T>` classes. Each item in their `MoveInfoCollection` holds the `Entity` and its `OriginalPath`. `OriginalPath` is the key of the parent folder, or an empty string for an item at the root.
+
+The restore notifications list the forms or folders in `RestoringEntities` and `RestoredEntities`.
+
+Cancelling a "-ing" notification throws a `FormOperationCancelledException`, and nothing is moved or restored. The Management API returns a 400 response, and the backoffice shows any messages the handler added.
+
+Moving a folder to the recycle bin, or restoring it, includes everything inside it:
+
+* The folder's "-ing" notification is published once, for that folder.
+* Its "-ed" notification lists that folder first, followed by every folder inside it.
+* Each form inside publishes its own form notifications. If a handler cancels one of them, the whole operation is rolled back.
+
+Forms also handles the "-ed" notifications itself, to refresh its cache on every server.
+
+The following handler logs each form moved to the recycle bin:
+
+```csharp
+    public class TestSiteComposer : IComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<FormMovedToRecycleBinNotification, FormMovedToRecycleBinNotificationHandler>();
+        }
+    }
+
+    public class FormMovedToRecycleBinNotificationHandler : INotificationHandler<FormMovedToRecycleBinNotification>
+    {
+        private readonly ILogger<FormMovedToRecycleBinNotificationHandler> _logger;
+
+        public FormMovedToRecycleBinNotificationHandler(ILogger<FormMovedToRecycleBinNotificationHandler> logger) => _logger = logger;
+
+        public void Handle(FormMovedToRecycleBinNotification notification)
+        {
+            foreach (MoveToRecycleBinEventInfo<Form> moveInfo in notification.MoveInfoCollection)
+            {
+                _logger.LogInformation("Form {FormName} moved to the recycle bin from folder '{OriginalPath}'.", moveInfo.Entity.Name, moveInfo.OriginalPath);
+            }
+        }
+    }
+```
+
 ## Backoffice entry rendering events
 
 When an entry for a form is rendered in the backoffice, an event is available to allow modification of the record detail. This event is available before the record details are presented to the user. This is shown in the following example:
