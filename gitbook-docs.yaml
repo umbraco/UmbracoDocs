@@ -28,7 +28,6 @@ site:
           key: space-38
           title: 19.latest
           path: 19.latest
-          draft: true
           content:
             directory: ./19/umbraco-cms
         - type: space
