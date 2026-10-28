@@ -1,14 +1,14 @@
 ﻿---
 description: >-
-  A guide for including file content in search
+  A guide for including file content in search.
 ---
 
 # Searching file content
 
 File content is not indexed for search in Umbraco by default. There are two main reasons for that:
 
-1. It can be a CPU and memory intensive task, which could slow down your entire site.
-2. Umbraco can only support a limited number of file formats out of the box.
+* It can be a CPU- and memory-intensive task, which could slow down your entire site.
+* Umbraco can only support a limited number of file formats out of the box.
 
 If you need to search file content, we have created a file-to-text indexing package. It is free, open source, and can be installed as an optional add-on.
 
@@ -35,7 +35,7 @@ File content is loaded from any property containing binary file data (for exampl
 Effectively, this means the file content of Content and Media items will be surfaced as results from free text search.
 
 {% hint style="info" %}
-For Content, this applies both to draft and published versions.
+For Content, this applies to both drafts and published versions.
 {% endhint %}
 
 ## Configuration options
@@ -72,4 +72,4 @@ public class FileToTextConfigurationComposer : IComposer
 
 ## File formats included
 
-The package supports indexing of PDF, Markdown and text files. You can extend this by [adding your own file formats](adding-file-formats.md).
+The package supports indexing of PDF, Markdown, and text files. You can extend this by [adding your own file formats](adding-file-formats.md).
