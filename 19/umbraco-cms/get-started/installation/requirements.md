@@ -17,9 +17,9 @@ Below you can find the minimum requirements to run Umbraco on your machine:
 * One of the [.NET 11 - Supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/11.0/supported-os.md)
 * One of the following .NET Tools or Editors:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
-  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2026 or higher.
+  * [Microsoft Visual Studio](https://www.visualstudio.com/) 2026 or higher
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2025.3.0.1 and higher
-  * [.NET Core CLI](/broken/pages/P2G798v8rRzd9Cq7gaLx)
+  * [.NET Core CLI](README.md)
 * [SQL connection string (SQL Server)](../../develop-with-umbraco/configuration/connectionstringssettings.md)
 * [Node.js version 24.13](https://nodejs.org/en/download/prebuilt-installer) and higher
 
@@ -37,10 +37,10 @@ Are you using Microsoft SQL as your data? The Umbraco Data Access Layer (DAL) do
 
 ### Recommendation requirements to run Umbraco
 
-As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, we would recommend that you ensure you are on the latest and supported Microsoft versions to run and host Umbraco CMS:
+As Umbraco releases are aligned to the .NET release cadence, it's also aligned with Microsoft's Long-term support policy for the underlying framework. For the best experience, ensure you are on the latest and supported Microsoft versions to run and host Umbraco CMS:
 
 * [Windows Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-releases)
-* [MacOs Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
+* [macOS Supported releases](https://learn.microsoft.com/en-us/dotnet/core/install/macos#supported-releases)
 * [Ubuntu Supported distributions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) and other [Linux Packages](https://learn.microsoft.com/en-us/dotnet/core/install/linux#packages)
 * [.NET Supported releases](https://dotnet.microsoft.com/en-us/platform/support/policy)
 * [IIS Supported releases](https://learn.microsoft.com/en-us/lifecycle/products/internet-information-services-iis)
