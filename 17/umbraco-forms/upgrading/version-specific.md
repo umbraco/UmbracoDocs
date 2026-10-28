@@ -38,6 +38,8 @@ Forms script tags now carry a `nonce` attribute. Browsers ignore it on a page wi
 
 External script and stylesheet URLs are now rendered as registered. Forms no longer adds its version to them.
 
+For more information, see the [Content Security Policy nonce](../developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article.
+
 ### Date formats in workflows and exports
 
 This change was introduced in version 17.6.0. It affects you if you upgrade from an earlier version 17 release.
