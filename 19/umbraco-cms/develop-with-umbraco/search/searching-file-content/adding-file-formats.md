@@ -1,6 +1,6 @@
 ﻿---
 description: >-
-  Developer documentation for extending the file-to-text indexing package
+  Developer documentation for extending the file-to-text indexing package.
 ---
 
 # Adding file formats
@@ -9,7 +9,7 @@ The file-to-text indexing package is extendable, so you can add support for addi
 
 ## Example
 
-The following example adds MS Word (docx) as a supported file format. It leverages [`DocSharp.Docx`](https://www.nuget.org/packages/DocSharp.Docx) to parse Word files into plain text.
+The following example adds MS Word (`.docx`) as a supported file format. It leverages [`DocSharp.Docx`](https://www.nuget.org/packages/DocSharp.Docx) to parse Word files into plain text.
 
 {% code title="DocxFileValueHandler.cs" %}
 ```csharp
