@@ -26,7 +26,7 @@ Different things could be in play when your site is slow to startup after a rebo
 Below is a list of some of the more common reasons:
 
 * The search indexes need to rebuild (cold restart).
-* Examine indexes need to rebuild - for large sites, this can take some time.
+* Search indexes need to rebuild - for large sites, this can take some time.
 * The custom code on the website is not optimized and does not live up to .NET standards.
 
 ## In Memory Auto
