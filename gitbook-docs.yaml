@@ -25,6 +25,12 @@ site:
       icon: folder-grid
       children:
         - type: space
+          key: space-38
+          title: 19.latest
+          path: 19.latest
+          content:
+            directory: ./19/umbraco-cms
+        - type: space
           key: space-25
           title: 18.latest
           path: 18.latest
@@ -43,13 +49,6 @@ site:
           path: 13.latest
           content:
             directory: ./13/umbraco-cms
-        - type: space
-          key: space-38
-          title: 19.latest
-          path: 19.latest
-          draft: true
-          content:
-            directory: ./19/umbraco-cms
     - type: section-group
       key: section-group-3
       title: Cloud Services

@@ -257,6 +257,8 @@
     * [Database Cache for Index Values](develop-with-umbraco/search/extending-search/database-cache-for-index-values.md)
   * [Indexed Values of Built-in Property Editors](develop-with-umbraco/search/built-in-property-editors.md)
   * [System Fields in Content Indexes](develop-with-umbraco/search/system-fields.md)
+  * [Searching file content](develop-with-umbraco/search/searching-file-content/README.md)
+    * [Adding file formats](develop-with-umbraco/search/searching-file-content/adding-file-formats.md)
 * [Caching](develop-with-umbraco/caching/README.md)
   * [Response Caching](develop-with-umbraco/caching/response-caching.md)
   * [Website Output Caching](develop-with-umbraco/caching/website-output-caching.md)
