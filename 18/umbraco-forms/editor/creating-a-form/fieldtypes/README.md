@@ -25,9 +25,15 @@ By default, the following Field Types are available:
 *   **Multiple Choice**: Displays a list of items with a checkbox for each item where the user can select multiple options.
 
     ![Checkboxlist](../../../.gitbook/assets/multiplechoice-v14.png)
-*   **Data Consent**: A field for the purpose of asking for data consent. By default, this field is added to all new Forms. The **Consent text** setting holds the text next to the checkbox. From Umbraco Forms 18.3.0, the optional **Consent details** setting holds formatted text shown under the checkbox. Use it to link to your privacy policy, for example. See [HTML in rich text settings](#html-in-rich-text-settings).
+*   **Data Consent**: A field for the purpose of asking for data consent. By default, this field is added to all new Forms. The **Consent text** setting holds the text next to the checkbox.
 
     ![Data Consent](../../../.gitbook/assets/dataconsent-v14.png)
+
+    {% hint style="info" %}
+    This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
+    {% endhint %}
+
+    From Umbraco Forms 18.3.0, the optional **Consent details** setting holds formatted text shown under the checkbox. Use it to link to your privacy policy, for example. See [HTML in rich text settings](#html-in-rich-text-settings).
 
     ![Data Consent field with consent details in the form designer](../../../.gitbook/assets/dataconsent-consent-details.png)
 *   **Dropdown**: Displays a list of items in a drop-down box where the user can select a single option.
