@@ -80,7 +80,7 @@ public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5
 
 ### .Search(IQueryExecutor queryExecutor)
 
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only. [Further information on using Examine](../../application-code/examine/quick-start.md#different-ways-to-query)
+For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only. [Searching with Examine](../../application-code/examine/README.md)
 
 ```csharp
 using System;

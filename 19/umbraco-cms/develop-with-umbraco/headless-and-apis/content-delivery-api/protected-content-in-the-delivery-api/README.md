@@ -73,7 +73,7 @@ When changing the `MemberAuthorization` configuration, Umbraco must be restarted
 
 {% hint style="warning" %}
 When enabling or disabling member authentication, the `DeliveryApiContentIndex` must be rebuilt to correctly reflect the existing content protection state.\
-The index can be rebuilt from the [Examine Management dashboard](../../../application-code/examine/examine-management.md).
+The index can be rebuilt from the Examine Management dashboard. For more information, see the [Settings Dashboards](../../../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
 {% endhint %}
 
 ## Server endpoints
