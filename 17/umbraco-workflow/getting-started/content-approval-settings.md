@@ -248,7 +248,7 @@ Workflow never overwrites a template on disk. To get the current version of a te
 
 ### Culture-Specific Templates
 
-Templates named with a culture suffix, such as `ApprovalRequest_da-DK.cshtml`, are still used for recipients whose language differs from the site's default language. Since templates are now localized at render time, they are no longer needed, and they do not receive translation updates. Remove them unless the wording must differ from the translation.
+Templates named with a culture suffix, such as `ApprovalRequest_da-DK.cshtml`, are still used for recipients whose language differs from the site's default language. Templates are localized at render time, so culture-specific templates are no longer needed. Remove them unless the wording must differ from the translation.
 
 ## Sample Email Template
 
