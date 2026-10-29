@@ -132,7 +132,7 @@ From the **Content Approvals** view in the **Settings** section, the **Notificat
 
 ## Notifications Overview
 
-Notification emails use HTML templates, which render information from the `ContentApprovalEmailModel` type, which lives in the `Umbraco.Workflow.Core.ContentApprovals.Email` namespace. While it is possible to modify the email templates from the backoffice, we recommend making changes via an Integrated Development Environment (IDE) of your choice.
+Notification emails use HTML templates, which render information from the `ContentApprovalEmailModel` type, which lives in the `Umbraco.Workflow.Core.ContentApprovals.Email` namespace. While it is possible to modify the email templates from the backoffice, you should make changes via an Integrated Development Environment (IDE) of your choice.
 
 The `ContentApprovalEmailModel` contains the following fields:
 
