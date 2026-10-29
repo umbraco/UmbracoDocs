@@ -223,3 +223,9 @@ redirects:
     get-started/upgrading-and-migrating/version-specific/single-block-migration: get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md
     get-started/upgrading-and-migrating/version-specific/upgrade-from-8-to-latest: get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-from-8-to-latest.md
     get-started/upgrading-and-migrating/version-specific/upgrade-to-umbraco-7: get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-to-umbraco-7.md
+    develop-with-umbraco/application-code/examine/corrupt-indexes: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/examine-management: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/examine-manager: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/indexing: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/pdfindex-multisearcher: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/quick-start: develop-with-umbraco/application-code/examine/README.md
