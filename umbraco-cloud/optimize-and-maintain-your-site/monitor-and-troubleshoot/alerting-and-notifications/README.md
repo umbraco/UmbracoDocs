@@ -205,6 +205,7 @@ The email contains:
 * The project name and a link to the project in the Cloud Portal.
 * The environment.
 * The alert type and time.
+* The scope: whether a project rule or an organization rule sent the notification.
 * Details about what happened.
 * The rule's priority, under **Additional information**.
 * An Alert ID to use when contacting support.

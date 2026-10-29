@@ -17,11 +17,11 @@ Each notification is sent as an HTTP `POST` request with a JSON body.
 A webhook URL must meet the following requirements:
 
 * The URL uses `https://`.
-* The URL points to a publicly reachable host. Private network addresses, `localhost`, and raw IP addresses are not allowed.
+* The URL uses a hostname. Raw IP addresses are not allowed.
 * The URL is up to 500 characters long.
 * The URL does not contain a username or password.
 
-The hostname is checked again when a notification is sent. If the hostname resolves to a private network address, the notification is rejected. Make sure the host resolves to a public address.
+The host must resolve to a public IP address. Requests to private or internal addresses are blocked.
 
 Redirects are not followed. Enter the final URL of your endpoint.
 
@@ -33,6 +33,7 @@ The following example shows the payload for a failed deployment:
 ```json
 {
   "alertId": "3f2b8c1e-6a4d-4e0b-9a51-2c7d8e9f0a12",
+  "scope": "Project",
   "projectAlias": "my-project",
   "projectUrl": "https://www.s1.umbraco.io/project/my-project",
   "environmentName": "Live",
@@ -53,7 +54,8 @@ The following example shows the payload for a failed deployment:
 
 | Field | Description |
 | --- | --- |
-| `alertId` | Unique ID of the notification. Include the ID when contacting support. |
+| `alertId` | ID of the alert. The ID is the same on every retry of the notification, so you can use it to ignore duplicates. Include the ID when contacting support. |
+| `scope` | Whether a project rule or an organization rule sent the notification: `Project` or `Organization`. |
 | `projectAlias` | The project's alias. |
 | `projectUrl` | Link to the project in the Umbraco Cloud Portal. |
 | `environmentName` | The environment the event happened on. |
