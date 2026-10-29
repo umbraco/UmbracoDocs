@@ -120,8 +120,6 @@ The Sustainability Dashboard is designed to help users monitor and improve the e
 
 ### Alerting & Notifications
 
-<!-- TODO: confirm that Alerting & Notifications is placed under Insights in the organization menu -->
-
 Organization admins can create alert rules that cover all projects in the organization, or a selection of projects. Alerts are sent by email or webhook for events such as failed deployments, upgrades, and DDoS attacks. For more information, see the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md) article.
 
 ## Login Providers

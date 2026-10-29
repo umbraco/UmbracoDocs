@@ -12,10 +12,7 @@ Alerting and Notifications lets you choose which events on your Umbraco Cloud pr
 
 You can create alert rules for a single project, or for your whole organization. Organization rules can cover every project, including projects you create later.
 
-You can find **Alerting & Notifications** in the Umbraco Cloud Portal:
-
-* **Project**: Go to **Insights** → **Alerting & Notifications**.
-* **Organization**: Go to **Overview** → **Alerting & Notifications**.
+You can find **Alerting & Notifications** under **Insights** on your project and on your organization in the Umbraco Cloud Portal.
 
 {% hint style="info" %}
 Notifications are **opt-in**. If no enabled alert rule matches an event, no notification is sent.
@@ -55,15 +52,11 @@ The notification includes the affected hostname. Where available, it also includ
 
 `Hostname: www.example.com. Attack: HTTP DDoS. RPS: 12000. Action: block`
 
-<!-- TODO: confirm the attack and action values customers will see. Values come from Cloudflare, application-layer attacks only -->
-
 For more information about how Umbraco Cloud protects your site, see the [Web Application Firewall](../../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) article.
 
 ### Autoheal
 
 An Autoheal alert is sent when Azure detects that an environment is unhealthy and restarts it automatically.
-
-<!-- TODO: product-approved explanation of what triggers Autoheal -->
 
 The notification text is always the same:
 
@@ -72,8 +65,6 @@ The notification text is always the same:
 An Autoheal alert usually means your site stopped responding for a period. If you receive Autoheal alerts often, check the [log files](../resolve-issues-quickly-and-efficiently/log-files.md) for the cause. Common causes are high memory usage and long-running requests.
 
 For more information about automatic restarts, see the [Platform Configuration](../../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md) article.
-
-<!-- TODO: confirm that Autoheal alerts are triggered by Proactive Auto-Heal restarts -->
 
 ### Deployment
 
@@ -123,9 +114,7 @@ Autoupgrade alerts are sent for **every** upgrade of your environment. This incl
 ## Create an Alert Rule
 
 1. Go to your project or organization in the [Umbraco Cloud Portal](https://www.s1.umbraco.io).
-2. Navigate to **Alerting & Notifications**.
-   * Project: **Insights** → **Alerting & Notifications**.
-   * Organization: **Overview** → **Alerting & Notifications**.
+2. Navigate to **Insights** → **Alerting & Notifications**.
 3. Select **New rule**.
 4. Fill in the rule settings described in the [Alert Rule Settings](#alert-rule-settings) section.
 5. Select **Create alert rule**.
