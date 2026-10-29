@@ -39,7 +39,7 @@ After the site starts, a new **Automation** section is available in the backoffi
 <figure><img src="../.gitbook/assets/automate-section-overview.png" alt="The Automation section in the Umbraco backoffice main navigation."><figcaption><p>The Automation section in the backoffice.</p></figcaption></figure>
 
 {% hint style="info" %}
-**User permissions** — Automation is a standalone section. If you cannot see the Automation section, grant your user group access:
+**User permissions** — Automate adds its own backoffice section. If you cannot see the Automation section, grant your user group access:
 
 1. Go to **Users** > **User Groups**.
 2. Edit the relevant user group, for example _Administrators_.

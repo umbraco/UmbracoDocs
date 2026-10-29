@@ -7,7 +7,6 @@ description: API reference for Umbraco.Commerce.Cms.Events.Notification.Handlers
 | Public Type | Description |
 | --- | --- |
 | class [ConvertUmbracoCommerceVariantsEditorToContentApp](convertumbracocommercevariantseditortocontentapp.md) |  |
-| class [InjectUmbracoCommerceServerVariables](injectumbracocommerceservervariables.md) |  |
 | class [OptimizeUmbracoCommerceVariantsEditorExamineValues](optimizeumbracocommercevariantseditorexaminevalues.md) |  |
 | class [RegisterUmbracoCommerceCacheRefreshers](registerumbracocommercecacherefreshers.md) |  |
 | class [RunUmbracoCommerceMigrations](runumbracocommercemigrations.md) |  |

@@ -196,7 +196,7 @@ Separately, a middleware component will be enabled to prevent access to these re
 
 When enabling this option, ensure that the media recycle bin is initially empty.
 
-This option may be enabled by default from Umbraco version 18.
+This option is enabled by default from Umbraco version 18.
 
 ## Content version cleanup policy
 

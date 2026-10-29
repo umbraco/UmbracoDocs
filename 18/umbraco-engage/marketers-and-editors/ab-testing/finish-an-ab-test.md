@@ -36,7 +36,15 @@ If you select **Stop and complete now** the A/B Test is stopped and you can sele
 
 </div>
 
-Completing the test removes all variants and their content from the page. Select the winning variant and then **Confirm**, or select **End without a winner**. After you confirm, the test is listed as **Completed**, with the winning variant marked:
+Completing the test removes all variants and their content from the page. Select the winning variant and then **Confirm**, or select **End without a winner**.
+
+For a Single page test, also choose what happens to the winner's content:
+
+* **Replace the page content and publish**
+* **Replace the page content and save as draft**
+* **Keep the page as it is**
+
+After you confirm, the test is listed as **Completed**, with the winning variant marked:
 
 <div align="left">
 

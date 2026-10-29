@@ -17,9 +17,11 @@ Choose the extension point that matches the behavior you want to add.
 | [Create a Custom Trigger](custom-trigger.md)                          | React to a domain event or external signal that is not covered by the built-in triggers.  |
 | [Create a Custom Action](custom-action.md)                            | Add a new unit of work that automations can use as a step.                                |
 | [Create a Custom Connection Type](custom-connection-type.md)          | Add a new credential type for an external service.                                        |
+| [Create a Custom OAuth Connection Type](custom-oauth-connection-type.md) | Add a connection type that signs in to a service with OAuth. |
+| [Create a Custom Notification Channel](custom-notification-channel.md) | Send run notifications to a new destination. |
 | [Schedule and Webhook Triggers](schedule-and-webhook-triggers.md)     | Fire a trigger on a cron schedule, from an inbound webhook, or from a non-Umbraco event.  |
 | [Control What Runs](controlling-execution.md)                         | Gate trigger dispatch, stop automation-triggered cycles, or wrap every action's execution. |
-| [Additional Action Behavior](action-behavior.md)                      | Give an action a dynamic output schema, an audit trail entry, or export-time redaction.   |
+| [Additional Action Behavior](action-behavior.md)                      | Give an action a dynamic output schema, an audit trail entry, settings validation, or export-time redaction. |
 
 ## How Discovery Works
 

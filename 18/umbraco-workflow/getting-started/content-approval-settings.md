@@ -32,7 +32,7 @@ You can configure the **General** Settings from the **Content Approvals** menu i
 * **Mandatory comments** - Set to true to require comments when approving workflows. Comments are always required when submitting changes for approval, and are always optional for admin users.
 * **Allow attachments** - Provide an attachment (such as a supporting document or enable referencing a media item) when initiating a workflow. This feature is useful when a workflow requires supporting documentation.
 * **Allow scheduling** - Provides an option to select a scheduled date when initiating a workflow.
-* **Use workflow for unpublish** - Determines if unpublish actions require workflow approval. Set to true to display the **Action** option when submitting the content for approval.
+* **Use workflow for unpublish** - Determines if unpublish actions require workflow approval. Set to true to add a **Request unpublish** option to the **Request publish** button menu.
 * **Extend permissions** - Determines if Umbraco Workflow should extend or replace the users' save and publish permissions. The default behavior is to replace the users' permissions.
 * **Require publish for initiate** - Determines the minimum user permission for initiating a workflow process. The default (false) behaviour requires the user have permission to update the entity. When true, the user must have permission to publish the entity to be able to submit for workflow approval. This setting was added in 18.0.1, defaulting to the legacy behaviour (requiring update permission only).
 

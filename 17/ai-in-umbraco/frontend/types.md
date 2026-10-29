@@ -5,7 +5,7 @@ description: >-
 
 # Types
 
-The Umbraco.AI frontend exports TypeScript types for type-safe AI integration across chat, embeddings, speech-to-text, and tools.
+The Umbraco.AI frontend exports TypeScript types for type-safe AI integration across chat, embeddings, speech-to-text, decisions, and tools.
 
 ## Import
 
@@ -25,6 +25,9 @@ import type {
     UaiEmbeddingItem,
     UaiSpeechToTextOptions,
     UaiSpeechToTextResult,
+    UaiDecisionQuestion,
+    UaiDecisionResult,
+    UaiDecisionOptions,
     UaiToolScope,
     UaiToolItem,
 } from "@umbraco-ai/core";
@@ -377,6 +380,121 @@ The result of a speech-to-text transcription.
 ```typescript
 interface UaiSpeechToTextResult {
     text: string;
+}
+```
+
+{% endcode %}
+
+## Decision Types
+
+{% hint style="warning" %}
+Decision is experimental. See [Enabling Decision](../using-the-api/decision/README.md#enabling-decision).
+{% endhint %}
+
+Types used by the [Decision Controller](decision-controller.md). The `kind` property discriminates both the question and its matching result.
+
+### UaiDecisionQuestion
+
+A union of the three question types.
+
+{% code title="UaiDecisionQuestion" %}
+
+```typescript
+type UaiDecisionQuestion = UaiBinaryDecisionQuestion | UaiChoiceDecisionQuestion | UaiScoreDecisionQuestion;
+
+interface UaiBinaryDecisionQuestion {
+    kind: "binary";
+    instructions: string;
+    trueCriteria?: string;
+    falseCriteria?: string;
+}
+
+interface UaiChoiceDecisionQuestion {
+    kind: "choice";
+    instructions: string;
+    /** 2 to 255 options with unique, non-empty keys. */
+    options: UaiDecisionOption[];
+}
+
+interface UaiDecisionOption {
+    key: string;
+    description?: string;
+}
+
+interface UaiScoreDecisionQuestion {
+    kind: "score";
+    instructions: string;
+    /** 2 to 10 levels, lowest first. A level's position is its index. */
+    levels: UaiDecisionScoreLevel[];
+}
+
+interface UaiDecisionScoreLevel {
+    description: string;
+}
+```
+
+{% endcode %}
+
+### UaiDecisionResult
+
+A union of the three result types. Each result has the same `kind` as its question. `confidence` is only reported for choice and score results, and is left out when the provider does not report one.
+
+{% code title="UaiDecisionResult" %}
+
+```typescript
+type UaiDecisionResult = UaiBinaryDecisionResult | UaiChoiceDecisionResult | UaiScoreDecisionResult;
+
+interface UaiBinaryDecisionResult {
+    kind: "binary";
+    /** Probability that the answer is "yes", from 0.0 to 1.0. */
+    trueProbability: number;
+    modelId?: string | null;
+    usage?: UaiDecisionUsage | null;
+}
+
+interface UaiChoiceDecisionResult {
+    kind: "choice";
+    choice: string;
+    /** Keyed by option key. */
+    probabilities: Record<string, number>;
+    confidence?: number | null;
+    modelId?: string | null;
+    usage?: UaiDecisionUsage | null;
+}
+
+interface UaiScoreDecisionResult {
+    kind: "score";
+    score: number;
+    /** Keyed by level index, from 0 for the lowest level. */
+    probabilities: Record<number, number>;
+    confidence?: number | null;
+    modelId?: string | null;
+    usage?: UaiDecisionUsage | null;
+}
+
+interface UaiDecisionUsage {
+    inputTokens?: number | null;
+    outputTokens?: number | null;
+    totalTokens?: number | null;
+}
+```
+
+{% endcode %}
+
+### UaiDecisionOptions
+
+Options for the `UaiDecisionController.ask` method.
+
+{% code title="UaiDecisionOptions" %}
+
+```typescript
+interface UaiDecisionOptions {
+    /** The content being judged. Optional; omitted means the question stands alone. */
+    state?: string;
+    /** Profile ID (GUID) or alias. If omitted, uses the default Decision profile. */
+    profileIdOrAlias?: string;
+    /** AbortSignal for cancellation. */
+    signal?: AbortSignal;
 }
 ```
 

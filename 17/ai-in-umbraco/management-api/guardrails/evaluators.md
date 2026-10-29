@@ -7,6 +7,10 @@ description: >-
 
 Returns all registered guardrail evaluators with their configuration schemas. Use this endpoint to discover which evaluators are available when creating guardrail rules.
 
+{% hint style="info" %}
+Evaluators that need an experimental capability are left out while that capability is disabled. For example, the Decision Safety Judge (`decision-judge`) is only returned when the `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+{% endhint %}
+
 ## Request
 
 {% code title="Endpoint" %}

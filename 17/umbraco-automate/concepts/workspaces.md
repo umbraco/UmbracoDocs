@@ -14,7 +14,7 @@ A workspace is a container that groups related automations. Workspaces are the a
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **User groups**         | The Umbraco user groups whose members can view, edit, and run the automations in the workspace.                                                                                                             |
 | **Allowed connections** | The connections that the automations in the workspace can use.                                                                                                                                              |
-| **Service account**     | The Umbraco user identity that the automations run as. The account's section access, start node, and (where applicable) per-resource membership determine which triggers and actions the workspace can use. |
+| **Service account**     | The Umbraco API user that the automations run as. A regular backoffice user can't be the service account. The account's section access, start node, and (where applicable) per-resource membership determine which triggers and actions the workspace can use. |
 
 ## Why Use Workspaces
 
@@ -41,8 +41,10 @@ The workspace service account is the security boundary for what its automations 
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Section access**                                                          | Whether the step type may be used at all.                                       | The catalogue picker hides triggers and actions the account cannot use. Publish validation rejects automations that reference them. Dispatch silently skips events that arrive after a downgrade. |
 | **Start node / Browse permission** (content and media triggers and actions) | Whether the event refers to a node the account can read.                        | A workspace scoped to `/marketing/` does not receive `Content Published` events for `/finance/` and cannot publish content outside its start node at runtime.                                     |
-| **Granular permission** (content actions only)                              | Whether the account has the specific verb (Publish, Update) on the target node. | The **Publish Content** action requires the Publish letter on the target node — the action fails with an authentication error if the account only has Browse.                                     |
+| **Granular permission** (content actions only)                              | Whether the account has the specific verb (Create, Publish, Update, Move) on the target node. | The **Publish Content** action requires the Publish letter on the target node — the action fails with an authentication error if the account only has Browse. **Create Content** needs Create on the parent, and **Move Content** needs Move and access to the destination. |
 | **Per-resource membership** (Commerce stores)                               | Whether the account is allowed in the trigger or action's target store.         | Workspaces scoped to Store A do not receive events for Store B and cannot capture payments on Store B's orders. Admins bypass the per-store list, matching the Commerce backoffice.               |
+
+Creating or moving an item at the content or media root needs root access, even when the account can reach nodes inside its start node.
 
 Changing the service account on a published workspace can take its automations offline. Events that previously dispatched now silently skip. Actions that need permissions the new account doesn't have fail with an authentication error in the run log. Treat the account the same way you would treat the role of a backoffice user.
 

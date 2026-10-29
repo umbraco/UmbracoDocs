@@ -70,7 +70,7 @@ To move Folders within the Media section:
 1. Click **•••** next to the folder.
 2.  Select **Move**.
 
-    ![Move Folder](../../.gitbook/assets/Move-Folder-v9.png)
+    ![Move Folder](../../.gitbook/assets/Move-Folder.png)
 3.  Choose the location where you want to move the folder to in the tree structure.
 
     ![Move Media.png](../../.gitbook/assets/Move-media-location-v9.png)

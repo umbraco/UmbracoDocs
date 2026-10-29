@@ -21,15 +21,13 @@ GET /umbraco/ai/management/api/v1/settings
 
 ```json
 {
-    "id": "672bf83c-97e0-4d04-9d33-23fc2e5ebe42",
     "defaultChatProfileId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "defaultEmbeddingProfileId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
-    "defaultSpeechToTextProfileId": null,
     "classifierChatProfileId": null,
-    "dateCreated": "2024-01-01T00:00:00Z",
-    "dateModified": "2024-01-20T14:45:00Z",
-    "createdByUserId": null,
-    "modifiedByUserId": "user-guid"
+    "defaultSpeechToTextProfileId": null,
+    "defaultImageGenerationProfileId": null,
+    "defaultDecisionProfileId": null,
+    "disclosureNoticeMode": "Always"
 }
 ```
 
@@ -54,7 +52,7 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/settings" \
 
 ```csharp
 var response = await httpClient.GetAsync("/umbraco/ai/management/api/v1/settings");
-var settings = await response.Content.ReadFromJsonAsync<AISettingsModel>();
+var settings = await response.Content.ReadFromJsonAsync<SettingsResponseModel>();
 ```
 
 {% endcode %}
@@ -63,11 +61,10 @@ var settings = await response.Content.ReadFromJsonAsync<AISettingsModel>();
 
 | Property                    | Type     | Description                                                |
 | --------------------------- | -------- | ---------------------------------------------------------- |
-| `id`                        | guid     | Fixed settings identifier                                  |
-| `defaultChatProfileId`      | guid     | Default profile for chat operations (null if not set)      |
-| `defaultEmbeddingProfileId`      | guid     | Default profile for embedding operations (null if not set)      |
-| `defaultSpeechToTextProfileId`   | guid     | Default profile for speech-to-text operations (null if not set) |
-| `classifierChatProfileId`        | guid     | Optional profile for classification tasks (null if not set)     |
-| `dateCreated`                    | datetime | When settings were first created                                |
-| `dateModified`              | datetime | When settings were last modified                           |
-| `modifiedByUserId`          | guid     | User who last modified settings                            |
+| `defaultChatProfileId`      | GUID     | Default profile for chat operations (null if not set)      |
+| `defaultEmbeddingProfileId`      | GUID     | Default profile for embedding operations (null if not set)      |
+| `classifierChatProfileId`        | GUID     | Optional profile for classification tasks (null if not set)     |
+| `defaultSpeechToTextProfileId`   | GUID     | Default profile for speech-to-text operations (null if not set) |
+| `defaultImageGenerationProfileId` | GUID     | Default profile for image generation (experimental, null if not set) |
+| `defaultDecisionProfileId`       | GUID     | Default profile for decisions (experimental, null if not set)   |
+| `disclosureNoticeMode`           | string   | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |

@@ -80,7 +80,6 @@
 
 ## Advanced
 
-* [Virtual Sub Trees](advanced/virtual-sub-trees.md)
 * [Encrypted Properties](advanced/encrypted-properties.md)
 * [Value Mappers](advanced/value-mappers.md)
 * [Repositories](advanced/repositories.md)

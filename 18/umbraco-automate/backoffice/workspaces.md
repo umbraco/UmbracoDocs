@@ -11,9 +11,9 @@ A workspace groups related automations and controls which connections and users 
 ## Create a Workspace
 
 1. Open the **Automation** section.
-2. Click **+** next to Workspaces.
-3. **Enter a name** for the Workspace.
-4. Choose the **Service Account Key** and **user Groups**.
+2. Click **+** next to Workspaces, or select **Workspaces** and click **Create** above the list.
+3. Enter a name for the workspace.
+4. Choose the **Service Account Key** and **User Groups**. The service account must be an API user.
 5. Click **Save**.
 
 <figure><img src="../.gitbook/assets/create-workspace.png" alt="The create workspace modal."><figcaption><p>Creating a workspace.</p></figcaption></figure>
@@ -33,7 +33,7 @@ The **Settings** tab has three fields:
 
 | Field                   | Purpose                                                                                                                                                                                                                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Service Account**     | The Umbraco user identity that the automations in this workspace run as. Required. The account's section access, start node, and per-resource membership decide which triggers and actions the workspace can use — see [Service-Account Permissions](../concepts/workspaces.md#service-account-permissions). |
+| **Service Account**     | The Umbraco API user that the automations in this workspace run as. Required. Regular backoffice users can't be selected. The account's section access, start node, and per-resource membership decide which triggers and actions the workspace can use — see [Service-Account Permissions](../concepts/workspaces.md#service-account-permissions). |
 | **User Groups**         | The Umbraco user groups whose members can view, edit, and run the automations in this workspace. Required.                                                                                                                                                                                                   |
 | **Allowed Connections** | The connections that the automations in this workspace can use.                                                                                                                                                                                                                                              |
 
@@ -48,6 +48,8 @@ Review the **Runs** tab after any service-account change.
 {% endhint %}
 
 {% hint style="info" %}
+
+A workspace saved before this rule existed may have a regular backoffice user as its service account. Its automations keep running. The next save of the workspace is refused until you choose an API user. Create one in the **Users** section if you don't have one.
 
 If a workspace was transferred from another environment (for example via Deploy), it may reference a user group that doesn't exist here. That group is dropped from **User Groups**. A warning tells you how many groups need to be added again.
 

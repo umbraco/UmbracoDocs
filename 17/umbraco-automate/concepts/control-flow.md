@@ -33,7 +33,9 @@ The **If** node evaluates a binding expression and routes the run down one of tw
 
 Connect whatever comes next after the loop to the **Done** handle, not the Body handle. Otherwise, it runs on every iteration instead of once at the end.
 
-For **Parallel** only, the Body handle accepts more than one connection — each one becomes its own concurrent branch. Every other handle, on every node, accepts at most one.
+For **Parallel** only, the Body handle accepts more than one connection — each one becomes its own concurrent branch. Every other output accepts one connection. Drawing a new connection from an output that is already connected moves that connection.
+
+A step can receive connections from more than one output. Use this to rejoin branches, for example to connect both **True** and **False** of an **If** to one shared step. Automate refuses a connection that would create a loop.
 
 {% hint style="info" %}
 Automations built before these handles existed keep working as they did. With no Done connection, Automate works out what runs next from the shape of the steps drawn after the loop.

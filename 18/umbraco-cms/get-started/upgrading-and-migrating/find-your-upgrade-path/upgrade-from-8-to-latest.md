@@ -7,7 +7,7 @@ description: Learn how to upgrade your Umbraco 8 project to Umbraco 10.
 {% hint style="danger" %}
 It is currently not possible to upgrade directly from **Umbraco 8 to the latest version**.
 
-The recommended approach for upgrading from version 8 to the latest version is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_. Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. You can then use the [Upgrading to Major](../README.md#upgrade-to-a-new-major) steps to upgrade from _Umbraco 10 to the latest version_.
+The recommended approach for upgrading from version 8 to the latest version is to use this guide to upgrade from _Umbraco 8 to Umbraco 10_. Umbraco 10 contains the [database migrations](https://github.com/umbraco/Umbraco-CMS/blob/release-10.0.0/src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlan.cs#L66-L73) that must be upgraded from Umbraco 8. You can then use the [Upgrading to Major](../upgrade-details.md#upgrade-to-a-new-major) steps to upgrade from _Umbraco 10 to the latest version_.
 {% endhint %}
 
 Since the underlying framework going from Umbraco 8 to the latest version has changed, there is no direct upgrade path. That said, it is possible to re-use the database from your Umbraco 8 project on your new project in order to maintain the content.
@@ -108,4 +108,4 @@ This concludes this tutorial. Find related information and further reading in th
 
 * [Issue tracker for known issues with Content Migration](https://github.com/umbraco/UmbracoDocs/issues)
 * [Configuration in modern Umbraco](../../../develop-with-umbraco/configuration/README.md)
-* [Configuration in legacy Umbraco](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/)
+* [Legacy Documentation](../../../understand-umbraco-cms/product-and-releases/legacy-documentation.md), for the configuration of Umbraco 7 and 8

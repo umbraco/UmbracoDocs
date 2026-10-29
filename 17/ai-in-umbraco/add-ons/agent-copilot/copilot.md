@@ -55,6 +55,19 @@ Contextual Copilot understands your current editing context:
 - Content type information
 - Media items and relationships
 
+When the open item is a media item with a supported file, Contextual Copilot also reads the file's content. This means you can ask about a document without copying its text into the chat. Supported file types:
+
+| File type     | Extensions                 |
+| ------------- | -------------------------- |
+| Plain text    | `.txt`, `.md`, `.csv`      |
+| Office files  | `.docx`, `.xlsx`, `.pptx`  |
+
+Other files, such as PDFs, only share the media item's name and properties. Audio files are not transcribed as context, so opening one never triggers a paid transcription. Extracted text is capped at 100,000 characters.
+
+### AI-Generated Notice
+
+After the first message in a conversation, the chat shows the notice "Responses are AI-generated and may be inaccurate." The same notice appears in [Copilot Workspace](../copilot-workspace/README.md) conversations. Administrators control whether it is always shown, dismissible, or hidden with the [AI Disclosure Notice](../../backoffice/managing-settings.md#ai-disclosure-notice) setting.
+
 ### Tool Execution
 
 Agents can execute tools to interact with Umbraco:
@@ -106,17 +119,44 @@ Always be helpful and concise.
 
 ## Auto Mode and Agent Routing
 
-When multiple agents are available on a surface, Contextual Copilot uses "Auto" mode to automatically select the best agent for each user message. Auto mode works by sending the user's prompt to a classifier model that picks an agent based on each agent's name and description. [Copilot Workspace](../copilot-workspace/README.md) uses the same Auto mode mechanism for its own surface.
+When multiple agents are available on a surface, Contextual Copilot uses "Auto" mode to select an agent for each user message. [Copilot Workspace](../copilot-workspace/README.md) uses the same Auto mode mechanism for its own surface.
+
+Auto mode first filters the agents to those that are active and in scope for the current context. Auto mode then runs a chain of agent selectors in order until one picks an agent:
+
+- **Decision selector (default, experimental):** asks a Decision profile to pick the agent. Runs first, and only when Decision is set up. See [Decision-Based Routing](#decision-based-routing).
+- **LLM selector (default):** sends the user's message to a classifier model, which picks an agent based on each agent's name and description.
+- **Sticky selector (opt-in):** keeps the previous turn's agent for the rest of the conversation.
+- **Custom selectors:** your own rules, registered in code before or after the built-in selector.
+
+If only one agent is available, it is used without running any selector. If no selector picks an agent, the first available agent is used.
+
+For details on writing selectors and enabling the sticky selector, see [Agent Selection](../../extending/agent-selection.md).
 
 ### Classifier Profile
 
-By default, the classifier uses the default chat profile, which may be a powerful (and expensive) model. Since classification only returns a single GUID, you can configure a cheaper or faster model specifically for this task:
+By default, the LLM selector's classifier uses the default chat profile, which may be a powerful (and expensive) model. Since classification only returns a single GUID, you can configure a cheaper or faster model specifically for this task:
 
 1. Navigate to the **AI** section > **Settings**
 2. Set the **Classifier Chat Profile** to a lightweight model (e.g., GPT-4o Mini, Claude Haiku)
 3. Save
 
 See [Settings](../../concepts/settings.md#classifier-chat-profile) for more details on the fallback chain.
+
+### Decision-Based Routing
+
+When the experimental [Decision](../../using-the-api/decision/README.md) capability is enabled, Auto mode can pick the agent with a Decision profile instead of a chat model. Decision returns one of the agent IDs directly, so no text needs to be parsed.
+
+By default, the Decision selector runs before the LLM selector. It picks the agent when all of these are true:
+
+- The `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+- A **Default Decision Profile** is set under **AI** > **Settings**.
+- Between 2 and 255 agents are available.
+
+Auto mode asks the default Decision profile one pick-one question. The options are the available agents, described by each agent's name and description. The user's message is the content to judge. The chosen agent is used as-is, with no confidence threshold.
+
+If Decision is not available, or the call fails, Auto mode falls back to the next selector. By default, that is the LLM selector and its classifier chat profile. It also falls back when Decision returns an unknown agent. A failed call is logged as a warning, and the user sees no error.
+
+If a selector earlier in the chain picks an agent, such as the opt-in sticky selector, Decision is not asked.
 
 ## Related
 

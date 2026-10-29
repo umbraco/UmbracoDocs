@@ -40,7 +40,7 @@ The Image Cropper comes with 3 modes:
 
 The editor exposes a drop area for files. Select it to upload an image.
 
-![Image Cropper Upload](../../../.gitbook/assets/imageCropper-upload-v8.png)
+![Image Cropper Upload](../../../.gitbook/assets/imageCropper-upload.png)
 
 ### Set focal point
 
@@ -61,6 +61,10 @@ The editor can fit the crop to the image to ensure that the image is presented a
 [ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET.
 
 We bundle this package with Umbraco and you can therefore take full advantage of all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
+
+To learn how Umbraco connects to ImageSharp, see the [Image Processing](../../../develop-with-umbraco/application-code/backend-and-custom-logic/image-processing.md) article. The article also covers switching to ImageSharp 2 and when a direct ImageSharp reference needs a license key.
+
+The cache, resize, and memory settings for processed images are configured in [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md).
 
 ## Sample code
 

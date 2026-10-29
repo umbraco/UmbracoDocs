@@ -132,8 +132,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
     }
 
     //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }
@@ -306,8 +306,8 @@ export class MyWelcomeDashboardElement extends UmbElementMixin(LitElement) {
     }
 
     //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
-        this.observe(instance.currentUser, (currentUser) => {
+    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE | undefined) {
+        this.observe(instance?.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
     }
@@ -403,6 +403,7 @@ The values depend on the state of the user. For example, use `look="primary"` an
 
 Remember that you can come to a solution in many different ways! Here is a possible solution to how it could've been solved:
 
+{% code title="welcome-dashboard.element.ts" %}
 ```typescript
 import { UserStateModel } from '@umbraco-cms/backoffice/external/backend-api';
 import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/external/uui';
@@ -434,6 +435,7 @@ import { UUIInterfaceColor, UUIInterfaceLook } from '@umbraco-cms/backoffice/ext
 
 	...
 ```
+{% endcode %}
 
 </details>
 

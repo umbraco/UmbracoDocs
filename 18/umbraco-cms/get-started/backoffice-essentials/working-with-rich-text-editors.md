@@ -38,7 +38,7 @@ Only a few keyboard shortcuts are listed here. For a detailed list of available 
 
 ## View Source Code
 
-![View Source Code](../../.gitbook/assets/view-source-code-v11.png)
+![View Source Code](../../.gitbook/assets/view-source-code.png)
 
 If you are proficient in HTML, you can switch to HTML mode to create your page. You can also check the code and make minor adjustments to get the page exactly as you want.
 
@@ -65,7 +65,7 @@ You do not normally need to spend much time formatting text because Umbraco take
 
 ### Formatting Buttons
 
-![Formatting Buttons](../../.gitbook/assets/Formatting-Buttons-v11.png)
+![Formatting Buttons](../../.gitbook/assets/Formatting-Buttons.png)
 
 The most familiar way to control formatting is by using the formatting buttons. With these buttons, you can apply basic formatting such as Bold, Italic, aligning text, creating bulleted and numbered lists, and applying indents.
 
@@ -89,7 +89,7 @@ To prevent formatting issues, start by pasting the content into a markdown edito
 
 ### Remove Formatting
 
-![Remove Format Button](../../.gitbook/assets/Remove-Format-v11.png)
+![Remove Format Button](../../.gitbook/assets/Remove-Format.png)
 
 If you have already formatted a paragraph or selection using the formatting buttons, you can remove the formatting rule.
 
@@ -109,7 +109,7 @@ You can also add a **Remove format** button in your toolbar. To add the **Remove
 
 ## Links
 
-![Link Button](../../.gitbook/assets/Link-Button-v11.png)
+![Link Button](../../.gitbook/assets/Link-Button.png)
 
 The **Insert/Edit Link** button is used to add or update links to internal pages, external pages, media files, email links, and anchors. The process for inserting a hyperlink differs depending on the type of hyperlink you wish to create.
 
@@ -119,7 +119,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Page on Another Website</summary>
 
-<img src="../../.gitbook/assets/Link-to-an-external-Page-v11.png" alt="Link to a Page on another Website" data-size="original">
+<img src="../../.gitbook/assets/Link-to-an-external-Page.png" alt="Link to a Page on another Website" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -150,7 +150,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to a Media File in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-Media-File-v11.png" alt="Link to a Media File in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-Media-File.png" alt="Link to a Media File in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -167,7 +167,7 @@ To insert different types of hyperlinks, follow these steps:
 
 <summary>Link to an Email Address in Umbraco</summary>
 
-<img src="../../.gitbook/assets/Link-to-Email-Address-v11.png" alt="Link to an Email Address in Umbraco" data-size="original">
+<img src="../../.gitbook/assets/Link-to-Email-Address.png" alt="Link to an Email Address in Umbraco" data-size="original">
 
 1. Select the text that will form the hyperlink.
 2. Click the **Insert/Edit Link** button to open the link properties slide-out menu.
@@ -204,7 +204,7 @@ To delete the anchor:
 
 **Linking to an Anchor**
 
-<img src="../../.gitbook/assets/Linking-to-Anchor-v11.png" alt="Linking to an anchor" data-size="original">
+<img src="../../.gitbook/assets/Linking-to-Anchor.png" alt="Linking to an anchor" data-size="original">
 
 1. Select the text to which you wish to add the anchor link to.
 2. Click the **Insert link** button to open the link properties slide-out menu.
@@ -275,7 +275,7 @@ Many administrators set up a media library containing images that editors can us
 
 You can upload images directly from the Rich Text Editor on the page you are editing. These images will be stored in the Umbraco Media Library. Therefore, it would be best to ensure the image is placed in the correct location within the library. If you click the plus icon underneath the search bar in the media picker slide-out menu you can create folders in the media library.
 
-<img src="../../.gitbook/assets/Inserting-an-Image-from-Computer-v11.png" alt="Inserting an Image from your Computer" data-size="original">
+<img src="../../.gitbook/assets/Inserting-an-Image-from-Computer.png" alt="Inserting an Image from your Computer" data-size="original">
 
 1. Place the cursor in the Rich Text Editor where you want to insert your image.
 2. Click the **Media Picker** button from the toolbar.

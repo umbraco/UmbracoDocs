@@ -171,6 +171,8 @@ Prompts have a display mode that determines how they are presented to editors:
 
 The prompt appears as an action on text-based property editors. When executed, results are shown in a dialog where editors can preview, copy, or insert the generated content.
 
+Once a response loads, the dialog shows the notice "Responses are AI-generated and may be inaccurate." Whether it appears, and whether editors can dismiss it, is controlled by the [AI Disclosure Notice](../../backoffice/managing-settings.md#ai-disclosure-notice) setting.
+
 ### TipTap Tool
 
 The prompt appears as a toolbar button in the rich text editor. This mode supports text selection for targeted content transformation. See [Rich Text Editor Integration](#rich-text-editor-integration) above.

@@ -16,6 +16,13 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.8.2**](https://www.nuget.org/packages/Umbraco.Engage/13.8.2) **(October 29th 2026)**
+
+* Updated `Umbraco.Licenses` to 13.3.6. This fixes a rare startup failure with the error "Unable to verify license for Umbraco.Engage. The details provided do not match the signature", caused by SQL Server `datetime` precision ([Issue #110](https://github.com/umbraco/Umbraco.Engage.Issues/issues/110)).
+* Fixed the `AlignSchema` migration failing when both a legacy and an aligned database object name exist.
+* An Engage migration step that fails now logs the exception.
+* Updated the client-side dependencies of the backoffice assets to patched versions.
+
 [**13.8.1**](https://www.nuget.org/packages/Umbraco.Engage/13.8.1) **(July 2nd 2026)**
 
 * Improved backoffice performance by adding caching to the Engage **Document Type** and **User Group** permissions, including cross-server cache refreshing for load-balanced environments.

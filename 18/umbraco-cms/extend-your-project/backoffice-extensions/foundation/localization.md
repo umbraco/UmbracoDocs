@@ -18,15 +18,19 @@ If a key is not found in the current language, the fallback language will be use
 
 If a translation is missing, the default value within `umb-localize` will be shown in the user interface:
 
+{% code title="my-element.ts" %}
 ```html
 <umb-localize key="general_ok_not_found">Default value</umb-localize>
 ```
+{% endcode %}
 
 Instead of showing the default value we can show the key alias if we set `debug="true"`:
 
+{% code title="my-element.ts" %}
 ```html
 <umb-localize key="general_ok_not_found" debug="true"></umb-localize>
 ```
+{% endcode %}
 
 ## Using the Localizations
 
@@ -34,11 +38,13 @@ Instead of showing the default value we can show the key alias if we set `debug=
 
 The following example shows how you can display localized text with the `umb-localize` element:
 
+{% code title="my-element.ts" %}
 ```html
 <button>
     <umb-localize key="dialog_myKey"></umb-localize>
 </button>
 ```
+{% endcode %}
 
 {% hint style="info" %}
 You can have a look and try out the element in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui/?path=/docs/guides-localization-umblocalizeelement--docs).
@@ -55,18 +61,20 @@ In some situations, you need the localization as a variable that can be parsed. 
 
 When using an [**Umbraco Element**](umbraco-element.md)**,** the **Localization Controller** is already initialized on the `localize` property via the `UmbElementMixin`.
 
+{% code title="my-element.ts" %}
 ```typescript
-import { LitElement, css, html } from "lit";
-import { customElement } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { customElement, html } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 
-export default class MyElement extends UmbElementMixin(LitElement) {
-    render() {
+@customElement("my-element")
+export default class MyElement extends UmbLitElement {
+    override render() {
         return html`<uui-button .label=${this.localize.term('general_close')}>
         </uui-button>`;
     }
 }
 ```
+{% endcode %}
 
 The arguments will be passed to the function in the localization file if it is a function.
 
@@ -74,24 +82,27 @@ The arguments will be passed to the function in the localization file if it is a
 
 If you are working with an Umbraco Controller, then you need to initialize the Localization Controller on your own via the `UmbLocalizationController`:
 
+{% code title="my-controller.ts" %}
 ```typescript
 import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
 import { UmbLocalizationController } from '@umbraco-cms/backoffice/localization-api';
 
 export class MyController extends UmbControllerBase {
-    // Create a new instance of the controller and attach it to the element
+    // Create a new instance of the controller and attach it to this controller
     #localize = new UmbLocalizationController(this);
 
-    render() {
-        return html` <uui-button .label=${this.#localize.term('general_close')}></uui-button> `;
+    getCloseLabel() {
+        return this.#localize.term('general_close');
     }
 }
 ```
+{% endcode %}
 
 ## Using arguments
 
 Sometimes you need to pass arguments to the localization to return different values based on the arguments. A localization value can be either a string or a function. Given a localization file like this, we can return different values based on the number of items:
 
+{% code title="en.js" %}
 ```javascript
 export default {
     section: {
@@ -104,6 +115,7 @@ export default {
     },
 };
 ```
+{% endcode %}
 
 {% hint style="info" %}
 You can try out the arguments feature in the [UI API Documentation](https://apidocs.umbraco.com/v18/ui/?path=/story/guides-localization-umblocalizeelement--with-arguments).
@@ -113,10 +125,12 @@ You can try out the arguments feature in the [UI API Documentation](https://apid
 
 You can pass arguments to the localization by adding them as additional attributes:
 
+{% code title="my-element.ts" %}
 ```html
 <!-- Outputs: Showing 5 items -->
 <umb-localize key="section_numberOfItems" args="[5]">Showing items</umb-localize>
 ```
+{% endcode %}
 
 The arguments will be passed to the function in the localization file if it is a function. The `args` attribute must be JSON-serializable and each array value will be passed to the function as an extra argument.
 
@@ -124,10 +138,12 @@ The arguments will be passed to the function in the localization file if it is a
 
 You can pass arguments to the localization by calling the `term` method with the arguments:
 
+{% code title="my-element.ts" %}
 ```typescript
 // Outputs: Showing 5 items
 this.localize.term('section_numberOfItems', 5);
 ```
+{% endcode %}
 
 The arguments will be passed to the function in the localization file if it is a function. Each argument of `term` will be passed to the function as an extra argument.
 
@@ -149,10 +165,12 @@ export default {
 
 You can use the same `args` attribute to pass the arguments:
 
+{% code title="my-element.ts" %}
 ```html
 <!-- Outputs: Showing 5 items -->
 <umb-localize key="section_numberOfItems" args="[5]"></umb-localize>
 ```
+{% endcode %}
 
 ### Using with manifests
 

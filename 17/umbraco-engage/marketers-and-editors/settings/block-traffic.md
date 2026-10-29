@@ -26,7 +26,7 @@ The **[Suspicious Activity](suspicious-activity.md)** view, next to Block traffi
 
 ## Creating a rule
 
-Select **Create rule**, fill in the below mentioned fields, and select **Save and close**:
+Select **Create rule**, fill in the below mentioned fields, and select **Submit**:
 
 * **Name**: A short name for the rule.
 * **Description**: A short note about what the rule is for.
@@ -42,7 +42,7 @@ The new rule then appears in the overview.
 1. Set **Type** to *IP address* and **Condition** to *Equals*.
 2. Put your office IP address in **Value** (your IT team can tell you the public one).
 3. Leave **Active** on.
-4. Select **Save and close**.
+4. Select **Submit**.
 
 From now on, visits from that address will stay out of your reports.
 

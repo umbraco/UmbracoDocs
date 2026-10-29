@@ -27,6 +27,7 @@ Restart your Umbraco site. The Deploy triggers appear in the catalogue under the
 Connections are not transferred verbatim. The default policy is:
 
 * Settings are transferred unless explicitly listed in `IgnoreSettings`.
+* Deploy never transfers OAuth authentication references. Earlier versions needed `oAuthCredentialsId` in `IgnoreSettings` to keep the target's authentication. That entry is no longer needed.
 * Values prefixed with `ENC:` (encrypted at rest) are skipped by default. Set `IgnoreEncrypted` to `false` to include them — only when source and target share the same data-protection keyring.
 
 Configure under `appsettings.json`:

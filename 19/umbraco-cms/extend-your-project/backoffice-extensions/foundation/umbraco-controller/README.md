@@ -1,0 +1,100 @@
+---
+description: >-
+  Contain or reuse logic across Elements. A Controller enables you to separate
+  logic while still being connected with the life cycle of an element.
+---
+
+# Umbraco Controller
+
+An Umbraco controller provides all the features of an Umbraco element within a separate class. Do this for architectural reasons or to reuse a feature across elements.
+
+## Host Element
+
+A Controller is assigned to a Host Element. This assignment may be indirect, since Controllers can host other Controllers.
+
+The host element is a web component enhanced to host controllers. All [Umbraco Elements](../umbraco-element.md) are controller hosts, as are all Umbraco controllers, allowing controllers to host other controllers.
+
+To retrieve the controller’s host element, use the `getHostElement()` method.
+
+## Element Life Cycle
+
+Controllers can declare the following methods, which are triggered depending on the host element’s life cycle:
+
+* `hostConnected()` — Called when the host element connects to the DOM.
+* `hostDisconnected()` — Called when the host element disconnects from the DOM.
+* `destroy()` — Called when the controller is taken out of commission.
+
+Additionally, Umbraco Controllers implement a `getHostElement()` method, which enables any Controller to receive the Element that hosts the Controllers.
+
+## Registration
+
+A Controller should register itself with a given host. This is handled automatically when extending the `UmbControllerBase` class. The following example demonstrates a controller implementation:
+
+{% code title="my-own-controller-implementation.ts" %}
+```typescript
+import { UmbControllerBase } from '@umbraco-cms/backoffice/class-api';
+import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+
+export class MyOwnControllerImplementation extends UmbControllerBase {
+
+    #secondsAlive = 0;
+    #timer?: ReturnType<typeof setInterval>;
+
+    constructor(host: UmbControllerHost) {
+        // Pass the host to the base class, this will trigger the registration.
+        super(host);
+    }
+    
+    override hostConnected() {
+        // It's important to call the super method when overriding a method of the base class.
+        super.hostConnected();
+        this.#timer = setInterval(this.#onInterval, 1000)
+    }
+    
+    override hostDisconnected() {
+        // It's important to call the super method when overriding a method of the base class.
+        super.hostDisconnected();
+        clearInterval(this.#timer);
+    }
+    
+    #onInterval = () => {
+        this.#secondsAlive++;
+        console.log(`My own controller has been connected for ${this.#secondsAlive} seconds.`);
+    }
+
+    override destroy(): void {
+        // It's important to call the super method when overriding a method of the base class.
+        super.destroy();
+        // We do not need to stop the timer in the Destroy method, because the hostDisconnected method is also called if connected and destroyed.
+    }
+}
+```
+{% endcode %}
+
+If you prefer not to extend `UmbControllerBase`, you can register a class as a controller yourself, as shown in the following example. The class must implement the `UmbController` interface, and its `destroy()` method must remove it from the host with `removeUmbController()`. Such a class does not host other controllers or provide `getHostElement()`.
+
+{% code title="my-own-controller-implementation.ts" %}
+```typescript
+import type { UmbController, UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
+
+export class MyOwnControllerImplementation implements UmbController {
+
+    // A unique alias ensures the host registers each instance separately.
+    readonly controllerAlias = Symbol();
+    #host: UmbControllerHost;
+
+    constructor(host: UmbControllerHost) {
+        this.#host = host;
+        this.#host.addUmbController(this);
+    }
+
+    hostConnected(): void {}
+
+    hostDisconnected(): void {}
+    
+    destroy(): void {
+        this.#host.removeUmbController(this);
+    }
+}
+```
+{% endcode %}

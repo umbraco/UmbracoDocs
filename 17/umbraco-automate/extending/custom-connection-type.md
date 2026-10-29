@@ -125,7 +125,7 @@ No manual registration is required. The connection type is discovered at startup
 
 ## Verify
 
-Restart your Umbraco site. The new connection type appears in the connection type picker under the **Custom** group. Create a connection, click **Test connection**, and confirm the credentials work.
+Restart your Umbraco site. The new connection type appears in the connection type picker under the **Custom** group. Create and save a connection, click **Test connection**, and confirm the credentials work.
 
 ## See Also
 

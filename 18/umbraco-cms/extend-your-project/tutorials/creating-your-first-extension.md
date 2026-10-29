@@ -108,7 +108,7 @@ export default class MyDashboardElement extends UmbElementMixin(HTMLElement) {
 
     onClick = () => {
         this.#notificationContext?.peek("positive", {
-            data: { headline: "Hello" },
+            data: { message: "Hello" },
         });
     };
 }

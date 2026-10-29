@@ -141,11 +141,30 @@ The `[AITool]` attribute provides metadata:
     "Display Name",         // Human-readable name (required)
     ScopeId = "scope-id",   // Scope identifier for tool grouping
     IsDestructive = false,  // Whether tool modifies data (default: false)
+    RequiresApproval = true, // Whether an interactive run asks before calling it (default: same as IsDestructive)
     Tags = new[] { "tag1", "tag2" }  // Additional tags (default: empty)
 )]
 ```
 
 {% endcode %}
+
+### Destructive Tools and Approval
+
+`IsDestructive` and `RequiresApproval` work together to decide when a human is involved:
+
+| `IsDestructive` | `RequiresApproval` | Interactive runs (for example, Copilot Workspace) | Contextual Copilot | Non-interactive runs (for example, Automate) |
+| --------------- | ------------------ | ------------------------------------------------- | ------------------ | -------------------------------------------- |
+| `false`         | (ignored)          | Runs                                              | Available          | Runs                                         |
+| `true`          | `false`            | Runs without asking                               | Withheld           | Denied, unless the run allows changes that don't need approval |
+| `true`          | `true` (default)   | Asks the editor to approve or deny                | Withheld           | Denied                                       |
+
+Set `RequiresApproval = false` on a destructive tool whose effect editors can undo themselves, such as saving a draft that version history can roll back. Keep approval on anything the public sees change, like publishing, or that removes content.
+
+`RequiresApproval` defaults to the value of `IsDestructive`, so existing tools keep their current behavior. Setting it to `true` on a tool that isn't destructive has no effect. A tool that should be approved must also be marked destructive.
+
+Tools that implement `IAITool` directly can override the `RequiresApproval` property instead. Its default implementation returns `IsDestructive`.
+
+To make the approval message clearer, override `DescribeInvocation` in `AIToolBase<TArgs>`. It returns the sentence shown to the editor, for example "Publish 'Home', making it live." Override `DescribeInvocationAsync` instead when building the sentence needs a lookup, such as fetching the item's name.
 
 ## Step 4: Test Your Tool
 
@@ -266,3 +285,4 @@ protected override async Task<object> ExecuteAsync(
 - **Use descriptive argument names** - Include `[Description]` attributes that explain the expected format and constraints.
 - **Keep tools focused** - Each tool should do one thing well. Prefer separate `GetUser` and `CreateUser` tools over a single `ManageUsers` tool.
 - **Mark destructive operations** - Set `IsDestructive = true` on tools that modify or delete data.
+- **Only ask when it matters** - Set `RequiresApproval = false` on destructive tools whose changes editors can undo, so they aren't interrupted for every draft edit.

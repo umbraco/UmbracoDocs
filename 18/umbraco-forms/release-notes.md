@@ -20,7 +20,76 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
-### [18.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.2.0) (September 17th 2026)
+### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
+
+#### Consent details for the Data Consent field
+
+The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
+
+For more information, see the [Field Types](editor/creating-a-form/fieldtypes/README.md) article and discussion [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508).
+
+#### Content Security Policy nonce on Forms scripts
+
+Forms now adds a nonce to the script tags it renders, including the reCAPTCHA v2 script. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+External script and stylesheet URLs are now rendered as registered, without the Forms version.
+
+For more information, see the [Content Security Policy nonce](developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article and discussion [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554).
+
+#### Recycle bin notifications
+
+Moving a form or folder to the recycle bin, or restoring it, now publishes notifications that custom code can handle. There are eight: a cancelable notification before each operation and one after it, for forms and for folders.
+
+Forms also refreshes its cache on all servers when a form or folder is moved to the recycle bin or restored.
+
+For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
+
+#### Other
+
+* OpenAPI: Describe content routes in the Forms Delivery API document as the endpoints send them, so generated clients get the real properties
+* Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
+* Form Import: Keep a form's original creator and creation date when importing over an existing form
+* Copy Form: Require a name for the copied form
+* Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name
+* Recycle Bin: Return an error when restoring a form or folder that isn't in the recycle bin, instead of renaming it
+* Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
+* Themes: Encode the page captions and summary caption shown in the multi-page paging details
+* Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
+
+{% hint style="warning" %}
+This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
+
+* [Forms Delivery API OpenAPI document](upgrading/version-specific.md#forms-delivery-api-openapi-document)
+* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
+* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
+* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
+{% endhint %}
+
+### 18.2.2 (October 27th 2026)
+* Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
+* Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
+* Permissions: Show analytics and the forms list to users with the **View Entries** permission, and hide the actions they can't use [#1802](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1802)
+* Upgrading: Fix a boot failure when upgrading to 18.2 if a form's creator or last editor has since been deleted
+* OpenAPI: Fix the Forms Delivery API document failing when a discriminator mapping names a missing schema [#1805](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1805)
+* Entries: Validate omitted mandatory fields when creating an entry through the Management API [#1806](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1806)
+* Sidebar Navigation: Load users in pages, so installations with many users don't freeze when opening the Forms section [#1807](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1807)
+* Entries: Show entries on first load when the default **All** state filter is selected [#1808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1808)
+* Submit Message: Treat an empty GUID as no **Go to page** on submit [#1801](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1801)
+* Submit Message: Keep rich text formatting and line breaks in the submit message editor [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804) [#1800](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1800)
+* Workflows: Keep a form's workflows and submit message when the workflow settings open before the form has loaded [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804)
+* Field Settings: Move the group picker into the field's main settings [#1781](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1781)
+* Copy Form: Keep references to other fields in field settings when copying a form [#1810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1810)
+* Date Picker: Keep the selected date when going back a page in a multi-page form, instead of swapping the day and month [#1811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1811)
+
+{% hint style="warning" %}
+Entry exports are now stored for the user who generated them, and only that user can download them. Exports generated before the upgrade can no longer be downloaded, so generate them again. For details of the access checks, see the [Security](developer/security.md#access-to-forms-entries-and-exports) article.
+{% endhint %}
+
+### 18.2.1 (October 7th 2026)
+* Migrations: Fix boot failure (`UFForms.Trashed`) when upgrading to 18.2.0 from an earlier release. See the [Version Specific Upgrade Notes](upgrading/version-specific.md) article for details
+
+### [18.2.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.2.0) (October 6th 2026)
 
 #### Form versions
 
@@ -40,6 +109,8 @@ A form in the recycle bin no longer renders on your website, and the Forms API r
 
 Nothing is removed from the database until you delete it from the bin. Deleting it there removes the form with its entries, workflows, stored versions, and user permissions.
 
+As in the CMS, the recycle bin is only available to users without Forms start folders. A user limited to start folders can still move forms and folders to the bin, but an administrator restores, empties, or permanently deletes them.
+
 For more information, see the [Recycle Bin](editor/managing-forms/recycle-bin.md) article.
 
 #### Form history
@@ -48,7 +119,52 @@ The **Info** tab of a form now lists each change made to the form. An entry reco
 
 For more information, see the [Form History](editor/managing-forms/form-history.md) article.
 
+{% hint style="info" %}
+Form versions are kept indefinitely. Removing old versions is opt-in, so an upgrade never removes form history on its own.
+
+To start removing them, set `Enabled` to `true` under `Umbraco:Forms:Options:FormVersionCleanup`, and set `KeepLatestVersions`, `KeepVersionsNewerThanDays`, or both. The most recent version of a form and any pinned version are always kept.
+{% endhint %}
+
 #### Other
+
+* File Upload: Delete a form's uploaded files when the form is permanently deleted
+* Folders: Don't permanently delete a folder that is, or contains, a start folder for a user or user group. The message names who to assign a different start folder to first
+* All items detailed under release candidates for 18.2.0.
+
+{% hint style="warning" %}
+A folder that is, or contains, a start folder for a user or user group can't be permanently deleted. Give them a different start folder in the **Security** section first.
+{% endhint %}
+
+### 18.2.0-rc2 (October 2nd 2026)
+
+The changes below are the ones made since `18.2.0-rc`. For everything else in this release, see the `18.2.0-rc` notes.
+
+* Form Design: Warn when a form was changed by someone else since you opened it, instead of overwriting their changes on save
+* Workflows: Reject a form save when a mandatory workflow setting is empty or contains only whitespace
+* Workflows: Require the **Email Template** setting of the **Send email with template (Razor)** workflow [#1790](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1790)
+* Rollback: Show the form's workflows in the version preview, and include them when comparing versions
+* Rollback: Mask secret workflow settings in the version preview
+* Form History: Record an entry when a form is created
+* Delivery API: Return a 400 or 415 status code, instead of a 500, for entry submissions that can't be processed
+* Themes: Fix conditions when the same form is rendered more than once on a page [#1799](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1799)
+* Data Retention: Delete records scheduled for removal in batches, so a large backlog no longer fails to delete [#1796](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1796)
+* Prevalue Sources: Read the options of the Umbraco Documents source from the published content cache, to speed up forms that use it [#1791](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1791)
+* Notifications: Show the message from a notification handler that cancels a form save [#1785](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1785)
+* Form Submission: Fix submitting a form on a page whose URL has a `model` query string parameter [#1793](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1793)
+* Form Entries: Show a loading indicator while entries load [#1789](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1789)
+* Field Design: Reject a field name or alias that contains only whitespace [#1788](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1788)
+* Form Design: Show the invalid state for a form name that contains only whitespace
+* Form Design: Open the field type picker directly when changing the answer type of a field [#1778](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1778)
+* Form Design: Show condition summaries next to the page, group, or field they belong to [#1787](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1787)
+* Form Design: Use the same drag handle and reorder icons as the CMS [#1792](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1792)
+
+{% hint style="warning" %}
+A form that already has an empty mandatory workflow setting can't be saved until that setting is filled in. The error message names the workflow. Loading the form isn't affected.
+
+A Management API client can send the `concurrencyToken` returned by `GET /form/{id}` with `PUT /form/{id}`. If the form was saved since, the update is rejected with a 409 "Conflict" status code. A request without the token still overwrites the form, as before.
+{% endhint %}
+
+### [18.2.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.2.0) (September 17th 2026)
 
 * Records: Add create and delete endpoints to the Management API
 * Field Types: Add a Decimal storage type for field values, so decimals keep their fractional part instead of being stored as whole numbers [#1515](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1515)
@@ -74,12 +190,6 @@ For example, a date is sent as `2027-09-22T19:33:00`. These workflows previously
 Date field values shown to people now follow the culture the entry was submitted with. The entries grid, the exports, the email and Slack workflows, and the Save as Umbraco Node workflow are affected.
 
 For the full list of what changed and what to check, see the [Version Specific Upgrade Notes](upgrading/version-specific.md#date-formats-in-workflows-and-exports) article.
-{% endhint %}
-
-{% hint style="info" %}
-Form versions are kept indefinitely. Removing old versions is opt-in, so an upgrade never removes form history on its own.
-
-To start removing them, set `Enabled` to `true` under `Umbraco:Forms:Options:FormVersionCleanup`, and set `KeepLatestVersions`, `KeepVersionsNewerThanDays`, or both. The most recent version of a form and any pinned version are always kept.
 {% endhint %}
 
 ### 18.1.3 (September 24th 2026)

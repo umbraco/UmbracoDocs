@@ -25,6 +25,8 @@ The **Info** tab on an automation lists every version with its publish date and 
 * **View** a previous version on the canvas.
 * **Rollback** to a previous version. Rollback creates a new draft based on the chosen version.
 
+Comparing versions shows sensitive values as `********`. A changed value is still reported as a change.
+
 <figure><img src="../.gitbook/assets/version-history.png" alt="The version history list on the Info tab of an automation."><figcaption><p>The version history of an automation.</p></figcaption></figure>
 
 ## In-Flight Runs

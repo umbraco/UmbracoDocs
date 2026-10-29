@@ -456,6 +456,12 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 }
 ```
 
+From Umbraco Forms 17.6.0, a request that can't be processed returns a client error instead of a 500 "Internal Server Error":
+
+* A body that can't be read as a form entry returns a 400 "Bad Request" status code.
+* A missing or invalid antiforgery token returns a 400 "Bad Request" status code.
+* A `Content-Type` header other than JSON returns a 415 "Unsupported Media Type" status code. A request with no `Content-Type` header is still read as JSON.
+
 A successful response will return a 202 "Accepted" status code.
 
 It will contain an object detailing the post-submission configured the form, for example:

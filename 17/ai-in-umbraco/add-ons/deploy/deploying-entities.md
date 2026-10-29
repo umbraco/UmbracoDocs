@@ -46,7 +46,7 @@ data/Revision/umbraco-ai-profile__chat-assistant_abcd1234.uda
 
 **Contains:**
 - Profile name and alias
-- Capability (Chat, Embedding, or SpeechToText)
+- Capability (Chat, Embedding, SpeechToText, or the experimental ImageGeneration and Decision)
 - Model provider ID and model ID
 - Capability-specific settings
 - Connection reference (UDI)
@@ -92,9 +92,12 @@ data/Revision/umbraco-ai-settings__ai-settings_abcd1234.uda
 - Default chat profile reference (optional)
 - Default embedding profile reference (optional)
 - Classifier chat profile reference (optional)
+- Default Image Generation profile reference (optional, experimental)
+- Default Decision profile reference (optional, experimental)
 
 **Dependencies:**
 - Any referenced profiles are deployed first
+- A reference to a profile that is missing on the target, or whose capability doesn't match the setting, is left empty. The import does not fail.
 
 ### Prompts (Requires Umbraco.AI.Prompt.Deploy)
 
@@ -144,7 +147,17 @@ For **orchestrated agents**, the workflow implementation must be registered in t
 {% endhint %}
 
 {% hint style="info" %}
-Standard agent `UserGroupPermissions` are keyed by user group GUID. Referenced user groups must exist in the target environment with matching GUIDs. These are not added as explicit Deploy dependencies, so ensure user groups are deployed before agents that reference them.
+
+Standard agent `UserGroupPermissions` are deployed by user group alias, because user group keys differ between environments. On import, each alias is matched to the user group with the same alias in the target environment.
+
+User groups are not added as explicit Deploy dependencies. Create them in the target environment before deploying agents that reference them.
+
+{% endhint %}
+
+{% hint style="warning" %}
+
+If an agent denies tools for a user group that doesn't exist in the target environment, the import fails. Deploy doesn't drop a deny, because that would give the group's users tools you withheld. Create the user group with the same alias, then deploy the agent again.
+
 {% endhint %}
 
 ## Step-by-Step: Deploying a Connection
@@ -176,7 +189,7 @@ Open the file and verify it contains the configuration reference, not the actual
 ```json
 {
   "Settings": {
-    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
+    "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```
@@ -214,6 +227,10 @@ When you deploy to the target environment (via Umbraco Cloud, Azure DevOps, or o
 2. Creates the Connection in the target environment
 3. Resolves `$Umbraco:AI:Secrets:OpenAIApiKey` from the target's `appsettings.json`
 4. Activates the Connection
+
+Sensitive literal values, such as an API key typed directly into the field, are never deployed. The target environment keeps its own value for those fields.
+
+If the target has no value for a required secret, the Connection is imported as inactive. Enter the secret on the target environment, then activate the Connection. For details, see [Configuration](configuration.md).
 
 ## Step-by-Step: Deploying a Profile
 
@@ -312,7 +329,7 @@ Here's how the same configuration deploys to different environments:
   "Alias": "openai-production",
   "ProviderId": "openai",
   "Settings": {
-    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
+    "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```
@@ -356,11 +373,13 @@ If the target environment doesn't resolve `$` references:
 
 ### User Group Permissions Missing on Agents
 
-Standard agent `UserGroupPermissions` are keyed by user group GUID but are not tracked as explicit Deploy dependencies. If an agent's user group permissions appear empty or incorrect after deployment:
+Standard agent `UserGroupPermissions` are deployed by user group alias but are not tracked as explicit Deploy dependencies. If an agent's user group permissions appear empty or incorrect after deployment:
 
 1. Ensure referenced user groups exist in the target environment
-2. Confirm user groups have the same GUIDs across environments
-3. Deploy user groups before deploying Agents that reference them
+2. Confirm user groups have the same alias across environments
+3. Create user groups before deploying Agents that reference them
+
+An entry that only allows tools for a missing user group is dropped. An entry that denies tools for a missing user group fails the import.
 
 ## Next Steps
 

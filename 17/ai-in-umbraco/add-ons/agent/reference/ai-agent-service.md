@@ -64,12 +64,6 @@ public interface IAIAgentService
         IEnumerable<Guid>? userGroupIds = null,
         CancellationToken cancellationToken = default);
 
-    Task<AIAgent?> SelectAgentForPromptAsync(
-        string userPrompt,
-        string surfaceId,
-        AgentAvailabilityContext context,
-        CancellationToken cancellationToken = default);
-
     Task<AgentResponse> RunAgentAsync(
         Guid agentId,
         IEnumerable<ChatMessage> messages,
@@ -257,29 +251,7 @@ Validates that a specific tool call is permitted for the agent.
 
 **Returns**: `true` if the tool is allowed, otherwise `false`.
 
-## Selection and execution
-
-### SelectAgentForPromptAsync
-
-Selects the best agent for a user prompt from agents available in the given surface and context. When multiple agents are available, uses an LLM classifier to choose one.
-
-| Parameter           | Type                       | Description                              |
-| ------------------- | -------------------------- | ---------------------------------------- |
-| `userPrompt`        | `string`                   | The user's message                       |
-| `surfaceId`         | `string`                   | The surface to search (e.g., `"copilot"`) |
-| `context`           | `AgentAvailabilityContext` | Context for scope-based filtering        |
-| `cancellationToken` | `CancellationToken`        | Cancellation token                       |
-
-**Returns**: The selected agent, or `null` if no agents are available.
-
-**Behavior**:
-
-- Returns `null` if no active agents are available on the surface for the context.
-- Returns the single agent directly if only one is available (no LLM call).
-- Uses the **classifier chat profile** (falls back to default chat profile) when multiple agents need classification.
-- Falls back to the first available agent if classification fails.
-
-See [Settings](../../../concepts/settings.md#classifier-chat-profile) for configuring the classifier profile.
+## Execution methods
 
 ### RunAgentAsync (persisted agent, by ID)
 

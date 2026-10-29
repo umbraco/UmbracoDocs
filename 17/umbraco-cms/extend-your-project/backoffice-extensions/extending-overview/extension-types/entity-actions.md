@@ -50,7 +50,7 @@ To register an entity action, developers declare the entity action in the manife
 
 {% code title="entity-action/manifest.ts" %}
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: 'entityAction',
@@ -66,7 +66,7 @@ const manifest = {
     },
 };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
@@ -107,25 +107,31 @@ export { MyEntityAction as api };
 
 ### The `execute()` Method <a href="#execute-method" id="execute-method"></a>
 
-The `execute()` method is flexible and allows developers to perform nearly any task on an entity. Developers can perform network requests using `fetch()`, or access a repository.
+The `execute()` method is flexible and allows developers to perform nearly any task on an entity. Developers can perform network requests with the [Umbraco HTTP Client](../../foundation/fetching-data/http-client.md), or access a repository. The following example gets an item from the API in the [Creating a backoffice API](../../../tutorials/creating-a-backoffice-api/README.md) tutorial.
 
 {% hint style="info" %}
-The [Executing Requests](../../foundation/fetching-data/) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
+The [Fetching Data](../../foundation/fetching-data/) article provides an overview of the methods for fetching data from Umbraco, including `tryExecute()` requests.
 {% endhint %}
 
 {% code title="entity-action/my-fetch-entity-action.ts" %}
 ```typescript
 import { UmbEntityActionBase } from '@umbraco-cms/backoffice/entity-action';
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 
 export class MyFetchEntityAction extends UmbEntityActionBase<never> {
 	override async execute() {
-		const response = await fetch(`/server-resource/${this.args.unique}`);
+		const { data, error } = await tryExecute(
+			this,
+			umbHttpClient.get({
+				url: `/umbraco/management/api/v1/my/item/${this.args.unique}`,
+				security: [{ scheme: 'bearer', type: 'http' }],
+			}),
+		);
 
-		if (!response.ok) {
-			throw new Error('Network response was not ok');
+		if (error) {
+			throw error;
 		}
-
-		const data = await response.json();
 
 		if (data) {
 			console.log(data); // Do something with the data
@@ -192,7 +198,7 @@ Each permission has a set of verbs that will be checked against on both the clie
 | F                        | Umb.Document.Read                |
 | A                        | Umb.Document.Update              |
 | D                        | Umb.Document.Delete              |
-| I                        | Umb.Document.CreateBlueprint     |
+| ï                        | Umb.Document.CreateBlueprint     |
 | N                        | Umb.Document.Notifications       |
 | U                        | Umb.Document.Publish             |
 | R                        | Umb.Document.Permissions         |
@@ -227,7 +233,7 @@ Entity user permissions are assigned to a document, media, member, etc., and are
 
 {% code title="entity-user-permission/manifest.ts" %}
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: 'entityUserPermission',
@@ -242,7 +248,7 @@ const manifest = {
     },
 };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
@@ -264,13 +270,13 @@ The `userGranularPermission` extension type will render a document selection con
 
 {% code title="user-granular-permission/manifest.ts" %}
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: 'userGranularPermission',
     alias: 'My.UserGranularPermission.Document',
     name: 'My Document Granular User Permission',
-    element: () => import('./my-document-user-granular-permission-ui.js')
+    element: () => import('./my-document-user-granular-permission-ui.js'),
     meta: {
         schemaType: "DocumentPermissionPresentationModel",
         label: "Documents",
@@ -278,7 +284,7 @@ const manifest = {
     },
 };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
@@ -288,19 +294,21 @@ extensionRegistry.register(manifest);
 
 Developers can enforce permission controls on **Entity Action** extensions by defining conditions in the `conditions` array.
 
-In the following example, the `conditions:alias` property of an `entityAction` extension matches the `alias` property of the `entityUserPermission` extension definition.
+In the following example, the `conditions:alias` property of an `entityAction` extension is `Umb.Condition.UserPermission.Document`. This condition checks the permissions of the current user for the document.
 
 Similarly, the `conditions:allOf` array must contain the one of the values from the `meta:verbs` array of the `entityUserPermission` extension definition.
 
 {% code title="entity-action/manifest.ts" %}
 ```typescript
-import { extensionRegistry } from '@umbraco-cms/extension-registry';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
 
 const manifest = {
     type: 'entityAction',
+    kind: 'default',
     alias: 'My.EntityAction.DocumentArchive',
     name: 'My Document Archive Action',
     api: () => import('./my-document-archive-entity-action.js'),
+    forEntityTypes: ['document'],
     meta: {
 		icon: 'icon-box',
 		label: 'Archive',
@@ -313,6 +321,6 @@ const manifest = {
 	],
 };
 
-extensionRegistry.register(manifest);
+umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}

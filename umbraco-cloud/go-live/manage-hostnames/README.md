@@ -16,6 +16,7 @@ The hostnames contain the region on which your project is hosted. The options av
 * South UK (uksouth01)
 * Australian East (aueast01)
 * Canada Central (cacent01)
+* Sweden Central (secent01)
 
 To access the backoffice, add `/umbraco` at the end of the Live, Development, or Staging URL.
 

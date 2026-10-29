@@ -141,6 +141,10 @@ abortController.abort();
 [Speech-to-Text Controller](speech-to-text-controller.md)
 {% endcontent-ref %}
 
+{% content-ref url="decision-controller.md" %}
+[Decision Controller](decision-controller.md)
+{% endcontent-ref %}
+
 {% content-ref url="tool-controller.md" %}
 [Tool Controller](tool-controller.md)
 {% endcontent-ref %}
