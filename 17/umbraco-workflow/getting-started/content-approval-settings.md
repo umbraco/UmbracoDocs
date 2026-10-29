@@ -235,7 +235,7 @@ In `Development` and `Production` mode, editing a template on the server, includ
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
     ```
 
-    This is already required for `Production` mode, and is not compatible with the `InMemoryAuto` Models Builder mode. For more information, see the [Runtime Modes](https://docs.umbraco.com/umbraco-cms/run-in-production/runtime-modes) article.
+    This is already required for `Production` mode, and is not compatible with the `InMemoryAuto` Models Builder mode. For more information, see the [Runtime Modes](https://docs.umbraco.com/umbraco-cms/17.latest/run-in-production/runtime-modes) article.
 5. Build, publish, and deploy the site.
 
 If a template on disk does not compile, Workflow renders the version shipped in the package instead and logs the error. To find templates that fail to compile, go to **Settings** > **Health Check** > **Workflow** > **Email Templates**. The check reports each failing template with the compiler message. It also reports culture-specific templates.
