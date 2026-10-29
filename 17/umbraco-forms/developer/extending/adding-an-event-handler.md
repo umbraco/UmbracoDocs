@@ -186,7 +186,7 @@ The recycle bin notifications derive from the Umbraco CMS `MovingToRecycleBinNot
 
 The restore notifications list the forms or folders in `RestoringEntities` and `RestoredEntities`.
 
-Cancelling a "-ing" notification throws a `FormOperationCancelledException`, and nothing is moved or restored. The Management API returns a 400 response, and the backoffice shows any messages the handler added.
+Canceling a "-ing" notification throws a `FormOperationCancelledException`, and nothing is moved or restored. The Management API returns a 400 response, and the backoffice shows any messages the handler added.
 
 Moving a folder to the recycle bin, or restoring it, includes everything inside it:
 
