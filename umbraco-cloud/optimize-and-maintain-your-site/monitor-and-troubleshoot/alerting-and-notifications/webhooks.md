@@ -47,7 +47,9 @@ The following example shows the payload for a failed deployment:
 ```
 {% endcode %}
 
-<!-- TODO: confirm the projectUrl base URL, and whether the payload is a versioned, stable contract -->
+<!-- TODO: confirm the production projectUrl base URL. The format is <portal base URL>/project/<alias> -->
+
+<!-- TODO: confirm whether the payload is a versioned, stable contract -->
 
 | Field | Description |
 | --- | --- |

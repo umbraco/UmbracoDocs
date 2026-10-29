@@ -21,7 +21,7 @@ You can find **Alerting & Notifications** in the Umbraco Cloud Portal:
 Notifications are **opt-in**. If no enabled alert rule matches an event, no notification is sent.
 {% endhint %}
 
-<!-- TODO: screenshot of the Alerting & Notifications overview. Proposed file: .gitbook/assets/alerting-overview.png -->
+<!-- TODO: screenshot of the Alerting & Notifications overview. Proposed file: .gitbook/assets/alerting-overview.png. Take after the history UI shows the new statuses -->
 
 ## Key Concepts
 
@@ -55,7 +55,7 @@ The notification includes the affected hostname. Where available, it also includ
 
 `Hostname: www.example.com. Attack: HTTP DDoS. RPS: 12000. Action: block`
 
-<!-- TODO: confirm the exact attack and action values customers will see -->
+<!-- TODO: confirm the attack and action values customers will see. Values come from Cloudflare, application-layer attacks only -->
 
 For more information about how Umbraco Cloud protects your site, see the [Web Application Firewall](../../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) article.
 
@@ -131,7 +131,7 @@ Autoupgrade alerts are sent for **every** upgrade of your environment. This incl
 5. Select **Create alert rule**.
 6. [Send a test notification](#test-an-alert-rule) to check that it arrives.
 
-<!-- TODO: screenshot of the create rule form. Proposed file: .gitbook/assets/alerting-create-rule.png -->
+<!-- TODO: screenshot of the create rule form. Proposed file: .gitbook/assets/alerting-create-rule.png. Take after the history UI shows the new statuses -->
 
 {% hint style="info" %}
 Saving a rule is processed in the background. It can take a moment before the rule appears in the list.
@@ -219,7 +219,7 @@ Webhook URLs must use HTTPS and point to a publicly reachable host. You can add 
 [Webhook Notifications](webhooks.md)
 {% endcontent-ref %}
 
-<!-- TODO: screenshot of a webhook or email notification. Proposed file: .gitbook/assets/alerting-webhook-example.png -->
+<!-- TODO: screenshot of a webhook or email notification. Proposed file: .gitbook/assets/alerting-webhook-example.png. Take after the history UI shows the new statuses -->
 
 ## Test an Alert Rule
 
