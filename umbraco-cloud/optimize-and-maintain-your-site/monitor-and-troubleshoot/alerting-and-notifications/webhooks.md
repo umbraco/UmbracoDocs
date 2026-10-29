@@ -88,11 +88,11 @@ To change the secret, add the webhook as a new destination with the new secret. 
 * Timeouts, connection errors, `408`, and `5xx` responses are retried. Umbraco Cloud makes up to 3 attempts in total.
 * Other `4xx` responses are not retried. A `4xx` response usually means the request was rejected on purpose, for example because of a wrong secret.
 
-You can see the delivery result for each destination in the [alert history](README.md#alert-history-and-activity).
+The alert history shows each webhook destination as **Delivered** or **Failed**. For more information, see the [Delivery Results per Destination](README.md#delivery-results-per-destination) section.
 
 ## Troubleshooting Failed Deliveries
 
-If the alert history shows **Delivery failed** for a webhook destination, check the following:
+If the alert history shows **Failed** for a webhook destination, check the following:
 
 * The URL is public and uses HTTPS.
 * The endpoint responds within 10 seconds.

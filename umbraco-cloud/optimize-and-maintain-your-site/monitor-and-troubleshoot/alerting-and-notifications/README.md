@@ -31,8 +31,8 @@ Notifications are **opt-in**. If no enabled alert rule matches an event, no noti
 | **Event type** | The kind of event the rule reacts to, such as **Deployment** or **DDoS**. You can't change the event type after the rule is created. |
 | **Condition** | Narrows a rule to specific outcomes. For example, a Deployment rule can be limited to failed deployments. |
 | **Destination** | Where the notification goes: an email address or a webhook URL. A rule can have up to 15 destinations. |
-| **Cooldown** | The minimum time between two notifications from the same rule. A cooldown keeps you from being flooded during an ongoing incident. |
-| **Alert history** | A log of every alert: what fired, when, and whether the notification reached each destination. |
+| **Cooldown** | The minimum time after a sent notification before the same rule sends another. A cooldown keeps you from being flooded during an ongoing incident. |
+| **Alert history** | A log of every alert: what fired, when, and whether each destination received the notification. |
 
 ## Available Alerts
 
@@ -240,26 +240,80 @@ Test notifications appear in the [alert history](#alert-history-and-activity) wi
 
 ## Cooldown
 
-The cooldown is the minimum number of minutes between two delivered notifications from the same rule. Events during the cooldown don't send a notification. The events are still recorded in the alert history as **Cooldown suppressed**, so you can see that they happened.
+The cooldown starts when a rule sends a notification. The cooldown is measured from the time the alert fired. Until the cooldown ends, events don't send a notification. The events are still recorded in the alert history as **Cooldown suppressed**, so you can see that they happened.
+
+A cooldown only starts if the notification could reach at least one destination:
+
+* If every destination failed, no cooldown starts. The next event sends a new notification.
+* An email that is still waiting for delivery confirmation holds the cooldown.
+* If a later bounce means no destination received the notification, the cooldown ends. The next event sends a new notification.
+
+For what counts as a failed destination, see the [Delivery Results per Destination](#delivery-results-per-destination) section.
+
+Test notifications never start a cooldown.
 
 Each rule has its own cooldown. A cooldown on one rule never suppresses notifications from another rule.
 
 ## Alert History and Activity
 
-The alert history lists every alert for a project or organization, newest first. You can filter by event type and by date range, and include or exclude test notifications.
+The alert history lists every alert for a project or organization, newest first. You can filter by:
 
-Each entry shows the event type, when the alert fired, the details, and the delivery result for each destination.
+* Event type
+* Environment
+* Priority
+* Result
+* Period: the last 7, 14, or 30 days, or all time
+* Project (organization only)
 
-| Status | Description |
+Test notifications are shown by default. Use the **Test** result filter to see only test notifications.
+
+<!-- TODO: align filter labels with the Cloud Portal once the history UI shows the new statuses -->
+
+Each entry shows the event type, when the alert fired, the details, the overall outcome, and the result for each destination.
+
+| Outcome | Description |
 | --- | --- |
-| **Delivered** | The notification reached all destinations. |
-| **Partially delivered** | The notification reached some destinations, but not all. |
-| **Delivery failed** | The notification did not reach any destination. |
+| **Waiting for confirmation** | The notification was sent, and at least one email is not confirmed yet. |
+| **Delivered** | Every destination received the notification. |
+| **Partially delivered** | Some destinations received the notification, but not all. |
+| **Delivery failed** | No destination received the notification. |
 | **Cooldown suppressed** | The event happened during the rule's cooldown, so no notification was sent. |
 
-<!-- TODO: confirm which statuses are shown in the UI, and how long alert history is kept -->
+<!-- TODO: align outcome labels with the Cloud Portal once the history UI shows the new statuses -->
 
-The **activity** view shows how many times each rule fired and when it last fired. The view covers the last 30 days by default and up to 90 days. Test notifications are not counted.
+<!-- TODO: confirm how long alert history is kept -->
+
+### Delivery Results per Destination
+
+A webhook destination is **Delivered** when your endpoint returns a `2xx` status code. Otherwise, the destination is **Failed**. The result is known as soon as the notification is sent.
+
+An email destination has one of the following results:
+
+* **In progress**: The email provider has queued, accepted, or deferred the message.
+* **Delivered**: The recipient's mail server accepted the message.
+* **Bounced**: The recipient's mail server rejected the message.
+* **Dropped**: The email provider did not attempt delivery.
+* **Blocked**: The recipient's mail server refused the message.
+* **Failed**: The message never reached the email provider.
+* **Unconfirmed**: No delivery confirmation arrived in time.
+
+An email with no result after 30 minutes becomes **Unconfirmed**. If the email provider deferred the message, the limit is 6 hours. Unconfirmed counts as not delivered. The alert history can take up to 5 minutes more to show the change.
+
+A **Delivered** email can later become **Bounced** if the recipient's mail server bounces the message afterwards. The bounce is the final result.
+
+For failed destinations, the alert history shows one of the following messages:
+
+| Result | Message |
+| --- | --- |
+| **Bounced** | The recipient's mail server rejected the message. The address may no longer exist. |
+| **Dropped** | The email provider did not attempt delivery, usually because earlier messages to this address failed and it has been suppressed. Contact support to have it reinstated. |
+| **Blocked** | The recipient's mail server refused the message. This is usually a filtering or policy decision on their side rather than a problem with the address. |
+| **Unconfirmed** | No delivery confirmation was received in time, so whether this message arrived is unknown. |
+| **Failed** | The notification could not be sent to this destination. |
+
+### Activity
+
+The rule list shows how many alerts each rule raised in the last 7 days, and when the rule last fired. Cooldown-suppressed events are counted. Test notifications are not counted.
 
 ## Troubleshooting
 
@@ -267,11 +321,15 @@ The **activity** view shows how many times each rule fired and when it last fire
 
 * Check that the rule is **enabled**.
 * For Deployment and Autoupgrade rules, check that the outcome is selected in the rule's conditions.
+* Check that the rule's environment type covers the environment. For example, a **Production** rule doesn't send notifications for deployments to a non-production environment.
 * Check the [alert history](#alert-history-and-activity):
   * No entry: No enabled rule matched the event.
   * **Cooldown suppressed**: The event happened during the cooldown. Lower the cooldown if you want more notifications.
-  * **Delivery failed**: The destination didn't accept the notification. For webhooks, see the [Webhook Notifications](webhooks.md#troubleshooting-failed-deliveries) article.
-* For email, check your spam folder.
+  * **Delivery failed**: No destination received the notification. Check the [result for each destination](#delivery-results-per-destination). For webhooks, see the [Webhook Notifications](webhooks.md#troubleshooting-failed-deliveries) article.
+  * **Bounced** or **Blocked**: Check the email address with the recipient's mail administrator.
+  * **Dropped**: Contact support to have the email address reinstated.
+  * **Unconfirmed**: The email may or may not have arrived. Use **Send test** to check the destination.
+* An email shown as **Delivered** was accepted by the recipient's mail server. If the email isn't in the inbox, check the spam folder.
 * Use [Send test](#test-an-alert-rule) to confirm that a destination works.
 
 ### Duplicate Notifications for One Event
