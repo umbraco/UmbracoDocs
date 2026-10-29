@@ -20,6 +20,52 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
+
+#### Consent details for the Data Consent field
+
+The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
+
+For more information, see the [Field Types](editor/creating-a-form/fieldtypes/README.md) article and discussion [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508).
+
+#### Content Security Policy nonce on Forms scripts
+
+Forms now adds a nonce to the script tags it renders, including the reCAPTCHA v2 script. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+External script and stylesheet URLs are now rendered as registered, without the Forms version.
+
+For more information, see the [Content Security Policy nonce](developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article and discussion [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554).
+
+#### Recycle bin notifications
+
+Moving a form or folder to the recycle bin, or restoring it, now publishes notifications that custom code can handle. There are eight: a cancelable notification before each operation and one after it, for forms and for folders.
+
+Forms also refreshes its cache on all servers when a form or folder is moved to the recycle bin or restored.
+
+For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
+
+#### Other
+
+* OpenAPI: Describe content routes in the Forms Delivery API document as the endpoints send them, so generated clients get the real properties
+* Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
+* Form Import: Keep a form's original creator and creation date when importing over an existing form
+* Copy Form: Require a name for the copied form
+* Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name
+* Recycle Bin: Return an error when restoring a form or folder that isn't in the recycle bin, instead of renaming it
+* Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
+* Themes: Encode the page captions and summary caption shown in the multi-page paging details
+* Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
+
+{% hint style="warning" %}
+This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
+
+* [Forms Delivery API OpenAPI document](upgrading/version-specific.md#forms-delivery-api-openapi-document)
+* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
+* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
+* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
+{% endhint %}
+
 ### 18.2.2 (October 27th 2026)
 * Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
 * Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
