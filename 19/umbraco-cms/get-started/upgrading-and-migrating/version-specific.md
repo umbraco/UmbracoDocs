@@ -911,7 +911,7 @@ Umbraco 16 adds support for asynchronous migrations and part of this work involv
 
 There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
 
-Read more in the article on [custom indexing](../../develop-with-umbraco/application-code/examine/indexing.md) and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
+Read more in the [Searching with Examine](../../develop-with-umbraco/application-code/examine/README.md) article and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
 ### Updated dependencies
 

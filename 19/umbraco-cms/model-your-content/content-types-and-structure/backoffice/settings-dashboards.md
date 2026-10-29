@@ -24,7 +24,7 @@ For more information about creating custom dashboards, see the [Dashboards](../.
 
 The Examine Management dashboard provides an overview of the Examine functionality available directly within the Umbraco backoffice. The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed and rebuild the indexes if there's a problem. You can also test keywords to see what results will be returned.
 
-For more information about Examine Management, see the [Examine Management](../../../develop-with-umbraco/application-code/examine/examine-management.md) article.
+For more information about Examine Management, see the [Searching with Examine](../../../develop-with-umbraco/application-code/examine/README.md) article.
 
 </details>
 
