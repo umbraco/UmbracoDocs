@@ -21,6 +21,8 @@ A webhook URL must meet the following requirements:
 * The URL is up to 500 characters long.
 * The URL does not contain a username or password.
 
+The hostname is checked again when a notification is sent. If the hostname resolves to a private network address, the notification is rejected. Make sure the host resolves to a public address.
+
 Redirects are not followed. Enter the final URL of your endpoint.
 
 ## Payload
@@ -38,7 +40,7 @@ The following example shows the payload for a failed deployment:
   "alertName": "Deployment",
   "details": "Deployment failed for my-project: Development → Live",
   "customerMetadata": {
-    "team": "platform"
+    "severity": "high"
   },
   "isTest": false
 }
@@ -54,10 +56,12 @@ The following example shows the payload for a failed deployment:
 | `projectUrl` | Link to the project in the Umbraco Cloud Portal. |
 | `environmentName` | The environment the event happened on. |
 | `timeFired` | When the alert fired, in UTC (ISO 8601 format). |
-| `alertName` | The event type: `DDoS`, `Autoheal`, `Deployment`, or `Autoupgrade`. |
-| `details` | A human-readable description of what happened. |
-| `customerMetadata` | The custom metadata from your alert rule. Empty if the rule has none. |
+| `alertName` | The event type: `DDoS`, `Autoheal`, `Deployment`, or `Autoupgrade`. The outcome, such as failed or completed, is in `details`. |
+| `details` | A human-readable description of what happened. Can be empty. |
+| `customerMetadata` | The rule's priority as `severity`: `critical`, `high`, `medium`, or `low`. |
 | `isTest` | `true` when the notification was sent with [Send test](README.md#test-an-alert-rule). |
+
+The payload contains only the fields listed above.
 
 {% hint style="info" %}
 Check `isTest` before triggering any action, such as paging an on-call engineer. Test notifications use your real project and environment, so the other fields look like a real alert.
@@ -65,22 +69,24 @@ Check `isTest` before triggering any action, such as paging an on-call engineer.
 
 ## Secure Your Webhook With a Secret
 
-You can add an optional **secret** of up to 512 characters to a webhook destination. Umbraco Cloud sends the secret in the `uc-webhook-auth` request header on every notification.
+You can add an optional secret of up to 512 characters to a webhook destination. The Cloud Portal labels the field **Signing secret**.
+
+Umbraco Cloud sends the secret as-is in the `uc-webhook-auth` request header on every notification. The request is not signed, and the secret is not hashed.
 
 Check the header on your endpoint, and reject requests where the value doesn't match your secret.
 
 {% hint style="warning" %}
-The secret is stored encrypted and is not shown again after you save it.
+The secret is stored encrypted and is not shown again after you save it. The Cloud Portal shows **Secret set** instead.
 
 To change the secret, add the webhook as a new destination with the new secret. Then remove the old destination.
 {% endhint %}
 
 ## Delivery and Retries
 
-* Your endpoint must respond with a `2xx` status code. Any other response counts as a failed delivery.
+* Your endpoint must respond with a `2xx` status code. Any other response counts as a failed delivery, including redirects.
 * Each attempt times out after 10 seconds. Respond quickly, and do any slow processing afterwards.
-* Failed attempts caused by timeouts, connection errors, or `5xx` responses are retried. Umbraco Cloud makes up to 3 attempts in total.
-* `4xx` responses are not retried. A `4xx` response usually means the request was rejected on purpose, for example because of a wrong secret.
+* Timeouts, connection errors, `408`, and `5xx` responses are retried. Umbraco Cloud makes up to 3 attempts in total.
+* Other `4xx` responses are not retried. A `4xx` response usually means the request was rejected on purpose, for example because of a wrong secret.
 
 You can see the delivery result for each destination in the [alert history](README.md#alert-history-and-activity).
 

@@ -12,9 +12,10 @@ Alerting and Notifications lets you choose which events on your Umbraco Cloud pr
 
 You can create alert rules for a single project, or for your whole organization. Organization rules can cover every project, including projects you create later.
 
-You can find **Alerting & Notifications** on your project and on your organization in the Umbraco Cloud Portal.
+You can find **Alerting & Notifications** in the Umbraco Cloud Portal:
 
-<!-- TODO: confirm the exact menu path for project and organization, for example Insights > Alerting & Notifications -->
+* **Project**: Go to **Insights** → **Alerting & Notifications**.
+* **Organization**: Go to **Overview** → **Alerting & Notifications**.
 
 {% hint style="info" %}
 Notifications are **opt-in**. If no enabled alert rule matches an event, no notification is sent.
@@ -37,7 +38,7 @@ Notifications are **opt-in**. If no enabled alert rule matches an event, no noti
 
 | Alert | Sent when | Conditions |
 | --- | --- | --- |
-| [DDoS](#ddos) | A DDoS attack against one of your hostnames is detected and mitigated. | None |
+| [DDoS](#ddos) | A Distributed Denial of Service (DDoS) attack against one of your hostnames is detected and mitigated. | None |
 | [Autoheal](#autoheal) | Umbraco Cloud restarts an environment automatically to recover it. | None |
 | [Deployment](#deployment) | A deployment to one of your environments starts, completes, or fails. | Required: one or more of **Started**, **Completed**, **Failed** |
 | [Autoupgrade](#autoupgrade) | An upgrade of one of your environments starts, completes, fails, or times out. | Required: one or more of **Started**, **Completed**, **Failed**, **Timed out** |
@@ -48,7 +49,7 @@ More alert types are planned for a later release. These include end-of-support w
 
 ### DDoS
 
-A DDoS alert is sent when Cloudflare's edge network detects and mitigates a Distributed Denial of Service (DDoS) attack. The alert covers application-layer (HTTP) attacks against a hostname on your project.
+A DDoS alert is sent when Cloudflare's edge network detects and mitigates a DDoS attack. The alert covers application-layer (HTTP) attacks against a hostname on your project.
 
 The notification includes the affected hostname. Where available, it also includes the attack type, the request rate, and the action taken. For example:
 
@@ -62,7 +63,11 @@ For more information about how Umbraco Cloud protects your site, see the [Web Ap
 
 An Autoheal alert is sent when Azure detects that an environment is unhealthy and restarts it automatically.
 
-<!-- TODO: product-approved customer-facing explanation of Autoheal, and what the details text contains -->
+<!-- TODO: product-approved explanation of what triggers Autoheal -->
+
+The notification text is always the same:
+
+`The site was automatically recycled to recover from an unhealthy state. No action is required.`
 
 An Autoheal alert usually means your site stopped responding for a period. If you receive Autoheal alerts often, check the [log files](../resolve-issues-quickly-and-efficiently/log-files.md) for the cause. Common causes are high memory usage and long-running requests.
 
@@ -81,6 +86,14 @@ A Deployment alert is sent when a deployment to one of your environments changes
 The notification shows the outcome and the source and target environments. For example:
 
 `Deployment failed for my-project: Development → Live`
+
+Deployment alerts also cover deployments through the [Umbraco CI/CD Flow](../../../build-and-customize-your-solution/handle-deployments-and-environments/umbraco-cicd/README.md). A CI/CD deployment has no source environment, so the notification shows only the target environment. For example:
+
+`CI/CD deployment failed for my-project (Live)`
+
+A CI/CD deployment that times out is reported as **Failed**, with "(timed out)" in the notification text.
+
+For Deployment rules, the [environment type](#alert-rule-settings) refers to the **target** environment of the deployment.
 
 {% hint style="info" %}
 To be notified about failures only, create a Deployment rule with only **Failed** selected.
@@ -107,16 +120,15 @@ The notification shows the outcome, the environment, and the upgraded components
 Autoupgrade alerts are sent for **every** upgrade of your environment. This includes [automatic upgrades](../../manage-product-upgrades/product-upgrades/minor-upgrades.md) and upgrades you start yourself from the [Cloud Portal](../../manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-from-the-cloud-portal). Both run the same upgrade process.
 {% endhint %}
 
-
 ## Create an Alert Rule
 
 1. Go to your project or organization in the [Umbraco Cloud Portal](https://www.s1.umbraco.io).
 2. Navigate to **Alerting & Notifications**.
-   <!-- TODO: confirm the menu path -->
-3. Select **Create alert rule**.
-   <!-- TODO: confirm the button label -->
+   * Project: **Insights** → **Alerting & Notifications**.
+   * Organization: **Overview** → **Alerting & Notifications**.
+3. Select **New rule**.
 4. Fill in the rule settings described in the [Alert Rule Settings](#alert-rule-settings) section.
-5. Select **Save**.
+5. Select **Create alert rule**.
 6. [Send a test notification](#test-an-alert-rule) to check that it arrives.
 
 <!-- TODO: screenshot of the create rule form. Proposed file: .gitbook/assets/alerting-create-rule.png -->
@@ -130,14 +142,22 @@ Saving a rule is processed in the background. It can take a moment before the ru
 * **Event type**: The alert the rule reacts to. You can't change the event type later.
 * **Conditions**: For Deployment and Autoupgrade rules, the outcomes you want to be notified about. At least one is required.
 * **Destinations**: Up to 15 email addresses or webhook URLs. See the [Destinations](#destinations) section.
-* **Cooldown**: The minimum number of minutes between notifications from the rule. `0` means no cooldown. The maximum is 43,200 minutes (30 days). See the [Cooldown](#cooldown) section.
-* **Enabled**: Turn the rule off to stop notifications without deleting the rule.
+* **Priority**: **Critical**, **High**, **Medium**, or **Low**. The default is **High**. The priority is included in the notification.
+* **Cooldown**: The minimum time between notifications from the rule, in minutes, hours, or days. The default is 5 minutes. `0` means no cooldown. The maximum is 43,200 minutes (30 days). See the [Cooldown](#cooldown) section.
+* **Enabled**: Use the **Enable this alert** toggle in the form, or the **On/Off** switch in the rule list. Turn a rule off to stop notifications without deleting the rule.
 * **Projects** (organization rules only): All projects, or a selection. See the [Project and Organization Rules](#project-and-organization-rules) section.
-* **Environment Type**: You can select all environment types, or scope it down to only production or feature environments. 
+* **Environment type**: **All environments**, **Production**, or **Non-production**.
+  * **Production** is the last environment in your deployment chain, the one your visitors reach.
+  * **Non-production** covers every environment before Production.
+  * You can't select a single non-production environment.
 
 ### Edit or Delete a Rule
 
-You can add and remove destinations, but you can't edit one. To change an email address or a webhook URL, remove the destination and add a new one.
+Select **Save changes** to save your edits to a rule.
+
+You can't change the event type of a rule. To react to a different event type, delete the rule and create a new one.
+
+You can add and remove destinations, but you can't edit an email or webhook destination. To change an email address or a webhook URL, remove the destination and add a new one. Removing a destination keeps its past results in the alert history.
 
 The same applies to a [webhook secret](webhooks.md#secure-your-webhook-with-a-secret). Add the webhook again as a new destination with the new secret, then remove the old destination.
 
@@ -166,7 +186,7 @@ Rules are independent of each other. If a project rule and an organization rule 
 
 From the organization, you can also see the project rules of every project in the organization. To change a project rule, go to the project.
 
-<!-- Should we add environment type information here -->
+Organization rules also have an environment type. For example, an organization rule for **Production** only sends notifications about the production environment of each covered project.
 
 ## Destinations
 
@@ -178,16 +198,16 @@ The subject line uses the following format:
 
 `[Umbraco Cloud] Deployment failed alert on my-project (Live)`
 
+For Deployment and Autoupgrade alerts, the subject includes the outcome, such as "failed". Subjects of test emails start with `[Umbraco Cloud] [TEST]`.
+
 The email contains:
 
 * The project name and a link to the project in the Cloud Portal.
 * The environment.
 * The alert type and time.
 * Details about what happened.
-* Your custom metadata, if the rule has any.
+* The rule's priority, under **Additional information**.
 * An Alert ID to use when contacting support.
-
-
 
 ### Webhook
 
@@ -199,13 +219,17 @@ Webhook URLs must use HTTPS and point to a publicly reachable host. You can add 
 [Webhook Notifications](webhooks.md)
 {% endcontent-ref %}
 
-<!-- TODO: screenshot of wehbook or email Proposed file: .gitbook/assets/alerting-webhook-example.png -->
+<!-- TODO: screenshot of a webhook or email notification. Proposed file: .gitbook/assets/alerting-webhook-example.png -->
 
 ## Test an Alert Rule
 
 Select **Send test** on a rule to send a sample notification to all of the rule's destinations. The sample uses your real project name and environment. You can see what a real notification from the rule looks like.
 
-<!-- TODO: confirm the button label -->
+**Send test** is available when you edit a saved rule:
+
+* The test uses the saved rule. **Send test** is unavailable while the form has unsaved changes.
+* A test is sent even if the rule is turned off.
+* For DDoS rules, the details text is a sample, such as `DDoS mitigation triggered for <hostname>`. A real DDoS notification uses the format shown in the [DDoS](#ddos) section.
 
 Test notifications are marked in two ways:
 
