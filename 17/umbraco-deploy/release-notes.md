@@ -18,6 +18,14 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.4.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 30th 2026)
+
+* Delete the `.uda` files and signatures of the descendants when deleting a dictionary item [#356](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/356). Previously, the next schema deployment failed with `ParentNotFound`. If you already committed the `.uda` files of these descendants, remove them manually.
+* Include the log in the schema deployment status report again. Deploy no longer writes the `deploy.log` file, which stayed empty.
+* Report a schema deployment that fails without an error message as failed instead of completed. A failure recorded right after a completed deployment now stays visible.
+* Show the Deploy dashboard status as ready instead of an error when the Deploy folder doesn't exist yet.
+* Remove the double slash from remote tree and content comparison requests when a workspace URL ends with a slash.
+
 ### [17.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 13th 2026)
 
 * Pick any item from the remote environment in the **Partial Restore** dialog, including members. Items that don't exist on the local environment are included too ([discussion #321](https://github.com/umbraco/Umbraco.Deploy.Issues/discussions/321)). The picker pages through the remote tree and you can search it by name. Members also match on username and email. A remote environment running an older Deploy version returns the items as before.
