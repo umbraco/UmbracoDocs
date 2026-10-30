@@ -32,7 +32,7 @@ To get the latest version of Umbraco, follow these steps:
 
 Alternatively, update Umbraco via the NuGet Package Manager in Visual Studio:
 
-![NuGet Package Manager](../../../../.gitbook/assets/Manage_packages.png)
+![NuGet Package Manager](../../../../.gitbook/assets/nuget-package-manager-visual-studio.png)
 
 <details>
 
