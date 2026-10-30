@@ -114,7 +114,7 @@ To update the Platform Configuration for your project:
 3. Locate the **Platform Configuration** section.
 4. Select the environment you want to update.
 
-<figure><img src="../../../.gitbook/assets/platform-configuration-toggles.png" alt="Platform Configuration section for the Live environment with toggles for Proactive Auto-Heal, Always On, Sticky Sessions, and File System Certificate"><figcaption><p>Platform Configuration toggles</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/platform-configuration-toggles.png" alt="Platform Configuration toggles in Advanced Configuration"><figcaption><p>Platform Configuration toggles</p></figcaption></figure>
 
 5. Toggle the settings to the desired state.
 6. Select **Save** to apply the changes.
@@ -122,7 +122,7 @@ To update the Platform Configuration for your project:
 7. On the confirmation dialog, review the new values and select **Save** to confirm. The environment restarts to apply the new settings.
    * Select **Cancel** to keep the environment running and discard the pending changes.
 
-<figure><img src="../../../.gitbook/assets/platform-configuration-dialog.png" alt="Save platform configuration dialog listing the new value of each setting and warning that the environment restarts"><figcaption><p>Platform Configuration confirmation dialog</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/platform-configuration-dialog.png" alt="Platform Configuration confirmation dialog"><figcaption><p>Platform Configuration confirmation dialog</p></figcaption></figure>
 
 {% hint style="warning" %}
 Saving changes to Platform Configuration restarts the environment. Selecting **Cancel** on the dialog or the **Cancel** button below the toggles reverts any pending changes.
