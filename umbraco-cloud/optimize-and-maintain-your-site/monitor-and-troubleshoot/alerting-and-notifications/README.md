@@ -108,7 +108,7 @@ The notification shows the outcome, the environment, and the upgraded components
 `Autoupgrade completed for my-project (Live): Umbraco.Cms, Umbraco.Forms`
 
 {% hint style="warning" %}
-Autoupgrade alerts are sent for **every** upgrade of your environment. This includes [automatic upgrades](../../manage-product-upgrades/product-upgrades/minor-upgrades.md) and upgrades you start yourself from the [Cloud Portal](../../manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-from-the-cloud-portal). Both run the same upgrade process.
+Autoupgrade alerts are sent for **every** upgrade of your environment. This includes automatic upgrades for [Minor and Patch Upgrades](../../manage-product-upgrades/product-upgrades/minor-upgrades.md) and upgrades you start yourself from the [Cloud Portal](../../manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-from-the-cloud-portal). Both run the same upgrade process.
 {% endhint %}
 
 ## Create an Alert Rule
