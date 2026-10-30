@@ -35,9 +35,9 @@ To run without sticky sessions using Azure SignalR Service, configure:
 
 This approach requires additional setup but allows for true horizontal scaling without server affinity.
 
-**Pay attention**
-
+{% hint style="info" %}
 Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means that setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../develop-with-umbraco/configuration/cache-settings.md) for more information.
+{% endhint %}
 
 ### Option 3: Stateless with Your Own Backplane
 
@@ -45,6 +45,7 @@ You can run without sticky sessions using any compatible SignalR backplane, such
 
 Set `Umbraco:Cms:SignalR:ClientShouldSkipNegotiation` to `true` in `appsettings.json` on every server:
 
+{% code title="appsettings.json" %}
 ```json
 {
   "Umbraco": {
@@ -56,14 +57,15 @@ Set `Umbraco:Cms:SignalR:ClientShouldSkipNegotiation` to `true` in `appsettings.
   }
 }
 ```
+{% endcode %}
 
 Umbraco's backoffice SignalR client skips negotiation and connects directly using WebSockets. Each new connection can reach any server without a preceding negotiation request tying the client to a particular server.
 
 The established WebSocket connection remains on that server. Your backplane distributes messages between servers; the setting does not register or replace a backplane.
 
-**Pay attention**
-
+{% hint style="warning" %}
 Skipping negotiation requires WebSockets support in your clients, servers, proxies, and load balancer. Other SignalR transports cannot be used as fallbacks. Do not enable skipping negotiation with Azure SignalR Service, which requires negotiation to redirect clients to the service.
+{% endhint %}
 
 The setting removes SignalR's need for sticky sessions. Other application state may still require shared storage.
 
@@ -82,9 +84,9 @@ Microsoft has a good list of available backplanes in its [SignalR load balancing
 ## Code examples
 The following code examples show how you can activate SignalR load balancing using an Umbraco composer.
 
-**Pay attention**
-
+{% hint style="info" %}
 Both Umbraco and these composers use `.AddSignalR()`.  This duplication isn't a concern as the underlying code registers the required services as singletons.
+{% endhint %}
 
 ### Using existing infrastructure
 It is possible to use your existing database as a backplane. If this database is hosted in Azure it is not possible to enable Service Broker which will have an impact on message throughput. Nevertheless, it might be sufficient to cover your needs.
