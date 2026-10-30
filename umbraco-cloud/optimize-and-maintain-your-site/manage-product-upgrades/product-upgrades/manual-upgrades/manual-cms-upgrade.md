@@ -10,35 +10,29 @@ Projects on Cloud are either upgraded automatically with new patch and minor rel
 
 In rare cases, your project might not be on the latest patch or minor and you will need to upgrade the project manually.
 
-This article will give you a step-by-step on how to manually upgrade your Umbraco Cloud project.
+Follow the steps below to upgrade your Umbraco Cloud project manually.
 
 ## Prepare for the upgrade
 
-* When upgrading a Umbraco Cloud project manually, the first step is to either [clone down left-most mainline environment to your local machine](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/) or pull down the latest changes for your left-most mainline environment.
-* Navigate to the `/src/UmbracoProject/` folder to find the `.csproj` file.
-* Make sure you can run your Cloud project locally and restore content and media. It's important that you check that everything works once the upgrade has been applied and for this, you need to have a clone locally that resembles the Cloud environment as much as possible.
+1. [Clone the left-most mainline environment to your local machine](../../../../build-and-customize-your-solution/handle-deployments-and-environments/working-locally/), or pull the latest changes.
+2. Restore content and media, and make sure the project runs locally.
+3. Check the [product dependencies](../product-dependencies.md) for the version you are upgrading to.
+4. Make sure [unattended upgrades](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/upgrading/upgrade-unattended) are enabled and deployed to all environments. Without the setting, the database upgrade is not run automatically.
 
 ## Get the latest version of Umbraco
 
 {% hint style="info" %}
-For Cloud projects using **legacy Umbraco versions (7 or 8)**, follow the specific steps outlined in the [Manual upgrades for legacy Umbraco](manual-cms-upgrade.md#manual-upgrades-for-legacy-umbraco) section.
+For legacy Umbraco versions (7 or 8), follow the steps in the **Manual upgrades for legacy Umbraco** section below.
 {% endhint %}
 
 To get the latest version of Umbraco, follow these steps:
 
-1. Run the `dotnet add package Umbraco.Cms` command in the directory that contains your project files. If you want a specific version, run the `dotnet add package Umbraco.Cms --version <VERSION>` command.
-2. Run `dotnet restore` to install the package.
-3. Open your `.csproj` file and confirm that the `Umbraco.Cms` package reference shows the correct version.
+1. In the `/src/UmbracoProject/` folder, run `dotnet add package Umbraco.Cms`. To install a specific version, add `--version <VERSION>`.
+2. Run `dotnet list package` and confirm that `Umbraco.Cms` shows the new version.
 
-```xml
-<ItemGroup>
-  <PackageReference Include="Umbraco.Cms" Version="x.x.x" />
-</ItemGroup>
-```
+Alternatively, update Umbraco via the NuGet Package Manager in Visual Studio:
 
-Alternatively, you can also update Umbraco via the `NuGet Package Manager` in Visual Studio:
-
-![NuGet Package Manager](../../../../.gitbook/assets/Manage_packages.png)
+![NuGet Package Manager](../../../../.gitbook/assets/nuget-package-manager-visual-studio.png)
 
 <details>
 
@@ -174,31 +168,22 @@ This concludes the steps specific to the legacy Umbraco versions. To continue, f
 
 After updating the NuGet packages, follow these steps to complete the upgrade. Make sure everything is functioning correctly before pushing the changes to your Umbraco Cloud project.
 
-* Run the project locally
-* When the project spins up, you'll be prompted to log in to verify the upgrade
-* On the installation screen, you need to verify the upgrade:
+1. Run the project locally.
+2. Log in to the backoffice.
+3. Select the Umbraco logo and confirm the version number.
+4. Check that the site runs without errors.
 
-<figure><img src="../../../../.gitbook/assets/upgrade-screen.png" alt=""><figcaption></figcaption></figure>
-
-* Hit **Continue** - this will complete upgrading the database
-* The upgrade will finish up
-* When it's complete you will be sent to the Umbraco backoffice
-
-Make sure that everything works on the local clone and that you can **run the project without any errors**.
+{% hint style="warning" %}
+If the URL shows `/umbraco/authorizeupgrade?redir=`, unattended upgrades are not enabled. See the [Prepare for the upgrade](#prepare-for-the-upgrade) section.
+{% endhint %}
 
 ## Push upgrade to Cloud
 
-Before you deploy the upgraded project to the Cloud, it's important that you check if there are any [**dependencies**](../product-dependencies.md) on the new Umbraco version.
+If you also upgraded Umbraco Forms or Umbraco Deploy, include those changes in the same commit.
 
-If updates are available for Umbraco Forms or Umbraco Deploy then you can upgrade those locally as well, before moving on.
-
-When you've upgraded everything locally, and made sure that everything runs without any errors, you are ready to deploy the upgrade to Umbraco Cloud.
-
-* Stage and commit all changes in Git
-* Push the changes to the Cloud environment
-* When everything is pushed, head on over to the Umbraco Cloud Portal
-* Access the backoffice of the Cloud environment you pushed the upgrade
-* You will again be prompted to log in to complete the database upgrade
-* You will be sent to the backoffice once the upgrade is complete
-
-Again it's **important** that you make sure everything runs without any errors before moving on to the next Cloud environment.
+1. Stage and commit all changes in Git.
+2. Push the changes to the left-most mainline environment. For more information, see the [Deploying Changes](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
+3. Log in to the backoffice of that environment and confirm the version number.
+4. Check that the environment runs without errors.
+5. Deploy the upgrade to the next environment from the Cloud Portal. For more information, see the [Deploying between environments](../../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/cloud-to-cloud.md) article.
+6. Repeat steps 3–5 for each environment until the upgrade reaches Live.
