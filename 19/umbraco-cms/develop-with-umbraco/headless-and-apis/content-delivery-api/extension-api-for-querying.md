@@ -26,9 +26,9 @@ The placeholders in the example (`xxx`, `yyy`, etc.) represent the values that e
 You can include only one `fetch` parameter, while multiple `filter` and `sort` parameters are allowed. Additionally, the order of the `sort` parameters influences the sorting behaviour. Refer to the [Query parameters](./#query-parameters) section for the currently supported options.
 {% endhint %}
 
-The implementation of each querying option consists two classes; one for indexing data into the underlying search index, and one for handling the query.
+The implementation of each querying option consists of two classes: one for indexing data into the underlying search index and one for handling the query.
 
-By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through our index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
+By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through the search index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
 
 In the following sections, we will explore the implementation details of creating custom querying functionality for the Delivery API.
 
@@ -111,7 +111,7 @@ The `GetFields()` and `GetFieldValues()` methods each play a role in defining ho
 * `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
 * `GetFieldValues()` is responsible for retrieving the values of the defined index fields. In this case, the `"featured"` field of content items of type `"author"`. It creates an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise), which will be added to the index.
 
-Since our custom query option modifies the index structure, we will need to rebuild the underlying search index. See [this article](../../search/extending-search/database-cache-for-index-values.md) for instructions. Once rebuilt, we can make a request to the Delivery API query endpoint as follows:
+Since our custom query option modifies the index structure, we will need to rebuild the underlying search index. See the article on [Database Cache for Index Values](../../search/extending-search/database-cache-for-index-values.md) for instructions. Once rebuilt, we can make a request to the Delivery API query endpoint as follows:
 
 **Request**
 
