@@ -17,12 +17,12 @@ The Platform Configuration section in the Umbraco Cloud Portal lets you manage e
 
 The settings are available on the following plans:
 
-| Setting                 | Shared plans | Dedicated plans |
-| ----------------------- | ------------ | --------------- |
-| Proactive Auto-Heal     | ❌            | ✅               |
-| Always On               | ❌            | ✅               |
-| Sticky Sessions         | ✅            | ✅               |
-| File System Certificate | ✅            | ✅               |
+| Setting                 | Configurable on Shared? | Configurable on Dedicated? |
+| ----------------------- | ----------------------- | -------------------------- |
+| Proactive Auto-Heal     | ❌                       | ✅                          |
+| Always On               | ❌                       | ✅                          |
+| Sticky Sessions         | ✅                       | ✅                          |
+| File System Certificate | ✅                       | ✅                          |
 
 Changes to any setting cause the environment to restart and take effect only after you confirm them.
 
@@ -100,7 +100,7 @@ File System Certificate is available on all plans. The setting stays the same af
 For more information on loading a certificate from a file, see the [Load certificate from file](https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
 
 {% hint style="warning" %}
-Only enable File System Certificate on environments that need it. Store certificate passwords using [Secrets Management](../../../begin-your-cloud-journey/project-features/secrets-management.md) instead of in your source code.
+Store certificate passwords using [Secrets Management](../../../begin-your-cloud-journey/project-features/secrets-management.md) instead of in your source code.
 {% endhint %}
 
 ## How to Update Platform Configuration

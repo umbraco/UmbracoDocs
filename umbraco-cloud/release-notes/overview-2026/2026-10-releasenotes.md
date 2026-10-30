@@ -108,6 +108,6 @@ For more details, see the [Platform Configuration](../../build-and-customize-you
 
 The Platform Configuration section now includes a **File System Certificate** toggle. When enabled, your application can load client certificates, such as X.509 certificates, as files at runtime. Common uses are integrations with payment providers, identity providers, and partner APIs.
 
-The setting was previously only available by contacting Umbraco Support. It is now available on all plans and is kept when the platform rebuilds the configuration of the environment.
+The setting was previously only available by contacting Umbraco Support. It is now available on all plans and stays the same after a plan change.
 
 For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#file-system-certificate) documentation.
