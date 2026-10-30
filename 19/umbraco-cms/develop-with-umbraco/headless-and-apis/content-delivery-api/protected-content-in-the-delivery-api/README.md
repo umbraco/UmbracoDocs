@@ -71,11 +71,6 @@ All redirect URLs must be absolute and contain the full path to the expected res
 When changing the `MemberAuthorization` configuration, Umbraco must be restarted to pick up on the changes.
 {% endhint %}
 
-{% hint style="warning" %}
-When enabling or disabling member authentication, the `DeliveryApiContentIndex` must be rebuilt to correctly reflect the existing content protection state.\
-The index can be rebuilt from the Examine Management dashboard. For more information, see the [Settings Dashboards](../../../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md) article.
-{% endhint %}
-
 ## Server endpoints
 
 Many client libraries support automatic discovery of the server OpenId endpoints. This is also supported by the Delivery API, so likely we do not have to worry about the server endpoints.\

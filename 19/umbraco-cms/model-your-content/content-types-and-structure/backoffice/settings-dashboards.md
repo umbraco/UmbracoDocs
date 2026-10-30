@@ -20,16 +20,6 @@ For more information about creating custom dashboards, see the [Dashboards](../.
 
 <details>
 
-<summary>Examine Management</summary>
-
-The Examine Management dashboard provides an overview of the Examine functionality available directly within the Umbraco backoffice. The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed and rebuild the indexes if there's a problem. You can also test keywords to see what results will be returned.
-
-For more information about Examine Management, see the [Searching with Examine](../../../develop-with-umbraco/application-code/examine/README.md) article.
-
-</details>
-
-<details>
-
 <summary>Published Status</summary>
 
 The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals.
