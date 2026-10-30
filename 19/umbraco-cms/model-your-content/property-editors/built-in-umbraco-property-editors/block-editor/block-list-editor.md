@@ -110,6 +110,8 @@ More Blocks can be added to the list by clicking the "Create new" button. You ca
 
 ![Block List - Create new](../../../../.gitbook/assets/BlockListEditor_AddContentInline.jpg)
 
+You can also add an Element from the Library as a Block, using the **Library** tab in the Block Catalogue. For more information, see the [Reusable Content in Block Editors](reusable-content-in-block-editors.md) article.
+
 To reorder the Blocks, click and drag a Block up or down to place in the desired order.
 
 To delete a Block click the trash-bin icon appearing on hover.
@@ -277,10 +279,10 @@ Sometimes you need to create or update Block List content via code, for example,
 
 Block List data is stored as a JSON string. Understanding this structure is essential before writing any import code.
 
-* `layout`: Defines the order blocks appear in and links each block to its content through a `contentKey` (a GUID). If the block has a Settings model, the layout entry also holds a `settingsKey`.
+* `layout`: Defines the order blocks appear in and links each block to its content through a `contentKey` (a GUID). If the block has a Settings model, the layout entry also holds a `settingsKey`. Each layout entry has its own `key` that identifies the entry. If a layout entry has no `key`, the backoffice uses its `contentKey`. `isExternalContent` is `true` when the block references a Library Element instead of an entry in `contentData`.
 * `contentData`: Holds the property values for each block. Every entry must include a `key` matching a `contentKey` in the layout, a `contentTypeKey` matching the GUID of the Element Type, and a `values` array of `{ "alias", "value" }` pairs.
 * `settingsData`: Holds settings values if your Block Type has a Settings model configured. It follows the same shape as `contentData`.
-* `expose`: Lists which blocks are visible, per culture and segment. A block is only rendered if it has a matching `expose` entry. For invariant content, use `null` for both `culture` and `segment`.
+* `expose`: Lists which blocks are visible, per culture and segment. A block is only rendered if it has a matching `expose` entry, except for blocks that reference a Library Element. For more information, see [Reusable Content in Block Editors](reusable-content-in-block-editors.md#library-element-blocks-in-the-stored-value). For invariant content, use `null` for both `culture` and `segment`.
 
 {% hint style="warning" %}
 Before Umbraco 14, Block List data used a different format. Blocks were referenced by UDI (`umb://element/...`), property values were stored as flat keys, and there was no `expose` array. That legacy format is no longer supported in Umbraco 18, so always write new content in the format shown below.
@@ -290,7 +292,11 @@ Before Umbraco 14, Block List data used a different format. Blocks were referenc
 {
   "layout": {
     "Umbraco.BlockList": [
-      { "contentKey": "abc123cd-0000-0000-0000-000000000000" }
+      {
+        "key": "abc123cd-0000-0000-0000-000000000000",
+        "contentKey": "abc123cd-0000-0000-0000-000000000000",
+        "isExternalContent": false
+      }
     ]
   },
   "contentData": [
@@ -612,6 +618,28 @@ expose.Add(new BlockItemVariation(contentKey, culture: null, segment: null));
 
 {% hint style="info" %}
 Settings do not need their own `expose` entry — `expose` only references a block's `contentKey`. If your block type has no Settings model, leave `SettingsData` empty (its default).
+{% endhint %}
+
+### Referencing a Library Element
+
+A block can reference an Element from the Library instead of holding its own content. For more information, see the [Reusable Content in Block Editors](reusable-content-in-block-editors.md) article.
+
+To add a reference, add a layout entry with the Element's key as `contentKey` and set `IsExternalContent` to `true`. The block doesn't need a `contentData` or `expose` entry.
+
+```csharp
+// The key of the Element in the Library
+var elementKey = Guid.Parse("9ba14e0f-1a16-4db8-b935-37a8d6879a41");
+
+layout.Add(new BlockListLayoutItem(elementKey)
+{
+    // The same Element can be referenced more than once, so give each layout entry its own key.
+    Key = Guid.NewGuid(),
+    IsExternalContent = true
+});
+```
+
+{% hint style="info" %}
+Always set `Key` for a Library Element reference. Without it, every reference to the same Element ends up with the same key. The block only renders on the website once the Element is published.
 {% endhint %}
 
 ### Handling Multilingual (Variant) Content
