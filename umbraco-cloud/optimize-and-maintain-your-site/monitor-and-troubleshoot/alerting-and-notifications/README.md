@@ -230,7 +230,7 @@ Test notifications appear in the [alert history](#alert-history-and-activity) wi
 
 ## Cooldown
 
-The cooldown starts when a rule sends a notification. The cooldown is measured from the time the alert fired. Until the cooldown ends, events don't send a notification. The events are still recorded in the alert history as **Cooldown suppressed**, so you can see that they happened.
+The cooldown is measured from the moment an alert fires and sends a notification. Until the cooldown ends, events don't send a notification. The events are still recorded in the alert history as **Cooldown suppressed**, so you can see that they happened.
 
 A cooldown only starts if the notification could reach at least one destination:
 
