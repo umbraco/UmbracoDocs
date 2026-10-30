@@ -1,7 +1,7 @@
 ---
 description: >-
   Learn how to manage Platform Configuration on Umbraco Cloud, including
-  Proactive Auto-Heal and Always On.
+  Proactive Auto-Heal, Always On, Sticky Sessions, and File System Certificate.
 tags:
   - ai-generated
 ---
@@ -12,8 +12,19 @@ The Platform Configuration section in the Umbraco Cloud Portal lets you manage e
 
 * **Proactive Auto-Heal**: Automatically restart an environment when the platform detects unhealthy resource usage.
 * **Always On**: Keep your application loaded at all times so it does not unload after 20 minutes without any incoming requests.
+* **Sticky Sessions**: Keep each visitor on the same instance for the duration of their session.
+* **File System Certificate**: Load client certificates from the file system of the environment.
 
-Changes to either setting cause the environment to restart and take effect only after you confirm them.
+The settings are available on the following plans:
+
+| Setting                 | Configurable on Shared? | Configurable on Dedicated? |
+| ----------------------- | ----------------------- | -------------------------- |
+| Proactive Auto-Heal     | ❌                       | ✅                          |
+| Always On               | ❌                       | ✅                          |
+| Sticky Sessions         | ✅                       | ✅                          |
+| File System Certificate | ✅                       | ✅                          |
+
+Changes to any setting cause the environment to restart and take effect only after you confirm them.
 
 ## Proactive Auto-Heal
 
@@ -70,20 +81,39 @@ If you downgrade an environment from a **Dedicated** plan to a **Shared** plan, 
 
 You do not need to take any action. The default is applied automatically as part of the downgrade process.
 
+## Sticky Sessions
+
+Sticky Sessions route each visitor to the same instance for the duration of their session. Use Sticky Sessions when your application keeps session state in the memory of a single instance.
+
+Sticky Sessions are available on all plans.
+
+### Sticky Sessions and Load Balancing
+
+[Load Balancing](../../../optimize-and-maintain-your-site/optimize-performance/load-balancing.md) requires Sticky Sessions. While Load Balancing is enabled on an environment, Sticky Sessions are enabled and the toggle cannot be changed.
+
+## File System Certificate
+
+File System Certificate lets your application load client certificates, such as X.509 certificates, as files at runtime. Enable File System Certificate when your project loads a certificate file to authenticate with an external service. Examples include payment providers, identity providers, and partner APIs.
+
+File System Certificate is available on all plans. The setting stays the same after a plan change.
+
+For more information on loading a certificate from a file, see the [Load certificate from file](https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
+
 ## How to Update Platform Configuration
 
-To update Proactive Auto-Heal or Always On for your project:
+To update the Platform Configuration for your project:
 
 1. Go to your project in the [Umbraco Cloud Portal](https://www.s1.umbraco.io).
 2. Navigate to **Configuration** > **Advanced** in the left-side menu.
 3. Locate the **Platform Configuration** section.
+4. Select the environment you want to update.
 
 <figure><img src="../../../.gitbook/assets/platform-configuration-toggles.png" alt="Platform Configuration toggles in Advanced Configuration"><figcaption><p>Platform Configuration toggles</p></figcaption></figure>
 
-4. Toggle **Proactive Auto-Heal** and **Always On** to the desired state.
-5. Select **Save** to apply the changes.
+5. Toggle the settings to the desired state.
+6. Select **Save** to apply the changes.
    * Select **Cancel** to discard the changes.
-6. On the confirmation dialog, select **Save** to confirm the change. The environment restarts to apply the new settings.
+7. On the confirmation dialog, review the new values and select **Save** to confirm. The environment restarts to apply the new settings.
    * Select **Cancel** to keep the environment running and discard the pending changes.
 
 <figure><img src="../../../.gitbook/assets/platform-configuration-dialog.png" alt="Platform Configuration confirmation dialog"><figcaption><p>Platform Configuration confirmation dialog</p></figcaption></figure>
