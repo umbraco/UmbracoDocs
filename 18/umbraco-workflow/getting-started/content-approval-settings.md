@@ -132,7 +132,7 @@ From the **Content Approvals** view in the **Settings** section, the **Notificat
 
 ## Notifications Overview
 
-Notification emails use HTML templates, which render information from the `ContentApprovalEmailModel` type, which lives in the `Umbraco.Workflow.Core.ContentApprovals.Email` namespace. While it is possible to modify the email templates from the backoffice, we recommend making changes via an Integrated Development Environment (IDE) of your choice.
+Notification emails use HTML templates, which render information from the `ContentApprovalEmailModel` type, which lives in the `Umbraco.Workflow.Core.ContentApprovals.Email` namespace. While it is possible to modify the email templates from the backoffice, you should make changes via an Integrated Development Environment (IDE) of your choice.
 
 The `ContentApprovalEmailModel` contains the following fields:
 
@@ -248,7 +248,7 @@ Workflow never overwrites a template on disk. To get the current version of a te
 
 ### Culture-Specific Templates
 
-Templates named with a culture suffix, such as `ApprovalRequest_da-DK.cshtml`, are still used for recipients whose language differs from the site's default language. Since templates are now localized at render time, they are no longer needed, and they do not receive translation updates. Remove them unless the wording must differ from the translation.
+Templates named with a culture suffix, such as `ApprovalRequest_da-DK.cshtml`, are still used for recipients whose language differs from the site's default language. Templates are localized at render time, so culture-specific templates are no longer needed. Remove them unless the wording must differ from the translation.
 
 ## Sample Email Template
 
