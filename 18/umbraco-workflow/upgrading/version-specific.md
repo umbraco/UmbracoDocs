@@ -51,7 +51,7 @@ The email template models were renamed as part of the namespace reorganization. 
 | `Umbraco.Workflow.Core.Email.Models.HtmlReminderEmailModel` | `Umbraco.Workflow.Core.ContentApprovals.Email.ContentApprovalReminderEmailModel` |
 | `Umbraco.Workflow.Core.Email.Models.HtmlReviewEmailModel`   | `Umbraco.Workflow.Core.ContentReviews.Email.ContentReviewEmailModel`             |
 
-When templates are not compiled with the site, which is the default for `BackofficeDevelopment` mode, the build does not catch this. From Workflow 18.2.1, a template on disk that does not compile falls back to the version Workflow ships. The **Email Templates** health check lists it. If the template was never customized, select **Update email templates** in the health check to replace it with the current version. For more information, see the [Email Templates](../getting-started/content-approval-settings.md#email-templates) article.
+When templates are not compiled with the site, which is the default for `BackofficeDevelopment` mode, the build does not catch this. From Workflow 18.2.1, a template on disk that does not compile falls back to the version Workflow ships. The **Email Templates** health check lists it. For more information, see the [Email Templates](../getting-started/content-approval-settings.md#email-templates) article.
 
 ### Code
 

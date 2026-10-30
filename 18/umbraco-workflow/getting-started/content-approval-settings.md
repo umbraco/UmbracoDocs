@@ -151,7 +151,7 @@ The `HtmlEmailBase` contains the following fields:
 | ------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
 | SiteUrl      | string         | The public URL of your site.                                                                         |
 | NodeName     | string         | The name of the node from the current workflow.                                                      |
-| Type         | string         | The workflow type, including the scheduled date (if exists).                                          |
+| Type         | string         | The workflow type - "Publish" or "Unpublish", localized.                                             |
 | ScheduledDate | string         | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type. |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                        |
@@ -218,10 +218,6 @@ Razor templates must be compiled before they can render. The shipped templates a
 | `Development` or `Production` | The template was part of your project when the site was built.                                                                                                                                    |
 
 {% hint style="warning" %}
-In `Development` and `Production` mode, editing a template on the server, including through the backoffice, has no effect. The change applies only once it is part of a build.
-{% endhint %}
-
-{% hint style="warning" %}
 Templates customized for Workflow 17 do not compile in Workflow 18, because the email models were renamed. If such a template is part of your project, the build fails until it is updated. From Workflow 18.2.1, a copy on disk that does not compile falls back to the shipped template. The Email Templates health check lists it. For the new model names, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#email-templates).
 {% endhint %}
 
@@ -272,7 +268,7 @@ Below is an excerpt of the shipped `ApprovalRequest.cshtml` template:
 <body>
     <div>
         <p>@Model.Localize("emailGreeting", Model.To.Name)</p>
-        <p>@Model.Localize("emailApprovalRequestIntro", Model.Type.ToLower())</p>
+        <p>@Model.Localize("emailApprovalRequestIntro", Model.Type.ToLower(), Model.ScheduledDate)</p>
         <ul>
             <li>
                 <a href="@(Model.CurrentTask?.BackofficeUrl)">@(Model.CurrentTask?.Node?.Name)</a>
