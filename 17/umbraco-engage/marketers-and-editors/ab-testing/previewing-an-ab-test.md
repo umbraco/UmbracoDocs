@@ -1,6 +1,6 @@
 ---
 description: >-
-  When running A/B tests using Umbraco Engage it recommended to preview the test
+  When running A/B tests using Umbraco Engage, it is recommended to preview the test
   before running it. Learn how this is done.
 ---
 
@@ -10,12 +10,16 @@ There are different ways to preview your A/B Test variants.
 
 ## During the setup of your new A/B Test
 
-You can preview a variant while setting up a new A/B Test. Select **Preview** next to the variant in the overview of variants:
+You can preview a variant while setting up a new A/B Test. Under **Add variants**, select **Preview** next to the variant:
 
-![Open the preview of your variant by clicking on the preview button in the overview of variants when setting up the test.](../../.gitbook/assets/engage-ab-preview-v16-1.png)
+![Preview the variant](../../.gitbook/assets/engage-ab-preview.png)
+
+The page opens in Preview Mode. The variant is selected in the bar at the bottom of the preview, for example **AB Test variant - Yellow background**.
+
+![Preview Mode of the variant](../../.gitbook/assets/engage-ab-preview-test-preview-mode.png)
 
 ## During a running test
 
-You can preview all the A/B test variants while a test is running. Go to the specific test, and you will have an overview of the current results. You can also preview each variant by clicking the "preview"-button.
+You can preview all the A/B test variants while a test is running. Open the test to see the **Scoring overview** view with the current results. Select the preview icon in the **CSS / JS** column of a variant to preview it.
 
-![You can also preview your variants while the test is running.](../../.gitbook/assets/engage-ab-preview-v16-2.png)
+![You can also preview your variants while the test is running.](../../.gitbook/assets/engage-ab-preview-overview.png)
