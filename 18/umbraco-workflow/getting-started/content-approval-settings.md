@@ -142,8 +142,8 @@ The `ContentApprovalEmailModel` contains the following fields:
 | ReleaseDate   | DateTime                  | If a scheduled release date exists for the workflow, it is found here.                                            |
 | ExpireDate    | DateTime                  | If a scheduled expiry date exists for the workflow, it is found here.                                             |
 | Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                     |
-| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense. |
-| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                     |
+| CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via IntelliSense. |
+| Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via IntelliSense.                                     |
 
 The `HtmlEmailBase` contains the following fields:
 
