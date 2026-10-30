@@ -99,10 +99,6 @@ File System Certificate is available on all plans. The setting stays the same af
 
 For more information on loading a certificate from a file, see the [Load certificate from file](https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
 
-{% hint style="warning" %}
-Store certificate passwords using [Secrets Management](../../../begin-your-cloud-journey/project-features/secrets-management.md) instead of in your source code.
-{% endhint %}
-
 ## How to Update Platform Configuration
 
 To update the Platform Configuration for your project:
