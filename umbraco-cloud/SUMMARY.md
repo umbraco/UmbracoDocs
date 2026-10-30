@@ -136,6 +136,8 @@
   * [Project History](optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md)
   * [Traffic and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
   * [Hostname Monitoring](optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
+  * [Alerting and Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
+    * [Webhook Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/webhooks.md)
   * [Management API Security](optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
   * [Sustainability Dashboard](optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
   * [Power Tools (Kudu)](optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/README.md)

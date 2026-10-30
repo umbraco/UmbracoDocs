@@ -1,0 +1,106 @@
+---
+description: >-
+  Receive Umbraco Cloud alert notifications on your own endpoint. Learn about
+  the webhook URL requirements, payload, secret header, and retries.
+tags:
+  - ai-generated
+---
+
+# Webhook Notifications
+
+A webhook destination sends alert notifications from [Alerting and Notifications](README.md) to an endpoint you control. Use webhooks to connect alerts to tools such as Slack, Microsoft Teams, PagerDuty, or your own systems.
+
+Each notification is sent as an HTTP `POST` request with a JSON body.
+
+## URL Requirements
+
+A webhook URL must meet the following requirements:
+
+* The URL uses `https://`.
+* The URL uses a hostname. Raw IP addresses are not allowed.
+* The URL is up to 500 characters long.
+* The URL does not contain a username or password.
+
+The host must resolve to a public IP address. Requests to private or internal addresses are blocked.
+
+Redirects are not followed. Enter the final URL of your endpoint.
+
+## Payload
+
+The following example shows the payload for a failed deployment:
+
+{% code title="Webhook payload" %}
+```json
+{
+  "alertId": "3f2b8c1e-6a4d-4e0b-9a51-2c7d8e9f0a12",
+  "scope": "Project",
+  "projectAlias": "my-project",
+  "projectUrl": "https://www.s1.umbraco.io/project/my-project",
+  "environmentName": "Live",
+  "timeFired": "2026-09-25T08:14:03Z",
+  "alertName": "Deployment",
+  "details": "Deployment failed for my-project: Development → Live",
+  "customerMetadata": {
+    "severity": "high"
+  },
+  "isTest": false
+}
+```
+{% endcode %}
+
+<!-- TODO: confirm the production projectUrl base URL. The format is <portal base URL>/project/<alias> -->
+
+<!-- TODO: confirm whether the payload is a versioned, stable contract -->
+
+| Field | Description |
+| --- | --- |
+| `alertId` | ID of the alert. The ID is the same on every retry of the notification, so you can use it to ignore duplicates. Include the ID when contacting support. |
+| `scope` | Whether a project rule or an organization rule sent the notification: `Project` or `Organization`. |
+| `projectAlias` | The project's alias. |
+| `projectUrl` | Link to the project in the Umbraco Cloud Portal. |
+| `environmentName` | The environment the event happened on. |
+| `timeFired` | When the alert fired, in UTC (ISO 8601 format). |
+| `alertName` | The event type: `DDoS`, `Autoheal`, `Deployment`, or `Autoupgrade`. The outcome, such as failed or completed, is in `details`. |
+| `details` | A human-readable description of what happened. Can be empty. |
+| `customerMetadata` | The rule's priority as `severity`: `critical`, `high`, `medium`, or `low`. |
+| `isTest` | `true` when the notification was sent with [Send test](README.md#test-an-alert-rule). |
+
+The payload contains only the fields listed above.
+
+{% hint style="info" %}
+Check `isTest` before triggering any action, such as paging an on-call engineer. Test notifications use your real project and environment, so the other fields look like a real alert.
+{% endhint %}
+
+## Secure Your Webhook With a Secret
+
+You can add an optional secret of up to 512 characters to a webhook destination. The Cloud Portal labels the field **Signing secret**.
+
+Umbraco Cloud sends the secret as-is in the `uc-webhook-auth` request header on every notification. The request is not signed, and the secret is not hashed.
+
+Check the header on your endpoint, and reject requests where the value doesn't match your secret.
+
+{% hint style="warning" %}
+The secret is stored encrypted and is not shown again after you save it. The Cloud Portal shows **Secret set** instead.
+
+To change the secret, add the webhook as a new destination with the new secret. Then remove the old destination.
+{% endhint %}
+
+## Delivery and Retries
+
+* Your endpoint must respond with a `2xx` status code. Any other response counts as a failed delivery, including redirects.
+* Each attempt times out after 10 seconds. Respond quickly, and do any slow processing afterwards.
+* Timeouts, connection errors, `408`, and `5xx` responses are retried. Umbraco Cloud makes up to 3 attempts in total.
+* Other `4xx` responses are not retried. A `4xx` response usually means the request was rejected on purpose, for example because of a wrong secret.
+
+The alert history shows each webhook destination as **Delivered** or **Failed**. For more information, see the [Delivery Results per Destination](README.md#delivery-results-per-destination) section.
+
+## Troubleshooting Failed Deliveries
+
+If the alert history shows **Failed** for a webhook destination, check the following:
+
+* The URL is public and uses HTTPS.
+* The endpoint responds within 10 seconds.
+* The endpoint returns a `2xx` status code.
+* The endpoint accepts the secret you set, if any.
+
+Use [Send test](README.md#test-an-alert-rule) to check the destination again after making changes.
