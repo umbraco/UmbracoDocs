@@ -4,13 +4,17 @@ description: Querying content with IPublishedContentQuery in Umbraco
 
 # IPublishedContentQuery
 
-The `IPublishedContentQuery` interface contains different query methods for querying of strongly typed content.
+The `IPublishedContentQuery` interface contains methods for querying strongly typed content.
 
-## Use with caution
+{% hint style="warning" %}
+
+**Use with caution**
 
 The `IPublishedContentQuery` has limited filtering capabilities. It should only be used for broad, site-wide search functionality where filtering is not important.
 
 Do _not_ combine `IPublishedContentQuery` with post-filtering of search results in memory. This will severely degrade your site performance. Instead, use the [search feature](../../search/README.md) for advanced querying.
+
+{% endhint %}
 
 ## How to inject IPublishedContentQuery
 
