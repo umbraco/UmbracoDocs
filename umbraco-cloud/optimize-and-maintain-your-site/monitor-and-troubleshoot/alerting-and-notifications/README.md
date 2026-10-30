@@ -192,7 +192,7 @@ For Deployment and Autoupgrade alerts, the subject includes the outcome, such as
 The email contains:
 
 * The project name and a link to the project in the Cloud Portal.
-* The environment.
+* The name of the affected environment.
 * The alert type and time.
 * The scope: whether a project rule or an organization rule sent the notification.
 * Details about what happened.
