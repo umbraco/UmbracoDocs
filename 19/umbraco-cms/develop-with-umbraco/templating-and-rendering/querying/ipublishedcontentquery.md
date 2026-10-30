@@ -1,10 +1,16 @@
 ---
-description: Querying in views with IPublishedContentQuery in Umbraco
+description: Querying content with IPublishedContentQuery in Umbraco
 ---
 
 # IPublishedContentQuery
 
-The `IPublishedContentQuery` interface contains different query methods for accessing strongly typed content in services etc.
+The `IPublishedContentQuery` interface contains different query methods for querying of strongly typed content.
+
+## Use with caution
+
+The `IPublishedContentQuery` has limited filtering capabilities. It should only be used for broad, site-wide search functionality where filtering is not important.
+
+Do _not_ combine `IPublishedContentQuery` with post-filtering of search results in memory. This will severely degrade your site performance. Instead, use the [search feature](../../search/README.md) for advanced querying.
 
 ## How to inject IPublishedContentQuery
 
@@ -28,31 +34,11 @@ public class SearchService
 
 Now you can access the `IPublishedContentQuery` through `_publishedContentQuery`
 
-## Accessing the Published Content Cache via `IPublishedContentQuery`
-
-Sometimes, you may need to fetch multiple content items by ID, but `UmbracoContext.Content` only allows fetching a single content item at a time.
-
-{% hint style="warning" %}
-In a background task, accessing the content cache using an injected `IPublishedContentQuery` or `IPublishedContentQueryAccessor` will not work, as they rely on `HttpContext`.
-{% endhint %}
-
-Instead, use the following approach:
-
-```csharp
-using UmbracoContextReference _ = _umbracoContextFactory.EnsureUmbracoContext();
-using IServiceScope serviceScope = _serviceProvider.CreateScope();
-IPublishedContentQuery query = serviceScope.ServiceProvider.GetRequiredService<IPublishedContentQuery>();
-```
-
 ## Examples
 
 ### .Search(string term)
 
-By default, `IPublishedContentQuery` will search on Umbraco's 'External' search index for any published content matching the provided search term.
-
-{% hint style="warning" %}
-This method carries out basic searches across Umbraco. For more advanced options, such as fuzzy, boosting search, see [the Examine documentation](../../application-code/examine/).
-{% endhint %}
+By default, `IPublishedContentQuery` will search on Umbraco's 'public' search index for any published content matching the provided search term.
 
 ```csharp
 public IEnumerable<PublishedSearchResult> Search(string searchTerm)
@@ -71,53 +57,42 @@ Specifying the number of records 'to skip' and the number of records 'to take' i
 ```csharp
 public IEnumerable<PublishedSearchResult> Search(string searchTerm, int skip = 5, int take = 10)
 {
-    foreach (var result in _publishedContentQuery.Search(searchTerm, skip, take, out long totalRecords))
+    foreach (var result in _publishedContentQuery.Search(searchTerm, skip, take, out _))
     {
         yield return result;
     }
 }
 ```
 
-### .Search(IQueryExecutor queryExecutor)
+## Limitations for background tasks
 
-For more complex searching you can construct an Examine QueryExecutor. In the example the search will execute against content of type "blogPost" only. [Searching with Examine](../../application-code/examine/README.md)
+The `IPublishedContentQuery` cannot be injected into a background task, as it relies on context. Instead, create a service scope and resolve `IPublishedContentQuery` from it:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using Examine;
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Cms.Infrastructure.Examine;
-using Umbraco.Extensions;
-
-namespace Umbraco.Docs.Samples.Web.Services;
-
-public class SearchService
+public class MyBackgroundJob : RecurringBackgroundJobBase
 {
-    private readonly IPublishedContentQuery _publishedContentQuery;
-    private readonly IExamineManager _examineManager;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+    private readonly IUmbracoContextFactory _umbracoContextFactory;
 
-    public SearchService(IPublishedContentQuery publishedContentQuery, IExamineManager examineManager)
+    public MyBackgroundJob(
+        IServiceScopeFactory serviceScopeFactory,
+        IUmbracoContextFactory umbracoContextFactory)
+        : base(TimeSpan.FromMinutes(5))
     {
-        _publishedContentQuery = publishedContentQuery;
-        _examineManager = examineManager;
+        _serviceScopeFactory = serviceScopeFactory;
+        _umbracoContextFactory = umbracoContextFactory;
     }
 
-    public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+    public override Task RunJobAsync(CancellationToken cancellationToken)
     {
-        if (!_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out IIndex index))
-        {
-            throw new InvalidOperationException($"No index found by name{Constants.UmbracoIndexes.ExternalIndexName}");
-        }
+        using UmbracoContextReference _ = _umbracoContextFactory.EnsureUmbracoContext();
+        using IServiceScope serviceScope = _serviceScopeFactory.CreateScope();
+        IPublishedContentQuery publishedContentQuery = serviceScope.ServiceProvider.GetRequiredService<IPublishedContentQuery>();
+        IEnumerable<PublishedSearchResult> results = publishedContentQuery.Search("[your search term]");
 
-        var query = index.Searcher.CreateQuery(IndexTypes.Content);
-        var queryExecutor = query.NodeTypeAlias("blogPost").And().ManagedQuery(searchTerm);
-
-        foreach (var result in _publishedContentQuery.Search(queryExecutor))
-        {
-            yield return result;
-        }
+        // do something with the results here
+        
+        return Task.CompletedTask;
     }
 }
 ```
