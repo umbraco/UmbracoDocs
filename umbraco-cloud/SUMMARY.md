@@ -43,7 +43,6 @@
     * [Change your Plan](build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md)
     * [SMTP Settings](build-and-customize-your-solution/set-up-your-project/project-settings/smtp-settings.md)
     * [Platform Configuration](build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md)
-    * [Application Settings](build-and-customize-your-solution/set-up-your-project/project-settings/application-settings.md)
   * [Security](build-and-customize-your-solution/set-up-your-project/security/README.md)
     * [Web Application Firewall](build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md)
     * [Managing Transport Security](build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)

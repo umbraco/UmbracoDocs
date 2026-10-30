@@ -137,10 +137,10 @@ The Advanced section provides options for managing advanced settings for your pr
 
 * [Enable static outbound IP addresses](../../../expand-your-projects-capabilities/external-services/#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
-* [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
+* [Enable loading of a client certificate from the file system](platform-configuration.md#file-system-certificate).
 * Change the .NET framework runtime for each environment of your Umbraco Cloud project.
 * Change the value of the `DOTNET_ENVIRONMENT` environment variable for each environment of your Umbraco Cloud project. To learn more about working with multiple environments in ASP.NET Core, refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-9.0).
-* [Manage Platform Configuration](platform-configuration.md) to control Proactive Auto-Heal and Always On for your environments. Managing these settings is available only for environments on a **Dedicated** plan.
+* [Manage Platform Configuration](platform-configuration.md) to control Proactive Auto-Heal, Always On, Sticky Sessions, and File System Certificate for your environments. Proactive Auto-Heal and Always On can only be changed on a **Dedicated** plan.
 
 {% hint style="info" %}
 Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
