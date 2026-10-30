@@ -151,7 +151,7 @@ The `HtmlEmailBase` contains the following fields:
 | ------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
 | SiteUrl      | string         | The public URL of your site.                                                                         |
 | NodeName     | string         | The name of the node from the current workflow.                                                      |
-| Type         | string         | The workflow type, including the scheduled date (if exists).                                         |
+| Type         | string         | The workflow type - 'Publish' or 'Unpublish', localized.                                             |
 | ScheduledDate | string         | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type. |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                        |
@@ -216,10 +216,6 @@ Razor templates must be compiled before they can render. The shipped templates a
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `BackofficeDevelopment`       | The file on disk differs from the shipped template. Changes apply without restarting the site. Requires Umbraco Workflow 17.5.2 or later and the `Umbraco.Cms.DevelopmentMode.Backoffice` package. |
 | `Development` or `Production` | The template was part of your project when the site was built.                                                                                                                                    |
-
-{% hint style="warning" %}
-In `Development` and `Production` mode, editing a template on the server, including through the backoffice, has no effect. The change applies only once it is part of a build.
-{% endhint %}
 
 ### Deploying Customized Templates to Production
 
