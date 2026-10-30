@@ -95,7 +95,7 @@ Sticky Sessions are available on all plans.
 
 File System Certificate lets your application load client certificates, such as X.509 certificates, as files at runtime. Enable File System Certificate when your project loads a certificate file to authenticate with an external service. Examples include payment providers, identity providers, and partner APIs.
 
-File System Certificate is available on all plans. The setting is kept when the platform rebuilds the configuration of the environment, for example during a plan change.
+File System Certificate is available on all plans. The setting stays the same after a plan change.
 
 For more information on loading a certificate from a file, see the [Load certificate from file](https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-certificate-in-code#load-certificate-from-file) article in the Microsoft documentation.
 
