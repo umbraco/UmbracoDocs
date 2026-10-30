@@ -9,6 +9,8 @@
 * **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
 * **Hosting resources overview** - A new **Resources** page lists every hosting resource in your project, with its environment, region, state, and tier.
 * **Signed-in account shown in the user menu** - The user menu in the Cloud Portal now shows which account you are signed in with ([Cloud Issues #775](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/775)).
+* **Sticky Sessions toggle** - Turn Sticky Sessions on or off for each environment from the Platform Configuration section, on all plans.
+* **File System Certificate toggle** - Allow your application to load client certificates from the file system of an environment, on all plans.
 
 ## Upgrade windows for automatic upgrades
 
@@ -93,3 +95,19 @@ The user menu in the top bar of the Cloud Portal now starts with a **Signed in a
 If you have more than one Umbraco Cloud account, you can see which one you are using without opening your profile.
 
 The change closes [Cloud Issues #775](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/775).
+
+## Sticky Sessions toggle
+
+The Platform Configuration section now includes a **Sticky Sessions** toggle. Sticky Sessions route each visitor to the same instance for the duration of their session.
+
+The toggle is available on all plans. Load Balancing requires Sticky Sessions. While Load Balancing is enabled, Sticky Sessions stay enabled and the toggle cannot be changed.
+
+For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#sticky-sessions) documentation.
+
+## File System Certificate toggle
+
+The Platform Configuration section now includes a **File System Certificate** toggle. When enabled, your application can load client certificates, such as X.509 certificates, as files at runtime. Common uses are integrations with payment providers, identity providers, and partner APIs.
+
+The setting was previously only available by contacting Umbraco Support. It is now available on all plans and is kept when the platform rebuilds the configuration of the environment.
+
+For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#file-system-certificate) documentation.
