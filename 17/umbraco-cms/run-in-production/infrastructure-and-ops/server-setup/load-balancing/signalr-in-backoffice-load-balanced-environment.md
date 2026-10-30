@@ -63,6 +63,10 @@ Umbraco's backoffice SignalR client skips negotiation and connects directly usin
 
 The established WebSocket connection remains on that server. Your backplane distributes messages between servers; the setting does not register or replace a backplane.
 
+{% hint style="info" %}
+Database backplanes can have lower message throughput than other options. Overall performance depends on your backplane.
+{% endhint %}
+
 {% hint style="warning" %}
 Skipping negotiation requires WebSockets support in your clients, servers, proxies, and load balancer. Other SignalR transports cannot be used as fallbacks. Do not enable skipping negotiation with Azure SignalR Service, which requires negotiation to redirect clients to the service.
 {% endhint %}
