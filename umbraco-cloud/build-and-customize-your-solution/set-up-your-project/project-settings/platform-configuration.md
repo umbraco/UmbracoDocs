@@ -91,8 +91,6 @@ Sticky Sessions are available on all plans.
 
 [Load Balancing](../../../optimize-and-maintain-your-site/optimize-performance/load-balancing.md) requires Sticky Sessions. While Load Balancing is enabled on an environment, Sticky Sessions are enabled and the toggle cannot be changed.
 
-To disable Sticky Sessions, disable Load Balancing on the environment first.
-
 ## File System Certificate
 
 File System Certificate lets your application load client certificates, such as X.509 certificates, as files at runtime. Enable File System Certificate when your project loads a certificate file to authenticate with an external service. Examples include payment providers, identity providers, and partner APIs.
