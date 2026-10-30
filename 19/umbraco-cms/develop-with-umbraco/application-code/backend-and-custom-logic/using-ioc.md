@@ -326,7 +326,7 @@ Using the UmbracoHelper is only possible when there is an instance of the Umbrac
 
 ### ISearcher
 
-[Read more about search in Umbraco here](../../search/README.md).
+Learn more about the ISearcher in the [Search documentation](../../search/README.md).
 
 {% code title="SearchService.cs" %}
 ```csharp
