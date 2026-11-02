@@ -1,7 +1,7 @@
 ---
 description: >-
-  Five-phase workflow for building custom MCP servers: scaffolding, configuration,
-  API discovery, tool implementation, and LLM evaluation.
+  Five-phase workflow for building custom MCP servers: scaffolding,
+  configuration, API discovery, tool implementation, and LLM evaluation.
 ---
 
 # Development Workflow
@@ -59,12 +59,12 @@ If you already have a running Umbraco instance, choose this option. The CLI prom
 
 The CLI prompts you to keep or remove optional features:
 
-| Feature | Default | Description |
-|---|---|---|
-| Mock infrastructure (MSW) | Keep | Mocks for testing without a running Umbraco instance |
-| MCP chaining | Keep | Proxy tools from other MCP servers like `@umbraco-cms/mcp-dev` |
-| Example tools | Remove | Example tool collections demonstrating patterns |
-| LLM eval tests | Keep | Claude-based acceptance tests for tool effectiveness |
+| Feature                   | Default | Description                                                    |
+| ------------------------- | ------- | -------------------------------------------------------------- |
+| Mock infrastructure (MSW) | Keep    | Mocks for testing without a running Umbraco instance           |
+| MCP chaining              | Keep    | Proxy tools from other MCP servers like `@umbraco-cms/mcp-dev` |
+| Example tools             | Remove  | Example tool collections demonstrating patterns                |
+| LLM eval tests            | Keep    | Claude-based acceptance tests for tool effectiveness           |
 
 {% hint style="info" %}
 Start lean — remove features you do not need. You can regenerate them later using the Claude Code plugin skills.
@@ -79,6 +79,21 @@ npm run start:umbraco
 ```
 
 Keep this running in a separate terminal. The discover command in Phase 3 requires a running Umbraco instance.
+
+### Log in to the Backoffice
+
+When the CLI creates a new instance, it also creates a default administrator user. Use these credentials to log in to the Umbraco backoffice of the instance in the `demo-site/` directory:
+
+| Field    | Value            |
+| -------- | ---------------- |
+| Email    | `admin@test.com` |
+| Password | `SecurePass1234` |
+
+The backoffice is available at `/umbraco` on the base URL of your instance. The base URL is stored in your `.env` file.
+
+{% hint style="warning" %}
+These default credentials are intended for local development only. Change the password before you make the instance available to anyone else.
+{% endhint %}
 
 ## Phase 3: Discover
 
@@ -197,12 +212,12 @@ npm run build && npm run test:evals
 
 When eval tests reveal problems, use this reference to diagnose and fix them:
 
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| Wrong tool selected | Poor tool description | Improve description clarity |
-| Missing parameters | Unclear parameter documentation | Add examples to descriptions |
-| Tool not found | Unintuitive name | Rename the tool |
-| Inefficient tool chain | Missing composite tool | Create a workflow tool |
+| Symptom                | Likely Cause                    | Fix                          |
+| ---------------------- | ------------------------------- | ---------------------------- |
+| Wrong tool selected    | Poor tool description           | Improve description clarity  |
+| Missing parameters     | Unclear parameter documentation | Add examples to descriptions |
+| Tool not found         | Unintuitive name                | Rename the tool              |
+| Inefficient tool chain | Missing composite tool          | Create a workflow tool       |
 
 ### The Iteration Loop
 
@@ -226,11 +241,10 @@ Once your eval tests are passing, use `/discuss-mcp` to conversationally analyze
 
 If `/discuss-mcp` or your own analysis suggests chaining would help, determine whether connecting to other MCP servers (such as `@umbraco-cms/mcp-dev`) adds value:
 
-| Scenario | Chain? | Reason |
-|---|---|---|
-| Need content and commerce data | Yes | Combine content and commerce tools |
-| Commerce-only operations | No | Standalone is simpler |
-| Complex workflows | Yes | Leverage existing tools |
+| Scenario                       | Chain? | Reason                             |
+| ------------------------------ | ------ | ---------------------------------- |
+| Need content and commerce data | Yes    | Combine content and commerce tools |
+| Commerce-only operations       | No     | Standalone is simpler              |
+| Complex workflows              | Yes    | Leverage existing tools            |
 
 If chaining adds value, configure connections in `src/config/mcp-servers.ts`. See [MCP Chaining](../sdk/mcp-chaining.md) in the SDK documentation.
-
