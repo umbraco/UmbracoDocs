@@ -214,4 +214,4 @@ Moving the focal point circle on the image will update the crops to focus accord
 
 ## Related Services
 
-* [MediaService](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.MediaService.html)
+* [MediaService](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.MediaService.html)
