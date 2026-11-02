@@ -77,13 +77,13 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 
 `onInit` runs when a user session starts. `onUnload` runs when the session ends, because the user signs out or the session times out. It also runs if the extension is unregistered.
 
-If a user signs in again after a timeout, `onInit` runs again. The new session may belong to a different user.
+If the same user signs in again after a timeout, `onInit` runs again, and the page keeps its state. If a different user signs in, the backoffice starts over with a full page load for that user. No state from the previous user's session carries over, and the new page calls `onInit` for the new user.
 
 `onUnload` does not wait for `onInit` to finish. If `onInit` awaits something, the session can end in the meantime. `onUnload` then runs while `onInit` is still running. `onUnload` also runs when the session ends after `onInit` threw an error. Write `onUnload` so it works no matter how far `onInit` got. After each `await` in `onInit`, check that the session has not ended before you start anything. The examples below that start something after an `await` use a `session` counter for that check.
 
 Each browser tab runs its own copy of the module. A tab loads the module once and reuses it for every session, so module-level variables keep their values. Reset them in `onUnload`.
 
-Every open tab calls `onInit`, and reloading a tab calls `onInit` again. Signing out in one tab ends the session in every tab, and each tab calls `onUnload` before it navigates away. Each tab times out on its own timer and then shows a sign-in overlay. Signing in at the overlay in one tab signs in every open tab, and each tab calls `onInit` once.
+Every open tab calls `onInit`, and reloading a tab calls `onInit` again. Signing out in one tab ends the session in every tab, and each tab calls `onUnload` before it navigates away. Each tab times out on its own timer and then shows a sign-in overlay. Signing in at the overlay in one tab also signs in the other open tabs. When the same user signs in, each tab calls `onInit` once. When a different user signs in, each tab starts over with a full page load, as with a reload.
 
 Closing or reloading a tab does not call `onUnload`. Do not rely on `onUnload` to clean up state on the server. Let that state expire on its own.
 
@@ -151,7 +151,7 @@ Each open tab runs `onInit`, so each tab opens its own connection.
 
 ### Register extensions for specific users
 
-Register extensions based on who is signed in, and unregister them again when the session ends. This way the next session starts from a clean slate, even if it belongs to a different user:
+Register extensions based on who is signed in, and unregister them again when the session ends. This way the next session starts from a clean slate:
 
 {% code title="user.ts" %}
 ```typescript
