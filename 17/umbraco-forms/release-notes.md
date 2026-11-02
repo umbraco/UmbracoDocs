@@ -24,6 +24,7 @@ The changes below are the ones made since `17.7.0-rc`. For everything else in th
 
 * Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
 * Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
+* Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
 
 ### [17.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (October 29th 2026)
 
@@ -53,7 +54,7 @@ For more information, see the [Recycle bin notifications](developer/extending/ad
 
 * Delivery API: Return the full rich text element tree, instead of an empty root, when `RichTextOutputAsJson` is enabled [#1779](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1779)
 * Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
-* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
 * Form Import: Keep a form's original creator and creation date when importing over an existing form
 * Copy Form: Require a name for the copied form
 * Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name
