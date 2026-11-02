@@ -24,13 +24,13 @@ A UDI consists of three parts:
 
 The identifier part is either a GUID or a string. Which one is used depends on the entity type.
 
-A [`GuidUdi`](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.GuidUdi.html) has a GUID as its identifier. The GUID is written without dashes. Most entity types use this format, such as `document`, `media`, and `member`.
+A [`GuidUdi`](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.GuidUdi.html) has a GUID as its identifier. The GUID is written without dashes. Most entity types use this format, such as `document`, `media`, and `member`.
 
 ```none
 umb://document/4fed18d8c5e34d5e88cfff3a5b457bf2
 ```
 
-A [`StringUdi`](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.StringUdi.html) has a string as its identifier, such as a file path or a culture code. A few entity types use this format, such as `stylesheet`, `script`, and `language`.
+A [`StringUdi`](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.StringUdi.html) has a string as its identifier, such as a file path or a culture code. A few entity types use this format, such as `stylesheet`, `script`, and `language`.
 
 ```none
 umb://stylesheet/style.css

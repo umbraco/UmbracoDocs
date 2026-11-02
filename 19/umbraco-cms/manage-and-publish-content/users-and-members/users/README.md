@@ -172,6 +172,6 @@ Umbraco Forms has a backoffice security model integrated with Umbraco Users. You
 
 As a developer, you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
 
-For the full set of properties available on a User, see the [`IUser` interface reference](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
+For the full set of properties available on a User, see the [`IUser` interface reference](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
 
 To manage users programmatically (for example, assigning a user to a User Group), see [Using the User Service](../../../extend-your-project/server-side-extensions/management/using-services/userservice.md) article.

@@ -270,6 +270,6 @@ Event messages can contain HTML. For how the backoffice renders it, see the [Ren
 
 ## Further Reading
 
-* [@umbraco-cms/backoffice/notification](https://apidocs.umbraco.com/v18/ui-api/modules/packages_core_notification.html)
+* [@umbraco-cms/backoffice/notification](https://apidocs.umbraco.com/v19/ui-api/modules/packages_core_notification.html)
 * [Executing Requests](fetching-data/try-execute.md)
 * [Consume a Context](context-api/consume-a-context.md)
