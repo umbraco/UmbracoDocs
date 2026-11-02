@@ -18,7 +18,7 @@ You can find **Alerting & Notifications** under **Insights** on your project and
 Notifications are **opt-in**. If no enabled alert rule matches an event, no notification is sent.
 {% endhint %}
 
-<!-- TODO: screenshot of the Alerting & Notifications overview. Proposed file: .gitbook/assets/alerting-overview.png. Take after the history UI shows the new statuses -->
+<figure><img src="../../../.gitbook/assets/alerting-overview.png" alt="The Alerting & Notifications page showing a status overview of fired rules and a list of three alert rules with their priority, destinations, recent alerts, and On/Off switch"><figcaption><p>The Alerting &#x26; Notifications page with the list of alert rules</p></figcaption></figure>
 
 ## Key Concepts
 
@@ -116,7 +116,7 @@ Autoupgrade alerts are sent for **every** upgrade of your environment. This incl
 5. Select **Create alert rule**.
 6. [Send a test notification](#test-an-alert-rule) to check that it arrives.
 
-<!-- TODO: screenshot of the create rule form. Proposed file: .gitbook/assets/alerting-create-rule.png. Take after the history UI shows the new statuses -->
+<figure><img src="../../../.gitbook/assets/alerting-create-rule.png" alt="The New alert rule form with the event type, environments, priority, status, and cooldown settings, and an email destination under Who to notify"><figcaption><p>Creating a DDoS alert rule for the production environment</p></figcaption></figure>
 
 {% hint style="info" %}
 Saving a rule is processed in the background. It can take a moment before the rule appears in the list.
@@ -128,8 +128,8 @@ Saving a rule is processed in the background. It can take a moment before the ru
 * **Conditions**: For Deployment and Autoupgrade rules, the outcomes you want to be notified about. At least one is required.
 * **Destinations**: Up to 4 email addresses or webhook URLs. See the [Destinations](#destinations) and [Limits](#limits) sections.
 * **Priority**: **Critical**, **High**, **Medium**, or **Low**. The default is **High**. The priority is included in the notification.
-* **Cooldown**: The minimum time between notifications from the rule, in minutes, hours, or days. The default is 5 minutes. `0` means no cooldown. The maximum is 43,200 minutes (30 days). See the [Cooldown](#cooldown) section.
-* **Enabled**: Use the **Enable this alert** toggle in the form, or the **On/Off** switch in the rule list. Turn a rule off to stop notifications without deleting the rule.
+* **Cooldown**: The minimum time between notifications from the rule, in minutes, hours, or days. The default is 5 minutes for DDoS and Autoheal rules, and `0` for Deployment and Autoupgrade rules. `0` means no cooldown. The maximum is 43,200 minutes (30 days). See the [Cooldown](#cooldown) section.
+* **Status**: Use the **Status** toggle in the form, or the **On/Off** switch in the rule list. Turn a rule off to stop notifications without deleting the rule.
 * **Projects** (organization rules only): All projects, or a selection. See the [Project and Organization Rules](#project-and-organization-rules) section.
 * **Environment type**: **All environments**, **Production**, or **Non-production**.
   * **Production** is the last environment in your deployment chain, the one your visitors reach.
@@ -217,8 +217,6 @@ Webhook URLs must use HTTPS and point to a publicly reachable host. You can add 
 [Webhook Notifications](webhook-notifications.md)
 {% endcontent-ref %}
 
-<!-- TODO: screenshot of a webhook or email notification. Proposed file: .gitbook/assets/alerting-webhook-example.png. Take after the history UI shows the new statuses -->
-
 ## Test an Alert Rule
 
 Select **Send test** on a rule to send a sample notification to all of the rule's destinations. The sample uses your real project name and environment. You can see what a real notification from the rule looks like.
@@ -261,11 +259,11 @@ The alert history lists every alert for a project or organization, newest first.
 * Priority
 * Result
 * Period: the last 7, 14, or 30 days, or all time
-* Project (organization only)
+* Project (organization only): Search for a project in the **Search project** box and select it.
 
 Test notifications are shown by default. Use the **Test** result filter to see only test notifications.
 
-<!-- TODO: align filter labels with the Cloud Portal once the history UI shows the new statuses -->
+<figure><img src="../../../.gitbook/assets/alerting-history.png" alt="The History tab of Alerting & Notifications showing filters and a list of fired alerts grouped by day, each with its environment, project, time, and delivery result"><figcaption><p>The alert history with fired alerts and their delivery results</p></figcaption></figure>
 
 Each entry shows the event type, when the alert fired, the details, the overall outcome, and the result for each destination.
 
@@ -273,6 +271,7 @@ Each entry shows the event type, when the alert fired, the details, the overall 
 | --- | --- |
 | **Waiting for confirmation** | The notification was sent, and at least one email is not confirmed yet. |
 | **Delivered** | Every destination received the notification. |
+| **Test delivered** | A test notification reached every destination. |
 | **Partially delivered** | Some destinations received the notification, but not all. |
 | **Delivery failed** | No destination received the notification. |
 | **Cooldown suppressed** | The event happened during the rule's cooldown, so no notification was sent. |
