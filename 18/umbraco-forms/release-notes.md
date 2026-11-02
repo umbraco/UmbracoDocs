@@ -20,6 +20,14 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### 18.3.0-rc2 (November 5th 2026)
+
+The changes below are the ones made since `18.3.0-rc`. For everything else in this release, see the `18.3.0-rc` notes.
+
+* Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
+* Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
+* Update dependencies to Umbraco CMS 18.3.0. The release candidate required 18.3.0-rc2 or later.
+
 ### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
 
 #### Consent details for the Data Consent field
