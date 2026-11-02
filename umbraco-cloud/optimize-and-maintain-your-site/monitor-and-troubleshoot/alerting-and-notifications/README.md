@@ -40,10 +40,6 @@ Notifications are **opt-in**. If no enabled alert rule matches an event, no noti
 | [Deployment](#deployment) | A deployment to one of your environments starts, completes, or fails. | Required: one or more of **Started**, **Completed**, **Failed** |
 | [Autoupgrade](#autoupgrade) | An upgrade of one of your environments starts, completes, fails, or times out. | Required: one or more of **Started**, **Completed**, **Failed**, **Timed out** |
 
-{% hint style="info" %}
-More alert types are planned for a later release. These include end-of-support warnings for your Umbraco version, hosting recommendations, and custom hostname monitoring failures.
-{% endhint %}
-
 ### DDoS
 
 A DDoS alert is sent when Cloudflare's edge network detects and mitigates a DDoS attack. The alert covers application-layer (HTTP) attacks against a hostname on your project.
@@ -148,7 +144,7 @@ You can't change the event type of a rule. To react to a different event type, d
 
 You can add and remove destinations, but you can't edit an email or webhook destination. To change an email address or a webhook URL, remove the destination and add a new one. Removing a destination keeps its past results in the alert history.
 
-The same applies to a [webhook secret](webhooks.md#secure-your-webhook-with-a-secret). Add the webhook again as a new destination with the new secret, then remove the old destination.
+The same applies to a [webhook secret](webhook-notifications.md#secure-your-webhook-with-a-secret). Add the webhook again as a new destination with the new secret, then remove the old destination.
 
 ## Who Can Manage Alert Rules
 
@@ -205,8 +201,8 @@ Webhook notifications are sent as an HTTP `POST` request with a JSON body to the
 
 Webhook URLs must use HTTPS and point to a publicly reachable host. You can add an optional secret to verify that requests come from Umbraco Cloud.
 
-{% content-ref url="webhooks.md" %}
-[Webhook Notifications](webhooks.md)
+{% content-ref url="webhook-notifications.md" %}
+[Webhook Notifications](webhook-notifications.md)
 {% endcontent-ref %}
 
 <!-- TODO: screenshot of a webhook or email notification. Proposed file: .gitbook/assets/alerting-webhook-example.png. Take after the history UI shows the new statuses -->
@@ -315,7 +311,7 @@ The rule list shows how many alerts each rule raised in the last 7 days, and whe
 * Check the [alert history](#alert-history-and-activity):
   * No entry: No enabled rule matched the event.
   * **Cooldown suppressed**: The event happened during the cooldown. Lower the cooldown if you want more notifications.
-  * **Delivery failed**: No destination received the notification. Check the [result for each destination](#delivery-results-per-destination). For webhooks, see the [Webhook Notifications](webhooks.md#troubleshooting-failed-deliveries) article.
+  * **Delivery failed**: No destination received the notification. Check the [result for each destination](#delivery-results-per-destination). For webhooks, see the [Webhook Notifications](webhook-notifications.md#troubleshooting-failed-deliveries) article.
   * **Bounced** or **Blocked**: Check the email address with the recipient's mail administrator.
   * **Dropped**: Contact support to have the email address reinstated.
   * **Unconfirmed**: The email may or may not have arrived. Use **Send test** to check the destination.

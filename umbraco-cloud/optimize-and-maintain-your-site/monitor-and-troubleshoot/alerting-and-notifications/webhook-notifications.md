@@ -75,7 +75,11 @@ Check `isTest` before triggering any action, such as paging an on-call engineer.
 
 You can add an optional secret of up to 512 characters to a webhook destination. The Cloud Portal labels the field **Signing secret**.
 
-Umbraco Cloud sends the secret as-is in the `uc-webhook-auth` request header on every notification. The request is not signed, and the secret is not hashed.
+Umbraco Cloud sends the secret as-is in the `uc-webhook-auth` request header on every notification.
+
+{% hint style="info" %}
+Despite the field label, the request is not signed. The secret is sent as a plain text header value and is not hashed. There is no signature, such as an HMAC, to verify. HTTPS protects the header in transit.
+{% endhint %}
 
 Check the header on your endpoint, and reject requests where the value doesn't match your secret.
 

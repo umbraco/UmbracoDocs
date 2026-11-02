@@ -137,7 +137,7 @@
   * [Traffic and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
   * [Hostname Monitoring](optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
   * [Alerting and Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
-    * [Webhook Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/webhooks.md)
+    * [Webhook Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/webhook-notifications.md)
   * [Management API Security](optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
   * [Sustainability Dashboard](optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
   * [Power Tools (Kudu)](optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/README.md)
@@ -169,6 +169,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [November 2026](release-notes/overview-2026/2026-11-releasenotes.md)
   * [October 2026](release-notes/overview-2026/2026-10-releasenotes.md)
   * [September 2026](release-notes/overview-2026/2026-09-releasenotes.md)
   * [August 2026](release-notes/overview-2026/2026-08-releasenotes.md)

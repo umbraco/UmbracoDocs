@@ -17,6 +17,10 @@ Umbraco Cloud uses [Cloudflare’s Managed Rulesets](https://developers.cloudfla
 
 WAF is enabled by default on each custom hostname. It is not available for the internal Cloud hostnames.
 
+{% hint style="info" %}
+To get notified when a DDoS attack against one of your hostnames is mitigated, set up a DDoS alert. See the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md#ddos) article.
+{% endhint %}
+
 ## Impact on your website
 
 ### **Performance**
