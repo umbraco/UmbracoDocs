@@ -31,7 +31,7 @@ If you have issues with new user emails/Umbraco Forms emails not being sent, che
 
 There can be different causes for this issue, so we don't have specific guides. However, here are some things to check to narrow it down:
 
-* Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are negated:
+* Do you have any rewrite rules? Often rewrite rules that are not set up correctly will cause issues with the backoffice, make sure that the following are excluded:
   * `^/umbraco`
   * `^/DependencyHandler.axd`
   * `^/App_Plugins`
