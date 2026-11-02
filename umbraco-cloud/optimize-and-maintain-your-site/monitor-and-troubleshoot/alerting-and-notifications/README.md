@@ -27,7 +27,7 @@ Notifications are **opt-in**. If no enabled alert rule matches an event, no noti
 | **Alert rule** | A subscription to one type of event. The rule defines what to listen for, where to send the notification, and how often at most. |
 | **Event type** | The kind of event the rule reacts to, such as **Deployment** or **DDoS**. You can't change the event type after the rule is created. |
 | **Condition** | Narrows a rule to specific outcomes. For example, a Deployment rule can be limited to failed deployments. |
-| **Destination** | Where the notification goes: an email address or a webhook URL. A rule can have up to 15 destinations. |
+| **Destination** | Where the notification goes: an email address or a webhook URL. A rule can have up to 4 destinations. |
 | **Cooldown** | The minimum time after a sent notification before the same rule sends another. A cooldown keeps you from being flooded during an ongoing incident. |
 | **Alert history** | A log of every alert: what fired, when, and whether each destination received the notification. |
 
@@ -126,7 +126,7 @@ Saving a rule is processed in the background. It can take a moment before the ru
 
 * **Event type**: The alert the rule reacts to. You can't change the event type later.
 * **Conditions**: For Deployment and Autoupgrade rules, the outcomes you want to be notified about. At least one is required.
-* **Destinations**: Up to 15 email addresses or webhook URLs. See the [Destinations](#destinations) section.
+* **Destinations**: Up to 4 email addresses or webhook URLs. See the [Destinations](#destinations) and [Limits](#limits) sections.
 * **Priority**: **Critical**, **High**, **Medium**, or **Low**. The default is **High**. The priority is included in the notification.
 * **Cooldown**: The minimum time between notifications from the rule, in minutes, hours, or days. The default is 5 minutes. `0` means no cooldown. The maximum is 43,200 minutes (30 days). See the [Cooldown](#cooldown) section.
 * **Enabled**: Use the **Enable this alert** toggle in the form, or the **On/Off** switch in the rule list. Turn a rule off to stop notifications without deleting the rule.
@@ -172,6 +172,18 @@ Rules are independent of each other. If a project rule and an organization rule 
 From the organization, you can also see the project rules of every project in the organization. To change a project rule, go to the project.
 
 Organization rules also have an environment type. For example, an organization rule for **Production** only sends notifications about the production environment of each covered project.
+
+## Limits
+
+| Limit | Value |
+| --- | --- |
+| Alert rules per project | 30 |
+| Alert rules per organization | 40 |
+| Destinations per rule | 4 |
+
+When a project or organization reaches its rule limit, **New rule** is unavailable. Delete a rule to add another.
+
+When a rule has 4 destinations, you can't add more. To send a notification to more places, create another rule for the same event type.
 
 ## Destinations
 
