@@ -6,6 +6,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [November 2026](2026-11-releasenotes.md)
+
+* [02/11] - **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
+
 ## [October 2026](2026-10-releasenotes.md)
 
 * [29/10] - **Sticky Sessions toggle** - Turn Sticky Sessions on or off for each environment from the Platform Configuration section, on all plans.

@@ -14,6 +14,10 @@ Both minor and patch upgrades can be managed from the **Configuration** -> **Aut
 * [Upgrade from the Cloud Portal](minor-upgrades.md#upgrade-from-the-cloud-portal)
 * [Manual Upgrades](minor-upgrades.md#manual-upgrades)
 
+{% hint style="info" %}
+To get notified when an upgrade starts, completes, fails, or times out, set up an Autoupgrade alert. See the [Alerting and Notifications](../../monitor-and-troubleshoot/alerting-and-notifications/README.md#autoupgrade) article.
+{% endhint %}
+
 ## Automatic Minor Upgrades
 
 To enable automatic minor upgrades, follow these steps:

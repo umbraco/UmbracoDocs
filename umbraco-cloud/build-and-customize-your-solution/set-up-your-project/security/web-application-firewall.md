@@ -19,6 +19,10 @@ WAF is enabled by default on each custom hostname. It is not available for the i
 
 WAF has been enabled by default since November 2024. Environments created before then may have WAF turned off. Check the WAF setting under **Transport Security** and [enable WAF on your custom hostnames](web-application-firewall.md#enable-waf-on-custom-hostnames) if needed.
 
+{% hint style="info" %}
+To get notified when a DDoS attack against one of your hostnames is mitigated, set up a DDoS alert. See the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md#ddos) article.
+{% endhint %}
+
 ## Impact on your website
 
 ### **Performance**
