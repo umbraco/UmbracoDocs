@@ -34,7 +34,7 @@ If none of the property's Block Types are allowed in the Library, you won't see 
 
 In the Rich Text Editor, open the Block Catalogue with **Insert Block** in the toolbar. You can add the same Element as many times as you need.
 
-### The Library button
+### The Library Button
 
 Some Block List and Single Block properties skip the Block Catalogue when you add a block. This happens when **Inline editing mode** is enabled and only one Block Type is configured.
 
@@ -73,7 +73,7 @@ If the new Element doesn't pass validation, it is saved as a draft instead. Clic
 Hover over the block and click **Edit** to open the Element in its own workspace.
 
 {% hint style="warning" %}
-Saving and publishing here changes the Element itself, so every block that uses it shows the change. To see where the Element is used, open the **Info** view and check **Referenced by**.
+Saving and publishing in the Element workspace changes the Element itself, so every block that uses it shows the change. To see where the Element is used, open the **Info** view and check **Referenced by**.
 {% endhint %}
 
 Library Element blocks always open in the workspace, even if the property uses **Inline editing mode**.

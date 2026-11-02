@@ -285,7 +285,7 @@ Block List data is stored as a JSON string. Understanding this structure is esse
 * `expose`: Lists which blocks are visible, per culture and segment. A block is only rendered if it has a matching `expose` entry, except for blocks that reference a Library Element. For more information, see [Reusable Content in Block Editors](reusable-content-in-block-editors.md#library-element-blocks-in-the-stored-value). For invariant content, use `null` for both `culture` and `segment`.
 
 {% hint style="warning" %}
-Before Umbraco 14, Block List data used a different format. Blocks were referenced by UDI (`umb://element/...`), property values were stored as flat keys, and there was no `expose` array. That legacy format is no longer supported in Umbraco 18, so always write new content in the format shown below.
+Before Umbraco 14, Block List data used a different format. Blocks were referenced by UDI (`umb://element/...`), property values were stored as flat keys, and there was no `expose` array. That legacy format is no longer supported. Write new content in the format shown below.
 {% endhint %}
 
 ```json
@@ -293,7 +293,7 @@ Before Umbraco 14, Block List data used a different format. Blocks were referenc
   "layout": {
     "Umbraco.BlockList": [
       {
-        "key": "abc123cd-0000-0000-0000-000000000000",
+        "key": "def456ab-0000-0000-0000-000000000000",
         "contentKey": "abc123cd-0000-0000-0000-000000000000",
         "isExternalContent": false
       }
