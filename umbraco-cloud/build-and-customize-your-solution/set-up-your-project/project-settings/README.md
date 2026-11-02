@@ -27,6 +27,20 @@ The Team section allows you to:
 
 <figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
+### Resources
+
+The **Resources** section lists every hosting resource your Umbraco Cloud project contains. A project is made up of hosting resources such as a website, a SQL database, a compute plan, and media storage.
+
+For each resource, you can see:
+
+* **Resource type** - Website, SQL Database, Shared Compute, Media Storage, Redis Cache, Secret Store, or Cloudflare Tenant.
+* **Environment** - The environment the resource belongs to.
+* **Region** - Where the resource runs, for example, West Europe or Global.
+* **State** - The current state of the resource, for example Ready or Provisioning.
+* **Tier** - The plan or tier of the resource, where relevant. For example, Shared Standard.
+
+You can filter the list by resource type and by environment.
+
 ### Summary
 
 The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
