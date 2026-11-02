@@ -80,6 +80,10 @@ Deployment alerts also cover deployments through the [Umbraco CI/CD Flow](../../
 
 A CI/CD deployment that times out is reported as **Failed**, with "(timed out)" in the notification text.
 
+{% hint style="warning" %}
+Deployments you push from a local clone with Git don't send Deployment alerts. Only deployments between Cloud environments and through the Umbraco CI/CD Flow are covered. For more information about local deployments, see the [Deploying Changes](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
+{% endhint %}
+
 For Deployment rules, the [environment type](#alert-rule-settings) refers to the **target** environment of the deployment.
 
 {% hint style="info" %}
@@ -315,6 +319,7 @@ The rule list shows how many alerts each rule raised in the last 7 days, and whe
 * Check that the rule is **enabled**.
 * For Deployment and Autoupgrade rules, check that the outcome is selected in the rule's conditions.
 * Check that the rule's environment type covers the environment. For example, a **Production** rule doesn't send notifications for deployments to a non-production environment.
+* Deployments pushed from a local clone with Git don't send Deployment alerts. See the [Deployment](#deployment) section.
 * Check the [alert history](#alert-history-and-activity):
   * No entry: No enabled rule matched the event.
   * **Cooldown suppressed**: The event happened during the cooldown. Lower the cooldown if you want more notifications.
