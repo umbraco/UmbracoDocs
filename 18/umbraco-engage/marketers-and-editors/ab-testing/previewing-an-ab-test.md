@@ -20,6 +20,6 @@ The page opens in Preview Mode. The variant is selected in the bar at the bottom
 
 ## During a running test
 
-You can preview all the A/B test variants while a test is running. Open the test to see the **Scoring overview** view with the current results. Select the preview icon in the **CSS / JS** column of a variant to preview it.
+You can preview all the A/B test variants while a test is running. Open the test to see the **Scoring overview** with the current results. Select the preview icon in the **CSS / JS** column of a variant to preview it.
 
 ![You can also preview your variants while the test is running.](../../.gitbook/assets/engage-ab-preview-overview.png)
