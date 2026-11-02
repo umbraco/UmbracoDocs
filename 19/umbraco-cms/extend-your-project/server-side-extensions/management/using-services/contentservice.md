@@ -64,7 +64,7 @@ demoProduct.SetCultureName("Microphone", "en-us"); // this will set the english 
 demoProduct.SetCultureName("Mikrofon", "da"); // this will set the danish name
 ```
 
-For information on how to retrieve multilingual languages, see the [Retrieving languages](localizationservice.md) article.
+For information on how to retrieve the languages of a site, see the [Creating a Multilingual Site](../../../../develop-with-umbraco/tutorials/multilanguage-setup.md#getting-all-the-languages-for-a-site) article.
 
 
 ### Getting date values programmatically

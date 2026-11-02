@@ -48,4 +48,4 @@ Use the above example for other services by replacing the interface and the name
 * [Media Service](./mediaservice.md)
 * [Relation Service](./relationservice.md)
 * [Content Type Service](./contenttypeservice.md)
-* [Localization Service](./localizationservice.md)
+* [Localization Service](../../../../develop-with-umbraco/tutorials/multilanguage-setup.md#getting-all-the-languages-for-a-site)
