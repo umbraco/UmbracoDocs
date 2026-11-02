@@ -48,16 +48,12 @@ The following example shows the payload for a failed deployment:
 ```
 {% endcode %}
 
-<!-- TODO: confirm the production projectUrl base URL. The format is <portal base URL>/project/<alias> -->
-
-<!-- TODO: confirm whether the payload is a versioned, stable contract -->
-
 | Field | Description |
 | --- | --- |
 | `alertId` | ID of the alert. The ID is the same on every retry of the notification, so you can use it to ignore duplicates. Include the ID when contacting support. |
 | `scope` | Whether a project rule or an organization rule sent the notification: `Project` or `Organization`. |
 | `projectAlias` | The project's alias. |
-| `projectUrl` | Link to the project in the Umbraco Cloud Portal. |
+| `projectUrl` | The full URL of the project in the Umbraco Cloud Portal. |
 | `environmentName` | The environment the event happened on. |
 | `timeFired` | When the alert fired, in UTC (ISO 8601 format). |
 | `alertName` | The event type: `DDoS`, `Autoheal`, `Deployment`, or `Autoupgrade`. The outcome, such as failed or completed, is in `details`. |
@@ -65,7 +61,7 @@ The following example shows the payload for a failed deployment:
 | `customerMetadata` | The rule's priority as `severity`: `critical`, `high`, `medium`, or `low`. |
 | `isTest` | `true` when the notification was sent with [Send test](README.md#test-an-alert-rule). |
 
-The payload contains only the fields listed above.
+The payload is not versioned, and new fields can be added.
 
 {% hint style="info" %}
 Check `isTest` before triggering any action, such as paging an on-call engineer. Test notifications use your real project and environment, so the other fields look like a real alert.

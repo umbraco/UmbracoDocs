@@ -61,8 +61,6 @@ Hostname monitoring allows you to track the availability and response times of y
 
 ### [Alerting & Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
 
-<!-- TODO: confirm that Alerting & Notifications is placed under Insights in the project menu -->
-
 Set up alert rules to get notified by email or webhook when something important happens on your project. Alerts cover DDoS attacks, automatic restarts, deployments, and upgrades.
 
 ### [Traffic & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)

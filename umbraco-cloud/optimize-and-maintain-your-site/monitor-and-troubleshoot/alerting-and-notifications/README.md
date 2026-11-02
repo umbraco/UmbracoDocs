@@ -276,10 +276,6 @@ Each entry shows the event type, when the alert fired, the details, the overall 
 | **Delivery failed** | No destination received the notification. |
 | **Cooldown suppressed** | The event happened during the rule's cooldown, so no notification was sent. |
 
-<!-- TODO: align outcome labels with the Cloud Portal once the history UI shows the new statuses -->
-
-<!-- TODO: confirm how long alert history is kept -->
-
 ### Delivery Results per Destination
 
 A webhook destination is **Delivered** when your endpoint returns a `2xx` status code. Otherwise, the destination is **Failed**. The result is known as soon as the notification is sent.
