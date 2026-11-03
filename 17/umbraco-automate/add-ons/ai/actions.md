@@ -250,9 +250,7 @@ This automation reads a support email that arrives through a webhook, and only c
 
 Given the ticket "Order A-88412 arrived on 3 October. I paid 701,10 kr, but the mug and the teapot were broken.", the step outputs `orderId` `"A-88412"`, `amount` `701.1`, `deliveredOn` `"2026-10-03"`, and `damagedProducts` `["mug", "teapot"]`, each with `found` set to `true`.
 
-{% hint style="info" %}
 Branch on `found` to check whether a value was extracted. It is always `true` or `false`, whatever the type of value.
-{% endhint %}
 
 {% hint style="info" %}
 Open the step in the canvas to see each action's settings and output fields.

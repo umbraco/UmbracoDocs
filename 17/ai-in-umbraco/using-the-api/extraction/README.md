@@ -202,7 +202,7 @@ public interface IAIExtractionService
 
 {% endcode %}
 
-The `state` parameter is optional in the signature, but the call fails without it. There is nothing to extract from.
+The `state` parameter is optional in the signature, but the call fails without it, because there is nothing to extract from.
 
 ## Basic Usage
 
@@ -258,6 +258,8 @@ using Umbraco.AI.Core.Extraction;
 
 namespace MyProject.Services;
 
+public record TicketDetails(string? OrderId, decimal? Paid, DateOnly? DeliveredOn, IReadOnlyList<string> DamagedProducts);
+
 public class TicketReader
 {
     private readonly IAIExtractionService _extractionService;
@@ -267,7 +269,7 @@ public class TicketReader
         _extractionService = extractionService;
     }
 
-    public async Task ReadAsync(string ticket, CancellationToken cancellationToken)
+    public async Task<TicketDetails> ReadAsync(string ticket, CancellationToken cancellationToken)
     {
         var request = new AIExtractionRequest
         {
@@ -309,12 +311,7 @@ public class TicketReader
         var deliveredOn = (AIDateExtractionAnswer)response.Answers["deliveredOn"];
         var damaged = (AIListExtractionAnswer)response.Answers["damagedProducts"];
 
-        if (amount.IsFound)
-        {
-            decimal paid = amount.Value!.Value;
-        }
-
-        IReadOnlyList<string> products = damaged.Values;
+        return new TicketDetails(orderId.Value, amount.Value, deliveredOn.Value, damaged.Values);
     }
 }
 ```

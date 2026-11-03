@@ -151,6 +151,7 @@ Check an answer's `kind` before you read its value. TypeScript then knows which 
 {% code title="Options" %}
 
 ```typescript
+const controller = new UaiExtractionController(this);
 const abortController = new AbortController();
 
 const { data, error } = await controller.extract(

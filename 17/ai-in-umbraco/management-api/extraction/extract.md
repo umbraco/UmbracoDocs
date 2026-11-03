@@ -156,7 +156,7 @@ The response also has:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `modelId` | string | The model that produced the answers. `null` when unknown. |
+| `modelId` | string | The model that produced the answers, as the provider reports it. `null` when unknown. Cloudflare reports Clairic as `clairic`, although profiles use the full ID `@cf/cloudflare/clairic`. |
 | `usage` | object | Token usage (`inputTokens`, `outputTokens`, `totalTokens`) for the whole call. `null` when the provider does not report usage. |
 
 ## Status Codes
