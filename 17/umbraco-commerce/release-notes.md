@@ -33,7 +33,7 @@ This section contains the release notes for Umbraco Commerce 17 including all ch
 * Fixed a copied shipping package losing its weight
 * Fixed the older pipeline shortcut methods replacing the built-in pipeline tasks
 * Fixed duplicate API operation names on the Storefront country and region endpoints
-* Fixed several small backoffice display issues, including measurement field icons and units, the alias field hint, and settings left behind by deleted variants
+* Fixed small backoffice display issues, including measurement field icons and units, the alias field hint, and settings left behind by deleted variants
 
 #### 17.2.10 (27th Oct 2026)
 
