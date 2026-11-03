@@ -25,6 +25,11 @@ The changes below are the ones made since `17.7.0-rc`. For everything else in th
 * Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
 * Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
 * Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
+* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing, and say how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
+* Recycle Bin: Hide the recycle bin from users with start folders
+* Security: Show missing and trashed start folders in the start folder picker
+* Security: Refuse a start folder that doesn't exist when saving a user's or user group's Forms security, instead of saving part of the change
+* Security: Security fix for start folders
 
 ### [17.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (October 29th 2026)
 
