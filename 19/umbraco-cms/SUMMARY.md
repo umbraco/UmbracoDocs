@@ -87,6 +87,7 @@
       * [Block Grid](model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md)
       * [Block Level Variance](model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/block-level-variance.md)
       * [Block List](model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md)
+      * [Reusable Content in Block Editors](model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/reusable-content-in-block-editors.md)
     * [Checkbox List](model-your-content/property-editors/built-in-umbraco-property-editors/checkbox-list.md)
     * [Code Editor](model-your-content/property-editors/built-in-umbraco-property-editors/code-editor.md)
     * [Collection](model-your-content/property-editors/built-in-umbraco-property-editors/collection.md)
