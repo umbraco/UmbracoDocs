@@ -365,7 +365,7 @@ The builder overloads give you full control over auditing and telemetry. The oth
 
 | Method | Description |
 | --- | --- |
-| `.WithAlias(string alias)` | Sets an alias for auditing and telemetry. Defaults to `extraction`. The same alias always produces the same inline extraction ID. |
+| `.WithAlias(string alias)` | Sets an alias for auditing and telemetry. **Required.** The same alias always produces the same inline extraction ID. |
 | `.WithName(string name)` | Sets a display name. Defaults to the alias. |
 | `.WithProfile(Guid profileId)` | Selects a profile by ID. Uses the default Extraction profile if omitted. |
 | `.WithProfile(string profileAlias)` | Selects a profile by alias. |
@@ -393,7 +393,7 @@ The service checks the request before it contacts any provider. It also checks t
 | Exception | When |
 | --- | --- |
 | `ArgumentException` | The request is invalid. For example, the state is empty or there are no fields. A field `Id` is empty, invalid, or used twice. `Instructions` is empty, or `Decimals` is outside 0 to 6. |
-| `InvalidOperationException` | The feature flag is off. Or no profile has the given ID or alias, the profile is not an Extraction profile, or no default Extraction profile is configured. Also thrown when a notification handler cancels the call. |
+| `InvalidOperationException` | The feature flag is off. Or no profile has the given ID or alias, the profile is not an Extraction profile, or no default Extraction profile is configured. Also thrown when a builder overload is called without `WithAlias`, or when a notification handler cancels the call. |
 | `AIProviderException` | The provider call failed, for example because of an invalid API key or rate limiting. Also thrown when the provider's answers do not match the fields. For example, an answer is missing, is the wrong type, or has a confidence outside 0 to 1. The call is recorded as failed. |
 
 ## Setting Up Extraction
