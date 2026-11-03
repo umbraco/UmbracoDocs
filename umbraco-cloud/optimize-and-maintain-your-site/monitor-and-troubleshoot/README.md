@@ -8,6 +8,10 @@ This section guides you through the key tools available to observe usage, perfor
 
 ## Also in this Section
 
+{% content-ref url="alerting-and-notifications/" %}
+[Alerting and Notifications](alerting-and-notifications/)
+{% endcontent-ref %}
+
 {% content-ref url="sustainability-dashboard.md" %}
 [sustainability-dashboard.md](sustainability-dashboard.md)
 {% endcontent-ref %}
