@@ -34,7 +34,7 @@ data/Revision/umbraco-ai-connection__openai-production_abcd1234.uda
 
 **Environment resolution:**
 - API keys resolve from each environment's `appsettings.json`
-- Provider must be installed in target environment
+- Provider must be installed in the target environment
 
 ### Profiles
 
