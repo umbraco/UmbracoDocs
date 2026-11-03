@@ -80,9 +80,9 @@ The provider sends each Extraction request to Cloudflare as one HTTP call, howev
 - The request's state is sent as the text to extract from.
 - Every field is sent in the same call, keyed by its field ID. The answers come back under the same IDs.
 - The reference date, when set, is sent so that relative dates such as "yesterday" resolve correctly.
-- Each answer comes back with a confidence and a probability that the value is not in the text.
+- When Cloudflare returns a confidence and a probability that the value is not in the text, they are set on the answer.
 - Text and list answers include where each value sits in the text. A value that was not found has no span.
-- A date and time with a `Z` suffix is returned as a UTC `DateTime`.
+- A date and time with a `Z` suffix or a time zone offset, such as `+02:00`, is converted to a UTC `DateTime`.
 - Token usage is recorded once for the call.
 
 This means [extracting multiple fields at once](../using-the-api/extraction/README.md#extracting-multiple-fields-at-once) costs a single request to Cloudflare. The provider sets no limit on the number of fields in a request.
@@ -92,7 +92,7 @@ This means [extracting multiple fields at once](../using-the-api/extraction/READ
 **Test Connection** searches your Cloudflare account's Workers AI models for Clairic. This checks the Account ID and the API Token without running the model:
 
 - A valid account and token pass the test.
-- An invalid token, an unknown account, or any other error fails the test with Cloudflare's own message.
+- An invalid token, an unknown account, or any other error fails the test.
 
 A successful check is cached for one hour for the same endpoint, account, and token. Repeated tests within that hour do not send a new request. A failed check is not cached.
 

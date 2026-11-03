@@ -26,7 +26,6 @@ PUT /umbraco/ai/management/api/v1/settings
     "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
     "defaultExtractionProfileId": null,
-    "defaultExtractionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
 ```

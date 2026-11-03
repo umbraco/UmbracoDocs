@@ -123,7 +123,7 @@ Each answer also has its own value:
 | `AINumberExtractionAnswer` | `Value` (`decimal?`) |
 | `AIDateExtractionAnswer` | `Value` (`DateOnly?`) |
 | `AITimeExtractionAnswer` | `Value` (`TimeOnly?`) |
-| `AIDateTimeExtractionAnswer` | `Value` (`DateTime?`). The kind is `Utc` when the provider returns a UTC time, and `Unspecified` when the text gives no time zone. No conversion to local time is applied. |
+| `AIDateTimeExtractionAnswer` | `Value` (`DateTime?`). The kind is `Utc` when the provider returns a time with a time zone offset, which is converted to UTC, and `Unspecified` when the text gives no time zone. No conversion to local time is applied. |
 | `AIDurationExtractionAnswer` | `Value` (`decimal?`), and `Unit` (`AIDurationUnit`), which is always the unit the field asked for. |
 | `AIListExtractionAnswer` | `Values` (`IReadOnlyList<string>`), and `Spans` (`IReadOnlyList<AIExtractionSpan>`), in the same order as `Values`, when the provider reports them. |
 
@@ -370,7 +370,7 @@ The builder overloads give you full control over auditing and telemetry. The oth
 | `.WithProfile(Guid profileId)` | Selects a profile by ID. Uses the default Extraction profile if omitted. |
 | `.WithProfile(string profileAlias)` | Selects a profile by alias. |
 | `.WithExtractionOptions(AIExtractionOptions options)` | Sets per-call options, such as a model override. |
-| `.WithContextItems(IEnumerable<AIRequestContextItem> items)` | Attaches context items to the request. |
+| `.WithContextItems(IEnumerable<AIRequestContextItem> contextItems)` | Attaches context items to the request. |
 | `.AsPassThrough()` | Skips notifications and duration tracking when a parent feature already handles them. |
 
 {% code title="Builder example" %}

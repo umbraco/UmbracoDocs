@@ -29,7 +29,7 @@ The endpoint requires an authenticated backoffice user (policy: `BackOfficeAcces
 
 ## Checking Whether Extraction Is Enabled
 
-To check whether Extraction is enabled before you call it, use the `GET /umbraco/ai/management/api/v1/capabilities/enabled` endpoint. The response includes `"Extraction"` only when the feature flag is on. See [List Capabilities](../connections/capabilities.md#list-enabled-capabilities).
+To check whether Extraction is enabled before you call it, use the `GET /umbraco/ai/management/api/v1/capabilities/enabled` endpoint. The response includes `"Extraction"` only when the feature flag is on. Unlike the Extraction endpoint, that endpoint requires access to the AI section. See [List Capabilities](../connections/capabilities.md#list-enabled-capabilities).
 
 ## In This Section
 
