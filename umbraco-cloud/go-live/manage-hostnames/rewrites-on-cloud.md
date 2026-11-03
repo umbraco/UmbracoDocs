@@ -42,7 +42,7 @@ app.UseUmbraco()
 
 When setting up rewrite rules on Umbraco Cloud, there are a few important things to keep in mind:
 
-* Always skip requests to the Umbraco backoffice path (`/umbraco`). Rewriting this path may prevent you from deploying to and from the environment.
+* Always skip requests to the Umbraco backoffice path, `/umbraco`. Rewriting this path may prevent you from deploying to and from the environment.
 * To continue working locally with your Umbraco Cloud project, skip requests to `localhost`.
 * Skip the default `umbraco.io` hostnames, unless the rule is meant to target them.
 * To serve verification files from the `.well-known` directory (for example, Apple Pay or Google), follow the [Rewrite rule workaround in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules#example-serving-files-from-the-well-known-path).
@@ -170,7 +170,7 @@ Take note of the exclusions in the rewrite rule.
 It is important to skip the file paths on your site. If a trailing slash is added, your media may not display correctly after [migrating to Azure Blob Storage](/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/media.md).
 {% endhint %}
 
-## Redirect from non-www to www
+## Redirect from `non-www` to `www`
 
 Another example would be to redirect from `non-www` to `www`:
 
@@ -262,7 +262,7 @@ The rewrite rules should be added to the `<system.webServer><rewrite>` module in
 </rule>
 ```
 
-### Redirect from non-www to www with IIS
+### Redirect from `non-www` to `www` with IIS
 
 ```xml
 <rule name="Redirect to www prefix" stopProcessing="true">
