@@ -173,12 +173,12 @@ public class PublishBranchDemo
 
 The `PublishBranchFilter` option can include one or more of the following flags:
 
-* `Default` - publishes only nodes with pending changes.
+* `Default` - publishes only published content with pending changes.
 * `IncludeUnpublished` - publishes unpublished content and existing nodes with pending changes.
-* `ForceRepublish` - republishes all nodes, even if unchanged.
+* `ForceRepublish` - republishes all published content, even if unchanged.
 * `All` - combines `IncludeUnpublished` and `ForceRepublish`.
 
-The root of the branch is always published. For multilingual content, replace `"*"` with the cultures to publish, for example `["en-US", "da"]`.
+The root of the branch is published even if it has never been published, whichever filter you use. For multilingual content, replace `"*"` with the cultures to publish, for example `["en-US", "da"]`.
 
 ## Identifying the User performing an Action
 
