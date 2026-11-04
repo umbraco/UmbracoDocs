@@ -32,6 +32,9 @@ The changes below are the ones made since `18.3.0-rc`. For everything else in th
 * Security: Show missing and trashed start folders in the start folder picker
 * Security: Refuse a start folder that doesn't exist when saving a user's or user group's Forms security, instead of saving part of the change
 * Security: Security fix for start folders
+* Pickers: Clear a mandatory picker's validation error once a value is picked inside a block, so the block can be updated again. This covers the Form Picker (Single and Multiple), Theme Picker, Folder Picker and Form Details Picker, which now also block **Create** while empty [#1818](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1818)
+* Theme Picker: Show a "Choose a theme" placeholder when no theme is picked, instead of looking as if the first theme was chosen
+* Folder Picker: Keep the picked folders when a content property is saved. Values saved by earlier versions can't be recovered and now load as an empty selection
 * Update dependencies to Umbraco CMS 18.3.0. The release candidate required 18.3.0-rc2 or later.
 
 ### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
