@@ -18,7 +18,7 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
-#### 18.1.11 (2nd Nov 2026)
+#### 18.1.11 (2nd Nov 2026) 
 
 * Fixed the abandoned cart email failing when the customer's email address is not valid ([#911](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/911)).
 * Fixed emails failing with an error when none of their recipient addresses are valid. The email is now skipped and a warning is logged.

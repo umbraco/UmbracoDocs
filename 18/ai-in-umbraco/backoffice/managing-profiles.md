@@ -11,7 +11,7 @@ Profiles combine a connection with model settings for specific use cases. Create
 
 1. Navigate to the **AI** section > **Profiles**.
 2. The profile list shows all configured profiles.
-3. Use the filter field to search profiles by name. The **Capability** column shows each profile's capability, such as Chat, Embedding, Speech-to-Text, or Image Generation and Decision when enabled.
+3. Use the filter field to search profiles by name. The **Capability** column shows each profile's capability, such as Chat, Embedding, Speech-to-Text, or Image Generation, Decision, and Extraction when enabled.
 4. Click a profile to view or edit its details.
 
 ![The profiles list showing the Default Chat profile](../.gitbook/assets/backoffice-profiles-list.png)
@@ -25,7 +25,7 @@ Profiles combine a connection with model settings for specific use cases. Create
 | -------------- | ----------------------------------------------- |
 | **Name**       | Display name for the profile                    |
 | **Alias**      | Unique identifier (used in code and as default) |
-| **Capability** | Type of AI operation (Chat, Embedding, Speech-to-Text, or the experimental Image Generation and Decision) |
+| **Capability** | Type of AI operation (Chat, Embedding, Speech-to-Text, or the experimental Image Generation, Decision, and Extraction) |
 | **Connection** | Which connection to use                         |
 | **Model**      | The specific AI model                           |
 
@@ -118,6 +118,14 @@ Decision is experimental. The **Decision** capability can only be selected when 
 
 Decision profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Decision, such as [TypeSafe AI](../providers/typesafe.md), and its model.
 
+## Extraction Profile Settings
+
+{% hint style="warning" %}
+Extraction is experimental. The **Extraction** capability can only be selected when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+{% endhint %}
+
+Extraction profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Extraction, such as [Cloudflare](../providers/cloudflare.md), and its model.
+
 ## Governance
 
 Chat profiles have a **Governance** tab where you can assign [guardrails](managing-guardrails.md) to enforce safety, compliance, and quality rules on all AI operations using that profile.
@@ -143,7 +151,8 @@ To use a profile as the default when no profile is specified in code:
 4. Select your speech-to-text profile via the **Default Speech-to-Text Profile** picker.
 5. If Image Generation is enabled, select your Image Generation profile via the **Default Image Generation Profile** picker.
 6. If Decision is enabled, select your Decision profile via the **Default Decision Profile** picker.
-7. Click **Save**.
+7. If Extraction is enabled, select your Extraction profile via the **Default Extraction Profile** picker.
+8. Click **Save**.
 
 {% hint style="info" %}
 See [Managing Settings](managing-settings.md) for more details on configuring default profiles.

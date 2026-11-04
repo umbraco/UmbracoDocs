@@ -149,6 +149,14 @@ Returns 404 unless the `Umbraco:AI:Experimental:Decision` feature flag is enable
 | ------ | --------------------------------------------- | -------------------------------------------- |
 | POST   | `/umbraco/ai/management/api/v1/decision/ask`  | [Ask a decision](../decision/ask-decision.md) |
 
+### Extraction Operations (Experimental)
+
+Returns 404 unless the `Umbraco:AI:Experimental:Extraction` feature flag is enabled.
+
+| Method | Endpoint                                            | Description                                   |
+| ------ | --------------------------------------------------- | --------------------------------------------- |
+| POST   | `/umbraco/ai/management/api/v1/extraction/extract`  | [Extract values](../extraction/extract.md)    |
+
 ## IdOrAlias Pattern
 
 Many endpoints accept an `IdOrAlias` parameter, which can be either:
@@ -244,4 +252,8 @@ Response includes total count:
 
 {% content-ref url="../decision/" %}
 [decision](../decision/)
+{% endcontent-ref %}
+
+{% content-ref url="../extraction/" %}
+[extraction](../extraction/)
 {% endcontent-ref %}

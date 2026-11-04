@@ -5,7 +5,7 @@ description: >-
 
 # Types
 
-The Umbraco.AI frontend exports TypeScript types for type-safe AI integration across chat, embeddings, speech-to-text, decisions, and tools.
+The Umbraco.AI frontend exports TypeScript types for type-safe AI integration across chat, embeddings, speech-to-text, decisions, extraction, and tools.
 
 ## Import
 
@@ -28,6 +28,9 @@ import type {
     UaiDecisionQuestion,
     UaiDecisionResult,
     UaiDecisionOptions,
+    UaiExtractionRequest,
+    UaiExtractionResult,
+    UaiExtractionOptions,
     UaiToolScope,
     UaiToolItem,
 } from "@umbraco-ai/core";
@@ -492,6 +495,163 @@ interface UaiDecisionOptions {
     /** The content being judged. Optional; omitted means the question stands alone. */
     state?: string;
     /** Profile ID (GUID) or alias. If omitted, uses the default Decision profile. */
+    profileIdOrAlias?: string;
+    /** AbortSignal for cancellation. */
+    signal?: AbortSignal;
+}
+```
+
+{% endcode %}
+
+## Extraction Types
+
+{% hint style="warning" %}
+Extraction is experimental. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+{% endhint %}
+
+Types used by the [Extraction Controller](extraction-controller.md). The `kind` property discriminates both the field and its matching answer.
+
+### UaiExtractionRequest
+
+The text to read, and the fields to extract from it.
+
+{% code title="UaiExtractionRequest" %}
+
+```typescript
+interface UaiExtractionRequest {
+    state: string;
+    /** yyyy-MM-dd. Relative dates in the text resolve against it. */
+    referenceDate?: string;
+    fields: UaiExtractionField[];
+}
+
+type UaiExtractionField =
+    | UaiTextExtractionField
+    | UaiNumberExtractionField
+    | UaiDateExtractionField
+    | UaiTimeExtractionField
+    | UaiDateTimeExtractionField
+    | UaiDurationExtractionField
+    | UaiListExtractionField;
+
+interface UaiTextExtractionField {
+    kind: "text";
+    id: string;
+    instructions: string;
+}
+
+interface UaiNumberExtractionField {
+    kind: "number";
+    id: string;
+    instructions: string;
+    decimals?: number;
+    integer?: boolean;
+    unit?: string;
+}
+
+// UaiDateExtractionField, UaiTimeExtractionField, and UaiDateTimeExtractionField have the same
+// shape as UaiTextExtractionField, with kind "date", "time", and "datetime".
+
+interface UaiDurationExtractionField {
+    kind: "duration";
+    id: string;
+    instructions: string;
+    unit: UaiExtractionDurationUnit;
+    decimals?: number;
+    integer?: boolean;
+}
+
+interface UaiListExtractionField {
+    kind: "list";
+    id: string;
+    instructions: string;
+    itemType?: UaiExtractionListItemType;
+}
+
+type UaiExtractionDurationUnit = "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "years";
+type UaiExtractionListItemType = "text" | "number" | "date";
+```
+
+{% endcode %}
+
+### UaiExtractionResult
+
+The answers, keyed by field `id`, plus the model and usage for the whole call.
+
+{% code title="UaiExtractionResult" %}
+
+```typescript
+interface UaiExtractionResult {
+    answers: Record<string, UaiExtractionAnswer>;
+    modelId?: string | null;
+    usage?: UaiExtractionUsage | null;
+}
+
+type UaiExtractionAnswer =
+    | UaiTextExtractionAnswer
+    | UaiNumberExtractionAnswer
+    | UaiDateExtractionAnswer
+    | UaiTimeExtractionAnswer
+    | UaiDateTimeExtractionAnswer
+    | UaiDurationExtractionAnswer
+    | UaiListExtractionAnswer;
+
+interface UaiExtractionAnswerBase {
+    confidence?: number | null;
+    nullProbability?: number | null;
+    isFound: boolean;
+}
+
+interface UaiTextExtractionAnswer extends UaiExtractionAnswerBase {
+    kind: "text";
+    value?: string | null;
+    span?: UaiExtractionSpan | null;
+}
+
+interface UaiNumberExtractionAnswer extends UaiExtractionAnswerBase {
+    kind: "number";
+    value?: number | null;
+}
+
+// UaiDateExtractionAnswer, UaiTimeExtractionAnswer, and UaiDateTimeExtractionAnswer have a
+// string value, with kind "date", "time", and "datetime".
+
+interface UaiDurationExtractionAnswer extends UaiExtractionAnswerBase {
+    kind: "duration";
+    value?: number | null;
+    unit: string;
+}
+
+interface UaiListExtractionAnswer extends UaiExtractionAnswerBase {
+    kind: "list";
+    values: string[];
+    spans: UaiExtractionSpan[];
+}
+
+/** Character offsets into state. end is exclusive. */
+interface UaiExtractionSpan {
+    start: number;
+    end: number;
+}
+
+interface UaiExtractionUsage {
+    inputTokens?: number | null;
+    outputTokens?: number | null;
+    totalTokens?: number | null;
+}
+```
+
+{% endcode %}
+
+### UaiExtractionOptions
+
+Options for the `UaiExtractionController.extract` method.
+
+{% code title="UaiExtractionOptions" %}
+
+```typescript
+interface UaiExtractionOptions {
+    /** Profile ID (GUID) or alias. If omitted, uses the default Extraction profile. */
     profileIdOrAlias?: string;
     /** AbortSignal for cancellation. */
     signal?: AbortSignal;
