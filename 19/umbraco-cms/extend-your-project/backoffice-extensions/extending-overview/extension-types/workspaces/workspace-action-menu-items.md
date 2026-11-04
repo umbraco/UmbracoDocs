@@ -30,7 +30,7 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 
 * **`kind`** - Specifies which type of element should be shown (if no `element` is provided). The `default` option refers to the `<umb-workspace-action-menu-item />`, which supports a label and an href
 * **`forWorkspaceActions`** - Specifies which workspace action this extends
-* **`weight`** - Controls ordering within the dropdown menu, or within the group when `group` is set
+* **`weight`** - Controls ordering within the group, or within the Other group at the end of the menu when `group` isn't set
 * **`group`** - Optional alias of the group the menu item belongs to. See [Grouping Menu Items](#grouping-menu-items)
 * **`separatorBefore`** - Optional. When `true`, adds an extra separator line above the menu item inside its group
 * **`meta.label`** - Text displayed in dropdown

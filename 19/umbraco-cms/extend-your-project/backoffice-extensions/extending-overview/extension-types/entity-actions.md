@@ -287,9 +287,9 @@ umbExtensionsRegistry.registerMany([groupManifest, actionManifest]);
 ```
 {% endcode %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 
-If `group` holds an alias that matches no registered group, Umbraco renders those actions together in a fallback group at the end of the menu. Umbraco also logs a warning to the browser console once for each unknown alias.
+An action without a `group`, or with a `group` that matches no registered group, renders in the Other group at the end of the menu.
 
 {% endhint %}
 
@@ -297,20 +297,19 @@ If `group` holds an alias that matches no registered group, Umbraco renders thos
 
 Umbraco orders the visible actions in a menu by the following rules:
 
-* Groups and actions without a group sort together, highest weight first. A group uses the `weight` of the group, and an action without a group uses its own `weight`.
-* At equal weight, a group comes before an action without a group. After that, the alias decides the order.
-* Inside a group, actions sort by their own `weight`, then by alias.
+* Groups sort by the `weight` of the group, highest first.
+* Inside a group, actions sort by their own `weight`, highest first. Equal weights sort by alias.
+* Actions without a registered group render last, in the Other group, sorted the same way.
 * A group with no visible actions doesn't render.
 
 ### Separators
 
 Umbraco places the separator lines in a menu by the following rules:
 
-* Every group has a separator on both edges, as long as one of its actions is visible. An action without a group that sits between two groups therefore renders as its own block.
-* Actions without a group that sit next to each other have no separator between them.
-* A menu never starts or ends with a separator, and never shows two separators in a row.
+* A separator line sits between every two groups, including the Other group.
+* A menu never starts or ends with a separator.
 
-Inside a group, an action can add an extra line above itself with `separatorBefore: true`. In the **Save and publish** menu of the Document workspace, Schedule publish, Publish with descendants, and Unpublish belong to the Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions. When a condition such as a user permission hides Unpublish, the extra line disappears with it.
+Inside a group, an action can add an extra line above itself with `separatorBefore: true`. In the **Save and publish** menu of the Document workspace, Schedule publish, Publish with descendants, and Unpublish belong to the Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions. When a condition such as a user permission hides Unpublish, the extra line disappears with it. On the first action of a group, `separatorBefore` has no effect, as a line already sits above the group.
 
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 

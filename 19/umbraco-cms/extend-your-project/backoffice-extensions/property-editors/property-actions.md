@@ -33,7 +33,7 @@ const manifest =
     name: 'My Property Action',
     forPropertyEditorUis: ["my-property-editor"], // Target specific property editor UI aliases (for example, ["Umb.PropertyEditorUi.TextBox", "Umb.PropertyEditorUi.TinyMCE"])
     api: () => import('./my-property-action.api.js'),
-    weight: 10, // Position in the menu, or inside the group when `group` is set
+    weight: 10, // Order inside the group, or inside the Other group at the end of the menu
     meta: {
       icon: 'icon-add', // Icon to display in the UI
       label: 'My property action', // Label shown to editors
