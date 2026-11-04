@@ -250,6 +250,7 @@
   * [Integration Testing](develop-with-umbraco/testing-and-debugging/integration-testing.md)
   * [Unit Testing](develop-with-umbraco/testing-and-debugging/unit-testing.md)
   * [Debugging with SourceLink](develop-with-umbraco/testing-and-debugging/debugging.md)
+  * [MiniProfiler](develop-with-umbraco/testing-and-debugging/miniprofiler.md)
 * [Service Registration](develop-with-umbraco/service-registration.md)
 * [Configuration](develop-with-umbraco/configuration/README.md)
   * [Basic Authentication Settings](develop-with-umbraco/configuration/basicauthsettings.md)
