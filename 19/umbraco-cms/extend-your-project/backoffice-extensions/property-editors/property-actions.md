@@ -104,6 +104,6 @@ umbExtensionsRegistry.register(manifest);
 ```
 {% endcode %}
 
-To add a line above a single action without starting a new group, set `separatorBefore: true` on that action. To register your own group, use a manifest with the type `propertyActionGroup`.
+To register your own group, use a manifest with the type `propertyActionGroup`. Inside a group, an action can add an extra line above itself with `separatorBefore: true`.
 
 For the full ordering and separator rules, and an example of a custom group, see the [Grouping Entity Actions](../extending-overview/extension-types/entity-actions.md#grouping-entity-actions) section of the Entity Actions article.

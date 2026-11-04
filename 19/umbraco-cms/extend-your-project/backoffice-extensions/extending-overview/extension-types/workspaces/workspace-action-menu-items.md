@@ -32,7 +32,7 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 * **`forWorkspaceActions`** - Specifies which workspace action this extends
 * **`weight`** - Controls ordering within the dropdown menu, or within the group when `group` is set
 * **`group`** - Optional alias of the group the menu item belongs to. See [Grouping Menu Items](#grouping-menu-items)
-* **`separatorBefore`** - Optional. When `true`, renders a separator line above the menu item
+* **`separatorBefore`** - Optional. When `true`, adds an extra separator line above the menu item inside its group
 * **`meta.label`** - Text displayed in dropdown
 * **`meta.icon`** - Icon displayed alongside label
 
@@ -155,7 +155,7 @@ Umbraco registers one workspace action menu item group. Import the constant from
 | ------------------------------------------------- | --------------------------------------------- | ------ |
 | `UMB_WORKSPACE_ACTION_MENU_ITEM_GROUP_PUBLISHING` | `Umb.WorkspaceActionMenuItemGroup.Publishing` | 100    |
 
-The **Save and publish** menu in the Document workspace uses the Publishing group for Schedule publish, Publish with descendants, and Unpublish. Unpublish also sets `separatorBefore: true`, so a line separates it from the two publish actions inside the group.
+The **Save and publish** menu in the Document workspace uses the Publishing group for Schedule publish, Publish with descendants, and Unpublish.
 
 The following menu item joins the same group. Inside a group, the `weight` of the menu item only orders it among the other items in that group. A weight of 5 places the item after Publish with descendants (weight 10) and before Unpublish (weight 0).
 
@@ -184,5 +184,7 @@ umbExtensionsRegistry.register(manifest);
 {% endcode %}
 
 To register your own group, use a manifest with the type `workspaceActionMenuItemGroup`.
+
+Inside a group, a menu item can add an extra line above itself with `separatorBefore: true`. Unpublish sets `separatorBefore: true`, so a line separates Unpublish from the two publish actions in the Publishing group.
 
 For the full ordering and separator rules, and an example of a custom group, see the [Grouping Entity Actions](../entity-actions.md#grouping-entity-actions) section of the Entity Actions article.

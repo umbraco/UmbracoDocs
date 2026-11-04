@@ -306,41 +306,11 @@ Umbraco orders the visible actions in a menu by the following rules:
 
 Umbraco places the separator lines in a menu by the following rules:
 
-* Every group has a separator on both edges. An action without a group that sits between two groups therefore renders as its own block.
+* Every group has a separator on both edges, as long as one of its actions is visible. An action without a group that sits between two groups therefore renders as its own block.
 * Actions without a group that sit next to each other have no separator between them.
-* An action with `separatorBefore: true` gets a separator above it. The property works inside a group as well.
 * A menu never starts or ends with a separator, and never shows two separators in a row.
 
-The separator from `separatorBefore` belongs to its action. When a condition such as a user permission hides the action, the separator disappears with it. A group keeps its separators as long as one of its actions is visible.
-
-The **Save and publish** menu in the Document workspace shows `separatorBefore` inside a group. Schedule publish, Publish with descendants, and Unpublish all belong to the same Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions.
-
-Use `separatorBefore` when one action needs a line above it without starting a new group:
-
-{% code title="entity-action/manifest.ts" %}
-```typescript
-import { UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT } from '@umbraco-cms/backoffice/entity-action';
-import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
-
-const manifest = {
-    type: 'entityAction',
-    kind: 'default',
-    alias: 'My.EntityAction.ResetExport',
-    name: 'My Reset Export Entity Action',
-    group: UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT,
-    separatorBefore: true,
-    weight: 10,
-    api: () => import('./my-reset-export-entity-action.js'),
-    forEntityTypes: ['document-type'],
-    meta: {
-        icon: 'icon-refresh',
-        label: 'Reset export settings',
-    },
-};
-
-umbExtensionsRegistry.register(manifest);
-```
-{% endcode %}
+Inside a group, an action can add an extra line above itself with `separatorBefore: true`. In the **Save and publish** menu of the Document workspace, Schedule publish, Publish with descendants, and Unpublish belong to the Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions. When a condition such as a user permission hides Unpublish, the extra line disappears with it.
 
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
