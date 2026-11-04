@@ -88,6 +88,7 @@
   * [Frontend Tools](add-ons/agent-copilot/frontend-tools.md)
 * [Copilot Workspace](add-ons/copilot-workspace/README.md)
   * [Usage](add-ons/copilot-workspace/copilot-workspace.md)
+  * [Sharing Conversations](add-ons/copilot-workspace/sharing-conversations.md)
 * [Deploy Support](add-ons/deploy/README.md)
   * [Installation](add-ons/deploy/installation.md)
   * [Configuration](add-ons/deploy/configuration.md)
