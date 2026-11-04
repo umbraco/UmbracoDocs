@@ -183,6 +183,165 @@ export { MyCustomModalEntityAction as api };
 ```
 {% endcode %}
 
+## Grouping Entity Actions <a href="#grouping-entity-actions" id="grouping-entity-actions"></a>
+
+Umbraco splits entity action menus into groups of related actions, with a separator line between the groups. For example, the actions that create something sit together, and so do the actions that move, sort, or delete it.
+
+A group is an extension of the type `entityActionGroup`. An entity action joins a group through its `group` property, which holds the alias of the group.
+
+Property actions and workspace action menu items follow the same rules with their own group types:
+
+| Actions                     | Group extension type           |
+| --------------------------- | ------------------------------ |
+| Entity actions              | `entityActionGroup`            |
+| Property actions            | `propertyActionGroup`          |
+| Workspace action menu items | `workspaceActionMenuItemGroup` |
+
+### Built-in Entity Action Groups <a href="#built-in-entity-action-groups" id="built-in-entity-action-groups"></a>
+
+Umbraco registers the following entity action groups. Import the constants from `@umbraco-cms/backoffice/entity-action`.
+
+| Constant                                | Alias                                 | Weight |
+| --------------------------------------- | ------------------------------------- | ------ |
+| `UMB_ENTITY_ACTION_GROUP_CREATE`        | `Umb.EntityActionGroup.Create`        | 1200   |
+| `UMB_ENTITY_ACTION_GROUP_STRUCTURE`     | `Umb.EntityActionGroup.Structure`     | 800    |
+| `UMB_ENTITY_ACTION_GROUP_PUBLISHING`    | `Umb.EntityActionGroup.Publishing`    | 600    |
+| `UMB_ENTITY_ACTION_GROUP_ROUTING`       | `Umb.EntityActionGroup.Routing`       | 400    |
+| `UMB_ENTITY_ACTION_GROUP_NOTIFICATIONS` | `Umb.EntityActionGroup.Notifications` | 100    |
+| `UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT` | `Umb.EntityActionGroup.ImportExport`  | 50     |
+
+### Adding an Action to a Built-in Group
+
+Set `group` to one of the constants to place your action next to the related core actions. Inside the group, the `weight` of the action only orders it among the other actions in that group.
+
+The following action joins the Import and export group on Document Types. Its weight of 400 places it after the core Export and Import actions, which have a weight of 500.
+
+{% code title="entity-action/manifest.ts" %}
+```typescript
+import { UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT } from '@umbraco-cms/backoffice/entity-action';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest = {
+    type: 'entityAction',
+    kind: 'default',
+    alias: 'My.EntityAction.ExportAsJson',
+    name: 'My Export as JSON Entity Action',
+    group: UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT,
+    weight: 400,
+    api: () => import('./my-export-as-json-entity-action.js'),
+    forEntityTypes: ['document-type'],
+    meta: {
+        icon: 'icon-download-alt',
+        label: 'Export as JSON',
+    },
+};
+
+umbExtensionsRegistry.register(manifest);
+```
+{% endcode %}
+
+### Registering Your Own Group
+
+Register an `entityActionGroup` when none of the built-in groups fit your actions. A group manifest has the following properties:
+
+* `type` - The group extension type, here `entityActionGroup`.
+* `alias` - The alias that actions use in their `group` property.
+* `name` - A readable name for the extension.
+* `weight` - The position of the group in the menu.
+* `meta.label` - The accessible name of the group. Use plain text or a localization key, such as `#actionGroups_publishing`.
+
+The menu doesn't display the label. Umbraco renders each group as an element with `role="group"` and uses the label as its `aria-label`, so screen readers announce the group.
+
+The following example registers a Reports group at weight 300, between the Routing and Notifications groups. One action joins the group.
+
+{% code title="entity-action/manifest.ts" %}
+```typescript
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const groupManifest = {
+    type: 'entityActionGroup',
+    alias: 'My.EntityActionGroup.Reports',
+    name: 'My Reports Entity Action Group',
+    weight: 300,
+    meta: {
+        label: 'Reports',
+    },
+};
+
+const actionManifest = {
+    type: 'entityAction',
+    kind: 'default',
+    alias: 'My.EntityAction.ContentReport',
+    name: 'My Content Report Entity Action',
+    group: 'My.EntityActionGroup.Reports',
+    weight: 100,
+    api: () => import('./my-content-report-entity-action.js'),
+    forEntityTypes: ['document'],
+    meta: {
+        icon: 'icon-chart',
+        label: 'Content report',
+    },
+};
+
+umbExtensionsRegistry.registerMany([groupManifest, actionManifest]);
+```
+{% endcode %}
+
+{% hint style="warning" %}
+
+If `group` holds an alias that matches no registered group, Umbraco renders those actions together in a fallback group at the end of the menu. Umbraco also logs a warning to the browser console once for each unknown alias.
+
+{% endhint %}
+
+### Menu Order
+
+Umbraco orders the visible actions in a menu by the following rules:
+
+* Groups and actions without a group sort together, highest weight first. A group uses the `weight` of the group, and an action without a group uses its own `weight`.
+* At equal weight, a group comes before an action without a group. After that, the alias decides the order.
+* Inside a group, actions sort by their own `weight`, then by alias.
+* A group with no visible actions doesn't render.
+
+### Separators
+
+Umbraco places the separator lines in a menu by the following rules:
+
+* Every group has a separator on both edges. An action without a group that sits between two groups therefore renders as its own block.
+* Actions without a group that sit next to each other have no separator between them.
+* An action with `separatorBefore: true` gets a separator above it. The property works inside a group as well.
+* A menu never starts or ends with a separator, and never shows two separators in a row.
+
+The separator from `separatorBefore` belongs to its action. When a condition such as a user permission hides the action, the separator disappears with it. A group keeps its separators as long as one of its actions is visible.
+
+The **Save and publish** menu in the Document workspace shows `separatorBefore` inside a group. Schedule publish, Publish with descendants, and Unpublish all belong to the same Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions.
+
+Use `separatorBefore` when one action needs a line above it without starting a new group:
+
+{% code title="entity-action/manifest.ts" %}
+```typescript
+import { UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT } from '@umbraco-cms/backoffice/entity-action';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest = {
+    type: 'entityAction',
+    kind: 'default',
+    alias: 'My.EntityAction.ResetExport',
+    name: 'My Reset Export Entity Action',
+    group: UMB_ENTITY_ACTION_GROUP_IMPORT_EXPORT,
+    separatorBefore: true,
+    weight: 10,
+    api: () => import('./my-reset-export-entity-action.js'),
+    forEntityTypes: ['document-type'],
+    meta: {
+        icon: 'icon-refresh',
+        label: 'Reset export settings',
+    },
+};
+
+umbExtensionsRegistry.register(manifest);
+```
+{% endcode %}
+
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
 Developers can define custom user permission codes to control access to their actions, in addition to the standard Umbraco user permission codes. Custom permission codes need to be unique and should not clash with existing permission codes.

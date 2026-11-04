@@ -33,7 +33,7 @@ const manifest =
     name: 'My Property Action',
     forPropertyEditorUis: ["my-property-editor"], // Target specific property editor UI aliases (for example, ["Umb.PropertyEditorUi.TextBox", "Umb.PropertyEditorUi.TinyMCE"])
     api: () => import('./my-property-action.api.js'),
-    weight: 10, // Order if multiple actions exist
+    weight: 10, // Position in the menu, or inside the group when `group` is set
     meta: {
       icon: 'icon-add', // Icon to display in the UI
       label: 'My property action', // Label shown to editors
@@ -66,3 +66,44 @@ export class MyPropertyAction extends UmbPropertyActionBase {
 export { MyPropertyAction as api };
 ```
 {% endcode %}
+
+## Grouping Property Actions
+
+Umbraco splits the property action menu into groups of related actions, with a separator line between the groups. A group is an extension of the type `propertyActionGroup`. A property action joins a group through its `group` property, which holds the alias of the group.
+
+Umbraco registers the following property action groups. Import the constants from `@umbraco-cms/backoffice/property-action`.
+
+| Constant                              | Alias                               | Weight |
+| ------------------------------------- | ----------------------------------- | ------ |
+| `UMB_PROPERTY_ACTION_GROUP_CLIPBOARD` | `Umb.PropertyActionGroup.Clipboard` | 1200   |
+| `UMB_PROPERTY_ACTION_GROUP_EDIT`      | `Umb.PropertyActionGroup.Edit`      | 1100   |
+
+The following action joins the Edit group. Inside a group, the `weight` of the action only orders it among the other actions in that group.
+
+{% code title="index.ts" %}
+```typescript
+import { UMB_PROPERTY_ACTION_GROUP_EDIT } from '@umbraco-cms/backoffice/property-action';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest = {
+  type: 'propertyAction',
+  kind: 'default',
+  alias: 'My.PropertyAction.Reset',
+  name: 'My Reset Property Action',
+  forPropertyEditorUis: ['my-property-editor'],
+  group: UMB_PROPERTY_ACTION_GROUP_EDIT,
+  weight: 10,
+  api: () => import('./my-property-action.api.js'),
+  meta: {
+    icon: 'icon-refresh',
+    label: 'Reset',
+  },
+};
+
+umbExtensionsRegistry.register(manifest);
+```
+{% endcode %}
+
+To add a line above a single action without starting a new group, set `separatorBefore: true` on that action. To register your own group, use a manifest with the type `propertyActionGroup`.
+
+For the full ordering and separator rules, and an example of a custom group, see the [Grouping Entity Actions](../extending-overview/extension-types/entity-actions.md#grouping-entity-actions) section of the Entity Actions article.
