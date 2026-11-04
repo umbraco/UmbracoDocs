@@ -1,0 +1,267 @@
+# Project Settings
+
+When working with an Umbraco Cloud project, you can handle the project configuration directly in the Umbraco Cloud Portal. You can manage the following configurations from the left-side menu:
+
+![Settings menu](../../../.gitbook/assets/settings-menu.png)
+
+## Overview
+
+### Environments
+
+The Environments section provides an overview of your project’s environments. Here, you can:
+
+* Access the Website (frontend) and backend,
+* Open Kudu, and
+* Clone down the environment locally.
+
+![Environments Overview](../../../.gitbook/assets/environments-overview-new.png)
+
+### Team
+
+The Team section allows you to:
+
+* Manage team members and their permissions on different environments.
+* Add new team members.
+* Manage backoffice user groups and [Technical contacts](../../../begin-your-cloud-journey/project-features/team-members/technical-contact.md) for your project.
+* Monitor pending project invitations.
+
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+
+### Resources
+
+The **Resources** section lists every hosting resource your Umbraco Cloud project contains. A project is made up of hosting resources such as a website, a SQL database, a compute plan, and media storage.
+
+For each resource, you can see:
+
+* **Resource type** - Website, SQL Database, Shared Compute, Media Storage, Redis Cache, Secret Store, or Cloudflare Tenant.
+* **Environment** - The environment the resource belongs to.
+* **Region** - Where the resource runs, for example, West Europe or Global.
+* **State** - The current state of the resource, for example Ready or Provisioning.
+* **Tier** - The plan or tier of the resource, where relevant. For example, Shared Standard.
+
+You can filter the list by resource type and by environment.
+
+### Summary
+
+The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
+
+![Project Summary](../../../.gitbook/assets/summary-details.png)
+
+## Insights
+
+### [Project History](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md)
+
+In the Project History section, you can view a list of high-level activities for your cloud project.
+
+![Project History](../../../.gitbook/assets/project-history.png)
+
+### [Hostname Monitoring](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
+
+Hostname monitoring allows you to track the availability and response times of your websites. You can configure monitors for multiple hostnames, set check frequency and locations, and view historical ping results. This helps ensure optimal website performance and alerts you to potential downtime or performance issues.
+
+### [Alerting & Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
+
+Set up alert rules to get notified by email or webhook when something important happens on your project. Alerts cover DDoS attacks, automatic restarts, deployments, and upgrades.
+
+### [Traffic & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
+
+You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution.
+
+![Availability & Performance](../../../.gitbook/assets/availability-performance.png)
+
+### [Usage](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/)
+
+The Usage section allows you to:
+
+* View the usage of Custom Domains, Media Storage, Bandwidth, and Bandwidth History for your project.
+* Check whether the project is using above or below the allowed amount for its plan.
+* View the top 10 bandwidth usage paths, referrers, and the top 50 media files.
+
+![Usage](../../../.gitbook/assets/usage-new.png)
+
+### Environment Logs
+
+Each environment has an error log that appears only if there are any unread errors in that specific environment. You can view the errors by clicking on **Environment logs** in the **Insights** menu.
+
+During development, too many errors can slow down the error page. To fix this, connect to the environment's database locally and delete the errors. Learn how to connect to the database in the [Database on Umbraco Cloud](../databases/cloud-database/) section.
+
+Environment errors are stored in the `UCErrorLog` table.
+
+The query below deletes 90% of the errors. The query always deletes the oldest errors first. You can tweak the query to delete any percentage of errors by changing the number in the first row.
+
+```sql
+DELETE TOP(90) PERCENT
+  FROM [dbo].[UCErrorLog]
+  WHERE [Read] = 0
+```
+
+## Configuration
+
+### [Connections](../databases/)
+
+The Connections section provides connection details for your Umbraco Cloud databases. You need to allow your IP to connect to the databases with your local machine.
+
+![Connections](../../../.gitbook/assets/connections.png)
+
+### [Automatic Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md)
+
+The Automatic Upgrades section handles minor and patch upgrades for the Umbraco components used by Umbraco Cloud. By default, new projects have automatic upgrades enabled.
+
+You can manage whether your site is automatically upgraded with the latest patch and minor version(s) of Umbraco CMS, Forms, and Deploy.
+
+You can also select the upgrade windows where automatic upgrades are allowed to start. For the default schedule and how to change it, see the [Upgrade Windows](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section.
+
+For information about opting out of automated upgrades, see the [Product Upgrades](../../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/) article.
+
+![Automatic Upgrades](../../../.gitbook/assets/automatic-upgrades.png)
+
+### [Content Delivery Network (CDN) and Caching](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md)
+
+The CDN and Caching section lets you manage CDN Caching and Optimization settings for your project. You can:
+
+* Modify the default settings that apply to all hostnames added to the project.
+* Set specific caching settings per hostname if different configurations are required for certain hostnames.
+* Purge Cache for individual hostnames or all of them.
+
+These settings apply to custom hostnames only. The default `*.{region}.umbraco.io` hostnames of the project cannot be cached in the CDN. For more information, see [CDN Caching and Optimizations](../../../optimize-and-maintain-your-site/optimize-performance/manage-cdn-caching.md#custom-hostname-requirement).
+
+![CDN & Caching](../../../.gitbook/assets/cdn-caching.png)
+
+### [Hostnames](../../../go-live/manage-hostnames/)
+
+In the Hostnames section, you can bind hostnames to your Umbraco Cloud project.
+
+![Hostnames](../../../.gitbook/assets/hostnames.png)
+
+### [Webhooks](../../handle-deployments-and-environments/deployment/deployment-webhook.md)
+
+You can configure deployment webhooks for your environments in this section. Webhooks are triggered upon successful deployments, and you can specify where the deployment information is sent.
+
+![Webhooks](../../../.gitbook/assets/webhooks.png)
+
+### [CI/CD Flow](../../handle-deployments-and-environments/umbraco-cicd/)
+
+The CI/CD Flow section allows you to manage settings related to CI/CD deployments:
+
+* Enable CI/CD Flow with or without Advanced options.
+* See a list of environments that can be targeted by CI/CD Flow.
+* See a paginated list of artifacts that have been pushed to your project via the CI/CD pipeline.
+
+![CI/CD Flow settings](../../../.gitbook/assets/cicd-flow-page.png) ![CI/CD Flow Artifact list](../../../.gitbook/assets/cicd-artifacts.png)
+
+### Advanced
+
+The Advanced section provides options for managing advanced settings for your project, including:
+
+* [Enable static outbound IP addresses](../../../expand-your-projects-capabilities/external-services/#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
+* Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
+* [Enable loading of a client certificate from the file system](platform-configuration.md#file-system-certificate).
+* Change the .NET framework runtime for each environment of your Umbraco Cloud project.
+* Change the value of the `DOTNET_ENVIRONMENT` environment variable for each environment of your Umbraco Cloud project. To learn more about working with multiple environments in ASP.NET Core, refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-9.0).
+* [Manage Platform Configuration](platform-configuration.md) to control Proactive Auto-Heal, Always On, Sticky Sessions, and File System Certificate for your environments. Proactive Auto-Heal and Always On can only be changed on a **Dedicated** plan.
+
+{% hint style="info" %}
+Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).
+{% endhint %}
+
+{% hint style="info" %}
+Changing the .NET framework runtime or the `DOTNET_ENVIRONMENT` environment variable will also cause your website to restart.
+{% endhint %}
+
+{% hint style="info" %}
+When using `WebApplication`, `DOTNET_ENVIRONMENT` takes precedence over `ASPNETCORE_ENVIRONMENT`. When using the legacy `WebHost`, `ASPNETCORE_ENVIRONMENT` takes precedence instead.
+
+You can also override the environment value by setting the `ASPNETCORE_ENVIRONMENT` variable in your `web.config` file.
+{% endhint %}
+
+![Advanced Settings](../../../.gitbook/assets/advanced-settings.png)
+
+![Advanced Settings continued](../../../.gitbook/assets/advanced-settings-continued.png)
+
+### [Backups](../databases/backups.md#backup-on-umbraco-cloud)
+
+The Backups section enables you to create database backups for one or more of your cloud environments.
+
+![Backups](../../../.gitbook/assets/backups.png)
+
+## Security
+
+### [Public Access](public-access.md)
+
+{% hint style="info" %}
+By default, Public access is available for projects created after the 10th of January 2023.
+
+The [Umbraco.Cloud.Cms.PublicAccess](https://www.nuget.org/packages/Umbraco.Cloud.Cms.PublicAccess) package can be installed to enable Public access for projects created before the 10th of January 2023.
+{% endhint %}
+
+The Public access setting, found under the Security tab, allows you to deny access to your project. Users who are not part of the project or whose IP addresses have not been allowed will not be able to access the project.
+
+You can enable or disable this setting on the Public access page. Access to manage Public access requires your project to be on the Standard plan or higher.
+
+![Public Access](../../../.gitbook/assets/public-access.png)
+
+### [External Login Providers](../../../begin-your-cloud-journey/project-features/external-login-providers.md)
+
+External Login Providers allow you to integrate third-party authentication systems to manage backoffice user logins securely. Using OpenID Connect, you can connect providers like Microsoft Entra ID, Auth0, and Google to simplify login management and improve security for your teams.
+
+### [Transport Security](../security/managing-transport-security.md)
+
+The Transport Security section enables you to manage transport security settings for your project. You can configure specific transport security options for all hostnames or individual hostnames within your project.
+
+![Transport Security](../../../.gitbook/assets/transport-security.png)
+
+### [Management API Security](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
+
+The Management API Security section allows you to secure access to the backend services of your project. This can be managed from the Security menu on the Umbraco Cloud Portal.
+
+![Management API Security](../../../.gitbook/assets/management-api-security.png)
+
+### [Secrets](../../../begin-your-cloud-journey/project-features/secrets-management.md)
+
+The Secrets Management section is used for storing sensitive information such as API keys, encryption keys, and connection strings used by your Umbraco Cloud project.
+
+![Secrets](../../../.gitbook/assets/secrets.png)
+
+## Management
+
+### [Baselines](../../../begin-your-cloud-journey/creating-a-cloud-project/baselines.md)
+
+A Baseline is a project that serves as a template for creating child projects. When you set up a baseline project, you can quickly spin up new projects with the same packages, components, and configuration. Any changes you make to the baseline can be pushed to all connected child projects, keeping them in sync.
+
+![Baselines](../../../.gitbook/assets/manage-child-projects.png)
+
+### [Dedicated Resources](dedicated-resources.md)
+
+You can change your Umbraco Cloud project to run in a dedicated setup with additional computational resources compared to the shared setup. You can choose between different dedicated options depending on the number of resources you will need for your project.
+
+![Dedicated Resources](../../../.gitbook/assets/dedicated-resources.png)
+
+### Change Plan
+
+You can change your Umbraco Cloud plan to upgrade to a higher plan or downgrade to a lower plan depending on your project needs. You can manage plan changes and dedicated resources from the **Management** menu.
+
+![Change Plan](../../../.gitbook/assets/change-plan.png)
+
+### Rename Project
+
+You can rename your Umbraco Cloud project from the **Management** menu.
+
+{% hint style="info" %}
+If you are working locally, you need to update the origin of your local git repository to point to the new clone URL. Alternatively, you can make a fresh local clone of the project once you’ve changed your project name.
+{% endhint %}
+
+![Rename Project](../../../.gitbook/assets/rename-project.png)
+
+#### [Renaming the Project file and folder](../../handle-deployments-and-environments/working-locally/#renaming-the-project-files-and-folders)
+
+You can rename your project from the **Rename Project** section in the **Management** menu on the Umbraco Cloud Portal. When you rename a project, the default hostnames and clone URLs assigned to the project are updated to match the new project name. You can also rename your project files and folders locally.
+
+### Delete Project
+
+You can delete your Umbraco Cloud project from the **Management** menu. Deleting your Umbraco Cloud project is permanent - all data, media, databases, configuration, setup, and domain bindings are removed in the process.
+
+{% hint style="info" %}
+Deleting your Umbraco Cloud project will also cancel any subscriptions you have set up for the project.
+{% endhint %}
+
+![Delete Project](../../../.gitbook/assets/delete-project.png)
