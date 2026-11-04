@@ -10,9 +10,9 @@ The `IContentService` reads and manages content items (`IContent`) in the databa
 |---|---|
 | Render or read published content | `IPublishedContentCache` or `IPublishedContentQuery`. See [Querying](../../../../develop-with-umbraco/templating-and-rendering/querying/README.md). |
 | Create, update, or publish content as a specific user, identified by key | `IContentEditingService` and `IContentPublishingService` |
-| Manage content by ID, without validation | `IContentService` |
+| Manage content directly, without validation | `IContentService` |
 
-The examples on this page use two Document Types: *Catalogue* and *Product*. *Product* is allowed as a child of *Catalogue*. It has a `category` property (`Textstring`) and a `price` property (`Numeric`).
+The examples on this page use two Document Types: *Catalogue* and *Product*. *Product* is allowed as a child of *Catalogue*. *Product* has a `category` property (`Textstring`) and a `price` property (`Numeric`).
 
 Replace the aliases and keys with values from your own project.
 
@@ -99,14 +99,14 @@ public class CreateProductDemo
 ```
 
 {% hint style="info" %}
-Call `Save()` before `Publish()`. If the content has unsaved changes, `Publish()` does not throw. It returns a `PublishResult` with the status `FailedPublishUnsavedChanges`.
+Call `Save()` before `Publish()`. If the content has unsaved changes, `Publish()` neither publishes nor saves them. It returns a `PublishResult` with the status `FailedPublishUnsavedChanges` instead of throwing an exception.
 {% endhint %}
 
 `IContentService` does not validate property values when saving. Content with a missing mandatory value is saved, but `Publish()` returns `FailedPublishContentInvalid`.
 
 ### Saving and Publishing in one Call
 
-From Umbraco 17.6, `SaveAndPublish()` saves and publishes in one call. The following example creates a *Product* and saves and publishes it with a single method. For invariant content, pass an empty array.
+From Umbraco 17.6, `SaveAndPublish()` saves and publishes in one call. The following example creates a *Product* and saves and publishes it with a single method call. For invariant content, pass an empty array.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
@@ -136,12 +136,21 @@ public class SaveAndPublishDemo
 
 ### Multilingual Content
 
-Set a name for each culture, then pass the cultures to publish:
+For a Document Type that varies by culture, set a name for each culture. Save the content, and then pass the cultures to publish:
 
 ```csharp
 product.SetCultureName("Microphone", "en-US");
 product.SetCultureName("Mikrofon", "da");
+
+_contentService.Save(product);
+PublishResult result = _contentService.Publish(product, ["en-US", "da"]);
 ```
+
+A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. `SaveAndPublish()` requires explicit cultures, for example `["en-US", "da"]`.
+
+{% hint style="warning" %}
+For content that varies by culture, `SaveAndPublish()` with an empty array saves the content but publishes no cultures. It still returns `SuccessPublishCulture`.
+{% endhint %}
 
 For information on retrieving a site's languages, see [Creating a Multilingual Site](../../../../develop-with-umbraco/tutorials/multilanguage-setup.md#getting-all-the-languages-for-a-site).
 
@@ -174,7 +183,7 @@ public class PublishBranchDemo
 The `PublishBranchFilter` option can include one or more of the following flags:
 
 * `Default` - publishes only published content with pending changes.
-* `IncludeUnpublished` - publishes unpublished content and existing nodes with pending changes.
+* `IncludeUnpublished` - publishes unpublished content and published content with pending changes.
 * `ForceRepublish` - republishes all published content, even if unchanged.
 * `All` - combines `IncludeUnpublished` and `ForceRepublish`.
 
@@ -218,8 +227,7 @@ public class CreateProductWithKeysDemo
         _contentTypeService = contentTypeService;
     }
 
-    public async Task<ContentPublishingOperationStatus> CreateAndPublishAsync(Guid catalogueKey, Guid userKey)
-    {
+    public async Task<ContentPublishingOperationStatus> CreateAndPublishAsync(Guid catalogueKey, Guid userKey, string name, string category, int price)    {
         IContentType productType = _contentTypeService.Get("product")
             ?? throw new InvalidOperationException("Could not find the 'product' document type.");
 
@@ -227,11 +235,11 @@ public class CreateProductWithKeysDemo
         {
             ContentTypeKey = productType.Key,
             ParentKey = catalogueKey,
-            Variants = [new VariantModel { Name = "Speaker" }],
+            Variants = [new VariantModel { Name = name }],
             Properties =
             [
-                new PropertyValueModel { Alias = "category", Value = "audio" },
-                new PropertyValueModel { Alias = "price", Value = 900 },
+                new PropertyValueModel { Alias = "category", Value = category },
+                new PropertyValueModel { Alias = "price", Value = price },
             ],
         };
 
@@ -299,7 +307,7 @@ The Date Only, Date Time (Unspecified), Date Time (with time zone), and Time Onl
 {"date":"2026-11-03T00:00:00+00:00","timeZone":null}
 ```
 
-`IContentService` returns this JSON as a string. The following example reads a date property, deserializes it into a `DateTimeDto`, and returns a `DateOnly`:
+`IContentService` returns this JSON as a string. The following example reads a Date Only property, deserializes it into a `DateTimeDto`, and returns a `DateOnly`:
 
 ```csharp
 using System.Text.Json;
