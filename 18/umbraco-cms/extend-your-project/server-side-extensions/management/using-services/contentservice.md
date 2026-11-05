@@ -106,7 +106,7 @@ Call `Save()` before `Publish()`. If the content has unsaved changes, `Publish()
 
 ### Saving and Publishing in one Call
 
-From Umbraco 18.1, `SaveAndPublish()` saves and publishes in one call. The following example creates a *Product* and saves and publishes it with a single method call. For invariant content, pass an empty array.
+`SaveAndPublish()` saves and publishes in one call. The following example creates a *Product* and saves and publishes it with a single method call. For invariant content, pass an empty array.
 
 ```csharp
 using Umbraco.Cms.Core.Models;
