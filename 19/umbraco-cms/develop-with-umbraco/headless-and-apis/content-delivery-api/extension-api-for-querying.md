@@ -8,7 +8,7 @@ description: >-
 
 The Delivery API allows you to retrieve multiple items by utilizing the `/umbraco/delivery/api/v2/content` endpoint. With the built-in query parameters, you have the flexibility to get any number of content nodes based on your needs. For a comprehensive list of supported query options, refer to the [Endpoints](./#endpoints) section.
 
-For the query endpoint, we have created a new Examine index (_DeliveryApiContentIndex_) that facilitates fast retrieval of the desired content. This index ensures quick indexing and searching of data, with the possibility for future extensions.
+The query endpoint is backed by the [search feature](../../search/README.md) to ensure fast retrieval of the desired content.
 
 In this article, we'll explore creating custom selecting, filtering, and sorting options to enhance the querying capabilities of the Delivery API.
 
@@ -26,7 +26,9 @@ The placeholders in the example (`xxx`, `yyy`, etc.) represent the values that e
 You can include only one `fetch` parameter, while multiple `filter` and `sort` parameters are allowed. Additionally, the order of the `sort` parameters influences the sorting behaviour. Refer to the [Query parameters](./#query-parameters) section for the currently supported options.
 {% endhint %}
 
-The implementation of each querying option consists of a class for indexing the data into the _DeliveryApiContentIndex_ and another one for handling the query. By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through our index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
+The implementation of each querying option consists of two classes: one for indexing data into the underlying search index and one for handling the query.
+
+By implementing the `IContentIndexHandler` interface, you can control how your relevant data is indexed and made available for querying through the search index. And you can customize the querying behaviour to suit your needs by implementing the `ISelectorHandler`, `IFilterHandler`, and `ISortHandler` interfaces.
 
 In the following sections, we will explore the implementation details of creating custom querying functionality for the Delivery API.
 
@@ -109,7 +111,7 @@ The `GetFields()` and `GetFieldValues()` methods each play a role in defining ho
 * `GetFields()` defines the behaviour of fields that are added to the index. In this example, the `"featured"` field is added as a "raw" string for efficient and accurate searching.
 * `GetFieldValues()` is responsible for retrieving the values of the defined index fields. In this case, the `"featured"` field of content items of type `"author"`. It creates an `IndexFieldValue` with the appropriate field value (`"y"` for featured, `"n"` otherwise), which will be added to the index.
 
-Since our custom query option modifies the index structure, we will need to rebuild the _DeliveryApiContentIndex_. You can find it by navigating to the "Examine Management" dashboard in the "Settings" section. Once rebuilt, we can make a request to the Delivery API query endpoint as follows:
+Since our custom query option modifies the index structure, we will need to rebuild the underlying search index. See the article on [Database Cache for Index Values](../../search/extending-search/database-cache-for-index-values.md) for instructions. Once rebuilt, we can make a request to the Delivery API query endpoint as follows:
 
 **Request**
 

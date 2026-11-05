@@ -37,6 +37,7 @@
 * [OpenRouter](providers/openrouter.md)
 * [Z.AI](providers/zai.md)
 * [TypeSafe AI](providers/typesafe.md)
+* [Cloudflare](providers/cloudflare.md)
 
 ## Add-ons
 
@@ -87,6 +88,7 @@
   * [Frontend Tools](add-ons/agent-copilot/frontend-tools.md)
 * [Copilot Workspace](add-ons/copilot-workspace/README.md)
   * [Usage](add-ons/copilot-workspace/copilot-workspace.md)
+  * [Sharing Conversations](add-ons/copilot-workspace/sharing-conversations.md)
 * [Deploy Support](add-ons/deploy/README.md)
   * [Installation](add-ons/deploy/installation.md)
   * [Configuration](add-ons/deploy/configuration.md)
@@ -113,6 +115,7 @@
   * [Yes/No Questions](using-the-api/decision/binary.md)
   * [Pick-One Questions](using-the-api/decision/choice.md)
   * [Score Questions](using-the-api/decision/score.md)
+* [Extraction](using-the-api/extraction/README.md)
 * [Tools](using-the-api/tools/README.md)
   * [Using Tools](using-the-api/tools/using-tools.md)
 
@@ -158,6 +161,7 @@
   * [Speech-to-Text Capability](extending/providers/speech-to-text-capability.md)
   * [Image Generation Capability](extending/providers/image-generation-capability.md)
   * [Decision Capability](extending/providers/decision-capability.md)
+  * [Extraction Capability](extending/providers/extraction-capability.md)
 * [Middleware](extending/middleware/README.md)
   * [Chat Middleware](extending/middleware/chat-middleware.md)
   * [Embedding Middleware](extending/middleware/embedding-middleware.md)
@@ -242,6 +246,8 @@
   * [Generate Images](management-api/image-generation/generate-image.md)
 * [Decision](management-api/decision/README.md)
   * [Ask Decision](management-api/decision/ask-decision.md)
+* [Extraction](management-api/extraction/README.md)
+  * [Extract Values](management-api/extraction/extract.md)
 
 ## Frontend
 
@@ -250,6 +256,7 @@
 * [Speech-to-Text Controller](frontend/speech-to-text-controller.md)
 * [Image Generation Controller](frontend/image-generation-controller.md)
 * [Decision Controller](frontend/decision-controller.md)
+* [Extraction Controller](frontend/extraction-controller.md)
 * [Embeddings Controller](frontend/embeddings-controller.md)
 * [Tool Controller](frontend/tool-controller.md)
 * [Chat Repository](frontend/chat-repository.md)

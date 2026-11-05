@@ -94,3 +94,51 @@ To enable `ExcludeScripts`:
 {% hint style="info" %}
 `includeScripts = false` prevents the associated scripts from being rendered. If value is `includeScripts = true`, or if the parameter is excluded, it will render the scripts on the form.
 {% endhint %}
+
+## Content Security Policy nonce
+
+{% hint style="info" %}
+This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
+{% endhint %}
+
+From Umbraco Forms 18.3.0, Forms adds a nonce to the script tags it renders. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+Forms reads the nonce from `ICspNonceService`, which Umbraco CMS provides in the `Umbraco.Cms.Core.Security` namespace. The default implementation creates one nonce per request. Use the same service for the nonce in your `Content-Security-Policy` header, so the two match.
+
+The nonce is added to:
+
+* The scripts rendered by `Html.RenderUmbracoFormDependencies()`.
+* The scripts rendered by `<umb-forms-render-scripts />`, the `RenderFormScripts` view component, and `Html.RenderFormsScripts()`. These include the theme script and field type scripts, such as the date picker.
+* The Google script rendered by the reCAPTCHA v2 field.
+
+Forms doesn't add a nonce to stylesheet links.
+
+A `nonce` you pass to `Html.RenderUmbracoFormDependencies()` or `Html.RenderFormsScripts()` in `htmlAttributes` is kept. So is one set in `FormViewModel.JavaScriptTagAttributes`. Forms only adds its own nonce to a tag that doesn't have one. The reCAPTCHA v2 script always uses the nonce from `ICspNonceService`.
+
+To render no nonce, register an `ICspNonceService` that returns `null`. This replaces the service for Umbraco CMS too.
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Security;
+using Umbraco.Extensions;
+
+public class NoCspNonceService : ICspNonceService
+{
+    public string? GetNonce() => null;
+}
+
+public class NoCspNonceComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.AddUnique<ICspNonceService, NoCspNonceService>();
+}
+```
+
+### External script and stylesheet URLs
+
+Forms adds its version to the URLs of the scripts and stylesheets it renders, as a `v` query string parameter. Browsers then fetch the new files after an upgrade.
+
+From Umbraco Forms 18.3.0, a URL that starts with `http://`, `https://`, or `//` is rendered as registered, without the version.
+
+For what this means when upgrading, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts) article.

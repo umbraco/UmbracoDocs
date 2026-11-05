@@ -36,6 +36,7 @@ Copilot Workspace stores conversations and projects in its own database tables (
 * **Projects** - Group conversations under shared instructions and reusable context/resources.
 * **Context Panel** - See and manage the instructions, contexts, and resources grounding the current conversation.
 * **Archived Conversations** - Archive conversations instead of deleting them, with a read-only recycle bin.
+* **Sharing** - Share a conversation with colleagues as a read-only Snapshot or Live view.
 * **Pin, Rename, Move** - Organize conversations, including moving them between projects.
 * **AG-UI Integration** - Real-time streaming responses, reusing the same chat UI as Contextual Copilot.
 

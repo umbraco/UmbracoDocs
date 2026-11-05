@@ -1,5 +1,5 @@
 ---
-description: Build custom backend logic, set up routing and controllers, use dependency injection, and search content with Examine.
+description: Build custom backend logic, set up routing and controllers, use dependency injection, and search content.
 ---
 
 # Application Code

@@ -94,7 +94,7 @@ You can also find this in the KUDU console by clicking **Advanced Tools** > **Lo
 
 ## Preventing cold boots on container restarts
 
-On Azure App Service on Linux, the container hostname changes on every container recycle. In earlier versions, Umbraco derived its machine identifier from the hostname and rebuilt its Examine indexes and published content cache on every restart.
+On Azure App Service on Linux, the container hostname changes on every container recycle. In earlier versions, Umbraco derived its machine identifier from the hostname and rebuilt its search indexes and published content cache on every restart.
 
 From Umbraco 18.1, Umbraco reads the `WEBSITE_INSTANCE_ID` environment variable instead. The environment variable stays stable across container recycles and is unique per instance, so no configuration is needed.
 

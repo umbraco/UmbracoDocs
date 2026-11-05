@@ -18,6 +18,24 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.11 (2nd Nov 2026) 
+
+* Fixed the abandoned cart email failing when the customer's email address is not valid ([#911](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/911)).
+* Fixed emails failing with an error when none of their recipient addresses are valid. The email is now skipped and a warning is logged.
+* Fixed links with more than one query parameter breaking in emails that add tracking parameters.
+* Fixed stock changes being saved even when the content save was cancelled or failed.
+* Fixed variant stock not syncing for every language, and decimal stock values not resetting correctly.
+* Fixed products not being found by a variant's SKU.
+* Fixed variant property editors not reading their values when ModelsBuilder models are used.
+* Fixed the Storefront API country and region endpoints not finding the region.
+* Fixed the refund reason not being saved when sent to the refund endpoint.
+* Fixed payment providers not being able to read a callback's request body more than once.
+* Fixed a duplicate payment or shipping method SKU showing a server error instead of a validation message.
+* Fixed a copied shipping package losing its weight.
+* Fixed the older pipeline shortcut methods replacing the built-in pipeline tasks.
+* Fixed duplicate API operation names on the Storefront country and region endpoints.
+* Fixed small backoffice display issues, including measurement field icons and units, the alias field hint, and settings left behind by deleted variants.
+
 #### 18.1.10 (27th Oct 2026)
 
 * Fixed partially refunded orders being marked as fully refunded when opened in the backoffice. This happened when the payment provider reported a partial refund as a full refund. Orders already affected go back to Partially Refunded when opened again after updating the payment provider ([#908](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/908)).

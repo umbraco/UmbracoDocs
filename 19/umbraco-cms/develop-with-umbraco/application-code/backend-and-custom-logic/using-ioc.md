@@ -6,11 +6,7 @@ description: Inversion of Control/Dependency Injection in Umbraco
 
 Umbraco supports dependency injection out of the box using the [ASP.NET Core built-in dependency injection](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection). This means that working with dependencies in Umbraco is similar to working with them in ASP.NET Core.
 
-`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`. Its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessors, and so on. You can access the `IServiceCollection` directly to add custom services through the `Services` property. See below for a concrete example:
-
-```csharp
-IUmbracoBuilder.Services
-```
+`IUmbracoBuilder` is a Umbraco-specific abstraction on top of the `IServiceCollection`. Its purpose is to aid in adding and replacing Umbraco-specific services, such as notification handlers, filesystems, server role accessors, and so on. You can access the `IServiceCollection` directly to add custom services through the `Services` property.
 
 ## Registering dependencies
 
@@ -328,72 +324,43 @@ public class MyCustomScopedService
 Using the UmbracoHelper is only possible when there is an instance of the UmbracoContext. [You can read more in the implementation article about services](../../../extend-your-project/server-side-extensions/services/).
 {% endhint %}
 
-### ExamineManager
+### ISearcher
 
-[Read more about the ExamineManager in the Searching articles](../examine/).
-
-{% include "../../../.gitbook/includes/obsolete-warning-publishedsnapshot.md" %}
+Learn more about the ISearcher in the [Search documentation](../../search/README.md).
 
 {% code title="SearchService.cs" %}
 ```csharp
-using System;
-using System.Collections.Generic;
-using Examine;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.Search;
+using Umbraco.Cms.Core.Search.Querying;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Infrastructure.Examine;
-using Umbraco.Extensions;
 
 namespace IOCDocs.Services;
 
-// This service must be scoped.
 public class SearchService : ISearchService
 {
-    private readonly IExamineManager _examineManager;
+    private readonly ISearcher _searcher;
     private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
-    public SearchService(IExamineManager examineManager, IUmbracoContextAccessor umbracoContextAccessor)
+    public SearchService(ISearcher searcher, IUmbracoContextAccessor umbracoContextAccessor)
     {
-        _examineManager = examineManager;
+        _searcher = searcher;
         _umbracoContextAccessor = umbracoContextAccessor;
     }
 
-    public IEnumerable<PublishedSearchResult> Search(string searchTerm)
+    public async Task<IEnumerable<IPublishedContent>> SearchAsync(string searchTerm)
     {
-        if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
-        {
-            throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
-        }
-
-        if (!(index is IUmbracoIndex umbracoIndex))
-        {
-            if (_examineManager.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) is false)
-            {
-                throw new InvalidOperationException($"No index found by name {Constants.UmbracoIndexes.ExternalIndexName}");
-            }
-
-            if (!(index is IUmbracoIndex umbracoIndex))
-            {
-                throw new InvalidOperationException("Could not cast");
-            }
-
-            // Do stuff with the index
-            if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
-            {
-                throw new InvalidOperationException("Could not get Umbraco context");
-            }
-
-            return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
-        }
-        
-        // Do stuff with the index
-        if (_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) is false)
+        if (_umbracoContextAccessor.TryGetUmbracoContext(out IUmbracoContext? umbracoContext) is false)
         {
             throw new InvalidOperationException("Could not get Umbraco context");
         }
 
-        return umbracoIndex.Searcher.Search(searchTerm).ToPublishedSearchResults(umbracoContext.PublishedSnapshot.Content);
+        SearchResult result = await _searcher.SearchAsync(searchTerm);
+
+        IPublishedContent?[] publishedContent = await Task.WhenAll(
+            result.Documents.Select(document => umbracoContext.Content.GetByIdAsync(document.Id)));
+
+        return publishedContent.WhereNotNull().ToArray();
     }
 }
 ```

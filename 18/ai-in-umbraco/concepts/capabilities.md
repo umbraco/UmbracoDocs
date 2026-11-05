@@ -16,6 +16,7 @@ A capability represents a type of AI operation. Providers implement capabilities
 | **Speech-to-Text**  | Audio transcription and voice input             | `ISpeechToTextClient`                           |
 | **Image Generation** | Text-to-image generation and image editing (experimental) | `IImageGenerator` |
 | **Decision**        | Typed yes/no, pick-one, and score answers (experimental) | None. Uses the Umbraco AI `IAIDecisionClient` |
+| **Extraction**      | Typed values such as text, numbers, dates, and lists read out of text (experimental) | None. Uses the Umbraco AI `IAIExtractionClient` |
 
 ## Chat Capability
 
@@ -141,6 +142,35 @@ bool isSpam = response.Answer.IsTrue();
 
 {% endcode %}
 
+## Extraction Capability
+
+{% hint style="warning" %}
+Extraction is **experimental**. It is hidden unless the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. The C# API surface carries the `UMBRACOAI_EXTRACTION` diagnostic, which consumers must suppress. See [Extraction](../using-the-api/extraction/README.md) for how to enable it.
+{% endhint %}
+
+The Extraction capability reads typed values out of a piece of text instead of returning free text:
+
+- Text, numbers, dates, times, and dates with times
+- Durations, in a unit you choose
+- Lists of every matching item
+
+A value that is not in the text comes back empty, not guessed. Microsoft.Extensions.AI has no abstraction for this kind of model. Extraction uses the Umbraco AI `IAIExtractionClient` interface instead.
+
+{% code title="Example.cs" %}
+
+```csharp
+#pragma warning disable UMBRACOAI_EXTRACTION
+
+var response = await _extractionService.ExtractAsync(
+    new AINumberExtractionField { Instructions = "The amount the customer paid", Unit = "DKK" },
+    ticketText);
+
+// response.Answer.Value is a decimal, or null when no amount is in the text
+decimal? amount = response.Answer.Value;
+```
+
+{% endcode %}
+
 ## Capability and Profile Relationship
 
 Each profile is configured for exactly one capability. This ensures type safety and appropriate settings:
@@ -178,6 +208,12 @@ Decision Profile
     ├── Connection: TypeSafe AI
     ├── Model: jev-latest
     └── Settings: AIDecisionProfileSettings (no settings today)
+
+Extraction Profile
+    ├── Capability: Extraction
+    ├── Connection: Cloudflare
+    ├── Model: @cf/cloudflare/clairic
+    └── Settings: AIExtractionProfileSettings (no settings today)
 ```
 
 ## Checking Provider Capabilities
@@ -212,6 +248,11 @@ if (provider.HasCapability<IAIImageGeneratorCapability>())
 if (provider.HasCapability<IAIDecisionCapability>())
 {
     // Provider supports decisions (experimental, needs UMBRACOAI_DECISION suppressed)
+}
+
+if (provider.HasCapability<IAIExtractionCapability>())
+{
+    // Provider supports extraction (experimental, needs UMBRACOAI_EXTRACTION suppressed)
 }
 ```
 
@@ -280,6 +321,21 @@ public interface IAIDecisionCapability : IAICapability
 
 {% endcode %}
 
+{% code title="IAIExtractionCapability.cs" %}
+
+```csharp
+[Experimental("UMBRACOAI_EXTRACTION")]
+public interface IAIExtractionCapability : IAICapability
+{
+    Task<IAIExtractionClient> CreateClientAsync(
+        object? settings = null,
+        string? modelId = null,
+        CancellationToken cancellationToken = default);
+}
+```
+
+{% endcode %}
+
 ## Related
 
 - [Providers](providers.md) - Implement capabilities
@@ -289,3 +345,4 @@ public interface IAIDecisionCapability : IAICapability
 - [Speech-to-Text API](../using-the-api/speech-to-text.md) - Use the Speech-to-Text capability
 - [Image Generation API](../using-the-api/image-generation/README.md) - Use the Image Generation capability
 - [Decision API](../using-the-api/decision/README.md) - Use the Decision capability (experimental)
+- [Extraction API](../using-the-api/extraction/README.md) - Use the Extraction capability (experimental)

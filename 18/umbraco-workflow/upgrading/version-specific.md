@@ -41,6 +41,18 @@ The feature-slice namespaces include `Actions`, `ApprovalGroups`, `ContentApprov
 
 DTOs were also renamed from `Poco` to `Dto` suffix to remove the implied coupling to NPoco.
 
+### Email templates
+
+The email template models were renamed as part of the namespace reorganization. A template customized for Workflow 17 does not compile in Workflow 18 until its `@model` is updated:
+
+| Workflow 17                                                 | Workflow 18                                                                      |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `Umbraco.Workflow.Core.Email.Models.HtmlEmailModel`         | `Umbraco.Workflow.Core.ContentApprovals.Email.ContentApprovalEmailModel`         |
+| `Umbraco.Workflow.Core.Email.Models.HtmlReminderEmailModel` | `Umbraco.Workflow.Core.ContentApprovals.Email.ContentApprovalReminderEmailModel` |
+| `Umbraco.Workflow.Core.Email.Models.HtmlReviewEmailModel`   | `Umbraco.Workflow.Core.ContentReviews.Email.ContentReviewEmailModel`             |
+
+When templates are not compiled with the site, which is the default for `BackofficeDevelopment` mode, the build does not catch this. From Workflow 18.2.1, a template on disk that does not compile falls back to the version Workflow ships. The **Email Templates** health check lists it. For more information, see the [Email Templates](../getting-started/content-approval-settings.md#email-templates) article.
+
 ### Code
 
 The list below includes changes raising validation errors `CP0001`, `CP0002` and `CP0006` between versions 17.3.2 and 18.0.0-rc1.

@@ -54,21 +54,6 @@ builder.CreateUmbracoBuilder()
 ```
 {% endcode %}
 
-Once the Content Delivery API is enabled, the next step is to rebuild the Delivery API content index (_DeliveryApiContentIndex_). This can be done using the **Examine Management** dashboard in the **Settings** section of the Umbraco Backoffice.
-
-1. Access the Umbraco Backoffice.
-2. Navigate to the **Settings** section.
-3. Open the **Examine Management** dashboard.
-4. Click the **DeliveryAPIContentIndex**.
-
-<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndex.png" alt=""><figcaption><p>Select the DeliveryApiContentIndex from the Indexers list to view its properties.</p></figcaption></figure>
-
-5. Scroll down and click the **Rebuild index** button.
-
-<figure><img src="../../../.gitbook/assets/DeliveryAPIContentIndexRebuild.png" alt=""><figcaption><p>The index management screen where you can check index health and trigger a rebuild.</p></figcaption></figure>
-
-Once the index is rebuilt, the API can serve the latest content from the multiple-items endpoint.
-
 ### Additional configuration
 
 When the Delivery API is enabled in your project, all your published content will be made available to the public by default.
@@ -522,7 +507,7 @@ GET /umbraco/delivery/api/v2/content?filter=contentType:article&filter=createDat
 {% endtab %}
 
 {% tab title="sort" %}
-Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by fields, including `create date`, `level`, `name`, `sort order`, and `update date`. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by the relevance score of the _DeliveryApiContentIndex_ for the search term.
+Specifying how the results should be ordered, can be achieved using the `sort` query option. You can use this parameter to sort the content items by fields, including `create date`, `level`, `name`, `sort order`, and `update date`. For each field, you can specify whether the items should be sorted in ascending (_asc_) or descending (_desc_) order. Without a `sort` query parameter, the order of the results will be determined by relevance score.
 
 **`?sort=createDate:asc/desc`**\
 An option to sort the results based on the creation date of the content item in either _`asc`_ or _`desc`_ order.
@@ -603,8 +588,6 @@ The Delivery API supports protected content and member authentication. This is a
 
 If member authentication is _not_ explicitly enabled, protected content is ignored and never exposed by the Delivery API.
 
-As a result, lifting protection from a content item requires an additional step to ensure it becomes accessible through the Delivery API. The recommended way is to publish the content item again. Alternatively, you can manually rebuild the `DeliveryApiContentIndex` to reflect the changes.
-
 ### Property editors
 
 Certain limitations are associated with some of the built-in property editors in Umbraco. These limitations are listed below.
@@ -620,9 +603,3 @@ The Member Picker property editor is not supported in the Delivery API to avoid 
 #### Content Picker
 
 The Content Picker property editor is not supported in the Delivery API when configured for Members. This is due to the concern of potentially leaking member data.
-
-### Making changes to `DisallowedContentTypeAliases`
-
-When changing the content type aliases in the `Umbraco:CMS:DeliveryApi:DisallowedContentTypeAliases` configuration setting, `DeliveryApiContentIndex` should be rebuilt. This ensures that disallowed content types are not exposed through the Delivery API.
-
-Alternatively, the relevant content items can be republished. This will ensure that changes are reflected, eliminating the need to rebuild the index.

@@ -27,6 +27,20 @@ The Team section allows you to:
 
 <figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
+### Resources
+
+The **Resources** section lists every hosting resource your Umbraco Cloud project contains. A project is made up of hosting resources such as a website, a SQL database, a compute plan, and media storage.
+
+For each resource, you can see:
+
+* **Resource type** - Website, SQL Database, Shared Compute, Media Storage, Redis Cache, Secret Store, or Cloudflare Tenant.
+* **Environment** - The environment the resource belongs to.
+* **Region** - Where the resource runs, for example, West Europe or Global.
+* **State** - The current state of the resource, for example Ready or Provisioning.
+* **Tier** - The plan or tier of the resource, where relevant. For example, Shared Standard.
+
+You can filter the list by resource type and by environment.
+
 ### Summary
 
 The **Summary** section displays key information such as the project plan, the region where the project was created, payment status, and more.
@@ -44,6 +58,10 @@ In the Project History section, you can view a list of high-level activities for
 ### [Hostname Monitoring](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
 
 Hostname monitoring allows you to track the availability and response times of your websites. You can configure monitors for multiple hostnames, set check frequency and locations, and view historical ping results. This helps ensure optimal website performance and alerts you to potential downtime or performance issues.
+
+### [Alerting & Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
+
+Set up alert rules to get notified by email or webhook when something important happens on your project. Alerts cover DDoS attacks, automatic restarts, deployments, and upgrades.
 
 ### [Traffic & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
 
@@ -137,10 +155,10 @@ The Advanced section provides options for managing advanced settings for your pr
 
 * [Enable static outbound IP addresses](../../../expand-your-projects-capabilities/external-services/#enabling-static-outbound-ip-addresses) for projects on **Standard**, **Professional**, or **Enterprise** plans.
 * Enable IIS logging for each environment. The log files can be accessed in Kudu at `C:\home\LogFiles\http`. IIS logs have a rolling size limit of 100 MB, overwriting the oldest files once the limit is reached.
-* [Enable loading of a client certificate from the file system](application-settings.md#enable-client-certificate-loaded-from-file-system-explained).
+* [Enable loading of a client certificate from the file system](platform-configuration.md#file-system-certificate).
 * Change the .NET framework runtime for each environment of your Umbraco Cloud project.
 * Change the value of the `DOTNET_ENVIRONMENT` environment variable for each environment of your Umbraco Cloud project. To learn more about working with multiple environments in ASP.NET Core, refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-9.0).
-* [Manage Platform Configuration](platform-configuration.md) to control Proactive Auto-Heal and Always On for your environments. Managing these settings is available only for environments on a **Dedicated** plan.
+* [Manage Platform Configuration](platform-configuration.md) to control Proactive Auto-Heal, Always On, Sticky Sessions, and File System Certificate for your environments. Proactive Auto-Heal and Always On can only be changed on a **Dedicated** plan.
 
 {% hint style="info" %}
 Enabling IIS logging will cause the site to restart. For additional information, refer to the [Microsoft Documentation](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httplogging).

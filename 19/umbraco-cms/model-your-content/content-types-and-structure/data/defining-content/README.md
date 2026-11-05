@@ -315,8 +315,8 @@ You cannot export/import Document Types on Umbraco Cloud.
 
 ## Related Services
 
-* [ContentService](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
-* [ContentTypeService](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
+* [ContentService](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.ContentService.html)
+* [ContentTypeService](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.ContentTypeService.html)
 
 ## Tutorials
 

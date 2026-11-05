@@ -20,16 +20,6 @@ For more information about creating custom dashboards, see the [Dashboards](../.
 
 <details>
 
-<summary>Examine Management</summary>
-
-The Examine Management dashboard provides an overview of the Examine functionality available directly within the Umbraco backoffice. The Umbraco backoffice allows you to view details about your Examine indexes and searchers - all in one place. You can see which fields are being indexed and rebuild the indexes if there's a problem. You can also test keywords to see what results will be returned.
-
-For more information about Examine Management, see the [Examine Management](../../../develop-with-umbraco/application-code/examine/examine-management.md) article.
-
-</details>
-
-<details>
-
 <summary>Published Status</summary>
 
 The Published Status dashboard displays the status of your site in the Published Cache Status section alongside the Content and Media nodes value. The Caches section provides three options: Memory Cache, Database Cache, and Internals.
@@ -78,7 +68,7 @@ You can use the built-in performance profiler to assess the performance when ren
 
 The Profiling dashboard provides a toggle option - `Activate the profiler by default` to keep the profiler active by default for all page renderings. You can use this option without having to set `umbDebug=true` on each page request. The toggle button sets a cookie named `UMB-DEBUG` in your browser, which then activates the profiler automatically.
 
-For more information about MiniProfiler, see the [MiniProfiler](../../../develop-with-umbraco/testing-and-debugging/README.md#miniprofiler) section in the [Testing and Debugging](../../../develop-with-umbraco/testing-and-debugging/README.md) article.
+For more information about MiniProfiler, see the [MiniProfiler](../../../develop-with-umbraco/testing-and-debugging/miniprofiler.md) article.
 
 </details>
 

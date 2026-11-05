@@ -6,13 +6,13 @@ Umbraco uses SignalR to abstract away these types of communication. This also al
 
 A traditional SignalR backplane (such as SQL Server or Redis) distributes *messages* between servers. Any server can broadcast messages to clients connected to other servers. However, the WebSocket connection remains tied to the server the client initially connected to.
 
-Using a traditional backplane, routing HTTP requests to a server without the active WebSocket connection causes "No connection with that ID" errors.
+With negotiation enabled, routing the negotiation request and subsequent connection request to different servers can cause "No connection with that ID" errors. You can avoid sticky sessions by skipping negotiation and using WebSockets only, as described in Option 3.
 
 **Azure SignalR Service** works differently. Instead of clients connecting directly to your servers, they connect to the Azure SignalR Service. This centralizes connection management, allowing requests to be handled by any server without sticky sessions.
 
 ## Sticky Sessions vs Stateless
 
-When load balancing the backoffice, you need to decide between two approaches:
+When load balancing the backoffice, you can choose between three approaches:
 
 ### Option 1: Sticky Sessions with Any Backplane
 
@@ -28,7 +28,7 @@ This approach works if your load balancer supports sticky sessions.
 
 ### Option 2: Stateless with Azure SignalR Service
 
-If you want fully stateless servers without sticky sessions, you need:
+To run without sticky sessions using Azure SignalR Service, configure:
 
 - **Azure SignalR Service** for SignalR connection management.
 - **IDistributedCache** for session state management (see [Distributed Cache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed)).
@@ -39,11 +39,46 @@ This approach requires additional setup but allows for true horizontal scaling w
 Umbraco's cache is built on Microsoft's HybridCache, which automatically uses IDistributedCache as a second-level cache when configured. This means that setting up IDistributedCache for session management also enables distributed caching of Umbraco content across all servers. See [Cache Settings](../../../../develop-with-umbraco/configuration/cache-settings.md) for more information.
 {% endhint %}
 
+### Option 3: Stateless with Your Own Backplane
+
+You can run without sticky sessions using any compatible SignalR backplane, such as a database. Configure your backplane on every server. The [Using existing infrastructure](#using-existing-infrastructure) section shows a SQL Server example.
+
+Set `Umbraco:CMS:SignalR:ClientShouldSkipNegotiation` to `true` in `appsettings.json` on every server:
+
+{% code title="appsettings.json" %}
+```json
+{
+  "Umbraco": {
+    "CMS": {
+      "SignalR": {
+        "ClientShouldSkipNegotiation": true
+      }
+    }
+  }
+}
+```
+{% endcode %}
+
+Umbraco's backoffice SignalR client skips negotiation and connects directly using WebSockets. Each new connection can reach any server without a preceding negotiation request tying the client to a particular server.
+
+The established WebSocket connection remains on that server. Your backplane distributes messages between servers; the setting does not register or replace a backplane.
+
+{% hint style="info" %}
+A database backplane can have lower message throughput than other options. Overall performance depends on your backplane.
+{% endhint %}
+
+{% hint style="warning" %}
+Skipping negotiation requires WebSockets support in your clients, servers, proxies, and load balancer. Other SignalR transports cannot be used as fallbacks. Do not enable skipping negotiation with Azure SignalR Service, which requires negotiation to redirect clients to the service.
+{% endhint %}
+
+The setting removes the need for sticky sessions in SignalR. If your application needs distributed session state, configure `IDistributedCache` as described in the [Distributed Cache documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed).
+
 ## Choosing the Right Backplane
 
 Choosing the right backplane comes down to a few factors:
 
 - Whether you can use sticky sessions
+- Whether your infrastructure supports WebSockets-only connections with negotiation disabled
 - Message throughput requirements
 - Cost
 - The infrastructure you already have in place

@@ -107,6 +107,24 @@ When set, this profile is used by:
 - The Ask Yes/No, Ask Pick-One, Ask Score, and Ask Questions Umbraco Automate actions without a profile
 - Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
 
+### Default Extraction Profile
+
+The profile used for extraction when no profile is explicitly specified.
+
+{% hint style="warning" %}
+Extraction is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+{% endhint %}
+
+| Field                      | Description                               |
+| -------------------------- | ----------------------------------------- |
+| Default Extraction Profile | Select from available Extraction profiles |
+
+When set, this profile is used by:
+
+- `IAIExtractionService` calls without a profile
+- The Extraction Management API and `UaiExtractionController` without a `profileIdOrAlias`
+- The Extract Values Umbraco Automate action without a profile
+
 ### AI Disclosure Notice
 
 Controls the notice that tells users a response is AI-generated. The notice reads "Responses are AI-generated and may be inaccurate." and appears in:

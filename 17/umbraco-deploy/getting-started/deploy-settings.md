@@ -428,7 +428,7 @@ Determines whether Deploy writes to its folder on disk (`umbraco/Deploy`). The a
 
 Use `ReadOnly` when you deploy a published build, for example from a CI/CD pipeline or as a container image. In this mode:
 
-* Saving schema items doesn't write `.uda` files, and Deploy doesn't create the `deploy.log` file or any status files. The status of the last operation is kept in memory instead.
+* Saving schema items doesn't write `.uda` files, and Deploy doesn't write any status files. The status of the last operation is kept in memory instead.
 * Trigger files aren't processed. Use [`StartupOperations`](#startup-operations) to deploy the schema on startup.
 * Imports only include content, and the schema options are hidden in the import dialog.
 * Exporting schema, the file actions in the schema comparison dashboard, and the `deploy-export` trigger return an error.

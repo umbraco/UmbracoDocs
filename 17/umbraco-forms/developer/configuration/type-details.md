@@ -37,6 +37,7 @@ The intention is to be able to make available details such as IDs, aliases and p
 **Settings:**
 
 * `AcceptCopy`
+* `ConsentDetails`
 * `ShowLabel`
 
 </details>

@@ -34,7 +34,7 @@ data/Revision/umbraco-ai-connection__openai-production_abcd1234.uda
 
 **Environment resolution:**
 - API keys resolve from each environment's `appsettings.json`
-- Provider must be installed in target environment
+- Provider must be installed in the target environment
 
 ### Profiles
 
@@ -46,7 +46,7 @@ data/Revision/umbraco-ai-profile__chat-assistant_abcd1234.uda
 
 **Contains:**
 - Profile name and alias
-- Capability (Chat, Embedding, SpeechToText, or the experimental ImageGeneration and Decision)
+- Capability (Chat, Embedding, SpeechToText, or the experimental ImageGeneration, Decision, and Extraction)
 - Model provider ID and model ID
 - Capability-specific settings
 - Connection reference (UDI)
@@ -94,6 +94,7 @@ data/Revision/umbraco-ai-settings__ai-settings_abcd1234.uda
 - Classifier chat profile reference (optional)
 - Default Image Generation profile reference (optional, experimental)
 - Default Decision profile reference (optional, experimental)
+- Default Extraction profile reference (optional, experimental)
 
 **Dependencies:**
 - Any referenced profiles are deployed first
