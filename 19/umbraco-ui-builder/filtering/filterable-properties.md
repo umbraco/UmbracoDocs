@@ -39,7 +39,7 @@ Sets the label for the filterable property.
 #### Method Syntax
 
 ```cs
-SetLabel(string label) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetLabel(string label) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -57,7 +57,7 @@ Sets a description for the filterable property.
 #### Method Syntax
 
 ```cs
-SetDescription(string description) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetDescription(string description) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -75,7 +75,7 @@ Defines basic options for a filterable property.
 #### Method Syntax
 
 ```cs
-SetOptions(IDictionary<TValueType, string> options) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetOptions(IDictionary<TValueType, string> options) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -96,7 +96,7 @@ Defines options with custom comparison clauses for a filterable property.
 #### Method Syntax
 
 ```cs
-AddOption(object key, string label, Lambda compareExpression) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+AddOption(object key, string label, Lambda compareExpression) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -191,7 +191,7 @@ Configures the mode of a filterable property (multiple or single choice).
 #### Method Syntax
 
 ```cs
-SetMode(FilterMode mode) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetMode(FilterMode mode) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
