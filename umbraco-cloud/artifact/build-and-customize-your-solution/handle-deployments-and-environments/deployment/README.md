@@ -2,6 +2,7 @@
 description: >-
   A deployment model that relies on Git, Kudu, and Umbraco Deploy core
   technology to move your changes from one environment to another.
+icon: clone
 ---
 
 # Deployment

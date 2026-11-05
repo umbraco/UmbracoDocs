@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Usage
 
 To open the Usage page, go to **Insights > Usage** on your project in the Umbraco Cloud Portal.

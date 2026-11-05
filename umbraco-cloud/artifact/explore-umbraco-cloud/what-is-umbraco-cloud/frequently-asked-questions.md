@@ -1,5 +1,6 @@
 ---
 description: A FAQ section addressing common technical questions about Umbraco Cloud.
+icon: clone
 ---
 
 # Frequently asked questions

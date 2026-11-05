@@ -2,6 +2,7 @@
 description: >-
   Here you can find information about getting started working with Umbraco
   Cloud.
+icon: clone
 ---
 
 # What is Umbraco Cloud?

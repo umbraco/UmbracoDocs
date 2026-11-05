@@ -2,6 +2,7 @@
 description: >-
   Learn how an environment's name sets its DOTNET_ENVIRONMENT value, and how
   to avoid issues when you name an environment Development.
+icon: clone
 ---
 
 # Environment Naming and Appsettings

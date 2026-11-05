@@ -2,6 +2,7 @@
 description: >-
   On the Project History page, you can view a chronological overview of
   high-level activities for your cloud project.
+icon: clone
 ---
 
 # Project History

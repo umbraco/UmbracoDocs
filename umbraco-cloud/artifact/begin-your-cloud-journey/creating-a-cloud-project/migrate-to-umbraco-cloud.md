@@ -1,5 +1,6 @@
 ---
 description: A guide to help you migrate your Umbraco CMS site to Umbraco Cloud.
+icon: clone
 ---
 
 # Migrate to Umbraco Cloud

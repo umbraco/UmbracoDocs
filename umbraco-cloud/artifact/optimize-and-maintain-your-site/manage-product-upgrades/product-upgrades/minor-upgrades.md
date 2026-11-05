@@ -2,6 +2,7 @@
 description: >-
   This article explains how Minor and Patch upgrades work in Umbraco Cloud, and
   how upgrade windows control when automatic upgrades start.
+icon: clone
 ---
 
 # Minor and Patch Upgrades

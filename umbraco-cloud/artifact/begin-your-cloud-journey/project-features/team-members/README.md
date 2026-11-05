@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Manage Team Members and Permissions
 
 This article covers team members added to your project via the **Invite User** button in the **Edit Team** page. If you are looking for more information about Users in the Backoffice, see the [Users](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users) article. Users added through the backoffice do not have access to the Umbraco Cloud Portal.

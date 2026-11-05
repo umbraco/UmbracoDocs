@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Umbraco Forms on Cloud
 
 In this article, you can learn about how Umbraco Forms is handled on Umbraco Cloud and read about the workflow and best practices.

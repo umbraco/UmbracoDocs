@@ -1,5 +1,6 @@
 ---
 description: Discover some of the features of Umbraco Cloud.
+icon: clone
 ---
 
 # Key Features and Benefits of Using Umbraco Cloud

@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Product Upgrades
 
 This document describes when and what product updates are rolled out on Umbraco Cloud.

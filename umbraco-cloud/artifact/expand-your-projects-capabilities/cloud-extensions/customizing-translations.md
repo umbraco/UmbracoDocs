@@ -1,6 +1,7 @@
 ---
 description: >-
   Learn how to add translations for new languages or override existing strings in the Umbraco Cloud backoffice UI.
+icon: clone
 ---
 
 # Customizing Translations

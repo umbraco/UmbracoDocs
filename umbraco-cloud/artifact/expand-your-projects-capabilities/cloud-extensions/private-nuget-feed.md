@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Private NuGet Feed on Umbraco Cloud
 
 A private NuGet feed is a package repository that is only accessible to a specific group of users, rather than being publicly available.

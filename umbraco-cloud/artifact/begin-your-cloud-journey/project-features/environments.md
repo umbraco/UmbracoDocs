@@ -2,6 +2,7 @@
 description: >-
   Environments are a core part of your Umbraco Cloud project. This is where you
   develop, write, build, and eventually publish your website.
+icon: clone
 ---
 
 # Environments

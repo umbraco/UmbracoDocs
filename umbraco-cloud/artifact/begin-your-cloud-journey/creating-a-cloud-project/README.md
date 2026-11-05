@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Create a Cloud Project
 
 Starting your journey with Umbraco Cloud begins with creating your first project. A streamlined process designed to get you up and running quickly with all the power of Umbraco and the cloud, without complex setup.

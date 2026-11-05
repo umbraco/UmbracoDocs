@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Handle Deployments and Environments
 
 Umbraco Cloud enables you to develop, test, and deploy your projects through a structured and flexible environment setup. With built-in support for deployments, local development, and media synchronization, you can confidently make changes and collaborate with your teams.

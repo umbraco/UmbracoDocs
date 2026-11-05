@@ -1,5 +1,6 @@
 ---
 description: Learn how to add and remove environments on your Umbraco Cloud projects.
+icon: clone
 ---
 
 # Manage Environments

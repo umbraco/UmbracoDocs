@@ -1,3 +1,7 @@
+---
+icon: clone
+---
+
 # Cloud Errors
 
 This document compiles a comprehensive list of common error codes during website operations, deployment, infrastructure management, and environment setup processes.&#x20;

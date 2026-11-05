@@ -2,6 +2,7 @@
 description: >-
   In this article you learn how to move a project from one region to another on
   Umbraco Cloud.
+icon: clone
 ---
 
 # Migrate between regions

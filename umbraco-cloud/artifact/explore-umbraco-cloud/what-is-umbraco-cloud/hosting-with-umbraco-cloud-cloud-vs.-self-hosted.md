@@ -2,6 +2,7 @@
 description: >-
   A quick overview of how Umbraco Cloud provides secure, scalable, and fully
   managed hosting.
+icon: clone
 ---
 
 # Hosting with Umbraco Cloud: Cloud vs. Self-Hosted
