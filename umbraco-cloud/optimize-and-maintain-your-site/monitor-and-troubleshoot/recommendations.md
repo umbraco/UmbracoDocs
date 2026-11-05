@@ -1,4 +1,4 @@
-﻿---
+---
 description: >-
   Learn how to view and act on the recommendations Umbraco Cloud gives you for your projects and organization.
 ---
@@ -87,14 +87,14 @@ When a recommendation is snoozed or suppressed, it doesn't count towards the sco
 Recommendations are collected automatically for your project, but changes might take some time to be reflected. Here are the rules that define when recommendations are collected, and therefore when the score is recalculated:
 
 - When you create a project, recommendations are collected for it starting at 00:00 UTC the next day.
-- Whenever we publish a new recommendation, recommendations are collected for all projects in Umbraco Cloud starting at 00:00 UTC the next day.
+- Whenever Umbraco publishes a new recommendation, recommendations are collected for all projects in Umbraco Cloud starting at 00:00 UTC the next day.
 - Whenever you take an action that can change the value of a recommendation, the affected recommendations are scanned asynchronously. Such actions include enabling a feature, changing configuration, or deploying your project. The recommendation score might be updated within the next 15 minutes.
 
 Recommendations are not collected when you snooze or suppress one.
 
 ## How recommendations are organized
 
-Here are the different ways our recommendations are organized.
+Here are the different ways recommendations are organized.
 
 ### Categories
 
@@ -115,7 +115,7 @@ This describes where the recommendation applies: either an environment, a projec
 
 ### Severity
 
-This describes how important we think it is to take action on the specific recommendation.
+This describes how important it is to take action on the specific recommendation.
 
 - Critical
 - To fix
@@ -223,6 +223,7 @@ Models Builder generates the code models for a site's content types. While build
 - Category: Operations
 - Scope: Project
 - Severity: The same for every project.
+- More information: [Hostname Monitoring](hostname-monitoring.md)
 
 At least one enabled uptime monitor should watch the project's hostnames.
 
@@ -233,6 +234,7 @@ An uptime monitor periodically requests one of your hostnames from several locat
 - Category: Operations
 - Scope: Project
 - Severity: The same for every project.
+- More information: [Alerting and Notifications](alerting-and-notifications/README.md)
 
 At least one alert rule should be enabled for the project.
 
