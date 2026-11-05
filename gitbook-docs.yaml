@@ -419,16 +419,3 @@ site:
                   default: true
                   content:
                     directory: ./17/umbraco-engage-ai
-    - type: section
-      key: section-21
-      title: 19.latest (Beta)
-      path: 19.latest-beta
-      children:
-        - type: space
-          key: space-39
-          title: 19.latest (Beta)
-          path: 19.latest-beta
-          default: true
-          draft: true
-          content:
-            directory: ./19.latest-beta
