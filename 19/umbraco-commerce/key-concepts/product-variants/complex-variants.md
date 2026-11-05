@@ -83,7 +83,7 @@ The property value will be of type `ProductVariantCollection` that contains a se
 ```csharp
 public class ProductVariantItem
 {
-    public Udi ContentUdi { get; }
+    public Guid ContentKey { get; }
     public IPublishedElement Content { get; }
     public ProductVariantConfig Config { get; }
 }
