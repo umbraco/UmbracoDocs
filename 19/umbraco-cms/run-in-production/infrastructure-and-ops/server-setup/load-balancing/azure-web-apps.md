@@ -32,7 +32,7 @@ The multi-instance Scalable Public Web App should be set to use [TempFileSystemD
             "Search": {
                 "Examine": {
                     "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
-               }
+                }
             }
         }
     }
