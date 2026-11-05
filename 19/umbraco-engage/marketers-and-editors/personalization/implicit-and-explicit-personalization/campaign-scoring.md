@@ -14,7 +14,7 @@ Campaigns are automatically scored by using utm-parameters, that you may be alre
 * `utm_source`: Identify the advertiser, site, publication, etc. that is sending traffic to your property, for example, Google, newsletter4, billboard.
 * `utm_medium`: The advertising or marketing medium, for example, Cost Per Click (CPC), banner, email newsletter.
 * `utm_campaign`: The individual campaign name, slogan, and promo code for a product.
-* `utm_term`: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use utm_term to specify the keyword.
+* `utm_term`: Identify paid search keywords. If you are manually tagging paid keyword campaigns, you should also use `utm_term` to specify the keyword.
 * `utm_content`: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm_content and set different values for each so you can tell which version is more effective.
 
 Each parameter must be paired with a value that you assign. Each parameter-value pair then contains campaign-related information.
