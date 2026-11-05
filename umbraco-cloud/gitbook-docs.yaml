@@ -9,4 +9,4 @@ site:
       default: true
       draft: true
       content:
-        directory: ./umbraco-cloud
+        directory: ./git
