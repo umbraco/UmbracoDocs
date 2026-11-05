@@ -92,8 +92,8 @@ public class CreateProductDemo
             throw new InvalidOperationException($"Saving failed: {saveResult.Result}");
         }
 
-        // "*" publishes invariant content.
-        return _contentService.Publish(product, ["*"]);
+        // For invariant content, pass an empty array.
+        return _contentService.Publish(product, []);
     }
 }
 ```
@@ -131,7 +131,7 @@ public class SaveAndPublishDemo
 ```
 
 {% hint style="warning" %}
-`SaveAndPublish()` does not accept wildcards. Passing `"*"` throws an `InvalidOperationException`. `Publish()` accepts both `"*"` and an empty array for invariant content.
+`SaveAndPublish()` does not accept wildcards. Passing `"*"` throws an `InvalidOperationException`. `Publish()` accepts both an empty array and `"*"` for invariant content.
 {% endhint %}
 
 ### Multilingual Content
@@ -149,7 +149,7 @@ PublishResult result = _contentService.Publish(product, ["en-US", "da"]);
 A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. `SaveAndPublish()` requires explicit cultures, for example `["en-US", "da"]`.
 
 {% hint style="warning" %}
-For content that varies by culture, `SaveAndPublish()` with an empty array saves the content but publishes no cultures. It still returns `SuccessPublishCulture`.
+For content that varies by culture, `SaveAndPublish()` with an empty array saves the content but publishes no cultures. The result can still report success, so do not rely on the status alone to confirm that a culture was published.
 {% endhint %}
 
 For information on retrieving a site's languages, see [Creating a Multilingual Site](../../../../develop-with-umbraco/tutorials/multilanguage-setup.md#getting-all-the-languages-for-a-site).
@@ -227,7 +227,8 @@ public class CreateProductWithKeysDemo
         _contentTypeService = contentTypeService;
     }
 
-    public async Task<ContentPublishingOperationStatus> CreateAndPublishAsync(Guid catalogueKey, Guid userKey, string name, string category, int price)    {
+    public async Task<ContentPublishingOperationStatus> CreateAndPublishAsync(Guid catalogueKey, Guid userKey, string name, string category, int price)
+    {
         IContentType productType = _contentTypeService.Get("product")
             ?? throw new InvalidOperationException("Could not find the 'product' document type.");
 
@@ -266,6 +267,8 @@ public class CreateProductWithKeysDemo
 
 Unlike `IContentService`, `IContentEditingService` validates the Document Type, the parent, and the property values. If property validation fails, the content is still created. The status is `PropertyValidationError`, and `Success` is `true`. Check the status, not only `Success`.
 
+From Umbraco 17.6, use `IContentEditingService.CreateAndPublishAsync()` to create and publish content in one call. Pass the cultures to publish as an `ISet<string>`. For invariant content, pass an empty set. The returned `ContentEditingAndPublishingStatus` reports the save and the publish outcomes separately. A publish blocked by a business rule still leaves the save in effect.
+
 ### Resolving a User Key to an ID
 
 To keep using `IContentService`, resolve the user key to an ID with `IUserIdKeyResolver`. The following example publishes existing content and records the action against the resolved user:
@@ -294,7 +297,7 @@ public class PublishAsUserDemo
 
         int userId = await _userIdKeyResolver.GetAsync(userKey);
 
-        return _contentService.Publish(content, ["*"], userId);
+        return _contentService.Publish(content, [], userId);
     }
 }
 ```
