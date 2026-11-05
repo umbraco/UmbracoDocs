@@ -287,19 +287,13 @@ umbExtensionsRegistry.registerMany([groupManifest, actionManifest]);
 ```
 {% endcode %}
 
-{% hint style="info" %}
-
-An action without a `group`, or with a `group` that matches no registered group, renders in the Other group at the end of the menu.
-
-{% endhint %}
-
 ### Menu Order
 
 Umbraco orders the visible actions in a menu by the following rules:
 
 * Groups sort by the `weight` of the group, highest first.
 * Inside a group, actions sort by their own `weight`, highest first. Equal weights sort by alias.
-* Actions without a registered group render last, in the Other group, sorted the same way.
+* Actions without a `group`, or with a `group` that matches no registered group, render last in the Other group. They sort the same way.
 * A group with no visible actions doesn't render.
 
 ### Separators
@@ -309,7 +303,7 @@ Umbraco places the separator lines in a menu by the following rules:
 * A separator line sits between every two groups, including the Other group.
 * A menu never starts or ends with a separator.
 
-Inside a group, an action can add an extra line above itself with `separatorBefore: true`. In the **Save and publish** menu of the Document workspace, Schedule publish, Publish with descendants, and Unpublish belong to the Publishing group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions. When a condition such as a user permission hides Unpublish, the extra line disappears with it. On the first action of a group, `separatorBefore` has no effect, as a line already sits above the group.
+Inside a group, an action can add an extra line above itself with `separatorBefore: true`. Core uses the property in the **Save and publish** menu of the Document workspace, which lists workspace action menu items rather than entity actions. There, Schedule publish, Publish with descendants, and Unpublish belong to the `UMB_WORKSPACE_ACTION_MENU_ITEM_GROUP_PUBLISHING` group. Unpublish sets `separatorBefore: true`, so a line separates it from the two publish actions. When a condition such as a user permission hides Unpublish, the extra line disappears with it. On the first action of a group, `separatorBefore` has no effect, as a line already sits above the group.
 
 ## User Permission Codes <a href="#user-permission-codes" id="user-permission-codes"></a>
 
