@@ -153,7 +153,7 @@ public class MySqlQueryBuiltEventHandler :  INotificationHandler<SqlQueryBuiltNo
 
 ## Repository Events Validation
 
-From version `15.1.0`, complex server-side validation can be added to a collection using the `CancelOperation` method of the notification.
+Complex server-side validation can be added to a collection using the `CancelOperation` method of the notification.
 
 ### Example
 

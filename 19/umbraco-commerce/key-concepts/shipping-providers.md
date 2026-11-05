@@ -41,10 +41,6 @@ The settings class consists of a series of properties, each decorated with a `Sh
 
 Labels and descriptions for providers and their settings are controlled through [Localization](#localization) entries.
 
-{% hint style="info" %}
-The **Validate Shipping Provider Settings** feature is available in Umbraco Commerce 16.4.0 and later
-{% endhint %}
-
 Umbraco Commerce supports validating shipping provider settings using the `System.ComponentModel.DataAnnotations.ValidationAttribute` class.
 
 ```csharp

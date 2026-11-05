@@ -4,11 +4,7 @@ description: Learn how to configure a cart cleanup routine.
 
 # Configuring Cart Cleanup
 
-{% hint style="info" %}
-Available from Umbraco Commerce 15.1.0
-{% endhint %}
-
-By default Umbraco Commerce will keep all created carts indefinately. Over time this can become an issue. To assist with this is it possible to configure a cart cleanup routine to delete carts older than a pre-configured time interval.
+By default Umbraco Commerce will keep all created carts indefinitely. Over time this can become an issue. To assist with this is it possible to configure a cart cleanup routine to delete carts older than a pre-configured time interval.
 
 This service can be enabled and configured in the `appSettings.json`
 

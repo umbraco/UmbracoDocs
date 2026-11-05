@@ -5,7 +5,7 @@ description: Guide to limit order line quantity in Umbraco Commerce.
 # Limit Order Line Quantity
 
 {% hint style="info" %}
-Since Commerce 15.3.2, there is a built-in orderline quantity check that handles the validation automatically.
+Umbraco Commerce has a built-in orderline quantity check that handles the validation automatically.
 {% endhint %}
 
 This guide explains custom validation event handlers in Umbraco Commerce that enable limiting order line quantities based on:

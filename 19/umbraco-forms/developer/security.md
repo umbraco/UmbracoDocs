@@ -36,7 +36,7 @@ If more than one start folder is selected, they will appear underneath the root 
 
 ## Access to Forms, Entries, and Exports
 
-From Umbraco Forms 18.2.2, a user's access to an individual form is checked when they work with its entries, the form, or its folder. A user has access to a form when both of the following are true:
+A user's access to an individual form is checked when they work with its entries, the form, or its folder. A user has access to a form when both of the following are true:
 
 * The form is granted to them in the _Security_ tree.
 * The form is in one of their start folders, or they have no start folders.

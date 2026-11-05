@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Engage includes a cockpit feature to help verify the tracking of analytics and understand personalization behavior. The cockpit adds a button to the front end, giving real-time insights.
 
-As of Umbraco Engage 16, the cockpit is automatically added and visible for logged-in Umbraco users.
+The cockpit is automatically added and visible for logged-in Umbraco users.
 
 {% hint style="info" %}
 Automatic injection of the Cockpit can be disabled by setting ‘**Engage:Cockpit:EnableInjection**’ configuration to **false** in your appsettings.json file.

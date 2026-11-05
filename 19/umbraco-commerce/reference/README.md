@@ -1,4 +1,4 @@
-# Umbraco Commerce Reference Docs
+# Umbraco Commerce Reference Documentation
 
 | Namespace |
 | --- |

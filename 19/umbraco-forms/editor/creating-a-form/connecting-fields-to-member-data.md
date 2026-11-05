@@ -6,10 +6,6 @@ description: >-
 
 # Connecting Fields to Member Data
 
-{% hint style="info" %}
-This feature is available from Umbraco Forms 17.5 and 18.1.
-{% endhint %}
-
 You can link a form field to a property on your site's members. When a logged-in member opens the form, Umbraco pre-fills the field with the value it already holds for that member. This saves the member from re-entering data you already have.
 
 ## The Member pane

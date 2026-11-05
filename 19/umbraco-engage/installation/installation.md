@@ -85,7 +85,7 @@ Includes support for "async" and "defer" keywords.
 
 The Cockpit is a tool to help with testing segments and diagnosing the data that Umbraco Engage collects. It can be viewed on the front end of your website, only if you are logged into Umbraco as well.
 
-As of Umbraco Engage 16, the cockpit is automatically installed.
+The cockpit is automatically installed.
 
 {% hint style="info" %}
 Automatic injection can be disabled by setting ‘Engage:Cockpit:EnableInjection’ configuration to **false**.

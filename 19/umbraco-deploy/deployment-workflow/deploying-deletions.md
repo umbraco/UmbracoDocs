@@ -94,7 +94,7 @@ Deleting the language in the backoffice on the target environment will ensure th
 
 ## Cleaning schema
 
-Schema deletions leave database entries behind, as described above. Umbraco Deploy 13.4 and later can remove these entries for you. Deploy compares the schema in the database with the UDA files on disk and deletes the items without a matching file. Cleaning applies to all schema types managed by Deploy, including Templates and Languages.
+Schema deletions leave database entries behind, as described above. Umbraco Deploy can remove these entries for you. Deploy compares the schema in the database with the UDA files on disk and deletes the items without a matching file. Cleaning applies to all schema types managed by Deploy, including Templates and Languages.
 
 You can clean the schema in two ways:
 
