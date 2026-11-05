@@ -18,7 +18,7 @@ Textarea is an HTML textarea control for multiple lines of text. It can be confi
 
 ### Without a character and rows limit
 
-![Textarea Content Example](../../../.gitbook/assets/Textarea-Content-v8.png)
+![Textarea Content Example](../../../.gitbook/assets/Textarea-Content.png)
 
 ### With a character limit and rows limit
 

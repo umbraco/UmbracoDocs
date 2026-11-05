@@ -1,0 +1,176 @@
+---
+description: How to secure access to Umbraco Forms data and functionality.
+---
+
+# Security
+
+Umbraco Forms has a backoffice security model integrated with Umbraco users. Details are managed in the _Forms_ section of the backoffice, within a tree named _Security_.
+
+## User-based permissions
+
+Within the _Forms_ > _Security_ tree, each user with a backoffice account is listed. Clicking on a user allows each functional permission to be set:
+
+* Manage Forms - user can create and edit form definitions
+* View Entries - user can view the submitted entries
+* Edit Entries - user can edit the submitted entries
+* Delete entries - user can delete the submitted entries
+* Manage Workflows - user can create and edit workflow items
+* Manage Datasources - user can create and edit datasource definitions
+* Manage Prevalue Sources - user can create and edit prevalue source definitions
+
+For further control, each form is listed and the user can be granted or denied access to each as appropriate.
+
+As new forms are created, users will automatically be granted access to them, unless the configuration setting `DefaultUserAccessToNewForms` has been set to a value of `Deny`.
+
+## Start Folders
+
+When form definitions are configured for storage in the database, it allows for the creation of folders to group forms within. It's also possible to define one or more start folders for a user. This is done in order to limit their access to a subset of the forms available.
+
+If no start folders are selected, the user will be able to access all forms in the backoffice according to their permissions.
+
+If a single start folder is selected, that will act as the root of the tree view of forms. The user will have access to all folders and forms below that selected folder.
+
+If more than one start folder is selected, they will appear underneath the root of the tree view of forms. The user will have access to only those folders and their descendant folders and forms.
+
+![Start folders](../.gitbook/assets/user-start-folders-v14.png)
+
+## Access to Forms, Entries, and Exports
+
+From Umbraco Forms 18.2.2, a user's access to an individual form is checked when they work with its entries, the form, or its folder. A user has access to a form when both of the following are true:
+
+* The form is granted to them in the _Security_ tree.
+* The form is in one of their start folders, or they have no start folders.
+
+The checks apply as follows:
+
+* Viewing, editing, deleting, and exporting a form's entries requires the matching permission and access to the form. For example, exporting entries requires the _View Entries_ permission.
+* Exporting a form definition requires access to the form.
+* Copying or moving a form requires access to the form, and the destination folder must be within the user's start folders. Copying workflows from one form to another requires access to both forms.
+* Creating and importing a form requires the destination folder to be within the user's start folders. Importing over an existing form also requires access to that form.
+* Saving a form into a different folder requires the new folder to be within the user's start folders.
+* Creating a folder requires its parent folder to be within the user's start folders. Moving a folder requires both the folder and its destination to be within them.
+* The **Forms** tab on a member in the **Members** section leaves out forms outside the user's start folders.
+
+For a user with a single start folder, that folder is the root of their forms tree. An item they create, copy, or move to the root is placed in their start folder. The same applies to a form restored from the recycle bin to the root.
+
+If a user opens a form they don't have access to, the form editor shows an access denied message.
+
+### Entry Exports
+
+An entry export is stored for the user who generated it. Only that user can download it.
+
+{% hint style="info" %}
+Exports generated before upgrading to Umbraco Forms 18.2.2 can no longer be downloaded. Generate the export again.
+{% endhint %}
+
+## User group based permissions
+
+A new model was introduced allowing for the management of permissions at the level of user groups. Particularly for installations with a large number of users, we expect this to be a more useful setup and require less ongoing administration.
+
+When user groups are involved in permissions, access to a particular resource or feature is determined by the following:
+
+* If the user has a specific user permission set, it is used in preference to anything set on the user groups they are a part of.
+* If the user doesn't have a specific user permission set, they are granted access if at least one of the user groups they are part of has access.
+
+To enable the feature, it's necessary to update the `ManageSecurityWithUserGroups` configuration setting to `true`.
+
+With that in place the _Form Security_ tree divides into three sub-trees:
+
+* Under _Group Permissions_, each user group is listed and the same settings as described above for individual users can be set here.
+* Under _User Permissions_, each user that has a specific user permission record is listed and can be managed. Records for users can be created or deleted via the tree's action menu.
+
+As new forms are created, user groups with aliases listed in the `GrantAccessToNewFormsForUserGroups` configuration setting will be automatically given access. For example, with a value of `admin, editor`, the built-in Administrators and Editors groups would have access.
+
+### Start folders for user groups
+
+Start folders are enabled for User Groups. They work in a similar way as the group based permissions described above:
+
+* If the user has a specific user permission set, it is used in preference to anything set on the user groups they are a part of.
+  * This means if the user has no start folders defined and the groups they are part of do, they will have access to the root of the Forms tree and be able to access all folders and Forms.
+* If the user doesn't have a specific user permission set, they are granted access to all the unique folders the groups they are part of have access to.
+  * If they are part of any group that has access to the forms section, permission to manage forms and no start folders defined, they will have access to the root of the Forms tree and be able to access all folders and Forms.
+
+### Migrating to user group-based permissions
+
+In introducing the user group based permissions, we've taken care to ensure a migration path. This is available for those existing installations running on older versions of Umbraco Forms. In that situation, we'd recommend the following approach.
+
+* Upgrade to Umbraco 9.3.
+* At this stage nothing will have changed in terms of the permissions model in use.
+* Set the `ManageSecurityWithUserGroups` configuration value to `true` and the `GrantAccessToNewFormsForUserGroups` as appropriate for your setup.
+* Via the _Users > Form Security_ section, set the required permissions on each user group.
+* Again at this point nothing will have changed with regard the effective permissions for each user, as they will currently all have an existing user permission record.
+* Via _Users > Form Security > User permissions_, delete the permission records for each user.
+* The effective permissions for each user will now be derived from their user groups.
+* If you have any exceptions - where a particular user needs a particular combination of permissions that you can't or don't want to provide via the user groups - it's always possible to re-create a user permission record that will take precedence over the group based permissions.
+
+![User group permissions](../.gitbook/assets/user-group-permissions.png)
+
+## Handling Sensitive Data in Umbraco Forms
+
+Marking fields and properties as sensitive will hide the data in those fields for backoffice users that are not privy to the data. Built-in features are available to help you secure sensitive information. For more information, see the [Sensitive data](https://docs.umbraco.com/umbraco-cms/reference/security/sensitive-data-on-members) article.
+
+The following sections covers how to grant or deny access to sensitive data for specific users and how to mark form questions as sensitive.
+
+### Assigning Users to the Sensitive Data Group
+
+To allow users to view and handle sensitive data in Umbraco Forms, you must assign them to the _Sensitive Data_ user group:
+
+1. Navigate to the **Users** section in the Umbraco Backoffice.
+2. Select the user you want to grant access to.
+3. Click **Choose** in the Groups field under the **Assign access** section.
+4. Select **Sensitive Data** from the list of User Groups.
+5. Click **Submit**.
+6. Click **Save**.
+
+![Assigning Users to the Sensitive Data Group](../.gitbook/assets/assign-sensitive-data-to-user.png)
+
+### Marking Questions in Forms as Sensitive
+
+Once the users are set up with the appropriate permissions, the next step is to identify which form fields should be marked as sensitive.
+
+Marking a field as sensitive ensures that only authorized users in the Sensitive Data user group can access data from these fields.
+
+To mark questions as sensitive, follow these steps:
+
+1. Navigate to the **Forms** section in the Umbraco Backoffice.
+2. Open the form you wish to configure (for example: Contact Form).
+3. Click on the cogwheel icon next to the form field you want to secure.
+4. Enable the **Sensitive data** setting for the field.
+
+![Mark Question as Sensitive](../.gitbook/assets/mark-field-as-sensitive.png)
+
+5. Click **Submit**.
+6. Click **Save**.
+
+![Sensitive Data on Field](../.gitbook/assets/sensitive-data-field.png)
+
+### What Sensitive Means for File Uploads
+
+A file uploaded to a field marked as sensitive is stored in the media folder like any other form upload. Users outside the Sensitive Data group cannot reach it:
+
+* The file cannot be downloaded from its URL.
+* The file is not included when you use the **Save All Uploaded Files (by entry)** export. The other files on the same entry are still included.
+* The **Save All Uploaded Files (in disk structure)** export is not available at all for a form that collects sensitive uploads.
+
+{% hint style="info" %}
+The stored file path records the form, but not the field the file came from. Umbraco Forms can identify the field only where it reads the form entries as well as the files. This is why the two exports behave differently.
+{% endhint %}
+
+Two consequences are worth knowing before you mark an upload field as sensitive:
+
+* If a form has both a sensitive upload field and an ordinary one, users outside the Sensitive Data group cannot download either file by URL. Use the by-entry export to retrieve the ordinary files.
+* The in-disk-structure export is refused for the whole form, not for individual files.
+
+If you need a form's ordinary attachments to stay available to a wider group of users, collect the sensitive uploads on a separate form.
+
+### Member Details on Form Entries
+
+Where a form is submitted by a logged-in member, the entries list shows a **Member** column with that member's name and email address.
+
+This column is always treated as sensitive data. Only users in the Sensitive Data group see it; everyone else sees the entry without it.
+
+{% hint style="info" %}
+This does not depend on any field setting. It applies to every form that members submit, even one with no fields marked as sensitive.
+{% endhint %}
+
+If you need a wider group of users to see which member submitted an entry, add them to the Sensitive Data group. There is no separate permission for the member column on its own.
