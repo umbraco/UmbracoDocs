@@ -2,11 +2,26 @@ $schema: https://api.gitbook.com/gitbook-docs.yaml
 site:
   title: Cloud Variants Test
   structure:
-    - type: space
-      key: space-1
-      title: Git
-      path: git
+    - type: section
+      key: section-1
+      title: Umbraco Cloud
+      path: umbraco-cloud
+      description: ""
+      icon: cloud
       default: true
-      draft: true
-      content:
-        directory: ./git
+      children:
+        - type: space
+          key: space-1
+          title: Git
+          path: git
+          default: true
+          draft: true
+          content:
+            directory: ./git
+        - type: space
+          key: space-2
+          title: Artifact
+          path: artifact
+          draft: true
+          content:
+            directory: ./artifact
