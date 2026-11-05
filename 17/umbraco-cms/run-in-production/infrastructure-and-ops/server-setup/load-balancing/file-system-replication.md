@@ -10,7 +10,7 @@ Media can also live on a shared network location, using a Universal Naming Conve
 
 Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](file-system-replication.md#examine-directory-factory-options) and the [Umbraco temporary storage location](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/webconfig/#umbracocorelocaltempstorage).
 
-## Synchronised File System
+## Synchronized File System
 
 {% hint style="info" %}
 The servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers.
@@ -22,7 +22,7 @@ If the file system on your servers is located on shared storage you will need to
 
 ### Replication techniques
 
-A common way to replicate files on Windows Server is to use [Distributed File System (DFS)](https://learn.microsoft.com/windows-server/storage/dfs-replication/dfsr-overview), which is included with Windows Server, which is included with Windows Server.
+A common way to replicate files on Windows Server is to use [Distributed File System (DFS)](https://learn.microsoft.com/windows-server/storage/dfs-replication/dfsr-overview), which is included with Windows Server.
 
 Additional DFS resources:
 

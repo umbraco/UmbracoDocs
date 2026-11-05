@@ -76,7 +76,7 @@ IIS configuration is pretty straightforward with file replication. IIS is only r
 
 ## Mixture of standalone & synchronized
 
-In some scenarios you have a mixture of standalone and synchronized file systems. An example of this is Azure Web Apps where the file system isn't replicated between backoffice and front end servers but is replicated between all front end servers, in this configuration you should follow the steps for synchronized file systems.
+In some scenarios you have a mixture of standalone and synchronized file systems. An example of this is Azure Web Apps. There, the file system is replicated between all front-end servers, but not between the backoffice and front-end servers. In this configuration, follow the steps for synchronized file systems.
 
 There is a specific documentation for load balancing with [Azure Web Apps](azure-web-apps.md)
 
