@@ -14,7 +14,7 @@ In this section, you can dive deeper into the following aspects.
 
 ## Security settings
 
-When you have [locked down access to your Umbraco folder](https://docs.umbraco.com/umbraco-cms/reference/security/security-hardening#lock-down-access-to-your-umbraco-folder-iis), ensure the `/umbraco/engage/\*` path is allowed for all clients. You should also ensure it is not blocked based on an IP. This is needed to collect [client-side events](../developers/analytics/client-side-events-and-additional-javascript-files/).
+When you have [locked down access to your Umbraco folder](https://docs.umbraco.com/umbraco-cms/run-in-production/security/lock-access-to-umbraco-folder), ensure the `/umbraco/engage/\*` path is allowed for all clients. You should also ensure it is not blocked based on an IP. This is needed to collect [client-side events](../developers/analytics/client-side-events-and-additional-javascript-files/).
 
 ## Privacy settings
 
