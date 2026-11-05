@@ -106,7 +106,7 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
         "CMS": {
             "Search": {
                 "Examine": {
-                    "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+                    "LuceneDirectoryFactory" : "SyncedTempFileSystemDirectoryFactory"
                 }
             }
         }
