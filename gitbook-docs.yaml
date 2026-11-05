@@ -134,13 +134,6 @@ site:
               path: 17.latest
               content:
                 directory: ./17/umbraco-automate
-            - type: space
-              key: space-39
-              title: 19.latest
-              path: 19.latest
-              draft: true
-              content:
-                directory: ./umbraco-automate/19.latest
         - type: section
           key: section-11
           title: Commerce
