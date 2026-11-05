@@ -10,7 +10,7 @@ Media can also live on a shared network location, using a Universal Naming Conve
 
 Depending on the configuration and performance of the environment's local storage you might need to consider [Examine Directory Factory Options](file-system-replication.md#examine-directory-factory-options) and the [Umbraco temporary storage location](https://our.umbraco.com/documentation/Reference/Configuration-for-Umbraco-7-and-8/webconfig/#umbracocorelocaltempstorage).
 
-## Synchronised File System
+## Synchronized File System
 
 {% hint style="info" %}
 The servers are performing file replication, updates to a file on one server, updates the corresponding file on any other servers.
@@ -22,7 +22,7 @@ If the file system on your servers is located on shared storage you will need to
 
 ### Replication techniques
 
-A common way to replicate files on Windows Server is to use \[DFS]\(https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85), which is included with Windows Server.
+A common way to replicate files on Windows Server is to use [Distributed File System (DFS)](https://learn.microsoft.com/windows-server/storage/dfs-replication/dfsr-overview), which is included with Windows Server.
 
 Additional DFS resources:
 
@@ -42,14 +42,16 @@ Alternatively store the Umbraco temporary files in the local server's 'temp' fol
 
 Achieve this by changing the value of the `LuceneDirectoryFactory` setting to 'TempFileSystemDirectoryFactory' in the `appsettings.json`. The downside is that if you need to view temporary files you'll have to find it in the temp files. Locating the file this way isn't always clear.
 
-Below is shown how to do this in a Json configuration source.
+Below is shown how to do this in a JSON configuration source.
 
 ```json
 {
     "Umbraco": {
         "CMS": {
-            "Examine": {
-                "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+            "Search": {
+                "Examine": {
+                    "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+                }
             }
         }
     }
@@ -72,9 +74,9 @@ The following is not the recommended setup but it is a viable alternative:
 
 IIS configuration is pretty straightforward with file replication. IIS is only reading files from its own file system like a normal IIS website.
 
-## Mixture of standalone & synchronised
+## Mixture of standalone & synchronized
 
-In some scenarios you have a mixture of standalone and synchronised file systems. An example of this is Azure Web Apps where the file system isn't replicated between backoffice and front end servers but is replicated between all front end servers, in this configuration you should follow the steps for synchronised file systems.
+In some scenarios you have a mixture of standalone and synchronized file systems. An example of this is Azure Web Apps where the file system isn't replicated between backoffice and front end servers but is replicated between all front end servers, in this configuration you should follow the steps for synchronized file systems.
 
 There is a specific documentation for load balancing with [Azure Web Apps](azure-web-apps.md)
 
@@ -86,8 +88,10 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 {
     "Umbraco": {
         "CMS": {
-            "Examine": {
-                "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+            "Search": {
+                "Examine": {
+                    "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+                }
             }
         }
     }
@@ -100,8 +104,10 @@ There is a specific documentation for load balancing with [Azure Web Apps](azure
 {
     "Umbraco": {
         "CMS": {
-            "Examine": {
-                "LuceneDirectoryFactory" : "SyncedTempFileSystemDirectoryFactory"
+            "Search": {
+                "Examine": {
+                    "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+                }
             }
         }
     }

@@ -22,7 +22,7 @@ If the file system on your servers is located on shared storage you will need to
 
 ### Replication techniques
 
-A common way to replicate files on Windows Server is to use \[DFS]\(https://msdn.microsoft.com/en-us/library/windows/desktop/bb540031(v=vs.85), which is included with Windows Server.
+A common way to replicate files on Windows Server is to use [Distributed File System (DFS)](https://learn.microsoft.com/windows-server/storage/dfs-replication/dfsr-overview), which is included with Windows Server, which is included with Windows Server.
 
 Additional DFS resources:
 

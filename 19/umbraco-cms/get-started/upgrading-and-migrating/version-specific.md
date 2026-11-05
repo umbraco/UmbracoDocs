@@ -342,6 +342,7 @@ Some notable removals and their replacements:
 | `MethodInfoApiCommonExtensions.HasMapToApiAttribute`                                | `ActionDescriptorApiCommonExtensions.HasMapToApiAttribute`                      |
 | `DeliveryApiApplicationBuilderExtensions`                                           | `UmbracoEndpointBuilderContextExtensions`                                       |
 | `IJsonPatchService`, install and upgrade check services                             | No replacement                                                                  |
+| `Umbraco:CMS:Examine:LuceneDirectoryFactory`                                        | Move it to [`Umbraco:CMS:Search:Examine:LuceneDirectoryFactory`](../../develop-with-umbraco/configuration/examinesettings.md). |
 
 The `Markdown` (HeyRed) and `JsonPatch.Net` NuGet packages are no longer dependencies of Umbraco. Add a direct package reference if your own code uses them.
 
