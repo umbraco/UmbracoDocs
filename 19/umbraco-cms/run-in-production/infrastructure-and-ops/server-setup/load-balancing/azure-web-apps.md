@@ -29,8 +29,10 @@ The multi-instance Scalable Public Web App should be set to use [TempFileSystemD
 {
     "Umbraco": {
         "CMS": {
-            "Examine": {
-                "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+            "Search": {
+                "Examine": {
+                    "LuceneDirectoryFactory" : "TempFileSystemDirectoryFactory"
+                }
             }
         }
     }
@@ -91,7 +93,7 @@ You can also copy the following JSON directly into your Azure Web App configurat
   "slotSetting": false
 },
 {
-  "name": "UMBRACO__CMS__Examine__LuceneDirectoryFactory",
+  "name": "UMBRACO__CMS__Search__Examine__LuceneDirectoryFactory",
   "value": "TempFileSystemDirectoryFactory",
   "slotSetting": false
 }

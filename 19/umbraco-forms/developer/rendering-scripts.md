@@ -1,0 +1,144 @@
+# Rendering Forms Scripts
+
+Forms output some JavaScript which is by default rendered right below the markup.
+
+In many cases, you might prefer rendering your scripts at the bottom of the page. For example, before the closing `</body>` tag. This generally improves site performance.
+
+In order to render your scripts where you want, you need to add a snippet to your template. Make sure you add it below your scripts, right before the closing `</body>` tag.
+
+By default, Forms uses `HttpContext.Items` for tracking the forms rendered on a page. The stored values are used when rendering the form scripts and associated data.
+
+The following snippet should be used.
+
+```csharp
+@if (Context.Items.TryGetValue("UmbracoForms", out object? formIdsObject) && formIdsObject is IEnumerable<Guid> formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+}
+```
+
+If you have changed the configuration value of `TrackRenderedFormsStorageMethod` to use the legacy behavior `TempData`, the snippet is:
+
+```csharp
+@using Umbraco.Forms.Web.Extensions;
+
+@if (TempData.Get<Guid[]>("UmbracoForms") is Guid[] formIds)
+{
+    foreach (var formId in formIds)
+    {
+        @await Component.InvokeAsync("RenderFormScripts", new { formId, theme = "default" })
+    }
+
+    TempData.Remove("UmbracoForms");
+}
+```
+
+Read more about the `TrackRenderedFormsStorageMethod` configuration option in the [Configuration](configuration/#TrackRenderedFormsStorageMethod) article.
+
+If you prefer to use a tag helper, that's an option too.
+
+Firstly, in your `_ViewImports.cshtml` file, ensure you have a reference to the Umbraco Forms tag helpers with:
+
+```cshtml
+@addTagHelper *, Umbraco.Forms.Web
+```
+
+Then instead of reading from `TempData` and invoking the view component directly, you can use:
+
+```cshtml
+<umb-forms-render-scripts theme="default" />
+```
+
+This will use the appropriate storage method that you have configured.
+
+## Using Form Scripts Alongside Validation Dependencies
+
+When setting up templates for Umbraco Forms, two separate script-rendering methods are involved, and both are required for forms to work correctly.
+
+`@Html.RenderUmbracoFormDependencies(Url)`, covered in the [Preparing Your Frontend](prepping-frontend.md) article, renders the ASP.NET Client Validation library, which Umbraco Forms uses by default for client-side validation. This helper goes in the `<head>` of your template. If your project uses jQuery validation instead, omit this call and reference dependencies manually, as described in the [Preparing Your Frontend](prepping-frontend.md) article.
+
+The `<umb-forms-render-scripts />` tag helper (or the equivalent view component calls shown above) renders form-specific scripts covering conditional field logic, field behaviors, and any theme JavaScript. This goes before the closing `</body>` tag.
+
+Because both methods output `<script>` tags, they can appear to duplicate each other. The script contents are entirely different, however, and serve distinct purposes. A complete template uses both:
+
+```cshtml
+<head>
+    @Html.RenderUmbracoFormDependencies(Url)
+</head>
+<body>
+    @await Component.InvokeAsync("RenderForm", new { formId = Model.FormGuid })
+    <umb-forms-render-scripts theme="default" />
+</body>
+```
+
+Omitting `RenderUmbracoFormDependencies` will break client-side validation. Omitting `<umb-forms-render-scripts />` will break conditional fields and theme behaviour.
+
+## Enabling `ExcludeScripts`
+
+If you do not want to render the associated scripts with a Form, you need to explicitly say so. You need to make sure `ExcludeScripts` is checked/enabled, whether you are inserting your Form using a macro or adding it directly in your template.
+
+To enable `ExcludeScripts`:
+
+*   Using the **Insert Form with Theme** macro:
+
+    ![Exclude scripts](../.gitbook/assets/exclude-scripts-v9.png)
+*   While inserting Forms **directly** in your template:
+
+    ```csharp
+    @await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("6c3f053c-1774-43fa-ad95-710a01d9cd12"), theme = "bootstrap3-horizontal", includeScripts = false })
+    ```
+
+{% hint style="info" %}
+`includeScripts = false` prevents the associated scripts from being rendered. If value is `includeScripts = true`, or if the parameter is excluded, it will render the scripts on the form.
+{% endhint %}
+
+## Content Security Policy nonce
+
+{% hint style="info" %}
+This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
+{% endhint %}
+
+From Umbraco Forms 18.3.0, Forms adds a nonce to the script tags it renders. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+Forms reads the nonce from `ICspNonceService`, which Umbraco CMS provides in the `Umbraco.Cms.Core.Security` namespace. The default implementation creates one nonce per request. Use the same service for the nonce in your `Content-Security-Policy` header, so the two match.
+
+The nonce is added to:
+
+* The scripts rendered by `Html.RenderUmbracoFormDependencies()`.
+* The scripts rendered by `<umb-forms-render-scripts />`, the `RenderFormScripts` view component, and `Html.RenderFormsScripts()`. These include the theme script and field type scripts, such as the date picker.
+* The Google script rendered by the reCAPTCHA v2 field.
+
+Forms doesn't add a nonce to stylesheet links.
+
+A `nonce` you pass to `Html.RenderUmbracoFormDependencies()` or `Html.RenderFormsScripts()` in `htmlAttributes` is kept. So is one set in `FormViewModel.JavaScriptTagAttributes`. Forms only adds its own nonce to a tag that doesn't have one. The reCAPTCHA v2 script always uses the nonce from `ICspNonceService`.
+
+To render no nonce, register an `ICspNonceService` that returns `null`. This replaces the service for Umbraco CMS too.
+
+```csharp
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Security;
+using Umbraco.Extensions;
+
+public class NoCspNonceService : ICspNonceService
+{
+    public string? GetNonce() => null;
+}
+
+public class NoCspNonceComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.AddUnique<ICspNonceService, NoCspNonceService>();
+}
+```
+
+### External script and stylesheet URLs
+
+Forms adds its version to the URLs of the scripts and stylesheets it renders, as a `v` query string parameter. Browsers then fetch the new files after an upgrade.
+
+From Umbraco Forms 18.3.0, a URL that starts with `http://`, `https://`, or `//` is rendered as registered, without the version.
+
+For what this means when upgrading, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts) article.
