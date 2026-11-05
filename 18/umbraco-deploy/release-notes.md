@@ -18,6 +18,10 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
+### [18.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (November 5th 2026)
+
+* All items from 18.2.0-rc1 and 18.2.0-rc2.
+
 ### [18.2.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (October 30th 2026)
 
 * Show the **Queue for Transfer** and restore actions on Umbraco Forms and Umbraco Commerce entities [#355](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/355). Entity types that packages register for these actions are now added when the action loads after the package.
