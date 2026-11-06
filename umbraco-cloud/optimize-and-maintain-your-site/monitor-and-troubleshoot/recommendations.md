@@ -196,7 +196,7 @@ With edge caching on, Cloudflare serves cached responses from the location close
 
 Edge cache TTL should be 30 days or more on every custom hostname.
 
-Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname - its own setting where it has one, the environment default otherwise - and flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN Caching Enabled](#p1-cdn-caching-enabled) recommendation instead.
+Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname. It uses the hostname's own setting, or the environment default if none is set. It flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN Caching Enabled](#p1-cdn-caching-enabled) recommendation instead.
 
 ### B5: Umbraco.Cloud.Cms package installed
 
