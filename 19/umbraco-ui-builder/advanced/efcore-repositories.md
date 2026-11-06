@@ -6,10 +6,6 @@ description: Configuring Entity Framework Core in Umbraco UI Builder.
 
 Umbraco UI Builder supports Entity Framework Core (EF Core) as an alternative data access strategy to the default NPoco-based repository. When enabled, collections use EF Core for all CRUD operations, including querying, pagination, saving, and deleting entities.
 
-{% hint style="info" %}
-EF Core support is available from Umbraco UI Builder 17.1.
-{% endhint %}
-
 ## Configuration
 
 EF Core support is toggled via a feature flag in your application's configuration. When enabled, all registered collections will automatically switch to the EF Core-based implementation.

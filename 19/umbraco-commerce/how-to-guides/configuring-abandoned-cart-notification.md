@@ -4,10 +4,6 @@ description: Learn how to configure the abandoned cart notification.
 
 # Configuring Abandoned Carts Notification
 
-{% hint style="info" %}
-Available from Umbraco Commerce 16.1.0
-{% endhint %}
-
 ## Abandoned Cart Recurring Background Job
 
 The abandoned cart recurring background job automatically sends reminder emails to customers about items left in their shopping carts. To configure it, follow these steps:

@@ -144,7 +144,7 @@ Invalid entries, such as a secret shorter than 64 bytes, are skipped with a warn
 
 If `BaselineApiSecret` isn't set or is invalid, the Child project signs its requests to the Baseline project with its `ApiSecret` and logs a warning. This fallback only works when both projects use the same `ApiSecret`, and will be removed in Deploy 19.
 
-These settings are available from Umbraco Deploy 18.2. `BaselineUrl` replaces the Umbraco Cloud `Upstream` project setting, which is obsolete.
+`BaselineUrl` replaces the Umbraco Cloud `Upstream` project setting, which is obsolete.
 
 ### Edition
 
@@ -181,7 +181,7 @@ This setting allows you to manage how relations are deployed between environment
 },
 ```
 
-As of Deploy 10.1.2, 11.0.1 and higher, if this setting is left blank, the relation types used for usage tracking are omitted. These relations are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred.
+If this setting is left blank, the relation types used for usage tracking are omitted. These relations are rebuilt by the CMS following a save of an item in the target environment and so don't need to be transferred.
 
 If a particular relation type is not listed, it's considered as a "weak" relation.
 
@@ -214,7 +214,7 @@ These timeout settings default to 20 minutes, but if you are transferring a lot 
 It's important that these settings are added to both the source and target environments in order to work.
 {% endhint %}
 
-A fifth timeout setting is available from Umbraco Deploy 9.5 and 10.1, allowing for the adjustment of the maximum time allowed for disk operations such as schema updates.
+A fifth timeout setting allows for the adjustment of the maximum time allowed for disk operations such as schema updates.
 
 * `DiskOperationsTimeout`
 
@@ -439,7 +439,7 @@ Deploy also overrides the following settings and logs a single entry at startup 
 * [Import on startup](#import-on-startup) - `FileAction` is changed to `None`, so the imported files are kept.
 * Schema and content package migrations are disabled, unless the CMS `AllowComponentOverrideOfRunSchemaAndContentMigrations` setting is `false`.
 
-Changing this setting requires a restart. The setting is available from Umbraco Deploy 18.2.
+Changing this setting requires a restart.
 
 ### StartupOperations <a href="#startup-operations" id="startup-operations"></a>
 
@@ -453,13 +453,13 @@ Combine the values to run both operations, for example `DeploySchema, CleanSchem
 
 The operations never run at the same time as another deployment on the same or another server. They wait up to the [`DiskOperationsTimeout`](#timeout-settings) for a running deployment to complete.
 
-Changing this setting requires a restart. The setting is available from Umbraco Deploy 18.2.
+Changing this setting requires a restart.
 
 ### PreferLocalDbConnectionString
 
 When using Umbraco Deploy with Umbraco Cloud, a development database is automatically created when restoring a project into a local environment for the first time.
 
-The default CMS database provider for new installs is SQLite (since version 10).
+The default CMS database provider for new installs is SQLite.
 
 If you would prefer to use SQL Server LocalDb when it's available on your local machine, set this value to `true`. If LocalDB isn't reported as being available by Umbraco, it will fallback to using a SQLite database instead.
 

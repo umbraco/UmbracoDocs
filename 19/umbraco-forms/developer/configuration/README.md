@@ -333,7 +333,7 @@ This setting provides a value to be used for the `autocomplete` attribute for ne
 
 #### DaysToRetainSubmittedRecordsFor
 
-Introduced in 10.2, this setting controls the initial value of the number of days to retain form submission records for newly created forms. By default the value is 0, which means records will not be deleted at any time and are retained forever.
+This setting controls the initial value of the number of days to retain form submission records for newly created forms. By default the value is 0, which means records will not be deleted at any time and are retained forever.
 
 If set to a positive number, a date value calculated by taking away the number of days configured from the current date is found. Records in the 'submitted' state, that are older than this date, will be flagged for removal.
 
@@ -374,10 +374,6 @@ This configuration expects a `True` or `False` string value, or a comma-separate
 ### AllowEditableFormSubmissions
 
 This configuration value expects a `true` or `false` value and can be used to toggle the functionality to allow a form submission to be editable and re-submitted. When the value is set to `true` it allows Form Submissions to be edited using the following querystring for the page containing the form on the site. `?recordId=GUID` Replace `GUID` with the GUID of the form submission. Defaults to `false`.
-
-{% hint style="info" %}
-There was a typo in this setting where it had been named as `AllowEditableFormSubmissions`. This is the name that needs to be used in configuration for Forms 9. In Forms 10 this was be corrected to the now documented value of `AllowEditableFormSubmissions`.
-{% endhint %}
 
 {% hint style="warning" %}
 Enable this feature ONLY if you understand the security implications.
@@ -599,7 +595,7 @@ A value of `form-creator` will give access to all the user groups that the user 
 
 ### FormsApiKey and EnableAntiForgeryTokenForFormsApi
 
-Available from Forms 10.2.1, the `FormsApiKey` configuration setting can be used to secure the Forms Headless API in server-to-server integrations. When set, API calls will be rejected unless the value of this setting is provided in an HTTP header.
+The `FormsApiKey` configuration setting can be used to secure the Forms Headless API in server-to-server integrations. When set, API calls will be rejected unless the value of this setting is provided in an HTTP header.
 
 Setting the value of `EnableAntiForgeryTokenForFormsApi` to `false` will disable the anti-forgery protection for the Forms Headless/AJAX API. You need to do this for server-to-server integrations where it's not possible to provide a valid anti-forgery token in the request.
 

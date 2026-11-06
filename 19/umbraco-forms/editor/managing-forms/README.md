@@ -15,7 +15,3 @@ This section covers how to work with the form's history:
 - [Rollback to a Previous Version](rollback-to-a-previous-version.md)
 
 - [Recycle Bin](recycle-bin.md)
-
-{% hint style="info" %}
-Form history, rollback, and the recycle bin are available from Umbraco Forms 18.2.0.
-{% endhint %}

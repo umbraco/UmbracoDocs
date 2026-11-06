@@ -6,10 +6,6 @@ description: >-
 
 # Analytics
 
-{% hint style="info" %}
-This feature is available from Umbraco Forms 17.3.
-{% endhint %}
-
 Umbraco Forms includes built-in analytics that provide insight into how your forms are performing. You can view submission trends over time, monitor workflow success rates, and identify which pages are driving submissions.
 
 ## Permissions
@@ -102,10 +98,6 @@ Below the chart, a table lists each source page with its name, URL, and entry co
 ![Origins chart and table showing submissions by source page](../.gitbook/assets/analytics-form-origins-table.png)
 
 ## Unique Members
-
-{% hint style="info" %}
-This metric is available from Umbraco Forms 17.5 and 18.1.
-{% endhint %}
 
 The **Unique members** metric counts the distinct logged-in members who submitted a form in the selected date range. It appears on the analytics overview as a total across all your forms, and on each form's detailed view.
 

@@ -587,7 +587,7 @@ Client-side entity types are tracked separately. If your client-side entity type
 
 #### Partial restore of remote items
 
-When `SupportsPartialRestore` is enabled, editors can select an item to restore from a tree showing the items in a remote environment. To provide the items in this tree, implement the `ITreeServiceConnector` interface on your service connector. The interface is available from Umbraco Deploy 18.2.
+When `SupportsPartialRestore` is enabled, editors can select an item to restore from a tree showing the items in a remote environment. To provide the items in this tree, implement the `ITreeServiceConnector` interface on your service connector.
 
 The `GetTreeItemsAsync` method returns a page of `TreeItem` records, each containing the UDI, name, icon, whether it has children, and the parent UDI. The method takes the following parameters:
 

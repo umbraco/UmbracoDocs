@@ -132,4 +132,4 @@ By understanding these factors, you can implement a custom order number generato
 ## Related Documentation
 
 * [Order Number Generators](../key-concepts/order-number-generators.md) - Detailed documentation about the built-in generators
-* [Dependency Injection](https://github.com/umbraco/UmbracoDocs/blob/main/18/umbraco-commerce/how-to-guides/dependency-injection.md) - Learn more about registering services in Umbraco Commerce
+* [Dependency Injection](../key-concepts/dependency-injection.md) - Learn more about registering services in Umbraco Commerce

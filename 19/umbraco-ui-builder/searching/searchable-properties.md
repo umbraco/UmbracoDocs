@@ -31,10 +31,7 @@ collectionConfig.AddSearchableProperty(p => p.Address.Street);
 
 ## Search Expression Pattern
 
-The search behavior differs based on the version:
-
-* Up to version 15.0.1: Search uses the `StartsWith` method, meaning results include entries that begin with the search term.
-* Version 15.0.1 and later: Search can be configured to use `Contains`, allowing results that include the search term anywhere within the property value.
+By default, search uses the `StartsWith` method, so results include entries that begin with the search term. To match the search term anywhere within the property value, use the `Contains` search expression pattern.
 
 ### Example
 

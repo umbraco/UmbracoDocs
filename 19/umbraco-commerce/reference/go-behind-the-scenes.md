@@ -9,5 +9,5 @@ description: >-
 {% hint style="info" %}
 You can find all the reference documentation for Umbraco Commerce on GitHub. We might eventually move this to this or another site.
 
-[**Umbraco Commerce Reference Documentation**](../../../17/umbraco-commerce/reference)
+[**Umbraco Commerce Reference Documentation**](README.md)
 {% endhint %}

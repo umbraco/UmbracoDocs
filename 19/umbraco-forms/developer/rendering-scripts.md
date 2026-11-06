@@ -97,11 +97,7 @@ To enable `ExcludeScripts`:
 
 ## Content Security Policy nonce
 
-{% hint style="info" %}
-This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
-{% endhint %}
-
-From Umbraco Forms 18.3.0, Forms adds a nonce to the script tags it renders. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+Forms adds a nonce to the script tags it renders. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
 
 Forms reads the nonce from `ICspNonceService`, which Umbraco CMS provides in the `Umbraco.Cms.Core.Security` namespace. The default implementation creates one nonce per request. Use the same service for the nonce in your `Content-Security-Policy` header, so the two match.
 
@@ -139,6 +135,6 @@ public class NoCspNonceComposer : IComposer
 
 Forms adds its version to the URLs of the scripts and stylesheets it renders, as a `v` query string parameter. Browsers then fetch the new files after an upgrade.
 
-From Umbraco Forms 18.3.0, a URL that starts with `http://`, `https://`, or `//` is rendered as registered, without the version.
+A URL that starts with `http://`, `https://`, or `//` is rendered as registered, without the version.
 
 For what this means when upgrading, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts) article.

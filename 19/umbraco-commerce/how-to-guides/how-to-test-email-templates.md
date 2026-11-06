@@ -4,7 +4,7 @@ description: Learn how to test your email templates.
 
 # Test Your Email templates
 
-Want to see how your email templates look before sending them to the real customers? Umbraco Commerce 16.2.0 supports testing your email templates.
+Want to see how your email templates look before sending them to the real customers? Umbraco Commerce supports testing your email templates.
 
 {% hint style="info" %}
 As of now, only templates under the **Cart**, **Order**, **Gift Card**, and **Discount** categories can be tested using the steps below.

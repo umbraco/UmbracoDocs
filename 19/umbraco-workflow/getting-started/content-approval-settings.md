@@ -214,7 +214,7 @@ Razor templates must be compiled before they can render. The shipped templates a
 
 | Runtime mode                  | Your copy is used when                                                                                                                                                                             |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BackofficeDevelopment`       | The file on disk differs from the shipped template. Changes apply without restarting the site. Requires Umbraco Workflow 18.2.1 or later and the `Umbraco.Cms.DevelopmentMode.Backoffice` package. |
+| `BackofficeDevelopment`       | The file on disk differs from the shipped template. Changes apply without restarting the site. Requires the `Umbraco.Cms.DevelopmentMode.Backoffice` package. |
 | `Development` or `Production` | The template was part of your project when the site was built.                                                                                                                                    |
 
 {% hint style="warning" %}
