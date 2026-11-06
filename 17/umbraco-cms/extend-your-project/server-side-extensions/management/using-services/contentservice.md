@@ -146,7 +146,7 @@ _contentService.Save(product);
 PublishResult result = _contentService.Publish(product, ["en-US", "da"]);
 ```
 
-A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. `SaveAndPublish()` requires explicit cultures, for example `["en-US", "da"]`.
+A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. To publish specific cultures with `SaveAndPublish()`, pass them explicitly, for example `["en-US", "da"]`.
 
 {% hint style="warning" %}
 For content that varies by culture, `SaveAndPublish()` with an empty array saves the content but publishes no cultures. The result can still report success, so do not rely on the status alone to confirm that a culture was published.
