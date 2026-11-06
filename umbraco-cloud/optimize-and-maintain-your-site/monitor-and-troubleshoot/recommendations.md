@@ -166,7 +166,7 @@ A custom hostname is what enables the Web Application Firewall, TLS configuratio
 
 Live sites should run in the Production runtime mode.
 
-Umbraco's runtime mode decides how the site behaves at run time. In a development mode the site rebuilds its content models while visitors are on it, runs slower, and keeps developer features switched on. Production mode turns those off and requires Models Builder to be set to Nothing, HTTPS to be enabled, and a valid application URL. This check reports the mode the live site is configured for. It reads the configuration from disk rather than asking the site whether it started, so it reports how the site is set up, not whether the site is healthy.
+Umbraco's runtime mode decides how the site behaves at run time. In a development mode the site rebuilds its content models while visitors are on it, runs slower, and keeps developer features switched on. Production mode turns those off and requires Models Builder to be set to Nothing, HTTPS to be enabled, and a valid application URL. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. It reports how the site is set up, not whether the site is healthy.
 
 ### S5: SQL Firewall Restricted
 
