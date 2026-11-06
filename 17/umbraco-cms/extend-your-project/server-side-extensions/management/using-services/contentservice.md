@@ -102,7 +102,7 @@ public class CreateProductDemo
 Call `Save()` before `Publish()`. If the content has unsaved changes, `Publish()` neither publishes nor saves them. It returns a `PublishResult` with the status `FailedPublishUnsavedChanges` instead of throwing an exception.
 {% endhint %}
 
-`IContentService` does not validate property values when saving. Content with a missing mandatory value is saved, but `Publish()` returns `FailedPublishContentInvalid`.
+`IContentService` saves content even when a mandatory value is missing, but `Publish()` returns `FailedPublishContentInvalid`.
 
 ### Saving and Publishing in one Call
 
