@@ -216,7 +216,7 @@ The Umbraco.Cloud.Cms package wires an Umbraco site into the Umbraco Cloud platf
 
 Live sites should not generate content models while running.
 
-Models Builder generates the code models for a site's content types. While building a site it is convenient to have Umbraco regenerate them as content types change, but on a live site that work belongs before deployment: the models should be fixed in the deployed code and Models Builder set to Nothing. Umbraco's Production runtime mode requires this, and a site configured for Production with any other Models Builder mode will not start. This check reports the mode the live site is configured for. It reads the configuration from disk rather than asking the site whether it started, so it can point at the cause of a site that is refusing to boot.
+Models Builder generates the code models for a site's content types. During development, it is convenient to let Umbraco regenerate models as content types change. On a live site, generate the models before deployment and set Models Builder to `Nothing`. Umbraco's Production runtime mode requires this, and a site configured for Production with any other Models Builder mode will not start. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. This way, it can point to the cause of a site that does not start.
 
 ### X1: Uptime Monitoring Active
 
