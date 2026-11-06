@@ -136,7 +136,7 @@ Umbraco Cloud checks your projects against the following recommendations.
 
 Cloudflare's managed WAF rules should be enabled for the environment's custom domains.
 
-A web application firewall inspects the traffic reaching the site and blocks common attack patterns, such as SQL injection and cross-site scripting attempts, before they arrive. Cloudflare's managed rules are maintained by Cloudflare and updated as new threats appear, and they are included with the environment at no extra cost. They stay switched off until enabled, and can be switched on from the portal at any time, either for the whole environment or for an individual domain. This check reports each active custom domain where the managed rules are currently off, either on the domain itself or through the environment default it inherits.
+A web application firewall inspects incoming traffic. It blocks common attack patterns, such as SQL injection and cross-site scripting, before they reach the site. Cloudflare's managed rules are maintained by Cloudflare and updated as new threats appear, and they are included with the environment at no extra cost. They are off by default. You can switch them on from the portal at any time, for the whole environment or for a single domain. This check reports each active custom domain where the managed rules are off. This includes domains that inherit the setting from the environment default.
 
 ### S2: TLS No Legacy Ciphers
 
