@@ -204,7 +204,7 @@ Cloudflare holds a cached response at the edge for the length of the edge cache 
 - Scope: Environment
 - Severity: The same for every environment.
 
-Umbraco 13+ environments should have the Umbraco.Cloud.Cms package installed.
+Environments running Umbraco 13 or later should have the Umbraco.Cloud.Cms package installed.
 
 The Umbraco.Cloud.Cms package wires an Umbraco site into the Umbraco Cloud platform: it configures the Cloud-specific settings and integrations the platform relies on. From Umbraco 13 onwards it is a required part of a Cloud project. This check verifies that the package is present among the components collected from the environment.
 
