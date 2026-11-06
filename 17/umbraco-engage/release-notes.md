@@ -16,7 +16,41 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
-#### [17.6.0](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (October 29th 2026)
+#### [17.6.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 5th 2026)
+
+**Analytics and reporting**
+
+* Removed the bot analytics table and chart prefabs. They requested a metric whose reporting table is never created or populated, so they could only fail. `FctPageviewBot` and `PageviewsBotMetricSqlDescriptor2` are marked as obsolete, and will be removed in Umbraco Engage 19.
+
+**A/B testing and personalization**
+
+* Fixed a stopped or completed A/B test not being savable when the test had a save validation error, such as an unnamed variant or an inactive goal. Ending a test now has its own endpoint (`POST ab-test/end`), which applies only the end state and the winner and skips configuration validation ([Issue #109](https://github.com/umbraco/Umbraco.Engage.Issues/issues/109)).
+* Saving an A/B test now rejects an empty variant name, and the variant picker shows which variant needs a name. The first save of a new test is exempt.
+* A test that is reverted to Stopped after a failed winner promotion now also loses its winner.
+* `AbTestSaveHandler` now takes `AbTestCompletion` in its public constructor in place of the variant repository.
+* Fixed headless pageviews being stored with segments the visitor only qualified for on later pageviews. Segments are now evaluated in the request, before the pageview is queued, as they are for a rendered pageview.
+* The Visited pages segment rule now looks up the visited page keys once, instead of once for every configured page.
+
+**Goals**
+
+* Custom goal triggers (`TriggerGoal` and `TriggerGoalAsync`, by ID or key) now reject inactive, invalid or unknown goals with a warning. `TriggerGoalAsync(long)` returns `false` in that case.
+* Implicit goal scoring now only loads rows for active, valid goals, and its cache is reset when goals are saved on every server. Persona and customer journey descriptions no longer report rules on inactive goals.
+* `IGoalImplicitScoringRepository` has a new `ResetCache()` method with a default no-op body, so existing implementations are not broken.
+
+**Tracking and consent**
+
+* Fixed the original referrer being lost when a page is reloaded after a visitor grants consent. Call `umbracoEngage.analytics.consentGranted()` in place of your own reload. It stores the referrer in a short-lived `ue-consent-referrer` cookie, reloads the page, and the cookie is removed when it is read. The cookie value is only accepted when it is an absolute `http` or `https` URL of at most 2048 characters ([Issue #108](https://github.com/umbraco/Umbraco.Engage.Issues/issues/108)).
+
+**Backoffice and platform**
+
+* Fixed the browser tab title showing the raw localization key instead of "Engage" after a reload.
+
+**Performance**
+
+* The A/B test variant lookup for a visitor's first page request now uses a read-only database context without a transaction, and runs asynchronously. Request threads are no longer blocked on a transaction, and aborted requests are ignored while variants are assigned.
+* Five request-time reads (sessions, visitors, bot versions, Cockpit authentication and referral groups) now use a read-only database context and make one round trip instead of three.
+
+#### [17.6.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (October 29th 2026)
 
 **Analytics and reporting**
 
