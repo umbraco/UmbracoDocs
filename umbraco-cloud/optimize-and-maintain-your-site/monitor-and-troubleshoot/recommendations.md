@@ -146,7 +146,7 @@ A web application firewall inspects incoming traffic. It blocks common attack pa
 
 Custom domains should not allow legacy TLS cipher suites.
 
-A cipher suite is the set of encryption methods a browser and the site agree on before any traffic is exchanged. The older ones are still accepted by many sites out of habit, and security audits flag them. Switching them off is free and can be done from the portal at any time, with one trade-off worth knowing: visitors on very old devices and browsers may no longer be able to reach the site. This check reports each active custom domain that still allows a legacy cipher suite. A domain with no cipher list of its own is included, because Cloudflare then applies its own default set, and that set allows legacy encryption. A domain that requires TLS 1.3 is reported as fine whatever its cipher list says, because the legacy suites cannot be used at that version.
+A cipher suite is the set of encryption methods a browser and the site agree on before any traffic is exchanged. The older ones are still accepted by many sites out of habit, and security audits flag them. Switching them off is free and can be done from the portal at any time. Be aware of one trade-off: visitors on older devices and browsers may no longer reach the site. This check reports each active custom domain that still allows a legacy cipher suite. A domain with no cipher list of its own is included, because Cloudflare then applies its own default set, and that set allows legacy encryption. A domain that requires TLS 1.3 is reported as fine whatever its cipher list says, because the legacy suites cannot be used at that version.
 
 ### S3: Custom Hostname Configured
 
