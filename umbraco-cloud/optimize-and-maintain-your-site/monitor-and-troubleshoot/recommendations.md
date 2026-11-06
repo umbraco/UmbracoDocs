@@ -227,7 +227,7 @@ Models Builder generates the code models for a site's content types. During deve
 
 At least one enabled uptime monitor should watch the project's hostnames.
 
-An uptime monitor periodically requests one of your hostnames from several locations and records whether it answered with the expected status code within the expected time. Without an enabled monitor, an outage on your site goes unnoticed until a visitor reports it. This check reports whether the project has at least one enabled uptime monitor.
+An uptime monitor regularly requests one of your hostnames from different locations. It records whether the hostname answered with the expected status code within the expected time. Without an enabled monitor, an outage on your site goes unnoticed until a visitor reports it. This check reports whether the project has at least one enabled uptime monitor.
 
 ### X2: Non default alerts created
 
