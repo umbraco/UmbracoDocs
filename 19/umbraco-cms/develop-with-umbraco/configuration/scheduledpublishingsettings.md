@@ -15,7 +15,7 @@ By default, scheduled publishing runs once a minute. An item scheduled to go liv
   "CMS": {
     "ScheduledPublishing": {
       "Period": "00:01:00",
-      "AlignToClock": false
+      "AlignToClock": true
     }
   }
 }
@@ -33,17 +33,17 @@ A shorter period means scheduled content is published closer to its configured t
 
 ### AlignToClock
 
-**Default:** `false`
+**Default:** `true`
 
 Determines whether scheduled publishing runs are aligned to clock boundaries derived from `Period`, rather than drifting based on when the previous run completed.
 
 {% hint style="info" %}
-The default is `false` in Umbraco 17 and 18 to preserve the existing behaviour. It is due to change to `true` in Umbraco 19.
+The default has changed from `false` to `true` in Umbraco 19. To keep the earlier behavior, set `AlignToClock` to `false`.
 {% endhint %}
 
-When `false` (the default), each run is scheduled relative to the completion of the previous run. This means the time of day at which publishing occurs gradually drifts forward.
+When `false`, each run is scheduled relative to the completion of the previous run. This means the time of day at which publishing occurs gradually drifts forward.
 
-When `true`, runs are aligned to clock boundaries that are a multiple of `Period`. For example, with a `Period` of `00:00:10`, runs are aligned to the `:00`, `:10`, `:20`, `:30`, `:40`, and `:50` seconds of each minute. This makes the time at which scheduled content is published more predictable.
+When `true` (the default), runs are aligned to clock boundaries that are a multiple of `Period`. For example, with a `Period` of `00:00:10`, runs are aligned to the `:00`, `:10`, `:20`, `:30`, `:40`, and `:50` seconds of each minute. This makes the time at which scheduled content is published more predictable.
 
 When `AlignToClock` is enabled, `Period` must be a whole number of seconds that divides evenly into one hour (3600 seconds). For example, 10, 12, 15, 20, 30, or 60 seconds. If this condition is not met, the configuration fails validation on startup.
 
