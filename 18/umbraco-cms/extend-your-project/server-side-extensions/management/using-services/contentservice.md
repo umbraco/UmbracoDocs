@@ -102,7 +102,7 @@ public class CreateProductDemo
 Call `Save()` before `Publish()`. If the content has unsaved changes, `Publish()` neither publishes nor saves them. It returns a `PublishResult` with the status `FailedPublishUnsavedChanges` instead of throwing an exception.
 {% endhint %}
 
-`IContentService` does not validate property values when saving. Content with a missing mandatory value is saved, but `Publish()` returns `FailedPublishContentInvalid`.
+`IContentService` saves content even when a mandatory value is missing, but `Publish()` returns `FailedPublishContentInvalid`.
 
 ### Saving and Publishing in one Call
 
@@ -146,7 +146,7 @@ _contentService.Save(product);
 PublishResult result = _contentService.Publish(product, ["en-US", "da"]);
 ```
 
-A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. `SaveAndPublish()` requires explicit cultures, for example `["en-US", "da"]`.
+A successful culture publish returns the status `SuccessPublishCulture`. To publish all cultures, pass `["*"]` to `Publish()`. To publish specific cultures with `SaveAndPublish()`, pass them explicitly, for example `["en-US", "da"]`.
 
 {% hint style="warning" %}
 For content that varies by culture, `SaveAndPublish()` with an empty array saves the content but publishes no cultures. The result can still report success, so do not rely on the status alone to confirm that a culture was published.
