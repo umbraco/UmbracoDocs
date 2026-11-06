@@ -25,7 +25,7 @@ Only project admins and organization admins can see recommendations for a projec
     <figcaption><p>Project recommendations UI</p></figcaption>
 </figure>
 
-This page shows recommendations for the project and its environments. Click on each environment to access the overview of recommendations as well as the trend. The trend shows how many recommendations have passed on that environment over time.
+This page shows recommendations for the project and its environments. Select each environment to access the overview of recommendations as well as the trend. The trend shows how many recommendations have passed in that environment over time.
 
 ### For an organization
 
