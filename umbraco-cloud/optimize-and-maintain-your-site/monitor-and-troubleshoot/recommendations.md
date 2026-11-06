@@ -128,7 +128,7 @@ Severity of recommendations is evaluated on a case-by-case basis, looking at dif
 
 Umbraco Cloud checks your projects against the following recommendations.
 
-### S1: WAF Enabled
+### S1: WAF enabled
 
 - Category: Security
 - Scope: Environment
@@ -136,9 +136,9 @@ Umbraco Cloud checks your projects against the following recommendations.
 
 Cloudflare's managed WAF rules should be enabled for the environment's custom domains.
 
-A web application firewall inspects incoming traffic. It blocks common attack patterns, such as SQL injection and cross-site scripting, before they reach the site. Cloudflare's managed rules are maintained by Cloudflare and updated as new threats appear, and they are included with the environment at no extra cost. They are off by default. You can switch them on from the portal at any time, for the whole environment or for a single domain. This check reports each active custom domain where the managed rules are off. This includes domains that inherit the setting from the environment default.
+A web application firewall inspects incoming traffic. It blocks common attack patterns, such as SQL injection and cross-site scripting, before they reach the site. Cloudflare's managed rules are maintained by Cloudflare and updated as new threats appear. They are off by default. You can switch them on from the portal at any time, for the whole environment or for a single domain. This check reports each active custom domain where the managed rules are off. This includes domains that inherit the setting from the environment default.
 
-### S2: TLS No Legacy Ciphers
+### S2: TLS no legacy ciphers
 
 - Category: Security
 - Scope: Environment
@@ -146,9 +146,9 @@ A web application firewall inspects incoming traffic. It blocks common attack pa
 
 Custom domains should not allow legacy TLS cipher suites.
 
-A cipher suite is the set of encryption methods a browser and the site agree on before any traffic is exchanged. The older ones are still accepted by many sites out of habit, and security audits flag them. Switching them off is free and can be done from the portal at any time. Be aware of one trade-off: visitors on older devices and browsers may no longer reach the site. This check reports each active custom domain that still allows a legacy cipher suite. A domain with no cipher list of its own is included, because Cloudflare then applies its own default set, and that set allows legacy encryption. A domain that requires TLS 1.3 is reported as fine whatever its cipher list says, because the legacy suites cannot be used at that version.
+A cipher suite is the set of encryption methods a browser and the site agree on before any traffic is exchanged. The older ones are still accepted by many sites out of habit, and security audits flag them. You can switch them off from the portal at any time. Be aware of one trade-off: visitors on older devices and browsers may no longer reach the site. This check reports each active custom domain that still allows a legacy cipher suite. A domain with no cipher list of its own is included, because Cloudflare then applies its own default set, and that set allows legacy encryption. A domain that requires TLS 1.3 is reported as fine whatever its cipher list says, because the legacy suites cannot be used at that version.
 
-### S3: Custom Hostname Configured
+### S3: Custom hostname configured
 
 - Category: Security
 - Scope: Environment
@@ -158,7 +158,7 @@ Environments should serve traffic on a custom hostname.
 
 A custom hostname is what enables the Web Application Firewall, TLS configuration and edge caching for an environment. The default Umbraco Cloud hostname supports none of them, so an environment without a custom hostname cannot be protected or tuned at the edge. This check reports whether a custom hostname is registered and whether it has become active.
 
-### S4: Runtime Mode Production
+### S4: Runtime mode Production
 
 - Category: Security
 - Scope: Environment
@@ -166,9 +166,9 @@ A custom hostname is what enables the Web Application Firewall, TLS configuratio
 
 Live sites should run in the Production runtime mode.
 
-Umbraco's runtime mode decides how the site behaves at run time. In a development mode the site rebuilds its content models while visitors are on it, runs slower, and keeps developer features switched on. Production mode turns those off and requires Models Builder to be set to Nothing, HTTPS to be enabled, and a valid application URL. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. It reports how the site is set up, not whether the site is healthy.
+Umbraco's [runtime mode](https://docs.umbraco.com/umbraco-cms/run-in-production/runtime-modes) decides how the site behaves at run time. In a development mode the site rebuilds its content models while visitors are on it, runs slower, and keeps developer features switched on. Production mode turns those off and requires [Models Builder](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/templating-and-rendering/templating/modelsbuilder) to be set to Nothing, HTTPS to be enabled, and a valid application URL. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. It reports how the site is set up, not whether the site is healthy.
 
-### S5: SQL Firewall Restricted
+### S5: SQL firewall restricted
 
 - Category: Security
 - Scope: Environment
@@ -178,7 +178,7 @@ SQL firewall should not allow traffic from any IP address.
 
 Each environment's SQL database has firewall rules that restrict which IP addresses may connect. A rule allowing the full IPv4 range (0.0.0.0 to 255.255.255.255) exposes the database to the entire internet. This check flags any such wide-open rule so it can be removed and replaced with narrower allowances.
 
-### P1: CDN Caching Enabled
+### P1: CDN caching enabled
 
 - Category: Performance
 - Scope: Environment
@@ -186,9 +186,9 @@ Each environment's SQL database has firewall rules that restrict which IP addres
 
 Cloudflare edge caching should be enabled for the environment's custom domains.
 
-With edge caching on, Cloudflare serves cached responses from the location closest to the visitor instead of asking the site for every request. Pages load faster, and the site itself handles less traffic, which leaves more headroom during campaigns and traffic spikes. Caching is part of the plan at no extra cost. This check reports each active custom domain where caching is currently switched off, either on the domain itself or through the environment default it inherits.
+With edge caching on, Cloudflare serves cached responses from the location closest to the visitor instead of asking the site for every request. Pages load faster, and the site itself handles less traffic, which leaves more headroom during campaigns and traffic spikes. This check reports each active custom domain where caching is currently switched off, either on the domain itself or through the environment default it inherits.
 
-### P2: CDN Caching TTL
+### P2: CDN caching TTL
 
 - Category: Performance
 - Scope: Environment
@@ -196,7 +196,7 @@ With edge caching on, Cloudflare serves cached responses from the location close
 
 Edge cache TTL should be 30 days or more on every custom hostname.
 
-Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname. It uses the hostname's own setting, or the environment default if none is set. It flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN Caching Enabled](#p1-cdn-caching-enabled) recommendation instead.
+Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname. It uses the hostname's own setting, or the environment default if none is set. It flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN caching enabled](#p1-cdn-caching-enabled) recommendation instead.
 
 ### B5: Umbraco.Cloud.Cms package installed
 
@@ -208,7 +208,7 @@ Environments running Umbraco 13 or later should have the Umbraco.Cloud.Cms packa
 
 The Umbraco.Cloud.Cms package wires an Umbraco site into the Umbraco Cloud platform: it configures the Cloud-specific settings and integrations the platform relies on. From Umbraco 13 onwards it is a required part of a Cloud project. This check verifies that the package is present among the components collected from the environment.
 
-### B6: Models Builder Disabled On Live
+### B6: Models Builder disabled on Live
 
 - Category: Best practices
 - Scope: Environment
@@ -216,9 +216,9 @@ The Umbraco.Cloud.Cms package wires an Umbraco site into the Umbraco Cloud platf
 
 Live sites should not generate content models while running.
 
-Models Builder generates the code models for a site's content types. During development, it is convenient to let Umbraco regenerate models as content types change. On a live site, generate the models before deployment and set Models Builder to `Nothing`. Umbraco's Production runtime mode requires this, and a site configured for Production with any other Models Builder mode will not start. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. This way, it can point to the cause of a site that does not start.
+[Models Builder](https://docs.umbraco.com/umbraco-cms/develop-with-umbraco/templating-and-rendering/templating/modelsbuilder) generates the code models for a site's content types. During development, it is convenient to let Umbraco regenerate models as content types change. On a live site, generate the models before deployment and set Models Builder to `Nothing`. Umbraco's Production runtime mode requires this, and a site configured for Production with any other Models Builder mode will not start. This check reports the mode the live site is configured for. It reads the configuration from disk instead of checking the running site. This way, it can point to the cause of a site that does not start.
 
-### X1: Uptime Monitoring Active
+### X1: Uptime monitoring active
 
 - Category: Operations
 - Scope: Project
@@ -229,7 +229,7 @@ At least one enabled uptime monitor should watch the project's hostnames.
 
 An uptime monitor regularly requests one of your hostnames from different locations. It records whether the hostname answered with the expected status code within the expected time. Without an enabled monitor, an outage on your site goes unnoticed until a visitor reports it. This check reports whether the project has at least one enabled uptime monitor.
 
-### X2: Non default alerts created
+### X2: Non-default alerts created
 
 - Category: Operations
 - Scope: Project
