@@ -55,7 +55,7 @@ public class MemberPricingProductAdapter : UmbracoProductAdapter
         IUmbracoContextFactory umbracoContextFactory, 
         IContentService contentService, 
         PublishedContentWrapperFactory publishedContentWrapperFactory, 
-        IExamineManager examineManager, 
+        UmbracoCommerceSearchHelper searchHelper, 
         PublishedContentHelper publishedContentHelper, 
         IUmbracoProductNameExtractor umbracoProductNameExtractor, 
         UmbracoCommerceServiceContext services,
@@ -63,7 +63,7 @@ public class MemberPricingProductAdapter : UmbracoProductAdapter
         IMemberService memberService,
         IMemberGroupService memberGroupService,
         UmbracoCommerceContext umbracoCommerce) 
-        : base(umbracoContextFactory, contentService, publishedContentWrapperFactory, examineManager, publishedContentHelper, umbracoProductNameExtractor, services)
+        : base(umbracoContextFactory, contentService, publishedContentWrapperFactory, searchHelper, publishedContentHelper, umbracoProductNameExtractor, services)
     {
         _httpContextAccessor = httpContextAccessor;
         _memberService = memberService;
