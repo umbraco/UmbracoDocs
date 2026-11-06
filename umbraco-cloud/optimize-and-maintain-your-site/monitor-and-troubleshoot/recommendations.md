@@ -54,17 +54,17 @@ Recommendations that you snooze or suppress don't change your score immediately.
 To snooze a recommendation:
 
 1. Navigate through the UI to the specific recommendation you want to snooze.
-2. Click on the three-dot menu.
-3. Click on **Snooze for 30 days**.
+2. Select the three-dot menu.
+3. Choose **Snooze for 30 days**.
 
-You can then click on **Activate again** if you want to bring it back before the 30 days are over.
+You can then select **Activate again** if you want to bring it back before the 30 days are over.
 
 To suppress a recommendation:
 
 1. Navigate through the UI to the specific recommendation you want to suppress.
-2. Click on **Not relevant** or **Not relevant for this project**.
+2. Choose **Not relevant** or **Not relevant for this project**.
 3. Provide a reason.
-4. Click on **Mark not relevant**.
+4. Select **Mark not relevant**.
 
 <figure>
     <img src="../../.gitbook/assets/recommendations-snooze-and-suppress.png" alt="UI that displays how to snooze and suppress recommendations.">
