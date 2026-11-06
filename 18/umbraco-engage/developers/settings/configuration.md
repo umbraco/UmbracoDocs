@@ -83,7 +83,8 @@ The default configuration will look like this:
     },
     "Reporting": {
       "DataGenerationEnabled": true,
-      "DataGenerationTime": "04:00:00"
+      "DataGenerationTime": "",
+      "Timezone": ""
     },
     "Cockpit": {
       "EnableInjection": true,
@@ -115,6 +116,24 @@ The default configuration will look like this:
 * `CommandTimeout`: Database command timeout in seconds (default: 1200 = 20 minutes).
 
 The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and no longer used.
+{% endhint %}
+
+{% hint style="info" %}
+**Reporting settings:**
+
+* `DataGenerationEnabled`: Whether reporting data is generated each night.
+* `DataGenerationTime`: The time of day, in the reporting time zone, when reporting data is generated. Leave it empty to let Engage choose the time.
+* `Timezone`: The time zone used for reporting. Use a time zone ID, for example `W. Europe Standard Time` or `Europe/Amsterdam`. Leave it empty to use the time zone of the web server, which is UTC on Umbraco Cloud.
+
+When `DataGenerationTime` is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone on first startup. Engage stores that time and uses it every night after that.
+
+If the site was not running at that time, reporting data is generated when the site starts. This happens only before 06:00 in the reporting time zone.
+
+An explicit `DataGenerationTime` overrides the chosen time and is read in the reporting time zone. Earlier versions read it in the time zone of the web server. If you set both `Timezone` and `DataGenerationTime`, reporting data can be generated at a different time after you upgrade.
+
+The time in use is shown on the **Reporting** tab of the Engage configuration overview in the **Settings** section.
+
+`Timezone` also sets how reporting data is split into days and the date ranges in Analytics.
 {% endhint %}
 
 {% hint style="info" %}
