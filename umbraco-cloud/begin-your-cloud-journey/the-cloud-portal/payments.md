@@ -22,7 +22,7 @@ To view your credit cards, go to **Finance** and select **Payment Methods**.
 
 The primary card pays for all subscriptions in the organization. Umbraco Cloud charges the primary card on the 1st of each month.
 
-You set up payment for a project after you create the project. The project uses the primary card of the organization that pays for the project.
+You set up payment for a project after you create the project. On the **Setup payment** page, you select the organization that pays for the project. This can be a different organization than the one that owns the project. The project uses the primary card of the paying organization.
 
 ![The Payment methods page with the primary card and a second card](../../.gitbook/assets/payment-methods.png)
 
@@ -47,7 +47,7 @@ Cards that have expired show the **Expired** tag.
 
 ### If you cannot add a card
 
-If the card is not added, the portal shows an error message. Contact your bank, and ask the bank to allow the card to be stored for recurring payments. You can also try a different card.
+If the portal cannot add the card, it shows an error message. Ask your bank to allow recurring payments on the card. You can also try a different card.
 
 ## When a payment fails
 
@@ -74,7 +74,7 @@ The email and the project page in the Umbraco Cloud Portal show why the payment 
 | The card issuer refused the payment | Contact your bank, or set another card as primary. |
 | Other reasons, for example not enough funds or a card limit | Contact your bank, or set another card as primary. If the problem continues, contact Umbraco Support. |
 
-After you change the card, the next daily attempt uses the new primary card. The next attempt happens within 24 hours.
+The next daily attempt uses the new primary card within 24 hours.
 
 When the payment succeeds, the project changes back to **Paid**. If Umbraco Cloud disabled the project, all environments start again.
 
@@ -96,6 +96,10 @@ To view your invoices, go to **Finance** and select **Payment History**. The lis
 * A download button, for paid invoices only
 
 ![Payment History with a list of paid invoices](../../.gitbook/assets/payment-history.png)
+
+{% hint style="info" %}
+Some older invoices can be missing from the list because of an upgrade of the payment system. To get a missing invoice, contact Umbraco Support.
+{% endhint %}
 
 The downloaded invoice lists all projects that you paid for during the month.
 
