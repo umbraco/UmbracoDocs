@@ -9,7 +9,7 @@ description: >-
 
 ## Step 1: Sign up & Sign in
 
-If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
+If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/) to register for a Nets Easy account.
 
 ![Sign up for Nets Easy on the Nets Portal.](../../../.gitbook/assets/nets-easy_signup.png)
 
