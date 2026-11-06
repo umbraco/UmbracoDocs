@@ -31,7 +31,7 @@ While running the site locally, make a note of your local store domain. For exam
 To do so, run the following from the command line.
 
 ```
-stripe listen --forward-to {local_store_domain}/umbraco/commerce/payment/callback/stripe-checkout/{payment_method_id}/
+stripe listen --forward-to {local_store_domain}/umbraco/commerce/payment/api/v1/callback/stripe-checkout/{payment_method_id}
 ```
 
 The `{payment_method_id}` is configured as part of the Stripe [webhook configuration](../configuring-stripe.md#step-3-webhook) step.
@@ -39,7 +39,7 @@ The `{payment_method_id}` is configured as part of the Stripe [webhook configura
 e.g.
 
 ```
-stripe listen --forward-to https://localhost:44321/umbraco/commerce/payment/callback/stripe-checkout/7fb00000-0000-0000-0000-000019094a7a/
+stripe listen --forward-to https://localhost:44321/umbraco/commerce/payment/api/v1/callback/stripe-checkout/7fb00000-0000-0000-0000-000019094a7a
 ```
 
 ### Step 4: Configure your Stripe test webhook signing secret
