@@ -1,40 +1,84 @@
 # Payments
 
-In this article, you will be able to find information on the following:
+In this article, you can find information on the following:
 
-* How to manage your subscriptions.
-* How to download and pay invoices.
-* How to change your credit card for payments.
+* How to add, change, and remove credit cards.
+* What happens when a payment fails.
+* How to view and download invoices.
 
-## Manage Subscriptions
+## Open your organization
 
-To manage your subscription on Umbraco Cloud, go to the menu in the top right corner and select "Organization".
+To manage payments, select the **Organization** icon in the top-right corner of the Umbraco Cloud Portal.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>manage subscriptions</p></figcaption></figure>
+![The Organization icon in the top bar of the Umbraco Cloud Portal](../../.gitbook/assets/organization-button.png)
 
-You will see an overview of your organization on Umbraco Cloud. From here you can see the information about the organization.
+The payment pages are under **Finance** in the organization menu.
+
+![The Finance section in the organization menu](../../.gitbook/assets/org-menu-finance.png)
 
 ## Payment methods
 
-To change your payment method on Umbraco Cloud, go to your organization and select "Payment Methods" in the left side menu.
+To view your credit cards, go to **Finance** and select **Payment Methods**.
 
-<figure><img src="../../.gitbook/assets/org-menu-finance.png" alt=""><figcaption></figcaption></figure>
+The primary card pays for all subscriptions in the organization. Umbraco Cloud charges the primary card on the 1st of each month.
 
-On this page, you can see the credit cards you have already added or you can add a new one.
+You set up payment for a project after you create the project. On the **Setup payment** page, you select the organization that pays for the project. This can be a different organization than the one that owns the project. The project uses the primary card of the paying organization.
 
-Once a credit card has been added it will show up in a drop-down when creating new projects. You can also change the payment method for a specific project from here.
+![The Payment methods page with the primary card and a second card](../../.gitbook/assets/payment-methods.png)
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt="Select Payment Methods"><figcaption><p>Select Payment Methods</p></figcaption></figure>
+### Add a credit card
 
-## Changing and removing payment methods
+1. Select **+ Add Payment Method**.
+2. Enter the card details on the payment page.
 
-In some cases, you might need to change the credit card information on the Umbraco Cloud Organization.
+When you return to the **Payment Methods** page, a message tells you if the card was added.
 
-If you add multiple cards, you can choose which one will be billed on the 1st of the month. To do this, click the **Set as primary** button on the card you want to use.
+### Change the primary card
 
-To remove an expired or unused card, click the trash can icon next to that card.
+To use a different card for payments, select **Set as Primary** on that card.
 
-## Payment and Invoices
+### Remove a credit card
+
+To remove a card, select the trash can icon on the card.
+
+You cannot remove the primary card. Set another card as primary first.
+
+Cards that have expired show the **Expired** tag.
+
+### If you cannot add a card
+
+If the portal cannot add the card, it shows an error message. Ask your bank to allow recurring payments on the card. You can also try a different card.
+
+## When a payment fails
+
+If the monthly payment fails, Umbraco Cloud sends an email to the **Company Email** of your organization. You find this address on the [Information](organizations/README.md#information) page of the organization. Umbraco Cloud also sends the invoices to this address. All projects on the invoice change to the **Unpaid** status.
+
+Umbraco Cloud tries the payment again one time each day. While a project is unpaid, the following happens:
+
+| Days after the failed payment | What happens |
+| --- | --- |
+| 0 to 13 | Your website and the Umbraco backoffice keep working. In the Umbraco Cloud Portal, you can only set up payment or delete the project. |
+| 14 | Umbraco Cloud disables the project. All environments stop, including the Live environment. |
+| 28 | Umbraco Cloud deletes the project. |
+
+While a project is unpaid, Umbraco Cloud sends reminder emails to the **Company Email** and to the [technical contacts](../project-features/team-members/technical-contact.md) of the project. Umbraco Cloud also sends an email when it disables or deletes the project.
+
+### Fix a failed payment
+
+The email and the project page in the Umbraco Cloud Portal show why the payment failed.
+
+| Reason | What to do |
+| --- | --- |
+| The primary card has expired | Add a new card, or set another card as primary. |
+| The organization has no primary card | Add a card. |
+| The card issuer refused the payment | Contact your bank, or set another card as primary. |
+| Other reasons, for example not enough funds or a card limit | Contact your bank, or set another card as primary. If the problem continues, contact Umbraco Support. |
+
+The next daily attempt uses the new primary card within 24 hours.
+
+When the payment succeeds, the project changes back to **Paid**. If Umbraco Cloud disabled the project, all environments start again.
+
+## Payment and invoices
 
 {% hint style="warning" %}
 The invoices in this list are for **projects paid by credit card**.
@@ -42,19 +86,21 @@ The invoices in this list are for **projects paid by credit card**.
 Projects billed annually by invoice are excluded, as these invoices are handled manually and sent via email.
 {% endhint %}
 
-On Umbraco Cloud, we are sending out one single invoice with all the projects that you are paying for via email every month.
+Umbraco Cloud sends one invoice by email each month. The invoice includes all projects that you pay for by credit card.
 
-You can view the invoices for your projects under your organization in the Payment History section. You can see the following information for each invoice:
+To view your invoices, go to **Finance** and select **Payment History**. The list shows the following for each invoice:
 
-* The invoice ID
-* The total amount paid
-* When the invoice was created
 * The due date
-* The status of the invoice
-* An option to download the invoice
+* The total amount
+* The payment status
+* A download button, for paid invoices only
 
-<figure><img src="../../.gitbook/assets/cloud-invoices-overview.png" alt=""><figcaption><p>An overview of invoices for a Cloud Organization</p></figcaption></figure>
+![Payment History with a list of paid invoices](../../.gitbook/assets/payment-history.png)
 
-When downloaded for a given month, the invoice will contain all the projects that you were paying for during the month.
+{% hint style="info" %}
+Some older invoices can be missing from the list because of an upgrade of the payment system. To get a missing invoice, contact Umbraco Support.
+{% endhint %}
+
+The downloaded invoice lists all projects that you paid for during the month.
 
 ![Invoice for projects](../../.gitbook/assets/invoice.png)
