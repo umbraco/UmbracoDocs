@@ -42,7 +42,7 @@ public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirect
 ```
 
 {% hint style="info" %}
-In this sample we are altering the external index and thus we name the class `ConfigureExternalIndexOptions`. If you are altering multiple indexes, it is recommended to have separate classes for each index - i.e. `ConfigureExternalIndexOptions` for the external index, `ConfigureInternalIndexOptions` for the internal index and so on.
+In this sample we are altering the external index and thus we name the class `ConfigureExternalIndexOptions`. If you are altering multiple indexes, it is recommended to have a separate class for each index. For example, use `ConfigureExternalIndexOptions` for the external index and `ConfigureInternalIndexOptions` for the internal index.
 {% endhint %}
 
 When using the `ConfigureNamedOptions` pattern, we have to register this in a composer for it to configure our indexes, this can be done like this:
@@ -70,7 +70,7 @@ The `ComposeAfter` attribute usage guarantees that the composer will run after t
 
 ### Changing field value types
 
-By default, Examine will store values into the Lucene index as "Full Text" fields, meaning the values will be indexed and analyzed for a textual search. However, if a field value is numerical, date/time, or another non-textual value type, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
+By default, Examine will store values into the Lucene index as "Full Text" fields. This means the values will be indexed and analyzed for a textual search. A field value can be numerical, date/time, or another non-textual value type. In that case, you might want to change how the value is stored in the index. This will let you take advantage of some value type-specific search features such as numerical or date range.
 
 There is some documentation about this in the [Examine documentation](https://shazwazza.github.io/Examine/articles/configuration.html).
 
@@ -102,13 +102,13 @@ public class ConfigureExternalIndexOptions : IConfigureNamedOptions<LuceneDirect
 }
 ```
 
-This will ensure that the `price` field in the index is treated as a `double` type (if the `price` field does not exist in the index, it is added).
+This will ensure that the `price` field in the index is treated as a `double` type. If the `price` field does not exist in the index, it is added.
 
 ## Changing IValueSetValidator
 
 An `IValueSetValidator` is responsible for validating a `ValueSet` to see if it should be included in the index. For example, by default the validation process for the ExternalIndex checks if a `ValueSet` has a category type of either "media" or "content" (not member). If a `ValueSet` was passed to the ExternalIndex and it did not pass this requirement it would be ignored.
 
-The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties, so an extra property "PhoneNumber", would not pass validation, and therefore not be included.
+The `IValueSetValidator` is also responsible for filtering the data in the `ValueSet`. For example, by default the validator for the MemberIndex will validate on all the default member properties. An extra property such as "PhoneNumber" would not pass validation, and would therefore not be included.
 
 The `IValueSetValidator` implementation for the built-in indexes, can be changed like this:
 
@@ -141,6 +141,124 @@ public class ConfigureMemberIndexOptions : IConfigureNamedOptions<LuceneDirector
 {% hint style="info" %}
 Remember to register `ConfigureMemberIndexOptions` in your composer.
 {% endhint %}
+
+## Including only specific fields in a content index
+
+By default, the built-in content indexes contain every field Umbraco produces for a document. You can restrict a content index to the fields your search needs, by giving it a validator with an include list.
+
+Restricting the fields keeps the index smaller. Combined with the [`LoadOnlyPropertiesForIncludedFields`](../../configuration/indexingsettings.md#loadonlypropertiesforincludedfields) setting, it can also make index rebuilds faster and use less memory.
+
+To restrict a content index to specific fields:
+
+1. Give the index a validator that includes only specific fields.
+2. Include the system fields the index relies on.
+3. Optionally, enable `LoadOnlyPropertiesForIncludedFields`.
+4. Rebuild the index.
+
+### Restricting the fields of an index
+
+The built-in content indexes use a `ContentValueSetValidator`. To restrict their fields, replace it with one that has `includeFields`.
+
+The following example restricts the `ExternalIndex` to the `title` and `description` properties, and the system fields the index needs:
+
+{% code title="ConfigureExternalIndexFields.cs" %}
+```csharp
+using Examine.Lucene;
+using Microsoft.Extensions.Options;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Infrastructure.Examine;
+using IScopeProvider = Umbraco.Cms.Infrastructure.Scoping.IScopeProvider;
+
+namespace Umbraco.Docs.Samples.Web.CustomIndexing;
+
+public class ConfigureExternalIndexFields : IConfigureNamedOptions<LuceneDirectoryIndexOptions>
+{
+    private static readonly string[] _cultures = ["en-us", "da-dk"];
+
+    private readonly IPublicAccessService _publicAccessService;
+    private readonly IScopeProvider _scopeProvider;
+
+    public ConfigureExternalIndexFields(IPublicAccessService publicAccessService, IScopeProvider scopeProvider)
+    {
+        _publicAccessService = publicAccessService;
+        _scopeProvider = scopeProvider;
+    }
+
+    public void Configure(string? name, LuceneDirectoryIndexOptions options)
+    {
+        if (name != Constants.UmbracoIndexes.ExternalIndexName)
+        {
+            return;
+        }
+
+        string[] systemFields = ["path", "nodeName", "__Published", "__VariesByCulture"];
+        string[] cultureFields = _cultures
+            .SelectMany(culture => new[] { $"nodeName_{culture}", $"__Published_{culture}", $"title_{culture}", $"description_{culture}" })
+            .ToArray();
+
+        options.Validator = new ContentValueSetValidator(
+            publishedValuesOnly: true,
+            supportProtectedContent: false,
+            _publicAccessService,
+            _scopeProvider,
+            includeFields: [.. systemFields, .. cultureFields, "title", "description"]);
+    }
+
+    public void Configure(LuceneDirectoryIndexOptions options) => Configure(Options.DefaultName, options);
+}
+```
+{% endcode %}
+
+Register the class in a composer that runs after the core Examine composer, as shown in the [Creating a ConfigureOptions class](#creating-a-configureoptions-class) section:
+
+```csharp
+builder.Services.ConfigureOptions<ConfigureExternalIndexFields>();
+```
+
+To restrict the `InternalIndex`, use `Constants.UmbracoIndexes.InternalIndexName`. Set `publishedValuesOnly: false` and `supportProtectedContent: true`, which are the defaults for that index.
+
+Field names are case-insensitive. Culture variant values are indexed as `{alias}_{culture}`, with the culture in lower case. Include a field for each culture as well as the invariant field.
+
+### Including the system fields the index relies on
+
+The validator removes fields that aren't included before it runs its own checks. Leaving out a field the index depends on doesn't cause an error. Instead, documents go missing from the index or search results.
+
+| Field | Needed for |
+| --- | --- |
+| `path` | **Every content index.** Without it, every document fails validation and the index ends up empty. |
+| `__Published`, `__Published_{culture}`, `__VariesByCulture` | **The `ExternalIndex`.** Without `__Published`, every document is dropped. Without `__VariesByCulture` or a culture's `__Published_{culture}`, values of unpublished cultures end up in the index. |
+| `nodeName`, `nodeName_{culture}` | Searching by name, which backoffice search does in the `InternalIndex`. |
+| `id`, `__Key`, `icon`, `parentID` | The values backoffice search shows for each result from the `InternalIndex`. |
+| `umbracoFile` | Media search in the `InternalIndex`, which also contains media. |
+
+The document ID, index type, and content type are always kept, as they aren't fields of the value set.
+
+Any other field that isn't included is removed. This includes the fields Umbraco adds to every document, such as `createDate`, `updateDate`, `creatorName`, `writerName`, `level`, `sortOrder`, `urlName`, and `templateID`. Include any of these that your search code relies on.
+
+Restricting the fields of the `InternalIndex` doesn't affect what backoffice search finds, as it only searches names, IDs, and keys by default. Restricting the fields of the `ExternalIndex` limits what your site search can find.
+
+### Loading only the included properties during a rebuild
+
+Restricting the fields doesn't change what a rebuild loads from the database. To only load the properties needed for the included fields, enable the `LoadOnlyPropertiesForIncludedFields` setting:
+
+{% code title="appsettings.json" %}
+```json
+"Umbraco": {
+  "CMS": {
+    "Indexing": {
+      "LoadOnlyPropertiesForIncludedFields": true
+    }
+  }
+}
+```
+{% endcode %}
+
+Then rebuild the index, for example from the [Examine Management](examine-management.md) dashboard.
+
+For details on when the setting applies, and how to handle fields produced by custom code, see the [Indexing Settings](../../configuration/indexingsettings.md#loadonlypropertiesforincludedfields) article.
+
+This works for any index whose provider applies the validator from its options, as the Lucene indexes Umbraco ships do. If you use another index provider, check with the provider.
 
 ## Creating your own index
 
@@ -335,7 +453,9 @@ The index will only update its content when you manually trigger an index rebuil
 To update your index when content changes, you can use notification handlers.
 
 {% hint style="info" %}
-The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. If changes to the parent content item can affect its children or descendant items in your setup, refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
+
+The following handler class does not automatically update the descendant items of the modified content nodes, such as removing descendants of deleted content. Changes to the parent content item can affect its children or descendant items in your setup. In that case, refer to the [UmbracoContentIndex.PerformDeleteFromIndex() in Umbraco](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Examine.Lucene/UmbracoContentIndex.cs#L124-L153). Such logic should be applied when both removing and reindexing content items of type _product_.
+
 {% endhint %}
 
 ```csharp
