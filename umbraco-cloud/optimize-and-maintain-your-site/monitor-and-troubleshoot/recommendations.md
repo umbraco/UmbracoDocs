@@ -238,4 +238,4 @@ An uptime monitor regularly requests one of your hostnames from different locati
 
 At least one alert rule should be enabled for the project.
 
-Alert rules notify you by email or webhook when something happens to your project, such as a DDoS attack on a custom hostname, a failed deployment or an App Service auto-heal recycle. Without an enabled rule these events are only visible in the portal. This check reports whether at least one enabled rule, scoped to the project or to its organization, covers the project.
+Alert rules notify you by email or webhook when something happens to your project. Examples include a DDoS attack on a custom hostname, a failed deployment, or an App Service auto-heal recycle. Without an enabled rule, these events are only visible in the portal. This check reports whether at least one enabled rule, scoped to the project or to its organization, covers the project.
