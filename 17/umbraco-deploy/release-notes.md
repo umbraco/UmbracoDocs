@@ -18,6 +18,10 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (November 5th 2026)
+
+* All items from 17.4.0-rc1 and 17.4.0-rc2.
+
 ### [17.4.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 30th 2026)
 
 * Delete the `.uda` files and signatures of the descendants when deleting a dictionary item [#356](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/356). Previously, the next schema deployment failed with `ParentNotFound`. If you already committed the `.uda` files of these descendants, remove them manually.
