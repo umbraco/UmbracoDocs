@@ -80,10 +80,6 @@ Deployment alerts also cover deployments through the [Umbraco CI/CD Flow](../../
 
 A CI/CD deployment that times out is reported as **Failed**, with "(timed out)" in the notification text.
 
-{% hint style="info" %}
-For more information about local deployments, see the [Deploying Changes](../../../build-and-customize-your-solution/handle-deployments-and-environments/deployment/local-to-cloud.md) article.
-{% endhint %}
-
 For Deployment rules, the [environment type](#alert-rule-settings) refers to the **target** environment of the deployment.
 
 {% hint style="info" %}
