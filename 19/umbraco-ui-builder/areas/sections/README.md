@@ -164,6 +164,8 @@ sectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
 });
 ```
 
+For the aliases you can use as a target, see the [Choosing the Target Alias of a Position](../dashboards.md#choosing-the-target-alias-of-a-position) section.
+
 ## Extending Existing Sections
 
 You can extend existing sections by adding Umbraco UI Builder trees, dashboards, and context apps. This can be done by calling the `WithSection` method on the root-level `UIBuilderConfigBuilder` instance.
@@ -183,6 +185,14 @@ WithSection(string alias, Lambda sectionConfig = null) : WithSectionConfigBuilde
 ```csharp
 config.WithSection("member", withSectionConfig => {
     ...
+});
+```
+
+You can call `WithSection()` more than once with the same alias. Each later call continues the configuration of the first call, so you can split the configuration of a section across your code. Passing a `WithSectionConfigBuilder` instance for an alias that is already in use throws an error.
+
+```csharp
+config.WithSection("member", withSectionConfig => {
+    // Continues the "member" section configured above
 });
 ```
 
@@ -317,3 +327,5 @@ withSectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
     ...
 });
 ```
+
+For the aliases you can use as a target, see the [Choosing the Target Alias of a Position](../dashboards.md#choosing-the-target-alias-of-a-position) section.

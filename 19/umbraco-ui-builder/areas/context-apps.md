@@ -121,6 +121,38 @@ withTreeConfig.AddContextAppAfter("umbContent", "Comments", "icon-chat", context
 });
 ```
 
+### Choosing the Target Alias of a Position
+
+The `beforeAlias` and `afterAlias` parameters name the workspace view to place the context app next to. Use one of these aliases:
+
+* The alias of an Umbraco workspace view extension, such as `Umb.WorkspaceView.Document.Info`.
+* A content app alias from Umbraco 13. Umbraco UI Builder maps the alias to the matching workspace view of the tree that the context app is added to.
+
+| Tree | Umbraco 13 alias | Umbraco 19 workspace view alias |
+| --- | --- | --- |
+| `content` | `umbContent` | `Umb.WorkspaceView.Document.Edit` |
+| `content` | `umbInfo` | `Umb.WorkspaceView.Document.Info` |
+| `content` | `umbListView` | `Umb.WorkspaceView.Content.Collection` |
+| `media` | `umbContent` | `Umb.WorkspaceView.Media.Edit` |
+| `media` | `umbInfo` | `Umb.WorkspaceView.Media.Info` |
+| `media` | `umbListView` | `Umb.WorkspaceView.Content.Collection` |
+| `member` | `umbContent` | `Umb.WorkspaceView.Member.Content` |
+| `member` | `umbMembership` or `umbInfo` | `Umb.WorkspaceView.Member.Member` |
+| `documentTypes` | `design` | `Umb.WorkspaceView.DocumentType.Design` |
+| `documentTypes` | `listView` or `permissions` | `Umb.WorkspaceView.DocumentType.Structure` |
+| `documentTypes` | `templates` | `Umb.WorkspaceView.DocumentType.Templates` |
+| `mediaTypes` | `design` | `Umb.WorkspaceView.MediaType.Design` |
+| `mediaTypes` | `listView` or `permissions` | `Umb.WorkspaceView.MediaType.Structure` |
+| `memberTypes` | `design` | `Umb.WorkspaceView.MemberType.Design` |
+
+When no workspace view has the target alias, the context app keeps its default position.
+
+{% hint style="info" %}
+
+From Umbraco UI Builder 14 to 18, the context app positions had no effect. From version 19, a context app with a position can appear in a different place than in those versions.
+
+{% endhint %}
+
 ## Changing a Context App Alias
 
 ### Using the `SetAlias()` Method
