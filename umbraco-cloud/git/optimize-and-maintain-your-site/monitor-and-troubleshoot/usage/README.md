@@ -55,7 +55,19 @@ Hover over the chart to see usage for a date or month. In the monthly view, a pl
 
 <figure><img src="../../../.gitbook/assets/usage-bandwidth-history-october-2026.png" alt="Monthly bandwidth chart with the 12 months view selected, a plan-limit line, and repository size below the chart."><figcaption><p>Monthly bandwidth history and repository size</p></figcaption></figure>
 
+{% tabs %}
+{% tab title="Git" %}
 Below the chart, **Repository** shows the latest collected Git repository size in MB and an indication of its health. Repository size is separate from bandwidth usage. A large repository can slow cloning and deployment. Use **How to reduce it** to open the [Repositories in a Cloud Project](../../../explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project.md#how-to-reduce-your-repository-size) guide.
+{% endtab %}
+
+{% tab title="Artifact" %}
+{% hint style="info" %}
+Draft content for Artifact projects. To be confirmed by the Cloud team.
+{% endhint %}
+
+Repository size is not shown on Artifact projects, as their environments are not Git repositories.
+{% endtab %}
+{% endtabs %}
 
 ## Media storage and bandwidth sources
 

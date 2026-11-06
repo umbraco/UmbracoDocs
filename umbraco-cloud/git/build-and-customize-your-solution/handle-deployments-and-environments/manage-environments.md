@@ -41,7 +41,19 @@ Follow the steps outlined below to add a new environment to your Cloud project.
 3. Choose an **Environment name**.
 4. Click **Confirm**.
 
+{% tabs %}
+{% tab title="Git" %}
 After adding a new left-most mainline environment or a flexible environment, you need to clone this environment instead. The current local clone will be set up to push to Live, while the fresh clone will push to the new environment.
+{% endtab %}
+
+{% tab title="Artifact" %}
+{% hint style="info" %}
+Draft content for Artifact projects. To be confirmed by the Cloud team.
+{% endhint %}
+
+Environments on Artifact projects are not Git repositories, so there is nothing to clone. A new environment is ready to receive the build artifacts from your pipeline once it has been set up.
+{% endtab %}
+{% endtabs %}
 
 ### Removing an Environment
 

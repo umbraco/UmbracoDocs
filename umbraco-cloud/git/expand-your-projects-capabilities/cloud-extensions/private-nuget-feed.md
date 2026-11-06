@@ -45,12 +45,27 @@ In the last step, we will add the private feed to our Umbraco cloud project.
 
 To add the private feed to your Cloud project, follow the steps below:
 
+{% tabs %}
+{% tab title="Git" %}
 1. Access the cloud [Secrets Management](https://docs.umbraco.com/umbraco-cloud/set-up/project-settings/secrets-management).
 2. Add your MyGet credentials as a Shared Secret.
 3. Clone down your Umbraco Cloud project.
 4. Open the project locally and build/spin up the site.
 5. Go to your `NuGet.Config` file in the root of your project.
 6. Add the below configuration to the file:
+{% endtab %}
+
+{% tab title="Artifact" %}
+{% hint style="info" %}
+Draft content for Artifact projects. To be confirmed by the Cloud team.
+{% endhint %}
+
+1. Add your MyGet credentials as a secret in your CI/CD pipeline. On Artifact projects, the package restore runs in your own pipeline, so the credentials must be available there.
+2. Open the project locally and build/spin up the site.
+3. Go to your `NuGet.Config` file in the root of your project.
+4. Add the below configuration to the file:
+{% endtab %}
+{% endtabs %}
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,9 +89,19 @@ To add the private feed to your Cloud project, follow the steps below:
 </configuration>
 ```
 
+{% tabs %}
+{% tab title="Git" %}
 In the above code example, you can see that we are using the Key: "`MYGET_PASSWORD`" that we created in the previous step. We did that by using the Cloud Secrets Management feature on Umbraco Cloud.
 
 7. Push the changes to your Umbraco Cloud project.
+{% endtab %}
+
+{% tab title="Artifact" %}
+In the above code example, the password is read from the `MYGET_PASSWORD` environment variable. Make sure your pipeline provides the secret under this name when it restores packages.
+
+5. Commit the changes and run your pipeline to build and deploy the artifact to your Cloud environment.
+{% endtab %}
+{% endtabs %}
 
 Congratulations, you've successfully set up a private NuGet feed with Umbraco Cloud using the cloud secrets management feature!
 
