@@ -11,7 +11,7 @@ Umbraco includes an OpenID Connect authorization server. This server issues toke
 
 Access tokens, refresh tokens, and authorization codes use the ASP.NET Core Data Protection format. Their protection comes from the Data Protection key ring, not from the credentials described in this article. When Umbraco runs on more than one server, share the key ring as described in the [Data Protection](../infrastructure-and-ops/server-setup/load-balancing/README.md#data-protection) section of the load balancing article.
 
-Identity tokens are different. They are always issued as JSON Web Tokens (JWTs) signed with the signing credentials. The public part of each signing key is published from the `/.well-known/jwks` endpoint. A client that receives an identity token uses those published keys to validate it.
+Identity tokens are different. They are always issued in the JSON Web Token (JWT) format, signed with the signing credentials. The public part of each signing key is published from the `/.well-known/jwks` endpoint. A client that receives an identity token uses those published keys to validate it.
 
 Identity tokens are issued when a client requests the `openid` scope. A typical example is an OpenID Connect client that logs in members through [Protected Content in the Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/protected-content-in-the-delivery-api/README.md).
 
@@ -92,7 +92,7 @@ public class CertificateSecurityTokenCredentialsProvider : ISecurityTokenCredent
 
 Register the provider with `AddUnique` from a composer, so the provider replaces the default one.
 
-The following composer loads the certificates from PFX files. The file paths and password are read from configuration. When the paths are not configured, the composer does nothing, and the default credentials are used. This keeps local development working without certificates.
+The following composer loads the certificates from Personal Information Exchange (PFX) files. The file paths and password are read from configuration. When the paths are not configured, the composer does nothing, and the default credentials are used. This keeps local development working without certificates.
 
 {% code title="SecurityTokenCredentialsComposer.cs" %}
 ```csharp
@@ -139,14 +139,16 @@ Request `/.well-known/jwks` from each server. When the shared credentials are in
 
 ## Rolling over keys
 
-Each method can return several credentials. This allows you to introduce a new certificate before the current one expires. OpenIddict chooses between certificates based on their validity dates, as described in the [OpenIddict documentation on encryption and signing credentials](https://documentation.openiddict.com/configuration/encryption-and-signing-credentials).
+Each method can return more than one credential. This allows you to introduce a new certificate before the current one expires. OpenIddict chooses between certificates based on their validity dates, as described in the [OpenIddict documentation on encryption and signing credentials](https://documentation.openiddict.com/configuration/encryption-and-signing-credentials).
 
 Umbraco reads the credentials once, at startup, and OpenIddict orders them at the same time. A certificate that becomes valid while the application is running is only preferred after the next restart.
 
 All signing keys are published from `/.well-known/jwks`, so clients can validate tokens signed with either certificate during the overlap.
 
 {% hint style="warning" %}
-If every signing certificate, or every encryption certificate, has expired or is not yet valid, OpenIddict rejects its configuration when the options are first used. Keep at least one valid certificate of each type in the provider at all times.
+
+OpenIddict rejects its configuration if every signing certificate, or every encryption certificate, has expired or is not yet valid. This happens when the options are first used. Keep at least one valid certificate of each type in the provider at all times.
+
 {% endhint %}
 
 To roll over a certificate:
