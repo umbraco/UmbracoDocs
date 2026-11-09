@@ -119,28 +119,6 @@ The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRow
 {% endhint %}
 
 {% hint style="info" %}
-**Reporting settings:**
-
-* `DataGenerationEnabled`: Whether Engage generates reporting data once a day. Set it to `false` to turn generation off.
-* `DataGenerationTime`: The time of day, in the reporting time zone, when Engage generates reporting data. Use the 24-hour format `hh:mm:ss`, for example `02:30:00`. Leave it empty to let Engage choose the time.
-* `Timezone`: The time zone used for reporting. Use a time zone ID, for example `W. Europe Standard Time` or `Europe/Amsterdam`. Leave it empty to use the time zone of the web server, which is UTC on Umbraco Cloud. If Engage cannot find the ID, it uses the time zone of the web server.
-
-When `DataGenerationTime` is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone on first startup. Engage stores that time in UTC and uses it every day after that. In time zones with daylight saving time, the local time can move by one hour during part of the year. To keep a fixed local time, set `DataGenerationTime`.
-
-If the site was not running at the chosen time, Engage generates reporting data when the site starts. It does this only before 06:00 in the reporting time zone. This catch-up applies only to the time Engage chooses, not to an explicit `DataGenerationTime`.
-
-To see the time in use, go to the **Settings** section > **Engage** > **Configuration** and select the **Reporting** tab. The time shows *(automatic)* when Engage chose it.
-
-`Timezone` also sets how Engage splits reporting data into days and the date ranges in Analytics.
-{% endhint %}
-
-{% hint style="warning" %}
-**Upgrading:** Engage now reads an explicit `DataGenerationTime` in the reporting time zone. Earlier versions used the time zone of the web server. If you set both `Timezone` and `DataGenerationTime`, generation can run at a different time after you upgrade.
-
-An empty or invalid `DataGenerationTime` no longer turns generation off. It now means Engage chooses the time. To turn generation off, set `DataGenerationEnabled` to `false`.
-{% endhint %}
-
-{% hint style="info" %}
 **RequireAnalyticsPermissionForMemberTracking:** When set to `true`, Engage attaches an Umbraco member key to a pageview only when `AnalyticsIsAllowed` returns true for the request. Requests without analytics permission are tracked as an anonymous visitor with no member key. The default is `false`.
 
 For the full behaviour and a script for clearing member keys from existing data, see [Module Permissions](../introduction/the-umbraco-engage-cookie/module-permissions.md).
@@ -152,4 +130,22 @@ All these settings are also visualized in Umbraco Engage. This overview can be f
 
 {% hint style="warning" %}
 You cannot change any of the settings in the backoffice. To use the new settings, the website must be restarted.
+{% endhint %}
+
+## Reporting
+
+The `Reporting` settings control when Engage generates reporting data.
+
+* `DataGenerationEnabled`: Whether Engage generates reporting data once a day. Set it to `false` to turn generation off.
+* `DataGenerationTime`: The time of day, in the reporting time zone, when Engage generates reporting data. Use the 24-hour format `hh:mm:ss`, for example `02:30:00`. Leave it empty to let Engage choose the time.
+* `Timezone`: The time zone used for reporting. It also sets how Engage splits reporting data into days and the date ranges in Analytics. Use a time zone ID, for example `W. Europe Standard Time` or `Europe/Amsterdam`. Leave it empty to use the time zone of the web server, which is UTC on Umbraco Cloud. If Engage cannot find the ID, it uses the time zone of the web server.
+
+When `DataGenerationTime` is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone on first startup. Engage stores that time in UTC and uses it every day after that. In time zones with daylight saving time, the local time can move by one hour during part of the year. To keep a fixed local time, set `DataGenerationTime`.
+
+If the site was not running at the chosen time, Engage generates reporting data when the site starts. It does this only before 06:00 in the reporting time zone. This catch-up applies only to the time Engage chooses, not to an explicit `DataGenerationTime`.
+
+To see the time in use, go to the **Settings** section > **Engage** > **Configuration** and select the **Reporting** tab. The time shows *(automatic)* when Engage chose it.
+
+{% hint style="warning" %}
+Engage 17.6.0 changed how Engage schedules reporting data generation. If you upgrade from an earlier version, see [Version specific Upgrade Notes](../../upgrading/version-specific-upgrade-notes.md).
 {% endhint %}

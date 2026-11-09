@@ -14,6 +14,15 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
+### 17.6.0 (Reporting data generation time)
+
+Engage 17.6.0 changes how Engage schedules reporting data generation:
+
+* Engage reads an explicit `DataGenerationTime` in the reporting time zone. Engage versions before 17.6.0 used the time zone of the web server. If you set both `Timezone` and `DataGenerationTime`, generation can run at a different time after you upgrade.
+* An empty or invalid `DataGenerationTime` no longer turns generation off. It now means Engage chooses the time. To turn generation off, set `DataGenerationEnabled` to `false`.
+
+For details, see [Reporting](../developers/settings/configuration.md#reporting).
+
 ### 17.2.0 — Database Schema Alignment
 
 Engage 17.2.0 introduces a rewritten analytics data cleanup system and a database schema alignment. This is a **manual post-upgrade step** that requires running SQL scripts during a maintenance window.
