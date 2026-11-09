@@ -119,6 +119,14 @@ The replacement for Machine Keys in ASP.NET Core are called Data Protection. You
 
 ASP.NET Core supports multiple ways to share keys. Use the [official docs](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview) to find a description that fits your setup the best.
 
+### Security Token Credentials
+
+Most load balanced setups do not need to change anything here. Consider this section only if external clients validate identity tokens issued by Umbraco. An example is an OpenID Connect client that requests the `openid` scope when using member authorization in the Delivery API.
+
+By default, each server generates its own keys for signing and encrypting the security tokens Umbraco issues. Identity tokens are signed with these keys, so a token issued by one server fails validation against another server's keys. The backoffice and clients that only use access tokens are not affected.
+
+If you have such clients, configure the same credentials on all servers. See [Security Token Credentials](../../../security/security-token-credentials.md) for details.
+
 ### Session State and Distributed Cache
 
 It is required to setup a distributed cache, like `DistributedSqlServerCache` or an alternative provider (see [https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed) for more details). The distributed cache is used by the session in your application, which is used by the default TempDataProvider in MVC.
