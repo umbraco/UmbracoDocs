@@ -36,7 +36,7 @@ Keep the following in mind when you use the setting:
 
 {% hint style="warning" %}
 
-The NPoco repository is obsolete and is scheduled for removal in Umbraco UI Builder 20. Use the fallback only while you move your collections to EF Core.
+The NPoco repository is obsolete and is scheduled for removal in Umbraco UI Builder 21. Use the fallback only while you move your collections to EF Core.
 
 {% endhint %}
 
@@ -94,9 +94,11 @@ Models written for the NPoco repository keep working on EF Core. The EF Core mod
 
 ### Adding .NET Data Annotations
 
-Umbraco may remove NPoco in a future version. When the site starts, Umbraco UI Builder logs a warning for each entity type that uses NPoco attributes. The warning names the .NET attribute to add for each NPoco attribute found.
+Umbraco is moving from NPoco to EF Core and plans to remove NPoco. When the site starts, Umbraco UI Builder logs a warning for each entity type that uses NPoco attributes. The warning names the .NET attribute to add for each NPoco attribute found.
 
 Add the .NET data annotations next to the NPoco attributes. The NPoco repository reads only the NPoco attributes, and EF Core prefers the .NET ones. An entity carrying both works on both repositories. Remove the NPoco attributes only once the collection runs on EF Core.
+
+Custom tables are often created with NPoco migrations. Create new tables with EF Core migrations instead, and plan to move existing ones. For the setup, see [Creating Custom Database Tables with Entity Framework](https://docs.umbraco.com/umbraco-cms/extend-your-project/tutorials/getting-started-with-entity-framework-core).
 
 The following model carries both sets of attributes:
 

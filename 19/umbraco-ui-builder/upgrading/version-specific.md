@@ -23,7 +23,7 @@ Collections without a custom repository now use the Entity Framework Core (EF Co
 
 To keep using the NPoco repository, set `Umbraco:UIBuilder:FeatureManagement:UseEFCore` to `false`. Keep the following in mind:
 
-* The NPoco repository is obsolete and is scheduled for removal in Umbraco UI Builder 20.
+* The NPoco repository is obsolete and is scheduled for removal in Umbraco UI Builder 21.
 * A site that uses the NPoco repository logs a warning at startup.
 * The setting is read once, when the site starts. In earlier versions, the repository switched while the site ran. Restart the site after you change the value.
 
