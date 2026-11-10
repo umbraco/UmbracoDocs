@@ -34,7 +34,7 @@ The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.
 1. Install the Umbraco dotnet template for the beta.
 
 ```cmd
-dotnet new install Umbraco.Templates::19.0.0-beta1
+dotnet new install Umbraco.Templates@19.0.0-beta1
 ```
 
 2. Create a new Umbraco project.
