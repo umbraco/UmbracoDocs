@@ -396,7 +396,7 @@ Keep the following in mind:
 * Keep `GetOutcomesAsync` fast and free of side effects, with no network or database calls. Automate calls it when the canvas loads, when settings are saved, at publish, and when the step runs.
 * If `GetOutcomesAsync` throws, the step fails with a validation error and isn't retried. Publishing fails with an error that the step could not list its outcomes.
 * An action with `HasDynamicOutcomes` set to `true` declares outcomes even when the list is empty for the current settings. Lines from it are still checked at publish.
-* An author can rename or remove a value that an outcome key comes from. Any line on that outcome then moves to a **Missing outcome** exit, and the automation can't be published until the line is moved or removed.
+* An author can rename or remove a value that an outcome key comes from. Any line on that outcome then moves to a **Missing outcome** exit. You can't publish the automation until you move or remove that line.
 
 ### Testing Outcomes
 
