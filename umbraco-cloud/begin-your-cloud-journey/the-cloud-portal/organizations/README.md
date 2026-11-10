@@ -93,7 +93,7 @@ For each project, the list shows the following:
 * The hosting type, which is either **Shared** or **Dedicated** followed by the size of the dedicated option.
 * The project status and payment status.
 * The creation date, region, and number of environments.
-* The ownership. The **PAY** and **TECH** labels show whether your organization is the payment owner and the technical owner of the project.
+* The ownership. The `PAY` and `TECH` labels show whether your organization is the payment owner and the technical owner of the project.
 
 The project name links to the project page for the projects where you are a team member.
 

@@ -30,7 +30,7 @@ The list has three new columns:
 
 * **Umbraco** - The Umbraco version running on the live environment. Umbraco Heartcore projects show a dash, and **Unknown** is shown when the version cannot be read.
 * **Hosting** - **Shared**, or **Dedicated** followed by the size of the dedicated option, for example **Dedicated · Small**.
-* **Ownership** - The **PAY** and **TECH** labels show whether your organization is the payment owner and the technical owner. A crossed-out label means another organization holds the role.
+* **Ownership** - The `PAY` and `TECH` labels show whether your organization is the payment owner and the technical owner. A crossed-out label means another organization holds the role.
 
 You can sort the list by each of the new columns.
 
