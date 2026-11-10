@@ -18,6 +18,12 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**18.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.3) **(November 10th 2026)**
+
+* Fixed list views without an editor linking each row to an empty editor [#248](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/248).
+* Fixed hidden field labels still taking up space in the editor, so the field now uses the full width [#249](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/249).
+* Fixed repository queries that filter with an array's `Contains` method returning no results.
+
 ### [**18.1.2**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.2) **(November 3rd 2026)**
 
 * Fixed date filters on collections only matching a single exact day instead of a date range [#247](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/247).
