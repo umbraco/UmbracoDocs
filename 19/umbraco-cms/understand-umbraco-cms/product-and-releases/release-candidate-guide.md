@@ -29,7 +29,7 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Install a Pre-Release Version
 
-The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/19.0.0-beta).
+The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/19.0.0-beta1).
 
 1. Install the Umbraco dotnet template for the beta.
 
