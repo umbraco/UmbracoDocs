@@ -71,6 +71,22 @@ ${ steps.callApi.responseBody }
 
 Each step has a **Name** (its label on the canvas) and an **Alias** (`callApi` in the example). See [Step Behaviour](actions.md#step-behaviour) below for both.
 
+## Action Exits
+
+Some actions have named outcomes. The canvas draws one exit per outcome, and you connect each exit to its own next step. The exit marked **(default)** is the one the action takes when it does its work. See [Branch on Action Outcomes](../backoffice/building-an-automation.md#branch-on-action-outcomes).
+
+| Action                                                                   | Exits                                                                                         |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| **Get Content**, **Get Media**, **Find Content**, **Find Media**         | **Found** (default), **Not found**                                                            |
+| **Get Content Property**, **Get Media Property**                         | **Found** (default), **Not found**, **Property not found**                                    |
+| **Update Content Property**, **Update Media Property**                   | **Updated** (default), **Not found**, **Property not found**                                  |
+| **Create Content**                                                       | **Created** (default), **Parent not found**, **Content type not found**                       |
+| **Create Media**                                                         | **Created** (default), **Parent not found**, **Media type not found**, **File download failed** |
+| **Notify Editor**                                                        | **Sent** (default), **Not found**                                                             |
+| **Request Approval**                                                     | **Approved**, **Rejected**                                                                    |
+
+Every other built-in action has a single exit. A step that fails takes no exit, and its error behavior applies instead. See [Step Behaviour](actions.md#step-behaviour). Actions from add-on packages can have their own exits.
+
 ## HTTP Request Headers and Body
 
 **Headers** are optional. Click **Add** to add a row, one row per header. Removing a row that has a name or value asks you to confirm first. Each value can include [bindings](bindings.md), for example `Bearer ${ steps.getToken.result }`. Header values are treated as sensitive: they are encrypted when stored and masked in the run view.
@@ -209,7 +225,7 @@ Enter **Property Values** as a JSON object of property aliases and values, for e
 
 Set **Source URL** to download a file onto the item, for example `${ loop.item.imageUrl }`. Leave it empty for media types without a file, such as folders. Downloads follow the [Outbound Requests](../getting-started/configuration.md#outbound-requests) rules. They are capped by `Execution:MaxMediaFileBytes`, 10 MB by default. **Property Values** on **Create Media** sets invariant properties only, and cannot set the file.
 
-When a download fails, Automate still creates the item, without a file. The step writes a warning, and the `fileName` output is empty. One unreachable file does not stop a **For Each** loop.
+When a download fails, Automate still creates the item, without a file. The step takes its **File download failed** exit, writes a warning, and the `fileName` output is empty. One unreachable file does not stop a **For Each** loop.
 
 When the parent is missing or in the recycle bin, or the content type or media type no longer exists, both create actions create nothing. The step takes its **Parent not found**, **Content type not found**, or **Media type not found** exit, and writes a warning to its **Logs** tab. The `contentKey` or `mediaKey` output is an empty GUID. See [Control Flow](control-flow.md) for how exits route a run.
 

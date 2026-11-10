@@ -84,7 +84,7 @@ Connect each exit to the step that should run for that outcome. An exit with not
 Some actions build their exits from their settings, for example one exit per option you enter. The exits update when you save the step's settings:
 
 * A line on an exit that still exists stays connected.
-* A line on an exit that no longer exists moves to a red **Missing outcome** exit, labelled with the outcome's key. Automate doesn't delete the line.
+* A line on an exit that no longer exists moves to a red **Missing outcome** exit, labeled with the outcome's key. Automate doesn't delete the line.
 
 If Automate can't load a step's exits, it shows an error notification. The step keeps the exits it had, so no lines are lost.
 

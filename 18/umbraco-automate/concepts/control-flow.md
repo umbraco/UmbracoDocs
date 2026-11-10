@@ -53,7 +53,7 @@ ${ loop.index }
 
 ## Other Steps That Branch
 
-Not every branch comes from a control flow node. An action can declare named outcomes, and the canvas draws one exit per outcome on the right edge of the step. You then connect each exit to its own next step, without an **If** or **Switch** after the action. For example, **Get Content** has a **Found** exit and a **Not found** exit. See [Actions](actions.md) for the exits each built-in action has.
+Not every branch comes from a control flow node. An action can declare named outcomes, and the canvas draws one exit per outcome on the right edge of the step. You then connect each exit to its own next step, without an **If** or **Switch** after the action. For example, **Get Content** has a **Found** exit and a **Not found** exit. See [Action Exits](actions.md#action-exits) for the exits each built-in action has.
 
 **Request Approval** branches on **Approved** and **Rejected** instead of running a single next step — see [Use Approvals](../backoffice/approvals.md).
 
