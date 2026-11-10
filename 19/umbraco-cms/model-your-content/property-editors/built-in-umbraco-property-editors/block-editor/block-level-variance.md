@@ -61,6 +61,10 @@ Consider a Document with English and Danish language variants, which is publishe
 
 **Result:** The updated property value appears in both the English and Danish published content.
 
+{% hint style="info" %}
+On Documents that vary by culture, editing invariant content requires the **Allow editing shared content** User Group permission. Without it, users can't change invariant Block properties or the Block structure. This includes adding, removing, and reordering Blocks. For more information, see the [Users](../../../../manage-and-publish-content/users-and-members/users/README.md#user-group-parameters) article.
+{% endhint %}
+
 ## Structure vs. Block Level Variance
 
 The Block Editor structure is _invariant_ for Block Level Variance. This means that the structure follows the same rules for invariance as outlined in the section above.

@@ -104,6 +104,8 @@ Click the Cards/Table icon (top-right corner) to switch to a more compact, table
 
 By default, the User Groups available to new users are **Administrators**, **Editors**, **Sensitive Data**, **Translators,** and **Writers**.
 
+On a new install, all default User Groups except **Sensitive data** have the **Allow editing shared content** permission.
+
 * **Administrators**: Can do anything when editing nodes in the content section (has all permissions).
 * **Editors**: Allowed to create and publish content items or nodes on the website without approval from others or restrictions. Editors have the following permissions:
   * All **Document permissions** except **Culture and Hostnames**

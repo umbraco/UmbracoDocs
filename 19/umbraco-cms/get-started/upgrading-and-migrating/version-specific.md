@@ -209,7 +209,7 @@ Update code that reads Data Type configuration by the old key names. The `Valida
 
 ### User group permission for editing shared content
 
-On content that varies by culture, invariant (shared) properties are now controlled by a user group permission. Previously, access to the default language allowed editing them, or the `AllowEditInvariantFromNonDefault` setting allowed editing from any language. The setting has been removed.
+On content that varies by culture, invariant (shared) properties are now controlled by a user group permission. Previously, access to the default language allowed editing them, or the `AllowEditInvariantFromNonDefault` setting allowed editing from any language. The setting is no longer used. The upgrade reads it once to grant the new permission, so remove it only after the upgrade has run.
 
 The upgrade grants the new permission so that existing user groups keep the access they had:
 
@@ -292,7 +292,7 @@ Some settings have moved, been removed, or have new default values. Review your 
 | --------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `Umbraco:CMS:Core:Debug`                                  | No longer read.                                                              | Move the settings to [`Umbraco:CMS:Debug`](../../develop-with-umbraco/configuration/debugsettings.md).                    |
 | `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`       | No longer read.                                                              | Move it to [`Umbraco:CMS:DataTypes:ShowDeprecatedPropertyEditors`](../../develop-with-umbraco/configuration/datatypes.md). |
-| `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`    | Removed.                                                                     | Use the user group permission. See [User group permission for editing shared content](#user-group-permission-for-editing-shared-content).                 |
+| `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`    | No longer read, except once during the upgrade.                                                                    | Use the user group permission. See [User group permission for editing shared content](#user-group-permission-for-editing-shared-content).                 |
 | `Umbraco:CMS:HelpPage`                                    | Removed.                                                                     | Remove the section.                                                                                                      |
 | `AllowCreation` in the segment settings (`SegmentSettings`) | Removed.                                                                   | Remove the setting.                                                                                                      |
 | `BackOfficeTokenCookieSettings`                           | Removed.                                                                     | Use [`Umbraco:CMS:Security:AuthCookieName`](../../develop-with-umbraco/configuration/securitysettings.md#auth-cookie-name). |
