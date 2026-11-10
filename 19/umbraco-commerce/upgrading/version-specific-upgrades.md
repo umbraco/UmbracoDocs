@@ -52,6 +52,17 @@ The following endpoints still work but are deprecated and will be removed in ver
 * `country/{id}/paymentmethods` and `country/{id}/shippingmethods`, including the region variants. Use `checkout/{orderId}/paymentmethods` and `checkout/{orderId}/shippingmethods`.
 * `country/{id}/currencies`. Use `currencies?filter=allowedInCountry:{idOrAlias}`.
 
+**Session orders**
+
+Session orders are now checked when your code reads them, once per store per request, instead of on every page view.
+
+* `ISessionManager.GetCurrentOrderAsync` never returns a finalized order. A finalized order is moved to the current finalized order, and the next open order (or `null`) is returned instead.
+* If your code finalizes the current order and reads it again in the same request, use `GetCurrentFinalizedOrderAsync`.
+* The `SetDefault*Async` methods on `ISessionManager` no longer change a finalized order when `applyToCurrentOrder` is `true`.
+* If a customer reference is passed and the stored current order no longer exists, the order finder now runs in the same request. Before, `GetCurrentOrderAsync` returned `null` until the next request.
+* `CheckAndMoveSessionOrdersMvcActionFilterAttribute` is no longer registered and is deprecated. It will be removed in version 21.
+* If your site reads the Umbraco Commerce session cookies directly instead of through `ISessionManager`, the cookies are no longer tidied up on every page.
+
 **Removed obsolete code**
 
 Members marked obsolete for removal in version 19 or earlier have been removed. The changes most likely to affect custom code are:
