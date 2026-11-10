@@ -167,6 +167,309 @@ public sealed class GreetUserAction : ActionBase<GreetUserSettings, GreetUserOut
 ```
 {% endcode %}
 
+## Declaring Outcomes
+
+An action can declare named outcomes. The canvas draws one exit per outcome, so authors branch on the result without adding an **If** or **Switch** step. See [Control Flow](../concepts/control-flow.md#other-steps-that-branch).
+
+Describe each outcome with a `StepOutcome` from the `Umbraco.Automate.Core.StepTypes` namespace:
+
+| Member        | Description                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `Key`         | The outcome's identifier. Automations save it on the lines drawn from the exit, so keep it stable once released. |
+| `Label`       | The text on the exit.                                                                                        |
+| `IsDefault`   | Marks the outcome the run follows when the action succeeds without naming one. Optional.                     |
+| `Description` | The exit's tooltip. Use it to say when the action takes the outcome. Optional.                              |
+
+A `Label` or `Description` that starts with `#` is a backoffice localization key, for example `#myProject_tooLong`. Any other value is shown as written. Both are always shown as text, never as HTML.
+
+A declaration must follow these rules:
+
+* Each key is non-empty and unique within the action. Keys are compared case-sensitively.
+* No key starts with `__`. That prefix is reserved for exits Automate adds itself, such as **Any result**.
+* At most one outcome is the default.
+
+When the declaration breaks a rule, the step fails with a validation error and isn't retried. Publishing an automation that uses the action also fails, with an error naming the broken rule.
+
+### Fixed Outcomes
+
+Override `GetOutcomes` to return the outcomes, in the order the canvas shows the exits. In `ExecuteAsync`, return the outcome the run should follow:
+
+* `SuccessWithOutcome(key, output)` follows the exit for `key`. On `ActionBase<TSettings>`, which has no output, call `SuccessWithOutcome(key)`.
+* `Success(output)` names no outcome, so the run follows the default exit.
+
+{% code title="CheckTitleLengthAction.cs" %}
+```csharp
+using Umbraco.Automate.Core.Actions;
+using Umbraco.Automate.Core.StepTypes;
+
+namespace MyProject.Automate;
+
+public sealed class CheckTitleLengthOutput
+{
+    public int Length { get; set; }
+}
+
+[Action("myProject.checkTitleLength", "Check Title Length",
+    Description = "Checks whether a title fits within a maximum length.",
+    Group = "My Project",
+    Icon = "icon-check")]
+public sealed class CheckTitleLengthAction : ActionBase<CheckTitleLengthSettings, CheckTitleLengthOutput>
+{
+    public const string OutcomeWithinLimit = "withinLimit";
+    public const string OutcomeTooLong = "tooLong";
+
+    public CheckTitleLengthAction(ActionInfrastructure infrastructure)
+        : base(infrastructure) { }
+
+    // One exit per outcome, in this order.
+    public override IReadOnlyList<StepOutcome> GetOutcomes() =>
+    [
+        new StepOutcome(OutcomeWithinLimit, "Within limit") { IsDefault = true },
+        new StepOutcome(OutcomeTooLong, "Too long")
+        {
+            Description = "The title is longer than the maximum length.",
+        },
+    ];
+
+    public override Task<ActionResult> ExecuteAsync(
+        ActionContext context,
+        CancellationToken cancellationToken)
+    {
+        var settings = context.GetSettings<CheckTitleLengthSettings>();
+        var output = new CheckTitleLengthOutput { Length = settings.Title.Length };
+
+        // Success names no outcome, so the run follows the default exit, Within limit.
+        return Task.FromResult(output.Length > settings.MaxLength
+            ? SuccessWithOutcome(OutcomeTooLong, output)
+            : Success(output));
+    }
+}
+```
+{% endcode %}
+
+The settings class has a `Title` string that supports bindings and a `MaxLength` integer.
+
+{% code title="CheckTitleLengthSettings.cs" %}
+```csharp
+using Umbraco.Automate.Core.Settings;
+
+namespace MyProject.Automate;
+
+public sealed class CheckTitleLengthSettings
+{
+    [Field(
+        Label = "Title",
+        Description = "The title to check.",
+        SupportsBindings = true)]
+    public string Title { get; set; } = string.Empty;
+
+    [Field(
+        Label = "Maximum length",
+        Description = "The longest title allowed, in characters.")]
+    public int MaxLength { get; set; } = 60;
+}
+```
+{% endcode %}
+
+Keep the following in mind:
+
+* A default is only needed when the action can succeed without naming an outcome. If you declare no default, every success must name an outcome. A plain `Success` then fails the step with a validation error, which isn't retried.
+* An action that returns `Sleep` can't name an outcome. When the step resumes, the run follows the default exit, so declare a default on an action that sleeps.
+* A returned key that you didn't declare still routes, but no named exit matches it. Usually only an **Any result** line runs. Automate adds a warning to the step's run log.
+* A failed result never follows an outcome exit. The step's error behavior applies instead.
+* An action that declares no outcomes keeps its single exit, and nothing about it changes.
+
+### Outcomes From Settings
+
+When the exits depend on the step's settings, set `HasDynamicOutcomes` to `true` and override `GetOutcomesAsync`. Automate passes the step's saved settings as your settings type. A step saved with no settings gets the settings type's defaults.
+
+The following action draws one exit per category the author enters, plus a default **Other** exit.
+
+{% code title="RouteByCategoryAction.cs" %}
+```csharp
+using Umbraco.Automate.Core.Actions;
+using Umbraco.Automate.Core.StepTypes;
+using Umbraco.Automate.Extensions;
+
+namespace MyProject.Automate;
+
+[Action("myProject.routeByCategory", "Route by Category",
+    Description = "Leaves through the exit for the matching category.",
+    Group = "My Project",
+    Icon = "icon-split")]
+public sealed class RouteByCategoryAction : ActionBase<RouteByCategorySettings>
+{
+    public const string OutcomeOther = "other";
+
+    public RouteByCategoryAction(ActionInfrastructure infrastructure)
+        : base(infrastructure) { }
+
+    public override bool HasDynamicOutcomes => true;
+
+    protected override Task<IReadOnlyList<StepOutcome>> GetOutcomesAsync(
+        RouteByCategorySettings? settings,
+        CancellationToken cancellationToken = default)
+    {
+        var outcomes = new List<StepOutcome>();
+        var keys = new HashSet<string>(StringComparer.Ordinal) { OutcomeOther };
+
+        foreach (var category in settings?.Categories ?? [])
+        {
+            // A bound key has no value until the run, so it gets no exit.
+            // Skip empty, repeated, and reserved keys, which break the declaration rules.
+            if (string.IsNullOrWhiteSpace(category.Key)
+                || category.Key.ContainsBinding()
+                || category.Key.StartsWith("__", StringComparison.Ordinal)
+                || !keys.Add(category.Key))
+            {
+                continue;
+            }
+
+            var label = string.IsNullOrWhiteSpace(category.Value) || category.Value.ContainsBinding()
+                ? category.Key
+                : category.Value;
+
+            outcomes.Add(new StepOutcome(category.Key, label));
+        }
+
+        outcomes.Add(new StepOutcome(OutcomeOther, "Other")
+        {
+            IsDefault = true,
+            Description = "No category matched.",
+        });
+
+        return Task.FromResult<IReadOnlyList<StepOutcome>>(outcomes);
+    }
+
+    public override Task<ActionResult> ExecuteAsync(
+        ActionContext context,
+        CancellationToken cancellationToken)
+    {
+        var settings = context.GetSettings<RouteByCategorySettings>();
+        var match = settings.Categories.FirstOrDefault(c =>
+            string.Equals(c.Key, settings.Category, StringComparison.OrdinalIgnoreCase));
+
+        // With no match, Success names no outcome, so the run follows the default exit, Other.
+        return Task.FromResult(match is null ? Success() : SuccessWithOutcome(match.Key));
+    }
+}
+```
+{% endcode %}
+
+The settings collect the categories with the key/value editor described earlier in this article.
+
+{% code title="RouteByCategorySettings.cs" %}
+```csharp
+using Umbraco.Automate.Core.Settings;
+
+namespace MyProject.Automate;
+
+public sealed class CategoryOption
+{
+    public string Key { get; set; } = string.Empty;
+
+    public string? Value { get; set; }
+}
+
+public sealed class RouteByCategorySettings
+{
+    [Field(
+        Label = "Category",
+        Description = "The category to route on.",
+        SupportsBindings = true)]
+    public string Category { get; set; } = string.Empty;
+
+    [Field(
+        Label = "Categories",
+        Description = "One exit per row. The name is the outcome key, and the value is its label.",
+        SupportsBindings = true,
+        EditorUiAlias = "UmbracoAutomate.PropertyEditorUi.KeyValueEditor")]
+    public List<CategoryOption> Categories { get; set; } = [];
+}
+```
+{% endcode %}
+
+Keep the following in mind:
+
+* Outcomes always come from the step's saved settings, before bindings are resolved. The editor, the publish check, and the run all see the same list.
+* A setting that holds a binding reaches `GetOutcomesAsync` as raw `${ ... }` text. Call the `ContainsBinding()` extension method from `Umbraco.Automate.Extensions` to skip those values.
+* Keep `GetOutcomesAsync` fast and free of side effects, with no network or database calls. Automate calls it when the canvas loads, when settings are saved, at publish, and when the step runs.
+* If `GetOutcomesAsync` throws, the step fails with a validation error and isn't retried. Publishing fails with an error that the step could not list its outcomes.
+* An action with `HasDynamicOutcomes` set to `true` declares outcomes even when the list is empty for the current settings. Lines from it are still checked at publish.
+* An author can rename or remove a value that an outcome key comes from. Any line on that outcome then moves to a **Missing outcome** exit, and the automation can't be published until the line is moved or removed.
+
+### Testing Outcomes
+
+The `ActionTestHarness` in the `Umbraco.Automate.Testing` package checks outcomes without a running site:
+
+* `GetOutcomesAsync()` returns the outcomes the action declares for the settings given to `WithSettings`.
+* `ExecuteWithOutcomeAsync()` runs the action and returns a `RoutedActionResult`. Its `BranchOutcome` is the exit a run would follow: the outcome the action returned, or the default outcome when it returned none.
+
+{% code title="RouteByCategoryActionTests.cs" %}
+```csharp
+using MyProject.Automate;
+using Umbraco.Automate.Testing;
+using Xunit;
+
+namespace MyProject.Automate.Tests;
+
+public class RouteByCategoryActionTests
+{
+    private static RouteByCategorySettings CreateSettings(string category) => new()
+    {
+        Category = category,
+        Categories =
+        [
+            new CategoryOption { Key = "news", Value = "News" },
+            new CategoryOption { Key = "events", Value = "Events" },
+        ],
+    };
+
+    [Fact]
+    public async Task Outcomes_AreOnePerCategoryThenOther()
+    {
+        var outcomes = await ActionTestHarness.For<RouteByCategoryAction>()
+            .WithSettings(CreateSettings("news"))
+            .GetOutcomesAsync();
+
+        Assert.Equal(new[] { "news", "events", "other" }, outcomes.Select(o => o.Key));
+    }
+
+    [Fact]
+    public async Task BranchOutcome_MatchingCategory_IsThatCategory()
+    {
+        var execution = await ActionTestHarness.For<RouteByCategoryAction>()
+            .WithSettings(CreateSettings("events"))
+            .ExecuteWithOutcomeAsync();
+
+        Assert.Equal("events", execution.BranchOutcome);
+    }
+
+    [Fact]
+    public async Task BranchOutcome_NoMatch_IsTheDefault()
+    {
+        var execution = await ActionTestHarness.For<RouteByCategoryAction>()
+            .WithSettings(CreateSettings("jobs"))
+            .ExecuteWithOutcomeAsync();
+
+        Assert.Equal("other", execution.BranchOutcome);
+        Assert.Null(execution.OutcomeProblem);
+    }
+}
+```
+{% endcode %}
+
+`RoutedActionResult` has these members:
+
+| Member                     | Description                                                                                                       |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `Result`                   | The `ActionResult` exactly as the action returned it.                                                             |
+| `BranchOutcome`            | The exit a run would follow. `null` when the action declares no outcomes and returned none, when the result isn't a plain success, or when `OutcomeProblem` is set. |
+| `OutcomeProblem`           | Why a run would fail the step, such as a broken declaration, or no outcome returned and no default declared.     |
+| `UndeclaredOutcomeWarning` | Set when the action returned an outcome it doesn't declare.                                                       |
+
+When `OutcomeProblem` is set, `Result.Status` can still be `Success`, although a run would fail the step. Assert on `BranchOutcome` and `OutcomeProblem` instead of `Result.Status`.
+
 ## Writing Run Log Entries
 
 Call the log methods on `ActionContext` to record what the action did. Entries appear in the step's **Logs** tab in the run view. See [Reviewing Runs](../backoffice/runs.md#log-entries).
