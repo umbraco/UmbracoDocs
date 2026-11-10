@@ -84,9 +84,18 @@ Once it has been enabled, the next time the member logs in, they will be forced 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](../../../.gitbook/assets/org-projects.png)
+![The organization Projects list showing the Umbraco version, hosting type, and ownership of each project](../../../.gitbook/assets/organization-projects-list.png)
 
-It is possible to see the plan, project status, payment status, creation date, region, and number of environments for each of your projects.
+For each project, the list shows the following:
+
+* The Umbraco version running on the live environment.
+* The project type and plan.
+* The hosting type, which is either **Shared** or **Dedicated** followed by the size of the dedicated option.
+* The project status and payment status.
+* The creation date, region, and number of environments.
+* The ownership. The `PAY` and `TECH` labels show whether your organization is the payment owner and the technical owner of the project.
+
+The project name links to the project page for the projects where you are a team member.
 
 As an administrator, you can invite members of your organization to the different projects under the organization.
 
