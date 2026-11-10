@@ -1,6 +1,8 @@
 ---
 description: >-
-  Learn how to view and act on the recommendations Umbraco Cloud gives you for your projects and organization.
+  Learn how to view and act on the recommendations Umbraco Cloud gives you for
+  your projects and organization.
+hidden: true
 ---
 
 # Recommendations
@@ -20,10 +22,7 @@ Recommendations are enabled and collected automatically for your projects. Heart
 Only project admins and organization admins can see recommendations for a project.
 {% endhint %}
 
-<figure>
-    <img src="../../.gitbook/assets/recommendations-project-ui.png" alt="UI that displays recommendations for a specific project.">
-    <figcaption><p>Project recommendations UI</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/recommendations-project-ui.png" alt="UI that displays recommendations for a specific project."><figcaption><p>Project recommendations UI</p></figcaption></figure>
 
 This page shows recommendations for the project and its environments. Select each environment to access the overview of recommendations as well as the trend. The trend shows how many recommendations have passed in that environment over time.
 
@@ -36,19 +35,16 @@ This page shows recommendations for the project and its environments. Select eac
 Only organization admins can see recommendations for an organization.
 {% endhint %}
 
-<figure>
-    <img src="../../.gitbook/assets/recommendations-organization-ui.png" alt="UI that displays recommendations for all projects within an organization.">
-    <figcaption><p>Organization recommendations UI</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/recommendations-organization-ui.png" alt="UI that displays recommendations for all projects within an organization."><figcaption><p>Organization recommendations UI</p></figcaption></figure>
 
 This page shows recommendations for all projects in the organization, aggregated in different ways to draw your attention to the most important areas. From here you can access the project recommendations page too.
 
 ## Snooze and suppress recommendations
 
-You might deem that some recommendations are not relevant for an environment, project, or organization. Depending on whether this is a temporary or permanent situation, you can snooze or suppress the recommendation through the UI. Snoozed and suppressed recommendations don't count towards the [recommendation score](#recommendation-score).
+You might deem that some recommendations are not relevant for an environment, project, or organization. Depending on whether this is a temporary or permanent situation, you can snooze or suppress the recommendation through the UI. Snoozed and suppressed recommendations don't count towards the [recommendation score](recommendations.md#recommendation-score).
 
 {% hint style="info" %}
-Recommendations that you snooze or suppress don't change your score immediately. Your score updates automatically [the next time the system collects recommendations](#when-recommendations-are-updated).
+Recommendations that you snooze or suppress don't change your score immediately. Your score updates automatically [the next time the system collects recommendations](recommendations.md#when-recommendations-are-updated).
 {% endhint %}
 
 To snooze a recommendation:
@@ -66,19 +62,13 @@ To suppress a recommendation:
 3. Provide a reason.
 4. Select **Mark not relevant**.
 
-<figure>
-    <img src="../../.gitbook/assets/recommendations-snooze-and-suppress.png" alt="UI that displays how to snooze and suppress recommendations.">
-    <figcaption><p>Snoozing and suppressing recommendations through the UI</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/recommendations-snooze-and-suppress.png" alt="UI that displays how to snooze and suppress recommendations."><figcaption><p>Snoozing and suppressing recommendations through the UI</p></figcaption></figure>
 
 ## Recommendation score
 
 The recommendation score refers to the number of checks that pass in a project (and its environments) and in an organization. Besides the count of checks that pass, you can also examine the pass trend for each environment on the project recommendations page:
 
-<figure>
-    <img src="../../.gitbook/assets/recommendations-score-trend.png" alt="Graph displaying the number of recommendations passing for an environment over time.">
-    <figcaption><p>Environment recommendation pass trend over time</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/recommendations-score-trend.png" alt="Graph displaying the number of recommendations passing for an environment over time."><figcaption><p>Environment recommendation pass trend over time</p></figcaption></figure>
 
 When a recommendation is snoozed or suppressed, it doesn't count towards the score.
 
@@ -86,9 +76,9 @@ When a recommendation is snoozed or suppressed, it doesn't count towards the sco
 
 Recommendations are collected automatically for your project, but changes might take some time to be reflected. Here are the rules that define when recommendations are collected, and therefore when the score is recalculated:
 
-- When you create a project, recommendations are collected for it starting at 00:00 UTC the next day.
-- Whenever Umbraco publishes a new recommendation, recommendations are collected for all projects in Umbraco Cloud starting at 00:00 UTC the next day.
-- Whenever you take an action that can change the value of a recommendation, the affected recommendations are scanned asynchronously. Such actions include enabling a feature, changing configuration, or deploying your project. The recommendation score might be updated within the next 15 minutes.
+* When you create a project, recommendations are collected for it starting at 00:00 UTC the next day.
+* Whenever Umbraco publishes a new recommendation, recommendations are collected for all projects in Umbraco Cloud starting at 00:00 UTC the next day.
+* Whenever you take an action that can change the value of a recommendation, the affected recommendations are scanned asynchronously. Such actions include enabling a feature, changing configuration, or deploying your project. The recommendation score might be updated within the next 15 minutes.
 
 Recommendations are not collected when you snooze or suppress one.
 
@@ -100,29 +90,29 @@ Here are the different ways recommendations are organized.
 
 This describes what the recommendation is related to.
 
-- Security
-- Performance
-- Best practices
-- Operations
+* Security
+* Performance
+* Best practices
+* Operations
 
 ### Scope
 
 This describes where the recommendation applies: either an environment, a project, or an organization.
 
-- Environment
-- Project
-- Organization
+* Environment
+* Project
+* Organization
 
 ### Severity
 
 This describes how important it is to take action on the specific recommendation.
 
-- Critical
-- To fix
-- To review
-- Passing
+* Critical
+* To fix
+* To review
+* Passing
 
-Severity of recommendations is evaluated on a case-by-case basis, looking at different factors. What factors affect severity depends on each individual recommendation. See [the catalog](#recommendation-catalog) below for more information.
+Severity of recommendations is evaluated on a case-by-case basis, looking at different factors. What factors affect severity depends on each individual recommendation. See [the catalog](recommendations.md#recommendation-catalog) below for more information.
 
 ## Recommendation catalog
 
@@ -130,9 +120,9 @@ Umbraco Cloud checks your projects against the following recommendations.
 
 ### S1: WAF enabled
 
-- Category: Security
-- Scope: Environment
-- Severity: Depends on the environment and on how many custom domains have the managed rules switched off. It is highest when the rules are off on every custom domain of the Live environment. It is lowest when the environment has no custom domains or is not the Live environment.
+* Category: Security
+* Scope: Environment
+* Severity: Depends on the environment and on how many custom domains have the managed rules switched off. It is highest when the rules are off on every custom domain of the Live environment. It is lowest when the environment has no custom domains or is not the Live environment.
 
 Cloudflare's managed WAF rules should be enabled for the environment's custom domains.
 
@@ -140,9 +130,9 @@ A web application firewall inspects incoming traffic. It blocks common attack pa
 
 ### S2: TLS no legacy ciphers
 
-- Category: Security
-- Scope: Environment
-- Severity: Depends on the environment and on how many custom domains allow legacy cipher suites. It is highest when every custom domain of the Live environment allows them. It is lowest when the environment has no custom domains or is not the Live environment.
+* Category: Security
+* Scope: Environment
+* Severity: Depends on the environment and on how many custom domains allow legacy cipher suites. It is highest when every custom domain of the Live environment allows them. It is lowest when the environment has no custom domains or is not the Live environment.
 
 Custom domains should not allow legacy TLS cipher suites.
 
@@ -150,9 +140,9 @@ A cipher suite is the set of encryption methods a browser and the site agree on 
 
 ### S3: Custom hostname configured
 
-- Category: Security
-- Scope: Environment
-- Severity: Depends on the environment and on whether a custom hostname is registered. It is highest on the Live environment when no custom hostname is registered. It is lowest on any environment other than Live.
+* Category: Security
+* Scope: Environment
+* Severity: Depends on the environment and on whether a custom hostname is registered. It is highest on the Live environment when no custom hostname is registered. It is lowest on any environment other than Live.
 
 Environments should serve traffic on a custom hostname.
 
@@ -160,9 +150,9 @@ A custom hostname is what enables the Web Application Firewall, TLS configuratio
 
 ### S4: Runtime mode Production
 
-- Category: Security
-- Scope: Environment
-- Severity: The same for every environment.
+* Category: Security
+* Scope: Environment
+* Severity: The same for every environment.
 
 Live sites should run in the Production runtime mode.
 
@@ -170,9 +160,9 @@ Umbraco's [runtime mode](https://docs.umbraco.com/umbraco-cms/run-in-production/
 
 ### S5: SQL firewall restricted
 
-- Category: Security
-- Scope: Environment
-- Severity: The same for every environment.
+* Category: Security
+* Scope: Environment
+* Severity: The same for every environment.
 
 SQL firewall should not allow traffic from any IP address.
 
@@ -180,9 +170,9 @@ Each environment's SQL database has firewall rules that restrict which IP addres
 
 ### P1: CDN caching enabled
 
-- Category: Performance
-- Scope: Environment
-- Severity: Depends on the environment. It is lower when the environment has no custom domains or is not the Live environment.
+* Category: Performance
+* Scope: Environment
+* Severity: Depends on the environment. It is lower when the environment has no custom domains or is not the Live environment.
 
 Cloudflare edge caching should be enabled for the environment's custom domains.
 
@@ -190,19 +180,19 @@ With edge caching on, Cloudflare serves cached responses from the location close
 
 ### P2: CDN caching TTL
 
-- Category: Performance
-- Scope: Environment
-- Severity: Depends on the environment and on the shortest edge cache time to live (TTL) among the custom hostnames. It is highest when any hostname has a TTL under 1 hour. It is lowest outside the Live environment, when no hostname is cached, or when every TTL is between 1 and 30 days.
+* Category: Performance
+* Scope: Environment
+* Severity: Depends on the environment and on the shortest edge cache time to live (TTL) among the custom hostnames. It is highest when any hostname has a TTL under 1 hour. It is lowest outside the Live environment, when no hostname is cached, or when every TTL is between 1 and 30 days.
 
 Edge cache TTL should be 30 days or more on every custom hostname.
 
-Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname. It uses the hostname own setting, or the environment default if none is set. It flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN caching enabled](#p1-cdn-caching-enabled) recommendation instead.
+Cloudflare holds a cached response at the edge for the length of the edge cache TTL. A short TTL sends visitors back to the origin far more often than necessary, which costs response time and load on the environment. Umbraco Cloud purges the cache on publish and on deployment, so a long TTL does not delay content updates. This check reports the TTL in force on each active custom hostname. It uses the hostname own setting, or the environment default if none is set. It flags any hostname below the recommended 30 days. Hostnames with caching switched off are reported by the [CDN caching enabled](recommendations.md#p1-cdn-caching-enabled) recommendation instead.
 
 ### B5: Umbraco.Cloud.Cms package installed
 
-- Category: Best practices
-- Scope: Environment
-- Severity: The same for every environment.
+* Category: Best practices
+* Scope: Environment
+* Severity: The same for every environment.
 
 Environments running Umbraco 13 or later should have the Umbraco.Cloud.Cms package installed.
 
@@ -210,9 +200,9 @@ The Umbraco.Cloud.Cms package wires an Umbraco site into the Umbraco Cloud platf
 
 ### B6: Models Builder disabled on Live
 
-- Category: Best practices
-- Scope: Environment
-- Severity: The same for every environment.
+* Category: Best practices
+* Scope: Environment
+* Severity: The same for every environment.
 
 Live sites should not generate content models while running.
 
@@ -220,10 +210,10 @@ Live sites should not generate content models while running.
 
 ### X1: Uptime monitoring active
 
-- Category: Operations
-- Scope: Project
-- Severity: The same for every project.
-- More information: [Hostname Monitoring](hostname-monitoring.md)
+* Category: Operations
+* Scope: Project
+* Severity: The same for every project.
+* More information: [Hostname Monitoring](hostname-monitoring.md)
 
 At least one enabled uptime monitor should watch the project's hostnames.
 
@@ -231,10 +221,10 @@ An uptime monitor regularly requests one of your hostnames from different locati
 
 ### X2: Non-default alerts created
 
-- Category: Operations
-- Scope: Project
-- Severity: The same for every project.
-- More information: [Alerting and Notifications](alerting-and-notifications/README.md)
+* Category: Operations
+* Scope: Project
+* Severity: The same for every project.
+* More information: [Alerting and Notifications](alerting-and-notifications/)
 
 At least one alert rule should be enabled for the project.
 
