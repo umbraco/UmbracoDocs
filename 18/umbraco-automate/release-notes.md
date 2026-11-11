@@ -14,6 +14,60 @@ If there are any breaking changes or other issues to be aware of when upgrading,
 
 This section contains the release notes for Umbraco Automate 18, including all changes for this version.
 
+### [18.6.0](https://github.com/umbraco/Umbraco.Automate/compare/Umbraco.Automate@18.5.1...Umbraco.Automate@18.6.0) (November 10th 2026)
+
+{% hint style="warning" %}
+
+This release changes some existing behavior. Review these points before upgrading:
+
+* **Unknown binding filters fail.** A filter name Automate doesn't know, such as the typo `formtDate`, now fails the step, and Automate doesn't retry it. The error names the filter. Publishing an automation that uses one is refused. Before, the filter was skipped and the unfiltered value was used [#571](https://github.com/umbraco/Umbraco.Automate/pull/571).
+* **Dates in bindings use ISO 8601.** A date such as `${ trigger.publishDate }`, or `formatDate` with no format, now renders like `2026-11-04T10:00:00.0000000Z` on every server. Before, the format depended on the server's culture. Use `formatDate:<format>` for readable dates [#529](https://github.com/umbraco/Umbraco.Automate/pull/529).
+* **Numbers in bindings use `.` as the decimal separator.** On a server with a comma-decimal culture, such as `da-DK`, numbers now render as `701.1` instead of `701,1`. That affects messages, emails, and HTTP bodies. Numeric **If** and **Switch** conditions give the same result on every server [#519](https://github.com/umbraco/Umbraco.Automate/pull/519).
+* **Dates keep their UTC offset between steps.** A date string such as `2026-11-04T10:00:00+05:00` reaches later steps as it was written. Before, it could be converted to the server's local time [#564](https://github.com/umbraco/Umbraco.Automate/pull/564).
+* **Items in the recycle bin count as missing.** Update Content Property, Update Media Property, Create Content, Create Media, and Notify Editor now take their **Not found** exit for a trashed item. The Create actions take **Parent not found** for a trashed parent. Before, a service account with a root start node could change trashed items [#514](https://github.com/umbraco/Umbraco.Automate/pull/514).
+* **Create Content and Create Media check allowed child types.** The step fails when the parent's type doesn't allow the type being created, as in the backoffice. Create Media also checks **Allow at root** at the media root [#528](https://github.com/umbraco/Umbraco.Automate/pull/528).
+
+{% endhint %}
+
+#### Step outcomes
+
+Actions can now declare named outcomes, and the canvas draws one exit for each. For example, **Get Content** has **Found** and **Not found** exits, so you can route a run on whether the item exists. The content and media actions declare outcomes too. The run view shows the exit each step took. Publishing is refused when a connection leaves from an outcome the step no longer has [#445](https://github.com/umbraco/Umbraco.Automate/pull/445). Existing automations show the exits of the built-in actions on the right edge of the step. For more information, see [Control Flow](concepts/control-flow.md#how-outcomes-route-a-run).
+
+Custom actions can declare their own outcomes. `ActionTestHarness` can check the exit a test run took. The harness now passes your `WithSettings` object to the action's settings, instead of `null` [#445](https://github.com/umbraco/Umbraco.Automate/pull/445). For more information, see [Create a Custom Action](extending/custom-action.md#declaring-outcomes).
+
+#### Library element actions and triggers
+
+New actions read and change Library elements: **Get Element**, **Get Element Property**, **Create Element**, **Update Element Property**, **Publish Element**, and **Unpublish Element**. New **Element Saved**, **Element Batch Saved**, **Element Published**, and **Element Unpublished** triggers start an automation when an editor works on an element [#574](https://github.com/umbraco/Umbraco.Automate/pull/574). For more information, see [Actions](concepts/actions.md#library-elements) and [Triggers](concepts/triggers.md#library-elements).
+
+#### Application Started trigger
+
+The new **Application Started** trigger starts an automation when the site starts. It can be limited to the main server in a load-balanced setup [#588](https://github.com/umbraco/Umbraco.Automate/pull/588). For more information, see [Triggers](concepts/triggers.md#application-started).
+
+#### Send Email
+
+**Send Email** can set Reply-To, CC, and BCC addresses. Addresses are entered as tags [#486](https://github.com/umbraco/Umbraco.Automate/pull/486). For more information, see [Actions](concepts/actions.md#send-email-addresses).
+
+#### Bindings in picker settings
+
+Content, media, element and other picker settings on a step can take a binding expression instead of a picked item [#443](https://github.com/umbraco/Umbraco.Automate/pull/443). For more information, see [Bindings](concepts/bindings.md#pick-or-bind-an-item).
+
+#### Restarts and recovery
+
+* After the backoffice installer finishes, Automate and its OpenIddict package pick up the database connection string without a restart. Before, the site could stop right after you clicked **Install**, or backoffice login could fail [#568](https://github.com/umbraco/Umbraco.Automate/pull/568).
+* The site starts without a database connection string, as during a fresh install [#530](https://github.com/umbraco/Umbraco.Automate/pull/530).
+* A failure during startup recovery no longer stops the site. Automate logs the error and leaves the engine off until a restart. Trigger events are held, not dropped, and **Run now** returns a 409 response. Scheduled triggers skip their due runs until then [#572](https://github.com/umbraco/Umbraco.Automate/pull/572).
+
+#### Other
+
+* Bindings: Let `formatDate` format ISO date strings [#553](https://github.com/umbraco/Umbraco.Automate/pull/553). When the format doesn't fit the value, the value is left unchanged [#565](https://github.com/umbraco/Umbraco.Automate/pull/565).
+* Find Content and Find Media: Leave recycle-bin items out of the results [#527](https://github.com/umbraco/Umbraco.Automate/pull/527), and read the indexed create and update dates correctly [#554](https://github.com/umbraco/Umbraco.Automate/pull/554).
+* Runs: Save the loop iteration on each step run inside a loop [#534](https://github.com/umbraco/Umbraco.Automate/pull/534).
+* Configuration: Read decimal values with the invariant culture [#522](https://github.com/umbraco/Umbraco.Automate/pull/522).
+* Management API: Write dates with the invariant culture [#525](https://github.com/umbraco/Umbraco.Automate/pull/525).
+* Management API: Return a 400 response instead of a 500 when the output schema endpoint gets invalid settings [#445](https://github.com/umbraco/Umbraco.Automate/pull/445).
+* Run Script: Stop a slow `fetch` from failing the step [#492](https://github.com/umbraco/Umbraco.Automate/pull/492).
+* Canvas: Keep Space and Backspace in code editors on the canvas [#520](https://github.com/umbraco/Umbraco.Automate/pull/520). Redraw the canvas when you return to it [#524](https://github.com/umbraco/Umbraco.Automate/pull/524). Stop opening an automation from marking it as changed [#482](https://github.com/umbraco/Umbraco.Automate/pull/482).
+
 ### [18.5.1](https://github.com/umbraco/Umbraco.Automate/compare/Umbraco.Automate@18.5.0...Umbraco.Automate@18.5.1) (October 8th 2026)
 
 {% hint style="warning" %}
