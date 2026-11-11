@@ -34,7 +34,7 @@ The [release candidate is available on NuGet](https://www.nuget.org/packages/Umb
 1. Install the Umbraco dotnet template for the Release Candidate.
 
 ```cmd
-dotnet new install Umbraco.Templates::17.0.0-beta
+dotnet new install Umbraco.Templates@17.0.0-beta
 ```
 
 2. Create a new Umbraco project.
