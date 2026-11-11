@@ -22,5 +22,5 @@ When creating or editing documentation content, use the `umbraco-docs-content` s
 ## PR Process (always apply)
 
 - Structure the PR body after `.github/pull_request_template.md`. `gh pr create --body` does not apply this template, so match its sections manually.
-- For AI-generated or AI-assisted content, disclose it in the description, apply the `ai-generated` label, and keep the PR within 10 article files. Mirrored version folders (e.g. `17/` and `18/`) count as separate files.
+- For AI-generated or AI-assisted content, disclose it in the description, apply the `ai-generated` label, and keep the PR within 10 article files per version folder (unversioned folders such as `umbraco-cloud/` count as one group). Mechanical changes are exempt. The `umbraco-docs-content` skill has the full rule.
 - See the [AI Contribution Guidelines](https://docs.umbraco.com/contributing/documentation/ai-guidelines) for the full rules.

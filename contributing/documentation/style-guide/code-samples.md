@@ -203,8 +203,11 @@ The Umbraco Documentation operates with three types of code samples.
 Use inline code when:
 
 * Referencing methods.
-* Using the names of certain code elements.
+* Using the names of code elements, such as classes, interfaces, properties, and namespaces.
 * Highlighting a certain value.
+* Naming configuration keys, file names, file paths, CLI commands, and NuGet package IDs.
+
+Format UI labels in **bold** instead. Product and feature names, such as Umbraco Forms and Document Type, stay plain text.
 
 Example:
 

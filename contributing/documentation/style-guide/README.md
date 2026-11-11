@@ -34,6 +34,7 @@ There are two types of commonly used lists in the Umbraco documentation: ordered
 * Use **unordered lists** for sets of options, notes, criteria, and the like.
 * Start lists with capital letters.
   * An exception to this rule would be when listing method names that use _camelcase_. In this case, highlight the names using in-line code formatting.
+* End full-sentence list items with a period. Don't add end punctuation to fragments, such as names, options, or short noun phrases. Don't mix both styles in one list.
 
 #### Ordered lists
 
@@ -63,6 +64,15 @@ Use the present tense for statements that describe general behavior that's not a
 ⛔ The Document Type was added…
 
 ✅ The Document Type is added...
+
+### Use strong language
+
+Avoid "should", "could", "would", and "might". State what to do or what is true:
+
+* Instruction: ⛔ You should add the property. ✅ Add the property.
+* Requirement: ⛔ The key should be unique. ✅ The key must be unique.
+* Capability: ⛔ You could use a custom provider. ✅ You can use a custom provider.
+* Recommendation: ⛔ You should use X. ✅ We recommend using X.
 
 ### Avoid Editorializing
 
