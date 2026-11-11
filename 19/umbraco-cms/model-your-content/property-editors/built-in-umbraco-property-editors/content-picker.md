@@ -1,3 +1,8 @@
+---
+tags:
+  - Deprecated
+---
+
 # Multi Node Tree Picker (MNTP)
 
 `Schema Alias: Umbraco.MultiNodeTreePicker`
@@ -21,9 +26,9 @@ The Multi Node Tree Picker enables choosing the type of content tree to display 
 
 ## Data Type Definition Example
 
-![MNTP Data Type Settings](../../../.gitbook/assets/ContentPicker-data-type-definition.png)
+![MNTP Data Type Settings](../../../.gitbook/assets/multi-node-tree-picker-data-definition.png)
 
-### Minimum/maximum number of items
+### Amount
 
 Define a limit on the number of items allowed to be selected.
 
@@ -159,7 +164,7 @@ You can do this in an `umbraco-package.json` file, as shown below:
 }
 ```
 
-### Allow items of type
+### Accepted Types
 
 Choose which types of content should be available to pick using the MNTP.
 
