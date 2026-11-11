@@ -6,10 +6,6 @@ description: >-
 
 # Member Form Submissions
 
-{% hint style="info" %}
-This feature is available from Umbraco Forms 17.5 and 18.1.
-{% endhint %}
-
 The member editor in the **Members** section includes a **Forms** tab. The tab lists the forms a member has submitted and lets you open their entries without leaving the Members section.
 
 ## The Forms tab

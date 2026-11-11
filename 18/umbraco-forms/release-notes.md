@@ -20,6 +20,15 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (November 12th 2026)
+
+The changes below are the ones made since `18.3.0-rc2`.
+
+* Multi-page Forms: Show the captions of prevalue answers given on earlier pages in workflow emails, instead of their stored values [#1821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1821)
+* Field Types: Show field type names and descriptions in the backoffice user's language [#1819](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1819)
+* Date Picker: Update the moment library used by the date picker to 2.31.0 [GHSA-4p3w-j4w9-5jqw](https://github.com/advisories/GHSA-4p3w-j4w9-5jqw)
+* All items detailed under release candidates for 18.3.0.
+
 ### 18.3.0-rc2 (November 5th 2026)
 
 The changes below are the ones made since `18.3.0-rc`. For everything else in this release, see the `18.3.0-rc` notes.
