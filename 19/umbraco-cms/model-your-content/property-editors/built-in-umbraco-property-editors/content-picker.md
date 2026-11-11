@@ -1,28 +1,27 @@
-# Content Picker
+# Multi Node Tree Picker (MNTP)
 
-`Schema Alias: Umbraco.ContentPicker`
+`Schema Alias: Umbraco.MultiNodeTreePicker`
 
-`UI Alias: Umb.PropertyEditorUi.DocumentPicker`
+`UI Alias: Umb.PropertyEditorUi.ContentPicker`
 
-`Returns: IEnumerable<IPublishedContent>`
-
-The Content Picker enables choosing the type of content tree to display and which specific part to render. It also allows you to set a dynamic root node for the content based on the current document using the Content Picker.
+`Returns: IEnumerable<IPublishedContent>` (multiple items)
+`Returns: IPublishedContent` (single item)
 
 {% hint style="info" %}
-The Content Picker was formerly known as the **Multinode Treepicker** in version 13 and below.
+The Multi Node Tree Picker is deprecated and hidden by default.
 
-The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.MultiNodeTreePicker` schema alias.
+Set `Umbraco:CMS:DataTypes:OfferDeprecatedPropertyEditors` to `true` in `appsettings.json` to add the MNTP to the property editor options in the backoffice.
 
-The change was made as the word **Content** in the backoffice acts as an umbrella term covering Documents, Media, and Members.
+Since Umbraco 14 this property was labelled **Content Picker**.
 
-**Are you looking for the original Content Picker?**
-
-The Content Picker from version 13 and below has been renamed [Document Picker](document-picker.md).
+As an alternative to the MNTP, use the Document, Media and Member pickers.
 {% endhint %}
+
+The Multi Node Tree Picker enables choosing the type of content tree to display and which specific part to render. It also allows you to set a dynamic root node for the content based on the current document using the MNTP.
 
 ## Data Type Definition Example
 
-![Content Picker Data Type Settings](../../../.gitbook/assets/ContentPicker-data-type-definition.png)
+![MNTP Data Type Settings](../../../.gitbook/assets/ContentPicker-data-type-definition.png)
 
 ### Minimum/maximum number of items
 
@@ -40,9 +39,9 @@ When selecting Content from the dropdown, the option to specify a root node, als
 
 <figure><img src="../../../.gitbook/assets/specify-root-node.png" alt=""><figcaption><p>The option to specify a root node also called the "origin" becomes available when Content is selected as the Node Type.</p></figcaption></figure>
 
-When picking the **origin** there are several different options available:
+When picking the **origin** there are different options available:
 
-<figure><img src="../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the Content Picker.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/pick-origin-root-node.png" alt=""><figcaption><p>The available options for setting a root node (origin) for the MNTP.</p></figcaption></figure>
 
 The following options are available when picking the origin:
 
@@ -71,7 +70,7 @@ The options above are all based on navigating the document hierarchy by locating
 
 Each query step takes the output from the origin or the previous step as input. It is only ever the result of the last query step that is passed to the next step.
 
-![Query steps appended to a Content Picker with the type Content.](../../../.gitbook/assets/content-picker-query-steps.png)
+![Query steps appended to a MNTP with the type Content.](../../../.gitbook/assets/content-picker-query-steps.png)
 
 #### Adding a custom query step
 
@@ -162,7 +161,7 @@ You can do this in an `umbraco-package.json` file, as shown below:
 
 ### Allow items of type
 
-Choose which types of content should be available to pick using the Content Picker.
+Choose which types of content should be available to pick using the MNTP.
 
 This is done by selecting one or more Document Types.
 
@@ -188,7 +187,7 @@ Consider the following tree structure where the Document Type alias is presented
       * The Barn \[`stage`]
       * The Theatre \[`stage`]
 
-Consider configuring a Content Picker on the `talk` Document Type to select a `stage` for the `talk`. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as the origin.
+Consider configuring a MNTP on the `talk` Document Type to select a `stage` for the `talk`. Here, you want to display only the stages for the actual year. To do this, you need to set the parent as the origin.
 
 For instance, if you are on the `Umbraco anno MMXXIII` node, the collection of content keys passed into the first query step will only contain the `Talks` content node.
 
@@ -203,12 +202,14 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ```csharp
 @{
-    var typedContentPicker = Model.Value<IEnumerable<IPublishedContent>>("featuredArticles");
-    if (typedContentPicker != null) {
-        foreach (var item in typedContentPicker)
+    var selectedItems = Model.Value<IEnumerable<IPublishedContent>>("featuredArticles");
+    if (selectedItems != null)
+    {
+        foreach (var item in selectedItems)
         {
             <p>@item.Name</p>
         }
+    }
 }
 ```
 
@@ -216,8 +217,8 @@ When opening the picker on the `Umbraco anno MMXXIII` node, it will now show the
 
 ```csharp
 @{
-    var typedContentPicker = Model.FeaturedArticles;
-    foreach (var item in typedContentPicker)
+    var selectedItems = Model.FeaturedArticles;
+    foreach (var item in selectedItems)
     {
         <p>@item.Name</p>
     }
@@ -243,7 +244,7 @@ The example below demonstrates how to add values programmatically using a Razor 
     // Get the page using the GUID you've defined
     var content = ContentService.GetById(guid); // ID of your page
 
-    // Get the pages you want to assign to the Content Picker
+    // Get the pages you want to assign to the Multi Node Tree Picker
     var page = Umbraco.Content("665d7368-e43e-4a83-b1d4-43853860dc45");
     var anotherPage = Umbraco.Content("1f8cabd5-2b06-4ca1-9ed5-fbf14d300d59");
 
