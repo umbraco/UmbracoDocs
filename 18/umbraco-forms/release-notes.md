@@ -22,7 +22,29 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 
 ### [18.3.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (November 12th 2026)
 
-The changes below are the ones made since `18.3.0-rc2`.
+#### Consent details for the Data Consent field
+
+The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
+
+For more information, see the [Field Types](editor/creating-a-form/fieldtypes/README.md) article and discussion [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508).
+
+#### Content Security Policy nonce on Forms scripts
+
+Forms now adds a nonce to the script tags it renders, including the reCAPTCHA v2 script. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+External script and stylesheet URLs are now rendered as registered, without the Forms version.
+
+For more information, see the [Content Security Policy nonce](developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article and discussion [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554).
+
+#### Recycle bin notifications
+
+Moving a form or folder to the recycle bin, or restoring it, now publishes notifications that custom code can handle. There are eight: a cancelable notification before each operation and one after it, for forms and for folders.
+
+Forms also refreshes its cache on all servers when a form or folder is moved to the recycle bin or restored.
+
+For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
+
+#### Other
 
 * Multi-page Forms: Show the captions of prevalue answers given on earlier pages in workflow emails, instead of their stored values [#1821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1821)
 * Field Types: Show field type names and descriptions in the backoffice user's language [#1819](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1819)
@@ -47,30 +69,6 @@ The changes below are the ones made since `18.3.0-rc`. For everything else in th
 * Update dependencies to Umbraco CMS 18.3.0. The release candidate required 18.3.0-rc2 or later.
 
 ### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
-
-#### Consent details for the Data Consent field
-
-The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
-
-For more information, see the [Field Types](editor/creating-a-form/fieldtypes/README.md) article and discussion [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508).
-
-#### Content Security Policy nonce on Forms scripts
-
-Forms now adds a nonce to the script tags it renders, including the reCAPTCHA v2 script. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
-
-External script and stylesheet URLs are now rendered as registered, without the Forms version.
-
-For more information, see the [Content Security Policy nonce](developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article and discussion [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554).
-
-#### Recycle bin notifications
-
-Moving a form or folder to the recycle bin, or restoring it, now publishes notifications that custom code can handle. There are eight: a cancelable notification before each operation and one after it, for forms and for folders.
-
-Forms also refreshes its cache on all servers when a form or folder is moved to the recycle bin or restored.
-
-For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
-
-#### Other
 
 * OpenAPI: Describe content routes in the Forms Delivery API document as the endpoints send them, so generated clients get the real properties
 * Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does

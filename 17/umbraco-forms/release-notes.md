@@ -20,31 +20,6 @@ This section contains the release notes for Umbraco Forms 17 including all chang
 
 ### [17.7.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (November 12th 2026)
 
-The changes below are the ones made since `17.7.0-rc2`.
-
-* Multi-page Forms: Show the captions of prevalue answers given on earlier pages in workflow emails, instead of their stored values [#1821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1821)
-* Field Types: Show field type names and descriptions in the backoffice user's language [#1819](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1819)
-* Date Picker: Update the moment library used by the date picker to 2.31.0 [GHSA-4p3w-j4w9-5jqw](https://github.com/advisories/GHSA-4p3w-j4w9-5jqw)
-* All items detailed under release candidates for 17.7.0.
-
-### 17.7.0-rc2 (November 5th 2026)
-
-The changes below are the ones made since `17.7.0-rc`. For everything else in this release, see the `17.7.0-rc` notes.
-
-* Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
-* Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
-* Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
-* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing. A message says how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
-* Recycle Bin: Hide the recycle bin from users with start folders
-* Security: Show missing and trashed start folders in the start folder picker
-* Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
-* Security: Security fix for start folders
-* Pickers: Clear a mandatory picker's validation error once a value is picked inside a block, so the block can be updated again. This covers the Form Picker (Single and Multiple), Theme Picker, Folder Picker and Form Details Picker, which now also block **Create** while empty [#1818](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1818)
-* Theme Picker: Show a "Choose a theme" placeholder when no theme is picked, instead of looking as if the first theme was chosen
-* Folder Picker: Keep the picked folders when a content property is saved. Values saved by earlier versions can't be recovered and now load as an empty selection
-
-### [17.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (October 29th 2026)
-
 #### Consent details for the Data Consent field
 
 The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
@@ -68,6 +43,29 @@ Forms also refreshes its cache on all servers when a form or folder is moved to 
 For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
 
 #### Other
+
+* Multi-page Forms: Show the captions of prevalue answers given on earlier pages in workflow emails, instead of their stored values [#1821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1821)
+* Field Types: Show field type names and descriptions in the backoffice user's language [#1819](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1819)
+* Date Picker: Update the moment library used by the date picker to 2.31.0 [GHSA-4p3w-j4w9-5jqw](https://github.com/advisories/GHSA-4p3w-j4w9-5jqw)
+* All items detailed under release candidates for 17.7.0.
+
+### 17.7.0-rc2 (November 5th 2026)
+
+The changes below are the ones made since `17.7.0-rc`. For everything else in this release, see the `17.7.0-rc` notes.
+
+* Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
+* Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
+* Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
+* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing. A message says how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
+* Recycle Bin: Hide the recycle bin from users with start folders
+* Security: Show missing and trashed start folders in the start folder picker
+* Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
+* Security: Security fix for start folders
+* Pickers: Clear a mandatory picker's validation error once a value is picked inside a block, so the block can be updated again. This covers the Form Picker (Single and Multiple), Theme Picker, Folder Picker and Form Details Picker, which now also block **Create** while empty [#1818](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1818)
+* Theme Picker: Show a "Choose a theme" placeholder when no theme is picked, instead of looking as if the first theme was chosen
+* Folder Picker: Keep the picked folders when a content property is saved. Values saved by earlier versions can't be recovered and now load as an empty selection
+
+### [17.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (October 29th 2026)
 
 * Delivery API: Return the full rich text element tree, instead of an empty root, when `RichTextOutputAsJson` is enabled [#1779](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1779)
 * Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
