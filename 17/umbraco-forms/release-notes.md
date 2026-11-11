@@ -49,6 +49,14 @@ For more information, see the [Recycle bin notifications](developer/extending/ad
 * Date Picker: Update the moment library used by the date picker to 2.31.0 [GHSA-4p3w-j4w9-5jqw](https://github.com/advisories/GHSA-4p3w-j4w9-5jqw)
 * All items detailed under release candidates for 17.7.0.
 
+{% hint style="warning" %}
+This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
+
+* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
+* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
+* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
+{% endhint %}
+
 ### 17.7.0-rc2 (November 5th 2026)
 
 The changes below are the ones made since `17.7.0-rc`. For everything else in this release, see the `17.7.0-rc` notes.
@@ -77,14 +85,6 @@ The changes below are the ones made since `17.7.0-rc`. For everything else in th
 * Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
 * Themes: Encode the page captions and summary caption shown in the multi-page paging details
 * Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
-
-{% hint style="warning" %}
-This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
-
-* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
-* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
-* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
-{% endhint %}
 
 ### 17.6.2 (October 27th 2026)
 * Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
