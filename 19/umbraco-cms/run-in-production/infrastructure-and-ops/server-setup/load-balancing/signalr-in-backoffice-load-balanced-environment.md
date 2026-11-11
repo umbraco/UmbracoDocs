@@ -63,6 +63,14 @@ Umbraco's backoffice SignalR client skips negotiation and connects directly usin
 
 The established WebSocket connection remains on that server. Your backplane distributes messages between servers; the setting does not register or replace a backplane.
 
+{% hint style="warning" %}
+If a server goes offline, backoffice users connected to that server can lose their SignalR connection. In testing, affected users stopped receiving real-time notifications until they performed a hard browser refresh.
+
+For example, users may not see notifications about another user's content changes. Packages that use SignalR for content locking may also be affected.
+
+Test server failover and connection recovery for your chosen setup, including Options 1 and 2. The behavior of those options has not been verified by this test.
+{% endhint %}
+
 {% hint style="info" %}
 A database backplane can have lower message throughput than other options. Overall performance depends on your backplane.
 {% endhint %}
