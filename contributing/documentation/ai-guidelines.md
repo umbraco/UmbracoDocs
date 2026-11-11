@@ -49,12 +49,12 @@ Keeping PRs smaller means better automated coverage, more reliable review, and l
 ### How files are counted
 
 * Each version folder counts separately. For example, `17/` and `18/` can have 10 article files each.
-* All unversioned folders (for example `umbraco-cloud/`) count as one group.
+* All non-versioned folders (for example `umbraco-cloud/`) count as one group.
 * An article file is any `.md` file, excluding `SUMMARY.md`.
 
 ### Exempt: mechanical changes
 
-A change is mechanical if it doesn't change what the docs tell the reader:
+A change is mechanical if it doesn't change what the documentation tell the reader:
 
 * Link fixes.
 * Screenshot refreshes (same UI) and alt text.

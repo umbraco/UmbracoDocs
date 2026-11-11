@@ -77,7 +77,7 @@ Content here.
 
 ## Version-Specific Notes
 
-Applies to products documented in numbered version folders (for example `17/umbraco-cms/`). It does not apply to unversioned products such as Umbraco Cloud. The contributor guide describes the same rules in `contributing/documentation/style-guide/markdown-conventions.md` (Version-specific notes).
+Applies to products documented in numbered version folders (for example `17/umbraco-cms/`). It does not apply to non-versioned products such as Umbraco Cloud. The contributor guide describes the same rules in `contributing/documentation/style-guide/markdown-conventions.md` (Version-specific notes).
 
 ### When to add a note
 
@@ -233,12 +233,12 @@ For hint syntax, links, content-ref, expandables, and other markdown conventions
 **Maximum 10 article files per version folder.**
 
 - Each version folder counts separately (`17/` and `18/` can have 10 article files each).
-- All unversioned folders (for example `umbraco-cloud/`) count as one group.
+- All non-versioned folders (for example `umbraco-cloud/`) count as one group.
 - An article file is any `.md` file except `SUMMARY.md`.
 
 ### Exempt: mechanical changes
 
-A change is mechanical if it doesn't change what the docs tell the reader:
+A change is mechanical if it doesn't change what the documentation tell the reader:
 
 - Link fixes
 - Screenshot refreshes (same UI) and alt text
@@ -253,7 +253,7 @@ The exemption applies only if **every** change in the PR is mechanical. State "M
 
 ### Over the limit?
 
-Count the article files per version folder (and for the unversioned group) while planning. If any count exceeds 10 and the change isn't purely mechanical, still do the work, but:
+Count the article files per version folder (and for the non-versioned group) while planning. If any count exceeds 10 and the change isn't purely mechanical, still do the work, but:
 
 - Tell the user at the start that the PR will go over the limit.
 - Explain why in the PR description.
