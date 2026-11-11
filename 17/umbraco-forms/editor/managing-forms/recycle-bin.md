@@ -8,7 +8,7 @@ description: >-
 
 Deleting a form or a folder moves it to the recycle bin. Nothing is removed from the database until you delete it from the bin.
 
-The **Recycle Bin** sits below the form tree in the **Forms** section.
+The **Recycle Bin** sits below the form tree in the **Forms** section. Only users who can manage forms and have no [start folders](../../developer/security.md#start-folders) see it.
 
 ![The Recycle Bin in the Forms section, listing the trashed forms.](../../.gitbook/assets/recycle-bin.png)
 
@@ -58,3 +58,18 @@ Deleting a form from the recycle bin cannot be undone. The form is removed along
 
 Export the entries you need before you delete a form. For details, see the [Viewing and Exporting Entries](../viewing-and-exporting-entries.md) article.
 {% endhint %}
+
+### Folders kept because they hold a start folder
+
+{% hint style="info" %}
+This feature is available from Umbraco Forms 17.7.0, which is currently a release candidate.
+{% endhint %}
+
+A folder in the recycle bin can still be a user's or user group's [start folder](../../developer/security.md#start-folders), or hold one further down. Removing it would leave those users with a start folder that no longer exists.
+
+* **Empty recycle bin** keeps these folders, and everything inside them, and removes the rest. A message says how many folders were kept.
+* Deleting one of these folders on its own is refused.
+
+To remove a kept folder, first take it out of the start folders of every user and user group that has it. Then empty the bin or delete the folder again.
+
+In a user's or user group's Forms security settings, the start folder picker tags a trashed start folder as **Trashed**.
