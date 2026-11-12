@@ -50,7 +50,7 @@ To install via Visual Studio, follow these steps:
 
 ```xml
 <ItemGroup>
-<PackageReference Include="Umbraco.Workflow" Version="14.x.x" />
+<PackageReference Include="Umbraco.Workflow" Version="19.x.x" />
 </ItemGroup>
 ```
 

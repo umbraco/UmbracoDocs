@@ -88,9 +88,9 @@ If attempting a one-off, large transfer operation, before a site is live, you co
 
 ### Review relation types included in deploy operations
 
-As well as transferring entities between environments Deploy will also include the relations between them. As of 10.1.2 and 11.0.1, two relation types used for usage tracking are omitted by default. These do not need to be transferred as they are recreated by the CMS as part of the save operation on the entity.
+As well as transferring entities between environments Deploy will also include the relations between them. By default, two relation types used for usage tracking are omitted. These do not need to be transferred as they are recreated by the CMS as part of the save operation on the entity.
 
-If using an earlier version, or to make further adjustments, modify the [settings for relation types](getting-started/deploy-settings.md#relationtypes) in configuration.
+To make further adjustments, modify the [settings for relation types](getting-started/deploy-settings.md#relationtypes) in configuration.
 
 ## Path too long exceptions
 

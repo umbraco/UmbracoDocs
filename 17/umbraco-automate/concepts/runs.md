@@ -17,7 +17,7 @@ Each run records enough data to trace what happened from trigger to final outcom
 | **Status**         | Pending, Running, Completed, Failed, Suspended, Cancelled, or Rejected.        |
 | **Initiator**      | Who or what started the run — a user, an event handler, a webhook, a schedule. |
 | **Trigger output** | The data emitted by the trigger.                                               |
-| **Steps**          | For each step: status, input, output, log entries, error, duration, retry count. |
+| **Steps**          | For each step: status, input, output, log entries, error, duration, retry count, and the exit the step took. |
 | **Version**        | Which published version of the automation was used.                            |
 
 A run's status is **Rejected**, not **Failed**, when it ends because a human declined a [Request Approval](../backoffice/approvals.md) step and nothing else went wrong. It is a terminal status, but not an error — the automation ran exactly as designed.
@@ -25,6 +25,17 @@ A run's status is **Rejected**, not **Failed**, when it ends because a human dec
 ## Run Detail View
 
 Open a run from the **Runs** view on the automation. The run detail view lists the trigger and each step that ran. Expand a step to see its input, output, and log entries for that run. See [Reviewing Runs](../backoffice/runs.md).
+
+### Exit Taken
+
+A step that branches records the exit it took. Branching steps are actions that declare outcomes, **If**, **Switch**, and **Request Approval**. See [Control Flow](control-flow.md#other-steps-that-branch).
+
+* On the run's **Canvas** view, the line each step took is highlighted. Other named lines from that step are dimmed. An **Any result** line is highlighted too, because it always runs.
+* On the run's **Details** view, expand the step. The **Details** tab shows **Exit taken** with the label of the exit.
+
+A step inside a loop can take a different exit on each iteration. The canvas highlights every exit the step took.
+
+Steps that don't branch and steps that failed have no exit taken. Neither do runs recorded before Umbraco Automate 17.6.0, because the exit wasn't saved then.
 
 ## Versioning and Runs
 

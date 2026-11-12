@@ -45,9 +45,9 @@ To export all the entries from your Form:
 5. Click **Export**.
 6. Click **Save**.
 
-If you have fields that allow the user to upload files within your form, you will also have the option to download a zip file containing these files. You can either download the files in the structure that they are stored on the web server's disk. Or you can download them organised by entry, so it's easier to match up the entry listed in the spreadsheet download with the uploaded file(s).
+If your form has file upload fields, you can also download a zip file of the uploaded files. You can download them in the structure they are stored in on the web server's disk. Alternatively, download them organized by entry. This makes it easier to match each entry in the spreadsheet download with its uploaded files.
 
-From Umbraco Forms 18.2.2, exporting entries requires the _View Entries_ permission and access to the form. An export can only be downloaded by the user who generated it. For details, see the [Security](../developer/security.md#access-to-forms-entries-and-exports) article.
+Exporting entries requires the _View Entries_ permission and access to the form. An export can only be downloaded by the user who generated it. For details, see the [Security](../developer/security.md#access-to-forms-entries-and-exports) article.
 
 Date values in an export follow the culture the entry was submitted with. An entry submitted on a Danish site exports its dates in Danish format, whatever language you use in the backoffice. A form with entries from more than one culture therefore holds more than one date format in the same column.
 

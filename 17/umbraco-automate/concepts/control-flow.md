@@ -53,9 +53,41 @@ ${ loop.index }
 
 ## Other Steps That Branch
 
-Not every branch comes from a control flow node. Some actions declare their own outcome handles. **Request Approval** branches on **Approved** and **Rejected** instead of running a single next step — see [Use Approvals](../backoffice/approvals.md).
+Not every branch comes from a control flow node. An action can declare named outcomes, and the canvas draws one exit per outcome on the right edge of the step. You then connect each exit to its own next step, without an **If** or **Switch** after the action. For example, **Get Content** has a **Found** exit and a **Not found** exit. See [Action Exits](actions.md#action-exits) for the exits each built-in action has.
+
+**Request Approval** branches on **Approved** and **Rejected** instead of running a single next step — see [Use Approvals](../backoffice/approvals.md).
+
+### How Outcomes Route a Run
+
+When a step whose action declares outcomes succeeds, the run follows the exit for the outcome the action returned:
+
+* An action can finish without naming an outcome. The run then follows the action's default exit, which the canvas marks **(default)**. Not every action has a default.
+* A step that fails doesn't follow any outcome exit. The step's error behavior applies instead.
+* An exit with nothing connected to it ends that path of the run.
+
+The run view shows the exit each step took. See [Runs](runs.md#exit-taken).
+
+### Outcomes From Settings
+
+Some actions build their exits from their settings, for example one exit per option you enter. The exits update when you save the step's settings. See [Build an Automation](../backoffice/building-an-automation.md#branch-on-action-outcomes).
+
+Exits always come from the settings you saved, never from bound values. A setting that holds a `${ ... }` binding adds no exit, because its value isn't known until the run. To branch on a value that is only known at run time, add a **Switch** after the step.
+
+### Any Result Lines
+
+An automation saved before an action declared outcomes has a single, unnamed line from that action's step. The canvas shows that line on an **Any result** exit. An **Any result** line runs whatever the step returns, so the automation runs the same as it did before.
+
+**Any result** only appears while such a line exists, and you can't draw a new line from it. Move the line to a named exit to choose when it runs.
+
+{% hint style="warning" %}
+
+While an **Any result** line and a line from a named exit both leave the same step, both paths run on that result. The step shows a warning until you move the **Any result** line to a named exit.
+
+{% endhint %}
 
 ## See Also
 
 * [Bindings](bindings.md)
+* [Build an Automation](../backoffice/building-an-automation.md)
 * [Use Approvals](../backoffice/approvals.md)
+* [Create a Custom Action](../extending/custom-action.md#declaring-outcomes)

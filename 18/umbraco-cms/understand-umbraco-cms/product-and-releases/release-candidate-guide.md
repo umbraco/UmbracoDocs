@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing a pre-release for the latest version of Umbraco
   CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Pre-Release Guide
@@ -34,7 +35,7 @@ The [beta version is available on NuGet](https://www.nuget.org/packages/Umbraco.
 1. Install the Umbraco dotnet template for the beta.
 
 ```cmd
-dotnet new install Umbraco.Templates::18.0.0-rc3
+dotnet new install Umbraco.Templates@18.0.0-rc3
 ```
 
 2. Create a new Umbraco project.

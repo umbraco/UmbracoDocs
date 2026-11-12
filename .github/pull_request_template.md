@@ -1,33 +1,15 @@
-## 📋 Description
+## Description
 
-<!-- A clear and concise description of what this PR changes or adds. Include context if necessary. -->
+<!-- What changes and why. Include the product and versions it applies to.
+If AI helped write this, say so. Tell reviewers what to check, and how you verified it. -->
 
-## 📎 Related Issues (if applicable)
+## Related issues or sources
 
-<!-- List any related issues, e.g. "Fixes #1234" -->
+<!-- Issues, PRs, release notes or source branches. Write "None" if there are none. -->
 
-## ✅ Contributor Checklist
+## Deadline
 
-I've followed the [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide) and can confirm that:
-
-* [ ] Code blocks are correctly formatted.
-* [ ] Sentences are short and clear (preferably under 25 words).
-* [ ] Passive voice and first-person language (“we”, “I”) are avoided.
-* [ ] Relevant pages are linked.
-* [ ] All links work and point to the correct resources.
-* [ ] Screenshots or diagrams are included if useful.
-* [ ] Any code examples or instructions have been tested.
-* [ ] Typos, broken links, and broken images are fixed.
-
-## Product & Version (if relevant)
-
-<!-- Mention the product and all applicable versions for which the PR is being created. -->
-
-## Deadline (if relevant)
-
-<!-- When should the content be published? -->
-
-## 📚 Helpful Resources
-
-* 🧾 [Umbraco Contribution Guidelines](https://docs.umbraco.com/contributing)
-* ✍️ [Umbraco Documentation Style Guide](https://docs.umbraco.com/contributing/documentation/style-guide)
+<!-- Give a date (DD-MM-YYYY) for when this should be published.
+If you leave this empty, we will ask for a deadline before merging.
+"None" or "Anytime" means we can merge whenever the review is done.
+If this can't be merged before a release or another PR, name it. -->

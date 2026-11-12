@@ -14,14 +14,12 @@ Copy the explicit files you wish to override in your theme, it may be a single f
 
 ### Obtaining the Default Theme Files
 
-For Umbraco 9 and previous, it's straightforward to copy the files you need from the default theme folder. We highly recommend that you never customize any files found in the `default` themes folder. There is a risk that any customizations to these files will be lost with any future upgrades you do to Umbraco Forms. Umbraco 10+ distributes these files as part of a Razor Class Library, so you won't find them on disk. Instead you should download the appropriate zip file for your Forms version and extract the ones you need.
+Forms distributes the default theme files as part of a Razor Class Library, so you won't find them on disk. Download the zip file for your Forms version and extract the files you need. Copy the files into your own theme folder instead of changing the default theme.
 
 You can obtain the latest version of the Forms default theme from the following links:
 
 * [18.0.0](./files/umbraco-forms-default-theme-18.0.0.zip)
-* [18.1.0](./files/umbraco-forms-default-theme-18.1.0.zip)
-* [18.2.2](./files/umbraco-forms-default-theme-18.2.2.zip)
-* [18.3.0](./files/umbraco-forms-default-theme-18.3.0.zip)
+
 
 You should use the theme available for the highest version that's less or equal to the version of Forms you have installed.
 

@@ -24,7 +24,7 @@ Umbraco Forms ships with translations for the following languages:
 
 If the language you require does not exist, it's possible to create your own by duplicating the default `en.js` file.  You can then save it with the appropriate culture code for the language you need and replace the English text with the translated version.
 
-As of Forms 10, the file no longer exists on disk and is shipped as part of the `Umbraco.Forms.StaticAssets` NuGet package. You can open this package, either locally using [Nuget Package Explorer](https://apps.microsoft.com/store/detail/nuget-package-explorer/9WZDNCRDMDM3?hl=en-gb&gl=gb&rtc=1), or [online](https://www.nuget.org/packages/Umbraco.Forms.StaticAssets/) by clicking the "Open in NuGet Package Explorer" link. You'll find the file at `staticwebassets/en.js`.
+The file doesn't exist on disk. It ships as part of the `Umbraco.Forms.StaticAssets` NuGet package. You can open this package, either locally using [Nuget Package Explorer](https://apps.microsoft.com/store/detail/nuget-package-explorer/9WZDNCRDMDM3?hl=en-gb&gl=gb&rtc=1), or [online](https://www.nuget.org/packages/Umbraco.Forms.StaticAssets/) by clicking the "Open in NuGet Package Explorer" link. You'll find the file at `staticwebassets/en.js`.
 
 Once translated, the new file should be saved somewhere in the `App_Plugins` folder for example `App_Plugins/UmbracoFormsLocalization/`. The final step is to register the localization file. This can be done by creating a `umbraco-package.json` like so: 
 

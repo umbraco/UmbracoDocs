@@ -8,10 +8,6 @@ A common scenario in e-commerce is when a store owner wants to send a pre-filled
 
 In Umbraco Commerce, it only takes a few clicks to create and send a payment link. The customer can then click the link and complete the purchase.
 
-{% hint style="info" %}
-The payment links feature was introduced in Umbraco Commerce version 15.3.0
-{% endhint %}
-
 ## Generating a Payment Link
 
 1. Go to the **Commerce** section in the Umbraco backoffice.

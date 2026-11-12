@@ -37,7 +37,7 @@ To install via Visual Studio, follow these steps:
 
 ```cs
 <ItemGroup>
-<PackageReference Include="Umbraco.UIBuilder" Version="15.0.2" />
+<PackageReference Include="Umbraco.UIBuilder" Version="19.x.x" />
 </ItemGroup>
 ```
 

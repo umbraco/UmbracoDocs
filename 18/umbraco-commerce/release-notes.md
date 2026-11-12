@@ -18,6 +18,21 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.12 (11th Nov 2026)
+
+* Fixed finalizing an order overwriting a customer's saved name and external ID ([#912](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/912)).
+* Fixed customers staying linked to a member after the member's email changed ([#913](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/913)).
+* Customers now get the order's telephone number when an order is finalized, if they don't have one yet ([#910](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/910)).
+* Fixed the customer import failing during upgrade when an order has a long address, city, postcode or telephone value ([#915](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/915)).
+* Fixed saving a store dropping its abandoned cart landing page URL in its Deploy file ([#918](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/918)).
+* Fixed unobserved task errors from session order checks ([#917](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/917)).
+* Fixed the variants list loading slowly for products with thousands of variants, and fixed variant SKU search ([#916](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/916)).
+* Fixed order email and print templates failing when billing or shipping details are missing.
+* Fixed bundled products not being restocked for each refunded or cancelled bundle.
+* Fixed a refund being sent with the placeholder reason, and Refund All now asks for a reason when partial refunds are off.
+* Fixed the Send Test Email button staying disabled until the To field loses focus.
+* Fixed analytics figures for percentage changes against empty periods and top buyers' order across pages. We also fixed period-over-period comparisons for popular discounts.
+
 #### 18.1.11 (2nd Nov 2026) 
 
 * Fixed the abandoned cart email failing when the customer's email address is not valid ([#911](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/911)).

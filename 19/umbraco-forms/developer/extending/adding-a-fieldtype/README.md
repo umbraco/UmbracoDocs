@@ -165,7 +165,7 @@ Field settings work the same way as settings on any other provider type. See [Ad
 
 ## Umbraco Backoffice Components
 
-With Forms 14+, aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
+Aspects of the presentation and functionality of the custom field are handled by client-side components, registered via manifests:
 
 * The preview, displayed on the form definition editor.
 * The property editor UI used for editing the submitted values via the backoffice.
@@ -173,7 +173,7 @@ With Forms 14+, aspects of the presentation and functionality of the custom fiel
 * A settings converter, that handles configuring the property editor and translating between the editor and persisted values.
 * Translations for setting labels and descriptions.
 
-To create custom backoffice components for Umbraco 14, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
+To create custom backoffice components, it's recommended to use a front-end build setup using Vite, TypeScript, and Lit. For more information, see the [Extension with Vite, TypeScript, and Lit](https://docs.umbraco.com/umbraco-cms/tutorials/creating-your-first-extension#extension-with-vite-typescript-and-lit) article.
 
 The examples here are using the `@umbraco-forms/backoffice` package to get access to Forms-specific types and contexts. It is recommended to install this package as a development dependency in your project.
 

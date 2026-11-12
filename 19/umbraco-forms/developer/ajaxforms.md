@@ -32,7 +32,7 @@ The API supports two endpoints, one for rendering a form and one for submitting 
 
 As well as this documentation, the definition of the API can also be reviewed via the Swagger UI.
 
-This is available alongside the Umbraco 12 Content Delivery Api at: `/umbraco/swagger/index.html`. Select "Umbraco Forms API" from the "Select a definition" list to view the methods available.
+This is available alongside the Content Delivery API at: `/umbraco/swagger/index.html`. Select "Umbraco Forms API" from the "Select a definition" list to view the methods available.
 
 ![Swagger UI](../.gitbook/assets/swagger-ui.png)
 
@@ -456,7 +456,7 @@ In the case of a validation error, a 422 "Unprocessable Entity" status code will
 }
 ```
 
-From Umbraco Forms 18.2.0, a request that can't be processed returns a client error instead of a 500 "Internal Server Error":
+A request that can't be processed returns a client error instead of a 500 "Internal Server Error":
 
 * A body that can't be read as a form entry returns a 400 "Bad Request" status code.
 * A missing or invalid antiforgery token returns a 400 "Bad Request" status code.

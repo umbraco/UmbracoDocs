@@ -20,6 +20,23 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### 18.3.0-rc2 (November 5th 2026)
+
+The changes below are the ones made since `18.3.0-rc`. For everything else in this release, see the `18.3.0-rc` notes.
+
+* Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
+* Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
+* Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
+* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing. A message says how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
+* Recycle Bin: Hide the recycle bin from users with start folders
+* Security: Show missing and trashed start folders in the start folder picker
+* Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
+* Security: Security fix for start folders
+* Pickers: Clear a mandatory picker's validation error once a value is picked inside a block, so the block can be updated again. This covers the Form Picker (Single and Multiple), Theme Picker, Folder Picker and Form Details Picker, which now also block **Create** while empty [#1818](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1818)
+* Theme Picker: Show a "Choose a theme" placeholder when no theme is picked, instead of looking as if the first theme was chosen
+* Folder Picker: Keep the picked folders when a content property is saved. Values saved by earlier versions can't be recovered and now load as an empty selection
+* Update dependencies to Umbraco CMS 18.3.0. The release candidate required 18.3.0-rc2 or later.
+
 ### [18.3.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.0) (October 29th 2026)
 
 #### Consent details for the Data Consent field
@@ -48,7 +65,7 @@ For more information, see the [Recycle bin notifications](developer/extending/ad
 
 * OpenAPI: Describe content routes in the Forms Delivery API document as the endpoints send them, so generated clients get the real properties
 * Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
-* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
 * Form Import: Keep a form's original creator and creation date when importing over an existing form
 * Copy Form: Require a name for the copied form
 * Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name

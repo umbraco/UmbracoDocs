@@ -14,11 +14,12 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 
 ### General
 
-| Trigger               | Fires when                                                                                                                                                                                                                                                                                            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Manual Trigger**    | A user runs the automation by hand from the backoffice.                                                                                                                                                                                                                                               |
-| **Scheduled Trigger** | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.                                                                                                                                                           |
-| **Webhook**           | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run manually with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
+| Trigger                 | Fires when                                                                                                                                                                                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Manual Trigger**      | A user runs the automation by hand from the backoffice.                                                                                                                                                                                                                                               |
+| **Scheduled Trigger**   | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.                                                                                                                                                           |
+| **Webhook**             | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run manually with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
+| **Application Started** | Umbraco starts, including every restart or app pool recycle. See [Application Started](triggers.md#application-started).                                                                                                                                                                              |
 
 ### Content
 
@@ -35,6 +36,17 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 | **Media Saved**   | A media item is saved. Filterable by media type.                    |
 | **Media Trashed** | A media item is moved to the recycle bin. Filterable by media type. |
 | **Media Deleted** | A media item is permanently deleted. Filterable by media type.      |
+
+### Library
+
+| Trigger                 | Fires when                                                                                          |
+| ----------------------- | --------------------------------------------------------------------------------------------------- |
+| **Element Saved**       | A Library element is saved (created or updated). Filterable by element type.                        |
+| **Element Published**   | A Library element is published. Filterable by element type.                                         |
+| **Element Unpublished** | A Library element is unpublished. Filterable by element type.                                       |
+| **Element Batch Saved** | One or more Library elements are saved, with all items as a collection. Filterable by element type. |
+
+See [Library Elements](triggers.md#library-elements) for how these triggers differ from the content triggers.
 
 ### Members
 
@@ -55,7 +67,7 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 | **User Password Changed** | A backoffice user's password is changed. Filterable by user group.         |
 
 {% hint style="info" %}
-Each content and media trigger has a batch variant (for example, Content Batch Published). The batch trigger fires once per save or publish operation with all affected items as a single collection. Use it when you want one automation run to process the whole batch.
+Each content and media trigger has a batch variant (for example, Content Batch Published). The batch trigger fires once per save or publish operation with all affected items as a single collection. Use it when you want one automation run to process the whole batch. The Library triggers only have **Element Batch Saved**.
 
 The batch only includes items that the service account of the workspace can browse. When none remain, the run is skipped. See [Service-Account Permissions](workspaces.md#service-account-permissions).
 {% endhint %}
@@ -68,7 +80,7 @@ Open the automation's context menu (the three dots next to it in the tree) and s
 
 * **Manual Trigger** and **Scheduled Trigger** always support **Run now**.
 * **Webhook** also supports it, using the trigger's saved **Test request body** and **Test request headers** instead of a real HTTP request. See [Finding the Webhook URL](triggers.md#finding-the-webhook-url) below. Authentication and the allowed-method check are skipped for on-demand runs, since nothing is calling the webhook endpoint.
-* Content, Media, Member, and User triggers don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
+* Content, Media, Library, Member, and User triggers, and **Application Started**, don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
 * Add-on and custom triggers can opt in to **Run now** individually. If the option isn't in the context menu of a published automation, its trigger doesn't support it. See [Supporting Run Now](../extending/custom-trigger.md#supporting-run-now) to add it to your own trigger.
 
 ## Finding the Webhook URL
@@ -126,16 +138,56 @@ ${ trigger.cultures }
 This is an array of ISO culture codes, for example `["en-us", "da-dk"]`. It is `null` for content types that aren't set up for variation.
 
 {% hint style="info" %}
+
 When a descendant is republished as a side effect of publishing an ancestor, Umbraco doesn't report which cultures changed on that descendant specifically. In that case, `cultures` falls back to all of the descendant's currently published cultures rather than the true delta.
+
 {% endhint %}
 
-The **Content Saved**, **Media Saved**, **Member Saved**, and **User Saved** triggers also expose an `isNew` flag that is `true` when the entity is newly created. Use it to branch between create-only and update-only logic:
+The **Content Saved**, **Element Saved**, **Media Saved**, **Member Saved**, and **User Saved** triggers also expose an `isNew` flag. The flag is `true` when the entity is newly created. Use it to branch between create-only and update-only logic:
 
 ```
 ${ trigger.isNew }
 ```
 
 This is a soft signal derived from the entity's create or update dates. Automations needing a hard guarantee should re-fetch.
+
+## Application Started
+
+The **Application Started** trigger fires each time Umbraco starts. That includes a cold start, a restart, and an app pool recycle.
+
+The trigger outputs:
+
+| Output         | Description                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `startedAt`    | The UTC time the application started.                                                                                           |
+| `isRestarting` | `true` only when Umbraco restarted its runtime in-process, for example straight after an install. App pool recycles and deployments start a new process, so they report `false`, the same as a cold start. |
+| `serverRole`   | The role of the server that started: `Single`, `SchedulingPublisher`, `Subscriber`, or `Unknown` when the role isn't known yet. |
+
+In a load-balanced setup, every server starts on its own, so the automation runs once per server. Turn on **Only run on the main server** to skip startups on `Subscriber` servers. The setting is most reliable when server roles are configured explicitly. With automatic election, a server's role may not be known yet at startup, and the trigger still runs on that server.
+
+## Library Elements
+
+The Library triggers fire for changes made in the backoffice and through any CMS service.
+
+**Element Saved**, **Element Published**, and **Element Unpublished** start one run for each element. **Element Batch Saved** starts one run for each save operation, with every element saved in that operation in `items`. Use it with a **For Each** step. There is no batch Published or Unpublished trigger, because the CMS publishes and unpublishes elements one at a time.
+
+All four triggers have the same settings as the content triggers:
+
+* **Element Types**: Only fire for these element types. Leave it blank to match all. **Element Batch Saved** starts with the whole batch when any element matches, and doesn't start when none match.
+* **When triggered by another automation** (Advanced): **Always run**, **Skip if this would loop** (the default), or **Skip entirely**. This applies to elements changed by the Create, Update, Publish, and Unpublish Element actions.
+
+Each trigger outputs `elementKey`, `elementName`, `contentTypeKey`, `contentTypeAlias`, and `cultures`. **Element Saved** also outputs `isNew`. **Element Batch Saved** outputs `items`, a list of **Element Saved** outputs, and `count`. `cultures` is `null` for an invariant element. Otherwise it lists:
+
+* **Element Saved**: the cultures edited in the save.
+* **Element Published**: the cultures published.
+* **Element Unpublished**: the cultures that were published before the element was unpublished.
+
+The Library triggers differ from the content triggers in two ways:
+
+* **Element Saved** and **Element Batch Saved** don't fire when a save only moves, trashes, or restores an element. On an element type with a property aliased `parentId` or `trashed`, an edit to that property looks like a move. Avoid those aliases.
+* Restoring a published element from the recycle bin unpublishes it, and **Element Unpublished** fires. Restoring a folder fires it once for each published element inside. Restoring a published document unpublishes it without an event.
+
+A trigger only starts for elements the service account of the workspace can read. The account needs the **Library** section, a Library start node that covers the element, and the Read permission. Permissions set on a Library folder count. **Element Batch Saved** leaves out the elements the account can't read, and doesn't start when none are left. See [Service-Account Permissions](workspaces.md#service-account-permissions).
 
 ## Trigger Settings
 

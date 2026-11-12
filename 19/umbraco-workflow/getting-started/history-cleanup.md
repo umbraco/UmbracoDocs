@@ -8,7 +8,7 @@ Depending on your requirements, this information may not be required or may only
 The workflow History exists in addition to Umbraco's audit trail information. It will always show the identity of the user who completes the workflow.
 {% endhint %}
 
-Umbraco Workflow 11.1.0 introduces a history cleanup feature similar to those already available in Umbraco CMS and Umbraco Forms.
+Umbraco Workflow includes a history cleanup feature similar to those already available in Umbraco CMS and Umbraco Forms.
 
 ## How it works
 

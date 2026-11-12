@@ -14,7 +14,7 @@ In CM/CD environments, the Cockpit needs to authenticate users across different 
 
 ### Method 1: Open Cockpit Button (Recommended)
 
-As of Umbraco Engage 17, you can open the Cockpit directly from the Umbraco backoffice:
+You can open the Cockpit directly from the Umbraco backoffice:
 
 1. Log in to the Umbraco backoffice on your CM server.
 2. Navigate to the **Engage** section.

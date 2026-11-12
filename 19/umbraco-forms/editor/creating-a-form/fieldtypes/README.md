@@ -58,10 +58,6 @@ The Data Consent field asks the user for consent to store their data. By default
 
 ### Consent details
 
-{% hint style="info" %}
-This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
-{% endhint %}
-
 The optional **Consent details** setting holds formatted text shown under the checkbox. Use it to link to your privacy policy, for example. For more information, see the [HTML in rich text settings](#html-in-rich-text-settings) section.
 
 ![Data Consent field with consent details in the form designer](../../../.gitbook/assets/dataconsent-consent-details.png)

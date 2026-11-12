@@ -8,8 +8,6 @@ description: >-
 
 The Deploy add-on connects Umbraco Engage to [Umbraco Deploy](https://docs.umbraco.com/umbraco-deploy). It lets you transfer Umbraco Engage configuration items between environments, instead of recreating them by hand.
 
-The add-on is available from Umbraco Engage version 17.
-
 ## What it adds
 
 * Deploy support for Umbraco Engage configuration items: goals, personas, customer journeys, and A/B tests.
