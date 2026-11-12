@@ -385,11 +385,15 @@ Connectors do not need to be registered. The fact that they inherit from particu
 
 ### Custom Entity Types
 
-If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. This is done by calling `UdiParser.RegisterUdiType` in a composer, as shown in the [Disk Based Transfers](extending.md#disk-based-transfers) section below.
+If custom entity types are introduced that will be handled by Umbraco Deploy, they need to be registered with Umbraco to parse the UDI references. Deploy registers the entity type declared by the `UdiDefinition` attribute of each public service connector. You don't need to call `UdiParser.RegisterUdiType` yourself.
+
+Deploy also needs to know how each entity type is deployed. Add the entity type to `DeployEntityTypesOptions` in a composer, either as a disk entity type or as a transfer entity type. An entity type can't be both. Deploy validates this when it builds the options.
+
+To read the registered entity types, inject `IOptionsMonitor<DeployEntityTypesOptions>` and read `CurrentValue` where you need it. Don't read the options during startup.
 
 ### Disk-Based Transfers
 
-To deploy the entity as schema, via disk-based representations held in `.uda` files, it's necessary to register the entity with the disk entity service. This is done in a composer.
+To deploy the entity as schema, via disk-based representations held in `.uda` files, add the entity type as a disk entity type. This is done in a composer.
 
 Additionally, when an entity is saved, the disk artifact and signature cache should be updated. This is handled by implementing a notification handler that inherits from `EntitySavedDeployRefresherNotificationAsyncHandlerBase`.
 
@@ -411,17 +415,15 @@ public class ExampleSavedNotification : SavedNotification<Example>
 }
 ```
 
-Then create a composer that registers the UDI type and notification handlers:
+Then create a composer that adds the disk entity type and registers the notification handler:
 
 ```csharp
-using Umbraco.Cms.Core;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Services;
 using Umbraco.Deploy.Core;
 using Umbraco.Deploy.Core.Connectors.ServiceConnectors;
+using Umbraco.Deploy.Infrastructure;
 using Umbraco.Deploy.Infrastructure.Disk;
 using Umbraco.Deploy.Infrastructure.NotificationHandlers;
 
@@ -429,36 +431,11 @@ public class ExampleDataDeployComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        // Register the custom UDI type with Umbraco
-        UdiParser.RegisterUdiType("mypackage-example", UdiType.GuidUdi);
-
-        // Register the application starting handler (registers disk entity types)
-        builder.AddNotificationHandler<UmbracoApplicationStartingNotification, ExampleDeployStartingHandler>();
+        // Deploy the entity type as schema, using .uda files
+        builder.Services.Configure<DeployEntityTypesOptions>(options => options.AddDiskEntityType("mypackage-example"));
 
         // Register the saved notification handler (handles disk artifacts and signatures)
         builder.AddNotificationAsyncHandler<ExampleSavedNotification, ExampleSavedDeployRefresherNotificationAsyncHandler>();
-    }
-
-    private sealed class ExampleDeployStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
-    {
-        private readonly IRuntimeState _runtimeState;
-        private readonly IDiskEntityService _diskEntityService;
-
-        public ExampleDeployStartingHandler(IRuntimeState runtimeState, IDiskEntityService diskEntityService)
-        {
-            _runtimeState = runtimeState;
-            _diskEntityService = diskEntityService;
-        }
-
-        public void Handle(UmbracoApplicationStartingNotification notification)
-        {
-            if (_runtimeState.Level != RuntimeLevel.Run)
-            {
-                return;
-            }
-
-            _diskEntityService.RegisterDiskEntityType("mypackage-example");
-        }
     }
 
     private sealed class ExampleSavedDeployRefresherNotificationAsyncHandler
@@ -517,73 +494,111 @@ public class ExampleDataService : IExampleDataService
 
 The schema comparison feature available under _Settings > Deploy_, compares Umbraco’s Deploy-managed entities with the data held in the `.uda` files on disk.
 
-All core Umbraco entities, such as Document Types and Data Types, will be shown. Custom entities registered with `RegisterDiskEntityType` are also included.
+All core Umbraco entities, such as Document Types and Data Types, will be shown. Custom entities added with `AddDiskEntityType` are also included.
 
 The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
 ### Backoffice Integrated Transfers
 
-If the optimal deployment workflow for your entity is to have editors control the deployment operations, the transfer entity service should be used. This would be instead of registering with the disk entity service. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, you also need to be able to handle the situation where multiple entity types are managed within a single tree.
+Your entity might be best deployed by editors in the backoffice. In that case, add the entity type as a transfer entity type instead of a disk entity type. The process is similar, but a bit more involved. There's a need to also register details of the tree being used for editing the entities. In more complex cases, you also need to be able to handle the situation where multiple entity types are managed within a single tree.
 
 An introduction to this feature can be found in the second half of [this recorded session from Codegarden 2021](https://youtu.be/8bgZmlJ7ScI?t=938).
 
 There's also a code sample, demonstrated in the video linked above, available at [GitHub](https://github.com/AndyButland/RaceData).
 
-The following code shows the registration of an entity for Backoffice deployment, showing the simplest case of a single tree for the entity. Registration should be done in an `UmbracoApplicationStartingNotification` handler:
+The following code adds an entity type for Backoffice deployment, showing the simplest case of a single tree for the entity. Add the entity type in a composer:
+
+{% code title="ExampleTransferDeployComposer.cs" %}
 
 ```csharp
-using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Deploy.Infrastructure;
 using Umbraco.Deploy.Infrastructure.Transfer;
 
-public class ExampleTransferDeployStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
+public class ExampleTransferDeployComposer : IComposer
 {
-    private readonly IRuntimeState _runtimeState;
-    private readonly ITransferEntityService _transferEntityService;
-
-    public ExampleTransferDeployStartingHandler(
-        IRuntimeState runtimeState,
-        ITransferEntityService transferEntityService)
-    {
-        _runtimeState = runtimeState;
-        _transferEntityService = transferEntityService;
-    }
-
-    public void Handle(UmbracoApplicationStartingNotification notification)
-    {
-        if (_runtimeState.Level != RuntimeLevel.Run)
-        {
-            return;
-        }
-
-        _transferEntityService.RegisterTransferEntityType(
+    public void Compose(IUmbracoBuilder builder)
+        => builder.Services.Configure<DeployEntityTypesOptions>(options => options.AddTransferEntityType(
             "mypackage-example",
-            new DeployRegisteredEntityTypeDetailOptions
+            new DeployTransferEntityTypeOptions
             {
                 SupportsQueueForTransfer = true,
                 SupportsQueueForTransferOfDescendents = true,
                 SupportsRestore = true,
                 PermittedToRestore = true,
                 SupportsPartialRestore = true,
-            });
-    }
+            }));
 }
 ```
 
-The `RegisterTransferEntityType` method on the `ITransferEntityService` takes the following parameters:
+{% endcode %}
+
+The `AddTransferEntityType` method takes the following parameters:
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
-* A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) to parse the UDI range from a string-based node ID. This parameter is obsolete, because the backoffice sends the entity type and unique identifier of the selected item.
-* An optional `RemoteTreeDetail` parameter for the partial restore tree. This parameter is obsolete. Implement `ITreeServiceConnector` on the service connector instead, as described in the [Partial restore of remote items](#partial-restore-of-remote-items) section.
+* A `DeployTransferEntityTypeOptions` record, configuring which deploy operations are available from the tree menu for the entity.
+
+The options record has the following properties. All are `false` by default:
+
+* `SupportsQueueForTransfer` - the entity can be queued for transfer from the backoffice.
+* `SupportsQueueForTransferOfDescendents` - the descendants of the entity can be queued for transfer along with it.
+* `SupportsRestore` - the entity can be selected for a full restore.
+* `SupportsPartialRestore` - the entity can be selected for a partial restore. To show the items of the remote environment, implement `ITreeServiceConnector` as described in the [Partial restore of remote items](#partial-restore-of-remote-items) section.
+* `SupportsImportExport` - the entity can be imported and exported from the backoffice.
+* `SupportsExportOfDescendants` - the descendants of the entity can be exported along with it.
+* `PermittedToRestore` - the entity is deployed during a restore, for example as a dependency.
+
+Adding the same entity type twice as a transfer entity type throws an `InvalidOperationException`.
 
 {% hint style="info" %}
 The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
 
-Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrading/version-specific.md) for an example.
+Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them.
 {% endhint %}
+
+The following `umbraco-package.json` example adds localized names for two entity types and maps the client-side entity types to them:
+
+{% code title="umbraco-package.json" %}
+
+```json
+{
+  "id": "Umbraco.Commerce.Deploy",
+  "name": "Umbraco Commerce Deploy",
+  "version": "19.0.0",
+  "extensions": [
+    {
+      "type": "localization",
+      "alias": "Uc.Deploy.Localization.En",
+      "weight": -100,
+      "name": "English",
+      "meta": {
+        "culture": "en",
+        "localizations": {
+          "deploy_entityTypes": {
+            "umbraco-commerce-product-attribute": "Umbraco Commerce Product Attribute",
+            "umbraco-commerce-product-attribute-preset": "Umbraco Commerce Product Attribute Preset"
+          }
+        }
+      }
+    },
+    {
+      "type": "deployEntityTypeMapping",
+      "alias": "Uc.Deploy.EntityTypeMapping",
+      "name": "Umbraco Commerce Deploy Entity Type Mapping",
+      "entityTypes": {
+        "uc:product-attribute": "umbraco-commerce-product-attribute",
+        "uc:product-attributes": "umbraco-commerce-product-attribute",
+        "uc:product-attribute-preset": "umbraco-commerce-product-attribute-preset",
+        "uc:product-attribute-presets": "umbraco-commerce-product-attribute-preset"
+      }
+    }
+  ]
+}
+```
+
+{% endcode %}
 
 #### Partial restore of remote items
 
@@ -645,8 +660,6 @@ Deploy calls the connector of the parent's entity type to list its children, so 
 
 {% hint style="info" %}
 If your service connector doesn't implement `ITreeServiceConnector`, Deploy lists the items using the `ExpandRangeAsync` and `GetArtifactAsync` methods of the connector. This tree is flat and doesn't show icons.
-
-The `RemoteTreeDetail` parameter of `RegisterTransferEntityType` is obsolete and will be removed in Umbraco Deploy 19.
 {% endhint %}
 
 ### Refreshing Signatures

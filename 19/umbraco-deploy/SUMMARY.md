@@ -13,7 +13,7 @@
 ## Upgrading
 
 * [Upgrading Umbraco Deploy](upgrading/upgrades.md)
-* [Version Specific Upgrade Details](upgrading/version-specific.md)
+* [Breaking Changes Overview](upgrading/version-specific.md)
 
 ## Getting Started
 
