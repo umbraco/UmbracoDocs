@@ -192,6 +192,33 @@ To show deprecated property editors in the backoffice, set `Umbraco:CMS:DataType
 
 See [#23853](https://github.com/umbraco/Umbraco-CMS/pull/23853).
 
+#### Default Data Types renamed on new installs
+
+Property editor labels follow a naming convention. An editor that selects a single item is prefixed with "Single", and an editor that selects multiple items has no prefix. The default Data Types created on a new install are renamed to follow the same convention:
+
+| Previous name               | New name                  | Property editor              |
+| --------------------------- | ------------------------- | ---------------------------- |
+| Content Picker              | Single Document Picker    | `Umbraco.ContentPicker`      |
+| Member Picker               | Single Member Picker      | `Umbraco.MemberPicker`       |
+| Media Picker                | Single Media Picker       | `Umbraco.MediaPicker.Single` |
+| Image Media Picker          | Single Image Media Picker | `Umbraco.MediaPicker.Single` |
+| Multiple Media Picker       | Media Picker              | `Umbraco.MediaPicker3`       |
+| Multiple Image Media Picker | Image Media Picker        | `Umbraco.MediaPicker3`       |
+| Multi URL Picker            | URL Picker                | `Umbraco.MultiUrlPicker`     |
+| Dropdown                    | Single Select Dropdown    | `Umbraco.DropDown.Single`    |
+| Dropdown multiple           | Select List               | `Umbraco.DropDown.Flexible`  |
+
+Upgraded sites keep their existing Data Type names. Data Type keys, editor aliases, and configuration are unchanged. As a result, "Media Picker" and "Image Media Picker" are single-item pickers on an upgraded site, but multiple-item pickers on a new install.
+
+If your code, scripts, or tests look up default Data Types by name, look them up by key instead. Keys are available from `Constants.DataTypes.Guids`.
+
+Some property editor labels shown in the backoffice have also changed:
+
+* The dropdown editors are now labelled **Select List** (`Umbraco.DropDown.Flexible`) and **Single Select Dropdown** (`Umbraco.DropDown.Single`).
+* The property editor schema names for the single Document, Member, and User pickers now start with "Single". The multiple Document and Member pickers drop the "Multiple" prefix. The Multi URL Picker schema is named "URL Picker". These names aren't stored, so no action is needed.
+
+See [#24568](https://github.com/umbraco/Umbraco-CMS/pull/24568).
+
 ### Minimum and maximum configuration replaced by ranges
 
 Property editors with separate minimum and maximum configuration fields now use a single range field. This prevents a minimum that's higher than the maximum. The upgrade migrates existing Data Types, and flags any with an invalid range for an editor to correct.
