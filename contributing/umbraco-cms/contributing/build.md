@@ -39,7 +39,7 @@ In order to build the Umbraco source code locally with Visual Studio Code, first
 * [Visual Studio Code](https://code.visualstudio.com/)
 * The .NET SDK version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
 * The Node.js version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
-* npm (installed with Node.js)
+* `npm` (installed with Node.js)
 * [Git command line](https://git-scm.com/download/)
 
 Open the root folder of the repository in Visual Studio Code.
@@ -70,7 +70,7 @@ If you want to build the Login screen to `Umbraco.Web.UI` then instead of runnin
 
 You might run into [Gulp quirks](build.md#gulp-quirks).
 
-The caching for the backoffice has been described as 'aggressive' so we often find it's best when making backoffice changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
+The backoffice uses aggressive caching. When making backoffice changes, [disable caching in the browser](https://techwiser.com/disable-cache-google-chrome-firefox) to see your changes. To do this, select Disable cache on the Network tab of the browser’s developer tools.
 
 To run the C# portion of the project, either hit F5 to begin debugging, or manually using the command line:
 
@@ -88,7 +88,7 @@ In order to build the Umbraco source code locally with Visual Studio, first make
 
 * [Visual Studio 2022 v17+ with .NET 7+](https://visualstudio.microsoft.com/vs/) ([the community edition is free](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community\&rel=15) for you to use to contribute to Open Source projects)
 * The Node.js version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
-* npm (installed with Node.js)
+* `npm` (installed with Node.js)
 * [Git command line](https://git-scm.com/downloads)
 
 The easiest way to get started is to open `umbraco.sln` in Visual Studio.
@@ -101,7 +101,7 @@ If you're working on the backoffice, you may wish to run the `dev` command inste
 
 You might run into [Gulp quirks](build.md#gulp-quirks).
 
-The caching for the backoffice has been described as 'aggressive' so we often find it's best when making backoffice changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
+The backoffice uses aggressive caching. When making backoffice changes, [disable caching in the browser](https://techwiser.com/disable-cache-google-chrome-firefox) to see your changes. To do this, select Disable cache on the Network tab of the browser’s developer tools.
 
 "The rest" is a C# based codebase, which is ASP.NET Core MVC based. You can make changes, build them in Visual Studio, and hit F5 to see the result.
 
@@ -154,8 +154,8 @@ git clean -xdf .
 
 For git documentation see:
 
-* `git [clean](https://git-scm.com/docs/git-clean)`
-* `git [reset](https://git-scm.com/docs/git-reset)`
+* [git clean](https://git-scm.com/docs/git-clean)
+* [git reset](https://git-scm.com/docs/git-reset)
 
 ## Azure DevOps
 
