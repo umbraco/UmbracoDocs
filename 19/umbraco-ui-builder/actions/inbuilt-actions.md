@@ -72,6 +72,6 @@ The actions menu (**...**) groups its actions under headings. Umbraco UI Builder
 | Delete | **Structure** |
 | Import and Export | **Import and export** |
 
-Custom actions are not part of a group. They appear in the **Other** group at the bottom of the menu.
+Custom actions are not part of a group. They appear in the last block of the menu, below the Umbraco groups.
 
 In the entity editor, the actions menu and the save button menu show actions in the order you add them in your configuration.

@@ -227,7 +227,7 @@ Umbraco CMS 19 groups the actions in the actions menu (**...**) under headings. 
 * **Delete** joins the **Structure** group.
 * **Import** and **Export** join the **Import and export** group.
 
-Custom actions are not part of a group. They appear in the **Other** group at the bottom of the menu.
+Custom actions are not part of a group. They appear in the last block of the menu, below the Umbraco groups.
 
 In the entity editor, the actions menu and the save button menu keep the order of your configuration.
 
