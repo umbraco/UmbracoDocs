@@ -5,6 +5,12 @@ description: >-
 
 # Breakdown by Model
 
+{% hint style="warning" %}
+
+This endpoint is obsolete and will be removed in version 20. Use [Get Usage Breakdown](breakdown.md) with `dimension=Model` instead.
+
+{% endhint %}
+
 Returns usage distribution across AI models.
 
 ## Request

@@ -5,6 +5,12 @@ description: >-
 
 # Breakdown by Provider
 
+{% hint style="warning" %}
+
+This endpoint is obsolete and will be removed in version 20. Use [Get Usage Breakdown](breakdown.md) with `dimension=Provider` instead.
+
+{% endhint %}
+
 Returns usage distribution across AI providers.
 
 ## Request
