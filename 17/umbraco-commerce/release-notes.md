@@ -31,7 +31,7 @@ This section contains the release notes for Umbraco Commerce 17 including all ch
 * Fixed bundled products not being restocked for each refunded or cancelled bundle
 * Fixed a refund being sent with the placeholder reason, and Refund All now asks for a reason when partial refunds are off
 * Fixed the Send Test Email button staying disabled until the To field loses focus
-* Fixed a number of analytics figures: percentage changes against an empty period, top buyers' order across pages, and popular discounts compared with the same discounts last period
+* Fixed analytics figures for percentage changes against empty periods and top buyers' order across pages. We also fixed period-over-period comparisons for popular discounts.
 
 #### 17.2.11 (2nd Nov 2026) 
 
