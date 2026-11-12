@@ -20,7 +20,7 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 19 including all changes for this version.
 
-### [19.0.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F19.0.0) (TBC)
+### [19.0.0-rc1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F19.0.0) (November 12th 2026)
 
 {% hint style="warning" %}
 This is a prerelease for testing. Don't use it on a production site.
