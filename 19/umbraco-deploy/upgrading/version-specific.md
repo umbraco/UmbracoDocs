@@ -257,7 +257,7 @@ The removed APIs include:
 * The date properties of `QueueItem`, `ContentSummaryModel`, `AddToQueueModel`, `DeployItem`, and `GetUdiRangeModel` change from `DateTime` to `DateTimeOffset`.
 * The restore, partial restore, import, and disk read work items and their factories no longer take a `CacheRefresherCollection` parameter.
 * Constructors that took an `IIndexRebuilder` no longer take this parameter.
-* Several public constructors take an `IOptionsMonitor<DeployEntityTypesOptions>` or `DeployEntityTypesOptions` parameter instead of the transfer entity service. `DictionaryItemConnector` takes an `IOptionsMonitor<DeploySettings>` parameter.
+* Public constructors that took the transfer entity service now take an `IOptionsMonitor<DeployEntityTypesOptions>` or `DeployEntityTypesOptions` parameter instead. `DictionaryItemConnector` takes an `IOptionsMonitor<DeploySettings>` parameter.
 
 ## Legacy version-specific upgrade notes
 
