@@ -98,7 +98,7 @@ To enable `ExcludeScripts`:
 ## Content Security Policy nonce
 
 {% hint style="info" %}
-This feature is available from Umbraco Forms 17.7.0, which is currently a release candidate.
+This feature is available from Umbraco Forms 17.7.0.
 {% endhint %}
 
 From Umbraco Forms 17.7.0, Forms adds a nonce to the script tags it renders. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
