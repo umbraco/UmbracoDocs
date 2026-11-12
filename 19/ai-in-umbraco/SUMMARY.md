@@ -9,6 +9,10 @@
 * [The First Connection](getting-started/first-connection.md)
 * [The First Profile](getting-started/first-profile.md)
 
+## Upgrading
+
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
+
 ## Concepts
 
 * [Core Concepts](concepts/concepts.md)
