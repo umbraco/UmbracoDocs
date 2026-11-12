@@ -130,10 +130,6 @@ Basic authentication will not be available for projects running Umbraco 9. It is
 
 WAF is enabled by default on the custom hostname(s) you add to your Umbraco Cloud project. Environments created before November 2024 may have WAF turned off. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
 
-## Deploy API key
-
-Umbraco Deploy uses a Deploy API key when content and schema are transferred between environments. You can reroll the key from the Security page of your Cloud project. Learn more in the [Deploy API Key](deploy-api-key.md) article.
-
 ## Cookies and security
 
 On Umbraco Cloud sites, you will find an ARRAffinity cookie. This is not sent over HTTPS, and might to some, look like a security risk.

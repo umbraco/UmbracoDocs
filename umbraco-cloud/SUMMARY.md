@@ -46,7 +46,6 @@
   * [Security](build-and-customize-your-solution/set-up-your-project/security/README.md)
     * [Web Application Firewall](build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md)
     * [Managing Transport Security](build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)
-    * [Deploy API Key](build-and-customize-your-solution/set-up-your-project/security/deploy-api-key.md)
   * [Working with Databases](build-and-customize-your-solution/set-up-your-project/databases/README.md)
     * [Database backups](build-and-customize-your-solution/set-up-your-project/databases/backups.md)
     * [Database](build-and-customize-your-solution/set-up-your-project/databases/cloud-database/README.md)
