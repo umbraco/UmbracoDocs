@@ -173,7 +173,7 @@ These notes apply to products documented in numbered version folders, for exampl
 
 Add a note when you document something introduced in a **minor version** (anything after X.0), and you are:
 
-* Adding a new article.
+* Adding a new article, or
 * Adding a new section (a heading plus at least one paragraph).
 
 Don't add a note for features that shipped with the major version itself. The version folder already tells the reader which version applies.

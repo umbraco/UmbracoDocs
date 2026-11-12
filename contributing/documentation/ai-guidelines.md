@@ -42,7 +42,7 @@ Using other prompts, custom skills, or third-party templates is **not recommende
 We ask that AI-generated PRs stay within **10 article files per version folder**. This isn't an arbitrary number. It comes down to two practical limitations:
 
 * **Vale linting** — GitHub Actions caps annotations at 50 per job. In a larger PR, violations in later files won't surface, meaning automated feedback becomes incomplete.
-* **AI review reliability** — AI-assisted review tend to become less thorough when evaluating a large number of articles at once, and things slip through.
+* **AI review reliability** — AI-assisted reviews tend to become less thorough when evaluating a large number of articles at once, and things slip through.
 
 Keeping PRs smaller means better automated coverage, more reliable review, and less back-and-forth for everyone.
 
@@ -54,20 +54,20 @@ Keeping PRs smaller means better automated coverage, more reliable review, and l
 
 ### Exempt: mechanical changes
 
-A change is mechanical if it doesn't change what the documentation tell the reader:
+A change is mechanical if it doesn't change what the documentation tells the reader:
 
-* Link fixes.
-* Screenshot refreshes (same UI) and alt text.
-* Linting fixes (Vale, link checker).
-* Moves and renames with redirects.
-* Markdown formatting.
-* Consistent search-and-replace (for example, a renamed product).
+* Link fixes
+* Screenshot refreshes (same UI) and alt text
+* Linting fixes (Vale, link checker)
+* Moves and renames with redirects
+* Markdown formatting
+* Consistent search-and-replace (for example, a renamed product)
 
 New or rewritten text, steps, examples, code, settings, or sections are **not** mechanical.
 
 The exemption applies only if every change in the PR is mechanical. State "Mechanical changes only: [type]" in the PR description.
 
-### Over the limit?
+### Exceeding the limit
 
 Explain why in the PR description. A maintainer decides whether to accept the PR or ask you to split it.
 

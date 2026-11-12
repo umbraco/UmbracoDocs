@@ -72,7 +72,7 @@ Avoid "should", "could", "would", and "might". State what to do or what is true:
 * Instruction: ⛔ You should add the property. ✅ Add the property.
 * Requirement: ⛔ The key should be unique. ✅ The key must be unique.
 * Capability: ⛔ You could use a custom provider. ✅ You can use a custom provider.
-* Recommendation: ⛔ You should use X. ✅ We recommend using X.
+* Recommendation: ⛔ You should use X. ✅ The recommended approach is to use X.
 
 ### Avoid Editorializing
 

@@ -45,7 +45,7 @@ When creating or modifying documentation, follow this checklist:
   - Instruction: ⛔ You should add the property. ✅ Add the property.
   - Requirement: ⛔ The key should be unique. ✅ The key must be unique.
   - Capability: ⛔ You could use a custom provider. ✅ You can use a custom provider.
-  - Recommendation: ⛔ You should use X. ✅ We recommend using X.
+  - Recommendation: ⛔ You should use X. ✅ The recommended approach is to use X.
 - **List items** — start with a capital letter (unless the item begins with inline code or a URL). End full-sentence items with a period. Don't add end punctuation to fragments (names, options, short noun phrases). Don't mix both styles in one list.
 - **Inline code** — format every code element and literal name as `inline code`: class, interface, method, property, and namespace names; configuration keys and values; file names, extensions, and paths; CLI commands and flags; NuGet package IDs. UI labels are **bold**. Product and feature names (Umbraco Forms, Document Type) stay plain text.
 - No punctuation at end of headings; use `#` only once (the title)
@@ -123,7 +123,7 @@ Add the note in every version folder where the article or section exists (for ex
 
 ## Umbraco Cloud Release Notes
 
-Applies to `umbraco-cloud/` only.
+Applies to `umbraco-cloud/` only. These rules apply to the Cloud team and are only documented here.
 
 ### When to consider a release note
 
@@ -238,7 +238,7 @@ For hint syntax, links, content-ref, expandables, and other markdown conventions
 
 ### Exempt: mechanical changes
 
-A change is mechanical if it doesn't change what the documentation tell the reader:
+A change is mechanical if it doesn't change what the documentation tells the reader:
 
 - Link fixes
 - Screenshot refreshes (same UI) and alt text
@@ -251,7 +251,7 @@ Not mechanical: new or rewritten text, steps, examples, code, settings, or secti
 
 The exemption applies only if **every** change in the PR is mechanical. State "Mechanical changes only: [type]" in the PR description.
 
-### Over the limit?
+### Exceeding the limit
 
 Count the article files per version folder (and for the non-versioned group) while planning. If any count exceeds 10 and the change isn't purely mechanical, still do the work, but:
 
