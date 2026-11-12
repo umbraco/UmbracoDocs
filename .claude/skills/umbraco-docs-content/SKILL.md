@@ -19,6 +19,8 @@ The contributing guide is the single source of truth for documentation standards
 - **Code samples**: `contributing/documentation/style-guide/code-samples.md`
 - **File structure and images**: `contributing/documentation/style-guide/structure.md`
 
+Exception: the Umbraco Cloud release notes rules are documented only in this skill (see Umbraco Cloud Release Notes below).
+
 For acronym exceptions and how to add new ones, read `references/acronyms.md`.
 
 ## Workflow Checklist

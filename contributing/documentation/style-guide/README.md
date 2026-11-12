@@ -160,7 +160,7 @@ There is an extension for Visual Studio Code that allows you to use Vale as you 
 
 The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
 
-To use it, you will still have to install a `Vale Server` on your computer. For more information, see the [official Vale installation](https://vale.sh/docs/vale-cli/installation/) article.
+To use it, you will still have to install a `Vale Server` on your computer. For more information, see the [official Vale installation](https://docs.vale.sh/topics/installation) article.
 
 Once the tools have been installed, a check of the complete repository of articles can be done using the terminal within Visual Studio Code.
 
@@ -178,7 +178,7 @@ The Vale extension will also run automatically when you are viewing Markdown fil
 
 <summary>Use Vale locally</summary>
 
-The first step to running Vale locally is to install it following Vale's [Installation documentation](https://vale.sh/docs/vale-cli/installation/).
+The first step to running Vale locally is to install it following Vale's [Installation documentation](https://docs.vale.sh/topics/installation).
 
 Next, you can open a command line tool in the documentation repository and run the following command:
 

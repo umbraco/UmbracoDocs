@@ -52,6 +52,8 @@ Keeping PRs smaller means better automated coverage, more reliable review, and l
 * All non-versioned folders (for example `umbraco-cloud/`) count as one group.
 * An article file is any `.md` file, excluding `SUMMARY.md`.
 
+Changes mirrored across version folders are usually near-identical, so they're quicker to review and fix.
+
 ### Exempt: mechanical changes
 
 A change is mechanical if it doesn't change what the documentation tells the reader:

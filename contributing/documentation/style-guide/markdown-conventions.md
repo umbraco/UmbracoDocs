@@ -167,7 +167,7 @@ Four types of hints can be added to our documentation: `info`, `success`, `warni
 
 Many customers don't upgrade to every minor version right away. Version-specific notes show readers which version introduced a feature, so they know what is available in the version they run.
 
-These notes apply to products documented in numbered version folders, for example `17/umbraco-cms/`. They don't apply to unversioned products such as Umbraco Cloud.
+These notes apply to products documented in numbered version folders, for example `17/umbraco-cms/`. They don't apply to non-versioned products such as Umbraco Cloud.
 
 #### When to add a note
 
