@@ -56,3 +56,7 @@ For the details and upgrade steps, see the [Version Specific Upgrade Notes](upgr
 #### Other
 
 * Delivery API: Return a validation error (422), instead of a 500 status code, for a file upload with invalid Base64 content
+* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing. A message says how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
+* Recycle Bin: Hide the recycle bin from users with start folders
+* Security: Show missing and trashed start folders in the start folder picker
+* Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
