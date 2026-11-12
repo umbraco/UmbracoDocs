@@ -201,6 +201,10 @@ TResult Execute(string collectionAlias, object[] entityIds, TSettings? settings)
 
 Actions are added via the [Collections](../collections/overview.md) settings.
 
+Umbraco groups the actions in an actions menu into blocks, with a line between each block. Custom actions appear in the last block of the menu, below the Umbraco groups. They are listed in the order you add them to the collection. Save actions also keep the order you add them in.
+
+The Create, Delete, Import, and Export actions of Umbraco UI Builder join the matching Umbraco groups. For more information, see the [Inbuilt Actions](inbuilt-actions.md) article.
+
 ### Using the `AddAction<TMenuActionType>()` Method
 
 Adds an action of the specified type to the collection.
