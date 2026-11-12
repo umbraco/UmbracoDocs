@@ -108,14 +108,12 @@ The API uses URL-based versioning. The current version is `v1`.
 
 ### Usage Analytics
 
-| Method | Endpoint                                                          | Description           |
-| ------ | ----------------------------------------------------------------- | --------------------- |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-summary`           | Get usage summary     |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-time-series`       | Get time series data  |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-by-provider`       | Breakdown by provider |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-by-model`          | Breakdown by model    |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-by-profile`        | Breakdown by profile  |
-| GET    | `/umbraco/ai/management/api/v1/analytics/usage-by-user`           | Breakdown by user     |
+| Method | Endpoint                                                  | Description                                 |
+| ------ | --------------------------------------------------------- | ------------------------------------------- |
+| GET    | `/umbraco/ai/management/api/v1/analytics/usage-overview`  | Totals and a time series                    |
+| GET    | `/umbraco/ai/management/api/v1/analytics/usage-breakdown` | Usage per provider, model, profile, or user |
+
+The older `usage-summary`, `usage-time-series`, and `usage-by-*` endpoints are obsolete and will be removed in version 20. For more information, see the [Analytics API](analytics/README.md) article.
 
 ### Tools
 

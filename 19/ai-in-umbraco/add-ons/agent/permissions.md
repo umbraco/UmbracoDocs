@@ -271,7 +271,7 @@ This metadata flows from frontend to backend for permission filtering:
 Frontend Tool Manifest
     ↓ (metadata attached)
 UaiFrontendTool { Tool, Scope, IsDestructive }
-    ↓ (sent via forwardedProps)
+    ↓ (sent in each tool's metadata)
 Backend AIFrontendTool { Tool, Scope, IsDestructive }
     ↓ (permission check)
 Agent Runtime (filters by permissions)

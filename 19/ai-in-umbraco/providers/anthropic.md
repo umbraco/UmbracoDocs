@@ -42,6 +42,12 @@ Keep your API key secure. Never commit it to source control or expose it in clie
 
 ![Anthropic connection detail showing API Key field](../.gitbook/assets/anthropic-create-connection.png)
 
+## Sampling Settings
+
+Anthropic API version 2026-10-21 removed the `temperature`, `top_p`, and `top_k` request parameters. The Anthropic provider uses this API version, so it doesn't send sampling settings for any Claude model.
+
+The profile editor hides the **Temperature** field when you select an Anthropic model. A temperature already saved on a profile isn't sent.
+
 ## Related
 
 * [Providers Overview](providers.md)
