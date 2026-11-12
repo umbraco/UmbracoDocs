@@ -2,6 +2,7 @@
 description: >-
   Learn how to start testing a pre-release for the latest version of Umbraco
   CMS, and find information about new and updated documentation.
+hidden: true
 ---
 
 # Pre-Release Guide
