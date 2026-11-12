@@ -1,17 +1,11 @@
 # Date
 
-The date picker uses a front-end library called [Pikaday](https://github.com/dbushell/Pikaday) to display a UI to pick dates.
+The Date field lets a visitor pick a date. It uses the date picker built into the visitor's browser, which shows the date in the visitor's own format.
 
-![Date picker on frontend](../../../.gitbook/assets/date-v14.png)
+Forms stores the date in a standard format, so dates entered in different locales don't get mixed up.
 
-Pikaday date picker can be localized based on the page the Form is rendered on.
+Use the **Minimum date** and **Maximum date** settings to limit which dates a visitor can pick.
 
-The date picker displays the picked date in the required locale. Using JavaScript, a hidden field is updated with a standard date format to send to the server for storing record submissions. This avoids the locale mixing up the dates.
+The **Placeholder** setting has no effect in the default theme, because browsers don't show a placeholder in a date field.
 
-To achieve localized date, a Razor partial view is included at `/Views/Partials/Forms/Themes/default/DatePicker.cshtml`.
-
-The **DatePicker.cshtml** includes the `moment-with-locales.min.js` library to help with the date locale formatting and the appropriate changes to Pikaday to support the locales. If you wish to use a different DatePicker component, edit the **DatePicker.cshtml** file as per your needs.
-
-## Configure the date picker
-
-The Date picker has [configuration settings](../../../developer/configuration/#date-picker-field-type-configuration) to control the number of years shown in the picker and the date format.
+To use a different date picker, a developer can override the `FieldType.DatePicker.cshtml` view in a custom theme. For more information, see the [Field Types](../../../developer/field-types.md#date-picker) article.

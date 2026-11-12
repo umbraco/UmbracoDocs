@@ -15,7 +15,7 @@ To view form analytics, you need:
 * Access to the **Forms** section in the backoffice.
 * The **View Entries** permission for the form.
 
-Users will only see analytics for forms they have permission to manage.
+Users will only see analytics for forms they have permission to view entries for.
 
 ## Accessing Analytics
 
@@ -23,9 +23,9 @@ There are two ways to access form analytics in the backoffice.
 
 ### From the Forms Section Menu
 
-In the Forms section, click the **Analytics** menu item in the sidebar. This opens the analytics overview where you can browse data across all your forms.
+In the Forms section, click **Analytics** under **Data** in the sidebar. This opens the analytics overview where you can browse data across all your forms.
 
-![Analytics overview showing a submissions chart and forms table](../.gitbook/assets/analytics-overview.png)
+![Analytics overview showing the summary tiles, the submissions chart, and the date controls](../.gitbook/assets/analytics-overview.png)
 
 ### From a Specific Form
 
@@ -43,69 +43,94 @@ The Analytics tab appears as a workspace view on existing forms. It is not avail
 
 ## Controls
 
-The analytics view provides controls to adjust the data displayed.
+The analytics views provide controls to adjust the data displayed. The backoffice remembers your choices in the browser, so they're kept the next time you open analytics.
 
 ### Date Range
 
-Use the date range picker to select the time period for the analytics data. You can choose from preset ranges such as **Last 7 days** or **Last 30 days**, or set a custom date range. You can also enable a comparison date range to compare the current period against a previous one.
+Click the date range button to open the **Date range** dialog. Choose a preset, such as **Last 7 days**, **Last 30 days**, **This month**, **Last month**, or **Last year**. Or choose **Custom** and set your own start and end dates.
 
-![Date range picker with preset options and comparison toggle](../.gitbook/assets/analytics-date-picker.png)
+Turn on **Compare** to compare the selected range with another period. You can compare with the **Previous period**, the **Previous year**, or a **Custom** range. With a comparison on, the summary tiles and tables show the change against the comparison period.
+
+![Date range dialog with a custom range and the comparison turned on](../.gitbook/assets/analytics-date-picker.png)
+
+A range can cover up to 1,095 days. A longer range is shortened, and the backoffice tells you that it was.
 
 ### Group By
 
-Use the **Group by** control to change how the data is aggregated in the time-series charts:
+Use the **Day**, **Week**, and **Month** buttons to change how the data is grouped in the time-series charts:
 
-* **Day** — shows data points for each day in the selected range.
-* **Week** — groups data by week.
-* **Month** — groups data by month.
+* **Day** shows a data point for each day in the selected range.
+* **Week** groups data by week. Weeks start on Monday.
+* **Month** groups data by month.
 
-## Overview Table
+Days, weeks, and months follow your own time zone.
 
-The overview table lists all forms you have access to with summary statistics for the selected date range. This includes entry counts, workflow counts, workflow errors, source pages, and unique members.
+## Analytics Overview
 
-![Analytics overview table showing all forms with entry counts and statistics](../.gitbook/assets/analytics-overview-table.png)
+The overview shows three summary tiles for the selected date range:
 
-Click a form name to navigate to its detailed analytics view.
+* **Entries**: the number of form submissions.
+* **Unique members**: the number of distinct logged-in members who submitted. See [Unique Members](#unique-members).
+* **Workflow failure rate**: the share of workflow runs that failed.
 
-The overview also shows a **Unique members** total across all your forms. See [Unique Members](#unique-members).
+Select a tile to show its figures over time in the chart below the tiles.
 
-## Analytics Widgets
+### Forms Table
 
-When viewing analytics for a specific form, the view displays four widgets providing different perspectives on form performance.
+The **Forms** table lists all forms you have access to, with their statistics for the selected date range:
+
+* Entries, and each form's share of all entries
+* Unique members
+* Workflows and workflow errors
+* Whether the form stores records, and how long it keeps them
+* Whether the form has more than one page
+* The number of source pages
+
+![Forms table on the analytics overview listing each form with its statistics](../.gitbook/assets/analytics-overview-table.png)
+
+Click a column heading to sort the table. Click a form name to open the analytics for that form.
+
+## Form Analytics
+
+When viewing analytics for a specific form, the view displays four boxes providing different perspectives on form performance.
 
 ### Submissions
 
-A time-series chart showing the number of form submissions and failed workflows over the selected date range.
+A time-series chart showing the number of form submissions and workflow errors over the selected date range.
 
 ![Form analytics showing the submissions chart with entries and workflow errors](../.gitbook/assets/analytics-form-submissions.png)
 
-### Submissions by Hour
+### Submissions by Hour of Day
 
 A chart showing the distribution of form submissions across the 24 hours of the day. This helps identify peak submission times and can inform decisions about when to schedule maintenance or review submissions.
 
-![Hourly distribution chart and workflow statistics table](../.gitbook/assets/analytics-form-hourly-workflows.png)
+![Submissions by hour of day chart and the workflow statistics table](../.gitbook/assets/analytics-form-hourly-workflows.png)
 
 ### Workflow Statistics
 
-A table listing each workflow attached to the form. It shows the number of times each workflow was triggered, succeeded, and failed. Use this to monitor the health of your form processing workflows.
+A table listing each workflow attached to the form. It shows how many times each workflow was triggered, succeeded, and failed, and its failure rate. Use this to monitor the health of your form processing workflows.
 
-### Origins
+If workflows have run that are no longer on the form, their runs are shown together in a **Removed workflows** row. The table then adds up to the figures on the analytics overview.
+
+### Form Submissions by Source Page
 
 A time-series chart showing form submissions broken down by the page where the form was submitted. This is useful when the same form is placed on multiple pages across your site, as it shows which pages are driving the most submissions.
 
-Below the chart, a table lists each source page with its name, URL, and entry count.
+Use the **Entries** and **Share** buttons to show either the number of entries from each page or each page's share of the entries.
 
-![Origins chart and table showing submissions by source page](../.gitbook/assets/analytics-form-origins-table.png)
+Below the chart, a table lists each source page with its name, URL, entry count, and unique members. A page without a URL shows **No URL**.
+
+![Submissions by source page chart and table](../.gitbook/assets/analytics-form-origins-table.png)
 
 ## Unique Members
 
-The **Unique members** metric counts the distinct logged-in members who submitted a form in the selected date range. It appears on the analytics overview as a total across all your forms, and on each form's detailed view.
+The **Unique members** metric counts the distinct logged-in members who submitted a form in the selected date range. It appears as a tile on the analytics overview and as a column in the **Forms** table. On a form's analytics, it appears for each source page.
 
-![The Unique members total and per-form column on the analytics overview](../.gitbook/assets/analytics-unique-members.png)
+![The Unique members tile selected, with the chart showing unique members over time](../.gitbook/assets/analytics-unique-members.png)
 
 A member who submits the same form more than once is counted once. Anonymous submissions are never counted. Entries from members who have since been deleted are still counted.
 
-The metric shows `0` when there are no member submissions in the range. It is never blank.
+The metric shows `0` when there are no member submissions in the range.
 
 ## Data Processing
 

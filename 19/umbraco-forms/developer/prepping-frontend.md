@@ -40,45 +40,6 @@ You can use this to apply `async` or `defer` attributes. For example:
 
 If using `async`, please make sure to [disable the Forms client-side validation framework check](../developer/configuration/README.md#disableclientsidevalidationdependencycheck). This is necessary as it's not possible to guarantee that the asynchronous script will load in time to be recognized by the check. This can then cause a false positive warning.
 
-## Validation Using jQuery
-
-It is possible to use jQuery as your validation framework instead of the ASP.NET Client Validation library.
-
-To use jQuery validation, add the following client dependencies:
-
-- `jQuery` (JavaScript library)
-- `jQuery validate` (jQuery plugin that provides client-side Form validation)
-- `jQuery validate unobtrusive` (Add-on to jQuery Validation that provides unobtrusive validation via data-* attributes)
-
-Be sure to remove any calls to `@Html.RenderUmbracoFormDependencies(Url)`.  
-
-The easiest way to add the dependencies is to fetch them from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). There are various CDN services you can use:
-
-- For example: [Microsoft CDN](https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview).
-- Other CDN services you might want to look at are https://www.jsdelivr.com/ and https://cdnjs.com/about, which may offer better performance and more reliable service.
-
-To add the three client dependencies, see the examples below:
-
-**Example within `head` tags.**
-
-```html
-<head>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-</head>
-```
-
-**Example within `body` tags.**
-
-When adding the script to the bottom of the page, you will also need to render the scripts. For more information, see [Rendering Forms Scripts](rendering-scripts.md) article.
-
-```html
-<body>
-    <!-- Page content here -->
-
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-</body>
-```
+{% hint style="info" %}
+Umbraco Forms 19 supports only the ASP.NET Client Validation library. Support for jQuery Validation is removed. For the upgrade steps, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#client-side-validation-without-jquery) article.
+{% endhint %}
