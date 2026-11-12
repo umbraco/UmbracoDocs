@@ -37,9 +37,9 @@ If you want to run a build without debugging, see [Building from source](build.m
 In order to build the Umbraco source code locally with Visual Studio Code, first make sure you have the following installed.
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [dotnet SDK v7+](https://dotnet.microsoft.com/en-us/download)
-* [Node.js v14+](https://nodejs.org/en/download/)
-* npm v7+ (installed with Node.js)
+* The .NET SDK version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
+* The Node.js version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
+* npm (installed with Node.js)
 * [Git command line](https://git-scm.com/download/)
 
 Open the root folder of the repository in Visual Studio Code.
@@ -48,13 +48,13 @@ To build the front end you'll need to open the command pallet (Ctrl + Shift + P)
 
 You can also run the tasks manually on the command line:
 
-```
+```cd
 cd src\Umbraco.Web.UI.Client
 npm i
 npm run dev
 ```
 
-If you just want to build the UI Client to `Umbraco.Web.UI` then instead of running `dev`, you can do: `npm run build`.
+If you want to build the UI Client to `Umbraco.Web.UI` then instead of running `dev`, you can do: `npm run build`.
 
 The login screen is a different frontend build, for that one you can run it as follows:
 
@@ -64,13 +64,13 @@ npm i
 npm run dev
 ```
 
-If you just want to build the Login screen to `Umbraco.Web.UI` then instead of running `dev`, you can do: `npm run build`.
+If you want to build the Login screen to `Umbraco.Web.UI` then instead of running `dev`, you can do: `npm run build`.
 
 **The initial Gulp build might take a long time - don't worry, this will be faster on subsequent runs.**
 
 You might run into [Gulp quirks](build.md#gulp-quirks).
 
-The caching for the back office has been described as 'aggressive' so we often find it's best when making back office changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
+The caching for the backoffice has been described as 'aggressive' so we often find it's best when making backoffice changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
 
 To run the C# portion of the project, either hit F5 to begin debugging, or manually using the command line:
 
@@ -78,7 +78,7 @@ To run the C# portion of the project, either hit F5 to begin debugging, or manua
 dotnet watch --project .\src\Umbraco.Web.UI\Umbraco.Web.UI.csproj
 ```
 
-**The initial C# build might take a \_really**\_\*\* long time (seriously, go and make a cup of coffee!) - but don't worry, this will be faster on subsequent runs.\*\*
+**The initial C# build might take a long time (seriously, go and make a cup of coffee!) - but don't worry, this will be faster on subsequent runs.**
 
 When the page eventually loads in your web browser, you can follow the installer to set up a database for debugging. You may also wish to install a [starter kit](https://our.umbraco.com/packages/?category=Starter%20Kits\&version=9) to ease your debugging.
 
@@ -87,8 +87,8 @@ When the page eventually loads in your web browser, you can follow the installer
 In order to build the Umbraco source code locally with Visual Studio, first make sure you have the following installed.
 
 * [Visual Studio 2022 v17+ with .NET 7+](https://visualstudio.microsoft.com/vs/) ([the community edition is free](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community\&rel=15) for you to use to contribute to Open Source projects)
-* [Node.js v14+](https://nodejs.org/en/download/)
-* npm v7+ (installed with Node.js)
+* The Node.js version listed in the [Requirements](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements) article
+* npm (installed with Node.js)
 * [Git command line](https://git-scm.com/downloads)
 
 The easiest way to get started is to open `umbraco.sln` in Visual Studio.
@@ -101,11 +101,11 @@ If you're working on the backoffice, you may wish to run the `dev` command inste
 
 You might run into [Gulp quirks](build.md#gulp-quirks).
 
-The caching for the back office has been described as 'aggressive' so we often find it's best when making back office changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
+The caching for the backoffice has been described as 'aggressive' so we often find it's best when making backoffice changes to [disable caching in the browser (check "Disable cache" on the "Network" tab of developer tools)](https://techwiser.com/disable-cache-google-chrome-firefox) to help you to see the changes you're making.
 
-"The rest" is a C# based codebase, which is mostly ASP.NET Core MVC based. You can make changes, build them in Visual Studio, and hit F5 to see the result.
+"The rest" is a C# based codebase, which is ASP.NET Core MVC based. You can make changes, build them in Visual Studio, and hit F5 to see the result.
 
-**The initial C# build might take a \_really**\_\*\* long time (seriously, go and make a cup of coffee!) - but don't worry, this will be faster on subsequent runs.\*\*
+**The initial C# build might take a long time (seriously, go and make a cup of coffee!) - but don't worry, this will be faster on subsequent runs.**
 
 When the page eventually loads in your web browser, you can follow the installer to set up a database for debugging. You may also wish to install a [starter kit](https://our.umbraco.com/packages/?category=Starter%20Kits\&version=9) to ease your debugging.
 
@@ -113,7 +113,7 @@ When the page eventually loads in your web browser, you can follow the installer
 
 Did you read ["Are you sure"](build.md#are-you-sure)?
 
-Do note that this is only required if you want to test out your custom changes in a separate site (not the one in the Umbraco.Web.UI), if you just want to test your changes you can run the included test site using: `dotnet run` from `src/Umbraco.Web.UI/`
+This is only required if you want to test out your custom changes in a separate site (not the one in the Umbraco.Web.UI). If you want to test your changes you can run the included test site using: `dotnet run` from `src/Umbraco.Web.UI/`
 
 You may want to build a set of NuGet packages with your changes, this can be done using the dotnet pack command.
 
@@ -135,10 +135,10 @@ Once the solution has been used to run a site, one may want to "reset" the solut
 
 The easiest way to do this by deleting the following files and folders:
 
-* src/Umbraco.Web.UI/appsettings.json
-* src/Umbraco.Web.UI/umbraco/Data
+* `src/Umbraco.Web.UI/appsettings.json`
+* `src/Umbraco.Web.UI/umbraco/Data`
 
-You only have to remove the connection strings from the appsettings, but removing the data folder ensures that the sqlite database gets deleted too.
+You only have to remove the connection strings from the appsettings, but removing the data folder ensures that the SQLite database gets deleted too.
 
 Next time you run a build the `appsettings.json` file will be re-created in its default state.
 
@@ -146,7 +146,7 @@ This will leave media files and views around, but in most cases, it will be enou
 
 To perform a more complete clear, you will want to also delete the content of the media, views, scripts... directories.
 
-The following command will force remove all untracked files and directories, whether they are ignored by Git or not. Combined with `git reset` it can recreate a pristine working directory.
+The following command will force remove all un-tracked files and directories, whether they are ignored by Git or not. Combined with `git reset` it can recreate a pristine working directory.
 
 ```
 git clean -xdf .
@@ -154,8 +154,8 @@ git clean -xdf .
 
 For git documentation see:
 
-* git [clean](https://git-scm.com/docs/git-clean)
-* git [reset](https://git-scm.com/docs/git-reset)
+* `git [clean](https://git-scm.com/docs/git-clean)`
+* `git [reset](https://git-scm.com/docs/git-reset)`
 
 ## Azure DevOps
 

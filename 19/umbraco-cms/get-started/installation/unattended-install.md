@@ -14,7 +14,7 @@ In order to get a clean instance of Umbraco, follow our installation guide for h
 
 As you will not be running through the installation wizard when using this feature, you need to manually tell Umbraco which database to use.
 
-* Set up and configure a new database - see [Requirements](../requirements.md#hosting) for details.
+* Set up and configure a new database - see [Requirements](requirements.md#hosting) for details.
 * Add the connection string using configuration.
 
 {% hint style="info" %}

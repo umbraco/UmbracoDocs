@@ -6,7 +6,7 @@ description: A guide to install Umbraco CMS using Visual Studio.
 
 ## Prerequisites
 
-* Check the [Requirements](../requirements.md) article to ensure you have everything you need to start your Umbraco project.
+* Check the [Requirements](requirements.md) article to ensure you have everything you need to start your Umbraco project.
 
 ## Install the template
 
@@ -25,7 +25,7 @@ description: A guide to install Umbraco CMS using Visual Studio.
 Refrain from changing the Solution name, as this will cause a namespace conflict with the CMS itself.
 {% endhint %}
 
-5. Select **.Net 10.0 Long-Term Support (LTS)** from the **Framework** dropdown. The rest of the fields are optional.
+5. Select **.NET 11.0 (Standard Term Support)** from the **Framework** dropdown. The rest of the fields are optional.
 6. Click **Create**.
 
 The Umbraco Project is ready for you.
