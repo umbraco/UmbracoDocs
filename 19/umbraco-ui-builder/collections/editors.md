@@ -30,6 +30,44 @@ collectionConfig.Editor(editorConfig => {
 });
 ```
 
+## Setting the Modal Size of an Editor
+
+When an editor opens in a sidebar modal, for example from a list view, the modal is `Large` by default. You can make the modal narrower or wider to fit the editor.
+
+The size only applies when the editor opens in a modal. It has no effect when the editor opens as a full page.
+
+### Using the `SetModalSize()` Method
+
+Sets the width of the sidebar modal the editor opens in. The `EditorModalSize` enum is in the `Umbraco.UIBuilder.Configuration.Editors` namespace and has these values:
+
+* `Small`: a narrow modal. Labels show above their fields, and the sidebar of a tab shows under the main fields.
+* `Medium`: a medium width modal.
+* `Large`: a wide modal. This is the default.
+* `Full`: a modal that fills the available width.
+
+{% hint style="info" %}
+
+List views inside a `Small` modal, such as child collections, keep their normal layout. They can feel cramped, so use `Small` for editors with only a few fields.
+
+{% endhint %}
+
+#### Method Syntax
+
+```cs
+SetModalSize(EditorModalSize size) : EditorConfigBuilder<TEntityType>
+```
+
+#### Example
+
+```csharp
+collectionConfig.Editor(editorConfig => editorConfig
+    .SetModalSize(EditorModalSize.Small)
+    .AddTab("General", tabConfig => {
+        ...
+    })
+);
+```
+
 ## Adding a Tab to an Editor
 
 ### Using the `AddTab()` Method
