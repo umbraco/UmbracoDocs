@@ -31,7 +31,35 @@ You can also override these optional methods:
 * `InsertImplAsync` and `UpdateImplAsync`. Both call `SaveImplAsync` by default.
 * `DeleteRelationImplAsync`. Override it when the collection's related collections need to remove relations.
 
-The following repository stores products and their categories. The repository uses the `Product`, `Category`, and `ProductCategory` models from the [Entity Framework Core](efcore-repositories.md) article.
+The following repository stores products and their categories. The repository uses the `Product` model from the [Entity Framework Core](efcore-repositories.md) article, and these two models:
+
+{% code title="Category.cs" %}
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MyProject.Models;
+
+[Table("Categories")]
+public class Category
+{
+    [Key]
+    public int Id { get; set; }
+
+    public string Name { get; set; } = string.Empty;
+}
+
+[Table("ProductCategories")]
+public class ProductCategory
+{
+    public int ProductId { get; set; }
+
+    public int CategoryId { get; set; }
+}
+```
+{% endcode %}
+
+`ProductCategory` is the junction type of the products' related categories. The related collection adds it to the EF Core model, with `ProductId` and `CategoryId` as its key. For more information, see the [Related Collections](../collections/related-collections.md) article.
 
 <details>
 
@@ -160,10 +188,14 @@ public class ProductRepository : EFCoreRepository<Product, int>
 
 </details>
 
-Assign the repository to a collection with the `SetRepositoryType()` method:
+Assign the repository to a collection with the `SetRepositoryType()` method, and add the related categories:
 
 ```csharp
-collectionConfig.SetRepositoryType<ProductRepository>();
+collectionConfig
+    .SetRepositoryType<ProductRepository>()
+    .AddRelatedCollection<Product, Category, ProductCategory>(x => x.Id, "Category", "Categories", relationConfig => relationConfig
+        .SetAlias("productCategories")
+        .SetJunction<ProductCategory>(x => x.ProductId, y => y.CategoryId));
 ```
 
 {% hint style="info" %}
@@ -236,7 +268,7 @@ The where clause and order-by passed to `GetAllImplAsync`, `GetPagedImplAsync`, 
 
 * They already include the collection's filter and the soft-delete clause.
 * Umbraco's query helpers, such as `InvariantContains` and `SqlIn`, are rewritten so that EF Core can translate them.
-* Plain `string` comparisons are rewritten to be case-insensitive, as on the NPoco repository.
+* Calls to `string.Equals`, `Contains`, `StartsWith`, and `EndsWith` on a column are rewritten to be case-insensitive, as on the NPoco repository. The `==` operator is not rewritten.
 
 Apply them as lambdas in `Where`, `OrderBy`, and `OrderByDescending`. They can contain provider-specific calls, such as `EF.Functions.Like`. Do not compile them or run them in memory.
 
@@ -245,7 +277,7 @@ Queries you build yourself are not rewritten. Helpers you add to an `IQueryable`
 ### Errors
 
 * An exception from your implementation becomes a failed `OperationResult`. The exception is not thrown to the caller.
-* When EF Core cannot translate a query, the error names the collection and the method. The error leaves out the query values.
+* When EF Core cannot translate a query, the error names the collection and, where it can, the method that EF Core cannot translate. The error leaves out the query values.
 
 ## Deleting Relations
 

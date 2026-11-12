@@ -145,7 +145,7 @@ public class ProductDeletedHandler : INotificationHandler<EntityDeletedNotificat
 
 {% hint style="warning" %}
 
-`SqlQueryBuildingNotification` and `SqlQueryBuiltNotification` are only published by the NPoco repository. From Umbraco UI Builder 19, the default repository uses EF Core, so handlers for these notifications do not run unless `UseEFCore` is `false`. The NPoco repository and these notifications are scheduled for removal in Umbraco UI Builder 20.
+`SqlQueryBuildingNotification` and `SqlQueryBuiltNotification` are only published by the NPoco repository. From Umbraco UI Builder 19, the default repository uses EF Core, so handlers for these notifications do not run unless `UseEFCore` is `false`. The NPoco repository and these notifications are scheduled for removal in Umbraco UI Builder 21.
 
 Move your handlers to `EFCoreQueryBuildingNotification` and `EFCoreQueryBuiltNotification`. For more information, see the [EF Core Events](efcore-events.md) article.
 

@@ -40,7 +40,7 @@ If you have a custom repository extending `Repository<TEntity, TId>` or `EFCoreR
 
 {% code title="ProductRepository.cs" %}
 ```csharp
-// Before (version 16 and earlier)
+// Before (version 18 and earlier)
 protected override Product GetImpl(int id)
 {
     return _myDataSource.Get(id);

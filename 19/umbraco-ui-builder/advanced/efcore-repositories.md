@@ -60,7 +60,7 @@ The model includes the collections that use EF Core:
 
 For each of these collections, the model:
 
-* Adds the entity type, and the junction types of its related collections.
+* Adds the entity type, and the junction type and related entity type of each related collection.
 * Uses the collection's ID property as the primary key, and the parent and child properties as a junction's composite key.
 * Applies the collection's `ConfigureEFCore()` callback.
 
@@ -68,7 +68,7 @@ If EF Core cannot map a collection, that collection is left out of the model. Th
 
 ## Mapping Your Entity Models
 
-The EF Core repository reads three kinds of mapping. When they disagree, the first one in the list below wins:
+The EF Core repository reads four kinds of mapping. When they disagree, the first one in the list below wins:
 
 1. The collection's `ConfigureEFCore()` callback.
 2. .NET data annotations from `System.ComponentModel.DataAnnotations` and `System.ComponentModel.DataAnnotations.Schema`, such as `[Table]`, `[Column]`, `[Key]`, `[NotMapped]`, and `[DatabaseGenerated]`.
@@ -80,7 +80,8 @@ The EF Core repository reads three kinds of mapping. When they disagree, the fir
 Models written for the NPoco repository keep working on EF Core. The EF Core model reads the NPoco attributes in the same way NPoco does:
 
 * `[TableName]` sets the table name. Without it, the class name is used.
-* `[PrimaryKey]` sets the key columns. A single key is generated on insert unless you set `AutoIncrement = false`. A composite key is never generated.
+* `[PrimaryKey]` decides whether the key is generated. A single key is generated on insert unless you set `AutoIncrement = false`. A composite key is never generated.
+* `[PrimaryKey]` also sets the key columns of a type that is not a collection. A collection always uses its ID property as the key.
 * `[Column("name")]` sets the column name.
 * `[Ignore]`, `[ResultColumn]`, and `[Reference]` properties are not mapped.
 * On a class marked `[ExplicitColumns]`, only properties with `[Column]` are mapped.
@@ -226,7 +227,7 @@ The text helpers are case-insensitive, as on NPoco. The value is not escaped, so
 
 ### String Comparisons
 
-Plain `string` comparisons with `Contains`, `StartsWith`, `EndsWith`, and `Equals` are case-insensitive on EF Core, as on NPoco. The `StringComparison` argument is ignored on both.
+Plain `string` comparisons with `Contains`, `StartsWith`, `EndsWith`, and `Equals` are case-insensitive on EF Core, as on NPoco. This applies when the value does not read another property of the entity. The `StringComparison` argument is ignored on both.
 
 The `==` and `!=` operators are not rewritten. They follow the column collation on both repositories. On SQLite, they are case-sensitive. On SQL Server, they follow the database collation.
 
@@ -242,7 +243,7 @@ Use `==` for lookups that need an index. The case-insensitive comparisons wrap t
 * A negated empty `SqlIn`, such as `!emptyIds.SqlIn(x.Id)`, matches every row on EF Core. On NPoco, it matches no rows.
 * The value passed to a helper must be known before the query runs. A value that reads another property of the entity fails with an error that names the collection.
 
-When EF Core cannot translate a query, the error names the collection and the method. The error leaves out the query values.
+When EF Core cannot translate a query, the error names the collection and, where it can, the method that EF Core cannot translate. The error leaves out the query values.
 
 ## Data Types
 

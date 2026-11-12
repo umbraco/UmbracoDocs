@@ -32,7 +32,6 @@ Register the handlers in a composer:
 using MyProject.Handlers;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
 using Umbraco.UIBuilder.Infrastructure.Events;
 
 namespace MyProject.Composers;

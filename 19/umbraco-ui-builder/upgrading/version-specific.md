@@ -24,12 +24,18 @@ Collections without a custom repository now use the Entity Framework Core (EF Co
 To keep using the NPoco repository, set `Umbraco:UIBuilder:FeatureManagement:UseEFCore` to `false`. Keep the following in mind:
 
 * The NPoco repository is obsolete and is scheduled for removal in Umbraco UI Builder 21.
+* The NPoco query notifications, `DatabaseCreatedNotification`, and `IDatabaseFactory` are also scheduled for removal in Umbraco UI Builder 21.
 * A site that uses the NPoco repository logs a warning at startup.
 * The setting is read once, when the site starts. In earlier versions, the repository switched while the site ran. Restart the site after you change the value.
 
 For more information, see the [Entity Framework Core](../advanced/efcore-repositories.md) article.
 
 ### Entity models and NPoco attributes
+
+Umbraco is moving from NPoco to EF Core and plans to remove NPoco. Prepare your models and tables for that change now:
+
+* Add .NET data annotations to your models.
+* Create custom tables with EF Core migrations instead of NPoco migrations.
 
 The EF Core repository reads NPoco attributes, such as `[TableName]`, `[PrimaryKey]`, `[Column]`, and `[Ignore]`. Models written for the NPoco repository keep working.
 
@@ -104,7 +110,7 @@ Repositories that inherit from `EFCoreRepository<TEntity, TId>` have these chang
 * Changes your `*ImplAsync` methods leave unsaved are dropped. Call `SaveChangesAsync` yourself.
 * The where clause and order-by arrive already rewritten for EF Core. Apply them as lambdas, and do not compile them or run them in memory.
 * An operation nested in another opens a nested scope. A failed nested write stops the outer operation from committing.
-* A failing read no longer stops an ambient Umbraco scope from committing.
+* A failing read does not stop an ambient Umbraco scope from committing. Only a failing write does.
 * `DbContext` is only available while an operation runs, and only for the repository's own database.
 
 The `EFCoreRepository(RepositoryContext, UIBuilderDbContext)` constructor is obsolete and is scheduled for removal in Umbraco UI Builder 21. Use the `EFCoreRepository(RepositoryContext)` constructor. A repository built with the obsolete constructor now disposes the `UIBuilderDbContext` passed to it.
@@ -129,6 +135,11 @@ The EF Core repository now handles these values the same way as the NPoco reposi
 
 To change the `DateTime` or `decimal` handling, configure the property in `ConfigureEFCore()`. For more information, see the [Data Types](../advanced/efcore-repositories.md#data-types) section.
 
+### Property editors
+
+* Slider and range slider values are now validated against the range of the Data Type. A stored value outside the range fails validation the next time it is saved.
+* The typed Label property editors of Umbraco 19, such as `Umbraco.Label.Integer`, show as the Umbraco UI Builder read-only label.
+
 ### Saving entities and their relations
 
 * Relations are only saved when the entity save succeeds. A failed or canceled save no longer writes or deletes relation rows.
@@ -142,13 +153,18 @@ The import and export actions now use CsvHelper 34:
 * Use `[CsvIgnore]` and `[CsvColumn]` instead of the CsvHelper 31 attributes, such as `[Ignore]` and `[Name]`.
 * Properties that hold nested objects are no longer flattened into extra columns.
 
-The import now reports rows that it could not import, with the message **Import partly completed** and the row numbers. The other rows are still imported. After an action from the collection menu runs, such as the import, the list refreshes.
+The import now reports rows that it could not save, with the message **Import partly completed** and the row numbers. The other rows are still imported. After an action from the collection menu runs, such as the import, the list refreshes.
 
 For more information, see the [Inbuilt Actions](../actions/inbuilt-actions.md) article.
 
 ### Management API limits
 
-The entity endpoints of the Management API accept at most 1000 IDs per request and 1000 values per filter. Larger requests return a `400 Bad Request` response.
+Two Management API endpoints now limit the size of a request. Larger requests return a `400 Bad Request` response:
+
+* `GET .../entity/{collectionAlias}/many/{ids}` accepts at most 1000 IDs.
+* `POST .../entity/find` accepts at most 1000 values per filter.
+
+The backoffice splits its requests and is not affected. Only external callers of these endpoints are affected.
 
 ### Removed configuration API
 
@@ -158,7 +174,7 @@ The following members were obsolete since Umbraco UI Builder 10 or 12 and are no
 | --- | --- |
 | `AddContextApp`, `AddContextAppBefore`, and `AddContextAppAfter` on `UIBuilderConfigBuilder` | The same methods on `WithTree()`, inside `WithSection()` |
 | `AddDashboard`, `AddDashboardBefore`, and `AddDashboardAfter` on `UIBuilderConfigBuilder` | The same methods on `AddSection()` or `WithSection()` |
-| `AddVirtualSubTree`, `AddVirtualSubTreeBefore`, and `AddVirtualSubTreeAfter` on `UIBuilderConfigBuilder` | No replacement. Virtual subtrees are not available from version 14. |
+| `AddVirtualSubTree` on `UIBuilderConfigBuilder` | `AddVirtualSubTree` on `WithTree()`, inside `WithSection()`. Virtual subtrees are still not shown in the backoffice. |
 | `DashboardVisibilityConfigBuilder.ShowInSection()` | Add the dashboard to the section it belongs to. |
 | `TreeCollectionConfigBuilder<TEntityType>.ShowOnDashboard()` | `ShowOnSummaryDashboard()` |
 | `PropertyFilterHandler` | `PropertyFilterHandlerBase`, which has the same constructor and members. |
@@ -202,6 +218,20 @@ Custom cards now receive the parent ID in `GetValue` and `GetValueAsync`, or `nu
 `CollectionMapper.ToDisplayModel()`, `EntityMapper.ToDisplayModel()`, and `ViewComponentRenderer.Render()` are obsolete and are scheduled for removal in Umbraco UI Builder 20. Use `ToDisplayModelAsync()` and `RenderAsync()` instead.
 
 For more information, see the [Async APIs](../advanced/async-apis.md) article.
+
+### Actions menu groups
+
+Umbraco CMS 19 groups the actions in the actions menu (**...**) under headings. Umbraco UI Builder places its inbuilt actions in the matching groups:
+
+* **Create** joins the **Create** group.
+* **Delete** joins the **Structure** group.
+* **Import** and **Export** join the **Import and export** group.
+
+Custom actions are not part of a group. They appear in the **Other** group at the bottom of the menu.
+
+In the entity editor, the actions menu and the save button menu keep the order of your configuration.
+
+For more information, see the [Inbuilt Actions](../actions/inbuilt-actions.md#where-the-actions-appear-in-the-menu) article.
 
 ## Version 14
 

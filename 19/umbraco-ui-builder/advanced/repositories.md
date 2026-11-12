@@ -140,7 +140,7 @@ To help with accessing a repository (default or custom) Umbraco UI Builder has a
 
 ### Using the `GetRepository<TEntity, TId>()` Method
 
-Creates a repository for the given entity type. Umbraco UI Builder searches the configuration for the first section or collection with a configuration for the given entity type. Umbraco UI Builder then uses that collection as the repository configuration.
+Creates a repository for the given entity type. Umbraco UI Builder uses the first collection configured for the given entity type as the repository configuration.
 
 #### Method Syntax
 
