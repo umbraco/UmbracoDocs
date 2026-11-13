@@ -66,14 +66,13 @@ In this setup, the data flow works as follows:
 
 ## Scheduling and server role election
 
-Although there is a backoffice server designated for administration, by default this is not explicitly set as the "Scheduling server". In Umbraco there can only be a single scheduling server which performs the following tasks:
+Umbraco elects one server to hold the `SchedulingPublisher` role. Recurring background jobs run on this server by default.
 
-* Scheduled tasks - to initiate any configured scheduled tasks
-* Scheduled publishing - to initiate any scheduled publishing for documents
+Distributed background jobs work differently. Any server with write access to the database can pick them up. Built-in distributed jobs include scheduled publishing, health check notifications, log scrubbing, and content version cleanup. For timing options, see [Distributed jobs settings](../../../../develop-with-umbraco/configuration/distributedjobssettings.md).
 
 ### Automatic Server Role Election
 
-Umbraco will automatically elect a "Scheduling server" to perform the above services. This means that all of the servers will need to be able to resolve the URL of either: itself, the Backoffice server, the internal load balancer, or the public address.
+Umbraco automatically elects which server holds the `SchedulingPublisher` role.
 
 There are two server roles:
 
@@ -86,18 +85,11 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 
 Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
 
-For example, In the following diagram the node **f02.mysite.local** is the elected "Scheduling server". In order for scheduling to work it needs to be able to send requests to itself, the Backoffice server, the internal load balancer or the public address. The address used by the "Scheduling server" is called the "umbracoApplicationUrl".
+Scheduling does not depend on `UmbracoApplicationUrl`. Servers do not send HTTP requests to themselves to run scheduled tasks or scheduled publishing.
 
-![Umbraco flexible load balancing diagram](../../../../.gitbook/assets/flexible-load-balancing-scheduler-v9.png)
+When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
 
-By default, Umbraco will set the "umbracoApplicationUrl" to the address made by the first accepted request when the AppDomain starts. It is assumed that this address will be a DNS address that the server can resolve.
-
-For example, if a public request reached the load balancer on `www.mysite.com`, the load balancer may send the request on to the servers with the original address: `www.mysite.com`. By default the "umbracoApplicationUrl" will be `www.mysite.com`. However, load balancers may route the request internally under a different DNS name such as "f02.mysite.local" which by default would mean the "umbracoApplicationUrl" is "f02.mysite.local". In any case the elected "Scheduling server" must be able to resolve this address.
-
-In many scenarios this is fine, but in case this is not adequate there's a few of options you can use:
-
-* **Recommended**: [set your front-end(s) (non-admin server) to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRegistrar`, this means the front-end servers will never be used as the SchedulingPublisher server role.
-* Set the `UmbracoApplicationUrl` property in the [WebRouting section of the CMS config](../../../../develop-with-umbraco/configuration/webroutingsettings.md)
+**Recommended**: [set your front-end servers to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRoleAccessor`. The front-end servers will then never take the `SchedulingPublisher` role.
 
 ## Common load balancing setup information
 
