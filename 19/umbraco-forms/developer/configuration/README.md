@@ -467,9 +467,9 @@ Defines how often the version cleanup process will run. The default value is `1.
 
 ### DisableRecordIndexing
 
-Set this value to `true` to disable the default behavior of indexing the form submissions into the Examine index.
+Set this value to `true` to stop Forms indexing form submissions into the `UmbracoFormsRecordsIndex` records index.
 
-If indexing has already occurred, you will still need to manually remove the files (found in `App_Data\TEMP\ExamineIndexes\UmbracoFormsRecords`). They will be recreated if indexing is subsequently re-enabled.
+If indexing has already occurred, remove the index files manually. They're in the `umbraco/Data/TEMP/ExamineIndexes/UmbracoFormsRecordsIndex` folder. Forms recreates them if you turn indexing on again.
 
 ### EnableFormsApi
 
@@ -605,17 +605,19 @@ For more information, see the [Headless/AJAX Forms](../ajaxforms.md) article.
 
 ### Date picker field type configuration
 
+The default theme renders the Date field as a native date input, which doesn't use `DatePickerYearRange` or `DatePickerFormat`. These settings remain available for a custom theme that renders its own date picker.
+
 #### DatePickerYearRange
 
-This setting is used to configure the Date Picker form field range of years that is available in the date picker. By default this is a small range of 10 years.
+The range of years a custom date picker offers. The default is 10 years.
 
 #### DatePickerFormat
 
-A custom date format can be provided in [momentjs format](https://momentjscom.readthedocs.io/en/latest/moment/01-parsing/03-string-format/) if you want to override the default.
+The display format for a custom date picker. The default, `LL`, is in [Moment.js format](https://momentjscom.readthedocs.io/en/latest/moment/01-parsing/03-string-format/), which Forms used for its previous date picker.
 
 #### DatePickerFormatForValidation
 
-If a custom date format is provided it will be used on the client side. A matching string in [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) should be provided, so that server-side validation will match the expected format of the entry.
+A [C# date format](https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) for the submitted date. When it's set, the server-side validation also accepts dates in that format. Set it when a custom date picker submits dates in a format that .NET can't parse by default.
 
 ### reCAPTCHA v2 field type configuration
 

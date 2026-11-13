@@ -60,21 +60,6 @@ When applying a condition to a page, effectively you are controlling the display
 
 ## Conditions for Dates
 
-To use less-than or greater-than conditions on dates, you must change the date format.
+To use less-than or greater-than conditions on a Date field, enter the date to compare with in the `yyyy-MM-dd` format. For example, enter `2025-09-05` for September 5, 2025.
 
-By default, date is shown like `September 5, 2025`. This needs to change to a format only containing numbers: `09/05/2025`.
-
-To change the default format setting for dates, follow the steps below:
-
-1. Open the `appSettings.json` file.
-2. Change the `DatePickerFormat` value to `L` (the default is `LL`):
-
-```json
-"Forms": {
-  "FieldTypes": {
-    "DatePicker": {
-      "DatePickerFormat": "L"
-    }
-  }
-}
-```
+The Date field always submits its value in this format, whatever format the visitor's browser shows.
