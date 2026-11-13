@@ -11,8 +11,7 @@ The Umbraco Backoffice supports external login providers (OAuth) for performing 
 {% hint style="success" %}
 **Note for Umbraco Cloud users**
 
-Umbraco Cloud supports External Identity Providers, including Google Authentication.
-If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers) article in the Umbraco Cloud documentation.
+Umbraco Cloud supports External Identity Providers, including Google Authentication. If you're working on a Cloud project, see the [External Login Providers](https://docs.umbraco.com/umbraco-cloud/begin-your-cloud-journey/project-features/external-login-providers) article in the Umbraco Cloud documentation.
 
 The following tutorial is intended only for non-Cloud (on-premises or self-hosted) projects.
 {% endhint %}
@@ -22,8 +21,6 @@ In this tutorial, we will take you through the steps of setting up a Google logi
 ## What is a Google Login?
 
 When you log in to the Umbraco Backoffice, you need to enter your username and password. Integrating your website with Google authentication adds a button that you can click to log in with your Google account.
-
-![Google login screen](../../.gitbook/assets/googleLoginScreen.jpg)
 
 ## Why?
 
@@ -49,7 +46,7 @@ The first thing to do is set up a Google API. To do this, you need to go to [htt
 
 ### Setup a Google Console Project
 
-1. Click the project dropdown and select **New Project**.
+1.  Click the project dropdown and select **New Project**.
 
     ![Project dropdown list](../../.gitbook/assets/Project_dropdown_list.png)
 2. Enter a **Project name**, **Organization**, and **Parent resource**.
@@ -74,7 +71,7 @@ Before you can create the credentials, you need to configure your consent screen
 
 1. Click **Create OAuth client** in the Overview page. Alternatively, go to **Clients** > **Create client**.
 2. Select **Web Application** from the **Application type** dropdown.
-3. Enter the following details:
+3.  Enter the following details:
 
     * Application **Name**
     * **Authorized JavaScript origins**
@@ -135,7 +132,6 @@ You can create these files in a location of your choice. In this tutorial, the f
 2. Add the following code to the file:
 
 {% code title="GoogleBackOfficeExternalLoginProviderOptions.cs" lineNumbers="true" %}
-
 ```csharp
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Api.Management.Security;
@@ -181,7 +177,6 @@ public class GoogleBackOfficeExternalLoginProviderOptions : IConfigureNamedOptio
     }
 }
 ```
-
 {% endcode %}
 
 {% hint style="info" %}
@@ -194,7 +189,6 @@ Set the `autoLinkExternalAccount` to `false` in order to disable auto-linking in
 4. Add the following code to the file:
 
 {% code title="GoogleBackOfficeAuthenticationOptions.cs" lineNumbers="true" %}
-
 ```csharp
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.Extensions.Options;
@@ -235,14 +229,12 @@ public class GoogleBackOfficeAuthenticationOptions : IConfigureNamedOptions<Goog
 }
 
 ```
-
 {% endcode %}
 
 5. Replace **YOURCLIENTID** and **YOURCLIENTSECRET** with the values from the **OAuth Client Ids Credentials** window. Or use the [IOptions pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) to read the values from app settings (or other sources).
 6. Register both `ConfigureNameOptions` into a composer and add the provider to Umbraco:
 
 {% code title="GoogleBackOfficeExternalLoginComposer.cs" lineNumbers="true" %}
-
 ```csharp
 using Umbraco.Cms.Api.Management.Security;
 using Umbraco.Cms.Core.Composing;
@@ -277,13 +269,11 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
     }
 }
 ```
-
 {% endcode %}
 
 7. Register the provider with the backoffice client by adding the following file to the manifest file in `/App_Plugins/my-auth-providers/umbraco-package.json`:
 
 {% code title="/App_Plugins/my-auth-providers/umbraco-package.json" lineNumbers="true" %}
-
 ```json
 {
   "$schema": "../../umbraco-package-schema.json",
@@ -305,7 +295,6 @@ public class GoogleBackOfficeExternalLoginComposer : IComposer
   ]
 }
 ```
-
 {% endcode %}
 
 8. Build and run the website.
