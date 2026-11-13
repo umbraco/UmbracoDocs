@@ -56,6 +56,7 @@ For illustration purposes, the following structure represents the full set of op
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
+        "AllowFormSecurityDeploymentOperations": "FormsUserConfiguration",
         "TransferDictionaryAsContent": false,
         "IgnoreMissingLanguagesForDictionaryItems": false,
         "SetEmptyDictionaryItemsOnTransfer": true,
@@ -246,6 +247,24 @@ In order for Deploy to handle Forms data as content, you'll to ensure the `Trans
 {% hint style="info" %}
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
+
+### AllowFormSecurityDeploymentOperations <a href="#allow-form-security-deployment-operations" id="allow-form-security-deployment-operations"></a>
+
+{% hint style="info" %}
+The `AllowFormSecurityDeploymentOperations` setting is available from Umbraco Forms Deploy 18.1 and requires Umbraco Forms 18.1 or later. With an earlier Forms version, any value other than `FormsUserConfiguration` makes deploying a new form fail.
+{% endhint %}
+
+When a deployment creates a form that's new to the target environment, Umbraco Forms Deploy applies the Forms permissions configured on the target. This setting controls which permissions are applied:
+
+```json
+"AllowFormSecurityDeploymentOperations": "None|FormsConfiguration|FormsUserConfiguration"
+```
+
+* `None` - no permissions are applied.
+* `FormsConfiguration` - the user group permissions configured in Umbraco Forms are applied. These only apply when Forms manages security with user groups, set by the [`ManageSecurityWithUserGroups`](https://docs.umbraco.com/umbraco-forms/developer/configuration#managesecuritywithusergroups) setting.
+* `FormsUserConfiguration` (default) - the configured user group permissions are applied, and the deploying user gets their own permissions to the form. Deploy finds the deploying user on the target by email address, which needs the [`ResolveUserInTargetEnvironment`](#resolve-user-in-target-environment) setting. When the user isn't found, only the user group permissions are applied.
+
+The setting doesn't change the permissions of forms that already exist on the target. Permissions aren't transferred from the source environment.
 
 ### TransferDictionaryAsContent <a href="#transfer-dictionary-items-as-content" id="transfer-dictionary-items-as-content"></a>
 

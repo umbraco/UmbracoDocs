@@ -27,7 +27,7 @@ This is a prerelease for testing. Don't use it on a production site.
 
 Forms 19.0.0-rc1 needs Umbraco CMS `19.0.0-rc1`. It's published to NuGet and npm as a prerelease.
 
-There's no version 19 of Umbraco Forms Deploy yet. Sites that use Umbraco Deploy, including Umbraco Cloud sites, can't use this release.
+Sites that use Umbraco Deploy need Umbraco Forms Deploy `19.0.0-rc1`, released on November 13th 2026. For details, see the Umbraco.Forms.Deploy section of this article.
 {% endhint %}
 
 #### Umbraco CMS 19 support
@@ -60,3 +60,32 @@ For the details and upgrade steps, see the [Version Specific Upgrade Notes](upgr
 * Recycle Bin: Hide the recycle bin from users with start folders
 * Security: Show missing and trashed start folders in the start folder picker
 * Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
+
+## Umbraco.Forms.Deploy
+
+### 19.0.0-rc1 (November 13th 2026)
+
+{% hint style="warning" %}
+Forms Deploy 19.0.0-rc1 needs Umbraco CMS, Umbraco Forms and Umbraco Deploy `19.0.0-rc1`.
+{% endhint %}
+
+#### Umbraco 19 support
+
+Forms Deploy 19 runs on Umbraco CMS, Umbraco Forms and Umbraco Deploy 19, and .NET 11.
+
+#### Permissions for deployed forms
+
+A form that a deployment creates on the target environment now gets the Forms permissions configured there. The new `AllowFormSecurityDeploymentOperations` setting controls which permissions are applied:
+
+* `FormsUserConfiguration` (default): the configured user group permissions, and the deploying user's own permissions. Deploy finds the deploying user on the target by email address, which needs the `ResolveUserInTargetEnvironment` setting.
+* `FormsConfiguration`: the configured user group permissions only.
+* `None`: no permissions.
+
+User group permissions only apply when Forms manages security with user groups (`ManageSecurityWithUserGroups`). The permissions of forms that already exist on the target don't change. Permissions aren't transferred from the source environment.
+
+For more information, see the [AllowFormSecurityDeploymentOperations](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#allow-form-security-deployment-operations) section of the Deploy Settings article.
+
+#### Other
+
+* Forms: Update a form in the target's recycle bin instead of inserting it again. The form gets the changes and stays in the recycle bin
+* Forms: Deploy the member mapping settings of form fields. Until now, deploying a form left these settings out. Forms that use member mapping show as changed once after upgrading
