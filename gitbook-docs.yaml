@@ -250,7 +250,7 @@ site:
               path: 19.latest-rc
               draft: true
               content:
-                directory: ./umbraco-forms/19.latest-rc
+                directory: ./19/umbraco-forms
         - type: section
           key: section-8
           title: UI Builder
