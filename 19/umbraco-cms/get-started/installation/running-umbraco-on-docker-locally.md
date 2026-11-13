@@ -14,7 +14,8 @@ This setup is intended for local development only. It is not recommended for pro
 
 Before you can run Umbraco in Docker, make sure the following are installed:
 
-* .NET SDK with Umbraco Templates v16 or higher
+* The .NET SDK version listed in the [Requirements](requirements.md) article
+* Umbraco Templates v19 or higher
 * Docker Desktop
 
 ## Installing

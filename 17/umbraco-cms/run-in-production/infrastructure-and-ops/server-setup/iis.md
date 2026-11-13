@@ -60,11 +60,11 @@ You can either use the dotnet CLI or Visual Studio to publish your Umbraco websi
 2. Run the following command:
 
 ```bash
-dotnet publish -o ../deployment-artefacts -f net9.0
+dotnet publish -o ../deployment-artefacts -f net10.0
 ```
 
 {% hint style="info" %}
-Make sure to replace net9.0 with the version of .NET you are using.
+Make sure to replace net10.0 with the version of .NET you are using.
 {% endhint %}
 
 ![Using dotnet CLI for Manual Deployment](../../../.gitbook/assets/dotnet-cli-command.png)

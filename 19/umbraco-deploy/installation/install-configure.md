@@ -18,7 +18,7 @@ This section covers cover how to install and set up Umbraco Deploy on a new webs
 
 ### Requirement
 
-* Visual Studio 2017 v15.9.6 or later
+* Visual Studio 2026 or later
 * Umbraco Deploy license
 * SQL Server Database
 
@@ -47,7 +47,7 @@ Additionally, it covers how to generate the Umbraco Deploy Artifact (UDA) files 
 
 ### Requirement
 
-* Visual Studio 2017 v15.9.6 or later
+* Visual Studio 2026 or later
 * Umbraco Deploy license
 * Copy of your production site's database
 * Copy of views, CSS, and scripts folder from production
