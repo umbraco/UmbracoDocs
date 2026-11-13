@@ -115,7 +115,7 @@
   * [Yes/No Questions](using-the-api/decision/binary.md)
   * [Pick-One Questions](using-the-api/decision/choice.md)
   * [Score Questions](using-the-api/decision/score.md)
-* [Extraction](using-the-api/extraction/README.md)
+* [Extraction](using-the-api/extraction.md)
 * [Tools](using-the-api/tools/README.md)
   * [Using Tools](using-the-api/tools/using-tools.md)
 
