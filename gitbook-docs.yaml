@@ -26,7 +26,7 @@ site:
       children:
         - type: space
           key: space-38
-          title: 19.latest (Beta)
+          title: 19.latest (RC)
           path: 19.latest
           content:
             directory: ./19/umbraco-cms
@@ -245,6 +245,13 @@ site:
           description: ""
           icon: browser
           children:
+            - type: space
+              key: space-39
+              title: 19.latest (RC)
+              path: 19.latest-rc
+              draft: true
+              content:
+                directory: ./umbraco-ui-builder/19.latest-rc
             - type: space
               key: space-28
               title: 18.latest
