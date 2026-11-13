@@ -46,6 +46,12 @@ The workspace service account is the security boundary for what its automations 
 
 Creating or moving an item at the content, media or Library root needs root access. That applies even when the account can reach nodes inside its start node.
 
+### Publishing Shared Properties
+
+On content that varies by culture, Umbraco only publishes shared properties when one of the user's groups has **Allow editing shared content** turned on. Shared properties are the properties that don't vary by culture. The rule also applies to the service account when **Publish Content** names one or more cultures.
+
+Without the permission, the step still succeeds and the named cultures are published. The shared properties keep their last published values. **Publish Content** writes a warning to its **Logs** tab that names those properties. Turn on **Allow editing shared content** on one of the service account's user groups to publish them. Automate doesn't change the account's groups for you. For more information, see [User Group Parameters](https://docs.umbraco.com/umbraco-cms/manage-and-publish-content/users-and-members/users#user-group-parameters) in the Umbraco CMS documentation.
+
 Changing the service account on a published workspace can take its automations offline. Events that previously dispatched now silently skip. Actions that need permissions the new account doesn't have fail with an authentication error in the run log. Treat the account the same way you would treat the role of a backoffice user.
 
 ## See Also

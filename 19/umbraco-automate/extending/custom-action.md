@@ -52,7 +52,7 @@ public sealed class SendGreetingSettings
     [Field(
         Label = "Channel",
         Description = "Where to send the greeting.",
-        EditorUiAlias = "Umb.PropertyEditorUi.Dropdown",
+        EditorUiAlias = "Umb.PropertyEditorUi.Dropdown.Single",
         EditorConfig = """[{ "alias": "items", "value": ["Log", "Email"] }]""")]
     public GreetingChannel Channel { get; set; } = GreetingChannel.Log;
 
