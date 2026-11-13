@@ -28,7 +28,7 @@ The following example will build in the scenario outlined above, calling the lef
 
 Before you deploy the changes, the Development environment will show that the following changes are ready to be deployed:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Changes ready for deployment</p></figcaption></figure>
 
 Following the **Activity log** in the browser, you'll notice that the `.uda` file for the Document Type gets deleted. Additionally, other files with changes are copied to the Live environment.
 

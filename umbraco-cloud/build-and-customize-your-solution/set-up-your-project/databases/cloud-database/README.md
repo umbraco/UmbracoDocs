@@ -26,7 +26,7 @@ To open the firewall to a specific IP follow the steps below:
 
 If you don't see the **SQL Azure firewall**, it's due to permissions and you'll need to contact the projects administrator.
 
-<figure><img src="../../../../.gitbook/assets/image (54).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (51).png" alt=""><figcaption><p>Adding a new IP to access the database</p></figcaption></figure>
 
 The IP can also be added by clicking "**Add now"**. It'll automatically add your current IP address and save the settings. It might take up to five minutes for the firewall to be open for your IP.
 
