@@ -251,7 +251,7 @@ site:
               path: 19.latest-rc
               draft: true
               content:
-                directory: ./umbraco-ui-builder/19.latest-rc
+                directory: ./19/umbraco-ui-builder
             - type: space
               key: space-28
               title: 18.latest
@@ -401,7 +401,7 @@ site:
               path: 19.latest-rc
               draft: true
               content:
-                directory: ./ai-in-umbraco/19.latest-rc
+                directory: ./19/ai-in-umbraco
             - type: space
               key: space-34
               title: 18.latest
