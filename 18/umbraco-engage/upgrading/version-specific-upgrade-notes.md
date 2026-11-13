@@ -14,6 +14,15 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
+### 18.3.0 (Reporting data generation time)
+
+Engage 18.3.0 changes how Engage schedules reporting data generation:
+
+* Engage reads an explicit `DataGenerationTime` in the reporting time zone. Engage versions before 17.6.0 and 18.3.0 used the time zone of the web server. If you set both `Timezone` and `DataGenerationTime`, generation can run at a different time after you upgrade.
+* An empty or invalid `DataGenerationTime` no longer turns generation off. It now means Engage chooses the time. To turn generation off, set `DataGenerationEnabled` to `false`.
+
+For details, see [Reporting](../developers/settings/configuration.md#reporting).
+
 ### 18.0.0 (Umbraco Engage v18 Launch)
 
 Engage 18 adds support for Umbraco CMS 18. The main upgrade consideration is that the database schema alignment introduced in 17.2.0 is now **required** before you can upgrade.
