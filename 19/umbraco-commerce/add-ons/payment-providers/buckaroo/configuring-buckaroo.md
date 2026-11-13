@@ -52,7 +52,7 @@ For Buckaroo to notify Umbraco Commerce of a transaction, Buckaroo makes use of 
 When generating a payment request form, Umbraco Commerce sets the callback URL to the value below automatically:
 
 ```bash
-https://{store_domain}/umbraco/commerce/payment/callback/buckaroo-checkout/{payment_method_id}/
+https://{store_domain}/umbraco/commerce/payment/api/v1/callback/buckaroo-onetime-payment/{order_id}/{order_number}/{hash}
 ```
 
 1. Go to [Buckaroo Dashboard](https://plaza.buckaroo.nl/).

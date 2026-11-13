@@ -18,7 +18,7 @@ description: >-
 2. Configure the response URL as follows:
 
 ```bash
-  https://{store_domain}/umbraco/commerce/payment/callback/worldpay-bs350/{payment_method_id}/
+  https://{store_domain}/umbraco/commerce/payment/api/v1/callback/worldpay-bs350/{payment_method_id}
 ```
 
 ## Step 3: Enable Enhanced Security

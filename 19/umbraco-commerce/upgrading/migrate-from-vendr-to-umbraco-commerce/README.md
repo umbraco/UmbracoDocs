@@ -281,7 +281,7 @@ WHERE eventType LIKE 'vendr/%';
 5. Update any payment gateways that use a global webhook:
 
 ```none
-https://{site_url}/umbraco/commerce/payment/callback/{payment_provider_alias}/{payment_method_id}/
+https://{site_url}/umbraco/commerce/payment/api/v1/callback/{payment_provider_alias}/{payment_method_id}
 ```
 
 6. Run the project.
