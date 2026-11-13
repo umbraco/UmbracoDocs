@@ -192,7 +192,7 @@ site:
               path: 19.latest
               draft: true
               content:
-                directory: ./umbraco-deploy/19.latest-rc
+                directory: ./19/umbraco-deploy
         - type: section
           key: section-6
           title: Engage
