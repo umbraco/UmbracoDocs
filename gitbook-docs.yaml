@@ -408,6 +408,13 @@ site:
               path: 17.latest
               content:
                 directory: ./17/ai-in-umbraco
+            - type: space
+              key: space-40
+              title: 19.latest (RC)
+              path: 19.latest-rc
+              draft: true
+              content:
+                directory: ./ai-in-umbraco/19.latest-rc
         - type: section-group
           key: section-group-6
           title: DXP Add-ons
