@@ -7,8 +7,8 @@ description: Learn about the system requirements before installing Umbraco Engag
 Umbraco Engage has the following requirements:
 
 * Latest Umbraco version
-* .NET 10.0
-* SQL Server 2014+, LocalDB, or Azure SQL
+* .NET 11.0
+* SQL Server 2016+, LocalDB, or Azure SQL
   * **SQL CE & SQLite are not supported.**
 
 {% hint style="info" %}
@@ -21,7 +21,7 @@ Umbraco Engage uses **columnstore indexes** for optimal query performance on ana
 
 ### SQL Server (On-Premises / Self-Hosted)
 
-* **SQL Server 2014 or higher** is required
+* **SQL Server 2016 or higher** is required
 * Columnstore index support varies by edition — Enterprise Edition is recommended for older SQL Server versions
 
 ### Azure SQL

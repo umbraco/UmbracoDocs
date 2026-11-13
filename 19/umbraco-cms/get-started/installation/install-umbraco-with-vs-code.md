@@ -20,7 +20,7 @@ Follow the [Install using .NET CLI](/broken/pages/P2G798v8rRzd9Cq7gaLx) article 
 3. Type **Tasks: Configure**.
 4. Select **Tasks: Configure Task**.
 5. Select **Create task.json from template**.
-6. select **.NET Core** as your template.
+6. Select **.NET Core** as your template.
 
 Visual Studio Code creates a folder called **.vscode** that contains a file called **tasks.json**. The **tasks.json** file tells Visual Studio Code how to build your project.
 
