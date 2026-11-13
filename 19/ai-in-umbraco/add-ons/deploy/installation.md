@@ -10,10 +10,10 @@ This guide walks you through installing Umbraco.AI Deploy support.
 
 Before installing Deploy support, ensure you have:
 
-- Umbraco CMS 17.0 or later
-- .NET 10.0 or later
+- Umbraco CMS 19
+- .NET 11
 - Umbraco.AI installed and configured
-- Umbraco Deploy installed and configured
+- Umbraco Deploy 19 installed and configured
 
 The Deploy packages pull in their matching Umbraco.AI packages as dependencies. `Umbraco.AI.Prompt.Deploy` requires `Umbraco.AI.Prompt`, and `Umbraco.AI.Agent.Deploy` requires `Umbraco.AI.Agent` — both are installed automatically when you add the Deploy package.
 
