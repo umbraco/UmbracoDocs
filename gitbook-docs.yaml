@@ -244,6 +244,13 @@ site:
               path: 13.latest
               content:
                 directory: ./13/umbraco-forms
+            - type: space
+              key: space-42
+              title: 19.latest (RC)
+              path: 19.latest-rc
+              draft: true
+              content:
+                directory: ./umbraco-forms/19.latest-rc
         - type: section
           key: section-8
           title: UI Builder
