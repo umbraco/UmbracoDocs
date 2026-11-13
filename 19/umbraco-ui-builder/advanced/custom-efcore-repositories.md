@@ -8,6 +8,8 @@ description: >-
 
 A custom Entity Framework Core (EF Core) repository gives you full control over how a collection reads and writes its data. Inherit from `EFCoreRepository<TEntity, TId>` to get a `DbContext` and a `DbSet<TEntity>` for your queries.
 
+The default repository covers reading, paging, saving, and deleting entities. Build a custom repository when you need your own queries or save logic. For example, combine data from more than one table, or update other tables when an entity saves.
+
 The base class handles scoping, rollback, change tracking, filter rewriting, and readable errors for you. Your code only implements the data access.
 
 ## Creating the Repository

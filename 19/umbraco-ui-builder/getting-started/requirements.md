@@ -22,7 +22,7 @@ For instructions on installing Umbraco, see the [Umbraco CMS Documentation](http
 
 To use Umbraco UI Builder 19, your setup must meet these minimum requirements:
 
-* **Umbraco CMS version 19** (19.0.0-rc1 or later)
+* **Umbraco CMS version 19**
 * **.NET 11**
 * **SQL Server Database** (SQLite is acceptable for testing but not recommended for live deployments)
 
