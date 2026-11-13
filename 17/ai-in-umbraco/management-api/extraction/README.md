@@ -1,12 +1,11 @@
 ---
-description: >-
-    REST API endpoint for extracting typed values from text (experimental).
+description: REST API endpoint for extracting typed values from text (experimental).
 ---
 
-# Extraction API
+# Extraction
 
 {% hint style="warning" %}
-Extraction is **experimental**. When the `Umbraco:AI:Experimental:Extraction` feature flag is disabled, these endpoints return **404** with an empty body. See [Enabling Extraction](../../using-the-api/extraction/README.md#enabling-extraction).
+Extraction is **experimental**. When the `Umbraco:AI:Experimental:Extraction` feature flag is disabled, these endpoints return **404** with an empty body. See [Enabling Extraction](../../using-the-api/extraction.md#enabling-extraction).
 {% endhint %}
 
 The Extraction API reads typed values out of a piece of text using an Extraction profile. One call can extract multiple fields, and they are all answered in a single model call.
@@ -23,8 +22,8 @@ The endpoint requires an authenticated backoffice user (policy: `BackOfficeAcces
 
 ## Endpoints
 
-| Method | Endpoint | Description |
-| ------ | -------- | ----------- |
+| Method | Endpoint                                           | Description                  |
+| ------ | -------------------------------------------------- | ---------------------------- |
 | POST   | `/umbraco/ai/management/api/v1/extraction/extract` | [Extract values](extract.md) |
 
 ## Checking Whether Extraction Is Enabled
@@ -34,5 +33,5 @@ To check whether Extraction is enabled before you call it, use the `GET /umbraco
 ## In This Section
 
 {% content-ref url="extract.md" %}
-[Extract Values](extract.md)
+[extract.md](extract.md)
 {% endcontent-ref %}

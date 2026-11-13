@@ -1,6 +1,5 @@
 ---
-description: >-
-    Enumeration of AI capability types.
+description: Enumeration of AI capability types.
 ---
 
 # AICapability
@@ -16,7 +15,6 @@ using Umbraco.AI.Core.Models;
 ## Definition
 
 {% code title="AICapability" %}
-
 ```csharp
 public enum AICapability
 {
@@ -28,26 +26,24 @@ public enum AICapability
     Extraction = 9
 }
 ```
-
 {% endcode %}
 
 ## Values
 
-| Value          | Int | Description                          | Status    |
-| -------------- | --- | ------------------------------------ | --------- |
-| `Chat`         | 0   | Conversational AI / chat completions | Available |
-| `Embedding`    | 1   | Text to vector embeddings            | Available |
-| `SpeechToText` | 4   | Audio transcription and voice input  | Available |
-| `ImageGeneration` | 5   | Text-to-image and image editing      | Experimental |
-| `Decision`     | 8   | Typed yes/no, pick-one, and score answers | Experimental |
-| `Extraction`   | 9   | Typed values read out of text            | Experimental |
+| Value             | Int | Description                               | Status       |
+| ----------------- | --- | ----------------------------------------- | ------------ |
+| `Chat`            | 0   | Conversational AI / chat completions      | Available    |
+| `Embedding`       | 1   | Text to vector embeddings                 | Available    |
+| `SpeechToText`    | 4   | Audio transcription and voice input       | Available    |
+| `ImageGeneration` | 5   | Text-to-image and image editing           | Experimental |
+| `Decision`        | 8   | Typed yes/no, pick-one, and score answers | Experimental |
+| `Extraction`      | 9   | Typed values read out of text             | Experimental |
 
 ## Usage
 
 ### Filtering Profiles
 
 {% code title="Example" %}
-
 ```csharp
 // Get all chat profiles
 var chatProfiles = await profileService.GetProfilesAsync(AICapability.Chat);
@@ -55,13 +51,11 @@ var chatProfiles = await profileService.GetProfilesAsync(AICapability.Chat);
 // Get all embedding profiles
 var embeddingProfiles = await profileService.GetProfilesAsync(AICapability.Embedding);
 ```
-
 {% endcode %}
 
 ### Getting Available Capabilities
 
 {% code title="Example" %}
-
 ```csharp
 // Get capabilities available from configured connections
 var available = await connectionService.GetAvailableCapabilitiesAsync();
@@ -71,13 +65,11 @@ foreach (var capability in available)
     Console.WriteLine($"Available: {capability}");
 }
 ```
-
 {% endcode %}
 
 ### Creating Profiles
 
 {% code title="Example" %}
-
 ```csharp
 // Chat profile
 var chatProfile = new AIProfile
@@ -97,13 +89,11 @@ var embeddingProfile = new AIProfile
     // ...
 };
 ```
-
 {% endcode %}
 
 ### Checking Provider Support
 
 {% code title="Example" %}
-
 ```csharp
 // Get connections that support chat
 var chatConnections = await connectionService.GetConnectionsByCapabilityAsync(
@@ -113,13 +103,12 @@ var chatConnections = await connectionService.GetConnectionsByCapabilityAsync(
 var embeddingConnections = await connectionService.GetConnectionsByCapabilityAsync(
     AICapability.Embedding);
 ```
-
 {% endcode %}
 
 ## Notes
 
-- `Chat`, `Embedding`, and `SpeechToText` are generally available
-- `ImageGeneration` is experimental. It is hidden unless the `Umbraco:AI:Experimental:ImageGeneration` flag is enabled. See [Image Generation](../../using-the-api/image-generation/README.md)
-- `Decision` is experimental. It is hidden unless the `Umbraco:AI:Experimental:Decision` flag is enabled. See [Decision](../../using-the-api/decision/README.md)
-- `Extraction` is experimental. It is hidden unless the `Umbraco:AI:Experimental:Extraction` flag is enabled. See [Extraction](../../using-the-api/extraction/README.md)
-- Capability is set on profile creation and cannot be changed
+* `Chat`, `Embedding`, and `SpeechToText` are generally available
+* `ImageGeneration` is experimental. It is hidden unless the `Umbraco:AI:Experimental:ImageGeneration` flag is enabled. See [Image Generation](../../using-the-api/image-generation/)
+* `Decision` is experimental. It is hidden unless the `Umbraco:AI:Experimental:Decision` flag is enabled. See [Decision](../../using-the-api/decision/)
+* `Extraction` is experimental. It is hidden unless the `Umbraco:AI:Experimental:Extraction` flag is enabled. See [Extraction](../../using-the-api/extraction.md)
+* Capability is set on profile creation and cannot be changed

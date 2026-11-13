@@ -285,7 +285,7 @@ When upgrading **from** Umbraco 13, you need to be aware that `UseInstallerEndpo
 1. Open the `Program.cs` file.
 2. Remove `u.UseInstallerEndpoints()` from the `app.UseUmbraco()` method.
 
-![](<../../../../.gitbook/assets/image (42).png>)
+![](<../../../../.gitbook/assets/image (39).png>)
 
 </details>
 

@@ -2,7 +2,7 @@
 description: Learn how to Index and search data that does not originate from Umbraco.
 ---
 
-# Using other sources
+# Using Other Sources
 
 The search functionality in Umbraco CMS is built for handling Umbraco content (documents, media, and members). However, it is entirely possible to use it for other kinds of data as well.
 
@@ -127,7 +127,7 @@ public class MyComposer : IComposer
 }
 ```
 
-Also, keep in mind that additional field-level configuration may be needed to suit your search requirements. See the [Examine search provider](../getting-started/examine-search-provider.md) documentation for details.
+Also, keep in mind that additional field-level configuration may be needed to suit your search requirements. See the [Examine search provider](../examine-search-provider.md) documentation for details.
 {% endhint %}
 
 ### The `ISearcher`

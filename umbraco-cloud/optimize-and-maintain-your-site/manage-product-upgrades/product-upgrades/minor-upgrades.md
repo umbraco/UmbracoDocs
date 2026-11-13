@@ -15,7 +15,7 @@ Both minor and patch upgrades can be managed from the **Configuration** -> **Aut
 * [Manual Upgrades](minor-upgrades.md#manual-upgrades)
 
 {% hint style="info" %}
-To get notified when an upgrade starts, completes, fails, or times out, set up an Autoupgrade alert. See the [Alerting and Notifications](../../monitor-and-troubleshoot/alerting-and-notifications/README.md#autoupgrade) article.
+To get notified when an upgrade starts, completes, fails, or times out, set up an Autoupgrade alert. See the [Alerting and Notifications](../../monitor-and-troubleshoot/alerting-and-notifications/#autoupgrade) article.
 {% endhint %}
 
 ## Automatic Minor Upgrades
@@ -25,12 +25,12 @@ To enable automatic minor upgrades, follow these steps:
 1. Go to your Umbraco Cloud project.
 2.  Navigate to **Configuration** -> **Automatic Upgrades**.
 
-    <figure><img src="../../../.gitbook/assets/image (24).png" alt="Settings Umbraco Cloud"><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (22).png" alt="Settings Umbraco Cloud"><figcaption><p>Settings Umbraco Cloud</p></figcaption></figure>
 3.  Enable **Automatic Minor Upgrades**.
 
     <figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>Enable Minor Upgrades</p></figcaption></figure>
 
-With automatic upgrades enabled, all products on Umbraco Cloud will automatically be upgraded. This includes Umbraco CMS, Umbraco Forms, and Umbraco Deploy. Your project does not need to be running the latest minor version for automatic upgrades to work. The project is upgraded to the latest minor version in one of its [upgrade windows](#upgrade-windows) after the release is available.
+With automatic upgrades enabled, all products on Umbraco Cloud will automatically be upgraded. This includes Umbraco CMS, Umbraco Forms, and Umbraco Deploy. Your project does not need to be running the latest minor version for automatic upgrades to work. The project is upgraded to the latest minor version in one of its [upgrade windows](minor-upgrades.md#upgrade-windows) after the release is available.
 
 If you create a new project on Umbraco Cloud automatic upgrades are enabled by default.
 
@@ -42,7 +42,7 @@ A secondary mainline environment is included in all Umbraco Cloud plans, except 
 
 ## Automatic Patch Upgrades
 
-By default, all Umbraco Cloud projects are automatically upgraded to new patch versions during their [upgrade windows](#upgrade-windows). This includes security patches and ensures all sites run the most stable and secure versions.
+By default, all Umbraco Cloud projects are automatically upgraded to new patch versions during their [upgrade windows](minor-upgrades.md#upgrade-windows). This includes security patches and ensures all sites run the most stable and secure versions.
 
 You can toggle **Automatic Patch Upgrades** on or off from the same **Configuration** -> **Automatic Upgrades** page.
 
@@ -65,7 +65,7 @@ Automatic minor and patch upgrades follow a weekly schedule made up of upgrade w
 * If no windows are selected, automatic upgrades do not run for the project.
 
 {% hint style="info" %}
-To retry a failed automatic upgrade without waiting for a newer release, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
+To retry a failed automatic upgrade without waiting for a newer release, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](minor-upgrades.md#upgrade-from-the-cloud-portal) section.
 {% endhint %}
 
 {% hint style="info" %}
@@ -116,7 +116,7 @@ Select **See more** to view the reason and the product versions of the cancelled
 
 A release is considered for automatic upgrades for 7 days after it is made available. Within those 7 days, a cancelled upgrade is attempted again in the next window in your schedule.
 
-If your schedule contains a single window, the release gets a single attempt. After a cancelled upgrade, your project is upgraded automatically with the next release. To upgrade before then, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](#upgrade-from-the-cloud-portal) section.
+If your schedule contains a single window, the release gets a single attempt. After a cancelled upgrade, your project is upgraded automatically with the next release. To upgrade before then, start the upgrade from the Cloud Portal. See the [Upgrade from the Cloud Portal](minor-upgrades.md#upgrade-from-the-cloud-portal) section.
 
 Selecting more than one window gives each release more attempts and lowers the risk of a missed upgrade.
 
@@ -138,7 +138,7 @@ When a newer version of a product is available for your project, an **Upgrade av
 
 <figure><img src="../../../.gitbook/assets/cloud-upgrade-available-banner.png" alt="Upgrade available banner on the Dev environment card showing 6 packages"><figcaption><p>The Upgrade available banner on an environment card</p></figcaption></figure>
 
-The banner offers any higher minor or patch version within the major version your project runs. Major version upgrades are never offered by the banner. See the [Major Upgrades](major-upgrades/README.md) article for how to upgrade to a new major version.
+The banner offers any higher minor or patch version within the major version your project runs. Major version upgrades are never offered by the banner. See the [Major Upgrades](major-upgrades/) article for how to upgrade to a new major version.
 
 The following products are upgraded through the banner:
 

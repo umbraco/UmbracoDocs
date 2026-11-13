@@ -30,7 +30,9 @@ Workspace Action Menu Items extend existing workspace actions by adding dropdown
 
 * **`kind`** - Specifies which type of element should be shown (if no `element` is provided). The `default` option refers to the `<umb-workspace-action-menu-item />`, which supports a label and an href
 * **`forWorkspaceActions`** - Specifies which workspace action this extends
-* **`weight`** - Controls ordering within the dropdown menu
+* **`weight`** - Controls ordering within the group, or within the Other group at the end of the menu when `group` isn't set
+* **`group`** - Optional alias of the group the menu item belongs to. See [Grouping Menu Items](#grouping-menu-items)
+* **`separatorBefore`** - Optional. When `true`, adds an extra separator line above the menu item inside its group
 * **`meta.label`** - Text displayed in dropdown
 * **`meta.icon`** - Icon displayed alongside label
 
@@ -142,3 +144,47 @@ Menu items display a dropdown menu for their associated actions:
 	meta: { label: 'Save as Draft' },
 }
 ```
+
+## Grouping Menu Items
+
+Umbraco splits the dropdown menu of a workspace action into groups of related menu items, with a separator line between the groups. A group is an extension of the type `workspaceActionMenuItemGroup`. A menu item joins a group through its `group` property, which holds the alias of the group.
+
+Umbraco registers one workspace action menu item group. Import the constant from `@umbraco-cms/backoffice/workspace`.
+
+| Constant                                          | Alias                                         | Weight |
+| ------------------------------------------------- | --------------------------------------------- | ------ |
+| `UMB_WORKSPACE_ACTION_MENU_ITEM_GROUP_PUBLISHING` | `Umb.WorkspaceActionMenuItemGroup.Publishing` | 100    |
+
+The **Save and publish** menu in the Document workspace uses the Publishing group for Schedule publish, Publish with descendants, and Unpublish.
+
+The following menu item joins the same group. Inside a group, the `weight` of the menu item only orders it among the other items in that group. A weight of 5 places the item after Publish with descendants (weight 10) and before Unpublish (weight 0).
+
+{% code title="manifest.ts" %}
+```typescript
+import { UMB_WORKSPACE_ACTION_MENU_ITEM_GROUP_PUBLISHING } from '@umbraco-cms/backoffice/workspace';
+import { umbExtensionsRegistry } from '@umbraco-cms/backoffice/extension-registry';
+
+const manifest = {
+    type: 'workspaceActionMenuItem',
+    kind: 'default',
+    alias: 'My.WorkspaceActionMenuItem.PublishToStaging',
+    name: 'My Publish to Staging Menu Item',
+    api: () => import('./publish-to-staging-menu-item.action.js'),
+    forWorkspaceActions: 'Umb.WorkspaceAction.Document.SaveAndPublish',
+    group: UMB_WORKSPACE_ACTION_MENU_ITEM_GROUP_PUBLISHING,
+    weight: 5,
+    meta: {
+        label: 'Publish to staging',
+        icon: 'icon-globe',
+    },
+};
+
+umbExtensionsRegistry.register(manifest);
+```
+{% endcode %}
+
+To register your own group, use a manifest with the type `workspaceActionMenuItemGroup`.
+
+Inside a group, a menu item can add an extra line above itself with `separatorBefore: true`. Unpublish sets `separatorBefore: true`, so a line separates Unpublish from the two publish actions in the Publishing group.
+
+For the full ordering and separator rules, and an example of a custom group, see the [Grouping Entity Actions](../entity-actions.md#grouping-entity-actions) section of the Entity Actions article.
