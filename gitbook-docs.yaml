@@ -168,6 +168,13 @@ site:
           icon: arrow-up-to-dotted-line
           children:
             - type: space
+              key: space-41
+              title: 19.latest (RC)
+              path: 19.latest
+              draft: true
+              content:
+                directory: ./19/umbraco-deploy
+            - type: space
               key: space-31
               title: 18.latest
               path: 18.latest
@@ -186,13 +193,6 @@ site:
               path: 13.latest
               content:
                 directory: ./13/umbraco-deploy
-            - type: space
-              key: space-41
-              title: 19.latest (RC)
-              path: 19.latest
-              draft: true
-              content:
-                directory: ./19/umbraco-deploy
         - type: section
           key: section-6
           title: Engage
@@ -256,7 +256,6 @@ site:
               key: space-39
               title: 19.latest (RC)
               path: 19.latest
-              draft: true
               content:
                 directory: ./19/umbraco-ui-builder
             - type: space
