@@ -8,7 +8,11 @@ description: >-
 ## Prerequisites
 
 * Umbraco Automate installed and configured
-* Umbraco Deploy installed and configured
+* Umbraco Deploy 17.4.0 or later installed and configured
+
+{% hint style="info" %}
+Umbraco.Deploy.Automate 17.1.0 requires Umbraco Deploy 17.4.0 or later.
+{% endhint %}
 
 ## Install the Package
 
