@@ -111,7 +111,8 @@ const { data: id, error } = await tryExecute(
 
 The Umbraco HTTP Client handles these responses for you:
 
-* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. For your own API controllers, the server answers with a 401 response only when the controller has the `[ApiController]` attribute. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. A redirect to the login page after the session has expired gets the same handling. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Redirects**: The client follows redirects. Your request gets the response from the URL that the redirect points to.
 * **Session activity**: The client counts successful requests as activity for the session timeout.
 * **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification, except for 401, 403 and 404 responses. See [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
 * **Server notifications**: The client shows the notifications that the server sends in the `Umb-Notifications` header.
