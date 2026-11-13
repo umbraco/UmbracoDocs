@@ -25,7 +25,7 @@ You will see the configuration options as shown below.
 * **HH:mm** - Displays hours and minutes (e.g., `14:30`).\
   Suitable for most general use cases.\
   ![Time Only property editor showing time format in HH:mm format (hours and minutes only)](../../../../.gitbook/assets/time-only-time-format-hhmm.png)
-* **HH:mm:ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).\
+* **HH**<span data-gb-custom-inline data-tag="emoji" data-code="1f1f2-1f1f2">:flag_mm:</span>**ss** - Displays hours, minutes, and seconds (e.g., `14:30:45`).\
   Use this when you need more precise timing.\
   ![Time Only property editor showing time format in HH:mm:ss format (hours, minutes, and seconds)](../../../../.gitbook/assets/time-only-time-format-hhmmss.png)
 
