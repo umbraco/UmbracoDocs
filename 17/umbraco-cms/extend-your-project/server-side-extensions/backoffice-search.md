@@ -14,6 +14,14 @@ The search facility of the Umbraco Backoffice allows the searching 'across secti
 
 An Umbraco implementation might have additional custom properties that it would be useful to include in a Backoffice Search. For example: an 'Organisation Name' property on a Member Type, or a 'Product Code' field for a 'Product' content item.
 
+## How node names are matched
+
+Backoffice search, including the search in document and media pickers, matches each search word against node names. A search word matches at the start of a word in the name. Words of at least three characters also match anywhere within a word. For example, searching for `4521` finds a media item named `Report ABC004521 2026`.
+
+Names with a word that starts with the search word rank above names with a word that only contains it.
+
+You can change the minimum length, or turn off matching within words, with the [`BackOfficeSearchMinimumMatchWithinWordLength`](../../develop-with-umbraco/configuration/examinesettings.md#backofficesearchminimummatchwithinwordlength) setting.
+
 ## Adding custom properties to backoffice search
 
 To add custom properties, it is required to register a custom implementation of `IUmbracoTreeSearcherFields`. We recommend to override the existing `UmbracoTreeSearcherFields`.
@@ -51,7 +59,7 @@ public class BackofficeSearchComposer : IComposer
 ```
 
 {% hint style="warning" %}
-`ILocalizationService` is marked as obsolete and will be removed in a future verison. `ILocalizationService` is intended to be replaced by `ILanguageService` and `IDictionaryItemService`.
+`ILocalizationService` is marked as obsolete and will be removed in a future version. `ILocalizationService` is intended to be replaced by `ILanguageService` and `IDictionaryItemService`.
 
 The example below reflects the current implementation and therefore continues to use `ILocalizationService`.
 
