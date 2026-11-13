@@ -87,5 +87,5 @@ For more information, see the [AllowFormSecurityDeploymentOperations](https://do
 
 #### Other
 
-* Forms: Update a form that's in the target's recycle bin, instead of inserting it again as a new form. The form gets the changes and stays in the recycle bin
+* Forms: Update a form in the target's recycle bin instead of inserting it again. The form gets the changes and stays in the recycle bin
 * Forms: Deploy the member mapping settings of form fields. Until now, deploying a form left these settings out. Forms that use member mapping show as changed once after upgrading

@@ -609,7 +609,7 @@ For more information, see the [AllowFormSecurityDeploymentOperations](https://do
 
 #### Other
 
-* Forms: Update a form that's in the target's recycle bin (Umbraco Forms 17.6.0 or later), instead of inserting it again as a new form. The form gets the changes and stays in the recycle bin
+* Forms: Update a form in the target's recycle bin (Umbraco Forms 17.6.0 or later) instead of inserting it again. The form gets the changes and stays in the recycle bin
 * Forms: Deploy the member mapping settings of form fields (Umbraco Forms 17.5.0 or later). Until now, deploying a form left these settings out. Forms that use member mapping show as changed once after upgrading
 
 ### 17.0.1 (July 24th 2026)
