@@ -247,6 +247,26 @@ When the parent is missing or in the recycle bin, or the content type or media t
 
 Creating or moving an item at the content or media root needs root access for the service account of the workspace. See [Service-Account Permissions](workspaces.md#service-account-permissions).
 
+## Find Content and Find Media
+
+**Find Content** and **Find Media** search item names with Umbraco Search. Only the name is searched, not other properties. **Match mode** sets how the **Name** value must match:
+
+| Match mode               | Matches                                                                                                   | Example                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **Exact** (default)      | The whole name, ignoring case and extra spaces.                                                           | `homepage` finds "Homepage" but not "The Homepage".                         |
+| **StartsWith**           | Names where every word of the value starts a word of the name, in any order.                              | `home` finds "Homepage" and "The Homepage".                                 |
+| **Contains**             | Names that contain the value as one run of text, starting at the start of a word.                         | `bread` finds "Breadcrumbs" and "Bread Basket", but not "Shortbread".        |
+
+**StartsWith** and **Contains** don't find text in the middle of a word. A **Name** made up only of `*` or `?` fails validation.
+
+**Find Content** searches the default language when **Culture** is empty. Invariant content is always included. With **Include unpublished** on, the search uses draft names. Protected content is left out.
+
+Matches are ordered by relevance. **Limit** caps the number of matches, 50 by default and 500 at most. A search examines at most 2000 results. The `limitReached` output is `true` when either limit stops the search, so more matches may exist.
+
+{% hint style="info" %}
+Find Content and Find Media expect the default Examine search provider and its English analyzer. With a custom analyzer or another search provider, some names may not be found.
+{% endhint %}
+
 ## Items in the Recycle Bin
 
 Content and media actions treat an item in the recycle bin as missing, whatever the start node of the service account:
