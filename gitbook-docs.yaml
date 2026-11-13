@@ -186,6 +186,13 @@ site:
               path: 13.latest
               content:
                 directory: ./13/umbraco-deploy
+            - type: space
+              key: space-41
+              title: 19.latest (RC)
+              path: 19.latest
+              draft: true
+              content:
+                directory: ./umbraco-deploy/19.latest-rc
         - type: section
           key: section-6
           title: Engage
@@ -248,7 +255,7 @@ site:
             - type: space
               key: space-39
               title: 19.latest (RC)
-              path: 19.latest-rc
+              path: 19.latest
               draft: true
               content:
                 directory: ./19/umbraco-ui-builder
