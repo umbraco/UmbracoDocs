@@ -20,7 +20,7 @@ Before running the upgrade, consider the following:
 
 Umbraco 19 can only upgrade from Umbraco 16.4 or later, because it doesn't include the migrations from Umbraco 13 to 17. If your project runs an earlier version, upgrade to Umbraco 17 first. Umbraco 17 is the latest Long-term Support (LTS) version.
 
-If you upgrade from Umbraco 17, review the Umbraco 18 breaking changes as well as the Umbraco 19 ones. See also [If you upgrade from Umbraco 17](#if-you-upgrade-from-umbraco-17) below.
+If you upgrade from Umbraco 17, review the Umbraco 18 breaking changes as well as the Umbraco 19 ones. See also [If you upgrade from Umbraco 17](version-specific.md#if-you-upgrade-from-umbraco-17) below.
 
 ### Back up your database
 
@@ -42,7 +42,7 @@ Umbraco 19 runs on .NET 11. Before you upgrade:
 * Confirm that your hosting environment supports the .NET 11 runtime.
 * Change the `TargetFramework` in each project file from `net10.0` to `net11.0`.
 
-For other effects of the .NET 11 upgrade, see the [.NET 11 entry](#net-11) under Breaking changes.
+For other effects of the .NET 11 upgrade, see the [.NET 11 entry](version-specific.md#net-11) under Breaking changes.
 
 ### Check your imaging HMAC secret key
 
@@ -64,7 +64,7 @@ For most projects with custom search code, this is the largest upgrade task. Umb
 
 Code that uses `IExamineManager`, custom Examine indexes, or index value factories must move to the Umbraco Search APIs. The built-in indexes also have new names.
 
-Review your search code before you upgrade, and plan to rebuild the indexes afterwards. For details, see the [Examine integration replaced by Umbraco Search](#examine-integration-replaced-by-umbraco-search) entry and the [Search](../../develop-with-umbraco/search/README.md) documentation.
+Review your search code before you upgrade, and plan to rebuild the indexes afterwards. For details, see the [Examine integration replaced by Umbraco Search](version-specific.md#examine-integration-replaced-by-umbraco-search) entry and the [Search](../../develop-with-umbraco/search/) documentation.
 
 ### Update backoffice extensions that use access tokens
 
@@ -106,7 +106,7 @@ Umbraco 19 targets .NET 11. All projects must target `net11.0`, and hosting envi
 
 The following .NET 11 changes are the most likely to affect an Umbraco project:
 
-* **Strict Base64 decoding**: values with non-zero padding bits are rejected. This can stop a site with a hand-made imaging HMAC secret key from starting. See [Check your imaging HMAC secret key](#check-your-imaging-hmac-secret-key).
+* **Strict Base64 decoding**: values with non-zero padding bits are rejected. This can stop a site with a hand-made imaging HMAC secret key from starting. See [Check your imaging HMAC secret key](version-specific.md#check-your-imaging-hmac-secret-key).
 * **Exact double-to-decimal conversion**: casting a `double` to `decimal` now keeps the exact binary value. For example, `(decimal)1.65` becomes `1.6499999999999999111821580300m`. Review code that casts `double` values to `decimal` and then compares or validates them.
 * **`Microsoft.OpenApi` 3.x**: `Microsoft.AspNetCore.OpenApi` 11 requires `Microsoft.OpenApi` 3.10 or later. Custom OpenAPI transformers might need updates. For example, the request and response `Content` is now `IDictionary<string, IOpenApiMediaType>`.
 * **Packages in the shared framework**: `Microsoft.Extensions.Options`, `Microsoft.Extensions.Hosting.Abstractions`, `Microsoft.Extensions.Configuration.Abstractions` and `Microsoft.Extensions.Caching.Abstractions` now ship with .NET. Remove direct package references to them to avoid the `NU1510` build warning.
@@ -131,12 +131,12 @@ Umbraco Search, previously the separate `Umbraco.Cms.Search` package, is now par
 
 The previous Examine integration in Umbraco has been removed. The changes you need to make:
 
-* **Code that uses Examine directly**: `IExamineManager`, custom Examine indexes, and index value factories must move to the Umbraco Search APIs. Use `ISearcher` to query and `IIndexer` to index. See [Getting started with search](../../develop-with-umbraco/search/getting-started/README.md) and [Extending the Examine search provider](../../develop-with-umbraco/search/extending-search/examine-search-provider.md).
-* **Index names**: the built-in indexes are now `Umb_PublishedContent`, `Umb_Content`, `Umb_Media` and `Umb_Members`. Update code that looks up an index by name. After upgrading, check the indexes in the **Search** section and rebuild them if needed. See [Search in the backoffice](../../develop-with-umbraco/search/getting-started/backoffice.md).
+* **Code that uses Examine directly**: `IExamineManager`, custom Examine indexes, and index value factories must move to the Umbraco Search APIs. Use `ISearcher` to query and `IIndexer` to index. See [Getting started with search](../../develop-with-umbraco/search/getting-started.md) and [Extending the Examine search provider](../../develop-with-umbraco/search/extending-search/examine-search-provider.md).
+* **Index names**: the built-in indexes are now `Umb_PublishedContent`, `Umb_Content`, `Umb_Media` and `Umb_Members`. Update code that looks up an index by name. After upgrading, check the indexes in the **Search** section and rebuild them if needed. See [Search in the backoffice](../../develop-with-umbraco/search/backoffice.md).
 * **`IPublishedContentQuery`**: the `Search` overloads that take an Examine `IQueryExecutor` have been removed. The unused `loadedFields` parameter has also been removed from the remaining `Search` methods. Use `ISearcher` for anything beyond a basic text search. See [IPublishedContentQuery](../../develop-with-umbraco/templating-and-rendering/querying/ipublishedcontentquery.md).
 * **Search section extensions**: projects that extended the backoffice of the separate Umbraco Search package must update the extension aliases. For example, `Umbraco.Search.Workspace.Root` is now `Umb.Workspace.SearchRoot`. `Umbraco.Search.Workspace` is now `Umb.Workspace.SearchIndex`. Import the exported constants instead of typing the aliases.
 
-The articles under [Searching with Examine](../../develop-with-umbraco/application-code/examine/README.md) describe the previous integration. See [#23321](https://github.com/umbraco/Umbraco-CMS/pull/23321) and [#23911](https://github.com/umbraco/Umbraco-CMS/pull/23911).
+The articles under [Searching with Examine](../../develop-with-umbraco/application-code/examine.md) describe the previous integration. See [#23321](https://github.com/umbraco/Umbraco-CMS/pull/23321) and [#23911](https://github.com/umbraco/Umbraco-CMS/pull/23911).
 
 ### Cookie-based authentication for the backoffice
 
@@ -164,19 +164,19 @@ See [#23484](https://github.com/umbraco/Umbraco-CMS/pull/23484), [#23698](https:
 
 Some property editors returned a different model type depending on their Data Type configuration. For example, changing "maximum number of items" from 1 to 2 changed the type that templates received. Each of these editors is now split in two, and the upgrade moves your Data Types to the matching editor.
 
-| Was decided by                | Existing editor keeps                | New editor                                                                   |
-| ----------------------------- | ------------------------------------ | ---------------------------------------------------------------------------- |
-| Value type                    | `Umbraco.Label` (string)             | `Umbraco.Label.Text`, `.Integer`, `.BigInt`, `.Decimal`, `.DateTime`, `.Time` |
-| Enable range                  | `Umbraco.Slider` (single value)      | `Umbraco.Slider.Range`                                                       |
-| Pick multiple items           | `Umbraco.MediaPicker3` (multiple)    | `Umbraco.MediaPicker.Single`                                                 |
-| Maximum number of items is 1  | `Umbraco.MultiUrlPicker` (multiple)  | `Umbraco.UrlPicker.Single`                                                   |
-| Enable multiple choice        | `Umbraco.DropDown.Flexible` (multiple) | `Umbraco.DropDown.Single`                                                  |
+| Was decided by               | Existing editor keeps                  | New editor                                                                    |
+| ---------------------------- | -------------------------------------- | ----------------------------------------------------------------------------- |
+| Value type                   | `Umbraco.Label` (string)               | `Umbraco.Label.Text`, `.Integer`, `.BigInt`, `.Decimal`, `.DateTime`, `.Time` |
+| Enable range                 | `Umbraco.Slider` (single value)        | `Umbraco.Slider.Range`                                                        |
+| Pick multiple items          | `Umbraco.MediaPicker3` (multiple)      | `Umbraco.MediaPicker.Single`                                                  |
+| Maximum number of items is 1 | `Umbraco.MultiUrlPicker` (multiple)    | `Umbraco.UrlPicker.Single`                                                    |
+| Enable multiple choice       | `Umbraco.DropDown.Flexible` (multiple) | `Umbraco.DropDown.Single`                                                     |
 
 Stored property values and Delivery API output are unchanged. New Document and Member pickers are also available: `Umbraco.DocumentPicker.Multiple` and `Umbraco.MemberPicker.Multiple`.
 
 Things to check after the upgrade:
 
-* **Packages and deployment artifacts** that create Data Types or refer to the old editor aliases and configuration. See [Plan for deployment artifacts](#plan-for-deployment-artifacts).
+* **Packages and deployment artifacts** that create Data Types or refer to the old editor aliases and configuration. See [Plan for deployment artifacts](version-specific.md#plan-for-deployment-artifacts).
 * **Required properties**: Data Types moved to a single-item editor lose their item-count configuration. If a minimum of 1 made a property required, set the property to mandatory on the Document Type instead.
 * **Multi URL Picker limits**: `maxNumber` no longer trims the value when it's read. A property holding more links than its limit now renders all of them.
 * **Block List single block mode**: the obsolete `useSingleBlockMode` configuration is no longer read, and `Umbraco.BlockList` always returns a `BlockListModel`. The Umbraco 18 migration already moved these Data Types to the single block editor.
@@ -243,7 +243,7 @@ The upgrade grants the new permission so that existing user groups keep the acce
 * If `AllowEditInvariantFromNonDefault` was `true`, every user group gets the permission.
 * Otherwise, Administrators and groups with access to all languages or the default language get the permission.
 
-New user groups start without the permission. Review the **Allow editing shared content** option on your [User Groups](../../manage-and-publish-content/users-and-members/users/README.md#user-group-parameters) after the upgrade. The permission applies to both Documents and Elements. Language access now also applies to Elements in the Library section, not only to Documents.
+New user groups start without the permission. Review the **Allow editing shared content** option on your [User Groups](../../manage-and-publish-content/users-and-members/users/#user-group-parameters) after the upgrade. The permission applies to both Documents and Elements. Language access now also applies to Elements in the Library section, not only to Documents.
 
 Scheduled publishing follows the same rule. A schedule stores whether the user who created it had the permission. When the schedule runs, shared property changes are only published if that user had the permission.
 
@@ -315,18 +315,18 @@ See [#23906](https://github.com/umbraco/Umbraco-CMS/pull/23906) and [#23908](htt
 
 Some settings have moved, been removed, or have new default values. Review your `appsettings.json` files.
 
-| Setting                                                   | Change                                                                       | Action                                                                                                                   |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `Umbraco:CMS:Core:Debug`                                  | No longer read.                                                              | Move the settings to [`Umbraco:CMS:Debug`](../../develop-with-umbraco/configuration/debugsettings.md).                    |
-| `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`       | No longer read.                                                              | Move it to [`Umbraco:CMS:DataTypes:ShowDeprecatedPropertyEditors`](../../develop-with-umbraco/configuration/datatypes.md). |
-| `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`    | Removed.                                                                     | Use the user group permission. See [User group permission for editing shared content](#user-group-permission-for-editing-shared-content).                 |
-| `Umbraco:CMS:HelpPage`                                    | Removed.                                                                     | Remove the section.                                                                                                      |
-| `AllowCreation` in the segment settings (`SegmentSettings`) | Removed.                                                                   | Remove the setting.                                                                                                      |
-| `BackOfficeTokenCookieSettings`                           | Removed.                                                                     | Use [`Umbraco:CMS:Security:AuthCookieName`](../../develop-with-umbraco/configuration/securitysettings.md#auth-cookie-name). |
-| `Umbraco:CMS:Imaging:Memory:Enabled`                      | Defaults to `true`.                                                          | Set it to `false` to restore the previous behavior. See [Memory](../../develop-with-umbraco/configuration/imagingsettings.md#memory). |
-| `Umbraco:CMS:ScheduledPublishing:AlignToClock`            | Defaults to `true`.                                                          | Set it to `false` to restore the previous behavior. See [AlignToClock](../../develop-with-umbraco/configuration/scheduledpublishingsettings.md#aligntoclock). |
-| `Umbraco:CMS:ModelsBuilder:ModelsMode`                    | Defaults to `Nothing`.                                                       | See the note below the table.                                                                                            |
-| `Connect Timeout` in the connection string                | No longer used as the command timeout.                                       | Set `Command Timeout`. See [Set the database command timeout explicitly](#set-the-database-command-timeout-explicitly).   |
+| Setting                                                     | Change                                 | Action                                                                                                                                                        |
+| ----------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Umbraco:CMS:Core:Debug`                                    | No longer read.                        | Move the settings to [`Umbraco:CMS:Debug`](../../develop-with-umbraco/configuration/debugsettings.md).                                                        |
+| `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`         | No longer read.                        | Move it to [`Umbraco:CMS:DataTypes:ShowDeprecatedPropertyEditors`](../../develop-with-umbraco/configuration/datatypes.md).                                    |
+| `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`      | Removed.                               | Use the user group permission. See [User group permission for editing shared content](version-specific.md#user-group-permission-for-editing-shared-content).  |
+| `Umbraco:CMS:HelpPage`                                      | Removed.                               | Remove the section.                                                                                                                                           |
+| `AllowCreation` in the segment settings (`SegmentSettings`) | Removed.                               | Remove the setting.                                                                                                                                           |
+| `BackOfficeTokenCookieSettings`                             | Removed.                               | Use [`Umbraco:CMS:Security:AuthCookieName`](../../develop-with-umbraco/configuration/securitysettings.md#auth-cookie-name).                                   |
+| `Umbraco:CMS:Imaging:Memory:Enabled`                        | Defaults to `true`.                    | Set it to `false` to restore the previous behavior. See [Memory](../../develop-with-umbraco/configuration/imagingsettings.md#memory).                         |
+| `Umbraco:CMS:ScheduledPublishing:AlignToClock`              | Defaults to `true`.                    | Set it to `false` to restore the previous behavior. See [AlignToClock](../../develop-with-umbraco/configuration/scheduledpublishingsettings.md#aligntoclock). |
+| `Umbraco:CMS:ModelsBuilder:ModelsMode`                      | Defaults to `Nothing`.                 | See the note below the table.                                                                                                                                 |
+| `Connect Timeout` in the connection string                  | No longer used as the command timeout. | Set `Command Timeout`. See [Set the database command timeout explicitly](version-specific.md#set-the-database-command-timeout-explicitly).                    |
 
 The `ModelsMode` default changes from `InMemoryAuto` to `Nothing`, because core Umbraco can't generate in-memory models on its own. Sites with the `Umbraco.Cms.DevelopmentMode.Backoffice` package installed keep `InMemoryAuto` when no mode is set. Without the package, setting `InMemoryAuto` explicitly now stops the site at startup with a clear error. For more information, see [Models Builder settings](../../develop-with-umbraco/configuration/modelsbuildersettings.md).
 
@@ -337,13 +337,13 @@ In code, `CoreDebugSettings` is renamed to `DebugSettings`. Update any `IOptions
 The following Management API endpoints have been removed:
 
 * `GET /umbraco/management/api/v1/help`. There is no replacement.
-* `GET /umbraco/management/api/v1/document/{id}/available-segment-options`. Use the segment collection endpoint instead. See [Segment removed from content variant models](#segment-removed-from-content-variant-models).
+* `GET /umbraco/management/api/v1/document/{id}/available-segment-options`. Use the segment collection endpoint instead. See [Segment removed from content variant models](version-specific.md#segment-removed-from-content-variant-models).
 * `GET /umbraco/management/api/v1/server/upgrade-check`. There is no replacement.
 * `POST /umbraco/management/api/v1/redirect-management/status`. Use the `Umbraco:CMS:WebRouting:DisableRedirectUrlTracking` setting instead. The endpoint had no effect from Umbraco 17.6 and 18.1.
 
 The `AllowNonExistingSegmentsCreation` and `allowEditInvariantFromNonDefault` properties are removed from the Document and Element configuration response models. `DisableUnpublishWhenReferenced` is removed from the Media configuration response model.
 
-In the Delivery API OpenAPI document, operation IDs use an underscore for the minor version. For example, `GetContent2.0` is now `GetContent2_0`. Regenerate any API clients built from the [Content Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/README.md) document.
+In the Delivery API OpenAPI document, operation IDs use an underscore for the minor version. For example, `GetContent2.0` is now `GetContent2_0`. Regenerate any API clients built from the [Content Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/) document.
 
 ### Obsolete server-side code removed
 
@@ -355,21 +355,21 @@ Code marked as obsolete with removal scheduled for Umbraco 19 has been removed. 
 
 Some notable removals and their replacements:
 
-| Removed                                                                             | Use instead                                                                     |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `PublishedContentBase`                                                              | `PublishableContentBase`                                                        |
-| `IPublishStatusQueryService`, `IPublishStatusManagementService`                     | `IDocumentPublishStatusQueryService`, `IDocumentPublishStatusManagementService` |
-| Synchronous `IAuditService` methods                                                 | The `…Async` methods and `IAuditEntryService`                                   |
-| `IMigrationPlanExecutor.ExecutePlan`                                                | `ExecutePlanAsync`                                                              |
-| `IRecurringBackgroundJob.RunJobAsync()`                                             | `RunJobAsync(CancellationToken)`                                                |
-| `IEmailSender.CanSendRequiredEmail()`                                               | `IsEmailConfigured()` or `IsEmailAvailableAsync()`                              |
-| `IUserForgotPasswordSender.CanSend()`                                               | `IsPasswordResetConfigured()` or `IsPasswordResetAvailableAsync()`              |
-| `HeyRedMarkdownToHtmlConverter`                                                     | `MarkdigMarkdownToHtmlConverter`. See [Markdown to HTML conversion](../../extend-your-project/server-side-extensions/services/markdown-to-html-conversion.md). |
-| Legacy log viewer types, such as `ILogViewerConfig` and `LogViewerConfig`           | `ILogViewerService`                                                             |
-| `MethodInfoApiCommonExtensions.HasMapToApiAttribute`                                | `ActionDescriptorApiCommonExtensions.HasMapToApiAttribute`                      |
-| `DeliveryApiApplicationBuilderExtensions`                                           | `UmbracoEndpointBuilderContextExtensions`                                       |
-| `IJsonPatchService`, install and upgrade check services                             | No replacement                                                                  |
-| `Umbraco:CMS:Examine:LuceneDirectoryFactory`                                        | Move it to [`Umbraco:CMS:Search:Examine:LuceneDirectoryFactory`](../../develop-with-umbraco/configuration/examinesettings.md). |
+| Removed                                                                   | Use instead                                                                                                                                                    |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PublishedContentBase`                                                    | `PublishableContentBase`                                                                                                                                       |
+| `IPublishStatusQueryService`, `IPublishStatusManagementService`           | `IDocumentPublishStatusQueryService`, `IDocumentPublishStatusManagementService`                                                                                |
+| Synchronous `IAuditService` methods                                       | The `…Async` methods and `IAuditEntryService`                                                                                                                  |
+| `IMigrationPlanExecutor.ExecutePlan`                                      | `ExecutePlanAsync`                                                                                                                                             |
+| `IRecurringBackgroundJob.RunJobAsync()`                                   | `RunJobAsync(CancellationToken)`                                                                                                                               |
+| `IEmailSender.CanSendRequiredEmail()`                                     | `IsEmailConfigured()` or `IsEmailAvailableAsync()`                                                                                                             |
+| `IUserForgotPasswordSender.CanSend()`                                     | `IsPasswordResetConfigured()` or `IsPasswordResetAvailableAsync()`                                                                                             |
+| `HeyRedMarkdownToHtmlConverter`                                           | `MarkdigMarkdownToHtmlConverter`. See [Markdown to HTML conversion](../../extend-your-project/server-side-extensions/services/markdown-to-html-conversion.md). |
+| Legacy log viewer types, such as `ILogViewerConfig` and `LogViewerConfig` | `ILogViewerService`                                                                                                                                            |
+| `MethodInfoApiCommonExtensions.HasMapToApiAttribute`                      | `ActionDescriptorApiCommonExtensions.HasMapToApiAttribute`                                                                                                     |
+| `DeliveryApiApplicationBuilderExtensions`                                 | `UmbracoEndpointBuilderContextExtensions`                                                                                                                      |
+| `IJsonPatchService`, install and upgrade check services                   | No replacement                                                                                                                                                 |
+| `Umbraco:CMS:Examine:LuceneDirectoryFactory`                              | Move it to [`Umbraco:CMS:Search:Examine:LuceneDirectoryFactory`](../../develop-with-umbraco/configuration/examinesettings.md).                                 |
 
 The `Markdown` (HeyRed) and `JsonPatch.Net` NuGet packages are no longer dependencies of Umbraco. Add a direct package reference if your own code uses them.
 
@@ -939,7 +939,7 @@ Umbraco 16 adds support for asynchronous migrations and part of this work involv
 
 There is no effect on the default search experience in Umbraco, but it may affect search customizations. As Examine is now registered in a composer, any custom code registered the same way is not guaranteed to run after the core setup. You should ensure to use a `[ComposeAfter(typeof(Umbraco.Cms.Infrastructure.Examine.AddExamineComposer))]` attribute to make sure custom code runs after Umbraco's default setup of Examine.
 
-Read more in the [Searching with Examine](../../develop-with-umbraco/application-code/examine/README.md) article and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
+Read more in the [Searching with Examine](../../develop-with-umbraco/application-code/examine.md) article and see [PR #18988](https://github.com/umbraco/Umbraco-CMS/pull/18988) for reference.
 
 ### Updated dependencies
 
@@ -1253,6 +1253,7 @@ Below you can find the list of breaking changes introduced in Umbraco 14 RC rele
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-rc2)
 
 ### RC 1
+
 First RC release - 17th of April. Breaking changes since Beta 3:
 
 * [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-rc1)
@@ -1279,6 +1280,7 @@ There are a few breaking changes since **Beta 1**. Most of the changes concern p
 * [Backend (CMS) changes](https://github.com/umbraco/Umbraco-CMS/releases/tag/release-14.0.0-beta002)
 
 ### Beta 1
+
 Official release of Beta, 6th March 2023.
 
 * [Bellissima (frontend/backoffice) changes](https://github.com/umbraco/Umbraco.CMS.Backoffice/releases/tag/v14.0.0-beta001)
