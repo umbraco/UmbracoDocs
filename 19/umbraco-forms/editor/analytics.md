@@ -15,7 +15,7 @@ To view form analytics, you need:
 * Access to the **Forms** section in the backoffice.
 * The **View Entries** permission for the form.
 
-Users will only see analytics for forms they have permission to view entries for.
+Users only see analytics for forms they have permission to view entries for.
 
 ## Accessing Analytics
 
@@ -92,7 +92,7 @@ Click a column heading to sort the table. Click a form name to open the analytic
 
 ## Form Analytics
 
-When viewing analytics for a specific form, the view displays four boxes providing different perspectives on form performance.
+When viewing analytics for a specific form, the view displays four widgets providing different perspectives on form performance.
 
 ### Submissions
 
