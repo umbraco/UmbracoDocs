@@ -171,7 +171,6 @@ site:
               key: space-41
               title: 19.latest (RC)
               path: 19.latest
-              draft: true
               content:
                 directory: ./19/umbraco-deploy
             - type: space
