@@ -17,12 +17,6 @@ Umbraco.AI can be extended with add-on packages that provide specialized functio
 | [Semantic Search](search/)              | `Umbraco.AI.Search`                  | AI-powered vector search for content and media                               |
 | [Deploy Support](deploy/)               | `Umbraco.AI.Deploy`                  | Deploy AI configuration across environments                                  |
 
-{% hint style="info" %}
-
-The Deploy Support packages aren't available for Umbraco CMS 19 yet. They follow when Umbraco Deploy 19 is released.
-
-{% endhint %}
-
 ## Architecture
 
 Add-ons depend on the core `Umbraco.AI` package and extend its capabilities:
@@ -75,7 +69,7 @@ Install-Package Umbraco.AI.OpenAI
 Install-Package Umbraco.AI.Prompt
 Install-Package Umbraco.AI.Agent
 
-# Install Deploy support (requires Umbraco Deploy 19, not released yet)
+# Install Deploy support (requires Umbraco Deploy 19)
 Install-Package Umbraco.AI.Deploy
 Install-Package Umbraco.AI.Prompt.Deploy
 Install-Package Umbraco.AI.Agent.Deploy

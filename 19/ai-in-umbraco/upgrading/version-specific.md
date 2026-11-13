@@ -17,16 +17,14 @@ Version 19 is a release candidate (`19.0.0-rc.1`). To install it, pass the versi
 
 {% endhint %}
 
-### Packages not yet available for version 19
+### Packages that need other Umbraco products
 
-These packages don't have a version 19 release yet:
+Some add-ons also need version 19 of another Umbraco product. Upgrade that product at the same time:
 
-| Package | Available when |
+| Package | Needs |
 | --- | --- |
-| `Umbraco.AI.Deploy`, `Umbraco.AI.Prompt.Deploy`, `Umbraco.AI.Agent.Deploy` | Umbraco Deploy 19 is released |
-| `Umbraco.AI.Automate` | Umbraco Automate 19 is released |
-
-If your site uses one of these packages, wait for its version 19 release before you upgrade.
+| `Umbraco.AI.Deploy`, `Umbraco.AI.Prompt.Deploy`, `Umbraco.AI.Agent.Deploy` | Umbraco Deploy 19 |
+| `Umbraco.AI.Automate` | Umbraco Automate 19 |
 
 ## Breaking changes
 
@@ -132,8 +130,6 @@ A failed migration is still logged without stopping the site.
 
 ## Umbraco Deploy
 
-These changes apply when the Deploy Support packages are released for version 19.
-
 * `UmbracoAIDeployComponent`, `UmbracoAIPromptDeployComponent`, and `UmbracoAIAgentDeployComponent` no longer take an `IDiskEntityService` constructor parameter. Umbraco Deploy 19 removed the method they used it for. The composers now register the disk entity types through `DeployEntityTypesOptions`.
 * On a site that uses SQLite, give Umbraco.AI its own database with an `umbracoAIDbDSN` connection string. When Umbraco.AI shares the SQLite file with the CMS, a Deploy import can fail with "database is locked".
 
@@ -149,3 +145,8 @@ These changes apply when the Deploy Support packages are released for version 19
 ```
 
 {% endcode %}
+
+## Umbraco Automate
+
+* `Umbraco.AI.Automate` 19 needs Umbraco Automate 19.
+* The **Tool permissions** setting on the **Run AI Agent** action now uses a single-choice dropdown. Settings saved on version 18 still load, so you don't need to edit existing automations.

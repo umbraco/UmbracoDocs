@@ -6,12 +6,6 @@ description: Install the Umbraco AI Deploy add-on packages for environment-based
 
 This guide walks you through installing Umbraco.AI Deploy support.
 
-{% hint style="warning" %}
-
-The Deploy Support packages aren't available for Umbraco CMS 19 yet. They follow when Umbraco Deploy 19 is released.
-
-{% endhint %}
-
 ## Prerequisites
 
 Before installing Deploy support, ensure you have:
