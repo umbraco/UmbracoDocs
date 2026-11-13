@@ -564,34 +564,34 @@ The following `umbraco-package.json` example adds localized names for two entity
 
 ```json
 {
-  "id": "Umbraco.Commerce.Deploy",
-  "name": "Umbraco Commerce Deploy",
-  "version": "19.0.0",
+  "id": "MyPackage.Deploy",
+  "name": "My Package Deploy",
+  "version": "1.0.0",
   "extensions": [
     {
       "type": "localization",
-      "alias": "Uc.Deploy.Localization.En",
+      "alias": "MyPackage.Deploy.Localization.En",
       "weight": -100,
       "name": "English",
       "meta": {
         "culture": "en",
         "localizations": {
           "deploy_entityTypes": {
-            "umbraco-commerce-product-attribute": "Umbraco Commerce Product Attribute",
-            "umbraco-commerce-product-attribute-preset": "Umbraco Commerce Product Attribute Preset"
+            "mypackage-example": "Example",
+            "mypackage-example-folder": "Example Folder"
           }
         }
       }
     },
     {
       "type": "deployEntityTypeMapping",
-      "alias": "Uc.Deploy.EntityTypeMapping",
-      "name": "Umbraco Commerce Deploy Entity Type Mapping",
+      "alias": "MyPackage.Deploy.EntityTypeMapping",
+      "name": "My Package Deploy Entity Type Mapping",
       "entityTypes": {
-        "uc:product-attribute": "umbraco-commerce-product-attribute",
-        "uc:product-attributes": "umbraco-commerce-product-attribute",
-        "uc:product-attribute-preset": "umbraco-commerce-product-attribute-preset",
-        "uc:product-attribute-presets": "umbraco-commerce-product-attribute-preset"
+        "mypackage:example": "mypackage-example",
+        "mypackage:examples": "mypackage-example",
+        "mypackage:example-folder": "mypackage-example-folder",
+        "mypackage:example-folders": "mypackage-example-folder"
       }
     }
   ]
