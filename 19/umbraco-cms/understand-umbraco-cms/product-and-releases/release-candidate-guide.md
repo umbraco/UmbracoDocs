@@ -29,9 +29,9 @@ Ensure you meet the prerequisites and move on to the installation steps outlined
 
 ### Install a Pre-Release Version
 
-The [Release Candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/19.0.0-rc1).
+The [release candidate is available on NuGet](https://www.nuget.org/packages/Umbraco.Templates/19.0.0-rc1).
 
-1. Install the Umbraco dotnet template for the Release Candidate.
+1. Install the Umbraco dotnet template for the release candidate.
 
 ```cmd
 dotnet new install Umbraco.Templates@19.0.0-rc1
@@ -64,7 +64,7 @@ Alternatively, you can install and run the Umbraco project using your favorite I
 
 ## New and updated documentation
 
-Here is a list of all the new or updated articles in this version.
+Here is a list of all the new, updated, and removed articles in this version.
 
 ### New articles
 
@@ -98,11 +98,14 @@ The following Examine articles have been removed, because Umbraco Search replace
 * Quick-Start
 * Corrupt Indexes
 
-The following settings have been removed in Umbraco 19. For replacements, see the "Configuration changes" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes).
+### Removed settings
 
-* `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`
+The following settings have been removed in Umbraco 19. Unless noted otherwise, see the "Configuration changes" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes) for replacements.
+
+* `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`: removed from the [Indexing Settings](../../develop-with-umbraco/configuration/indexingsettings.md) article.
 * `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`
 * `Umbraco:CMS:HelpPage`
+* `AllowCreation` in the segment settings (`SegmentSettings`)
 * `BackOfficeTokenCookieSettings`
 
 ### Updated articles
