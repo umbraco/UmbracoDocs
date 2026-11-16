@@ -10,7 +10,7 @@ This guide walks you through installing Umbraco.AI Deploy support.
 
 Before installing Deploy support, ensure you have:
 
-- Umbraco CMS 17.0 or later
+- Umbraco CMS 18.0 or later
 - .NET 10.0 or later
 - Umbraco.AI installed and configured
 - Umbraco Deploy installed and configured

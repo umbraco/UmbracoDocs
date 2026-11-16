@@ -12,7 +12,7 @@ In the below section, we describe how to get started with running Umbraco CMS on
 
 ## How to get started running Umbraco CMS on Linux or macOS
 
-To get started with Umbraco CMS first have a look at the [requirements for running Umbraco CMS](../requirements.md#local-development).
+To get started with Umbraco CMS first have a look at the [requirements for running Umbraco CMS](requirements.md#local-development).
 
 Once you've made sure you meet the requirements it is time to install the Umbraco Templates on your system.
 
