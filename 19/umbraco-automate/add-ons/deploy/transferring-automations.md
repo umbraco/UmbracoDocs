@@ -60,7 +60,7 @@ When an automation is transferred, the Deploy connector validates that every con
 
 In version 18, all four entity types were written as `.uda` files and could also be transferred. Version 19 splits them, so existing sites need a one-time cleanup.
 
-1. Before you upgrade, make sure automations and folders match across your environments.
+1. Make sure automations and folders match across your environments before you upgrade.
 2. Upgrade Umbraco Deploy, Umbraco Automate, and the Deploy add-on on every environment.
 3. Delete the automation and folder `.uda` files from `umbraco/Deploy/Revision`. These files are named `umbraco-automate-automation__<id>.uda` and `umbraco-automate-workspace-group__<id>.uda`. Keep the `umbraco-automate-workspace__<id>.uda` and `umbraco-automate-connection__<id>.uda` files.
 4. Export the schema, then commit the rewritten workspace and connection files.
