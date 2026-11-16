@@ -16,7 +16,7 @@ Alias: `umbracoForms.submitForm`. Programmatically submit a form entry from insi
 Alias: `umbracoForms.exportEntries`. Read entries from a form. The action returns the entries as a collection that downstream steps can iterate over with a **For Each** node.
 
 {% hint style="info" %}
-Reading entries from the database and hiding sensitive values are available from Umbraco.Forms.Automate 18.0.4.
+Reading entries from the database and hiding sensitive values are available in `Umbraco.Forms.Automate` 18.0.4.
 {% endhint %}
 
 The action reads entries from the Forms database, so an entry submitted a moment before the run is included. Each entry holds only the form's current fields. Fields removed from the form are not exported.

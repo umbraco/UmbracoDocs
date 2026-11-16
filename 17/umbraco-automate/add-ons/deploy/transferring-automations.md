@@ -36,14 +36,14 @@ When an automation is transferred, the Deploy connector validates that every con
 ## Upgrading to Version 17.1.0
 
 {% hint style="info" %}
-Umbraco.Deploy.Automate 17.1.0 requires Umbraco Deploy 17.4.0 or later.
+`Umbraco.Deploy.Automate` 17.1.0 requires Umbraco Deploy 17.4.0 or later.
 {% endhint %}
 
 From version 17.1.0, the workspace service account is no longer exported. In earlier versions, the exported service account made workspace checksums differ between environments. Automation and folder transfers then failed with a schema mismatch.
 
 1. Upgrade Umbraco Deploy to 17.4.0 or later and the Deploy add-on to 17.1.0 or later on every environment. A target on an older version can still fail automation and folder transfers with a schema mismatch.
 2. Export the schema, then commit the rewritten workspace `.uda` files. The files change once.
-3. Export again any export packages made before the upgrade that contain automations or folders.
+3. Re-export any export packages made before the upgrade that contain automations or folders.
 
 ## See Also
 
