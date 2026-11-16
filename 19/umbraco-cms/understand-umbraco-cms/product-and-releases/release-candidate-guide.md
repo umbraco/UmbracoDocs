@@ -100,9 +100,9 @@ The following Examine articles have been removed, because Umbraco Search replace
 
 ### Removed settings
 
-The following settings have been removed in Umbraco 19. Unless noted otherwise, see the "Configuration changes" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes) for replacements.
+The following settings have been removed in Umbraco 19. For replacements, see the "Configuration changes" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes).
 
-* `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`: removed from the [Indexing Settings](../../develop-with-umbraco/configuration/indexingsettings.md) article.
+* `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`
 * `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`
 * `Umbraco:CMS:HelpPage`
 * `AllowCreation` in the segment settings (`SegmentSettings`)
@@ -126,3 +126,8 @@ The following settings have been removed in Umbraco 19. Unless noted otherwise, 
 * [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md): Covers referencing Elements as blocks in block editors.
 * [Document Blueprints](../../model-your-content/content-types-and-structure/backoffice/document-blueprints.md): Document Blueprints are now managed in the Library section, with per-user access.
 * [IPublishedContentQuery](../../develop-with-umbraco/templating-and-rendering/querying/ipublishedcontentquery.md): Updated for the removal of the Examine-based `Search` overloads.
+* [Settings Dashboards](../../model-your-content/content-types-and-structure/backoffice/settings-dashboards.md): Removes the Examine Management dashboard, which is replaced by the Search entry under Settings.
+* [Inversion of Control / Dependency injection](../../develop-with-umbraco/application-code/backend-and-custom-logic/using-ioc.md): Replaces the `ExamineManager` example with an `ISearcher` example.
+* [Content Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/README.md): Removes the steps for rebuilding the `DeliveryApiContentIndex` after enabling the API.
+* [Extension API for querying](../../develop-with-umbraco/headless-and-apis/content-delivery-api/extension-api-for-querying.md): Custom query options now index data through `IContentIndexHandler`.
+* [Protected content in the Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/protected-content-in-the-delivery-api/README.md): Removes the note about rebuilding the index after changing member authentication.
