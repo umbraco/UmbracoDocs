@@ -27,7 +27,7 @@ This is a prerelease for testing. Don't use it on a production site.
 
 Forms 19.0.0-rc1 needs Umbraco CMS `19.0.0-rc1`. It's published to NuGet and npm as a prerelease.
 
-Sites that use Umbraco Deploy need Umbraco Forms Deploy `19.0.0-rc1`, released on November 13th 2026. For details, see the Umbraco.Forms.Deploy section of this article.
+Sites that use Umbraco Deploy need Umbraco Forms Deploy `19.0.0-rc1`, released on November 13th 2026. For details, see the [Umbraco.Forms.Deploy](#umbraco.forms.deploy) section of this article.
 {% endhint %}
 
 #### Umbraco CMS 19 support

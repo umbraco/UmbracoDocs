@@ -244,7 +244,7 @@ If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestL
 
 ### TransferFormsAsContent <a href="#transfer-forms-data-as-content" id="transfer-forms-data-as-content"></a>
 
-In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
+In order for Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
 
 {% hint style="info" %}
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
