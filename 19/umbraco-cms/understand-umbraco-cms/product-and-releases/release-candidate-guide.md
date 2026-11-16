@@ -89,7 +89,7 @@ Here is a list of all the new or updated articles in this version.
 
 ### Removed articles
 
-The following Examine articles have been removed, because Umbraco Search replaces the built-in Examine integration. Use the [Search](../../develop-with-umbraco/search/README.md) documentation instead. For details, see [Examine integration replaced by Umbraco Search](../../get-started/upgrading-and-migrating/version-specific.md#examine-integration-replaced-by-umbraco-search).
+The following Examine articles have been removed, because Umbraco Search replaces the built-in Examine integration. Use the [Search](../../develop-with-umbraco/search/README.md) documentation instead. For details, see the "Examine integration replaced by Umbraco Search" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes).
 
 * Examine Management
 * Examine Manager
@@ -98,7 +98,7 @@ The following Examine articles have been removed, because Umbraco Search replace
 * Quick-Start
 * Corrupt Indexes
 
-The following settings have been removed in Umbraco 19. For replacements, see [Configuration changes](../../get-started/upgrading-and-migrating/version-specific.md#configuration-changes).
+The following settings have been removed in Umbraco 19. For replacements, see the "Configuration changes" entry in the [Breaking Changes Overview](../../get-started/upgrading-and-migrating/version-specific.md#breaking-changes).
 
 * `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`
 * `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`
@@ -122,4 +122,4 @@ The following settings have been removed in Umbraco 19. For replacements, see [C
 * [Entity Actions](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/entity-actions.md): Adds grouping of entity actions with `entityActionGroup`.
 * [Elements](../../model-your-content/content-types-and-structure/data/defining-content/elements.md): Covers referencing Elements as blocks in block editors.
 * [Document Blueprints](../../model-your-content/content-types-and-structure/backoffice/document-blueprints.md): Document Blueprints are now managed in the Library section, with per-user access.
-* [IPublishedContentQuery](../../develop-with-umbraco/templating-and-rendering/querying/ipublishedcontentquery.md): Adds guidance on when to use it, and when to use the Search APIs instead.
+* [IPublishedContentQuery](../../develop-with-umbraco/templating-and-rendering/querying/ipublishedcontentquery.md): Updated for the removal of the Examine-based `Search` overloads.
