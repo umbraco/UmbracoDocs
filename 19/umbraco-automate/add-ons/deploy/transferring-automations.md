@@ -64,7 +64,7 @@ In version 18, all four entity types were written as `.uda` files and could also
 2. Upgrade Umbraco Deploy, Umbraco Automate, and the Deploy add-on on every environment.
 3. Delete the automation and folder `.uda` files from `umbraco/Deploy/Revision`. These files are named `umbraco-automate-automation__<id>.uda` and `umbraco-automate-workspace-group__<id>.uda`. Keep the `umbraco-automate-workspace__<id>.uda` and `umbraco-automate-connection__<id>.uda` files.
 4. Export the schema, then commit the rewritten workspace and connection files.
-5. From then on, move automations and folders with **Add to Transfer Queue**, **Tree restore**, or **Partial restore**.
+5. Move automations and folders with **Add to Transfer Queue**, **Tree restore**, or **Partial restore** from then on.
 
 {% hint style="warning" %}
 Don't delete files with a pattern such as `umbraco-automate-workspace*`. That pattern also matches the workspace files, which must stay.
