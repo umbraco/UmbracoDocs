@@ -87,6 +87,10 @@ Each instance will be allocated a role by the automatic server role election pro
 
 ### Umbraco application URL
 
+{% hint style="info" %}
+`ApplicationUrlDetection` is available from Umbraco 17.4. In earlier versions, Umbraco updates the URL from each request for a new host.
+{% endhint %}
+
 Scheduling does not depend on `UmbracoApplicationUrl`. Servers do not send HTTP requests to themselves to run scheduled tasks or scheduled publishing.
 
 Each server uses the URL for:
@@ -97,9 +101,11 @@ Each server uses the URL for:
 
 None of these uses requires a server-specific address. The same value can be set on every server.
 
+In production runtime mode, Umbraco does not start unless `UmbracoApplicationUrl` is set. For details, see [Runtime Modes](../../../runtime-modes.md#production-mode).
+
 When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. Behind a load balancer, auto-detection can pick up an internal host name. Setting the URL explicitly avoids this. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
 
-`ApplicationUrlDetection` was added in Umbraco CMS 17.4. In earlier versions, Umbraco updates the URL from each request for a new host.
+With the default, Umbraco logs a warning at startup. Email links, such as user invitations and password resets, are not available until you set a URL.
 
 {% hint style="info" %}
 To keep front-end servers from ever taking the `SchedulingPublisher` role, [set explicit server roles](flexible-advanced.md#explicit-schedulingpublisher-server) with a custom `IServerRoleAccessor`.

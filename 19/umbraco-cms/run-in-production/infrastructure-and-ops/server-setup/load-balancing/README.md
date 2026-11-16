@@ -97,7 +97,11 @@ Each server uses the URL for:
 
 None of these uses requires a server-specific address. The same value can be set on every server.
 
+In production runtime mode, Umbraco does not start unless `UmbracoApplicationUrl` is set. For details, see [Runtime Modes](../../../runtime-modes.md#production-mode).
+
 When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. Behind a load balancer, auto-detection can pick up an internal host name. Setting the URL explicitly avoids this. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
+
+With the default, Umbraco logs a warning at startup. Email links, such as user invitations and password resets, are not available until you set a URL.
 
 {% hint style="info" %}
 To keep front-end servers from ever taking the `SchedulingPublisher` role, [set explicit server roles](flexible-advanced.md#explicit-schedulingpublisher-server) with a custom `IServerRoleAccessor`.

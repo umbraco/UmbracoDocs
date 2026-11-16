@@ -62,6 +62,10 @@ In order to have read-only database access configured for your front-end servers
 
 Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers. They will not attempt to run the automatic server role election process or recurring background jobs. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
 
+{% hint style="info" %}
+Automatic detection of read-only subscriber servers is available from Umbraco 17.4.
+{% endhint %}
+
 When configuring a server as a read-only subscriber, Umbraco automatically detects the state and disables specific background database write operations, such as DistributedBackgroundJobs. A notable exception is the LastSynced process. To ensure the subscriber server tracks synchronization without database write access, Umbraco redirects these updates to a local file instead of the database.
 
 {% hint style="info" %}
