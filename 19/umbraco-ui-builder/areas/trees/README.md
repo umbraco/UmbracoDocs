@@ -278,6 +278,8 @@ sectionConfig.WithTree("content", withTreeConfig => {
 });
 ```
 
+You can call `WithTree()` more than once with the same alias. Each later call continues the configuration of the first call. Passing a `WithTreeConfigBuilder` instance for an alias that is already in use throws an error.
+
 ## Adding a Context App to an Existing Tree
 
 ### Using the `AddContextApp()` Method
@@ -389,3 +391,5 @@ withTreeConfig.AddContextAppAfter("umbContent", "Comments", "icon-chat", context
     ...
 });
 ```
+
+For the aliases you can use as a target, see the [Choosing the Target Alias of a Position](../context-apps.md#choosing-the-target-alias-of-a-position) section.

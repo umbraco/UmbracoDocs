@@ -106,6 +106,7 @@ colours
 coloured
 compareTo
 comparisonOperator
+compilable
 composable
 config/S
 configurator
@@ -205,6 +206,7 @@ ESModules
 eval/S
 existingAmount
 existingPrice
+expandables
 extensionless
 extranets
 facelift
@@ -463,6 +465,7 @@ propertyAction
 propertyAlias
 propertyType
 propertyValues
+PRs
 Prowork's
 proxied
 proxying
