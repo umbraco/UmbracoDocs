@@ -55,11 +55,11 @@ For example, `UMBRACO_INCLUDE_SLICES=read,search` registers only read and search
 
 ## CMS MCP Server Chaining
 
-The Engage Developer MCP Server automatically chains to the [Umbraco CMS Developer MCP Server](../cms-developer-mcp/README.md), reusing the same `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` credentials. All CMS tools are proxied with a `cms:` prefix (for example, `cms:get-document`, `cms:get-media-by-id`).
+The Engage Developer MCP Server automatically chains to the [Umbraco CMS Developer MCP Server](../cms-developer-mcp/README.md), reusing the same `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` credentials. All CMS tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`, `cms:get-media-by-id`).
 
 This means a single MCP connection gives your AI agent access to both Engage and CMS capabilities. It is useful when personalization rules, A/B tests, or campaigns need to reference real documents, media, or content types.
 
-Any mode, collection, and slice filter configuration set on the Engage MCP Server is passed through to the chained CMS server. Filtering therefore also narrows which `cms:` tools are registered.
+Any mode, collection, and slice filter configuration set on the Engage MCP Server is passed through to the chained CMS server. Filtering therefore also narrows which `cms--` tools are registered.
 
 | Variable | CLI Flag | Purpose |
 | --- | --- | --- |
@@ -68,5 +68,5 @@ Any mode, collection, and slice filter configuration set on the Engage MCP Serve
 {% hint style="info" %}
 Disabling chaining is useful when you already run a separate CMS Developer MCP connection in your host.
 
-It avoids registering duplicate `cms:` tools.
+It avoids registering duplicate `cms--` tools.
 {% endhint %}
