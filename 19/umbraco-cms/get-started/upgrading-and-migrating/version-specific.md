@@ -140,9 +140,9 @@ The articles under [Searching with Examine](../../develop-with-umbraco/applicati
 
 #### Numbers and dates in fields without a definition are stored culture-invariantly
 
-The Examine search provider stores a field as text when the field isn't configured in `FieldOptions`. Integer, decimal, and date values in these fields are now formatted with the invariant culture. Dates use the ISO 8601 round-trip format.
+The Examine search provider stores a field as text when the field isn't configured in [`FieldOptions`](../../develop-with-umbraco/search/examine-search-provider.md#configuring-fields-for-faceting-andor-sorting). Integer, decimal, and date values in these fields are now formatted with the invariant culture. Dates use the ISO 8601 round-trip format.
 
-Previously, the values were formatted with the culture of the server that wrote the index. This applies to the separate `Umbraco.Cms.Search` package and the first Umbraco 19 release candidate. The following table shows how the stored values differ:
+Previously, the values were formatted with the culture of the server that wrote the index. Umbraco 19.0.0-rc1 and the separate `Umbraco.Cms.Search` package use this format. The following table shows how the stored values differ:
 
 | Value    | Previously (examples)                                                  | Umbraco 19                    |
 | -------- | ---------------------------------------------------------------------- | ----------------------------- |
