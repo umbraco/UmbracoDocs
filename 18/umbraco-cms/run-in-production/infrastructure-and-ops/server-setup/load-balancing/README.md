@@ -85,12 +85,23 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 
 Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
 
+### Umbraco application URL
+
 Scheduling does not depend on `UmbracoApplicationUrl`. Servers do not send HTTP requests to themselves to run scheduled tasks or scheduled publishing.
 
-When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
+Each server uses the URL for:
 
-**Recommended**: [set your front-end servers to be explicit subscriber servers](flexible-advanced.md#explicit-schedulingpublisher-server) by creating a custom `IServerRoleAccessor`. The front-end servers will then never take the `SchedulingPublisher` role.
+* Links in emails, such as user invitations, password resets, and health check notifications.
+* Health checks that request the site's home page.
+* Allowed redirect URIs for backoffice login.
 
+None of these uses requires a server-specific address. The same value can be set on every server.
+
+When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. Behind a load balancer, auto-detection can pick up an internal host name. Setting the URL explicitly avoids this. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
+
+{% hint style="info" %}
+To keep front-end servers from ever taking the `SchedulingPublisher` role, [set explicit server roles](flexible-advanced.md#explicit-schedulingpublisher-server) with a custom `IServerRoleAccessor`.
+{% endhint %}
 
 ## Common load balancing setup information
 

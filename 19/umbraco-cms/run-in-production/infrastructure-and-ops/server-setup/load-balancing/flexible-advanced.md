@@ -41,7 +41,7 @@ builder.SetServerRegistrar<SchedulingPublisherServerRoleAccessor>();
 builder.SetServerRegistrar<SubscriberServerRoleAccessor>();
 ```
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or recurring background jobs.
+Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers. They will not attempt to run the automatic server role election process or recurring background jobs.
 
 By setting your SchedulingPublisher server to use your custom `SchedulingPublisherServerRoleAccessor` class, it will always be deemed the `SchedulingPublisher`. It runs recurring background jobs. Distributed background jobs, such as scheduled publishing, can still run on any server with database write access.
 
@@ -60,7 +60,7 @@ This is because by default each server will inform the database that they are ac
 
 In order to have read-only database access configured for your front-end servers, you need to implement the [Explicit SchedulingPublisher server](flexible-advanced.md#explicit-schedulingpublisher-server) configuration mentioned above.
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or recurring background jobs. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
+Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers. They will not attempt to run the automatic server role election process or recurring background jobs. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
 
 When configuring a server as a read-only subscriber, Umbraco automatically detects the state and disables specific background database write operations, such as DistributedBackgroundJobs. A notable exception is the LastSynced process. To ensure the subscriber server tracks synchronization without database write access, Umbraco redirects these updates to a local file instead of the database.
 
