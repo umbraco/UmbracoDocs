@@ -131,3 +131,11 @@ The following settings have been removed in Umbraco 19. For replacements, see th
 * [Content Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/README.md): Removes the steps for rebuilding the `DeliveryApiContentIndex` after enabling the API.
 * [Extension API for querying](../../develop-with-umbraco/headless-and-apis/content-delivery-api/extension-api-for-querying.md): Custom query options now index data through `IContentIndexHandler`.
 * [Protected content in the Delivery API](../../develop-with-umbraco/headless-and-apis/content-delivery-api/protected-content-in-the-delivery-api/README.md): Removes the note about rebuilding the index after changing member authentication.
+* [Users](../../manage-and-publish-content/users-and-members/users/README.md): Adds the **Allow editing shared content** permission, and start nodes and access for Elements and Document Blueprints.
+* [Content Settings](../../develop-with-umbraco/configuration/contentsettings.md): Removes the `AllowEditInvariantFromNonDefault` setting, which a user group permission replaces.
+* [Imaging settings](../../develop-with-umbraco/configuration/imagingsettings.md): `Memory:Enabled` now defaults to `true`.
+* [Custom Generated Client](../../extend-your-project/backoffice-extensions/foundation/fetching-data/custom-generated-client.md): Authenticate generated clients with the backoffice cookie, and how login redirects are handled.
+* [Umbraco HTTP Client](../../extend-your-project/backoffice-extensions/foundation/fetching-data/http-client.md): Describes how the client handles login redirects.
+* [Workspace Action Menu Items](../../extend-your-project/backoffice-extensions/extending-overview/extension-types/workspaces/workspace-action-menu-items.md): Adds action groups and `separatorBefore`.
+* [Property Actions](../../extend-your-project/backoffice-extensions/property-editors/property-actions.md): Adds action groups.
+* [Block List](../../model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/block-list-editor.md) and [Block Grid](../../model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/block-grid-editor.md): Cover reusing Library Elements as blocks.
