@@ -9,14 +9,14 @@ description: >-
 The Deploy add-on is different from the other Umbraco Automate add-ons. It does two things:
 
 1. **Triggers** — Fires on Umbraco Deploy lifecycle events (artifact import/export, task completion, files written, and so on).
-2. **Umbraco Deploy support** — Lets automations, workspaces, workspace groups, and connections transfer between environments using Umbraco Deploy.
+2. **Umbraco Deploy support** — Lets automations, workspaces, workspace groups, and connections move between environments using Umbraco Deploy. Automations and workspace groups transfer like content. Workspaces and connections deploy with the schema.
 
 ## What It Adds
 
 | Type | Items |
 | ---- | ----- |
 | Triggers | Deployment Succeeded, Deployment Failed, Content Exported, Content Imported, plus advanced triggers. See [Triggers](triggers.md) for the full list. |
-| Deploy support | Service connectors and artifact types for **Automations**, **Workspaces**, **Workspace Groups**, and **Connections**. |
+| Deploy support | Service connectors and artifact types for **Automations**, **Workspaces**, **Workspace Groups**, and **Connections**, plus the Deploy transfer and restore actions on the Automations tree. |
 
 ## In This Section
 
