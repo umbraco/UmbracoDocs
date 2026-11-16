@@ -124,7 +124,7 @@ site:
             - type: space
               key: space-43
               title: 19.latest (RC)
-              path: 19.latest-rc
+              path: 19.latest
               draft: true
               content:
                 directory: ./19/umbraco-automate
