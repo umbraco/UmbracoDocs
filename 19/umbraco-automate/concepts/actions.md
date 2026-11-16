@@ -274,7 +274,7 @@ Content and media actions treat an item in the recycle bin as missing, whatever 
 * **Update Content Property**, **Update Media Property**, and **Notify Editor** take their **Not found** exit. The update actions write nothing to the item.
 * **Create Content** and **Create Media** take their **Parent not found** exit when the parent is in the recycle bin.
 * **Move Content** and **Move Media** fail the step.
-* **Find Content** leaves items in the recycle bin out of its results, also when **Include unpublished** is on.
+* **Find Content** and **Find Media** leave items in the Recycle Bin out of their results. For **Find Content**, this also applies when **Include unpublished** is on.
 
 ## Library Elements
 
