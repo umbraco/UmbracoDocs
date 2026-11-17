@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 17 including all ch
 
 #### 17.2.13 (17th Nov 2026)
 
-* Tightened permission checks in the back office so users only see the stores and data their sections and store access allow
+* Tightened permission checks in the backoffice so users only see the stores and data their sections and store access allow
 * Fixed database transactions holding a thread while waiting for a free connection, which could slow sites under heavy order load
 
 #### 17.2.12 (11th Nov 2026)
