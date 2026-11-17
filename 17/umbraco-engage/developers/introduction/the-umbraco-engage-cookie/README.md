@@ -25,7 +25,7 @@ Umbraco Engage uses the following cookie in addition to the visitor cookie:
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
 | `ue-consent-referrer`  | Carries the visitor's original referrer across the page reload after consent. Written by `umbracoEngage.analytics.consentGranted()` only after the visitor has consented. Removed when the reloaded request is processed. See [tracking a visitor's initial pageview](../../../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md#tracking-a-visitors-initial-pageview). | 20 seconds at most |
 
-The `ue-consent-referrer` cookie is first-party and sets `SameSite=Lax`, and `Secure` on HTTPS. It is written by script, so it is not `HttpOnly`.
+The `ue-consent-referrer` cookie is first-party and sets `SameSite=Lax` and `Secure` on HTTPS. It is set by a script, so it is not `HttpOnly`.
 
 ## Overriding the default behavior
 
