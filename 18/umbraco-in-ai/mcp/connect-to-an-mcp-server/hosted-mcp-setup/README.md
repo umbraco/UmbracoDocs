@@ -10,7 +10,7 @@ Getting connected has three steps:
 
 1. **Enable hosted MCP on your site** — a one-time setup step. Both paths install [`Umbraco.Mcp.HostedAuth`](https://github.com/umbraco/Umbraco.Mcp.HostedAuth), with a small configuration difference between them. See the [Umbraco Cloud Quick Start](../../setup-a-hosted-mcp-server/cloud-quickstart.md) or [Self-Hosted Quick Start](../../setup-a-hosted-mcp-server/self-hosted-quickstart.md), depending on how your site is hosted.
 2. **Find your MCP URL** — see below.
-3. **Connect your AI client** — see [Local Apps](local-apps.md) or [Web-Hosted Platforms](web-hosted-platforms.md), depending on where your AI client runs.
+3. **Connect your AI client** — see [Local Apps](local-apps/) or [Web-Hosted Platforms](web-hosted-platforms/), depending on where your AI client runs.
 
 ## Finding Your MCP URL
 
@@ -29,10 +29,10 @@ https://{product}.{mcp-type}.{major}.mcp.umbraco.ai/at/{alias}.{region}/mcp
 * `{major}` — the Umbraco major version your site runs, `17` or `18`.
 * `{alias}.{region}` — your Umbraco Cloud project's alias and region, the same pair that makes up your project's own domain (`{alias}.{region}.umbraco.io`).
 
-| MCP server | Umbraco 17 | Umbraco 18 |
-| ---------- | ---------- | ---------- |
-| Editor     | `cms.editor.17.mcp.umbraco.ai`     | `cms.editor.18.mcp.umbraco.ai`     |
-| Developer  | `cms.developer.17.mcp.umbraco.ai`  | `cms.developer.18.mcp.umbraco.ai`  |
+| MCP server | Umbraco 17                        | Umbraco 18                        |
+| ---------- | --------------------------------- | --------------------------------- |
+| Editor     | `cms.editor.17.mcp.umbraco.ai`    | `cms.editor.18.mcp.umbraco.ai`    |
+| Developer  | `cms.developer.17.mcp.umbraco.ai` | `cms.developer.18.mcp.umbraco.ai` |
 
 For example, a project with alias `my-project` in region `euwest01`, running Umbraco 18, connects its Editor MCP client to:
 
@@ -54,8 +54,8 @@ You need an Umbraco backoffice account too — you authenticate using your exist
 
 The guides fall into two groups, because hosted MCP support works differently depending on where your AI client runs:
 
-* [Local Apps](local-apps.md) — Claude Code, Claude Desktop, Cursor, and GitHub Copilot run on your machine and connect out to your hosted MCP URL.
-* [Web-Hosted Platforms](web-hosted-platforms.md) — ChatGPT and Claude.ai run in the browser and add the MCP server through their own settings.
+* [Local Apps](local-apps/) — Claude Code, Claude Desktop, Cursor, and GitHub Copilot run on your machine and connect out to your hosted MCP URL.
+* [Web-Hosted Platforms](web-hosted-platforms/) — ChatGPT and Claude.ai run in the browser and add the MCP server through their own settings.
 
 ## How Authentication Works
 

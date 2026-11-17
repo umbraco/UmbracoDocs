@@ -54,7 +54,7 @@ Each `InstallData` setting can be one of the following values:
 Be cautious when changing a Data Type configuration, as there are some dependencies between the different types. Make sure to check the reference information in the `info` tab to ensure they are not referenced somewhere else.
 {% endhint %}
 
-For example, if you check the info tab of the `Label (bigint)` Data Type, you can see that it is referenced by the `Media Types`:
+For example, if you check the info tab of the `Label (bytes)` Data Type, you can see that it is referenced by the `Media Types`:
 
 <figure><img src="../../.gitbook/assets/ReferencedDataTypes.PNG" alt=""><figcaption><p>Data Type referenced by Media Type</p></figcaption></figure>
 

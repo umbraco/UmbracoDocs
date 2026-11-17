@@ -16,7 +16,7 @@ The following steps will take you through setting up a build server in Azure Web
 
 1. Go to the Deployment Center.
 
-![Azure deployments](<../../.gitbook/assets/Deployment-center (1).png>)
+![Azure deployments](../../.gitbook/assets/Deployment-center.png)
 
 In the Deployment Center, you can set up the CI/CD build server. This example sets up the build server using GitHub Actions. It is possible to set up the build server however you want as long as it supports executing Powershell scripts.
 
@@ -42,7 +42,7 @@ The website and the GitHub repository are now connected.
 
 Going back to the GitHub repository, a new folder has been created called Workflows:
 
-![Workflows](<../../.gitbook/assets/workflows (1).png>)
+![Workflows](../../.gitbook/assets/workflows.png)
 
 Inside the folder, the YAML file has been created with the default settings from the Azure Portal. The file will need to be configured so it fits into your set up.
 
@@ -150,11 +150,11 @@ Commit the configured YAML file and push up all the files to the repository.
 
 Go to GitHub where you will now be able to see that the CI/CD build has started running:
 
-![Deployment build started](<../../.gitbook/assets/Deploying-meta-data (1).png>)
+![Deployment build started](../../.gitbook/assets/Deploying-meta-data.png)
 
 The build server will go through the steps in the YAML file, and once it is done the deployment have gone through successfully:
 
-![Deployment Complete](<../../.gitbook/assets/deployment-complete (1).png>)
+![Deployment Complete](../../.gitbook/assets/deployment-complete.png)
 
 You can now start creating content on the local machine. Once you create something like a Document Type, the changes will get picked up in Git.
 

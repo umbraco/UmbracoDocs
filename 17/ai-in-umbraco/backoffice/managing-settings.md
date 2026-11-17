@@ -1,6 +1,5 @@
 ---
-description: >-
-    Configure global AI settings in the Umbraco backoffice.
+description: Configure global AI settings in the Umbraco backoffice.
 ---
 
 # Managing Settings
@@ -26,21 +25,21 @@ The profile used for chat operations when no profile is explicitly specified.
 
 When set, this profile is used by:
 
-- `IAIChatService.GetChatResponseAsync()` without a profile ID
-- Prompts without an associated profile
-- Agents without an associated profile
+* `IAIChatService.GetChatResponseAsync()` without a profile ID
+* Prompts without an associated profile
+* Agents without an associated profile
 
 ### Classifier Chat Profile
 
 An optional profile for internal classification tasks such as agent routing. The classifier profile lets you use a cheaper or faster model for basic classification decisions, reducing costs.
 
-| Field                      | Description                            |
-| -------------------------- | -------------------------------------- |
-| Classifier Chat Profile    | Select from available chat profiles    |
+| Field                   | Description                         |
+| ----------------------- | ----------------------------------- |
+| Classifier Chat Profile | Select from available chat profiles |
 
 When set, this profile is used by:
 
-- Agent routing in "Auto" mode, in both Contextual Copilot and Copilot Workspace (selecting the best agent for a user prompt)
+* Agent routing in "Auto" mode, in both Contextual Copilot and Copilot Workspace (selecting the best agent for a user prompt)
 
 If not set, the default chat profile is used instead.
 
@@ -56,7 +55,7 @@ The profile used for embedding operations when no profile is explicitly specifie
 
 When set, this profile is used by:
 
-- `IAIEmbeddingService.GenerateEmbeddingsAsync()` without a profile ID
+* `IAIEmbeddingService.GenerateEmbeddingsAsync()` without a profile ID
 
 ### Default Speech-to-Text Profile
 
@@ -68,15 +67,15 @@ The profile used for speech-to-text operations when no profile is explicitly spe
 
 When set, this profile is used by:
 
-- `IAISpeechToTextService.TranscribeAsync()` without a profile ID
-- The voice input button in Contextual Copilot and Copilot Workspace
+* `IAISpeechToTextService.TranscribeAsync()` without a profile ID
+* The voice input button in Contextual Copilot and Copilot Workspace
 
 ### Default Image Generation Profile
 
 The profile used for image generation when no profile is explicitly specified.
 
 {% hint style="warning" %}
-Image Generation is experimental. This setting is only shown when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
+Image Generation is experimental. This setting is only shown when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling image generation](../using-the-api/image-generation/#enabling-image-generation).
 {% endhint %}
 
 | Field                            | Description                                     |
@@ -85,15 +84,15 @@ Image Generation is experimental. This setting is only shown when the `Umbraco:A
 
 When set, this profile is used by:
 
-- `IAIImageGenerationService.GenerateImagesAsync()` without a profile
-- The Image Generation Management API and `UaiImageGenerationController` without a `profileIdOrAlias`
+* `IAIImageGenerationService.GenerateImagesAsync()` without a profile
+* The Image Generation Management API and `UaiImageGenerationController` without a `profileIdOrAlias`
 
 ### Default Decision Profile
 
 The profile used for decisions when no profile is explicitly specified.
 
 {% hint style="warning" %}
-Decision is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Decision](../using-the-api/decision/README.md#enabling-decision).
+Decision is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Decision](../using-the-api/decision/#enabling-decision).
 {% endhint %}
 
 | Field                    | Description                             |
@@ -102,17 +101,17 @@ Decision is experimental. This setting is only shown when the `Umbraco:AI:Experi
 
 When set, this profile is used by:
 
-- `IAIDecisionService.AskAsync()` without a profile
-- The Decision Management API and `UaiDecisionController` without a `profileIdOrAlias`
-- The Ask Yes/No, Ask Pick-One, Ask Score, and Ask Questions Umbraco Automate actions without a profile
-- Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
+* `IAIDecisionService.AskAsync()` without a profile
+* The Decision Management API and `UaiDecisionController` without a `profileIdOrAlias`
+* The Ask Yes/No, Ask Pick-One, Ask Score, and Ask Questions Umbraco Automate actions without a profile
+* Agent routing in "Auto" mode, which tries Decision before the classifier chat profile. See [Decision-Based Routing](../add-ons/agent-copilot/copilot.md#decision-based-routing)
 
 ### Default Extraction Profile
 
 The profile used for extraction when no profile is explicitly specified.
 
 {% hint style="warning" %}
-Extraction is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+Extraction is experimental. This setting is only shown when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. A value saved earlier is kept while the setting is hidden. See [Enabling Extraction](../using-the-api/extraction.md#enabling-extraction).
 {% endhint %}
 
 | Field                      | Description                               |
@@ -121,22 +120,22 @@ Extraction is experimental. This setting is only shown when the `Umbraco:AI:Expe
 
 When set, this profile is used by:
 
-- `IAIExtractionService` calls without a profile
-- The Extraction Management API and `UaiExtractionController` without a `profileIdOrAlias`
-- The Extract Values Umbraco Automate action without a profile
+* `IAIExtractionService` calls without a profile
+* The Extraction Management API and `UaiExtractionController` without a `profileIdOrAlias`
+* The Extract Values Umbraco Automate action without a profile
 
 ### AI Disclosure Notice
 
 Controls the notice that tells users a response is AI-generated. The notice reads "Responses are AI-generated and may be inaccurate." and appears in:
 
-- The chat in Contextual Copilot and Copilot Workspace, after the first message in a conversation.
-- The prompt preview, once a prompt response has loaded.
+* The chat in Contextual Copilot and Copilot Workspace, after the first message in a conversation.
+* The prompt preview, once a prompt response has loaded.
 
-| Option      | Behavior                                                                                         |
-| ----------- | ------------------------------------------------------------------------------------------------ |
-| Always      | The notice is always shown. This is the default.                                                 |
-| Dismissible | The notice shows a **Dismiss** button. Once dismissed, it stays hidden in that browser.          |
-| Off         | The notice is never shown.                                                                       |
+| Option      | Behavior                                                                                |
+| ----------- | --------------------------------------------------------------------------------------- |
+| Always      | The notice is always shown. This is the default.                                        |
+| Dismissible | The notice shows a **Dismiss** button. Once dismissed, it stays hidden in that browser. |
+| Off         | The notice is never shown.                                                              |
 
 With **Dismissible**, each location is dismissed separately. Hiding the notice in the chat does not hide it in the prompt preview. The dismissal is stored in a cookie in the user's browser for one year, so it applies per browser rather than per user account.
 
@@ -165,14 +164,14 @@ For advanced scenarios like CI/CD or infrastructure-as-code, defaults can also b
 
 ## When Defaults Are Used
 
-| Scenario                                                 | Default Used  |
-| -------------------------------------------------------- | ------------- |
-| `_chatService.GetChatResponseAsync(chat => chat.WithAlias("my-feature"), messages)`            | Yes           |
+| Scenario                                                                                                   | Default Used  |
+| ---------------------------------------------------------------------------------------------------------- | ------------- |
+| `_chatService.GetChatResponseAsync(chat => chat.WithAlias("my-feature"), messages)`                        | Yes           |
 | `_chatService.GetChatResponseAsync(chat => chat.WithAlias("my-feature").WithProfile(profileId), messages)` | No (explicit) |
-| Prompt without ProfileId                                 | Yes           |
-| Prompt with ProfileId                                    | No (explicit) |
-| Agent without ProfileId                                  | Yes           |
-| Agent with ProfileId                                     | No (explicit) |
+| Prompt without ProfileId                                                                                   | Yes           |
+| Prompt with ProfileId                                                                                      | No (explicit) |
+| Agent without ProfileId                                                                                    | Yes           |
+| Agent with ProfileId                                                                                       | No (explicit) |
 
 ## Clearing Defaults
 
@@ -184,9 +183,9 @@ To remove a default:
 
 When no default is configured:
 
-- Operations without an explicit profile will fail with an error.
+* Operations without an explicit profile will fail with an error.
 
 ## Related
 
-- [Settings Concept](../concepts/settings.md) - Understanding settings
-- [Profiles](../concepts/profiles.md) - Profile configuration
+* [Settings Concept](../concepts/settings.md) - Understanding settings
+* [Profiles](../concepts/profiles.md) - Profile configuration

@@ -170,7 +170,7 @@ If a folder is being moved, the key within the `State` dictionary is `"MovedFrom
 ### Recycle bin notifications
 
 {% hint style="info" %}
-This feature is available from Umbraco Forms 18.3.0, which is currently a release candidate.
+This feature is available from Umbraco Forms 18.3.0.
 {% endhint %}
 
 From Umbraco Forms 18.3.0, moving a form or folder to the recycle bin publishes notifications. So does restoring one. The notifications are in the `Umbraco.Forms.Core.Services.Notifications` namespace.

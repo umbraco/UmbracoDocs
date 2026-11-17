@@ -60,7 +60,7 @@ The editor can fit the crop to the image to ensure that the image is presented a
 
 [ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET.
 
-We bundle this package with Umbraco and you can therefore take full advantage of all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
+Umbraco bundles this package, so you can use all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
 
 To learn how Umbraco connects to ImageSharp, see the [Image Processing](../../../develop-with-umbraco/application-code/backend-and-custom-logic/image-processing.md) article. The article also covers switching to ImageSharp 2 and when a direct ImageSharp reference needs a license key.
 

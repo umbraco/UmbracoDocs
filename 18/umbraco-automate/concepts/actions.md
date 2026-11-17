@@ -17,14 +17,14 @@ Use built-in actions to send data, update Umbraco entities, and control automati
 | Action               | Purpose                                                                                                                                                                    |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **HTTP Request**     | Send an HTTP request to an external URL.                                                                                                                                   |
-| **Send Email**       | Send an email to one or more recipients.                                                                                                                                   |
+| **Send Email**       | Send an email to one or more recipients, with optional Reply-To, CC, and BCC addresses. See [Send Email Addresses](actions.md#send-email-addresses).                       |
 | **Log Message**      | Write a message to the application log. Useful for debugging.                                                                                                              |
 | **Delay**            | Pause the automation for a configurable duration.                                                                                                                          |
 | **Set Variable**     | Output a named value that downstream steps can bind to.                                                                                                                    |
 | **Notify Editor**    | Send a realtime toast to any backoffice user currently editing a content item.                                                                                             |
 | **Request Approval** | Suspend the run and wait for a user to approve or reject.                                                                                                                  |
 | **Run Script**       | Run a short JavaScript snippet in a sandbox to transform or compute data, with optional outbound `fetch` support and a configurable output schema for downstream bindings. |
-| **Start Automation** | Start another published automation in the same workspace, optionally passing trigger data. See [Start Another Automation](actions.md#start-another-automation).          |
+| **Start Automation** | Start another published automation in the same workspace, optionally passing trigger data. See [Start Another Automation](actions.md#start-another-automation).            |
 
 ### Content
 
@@ -50,13 +50,26 @@ Use built-in actions to send data, update Umbraco entities, and control automati
 | **Get Media Property**    | Read a single property value from a media item.                    |
 | **Update Media Property** | Write a single property value on a media item.                     |
 
+### Library
+
+| Action                      | Purpose                                                                           |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| **Create Element**          | Create a Library element in a folder or at the Library root (draft save).         |
+| **Get Element**             | Fetch a published Library element and expose its properties for downstream steps. |
+| **Get Element Property**    | Read a single property value from a published Library element.                    |
+| **Update Element Property** | Write a single property value on a Library element (draft save).                  |
+| **Publish Element**         | Publish a Library element.                                                        |
+| **Unpublish Element**       | Unpublish a Library element.                                                      |
+
+See [Library Elements](actions.md#library-elements) for permissions and settings.
+
 Add-on packages contribute additional actions. See [Add-ons](../add-ons/add-ons.md) for the catalogue.
 
 You can only select an action that needs a connection once the workspace allows a connection of the right type. Until then, the action picker shows it as unavailable, with the reason. See [Connections](../backoffice/connections.md).
 
 ## Action Settings
 
-Each action exposes its own settings. The settings panel is generated from the action's settings model. Many settings support [Bindings](bindings.md) so values can be pulled in from the trigger or previous steps at runtime.
+Each action exposes its own settings. The settings panel is generated from the action's settings model. Many settings support [Bindings](bindings.md) so values can be pulled in from the trigger or previous steps at runtime. Content, media, and Library element pickers can take a binding instead of a picked item. See [Pick or Bind an Item](bindings.md#pick-or-bind-an-item).
 
 <figure><img src="../.gitbook/assets/action-settings.png" alt="The settings panel for the HTTP Request action."><figcaption><p>Configuring an action's settings.</p></figcaption></figure>
 
@@ -70,6 +83,23 @@ ${ steps.callApi.responseBody }
 ```
 
 Each step has a **Name** (its label on the canvas) and an **Alias** (`callApi` in the example). See [Step Behaviour](actions.md#step-behaviour) below for both.
+
+## Action Exits
+
+Some actions have named outcomes. The canvas draws one exit per outcome, and you connect each exit to its own next step. The exit marked **(default)** is the one the action takes when it does its work. See [Branch on Action Outcomes](../backoffice/building-an-automation.md#branch-on-action-outcomes).
+
+| Action                                                                                    | Exits                                                                                         |
+| ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Get Content**, **Get Media**, **Get Element**, **Find Content**, **Find Media**         | **Found** (default), **Not found**                                                            |
+| **Get Content Property**, **Get Media Property**, **Get Element Property**                | **Found** (default), **Not found**, **Property not found**                                    |
+| **Update Content Property**, **Update Media Property**, **Update Element Property**       | **Updated** (default), **Not found**, **Property not found**                                  |
+| **Create Content**                                                                        | **Created** (default), **Parent not found**, **Content type not found**                       |
+| **Create Media**                                                                          | **Created** (default), **Parent not found**, **Media type not found**, **File download failed** |
+| **Create Element**                                                                        | **Created** (default), **Folder not found**, **Element type not found**                       |
+| **Notify Editor**                                                                         | **Sent** (default), **Not found**                                                             |
+| **Request Approval**                                                                      | **Approved**, **Rejected**                                                                    |
+
+Every other built-in action has a single exit. A step that fails takes no exit, and its error behavior applies instead. See [Step Behaviour](actions.md#step-behaviour). Actions from add-on packages can have their own exits.
 
 ## HTTP Request Headers and Body
 
@@ -155,6 +185,23 @@ The returned value becomes the step's `result` output. Downstream steps bind to 
 
 Output from `console.log` and the other `console` methods appears in the step's **Logs** tab in the run view. See [Reviewing Runs](../backoffice/runs.md#log-entries).
 
+## Send Email Addresses
+
+The **Send Email** action has four address settings:
+
+| Setting      | Description                                                                                                                                                      |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **To**       | The recipients. At least one address is required.                                                                                                                |
+| **Reply-To** | Optional. Where replies go. When empty, replies go to the sender. An address that can't be parsed is skipped, and the step writes a warning to its **Logs** tab. |
+| **CC**       | Optional. Addresses that receive a copy. The step fails with a validation error if an address can't be parsed.                                                   |
+| **BCC**      | Optional. Addresses that receive a hidden copy. The step fails with a validation error if an address can't be parsed.                                            |
+
+Each address shows as a tag, as in an email client. Type an address and press Enter, or type a comma or a semicolon, to add it. Click a tag, or press Backspace in the empty input, to edit an address. A tag that doesn't look like an email address is marked as invalid.
+
+Use **Insert Binding Expression** to add a binding, for example `${ trigger.email }`. The binding gets a tag of its own and is resolved when the step runs. Reply-To often holds visitor input, which is why an address that can't be parsed is skipped there instead of failing the step.
+
+A comma inside a quoted display name does not split the address, so `"Doe, John" <john@example.com>` stays one address.
+
 ## Start Another Automation
 
 Use **Start Automation** to split a long flow into smaller automations. Pick the automation to start in **Automation**. The list only shows automations from the current workspace.
@@ -175,7 +222,7 @@ You can save a draft before you pick an automation. Publishing checks that an au
 
 ## Create and Move Items
 
-**Create Content** saves a new draft. Add a **Publish Content** step after it to publish the item. Leave **Parent** empty to create the item at the content root. The content type must allow being created at the root.
+**Create Content** saves a new draft. Add a **Publish Content** step after it to publish the item. Leave **Parent** empty to create the item at the content root. The content type must allow being created at the root. Under a parent, the parent's content type must allow the content type as a child. Otherwise the step fails with a validation error, as the backoffice would refuse the item.
 
 Set **Culture** when the content type varies by culture, for example `en-US`. Culture-variant properties in **Property Values** are set for that culture.
 
@@ -188,17 +235,54 @@ Enter **Property Values** as a JSON object of property aliases and values, for e
 * If the text is not valid JSON, or is not a JSON object, Automate ignores all of it and writes a warning.
 * A value that can't be converted to the property's storage type fails the step.
 
-**Create Media** saves a new media item. Media has no draft, so the item is live straight away. Leave **Parent** empty to create it at the media root.
+**Create Media** saves a new media item. Media has no draft, so the item is live straight away. Leave **Parent** empty to create it at the media root. The media type must be allowed at the media root, or under the parent's media type.
 
 Set **Source URL** to download a file onto the item, for example `${ loop.item.imageUrl }`. Leave it empty for media types without a file, such as folders. Downloads follow the [Outbound Requests](../getting-started/configuration.md#outbound-requests) rules. They are capped by `Execution:MaxMediaFileBytes`, 10 MB by default. **Property Values** on **Create Media** sets invariant properties only, and cannot set the file.
 
-When a download fails, Automate still creates the item, without a file. The step writes a warning, and the `fileName` output is empty. One unreachable file does not stop a **For Each** loop.
+When a download fails, Automate still creates the item, without a file. The step takes its **File download failed** exit, writes a warning, and the `fileName` output is empty. One unreachable file does not stop a **For Each** loop.
 
-When the parent, content type, or media type no longer exists, both create actions succeed without creating anything. The `contentKey` or `mediaKey` output is then an empty GUID. Check it with an **If** step before later steps use it.
+When the parent is missing or in the recycle bin, or the content type or media type no longer exists, both create actions create nothing. The step takes its **Parent not found**, **Content type not found**, or **Media type not found** exit, and writes a warning to its **Logs** tab. The `contentKey` or `mediaKey` output is an empty GUID. See [Control Flow](control-flow.md) for how exits route a run.
 
 **Move Content** and **Move Media** move an item to **Target Parent**. Leave it empty to move the item to the root. The service account needs access to both the item and the destination. The step fails when the item is missing or in the recycle bin.
 
 Creating or moving an item at the content or media root needs root access for the service account of the workspace. See [Service-Account Permissions](workspaces.md#service-account-permissions).
+
+## Items in the Recycle Bin
+
+Content and media actions treat an item in the recycle bin as missing, whatever the start node of the service account:
+
+* **Update Content Property**, **Update Media Property**, and **Notify Editor** take their **Not found** exit. The update actions write nothing to the item.
+* **Create Content** and **Create Media** take their **Parent not found** exit when the parent is in the recycle bin.
+* **Move Content** and **Move Media** fail the step.
+* **Find Content** leaves items in the recycle bin out of its results, also when **Include unpublished** is on.
+
+## Library Elements
+
+The Library actions work on Library elements. They need Umbraco CMS 18.1.0 or later.
+
+The service account of the workspace needs access to the **Library** section. It also needs the permission for the action on the element, or on the folder for **Create Element**. Permissions set on a Library folder apply to the elements in it.
+
+| Action                                    | Permission |
+| ----------------------------------------- | ---------- |
+| **Get Element**, **Get Element Property** | Read       |
+| **Create Element**                        | Create     |
+| **Update Element Property**               | Update     |
+| **Publish Element**                       | Publish    |
+| **Unpublish Element**                     | Unpublish  |
+
+Pick the element in **Element**, or bind its key from the trigger or an earlier step, for example `${ trigger.elementKey }`.
+
+**Create Element** saves a new draft. Add a **Publish Element** step after it to publish the element. Leave **Folder** empty to create the element at the Library root, which needs root access for the service account. You can only create element types that have **Allow in Library** turned on and that the folder allows. Otherwise the step fails with a validation error. Enter **Property Values** in the same JSON format as **Create Content**.
+
+Set **Culture** on the get, create, and update actions for a variant element, and leave it empty for an invariant one. Set **Segment** on **Update Element Property** for a segmented element. For **Publish Element** and **Unpublish Element**, enter **Cultures** as comma-separated codes, for example `en-US,da-DK`. Leave **Cultures** empty to publish an invariant element, or to unpublish all cultures.
+
+An element or folder that is missing or in the recycle bin counts as not found, for every service account:
+
+* **Get Element**, **Get Element Property**, and **Update Element Property** take their **Not found** exit. The get actions also take it when the element isn't published.
+* **Create Element** takes its **Folder not found** exit. An element type that no longer exists takes **Element type not found**.
+* **Publish Element** and **Unpublish Element** fail the step.
+
+**Get Element Property** and **Update Element Property** take their **Property not found** exit when the element type has no property with that alias.
 
 ## Step Behaviour
 

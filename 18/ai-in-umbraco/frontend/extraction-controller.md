@@ -1,12 +1,13 @@
 ---
 description: >-
-    Extract typed values such as text, numbers, dates, and lists from custom backoffice elements (experimental).
+  Extract typed values such as text, numbers, dates, and lists from custom
+  backoffice elements (experimental).
 ---
 
 # Extraction Controller
 
 {% hint style="warning" %}
-Extraction is experimental. The server returns 404 unless the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. The controller returns that 404 as `error` and does not throw. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+Extraction is experimental. The server returns 404 unless the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. The controller returns that 404 as `error` and does not throw. See [Enabling Extraction](../using-the-api/extraction.md#enabling-extraction).
 {% endhint %}
 
 `UaiExtractionController` provides a frontend API for reading typed values out of text with an Extraction profile, through the Management API. It follows the same controller pattern as [UaiChatController](chat-controller.md).
@@ -16,7 +17,6 @@ One call can extract multiple fields. They are all answered in a single model ca
 ## Import
 
 {% code title="Import" %}
-
 ```typescript
 import {
     UaiExtractionController,
@@ -25,22 +25,19 @@ import {
     type UaiExtractionResult,
 } from "@umbraco-ai/core";
 ```
-
 {% endcode %}
 
 ## Constructor
 
 {% code title="Constructor" %}
-
 ```typescript
 new UaiExtractionController(host: UmbControllerHost)
 ```
-
 {% endcode %}
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `host` | `UmbControllerHost` | The controller host (usually `this` in a Lit element). |
+| Parameter | Type                | Description                                            |
+| --------- | ------------------- | ------------------------------------------------------ |
+| `host`    | `UmbControllerHost` | The controller host (usually `this` in a Lit element). |
 
 ## Methods
 
@@ -49,25 +46,22 @@ new UaiExtractionController(host: UmbControllerHost)
 Extracts the requested fields from the text, and returns one answer per field.
 
 {% code title="Signature" %}
-
 ```typescript
 async extract(
     request: UaiExtractionRequest,
     options?: UaiExtractionOptions
 ): Promise<{ data?: UaiExtractionResult; error?: unknown }>;
 ```
-
 {% endcode %}
 
-| Parameter | Type | Description |
-| --- | --- | --- |
+| Parameter | Type                   | Description                                                                            |
+| --------- | ---------------------- | -------------------------------------------------------------------------------------- |
 | `request` | `UaiExtractionRequest` | The text and the fields to extract. See [Extraction Types](types.md#extraction-types). |
-| `options` | `UaiExtractionOptions` | Optional configuration (see below). |
+| `options` | `UaiExtractionOptions` | Optional configuration (see below).                                                    |
 
 ## Request
 
 {% code title="UaiExtractionRequest" %}
-
 ```typescript
 interface UaiExtractionRequest {
     /** The text to extract from. */
@@ -78,27 +72,25 @@ interface UaiExtractionRequest {
     fields: UaiExtractionField[];
 }
 ```
-
 {% endcode %}
 
 Each field has a `kind`, an `id`, and `instructions`. The `kind` decides the extra properties the field can have, and the shape of its answer:
 
-| `kind` | Extra properties | Answer value |
-| --- | --- | --- |
-| `"text"` | None | `value` (string), `span` |
-| `"number"` | `decimals`, `integer`, `unit` | `value` (number) |
-| `"date"` | None | `value` (`yyyy-MM-dd` string) |
-| `"time"` | None | `value` (`HH:mm:ss` string) |
-| `"datetime"` | None | `value` (ISO 8601 string) |
-| `"duration"` | `unit` (required), `decimals`, `integer` | `value` (number), `unit` |
-| `"list"` | `itemType` | `values` (string array), `spans` |
+| `kind`       | Extra properties                         | Answer value                     |
+| ------------ | ---------------------------------------- | -------------------------------- |
+| `"text"`     | None                                     | `value` (string), `span`         |
+| `"number"`   | `decimals`, `integer`, `unit`            | `value` (number)                 |
+| `"date"`     | None                                     | `value` (`yyyy-MM-dd` string)    |
+| `"time"`     | None                                     | `value` (`HH:mm:ss` string)      |
+| `"datetime"` | None                                     | `value` (ISO 8601 string)        |
+| `"duration"` | `unit` (required), `decimals`, `integer` | `value` (number), `unit`         |
+| `"list"`     | `itemType`                               | `values` (string array), `spans` |
 
 The rules for each property are the same as for the [Management API](../management-api/extraction/extract.md#request-body).
 
 ## Options
 
 {% code title="UaiExtractionOptions" %}
-
 ```typescript
 interface UaiExtractionOptions {
     /** Profile ID (GUID) or alias. If omitted, uses the default Extraction profile. */
@@ -107,7 +99,6 @@ interface UaiExtractionOptions {
     signal?: AbortSignal;
 }
 ```
-
 {% endcode %}
 
 ## Result
@@ -119,7 +110,6 @@ interface UaiExtractionOptions {
 ### Extracting Multiple Fields
 
 {% code title="Multiple fields" %}
-
 ```typescript
 const controller = new UaiExtractionController(this);
 
@@ -141,7 +131,6 @@ if (data) {
     }
 }
 ```
-
 {% endcode %}
 
 Check an answer's `kind` before you read its value. TypeScript then knows which properties the answer has.
@@ -149,7 +138,6 @@ Check an answer's `kind` before you read its value. TypeScript then knows which 
 ### Using a Specific Profile and Cancellation
 
 {% code title="Options" %}
-
 ```typescript
 const controller = new UaiExtractionController(this);
 const abortController = new AbortController();
@@ -165,19 +153,17 @@ const { data, error } = await controller.extract(
 // Later, to cancel:
 abortController.abort();
 ```
-
 {% endcode %}
 
 ## Handling Errors
 
 `extract` resolves with `error` set, and no `data`, when the request fails. It does not throw. Common causes are:
 
-- The Extraction feature flag is off, so the server returns 404.
-- The profile given in `profileIdOrAlias` does not exist (404).
-- The request is invalid, no default Extraction profile is set, or the provider call failed (400).
+* The Extraction feature flag is off, so the server returns 404.
+* The profile given in `profileIdOrAlias` does not exist (404).
+* The request is invalid, no default Extraction profile is set, or the provider call failed (400).
 
 {% code title="Error handling" %}
-
 ```typescript
 const { data, error } = await controller.extract(request);
 
@@ -186,7 +172,6 @@ if (error || !data) {
     return;
 }
 ```
-
 {% endcode %}
 
 ## Full Example
@@ -194,7 +179,6 @@ if (error || !data) {
 The following element reads a contact's name and email address out of pasted text:
 
 {% code title="contact-reader.element.ts" %}
-
 ```typescript
 import { html, customElement, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
@@ -240,11 +224,10 @@ export class MyContactReaderElement extends UmbLitElement {
     }
 }
 ```
-
 {% endcode %}
 
 ## Related
 
-- [Extraction Types](types.md#extraction-types) - Field and answer types
-- [Extraction Management API](../management-api/extraction/README.md) - REST endpoint
-- [Using the Extraction API](../using-the-api/extraction/README.md) - Backend C# API
+* [Extraction Types](types.md#extraction-types) - Field and answer types
+* [Extraction Management API](../management-api/extraction/) - REST endpoint
+* [Using the Extraction API](../using-the-api/extraction.md) - Backend C# API

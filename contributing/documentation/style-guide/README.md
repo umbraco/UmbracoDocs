@@ -34,6 +34,7 @@ There are two types of commonly used lists in the Umbraco documentation: ordered
 * Use **unordered lists** for sets of options, notes, criteria, and the like.
 * Start lists with capital letters.
   * An exception to this rule would be when listing method names that use _camelcase_. In this case, highlight the names using in-line code formatting.
+* End full-sentence list items with a period. Don't add end punctuation to fragments, such as names, options, or short noun phrases. Don't mix both styles in one list.
 
 #### Ordered lists
 
@@ -63,6 +64,15 @@ Use the present tense for statements that describe general behavior that's not a
 ⛔ The Document Type was added…
 
 ✅ The Document Type is added...
+
+### Use strong language
+
+Avoid "should", "could", "would", and "might". State what to do or what is true:
+
+* Instruction: ⛔ You should add the property. ✅ Add the property.
+* Requirement: ⛔ The key should be unique. ✅ The key must be unique.
+* Capability: ⛔ You could use a custom provider. ✅ You can use a custom provider.
+* Recommendation: ⛔ You should use X. ✅ The recommended approach is to use X.
 
 ### Avoid Editorializing
 
@@ -150,7 +160,7 @@ There is an extension for Visual Studio Code that allows you to use Vale as you 
 
 The extension is called `vale-vscode` and can be downloaded via the Visual Studio Code Marketplace in your editor.
 
-To use it, you will still have to install a `Vale Server` on your computer. For more information, see the [official Vale installation](https://vale.sh/docs/vale-cli/installation/) article.
+To use it, you will still have to install a `Vale Server` on your computer. For more information, see the [official Vale installation](https://docs.vale.sh/topics/installation) article.
 
 Once the tools have been installed, a check of the complete repository of articles can be done using the terminal within Visual Studio Code.
 
@@ -168,7 +178,7 @@ The Vale extension will also run automatically when you are viewing Markdown fil
 
 <summary>Use Vale locally</summary>
 
-The first step to running Vale locally is to install it following Vale's [Installation documentation](https://vale.sh/docs/vale-cli/installation/).
+The first step to running Vale locally is to install it following Vale's [Installation documentation](https://docs.vale.sh/topics/installation).
 
 Next, you can open a command line tool in the documentation repository and run the following command:
 

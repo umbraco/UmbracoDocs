@@ -84,9 +84,18 @@ Once it has been enabled, the next time the member logs in, they will be forced 
 
 In the **Projects** section, you can get an overview of all the Projects that have been created in your Organization.
 
-![Project overview](../../../.gitbook/assets/org-projects.png)
+![The organization Projects list showing the Umbraco version, hosting type, and ownership of each project](../../../.gitbook/assets/organization-projects-list.png)
 
-It is possible to see the plan, project status, payment status, creation date, region, and number of environments for each of your projects.
+For each project, the list shows the following:
+
+* The Umbraco version running on the live environment.
+* The project type and plan.
+* The hosting type, which is either **Shared** or **Dedicated** followed by the size of the dedicated option.
+* The project status and payment status.
+* The creation date, region, and number of environments.
+* The ownership. The `PAY` and `TECH` labels show whether your organization is the payment owner and the technical owner of the project.
+
+The project name links to the project page for the projects where you are a team member.
 
 As an administrator, you can invite members of your organization to the different projects under the organization.
 
@@ -102,13 +111,13 @@ In the **Access Rights** section, you can get a list of all the Access Rights yo
 
 ### Payment methods
 
-In the **Payment Methods** section, you can view the payment methods for your organization. From here, you can add or delete credit card details for your Organization. These payment options will be used, when you create new projects under your organization.
+In the **Payment Methods** section, you can add and remove credit cards for your organization. The primary card pays for all subscriptions in the organization. For more information, see the [Payments](../payments.md) article.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt="Payment methods"><figcaption><p>Payment methods</p></figcaption></figure>
+![The Payment methods page with the primary card and a second card](../../../.gitbook/assets/payment-methods.png)
 
 ### Payment History
 
-In the **Payment History** section, you can see the payment history for your organization.
+In the **Payment History** section, you can see the invoices for your organization and download paid invoices. For more information, see the [Payments](../payments.md) article.
 
 ## Insights
 

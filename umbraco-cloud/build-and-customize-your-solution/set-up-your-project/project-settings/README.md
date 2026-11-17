@@ -25,7 +25,7 @@ The Team section allows you to:
 * Manage backoffice user groups and [Technical contacts](../../../begin-your-cloud-journey/project-features/team-members/technical-contact.md) for your project.
 * Monitor pending project invitations.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 ### Resources
 
@@ -59,7 +59,7 @@ In the Project History section, you can view a list of high-level activities for
 
 Hostname monitoring allows you to track the availability and response times of your websites. You can configure monitors for multiple hostnames, set check frequency and locations, and view historical ping results. This helps ensure optimal website performance and alerts you to potential downtime or performance issues.
 
-### [Alerting & Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
+### [Alerting & Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/)
 
 Set up alert rules to get notified by email or webhook when something important happens on your project. Alerts cover DDoS attacks, automatic restarts, deployments, and upgrades.
 

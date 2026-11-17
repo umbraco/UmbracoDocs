@@ -14,11 +14,12 @@ Use built-in triggers to start automations from backoffice events, schedules, an
 
 ### General
 
-| Trigger               | Fires when                                                                                                                                                                                                                                                                                            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Manual Trigger**    | A user runs the automation by hand from the backoffice.                                                                                                                                                                                                                                               |
-| **Scheduled Trigger** | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.                                                                                                                                                           |
-| **Webhook**           | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run manually with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
+| Trigger                 | Fires when                                                                                                                                                                                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Manual Trigger**      | A user runs the automation by hand from the backoffice.                                                                                                                                                                                                                                               |
+| **Scheduled Trigger**   | A Command Run On Notice (CRON) expression matches the current time. Can also be run by hand with **Run now**, the same as a Manual Trigger.                                                                                                                                                           |
+| **Webhook**             | An HTTP request is received at the automation's webhook URL. Authentication is configured per automation (Hash-based Message Authentication Code (HMAC) signature or a shared secret). Can also be run manually with **Run now**, using the trigger's saved test request instead of a real HTTP call. |
+| **Application Started** | Umbraco starts, including every restart or app pool recycle. See [Application Started](triggers.md#application-started).                                                                                                                                                                              |
 
 ### Content
 
@@ -68,7 +69,7 @@ Open the automation's context menu (the three dots next to it in the tree) and s
 
 * **Manual Trigger** and **Scheduled Trigger** always support **Run now**.
 * **Webhook** also supports it, using the trigger's saved **Test request body** and **Test request headers** instead of a real HTTP request. See [Finding the Webhook URL](triggers.md#finding-the-webhook-url) below. Authentication and the allowed-method check are skipped for on-demand runs, since nothing is calling the webhook endpoint.
-* Content, Media, Member, and User triggers don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
+* Content, Media, Member, and User triggers, and **Application Started**, don't support **Run now**. Trigger their automations by performing the underlying action (publish a content item, save a media item, and so on).
 * Add-on and custom triggers can opt in to **Run now** individually. If the option isn't in the context menu of a published automation, its trigger doesn't support it. See [Supporting Run Now](../extending/custom-trigger.md#supporting-run-now) to add it to your own trigger.
 
 ## Finding the Webhook URL
@@ -126,16 +127,32 @@ ${ trigger.cultures }
 This is an array of ISO culture codes, for example `["en-us", "da-dk"]`. It is `null` for content types that aren't set up for variation.
 
 {% hint style="info" %}
+
 When a descendant is republished as a side effect of publishing an ancestor, Umbraco doesn't report which cultures changed on that descendant specifically. In that case, `cultures` falls back to all of the descendant's currently published cultures rather than the true delta.
+
 {% endhint %}
 
-The **Content Saved**, **Media Saved**, **Member Saved**, and **User Saved** triggers also expose an `isNew` flag that is `true` when the entity is newly created. Use it to branch between create-only and update-only logic:
+The **Content Saved**, **Media Saved**, **Member Saved**, and **User Saved** triggers also expose an `isNew` flag. The flag is `true` when the entity is newly created. Use it to branch between create-only and update-only logic:
 
 ```
 ${ trigger.isNew }
 ```
 
 This is a soft signal derived from the entity's create or update dates. Automations needing a hard guarantee should re-fetch.
+
+## Application Started
+
+The **Application Started** trigger fires each time Umbraco starts. That includes a cold start, a restart, and an app pool recycle.
+
+The trigger outputs:
+
+| Output         | Description                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `startedAt`    | The UTC time the application started.                                                                                           |
+| `isRestarting` | `true` only when Umbraco restarted its runtime in-process, for example straight after an install. App pool recycles and deployments start a new process, so they report `false`, the same as a cold start. |
+| `serverRole`   | The role of the server that started: `Single`, `SchedulingPublisher`, `Subscriber`, or `Unknown` when the role isn't known yet. |
+
+In a load-balanced setup, every server starts on its own, so the automation runs once per server. Turn on **Only run on the main server** to skip startups on `Subscriber` servers. The setting is most reliable when server roles are configured explicitly. With automatic election, a server's role may not be known yet at startup, and the trigger still runs on that server.
 
 ## Trigger Settings
 

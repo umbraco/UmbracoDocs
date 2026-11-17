@@ -1,13 +1,14 @@
-﻿---
+---
 description: >-
-  An article discussing how to trigger reindexing of content programmatically - and when to do it
+  An article discussing how to trigger reindexing of content programmatically -
+  and when to do it
 ---
 
-# Reindexing content programmatically
+# Reindexing Content
 
 If you ever need to trigger the reindexing of content manually, you should use the [`IDistributedContentIndexRefresher`](https://github.com/umbraco/Umbraco-CMS/blob/main/src/Umbraco.Core/Search/Indexing/IDistributedContentIndexRefresher.cs) service.
 
-As the name implies, this service ensures that the content reindexing happens correctly across all instances in a load balanced setup. This is important, because some search providers (including the [default provider](../getting-started/examine-search-provider.md)) explicitly depend on this behavior.
+As the name implies, this service ensures that the content reindexing happens correctly across all instances in a load balanced setup. This is important, because some search providers (including the [default provider](../examine-search-provider.md)) explicitly depend on this behavior.
 
 {% hint style="info" %}
 In Umbraco, "content" implies either documents, media or members. However, documents are also named "content", which can be a little confusing.

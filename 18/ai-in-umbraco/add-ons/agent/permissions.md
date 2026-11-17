@@ -20,7 +20,7 @@ Tool permissions are configured in the **Governance** tab of the agent workspace
 
 The permission system operates at three levels:
 
-1. **Tool Scope Permissions** - Grant access to all tools within specific scopes (e.g., "content-read", "navigation")
+1. **Tool Scope Permissions** - Grant access to all tools within specific scopes (for example, "content-read", "navigation")
 2. **Explicit Tool Permissions** - Grant access to individual tools by their ID
 3. **User Group Overrides** - Add or remove tools per user group (additive and subtractive)
 
@@ -262,7 +262,7 @@ const manifest: ManifestUaiAgentTool = {
 
 | Property        | Type      | Description                                                         |
 | --------------- | --------- | ------------------------------------------------------------------- |
-| `scope`         | `string?` | Tool scope ID for permission grouping (e.g., "content-write")       |
+| `scope`         | `string?` | Tool scope ID for permission grouping (for example, "content-write") |
 | `isDestructive` | `boolean` | Whether tool performs destructive operations (create/update/delete) |
 
 This metadata flows from frontend to backend for permission filtering:
@@ -271,7 +271,7 @@ This metadata flows from frontend to backend for permission filtering:
 Frontend Tool Manifest
     ↓ (metadata attached)
 UaiFrontendTool { Tool, Scope, IsDestructive }
-    ↓ (sent via forwardedProps)
+    ↓ (sent in each tool's metadata)
 Backend AIFrontendTool { Tool, Scope, IsDestructive }
     ↓ (permission check)
 Agent Runtime (filters by permissions)

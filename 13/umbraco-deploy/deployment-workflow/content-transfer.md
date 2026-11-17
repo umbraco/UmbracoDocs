@@ -30,12 +30,12 @@ You want to transfer the whole site. You start from the `Home` node and choose t
     <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>By default, the content will be transferred in its current published state. So if the content is published in the current environment, the changes will be deployed and the item immediately be published in the destination. If you prefer to schedule the publishing of the changes, you can do so by selecting a publish date.</p></div>
 7.  Click **Queue** to add the content item to the transfer queue.
 
-    ![Queue for transfer window](<../.gitbook/assets/queue-for-transfer-dialog (1) (1).png>)
+    ![Queue for transfer window](<../.gitbook/assets/queue-for-transfer-dialog (1).png>)
 8. Go to the Deployment dashboard by clicking on the Content section header.
    * You will be able to see which items are currently ready to be transferred - this will include both content and media that you've _queued for transfer_.
 9.  Confirm by clicking **Transfer toDevelopment** and monitor the progress of the transfer.
 
-    ![Transfer queue](<../.gitbook/assets/transfer-queue (1) (1).png>)
+    ![Transfer queue](<../.gitbook/assets/transfer-queue (1).png>)
 
 If everything went well, you will see the confirmation screen saying that the transfer has succeeded.
 
@@ -65,6 +65,6 @@ This does not include entries submitted via the forms.
 
 Sometimes a content transfer might not be possible. For example if you add a new property to the HomePage Document type and you don’t have that property in both environments, you’ll get an error with a hint on how to fix this.
 
-![Clone dialog](<../.gitbook/assets/schema-mismatch (2) (1).png>)
+![Clone dialog](<../.gitbook/assets/schema-mismatch (2).png>)
 
 If you are seeing this type of issue when trying to transfer content, head over to our article about [Schema Mismatch errors](../troubleshooting.md), where you can read about how to resolve the issues.
