@@ -35,11 +35,14 @@ You will have to implement the following interfaces for a new custom parameter:
     -   You can extend the existing `BaseSegmentRule` to simplify the implementation.
     -   The most important part to implement is the `bool IsSatisfied(IPersonalizationProfile context)` method.
 -   `Umbraco.Engage.Infrastructure.Personalization.Segments.Rules.ISegmentRuleFactory`
-    -   Register your implementation of the segment rule factory with `Lifetime.Transient` in a composer.
+    -   Register your implementation of the segment rule factory as a transient service. The example below uses the `[RegisterService]` attribute.
 
 For the "Day of week" example, the code looks like this:
 
 ```c#
+using Umbraco.Engage.Infrastructure.Personalization.PersonalizationProfile;
+using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
+
 public class DayOfWeekSegmentRule : BaseSegmentRule
 {
     public DayOfWeekSegmentRuleConfig TypedConfig { get; }
@@ -47,7 +50,7 @@ public class DayOfWeekSegmentRule : BaseSegmentRule
     public override SegmentRuleValidationMode ValidationMode => SegmentRuleValidationMode.Once;
 
     public DayOfWeekSegmentRule(long id, Guid key, long segmentId, string type, string config, bool isNegation, DateTime created, DateTime? updated, DayOfWeekSegmentRuleConfig typedConfig)
-        : base(id, segmentId, type, config, isNegation, created, updated)
+        : base(id, key, segmentId, type, config, isNegation, created, updated)
         => TypedConfig = typedConfig;
 
     public override bool IsSatisfied(IPersonalizationProfile context)
@@ -58,18 +61,37 @@ public class DayOfWeekSegmentRule : BaseSegmentRule
 And the factory which is used to create an instance of this rule:
 
 ```c#
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Engage.Common.Composing;
+using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
+
+[RegisterService(ServiceLifetime.Transient)]
 public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 {
+    // The backoffice stores the configuration with camelCase property names and the day as text.
+    private static readonly JsonSerializerOptions _jsonOptions = new()
+    {
+        PropertyNameCaseInsensitive = true,
+        Converters = { new JsonStringEnumConverter() },
+    };
+
     public string RuleType { get; } = "DayOfWeek";
+
     public ISegmentRule CreateRule(string config, bool isNegation, long id, Guid key, long segmentId, DateTime created, DateTime? updated)
     {
-        var typedConfig = JsonSerializer.Deserialize<DayOfWeekSegmentRuleConfig>(config) 
+        var typedConfig = JsonSerializer.Deserialize<DayOfWeekSegmentRuleConfig>(config, _jsonOptions)
             ?? throw new InvalidOperationException("Failed to deserialize DayOfWeekSegmentRuleConfig");
 
         return new DayOfWeekSegmentRule(id, key, segmentId, RuleType, config, isNegation, created, updated, typedConfig);
     }
 }
 ```
+
+{% hint style="warning" %}
+The serializer options are required. Without them, the stored value `{ "dayOfWeek": "Wednesday" }` does not bind to the `DayOfWeek` property. The rule then always evaluates against `Sunday`.
+{% endhint %}
 
 The class `DayOfWeekSegmentRuleConfig` is used to represent the rule configuration. This is not strictly necessary, but it makes it easier.
 The configuration is stored as a string in the database. In code, Intellisense is enabled to parse the stored configuration to this class:
@@ -93,11 +115,15 @@ This demo assumes you are creating multiple custom rules, which are then provide
 
 First, follow the [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/development-flow/vite-package-setup) article to scaffold your extension. Use `MySegmentRules` as your package name.
 
-1. Install `@umbraco-engage/backoffice` package, replacing `x.x.x` with your Engage version:
+1. Install the `@umbraco-engage/backoffice` package as a development dependency. Replace `x.x.x` with the Umbraco Engage version installed on your site:
 
 ```text
-npm install @umbraco-engage/backoffice@x.x.x
+npm install -D @umbraco-engage/backoffice@x.x.x
 ```
+
+{% hint style="info" %}
+The package version must match the installed Umbraco Engage version. The package is only used when you build. In the browser, the backoffice loads the Engage code from your site.
+{% endhint %}
 
 2. Ensure your `vite.config.ts` looks like the example below:
 
@@ -109,6 +135,7 @@ export default defineConfig({
         lib: {
             entry: "src/my-element.ts", // your web component source file
             formats: ["es"],
+            fileName: "client", // the compiled file is named client.js
         },
         outDir: "./client", // all compiled files will be placed here
         emptyOutDir: true,
@@ -122,6 +149,12 @@ export default defineConfig({
 ```
 
 3. Update `umbraco-package.json` to register the bundle and segment rule. Note the `meta.type` property matches the `RuleType` defined above in `DayOfWeekSegmentRuleFactory`.
+
+{% hint style="info" %}
+Use your own prefix for the `alias` and the `elementName`. The `Engage.` alias prefix and the `ue-` element prefix are reserved for Umbraco Engage.
+{% endhint %}
+
+The bundle loads the compiled file when the backoffice starts. Umbraco Engage creates the rule editor from the `elementName`, so the web component must be loaded before the segment builder opens.
 
 ```json
 {
@@ -137,10 +170,10 @@ export default defineConfig({
     },
     {
       "type": "engageSegmentRule",
-      "alias": "Engage.Segment.Rule.DayOfWeek",
-      "name": "Engage Day of Week Segment Rule",
+      "alias": "My.SegmentRule.DayOfWeek",
+      "name": "My Day of Week Segment Rule",
       "weight": 100,
-      "elementName": "ue-segment-rule-day-of-week",
+      "elementName": "my-segment-rule-day-of-week",
       "meta": {
         "name": "Day of week",
         "icon": "icon-calendar",
@@ -165,14 +198,14 @@ import {
   state,
 } from "@umbraco-cms/backoffice/external/lit";
 import type { UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
-import { UeSegmentRuleBaseElement } from "@umbraco-engage/backoffice/personalization";
+import { UeSegmentRuleBaseElement } from "@umbraco-engage/backoffice/segments";
 
 export interface DayOfWeekSegmentRuleConfigModel {
   dayOfWeek: string;
 }
 
-@customElement("ue-segment-rule-day-of-week")
-export class UeSegmentRuleDayOfWeekElement extends UeSegmentRuleBaseElement<DayOfWeekSegmentRuleConfigModel> {
+@customElement("my-segment-rule-day-of-week")
+export class MySegmentRuleDayOfWeekElement extends UeSegmentRuleBaseElement<DayOfWeekSegmentRuleConfigModel> {
   @state()
   private _options: Array<Option> = [];
 
@@ -187,10 +220,10 @@ export class UeSegmentRuleDayOfWeekElement extends UeSegmentRuleBaseElement<DayO
       "Thursday",
       "Friday",
       "Saturday",
-    ].map((x, i) => ({
+    ].map((x) => ({
       value: x,
       name: x,
-      selected: this.value?.config.dayOfWeek === x || i === 0,
+      selected: this.value?.config.dayOfWeek === x,
     }));
   }
 
@@ -235,10 +268,14 @@ By default, it will display the raw configuration of the parameter as stored in 
 
 <figure><img src="../../.gitbook/assets/engage-tutorials-personalized-segments-cockpit-v16.png"></figure>
 
-If you would like to change this to be a bit more readable, you can implement the `Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface. For the `DayOfWeek` demo parameter, this is the implementation:
+If you would like to change this to be a bit more readable, you can implement the `Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface. For the `DayOfWeek` demo parameter, this is the implementation:
 
 ```c#
-//Registering this factory.
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Engage.Common.Composing;
+using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
+using Umbraco.Engage.Web.Cockpit.Segments;
+
 [RegisterService(ServiceLifetime.Transient)]
 public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory
 {
@@ -265,7 +302,7 @@ public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory
 }
 ```
 
-The JSON is transformed into a human-readable representation, and an icon is configured to appear in the cockpit. Make sure to register this class in a composer (you can reuse the composer from step 1):
+The JSON is transformed into a human-readable representation, and an icon is configured to appear in the cockpit. The `[RegisterService]` attribute registers the factory, so no composer is needed.
 
 Engage will then use the additional information to render your segment parameter correctly in the cockpit. The "DayOfWeek test" string is the name of the segment. This segment happens to have only 1 parameter which is the DayOfWeek parameter.
 
