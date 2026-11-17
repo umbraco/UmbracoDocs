@@ -83,7 +83,7 @@ The default configuration will look like this:
     },
     "Reporting": {
       "DataGenerationEnabled": true,
-      "DataGenerationTime": "04:00:00"
+      "DataGenerationTime": ""
     },
     "Cockpit": {
       "EnableInjection": true,
