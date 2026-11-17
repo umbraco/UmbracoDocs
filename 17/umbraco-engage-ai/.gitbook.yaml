@@ -3,3 +3,9 @@ root: ./
 structure:
     readme: README.md
     summary: SUMMARY.md
+
+redirects:
+    installation: getting-started/installation.md
+    tools: getting-started/tools.md
+    asking-engage-questions: using-umbraco-engage-ai/asking-engage-questions.md
+    example-marketer-agent: using-umbraco-engage-ai/example-marketer-agent.md
