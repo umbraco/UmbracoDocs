@@ -2,7 +2,6 @@
 description: >-
   Learn how to view and act on the recommendations Umbraco Cloud gives you for
   your projects and organization.
-hidden: true
 ---
 
 # Recommendations
