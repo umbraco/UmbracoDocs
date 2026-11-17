@@ -24,8 +24,8 @@ See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes
 
 **Backoffice UI**
 
-* The Engage section now uses a sidebar menu instead of tabs, with three groups: Insights, Optimization, and Configuration. Each area opens as a workspace from the sidebar.
-* Goals, Block traffic, and Suspicious Activity are now top-level items in the Configuration group.
+* The Engage section now uses a sidebar menu instead of tabs, with three groups: **Insights**, **Optimization**, and **Configuration**. Each area opens as a workspace from the sidebar.
+* **Goals**, **Block traffic**, and **Suspicious Activity** are now top-level items in the **Configuration** group.
 * Persona and Customer Journey groups are now collections with a table view and a routed workspace (General, Advanced, and Info).
 * The **Open cockpit** button is now at the top of the Engage sidebar.
 * The Start page is now the Engage section dashboard. It shows an overview with a period picker, a status block with license, reporting data and regeneration information, and a get-started checklist.
@@ -41,7 +41,7 @@ See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes
 
 **Analytics and reporting**
 
-* Nightly reporting data generation is now spread across a time window. `DataGenerationTime` now defaults to empty. When it is empty, the processing server picks a random time between 01:00 and 05:00 in the reporting time zone, stores it, and keeps it across restarts.
+* Nightly reporting data generation is now spread across a time window. `DataGenerationTime` now defaults to empty. When it is empty, the processing server picks a random time between 01:00 and 05:00 in the reporting time zone. The server keeps that time across restarts.
 * An explicit `DataGenerationTime` is now scheduled in the reporting time zone instead of the server time zone. The Reporting settings panel shows the resolved time, marked "(automatic)" when it was chosen automatically.
 * After a restart, a missed automatic run for the current night runs once if it is still before 06:00 in the reporting time zone.
 * Average columns in Analytics tables no longer show a total.
