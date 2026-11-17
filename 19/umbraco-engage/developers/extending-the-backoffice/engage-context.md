@@ -6,7 +6,7 @@ description: >-
 
 # Using the Engage Context
 
-Umbraco Engage provides a context with the state of the package. Your extensions can consume the context to adapt to that state.
+Umbraco Engage provides a context with the state of the package. Your [custom screens](custom-screens.md) and other extensions can consume the context to adapt to that state.
 
 The context token is `ENGAGE_CONTEXT`. Import the token from `@umbraco-engage/backoffice/core`.
 

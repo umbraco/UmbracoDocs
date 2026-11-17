@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to extend the Umbraco Engage backoffice with your own
-  segment parameters and profile extensions.
+  Learn how to extend the Umbraco Engage backoffice with your own screens,
+  segment parameters, and profile extensions.
 ---
 
 # Extending the Backoffice
@@ -18,6 +18,7 @@ New to backoffice extensions? Read the [Creating your first extension](https://d
 
 | Extension | Type | Article |
 | --- | --- | --- |
+| A screen in the sidebar of the Engage section | `menuItem` and `workspace` | [Custom Screens](custom-screens.md) |
 | A parameter in the segment builder | `engageSegmentRule` | [Implement your own segment parameters](../personalization/implement-your-own-segment-parameters.md) |
 | Content on the **External data** tab of a profile | `engageExternalDataComponent` | [External Profile Data](../profiling/external-profile-data.md) |
 | A box on the **Insights** tab of a profile | `engageProfileInsight` | [Profile Insights and Tabs](../profiling/profile-insights-and-tabs.md) |

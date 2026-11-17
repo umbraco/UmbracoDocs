@@ -210,7 +210,7 @@ export class MySegmentRuleDayOfWeekElement extends UeSegmentRuleBaseElement<DayO
   }
 
   renderEditor() {
-    const current = this.value?.config.dayOfWeek;
+    const current = (this.pending ?? this.value)?.config.dayOfWeek;
     const options = days.map((x) => ({ value: x, name: x, selected: x === current }));
 
     return html`
