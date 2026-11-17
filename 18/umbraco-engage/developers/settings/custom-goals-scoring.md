@@ -51,7 +51,7 @@ public class YourService
 ```
 
 {% hint style="info" %}
-`TriggerGoal` and `TriggerGoalAsync` reject a goal that is inactive, invalid, or unknown from Umbraco Engage 18.3. A warning is logged and no goal completion is stored. `TriggerGoalAsync(long)` returns `false` in that case.
+From Umbraco Engage 18.3, `TriggerGoal` and `TriggerGoalAsync` reject inactive, invalid, or unknown goals. A warning is logged and no goal completion is stored. `TriggerGoalAsync(long)` returns `false` in that case.
 {% endhint %}
 
 ### Triggering Outside of HttpContext
