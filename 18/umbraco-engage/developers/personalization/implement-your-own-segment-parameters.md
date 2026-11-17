@@ -35,7 +35,7 @@ You will have to implement the following interfaces for a new custom parameter:
     -   You can extend the existing `BaseSegmentRule` to simplify the implementation.
     -   The most important part to implement is the `bool IsSatisfied(IPersonalizationProfile context)` method.
 -   `Umbraco.Engage.Infrastructure.Personalization.Segments.Rules.ISegmentRuleFactory`
-    -   Register your implementation of the segment rule factory as a transient service. The example below uses the `[RegisterService]` attribute.
+    -   Register your implementation of the segment rule factory as a transient service in a composer.
 
 For the "Day of week" example, the code looks like this:
 
@@ -63,11 +63,8 @@ And the factory which is used to create an instance of this rule:
 ```c#
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Engage.Common.Composing;
 using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
 
-[RegisterService(ServiceLifetime.Transient)]
 public class DayOfWeekSegmentRuleFactory : ISegmentRuleFactory
 {
     // The backoffice stores the configuration with camelCase property names and the day as text.
@@ -100,6 +97,23 @@ The configuration is stored as a string in the database. In code, Intellisense i
 public class DayOfWeekSegmentRuleConfig
 {
     public DayOfWeek DayOfWeek { get; set; }
+}
+```
+
+Register the factory in a composer. Umbraco Engage does not find the factory without the registration, and the segment parameter is then never satisfied.
+
+```c#
+using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
+
+public class DayOfWeekSegmentRuleComposer : IComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.Services.AddTransient<ISegmentRuleFactory, DayOfWeekSegmentRuleFactory>();
+    }
 }
 ```
 
@@ -198,7 +212,7 @@ import {
   state,
 } from "@umbraco-cms/backoffice/external/lit";
 import type { UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
-import { UeSegmentRuleBaseElement } from "@umbraco-engage/backoffice/segments";
+import { UeSegmentRuleBaseElement } from "@umbraco-engage/backoffice/personalization";
 
 export interface DayOfWeekSegmentRuleConfigModel {
   dayOfWeek: string;
@@ -271,12 +285,9 @@ By default, it will display the raw configuration of the parameter as stored in 
 If you would like to change this to be a bit more readable, you can implement the `Umbraco.Engage.Web.Cockpit.Segments.ICockpitSegmentRuleFactory` interface. For the `DayOfWeek` demo parameter, this is the implementation:
 
 ```c#
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Engage.Common.Composing;
 using Umbraco.Engage.Infrastructure.Personalization.Segments.Rules;
 using Umbraco.Engage.Web.Cockpit.Segments;
 
-[RegisterService(ServiceLifetime.Transient)]
 public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory
 {
     public DayOfWeekCockpitSegmentRuleFactory() { }
@@ -302,7 +313,13 @@ public class DayOfWeekCockpitSegmentRuleFactory : ICockpitSegmentRuleFactory
 }
 ```
 
-The JSON is transformed into a human-readable representation, and an icon is configured to appear in the cockpit. The `[RegisterService]` attribute registers the factory, so no composer is needed.
+The JSON is transformed into a human-readable representation, and an icon is configured to appear in the cockpit.
+
+Register the cockpit factory in the composer from step 1. Add a `using Umbraco.Engage.Web.Cockpit.Segments;` line to the composer file:
+
+```c#
+builder.Services.AddTransient<ICockpitSegmentRuleFactory, DayOfWeekCockpitSegmentRuleFactory>();
+```
 
 Engage will then use the additional information to render your segment parameter correctly in the cockpit. The "DayOfWeek test" string is the name of the segment. This segment happens to have only 1 parameter which is the DayOfWeek parameter.
 
