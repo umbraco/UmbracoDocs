@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Commerce 13 including all ch
 
 #### 13.3.4
 
-* Tightened permission checks in the back office so users only see the stores and data their sections and store access allow
+* Tightened permission checks in the backoffice so users only see the stores and data their sections and store access allow
 
 #### 13.3.3
 
