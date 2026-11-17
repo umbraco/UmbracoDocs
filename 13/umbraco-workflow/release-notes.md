@@ -16,6 +16,7 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
+
 ### [13.5.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.5) (November 17 2026)
 * Resolves security advisory [GHSA-vw5g-jmgg-hw78](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-vw5g-jmgg-hw78)
 * Resolves security advisory [GHSA-7457-w8c8-jh29](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-7457-w8c8-jh29)
@@ -29,9 +30,9 @@ This section contains the release notes for Umbraco Workflow 13 including all ch
 
 ### [13.5.2](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.2) (February 19 2026)
 * Ensures RazorLight is initialized with the correct context [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
-* Fixes a bug where fallback email templates were not being detected and assigned (if the requested culture template did not exist)[#128] (https://github.com/umbraco/Umbraco.Workflow.Issues/issues/128)
+* Fixes a bug where fallback email templates were not being detected and assigned (if the requested culture template did not exist)[#128](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/128)
 
-### [13.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.1) (January 30 2025)
+### [13.5.1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.1) (January 30 2026)
 * Ensures email templates render correctly when runtimeMode is set to 'Production' [#125](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/125)
 
 ### 13.5.0 (December 11 2025)
