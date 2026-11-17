@@ -33,7 +33,7 @@ Open the Umbraco content tree and select the A/B Tests Workspace View on the pag
 
 ![You can find the A/B Tests Workspace View on each of the content items in the Content section.](../../.gitbook/assets/engage-a-b-test-content-app-v16.png)
 
-Make sure that you have access to the Workspace View. [These permissions can be specified](../settings/permissions.md) per Document Types or User Groups.
+Make sure that you have access to the Workspace View. The Document Type must allow the Workspace View, and your user group needs the **Read** permission for A/B Testing. Creating and changing tests also requires the **Write** permission. Learn more in the [Permissions](../settings/permissions.md) article.
 
 When you open the Workspace View you will have an overview of all the A/B tests that are running or finished. You also have the option to **Create new test**.
 
