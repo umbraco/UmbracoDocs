@@ -20,8 +20,8 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 
 **Permissions**
 
-* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The Engage backoffice API now checks these permissions. Previously, any backoffice user could call any Engage endpoint.
-* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed, and its three endpoints now return HTTP 404. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
+* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The permissions are also enforced on the server.
+* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
 * The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only with the Read permission for that feature.
 * A profile export now includes the member name and email only for users with access to the Members section.
 
@@ -41,10 +41,9 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Fixed the totals strip showing "NaN% of total" or "Infinity% of total" when no total was available.
 * Fixed overlapping star-schema generation runs not being skipped. Generation now uses an application lock.
 * `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
-* Average columns in Analytics tables no longer show a total. `MetricTotals`, `PrimaryMetricTotals`, and `SecondaryMetricTotals` are now `List<double?>`, which is a breaking type change.
+* Average columns in Analytics tables no longer show a total.
 * Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
-* Fixed Analytics tables with "Include subpages" timing out on large reports. A page URL longer than 4000 characters is now grouped on its first 4000 characters.
-* Removed the bot analytics prefabs, which could only fail. `FctPageviewBot` and `PageviewsBotMetricSqlDescriptor2` are marked as obsolete, and will be removed in Umbraco Engage 19.
+* Fixed Analytics tables with "Include subpages" timing out on large reports.
 
 **Analytics: visual redesign**
 
@@ -59,16 +58,16 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * The A/B test list and test project workspace have been redesigned. The "New" status is now labeled "Draft", and tests are grouped by status.
 * Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
 * A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
-* Ending a test or removing its schedule no longer runs the full save validation, so a validation error can no longer block ending a test.
+* Fixed a test that could not be ended or unscheduled while it had a validation error, such as a variant without a name.
 * A test that is reverted to Stopped after a failed winner promotion no longer keeps its winner.
-* The A/B test variant lookup no longer blocks request threads in a database transaction.
+* Improved the performance of assigning A/B test variants on a visitor's first page.
 
 **Headless**
 
 * Headless segmentation and Delivery API calls can now pass the visitor's browser User-Agent in a `Visitor-User-Agent` header. Device segments now resolve from the visitor's browser instead of the server-side frontend's HTTP client.
 * Segmentation and Delivery API calls no longer store segment rule results that apply only once, such as Device, in the visitor's profile. The results are stored by the tracked pageview instead.
 * A tracked URL on a non-default port now keeps its port in the headless request host. Previously a pageview for `https://localhost:44367/` was stored against the default port and created a second page row. Existing rows are not migrated.
-* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews. The segments are now evaluated in the request.
+* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews.
 
 **Backoffice and platform**
 
@@ -86,7 +85,6 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 **Analytics and reporting**
 
 * Report tables, charts and the comparison view now page and search on the server instead of loading the whole report into the browser. Large reports open faster, and search now filters the entire report rather than only the rows already loaded.
-* The report query `Page` and `PageSize` properties are marked as obsolete and are ignored. Use `Paging` instead.
 * Column totals and each cell's "% of total" are now computed by the server against the whole report. These values stay accurate while paging or searching, instead of reflecting only the loaded page.
 * Fixed the "contains" and "does not contain" filter operators in analytics queries, which generated invalid SQL and failed. "Contains" and "does not contain" are now rejected on visitor type, where a text search cannot match. "Does not contain" now includes rows with no value, and a blank filter value is treated as no filter.
 * Combining the Users metric with a page or segment dimension now returns a validation error (HTTP 400) instead of a server error (HTTP 500). Filtering the Users metric by one is also rejected. Users are counted per visitor per day and carry no page or segment.
@@ -140,8 +138,8 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 #### [18.1.0](https://www.nuget.org/packages/Umbraco.Engage/18.1.0) (August 20th 2026)
 
 * All changes from 18.1.0 release candidates
-* Fixed an error on the background flush thread that blocked all pageview writes.
-* Fixed the visitor profile build silently rolling back the transaction of its caller. Goal completions and page events could be lost without an error ([Issue #98](https://github.com/umbraco/Umbraco.Engage.Issues/issues/98)).
+* Fixed an error that could block all pageviews from being saved.
+* Fixed goal completions and page events being lost without an error ([Issue #98](https://github.com/umbraco/Umbraco.Engage.Issues/issues/98)).
 * `DeduplicatePageVariants.sql` no longer erases the segment of the default variant.
 
 #### [18.1.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/18.1.0-rc1) (August 7th 2026)
@@ -205,13 +203,6 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Bumped the **Umbraco.Licenses** dependency to 18.0.2. License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
 * The data retention card now reports only the cleanup tasks that ran. The **Database Schema Status** health check wording is aligned with the reduced-mode card.
 * Fixed the start-page schema warning text not aligning with the warning message.
-
-**Breaking changes for developers**
-
-* `IAbTestingState` and `IAbTestingStateProvider` moved from `Umbraco.Engage.Infrastructure.AbTesting` to `Umbraco.Engage.Infrastructure.AbTesting.State`. `AbTestingState` moved there from `Umbraco.Engage.Web.AbTesting.State`.
-* `PersonalizationState` moved from `Umbraco.Engage.Web.Personalization.State` to `Umbraco.Engage.Infrastructure.Personalization.State`.
-* `HeatmapPageVariant` moved from `Umbraco.Engage.Web.Heatmaps` to `Umbraco.Engage.Web.Analytics.Heatmaps`.
-* Removed `IsLoggedInToUmbracoAttribute`, `GetPreviewUrlAbTestController`, and `AnalyticsContentAppFactory`.
 
 #### [18.0.0](https://www.nuget.org/packages/Umbraco.Engage/18.0.0) (June 25th 2026)
 

@@ -18,7 +18,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 [**13.8.3**](https://www.nuget.org/packages/Umbraco.Engage/13.8.3) **(November 17th 2026)**
 
-* The Engage backoffice API now enforces the Engage user group permissions. Previously, only the backoffice screens checked them, so any backoffice user could call any Engage endpoint.
+* The Engage user group permissions are now also enforced on the server. Previously, only the backoffice screens checked them.
 * The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only when one of the user's groups has access to that feature.
 * A profile export now includes the member name and email only for users with access to the Members section.
 

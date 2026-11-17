@@ -20,8 +20,8 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 **Permissions**
 
-* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The Engage backoffice API now checks these permissions. Previously, any backoffice user could call any Engage endpoint.
-* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed, and its three endpoints now return HTTP 404. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
+* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The permissions are also enforced on the server.
+* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
 * The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only with the Read permission for that feature.
 * A profile export now includes the member name and email only for users with access to the Members section.
 
@@ -41,10 +41,9 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Fixed the totals strip showing "NaN% of total" or "Infinity% of total" when no total was available.
 * Fixed overlapping star-schema generation runs not being skipped. Generation now uses an application lock.
 * `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
-* Average columns in Analytics tables no longer show a total. `MetricTotals`, `PrimaryMetricTotals`, and `SecondaryMetricTotals` are now `List<double?>`, which is a breaking type change.
+* Average columns in Analytics tables no longer show a total.
 * Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
-* Fixed Analytics tables with "Include subpages" timing out on large reports. A page URL longer than 4000 characters is now grouped on its first 4000 characters.
-* Removed the bot analytics prefabs, which could only fail. `FctPageviewBot` and `PageviewsBotMetricSqlDescriptor2` are marked as obsolete, and will be removed in Umbraco Engage 19.
+* Fixed Analytics tables with "Include subpages" timing out on large reports.
 
 **Analytics: visual redesign**
 
@@ -59,16 +58,16 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * The A/B test list and test project workspace have been redesigned. The "New" status is now labeled "Draft", and tests are grouped by status.
 * Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
 * A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
-* Ending a test or removing its schedule no longer runs the full save validation, so a validation error can no longer block ending a test.
+* Fixed a test that could not be ended or unscheduled while it had a validation error, such as a variant without a name.
 * A test that is reverted to Stopped after a failed winner promotion no longer keeps its winner.
-* The A/B test variant lookup no longer blocks request threads in a database transaction.
+* Improved the performance of assigning A/B test variants on a visitor's first page.
 
 **Headless**
 
 * Headless segmentation and Delivery API calls can now pass the visitor's browser User-Agent in a `Visitor-User-Agent` header. Device segments now resolve from the visitor's browser instead of the server-side frontend's HTTP client.
 * Segmentation and Delivery API calls no longer store segment rule results that apply only once, such as Device, in the visitor's profile. The results are stored by the tracked pageview instead.
 * A tracked URL on a non-default port now keeps its port in the headless request host. Previously a pageview for `https://localhost:44367/` was stored against the default port and created a second page row. Existing rows are not migrated.
-* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews. The segments are now evaluated in the request.
+* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews.
 
 **Backoffice and platform**
 
@@ -107,7 +106,6 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 **Analytics and reporting**
 
 * Report tables, charts and the comparison view now page and search on the server instead of loading the whole report into the browser. Large reports open faster, and search now filters the entire report rather than only the rows already loaded.
-* The report query `Page` and `PageSize` properties are marked as obsolete and are ignored. Use `Paging` instead.
 * Column totals and each cell's "% of total" are now computed by the server against the whole report. These values stay accurate while paging or searching, instead of reflecting only the loaded page.
 * Fixed installations with report-data generation disabled sometimes serving realtime results instead of reporting results. One case returned a 500 error on the backoffice start page.
 * Fixed the "% change" column in comparison mode showing the wrong row's value after paging, searching, or sorting ([Issue #91](https://github.com/umbraco/Umbraco.Engage.Issues/issues/91)).
@@ -190,13 +188,6 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Added validation highlighting properties whose variance does not align with their Document Type's variance. This is a common cause of A/B test variants failing to save or serve.
 * The create-segment endpoints are now GUID-driven, removing the integer-to-GUID mapping previously performed in the API.
 * Bumped the **Umbraco.Licenses** dependency to 17.0.4. License product IDs are now matched case-insensitively, so a license configured under a differently-cased key still resolves.
-
-**Breaking changes for developers**
-
-* `IAbTestingState` and `IAbTestingStateProvider` moved from `Umbraco.Engage.Infrastructure.AbTesting` to `Umbraco.Engage.Infrastructure.AbTesting.State`. `AbTestingState` moved there from `Umbraco.Engage.Web.AbTesting.State`.
-* `PersonalizationState` moved from `Umbraco.Engage.Web.Personalization.State` to `Umbraco.Engage.Infrastructure.Personalization.State`.
-* `HeatmapPageVariant` moved from `Umbraco.Engage.Web.Heatmaps` to `Umbraco.Engage.Web.Analytics.Heatmaps`.
-* Removed `IsLoggedInToUmbracoAttribute`, `GetPreviewUrlAbTestController`, and `AnalyticsContentAppFactory`.
 
 #### [17.3.1](https://www.nuget.org/packages/Umbraco.Engage/17.3.1) (July 24th 2026)
 
