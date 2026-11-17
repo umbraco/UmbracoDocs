@@ -10,7 +10,7 @@ This article will take you through setting up everything you need to start build
 
 Make sure you have followed the [requirements](../../../get-started/installation/requirements.md) article, especially having installed the following on your machine:
 
-* [Node.js version 22.15.0 (Long-Term Support)](https://nodejs.org/en) and higher
+* [Node.js version 24.11.1 (Long-Term Support)](https://nodejs.org/en) and higher
 
 {% hint style="info" %}
 Use Node Version Manager (NVM) for [Windows](https://github.com/coreybutler/nvm-windows) or [Mac/Linux](https://github.com/nvm-sh/nvm) to manage the Node.js versions.

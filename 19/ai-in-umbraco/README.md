@@ -89,6 +89,8 @@ public class ChatController : Controller
 
 ## Requirements
 
-* Umbraco CMS 17.1 or later
-* .NET 10.0 or later
+* Umbraco CMS 19
+* .NET 11
 * At least one AI provider package (for example, `Umbraco.AI.OpenAI`)
+
+If you are upgrading from Umbraco.AI 18, read the [Version Specific Upgrade Notes](upgrading/version-specific.md) first.

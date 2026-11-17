@@ -52,18 +52,14 @@ The request body follows the AG-UI `RunAgentInput` shape:
                     "content": { "type": "string" }
                 },
                 "required": ["content"]
-            }
+            },
+            "metadata": { "scope": "content-write", "isDestructive": false }
         }
     ],
     "context": [
         { "description": "surface", "value": "copilot" }
     ],
-    "state": null,
-    "forwardedProps": {
-        "toolMetadata": [
-            { "toolName": "insert_content", "scope": "content-write", "isDestructive": false }
-        ]
-    }
+    "state": null
 }
 ```
 
@@ -76,13 +72,39 @@ The request body follows the AG-UI `RunAgentInput` shape:
 | `threadId`       | string | Yes      | The conversation thread identifier                                |
 | `runId`          | string | Yes      | The run identifier                                                |
 | `messages`       | array  | Yes      | Conversation messages in AG-UI format                             |
-| `tools`          | array  | No       | Frontend tool definitions available to the agent                  |
+| `tools`          | array  | No       | Frontend tool definitions available to the agent. Each tool can carry `metadata` with a `scope` and an `isDestructive` flag. |
 | `context`        | array  | No       | AG-UI context items (each has `description` and `value`)          |
 | `state`          | object | No       | Current state as JSON                                             |
-| `resume`         | object | No       | Resume information for continuing from an interrupt               |
+| `resume`         | array  | No       | Resume entries for continuing from interrupts. See [Resume Entries](#resume-entries). |
 | `forwardedProps` | object | No       | Additional properties forwarded to the agent                      |
 
 AG-UI message `role` values are: `user`, `assistant`, `system`, `tool`, or `developer`.
+
+#### Resume Entries
+
+When a run stops for an interrupt, such as a tool call waiting for approval, the next request resumes it. Send one entry in `resume` for each open interrupt:
+
+| Property      | Type   | Required | Description |
+| ------------- | ------ | -------- | ----------- |
+| `interruptId` | string | Yes      | The `id` of the interrupt the entry answers |
+| `status`      | string | Yes      | `resolved` when the user responded, or `cancelled` when they didn't |
+| `payload`     | object | No       | The response when `status` is `resolved`. For a tool approval, `{ "approved": true }` or `{ "approved": false }`. For a frontend tool call, the tool result. |
+
+{% code title="Resume after an approval" %}
+
+```json
+"resume": [
+    {
+        "interruptId": "approval:call_123",
+        "status": "resolved",
+        "payload": { "approved": true }
+    }
+]
+```
+
+{% endcode %}
+
+The server reads resume entries from `resume` only. Entries sent in `forwardedProps.resume` are ignored.
 
 #### Forwarded Properties
 

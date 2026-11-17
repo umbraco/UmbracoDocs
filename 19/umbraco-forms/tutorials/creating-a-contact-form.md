@@ -256,7 +256,7 @@ To render the Contact Form, follow these steps:
 
     ```cs
     @using Umbraco.Forms.Web.Helpers;
-    @await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), FormTheme = "bootstrap3-horizontal", ExcludeScripts = "1" })
+    @await Component.InvokeAsync("RenderForm", new { formId = Guid.Parse("<form guid>"), FormTheme = "default", ExcludeScripts = "1" })
     ```
 
 {% hint style="info" %}

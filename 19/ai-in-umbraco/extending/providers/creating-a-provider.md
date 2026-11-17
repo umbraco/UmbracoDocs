@@ -15,12 +15,12 @@ This guide walks through creating a complete custom AI provider from scratch.
 
 ## Step 1: Create the Project
 
-Create a new class library targeting .NET 10:
+Create a new class library targeting .NET 11:
 
 {% code title="Terminal" %}
 
 ```bash
-dotnet new classlib -n MyCompany.Umbraco.AI.MyProvider -f net10.0
+dotnet new classlib -n MyCompany.Umbraco.AI.MyProvider -f net11.0
 cd MyCompany.Umbraco.AI.MyProvider
 dotnet add package Umbraco.AI.Core
 ```
@@ -261,7 +261,7 @@ Build your provider as a NuGet package:
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <PackageId>MyCompany.Umbraco.AI.MyProvider</PackageId>
     <Version>1.0.0</Version>
     <Description>MyProvider integration for Umbraco.AI</Description>

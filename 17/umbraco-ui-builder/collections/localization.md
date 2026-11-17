@@ -83,7 +83,7 @@ For a custom section, use the following configuration:
 }
 ```
 
-![section\_name](<../.gitbook/assets/section_name (1).png>)
+![section\_name](../.gitbook/assets/section_name.png)
 
 ### Localizing an additional area
 

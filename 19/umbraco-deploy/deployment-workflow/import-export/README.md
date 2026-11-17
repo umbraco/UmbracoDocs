@@ -160,6 +160,7 @@ The following example shows this service in use, importing and exporting from a 
 
 ```csharp
 using System.IO.Compression;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.Deploy;
@@ -182,13 +183,15 @@ internal class ArtifactImportExportComposer : IComposer
         private readonly IArtifactImportExportService _diskImportExportService;
         private readonly IServiceConnectorFactory _serviceConnectorFactory;
         private readonly IFileTypeCollection _fileTypeCollection;
+        private readonly IOptionsMonitor<DeployEntityTypesOptions> _deployEntityTypesOptions;
 ​
-        public ArtifactImportExportStartedAsyncHandler(IHostEnvironment hostEnvironment, IArtifactImportExportService diskImportExportService, IServiceConnectorFactory serviceConnectorFactory, IFileTypeCollection fileTypeCollection)
+        public ArtifactImportExportStartedAsyncHandler(IHostEnvironment hostEnvironment, IArtifactImportExportService diskImportExportService, IServiceConnectorFactory serviceConnectorFactory, IFileTypeCollection fileTypeCollection, IOptionsMonitor<DeployEntityTypesOptions> deployEntityTypesOptions)
         {
             _hostEnvironment = hostEnvironment;
             _diskImportExportService = diskImportExportService;
             _serviceConnectorFactory = serviceConnectorFactory;
             _fileTypeCollection = fileTypeCollection;
+            _deployEntityTypesOptions = deployEntityTypesOptions;
         }
 ​
         public async Task HandleAsync(UmbracoApplicationStartedNotification notification, CancellationToken cancellationToken)
@@ -213,9 +216,10 @@ internal class ArtifactImportExportComposer : IComposer
         {
             using ZipArchive zipArchive = ZipFile.Open(zipFilePath, ZipArchiveMode.Create);
 ​
-            IEnumerable<Udi> udis = DeployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.ContentAndSchema).Select(Udi.Create);
+            DeployEntityTypesOptions deployEntityTypes = _deployEntityTypesOptions.CurrentValue;
+            IEnumerable<Udi> udis = deployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.ContentAndSchema).Select(Udi.Create);
             var contextCache = new DictionaryCache();
-            string[] dependencyEntityTypes = DeployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.All);
+            string[] dependencyEntityTypes = deployEntityTypes.GetEntityTypes(_fileTypeCollection, DeployEntityTypeCategories.All);
 ​
             await _diskImportExportService.ExportArtifactsAsync(_serviceConnectorFactory, udis, Constants.DeploySelector.ThisAndDescendants, contextCache, zipArchive, dependencyEntityTypes: dependencyEntityTypes);
         }

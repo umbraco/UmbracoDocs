@@ -40,13 +40,13 @@ Forms ships converters for the following property editor UI aliases:
 | Umb.PropertyEditorUi.CheckBoxList              | Checkbox list              |
 | Umb.PropertyEditorUi.ContentPicker.Source      | Content picker with source |
 | Umb.PropertyEditorUi.Decimal                   | Decimal                    |
-| Umb.PropertyEditorUi.Dropdown                  | Dropdown                   |
+| Umb.PropertyEditorUi.Dropdown                  | Dropdown (multiple choice) |
+| Umb.PropertyEditorUi.Dropdown.Single           | Dropdown (single choice)   |
 | Umb.PropertyEditorUi.Integer                   | Numeric (integer)          |
 | Umb.PropertyEditorUi.MediaPicker               | Media picker               |
 | Umb.PropertyEditorUi.MultipleTextString        | Multiple text strings      |
 | Umb.PropertyEditorUi.RadioButtonList           | Radio button list          |
 | Umb.PropertyEditorUi.Slider                    | Slider                     |
-| Umb.PropertyEditorUi.TinyMCE                   | Rich text (TinyMCE)        |
 | Umb.PropertyEditorUi.Tiptap                    | Rich text (Tiptap)         |
 | Umb.PropertyEditorUi.Toggle                    | Toggle                     |
 | Umb.PropertyEditorUi.UploadField               | Upload                     |
@@ -100,7 +100,8 @@ Some are defined with the Umbraco CMS and some ship with the Forms package.
 | Umb.PropertyEditorUi.CodeEditor                | CMS    | Uses a code editor                                                                                          |                                                                                       |
 | Umb.PropertyEditorUi.ContentPicker.Source      | CMS    | Uses a content picker with the option for XPath entry                                                       | The "Save as Umbraco node" workflow                                                   |
 | Umb.PropertyEditorUi.DocumentPicker            | CMS    | Uses a content picker                                                                                       |                                                                                       |
-| Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selection from a list of options                                                                   |                                                                                       |
+| Umb.PropertyEditorUi.Dropdown                  | CMS    | Used for selecting one or more options from a list                                                          |                                                                                       |
+| Umb.PropertyEditorUi.Dropdown.Single           | CMS    | Used for selecting one option from a list                                                                   |                                                                                       |
 | Umb.PropertyEditorUi.Integer                   | CMS    | Uses numerical text box for entry                                                                           |                                                                                       |
 | Umb.PropertyEditorUi.MediaPicker               | CMS    | Uses a media item picker for entry                                                                          | The "Send XSLT transformed email", "Post as XML", and "Save as an XML file" workflows |
 | Umb.PropertyEditorUi.MultipleTextString        | CMS    | Uses multiple text boxes for entry                                                                          |                                                                                       |

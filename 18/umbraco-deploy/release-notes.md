@@ -18,6 +18,19 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
+### [18.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.3.0) (November 12th 2026)
+
+* Add three health checks in a new **Deploy** group on the **Health Check** dashboard in the **Settings** section. Each check offers actions to fix what it reports:
+  * **UDA file versions** reports `.uda` files written by another version of Deploy, and files that can't be read. Files from a newer version are errors, files from an older major version are warnings. Use **Migrate** to update outdated files to the installed version. In `ReadOnly` [disk mode](getting-started/deploy-settings.md#disk-mode), Migrate isn't offered: migrate on a development environment and update the files in your build.
+  * **Schema comparison** reports schema items without a `.uda` file, `.uda` files without a schema item, and items that differ from their file. Use **Export schema** or **Deploy schema** to bring them in line.
+  * **Failed disk operation** reports when the last disk operation failed, such as a schema deployment. Use **Dismiss** to clear the failure. The details stay in the logs.
+* Add a **Version** column to the schema comparison, showing whether each `.uda` file was written by the installed version of Deploy.
+* Show a **View progress** button on the Deploy dashboard while an operation runs.
+* Keep the export queue empty after **Export to Zip** or **Clear queue**. Previously, the exported items returned after reloading the page.
+* Offer **Include subitems** when exporting a dictionary item with children, with `TransferDictionaryAsContent` enabled. Items without subitems to export are added to the export queue directly, without opening the dialog.
+* Only offer to include the items below in the **Partial Restore** dialog for entity types that support it. Members no longer show this option.
+* Show the tree name, such as **Members** or **Dictionary**, in the header of the remote item picker instead of the entity type alias.
+
 ### [18.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (November 5th 2026)
 
 * All items from 18.2.0-rc1 and 18.2.0-rc2.

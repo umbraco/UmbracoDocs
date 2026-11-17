@@ -24,7 +24,7 @@ Video example.
 
 1.  Go to your project and click on the arrow next to the environment name.
 
-    <figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 2. Click **Logs** to view the log details.
 
 <figure><img src="../../../.gitbook/assets/logs-table.png" alt=""><figcaption></figcaption></figure>

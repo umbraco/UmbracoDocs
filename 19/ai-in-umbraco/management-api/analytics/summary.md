@@ -5,6 +5,12 @@ description: >-
 
 # Get Usage Summary
 
+{% hint style="warning" %}
+
+This endpoint is obsolete and will be removed in version 20. Use [Get Usage Overview](overview.md) instead.
+
+{% endhint %}
+
 Returns aggregated usage statistics for the specified time period.
 
 ## Request

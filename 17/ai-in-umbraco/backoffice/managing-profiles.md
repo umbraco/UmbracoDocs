@@ -1,6 +1,5 @@
 ---
-description: >-
-    Create and manage AI profiles in the Umbraco backoffice.
+description: Create and manage AI profiles in the Umbraco backoffice.
 ---
 
 # Managing Profiles
@@ -21,13 +20,13 @@ Profiles combine a connection with model settings for specific use cases. Create
 1. Click **Create Profile** in the Profiles section.
 2. Fill in the required fields:
 
-| Field          | Description                                     |
-| -------------- | ----------------------------------------------- |
-| **Name**       | Display name for the profile                    |
-| **Alias**      | Unique identifier (used in code and as default) |
+| Field          | Description                                                                                                            |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Name**       | Display name for the profile                                                                                           |
+| **Alias**      | Unique identifier (used in code and as default)                                                                        |
 | **Capability** | Type of AI operation (Chat, Embedding, Speech-to-Text, or the experimental Image Generation, Decision, and Extraction) |
-| **Connection** | Which connection to use                         |
-| **Model**      | The specific AI model                           |
+| **Connection** | Which connection to use                                                                                                |
+| **Model**      | The specific AI model                                                                                                  |
 
 3. Configure capability-specific settings.
 4. Click **Save**.
@@ -96,13 +95,13 @@ Leave the language empty to let the model auto-detect the spoken language.
 ## Image Generation Profile Settings
 
 {% hint style="warning" %}
-Image Generation is experimental. The **Image Generation** capability can only be selected when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. See [Enabling image generation](../using-the-api/image-generation/README.md#enabling-image-generation).
+Image Generation is experimental. The **Image Generation** capability can only be selected when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. See [Enabling image generation](../using-the-api/image-generation/#enabling-image-generation).
 {% endhint %}
 
 For profiles with the **Image Generation** capability:
 
-| Setting        | Description                                                                                                  | Default          |
-| -------------- | ------------------------------------------------------------------------------------------------------------ | ---------------- |
+| Setting        | Description                                                                                                   | Default          |
+| -------------- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
 | **Size**       | Default image size as `{width}x{height}`, for example `1024x1024`. A dropdown when the model lists its sizes. | Provider default |
 | **Media Type** | Output image format, for example `image/png`, `image/jpeg`, or `image/webp`. Supported values vary by model.  | Provider default |
 
@@ -113,7 +112,7 @@ The **Media Type** field is hidden for models that don't support it. Image count
 ## Decision Profile Settings
 
 {% hint style="warning" %}
-Decision is experimental. The **Decision** capability can only be selected when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. See [Enabling Decision](../using-the-api/decision/README.md#enabling-decision).
+Decision is experimental. The **Decision** capability can only be selected when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. See [Enabling Decision](../using-the-api/decision/#enabling-decision).
 {% endhint %}
 
 Decision profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Decision, such as [TypeSafe AI](../providers/typesafe.md), and its model.
@@ -121,7 +120,7 @@ Decision profiles have no extra settings. The settings view shows a message sayi
 ## Extraction Profile Settings
 
 {% hint style="warning" %}
-Extraction is experimental. The **Extraction** capability can only be selected when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. See [Enabling Extraction](../using-the-api/extraction/README.md#enabling-extraction).
+Extraction is experimental. The **Extraction** capability can only be selected when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. See [Enabling Extraction](../using-the-api/extraction.md#enabling-extraction).
 {% endhint %}
 
 Extraction profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Extraction, such as [Cloudflare](../providers/cloudflare.md), and its model.
@@ -190,6 +189,6 @@ Example tags: `production`, `content-team`, `experimental`
 
 ## Related
 
-- [Managing Connections](managing-connections.md) - Connections are required for profiles
-- [Profiles Concept](../concepts/profiles.md) - Deeper explanation of profiles
-- [Using Profiles in Code](../using-the-api/chat/basic-chat.md) - How to use profiles programmatically
+* [Managing Connections](managing-connections.md) - Connections are required for profiles
+* [Profiles Concept](../concepts/profiles.md) - Deeper explanation of profiles
+* [Using Profiles in Code](../using-the-api/chat/basic-chat.md) - How to use profiles programmatically

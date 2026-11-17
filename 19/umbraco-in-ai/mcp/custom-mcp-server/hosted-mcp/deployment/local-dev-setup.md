@@ -17,7 +17,7 @@ Running one of Umbraco's pre-built Editor or Developer MCP servers locally, rath
 ## Prerequisites
 
 - Node.js 22+
-- .NET 10 SDK (for the Umbraco instance)
+- .NET 11 SDK (for the Umbraco instance)
 - A local Umbraco 18+ instance with Management API enabled
 
 ## Step 1: Register the OAuth Client

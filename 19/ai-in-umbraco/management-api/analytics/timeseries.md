@@ -5,6 +5,12 @@ description: >-
 
 # Get Time Series
 
+{% hint style="warning" %}
+
+This endpoint is obsolete and will be removed in version 20. Use [Get Usage Overview](overview.md) instead.
+
+{% endhint %}
+
 Returns usage metrics grouped by time intervals for trend analysis.
 
 ## Request

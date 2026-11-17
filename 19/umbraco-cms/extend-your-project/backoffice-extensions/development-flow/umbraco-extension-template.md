@@ -8,8 +8,7 @@ Umbraco provides a .NET template to help you get started with building extension
 
 ## Prerequisites
 
-* [.NET SDK](https://dotnet.microsoft.com/download) version 9.0 or later
-* [Node.js](https://nodejs.org/en/download/) version 22 or later
+* The .NET SDK and Node.js versions listed in the [Requirements](../../../get-started/installation/requirements.md#local-development) article
 
 ## Install the Umbraco Extension Template
 

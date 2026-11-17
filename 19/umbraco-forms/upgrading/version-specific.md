@@ -6,7 +6,7 @@ description: >-
 
 # Version Specific Upgrade Notes
 
-This article provides specific upgrade documentation for migrating to Umbraco Forms version 18.
+This article provides specific upgrade documentation for migrating to Umbraco Forms version 19.
 
 {% hint style="info" %}
 If you are upgrading to a minor or patch version, you can find the details about the changes in the [Release Notes](../release-notes.md) article.
@@ -14,7 +14,153 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 ## Version Specific Upgrade Notes History
 
-Version 18 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `18.0.0`. It runs on .NET 10.
+Version 19 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `19.0.0`. It runs on .NET 11.
+
+### Umbraco CMS 19 and .NET 11
+
+This change was introduced in version 19.0.0. It affects every site.
+
+Upgrade your site to Umbraco CMS 19 and .NET 11 before you upgrade Forms. For the CMS steps, see the [Version Specific Upgrade Notes](https://docs.umbraco.com/umbraco-cms/get-started/upgrading-and-migrating/version-specific) article in the CMS documentation.
+
+Forms now uses version 7 of `Microsoft.Data.SqlClient`, the version that CMS 19 uses. If a SQL Server data source connects with Microsoft Entra ID authentication, test that connection after you upgrade.
+
+### Removed obsolete code
+
+This change was introduced in version 19.0.0. It affects you if custom code calls, constructs, or inherits from the types listed in this section.
+
+Code marked as "Scheduled for removal in Umbraco Forms 19" is removed. In version 18, the obsolete message on each member names its replacement.
+
+The following types lose the constructors that took fewer dependencies. Use the remaining constructor, or resolve the type from dependency injection.
+
+| Project | Types |
+| --- | --- |
+| `Umbraco.Forms.Core` | `EntryAcceptedDtoFactory`, `FormDtoFactory`, `FormRecordSearcher` |
+| `Umbraco.Forms.Core.Providers` | `CsvDisplayValuesExport`, `CsvExport`, `CsvExportTypeBase`, `DataSource`, `NodePreValues`, `SaveAllUploadedFiles`, `SaveAllUploadedFilesBase`, `SaveAllUploadedFilesByEntry` |
+| `Umbraco.Forms.Web` | `ProtectFormUploadRequestsMiddleware` |
+| `Umbraco.Forms.Web` (Management API) | `CopyFormController`, `CopyFormWorkflowsController`, `CreateFormController`, `CreateFormFromDataSourceWizardController`, `ExportController`, `GetAllWorkflowTypesController`, `GetByKeyWorkflowTypeController`, `GetLinkableMemberPropertiesController`, `GetMemberFormSummariesController`, `ImportFormController`, `PostGenerateExportController`, `RetryWorkflowController`, `UpdateFormController`, `WorkflowTypeControllerBase` |
+| `Umbraco.Forms.Web` (Management API, obsoleted in 18.3.0) | `CreateOrUpdateUserFormSecurityControllerBase`, `CreateOrUpdateUserGroupFormSecurityControllerBase`, `CreateUserFormSecurityController`, `CreateUserGroupFormSecurityController`, `GetByUserKeyFormSecurityController`, `GetForCurrentUserFormSecurityController`, `GetUserFormSecurityControllerBase`, `UpdateUserFormSecurityController`, `UpdateUserGroupFormSecurityController` |
+
+The following methods are removed:
+
+| Removed | Use instead |
+| --- | --- |
+| `IFormAnalyticsService.GetSourcesCountPerForm` and `GetUniqueMemberCount` without a time zone | The overloads that take a `string? timeZone` parameter |
+| `CacheKeys.GetUniqueMembersCacheKey` without a time zone | The overload that takes a time zone |
+| `GetFieldTypeControllerBase.ResolveRichTextPropertyEditorUiAlias()` | `ResolveRichTextPropertyEditorUiAliasAsync()` |
+| `WorkflowTypeControllerBase.CreateWorkflowTypeWithSettings(WorkflowType)` | The overload that takes a `richTextPropertyEditorUiAlias` parameter |
+
+The `RebuildRecordsIndexForSorting` and `RebuildRecordsIndexForSensitiveData` migration classes are removed. `RebuildRecordsIndex` is removed too, as described in the [Records index on Umbraco Search](#records-index-on-umbraco-search) section.
+
+### Client-side validation without jQuery
+
+This change was introduced in version 19.0.0. It affects you if your site validates forms with jQuery Validation. It also affects custom themes that load `umbracoforms-conditions.js`.
+
+Forms supports one client-side validation library: [ASP.NET Client Validation](https://github.com/haacked/aspnet-client-validation). Support for jQuery Validation and jQuery Unobtrusive Validation is removed.
+
+The `umbracoforms-conditions.js` and `umbracoforms-conditions.min.js` files are no longer shipped. The conditions logic is part of `umbracoforms.js`.
+
+If the ASP.NET Client Validation library isn't loaded, Forms shows an error message on the form.
+
+To upgrade:
+
+* Remove the jQuery, jQuery Validate, and jQuery Unobtrusive Validation script references that you added for Forms.
+* Render the Forms dependencies with `@Html.RenderUmbracoFormDependencies(Url)`, as described in the [Preparing your Frontend](../developer/prepping-frontend.md) article.
+* Remove any reference to `umbracoforms-conditions.js` or `umbracoforms-conditions.min.js` from your custom themes.
+
+For more information, see the [announcement](https://github.com/umbraco/Announcements/issues/33).
+
+### Native date input for the Date field
+
+This change was introduced in version 19.0.0. It affects you if a custom theme overrides the Date field views. It also affects you if you have conditions that compare a Date field with a date.
+
+The Date field in the default theme renders a native HTML `<input type="date">`. Forms no longer ships the Pikaday date picker or the Moment.js library.
+
+* The field renders one input. The hidden input with the `_1` ID suffix and the `datepickerfieldshadow` class is removed.
+* The value is always in the `yyyy-MM-dd` format. The browser shows the date in the visitor's own format.
+* The **Minimum date** and **Maximum date** settings render as `min` and `max` attributes, replacing `data-min-date` and `data-max-date`.
+* The **Placeholder** setting has no effect in the default theme, because browsers don't show a placeholder in a date input.
+* The default theme no longer uses the `DatePickerYearRange` and `DatePickerFormat` settings. They remain available for custom themes with their own date picker.
+* When `DatePickerFormatForValidation` is set, the server-side validation still accepts dates in that format.
+
+To upgrade:
+
+* If a custom theme overrides `FieldType.DatePicker.cshtml` or `DatePicker.cshtml`, update it from the default theme's views.
+* If a custom theme uses Pikaday or Moment.js from the Forms static assets, include your own copy of those libraries.
+* Update conditions that compare a Date field with a date to use the `yyyy-MM-dd` format. For more information, see the [Conditions for Dates](../editor/creating-a-form/conditional-logic.md#conditions-for-dates) section.
+
+For more information, see the [announcement](https://github.com/umbraco/Announcements/issues/34).
+
+### Bootstrap 3 horizontal theme removed
+
+This change was introduced in version 19.0.0. It affects you if a form uses the `bootstrap3-horizontal` theme, or if code references `BootstrapHorizontalTheme`.
+
+Forms no longer ships the `bootstrap3-horizontal` theme. The `BootstrapHorizontalTheme` class, its views, and its stylesheet are removed. A form set to use the theme renders with the site's default theme.
+
+To upgrade, check how those forms look with the default theme. To keep a Bootstrap layout, create a custom theme for the Bootstrap version your site uses. For more information, see the [Themes](../developer/themes.md) article.
+
+For more information, see the [announcement](https://github.com/umbraco/Announcements/issues/35).
+
+### Records index on Umbraco Search
+
+This change was introduced in version 19.0.0. It affects you if custom code uses the records index types in `Umbraco.Forms.Examine`.
+
+Umbraco CMS 19 indexes content through its search abstraction instead of directly through Examine. Forms now indexes records through that abstraction too. The index keeps its name, `UmbracoFormsRecordsIndex`.
+
+Forms fills the index at startup when the index is empty. A migration no longer rebuilds it, so the `RebuildRecordsIndex` migration class is removed.
+
+The following types are removed from `Umbraco.Forms.Examine`:
+
+* `ConfigureUmbracoFormsIndexOptions`
+* `IUmbracoFormsIndexingHandler`
+* `IUmbracoFormsRecordIndex`
+* `RecordStorageNotificationHandler`
+* `RecordValueSetValidator`
+* `UmbracoFormsRecordRecordIndex`
+
+To index or remove a record from custom code, use `IFormRecordIndexingService`.
+
+### Single-choice dropdown settings
+
+This change was introduced in version 19.0.0. It affects you if a custom provider type has a setting with `View = "Umb.PropertyEditorUi.Dropdown"`. Provider types include field types, workflow types, and prevalue source types.
+
+In Umbraco CMS 19, the `Umb.PropertyEditorUi.Dropdown` editor always allows more than one choice. Forms keeps only the first choice for a setting that uses it. For a single choice, set the setting's `View` to `Umb.PropertyEditorUi.Dropdown.Single`.
+
+The setting value converter for `Umb.PropertyEditorUi.TinyMCE` is removed, because Umbraco CMS no longer has that editor. For a rich text setting, use `Forms.PropertyEditorUi.RichText`.
+
+For more information, see the [Setting Types](../developer/extending/adding-a-type/setting-types.md) article.
+
+### TypeScript types in the backoffice package
+
+This change was introduced in version 19.0.0. It affects you if a backoffice extension creates Forms API models in TypeScript.
+
+The `@umbraco-forms/backoffice` types are generated from the CMS 19 OpenAPI document. On models that have them, the `entityType` and `unique` properties are now `string` instead of `string | null`. Code that reads them is unaffected. Code that sets either property to `null` no longer compiles.
+
+### Analytics on Umbraco Analytics UI
+
+This change was introduced in version 19.0.0. It affects you if you extend the Forms analytics screens or call the analytics Management API endpoints.
+
+The analytics screens draw their charts and tables with the Umbraco Analytics UI package, which other Umbraco products share. Forms depends on the `Umbraco.Analytics.UI` package. The `@umbraco-forms/backoffice` package has `@umbraco/analytics-ui` as a peer dependency, in place of `chart.js` and `chartjs-plugin-annotation`.
+
+The following are removed from `@umbraco-forms/backoffice`:
+
+* The `forms-chart`, `forms-prefab-chart`, `forms-analytics-table`, and `forms-prefab-table` elements, and their generators.
+* `FormsChartBaseElement`, `FormsPrefabGeneratorControllerBase`, and the `FormsPrefab*` and `FormsChart*` types.
+* The `forms-daterange-picker` element and its modal, `forms-analytics-groupby-controls`, and `forms-button-group`.
+* `FormsDateRangeManagerContext`, `FORMS_DATERANGE_MANAGER_CONTEXT`, and `DATEPICKER_MODES`.
+
+`FormsAnalyticsContext` keeps its context token. It now holds `range`, `compare`, and `groupBy` in the `@umbraco/analytics-ui` shapes, and queries with `query` and `queryWithCompare`.
+
+A `formsAnalyticsWidget` manifest no longer has `meta.chartAlias` or `meta.aspect`, because the prefab charts they named are removed. A widget draws its own content, for example with the `uaui-*` elements.
+
+The analytics Management API changes as follows:
+
+* `retentionDays` is replaced by `retentionDaysSubmitted`, `retentionDaysApproved`, and `retentionDaysRejected`. These are numbers, where `0` means forever.
+* `/analytics/submissions` takes one or more of `entries`, `workflowErrors`, `triggered`, and `uniqueMembers`, instead of exactly two metrics.
+* `week` and `month` join `date` as time dimensions on `/analytics/submissions` and `/analytics/origins`. `/analytics/origins` rejects a dimension that isn't a time dimension.
+* `/analytics/workflows` adds a row for runs of workflows no longer on the form, with an empty `workflowId` and `workflowName`.
+* `ChartDataBuilder.BuildMultiMetricTimeSeriesChart` takes lists of metrics and series.
+
+`AnalyticsQueryResult.UniqueMembers` is obsolete. Ask `/analytics/submissions` for `uniqueMembers` and read it from `totals` instead.
 
 ### Forms Delivery API OpenAPI document
 

@@ -101,7 +101,7 @@ The defaults are suitable for most sites:
 
 {% hint style="info" %}
 
-`Umbraco:Automate:Enabled` and the `Umbraco:Automate:Governance` section are obsolete. They never had any effect, and are scheduled for removal in Umbraco Automate 19. Remove them from your configuration. What they covered now works like this:
+`Umbraco:Automate:Enabled`, the `Umbraco:Automate:Governance` section, and `Umbraco:Automate:Scripting:StatementTimeout` were removed in Umbraco Automate 19. They never had any effect, so a site that still sets them works the same. Remove them from your configuration. What `Enabled` and `Governance` covered now works like this:
 
 * To control who can use automations, grant or remove access to the **Automation** section.
 * Sensitive values are always masked, and runs are always recorded.
@@ -177,7 +177,6 @@ The `Scripting` section controls the sandbox the **Run Script** action runs in:
         "MaxRecursionDepth": 64,
         "MaxArraySize": 1000,
         "MaxStatements": 10000,
-        "StatementTimeout": "00:00:03",
         "TotalExecutionTimeout": "00:00:15",
         "HttpRequestTimeout": "00:00:05",
         "MaxResponseBodyBytes": 10485760
