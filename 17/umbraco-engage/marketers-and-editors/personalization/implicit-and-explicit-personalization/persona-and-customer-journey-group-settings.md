@@ -41,17 +41,17 @@ When set to Percentage, the deviation is measured as a percentage of the second-
 
 ### Expiration type
 
-Expiration determines how long scores are retained for a visitor. When scores expire, all scores in the group are reset and the visitor starts over. By default, scores never expire.
+Expiration determines how long scores are retained for a visitor. Each score expires on its own, counted from when it was earned, so older scores drop off while newer ones keep counting. By default, scores never expire.
 
 #### Days
 
-When using Days, scores are retained for the specified number of days after the most recent scoring activity in the group. Each new scoring event restarts the countdown.
+When using Days, each score is retained for the specified number of days after it was earned.
 
 #### Sessions
 
 When using Sessions, scores are retained for a specified number of visitor sessions. A session follows the standard Engage session definition, where all activity within 30 minutes is considered part of the same session.
 
-For example, if the expiration value is set to 5 sessions, scores remain available during the first five sessions after scoring. When the visitor returns for the sixth session, all scores in the group are reset.
+For example, with an expiration value of 5 sessions, a score earned in the visitor's second session counts in sessions two to six. From session seven, that score no longer counts.
 
 ### Maximum points to score
 
@@ -83,7 +83,7 @@ For example, a visitor may read content aimed at both developers and technical d
 
 Some interests are temporary and should not influence personalization forever. For example, a visitor researching Black Friday promotions may be highly engaged for a few weeks. But that interest is unlikely to remain relevant couple of months later.
 
-In these cases, consider using an **Expiration type** to automatically reset scores after a period of time or a number of sessions.
+In these cases, consider using an **Expiration type** to automatically expire scores after a period of time or a number of sessions.
 
 This allows Engage to build a new profile based on the visitor's current interests rather than relying on historical behaviour.
 
