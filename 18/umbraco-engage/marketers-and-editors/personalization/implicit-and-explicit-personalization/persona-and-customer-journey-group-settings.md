@@ -31,6 +31,8 @@ This setting helps avoid activating a persona or customer journey step when a vi
 
 If the minimal deviation is set to 0, the profile with the highest score becomes active as soon as the threshold value is reached.
 
+The default minimal deviation is 1. Before Umbraco Engage 18.1, the default was 0.
+
 #### Absolute
 
 When set to Absolute, the deviation is measured in points. For example, if the highest score is 40 and the next highest score is 35, the deviation is 5 points.

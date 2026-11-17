@@ -50,6 +50,10 @@ public class YourService
 }
 ```
 
+{% hint style="info" %}
+`TriggerGoal` and `TriggerGoalAsync` reject a goal that is inactive, invalid, or unknown from Umbraco Engage 17.6. A warning is logged and no goal completion is stored. `TriggerGoalAsync(long)` returns `false` in that case.
+{% endhint %}
+
 ### Triggering Outside of HttpContext
 
 The method automatically determines the current page view, linking the goal to a session and visitor. This means the `HttpContext` should be available and `triggerGoal` should be called from within a valid pageview. See [what-is-measured-by-default.md](../analytics/what-is-measured-by-default.md "mention") for what is considered a valid pageview.
