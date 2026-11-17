@@ -16,6 +16,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 13 including all changes for this version.
 
+#### 13.3.4
+
+* Tightened permission checks in the backoffice so users only see the stores and data their sections and store access allow
+
 #### 13.3.3
 
 * Removed the upper version limit on some Microsoft.Extensions packages that was blocking builds needing a newer Azure.Identity
