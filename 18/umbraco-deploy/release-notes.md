@@ -18,6 +18,32 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 18, including all changes for this version.
 
+### [18.3.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.3.0) (November 12th 2026)
+
+* Add three health checks in a new **Deploy** group on the **Health Check** dashboard in the **Settings** section. Each check offers actions to fix what it reports:
+  * **UDA file versions** reports `.uda` files written by another version of Deploy, and files that can't be read. Files from a newer version are errors, files from an older major version are warnings. Use **Migrate** to update outdated files to the installed version. In `ReadOnly` [disk mode](getting-started/deploy-settings.md#disk-mode), Migrate isn't offered: migrate on a development environment and update the files in your build.
+  * **Schema comparison** reports schema items without a `.uda` file, `.uda` files without a schema item, and items that differ from their file. Use **Export schema** or **Deploy schema** to bring them in line.
+  * **Failed disk operation** reports when the last disk operation failed, such as a schema deployment. Use **Dismiss** to clear the failure. The details stay in the logs.
+* Add a **Version** column to the schema comparison, showing whether each `.uda` file was written by the installed version of Deploy.
+* Show a **View progress** button on the Deploy dashboard while an operation runs.
+* Keep the export queue empty after **Export to Zip** or **Clear queue**. Previously, the exported items returned after reloading the page.
+* Offer **Include subitems** when exporting a dictionary item with children, with `TransferDictionaryAsContent` enabled. Items without subitems to export are added to the export queue directly, without opening the dialog.
+* Only offer to include the items below in the **Partial Restore** dialog for entity types that support it. Members no longer show this option.
+* Show the tree name, such as **Members** or **Dictionary**, in the header of the remote item picker instead of the entity type alias.
+
+### [18.2.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (November 5th 2026)
+
+* All items from 18.2.0-rc1 and 18.2.0-rc2.
+
+### [18.2.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (October 30th 2026)
+
+* Show the **Queue for Transfer** and restore actions on Umbraco Forms and Umbraco Commerce entities [#355](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/355). Entity types that packages register for these actions are now added when the action loads after the package.
+* Delete the `.uda` files and signatures of the descendants when deleting a dictionary item [#356](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/356). Previously, the next schema deployment failed with `ParentNotFound`. If you already committed the `.uda` files of these descendants, remove them manually.
+* Include the log in the schema deployment status report again. Deploy no longer writes the `deploy.log` file, which stayed empty.
+* Report a schema deployment that fails without an error message as failed instead of completed. A failure recorded right after a completed deployment now stays visible.
+* Show the Deploy dashboard status as ready instead of an error when the Deploy folder doesn't exist yet.
+* Remove the double slash from remote tree and content comparison requests when a workspace URL ends with a slash.
+
 ### [18.2.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.2.0) (October 13th 2026)
 
 * Pick any item from the remote environment in the **Partial Restore** dialog, including members. Items that don't exist on the local environment are included too ([discussion #321](https://github.com/umbraco/Umbraco.Deploy.Issues/discussions/321)). The picker pages through the remote tree and you can search it by name. Members also match on username and email. Elements and element folders can be picked, and element folders can be restored with their descendants. A remote environment running an older Deploy version returns the items as before.

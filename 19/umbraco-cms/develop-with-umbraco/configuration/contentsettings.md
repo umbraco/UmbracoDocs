@@ -17,7 +17,6 @@ The following snippet will give an overview of the keys and values in the conten
         "KeepAllVersionsNewerThanDays": 7,
         "KeepLatestVersionPerDayForDays": 90
       },
-      "AllowEditInvariantFromNonDefault": false,
       "AllowedMediaHosts":  [],
       "AllowedUploadedFileExtensions": [],
       "DisableDeleteWhenReferenced": false,
@@ -59,14 +58,6 @@ The following snippet will give an overview of the keys and values in the conten
 ## Root level settings
 
 In the root level section, that is those without a separate sub section like Imaging, you can configure:
-
-### Allow edit invariant from non-default
-
-Invariant properties are properties on a multilingual site that are not varied by culture. This means that they share the same value across all languages added to the website.
-
-When the `AllowEditInvariantFromNonDefault` setting is set to `false` (default) the invariant properties can only be edited and published from the default language. This means you need access to the default language in order to edit the property. You will also need to publish the default language to see changes in the invariant property on your website.
-
-When set to `true` the invariant properties can be edited and published from any language.
 
 ### Allowed upload file extensions
 

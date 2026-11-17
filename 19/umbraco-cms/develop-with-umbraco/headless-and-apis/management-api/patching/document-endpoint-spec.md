@@ -189,19 +189,23 @@ Root-level value entries do not have an `editorAlias` field.
 **Block List:**
 ```
 {
+  "key": GUID,                         // Unique layout item identifier
   "contentKey": GUID,
-  "settingsKey": GUID | null
+  "settingsKey": GUID | null,
+  "isExternalContent": boolean         // true when contentKey references a Library Element (no contentData entry)
 }
 ```
 
 **Block Grid:**
 ```
 {
+  "key": GUID,                         // Unique layout item identifier
   "columnSpan": integer,
   "rowSpan": integer,
   "areas": BlockGridAreaItem[],
   "contentKey": GUID,
-  "settingsKey": GUID | null
+  "settingsKey": GUID | null,
+  "isExternalContent": boolean         // true when contentKey references a Library Element (no contentData entry)
 }
 ```
 
@@ -216,8 +220,10 @@ Root-level value entries do not have an `editorAlias` field.
 **Rich Text:**
 ```
 {
+  "key": GUID,                         // Unique layout item identifier
   "contentKey": GUID,
-  "settingsKey": GUID | null
+  "settingsKey": GUID | null,
+  "isExternalContent": boolean         // true when contentKey references a Library Element (no contentData entry)
 }
 ```
 

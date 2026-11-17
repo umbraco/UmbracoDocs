@@ -26,7 +26,7 @@ All these settings contain default values, so nothing needs to be explicitly con
         "MaxHeight": 5000
       },
       "Memory": {
-        "Enabled": false,
+        "Enabled": true,
         "MaximumPoolSizeMegabytes": 0,
         "MaximumConcurrentProcessing": 0,
         "MaximumDecodedImageMegabytes": 0
@@ -106,7 +106,7 @@ When enabled, Umbraco applies three bounds to the image processing library:
 
 Each bound is derived from the memory available to the process. The derived bounds apply only when less than 4 GB is available. On a host with more memory, the image processing library keeps its own defaults. A bound you set explicitly applies on any host, whatever the available memory.
 
-The feature is disabled by default. Enable it on hosts with a memory limit:
+The feature is enabled by default. To turn it off, set `Enabled` to `false`:
 
 {% code caption="appsettings.json" %}
 
@@ -115,7 +115,7 @@ The feature is disabled by default. Enable it on hosts with a memory limit:
   "CMS": {
     "Imaging": {
       "Memory": {
-        "Enabled": true
+        "Enabled": false
       }
     }
   }
@@ -126,7 +126,7 @@ The feature is disabled by default. Enable it on hosts with a memory limit:
 
 ### Enabled
 
-Turns memory management on or off. Defaults to `false`, which leaves the memory behavior of the image processing library untouched.
+Turns memory management on or off. Defaults to `true`. Set it to `false` to leave the memory behavior of the image processing library untouched.
 
 ### Maximum pool size megabytes
 

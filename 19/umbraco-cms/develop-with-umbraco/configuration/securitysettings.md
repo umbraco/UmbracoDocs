@@ -89,9 +89,6 @@ The authentication cookie which is set in the browser when a backoffice user log
 
 ### Auth cookie SameSite
 
-Key: `AuthCookieSameSite`
-Type: `string` (default: `"Strict"`)
-
 Sets the `SameSite` attribute of the authentication cookie. Valid values are "Strict" (default), "Lax", "None", and "Unspecified".
 
 Keep the default in production. The `SameSite` attribute stops cross-site requests from carrying the authentication cookie. The Management API has no antiforgery tokens, so the attribute is its protection against cross-site request forgery.

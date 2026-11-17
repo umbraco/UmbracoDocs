@@ -70,7 +70,15 @@ Protected content (pages with member login restrictions) is filtered based on th
 
 ### Agent Tool
 
-The agent tool runs in the backoffice and respects the current user's start node restrictions. Users with restricted content or media start nodes only see results under their allowed tree branches. If content cannot be resolved to verify the path, the result is excluded when restrictions are in place.
+The `semantic_search` agent tool needs an acting backoffice user. In the backoffice, the acting user is the signed-in user. In an Umbraco Automate workflow, the acting user is the workspace service account. Without an acting user, the tool returns no results.
+
+Each result is checked against the acting user's access before it's returned. A result is only returned when the user could see it in their own backoffice tree:
+
+- The user needs access to a backoffice section that shows a tree, such as Content or Media.
+- A content result must be under one of the user's content start nodes, with Browse permission. Ancestors of a start node are also returned, as the content tree shows them.
+- A media result must be under one of the user's media start nodes.
+
+If a result can't be resolved to check access, it's excluded.
 
 ## Database Providers
 

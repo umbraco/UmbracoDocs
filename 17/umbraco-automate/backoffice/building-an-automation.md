@@ -65,6 +65,8 @@ To add a step between two connected steps:
 
 When you insert a control flow step, the step that followed connects to the output that continues the flow. That is **Done** for **For Each**, **While**, and **Parallel**, and **True** for **If**. For **Switch**, it is the first case, or **default** when there are no cases. For **Request Approval**, it is **Approved**. Automate moves the downstream steps down to make room.
 
+When you insert an action that declares outcomes, the step that followed connects to the action's default exit. When the action has no default, it connects to the first exit. If the action has no exits yet, the line stays on an **Any result** exit until you move it.
+
 ### Use Bindings
 
 Any setting that supports bindings shows a binding picker icon. Click the icon to insert a `${ ... }` placeholder that resolves to data from the trigger or a previous step at runtime. See [Bindings](../concepts/bindings.md) for the syntax.
@@ -72,6 +74,21 @@ Any setting that supports bindings shows a binding picker icon. Click the icon t
 ### Branch with Control Flow
 
 To branch or loop, pick a control flow node such as **If**, **Switch**, or **For Each** from the picker. Each control flow node has one or more inner branches that you fill with steps the same way you fill the main canvas.
+
+### Branch on Action Outcomes
+
+Some actions declare named outcomes, such as **Found** and **Not found** on **Get Content**. A step for one of these actions shows one exit per outcome on its right edge, instead of a single exit at the bottom. Each exit has its own **+** button, and each exit takes one line. The default exit is marked **(default)**. Hover an exit to see when the action takes it, if the action describes it.
+
+Connect each exit to the step that should run for that outcome. An exit with nothing connected ends that path of the run. See [Control Flow](../concepts/control-flow.md#how-outcomes-route-a-run).
+
+Some actions build their exits from their settings, for example one exit per option you enter. The exits update when you save the step's settings:
+
+* A line on an exit that still exists stays connected.
+* A line on an exit that no longer exists moves to a red **Missing outcome** exit, labeled with the outcome's key. Automate doesn't delete the line.
+
+If Automate can't load a step's exits, it shows an error notification. The step keeps the exits it had, so no lines are lost.
+
+In an automation saved before the action declared outcomes, the step's existing line shows on an **Any result** exit. That line runs whatever the step returns. See [Any Result Lines](../concepts/control-flow.md#any-result-lines).
 
 ### Save and Publish
 
@@ -91,6 +108,12 @@ A draft automation does not respond to triggers. The automation only goes live a
 {% hint style="warning" %}
 
 If any steps on the canvas aren't connected to the trigger, Automate shows a warning naming them when you save or publish. Disconnected steps are never run, but the warning doesn't block saving. The canvas shows these steps faded, with a dashed outline. Reconnect or remove them once you see it.
+
+{% endhint %}
+
+{% hint style="warning" %}
+
+Publishing fails while a line leaves a **Missing outcome** exit, because that line can never run. The error names the step and the outcome that no longer exists. Move the line to another exit or remove it, then publish again. Saving a draft with the line still works.
 
 {% endhint %}
 

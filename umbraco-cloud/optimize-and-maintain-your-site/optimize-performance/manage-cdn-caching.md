@@ -7,7 +7,7 @@ The caching options relate to the traffic that goes through your hostname from t
 The options that are currently available are:
 
 * Enable Cache (default: On)
-* Cache TTL: Time to Live (default: 120 minutes)
+* Cache TTL: Time to Live (default: depends on your plan, see [Plan specific features](manage-cdn-caching.md#plan-specific-features))
 * Cache Everything (default: off)
 
 ![Default Options](../../.gitbook/assets/CDN-caching-default.png)
@@ -37,6 +37,8 @@ To add a custom hostname, follow the steps in [Managing Hostnames](../../go-live
 When caching is enabled on your project static assets like CSS and images are cached in the Content Delivery Network (CDN) used by Umbraco Cloud. How assets are cached is up to you, as you can control it through 'cache-control headers'.
 
 By default, Umbraco Cloud enforces a minimum TTL based on the plan of your Umbraco Cloud Project. This means that assets cannot be cached for a shorter period than what your Plan allows. You can always choose a longer duration, especially, if you don't expect your assets to change.
+
+A long Cache TTL, such as 30 days or more, reduces the number of requests that reach your website. A long TTL works best for assets whose URL changes when the file changes, for example `site.css?v=2`. Assets with a fixed URL stay cached until the TTL expires or you [purge the cache](manage-cdn-caching.md#purge-caching). The number of purge requests per day is limited by your plan.
 
 The following file types are cached as static assets through the CDN:
 
@@ -158,6 +160,14 @@ Access to the different options varies depending on the Umbraco Cloud Plan your 
   * Enable Cache
   * Cache TTL (see below for minimum TTL)
   * Cache Everything
+
+The default Cache TTL for new environments varies as follows:
+
+* Starter: 24 hours
+* Standard: 6 hours
+* Professional: 2 hours
+
+Environments created before October 2026 keep their existing Cache TTL. You can change the Cache TTL in the **Default settings**.
 
 The minimum Cache TTL varies as follows:
 

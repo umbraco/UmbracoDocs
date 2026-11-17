@@ -1,21 +1,39 @@
 ---
 description: >-
-  Configure sensitive data filtering and deployment settings for Umbraco AI Deploy.
+  Configure how Umbraco AI Deploy handles sensitive connection settings such as API keys.
 ---
 
 # Configuration
 
-Deploy support provides configuration options to control how sensitive data is handled during deployment.
+Deploy support provides configuration options to control which connection settings are written to deployment files.
 
-## Default Behavior
+## How Sensitive Settings Are Handled
 
-By default, Deploy:
+Providers mark fields that hold secrets, such as API keys and client secrets, as sensitive (`[AIField(IsSensitive = true)]`). Deploy keeps the literal values of these fields out of deployment files:
 
-- **Excludes encrypted values** - Values starting with `ENC:` are not deployed
-- **Allows configuration references** - Values starting with `$` (e.g., `$Umbraco:AI:Secrets:OpenAIApiKey`) are deployed
-- **Allows sensitive fields** - Fields marked as sensitive (via `[AIField(IsSensitive = true)]`) are treated like any other field and can be deployed
+- **Sensitive literal values are never deployed.** A key typed directly into a sensitive field stays on the environment where you entered it.
+- **Configuration references are deployed.** A value such as `$Umbraco:AI:Secrets:OpenAIApiKey` only names a setting. Each environment resolves it from its own configuration.
+- **Encrypted values are never deployed.** Values starting with `ENC:` can't be read on another environment, because each environment has its own encryption keys.
 
-Encrypted values stay safe while configuration references for sensitive fields are still deployed. To further restrict sensitive fields, enable `IgnoreSensitive` or list specific fields in `IgnoreSettings`.
+The same rules apply when Deploy reads a deployment file. A literal secret found in a deployment file is not imported, including from files written by earlier versions.
+
+{% hint style="warning" %}
+
+Deployment files written by earlier versions of Umbraco AI Deploy may contain literal API keys. Those keys remain in your source control history.
+
+Revoke any key that was stored as a literal value with its provider. Then create a new key and enter it on each environment, ideally as a configuration reference.
+
+{% endhint %}
+
+### When a Deployed Connection Has No Value for a Secret
+
+The target environment keeps its own value for any sensitive field the deployment file doesn't carry. Deploying never clears a key that is already set on the target.
+
+When a connection arrives without a value for a required secret, and the target has no value either, Deploy still imports it. The connection is imported as inactive. It stays inactive on later deployments until you set the value.
+
+To use the connection, enter the secret on that environment and activate the connection.
+
+Sensitive fields in profile capability settings, guardrail rules, and context resources follow the same rules. The settings below apply to connections only.
 
 ## Configuration Settings
 
@@ -29,9 +47,8 @@ Add these settings to your `appsettings.json`:
     "AI": {
       "Deploy": {
         "Connections": {
-          "IgnoreEncrypted": true,
-          "IgnoreSensitive": false,
-          "IgnoreSettings": []
+          "IgnoreSettings": [],
+          "IncludeSensitiveSettings": []
         }
       }
     }
@@ -41,130 +58,48 @@ Add these settings to your `appsettings.json`:
 
 {% endcode %}
 
-### IgnoreEncrypted
-
-**Default:** `true`
-
-When `true`, blocks encrypted values (starting with `ENC:`) from being deployed, but allows configuration references (starting with `$`).
-
-```json
-"IgnoreEncrypted": true
-```
-
-**Example behavior:**
-
-| Value in Database | Deployed? |
-|-------------------|-----------|
-| `$Umbraco:AI:Secrets:OpenAIApiKey` | ✅ Yes (configuration reference) |
-| `ENC:abc123...` | ❌ No (encrypted value) |
-| `https://api.openai.com` | ✅ Yes (plain value) |
-
-**When to set to `false`:** Only if you need to deploy encrypted values which is rarely needed and not recommended.
-
-### IgnoreSensitive
-
-**Default:** `false`
-
-When `true`, blocks all values from fields marked as sensitive by providers, even configuration references.
-
-```json
-"IgnoreSensitive": false
-```
-
-**Example behavior (when `false`):**
-
-For a field marked as sensitive (e.g., `ApiKey`):
-
-| Value in Database | Deployed? |
-|-------------------|-----------|
-| `$Umbraco:AI:Secrets:OpenAIApiKey` | ✅ Yes (configuration reference allowed) |
-| `ENC:abc123...` | ❌ No (blocked by IgnoreEncrypted) |
-| `sk-abc123...` | ✅ Yes (plain value allowed - not recommended) |
-
-**When to set to `true`:** Only if you want to completely block sensitive fields from deployment, even configuration references. This is the most restrictive option.
-
 ### IgnoreSettings
 
 **Default:** `[]` (empty array)
 
-Specify individual setting field names to always block, regardless of other settings.
+Specify connection setting names that are never deployed, whatever their value. Configuration references are excluded too. Names are matched case-insensitively.
 
 ```json
-"IgnoreSettings": ["ApiKey", "ClientSecret"]
+"IgnoreSettings": ["endpoint"]
 ```
 
-The `IgnoreSettings` array provides fine-grained control over specific fields. Use it when you want to block specific fields but allow others.
+`IgnoreSettings` takes precedence over `IncludeSensitiveSettings`.
 
-## Filtering Priority
+### IncludeSensitiveSettings
 
-When Deploy evaluates whether to include a setting value, it checks in this order:
+**Default:** `[]` (empty array)
 
-1. **IgnoreSettings** - If the field name is in this array, block it (highest priority)
-2. **IgnoreSensitive** - If `true` and field is marked sensitive, block it
-3. **IgnoreEncrypted** - If `true` and value starts with `ENC:`, block it
-4. **Allow** - Otherwise, include the value in deployment
-
-## Recommended Configurations
-
-### Balanced Security (Default)
-
-Blocks encrypted values but allows configuration references for sensitive fields:
-
-{% code title="appsettings.json" %}
+Specify sensitive connection setting names whose literal values may be deployed. Names are matched case-insensitively.
 
 ```json
-{
-  "Connections": {
-    "IgnoreEncrypted": true,
-    "IgnoreSensitive": false,
-    "IgnoreSettings": []
-  }
-}
+"IncludeSensitiveSettings": ["apiKey"]
 ```
 
-{% endcode %}
+{% hint style="danger" %}
 
-**Use when:** You use configuration references for secrets and need to deploy them.
+Literal values of the fields listed here are written in plain text to the deployment file, and so to source control. Use a configuration reference instead wherever possible.
 
-### Maximum Security
+{% endhint %}
 
-Blocks all sensitive fields entirely, even configuration references:
+### Obsolete Settings
 
-{% code title="appsettings.json" %}
+`IgnoreEncrypted` and `IgnoreSensitive` are obsolete and have no effect. Encrypted values and sensitive literal values are never deployed. Use `IncludeSensitiveSettings` to opt specific sensitive fields in.
 
-```json
-{
-  "Connections": {
-    "IgnoreEncrypted": true,
-    "IgnoreSensitive": true,
-    "IgnoreSettings": []
-  }
-}
-```
+## Filtering Order
 
-{% endcode %}
+When Deploy evaluates whether to include a connection setting value, it checks in this order:
 
-**Use when:** You want absolute protection and manage sensitive fields outside of Deploy.
+1. **IgnoreSettings** - If the field name is listed, exclude the value.
+2. **Encrypted values** - If the value starts with `ENC:`, exclude the value.
+3. **Sensitive fields** - If the field is sensitive, include the value only when it's a configuration reference or the field is listed in `IncludeSensitiveSettings`.
+4. **Other fields** - Include the value.
 
-### Block Specific Fields Only
-
-Block specific fields but allow everything else:
-
-{% code title="appsettings.json" %}
-
-```json
-{
-  "Connections": {
-    "IgnoreEncrypted": true,
-    "IgnoreSensitive": false,
-    "IgnoreSettings": ["ApiKey", "ClientSecret", "PrivateKey"]
-  }
-}
-```
-
-{% endcode %}
-
-**Use when:** You have specific fields that should never be deployed, but other fields are safe.
+A value starting with `$$` is a literal that begins with `$`, not a configuration reference.
 
 ## Using Configuration References
 
@@ -219,7 +154,7 @@ Check the deployment file (`.uda`) to ensure it contains the reference, not the 
 ```json
 {
   "Settings": {
-    "ApiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
+    "apiKey": "$Umbraco:AI:Secrets:OpenAIApiKey"
   }
 }
 ```
@@ -241,11 +176,15 @@ appsettings.Production.json       # Production API keys (not in version control)
 
 ### API Keys Appearing in Deployment Files
 
-If you see actual API keys in `.uda` files:
+Sensitive literal values are not written to deployment files. If you see an API key in a `.uda` file:
 
-1. Verify you're using `$` references, not hardcoded keys
-2. Check that `IgnoreEncrypted` is `true` (default)
-3. Ensure the field is marked as sensitive by the provider
+1. Check whether the field is listed in `IncludeSensitiveSettings`.
+2. Check whether the file was written by an earlier version. Saving the connection rewrites the file.
+3. Check that the provider marks the field as sensitive.
+
+### Connection Is Inactive After Deployment
+
+A connection is imported as inactive when the target environment has no value for one of its required secrets. Enter the secret on that environment, then activate the connection.
 
 ### Configuration References Not Working
 

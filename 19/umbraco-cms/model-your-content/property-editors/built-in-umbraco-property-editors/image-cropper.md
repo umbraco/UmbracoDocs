@@ -60,7 +60,7 @@ The editor can fit the crop to the image to ensure that the image is presented a
 
 [ImageSharp.Web](https://sixlabors.com/products/imagesharp-web/) is image processing middleware for ASP.NET.
 
-We bundle this package with Umbraco and you can therefore take full advantage of all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
+Umbraco bundles this package, so you can use all its features for resizing and format changing. Learn more about the built in processing commands in [the official ImageSharp documentation](https://docs.sixlabors.com/articles/imagesharp.web/processingcommands.html).
 
 To learn how Umbraco connects to ImageSharp, see the [Image Processing](../../../develop-with-umbraco/application-code/backend-and-custom-logic/image-processing.md) article. The article also covers switching to ImageSharp 2 and when a direct ImageSharp reference needs a license key.
 
@@ -120,7 +120,7 @@ Set the `htmlEncode` to false so that the URL is not HTML encoded
 
 ## Add values programmatically
 
-To update a content property value you need the [Content Service](https://apidocs.umbraco.com/v18/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
+To update a content property value you need the [Content Service](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
 The following sample demonstrates how to add or change the value of an Image Cropper property programmatically. The sample creates an API controller with an action, which must be invoked via a POST request to the URL written above the action.
 

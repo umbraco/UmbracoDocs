@@ -33,6 +33,7 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
     "defaultSpeechToTextProfileId": null,
     "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
+    "defaultExtractionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
 ```
@@ -49,6 +50,7 @@ The Settings API allows you to configure system-wide defaults for Umbraco.AI.
 | `defaultSpeechToTextProfileId` | GUID  | Default profile for speech-to-text operations |
 | `defaultImageGenerationProfileId` | GUID  | Default profile for image generation (experimental) |
 | `defaultDecisionProfileId`  | GUID     | Default profile for decisions (experimental) |
+| `defaultExtractionProfileId` | GUID    | Default profile for extraction (experimental) |
 | `disclosureNoticeMode`      | string   | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
 {% hint style="info" %}

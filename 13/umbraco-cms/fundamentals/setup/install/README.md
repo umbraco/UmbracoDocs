@@ -21,7 +21,7 @@ Replace `13.*` with the specific version you want to install.
 Example:
 
 ```bash
-dotnet new install Umbraco.Templates@13.16.0
+dotnet new install Umbraco.Templates::13.16.0
 ```
 {% endhint %}
 

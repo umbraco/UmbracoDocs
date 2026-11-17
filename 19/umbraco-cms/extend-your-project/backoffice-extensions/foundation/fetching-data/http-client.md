@@ -111,7 +111,8 @@ const { data: id, error } = await tryExecute(
 
 The Umbraco HTTP Client handles these responses for you:
 
-* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. For your own API controllers, the server answers with a 401 response only when the controller has the `[ApiController]` attribute. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Expired session**: A 401 response asks the user to log in again. After the user logs in, the client retries `GET` requests. For other requests, it shows a notification that asks the user to try again. A redirect to the login page after the session has expired gets the same handling. See [Expired sessions in your own controllers](custom-generated-client.md#expired-sessions-in-your-own-controllers).
+* **Redirects**: The client follows redirects, and your request gets the response from the redirect target. A redirect to the login page is the exception: the client handles it as a 401 or 403 response.
 * **Session activity**: The client counts successful requests as activity for the session timeout.
 * **Errors**: The client turns an error response into an error with the problem details from the server. `tryExecute` shows the title and detail in a notification, except for 401, 403 and 404 responses. See [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
 * **Server notifications**: The client shows the notifications that the server sends in the `Umb-Notifications` header.
@@ -124,6 +125,6 @@ A generated client handles the same responses when you configure it with `config
 ## Further reading
 
 * [@hey-api/openapi-ts](https://heyapi.dev/openapi-ts/get-started)
-* [@umbraco-cms/backoffice/http-client](https://apidocs.umbraco.com/v18/ui-api/modules/packages_core_http-client.html)
+* [@umbraco-cms/backoffice/http-client](https://apidocs.umbraco.com/v19/ui-api/modules/packages_core_http-client.html)
 * [Using the Fetch API](fetch-api.md)
 * [Creating a Backoffice Entry Point](../../extending-overview/extension-types/backoffice-entry-point.md)

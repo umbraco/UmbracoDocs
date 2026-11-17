@@ -19,7 +19,7 @@ Below you can find the minimum requirements to run Umbraco on your machine:
   * [Visual Studio Code](https://code.visualstudio.com/) with the [IISExpress extension](https://marketplace.visualstudio.com/items?itemName=warren-buckley.iis-express)
   * [Microsoft Visual Studio](https://www.visualstudio.com/) 2022 version 17.14 or higher.
     * Optional: [JetBrains Rider](https://www.jetbrains.com/rider) version 2025.3.0.1 and higher
-  * [.NET Core CLI](/broken/pages/P2G798v8rRzd9Cq7gaLx)
+  * [.NET Core CLI](README.md)
 * [SQL connection string (SQL Server)](../../develop-with-umbraco/configuration/connectionstringssettings.md)
 * [Node.js version 24.11.1](https://nodejs.org/en/download/prebuilt-installer) and higher
 

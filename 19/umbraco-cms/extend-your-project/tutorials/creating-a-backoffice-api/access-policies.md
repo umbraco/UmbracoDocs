@@ -40,7 +40,9 @@ public class SampleCustomPolicyComposer : IComposer
         => builder.Services.AddAuthorization(options =>
             options.AddPolicy(SiteConstants.CustomPolicyName, policy =>
             {
-                policy.AuthenticationSchemes.Add(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+                policy.AddAuthenticationSchemes(
+                    OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme,
+                    Constants.Security.BackOfficeAuthenticationType);
                 policy.RequireRole(SiteConstants.CustomGroupAlias);
                 policy.RequireRole(Constants.Security.AdminGroupAlias);
             })
@@ -225,8 +227,9 @@ public class SectionAccessPolicyComposer : IComposer
         builder.Services.AddAuthorization(options =>
             options.AddPolicy(SiteConstants.CustomSectionPolicyName, policy =>
             {
-                policy.AuthenticationSchemes.Add(
-                    OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+                policy.AddAuthenticationSchemes(
+                    OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme,
+                    Constants.Security.BackOfficeAuthenticationType);
                 policy.Requirements.Add(
                     new SectionAccessRequirement(SiteConstants.CustomSectionAlias));
             }));

@@ -109,15 +109,4 @@ To remove a Document Type review, click **Remove**.
 
 ## Content Review Notifications
 
-Content review notifications use the email template available at `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`, which can be customized as required. For example, to add a corporate branding or send customized messages.
-
-To add templates for other languages:
-
-1. Go to the `~/Views/Partials/WorkflowEmails/` folder.
-2. Copy the required template and paste it into the same folder.
-3. Append the culture code to the file name, prefixed with an underscore.
-
-For example:
-
-* **Default approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews.cshtml`
-* **Danish approval request template:** `~/Views/Partials/WorkflowEmails/ContentReviews_da-DK.cshtml`
+Content review notifications use the `ContentReview.cshtml` email template, which can be customized as required. For example, to add corporate branding or send customized messages. For how to customize a template, and how to deploy it to production, see [Email Templates](content-approval-settings.md#email-templates).

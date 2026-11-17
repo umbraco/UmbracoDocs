@@ -36,6 +36,10 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 }
 ```
 
+{% hint style="warning" %}
+`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+{% endhint %}
+
 {% hint style="info" %}
 `UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}

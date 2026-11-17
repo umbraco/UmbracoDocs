@@ -10,7 +10,7 @@ In this article, you will find the requirements to get started with Umbraco UI B
 
 ## Prerequisites
 
-* Umbraco 15+ website configured and ready to install Umbraco UI Builder.
+* Umbraco 17+ website configured and ready to install Umbraco UI Builder.
 
 {% hint style="info" %}
 For instructions on installing Umbraco, see the [Umbraco CMS Documentation](https://docs.umbraco.com/umbraco-cms/fundamentals/setup/install).
@@ -20,7 +20,7 @@ For instructions on installing Umbraco, see the [Umbraco CMS Documentation](http
 
 To use Umbraco UI Builder, your setup must meet these minimum requirements:
 
-* **Umbraco CMS version 15+**
+* **Umbraco CMS version 17+**
 * **SQL Server Database** (SQLite is acceptable for testing but not recommended for live deployments)
 
 ## Versioning

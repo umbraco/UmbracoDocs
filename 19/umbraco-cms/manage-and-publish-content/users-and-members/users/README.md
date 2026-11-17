@@ -144,6 +144,7 @@ Use the following settings to configure the User Group:
 * **Name**: The name of the User Group.
 * **Alias**: Used to reference the User Group in code. The alias will be auto-generated based on the name.
 * **Assign access**: Define which sections and languages users can access, and which content, media, elements, and Document Blueprints they can access.
+  * **Allow editing shared content**: Allow users to edit and publish shared (invariant) properties on content that varies by culture. Without this permission, users can only edit properties that vary by culture, in the languages they have access to. The permission doesn't apply to content that is invariant. It applies to both Documents and Elements, including scheduled publishing.
 
 ![Create User Group](../../../.gitbook/assets/user-groups-v19.png)
 
@@ -171,6 +172,6 @@ Umbraco Forms has a backoffice security model integrated with Umbraco Users. You
 
 As a developer, you are only able to leverage your website from the backoffice when you build on the Users section of Umbraco. This is because the Users section is restricted to the Umbraco backoffice.
 
-For the full set of properties available on a User, see the [`IUser` interface reference](https://apidocs.umbraco.com/v17/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
+For the full set of properties available on a User, see the [`IUser` interface reference](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Models.Membership.IUser.html) documentation.
 
 To manage users programmatically (for example, assigning a user to a User Group), see [Using the User Service](../../../extend-your-project/server-side-extensions/management/using-services/userservice.md) article.

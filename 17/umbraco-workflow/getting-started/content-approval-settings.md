@@ -132,14 +132,15 @@ From the **Content Approvals** view in the **Settings** section, the **Notificat
 
 ## Notifications Overview
 
-Notification emails use HTML templates, which render information from the `HtmlEmailModel` type, which lives in the `Umbraco.Workflow.Core.Models.Email` namespace. While it is possible to modify the email templates from the backoffice, we recommend making changes via an Integrated Development Environment (IDE) of your choice.
+Notification emails use HTML templates, which render information from the `HtmlEmailModel` type, which lives in the `Umbraco.Workflow.Core.Email.Models` namespace. While it is possible to modify the email templates from the backoffice, you should make changes via an Integrated Development Environment (IDE) of your choice.
 
 The `HtmlEmailModel` contains the following fields:
 
 | Fields        | Data Type                 | Description                                                                                                       |
 | ------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish, respectively.                                  |
-| ScheduledDate | DateTime                  | If a scheduled date exists for the workflow, it is found here.                                                    |
+| WorkflowType  | WorkflowType              | An `enum` value containing either 1 or 2 for Publish and Unpublish, respectively.                                 |
+| ReleaseDate   | DateTime                  | If a scheduled release date exists for the workflow, it is found here.                                            |
+| ExpireDate    | DateTime                  | If a scheduled expiry date exists for the workflow, it is found here.                                             |
 | Summary       | IHtmlString               | A pre-generated representation of the current workflow state.                                                     |
 | CurrentTask   | WorkflowTaskViewModel     | The view model data for the current workflow task. Contains a lot of useful data, best explored via Intellisense. |
 | Instance      | WorkflowInstanceViewModel | The view model data for the current workflow. Best explored via Intellisense.                                     |
@@ -150,7 +151,8 @@ The `HtmlEmailBase` contains the following fields:
 | ------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
 | SiteUrl      | string         | The public URL of your site.                                                                         |
 | NodeName     | string         | The name of the node from the current workflow.                                                      |
-| Type         | string         | The workflow type, including the scheduled date (if exists).                                          |
+| Type         | string         | The workflow type - 'Publish' or 'Unpublish', localized.                                             |
+| ScheduledDate | string         | A localized description of the release or expiry date, in the recipient's language and time zone. Empty when the workflow is not scheduled. |
 | EmailType    | EmailType      | An `enum` value representing the current email type that relates directly to the workflow task type. |
 | To           | EmailUserModel | The model defining the receiver of the email.                                                        |
 | Email        | string         | The user's email address or a group address (if a group email is being sent).                        |
@@ -187,54 +189,91 @@ The emails use a similar model to the notification emails, also inheriting from 
 
 ## Email Templates
 
-All email templates are fully localized where translations exist. You can edit the email templates in the Backoffice or in your IDE. By default, Umbraco Workflow's email templates are available in the default language.
+Umbraco Workflow ships the following email templates. They are compiled into the Workflow package, so emails render without any template files on disk.
 
-## Creating an Email Template
+| Template                                  | Email                                         |
+| ----------------------------------------- | --------------------------------------------- |
+| `ApprovalRequest.cshtml`                  | Workflow approval request                     |
+| `ApprovalRejection.cshtml`                | Workflow approval rejected                    |
+| `ApprovedAndCompleted.cshtml`             | Workflow approved and completed               |
+| `ApprovedAndCompletedForScheduler.cshtml` | Workflow approved and completed for scheduler |
+| `WorkflowCancelled.cshtml`                | Workflow cancelled                            |
+| `WorkflowErrored.cshtml`                  | Workflow error                                |
+| `Reminder.cshtml`                         | Workflow overdue reminder                     |
+| `ContentReview.cshtml`                    | Content review reminder                       |
 
-If you wish to have one or more email templates for different languages, you will need to place all the email templates into the `~/Views/Partials/workflow/email/` folder.
+To get a copy of the templates to customize, go to **Content Approvals** > **Notifications** in the **Settings** section and select **Install email templates**. Workflow copies the templates to `~/Views/Partials/workflow/email/`. The option is not available in `Production` mode, and is hidden once all the templates are on disk. Keep the file names unchanged: Workflow finds each template by its name.
 
-To add templates for other languages:
+Text in the templates is localized when the email is rendered, in the recipient's language, using `@Model.Localize("key")`. One template serves every language.
 
-1. Go to the `~/Views/Partials/workflow/email` folder.
-2. Copy the required template and paste it into the same folder.
-3. Append the culture code to the file name, prefixed with an underscore.
+Dates and times in the emails are shown in the recipient's time zone. Workflow records a user's time zone from their browser each time they load the backoffice, so it reflects where they last used it. Emails sent to a group address, and to users with no recorded time zone, are sent in UTC.
 
-For example:
+## Customizing an Email Template
 
-* **Default approval request template:** `~/Views/Partials/workflow/email/ApprovalRequest.cshtml`
-* **Danish approval request template:** `~/Views/Partials/workflow/email/ApprovalRequest_da-DK.cshtml`
+Razor templates must be compiled before they can render. The shipped templates are compiled into the Workflow package, and your copy replaces one only if something compiles it. Which copy is used depends on the site's runtime mode:
+
+| Runtime mode                  | Your copy is used when                                                                                                                                                                             |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BackofficeDevelopment`       | The file on disk differs from the shipped template. Changes apply without restarting the site. Requires Umbraco Workflow 17.5.2 or later and the `Umbraco.Cms.DevelopmentMode.Backoffice` package. |
+| `Development` or `Production` | The template was part of your project when the site was built.                                                                                                                                    |
+
+### Deploying Customized Templates to Production
+
+`Production` mode compiles views only at build and publish time, so customized templates must be part of the build.
+
+1. In your local environment, select **Install email templates** to copy the templates to `~/Views/Partials/workflow/email/`.
+2. Edit the templates you want to change.
+3. Add only the templates you changed to source control. Every template in your project is compiled into your site and replaces the shipped version, including a copy you have not changed. Workflow does not update that copy when you upgrade, so it keeps rendering the version it was copied from.
+4. Make sure views are compiled at build time by removing the following properties from your `.csproj` file:
+
+    ```xml
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+    ```
+
+    This is already required for `Production` mode, and is not compatible with the `InMemoryAuto` Models Builder mode. For more information, see the [Runtime Modes](https://docs.umbraco.com/umbraco-cms/17.latest/run-in-production/runtime-modes) article.
+5. Build, publish, and deploy the site.
+
+If a template on disk does not compile, Workflow renders the version shipped in the package instead and logs the error. To find templates that fail to compile, go to **Settings** > **Health Check** > **Workflow** > **Email Templates**. The check reports each failing template with the compiler message. It also reports culture-specific templates.
+
+{% hint style="info" %}
+Upgrading Workflow does not update the templates on disk. A copy installed by an earlier release keeps rendering as it is.
+
+Workflow never overwrites a template on disk. To get the current version of a template, delete your copy locally and select **Install email templates**. Then reapply any changes.
+{% endhint %}
+
+### Culture-Specific Templates
+
+Templates named with a culture suffix, such as `ApprovalRequest_da-DK.cshtml`, are still used for recipients whose language differs from the site's default language. Templates are localized at render time, so culture-specific templates are no longer needed. Remove them unless the wording must differ from the translation.
 
 ## Sample Email Template
 
-Below is an example of the `ApprovalRequest.cshtml` email template from the `~/Views/Partials/workflow/email/` folder:
+Below is an excerpt of the shipped `ApprovalRequest.cshtml` template:
 
 ```csharp
-@model Umbraco.Workflow.Core.Models.Email.HtmlEmailModel
-
-@*
-    Refer to the documentation for Email templates for a full rundown on the available fields
-    or (better option), edit the template in Visual Studio where Intellisense will save you
-*@
+@model Umbraco.Workflow.Core.Email.Models.HtmlEmailModel
+@addTagHelper *, Umbraco.Workflow.Core
 
 <!DOCTYPE html>
 
-<html>
+<html lang="@Model.To.Language">
 <head>
-    <!-- will be used as the email subject line -->
-    <title>Workflow: Approval request</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @* the title is used as the email subject line *@
+    <uw-head title="@Model.Localize("emailApprovalRequestSubject")"></uw-head>
 </head>
 <body>
     <div>
-        <h1>Hello @Model.To.Name,</h1>
-        <p>Please review the following page for @Model.Type.ToLower() approval:</p>
+        <p>@Model.Localize("emailGreeting", Model.To.Name)</p>
+        <p>@Model.Localize("emailApprovalRequestIntro", Model.Type.ToLower(), Model.ScheduledDate)</p>
         <ul>
             <li>
                 <a href="@(Model.CurrentTask?.BackofficeUrl)">@(Model.CurrentTask?.Node?.Name)</a>
             </li>
         </ul>
+
+        @* approval buttons omitted - see the full template *@
+
+        @Model.Summary
     </div>
 </body>
 </html>

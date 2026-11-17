@@ -35,7 +35,7 @@
 
 ## Run in Production
 
-* [Overview](run-in-production/README.md)
+* [Overview](run-in-production/run-in-production.md)
 * [Load Balancing](run-in-production/load-balancing.md)
 
 ## Add-ons

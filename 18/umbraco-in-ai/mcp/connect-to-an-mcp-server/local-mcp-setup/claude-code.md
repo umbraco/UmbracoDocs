@@ -36,8 +36,12 @@ claude mcp add umbraco-mcp npx @umbraco-cms/mcp-dev@latest
 ```bash
 
 # Add with environment variables
-claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://your-domain.com" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" -- npx @umbraco-cms/mcp-dev@latest
+claude mcp add umbraco-mcp --env UMBRACO_CLIENT_ID="your-id" --env UMBRACO_CLIENT_SECRET="your-secret" --env UMBRACO_BASE_URL="https://localhost:12345" --env NODE_TLS_REJECT_UNAUTHORIZED="0" --env UMBRACO_INCLUDE_TOOL_COLLECTIONS="document,media,document-type,data-type,template" -- npx @umbraco-cms/mcp-dev@latest
 ```
+
+{% hint style="warning" %}
+`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+{% endhint %}
 
 Replace the following values with your local connection details:
 

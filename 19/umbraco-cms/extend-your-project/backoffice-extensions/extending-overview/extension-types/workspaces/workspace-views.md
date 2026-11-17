@@ -36,15 +36,15 @@ Workspace Views provide:
   element: () => import('./counter-workspace-view.js'),
   weight: 900,
   meta: {
-  label: 'Counter',
-  pathname: 'counter',
-  icon: 'icon-lab',
+    label: 'Counter',
+    pathname: 'counter',
+    icon: 'icon-lab',
   },
   conditions: [
-  {
-    alias: UMB_WORKSPACE_CONDITION_ALIAS,
-    match: 'Umb.Workspace.Document',
-  },
+    {
+      alias: UMB_WORKSPACE_CONDITION_ALIAS,
+      match: 'Umb.Workspace.Document',
+    },
   ],
 }
 ```
@@ -77,38 +77,38 @@ export class ExampleCounterWorkspaceView extends UmbElementMixin(LitElement) {
   private count = 0;
 
   constructor() {
-  super();
-  this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (instance) => {
-    this.#counterContext = instance;
-    this.#observeCounter();
-  });
+    super();
+    this.consumeContext(EXAMPLE_COUNTER_CONTEXT, (instance) => {
+      this.#counterContext = instance;
+      this.#observeCounter();
+    });
   }
 
   #observeCounter(): void {
-  if (!this.#counterContext) return;
-  this.observe(this.#counterContext.counter, (count) => {
-    this.count = count;
-  });
+    if (!this.#counterContext) return;
+    this.observe(this.#counterContext.counter, (count) => {
+      this.count = count;
+    });
   }
 
   override render() {
   return html`
     <uui-box class="uui-text">
-    <h1 class="uui-h2">Counter Example</h1>
-    <p class="uui-lead">Current count value: ${this.count}</p>
-    <p>This workspace view consumes the Counter Context and displays the current count.</p>
+      <h1 class="uui-h2">Counter Example</h1>
+      <p class="uui-lead">Current count value: ${this.count}</p>
+      <p>This workspace view consumes the Counter Context and displays the current count.</p>
     </uui-box>
   `;
   }
 
   static override styles = [
-  UmbTextStyles,
-  css`
-    :host {
-    display: block;
-    padding: var(--uui-size-layout-1);
-    }
-  `,
+    UmbTextStyles,
+    css`
+      :host {
+      display: block;
+      padding: var(--uui-size-layout-1);
+      }
+    `,
   ];
 }
 
@@ -116,7 +116,7 @@ export default ExampleCounterWorkspaceView;
 
 declare global {
   interface HTMLElementTagNameMap {
-  'example-counter-workspace-view': ExampleCounterWorkspaceView;
+    'example-counter-workspace-view': ExampleCounterWorkspaceView;
   }
 }
 ```
@@ -156,12 +156,12 @@ To show a workspace view only for a specific Document Type (for example, "Blog P
 ```typescript
 conditions: [
   {
-  alias: UMB_WORKSPACE_CONDITION_ALIAS,
-  match: 'Umb.Workspace.Document',
+    alias: UMB_WORKSPACE_CONDITION_ALIAS,
+    match: 'Umb.Workspace.Document',
   },
   {
-  alias: 'Umb.Condition.WorkspaceContentTypeAlias',
-  match: 'blogPost', // Only show for blog posts
+    alias: 'Umb.Condition.WorkspaceContentTypeAlias',
+    match: 'blogPost', // Only show for blog posts
   },
 ],
 ```
@@ -199,15 +199,15 @@ constructor() {
   
   // Consume multiple contexts
   this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, (context) => {
-  this.observe(context?.unique, (unique) => {
-    this._unique = unique;
-  });
+    this.observe(context?.unique, (unique) => {
+      this._unique = unique;
+    });
   });
   
   this.consumeContext(UMB_VALIDATION_CONTEXT, (context) => {
-  this.observe(context?.messages.messages, (messages) => {
-    this._validationMessageCount = messages?.length ?? 0;
-  });
+    this.observe(context?.messages.messages, (messages) => {
+      this._validationMessageCount = messages?.length ?? 0;
+    });
   });
 }
 ```
@@ -229,23 +229,23 @@ export class EntityInfoView extends UmbElementMixin(LitElement) {
   private _variant?: UmbDocumentVariantModel;
 
   constructor() {
-  super();
-  this.consumeContext(UMB_DOCUMENT_PROPERTY_DATASET_CONTEXT, (context) => {
-    this.observe(context?.currentVariant, (variant) => {
-    this._variant = variant;
+    super();
+    this.consumeContext(UMB_DOCUMENT_PROPERTY_DATASET_CONTEXT, (context) => {
+      this.observe(context?.currentVariant, (variant) => {
+        this._variant = variant;
+      });
     });
-  });
   }
 
   override render() {
   return html`
     <uui-box headline="Entity Information">
-    <dl>
-      <dt>Name</dt>
-      <dd>${this._variant?.name}</dd>
-      <dt>Created</dt>
-      <dd>${this._variant?.createDate}</dd>
-    </dl>
+      <dl>
+        <dt>Name</dt>
+        <dd>${this._variant?.name}</dd>
+        <dt>Created</dt>
+        <dd>${this._variant?.createDate}</dd>
+      </dl>
     </uui-box>
   `;
   }
@@ -271,27 +271,27 @@ export class ConfigView extends UmbElementMixin(LitElement) {
   private _isEnabled = false;
 
   constructor() {
-  super();
-  this.consumeContext(MY_CONFIG_WORKSPACE_CONTEXT, (context) => {
-    this.#configContext = context;
-    this.observe(context?.isEnabled, (isEnabled) => {
-    this._isEnabled = isEnabled ?? false;
+    super();
+    this.consumeContext(MY_CONFIG_WORKSPACE_CONTEXT, (context) => {
+      this.#configContext = context;
+        this.observe(context?.isEnabled, (isEnabled) => {
+          this._isEnabled = isEnabled ?? false;
+        });
     });
-  });
   }
 
   #handleConfigChange(property: string, value: unknown) {
-  this.#configContext?.updateConfig(property, value);
+    this.#configContext?.updateConfig(property, value);
   }
 
   override render() {
   return html`
     <uui-box headline="Configuration">
-    <uui-toggle 
-      .checked=${this._isEnabled}
-      @change=${(e: Event) => this.#handleConfigChange('enabled', (e.target as UUIToggleElement).checked)}>
-      Enable Feature
-    </uui-toggle>
+      <uui-toggle 
+        .checked=${this._isEnabled}
+        @change=${(e: Event) => this.#handleConfigChange('enabled', (e.target as UUIToggleElement).checked)}>
+        Enable Feature
+      </uui-toggle>
     </uui-box>
   `;
   }
@@ -315,35 +315,35 @@ export class AnalyticsView extends UmbElementMixin(LitElement) {
   private analytics?: AnalyticsData;
 
   constructor() {
-  super();
-  this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, (context) => {
-    this.observe(context?.unique, (unique) => {
-    if (unique) this.#loadAnalytics(unique);
+    super();
+    this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, (context) => {
+      this.observe(context?.unique, (unique) => {
+        if (unique) this.#loadAnalytics(unique);
+      });
     });
-  });
   }
 
   async #loadAnalytics(unique: string) {
-  const analyticsContext = await this.getContext(MY_ANALYTICS_CONTEXT);
-  if (!analyticsContext) return;
-  this.analytics = await analyticsContext.getAnalytics(unique);
+    const analyticsContext = await this.getContext(MY_ANALYTICS_CONTEXT);
+    if (!analyticsContext) return;
+    this.analytics = await analyticsContext.getAnalytics(unique);
   }
 
   override render() {
-  if (!this.analytics) {
-    return html`<uui-loader></uui-loader>`;
-  }
+    if (!this.analytics) {
+      return html`<uui-loader></uui-loader>`;
+    }
 
-  return html`
-    <uui-box headline="Analytics">
-    <div class="stats-grid">
-      <div class="stat">
-      <span class="value">${this.analytics.pageViews}</span>
-      <span class="label">Page Views</span>
+    return html`
+      <uui-box headline="Analytics">
+      <div class="stats-grid">
+        <div class="stat">
+        <span class="value">${this.analytics.pageViews}</span>
+        <span class="label">Page Views</span>
+        </div>
       </div>
-    </div>
-    </uui-box>
-  `;
+      </uui-box>
+    `;
   }
 }
 ```

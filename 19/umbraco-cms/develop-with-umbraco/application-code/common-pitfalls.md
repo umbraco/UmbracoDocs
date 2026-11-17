@@ -219,7 +219,7 @@ It is important to ensure that the initialization logic executes only once for t
 
 ## Rebuilding indexes
 
-Rebuilding examine indexes can have a negative effect of the sites performance and is not a recommended practice. It is recommeded to ensure you are running the latest Umbraco and Examine versions if you are having trouble with out-of-sync index data.
+Rebuilding search indexes can have a negative effect of the sites performance and is not a recommended practice. It is recommended to ensure you are running the latest Umbraco and Examine versions if you are having trouble with out-of-sync index data.
 
 The primary reasons your data will become out of sync are:
 
