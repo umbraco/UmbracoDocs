@@ -61,4 +61,6 @@ Once you have set everything up the test is ready to go. You can preview the fin
 
 If that is the case you can start the test immediately, or schedule it for later.
 
+The test can be started or scheduled only after the first save, and every variant needs a name. Variants cannot be added once the test has left the Draft status.
+
 ![Launch the test right away, or schedule it to start at a later point.](../../.gitbook/assets/engage-ab-test-launch-v16.png)

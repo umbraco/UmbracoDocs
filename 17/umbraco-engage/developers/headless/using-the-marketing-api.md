@@ -22,6 +22,10 @@ _Without providing the_ `External-Visitor-Id` _header, each registered pageview 
 {% endhint %}
 
 {% hint style="info" %}
+Pass the visitor's browser User-Agent in the `Visitor-User-Agent` header on Engage segmentation and Content Delivery API calls. Device segments then use the visitor's browser instead of the HTTP client of your front-end server. The analytics endpoints ignore this header. The header is available from Umbraco Engage 17.6.
+{% endhint %}
+
+{% hint style="info" %}
 If you want to bypass visitor-based segmentation and request a specific variant directly, use the [Forced-Segment header](forced-segment.md) instead.
 {% endhint %}
 

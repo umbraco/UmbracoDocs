@@ -15,6 +15,8 @@ If you go to the overview you can see all running tests. The overview includes t
 * How many visitors are included in the test?
 * For how long should the test run to produce relevant results?
 
+From Umbraco Engage 17.6, the overview has a grid view and a table view, and each test shows a status tag. A test that has not started has the **Draft** status, which was called **New** before. Select one or more tests that are not running to **Archive** them. Archived tests can be restored later.
+
 ![Monitoring the A/B tests.](../../.gitbook/assets/engage-ab-test-monitor-v16.png)
 
 You can see all test variants when you access the details on a test. You can preview the variants, or disable them. If for example, the conversion rate has decreased in a variant, it could be smart to disable that variant.
