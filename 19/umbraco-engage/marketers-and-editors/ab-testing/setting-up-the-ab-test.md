@@ -20,7 +20,7 @@ Every test must belong to a project.
 
 To create a project:
 
-1. Go to **Engage** > **A/B Testing**.
+1. Go to **Engage** > **Optimization** > **A/B Testing**.
 2. Click **Add new project**.
 3. Enter the **Name** and **Description** of the new project.
 4. Select **Submit**.

@@ -10,7 +10,7 @@ This article shows how to use the Umbraco Engage Headless API with Umbraco Conte
 
 ## Setting up a Personalization Segment
 
-1. Go to the **Engage** > **Personalization** section.
+1. Go to **Engage** > **Optimization** > **Personalization**.
 2. Navigate to the **Segments** tab.
 3. Click **Add new segment**.
    * Give the segment a name. For example: _Morning People_.

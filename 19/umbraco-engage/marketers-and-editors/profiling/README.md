@@ -6,7 +6,7 @@ description: >-
 
 # Profiling
 
-The **Profiles** section offers an overview of all the visitors that visited your website. To access the profiles section, navigate to **Engage** > **Profiles**.
+The **Profiles** section offers an overview of all the visitors that visited your website. To access the profiles section, navigate to **Engage** > **Insights** > **Profiles**.
 
 ![Profiles section](../../.gitbook/assets/Profiles-v16.png)
 
