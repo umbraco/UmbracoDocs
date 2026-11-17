@@ -16,6 +16,9 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 ## Release History
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
+### [13.5.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.5) (November 17 2026)
+* Resolves security advisory [GHSA-vw5g-jmgg-hw78](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-vw5g-jmgg-hw78)
+* Resolves security advisory [GHSA-7457-w8c8-jh29](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-7457-w8c8-jh29)
 
 ### [13.5.4](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.4) (April 16 2026)
 * Replaced RazorLight with IRazorViewEngine and precompiled Razor views shipped in the StaticAssets library. Email templates are now standard partial views, making customization simpler and removing the third-party RazorLight dependency. [#129](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/129)
