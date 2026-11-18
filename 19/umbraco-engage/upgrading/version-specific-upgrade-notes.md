@@ -14,11 +14,11 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
-### 19.0.0 
+### 19.0.0
 
 #### Engage segments no longer come from the CMS segment service
 
-Engage no longer implements the CMS `ISegmentService`. Umbraco CMS 19 no longer limits segments by culture, so Engage supplies the cultures itself. The CMS default answers `GET /segment` with an empty list, so the CMS never serves Engage segments.
+Engage no longer implements the CMS `ISegmentService`. Umbraco CMS 19 no longer limits segments by culture, so Engage supplies the cultures itself. The default CMS implementation returns an empty list for `GET /segment`, so the CMS never serves Engage segments.
 
 Engage now adds its segments to the document workspace through its own front-end segment provider. The provider reads them through two services:
 
@@ -72,13 +72,13 @@ The following members and classes were marked obsolete in earlier versions and a
 | `AnalyticsDataCleanupConfiguration.StartAfterSeconds` and `IntervalInSeconds` | Use `FirstRunTime` or `StartupDelay`, and `Interval`. |
 | `AnalyticsDataCleanupConfiguration.NumberOfRows` | None. The value is no longer used. |
 
-Several constructor overloads that were kept for compatibility are also removed, including those on `StarGenerationBackgroundJob`, `ConfigurationController`, `HeadlessHttpContext`, `AbTestProject`, `AbTestHealthService`, `AbTestProjectConnector`, and `SegmentService`. Use the overloads that take all parameters.
+Other constructor overloads that were kept for compatibility are also removed, including those on `StarGenerationBackgroundJob`, `ConfigurationController`, `HeadlessHttpContext`, `AbTestProject`, `AbTestHealthService`, `AbTestProjectConnector`, and `SegmentService`. Use the overloads that take all parameters.
 
 If you have custom code that uses any of these, compile against Engage 19 and fix the errors the compiler reports.
 
 #### Chart code removed from the backoffice client
 
-If you extend the Engage backoffice with your own TypeScript, note that the old Engage chart code and its Chart.js build are removed. Every chart now uses the Umbraco Analytics UI components. The following no longer exist:
+If you extend the Engage backoffice with your own TypeScript, the old Engage chart code and its Chart.js build are removed. Every chart now uses the Umbraco Analytics UI components. The following no longer exist:
 
 * `ue-chart` (`UeAnalyticsChartElement`), `ue-bar-chart`, `UeChartElement`, `UeChartBaseElement`, `UeChartTooltipDefaults`, and the `UeBarChartData` type.
 * `UeChartDatasetGeneratorController` and `UeChartSettingsGeneratorController`.
