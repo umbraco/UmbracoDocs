@@ -33,7 +33,7 @@ The minimum TLS Version only allows HTTPS connections from visitors that support
 A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. Common attacks like cross-site scripting, SQL injection, and file inclusion are mitigated by acting as a shield between the web application and potential threats. For more detailed information, refer to our [WAF section](web-application-firewall.md).
 
 {% hint style="info" %}
-The **Web Application Firewall** page under **Security** gives you more control. You can allow, challenge, or block visitors for each domain. The settings described here keep working next to that page. Learn more in the [Web Application Firewall](web-application-firewall.md) article.
+The **Web Application Firewall** page under **Security** gives you more control. You can allow, challenge, or block requests for each domain. The settings described here keep working next to that page. Learn more in the [Web Application Firewall](web-application-firewall.md) article.
 {% endhint %}
 
 ## Web Application Firewall Sensitivity

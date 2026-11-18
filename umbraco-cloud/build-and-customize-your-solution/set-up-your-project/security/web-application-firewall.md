@@ -1,18 +1,18 @@
 ---
 description: >-
   Decide who can reach your Umbraco Cloud sites. Allow, challenge, or block
-  visitors for each domain with the Web Application Firewall.
+  requests for each domain with the Web Application Firewall.
 ---
 
 # Web Application Firewall
 
 A Web Application Firewall (WAF) filters the HTTP traffic between the Internet and your website. Unwanted requests are stopped before they reach your site, so your site does not spend resources on them.
 
-The Umbraco Cloud Web Application Firewall lets you decide who can reach each of your sites:
+The Umbraco Cloud Web Application Firewall lets you decide which requests reach each of your sites:
 
-* Everyone.
-* Everyone after a Challenge.
-* Only the visitors you allow.
+* Every request.
+* Every request that passes a Challenge.
+* Only the requests you allow.
 
 The firewall runs on Cloudflare, in front of your Umbraco Cloud environments.
 
@@ -26,20 +26,22 @@ Every request passes through the steps below, in this order. The request reaches
 
 | Step | What happens | Who decides |
 | --- | --- | --- |
-| **Allow** | Checked first. A matching visitor skips the steps you choose for that Allow entry. | You |
+| **Allow** | Checked first. A matching request skips the steps you choose for that Allow entry. | You |
 | **Managed Block** | Answers with a 403 error when the request looks like a known attack, such as SQL injection or cross-site scripting (XSS). | A managed ruleset from Cloudflare. You turn the step on or off. |
-| **Challenge** | Shows a "prove you are human" page. People pass, bots stop. | You |
+| **Challenge** | Answers with a "prove you are human" page. A person passes the page, a bot does not. | You |
 | **Block** | Answers with a 403 error. | You |
 
 Keep these rules in mind:
 
-* **Allow always wins.** Only an Allow entry can let a visitor past a later step.
-* **Challenge comes before Block.** A visitor who matches both sees the Challenge first. After passing the Challenge, the visitor is blocked.
-* **A visitor needs to match one criterion.** A step with several criteria applies to a visitor who matches any one of them.
+* **Allow always wins.** Only an Allow entry can let a request past a later step.
+* **Challenge comes before Block.** A request that matches both gets the Challenge first. After the Challenge is passed, the request is blocked.
+* **One matching criterion is enough.** A step with more than one criterion applies to a request that matches any one of them.
 
 ## Domains and Umbraco addresses
 
 The firewall is configured for each environment and each address. The steps that are available depend on the type of address.
+
+An environment has two built-in addresses next to your domains. The default address leads to your site. The deployment address is used for deployments and is also known as the Source Control Management (SCM) address.
 
 | Address | Example | Allow | Managed Block | Challenge | Block |
 | --- | --- | --- | --- | --- | --- |
@@ -47,7 +49,7 @@ The firewall is configured for each environment and each address. The steps that
 | Default address | `my-project.euwest01.umbraco.io` | Yes, to skip Block | No | No | Yes |
 | Deployment address (SCM) | `my-project.scm.euwest01.umbraco.io` | Yes, to skip Block | No | No | Yes |
 
-The default address and the deployment address are built-in addresses that also lead to your site and to deployments. Umbraco Cloud always lets its own traffic through on these two addresses. The following entries are shown as **Always allowed by Umbraco** and cannot be removed:
+Umbraco Cloud always lets its own traffic through on these two addresses. The following entries are shown as **Always allowed by Umbraco** and cannot be removed:
 
 * **Umbraco Cloud Platform & Services** on both addresses.
 * **Internal monitoring** on the default address.
@@ -81,7 +83,7 @@ The page has the following sections:
 * **Default settings** - The settings used by every new domain, and the domains that follow them.
 * **Domains with own settings** - The domains that have settings of their own.
 * **Umbraco addresses** - The default address and the deployment address.
-* **Test a visitor** - A preview of what your settings do to a visitor.
+* **Test a visitor** - A preview of what your settings do to a request.
 
 Each domain and address shows its status:
 
@@ -90,8 +92,8 @@ Each domain and address shows its status:
 | **Protected** | At least one protection is in force. |
 | **Not protected** | Anyone can visit the domain and nothing is filtered, not even known attacks. |
 | **Open** | Anyone can reach the default address or the deployment address. |
-| **Paused** | Allow lets every visitor through. The settings are kept. |
-| **Closed** | Block stops every visitor with a 403 error. Nobody can open the site. |
+| **Paused** | Allow lets every request through. The settings are kept. |
+| **Closed** | Block answers every request with a 403 error. Nobody can open the site. |
 
 ## Default settings and own settings
 
@@ -116,7 +118,9 @@ Saved settings are applied in the background. They usually take effect within a 
 
 ### Allow
 
-Allow is the single list of exceptions. Each entry names a group of visitors and the steps those visitors skip.
+Allow is the single list of exceptions. Each entry names a group of requests and the steps those requests skip.
+
+An IP entry is a single IP address or a range. A range is written in Classless Inter-Domain Routing (CIDR) notation, for example `203.0.113.0/24`.
 
 1. Select **+ Add entry**.
 2. Choose the **Type** and fill in the value.
@@ -129,13 +133,13 @@ The following entry types are available:
 | --- | --- | --- |
 | **IP / CIDR** | `203.0.113.9` or `203.0.113.0/24` | A single IP address or a range. |
 | **Path prefix** | `/umbraco/api/webhooks/` | Every path that starts with the value. The match is not case-sensitive. |
-| **Verified bot category** | Search Engine Crawler | Bots that Cloudflare has verified, by category. |
-| **Country** | Denmark | Visitors from the country. |
+| **Verified bot category** | Search Engine Crawler | Requests from bots that Cloudflare has verified, by category. |
+| **Country** | Denmark | Requests from the country. |
 
 An entry skips only the steps you select. For example, an entry can skip Challenge while Managed Block still inspects the request.
 
 {% hint style="info" %}
-Add the IP address your visitors use to reach Cloudflare. Some networks connect over IPv6, even when a lookup service shows an IPv4 address.
+Add the IP address the requests arrive from at Cloudflare. Some networks connect over IPv6, even when a lookup service shows an IPv4 address.
 {% endhint %}
 
 ### Managed Block
@@ -146,20 +150,20 @@ A legitimate request can look like an attack. Add an Allow entry that skips Mana
 
 ### Challenge
 
-Challenge shows a page that checks whether the visitor is a person. Choose who is challenged:
+Challenge answers with a page that checks whether a person is behind the request. Choose who is challenged:
 
 * **Nobody** - The step is off.
-* **Some visitors** - Visitors who match a criterion you add.
-* **Everyone** - Every visitor, except Allow entries that skip Challenge.
+* **Some visitors** - Requests that match a criterion you add.
+* **Everyone** - Every request, except Allow entries that skip Challenge.
 
 For **Some visitors**, select **+ Add a criterion** and choose from the following:
 
 | Criterion | Matches |
 | --- | --- |
-| **Continents** | Visitors from the selected continents. Tor is listed as a continent. |
-| **Countries** | Visitors from the selected countries. |
+| **Continents** | Requests from the selected continents. Tor is listed as a continent. |
+| **Countries** | Requests from the selected countries. |
 | **Path prefixes** | Paths that start with the value, for example `/umbraco`. |
-| **Verified bot categories** | Verified bots in the selected categories. |
+| **Verified bot categories** | Requests from verified bots in the selected categories. |
 | **Bot score** | How likely the request comes from a bot. **Low** catches definite bots. **High** also catches likely bots. Verified bots are not affected. |
 | **Threat score** | How likely the request is an attack. **Low** catches likely attacks. **High** also catches possible attacks. |
 
@@ -172,8 +176,8 @@ Verified bots, such as search engine crawlers, cannot pass a Challenge. Add an A
 Block answers with a 403 error. Choose who is blocked:
 
 * **Nobody** - The step is off.
-* **Some visitors** - Visitors who match a criterion you add.
-* **Everyone** - Every visitor, except Allow entries that skip Block.
+* **Some visitors** - Requests that match a criterion you add.
+* **Everyone** - Every request, except Allow entries that skip Block.
 
 Block has the same criteria as Challenge, except Threat score. Block adds two criteria:
 
@@ -190,13 +194,13 @@ A verified bot category is either allowed or stopped. The same category cannot b
 
 ## Test a visitor
 
-Use **Test a visitor** to check a specific case, for example your office or a search engine.
+Use **Test a visitor** to check a specific request, for example one from your office or from a search engine.
 
 1. Choose the **Address** to test.
 2. Choose a sample **Visitor**, or fill in the country, IP address, path, user agent, and scores.
 3. Read the result for each step.
 
-The result shows the step that stops the visitor, or that the visitor reaches the site.
+The result shows the step that stops the request, or that the request reaches the site.
 
 {% hint style="info" %}
 The result is a preview. Umbraco Cloud makes the real decision when a request arrives.
@@ -204,7 +208,7 @@ The result is a preview. Umbraco Cloud makes the real decision when a request ar
 
 ## Pause protection
 
-Pausing lets every visitor through on one domain or address, while your settings are kept. Use it to find out whether the firewall causes a problem.
+Pausing lets every request through on one domain or address, while your settings are kept. Use it to find out whether the firewall causes a problem.
 
 1. Open the domain or address.
 2. Select **Pause protection** in the Allow step and confirm.
@@ -220,7 +224,7 @@ The examples below show how the steps combine.
 | --- | --- |
 | Only your office can reach the site | **Block**: Everyone. **Allow**: your office IP address, skipping Block. |
 | Only your office can reach the backoffice | **Block**: Path prefix `/umbraco`. **Allow**: your office IP address, skipping Block. |
-| Challenge every visitor outside Denmark | **Challenge**: Everyone. **Allow**: Country Denmark, skipping Challenge. |
+| Challenge every request from outside Denmark | **Challenge**: Everyone. **Allow**: Country Denmark, skipping Challenge. |
 | Keep search engines out of the Challenge | **Allow**: Verified bot category Search Engine Crawler, skipping Challenge. |
 | Stop AI crawlers | **Block**: Verified bot category AI Crawler. |
 | Let a webhook through without a Challenge | **Allow**: Path prefix of the webhook, skipping Challenge. |
@@ -252,7 +256,7 @@ A wider range is divided into these blocks. A range that does not fit is rejecte
 
 ## Recognize a stopped request
 
-The response shows which step stopped a request. This helps when a visitor reports that the site cannot be reached.
+The response shows which step stopped a request. This helps when someone reports that the site cannot be reached.
 
 | Step | Response |
 | --- | --- |
