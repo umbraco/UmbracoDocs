@@ -172,7 +172,7 @@ site:
               path: 19.latest-rc
               draft: true
               content:
-                directory: ./umbraco-commerce/19.latest-rc
+                directory: ./19/umbraco-commerce
         - type: section
           key: section-5
           title: Deploy
