@@ -35,7 +35,7 @@ Keep these rules in mind:
 
 * **Allow always wins.** Only an Allow entry can let a request past a later step.
 * **Challenge comes before Block.** A request that matches both gets the Challenge first. After the Challenge is passed, the request is blocked.
-* **One matching criterion is enough.** A step with more than one criterion applies to a request that matches any one of them.
+* **One match is enough.** A request that matches any one Allow entry, or any one criterion of a step, is handled by it. Entries and criteria cannot be combined, for example an IP address together with a path.
 
 ## Domains and Umbraco addresses
 
@@ -137,6 +137,8 @@ The following entry types are available:
 | **Country** | Denmark | Requests from the country. |
 
 An entry skips only the steps you select. For example, an entry can skip Challenge while Managed Block still inspects the request.
+
+Each entry works on its own. An entry for an IP address and an entry for the path `/umbraco` allow that IP address on every path, and every request to `/umbraco`. To limit a path to one IP address, block the path and allow the IP address. See [Common setups](web-application-firewall.md#common-setups).
 
 {% hint style="info" %}
 Add the IP address the requests arrive from at Cloudflare. Some networks connect over IPv6, even when a lookup service shows an IPv4 address.
