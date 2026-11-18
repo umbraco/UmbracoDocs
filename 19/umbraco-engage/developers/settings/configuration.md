@@ -114,7 +114,6 @@ The default configuration will look like this:
 * `Interval`: Interval between cleanup runs (default: 24 hours).
 * `CommandTimeout`: Database command timeout in seconds (default: 1200 = 20 minutes).
 
-The previous settings `StartAfterSeconds`, `IntervalInSeconds`, and `NumberOfRows` are deprecated and no longer used.
 {% endhint %}
 
 {% hint style="info" %}

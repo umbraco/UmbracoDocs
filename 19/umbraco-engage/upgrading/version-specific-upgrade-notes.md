@@ -42,7 +42,7 @@ Umbraco CMS 19 no longer uses the `Connect Timeout` connection string value as t
 
 #### Access to the Engage API now requires user group permissions
 
-Engage now checks Umbraco user group permission verbs on the server. 
+Engage now checks Umbraco user group permission verbs on the server, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`.
 
 A migration moves the settings from the previous per-group permissions table to the new verbs. After you upgrade, check that your user groups have the access you expect.
 
@@ -69,7 +69,7 @@ The following members and classes were marked obsolete in earlier versions and a
 | `IMigrationPlanExecuter.ExecuteAsync(MigrationPlan, bool ignoreExceptions)` | Use `ExecuteAsync(MigrationPlan)`. Migration failures always throw `EngageMigrationFailedException`. |
 | `IAbTestVisitorToVariantManager.AssignAllVariantsForVisitor` | Use `AssignAllVariantsForVisitorAsync`. |
 | `FctPageviewBot` and the bot pageview reporting metric | None. Bot pageview reporting isn't supported and its table is never created. |
-| `AnalyticsDataCleanupConfiguration.StartAfterSeconds` and `IntervalInSeconds` | Use `FirstRunTime` and `StartupDelay`, and `Interval`. |
+| `AnalyticsDataCleanupConfiguration.StartAfterSeconds` and `IntervalInSeconds` | Use `FirstRunTime` or `StartupDelay`, and `Interval`. |
 | `AnalyticsDataCleanupConfiguration.NumberOfRows` | None. The value is no longer used. |
 
 Several constructor overloads that were kept for compatibility are also removed, including those on `StarGenerationBackgroundJob`, `ConfigurationController`, `HeadlessHttpContext`, `AbTestProject`, `AbTestHealthService`, `AbTestProjectConnector`, and `SegmentService`. Use the overloads that take all parameters.
@@ -86,3 +86,5 @@ If you extend the Engage backoffice with your own TypeScript, note that the old 
 * The `look` field of `UeChartConfig` and the `UeChartLook` type. The chart type is now `"line"` or `"bar"`.
 
 Use `ue-analytics-time-chart` for time charts, and `@umbraco/analytics-ui/external/chart.js` for a custom chart.
+
+Refer to the [Umbraco Analytics UI Storybook](https://umbraco.github.io/Umbraco.Analytics.UI) for examples and documentation.

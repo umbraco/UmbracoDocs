@@ -20,7 +20,7 @@ Below are the release notes for Umbraco Engage 19, detailing all changes in this
 
 Umbraco Engage 19 adds support for Umbraco CMS 19 and .NET 11.
 
-See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes.md "mention") for breaking changes and the required upgrade steps.
+See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes.md "mention") for breaking changes.
 
 **Backoffice UI**
 
@@ -49,5 +49,5 @@ See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes
 
 **Permissions**
 
-* Access to the Engage backoffice API is now granted through Umbraco user group permission verbs, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Previously, any backoffice user could call any Engage endpoint. A migration moves existing per-group settings to the new verbs.
+* Access to the Engage backoffice API is now granted through Umbraco user group permission verbs, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. A migration moves existing per-group settings to the new verbs.
 * The Engage Cockpit now follows the user's access to the Engage section and the Read verbs of their user groups.
