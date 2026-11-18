@@ -69,6 +69,7 @@ The `ContentApprovalEmailModel` constructor no longer takes a `ColorSettings` pa
 #### Removed Types
 
 * `Umbraco.Workflow.Core.Configuration.ColorSettings`
+* `Umbraco.Workflow.Core.Configuration.DateFormats`
 * `Umbraco.Workflow.Core.Configuration.SettingsCustomization`
 * `Umbraco.Workflow.Core.Configuration.SettingsCustomizationDetail`
 * `Umbraco.Workflow.Core.Configuration.CaseInsensitiveSettingsDictionary`

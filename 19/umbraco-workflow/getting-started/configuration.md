@@ -1,7 +1,7 @@
 ---
 description: >-
-  Get an overview of various options for customizing the configuration of your
-  Umbraco Workflow installation.
+    Get an overview of various options for customizing the configuration of your
+    Umbraco Workflow installation.
 ---
 
 # Configuration
@@ -34,12 +34,13 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 {
   "Workflow": {
     "ReminderNotificationPeriod": Timespan.FromHours(8),
-    "ActionNotificationPeriod": Timespance.FromMinutes(5),
+    "ActionNotificationPeriod": Timespan.FromMinutes(5),
     "EnableTestLicense": false,
     "ContentApprovals": {...},
     "ContentReviews": {...},
     "ReleaseSets": {...}
   }
+}
 ```
 
 ### Workflow Configuration
@@ -66,9 +67,9 @@ All Workflow settings can be customized in the `appSettings.json` file. Settings
 
 The customizations are configured in three sections, directly under `Umbraco:Workflow`:
 
-* `ContentApprovals`
-* `ContentReviews`
-* `ReleaseSets`
+- `ContentApprovals`
+- `ContentReviews`
+- `ReleaseSets`
 
 Each section contains a `SettingCustomization` object per setting. The object has the following structure, with three options:
 
@@ -84,18 +85,17 @@ Each section contains a `SettingCustomization` object per setting. The object ha
 }
 ```
 
-* `IsHidden` - When true, the corresponding property is not displayed in the backoffice UI
-* `IsReadOnly` - When true, the corresponding property is displayed in the backoffice UI but is not editable
-* `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the backoffice
+- `IsHidden` - When true, the corresponding property is not displayed in the backoffice UI
+- `IsReadOnly` - When true, the corresponding property is displayed in the backoffice UI but is not editable
+- `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the backoffice
 
 All available customization options are illustrated below along with their respective values:
 
 ```json
 {
-  "Umbraco": {
     "Workflow": {
-      …
-      "ContentApprovals": {
+        …
+        "ContentApprovals": {
         "FlowType": 0|1|2 matching the FlowType enum values,
         "ApprovalThreshold": 0|1|2 matching the ApprovalThreshold enum values,
         "ConfigureApprovalThreshold": bool,
@@ -119,8 +119,8 @@ All available customization options are illustrated below along with their respe
         "ExcludeNodes": *,
         "EmailTemplates": *,
         "EntityTypeActionConfigs": *
-      },
-      "ContentReviews": {
+        },
+        "ContentReviews": {
         "EnableContentReviews": bool,
         "ReviewPeriod": int,
         "ReminderThreshold": int,
@@ -130,14 +130,13 @@ All available customization options are illustrated below along with their respe
         "Force": bool,
         "ContentItemReviews": *,
         "DocumentTypeReviews": *
-      },
-      "ReleaseSets": {
+        },
+        "ReleaseSets": {
         "EnableReleaseSets": *,
         "EnableAlternateVersions": *,
         "RequireWorkflowApproval": *
-      }
+        }
     }
-  }
 }
 ```
 
@@ -187,11 +186,11 @@ When true, prevents editing content where the node is in an active workflow. Whe
 
 Sets which content is locked when a publish is scheduled, to one of None (0), Workflow (1), or All (2):
 
-| Value         | Name     | Description                                                                                        |
-| ------------- | -------- | -------------------------------------------------------------------------------------------------- |
-| 0 (_default_) | None     | Content with a scheduled publish is not locked.                                                    |
-| 1             | Workflow | Content is locked while a publish scheduled by a workflow is pending.                              |
-| 2             | All      | Content is locked while any publish is scheduled, including schedules not created by Workflow.     |
+| Value         | Name     | Description                                                                                    |
+| ------------- | -------- | ---------------------------------------------------------------------------------------------- |
+| 0 (_default_) | None     | Content with a scheduled publish is not locked.                                                |
+| 1             | Workflow | Content is locked while a publish scheduled by a workflow is pending.                          |
+| 2             | All      | Content is locked while any publish is scheduled, including schedules not created by Workflow. |
 
 #### AdminCanEdit (bool)
 
@@ -321,21 +320,21 @@ To set the site URL, hide it in the backoffice, and set the content review perio
 
 ```json
 {
-  "Umbraco": {
-    "Workflow": {
-      "ContentApprovals": {
-        "SiteUrl": {
-          "IsHidden": true,
-          "Value": "https://www.myawesomesite.com"
+    "Umbraco": {
+        "Workflow": {
+            "ContentApprovals": {
+                "SiteUrl": {
+                    "IsHidden": true,
+                    "Value": "https://www.myawesomesite.com"
+                }
+            },
+            "ContentReviews": {
+                "ReviewPeriod": {
+                    "IsReadOnly": true,
+                    "Value": 42
+                }
+            }
         }
-      },
-      "ContentReviews": {
-        "ReviewPeriod": {
-          "IsReadOnly": true,
-          "Value": 42
-        }
-      }
     }
-  }
 }
 ```
