@@ -308,6 +308,13 @@ site:
           icon: list-check
           children:
             - type: space
+              key: space-46
+              title: 19.latest (RC)
+              path: 19.latest
+              draft: true
+              content:
+                directory: ./umbraco-workflow/19.latest-rc
+            - type: space
               key: space-27
               title: 18.latest
               path: 18.latest
@@ -326,13 +333,6 @@ site:
               path: 13.latest
               content:
                 directory: ./13/umbraco-workflow
-            - type: space
-              key: space-46
-              title: 19.latest (RC)
-              path: 19.latest-rc
-              draft: true
-              content:
-                directory: ./umbraco-workflow/19.latest-rc
         - type: section
           key: section-17
           title: Search
