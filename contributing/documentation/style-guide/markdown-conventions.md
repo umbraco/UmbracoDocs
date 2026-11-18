@@ -163,6 +163,54 @@ Four types of hints can be added to our documentation: `info`, `success`, `warni
 
 [Learn more about how to use hints in the GitBook Docs](https://docs.gitbook.com/tour/editor/blocks/hint).
 
+### Version-specific notes
+
+Many customers don't upgrade to every minor version right away. Version-specific notes show readers which version introduced a feature, so they know what is available in the version they run.
+
+These notes apply to products documented in numbered version folders, for example `17/umbraco-cms/`. They don't apply to non-versioned products such as Umbraco Cloud.
+
+#### When to add a note
+
+Add a note when you document something introduced in a **minor version** (anything after X.0), and you are:
+
+* Adding a new article, or
+* Adding a new section (a heading plus at least one paragraph).
+
+Don't add a note for features that shipped with the major version itself. The version folder already tells the reader which version applies.
+
+Add the note in every version folder where the article or section exists, for example both `17/` and `18/`. The version number stays the same in each copy.
+
+#### Where to put the note
+
+* **New article**: directly after the introduction paragraph.
+* **New section**: directly under the heading, before the other content in the section.
+
+#### How to write the note
+
+Always use an `info` hint block. This is the only accepted format for version-specific notes.
+
+Inside the hint, write one or two plain sentences:
+
+* Name the subject. Don't start the sentence with "This".
+* State the first minor version that includes the feature, in the form `Umbraco X.Y`.
+* Use "or later" only when describing a requirement, not when describing availability.
+
+Example of an availability note:
+
+```markdown
+{% hint style="info" %}
+Lightweight external members are available from Umbraco 17.4.
+{% endhint %}
+```
+
+Example of a requirement note:
+
+```markdown
+{% hint style="info" %}
+Replacing the maintenance page requires Umbraco 18.3 or later. In earlier versions, the default page cannot be replaced.
+{% endhint %}
+```
+
 ## Advanced Blocks
 
 It is possible to add more advanced elements such as Expandables and Tabs. These are created using specific GitBook syntax

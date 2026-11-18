@@ -8,6 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [November 2026](2026-11-releasenotes.md)
 
+* [12/11] - **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 * [10/11] - **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * [02/11] - **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 

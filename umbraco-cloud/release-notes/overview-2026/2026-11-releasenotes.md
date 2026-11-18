@@ -4,6 +4,7 @@
 
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
+* **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 
 ## Alerting and Notifications
 
@@ -37,3 +38,16 @@ You can sort the list by each of the new columns.
 The project name now links to the project page for the projects where you are a team member.
 
 For more details, see the [Organizations](../../begin-your-cloud-journey/the-cloud-portal/organizations/README.md#projects) documentation.
+
+## Reroll the Deploy API key
+
+You can now reroll the Deploy API key of a project from the Cloud Portal. Umbraco Deploy uses the key when content and schema are transferred between environments. Reroll the key if you suspect the key has been shared or leaked. Find the page under **Security** -> **Deploy** on your project in the Cloud Portal.
+
+A reroll generates one new key and applies the new key to every environment in the project:
+
+* **All environments are restarted.** Each website is unavailable for a short while during the restart.
+* **The repository is updated.** The key in the `umbraco-cloud.json` file is updated in the repository of every environment. Pull the latest changes into any local clone before the next transfer.
+* **The old key stops working.** Transfers and deployments that use the old key are rejected.
+* **Baseline projects share one key.** Rerolling the key on a baseline project also applies the new key to every child project. The key cannot be rerolled from a child project.
+
+Only project admins can reroll the key. The page shows the status of each environment while the reroll runs.

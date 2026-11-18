@@ -41,7 +41,7 @@ Umbraco Cloud Websites support the following TLS ciphers in this order:
 
 The different Ciphers can be enabled or disabled on the security project settings page for your Cloud projects.
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Enable or disable TLS Ciphers</p></figcaption></figure>
 
 ### HTTP Strict Transport Security (HSTS)
 
@@ -129,6 +129,10 @@ Basic authentication will not be available for projects running Umbraco 9. It is
 ### Web Application Firewall (WAF)
 
 WAF is enabled by default on the custom hostname(s) you add to your Umbraco Cloud project. Environments created before November 2024 may have WAF turned off. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
+
+## Deploy API key
+
+Umbraco Deploy uses a Deploy API key when content and schema are transferred between environments. A project admin can reroll the key if you suspect the key has been shared or leaked. Find the page under **Security** -> **Deploy** on your project in the Cloud Portal. A reroll applies one new key to every environment in the project, and to every child project of a baseline project.
 
 ## Cookies and security
 

@@ -1,6 +1,5 @@
 ---
-description: >-
-    Implement the experimental Extraction capability for your custom provider.
+description: Implement the experimental Extraction capability for your custom provider.
 ---
 
 # Extraction Capability
@@ -20,7 +19,6 @@ Every Extraction type is marked `[Experimental("UMBRACOAI_EXTRACTION")]`. Add `#
 ## Base Class
 
 {% code title="AIExtractionCapabilityBase<TSettings>" %}
-
 ```csharp
 [Experimental("UMBRACOAI_EXTRACTION")]
 public abstract class AIExtractionCapabilityBase<TSettings>(IAIProvider provider)
@@ -42,7 +40,6 @@ public abstract class AIExtractionCapabilityBase<TSettings>(IAIProvider provider
         CancellationToken cancellationToken = default);
 }
 ```
-
 {% endcode %}
 
 A settings-free `AIExtractionCapabilityBase` also exists for providers without connection settings. `AIExtractionCapabilityBase<TSettings, TCapabilitySettings>` adds per-profile capability settings.
@@ -50,7 +47,6 @@ A settings-free `AIExtractionCapabilityBase` also exists for providers without c
 ## The IAIExtractionClient Contract
 
 {% code title="IAIExtractionClient.cs" %}
-
 ```csharp
 [Experimental("UMBRACOAI_EXTRACTION")]
 public interface IAIExtractionClient : IDisposable
@@ -63,32 +59,31 @@ public interface IAIExtractionClient : IDisposable
     object? GetService(Type serviceType, object? serviceKey = null);
 }
 ```
-
 {% endcode %}
 
 Each call receives one `AIExtractionRequest`:
 
-- `State` is the text to extract from. It is never empty, and it is shared by every field.
-- `Fields` holds one or more fields. Each has a unique `Id`. The fields can be of different kinds.
-- `ReferenceDate` is the date that relative expressions, such as "yesterday", resolve against. It can be `null`.
+* `State` is the text to extract from. It is never empty, and it is shared by every field.
+* `Fields` holds one or more fields. Each has a unique `Id`. The fields can be of different kinds.
+* `ReferenceDate` is the date that relative expressions, such as "yesterday", resolve against. It can be `null`.
 
 Your client answers every field and returns them in `AIExtractionResponse.Answers`, keyed by field `Id`. Answer all the fields in a single call to your service when it supports that. Requests made through `IAIExtractionService.ExtractAsync` contain exactly one field.
 
 Your client must follow these rules:
 
-- **Return one answer per field, of the matching type.** Answer an `AITextExtractionField` with an `AITextExtractionAnswer`, an `AINumberExtractionField` with an `AINumberExtractionAnswer`, and so on. Key each answer by its field's `Id`.
-- **Answer "not found" with an empty value.** When a value is not in the text, return the answer with a `null` value, or an empty list for a list field. Never return a guess. `IsFound` is worked out from the value, so you do not set it.
-- **Return the duration in the unit asked for.** An `AIDurationExtractionAnswer` must have the same `Unit` as its field.
-- **Use the caller's model when set.** Prefer `options?.ModelId` over the model the client was created with.
-- **Throw on failure.** Let HTTP errors surface as exceptions, such as `HttpRequestException` with a `StatusCode`. Umbraco AI classifies them through your provider's error classifier.
-- **Do not validate the request shape.** Umbraco AI checks the state, field IDs, instructions, and decimals before your client is called.
+* **Return one answer per field, of the matching type.** Answer an `AITextExtractionField` with an `AITextExtractionAnswer`, an `AINumberExtractionField` with an `AINumberExtractionAnswer`, and so on. Key each answer by its field's `Id`.
+* **Answer "not found" with an empty value.** When a value is not in the text, return the answer with a `null` value, or an empty list for a list field. Never return a guess. `IsFound` is worked out from the value, so you do not set it.
+* **Return the duration in the unit asked for.** An `AIDurationExtractionAnswer` must have the same `Unit` as its field.
+* **Use the caller's model when set.** Prefer `options?.ModelId` over the model the client was created with.
+* **Throw on failure.** Let HTTP errors surface as exceptions, such as `HttpRequestException` with a `StatusCode`. Umbraco AI classifies them through your provider's error classifier.
+* **Do not validate the request shape.** Umbraco AI checks the state, field IDs, instructions, and decimals before your client is called.
 
 Umbraco AI wraps your client with validation, error classification, middleware, telemetry, and usage tracking. It also checks your answers, and reports a provider error when it finds any of these:
 
-- A missing or extra answer, or an answer of the wrong type.
-- A `Confidence` or `NullProbability` outside 0 to 1.
-- A list answer whose `Values` or `Spans` is `null`.
-- A duration answer in a different unit from the one asked for.
+* A missing or extra answer, or an answer of the wrong type.
+* A `Confidence` or `NullProbability` outside 0 to 1.
+* A list answer whose `Values` or `Spans` is `null`.
+* A duration answer in a different unit from the one asked for.
 
 Setting `Usage` on the response makes token counts appear in [Usage Analytics](../../backoffice/usage-analytics.md). One call is recorded as one usage entry, however many fields it holds.
 
@@ -96,15 +91,15 @@ Setting `Usage` on the response makes token counts appear in [Usage Analytics](.
 
 Set these properties when you build each answer. Set `ModelId` and `Usage` once, on the `AIExtractionResponse`, because they cover the whole call.
 
-| Answer | Value properties |
-| --- | --- |
-| `AITextExtractionAnswer` | `Value` (`string?`), optional `Span` |
-| `AINumberExtractionAnswer` | `Value` (`decimal?`) |
-| `AIDateExtractionAnswer` | `Value` (`DateOnly?`) |
-| `AITimeExtractionAnswer` | `Value` (`TimeOnly?`) |
+| Answer                       | Value properties                                                                                     |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `AITextExtractionAnswer`     | `Value` (`string?`), optional `Span`                                                                 |
+| `AINumberExtractionAnswer`   | `Value` (`decimal?`)                                                                                 |
+| `AIDateExtractionAnswer`     | `Value` (`DateOnly?`)                                                                                |
+| `AITimeExtractionAnswer`     | `Value` (`TimeOnly?`)                                                                                |
 | `AIDateTimeExtractionAnswer` | `Value` (`DateTime?`). Use `DateTimeKind.Unspecified` unless your service returns an offset or zone. |
-| `AIDurationExtractionAnswer` | `Value` (`decimal?`), `Unit` (required, the field's unit) |
-| `AIListExtractionAnswer` | `Values` (strings, empty when none are found), `Spans` (empty, or one per value in the same order) |
+| `AIDurationExtractionAnswer` | `Value` (`decimal?`), `Unit` (required, the field's unit)                                            |
+| `AIListExtractionAnswer`     | `Values` (strings, empty when none are found), `Spans` (empty, or one per value in the same order)   |
 
 Every answer also has optional `Confidence`, `NullProbability`, and `RawRepresentation` properties. Set `Confidence` and `NullProbability` only when your service reports them.
 
@@ -113,7 +108,6 @@ Spans are character offsets into `State`. `End` is exclusive. Leave the span out
 ## Basic Implementation
 
 {% code title="MyExtractionCapability.cs" %}
-
 ```csharp
 #pragma warning disable UMBRACOAI_EXTRACTION
 
@@ -144,13 +138,11 @@ public class MyExtractionCapability : AIExtractionCapabilityBase<MyProviderSetti
     }
 }
 ```
-
 {% endcode %}
 
 The client below shows the shape of the mapping for two field kinds. `MyApi` stands in for your service's own client, and extracts one field at a time. If your service accepts multiple fields in one call, send them all together instead.
 
 {% code title="MyExtractionClient.cs" %}
-
 ```csharp
 #pragma warning disable UMBRACOAI_EXTRACTION
 
@@ -228,7 +220,6 @@ public class MyExtractionClient : IAIExtractionClient
     }
 }
 ```
-
 {% endcode %}
 
 ## Register in Provider
@@ -236,7 +227,6 @@ public class MyExtractionClient : IAIExtractionClient
 Add the Extraction capability in your provider constructor:
 
 {% code title="MyProvider.cs" %}
-
 ```csharp
 #pragma warning disable UMBRACOAI_EXTRACTION
 
@@ -254,7 +244,6 @@ public class MyProvider : AIProviderBase<MyProviderSettings>
     }
 }
 ```
-
 {% endcode %}
 
 ## Test Connection
@@ -263,6 +252,6 @@ The backoffice **Test Connection** button calls `GetModelsAsync` on your provide
 
 ## Related
 
-- [Creating a Provider](creating-a-provider.md) - Provider setup
-- [Decision Capability](decision-capability.md) - The other typed-answer capability
-- [Extraction API](../../using-the-api/extraction/README.md) - Using the Extraction API
+* [Creating a Provider](creating-a-provider.md) - Provider setup
+* [Decision Capability](decision-capability.md) - The other typed-answer capability
+* [Extraction API](../../using-the-api/extraction.md) - Using the Extraction API

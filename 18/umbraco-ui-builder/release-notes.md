@@ -18,6 +18,10 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco UI Builder, detailing all changes in this version.
 
+### [**18.1.4**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.4) **(November 16th 2026)**
+
+* Fixed the child collection tab not opening after the first save of a new item until the editor was closed and reopened [#250](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/250).
+
 ### [**18.1.3**](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.1.3) **(November 10th 2026)**
 
 * Fixed list views without an editor linking each row to an empty editor [#248](https://github.com/umbraco/Umbraco.UIBuilder.Issues/issues/248).

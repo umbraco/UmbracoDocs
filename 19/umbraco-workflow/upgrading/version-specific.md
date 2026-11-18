@@ -83,17 +83,17 @@ The `ContentApprovalEmailModel` constructor no longer takes a `ColorSettings` pa
 #### Removed Members
 
 * `ApprovalGroupDto.OfflineApproval`: use `ExternalApproval`.
-* `NodeSlim.Url`
-* `WorkflowTaskViewModel.Type`
+* `NodeSlim.Url`.
+* `WorkflowTaskViewModel.Type`.
 * `ContentReviewsScaffoldResponseModel.ReviewPeriod`: use `Period`.
 * `IInstancesRepository.GetByGuid(Guid)` and `IInstancesService.GetByGuid(Guid)`, and their implementations: use `GetByGuid(Guid, bool)`.
 * Three unused methods on `IWorkflowNotificationEmailExecutor`.
-* `IContentRepository.GetSourceVersion(int)`
+* `IContentRepository.GetSourceVersion(int)`.
 * `ICsvService.ExportToStream<T, TMap>`: use `ExportToStream<T>` with a type marked with `[CsvRecord]`.
 * `IAdvancedSearchService.Search`: use `SearchAsync`.
-* `ChartResponseModel.CurrentUserLocale`
+* `ChartResponseModel.CurrentUserLocale`.
 * The obsolete constructors of `ScaffoldService`, `WorkflowHubRoutes`, `ApproveActionController`, `ApproveOrRejectActionController`, `RejectActionController` and `UnlockNodeController`.
-* `WorkflowSettings.Colors` and `WorkflowSettings.SettingsCustomization`: use the `ContentApprovals`, `ContentReviews` and `ReleaseSets` properties.
+* `WorkflowSettings.Colors` and `WorkflowSettings.SettingsCustomization`: use the `ContentApprovals`, `ContentReviews`, and `ReleaseSets` properties.
 
 #### Changed Members (Breaking)
 

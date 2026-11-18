@@ -14,7 +14,8 @@ This setup is intended for local development only. It is not recommended for pro
 
 Before you can run Umbraco in Docker, make sure the following are installed:
 
-* .NET SDK with Umbraco Templates v16 or higher
+* The .NET SDK version listed in the [Requirements](requirements.md) article
+* Umbraco Templates v19 or higher
 * Docker Desktop
 
 ## Installing
@@ -90,11 +91,11 @@ dotnet new umbraco -n MyDockerSqliteProject
 
 {% code overflow="wrap" fullWidth="false" %}
 ```bash
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS base
 WORKDIR /app
 EXPOSE 8080
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["MyDockerSqliteProject/MyDockerSqliteProject.csproj", "MyDockerSqliteProject/"]

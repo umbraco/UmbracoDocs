@@ -69,7 +69,7 @@ Install-Package Umbraco.AI.OpenAI
 Install-Package Umbraco.AI.Prompt
 Install-Package Umbraco.AI.Agent
 
-# Install Deploy support (requires Umbraco Deploy)
+# Install Deploy support (requires Umbraco Deploy 19)
 Install-Package Umbraco.AI.Deploy
 Install-Package Umbraco.AI.Prompt.Deploy
 Install-Package Umbraco.AI.Agent.Deploy

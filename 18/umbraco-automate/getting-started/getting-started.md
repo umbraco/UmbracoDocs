@@ -10,7 +10,7 @@ The Getting Started guide walks you through installing Umbraco Automate, applyin
 
 Before you begin, make sure you have:
 
-* Umbraco CMS 17.1 or later installed.
+* Umbraco CMS 18.0 or later installed.
 * .NET 10.0 SDK or later.
 * Permission to add NuGet packages and edit `appsettings.json` .
 

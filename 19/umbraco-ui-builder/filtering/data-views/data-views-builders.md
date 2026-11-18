@@ -10,28 +10,84 @@ When resolving a data views builder, Umbraco UI Builder first attempts to retrie
 
 ## Defining a Data Views Builder
 
-To define a data views builder, create a class that inherits from `DataViewsBuilder<TEntityType>` and implements the required abstract methods.
+To define a data views builder, create a class that inherits from `DataViewsBuilder<TEntityType>`. Override `GetDataViewsAsync` and `GetDataViewWhereClause`.
 
+The following builder adds a data view for each team in a `teams` collection. Each data view lists the people of one team. The builder uses a `Team` model with an `int` ID and a `Name`, and a `Person` model with a `TeamId` property.
+
+{% code title="PersonDataViewsBuilder.cs" %}
 ```csharp
-// Example
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
+using MyProject.Models;
+using Umbraco.UIBuilder.Configuration.Builders.DataViews;
+using Umbraco.UIBuilder.Models;
+using Umbraco.UIBuilder.Persistence;
+
+namespace MyProject.DataViews;
+
 public class PersonDataViewsBuilder : DataViewsBuilder<Person>
 {
-    public override IEnumerable<DataViewSummary> GetDataViews()
+    private const string AliasPrefix = "team-";
+
+    private readonly IRepositoryFactory _repositoryFactory;
+
+    public PersonDataViewsBuilder(IRepositoryFactory repositoryFactory)
+        => _repositoryFactory = repositoryFactory;
+
+    public override async Task<IEnumerable<DataViewSummary>> GetDataViewsAsync(CancellationToken cancellationToken = default)
     {
-        // Generate and return a list of data views
+        var result = await _repositoryFactory
+            .GetRepository<Team, int>("teams")
+            .GetAllAsync(orderBy: x => x.Name, cancellationToken: cancellationToken);
+
+        if (!result.Success || result.Model is null)
+        {
+            return [];
+        }
+
+        return result.Model.Select(team => new DataViewSummary
+        {
+            Name = team.Name,
+            Alias = AliasPrefix + team.Id.ToString(CultureInfo.InvariantCulture),
+            Group = "Team",
+        }).ToList();
     }
 
     public override Expression<Func<Person, bool>> GetDataViewWhereClause(string dataViewAlias)
     {
-        // Return a where clause expression for the supplied data view alias
+        // An alias without a valid team ID gives 0, which matches no team
+        int teamId = 0;
+        if (dataViewAlias.StartsWith(AliasPrefix, StringComparison.Ordinal))
+        {
+            _ = int.TryParse(dataViewAlias[AliasPrefix.Length..], NumberStyles.Integer, CultureInfo.InvariantCulture, out teamId);
+        }
+
+        return x => x.TeamId == teamId;
     }
 }
 ```
+{% endcode %}
 
-The required methods are:
+The methods are:
 
-* **GetDataViews:** Returns the list of data views to choose from.
-* **GetDataViewWhereClause:** Returns the boolean **where clause** expression for the given data views alias.
+* **`GetDataViewsAsync`:** Returns the list of data views to choose from. Override it when building the list awaits anything.
+* **`GetDataViews`:** The synchronous version of `GetDataViewsAsync`. Override one of the two methods.
+* **`GetDataViewWhereClause`:** Returns the boolean **where clause** expression for the given data views alias. This method is required.
+
+Umbraco UI Builder only calls `GetDataViewsAsync`. By default, `GetDataViewsAsync` calls `GetDataViews`, so a builder that only overrides `GetDataViews` keeps working. A builder that overrides neither method throws a `NotImplementedException`.
+
+The method signatures are:
+
+```cs
+Task<IEnumerable<DataViewSummary>> GetDataViewsAsync(CancellationToken cancellationToken = default)
+IEnumerable<DataViewSummary> GetDataViews()
+Expression<Func<TEntityType, bool>> GetDataViewWhereClause(string dataViewAlias)
+```
 
 ## Setting the Data Views Builder of a Collection
 

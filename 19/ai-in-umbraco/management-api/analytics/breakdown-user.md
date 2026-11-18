@@ -5,6 +5,12 @@ description: >-
 
 # Breakdown by User
 
+{% hint style="warning" %}
+
+This endpoint is obsolete and will be removed in version 20. Use [Get Usage Breakdown](breakdown.md) with `dimension=User` instead.
+
+{% endhint %}
+
 Returns usage distribution across users.
 
 ## Request
