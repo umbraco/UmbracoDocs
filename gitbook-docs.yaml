@@ -217,7 +217,7 @@ site:
               path: 19.latest
               draft: true
               content:
-                directory: ./umbraco-engage/19.latest-rc
+                directory: ./19/umbraco-engage
             - type: space
               key: space-30
               title: 18.latest
