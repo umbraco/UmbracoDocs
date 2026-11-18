@@ -215,7 +215,6 @@ site:
               key: space-45
               title: 19.latest (RC)
               path: 19.latest
-              draft: true
               content:
                 directory: ./19/umbraco-engage
             - type: space
