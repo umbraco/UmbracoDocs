@@ -326,6 +326,13 @@ site:
               path: 13.latest
               content:
                 directory: ./13/umbraco-workflow
+            - type: space
+              key: space-46
+              title: 19.latest (RC)
+              path: 19.latest-rc
+              draft: true
+              content:
+                directory: ./umbraco-workflow/19.latest-rc
         - type: section
           key: section-17
           title: Search
