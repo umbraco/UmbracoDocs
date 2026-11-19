@@ -5,6 +5,7 @@
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
+* **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
 
 ## Alerting and Notifications
 
@@ -51,3 +52,11 @@ A reroll generates one new key and applies the new key to every environment in t
 * **Baseline projects share one key.** Rerolling the key on a baseline project also applies the new key to every child project. The key cannot be rerolled from a child project.
 
 Only project admins can reroll the key. The page shows the status of each environment while the reroll runs.
+
+## Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4
+
+These releases update the `Microsoft.AspNetCore.SignalR.StackExchangeRedis` dependency to version 10.0.15. The new version fixes a high-severity denial-of-service vulnerability in the ASP.NET Core SignalR Redis backplane. For details, see [CVE-2026-114147](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm).
+
+`Umbraco.Cloud.Cms` only uses the SignalR Redis backplane on projects with Load Balancing enabled. Projects without Load Balancing do not run the affected code.
+
+The releases also raise the minimum version of the related `Microsoft.Extensions` packages to 10.0.15. Existing projects receive the new versions through automatic upgrades.
