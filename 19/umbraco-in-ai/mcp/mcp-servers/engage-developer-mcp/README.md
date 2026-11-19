@@ -20,7 +20,7 @@ See [Configuration Options](configuration.md#cms-mcp-server-chaining) to learn m
 
 * An Umbraco 18 installation with **Umbraco Engage** 18.2.0 or later installed and licensed
 * An [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) with access to the **Engage** section, and to **Content** (or other sections) if you plan to use the chained CMS tools
-* `Node.js` version 22 or higher
+* `Node.js` 22.23.4 or later, 24.22.1 or later, or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
 
 ### Umbraco Engage Version Support
 
@@ -28,18 +28,18 @@ The Engage Developer MCP Server has a separate release line for each Umbraco maj
 
 | Umbraco | Umbraco Engage | Package |
 | --- | --- | --- |
-| 17 | 17.x | `@umbraco-engage/mcp-dev@lts-17-beta` |
-| 18 | 18.2.0 or later | `@umbraco-engage/mcp-dev@beta` |
+| 17 | 17.5.0 or later | `@umbraco-engage/mcp@lts-17` |
+| 18 | 18.2.0 or later | `@umbraco-engage/mcp` |
 
-This article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-engage/mcp-dev@lts-17-beta` and follow the Umbraco 17 version of this documentation.
+The package was previously published as `@umbraco-engage/mcp-dev`. The command is now `engage-mcp-server` (it was `umbraco-engage-mcp-dev`), so also update any script that runs the old command. If your MCP client configuration still uses the old name, change it to the package in the table.
+
+This article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-engage/mcp@lts-17` and follow the Umbraco 17 version of this documentation.
 
 When the server starts, it checks the Umbraco version of the connected instance. If the major version does not match, the first tool call returns a warning instead of running. See [Configuration Options](configuration.md#version-check) for details.
 
-Umbraco Engage changed its Management API in the 18.1 and 18.2 releases, so the Umbraco 18 line needs Umbraco Engage 18.2.0 or later. On Umbraco Engage 18.0 and 18.1:
+Umbraco Engage changed its Management API in the 18.1 and 18.2 releases, so the Umbraco 18 line needs Umbraco Engage 18.2.0 or later. From 18.2, A/B tests and personalizations reference goals, projects, and segments by key instead of by numeric ID.
 
-* `post-ab-test` cannot link an A/B test to its goal or project. From 18.2, A/B tests reference these by key instead of by numeric ID.
-* `post-applied-personalization` cannot link a personalization to its segment, for the same reason.
-* `get-ab-test-empty`, `get-configuration`, and `get-data-cleanup-last-run` return errors on Umbraco Engage 18.1.
+When the server starts, it also reads the installed Umbraco Engage version. On an earlier release, the server shows a warning. The A/B test, personalization, analytics query, and related tools then return an error that names the version they need. All other tools work as normal. If the server cannot read the Engage version, it does not block any tools.
 
 ## Intended audience
 
@@ -81,7 +81,7 @@ The same setup pattern applies here, using the Engage server's package instead o
   "mcpServers": {
     "umbraco-engage": {
       "command": "npx",
-      "args": ["-y", "@umbraco-engage/mcp-dev@beta"],
+      "args": ["-y", "@umbraco-engage/mcp"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "your-api-user-id",
@@ -104,8 +104,8 @@ Restart your MCP client after saving the configuration.
 You can check the server without connecting an MCP client. The following commands list the available tools and show the resolved configuration, with secrets masked:
 
 ```bash
-npx -y @umbraco-engage/mcp-dev@beta --list-tools
-npx -y @umbraco-engage/mcp-dev@beta --debug-config
+npx -y @umbraco-engage/mcp --list-tools
+npx -y @umbraco-engage/mcp --debug-config
 ```
 
 Both commands print their output and exit without starting the MCP Server. For all introspection commands, see the [CLI Reference](../../custom-mcp-server/sdk/cli.md).

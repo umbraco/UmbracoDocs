@@ -9,7 +9,9 @@ Each section represents a functional area of the API, following the grouping and
 
 The names shown in parentheses, for example, `(ab-test)` or `(segments)` refer to the **Tool Collection names**, which are used for configuration via environment variables: `UMBRACO_INCLUDE_TOOL_COLLECTIONS` or `UMBRACO_EXCLUDE_TOOL_COLLECTIONS`.
 
-This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/README.md), whose tools are proxied with a `cms:` prefix (for example, `cms:get-document`). See [Configuration Options](configuration.md#cms-mcp-server-chaining) for details. Those chained tools are documented on the [CMS Available Tools](../cms-developer-mcp/available-tools.md) page and are not repeated here.
+This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/README.md), whose tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`). See [Configuration Options](configuration.md#cms-mcp-server-chaining) for details. Those chained tools are documented on the [CMS Available Tools](../cms-developer-mcp/available-tools.md) page and are not repeated here.
+
+The tools on this page need Umbraco Engage 17.5.0 or later. See [Umbraco Engage Version Support](README.md#umbraco-engage-version-support) for what happens on earlier 17.x releases.
 
 ## Table of Contents
 
@@ -53,7 +55,6 @@ This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/
 - `get-ab-test-all` — List every A/B test in the site
 - `get-ab-test-empty` — Get a blank draft A/B test template for the given test type
 - `get-ab-test-page` — List all A/B tests that target a given Umbraco content page
-- `get-ab-test-preview-url` — Get a preview URL for a specific A/B test variant
 - `get-ab-test-view-model` — Get a single A/B test
 - `post-ab-test` — Create a new A/B test in Draft status against a real content page, comparing an implicit Original benchmark variant to one named second variant
 - `post-ab-test-runtime-indication` — Estimate how long an A/B test would need to run to reach statistical significance, given participation rate, minimum detectable effect, expected daily visitors, baseline conversion rate, and variant count
@@ -251,7 +252,6 @@ This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/
 ## Segments (`segments`)
 
 - `delete-segments` — Delete a segment
-- `delete-segments-delete-segment-content` — Remove tracked content association for an internal A/B testing or personalization segment identifier
 - `get-segments` — Get a single segment
 - `get-segments-all` — List all visitor segments
 - `get-segments-locations-data` — List all countries, provinces, cities, and counties seen across visitor traffic
