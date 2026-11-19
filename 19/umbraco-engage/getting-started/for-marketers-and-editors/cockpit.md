@@ -1,8 +1,8 @@
 ---
 description: >-
   The Cockpit is a tool to let you view data directly on the front end of the
-  website. The cockpit is only visible if you are logged in to Umbraco and have
-  access to the Engage section.
+  website. The Cockpit is only visible to users logged in to Umbraco 
+  with access to the Engage section.
 ---
 
 # Cockpit
