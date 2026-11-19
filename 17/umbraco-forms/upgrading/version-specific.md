@@ -16,6 +16,19 @@ If you are upgrading to a minor or patch version, you can find the details about
 
 Version 17 of Umbraco Forms has a minimum dependency on Umbraco CMS core of `17.0.0`. It runs on .NET 10.
 
+### Workflow settings checked when a form is saved
+
+This change was introduced in version 17.8.0. It affects you if a form has a workflow with one of the settings below.
+
+Saving a form now refuses these workflow settings:
+
+* A **Sender Email** that isn't an email address.
+* A **Sender Email** taken from the submission, such as `{email}` or `{member.email}`. Such a workflow sends, but lets a visitor choose the From address. Use a fixed address or a `[…]` placeholder instead.
+* A Post to URL, Post as XML or Slack URL that isn't a full `http://` or `https://` address.
+* A Post as XML workflow without a **Method**.
+
+The check applies to saves from the backoffice, the Management API and Umbraco Deploy. Existing forms aren't changed, but a form with one of these settings can't be saved until you change the setting.
+
 ### Data Consent field in custom themes
 
 This change was introduced in version 17.7.0. It affects you if a custom theme overrides `FieldType.DataConsent.cshtml`.

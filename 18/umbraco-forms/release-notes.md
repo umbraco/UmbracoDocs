@@ -20,6 +20,29 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 18 including all changes for this version.
 
+### [18.4.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.4.0) (release date to be confirmed)
+
+#### Workflow settings checked when a form is saved
+
+Saving a form now refuses workflow settings that make the workflow fail on every submission. The workflow editor also checks the settings when you submit a workflow. If a setting is refused, the editor stays open and names the setting to change.
+
+The new checks are:
+
+* Email workflows: **Sender Email** must be an email address, or blank to use the address from your Umbraco configuration. A `[…]` placeholder, such as `[#senderEmail]`, is still accepted. A sender taken from the submission, such as `{email}`, is refused, because it lets a visitor choose the From address [#1825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1825)
+* Post to URL, Post as XML and Slack workflows: the URL must be a full `http://` or `https://` address. A URL containing a placeholder is still accepted, except for the Slack **Webhook URL** [#1830](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1830)
+* Post as XML workflow: **Method** is now mandatory [#1830](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1830)
+
+#### Other
+
+* Record Index: Remove a field's values from the records index for existing entries when the field is made sensitive or deleted. Before, the values stayed until the index was rebuilt
+* Form Design: Wrap long field captions and condition summaries in the **Design** view, and show each field's alias on its own line [#1815](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1815)
+* Workflows: Ignore empty entries in a Change Record State workflow's **Words**, so a trailing comma no longer matches every entry [#1830](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1830)
+* Management API: Validate workflow settings with the same checks as form save, and name the refused settings in the error's `detail` [#1825](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1825)
+
+{% hint style="warning" %}
+This release changes some existing behaviour. Check the [Workflow settings checked when a form is saved](upgrading/version-specific.md#workflow-settings-checked-when-a-form-is-saved) section of the Version Specific Upgrade Notes article before upgrading.
+{% endhint %}
+
 ### [18.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.1) (November 19th 2026)
 
 * Sidebar Navigation: Load every user in the Forms Security tree, instead of stopping at the first 100 [#1828](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1828)
