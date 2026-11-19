@@ -32,6 +32,10 @@ The minimum TLS Version only allows HTTPS connections from visitors that support
 
 A Web Application Firewall (WAF) is a security solution designed to protect web applications by filtering and monitoring HTTP traffic between them and the Internet. Common attacks like cross-site scripting, SQL injection, and file inclusion are mitigated by acting as a shield between the web application and potential threats. For more detailed information, refer to our [WAF section](web-application-firewall.md).
 
+{% hint style="info" %}
+The **Web Application Firewall** page under **Security** gives you more control. You can allow, challenge, or block requests for each domain. The settings described here keep working next to that page. Learn more in the [Web Application Firewall](web-application-firewall.md) article.
+{% endhint %}
+
 ## Web Application Firewall Sensitivity
 
 The Umbraco Cloud WAF supports sensitivity configuration, extending the default [WAF](web-application-firewall.md) protection. The default [WAF](web-application-firewall.md) and WAF sensitivity configuration options don't interact and can be controlled separately. It is recommended to configure WAF sensitivity early in the project and adjust it based on the performance.
