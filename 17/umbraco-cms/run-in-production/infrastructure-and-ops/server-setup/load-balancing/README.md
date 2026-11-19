@@ -66,7 +66,7 @@ In this setup, the data flow works as follows:
 
 ## Scheduling and server role election
 
-Umbraco elects one server to hold the `SchedulingPublisher` role. Recurring background jobs run on this server by default.
+Umbraco elects one server to hold the `SchedulingPublisher` role. Custom recurring background jobs run only on this server unless they are set up to run on other server roles. Umbraco's built-in recurring background jobs run on all servers.
 
 Distributed background jobs work differently. Any server with write access to the database can pick them up. Built-in distributed jobs include scheduled publishing, health check notifications, log scrubbing, and content version cleanup. For timing options, see [Distributed jobs settings](../../../../develop-with-umbraco/configuration/distributedjobssettings.md).
 
@@ -83,7 +83,7 @@ There are two server roles:
 These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 {% endhint %}
 
-Each instance will be allocated a role by the automatic server role election process, but they can also be set explicitly (recommended)
+Each instance is allocated a role by the automatic server role election process. When you load balance, the recommended approach is to set the roles explicitly instead. Explicit roles are required for read-only database access on subscriber servers. For details, see [Explicit SchedulingPublisher server](flexible-advanced.md#explicit-schedulingpublisher-server).
 
 ### Umbraco application URL
 
@@ -99,17 +99,13 @@ Each server uses the URL for:
 * Health checks that request the site's home page.
 * Allowed redirect URIs for backoffice login.
 
-None of these uses requires a server-specific address. The same value can be set on every server.
+Set `UmbracoApplicationUrl` to the public URL of the site, and use the same value on every server. None of these uses requires a server-specific address.
 
 In production runtime mode, Umbraco does not start unless `UmbracoApplicationUrl` is set. For details, see [Runtime Modes](../../../runtime-modes.md#production-mode).
 
 When `UmbracoApplicationUrl` is not set, `ApplicationUrlDetection` controls how the URL is found. The default is `None`, so no URL is detected. Behind a load balancer, auto-detection can pick up an internal host name. Setting the URL explicitly avoids this. For details, see [WebRouting settings](../../../../develop-with-umbraco/configuration/webroutingsettings.md#umbraco-application-url).
 
 With the default, Umbraco logs a warning at startup. Email links, such as user invitations and password resets, are not available until you set a URL.
-
-{% hint style="info" %}
-To keep front-end servers from ever taking the `SchedulingPublisher` role, [set explicit server roles](flexible-advanced.md#explicit-schedulingpublisher-server) with a custom `IServerRoleAccessor`.
-{% endhint %}
 
 ## Common load balancing setup information
 
