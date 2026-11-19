@@ -11,3 +11,7 @@
 
 * [Asking Engage Questions](using-umbraco-engage-ai/asking-engage-questions.md)
 * [Example: A Marketer Agent](using-umbraco-engage-ai/example-marketer-agent.md)
+
+## Release Notes
+
+* [Release Notes](release-notes.md)

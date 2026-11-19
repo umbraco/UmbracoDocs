@@ -46,7 +46,7 @@ Go to a form and add a new question. Do you see this option?
 
 ![Analytics Visitor ID field in Forms](../.gitbook/assets/engage-analytics-form-field.png)
 
-Go to **Engage** > **Settings** > **Goals** and select **Create goal**. Open the **Trigger** dropdown. Do you see the following option called **Umbraco Forms submission**?
+Go to **Engage** > **Configuration** > **Goals** and select **Create goal**. Open the **Trigger** dropdown. Do you see the following option called **Umbraco Forms submission**?
 
 ![Umbraco Forms submission option in the goal trigger dropdown](../.gitbook/assets/engage-forms-goal-trigger.png)
 
@@ -54,7 +54,7 @@ If you see both options, the Forms add-on has been configured correctly. If not,
 
 ### 6. Analytics
 
-Edit a page and go to the Workspace View marked **Analytics** or **Engage** -> **Analytics** from the top navigation.
+Edit a page and go to the Workspace View marked **Analytics** or **Engage** > **Insights** > **Analytics** from the sidebar.
 
 Are you able to see analytical data? If not, then you **need to wait 24 hours for today's analytics** to be collected and reported.
 
@@ -74,7 +74,7 @@ Once set up, you will see analytics for countries like this below:
 
 Confirm that the IP of your company/office building has been set to be excluded from Umbraco Engage. This is done to ensure it is excluded from tracking and reporting, along with anyone else who is a content editor of the website.
 
-You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure a rule with the **IP address** type exists for it. Go to **Engage** > **Settings** > **Block traffic** to check.
+You can check your IP by [Googling for What is My IP](https://www.google.com/search?q=what+is+my+IP). Ensure a rule with the **IP address** type exists for it. Go to **Engage** > **Configuration** > **Block traffic** to check.
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 

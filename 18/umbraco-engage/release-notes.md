@@ -16,7 +16,14 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 18, detailing all changes in this version.
 
-#### [18.3.0](https://www.nuget.org/packages/Umbraco.Engage/18.3.0) (October 29th 2026)
+#### [18.3.0](https://www.nuget.org/packages/Umbraco.Engage/18.3.0) (November 17th 2026)
+
+**Permissions**
+
+* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The permissions are also enforced on the server.
+* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
+* The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only with the Read permission for that feature.
+* A profile export now includes the member name and email only for users with access to the Members section.
 
 **Analytics and reporting**
 
@@ -33,6 +40,10 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Fixed the table staying on the previous scope when "Include subpages" changed after the chart had loaded.
 * Fixed the totals strip showing "NaN% of total" or "Infinity% of total" when no total was available.
 * Fixed overlapping star-schema generation runs not being skipped. Generation now uses an application lock.
+* `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
+* Average columns in Analytics tables no longer show a total.
+* Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
+* Fixed Analytics tables with "Include subpages" timing out on large reports.
 
 **Analytics: visual redesign**
 
@@ -45,12 +56,18 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Added the ability to archive an A/B test. Running tests can't be selected for bulk actions.
 * The A/B test list now has a grid view and a table view, with status tags, sorting, and filters.
 * The A/B test list and test project workspace have been redesigned. The "New" status is now labeled "Draft", and tests are grouped by status.
+* Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
+* A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
+* Fixed a test that could not be ended or unscheduled while it had a validation error, such as a variant without a name.
+* A test that is reverted to Stopped after a failed winner promotion no longer keeps its winner.
+* Improved the performance of assigning A/B test variants on a visitor's first page.
 
 **Headless**
 
 * Headless segmentation and Delivery API calls can now pass the visitor's browser User-Agent in a `Visitor-User-Agent` header. Device segments now resolve from the visitor's browser instead of the server-side frontend's HTTP client.
 * Segmentation and Delivery API calls no longer store segment rule results that apply only once, such as Device, in the visitor's profile. The results are stored by the tracked pageview instead.
 * A tracked URL on a non-default port now keeps its port in the headless request host. Previously a pageview for `https://localhost:44367/` was stored against the default port and created a second page row. Existing rows are not migrated.
+* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews.
 
 **Backoffice and platform**
 
@@ -59,6 +76,9 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 * Added a generated appsettings JSON schema, `appsettings-schema.Umbraco.Engage.json`, which is shipped in the package. The Engage configuration options now have descriptions and default values in the schema, and `SessionCookieSameSite` lists its allowed values.
 * Fixed the `AlignSchema` migration failing when both a legacy and an aligned database object name exist.
 * The `FctSession.Page` and `FctSession.UmbracoPageVariant` members are marked as obsolete, and will be removed in Umbraco Engage 19. The database columns they referred to were never created.
+* `TriggerGoal` and `TriggerGoalAsync` now reject inactive, invalid, or unknown goals and log a warning. `TriggerGoalAsync(long)` returns `false` in that case.
+* Added `umbracoEngage.analytics.consentGranted()`. Call it instead of your own page reload after a visitor gives consent, so the original referrer is kept. It uses a short-lived `ue-consent-referrer` cookie.
+* Fixed the browser tab title showing a raw key instead of "Engage" after a reload.
 
 #### [18.2.0](https://www.nuget.org/packages/Umbraco.Engage/18.2.0) (October 1st 2026)
 
@@ -118,8 +138,11 @@ Below are the release notes for Umbraco Engage 18, detailing all changes in this
 #### [18.1.0](https://www.nuget.org/packages/Umbraco.Engage/18.1.0) (August 20th 2026)
 
 * All changes from 18.1.0 release candidates
+* Fixed an error that could block all pageviews from being saved.
+* Fixed goal completions and page events being lost without an error ([Issue #98](https://github.com/umbraco/Umbraco.Engage.Issues/issues/98)).
+* `DeduplicatePageVariants.sql` no longer erases the segment of the default variant.
 
-#### [18.1.0-rc](https://www.nuget.org/packages/Umbraco.Engage/18.1.0) (August 7th 2026)
+#### [18.1.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/18.1.0-rc1) (August 7th 2026)
 
 **Upgrading**
 

@@ -16,7 +16,7 @@ If you used **IP filtering** before, nothing is lost. Your existing filters were
 
 ## Where to find it
 
-Open the Engage section and go to **Settings** > **Block traffic**. The overview lists every rule you have set up. If you don't have any rule set up, it shows "No rules have been added yet."
+Open the Engage section and go to **Configuration** > **Block traffic**. The overview lists every rule you have set up. If you don't have any rule set up, it shows "No rules have been added yet."
 
 <figure><img src="../../.gitbook/assets/Settings-BlockTraffic.png" alt="The Block traffic overview listing configured rules"><figcaption><p>The Block traffic overview</p></figcaption></figure>
 

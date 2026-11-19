@@ -13,4 +13,4 @@ The data is visualized in two parts in Umbraco:
 
 ## Source of data
 
-All the data for the reports are generated nightly at 4:00 AM (configurable). During this process all the relational data is turned into a star scheme for quick reporting in the different Umbraco Engage sections.&#x20;
+All the data for the reports is generated once a night. By default, Umbraco Engage picks a random time between 01:00 and 05:00 in the reporting time zone. Set a fixed time with the `Engage:Reporting:DataGenerationTime` setting, described in the [Configuration](../../settings/configuration.md) article. During this process all the relational data is turned into a star scheme for quick reporting in the different Umbraco Engage sections.&#x20;

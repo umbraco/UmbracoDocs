@@ -16,6 +16,12 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.8.3**](https://www.nuget.org/packages/Umbraco.Engage/13.8.3) **(November 17th 2026)**
+
+* The Engage user group permissions are now also enforced on the server. Previously, only the backoffice screens checked them.
+* The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only when one of the user's groups has access to that feature.
+* A profile export now includes the member name and email only for users with access to the Members section.
+
 [**13.8.2**](https://www.nuget.org/packages/Umbraco.Engage/13.8.2) **(October 29th 2026)**
 
 * Updated `Umbraco.Licenses` to 13.3.6. This fixes a rare startup failure with the error "Unable to verify license for Umbraco.Engage. The details provided do not match the signature", caused by SQL Server `datetime` precision ([Issue #110](https://github.com/umbraco/Umbraco.Engage.Issues/issues/110)).
@@ -27,6 +33,7 @@ This section contains the release notes for Umbraco Engage 13, including all cha
 
 * Improved backoffice performance by adding caching to the Engage **Document Type** and **User Group** permissions, including cross-server cache refreshing for load-balanced environments.
 * Optimized the **A/B Testing**, **Analytics**, and **Personalization** content apps to prevent unnecessary database calls when opening content in the backoffice.
+* `CompleteAlignSchema.sql` now supports a separate Engage database.
 
 [**13.8.0**](https://www.nuget.org/packages/Umbraco.Engage/13.8.0) **(April 20th 2026)**
 
