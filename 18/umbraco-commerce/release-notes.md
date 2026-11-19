@@ -18,6 +18,11 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.1.13 (17th Nov 2026)
+
+* Tightened permission checks in the backoffice so users only see the stores and data their sections and store access allow.
+* Fixed database transactions holding a thread while waiting for a free connection, which could slow sites under heavy order load.
+
 #### 18.1.12 (11th Nov 2026)
 
 * Fixed finalizing an order overwriting a customer's saved name and external ID ([#912](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/912)).

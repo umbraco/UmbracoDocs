@@ -2,7 +2,6 @@
 description: >-
   Learn how to view and act on the recommendations Umbraco Cloud gives you for
   your projects and organization.
-hidden: true
 ---
 
 # Recommendations
@@ -39,30 +38,31 @@ Only organization admins can see recommendations for an organization.
 
 This page shows recommendations for all projects in the organization, aggregated in different ways to draw your attention to the most important areas. From here you can access the project recommendations page too.
 
-## Snooze and suppress recommendations
+## Disable recommendations
 
-You might deem that some recommendations are not relevant for an environment, project, or organization. Depending on whether this is a temporary or permanent situation, you can snooze or suppress the recommendation through the UI. Snoozed and suppressed recommendations don't count towards the [recommendation score](recommendations.md#recommendation-score).
+Some recommendations might not be relevant for every project or organization. You can disable a recommendation so it doesn't count towards the [recommendation score](recommendations.md#recommendation-score). Choose where to disable it:
+
+* For the whole organization: The recommendation stops counting for every project in the organization.
+* For a single project: The recommendation stops counting for that project only.
 
 {% hint style="info" %}
-Recommendations that you snooze or suppress don't change your score immediately. Your score updates automatically [the next time the system collects recommendations](recommendations.md#when-recommendations-are-updated).
+Disabling or re-enabling a recommendation starts a new collection of recommendations. Your score is updated within 15 minutes. For more information, see [When recommendations are updated](recommendations.md#when-recommendations-are-updated).
 {% endhint %}
 
-To snooze a recommendation:
+To disable a recommendation:
 
-1. Navigate through the UI to the specific recommendation you want to snooze.
-2. Select the three-dot menu.
-3. Choose **Snooze for 30 days**.
-
-You can then select **Activate again** if you want to bring it back before the 30 days are over.
-
-To suppress a recommendation:
-
-1. Navigate through the UI to the specific recommendation you want to suppress.
-2. Choose **Not relevant** or **Not relevant for this project**.
+1. Navigate through the UI to the specific recommendation you want to disable.
+2. Select **Stop counting it for the whole organization** or **Stop counting it for this project**.
 3. Provide a reason.
-4. Select **Mark not relevant**.
+4. Select **Stop counting it**.
 
-<figure><img src="../../.gitbook/assets/recommendations-snooze-and-suppress.png" alt="UI that displays how to snooze and suppress recommendations."><figcaption><p>Snoozing and suppressing recommendations through the UI</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/recommendations-disable.png" alt="UI that displays how to disable a recommendation."><figcaption><p>Disabling a recommendation through the UI</p></figcaption></figure>
+
+To re-enable a recommendation:
+
+1. Go to the organization or [project recommendations page](recommendations.md#for-a-project).
+2. Find the disabled recommendation. If disabled in a project, it's under **Not counted**.
+3. Select **Count it again**.
 
 ## Recommendation score
 
@@ -70,7 +70,7 @@ The recommendation score refers to the number of checks that pass in a project (
 
 <figure><img src="../../.gitbook/assets/recommendations-score-trend.png" alt="Graph displaying the number of recommendations passing for an environment over time."><figcaption><p>Environment recommendation pass trend over time</p></figcaption></figure>
 
-When a recommendation is snoozed or suppressed, it doesn't count towards the score.
+When a recommendation is disabled, it doesn't count towards the score.
 
 ## When recommendations are updated
 
@@ -79,8 +79,7 @@ Recommendations are collected automatically for your project, but changes might 
 * When you create a project, recommendations are collected for it starting at 00:00 UTC the next day.
 * Whenever Umbraco publishes a new recommendation, recommendations are collected for all projects in Umbraco Cloud starting at 00:00 UTC the next day.
 * Whenever you take an action that can change the value of a recommendation, the affected recommendations are scanned asynchronously. Such actions include enabling a feature, changing configuration, or deploying your project. The recommendation score might be updated within the next 15 minutes.
-
-Recommendations are not collected when you snooze or suppress one.
+* When you [disable or re-enable a recommendation](recommendations.md#disable-recommendations), the affected recommendations are collected asynchronously. The recommendation score is updated within the next 15 minutes.
 
 ## How recommendations are organized
 

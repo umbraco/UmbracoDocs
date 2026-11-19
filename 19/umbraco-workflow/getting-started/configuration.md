@@ -1,7 +1,7 @@
 ---
 description: >-
-  Get an overview of various options for customizing the configuration of your
-  Umbraco Workflow installation.
+    Get an overview of various options for customizing the configuration of your
+    Umbraco Workflow installation.
 ---
 
 # Configuration
@@ -34,17 +34,13 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 {
   "Workflow": {
     "ReminderNotificationPeriod": Timespan.FromHours(8),
-    "ActionNotificationPeriod": Timespance.FromMinutes(5),
+    "ActionNotificationPeriod": Timespan.FromMinutes(5),
     "EnableTestLicense": false,
-    "DateFormats": {
-      "DateFormat": "MMMM d, yyyy h:mm tt",
-      "DateFormatNoMinute": "MMMM d, yyy h tt",
-      "DateFormatShort": "MMMM d, yyyy",
-      "TimeFormat": "h:mm tt",
-      "TimeFormatShort": "HH:mm"
-    },
-    "SettingsCustomization": {...}
+    "ContentApprovals": {...},
+    "ContentReviews": {...},
+    "ReleaseSets": {...}
   }
+}
 ```
 
 ### Workflow Configuration
@@ -65,24 +61,17 @@ A `bool` value used to enable or disable the test license. When true, and runnin
 
 A `bool` value used to enable or disable the remote version check. When false, Workflow will not attempt to fetch the latest version information. When true, Workflow will send a network request to the Umbraco Marketplace API to retrieve the latest version. If a newer version exists, an update prompt is displayed in the Workflow section.
 
-#### DateFormats
-
-An instance of `DateTimeSettings` allowing customization of date string formats. The `DateTimeSettings` class contains properties for long and short date and time strings, plus a long date variation with no minutes.
-
-#### Colors
-
-An instance of `ColorSettings` allowing customization of colors used in email notifications. Allows setting alternate values for red, orange, and green use to highlight workflow status in emails.
-
-## SettingsCustomization
+## Setting customizations
 
 All Workflow settings can be customized in the `appSettings.json` file. Settings can be read-only or hidden entirely in the BackOffice. Optionally you can set the values here.
 
-The `SettingsCustomization` object has two child properties:
+The customizations are configured in three sections, directly under `Umbraco:Workflow`:
 
-* `General`
-* `ContentReviews`
+- `ContentApprovals`
+- `ContentReviews`
+- `ReleaseSets`
 
-Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set to the following structure that contains three settings:
+Each section contains a `SettingCustomization` object per setting. The object has the following structure, with three options:
 
 ```json
 {
@@ -96,54 +85,70 @@ Both are dictionaries of `SettingsCustomizationDetail` objects. The value is set
 }
 ```
 
-* `IsHidden` - When true, the corresponding property is not displayed in the backoffice UI
-* `IsReadOnly` - When true, the corresponding property is displayed in the backoffice UI but is not editable
-* `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the backoffice
+- `IsHidden` - When true, the corresponding property is not displayed in the backoffice UI
+- `IsReadOnly` - When true, the corresponding property is displayed in the backoffice UI but is not editable
+- `Value` - Sets the value for the corresponding property. This value takes priority over existing values set via the backoffice
 
-All available `SettingsCustomization` options are illustrated below along with their respective values:
+All available customization options are illustrated below along with their respective values:
 
 ```json
 {
-  "Workflow": {
-    …
-    "SettingsCustomization": {
-      "General": {
-        "FlowType": 0|1|2 matching the FlowType enum values,
-        "ApprovalThreshold": 0|1|2 matching the ApprovalThreshold enum values,
-        "ConfigureApprovalThreshold": bool,
-        "RejectionResetsApprovals": bool,
-        "LockIfActive": bool,
-        "MandatoryComments": bool,
-        "AllowAttachments": bool,
-        "AllowScheduling": bool,
-        "RequireUnpublish": bool,
-        "ExtendPermissions": bool,
-        "SendNotifications": bool,
-        "Email": string,
-        "ReminderDelay": int,
-        "EditUrl": string,
-        "SiteUrl": string,
-        "NewNodeApprovalFlow": *,
-        "DocumentTypeApprovalFlow": *,
-        "ExcludeNodes": *,
-      },
-      "ContentReviews": {
-        "EnableContentReviews": bool,
-        "ReviewPeriod": int,
-        "ReminderThreshold": int,
-        "SendNotifications": bool,
-        "PublishIsReview": bool
-      }
+    "Workflow": {
+        …
+        "ContentApprovals": {
+            "FlowType": 0|1|2 matching the FlowType enum values,
+            "ApprovalThreshold": 0|1|2 matching the ApprovalThreshold enum values,
+            "ConfigureApprovalThreshold": bool,
+            "RejectionResetsApprovals": bool,
+            "LockIfActive": bool,
+            "ScheduledContentLock": 0|1|2 matching the ScheduledLockMode enum values,
+            "AdminCanEdit": bool,
+            "MandatoryComments": bool,
+            "AllowAttachments": bool,
+            "AllowScheduling": bool,
+            "RequireUnpublish": bool,
+            "RequirePublishForInitiate": bool,
+            "ExtendPermissions": bool,
+            "Administrators": string,
+            "SendNotifications": bool,
+            "Email": string,
+            "ReminderDelay": int,
+            "EditUrl": string,
+            "SiteUrl": string,
+            "NewNodeApprovalFlow": *,
+            "ExcludeNodes": *,
+            "EmailTemplates": *,
+            "EntityTypeActionConfigs": *
+        },
+        "ContentReviews": {
+            "EnableContentReviews": bool,
+            "ReviewPeriod": int,
+            "ReminderThreshold": int,
+            "SendNotifications": bool,
+            "PublishIsReview": bool,
+            "RelativeTo": 0|1 matching the GenerateReviewRelativeTo enum values,
+            "Force": bool,
+            "ContentItemReviews": *,
+            "DocumentTypeReviews": *
+        },
+        "ReleaseSets": {
+            "EnableReleaseSets": *,
+            "EnableAlternateVersions": *,
+            "RequireWorkflowApproval": *
+        }
     }
-  }
 }
 ```
 
 {% hint style="info" %}
-These are complex types and are not recommended to have values set from Configuration. Instead, these values can be set from the BackOffice to hidden or read-only to prevent further changes.
+Settings marked `*` are complex types and cannot be given a `Value` from configuration. They can be set to hidden or read-only using `IsHidden` and `IsReadOnly` to prevent further changes in the backoffice.
 {% endhint %}
 
-### General
+{% hint style="warning" %}
+In Workflow 18 and earlier, the customizations were configured below `SettingsCustomization`, for example `Umbraco:Workflow:SettingsCustomization:ContentApprovals:SiteUrl`. In Workflow 19, the `SettingsCustomization` level is removed. Configuration at the old location is ignored. For more information, see the [Version Specific Upgrade Notes](../upgrading/version-specific.md#configuration).
+{% endhint %}
+
+### ContentApprovals
 
 #### FlowType (int)
 
@@ -177,6 +182,20 @@ When true, and ApprovalThreshold is Most or All, rejecting a task resets progres
 
 When true, prevents editing content where the node is in an active workflow. When false, content can be edited at any stage of a workflow.
 
+#### ScheduledContentLock (int)
+
+Sets which content is locked when a publish is scheduled, to one of None (0), Workflow (1), or All (2):
+
+| Value         | Name     | Description                                                                                    |
+| ------------- | -------- | ---------------------------------------------------------------------------------------------- |
+| 0 (_default_) | None     | Content with a scheduled publish is not locked.                                                |
+| 1             | Workflow | Content is locked while a publish scheduled by a workflow is pending.                          |
+| 2             | All      | Content is locked while any publish is scheduled, including schedules not created by Workflow. |
+
+#### AdminCanEdit (bool)
+
+When true, Workflow administrators can edit content that is locked by an active workflow.
+
 #### MandatoryComments (bool)
 
 When true (default), comments are required when approving a workflow task. When false, comments are optional when approving a workflow task. Comments are always required when submitting changes for approval.
@@ -193,9 +212,17 @@ When true, displays optional controls for scheduling publish/unpublish when init
 
 When true, content must be approved via a workflow when unpublishing. When false, user with appropriate permission can unpublish content without workflow approval.
 
+#### RequirePublishForInitiate (bool)
+
+When true, a user must have the publish permission to initiate a workflow.
+
 #### ExtendPermissions (bool)
 
 When true, Workflow adds additional buttons to the editor footer (Request publish and Request unpublish, if the latter is required). When false, Workflow replaces the existing editor footer buttons.
+
+#### Administrators (string)
+
+A comma-separated list of the keys (GUIDs) of the users who are Workflow administrators, for example `"6a1e3f5c-0d52-4c3b-9b41-0e2a6f1f7d10,2b9a7d44-91c8-4f2e-8d5a-3c7e9a1b0f65"`. Workflow administrators are granted the additional permissions described in the Workflow settings.
 
 #### SendNotifications (bool)
 
@@ -221,13 +248,17 @@ The URL at which users access the live site eg `https://mysite.com`. Used for ge
 
 When set, this flow is used for all new nodes on the first approval request. Subsequent workflows use the permissions set on the node (or content type, or inherited from an ancestor node). This is a complex type and ideally would not be set via configuration.
 
-#### DocumentTypeApprovalFlow (complex type, requires a license)
-
-Sets workflow permissions for Document Types (that is: all items of `BlogItem` type use the same workflow). The Document Type flow is used when a content node has no explicit permissions set. This is a complex type and ideally should not be set via configuration.
-
 #### ExcludeNodes (complex type, requires a license)
 
-Allows excluding segments of the content tree from the workflow model. This is a complex type and ideally would not be set via configuration.
+Allows excluding segments of the content tree from the workflow model. This is a complex type and cannot be given a value from configuration.
+
+#### EmailTemplates (complex type)
+
+The installed email templates. This is a complex type and cannot be set from configuration. Set `IsHidden` or `IsReadOnly` to control access to the email template settings in the backoffice.
+
+#### EntityTypeActionConfigs (complex type)
+
+The workflow action configuration for each entity type. This is a complex type and cannot be set from the configuration. Set `IsHidden` or `IsReadOnly` to control access to the action configuration in the backoffice.
 
 ### ContentReviews
 
@@ -251,31 +282,59 @@ When true, Workflow will send email notifications to approval groups, with a dig
 
 When true, publishing a node is treated as a review, and will generate a new review date. When false, content must be explicitly reviewed..
 
-For example: To set the site URL, hide it in the backoffice, and set the content review period but keep the property read-only. The configuration would look like this:
+#### RelativeTo (int)
+
+Sets the date that the review period is calculated from when review dates are generated, to one of Now (0) or LastPublished (1). When LastPublished is set, content that has never been published is calculated from now.
+
+#### Force (bool)
+
+When true, the configuration is applied to all content, ignoring existing review dates, and the review dates are generated again using the `RelativeTo` date.
+
+#### ContentItemReviews (complex type)
+
+The review configuration of individual content items. This is a complex type and cannot be set from the configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of content items in the backoffice.
+
+#### DocumentTypeReviews (complex type)
+
+The review configuration of Document Types. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of Document Types in the backoffice.
+
+### ReleaseSets
+
+All Release Sets settings are complex types and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the setting in the backoffice.
+
+#### EnableReleaseSets (complex type)
+
+Enables or disables Release Sets.
+
+#### EnableAlternateVersions (complex type)
+
+Enables or disables alternate versions.
+
+#### RequireWorkflowApproval (complex type)
+
+Controls whether a release set requires workflow approval.
+
+### Example
+
+To set the site URL, hide it in the backoffice, and set the content review period but keep the property read-only. The configuration would look like this:
 
 ```json
 {
-  "Workflow": {
-    "SettingsCustomization": {
-      "General": {
-        "SiteUrl": {
-          "IsHidden": true,
-          "Value": "https://www.myawesomesite.com"
+    "Umbraco": {
+        "Workflow": {
+            "ContentApprovals": {
+                "SiteUrl": {
+                    "IsHidden": true,
+                    "Value": "https://www.myawesomesite.com"
+                }
+            },
+            "ContentReviews": {
+                "ReviewPeriod": {
+                    "IsReadOnly": true,
+                    "Value": 42
+                }
+            }
         }
-      },
-      "ContentReviews": {
-        "ReviewPeriod": {
-          "IsReadOnly": true,
-          "Value": 42
-        }
-      }
     }
-  }
 }
 ```
-
-Your Integrated Development Environment (IDE) will provide intellisense for the available settings but does not provide the valid value types. Settings are validated on startup and Umbraco will throw an exception if a known setting is provided with an invalid value.
-
-{% hint style="info" %}
-It is possible to include settings outside of those referenced by Workflow. These can be useful for providing values for use in extensions and customizations. These settings are not validated on startup so can have any value.
-{% endhint %}

@@ -12,7 +12,7 @@ Before you begin, make sure you have:
 
 * Umbraco CMS 19.0 or later installed.
 * .NET 11.0 SDK or later.
-* Permission to add NuGet packages and edit `appsettings.json` .
+* Permission to add NuGet packages and edit `appsettings.json`.
 
 ## Start Here
 

@@ -41,3 +41,11 @@ This section contains the release notes for Umbraco Deploy 19, including all cha
 * Only connect to environments on a configured workspace URL, and use the configured URL instead of the URL another environment sends.
 * Reject a `BaselineApiSecret` shorter than 64 bytes instead of falling back to the project secret.
 * Remove the APIs and settings that were marked as obsolete for removal in Deploy 19, including the `Upstream` project setting and the `RemoteTreeDetail` parameter.
+
+## Umbraco.Deploy.Contrib
+
+### [19.0.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Contrib/releases/tag/release-19.0.0-rc1) (November 13th 2026)
+
+* Compatibility with Umbraco CMS 19.0.0-rc1, Deploy 19.0.0-rc1, and .NET 11.
+* Convert legacy dropdown property values when the Data Type is migrated to the `Umbraco.DropDown.Single` editor. Previously, these values were imported without conversion.
+  * `AddLegacyMigrators()` registers the five new `*ToSingleDropDownPropertyTypeMigrator` classes. If you register the legacy property type migrators one by one, add the new ones as well. For more information, see the [Migrating from Umbraco 7](deployment-workflow/import-export/import-export-v7.md) article.

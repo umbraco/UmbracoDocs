@@ -18,6 +18,15 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.7.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.1) (November 19th 2026)
+
+* Sidebar Navigation: Load every user in the Forms Security tree, instead of stopping at the first 100 [#1828](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1828)
+* Provider Settings: Keep the stored value of a setting hidden by [`SettingsCustomization`](developer/configuration/README.md#settingscustomization) when its workflow or other provider is saved [#1829](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1829)
+* Export: Show a custom export type's own name and description when it has no translation [#1833](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1833)
+* Field Settings: Show the new type's setting values after switching a field's type [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
+* Prevalue Sources: Show the configured default values when creating a prevalue source [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
+* Workflows: Pass settings with a .NET type other than string, such as a toggle, to the Razor email template as text [#1836](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1836)
+
 ### [17.7.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (November 12th 2026)
 
 #### Consent details for the Data Consent field
@@ -590,6 +599,27 @@ This change also ensures that field types remain registered. This prevents issue
 * Update dependencies to 17.0.0-rc1
 
 ## Umbraco.Forms.Deploy
+
+### 17.1.0-rc1 (November 13th 2026)
+
+#### Permissions for deployed forms
+
+A form that a deployment creates on the target environment now gets the Forms permissions configured there. The new `AllowFormSecurityDeploymentOperations` setting controls which permissions are applied:
+
+* `FormsUserConfiguration` (default): the configured user group permissions, and the deploying user's own permissions. Deploy finds the deploying user on the target by email address, which needs the `ResolveUserInTargetEnvironment` setting.
+* `FormsConfiguration`: the configured user group permissions only.
+* `None`: no permissions.
+
+User group permissions only apply when Forms manages security with user groups (`ManageSecurityWithUserGroups`). The permissions of forms that already exist on the target don't change. Permissions aren't transferred from the source environment.
+
+The setting needs Umbraco Forms 17.5.0 or later. With an earlier version, Forms applies permissions to new forms itself, as before. Any value other than the default then makes the deployment of a new form fail.
+
+For more information, see the [AllowFormSecurityDeploymentOperations](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#allow-form-security-deployment-operations) section of the Deploy Settings article.
+
+#### Other
+
+* Forms: Update a form in the target's recycle bin (Umbraco Forms 17.6.0 or later) instead of inserting it again. The form gets the changes and stays in the recycle bin
+* Forms: Deploy the member mapping settings of form fields (Umbraco Forms 17.5.0 or later). Until now, deploying a form left these settings out. Forms that use member mapping show as changed once after upgrading
 
 ### 17.0.1 (July 24th 2026)
 

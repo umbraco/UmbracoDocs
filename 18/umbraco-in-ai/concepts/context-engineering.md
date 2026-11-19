@@ -15,7 +15,7 @@ At its most basic level, context is the conversation between you and a tool like
 
 LLMs are stateless, they do not retain information between individual requests. Each time you send a message, the entire context is sent to the model. This includes conversation history and any injected system data.
 
-You can never fully control what an LLM with return. You can influence the outcome, and context is the only way that you do that.
+You can never fully control what an LLM will return. You can influence the outcome, and context is the only way that you do that.
 
 {% hint style="info" %}
 The more intentional and relevant your context, the more predictable and useful the model’s output becomes.
