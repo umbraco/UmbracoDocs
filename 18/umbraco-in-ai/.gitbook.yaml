@@ -14,3 +14,15 @@ redirects:
     mcp/base-mcp/hosted-mcp/umbraco-setup: mcp/custom-mcp-server/hosted-mcp/deployment/umbraco-setup.md
     mcp/connect-to-an-mcp-server/hosted-mcp-setup/cloud-quickstart: mcp/setup-a-hosted-mcp-server/cloud-quickstart.md
     mcp/connect-to-an-mcp-server/hosted-mcp-setup/self-hosted-quickstart: mcp/setup-a-hosted-mcp-server/self-hosted-quickstart.md
+    mcp/mcp-servers/automate-developer-mcp: mcp/mcp-servers/automate-mcp/README.md
+    mcp/mcp-servers/automate-developer-mcp/available-tools: mcp/mcp-servers/automate-mcp/available-tools.md
+    mcp/mcp-servers/automate-developer-mcp/configuration: mcp/mcp-servers/automate-mcp/configuration.md
+    mcp/mcp-servers/engage-developer-mcp: mcp/mcp-servers/engage-mcp/README.md
+    mcp/mcp-servers/engage-developer-mcp/available-tools: mcp/mcp-servers/engage-mcp/available-tools.md
+    mcp/mcp-servers/engage-developer-mcp/configuration: mcp/mcp-servers/engage-mcp/configuration.md
+    mcp/mcp-servers/engage-developer-mcp/excluded-tools: mcp/mcp-servers/engage-mcp/excluded-tools.md
+    mcp/mcp-servers/engage-developer-mcp/skills-and-cli: mcp/mcp-servers/engage-mcp/skills-and-cli.md
+    mcp/mcp-servers/forms-developer-mcp: mcp/mcp-servers/forms-mcp/README.md
+    mcp/mcp-servers/forms-developer-mcp/available-tools: mcp/mcp-servers/forms-mcp/available-tools.md
+    mcp/mcp-servers/forms-developer-mcp/configuration: mcp/mcp-servers/forms-mcp/configuration.md
+    mcp/mcp-servers/forms-developer-mcp/excluded-tools: mcp/mcp-servers/forms-mcp/excluded-tools.md
