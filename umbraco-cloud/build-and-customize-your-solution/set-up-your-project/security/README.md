@@ -45,28 +45,11 @@ The different Ciphers can be enabled or disabled on the security project setting
 
 ### HTTP Strict Transport Security (HSTS)
 
-It's possible to enforce HSTS: [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs (March 2020).
+It's possible to enforce [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) by adding the headers to your website. This grants Umbraco Cloud Websites an A+ security rating on sslabs.
 
-You can add the header by modifying system.webServer/rewrite/outboundRules section in your web.config:
+You can add the header in your project's `Program.cs` file.
 
-```xml
- <outboundRules>
-  <rule name="Add Strict-Transport-Security when HTTPS" enabled="true">
-  <match serverVariable="RESPONSE_Strict_Transport_Security" pattern=".*" />
-  <conditions>
-   <add input="{HTTPS}" pattern="on" ignoreCase="true" />
-   <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
-  </conditions>
-  <action type="Rewrite" value="max-age=63072000; includeSubDomains; preload" />
-  </rule>
- </outboundRules>
-```
-
-This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example, `63072000 seconds` or `730 days` is two years.
-
-Alternatively this can be done in `Program.cs`:
-
-To use it only in production:
+To use it outside the Development environment:
 
 ```csharp
 if (!app.Environment.IsDevelopment())
@@ -92,6 +75,23 @@ builder.Services.AddHsts(options =>
 In the above example, the browser is instructed to remember the policy for `60 days`.
 
 Full details of `UseHsts`, and additional configuration options, can be found in the [ASP.NET Core documentation](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-10.0\&tabs=visual-studio%2Clinux-ubuntu#http-strict-transport-security-protocol-hsts).
+
+Alternatively, add the header in the `system.webServer/rewrite/outboundRules` section of your `web.config`:
+
+```xml
+ <outboundRules>
+  <rule name="Add Strict-Transport-Security when HTTPS" enabled="true">
+  <match serverVariable="RESPONSE_Strict_Transport_Security" pattern=".*" />
+  <conditions>
+   <add input="{HTTPS}" pattern="on" ignoreCase="true" />
+   <add input="{HTTP_HOST}" pattern="localhost" negate="true" />
+  </conditions>
+  <action type="Rewrite" value="max-age=63072000; includeSubDomains; preload" />
+  </rule>
+ </outboundRules>
+```
+
+This adds the "Strict-Transport-Security" header telling browsers how long the browser should not make any HTTP requests to this domain. In this example, `63072000 seconds` or `730 days` is two years.
 
 ### TLS 1.2 by default in external services
 

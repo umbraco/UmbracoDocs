@@ -64,6 +64,10 @@ Using the tool will let you test whether the transform file transforms your conf
 
 Rewrite rules are often something you only want to apply to your Live environment. To avoid the rewrites being applied to other mainline environments, create a transform file to apply the rewrite rules only to the Live environment.
 
+{% hint style="info" %}
+For rewrite rules, use the URL Rewriting Middleware instead of IIS rewrite rules. Middleware rules don't need a config transform. For more information, see the [Rewrite rules](../../../go-live/manage-hostnames/rewrites-on-cloud.md) article.
+{% endhint %}
+
 Here is an example of how that config transform would look:
 
 ```xml
