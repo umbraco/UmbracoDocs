@@ -20,6 +20,13 @@ Since API Users are identical to regular Users their backoffice access can be co
 Client IDs for API Users are explicitly prefixed with `umbraco-back-office-`. This guards against API Users accidentally taking over one of the Client IDs used by the Umbraco core.
 {% endhint %}
 
+## Access to API Users
+
+API Users follow the same access rules as regular Users:
+
+* Your user group needs access to the **Users** section to view or manage API Users.
+* Only members of the **Administrators** user group can view users in the **Administrators** user group. Other users don't see these users in the **Users** list.
+
 ## Creating an API User
 
 To create an API User:
@@ -29,3 +36,14 @@ To create an API User:
 3. Enter the **Name** and **Email** of the new API user.
 4. Select which **User group** the new user should be added to.
 5. Click **Create user**.
+
+## Troubleshooting
+
+### "Access denied to this user"
+
+This message appears when you open an API User that is in the **Administrators** user group, and you aren't. This can happen when you open the user from a direct link. The same applies to regular users in that group.
+
+To resolve this, do one of the following:
+
+* Ask an administrator to open or manage the API User.
+* Ask an administrator to move the API User to a different user group, if it doesn't need administrator access.
