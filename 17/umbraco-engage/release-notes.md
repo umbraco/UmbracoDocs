@@ -18,7 +18,8 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 #### [17.6.0](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 17th 2026)
 
-Resolves security advisory [GHSA-gq5w-hprc-q59x](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-gq5w-hprc-q59x)
+* Resolves security advisory [GHSA-gq5w-hprc-q59x](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-gq5w-hprc-q59x)
+* Previously the Umbraco.Engage.Core package included its own copies of the Common, Data, Infrastructure and Web DLLs. These are now resolved as dependencies. Building after upgrading package references will ensure the stale Umbraco.Engage.Core DLL is removed.
 
 #### [17.6.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 5th 2026)
 
