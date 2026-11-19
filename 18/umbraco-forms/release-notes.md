@@ -23,7 +23,7 @@ This section contains the release notes for Umbraco Forms 18 including all chang
 ### [18.3.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F18.3.1) (November 19th 2026)
 
 * Sidebar Navigation: Load every user in the Forms Security tree, instead of stopping at the first 100 [#1828](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1828)
-* Provider Settings: Keep the stored value of a setting hidden by [`SettingsCustomization`](developer/configuration/README.md#settingscustomization) when the workflow or other provider is saved [#1829](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1829)
+* Provider Settings: Keep the stored value of a setting hidden by [`SettingsCustomization`](developer/configuration/README.md#settingscustomization) when its workflow or other provider is saved [#1829](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1829)
 * Export: Show a custom export type's own name and description when it has no translation [#1833](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1833)
 * Field Settings: Show the new type's setting values after switching a field's type [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
 * Prevalue Sources: Show the configured default values when creating a prevalue source [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
