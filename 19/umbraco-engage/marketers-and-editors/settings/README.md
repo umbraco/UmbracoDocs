@@ -8,7 +8,7 @@ description: >-
 
 The **Settings** section is designed to help you customize your Umbraco Engage environment to achieve optimal performance and security.
 
-Goals, Block traffic, and Suspicious Activity are in the **Configuration** group of the Engage sidebar. Configuration and Document Type permissions are in the Umbraco **Settings** section, under **Engage** > **Configuration**. User group permissions are part of each user group in the **Users** section.
+Goals, Block traffic, and Suspicious Activity are in the **Configuration** group of the Engage section sidebar. The Engage configuration overview and Document Type permissions are in the Umbraco **Settings** section, under **Engage** > **Configuration**. User group permissions are part of each user group in the **Users** section.
 
 ## [Setting Up Goals](setting-up-goals.md)
 

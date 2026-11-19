@@ -8,7 +8,7 @@ description: >-
 
 Umbraco Engage includes a cockpit feature to help verify the tracking of analytics and understand personalization behavior. The cockpit adds a button to the front end, giving real-time insights.
 
-As of Umbraco Engage 16, the cockpit is automatically added. The cockpit is visible for logged-in Umbraco users. From Umbraco Engage 17.6, the user also needs access to the **Engage** section.
+As of Umbraco Engage 16, the cockpit is automatically added. The cockpit is visible for logged-in Umbraco users.
 
 {% hint style="info" %}
 Automatic injection of the Cockpit can be disabled by setting ‘**Engage:Cockpit:EnableInjection**’ configuration to **false** in your appsettings.json file.
@@ -18,7 +18,14 @@ When visiting the front-end website, the Umbraco Engage Cockpit will appear on t
 
 ![Umbraco Engage Cockpit](../../.gitbook/assets/engage-cockpit.png)
 
-From Umbraco Engage 17.6, the user also needs access to the **Engage** section. Each part of the cockpit is shown only when the user's group has the **Read** permission for that feature:
+## Access to the cockpit
+
+{% hint style="info" %}
+From Umbraco Engage 17.6, the user needs access to the **Engage** section.
+{% endhint %}
+
+Each part of the cockpit is shown only when the user's group has the **Read** permission for that feature:
+
 
 * Analytics data requires the **Read** permission for Analytics.
 * Personas, customer journeys, segments, and the personalization variant require the **Read** permission for Personalization.
