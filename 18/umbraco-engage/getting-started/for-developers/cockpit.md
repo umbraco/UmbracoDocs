@@ -18,29 +18,6 @@ When visiting the front-end website, the Umbraco Engage Cockpit will appear on t
 
 ![Umbraco Engage Cockpit](../../.gitbook/assets/engage-cockpit.png)
 
-## Access to the cockpit
-
-{% hint style="info" %}
-From Umbraco Engage 18.3, the user needs access to the **Engage** section.
-{% endhint %}
-
-Each part of the cockpit is shown only when the user's group has the **Read** permission for that feature:
-
-* Analytics data requires the **Read** permission for Analytics.
-* Personas, customer journeys, segments, and the personalization variant require the **Read** permission for Personalization.
-* The A/B test variant requires the **Read** permission for A/B Testing.
-* The link to the visitor profile requires the **Read** permission for Profiles.
-
-Access is checked on every request. Learn more in the [Permissions](../../marketers-and-editors/settings/permissions.md#user-group-permissions) article.
-
-Clicking the **Open** button provides detailed information:
-
-![Umbraco Engage Cockpit - Detailed information](../../.gitbook/assets/engage-cockpit-2.png)
-
-When visiting the front-end website, the Umbraco Engage Cockpit will appear on the left or right side of the screen. The cockpit is only rendered if the user is logged in to Umbraco.
-
-![Umbraco Engage Cockpit](../../.gitbook/assets/engage-cockpit.png)
-
 Clicking the **Open** button provides detailed information:
 
 ![Umbraco Engage Cockpit - Detailed information](../../.gitbook/assets/engage-cockpit-2.png)
