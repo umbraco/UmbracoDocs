@@ -85,6 +85,14 @@ If automatic discovery is not applicable, the server endpoints must be configure
 Keep in mind that the API versions can change over time, which might affect the configuration.
 {% endhint %}
 
+{% hint style="warning" %}
+Consider this if your client requests the `openid` scope and validates the identity token it receives, as the [ASP.NET Core sample](./#basic-client-configuration) does. Clients that only use access tokens are not affected.
+
+By default, identity tokens are signed with keys that each Umbraco instance generates at startup. When Umbraco runs on more than one server, the client can fail to validate the identity token. The error is similar to `no valid key found in issuer's jwks_uri`.
+
+To avoid this, configure shared credentials as described in the [Security Token Credentials](../../../../run-in-production/security/security-token-credentials.md) article.
+{% endhint %}
+
 ## Client configuration
 
 To connect the client and the server, we need to apply some configuration details to the connection:

@@ -552,6 +552,7 @@
   * [Two-Factor Authentication](run-in-production/security/two-factor-authentication.md)
   * [Server-Side File Validation](run-in-production/security/serverside-file-validation.md)
   * [Configuring Azure Key Vault](run-in-production/security/key-vault.md)
+  * [Security Token Credentials](run-in-production/security/security-token-credentials.md)
 * [Infrastructure & Ops](run-in-production/infrastructure-and-ops/README.md)
   * [Server Setup](run-in-production/infrastructure-and-ops/server-setup/README.md)
     * [Running Umbraco on Azure Web Apps](run-in-production/infrastructure-and-ops/server-setup/azure-web-apps.md)
