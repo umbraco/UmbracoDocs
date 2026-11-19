@@ -67,7 +67,7 @@ The link and the reply address both act as a bearer credential for the duration 
 | `SendNotifications`             | -              | Must be `true`. If workflow notification emails are disabled, no approval links or reply addresses are ever sent.                                                                                    |
 | `ExternalApprovalTokenExpiry`   | `2.00:00:00` (48 hours) | A `TimeSpan` controlling how long an external approval link or a reply-approval token remains valid after it is generated, for both channels.                                              |
 
-`SiteUrl`, `EditUrl`, and `SendNotifications` are configured from the Workflow settings dashboard, or via `SettingsCustomization` in `appsettings.json` - see [Configuration](configuration.md). `ExternalApprovalTokenExpiry` is set directly under `Umbraco:Workflow` in `appsettings.json`:
+`SiteUrl`, `EditUrl`, and `SendNotifications` are configured from the Workflow settings dashboard, or via the `ContentApprovals` customizations in `appsettings.json` - see [Configuration](configuration.md). `ExternalApprovalTokenExpiry` is set directly under `Umbraco:Workflow` in `appsettings.json`:
 
 ```json
 {
