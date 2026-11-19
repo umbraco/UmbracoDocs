@@ -66,10 +66,12 @@ The `Umbraco:Workflow:SettingsCustomization` configuration is replaced by typed 
 
 The sections are `ContentApprovals`, `ContentReviews` and `ReleaseSets`. An invalid value now fails when the configuration is bound at startup, instead of being reported by a custom validator.
 
-The `Umbraco:Workflow:Colors` setting is removed. The status colors in workflow emails are fixed at red, orange and green.
+The `Umbraco:Workflow:Colors` setting is removed. The status colors in workflow emails are fixed to red, orange, and green.
+
+The `Umbraco:Workflow:DateFormats` setting is removed.
 
 {% hint style="warning" %}
-Existing `SettingsCustomization` and `Colors` configuration is ignored. Move any customizations to the new location.
+Existing `SettingsCustomization`, `Colors` and `DateFormats` configuration is ignored. Move any customizations to the new location.
 {% endhint %}
 
 #### Code scheduled for removal in Workflow 19 is removed
@@ -84,7 +86,7 @@ The full list of removed and changed types and members is in the [Version Specif
 
 #### Bug fixes and other changes
 
-* Splits `ContentReviewConfigDto` into a persistence DTO and a `ContentReviewConfig` model. See the [Version Specific Upgrade Notes](upgrading/version-specific.md#code) for the affected members.
+* Splits `ContentReviewConfigDto` into a persistence data transfer object (DTO) and a `ContentReviewConfig` model. See the [Version Specific Upgrade Notes](upgrading/version-specific.md#code) for the affected members.
 * Returns `NotFound` from the content diff for a workflow with no source version, instead of looking up a version to compare. 
 * Removes the group deletion cleanup from `DeleteApprovalGroupController`. Cancelling workflows and removing permissions for a deleted approval group is now done by a notification handler.
 * Renames `ApprovalGroupCollectionReponseModel` to `ApprovalGroupCollectionResponseModel`.

@@ -44,7 +44,9 @@ The `SettingsCustomization` configuration is replaced by typed sections. Move th
 
 The sections are `ContentApprovals`, `ContentReviews` and `ReleaseSets`. Each setting still has `Value`, `IsHidden` and `IsReadOnly` options. An invalid value fails when the configuration is bound at startup.
 
-The `Umbraco:Workflow:Colors` setting and the `ColorSettings` type are removed. The status colors in workflow emails are fixed at red, orange and green.
+The `Umbraco:Workflow:Colors` setting and the `ColorSettings` type are removed. The status colors in workflow emails are fixed to red, orange, and green.
+
+The `Umbraco:Workflow:DateFormats` setting and the `DateFormats` type are removed.
 
 ### Email templates
 
@@ -98,7 +100,7 @@ The `ContentApprovalEmailModel` constructor no longer takes a `ColorSettings` pa
 #### Changed Members (Breaking)
 
 * The `AdvancedSearchResponseItemModel` constructor takes an `IContent` instead of an Examine `ISearchResult`.
-* `ContentReviewConfigDto` is split into a persistence DTO and a `ContentReviewConfig` model. The DTO keeps only the columns of the `WorkflowContentReviewConfig` table, and `PeriodMode` and `IsOneShotDueDate` are removed from it: use `Mode`. The `ContentReviewConfig` model carries the calculated state, such as `Path`, `DueOn`, `ReviewedOn`, `Groups` and `Expired`. The following now use `ContentReviewConfig`:
+* `ContentReviewConfigDto` is split into a persistence data transfer object (DTO) and a `ContentReviewConfig` model. The DTO keeps only the columns of the `WorkflowContentReviewConfig` table, and `PeriodMode` and `IsOneShotDueDate` are removed from it: use `Mode`. The `ContentReviewConfig` model carries the calculated state, such as `Path`, `DueOn`, `ReviewedOn`, `Groups` and `Expired`. The following now use `ContentReviewConfig`:
   * `IContentReviewConfigRepository.GetAllConfig`, `GetNodeConfig`, `GetPublishedNodes` and `GetReviewableNodes`
   * `IContentReviewReminderEmailer.SendReviewReminders`
   * `ContentReviewsScaffoldModel`

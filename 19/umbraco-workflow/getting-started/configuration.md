@@ -141,7 +141,7 @@ All available customization options are illustrated below along with their respe
 ```
 
 {% hint style="info" %}
-Settings marked `*` are complex types and cannot be given a `Value` from configuration. They can be set to hidden or read-only, with `IsHidden` and `IsReadOnly`, to prevent further changes in the BackOffice.
+Settings marked `*` are complex types and cannot be given a `Value` from configuration. They can be set to hidden or read-only using `IsHidden` and `IsReadOnly` to prevent further changes in the backoffice.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -254,11 +254,11 @@ Allows excluding segments of the content tree from the workflow model. This is a
 
 #### EmailTemplates (complex type)
 
-The installed email templates. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the email template settings in the BackOffice.
+The installed email templates. This is a complex type and cannot be set from configuration. Set `IsHidden` or `IsReadOnly` to control access to the email template settings in the backoffice.
 
 #### EntityTypeActionConfigs (complex type)
 
-The workflow action configuration for each entity type. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the action configuration in the BackOffice.
+The workflow action configuration for each entity type. This is a complex type and cannot be set from the configuration. Set `IsHidden` or `IsReadOnly` to control access to the action configuration in the backoffice.
 
 ### ContentReviews
 
@@ -292,15 +292,15 @@ When true, the configuration is applied to all content, ignoring existing review
 
 #### ContentItemReviews (complex type)
 
-The review configuration of individual content items. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of content items in the BackOffice.
+The review configuration of individual content items. This is a complex type and cannot be set from the configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of content items in the backoffice.
 
 #### DocumentTypeReviews (complex type)
 
-The review configuration of document types. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of document types in the BackOffice.
+The review configuration of Document Types. This is a complex type and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the review configuration of Document Types in the backoffice.
 
 ### ReleaseSets
 
-All Release Sets settings are complex types and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the setting in the BackOffice.
+All Release Sets settings are complex types and cannot be given a value from configuration. Set `IsHidden` or `IsReadOnly` to control access to the setting in the backoffice.
 
 #### EnableReleaseSets (complex type)
 
