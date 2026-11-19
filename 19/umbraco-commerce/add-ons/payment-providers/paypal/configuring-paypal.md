@@ -22,7 +22,7 @@ To use the PayPal provider you will need to sign up for a Business PayPal accoun
 If you wish to test your system before going live, you need to sign up for a set of Sandbox accounts.
 
 1. Sign in to a valid PayPal account - any account will do.
-2. Follow this link: [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/).
+2. Follow this link: [https://developer.paypal.com/dashboard/accounts](https://developer.paypal.com/dashboard/accounts).
 
 ![PayPal Sandbox Accounts](../../../.gitbook/assets/sandbox_accounts.png)
 
@@ -42,7 +42,7 @@ From here you can view and modify any existing Sandbox accounts you have.
 
 In order for Umbraco Commerce to perform actions in your PayPal account on your behalf, we need to create a PayPal App. In fact, we'll need to create two: one for the Sandbox account and one for our Live account.
 
-1. Access the [PayPal Developer Portal](https://developer.paypal.com/developer/applications/).
+1. Access the [PayPal Developer Portal](https://developer.paypal.com/dashboard/applications).
 
 ![Overview of apps and credentials in the PayPal developer portal.](../../../.gitbook/assets/applications.png)
 
@@ -71,7 +71,7 @@ Webhooks are used for communication between PayPal and the Umbraco Commerce inst
 3. Provide the URL where the webhook notifications should be sent. See the example below:
 
 ```bash
-https://{store_domain}/umbraco/commerce/payment/callback/paypal-checkout-onetime/{payment_method_id}/
+https://{store_domain}/umbraco/commerce/payment/api/v1/callback/paypal-checkout-onetime/{payment_method_id}
 ```
 
 {% hint style="info" %}
