@@ -4,9 +4,9 @@ description: Learn how to create a custom-generated client with TypeScript types
 
 # Custom Generated Client
 
-A generated client gives you a typed function for each endpoint of your own API. The [`@hey-api/openapi-ts`](https://heyapi.dev/openapi-ts/get-started) library generates it from the OpenAPI document of your API. Umbraco generates the [Umbraco HTTP Client](http-client.md), `umbHttpClient`, with the same library.
+A generated client gives you a typed function for each endpoint of your own API. The [`@hey-api/openapi-ts`](https://heyapi.dev/openapi-ts/get-started) library generates the client from the OpenAPI document of your API. Umbraco generates the [Umbraco HTTP Client](http-client.md), `umbHttpClient`, with the same library.
 
-Configure your client with `configureClient()`, as described in [Connecting to the Management API](#connecting-to-the-management-api). Your client then handles authentication and responses like `umbHttpClient`.
+Configure your client with `configureClient()`, as described in [Connecting to Umbraco](#connecting-to-umbraco). Your client then handles authentication and the login prompt like `umbHttpClient`. To show a notification from `tryExecute` when a request fails, also set `throwOnError`, as described in the same section.
 
 Generate a client when you call many endpoints of your own API and want types for them. For the Management API, and for a few direct calls to your own API, use `umbHttpClient`.
 
@@ -21,16 +21,16 @@ npm install @hey-api/openapi-ts
 Then, use the `openapi-ts` command to generate a client from your OpenAPI specification:
 
 ```bash
-npx openapi-ts --input https://example.com/openapi.json --output ./my-client
+npx openapi-ts --input https://example.com/openapi.json --output src/api
 ```
 
-This will generate a TypeScript client in the `./my-client` folder. Import the generated client into your project to make requests to the Management API.
+The command generates a TypeScript client in the `src/api` folder. Import the generated client into your project to make requests to your API.
 
 To learn more about OpenAPI and how to define your API specification, visit the [OpenAPI Documentation](https://swagger.io/specification/).
 
-## Connecting to the Management API
+## Connecting to Umbraco
 
-Your generated client needs the correct base URL, credentials, and authentication to talk to the Management API. Call `configureClient()` on the `UMB_AUTH_CONTEXT` to set up all three. The method:
+Your generated client needs the correct base URL, credentials, and authentication to talk to your API on the Umbraco server. Call `configureClient()` on the `UMB_AUTH_CONTEXT` to set up all three. The method:
 
 * Sets `baseUrl` to the URL of the Umbraco server.
 * Sets `credentials: 'include'`, so the browser sends the authentication cookies with every request.
@@ -49,7 +49,7 @@ import { defineConfig } from '@hey-api/openapi-ts';
 
 export default defineConfig({
     input: 'https://example.com/openapi.json',
-    output: './my-client',
+    output: 'src/api',
     plugins: [
         {
             name: '@hey-api/client-fetch',
@@ -95,11 +95,11 @@ Copying the configuration of `umbHttpClient` into your client copies settings bu
 
 ### Passing `umbHttpClient` directly
 
-If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call:
+If you only have a few requests, you can skip client configuration entirely and pass `umbHttpClient` as the `client` parameter on each call. In an element that extends `UmbLitElement`:
 
 {% code title="my-element.ts" %}
 ```typescript
-import { getMyControllerAction } from './my-client';
+import { getMyControllerAction } from './api/index.js';
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
 
@@ -160,6 +160,8 @@ When calling `umbHttpClient` directly — without a generated SDK function — t
 
 {% code title="my-element.ts" %}
 ```typescript
+import { umbHttpClient } from '@umbraco-cms/backoffice/http-client';
+
 const { data } = await umbHttpClient.get({
     url: '/umbraco/myextension/api/v1/endpoint',
     security: [{ type: 'http', scheme: 'bearer' }],

@@ -18,6 +18,102 @@ If you are upgrading to a new major version, you can find information about the 
 
 This section contains the release notes for Umbraco Forms 17 including all changes for this version.
 
+### [17.7.1](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.1) (November 19th 2026)
+
+* Sidebar Navigation: Load every user in the Forms Security tree, instead of stopping at the first 100 [#1828](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1828)
+* Provider Settings: Keep the stored value of a setting hidden by [`SettingsCustomization`](developer/configuration/README.md#settingscustomization) when its workflow or other provider is saved [#1829](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1829)
+* Export: Show a custom export type's own name and description when it has no translation [#1833](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1833)
+* Field Settings: Show the new type's setting values after switching a field's type [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
+* Prevalue Sources: Show the configured default values when creating a prevalue source [#1834](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1834)
+* Workflows: Pass settings with a .NET type other than string, such as a toggle, to the Razor email template as text [#1836](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1836)
+
+### [17.7.0](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (November 12th 2026)
+
+#### Consent details for the Data Consent field
+
+The Data Consent field has a new optional **Consent details** setting. It holds formatted text shown under the checkbox, such as a link to your privacy policy. The **Accept Copy** setting is now labelled **Consent text**.
+
+For more information, see the [Field Types](editor/creating-a-form/fieldtypes/README.md) article and discussion [#1508](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1508).
+
+#### Content Security Policy nonce on Forms scripts
+
+Forms now adds a nonce to the script tags it renders, including the reCAPTCHA v2 script. The scripts then run on a site with a nonce-based Content Security Policy (CSP).
+
+External script and stylesheet URLs are now rendered as registered, without the Forms version.
+
+For more information, see the [Content Security Policy nonce](developer/rendering-scripts.md#content-security-policy-nonce) section of the Rendering Forms Scripts article and discussion [#1554](https://github.com/umbraco/Umbraco.Forms.Issues/discussions/1554).
+
+#### Recycle bin notifications
+
+Moving a form or folder to the recycle bin, or restoring it, now publishes notifications that custom code can handle. There are eight: a cancelable notification before each operation and one after it, for forms and for folders.
+
+Forms also refreshes its cache on all servers when a form or folder is moved to the recycle bin or restored.
+
+For more information, see the [Recycle bin notifications](developer/extending/adding-an-event-handler.md#recycle-bin-notifications) section of the notification handler article and issue [#1803](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1803).
+
+#### Other
+
+* Multi-page Forms: Show the captions of prevalue answers given on earlier pages in workflow emails, instead of their stored values [#1821](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1821)
+* Field Types: Show field type names and descriptions in the backoffice user's language [#1819](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1819)
+* Date Picker: Update the moment library used by the date picker to 2.31.0 [GHSA-4p3w-j4w9-5jqw](https://github.com/advisories/GHSA-4p3w-j4w9-5jqw)
+* All items detailed under release candidates for 17.7.0.
+
+{% hint style="warning" %}
+This release changes some existing behaviour. Check these sections of the Version Specific Upgrade Notes article before upgrading:
+
+* [Data Consent field in custom themes](upgrading/version-specific.md#data-consent-field-in-custom-themes)
+* [Placeholder values in HTML settings](upgrading/version-specific.md#placeholder-values-in-html-settings)
+* [Content Security Policy nonce on Forms scripts](upgrading/version-specific.md#content-security-policy-nonce-on-forms-scripts)
+{% endhint %}
+
+### 17.7.0-rc2 (November 5th 2026)
+
+The changes below are the ones made since `17.7.0-rc`. For everything else in this release, see the `17.7.0-rc` notes.
+
+* Form Design: Show the **On Approve** and **On Reject** workflows in the workflow summary [#1814](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1814)
+* Workflows: Keep the run order of a stage's workflows distinct after a workflow is moved to that stage from another one
+* Data Retention: Fill in the configured default number of days, instead of 365, when a form stops retaining records forever [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
+* Recycle Bin: Keep folders that hold a user's or user group's start folder when emptying the recycle bin, instead of failing. A message says how many were kept. For details, see the [Recycle Bin](editor/managing-forms/recycle-bin.md#folders-kept-because-they-hold-a-start-folder) article
+* Recycle Bin: Hide the recycle bin from users with start folders
+* Security: Show missing and trashed start folders in the start folder picker
+* Security: Refuse a missing start folder when saving a user's or user group's Forms security, instead of saving part of the change
+* Security: Security fix for start folders
+* Pickers: Clear a mandatory picker's validation error once a value is picked inside a block, so the block can be updated again. This covers the Form Picker (Single and Multiple), Theme Picker, Folder Picker and Form Details Picker, which now also block **Create** while empty [#1818](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1818)
+* Theme Picker: Show a "Choose a theme" placeholder when no theme is picked, instead of looking as if the first theme was chosen
+* Folder Picker: Keep the picked folders when a content property is saved. Values saved by earlier versions can't be recovered and now load as an empty selection
+
+### [17.7.0-rc](https://github.com/umbraco/Umbraco.Forms.Issues/issues?q=is%3Aissue+label%3Arelease%2F17.7.0) (October 29th 2026)
+
+* Delivery API: Return the full rich text element tree, instead of an empty root, when `RichTextOutputAsJson` is enabled [#1779](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1779)
+* Delivery API: Encode placeholder values inserted into an HTML submit message, as the Razor theme already does
+* Form Templates: Apply the configured form defaults, such as data retention and the default stylesheet setting, to forms created from a template [#1817](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1817)
+* Form Import: Keep a form's original creator and creation date when importing over an existing form
+* Copy Form: Require a name for the copied form
+* Copy Form: Treat a name for the copied form that contains only whitespace as empty, so the copy gets the usual generated name
+* Recycle Bin: Return an error when restoring a form or folder that isn't in the recycle bin, instead of renaming it
+* Forms Dashboard: Refresh the list of forms after a form is copied, moved, or moved to the recycle bin
+* Themes: Encode the page captions and summary caption shown in the multi-page paging details
+* Management API: Return a 404 status code, instead of a 500, when scaffolding a form from a template that doesn't exist
+
+### 17.6.2 (October 27th 2026)
+* Restrict the file types **Save as an XML file** can write and the templates **Send email with template (Razor)** can render [GHSA-6mm6-h9v6-mjmp](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-6mm6-h9v6-mjmp)
+* Enforce form-level access and start folder checks on entries, entry exports, and form and folder operations [GHSA-56r2-v3fp-wj6h](https://github.com/umbraco/Umbraco.Forms.Issues/security/advisories/GHSA-56r2-v3fp-wj6h)
+* Permissions: Show analytics and the forms list to users with the **View Entries** permission, and hide the actions they can't use [#1802](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1802)
+* Upgrading: Fix a boot failure when upgrading to 17.6 if a form's creator or last editor has since been deleted
+* Entries: Validate omitted mandatory fields when creating an entry through the Management API [#1806](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1806)
+* Sidebar Navigation: Load users in pages, so installations with many users don't freeze when opening the Forms section [#1807](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1807)
+* Entries: Show entries on first load when the default **All** state filter is selected [#1808](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1808)
+* Submit Message: Keep rich text formatting and line breaks in the submit message editor [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804) [#1800](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1800)
+* Workflows: Keep a form's workflows and submit message when the workflow settings open before the form has loaded [#1804](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1804)
+* Submit Message: Treat an empty GUID as no **Go to page** on submit [#1801](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1801)
+* Field Settings: Move the group picker into the field's main settings [#1781](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1781)
+* Copy Form: Keep references to other fields in field settings when copying a form [#1810](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1810)
+* Date Picker: Keep the selected date when going back a page in a multi-page form, instead of swapping the day and month [#1811](https://github.com/umbraco/Umbraco.Forms.Issues/issues/1811)
+
+{% hint style="warning" %}
+Entry exports are now stored for the user who generated them, and only that user can download them. Exports generated before the upgrade can no longer be downloaded, so generate them again. For details of the access checks, see the [Security](developer/security.md#access-to-forms-entries-and-exports) article.
+{% endhint %}
+
 ### 17.6.1 (October 7th 2026)
 * Migrations: Fix boot failure (`UFForms.Trashed`) when upgrading to 17.6.0 from an earlier release. See the [Version Specific Upgrade Notes](upgrading/version-specific.md) article for details
 
@@ -503,6 +599,27 @@ This change also ensures that field types remain registered. This prevents issue
 * Update dependencies to 17.0.0-rc1
 
 ## Umbraco.Forms.Deploy
+
+### 17.1.0-rc1 (November 13th 2026)
+
+#### Permissions for deployed forms
+
+A form that a deployment creates on the target environment now gets the Forms permissions configured there. The new `AllowFormSecurityDeploymentOperations` setting controls which permissions are applied:
+
+* `FormsUserConfiguration` (default): the configured user group permissions, and the deploying user's own permissions. Deploy finds the deploying user on the target by email address, which needs the `ResolveUserInTargetEnvironment` setting.
+* `FormsConfiguration`: the configured user group permissions only.
+* `None`: no permissions.
+
+User group permissions only apply when Forms manages security with user groups (`ManageSecurityWithUserGroups`). The permissions of forms that already exist on the target don't change. Permissions aren't transferred from the source environment.
+
+The setting needs Umbraco Forms 17.5.0 or later. With an earlier version, Forms applies permissions to new forms itself, as before. Any value other than the default then makes the deployment of a new form fail.
+
+For more information, see the [AllowFormSecurityDeploymentOperations](https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#allow-form-security-deployment-operations) section of the Deploy Settings article.
+
+#### Other
+
+* Forms: Update a form in the target's recycle bin (Umbraco Forms 17.6.0 or later) instead of inserting it again. The form gets the changes and stays in the recycle bin
+* Forms: Deploy the member mapping settings of form fields (Umbraco Forms 17.5.0 or later). Until now, deploying a form left these settings out. Forms that use member mapping show as changed once after upgrading
 
 ### 17.0.1 (July 24th 2026)
 

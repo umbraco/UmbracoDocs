@@ -6,7 +6,7 @@ description: A guide to install Umbraco CMS using Visual Studio.
 
 ## Prerequisites
 
-* Check the [Requirements](../requirements.md) article to ensure you have everything you need to start your Umbraco project.
+* Check the [Requirements](requirements.md) article to ensure you have everything you need to start your Umbraco project.
 
 ## Install the template
 

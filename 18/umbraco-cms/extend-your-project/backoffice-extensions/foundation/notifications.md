@@ -148,7 +148,7 @@ The default layout reads these properties from `data`:
 ## Render HTML in a Notification
 
 {% hint style="info" %}
-`htmlMessage` is available from Umbraco 18.1.
+`htmlMessage`, and HTML in event messages, are available from Umbraco 18.1.
 {% endhint %}
 
 The `message` property always renders as plain text. To render HTML, set `htmlMessage` as well. The notification then shows `htmlMessage` instead of `message`.
@@ -204,12 +204,12 @@ Lit does not check URLs in bindings. Do not bind a URL that users control to an 
 
 ## Show an Error
 
-The `umbPeekError` function shows a notification for an error. The notification is `danger` unless you set `color`. Besides `headline` and `message`, the function takes these properties:
+The `umbPeekError` function shows a notification for an error. The notification is `danger` unless you set `color`. Besides `headline`, `message` and `htmlMessage`, the function takes these properties:
 
 * `detail`: Text below the message. Long text moves to a dialog, which the user opens with a button.
 * `errors`: Validation errors, keyed by field name. The user opens the errors in a dialog with a button.
 
-To show your own headline, handle the error of a request yourself and show it with `umbPeekError`:
+To show your own headline, handle the error of a request yourself and show it with `umbPeekError`. Pass `disableNotifications: true`, so `tryExecute` does not show its own notification as well. See the [Failed Requests](#failed-requests) section.
 
 {% code title="my-product-validation.controller.ts" %}
 ```typescript
@@ -229,10 +229,11 @@ export class MyProductValidationController extends UmbControllerBase {
       { disableNotifications: true },
     );
 
-    if (!error || !UmbApiError.isUmbApiError(error)) return;
+    // The client already asks the user to log in again after a 401 response
+    if (!error || !UmbApiError.isUmbApiError(error) || error.status === 401) return;
 
     umbPeekError(this, {
-      headline: "The products are not valid",
+      headline: "The products could not be validated",
       message: error.problemDetails.title,
       detail: error.problemDetails.detail,
       errors: error.problemDetails.errors,
@@ -244,13 +245,15 @@ export class MyProductValidationController extends UmbControllerBase {
 
 ## Notifications From Server Responses
 
-The backoffice shows notifications for server responses in two cases: when a request fails, and when the server sends event messages.
+The backoffice shows notifications for server responses when a request fails, and when the server sends event messages.
 
 ### Failed Requests
 
 `tryExecute` shows a notification when a request fails. The notification shows the title and detail of the problem details in the response. Some failed requests show no notification. For the full rules, see the [Executing Requests](fetching-data/try-execute.md) article.
 
 To handle the error yourself, pass `disableNotifications: true` to `tryExecute`. You can then show your own notification, for example with `umbPeekError`.
+
+When the session has expired, the Umbraco HTTP Client asks the user to log in again. For a request that is not a `GET` request, it then shows a warning that asks the user to try again. `disableNotifications` does not hide this warning.
 
 ### Event Messages
 
@@ -267,9 +270,9 @@ The Umbraco HTTP Client shows a notification for each message. The category of t
 | `Success`           | `positive` |
 | `Info` or `Default` | `default`  |
 
-The client shows these notifications for every response, also when `tryExecute` has `disableNotifications` set. A generated client shows them too when you configure it as described in the [Custom Generated Client](fetching-data/custom-generated-client.md) article. A request with the Fetch API does not show them.
+The client also shows these notifications when `tryExecute` has `disableNotifications` set. A generated client shows them too when you configure it with `configureClient()`, as described in the [Custom Generated Client](fetching-data/custom-generated-client.md) article. A request with the Fetch API does not show them.
 
-To add HTML to an event message, see the [Render HTML in a Notification](#render-html-in-a-notification) section.
+Event messages can contain HTML. For how the backoffice renders it, see the [Render HTML in a Notification](#render-html-in-a-notification) section.
 
 ## Further Reading
 

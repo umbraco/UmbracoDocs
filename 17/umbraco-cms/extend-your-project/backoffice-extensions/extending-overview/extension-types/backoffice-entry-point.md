@@ -50,7 +50,7 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 }
 
 /**
- * Perform any cleanup logic when the Backoffice and/or the package is unloaded
+ * Perform any cleanup logic when the extension is unregistered
  */
 export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
     // Your cleanup logic here
@@ -59,7 +59,7 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 {% endcode %}
 
 {% hint style="info" %}
-The `onUnload` function is optional and can be used to perform cleanup logic when the Backoffice and/or the package is unloaded.
+The `onUnload` function is optional. It runs when the extension is unregistered, for example with `extensionRegistry.unregister()`. It does not run when the user closes or reloads the Backoffice, or signs out.
 {% endhint %}
 
 ## Examples

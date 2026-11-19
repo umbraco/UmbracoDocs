@@ -83,6 +83,8 @@ export const onUnload: UmbEntryPointOnUnload = (host, extensionRegistry) => {
 
 If a user signs in again after a timeout, `onInit` runs again. The new session may belong to a different user.
 
+`onUnload` does not wait for `onInit` to finish. If `onInit` awaits something, the session can end in the meantime. `onUnload` then runs while `onInit` is still running. `onUnload` also runs when the session ends after `onInit` threw an error. Write `onUnload` so it works no matter how far `onInit` got. After each `await` in `onInit`, check that the session has not ended before you start anything. The examples below that start something after an `await` use a `session` counter for that check.
+
 Each browser tab runs its own copy of the module. A tab loads the module once and reuses it for every session, so module-level variables keep their values. Reset them in `onUnload`.
 
 Every open tab calls `onInit`, and reloading a tab calls `onInit` again. Signing out in one tab ends the session in every tab, and each tab calls `onUnload` before it navigates away. Each tab times out on its own timer and then shows a sign-in overlay. Signing in at the overlay in one tab signs in every open tab, and each tab calls `onInit` once.
@@ -123,10 +125,13 @@ import { UMB_CURRENT_USER_CONTEXT } from '@umbraco-cms/backoffice/current-user';
 import { MyNotificationService } from './my-notification-service.js';
 
 const notifications = new MyNotificationService();
+let session = 0;
 let sessionUserUnique: string | undefined;
 
 export const onInit: UmbEntryPointOnInit = async (host) => {
+    const thisSession = ++session;
     const currentUserContext = await host.getContext(UMB_CURRENT_USER_CONTEXT);
+    if (thisSession !== session) return;
     sessionUserUnique = currentUserContext?.getUnique();
     if (sessionUserUnique) {
         notifications.connect(sessionUserUnique);
@@ -134,12 +139,15 @@ export const onInit: UmbEntryPointOnInit = async (host) => {
 };
 
 export const onUnload: UmbEntryPointOnUnload = () => {
+    session++;
     // sessionUserUnique still identifies the user this session belonged to.
     notifications.disconnect(sessionUserUnique);
     sessionUserUnique = undefined;
 };
 ```
 {% endcode %}
+
+`onUnload` can run while `onInit` is still waiting for the context. The `session` counter makes sure that `onInit` does not connect after the session has ended.
 
 Keep setup and cleanup symmetrical, so nothing from one user's session leaks into the next. Use the identity captured in `onInit`. Do not read the Current User Context in `onUnload`.
 
@@ -202,21 +210,27 @@ import type { UmbEntryPointOnInit, UmbEntryPointOnUnload } from '@umbraco-cms/ba
 import { UMB_CURRENT_USER_CONTEXT } from '@umbraco-cms/backoffice/current-user';
 
 const ALLOWED_SECTIONS_OBSERVER = 'My.UserEntryPoint.AllowedSections';
+let session = 0;
 
 export const onInit: UmbEntryPointOnInit = async (host) => {
+    const thisSession = ++session;
     const currentUserContext = await host.getContext(UMB_CURRENT_USER_CONTEXT);
+    if (thisSession !== session) return;
     host.observe(currentUserContext?.allowedSections, (allowedSections) => {
         // Runs immediately and again every time the user's allowed sections change
     }, ALLOWED_SECTIONS_OBSERVER);
 };
 
 export const onUnload: UmbEntryPointOnUnload = (host) => {
+    session++;
     host.removeUmbControllerByAlias(ALLOWED_SECTIONS_OBSERVER);
 };
 ```
 {% endcode %}
 
-Because the observer has an alias, the next `onInit` replaces it instead of adding a second one. Remove it in `onUnload` as well, so its callback does not run once more with the next session's user before `onInit` has run.
+Every User Entry Point gets the same `host`, and the backoffice adds its own controllers to it as well. Give every observer on `host` a unique alias, for example prefixed with your extension alias. Without an alias, `observe()` uses a hash of the callback's source code. Two observers with the same callback text, such as `(value) => update(value)`, then replace each other, even when they come from different packages. Minified code makes identical callback text more likely.
+
+In `onUnload`, remove everything your code created on `host`. Remove observers by their alias, and call `destroy()` on context consumers from `consumeContext()` and on other controllers. Context consumers, controllers without an alias, and observers with a `null` alias are never replaced, so each session adds more. An observer that stays in place keeps running after the session has ended. Its callback can then run with the next session's user before `onInit` has run.
 
 ## Type IntelliSense
 

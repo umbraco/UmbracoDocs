@@ -20,7 +20,7 @@ Textbox is an HTML input control for text. It can be configured to have a fixed 
 
 ### Without a character limit
 
-![Textbox Content Example](../../../.gitbook/assets/Textbox-Content-v8.png)
+![Textbox Content Example](../../../.gitbook/assets/Textbox-Content.png)
 
 ### With a character limit
 

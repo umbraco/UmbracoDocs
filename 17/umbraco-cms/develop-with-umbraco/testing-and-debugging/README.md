@@ -48,74 +48,7 @@ The logged messages can as always be monitored in the log viewer in backoffice
 
 ## MiniProfiler
 
-Umbraco includes the Mini Profiler project in its core (see [https://miniprofiler.com](https://miniprofiler.com) for more details). The MiniProfiler profiles your code method calls, giving you a greater insight into code duration and query time for (for example) underlying SQL queries. It's great for tracking down performance issues in your site's implementation.
-
-### Displaying the MiniProfiler
-
-To display the profiler on the front end of your site:
-
-* Set `Umbraco:CMS:Hosting:Debug` to `true` in `appsettings.json`.
-* Sign in to the backoffice as a user who has access to the **Settings** section.
-* Add `?umbDebug=true` to the request query string.
-
-<figure><img src="../../.gitbook/assets/v8-miniprofiler-view.png" alt=""><figcaption></figcaption></figure>
-
-If you click 'Show Trivial' you can seen the kind of detail the MiniProfiler makes available to you about the execution path of your page:
-
-<figure><img src="../../.gitbook/assets/v8-miniprofiler-trivial.png" alt=""><figcaption></figcaption></figure>
-
-and any underlying SQL Statements that are being executed for a part of the execution:
-
-<figure><img src="../../.gitbook/assets/v8-miniprofiler-sql-trigger.png" alt=""><figcaption></figcaption></figure>
-
-![Underlying SQL query details](../../.gitbook/assets/v8-miniprofiler-sql-details.png)
-
-### Writing to the MiniProfiler
-
-If you feel like a part of your application is slow you can use the MiniProfiler in your code to test the speed of it.
-
-All you have to do is inject the IProfiler interface and add a step around your logic:
-
-```csharp
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.Logging;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
-
-namespace MyCustomUmbracoProject;
-
-public class RootController : RenderController
-{
-    private readonly IProfiler _profiler;
-
-    public RootController(
-        IProfiler profiler,
-        ILogger<RenderController> logger,
-        ICompositeViewEngine compositeViewEngine,
-        IUmbracoContextAccessor umbracoContextAccessor)
-        : base(logger, compositeViewEngine, umbracoContextAccessor)
-    {
-        _profiler = profiler;
-    }
-
-    public override IActionResult Index()
-    {
-        // Perform a step
-        using (_profiler.Step("Sleep"))
-        {
-            System.Threading.Thread.Sleep(1000);
-        }
-
-        return base.Index();
-    }
-}
-```
-
-and now in the profiler you can see:
-
-![Show Trivial](../../.gitbook/assets/v8-miniprofiler-write.png)
+Umbraco includes the MiniProfiler, which profiles method calls and SQL queries to help you find performance issues. For more information, see the [MiniProfiler](miniprofiler.md) article.
 
 ## Umbraco Productivity Tool - Chrome Extension
 

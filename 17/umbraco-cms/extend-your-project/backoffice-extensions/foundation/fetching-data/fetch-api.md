@@ -6,7 +6,7 @@ description: >-
 
 # Fetch API
 
-The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is the built-in way to make network requests in the browser. Use it in the backoffice to request data from third-party APIs.
+The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is the built-in way to make network requests in the browser. Use the Fetch API in the backoffice to request data from third-party APIs.
 
 ## Requests to Umbraco
 
@@ -33,7 +33,7 @@ export async function getForecast(city: string) {
     throw new Error(`Request failed with status ${response.status}`);
   }
 
-  return response.json();
+  return { data: await response.json() };
 }
 ```
 {% endcode %}
@@ -51,10 +51,14 @@ The following function wraps the Fetch API and adds both to every request:
 ```typescript
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
 import type { UmbClassInterface } from '@umbraco-cms/backoffice/class-api';
+import { UmbApiError } from '@umbraco-cms/backoffice/resources';
+import type { UmbProblemDetails } from '@umbraco-cms/backoffice/resources';
 
 export async function makeRequest(host: UmbClassInterface, url: string, method = 'GET', body?: unknown) {
   const authContext = await host.getContext(UMB_AUTH_CONTEXT);
-  const token = await authContext?.getLatestToken();
+  if (!authContext) throw new Error('The auth context is not available');
+
+  const token = await authContext.getLatestToken();
 
   const response = await fetch(url, {
     method,
@@ -67,17 +71,24 @@ export async function makeRequest(host: UmbClassInterface, url: string, method =
   });
 
   if (!response.ok) {
-    throw new Error(`Request failed with status ${response.status}`);
+    // Use the problem details from the server, or build them from the status
+    const isProblemDetails = response.headers.get('Content-Type')?.includes('application/problem+json');
+    const problemDetails: UmbProblemDetails = isProblemDetails
+      ? await response.json()
+      : { type: 'error', title: `Request failed with status ${response.status}`, status: response.status };
+    throw new UmbApiError(problemDetails.title, response.status, null, problemDetails);
   }
 
-  return response.json();
+  return { data: await response.json() };
 }
 ```
 {% endcode %}
 
-The function reads every response body as JSON. Change that for endpoints that return an empty body.
+The function returns the JSON from the response as `data`. Change how it reads the body for endpoints that return an empty body.
 
-`getLatestToken()` refreshes an expired token before it returns. You only get a 401 response when the session can no longer be refreshed. The Fetch API does not ask the user to log in again, so handle that response yourself.
+For an unsuccessful response, the function throws an `UmbApiError` with the HTTP status. The error carries the problem details when the server sends them.
+
+`getLatestToken()` refreshes an expired token before it returns. You only get a 401 response when the session can no longer be refreshed. The Fetch API does not ask the user to log in again. `tryExecute` shows no notification for the 401 error from `makeRequest()`, so handle that error yourself, or use the Umbraco HTTP Client.
 
 The token belongs to the current backoffice user, so a request has the permissions of that user. External applications authenticate as an API User instead, as described in the [API Users](../../../../manage-and-publish-content/users-and-members/users/api-users.md) article.
 
@@ -113,18 +124,25 @@ export async function createAxiosClient(host: UmbClassInterface) {
 ```
 {% endcode %}
 
-A request made with another HTTP library has the same gaps as a request made with the Fetch API.
+Like the Fetch API, another HTTP library does not ask the user to log in again or turn error responses into problem details. The library does not show server notifications or return the ID from the `Umb-Generated-Resource` header either.
 
 ## Executing the Request
 
-Wrap the request in `tryExecute`, which shows a notification when the request throws. In an element that extends `UmbLitElement`:
+Wrap the request in `tryExecute`, which shows a notification when the request throws. `tryExecute` returns the value that the request resolves to, or an object with `error` when the request throws. So resolve with the body as `data`, and throw when the response is not successful, as `getForecast()` and `makeRequest()` do.
+
+The error that the request throws decides whether `tryExecute` shows a notification:
+
+* An `UmbApiError` with the HTTP status, like the error from `makeRequest()`, follows the rules for the Umbraco HTTP Client. For example, a 401, 403 or 404 response shows no notification. For all the rules, see [When Notifications Are Shown](try-execute.md#when-notifications-are-shown).
+* A plain `Error`, like the error from `getForecast()`, shows a notification with the error message, whatever the status.
+
+The following example wraps `makeRequest()` in `tryExecute`, in an element that extends `UmbLitElement`:
 
 {% code title="my-element.ts" %}
 ```typescript
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { makeRequest } from './make-request.js';
 
-const { data, error } = await tryExecute(this, makeRequest(this, '/umbraco/management/api/v1/user/current'));
+const { data, error } = await tryExecute(this, makeRequest(this, '/umbraco/myextension/api/v1/items'));
 
 if (!error) {
   console.log(data); // The JSON from the server

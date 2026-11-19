@@ -48,4 +48,3 @@ Use the above example for other services by replacing the interface and the name
 * [Media Service](./mediaservice.md)
 * [Relation Service](./relationservice.md)
 * [Content Type Service](./contenttypeservice.md)
-* [Localization Service](./localizationservice.md)

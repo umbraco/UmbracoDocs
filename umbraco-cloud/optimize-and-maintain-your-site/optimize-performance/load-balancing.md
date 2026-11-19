@@ -62,7 +62,7 @@ Choose manual scaling when:
 * You are sizing for a known peak.
 
 {% hint style="warning" %}
-Load-balanced environments currently have sticky sessions enabled. Each visitor is routed to the same instance for the duration of their session, which limits how evenly traffic is distributed across instances.
+Load-balanced environments currently have sticky sessions enabled. Each visitor is routed to the same instance for the duration of their session, which limits how evenly traffic is distributed across instances. Sticky sessions cannot be disabled while Load Balancing is enabled. For more information, see [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#sticky-sessions).
 {% endhint %}
 
 ## Cache Configuration by Cloud Plan

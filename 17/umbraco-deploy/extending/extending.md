@@ -532,9 +532,7 @@ There's also a code sample, demonstrated in the video linked above, available at
 The following code shows the registration of an entity for Backoffice deployment, for the simplest case of a single tree for the entity. Registration should be done in an `UmbracoApplicationStartingNotification` handler:
 
 ```csharp
-using Microsoft.AspNetCore.Http;
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Deploy;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
@@ -569,19 +567,7 @@ public class ExampleTransferDeployStartingHandler : INotificationHandler<Umbraco
                 SupportsRestore = true,
                 PermittedToRestore = true,
                 SupportsPartialRestore = true,
-            },
-            (string nodeId, HttpContext httpContext, out UdiRange? udiRange) =>
-            {
-                if (Guid.TryParse(nodeId, out Guid entityId))
-                {
-                    udiRange = new UdiRange(new GuidUdi("mypackage-example", entityId), DeploySelector.This);
-                    return true;
-                }
-                udiRange = null;
-                return false;
-            },
-            new DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail(
-                ExampleTreeHelper.GetExampleTree, "example", "mypackage-example"));
+            });
     }
 }
 ```
@@ -590,8 +576,8 @@ The `RegisterTransferEntityType` method on the `ITransferEntityService` takes th
 
 * The name of the entity type, as configured in the `UdiDefinition` attribute associated with your custom service connector.
 * A set of options, allowing configuration of whether different deploy operations like queue for transfer and partial restore are made available from the tree menu for the entity.
-* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) used to parse the UDI range from a string-based node ID. For a single entity, this will likely be parsing a GUID from a string. When you have more than one entity in a tree, you must distinguish which entity a particular node ID is for based on the ID. Hence, it's likely the node ID will need to have a prefix or similar that this function needs to parse to extract the GUID. A prefix could look like "product-\[guid]" or "store-\[guid]".
-* An optional `RemoteTreeDetail` parameter that adds support for implementing Deploy's "partial restore" feature.
+* An optional function (`TryParseUdiRangeFromNodeIdDelegate`) to parse the UDI range from a string-based node ID. This parameter is obsolete, because the backoffice sends the entity type and unique identifier of the selected item.
+* An optional `RemoteTreeDetail` parameter for the partial restore tree. This parameter is obsolete. Implement `ITreeServiceConnector` on the service connector instead, as described in the [Partial restore of remote items](#partial-restore-of-remote-items) section.
 
 {% hint style="info" %}
 The entity type name is used to look up a localized display name via the `deploy_entityTypes_{entityType}` or `general_{entityType}` localization keys. If no translation is provided, the plain entity type is used as the display name.
@@ -599,39 +585,68 @@ The entity type name is used to look up a localized display name via the `deploy
 Client-side entity types are tracked separately. If your client-side entity type differs from the server-side entity type, you can use a `deployEntityTypeMapping` manifest to map between them. See the [Version-specific Upgrade Guide](../upgrading/version-specific.md) for an example.
 {% endhint %}
 
-The `remoteTree` optional parameter adds support for plugins to implement Deploy's "partial restore" feature. This gives the editor the option to select an item to restore from a tree picker displaying details from a remote environment. The parameter is of type `DeployTransferRegisteredEntityTypeDetail.RemoteTreeDetail` that defines three pieces of information:
+#### Partial restore of remote items
 
-* A function responsible for returning a level of a tree.
-* The name of the entity (or entities) that can be restored from the remote tree.
-* The remote tree alias.
+When `SupportsPartialRestore` is enabled, editors can select an item to restore from a tree showing the items in a remote environment. To provide the items in this tree, implement the `ITreeServiceConnector` interface on your service connector. The interface is available from Umbraco Deploy 17.4.
 
-An example function that returns a level of a remote tree may look like this:
+The `GetTreeItemsAsync` method returns a page of `TreeItem` records, each containing the UDI, name, icon, whether it has children, and the parent UDI. The method takes the following parameters:
+
+* `parentUdi` - the UDI of the parent to return the children for. A `null` value or a root UDI requests the items at the root of the tree.
+* `filter` - the search term entered by the editor. When set, return the matching items from all levels below the parent as a flat list. Your implementation decides what to match, typically the name.
+* `skip` and `take` - the paging values. Throw an `ArgumentOutOfRangeException` when `skip` is negative or `take` is zero or negative.
+
+The following example adds the interface to the `ExampleServiceConnector` shown in the [Service Connectors](#service-connectors) section. The example entities are a flat list, so only the root has children:
 
 ```csharp
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Umbraco.Deploy.Core.Environments;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Deploy.Core.Connectors.ServiceConnectors;
+using Umbraco.Deploy.Infrastructure.Connectors.ServiceConnectors;
 
-public static IEnumerable<RemoteTreeEntity> GetExampleTree(string parentId, string entityType, HttpContext httpContext)
+[UdiDefinition("mypackage-example", UdiType.GuidUdi)]
+public class ExampleServiceConnector : ServiceConnectorBase<ExampleArtifact, GuidUdi, Example>, ITreeServiceConnector
 {
-    var exampleDataService = httpContext.RequestServices.GetRequiredService<IExampleDataService>();
-    var items = exampleDataService.GetItems(parentId);
-    return items
-        .Select(x => new RemoteTreeEntity
+    // Constructor and other members omitted for brevity
+
+    public async Task<PagedModel<TreeItem>> GetTreeItemsAsync(
+        Udi? parentUdi = null,
+        string? filter = null,
+        int skip = 0,
+        int take = int.MaxValue,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(skip);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(take);
+
+        if (parentUdi is { IsRoot: false })
         {
-            Id = x.Id.ToString(),
-            Title = x.Name,
-            Icon = "icon-box",
-            ParentId = parentId,
-            HasChildren = true,
-            EntityType = entityType,
-        })
-        .ToList();
+            return new PagedModel<TreeItem>();
+        }
+
+        var items = new List<TreeItem>();
+        await foreach (var example in _exampleDataService.GetExamplesAsync(cancellationToken))
+        {
+            if (string.IsNullOrWhiteSpace(filter) || example.Name.Contains(filter, StringComparison.OrdinalIgnoreCase))
+            {
+                items.Add(new TreeItem(example.GetUdi(), example.Name, "icon-box", false, null));
+            }
+        }
+
+        return new PagedModel<TreeItem>(
+            items.Count,
+            items.OrderBy(x => x.Name).Skip(skip).Take(take).ToList());
+    }
 }
 ```
 
+For large data sets, filter and page the items in your data store instead of in memory.
+
+Deploy calls the connector of the parent's entity type to list its children, so a tree can contain more than one entity type. Return an empty page when you don't recognize the parent, instead of returning the root items.
+
 {% hint style="info" %}
-Umbraco Deploy provides the `ExternalEntityTreeController` to serve the external entity tree for partial restore. When you register an entity type with a `RemoteTreeDetail`, Deploy automatically handles retrieving the tree from the remote environment using the provided `TreeEntityGetter` function. No custom tree controller implementation is required.
+If your service connector doesn't implement `ITreeServiceConnector`, Deploy lists the items using the `ExpandRangeAsync` and `GetArtifactAsync` methods of the connector. This tree is flat and doesn't show icons.
+
+The `RemoteTreeDetail` parameter of `RegisterTransferEntityType` is obsolete and will be removed in Umbraco Deploy 19.
 {% endhint %}
 
 ### Refreshing Signatures

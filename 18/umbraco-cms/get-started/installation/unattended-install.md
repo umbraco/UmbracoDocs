@@ -14,7 +14,7 @@ In order to get a clean instance of Umbraco, follow our installation guide for h
 
 As you will not be running through the installation wizard when using this feature, you need to manually tell Umbraco which database to use.
 
-* Set up and configure a new database - see [Requirements](../requirements.md#hosting) for details.
+* Set up and configure a new database - see [Requirements](requirements.md#hosting) for details.
 * Add the connection string using configuration.
 
 {% hint style="info" %}
@@ -40,18 +40,22 @@ The 'umbracoDbDSN\_ProviderName' attribute sets the .NET Framework data provider
 
 ### SQLite Example in appsettings.json
 
-A value is configured for the key`umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.SQLite` ADO.NET provider.
+A value is configured for the key `umbracoDbDSN_ProviderName` to ensure usage of the `Microsoft.Data.Sqlite` ADO.NET provider.
 
-It is recommended that you make use of the values shown below for the `Cache`, `Foreign Keys` and `Pooling` keywords on your connection string.
+It is recommended that you make use of the values shown below for the `Foreign Keys` and `Pooling` keywords on your connection string.
 
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.Sqlite"
   }
 }
 ```
+
+{% hint style="warning" %}
+Do not add `Cache=Shared` to a SQLite connection string. Shared cache causes `database table is locked` errors on the write-ahead logging databases that Umbraco creates. For more information, see the [Connection strings settings](../../../develop-with-umbraco/configuration/connectionstringssettings.md) article.
+{% endhint %}
 
 ## Enable the unattended installs feature
 

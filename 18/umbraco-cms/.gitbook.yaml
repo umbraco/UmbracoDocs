@@ -214,3 +214,12 @@ redirects:
     model-your-content/content-types-and-structure/data/defining-content/default-document-types: model-your-content/content-types-and-structure/data/defining-content/document-type-options.md
     get-started/backoffice-essentials/working-with-content: get-started/backoffice-essentials/working-with-rich-text-editors.md
     get-started/installation/install-umbraco-with-templates: get-started/installation/README.md
+    get-started/upgrading-and-migrating/version-specific/find-your-upgrade-path: get-started/upgrading-and-migrating/find-your-upgrade-path/README.md
+    get-started/upgrading-and-migrating/version-specific/migrate-content-to-umbraco-15: get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-content-to-umbraco-15.md
+    get-started/upgrading-and-migrating/version-specific/migrate-content-to-umbraco-8: get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-content-to-umbraco-8.md
+    get-started/upgrading-and-migrating/version-specific/migrate-custom-property-editors-to-umbraco-14: get-started/upgrading-and-migrating/find-your-upgrade-path/migrate-custom-property-editors-to-umbraco-14.md
+    get-started/upgrading-and-migrating/version-specific/minor-upgrades-for-umbraco-7: get-started/upgrading-and-migrating/find-your-upgrade-path/minor-upgrades-for-umbraco-7.md
+    get-started/upgrading-and-migrating/version-specific/minor-upgrades-for-umbraco-8: get-started/upgrading-and-migrating/find-your-upgrade-path/minor-upgrades-for-umbraco-8.md
+    get-started/upgrading-and-migrating/version-specific/single-block-migration: get-started/upgrading-and-migrating/find-your-upgrade-path/single-block-migration.md
+    get-started/upgrading-and-migrating/version-specific/upgrade-from-8-to-latest: get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-from-8-to-latest.md
+    get-started/upgrading-and-migrating/version-specific/upgrade-to-umbraco-7: get-started/upgrading-and-migrating/find-your-upgrade-path/upgrade-to-umbraco-7.md

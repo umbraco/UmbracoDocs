@@ -16,6 +16,50 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 Below are the release notes for Umbraco Engage 17, detailing all changes in this version.
 
+#### [17.6.0](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (October 29th 2026)
+
+**Analytics and reporting**
+
+* Fixed analytics tracking throwing an error on requests with a malformed or truncated form body. These requests are no longer treated as Umbraco surface actions ([Issue #112](https://github.com/umbraco/Umbraco.Engage.Issues/issues/112)).
+* Fixed report date ranges being shifted when the reporting timezone is not UTC. A timezone ahead of UTC added an extra day at the end of the range, and one behind UTC added an extra day at the start. In comparison mode, the previous period also overlapped the primary one.
+* Fixed the Realtime Visitors chart and table returning a server error over long date ranges on large databases. Paged tables now compute their rows once instead of repeating the aggregation for the row count, the page, and the totals.
+* Added `Engage:Reporting:QueryCommandTimeout`, the time in seconds allowed for each analytics SQL command. The default is `120` and the minimum is `30`.
+* Analytics queries are now cancelled when a page is reloaded or a tab is closed. The query endpoint returns HTTP 499 for an aborted request instead of HTTP 500.
+* A chart or table whose query fails now shows an error with a retry button instead of a blank chart or "No data found".
+* Realtime visitors are now dated by the start of their session. A session that crosses midnight counts on its start day only, and a session with no remaining pageviews is now counted.
+* Combining the Sessions or Visitors metric with a page dimension now returns a validation error (HTTP 400) instead of a server error (HTTP 500). This affected the Sessions and Locations tabs on a document when report-data generation was disabled.
+* A document's analytics tabs now request page-level data whenever they are opened on a content page, instead of depending on whether report-data generation is enabled. The empty state shows "No reporting data has been generated for this site yet." when no report data exists.
+* Fixed the Search terms report failing with "Prefab is missing" when "Include subpages" was selected. The metric is now labeled "Search volume (with subpages)".
+* Fixed the table staying on the previous scope when "Include subpages" changed after the chart had loaded.
+* Fixed the totals strip showing "NaN% of total" or "Infinity% of total" when no total was available.
+* Fixed overlapping star-schema generation runs not being skipped. Generation now uses an application lock.
+
+**Analytics: visual redesign**
+
+* Table URLs, share bars, and annotation accents now use a lighter accent color that stays readable in the dark theme.
+* The page range in the table footer, for example "1-10 of 23", now sits next to the pager.
+
+**A/B testing and personalization**
+
+* The Engage segment preview app is now only used when the Personalization feature is licensed. Without it, Umbraco's own segment switcher is used, and opening a document preview no longer shows a Personalization license error ([Issue #113](https://github.com/umbraco/Umbraco.Engage.Issues/issues/113)).
+* Added the ability to archive an A/B test. Running tests can't be selected for bulk actions.
+* The A/B test list now has a grid view and a table view, with status tags, sorting, and filters.
+* The A/B test list and test project workspace have been redesigned. The "New" status is now labeled "Draft", and tests are grouped by status.
+
+**Headless**
+
+* Headless segmentation and Delivery API calls can now pass the visitor's browser User-Agent in a `Visitor-User-Agent` header. Device segments now resolve from the visitor's browser instead of the server-side frontend's HTTP client.
+* Segmentation and Delivery API calls no longer store segment rule results that apply only once, such as Device, in the visitor's profile. The results are stored by the tracked pageview instead.
+* A tracked URL on a non-default port now keeps its port in the headless request host. Previously a pageview for `https://localhost:44367/` was stored against the default port and created a second page row. Existing rows are not migrated.
+
+**Backoffice and platform**
+
+* Updated `Umbraco.Licenses` to 17.0.6. This fixes a rare startup failure with the error "Unable to verify license for Umbraco.Engage. The details provided do not match the signature", caused by SQL Server `datetime` precision ([Issue #110](https://github.com/umbraco/Umbraco.Engage.Issues/issues/110)).
+* Added `DataProcessing:ProfileBuildCommandTimeout`, the time in seconds allowed for the visitor profile build command. The default is `5`, so a slow profile query no longer holds a request for the 30 second SQL default.
+* Added a generated appsettings JSON schema, `appsettings-schema.Umbraco.Engage.json`, which is shipped in the package. The Engage configuration options now have descriptions and default values in the schema, and `SessionCookieSameSite` lists its allowed values.
+* Fixed the `AlignSchema` migration failing when both a legacy and an aligned database object name exist.
+* The `FctSession.Page` and `FctSession.UmbracoPageVariant` members are marked as obsolete, and will be removed in Umbraco Engage 19. The database columns they referred to were never created.
+
 #### [17.5.0](https://www.nuget.org/packages/Umbraco.Engage/17.5.0) (October 1st 2026)
 
 **Analytics and reporting**

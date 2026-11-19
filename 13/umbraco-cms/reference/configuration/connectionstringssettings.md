@@ -11,17 +11,19 @@ An connection strings config can look like this:
 ```json
 {
   "ConnectionStrings": {
-    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True",
+    "umbracoDbDSN": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Foreign Keys=True;Pooling=True",
     "umbracoDbDSN_ProviderName": "Microsoft.Data.SQLite"
   }
 }
 ```
 
-{% hint style="info" %}
-We recommend using shared cache for SQLite when using Umbraco, as it provides better performance and consistency when multiple connections may access the database simultaneously.
+{% hint style="warning" %}
+Do not use shared cache (`Cache=Shared`) in a SQLite connection string. Umbraco creates its SQLite databases in [write-ahead logging mode](https://sqlite.org/wal.html), where readers and writers do not block each other. [Shared cache](https://sqlite.org/sharedcache.html) instead uses table-level locking. A connection that cannot get a table lock fails with `database table is locked` instead of waiting.
+
+Remove the `Cache` keyword from the connection string in `appsettings.json` if a site was installed with `Cache=Shared`.
 {% endhint %}
 
-The connection string used here is an SQLite connection string, that will connect to a data in the file `Umbraco.sqlite.db`  located in `/umbraco/Data` .
+The connection string shown here is an SQLite connection string that connects to the database file `Umbraco.sqlite.db` in the `/umbraco/Data` folder.
 
 Umbraco currently supports using either a Microsoft SQL Server or a SQLite database. Both of these options will have different connection strings. For more information about the specific connection strings, see:
 

@@ -41,7 +41,8 @@
 ^https://help\.aprimo\.com/.*$
 ^https://www\.ipaddressguide\.com/.*$
 ^https://openai\.com/.*$
-
+# platform.openai.com returns 403 to automated tools — verify manually
+^https://platform\.openai\.com
 # Action links
 
 ^https://insiders\.vscode\.dev/redirect.*$

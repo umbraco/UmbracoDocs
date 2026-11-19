@@ -16,6 +16,8 @@ Umbraco.AI supports multiple AI providers through installable NuGet packages. Ea
 | [Google Gemini](google.md)                   | `Umbraco.AI.Google`           | Chat            | Gemini models, multimodal        |
 | [Amazon Bedrock](amazon.md)                  | `Umbraco.AI.Amazon`           | Chat, Embedding | AWS integration, multiple models |
 | [Microsoft AI Foundry](microsoft-foundry.md) | `Umbraco.AI.MicrosoftFoundry` | Chat, Embedding | Azure, enterprise compliance     |
+| [TypeSafe AI](typesafe.md)                   | `Umbraco.AI.TypeSafe`         | Decision (experimental) | Typed yes/no, pick-one, and score questions |
+| [Cloudflare](cloudflare.md)                  | `Umbraco.AI.Cloudflare`       | Extraction (experimental) | Typed values read out of text |
 
 ## Choosing a Provider
 
@@ -23,11 +25,13 @@ Consider these factors when selecting a provider:
 
 ### Capabilities Needed
 
-| Capability | OpenAI | Anthropic | Google | Amazon | MS Foundry |
-| ---------- | ------ | --------- | ------ | ------ | ---------- |
-| Chat           | Yes    | Yes       | Yes    | Yes    | Yes        |
-| Embedding      | Yes    | No        | No     | Yes    | Yes        |
-| Speech-to-Text | Yes    | No        | No     | No     | No         |
+| Capability | OpenAI | Anthropic | Google | Amazon | MS Foundry | TypeSafe AI | Cloudflare |
+| ---------- | ------ | --------- | ------ | ------ | ---------- | ----------- | ---------- |
+| Chat           | Yes    | Yes       | Yes    | Yes    | Yes        | No          | No         |
+| Embedding      | Yes    | No        | No     | Yes    | Yes        | No          | No         |
+| Speech-to-Text | Yes    | No        | No     | No     | No         | No          | No         |
+| Decision (experimental) | No | No   | No     | No     | No         | Yes         | No         |
+| Extraction (experimental) | No | No | No | No | No | No | Yes |
 
 ### Use Case Fit
 

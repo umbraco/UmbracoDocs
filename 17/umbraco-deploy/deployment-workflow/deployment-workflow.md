@@ -67,6 +67,10 @@ The extraction will end in one of two possible outcomes:
 1. `deploy-complete`: The extraction succeeded and your environment is in good shape!
 2. `deploy-failed`: The extraction failed - open the deploy-failed file, to see the error message.
 
+{% hint style="info" %}
+When [`DiskMode`](../getting-started/deploy-settings.md#disk-mode) is set to `ReadOnly`, Deploy doesn't process marker files or write status files. The dashboard shows the outcome of the last operation instead, and extracting schema to data files returns an error.
+{% endhint %}
+
 It is also possible to see which version of Umbraco Deploy you are running, when the last operation was started and the status of the deployment operation.
 
 <figure><img src="../.gitbook/assets/image (15).png" alt="Deploy Dashboard"><figcaption><p>Deploy Dashboard</p></figcaption></figure>

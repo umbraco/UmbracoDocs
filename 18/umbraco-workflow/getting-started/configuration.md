@@ -34,7 +34,7 @@ All Workflow configuration is optional and will fallback to defaults, if not set
 {
   "Workflow": {
     "ReminderNotificationPeriod": Timespan.FromHours(8),
-    "ActionNotificationPeriod": Timespance.FromMinutes(5),
+    "ActionNotificationPeriod": Timespan.FromMinutes(5),
     "EnableTestLicense": false,
     "DateFormats": {
       "DateFormat": "MMMM d, yyyy h:mm tt",

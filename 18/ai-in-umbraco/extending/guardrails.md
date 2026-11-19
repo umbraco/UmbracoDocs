@@ -257,6 +257,89 @@ public class GuardrailComposer : IComposer
 ```
 {% endcode %}
 
+## Requiring a Capability
+
+If your evaluator depends on an experimental capability, such as Decision, mark it with `[AIRequiresCapability]`. The attribute hides the evaluator from the evaluator listing endpoint while that capability is disabled. You can apply it more than once when an evaluator needs more than one capability. The same attribute works on custom test graders.
+
+{% hint style="warning" %}
+`[AIRequiresCapability]` only hides the evaluator from the listing. It does not stop the evaluator from running. A saved rule that already references the evaluator by ID still runs it. Check `IAIExperimentalFeatures.IsCapabilityEnabled` in `EvaluateAsync` yourself, and return a flagged result when the capability is off.
+{% endhint %}
+
+{% code title="SpamCheckEvaluator.cs" %}
+```csharp
+#pragma warning disable UMBRACOAI_DECISION
+
+using Microsoft.Extensions.AI;
+using Umbraco.AI.Core.Decision;
+using Umbraco.AI.Core.Guardrails.Evaluators;
+using Umbraco.AI.Core.Models;
+using Umbraco.AI.Core.Settings;
+
+public class SpamCheckConfig
+{
+}
+
+[AIGuardrailEvaluator("spam-check", "Spam Check",
+    Type = AIGuardrailEvaluatorType.ModelBased)]
+[AIRequiresCapability(AICapability.Decision)]
+public class SpamCheckEvaluator : AIGuardrailEvaluatorBase<SpamCheckConfig>
+{
+    private readonly IAIDecisionService _decisionService;
+    private readonly IAIExperimentalFeatures _experimentalFeatures;
+
+    public override string Description => "Flags content that looks like spam";
+
+    public SpamCheckEvaluator(
+        IAIDecisionService decisionService,
+        IAIExperimentalFeatures experimentalFeatures,
+        IAIGuardrailEvaluatorInfrastructure infrastructure)
+        : base(infrastructure)
+    {
+        _decisionService = decisionService;
+        _experimentalFeatures = experimentalFeatures;
+    }
+
+    public override async Task<AIGuardrailResult> EvaluateAsync(
+        string content,
+        IReadOnlyList<ChatMessage> conversationHistory,
+        AIGuardrailConfig config,
+        CancellationToken cancellationToken)
+    {
+        // The attribute does not stop execution, so fail safe here
+        if (!_experimentalFeatures.IsCapabilityEnabled(AICapability.Decision))
+        {
+            return new AIGuardrailResult
+            {
+                EvaluatorId = Id,
+                Flagged = true,
+                Score = 0,
+                Reason = "Decision is turned off, so this rule can't run."
+            };
+        }
+
+        // The content to judge goes in the state, not on the question
+        AIDecisionResponse<AIBinaryDecisionAnswer> response = await _decisionService.AskAsync(
+            new AIBinaryDecisionQuestion
+            {
+                Instructions = "Is this content spam?"
+            },
+            state: content,
+            cancellationToken: cancellationToken);
+
+        var isSpam = response.Answer.IsTrue(0.7);
+
+        return new AIGuardrailResult
+        {
+            EvaluatorId = Id,
+            Flagged = isSpam,
+            Score = response.Answer.TrueProbability,
+            Reason = isSpam ? "Content looks like spam" : null
+        };
+    }
+}
+```
+{% endcode %}
+
 ## AIGuardrailResult
 
 Every evaluator returns an `AIGuardrailResult`:
@@ -276,6 +359,7 @@ Every evaluator returns an `AIGuardrailResult`:
 | `contains`  | Contains         | Code-based  | Flags content containing a specific substring                  |
 | `regex`     | Regex Match      | Code-based  | Flags content matching a regular expression pattern            |
 | `llm-judge` | LLM Safety Judge | Model-based | Uses an AI model to evaluate content for safety and compliance |
+| `decision-judge` | Decision Safety Judge | Model-based | Uses a calibrated AI decision to judge content for safety and compliance (experimental). See [Decision Safety Judge Evaluator](../backoffice/managing-guardrails.md#decision-safety-judge-evaluator) |
 
 ## Related
 
