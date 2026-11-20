@@ -58,21 +58,19 @@ The connector is visible to everyone in the organization. Only users with a back
 
 ## The Configuration File
 
-The `claude_desktop_config.json` file only supports MCP servers that Claude Desktop starts on your machine with a `command`. The file does not support a hosted MCP URL.
+The `claude_desktop_config.json` file is the way to set up local MCP servers. A local MCP server is a server that Claude Desktop starts on your machine with a `command`.
 
-Claude Desktop skips an entry with a `url` and shows the following message:
+To open the file, go to **Settings** > **Desktop app** > **Extensions**. Then select **Edit config** under **Local MCP servers**.
+
+To run an Umbraco MCP server on your own machine, see [Claude Desktop](../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section.
+
+{% hint style="warning" %}
+The configuration file does not work for connecting to a hosted MCP server. Claude Desktop skips an entry with a `url` and shows the following message:
 
 ![The "Some MCP servers couldn't be loaded" message in Claude Desktop](<../../../.gitbook/assets/claude-desktop-mcp-servers-not-loaded.png>)
 
-To fix the message:
-
-1. Go to **Settings** > **Desktop app** > **Extensions**.
-2. Select **Edit config** under **Local MCP servers**.
-3. Remove the entry with the `url` from the `claude_desktop_config.json` file.
-4. Quit and restart Claude Desktop.
-5. [Add a custom connector](#add-a-custom-connector).
-
-To run an Umbraco MCP server on your own machine instead, see [Claude Desktop](../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section.
+Remove the entry from the file and restart Claude Desktop. Then [add a custom connector](#add-a-custom-connector) to connect to the hosted MCP server.
+{% endhint %}
 
 ## Verifying the Connection
 
