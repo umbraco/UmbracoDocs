@@ -21,11 +21,11 @@ The checks are grouped into four categories:
 
 Each result is marked **Critical**, **To fix**, **To review**, or **Passing**. The rating depends on the environment and its setup, so the same check can be rated differently across environments.
 
-<figure><img src="../../.gitbook/assets/cloud-recommendations-project.png" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cloud-recommendations-project.png" alt="The project Recommendations page showing checks passing, the checks to fix on Live by rating, a summary for each environment, and checks passing by category on Live"><figcaption><p>The project view shows what to fix on each environment, starting with Live.</p></figcaption></figure>
 
 The recommendation score counts the checks that pass. The project page shows the results for each environment and how the score develops over time. Organization admins can see the results for all projects under **Overview** -> **Recommendations** on the organization.
 
-<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt="The organization Recommendations dashboard showing how many projects pass all checks, the single fix that affects the most projects, projects grouped by number of failing checks, and failing checks by category"><figcaption><p>The organization view shows where to focus across all your projects.</p></figcaption></figure>
 
 If a check does not apply to your project, you can disable it for the project or for the whole organization. After a change that affects a check, such as a deployment or a configuration change, the results update within about 15 minutes.
 
