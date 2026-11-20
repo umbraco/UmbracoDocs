@@ -6,13 +6,20 @@ description: Host set up for Claude Desktop
 
 Claude Desktop is a desktop application from Anthropic that provides a chat interface with support for MCP servers. It is available for macOS and Windows.
 
+How you connect Claude Desktop to an Umbraco MCP server depends on where the server runs:
+
+* [Hosted MCP server](#hosted-mcp-server-setup): add a custom connector in the Claude Desktop settings.
+* [Local MCP server](#local-mcp-server-setup): add the server to the Claude Desktop configuration file.
+
+## Hosted MCP Server Setup
+
 Claude Desktop connects to a hosted Umbraco MCP server through a custom connector. You add the connector in the Claude Desktop settings and log in with your Umbraco backoffice credentials.
 
 {% hint style="info" %}
 The examples below use the Editor MCP Server. Replace the URL if you are using a different hosted Umbraco MCP server.
 {% endhint %}
 
-## Before You Start
+### Before You Start
 
 Who can add a custom connector depends on your Claude plan:
 
@@ -27,7 +34,7 @@ If **Add custom connector** is unavailable, your organization manages connectors
 Claude connects to a custom connector from Anthropic's cloud, not from your machine. Your MCP URL must be reachable from the public internet on the standard HTTPS port (443).
 {% endhint %}
 
-## Add a Custom Connector
+### Add a Custom Connector
 
 {% hint style="warning" %}
 Anthropic updates the Connectors UI from time to time, so exact menu names can differ from the steps below. See [Claude's Help Center](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) for the current steps.
@@ -56,23 +63,7 @@ An organization owner adds the custom connector under **Organization settings** 
 
 The connector is visible to everyone in the organization. Only users with a backoffice login for the Umbraco site can connect to the site.
 
-## The Configuration File
-
-The `claude_desktop_config.json` file is the way to set up local MCP servers. A local MCP server is a server that Claude Desktop starts on your machine with a `command`.
-
-To open the file, go to **Settings** > **Desktop app** > **Extensions**. Then select **Edit config** under **Local MCP servers**.
-
-To run an Umbraco MCP server on your own machine, see [Claude Desktop](../../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section.
-
-{% hint style="warning" %}
-The configuration file does not work for connecting to a hosted MCP server. Claude Desktop skips an entry with a `url` and shows the following message:
-
-![The "Some MCP servers couldn't be loaded" message in Claude Desktop](<../../../../.gitbook/assets/claude-desktop-mcp-servers-not-loaded.png>)
-
-Remove the entry from the file and restart Claude Desktop. Then [add a custom connector](#add-a-custom-connector) to connect to the hosted MCP server.
-{% endhint %}
-
-## Verifying the Connection
+### Verifying the Connection
 
 Start a new chat, select **+**, and then select **Connectors**. Check that the Umbraco connector is listed and enabled. Try a command to verify:
 
@@ -81,6 +72,22 @@ Search for all content pages
 ```
 
 If the connection is working, you will see results from your Umbraco instance.
+
+## Local MCP Server Setup
+
+A local MCP server is a server that Claude Desktop starts on your machine with a `command`. You set up a local MCP server in the `claude_desktop_config.json` configuration file.
+
+To open the file, go to **Settings** > **Desktop app** > **Extensions**. Then select **Edit config** under **Local MCP servers**.
+
+See [Claude Desktop](../../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section for the full steps.
+
+{% hint style="warning" %}
+The configuration file does not work for connecting to a hosted MCP server. Claude Desktop skips an entry with a `url` and shows the following message:
+
+![The "Some MCP servers couldn't be loaded" message in Claude Desktop](<../../../../.gitbook/assets/claude-desktop-mcp-servers-not-loaded.png>)
+
+Remove the entry from the file and restart Claude Desktop. Then [add a custom connector](#add-a-custom-connector) to connect to the hosted MCP server.
+{% endhint %}
 
 ## Troubleshooting
 
