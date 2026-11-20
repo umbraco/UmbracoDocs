@@ -79,6 +79,10 @@ A local MCP server is a server that Claude Desktop starts on your machine with a
 
 To open the file, go to **Settings** > **Desktop app** > **Extensions**. Then select **Edit config** under **Local MCP servers**.
 
+{% hint style="warning" %}
+The **Extensions** settings are not always available. Your organization can turn off local MCP servers in Claude Desktop. If the settings are missing, contact your Claude administrator.
+{% endhint %}
+
 See [Claude Desktop](../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section for the full steps.
 
 {% hint style="warning" %}
