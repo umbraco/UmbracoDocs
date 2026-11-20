@@ -2,10 +2,38 @@
 
 ## Key Takeaways
 
+* **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+
+## Recommendations
+
+Recommendations check your project setup against Umbraco Cloud best practices, so you can spot gaps in security, performance, and operations before they turn into problems. Think of them as Umbraco CMS Health Checks for your hosting setup. Each check tells you what to change and how. Find them under **Insights** -> **Recommendations** on your project in the Cloud Portal.
+
+The checks cover four areas:
+
+* **Security** - For example, WAF rules, legacy TLS cipher suites, Production runtime mode, and SQL firewall rules.
+* **Performance** - CDN caching and cache TTL on custom hostnames.
+* **Best practices** - The `Umbraco.Cloud.Cms` package and Models Builder mode on the live environment.
+* **Operations** - Uptime monitoring and alert rules for the project.
+
+Each result is marked **Critical**, **To fix**, **To review**, or **Passing**, so you know where to start.
+
+<figure><img src="../../.gitbook/assets/cloud-recommendations-project.png" alt="The project Recommendations page showing checks passing, the checks to fix on Live by rating, a summary for each environment, and checks passing by category on Live"><figcaption><p>The project view shows what to fix on each environment, starting with Live.</p></figcaption></figure>
+
+Not every best practice fits every project. If a check does not apply to yours, disable it for the project or for your whole organization. Disabled checks do not count in the score, so the score reflects what matters for your project.
+
+The score counts the checks that pass, and the trend shows how your setup improves over time. When you fix something, the results update within about 15 minutes.
+
+Organization admins get an overview of every project in the organization under **Overview** -> **Recommendations**, so you can see where to focus across all your projects.
+
+<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt="The organization Recommendations dashboard showing how many projects pass all checks, the single fix that affects the most projects, projects grouped by number of failing checks, and failing checks by category"><figcaption><p>The organization view shows where to focus across all your projects.</p></figcaption></figure> 
+
+Recommendations grow with the platform. New checks are added over time, including checks that point you to new Umbraco Cloud features your project could benefit from.
+
+For now, access to Recommendations is limited to project admins and organization admins. For more details, see the [Recommendations](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md) documentation.
 
 ## Alerting and Notifications
 
