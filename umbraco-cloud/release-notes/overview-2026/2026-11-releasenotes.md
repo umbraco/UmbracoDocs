@@ -10,27 +10,30 @@
 
 ## Recommendations
 
-Recommendations are automated checks of your project setup against Umbraco Cloud best practices. They work like Umbraco CMS Health Checks, applied to your hosting setup. Each check shows what to change and how, so you can close gaps in security, performance, and operations before they cause problems. Find the page under **Insights** -> **Recommendations** on your project in the Cloud Portal.
+Recommendations check your project setup against Umbraco Cloud best practices, so you can spot gaps in security, performance, and operations before they turn into problems. Think of them as Umbraco CMS Health Checks for your hosting setup. Each check tells you what to change and how. Find them under **Insights** -> **Recommendations** on your project in the Cloud Portal.
 
-The checks are grouped into four categories:
+The checks cover four areas:
 
 * **Security** - For example, WAF rules, legacy TLS cipher suites, Production runtime mode, and SQL firewall rules.
 * **Performance** - CDN caching and cache TTL on custom hostnames.
 * **Best practices** - The `Umbraco.Cloud.Cms` package and Models Builder mode on the live environment.
 * **Operations** - Uptime monitoring and alert rules for the project.
 
-Each result is marked **Critical**, **To fix**, **To review**, or **Passing**. The rating depends on the environment and its setup, so the same check can be rated differently across environments.
+Each result is marked **Critical**, **To fix**, **To review**, or **Passing**, so you know where to start.
 
 <figure><img src="../../.gitbook/assets/cloud-recommendations-project.png" alt="The project Recommendations page showing checks passing, the checks to fix on Live by rating, a summary for each environment, and checks passing by category on Live"><figcaption><p>The project view shows what to fix on each environment, starting with Live.</p></figcaption></figure>
 
-The recommendation score counts the checks that pass. The project page shows the results for each environment and how the score develops over time. Organization admins can see the results for all projects under **Overview** -> **Recommendations** on the organization.
+Not every best practice fits every project. If a check does not apply to yours, disable it for the project or for your whole organization. Disabled checks do not count in the score, so the score reflects what matters for your project.
 
-<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt="The organization Recommendations dashboard showing how many projects pass all checks, the single fix that affects the most projects, projects grouped by number of failing checks, and failing checks by category"><figcaption><p>The organization view shows where to focus across all your projects.</p></figcaption></figure>
+The score counts the checks that pass, and the trend shows how your setup improves over time. When you fix something, the results update within about 15 minutes.
 
-If a check does not apply to your project, you can disable it for the project or for the whole organization. After a change that affects a check, such as a deployment or a configuration change, the results update within about 15 minutes.
+Organization admins get an overview of every project in the organization under **Overview** -> **Recommendations**, so you can see where to focus across all your projects.
+
+<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt="The organization Recommendations dashboard showing how many projects pass all checks, the single fix that affects the most projects, projects grouped by number of failing checks, and failing checks by category"><figcaption><p>The organization view shows where to focus across all your projects.</p></figcaption></figure> 
+
+Recommendations grow with the platform. New checks are added over time, including checks that point you to new Umbraco Cloud features your project could benefit from.
 
 For now, access to Recommendations is limited to project admins and organization admins. For more details, see the [Recommendations](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md) documentation.
-
 
 ## Alerting and Notifications
 
