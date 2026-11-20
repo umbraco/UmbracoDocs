@@ -66,18 +66,6 @@ Search for all content pages
 
 If the connection is working, you will see results from your Umbraco instance.
 
-## The Configuration File
-
-The `claude_desktop_config.json` file is only for local MCP servers. To set up a local MCP server, see [Claude Desktop](../local-mcp-setup/claude-desktop.md) in the Local MCP Setup section.
-
-{% hint style="warning" %}
-The configuration file does not work for connecting to a hosted MCP server. Claude Desktop skips an entry with a `url` and shows the following message:
-
-![The "Some MCP servers couldn't be loaded" message in Claude Desktop](<../../../.gitbook/assets/claude-desktop-mcp-servers-not-loaded.png>)
-
-Remove the entry from the file and restart Claude Desktop. Then [add a custom connector](#add-a-custom-connector) to connect to the hosted MCP server.
-{% endhint %}
-
 ## Troubleshooting
 
 * **Add custom connector is unavailable.** Contact your Claude administrator and ask them to add the connector for your organization.
