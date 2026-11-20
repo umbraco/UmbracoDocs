@@ -2,7 +2,7 @@
 
 ## Key Takeaways
 
-* **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and what to address it.
+* **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
