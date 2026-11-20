@@ -2,10 +2,35 @@
 
 ## Key Takeaways
 
+* **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and what to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+
+## Recommendations
+
+Recommendations are automated checks of your project setup against Umbraco Cloud best practices. They work like Umbraco CMS Health Checks, applied to your hosting setup. Each check shows what to change and how, so you can close gaps in security, performance, and operations before they cause problems. Find the page under **Insights** -> **Recommendations** on your project in the Cloud Portal.
+
+The checks are grouped into four categories:
+
+* **Security** - For example, WAF rules, legacy TLS cipher suites, Production runtime mode, and SQL firewall rules.
+* **Performance** - CDN caching and cache TTL on custom hostnames.
+* **Best practices** - The `Umbraco.Cloud.Cms` package and Models Builder mode on the live environment.
+* **Operations** - Uptime monitoring and alert rules for the project.
+
+Each result is marked **Critical**, **To fix**, **To review**, or **Passing**. The rating depends on the environment and its setup, so the same check can be rated differently across environments.
+
+<!-- >Screenshot project view] -->
+
+The recommendation score counts the checks that pass. The project page shows the results for each environment and how the score develops over time. Organization admins can see the results for all projects under **Overview** -> **Recommendations** on the organization.
+
+<!-- Screenshot org view -->
+
+If a check does not apply to your project, you can disable it for the project or for the whole organization. After a change that affects a check, such as a deployment or a configuration change, the results update within about 15 minutes.
+
+For now, access to Recommendations is limited to project admins and organization admins. For more details, see the [Recommendations](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md) documentation.
+
 
 ## Alerting and Notifications
 
