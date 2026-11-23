@@ -29,6 +29,18 @@ The Engage Cockpit now requires access to the Engage section, and the Read permi
 
 `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone. An explicit time is now scheduled in the reporting time zone instead of the server time zone. If your server and reporting time zones differ, check that the time is still what you want.
 
+### 17.6.0 — Consent and the original referrer
+
+#### Call `consentGranted()` after a visitor grants consent
+
+If your site reloads the page after a visitor grants analytics consent, replace that reload with a call to `umbracoEngage.analytics.consentGranted()`. A reload replaces the original referrer with the site's own URL, so the visit is recorded without its real source.
+
+`consentGranted()` stores the original referrer in a short-lived `ue-consent-referrer` cookie and then reloads the page. Engage reads the referrer from the cookie, and removes it. The cookie is only written for visitors who grant consent. Pass `{ reload: false }` to store the referrer and handle the navigation yourself.
+
+Sites that do not reload the page after consent are not affected.
+
+See [How to become GDPR compliant using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) for how to call it from a consent callback.
+
 ### 17.4.0 (behavior changes)
 
 * **Pageview goals**: Pageview goals saved on 17.2.4, 17.3.0, or 17.3.1 hold values that cannot be recovered. Re-pick the pages of these goals after upgrading.

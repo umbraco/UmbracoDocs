@@ -211,14 +211,49 @@ To install CookieBot, insert the JavaScript tag provided by CookieBot into the `
 
 ### Tracking a Visitor's Initial Pageview
 
-Umbraco Engage does not actively track visitors until they have given their consent to the Cookiebot configuration. After the visitor consents, you need to **reload** the page to track the visit. If no reload is performed, the visitor's referrer and/or campaign information will not be tracked.
+Umbraco Engage does not actively track visitors until they have given their consent to the Cookiebot configuration. After the visitor consents, the page must reload so that Umbraco Engage can issue the visitor cookie and register the pageview. A plain reload makes the browser send the site's own URL as the referrer, so the visitor's real traffic source is lost.
 
-Use JavaScript to reload the page when consent is given by handling the **CookiebotOnAccept** event:
+Call `umbracoEngage.analytics.consentGranted()` instead of reloading the page yourself. It stores the original referrer for the reload, then reloads the page. Umbraco Engage uses the stored referrer for the pageview that follows.
+
+Handle the **CookiebotOnDialogDisplay** and **CookiebotOnAccept** events. Register the listeners before the Cookiebot script runs, so that neither event is missed:
 
 ```js
- window.location.reload();
+// The banner is only displayed to visitors who still have to choose, so this marks "consent is given on this page".
+var consentRequestedOnThisPage = false;
+
+window.addEventListener("CookiebotOnDialogDisplay", function () {
+    consentRequestedOnThisPage = true;
+});
+
+window.addEventListener("CookiebotOnAccept", function () {
+    // CookiebotOnAccept also fires on every page load for visitors who have already consented.
+    // Only continue when consent was given on this page, or the page reloads in a loop.
+    if (!consentRequestedOnThisPage || !Cookiebot.consent.statistics) {
+        return;
+    }
+
+    // The Umbraco Engage script may not be loaded yet (defer, async, or a script held back until consent).
+    if (window.umbracoEngage && umbracoEngage.analytics && umbracoEngage.analytics.consentGranted) {
+        umbracoEngage.analytics.consentGranted();
+    } else {
+        window.location.reload();
+    }
+});
 ```
 
-Calling the above method will preserve any referrers and query strings supplied in the current request. It results in Umbraco Engage processing the current page visit and visitor correctly.
+{% hint style="warning" %}
+* Call `consentGranted()` only after the consent state that your `IModulePermissions` implementation reads has been saved. The reloaded request is evaluated against it. For Cookiebot, the **CookiebotOnAccept** event is raised after the visitor accepts.
+* Call it only when consent changes from no to yes. Some consent platforms raise their accept event on every page load. Calling `consentGranted()` each time reloads the page in a loop.
+* The function exists only once the Umbraco Engage analytics script has loaded. Calling it earlier throws an error and the page never reloads. The example above checks for the function and falls back to `window.location.reload()`. The fallback does not preserve the original referrer.
+* Headless setups are not covered. The function only works with pages rendered by Umbraco, where the Umbraco Engage script handles the reload.
+{% endhint %}
+
+#### The `ue-consent-referrer` cookie
+
+`consentGranted()` writes a short-lived first-party cookie named `ue-consent-referrer`, which holds the page's original referrer. It is written only when the visitor has consented, so visitors who decline get no cookie. It is removed by Umbraco Engage when the reloaded request is processed, and by the script on the next page load if it is still present. It expires after 20 seconds at most.
+
+If the referrer is too long to store in a cookie, only its origin is kept. Umbraco Engage ignores a value that is not an absolute `http` or `https` URL.
+
+To handle navigation yourself, call `consentGranted({ reload: false })`. It stores the referrer without reloading the page. Reload within 20 seconds, or the original referrer is lost.
 
 For more details, see the [Cookiebot Documentation](https://www.cookiebot.com/en/developer/#h-event-handling).

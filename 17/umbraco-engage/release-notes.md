@@ -18,12 +18,63 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 
 #### [17.6.0](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 17th 2026)
 
+* Resolves security advisory [GHSA-gq5w-hprc-q59x](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-gq5w-hprc-q59x)
+* Previously the Umbraco.Engage.Core package included its own copies of the Common, Data, Infrastructure and Web DLLs. These are now resolved as dependencies. Building after upgrading package references will ensure the stale Umbraco.Engage.Core DLL is removed.
+
 **Permissions**
 
 * Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The permissions are also enforced on the server.
 * A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
 * The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only with the Read permission for that feature.
 * A profile export now includes the member name and email only for users with access to the Members section.
+
+**Analytics and reporting**
+
+* `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
+* Average columns in Analytics tables no longer show a total.
+* Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
+* Fixed Analytics tables with "Include subpages" timing out on large reports.
+
+**A/B testing and personalization**
+
+* Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
+* A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
+
+#### [17.6.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 5th 2026)
+
+**Analytics and reporting**
+
+* Removed the bot analytics table and chart prefabs. They requested a metric whose reporting table is never created or populated, so they could only fail. `FctPageviewBot` and `PageviewsBotMetricSqlDescriptor2` are marked as obsolete, and will be removed in Umbraco Engage 19.
+
+**A/B testing and personalization**
+
+* Fixed a stopped or completed A/B test not being savable when the test had a save validation error, such as an unnamed variant or an inactive goal. Ending a test now has its own endpoint (`POST ab-test/end`), which applies only the end state and the winner and skips configuration validation ([Issue #109](https://github.com/umbraco/Umbraco.Engage.Issues/issues/109)).
+* Saving an A/B test now rejects an empty variant name, and the variant picker shows which variant needs a name. The first save of a new test is exempt.
+* A test that is reverted to Stopped after a failed winner promotion now also loses its winner.
+* `AbTestSaveHandler` now takes `AbTestCompletion` in its public constructor in place of the variant repository.
+* Fixed headless pageviews being stored with segments the visitor only qualified for on later pageviews. Segments are now evaluated in the request, before the pageview is queued, as they are for a rendered pageview.
+* The Visited pages segment rule now looks up the visited page keys once, instead of once for every configured page.
+
+**Goals**
+
+* Custom goal triggers (`TriggerGoal` and `TriggerGoalAsync`, by ID or key) now reject inactive, invalid or unknown goals with a warning. `TriggerGoalAsync(long)` returns `false` in that case.
+* Implicit goal scoring now only loads rows for active, valid goals, and its cache is reset when goals are saved on every server. Persona and customer journey descriptions no longer report rules on inactive goals.
+* `IGoalImplicitScoringRepository` has a new `ResetCache()` method with a default no-op body, so existing implementations are not broken.
+
+**Tracking and consent**
+
+* Fixed the original referrer being lost when a page is reloaded after a visitor grants consent. Call `umbracoEngage.analytics.consentGranted()` in place of your own reload. It stores the referrer in a short-lived `ue-consent-referrer` cookie, reloads the page, and the cookie is removed when it is read. The cookie value is only accepted when it is an absolute `http` or `https` URL of at most 2048 characters ([Issue #108](https://github.com/umbraco/Umbraco.Engage.Issues/issues/108)).
+
+**Backoffice and platform**
+
+* Fixed the browser tab title showing the raw localization key instead of "Engage" after a reload.
+
+**Performance**
+
+* The A/B test variant lookup for a visitor's first page request now uses a read-only database context without a transaction, and runs asynchronously. Request threads are no longer blocked on a transaction, and aborted requests are ignored while variants are assigned.
+* Five request-time reads (sessions, visitors, bot versions, Cockpit authentication and referral groups) now use a read-only database context and make one round trip instead of three.
+
+#### [17.6.0-rc1](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (October 29th 2026)
 
 **Analytics and reporting**
 
@@ -40,10 +91,6 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Fixed the table staying on the previous scope when "Include subpages" changed after the chart had loaded.
 * Fixed the totals strip showing "NaN% of total" or "Infinity% of total" when no total was available.
 * Fixed overlapping star-schema generation runs not being skipped. Generation now uses an application lock.
-* `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
-* Average columns in Analytics tables no longer show a total.
-* Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
-* Fixed Analytics tables with "Include subpages" timing out on large reports.
 
 **Analytics: visual redesign**
 
@@ -56,18 +103,12 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Added the ability to archive an A/B test. Running tests can't be selected for bulk actions.
 * The A/B test list now has a grid view and a table view, with status tags, sorting, and filters.
 * The A/B test list and test project workspace have been redesigned. The "New" status is now labeled "Draft", and tests are grouped by status.
-* Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
-* A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
-* Fixed a test that could not be ended or unscheduled while it had a validation error, such as a variant without a name.
-* A test that is reverted to Stopped after a failed winner promotion no longer keeps its winner.
-* Improved the performance of assigning A/B test variants on a visitor's first page.
 
 **Headless**
 
 * Headless segmentation and Delivery API calls can now pass the visitor's browser User-Agent in a `Visitor-User-Agent` header. Device segments now resolve from the visitor's browser instead of the server-side frontend's HTTP client.
 * Segmentation and Delivery API calls no longer store segment rule results that apply only once, such as Device, in the visitor's profile. The results are stored by the tracked pageview instead.
 * A tracked URL on a non-default port now keeps its port in the headless request host. Previously a pageview for `https://localhost:44367/` was stored against the default port and created a second page row. Existing rows are not migrated.
-* Headless pageviews are no longer stored with segments the visitor only qualified for on later pageviews.
 
 **Backoffice and platform**
 
@@ -76,9 +117,6 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Added a generated appsettings JSON schema, `appsettings-schema.Umbraco.Engage.json`, which is shipped in the package. The Engage configuration options now have descriptions and default values in the schema, and `SessionCookieSameSite` lists its allowed values.
 * Fixed the `AlignSchema` migration failing when both a legacy and an aligned database object name exist.
 * The `FctSession.Page` and `FctSession.UmbracoPageVariant` members are marked as obsolete, and will be removed in Umbraco Engage 19. The database columns they referred to were never created.
-* `TriggerGoal` and `TriggerGoalAsync` now reject inactive, invalid, or unknown goals and log a warning. `TriggerGoalAsync(long)` returns `false` in that case.
-* Added `umbracoEngage.analytics.consentGranted()`. Call it instead of your own page reload after a visitor gives consent, so the original referrer is kept. It uses a short-lived `ue-consent-referrer` cookie.
-* Fixed the browser tab title showing a raw key instead of "Engage" after a reload.
 
 #### [17.5.0](https://www.nuget.org/packages/Umbraco.Engage/17.5.0) (October 1st 2026)
 

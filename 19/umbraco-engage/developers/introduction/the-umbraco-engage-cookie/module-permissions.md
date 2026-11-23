@@ -153,9 +153,9 @@ If the module permission is set to true it is required to reload the current pag
 
 If no reload is performed the visitor's referrer and/or campaign information will not be tracked.
 
-Calling the `window.location.reload();` method is the preferred option, as this will preserve any referrers & query strings supplied in the current request.
+Call `umbracoEngage.analytics.consentGranted()` to reload the page. A plain `window.location.reload()` makes the browser send the site's own URL as the referrer, so the original referrer is lost. `consentGranted()` stores the original referrer in the short-lived `ue-consent-referrer` cookie, then reloads the page. Umbraco Engage uses the stored referrer and query strings for the pageview that follows.
 
-This results in Umbraco Engage processing the current page visit & visitor correctly.
+Call it once, after the consent state that `AnalyticsIsAllowed` reads has been saved, and only when consent changes from no to yes. The function exists only once the Umbraco Engage script has loaded. It does not cover headless setups.
 
 An example implementation [using Cookiebot can be found in the security and privacy section](../../../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md).
 {% endhint %}
