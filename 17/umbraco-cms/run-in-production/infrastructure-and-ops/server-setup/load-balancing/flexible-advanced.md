@@ -76,9 +76,7 @@ The database itself is in a read-only state, for example, a read-only replica. U
 
 ### A restricted login on a writable database
 
-The database is writable, but the subscriber's login only has read access, for example, through the `db_datareader` role. Umbraco does not detect this as read-only, so the subscriber still stores its synchronization position in the database. The login needs write access (`INSERT`, `UPDATE`, and `DELETE`) to the following table:
-
-* `umbracoLastSynced`
+The database is writable, but the subscriber's login only has read access, for example, through the `db_datareader` role. Umbraco does not detect this as read-only, so the subscriber still stores its synchronization position in the database. The login needs write access (`INSERT`, `UPDATE`, and `DELETE`) to the `umbracoLastSynced` table.
 
 Without this access, the subscriber server fails to start. The log shows the error `The UPDATE permission was denied on the object 'umbracoLastSynced'`.
 
