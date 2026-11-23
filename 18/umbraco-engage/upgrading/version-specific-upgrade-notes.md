@@ -54,7 +54,7 @@ From 18.1.0, the site keeps running. Engage logs a critical message, marks its s
 | --- | --- | --- |
 | `Complete` | Upgrade proceeds | No action needed. |
 | _(no value)_ | Upgrade proceeds | Fresh installs are unaffected. |
-| `Aligned` | **Engage disabled until the alignment is completed** (18.0.0: upgrade blocked) | The automatic alignment ran, but `CompleteAlignSchema.sql` was never completed. Run it during a maintenance window, then retry the upgrade. |
+| `Aligned` | **Engage disabled until the alignment is completed** (18.0.0: upgrade blocked) | The automatic alignment ran, but `CompleteAlignSchema.sql` was never completed. Run it during a maintenance window, then restart the site. On 18.0.0, retry the upgrade. |
 | `Pending` | **Engage disabled until the alignment is completed** (18.0.0: upgrade blocked) | A previous run of `CompleteAlignSchema.sql` started but did not finish. Fix the failure reported by that run. Then run the script again during a maintenance window and restart. |
 | _(any other value)_ | **Engage disabled until the alignment is completed** (18.0.0: upgrade blocked) | The schema is in an unexpected state. Expected `Complete` on existing installs, or no value on fresh installs. |
 
