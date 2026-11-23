@@ -62,7 +62,25 @@ In order to have read-only database access configured for your front-end servers
 
 Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
 
-When configuring a server as a read-only subscriber, Umbraco automatically detects the state and disables specific background database write operations, such as DistributedBackgroundJobs. A notable exception is the LastSynced process. To ensure the subscriber server tracks synchronization without database write access, Umbraco redirects these updates to a local file instead of the database.
+Distributed background jobs, such as pruning cache instructions, scheduled publishing, and cleanup tasks, write to the database. From Umbraco 17.10.0, only servers with the `Single` or `SchedulingPublisher` role run these jobs. A `Subscriber` server never runs them, regardless of its database permissions.
+
+{% hint style="warning" %}
+In versions before 17.10.0, a `Subscriber` server can pick up a distributed background job. The job fails when the database login lacks write access to the tables the job uses. The log then shows an error such as `The DELETE permission was denied on the object 'umbracoCacheInstruction'`.
+{% endhint %}
+
+There are two ways to give a subscriber server read-only access, and they behave differently.
+
+### A read-only database
+
+The database itself is in a read-only state, for example, a read-only replica. Umbraco detects this and stores the subscriber's synchronization position (LastSynced) in a local file instead of the database. The synchronization position requires no database write access.
+
+### A restricted login on a writable database
+
+The database is writable, but the subscriber's login only has read access, for example, through the `db_datareader` role. Umbraco does not detect this as read-only, so the subscriber still stores its synchronization position in the database. The login needs write access (`INSERT`, `UPDATE`, and `DELETE`) to the following table:
+
+* `umbracoLastSynced`
+
+Without this access, the subscriber server fails to start. The log shows the error `The UPDATE permission was denied on the object 'umbracoLastSynced'`.
 
 {% hint style="info" %}
 If using [SqlMainDomLock](azure-web-apps.md#appdomain-synchronization) on Azure WebApps then write-permissions are required for the following tables for all server roles including 'Subscriber'.
