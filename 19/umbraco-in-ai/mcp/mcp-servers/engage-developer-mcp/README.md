@@ -18,9 +18,13 @@ See [Configuration Options](configuration.md#cms-mcp-server-chaining) to learn m
 
 ## Requirements
 
+{% hint style="warning" %}
+There is no release of this MCP Server for Umbraco 19 yet. Until one is available, this article describes the Umbraco 18 line. The Umbraco 18 line is not built for Umbraco 19, and its [version check](configuration.md#version-check) warns when it connects to an Umbraco 19 site.
+{% endhint %}
+
 * An Umbraco 18 installation with **Umbraco Engage** 18.2.0 or later installed and licensed
 * An [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) with access to the **Engage** section, and to **Content** (or other sections) if you plan to use the chained CMS tools
-* `Node.js` 22.23.4 or later, 24.22.1 or later, or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+* `Node.js` 22 (22.23.4 or later), 24 (24.22.1 or later), or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
 
 ### Umbraco Engage Version Support
 
@@ -30,10 +34,11 @@ The Engage Developer MCP Server has a separate release line for each Umbraco maj
 | --- | --- | --- |
 | 17 | 17.5.0 or later | `@umbraco-engage/mcp@lts-17` |
 | 18 | 18.2.0 or later | `@umbraco-engage/mcp` |
+| 19 | 19.x | Not yet available |
 
 The package was previously published as `@umbraco-engage/mcp-dev`. The command is now `engage-mcp-server` (it was `umbraco-engage-mcp-dev`), so also update any script that runs the old command. If your MCP client configuration still uses the old name, change it to the package in the table.
 
-This article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-engage/mcp@lts-17` and follow the Umbraco 17 version of this documentation.
+There is no Umbraco 19 line yet, so this article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-engage/mcp@lts-17` and follow the Umbraco 17 version of this documentation.
 
 When the server starts, it checks the Umbraco version of the connected instance. If the major version does not match, the first tool call returns a warning instead of running. See [Configuration Options](configuration.md#version-check) for details.
 
