@@ -20,7 +20,7 @@ This section contains the release notes for Umbraco Commerce 18, including all c
 
 #### 18.2.0 (23rd Nov 2026)
 
-* Added customer methods to `IUmbracoCommerceApi`, and a new Umbraco.Commerce.Testing package with builders that make Commerce models easier to use in unit tests ([#914](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/914)).
+* Added customer methods to `IUmbracoCommerceApi` and a new Umbraco.Commerce.Testing package with builders that make Commerce models easier to use in unit tests ([#914](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/914)).
 * Fixed orders in a non-base currency being finalized without a base currency exchange rate ([#922](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/922)).
 * Fixed installing on SQLite failing with newer SQLite versions ([#923](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/923)).
 * Fixed the order editor showing a currency's format template as plain text when it uses .NET number formats such as `{0:#,0.00}` ([#924](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/924)).
