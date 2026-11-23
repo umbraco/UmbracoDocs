@@ -24,7 +24,7 @@ See [Configuration Options](configuration.md#cms-mcp-server-chaining) to learn m
 
 * An Umbraco 18 installation with **Umbraco Automate** 18 installed
 * An [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) with access to the **Automation** section, and to **Content** (or other sections) if you plan to use the chained CMS tools
-* `Node.js` 22.23.4 or later, 24.22.1 or later, or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+* `Node.js` 22 (22.23.4 or later), 24 (24.22.1 or later), or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
 
 ### Umbraco Automate Version Support
 
