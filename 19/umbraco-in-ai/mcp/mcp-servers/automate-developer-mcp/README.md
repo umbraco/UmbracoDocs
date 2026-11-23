@@ -4,10 +4,6 @@ description: Get started with the Umbraco Automate Developer Model Context Proto
 
 # Automate Developer MCP Server
 
-{% hint style="info" %}
-The Automate Developer MCP Server is in beta. Tools and configuration options can change between releases.
-{% endhint %}
-
 The Automate Developer [MCP Server](../../../concepts/model-context-protocol.md#mcp-servers) connects AI tools with Umbraco Automate. It gives large language models (LLMs) access to Automate's capabilities for building, running, and monitoring automations. This includes building and publishing automations, managing connections and workspaces, inspecting and controlling runs, handling approvals, and rolling back to earlier versions.
 
 Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. The server talks directly to the Umbraco Automate Management API, the same API layer that powers the Automation section of the backoffice.
@@ -22,9 +18,13 @@ See [Configuration Options](configuration.md#cms-mcp-server-chaining) to learn m
 
 ## Requirements
 
+{% hint style="warning" %}
+There is no release of this MCP Server for Umbraco 19 yet. Until one is available, this article describes the Umbraco 18 line. The Umbraco 18 line is not built for Umbraco 19, and its [version check](configuration.md#version-check) warns when it connects to an Umbraco 19 site.
+{% endhint %}
+
 * An Umbraco 18 installation with **Umbraco Automate** 18 installed
 * An [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) with access to the **Automation** section, and to **Content** (or other sections) if you plan to use the chained CMS tools
-* `Node.js` version 22 or higher
+* `Node.js` 22 (22.23.4 or later), 24 (24.22.1 or later), or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
 
 ### Umbraco Automate Version Support
 
@@ -32,10 +32,13 @@ The Automate Developer MCP Server has a separate release line for each Umbraco m
 
 | Umbraco | Umbraco Automate | Package |
 | --- | --- | --- |
-| 17 | 17.x | `@umbraco-automate/mcp-dev@lts-17-beta` |
-| 18 | 18.x | `@umbraco-automate/mcp-dev` |
+| 17 | 17.x | `@umbraco-automate/mcp@lts-17` |
+| 18 | 18.x | `@umbraco-automate/mcp` |
+| 19 | 19.x | Not yet available |
 
-This article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-automate/mcp-dev@lts-17-beta` and follow the Umbraco 17 version of this documentation.
+The package was previously published as `@umbraco-automate/mcp-dev`. If your MCP client configuration still uses the old name, change it to the package in the table.
+
+There is no Umbraco 19 line yet, so this article covers the Umbraco 18 line. For an Umbraco 17 site, install `@umbraco-automate/mcp@lts-17` and follow the Umbraco 17 version of this documentation.
 
 When the server starts, it checks the Umbraco version of the connected instance. If the major version does not match, the first tool call returns a warning instead of running. See [Configuration Options](configuration.md#version-check) for details.
 
@@ -93,7 +96,7 @@ The same setup pattern applies here, using the Automate server's package instead
   "mcpServers": {
     "umbraco-automate": {
       "command": "npx",
-      "args": ["-y", "@umbraco-automate/mcp-dev"],
+      "args": ["-y", "@umbraco-automate/mcp"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "your-api-user-id",
@@ -118,8 +121,8 @@ Restart your MCP client after saving the configuration.
 You can check the server without connecting an MCP client. The following commands list the available tools and show the resolved configuration, with secrets masked:
 
 ```bash
-npx -y @umbraco-automate/mcp-dev --list-tools
-npx -y @umbraco-automate/mcp-dev --debug-config
+npx -y @umbraco-automate/mcp --list-tools
+npx -y @umbraco-automate/mcp --debug-config
 ```
 
 Both commands print their output and exit without starting the MCP Server. For all introspection commands, see the [CLI Reference](../../custom-mcp-server/sdk/cli.md).
