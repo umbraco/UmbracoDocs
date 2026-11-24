@@ -8,6 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [November 2026](2026-11-releasenotes.md)
 
+* [24/11] - **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
 * [19/11] - **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
 * [17/11] - **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * [12/11] - **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.

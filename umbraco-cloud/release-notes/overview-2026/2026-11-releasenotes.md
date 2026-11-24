@@ -7,6 +7,7 @@
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+* **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
 
 ## Recommendations
 
@@ -88,3 +89,11 @@ These releases update the `Microsoft.AspNetCore.SignalR.StackExchangeRedis` depe
 `Umbraco.Cloud.Cms` only uses the SignalR Redis backplane on projects with Load Balancing enabled. Projects without Load Balancing do not run the affected code.
 
 The releases also raise the minimum version of the related `Microsoft.Extensions` packages to 10.0.15. Existing projects receive the new versions through automatic upgrades.
+
+## Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5
+
+These releases fix an Umbraco ID login failure introduced in 17.2.4 and 18.0.4. On projects that use `Microsoft.Data.SqlClient` 7, backoffice login with Umbraco ID failed with a `FileNotFoundException` for `Microsoft.Identity.Client`.
+
+Versions 17.2.4 and 18.0.4 raised the minimum version of all related `Microsoft.Extensions` packages to 10.0.15. The new releases apply the 10.0.15 minimum only to `Microsoft.AspNetCore.SignalR.StackExchangeRedis`. The fix for [CVE-2026-114147](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm) stays in place, and the other packages return to their previous minimum versions.
+
+Existing projects receive the new versions through automatic upgrades.
