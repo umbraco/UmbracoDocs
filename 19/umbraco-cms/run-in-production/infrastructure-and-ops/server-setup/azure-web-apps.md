@@ -26,8 +26,10 @@ You need to add these configuration values. E.g in a json configuration source l
             "Hosting": {
                 "LocalTempStorageLocation": "EnvironmentTemp"
             },
-            "Examine": {
-                "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
+            "Search": {
+                "Examine": {
+                  "LuceneDirectoryFactory": "SyncedTempFileSystemDirectoryFactory"
+                }
             }
         }
     }
@@ -50,7 +52,7 @@ You can also copy the following JSON directly into your Azure Web App configurat
   "slotSetting": false
 },
 {
-  "name": "UMBRACO__CMS__Examine__LuceneDirectoryFactory",
+  "name": "UMBRACO__CMS__Search__Examine__LuceneDirectoryFactory",
   "value": "SyncedTempFileSystemDirectoryFactory",
   "slotSetting": false
 }

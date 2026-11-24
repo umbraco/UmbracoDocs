@@ -126,7 +126,14 @@ In Umbraco 17 and 18, the client sent a bearer token that it got from the `auth`
 
 ### Expired sessions in your own controllers
 
-When the session has expired, the server answers a request to an API controller with a 401 response. The interceptors of the backoffice then prompt the user to log in again. For your own controllers, the server answers with a 401 when the controller has the `[ApiController]` attribute. Controllers that inherit from `ManagementApiControllerBase` already have it, and so does the base controller in the Umbraco Extension Template. Without the attribute, the server redirects the request to the login page instead.
+When the session has expired, the server answers a request to an API controller with a 401 response. The interceptors of the backoffice then prompt the user to log in again. For your own controllers, the server answers with a 401 when the controller has the `[ApiController]` attribute. Controllers that inherit from `ManagementApiControllerBase` already have it, and so does the base controller in the Umbraco Extension Template.
+
+Without the attribute, the server redirects the request to the login page instead. The server also uses that redirect when it denies access to a signed-in user. `umbHttpClient` and clients configured with `configureClient()` follow the redirect, and then check whether the session is still active:
+
+* When the session has expired, the client handles the redirect like a 401 response. The client prompts the user to log in again, and retries `GET` requests after the user logs in.
+* When the session is still active, the server has denied access to the user. The request fails with a 403 response, and the client does not prompt the user to log in.
+
+Even so, add `[ApiController]` to the controllers that the backoffice calls. The server then answers with a 401 or 403 response directly, and the client makes no extra requests to find out which one applies. The Fetch API follows the redirect too, but returns the HTML of the login page with status 200.
 
 {% hint style="info" %}
 The redirect is what you want for endpoints that people open directly in the browser rather than call from the backoffice. Examples are a link to a file download or a page that is shared by URL. Leave out `[ApiController]` on those controllers. To keep the redirect for a single action in an `[ApiController]` controller, add the `[AllowCookieRedirect]` attribute from `Microsoft.AspNetCore.Http` to the action.

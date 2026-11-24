@@ -71,6 +71,8 @@ Editors can add blocks to rich text content using the **Insert Block** toolbar b
 
 The block appears in the editor as a structured element.
 
+You can also insert an Element from the Library using the **Library** tab. For more information, see the [Reusable Content in Block Editors](../block-editor/reusable-content-in-block-editors.md) article.
+
 ## Rendering Blocks
 
 To display blocks on the frontend, create Partial Views for each Block.

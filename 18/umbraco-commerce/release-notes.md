@@ -18,6 +18,52 @@ If you are upgrading to a new major version, check the breaking changes in the [
 
 This section contains the release notes for Umbraco Commerce 18, including all changes for this version.
 
+#### 18.2.0 (23rd Nov 2026)
+
+* Added customer methods to `IUmbracoCommerceApi` and a new Umbraco.Commerce.Testing package with builders that make Commerce models easier to use in unit tests ([#914](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/914)).
+* Fixed orders in a non-base currency being finalized without a base currency exchange rate ([#922](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/922)).
+* Fixed installing on SQLite failing with newer SQLite versions ([#923](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/923)).
+* Fixed the order editor showing a currency's format template as plain text when it uses .NET number formats such as `{0:#,0.00}` ([#924](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/924)).
+* Added a loading spinner to the order search ([#926](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/926)).
+
+#### 18.1.13 (17th Nov 2026)
+
+* Tightened permission checks in the backoffice so users only see the stores and data their sections and store access allow.
+* Fixed database transactions holding a thread while waiting for a free connection, which could slow sites under heavy order load.
+
+#### 18.1.12 (11th Nov 2026)
+
+* Fixed finalizing an order overwriting a customer's saved name and external ID ([#912](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/912)).
+* Fixed customers staying linked to a member after the member's email changed ([#913](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/913)).
+* Customers now get the order's telephone number when an order is finalized, if they don't have one yet ([#910](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/910)).
+* Fixed the customer import failing during upgrade when an order has a long address, city, postcode or telephone value ([#915](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/915)).
+* Fixed saving a store dropping its abandoned cart landing page URL in its Deploy file ([#918](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/918)).
+* Fixed unobserved task errors from session order checks ([#917](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/917)).
+* Fixed the variants list loading slowly for products with thousands of variants, and fixed variant SKU search ([#916](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/916)).
+* Fixed order email and print templates failing when billing or shipping details are missing.
+* Fixed bundled products not being restocked for each refunded or cancelled bundle.
+* Fixed a refund being sent with the placeholder reason, and Refund All now asks for a reason when partial refunds are off.
+* Fixed the Send Test Email button staying disabled until the To field loses focus.
+* Fixed analytics figures for percentage changes against empty periods and top buyers' order across pages. We also fixed period-over-period comparisons for popular discounts.
+
+#### 18.1.11 (2nd Nov 2026) 
+
+* Fixed the abandoned cart email failing when the customer's email address is not valid ([#911](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/911)).
+* Fixed emails failing with an error when none of their recipient addresses are valid. The email is now skipped and a warning is logged.
+* Fixed links with more than one query parameter breaking in emails that add tracking parameters.
+* Fixed stock changes being saved even when the content save was cancelled or failed.
+* Fixed variant stock not syncing for every language, and decimal stock values not resetting correctly.
+* Fixed products not being found by a variant's SKU.
+* Fixed variant property editors not reading their values when ModelsBuilder models are used.
+* Fixed the Storefront API country and region endpoints not finding the region.
+* Fixed the refund reason not being saved when sent to the refund endpoint.
+* Fixed payment providers not being able to read a callback's request body more than once.
+* Fixed a duplicate payment or shipping method SKU showing a server error instead of a validation message.
+* Fixed a copied shipping package losing its weight.
+* Fixed the older pipeline shortcut methods replacing the built-in pipeline tasks.
+* Fixed duplicate API operation names on the Storefront country and region endpoints.
+* Fixed small backoffice display issues, including measurement field icons and units, the alias field hint, and settings left behind by deleted variants.
+
 #### 18.1.10 (27th Oct 2026)
 
 * Fixed partially refunded orders being marked as fully refunded when opened in the backoffice. This happened when the payment provider reported a partial refund as a full refund. Orders already affected go back to Partially Refunded when opened again after updating the payment provider ([#908](https://github.com/umbraco/Umbraco.Commerce.Issues/issues/908)).

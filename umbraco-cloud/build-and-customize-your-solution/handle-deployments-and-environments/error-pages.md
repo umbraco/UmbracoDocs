@@ -19,7 +19,7 @@ On supported versions, Umbraco Cloud keeps showing the error page until your sit
 To handle error pages when the website is running, see the [Umbraco CMS tutorial: Custom Error Pages](https://docs.umbraco.com/umbraco-cms/tutorials/custom-error-page).
 
 {% hint style="info" %}
-Umbraco Cloud serves error pages via Cloudflare, directly from blob storage. When your site is down, external resources such as fonts, stylesheets, and scripts are likely unavailable as well. Your error page must be entirely self-contained — see [Error Page Authoring guidelines](error-pages.md#error-page-authoring-guidelines) for details.
+Umbraco Cloud stores error pages on Cloudflare and serves them from there, without contacting your site. When your site is down, external resources such as fonts, stylesheets, and scripts are likely unavailable as well. Your error page must be entirely self-contained — see [Error Page Authoring guidelines](error-pages.md#error-page-authoring-guidelines) for details.
 
 You need Admin or Write access to upload, manage, and assign error pages. Users with read-only access can view the tabs but cannot make changes.
 {% endhint %}
@@ -104,7 +104,7 @@ Keep these requirements in mind when building a custom error page:
 * Only `.html` or `.htm` files are accepted.
 * Error pages must be **self-contained** — no external resources (see below).
 
-**Why self-contained?** Cloudflare serves your error page directly from blob storage. When your site is unavailable, external fonts, stylesheets, and scripts (Google Fonts, CDN libraries, and so on) are likely to fail too. Without those resources, the error page appears broken or unstyled. Everything must be in line.
+**Why self-contained?** Cloudflare serves your error page from its own network, not from your site. When your site is unavailable, external fonts, stylesheets, and scripts (Google Fonts, CDN libraries, and so on) are likely to fail too. Without those resources, the error page appears broken or unstyled. Everything must be in line.
 
 * Inline all CSS in a `<style>` block.
 * Inline all JavaScript in a `<script>` block.

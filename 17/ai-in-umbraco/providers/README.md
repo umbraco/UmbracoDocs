@@ -21,6 +21,7 @@ Umbraco.AI supports multiple AI providers through installable NuGet packages. Ea
 | [OpenRouter](openrouter.md)                  | `Umbraco.AI.OpenRouter`       | Chat            | One key, many vendors            |
 | [Z.AI](zai.md)                               | `Umbraco.AI.ZAI`              | Chat            | General Language Model (GLM)                       |
 | [TypeSafe AI](typesafe.md)                   | `Umbraco.AI.TypeSafe`         | Decision (experimental) | Typed yes/no, pick-one, and score questions |
+| [Cloudflare](cloudflare.md)                  | `Umbraco.AI.Cloudflare`       | Extraction (experimental) | Typed values read out of text |
 
 ## Choosing a Provider
 
@@ -28,13 +29,14 @@ Consider these factors when selecting a provider:
 
 ### Capabilities Needed
 
-| Capability | OpenAI | Anthropic | Google | Amazon | MS Foundry | Alibaba | Moonshot | OpenRouter | Z.AI | TypeSafe AI |
-| ---------- | ------ | --------- | ------ | ------ | ---------- | ------- | -------- | ---------- | ---- | ----------- |
-| Chat           | Yes    | Yes       | Yes    | Yes    | Yes        | Yes     | Yes      | Yes        | Yes  | No          |
-| Embedding      | Yes    | No        | No     | Yes    | Yes        | Yes     | No       | No         | No   | No          |
-| Speech-to-Text | Yes    | No        | No     | No     | No         | No      | No       | No         | No   | No          |
-| Image Generation (experimental) | Yes | No | No | No     | No         | No      | No       | No         | No   | No          |
-| Decision (experimental) | No | No | No     | No     | No         | No      | No       | No         | No   | Yes         |
+| Capability | OpenAI | Anthropic | Google | Amazon | MS Foundry | Alibaba | Moonshot | OpenRouter | Z.AI | TypeSafe AI | Cloudflare |
+| ---------- | ------ | --------- | ------ | ------ | ---------- | ------- | -------- | ---------- | ---- | ----------- | ---------- |
+| Chat           | Yes    | Yes       | Yes    | Yes    | Yes        | Yes     | Yes      | Yes        | Yes  | No          | No         |
+| Embedding      | Yes    | No        | No     | Yes    | Yes        | Yes     | No       | No         | No   | No          | No         |
+| Speech-to-Text | Yes    | No        | No     | No     | No         | No      | No       | No         | No   | No          | No         |
+| Image Generation (experimental) | Yes | No | No | No     | No         | No      | No       | No         | No   | No          | No         |
+| Decision (experimental) | No | No | No     | No     | No         | No      | No       | No         | No   | Yes         | No         |
+| Extraction (experimental) | No | No | No | No | No | No | No | No | No | No | Yes |
 
 ### Use Case Fit
 

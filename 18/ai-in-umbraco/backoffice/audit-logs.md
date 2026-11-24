@@ -130,13 +130,11 @@ Deleting audit logs is permanent. Consider your compliance requirements before d
 
 ## Cleanup
 
-To remove old logs:
+Logs older than `RetentionDays` are removed by automatic cleanup. Automatic cleanup runs every hour, starting five minutes after the application starts. It's skipped when `Enabled` is `false`.
 
-1. Click **Cleanup** in the toolbar.
-2. Specify how old logs should be (e.g., 90 days).
-3. Confirm the cleanup.
+To run cleanup straight away, call the [Cleanup Audit Logs](../management-api/audit-logs/cleanup.md) endpoint.
 
-### Automatic Cleanup
+### Configuration
 
 Configure audit log options in `appsettings.json`:
 
@@ -149,10 +147,13 @@ Configure audit log options in `appsettings.json`:
             "AuditLog": {
                 "Enabled": true,
                 "RetentionDays": 14,
+                "StaleRunningTimeoutMinutes": 60,
                 "PersistPrompts": true,
                 "PersistResponses": true,
                 "PersistFailureDetails": true,
-                "RedactionPatterns": []
+                "RedactionPatterns": [],
+                "MaxToolArgumentsLength": 1000,
+                "MaxToolResultLength": 4000
             }
         }
     }
@@ -165,10 +166,59 @@ Configure audit log options in `appsettings.json`:
 | ---------------------- | ------- | ------------------------------------------------ |
 | `Enabled`              | `true`  | Whether audit logging is enabled                 |
 | `RetentionDays`        | `14`    | Number of days to retain logs before cleanup      |
+| `StaleRunningTimeoutMinutes` | `60` | Minutes a log can stay **Running** before cleanup marks it as **Failed**. `0` turns this off |
 | `PersistPrompts`       | `true`  | Store prompt snapshots in logs                   |
 | `PersistResponses`     | `true`  | Store response snapshots in logs                 |
 | `PersistFailureDetails`| `true`  | Store failure details in logs                    |
 | `RedactionPatterns`    | `[]`    | Regex patterns for redacting sensitive content   |
+| `MaxToolArgumentsLength` | `1000` | Maximum characters kept from each tool call's arguments. `0` keeps them in full |
+| `MaxToolResultLength`  | `4000`  | Maximum characters kept from each tool result. `0` keeps it in full |
+
+### Interrupted Operations
+
+An operation can stay **Running** forever if the application stops mid-call. Cleanup marks these logs as **Failed** once they are older than `StaleRunningTimeoutMinutes`.
+
+The error message says that the operation was assumed to be interrupted. The end time stays empty, because when the operation stopped is unknown.
+
+Both automatic cleanup and the cleanup endpoint run this check.
+
+## Tool Content in Snapshots
+
+Prompt and response snapshots include the arguments of each tool call and the result of each tool. Values longer than `MaxToolArgumentsLength` or `MaxToolResultLength` are truncated.
+
+A truncated value ends with its original length, for example `... (truncated, 5210 chars)`. Set either option to `0` or less to keep tool content in full.
+
+{% hint style="info" %}
+
+Higher limits make each log entry larger. A prompt snapshot contains the whole conversation so far, so long agent runs store the same tool results in many entries.
+
+{% endhint %}
+
+## Redacting Sensitive Content
+
+`RedactionPatterns` takes a list of regular expressions. Every match is replaced with `[REDACTED]` before the log entry is stored. Matching ignores case.
+
+{% code title="appsettings.json" %}
+
+```json
+{
+    "Umbraco": {
+        "AI": {
+            "AuditLog": {
+                "RedactionPatterns": [
+                    "[\\w.+-]+@[\\w-]+\\.[\\w.]+"
+                ]
+            }
+        }
+    }
+}
+```
+
+{% endcode %}
+
+Tool arguments and results are redacted before they are truncated. A value that falls across the length limit is still matched in full.
+
+Tool content is stored as JSON without escaping characters such as `+`, `'`, `<` and non-ASCII letters. Write patterns against the text the tool sent, for example `jane+news@example.com`. Quotes and backslashes inside JSON values are still escaped.
 
 ## Related
 

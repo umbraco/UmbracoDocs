@@ -154,7 +154,7 @@ GET /umbraco/ai/management/api/v1/capabilities/enabled
 {% code title="Response" %}
 
 ```json
-["Chat", "Embedding", "SpeechToText", "Decision"]
+["Chat", "Embedding", "SpeechToText", "Decision", "Extraction"]
 ```
 
 {% endcode %}
@@ -162,7 +162,7 @@ GET /umbraco/ai/management/api/v1/capabilities/enabled
 The response is a plain JSON array of capability names:
 
 - Generally available capabilities are always included.
-- An experimental capability, such as `Decision`, is only included when its feature flag is enabled.
+- An experimental capability, such as `Decision` or `Extraction`, is only included when its feature flag is enabled.
 - Reserved values that have no implementation are never included.
 
 The endpoint requires access to the AI section, like the other capability endpoints.
@@ -185,6 +185,7 @@ curl -X GET "https://your-site.com/umbraco/ai/management/api/v1/capabilities/ena
 | `Chat`      | Conversational AI and text generation |
 | `Embedding` | Vector embeddings for semantic search |
 | `Decision`  | Typed yes/no, pick-one, and score answers (experimental) |
+| `Extraction` | Typed values read out of text (experimental) |
 
 ## Use Cases
 

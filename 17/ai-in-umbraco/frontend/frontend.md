@@ -145,6 +145,10 @@ abortController.abort();
 [Decision Controller](decision-controller.md)
 {% endcontent-ref %}
 
+{% content-ref url="extraction-controller.md" %}
+[Extraction Controller](extraction-controller.md)
+{% endcontent-ref %}
+
 {% content-ref url="tool-controller.md" %}
 [Tool Controller](tool-controller.md)
 {% endcontent-ref %}

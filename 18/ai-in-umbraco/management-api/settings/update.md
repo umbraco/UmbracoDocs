@@ -25,6 +25,7 @@ PUT /umbraco/ai/management/api/v1/settings
     "defaultSpeechToTextProfileId": null,
     "defaultImageGenerationProfileId": null,
     "defaultDecisionProfileId": null,
+    "defaultExtractionProfileId": null,
     "disclosureNoticeMode": "Always"
 }
 ```
@@ -41,6 +42,7 @@ PUT /umbraco/ai/management/api/v1/settings
 | `defaultSpeechToTextProfileId`   | GUID | No       | Default profile for speech-to-text operations |
 | `defaultImageGenerationProfileId` | GUID | No       | Default profile for image generation (experimental) |
 | `defaultDecisionProfileId`       | GUID | No       | Default profile for decisions (experimental)  |
+| `defaultExtractionProfileId`     | GUID | No       | Default profile for extraction (experimental) |
 | `disclosureNoticeMode`           | string | No     | How the AI-generated notice is shown: `Always`, `Dismissible`, or `Off` |
 
 {% hint style="info" %}
@@ -123,7 +125,8 @@ var response = await httpClient.PutAsJsonAsync("/umbraco/ai/management/api/v1/se
 
 ## Notes
 
-- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, `defaultImageGenerationProfileId` expects an Image Generation profile, and `defaultDecisionProfileId` expects a Decision profile
+- Each specified profile must exist and have the capability its property expects. `classifierChatProfileId` expects a Chat profile, `defaultImageGenerationProfileId` expects an Image Generation profile, `defaultDecisionProfileId` expects a Decision profile, and `defaultExtractionProfileId` expects an Extraction profile
 - Settings changes take effect immediately for new requests
 - `defaultImageGenerationProfileId` is stored whether or not the experimental Image Generation flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value
 - `defaultDecisionProfileId` is stored whether or not the experimental Decision flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value
+- `defaultExtractionProfileId` is stored whether or not the experimental Extraction flag is enabled. The backoffice hides its picker while the flag is off, but keeps the saved value

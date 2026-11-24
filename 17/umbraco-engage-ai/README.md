@@ -10,10 +10,6 @@ Umbraco Engage AI brings a marketing-focused Copilot into Umbraco Engage. A mark
 
 Umbraco Engage AI is **read-only**: it reports and explains, it never changes your Engage configuration or data.
 
-{% hint style="info" %}
-This is a beta feature. Expect rough edges as Umbraco Engage AI matures.
-{% endhint %}
-
 ![The Copilot sidebar open in the Engage section, answering a campaign question](.gitbook/assets/sidebar-01-campaigns.png)
 
 ## What it does

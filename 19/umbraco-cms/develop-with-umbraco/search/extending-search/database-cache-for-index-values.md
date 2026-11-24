@@ -21,7 +21,7 @@ If those changes should be applied to already indexed content, you can either:
 The list above is ordered in magnitude of (expected) operational cost. If at all possible, use one of the first options, rather than triggering a complete cache rebuild. However, there is no decisively "wrong" approach here. It all depends on the scenario you're facing.
 
 {% hint style="info" %}
-Some search providers (including the [default provider](../getting-started/examine-search-provider.md)) operate on a per-instance basis in a load-balanced setup. Therefore, it's crucial to trigger indexing operations across all instances.
+Some search providers (including the [default provider](../examine-search-provider.md)) operate on a per-instance basis in a load-balanced setup. Therefore, it's crucial to trigger indexing operations across all instances.
 
 The code samples below use "distributed" services to that end.
 {% endhint %}
@@ -125,7 +125,7 @@ Flushing the entire index data cache comes with a high cost. Without the cache, 
 
 ## Rebuilding an index
 
-You can either trigger an index rebuild manually from the [Search section in the backoffice](../getting-started/backoffice.md), or trigger it programmatically with the `IDistributedContentIndexRebuilder`:
+You can either trigger an index rebuild manually from the [Search section in the backoffice](../backoffice.md), or trigger it programmatically with the `IDistributedContentIndexRebuilder`:
 
 {% code title="MyIndexRebuilder.cs" %}
 ```csharp

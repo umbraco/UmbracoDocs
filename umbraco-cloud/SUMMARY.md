@@ -133,6 +133,7 @@
 * [Monitor and Troubleshoot](optimize-and-maintain-your-site/monitor-and-troubleshoot/README.md)
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
+  * [Recommendations](optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md)
   * [Project History](optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md)
   * [Traffic and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
   * [Hostname Monitoring](optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)

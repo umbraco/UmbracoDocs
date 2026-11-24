@@ -1,0 +1,59 @@
+---
+description: On this page, you can learn how you can set up the Personas in Umbraco Engage.
+---
+
+# How to Create a Persona
+
+## Introduction
+
+Before setting up a Persona, it is recommended to read the [Personas article](../marketers-and-editors/personalization/implicit-and-explicit-personalization/setting-up-personas.md) in the **Implicit and Explicit Personalization** section.
+
+Below you can find some resources on how to define a persona:
+
+* [How to create a Persona in five steps](https://www.figma.com/resource-library/how-to-create-a-persona/) by Figma
+
+Once you have defined your persona, you can create it in Umbraco Engage.
+
+## Creating your Personas
+
+To create your Personas in Umbraco Engage, follow the steps below:
+
+1. Go to the **Engage** menu in the top navigation.
+2. Go to **Personalization** in the Umbraco Engage menu.
+
+<figure><img src="../.gitbook/assets/engage-tutorial-how-to-persona.png" alt=""><figcaption></figcaption></figure>
+
+3. Go to **Personas** in the menu under **Personalization**.
+
+<figure><img src="../.gitbook/assets/engage-tutorials-how-to-persona.png" alt="Personas menu."><figcaption><p>Personas menu.</p></figcaption></figure>
+
+4. Click **Add persona group**.
+
+<figure><img src="../.gitbook/assets/Add-persona-group.png" alt=""><figcaption>Add persona group</figcaption></figure>
+
+5. Add the details for the **Persona Group.**
+   1. Add a **Title.**
+   2. Add a **Description.**
+   3. Set the[ Advanced settings](how-to-create-a-persona.md#advanced-persona-group-parameters) to fit your needs.
+
+<figure><img src="../.gitbook/assets/Add-persona-group-advanced-settings.png" alt=""><figcaption>Add persona group - Advanced Settings</figcaption></figure>
+
+6. Click **Save**.
+7. Click **Add persona** to add a new Persona.
+   1. Add a **Title** to the Persona.
+   2. Add a **description** of the Persona.
+   3. Select a **Color** for the Persona.
+   4. Select an **image** for the Persona
+      * Click **Choose** to pick one of the default persona images, or select **Upload** in the media picker to add your own.
+
+<figure><img src="../.gitbook/assets/Add-persona.png" alt=""><figcaption>Add persona</figcaption></figure>
+
+8. Click **Save**.
+
+You have now set up your personas and can score your [content](../marketers-and-editors/personalization/implicit-and-explicit-personalization/content-scoring.md), [campaigns](../marketers-and-editors/personalization/implicit-and-explicit-personalization/campaign-scoring.md), and [referrals](../marketers-and-editors/personalization/implicit-and-explicit-personalization/referral-scoring.md) against these personas.
+
+## Advanced persona group parameters
+
+If you want to tweak the working of the persona scoring in-depth, you can go to the advanced settings of a persona group.
+
+These settings are shared between persona groups and customer journey groups. See [Persona and customer journey group settings](../marketers-and-editors/personalization/implicit-and-explicit-personalization/persona-and-customer-journey-group-settings.md) for details on each setting and how to fine-tune them.

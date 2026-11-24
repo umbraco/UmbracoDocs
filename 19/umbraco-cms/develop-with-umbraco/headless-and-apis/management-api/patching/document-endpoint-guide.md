@@ -215,13 +215,14 @@ When a property uses a block editor (Block List, Block Grid, or Rich Text), the 
 **Block List** layout items:
 
 ```json
-{ "contentKey": "guid", "settingsKey": null }
+{ "key": "layout-guid", "contentKey": "guid", "settingsKey": null, "isExternalContent": false }
 ```
 
 **Block Grid** layout items (include size and areas):
 
 ```json
 {
+  "key": "layout-guid",
   "columnSpan": 12,
   "rowSpan": 1,
   "areas": [
@@ -231,15 +232,20 @@ When a property uses a block editor (Block List, Block Grid, or Rich Text), the 
     }
   ],
   "contentKey": "guid",
-  "settingsKey": null
+  "settingsKey": null,
+  "isExternalContent": false
 }
 ```
 
 **Rich Text** layout items:
 
 ```json
-{ "contentKey": "guid", "settingsKey": null }
+{ "key": "layout-guid", "contentKey": "guid", "settingsKey": null, "isExternalContent": false }
 ```
+
+Every layout item has its own `key`, which identifies the item in the layout. If a layout item has no `key`, the backoffice uses its `contentKey`. When you reference a Library Element, always set a unique `key`, because the same Element can appear more than once in a layout.
+
+When `isExternalContent` is `true`, the `contentKey` holds the key of a Library Element and the block has no `contentData` entry. For more information, see [Reusable Content in Block Editors](../../../../model-your-content/property-editors/built-in-umbraco-property-editors/block-editor/reusable-content-in-block-editors.md).
 
 ### Block Grid `contentData` is Flat
 

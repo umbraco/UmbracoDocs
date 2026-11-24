@@ -155,6 +155,8 @@ More Blocks can be added to the layout by clicking the Add content button. Alter
 
 ![Block Grid - Add Content Inline](../../../../.gitbook/assets/BlockGridEditor_AddContentInline.png)
 
+You can also add an Element from the Library as a Block, using the **Library** tab in the Block Catalogue. For more information, see the [Reusable Content in Block Editors](reusable-content-in-block-editors.md) article.
+
 To delete a Block, click the trash icon which appears on the mouse hover.
 
 ![Block Grid - Delete Content](../../../../.gitbook/assets/BlockGridEditor_DeleteContent.png)
@@ -614,6 +616,8 @@ For each item in the raw data, we need to create:
 * One `settingsData` entry with the _featured_ value (the checkbox expects `"0"` or `"1"` as data value).
 * One `layout` entry with the desired column and row spans.
 
+Each `layout` entry also has a `key` that identifies the entry, and an `isExternalContent` flag that is `true` for blocks referencing a Library Element. If a layout entry has no `key`, the backoffice uses its `contentKey`. When you reference a Library Element, always set a unique `key`. For more information, see [Reusable Content in Block Editors](reusable-content-in-block-editors.md#library-element-blocks-in-the-stored-value).
+
 All `contentData` and `layoutData` entries need their own unique `Udi` as well as the ID (key) of their corresponding Element Types. In this sample, we only have one Element Type for content (`spotElement`) and one for settings (`spotSettings`). In a real life scenario, there could be any number of Element Type combinations.
 
 7. Create a class called **Model.cs** containing the following to transform the raw data into Block Grid-compatible JSON:
@@ -708,13 +712,18 @@ public class BlockGridLayout
 // this represents an item in the block grid layout collection
 public class BlockGridLayoutItem
 {
-    public BlockGridLayoutItem(int columnSpan, int rowSpan, Guid contentKey, Guid settingsKey)
+    public BlockGridLayoutItem(int columnSpan, int rowSpan, Guid key, Guid contentKey, Guid? settingsKey, bool isExternalContent = false)
     {
         ColumnSpan = columnSpan;
         RowSpan = rowSpan;
+        Key = key;
         ContentKey = contentKey;
         SettingsKey = settingsKey;
+        IsExternalContent = isExternalContent;
     }
+
+    [JsonPropertyName("key")]
+    public Guid Key { get; }
 
     [JsonPropertyName("columnSpan")]
     public int ColumnSpan { get; }
@@ -726,7 +735,10 @@ public class BlockGridLayoutItem
     public Guid ContentKey { get; }
 
     [JsonPropertyName("settingsKey")]
-    public Guid SettingsKey { get; }
+    public Guid? SettingsKey { get; }
+
+    [JsonPropertyName("isExternalContent")]
+    public bool IsExternalContent { get; }
 
     [JsonPropertyName("areas")]
     // areas are omitted from this sample for abbreviation
@@ -818,7 +830,7 @@ public class BlockGridTestController : Controller
             exposeData.Add(new BlockGridExposeData(contentKey));
 
             // create a new layout item
-            layoutItems.Add(new BlockGridLayoutItem(data.ColumnSpan, data.RowSpan, contentKey, settingsKey));
+            layoutItems.Add(new BlockGridLayoutItem(data.ColumnSpan, data.RowSpan, Guid.NewGuid(), contentKey, settingsKey));
         }
 
         // construct the block grid data from layout, content and settings
@@ -846,3 +858,21 @@ For the above code `IContent? content = _contentService.GetById(Guid.Parse("efba
 ![Block Grid - Result](../../../../.gitbook/assets/BlockEditorContentCreated.png)
 
 _This can also be tested via Postman as well if preferred._
+
+### Referencing a Library Element
+
+A block can reference an Element from the Library instead of holding its own content. For more information, see the [Reusable Content in Block Editors](reusable-content-in-block-editors.md) article.
+
+To add a reference, add a layout item with the Element's key as `contentKey` and set `IsExternalContent` to `true`. The block doesn't need a `contentData` or `expose` entry. Pass `null` as the settings key if the block has no settings.
+
+```csharp
+// The key of the Element in the Library
+var elementKey = Guid.Parse("9d050490-ee75-48c9-b13e-b5cc705f3a06");
+
+// The same Element can be referenced more than once, so give each layout item its own key.
+layoutItems.Add(new BlockGridLayoutItem(12, 1, Guid.NewGuid(), elementKey, null, isExternalContent: true));
+```
+
+{% hint style="info" %}
+Use a new key for every layout item, even when two items reference the same Element. The block only renders on the website once the Element is published.
+{% endhint %}

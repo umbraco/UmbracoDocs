@@ -28,7 +28,7 @@ Manage permissions to the Library section from the Users section in the Umbraco 
 
 ## Manage Elements
 
-Elements are configured in the Settings section and managed from the Library section. They are referenced in your content using the Element Picker property.
+Elements are configured in the Settings section and managed from the Library section. They are referenced in your content using the Element Picker property or a Block Editor.
 
 ### Build and Configure Elements
 
@@ -61,14 +61,15 @@ Use the **Info** workspace view to find relevant details about the element, such
 
 ### Use Elements
 
-Once you have created the elements in the Library section, they can be referenced anywhere an Element Picker has been configured.
+Once you have created the elements in the Library section, you can reference them in your content in two ways:
+
+* With an Element Picker property.
+* As blocks in a Block Editor.
 
 ![Element Type Structure tab with Allow in Library toggled](../../../../.gitbook/assets/element-added-to-content.png)
 
-You can add elements to your content in the Content section using an Element Picker. This needs to be added as a property on the Document Type. Read the [Element Picker](../../../property-editors/built-in-umbraco-property-editors/element-picker.md) article to learn more about how to use and configure it.
+To use an Element Picker, add it as a property on the Document Type. Read the [Element Picker](../../../property-editors/built-in-umbraco-property-editors/element-picker.md) article to learn more about how to use and configure it.
 
-{% hint style="info" %}
-Elements and Blocks (used by the Block List and Block Grid editors) don't mix within the same property. A Block List or Block Grid always stores its block content inline. It cannot be configured so that a block type is either inline content or a reference to a Library Element. To combine both approaches on one page, add an Element Picker property and a Block List/Block Grid property separately.
-{% endhint %}
+The Block List, Block Grid, Single Block, and Rich Text editors can mix blocks with their own content and blocks that reference an Element. The Element Type must be configured as a Block Type on the property. Read the [Reusable Content in Block Editors](../../../property-editors/built-in-umbraco-property-editors/block-editor/reusable-content-in-block-editors.md) article to learn more.
 
 Making changes to an Element in the Library section, will update all instances of the content throughout the project.
