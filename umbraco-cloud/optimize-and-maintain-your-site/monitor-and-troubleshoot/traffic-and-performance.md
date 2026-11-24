@@ -16,6 +16,7 @@ The page is made up of the following sections:
 * [Performance overview tiles](#performance-overview-tiles)
 * [Interactive chart](#interactive-chart)
 * [Traffic breakdown tables](#traffic-breakdown-tables)
+* [Firewall](#firewall)
 * [Edge data granularity](#edge-data-granularity)
 * [Edge data limitations](#edge-data-limitations)
 
@@ -47,7 +48,7 @@ Edge analytics data is only available when at least one hostname is selected.
 
 ## Performance Overview Tiles
 
-The overview section shows summary tiles for key metrics. Five application metric tiles are visible by default. Two edge metric tiles appear when hostnames are selected.
+The overview section shows summary tiles for key metrics. Five application metric tiles are visible by default. Three edge metric tiles appear when hostnames are selected.
 
 <figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Seven overview tiles: Failed Origin Requests, App Performance, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
 
@@ -100,6 +101,12 @@ Displays the total number of HTTP requests hitting your site through Cloudflare'
 
 Displays the total data transferred from your site through the edge. High values may indicate large media files or heavy traffic.
 
+#### Mitigated Requests
+
+Displays the number of requests that a security product stopped or challenged before they reached your site.
+
+The value is estimated from sampled traffic. It can differ from the counts in the [Firewall](#firewall) section, which are based on firewall events.
+
 ## Interactive Chart
 
 The overview tiles at the top of the page double as a selector for the chart below. By default, one metric is active (Failed Origin Requests). You can:
@@ -111,7 +118,7 @@ The overview tiles at the top of the page double as a selector for the chart bel
 Available metrics include:
 
 * Five application metrics — Failed Origin Requests, App Performance, CPU Usage, Memory Usage, and App Service Plan CPU.
-* Two edge metrics (when hostnames are selected) — Edge Requests and Edge Data Transfer.
+* Three edge metrics (when hostnames are selected) — Edge Requests, Edge Data Transfer, and Mitigated Requests.
 
 At least one metric must always be selected.
 
@@ -145,7 +152,7 @@ Below the chart, expandable sections show statistical sub-values for each active
 
 **App Service Plan CPU** — sub-values show maximum, average, and minimum CPU percentage across the App Service Plan.
 
-**Edge Requests** and **Edge Data Transfer** — these series only appear when at least one hostname is selected. The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page provides a detailed view of edge traffic.
+**Edge Requests**, **Edge Data Transfer**, and **Mitigated Requests** — these series only appear when at least one hostname is selected. The [Traffic Breakdown Tables](#traffic-breakdown-tables) section further down the page provides a detailed view of edge traffic.
 
 #### Chart Toolbar
 
@@ -226,6 +233,16 @@ Shows how the Cloudflare cache serves requests — for example, `HIT` (served fr
 
 Shows the distribution of HTTP protocol versions used by clients (HTTP/1.0, HTTP/1.1, HTTP/2, HTTP/3).
 
+#### TLS Versions
+
+Shows the distribution of TLS versions used by clients, for example `TLSv1.2` and `TLSv1.3`. Requests over plain HTTP have no TLS version and appear as **None (HTTP)**.
+
+<figure><img src="../../.gitbook/assets/tp-breakdown-tables-tls-versions.png" alt="The TLS Versions table with a request count for TLSv1.3, TLSv1.2, and None (HTTP)."><figcaption><p>The TLS Versions table.</p></figcaption></figure>
+
+#### HTTP Methods
+
+The distribution of HTTP methods used by clients (for example, GET, POST, PUT, DELETE).
+
 ### Traffic Destination
 
 ![Traffic destination breakdown](../../.gitbook/assets/tp-breakdown-tables-traffic-destination.png)
@@ -241,10 +258,6 @@ The hostnames receiving traffic.
 #### Data Centers
 
 The Cloudflare data centers serve requests to your site. The data centers help you understand the geographic distribution of your edge traffic.
-
-#### HTTP Methods
-
-The distribution of HTTP methods used by clients (for example, GET, POST, PUT, DELETE).
 
 ### Traffic Source
 
@@ -289,6 +302,107 @@ ASNs are the network providers from which requests originate.
 #### X-Requested-With Headers
 
 Shows values of the `X-Requested-With` HTTP header, commonly used to identify AJAX requests. Entries without this header appear as "(not set)".
+
+## Firewall
+
+The **Firewall** section shows what the firewall did to the traffic on the selected hostnames. You can see how many requests were blocked, challenged, or allowed, which rules acted, and where the requests came from.
+
+The section covers both your own [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings and the protection Cloudflare applies, such as managed rules and DDoS protection.
+
+The section is collapsed by default. Select **Firewall** to expand it. The section follows the environment, hostnames, and time range selected at the top of the page.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-section.png" alt="The Firewall section with the three views, the filter fields, the Blocked, Challenged, and Allowed tiles, and the Events over time chart."><figcaption><p>The Firewall section.</p></figcaption></figure>
+
+### Views and Filters
+
+Three views decide which firewall events the section shows:
+
+* **Stopped or challenged** — Requests that were blocked or met with a challenge. This is the default view.
+* **Allowed** — Requests that matched a rule that let them through.
+* **All** — Every firewall event.
+
+The **Allowed** view does not list all traffic that reached your site. A request appears there only when a rule explicitly let the request through.
+
+Three fields below the views narrow the section further:
+
+* **IP address** — Events from one client IP address.
+* **Country code** — Events from one country, as a two-letter code such as `DK`.
+* **Path** — Events for one request path, such as `/umbraco`.
+
+Enter a value and press Enter to apply a filter. Select **Clear filters** to remove all filters.
+
+### Blocked, Challenged, and Allowed
+
+Three tiles show the number of firewall events by outcome:
+
+* **Blocked** — Requests that were stopped.
+* **Challenged** — Requests that were met with a challenge, where the visitor proves to be human.
+* **Allowed** — Requests that matched a rule that let them through.
+
+The tiles always show all three counts, whichever view is selected. The filters apply to the tiles.
+
+### Events Over Time
+
+The **Events over time** chart shows the firewall events across the selected time range as stacked bars, colored by outcome. Hover over a bar to see the time and the count for each outcome. All times are in UTC.
+
+The chart can also show **Other** events. These are follow-up records, such as the result of a challenge. The request behind such a record is already counted as **Challenged**.
+
+### Rules That Acted
+
+Two lists show which rules produced the events, each with an event count:
+
+* **Your firewall settings** — The settings you configured for the Web Application Firewall, for example a Challenge for all visitors.
+* **Cloudflare managed rules** — The rules Cloudflare maintains to recognize known attacks, for example a request for a version control file.
+
+Each list shows up to ten rules. Select a rule to narrow the whole section to the events of that rule. Select the rule again to show all events.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-rules-top-lists.png" alt="The Your firewall settings and Cloudflare managed rules lists, followed by the Top IPs, Top paths, Top networks, and Top hostnames tables."><figcaption><p>The rules that acted and the top lists.</p></figcaption></figure>
+
+### Top Lists
+
+Four tables show where the events came from and what they targeted. Each table shows up to ten rows.
+
+* **Top IPs** — The client IP addresses with the most events.
+* **Top paths** — The request paths with the most events.
+* **Top networks** — The network providers (ASNs) the requests came from.
+* **Top hostnames** — The hostnames that received the requests.
+
+### Recent Events
+
+The **Recent events** list shows the individual firewall events, newest first. Each row shows the following:
+
+* **Time (UTC)** — When the event happened.
+* **Action** — What happened to the request, for example `block`, `managed challenge`, or `skip`. The `skip` action means a rule let the request past a later firewall step.
+* **Rule** — The rule that acted. When no named rule is available, the list shows the source of the event, for example **DDoS protection**.
+* **IP** — The client IP address.
+* **Path** — The request path.
+
+Select a row to see the details of the event: hostname, country, network, HTTP method, response status, source, user agent, and Ray ID. The Ray ID is the identifier Cloudflare gives each request.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-recent-events.png" alt="The Recent events list with one event opened to show hostname, country, network, method, status, source, user agent, and Ray ID."><figcaption><p>The Recent events list with the details of one event.</p></figcaption></figure>
+
+The source tells you which protection produced the event:
+
+* Firewall rules
+* Cloudflare managed rules
+* DDoS protection
+* Browser integrity check
+* Rate limiting
+
+Select **Load more** at the end of the list to load older events.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-walkthrough.gif" alt="Expanding the Firewall section, opening the details of an event in the Recent events list, and loading more events."><figcaption><p>Open the details of an event and load older events.</p></figcaption></figure>
+
+### Firewall Data Limitations
+
+Firewall events have the following constraints:
+
+* Firewall events are kept for **30 days**. The section shows a notice when the selected time range reaches further back.
+* A single time range can span at most **30 days**.
+* Select at least one hostname.
+* Cloudflare samples the events of hostnames with a lot of traffic. The section then states that the counts are estimates.
+* Requests stopped by the **Block** setting of the Web Application Firewall are not included.
+* The section shows a **Too many requests** notice when the events are requested too often. Wait a moment and select **Retry**.
 
 ## Edge Data Granularity
 
@@ -336,6 +450,8 @@ The traffic breakdown tables show:
 Use the application metrics to discover application-level issues, such as slow response times or rising CPU and memory consumption. Real-time HTTPS status codes help you identify errors or availability disruptions early.
 
 Cloudflare edge analytics surfaces issues that occur before traffic reaches your application. Examples include unexpected spikes in request volume, low cache hit rates, or a high share of edge-level errors. Combining Azure and edge data makes it easier to pinpoint whether a problem originates in your application, the edge layer, or the traffic itself.
+
+The Firewall section shows which requests were blocked or challenged, and by which rule. Use the section to check whether a firewall setting works as intended.
 
 ### Side-by-Side Comparison
 
