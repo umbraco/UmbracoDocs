@@ -32,7 +32,7 @@ public class MyItemApiComposer : IComposer
 
 `AddBackOfficeOpenApiDocument` applies Umbraco's defaults to the document. It includes any controller tagged with `[MapToApi("my-item-api")]`, applies the schema and operation ID conventions, and adds the document to the Swagger UI dropdown. `WithBackOfficeAuthentication()` wires up backoffice authentication.
 
-`WithJsonOptions(Constants.JsonOptionsNames.BackOffice)` generates the schema with the same JSON options the backoffice uses to serialize responses. Without it, enums are described as integers while ManagementApiControllerBase controllers return them as strings.
+`WithJsonOptions(Constants.JsonOptionsNames.BackOffice)` generates the schema with the same JSON options the backoffice uses to serialize responses. Without it, the schema can differ from the responses your controllers actually return. Among other things, enums are described as integers while `ManagementApiControllerBase` controllers return them as strings.
 
 See [API versioning and OpenAPI](../../server-side-extensions/api-versioning-and-openapi.md) for the underlying `AddOpenApi` primitive and other configuration options.
 
