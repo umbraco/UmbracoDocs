@@ -3,17 +3,15 @@
 Use the ASP.NET Core URL Rewriting Middleware to add rewrite rules to your Umbraco Cloud project.
 
 {% hint style="info" %}
-Middleware rewrites are recommended over IIS rewrites on Umbraco Cloud for two reasons:
+The middleware is recommended on Umbraco Cloud for two reasons:
 
-* The middleware runs after Umbraco Cloud corrects the request host at startup. IIS rewrite rules run before that correction, so they can act on an incorrect host.
-* Middleware rewrites work with any hosting provider. IIS rewrites only work on IIS.
+* The rewrite middleware runs after the Umbraco Cloud platform middleware. This means Umbraco Cloud can handle request and proxy issues without any action from you.
+* The middleware works with any hosting platform.
 {% endhint %}
 
 Middleware rules are part of your project code, so you don't need a config transform to add them.
 
-If your project runs Umbraco 8, use IIS rewrite rules instead. For more information, see the [IIS rewrite rules](#iis-rewrite-rules) section.
-
-For more information about the middleware, see Microsoft's [URL Rewriting Middleware in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting) documentation.
+For general guidance, see Microsoft's [When to use URL Rewriting Middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting#when-to-use-url-rewriting-middleware) and [URL Rewriting Middleware in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting) documentation.
 
 ## Register the rewrite middleware
 
@@ -47,7 +45,7 @@ When setting up rewrite rules on Umbraco Cloud, there are a few important things
 * Skip the default `umbraco.io` hostnames, unless the rule is meant to target them.
 * To serve verification files from the `.well-known` directory (for example, Apple Pay or Google), follow the [Rewrite rule workaround in the CMS documentation](https://docs.umbraco.com/umbraco-cms/reference/routing/iisrewriterules#example-serving-files-from-the-well-known-path).
 * Middleware rules run in every environment. If a rule should only apply to the Live environment, check the hostname or the environment in the rule.
-* If you move a rule from IIS to middleware, remove the IIS rule. Otherwise, both rules run, and the IIS rule still runs first.
+* If you move a rule from `web.config` to the middleware, remove the original rule. Otherwise, both rules run.
 * If the Umbraco Cloud baseline feature is used, only apply the rewrites to the child project and not the baseline itself.
 
 ## Add a helper class for the rules
@@ -115,30 +113,7 @@ This rule does not rewrite anything under the `/umbraco` path, so you can still 
 
 ## Running your site on HTTPS only
 
-Once you've applied a certificate to your site, anybody visiting your site will always end up on HTTPS instead of the insecure HTTP.
-
-To accomplish this, add the following rule to your rewrite options. It redirects all requests for the <http://example.com> URL to the secure <https://example.com> URL and responds with a permanent redirect status.
-
-```csharp
-rewriteOptions.Add(context =>
-{
-    var request = context.HttpContext.Request;
-
-    if (request.IsHttps
-        || CloudRewriteHelpers.IsLocalhost(request)
-        || CloudRewriteHelpers.PathStartsWithAny(request, "/.well-known/acme-challenge"))
-    {
-        return;
-    }
-
-    CloudRewriteHelpers.RedirectPermanent(context,
-        $"https://{request.Host}{request.PathBase}{request.Path}{request.QueryString}");
-});
-```
-
-{% hint style="info" %}
-This redirect rule does not apply when the request is already going to the secure HTTPS URL. It also does not apply to your local copy of the site running on `localhost`.
-{% endhint %}
+Umbraco Cloud forces HTTPS for all hostnames through its Cloudflare proxy. Requests are redirected to HTTPS before they reach your site, so no rewrite rule is needed.
 
 ## Adding a trailing slash to your URLs
 
@@ -189,108 +164,4 @@ rewriteOptions.Add(context =>
     CloudRewriteHelpers.RedirectPermanent(context,
         $"https://www.{request.Host}{request.PathBase}{request.Path}{request.QueryString}");
 });
-```
-
-## IIS rewrite rules
-
-Umbraco 8 projects can't use ASP.NET Core middleware, so they need IIS rewrite rules. The IIS Rewrite Module is installed on all Umbraco Cloud servers. The best practices above also apply to IIS rules.
-
-For Umbraco 9 and later, use a [config transform](/umbraco-cloud/build-and-customize-your-solution/set-up-your-project/project-settings/config-transforms.md) to add IIS rewrite rules.
-
-{% hint style="info" %}
-If you are running Umbraco 8, the rewrite rule can be added directly to your project's `web.config`.
-{% endhint %}
-
-The rewrite rules should be added to the `<system.webServer><rewrite>` module in your project's `web.config` file.
-
-```xml
-<!--
-<rewrite>
-    <rules></rules>
-</rewrite>
--->
-```
-
-### Hiding the default `umbraco.io` URL with IIS
-
-```xml
-<rule name="Redirect umbraco.io to primary hostname" stopProcessing="true">
-  <match url=".*" />
-  <conditions>
-    <add input="{HTTP_HOST}" pattern="\.umbraco\.io$" />
-    <add input="{HTTP_HOST}" pattern="^(dev-|stage-)(.*)?\.umbraco\.io$" ignoreCase="true" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/umbraco" ignoreCase="true" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/App_Plugins" ignoreCase="true" negate="true" />
-    <add input="{REQUEST_URI}" pattern="^/sb" negate="true" /> <!-- Don't redirect Smidge Bundle -->
-    <add input="{HTTP_COOKIE}" pattern="^(.+; )?UMB_UCONTEXT=([^;]*)(;.+)?$" negate="true" /> <!-- Ensure preview can render -->
-    <add input="{HTTP_HOST}" pattern="^localhost(:[0-9]+)?$" negate="true" />
-  </conditions>
-  <action type="Redirect" url="https://www.example.com/{R:0}" redirectType="Permanent" />
-</rule>
-```
-
-### Running your site on HTTPS only with IIS
-
-```xml
-<rule name="Redirect HTTP to HTTPS" stopProcessing="true">
-  <match url=".*" />
-  <conditions>
-    <add input="{HTTPS}" pattern="^OFF$" />
-    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
-  </conditions>
-  <action type="Redirect" url="https://{HTTP_HOST}/{R:0}" redirectType="Permanent" />
-</rule>
-```
-
-### Adding a trailing slash with IIS
-
-```xml
-<rule name="Add trailing slash" stopProcessing="true">
-  <match url="(.*[^/])$" />
-  <conditions>
-    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsDirectory" />
-    <add input="{REQUEST_FILENAME}" negate="true" matchType="IsFile" />
-    <add input="{REQUEST_FILENAME}" negate="true" pattern="(.*?)\.[a-zA-Z0-9]{1,4}$" />
-    <add input="{REQUEST_URI}" pattern="^/umbidlocallogin" negate="true" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/umbraco" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/DependencyHandler.axd" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/App_Plugins/" />
-    <add input="{REQUEST_URI}" negate="true" pattern="^/\.well-known/acme-challenge/" />
-  </conditions>
-  <action type="Redirect" url="{R:1}/" />
-</rule>
-```
-
-### Redirect from `non-www` to `www` with IIS
-
-```xml
-<rule name="Redirect to www prefix" stopProcessing="true">
-  <match url=".*" />
-  <conditions>
-    <add input="{HTTP_HOST}" negate="true" pattern="^www\." />
-    <add input="{HTTP_HOST}" negate="true" pattern="^localhost(:[0-9]+)?$" />
-    <add input="{HTTP_HOST}" negate="true" pattern="\.umbraco\.io$" />
-  </conditions>
-  <action type="Redirect" url="https://www.{HTTP_HOST}/{R:0}" />
-</rule>
-```
-
-### Custom IIS rewrite rules for Umbraco Cloud
-
-An example config transform to help ensure your custom rules integrate properly:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-  <location path="." inheritInChildApplications="false">
-    <system.webServer>
-      <rewrite xdt:Transform="Insert">
-        <rules>
-          <!-- Add your custom rules here -->
-        </rules>
-      </rewrite>
-    </system.webServer>
-  </location>
-</configuration>
 ```
