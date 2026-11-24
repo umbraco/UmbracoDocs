@@ -38,7 +38,9 @@ The "unexposed" state is visualized by a dimmed-down icon and title (or likely a
 
 ## Make draft
 
-This feature is available from Umbraco 19.1.
+{% hint style="info" %}
+The **Make draft** action is available from Umbraco 19.1.
+{% endhint %}
 
 A Block that is exposed in a Document variant can be returned to the "unexposed" state for that variant. The Block shows the **Create** placeholder again and is omitted from the published output of that variant. Other variants are not affected.
 
@@ -50,7 +52,7 @@ To make a Block draft:
 The content of the variant is kept, so selecting **Create** again restores it. Making a Block draft does not validate the content.
 
 {% hint style="info" %}
-**Make draft** is only available when you can edit the Block Editor property in the current language. The property does not vary by culture, so outside the default language it requires the **Allow editing shared content** [user group permission](../../../../manage-and-publish-content/users-and-members/users/README.md). The same applies to deleting a Block.
+**Make draft** is only available when you can edit the Block Editor property in the current language. The property does not vary by culture, so outside the default language, it requires the **Allow editing shared content** [user group permission](../../../../manage-and-publish-content/users-and-members/users/README.md). The same applies to deleting a Block.
 {% endhint %}
 
 ## Invariance vs. Block Level Variance
