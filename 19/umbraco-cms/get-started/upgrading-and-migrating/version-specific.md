@@ -138,6 +138,26 @@ The previous Examine integration in Umbraco has been removed. The changes you ne
 
 The articles under [Searching with Examine](../../develop-with-umbraco/application-code/examine.md) describe the previous integration. See [#23321](https://github.com/umbraco/Umbraco-CMS/pull/23321) and [#23911](https://github.com/umbraco/Umbraco-CMS/pull/23911).
 
+#### Numbers and dates in fields without a definition are stored culture-invariantly
+
+The Examine search provider stores a field as text when the field isn't configured in [`FieldOptions`](../../develop-with-umbraco/search/examine-search-provider.md#configuring-fields-for-faceting-andor-sorting). Integer, decimal, and date values in these fields are now formatted with the invariant culture. Dates use the ISO 8601 round-trip format.
+
+Previously, the values were formatted with the culture of the server that wrote the index. Umbraco 19.0.0-rc1 and the separate `Umbraco.Cms.Search` package use this format. The following table shows how the stored values differ:
+
+| Value    | Previously (examples)                                                  | Umbraco 19                    |
+| -------- | ---------------------------------------------------------------------- | ----------------------------- |
+| Decimal  | `12,4552` (`de-DE`)                                                    | `12.4552`                     |
+| Negative | `−12` with the U+2212 minus sign (`sv-SE`)                             | `-12`                         |
+| Date     | `11/4/2026 2:30:15 PM` (`en-US`) or `04.11.2026 14:30:15` (`de-DE`)    | `2026-11-04T14:30:15.0000000` |
+
+Fields configured in `FieldOptions` are stored as typed values and are unchanged. Filtering, sorting, and faceting are not affected.
+
+Items indexed before the upgrade keep the old format until they are indexed again. Rebuild your indexes after upgrading to avoid a mix of formats. See [Rebuilding an index](../../develop-with-umbraco/search/backoffice.md#rebuilding-an-index).
+
+If your code reads these stored values directly from the Examine index, parse them with `CultureInfo.InvariantCulture`.
+
+See [#24472](https://github.com/umbraco/Umbraco-CMS/pull/24472).
+
 ### Cookie-based authentication for the backoffice
 
 The backoffice no longer uses client-side OAuth tokens. An `httpOnly` authentication cookie is now the only credential for a backoffice session. API users, Swagger, and Postman still authenticate with OpenID Connect and are unchanged.
