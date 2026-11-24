@@ -411,6 +411,13 @@ site:
           icon: mcp
           children:
             - type: space
+              key: space-47
+              title: 19.latest (RC)
+              path: 19.latest-rc
+              draft: true
+              content:
+                directory: ./19/umbraco-in-ai
+            - type: space
               key: space-33
               title: 18.latest
               path: 18.latest
@@ -423,13 +430,6 @@ site:
               path: 17.latest
               content:
                 directory: ./17/umbraco-in-ai
-            - type: space
-              key: space-47
-              title: 19.latest (RC)
-              path: 19.latest-rc
-              draft: true
-              content:
-                directory: ./19/umbraco-in-ai
         - type: section
           key: section-16
           title: AI in Umbraco
