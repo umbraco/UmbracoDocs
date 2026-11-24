@@ -429,7 +429,7 @@ site:
               path: 19.latest-rc
               draft: true
               content:
-                directory: ./umbraco-in-ai/19.latest-rc
+                directory: ./19/umbraco-in-ai
         - type: section
           key: section-16
           title: AI in Umbraco
