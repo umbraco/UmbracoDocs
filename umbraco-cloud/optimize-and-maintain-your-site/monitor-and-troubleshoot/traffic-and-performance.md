@@ -103,7 +103,7 @@ Displays the total data transferred from your site through the edge. High values
 
 #### Mitigated Requests
 
-Displays the number of requests that a security product stopped or challenged before they reached your site.
+Displays the number of requests that a security product stopped or challenged.
 
 The value is estimated from sampled traffic. It can differ from the counts in the [Firewall](#firewall) section, which are based on firewall events.
 
@@ -307,54 +307,55 @@ Shows values of the `X-Requested-With` HTTP header, commonly used to identify AJ
 
 The **Firewall** section shows what the firewall did to the traffic on the selected hostnames. You can see how many requests were blocked, challenged, or allowed, which rules acted, and where the requests came from.
 
-The section covers both your own [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings and the protection Cloudflare applies, such as managed rules and DDoS protection.
+The section covers your own [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings and the protection Cloudflare applies, such as managed rules and DDoS protection.
 
 The section is collapsed by default. Select **Firewall** to expand it. The section follows the environment, hostnames, and time range selected at the top of the page.
 
-<figure><img src="../../.gitbook/assets/tp-firewall-section.png" alt="The Firewall section with the three views, the filter fields, the Blocked, Challenged, and Allowed tiles, and the Events over time chart."><figcaption><p>The Firewall section.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-firewall-section.png" alt="The Firewall section with the three views, the filter fields, the Blocked, Challenged, Passed a challenge, and Allowed tiles, and the Events over time chart."><figcaption><p>The Firewall section.</p></figcaption></figure>
 
 ### Views and Filters
 
 Three views decide which firewall events the section shows:
 
-* **Stopped or challenged** — Requests that were blocked or met with a challenge. This is the default view.
-* **Allowed** — Requests that matched a rule that let them through.
-* **All** — Every firewall event.
+* **Stopped or challenged** — Requests the firewall blocked or challenged. This is the default view.
+* **Allowed** — Requests that matched an Allow entry or an exception and skipped firewall checks.
+* **All** — Every firewall event, including visitors who passed a challenge.
 
-The **Allowed** view does not list all traffic that reached your site. A request appears there only when a rule explicitly let the request through.
+The **Allowed** view does not list all traffic that reached your site. A request the firewall had no reason to stop leaves no event.
 
 Three fields below the views narrow the section further:
 
 * **IP address** — Events from one client IP address.
 * **Country code** — Events from one country, as a two-letter code such as `DK`.
-* **Path** — Events for one request path, such as `/umbraco`.
+* **Path** — Events for one request path, such as `/umbraco`. The filter matches the whole path.
 
 Enter a value and press Enter to apply a filter. Select **Clear filters** to remove all filters.
 
-### Blocked, Challenged, and Allowed
+### Outcome Tiles
 
-Three tiles show the number of firewall events by outcome:
+Four tiles show the number of firewall events by outcome:
 
-* **Blocked** — Requests that were stopped.
-* **Challenged** — Requests that were met with a challenge, where the visitor proves to be human.
-* **Allowed** — Requests that matched a rule that let them through.
+* **Blocked** — Requests the firewall refused.
+* **Challenged** — Requests that were shown a challenge page.
+* **Passed a challenge** — Visitors who solved a challenge, or were not shown one because they had solved one recently.
+* **Allowed** — Requests that matched an Allow entry or an exception and skipped firewall checks.
 
-The tiles always show all three counts, whichever view is selected. The filters apply to the tiles.
+The tiles show all four counts, whichever view is selected. The filters apply to the tiles.
 
 ### Events Over Time
 
-The **Events over time** chart shows the firewall events across the selected time range as stacked bars, colored by outcome. Hover over a bar to see the time and the count for each outcome. All times are in UTC.
+The **Events over time** chart shows the firewall events across the selected time range as stacked columns, colored by outcome. Hover over a column to see the time and the count for each outcome. All times are in UTC.
 
-The chart can also show **Other** events. These are follow-up records, such as the result of a challenge. The request behind such a record is already counted as **Challenged**.
+The chart can also show an **Other** group. The group holds events with an action the page does not recognize.
 
 ### Rules That Acted
 
 Two lists show which rules produced the events, each with an event count:
 
-* **Your firewall settings** — The settings you configured for the Web Application Firewall, for example a Challenge for all visitors.
+* **Your firewall settings** — The firewall settings of your project that acted, for example a Challenge for all visitors.
 * **Cloudflare managed rules** — The rules Cloudflare maintains to recognize known attacks, for example a request for a version control file.
 
-Each list shows up to ten rules. Select a rule to narrow the whole section to the events of that rule. Select the rule again to show all events.
+Each list shows up to ten rules. Select a rule to show only the events of that rule in the whole section. The selected rule then appears next to the filter fields. Select the rule again to show all events.
 
 <figure><img src="../../.gitbook/assets/tp-firewall-rules-top-lists.png" alt="The Your firewall settings and Cloudflare managed rules lists, followed by the Top IPs, Top paths, Top networks, and Top hostnames tables."><figcaption><p>The rules that acted and the top lists.</p></figcaption></figure>
 
@@ -372,14 +373,26 @@ Four tables show where the events came from and what they targeted. Each table s
 The **Recent events** list shows the individual firewall events, newest first. Each row shows the following:
 
 * **Time (UTC)** — When the event happened.
-* **Action** — What happened to the request, for example `block`, `managed challenge`, or `skip`. The `skip` action means a rule let the request past a later firewall step.
-* **Rule** — The rule that acted. When no named rule is available, the list shows the source of the event, for example **DDoS protection**.
+* **Action** — What happened to the request. See the table below.
+* **Rule** — The rule that acted. When the rule has no name, the list shows the source of the event, for example **DDoS protection**.
 * **IP** — The client IP address.
 * **Path** — The request path.
 
-Select a row to see the details of the event: hostname, country, network, HTTP method, response status, source, user agent, and Ray ID. The Ray ID is the identifier Cloudflare gives each request.
+The **Action** column uses the following values:
 
-<figure><img src="../../.gitbook/assets/tp-firewall-recent-events.png" alt="The Recent events list with one event opened to show hostname, country, network, method, status, source, user agent, and Ray ID."><figcaption><p>The Recent events list with the details of one event.</p></figcaption></figure>
+| Action | Meaning |
+| --- | --- |
+| **Blocked** | The request was refused. |
+| **Challenged** | The visitor was shown a challenge page. Cloudflare chose the kind of challenge. |
+| **Challenged (interactive)** | The visitor was shown a challenge that required interaction. |
+| **Challenged (automatic)** | The browser of the visitor was checked without any interaction. |
+| **Challenge passed** | The visitor passed the challenge and the request was let through. |
+| **Challenge not needed** | No challenge was shown, because the visitor had solved one recently. |
+| **Allowed** | An Allow entry or an exception matched, so some or all firewall checks were skipped. |
+
+Select a row to see the details of the event. The details are the action with its Cloudflare name, hostname, country, network, HTTP method, response status, source, user agent, and Ray ID. The Ray ID is the identifier Cloudflare gives each request.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-recent-events.png" alt="The Recent events list with one event opened to show the action, hostname, country, network, method, status, source, user agent, and Ray ID."><figcaption><p>The Recent events list with the details of one event.</p></figcaption></figure>
 
 The source tells you which protection produced the event:
 
@@ -389,9 +402,9 @@ The source tells you which protection produced the event:
 * Browser integrity check
 * Rate limiting
 
-Select **Load more** at the end of the list to load older events.
+The list loads 25 events at a time. Select **Load more** at the end of the list to load older events.
 
-<figure><img src="../../.gitbook/assets/tp-firewall-walkthrough.gif" alt="Expanding the Firewall section, opening the details of an event in the Recent events list, and loading more events."><figcaption><p>Open the details of an event and load older events.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-firewall-walkthrough.gif" alt="Expanding the Firewall section, selecting a rule to show only its events, opening the details of an event, and loading more events."><figcaption><p>Show the events of one rule, open an event, and load older events.</p></figcaption></figure>
 
 ### Firewall Data Limitations
 
@@ -401,7 +414,7 @@ Firewall events have the following constraints:
 * A single time range can span at most **30 days**.
 * Select at least one hostname.
 * Cloudflare samples the events of hostnames with a lot of traffic. The section then states that the counts are estimates.
-* Requests stopped by the **Block** setting of the Web Application Firewall are not included.
+* Requests stopped by the **Block** step of the Web Application Firewall produce no firewall event. The section does not show them.
 * The section shows a **Too many requests** notice when the events are requested too often. Wait a moment and select **Retry**.
 
 ## Edge Data Granularity
