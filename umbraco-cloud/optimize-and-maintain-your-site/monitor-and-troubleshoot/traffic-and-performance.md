@@ -364,7 +364,7 @@ Four tables show where the events came from and what they targeted. Each table s
 
 * **Top IPs** — The client IP addresses with the most events.
 * **Top paths** — The request paths with the most events.
-* **Top networks** — The network providers (ASNs) the requests came from.
+* **Top networks** — The network providers the requests came from, by Autonomous System Number (ASN).
 * **Top hostnames** — The hostnames that received the requests.
 
 ### Recent Events
