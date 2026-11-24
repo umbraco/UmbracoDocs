@@ -6,7 +6,7 @@ The election process that runs during the startup of an Umbraco instance determi
 
 There are two server roles to be aware of for flexible load balancing:
 
-* `SchedulingPublisher` - The Umbraco instance usually used for backoffice access, responsible for running scheduled tasks.
+* `SchedulingPublisher` - The Umbraco instance usually used for backoffice access. Custom recurring background jobs run on this instance by default.
 * `Subscriber` - A scalable instance that subscribes to content updates from the SchedulingPublisher server, not recommended to be used for backoffice access.
 
 {% hint style="info" %}
@@ -15,7 +15,7 @@ These new terms replace 'Master and Replica', in Umbraco versions 7 and 8.
 
 ## Explicit SchedulingPublisher server
 
-It is recommended to configure an explicit SchedulingPublisher server since this reduces the amount of complexity that the election process performs.
+The recommended approach for load balancing is to configure an explicit SchedulingPublisher server, instead of using the automatic election process.
 
 The first thing to do is create a couple of small classes that implement `IServerRoleAccessor` one for each of the different server roles:
 
@@ -41,14 +41,14 @@ builder.SetServerRegistrar<SchedulingPublisherServerRoleAccessor>();
 builder.SetServerRegistrar<SubscriberServerRoleAccessor>();
 ```
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling.
+Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers. They will not attempt to run the automatic server role election process, or custom recurring background jobs that are limited to the `SchedulingPublisher` role.
 
-By setting your SchedulingPublisher server to use your custom `SchedulingPublisherServerRoleAccessor` class, it will always be deemed the 'SchedulingPublisher' and will always be the one that executes all task scheduling.
+By setting your SchedulingPublisher server to use your custom `SchedulingPublisherServerRoleAccessor` class, it will always be deemed the `SchedulingPublisher`. It runs the recurring background jobs that are limited to that role. Distributed background jobs, such as scheduled publishing, can still run on any server with database write access.
 
 ## Subscriber servers - Read-only database access
 
 {% hint style="info" %}
-This description pertains only to Umbraco database tables
+Read-only database access for subscriber servers requires Umbraco 17.4 or later. The section covers Umbraco database tables only.
 {% endhint %}
 
 In some cases infrastructure admins will not want their front-end servers to have write access to the database. By default front-end servers will require write full access to the following tables:
@@ -56,11 +56,11 @@ In some cases infrastructure admins will not want their front-end servers to hav
 * `umbracoServer`
 * `umbracoNode`
 
-This is because by default each server will inform the database that they are active and more importantly it is used for task scheduling. Only a single server can execute task scheduling and these tables are used for servers to use a server role election process without the need for any configuration. So in the case that a subscriber server becomes the SchedulingPublisher task scheduler, **it will require write access to all of the Umbraco tables**.
+This is because by default each server informs the database that it is active. The tables are also used by the automatic server role election process. So in the case that a subscriber server becomes the SchedulingPublisher, **it will require write access to all of the Umbraco tables**.
 
 In order to have read-only database access configured for your front-end servers, you need to implement the [Explicit SchedulingPublisher server](flexible-advanced.md#explicit-schedulingpublisher-server) configuration mentioned above.
 
-Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers and will not attempt to run the automatic server role election process or task scheduling. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
+Now that your subscriber servers are using your custom `SubscriberServerRoleAccessor` class, they will always be deemed 'Subscriber' servers. They will not attempt to run the automatic server role election process, or custom recurring background jobs that are limited to the `SchedulingPublisher` role. Because you are no longer using the default `ElectedServerRoleAccessor` they will not try to ping the umbracoServer table.
 
 When configuring a server as a read-only subscriber, Umbraco automatically detects the state and disables specific background database write operations, such as DistributedBackgroundJobs. A notable exception is the LastSynced process. To ensure the subscriber server tracks synchronization without database write access, Umbraco redirects these updates to a local file instead of the database.
 

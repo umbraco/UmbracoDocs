@@ -11,7 +11,7 @@ The names shown in parentheses, for example, `(ab-test)` or `(segments)` refer t
 
 This server also chains to the [Umbraco CMS Developer MCP](../cms-developer-mcp/README.md), whose tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`). See [Configuration Options](configuration.md#cms-mcp-server-chaining) for details. Those chained tools are documented on the [CMS Available Tools](../cms-developer-mcp/available-tools.md) page and are not repeated here.
 
-The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage Version Support](README.md#umbraco-engage-version-support) for what fails on earlier 18.x releases.
+The tools on this page need Umbraco Engage 18.2.0 or later. See [Umbraco Engage Version Support](README.md#umbraco-engage-version-support) for what happens on earlier 18.x releases.
 
 ## Table of Contents
 

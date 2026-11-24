@@ -86,7 +86,7 @@ To sort the order of the items in a folder:
 1. Click **...** next to the folder you want to sort.
 2.  Select **Sort**.
 
-    ![Sort Folder](../../.gitbook/assets/Sort-Folder-v9.png)
+    ![Sort Folder](../../.gitbook/assets/Sort-Folder.png)
 3.  Drag the folders, images and files into the required order. Alternatively, click on the **Name** or **Creation Date** column header to sort the items in ascending or descending order. Clicking on a column header again reverses the sort order.
 
     ![Sort Items](../../.gitbook/assets/sort-items-v9.png)

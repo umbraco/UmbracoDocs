@@ -68,7 +68,7 @@ For example, `UMBRACO_INCLUDE_SLICES=read,search` registers only read and search
 
 ## CMS MCP Server Chaining
 
-The Engage MCP Server automatically chains to the [Umbraco CMS Developer MCP Server](../cms-developer-mcp/README.md), The Umbraco 18 line starts `@umbraco-cms/mcp-dev@18`, reusing the same `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` credentials. All CMS tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`, `cms--get-media-by-id`).
+The Engage MCP Server automatically chains to the [Umbraco CMS Developer MCP Server](../cms-developer-mcp/README.md), reusing the same `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` credentials. The Umbraco 18 line starts `@umbraco-cms/mcp-dev@18`. All CMS tools are proxied with a `cms--` prefix (for example, `cms--get-document-by-id`, `cms--get-media-by-id`).
 
 This means a single MCP connection gives your AI agent access to both Engage and CMS capabilities. It is useful when personalization rules, A/B tests, or campaigns need to reference real documents, media, or content types.
 

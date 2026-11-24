@@ -7,7 +7,7 @@ description: >-
 
 # Skills & CLI
 
-The Engage MCP Server ships a Claude Code plugin with skills for CLI operation, MCP client setup, and content-structure recipes. The server can also be used as a CLI tool directly. This wraps the same MCP server and exposes the same tools, including the chained `cms:` tools, but runs them from the command line.
+The Engage MCP Server ships a Claude Code plugin with skills for CLI operation, MCP client setup, and content-structure recipes. The server can also be used as a CLI tool directly. This wraps the same MCP server and exposes the same tools, including the chained `cms--` tools, but runs them from the command line.
 
 The MCP connection is more context-efficient because the host manages tool selection and conversation state. The skills and CLI below are a simpler alternative. Use them to get started quickly, debug your configuration, or have Claude Code walk you through building an A/B test or personalization rule.
 

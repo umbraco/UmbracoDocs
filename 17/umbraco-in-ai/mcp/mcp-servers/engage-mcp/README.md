@@ -9,7 +9,7 @@ The Engage [MCP Server](../../../concepts/model-context-protocol.md#mcp-servers)
 Like the [CMS Developer MCP Server](../cms-developer-mcp/README.md), this MCP Server acts as a secure gateway between your Umbraco installation and MCP-compatible AI environments. These include Claude (Desktop or Code), Cursor, and GitHub Copilot. It talks directly to the Umbraco Engage Management API, the same API layer that powers the Engage backoffice sections.
 
 {% hint style="info" %}
-The Engage MCP Server automatically chains to the [CMS Developer MCP Server](../cms-developer-mcp/README.md), proxying its tools with a `cms:` prefix.
+The Engage MCP Server automatically chains to the [CMS Developer MCP Server](../cms-developer-mcp/README.md), proxying its tools with a `cms--` prefix.
 
 This gives your AI agent access to both Engage and CMS capabilities in a single session. It is useful when personalization rules, A/B tests, or campaigns need to reference real documents, media, or content types.
 
@@ -18,9 +18,26 @@ See [Configuration Options](configuration.md#cms-mcp-server-chaining) to learn m
 
 ## Requirements
 
-* An Umbraco installation with **Umbraco Engage** installed and licensed
+* An Umbraco 17 installation with **Umbraco Engage** 17.5.0 or later installed and licensed
 * An [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) with access to the **Engage** section, and to **Content** (or other sections) if you plan to use the chained CMS tools
-* `Node.js` version 22 or higher
+* `Node.js` 22 (22.23.4 or later), 24 (24.22.1 or later), or 26.12.1 or later. Earlier releases have a known [security vulnerability](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+
+### Umbraco Engage Version Support
+
+The Engage MCP Server has a separate release line for each Umbraco major version. Install the package that matches the Umbraco version of your site:
+
+| Umbraco | Umbraco Engage | Package |
+| --- | --- | --- |
+| 17 | 17.5.0 or later | `@umbraco-engage/mcp@lts-17` |
+| 18 | 18.2.0 or later | `@umbraco-engage/mcp` |
+
+The package was previously published as `@umbraco-engage/mcp-dev`. The command is now `engage-mcp-server` (it was `umbraco-engage-mcp-dev`), so also update any script that runs the old command. If your MCP client configuration still uses the old name, change it to the package in the table.
+
+The Umbraco 17 line is published under the `lts-17` tag. The `latest` tag points to the Umbraco 18 line.
+
+Umbraco Engage changed its Management API in 17.5.0, so the Umbraco 17 line needs Umbraco Engage 17.5.0 or later. From 17.5.0, A/B tests and personalizations reference goals, projects, and segments by key instead of by numeric ID.
+
+When the server starts, it also reads the installed Umbraco Engage version. On an earlier release, the server shows a warning. The A/B test, personalization, analytics query, and related tools then return an error that names the version they need. All other tools work as normal. If the server cannot read the Engage version, it does not block any tools.
 
 ## Intended audience
 
@@ -30,7 +47,7 @@ Example use cases:
 
 * **Analyzing and reporting on visitor behavior** - Ask an LLM to summarize analytics trends, goal completions, or A/B test results in plain language.
 * **Automating campaign and personalization setup** - Create segments, personas, applied personalization rules, and A/B tests through conversational commands instead of clicking through the backoffice.
-* **Combining Engage and CMS context** - Use the chained `cms:` tools to look up real documents, media, or content types while configuring Engage features that target them.
+* **Combining Engage and CMS context** - Use the chained `cms--` tools to look up real documents, media, or content types while configuring Engage features that target them.
 * **Integrating into modern development workflows** - Use the Engage MCP Server alongside other MCP servers such as Playwright MCP or GitHub MCP.
 
 **Not recommended for non-developers**
@@ -62,7 +79,7 @@ The same setup pattern applies here, using the Engage server's package instead o
   "mcpServers": {
     "umbraco-engage": {
       "command": "npx",
-      "args": ["@umbraco-engage/mcp-dev"],
+      "args": ["-y", "@umbraco-engage/mcp@lts-17"],
       "env": {
         "NODE_TLS_REJECT_UNAUTHORIZED": "0",
         "UMBRACO_CLIENT_ID": "your-api-user-id",
