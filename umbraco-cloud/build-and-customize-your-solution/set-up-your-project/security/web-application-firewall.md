@@ -55,6 +55,8 @@ Umbraco Cloud always lets its own traffic through on these two addresses. The fo
 * **Internal monitoring** on the default address.
 * **Deployments between environments** on the deployment address.
 
+<figure><img src="../../../.gitbook/assets/waf-deployment-address.png" alt="The Allow and Block steps of a deployment address, with two entries marked Always allowed by Umbraco above three allowed IP addresses."><figcaption><p>The steps of a deployment address, with the entries that are always allowed by Umbraco.</p></figcaption></figure>
+
 {% hint style="info" %}
 The deployment address also has its own IP filter. See the [Management API Security](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md) article.
 {% endhint %}
@@ -79,11 +81,13 @@ A number next to an environment shows how many of its domains need your attentio
 
 The page has the following sections:
 
-* **Status overview** - How many domains in the environment are protected, and how many domains each step is switched on for.
+* **Status overview** - How many domains in the environment are protected. When a domain needs your attention, the overview also shows how many domains each step is switched on for.
 * **Default settings** - The settings used by every new domain, and the domains that follow them.
 * **Domains with own settings** - The domains that have settings of their own.
 * **Umbraco addresses** - The default address and the deployment address.
 * **Test a visitor** - A preview of what your settings do to a request.
+
+<figure><img src="../../../.gitbook/assets/waf-page-overview.png" alt="The Web Application Firewall page with the status overview, the default settings, two domains with own settings, and the two Umbraco addresses."><figcaption><p>The Web Application Firewall page for the Live environment.</p></figcaption></figure>
 
 Each domain and address shows its status:
 
@@ -116,6 +120,8 @@ Open the **Default settings**, a domain, or an Umbraco address to see its steps.
 
 Saved settings are applied in the background. They usually take effect within a few minutes.
 
+<figure><img src="../../../.gitbook/assets/waf-domain-steps.png" alt="A domain with own settings, showing the Allow entries, Managed Block switched on, and the Challenge and Block criteria."><figcaption><p>The four steps of a domain with own settings.</p></figcaption></figure>
+
 ### Allow
 
 Allow is the single list of exceptions. Each entry names a group of requests and the steps those requests skip.
@@ -126,6 +132,8 @@ An IP entry is a single IP address or a range. A range is written in Classless I
 2. Choose the **Type** and fill in the value.
 3. Select the steps the entry skips under **Skips**.
 4. Select **Add**.
+
+<figure><img src="../../../.gitbook/assets/waf-allow-add-entry.png" alt="The Allow step with five entries and the form for a new IP / CIDR entry that skips Block."><figcaption><p>Adding an Allow entry for an IP address.</p></figcaption></figure>
 
 The following entry types are available:
 
@@ -202,7 +210,11 @@ Use **Test a visitor** to check a specific request, for example one from your of
 2. Choose a sample **Visitor**, or fill in the country, IP address, path, user agent, and scores.
 3. Read the result for each step.
 
+<figure><img src="../../../.gitbook/assets/waf-test-a-visitor.png" alt="Test a visitor for a visitor from Russia, where the Block step stops the request with a 403 error."><figcaption><p>A sample visitor that is stopped by the Block step.</p></figcaption></figure>
+
 The result shows the step that stops the request, or that the request reaches the site.
+
+<figure><img src="../../../.gitbook/assets/waf-test-a-visitor.gif" alt="Choosing four sample visitors in Test a visitor and seeing the result for each step change."><figcaption><p>The result changes with the sample visitor.</p></figcaption></figure>
 
 {% hint style="info" %}
 The result is a preview. Umbraco Cloud makes the real decision when a request arrives.
@@ -217,6 +229,8 @@ Pausing lets every request through on one domain or address, while your settings
 3. Select **Save changes**.
 
 The other steps are not applied while protection is paused. Select **Resume protection** and save to apply them again.
+
+<figure><img src="../../../.gitbook/assets/waf-pause-protection.png" alt="A domain with the status Paused, a notice that Allow lets every visitor through, and the Resume protection button."><figcaption><p>A domain with protection paused.</p></figcaption></figure>
 
 ## Common setups
 
