@@ -80,10 +80,10 @@ Note the Worker's URL from the deploy output, for example `https://my-umbraco-mc
 
 ## 5. Wire It Into Umbraco
 
-Install [`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) in your Umbraco project. It's currently prerelease-only, so pass `--prerelease`:
+Install [`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) in your Umbraco project. The package is versioned to match your Umbraco major, so pin it to the `18.x` line:
 
 ```bash
-dotnet add package Umbraco.Mcp.HostedAuth --prerelease
+dotnet add package Umbraco.Mcp.HostedAuth --version "18.*"
 ```
 
 List the Worker under `HostedMcp:Clients` in `appsettings.json`:

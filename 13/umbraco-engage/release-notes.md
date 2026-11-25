@@ -16,6 +16,10 @@ When upgrading to a major version, be sure to look at the breaking changes outli
 
 This section contains the release notes for Umbraco Engage 13, including all changes for this version.
 
+[**13.8.3**](https://www.nuget.org/packages/Umbraco.Engage/13.8.3) **(November 17th 2026)**
+
+Resolves security advisory [GHSA-gq5w-hprc-q59x](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-gq5w-hprc-q59x)
+
 [**13.8.2**](https://www.nuget.org/packages/Umbraco.Engage/13.8.2) **(October 29th 2026)**
 
 * Updated `Umbraco.Licenses` to 13.3.6. This fixes a rare startup failure with the error "Unable to verify license for Umbraco.Engage. The details provided do not match the signature", caused by SQL Server `datetime` precision ([Issue #110](https://github.com/umbraco/Umbraco.Engage.Issues/issues/110)).

@@ -39,7 +39,9 @@ Use the environment dropdown to select which environment (for example, Live, Sta
 
 ### Hostname Selector
 
-The hostname selector lets you pick one or more custom hostnames associated with your project. Selecting at least one hostname **enables edge analytics** — the Requests and Data Transfer tiles, edge metrics on the chart, and the traffic breakdown tables.
+The hostname selector lists the default hostname of the selected environment alongside the custom hostnames added to that environment. You can select any combination of default and custom hostnames. Selecting at least one hostname **enables edge analytics** — the Requests and Data Transfer tiles, edge metrics on the chart, and the traffic breakdown tables.
+
+The default hostname follows the `*.{region}.umbraco.io` pattern, for example `dev-snoopy.euwest01.umbraco.io`. An environment without custom hostnames starts with the default hostname selected, so edge analytics is available before you add a custom hostname. For more information about default and custom hostnames, see [Manage Hostnames](../../go-live/manage-hostnames/README.md).
 
 {% hint style="info" %}
 Edge analytics data is only available when at least one hostname is selected.
@@ -309,7 +311,7 @@ Cloudflare edge analytics has the following constraints:
 
 * Data is available for up to **90 days** in the past.
 * A single time range query can span at most **30 days**.
-* Select at least one hostname.
+* Select at least one hostname. Both the default hostname and custom hostnames are supported.
 * The page displays a notice when the selected time range is too far back, the time range is too wide, or extends into the future.
 * Cloudflare applies **adaptive sampling** to high-traffic datasets. For projects with high request volumes, Cloudflare samples the data and extrapolates totals. The edge tiles, chart, and breakdown tables show estimates rather than exact counts. Cloudflare does not sample smaller projects, and the sampling thresholds are not user-configurable.
 

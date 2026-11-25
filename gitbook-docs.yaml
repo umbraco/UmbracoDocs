@@ -148,6 +148,12 @@ site:
           icon: basket-shopping-simple
           children:
             - type: space
+              key: space-44
+              title: 19.latest (RC)
+              path: 19.latest
+              content:
+                directory: ./19/umbraco-commerce
+            - type: space
               key: space-29
               title: 18.latest
               path: 18.latest
@@ -205,6 +211,12 @@ site:
           description: ""
           icon: handshake-angle
           children:
+            - type: space
+              key: space-45
+              title: 19.latest (RC)
+              path: 19.latest
+              content:
+                directory: ./19/umbraco-engage
             - type: space
               key: space-30
               title: 18.latest
@@ -295,6 +307,12 @@ site:
           description: ""
           icon: list-check
           children:
+            - type: space
+              key: space-46
+              title: 19.latest (RC)
+              path: 19.latest
+              content:
+                directory: ./19/umbraco-workflow
             - type: space
               key: space-27
               title: 18.latest
@@ -392,6 +410,13 @@ site:
           description: ""
           icon: mcp
           children:
+            - type: space
+              key: space-47
+              title: 19.latest (RC)
+              path: 19.latest
+              draft: true
+              content:
+                directory: ./19/umbraco-in-ai
             - type: space
               key: space-33
               title: 18.latest

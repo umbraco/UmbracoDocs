@@ -2,10 +2,41 @@
 
 ## Key Takeaways
 
+* **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
+* **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
 * **Web Application Firewall** - Decide which requests reach each of your sites. Allow, challenge, or block requests for each domain from the Cloud Portal.
+* **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+* **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
+
+## Recommendations
+
+Recommendations check your project setup against Umbraco Cloud best practices, so you can spot gaps in security, performance, and operations before they turn into problems. Think of them as Umbraco CMS Health Checks for your hosting setup. Each check tells you what to change and how. Find them under **Insights** -> **Recommendations** on your project in the Cloud Portal.
+
+The checks cover four areas:
+
+* **Security** - For example, WAF rules, legacy TLS cipher suites, Production runtime mode, and SQL firewall rules.
+* **Performance** - CDN caching and cache TTL on custom hostnames.
+* **Best practices** - The `Umbraco.Cloud.Cms` package and Models Builder mode on the live environment.
+* **Operations** - Uptime monitoring and alert rules for the project.
+
+Each result is marked **Critical**, **To fix**, **To review**, or **Passing**, so you know where to start.
+
+<figure><img src="../../.gitbook/assets/cloud-recommendations-project.png" alt="The project Recommendations page showing checks passing, the checks to fix on Live by rating, a summary for each environment, and checks passing by category on Live"><figcaption><p>The project view shows what to fix on each environment, starting with Live.</p></figcaption></figure>
+
+Not every best practice fits every project. If a check does not apply to yours, disable it for the project or for your whole organization. Disabled checks do not count in the score, so the score reflects what matters for your project.
+
+The score counts the checks that pass, and the trend shows how your setup improves over time. When you fix something, the results update within about 15 minutes.
+
+Organization admins get an overview of every project in the organization under **Overview** -> **Recommendations**, so you can see where to focus across all your projects.
+
+<figure><img src="../../.gitbook/assets/cloud-recommendations-organization.png" alt="The organization Recommendations dashboard showing how many projects pass all checks, the single fix that affects the most projects, projects grouped by number of failing checks, and failing checks by category"><figcaption><p>The organization view shows where to focus across all your projects.</p></figcaption></figure> 
+
+Recommendations grow with the platform. New checks are added over time, including checks that point you to new Umbraco Cloud features your project could benefit from.
+
+For now, access to Recommendations is limited to project admins and organization admins. For more details, see the [Recommendations](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md) documentation.
 
 ## Alerting and Notifications
 
@@ -53,6 +84,14 @@ A reroll generates one new key and applies the new key to every environment in t
 
 Only project admins can reroll the key. The page shows the status of each environment while the reroll runs.
 
+## Default hostnames on Traffic & Performance
+
+The hostname selector on the **Traffic & Performance** page now lists the default hostname of an environment alongside its custom hostnames. You can select any combination of hostnames to see edge requests, data transfer, and the traffic breakdown tables.
+
+Environments without custom hostnames previously showed no edge data. These environments now start with the default hostname selected. Edge analytics is therefore available on any environment, for example a Development environment or a project that has not gone live yet.
+
+For more details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#hostname-selector) documentation.
+
 ## Web Application Firewall
 
 The new Web Application Firewall page lets you decide which requests reach each of your sites. Find the page under **Security** -> **Web Application Firewall** on your project in the Cloud Portal.
@@ -74,3 +113,19 @@ You choose who is challenged or blocked by continent, country, path, verified bo
 The WAF settings under **Transport Security** keep working next to the new page.
 
 For more details, see the [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) documentation.
+
+## Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4
+
+These releases update the `Microsoft.AspNetCore.SignalR.StackExchangeRedis` dependency to version 10.0.15. The new version fixes a high-severity denial-of-service vulnerability in the ASP.NET Core SignalR Redis backplane. For details, see [CVE-2026-114147](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm).
+
+`Umbraco.Cloud.Cms` only uses the SignalR Redis backplane on projects with Load Balancing enabled. Projects without Load Balancing do not run the affected code.
+
+The releases also raise the minimum version of the related `Microsoft.Extensions` packages to 10.0.15. Existing projects receive the new versions through automatic upgrades.
+
+## Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5
+
+These releases fix an Umbraco ID login failure that versions 17.2.4 and 18.0.4 introduced. On projects that use `Microsoft.Data.SqlClient` 7, backoffice login with Umbraco ID failed with a `FileNotFoundException` for `Microsoft.Identity.Client`.
+
+Versions 17.2.4 and 18.0.4 raised the minimum version of all related `Microsoft.Extensions` packages to 10.0.15. The new releases apply the 10.0.15 minimum only to `Microsoft.AspNetCore.SignalR.StackExchangeRedis`. The fix for the [SignalR Redis vulnerability](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm) stays in place, and the other packages return to their previous minimum versions.
+
+Existing projects receive the new versions through automatic upgrades.
