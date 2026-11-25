@@ -6,6 +6,7 @@
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
+* **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
 * **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
 
@@ -81,6 +82,14 @@ A reroll generates one new key and applies the new key to every environment in t
 * **Baseline projects share one key.** Rerolling the key on a baseline project also applies the new key to every child project. The key cannot be rerolled from a child project.
 
 Only project admins can reroll the key. The page shows the status of each environment while the reroll runs.
+
+## Default hostnames on Traffic & Performance
+
+The hostname selector on the **Traffic & Performance** page now lists the default hostname of an environment alongside its custom hostnames. You can select any combination of hostnames to see edge requests, data transfer, and the traffic breakdown tables.
+
+Environments without custom hostnames previously showed no edge data. These environments now start with the default hostname selected. Edge analytics is therefore available on any environment, for example a Development environment or a project that has not gone live yet.
+
+For more details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#hostname-selector) documentation.
 
 ## Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4
 
