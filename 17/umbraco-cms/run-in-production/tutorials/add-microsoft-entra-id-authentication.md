@@ -391,7 +391,7 @@ logins.AddBackOfficeLogin(
     backOfficeAuthenticationBuilder =>
     {
         backOfficeAuthenticationBuilder.AddMicrosoftAccount(
-           BackOfficeAuthenticationBuilder.SchemeForBackOffice(EntraIdBackOfficeExternalLoginProviderOptions.SchemeName)!,
+            BackOfficeAuthenticationBuilder.SchemeForBackOffice(EntraIdBackOfficeExternalLoginProviderOptions.SchemeName)!,
             options => { /* set in EntraIdBackOfficeAuthenticationOptions */ });
     },
     options =>
