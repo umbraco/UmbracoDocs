@@ -2,14 +2,36 @@
 
 ## Key Takeaways
 
+* **Web Application Firewall** - Decide which requests reach each of your sites. Allow, challenge, or block requests for each domain from the Cloud Portal.
 * **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
 * **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
-* **Web Application Firewall** - Decide which requests reach each of your sites. Allow, challenge, or block requests for each domain from the Cloud Portal.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
 * **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
+
+## Web Application Firewall
+
+The new Web Application Firewall page lets you decide which requests reach each of your sites. Find the page under **Security** -> **Web Application Firewall** on your project in the Cloud Portal.
+
+Every request passes through four steps, in this order:
+
+* **Allow** - Lets the requests you choose skip the steps below. You can allow by IP address, path, country, or verified bot category.
+* **Managed Block** - Stops requests that look like known attacks, such as SQL injection and cross-site scripting (XSS).
+* **Challenge** - Answers with a "prove you are human" page. A person passes the page, a bot does not.
+* **Block** - Answers with a 403 error.
+
+You choose who is challenged or blocked by continent, country, path, verified bot category, and bot score. Block can also match IP addresses and user agents.
+
+* **Settings for each domain.** A new domain starts with the default settings of its environment. A domain can also have its own settings.
+* **Umbraco addresses.** You can block requests on the default `umbraco.io` address and on the deployment address of an environment.
+* **Test a visitor.** Preview what your settings do to a request.
+* **Pause protection.** Let every request through on one domain while your settings are kept.
+
+The WAF settings under **Transport Security** keep working next to the new page.
+
+For more details, see the [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) documentation.
 
 ## Recommendations
 
@@ -91,28 +113,6 @@ The hostname selector on the **Traffic & Performance** page now lists the defaul
 Environments without custom hostnames previously showed no edge data. These environments now start with the default hostname selected. Edge analytics is therefore available on any environment, for example a Development environment or a project that has not gone live yet.
 
 For more details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#hostname-selector) documentation.
-
-## Web Application Firewall
-
-The new Web Application Firewall page lets you decide which requests reach each of your sites. Find the page under **Security** -> **Web Application Firewall** on your project in the Cloud Portal.
-
-Every request passes through four steps, in this order:
-
-* **Allow** - Lets the requests you choose skip the steps below. You can allow by IP address, path, country, or verified bot category.
-* **Managed Block** - Stops requests that look like known attacks, such as SQL injection and cross-site scripting (XSS).
-* **Challenge** - Answers with a "prove you are human" page. A person passes the page, a bot does not.
-* **Block** - Answers with a 403 error.
-
-You choose who is challenged or blocked by continent, country, path, verified bot category, and bot score. Block can also match IP addresses and user agents.
-
-* **Settings for each domain.** A new domain starts with the default settings of its environment. A domain can also have its own settings.
-* **Umbraco addresses.** You can block requests on the default `umbraco.io` address and on the deployment address of an environment.
-* **Test a visitor.** Preview what your settings do to a request.
-* **Pause protection.** Let every request through on one domain while your settings are kept.
-
-The WAF settings under **Transport Security** keep working next to the new page.
-
-For more details, see the [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) documentation.
 
 ## Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4
 
