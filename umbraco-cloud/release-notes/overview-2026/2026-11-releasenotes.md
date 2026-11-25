@@ -92,8 +92,8 @@ The releases also raise the minimum version of the related `Microsoft.Extensions
 
 ## Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5
 
-These releases fix an Umbraco ID login failure introduced in 17.2.4 and 18.0.4. On projects that use `Microsoft.Data.SqlClient` 7, backoffice login with Umbraco ID failed with a `FileNotFoundException` for `Microsoft.Identity.Client`.
+These releases fix an Umbraco ID login failure that versions 17.2.4 and 18.0.4 introduced. On projects that use `Microsoft.Data.SqlClient` 7, backoffice login with Umbraco ID failed with a `FileNotFoundException` for `Microsoft.Identity.Client`.
 
-Versions 17.2.4 and 18.0.4 raised the minimum version of all related `Microsoft.Extensions` packages to 10.0.15. The new releases apply the 10.0.15 minimum only to `Microsoft.AspNetCore.SignalR.StackExchangeRedis`. The fix for [CVE-2026-114147](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm) stays in place, and the other packages return to their previous minimum versions.
+Versions 17.2.4 and 18.0.4 raised the minimum version of all related `Microsoft.Extensions` packages to 10.0.15. The new releases apply the 10.0.15 minimum only to `Microsoft.AspNetCore.SignalR.StackExchangeRedis`. The fix for the [SignalR Redis vulnerability](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm) stays in place, and the other packages return to their previous minimum versions.
 
 Existing projects receive the new versions through automatic upgrades.
