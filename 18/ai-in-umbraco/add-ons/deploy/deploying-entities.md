@@ -116,6 +116,7 @@ data/Revision/umbraco-ai-prompt__article-summarizer_abcd1234.uda
 - Scoping rules
 - Option count, IncludeEntityContext flag, IsActive flag
 - Tags
+- The user groups that can use the prompt, by alias
 
 **Dependencies:**
 - If linked to a Profile, deploys the Profile first
@@ -135,6 +136,7 @@ data/Revision/umbraco-ai-agent__content-helper_abcd1234.uda
   - **Standard agents**: Instructions, allowed tool IDs, allowed tool scope IDs, context IDs, per-user-group permission overrides, optional output schema
   - **Orchestrated agents**: Workflow ID and workflow-specific settings
 - Surface IDs and scoping rules
+- The user groups that can use the agent, by alias
 - Guardrail IDs
 - Profile reference (if specified)
 - IsActive flag
@@ -158,6 +160,16 @@ User groups are not added as explicit Deploy dependencies. Create them in the ta
 {% hint style="warning" %}
 
 If an agent denies tools for a user group that doesn't exist in the target environment, the import fails. Deploy doesn't drop a deny, because that would give the group's users tools you withheld. Create the user group with the same alias, then deploy the agent again.
+
+{% endhint %}
+
+### User Groups That Can Use an Agent or Prompt
+
+An agent or prompt can be limited to chosen user groups. Deploy writes these groups by alias, and the import matches each alias to the user group with the same alias on the target site. The deployed list replaces the list on the target site.
+
+{% hint style="warning" %}
+
+If one of the user groups doesn't exist on the target site, the import fails and the error names the missing alias. Deploy never drops the group, because an agent or prompt with no groups left is open to everyone. Create the user group with the same alias, then deploy again.
 
 {% endhint %}
 

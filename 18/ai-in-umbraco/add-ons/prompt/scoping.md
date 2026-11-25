@@ -187,6 +187,37 @@ Scope = new AIPromptScope
 }
 ```
 
+## Limiting a Prompt to User Groups
+
+Scope controls where a prompt runs. The **Access** box controls who can use it. By default, every backoffice user can use every prompt.
+
+To limit a prompt to chosen user groups:
+
+1. Go to **AI** > **Prompts** and open the prompt.
+2. Open the **Availability** tab.
+3. In the **Access** box, select **Choose** under **User Groups** and pick one or more groups.
+4. Save the prompt.
+
+![The Access box on a prompt's Availability tab, with the Editors user group chosen](../../.gitbook/assets/prompt-access-user-groups.png)
+
+A user can use the prompt when they are in at least one of the chosen groups. Leave the list empty to let every backoffice user use it. Existing prompts start with an empty list, so an upgrade changes nothing.
+
+The limit applies to every user, administrators included, and works together with the prompt's scope. Users outside the chosen groups:
+
+- Don't see the prompt as a property action or in the rich text editor toolbar.
+- Get a `403` response with the title "Prompt not available" if they call the execute endpoint directly.
+- Can't see the prompt's version history, unless they have the **Manage prompts** permission.
+
+If a chosen user group is deleted, the prompt keeps the entry and it matches no one. The list shows it as **Deleted user group** with a **Deleted** tag, so you can remove it.
+
+Users with the **Manage prompts** permission see and edit every prompt in the AI section. The rules for changing the **User Groups** list are the same as for agents:
+
+- Administrators can add and remove any group.
+- Other users can only change the list on a prompt they can use, and only add or remove groups they belong to.
+- Only an administrator can remove the last group, because an empty list opens the prompt to everyone.
+
+For more about the **Manage prompts** permission, see [User Permissions](../../backoffice/user-permissions.md).
+
 ## Enforcement
 
 Scope validation runs both in the backoffice (to decide which prompts appear on a given property) and server-side when a prompt is executed. A prompt execution request that does not match any allow rule, or that matches a deny rule, is rejected by the `AIPromptScopeValidator`.

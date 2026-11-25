@@ -83,6 +83,8 @@ When you run your Umbraco site, a new **AI** section will appear in the backoffi
 
 ![User Groups edit screen showing AI section access](../.gitbook/assets/user-group-ai-section-access.png)
 
+The **AI** box on the same screen controls what the group can change in the AI section, such as connections, profiles, or agents. A new installation gives the Administrators group every AI permission. When you upgrade, each user group that already has the AI section gets every AI permission. See [User Permissions](../backoffice/user-permissions.md).
+
 ## Next Steps
 
 {% content-ref url="first-connection.md" %}

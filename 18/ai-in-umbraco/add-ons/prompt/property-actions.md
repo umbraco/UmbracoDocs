@@ -289,6 +289,7 @@ Only active prompts appear as property actions. Deactivate a prompt to remove it
 - Check the scope allows the content type
 - Ensure the property editor is compatible
 - Confirm a default chat profile is configured
+- Check the prompt's **Access** box. A prompt limited to user groups only appears for members of those groups. See [Limiting a Prompt to User Groups](scoping.md#limiting-a-prompt-to-user-groups).
 
 ### Wrong Context
 

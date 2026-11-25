@@ -17,6 +17,8 @@ Umbraco.AI adds an AI section to the Umbraco backoffice where you can manage con
 
 {% hint style="info" %}
 The AI section is a standalone section in the backoffice (not under Settings). If you don't see it, ensure your user group has been granted access to the AI section, then refresh your browser.
+
+What a user can change inside the AI section depends on the AI permissions of their user groups. See [User Permissions](user-permissions.md).
 {% endhint %}
 
 ## What You Can Manage
@@ -113,4 +115,8 @@ Connection: "OpenAI Production"
 
 {% content-ref url="usage-analytics.md" %}
 [Usage Analytics](usage-analytics.md)
+{% endcontent-ref %}
+
+{% content-ref url="user-permissions.md" %}
+[User Permissions](user-permissions.md)
 {% endcontent-ref %}

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Configure tool permissions for agents using scopes, explicit tool lists, and
-  user group overrides.
+  Limit who can use an agent, and configure its tool permissions using scopes,
+  explicit tool lists, and user group overrides.
 ---
 
 # Permissions
@@ -15,6 +15,41 @@ Tool permissions apply to **standard agents** only. **Orchestrated agents** mana
 Tool permissions are configured in the **Governance** tab of the agent workspace, alongside [guardrails](../../concepts/guardrails.md).
 
 ![The agent Governance tab showing tool permission configuration](../../.gitbook/assets/agent-governance-tab.png)
+
+## Limiting an Agent to User Groups
+
+By default, every backoffice user can use every agent. To limit an agent to chosen user groups:
+
+1. Go to **AI** > **Agents** and open the agent.
+2. Open the **Availability** tab.
+3. In the **Access** box, select **Choose** under **User Groups** and pick one or more groups.
+4. Save the agent.
+
+![The Access box on an agent's Availability tab, with the Editors and Writers user groups chosen](../../.gitbook/assets/agent-access-user-groups.png)
+
+A user can use the agent when they are in at least one of the chosen groups. Leave the list empty to let every backoffice user use it. Existing agents start with an empty list, so an upgrade changes nothing.
+
+The limit applies to every user, administrators included, and works together with the agent's [surfaces and scope](scopes.md). Users outside the chosen groups:
+
+* Don't see the agent in Contextual Copilot, Copilot Workspace, or any agent picker.
+* Never get the agent through automatic agent selection.
+* Get a `403` response with the title "Agent not available" if they call a run endpoint for it directly.
+* Can't see the agent's version history, unless they have the **Manage agents** permission.
+
+In Copilot Workspace, a conversation stays readable after its agent is limited away from the user. If the user picked that agent for the conversation, sending a new message shows the error "The specified agent is not available to you." For more details, see [Copilot Workspace](../copilot-workspace/copilot-workspace.md).
+
+If a chosen user group is deleted, the agent keeps the entry and it matches no one. The list shows it as **Deleted user group** with a **Deleted** tag, so you can remove it.
+
+### Who Can Change the List
+
+Users with the **Manage agents** permission see and edit every agent in the AI section, including agents they can't use. Changing the **User Groups** list has extra rules, which follow the rules Umbraco uses for assigning user groups:
+
+* Administrators can add and remove any group.
+* Other users can only change the list on an agent they can use. Otherwise, the list is read-only.
+* Other users can only add or remove groups they belong to.
+* Only an administrator can remove the last group, because an empty list opens the agent to everyone.
+
+A save that breaks these rules is refused and nothing is saved. For more about the **Manage agents** permission, see [User Permissions](../../backoffice/user-permissions.md).
 
 ## Permission System Overview
 
@@ -158,6 +193,8 @@ User group overrides are **additive and subtractive**, not replacement:
 {% hint style="info" %}
 `UserGroupPermissions` is an `IReadOnlyDictionary<Guid, AIAgentUserGroupPermissions>` keyed by user group ID. The user group ID is the dictionary key, not a property on `AIAgentUserGroupPermissions`.
 {% endhint %}
+
+Administrators can change the overrides of every user group. Other users can only add, change, or remove the overrides of user groups they belong to. A save that changes another group's override is refused, and nothing is saved.
 
 ### Configuring User Group Overrides
 
