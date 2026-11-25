@@ -93,7 +93,13 @@ By default Umbraco will not allow creation of more than one member account with 
 
 ### Allowed user name characters
 
-Defines the allowed characters for a username.
+Defines the characters allowed in a username, for both Users and Members. The check also applies when the username is an email address. This includes accounts where [Username is email](#username-is-email) is `true`, and accounts created by external login auto-linking.
+
+The default doesn't include the apostrophe (`'`), so email addresses such as `o'brien@example.com` are rejected with an `Invalid username` error. To allow them, add the apostrophe to the default value:
+
+```json
+"AllowedUserNameCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+\\'"
+```
 
 ### BackOffice Host
 
