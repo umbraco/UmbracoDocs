@@ -6,8 +6,10 @@
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
 * **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
+* **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
 * **Firewall events on Traffic & Performance** - See which requests the firewall blocked, challenged, or allowed on your hostnames, and which rules acted.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+* **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
 
 ## Recommendations
 
@@ -82,6 +84,14 @@ A reroll generates one new key and applies the new key to every environment in t
 
 Only project admins can reroll the key. The page shows the status of each environment while the reroll runs.
 
+## Default hostnames on Traffic & Performance
+
+The hostname selector on the **Traffic & Performance** page now lists the default hostname of an environment alongside its custom hostnames. You can select any combination of hostnames to see edge requests, data transfer, and the traffic breakdown tables.
+
+Environments without custom hostnames previously showed no edge data. These environments now start with the default hostname selected. Edge analytics is therefore available on any environment, for example a Development environment or a project that has not gone live yet.
+
+For more details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#hostname-selector) documentation.
+
 ## Firewall events on Traffic & Performance
 
 The **Traffic & Performance** page now shows what the firewall did to the traffic on your hostnames. Find the page under **Insights** -> **Traffic & Performance** on your project in the Cloud Portal.
@@ -112,3 +122,11 @@ These releases update the `Microsoft.AspNetCore.SignalR.StackExchangeRedis` depe
 `Umbraco.Cloud.Cms` only uses the SignalR Redis backplane on projects with Load Balancing enabled. Projects without Load Balancing do not run the affected code.
 
 The releases also raise the minimum version of the related `Microsoft.Extensions` packages to 10.0.15. Existing projects receive the new versions through automatic upgrades.
+
+## Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5
+
+These releases fix an Umbraco ID login failure that versions 17.2.4 and 18.0.4 introduced. On projects that use `Microsoft.Data.SqlClient` 7, backoffice login with Umbraco ID failed with a `FileNotFoundException` for `Microsoft.Identity.Client`.
+
+Versions 17.2.4 and 18.0.4 raised the minimum version of all related `Microsoft.Extensions` packages to 10.0.15. The new releases apply the 10.0.15 minimum only to `Microsoft.AspNetCore.SignalR.StackExchangeRedis`. The fix for the [SignalR Redis vulnerability](https://github.com/advisories/GHSA-wr8v-9x5q-ggcm) stays in place, and the other packages return to their previous minimum versions.
+
+Existing projects receive the new versions through automatic upgrades.
