@@ -103,7 +103,7 @@ Displays the total data transferred from your site through the edge. High values
 
 #### Mitigated Requests
 
-Displays the number of requests that a security product stopped or challenged.
+Displays the number of requests that the Web Application Firewall stopped or challenged.
 
 The value is estimated from sampled traffic. It can differ from the counts in the [Firewall](#firewall) section, which are based on firewall events.
 
@@ -307,7 +307,7 @@ Shows values of the `X-Requested-With` HTTP header, commonly used to identify AJ
 
 The **Firewall** section shows what the firewall did to the traffic on the selected hostnames. You can see how many requests were blocked, challenged, or allowed, which rules acted, and where the requests came from.
 
-The section covers your own [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings and the protection Cloudflare applies, such as managed rules and DDoS protection.
+The section covers your [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings, such as your specific firewall rules and Managed Block. The section also covers DDoS protection, the Browser Integrity Check, and rate limiting.
 
 The section is collapsed by default. Select **Firewall** to expand it. The section follows the environment, hostnames, and time range selected at the top of the page.
 
@@ -352,8 +352,8 @@ The chart can also show an **Other** group. The group holds events with an actio
 
 Two lists show which rules produced the events, each with an event count:
 
-* **Your firewall settings** — The firewall settings of your project that acted, for example a Challenge for all visitors.
-* **Cloudflare managed rules** — The rules Cloudflare maintains to recognize known attacks, for example a request for a version control file.
+* **Your firewall settings** — Your specific firewall rules that acted, for example a Challenge for all visitors.
+* **Cloudflare managed rules** — The Managed Block rules that acted, for example on a request for a version control file. Managed Block is a rule you enable in your firewall settings.
 
 Each list shows up to ten rules. Select a rule to show only the events of that rule in the whole section. The selected rule then appears next to the filter fields. Select the rule again to show all events.
 
@@ -394,13 +394,13 @@ Select a row to see the details of the event. The details are the action with it
 
 <figure><img src="../../.gitbook/assets/tp-firewall-recent-events.png" alt="The Recent events list with one event opened to show the action, hostname, country, network, method, status, source, user agent, and Ray ID."><figcaption><p>The Recent events list with the details of one event.</p></figcaption></figure>
 
-The source tells you which protection produced the event:
+The source tells you which Web Application Firewall setting caused the event:
 
-* Firewall rules
-* Cloudflare managed rules
-* DDoS protection
-* Browser integrity check
-* Rate limiting
+* **Firewall rules** — Your specific firewall rules.
+* **Cloudflare managed rules** — The Managed Block rule.
+* **DDoS protection** — The protection against DDoS attacks.
+* **Browser integrity check** — The Browser Integrity Check, which stops requests with HTTP headers that spammers commonly use.
+* **Rate limiting** — A limit on the number of requests from one client.
 
 The list loads 25 events at a time. Select **Load more** at the end of the list to load older events.
 
@@ -414,7 +414,7 @@ Firewall events have the following constraints:
 * A single time range can span at most **30 days**.
 * Select at least one hostname.
 * Cloudflare samples the events of hostnames with a lot of traffic. The section then states that the counts are estimates.
-* Requests stopped by the **Block** step of the Web Application Firewall produce no firewall event. The section does not show them.
+* Requests stopped by the **Block** step of the Web Application Firewall produce no firewall event. The section does not show them. The **Blocked** tile counts the requests that other settings blocked, such as Managed Block.
 * The section shows a **Too many requests** notice when the events are requested too often. Wait a moment and select **Retry**.
 
 ## Edge Data Granularity

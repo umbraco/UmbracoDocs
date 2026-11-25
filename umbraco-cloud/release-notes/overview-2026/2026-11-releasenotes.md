@@ -90,7 +90,7 @@ A new **Firewall** section shows the following for the selected hostnames and ti
 
 * **Outcomes** - The number of requests that were blocked, challenged, or allowed, and the number of visitors who passed a challenge.
 * **Events over time** - A chart of the firewall events, colored by outcome.
-* **Rules** - Your own firewall settings and the Cloudflare managed rules that acted, each with an event count.
+* **Rules** - Your specific firewall rules and the Managed Block rules that acted, each with an event count.
 * **Top lists** - The IP addresses, paths, networks, and hostnames with the most events.
 * **Recent events** - The individual events, with filters for IP address, country, and path.
 
