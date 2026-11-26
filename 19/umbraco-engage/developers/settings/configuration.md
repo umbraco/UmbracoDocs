@@ -10,7 +10,7 @@ Umbraco Engage ships with an `appsettings-schema.Umbraco.Engage.json` file, allo
 
 The default configuration will look like this:
 
-{% code title="appsettings-schema.Umbraco.Engage.json" %}
+{% code title="appsettings.json" %}
 ```json
 {
   "Engage": {
@@ -86,7 +86,7 @@ The default configuration will look like this:
       "DataGenerationEnabled": true,
       "DataGenerationTime": "",
       "Timezone": null,
-      "QueryCommandTimeout": 120,
+      "QueryCommandTimeout": 120
     },
     "Cockpit": {
       "EnableInjection": true,

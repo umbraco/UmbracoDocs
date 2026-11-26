@@ -69,7 +69,7 @@ See [version-specific-upgrade-notes.md](upgrading/version-specific-upgrade-notes
 * Engage segments are now added to the document workspace by an Engage front-end segment provider. The CMS `GET /segment` endpoint no longer returns Engage segments.
 * Previewing a personalization or an A/B test variant now shows the variant without a visitor cookie. Previously, the editor saw the default content unless the browser already had the Engage visitor cookie. Preview no longer creates a visitor cookie or profile.
 * Fixed the **Save** and **Submit** buttons not being enabled in the "Create personalized variant" dialog.
-* Added the `segmentRuleProvider` extension type, so third-party packages can register their own segment rules. The Cockpit reads the registered segment rule manifests instead of a fixed list, using the `cockpitSegmentRuleProvider` type.
+* Added the `cockpitSegmentRuleProvider` extension type, so third-party packages can register their own segment rules. The Cockpit reads the registered segment rule manifests instead of a fixed list.
 
 **Analytics and reporting**
 

@@ -16,6 +16,12 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ### 19.0.0
 
+#### Database schema alignment must be complete
+
+Engage 19 checks at startup that the database schema alignment introduced in 17.2.0 is complete. If the `CompleteAlignSchema.sql` script has not been run, the site keeps running, but Engage is disabled until the alignment is complete.
+
+Follow the [Schema Alignment Guide](schema-alignment-guide.md) to complete the alignment before you upgrade.
+
 #### Engage segments no longer come from the CMS segment service
 
 Engage no longer implements the CMS `ISegmentService`. Umbraco CMS 19 no longer limits segments by culture, so Engage supplies the cultures itself. The default CMS implementation returns an empty list for `GET /segment`, so the CMS never serves Engage segments.
@@ -44,7 +50,7 @@ Umbraco CMS 19 no longer uses the `Connect Timeout` connection string value as t
 
 Engage now checks Umbraco user group permission verbs on the server, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`.
 
-A migration moves the settings from the previous per-group permissions table to the new verbs. A user group that previously had no saved Engage permissions will be granted all permissions. Behaviourally, this is equivalent as previous versions defaulted to open rather than closed access.
+A migration moves the settings from the previous per-group permissions table to the new verbs. A user group that previously had no saved Engage permissions will be granted all permissions. This matches previous versions, which defaulted to open access.
 
 After you upgrade, check that your user groups have the access you expect.
 
@@ -54,7 +60,7 @@ The previous permission classes are removed: `IUserGroupPermissionService`, `IUs
 
 The Engage Cockpit has been rewritten with Lit and no longer uses Vue. It follows the user's access to the Engage section and the Read verbs of their user groups.
 
-The Cockpit segment classes are removed: `ICockpitSegmentRuleFactory`, `DefaultCockpitSegmentRuleFactory`, and `CockpitSegment`. To add a segment rule, register a `segmentRuleProvider` extension instead, then expose these to the Cockpit via `cockpitSegmentRuleProvider`.
+The Cockpit segment classes are removed: `ICockpitSegmentRuleFactory`, `DefaultCockpitSegmentRuleFactory`, and `CockpitSegment`. To add a segment rule, register a `cockpitSegmentRuleProvider` extension instead.
 
 #### Reporting generation time
 
