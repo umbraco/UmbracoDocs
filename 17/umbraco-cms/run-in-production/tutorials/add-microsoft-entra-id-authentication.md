@@ -391,7 +391,7 @@ logins.AddBackOfficeLogin(
     backOfficeAuthenticationBuilder =>
     {
         backOfficeAuthenticationBuilder.AddMicrosoftAccount(
-            BackOfficeAuthenticationBuilder.SchemeForBackOffice(EntraIdBackOfficeAuthenticationOptions.SchemeName)!,
+            BackOfficeAuthenticationBuilder.SchemeForBackOffice(EntraIdBackOfficeExternalLoginProviderOptions.SchemeName)!,
             options => { /* set in EntraIdBackOfficeAuthenticationOptions */ });
     },
     options =>
@@ -515,7 +515,7 @@ On the first sign-in, Umbraco creates a new User. Later sign-ins use that link.
 If Microsoft shows an error instead of redirecting back, check the error code:
 
 * `AADSTS50011`: the redirect URI doesn't match. Compare the URI from [Step 1](#step-1-register-the-app-in-entra-id) with `CallbackPath`, including the scheme and port.
-* `AADSTS50194`: the app is single-tenant, but the `/common` endpoints are used. Add the endpoints from [step 2](#step-2-install-the-nuget-package).
+* `AADSTS50194`: the app is single-tenant, but the `/common` endpoints are used. Add the endpoints from [Single-tenant apps](#single-tenant-apps).
 * `AADSTS700016`: the client ID isn't registered. You're likely still using the placeholder values. Replace `YOURCLIENTID` and `YOURCLIENTSECRET` with the values from [Step 1](#step-1-register-the-app-in-entra-id).
 
 For more on auto-linking and other providers, see the [External login providers](../../run-in-production/security/external-login-providers.md) article.
