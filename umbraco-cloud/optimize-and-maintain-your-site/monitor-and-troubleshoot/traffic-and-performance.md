@@ -52,7 +52,7 @@ Edge analytics data is only available when at least one hostname is selected.
 
 The overview section shows summary tiles for key metrics. Five application metric tiles are visible by default. Three edge metric tiles appear when hostnames are selected.
 
-<figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Seven overview tiles: Failed Origin Requests, App Performance, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tp-performance-overview-tiles.png" alt="Eight overview tiles: Failed Origin Requests, App Performance, CPU Usage, Memory Usage, App Service Plan CPU, Edge Requests, Edge Data Transfer, Mitigated Requests."><figcaption><p>Performance overview tiles.</p></figcaption></figure>
 
 Each tile shows the headline value for its metric. Tiles may also display a warning or error indicator when usage approaches plan limits.
 
@@ -309,7 +309,7 @@ Shows values of the `X-Requested-With` HTTP header, commonly used to identify AJ
 
 The **Firewall** section shows what the firewall did to the traffic on the selected hostnames. You can see how many requests were blocked, challenged, or allowed, which rules acted, and where the requests came from.
 
-The section covers your [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings, such as your specific firewall rules and Managed Block. The section also covers DDoS protection, the Browser Integrity Check, and rate limiting.
+The section covers your [Web Application Firewall](../../build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md) settings, such as your specific firewall rules and Managed Block. The section also covers DDoS protection, the Browser Integrity Check, and rate limiting. Umbraco Cloud manages these three protections. They have no settings in the Umbraco Cloud Portal.
 
 The section is collapsed by default. Select **Firewall** to expand it. The section follows the environment, hostnames, and time range selected at the top of the page.
 
@@ -396,7 +396,7 @@ Select a row to see the details of the event. The details are the action with it
 
 <figure><img src="../../.gitbook/assets/tp-firewall-recent-events.png" alt="The Recent events list with one event opened to show the action, hostname, country, network, method, status, source, user agent, and Ray ID."><figcaption><p>The Recent events list with the details of one event.</p></figcaption></figure>
 
-The source tells you which Web Application Firewall setting caused the event:
+The source tells you which Web Application Firewall setting or managed protection caused the event:
 
 * **Firewall rules** — Your specific firewall rules.
 * **Cloudflare managed rules** — The Managed Block rule.
@@ -417,6 +417,8 @@ Firewall events have the following constraints:
 * Select at least one hostname.
 * Cloudflare samples the events of hostnames with a lot of traffic. The section then states that the counts are estimates.
 * Requests stopped by the **Block** step of the Web Application Firewall produce no firewall event. The section does not show them. The **Blocked** tile counts the requests that other settings blocked, such as Managed Block.
+* Requests let through by an Allow entry that skips only Block produce no firewall event. The **Allowed** view does not show them.
+* The default hostname has only the Allow and Block steps, and neither produces a firewall event there. With only the default hostname selected, the section does not show the effect of your firewall settings. Events from other protections, such as DDoS protection, can still appear.
 * The section shows a **Too many requests** notice when the events are requested too often. Wait a moment and select **Retry**.
 
 ## Edge Data Granularity
