@@ -14,7 +14,7 @@ tags:
 `Returns: IPublishedContent` (single item)
 
 {% hint style="info" %}
-The Multi Node Tree Picker is deprecated and hidden by default. Removal is currently proposed for Umbraco 22.
+The Multi Node Tree Picker is deprecated and hidden by default. Removal is scheduled for Umbraco 22 or 26 (to be confirmed).
 
 Set `Umbraco:CMS:DataTypes:OfferDeprecatedPropertyEditors` to `true` in `appsettings.json` to add the MNTP to the property editor options in the backoffice.
 

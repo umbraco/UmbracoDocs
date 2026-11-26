@@ -309,9 +309,9 @@ If Models Builder is enabled you can get the alias of the desired property witho
 
 ## Getting absolute URLs
 
-By default, `link.Url` returns a relative URL for internal content links (for example, /products/, /blog/, and so on). If you need absolute URLs, for example in emails, sitemaps, or cross-domain scenarios, you can use `IPublishedUrlProvider` with `UrlMode.Absolute`. The approach works the same way for the Single URL Picker and the URL Picker.
+By default, `link.Url` returns a relative URL for content and media links (for example, `/products/` or `/media/abc123/logo.png`). If you need absolute URLs, for example in emails, sitemaps, or cross-domain scenarios, you can use `IPublishedUrlProvider` with `UrlMode.Absolute`. The approach works the same way for the Single URL Picker and the URL Picker.
 
-Inject `IPublishedUrlProvider` at the top of your view and resolve internal links using `UrlMode.Absolute`. External and media links are already stored as absolute strings and pass through unchanged.
+Inject `IPublishedUrlProvider` at the top of your view and resolve content and media links using `UrlMode.Absolute`. External links are returned as entered and pass through unchanged.
 
 #### Single URL Picker
 
@@ -324,9 +324,12 @@ Inject `IPublishedUrlProvider` at the top of your view and resolve internal link
     var link = Model.Value<Link>("link");
     if (link != null)
     {
-        var url = link.Type == LinkType.Content
-            ? UrlProvider.GetUrl(Umbraco.Content(link.Udi), UrlMode.Absolute)
-            : link.Url;
+        var url = link.Type switch
+        {
+            LinkType.Content => UrlProvider.GetUrl(Umbraco.Content(link.Udi), UrlMode.Absolute),
+            LinkType.Media => UrlProvider.GetMediaUrl(Umbraco.Media(link.Udi), UrlMode.Absolute),
+            _ => link.Url,
+        };
 
         <a href="@url" target="@link.Target">@link.Name</a>
     }
@@ -347,9 +350,12 @@ Inject `IPublishedUrlProvider` at the top of your view and resolve internal link
         <ul>
             @foreach (var link in links)
             {
-                var url = link.Type == LinkType.Content
-                    ? UrlProvider.GetUrl(Umbraco.Content(link.Udi), UrlMode.Absolute)
-                    : link.Url;
+                var url = link.Type switch
+                {
+                    LinkType.Content => UrlProvider.GetUrl(Umbraco.Content(link.Udi), UrlMode.Absolute),
+                    LinkType.Media => UrlProvider.GetMediaUrl(Umbraco.Media(link.Udi), UrlMode.Absolute),
+                    _ => link.Url,
+                };
 
                 <li><a href="@url" target="@link.Target">@link.Name</a></li>
             }
