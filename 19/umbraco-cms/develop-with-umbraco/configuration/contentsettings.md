@@ -46,7 +46,6 @@ The following snippet will give an overview of the keys and values in the conten
       "PreviewBadge": "<![CDATA[<b>My HTML here</b>]]>",
       "ResolveUrlsFromTextString": false,
       "SortChildrenByFieldFiresNotifications": false,
-      "ShowDeprecatedPropertyEditors": false,
       "ShowDomainWarnings": true,
       "ShowUnroutableContentWarnings": true,
       "EnableMediaRecycleBinProtection": false
@@ -154,12 +153,6 @@ Sorting by a field is available through the Management API, which can reorder a 
 By default (`false`), the children are reordered in a performant "set-based" operation. A single audit entry is written, but no per-item save/sort notifications are fired. As a result, webhooks that depend on notifications are not triggered.
 
 Set this to `true` to restore per-item save/sort notifications (and the webhooks that depend on them). This follows the per-item sort path, accepting the additional performance cost on nodes with many children.
-
-### Show deprecated property editors
-
-This setting is used for controlling whether or not the Data Types marked as obsolete should be visible in the dropdown when creating new Data Types.
-
-By default this is set to `false`. To make the obsolete data types visible in the dropdown change the value to `true`.
 
 ### Show domain warnings
 
