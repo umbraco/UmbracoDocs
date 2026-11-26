@@ -1,6 +1,6 @@
 ---
 tags:
-  - Deprecated
+  - deprecated
 ---
 
 # Multi Node Tree Picker (MNTP)
@@ -10,14 +10,15 @@ tags:
 `UI Alias: Umb.PropertyEditorUi.ContentPicker`
 
 `Returns: IEnumerable<IPublishedContent>` (multiple items)
+
 `Returns: IPublishedContent` (single item)
 
 {% hint style="info" %}
-The Multi Node Tree Picker is deprecated and hidden by default.
+The Multi Node Tree Picker is deprecated and hidden by default. Removal is currently proposed for Umbraco 22.
 
 Set `Umbraco:CMS:DataTypes:OfferDeprecatedPropertyEditors` to `true` in `appsettings.json` to add the MNTP to the property editor options in the backoffice.
 
-Since Umbraco 14 this property was labelled **Content Picker**.
+In Umbraco 14 to 18, this property editor was labelled **Content Picker**.
 
 As an alternative to the MNTP, use the Document, Media and Member pickers.
 {% endhint %}
@@ -164,7 +165,7 @@ You can do this in an `umbraco-package.json` file, as shown below:
 }
 ```
 
-### Accepted Types
+### Accepted types
 
 Choose which types of content should be available to pick using the MNTP.
 

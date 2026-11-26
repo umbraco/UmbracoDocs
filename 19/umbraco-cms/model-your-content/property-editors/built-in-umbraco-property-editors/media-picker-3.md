@@ -27,7 +27,7 @@ Use the Single Media Picker when editors should select exactly one media item, f
 
 ### MVC View Example
 
-The Single Media Picker returns a `MediaWithCrops` item. This wraps the media item together with the crops and focal point of the property.
+The Single Media Picker returns a `MediaWithCrops` item. The `MediaWithCrops` item wraps the media item together with the crops and focal point of the property.
 
 Use `MediaUrl()` to render the original image, or `GetCropUrl()` to render a specific crop. Learn more in the [Working with crops](#working-with-crops) section.
 
@@ -103,15 +103,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 }
 ```
 
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
-}
-```
-
 If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
@@ -162,7 +153,7 @@ Use `MediaUrl()` to render the original image, or `GetCropUrl()` to render a spe
 }
 ```
 
-#### Without Models Builder to retrieve IEnumerable data
+#### Without Models Builder (IPublishedContent)
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -235,15 +226,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 }
 ```
 
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
-}
-```
-
 If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
@@ -281,7 +263,7 @@ This setting is used to limit the Media Picker to certain parts of the Media Tre
 
 Use this setting to overrule user permissions, to enable any user of this property to pick any Media Item of the chosen Start node.
 
-When this setting is enabled, a user can access the media available under the selected "Start Node" (/Design in this case). This applies even if they normally lack access. The access is granted specifically when using this particular Media Picker.
+When this setting is enabled, a user can access the media available under the selected Start node, even if they normally lack access. The access is granted specifically when using this particular Media Picker.
 
 ### Enable Focal Point
 
@@ -295,10 +277,10 @@ Define local image crops for the Data Type. Read more about how local and global
 
 Image crops work the same way for the Single Media Picker and the Media Picker. Crops can be defined in two places:
 
-* **Local crops** are defined in the **Image Crops** setting of the Data Type. Local image crop data is stored on the document in the property. This means it can differentiate between documents.
-* **Global crops** are defined on the Media Item. This makes the crops shared between all usages of that Media Item. Global crops are configured on the Image Cropper property of the Image Media Type.
+* **Local crops** are defined in the **Image Crops** setting of the Data Type. Local image crop data is stored on the document in the property. As a result, local crops can differ between documents.
+* **Global crops** are defined on the Media Item. As a result, the crops are shared between all usages of that Media Item. Global crops are configured on the Image Cropper property of the Image Media Type.
 
-[Read about the Image Cropper here](image-cropper.md)
+Learn more in the [Image Cropper](image-cropper.md) article.
 
 ### Retrieving crops
 
@@ -331,7 +313,7 @@ The following is an example of how to retrieve a crop from a `MediaWithCrops` en
 
 ### Explicitly retrieving global crops
 
-You can retrieve globally defined crops explicitly by using `GetCropUrl` on the `UrlHelper`. This ignores any local crops, even when they have the same alias:
+You can retrieve globally defined crops explicitly by using `GetCropUrl` on the `UrlHelper`. The `UrlHelper` method ignores any local crops, even when they have the same alias.
 
 #### Single Media Picker
 

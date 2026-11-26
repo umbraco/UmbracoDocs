@@ -2,13 +2,10 @@
 
 The Document Picker opens a panel to pick a specific page from the content structure.
 
-There are two variants of the Document Picker: the **Single Document Picker** for selecting one page, and the **Document Picker** for selecting multiple pages.
+There are two variants of the Document Picker:
 
-{% hint style="info" %}
-The Document Picker was formerly known as the **Content Picker** in version 13 and below.
-
-The renaming is purely a client-side UI change, meaning the property editor still uses the `Umbraco.ContentPicker` schema alias.
-{% endhint %}
+* **Single Document Picker** for selecting one page.
+* **Document Picker** for selecting multiple pages.
 
 ## Single Document Picker
 
@@ -22,11 +19,27 @@ Use the Single Document Picker when editors should select exactly one page, for 
 
 ### Data Type Definition Example
 
-![Document Picker Data Type Definition](../../../.gitbook/assets/Document-Picker-Single-Data-Type-Definition.png)
+![Single Document Picker Data Type Definition](../../../.gitbook/assets/Document-Picker-Single-Data-Type-Definition.png)
+
+#### Accepted types
+
+Use this setting to limit the picker to only select pages of specific Document Types.
+
+#### Start node
+
+Use this setting to limit the picker to a specific part of the content tree.
+
+#### Dynamic root
+
+Use this setting to resolve the start node from the content being edited, when no start node is set. The Dynamic root works the same way as in the Multi Node Tree Picker. Learn more in the [Node Type](content-picker.md#node-type) section of that article.
+
+#### Ignore user start nodes
+
+Use this setting to allow editors to pick pages they normally don't have access to.
 
 ### Document Picker Example
 
-![Document Picker Content](../../../.gitbook/assets/Document-Picker-Single-Content.png)
+![Single Document Picker Content](../../../.gitbook/assets/Document-Picker-Single-Content.png)
 
 ### MVC View Example
 
@@ -89,15 +102,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 }
 ```
 
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
-}
-```
-
 If Models Builder is enabled you can get the alias of the desired property without using a magic string:
 
 ```csharp
@@ -124,6 +128,26 @@ Use the Document Picker when editors should select multiple pages, for example a
 ### Data Type Definition Example
 
 ![Document Picker Data Type Definition](../../../.gitbook/assets/Document-Picker-Multiple-Data-Type-Definition.png)
+
+#### Accepted types
+
+Use this setting to limit the picker to only select pages of specific Document Types.
+
+#### Amount
+
+Use this setting to enforce a minimum and/or maximum amount of selected pages.
+
+#### Start node
+
+Use this setting to limit the picker to a specific part of the content tree.
+
+#### Dynamic root
+
+Use this setting to resolve the start node from the content being edited, when no start node is set. The Dynamic root works the same way as in the Multi Node Tree Picker. Learn more in the [Node Type](content-picker.md#node-type) section of that article.
+
+#### Ignore user start nodes
+
+Use this setting to allow editors to pick pages they normally don't have access to.
 
 ### Document Picker Example
 
@@ -194,15 +218,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Save the change
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
 }
 ```
 

@@ -7,6 +7,10 @@ There are two variants of the Member Picker:
 * **Single Member Picker** for selecting one member.
 * **Member Picker** for selecting multiple members.
 
+{% hint style="info" %}
+The Delivery API does not support either variant of the Member Picker. This avoids the risk of leaking member data. Learn more in the [Content Delivery API](../../../develop-with-umbraco/headless-and-apis/content-delivery-api/README.md#member-picker) article.
+{% endhint %}
+
 ## Single Member Picker
 
 `Schema Alias: Umbraco.MemberPicker`
@@ -87,15 +91,6 @@ The example below demonstrates how to add values programmatically using a Razor 
 
     // Save the change
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
 }
 ```
 
@@ -204,15 +199,6 @@ The Member Picker only accepts a JSON array of keys. If you save a value in anot
 
     // Save the change
     ContentService.Save(content);
-}
-```
-
-Although the use of a GUID is preferable, you can also use the numeric ID to get the page:
-
-```csharp
-@{
-    // Get the page using it's id
-    var content = ContentService.GetById(1234);
 }
 ```
 
