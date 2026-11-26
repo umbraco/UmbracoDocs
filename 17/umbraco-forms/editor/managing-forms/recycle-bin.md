@@ -62,7 +62,7 @@ Export the entries you need before you delete a form. For details, see the [View
 ### Folders kept because they hold a start folder
 
 {% hint style="info" %}
-This feature is available from Umbraco Forms 17.7.0, which is currently a release candidate.
+This feature is available from Umbraco Forms 17.7.0.
 {% endhint %}
 
 A folder in the recycle bin can still be a user's or user group's [start folder](../../developer/security.md#start-folders), or hold one further down. Removing it would leave those users with a start folder that no longer exists.

@@ -80,7 +80,7 @@ You can check your IP by [Googling for What is My IP](https://www.google.com/sea
 
 ### 9. Reload after Cookie consent
 
-To ensure that Umbraco Engage can interact with the visitor from the first page, reload the page as soon as the Cookie consent is approved. This enables showing personalized variants on the landing page, which requires consent. More info on how to do this can be found at the bottom of the [tracking a visitors initial pageview](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) article.
+To ensure that Umbraco Engage can interact with the visitor from the first page, reload the page as soon as the Cookie consent is approved, by calling `umbracoEngage.analytics.consentGranted()`. This enables showing personalized variants on the landing page, which requires consent. More info on how to do this can be found at the bottom of the [tracking a visitors initial pageview](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) article.
 
 ### Still missing analytical data?
 

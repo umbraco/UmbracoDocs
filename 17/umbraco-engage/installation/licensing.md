@@ -39,7 +39,9 @@ There are a few differences as to what the licenses cover:
 * A single license covers the installation of Umbraco Engage in 1 production backoffice domain, as well as in any requested development domains.
 * The development and production domains work with or without the `www` subdomain.
 * The license also includes `localhost`, `*.local`, and `*.test` as valid domains.
-* Each individual subdomain has to be specified as part of the license (e.g. `subdomain.mysite.com`), wildcard subdomains are not allowed.
+* Wildcard domains (for example, `*.mysite.com`) are supported from Umbraco Engage 17.2.0.
+* Earlier versions don't support wildcards. Each subdomain must be listed on the license, for example, `subdomain.mysite.com`.
+* If not every environment runs Umbraco Engage 17.2.0 or later, list each domain individually. This works on all versions.
 
 {% hint style="info" %}
 If multiple backoffice domains share the same installation, you have to purchase and add [**additional domains**](licensing.md#add-additional-domains) to your license.

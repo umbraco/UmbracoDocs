@@ -39,7 +39,7 @@ Sets the label for the filterable property.
 #### Method Syntax
 
 ```cs
-SetLabel(string label) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetLabel(string label) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -57,7 +57,7 @@ Sets a description for the filterable property.
 #### Method Syntax
 
 ```cs
-SetDescription(string description) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetDescription(string description) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -75,7 +75,7 @@ Defines basic options for a filterable property.
 #### Method Syntax
 
 ```cs
-SetOptions(IDictionary<TValueType, string> options) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetOptions(IDictionary<TValueType, string> options) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
@@ -96,13 +96,88 @@ Defines options with custom comparison clauses for a filterable property.
 #### Method Syntax
 
 ```cs
-AddOption(object key, string label, Lambda compareExpression) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+AddOption(object key, string label, Lambda compareExpression) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example
 
 ```csharp
 filterConfig.AddOption("Option1", "Option One", (val) => val != "Option Two");
+```
+
+## Defining Options with an Options Builder for a Filterable Property
+
+An options builder creates the options of a filterable property at runtime. Use an options builder when the options come from a database or a service.
+
+To define an options builder, create a class that inherits from `FilterOptionsBuilder<TValueType>`. `TValueType` is the type of the filterable property. Override `GetOptionsAsync` to return the options.
+
+The following builder lists the teams of a `teams` collection as options for a `TeamId` property. The builder uses a `Team` model with an `int` ID and a `Name`.
+
+{% code title="TeamFilterOptionsBuilder.cs" %}
+```csharp
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using MyProject.Models;
+using Umbraco.UIBuilder.Configuration.Builders.FilterOptions;
+using Umbraco.UIBuilder.Configuration.Filters;
+using Umbraco.UIBuilder.Persistence;
+
+namespace MyProject.Filters;
+
+public class TeamFilterOptionsBuilder : FilterOptionsBuilder<int>
+{
+    private readonly IRepositoryFactory _repositoryFactory;
+
+    public TeamFilterOptionsBuilder(IRepositoryFactory repositoryFactory)
+        => _repositoryFactory = repositoryFactory;
+
+    public override async Task<IEnumerable<FilterOption<int>>> GetOptionsAsync(CancellationToken cancellationToken = default)
+    {
+        var result = await _repositoryFactory
+            .GetRepository<Team, int>("teams")
+            .GetAllAsync(orderBy: x => x.Name, cancellationToken: cancellationToken);
+
+        if (!result.Success || result.Model is null)
+        {
+            return [];
+        }
+
+        return result.Model.Select(team => new FilterOption<int>(team.Id, team.Name)).ToList();
+    }
+}
+```
+{% endcode %}
+
+Umbraco UI Builder only calls `GetOptionsAsync`. By default, `GetOptionsAsync` calls `GetOptions`, so a builder that only overrides `GetOptions` keeps working. A builder that overrides neither method throws a `NotImplementedException`.
+
+The method signatures are:
+
+```cs
+Task<IEnumerable<FilterOption<TValueType>>> GetOptionsAsync(CancellationToken cancellationToken = default)
+IEnumerable<FilterOption<TValueType>> GetOptions()
+```
+
+### Using the `SetOptionsBuilder()` Method
+
+Sets the options builder of a filterable property. The options from the builder replace any options added with `AddOption()`.
+
+#### Method Syntax
+
+```cs
+SetOptionsBuilder<TFilterOptionsBuilderType>() : PropertyFilterConfigBuilder<TEntityType, TValueType>
+SetOptionsBuilder(Type filterOptionsBuilder) : PropertyFilterConfigBuilder<TEntityType, TValueType>
+SetOptionsBuilder(FilterOptionsBuilder<TValueType> filterOptionsBuilder) : PropertyFilterConfigBuilder<TEntityType, TValueType>
+```
+
+#### Example
+
+```csharp
+collectionConfig.AddFilterableProperty(p => p.TeamId, filterConfig => filterConfig
+    .SetLabel("Team")
+    .SetOptionsBuilder<TeamFilterOptionsBuilder>()
+);
 ```
 
 ## Configuring the Mode of a Filterable Property
@@ -116,7 +191,7 @@ Configures the mode of a filterable property (multiple or single choice).
 #### Method Syntax
 
 ```cs
-SetMode(FilterMode mode) : FilterablePropertyConfigBuilder<TEntityType, TValueType>
+SetMode(FilterMode mode) : PropertyFilterConfigBuilder<TEntityType, TValueType>
 ```
 
 #### Example

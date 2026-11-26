@@ -9,6 +9,10 @@
 * [The First Connection](getting-started/first-connection.md)
 * [The First Profile](getting-started/first-profile.md)
 
+## Upgrading
+
+* [Version Specific Upgrade Notes](upgrading/version-specific.md)
+
 ## Concepts
 
 * [Core Concepts](concepts/concepts.md)
@@ -225,6 +229,8 @@
   * [Delete Audit Log](management-api/audit-logs/delete.md)
   * [Cleanup](management-api/audit-logs/cleanup.md)
 * [Analytics](management-api/analytics/README.md)
+  * [Usage Overview](management-api/analytics/overview.md)
+  * [Usage Breakdown](management-api/analytics/breakdown.md)
   * [Summary](management-api/analytics/summary.md)
   * [Time Series](management-api/analytics/timeseries.md)
   * [By Provider](management-api/analytics/breakdown-provider.md)

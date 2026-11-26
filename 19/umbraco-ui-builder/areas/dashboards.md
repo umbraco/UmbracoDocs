@@ -66,6 +66,34 @@ sectionConfig.AddDashboardAfter("contentIntro", "Team", dashboardConfig => {
 });
 ```
 
+### Choosing the Target Alias of a Position
+
+The `beforeAlias` and `afterAlias` parameters name the dashboard to place the new dashboard next to. Use one of these aliases:
+
+* The alias of an Umbraco dashboard extension, such as `Umb.Dashboard.RedirectManagement`.
+* The alias of another Umbraco UI Builder dashboard.
+* A dashboard alias from Umbraco 13. Umbraco UI Builder maps the alias to the matching dashboard, as shown in the table below.
+
+| Umbraco 13 alias | Umbraco 19 dashboard alias |
+| --- | --- |
+| `contentIntro` | `Umb.Dashboard.UmbracoNews` |
+| `contentRedirectManager` | `Umb.Dashboard.RedirectManagement` |
+| `mediaFolderBrowser` | `Umb.Dashboard.Media` |
+| `settingsWelcome` | `Umb.Dashboard.SettingsWelcome` |
+| `settingsModelsBuilder` | `Umb.Dashboard.ModelsBuilder` |
+| `settingsPublishedStatus` | `Umb.Dashboard.PublishedStatus` |
+| `settingsHealthCheck` | `Umb.Dashboard.HealthCheck` |
+| `settingsProfiler` | `Umb.Dashboard.Profiling` |
+| `settingsAnalytics` | `Umb.Dashboard.Telemetry` |
+
+When no dashboard has the target alias, the new dashboard keeps its default position. The Umbraco 13 aliases `memberIntro` and `settingsExamine` have no matching dashboard in Umbraco 19.
+
+{% hint style="info" %}
+
+From Umbraco UI Builder 14 to 18, the dashboard positions had no effect. From version 19, a dashboard with a position can appear in a different place than in those versions.
+
+{% endhint %}
+
 ## Setting a Custom Dashboard Alias
 
 ### Using the `SetAlias()` Method

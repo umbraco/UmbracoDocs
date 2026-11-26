@@ -9,11 +9,11 @@ Umbraco Cloud already runs the shared MCP Worker infrastructure at `mcp.umbraco.
 ## 1. Install the Package
 
 ```bash
-dotnet add package Umbraco.Mcp.HostedAuth --prerelease
+dotnet add package Umbraco.Mcp.HostedAuth --version "18.*"
 ```
 
 {% hint style="info" %}
-[`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) is currently prerelease-only on NuGet, so `--prerelease` is required. It's versioned to match your Umbraco major — `18.x` for Umbraco 18. See the [package README](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) for the full configuration reference.
+[`Umbraco.Mcp.HostedAuth`](https://www.nuget.org/packages/Umbraco.Mcp.HostedAuth) is versioned to match your Umbraco major — `18.x` for Umbraco 18. Pinning with `--version "18.*"` keeps the package on the release line that matches your site. See the [package README](https://github.com/umbraco/Umbraco.Mcp.HostedAuth) for the full configuration reference.
 {% endhint %}
 
 ## 2. Deploy

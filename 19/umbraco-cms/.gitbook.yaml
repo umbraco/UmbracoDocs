@@ -229,4 +229,10 @@ redirects:
     develop-with-umbraco/application-code/examine/indexing: develop-with-umbraco/application-code/examine/README.md
     develop-with-umbraco/application-code/examine/pdfindex-multisearcher: develop-with-umbraco/application-code/examine/README.md
     develop-with-umbraco/application-code/examine/quick-start: develop-with-umbraco/application-code/examine/README.md
+    develop-with-umbraco/application-code/examine/corrupt-indexes: develop-with-umbraco/application-code/examine.md
+    develop-with-umbraco/application-code/examine/examine-management: develop-with-umbraco/application-code/examine.md
+    develop-with-umbraco/application-code/examine/examine-manager: develop-with-umbraco/application-code/examine.md
+    develop-with-umbraco/application-code/examine/indexing: develop-with-umbraco/application-code/examine.md
+    develop-with-umbraco/application-code/examine/pdfindex-multisearcher: develop-with-umbraco/application-code/examine.md
+    develop-with-umbraco/application-code/examine/quick-start: develop-with-umbraco/application-code/examine.md
     model-your-content/property-editors/built-in-umbraco-property-editors/multi-url-picker: model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md

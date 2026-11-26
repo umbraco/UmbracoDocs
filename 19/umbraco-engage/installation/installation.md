@@ -116,7 +116,7 @@ Includes support for "async" and "defer" keywords.
 To change the default [Umbraco Engage cookie](../marketers-and-editors/introduction/the-umbraco-engage-cookie.md) behavior, see the [GDPR & EU regulation](../security-and-privacy/gdpr/) article. Alternatively, check the [implementation using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md), which can serve as a reference for other cookie consent providers.
 
 {% hint style="warning" %}
-If you [change the default cookie behavior](../developers/introduction/the-umbraco-engage-cookie/) make sure to perform a **client side reload of the initial page after cookie consent**. If this is not done, visitor referrer and/or campaigns will not be tracked.
+If you [change the default cookie behavior](../developers/introduction/the-umbraco-engage-cookie/), make sure to perform a **client-side reload of the initial page after cookie consent**, using `umbracoEngage.analytics.consentGranted()`. If this is not done, visitor referrer and/or campaigns will not be tracked.
 {% endhint %}
 
 ### Load balancing and CM / CD environments
@@ -125,7 +125,7 @@ Are you using a load-balanced setup or separate CM and CD environments? [Check o
 
 ### The first run
 
-When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
+When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data is generated automatically once a night, at a random time between 01:00 and 05:00 in the reporting time zone.
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 

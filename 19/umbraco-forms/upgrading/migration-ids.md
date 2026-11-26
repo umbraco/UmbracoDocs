@@ -2,6 +2,10 @@
 
 A unique **migration ID** is generated for each Umbraco Forms upgrade that requires a migration. The migration IDs are all listed in this article.
 
+{% hint style="info" %}
+In version 19, the migrations that rebuild the records index no longer do anything. Their IDs are `6149738f`, `33c9d3f4`, `188009a1`, `3a03c625`, `51948cde`, and `0c07728b`. Forms fills the records index at startup when the index is empty. For more information, see the [Records index on Umbraco Search](version-specific.md#records-index-on-umbraco-search) section.
+{% endhint %}
+
 | Migration ID                         | Introduced In Version | Description                                                                        |
 |--------------------------------------|-----------------------|------------------------------------------------------------------------------------|
 | 7c7bc5ee-4c5b-42dc-9576-5ce6dfbddb8e | 10.0.0                | Installs Umbraco Forms.                                                            |

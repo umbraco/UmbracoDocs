@@ -16,6 +16,14 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 18, including all changes for this version.
 
+### [18.3.0](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.3.0) (November 17 2026)
+
+* Fixes the scheduled date, status, and type text in workflow emails showing a raw localization key, such as `[scheduledforat]`. The key appeared when the recipient's culture had no translation. The text now falls back to the default culture [#197](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/197).
+* Fixes a request that sets only an **Unpublish on** date being labeled as a scheduled publish in the workflow detail panel and the workflow history. The label now describes an unpublish. When both dates are set, the request is still described as a scheduled publish [#198](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/198).
+* Fixes sites upgraded from Workflow 17.5.x failing with `Invalid column name 'EntityId'` in the backoffice. The Workflow 18 migration steps that add the action configuration table and the permissions `EntityId` column were skipped for these sites. A new migration step repairs the schema on the next startup, and does nothing on new installs or sites already on Workflow 18.2.x [#199](https://github.com/umbraco/Umbraco.Workflow.Issues/issues/199).
+* Resolves security advisory [GHSA-vw5g-jmgg-hw78](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-vw5g-jmgg-hw78).
+* Resolves security advisory [GHSA-7457-w8c8-jh29](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-7457-w8c8-jh29).
+
 ### [18.3.0-rc1](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F18.3.0-rc1) (October 29 2026)
 
 #### Adds Excel export of workflow history

@@ -388,7 +388,7 @@ By default, Umbraco UI Builder uses the Umbraco connection string for its databa
 
 ### Using the `SetConnectionString()` Method
 
-Defines the connection string for the collection repository.
+Defines the connection string for the collection repository. Pass the name of a connection string from the `ConnectionStrings` section of your configuration.
 
 #### Method Syntax
 
@@ -401,3 +401,50 @@ SetConnectionString(string connectionStringName) : CollectionConfigBuilder<TEnti
 ```csharp
 collectionConfig.SetConnectionString("myConnectionStringName");
 ```
+
+If no connection string with the given name is configured, the collection's operations fail. The error names the connection string and the collection.
+
+## Transactions and the Umbraco Scope
+
+A collection on the Umbraco database joins the ambient Umbraco scope when there is one. Its writes then commit or roll back together with that scope. A collection is on the Umbraco database when one of the following is true:
+
+* The collection has no connection string set.
+* The connection string name is `umbracoDbDSN`.
+* The connection string name points at a connection string equivalent to Umbraco's own. Key order, key case, and spacing do not matter.
+
+A collection with any other connection string uses its own connection and transaction. It never joins the ambient Umbraco scope.
+
+The same rules apply to the Entity Framework Core (EF Core) repository and the NPoco repository.
+
+{% hint style="info" %}
+
+In Umbraco UI Builder 18, a collection with a named connection string always committed on its own. That was the case even when the name pointed at the Umbraco database. From version 19, that collection joins the ambient Umbraco scope.
+
+{% endhint %}
+
+### Using the `DisableUmbracoScopeSharing()` Method
+
+Stops a collection on the Umbraco database from joining the ambient Umbraco scope. The collection then always uses a connection and a transaction of its own. Use it for data that must be saved even when the surrounding work rolls back, such as an audit table.
+
+The method also works without `SetConnectionString()`. The collection then uses the Umbraco connection string on a connection of its own. For a collection on another database, the method changes nothing.
+
+#### Method Syntax
+
+```cs
+DisableUmbracoScopeSharing() : CollectionConfigBuilder<TEntityType>
+```
+
+#### Example
+
+```csharp
+collectionConfig.DisableUmbracoScopeSharing();
+```
+
+{% hint style="warning" %}
+
+The ambient transaction can hold locks that the collection's own connection must wait for. Do not wait on such a write from inside the scope that holds the lock.
+
+* On SQL Server, a write to a row or table that the ambient scope has locked waits until the command timeout.
+* On SQLite, the database file has one writer at a time. A write made after the ambient scope has written waits for that scope to finish. On EF Core, the write fails once the SQLite busy timeout passes. On NPoco, Umbraco's retry policy retries the write for minutes. The write commits once the ambient scope ends.
+
+{% endhint %}

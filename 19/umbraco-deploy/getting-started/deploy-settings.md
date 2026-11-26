@@ -56,6 +56,7 @@ For illustration purposes, the following structure represents the full set of op
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
+        "AllowFormSecurityDeploymentOperations": "FormsUserConfiguration",
         "TransferDictionaryAsContent": false,
         "IgnoreMissingLanguagesForDictionaryItems": false,
         "SetEmptyDictionaryItemsOnTransfer": true,
@@ -142,9 +143,11 @@ Never commit `ChildApiSecrets` to the repository of the Baseline project, becaus
 
 Invalid entries, such as a secret shorter than 64 bytes, are skipped with a warning instead of preventing the site from starting.
 
-If `BaselineApiSecret` isn't set or is invalid, the Child project signs its requests to the Baseline project with its `ApiSecret` and logs a warning. This fallback only works when both projects use the same `ApiSecret`, and will be removed in Deploy 19.
+A `BaselineApiSecret` shorter than 64 bytes fails the Deploy settings validation, and every Deploy operation fails until you set a valid secret.
 
-`BaselineUrl` replaces the Umbraco Cloud `Upstream` project setting, which is obsolete.
+If `BaselineApiSecret` isn't set, the Child project signs its requests to the Baseline project with its `ApiSecret` and logs a warning. This fallback only works when both projects use the same `ApiSecret`, and will be removed in Deploy 20.
+
+`BaselineUrl` replaces the Umbraco Cloud `Upstream` project setting, which is removed in Deploy 19.
 
 ### Edition
 
@@ -241,11 +244,25 @@ If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestL
 
 ### TransferFormsAsContent <a href="#transfer-forms-data-as-content" id="transfer-forms-data-as-content"></a>
 
-In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
+In order for Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
 
 {% hint style="info" %}
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
+
+### AllowFormSecurityDeploymentOperations <a href="#allow-form-security-deployment-operations" id="allow-form-security-deployment-operations"></a>
+
+When a deployment creates a form that's new to the target environment, Umbraco Forms Deploy applies the Forms permissions configured on the target. This setting controls which permissions are applied:
+
+```json
+"AllowFormSecurityDeploymentOperations": "None|FormsConfiguration|FormsUserConfiguration"
+```
+
+* `None` - no permissions are applied.
+* `FormsConfiguration` - the user group permissions configured in Umbraco Forms are applied. These only apply when Forms manages security with user groups, set by the [`ManageSecurityWithUserGroups`](https://docs.umbraco.com/umbraco-forms/developer/configuration#managesecuritywithusergroups) setting.
+* `FormsUserConfiguration` (default) - the configured user group permissions are applied, and the deploying user gets their own permissions to the form. Deploy finds the deploying user on the target by email address, which needs the [`ResolveUserInTargetEnvironment`](#resolve-user-in-target-environment) setting. When the user isn't found, only the user group permissions are applied.
+
+The setting doesn't change the permissions of forms that already exist on the target. Permissions aren't transferred from the source environment.
 
 ### TransferDictionaryAsContent <a href="#transfer-dictionary-items-as-content" id="transfer-dictionary-items-as-content"></a>
 
@@ -509,37 +526,42 @@ When the setting is set to `false`, or a matching account isn't found, the audit
 
 ### Suspensions <a href="#suspensions" id="suspensions"></a>
 
-Deploy operations suspend scheduled publishing, Examine indexing, document cache and/or signature database update events by default. You can amend this behavior for all supported or specific operations using these settings.
+Deploy operations suspend scheduled publishing by default. You can amend this behavior for all operations or for specific operations using these settings.
 
-Each setting within this section represents a Deploy operation. For each, the suspensions that are carried out can be amended with one or more of following values:
+Each setting within this section represents a Deploy operation: `DiskRead`, `PartialRestore`, `Restore`, `Deploy`, `Import`, and `Export`. Each accepts one of the following values:
 
-* `DiskRead` - `None, ScheduledPublishing, Examine, DocumentCache, All`
-* `PartialRestore` - `None, ScheduledPublishing, Examine, DocumentCache, All`
-* `Restore` - `None, ScheduledPublishing, Examine, DocumentCache, Signatures, All`
-* `Deploy` - `None, ScheduledPublishing, All`
-* `Import` - `None, ScheduledPublishing, Examine, DocumentCache, All`
-* `Export` - `None, ScheduledPublishing, All`
+* `None` - nothing is suspended during the operation.
+* `ScheduledPublishing` - scheduled publishing is suspended during the operation.
+* `All` - everything that can be suspended is suspended during the operation. This is the same as `ScheduledPublishing`.
 
 The default value for all suspension settings is `All`.
 
-So for example if you wanted to remove Examine indexing suspension and resumption during partial restore operations, you could set the following:
+{% hint style="warning" %}
+Umbraco Deploy 19 removes the `Examine`, `DocumentCache`, and `Signatures` values. A setting that names one of these values stops the site from starting. For more information, see the [Breaking Changes Overview](../upgrading/version-specific.md#suspension-options-removed).
+{% endhint %}
+
+For example, to keep scheduled publishing running during partial restore operations, set the following:
 
 ```json
 "Suspensions": {
-  "PartialRestore": "ScheduledPublishing, DocumentCache"
+  "PartialRestore": "None"
 },
 ```
 
-It's also possible to set the values for all operations by setting `Suspensions` to a value instead of an object, for example:
+You can also set the value for all operations by setting `Suspensions` to a value instead of an object, for example:
 
 ```json
-"Suspensions": "ScheduledPublishing, DocumentCache, Signatures",
+"Suspensions": "None",
 ```
 
-If you prefer configuration in code, operators overloads on the settings class make this process straightforward, as shown in the following example:
+If you prefer configuration in code, use the operator overloads on the settings class, as shown in the following example:
+
+{% code title="DeploySuspensionsComposer.cs" %}
 
 ```csharp
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Deploy.Core.Configuration.DeployConfiguration;
 
 internal sealed class DeploySuspensionsComposer : IComposer
@@ -550,14 +572,13 @@ internal sealed class DeploySuspensionsComposer : IComposer
             // No suspensions during import
             options.Suspensions.Import = SuspensionOptions.None;
 
-            // No Examine suspensions on all operations (using bitwise negation operator)
-            options.Suspensions &= ~SuspensionOptions.Examine;
-
-            // Add scheduled publishing suspension to all operations
-            options.Suspensions |= SuspensionOptions.ScheduledPublishing;
+            // No scheduled publishing suspension during partial restores (using bitwise negation operator)
+            options.Suspensions.PartialRestore &= ~SuspensionOptions.ScheduledPublishing;
         });
 }
 ```
+
+{% endcode %}
 
 ### HideConfigurationDetails <a href="#hide-configuration-details" id="hide-configuration-details"></a>
 

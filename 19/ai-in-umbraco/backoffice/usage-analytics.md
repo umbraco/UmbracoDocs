@@ -10,54 +10,77 @@ The Usage Analytics dashboard provides aggregated insights into AI operations, h
 ## Accessing Analytics
 
 1. Navigate to the **AI** section in the main navigation.
-2. Click **Analytics** in the tree.
+2. Click **Analytics** under **Monitoring** in the tree.
+
+The **Usage** view opens. It shows the last seven days by default.
 
 ## Dashboard Overview
 
-![The analytics dashboard showing usage metrics, success rate, and usage over time chart](../.gitbook/assets/backoffice-analytics-dashboard.png)
+![The Usage dashboard with six metric tiles, a requests over time chart, and a breakdown table by model](../.gitbook/assets/backoffice-analytics-dashboard.png)
 
-### Summary Metrics
+### Metric Tiles
 
-The dashboard displays six summary cards at the top:
+The dashboard shows six tiles at the top:
 
-| Metric           | Description                                    |
-| ---------------- | ---------------------------------------------- |
-| Total Requests   | Number of AI operations in the selected period |
-| Input Tokens     | Tokens sent to AI providers                    |
-| Output Tokens    | Tokens received from AI providers              |
-| Total Tokens     | Combined input and output tokens               |
-| Success Rate     | Percentage of successful operations            |
-| Avg Duration     | Average operation response time                |
+| Tile          | Description |
+| ------------- | ----------- |
+| Requests      | Number of AI requests in the selected period |
+| Input tokens  | Tokens sent to AI providers. When a provider reports prompt caching, a second line shows how many were cached. |
+| Output tokens | Tokens received from AI providers |
+| Total tokens  | Input and output tokens together |
+| Success rate  | Share of requests that succeeded |
+| Avg duration  | Average time a request took |
 
-### Usage Over Time
+When you compare with another period, each tile also shows the change from that period.
 
-A chart showing usage trends across the selected period. The chart displays:
+Select a tile to plot its metric in the chart below.
 
-- **Bars** for input tokens and output tokens per time bucket
-- **Line** for total request count
+### Over Time Chart
 
-### Breakdowns
+The chart plots the selected metric across the period:
 
-Tables showing usage distribution across four dimensions:
+| Metric        | Chart |
+| ------------- | ----- |
+| Requests      | Stacked bars of succeeded and failed requests |
+| Input tokens  | Bars of input tokens, split into cached and uncached input when a provider reports caching |
+| Output tokens | Bars of output tokens |
+| Total tokens  | Stacked bars of input and output tokens |
+| Success rate  | A line of the success rate |
+| Avg duration  | Bars of the average duration |
 
-- **By Provider** — Which providers handle the most requests and tokens
-- **By Model** — Which models are used most
-- **By Profile** — Which profiles are most active
-- **By User** — Which users generate the most AI operations
+Use the buttons above the chart to group the bars by **Day**, **Week**, or **Month**. For a period of two days or fewer, you can group by **Hour** or **Day**.
 
-Each breakdown table shows Name, Requests, Tokens, and Share (percentage).
+### Breakdown
 
-![Analytics breakdown tables by provider, model, profile, and user](../.gitbook/assets/backoffice-analytics-breakdowns.png)
+The **Breakdown** table shows how usage splits across one dimension at a time. Use the buttons above the table to break usage down by **Provider**, **Model**, **Profile**, or **User**.
+
+The table has these columns:
+
+| Column       | Description |
+| ------------ | ----------- |
+| Name         | The provider, model, profile, or user |
+| Requests     | Requests, with each row's share of the total |
+| Tokens       | Total tokens, with each row's share of the total |
+| Cached input | Cached input tokens. Only shown when a provider reports prompt caching. |
+| Success rate | Share of the row's requests that succeeded |
+| Avg duration | Average time a request took, in milliseconds |
+
+Click a column heading to sort by it. Use **Search** to filter rows by name. The table shows ten rows per page by default.
 
 ## Date Range
 
-Select the time period to analyze using the picker in the top-right corner:
+Select the period to analyze with the date range button in the top-right corner. The **Date range** dialog offers these presets:
 
-| Range          | Description          |
-| -------------- | -------------------- |
-| Last 24 Hours  | Real-time monitoring |
-| Last 7 Days    | Weekly trends        |
-| Last 30 Days   | Monthly analysis     |
+* **Today**
+* **Yesterday**
+* **Last 7 days**
+* **Last 30 days**
+* **This month**
+* **Last month**
+* **Last year**
+* **Custom**, to pick your own dates
+
+Use **Compare** in the same dialog to compare the period with another one. Choose **Previous period**, **Previous year**, or **Custom** dates.
 
 ## Programmatic Access
 
