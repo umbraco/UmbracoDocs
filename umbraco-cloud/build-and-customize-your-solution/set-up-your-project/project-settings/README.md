@@ -65,9 +65,9 @@ Set up alert rules to get notified by email or webhook when something important 
 
 ### [Traffic & Performance](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
 
-You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution.
+You can see metrics related to the overall health and performance of the Azure app service hosting the different environments of your solution. The page also shows Cloudflare edge traffic for the default and custom hostnames of each environment.
 
-![Availability & Performance](../../../.gitbook/assets/availability-performance.png)
+![Traffic & Performance](../../../.gitbook/assets/availability-performance.png)
 
 ### [Usage](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/)
 

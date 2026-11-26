@@ -17,6 +17,10 @@ Check the [Version Specific Upgrade Notes](upgrading/version-specific.md) articl
 
 This section contains the release notes for Umbraco Workflow 13 including all changes for this version.
 
+### [13.5.6](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.6) (November 19 2026)
+
+* Relaxes authentication policy on `instances/all` API endpoint to allow users with Content or Workflow section access. This is required to allow rendering Workflow history on content items.
+
 ### [13.5.5](https://github.com/umbraco/Umbraco.Workflow.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F13.5.5) (November 17 2026)
 * Resolves security advisory [GHSA-vw5g-jmgg-hw78](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-vw5g-jmgg-hw78)
 * Resolves security advisory [GHSA-7457-w8c8-jh29](https://github.com/umbraco/Umbraco.Workflow.Issues/security/advisories/GHSA-7457-w8c8-jh29)
