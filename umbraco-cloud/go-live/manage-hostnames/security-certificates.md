@@ -56,4 +56,4 @@ You will need to remove the expired certificate for Umbraco Cloud to assign a ne
 
 ## Read more
 
-* [Redirect from HTTP to HTTPS](rewrites-on-cloud.md#running-your-site-on-https-only)
+* [Running your site on HTTPS only](rewrites-on-cloud.md#running-your-site-on-https-only)

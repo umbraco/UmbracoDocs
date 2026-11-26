@@ -108,7 +108,9 @@ rewriteOptions.Add(context =>
 ```
 
 {% hint style="info" %}
-This rule does not rewrite anything under the `/umbraco` path, so you can still do content deployments. You don't have to give your editors the `umbraco.io` URL, and they won't see it if you give them the actual hostname. This rule also does not apply to your Development and Staging environments, or to your local copy of the site running on `localhost`.
+This rule does not rewrite anything under the `/umbraco` path, so you can still do content deployments. You don't have to give your editors the `umbraco.io` URL, and they won't see it if you give them the actual hostname.
+
+The rule also skips your local copy of the site on `localhost`, and environments whose hostnames start with `dev-` or `stage-`. These prefixes match the default environment names. If you renamed an environment, replace the prefix with that environment's alias, for example `test-`.
 {% endhint %}
 
 ## Running your site on HTTPS only
