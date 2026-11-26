@@ -125,7 +125,7 @@ Are you using a load-balanced setup or separate CM and CD environments? [Check o
 
 ### The first run
 
-When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data will be generated at 04:00 AM automatically.
+When you visit your site locally for the first time, Umbraco Engage will begin tracking page views, visitors, etc. If you go to **Engage** -> **Analytics,** you won't see any data until the first reporting run. By default, reporting data is generated automatically once a night, at a random time between 01:00 and 05:00 in the reporting time zone.
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
