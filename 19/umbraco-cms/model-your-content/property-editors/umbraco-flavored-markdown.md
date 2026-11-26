@@ -190,7 +190,7 @@ The Content Name component will render the name of a content item, (either Docum
 
 The alias prefix is `umbContentName`. An example of the syntax is `{umbContentName: pickerAlias}`, which would render the component as `<ufm-content-name alias="pickerAlias"></ufm-content-name>`.
 
-The Content Name component supports content-based pickers, such as the Document Picker, Content Picker (formerly known as Multinode Treepicker) and Media Picker.
+The Content Name component supports content-based pickers, such as the Single Document Picker, Document Picker, Single Media Picker, Media Picker and Multi Node Tree Picker.
 
 #### Element Name
 
