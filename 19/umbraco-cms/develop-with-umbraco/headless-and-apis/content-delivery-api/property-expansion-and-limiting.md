@@ -11,10 +11,9 @@ This article explains the mechanics of property expansion and limiting in depth.
 Property expansion and limiting applies only to select property editors. The following built-in property editors in Umbraco support expansion and limiting:
 
 - Picker editors
-  - Content Picker
-  - Media Picker
-  - Media Picker (legacy)
-  - Multinode Treepicker
+  - Single Document Picker and Document Picker
+  - Single Media Picker and Media Picker
+  - Multi Node Tree Picker
 - Block-based editors
   - Block List
   - Block Grid
@@ -36,7 +35,7 @@ In the following examples, we will be querying a content tree with blog posts an
 
 The blog post content type (`post`) contains two properties that support expansion and limiting:
 
-- `author`: A content picker for picking the author of the post.
+- `author`: A document picker for picking the author of the post.
 - `coverImage`: A media picker for picking an image for the post.
 
 The author content type (`author`) contains a single property that supports expansion and limiting:
@@ -552,7 +551,7 @@ All these properties are configured with a "Featured Post" block which consists 
 
 - A content model (`featuredPost`) that contains:
   - `title`: A text string property.
-  - `post`: A content picker property that allows for picking a blog post.
+  - `post`: A document picker property that allows for picking a blog post.
 - A settings model (`featuredPostSettings`) that contains:
   - `backgroundColor`: An approved color property.
   - `showTags`: A toggle property.
