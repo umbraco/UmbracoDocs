@@ -144,7 +144,7 @@ rewriteOptions.Add(context =>
 {% hint style="info" %}
 Take note of the exclusions in the rewrite rule.
 
-It is important to skip the file paths on your site. If a trailing slash is added, your media may not display correctly after [migrating to Azure Blob Storage](/umbraco-cloud/build-and-customize-your-solution/handle-deployments-and-environments/media.md).
+It is important to skip the file paths on your site. If a trailing slash is added, your media may not display correctly after [migrating to Azure Blob Storage](../../build-and-customize-your-solution/handle-deployments-and-environments/media/README.md).
 {% endhint %}
 
 ## Redirect from `non-www` to `www`
