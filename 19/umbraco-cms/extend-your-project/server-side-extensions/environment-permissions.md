@@ -7,8 +7,6 @@ description: >-
 
 Environment permissions let you deny specific changes for every user, across the whole installation. For example, you can stop anyone from creating or updating Document Types on a production environment where the schema arrives with a deployment.
 
-Umbraco includes permissions for changes to its own schema, and your code can deny them.
-
 {% hint style="info" %}
 Environment permissions are enforced by the Management API. Backoffice support is coming later. Until then, the backoffice still offers actions that are denied, and shows an error when the API rejects them.
 {% endhint %}
@@ -21,10 +19,24 @@ Environment permissions are enforced by the Management API. Backoffice support i
 
 Environment permissions are built once, at startup. A setting a configurator reads is evaluated at that point, and changing it requires a restart.
 
+Verbs are matched exactly, including case, so a misspelled verb denies nothing.
+
 Only changes made through the Management API are governed:
 
 * Reading is never denied.
 * Services, migrations, and package installs are not affected. Code that uses `IContentTypeService` or other services keeps working while the same changes are denied through the Management API.
+
+## Templates and partial views in production
+
+Umbraco includes a configurator that applies in the `Production` [runtime mode](../../run-in-production/runtime-modes.md). In that mode, Razor runtime compilation is disabled and views are compiled when the site is built or published. Changes made to templates and partial views on the server don't take effect, so the configurator denies:
+
+* `Umb.Template.Create`
+* `Umb.Template.Update`
+* `Umb.PartialView.Create`
+* `Umb.PartialView.Update`
+* `Umb.PartialView.Delete`
+
+Deleting a template is still permitted. Deleting removes only the database record and leaves the file. A template removed from the code can then be cleaned up on the environments it was deployed to. A partial view is only its file, so deleting a partial view is denied.
 
 ## Denying permissions
 
@@ -95,7 +107,7 @@ Configurators are a collection, so a site and its installed packages can each re
 
 ## Checking denied permissions
 
-Inject `IEnvironmentPermissions` to check whether a permission verb is denied. For example, to skip a feature that would make a denied change.
+Inject `IEnvironmentPermissions` to check whether a permission verb is denied. For example, use it to skip a feature that would make a denied change.
 
 {% code title="SchemaImportService.cs" %}
 ```csharp
@@ -120,7 +132,9 @@ The `DeniedPermissions` property lists every denied verb. Any other verb is perm
 
 ## Protecting your own API endpoints
 
-Your code can add Management API endpoints that make changes a site may need to lock. You can protect these endpoints the same way Umbraco's controllers are protected. Most endpoints don't need this. An endpoint can make a change that Umbraco already has a permission for, such as creating a Document Type. Use Umbraco's verb for that change, so the same denial applies. For other changes, use verbs of your own.
+Your code can add Management API endpoints that make changes a site may need to lock. You can protect these endpoints the same way Umbraco's controllers are protected. Most endpoints don't need this.
+
+An endpoint can make a change that Umbraco already has a permission for, such as creating a Document Type. Use Umbraco's verb for that change, so the same denial applies. For other changes, use verbs of your own.
 
 Declaring a verb on an endpoint doesn't deny anything. A configurator decides what is denied.
 
@@ -165,7 +179,7 @@ Add the `RequiresPermissions` attribute to an action to declare exactly the verb
 
 {% code title="MyItemApiController.cs" %}
 ```csharp
-// A POST action that only reads data is never denied.
+// Search only reads data, so it requires no permissions.
 [HttpPost("search")]
 [RequiresPermissions([])]
 public IActionResult Search(string query)
@@ -190,18 +204,6 @@ Verbs in attributes must be constants. Define your own verbs as constant fields 
 ### OpenAPI documentation
 
 Endpoints protected with `RequiresPermissionsFor` or `RequiresPermissions` have the `Umb-Denied-Permission` header documented on their `403` response. Actions that are never denied, such as `GET` actions, are left out. The `403` response is added when the endpoint doesn't document one already. This applies to OpenAPI documents that use the backoffice security requirements, as described in [Custom Backoffice API](custom-backoffice-api.md).
-
-## Templates and partial views in production
-
-Umbraco includes a configurator that applies in the `Production` [runtime mode](../../run-in-production/runtime-modes.md). Template and partial view files arrive with the deployment and aren't written to disk in that mode. The configurator denies:
-
-* `Umb.Template.Create`
-* `Umb.Template.Update`
-* `Umb.PartialView.Create`
-* `Umb.PartialView.Update`
-* `Umb.PartialView.Delete`
-
-Deleting a template is still permitted. Deleting removes only the database record and leaves the file. A template removed from the code can then be cleaned up on the environments it was deployed to. A partial view is only its file, so deleting a partial view is denied.
 
 ## Umbraco's permission verbs
 
