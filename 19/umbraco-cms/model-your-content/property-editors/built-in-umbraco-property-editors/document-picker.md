@@ -54,7 +54,9 @@ Use the Single Document Picker when editors should select exactly one page, for 
 }
 ```
 
-### Add values programmatically
+<details>
+
+<summary>Add values programmatically</summary>
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
@@ -107,6 +109,8 @@ If Models Builder is enabled you can get the alias of the desired property witho
 }
 ```
 
+</details>
+
 ## Document Picker (Multiple)
 
 `Schema Alias: Umbraco.DocumentPicker.Multiple`
@@ -157,7 +161,9 @@ Use the Document Picker when editors should select multiple pages, for example a
 }
 ```
 
-### Add values programmatically
+<details>
+
+<summary>Add values programmatically</summary>
 
 See the example below to see how a value can be added or changed programmatically. To update a value of a property editor you need the [Content Service](https://apidocs.umbraco.com/v19/csharp/api/Umbraco.Cms.Core.Services.ContentService.html).
 
@@ -210,3 +216,5 @@ If Models Builder is enabled you can get the alias of the desired property witho
     content.SetValue(Home.GetModelPropertyType(PublishedContentTypeCache, x => x.FeaturePicker).Alias, System.Text.Json.JsonSerializer.Serialize(keys));
 }
 ```
+
+</details>
