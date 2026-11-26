@@ -210,7 +210,7 @@ Property Editor UI manifests define how property editors appear and behave in th
 * **Settings:**
   * `startNodeId` - Set start node
 
-#### [Multi URL Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/multi-url-picker.md)
+#### [Multi URL Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md)
 
 * **Alias:** `Umb.PropertyEditorUi.MultiUrlPicker`
 * **Icon:** `icon-link`
