@@ -1,6 +1,6 @@
 ---
 description: >-
-  Deny specific changes through the Management API for every user of the installation, and protect your own API endpoints the same way.
+  Deny specific changes through the Management API for every user of the installation.
 ---
 
 # Environment Permissions
@@ -11,7 +11,7 @@ Environment permissions let you deny specific changes for every user, across the
 Environment permissions are available from Umbraco 18.4.
 {% endhint %}
 
-Umbraco includes permissions for changes to its own schema. Your own code can deny these, and it can define permissions of its own for its own API endpoints.
+Umbraco includes permissions for changes to its own schema, and your code can deny them.
 
 {% hint style="info" %}
 Environment permissions are enforced by the Management API. Backoffice support is coming later. Until then, the backoffice still offers actions that are denied, and shows an error when the API rejects them.
@@ -124,7 +124,7 @@ The `DeniedPermissions` property lists every denied verb. Any other verb is perm
 
 ## Protecting your own API endpoints
 
-Your own Management API controllers can use environment permissions the same way Umbraco's controllers do. An endpoint can make a change that Umbraco already has a permission for, such as creating a Document Type. Use Umbraco's verb for that change, so the same denial applies. For other changes, use verbs of your own.
+Your code can add Management API endpoints that make changes a site may need to lock. You can protect these endpoints the same way Umbraco's controllers are protected. Most endpoints don't need this. An endpoint can make a change that Umbraco already has a permission for, such as creating a Document Type. Use Umbraco's verb for that change, so the same denial applies. For other changes, use verbs of your own.
 
 Declaring a verb on an endpoint doesn't deny anything. A configurator decides what is denied.
 
