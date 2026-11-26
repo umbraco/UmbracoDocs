@@ -134,7 +134,7 @@ A `DataGenerationTime` value that cannot be read logs a warning and is treated a
 {% hint style="info" %}
 **Timeouts and thresholds:**
 
-* `DataProcessing:ProfileBuildCommandTimeout`: The time in seconds allowed for the SQL command that builds a visitor's personalization profile during a request (default: 5). Values below 5 are raised to 5. Available from Umbraco Engage 18.3.
+* `DataProcessing:ProfileBuildCommandTimeout`: The time in seconds allowed for the SQL command that builds a visitor's personalization profile during a request (default: 5). Values below 5 are raised to 5.
 * `DataCollection:RegexTimeoutInMilliseconds`: The time in milliseconds allowed for a regular expression that is evaluated during data collection (default: 100).
 * `Settings:SuspiciousActivity:PageviewThreshold`: The number of pageviews from a single visitor above which the activity is listed as suspicious (default: 250). Learn more in the [Suspicious Activity](../../marketers-and-editors/settings/suspicious-activity.md) article.
 
