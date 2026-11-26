@@ -86,7 +86,7 @@ The **Overview** menu consists of:
 * A place to manage the [**Team**](../project-features/team-members/) that has access to your project.
 * A page that gives a **Summary** of your project, like when it was created, that plan, and more.
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt="Summary page"><figcaption><p>Summary page</p></figcaption></figure>
 
 ## Different ways to start an Umbraco Cloud project
 

@@ -18,6 +18,51 @@ If you are upgrading to a new major version, you can find the details about the 
 
 This section contains the release notes for Umbraco Deploy 17, including all changes for this version.
 
+### [17.5.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.5.0) (November 12th 2026)
+
+* Add three health checks in a new **Deploy** group on the **Health Check** dashboard in the **Settings** section. Each check offers actions to fix what it reports:
+  * **UDA file versions** reports `.uda` files written by another version of Deploy, and files that can't be read. Files from a newer version are errors, files from an older major version are warnings. Use **Migrate** to update outdated files to the installed version. In `ReadOnly` [disk mode](getting-started/deploy-settings.md#disk-mode), Migrate isn't offered: migrate on a development environment and update the files in your build.
+  * **Schema comparison** reports schema items without a `.uda` file, `.uda` files without a schema item, and items that differ from their file. Use **Export schema** or **Deploy schema** to bring them in line.
+  * **Failed disk operation** reports when the last disk operation failed, such as a schema deployment. Use **Dismiss** to clear the failure. The details stay in the logs.
+* Add a **Version** column to the schema comparison, showing whether each `.uda` file was written by the installed version of Deploy.
+* Show a **View progress** button on the Deploy dashboard while an operation runs.
+* Only offer **Include all items below** when exporting or queueing an item that has children.
+* Offer **Include all items below** when exporting a dictionary item with children, with `TransferDictionaryAsContent` enabled.
+* Fix the partial restore of a dictionary item failing with `No connector registered for entity type 'dictionary'`.
+* Only offer to include the items below in the **Partial Restore** dialog for entity types that support it. Members no longer show this option.
+* Show the tree name, such as **Members** or **Dictionary**, in the header of the remote item picker instead of the entity type alias.
+
+### [17.4.0](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (November 5th 2026)
+
+* All items from 17.4.0-rc1 and 17.4.0-rc2.
+
+### [17.4.0-rc2](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 30th 2026)
+
+* Delete the `.uda` files and signatures of the descendants when deleting a dictionary item [#356](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/356). Previously, the next schema deployment failed with `ParentNotFound`. If you already committed the `.uda` files of these descendants, remove them manually.
+* Include the log in the schema deployment status report again. Deploy no longer writes the `deploy.log` file, which stayed empty.
+* Report a schema deployment that fails without an error message as failed instead of completed. A failure recorded right after a completed deployment now stays visible.
+* Show the Deploy dashboard status as ready instead of an error when the Deploy folder doesn't exist yet.
+* Remove the double slash from remote tree and content comparison requests when a workspace URL ends with a slash.
+
+### [17.4.0-rc1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.4.0) (October 13th 2026)
+
+* Pick any item from the remote environment in the **Partial Restore** dialog, including members. Items that don't exist on the local environment are included too ([discussion #321](https://github.com/umbraco/Umbraco.Deploy.Issues/discussions/321)). The picker pages through the remote tree and you can search it by name. Members also match on username and email. A remote environment running an older Deploy version returns the items as before.
+  * Service connectors in packages can provide this tree by implementing the new [`ITreeServiceConnector`](extending/extending.md#partial-restore-of-remote-items) interface. The `RemoteTreeDetail` parameter used to register a remote tree is obsolete and will be removed in Deploy 19.
+* Create redirects for moved and renamed documents on the receiving environment when transferring or restoring them [#354](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/354). Redirects had not been created on the receiving environment since Deploy 15.
+* Restore a trashed document or media item without its trashed descendants when running Umbraco CMS 17.7.0 or later. The descendants stay in the recycle bin until they are transferred or restored themselves [#267](https://github.com/umbraco/Umbraco.Deploy.Issues/issues/267). Earlier CMS versions still restore the whole trashed subtree ([umbraco/Umbraco-CMS#23417](https://github.com/umbraco/Umbraco-CMS/issues/23417)).
+* Add the [`DiskMode`](getting-started/deploy-settings.md#disk-mode) setting with the values `ReadWrite` (default) and `ReadOnly`. Use `ReadOnly` when the deployed build is the only source of schema, for example in CI/CD pipelines or containers. Deploy then doesn't write to its folder on disk.
+* Add the [`StartupOperations`](getting-started/deploy-settings.md#startup-operations) setting to run schema operations in the background after startup, without a trigger file. The flags are `None` (default), `DeploySchema`, and `CleanSchema`.
+* Use the environment alias as the type of an Umbraco Cloud environment: `dev`, `stage`, `live`, or the alias of a flexible environment. Previously, the types were `development`, `staging`, and `live`. Update any code that checks `ICurrentEnvironmentInfo.Type`. The backoffice now labels environments by their name.
+* Queue a schema deployment requested through `extract/start` after the one already running on the server, instead of skipping it. The changed schema files are now always deployed. On load-balanced environments, the status report returns `Unknown` instead of an error for a deployment running on another server.
+* Report a cancelled deployment operation as failed instead of completed, for example when the environment shuts down. A new operation clears the `deploy-failed` status of the previous one when it starts.
+* Export the schema on the first boot after an unattended install of Umbraco Deploy Cloud when there are no schema files to import. The schema created by the install, such as the default Data Types, now gets `.uda` files.
+* Restore the separate **Schema files** checkbox in the import dialog. Clearing the **Schema** checkbox now excludes schema from the import.
+* Fix the 500 error when exporting a single dictionary item with `TransferDictionaryAsContent` enabled.
+* Add the [`BaselineUrl`](getting-started/deploy-settings.md#baseline-settings) setting to configure the Baseline project. The setting replaces the Umbraco Cloud-only `Upstream` project setting, which is now obsolete. On-Premises installations offer the Baseline workspace on the first configured workspace.
+* Add the [`BaselineApiSecret` and `ChildApiSecrets`](getting-started/deploy-settings.md#baseline-settings) settings. A Child project signs its requests to the Baseline project with its Baseline secret. The Baseline project accepts the secret of each Child project on the endpoints used by a restore. Without a Baseline secret, the Child project uses its project secret and logs a warning.
+* Match environment URLs on their scheme, host, port, and path segments. Only ping back and pull files from hosts of a configured workspace. A source environment whose application URL isn't a configured workspace URL pushes its files to the target instead.
+* Reject transfers to the Baseline workspace. The Baseline project is only available for restores.
+
 ### [17.3.1](https://github.com/umbraco/Umbraco.Deploy.Issues/issues?q=is%3Aissue+is%3Aclosed+label%3Arelease%2F17.3.1) (September 24th 2026)
 
 * Fix the site failing to start with `ArgumentException: An item with the same key has already been added` when another package, such as Umbraco.AI or Umbraco.Automate, already maps the same types in the Swagger options.

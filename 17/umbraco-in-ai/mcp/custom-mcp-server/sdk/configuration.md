@@ -44,13 +44,19 @@ npx my-mcp-server --env="/path/to/custom/.env"
 
 See [Tool Filtering](./tool-filtering.md) for how modes, slices, collections, and read-only mode control which tools are registered.
 
-### Local Development
+### TLS Certificates
 
-When connecting to a local Umbraco instance over HTTPS with a self-signed certificate, set the `NODE_TLS_REJECT_UNAUTHORIZED` environment variable to `0` to disable TLS certificate validation.
+TLS certificate verification is on by default. The SDK doesn't change it.
+
+For a local Umbraco with a self-signed certificate, set `NODE_TLS_REJECT_UNAUTHORIZED=0` in `.env`. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. Projects created with `create-umbraco-mcp-server` include this line in `.env`. The `init` and `discover` commands turn it on for a local base URL and comment it out for a remote one.
 
 {% hint style="warning" %}
-If you are connecting to the secure endpoint of Umbraco locally then always set `NODE_TLS_REJECT_UNAUTHORIZED` to `0`.
+`NODE_TLS_REJECT_UNAUTHORIZED=0` turns off certificate verification for every HTTPS request the process makes. If it's set and `UMBRACO_BASE_URL` isn't local, the server writes an error to `stderr` and refuses to start. `npm run generate` fails in the same way, before it downloads the OpenAPI specification. For a remote site, remove the setting.
 {% endhint %}
+
+To keep verification on, trust the development certificate with `NODE_EXTRA_CA_CERTS=/path/to/dev-cert.pem`. Set it in the MCP client's server `env`, not in `.env`. Node.js reads it when the process starts, before the server loads `.env`.
+
+See [TLS Certificates](../../connect-to-an-mcp-server/local-mcp-setup/tls-certificates.md) for why remote connections are refused and how to export the development certificate.
 
 ## Field Types
 

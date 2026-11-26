@@ -10,6 +10,8 @@ We include a Workflow **Send email with template (Razor)** that allows you to pi
 
 If you wish to have one or more templates to choose from the **Send email with template (Razor)**, you will need to place all email templates into the `~/Views/Partials/Forms/Emails/` folder.
 
+From Umbraco Forms 13.9.12, the workflow only renders templates from this folder. A template path outside the folder is rejected.
+
 The Razor view must inherit from FormsHtmlModel:
 
 ```csharp

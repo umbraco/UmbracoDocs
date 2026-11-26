@@ -2,6 +2,10 @@
 
 You can now configure a deployment webhook to be triggered upon successful deployments to any of your Umbraco Cloud environments. For example, when deploying from your local environment to one of your Cloud environments. Upon successful deployment, general information about the deployment will be posted in a JSON format to the specific URL you have configured.
 
+{% hint style="info" %}
+To be notified when a deployment starts or fails, use a Deployment alert rule. For more information, see the [Alerting and Notifications](../../../optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md) article.
+{% endhint %}
+
 ## Use cases
 
 There are many use cases for deployment webhooks such as providing a detailed audit trail. Here are some scenarios where webhooks could be useful:

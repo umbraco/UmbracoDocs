@@ -36,6 +36,9 @@ For illustration purposes, the following structure represents the full set of op
       "Settings": {
         "ApiKey": "<your API key here>",
         "ApiSecret": "<your API secret here>",
+        "BaselineUrl": "",
+        "BaselineApiSecret": "",
+        "ChildApiSecrets": {},
         "Edition": "Default",
         "ExcludedEntityTypes": [],
         "RelationTypes" : [],
@@ -53,6 +56,7 @@ For illustration purposes, the following structure represents the full set of op
         "IgnoreBrokenDependenciesBehavior": "Restore",
         "AcceptInvalidCertificates": false,
         "TransferFormsAsContent": true,
+        "AllowFormSecurityDeploymentOperations": "FormsUserConfiguration",
         "TransferDictionaryAsContent": false,
         "IgnoreMissingLanguagesForDictionaryItems": false,
         "SetEmptyDictionaryItemsOnTransfer": true,
@@ -65,6 +69,8 @@ For illustration purposes, the following structure represents the full set of op
         "AllowWebhooksDeploymentOperations": "None",
         "TrashedContentDeploymentOperations": "Import",
         "PostDeploySchemaOperation": "None",
+        "DiskMode": "ReadWrite",
+        "StartupOperations": "None",
         "PreferLocalDbConnectionString": false,
         "MediaFileChecksumCalculationMethod": "PartialFileContents",
         "NumberOfSignaturesToUseAllRelationCache": 100,
@@ -104,6 +110,42 @@ Some configuration is applied via code rather than application settings. Where t
 ### ApiKey or ApiSecret
 
 The `ApiKey` is a random string (of at least 10 characters) set to the same value on all environments to authenticate HTTP requests between them. For improved security, set the `ApiSecret` to a cryptographically random value of 64 bytes instead (using Base64-encoding).
+
+### Baseline settings <a href="#baseline-settings" id="baseline-settings"></a>
+
+A Child project can restore content from the environment of its Baseline project. The Child project signs these requests with its own Baseline secret instead of its `ApiSecret`. This allows each Child project to have a unique `ApiSecret`.
+
+Configure the following settings on the Child project:
+
+* `BaselineUrl` - the URL of the Baseline project environment to restore from. Deploy offers the Baseline as a restore source on the first configured workspace and when running locally. An invalid URL, or a URL containing credentials, is skipped with a warning.
+* `BaselineApiSecret` - the Baseline secret, set to a cryptographically random value of at least 64 bytes (using Base64-encoding).
+
+```json
+"Umbraco": {
+  "Deploy": {
+    "Settings": {
+      "BaselineUrl": "https://baseline.example.com",
+      "BaselineApiSecret": "<Base64-encoded Baseline secret>"
+    }
+  }
+}
+```
+
+Configure the following setting on the Baseline project environment that Child projects restore from:
+
+* `ChildApiSecrets` - the `BaselineApiSecret` of each Child project, keyed by a name for the connection. To revoke the access of a Child project, remove its entry.
+
+A request signed with a Baseline secret is only accepted by the endpoints used to restore. All other endpoints return a 403 status code, so a Child project can't transfer to its Baseline project.
+
+{% hint style="warning" %}
+Never commit `ChildApiSecrets` to the repository of the Baseline project, because Child projects are created from it. Set the secrets as environment variables or user secrets instead, for example `Umbraco__Deploy__Settings__ChildApiSecrets__<name>`.
+{% endhint %}
+
+Invalid entries, such as a secret shorter than 64 bytes, are skipped with a warning instead of preventing the site from starting.
+
+If `BaselineApiSecret` isn't set or is invalid, the Child project signs its requests to the Baseline project with its `ApiSecret` and logs a warning. This fallback only works when both projects use the same `ApiSecret`, and will be removed in Deploy 19.
+
+These settings are available from Umbraco Deploy 17.4. `BaselineUrl` replaces the Umbraco Cloud `Upstream` project setting, which is obsolete.
 
 ### Edition
 
@@ -200,11 +242,29 @@ If no value is set, Deploy will create 16MB chunks, unless the [CMS `MaxRequestL
 
 ### TransferFormsAsContent <a href="#transfer-forms-data-as-content" id="transfer-forms-data-as-content"></a>
 
-In order for Deploy to handle Forms data as content, you'll to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
+In order for Deploy to handle Forms data as content, you'll need to ensure the `TransferFormsAsContent` setting is set to `true`. To transfer Forms data as schema via .uda files committed to source control, use a value of `false`.
 
 {% hint style="info" %}
 On changing this value from `false` to `true`, make sure to remove any `.uda` files for Forms entities that have already been serialized to disk. These will no longer be updated. By deleting them you avoid any risk of them being processed in the future and inadvertently reverting a form to an earlier state.
 {% endhint %}
+
+### AllowFormSecurityDeploymentOperations <a href="#allow-form-security-deployment-operations" id="allow-form-security-deployment-operations"></a>
+
+{% hint style="info" %}
+The `AllowFormSecurityDeploymentOperations` setting is available from Umbraco Forms Deploy 17.1 and requires Umbraco Forms 17.5 or later. With an earlier Forms version, any value other than `FormsUserConfiguration` makes deploying a new form fail.
+{% endhint %}
+
+When a deployment creates a form that's new to the target environment, Umbraco Forms Deploy applies the Forms permissions configured on the target. This setting controls which permissions are applied:
+
+```json
+"AllowFormSecurityDeploymentOperations": "None|FormsConfiguration|FormsUserConfiguration"
+```
+
+* `None` - no permissions are applied.
+* `FormsConfiguration` - the user group permissions configured in Umbraco Forms are applied. These only apply when Forms manages security with user groups, set by the [`ManageSecurityWithUserGroups`](https://docs.umbraco.com/umbraco-forms/developer/configuration#managesecuritywithusergroups) setting.
+* `FormsUserConfiguration` (default) - the configured user group permissions are applied, and the deploying user gets their own permissions to the form. Deploy finds the deploying user on the target by email address, which needs the [`ResolveUserInTargetEnvironment`](#resolve-user-in-target-environment) setting. When the user isn't found, only the user group permissions are applied.
+
+The setting doesn't change the permissions of forms that already exist on the target. Permissions aren't transferred from the source environment.
 
 ### TransferDictionaryAsContent <a href="#transfer-dictionary-items-as-content" id="transfer-dictionary-items-as-content"></a>
 
@@ -377,6 +437,42 @@ After the schema is deployed from the files on disk, the current environment mig
 * `ExtractSchema` - all items will be written to files on disk
 
 A common use case is to configure `CleanSchema` on local/development environments. Deleted schema items will then be cleaned automatically, ensuring they aren't re-created when an environment writes the item back and deploys the changes. Take caution when using this value on a live environment, as missing schema files can result in additional deletions. Deleting a Document Type, for example, will also delete all content using that type.
+
+### DiskMode <a href="#disk-mode" id="disk-mode"></a>
+
+Determines whether Deploy writes to its folder on disk (`umbraco/Deploy`). The available values are:
+
+* `ReadWrite` - Deploy writes `.uda` files, trigger files, and status files to disk (the default value if the setting is missing).
+* `ReadOnly` - Deploy doesn't write to disk, and the `.uda` files in the deployed build are the only source of schema.
+
+Use `ReadOnly` when you deploy a published build, for example from a CI/CD pipeline or as a container image. In this mode:
+
+* Saving schema items doesn't write `.uda` files, and Deploy doesn't write any status files. The status of the last operation is kept in memory instead.
+* Trigger files aren't processed. Use [`StartupOperations`](#startup-operations) to deploy the schema on startup.
+* Imports only include content, and the schema options are hidden in the import dialog.
+* Exporting schema, the file actions in the schema comparison dashboard, and the `deploy-export` trigger return an error.
+
+Deploy also overrides the following settings and logs a single entry at startup listing them:
+
+* [`PostDeploySchemaOperation`](#post-deploy-schema-operation) - `ExtractSchema` is changed to `None`. `CleanSchema` is still allowed, as it only reads from disk.
+* [Import on startup](#import-on-startup) - `FileAction` is changed to `None`, so the imported files are kept.
+* Schema and content package migrations are disabled, unless the CMS `AllowComponentOverrideOfRunSchemaAndContentMigrations` setting is `false`.
+
+Changing this setting requires a restart. The setting is available from Umbraco Deploy 17.4.
+
+### StartupOperations <a href="#startup-operations" id="startup-operations"></a>
+
+Runs schema operations in the background after the site has started, without the need for a trigger file. The available values are:
+
+* `None` - no operations are run (the default value if the setting is missing).
+* `DeploySchema` - the schema is deployed from the `.uda` files on disk.
+* `CleanSchema` - schema items that don't have a corresponding file on disk are deleted.
+
+Combine the values to run both operations, for example `DeploySchema, CleanSchema`. The schema is always deployed before it's cleaned, and cleaning is skipped when the schema deployment didn't complete. Take the same caution with `CleanSchema` as described for [`PostDeploySchemaOperation`](#post-deploy-schema-operation).
+
+The operations never run at the same time as another deployment on the same or another server. They wait up to the [`DiskOperationsTimeout`](#timeout-settings) for a running deployment to complete.
+
+Changing this setting requires a restart. The setting is available from Umbraco Deploy 17.4.
 
 ### PreferLocalDbConnectionString
 

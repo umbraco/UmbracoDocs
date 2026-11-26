@@ -1,9 +1,13 @@
-# External Services
+---
+description: Find your Umbraco Cloud project’s outbound IP addresses. Share them with external services, like APIs or SMTP servers, so they allow your site’s traffic.
+---
+
+# External Services and Outbound IP Addresses
 
 {% hint style="info" %}
 This page covers **your project's own outbound IP addresses** - the addresses your website sends traffic *from*. Share these with an external service to allowlist requests coming from your Cloud project.
 
-Are you looking for the IP addresses of Umbraco Cloud's own services to allowlist them in your firewall? See [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
+Are you looking for the IP addresses of Umbraco Cloud's own services to allowlist them in your firewall? See [Umbraco Cloud Service IP Addresses](cloud-service-ip-addresses.md).
 {% endhint %}
 
 In some cases, Umbraco Cloud might not be the only service you are working with. You might need to work with other services as well. This could be either internal or third-party services. In either case, it will be serviced externally to Umbraco Cloud.
@@ -72,4 +76,4 @@ For projects on a Starter plan, you can see the current dynamic outbound IP addr
 
 The IP addresses above are your project's **own** outbound addresses. These are different from the addresses used by Umbraco Cloud's internal services that connect to your environment. The internal services include both global and regional services.
 
-If you need to allowlist those services in your firewall, see [Static Outbound IP Addresses for Umbraco Cloud](static-outbound-ip-addresses.md).
+If you need to allowlist those services in your firewall, see [Umbraco Cloud Service IP Addresses](cloud-service-ip-addresses.md).

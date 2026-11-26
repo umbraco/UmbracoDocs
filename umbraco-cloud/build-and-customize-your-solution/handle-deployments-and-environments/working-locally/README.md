@@ -23,9 +23,7 @@ You need the following tools to work with a local clone of your Umbraco Cloud pr
 * The proper [local setup for running Umbraco CMS](https://docs.umbraco.com/umbraco-cms/get-started/installation/requirements).
 
 {% hint style="info" %}
-
 In the root of your local repository, you'll find a `Readme.md` file with details about the project structure and build process on Umbraco Cloud.
-
 {% endhint %}
 
 ## Video Tutorial
@@ -53,12 +51,14 @@ git clone <Git clone URL>
 ```
 
 {% hint style="info" %}
-
 If this is the first time you're cloning a Cloud project to your machine, you will be prompted to login using Umbraco ID.
-
 {% endhint %}
 
-Once the repository has been cloned, you have a folder with files for your Umbraco Cloud project. This is your local repository containing everything you need to work locally with your Cloud project.
+Once the repository has been cloned, you have a folder with files for your Umbraco Cloud project. The cloned folder is your local repository containing everything you need to work locally with your Cloud project.
+
+{% hint style="info" %}
+Some file browsers display hidden files, such as `.umbraco`, in gray. The `.umbraco` file is included when you clone a Cloud project.
+{% endhint %}
 
 The screenshot below shows the project folder structure of a default Cloud environment.
 
@@ -87,7 +87,6 @@ The terminal output will show the application starting up and will include local
 ![Terminal Output](../../../.gitbook/assets/work-locally-terminal-output.png)
 
 {% hint style="info" %}
-
 Set up a developer certificate and run the website under HTTPS.
 
 If you don't have a developer certificate already, run the following command:
@@ -95,14 +94,13 @@ If you don't have a developer certificate already, run the following command:
 ```bash
 dotnet dev-certs https --trust
 ```
-
 {% endhint %}
 
 The first time the Cloud project is run locally, you will see the **Restore from Umbraco Cloud** screen. If the cloned environment has Umbraco Deploy metadata files, they are automatically extracted with the option to restore content from Cloud to the local installation.
 
 ![clone dialog](../../../.gitbook/assets/work-locally-restore-screen.png)
 
-Click **Restore** to restore your site's content if any. Wait until this process is completed as it also creates the local SQLite database for your site.
+Click **Restore** to restore your site's content if any. Wait until this process is completed, as the restore also creates the local SQLite database for your site.
 
 {% hint style="info" %}
 Umbraco Cloud sets the application URL for each Cloud environment. A local clone does not receive this value. From Umbraco CMS 17.4, Umbraco does not detect the application URL from incoming requests by default. Licenses for commercial products, such as Umbraco Forms, can therefore show **Validation pending** on your local site. To configure the application URL locally, see the [Configure Licenses](https://docs.umbraco.com/umbraco-dxp/licensing-and-dependencies/configure-licenses#local-development-and-license-validation) article.
@@ -110,7 +108,7 @@ Umbraco Cloud sets the application URL for each Cloud environment. A local clone
 
 ## Solution files and multiple .NET projects
 
-When working locally, you can use whichever IDE you prefer. Refer back to the [Tools](#tools) section for recommendations.
+When working locally, you can use whichever IDE you prefer. Refer back to the [Tools](./#tools) section for recommendations.
 
 1. Locate the `UmbracoProject.csproj` file in the repository.
 2. Open it in your preferred IDE to start working locally with your Cloud project.
@@ -123,7 +121,7 @@ If you have more than "a few" media items, see our recommendations for working w
 
 ### Adding a Solution File to your Cloud Project
 
-Add a solution file to collaborate effectively on a Cloud project. This allows for adding additional .NET projects to your solution.
+Add a solution file to collaborate effectively on a Cloud project. A solution file enables you to add additional .NET projects to your solution.
 
 To add a solution file to your repository, you can do it using either of the following tools:
 
@@ -167,9 +165,6 @@ When creating a solution file, place it at the root of the git repository.
 4. Give the solution a name, and ensure it's saved at the root of your repository.
 5. Ensure that Rider does not create a directory for the solution.
 6. Click **Create**.
-
-The next step is to add your Cloud project's .NET project to the solution.
-
 7. Right-click the solution in the Explorer pane.
 8. Select **Add > Existing project...**.
 9. Locate and open the `UmbracoProject.csproj` file in your repository.
@@ -177,9 +172,7 @@ The next step is to add your Cloud project's .NET project to the solution.
 ### Adding Additional .NET Projects to Your Solution
 
 {% hint style="info" %}
-
 When creating new .NET projects alongside the default .NET project (`UmbracoProject.csproj`), add them to the `src` folder in the git repository.
-
 {% endhint %}
 
 To add additional .NET projects to your solution, you can do it using either of the following tools:
@@ -204,7 +197,7 @@ dotnet sln add ./src/MyAdditionalProject.Web/MyAdditionalProject.Web.csproj
 3. Right-click the solution and choose **Add > New Project...**.
 4. Add a class library to your solution using the latest .NET SDK.
 
-Once the Class library (`.Core`) has been added, you can see the project(s) that have been added in Solution Explorer.
+After you add the class library (`.Core`) view the added projects in Solution Explorer.
 
 #### Rider
 

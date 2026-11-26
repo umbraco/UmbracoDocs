@@ -14,6 +14,18 @@ When upgrading to a new minor or patch version, learn about the changes in the [
 
 ## Breaking changes
 
+### 17.6.0 — Consent and the original referrer
+
+#### Call `consentGranted()` after a visitor grants consent
+
+If your site reloads the page after a visitor grants analytics consent, replace that reload with a call to `umbracoEngage.analytics.consentGranted()`. A reload replaces the original referrer with the site's own URL, so the visit is recorded without its real source.
+
+`consentGranted()` stores the original referrer in a short-lived `ue-consent-referrer` cookie and then reloads the page. Engage reads the referrer from the cookie, and removes it. The cookie is only written for visitors who grant consent. Pass `{ reload: false }` to store the referrer and handle the navigation yourself.
+
+Sites that do not reload the page after consent are not affected.
+
+See [How to become GDPR compliant using Cookiebot](../security-and-privacy/gdpr/how-to-become-gdpr-compliant-using-cookiebot.md) for how to call it from a consent callback.
+
 ### 17.2.0 — Database Schema Alignment
 
 Engage 17.2.0 introduces a rewritten analytics data cleanup system and a database schema alignment. This is a **manual post-upgrade step** that requires running SQL scripts during a maintenance window.

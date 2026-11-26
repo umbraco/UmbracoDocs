@@ -1,6 +1,5 @@
 ---
-description: >-
-    Create and manage AI profiles in the Umbraco backoffice.
+description: Create and manage AI profiles in the Umbraco backoffice.
 ---
 
 # Managing Profiles
@@ -11,7 +10,7 @@ Profiles combine a connection with model settings for specific use cases. Create
 
 1. Navigate to the **AI** section > **Profiles**.
 2. The profile list shows all configured profiles.
-3. Use filters to find profiles by capability (Chat, Embedding, Speech-to-Text).
+3. Use the filter field to search profiles by name. The **Capability** column shows each profile's capability, such as Chat, Embedding, Speech-to-Text, or Image Generation, Decision, and Extraction when enabled.
 4. Click a profile to view or edit its details.
 
 ![The profiles list showing the Default Chat profile](../.gitbook/assets/backoffice-profiles-list.png)
@@ -21,13 +20,13 @@ Profiles combine a connection with model settings for specific use cases. Create
 1. Click **Create Profile** in the Profiles section.
 2. Fill in the required fields:
 
-| Field          | Description                                     |
-| -------------- | ----------------------------------------------- |
-| **Name**       | Display name for the profile                    |
-| **Alias**      | Unique identifier (used in code and as default) |
-| **Capability** | Type of AI operation (Chat, Embedding, Speech-to-Text) |
-| **Connection** | Which connection to use                         |
-| **Model**      | The specific AI model                           |
+| Field          | Description                                                                                                            |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Name**       | Display name for the profile                                                                                           |
+| **Alias**      | Unique identifier (used in code and as default)                                                                        |
+| **Capability** | Type of AI operation (Chat, Embedding, Speech-to-Text, or the experimental Image Generation, Decision, and Extraction) |
+| **Connection** | Which connection to use                                                                                                |
+| **Model**      | The specific AI model                                                                                                  |
 
 3. Configure capability-specific settings.
 4. Click **Save**.
@@ -93,6 +92,39 @@ For profiles with the **Speech-to-Text** capability:
 Leave the language empty to let the model auto-detect the spoken language.
 {% endhint %}
 
+## Image Generation Profile Settings
+
+{% hint style="warning" %}
+Image Generation is experimental. The **Image Generation** capability can only be selected when the `Umbraco:AI:Experimental:ImageGeneration` feature flag is enabled. See [Enabling image generation](../using-the-api/image-generation/#enabling-image-generation).
+{% endhint %}
+
+For profiles with the **Image Generation** capability:
+
+| Setting        | Description                                                                                                   | Default          |
+| -------------- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Size**       | Default image size as `{width}x{height}`, for example `1024x1024`. A dropdown when the model lists its sizes. | Provider default |
+| **Media Type** | Output image format, for example `image/png`, `image/jpeg`, or `image/webp`. Supported values vary by model.  | Provider default |
+
+{% hint style="info" %}
+The **Media Type** field is hidden for models that don't support it. Image count and response format are set per request, not on the profile.
+{% endhint %}
+
+## Decision Profile Settings
+
+{% hint style="warning" %}
+Decision is experimental. The **Decision** capability can only be selected when the `Umbraco:AI:Experimental:Decision` feature flag is enabled. See [Enabling Decision](../using-the-api/decision/#enabling-decision).
+{% endhint %}
+
+Decision profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Decision, such as [TypeSafe AI](../providers/typesafe.md), and its model.
+
+## Extraction Profile Settings
+
+{% hint style="warning" %}
+Extraction is experimental. The **Extraction** capability can only be selected when the `Umbraco:AI:Experimental:Extraction` feature flag is enabled. See [Enabling Extraction](../using-the-api/extraction.md#enabling-extraction).
+{% endhint %}
+
+Extraction profiles have no extra settings. The settings view shows a message saying so. Select a connection that supports Extraction, such as [Cloudflare](../providers/cloudflare.md), and its model.
+
 ## Governance
 
 Chat profiles have a **Governance** tab where you can assign [guardrails](managing-guardrails.md) to enforce safety, compliance, and quality rules on all AI operations using that profile.
@@ -116,7 +148,10 @@ To use a profile as the default when no profile is specified in code:
 2. Select your chat profile via the **Default Chat Profile** picker.
 3. Select your embedding profile via the **Default Embedding Profile** picker.
 4. Select your speech-to-text profile via the **Default Speech-to-Text Profile** picker.
-5. Click **Save**.
+5. If Image Generation is enabled, select your Image Generation profile via the **Default Image Generation Profile** picker.
+6. If Decision is enabled, select your Decision profile via the **Default Decision Profile** picker.
+7. If Extraction is enabled, select your Extraction profile via the **Default Extraction Profile** picker.
+8. Click **Save**.
 
 {% hint style="info" %}
 See [Managing Settings](managing-settings.md) for more details on configuring default profiles.
@@ -154,6 +189,6 @@ Example tags: `production`, `content-team`, `experimental`
 
 ## Related
 
-- [Managing Connections](managing-connections.md) - Connections are required for profiles
-- [Profiles Concept](../concepts/profiles.md) - Deeper explanation of profiles
-- [Using Profiles in Code](../using-the-api/chat/basic-chat.md) - How to use profiles programmatically
+* [Managing Connections](managing-connections.md) - Connections are required for profiles
+* [Profiles Concept](../concepts/profiles.md) - Deeper explanation of profiles
+* [Using Profiles in Code](../using-the-api/chat/basic-chat.md) - How to use profiles programmatically

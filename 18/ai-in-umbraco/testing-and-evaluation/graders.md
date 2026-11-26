@@ -224,7 +224,7 @@ The guardrail grader passes when the evaluator **flags** the content. To assert 
 
 ## Model-Based Graders
 
-Model-based graders use an LLM to evaluate outputs. They return continuous scores between 0 and 1.
+Model-based graders use an AI model to evaluate outputs. They return continuous scores between 0 and 1.
 
 ### llm-judge
 
@@ -257,6 +257,53 @@ The result metadata includes the judge's reasoning, strengths, and weaknesses.
 
 {% hint style="info" %}
 Model-based graders consume AI tokens for each evaluation. Consider using code-based graders for format and structure checks, and reserve the LLM judge for semantic quality evaluation.
+{% endhint %}
+
+### decision-judge
+
+{% hint style="warning" %}
+The Decision Judge is **experimental**. It uses the [Decision](../using-the-api/decision/README.md) capability, and is only listed when the `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+{% endhint %}
+
+Asks a Decision profile a yes/no question: does the test output meet your criteria? The answer comes back as a probability between 0 and 1. The grader uses the probability as its score, and passes when the score is at or above `PassThreshold`.
+
+| Config Property      | Type   | Default   | Description                                                            |
+| -------------------- | ------ | --------- | ---------------------------------------------------------------------- |
+| `ProfileId`          | GUID   | null      | Decision profile to use. Only Decision profiles are listed. Leave empty to use the default Decision profile. |
+| `EvaluationCriteria` | string | (default) | What aspects to evaluate                                               |
+| `PassThreshold`      | double | 0.7       | Minimum score to pass (0 to 1)                                         |
+
+The default evaluation criteria is: "Evaluate the quality, accuracy, and relevance of the response."
+
+{% code title="Example" %}
+
+```json
+{
+    "graderTypeId": "decision-judge",
+    "name": "Is a recipe",
+    "config": {
+        "evaluationCriteria": "The response is a recipe with a list of ingredients and numbered steps.",
+        "passThreshold": 0.7
+    }
+}
+```
+
+{% endcode %}
+
+The result metadata includes the probability, the yes/no answer, the threshold, and the model ID.
+
+The grader does not fall back to the `llm-judge` grader. Instead, it fails with a reason in these cases:
+
+- The Decision feature flag is turned off.
+- No profile is set and no default Decision profile is configured.
+- The call to the Decision profile fails.
+
+{% hint style="info" %}
+`Negate: true` does not invert these failures. They count as errors, so the grader fails whether or not you negate it. The `llm-judge` grader works the same way when its call fails.
+{% endhint %}
+
+{% hint style="info" %}
+The test output is sent to the provider behind the Decision profile, such as [TypeSafe AI](../providers/typesafe.md). This provider can be different from the one that runs the model under test.
 {% endhint %}
 
 ## Combining Graders

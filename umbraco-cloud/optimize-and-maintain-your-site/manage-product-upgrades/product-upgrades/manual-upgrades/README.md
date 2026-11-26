@@ -12,9 +12,9 @@ Umbraco Cloud project uses Umbraco Forms and Umbraco Deploy. This means there ar
 
 ## Why and when would you do a manual upgrade?
 
-By default, all Umbraco Cloud projects are automatically upgraded when we release new patches (like 8.8.**1**) to the Umbraco CMS. This also goes for Umbraco Forms and Umbraco Deploy.
+By default, all Umbraco Cloud projects are automatically upgraded to new _patch_ (like 17.3.**1**) and _minor_ (like 17.**4**) versions of Umbraco CMS. This also goes for Umbraco Forms and Umbraco Deploy. Automatic upgrades start in the project's [upgrade windows](../minor-upgrades.md#upgrade-windows).
 
-When a new _minor_ version (like 8.**8**) is released, the upgrade is applied to the Umbraco Cloud engine, and **not to the individual projects**. The same goes for the release of new major versions (like **10**.0).
+New major versions (like **18**.0) are not applied automatically.
 
 For minor and patch versions, an **Upgrade available** banner is shown on your left-most mainline environment when a newer version is offered. The Umbraco Cloud engine takes care of the entire process, and you only need to verify that everything works when the upgrade is complete. See the [Upgrade from the Cloud Portal](../minor-upgrades.md#upgrade-from-the-cloud-portal) section for details.
 

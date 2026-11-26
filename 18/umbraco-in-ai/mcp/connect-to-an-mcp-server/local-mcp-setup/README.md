@@ -18,6 +18,7 @@ See [Version Compatibility](../../mcp-servers/cms-developer-mcp/README.md#versio
 
 - **Node.js 22+** is required. Check your version by running `node -v` in your terminal.
 - **Umbraco API User** — You need to create an [API User](https://docs.umbraco.com/umbraco-cms/fundamentals/data/users/api-users) in Umbraco before connecting. This user allows the MCP server to communicate securely with the Management API.
+- **Local HTTPS certificate** — A local Umbraco uses a self-signed development certificate, which the MCP server needs extra configuration to accept. See [TLS Certificates](./tls-certificates.md).
 
 ## Hosts
 

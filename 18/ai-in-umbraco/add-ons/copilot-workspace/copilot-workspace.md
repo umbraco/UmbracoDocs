@@ -41,6 +41,10 @@ Archiving hides a conversation from your active lists without deleting it. Archi
 
 ![The Archived group in the sidebar, with a conversation showing a read-only notice](../../.gitbook/assets/copilot-workspace-archived.png)
 
+### Shared Conversations
+
+You can share a conversation with other backoffice users from the **Shared with** section of the context panel. They can read it but not change it. Conversations shared with you appear under **Shared with me** in the sidebar. See [Sharing Conversations](sharing-conversations.md).
+
 ## Projects
 
 A project groups related conversations under shared instructions and reusable context. Anything you attach to a project is inherited by every conversation inside it:
@@ -89,5 +93,6 @@ Unlike Contextual Copilot, where availability also depends on the current sectio
 ## Related
 
 - [Contextual Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open
+- [Sharing Conversations](sharing-conversations.md) - Share a conversation with colleagues
 - [Agent Tool Permissions](../agent/permissions.md) - Scoping tool access, including destructive backend tools
 - [AI Contexts](../../concepts/contexts.md) - Brand voice and guidelines

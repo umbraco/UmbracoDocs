@@ -68,7 +68,7 @@ Use Pre-Generate rules to prevent sensitive data (like PII) from being sent to A
 | **Redact** | Replaces flagged content with `[REDACTED]` before it reaches the AI model or caller. |
 
 {% hint style="info" %}
-The Redact option is only available for code-based evaluators (Contains, Regex Match) that can identify specific text positions. The LLM Safety Judge evaluator does not support redaction because it evaluates content holistically.
+The Redact option is only available for code-based evaluators (Contains, Regex Match) that can identify specific text positions. The LLM Safety Judge and Decision Safety Judge evaluators do not support redaction because they evaluate content holistically.
 {% endhint %}
 
 ### Available Evaluators
@@ -78,6 +78,7 @@ The Redact option is only available for code-based evaluators (Contains, Regex M
 | **Contains**         | `contains`  | Code-based  | Flags content containing a specific substring.                                   | Yes             |
 | **Regex Match**      | `regex`     | Code-based  | Flags content matching a regular expression pattern.                             | Yes             |
 | **LLM Safety Judge** | `llm-judge` | Model-based | Uses an AI model to evaluate content for safety, misinformation, and compliance. | No              |
+| **Decision Safety Judge** | `decision-judge` | Model-based | Asks a Decision profile a yes/no question about whether content is safe (experimental). | No |
 
 #### Contains Evaluator
 
@@ -112,8 +113,40 @@ Uses an AI model to evaluate content against custom criteria. Returns a safety s
 | Evaluation Criteria | What aspects to evaluate (safety, compliance, brand voice, etc.)                |
 | Safety Threshold    | Content is flagged if the safety score is below this value (0-1, default: 0.7). |
 
+#### Decision Safety Judge Evaluator
+
+{% hint style="warning" %}
+The Decision Safety Judge is **experimental**. It uses the [Decision](../using-the-api/decision/README.md) capability, and is only listed when the `Umbraco:AI:Experimental:Decision` feature flag is enabled.
+{% endhint %}
+
+Asks a Decision profile a yes/no question: is this content safe and compliant, based on your criteria? The answer comes back as a probability between 0 and 1. Content is flagged when the probability falls below the Safety Threshold.
+
+| Setting             | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| Profile             | Decision profile to use for evaluation. Only Decision profiles are listed. Leave empty to use the default Decision profile. |
+| Evaluation Criteria | What aspects to evaluate for safety and compliance.                                  |
+| Safety Threshold    | Content is flagged if the safety probability is below this value (0-1, default: 0.7). |
+
+The Decision Safety Judge is model-based. During streaming, it runs after the full response is available. It only flags content and cannot redact.
+
+When content is flagged, the rule reason shows the probability and threshold, for example: `Safety probability 0.04 below threshold 0.70`.
+
+The evaluator does not fall back to the LLM Safety Judge. Instead, it fails safe and flags the content with a reason in these cases:
+
+* The Decision feature flag is turned off.
+* No profile is selected and no default Decision profile is configured.
+* The call to the Decision profile fails.
+
+{% hint style="danger" %}
+If you turn the `Umbraco:AI:Experimental:Decision` flag off, rules that use the Decision Safety Judge stay in place and fail safe. A rule with the **Block** action then blocks every response on that guardrail. Remove or change these rules before you turn the flag off.
+{% endhint %}
+
 {% hint style="info" %}
-Code-based evaluators (Contains, Regex Match) run instantly using pattern matching. The LLM Safety Judge calls an AI model for nuanced evaluation and takes longer. You can also [create custom evaluators](../extending/guardrails.md).
+The content being evaluated is sent to the provider behind the Decision profile, such as [TypeSafe AI](../providers/typesafe.md). This provider can be different from the one that runs your chat model.
+{% endhint %}
+
+{% hint style="info" %}
+Code-based evaluators (Contains, Regex Match) run instantly using pattern matching. The LLM Safety Judge and Decision Safety Judge call an AI model for nuanced evaluation and take longer. You can also [create custom evaluators](../extending/guardrails.md).
 {% endhint %}
 
 ### Reordering Rules

@@ -2,10 +2,33 @@
 
 ## Key Takeaways
 
+* **Upgrade windows for automatic upgrades** - Choose the 4-hour upgrade windows in which automatic minor and patch upgrades can start. The default schedule is Tuesday from 08:00 to 20:00 UTC.
 * **Sweden Region Available** - Umbraco Cloud now has a Sweden region.
 * **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.
 * **Leftover `global.json` no longer breaks deployments** - The temporary `global.json` file written during a Git deployment is now removed when a build fails or the deployment is interrupted.
 * **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
+* **Hosting resources overview** - A new **Resources** page lists every hosting resource in your project, with its environment, region, state, and tier.
+* **Signed-in account shown in the user menu** - The user menu in the Cloud Portal now shows which account you are signed in with ([Cloud Issues #775](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/775)).
+* **Sticky Sessions toggle** - Turn Sticky Sessions on or off for each environment from the Platform Configuration section, on all plans.
+* **File System Certificate toggle** - Allow your application to load client certificates from the file system of an environment, on all plans.
+
+## Upgrade windows for automatic upgrades
+
+Automatic minor and patch upgrades now follow a weekly schedule of upgrade windows. An upgrade window is a 4-hour period in which an automatic upgrade can start. You select the windows that suit your project under **Configuration** -> **Automatic Upgrades** in the Cloud Portal.
+
+<figure><img src="../../.gitbook/assets/automatic-upgrade-windows.png" alt="Picker for upgrade windows showing a weekly grid of 4-hour windows in local time, with selected windows checked and windows shaded from quiet to very busy"><figcaption><p>Selecting upgrade windows for automatic upgrades</p></figcaption></figure>
+
+* **Six windows a day.** Windows start at 00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 UTC. You can select as many windows as you need.
+* **Tuesday by default.** The default schedule is Tuesday from 08:00 to 20:00 UTC. If no windows are selected, automatic upgrades do not run for the project.
+* **Defined in UTC.** Windows do not move with daylight saving time. The picker can also show the windows in your local time.
+* **The window limits when an upgrade starts.** Environments are upgraded one at a time. An upgrade that starts late in a window can upgrade Staging and Live after the window has closed.
+* **Postponed upgrades are retried.** If the platform is at capacity, the upgrade is shown as **Cancelled** on the Project History page. It is attempted again in your next window, if that window starts within 7 days after the release was made available.
+
+Selecting several windows does not lead to several upgrades. Each release is applied once, and extra windows give the upgrade more opportunities to start.
+
+The **Upgrade available** banner is not affected by upgrade windows. Umbraco Cloud can still roll out critical security fixes outside of your upgrade windows.
+
+See the [Upgrade Windows](../../optimize-and-maintain-your-site/manage-product-upgrades/product-upgrades/minor-upgrades.md#upgrade-windows) section for details.
 
 ## Sweden Region Available
 
@@ -46,3 +69,45 @@ The updated page includes:
 * **Plan extensions** - Bandwidth and media storage limits include active extensions. Expand **+X GB bought** to see active and scheduled extensions.
 
 See the [Usage documentation](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md) for the full overview.
+
+## Hosting resources overview
+
+An Umbraco Cloud project is more than its environments. Each project is made up of hosting resources, such as a website, a SQL database, a compute plan, and media storage.
+
+The new **Resources** page in the Cloud Portal lists every hosting resource your project contains. Find the page under **Overview** > **Resources**.
+
+<figure><img src="../../.gitbook/assets/cloud-hosting-resources-page.png" alt="The Resources page listing six hosting resources with their resource type, environment, state, and tier, and filters for resource type and environment"><figcaption><p>The Resources page lists every hosting resource in the project.</p></figcaption></figure>
+
+For each resource, the page shows:
+
+* **Resource type** - Website, SQL Database, Shared Compute, Media Storage, Redis Cache, Secret Store, or Cloudflare Tenant.
+* **Environment** - The environment the resource belongs to.
+* **Region** - Where the resource runs, for example West Europe or Global.
+* **State** - The current state of the resource, for example Ready or Provisioning.
+* **Tier** - The plan or tier of the resource, where relevant. For example, Shared Standard.
+
+You can filter the list by resource type and by environment.
+
+## Signed-in account shown in the user menu
+
+The user menu in the top bar of the Cloud Portal now starts with a **Signed in as** block. The block shows the name and email of the account you are signed in with.
+
+If you have more than one Umbraco Cloud account, you can see which one you are using without opening your profile.
+
+The change closes [Cloud Issues #775](https://github.com/umbraco/Umbraco.Cloud.Issues/issues/775).
+
+## Sticky Sessions toggle
+
+The Platform Configuration section now includes a **Sticky Sessions** toggle. Sticky Sessions route each visitor to the same instance for the duration of their session.
+
+The toggle is available on all plans. Load Balancing requires Sticky Sessions. While Load Balancing is enabled, Sticky Sessions stay enabled and the toggle cannot be changed.
+
+For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#sticky-sessions) documentation.
+
+## File System Certificate toggle
+
+The Platform Configuration section now includes a **File System Certificate** toggle. When enabled, your application can load client certificates, such as X.509 certificates, as files at runtime. Common uses are integrations with payment providers, identity providers, and partner APIs.
+
+The setting was previously only available by contacting Umbraco Support. It is now available on all plans and stays the same after a plan change.
+
+For more details, see the [Platform Configuration](../../build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md#file-system-certificate) documentation.

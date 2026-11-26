@@ -18,7 +18,8 @@ The connection endpoints allow you to manage AI provider connections programmati
 | DELETE | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}`                    | Delete a connection           |
 | POST   | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/test`               | Test a connection             |
 | GET    | `/umbraco/ai/management/api/v1/connections/capabilities`                             | List available capabilities   |
-| GET    | `/umbraco/ai/management/api/v1/connections/capabilities/{capability}`                | Get connections by capability |
+| GET    | `/umbraco/ai/management/api/v1/connections?capability={capability}`                  | List connections by capability |
+| GET    | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/capabilities`       | Get a connection's capabilities |
 | GET    | `/umbraco/ai/management/api/v1/connections/{connectionIdOrAlias}/models`             | Get available models          |
 
 ## Connection Model

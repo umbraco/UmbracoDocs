@@ -27,11 +27,15 @@ The following snippet contains all the available options, with default values, a
       "InstallMissingDatabase": false,
       "DisableElectionForSingleServer": false,
       "DatabaseFactoryServerVersion": "SqlServer.V2019",
+      "DatabaseCommandTimeout": null,
+      "DatabaseConnectTimeout": null,
       "MainDomLock": "FileSystemMainDomLock",
       "MainDomKeyDiscriminator": "",
       "Id": "184a8175-bc0b-43dd-8267-d99871eaec3d",
       "NoNodesViewPath": "~/umbraco/UmbracoWebsite/NoNodes.cshtml",
       "UpgradingViewPath": "~/umbraco/UmbracoWebsite/Upgrading.cshtml",
+      "MaintenanceViewPath": "~/umbraco/UmbracoWebsite/Maintenance.cshtml",
+      "NotFoundViewPath": "~/umbraco/UmbracoWebsite/NotFound.cshtml",
       "Smtp": {
         "From": "person@umbraco.dk",
         "Host": "localhost",
@@ -174,6 +178,26 @@ This is not a setting that commonly needs to be configured.
 
 This setting is used to specify which sql server version that the database is running, this setting is only required if you use SqlServer 2008, if this is the case set the setting to `"SqlServer.V2008"`.
 
+### Database command timeout
+
+Key: `DatabaseCommandTimeout` Type: `string` (default: not set)
+
+Sets the maximum time a single database command can run before it is canceled. The format is `HH:MM:SS`. Use `00:00:00` for no limit.
+
+When set, this value takes precedence over a command timeout in the connection string. When it is not set, the connection string value applies, or the database provider's default of 30 seconds.
+
+For the full order in which the command timeout is resolved, see [Database timeouts](connectionstringssettings.md#database-timeouts).
+
+### Database connect timeout
+
+Key: `DatabaseConnectTimeout` Type: `string` (default: not set)
+
+Sets the maximum time to wait when opening a connection to the database. The format is `HH:MM:SS`.
+
+When set, this value takes precedence over a connect timeout in the connection string. When it is not set, the connection string value applies, or the database provider's default.
+
+SQLite has no connect timeout. If you configure this setting on a site running SQLite, Umbraco logs an information message at startup and the setting has no effect.
+
 ### Main dom lock
 
 Key: `MainDomLock` Type: `string`
@@ -237,6 +261,22 @@ Key: `UpgradingViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/Upgr
 This setting specifies the view to render when an unattended upgrade is running in the background. Frontend and surface controller requests receive an HTTP 503 response with this view during the upgrade. See [Upgrade Unattended](../../get-started/upgrading-and-migrating/upgrade-unattended.md) for details on the upgrade process.
 
 To customize this view, create your own `.cshtml` file at a location of your choosing. Set this key to that file's path. For example `~/Views/CustomUpgrading.cshtml`.
+
+### Maintenance view path
+
+Key: `MaintenanceViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/Maintenance.cshtml`)
+
+This setting specifies the view to render when an upgrade is pending and waiting for an administrator to run it. This is a different view from the one used for unattended upgrades, which is configured with `UpgradingViewPath`. See [Create a custom maintenance page](../../run-in-production/tutorials/create-a-custom-maintenance-page.md) for a full guide.
+
+To customize this view, create your own `.cshtml` file at a location of your choosing. Set this key to that file's path. For example `~/Views/CustomMaintenance.cshtml`.
+
+### Not found view path
+
+Key: `NotFoundViewPath` Type: `string` (default: `~/umbraco/UmbracoWebsite/NotFound.cshtml`)
+
+This setting specifies the view to render when Umbraco cannot render a page. That happens when no document matches the URL, or when the matched document has no template. This is the fallback shown when no custom error page has been configured. See [Implement Custom Error Pages](../tutorials/custom-error-page.md) for how to serve a 404 page from content instead.
+
+To customize this view, create your own `.cshtml` file at a location of your choosing. Set this key to that file's path. For example `~/Views/CustomNotFound.cshtml`.
 
 ## SMTP settings
 

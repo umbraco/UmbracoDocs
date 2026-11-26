@@ -34,6 +34,35 @@ If more than one start folder is selected, they will appear underneath the root 
 
 ![Start folders](../.gitbook/assets/user-start-folders-v14.png)
 
+## Access to Forms, Entries, and Exports
+
+From Umbraco Forms 17.6.2, a user's access to an individual form is checked when they work with its entries, the form, or its folder. A user has access to a form when both of the following are true:
+
+* The form is granted to them in the _Security_ tree.
+* The form is in one of their start folders, or they have no start folders.
+
+The checks apply as follows:
+
+* Viewing, editing, deleting, and exporting a form's entries requires the matching permission and access to the form. For example, exporting entries requires the _View Entries_ permission.
+* Exporting a form definition requires access to the form.
+* Copying or moving a form requires access to the form, and the destination folder must be within the user's start folders. Copying workflows from one form to another requires access to both forms.
+* Creating and importing a form requires the destination folder to be within the user's start folders. Importing over an existing form also requires access to that form.
+* Saving a form into a different folder requires the new folder to be within the user's start folders.
+* Creating a folder requires its parent folder to be within the user's start folders. Moving a folder requires both the folder and its destination to be within them.
+* The **Forms** tab on a member in the **Members** section leaves out forms outside the user's start folders.
+
+For a user with a single start folder, that folder is the root of their forms tree. An item they create, copy, or move to the root is placed in their start folder. The same applies to a form restored from the recycle bin to the root.
+
+If a user opens a form they don't have access to, the form editor shows an access denied message.
+
+### Entry Exports
+
+An entry export is stored for the user who generated it. Only that user can download it.
+
+{% hint style="info" %}
+Exports generated before upgrading to Umbraco Forms 17.6.2 can no longer be downloaded. Generate the export again.
+{% endhint %}
+
 ## User group based permissions
 
 A new model was introduced allowing for the management of permissions at the level of user groups. Particularly for installations with a large number of users, we expect this to be a more useful setup and require less ongoing administration.

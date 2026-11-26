@@ -6,8 +6,23 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [November 2026](2026-11-releasenotes.md)
+
+* [24/11] - **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
+* [23/11] - **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
+* [19/11] - **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
+* [17/11] - **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
+* [12/11] - **Reroll the Deploy API key** - Generate a new Deploy API key for a project from the Cloud Portal if the key has been shared or leaked.
+* [10/11] - **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
+* [02/11] - **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
+
 ## [October 2026](2026-10-releasenotes.md)
 
+* [29/10] - **Sticky Sessions toggle** - Turn Sticky Sessions on or off for each environment from the Platform Configuration section, on all plans.
+* [29/10] - **File System Certificate toggle** - Allow your application to load client certificates from the file system of an environment, on all plans.
+* [28/10] - **Upgrade windows for automatic upgrades** - Choose the 4-hour upgrade windows in which automatic minor and patch upgrades can start. The default schedule is Tuesday from 08:00 to 20:00 UTC.
+* [27/10] - **Signed-in account shown in the user menu** - The user menu in the Cloud Portal now shows which account you are signed in with.
+* [16/10] - **Hosting resources overview** - A new **Resources** page lists every hosting resource in your project, with its environment, region, state, and tier.
 * [12/10] - **Updated Usage overview** - Monitor bandwidth forecasts and history, plan extensions, and additional metrics such as database size, disk usage, and content nodes.
 * [09/10] - **Sweden Region Available** - Umbraco Cloud now has a Sweden region.
 * [02/10] - **Automatic NuGet cache cleanup** - Superseded NuGet packages are removed from your environments after each deployment, so long-lived projects no longer fill their disk with old package versions.

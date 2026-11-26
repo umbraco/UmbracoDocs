@@ -13,12 +13,21 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 ## Getting started
 
 1. Download and install the [Claude.ai desktop app](https://claude.ai/download).
-2. Go to **Settings** → **Developer** → **Edit Config** to edit the MCP settings,.
+2. Go to **Settings** → **Desktop app** → **Extensions**.
+3. Select **Edit config** under **Local MCP servers** to edit the MCP settings.
 
 ![MCP Panel](<../../../.gitbook/assets/Claude Desktop.png>)
 
-3. Open the JSON configuration file in your preferred text editor.
-4. Add the following snippet.
+{% hint style="warning" %}
+The **Extensions** settings are not always available. Your organization can turn off local MCP servers in Claude Desktop. If the settings are missing, contact your Claude administrator.
+{% endhint %}
+
+{% hint style="info" %}
+The configuration file is only for local MCP servers. To connect to a hosted Umbraco MCP server, see [Claude Desktop](../hosted-mcp-setup/local-apps/claude-desktop.md) in the Hosted MCP Setup section.
+{% endhint %}
+
+4. Open the JSON configuration file in your preferred text editor.
+5. Add the following snippet.
 
 ```bash
 {
@@ -41,19 +50,23 @@ The examples below use the Developer MCP package (`@umbraco-cms/mcp-dev`). Repla
 }
 ```
 
+{% hint style="warning" %}
+`NODE_TLS_REJECT_UNAUTHORIZED` set to `0` lets the MCP server accept the self-signed certificate of a local Umbraco. Only use it when `UMBRACO_BASE_URL` is `localhost`, `127.0.0.1` or `[::1]`. With any other base URL, the server refuses to start, so remove the setting for a remote site. See [TLS Certificates](tls-certificates.md) for the reasons, and how to keep verification on with `NODE_EXTRA_CA_CERTS`.
+{% endhint %}
+
 {% hint style="info" %}
 `UMBRACO_INCLUDE_TOOL_COLLECTIONS` restricts the MCP Server to only the tool collections listed here. Nearly every Umbraco Management API operation is available as a tool, so add any additional collections your task requires. See [Available Tools](../../mcp-servers/cms-developer-mcp/available-tools.md) for the full list of collections.
 {% endhint %}
 
-5. Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
-6. Restart Claude to activate the new configuration.
-7. Open the logs and review the `mcp-server-umbraco-mcp.log` file if you encounter a connection error. This file contains details on how to resolve the issue.
+6. Replace the `UMBRACO_CLIENT_ID`, `UMBRACO_CLIENT_SECRET`, and `UMBRACO_BASE_URL` values with your local connection details.
+7. Restart Claude to activate the new configuration.
+8. Open the logs and review the `mcp-server-umbraco-mcp.log` file if you encounter a connection error. This file contains details on how to resolve the issue.
 
 {% hint style="info" %}
 A paid version of Claude.ai will have a higher token limit and can run more complex prompts.
 {% endhint %}
 
-8. [Choose the tools or tool collections](../../mcp-servers/cms-developer-mcp/available-tools.md) to enable your first task.
+9. [Choose the tools or tool collections](../../mcp-servers/cms-developer-mcp/available-tools.md) to enable your first task.
 
 You will need to restart Claude Desktop every time you make a change to the tools you are using.
 

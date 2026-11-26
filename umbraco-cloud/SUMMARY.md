@@ -43,7 +43,6 @@
     * [Change your Plan](build-and-customize-your-solution/set-up-your-project/project-settings/change-your-plan.md)
     * [SMTP Settings](build-and-customize-your-solution/set-up-your-project/project-settings/smtp-settings.md)
     * [Platform Configuration](build-and-customize-your-solution/set-up-your-project/project-settings/platform-configuration.md)
-    * [Application Settings](build-and-customize-your-solution/set-up-your-project/project-settings/application-settings.md)
   * [Security](build-and-customize-your-solution/set-up-your-project/security/README.md)
     * [Web Application Firewall](build-and-customize-your-solution/set-up-your-project/security/web-application-firewall.md)
     * [Managing Transport Security](build-and-customize-your-solution/set-up-your-project/security/managing-transport-security.md)
@@ -95,9 +94,9 @@
   * [Private NuGet Feed on Umbraco Cloud](expand-your-projects-capabilities/cloud-extensions/private-nuget-feed.md)
   * [Umbraco Forms on Cloud](expand-your-projects-capabilities/cloud-extensions/umbraco-forms-on-cloud.md)
   * [Customizing Translations](expand-your-projects-capabilities/cloud-extensions/customizing-translations.md)
-* [External Services](expand-your-projects-capabilities/external-services/README.md)
+* [External Services and Outbound IP Addresses](expand-your-projects-capabilities/external-services/README.md)
   * [Application Insights](expand-your-projects-capabilities/external-services/application-insights.md)
-  * [Cloud Services Static IPs](expand-your-projects-capabilities/external-services/static-outbound-ip-addresses.md)
+  * [Umbraco Cloud Service IP Addresses](expand-your-projects-capabilities/external-services/cloud-service-ip-addresses.md)
 
 ## Go Live
 
@@ -134,9 +133,12 @@
 * [Monitor and Troubleshoot](optimize-and-maintain-your-site/monitor-and-troubleshoot/README.md)
   * [Usage](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/README.md)
     * [Bandwidth](optimize-and-maintain-your-site/monitor-and-troubleshoot/usage/bandwidth.md)
+  * [Recommendations](optimize-and-maintain-your-site/monitor-and-troubleshoot/recommendations.md)
   * [Project History](optimize-and-maintain-your-site/monitor-and-troubleshoot/project-history.md)
   * [Traffic and Performance](optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md)
   * [Hostname Monitoring](optimize-and-maintain-your-site/monitor-and-troubleshoot/hostname-monitoring.md)
+  * [Alerting and Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/README.md)
+    * [Webhook Notifications](optimize-and-maintain-your-site/monitor-and-troubleshoot/alerting-and-notifications/webhook-notifications.md)
   * [Management API Security](optimize-and-maintain-your-site/monitor-and-troubleshoot/management-api-security.md)
   * [Sustainability Dashboard](optimize-and-maintain-your-site/monitor-and-troubleshoot/sustainability-dashboard.md)
   * [Power Tools (Kudu)](optimize-and-maintain-your-site/monitor-and-troubleshoot/power-tools/README.md)
@@ -168,6 +170,7 @@
 ## Release Notes
 
 * [Overview 2026](release-notes/overview-2026/README.md)
+  * [November 2026](release-notes/overview-2026/2026-11-releasenotes.md)
   * [October 2026](release-notes/overview-2026/2026-10-releasenotes.md)
   * [September 2026](release-notes/overview-2026/2026-09-releasenotes.md)
   * [August 2026](release-notes/overview-2026/2026-08-releasenotes.md)

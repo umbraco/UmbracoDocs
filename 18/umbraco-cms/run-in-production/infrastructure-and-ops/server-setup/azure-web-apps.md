@@ -100,6 +100,22 @@ From Umbraco 18.1, Umbraco reads the `WEBSITE_INSTANCE_ID` environment variable 
 
 To take full control of the identifier, set `Hosting:MachineIdentifier` explicitly with a value that is unique per instance. See [Hosting Settings](../../../develop-with-umbraco/configuration/hostingsettings.md) for the full property reference.
 
+## Memory limits
+
+Each App Service plan tier has a fixed amount of memory, and the smaller tiers have little of it. Image processing is the largest source of memory spikes in an Umbraco site. Under load, a page of thumbnails can exhaust the memory of a small instance and the site is restarted.
+
+You can bound the memory used for image processing. The feature is disabled by default:
+
+```json
+{
+  "name": "UMBRACO__CMS__IMAGING__MEMORY__ENABLED",
+  "value": "true",
+  "slotSetting": false
+}
+```
+
+The bounds are derived from the memory the .NET runtime reports as available. On a plan that hosts more than one app, that figure covers the whole instance rather than your share. Set the `DOTNET_GCHeapHardLimit` application setting to the amount you want image processing to respect. See [Imaging Settings](../../../develop-with-umbraco/configuration/imagingsettings.md#memory) for the full property reference.
+
 ## Web App secret management
 
 Consult the [Azure Key Vault documentation](../../security/key-vault.md) if you would like to directly reference Azure Key Vault Secrets to your Azure Web App.
