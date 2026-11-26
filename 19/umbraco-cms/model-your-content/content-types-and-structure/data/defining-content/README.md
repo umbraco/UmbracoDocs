@@ -130,6 +130,45 @@ Now that we have created a group we can start adding properties. Let's add a Ric
 
 ![Adding a property](../../../../.gitbook/assets/add-property.png)
 
+#### Reserved property aliases
+
+Some property aliases are reserved because they match built-in members of [IPublishedContent](../../../../develop-with-umbraco/templating-and-rendering/querying/ipublishedcontent/README.md). Saving a type that uses a reserved alias fails with an **Invalid property type alias** error. The check ignores case, so `name` is reserved as well as `Name`.
+
+Document Types, Element Types, Media Types, and Member Types can't use these aliases:
+
+* `ContentType`
+* `CreateDate`
+* `CreatorId`
+* `Cultures`
+* `GetProperty`
+* `Id`
+* `IsDraft`
+* `IsPublished`
+* `ItemType`
+* `Key`
+* `Level`
+* `Name`
+* `OwningContentId`
+* `Path`
+* `Properties`
+* `SortOrder`
+* `TemplateId`
+* `UpdateDate`
+* `UrlSegment`
+* `WriterId`
+
+Member Types also can't use these aliases:
+
+* `Comments`
+* `CreationDate`
+* `Email`
+* `IsApproved`
+* `IsLockedOut`
+* `LastLockoutDate`
+* `LastLoginDate`
+* `LastPasswordChangedDate`
+* `UserName`
+
 #### Property Editors
 
 * Clicking **Select Editor** will open the Select Editor dialog. Here, you can choose between all the available editors on the **Create a new Configuration** tab. This will create a new configuration or already configured editors in the **Available Configurations** tab.
