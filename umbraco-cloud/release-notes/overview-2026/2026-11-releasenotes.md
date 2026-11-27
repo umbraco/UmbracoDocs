@@ -2,6 +2,7 @@
 
 ## Key Takeaways
 
+* **Firewall events on Traffic & Performance** - See which requests the firewall blocked, challenged, or allowed on your hostnames, and which rules acted.
 * **Recommendations** - See how each project and environment measures up against Umbraco Cloud best practices, and how to address it.
 * **Alerting and Notifications** - Set up alert rules that send an email or webhook notification about DDoS attacks, automatic restarts, deployments, and upgrades.
 * **More details in the organization Projects list** - See the hosting type, the live Umbraco version, and the ownership of each project in your organization.
@@ -9,6 +10,29 @@
 * **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
 * **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
 * **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
+
+## Firewall events on Traffic & Performance
+
+The **Traffic & Performance** page now shows what the firewall did to the traffic on your hostnames. Find the page under **Insights** -> **Traffic & Performance** on your project in the Cloud Portal.
+
+A new **Firewall** section shows the following for the selected hostnames and time range:
+
+* **Outcomes** - The number of requests that were blocked, challenged, or allowed, and the number of visitors who passed a challenge.
+* **Events over time** - A chart of the firewall events, colored by outcome.
+* **Rules** - Your specific firewall rules and the Managed Block rules that acted, each with an event count.
+* **Top lists** - The IP addresses, paths, networks, and hostnames with the most events.
+* **Recent events** - The individual events, with filters for IP address, country, and path.
+
+<figure><img src="../../.gitbook/assets/tp-firewall-section.png" alt="The Firewall section with the three views, the filter fields, the outcome tiles, and the Events over time chart."><figcaption><p>The Firewall section on the Traffic & Performance page.</p></figcaption></figure>
+
+The page also has two smaller additions:
+
+* **Mitigated Requests** - A new tile and chart line with the number of requests that were stopped or challenged.
+* **TLS Versions** - A new breakdown table with the TLS versions used by clients.
+
+Firewall events are kept for 30 days.
+
+For more details, see the [Traffic and Performance](../../optimize-and-maintain-your-site/monitor-and-troubleshoot/traffic-and-performance.md#firewall) documentation.
 
 ## Recommendations
 

@@ -8,6 +8,7 @@ Each item is prefixed with the date (DD/MM) it was added to the release notes. U
 
 ## [November 2026](2026-11-releasenotes.md)
 
+* [25/11] - **Firewall events on Traffic & Performance** - See which requests the firewall blocked, challenged, or allowed on your hostnames, and which rules acted.
 * [24/11] - **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.
 * [23/11] - **Default hostnames on Traffic & Performance** - See edge traffic for the default hostname of an environment, without adding a custom hostname first.
 * [19/11] - **Release Umbraco.Cloud.Cms 17.2.4 & 18.0.4** - Updates dependencies.
