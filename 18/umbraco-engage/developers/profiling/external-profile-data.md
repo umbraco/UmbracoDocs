@@ -1,9 +1,8 @@
 ---
 description: >-
-  Umbraco Engage does not provide a built-in way to add additional data to a
+  Umbraco Engage does not provide a built-in way to add extra data to a
   profile. You can store the data in any format and in any way outside of
   Umbraco Engage.
-hidden: true
 ---
 
 # External Profile Data
@@ -14,7 +13,7 @@ It is possible to visualize this external data alongside the Umbraco Engage prof
 
 ## Visualization
 
-When this component is registered a new tab will be rendered in the Engage Profile workspace. This will render the custom component that was provided and get passed the Umbraco Engage visitor ID.
+When the component is registered, a new tab is rendered in the Engage Profile workspace. The tab renders your custom component. The component reads the Umbraco Engage visitor ID from the workspace context.
 
 ![External profile data tab.](../../.gitbook/assets/External-profile-data-tab-v16.png)
 
@@ -24,7 +23,7 @@ When this component is registered a new tab will be rendered in the Engage Profi
 Check the [Creating your first extension](https://docs.umbraco.com/umbraco-cms/extend-your-project/tutorials/creating-your-first-extension) and [Vite Package Setup](https://docs.umbraco.com/umbraco-cms/extend-your-project/backoffice-extensions/development-flow/vite-package-setup) articles for detailed extension-building tutorials.
 {% endhint %}
 
-To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The links above demonstrate different approaches to building Umbraco extensions. This demo uses vanilla JavaScript, but you might choose to use Lit or similar.
+To render this External Data Demo tab with a custom component, create your component and register it with Umbraco Engage. The links above demonstrate different approaches to building Umbraco extensions. This demo uses a Lit element without a build step.
 
 The following code demonstrates both steps. 
 
@@ -36,20 +35,23 @@ import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UMB_ENTITY_WORKSPACE_CONTEXT } from "@umbraco-cms/backoffice/workspace";
 
 export class EngageExternalProfileDataElement extends UmbLitElement {
-    #profileId = '';
+    static properties = {
+        _profileId: { state: true },
+    };
 
     constructor() {
         super();
         this.consumeContext(UMB_ENTITY_WORKSPACE_CONTEXT, context => {
             this.observe(context?.unique, unique => {
-                this.#profileId = unique;
+                this._profileId = unique;
             });
         });
     }
+
     render() {
         return html`
-            <p>This is a custom profile view</p>           
-            <p>Current profile id: ${this.#profileId}</p>
+            <p>This is a custom profile view</p>
+            <p>Current profile id: ${this._profileId}</p>
         `;
     }
 }
@@ -73,7 +75,7 @@ customElements.define("external-profile-data-demo", EngageExternalProfileDataEle
       "name": "External Profile Data Demo",
       "weight": 100,
       "js": "/App_Plugins/path/to/my-element.js"
-    },
+    }
   ]
 }
 ```
