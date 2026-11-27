@@ -6,6 +6,10 @@ description: Get an overview of the release notes for each month in 2026.
 
 Each item is prefixed with the date (DD/MM) it was added to the release notes. Use the dates to match a change in behaviour on your project with a release.
 
+## [December 2026](2026-12-releasenotes.md)
+
+* [03/12] - **Web Application Firewall** - Decide which requests reach each of your sites. Allow, challenge, or block requests for each domain from the Cloud Portal.
+
 ## [November 2026](2026-11-releasenotes.md)
 
 * [24/11] - **Release Umbraco.Cloud.Cms 17.2.5 & 18.0.5** - Fixes Umbraco ID login on projects that use `Microsoft.Data.SqlClient` 7.

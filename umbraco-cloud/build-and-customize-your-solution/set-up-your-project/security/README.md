@@ -128,6 +128,8 @@ Basic authentication will not be available for projects running Umbraco 9. It is
 
 ### Web Application Firewall (WAF)
 
+The Web Application Firewall lets you decide which requests reach each of your sites. You can allow, challenge, or block requests for each domain and for the built-in Umbraco addresses.
+
 WAF is enabled by default on the custom hostname(s) you add to your Umbraco Cloud project. Environments created before November 2024 may have WAF turned off. [Learn more about how this feature works and helps to secure your websites](web-application-firewall.md).
 
 ## Deploy API key
