@@ -36,6 +36,25 @@ The "unexposed" state is visualized by a dimmed-down icon and title (or likely a
 "Unexposed" Blocks are omitted from the published Document output. So, you do not need to worry about defensive coding to avoid rendering these Blocks.
 {% endhint %}
 
+## Make draft
+
+{% hint style="info" %}
+The **Make draft** action is available from Umbraco 17.10.
+{% endhint %}
+
+A Block that is exposed in a Document variant can be returned to the "unexposed" state for that variant. The Block shows the **Create** placeholder again and is omitted from the published output of that variant. Other variants are not affected.
+
+To make a Block draft:
+
+* In the Block workspace, use the dropdown next to **Update** and select **Make draft**. Any changes you made in the workspace are stored first.
+* If a Block has no workspace to open, **Make draft** is a button on the Block. This applies to Blocks that use inline editing, or a custom view with the content editor hidden and no settings.
+
+The content of the variant is kept, so selecting **Create** again restores it. Making a Block draft does not validate the content.
+
+{% hint style="info" %}
+**Make draft** is only available when you can edit the Block Editor property in the current language. The property does not vary by culture, so outside the default language, it is read-only unless [`AllowEditInvariantFromNonDefault`](../../../../develop-with-umbraco/configuration/contentsettings.md#allow-edit-invariant-from-non-default) is set to `true`. The same applies to deleting a Block.
+{% endhint %}
+
 ## Invariance vs. Block Level Variance
 
 It is entirely possible to mix and match variance and invariance within the scope of Block Level Variance. Invariance is fully supported, both at Block level and at Block property level.
