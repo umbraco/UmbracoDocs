@@ -466,6 +466,7 @@
     * [Adding a Hub with SignalR and Umbraco](extend-your-project/server-side-extensions/custom-routing/signalr.md)
   * [Custom Backoffice API](extend-your-project/server-side-extensions/custom-backoffice-api.md)
   * [Embedded Media Providers](extend-your-project/server-side-extensions/embedded-media-providers.md)
+  * [Environment Permissions](extend-your-project/server-side-extensions/environment-permissions.md)
   * [Flag Providers](extend-your-project/server-side-extensions/flag-providers.md)
   * [JSON Serialization](extend-your-project/server-side-extensions/json-serialization.md)
   * [Content Type Filters](extend-your-project/server-side-extensions/content-type-filters.md)
