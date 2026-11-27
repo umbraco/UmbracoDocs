@@ -20,7 +20,7 @@ To add the cockpit to your website:
     @Html.Partial("Umbraco.Engage/Cockpit")
     ```
 
-Once the code is added, reload the page to see the Umbraco Engage Cockpit on the left or right side of the screen. The cockpit will only be rendered if the user is logged into Umbraco.
+Once the code is added, reload the page to see the Umbraco Engage Cockpit on the left or right side of the screen. The cockpit is only rendered if the user is logged in to Umbraco. From Umbraco Engage 13.8.3, the user also needs access to the **Engage** section. Each part of the cockpit is shown only when one of the user's groups has access to that feature in the Engage [Permissions](../../marketers-and-editors/settings/permissions.md).
 
 ![Umbraco Engage Cockpit](<../../.gitbook/assets/engage-cockpit (1).png>)
 

@@ -48,10 +48,6 @@ For example, you can specify a different title for this variant:
 
 11. Click **Save and preview** to save and preview your applied personalization.
 
-While previewing the personalization, you will see an extra querystring in the URL: `https://<your url>/?engagePreviewAppliedPersonalization=<id>`
-
-This is only visible when previewing your personalization. Once published, visitors will see a single URL, and depending on their segment, they will view different content.
-
 After publishing the website, visitors in the segment will see the personalized variant, while others will see the default content.
 
 Congratulations, you've successfully set up your first personalization.

@@ -38,8 +38,8 @@ It also allows you to set up personalized variants for each node.
 
 ## Managing the access to Workspace Views
 
-In the **Settings** section, navigate to **Engage** > **Configuration** and select **Permissions** in the top-right corner. Here you can manage which Document Types the workspace views are displayed on, and which Umbraco user groups can access them. They can be managed per Document Type and per user group.
+In the **Settings** section, navigate to **Engage** > **Configuration** and select **Permissions** in the top-right corner. Here you manage which Document Types the workspace views are displayed on.
 
 ![Document Type Permissions in the Settings section](../../.gitbook/assets/Settings-DocType-Permissions-v16.png)
 
-![User group Permissions in the Settings section](../../.gitbook/assets/Settings-UserGroup-Permissions-v16.png)
+From Umbraco Engage 17.6, a workspace view is shown only to users whose user group has the **Read** permission for that feature. Earlier versions use the **User group permissions** option on the same **Permissions** screen. Learn more in the [Permissions](../settings/permissions.md#user-group-permissions) article.

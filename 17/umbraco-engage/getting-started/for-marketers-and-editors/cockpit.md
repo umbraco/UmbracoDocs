@@ -1,8 +1,7 @@
 ---
 description: >-
   The Cockpit is a tool to let you view data directly on the front end of the
-  website. The cockpit is only visible if the cockpit add-on script is installed
-  and if you are logged on to Umbraco.
+  website. The cockpit is only visible if you are logged in to Umbraco.
 ---
 
 # Cockpit
@@ -19,7 +18,13 @@ Click **Open** to see all the features of the Cockpit:
 
 ## Access to the cockpit
 
-When the Umbraco Engage code has been added to the page you can see it when you are logged in to Umbraco. Visitors to your website do not have access to the Cockpit.
+When the Umbraco Engage code has been added to the page, you can see the Cockpit when you are logged in to Umbraco. Visitors to your website do not have access to the Cockpit.
+
+From Umbraco Engage 17.6, your user group also needs access to the **Engage** section. Each part of the Cockpit is shown only when your user group has the **Read** permission for that feature. The features are Analytics, Personalization, A/B Testing, and Profiles.
+
+{% hint style="info" %}
+Don't see a part of the Cockpit? Ask your administrator for the **Read** permission on that feature. Learn more in the [Permissions](../../marketers-and-editors/settings/permissions.md#user-group-permissions) article.
+{% endhint %}
 
 If the Cockpit is missing while the Umbraco backoffice runs on a different domain, contact the technical team. You can also refer to the [Load Balancing and CM/CD Environments](../for-developers/loadbalancing-and-cm-cd-environments.md) article.
 

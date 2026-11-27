@@ -21,6 +21,25 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Resolves security advisory [GHSA-gq5w-hprc-q59x](https://github.com/umbraco/Umbraco.Engage.Issues/security/advisories/GHSA-gq5w-hprc-q59x)
 * Previously the Umbraco.Engage.Core package included its own copies of the Common, Data, Infrastructure and Web DLLs. These are now resolved as dependencies. Building after upgrading package references will ensure the stale Umbraco.Engage.Core DLL is removed.
 
+**Permissions**
+
+* Access to Engage features is now granted through Umbraco user group permissions, such as `Engage.Analytics.Read` and `Engage.AbTesting.Write`. Personalization and Profiles also have an Export permission. The permissions are also enforced on the server.
+* A migration copies the existing Engage user group settings to the new permissions. The **User group permissions** screen has been removed. See the [Permissions](marketers-and-editors/settings/permissions.md) article.
+* The Engage Cockpit now requires access to the Engage section. Each part of the Cockpit is shown only with the Read permission for that feature.
+* A profile export now includes the member name and email only for users with access to the Members section.
+
+**Analytics and reporting**
+
+* `Engage:Reporting:DataGenerationTime` now defaults to empty instead of `04:00`. When it is empty, Engage picks a random time between 01:00 and 05:00 in the reporting time zone and keeps it across restarts. An explicit time is now scheduled in the reporting time zone instead of the server time zone.
+* Average columns in Analytics tables no longer show a total.
+* Fixed the video playtime averages in **Analytics** > **Videos**. The averages are now weighted by the number of plays, and the relative playtime column is labeled "(%)". The values are corrected by the next reporting data generation.
+* Fixed Analytics tables with "Include subpages" timing out on large reports.
+
+**A/B testing and personalization**
+
+* Previewing a personalization or an A/B test variant now works without the Engage visitor cookie. Previewing no longer creates a visitor cookie or profile for the editor.
+* A variant now needs a name before a test can be started or scheduled. **Start** and **Schedule** are available after the first save. Variants cannot be added once a test has left Draft.
+
 #### [17.6.0-rc2](https://www.nuget.org/packages/Umbraco.Engage/17.6.0) (November 5th 2026)
 
 **Analytics and reporting**
@@ -240,6 +259,9 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 #### [17.2.3](https://www.nuget.org/packages/Umbraco.Engage/17.2.3) (June 2nd 2026)
 
 * Resolved pageviews and associated data not getting flushed to the database on load-balanced (subscriber) setups.
+* `CompleteAlignSchema.sql` now supports a separate Engage database.
+* Added the `DeduplicatePageVariants.sql` helper script, which consolidates duplicate page variant rows on existing installations.
+* The Database Schema Status health check now links to the Schema Alignment Guide.
 
 #### [17.2.2](https://www.nuget.org/packages/Umbraco.Engage/17.2.2) (May 22nd 2026)
 
@@ -273,7 +295,7 @@ Below are the release notes for Umbraco Engage 17, detailing all changes in this
 * Aligned `culture` column length with Umbraco CMS.
 * Fixed `Anonymize IP Address` setting not showing in the UI.
 * Clean-up of orphaned page variants and bot visitor data.
-* Fixed duplicate page variant rows being created per pageview instead of reusing existing data. A `DeduplicatePageVariants.sql` helper script is included to consolidate duplicates on existing installations (see below).
+* Fixed duplicate page variant rows being created per pageview instead of reusing existing data. A `DeduplicatePageVariants.sql` helper script to consolidate duplicates on existing installations is included from 17.2.3.
 * Added wildcard domain support for licensing.
 * Improved goal deserialization handling with caching and graceful error recovery.
 * Security fix: server-side enforcement of `createdBy` on annotations and other entities — client-provided values are no longer trusted.

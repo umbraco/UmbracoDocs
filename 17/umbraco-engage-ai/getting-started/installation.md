@@ -6,8 +6,13 @@ description: Install Umbraco Engage AI and set up an agent for the Copilot to us
 
 ## Prerequisites
 
-* Umbraco CMS with Umbraco Engage 17.4.0 or newer, installed and licensed.
+* Umbraco CMS with Umbraco Engage, installed and licensed. The table below shows the Umbraco Engage version each Umbraco Engage AI version requires.
 * Umbraco.AI installed, with an API key from your AI provider of choice (for example Anthropic, DeepSeek, or OpenAI).
+
+| Umbraco Engage AI | Umbraco CMS | Umbraco Engage |
+| --- | --- | --- |
+| 17.x | 17 | 17.4.0 or newer |
+| 18.x | 18 | 18.1.0 or newer |
 
 ## Step 1: Install the packages
 

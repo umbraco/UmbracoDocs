@@ -10,7 +10,7 @@ description: >-
 
 To set custom goals:
 
-1. Navigate to **Settings** > **Goals** in the Umbraco Engage section and select **Create goal**.
+1. Navigate to **Configuration** > **Goals** in the Umbraco Engage section and select **Create goal**.
 2. Set **Trigger** to **Custom code**.
 3. Execute C# code to trigger the goal.
 
@@ -49,6 +49,10 @@ public class YourService
     }
 }
 ```
+
+{% hint style="info" %}
+`TriggerGoal` and `TriggerGoalAsync` reject a goal that is inactive, invalid, or unknown. A warning is logged and no goal completion is stored. `TriggerGoalAsync(long)` returns `false` in that case.
+{% endhint %}
 
 ### Triggering Outside of HttpContext
 
