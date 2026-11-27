@@ -313,7 +313,7 @@ By default, `link.Url` returns a relative URL for content and media links (for e
 
 Inject `IPublishedUrlProvider` at the top of your view and resolve content and media links using `UrlMode.Absolute`. External links are returned as entered and pass through unchanged.
 
-#### Single URL Picker
+### Single URL Picker
 
 ```csharp
 @using Umbraco.Cms.Core.Models
@@ -336,7 +336,7 @@ Inject `IPublishedUrlProvider` at the top of your view and resolve content and m
 }
 ```
 
-#### URL Picker (Multiple)
+### URL Picker (Multiple)
 
 ```csharp
 @using Umbraco.Cms.Core.Models

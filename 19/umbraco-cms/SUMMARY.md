@@ -113,7 +113,6 @@
     * [Member Group Picker](model-your-content/property-editors/built-in-umbraco-property-editors/member-group-picker.md)
     * [Member Picker](model-your-content/property-editors/built-in-umbraco-property-editors/member-picker.md)
     * [Multi Node Tree Picker](model-your-content/property-editors/built-in-umbraco-property-editors/content-picker.md)
-    * [URL Picker](model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md)
     * [Numeric](model-your-content/property-editors/built-in-umbraco-property-editors/numeric.md)
     * [Radiobutton List](model-your-content/property-editors/built-in-umbraco-property-editors/radiobutton-list.md)
     * [Repeatable Textstrings](model-your-content/property-editors/built-in-umbraco-property-editors/multiple-textbox.md)
@@ -128,6 +127,7 @@
     * [Textarea](model-your-content/property-editors/built-in-umbraco-property-editors/textarea.md)
     * [Textbox](model-your-content/property-editors/built-in-umbraco-property-editors/textbox.md)
     * [Toggle](model-your-content/property-editors/built-in-umbraco-property-editors/true-false.md)
+    * [URL Picker](model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md)
     * [User Picker](model-your-content/property-editors/built-in-umbraco-property-editors/user-picker.md)
   * [Umbraco Flavored Markdown](model-your-content/property-editors/umbraco-flavored-markdown.md)
 
