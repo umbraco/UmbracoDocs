@@ -641,6 +641,10 @@ The new Backoffice (Bellissima) is entirely built on the Umbraco UI Library. Thi
 
 Umbraco 13 and earlier used sets of icons ranging from custom SVGs to Font Awesome. This has all been converged into the [Lucide icon pack](https://docs.umbraco.com/umbraco-cms/customizing/icons) with icon names mapped from Umbraco 13.
 
+* **The Backoffice no longer uses the favicon of the website**
+
+Umbraco 13 and earlier showed the `favicon.ico` file from the root of `wwwroot` in the Backoffice. From Umbraco 14, the Backoffice and the login screen show the Umbraco favicon. From Umbraco 17.10, you can set your own favicon with the `BackOfficeFavicon` setting. See the [Content Settings](../../develop-with-umbraco/configuration/contentsettings.md#backoffice-favicon) article.
+
 * **Custom icons**
 
 To add custom icons to the Backoffice, you must add an extension type called “icons”, which can provide icons given a Name and a File. The file can reside anywhere on disk or in RCLs the only requirements being that it must be routable and it must be an SVG.

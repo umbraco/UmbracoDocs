@@ -23,6 +23,7 @@ The following snippet will give an overview of the keys and values in the conten
       "DisableUnpublishWhenReferenced": false,
       "DisallowedUploadedFileExtensions": ["ashx", "aspx", "ascx", "config", "cshtml", "vbhtml", "asmx", "air", "axd", "xamlx"],
       "Error404Collection": [],
+      "BackOfficeFavicon": "backoffice/assets/favicon.svg",
       "BackOfficeLogo": "../media/qyci4xti/logo.png",
       "Imaging": {
         "ImageFileTypes": ["jpeg", "jpg", "gif", "bmp", "png", "tiff", "tif", "webp"],
@@ -118,6 +119,16 @@ If you have multiple sites, with different cultures, setup in your tree then you
 ```
 
 If you have more than two sites and forget to add a 404 page and a culture, the default page will act as fallback. Same happens if you for some reason forget to define a hostname on a site.
+
+### Backoffice favicon
+
+{% hint style="info" %}
+The `BackOfficeFavicon` setting is available from Umbraco 17.10.
+{% endhint %}
+
+You can specify your own favicon for the backoffice and the login screen here. This path is relative to the `wwwroot/umbraco` path. The default location is: `wwwroot/umbraco/backoffice/assets/favicon.svg`.
+
+To use the `favicon.ico` file in the root of `wwwroot`, set the value to `../favicon.ico`.
 
 ### Backoffice logo
 
